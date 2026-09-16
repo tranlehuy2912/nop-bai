@@ -1,0 +1,1027 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Homework Gate — bàn thử</title>
+<style>
+:root{
+  --nen:#f6f6f4; --the:#fff; --chu:#1d1d1f; --mo:#6b6b70; --vien:#e2e2de;
+  --ranh:#eceae4; --soan:#f2e3b8; --sap:#f0954a; --gap:#e2622e; --chan:#c0392b;
+  --tiet:#4a7fd4; --nhan:#2d6cdf;
+}
+@media (prefers-color-scheme:dark){
+  :root{--nen:#16161a;--the:#1f1f25;--chu:#ececf0;--mo:#9a9aa4;--vien:#32323a;
+        --ranh:#2b2b33;--soan:#4c452f;}
+}
+*{box-sizing:border-box}
+/* Dat display trong CSS se de len thuoc tinh hidden, nen chot lai o day. */
+[hidden]{display:none!important}
+body{margin:0;background:var(--nen);color:var(--chu);
+  font:14px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+h1{font-size:17px;margin:0}
+h2{font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--mo);
+  margin:0 0 10px}
+.canh{color:#b3541e;font-weight:600}
+@media (prefers-color-scheme:dark){.canh{color:#f0a868}}
+body.vantay header{background:color-mix(in srgb,#f0954a 16%,var(--the));
+  border-bottom-color:#f0954a}
+header{display:flex;flex-wrap:wrap;gap:12px;align-items:center;
+  padding:12px 16px;background:var(--the);border-bottom:1px solid var(--vien);
+  position:sticky;top:0;z-index:5}
+#tt{margin-left:auto;display:flex;flex-wrap:wrap;gap:8px;align-items:center;
+  font-size:13px;color:var(--mo)}
+.cham{width:8px;height:8px;border-radius:50%;display:inline-block;margin-right:5px}
+.ok{background:#2ea043}.xau{background:#d1483f}
+.khung{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:16px;
+  padding:16px;align-items:start}
+@media (max-width:900px){.khung{grid-template-columns:1fr}}
+.the{background:var(--the);border:1px solid var(--vien);border-radius:12px;
+  padding:14px;margin-bottom:16px}
+button{font:inherit;padding:6px 12px;border-radius:8px;border:1px solid var(--vien);
+  background:var(--the);color:var(--chu);cursor:pointer}
+button:hover{border-color:var(--nhan)}
+button.chinh{background:var(--nhan);border-color:var(--nhan);color:#fff}
+button:disabled{opacity:.5;cursor:default}
+input,select{font:inherit;padding:5px 8px;border-radius:8px;
+  border:1px solid var(--vien);background:var(--nen);color:var(--chu)}
+label{display:inline-flex;gap:6px;align-items:center;color:var(--mo)}
+.hang{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+
+/* --- dai thoi gian --- */
+.ngay{display:grid;grid-template-columns:120px minmax(0,1fr);gap:10px;
+  align-items:center;margin-bottom:6px}
+.tenngay{font-size:13px;text-align:right;color:var(--mo)}
+.tenngay b{display:block;color:var(--chu);font-size:14px}
+.dai{position:relative;height:30px;background:var(--ranh);border-radius:6px;
+  overflow:hidden;cursor:crosshair}
+.doan{position:absolute;top:0;bottom:0;display:flex;align-items:center;
+  justify-content:center;font-size:10px;color:#fff;white-space:nowrap;overflow:hidden}
+.vach{position:absolute;top:0;bottom:0;width:1px;background:rgba(128,128,128,.25)}
+.kim{position:absolute;top:-3px;bottom:-3px;width:2px;background:var(--nhan);
+  box-shadow:0 0 0 1px var(--the)}
+.gio-nhan{display:grid;grid-template-columns:120px minmax(0,1fr);gap:10px;
+  font-size:10px;color:var(--mo);margin-top:2px}
+.gio-nhan div:last-child{position:relative;height:12px}
+.gio-nhan span{position:absolute;transform:translateX(-50%)}
+.chu-thich{display:flex;flex-wrap:wrap;gap:14px;font-size:12px;color:var(--mo);
+  margin-top:10px}
+.chu-thich i{width:11px;height:11px;border-radius:3px;display:inline-block;
+  margin-right:5px;vertical-align:-1px}
+
+/* --- thoi khoa bieu --- */
+#tab{display:flex;gap:2px;flex-wrap:wrap;padding:8px 16px 0;background:var(--the);
+  border-bottom:1px solid var(--vien)}
+#tab button{border:none;border-bottom:2px solid transparent;border-radius:8px 8px 0 0;
+  background:none;color:var(--mo);padding:8px 14px}
+#tab button:hover{color:var(--chu)}
+#tab button.dang{color:var(--chu);border-bottom-color:var(--nhan);font-weight:600}
+#lmoi{margin-left:auto;font-size:12px;padding-bottom:8px;cursor:help}
+#canhmoi{font-size:12px;color:#b3541e;padding-bottom:8px;align-self:center}
+@media (prefers-color-scheme:dark){#canhmoi{color:#f0a868}}
+section[data-tab]{display:none}
+section[data-tab].dang{display:block}
+.so-to{font-size:30px;font-weight:700;line-height:1.1}
+.o{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.o > div{background:var(--ranh);border-radius:9px;padding:9px 11px}
+.o b{display:block;font-size:17px}
+.o span{font-size:11px;color:var(--mo);text-transform:uppercase;letter-spacing:.05em}
+pre{background:var(--ranh);border-radius:9px;padding:10px;overflow:auto;
+  max-height:420px;font-size:11px;line-height:1.45;margin:0;white-space:pre-wrap}
+.ds{list-style:none;margin:0;padding:0;font-size:13px}
+.ds li{padding:6px 0;border-bottom:1px solid var(--vien);display:flex;gap:8px;
+  justify-content:space-between}
+.ds li:last-child{border:0}
+.tn{display:flex;flex-direction:column;gap:6px;max-height:280px;overflow:auto;
+  padding:4px 0}
+.tn div{max-width:82%;padding:6px 10px;border-radius:12px;font-size:13px}
+.tn .con{align-self:flex-end;background:var(--nhan);color:#fff}
+.tn .ba{align-self:flex-start;background:var(--ranh)}
+.nguy{border-color:#d1483f;color:#d1483f}
+.dat{color:#2ea043;font-weight:600}
+.hong{color:#d1483f;font-weight:600}
+table.go td,table.go th{font-size:12px}
+#tdthanh{height:6px;background:var(--ranh);border-radius:99px;margin-top:12px;
+  overflow:hidden}
+#tdthanh div{height:100%;background:var(--nhan);width:0;transition:width .3s}
+.nhomthu{margin-bottom:14px}
+.nhomthu > label{font-weight:600;display:block;margin-bottom:5px}
+.nhomthu ul{list-style:none;margin:0;padding:0 0 0 20px;
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:2px}
+.nhomthu li label{font-size:13px;display:flex;gap:7px;align-items:flex-start}
+.the-thu{border:1px solid var(--vien);border-radius:11px;overflow:hidden;
+  background:var(--nen)}
+.the-thu header{padding:9px 12px;display:flex;gap:9px;align-items:center;
+  background:var(--the);border:0;position:static}
+.the-thu img{width:100%;display:block;border-top:1px solid var(--vien);
+  cursor:zoom-in;background:var(--ranh)}
+.the-thu ul{margin:0;padding:8px 12px 10px 28px;font-size:12px;color:var(--mo)}
+.luoithu{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));
+  gap:12px;margin-top:10px}
+.huy{width:20px;height:20px;border-radius:50%;flex:0 0 auto;color:#fff;
+  display:grid;place-items:center;font-size:12px}
+.huy.y{background:#2ea043}.huy.n{background:#d1483f}
+#den{position:fixed;inset:0;background:rgba(0,0,0,.85);display:grid;
+  place-items:center;z-index:50;padding:18px}
+#den img{max-width:100%;max-height:100%;border-radius:8px}
+table{border-collapse:collapse;width:100%;font-size:12px}
+th,td{border:1px solid var(--vien);padding:5px 6px;text-align:left;vertical-align:top}
+th{color:var(--mo);font-weight:600;background:var(--ranh)}
+td.co{background:color-mix(in srgb,var(--tiet) 12%,transparent)}
+td small{display:block;color:var(--mo);font-size:10px}
+
+/* --- ben phai --- */
+.nhan{display:inline-block;padding:2px 9px;border-radius:99px;color:#fff;
+  font-size:11px;letter-spacing:.04em}
+#luc h3{margin:8px 0 2px;font-size:16px}
+#luc p{margin:2px 0;color:var(--mo)}
+#luc ul{margin:8px 0 0;padding-left:18px}
+#anh{width:100%;border-radius:8px;border:1px solid var(--vien);display:block;
+  background:var(--ranh)}
+.loi{background:#d1483f;color:#fff;padding:8px 12px;border-radius:8px;
+  font-size:13px;margin-bottom:12px}
+.mo{color:var(--mo)}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Bàn thử — Homework Gate</h1>
+  <div id="tt"><span class="mo">đang xem máy ảo…</span></div>
+</header>
+
+<nav id="tab">
+  <button data-tab="lich" class="dang">Lịch</button>
+  <button data-tab="cong">Cổng &amp; giờ chơi</button>
+  <button data-tab="conggio">Cộng giờ</button>
+  <button data-tab="han">Hạn app</button>
+  <button data-tab="tin">Tin nhắn</button>
+  <button data-tab="bo">Tự động thử</button>
+  <button data-tab="nhatky">Nhật ký</button>
+  <label id="lmoi" title="Cấu hình nằm trong EncryptedSharedPreferences: tiến trình app đang chạy giữ một bản trong bộ nhớ, nên phải cho nó đọc lại từ đĩa sau mỗi lần ghi.">
+    <input type="checkbox" id="moiapp" checked> khởi động lại app sau mỗi thay đổi
+  </label>
+  <span id="canhmoi" hidden>⚠ app đang chạy sẽ ghi đè lên thay đổi của bạn</span>
+</nav>
+
+<div id="den" hidden><img alt=""></div>
+<div class="khung">
+<main>
+  <div id="loi"></div>
+
+<section data-tab="lich" class="dang">
+  <div class="the">
+    <div class="hang">
+      <label>Từ ngày <input type="date" id="tu"></label>
+      <label>Số ngày
+        <select id="songay">
+          <option>7</option><option>14</option><option>3</option><option>30</option>
+        </select></label>
+      <label><input type="checkbox" id="dasoan"> coi như đã soạn cặp</label>
+      <label><input type="checkbox" id="chan" checked> bật màn chắn</label>
+      <button id="ve" class="chinh">Vẽ lại</button>
+      <span id="dangchay" class="mo"></span>
+    </div>
+  </div>
+
+  <div class="the">
+    <h2>Máy sẽ làm gì, từng phút một</h2>
+    <div id="dai"></div>
+    <div class="chu-thich">
+      <span><i style="background:var(--ranh)"></i>rảnh</span>
+      <span><i style="background:var(--soan)"></i>nhắc soạn cặp</span>
+      <span><i style="background:var(--sap)"></i>sắp đi học</span>
+      <span><i style="background:var(--gap)"></i>gấp, đếm ngược</span>
+      <span><i style="background:var(--chan)"></i>màn chắn</span>
+      <span><i style="background:var(--tiet)"></i>đang giờ học</span>
+    </div>
+    <p class="mo" style="margin:10px 0 0">Bấm vào bất kỳ chỗ nào trên dải để xem
+      lúc đó máy hiện đúng chữ gì.</p>
+  </div>
+
+  <div class="the">
+    <h2>Thời khoá biểu lấy từ app</h2>
+    <div id="tkb"></div>
+  </div>
+</section>
+
+<section data-tab="cong">
+  <div class="the">
+    <h2>Cổng — trạng thái ngay lúc này</h2>
+    <div class="o" id="congo"></div>
+    <div class="hang" style="margin-top:14px">
+      <label>phút <input id="congphut" type="number" value="30" style="width:70px"></label>
+      <button class="chinh" data-viec="duyet">Duyệt phiếu</button>
+      <button data-viec="batdau">Bấm Bắt đầu</button>
+      <button data-viec="tamdung">Tạm dừng</button>
+      <button data-viec="dong" class="nguy">Đóng cổng</button>
+    </div>
+    <div class="hang" style="margin-top:8px">
+      <button data-viec="themcho">Thêm một bài chờ duyệt</button>
+      <button data-viec="huycho">Huỷ bài mới nhất</button>
+      <button data-viec="xoaluot">Xoá số phút đã duyệt hôm nay</button>
+    </div>
+    <div id="congcho" style="margin-top:12px"></div>
+  </div>
+
+  <div class="the">
+    <h2>Sổ cái bài đã nộp</h2>
+    <div class="o" id="socaio"></div>
+    <div id="socaids" style="margin-top:12px"></div>
+    <div class="hang" style="margin-top:12px">
+      <button data-viec="xoasocai" class="nguy">Xoá sạch sổ cái</button>
+    </div>
+    <p class="mo" style="font-size:12px;margin:8px 0 0">Mỗi mục chỉ sinh giờ một
+      lần trong đời — sổ này là chỗ nhớ điều đó. Xoá sổ là cho phép nộp lại ăn giờ
+      lần nữa, chỉ dùng khi đang thử.</p>
+  </div>
+
+  <div class="the">
+    <h2>Màn chắn &amp; soạn cặp</h2>
+    <div class="hang">
+      <button data-viec="manchan" data-ma="1">Bật màn chắn</button>
+      <button data-viec="manchan" data-ma="0">Tắt màn chắn</button>
+      <button data-viec="xoasoan">Bỏ hết dấu đã soạn cặp</button>
+      <button id="nutmoisom">Cho mở sớm buổi kế tiếp</button>
+      <button data-viec="moisom" data-ma="">Thu hồi mở sớm</button>
+    </div>
+    <div class="o" id="chano" style="margin-top:12px"></div>
+  </div>
+</section>
+
+<section data-tab="conggio">
+  <div class="the">
+    <h2>Vở dặn dò</h2>
+    <div class="hang">
+      <label>ngày ghi trong vở <input type="date" id="gngay"></label>
+      <label><input type="checkbox" id="ghet"> làm hết bài cô giao</label>
+    </div>
+    <label style="display:block;margin-top:10px">bài được giao (cách nhau bằng dấu phẩy)
+      <input id="ggiao" style="width:100%;margin-top:4px"
+             placeholder="bài 2.26, bài 2.27"></label>
+    <p class="mo" style="font-size:12px;margin:8px 0 0">Không kể được tên bài nào
+      thì không có trọn gói — đó là chốt chặn để máy khỏi tự cho 45 phút.</p>
+  </div>
+
+  <div class="the">
+    <h2>Các mục đã làm</h2>
+    <table class="go" id="gbang"></table>
+    <div class="hang" style="margin-top:10px">
+      <button id="gthem">+ thêm mục</button>
+      <button id="gmau1">Mẫu: hết vở dặn dò</button>
+      <button id="gmau2">Mẫu: một trang trắc nghiệm</button>
+      <button id="gmau3">Mẫu: bài văn một trang</button>
+      <button id="gxoa">Xoá hết</button>
+    </div>
+  </div>
+
+  <div class="the">
+    <h2>Bối cảnh lúc chấm</h2>
+    <div class="hang">
+      <label>lúc <input type="datetime-local" id="gluc"></label>
+      <label>đã cộng làm thêm hôm nay
+        <input type="number" id="gda" value="0" style="width:70px"> phút</label>
+      <label><input type="checkbox" id="ggoi"> hôm nay đã tính trọn gói rồi</label>
+      <button class="chinh" id="gtinh">Tính</button>
+      <button id="glaytu">Lấy số thật từ máy ảo</button>
+    </div>
+    <div id="gket" style="margin-top:14px"></div>
+  </div>
+</section>
+
+<section data-tab="han">
+  <div class="the">
+    <h2>Hạn giờ riêng từng app</h2>
+    <div id="hanbang"></div>
+    <div class="hang" style="margin-top:12px">
+      <input id="hangoi" placeholder="com.android.chrome" style="min-width:230px">
+      <label>hạn <input id="hanphut" type="number" value="15" style="width:70px"> phút</label>
+      <button class="chinh" id="handat">Đặt hạn</button>
+    </div>
+    <p class="mo" style="font-size:12px;margin:10px 0 0">“Dùng hết” đánh dấu là đã
+      xem hết hạn hôm nay — để thử cảnh bị khoá mà không phải ngồi xem chín mươi phút.</p>
+  </div>
+  <div class="the">
+    <h2>Danh sách app</h2>
+    <div id="dsapp"></div>
+  </div>
+</section>
+
+<section data-tab="tin">
+  <div class="the">
+    <h2>Nhắn tin con ↔ ba</h2>
+    <div class="tn" id="tnds"></div>
+    <div class="hang" style="margin-top:10px">
+      <input id="tnchu" placeholder="nội dung tin" style="flex:1;min-width:180px">
+      <button data-nhan="CON">Gửi kiểu con</button>
+      <button data-nhan="BA">Gửi kiểu ba</button>
+    </div>
+    <div class="o" id="tno" style="margin-top:12px"></div>
+  </div>
+
+  <div class="the">
+    <h2>Tin của cô</h2>
+    <ul class="ds" id="cods"></ul>
+    <div class="hang" style="margin-top:10px">
+      <input id="cochu" placeholder="Ngày mai kiểm tra 15 phút bài 3"
+             style="flex:1;min-width:180px">
+      <button id="conut">Thêm tin</button>
+      <button data-viec="xoatin" class="nguy">Xoá hết tin</button>
+    </div>
+  </div>
+
+  <div class="the">
+    <h2>Hộp thư ba nội</h2>
+    <div class="o" id="htho"></div>
+  </div>
+
+  <div class="the">
+    <h2>Telegram</h2>
+    <p class="mo" style="margin-top:0">Nút dưới đây <b>gửi thật</b> lên bot và chat
+      đang cấu hình trên máy ảo — ảnh sẽ hiện trong Telegram của Ba Huy. Không có
+      gì tự chạy; phải bấm và xác nhận.</p>
+    <div class="hang">
+      <button id="tgnut" class="nguy">Gửi thử một lần nộp bài</button>
+      <span id="tgket" class="mo"></span>
+    </div>
+  </div>
+</section>
+
+<section data-tab="bo">
+  <div class="the">
+    <h2>Chọn mục muốn thử</h2>
+    <div class="hang" style="margin-bottom:12px">
+      <label style="font-weight:600"><input type="checkbox" id="tatca"> thử tất cả</label>
+      <span class="mo" id="dadem"></span>
+    </div>
+    <div id="tdds"></div>
+    <div class="hang" style="margin-top:16px">
+      <button class="chinh" id="tdchay">Bắt đầu thử</button>
+      <button id="tddung" hidden class="nguy">Dừng</button>
+      <span id="tdtien"></span>
+    </div>
+    <div id="tdthanh" hidden><div></div></div>
+  </div>
+
+  <div class="the" id="tdkhung" hidden>
+    <h2>Kết quả <span id="tdtom"></span></h2>
+    <p class="mo" id="tdthumuc" style="margin-top:0;font-size:12px"></p>
+    <div id="tdket"></div>
+  </div>
+</section>
+
+<section data-tab="nhatky">
+  <div class="the">
+    <h2>Nhật ký máy ảo</h2>
+    <div class="hang">
+      <button id="nklam">Làm mới</button>
+      <label><input type="checkbox" id="nktu"> tự làm mới 5 giây</label>
+    </div>
+    <pre id="nktho" style="margin-top:12px">…</pre>
+  </div>
+  <div class="the">
+    <h2>Nhật ký trong ngày của app</h2>
+    <pre id="nkngay">…</pre>
+    <h2 style="margin-top:14px">Nhật ký AI hôm nay</h2>
+    <pre id="nkai">…</pre>
+  </div>
+</section>
+</main>
+
+<aside>
+  <div id="khungluc"><div class="the" id="luc">
+    <h2>Lúc đó máy hiện gì</h2>
+    <p class="mo">Chưa chọn mốc nào.</p>
+  </div></div>
+
+  <div class="the">
+    <h2>Màn hình máy ảo</h2>
+    <div class="hang" style="margin-bottom:10px">
+      <button id="nuthome">Bấm Home</button>
+      <button id="nutmo">Mở app</button>
+      <label><input type="checkbox" id="tuchup" checked> tự chụp lại</label>
+    </div>
+    <img id="anh" alt="màn hình máy ảo">
+    <p class="mo" style="margin:8px 0 0;font-size:12px">Màn chắn nhường chỗ cho
+      chính app Nộp bài — bấm Home mới thấy nó.</p>
+  </div>
+</aside>
+</div>
+
+<script>
+const $ = s => document.querySelector(s);
+const hm = p => String(p/60|0).padStart(2,'0')+':'+String(p%60).padStart(2,'0');
+const MAU = {RANH:'var(--ranh)', SOAN_VO:'var(--soan)', SAP_DI_HOC:'var(--sap)',
+             CHAN:'var(--chan)', DANG_GIO_HOC:'var(--tiet)'};
+let LICH = [], dangTai = false, dungTuDoi = false;
+
+function loi(t){ $('#loi').innerHTML = t ? `<div class="loi">${t}</div>` : ''; }
+
+async function api(duong, tuychon){
+  const r = await fetch(duong, tuychon);
+  const kieu = r.headers.get('content-type')||'';
+  if(!kieu.includes('json')) throw new Error(await r.text());
+  const o = await r.json();
+  if(o.loi) throw new Error(o.loi);
+  return o;
+}
+
+/* ---------- trang thai ---------- */
+async function trangThai(){
+  try{
+    const t = await api('/api/trangthai');
+    if(!t.mayAo){
+      $('#tt').innerHTML = `<span><i class="cham xau"></i>chưa có máy ảo</span>
+        <code>tools/emu.sh up</code>`;
+      return t;
+    }
+    const c = (ok,ten) => `<span><i class="cham ${ok?'ok':'xau'}"></i>${ten}</span>`;
+    // Dang van tay thi phai dap vao mat: de may ao ket lai o thu nam tuan truoc
+    // roi hom sau mo ra thu tiep la ngoi doan xem app hong cho nao.
+    document.body.classList.toggle('vantay', !t.tuDongGio);
+    $('#tt').innerHTML =
+      (t.tuDongGio
+        ? `<span>Máy ảo: <b>${t.gioMayAo}</b></span>
+           <span class="mo">máy Mac: ${t.gioMac}</span>`
+        : `<span class="canh">⏱ Đồng hồ máy ảo đang bị vặn tay:
+             <b>${t.gioMayAo}</b></span>
+           <span class="mo">giờ thật: ${t.gioMac}</span>`) +
+      c(t.dangChay,'app') + c(t.dichVu,'dịch vụ') + c(t.troNang,'trợ năng') +
+      (t.troNang ? '' : `<button id="nutquyen">Cấp lại quyền</button>`) +
+      `<button id="nutmoi">Khởi động lại app</button>` +
+      `<button id="nutthat" class="${t.tuDongGio?'':'chinh'}">Về giờ thật</button>`;
+    if($('#nutquyen')) $('#nutquyen').onclick = async e => {
+      e.target.disabled = true;
+      await api('/api/quyen',{method:'POST',body:'{}'});
+      trangThai();
+    };
+    $('#nutmoi').onclick = async e => {
+      e.target.disabled = true; e.target.textContent = 'đang khởi động lại…';
+      await api('/api/khoidonglai',{method:'POST',body:'{}'});
+      dungTuDoi = true; await trangThai(); dungTuDoi = false; chupLai();
+    };
+    $('#nutthat').onclick = async e => {
+      e.target.disabled = true;
+      e.target.textContent = 'đang trả về…';
+      await api('/api/giothuc',{method:'POST',body:'{}'});
+      dungTuDoi = true;              // khoi bi vong 10 giay ve de len giua chung
+      await trangThai();
+      dungTuDoi = false;
+      chupLai();
+    };
+    return t;
+  }catch(e){ $('#tt').innerHTML = `<span class="mo">${e.message}</span>`; }
+}
+
+/* ---------- dai thoi gian ---------- */
+function veDai(){
+  const khung = $('#dai');
+  khung.innerHTML = '';
+  for(const n of LICH){
+    const hang = document.createElement('div');
+    hang.className = 'ngay';
+    const ten = document.createElement('div');
+    ten.className = 'tenngay';
+    ten.innerHTML = `<b>${n.thu}</b>${n.ngay.slice(8)}/${n.ngay.slice(5,7)}` +
+      (n.nghi ? ` <span class="mo">· ${n.nghi}</span>` : '');
+    const dai = document.createElement('div');
+    dai.className = 'dai';
+    dai.dataset.ngay = n.ngay;
+
+    for(let g=1; g<24; g++){
+      const v = document.createElement('div');
+      v.className = 'vach'; v.style.left = (g/24*100)+'%';
+      dai.appendChild(v);
+    }
+    for(const m of n.moc){
+      if(m.loai === 'RANH') continue;
+      const d = document.createElement('div');
+      d.className = 'doan';
+      d.style.left = (m.phut/1440*100)+'%';
+      d.style.width = ((m.het-m.phut)/1440*100)+'%';
+      d.style.background = m.gap && m.loai==='SAP_DI_HOC' ? 'var(--gap)' : MAU[m.loai];
+      d.title = `${hm(m.phut)}–${hm(m.het)} · ${m.tieuDe}\n${m.chiTiet}`;
+      // Chi ghi gio len man chan: doan nhac soan vo phu gan het ngay, ghi vao
+      // do thi ca dai chi con la chu.
+      if(m.loai === 'CHAN' && m.het-m.phut > 60)
+        d.textContent = hm(m.phut)+'–'+hm(m.het);
+      dai.appendChild(d);
+    }
+    // Vach xanh: cac tiet hoc that, ve de len tren man chan cho de doi chieu.
+    for(const b of n.buoi){
+      const t = document.createElement('div');
+      t.className = 'doan';
+      t.style.left = (b.vao/1440*100)+'%';
+      t.style.width = ((b.tan-b.vao)/1440*100)+'%';
+      t.style.background = 'rgba(74,127,212,.55)';
+      t.style.top='auto'; t.style.bottom='0'; t.style.height='7px';
+      t.title = `đang học: ${hm(b.vao)}–${hm(b.tan)}`;
+      dai.appendChild(t);
+    }
+    dai.onclick = ev => {
+      const r = dai.getBoundingClientRect();
+      const phut = Math.round((ev.clientX-r.left)/r.width*1440);
+      chonMoc(n.ngay, Math.max(0, Math.min(1439, phut)), dai);
+    };
+    hang.append(ten, dai);
+    khung.appendChild(hang);
+  }
+  const nhan = document.createElement('div');
+  nhan.className = 'gio-nhan';
+  nhan.innerHTML = '<div></div><div>' +
+    [0,3,6,9,12,15,18,21,24].map(g =>
+      `<span style="left:${g/24*100}%">${String(g).padStart(2,'0')}</span>`).join('') +
+    '</div>';
+  khung.appendChild(nhan);
+}
+
+/* ---------- thoi khoa bieu ---------- */
+function veTkb(){
+  const co = LICH.filter(n => n.buoi.length);
+  if(!co.length){ $('#tkb').innerHTML = '<p class="mo">Không có buổi học nào.</p>'; return; }
+  let h = '<table><tr><th>tiết</th>';
+  const cot = [];
+  for(const n of co) for(const b of n.buoi){
+    cot.push({n,b});
+    h += `<th>${n.thu}<br><span class="mo">${b.buoi==='SANG'?'sáng':'chiều'}
+      ${n.ngay.slice(8)}/${n.ngay.slice(5,7)}</span></th>`;
+  }
+  h += '</tr>';
+  for(let t=1; t<=5; t++){
+    h += `<tr><th>${t}</th>`;
+    for(const {b} of cot){
+      const o = b.tiet[t];
+      h += o ? `<td class="co">${o.mon}<small>${hm(o.gio)}</small></td>` : '<td></td>';
+    }
+    h += '</tr>';
+  }
+  h += '<tr><th>buông máy</th>';
+  for(const {b} of cot) h += `<td><b>${hm(b.buong)}</b><small>tan ${hm(b.tan)}</small></td>`;
+  h += '</tr><tr><th>mang vở</th>';
+  for(const {b} of cot) h += `<td>${b.mon.join('<br>')||'<span class="mo">không</span>'}` +
+    (b.theDuc?'<small>+ đồ thể dục</small>':'') + '</td>';
+  $('#tkb').innerHTML = h + '</tr></table>';
+}
+
+/* ---------- mot moc ---------- */
+let kimDangCo = null;
+async function chonMoc(ngay, phut, dai){
+  if(kimDangCo) kimDangCo.remove();
+  kimDangCo = document.createElement('div');
+  kimDangCo.className = 'kim';
+  kimDangCo.style.left = (phut/1440*100)+'%';
+  dai.appendChild(kimDangCo);
+
+  const luc = `${ngay}T${hm(phut)}`;
+  $('#luc').innerHTML = `<h2>Lúc đó máy hiện gì</h2><p class="mo">đang hỏi máy ảo…</p>`;
+  try{
+    const q = new URLSearchParams({luc, dasoan:$('#dasoan').checked?'1':'0',
+                                  chan:$('#chan').checked?'1':'0'});
+    const o = await api('/api/luc?'+q);
+    const mau = o.gap && o.loai==='SAP_DI_HOC' ? 'var(--gap)' : MAU[o.loai];
+    let h = `<h2>Lúc đó máy hiện gì</h2>
+      <p><b>${o.thu} ${ngay.slice(8)}/${ngay.slice(5,7)}, ${hm(phut)}</b></p>`;
+    if(o.loai === 'RANH'){
+      h += `<p style="margin-top:10px">Không nhắc gì — máy mở bình thường.</p>`;
+    }else{
+      h += `<span class="nhan" style="background:${mau}">${o.loai}${o.gap?' · GẤP':''}</span>
+        <h3>${o.tieuDe}</h3><p>${o.chiTiet}</p>`;
+      if(o.phutHetChan >= 0) h += `<p>Mở lại lúc <b>${hm(o.phutHetChan)}</b></p>`;
+      if(o.mon.length) h += `<p style="margin-top:8px">Nhớ mang theo:</p><ul>` +
+        o.mon.map(m=>`<li>${m}</li>`).join('') +
+        (o.theDuc?'<li>đồ thể dục</li>':'') + `</ul>`;
+      else if(o.theDuc) h += `<ul><li>đồ thể dục</li></ul>`;
+    }
+    if(o.keTiep) h += `<p class="mo" style="margin-top:10px">Buổi kế tiếp:
+      ${o.keTiep.moTa}, buông máy ${hm(o.keTiep.buong)}, vào học ${hm(o.keTiep.vao)}</p>`;
+    h += `<button class="chinh" id="nutvan" style="margin-top:12px;width:100%">
+      Vặn máy ảo tới ${hm(phut)} ${ngay.slice(8)}/${ngay.slice(5,7)}</button>
+      <p class="mo" style="font-size:12px">Dịch vụ xét lại mỗi 60 giây.</p>`;
+    $('#luc').innerHTML = h;
+    $('#nutvan').onclick = async e => {
+      e.target.disabled = true; e.target.textContent = 'đang vặn…';
+      try{
+        await api('/api/gio',{method:'POST',body:JSON.stringify({luc})});
+        await api('/api/home',{method:'POST',body:'{}'});
+        e.target.textContent = 'đã vặn — đợi tới 60 giây';
+        trangThai(); chupLai();
+      }catch(err){ e.target.textContent = err.message; }
+    };
+  }catch(e){ $('#luc').innerHTML = `<h2>Lúc đó máy hiện gì</h2>
+    <p class="loi">${e.message}</p>`; }
+}
+
+/* ---------- man hinh may ao ---------- */
+function chupLai(){ $('#anh').src = '/api/anh?t=' + Date.now(); }
+
+/* ---------- nap ---------- */
+async function nap(){
+  if(dangTai) return;
+  dangTai = true;
+  $('#dangchay').textContent = 'đang chạy trên máy ảo…';
+  loi('');
+  try{
+    const q = new URLSearchParams({tu:$('#tu').value, ngay:$('#songay').value,
+      dasoan:$('#dasoan').checked?'1':'0', chan:$('#chan').checked?'1':'0'});
+    const o = await api('/api/lich?'+q);
+    LICH = o.ngay; veDai(); veTkb();
+    $('#dangchay').textContent = '';
+  }catch(e){ loi(e.message); $('#dangchay').textContent = ''; }
+  dangTai = false;
+}
+
+
+/* ================= tab ================= */
+document.querySelectorAll('#tab button').forEach(b => b.onclick = () => {
+  document.querySelectorAll('#tab button').forEach(x => x.classList.toggle('dang', x===b));
+  document.querySelectorAll('section[data-tab]').forEach(x =>
+    x.classList.toggle('dang', x.dataset.tab === b.dataset.tab));
+  $('#khungluc').hidden = b.dataset.tab !== 'lich';
+  if(b.dataset.tab === 'nhatky') napNhatKy();
+  if(b.dataset.tab === 'bo' && !MUCTHU.length) napMucThu();
+});
+
+/* ================= trang thai chung ================= */
+let BANG = {};
+const ms2 = ms => { const g = Math.max(0,Math.round(ms/1000));
+  return `${g/60|0}:${String(g%60).padStart(2,'0')}`; };
+const gioNgay = l => new Date(l).toLocaleString('vi-VN',{hour:'2-digit',minute:'2-digit',
+  day:'2-digit',month:'2-digit'});
+const o = (ten,gt,ghi='') =>
+  `<div><span>${ten}</span><b>${gt}</b>${ghi?`<span>${ghi}</span>`:''}</div>`;
+
+async function napBang(){
+  try{
+    BANG = await api('/api/bang');
+    veCong(); veSoCai(); veChan(); veHan(); veTin();
+  }catch(e){ loi(e.message); }
+}
+
+async function viec(tham){
+  // Ghi xong phai cho app doc lai tu dia, khong thi tien trinh app dang chay ghi
+  // de nguoc lai bang ban cu no giu trong bo nho. Bo dau tich thi nhanh hon nhung
+  // chi dung khi doi nhieu thu lien tiep roi khoi dong lai mot lan o cuoi.
+  tham.moiApp = $('#moiapp').checked;
+  const r = await api('/api/viec',{method:'POST',body:JSON.stringify(tham)});
+  BANG = r.bang; veCong(); veSoCai(); veChan(); veHan(); veTin(); chupLai();
+  return r.xong;
+}
+document.body.addEventListener('click', async ev => {
+  const b = ev.target.closest('[data-viec]');
+  if(!b) return;
+  const cu = b.textContent;
+  b.disabled = true; b.textContent = '…';
+  try{
+    const tham = {viec:b.dataset.viec};
+    if('ma' in b.dataset) tham.ma = b.dataset.ma;
+    if('goi' in b.dataset) tham.goi = b.dataset.goi;
+    if(b.dataset.viec === 'duyet') tham.phut = $('#congphut').value;
+    await viec(tham);
+  }catch(e){ loi(e.message); }
+  b.disabled = false; b.textContent = cu;
+});
+
+/* ================= cong ================= */
+function veCong(){
+  const c = BANG.cong; if(!c) return;
+  $('#congo').innerHTML =
+    o('trạng thái', c.trangThai) +
+    o('phiếu được cấp', c.phutDuocCap + ' phút') +
+    o('còn lại của phiên', c.dangMo ? ms2(c.conLaiMs) : '—') +
+    o('đã duyệt hôm nay', c.phutDaDuyetHomNay + '/' + c.tranMoiNgay + ' phút',
+      'còn ' + c.phutConLaiHomNay) +
+    o('giờ chốt', hm(c.gioChot), 'giờ dậy ' + hm(c.gioDay)) +
+    o('lý do dừng gần nhất', c.lyDoDungGanNhat || '—') +
+    (c.trongGioNgu ? o('giờ ngủ', 'ĐANG TRONG GIỜ NGỦ') : '') +
+    (c.nhanCho ? o('cấp cho', c.nhanCho) : '');
+  $('#congcho').innerHTML = c.baiDangCho.length
+    ? `<h2>${c.baiDangCho.length} bài đang chờ duyệt</h2><ul class="ds">` +
+      c.baiDangCho.map(b=>`<li><span>${b.id}</span>
+        <span class="mo">${gioNgay(b.luc)}</span></li>`).join('') + '</ul>'
+    : '<p class="mo">Không có bài nào đang chờ duyệt.</p>';
+}
+
+function veSoCai(){
+  const c = BANG.socai; if(!c) return;
+  $('#socaio').innerHTML =
+    o('trọn gói hôm nay', c.goiDaCoHomNay ? 'đã tính' : 'chưa') +
+    o('phút làm thêm hôm nay', c.phutLamThemHomNay) +
+    o('tổng đã cộng hôm nay', c.phutDaCongHomNay) +
+    o('đang chờ sửa', c.dangChoSua.length + ' câu');
+  const ds = l => l.length
+    ? '<ul class="ds">' + l.map(x=>`<li><span>${x.ma}
+        <span class="mo">${(x.de||'').slice(0,60)}</span></span>
+        <span>${x.phut} phút</span></li>`).join('') + '</ul>'
+    : '<p class="mo">trống</p>';
+  $('#socaids').innerHTML =
+    `<h2>Câu đang chờ sửa</h2>${ds(c.dangChoSua)}
+     <h2 style="margin-top:14px">Đã nộp gần đây</h2>${ds(c.daNop.slice(-15).reverse())}` +
+    (c.loiNhan ? `<p class="mo" style="margin-top:10px">Lời nhắn: ${c.loiNhan}</p>` : '');
+}
+
+function veChan(){
+  const c = BANG.caidat; if(!c) return;
+  $('#chano').innerHTML =
+    o('màn chắn', c.batManChan ? 'BẬT' : 'TẮT') +
+    o('buổi được mở sớm', c.buoiDuocMoSom || '—') +
+    o('buổi đã soạn cặp', c.buoiDaSoan.length ? c.buoiDaSoan.join(', ') : '—') +
+    o('khoá cài đặt hệ thống', c.khoaCaiDatHeThong ? 'có' : 'không') +
+    o('sai PIN liên tiếp', c.saiPinLienTiep);
+}
+$('#nutmoisom').onclick = async e => {
+  // Lay dung ma buoi ke tiep tu app chu khong tu ghep chuoi o day.
+  const hom = new Date(Date.now()-new Date().getTimezoneOffset()*6e4).toISOString();
+  try{
+    const l = await api('/api/luc?luc='+hom.slice(0,16));
+    if(!l.keTiep) return loi('Không có buổi nào kế tiếp.');
+    await viec({viec:'moisom', ma:l.keTiep.ma});
+  }catch(err){ loi(err.message); }
+};
+
+/* ================= han app ================= */
+function veHan(){
+  const h = BANG.han; if(!h) return;
+  const cac = Object.entries(h.cac);
+  $('#hanbang').innerHTML = cac.length
+    ? '<table><tr><th>app</th><th>hạn</th><th>đã dùng</th><th>hết giờ</th><th></th></tr>' +
+      cac.map(([g,v])=>`<tr><td>${g}</td><td>${v.phut} phút</td>
+        <td>${Math.round(v.daDungMs/60000)} phút</td>
+        <td>${v.hetGio?'<span class="hong">rồi</span>':'chưa'}</td>
+        <td><button data-viec="dunghet" data-goi="${g}">dùng hết</button>
+            <button data-viec="xoahan" data-goi="${g}">xoá đã dùng</button></td></tr>`).join('')
+      + '</table>'
+    : '<p class="mo">Chưa đặt hạn riêng cho app nào.</p>';
+  const cot = (ten,l) => `<h2 style="margin-top:12px">${ten} (${l.length})</h2>` +
+    (l.length ? `<p style="font-size:12px">${l.join('<br>')}</p>` : '<p class="mo">trống</p>');
+  $('#dsapp').innerHTML = cot('Danh sách trắng', h.danhSachTrang) +
+    cot('Danh sách đen', h.danhSachDen) + cot('App AI bị gõ chữ', h.appAi);
+}
+$('#handat').onclick = async e => {
+  e.target.disabled = true;
+  try{ await viec({viec:'dathan', goi:$('#hangoi').value.trim(), phut:$('#hanphut').value}); }
+  catch(err){ loi(err.message); }
+  e.target.disabled = false;
+};
+
+/* ================= tin nhan ================= */
+function veTin(){
+  const t = BANG.tinnhan; if(!t) return;
+  $('#tnds').innerHTML = t.dong.length
+    ? t.dong.map(d=>`<div class="${d.ai==='CON'?'con':'ba'}">${d.chu}</div>`).join('')
+    : '<p class="mo">Chưa có tin nào.</p>';
+  $('#tno').innerHTML = o('chưa đọc', t.chuaDoc) + o('đang chờ ba trả lời',
+    t.dangCho?'có':'không') + o('bị khoá vì', t.khoaVi || '—');
+  $('#cods').innerHTML = t.tinCuaCo.length
+    ? t.tinCuaCo.map(x=>`<li><span>${x.noiDung}</span>
+        <span class="mo">${gioNgay(x.luc)}${x.daDoc?'':' · mới'}</span></li>`).join('')
+    : '<li class="mo">trống</li>';
+  $('#htho').innerHTML = o('id nhóm', t.hopThuNhom || '—') +
+    o('đã cho hôm nay', t.hopThuDaChoHomNay?'rồi':'chưa') +
+    o('nên ngó hộp thư', t.hopThuNenNgo?'có':'không');
+}
+document.querySelectorAll('[data-nhan]').forEach(b => b.onclick = async () => {
+  const chu = $('#tnchu').value.trim(); if(!chu) return;
+  try{ await viec({viec:'nhantin', ai:b.dataset.nhan, chu}); $('#tnchu').value=''; }
+  catch(e){ loi(e.message); }
+});
+$('#conut').onclick = async () => {
+  const chu = $('#cochu').value.trim(); if(!chu) return;
+  try{ await viec({viec:'tincuaco', chu}); $('#cochu').value=''; }catch(e){ loi(e.message); }
+};
+$('#tgnut').onclick = async e => {
+  if(!confirm('Gửi THẬT một lần nộp bài lên Telegram của Ba Huy?\n' +
+              'Ảnh sẽ hiện trong chat. Đồng ý?')) return;
+  e.target.disabled = true; $('#tgket').textContent = 'đang gửi…';
+  try{
+    await api('/api/telegram',{method:'POST',body:JSON.stringify({dando:1,debai:1,baigiai:1})});
+    $('#tgket').textContent = 'đã gửi — xem Telegram';
+  }catch(err){ $('#tgket').textContent = err.message; }
+  e.target.disabled = false;
+};
+
+/* ================= cong gio ================= */
+const DANG = ['CAU_NHO','BAI_RIENG','VIET_DAI','TRAC_NGHIEM','KHONG_TINH'];
+let MUC = [];
+function veMuc(){
+  $('#gbang').innerHTML =
+    '<tr><th>mã</th><th>dạng</th><th>số dòng</th><th>đúng</th><th>đọc rõ</th>' +
+    '<th>trong dặn dò</th><th></th></tr>' +
+    MUC.map((m,i)=>`<tr>
+      <td><input value="${m.ma}" data-i="${i}" data-f="ma" style="width:100px"></td>
+      <td><select data-i="${i}" data-f="dang">${DANG.map(d=>
+        `<option${d===m.dang?' selected':''}>${d}</option>`).join('')}</select></td>
+      <td><input type="number" value="${m.soDong}" data-i="${i}" data-f="soDong"
+          style="width:64px"></td>
+      <td><input type="checkbox" ${m.dung?'checked':''} data-i="${i}" data-f="dung"></td>
+      <td><input type="checkbox" ${m.docRo?'checked':''} data-i="${i}" data-f="docRo"></td>
+      <td><input type="checkbox" ${m.trongDanDo?'checked':''} data-i="${i}"
+          data-f="trongDanDo"></td>
+      <td><button data-xoa="${i}">✕</button></td></tr>`).join('');
+}
+$('#gbang').addEventListener('input', e => {
+  const t = e.target; if(t.dataset.i === undefined) return;
+  const m = MUC[+t.dataset.i], f = t.dataset.f;
+  m[f] = t.type === 'checkbox' ? t.checked : (f === 'soDong' ? +t.value : t.value);
+});
+$('#gbang').addEventListener('click', e => {
+  if(e.target.dataset.xoa !== undefined){ MUC.splice(+e.target.dataset.xoa,1); veMuc(); }
+});
+const mucMoi = (ma,dang,soDong,trongDanDo=false) =>
+  ({ma,dang,soDong,dung:true,docRo:true,trongDanDo});
+$('#gthem').onclick = ()=>{ MUC.push(mucMoi('câu '+(MUC.length+1),'CAU_NHO',4)); veMuc(); };
+$('#gxoa').onclick = ()=>{ MUC=[]; veMuc(); };
+$('#gmau1').onclick = ()=>{
+  MUC = [mucMoi('2.26a','CAU_NHO',4,true), mucMoi('2.26b','CAU_NHO',6,true),
+         mucMoi('2.27','BAI_RIENG',9,true)];
+  $('#ghet').checked = true; $('#ggiao').value = 'bài 2.26, bài 2.27';
+  $('#gngay').value = homNay(); veMuc();
+};
+$('#gmau2').onclick = ()=>{
+  MUC = Array.from({length:20},(_,i)=>mucMoi('TN'+(i+1),'TRAC_NGHIEM',0));
+  $('#ghet').checked = false; $('#ggiao').value = ''; veMuc();
+};
+$('#gmau3').onclick = ()=>{
+  MUC = [mucMoi('đoạn văn','VIET_DAI',21)];
+  $('#ghet').checked = false; $('#ggiao').value = ''; veMuc();
+};
+$('#glaytu').onclick = async ()=>{
+  await napBang();
+  $('#gda').value = BANG.socai.phutLamThemHomNay;
+  $('#ggoi').checked = BANG.socai.goiDaCoHomNay;
+};
+$('#gtinh').onclick = async e => {
+  e.target.disabled = true;
+  $('#gket').innerHTML = '<p class="mo">đang tính trên máy ảo…</p>';
+  try{
+    const b = await api('/api/conggio',{method:'POST',body:JSON.stringify({
+      cham:{mon:'', cac:MUC, ngayDanDo:$('#gngay').value || null,
+            lamHetDanDo:$('#ghet').checked,
+            baiDuocGiao:$('#ggiao').value.split(',').map(x=>x.trim()).filter(Boolean)},
+      bayGio: $('#gluc').value || null,
+      daCongLamThem: +$('#gda').value || 0,
+      goiDaCo: $('#ggoi').checked })});
+    const le = Object.entries(b.phutCua).filter(([,v])=>v>0);
+    $('#gket').innerHTML =
+      `<div class="so-to">${b.phut} phút</div>
+       <p class="mo">tối đa một ngày ${b.toiDaMoiNgay} = trọn gói ${b.tronGoi}
+          + trần làm thêm ${b.tranLamThem}</p>
+       <h2 style="margin-top:14px">Máy giải thích</h2>
+       <ul class="ds">${b.dong.map(d=>`<li>${d}</li>`).join('') ||
+         '<li class="mo">không có dòng nào</li>'}</ul>` +
+      (le.length ? `<h2 style="margin-top:14px">Phút trả cho từng mục</h2>
+        <ul class="ds">${le.map(([k,v])=>`<li><span>${k}</span><span>${v} phút</span></li>`)
+        .join('')}</ul>` : '') +
+      (b.trongGoi.length ? `<p class="mo" style="margin-top:10px">Nằm trong trọn gói
+        nên không cộng lẻ: ${b.trongGoi.join(', ')}</p>` : '') +
+      (b.canBaHuyXem ? '<p class="hong" style="margin-top:10px">Có chỗ máy đọc không rõ — dừng tự duyệt.</p>' : '');
+  }catch(err){ $('#gket').innerHTML = `<p class="loi">${err.message}</p>`; }
+  e.target.disabled = false;
+};
+
+/* ================= tu dong thu ================= */
+let MUCTHU = [];
+
+async function napMucThu(){
+  try{
+    const d = await api('/api/tudong/danhsach');
+    MUCTHU = [...d.man, ...d.test];
+    const nhom = {};
+    for(const m of MUCTHU) (nhom[m.nhom] ??= []).push(m);
+    $('#tdds').innerHTML = Object.entries(nhom).map(([ten,cac])=>`
+      <div class="nhomthu">
+        <label><input type="checkbox" class="cnhom" data-nhom="${ten}"> ${ten}
+          <span class="mo">(${cac.length})</span></label>
+        <ul>${cac.map(m=>`<li><label><input type="checkbox" class="cmuc"
+          value="${m.ma}" data-nhom="${m.nhom}">
+          <span>${m.ten}${m.moTa?`<br><span class="mo">${m.moTa}</span>`:''}</span>
+          </label></li>`).join('')}</ul>
+      </div>`).join('');
+    demChon();
+  }catch(e){ $('#tdds').innerHTML = `<p class="loi">${e.message}</p>`; }
+}
+
+const mucDaChon = () => [...document.querySelectorAll('.cmuc:checked')].map(i=>i.value);
+function demChon(){
+  const n = mucDaChon().length;
+  $('#dadem').textContent = n ? `đã chọn ${n}/${MUCTHU.length} mục` : 'chưa chọn mục nào';
+  $('#tdchay').disabled = !n;
+  // Nhom nao tich het thi o vuong cua nhom sang theo, khoi phai doan.
+  document.querySelectorAll('.cnhom').forEach(c=>{
+    const trong = [...document.querySelectorAll(`.cmuc[data-nhom="${c.dataset.nhom}"]`)];
+    c.checked = trong.every(x=>x.checked);
+    c.indeterminate = !c.checked && trong.some(x=>x.checked);
+  });
+  const het = [...document.querySelectorAll('.cmuc')];
+  $('#tatca').checked = het.length && het.every(x=>x.checked);
+  $('#tatca').indeterminate = !$('#tatca').checked && het.some(x=>x.checked);
+}
+$('#tdds').addEventListener('change', e => {
+  if(e.target.classList.contains('cnhom')){
+    document.querySelectorAll(`.cmuc[data-nhom="${e.target.dataset.nhom}"]`)
+      .forEach(x=>x.checked = e.target.checked);
+  }
+  demChon();
+});
+$('#tatca').onchange = e => {
+  document.querySelectorAll('.cmuc').forEach(x=>x.checked = e.target.checked);
+  demChon();
+};
+
+const HUY = d => `<span class="huy ${d?'y':'n'}">${d?'✓':'✕'}</span>`;
+
+function veKetThu(d){
+  $('#tdkhung').hidden = false;
+  const dat = d.ket.filter(k=>k.dat).length;
+  $('#tdtom').innerHTML = d.ket.length
+    ? `<span class="${dat===d.ket.length?'dat':'hong'}">${dat}/${d.ket.length} đạt</span>`
+    : '';
+  $('#tdthumuc').textContent = d.thuMuc ? 'Ảnh lưu ở: ' + d.thuMuc : '';
+  $('#tdket').innerHTML = `<div class="luoithu">` + d.ket.map(k=>`
+    <div class="the-thu">
+      <header>${HUY(k.dat)}<b style="font-size:13px">${k.ten}</b>
+        <span class="mo" style="margin-left:auto;font-size:11px">${k.giay}s</span></header>
+      ${k.coAnh ? `<img src="/api/tudong/anh?ma=${encodeURIComponent(k.ma)}&t=${Date.now()}"
+         alt="${k.ten}" data-to="1">` : ''}
+      <ul>${k.ghi.map(g=>`<li>${g}</li>`).join('')}</ul>
+    </div>`).join('') + '</div>';
+}
+
+$('#tdket').addEventListener('click', e => {
+  if(e.target.dataset.to){ $('#den').hidden = false; $('#den img').src = e.target.src; }
+});
+$('#den').onclick = () => $('#den').hidden = true;
+
+let dongHoThu = null;
+async function theoDoiThu(){
+  try{
+    const d = await api('/api/tudong/tien');
+    $('#tdthanh').hidden = !d.dangChay;
+    $('#tdthanh').firstElementChild.style.width =
+      (d.tong ? d.xong/d.tong*100 : 0) + '%';
+    $('#tdtien').innerHTML = d.dangChay
+      ? `<span class="mo">${d.xong}/${d.tong} — đang thử: ${d.hienTai}</span>`
+      : (d.ket.length ? '' : '');
+    if(d.ket.length) veKetThu(d);
+    if(!d.dangChay){
+      clearInterval(dongHoThu); dongHoThu = null;
+      $('#tdchay').disabled = !mucDaChon().length;
+      $('#tdchay').textContent = 'Bắt đầu thử';
+      $('#tddung').hidden = true;
+      trangThai(); chupLai();
+    }
+  }catch(e){ $('#tdtien').innerHTML = `<span class="hong">${e.message}</span>`; }
+}
+
+$('#tdchay').onclick = async e => {
+  const chon = mucDaChon();
+  if(!chon.length) return;
+  if(chon.includes('test:GateStoreTest') &&
+     !confirm('GateStoreTest xoá sạch cấu hình trên máy ảo. Chạy tiếp?')) return;
+  e.target.disabled = true; e.target.textContent = 'đang thử…';
+  $('#tddung').hidden = false;
+  try{
+    await api('/api/tudong/chay',{method:'POST',body:JSON.stringify({ma:chon})});
+    if(!dongHoThu) dongHoThu = setInterval(theoDoiThu, 1500);
+    theoDoiThu();
+  }catch(err){
+    $('#tdtien').innerHTML = `<span class="hong">${err.message}</span>`;
+    e.target.disabled = false; e.target.textContent = 'Bắt đầu thử';
+    $('#tddung').hidden = true;
+  }
+};
+$('#tddung').onclick = async () => {
+  await api('/api/tudong/dung',{method:'POST',body:'{}'});
+  $('#tddung').textContent = 'đang dừng…';
+};
+
+/* ================= nhat ky ================= */
+async function napNhatKy(){
+  try{
+    const r = await api('/api/nhatky');
+    $('#nktho').textContent = r.tho || '(trống)';
+    $('#nktho').scrollTop = $('#nktho').scrollHeight;
+    await napBang();
+    $('#nkngay').textContent = BANG.caidat?.nhatKyNgay || '(trống)';
+    $('#nkai').textContent = BANG.ai?.nhatKyHomNay || '(trống)';
+  }catch(e){ $('#nktho').textContent = e.message; }
+}
+$('#nklam').onclick = napNhatKy;
+setInterval(()=>{ if($('#nktu').checked) napNhatKy(); }, 5000);
+
+function homNay(){
+  return new Date(Date.now()-new Date().getTimezoneOffset()*6e4).toISOString().slice(0,10);
+}
+
+$('#moiapp').onchange = e => $('#canhmoi').hidden = e.target.checked;
+$('#ve').onclick = nap;
+$('#nuthome').onclick = async()=>{ await api('/api/home',{method:'POST',body:'{}'}); chupLai(); };
+$('#nutmo').onclick = async()=>{ await api('/api/moapp',{method:'POST',body:'{}'}); chupLai(); };
+$('#tu').value = new Date(Date.now()-new Date().getTimezoneOffset()*6e4)
+  .toISOString().slice(0,10);
+
+trangThai(); nap(); chupLai(); napBang(); veMuc(); theoDoiThu();
+setInterval(()=>{ if(!dungTuDoi) trangThai(); }, 10000);
+setInterval(()=>{ if($('#tuchup').checked) chupLai(); }, 4000);
+</script>
+</body>
+</html>

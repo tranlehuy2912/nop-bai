@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Man con khai dang lam bai nao, truoc khi mo camera.
+
+  Bon buoc dung chung mot khung: mon -> sach -> bai -> cac cau. Mot khung chu khong
+  phai bon man hinh vi ba buoc dau chi la mot danh sach de bam, va vi quay lai giua
+  cac buoc phai nhanh - con chon nham mon thi bam mot cai la ve, khong phai dong
+  man hinh roi mo lai tu dau.
+-->
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/goc"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_max="@dimen/st_be_rong_toi_da">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/nut_quay_lai"
+            style="@style/Widget.Material3.Button.IconButton"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:contentDescription="Quay lại"
+            app:icon="@drawable/st_ic_quay_lai"
+            app:iconSize="22dp"
+            app:iconTint="@color/ink_soft" />
+
+        <TextView
+            android:id="@+id/tieu_de"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:paddingHorizontal="@dimen/st_le_ngang"
+            android:textColor="@color/ink"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/phu_de"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:paddingHorizontal="@dimen/st_le_ngang"
+            android:textColor="@color/ink_soft"
+            android:textSize="15sp" />
+
+        <ScrollView
+            android:id="@+id/khung_cuon"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:fillViewport="true"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:id="@+id/danh_sach"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingHorizontal="@dimen/st_le_ngang"
+                android:paddingTop="12dp"
+                android:paddingBottom="20dp" />
+        </ScrollView>
+
+        <LinearLayout
+            android:id="@+id/day_nut"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="@dimen/st_le_ngang"
+            android:paddingTop="10dp"
+            android:paddingBottom="22dp"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/dem_tich"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:gravity="center"
+                android:textColor="@color/ink_soft"
+                android:textSize="14sp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/nut_chup"
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:enabled="false"
+                android:textSize="18sp"
+                app:cornerRadius="20dp" />
+        </LinearLayout>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

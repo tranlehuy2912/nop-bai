@@ -1,0 +1,464 @@
+package vn.huytl.homeworkgate.ui
+
+import android.Manifest
+import android.content.pm.PackageManager
+import android.graphics.BitmapFactory
+import android.os.Bundle
+import android.view.View
+import android.widget.ImageView
+import android.widget.LinearLayout
+import android.widget.Toast
+import androidx.activity.OnBackPressedCallback
+import androidx.activity.result.contract.ActivityResultContracts
+import androidx.appcompat.app.AppCompatActivity
+import androidx.camera.core.CameraSelector
+import androidx.camera.core.ImageCapture
+import androidx.camera.core.ImageCaptureException
+import androidx.camera.core.Preview
+import androidx.camera.lifecycle.ProcessCameraProvider
+import androidx.core.content.ContextCompat
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.updatePadding
+import androidx.lifecycle.lifecycleScope
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
+import vn.huytl.homeworkgate.R
+import vn.huytl.homeworkgate.data.CaptureStage
+import vn.huytl.homeworkgate.data.DayLog
+import vn.huytl.homeworkgate.data.Prefs
+import vn.huytl.homeworkgate.databinding.ActivityCaptureBinding
+import vn.huytl.homeworkgate.telegram.CapSachSender
+import vn.huytl.homeworkgate.kho.PhamVi
+import vn.huytl.homeworkgate.telegram.HomeworkSender
+import java.io.File
+
+/**
+ * Chup bai tap theo ba buoc roi gui len Telegram.
+ *
+ * Ba buoc vi mot xap anh tron lan khong cho ba biet dau la de bai dau la bai lam.
+ * Chi bai giai la bat buoc: nhieu hom de in san co san o ghi bai ngay duoi, chup
+ * mot tam la co ca hai, bat chup du ba nhom chi lam con chup thua.
+ *
+ * Dung CameraX chu khong goi Intent sang app Camera cua may, vi qua Intent thi
+ * nhieu app camera cho chon anh co san trong thu vien, va con se gui lai anh vo
+ * chup tu tuan truoc.
+ */
+class CaptureActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityCaptureBinding
+    private lateinit var prefs: Prefs
+
+    private var imageCapture: ImageCapture? = null
+
+    /**
+     * Con dang chup lai phan da sua, khong phai nop bai moi.
+     *
+     * Luc do bo qua hai buoc dau (vo dan do, de bai): bai cu da co trong so cai roi,
+     * cai can bay gio chi la may dong con vua lam lai.
+     */
+    private val suaBai by lazy { intent.getBooleanExtra(EXTRA_SUA, false) }
+
+    /**
+     * Che do chup cap sach da soan, khong phai nop bai.
+     *
+     * Dung chung man hinh nay vi phan camera - xin quyen, mo CameraX, dai anh nho,
+     * bam mot tam de bo tam do - la y het nhau, va vi mot man chup thu hai co
+     * nghia la sua mot cho thi phai nho sua ca cho kia. Khac nhau o hai dau: tren
+     * man khong co ba buoc, va duoi day gui bang [CapSachSender] chu khong di vao
+     * duong duyet gio choi.
+     */
+    private val maBuoiSoan: String? by lazy { intent.getStringExtra(EXTRA_SOAN_MA_BUOI) }
+    private val soanTap: Boolean get() = maBuoiSoan != null
+
+    /**
+     * Bai con da khai o man truoc: mon nao, sach nao, nhung cau nao.
+     *
+     * Null la vao thang man chup ma khong qua man khai bai - van chay duoc, chi la
+     * luc cham may phai tu tach cau nhu truoc. Giu duong do de mot cho hong ben kia
+     * khong chan mat duong nop bai.
+     */
+    private val pham: PhamVi? by lazy { PhamVi.tuJson(intent.getStringExtra(EXTRA_PHAM)) }
+
+    private var stage = CaptureStage.DAN_DO
+    private val shots = CaptureStage.entries.associateWith { mutableListOf<File>() }
+
+    private val requestCamera = registerForActivityResult(
+        ActivityResultContracts.RequestPermission()
+    ) { granted ->
+        if (granted) {
+            startCamera()
+        } else {
+            toast("Không có quyền camera thì không chụp được")
+            finish()
+        }
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        binding = ActivityCaptureBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        prefs = Prefs.get(this)
+
+        ViewCompat.setOnApplyWindowInsetsListener(binding.root) { view, insets ->
+            val bars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+            view.updatePadding(top = bars.top, bottom = bars.bottom)
+            insets
+        }
+
+        binding.btnTake.setOnClickListener { takePhoto() }
+        binding.btnSkip.setOnClickListener { goNext() }
+        binding.btnNext.setOnClickListener { goNext() }
+        // Ca hai che do rut gon deu chi co mot xap anh, nen dung luon o cuoi cung
+        // de goNext() la gui thang.
+        if (suaBai || soanTap) jumpTo(CaptureStage.BAI_GIAI)
+
+        binding.stepNotes.setOnClickListener { jumpTo(CaptureStage.DAN_DO) }
+        binding.stepProblem.setOnClickListener { jumpTo(CaptureStage.DE_BAI) }
+        binding.stepSolution.setOnClickListener { jumpTo(CaptureStage.BAI_GIAI) }
+
+        binding.btnBack.setOnClickListener { lui() }
+
+        // Cu chi vuot Back di chung mot duong voi nut tren man hinh, de hai cach
+        // ra khoi man nay khong hanh xu khac nhau.
+        onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() = lui()
+        })
+
+        render()
+
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA)
+            == PackageManager.PERMISSION_GRANTED
+        ) {
+            startCamera()
+        } else {
+            requestCamera.launch(Manifest.permission.CAMERA)
+        }
+    }
+
+    override fun onDestroy() {
+        // Don anh chua gui, khong de rac lai trong bo nho may. Gui xong thi danh
+        // sach da rong nen cho nay khong dung toi. Khong loc theo isFinishing:
+        // thoat ra la luc can xoa nhat, ma do lai chinh la luc isFinishing bang
+        // true, nen loc kieu do thanh ra giu lai dung nhung tam can bo.
+        shots.values.flatten().forEach { it.delete() }
+        super.onDestroy()
+    }
+
+    /**
+     * Duong ra: dang o buoc sau thi lui mot buoc, dang o buoc dau thi thoat han.
+     * Thoat ma da chup roi thi hoi lai mot cau, vi bam nham nut thoat luc da chup
+     * xong tam thu chin la mat ca chin tam.
+     */
+    private fun lui() {
+        // Hai che do rut gon vao thang buoc cuoi, nen "quay lai" phai la thoat han.
+        // Lui mot buoc se roi vao buoc chup de bai - thu ma lan nay khong can chup.
+        val previous = if (suaBai || soanTap) {
+            null
+        } else {
+            CaptureStage.entries.getOrNull(stage.ordinal - 1)
+        }
+        if (previous != null) {
+            jumpTo(previous)
+            return
+        }
+        if (shots.values.sumOf { it.size } == 0) {
+            finish()
+            return
+        }
+        MaterialAlertDialogBuilder(this)
+            .setTitle("Thoát và bỏ ảnh đã chụp?")
+            .setMessage("Ảnh chưa gửi cho Ba Huy sẽ mất, Lê Hòa phải chụp lại từ đầu.")
+            .setPositiveButton("Thoát") { _, _ -> finish() }
+            .setNegativeButton("Chụp tiếp", null)
+            .show()
+    }
+
+    private fun startCamera() {
+        val future = ProcessCameraProvider.getInstance(this)
+        future.addListener({
+            val provider = runCatching { future.get() }.getOrNull() ?: return@addListener
+            val preview = Preview.Builder().build().also {
+                it.surfaceProvider = binding.preview.surfaceProvider
+            }
+            val capture = ImageCapture.Builder()
+                .setCaptureMode(ImageCapture.CAPTURE_MODE_MINIMIZE_LATENCY)
+                .build()
+            imageCapture = capture
+
+            runCatching {
+                provider.unbindAll()
+                provider.bindToLifecycle(
+                    this,
+                    CameraSelector.DEFAULT_BACK_CAMERA,
+                    preview,
+                    capture
+                )
+            }.onFailure { toast("Không mở được camera") }
+        }, ContextCompat.getMainExecutor(this))
+    }
+
+    private fun current(): MutableList<File> = shots.getValue(stage)
+
+    private fun jumpTo(target: CaptureStage) {
+        stage = target
+        render()
+    }
+
+    private fun goNext() {
+        if (stage == CaptureStage.BAI_GIAI) {
+            if (current().isEmpty()) {
+                toast(
+                    if (soanTap) {
+                        getString(R.string.capture_need_cap)
+                    } else {
+                        getString(R.string.capture_need_solution)
+                    }
+                )
+                return
+            }
+            sendAll()
+            return
+        }
+        jumpTo(CaptureStage.entries[stage.ordinal + 1])
+    }
+
+    private fun takePhoto() {
+        if (current().size >= MAX_PER_STAGE) {
+            toast(getString(R.string.capture_full))
+            return
+        }
+        val capture = imageCapture ?: return
+        val file = File(cacheDir, "shot_${stage.name}_${System.currentTimeMillis()}.jpg")
+        val options = ImageCapture.OutputFileOptions.Builder(file).build()
+
+        binding.btnTake.isEnabled = false
+
+        // Neu camera treo thi takePicture khong goi lai ham nao ca, khong ca
+        // onError. Luc do nut chup tat han va con ngoi bam mai khong hieu tai sao.
+        // Thay vi tin la callback luon ve, tu mo khoa lai nut sau mot khoang.
+        val moKhoaLai = Runnable {
+            if (!binding.btnTake.isEnabled) {
+                binding.btnTake.isEnabled = true
+                toast("Camera không phản hồi, bấm chụp lại nhé")
+            }
+        }
+        binding.btnTake.postDelayed(moKhoaLai, CAPTURE_TIMEOUT_MS)
+
+        capture.takePicture(
+            options,
+            ContextCompat.getMainExecutor(this),
+            object : ImageCapture.OnImageSavedCallback {
+                override fun onImageSaved(output: ImageCapture.OutputFileResults) {
+                    binding.btnTake.removeCallbacks(moKhoaLai)
+                    binding.btnTake.isEnabled = true
+                    current().add(file)
+                    render()
+                }
+
+                override fun onError(exception: ImageCaptureException) {
+                    binding.btnTake.removeCallbacks(moKhoaLai)
+                    binding.btnTake.isEnabled = true
+                    toast("Chụp lỗi, thử lại nhé")
+                }
+            }
+        )
+    }
+
+    private fun render() {
+        renderSteps()
+        renderStrip()
+
+        // Nhac lai bai da khai ngay tren man chup. Khai o man truoc roi chup nham
+        // trang khac la canh de xay ra nhat, va mot dong chu o day chan duoc no.
+        val daKhai = pham?.takeIf { it.theoSach }?.let { "${it.bai} · ${it.cauIds.size} câu" }
+        binding.txtStageHint.text = when {
+            soanTap -> getString(R.string.capture_cap_hint)
+            suaBai -> "Chụp lại phần Lê Hòa vừa sửa."
+            daKhai != null -> "$daKhai\n${getString(stage.hintRes)}"
+            else -> getString(stage.hintRes)
+        }
+
+        binding.btnBack.text =
+            if (suaBai || soanTap || stage.ordinal == 0) "✕  Thoát" else "‹  Quay lại"
+        // Hai che do rut gon khong co ba buoc nao ca, chi co mot viec.
+        val coBaBuoc = !suaBai && !soanTap
+        binding.stepNotes.visibility = if (coBaBuoc) View.VISIBLE else View.GONE
+        binding.stepProblem.visibility = if (coBaBuoc) View.VISIBLE else View.GONE
+        // O buoc cuoi van hien khi sua bai, vi luc do no la nhan cho biet dang chup
+        // cai gi. Chup cap thi khong co nhan nao dung ca, an luon.
+        binding.stepSolution.visibility = if (soanTap) View.GONE else View.VISIBLE
+        val tong = shots.values.sumOf { it.size }
+        binding.txtTotal.text = when {
+            tong == 0 -> ""
+            soanTap -> "Đã chụp $tong tấm"
+            else -> "Đã chụp $tong trang"
+        }
+
+        val count = current().size
+        // Buoc khong bat buoc va chua chup gi: cho han mot nut "khong co" de con
+        // khong phai doan xem bo qua bang cach nao.
+        binding.btnSkip.visibility =
+            if (!stage.required && count == 0) View.VISIBLE else View.INVISIBLE
+
+        binding.btnNext.text = when {
+            stage == CaptureStage.BAI_GIAI -> getString(R.string.capture_send)
+            else -> getString(R.string.capture_next)
+        }
+        binding.btnNext.isEnabled = stage != CaptureStage.BAI_GIAI || count > 0
+
+        binding.txtCount.text = when {
+            count == 0 -> ""
+            count >= MAX_PER_STAGE -> getString(R.string.capture_full)
+            soanTap -> "$count tấm. ${getString(R.string.capture_remove_hint)}"
+            else -> "$count trang. ${getString(R.string.capture_remove_hint)}"
+        }
+    }
+
+    /** To mau ba o buoc: dang lam thi xanh duong, chup roi thi xanh la. */
+    private fun renderSteps() {
+        val views = mapOf(
+            CaptureStage.DAN_DO to binding.stepNotes,
+            CaptureStage.DE_BAI to binding.stepProblem,
+            CaptureStage.BAI_GIAI to binding.stepSolution
+        )
+        views.forEach { (item, view) ->
+            val count = shots.getValue(item).size
+            view.background = ContextCompat.getDrawable(
+                this,
+                when {
+                    item == stage -> R.drawable.bg_step_on
+                    count > 0 -> R.drawable.bg_step_done
+                    else -> R.drawable.bg_step_off
+                }
+            )
+            view.text = if (count > 0) {
+                "${getString(item.labelRes)}  $count"
+            } else {
+                getString(item.labelRes)
+            }
+        }
+    }
+
+    /** Ve lai dai anh nho cua rieng buoc dang lam. Bam mot tam la bo tam do. */
+    private fun renderStrip() {
+        binding.strip.removeAllViews()
+        val size = resources.displayMetrics.density.times(76).toInt()
+        val files = current()
+
+        files.forEachIndexed { index, file ->
+            val thumb = ImageView(this).apply {
+                layoutParams = LinearLayout.LayoutParams(size, size).apply {
+                    marginEnd = (size * 0.14f).toInt()
+                }
+                scaleType = ImageView.ScaleType.CENTER_CROP
+                contentDescription = "Trang ${index + 1}"
+                setImageBitmap(decodeThumb(file, size))
+                setOnClickListener {
+                    files.removeAt(index).delete()
+                    render()
+                    toast("Đã bỏ trang ${index + 1}")
+                }
+            }
+            binding.strip.addView(thumb)
+        }
+        binding.stripScroll.visibility = if (files.isEmpty()) View.GONE else View.VISIBLE
+    }
+
+    /** Giai ma anh nho thoi, khong nap ca tam vai megabyte vao bo nho. */
+    private fun decodeThumb(file: File, target: Int) = runCatching {
+        val bounds = BitmapFactory.Options().apply { inJustDecodeBounds = true }
+        BitmapFactory.decodeFile(file.absolutePath, bounds)
+        var sample = 1
+        while (bounds.outWidth / (sample * 2) >= target) sample *= 2
+        BitmapFactory.decodeFile(
+            file.absolutePath,
+            BitmapFactory.Options().apply { inSampleSize = sample }
+        )
+    }.getOrNull()
+
+    private fun sendAll() {
+        val groups = shots.filterValues { it.isNotEmpty() }.mapValues { it.value.toList() }
+        if (groups[CaptureStage.BAI_GIAI].isNullOrEmpty()) return
+
+        if (soanTap) {
+            guiCapSach(groups.getValue(CaptureStage.BAI_GIAI))
+            return
+        }
+
+        // Khong gui thang nua: dua sang man soat de con xem may doc ra chu gi da.
+        // Xem [SoatBaiActivity] de biet vi sao chen mot buoc vao giua.
+        //
+        // Xoa danh sach o day de onDestroy khong xoa file: tu luc nay man soat so
+        // huu may tam anh, va no se don khi con bo ngang.
+        shots.values.forEach { it.clear() }
+        startActivity(SoatBaiActivity.moTu(this, groups, pham))
+        finish()
+    }
+
+    /**
+     * Gui anh cap sach. Khong dung [HomeworkSender], khong ghi bai cho duyet,
+     * khong goi AI cham: day khong phai mot lan nop bai.
+     *
+     * Danh dau da soan chi sau khi gui duoc that. Danh dau truoc thi mat mang mot
+     * cai la loi nhac tat di ma Ba Huy chua thay tam anh nao.
+     */
+    private fun guiCapSach(anh: List<File>) {
+        val ma = maBuoiSoan ?: return
+        val moTa = intent.getStringExtra(EXTRA_SOAN_MO_TA).orEmpty()
+        val mon = intent.getStringArrayExtra(EXTRA_SOAN_MON)?.toList().orEmpty()
+
+        setBusy(true)
+        lifecycleScope.launch {
+            val ketQua = withContext(Dispatchers.IO) {
+                runCatching { CapSachSender.send(this@CaptureActivity, anh, moTa, mon) }
+            }
+            setBusy(false)
+            ketQua.onSuccess {
+                prefs.danhDauDaSoan(ma)
+                DayLog.add(this@CaptureActivity, "Soạn cặp cho $moTa")
+                anh.forEach { it.delete() }
+                shots.values.forEach { it.clear() }
+                toast("Đã gửi cho ${getString(R.string.parent_name)}")
+                finish()
+            }.onFailure {
+                toast("Gửi không được. Kiểm tra mạng rồi thử lại.")
+            }
+        }
+    }
+
+    private fun setBusy(busy: Boolean) {
+        binding.progress.visibility = if (busy) View.VISIBLE else View.GONE
+        binding.btnNext.isEnabled = !busy
+        binding.btnTake.isEnabled = !busy
+        binding.btnSkip.isEnabled = !busy
+    }
+
+    private fun toast(text: String) =
+        Toast.makeText(this, text, Toast.LENGTH_SHORT).show()
+
+    companion object {
+        /** Bat che do chup lai phan da sua. */
+        const val EXTRA_SUA = "sua_bai"
+
+        /** Bai con vua khai o [ChonBaiActivity], dang JSON cua [PhamVi]. */
+        const val EXTRA_PHAM = "pham_vi"
+
+        /**
+         * Ma buoi hoc dang soan. Co ma nay la bat che do chup cap sach; khong co
+         * thi man hinh chay duong nop bai nhu cu.
+         */
+        const val EXTRA_SOAN_MA_BUOI = "soan_ma_buoi"
+        const val EXTRA_SOAN_MO_TA = "soan_mo_ta"
+        const val EXTRA_SOAN_MON = "soan_mon_da_tich"
+
+        /** Album cua Telegram chua toi da 10 anh, nen moi nhom toi da 10 trang. */
+        const val MAX_PER_STAGE = 10
+
+        /** Cho camera bao nhieu lau truoc khi coi nhu no treo. */
+        const val CAPTURE_TIMEOUT_MS = 8_000L
+    }
+}

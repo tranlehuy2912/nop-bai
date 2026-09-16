@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- canRetrieveWindowContent va flagRetrieveInteractiveWindows la de doc duoc
+     DANH SACH cua so dang hien, khong phai de doc chu trong do.
+
+     Thieu hai co nay thi getWindows() tra ve rong, app chi biet duoc goi cua su
+     kien cuoi cung. Chia doi man hinh la hai app cung hien, va dua tre chi can de
+     mot app duoc phep o mot ben, YouTube o ben kia, la thoat sach.
+
+     typeViewTextChanged la de ghi lai cau con go vao may app AI (danh sach trong
+     Defaults.AI_PACKAGES). Su kien nay bao ve moi app, nhung code chi giu lai chu
+     cua dung may app do va bo het phan con lai - xem GuardAccessibilityService.batChuAi. -->
+<accessibility-service xmlns:android="http://schemas.android.com/apk/res/android"
+    android:accessibilityEventTypes="typeWindowStateChanged|typeWindowsChanged|typeViewTextChanged"
+    android:accessibilityFeedbackType="feedbackGeneric"
+    android:accessibilityFlags="flagDefault|flagRetrieveInteractiveWindows"
+    android:canPerformGestures="false"
+    android:canRetrieveWindowContent="true"
+    android:description="@string/accessibility_description"
+    android:notificationTimeout="100" />

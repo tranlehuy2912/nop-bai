@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Mot dong bai lam may doc duoc. Con sua thang tren day. -->
+<EditText xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="4dp"
+    android:background="@drawable/st_nen_the"
+    android:inputType="textNoSuggestions|textVisiblePassword"
+    android:minHeight="48dp"
+    android:paddingHorizontal="12dp"
+    android:paddingVertical="10dp"
+    android:textColor="@color/ink"
+    android:textSize="17sp"
+    tools:ignore="Autofill,LabelFor"
+    xmlns:tools="http://schemas.android.com/tools" />

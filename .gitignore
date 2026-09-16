@@ -1,0 +1,11 @@
+local.properties
+.gradle/
+build/
+*.apk
+*.keystore
+*.jks
+.idea/
+keystore.properties
+tools/bot.env
+google-services.json
+.DS_Store

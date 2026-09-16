@@ -1,0 +1,29 @@
+# Chep file nay thanh local.properties roi dien vao. File local.properties da nam
+# trong .gitignore nen khong bao gio len git.
+#
+# Dong sdk.dir do Android Studio tu ghi khi mo du an lan dau, khong phai dien tay.
+# Ba dong duoi thi phai dien - de trong cung build duoc, chi la app chay len se
+# hoi o man hinh Cai dat.
+
+# BOT_THAT: token con bot that, ban release (tablet cua Le Hoa) dung.
+#           Mo Telegram, chat voi @BotFather, go /newbot, no tra ve mot chuoi
+#           dang 8123456789:AAH...
+BOT_THAT=
+
+# BOT_MAY_AO: token cua mot con bot RIENG cho ban go loi. Dung dat token that vao
+#             day: Telegram chi cho mot may nghe mot bot, may ao nghe chung voi
+#             tablet la hai ben giat tin cua nhau, lenh roi vao may nao khong
+#             doan truoc duoc.
+BOT_MAY_AO=
+
+# AI_KEYS: key goi Gemini de cham bai, lay o https://aistudio.google.com/apikey
+#          Nhieu key thi ngan cach bang dau phay, khong co khoang trang:
+#          AI_KEYS=AIzaSy...mot,AIzaSy...hai
+#          Nhieu key de mot key het han muc thi con key khac ganh.
+AI_KEYS=
+
+# PIN: ma PIN gieo san cho may vua cai xong, chi toan so, it nhat 4 so.
+#      De trong thi may khong co PIN nao ca - lan dau bam o khoa goc tren phai
+#      se vao thang man Cai dat de dat tay. An toan hon, vi luc do khong con ma
+#      PIN nao nam trong file APK de ai do doc ra.
+PIN=

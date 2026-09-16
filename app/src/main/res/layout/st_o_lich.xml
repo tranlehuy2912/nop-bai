@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Mot o trong luoi thoi khoa bieu.
+     Chieu cao co dinh chu khong wrap_content: co dinh thi cac cot moi thang hang
+     voi nhau, va mat quet ngang mot hang khong bi lech. -->
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/st_cao_o_lich"
+    android:gravity="center_vertical"
+    android:lineSpacingExtra="1dp"
+    android:maxLines="3"
+    android:paddingHorizontal="10dp"
+    android:textColor="@color/ink"
+    android:textSize="13sp" />

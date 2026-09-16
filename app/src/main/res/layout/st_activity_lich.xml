@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Luoi thoi khoa bieu: cot la thu, hang la tiet, ca tuan gon mot trang.
+     Khong gioi han be rong nhu cac man khac cua app: o day cang rong cang de doc,
+     vi moi o phai chua duoc mot ten mon dai nhu "Trai nghiem huong nghiep". -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/goc"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingHorizontal="@dimen/st_le_ngang">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingTop="12dp"
+        android:paddingBottom="14dp">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/nut_quay_lai"
+            style="@style/Widget.Material3.Button.IconButton"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="-12dp"
+            android:layout_marginEnd="4dp"
+            android:contentDescription="Quay lại"
+            app:icon="@drawable/st_ic_quay_lai"
+            app:iconSize="22dp"
+            app:iconTint="@color/ink_soft" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/soan_lich"
+                android:textColor="@color/ink"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/phu_de_lich"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="2dp"
+                android:textColor="@color/ink_soft"
+                android:textSize="14sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/st_nen_the"
+            android:orientation="horizontal"
+            android:paddingVertical="12dp"
+            android:paddingEnd="8dp">
+
+            <!-- Cot le trai: so tiet va gio. Gio moi tiet giong nhau o moi ngay nen
+                 chi ghi mot lan o day, khoi lap lai trong tung o. -->
+            <LinearLayout
+                android:id="@+id/cot_le"
+                android:layout_width="96dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
+
+            <LinearLayout
+                android:id="@+id/luoi"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

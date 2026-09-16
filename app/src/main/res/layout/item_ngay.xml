@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Mot o chon ngay tren hang bay ngay. Vien mong, ngay dang xem thi to mau dac.
+
+     Khong dung MaterialButtonToggleGroup: no ep bay nut dinh lien nhau thanh mot
+     khoi, ma bay o dinh nhau thi khong con doc ra tung ngay. -->
+<com.google.android.material.button.MaterialButton
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/Widget.Material3.Button.OutlinedButton"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="8dp"
+    android:insetTop="0dp"
+    android:insetBottom="0dp"
+    android:minWidth="0dp"
+    android:paddingHorizontal="16dp"
+    android:textSize="14sp"
+    app:cornerRadius="100dp"
+    app:strokeColor="@color/line" />

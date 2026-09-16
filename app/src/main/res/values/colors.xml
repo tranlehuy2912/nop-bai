@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Hai mau chinh: xanh la cho luc duoc choi, cam dat cho luc dang khoa.
+         Tranh mau do vi man hinh khoa hien ca buoi toi, do nhin lau thay gat. -->
+    <color name="brand">#2F6FED</color>
+    <color name="brand_dark">#1B4FC0</color>
+    <color name="brand_soft">#E8F0FE</color>
+
+    <color name="ok">#1E8E3E</color>
+    <color name="ok_soft">#E6F4EA</color>
+
+    <color name="wait">#E8A22B</color>
+    <color name="wait_soft">#FEF5E5</color>
+
+    <color name="locked">#8A6A52</color>
+    <color name="locked_soft">#F5EDE7</color>
+
+    <!-- Do chi danh cho bang canh bao cua Ba Huy, khong dung o man cua Le Hoa:
+         cai bang do phai doi mau khi may dang ho, khong thi nhin mai thanh quen. -->
+    <color name="alert">#C0392B</color>
+    <color name="alert_soft">#FCEBE9</color>
+
+    <color name="ink">#1A1C20</color>
+    <color name="ink_soft">#5F6472</color>
+    <color name="surface">#FFFFFF</color>
+    <color name="canvas">#F4F6FA</color>
+    <color name="line">#E1E5EC</color>
+
+    <!-- Mau cho hai nguoi dung, de phan biet ngay tu xa. -->
+    <color name="parent_tint">#5B4BC4</color>
+    <color name="parent_soft">#EDEAFB</color>
+    <color name="child_tint">#0F8A8A</color>
+    <color name="child_soft">#E3F5F5</color>
+
+    <!-- Phan soan tap vo. Man hinh trong app dung chung bang mau o tren; rieng hai
+         lop phu thi giu bang mau nay, vi chung nam de len app khac chu khong nam
+         trong app. Nen dam de khong lan voi giao dien ben duoi, va de liec mot cai
+         la biet day la app minh chu khong phai thong bao cua game.
+
+         The nhac tach lam hai tong: xanh muc cho viec thuong, cam gach cho viec
+         gap, de biet cai nao phai lam ngay ma khong can doc chu. -->
+    <color name="st_the_nhac_nen">#15304C</color>
+    <color name="st_the_nhac_nen_gap">#B44A22</color>
+    <color name="st_the_nhac_chu">#FFFFFF</color>
+    <color name="st_the_nhac_chu_mo">#B9C9D8</color>
+    <color name="st_the_nhac_chu_mo_gap">#F3D6C6</color>
+
+    <!-- Man chan gio di hoc: che kin man hinh nen khong can hoa voi gi ca, va nen
+         dam thi do choi mat hon mot mang trang giua buoi sang. -->
+    <color name="st_nen_chan">#FF0C1219</color>
+    <color name="st_chu_chan">#FFFFFF</color>
+    <color name="st_chu_chan_mo">#9FB2C2</color>
+    <color name="st_chu_chan_nhan">#7FA8CC</color>
+    <color name="st_vien_chan">#40FFFFFF</color>
+
+    <!-- Net ke luoi thoi khoa bieu. Dam hon @color/line mot chut: net dut mong hon
+         net lien nhieu, dung dung mot mau thi nhin nhu khong co. -->
+    <color name="st_ke_luoi">#C8D0DC</color>
+</resources>

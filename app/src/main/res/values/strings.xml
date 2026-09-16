@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Nộp bài</string>
+
+    <!-- Ten that cua hai nguoi dung. De o day de sau nay doi ten khong phai lan
+         tim trong ma nguon, va de man hinh goi dung ten chu khong phai "bo" voi
+         "con" chung chung. -->
+    <string name="parent_name">Ba Huy</string>
+    <string name="child_name">Lê Hòa</string>
+
+
+    <!-- Man cua Le Hoa -->
+    <string name="home_submit">Nộp bài tập</string>
+    <string name="home_setup_needed">Máy chưa cài đặt xong</string>
+    <string name="home_chat">Khiếu nại với Ba Huy</string>
+
+    <!-- Man chup -->
+    <string name="capture_take">Chụp</string>
+    <string name="capture_send">Gửi cho Ba Huy</string>
+    <string name="capture_skip">Không có, bỏ qua</string>
+    <string name="capture_next">Bước tiếp theo</string>
+    <string name="capture_full">Đủ 10 trang rồi</string>
+    <string name="capture_need_solution">Phải có ít nhất một tấm bài giải mới gửi được.</string>
+    <string name="capture_remove_hint">Bấm vào ảnh để bỏ tấm đó.</string>
+
+    <string name="stage_notes">Vở dặn dò</string>
+    <string name="stage_notes_hint">Cô ghi bài về nhà.</string>
+    <string name="stage_problem">Đề bài</string>
+    <string name="stage_problem_hint">Chụp nếu đề nằm riêng. Đề in chung với bài làm thì bỏ qua.</string>
+    <string name="stage_solution">Bài giải</string>
+    <string name="stage_solution_hint">Bắt buộc. Chụp rõ phần Lê Hòa đã làm.</string>
+
+    <!-- Chup cap sach da soan. Dung chung man chup voi nop bai nhung loi dan khac
+         han, nen de rieng chu khong muon tam vao stage_*. -->
+    <string name="capture_cap_hint">Mở cặp ra, chụp cho thấy đủ sách vở đã soạn.</string>
+    <string name="capture_need_cap">Phải có ít nhất một tấm ảnh cặp sách mới gửi được.</string>
+
+    <!-- Soan tap vo -->
+    <string name="soan_title">Soạn tập vở</string>
+    <string name="soan_tin_co">Tin của cô</string>
+    <string name="soan_lich">Thời khoá biểu</string>
+
+    <!-- Trang Ba Huy doc lai con da dung app gi. Ten dat theo cau hoi that chu
+         khong phai "Thong ke": cai can biet la app nao va luc nao. -->
+    <string name="thong_ke_title">Dùng app gì, lúc nào</string>
+
+    <string name="pin_title">Nhập mã PIN</string>
+    <string name="pin_wrong">Sai mã PIN</string>
+    <string name="ok">Xong</string>
+    <string name="cancel">Huỷ</string>
+    <string name="accessibility_description">Theo dõi xem những ứng dụng nào đang hiện trên màn hình để khoá game khi hết giờ chơi. Chỉ lấy tên ứng dụng, kể cả khi chia đôi màn hình. Riêng cửa sổ nổi không đẩy đi được thì có tìm nút Đóng của chính cửa sổ đó để bấm hộ. Với một số ứng dụng AI (như ChatGPT, Gemini, NotebookLM), có ghi lại câu hỏi gõ vào để gửi cho phụ huynh xem. Không đọc nội dung của các ứng dụng khác.</string>
+</resources>

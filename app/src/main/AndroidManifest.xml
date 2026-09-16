@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_SPECIAL_USE" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <!-- Chi de mo duoc hop thoai xin ra khoi danh sach tiet kiem pin. Nam trong
+         danh sach do thi HyperOS dung tien trinh luc man hinh tat, va dich vu
+         Telegram chet giua chung. -->
+    <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS" />
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
+
+    <!-- Du de liet ke app mo duoc tu man hinh chinh, khoi phai xin
+         QUERY_ALL_PACKAGES von la quyen rong hon nhieu so voi viec can lam. -->
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent>
+        <!-- Phai khai bao rieng man hinh chinh va ban phim. Tu Android 11 app
+             khong tu nhin thay app khac, thieu hai muc nay thi service coi man
+             hinh chinh la app la va day no di, tablet thanh cuc gach. -->
+        <intent>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.HOME" />
+        </intent>
+        <intent>
+            <action android:name="android.view.InputMethod" />
+        </intent>
+    </queries>
+
+    <application
+        android:name=".App"
+        android:allowBackup="false"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.HomeworkGate">
+
+        <!-- Mo app la vao thang man cua Le Hoa. Day la app quan ly con, con dung
+             no moi ngay; phan cua Ba Huy nam sau mot nut chu nho o goc. -->
+        <activity
+            android:name=".ui.HomeActivity"
+            android:exported="true"
+            android:launchMode="singleTask">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- exported=false de con khong mo thang bang adb hay shortcut. -->
+        <activity
+            android:name=".ui.ParentActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".ui.CaptureActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.HomeworkGate.Camera" />
+
+        <!-- Man con khai dang lam bai nao, di truoc man chup. -->
+        <activity
+            android:name=".ui.ChonBaiActivity"
+            android:exported="false" />
+
+        <!-- Man con soat lai ban may doc, di sau man chup. adjustResize de ban phim
+             khong che mat dong dang sua. -->
+        <activity
+            android:name=".ui.SoatBaiActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
+        <!-- exported=false de con khong mo thang bang adb hay shortcut. -->
+        <activity
+            android:name=".ui.SetupActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".ui.AppPickerActivity"
+            android:exported="false" />
+
+        <!-- adjustResize de ban phim khong che mat o go chu. -->
+        <activity
+            android:name=".ui.ChatActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:name=".ui.SoanActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".ui.TinActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".ui.LichActivity"
+            android:exported="false" />
+
+        <!-- So con dung app gi, luc nao. exported=false: day la trang cua Ba Huy,
+             nam sau PIN, khong mo bang adb hay shortcut duoc. -->
+        <activity
+            android:name=".ui.ThongKeActivity"
+            android:exported="false" />
+
+
+        <service
+            android:name=".telegram.ApprovalService"
+            android:exported="false"
+            android:foregroundServiceType="specialUse">
+            <property
+                android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE"
+                android:value="Giu ket noi cho phu huynh duyet va dem nguoc gio choi" />
+        </service>
+
+        <service
+            android:name=".guard.GuardAccessibilityService"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE">
+            <intent-filter>
+                <action android:name="android.accessibilityservice.AccessibilityService" />
+            </intent-filter>
+            <meta-data
+                android:name="android.accessibilityservice"
+                android:resource="@xml/accessibility_service_config" />
+        </service>
+
+        <receiver
+            android:name=".guard.AdminReceiver"
+            android:exported="true"
+            android:permission="android.permission.BIND_DEVICE_ADMIN">
+            <intent-filter>
+                <action android:name="android.app.action.DEVICE_ADMIN_ENABLED" />
+            </intent-filter>
+            <meta-data
+                android:name="android.app.device_admin"
+                android:resource="@xml/device_admin" />
+        </receiver>
+
+        <receiver
+            android:name=".guard.BootReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.MY_PACKAGE_REPLACED" />
+            </intent-filter>
+        </receiver>
+
+        <receiver
+            android:name=".guard.Heartbeat$Receiver"
+            android:exported="false" />
+    </application>
+</manifest>

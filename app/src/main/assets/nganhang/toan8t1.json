@@ -1,0 +1,2794 @@
+{
+ "nguon": "toan8t1",
+ "mon": "Toán",
+ "ten": "SGK Toán 8 — tập một",
+ "ban": 1,
+ "cac_bai": [
+  {
+   "chuong": "Chương I. Đa thức",
+   "bai": "Bài 1. Đơn thức",
+   "cac_cau": [
+    {
+     "ma": "Luyện tập 1 (tr.6)",
+     "de": "Trong các biểu thức sau đây, biểu thức nào là đơn thức? 3x^3y; −4; (3 − x)x^2y^2; 12x^5; −(5/9)xyz; (x^2y)/2; 3/x + y^2.",
+     "trang": 6,
+     "nhom": "Luyện tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "Luyện tập 2 (tr.8)",
+     "de": "Thu gọn và xác định bậc của đơn thức 4,5x^2y(−2)xyz.",
+     "trang": 8,
+     "nhom": "Luyện tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "Luyện tập 3 (tr.8)",
+     "de": "Cho các đơn thức: (5/3)x^2y; −xy^2; 0,5x^4; −2xy^2; 2,75x^4; −(1/4)x^2y; 3xy^2. Hãy sắp xếp các đơn thức đã cho thành từng nhóm, sao cho tất cả các đơn thức đồng dạng thì thuộc cùng một nhóm.",
+     "trang": 8,
+     "nhom": "Luyện tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "Luyện tập 4 (tr.9)",
+     "de": "Cho các đơn thức −x^3y; 4x^3y và −2x^3y. a) Tính tổng S của ba đơn thức đó. b) Tính giá trị của tổng S tại x = 2; y = −3.",
+     "trang": 9,
+     "nhom": "Luyện tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "Vận dụng (tr.9)",
+     "de": "Trở lại các lập luận của Tròn và Vuông trong tình huống mở đầu (bài toán y phần quà, mỗi phần gồm x kg gạo giá 12 nghìn đồng/kg và x gói mì ăn liền giá 4,5 nghìn đồng/gói). Hãy trả lời và giải thích rõ tại sao.",
+     "trang": 9,
+     "nhom": "Vận dụng",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "1.1",
+     "de": "Trong các biểu thức sau, biểu thức nào là đơn thức? −x; (1 + x)y^2; (3 + √3)xy; 0; (1/y)x^2; 2√(xy).",
+     "trang": 9,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "1.2a",
+     "de": "Cho các đơn thức: A = 4x(−2)x^2y; B = 12,75xyz; C = (1 + 2·4,5)x^2y(1/5)y^3; D = (2 − √5)x. Liệt kê các đơn thức thu gọn trong các đơn thức đã cho và thu gọn các đơn thức còn lại.",
+     "trang": 9,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "1.2b",
+     "de": "Cho các đơn thức: A = 4x(−2)x^2y; B = 12,75xyz; C = (1 + 2·4,5)x^2y(1/5)y^3; D = (2 − √5)x. Với mỗi đơn thức nhận được, hãy cho biết hệ số, phần biến và bậc của nó.",
+     "trang": 9,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "1.3a",
+     "de": "Thu gọn rồi tính giá trị của đơn thức A = (−2)x^2y(1/2)xy khi x = −2; y = 1/2.",
+     "trang": 10,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "1.3b",
+     "de": "Thu gọn rồi tính giá trị của đơn thức B = xyz(−0,5)y^2z khi x = 4; y = 0,5; z = 2.",
+     "trang": 10,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "1.4",
+     "de": "Sắp xếp các đơn thức sau thành từng nhóm, mỗi nhóm chứa tất cả các đơn thức đồng dạng với nhau: 3x^3y^2; −0,2x^2y^3; 7x^3y^2; −4y; (3/4)x^2y^3; y√2.",
+     "trang": 10,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "1.5",
+     "de": "Rút gọn rồi tính giá trị của biểu thức S = (1/2)x^2y^5 − (5/2)x^2y^5 khi x = −2; y = 1.",
+     "trang": 10,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "1.6",
+     "de": "Tính tổng của bốn đơn thức: 2x^2y^3; −(3/5)x^2y^3; −14x^2y^3; (8/5)x^2y^3.",
+     "trang": 10,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "1.7",
+     "de": "Một mảnh đất có dạng như phần được tô màu xanh trong hình bên cùng với các kích thước (tính bằng mét) được ghi trên đó. Hãy tìm đơn thức (thu gọn) với hai biến x và y biểu thị diện tích của mảnh đất đã cho bằng hai cách. Cách 1: Tính tổng diện tích của hai hình chữ nhật ABCD và EFGC. Cách 2: Lấy diện tích của hình chữ nhật HFGD trừ đi diện tích của hình chữ nhật HEBA.",
+     "trang": 10,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    }
+   ]
+  },
+  {
+   "chuong": "Chương I. Đa thức",
+   "bai": "Bài 2. Đa thức",
+   "cac_cau": [
+    {
+     "ma": "Luyện tập 1 (tr.12)",
+     "de": "Biểu thức nào dưới đây là đa thức? Hãy chỉ rõ các hạng tử của mỗi đa thức ấy. 3xy^2 − 1; x + 1/x; √2x + √3y; x + √(xy) + y.",
+     "trang": 12,
+     "nhom": "Luyện tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "Vận dụng (tr.12)",
+     "de": "Mỗi quyển vở giá x đồng. Mỗi chiếc bút giá y đồng. a) Viết biểu thức biểu thị số tiền phải trả để mua: 8 quyển vở và 7 chiếc bút; 3 xấp vở và 2 hộp bút, biết rằng mỗi xấp vở có 10 quyển, mỗi hộp bút có 12 chiếc. b) Mỗi biểu thức tìm được ở câu a có phải là đa thức không?",
+     "trang": 12,
+     "nhom": "Vận dụng",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "Luyện tập 2 (tr.13)",
+     "de": "Cho đa thức N = 5y^2z^2 − 2xy^2z + (1/3)x^4 − 2y^2z^2 + (2/3)x^4 + xy^2z. a) Thu gọn đa thức N. b) Xác định hệ số và bậc của từng hạng tử (tức là bậc của từng đơn thức) trong dạng thu gọn của N.",
+     "trang": 13,
+     "nhom": "Luyện tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "Luyện tập 3 (tr.13)",
+     "de": "Với mỗi đa thức sau, thu gọn (nếu cần) và tìm bậc của nó: a) Q = 5x^2 − 7xy + 2,5y^2 + 2x − 8,3y + 1; b) H = 4x^5 − (1/2)x^3y + (3/4)x^2y^2 − 4x^5 + 2y^2 − 7.",
+     "trang": 13,
+     "nhom": "Luyện tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "1.8",
+     "de": "Trong các biểu thức sau, biểu thức nào là đa thức? −x^2 + 3x + 1; x/√5; x − √5/x; 2024; 3x^2y^2 − 5x^3y + 2,4; 1/(x^2 + x + 1).",
+     "trang": 14,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "1.9a",
+     "de": "Xác định hệ số và bậc của từng hạng tử trong đa thức x^2y − 3xy + 5x^2y^2 + 0,5x − 4.",
+     "trang": 14,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "1.9b",
+     "de": "Xác định hệ số và bậc của từng hạng tử trong đa thức x√2 − 2xy^3 + y^3 − 7x^3y.",
+     "trang": 14,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "1.10a",
+     "de": "Thu gọn đa thức 5x^4 − 2x^3y + 20xy^3 + 6x^3y − 3x^2y^2 + xy^3 − y^4.",
+     "trang": 14,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "1.10b",
+     "de": "Thu gọn đa thức 0,6x^3 + x^2z − 2,7xy^2 + 0,4x^3 + 1,7xy^2.",
+     "trang": 14,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "1.11a",
+     "de": "Thu gọn (nếu cần) và tìm bậc của đa thức x^4 − 3x^2y^2 + 3xy^2 − x^4 + 1.",
+     "trang": 14,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "1.11b",
+     "de": "Thu gọn (nếu cần) và tìm bậc của đa thức 5x^2y + 8xy − 2x^2 − 5x^2y + x^2.",
+     "trang": 14,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "1.12",
+     "de": "Thu gọn rồi tính giá trị của đa thức M = (1/3)x^2y + xy^2 − xy + (1/2)xy^2 − 5xy − (1/3)x^2y tại x = 0,5 và y = 1.",
+     "trang": 14,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "1.13a",
+     "de": "Cho đa thức P = 8x^2y^2z − 2xyz + 5y^2z − 5x^2y^2z + x^2y^2 − 3x^2y^2z. Thu gọn và tìm bậc của đa thức P.",
+     "trang": 14,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "1.13b",
+     "de": "Cho đa thức P = 8x^2y^2z − 2xyz + 5y^2z − 5x^2y^2z + x^2y^2 − 3x^2y^2z. Tính giá trị của đa thức P tại x = −4; y = 2 và z = 1.",
+     "trang": 14,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    }
+   ]
+  },
+  {
+   "chuong": "Chương I. Đa thức",
+   "bai": "Bài 3. Phép cộng và phép trừ đa thức",
+   "cac_cau": [
+    {
+     "ma": "Luyện tập 1 (tr.16)",
+     "de": "Cho hai đa thức G = x^2y − 3xy − 3 và H = 3x^2y + xy − 0,5x + 5. Hãy tính G + H và G − H.",
+     "trang": 16,
+     "nhom": "Luyện tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "Luyện tập 2 (tr.16)",
+     "de": "Rút gọn và tính giá trị của biểu thức sau tại x = 2 và y = −1: K = (x^2y + 2xy^3) − (7,5x^3y^2 − x^3) + (3xy^3 − x^2y + 7,5x^3y^2).",
+     "trang": 16,
+     "nhom": "Luyện tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "Vận dụng (tr.16)",
+     "de": "Trở lại tình huống mở đầu (hai bạn tính giá trị của P = 2x^2y − xy^2 + 22 và Q = xy^2 − 2x^2y + 23, ban giám khảo cho biết một cột chắc chắn có kết quả sai), hãy trình bày ý kiến của em.",
+     "trang": 16,
+     "nhom": "Vận dụng",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "1.14",
+     "de": "Tính tổng và hiệu của hai đa thức P = x^2y + x^3 − xy^2 + 3 và Q = x^3 + xy^2 − xy − 6.",
+     "trang": 16,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "1.15a",
+     "de": "Rút gọn biểu thức (x − y) + (y − z) + (z − x).",
+     "trang": 16,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "1.15b",
+     "de": "Rút gọn biểu thức (2x − 3y) + (2y − 3z) + (2z − 3x).",
+     "trang": 16,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "1.16",
+     "de": "Tìm đa thức M biết M − 5x^2 + xyz = xy + 2x^2 − 3xyz + 5.",
+     "trang": 16,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "1.17a",
+     "de": "Cho hai đa thức A = 2x^2y + 3xyz − 2x + 5 và B = 3xyz − 2x^2y + x − 4. Tìm các đa thức A + B và A − B.",
+     "trang": 16,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "1.17b",
+     "de": "Cho hai đa thức A = 2x^2y + 3xyz − 2x + 5 và B = 3xyz − 2x^2y + x − 4. Tính giá trị của các đa thức A và A + B tại x = 0,5; y = −2 và z = 1.",
+     "trang": 16,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    }
+   ]
+  },
+  {
+   "chuong": "Chương I. Đa thức",
+   "bai": "Luyện tập chung (trang 17)",
+   "cac_cau": [
+    {
+     "ma": "1.18a",
+     "de": "Cho các biểu thức: (4/5)x; (√2 − 1)xy; −3xy^2; (1/2)x^2y; (1/x)y^3; −xy + √2; −(3/2)x^2y; √x/5. Trong các biểu thức đã cho, biểu thức nào là đơn thức? Biểu thức nào không là đơn thức?",
+     "trang": 17,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "1.18b",
+     "de": "Cho các biểu thức: (4/5)x; (√2 − 1)xy; −3xy^2; (1/2)x^2y; (1/x)y^3; −xy + √2; −(3/2)x^2y; √x/5. Hãy chỉ ra hệ số và phần biến của mỗi đơn thức đã cho.",
+     "trang": 17,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "1.18c",
+     "de": "Cho các biểu thức: (4/5)x; (√2 − 1)xy; −3xy^2; (1/2)x^2y; (1/x)y^3; −xy + √2; −(3/2)x^2y; √x/5. Viết tổng tất cả các đơn thức trên để được một đa thức. Xác định bậc của đa thức đó.",
+     "trang": 17,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "1.19a",
+     "de": "Trong một khách sạn có hai bể bơi dạng hình hộp chữ nhật. Bể thứ nhất có chiều sâu là 1,2 m, đáy là hình chữ nhật có chiều dài x mét, chiều rộng y mét. Bể thứ hai có chiều sâu là 1,5 m, hai kích thước đáy gấp 5 lần hai kích thước đáy của bể thứ nhất. Hãy tìm đơn thức (hai biến x và y) biểu thị số mét khối nước cần có để bơm đầy cả hai bể bơi.",
+     "trang": 18,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "1.19b",
+     "de": "Trong một khách sạn có hai bể bơi dạng hình hộp chữ nhật (bể thứ nhất sâu 1,2 m, đáy x mét × y mét; bể thứ hai sâu 1,5 m, hai kích thước đáy gấp 5 lần bể thứ nhất). Tính lượng nước bơm đầy hai bể nếu x = 5 m, y = 3 m.",
+     "trang": 18,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "1.20",
+     "de": "Tìm bậc của mỗi đa thức sau rồi tính giá trị của chúng tại x = 1; y = −2: P = 5x^4 − 3x^3y + 2xy^3 − x^3y + 2y^4 − 7x^2y^2 − 2xy^3; Q = x^3 + x^2y + xy^2 − x^2y − xy^2 − x^3.",
+     "trang": 18,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "1.21a",
+     "de": "Cho hai đa thức A = 7xyz^2 − 5xy^2z + 3x^2yz − xyz + 1; B = 7x^2yz − 5xy^2z + 3xyz^2 − 2. Tìm đa thức C sao cho A − C = B.",
+     "trang": 18,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "1.21b",
+     "de": "Cho hai đa thức A = 7xyz^2 − 5xy^2z + 3x^2yz − xyz + 1; B = 7x^2yz − 5xy^2z + 3xyz^2 − 2. Tìm đa thức D sao cho A + D = B.",
+     "trang": 18,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "1.21c",
+     "de": "Cho hai đa thức A = 7xyz^2 − 5xy^2z + 3x^2yz − xyz + 1; B = 7x^2yz − 5xy^2z + 3xyz^2 − 2. Tìm đa thức E sao cho E − A = B.",
+     "trang": 18,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "1.22",
+     "de": "Từ một miếng bìa, người ta cắt ra hai hình tròn có bán kính x centimét và y centimét. Tìm biểu thức biểu thị diện tích phần còn lại của miếng bìa, nếu biết miếng bìa có hình dạng gồm hai hình vuông ghép lại và có kích thước (centimét) như Hình 1.2 (hình vuông nhỏ cạnh 2x, hình vuông lớn cạnh 2,5y). Biểu thức đó có phải là một đa thức không? Nếu phải thì đó là đa thức bậc mấy?",
+     "trang": 18,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "1.23",
+     "de": "Cho ba đa thức: M = 3x^3 − 4x^2y + 3x − y; N = 5xy − 3x + 2; P = 3x^3 + 2x^2y + 7x − 1. Tính M + N − P và M − N − P.",
+     "trang": 18,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    }
+   ]
+  },
+  {
+   "chuong": "Chương I. Đa thức",
+   "bai": "Bài 4. Phép nhân đa thức",
+   "cac_cau": [
+    {
+     "ma": "Luyện tập 1 (tr.19)",
+     "de": "Nhân hai đơn thức: a) 3x^2 và 2x^3; b) −xy và 4z^3; c) 6xy^3 và −0,5x^2.",
+     "trang": 19,
+     "nhom": "Luyện tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "Luyện tập 2 (tr.20)",
+     "de": "Làm tính nhân: a) (xy)·(x^2 + xy − y^2); b) (xy + yz + zx)·(−xyz).",
+     "trang": 20,
+     "nhom": "Luyện tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "Vận dụng (tr.20)",
+     "de": "Rút gọn biểu thức: x^3(x + y) − x(x^3 + y^3).",
+     "trang": 20,
+     "nhom": "Vận dụng",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "Luyện tập 3 (tr.21)",
+     "de": "Thực hiện phép nhân: a) (2x + y)(4x^2 − 2xy + y^2); b) (x^2y^2 − 3)(3 + x^2y^2).",
+     "trang": 21,
+     "nhom": "Luyện tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "Thử thách nhỏ (tr.21)",
+     "de": "Xét biểu thức đại số với hai biến k và m sau: P = (2k − 3)(3m − 2) − (3k − 2)(2m − 3). a) Rút gọn biểu thức P. b) Chứng minh rằng tại mọi giá trị nguyên của k và m, giá trị của biểu thức P luôn là một số nguyên chia hết cho 5.",
+     "trang": 21,
+     "nhom": "Vận dụng",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "1.24",
+     "de": "Nhân hai đơn thức: a) 5x^2y và 2xy^2; b) (3/4)xy và 8x^3y^2; c) 1,5xy^2z^3 và 2x^3y^2z.",
+     "trang": 21,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "1.25a",
+     "de": "Tìm tích của đơn thức với đa thức: (−0,5)xy^2(2xy − x^2 + 4y).",
+     "trang": 21,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "1.25b",
+     "de": "Tìm tích của đơn thức với đa thức: (x^3y − (1/2)x^2 + (1/3)xy)·6xy^3.",
+     "trang": 21,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "1.26",
+     "de": "Rút gọn biểu thức: x(x^2 − y) − x^2(x + y) + xy(x − 1).",
+     "trang": 21,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "1.27a",
+     "de": "Làm tính nhân: (x^2 − xy + 1)(xy + 3).",
+     "trang": 21,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "1.27b",
+     "de": "Làm tính nhân: (x^2y^2 − (1/2)xy + 2)(x − 2y).",
+     "trang": 21,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "1.28",
+     "de": "Rút gọn biểu thức sau để thấy rằng giá trị của nó không phụ thuộc vào giá trị của biến: (x − 5)(2x + 3) − 2x(x − 3) + x + 7.",
+     "trang": 21,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "1.29",
+     "de": "Chứng minh đẳng thức sau: (2x + y)(2x^2 + xy − y^2) = (2x − y)(2x^2 + 3xy + y^2).",
+     "trang": 21,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    }
+   ]
+  },
+  {
+   "chuong": "Chương I. Đa thức",
+   "bai": "Bài 5. Phép chia đa thức cho đơn thức",
+   "cac_cau": [
+    {
+     "ma": "Luyện tập 1 (tr.23)",
+     "de": "Trong các phép chia sau đây, phép chia nào không là phép chia hết? Tại sao? Tìm thương của các phép chia còn lại: a) −15x^2y^2 chia cho 3x^2y; b) 6xy chia cho 2yz; c) 4xy^3 chia cho 6xy^2.",
+     "trang": 23,
+     "nhom": "Luyện tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "Vận dụng 1 (tr.23)",
+     "de": "Giải bài toán mở đầu: Cho hai khối hộp chữ nhật, khối hộp thứ nhất có ba kích thước là x, 2x và 3y; khối hộp thứ hai có diện tích đáy là 2xy. Tính chiều cao (cạnh bên) của khối hộp thứ hai, biết rằng hai khối hộp có cùng thể tích.",
+     "trang": 23,
+     "nhom": "Vận dụng",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "Luyện tập 2 (tr.24)",
+     "de": "Làm tính chia (6x^4y^3 − 8x^3y^4 + 3x^2y^2) : 2xy^2.",
+     "trang": 24,
+     "nhom": "Luyện tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "Vận dụng 2 (tr.24)",
+     "de": "Tìm đa thức A sao cho A·(−3xy) = 9x^3y + 3xy^3 − 6x^2y^2.",
+     "trang": 24,
+     "nhom": "Vận dụng",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "1.30a",
+     "de": "Tìm đơn thức M, biết rằng (7/3)x^3y^2 : M = 7xy^2.",
+     "trang": 24,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "1.30b",
+     "de": "Tìm đơn thức N sao cho N : 0,5xy^2z = −xy.",
+     "trang": 24,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "1.31",
+     "de": "Cho đa thức A = 9xy^4 − 12x^2y^3 + 6x^3y^2. Với mỗi trường hợp sau đây, xét xem A có chia hết cho đơn thức B hay không. Thực hiện phép chia trong trường hợp A chia hết cho B. a) B = 3x^2y; b) B = −3xy^2.",
+     "trang": 24,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "1.32",
+     "de": "Thực hiện phép chia (7y^5z^2 − 14y^4z^3 + 2,1y^3z^4) : (−7y^3z^2).",
+     "trang": 24,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    }
+   ]
+  },
+  {
+   "chuong": "Chương I. Đa thức",
+   "bai": "Luyện tập chung (trang 25)",
+   "cac_cau": [
+    {
+     "ma": "1.33a",
+     "de": "Cho biểu thức P = 5x(3x^2y − 2xy^2 + 1) − 3xy(5x^2 − 3xy) + x^2y^2. Bằng cách thu gọn, chứng tỏ rằng giá trị của biểu thức P chỉ phụ thuộc vào biến x mà không phụ thuộc vào biến y.",
+     "trang": 25,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "1.33b",
+     "de": "Cho biểu thức P = 5x(3x^2y − 2xy^2 + 1) − 3xy(5x^2 − 3xy) + x^2y^2. Tìm giá trị của x sao cho P = 10.",
+     "trang": 25,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "1.34",
+     "de": "Rút gọn biểu thức: (3x^2 − 5xy − 4y^2)·(2x^2 + y^2) + (2x^4y^2 + x^3y^3 + x^2y^4) : ((1/5)xy).",
+     "trang": 25,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "1.35",
+     "de": "Bà Khanh dự định mua x hộp sữa, mỗi hộp giá y đồng. Nhưng khi đến cửa hàng, bà Khanh thấy giá sữa đã giảm 1 500 đồng mỗi hộp nên quyết định mua thêm 3 hộp nữa. Tìm đa thức biểu thị số tiền bà Khanh phải trả cho tổng số hộp sữa đã mua.",
+     "trang": 26,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "1.36a",
+     "de": "Tìm đơn thức B nếu 4x^3y^2 : B = −2xy.",
+     "trang": 26,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "1.36b",
+     "de": "Với đơn thức B tìm được ở câu a (4x^3y^2 : B = −2xy), hãy tìm đơn thức H để (4x^3y^2 − 3x^2y^3) : B = −2xy + H.",
+     "trang": 26,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "1.37a",
+     "de": "Tìm đơn thức C nếu 5xy^2·C = 10x^3y^3.",
+     "trang": 26,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "1.37b",
+     "de": "Với đơn thức C tìm được ở câu a (5xy^2·C = 10x^3y^3), hãy tìm đơn thức K sao cho (K + 5xy^2)·C = 6x^4y + 10x^3y^3.",
+     "trang": 26,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "1.38a",
+     "de": "Chuyện rằng Rùa chạy đua với Thỏ. Thỏ chạy nhanh gấp 60 lần Rùa, nhưng chỉ sau t phút chạy, Thỏ đã dừng lại mặc dù chưa đến đích. Do mải chơi, Thỏ không biết rằng Rùa vẫn cần mẫn chạy liên tục trong 90t phút và đến đích trước Thỏ. Gọi v (m/phút) là vận tốc chạy của Rùa. Hãy viết các đơn thức biểu thị quãng đường mà Thỏ và Rùa đã chạy.",
+     "trang": 26,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "1.38b",
+     "de": "Chuyện Rùa chạy đua với Thỏ (Thỏ chạy nhanh gấp 60 lần Rùa và chạy trong t phút, Rùa chạy liên tục trong 90t phút). Hỏi Rùa đã chạy được quãng đường dài gấp bao nhiêu lần quãng đường Thỏ đã chạy?",
+     "trang": 26,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    }
+   ]
+  },
+  {
+   "chuong": "Chương I. Đa thức",
+   "bai": "Bài tập cuối chương I",
+   "cac_cau": [
+    {
+     "ma": "1.39",
+     "de": "Đơn thức −2^3x^2yz^3 có: A. hệ số −2, bậc 8. B. hệ số −2^3, bậc 5. C. hệ số −1, bậc 9. D. hệ số −2^3, bậc 6.",
+     "trang": 27,
+     "nhom": "Trắc nghiệm",
+     "dang": "TRAC_NGHIEM"
+    },
+    {
+     "ma": "1.40",
+     "de": "Gọi T là tổng, H là hiệu của hai đa thức 3x^2y − 2xy^2 + xy và −2x^2y + 3xy^2 + 1. Khi đó: A. T = x^2y − xy^2 + xy + 1 và H = 5x^2y − 5xy^2 + xy − 1. B. T = x^2y + xy^2 + xy + 1 và H = 5x^2y − 5xy^2 + xy − 1. C. T = x^2y + xy^2 + xy + 1 và H = 5x^2y − 5xy^2 − xy − 1. D. T = x^2y + xy^2 + xy − 1 và H = 5x^2y + 5xy^2 + xy − 1.",
+     "trang": 27,
+     "nhom": "Trắc nghiệm",
+     "dang": "TRAC_NGHIEM"
+    },
+    {
+     "ma": "1.41",
+     "de": "Tích của hai đơn thức 6x^2yz và −2y^2z^2 là đơn thức: A. 4x^2y^3z^3. B. −12x^2y^3z^3. C. −12x^3y^3z^3. D. 4x^3y^3z^3.",
+     "trang": 27,
+     "nhom": "Trắc nghiệm",
+     "dang": "TRAC_NGHIEM"
+    },
+    {
+     "ma": "1.42",
+     "de": "Khi chia đa thức 8x^3y^2 − 6x^2y^3 cho đơn thức −2xy, ta được kết quả là: A. −4x^2y + 3xy^2. B. −4xy^2 + 3x^2y. C. −10x^2y + 4xy^2. D. −10x^2y + 4xy^2.",
+     "trang": 27,
+     "nhom": "Trắc nghiệm",
+     "dang": "TRAC_NGHIEM"
+    },
+    {
+     "ma": "1.43a",
+     "de": "Một đa thức hai biến bậc hai thu gọn có thể có nhiều nhất bao nhiêu hạng tử bậc hai? Cho ví dụ.",
+     "trang": 27,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "1.43b",
+     "de": "Một đa thức hai biến bậc hai thu gọn có thể có nhiều nhất bao nhiêu hạng tử bậc nhất? Cho ví dụ.",
+     "trang": 27,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "1.43c",
+     "de": "Một đa thức hai biến bậc hai thu gọn có thể có nhiều nhất bao nhiêu hạng tử khác 0? Cho ví dụ.",
+     "trang": 27,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "1.44a",
+     "de": "Cho biểu thức 3x^3(x^5 − y^5) + y^5(3x^3 − y^3). Rút gọn biểu thức đã cho.",
+     "trang": 27,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "1.44b",
+     "de": "Cho biểu thức 3x^3(x^5 − y^5) + y^5(3x^3 − y^3). Tính giá trị của biểu thức đã cho nếu biết y^4 = x^4√3.",
+     "trang": 27,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "1.45",
+     "de": "Rút gọn biểu thức: (1/4)(2x^2 + y)(x − 2y^2) + (1/4)(2x^2 − y)(x + 2y^2).",
+     "trang": 28,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "1.46",
+     "de": "Bạn Thành dùng một miếng bìa hình chữ nhật để làm một chiếc hộp (không nắp) bằng cách cắt bốn hình vuông cạnh x centimét ở bốn góc (H.1.3) rồi gấp lại. Biết rằng miếng bìa có chiều dài là y centimét, chiều rộng là z centimét. Tìm đa thức (ba biến x, y, z) biểu thị thể tích của chiếc hộp. Xác định bậc của đa thức đó.",
+     "trang": 28,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "1.47",
+     "de": "Biết rằng D là một đơn thức sao cho −2x^3y^4 : D = xy^2. Hãy tìm thương của phép chia: (10x^5y^2 − 6x^3y^4 + 8x^2y^5) : D.",
+     "trang": 28,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "1.48",
+     "de": "Làm phép chia sau theo hướng dẫn: [8x^3(2x − 5)^2 − 6x^2(2x − 5)^3 + 10x(2x − 5)^2] : 2x(2x − 5)^2. Hướng dẫn: Đặt y = 2x − 5.",
+     "trang": 28,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    }
+   ]
+  },
+  {
+   "chuong": "Chương II. Hằng đẳng thức đáng nhớ và ứng dụng",
+   "bai": "Bài 6. Hiệu hai bình phương. Bình phương của một tổng hay một hiệu",
+   "cac_cau": [
+    {
+     "ma": "Luyện tập 1 (tr.30)",
+     "de": "Trong các đẳng thức sau, đẳng thức nào là hằng đẳng thức? a) a(a + 2b) = a^2 + 2ab; b) a + 1 = 3a − 1.",
+     "trang": 30,
+     "nhom": "Luyện tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "Luyện tập 2 (tr.31)",
+     "de": "a) Tính nhanh 99^2 − 1; b) Viết x^2 − 9 dưới dạng tích.",
+     "trang": 31,
+     "nhom": "Luyện tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "Vận dụng 1 (tr.31)",
+     "de": "Ở bài toán mở đầu (người dẫn chương trình yêu cầu cho biết kết quả phép tính 198·202), em hãy giải thích xem bạn đó tính nhanh như thế nào.",
+     "trang": 31,
+     "nhom": "Vận dụng",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "Luyện tập 3 (tr.32)",
+     "de": "1. Khai triển (2b + 1)^2. 2. Viết biểu thức 9y^2 + 6yx + x^2 dưới dạng bình phương của một tổng.",
+     "trang": 32,
+     "nhom": "Luyện tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "Luyện tập 4 (tr.32)",
+     "de": "Khai triển (3x − 2y)^2.",
+     "trang": 32,
+     "nhom": "Luyện tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "Vận dụng 2 (tr.32)",
+     "de": "Trong trò chơi “Ai thông minh hơn học sinh lớp 8”, người dẫn chương trình yêu cầu các bạn học sinh cho biết kết quả của phép tính 1 002^2. Chỉ vài giây sau, Nam đã tính ra kết quả chính xác và giành được điểm. Em hãy giải thích xem Nam đã tính nhanh như thế nào.",
+     "trang": 32,
+     "nhom": "Vận dụng",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "2.1",
+     "de": "Những đẳng thức nào sau đây là hằng đẳng thức? a) x + 2 = 3x + 1; b) 2x(x + 1) = 2x^2 + 2x; c) (a + b)a = a^2 + ba; d) a − 2 = 2a + 1.",
+     "trang": 33,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "2.2a",
+     "de": "Thay ? bằng biểu thức thích hợp: (x − 3y)(x + 3y) = x^2 − ?",
+     "trang": 33,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "2.2b",
+     "de": "Thay ? bằng biểu thức thích hợp: (2x − y)(2x + y) = 4? − y^2",
+     "trang": 33,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "2.2c",
+     "de": "Thay ? bằng biểu thức thích hợp: x^2 + 8xy + ? = (? + 4y)^2",
+     "trang": 33,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "2.2d",
+     "de": "Thay ? bằng biểu thức thích hợp: ? − 12xy + 9y^2 = (2x − ?)^2",
+     "trang": 33,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "2.3",
+     "de": "Tính nhanh: a) 54·66; b) 203^2.",
+     "trang": 33,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "2.4a",
+     "de": "Viết biểu thức x^2 + 4x + 4 dưới dạng bình phương của một tổng hoặc một hiệu.",
+     "trang": 33,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "2.4b",
+     "de": "Viết biểu thức 16a^2 − 16ab + 4b^2 dưới dạng bình phương của một tổng hoặc một hiệu.",
+     "trang": 33,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "2.5a",
+     "de": "Rút gọn biểu thức (x − 3y)^2 − (x + 3y)^2.",
+     "trang": 33,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "2.5b",
+     "de": "Rút gọn biểu thức (3x + 4y)^2 + (4x − 3y)^2.",
+     "trang": 33,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "2.6",
+     "de": "Chứng minh rằng với mọi số tự nhiên n, ta có: (n + 2)^2 − n^2 chia hết cho 4.",
+     "trang": 33,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    }
+   ]
+  },
+  {
+   "chuong": "Chương II. Hằng đẳng thức đáng nhớ và ứng dụng",
+   "bai": "Bài 7. Lập phương của một tổng. Lập phương của một hiệu",
+   "cac_cau": [
+    {
+     "ma": "Luyện tập 1 (tr.35)",
+     "de": "1. Khai triển: a) (x + 3)^3; b) (x + 2y)^3. 2. Rút gọn biểu thức (2x + y)^3 − 8x^3 − y^3.",
+     "trang": 35,
+     "nhom": "Luyện tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "Luyện tập 2 (tr.35)",
+     "de": "Viết biểu thức x^3 + 9x^2y + 27xy^2 + 27y^3 dưới dạng lập phương của một tổng.",
+     "trang": 35,
+     "nhom": "Luyện tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "Luyện tập 3 (tr.35)",
+     "de": "Khai triển (2x − y)^3.",
+     "trang": 35,
+     "nhom": "Luyện tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "Luyện tập 4 (tr.36)",
+     "de": "Viết biểu thức sau dưới dạng lập phương của một hiệu: 8x^3 − 36x^2y + 54xy^2 − 27y^3.",
+     "trang": 36,
+     "nhom": "Luyện tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "Vận dụng (tr.36)",
+     "de": "Rút gọn biểu thức (x − y)^3 + (x + y)^3.",
+     "trang": 36,
+     "nhom": "Vận dụng",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "2.7a",
+     "de": "Khai triển (x^2 + 2y)^3.",
+     "trang": 36,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "2.7b",
+     "de": "Khai triển ((1/2)x − 1)^3.",
+     "trang": 36,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "2.8a",
+     "de": "Viết biểu thức 27 + 54x + 36x^2 + 8x^3 dưới dạng lập phương của một tổng hoặc một hiệu.",
+     "trang": 36,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "2.8b",
+     "de": "Viết biểu thức 64x^3 − 144x^2y + 108xy^2 − 27y^3 dưới dạng lập phương của một tổng hoặc một hiệu.",
+     "trang": 36,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "2.9a",
+     "de": "Tính nhanh giá trị của biểu thức x^3 + 9x^2 + 27x + 27 tại x = 7.",
+     "trang": 36,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "2.9b",
+     "de": "Tính nhanh giá trị của biểu thức 27 − 54x + 36x^2 − 8x^3 tại x = 6,5.",
+     "trang": 36,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "2.10a",
+     "de": "Rút gọn biểu thức (x − 2y)^3 + (x + 2y)^3.",
+     "trang": 36,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "2.10b",
+     "de": "Rút gọn biểu thức (3x + 2y)^3 + (3x − 2y)^3.",
+     "trang": 36,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "2.11",
+     "de": "Chứng minh (a − b)^3 = −(b − a)^3.",
+     "trang": 36,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    }
+   ]
+  },
+  {
+   "chuong": "Chương II. Hằng đẳng thức đáng nhớ và ứng dụng",
+   "bai": "Bài 8. Tổng và hiệu hai lập phương",
+   "cac_cau": [
+    {
+     "ma": "Luyện tập 1 (tr.38)",
+     "de": "1. Viết x^3 + 27 dưới dạng tích. 2. Rút gọn biểu thức x^3 + 8y^3 − (x + 2y)(x^2 − 2xy + 4y^2).",
+     "trang": 38,
+     "nhom": "Luyện tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "Luyện tập 2 (tr.39)",
+     "de": "1. Viết đa thức x^3 − 8 dưới dạng tích. 2. Rút gọn biểu thức (3x − 2y)(9x^2 + 6xy + 4y^2) + 8y^3.",
+     "trang": 39,
+     "nhom": "Luyện tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "Vận dụng (tr.39)",
+     "de": "Giải quyết tình huống mở đầu: viết đa thức x^6 + y^6 dưới dạng tích.",
+     "trang": 39,
+     "nhom": "Vận dụng",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "2.12a",
+     "de": "Viết biểu thức (x + 4)(x^2 − 4x + 16) dưới dạng tổng hay hiệu hai lập phương.",
+     "trang": 39,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "2.12b",
+     "de": "Viết biểu thức (4x^2 + 2xy + y^2)(2x − y) dưới dạng tổng hay hiệu hai lập phương.",
+     "trang": 39,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "2.13a",
+     "de": "Thay ? bằng biểu thức thích hợp: x^3 + 512 = (x + 8)(x^2 − ? + 64).",
+     "trang": 39,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "2.13b",
+     "de": "Thay ? bằng biểu thức thích hợp: 27x^3 − 8y^3 = (? − 2y)(? + 6xy + 4y^2).",
+     "trang": 39,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "2.14a",
+     "de": "Viết đa thức 27x^3 + y^3 dưới dạng tích.",
+     "trang": 39,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "2.14b",
+     "de": "Viết đa thức x^3 − 8y^3 dưới dạng tích.",
+     "trang": 39,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "2.15",
+     "de": "Rút gọn biểu thức sau: (x − 2y)(x^2 + 2xy + 4y^2) + (x + 2y)(x^2 − 2xy + 4y^2).",
+     "trang": 39,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    }
+   ]
+  },
+  {
+   "chuong": "Chương II. Hằng đẳng thức đáng nhớ và ứng dụng",
+   "bai": "Luyện tập chung (trang 40)",
+   "cac_cau": [
+    {
+     "ma": "2.16",
+     "de": "Tính nhanh giá trị của biểu thức x^2 + (1/2)x + 1/16 tại x = 99,75.",
+     "trang": 41,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "2.17",
+     "de": "Chứng minh đẳng thức (10a + 5)^2 = 100a(a + 1) + 25. Từ đó em hãy nêu một quy tắc tính nhẩm bình phương của một số có tận cùng là 5. Áp dụng: Tính 25^2; 35^2.",
+     "trang": 41,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "2.18a",
+     "de": "Tính nhanh giá trị của biểu thức x^3 + 3x^2 + 3x + 1 tại x = 99.",
+     "trang": 41,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "2.18b",
+     "de": "Tính nhanh giá trị của biểu thức x^3 − 3x^2y + 3xy^2 − y^3 tại x = 88 và y = −12.",
+     "trang": 41,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "2.19a",
+     "de": "Rút gọn biểu thức (x − 2)^3 + (x + 2)^3 − 6x(x + 2)(x − 2).",
+     "trang": 41,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "2.19b",
+     "de": "Rút gọn biểu thức (2x − y)^3 + (2x + y)^3.",
+     "trang": 41,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "2.20",
+     "de": "Chứng minh rằng a^3 + b^3 = (a + b)^3 − 3ab(a + b). Áp dụng, tính a^3 + b^3 biết a + b = 4 và ab = 3.",
+     "trang": 41,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "2.21a",
+     "de": "Bác Tùng gửi vào ngân hàng 200 triệu đồng theo thể thức lãi kép theo định kì với lãi suất không đổi x mỗi năm. Biểu thức S = 200(1 + x)^3 (triệu đồng) là số tiền bác Tùng nhận được sau 3 năm. Tính số tiền bác Tùng nhận được sau 3 năm khi lãi suất là x = 5,5%.",
+     "trang": 41,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "2.21b",
+     "de": "Bác Tùng gửi vào ngân hàng 200 triệu đồng theo thể thức lãi kép, số tiền nhận được sau 3 năm là S = 200(1 + x)^3 (triệu đồng). Khai triển S thành đa thức theo x và xác định bậc của đa thức.",
+     "trang": 41,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    }
+   ]
+  },
+  {
+   "chuong": "Chương II. Hằng đẳng thức đáng nhớ và ứng dụng",
+   "bai": "Bài 9. Phân tích đa thức thành nhân tử",
+   "cac_cau": [
+    {
+     "ma": "Luyện tập 1 (tr.42)",
+     "de": "Phân tích các đa thức sau thành nhân tử: a) 6y^3 + 2y; b) 4(x − y) − 3x(x − y).",
+     "trang": 42,
+     "nhom": "Luyện tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "Vận dụng 1 (tr.42)",
+     "de": "Giải bài toán mở đầu bằng cách phân tích 2x^2 + x thành nhân tử (tìm tất cả số x để 2x^2 + x = 0).",
+     "trang": 42,
+     "nhom": "Vận dụng",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "Luyện tập 2 (tr.43)",
+     "de": "Phân tích các đa thức sau thành nhân tử: a) (x + 1)^2 − y^2; b) x^3 + 3x^2 + 3x + 1; c) 8x^3 − 12x^2 + 6x − 1.",
+     "trang": 43,
+     "nhom": "Luyện tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "Luyện tập 3 (tr.44)",
+     "de": "Phân tích đa thức 2x^2 − 4xy + 2y − x thành nhân tử.",
+     "trang": 44,
+     "nhom": "Luyện tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "Vận dụng 2 (tr.44)",
+     "de": "Tính nhanh giá trị của biểu thức A = x^2 + 2y − 2x − xy tại x = 2022, y = 2020.",
+     "trang": 44,
+     "nhom": "Vận dụng",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "2.22a",
+     "de": "Phân tích đa thức x^2 + xy thành nhân tử.",
+     "trang": 44,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "2.22b",
+     "de": "Phân tích đa thức 6a^2b − 18ab thành nhân tử.",
+     "trang": 44,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "2.22c",
+     "de": "Phân tích đa thức x^3 − 4x thành nhân tử.",
+     "trang": 44,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "2.22d",
+     "de": "Phân tích đa thức x^4 − 8x thành nhân tử.",
+     "trang": 44,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "2.23a",
+     "de": "Phân tích đa thức x^2 − 9 + xy + 3y thành nhân tử.",
+     "trang": 44,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "2.23b",
+     "de": "Phân tích đa thức x^2y + x^2 + xy − 1 thành nhân tử.",
+     "trang": 44,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "2.24a",
+     "de": "Tìm x, biết x^2 − 4x = 0.",
+     "trang": 44,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "2.24b",
+     "de": "Tìm x, biết 2x^3 − 2x = 0.",
+     "trang": 44,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "2.25a",
+     "de": "Một mảnh vườn hình vuông có độ dài cạnh bằng x (mét). Người ta làm đường đi xung quanh mảnh vườn, có độ rộng như nhau và bằng y (mét) (H.2.2). Viết biểu thức tính diện tích S của đường bao quanh mảnh vườn theo x và y.",
+     "trang": 44,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "2.25b",
+     "de": "Một mảnh vườn hình vuông cạnh x (mét), đường đi bao quanh rộng y (mét); S là diện tích đường bao quanh. Phân tích S thành nhân tử rồi tính S khi x = 102 m, y = 2 m.",
+     "trang": 44,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    }
+   ]
+  },
+  {
+   "chuong": "Chương II. Hằng đẳng thức đáng nhớ và ứng dụng",
+   "bai": "Luyện tập chung (trang 45)",
+   "cac_cau": [
+    {
+     "ma": "2.26a",
+     "de": "Phân tích đa thức x^2 − 6x + 9 − y^2 thành nhân tử.",
+     "trang": 46,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "2.26b",
+     "de": "Phân tích đa thức 4x^2 − y^2 + 4y − 4 thành nhân tử.",
+     "trang": 46,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "2.26c",
+     "de": "Phân tích đa thức xy + z^2 + xz + yz thành nhân tử.",
+     "trang": 46,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "2.26d",
+     "de": "Phân tích đa thức x^2 − 4xy + 4y^2 + xz − 2yz thành nhân tử.",
+     "trang": 46,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "2.27a",
+     "de": "Phân tích đa thức x^3 + y^3 + x + y thành nhân tử.",
+     "trang": 46,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "2.27b",
+     "de": "Phân tích đa thức x^3 − y^3 + x − y thành nhân tử.",
+     "trang": 46,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "2.27c",
+     "de": "Phân tích đa thức (x − y)^3 + (x + y)^3 thành nhân tử.",
+     "trang": 46,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "2.27d",
+     "de": "Phân tích đa thức x^3 − 3x^2y + 3xy^2 − y^3 + y^2 − x^2 thành nhân tử.",
+     "trang": 46,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    }
+   ]
+  },
+  {
+   "chuong": "Chương II. Hằng đẳng thức đáng nhớ và ứng dụng",
+   "bai": "Bài tập cuối chương II",
+   "cac_cau": [
+    {
+     "ma": "2.28",
+     "de": "Đa thức x^2 − 9x + 8 được phân tích thành tích của hai đa thức: A. x − 1 và x + 8. B. x − 1 và x − 8. C. x − 2 và x − 4. D. x − 2 và x + 4.",
+     "trang": 47,
+     "nhom": "Trắc nghiệm",
+     "dang": "TRAC_NGHIEM"
+    },
+    {
+     "ma": "2.29",
+     "de": "Khẳng định nào sau đây là đúng? A. (A − B)(A + B) = A^2 + 2AB + B^2. B. (A + B)(A − B) = A^2 − 2AB + B^2. C. (A + B)(A − B) = A^2 + B^2. D. (A + B)(A − B) = A^2 − B^2.",
+     "trang": 47,
+     "nhom": "Trắc nghiệm",
+     "dang": "TRAC_NGHIEM"
+    },
+    {
+     "ma": "2.30",
+     "de": "Biểu thức 25x^2 + 20xy + 4y^2 viết dưới dạng bình phương của một tổng là: A. [5x + (−2y)]^2. B. [2x + (−5y)]^2. C. (2x + 5y)^2. D. (5x + 2y)^2.",
+     "trang": 47,
+     "nhom": "Trắc nghiệm",
+     "dang": "TRAC_NGHIEM"
+    },
+    {
+     "ma": "2.31",
+     "de": "Rút gọn biểu thức A = (2x + 1)^3 − 6x(2x + 1) ta được: A. x^3 + 8. B. x^3 + 1. C. 8x^3 + 1. D. 8x^3 − 1.",
+     "trang": 47,
+     "nhom": "Trắc nghiệm",
+     "dang": "TRAC_NGHIEM"
+    },
+    {
+     "ma": "2.32a",
+     "de": "Tính nhanh giá trị của biểu thức x^2 − 4x + 4 tại x = 102.",
+     "trang": 47,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "2.32b",
+     "de": "Tính nhanh giá trị của biểu thức x^3 + 3x^2 + 3x + 1 tại x = 999.",
+     "trang": 47,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "2.33a",
+     "de": "Rút gọn biểu thức (2x − 5y)(2x + 5y) + (2x + 5y)^2.",
+     "trang": 47,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "2.33b",
+     "de": "Rút gọn biểu thức (x + 2y)(x^2 − 2xy + 4y^2) + (2x − y)(4x^2 + 2xy + y^2).",
+     "trang": 47,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "2.34a",
+     "de": "Phân tích đa thức 6x^2 − 24y^2 thành nhân tử.",
+     "trang": 47,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "2.34b",
+     "de": "Phân tích đa thức 64x^3 − 27y^3 thành nhân tử.",
+     "trang": 47,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "2.34c",
+     "de": "Phân tích đa thức x^4 − 2x^3 + x^2 thành nhân tử.",
+     "trang": 47,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "2.34d",
+     "de": "Phân tích đa thức (x − y)^3 + 8y^3 thành nhân tử.",
+     "trang": 47,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "2.35",
+     "de": "Sử dụng Hình 2.3, bằng cách tính diện tích hình vuông ABCD theo hai cách, hãy giải thích hằng đẳng thức (a + b)^2 = a^2 + 2ab + b^2.",
+     "trang": 47,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    }
+   ]
+  },
+  {
+   "chuong": "Chương III. Tứ giác",
+   "bai": "Bài 10. Tứ giác",
+   "cac_cau": [
+    {
+     "ma": "Luyện tập 1 (tr.49)",
+     "de": "Quan sát tứ giác ABCD trong Hình 3.4. Hai đỉnh không cùng thuộc một cạnh gọi là hai đỉnh đối nhau; đoạn thẳng nối hai đỉnh đối nhau là một đường chéo, chẳng hạn AC là một đường chéo. Kể tên đường chéo còn lại. Cặp cạnh AB, CD là cặp cạnh đối; chỉ ra cặp cạnh đối còn lại. Cặp góc A, C là cặp góc đối; hãy kể tên cặp góc đối còn lại.",
+     "trang": 49,
+     "nhom": "Luyện tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "Luyện tập 2 (tr.50)",
+     "de": "Cho tứ giác EFGH như Hình 3.7 (góc E vuông, góc G vuông, góc H = 55°). Hãy tính góc F.",
+     "trang": 50,
+     "nhom": "Luyện tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "Vận dụng (tr.50)",
+     "de": "Giải bài toán mở đầu: cắt bốn tứ giác như nhau bằng giấy rồi ghép lại, giải thích vì sao ghép khít nhau được và cho biết tổng số đo của bốn góc tại điểm chung.",
+     "trang": 50,
+     "nhom": "Vận dụng",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "Thử thách nhỏ (tr.50)",
+     "de": "Trong một tứ giác, hỏi số góc tù nhiều nhất là bao nhiêu và số góc nhọn nhiều nhất là bao nhiêu? Vì sao?",
+     "trang": 50,
+     "nhom": "Vận dụng",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "3.1",
+     "de": "Tính góc chưa biết của các tứ giác trong Hình 3.8.",
+     "trang": 51,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "3.2",
+     "de": "Tính góc chưa biết của tứ giác trong Hình 3.9, biết rằng góc H = góc E + 10°.",
+     "trang": 51,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "3.3a",
+     "de": "Tứ giác ABCD trong Hình 3.10 có AB = AD, CB = CD, được gọi là hình “cái diều”. Chứng minh rằng AC là đường trung trực của đoạn thẳng BD.",
+     "trang": 51,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "3.3b",
+     "de": "Tứ giác ABCD trong Hình 3.10 có AB = AD, CB = CD (hình “cái diều”). Tính các góc B, D biết rằng góc A = 100°, góc C = 60°.",
+     "trang": 51,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    }
+   ]
+  },
+  {
+   "chuong": "Chương III. Tứ giác",
+   "bai": "Bài 11. Hình thang cân",
+   "cac_cau": [
+    {
+     "ma": "Luyện tập 1 (tr.53)",
+     "de": "Tính các góc của hình thang cân ABCD (AB // CD), biết góc C = 40° (H.3.15).",
+     "trang": 53,
+     "nhom": "Luyện tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "Luyện tập 2 (tr.53)",
+     "de": "Cho tứ giác ABCD như Hình 3.18. Biết rằng góc A = góc B = góc D1. Chứng minh rằng AD = BC.",
+     "trang": 53,
+     "nhom": "Luyện tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "Luyện tập 3 (tr.54)",
+     "de": "Cho tam giác ABC cân tại A. Kẻ một đường thẳng d song song với BC, d cắt cạnh AB tại D và cắt cạnh AC tại E (H.3.20). a) Tứ giác DECB là hình gì? b) Chứng minh BE = CD.",
+     "trang": 54,
+     "nhom": "Luyện tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "Thực hành (tr.55)",
+     "de": "(H.3.22) a) Vẽ hình thang có hai đường chéo bằng nhau theo các bước: vẽ hai đường thẳng song song a, b; trên a lấy hai điểm A, B; vẽ hai cung tròn tâm A và B có cùng bán kính sao cho cung tròn tâm A cắt b tại C, cung tròn tâm B cắt b tại D và hai đoạn thẳng AC, BD cắt nhau. b) Hình thang ABCD có là hình thang cân không? Vì sao?",
+     "trang": 55,
+     "nhom": "Luyện tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "Vận dụng (tr.55)",
+     "de": "Hãy giải bài toán mở đầu: cắt một mảnh giấy hình thang cân bằng một nhát cắt thẳng cắt cả hai cạnh đáy thì được hai hình thang; lật một trong hai hình thang đó rồi ghép với hình thang còn lại dọc theo các cạnh bên của hình thang ban đầu (Hình 3.11). Hãy giải thích tại sao hình tạo thành cũng là một hình thang cân.",
+     "trang": 55,
+     "nhom": "Vận dụng",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "3.4",
+     "de": "Hình thang trong Hình 3.23 có là hình thang cân không? Vì sao?",
+     "trang": 55,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "3.5",
+     "de": "Cho hình thang ABCD (AB // CD). Kẻ đường thẳng vuông góc với AC tại C và đường thẳng vuông góc với BD tại D, hai đường thẳng này cắt nhau tại E. Chứng minh rằng nếu EC = ED thì hình thang ABCD là hình thang cân.",
+     "trang": 55,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "3.6",
+     "de": "Vẽ hình thang cân ABCD (AB // CD) biết đáy lớn CD dài 4 cm, cạnh bên dài 2 cm và đường chéo dài 3 cm.",
+     "trang": 55,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "3.7",
+     "de": "Hai tia phân giác của hai góc A, B của hình thang cân ABCD (AB // CD) cắt nhau tại điểm E trên cạnh đáy CD. Chứng minh rằng EC = ED.",
+     "trang": 55,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "3.8",
+     "de": "Hình thang cân ABCD (AB // CD, AB < CD) có các đường thẳng AD, BC cắt nhau tại I, các đường thẳng AC, BD cắt nhau tại J. Chứng minh rằng đường thẳng IJ là đường trung trực của đoạn thẳng AB.",
+     "trang": 55,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    }
+   ]
+  },
+  {
+   "chuong": "Chương III. Tứ giác",
+   "bai": "Luyện tập chung (trang 56)",
+   "cac_cau": [
+    {
+     "ma": "3.9",
+     "de": "Tứ giác ABCD trong Hình 3.25 có phải là hình thang không? Vì sao?",
+     "trang": 56,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "3.10",
+     "de": "Cho hình thang cân ABCD (AB // CD) có AB = AD. Biết góc ABD = 30°, tính số đo các góc của hình thang đó.",
+     "trang": 56,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "3.11",
+     "de": "Tính số đo các góc của tứ giác ABCD trong Hình 3.26.",
+     "trang": 56,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "3.12a",
+     "de": "Cho M là một điểm nằm trong tam giác đều ABC. Qua M kẻ các đường thẳng song song với BC, CA, AB lần lượt cắt AB, BC, CA tại các điểm P, Q, R. Chứng minh tứ giác APMR là hình thang cân.",
+     "trang": 56,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "3.12b",
+     "de": "Cho M là một điểm nằm trong tam giác đều ABC. Qua M kẻ các đường thẳng song song với BC, CA, AB lần lượt cắt AB, BC, CA tại các điểm P, Q, R. Chứng minh rằng chu vi tam giác PQR bằng tổng độ dài MA + MB + MC.",
+     "trang": 56,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "3.12c",
+     "de": "Cho M là một điểm nằm trong tam giác đều ABC. Qua M kẻ các đường thẳng song song với BC, CA, AB lần lượt cắt AB, BC, CA tại các điểm P, Q, R. Hỏi với vị trí nào của M thì tam giác PQR là tam giác đều?",
+     "trang": 56,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    }
+   ]
+  },
+  {
+   "chuong": "Chương III. Tứ giác",
+   "bai": "Bài 12. Hình bình hành",
+   "cac_cau": [
+    {
+     "ma": "Thực hành 1 (tr.58)",
+     "de": "Vẽ hình bình hành, biết hai cạnh liên tiếp bằng 3 cm, 4 cm và góc xen giữa hai cạnh đó bằng 60°. Hãy mô tả cách vẽ và giải thích tại sao hình vẽ được là hình bình hành.",
+     "trang": 58,
+     "nhom": "Luyện tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "Luyện tập 1 (tr.58)",
+     "de": "Cho tam giác ABC. Từ một điểm M tuỳ ý trên cạnh BC, kẻ đường thẳng song song với AB, cắt cạnh AC tại N và kẻ đường thẳng song song với AC, cắt cạnh AB tại P. Gọi I là trung điểm của đoạn NP. Chứng minh rằng I cũng là trung điểm của đoạn thẳng AM.",
+     "trang": 58,
+     "nhom": "Luyện tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "Luyện tập 2 (tr.60)",
+     "de": "Cho hình bình hành ABCD (AB > BC). Tia phân giác của góc D cắt AB tại E và tia phân giác của góc B cắt CD tại F (H.3.32). a) Chứng minh hai tam giác ADE và CBF là những tam giác cân, bằng nhau. b) Tứ giác DEBF là hình gì? Tại sao?",
+     "trang": 60,
+     "nhom": "Luyện tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "Thực hành 2 (tr.60)",
+     "de": "Chia một sợi dây xích thành bốn đoạn: hai đoạn dài bằng nhau, hai đoạn ngắn bằng nhau và đoạn dài, đoạn ngắn xen kẽ nhau. Hỏi khi móc hai đầu mút của sợi dây xích đó lại để được một tứ giác ABCD (có các đỉnh tại các điểm chia) như Hình 3.33 thì tứ giác ABCD là hình gì? Tại sao?",
+     "trang": 60,
+     "nhom": "Luyện tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "Luyện tập 3 (tr.61)",
+     "de": "Cho hai điểm A, B phân biệt và điểm O không nằm trên đường thẳng AB. Gọi A', B' là các điểm sao cho O là trung điểm của AA', BB'. Chứng minh rằng A'B' = AB và đường thẳng A'B' song song với đường thẳng AB.",
+     "trang": 61,
+     "nhom": "Luyện tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "Vận dụng (tr.61)",
+     "de": "Trở lại bài toán mở đầu (hai con đường a và b cắt nhau, bên trong góc đó có điểm dân cư O; mở một con đường thẳng đi qua O cắt a tại A, cắt b tại B sao cho OA = OB). Em hãy vẽ hình và nêu cách vẽ con đường cần mở.",
+     "trang": 61,
+     "nhom": "Vận dụng",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "3.13",
+     "de": "Trong các khẳng định sau, khẳng định nào đúng, khẳng định nào sai? Vì sao? a) Hình thang có hai cạnh bên song song là hình bình hành. b) Hình thang có hai cạnh bên bằng nhau là hình bình hành. c) Tứ giác có hai cạnh đối nào cũng song song là hình bình hành.",
+     "trang": 61,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "3.14",
+     "de": "Tính các góc còn lại của hình bình hành ABCD trong Hình 3.35 (biết góc A = 100°).",
+     "trang": 61,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "3.15",
+     "de": "Cho hình bình hành ABCD. Gọi E, F lần lượt là trung điểm của các cạnh AB, CD. Chứng minh BF = DE.",
+     "trang": 61,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "3.16",
+     "de": "Trong mỗi trường hợp sau đây (Hình 3.36), tứ giác nào là hình bình hành, tứ giác nào không là hình bình hành? Vì sao?",
+     "trang": 61,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "3.17a",
+     "de": "Cho hình bình hành ABCD. Gọi E, F lần lượt là trung điểm của các cạnh AB, CD. Chứng minh rằng hai tứ giác AEFD, AECF là những hình bình hành.",
+     "trang": 61,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "3.17b",
+     "de": "Cho hình bình hành ABCD. Gọi E, F lần lượt là trung điểm của các cạnh AB, CD. Chứng minh rằng EF = AD, AF = EC.",
+     "trang": 61,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "3.18",
+     "de": "Gọi O là giao điểm của hai đường chéo của hình bình hành ABCD. Một đường thẳng đi qua O lần lượt cắt các cạnh AB, CD của hình bình hành tại hai điểm M, N. Chứng minh tam giác OAM = tam giác OCN. Từ đó suy ra tứ giác MBND là hình bình hành.",
+     "trang": 61,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    }
+   ]
+  },
+  {
+   "chuong": "Chương III. Tứ giác",
+   "bai": "Luyện tập chung (trang 62)",
+   "cac_cau": [
+    {
+     "ma": "3.19",
+     "de": "Trong các tứ giác ở Hình 3.39, tứ giác nào là hình bình hành? Vì sao?",
+     "trang": 63,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "3.20a",
+     "de": "Cho hình bình hành ABCD. Lấy điểm M thuộc cạnh AB và điểm N thuộc cạnh CD sao cho AM = CN. Chứng minh rằng AN = CM.",
+     "trang": 63,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "3.20b",
+     "de": "Cho hình bình hành ABCD. Lấy điểm M thuộc cạnh AB và điểm N thuộc cạnh CD sao cho AM = CN. Chứng minh rằng góc AMC = góc ANC.",
+     "trang": 63,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "3.21",
+     "de": "Vẽ tứ giác ABCD theo hướng dẫn sau: Bước 1. Vẽ đoạn thẳng AB và đường thẳng a song song với AB. Bước 2. Lấy điểm C thuộc a. Bước 3. Trên a chọn D sao cho CD = AB và A, D nằm cùng phía đối với BC. Hãy giải thích tại sao tứ giác ABCD là hình bình hành.",
+     "trang": 63,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "3.22a",
+     "de": "Cho hình bình hành ABCD có AB = 3 cm, AD = 5 cm. Hỏi tia phân giác của góc A cắt cạnh CD hay cạnh BC?",
+     "trang": 63,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "3.22b",
+     "de": "Cho hình bình hành ABCD có AB = 3 cm, AD = 5 cm; tia phân giác của góc A cắt một cạnh của hình bình hành tại một điểm. Tính khoảng cách từ giao điểm đó đến điểm C.",
+     "trang": 63,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "3.23a",
+     "de": "Cho hình bình hành ABCD. Lấy điểm E sao cho B là trung điểm của AE, lấy điểm F sao cho C là trung điểm của DF. Chứng minh rằng hai tứ giác AEFD, ABFC là những hình bình hành.",
+     "trang": 63,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "3.23b",
+     "de": "Cho hình bình hành ABCD. Lấy điểm E sao cho B là trung điểm của AE, lấy điểm F sao cho C là trung điểm của DF. Chứng minh rằng các trung điểm của ba đoạn thẳng AF, DE, BC trùng nhau.",
+     "trang": 63,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "3.24a",
+     "de": "Cho ba điểm không thẳng hàng. Tìm một điểm sao cho nó cùng với ba điểm đã cho là bốn đỉnh của một hình bình hành. Hãy vẽ hình và mô tả cách tìm.",
+     "trang": 63,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "3.24b",
+     "de": "Cho ba điểm không thẳng hàng. Hỏi tìm được bao nhiêu điểm sao cho nó cùng với ba điểm đã cho là bốn đỉnh của một hình bình hành?",
+     "trang": 63,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    }
+   ]
+  },
+  {
+   "chuong": "Chương III. Tứ giác",
+   "bai": "Bài 13. Hình chữ nhật",
+   "cac_cau": [
+    {
+     "ma": "Luyện tập 1 (tr.65)",
+     "de": "Cho hình chữ nhật ABCD. Hai đường chéo AC, BD cắt nhau tại O. Kẻ OH vuông góc với DC (H thuộc DC) (H.3.44). Chứng minh rằng H là trung điểm của DC.",
+     "trang": 65,
+     "nhom": "Luyện tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "Luyện tập 2 (tr.66)",
+     "de": "Cho tứ giác ABCD có góc A = 90°, hai đường chéo cắt nhau tại trung điểm O của mỗi đường. Hỏi tứ giác ABCD là hình gì? Tại sao?",
+     "trang": 66,
+     "nhom": "Luyện tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "Vận dụng (tr.66)",
+     "de": "Hãy trả lời các câu hỏi trong tình huống mở đầu: hai thanh tre thẳng dài bằng nhau, được gắn với nhau tại trung điểm của mỗi thanh; khi các đầu mút của hai thanh tre đó tạo thành bốn đỉnh của một tứ giác thì tứ giác đó là hình gì? Tại sao?",
+     "trang": 66,
+     "nhom": "Vận dụng",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "3.25",
+     "de": "Bằng ê ke, nêu cách kiểm tra một tứ giác có là hình chữ nhật hay không. Hãy giải thích kết quả.",
+     "trang": 66,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "3.26",
+     "de": "Bằng compa, nêu cách kiểm tra một tứ giác có là hình chữ nhật hay không. Giải thích kết quả.",
+     "trang": 66,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "3.27",
+     "de": "Cho tam giác ABC, đường cao AH. Gọi M là trung điểm của AC, N là điểm sao cho M là trung điểm của HN. Chứng minh tứ giác AHCN là hình chữ nhật.",
+     "trang": 66,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "3.28a",
+     "de": "Xét một điểm M trên cạnh huyền của tam giác ABC vuông cân tại A. Gọi N và P lần lượt là hình chiếu vuông góc của M trên các cạnh AB và AC. Hỏi tứ giác MPAN là hình gì?",
+     "trang": 66,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "3.28b",
+     "de": "Xét một điểm M trên cạnh huyền của tam giác ABC vuông cân tại A. Gọi N và P lần lượt là hình chiếu vuông góc của M trên các cạnh AB và AC. Hỏi M ở vị trí nào thì đoạn thẳng NP có độ dài ngắn nhất? Vì sao?",
+     "trang": 66,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    }
+   ]
+  },
+  {
+   "chuong": "Chương III. Tứ giác",
+   "bai": "Bài 14. Hình thoi và hình vuông",
+   "cac_cau": [
+    {
+     "ma": "Luyện tập 1 (tr.69)",
+     "de": "Trong Hình 3.51, hình nào là hình thoi? Vì sao?",
+     "trang": 69,
+     "nhom": "Luyện tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "Luyện tập 2 (tr.71)",
+     "de": "Với mỗi hình dưới đây (Hình 3.54), ta dùng dấu hiệu nhận biết nào để khẳng định đó là hình vuông?",
+     "trang": 71,
+     "nhom": "Luyện tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "Vận dụng (tr.71)",
+     "de": "Trở lại tình huống mở đầu (gấp tờ giấy làm tư tạo ra góc vuông O, đánh dấu hai điểm A, B trên hai cạnh góc vuông rồi cắt chéo theo đoạn thẳng AB). Hãy giải thích tại sao: trường hợp a, ta được hình thoi; trường hợp b (OA = OB), ta được hình vuông.",
+     "trang": 71,
+     "nhom": "Vận dụng",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "3.29",
+     "de": "Tìm các hình thoi và hình vuông trong Hình 3.55.",
+     "trang": 71,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "3.30a",
+     "de": "Cho tam giác ABC, D là một điểm nằm giữa B và C. Qua D kẻ các đường thẳng song song với AB, AC, chúng cắt các cạnh AC, AB lần lượt tại E, F. Tứ giác AEDF là hình gì? Vì sao?",
+     "trang": 72,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "3.30b",
+     "de": "Cho tam giác ABC, D nằm giữa B và C; qua D kẻ các đường thẳng song song với AB, AC cắt AC, AB lần lượt tại E, F. Nếu tam giác ABC cân tại A thì điểm D ở vị trí nào trên cạnh BC để tứ giác AEDF là hình thoi?",
+     "trang": 72,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "3.30c",
+     "de": "Cho tam giác ABC, D nằm giữa B và C; qua D kẻ các đường thẳng song song với AB, AC cắt AC, AB lần lượt tại E, F. Nếu tam giác ABC vuông tại A thì tứ giác AEDF là hình gì?",
+     "trang": 72,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "3.30d",
+     "de": "Cho tam giác ABC, D nằm giữa B và C; qua D kẻ các đường thẳng song song với AB, AC cắt AC, AB lần lượt tại E, F. Nếu tam giác ABC vuông cân tại A thì điểm D ở vị trí nào trên cạnh BC để AEDF là hình vuông?",
+     "trang": 72,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "3.31",
+     "de": "Chứng minh rằng các trung điểm của bốn cạnh trong một hình chữ nhật là các đỉnh của một hình thoi.",
+     "trang": 72,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "3.32",
+     "de": "Chứng minh rằng các trung điểm của bốn cạnh trong một hình thoi là các đỉnh của một hình chữ nhật.",
+     "trang": 72,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "3.33",
+     "de": "Cho hình chữ nhật ABCD có chu vi bằng 36 cm. Gọi M là trung điểm của cạnh BC. Biết rằng MA vuông góc với MD. Tính độ dài các cạnh của hình chữ nhật ABCD (H.3.56).",
+     "trang": 72,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    }
+   ]
+  },
+  {
+   "chuong": "Chương III. Tứ giác",
+   "bai": "Luyện tập chung (trang 73)",
+   "cac_cau": [
+    {
+     "ma": "3.34a",
+     "de": "Cho tam giác ABC; M và N lần lượt là trung điểm của hai cạnh AB và AC. Lấy điểm P sao cho N là trung điểm của đoạn thẳng MP. Hỏi tứ giác AMCP là hình gì? Vì sao?",
+     "trang": 73,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "3.34b",
+     "de": "Cho tam giác ABC; M, N lần lượt là trung điểm của AB, AC; P là điểm sao cho N là trung điểm của MP. Với điều kiện nào của tam giác ABC thì tứ giác AMCP là hình chữ nhật; hình thoi; hình vuông?",
+     "trang": 73,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "3.35",
+     "de": "Cho hình bình hành ABCD. Các tia phân giác của các góc A, B, C, D cắt nhau như trên Hình 3.58. Chứng minh rằng EFGH là hình chữ nhật.",
+     "trang": 73,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "3.36",
+     "de": "Một khung tre hình chữ nhật có lắp đinh vít tại bốn đỉnh. Khi khung tre này bị xô lệch (do các đinh vít bị lỏng), các góc không còn vuông nữa thì khung đó là hình gì? Tại sao? Hỏi khi nẹp thêm một đường chéo vào khung đó thì nó còn bị xô lệch không?",
+     "trang": 73,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "3.37",
+     "de": "Gọi Ou và Ov lần lượt là hai tia phân giác của hai góc kề bù xOy và x'Oy; A là một điểm khác O trên tia Ox. Gọi B và C là chân đường vuông góc hạ từ A lần lượt xuống đường thẳng chứa Ou và Ov. Hỏi tứ giác OBAC là hình gì? Vì sao?",
+     "trang": 73,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "3.38",
+     "de": "Cho hình vuông ABCD. Lấy một điểm E trên cạnh CD. Tia phân giác của góc DAE cắt cạnh DC tại M. Đường thẳng qua M vuông góc với AE cắt BC tại N. Chứng minh DM + BN = MN.",
+     "trang": 73,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    }
+   ]
+  },
+  {
+   "chuong": "Chương III. Tứ giác",
+   "bai": "Bài tập cuối chương III",
+   "cac_cau": [
+    {
+     "ma": "3.39",
+     "de": "Trong các khẳng định sau, khẳng định nào đúng? A. Không có tứ giác nào mà không có góc tù. B. Nếu tứ giác có ba góc nhọn thì góc còn lại là góc tù. C. Nếu tứ giác có hai góc tù thì hai góc còn lại phải nhọn. D. Không có tứ giác nào có ba góc tù.",
+     "trang": 74,
+     "nhom": "Trắc nghiệm",
+     "dang": "TRAC_NGHIEM"
+    },
+    {
+     "ma": "3.40",
+     "de": "Trong các khẳng định sau, khẳng định nào đúng? Khẳng định nào sai? a) Tứ giác có hai đường chéo bằng nhau là hình bình hành. b) Tứ giác có hai cặp cạnh bằng nhau là hình bình hành. c) Tứ giác có ba góc vuông là hình chữ nhật. d) Tứ giác có ba cạnh bằng nhau là hình thoi.",
+     "trang": 74,
+     "nhom": "Trắc nghiệm",
+     "dang": "TRAC_NGHIEM"
+    },
+    {
+     "ma": "3.41",
+     "de": "Trong các khẳng định sau, khẳng định nào đúng? Khẳng định nào sai? a) Tứ giác có hai đường chéo bằng nhau và hai cạnh đối nào cũng bằng nhau là hình chữ nhật. b) Tứ giác có hai cạnh đối nào cũng bằng nhau là hình bình hành. c) Tứ giác có hai cạnh song song và hai đường chéo bằng nhau là hình thang cân. d) Tứ giác có hai cạnh song song và hai cạnh còn lại bằng nhau là hình bình hành.",
+     "trang": 74,
+     "nhom": "Trắc nghiệm",
+     "dang": "TRAC_NGHIEM"
+    },
+    {
+     "ma": "3.42",
+     "de": "Chứng minh rằng nếu tứ giác có hai đường chéo bằng nhau và một cặp cạnh đối bằng nhau thì tứ giác đó là một hình thang cân (H.3.59).",
+     "trang": 74,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "3.43a",
+     "de": "Cho hình bình hành ABCD. Lấy điểm P trên tia AB sao cho AP = 2AB. Tứ giác BPCD có phải là hình bình hành không? Tại sao?",
+     "trang": 74,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "3.43b",
+     "de": "Cho hình bình hành ABCD, điểm P trên tia AB sao cho AP = 2AB. Khi tam giác ABD vuông cân tại A, hãy tính số đo các góc của tứ giác BPCD.",
+     "trang": 74,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "3.44a",
+     "de": "Cho tam giác ABC vuông tại A. Gọi M là trung điểm của BC còn P, N lần lượt là chân đường vuông góc hạ từ M xuống CA, AB (H.3.60). Chứng minh hai tam giác vuông CMP và MBN bằng nhau.",
+     "trang": 75,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "3.44b",
+     "de": "Cho tam giác ABC vuông tại A, M là trung điểm BC, P và N là chân đường vuông góc hạ từ M xuống CA, AB. Chứng minh tứ giác APMN là một hình chữ nhật. Từ đó suy ra N là trung điểm của AB, P là trung điểm của AC.",
+     "trang": 75,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "3.44c",
+     "de": "Cho tam giác ABC vuông tại A, M là trung điểm BC, P và N là chân đường vuông góc hạ từ M xuống CA, AB. Lấy điểm Q sao cho P là trung điểm của MQ, chứng minh rằng tứ giác AMCQ là một hình thoi.",
+     "trang": 75,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "3.44d",
+     "de": "Cho tam giác ABC vuông tại A, M là trung điểm BC, P là chân đường vuông góc hạ từ M xuống CA, Q là điểm sao cho P là trung điểm MQ. Nếu AB = AC, tức là tam giác ABC vuông cân tại A thì tứ giác AMCQ có là hình vuông không? Vì sao?",
+     "trang": 75,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "3.45a",
+     "de": "Cho tam giác ABC cân tại A; M là một điểm thuộc đường thẳng BC, B ở giữa M và C. Gọi E, K lần lượt là chân đường vuông góc hạ từ M và từ B xuống AC, còn N, D lần lượt là chân đường vuông góc hạ từ B xuống ME và từ M xuống AB (H.3.61). Chứng minh rằng tứ giác BKEN là hình chữ nhật.",
+     "trang": 75,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "3.45b",
+     "de": "Cho tam giác ABC cân tại A; M thuộc đường thẳng BC, B ở giữa M và C; E, K là chân đường vuông góc hạ từ M và B xuống AC; N, D là chân đường vuông góc hạ từ B xuống ME và từ M xuống AB. Chứng minh rằng BK bằng hiệu khoảng cách từ M đến AC và đến AB, tức là BK = ME − MD.",
+     "trang": 75,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    }
+   ]
+  },
+  {
+   "chuong": "Chương IV. Định lí Thalès",
+   "bai": "Bài 15. Định lí Thalès trong tam giác",
+   "cac_cau": [
+    {
+     "ma": "Luyện tập 1 (tr.77)",
+     "de": "Tìm tỉ số của các cặp đoạn thẳng có độ dài như sau: a) MN = 3 cm và PQ = 9 cm; b) EF = 25 cm và HK = 10 dm.",
+     "trang": 77,
+     "nhom": "Luyện tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "Luyện tập 2 (tr.78)",
+     "de": "Cho tam giác ABC và một điểm B' nằm trên cạnh AB. Qua điểm B', ta vẽ một đường thẳng song song với BC, cắt AC tại C' (H.4.4). Dựa vào hình vẽ, hãy tính và so sánh các tỉ số sau và viết các tỉ lệ thức: a) AB'/AB và AC'/AC; b) AB'/B'B và AC'/C'C; c) B'B/AB và C'C/AC.",
+     "trang": 78,
+     "nhom": "Luyện tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "Luyện tập 3 (tr.79)",
+     "de": "Tìm các độ dài x, y trong Hình 4.6.",
+     "trang": 79,
+     "nhom": "Luyện tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "Vận dụng (tr.80)",
+     "de": "Em hãy trả lời câu hỏi trong tình huống mở đầu: cây cầu AB bắc qua một con sông rộng 300 m; để đo khoảng cách giữa hai điểm C và D trên hai bờ con sông, người ta chọn điểm E trên đường thẳng AB sao cho ba điểm E, C, D thẳng hàng; đo được AE = 400 m, EC = 500 m. Người ta tính khoảng cách giữa C và D như thế nào?",
+     "trang": 80,
+     "nhom": "Vận dụng",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "4.1",
+     "de": "Tìm độ dài x, y trong Hình 4.9 (làm tròn kết quả đến chữ số thập phân thứ nhất).",
+     "trang": 80,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "4.2",
+     "de": "Tìm các cặp đường thẳng song song trong Hình 4.10 và giải thích vì sao chúng song song với nhau.",
+     "trang": 80,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "4.3",
+     "de": "Cho tam giác ABC, từ điểm D trên cạnh BC, kẻ đường thẳng song song với AB cắt AC tại F và kẻ đường thẳng song song với AC cắt AB tại E. Chứng minh rằng AE/AB + AF/AC = 1.",
+     "trang": 80,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "4.4",
+     "de": "Cho tam giác ABC có trọng tâm G. Vẽ đường thẳng d qua G và song song với AB, d cắt BC tại điểm M. Chứng minh rằng BM = (1/3)BC.",
+     "trang": 80,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "4.5",
+     "de": "Để đo khoảng cách giữa hai vị trí B và E ở hai bên bờ sông, bác An chọn ba vị trí A, F, C cùng nằm ở một bên bờ sông sao cho ba điểm C, E, B thẳng hàng, ba điểm C, F, A thẳng hàng và AB // EF (H.4.11). Sau đó bác An đo được AF = 40 m, FC = 20 m, EC = 30 m. Hỏi khoảng cách giữa hai vị trí B và E bằng bao nhiêu?",
+     "trang": 80,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    }
+   ]
+  },
+  {
+   "chuong": "Chương IV. Định lí Thalès",
+   "bai": "Bài 16. Đường trung bình của tam giác",
+   "cac_cau": [
+    {
+     "ma": "Luyện tập (tr.83)",
+     "de": "Cho tam giác ABC cân tại A, D và E lần lượt là trung điểm của AB, AC. Tứ giác DECB là hình gì? Tại sao?",
+     "trang": 83,
+     "nhom": "Luyện tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "Vận dụng (tr.83)",
+     "de": "Em hãy trả lời câu hỏi trong tình huống mở đầu: cho B và C là hai điểm cách nhau bởi một hồ nước (Hình 4.12) với D, E lần lượt là trung điểm của AB và AC. Biết DE = 500 m, liệu không cần đo trực tiếp, ta có thể tính được khoảng cách giữa hai điểm B và C không?",
+     "trang": 83,
+     "nhom": "Vận dụng",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "4.6",
+     "de": "Tính các độ dài x, y trong Hình 4.18.",
+     "trang": 83,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "4.7a",
+     "de": "Cho tam giác ABC. Gọi M, N, P lần lượt là trung điểm của các cạnh AB, AC, BC. Chứng minh tứ giác BMNC là hình thang.",
+     "trang": 83,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "4.7b",
+     "de": "Cho tam giác ABC. Gọi M, N, P lần lượt là trung điểm của các cạnh AB, AC, BC. Tứ giác MNPB là hình gì? Tại sao?",
+     "trang": 83,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "4.8a",
+     "de": "Cho tam giác ABC có trung tuyến AM. Lấy hai điểm D và E trên cạnh AB sao cho AD = DE = EB và D nằm giữa hai điểm A, E. Chứng minh DC // EM.",
+     "trang": 83,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "4.8b",
+     "de": "Cho tam giác ABC có trung tuyến AM, hai điểm D và E trên cạnh AB sao cho AD = DE = EB, D nằm giữa A và E. DC cắt AM tại I. Chứng minh I là trung điểm của AM.",
+     "trang": 83,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "4.9",
+     "de": "Cho hình chữ nhật ABCD có AC cắt BD tại O. Gọi H, K lần lượt là trung điểm của AB, AD. Chứng minh rằng tứ giác AHOK là hình chữ nhật.",
+     "trang": 83,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    }
+   ]
+  },
+  {
+   "chuong": "Chương IV. Định lí Thalès",
+   "bai": "Bài 17. Tính chất đường phân giác của tam giác",
+   "cac_cau": [
+    {
+     "ma": "Luyện tập (tr.85)",
+     "de": "Tính độ dài x trong Hình 4.23 (tam giác DEF có EM là đường phân giác, DM = 3,5; DE = 4,5; MF = 5,6; EF = x).",
+     "trang": 85,
+     "nhom": "Luyện tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "4.10",
+     "de": "Tính độ dài x trong Hình 4.24.",
+     "trang": 86,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "4.11",
+     "de": "Cho tam giác ABC. Đường phân giác của góc A cắt BC tại D. Tính độ dài đoạn thẳng DC biết AB = 4,5 m; AC = 7,0 m và CB = 3,5 m (làm tròn kết quả đến hàng phần chục).",
+     "trang": 86,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "4.12",
+     "de": "Nhà bạn Mai ở vị trí M, nhà bạn Dung ở vị trí D (H.4.25), biết rằng tứ giác ABCD là hình vuông và M là trung điểm của AB. Hai bạn đi bộ với cùng một vận tốc trên con đường MD để đến điểm I. Bạn Mai xuất phát lúc 7h. Hỏi bạn Dung phải xuất phát lúc mấy giờ để gặp bạn Mai lúc 7h30 tại điểm I?",
+     "trang": 86,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    }
+   ]
+  },
+  {
+   "chuong": "Chương IV. Định lí Thalès",
+   "bai": "Luyện tập chung (trang 87)",
+   "cac_cau": [
+    {
+     "ma": "4.13",
+     "de": "Tìm độ dài x trong Hình 4.30.",
+     "trang": 88,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "4.14a",
+     "de": "Cho tứ giác ABCD, gọi E, F, K lần lượt là trung điểm của AD, BC, AC. Chứng minh EK // CD, FK // AB.",
+     "trang": 88,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "4.14b",
+     "de": "Cho tứ giác ABCD, gọi E, F, K lần lượt là trung điểm của AD, BC, AC. So sánh EF và (1/2)(AB + CD).",
+     "trang": 88,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "4.15",
+     "de": "Cho tam giác ABC, phân giác AD (D thuộc BC). Đường thẳng qua D song song với AB cắt AC tại E. Chứng minh rằng AC/AB = EC/EA.",
+     "trang": 88,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "4.16a",
+     "de": "Tam giác ABC có AB = 15 cm, AC = 20 cm, BC = 25 cm. Đường phân giác của góc BAC cắt cạnh BC tại D. Tính độ dài các đoạn thẳng DB và DC.",
+     "trang": 88,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "4.16b",
+     "de": "Tam giác ABC có AB = 15 cm, AC = 20 cm, BC = 25 cm; đường phân giác của góc BAC cắt BC tại D. Tính tỉ số diện tích của hai tam giác ABD và ACD.",
+     "trang": 88,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "4.17",
+     "de": "Cho hình bình hành ABCD, một đường thẳng đi qua D cắt AC, AB, CB theo thứ tự tại M, N, K. Chứng minh rằng DM^2 = MN·MK.",
+     "trang": 88,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    }
+   ]
+  },
+  {
+   "chuong": "Chương IV. Định lí Thalès",
+   "bai": "Bài tập cuối chương IV",
+   "cac_cau": [
+    {
+     "ma": "4.18",
+     "de": "Độ dài x trong Hình 4.31 bằng: A. 2,75. B. 2. C. 2,25. D. 3,75.",
+     "trang": 89,
+     "nhom": "Trắc nghiệm",
+     "dang": "TRAC_NGHIEM"
+    },
+    {
+     "ma": "4.19",
+     "de": "Cho tam giác ABC. Gọi H, K lần lượt là trung điểm của AC, BC. Biết HK = 3,5 cm. Độ dài AB bằng: A. 3,5 cm. B. 7 cm. C. 10 cm. D. 15 cm.",
+     "trang": 89,
+     "nhom": "Trắc nghiệm",
+     "dang": "TRAC_NGHIEM"
+    },
+    {
+     "ma": "4.20",
+     "de": "Cho tam giác ABC có chu vi là 32 cm. Gọi M, N, P lần lượt là trung điểm của các cạnh AB, AC, BC. Chu vi của tam giác MNP là: A. 8 cm. B. 64 cm. C. 30 cm. D. 16 cm.",
+     "trang": 89,
+     "nhom": "Trắc nghiệm",
+     "dang": "TRAC_NGHIEM"
+    },
+    {
+     "ma": "4.21",
+     "de": "Cho tam giác ABC có AB = 9 cm, D là điểm thuộc cạnh AB sao cho AD = 6 cm. Kẻ DE song song với BC (E thuộc AC), kẻ EF song song với CD (F thuộc AB). Độ dài AF bằng: A. 4 cm. B. 5 cm. C. 6 cm. D. 7 cm.",
+     "trang": 89,
+     "nhom": "Trắc nghiệm",
+     "dang": "TRAC_NGHIEM"
+    },
+    {
+     "ma": "4.22",
+     "de": "Cho tam giác ABC cân tại A có AB = 15 cm, BC = 10 cm, đường phân giác của góc B cắt AC tại D. Khi đó, đoạn thẳng AD có độ dài là: A. 3 cm. B. 6 cm. C. 9 cm. D. 12 cm.",
+     "trang": 89,
+     "nhom": "Trắc nghiệm",
+     "dang": "TRAC_NGHIEM"
+    },
+    {
+     "ma": "4.23",
+     "de": "Cho góc xOy. Trên tia Ox, lấy hai điểm A và B sao cho OA = 2 cm, OB = 5 cm. Trên tia Oy, lấy điểm C sao cho OC = 3 cm. Từ điểm B kẻ đường thẳng song song với AC cắt Oy tại D. Tính độ dài đoạn thẳng CD.",
+     "trang": 89,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "4.24a",
+     "de": "Cho tam giác ABC vuông tại A. Gọi D, E, F lần lượt là trung điểm của AB, BC, AC. Chứng minh rằng AE = DF.",
+     "trang": 89,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "4.24b",
+     "de": "Cho tam giác ABC vuông tại A; D, E, F lần lượt là trung điểm của AB, BC, AC. Gọi I là trung điểm của DE. Chứng minh rằng ba điểm B, I, F thẳng hàng.",
+     "trang": 89,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "4.25",
+     "de": "Cho tam giác ABC, các đường trung tuyến BD và CE cắt nhau tại G. Gọi I, K lần lượt là trung điểm của GB, GC. Chứng minh tứ giác EDKI là hình bình hành.",
+     "trang": 89,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "4.26",
+     "de": "Cho tam giác ABC, điểm I thuộc cạnh AB, điểm K thuộc cạnh AC. Kẻ IM song song với BK (M thuộc AC), kẻ KN song song với CI (N thuộc AB). Chứng minh MN song song với BC.",
+     "trang": 89,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "4.27",
+     "de": "Bác Mến muốn tính khoảng cách giữa hai vị trí P, Q ở hai bên bờ ao cá. Để làm điều đó, bác Mến chọn ba vị trí A, B, C, thực hiện đo đạc và vẽ mô phỏng như Hình 4.32 (AP = 150 m, PB = 150 m, AQ = 250 m, QC = 250 m, BC = 400 m). Em hãy giúp bác Mến tính khoảng cách giữa hai điểm P và Q.",
+     "trang": 89,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    }
+   ]
+  },
+  {
+   "chuong": "Chương V. Dữ liệu và biểu đồ",
+   "bai": "Bài 18. Thu thập và phân loại dữ liệu",
+   "cac_cau": [
+    {
+     "ma": "Luyện tập 1 (tr.91)",
+     "de": "Em hãy cho biết phương pháp thu thập dữ liệu trong mỗi trường hợp sau là trực tiếp hay gián tiếp. a) Nam vào website của Cục Thống kê và ghi lại số xã/phường của các tỉnh/thành phố thuộc đồng bằng Bắc Bộ. b) Thầy giáo dạy Giáo dục thể chất đã đo và ghi lại thời gian chạy cự li 1 000 mét của các bạn học sinh khối 8.",
+     "trang": 91,
+     "nhom": "Luyện tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "Luyện tập 2 (tr.92)",
+     "de": "Với mỗi câu hỏi sau, An đã hỏi 5 bạn và ghi lại câu trả lời. a) Bạn nặng bao nhiêu kilôgam? Kết quả: 48; 51; 46; 145; 48. b) Tên bạn có bao nhiêu chữ cái? Kết quả: 4; 5; 6; 3; 5. Mỗi dãy dữ liệu trên thuộc loại nào? Chỉ ra giá trị không hợp lí nếu có.",
+     "trang": 92,
+     "nhom": "Luyện tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "Vận dụng (tr.92)",
+     "de": "Em muốn ước lượng thời gian tự học ở nhà (đơn vị: giờ) của các bạn trong lớp. Hãy đưa ra cách thu thập dữ liệu và xác định xem dữ liệu thu được thuộc loại nào.",
+     "trang": 92,
+     "nhom": "Vận dụng",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "5.1",
+     "de": "Dữ liệu thu được trong mỗi câu hỏi sau thuộc loại nào? a) Bạn cao bao nhiêu? b) Mạng điện thoại bạn đang dùng là gì? c) Gia đình bạn có bao nhiêu người dưới 18 tuổi?",
+     "trang": 92,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "5.2",
+     "de": "Ghép cặp cho phù hợp và ghi kết quả vào vở: a. Số liệu rời rạc; b. Số liệu liên tục; c. Dữ liệu không là số, không thể sắp thứ tự; d. Dữ liệu không là số, có thể sắp thứ tự — với A. Kết quả đánh giá của 5 bạn về đề kiểm tra học kì I môn Toán: Khó, Rất khó, Trung bình, Dễ, Khó; B. Nhiệt độ (°C) tại Nha Trang trong 5 ngày đầu tháng 6 là: 23,2; 25,7; 31,4; 27,3; 28,6; C. Số hoạt động hè mà các bạn trong tổ tham gia: 2; 1; 3; 0; 4; D. Tên các môn thể thao mà các bạn yêu thích nhất: Bóng đá, Cầu lông, Cờ vua, Võ thuật, Bóng bàn.",
+     "trang": 92,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "5.3",
+     "de": "Nên sử dụng phương pháp thu thập nào để thu được mỗi dữ liệu sau? a) Tên của 10 quốc gia có diện tích lớn nhất. b) Ý kiến của các bạn về địa điểm đi tham quan tuần tới. c) Chiều cao của các cây cau giống sau 6 tháng trồng.",
+     "trang": 92,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    }
+   ]
+  },
+  {
+   "chuong": "Chương V. Dữ liệu và biểu đồ",
+   "bai": "Bài 19. Biểu diễn dữ liệu bằng bảng, biểu đồ",
+   "cac_cau": [
+    {
+     "ma": "Luyện tập 1 (tr.94)",
+     "de": "Nên chọn biểu đồ tranh hay biểu đồ cột để biểu diễn dữ liệu Bảng 5.1 (số lượng các loài động vật tại Thảo Cầm Viên ngày 14-7-1869: Thú 120 con, Chim 344 con, Bò sát 45 con)? Vẽ biểu đồ đó.",
+     "trang": 94,
+     "nhom": "Luyện tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "Luyện tập 2 (tr.95)",
+     "de": "Cho biểu đồ Hình 5.3 (số cơn bão trên toàn cầu các năm 2014-2018: 99; 121; 86; 130; 94). a) Lập bảng thống kê cho dữ liệu trong biểu đồ. b) Vẽ biểu đồ cột biểu diễn dữ liệu này. Nếu ta có dữ liệu về số cơn bão hằng năm trên toàn cầu từ năm 1970 đến nay thì có nên dùng biểu đồ cột để biểu diễn không?",
+     "trang": 95,
+     "nhom": "Luyện tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "Luyện tập 3 (tr.96)",
+     "de": "Bảng thống kê cho biết mật độ dân số (người/km^2) tại ba vùng kinh tế xã hội trong hai năm 2009 và 2019 (Đồng bằng sông Hồng: 930 và 1 060; Bắc Trung bộ và Duyên hải miền Trung: 196 và 211; Đồng bằng sông Cửu Long: 424 và 423). Muốn biết sau 10 năm mật độ dân số thay đổi thế nào ở mỗi vùng, ta nên sử dụng biểu đồ nào?",
+     "trang": 96,
+     "nhom": "Luyện tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "Thử thách nhỏ (tr.97)",
+     "de": "Trở lại bài toán mở đầu, với dữ liệu trong Bảng 5.1. Vuông sẽ dùng biểu đồ cột, Tròn sẽ dùng biểu đồ hình quạt tròn. Em ủng hộ Vuông hay Tròn?",
+     "trang": 97,
+     "nhom": "Vận dụng",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "5.4a",
+     "de": "Biểu đồ Hình 5.6 biểu diễn số lượng các bạn lớp 8A tham gia các câu lạc bộ (Tiếng Anh, Võ thuật, Nghệ thuật; mỗi biểu tượng ứng với 3 bạn). Cho biết đây là biểu đồ gì? Mỗi biểu tượng ứng với bao nhiêu học sinh?",
+     "trang": 97,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "5.4b",
+     "de": "Biểu đồ Hình 5.6 biểu diễn số lượng các bạn lớp 8A tham gia các câu lạc bộ. Lập bảng thống kê và vẽ biểu đồ cột biểu diễn dữ liệu này.",
+     "trang": 97,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "5.5a",
+     "de": "Bảng thống kê cho biết số lượng khách đánh giá chất lượng dịch vụ của một khách sạn (Rất tốt: 5; Tốt: 20; Trung bình: 10; Kém: 5). Vẽ biểu đồ tranh, biểu đồ cột biểu diễn bảng thống kê trên.",
+     "trang": 97,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "5.5b",
+     "de": "Bảng thống kê cho biết số lượng khách đánh giá chất lượng dịch vụ của một khách sạn. Nếu muốn biểu diễn tỉ lệ khách hàng đánh giá theo các mức đánh giá trên, ta cần dùng biểu đồ nào để biểu diễn?",
+     "trang": 97,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "5.6",
+     "de": "Cho biểu đồ Hình 5.7 (số lượng huy chương của đoàn thể thao Mỹ và Nhật Bản tại Olympic Tokyo 2020). Hãy lập bảng thống kê biểu diễn số lượng huy chương các loại của đoàn thể thao Mỹ và vẽ biểu đồ cột biểu diễn bảng thống kê này.",
+     "trang": 97,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "5.7",
+     "de": "Bảng sau cho biết khối lượng giấy vụn các lớp khối 8 đã thu gom được (8A: 12,7 kg; 8B: 16,8 kg; 8C: 15,5 kg; 8D: 14,3 kg). Lựa chọn biểu đồ phù hợp biểu diễn bảng thống kê này. Vẽ biểu đồ đó.",
+     "trang": 98,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "5.8a",
+     "de": "Bảng thống kê biểu diễn số huy chương vàng trong hai kì SEA Games năm 2017 và 2019 của các đoàn thể thao Việt Nam (2019: 98, 2017: 58), Thái Lan (2019: 92, 2017: 72). Vẽ biểu đồ để so sánh số huy chương vàng của mỗi quốc gia đạt được qua hai kì SEA Games.",
+     "trang": 98,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "5.8b",
+     "de": "Bảng thống kê biểu diễn số huy chương vàng trong hai kì SEA Games năm 2017 và 2019 của Việt Nam và Thái Lan. Vẽ biểu đồ so sánh số huy chương vàng của Việt Nam và Thái Lan trong mỗi kì SEA Games.",
+     "trang": 98,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "5.9",
+     "de": "Biểu đồ Hình 5.8 cho biết tỉ lệ mỗi loại quả bán được của một cửa hàng (Lê 20%, Táo 30%, Nhãn 40%, Nho 10%). Giả sử cửa hàng bán được 200 kg quả các loại. Lập bảng thống kê cho biết số lượng mỗi loại quả cửa hàng bán được. Vẽ biểu đồ cột biểu diễn bảng thống kê này.",
+     "trang": 98,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    }
+   ]
+  },
+  {
+   "chuong": "Chương V. Dữ liệu và biểu đồ",
+   "bai": "Bài 20. Phân tích số liệu thống kê dựa vào biểu đồ",
+   "cac_cau": [
+    {
+     "ma": "Luyện tập 1 (tr.100)",
+     "de": "Dựa trên dữ liệu khảo sát về món ăn Việt Nam được ưa thích, một công ty du lịch đã vẽ hai biểu đồ (Hình 5.10; Phở 972, Nem 987, Bánh mì 955 lượt bình chọn). a) Hai biểu đồ này biểu diễn cùng một dữ liệu không? Lập bảng thống kê về dữ liệu đó. b) Trong Biểu đồ a), tỉ lệ chiều cao giữa cột màu xanh và cột màu vàng có bằng tỉ lệ hai số mà chúng biểu diễn không? Giải thích tại sao.",
+     "trang": 100,
+     "nhom": "Luyện tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "Luyện tập 2 (tr.101)",
+     "de": "Cho hai biểu đồ (Hình 5.12) biểu diễn số lượng người thất nghiệp tại một thành phố trong giai đoạn từ 12/2007 đến 6/2010 (7; 9; 11; 13 nghìn người). Hãy giải thích tại sao xu thế của hai biểu đồ lại khác nhau. Để thấy được xu thế của số lượng người thất nghiệp, ta nên dùng biểu đồ nào?",
+     "trang": 101,
+     "nhom": "Luyện tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "Luyện tập 3 (tr.102)",
+     "de": "Các biểu đồ Hình 5.14 cho biết cơ cấu năng lượng được khai thác, sản xuất trong nước các năm 2018 và 2019. a) Lập bảng thống kê cho biết cơ cấu năng lượng được khai thác, sản xuất trong nước (theo tỉ lệ %) năm 2019. b) Nhận xét về sự thay đổi cơ cấu năng lượng được khai thác, sản xuất trong nước năm 2019 so với năm 2018.",
+     "trang": 102,
+     "nhom": "Luyện tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "Luyện tập 4 (tr.103)",
+     "de": "Cho biểu đồ Hình 5.16 (tốc độ gió theo tháng tại Nha Trang và Hà Nội). a) So sánh tốc độ gió trong các tháng tại hai thành phố này. Giải thích sự khác nhau đó. b) Ở Nha Trang, 6 tháng gió thổi mạnh nhất là những tháng nào?",
+     "trang": 103,
+     "nhom": "Luyện tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "5.10a",
+     "de": "Biểu đồ cột (H.5.17) biểu diễn số tiền mỗi người trong nhóm học sinh có được nhờ bán phế liệu (An 230, Bình 250, Tuyết 280, Khánh 240, Hải 350 nghìn đồng). Số tiền của Tuyết có gấp đôi số tiền của Khánh không? Giải thích tại sao.",
+     "trang": 104,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "5.10b",
+     "de": "Biểu đồ cột (H.5.17) biểu diễn số tiền mỗi người trong nhóm học sinh có được nhờ bán phế liệu. Lập bảng thống kê cho số tiền mỗi bạn có được nhờ bán phế liệu.",
+     "trang": 104,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "5.11a",
+     "de": "Cho hai biểu đồ (H.5.18) về doanh thu của nhà máy các năm 2017-2021 (30; 33; 34; 35; 38 tỉ đồng). Doanh thu của nhà máy trong Biểu đồ a) có tăng nhanh hơn doanh thu của nhà máy trong Biểu đồ b) hay không?",
+     "trang": 104,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "5.11b",
+     "de": "Cho hai biểu đồ (H.5.18) về doanh thu của nhà máy. Hai biểu đồ này có cùng biểu diễn một dãy số liệu không?",
+     "trang": 104,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "5.11c",
+     "de": "Cho hai biểu đồ (H.5.18) về doanh thu của nhà máy. Giải thích tại sao hai đường gấp khúc trên hai biểu đồ có độ dốc khác nhau.",
+     "trang": 104,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "5.12a",
+     "de": "Cho biểu đồ (H.5.19) về tỉ lệ đất rừng trên tổng diện tích đất của Việt Nam và Indonesia các năm 2013-2017. So sánh tỉ lệ diện tích đất rừng trên tổng diện tích đất của hai nước.",
+     "trang": 105,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "5.12b",
+     "de": "Cho biểu đồ (H.5.19) về tỉ lệ đất rừng trên tổng diện tích đất của Việt Nam và Indonesia. Cho biết xu thế tăng, giảm của tỉ lệ diện tích đất rừng trên tổng diện tích đất của mỗi nước.",
+     "trang": 105,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "5.12c",
+     "de": "Cho biểu đồ (H.5.19) về tỉ lệ đất rừng trên tổng diện tích đất. Lập bảng thống kê về tỉ lệ diện tích đất rừng của Việt Nam trên tổng diện tích đất qua các năm.",
+     "trang": 105,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "5.12d",
+     "de": "Cho biểu đồ (H.5.19) về tỉ lệ đất rừng. Tổng diện tích đất của Việt Nam, Indonesia tương ứng là 331 690 km^2; 1 826 440 km^2. Tính diện tích đất rừng của Việt Nam, Indonesia năm 2017.",
+     "trang": 105,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "5.13a",
+     "de": "Biểu đồ (H.5.20) cho biết cơ cấu GDP của Việt Nam năm 2021. Lĩnh vực nào đóng góp nhiều nhất vào GDP, với bao nhiêu phần trăm?",
+     "trang": 105,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "5.13b",
+     "de": "Biểu đồ (H.5.20) cho biết cơ cấu GDP của Việt Nam năm 2021 (Dịch vụ 40,95%). GDP Việt Nam năm 2021 là 0,4 nghìn tỉ đô la Mỹ. Lĩnh vực dịch vụ đóng góp bao nhiêu tỉ đô la Mỹ?",
+     "trang": 105,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "5.14a",
+     "de": "Cho biểu đồ (H.5.21) về thị phần xuất khẩu gạo của Việt Nam và Thái Lan các năm 2017-2020. Nhận xét về xu thế của thị phần xuất khẩu gạo của Thái Lan trong các năm từ 2017 đến 2020.",
+     "trang": 105,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "5.14b",
+     "de": "Cho biểu đồ (H.5.21) về thị phần xuất khẩu gạo. Lập bảng thống kê thị phần xuất khẩu gạo của Việt Nam trong giai đoạn này.",
+     "trang": 105,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    }
+   ]
+  },
+  {
+   "chuong": "Chương V. Dữ liệu và biểu đồ",
+   "bai": "Luyện tập chung (trang 106)",
+   "cac_cau": [
+    {
+     "ma": "5.15",
+     "de": "Mỗi dữ liệu sau đây thuộc loại nào? Nên dùng biểu đồ nào để biểu diễn dữ liệu đó? a) Tuổi thọ trung bình của người Việt Nam trong 30 năm từ năm 1989 đến năm 2019. b) Số bàn thắng mà mỗi đội bóng châu Á ghi được tại World Cup 2022.",
+     "trang": 108,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "5.16a",
+     "de": "Bảng thống kê cho biết tỉ lệ đóng góp vào GDP toàn cầu của Việt Nam trong một số năm (2011: 0,16%; 2012: 0,18%; 2013: 0,19%; 2014: 0,20%; 2015: 0,23%; 2016: 0,24%; 2017: 0,24%; 2018: 0,25%). Chọn biểu đồ phù hợp để biểu diễn bảng thống kê này.",
+     "trang": 108,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "5.16b",
+     "de": "Bảng thống kê cho biết tỉ lệ đóng góp vào GDP toàn cầu của Việt Nam trong một số năm 2011-2018. Cho biết xu thế về tỉ lệ đóng góp của Việt Nam vào GDP toàn cầu.",
+     "trang": 108,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "5.17",
+     "de": "Số học sinh của ba trường Trung học cơ sở trên địa bàn đăng kí tham dự giải chạy việt dã do quận tổ chức được cho trong bảng (Đoàn Kết: 13; Bình Minh: 47; Hoà Bình: 183). Theo em nên sử dụng biểu đồ tranh hay biểu đồ cột để biểu diễn dữ liệu này? Tại sao?",
+     "trang": 108,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "5.18",
+     "de": "Doanh thu (đơn vị: tỉ đồng) của hai chi nhánh một công ty trong năm 2021 và 2022 được cho trong bảng (Hà Nội: 6 và 8; Thành phố Hồ Chí Minh: 10 và 12). Lựa chọn và vẽ biểu đồ để so sánh doanh thu của hai chi nhánh này trong hai năm 2021 và 2022.",
+     "trang": 108,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    }
+   ]
+  },
+  {
+   "chuong": "Chương V. Dữ liệu và biểu đồ",
+   "bai": "Bài tập cuối chương V",
+   "cac_cau": [
+    {
+     "ma": "5.19",
+     "de": "Dữ liệu nào sau đây là số liệu liên tục? A. Dữ liệu về tên các vận động viên Việt Nam tham dự SEA Games 31. B. Dữ liệu về kết quả đánh giá hiệu quả của chương trình dạy học trên truyền hình. C. Dữ liệu về cân nặng của 200 con cá chép sau 6 tháng nuôi. D. Dữ liệu về số người bị mắc Covid-19 trong gia đình của các bạn trong lớp.",
+     "trang": 109,
+     "nhom": "Trắc nghiệm",
+     "dang": "TRAC_NGHIEM"
+    },
+    {
+     "ma": "5.20",
+     "de": "An đứng từ xa và ghi lại xem bạn nào đi sang đường sử dụng cầu vượt khi tan trường. Phương pháp An thu thập dữ liệu là: A. Từ nguồn có sẵn. B. Quan sát. C. Lập bảng hỏi. D. Phỏng vấn.",
+     "trang": 109,
+     "nhom": "Trắc nghiệm",
+     "dang": "TRAC_NGHIEM"
+    },
+    {
+     "ma": "5.21",
+     "de": "Trong biểu đồ cột với gốc trục đứng không bắt đầu từ 0, khẳng định nào sau đây không đúng? A. Cột cao hơn biểu diễn số liệu lớn hơn. B. Hai cột cao bằng nhau biểu diễn số liệu bằng nhau. C. Cột thấp hơn biểu diễn số liệu bé hơn. D. Tỉ lệ chiều cao của hai cột bằng tỉ lệ hai số liệu được biểu diễn.",
+     "trang": 109,
+     "nhom": "Trắc nghiệm",
+     "dang": "TRAC_NGHIEM"
+    },
+    {
+     "ma": "5.22",
+     "de": "Để biểu diễn tỉ lệ của các phần trong tổng thể ta dùng biểu đồ nào sau đây? A. Biểu đồ tranh. B. Biểu đồ cột. C. Biểu đồ đoạn thẳng. D. Biểu đồ hình quạt tròn.",
+     "trang": 109,
+     "nhom": "Trắc nghiệm",
+     "dang": "TRAC_NGHIEM"
+    },
+    {
+     "ma": "5.23",
+     "de": "Để biểu diễn sự thay đổi của một đại lượng theo thời gian ta dùng biểu đồ nào sau đây? A. Biểu đồ cột kép. B. Biểu đồ tranh. C. Biểu đồ đoạn thẳng. D. Biểu đồ hình quạt tròn.",
+     "trang": 109,
+     "nhom": "Trắc nghiệm",
+     "dang": "TRAC_NGHIEM"
+    },
+    {
+     "ma": "5.24a",
+     "de": "Cho hai biểu đồ Hình 5.25 (số sản phẩm bán được theo tháng). Lập bảng thống kê cho dữ liệu được biểu diễn trong mỗi biểu đồ.",
+     "trang": 110,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "5.24b",
+     "de": "Cho hai biểu đồ Hình 5.25 (số sản phẩm bán được theo tháng). Dữ liệu biểu diễn trên hai biểu đồ có như nhau không? Giải thích tại sao hình dạng hai đường gấp khúc trên hai biểu đồ lại khác nhau.",
+     "trang": 110,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "5.25a",
+     "de": "Khối 8 tổ chức giải bóng đá với 5 đội tham dự là các đội bóng của các lớp A, B, C, D, E. Trước khi giải đấu diễn ra, Bình muốn thực hiện khảo sát dự đoán của các bạn về đội bóng vô địch giải đấu. Theo em Bình có thể thực hiện khảo sát theo những cách nào?",
+     "trang": 110,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "5.25b",
+     "de": "Khối 8 tổ chức giải bóng đá với 5 đội tham dự; Bình khảo sát dự đoán của các bạn về đội bóng vô địch. Dữ liệu Bình thu được thuộc loại nào?",
+     "trang": 110,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "5.26a",
+     "de": "Bạn Bình tiến hành khảo sát dự đoán như trong Bài 5.25. Giả sử Bình thu được kết quả như sau: A, B, A, A, A, A, A, B, D, B, A, A, B, D, D, A, A, B, D. Lập bảng thống kê về số lượng dự đoán vô địch cho mỗi đội. Có thể dùng biểu đồ nào để biểu diễn dữ liệu trong bảng thống kê thu được?",
+     "trang": 110,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "5.26b",
+     "de": "Bạn Bình khảo sát dự đoán đội vô địch và thu được kết quả A, B, A, A, A, A, A, B, D, B, A, A, B, D, D, A, A, B, D. Nếu muốn biểu diễn tỉ lệ các bạn được hỏi dự đoán mỗi đội vô địch thì nên dùng biểu đồ nào?",
+     "trang": 110,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "5.27a",
+     "de": "Bảng thống kê cho biết số lượng học sinh của các lớp khối 8 tham gia các câu lạc bộ Thể thao và Nghệ thuật của trường (Thể thao: 8A 8, 8B 12, 8C 10, 8D 5; Nghệ thuật: 8A 16, 8B 4, 8C 8, 8D 8). Lựa chọn và vẽ biểu đồ để so sánh số lượng học sinh tham gia hai câu lạc bộ này ở từng lớp.",
+     "trang": 110,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "5.27b",
+     "de": "Bảng thống kê cho biết số lượng học sinh của các lớp khối 8 tham gia các câu lạc bộ Thể thao và Nghệ thuật. Lựa chọn biểu đồ biểu diễn tỉ lệ học sinh các lớp tham gia hai câu lạc bộ trong số các học sinh khối 8 tham gia hai câu lạc bộ này.",
+     "trang": 110,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO"
+    }
+   ]
+  },
+  {
+   "chuong": "Hoạt động thực hành trải nghiệm",
+   "bai": "Hoạt động thực hành trải nghiệm (trang 111)",
+   "cac_cau": [
+    {
+     "ma": "Lãi kép - HĐ (tr.112)",
+     "de": "Bài toán gửi tiết kiệm có kì hạn: một người gửi vào ngân hàng P đồng, với lãi suất hằng tháng là r (dưới dạng số thập phân). a) Tính số tiền người đó nhận được sau 1 tháng. b) Sau 2 tháng. c) Sau 3 tháng. d) Đưa ra công thức tính số tiền người đó nhận được sau n tháng.",
+     "trang": 112,
+     "nhom": "Luyện tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "Lãi kép - Dự án 1 (tr.112)",
+     "de": "Bác Hưng muốn gửi tiết kiệm 300 triệu đồng kì hạn 12 tháng. Dựa vào bảng lãi suất mà các ngân hàng công bố tại thời điểm hiện tại, hãy tính số tiền lãi mà bác Hưng nhận được khi gửi cho mỗi ngân hàng. Từ đó tư vấn ngân hàng gửi tiết kiệm cho bác Hưng (giả sử uy tín và chất lượng dịch vụ của các ngân hàng là như nhau).",
+     "trang": 112,
+     "nhom": "Vận dụng",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "Lãi kép - Dự án 2 (tr.112)",
+     "de": "Bác Hương có 250 triệu đồng muốn gửi tiết kiệm ở một ngân hàng và hai năm sau mới có nhu cầu sử dụng số tiền này. Dựa vào bảng lãi suất mà ngân hàng công bố tại thời điểm hiện tại, hãy tư vấn cho bác Hương phương án gửi tiết kiệm để số tiền lãi thu được sau hai năm gửi tiết kiệm là lớn nhất.",
+     "trang": 112,
+     "nhom": "Vận dụng",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "GeoGebra đa thức - Thực hành 1 (tr.114)",
+     "de": "Sử dụng phần mềm GeoGebra, hãy tính: (3x^2y + 5xy − 2)(4x + 3y) − 6x^2(2xy + (3/2)y^2 + (10/3)y).",
+     "trang": 114,
+     "nhom": "Luyện tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "GeoGebra đa thức - Thực hành 2 (tr.114)",
+     "de": "Sử dụng phần mềm GeoGebra, hãy khai triển các biểu thức sau: a) (5x − y)^2; b) ((1/3)x + 2y)^3.",
+     "trang": 114,
+     "nhom": "Luyện tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "GeoGebra đa thức - Thực hành 3 (tr.114)",
+     "de": "Sử dụng phần mềm GeoGebra, hãy phân tích các đa thức sau thành nhân tử: a) x^4 − 4x^3 − 7x^2 + 8x + 10; b) (x + y + z)^3 − x^3 − y^3 − z^3.",
+     "trang": 114,
+     "nhom": "Luyện tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "GeoGebra đa thức - Thực hành 4 (tr.114)",
+     "de": "Sử dụng phần mềm GeoGebra, hãy tìm thương và dư (nếu có) trong các phép chia sau: a) (3x^4y − 9x^3y^2 − 21x^2y^2) : (3x^2y); b) (2x^3 + 5x^2 − 2x + 12) : (2x^2 − x + 1).",
+     "trang": 114,
+     "nhom": "Luyện tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "GeoGebra vẽ hình - Luyện tập 2 (tr.117)",
+     "de": "a) Dùng công cụ Trung điểm hoặc tâm để kiểm tra trung điểm AC và BD có trùng nhau không. b) Lưu hình vẽ ở HĐ2 thành tệp ảnh hbh.png. c) Tương tự, hãy vẽ một hình thoi ABCD có cạnh 4 cm.",
+     "trang": 117,
+     "nhom": "Luyện tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "GeoGebra vẽ hình - Luyện tập 3 (tr.119)",
+     "de": "a) Dùng công cụ Khoảng cách để kiểm tra DE có bằng 4 cm không. b) Lưu hình vẽ ở HĐ3 thành tệp ảnh hth.png. c) Tương tự, hãy vẽ hình thang cân ADEC có AD // EC, AD = 6 cm, CE = 4 cm, AC = DE = 3 cm.",
+     "trang": 119,
+     "nhom": "Luyện tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "GeoGebra vẽ hình - Thực hành 1 (tr.119)",
+     "de": "a) Em hãy trình bày các bước dùng phần mềm GeoGebra để vẽ hình chữ nhật ABCD có AB = 6 cm, AC = 9 cm. b) Vẽ hình chữ nhật trên trong phần mềm GeoGebra và lưu thành một tệp có đuôi png.",
+     "trang": 119,
+     "nhom": "Luyện tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "GeoGebra vẽ hình - Thực hành 2 (tr.119)",
+     "de": "a) Em hãy trình bày các bước dùng phần mềm GeoGebra để vẽ hình bình hành ABCD có AB = 4 cm, AC = 5 cm, BC = 6 cm. b) Vẽ hình bình hành trên trong phần mềm GeoGebra và lưu thành một tệp có đuôi png.",
+     "trang": 119,
+     "nhom": "Luyện tập",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "Khí hậu - Dự án 1 (tr.120)",
+     "de": "Minh hoạ các đặc điểm khí hậu chung: thu thập dữ liệu về nhiệt độ, lượng mưa, độ ẩm trung bình các tháng của Việt Nam và điền vào bảng thống kê; lựa chọn biểu đồ và vẽ các biểu đồ biểu diễn các dãy số liệu; phân tích dữ liệu và thảo luận trong nhóm xem dữ liệu thu được minh hoạ cho những đặc điểm nào của khí hậu Việt Nam.",
+     "trang": 120,
+     "nhom": "Vận dụng",
+     "dang": "CAU_NHO"
+    },
+    {
+     "ma": "Khí hậu - Dự án 2 (tr.121)",
+     "de": "Minh hoạ sự khác biệt về khí hậu giữa miền Bắc và miền Nam: chọn hai địa điểm ở hai miền Bắc và Nam, thu thập dữ liệu về nhiệt độ, lượng mưa, độ ẩm trung bình các tháng, ghi thành 3 bảng thống kê; lựa chọn loại biểu đồ và biểu diễn trên cùng một biểu đồ hai dãy số liệu; phân tích và thảo luận xem có những khác biệt gì.",
+     "trang": 121,
+     "nhom": "Vận dụng",
+     "dang": "CAU_NHO"
+    }
+   ]
+  }
+ ]
+}

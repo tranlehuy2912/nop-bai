@@ -1,0 +1,5 @@
+<!-- Vong tron sau bieu tuong cap sach o dau man soan. -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="oval">
+    <solid android:color="@color/brand_soft" />
+</shape>

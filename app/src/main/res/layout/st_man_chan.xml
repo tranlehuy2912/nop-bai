@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/goc_chan"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/st_nen_chan"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="40dp">
+
+    <TextView
+        android:id="@+id/dong_ho"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:letterSpacing="0.02"
+        android:textColor="@color/st_chu_chan_mo"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/tieu_de_chan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:textColor="@color/st_chu_chan"
+        android:textSize="44sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/phu_de_chan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:textColor="@color/st_chu_chan_mo"
+        android:textSize="19sp" />
+
+    <LinearLayout
+        android:id="@+id/khung_mon_chan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="34dp"
+        android:background="@drawable/st_nen_khung_chan"
+        android:minWidth="340dp"
+        android:orientation="vertical"
+        android:paddingHorizontal="30dp"
+        android:paddingVertical="22dp">
+
+        <TextView
+            android:id="@+id/nhan_mon_chan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:letterSpacing="0.1"
+            android:textColor="@color/st_chu_chan_nhan"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:id="@+id/danh_sach_mon_chan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:orientation="vertical" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/het_chan_luc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:gravity="center"
+        android:textColor="@color/st_chu_chan_mo"
+        android:textSize="16sp" />
+
+    <!-- Cham vao man nay khong mo khoa gi ca: no chi mo app Nop bai, giong het lop
+         phu "Het gio roi" cua app chu. Trong app do moi co cho soan cap, va moi co
+         o khoa goc tren de Ba Huy go PIN - mot cho go PIN duy nhat trong ca app. -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:gravity="center"
+        android:text="Bấm vào đây để mở app Nộp bài"
+        android:textColor="@color/st_chu_chan_nhan"
+        android:textSize="15sp" />
+
+</LinearLayout>
