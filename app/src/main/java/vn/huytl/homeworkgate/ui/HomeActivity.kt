@@ -355,7 +355,6 @@ class HomeActivity : AppCompatActivity() {
             getString(R.string.home_chat)
         }
 
-        veCanhBao()
         nhipDongHo()
     }
 
@@ -617,19 +616,6 @@ class HomeActivity : AppCompatActivity() {
             bai = "các câu cần sửa",
             cauIds = cungSach
         )
-    }
-
-    /**
-     * Bang "con thieu gi". Hien ca tren man cua Le Hoa, vi day la man hinh mo ra
-     * moi ngay: co gi ho thi Ba Huy nhin thay ngay lan toi cam may.
-     */
-    private fun veCanhBao() {
-        CanhBao.veThe(
-            this,
-            binding.cardWarning,
-            binding.txtWarningTitle,
-            binding.boxWarning
-        ) { render() }
     }
 
     /**

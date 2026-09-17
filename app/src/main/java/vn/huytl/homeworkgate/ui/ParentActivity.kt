@@ -294,7 +294,7 @@ class ParentActivity : AppCompatActivity() {
     }
 
     /**
-     * Bang "con thieu gi", giong het ben man cua Le Hoa va ben Cai dat.
+     * Bang "con thieu gi", giong het ben Cai dat.
      *
      * O day no quan trong hon ca: Ba Huy mo trang nay ra la luc dang cam may trong
      * tay, sua duoc ngay. Truoc day trang nay khong bao gi, chi co mot dong ve

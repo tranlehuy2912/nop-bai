@@ -20,13 +20,17 @@ import vn.huytl.homeworkgate.guard.Thieu
 import vn.huytl.homeworkgate.guard.Viec
 
 /**
- * Bang "con thieu gi", dung chung cho ca ba man hinh.
+ * Bang "con thieu gi", dung chung cho hai man sau PIN: Cai dat va trang cau hinh.
  *
- * Truoc day moi man tu viet mot kieu: man cua Le Hoa gop het thanh mot cuc chu,
- * man Cai dat in mot dong "Con thieu: ...", con trang cau hinh khong bao gi. Ba
- * thu deu chi doc duoc, khong bam vao dau duoc, va khong cai nao nhac den tiet
- * kiem pin hay tu khoi dong - dung hai thu hay lam tablet ho nhat. Gio mot cho
- * lam, bam vao tung dong la di thang den man hinh can bat.
+ * Truoc day moi man tu viet mot kieu: man Cai dat in mot dong "Con thieu: ...",
+ * con trang cau hinh khong bao gi. Ca hai deu chi doc duoc, khong bam vao dau
+ * duoc, va khong cai nao nhac den tiet kiem pin hay tu khoi dong - dung hai thu
+ * hay lam tablet ho nhat. Gio mot cho lam, bam vao tung dong la di thang den man
+ * hinh can bat.
+ *
+ * Co mot dao bang nay hien ca o man cua Le Hoa. Bo di: con doc thi khong sua duoc
+ * gi - moi duong deu chot bang PIN - ma van chiem cho moi ngay; con Ba Huy thi da
+ * thay no o hai man nay va trong tin ghim Telegram.
  */
 object CanhBao {
 
@@ -34,9 +38,9 @@ object CanhBao {
      * Ve ca tam the canh bao: an di khi khong thieu gi, doi mau va doi tieu de
      * theo muc do, roi liet ke tung viec.
      *
-     * Ba man hinh dung chung ham nay de bang canh bao o dau cung y het nhau. Doc
-     * mot lan o man cua Le Hoa, sang trang cau hinh thay dung cau do, la khoi phai
-     * doc lai.
+     * Hai man dung chung ham nay de bang canh bao o dau cung y het nhau. Doc mot
+     * lan o man Cai dat, sang trang cau hinh thay dung cau do, la khoi phai doc
+     * lai.
      *
      * [veLai] duoc goi sau khi nguoi dung sua xong ngay trong hop thoai, de man
      * hinh goi no ve lai chinh no.
@@ -160,15 +164,18 @@ object CanhBao {
      * that roi xem co van khong.
      */
     private fun moCaiDat(activity: Activity, thieu: Thieu) {
-        // Mo duong vao Cai dat truoc khi di, khong thi guard day ve ngay. Chi lam
-        // khi da qua PIN: bang nay cung hien o man cua Le Hoa.
+        // Mo duong vao Cai dat truoc khi di, khong thi guard day ve ngay. Van hoi
+        // da qua PIN chua: vao duoc hai man nay ma chua go PIN thi con hai duong,
+        // la may chua dat PIN lan nao va la Ba Huy dang mo toan bo may. Ca hai deu
+        // la Ba Huy dang cam may, nen cau bao viet cho Ba doc chu khong phai cho con.
         if (PhienQuanLy.daQuaPin) {
             PhienQuanLy.choMoCaiDat(10)
         } else {
             Toast.makeText(
                 activity,
-                "Máy đang khoá Cài đặt. Nhờ ba Huy bấm ổ khoá góc trên phải, " +
-                    "nhập PIN rồi sửa trong đó.",
+                "Chưa qua mã PIN trong lần mở app này nên đường vào Cài đặt " +
+                    "chưa mở. Máy đẩy về thì gõ PIN ở màn hình chính rồi bấm " +
+                    "lại dòng này.",
                 Toast.LENGTH_LONG
             ).show()
         }

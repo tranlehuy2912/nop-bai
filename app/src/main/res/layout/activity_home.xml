@@ -67,8 +67,8 @@
     <!-- Cuon duoc phan than.
          Truoc day man nay khong cuon: noi dung vua dung mot man hinh nen khong ai
          nghi toi. Nhung so the o giua thay doi theo trang thai - the "con cau can
-         sua", bang canh bao, the soan cap - va du ba cai cung hien mot luc thi nut
-         Nop bai bi day khuat khoi day man hinh, khong co cach nao voi toi.
+         sua", the soan cap - va du ca hai cung hien mot luc thi nut Nop bai bi
+         day khuat khoi day man hinh, khong co cach nao voi toi.
          fillViewport de hai o Space ben duoi van an het cho thua khi noi dung ngan,
          tuc la luc binh thuong the trang thai van nam giua nhu cu. -->
     <ScrollView
@@ -194,42 +194,6 @@
                 android:text="Chụp lại câu đã sửa"
                 android:textSize="16sp"
                 app:cornerRadius="18dp" />
-        </LinearLayout>
-    </com.google.android.material.card.MaterialCardView>
-
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/card_warning"
-        style="@style/Card"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        app:cardBackgroundColor="@color/wait_soft"
-        android:visibility="gone">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="18dp">
-
-            <TextView
-                android:id="@+id/txt_warning_title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/home_setup_needed"
-                android:textColor="@color/ink"
-                android:textStyle="bold"
-                android:textSize="16sp" />
-
-            <!-- Tung dong mot, bam vao la di thang den man hinh can bat. Truoc day
-                 cho nay la mot cuc chu kem mot nut "Mo cai dat" chung cho ca ba
-                 viec, nen sua xong viec dau van phai tu mo di mo lai. -->
-            <LinearLayout
-                android:id="@+id/box_warning"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:orientation="vertical" />
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>
 
