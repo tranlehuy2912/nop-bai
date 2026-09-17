@@ -1,0 +1,2417 @@
+{
+ "nguon": "toan8t2",
+ "mon": "Toán",
+ "ten": "SGK Toán 8 — tập hai",
+ "ban": 1,
+ "cac_bai": [
+  {
+   "chuong": "Chương VI. Phân thức đại số",
+   "bai": "Bài 21. Phân thức đại số",
+   "cac_cau": [
+    {
+     "ma": "Luyện tập 1 (tr.5)",
+     "trang": 5,
+     "nhom": "Luyện tập",
+     "dang": "CAU_NHO",
+     "de": "Trong các cặp phân thức sau, cặp phân thức nào có cùng mẫu thức? a) −20x/(3y^2) và 4x^3/(5y^2); b) (5x − 10)/(x^2 + 1) và (5x − 10)/(x^2 − 1); c) (5x + 10)/(4x − 8) và (4 − 2x)/(4(x − 2))."
+    },
+    {
+     "ma": "Luyện tập 2 (tr.6)",
+     "trang": 6,
+     "nhom": "Luyện tập",
+     "dang": "CAU_NHO",
+     "de": "Khẳng định sau đúng hay sai? Vì sao? 1/(x^2 + x + 1) = (1 − x)/(1 − x^3)."
+    },
+    {
+     "ma": "Luyện tập 3 (tr.7)",
+     "trang": 7,
+     "nhom": "Luyện tập",
+     "dang": "CAU_NHO",
+     "de": "Viết điều kiện xác định của phân thức (x + 1)/(x − 1) và tính giá trị của phân thức tại x = 2."
+    },
+    {
+     "ma": "Vận dụng (tr.7)",
+     "trang": 7,
+     "nhom": "Vận dụng",
+     "dang": "CAU_NHO",
+     "de": "Trở lại tình huống mở đầu (cuộc đua xe đạp gồm 9 km leo dốc, 5 km xuống dốc và 36 km đường bằng phẳng; vận tốc trên đường bằng phẳng hơn vận tốc leo dốc 5 km/h và kém vận tốc xuống dốc 10 km/h). Nếu biết vận tốc của vận động viên trên chặng đường bằng phẳng là 30 km/h, hãy tính thời gian vận động viên đó hoàn thành mỗi chặng đua và tính tổng thời gian để hoàn thành cuộc đua."
+    },
+    {
+     "ma": "6.1",
+     "trang": 7,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Viết tử thức và mẫu thức của phân thức (5x − 2)/3."
+    },
+    {
+     "ma": "6.2",
+     "trang": 7,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Trong các cặp phân thức sau, cặp phân thức nào có mẫu giống nhau? a) −20x/(3y^2) và 4x/(5y^2); b) (3x − 1)/(x^2 + 1) và (3x − 1)/(x + 1); c) (x − 1)/(3x + 6) và (x + 1)/(3(x + 2))."
+    },
+    {
+     "ma": "6.3",
+     "trang": 7,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Các kết luận sau đây đúng hay sai? Vì sao? a) −6/(−4y) = 3y/(2y^2); b) (x + 3)/5 = (x^2 + 3x)/(5x); c) 3x(4x + 1)/(16x^2 − 1) = −3x/(1 − 4x)."
+    },
+    {
+     "ma": "6.4",
+     "trang": 7,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Viết điều kiện xác định của phân thức (x^2 + x − 2)/(x + 2). Tính giá trị của phân thức đó lần lượt tại x = 0; x = 1; x = 2."
+    },
+    {
+     "ma": "6.5",
+     "trang": 7,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Cho A là một đa thức khác 0 tuỳ ý. Hãy giải thích vì sao 0/A = 0 và A/A = 1."
+    },
+    {
+     "ma": "6.6",
+     "trang": 7,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Một ô tô chạy với vận tốc là x (km/h). a) Viết biểu thức biểu thị thời gian ô tô (tính bằng giờ) chạy hết quãng đường 120 km. b) Tính thời gian ô tô đi được 120 km trong trường hợp vận tốc của ô tô là 60 km/h."
+    }
+   ]
+  },
+  {
+   "chuong": "Chương VI. Phân thức đại số",
+   "bai": "Bài 22. Tính chất cơ bản của phân thức đại số",
+   "cac_cau": [
+    {
+     "ma": "Luyện tập 1 (tr.9)",
+     "trang": 9,
+     "nhom": "Luyện tập",
+     "dang": "CAU_NHO",
+     "de": "Khẳng định sau đúng hay sai? Vì sao? 30xy^2(x − y)/(45xy(x − y)^2) = 2y/(3(x − y))."
+    },
+    {
+     "ma": "Luyện tập 2 (tr.9)",
+     "trang": 9,
+     "nhom": "Luyện tập",
+     "dang": "CAU_NHO",
+     "de": "Giải thích vì sao −x/(1 − x) = x/(x − 1)."
+    },
+    {
+     "ma": "Luyện tập 3 (tr.10)",
+     "trang": 10,
+     "nhom": "Luyện tập",
+     "dang": "CAU_NHO",
+     "de": "Em hãy trả lời câu hỏi trong tình huống mở đầu: liệu có phân thức nào đơn giản hơn nhưng bằng phân thức (x − y)/(x^3 − y^3) không?"
+    },
+    {
+     "ma": "Thử thách nhỏ (tr.10)",
+     "trang": 10,
+     "nhom": "Thử thách nhỏ",
+     "dang": "CAU_NHO",
+     "de": "Tìm a sao cho hai phân thức sau bằng nhau: (−ax^2 − ax)/(x^2 − 1) và 3x/(x − 1)."
+    },
+    {
+     "ma": "Luyện tập 4 (tr.11)",
+     "trang": 11,
+     "nhom": "Luyện tập",
+     "dang": "CAU_NHO",
+     "de": "Quy đồng mẫu thức hai phân thức 1/(3x^2 − 3) và 1/(x^3 − 1)."
+    },
+    {
+     "ma": "6.7",
+     "trang": 11,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Dùng tính chất cơ bản của phân thức, giải thích vì sao các kết luận sau đúng. a) (x − 2)^3/(x^2 − 2x) = (x − 2)^2/x; b) (1 − x)/(−5x + 1) = (x − 1)/(5x − 1)."
+    },
+    {
+     "ma": "6.8",
+     "trang": 12,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Tìm đa thức thích hợp thay cho dấu \"?\": (y − x)/(4 − x) = ?/(x − 4)."
+    },
+    {
+     "ma": "6.9",
+     "trang": 12,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Rút gọn các phân thức sau: a) (5x + 10)/(25x^2 + 50); b) 45x(3 − x)/(15x(x − 3)^3); c) (x^2 − 1)^2/((x + 1)(x^3 + 1))."
+    },
+    {
+     "ma": "6.10",
+     "trang": 12,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Cho phân thức P = (x + 1)/(x^2 − 1). a) Rút gọn phân thức đã cho, kí hiệu Q là phân thức nhận được. b) Tính giá trị của P và Q tại x = 11. So sánh hai kết quả đó."
+    },
+    {
+     "ma": "6.11",
+     "trang": 12,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Tìm a sao cho hai phân thức sau bằng nhau: 5x/(x + 1) và ax(x − 1)/((1 − x)(x + 1))."
+    },
+    {
+     "ma": "6.12",
+     "trang": 12,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Quy đồng mẫu thức các phân thức sau: a) 1/(x^3 − 8) và 3/(4 − 2x); b) x/(x^2 − 1) và 1/(x^2 + 2x + 1)."
+    },
+    {
+     "ma": "6.13",
+     "trang": 12,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Quy đồng mẫu thức các phân thức sau: a) 1/(x + 2); (x + 1)/(x^2 − 4x + 4) và 5/(2 − x); b) 1/(3x + 3y); 2x/(x^2 − y^2) và (x^2 − xy + y^2)/(x^2 − 2xy + y^2)."
+    },
+    {
+     "ma": "6.14",
+     "trang": 12,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Cho hai phân thức (9x^2 + 3x + 1)/(27x^3 − 1) và (x^2 − 4x)/(16 − x^2). a) Rút gọn hai phân thức đã cho. b) Quy đồng mẫu thức hai phân thức nhận được ở câu a."
+    }
+   ]
+  },
+  {
+   "chuong": "Chương VI. Phân thức đại số",
+   "bai": "Luyện tập chung (trang 13)",
+   "cac_cau": [
+    {
+     "ma": "6.15",
+     "trang": 14,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Quy đồng mẫu thức các phân thức sau: a) 1/(4xy^2) và 5/(6x^2y); b) 9/(4x^2 − 36) và 1/(x^2 + 6x + 9)."
+    },
+    {
+     "ma": "6.16",
+     "trang": 14,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Cho phân thức P = (x^3 − 4x)/(x + 2)^2. a) Viết điều kiện xác định của phân thức. b) Rút gọn phân thức P. c) Tính giá trị của phân thức đã cho tại x = 98."
+    },
+    {
+     "ma": "6.17",
+     "trang": 14,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Cho hai phân thức (x^2 + 5x)/((x − 10)(x^2 + 10x + 25)) và (x^2 + 10x)/(x^4 − 100x^2). a) Rút gọn hai phân thức đã cho. Kí hiệu P và Q là hai phân thức nhận được. b) Quy đồng mẫu thức hai phân thức P và Q."
+    },
+    {
+     "ma": "6.18",
+     "trang": 14,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Lúc 6 giờ sáng, bác Vinh lái ô tô xuất phát từ Hà Nội đi Tĩnh Gia (Thanh Hoá). Khi đến Phủ Lý (Ninh Bình), cách Hà Nội khoảng 60 km, bác Vinh dừng lại ăn sáng trong 20 phút. Sau đó, bác Vinh tiếp tục đi về Tĩnh Gia và phải tăng vận tốc thêm 10 km/h để đến nơi đúng giờ dự định. a) Gọi x (km/h) là vận tốc ô tô đi trên quãng đường Hà Nội – Phủ Lý. Hãy viết các phân thức biểu thị thời gian bác Vinh chạy xe trên các quãng đường Hà Nội – Phủ Lý và Phủ Lý – Tĩnh Gia, biết rằng quãng đường Hà Nội – Tĩnh Gia có chiều dài khoảng 200 km. b) Nếu vận tốc ô tô đi trên quãng đường Hà Nội – Phủ Lý là 60 km/h thì bác Vinh đến Tĩnh Gia lúc mấy giờ?"
+    },
+    {
+     "ma": "6.19",
+     "trang": 14,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Để loại bỏ x% chất gây ô nhiễm không khí từ khí thải của một nhà máy, ước tính cần chi phí là 1,7x/(100 − x) (tỉ đồng). a) Nếu muốn loại bỏ 90% chất gây ô nhiễm từ khí thải nhà máy thì cần chi phí là bao nhiêu? b) Viết điều kiện xác định của phân thức 1,7x/(100 − x). Hỏi có thể loại bỏ được 100% chất gây ô nhiễm từ khí thải nhà máy hay không?"
+    }
+   ]
+  },
+  {
+   "chuong": "Chương VI. Phân thức đại số",
+   "bai": "Bài 23. Phép cộng và phép trừ phân thức đại số",
+   "cac_cau": [
+    {
+     "ma": "Luyện tập 1 (tr.16)",
+     "trang": 16,
+     "nhom": "Luyện tập",
+     "dang": "CAU_NHO",
+     "de": "Tính các tổng sau: a) (3x + 1)/(xy) + (2x − 1)/(xy); b) 3x/(x^2 + 1) + (−3x + 1)/(x^2 + 1)."
+    },
+    {
+     "ma": "Luyện tập 2 (tr.16)",
+     "trang": 16,
+     "nhom": "Luyện tập",
+     "dang": "CAU_NHO",
+     "de": "Tính tổng 5/(2x^2(6x + y)) + 3/(5xy(6x + y))."
+    },
+    {
+     "ma": "Luyện tập 3 (tr.17)",
+     "trang": 17,
+     "nhom": "Luyện tập",
+     "dang": "CAU_NHO",
+     "de": "Thực hiện các phép tính sau: a) (3 − 2x)/(x − 1) − (2 + 5x)/(x − 1); b) 1/(4x^2y) − 1/(6xy^2)."
+    },
+    {
+     "ma": "Luyện tập 4 (tr.18)",
+     "trang": 18,
+     "nhom": "Luyện tập",
+     "dang": "CAU_NHO",
+     "de": "Rút gọn biểu thức P = 1/x + 1/y + 1/z − 1/x − 1/y."
+    },
+    {
+     "ma": "Luyện tập 5 (tr.18)",
+     "trang": 18,
+     "nhom": "Luyện tập",
+     "dang": "CAU_NHO",
+     "de": "Em hãy giải thích cách làm của Vuông trong tình huống mở đầu: rút gọn biểu thức P = x/(x + 1) − [(1/(x − 1) + x/(x + 1)) − 1/(x − 1)] và thấy ngay kết quả là P = 0."
+    },
+    {
+     "ma": "Vận dụng (tr.19)",
+     "trang": 19,
+     "nhom": "Vận dụng",
+     "dang": "CAU_NHO",
+     "de": "Chú Đức lái ô tô từ Hà Nội về quê. Từ nhà chú đến đường cao tốc dài khoảng 20 km, xe chạy trong thành phố với vận tốc x (km/h) (x > 0). Trên 50 km đường cao tốc, xe tăng vận tốc thêm 55 km/h. Ra khỏi cao tốc, xe còn phải chạy thêm 15 phút thì về đến quê. a) Viết các phân thức biểu thị thời gian xe chạy trong thành phố và thời gian xe chạy trên đường cao tốc. b) Viết phân thức biểu thị tổng thời gian chú Đức đi từ Hà Nội về quê."
+    },
+    {
+     "ma": "6.20a",
+     "trang": 19,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Thực hiện phép tính: (x^2 − 3x + 1)/(2x^2) + (5x − 1 − x^2)/(2x^2)."
+    },
+    {
+     "ma": "6.20b",
+     "trang": 19,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Thực hiện phép tính: y/(x − y) + x/(x + y)."
+    },
+    {
+     "ma": "6.20c",
+     "trang": 19,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Thực hiện phép tính: x/(2x − 6) + 9/(2x(3 − x))."
+    },
+    {
+     "ma": "6.21a",
+     "trang": 19,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Thực hiện phép tính: (5 − 3x)/(x + 1) − (−2 + 5x)/(x + 1)."
+    },
+    {
+     "ma": "6.21b",
+     "trang": 19,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Thực hiện phép tính: x/(x − y) − y/(x + y)."
+    },
+    {
+     "ma": "6.21c",
+     "trang": 19,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Thực hiện phép tính: 3/(x + 1) − (2 + 3x)/(x^3 + 1)."
+    },
+    {
+     "ma": "6.22a",
+     "trang": 19,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Thực hiện phép tính: 1/x + 2/(x + 1) + 3/(x + 2) − 1/x − 2/(x − 1) − 3/(x + 2)."
+    },
+    {
+     "ma": "6.22b",
+     "trang": 19,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Thực hiện phép tính: (2x − 1)/x + (1 − x)/(2x + 1) + 3/(x^2 − 9) + (1 − 2x)/x + (x − 1)/(2x + 1) − 3/(x + 3)."
+    },
+    {
+     "ma": "6.23a",
+     "trang": 19,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Thực hiện phép tính: (x^2 + 4x + 4)/(x^2 − 4) + x/(2 − x) + (4 − x)/(5x − 10)."
+    },
+    {
+     "ma": "6.23b",
+     "trang": 19,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Thực hiện phép tính: x/(x^2 + 1) − (3/(x + 6) + (x − 2)/(x + 4)) + [3/(x + 6) − (1/(x^2 + 1) − (x − 2)/(x + 4))]."
+    },
+    {
+     "ma": "6.24a",
+     "trang": 19,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Thực hiện phép tính: (x − y)/(xy) + (y − z)/(yz) + (z − x)/(zx)."
+    },
+    {
+     "ma": "6.24b",
+     "trang": 19,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Thực hiện phép tính: x/(x − y)^2 + y/(y^2 − x^2)."
+    },
+    {
+     "ma": "6.25",
+     "trang": 19,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Một tàu du lịch chạy xuôi dòng 15 km, sau đó quay ngược lại để trở về điểm xuất phát và kết thúc chuyến du lịch. Biết rằng vận tốc của tàu khi nước yên lặng là 10 km/h và vận tốc của dòng nước là x (km/h). a) Hãy viết các phân thức biểu thị theo x thời gian xuôi dòng, thời gian ngược dòng và tổng thời gian tàu chạy. b) Tính tổng thời gian tàu chạy khi vận tốc dòng nước là 2 km/h."
+    }
+   ]
+  },
+  {
+   "chuong": "Chương VI. Phân thức đại số",
+   "bai": "Bài 24. Phép nhân và phép chia phân thức đại số",
+   "cac_cau": [
+    {
+     "ma": "Luyện tập 1 (tr.20)",
+     "trang": 20,
+     "nhom": "Luyện tập",
+     "dang": "CAU_NHO",
+     "de": "Làm tính nhân: a) x/(x + y) · (2x + 2y)/(3xy); b) 3x/(4x^2 − 1) · (−2x + 1)/(2x^2)."
+    },
+    {
+     "ma": "Luyện tập 2 (tr.21)",
+     "trang": 21,
+     "nhom": "Luyện tập",
+     "dang": "CAU_NHO",
+     "de": "Làm tính chia: 3x/(2y^2) : (−5x^2/(12y^3))."
+    },
+    {
+     "ma": "Thử thách nhỏ (tr.21)",
+     "trang": 21,
+     "nhom": "Thử thách nhỏ",
+     "dang": "CAU_NHO",
+     "de": "Kết luận sau đúng hay sai? (1/x : 1/x) : 1/x = 1/x : (1/x : 1/x)."
+    },
+    {
+     "ma": "Vận dụng (tr.22)",
+     "trang": 22,
+     "nhom": "Vận dụng",
+     "dang": "CAU_NHO",
+     "de": "Bác Châu vay ngân hàng 1,2 tỉ đồng để mua nhà theo hình thức trả góp. Số tiền bác Châu phải trả mỗi tháng bao gồm số tiền gốc phải trả hằng tháng (bằng số tiền gốc chia đều cho số tháng vay) và số tiền lãi phải trả hằng tháng (bằng số tiền gốc nhân với lãi suất tháng). a) Gọi r là lãi suất năm (r viết dưới dạng số thập phân) của khoản vay trả góp này. Tính số tiền x (triệu đồng) mà bác Châu phải trả mỗi tháng theo số tháng vay y (tháng) và lãi suất năm r. Từ đó suy ra công thức tính lãi suất năm r theo x và y. b) Tính giá trị của r tại x = 30, y = 48 rồi cho biết, nếu trả góp mỗi tháng 30 triệu đồng trong vòng 4 năm thì lãi suất năm (tính theo %) của khoản vay này là bao nhiêu?"
+    },
+    {
+     "ma": "6.26a",
+     "trang": 22,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Làm tính nhân phân thức: (−3x/(5xy^2)) · (−5y^2/(12xy))."
+    },
+    {
+     "ma": "6.26b",
+     "trang": 22,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Làm tính nhân phân thức: (x^2 − x)/(2x + 1) · (4x^2 − 1)/(x^3 − 1)."
+    },
+    {
+     "ma": "6.27a",
+     "trang": 22,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Làm tính chia phân thức: (−3x/(5xy^2)) : (−5y^2/(12xy))."
+    },
+    {
+     "ma": "6.27b",
+     "trang": 22,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Làm tính chia phân thức: (4x^2 − 1)/(8x^3 − 1) : (4x^2 + 4x + 1)/(4x^2 + 2x + 1)."
+    },
+    {
+     "ma": "6.28",
+     "trang": 22,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Tìm hai phân thức P và Q thoả mãn: a) P · (x + 1)/(2x + 1) = (x^2 + x)/(4x^2 − 1); b) Q : x^2/(x^2 + 4x + 4) = ((x + 1)(x + 2))/(x^2 − 2x)."
+    },
+    {
+     "ma": "6.29",
+     "trang": 22,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Cho hai phân thức P = (x^2 + 6x + 9)/(x^2 + 3x) và Q = (x^2 + 3x)/(x^2 − 9). a) Rút gọn P và Q. b) Sử dụng kết quả của câu a, tính P · Q và P : Q."
+    },
+    {
+     "ma": "6.30",
+     "trang": 22,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Trở lại tình huống trong Vận dụng (bác Châu vay 1,2 tỉ đồng mua nhà trả góp). a) Nếu mỗi tháng bác Châu trả 15 triệu đồng trong 10 năm thì lãi suất năm (tính theo %) là bao nhiêu? Hãy cho biết tổng số tiền thực tế bác Châu phải trả chênh lệch bao nhiêu so với khoản vay 1,2 tỉ đồng. b) Trong công thức tính lãi suất năm đã thiết lập ở phần Vận dụng, hai biến x, y phải thoả mãn các điều kiện nào? Em hãy giải thích ý nghĩa thực tiễn của các điều kiện đó."
+    }
+   ]
+  },
+  {
+   "chuong": "Chương VI. Phân thức đại số",
+   "bai": "Luyện tập chung (trang 23)",
+   "cac_cau": [
+    {
+     "ma": "6.31a",
+     "trang": 24,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Thực hiện phép tính: 1/(xy) + 1/(yz) + 1/(zx)."
+    },
+    {
+     "ma": "6.31b",
+     "trang": 24,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Thực hiện phép tính: x/(2x − y) + y/(2x + y) + 3xy/(y^2 − 4x^2)."
+    },
+    {
+     "ma": "6.32a",
+     "trang": 24,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Thực hiện phép tính: (4x − 6)/(5x^2 − x) · (25x^2 − 10x + 1)/(27 − 8x^3)."
+    },
+    {
+     "ma": "6.32b",
+     "trang": 24,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Thực hiện phép tính: (2x + 10)/(x − 3)^2 : (x + 5)^3/(x^2 − 9)."
+    },
+    {
+     "ma": "6.33a",
+     "trang": 24,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Thực hiện phép tính: (4x^2 − 1)/(16x^2 − 1) · (1/(2x + 1) + 1/(2x − 1) + 1/(1 − 4x^2))."
+    },
+    {
+     "ma": "6.33b",
+     "trang": 24,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Thực hiện phép tính: ((x + y)/(xy) − 2/x) · x^3y^3/(x^3 − y^3)."
+    },
+    {
+     "ma": "6.34",
+     "trang": 24,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Cho biểu thức P = (x^2 − 6x + 9)/(9 − x^2) + (4x + 8)/(x + 3). a) Rút gọn P. b) Tính giá trị của P tại x = 7. c) Chứng tỏ P = 3 + 2/(x + 3). Từ đó tìm tất cả các giá trị nguyên của x sao cho biểu thức đã cho nhận giá trị nguyên."
+    },
+    {
+     "ma": "6.35",
+     "trang": 24,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Một xưởng may lập kế hoạch may 80 000 bộ quần áo trong x (ngày). Nhờ cải tiến kĩ thuật, xưởng đã hoàn thành kế hoạch sớm 11 ngày và may vượt kế hoạch 100 bộ quần áo. a) Hãy viết phân thức theo biến x biểu thị số bộ quần áo mỗi ngày xưởng may được theo kế hoạch. b) Viết phân thức biểu thị số bộ quần áo thực tế xưởng may được mỗi ngày. c) Viết biểu thức biểu thị số bộ quần áo mỗi ngày xưởng may được nhiều hơn so với kế hoạch. d) Nếu theo kế hoạch, mỗi ngày xí nghiệp may 800 bộ quần áo thì nhờ cải tiến kĩ thuật, mỗi ngày xưởng may được nhiều hơn so với kế hoạch bao nhiêu bộ quần áo?"
+    }
+   ]
+  },
+  {
+   "chuong": "Chương VI. Phân thức đại số",
+   "bai": "Bài tập cuối chương VI",
+   "cac_cau": [
+    {
+     "ma": "6.36",
+     "trang": 25,
+     "nhom": "Trắc nghiệm",
+     "dang": "TRAC_NGHIEM",
+     "de": "Khẳng định nào sau đây là đúng? A. (x − 1)^2/(x − 2) = (1 − x)^2/(2 − x). B. 3x/(x + 2)^2 = 3x/(x − 2)^2. C. 3x/(x + 2)^2 = −3x/(x − 2)^2. D. 3x/(x + 2)^2 = 3x/(−x − 2)^2."
+    },
+    {
+     "ma": "6.37",
+     "trang": 25,
+     "nhom": "Trắc nghiệm",
+     "dang": "TRAC_NGHIEM",
+     "de": "Khẳng định nào sau đây là sai? A. −6x/(−4x^2(x + 2)^2) = 3/(2x(x + 2)^2). B. −5/(−2) = 10x/(4x). C. (x + 1)/(x − 1) = (x^2 + x + 1)/(x^2 − x + 1). D. −6x/(−4(−x)^2(x − 2)^2) = 3/(2x(−x + 2)^2)."
+    },
+    {
+     "ma": "6.38",
+     "trang": 25,
+     "nhom": "Trắc nghiệm",
+     "dang": "TRAC_NGHIEM",
+     "de": "Trong đẳng thức (2x^2 + 1)/(4x − 1) = (8x^3 + 4x)/Q, Q là đa thức A. 4x. B. 4x^2. C. 16x − 4. D. 16x^2 − 4x."
+    },
+    {
+     "ma": "6.39",
+     "trang": 25,
+     "nhom": "Trắc nghiệm",
+     "dang": "TRAC_NGHIEM",
+     "de": "Nếu (−5x + 5)/(2xy) − (−9x − 7)/(2xy) = (bx + c)/(xy) thì b + c bằng A. −4. B. 8. C. 4. D. −10."
+    },
+    {
+     "ma": "6.40",
+     "trang": 25,
+     "nhom": "Trắc nghiệm",
+     "dang": "TRAC_NGHIEM",
+     "de": "Một ngân hàng huy động vốn với mức lãi suất một năm là x%. Để sau một năm, người gửi được lãi a đồng thì người đó phải gửi vào ngân hàng số tiền là A. 100a/x (đồng). B. a/(x + 100) (đồng). C. a/(x + 1) (đồng). D. 100a/(x + 100) (đồng)."
+    },
+    {
+     "ma": "6.41",
+     "trang": 26,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Tìm đa thức P trong các đẳng thức sau: a) P + 1/(x + 2) = x/(x^2 − 2x + 4); b) P − 4(x − 2)/(x + 2) = 16/(x − 2); c) P · (x − 2)/(x + 3) = (x^2 − 4x + 4)/(x^2 − 9); d) P : (x^2 − 9)/(2x + 4) = (x^2 − 4)/(x^2 + 3x)."
+    },
+    {
+     "ma": "6.42a",
+     "trang": 26,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Rút gọn biểu thức: 2/(3x) + x/(x − 1) + (6x^2 − 4)/(2x(1 − x))."
+    },
+    {
+     "ma": "6.42b",
+     "trang": 26,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Rút gọn biểu thức: (x^3 + 1)/(1 − x^3) + x/(x − 1) − (x + 1)/(x^2 + x + 1)."
+    },
+    {
+     "ma": "6.42c",
+     "trang": 26,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Rút gọn biểu thức: (2/(x + 2) − 2/(1 − x)) · (x^2 − 4)/(4x^2 − 1)."
+    },
+    {
+     "ma": "6.42d",
+     "trang": 26,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Rút gọn biểu thức: 1 + (x^3 − x)/(x^2 + 1) · (1/(1 − x) − 1/(1 − x^2))."
+    },
+    {
+     "ma": "6.43",
+     "trang": 26,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Cho phân thức P = (2x + 1)/(x + 1). a) Viết điều kiện xác định của P. b) Hãy viết P dưới dạng P = a − b/(x + 1), trong đó a, b là hai số nguyên dương. c) Với giá trị nguyên nào của x thì P có giá trị là số nguyên?"
+    },
+    {
+     "ma": "6.44",
+     "trang": 26,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Một xe ô tô đi từ Hà Nội đến Cửa Lò với vận tốc 60 km/h và dự kiến sẽ đến Cửa Lò sau 5 giờ xe chạy. Tuy nhiên, sau 2 2/3 giờ chạy với vận tốc 60 km/h, xe dừng nghỉ 20 phút. Sau khi dừng nghỉ, để đến Cửa Lò đúng thời gian dự kiến, xe phải tăng vận tốc so với chặng đầu. a) Tính độ dài quãng đường Hà Nội – Cửa Lò. b) Tính độ dài quãng đường còn lại sau khi dừng nghỉ. c) Cho biết ở chặng thứ hai xe tăng vận tốc thêm x (km/h). Hãy viết biểu thức P biểu thị thời gian (tính bằng giờ) thực tế xe chạy hết chặng đường Hà Nội – Cửa Lò. d) Tính giá trị của P lần lượt tại x = 5; x = 10; x = 15, từ đó cho biết ở chặng thứ hai (sau khi xe dừng nghỉ): nếu tăng vận tốc thêm 5 km/h thì xe đến Cửa Lò muộn hơn dự kiến bao nhiêu giờ? nếu tăng vận tốc thêm 10 km/h thì xe đến Cửa Lò có đúng thời gian dự kiến không? nếu tăng vận tốc thêm 15 km/h thì xe đến Cửa Lò sớm hơn dự kiến bao nhiêu giờ?"
+    }
+   ]
+  },
+  {
+   "chuong": "Chương VII. Phương trình bậc nhất và hàm số bậc nhất",
+   "bai": "Bài 25. Phương trình bậc nhất một ẩn",
+   "cac_cau": [
+    {
+     "ma": "Luyện tập 1 (tr.28)",
+     "trang": 28,
+     "nhom": "Luyện tập",
+     "dang": "CAU_NHO",
+     "de": "Hãy cho ví dụ về một phương trình với ẩn x và kiểm tra xem x = 2 có là một nghiệm của phương trình đó không."
+    },
+    {
+     "ma": "Câu hỏi (tr.29)",
+     "trang": 29,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Những phương trình nào sau đây là phương trình bậc nhất một ẩn? a) 2x + 1 = 0; b) −x + 1 = 0; c) 0 · x + 2 = 0; d) (−2) · x = 0."
+    },
+    {
+     "ma": "Luyện tập 2 (tr.30)",
+     "trang": 30,
+     "nhom": "Luyện tập",
+     "dang": "CAU_NHO",
+     "de": "Giải các phương trình sau: a) 2x − 5 = 0; b) 4 − (2/5)x = 0."
+    },
+    {
+     "ma": "Vận dụng 1 (tr.30)",
+     "trang": 30,
+     "nhom": "Vận dụng",
+     "dang": "CAU_NHO",
+     "de": "Hãy giải bài toán trong tình huống mở đầu: bác An gửi tiết kiệm 150 triệu đồng với kì hạn 12 tháng; đến cuối kì (sau 1 năm), bác An thu được số tiền cả vốn lẫn lãi là 159 triệu đồng. Tính lãi suất gửi tiết kiệm của bác An."
+    },
+    {
+     "ma": "Luyện tập 3 (tr.31)",
+     "trang": 31,
+     "nhom": "Luyện tập",
+     "dang": "CAU_NHO",
+     "de": "Giải các phương trình sau: a) 5x − (2 − 4x) = 6 + 3(x − 1); b) (x − 1)/4 + 2x = 3 − (2x − 3)/3."
+    },
+    {
+     "ma": "Vận dụng 2 (tr.32)",
+     "trang": 32,
+     "nhom": "Vận dụng",
+     "dang": "CAU_NHO",
+     "de": "Hai bạn Lan và Hương cùng vào hiệu sách. Lan mua 5 quyển vở cùng loại và 1 quyển sách giá 50 nghìn đồng. Hương mua 3 quyển vở cùng loại với loại vở của Lan và 1 quyển sách giá 74 nghìn đồng. Số tiền phải trả của Lan và Hương là bằng nhau. a) Gọi x (nghìn đồng) là giá tiền của mỗi quyển vở. Viết phương trình biểu thị tổng số tiền mua sách và vở của hai bạn Lan và Hương là bằng nhau. b) Giải phương trình nhận được ở câu a để tìm giá tiền của mỗi quyển vở."
+    },
+    {
+     "ma": "7.1",
+     "trang": 32,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Hãy chỉ ra các phương trình bậc nhất một ẩn trong các phương trình sau: a) x + 1 = 0; b) 0x − 2 = 0; c) 2 − x = 0; d) 3x = 0."
+    },
+    {
+     "ma": "7.2",
+     "trang": 32,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Giải các phương trình sau: a) 5x − 4 = 0; b) 3 + 2x = 0; c) 7 − 5x = 0; d) 3/2 + (5/3)x = 0."
+    },
+    {
+     "ma": "7.3",
+     "trang": 32,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Giải các phương trình sau: a) 7x − (2x + 3) = 5(x − 2); b) x + (2x − 1)/5 = 3 + (3 − x)/4."
+    },
+    {
+     "ma": "7.4",
+     "trang": 32,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Ở một số quốc gia, người ta dùng cả hai đơn vị đo nhiệt độ là độ Fahrenheit (°F) và độ Celcius (°C), liên hệ với nhau bởi công thức C = (5/9)(F − 32). Hãy tính độ Fahrenheit tương ứng với 10 °C."
+    },
+    {
+     "ma": "7.5",
+     "trang": 32,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Hiện nay tuổi của bố bạn Nam gấp 3 lần tuổi của Nam. Sau 10 năm nữa thì tổng số tuổi của Nam và bố là 76 tuổi. Gọi x là số tuổi hiện nay của Nam. a) Biểu thị tuổi hiện nay của bố bạn Nam theo tuổi hiện tại của Nam. b) Viết phương trình biểu thị sự kiện sau 10 năm nữa thì tổng số tuổi của Nam và bố là 76 tuổi. c) Giải phương trình nhận được ở câu b để tính tuổi của Nam và bố hiện nay."
+    },
+    {
+     "ma": "7.6",
+     "trang": 32,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Bạn Mai mua cả sách và vở hết 500 nghìn đồng. Biết rằng số tiền mua sách nhiều gấp rưỡi số tiền mua vở, hãy tính số tiền bạn Mai dùng để mua mỗi loại."
+    }
+   ]
+  },
+  {
+   "chuong": "Chương VII. Phương trình bậc nhất và hàm số bậc nhất",
+   "bai": "Bài 26. Giải bài toán bằng cách lập phương trình",
+   "cac_cau": [
+    {
+     "ma": "Luyện tập (tr.35)",
+     "trang": 35,
+     "nhom": "Luyện tập",
+     "dang": "CAU_NHO",
+     "de": "Bác Mai đi siêu thị mua một mặt hàng đang có chương trình khuyến mại giảm giá 20%. Vì có thẻ khách hàng thân thiết của siêu thị nên bác được giảm thêm 5% trên giá đã giảm, do đó bác Mai chỉ phải trả 380 nghìn đồng cho mặt hàng đó. Hỏi giá ban đầu của mặt hàng đó nếu không khuyến mại là bao nhiêu?"
+    },
+    {
+     "ma": "7.7",
+     "trang": 35,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Chị Linh làm việc trong một ngân hàng và được thưởng Tết bằng 2,5 tháng lương. Tổng thu nhập một năm của chị Linh bao gồm lương 12 tháng và thưởng Tết là 290 triệu đồng. Hỏi lương hằng tháng của chị Linh là bao nhiêu?"
+    },
+    {
+     "ma": "7.8",
+     "trang": 35,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Bác Hưng đầu tư 300 triệu đồng vào hai khoản: mua trái phiếu doanh nghiệp với lãi suất 8% một năm và gửi tiết kiệm ngân hàng với lãi suất 6% một năm. Cuối năm bác Hưng nhận được 22 triệu đồng tiền lãi. Hỏi bác Hưng đã đầu tư vào mỗi khoản bao nhiêu tiền?"
+    },
+    {
+     "ma": "7.9",
+     "trang": 36,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Nhân dịp khai trương, một siêu thị điện máy đã giảm giá nhiều mặt hàng để thu hút khách hàng. Tổng giá niêm yết của một chiếc ti vi loại A và một chiếc tủ lạnh loại B là 36,8 triệu đồng. Trong dịp này, ti vi loại A được giảm giá 30% và tủ lạnh loại B được giảm giá 25% nên bác Cường đã mua một chiếc ti vi và một chiếc tủ lạnh nói trên với tổng số tiền là 26,805 triệu đồng. Hỏi giá niêm yết của mỗi chiếc ti vi loại A và mỗi chiếc tủ lạnh loại B là bao nhiêu?"
+    },
+    {
+     "ma": "7.10",
+     "trang": 36,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Bạn Nam đi xe đạp rời nhà lúc 14 giờ với vận tốc 12 km/h. Khi Hùng đến nhà Nam vào lúc 14 giờ 10 phút thì mẹ Nam chỉ hướng đường đi của Nam cho Hùng và Hùng đi xe đạp đuổi theo với vận tốc 18 km/h. Hỏi đến lúc mấy giờ thì Hùng đuổi kịp Nam?"
+    },
+    {
+     "ma": "7.11",
+     "trang": 36,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Hai công ty viễn thông đưa ra hai gói cước cho điện thoại cố định như sau: công ty A có cước thuê bao hằng tháng 32 000 đồng và giá cước mỗi phút gọi 900 đồng; công ty B có cước thuê bao hằng tháng 38 000 đồng và giá cước mỗi phút gọi 700 đồng. a) Gọi x là số phút gọi trong tháng. Hãy biểu thị theo x, số tiền phải trả trong tháng (tính theo nghìn đồng) khi sử dụng mỗi gói cước nói trên. b) Hỏi với bao nhiêu phút gọi thì số tiền phải trả trong tháng khi sử dụng dịch vụ của hai công ty viễn thông này là như nhau?"
+    }
+   ]
+  },
+  {
+   "chuong": "Chương VII. Phương trình bậc nhất và hàm số bậc nhất",
+   "bai": "Luyện tập chung (trang 37)",
+   "cac_cau": [
+    {
+     "ma": "7.12",
+     "trang": 38,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Giải các phương trình sau: a) x − 3(2 − x) = 2x − 4; b) (1/2)(x + 5) − 4 = (1/3)(x − 1); c) 3(x − 2) − (x + 1) = 2x − 4; d) 3x − 4 = 2(x − 1) − (2 − x)."
+    },
+    {
+     "ma": "7.13",
+     "trang": 38,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Bạn Nam giải phương trình x(x + 1) = x(x + 2) như sau: x(x + 1) = x(x + 2); x + 1 = x + 2; x − x = 2 − 1; 0x = 1 (vô nghiệm). Em có đồng ý với cách giải của bạn Nam không? Nếu không đồng ý, hãy trình bày cách giải của em."
+    },
+    {
+     "ma": "7.14",
+     "trang": 39,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Chu vi của một mảnh vườn hình chữ nhật là 42 m. Tìm chiều dài và chiều rộng của mảnh vườn, biết chiều rộng ngắn hơn chiều dài là 3 m."
+    },
+    {
+     "ma": "7.15",
+     "trang": 39,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Một chiếc áo len sau khi giảm giá 30% được bán với giá 399 nghìn đồng. Hỏi giá ban đầu của chiếc áo len đó là bao nhiêu?"
+    },
+    {
+     "ma": "7.16",
+     "trang": 39,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Một xưởng may áo sơ mi dự định hoàn thành kế hoạch trong 25 ngày. Nhưng mỗi ngày xưởng may đã vượt năng suất so với dự định là 2 áo nên đã hoàn thành sớm hơn 1 ngày và vượt kế hoạch được giao là 8 áo. Hỏi số áo sơ mi mà xưởng may được giao là bao nhiêu?"
+    },
+    {
+     "ma": "7.17",
+     "trang": 39,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Để khuyến khích tiết kiệm điện, giá điện sinh hoạt được tính theo kiểu luỹ tiến, nghĩa là nếu người sử dụng càng dùng nhiều điện thì giá mỗi số điện (1 kWh) càng tăng theo các mức như sau: Mức 1 tính cho số điện từ 0 đến 50; Mức 2 tính cho số điện từ 51 đến 100, mỗi số điện đắt hơn 56 đồng so với mức 1; Mức 3 tính cho số điện từ 101 đến 200, mỗi số điện đắt hơn 280 đồng so với mức 2;... Ngoài ra, người sử dụng còn phải trả thêm 10% thuế giá trị gia tăng (thuế VAT). Tháng vừa qua, gia đình bạn Tuấn dùng hết 95 số điện và phải trả 178 123 đồng. Hỏi giá của mỗi số điện ở mức 1 là bao nhiêu?"
+    }
+   ]
+  },
+  {
+   "chuong": "Chương VII. Phương trình bậc nhất và hàm số bậc nhất",
+   "bai": "Bài 27. Khái niệm hàm số và đồ thị của hàm số",
+   "cac_cau": [
+    {
+     "ma": "Luyện tập 1 (tr.41)",
+     "trang": 41,
+     "nhom": "Luyện tập",
+     "dang": "CAU_NHO",
+     "de": "Viết công thức tính thời gian di chuyển t (giờ) của một ô tô chuyển động trên quãng đường dài 150 km với vận tốc không đổi v (km/h). Thời gian di chuyển t có phải là một hàm số của vận tốc v không? Tính giá trị của t khi v = 60 (km/h)."
+    },
+    {
+     "ma": "Vận dụng (tr.41)",
+     "trang": 41,
+     "nhom": "Vận dụng",
+     "dang": "CAU_NHO",
+     "de": "Trở lại tình huống mở đầu (biểu đồ đoạn thẳng Hình 7.1 trang 40 mô tả sản lượng tiêu thụ ô tô của thị trường Việt Nam trong 5 tháng đầu năm 2020), em hãy cho biết: a) Tháng nào thì số lượng ô tô tiêu thụ là ít nhất và số lượng ô tô tiêu thụ trong tháng đó là bao nhiêu? b) Nếu gọi y là số lượng ô tô tiêu thụ trong tháng x (x thuộc {1; 2; 3; 4; 5}) thì y có phải là một hàm số của x không? Tính giá trị của y khi x = 5."
+    },
+    {
+     "ma": "Câu hỏi (tr.42)",
+     "trang": 42,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Hãy cho biết toạ độ của gốc toạ độ O."
+    },
+    {
+     "ma": "Luyện tập 2 (tr.43)",
+     "trang": 43,
+     "nhom": "Luyện tập",
+     "dang": "CAU_NHO",
+     "de": "a) Xác định toạ độ của các điểm M, N, P, Q trong Hình 7.5 (SGK trang 43). b) Xác định các điểm R(2; −2) và S(−1; 2) trong Hình 7.5."
+    },
+    {
+     "ma": "Luyện tập 3 (tr.44)",
+     "trang": 44,
+     "nhom": "Luyện tập",
+     "dang": "CAU_NHO",
+     "de": "Vẽ đồ thị của hàm số y = f(x) cho bởi bảng sau: x nhận các giá trị −3; −1; 1; 2,5 với y tương ứng là 4; 3,5; 1; 0."
+    },
+    {
+     "ma": "7.18",
+     "trang": 44,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Các giá trị tương ứng của hai đại lượng x và y cho bởi các bảng sau. Đại lượng y có phải là một hàm số của x không? a) x nhận các giá trị −3; −1; 0; 2; 4 với y tương ứng đều bằng 1. b) x nhận các giá trị −2; 1; 0; 1; 2 với y tương ứng là −2; 1; 0; 2; 2."
+    },
+    {
+     "ma": "7.19",
+     "trang": 45,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Cho hàm số y = f(x) = 4/x. a) Tính f(−4); f(8). b) Hoàn thành bảng sau vào vở: với x lần lượt là −2; ?; 2; 3; ? thì y = f(x) lần lượt là ?; −4; ?; ?; 8."
+    },
+    {
+     "ma": "7.20",
+     "trang": 45,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "a) Xác định toạ độ của các điểm A, B, C, D trong Hình 7.8 (SGK trang 45). b) Xác định các điểm E(0; −2) và F(2; −1) trong Hình 7.8."
+    },
+    {
+     "ma": "7.21",
+     "trang": 45,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Hàm số y = f(x) được cho bởi bảng sau: x nhận các giá trị −2; −1; 0; 1; 2 với y = f(x) tương ứng là −5; −2,5; 0; 2,5; 5. Vẽ đồ thị của hàm số y = f(x)."
+    },
+    {
+     "ma": "7.22",
+     "trang": 45,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Cân nặng và tuổi của bốn bạn An, Bình, Hưng, Việt được biểu diễn trên mặt phẳng toạ độ như Hình 7.9 (SGK trang 45; do số liệu về tuổi và cân nặng rất chênh lệch nên một đơn vị dài trên trục hoành bằng 5 lần một đơn vị dài trên trục tung). Hãy cho biết: a) Ai là người nặng nhất và nặng bao nhiêu? b) Ai là người ít tuổi nhất và bao nhiêu tuổi? c) Bình và Việt ai nặng hơn và ai nhiều tuổi hơn? d) Thay dấu \"?\" bằng số thích hợp để hoàn thành bảng tuổi và cân nặng của bốn bạn vào vở. Theo bảng đã hoàn thành, cân nặng có phải là hàm số của tuổi không? Vì sao?"
+    },
+    {
+     "ma": "7.23",
+     "trang": 46,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Hình 7.10 (SGK trang 46) là đồ thị của hàm số mô tả nhiệt độ T (°C) tại các thời điểm t (giờ) của một thành phố ở châu Âu từ giữa trưa đến 6 giờ tối. a) Tìm T(1), T(2), T(5) và giải thích ý nghĩa của các số này. b) Trong hai giá trị T(1) và T(4), giá trị nào lớn hơn? c) Tìm t sao cho T(t) = 5. d) Trong khoảng thời gian nào thì nhiệt độ cao hơn 5 °C?"
+    }
+   ]
+  },
+  {
+   "chuong": "Chương VII. Phương trình bậc nhất và hàm số bậc nhất",
+   "bai": "Bài 28. Hàm số bậc nhất và đồ thị của hàm số bậc nhất",
+   "cac_cau": [
+    {
+     "ma": "Câu hỏi (tr.48)",
+     "trang": 48,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Trong các hàm số sau, những hàm số nào là hàm số bậc nhất? a) y = 3x − 2; b) y = −2x; c) y = 2x^2 + 3; d) y = 3(x − 1); e) y = 0x + 1."
+    },
+    {
+     "ma": "Vận dụng (tr.48)",
+     "trang": 48,
+     "nhom": "Vận dụng",
+     "dang": "CAU_NHO",
+     "de": "Trong hệ đo lường Mỹ, quãng đường thường được đo bằng dặm (mile) và 1 dặm bằng khoảng 1,609 km. a) Viết công thức để chuyển đổi x (dặm) sang y (km). Công thức tính y theo x này có phải là một hàm số bậc nhất của x không? b) Một ô tô chạy với vận tốc 55 dặm/giờ trên một quãng đường có quy định vận tốc tối đa là 80 km/h. Hỏi ô tô đó có vi phạm luật giao thông không?"
+    },
+    {
+     "ma": "Luyện tập (tr.49)",
+     "trang": 49,
+     "nhom": "Luyện tập",
+     "dang": "CAU_NHO",
+     "de": "Vẽ đồ thị của các hàm số bậc nhất y = −2x + 3 và y = (1/2)x."
+    },
+    {
+     "ma": "7.24",
+     "trang": 50,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Trong các hàm số sau, những hàm số nào là hàm số bậc nhất? Hãy xác định các hệ số a, b của chúng. a) y = 0 · x − 5; b) y = 1 − 3x; c) y = −0,6x; d) y = √2(x − 1) + 3; e) y = 2x^2 + 1."
+    },
+    {
+     "ma": "7.25",
+     "trang": 50,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Cho hàm số bậc nhất y = ax + 3. a) Tìm hệ số a, biết rằng khi x = 1 thì y = 5. b) Với giá trị a tìm được, hãy hoàn thành bảng giá trị của y ứng với x lần lượt bằng −2; −1; 0; 1; 2 vào vở."
+    },
+    {
+     "ma": "7.26",
+     "trang": 50,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Vẽ đồ thị của các hàm số sau: a) y = 2x − 6; b) y = −3x + 5; c) y = (3/2)x."
+    },
+    {
+     "ma": "7.27",
+     "trang": 50,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Đồng euro (EUR) là đơn vị tiền tệ chính thức ở một số quốc gia thành viên của Liên minh châu Âu. Vào một ngày, tỉ giá hối đoái giữa đồng euro và đồng đô la Mỹ (USD) là: 1 EUR = 1,1052 USD. a) Viết công thức để chuyển đổi x euro sang y đô la Mỹ. Công thức tính y theo x này có phải là một hàm số bậc nhất của x không? b) Vào ngày đó, 200 euro có giá trị bằng khoảng bao nhiêu đô la Mỹ? c) Vào ngày đó, 500 đô la Mỹ có giá trị bằng khoảng bao nhiêu euro? (Làm tròn kết quả ở câu b và câu c đến hàng đơn vị)."
+    },
+    {
+     "ma": "7.28",
+     "trang": 50,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Giá cước điện thoại cố định của một hãng viễn thông bao gồm cước thuê bao là 22 000 đồng/tháng và cước gọi là 800 đồng/phút. a) Lập công thức tính số tiền cước điện thoại y (đồng) phải trả trong tháng khi gọi x phút. b) Tính số tiền cước điện thoại phải trả khi gọi 75 phút. c) Nếu số tiền cước điện thoại phải trả là 94 000 đồng thì trong tháng đó thuê bao đã gọi bao nhiêu phút?"
+    },
+    {
+     "ma": "7.29",
+     "trang": 50,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Hàm chi phí đơn giản nhất là hàm chi phí bậc nhất y = ax + b, trong đó b biểu thị chi phí cố định của hoạt động kinh doanh và hệ số a biểu thị chi phí của mỗi mặt hàng được sản xuất. Giả sử rằng một xưởng sản xuất xe đạp có chi phí cố định hằng ngày là 36 triệu đồng và mỗi chiếc xe đạp có chi phí sản xuất là 1,8 triệu đồng. a) Viết công thức của hàm số bậc nhất biểu thị chi phí y (triệu đồng) để sản xuất x (xe đạp) trong một ngày. b) Vẽ đồ thị của hàm số thu được ở câu a. c) Chi phí để sản xuất 15 chiếc xe đạp trong một ngày là bao nhiêu? d) Có thể sản xuất bao nhiêu chiếc xe đạp trong ngày, nếu chi phí trong ngày đó là 72 triệu đồng?"
+    }
+   ]
+  },
+  {
+   "chuong": "Chương VII. Phương trình bậc nhất và hàm số bậc nhất",
+   "bai": "Bài 29. Hệ số góc của đường thẳng",
+   "cac_cau": [
+    {
+     "ma": "Câu hỏi 1 (tr.52)",
+     "trang": 52,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Xác định hệ số góc của mỗi đường thẳng sau: y = 3x − 1; y = 2 − x; y = (1/2)(x − 1)."
+    },
+    {
+     "ma": "Luyện tập 1 (tr.52)",
+     "trang": 52,
+     "nhom": "Luyện tập",
+     "dang": "CAU_NHO",
+     "de": "Tìm hàm số bậc nhất có đồ thị là đường thẳng có hệ số góc là 3 và cắt trục tung tại điểm có tung độ bằng −1."
+    },
+    {
+     "ma": "Câu hỏi 2 (tr.53)",
+     "trang": 53,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Tìm các cặp đường thẳng song song với nhau trong các đường thẳng sau: a) y = 2x + 1; b) y = −1 − 2x; c) y = 2 + 2x; d) y = −1 + 2x."
+    },
+    {
+     "ma": "Câu hỏi 3 (tr.53)",
+     "trang": 53,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Tìm các cặp đường thẳng cắt nhau trong các đường thẳng sau: a) y = 2x + 1; b) y = 2x; c) y = 2 + 2x; d) y = 1 − 2x."
+    },
+    {
+     "ma": "Luyện tập 2 (tr.54)",
+     "trang": 54,
+     "nhom": "Luyện tập",
+     "dang": "CAU_NHO",
+     "de": "Cho hai hàm số bậc nhất y = 2mx + 1 và y = (m − 1)x + 2. Tìm các giá trị của m để đồ thị của hai hàm số đã cho là: a) Hai đường thẳng song song với nhau. b) Hai đường thẳng cắt nhau."
+    },
+    {
+     "ma": "Thử thách nhỏ (tr.54)",
+     "trang": 54,
+     "nhom": "Thử thách nhỏ",
+     "dang": "CAU_NHO",
+     "de": "Liệu hai đường thẳng phân biệt với cùng hệ số góc, có thể có: a) Cùng giao điểm với trục Ox không? b) Cùng giao điểm với trục Oy không?"
+    },
+    {
+     "ma": "Vận dụng (tr.54)",
+     "trang": 54,
+     "nhom": "Vận dụng",
+     "dang": "CAU_NHO",
+     "de": "Em hãy trình bày cách làm của anh Pi để trả lời câu hỏi của bạn Vuông trong tình huống mở đầu: làm thế nào để biết hai đường thẳng y = ax + b và y = a'x + b' song song hay cắt nhau mà không cần vẽ hình."
+    },
+    {
+     "ma": "7.30",
+     "trang": 54,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Tìm hàm số bậc nhất có đồ thị là đường thẳng đi qua điểm (1; −2) và có hệ số góc là 3."
+    },
+    {
+     "ma": "7.31",
+     "trang": 54,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Tìm hàm số bậc nhất có đồ thị là đường thẳng có hệ số góc là −2 và cắt trục hoành tại điểm có hoành độ bằng 3."
+    },
+    {
+     "ma": "7.32",
+     "trang": 54,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Hãy chỉ ra các cặp đường thẳng song song với nhau và các cặp đường thẳng cắt nhau trong các đường thẳng sau: a) y = −x + 1; b) y = −2x + 1; c) y = −2x + 2; d) y = −x."
+    },
+    {
+     "ma": "7.33",
+     "trang": 54,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Cho hai hàm số bậc nhất y = mx − 5 và y = (2m + 1)x + 3. Tìm các giá trị của m để đồ thị của hai hàm số là: a) Hai đường thẳng song song với nhau. b) Hai đường thẳng cắt nhau."
+    },
+    {
+     "ma": "7.34",
+     "trang": 54,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Tìm hàm số bậc nhất có đồ thị là đường thẳng song song với đường thẳng y = −3x + 1 và đi qua điểm (2; 6)."
+    },
+    {
+     "ma": "7.35",
+     "trang": 54,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Trong mặt phẳng toạ độ Oxy, cho hai đường thẳng y = x và y = −x + 2. a) Vẽ hai đường thẳng đã cho trên cùng mặt phẳng toạ độ. b) Tìm giao điểm A của hai đường thẳng đã cho. c) Gọi B là giao điểm của đường thẳng y = −x + 2 và trục Ox. Chứng minh rằng tam giác OAB vuông tại A, tức là hai đường thẳng y = x và y = −x + 2 vuông góc với nhau. d) Có nhận xét gì về tích hai hệ số góc của hai đường thẳng đã cho?"
+    }
+   ]
+  },
+  {
+   "chuong": "Chương VII. Phương trình bậc nhất và hàm số bậc nhất",
+   "bai": "Luyện tập chung (trang 55)",
+   "cac_cau": [
+    {
+     "ma": "7.36",
+     "trang": 56,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Cho hai hàm số y = 2x − 1 và y = −x + 2. a) Trong cùng mặt phẳng toạ độ Oxy, vẽ đồ thị của hai hàm số đã cho. b) Tìm toạ độ giao điểm của hai đồ thị trên."
+    },
+    {
+     "ma": "7.37",
+     "trang": 56,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Cho hàm số bậc nhất y = (3 − m)x + 2m + 1. Tìm các giá trị của m để đồ thị của hàm số đã cho là: a) Đường thẳng đi qua điểm (1; 2); b) Đường thẳng cắt đường thẳng y = x + 1 tại một điểm nằm trên trục tung."
+    },
+    {
+     "ma": "7.38",
+     "trang": 56,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Cho đồ thị của một hàm số bậc nhất y = f(x) như Hình 7.18 (SGK trang 56; đồ thị đi qua các điểm (−40; 0), (30; 70) và (55; 95)). Hãy giải các phương trình sau: a) f(x) = 70; b) f(x) = 95; c) f(x) = 0."
+    },
+    {
+     "ma": "7.39",
+     "trang": 56,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Giá cước taxi của một hãng xe taxi khi quãng đường di chuyển x (km) trong khoảng từ trên 1 km đến 30 km được cho bởi công thức T(x) = 10 000 + 13 600 · (x − 1) (đồng). a) Tính số tiền phải trả khi xe di chuyển 20 km. b) Nếu một hành khách phải trả 200 400 đồng thì hành khách đó đã di chuyển bao nhiêu kilômét?"
+    },
+    {
+     "ma": "7.40",
+     "trang": 56,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Trong lí thuyết tài chính, giá trị sổ sách là giá trị của một tài sản mà công ty sử dụng để xây dựng bảng cân đối kế toán của mình. Một số công ty khấu hao tài sản của họ bằng cách sử dụng phương pháp khấu hao đường thẳng để giá trị của tài sản giảm một lượng cố định mỗi năm. Giả sử một công ty vừa mua một chiếc máy photocopy mới với giá 18 triệu đồng và tính khấu hao theo phương pháp khấu hao đường thẳng trong thời gian 3 năm, tức là mỗi năm giá trị của chiếc máy photocopy sẽ giảm 18 : 3 = 6 triệu đồng. a) Viết hàm số bậc nhất biểu thị giá trị sổ sách V(x) của máy photocopy dưới dạng một hàm số theo thời gian sử dụng x (năm) của nó. b) Vẽ đồ thị của hàm số bậc nhất y = V(x). c) Giá trị sổ sách của máy photocopy sau 2 năm sử dụng là bao nhiêu? d) Sau thời gian sử dụng là bao lâu thì máy photocopy có giá trị sổ sách là 9 triệu đồng?"
+    }
+   ]
+  },
+  {
+   "chuong": "Chương VII. Phương trình bậc nhất và hàm số bậc nhất",
+   "bai": "Bài tập cuối chương VII",
+   "cac_cau": [
+    {
+     "ma": "7.41",
+     "trang": 57,
+     "nhom": "Trắc nghiệm",
+     "dang": "TRAC_NGHIEM",
+     "de": "Phương trình nào sau đây là phương trình bậc nhất một ẩn? A. 0x + 2 = 0. B. 2x + 1 = 2x + 2. C. 2x^2 + 1 = 0. D. 3x − 1 = 0."
+    },
+    {
+     "ma": "7.42",
+     "trang": 57,
+     "nhom": "Trắc nghiệm",
+     "dang": "TRAC_NGHIEM",
+     "de": "Tập nghiệm S của phương trình 3(x + 1) − (x − 2) = 7 − 2x là A. S = {0}. B. S = {1/2}. C. S = ∅. D. S = ℝ."
+    },
+    {
+     "ma": "7.43",
+     "trang": 57,
+     "nhom": "Trắc nghiệm",
+     "dang": "TRAC_NGHIEM",
+     "de": "Hàm số nào sau đây là hàm số bậc nhất? A. y = 0x + 3. B. y = 3x^2 + 2. C. y = 2x. D. y = 0."
+    },
+    {
+     "ma": "7.44",
+     "trang": 57,
+     "nhom": "Trắc nghiệm",
+     "dang": "TRAC_NGHIEM",
+     "de": "Đường thẳng có hệ số góc bằng 2 và đi qua điểm (−1; 2) là A. y = 2x + 2. B. y = 2x − 1. C. y = −x + 2. D. y = 2x + 4."
+    },
+    {
+     "ma": "7.45",
+     "trang": 57,
+     "nhom": "Trắc nghiệm",
+     "dang": "TRAC_NGHIEM",
+     "de": "Giá trị m để đường thẳng y = (m + 1)x + 2 song song với đường thẳng y = −2x là A. m = −3. B. m = −2. C. m = 2. D. m = 1."
+    },
+    {
+     "ma": "7.46",
+     "trang": 57,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Giải các phương trình sau: a) 5(x − 1) − (6 − 2x) = 8x − 3; b) (2x − 1)/3 − (5 − 3x)/2 = (x + 7)/4."
+    },
+    {
+     "ma": "7.47",
+     "trang": 57,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Số tiền thuế thu nhập cá nhân khi mức thu nhập chịu thuế trong năm trong khoảng từ trên 60 triệu đồng đến 120 triệu đồng được cho bởi công thức T(x) = 0,1x − 3 (triệu đồng), trong đó 60 < x ≤ 120 (triệu đồng) là mức thu nhập chịu thuế của người đó trong năm. a) Tính số thuế thu nhập phải đóng khi mức thu nhập chịu thuế trong năm là 100 triệu đồng. b) Nếu một người phải đóng 8 triệu đồng tiền thuế thu nhập cá nhân thì mức thu nhập chịu thuế của người đó trong năm là bao nhiêu, biết rằng người đó có thu nhập chịu thuế trong khoảng từ trên 60 triệu đồng đến 120 triệu đồng?"
+    },
+    {
+     "ma": "7.48",
+     "trang": 58,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Một cửa hàng sách giảm giá 20% cho một cuốn sách. Vì là khách quen của cửa hàng nên bạn An được giảm thêm 10% trên giá đã giảm, do đó bạn An chỉ phải trả 36 000 đồng cho cuốn sách đó. Hỏi giá ban đầu của cuốn sách đó nếu không giảm giá là bao nhiêu?"
+    },
+    {
+     "ma": "7.49",
+     "trang": 58,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Hai ô tô cùng xuất phát từ Hà Nội đi Hạ Long lúc 8 giờ sáng, trên cùng một tuyến đường. Vận tốc của một ô tô lớn hơn 5 km/h so với ô tô kia. Xe đi nhanh hơn đến Hạ Long lúc 10 giờ 45 phút sáng, trước xe kia 15 phút. Hỏi vận tốc của mỗi ô tô là bao nhiêu? Tính độ dài quãng đường từ Hà Nội đến Hạ Long."
+    },
+    {
+     "ma": "7.50",
+     "trang": 58,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Cho hàm số bậc nhất y = (m + 2)x + 3. a) Tìm m để đồ thị hàm số song song với đường thẳng y = −x. b) Vẽ đồ thị hàm số với giá trị m tìm được ở câu a. c) Tìm giao điểm A của đồ thị hàm số tìm được ở câu a và đồ thị của hàm số y = x + 1. Tính diện tích của tam giác OAB, trong đó B là giao điểm của đồ thị hàm số y = x + 1 với trục Ox."
+    }
+   ]
+  },
+  {
+   "chuong": "Chương VIII. Mở đầu về tính xác suất của biến cố",
+   "bai": "Bài 30. Kết quả có thể và kết quả thuận lợi",
+   "cac_cau": [
+    {
+     "ma": "Luyện tập 1 (tr.60)",
+     "trang": 60,
+     "nhom": "Luyện tập",
+     "dang": "CAU_NHO",
+     "de": "Chọn ngẫu nhiên một chữ cái trong cụm từ \"TOÁN HỌC VÀ TUỔI TRẺ\". Liệt kê tất cả các kết quả có thể của hành động này."
+    },
+    {
+     "ma": "Luyện tập 2 (tr.62)",
+     "trang": 62,
+     "nhom": "Luyện tập",
+     "dang": "CAU_NHO",
+     "de": "Trở lại Ví dụ 2 (đội văn nghệ khối 8 có 4 bạn nam lớp 8A là A1, A2, A3, A4; 5 bạn nữ lớp 8B là B1,..., B5; 3 bạn nam lớp 8C là C1, C2, C3; 2 bạn nữ lớp 8D là D1, D2; chọn ngẫu nhiên một bạn), hãy liệt kê các kết quả thuận lợi cho các biến cố sau: G: \"Chọn được một bạn nam\"; H: \"Chọn được một bạn lớp 8C hoặc 8D\"."
+    },
+    {
+     "ma": "8.1",
+     "trang": 62,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Vuông thực nghiệm gieo một con xúc xắc. a) Liệt kê các kết quả có thể của thực nghiệm trên. b) Liệt kê các kết quả thuận lợi cho các biến cố sau: A: \"Số chấm xuất hiện trên con xúc xắc là hợp số\"; B: \"Số chấm xuất hiện trên con xúc xắc nhỏ hơn 5\"; C: \"Số chấm xuất hiện trên con xúc xắc là số lẻ\"."
+    },
+    {
+     "ma": "8.2",
+     "trang": 62,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Một hộp đựng 12 tấm thẻ, được ghi số 1; 2;...; 12. Bạn Nam rút ngẫu nhiên một tấm thẻ từ trong hộp. a) Liệt kê các kết quả có thể của hành động trên. b) Liệt kê các kết quả thuận lợi cho các biến cố sau: A: \"Rút được tấm thẻ ghi số chẵn\"; B: \"Rút được tấm thẻ ghi số nguyên tố\"; C: \"Rút được tấm thẻ ghi số chính phương\"."
+    },
+    {
+     "ma": "8.3",
+     "trang": 62,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Bạn An có 16 cuốn sách khác nhau, trong đó có 4 cuốn sách tiểu thuyết, 5 cuốn sách Lịch sử, 3 cuốn sách Khoa học tự nhiên và 4 cuốn sách Toán. Các cuốn sách này được xếp tuỳ ý trong tủ sách. Bạn Bình đến chơi và lấy ngẫu nhiên một cuốn sách trong tủ sách của An. a) Liệt kê các kết quả có thể của hành động trên. b) Liệt kê các kết quả thuận lợi cho các biến cố sau: E: \"Bình lấy được một cuốn sách tiểu thuyết\"; F: \"Bình lấy được một cuốn sách Khoa học tự nhiên hoặc cuốn sách Toán\"; G: \"Bình lấy được một cuốn sách không phải là sách Lịch sử\"."
+    }
+   ]
+  },
+  {
+   "chuong": "Chương VIII. Mở đầu về tính xác suất của biến cố",
+   "bai": "Bài 31. Cách tính xác suất của biến cố bằng tỉ số",
+   "cac_cau": [
+    {
+     "ma": "Luyện tập 1 (tr.64)",
+     "trang": 64,
+     "nhom": "Luyện tập",
+     "dang": "CAU_NHO",
+     "de": "Trở lại tình huống mở đầu (túi đựng 20 viên kẹo giống hệt nhau nhưng khác loại, gồm 7 viên kẹo sữa, 4 viên kẹo chanh, 6 viên kẹo dừa và 3 viên kẹo bạc hà; Lan lấy ngẫu nhiên một viên kẹo từ túi). Tính xác suất để Lan lấy được: a) Viên kẹo sữa; b) Viên kẹo chanh."
+    },
+    {
+     "ma": "Luyện tập 2 (tr.65)",
+     "trang": 65,
+     "nhom": "Luyện tập",
+     "dang": "CAU_NHO",
+     "de": "Trên giá sách của thư viện có 15 cuốn sách, trong đó có một số cuốn tiểu thuyết. Người thủ thư đặt thêm 5 cuốn tiểu thuyết thư viện mới mua vào giá sách. Bạn Nam đến mượn sách, chọn ngẫu nhiên một cuốn sách trên giá. Biết rằng xác suất để chọn được cuốn tiểu thuyết là 3/4. Hỏi lúc đầu trên giá sách có bao nhiêu cuốn tiểu thuyết?"
+    },
+    {
+     "ma": "8.4",
+     "trang": 66,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Một tấm bìa cứng hình tròn được chia thành 20 hình quạt như nhau, đánh số 1; 2;...; 20 và được gắn vào trục quay có mũi tên cố định ở tâm (Hình 8.2). Quay tấm bìa và quan sát xem mũi tên chỉ vào hình quạt nào khi tấm bìa dừng lại. Tính xác suất để mũi tên: a) Chỉ vào hình quạt ghi số chia hết cho 4. b) Chỉ vào hình quạt ghi số không phải là số nguyên tố."
+    },
+    {
+     "ma": "8.5",
+     "trang": 66,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Một túi đựng các viên kẹo giống hệt nhau, chỉ khác màu, trong đó có 5 viên kẹo màu đen, 3 viên kẹo màu đỏ, 7 viên kẹo màu trắng. Lấy ngẫu nhiên một viên kẹo trong túi. Tính xác suất của các biến cố sau: a) E: \"Lấy được viên kẹo màu đen\"; b) F: \"Lấy được viên kẹo màu đen hoặc màu đỏ\"; c) G: \"Lấy được viên kẹo màu trắng\"; d) H: \"Không lấy được viên kẹo màu đỏ\"."
+    },
+    {
+     "ma": "8.6",
+     "trang": 66,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Trong một chiếc hộp có 15 tấm thẻ giống nhau được đánh số 10; 11;...; 24. Rút ngẫu nhiên một tấm thẻ từ trong hộp. Tính xác suất của các biến cố sau: a) A: \"Rút được tấm thẻ ghi số lẻ\"; b) B: \"Rút được tấm thẻ ghi số nguyên tố\"."
+    },
+    {
+     "ma": "8.7",
+     "trang": 66,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Trò chơi vòng quay may mắn. Một bánh xe hình tròn được chia thành 12 hình quạt như nhau, trong đó có 2 hình quạt ghi 100 điểm, 2 hình quạt ghi 200 điểm, 2 hình quạt ghi 300 điểm, 2 hình quạt ghi 400 điểm, 1 hình quạt ghi 500 điểm, 2 hình quạt ghi 1 000 điểm, 1 hình quạt ghi 2 000 điểm (Hình 8.3). Ở mỗi lượt, người chơi quay bánh xe. Mũi tên cố định gắn trên vành bánh xe dừng ở hình quạt nào thì người chơi nhận được số điểm ghi trên hình quạt đó. Bạn Lan chơi trò chơi này. Tính xác suất của các biến cố sau: a) A: \"Trong một lượt quay, Lan được 400 điểm\"; b) B: \"Trong một lượt quay, Lan được ít nhất 500 điểm\"."
+    }
+   ]
+  },
+  {
+   "chuong": "Chương VIII. Mở đầu về tính xác suất của biến cố",
+   "bai": "Bài 32. Mối liên hệ giữa xác suất thực nghiệm với xác suất và ứng dụng",
+   "cac_cau": [
+    {
+     "ma": "Luyện tập 1 (tr.68)",
+     "trang": 68,
+     "nhom": "Luyện tập",
+     "dang": "CAU_NHO",
+     "de": "Một cửa hàng thống kê số lượng các loại điện thoại bán được trong một năm vừa qua như sau: loại A bán được 712 chiếc, loại B bán được 1 035 chiếc, loại C bán được 1 085 chiếc. Tính xác suất thực nghiệm của biến cố E: \"Chiếc điện thoại loại A được bán ra trong năm đó của cửa hàng\"."
+    },
+    {
+     "ma": "Luyện tập 2 (tr.69)",
+     "trang": 69,
+     "nhom": "Luyện tập",
+     "dang": "CAU_NHO",
+     "de": "Trở lại tình huống mở đầu. Giả sử camera quan sát đường Nguyễn Trãi trong 365 ngày ghi nhận được 217 ngày tắc đường vào giờ cao điểm buổi chiều. Từ số liệu thống kê đó, hãy ước lượng xác suất của biến cố E: \"Tắc đường vào giờ cao điểm buổi chiều ở đường Nguyễn Trãi\"."
+    },
+    {
+     "ma": "Luyện tập 3 (tr.69)",
+     "trang": 69,
+     "nhom": "Luyện tập",
+     "dang": "CAU_NHO",
+     "de": "Trong 240 000 trẻ sơ sinh chào đời người ta thấy có 123 120 bé trai. Hãy ước lượng xác suất của biến cố \"Trẻ sơ sinh là bé gái\"."
+    },
+    {
+     "ma": "Luyện tập 4 (tr.71)",
+     "trang": 71,
+     "nhom": "Luyện tập",
+     "dang": "CAU_NHO",
+     "de": "Thống kê điểm kiểm tra cuối năm môn Toán của một nhóm 100 học sinh lớp 8 được chọn ngẫu nhiên tại ba lớp của trường Trung học cơ sở X, thu được kết quả: điểm 1 có 7 học sinh, điểm 2 có 9, điểm 3 có 11, điểm 4 có 11, điểm 5 có 12, điểm 6 có 12, điểm 7 có 13, điểm 8 có 9, điểm 9 có 8, điểm 10 có 8. a) Chọn ngẫu nhiên một học sinh lớp 8 của trường X. Hãy ước lượng xác suất của các biến cố sau: A: \"Học sinh đó có điểm nhỏ hơn hoặc bằng 5\"; B: \"Học sinh đó có điểm từ 4 đến 9\". b) Hãy dự đoán xem trong nhóm 80 học sinh lớp 8 chọn ngẫu nhiên từ ba lớp khác của trường X: có bao nhiêu học sinh có số điểm không vượt quá 5 điểm; có bao nhiêu học sinh có số điểm từ 4 đến 9 điểm."
+    },
+    {
+     "ma": "8.8",
+     "trang": 71,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Tung một chiếc kẹp giấy 145 lần xuống sàn nhà lát gạch đá hoa hình vuông. Quan sát thấy có 113 lần chiếc kẹp nằm hoàn toàn bên trong hình vuông và 32 lần chiếc kẹp nằm trên cạnh hình vuông. Tính xác suất thực nghiệm của các biến cố sau: a) E: \"Chiếc kẹp giấy nằm hoàn toàn trong hình vuông\"; b) F: \"Chiếc kẹp giấy nằm trên cạnh của hình vuông\"."
+    },
+    {
+     "ma": "8.9",
+     "trang": 71,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Một nhân viên kiểm tra chất lượng sản phẩm tại một nhà máy trong 20 ngày đã ghi lại số phế phẩm của nhà máy mỗi ngày và thu được kết quả: 0 phế phẩm có 14 ngày, 1 phế phẩm có 3 ngày, 2 phế phẩm có 1 ngày, 3 phế phẩm có 1 ngày, từ 4 phế phẩm trở lên có 1 ngày. Tính xác suất thực nghiệm của các biến cố sau: a) M: \"Trong một ngày nhà máy đó không có phế phẩm\"; b) N: \"Trong một ngày nhà máy đó chỉ có 1 phế phẩm\"; c) K: \"Trong một ngày nhà máy đó có ít nhất 2 phế phẩm\"."
+    },
+    {
+     "ma": "8.10",
+     "trang": 72,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Thống kê thời gian của 78 chương trình quảng cáo trên Đài truyền hình tỉnh X cho kết quả: từ 0 đến 19 giây có 17 chương trình, từ 20 đến 39 giây có 38 chương trình, từ 40 đến 59 giây có 19 chương trình, trên 60 giây có 4 chương trình. Tính xác suất thực nghiệm của các biến cố sau: a) E: \"Chương trình quảng cáo của Đài truyền hình tỉnh X kéo dài từ 20 đến 39 giây\"; b) F: \"Chương trình quảng cáo của Đài truyền hình tỉnh X kéo dài trên 1 phút\"; c) G: \"Chương trình quảng cáo của Đài truyền hình tỉnh X kéo dài trong khoảng từ 20 đến 59 giây\"."
+    },
+    {
+     "ma": "8.11",
+     "trang": 72,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Thống kê về số ca nhiễm bệnh và số ca tử vong của bệnh SARS (11-2002 đến 7-2003) là 8 437 người nhiễm và 813 người tử vong; của bệnh EBOLA (2014-2016) là 34 453 người nhiễm và 15 158 người tử vong. Căn cứ vào bảng thống kê trên, hãy ước lượng xác suất một người tử vong khi nhiễm bệnh SARS, bệnh EBOLA."
+    },
+    {
+     "ma": "8.12",
+     "trang": 72,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Một nhà máy sản xuất máy điều hoà tiến hành kiểm tra chất lượng của 600 chiếc điều hoà được sản xuất và thấy có 5 chiếc bị lỗi. Trong một lô hàng có 1 500 chiếc điều hoà, hãy dự đoán xem có khoảng bao nhiêu chiếc điều hoà không bị lỗi."
+    },
+    {
+     "ma": "8.13",
+     "trang": 72,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Hai bạn Mai và Việt lần lượt thực hiện việc gieo đồng thời hai con xúc xắc và ở mỗi lần gieo sẽ nhận được số điểm bằng tổng số chấm xuất hiện trên hai con xúc xắc. Mai được gieo 100 lần và Việt được gieo 120 lần. Mai gieo trước và ghi lại kết quả của mình: số điểm 2 có 3 lần, 3 có 5 lần, 4 có 9 lần, 5 có 10 lần, 6 có 14 lần, 7 có 16 lần, 8 có 13 lần, 9 có 11 lần, 10 có 8 lần, 11 có 7 lần, 12 có 4 lần. Trước khi Việt gieo, hãy dự đoán xem có bao nhiêu lần số điểm của Việt nhận được là: a) Một số chẵn. b) Một số nguyên tố. c) Một số lớn hơn 7."
+    }
+   ]
+  },
+  {
+   "chuong": "Chương VIII. Mở đầu về tính xác suất của biến cố",
+   "bai": "Luyện tập chung (trang 74)",
+   "cac_cau": [
+    {
+     "ma": "8.14",
+     "trang": 75,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Gieo một con xúc xắc cân đối. Tính xác suất của các biến cố sau: a) A: \"Số chấm xuất hiện trên con xúc xắc khác 6\"; b) B: \"Số chấm xuất hiện trên con xúc xắc bé hơn 3\"; c) C: \"Số chấm xuất hiện trên con xúc xắc lớn hơn 2\"; d) D: \"Số chấm xuất hiện trên con xúc xắc là số nguyên tố\"."
+    },
+    {
+     "ma": "8.15",
+     "trang": 75,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Một túi đựng các quả bóng giống hệt nhau, chỉ khác màu, trong đó có 15 quả bóng màu xanh, 13 quả bóng màu đỏ và 17 quả bóng màu trắng. Lấy ngẫu nhiên một quả bóng từ trong túi. Tính xác suất của các biến cố sau: a) C: \"Lấy được quả bóng màu xanh\"; b) D: \"Lấy được quả bóng màu đỏ\"; c) E: \"Không lấy được quả bóng màu trắng\"."
+    },
+    {
+     "ma": "8.16",
+     "trang": 75,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Trong trò chơi \"Xúc xắc may mắn\", ở mỗi ván chơi, người chơi gieo đồng thời hai con xúc xắc và ghi lại tổng số chấm xuất hiện trên hai con xúc xắc. Một người chơi 80 ván và ghi lại kết quả: tổng 2 có 2 ván, 3 có 5 ván, 4 có 6 ván, 5 có 8 ván, 6 có 11 ván, 7 có 14 ván, 8 có 12 ván, 9 có 9 ván, 10 có 6 ván, 11 có 4 ván, 12 có 3 ván. a) Giả sử người chơi thắng nếu tổng số chấm xuất hiện trên hai con xúc xắc là 5 hoặc 7. Tính xác suất thực nghiệm của biến cố E: \"Người chơi thắng trong một ván chơi\". b) Giả sử người chơi thắng nếu tổng số chấm xuất hiện trên hai con xúc xắc từ 10 trở lên. Tính xác suất thực nghiệm của biến cố F: \"Người chơi thắng trong một ván chơi\"."
+    },
+    {
+     "ma": "8.17",
+     "trang": 75,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Thống kê số vụ tai nạn giao thông trong hai tháng 8 và 9 của thành phố X: 0 vụ có 4 ngày, 1 vụ có 9 ngày, 2 vụ có 15 ngày, 3 vụ có 10 ngày, 4 vụ có 8 ngày, 5 vụ có 6 ngày, 6 vụ có 4 ngày, 7 vụ có 3 ngày, từ 8 vụ trở lên có 2 ngày. Từ bảng thống kê trên, hãy dự đoán xem trong ba tháng 10; 11; 12 tới tại thành phố X: a) Có bao nhiêu ngày có nhiều nhất 3 vụ tai nạn giao thông. b) Có bao nhiêu ngày có ít nhất 5 vụ tai nạn giao thông."
+    }
+   ]
+  },
+  {
+   "chuong": "Chương VIII. Mở đầu về tính xác suất của biến cố",
+   "bai": "Bài tập cuối chương VIII",
+   "cac_cau": [
+    {
+     "ma": "8.18",
+     "trang": 76,
+     "nhom": "Trắc nghiệm",
+     "dang": "TRAC_NGHIEM",
+     "de": "Lớp 8A gồm 38 học sinh, trong đó có 18 bạn nữ. Có 6 bạn nữ tham gia câu lạc bộ thể thao và 8 bạn nam không tham gia câu lạc bộ thể thao. Chọn ngẫu nhiên một học sinh trong lớp. Xác suất để học sinh đó là một bạn nam có tham gia câu lạc bộ thể thao là A. 7/20. B. 6/19. C. 8/21. D. 9/23."
+    },
+    {
+     "ma": "8.19",
+     "trang": 76,
+     "nhom": "Trắc nghiệm",
+     "dang": "TRAC_NGHIEM",
+     "de": "Lớp 8A gồm 38 học sinh, trong đó có 18 bạn nữ. Có 6 bạn nữ tham gia câu lạc bộ thể thao và 8 bạn nam không tham gia câu lạc bộ thể thao. Chọn ngẫu nhiên một học sinh trong lớp. Xác suất để học sinh đó là một bạn không tham gia câu lạc bộ thể thao là A. 11/20. B. 12/19. C. 13/21. D. 10/19."
+    },
+    {
+     "ma": "8.20",
+     "trang": 76,
+     "nhom": "Trắc nghiệm",
+     "dang": "TRAC_NGHIEM",
+     "de": "Một túi đựng các quả cầu giống hệt nhau, chỉ khác màu, trong đó có 26 quả màu đỏ, 62 quả màu tím, 8 quả màu vàng, 9 quả màu trắng và 12 quả màu đen. Lấy ngẫu nhiên một quả cầu trong túi. Xác suất để lấy được quả cầu màu tím là A. 62/117. B. 60/117. C. 63/118. D. 65/118."
+    },
+    {
+     "ma": "8.21",
+     "trang": 76,
+     "nhom": "Trắc nghiệm",
+     "dang": "TRAC_NGHIEM",
+     "de": "Một túi đựng các quả cầu giống hệt nhau, chỉ khác màu, trong đó có 26 quả màu đỏ, 62 quả màu tím, 8 quả màu vàng, 9 quả màu trắng và 12 quả màu đen. Lấy ngẫu nhiên một quả cầu trong túi. Xác suất để lấy được quả cầu màu trắng là A. 11/117. B. 9/117. C. 13/118. D. 15/118."
+    },
+    {
+     "ma": "8.22",
+     "trang": 76,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Trong một hộp có 10 tấm thẻ giống nhau được đánh số 11; 12;...; 20. Rút ngẫu nhiên một tấm thẻ từ trong hộp. a) Liệt kê các kết quả có thể của hành động trên. b) Liệt kê các kết quả thuận lợi cho các biến cố sau: E: \"Rút được tấm thẻ ghi số là bội của 3\"; F: \"Rút được tấm thẻ ghi số nguyên tố\"."
+    },
+    {
+     "ma": "8.23",
+     "trang": 76,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Một túi đựng các viên bi giống hệt nhau, chỉ khác màu, trong đó có 5 viên bi màu xanh, 3 viên bi màu đỏ và 7 viên bi màu trắng. Bạn Việt lấy ngẫu nhiên một viên bi trong túi. Tính xác suất của các biến cố sau: a) E: \"Việt lấy được viên bi màu xanh\"; b) F: \"Việt lấy được viên bi màu đỏ\"; c) G: \"Việt lấy được viên bi màu trắng\"; d) H: \"Việt lấy được viên bi màu xanh hoặc màu đỏ\"; e) K: \"Việt không lấy được viên bi màu đỏ\"."
+    },
+    {
+     "ma": "8.24",
+     "trang": 77,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Chọn ngẫu nhiên một số có hai chữ số. Tính xác suất của các biến cố sau: a) A: \"Số được chọn nhỏ hơn 20\"; b) B: \"Số được chọn là số chính phương\"."
+    },
+    {
+     "ma": "8.25",
+     "trang": 77,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Trong một phòng có 15 học sinh lớp 8A gồm 9 bạn nam, 6 bạn nữ và 15 học sinh lớp 8B gồm 12 bạn nam, 3 bạn nữ. Chọn ngẫu nhiên một học sinh trong phòng. Tính xác suất của các biến cố sau: a) E: \"Chọn được một học sinh nam\"; b) F: \"Chọn được một học sinh nam lớp 8B\"; c) G: \"Chọn được một học sinh nữ lớp 8A\"."
+    },
+    {
+     "ma": "8.26",
+     "trang": 77,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Bảng thống kê kết quả khảo sát số người thích một bộ phim mới tại 5 phường A, B, C, D, E của thành phố X (số người khảo sát nam/nữ và số người thích bộ phim mới nam/nữ): phường A 45/51 khảo sát, 10/11 thích; phường B 36/42 khảo sát, 9/6 thích; phường C 52/49 khảo sát, 13/13 thích; phường D 28/33 khảo sát, 9/10 thích; phường E 40/39 khảo sát, 7/4 thích; tổng số 201/214 khảo sát, 48/44 thích. a) Chọn ngẫu nhiên một người ở phường C. Ước lượng xác suất của biến cố A: \"Người được chọn thích bộ phim đó\". b) Chọn ngẫu nhiên một người ở phường E. Ước lượng xác suất của biến cố B: \"Người được chọn không thích bộ phim đó\". c) Chọn ngẫu nhiên 600 người ở thành phố X. Ước lượng trong đó có bao nhiêu người thích bộ phim đó. d) Chọn ngẫu nhiên 500 người nữ ở thành phố X. Ước lượng trong đó có bao nhiêu người thích bộ phim đó."
+    }
+   ]
+  },
+  {
+   "chuong": "Chương IX. Tam giác đồng dạng",
+   "bai": "Bài 33. Hai tam giác đồng dạng",
+   "cac_cau": [
+    {
+     "ma": "Luyện tập 1 (tr.80)",
+     "trang": 80,
+     "nhom": "Luyện tập",
+     "dang": "CAU_NHO",
+     "de": "Trong các tam giác được vẽ trên lưới ô vuông (Hình 9.3, SGK trang 80), có một cặp tam giác đồng dạng. Hãy chỉ ra cặp tam giác đó, viết đúng kí hiệu đồng dạng và tìm tỉ số đồng dạng của chúng."
+    },
+    {
+     "ma": "Thử thách nhỏ (tr.80)",
+     "trang": 80,
+     "nhom": "Thử thách nhỏ",
+     "dang": "CAU_NHO",
+     "de": "Cho ΔABC ᔕ ΔMNP. Chứng minh rằng: a) Nếu tam giác ABC cân tại đỉnh A thì tam giác MNP cân tại đỉnh M; b) Nếu tam giác ABC đều thì tam giác MNP đều; c) Nếu AB ≥ AC ≥ BC thì MN ≥ MP ≥ NP."
+    },
+    {
+     "ma": "Luyện tập 2 (tr.82)",
+     "trang": 82,
+     "nhom": "Luyện tập",
+     "dang": "CAU_NHO",
+     "de": "Trong Hình 9.8 (SGK trang 82), các đường thẳng AB, CD, EF song song với nhau. Hãy liệt kê ba cặp tam giác (phân biệt) đồng dạng."
+    },
+    {
+     "ma": "Vận dụng (tr.82)",
+     "trang": 82,
+     "nhom": "Vận dụng",
+     "dang": "CAU_NHO",
+     "de": "Trở lại tình huống mở đầu (bác Dương tính chiều cao AB của cột đèn nhờ cọc gỗ CD và bóng của nó), hãy giải thích bác Dương đã tính được chiều cao cột đèn như thế nào, biết cọc gỗ cao 1 m, EC = 80 cm và EB = 4 m."
+    },
+    {
+     "ma": "9.1",
+     "trang": 82,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Cho ΔABC ᔕ ΔMNP, khẳng định nào sau đây không đúng? a) ΔMNP ᔕ ΔABC. b) ΔBCA ᔕ ΔNPM. c) ΔCAB ᔕ ΔPMN. d) ΔACB ᔕ ΔMNP."
+    },
+    {
+     "ma": "9.2",
+     "trang": 82,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Những khẳng định nào sau đây là đúng? a) Hai tam giác bằng nhau thì đồng dạng với nhau. b) Hai tam giác bất kì đồng dạng với nhau. c) Hai tam giác đều bất kì đồng dạng với nhau. d) Hai tam giác vuông bất kì đồng dạng với nhau. e) Hai tam giác đồng dạng thì bằng nhau."
+    },
+    {
+     "ma": "9.3",
+     "trang": 82,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Trong Hình 9.9 (SGK trang 82), ABC là tam giác không cân; M, N, P lần lượt là trung điểm của BC, CA, AB. Hãy tìm trong hình năm tam giác khác nhau mà chúng đôi một đồng dạng với nhau. Giải thích vì sao chúng đồng dạng."
+    },
+    {
+     "ma": "9.4",
+     "trang": 82,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Cho tam giác ABC cân tại đỉnh A và tam giác MNP cân tại đỉnh M. Biết rằng góc BAC = góc PMN, AB = 2MN. Chứng minh ΔMNP ᔕ ΔABC và tìm tỉ số đồng dạng."
+    }
+   ]
+  },
+  {
+   "chuong": "Chương IX. Tam giác đồng dạng",
+   "bai": "Bài 34. Ba trường hợp đồng dạng của hai tam giác",
+   "cac_cau": [
+    {
+     "ma": "Câu hỏi 1 (tr.84)",
+     "trang": 84,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Những cặp tam giác nào dưới đây (Hình 9.13, SGK trang 84) là đồng dạng? (Các kích thước được tính theo đơn vị centimét). Viết đúng kí hiệu đồng dạng."
+    },
+    {
+     "ma": "Luyện tập 1 (tr.85)",
+     "trang": 85,
+     "nhom": "Luyện tập",
+     "dang": "CAU_NHO",
+     "de": "Cho tam giác ABC có chu vi bằng 18 cm và tam giác DEF có chu vi bằng 27 cm. Biết rằng AB = 4 cm, BC = 6 cm, DE = 6 cm, FD = 12 cm. Chứng minh ΔABC ᔕ ΔDEF."
+    },
+    {
+     "ma": "Vận dụng (tr.85)",
+     "trang": 85,
+     "nhom": "Vận dụng",
+     "dang": "CAU_NHO",
+     "de": "Trở lại tình huống mở đầu (độ rộng khung thành là 7,32 m, trái bóng cách hai cột gôn lần lượt là 10,98 m và 14,64 m). Em hãy vẽ một tam giác có ba cạnh tỉ lệ với ba cạnh của tam giác tạo bởi ba đỉnh là trái bóng và hai chân cột gôn. Từ đó tính góc sút bằng góc tương ứng của tam giác vừa vẽ được."
+    },
+    {
+     "ma": "Câu hỏi 2 (tr.86)",
+     "trang": 86,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Những cặp tam giác nào trong Hình 9.17 (SGK trang 86) là đồng dạng? (Các kích thước được tính theo đơn vị centimét). Viết đúng kí hiệu đồng dạng."
+    },
+    {
+     "ma": "Luyện tập 2 (tr.87)",
+     "trang": 87,
+     "nhom": "Luyện tập",
+     "dang": "CAU_NHO",
+     "de": "Cho ΔA'B'C' ᔕ ΔABC. Trên tia đối của các tia CB, C'B' lần lượt lấy các điểm M, M' sao cho MC/MB = M'C'/M'B'. Chứng minh rằng ΔA'B'M' ᔕ ΔABM."
+    },
+    {
+     "ma": "Tranh luận (tr.87)",
+     "trang": 87,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Bạn Lan nhận xét rằng nếu tam giác ABC và tam giác A'B'C' có A'B'/AB = A'C'/AC và góc B' = góc B thì chúng đồng dạng. Theo em, bạn Lan nhận xét có đúng không? Vì sao? (Gợi ý: khi góc ACB tù, lấy điểm M trên tia BC sao cho ΔAMC cân rồi xét xem trong hai tam giác ABC và ABM, tam giác nào đồng dạng với tam giác A'B'C')."
+    },
+    {
+     "ma": "Câu hỏi 3 (tr.89)",
+     "trang": 89,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Những cặp tam giác nào trong Hình 9.22 (SGK trang 89) là đồng dạng? Viết đúng kí hiệu đồng dạng."
+    },
+    {
+     "ma": "Luyện tập 3 (tr.89)",
+     "trang": 89,
+     "nhom": "Luyện tập",
+     "dang": "CAU_NHO",
+     "de": "Cho các điểm A, B, C, D như Hình 9.24 (SGK trang 89). Biết rằng góc ABC = góc ADB. Hãy chứng minh ΔABC ᔕ ΔADB và AB^2 = AD · AC."
+    },
+    {
+     "ma": "Thử thách nhỏ (tr.90)",
+     "trang": 90,
+     "nhom": "Thử thách nhỏ",
+     "dang": "CAU_NHO",
+     "de": "1. Biết rằng ba đường phân giác của tam giác ABC đồng quy tại I, ba đường phân giác của tam giác A'B'C' đồng quy tại I'. Hãy chứng tỏ rằng nếu góc A'I'B' = góc AIB và góc A'I'C' = góc AIC thì ΔA'B'C' ᔕ ΔABC. 2. Với hai tam giác ABC và A'B'C' trong phần Tranh luận, nếu thêm giả thiết các góc C và C' nhọn thì hai tam giác đó có đồng dạng không?"
+    },
+    {
+     "ma": "9.5",
+     "trang": 90,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Giả thiết nào dưới đây chứng tỏ rằng hai tam giác đồng dạng? a) Ba cạnh của tam giác này tỉ lệ với ba cạnh của tam giác kia. b) Hai cạnh của tam giác này tỉ lệ với hai cạnh của tam giác kia và có một cặp góc bằng nhau. c) Hai góc của tam giác này bằng hai góc của tam giác kia. d) Hai cạnh của tam giác này bằng hai cạnh của tam giác kia."
+    },
+    {
+     "ma": "9.6",
+     "trang": 90,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Cho hai tam giác đồng dạng. Tam giác thứ nhất có độ dài ba cạnh là 4 cm, 8 cm và 10 cm. Tam giác thứ hai có chu vi là 33 cm. Độ dài ba cạnh của tam giác thứ hai là bộ ba nào sau đây? a) 6 cm, 12 cm, 15 cm. b) 8 cm, 16 cm, 20 cm. c) 6 cm, 9 cm, 18 cm. d) 8 cm, 10 cm, 15 cm."
+    },
+    {
+     "ma": "9.7",
+     "trang": 90,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Cho AM, BN, CP là các đường trung tuyến của tam giác ABC. Cho A'M', B'N', C'P' là các đường trung tuyến của tam giác A'B'C'. Biết rằng ΔA'B'C' ᔕ ΔABC. Chứng minh rằng A'M'/AM = B'N'/BN = C'P'/CP."
+    },
+    {
+     "ma": "9.8",
+     "trang": 90,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Cho tam giác ABC có AB = 12 cm, AC = 15 cm. Trên các tia AB, AC lần lượt lấy các điểm M, N sao cho AM = 10 cm, AN = 8 cm. Chứng minh rằng ΔABC ᔕ ΔANM."
+    },
+    {
+     "ma": "9.9",
+     "trang": 90,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Cho góc BAC và các điểm M, N lần lượt trên các đoạn thẳng AB, AC sao cho góc ABN = góc ACM. a) Chứng minh rằng ΔABN ᔕ ΔACM. b) Gọi I là giao điểm của BN và CM. Chứng minh rằng IB · IN = IC · IM."
+    },
+    {
+     "ma": "9.10",
+     "trang": 90,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Có hai chiếc cột dựng thẳng đứng trên mặt đất với chiều cao lần lượt là 3 m và 2 m. Người ta nối hai sợi dây từ đỉnh cột này đến chân cột kia và hai sợi dây cắt nhau tại một điểm (Hình 9.25, SGK trang 90). Hãy tính độ cao h của điểm đó so với mặt đất."
+    }
+   ]
+  },
+  {
+   "chuong": "Chương IX. Tam giác đồng dạng",
+   "bai": "Luyện tập chung (trang 91)",
+   "cac_cau": [
+    {
+     "ma": "9.11",
+     "trang": 92,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Cho ΔABC ᔕ ΔDEF. Biết góc A = 60°, góc E = 80°, hãy tính số đo các góc B, C, D, F."
+    },
+    {
+     "ma": "9.12",
+     "trang": 92,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Cho ΔABC ᔕ ΔA'B'C'. Biết AB = 3 cm, A'B' = 6 cm và tam giác ABC có chu vi bằng 10 cm. Hãy tính chu vi tam giác A'B'C'."
+    },
+    {
+     "ma": "9.13",
+     "trang": 92,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Cho hình thang ABCD (AB // CD) có góc DAB = góc DBC (Hình 9.28, SGK trang 92). a) Chứng minh rằng ΔABD ᔕ ΔBDC. b) Giả sử AB = 2 cm, AD = 3 cm, BD = 4 cm. Tính độ dài các cạnh BC và DC."
+    },
+    {
+     "ma": "9.14",
+     "trang": 92,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Cho các điểm A, B, C, D, E, F như Hình 9.29 (SGK trang 92). Biết rằng DE // AB, EF // BC, DE = 4 cm, AB = 6 cm. Chứng minh rằng ΔAEF ᔕ ΔECD và tính tỉ số đồng dạng."
+    },
+    {
+     "ma": "9.15",
+     "trang": 92,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Cho các điểm A, B, C, D, E như Hình 9.30 (SGK trang 92). Biết rằng góc BAC = góc CDB, hãy chứng minh rằng ΔAED ᔕ ΔBEC."
+    },
+    {
+     "ma": "9.16",
+     "trang": 92,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Cho hình thang ABCD (AB // CD) và các điểm M, N lần lượt trên cạnh AD và BC sao cho 2AM = MD, 2BN = NC. Biết rằng AB = 5 cm, CD = 6 cm, hãy tính độ dài đoạn thẳng MN."
+    }
+   ]
+  },
+  {
+   "chuong": "Chương IX. Tam giác đồng dạng",
+   "bai": "Bài 35. Định lí Pythagore và ứng dụng",
+   "cac_cau": [
+    {
+     "ma": "Câu hỏi (tr.94)",
+     "trang": 94,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Tìm độ dài x và y trong Hình 9.34 (SGK trang 94): tam giác vuông thứ nhất có hai cạnh góc vuông đều bằng 1 và cạnh huyền là x; tam giác vuông thứ hai có một cạnh góc vuông bằng 1, cạnh huyền bằng √5 và cạnh góc vuông còn lại là y."
+    },
+    {
+     "ma": "Luyện tập 1 (tr.95)",
+     "trang": 95,
+     "nhom": "Luyện tập",
+     "dang": "CAU_NHO",
+     "de": "Trên giấy kẻ ô vuông (cạnh ô vuông bằng 1 cm), cho các điểm A, B, C như Hình 9.35 (SGK trang 95). Tính độ dài các cạnh của tam giác ABC."
+    },
+    {
+     "ma": "Vận dụng 1 (tr.95)",
+     "trang": 95,
+     "nhom": "Vận dụng",
+     "dang": "CAU_NHO",
+     "de": "Em hãy giải bài toán mở đầu: bạn Lan vẽ một hình chữ nhật với chiều rộng và chiều dài lần lượt là 1; 3 (đơn vị độ dài), sau đó đặt lên trục số đoạn OM có độ dài bằng độ dài đường chéo hình chữ nhật vừa vẽ (trục số nằm ngang và M nằm bên phải gốc O). Hỏi điểm M biểu diễn số thực nào?"
+    },
+    {
+     "ma": "Luyện tập 2 (tr.95)",
+     "trang": 95,
+     "nhom": "Luyện tập",
+     "dang": "CAU_NHO",
+     "de": "Cho các tam giác vuông với kích thước như Hình 9.37 (SGK trang 95). Hãy tính độ dài x và cho biết những tam giác nào đồng dạng, viết đúng kí hiệu đồng dạng."
+    },
+    {
+     "ma": "Vận dụng 2 (tr.96)",
+     "trang": 96,
+     "nhom": "Vận dụng",
+     "dang": "CAU_NHO",
+     "de": "Để đón được một người khách, một xe taxi xuất phát từ vị trí điểm A, chạy dọc một con phố dài 3 km đến điểm B thì rẽ vuông góc sang trái, chạy được 3 km đến điểm C thì tài xế cho xe rẽ vuông góc sang phải, chạy 1 km nữa thì gặp người khách tại điểm D (Hình 9.38, SGK trang 96). Hỏi lúc đầu, khoảng cách từ chỗ người lái xe đến người khách là bao nhiêu kilômét?"
+    },
+    {
+     "ma": "Câu hỏi 2 (tr.96)",
+     "trang": 96,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Cho Hình 9.40 (SGK trang 96), trong các đoạn thẳng AC, AD, AE, đoạn nào có độ dài lớn nhất, đoạn nào có độ dài nhỏ nhất?"
+    },
+    {
+     "ma": "Luyện tập 3 (tr.96)",
+     "trang": 96,
+     "nhom": "Luyện tập",
+     "dang": "CAU_NHO",
+     "de": "Trước đây chúng ta thừa nhận định lí về trường hợp bằng nhau đặc biệt của hai tam giác vuông: \"Nếu một cạnh góc vuông và cạnh huyền của tam giác vuông này bằng một cạnh góc vuông và cạnh huyền của tam giác vuông kia thì hai tam giác vuông đó bằng nhau\". Áp dụng định lí Pythagore, em hãy chứng minh định lí trên."
+    },
+    {
+     "ma": "Thử thách nhỏ (tr.97)",
+     "trang": 97,
+     "nhom": "Thử thách nhỏ",
+     "dang": "CAU_NHO",
+     "de": "Hãy tính chiều cao theo đơn vị centimét của một tam giác đều cạnh 2 cm (làm tròn kết quả đến chữ số thập phân thứ hai)."
+    },
+    {
+     "ma": "9.17",
+     "trang": 97,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Cho tam giác ABC vuông tại A. Trong các khẳng định sau đây, khẳng định nào đúng, khẳng định nào sai? a) AB^2 + BC^2 = AC^2. b) BC^2 − AC^2 = AB^2. c) AC^2 + BC^2 = AB^2. d) BC^2 − AB^2 = AC^2."
+    },
+    {
+     "ma": "9.18",
+     "trang": 97,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Những bộ ba số đo nào dưới đây là độ dài ba cạnh của một tam giác vuông? a) 1 cm, 1 cm, 2 cm. b) 2 cm, 4 cm, 20 cm. c) 5 cm, 4 cm, 3 cm. d) 2 cm, 2 cm, 2√2 cm."
+    },
+    {
+     "ma": "9.19",
+     "trang": 97,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Tính các độ dài x, y, z, t trong Hình 9.43 (SGK trang 97)."
+    },
+    {
+     "ma": "9.20",
+     "trang": 97,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Cho tam giác ABC cân tại đỉnh A, chiều cao AH = 3 cm và cạnh đáy BC = 10 cm. Hãy tính độ dài các cạnh bên AB, AC."
+    },
+    {
+     "ma": "9.21",
+     "trang": 97,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Hãy tính diện tích của một hình chữ nhật có chiều rộng 8 cm và đường chéo dài 17 cm."
+    },
+    {
+     "ma": "9.22",
+     "trang": 97,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Chú cún bị xích bởi một sợi dây dài 6 m để canh một mảnh vườn giới hạn bởi các điểm A, B, E, F, D trong hình vuông ABCD có cạnh 5 m như Hình 9.44 (SGK trang 97). Đầu xích buộc cố định tại điểm A của mảnh vườn. Hỏi chú cún có thể chạy đến tất cả các điểm của mảnh vườn mình phải canh không?"
+    }
+   ]
+  },
+  {
+   "chuong": "Chương IX. Tam giác đồng dạng",
+   "bai": "Bài 36. Các trường hợp đồng dạng của hai tam giác vuông",
+   "cac_cau": [
+    {
+     "ma": "Câu hỏi 1 (tr.98)",
+     "trang": 98,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Hãy chỉ ra hai cặp tam giác vuông đồng dạng trong Hình 9.46 (SGK trang 98)."
+    },
+    {
+     "ma": "Luyện tập 1 (tr.99)",
+     "trang": 99,
+     "nhom": "Luyện tập",
+     "dang": "CAU_NHO",
+     "de": "Trở lại tình huống mở đầu (bóng cột cờ dài 6 m, bóng của Việt dài 70 cm, Việt cao 1,4 m), ta thấy chiếc cột cùng với bóng của nó tạo thành hai cạnh góc vuông của tam giác ABC vuông tại đỉnh A, bạn Việt và bóng của mình cũng được xem là hai cạnh góc vuông của tam giác A'B'C' vuông tại đỉnh A' (Hình 9.48). Vì các tia sáng Mặt Trời tạo với hai cái bóng các góc bằng nhau nên góc B = góc B'. a) Hai tam giác vuông ABC và A'B'C' có đồng dạng với nhau không? b) Bạn Nam đã tính chiều cao cột cờ, tức là độ dài đoạn thẳng AC như thế nào và kết quả là bao nhiêu?"
+    },
+    {
+     "ma": "Thử thách nhỏ (tr.100)",
+     "trang": 100,
+     "nhom": "Thử thách nhỏ",
+     "dang": "CAU_NHO",
+     "de": "Một người đo chiều cao của một cái cây bằng cách cắm một chiếc cọc xuống đất, cọc cao 2,4 m và cách vị trí gốc cây 19 m. Người đó đứng cách xa chiếc cọc 1 m và nhìn thấy đỉnh cọc thẳng với đỉnh của cây. Hãy tính chiều cao của cây, biết rằng khoảng cách từ chân đến mắt người ấy là 1,6 m (Hình 9.49, SGK trang 100)."
+    },
+    {
+     "ma": "Câu hỏi 2 (tr.101)",
+     "trang": 101,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Hãy chỉ ra các cặp tam giác vuông đồng dạng với nhau trong Hình 9.52 (SGK trang 101), viết đúng kí hiệu đồng dạng."
+    },
+    {
+     "ma": "Luyện tập 2 (tr.102)",
+     "trang": 102,
+     "nhom": "Luyện tập",
+     "dang": "CAU_NHO",
+     "de": "Một ngôi nhà với hai mái lệch AB, CD được thiết kế như Hình 9.54 (SGK trang 102) sao cho CD = 6 m, AB = 4 m, HA = 2 m, AC = 1 m. Chứng tỏ rằng góc ABD = góc CDB."
+    },
+    {
+     "ma": "Vận dụng (tr.102)",
+     "trang": 102,
+     "nhom": "Vận dụng",
+     "dang": "CAU_NHO",
+     "de": "Bác Minh muốn thay chiếc ti vi có chiều ngang của màn hình là 72 cm (loại 32 inch) bằng chiếc ti vi mới loại 55 inch có cùng tỉ lệ khung hình (tỉ lệ giữa hai kích thước màn hình). Hỏi nếu khoảng trống đặt ti vi là một hình vuông cạnh 1 m thì có thể đặt chiếc ti vi mới vào đó không?"
+    },
+    {
+     "ma": "9.23",
+     "trang": 102,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Điều kiện nào dưới đây chứng tỏ rằng hai tam giác vuông đồng dạng? a) Một góc nhọn của tam giác này bằng một góc nhọn của tam giác kia. b) Cạnh góc vuông và cạnh huyền của tam giác này tỉ lệ với cạnh góc vuông và cạnh huyền của tam giác kia. c) Một cạnh góc vuông của tam giác này bằng một cạnh góc vuông của tam giác kia. d) Hai cạnh góc vuông của tam giác này tỉ lệ với hai cạnh góc vuông của tam giác kia."
+    },
+    {
+     "ma": "9.24",
+     "trang": 103,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Cặp tam giác vuông nào đồng dạng với nhau trong Hình 9.55 (SGK trang 103)?"
+    },
+    {
+     "ma": "9.25",
+     "trang": 103,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Cho góc nhọn xOy, các điểm A, N nằm trên tia Ox, các điểm B, M nằm trên tia Oy sao cho AM, BN lần lượt vuông góc với Oy, Ox. Chứng minh rằng ΔOAM ᔕ ΔOBN."
+    },
+    {
+     "ma": "9.26",
+     "trang": 103,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Cho hai hình chữ nhật ABCD và A'B'C'D' thoả mãn AC = 3AB, B'D' = 3A'B'. a) Chứng minh rằng ΔABC ᔕ ΔA'B'C'. b) Nếu A'B' = 2AB và diện tích hình chữ nhật ABCD là 2 m^2 thì diện tích hình chữ nhật A'B'C'D' là bao nhiêu?"
+    },
+    {
+     "ma": "9.27",
+     "trang": 103,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Cho ΔA'B'C' ᔕ ΔABC theo tỉ số k. Gọi A'H' và AH lần lượt là các đường cao đỉnh A' và A của tam giác A'B'C' và tam giác ABC. Chứng minh rằng: a) A'H'/AH = k; b) Diện tích tam giác A'B'C' bằng k^2 lần diện tích tam giác ABC."
+    },
+    {
+     "ma": "9.28",
+     "trang": 103,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Một người ở vị trí điểm A muốn đo khoảng cách đến điểm B ở bên kia sông mà không thể qua sông được. Sử dụng giác kế, người đó xác định được một điểm M trên bờ sông sao cho AM = 2 m, AM vuông góc với AB và đo được số đo góc AMB. Tiếp theo, người đó vẽ trên giấy tam giác A'M'B' vuông tại A', có A'M' = 1 cm, góc A'M'B' = góc AMB và đo được A'B' = 5 cm (Hình 9.56, SGK trang 103). Hỏi khoảng cách từ A đến B là bao nhiêu mét?"
+    }
+   ]
+  },
+  {
+   "chuong": "Chương IX. Tam giác đồng dạng",
+   "bai": "Bài 37. Hình đồng dạng",
+   "cac_cau": [
+    {
+     "ma": "Câu hỏi (tr.105)",
+     "trang": 105,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Theo em, hai hình tam giác bằng nhau bất kì có phải là hai hình đồng dạng phối cảnh không?"
+    },
+    {
+     "ma": "Luyện tập (tr.107)",
+     "trang": 107,
+     "nhom": "Luyện tập",
+     "dang": "CAU_NHO",
+     "de": "Trong những cặp hình dưới đây (Hình 9.67, SGK trang 107), cặp hình nào là hai hình đồng dạng? Hãy chỉ ra một cặp hình đồng dạng phối cảnh và vẽ cặp hình đó cùng tâm phối cảnh vào vở."
+    },
+    {
+     "ma": "Tranh luận (tr.107)",
+     "trang": 107,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Vuông nghĩ là hai hình vuông bất kì đều đồng dạng với nhau. Tròn nghĩ hai hình tam giác đều bất kì đều đồng dạng phối cảnh với nhau. Theo em, bạn nào đúng, bạn nào sai? Cho biết ý kiến của em."
+    },
+    {
+     "ma": "9.29",
+     "trang": 107,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Lấy một điểm O nằm ngoài một đoạn thẳng AB. Hãy vẽ hình đồng dạng phối cảnh tâm O của đoạn thẳng AB theo tỉ số đồng dạng 1/2."
+    },
+    {
+     "ma": "9.30",
+     "trang": 107,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Biết rằng mỗi hình dưới đây (Hình 9.68, SGK trang 107) đồng dạng với một hình khác, hãy tìm các cặp hình đồng dạng đó."
+    },
+    {
+     "ma": "9.31",
+     "trang": 107,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Trong các cặp hình đồng dạng dưới đây (Hình 9.69, SGK trang 107: cặp hình lục giác đều, cặp hình tam giác đều, cặp hình vuông), cặp hình nào là đồng dạng phối cảnh?"
+    }
+   ]
+  },
+  {
+   "chuong": "Chương IX. Tam giác đồng dạng",
+   "bai": "Luyện tập chung (trang 108)",
+   "cac_cau": [
+    {
+     "ma": "9.32",
+     "trang": 109,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Cho tam giác ABC vuông tại A và có đường cao AH. Biết rằng BH = 16 cm, CH = 9 cm. a) Tính độ dài đoạn thẳng AH. b) Tính độ dài các đoạn thẳng AB và AC."
+    },
+    {
+     "ma": "9.33",
+     "trang": 109,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Cho tam giác ABC có AB = 6 cm, AC = 8 cm, BC = 10 cm. Cho điểm M nằm trên cạnh BC sao cho BM = 4 cm. Vẽ đường thẳng MN vuông góc với AC tại N và đường thẳng MP vuông góc với AB tại P. a) Chứng minh rằng ΔBMP ᔕ ΔMCN. b) Tính độ dài đoạn thẳng AM."
+    },
+    {
+     "ma": "9.34",
+     "trang": 109,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Trong Hình 9.72 (SGK trang 109), cho AH, HE, HF lần lượt là các đường cao của các tam giác ABC, AHB, AHC. Chứng minh rằng: a) ΔAEH ᔕ ΔAHB; b) ΔAFH ᔕ ΔAHC; c) ΔAFE ᔕ ΔABC."
+    },
+    {
+     "ma": "9.35",
+     "trang": 109,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Cho tam giác ABC vuông tại A có đường cao AH. Cho M và N lần lượt là trung điểm của AB và AC. Chứng minh ΔHBM ᔕ ΔHAN."
+    },
+    {
+     "ma": "9.36",
+     "trang": 109,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Vào gần buổi trưa, khi bóng bạn An dài 60 cm thì bóng cột cờ dài 3 m. a) Biết rằng bạn An cao 1,4 m. Hỏi cột cờ cao bao nhiêu mét? b) Vào buổi chiều khi bóng bạn An dài 3 m, hỏi bóng cột cờ dài bao nhiêu mét?"
+    }
+   ]
+  },
+  {
+   "chuong": "Chương IX. Tam giác đồng dạng",
+   "bai": "Bài tập cuối chương IX",
+   "cac_cau": [
+    {
+     "ma": "9.37",
+     "trang": 110,
+     "nhom": "Trắc nghiệm",
+     "dang": "TRAC_NGHIEM",
+     "de": "Cho ABC là tam giác không cân. Biết ΔA'B'C' ᔕ ΔABC. Khẳng định nào sau đây là đúng? A. ΔA'C'B' ᔕ ΔACB. B. ΔB'C'A' ᔕ ΔBAC. C. ΔB'A'C' ᔕ ΔBCA. D. ΔA'C'B' ᔕ ΔABC."
+    },
+    {
+     "ma": "9.38",
+     "trang": 110,
+     "nhom": "Trắc nghiệm",
+     "dang": "TRAC_NGHIEM",
+     "de": "Cho ΔA'B'C' ᔕ ΔABC với tỉ số đồng dạng bằng 2. Khẳng định nào sau đây là đúng? A. AB/A'B' = 2. B. AB/A'C' = 2. C. A'B'/AB = 2. D. A'B'/AC = 2."
+    },
+    {
+     "ma": "9.39",
+     "trang": 110,
+     "nhom": "Trắc nghiệm",
+     "dang": "TRAC_NGHIEM",
+     "de": "Trong các bộ ba số đo dưới đây, đâu là số đo ba cạnh của một tam giác vuông? A. 3 m; 5 m; 6 m. B. 6 m; 8 m; 10 m. C. 1 m; 0,5 m; 1,25 m. D. 9 m; 16 m; 25 m."
+    },
+    {
+     "ma": "9.40",
+     "trang": 110,
+     "nhom": "Trắc nghiệm",
+     "dang": "TRAC_NGHIEM",
+     "de": "Cho tam giác ABC vuông tại A (AB ≠ AC) và tam giác DEF vuông tại D (DE ≠ DF). Điều nào dưới đây không suy ra ΔABC ᔕ ΔDEF? A. góc B = góc E. B. góc C = góc F. C. góc B + góc C = góc E + góc F. D. góc B − góc C = góc E − góc F."
+    },
+    {
+     "ma": "9.41",
+     "trang": 110,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Cho Hình 9.73 (SGK trang 110), biết rằng MN // AB, MP // AC. Hãy liệt kê ba cặp tam giác (phân biệt) đồng dạng có trong hình."
+    },
+    {
+     "ma": "9.42",
+     "trang": 110,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Cho Hình 9.74 (SGK trang 110), biết rằng góc ABD = góc ACE. Chứng minh rằng ΔABD ᔕ ΔACE và ΔBOE ᔕ ΔCOD."
+    },
+    {
+     "ma": "9.43",
+     "trang": 110,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Hai đường trung tuyến BM, CN của tam giác ABC cắt nhau tại điểm G (Hình 9.75, SGK trang 110). Chứng minh rằng tam giác GMN đồng dạng với tam giác GBC và tìm tỉ số đồng dạng."
+    },
+    {
+     "ma": "9.44",
+     "trang": 111,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Cho tam giác ABC vuông tại A có AB = 5 cm, AC = 4 cm. Gọi AH, HD lần lượt là các đường cao kẻ từ đỉnh A của tam giác ABC và đỉnh H của tam giác HAB. a) Chứng minh rằng ΔHDA ᔕ ΔAHC. b) Tính độ dài các đoạn thẳng HA, HB, HC, HD."
+    },
+    {
+     "ma": "9.45",
+     "trang": 111,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Cho tam giác ABC có đường cao AH. Biết AH = 12 cm, CH = 9 cm, BH = 16 cm. Lấy M, N lần lượt là trung điểm của AH, BH (Hình 9.76, SGK trang 111). a) Chứng minh rằng ABC là tam giác vuông tại A. b) Chứng minh rằng MN ⊥ AC và CM ⊥ AN. c) Tính diện tích tam giác AMN."
+    },
+    {
+     "ma": "9.46",
+     "trang": 111,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Cho tam giác ABC vuông tại A và các điểm D, E, F như Hình 9.77 (SGK trang 111) sao cho AD là phân giác của góc BAC, DE và DF lần lượt vuông góc với AC và BC. Chứng minh rằng: a) BD/BC = AB/(AB + AC), từ đó suy ra AE = (AB · AC)/(AB + AC); b) ΔDFC ᔕ ΔABC; c) DF = DB."
+    },
+    {
+     "ma": "9.47",
+     "trang": 111,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Để tính được chiều cao gần đúng của kim tự tháp Ai Cập, người ta cắm một cây cọc cao 1 m vuông góc với mặt đất và đo được bóng cây cọc trên mặt đất là 1,5 m. Khi đó chiều dài bóng của kim tự tháp trên mặt đất là 208,2 m. Hỏi kim tự tháp cao bao nhiêu mét?"
+    },
+    {
+     "ma": "9.48",
+     "trang": 111,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Từ căn hộ chung cư nhà mình, bạn Lan đứng cách cửa sổ 1 m nhìn sang toà nhà đối diện thì vừa nhìn thấy đúng tất cả 6 tầng của toà nhà đó. Biết rằng cửa sổ nhà Lan cao 80 cm và mỗi tầng của toà nhà đối diện cao 4 m. Hỏi khoảng cách từ căn hộ nhà Lan đến toà nhà đối diện là bao nhiêu?"
+    }
+   ]
+  },
+  {
+   "chuong": "Chương X. Một số hình khối trong thực tiễn",
+   "bai": "Bài 38. Hình chóp tam giác đều",
+   "cac_cau": [
+    {
+     "ma": "Câu hỏi (tr.113)",
+     "trang": 113,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Hãy gọi tên đỉnh, cạnh bên, mặt bên, mặt đáy, đường cao, một trung đoạn của hình chóp tam giác đều S.ABC trong Hình 10.2 (SGK trang 113)."
+    },
+    {
+     "ma": "Luyện tập (tr.114)",
+     "trang": 114,
+     "nhom": "Luyện tập",
+     "dang": "CAU_NHO",
+     "de": "Tính diện tích xung quanh của hình chóp tam giác đều S.MNP trong Hình 10.8 (SGK trang 114), biết IP = 3 cm và cạnh bên SP = 5 cm."
+    },
+    {
+     "ma": "Vận dụng (tr.116)",
+     "trang": 116,
+     "nhom": "Vận dụng",
+     "dang": "CAU_NHO",
+     "de": "Hình 10.11 mô tả hình chóp trong tình huống mở đầu (chóp inox trên đỉnh Fansipan có dạng hình chóp tam giác đều cạnh đáy dài 60 cm, cạnh bên dài khoảng 96,4 cm). Dựa vào đó, em hãy trả lời câu hỏi của bài toán: tổng diện tích các mặt bên của hình chóp bằng bao nhiêu?"
+    },
+    {
+     "ma": "10.1",
+     "trang": 116,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Gọi tên đỉnh, cạnh bên, mặt bên, mặt đáy, đường cao và một trung đoạn của hình chóp tam giác đều trong Hình 10.12 (SGK trang 116)."
+    },
+    {
+     "ma": "10.2",
+     "trang": 116,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Vẽ và cắt một tam giác đều có cạnh 10 cm (Hình 10.13) rồi gấp theo đường màu cam để được hình chóp tam giác đều (Hình 10.14, SGK trang 116)."
+    },
+    {
+     "ma": "10.3",
+     "trang": 116,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Cho hình chóp tam giác đều S.MNP có độ dài cạnh đáy bằng 6 cm, chiều cao bằng 5 cm (Hình 10.15, SGK trang 116). a) Tính diện tích tam giác MNP. b) Tính thể tích hình chóp S.MNP, biết √27 ≈ 5,2."
+    },
+    {
+     "ma": "10.4",
+     "trang": 116,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Nhà bạn Thu có một đèn trang trí có dạng hình chóp tam giác đều như Hình 10.16 (SGK trang 116). Các cạnh của hình chóp đều bằng nhau và bằng 20 cm. Bạn Thu dự định sẽ dán các mặt bên của đèn bằng những tấm giấy màu. Tính diện tích giấy bạn Thu sử dụng (coi như mép dán không đáng kể). Cho biết √300 ≈ 17,32."
+    }
+   ]
+  },
+  {
+   "chuong": "Chương X. Một số hình khối trong thực tiễn",
+   "bai": "Bài 39. Hình chóp tứ giác đều",
+   "cac_cau": [
+    {
+     "ma": "Luyện tập 1 (tr.119)",
+     "trang": 119,
+     "nhom": "Luyện tập",
+     "dang": "CAU_NHO",
+     "de": "Bác Khôi làm một chiếc hộp gỗ có dạng hình chóp tứ giác đều với độ dài cạnh đáy của hình chóp là 2 m, trung đoạn của hình chóp là 3 m. Bác Khôi muốn sơn bốn mặt xung quanh của hộp gỗ. Cứ mỗi mét vuông sơn cần trả 30 000 đồng (tiền sơn và tiền công). Hỏi bác Khôi phải trả chi phí là bao nhiêu?"
+    },
+    {
+     "ma": "Luyện tập 2 (tr.119)",
+     "trang": 119,
+     "nhom": "Luyện tập",
+     "dang": "CAU_NHO",
+     "de": "Một chiếc lều có dạng hình chóp tứ giác đều, cạnh đáy bằng 2 m, chiều cao bằng 2 m (Hình 10.23, SGK trang 119). a) Thể tích không khí trong lều là bao nhiêu? b) Chiếc lều được phủ vải bốn phía và cả mặt tiếp đất. Tính diện tích vải bạt cần dùng (coi mép nối không đáng kể), biết rằng người ta đo được chiều cao của mỗi mặt bên xuất phát từ đỉnh của chiếc lều là 2,24 m."
+    },
+    {
+     "ma": "Vận dụng (tr.119)",
+     "trang": 119,
+     "nhom": "Vận dụng",
+     "dang": "CAU_NHO",
+     "de": "Em hãy giải bài toán mở đầu: kim tự tháp Kheops ở Ai Cập có dạng hình chóp tứ giác đều cao 147 m, cạnh đáy dài 230 m. Kim tự tháp Kheops có thể tích bằng bao nhiêu?"
+    },
+    {
+     "ma": "10.5",
+     "trang": 120,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Hãy cho biết đỉnh, cạnh bên, mặt bên, mặt đáy, đường cao và một trung đoạn của hình chóp tứ giác đều S.EFGH trong Hình 10.24 (SGK trang 120)."
+    },
+    {
+     "ma": "10.6",
+     "trang": 120,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Trong các miếng bìa ở Hình 10.25 (SGK trang 120), hình nào gấp lại cho ta một hình chóp tứ giác đều?"
+    },
+    {
+     "ma": "10.7",
+     "trang": 120,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Từ tờ giấy cắt ra một hình vuông rồi thực hiện các thao tác như Hình 10.26 (SGK trang 120) để có thể ghép được các mặt bên của hình chóp tứ giác đều."
+    },
+    {
+     "ma": "10.8",
+     "trang": 120,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Cho hình chóp tứ giác đều S.ABCD có độ dài cạnh đáy bằng 10 cm, trung đoạn bằng 13 cm (Hình 10.27, SGK trang 120). a) Tính diện tích xung quanh của hình chóp. b) Tính diện tích toàn phần của hình chóp."
+    },
+    {
+     "ma": "10.9",
+     "trang": 120,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Bánh ít trong Hình 10.28 (SGK trang 120) có dạng hình chóp tứ giác đều với độ dài cạnh đáy bằng 3 cm, chiều cao bằng 3 cm. Tính thể tích của một chiếc bánh ít."
+    },
+    {
+     "ma": "10.10",
+     "trang": 120,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Một khối bê tông có dạng như Hình 10.29 (SGK trang 120). Phần dưới của khối bê tông có dạng hình hộp chữ nhật, đáy là hình vuông có cạnh 40 cm, chiều cao 25 cm. Phần trên của khối bê tông có dạng hình chóp tứ giác đều, chiều cao 100 cm. Tính thể tích của khối bê tông đó."
+    }
+   ]
+  },
+  {
+   "chuong": "Chương X. Một số hình khối trong thực tiễn",
+   "bai": "Luyện tập chung (trang 121)",
+   "cac_cau": [
+    {
+     "ma": "10.11",
+     "trang": 121,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Tính thể tích của hình chóp tam giác đều S.ABC, biết diện tích đáy của nó bằng 15,6 cm^2, chiều cao bằng 10 cm."
+    },
+    {
+     "ma": "10.12",
+     "trang": 122,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Trong các miếng bìa ở Hình 10.32 (SGK trang 122), miếng bìa nào khi gấp và dán lại thì được một hình chóp tam giác đều, miếng nào thì được một hình chóp tứ giác đều?"
+    },
+    {
+     "ma": "10.13",
+     "trang": 122,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Tính thể tích hình chóp tam giác đều A.BCD có độ dài cạnh đáy bằng 10 cm, chiều cao bằng 12 cm (Hình 10.33, SGK trang 122), biết √75 ≈ 8,66."
+    },
+    {
+     "ma": "10.14",
+     "trang": 122,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Người ta làm mô hình một kim tự tháp ở cổng vào của bảo tàng Louvre. Mô hình có dạng hình chóp tứ giác đều, chiều cao 21 m, độ dài cạnh đáy là 34 m. a) Tính thể tích hình chóp. b) Tính tổng diện tích các tấm kính để phủ kín bốn mặt bên hình chóp này, biết rằng người ta đo được độ dài cạnh bên của hình chóp là 31,92 m."
+    }
+   ]
+  },
+  {
+   "chuong": "Chương X. Một số hình khối trong thực tiễn",
+   "bai": "Bài tập cuối chương X",
+   "cac_cau": [
+    {
+     "ma": "10.15",
+     "trang": 123,
+     "nhom": "Trắc nghiệm",
+     "dang": "TRAC_NGHIEM",
+     "de": "Trung đoạn của hình chóp tam giác đều trong Hình 10.34 (SGK trang 123) là: A. SB. B. SH. C. SI. D. HI."
+    },
+    {
+     "ma": "10.16",
+     "trang": 123,
+     "nhom": "Trắc nghiệm",
+     "dang": "TRAC_NGHIEM",
+     "de": "Đáy của hình chóp tứ giác đều là: A. Hình vuông. B. Hình bình hành. C. Hình thoi. D. Hình chữ nhật."
+    },
+    {
+     "ma": "10.17",
+     "trang": 123,
+     "nhom": "Trắc nghiệm",
+     "dang": "TRAC_NGHIEM",
+     "de": "Diện tích xung quanh của hình chóp tam giác đều bằng: A. Tích của nửa chu vi đáy và chiều cao của hình chóp. B. Tích của nửa chu vi đáy và trung đoạn. C. Tích của chu vi đáy và trung đoạn. D. Tổng của chu vi đáy và trung đoạn."
+    },
+    {
+     "ma": "10.18",
+     "trang": 123,
+     "nhom": "Trắc nghiệm",
+     "dang": "TRAC_NGHIEM",
+     "de": "Một hình chóp tam giác đều có chiều cao h, thể tích V. Diện tích đáy S là: A. S = h/V. B. S = V/h. C. S = 3V/h. D. S = 3h/V."
+    },
+    {
+     "ma": "10.19",
+     "trang": 123,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Gọi tên đỉnh, cạnh bên, cạnh đáy, đường cao và một trung đoạn của hình chóp tam giác đều, hình chóp tứ giác đều trong Hình 10.35 (SGK trang 123)."
+    },
+    {
+     "ma": "10.20",
+     "trang": 123,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Tính diện tích xung quanh của hình chóp tam giác đều, hình chóp tứ giác đều trong Hình 10.36 (SGK trang 123)."
+    },
+    {
+     "ma": "10.21",
+     "trang": 124,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Tính thể tích của hình chóp tứ giác đều, biết chiều cao bằng 9 cm và chu vi đáy bằng 12 cm."
+    },
+    {
+     "ma": "10.22",
+     "trang": 124,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Từ một khúc gỗ hình lập phương cạnh 30 cm (Hình 10.37, SGK trang 124), người ta cắt đi một phần gỗ để được phần còn lại là một hình chóp tứ giác đều có đáy là hình vuông cạnh 30 cm và chiều cao của hình chóp cũng bằng 30 cm. Tính thể tích của phần gỗ bị cắt đi."
+    },
+    {
+     "ma": "10.23",
+     "trang": 124,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Một khối gỗ gồm đế là hình lập phương cạnh 9 cm và phần trên là một hình chóp tứ giác đều, tổng chiều cao 19 cm (Hình 10.38, SGK trang 124). Tính thể tích khối gỗ."
+    },
+    {
+     "ma": "10.24",
+     "trang": 124,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Bạn Trang cắt miếng bìa hình tam giác đều cạnh dài 20 cm (Hình 10.39, SGK trang 124) và gấp lại theo các dòng kẻ (nét đứt) để được hình chóp tam giác đều. Tính diện tích xung quanh của hình chóp tam giác đều tạo thành. Cho biết √75 ≈ 8,66."
+    }
+   ]
+  },
+  {
+   "chuong": "Hoạt động thực hành trải nghiệm",
+   "bai": "Hoạt động thực hành trải nghiệm (trang 125)",
+   "cac_cau": [
+    {
+     "ma": "Hàm số tài chính - HĐ1 (tr.126)",
+     "trang": 126,
+     "nhom": "Luyện tập",
+     "dang": "CAU_NHO",
+     "de": "Chi phí sử dụng truyền hình cáp của hai công ty A và B: công ty A có chi phí lắp đặt ban đầu 150 000 đồng và cước hằng tháng 110 000 đồng; công ty B miễn phí lắp đặt và cước hằng tháng 120 000 đồng. a) Viết công thức tính chi phí sử dụng truyền hình cáp y (nghìn đồng) của mỗi công ty A và B theo số tháng sử dụng là x (tháng). b) Tính chi phí sử dụng truyền hình cáp trong 18 tháng của mỗi công ty A và B. c) Với bao nhiêu tháng sử dụng thì chi phí sử dụng truyền hình cáp của hai công ty này là như nhau? d) Vẽ đồ thị của hai hàm số nhận được ở câu a trên cùng một hệ trục toạ độ. Từ đó hãy cho biết nếu một gia đình dự định dùng dịch vụ truyền hình cáp trong 3 năm thì nên chọn dịch vụ của công ty A hay công ty B để tiết kiệm chi phí hơn."
+    },
+    {
+     "ma": "Hàm số tài chính - HĐ2 (tr.126)",
+     "trang": 126,
+     "nhom": "Luyện tập",
+     "dang": "CAU_NHO",
+     "de": "Một hãng taxi vừa mua một số ô tô để chạy dịch vụ với chi phí là 480 triệu đồng một chiếc. Công ty chọn khấu hao từng chiếc xe theo phương pháp khấu hao đường thẳng trong vòng 8 năm, tức là mỗi chiếc xe sẽ giảm giá 480 : 8 = 60 triệu đồng mỗi năm. a) Tính giá trị sổ sách y (triệu đồng) của mỗi chiếc ô tô dưới dạng một hàm số bậc nhất của thời gian sử dụng x (năm) của nó. b) Vẽ đồ thị của hàm số bậc nhất này. c) Giá trị sổ sách của mỗi chiếc ô tô sau 3 năm sử dụng là bao nhiêu? d) Sau bao lâu thì giá trị sổ sách của mỗi chiếc ô tô còn lại là 150 triệu đồng?"
+    },
+    {
+     "ma": "Hàm số tài chính - Vận dụng (tr.127)",
+     "trang": 127,
+     "nhom": "Vận dụng",
+     "dang": "CAU_NHO",
+     "de": "Bác An dự định mua một chiếc tủ lạnh loại 150 lít của hãng A, có công suất 1 kWh/ngày với giá 5 000 000 đồng và dự định sẽ sử dụng nó trong vòng 10 năm. a) Giả sử trung bình một tháng có 30 ngày và giá điện là 2 000 đồng/1 kWh. Hãy tính số tiền điện phải trả hằng tháng cho chiếc tủ lạnh này. b) Giả sử trong quá trình sử dụng, tủ lạnh không bị hỏng hóc gì cần sửa chữa. Khi đó chi phí sử dụng tủ lạnh bao gồm chi phí mua ban đầu và chi phí trả tiền điện hằng tháng. Lập công thức tính chi phí sử dụng chiếc tủ lạnh này sau x (tháng). c) Sử dụng công thức đã lập ở câu b, hãy tính chi phí sử dụng chiếc tủ lạnh này sau 5 năm. d) Bác An dùng phương pháp khấu hao đường thẳng để tính giá trị còn lại của chiếc tủ lạnh sau mỗi năm sử dụng. Hỏi sau 7 năm giá trị còn lại của chiếc tủ lạnh này là bao nhiêu? e) Hãng B cũng có một loại tủ lạnh 150 lít, công suất 1,25 kWh/ngày với giá bán là 4 460 000 đồng. Lập công thức tính chi phí sử dụng chiếc tủ lạnh của hãng B sau x (tháng); sau bao nhiêu tháng sử dụng thì chi phí sử dụng của hai loại tủ lạnh này là bằng nhau; vẽ đồ thị của hai hàm số chi phí sử dụng của hai loại tủ lạnh trên cùng một hệ trục toạ độ và cho biết bác An nên mua tủ lạnh của hãng nào để tiết kiệm chi phí sử dụng hơn."
+    },
+    {
+     "ma": "Đo khoảng cách - Luyện tập (tr.129)",
+     "trang": 129,
+     "nhom": "Luyện tập",
+     "dang": "CAU_NHO",
+     "de": "Trong Phương pháp 1 của HĐ2 (đo khoảng cách AB đến điểm không tới được: dùng giác kế chọn điểm C sao cho AC vuông góc AB, chọn điểm D trên đường thẳng BC sao cho AD vuông góc BC), chúng ta đã dùng định lí Pythagore để tính độ dài đoạn thẳng AB. Em hãy tính độ dài đoạn thẳng AB bằng một cách khác thông qua độ dài các đoạn thẳng AC, AD, CD."
+    },
+    {
+     "ma": "GeoGebra - Thực hành 1 (tr.132)",
+     "trang": 132,
+     "nhom": "Luyện tập",
+     "dang": "CAU_NHO",
+     "de": "Sử dụng phần mềm GeoGebra, hãy tính: (x^4 − xy^3)/(2xy + y^2) : (x^3 + x^2y + xy^2)/(2x + y) + (y + x)/x."
+    },
+    {
+     "ma": "GeoGebra - Thực hành 2 (tr.132)",
+     "trang": 132,
+     "nhom": "Luyện tập",
+     "dang": "CAU_NHO",
+     "de": "Sử dụng phần mềm GeoGebra, hãy giải các phương trình sau: a) 4,8 − 2,5(x + 3) = x + 0,5(2 − 6x); b) 2(x + 4/5) = 3 − (7/5 − 2x)."
+    },
+    {
+     "ma": "GeoGebra - Thực hành 3 (tr.132)",
+     "trang": 132,
+     "nhom": "Luyện tập",
+     "dang": "CAU_NHO",
+     "de": "Sử dụng phần mềm GeoGebra, hãy vẽ đồ thị của các hàm số bậc nhất sau: a) y = −3x + 3; b) y = (1/2)x − 4."
+    },
+    {
+     "ma": "Excel xác suất - Vận dụng (tr.134)",
+     "trang": 134,
+     "nhom": "Vận dụng",
+     "dang": "CAU_NHO",
+     "de": "Một túi kín đựng 8 quả bóng có cùng kích thước, trong đó có 1 quả màu xanh, 2 quả màu vàng, 2 quả màu đỏ và 3 quả màu đen. Lấy ngẫu nhiên một quả bóng trong túi 200 lần (có hoàn lại). Tính xác suất thực nghiệm của biến cố \"Lấy được quả bóng không phải màu đen\"."
+    }
+   ]
+  },
+  {
+   "chuong": "Bài tập ôn tập cuối năm",
+   "bai": "Bài tập ôn tập cuối năm",
+   "cac_cau": [
+    {
+     "ma": "Ôn cuối năm 1",
+     "trang": 135,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Rút gọn các biểu thức sau: a) (2x + y)^2 + (5x − y)^2 + 2(2x + y)(5x − y); b) (2x − y^3)(2x + y^3) − (2x − y^2)(4x^2 + 2xy^2 + y^4)."
+    },
+    {
+     "ma": "Ôn cuối năm 2",
+     "trang": 135,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Cho đa thức P = x^2 − y^2 + 6x + 9. a) Phân tích đa thức P thành nhân tử. b) Sử dụng kết quả của câu a để tìm thương của phép chia đa thức P cho x + y + 3."
+    },
+    {
+     "ma": "Ôn cuối năm 3",
+     "trang": 135,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Cho đa thức f(x) = x^2 − 15x + 56. a) Phân tích đa thức f(x) thành nhân tử. b) Tìm x sao cho f(x) = 0."
+    },
+    {
+     "ma": "Ôn cuối năm 4",
+     "trang": 135,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Cho phân thức P = (2x^3 + 6x^2)/(2x^3 − 18x). a) Viết điều kiện xác định và rút gọn phân thức P. b) Có thể tính giá trị của P tại x = −3 được không? Vì sao? c) Tính giá trị của phân thức P tại x = 4. d) Với các giá trị nguyên nào của x thì P nhận giá trị nguyên?"
+    },
+    {
+     "ma": "Ôn cuối năm 5",
+     "trang": 135,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Cho biểu thức P = ((x + y)/(1 − xy) + (x − y)/(1 + xy)) : (1 + (x^2 + y^2 + 2x^2y^2)/(1 − x^2y^2)), trong đó x và y là hai biến thoả mãn điều kiện x^2y^2 − 1 ≠ 0. a) Tính mỗi tổng A = (x + y)/(1 − xy) + (x − y)/(1 + xy) và B = 1 + (x^2 + y^2 + 2x^2y^2)/(1 − x^2y^2). b) Từ kết quả câu a, hãy thu gọn P và giải thích tại sao giá trị của P không phụ thuộc vào giá trị của biến y. c) Chứng minh đẳng thức P = 1 − (1 − x)^2/(1 + x^2). d) Sử dụng câu c, hãy tìm các giá trị của x và y sao cho P = 1."
+    },
+    {
+     "ma": "Ôn cuối năm 6",
+     "trang": 135,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Bảng giá cước của một hãng taxi: giá mở cửa (từ 0 đến 1 km) là 10 000 đồng; giá cước các kilômét tiếp theo (từ trên 1 km đến 30 km) là 13 600 đồng; giá cước từ kilômét thứ 31 là 11 000 đồng. a) Tính số tiền taxi phải trả khi di chuyển 35 km. b) Lập công thức tính số tiền taxi y (đồng) phải trả khi di chuyển x kilômét, với 1 < x ≤ 30. Từ đó tính số tiền taxi phải trả khi di chuyển 30 km. c) Nếu một người phải trả số tiền taxi là 268 400 đồng, hãy tính quãng đường người đó đã di chuyển bằng taxi."
+    },
+    {
+     "ma": "Ôn cuối năm 7",
+     "trang": 136,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Với giá trị nào của m, đường thẳng y = mx + 1 (m ≠ 0): a) song song với đường thẳng y = 3x? b) cắt trục hoành tại điểm có hoành độ bằng −2? c) đồng quy với các đường thẳng y = 5x − 2 và y = −x + 4 (tức là ba đường thẳng này cắt nhau tại một điểm)? Với giá trị m tìm được, hãy vẽ ba đường thẳng này trên cùng một hệ trục toạ độ để kiểm nghiệm lại kết quả."
+    },
+    {
+     "ma": "Ôn cuối năm 8",
+     "trang": 136,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Cho hình bình hành ABCD, O là giao điểm của hai đường chéo AC và BD. Gọi H là trung điểm của OB, K là trung điểm của OD. a) Hỏi tứ giác AHCK là hình gì? b) Hình bình hành ABCD phải thoả mãn điều kiện gì để tứ giác AHCK là: một hình thoi? một hình chữ nhật? một hình vuông?"
+    },
+    {
+     "ma": "Ôn cuối năm 9",
+     "trang": 136,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Cho tam giác ABC. Các đường trung tuyến AF, BE và CD cắt nhau tại G. Gọi I, K theo thứ tự là trung điểm của BG và CG. a) Chứng minh rằng tứ giác DEKI là hình bình hành. b) Biết AF = 6 cm. Tính độ dài các đoạn thẳng DI và EK."
+    },
+    {
+     "ma": "Ôn cuối năm 10",
+     "trang": 136,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Hình vẽ ở SGK trang 136 mô tả một dụng cụ đo bề dày (nhỏ hơn 1 cm) của một số sản phẩm. Dụng cụ này gồm một thước AC = 10 cm, có vạch chia đến 1 mm, gắn với một bản kim loại có cạnh thẳng AB sao cho khoảng cách BC = 1 cm. Muốn đo bề dày của vật, ta kẹp vật vào giữa bản kim loại và thước (đáy của vật áp vào bề mặt của thước AC). Khi đó trên thước ta đọc được \"bề dày\" d của vật (trên hình vẽ ta có d = 5,5 mm). Hãy giải thích tại sao với dụng cụ đó, ta có thể đo được bề dày d của các vật (với d < 10 mm)."
+    },
+    {
+     "ma": "Ôn cuối năm 11",
+     "trang": 136,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Cho tam giác ABC cân tại đỉnh A. Hai đường phân giác BE và CF của tam giác ABC cắt nhau tại điểm I. a) Chứng minh ΔBIC ᔕ ΔEIF. b) Chứng minh FB^2 = FI · FC. c) Cho biết AB = 6 cm, BC = 3 cm. Tính EF."
+    },
+    {
+     "ma": "Ôn cuối năm 12",
+     "trang": 137,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Cho tam giác ABC không phải là tam giác vuông, có các đường cao BE, CF cắt nhau tại điểm H. a) Giả sử ABC là tam giác nhọn. Chứng minh rằng ΔABE ᔕ ΔACF; từ đó suy ra ΔAEF ᔕ ΔABC. Kết quả đó còn đúng không, nếu ABC là tam giác tù (chỉ cần xét 2 trường hợp: góc A tù và góc B tù)? b) Cho biết AB = 10 cm, BC = 15 cm và BE = 8 cm. Tính EF."
+    },
+    {
+     "ma": "Ôn cuối năm 13",
+     "trang": 137,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Cho bảng thống kê xếp loại của hai lớp: lớp Vuông có Tốt 7, Khá 10, Đạt 15, Không đạt 10; lớp Tròn có Tốt 10, Khá 15, Đạt 8, Không đạt 9. Để so sánh số lượng học sinh ở mỗi mức xếp loại của hai lớp ta nên dùng biểu đồ nào? Hãy vẽ biểu đồ đó."
+    },
+    {
+     "ma": "Ôn cuối năm 14",
+     "trang": 137,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Báo điện tử VnExpress đã khảo sát ý kiến của bạn đọc về phương án xử lí cầu Long Biên với câu hỏi \"Bạn ủng hộ phương án xử lí nào với cầu Long Biên?\". Người trả lời chỉ được chọn một trong ba phương án: \"Bảo tồn\", \"Vừa bảo tồn vừa sử dụng\", \"Di dời, xây cầu mới\". a) Dữ liệu thu được thuộc loại nào? b) Tỉ lệ lựa chọn các phương án được cho trong biểu đồ hình quạt tròn (SGK trang 137): Bảo tồn 34%, Vừa bảo tồn vừa sử dụng 54%, Di dời xây cầu mới 12%. Biết tổng số lượt bạn đọc tham gia trả lời câu hỏi là 1 819. Tính số lượt bạn đọc lựa chọn mỗi phương án."
+    },
+    {
+     "ma": "Ôn cuối năm 15",
+     "trang": 137,
+     "nhom": "Bài tập",
+     "dang": "CAU_NHO",
+     "de": "Một túi đựng 24 viên bi giống hệt nhau chỉ khác màu, trong đó có 9 viên bi màu đỏ, 6 viên bi màu xanh, 4 viên bi màu vàng và 5 viên bi màu đen. Bạn An lấy ngẫu nhiên một viên bi từ trong túi. a) Có bao nhiêu kết quả có thể? Các kết quả có thể này có đồng khả năng không? Tại sao? b) Tính khả năng để xảy ra mỗi kết quả có thể đó. c) Tính xác suất để An lấy được: viên bi màu đỏ hoặc màu vàng; viên bi màu đen hoặc màu xanh; viên bi không có màu đen."
+    }
+   ]
+  }
+ ]
+}

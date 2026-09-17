@@ -1,0 +1,2159 @@
+{
+ "nguon": "khtn8",
+ "mon": "Khoa học tự nhiên",
+ "ten": "SGK Khoa học tự nhiên 8",
+ "ban": 1,
+ "cac_bai": [
+  {
+   "chuong": "Mở đầu",
+   "bai": "Bài 1. Sử dụng một số hoá chất, thiết bị cơ bản trong phòng thí nghiệm",
+   "cac_cau": [
+    {
+     "ma": "B1.C1",
+     "trang": 6,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Hãy cho biết thông tin có trên các nhãn hoá chất ở Hình 1.1 (SGK trang 6): a) nhãn hoá chất rắn sodium hydroxide NaOH; b) nhãn hoá chất lỏng hydrochloric acid 37%; c) nhãn hoá chất khí oxygen."
+    },
+    {
+     "ma": "B1.C2",
+     "trang": 7,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Đọc tên, công thức của một số hoá chất thông dụng có trong phòng thí nghiệm và cho biết ý nghĩa của các kí hiệu cảnh báo trên các nhãn hoá chất."
+    },
+    {
+     "ma": "B1.C3",
+     "trang": 7,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Trình bày cách lấy hoá chất rắn và hoá chất lỏng."
+    },
+    {
+     "ma": "B1.C4",
+     "trang": 9,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Quan sát ampe kế, vôn kế trong Hình 1.6 (SGK trang 9): 1. Chỉ ra các điểm đặc trưng của ampe kế và vôn kế. 2. Chỉ ra sự khác nhau giữa hai dụng cụ này."
+    },
+    {
+     "ma": "B1.C5",
+     "trang": 10,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Về cách sử dụng điện an toàn trong phòng thí nghiệm: Khi sử dụng thiết bị đo điện (ampe kế, vôn kế, joulemeter,...) cần lưu ý điều gì để đảm bảo an toàn cho thiết bị và người sử dụng? Khi sử dụng nguồn điện là biến áp nguồn cần lưu ý điều gì? Trình bày cách sử dụng an toàn các thiết bị điện."
+    }
+   ]
+  },
+  {
+   "chuong": "Chương I. Phản ứng hoá học",
+   "bai": "Bài 2. Phản ứng hoá học",
+   "cac_cau": [
+    {
+     "ma": "B2.C1",
+     "trang": 11,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Khi đốt nến, một phần nến chảy lỏng, một phần nến bị cháy. Cây nến ngắn dần. Vậy phần nến nào đã bị biến đổi thành chất mới?"
+    },
+    {
+     "ma": "B2.C2",
+     "trang": 11,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Ở quá trình hơi nước ngưng tụ thành nước lỏng, nước lỏng đông đặc thành nước đá: trong quá trình chuyển thể, nước có biến đổi thành chất khác không?"
+    },
+    {
+     "ma": "B2.C3",
+     "trang": 12,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Lấy một số ví dụ trong đời sống về các quá trình xảy ra sự biến đổi vật lí, biến đổi hoá học."
+    },
+    {
+     "ma": "B2.C4",
+     "trang": 13,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Than (thành phần chính là carbon) cháy trong không khí tạo thành khí carbon dioxide. a) Hãy viết phương trình phản ứng dạng chữ của phản ứng này. Chất nào là chất phản ứng? Chất nào là sản phẩm? b) Trong quá trình phản ứng, lượng chất nào giảm dần? Lượng chất nào tăng dần?"
+    },
+    {
+     "ma": "B2.C5",
+     "trang": 13,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Quan sát Hình 2.3 (sơ đồ phản ứng giữa hydrogen và oxygen tạo thành nước, SGK trang 13) và trả lời câu hỏi: 1. Trước và sau phản ứng, những nguyên tử nào liên kết với nhau? 2. Trong quá trình phản ứng, số nguyên tử H và số nguyên tử O có thay đổi không?"
+    },
+    {
+     "ma": "B2.C6",
+     "trang": 14,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "1. Trong phản ứng giữa oxygen và hydrogen, nếu oxygen hết thì phản ứng có xảy ra nữa không? 2. Nhỏ giấm ăn vào viên đá vôi. Dấu hiệu nào cho biết đã có phản ứng hoá học xảy ra?"
+    },
+    {
+     "ma": "B2.C7",
+     "trang": 14,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "1. Thức ăn được tiêu hoá chuyển thành các chất dinh dưỡng. Phản ứng hoá học giữa chất dinh dưỡng với oxygen cung cấp năng lượng cho cơ thể hoạt động là phản ứng toả nhiệt hay thu nhiệt? Lấy thêm ví dụ về loại phản ứng này. 2. Quá trình nung đá vôi (thành phần chính là CaCO3) thành vôi sống (CaO) và khí carbon dioxide (CO2) cần cung cấp năng lượng (dạng nhiệt). Đây là phản ứng toả nhiệt hay thu nhiệt?"
+    },
+    {
+     "ma": "B2.C8",
+     "trang": 15,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "1. Than, xăng, dầu,... là nhiên liệu hoá thạch, được sử dụng chủ yếu cho các ngành sản xuất và các hoạt động nào của con người? Em hãy sưu tầm hình ảnh và trình bày về ứng dụng của các nhiên liệu này trong đời sống. 2. Các nguồn nhiên liệu hoá thạch có phải là vô tận không? Đốt cháy nhiên liệu hoá thạch ảnh hưởng đến môi trường như thế nào? Hãy nêu ví dụ về việc tăng cường sử dụng các nguồn năng lượng thay thế để giảm việc sử dụng các nhiên liệu hoá thạch."
+    }
+   ]
+  },
+  {
+   "chuong": "Chương I. Phản ứng hoá học",
+   "bai": "Bài 3. Mol và tỉ khối chất khí",
+   "cac_cau": [
+    {
+     "ma": "B3.C1",
+     "trang": 17,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Đọc thông tin Hình 3.1 (SGK trang 16) và so sánh khối lượng của 1 mol nguyên tử carbon, 1 mol phân tử iodine và 1 mol phân tử nước."
+    },
+    {
+     "ma": "B3.C2",
+     "trang": 17,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Tính số nguyên tử, phân tử có trong mỗi lượng chất sau: a) 0,25 mol nguyên tử C; b) 0,002 mol phân tử I2; c) 2 mol phân tử H2O."
+    },
+    {
+     "ma": "B3.C3",
+     "trang": 17,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Một lượng chất sau đây tương đương bao nhiêu mol nguyên tử hoặc mol phân tử? a) 1,2044·10^22 phân tử Fe2O3; b) 7,5275·10^24 nguyên tử Mg."
+    },
+    {
+     "ma": "B3.C4",
+     "trang": 18,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Tính khối lượng mol của chất X, biết rằng 0,4 mol chất này có khối lượng là 23,4 gam."
+    },
+    {
+     "ma": "B3.C5",
+     "trang": 18,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Tính số mol phân tử có trong 9 gam nước, biết rằng khối lượng mol của nước là 18 g/mol."
+    },
+    {
+     "ma": "B3.C6",
+     "trang": 18,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Calcium carbonate có công thức hoá học là CaCO3. a) Tính khối lượng phân tử của calcium carbonate. b) Tính khối lượng của 0,2 mol calcium carbonate."
+    },
+    {
+     "ma": "B3.C7",
+     "trang": 18,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "1. Ở 25 °C và 1 bar, 1,5 mol khí chiếm thể tích bao nhiêu? 2. Một hỗn hợp gồm 1 mol khí oxygen với 4 mol khí nitrogen. Ở 25 °C và 1 bar, hỗn hợp khí này có thể tích là bao nhiêu? 3. Tính số mol khí chứa trong bình có thể tích 500 mililít ở 25 °C và 1 bar."
+    },
+    {
+     "ma": "B3.C8",
+     "trang": 19,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "a) Khí carbon dioxide (CO2) nặng hơn hay nhẹ hơn không khí bao nhiêu lần? b) Trong lòng hang sâu thường xảy ra quá trình phân huỷ chất vô cơ hoặc hữu cơ, sinh ra khí carbon dioxide. Hãy cho biết khí carbon dioxide tích tụ ở trên nền hang hay bị không khí đẩy bay lên trên."
+    },
+    {
+     "ma": "B3.C9",
+     "trang": 19,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "a) Khí methane (CH4) nặng hơn hay nhẹ hơn không khí bao nhiêu lần? b) Dưới đáy giếng thường xảy ra quá trình phân huỷ chất hữu cơ, sinh ra khí methane. Hãy cho biết khí methane tích tụ dưới đáy giếng hay bị không khí đẩy bay lên trên."
+    }
+   ]
+  },
+  {
+   "chuong": "Chương I. Phản ứng hoá học",
+   "bai": "Bài 4. Dung dịch và nồng độ",
+   "cac_cau": [
+    {
+     "ma": "B4.C1",
+     "trang": 20,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Hãy nêu cách pha dung dịch bão hoà của sodium carbonate (Na2CO3) trong nước."
+    },
+    {
+     "ma": "B4.C2",
+     "trang": 21,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Ở nhiệt độ 25 °C, khi cho 12 gam muối X vào 20 gam nước, khuấy kĩ thì còn lại 5 gam muối không tan. Tính độ tan của muối X."
+    },
+    {
+     "ma": "B4.C3",
+     "trang": 21,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Ở 18 °C, khi hoà tan hết 53 gam Na2CO3 trong 250 gam nước thì được dung dịch bão hoà. Tính độ tan của Na2CO3 trong nước ở nhiệt độ trên."
+    },
+    {
+     "ma": "B4.C4",
+     "trang": 22,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Tính khối lượng H2SO4 có trong 20 gam dung dịch H2SO4 98%."
+    },
+    {
+     "ma": "B4.C5",
+     "trang": 22,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Trộn lẫn 2 lít dung dịch urea 0,02 M (dung dịch A) với 3 lít dung dịch urea 0,1 M (dung dịch B), thu được 5 lít dung dịch C. a) Tính số mol urea trong dung dịch A, B và C. b) Tính nồng độ mol của dung dịch C. Nhận xét về giá trị nồng độ mol của dung dịch C so với nồng độ mol của dung dịch A, B."
+    },
+    {
+     "ma": "B4.C6",
+     "trang": 23,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Khi pha 100 gam dung dịch muối ăn nồng độ 0,9%: 1. Tại sao phải dùng muối ăn khan để pha dung dịch? 2. Dung dịch muối ăn nồng độ 0,9% có thể được dùng để làm gì?"
+    }
+   ]
+  },
+  {
+   "chuong": "Chương I. Phản ứng hoá học",
+   "bai": "Bài 5. Định luật bảo toàn khối lượng và phương trình hoá học",
+   "cac_cau": [
+    {
+     "ma": "B5.C1",
+     "trang": 24,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Khi các phản ứng hoá học xảy ra, lượng các chất phản ứng giảm dần, lượng các chất sản phẩm tăng dần. Vậy tổng khối lượng các chất trước và sau phản ứng có thay đổi không?"
+    },
+    {
+     "ma": "B5.C2",
+     "trang": 25,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Carbon tác dụng với oxygen theo sơ đồ Hình 5.1 (SGK trang 25). Giải thích tại sao khối lượng carbon dioxide bằng tổng khối lượng carbon và oxygen."
+    },
+    {
+     "ma": "B5.C3",
+     "trang": 25,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Sau khi đốt cháy than tổ ong (thành phần chính là carbon) thì thu được xỉ than. Xỉ than nặng hơn hay nhẹ hơn than tổ ong? Giải thích."
+    },
+    {
+     "ma": "B5.C4",
+     "trang": 25,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Vôi sống (calcium oxide) phản ứng với một số chất có mặt trong không khí như sau: Calcium oxide + Carbon dioxide → Calcium carbonate; Calcium oxide + Nước → Calcium hydroxide. Khi làm thí nghiệm, một học sinh quên đậy nắp lọ đựng vôi sống (thành phần chính là CaO), sau một thời gian thì khối lượng của lọ sẽ thay đổi như thế nào?"
+    },
+    {
+     "ma": "B5.C5",
+     "trang": 26,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Lập phương trình hoá học của các phản ứng sau: a) Fe + O2 ⟶ Fe3O4; b) Al + HCl ⟶ AlCl3 + H2; c) Al2(SO4)3 + NaOH ⟶ Al(OH)3 + Na2SO4; d) CaCO3 + HCl ⟶ CaCl2 + CO2 + H2O."
+    },
+    {
+     "ma": "B5.C6",
+     "trang": 27,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Sơ đồ của phản ứng hoá học khác với phương trình hoá học ở điểm nào? Nêu ý nghĩa của phương trình hoá học."
+    },
+    {
+     "ma": "B5.C7",
+     "trang": 27,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Lập phương trình hoá học và xác định tỉ lệ số phân tử của các chất trong sơ đồ phản ứng hoá học sau: Na2CO3 + Ba(OH)2 ⟶ BaCO3 + NaOH."
+    },
+    {
+     "ma": "B5.C8",
+     "trang": 27,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Giả thiết trong không khí, sắt tác dụng với oxygen tạo thành gỉ sắt (Fe2O3). Từ 5,6 gam sắt có thể tạo ra tối đa bao nhiêu gam gỉ sắt?"
+    }
+   ]
+  },
+  {
+   "chuong": "Chương I. Phản ứng hoá học",
+   "bai": "Bài 6. Tính theo phương trình hoá học",
+   "cac_cau": [
+    {
+     "ma": "B6.C1",
+     "trang": 29,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Hoà tan hết 0,65 gam Zn trong dung dịch HCl 1 M, phản ứng xảy ra: Zn + 2HCl ⟶ ZnCl2 + H2. Tính thể tích khí hydrogen thu được ở 25 °C, 1 bar."
+    },
+    {
+     "ma": "B6.C2",
+     "trang": 29,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Khi cho Mg tác dụng với dung dịch H2SO4 loãng thì xảy ra phản ứng hoá học: Mg + H2SO4 ⟶ MgSO4 + H2. Sau phản ứng thu được 0,02 mol MgSO4. Tính thể tích khí H2 thu được ở 25 °C, 1 bar."
+    },
+    {
+     "ma": "B6.C3",
+     "trang": 29,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Khi nung nóng KClO3 xảy ra phản ứng nhiệt phân: 2KClO3 ⟶ 2KCl + 3O2. Biết rằng hiệu suất phản ứng nhỏ hơn 100%. Hãy chọn các từ/cụm từ (lớn hơn, nhỏ hơn, bằng) phù hợp với nội dung còn thiếu trong các câu sau đây: Khi nhiệt phân 1 mol KClO3 thì thu được số mol O2 ...(1)... 1,5 mol. Để thu được 0,3 mol O2 thì cần số mol KClO3 ...(2)... 0,2 mol."
+    },
+    {
+     "ma": "B6.C4",
+     "trang": 30,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Nung 10 gam calcium carbonate (thành phần chính của đá vôi), thu được khí carbon dioxide và m gam vôi sống. Giả thiết hiệu suất phản ứng là 80%, xác định m."
+    }
+   ]
+  },
+  {
+   "chuong": "Chương I. Phản ứng hoá học",
+   "bai": "Bài 7. Tốc độ phản ứng và chất xúc tác",
+   "cac_cau": [
+    {
+     "ma": "B7.C1",
+     "trang": 31,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Quan sát các Hình 7.1 (sắt bị gỉ) và 7.2 (đốt cháy cồn) trong SGK trang 31: Phản ứng sắt bị gỉ xảy ra nhanh hơn hay chậm hơn phản ứng đốt cháy cồn?"
+    },
+    {
+     "ma": "B7.C2",
+     "trang": 32,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Một học sinh thực hiện thí nghiệm và ghi lại hiện tượng như sau: cho cùng một lượng hydrochloric acid vào hai ống nghiệm đựng cùng một lượng đá vôi ở dạng bột (ống nghiệm 1) và dạng viên (ống nghiệm 2); quan sát thấy ở ống nghiệm (1) bọt khí xuất hiện nhiều hơn và đá vôi tan hết trước. Phản ứng giữa hydrochloric acid với đá vôi dạng bột xảy ra nhanh hơn hay chậm hơn so với phản ứng giữa hydrochloric acid với đá vôi dạng viên?"
+    },
+    {
+     "ma": "B7.C3",
+     "trang": 34,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Than cháy trong bình khí oxygen nhanh hơn cháy trong không khí. Yếu tố nào ảnh hưởng đến tốc độ của phản ứng đốt cháy than?"
+    },
+    {
+     "ma": "B7.C4",
+     "trang": 34,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Khi \"bảo quản thực phẩm trong tủ lạnh để giữ thực phẩm tươi lâu hơn\" là đã tác động vào yếu tố gì để làm chậm tốc độ phản ứng?"
+    },
+    {
+     "ma": "B7.C5",
+     "trang": 34,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Trong quá trình sản xuất sulfuric acid có giai đoạn tổng hợp sulfur trioxide (SO3). Phản ứng xảy ra như sau: 2SO2 + O2 ⟶ 2SO3. Khi có mặt vanadium(V) oxide thì phản ứng xảy ra nhanh hơn. a) Vanadium(V) oxide đóng vai trò gì trong phản ứng tổng hợp sulfur trioxide? b) Sau phản ứng, khối lượng của vanadium(V) oxide có thay đổi không? Giải thích."
+    }
+   ]
+  },
+  {
+   "chuong": "Chương II. Một số hợp chất thông dụng",
+   "bai": "Bài 8. Acid",
+   "cac_cau": [
+    {
+     "ma": "B8.C1",
+     "trang": 35,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Quan sát Bảng 8.1 (tên một số acid thông dụng, công thức hoá học và dạng tồn tại trong dung dịch: HCl, HNO3, H2SO4; SGK trang 35) và thực hiện các yêu cầu: 1. Công thức hoá học của các acid có đặc điểm gì giống nhau? 2. Dạng tồn tại của acid trong dung dịch có đặc điểm gì chung? 3. Đề xuất khái niệm về acid."
+    },
+    {
+     "ma": "B8.C2",
+     "trang": 36,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Hãy cho biết gốc acid trong các acid sau: H2SO4, HCl, HNO3."
+    },
+    {
+     "ma": "B8.C3",
+     "trang": 36,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Cho dung dịch HCl tác dụng với kim loại Mg. Viết phương trình hoá học của phản ứng xảy ra."
+    },
+    {
+     "ma": "B8.C4",
+     "trang": 37,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Sử dụng Hình 8.1 (SGK trang 37) để trình bày về các ứng dụng của sulfuric acid."
+    },
+    {
+     "ma": "B8.C5",
+     "trang": 37,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Sử dụng Hình 8.2 (SGK trang 37) để trình bày về một số ứng dụng của hydrochloric acid."
+    },
+    {
+     "ma": "B8.C6",
+     "trang": 38,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Sử dụng Hình 8.3 (SGK trang 38) để trình bày về các ứng dụng của acetic acid."
+    },
+    {
+     "ma": "B8.C7",
+     "trang": 38,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "1. Hãy tìm hiểu về nhu cầu sử dụng và ứng dụng của một trong các acid sau: HCl, H2SO4, CH3COOH và trình bày trước lớp. 2. Việc sử dụng acid không đúng cách sẽ gây ô nhiễm môi trường đất, nước, không khí. Em hãy tìm hiểu về các tác hại này và trình bày trước lớp."
+    }
+   ]
+  },
+  {
+   "chuong": "Chương II. Một số hợp chất thông dụng",
+   "bai": "Bài 9. Base. Thang pH",
+   "cac_cau": [
+    {
+     "ma": "B9.C1",
+     "trang": 39,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Quan sát Bảng 9.1 (tên một số base thông dụng, công thức hoá học và dạng tồn tại trong dung dịch: NaOH, Ba(OH)2; SGK trang 39) và thực hiện các yêu cầu: 1. Công thức hoá học của các base có đặc điểm gì giống nhau? 2. Các dung dịch base có đặc điểm gì chung? 3. Thảo luận nhóm và đề xuất khái niệm về base. 4. Em hãy nhận xét về cách gọi tên base và đọc tên base Ca(OH)2."
+    },
+    {
+     "ma": "B9.C2",
+     "trang": 40,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Dựa vào bảng tính tan (K, Na, Mg, Ba, Cu, Fe hoá trị II và III với nhóm −OH; SGK trang 40), hãy cho biết những base nào là base không tan và base nào là base kiềm? Viết công thức hoá học và đọc tên các base có trong bảng."
+    },
+    {
+     "ma": "B9.C3",
+     "trang": 41,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Có hai ống nghiệm không nhãn đựng dung dịch NaOH và dung dịch HCl. Hãy nêu cách nhận biết hai dung dịch trên."
+    },
+    {
+     "ma": "B9.C4",
+     "trang": 41,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Ở nông thôn, người ta thường dùng vôi bột rắc lên ruộng để khử chua cho đất. Biết rằng thành phần chính của vôi bột là CaO. CaO tác dụng với H2O tạo thành Ca(OH)2 theo phương trình hoá học: CaO + H2O ⟶ Ca(OH)2. Hãy giải thích tác dụng của vôi bột."
+    },
+    {
+     "ma": "B9.C5",
+     "trang": 43,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Hãy nêu cách để kiểm tra đất trồng có bị chua hay không."
+    },
+    {
+     "ma": "B9.C6",
+     "trang": 43,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Hãy tìm hiểu và cho biết giá trị pH chuẩn trong máu, trong dịch dạ dày của người. Nếu giá trị pH của máu và của dịch dạ dày ngoài khoảng chuẩn sẽ gây nguy hiểm cho sức khoẻ của người như thế nào?"
+    }
+   ]
+  },
+  {
+   "chuong": "Chương II. Một số hợp chất thông dụng",
+   "bai": "Bài 10. Oxide",
+   "cac_cau": [
+    {
+     "ma": "B10.C1",
+     "trang": 44,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Nhận xét thành phần nguyên tố trong công thức phân tử của các oxide trong Bảng 10.1 (BaO, ZnO, Al2O3, CO2, SO3, P2O5; SGK trang 44) và thực hiện các yêu cầu: 1. Đề xuất khái niệm về oxide. 2. Phân loại oxide."
+    },
+    {
+     "ma": "B10.C2",
+     "trang": 45,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Cho các sơ đồ phản ứng sau: (1) ...? + O2 ⟶ Al2O3; (2) P + ...? ⟶ P2O5; (3) S + ...? ⟶ SO2; (4) Mg + O2 ⟶ ...?. Hoàn thành các phương trình hoá học và đọc tên các sản phẩm tạo thành."
+    },
+    {
+     "ma": "B10.C3",
+     "trang": 46,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Viết phương trình hoá học của phản ứng giữa SO2 và dung dịch NaOH minh hoạ cho tính chất hoá học của sulfur dioxide."
+    },
+    {
+     "ma": "B10.C4",
+     "trang": 47,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Viết phương trình hoá học minh hoạ cho tính chất hoá học của oxide base và oxide acid. Lấy magnesium oxide và sulfur dioxide làm ví dụ."
+    },
+    {
+     "ma": "B10.C5",
+     "trang": 47,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Cho các oxide sau: CaO, Fe2O3, SO3, CO2, CO. Oxide nào có thể tác dụng với: a) Dung dịch HCl; b) Dung dịch NaOH. Viết các phương trình hoá học. Hãy cho biết các oxide trên thuộc loại oxide nào?"
+    }
+   ]
+  },
+  {
+   "chuong": "Chương II. Một số hợp chất thông dụng",
+   "bai": "Bài 11. Muối",
+   "cac_cau": [
+    {
+     "ma": "B11.C1",
+     "trang": 48,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Quan sát Bảng 11.1 (phản ứng tạo thành muối, tên gọi và thành phần phân tử của một số muối; SGK trang 48) và thực hiện các yêu cầu: 1. Nhận xét về sự khác nhau giữa thành phần phân tử của acid (chất phản ứng) và muối (chất sản phẩm). Đặc điểm chung của các phản ứng ở Bảng 11.1 là gì? 2. Nhận xét về cách gọi tên muối."
+    },
+    {
+     "ma": "B11.C2",
+     "trang": 49,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Viết công thức của các muối sau: potassium sulfate, sodium hydrogensulfate, sodium hydrogencarbonate, sodium chloride, sodium nitrate, calcium hydrogenphosphate, magnesium sulfate, copper(II) sulfate."
+    },
+    {
+     "ma": "B11.C3",
+     "trang": 49,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Gọi tên các muối sau: AlCl3, KCl, Al2(SO4)3, MgSO4, NH4NO3, NaHCO3."
+    },
+    {
+     "ma": "B11.C4",
+     "trang": 49,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Viết phương trình hoá học của phản ứng tạo thành muối KCl và MgSO4."
+    },
+    {
+     "ma": "B11.C5",
+     "trang": 51,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Trong dung dịch, giữa các cặp chất nào sau đây có xảy ra phản ứng? Viết phương trình hoá học của các phản ứng đó. Các cặp chất: Ca(NO3)2, BaCl2, HNO3 lần lượt với Na2CO3, KCl, Na2SO4, NaNO3."
+    },
+    {
+     "ma": "B11.C6",
+     "trang": 52,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Dựa vào sơ đồ Hình 11.2 (sơ đồ biểu diễn mối quan hệ giữa các hợp chất vô cơ; SGK trang 52) và cho biết tính chất của oxide, acid, base. Viết phương trình hoá học minh hoạ."
+    }
+   ]
+  },
+  {
+   "chuong": "Chương II. Một số hợp chất thông dụng",
+   "bai": "Bài 12. Phân bón hoá học",
+   "cac_cau": [
+    {
+     "ma": "B12.C1",
+     "trang": 53,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Về các nguyên tố dinh dưỡng cần thiết cho cây trồng: 1. Lí do cần phải bổ sung thêm các nguyên tố dinh dưỡng cho cây trồng. 2. Kể tên các nguyên tố hoá học mà cây trồng cần với số lượng nhiều (nhóm nguyên tố đa lượng), trung bình (nhóm nguyên tố trung lượng) và ít (nhóm nguyên tố vi lượng) và nêu vai trò của chúng đối với sự phát triển cây trồng."
+    },
+    {
+     "ma": "B12.C2",
+     "trang": 54,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Tại sao cần phải bổ sung các nguyên tố đa lượng như nitrogen, phosphorus, potassium dưới dạng phân bón cho cây trồng?"
+    },
+    {
+     "ma": "B12.C3",
+     "trang": 54,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Hãy cho biết các nguyên tố dinh dưỡng trong phân đạm, phân lân, phân kali, phân NPK."
+    },
+    {
+     "ma": "B12.C4",
+     "trang": 54,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Tại sao đối với từng loại đất cần lựa chọn phân lân thích hợp?"
+    },
+    {
+     "ma": "B12.C5",
+     "trang": 54,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Hãy cho biết vai trò của các nguyên tố vi lượng đối với cây trồng."
+    },
+    {
+     "ma": "B12.C6",
+     "trang": 55,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Giải thích tại sao cần phải bón phân theo bốn quy tắc: đúng liều, đúng loại, đúng lúc, đúng nơi."
+    },
+    {
+     "ma": "B12.C7",
+     "trang": 55,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Hãy sưu tầm hình ảnh và trình bày về tác hại của việc bón phân không đúng cách."
+    }
+   ]
+  },
+  {
+   "chuong": "Chương III. Khối lượng riêng và áp suất",
+   "bai": "Bài 13. Khối lượng riêng",
+   "cac_cau": [
+    {
+     "ma": "B13.C1",
+     "trang": 58,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Dựa vào đại lượng nào, người ta nói sắt nặng hơn nhôm?"
+    },
+    {
+     "ma": "B13.C2",
+     "trang": 58,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Một khối gang hình hộp chữ nhật có chiều dài các cạnh tương ứng là 2 cm, 3 cm, 5 cm và có khối lượng 210 g. Hãy tính khối lượng riêng của gang."
+    }
+   ]
+  },
+  {
+   "chuong": "Chương III. Khối lượng riêng và áp suất",
+   "bai": "Bài 14. Thực hành xác định khối lượng riêng",
+   "cac_cau": [
+    {
+     "ma": "B14.C1",
+     "trang": 59,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Để xác định khối lượng riêng của một chất tạo nên vật cần phải xác định được những đại lượng nào? Theo em, cách xác định khối lượng riêng của một vật rắn và của một lượng chất lỏng có khác nhau hay không?"
+    },
+    {
+     "ma": "B14.C2",
+     "trang": 63,
+     "nhom": "Em có thể",
+     "dang": "CAU_NHO",
+     "de": "So sánh giá trị khối lượng riêng của nước xác định trong thí nghiệm ở bài này và khối lượng riêng của nước cho trong Bảng 13.3 (Bài 13). Từ đó, cho biết những yếu tố nào có thể dẫn tới sự chênh lệch giữa hai giá trị này."
+    }
+   ]
+  },
+  {
+   "chuong": "Chương III. Khối lượng riêng và áp suất",
+   "bai": "Bài 15. Áp suất trên một bề mặt",
+   "cac_cau": [
+    {
+     "ma": "B15.C1",
+     "trang": 64,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Quan sát Hình 15.1 (SGK trang 64), hãy chỉ ra lực nào trong số các lực được mô tả dưới đây là áp lực: Lực của người tác dụng lên sợi dây; Lực của sợi dây tác dụng lên thùng hàng; Lực của thùng hàng tác dụng lên mặt sàn; Lực của ngón tay tác dụng lên mũ đinh; Lực của đầu đinh tác dụng lên tấm xốp."
+    },
+    {
+     "ma": "B15.C2",
+     "trang": 66,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Một xe tăng có trọng lượng 350 000 N. a) Tính áp suất của xe tăng lên mặt đường nằm ngang, biết rằng diện tích tiếp xúc của các bản xích với mặt đường là 1,5 m^2. b) Hãy so sánh áp suất của xe tăng với áp suất của một ô tô có trọng lượng 25 000 N, diện tích các bánh xe tiếp xúc với mặt đường nằm ngang là 250 cm^2. c) Dựa vào kết quả tính ở trên, hãy trả lời câu hỏi đã đặt ra ở phần mở bài (tại sao khi một em bé đứng lên chiếc đệm thì đệm lại bị lún sâu hơn khi người lớn nằm trên nó)."
+    },
+    {
+     "ma": "B15.C3",
+     "trang": 66,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Từ công thức tính áp suất p = F/S, hãy đưa ra nguyên tắc để làm tăng, giảm áp suất."
+    },
+    {
+     "ma": "B15.C4",
+     "trang": 66,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "1. Một người làm vườn cần đóng một chiếc cọc xuống đất. Hãy đề xuất phương án để có thể đóng được chiếc cọc xuống đất một cách dễ dàng. Giải thích. 2. Để xe ô tô có thể vượt qua vùng đất sụt lún người ta thường làm như thế nào? Mô tả cách làm và giải thích. 3. Hãy giải thích tại sao cá sấu có hàm răng rất nhọn."
+    },
+    {
+     "ma": "B15.C5",
+     "trang": 66,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Nêu thêm những ví dụ trong thực tế về công dụng của việc làm tăng, giảm áp suất."
+    }
+   ]
+  },
+  {
+   "chuong": "Chương III. Khối lượng riêng và áp suất",
+   "bai": "Bài 16. Áp suất chất lỏng. Áp suất khí quyển",
+   "cac_cau": [
+    {
+     "ma": "B16.C1",
+     "trang": 68,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Về thí nghiệm khảo sát tác dụng của chất lỏng lên vật đặt trong nó (Hình 16.2, SGK trang 68): 1. Nếu các màng cao su bị biến dạng như Hình 16.2 thì chứng tỏ điều gì? 2. Với những vị trí khác nhau ở cùng một độ sâu thì áp suất chất lỏng tác dụng lên bình có thay đổi không? 3. Khi đặt bình sâu hơn (từ vị trí P đến Q) thì tác dụng của chất lỏng lên bình thay đổi như thế nào? 4. Có phải chất lỏng chỉ tác dụng áp suất lên bình theo một phương như chất rắn không?"
+    },
+    {
+     "ma": "B16.C2",
+     "trang": 68,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Từ kết quả mô tả ở thí nghiệm về sự truyền áp suất chất lỏng (Hình 16.3, SGK trang 68), hãy rút ra kết luận về sự truyền áp suất tác dụng vào chất lỏng theo mọi hướng."
+    },
+    {
+     "ma": "B16.C3",
+     "trang": 68,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Mô tả và giải thích các hiện tượng trong thí nghiệm ở Hình 16.4a và Hình 16.4b (SGK trang 68)."
+    },
+    {
+     "ma": "B16.C4",
+     "trang": 69,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Hình 16.5 vẽ sơ đồ nguyên lí máy nén thuỷ lực (SGK trang 69). Hãy vận dụng tính chất truyền nguyên vẹn áp suất theo mọi hướng của chất lỏng để giải thích tại sao khi người tác dụng một lực nhỏ vào pit-tông nhỏ lại nâng được ô tô đặt trên pit-tông lớn."
+    },
+    {
+     "ma": "B16.C5",
+     "trang": 69,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Hãy tìm thêm ví dụ trong đời sống minh hoạ áp suất tác dụng vào chất lỏng sẽ được chất lỏng truyền đi nguyên vẹn theo mọi hướng."
+    },
+    {
+     "ma": "B16.C6",
+     "trang": 70,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "1. Tìm một số ví dụ chứng tỏ sự tồn tại của áp suất khí quyển. 2. Em hãy cho biết áp suất tác dụng lên mặt hồ và áp suất tác dụng lên đáy hồ là áp suất nào."
+    },
+    {
+     "ma": "B16.C7",
+     "trang": 70,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Em hãy tìm ví dụ và mô tả hiện tượng trong thực tế về sự tạo thành tiếng động trong tai khi thay đổi áp suất đột ngột."
+    },
+    {
+     "ma": "B16.C8",
+     "trang": 71,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Tìm thêm ví dụ về giác mút trong thực tế và giải thích hoạt động của nó."
+    },
+    {
+     "ma": "B16.C9",
+     "trang": 72,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Hãy tìm trong thực tế những dụng cụ hoạt động theo nguyên lí của bình xịt. Cho biết chúng được sử dụng vào công việc gì."
+    }
+   ]
+  },
+  {
+   "chuong": "Chương III. Khối lượng riêng và áp suất",
+   "bai": "Bài 17. Lực đẩy Archimedes",
+   "cac_cau": [
+    {
+     "ma": "B17.C1",
+     "trang": 73,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "1. Hãy biểu diễn các lực tác dụng vào viên bi, ốc vít kim loại, miếng xốp khi chúng ở vị trí như trong Hình 17.2 (SGK trang 73). 2. Hãy rút ra điều kiện để một vật chìm xuống hoặc nổi lên khi đặt trong chất lỏng. 3. Mô tả sự thay đổi lực đẩy của nước lên quả bóng trong Hình 17.1 từ khi bắt đầu nhấn quả bóng vào nước, đến khi quả bóng chìm hoàn toàn trong nước."
+    },
+    {
+     "ma": "B17.C2",
+     "trang": 75,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Thả một viên đất nặn hình tròn nặng khoảng 100 g vào cốc nước, viên đất nặn sẽ chìm xuống đáy. Hãy tạo hình viên đất nặn này thành một vật có thể nổi được trên mặt nước. Vận dụng công thức định luật Archimedes, hãy giải thích vì sao cùng một viên đất nặn với hình dạng khác nhau lại có thể lúc thì chìm, lúc thì nổi."
+    },
+    {
+     "ma": "B17.C3",
+     "trang": 75,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Giải thích vì sao trong thí nghiệm mở đầu, nắp chai nhựa lại nổi lên còn viên bi, ốc vít kim loại vẫn nằm ở đáy cốc."
+    },
+    {
+     "ma": "B17.C4",
+     "trang": 75,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Hãy so sánh trọng lượng riêng của vật và trọng lượng riêng của nước khi vật chìm, vật nổi."
+    },
+    {
+     "ma": "B17.C5",
+     "trang": 75,
+     "nhom": "Em có thể",
+     "dang": "CAU_NHO",
+     "de": "Giải thích tại sao con tàu rất nặng mà vẫn nổi được trên mặt nước."
+    }
+   ]
+  },
+  {
+   "chuong": "Chương IV. Tác dụng làm quay của lực",
+   "bai": "Bài 18. Tác dụng làm quay của lực. Moment lực",
+   "cac_cau": [
+    {
+     "ma": "B18.C1",
+     "trang": 77,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Lấy tay tác dụng vào cánh cửa các lực khác nhau theo chiều mũi tên biểu diễn như ở Hình 18.2 (SGK trang 77): a) lực tác dụng có giá cắt trục quay; b) lực tác dụng có giá song song với trục quay; c) lực tác dụng có giá không song song và không cắt trục quay. Trường hợp nào lực làm quay cánh cửa?"
+    },
+    {
+     "ma": "B18.C2",
+     "trang": 77,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "1. Vị trí tác dụng lực nào trong Hình 18.3 (tay nắm cửa với các vị trí A, B, C; SGK trang 77) có thể làm cho tay nắm cửa quay quanh trục của nó? Vị trí nào làm tay nắm cửa không quay quanh trục của nó? 2. Lực tác dụng ở vị trí nào có thể làm cho tay nắm cửa quay dễ dàng hơn?"
+    },
+    {
+     "ma": "B18.C3",
+     "trang": 78,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "So sánh moment của lực F1, moment của lực F2 trong các Hình 18.4a và Hình 18.4b (SGK trang 78)."
+    },
+    {
+     "ma": "B18.C4",
+     "trang": 78,
+     "nhom": "Em có thể",
+     "dang": "CAU_NHO",
+     "de": "Giải thích cách tác dụng lực khi bắt đầu đạp pê-đan để xe đạp có thể chuyển động; giải thích cách sử dụng cờ lê để vặn ốc một cách dễ dàng."
+    }
+   ]
+  },
+  {
+   "chuong": "Chương IV. Tác dụng làm quay của lực",
+   "bai": "Bài 19. Đòn bẩy và ứng dụng",
+   "cac_cau": [
+    {
+     "ma": "B19.C1",
+     "trang": 80,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "1. Xác định điểm tựa, cánh tay đòn trong các trường hợp ở Hình 19.2 (xe cút kít, dùng xà beng nạy vật, búa nhổ đinh; SGK trang 80). 2. Sử dụng đòn bẩy như Hình 19.2 có thể làm đổi hướng tác dụng lực như thế nào?"
+    },
+    {
+     "ma": "B19.C2",
+     "trang": 81,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "1. Hình 19.6 vẽ các dụng cụ, các vật có cấu tạo và chức năng của đòn bẩy (cần câu cá, bật nắp chai, sử dụng đũa, dùng kẹp làm vỡ vỏ hạt, chèo thuyền, kéo cắt; SGK trang 81). Em hãy chỉ rõ loại đòn bẩy trong từng trường hợp. Sử dụng đòn bẩy như vậy đem lại lợi ích như thế nào? 2. Lấy các ví dụ khác về mỗi loại đòn bẩy trong cuộc sống và phân tích tác dụng của chúng."
+    },
+    {
+     "ma": "B19.C3",
+     "trang": 81,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Đòn bẩy trong máy bơm nước bằng tay (Hình 19.7, SGK trang 81) là đòn bẩy loại nào? Sử dụng máy bơm nước này cho ta những lợi ích gì?"
+    },
+    {
+     "ma": "B19.C4",
+     "trang": 82,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Dựa trên cấu tạo của cơ thể và tác dụng của đòn bẩy em hãy đưa ra tư thế ngồi để tránh mỏi cổ."
+    },
+    {
+     "ma": "B19.C5",
+     "trang": 82,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Em hãy giải thích vì sao khi cầm vật nặng, ta cần gập sát cánh tay vào bắp tay."
+    },
+    {
+     "ma": "B19.C6",
+     "trang": 83,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Em hãy xác định các đòn bẩy trên xe đạp khi ta sử dụng xe. Ứng với mỗi trường hợp hãy xác định trục quay, các lực tác dụng và xác định loại đòn bẩy tương ứng. Hãy mô tả sự thay đổi hướng của lực khi dùng chân tác dụng lực lên pê-đan xe đạp để đẩy xe đạp tiến về phía trước. Xét quá trình tác dụng lực với hai trục quay tại trục giữa A và trục bánh sau B (Hình 19.10, SGK trang 83)."
+    }
+   ]
+  },
+  {
+   "chuong": "Chương V. Điện",
+   "bai": "Bài 20. Hiện tượng nhiễm điện do cọ xát",
+   "cac_cau": [
+    {
+     "ma": "B20.C1",
+     "trang": 85,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Từ các kết quả thí nghiệm với đũa nhựa cọ vào vải len và đũa thuỷ tinh cọ vào vải lụa (Hình 20.2, SGK trang 85), rút ra nhận xét gì? Điện tích trên đũa thuỷ tinh có cùng loại với điện tích trên đũa nhựa không? Các điện tích cùng loại và khác loại tác dụng với nhau như thế nào?"
+    },
+    {
+     "ma": "B20.C2",
+     "trang": 85,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Trả lời câu hỏi ở phần mở đầu: Vì sao vào những ngày hanh khô, khi chải tóc bằng lược nhựa thì nhiều sợi tóc bị lược nhựa hút kéo thẳng ra?"
+    },
+    {
+     "ma": "B20.C3",
+     "trang": 86,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Hãy thảo luận để trả lời các câu hỏi: 1. Nguyên tử có cấu tạo như thế nào? Hãy vẽ hình mô tả cấu tạo nguyên tử. 2. Electron trong nguyên tử có thể dịch chuyển như thế nào?"
+    },
+    {
+     "ma": "B20.C4",
+     "trang": 86,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Giải thích tại sao bụi lại bám nhiều ở cánh quạt điện sau một thời gian sử dụng."
+    },
+    {
+     "ma": "B20.C5",
+     "trang": 86,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Vì sao vào những ngày thời tiết khô ráo, khi lau chùi gương soi, kính cửa sổ hay màn hình ti vi bằng khăn bông khô thì vẫn thấy có bụi bông bám vào?"
+    }
+   ]
+  },
+  {
+   "chuong": "Chương V. Điện",
+   "bai": "Bài 21. Dòng điện, nguồn điện",
+   "cac_cau": [
+    {
+     "ma": "B21.C1",
+     "trang": 88,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Quan sát thí nghiệm hai điện nghiệm: điện nghiệm A được tích điện nên hai lá kim loại xoè ra; điện nghiệm B không tích điện nên hai lá kim loại cụp lại. Nối hai quả cầu của hai điện nghiệm, hiện tượng xảy ra: hai lá kim loại của điện nghiệm A giảm độ xoè, hai lá kim loại của điện nghiệm B xoè ra. Kết quả thí nghiệm chứng tỏ điều gì?"
+    },
+    {
+     "ma": "B21.C2",
+     "trang": 88,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Hãy kể tên các nguồn điện khác mà em biết."
+    },
+    {
+     "ma": "B21.C3",
+     "trang": 90,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Trong những vật sau đây: thanh gỗ khô, ruột bút chì, dây nhựa, thanh thuỷ tinh, đoạn dây nhôm. Vật nào là vật dẫn điện, vật nào là vật cách điện?"
+    },
+    {
+     "ma": "B21.C4",
+     "trang": 90,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Kể tên những vật liệu cách điện trong các dụng cụ và thiết bị điện thường dùng mà em biết."
+    }
+   ]
+  },
+  {
+   "chuong": "Chương V. Điện",
+   "bai": "Bài 22. Mạch điện đơn giản",
+   "cac_cau": [
+    {
+     "ma": "B22.C1",
+     "trang": 92,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Vẽ sơ đồ của mạch điện trong Hình 22.1 (mạch điện đơn giản gồm pin, bóng đèn, công tắc, dây nối; SGK trang 91)."
+    },
+    {
+     "ma": "B22.C2",
+     "trang": 92,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Gọi tên các thiết bị được đánh số từ (1) đến (4) ở sơ đồ mạch điện Hình 22.2 (SGK trang 92)."
+    },
+    {
+     "ma": "B22.C3",
+     "trang": 93,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Dòng điện cung cấp bởi pin hoặc acquy có chiều không đổi gọi là dòng điện một chiều. Người ta quy ước chiều dòng điện trong mạch điện là chiều từ cực dương của nguồn điện qua dây nối và các dụng cụ tiêu thụ điện tới cực âm của nguồn điện. Vẽ mũi tên chỉ chiều dòng điện trong các sơ đồ mạch điện ở Hình 22.3 (SGK trang 93)."
+    },
+    {
+     "ma": "B22.C4",
+     "trang": 94,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "1. Trong mạng điện của gia đình có sử dụng những thiết bị nào sau đây: cầu chì, cầu dao tự động, rơle, chuông điện? Hãy nêu công dụng của chúng. 2. Nêu sự giống và khác nhau của cầu chì, cầu dao tự động, rơle."
+    },
+    {
+     "ma": "B22.C5",
+     "trang": 94,
+     "nhom": "Em có thể",
+     "dang": "CAU_NHO",
+     "de": "Tìm hiểu cấu tạo và hoạt động của chiếc đèn pin thường dùng, vẽ sơ đồ mạch điện của đèn pin."
+    }
+   ]
+  },
+  {
+   "chuong": "Chương V. Điện",
+   "bai": "Bài 23. Tác dụng của dòng điện",
+   "cac_cau": [
+    {
+     "ma": "B23.C1",
+     "trang": 95,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Em có thể kể ra dòng điện có những tác dụng gì?"
+    },
+    {
+     "ma": "B23.C2",
+     "trang": 95,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Nêu một số ví dụ trong đời sống ứng dụng tác dụng nhiệt của dòng điện."
+    },
+    {
+     "ma": "B23.C3",
+     "trang": 96,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Qua thí nghiệm với đèn LED (Hình 23.2, SGK trang 96), rút ra kết luận gì về tác dụng của dòng điện."
+    },
+    {
+     "ma": "B23.C4",
+     "trang": 98,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Nêu ví dụ ứng dụng tác dụng phát sáng của dòng điện trong thực tế."
+    },
+    {
+     "ma": "B23.C5",
+     "trang": 98,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Vì sao khi trời mưa gió, không được lại gần dây điện rơi xuống mặt đường."
+    },
+    {
+     "ma": "B23.C6",
+     "trang": 98,
+     "nhom": "Em có thể",
+     "dang": "CAU_NHO",
+     "de": "Giải thích vì sao nên sử dụng đèn LED thay thế cho các đèn sợi đốt. Đưa ra giải pháp để tránh nguy hiểm cho bản thân khi sử dụng các dụng cụ tiêu thụ điện ở gia đình như: bàn là, bếp điện, quạt điện, ti vi, máy tính, tủ lạnh,..."
+    }
+   ]
+  },
+  {
+   "chuong": "Chương V. Điện",
+   "bai": "Bài 24. Cường độ dòng điện và hiệu điện thế",
+   "cac_cau": [
+    {
+     "ma": "B24.C1",
+     "trang": 99,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Ta đã biết ampe kế dùng để đo cường độ dòng điện, vôn kế dùng để đo hiệu điện thế. Vậy, số chỉ của ampe kế và vôn kế cho ta biết điều gì?"
+    },
+    {
+     "ma": "B24.C2",
+     "trang": 100,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Quan sát Hình 1.6 (trang 9): Khi sử dụng ampe kế để đo cường độ dòng điện, cần mắc ampe kế vào mạch điện như thế nào?"
+    },
+    {
+     "ma": "B24.C3",
+     "trang": 100,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Số chỉ trên vôn kế có bằng giá trị ghi trên nguồn điện không? Tại sao?"
+    }
+   ]
+  },
+  {
+   "chuong": "Chương V. Điện",
+   "bai": "Bài 25. Thực hành đo cường độ dòng điện và hiệu điện thế",
+   "cac_cau": [
+    {
+     "ma": "B25.C1",
+     "trang": 102,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Một học sinh cho rằng: \"Bóng đèn tiêu thụ dòng điện, do đó cường độ dòng điện sẽ giảm sau khi đi qua bóng đèn\". Em có đồng ý với bạn học sinh đó không? Làm thế nào để kiểm tra ý kiến của mình?"
+    },
+    {
+     "ma": "B25.C2",
+     "trang": 104,
+     "nhom": "Em có thể",
+     "dang": "CAU_NHO",
+     "de": "Đo được cường độ dòng điện trong mạch điện bằng ampe kế, từ đó xác định được mạch điện là kín hay hở. Đo được hiệu điện thế bằng vôn kế; sử dụng vôn kế để xác định được pin cũ hay mới."
+    },
+    {
+     "ma": "B25.C3",
+     "trang": 103,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Sau khi thực hành đo cường độ dòng điện và hiệu điện thế, nhận xét: 1. Em có nhận xét gì về giá trị cường độ dòng điện tại các vị trí 1, 2? 2. Em có nhận xét gì về các giá trị của hiệu điện thế hai đầu bóng đèn và giá trị hiệu điện thế của nguồn? 3. So sánh kết quả thí nghiệm giữa các nhóm, lí giải sự khác biệt về kết quả thí nghiệm giữa các nhóm."
+    }
+   ]
+  },
+  {
+   "chuong": "Chương VI. Nhiệt",
+   "bai": "Bài 26. Năng lượng nhiệt và nội năng",
+   "cac_cau": [
+    {
+     "ma": "B26.C1",
+     "trang": 105,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Ngay từ lớp 6, các em đã được làm quen với năng lượng nhiệt. Theo em, năng lượng nhiệt là gì và tại sao mọi vật đều luôn có năng lượng này?"
+    },
+    {
+     "ma": "B26.C2",
+     "trang": 106,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Ở nhiệt độ trong phòng, các phân tử trong không khí có thể chuyển động với tốc độ từ hàng trăm tới hàng nghìn m/s. Tại sao khi mở một lọ nước hoa ở đầu lớp thì phải một lúc sau, người ở cuối lớp mới ngửi thấy mùi thơm?"
+    },
+    {
+     "ma": "B26.C3",
+     "trang": 106,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "1. Mô tả, giải thích và thực hiện hai cách khác nhau để làm tăng năng lượng nhiệt của hai bàn tay mình. 2. Tìm ví dụ thực tế về sự chuyển hoá từ nhiệt năng sang các dạng năng lượng khác và ngược lại."
+    },
+    {
+     "ma": "B26.C4",
+     "trang": 107,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "1. So sánh động năng của phân tử nước ở Hình 26.4a với động năng của phân tử nước ở Hình 26.4b (SGK trang 107). 2. So sánh nội năng của nước trong hai cốc ở Hình 26.4."
+    },
+    {
+     "ma": "B26.C5",
+     "trang": 108,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Thả một quả cầu kim loại ở nhiệt độ trong phòng vào một cốc nước nóng (Hình 26.5, SGK trang 107). Trong quá trình trên, động năng của phân tử nước và nguyên tử kim loại; nội năng của nước và của quả cầu trong bình thay đổi như thế nào?"
+    },
+    {
+     "ma": "B26.C6",
+     "trang": 108,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Theo dõi thí nghiệm đun nước (Hình 26.6, SGK trang 108), có người khẳng định: từ khi bắt đầu đun nước tới khi nước bắt đầu sôi thì nhiệt độ của nước tăng dần; khi nước đã sôi thì nhiệt độ của nước không tăng dù vẫn tiếp tục đun. Hãy thảo luận để trả lời các câu hỏi sau: 1. Tại sao từ khi bắt đầu đun tới khi nước bắt đầu sôi thì nhiệt độ của nước tăng dần? 2. Khi nước đã sôi, nhiệt độ của nước không tăng dù vẫn tiếp tục đun thì nhiệt năng mà nước nhận được từ đèn cồn đã chuyển hoá thành dạng năng lượng nào?"
+    },
+    {
+     "ma": "B26.C7",
+     "trang": 108,
+     "nhom": "Em có thể",
+     "dang": "CAU_NHO",
+     "de": "Giải thích các hiện tượng đơn giản trong đời sống có liên quan đến nhiệt năng và nội năng. Ví dụ, tại sao xoa hai tay vào nhau thì tay nóng lên."
+    }
+   ]
+  },
+  {
+   "chuong": "Chương VI. Nhiệt",
+   "bai": "Bài 27. Thực hành đo năng lượng nhiệt bằng joulemeter",
+   "cac_cau": [
+    {
+     "ma": "B27.C1",
+     "trang": 109,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Khi muốn đun sôi một lượng nước xác định cần cung cấp bao nhiêu năng lượng nhiệt? Làm thế nào để đo được năng lượng nhiệt đó?"
+    }
+   ]
+  },
+  {
+   "chuong": "Chương VI. Nhiệt",
+   "bai": "Bài 28. Sự truyền nhiệt",
+   "cac_cau": [
+    {
+     "ma": "B28.C1",
+     "trang": 112,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Theo em, năng lượng nhiệt có thể truyền được trong các môi trường nào sau đây: chất rắn, chất lỏng, chất khí, chân không? Hãy tìm hiện tượng trong thực tế để minh hoạ cho ý kiến của mình."
+    },
+    {
+     "ma": "B28.C2",
+     "trang": 113,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Hãy thảo luận về các câu hỏi dưới đây dựa trên việc phân tích công dụng của vật dẫn nhiệt tốt và vật cách nhiệt tốt: 1. Tại sao chảo được làm bằng kim loại còn cán chảo được làm bằng gỗ hoặc nhựa? 2. Tại sao nhà mái ngói thì mùa hè mát hơn, mùa đông ấm hơn nhà mái tôn? 3. Phân tích công dụng dẫn nhiệt tốt, cách nhiệt tốt của từng bộ phận trong một số dụng cụ thường dùng trong gia đình."
+    },
+    {
+     "ma": "B28.C3",
+     "trang": 114,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "1. Tại sao khi đốt nến thì cánh quạt trong Hình 28.4 (SGK trang 114) lại quay. 2. Tìm thêm ví dụ về sự đối lưu trong thực tế."
+    },
+    {
+     "ma": "B28.C4",
+     "trang": 115,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "1. Đứng gần một bếp lửa, ta cảm thấy nóng. Nhiệt năng mà cơ thể nhận được từ bếp chủ yếu là do dẫn nhiệt, đối lưu hay bức xạ? Tại sao? 2. Tại sao mùa hè người ta thường mặc áo màu trắng, ít mặc áo màu đen? 3. Phích (bình thuỷ) là dụng cụ dùng để giữ nước nóng, có hai lớp thuỷ tinh, giữa hai lớp là chân không, hai mặt đối diện thường được tráng bạc, phích có nút đậy kín. Hãy phân tích tác dụng của các bộ phận sau đây của phích: lớp chân không; hai mặt thuỷ tinh tráng bạc; nút."
+    },
+    {
+     "ma": "B28.C5",
+     "trang": 116,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Tại sao trong thí nghiệm Hình 28.8 (SGK trang 116), nhiệt độ của cốc nước đặt trong lồng kính lại cao hơn nhiệt độ của cốc nước đặt ngoài lồng kính?"
+    },
+    {
+     "ma": "B28.C6",
+     "trang": 117,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Hãy thảo luận về những vấn đề sau đây: 1. Mô tả sự truyền năng lượng trong hiệu ứng nhà kính khí quyển. 2. Những nguyên nhân nào làm tăng nhanh hàm lượng CO2 trong khí quyển và những biện pháp nào có thể làm giảm sự tăng hàm lượng CO2 trong khí quyển? 3. Em và các bạn có thể làm gì để góp phần cụ thể vào việc làm giảm hiệu ứng nhà kính để góp phần ổn định nhiệt độ bề mặt Trái Đất."
+    }
+   ]
+  },
+  {
+   "chuong": "Chương VI. Nhiệt",
+   "bai": "Bài 29. Sự nở vì nhiệt",
+   "cac_cau": [
+    {
+     "ma": "B29.C1",
+     "trang": 118,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Tháp Eiffel bằng thép cao 324 m ở thủ đô Paris nước Pháp là tháp bằng thép nổi tiếng thế giới. Các phép đo chiều cao của tháp vào ngày 01/01/1890 và ngày 01/07/1890 cho thấy trong vòng 6 tháng tháp cao hơn thêm 10 cm. Chẳng lẽ một cái tháp bằng thép lại có thể \"lớn lên\" được? Em có thể giải thích được hiện tượng này không?"
+    },
+    {
+     "ma": "B29.C2",
+     "trang": 118,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Từ thí nghiệm về sự nở vì nhiệt của chất rắn (Hình 29.1, SGK trang 118) hãy rút ra nhận xét về sự nở vì nhiệt của các chất nhôm, đồng, sắt."
+    },
+    {
+     "ma": "B29.C3",
+     "trang": 119,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Hai thanh kim loại đồng, sắt được ghép chặt vào nhau tạo thành một băng kép. Hãy cho biết hình dạng của băng kép sẽ thay đổi như thế nào khi: a) Quay thanh kim loại cho mặt sắt ở dưới và hơ nóng bằng đèn cồn (Hình 29.2a). b) Quay thanh kim loại cho mặt đồng ở dưới và hơ nóng bằng đèn cồn (Hình 29.2b)."
+    },
+    {
+     "ma": "B29.C4",
+     "trang": 119,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "1. Hình 29.4 mô tả thí nghiệm về sự nở vì nhiệt của các chất lỏng khác nhau (rượu, dầu, nước; SGK trang 119). Hãy mô tả thí nghiệm và rút ra nhận xét về sự nở vì nhiệt của các chất lỏng khác nhau. 2. Tìm thêm ví dụ về sự nở vì nhiệt của chất lỏng."
+    },
+    {
+     "ma": "B29.C5",
+     "trang": 120,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "1. Tại sao từ thí nghiệm về sự nở vì nhiệt của chất khí (Hình 29.6, SGK trang 120) ta có thể nói chất khí nở vì nhiệt nhiều hơn chất lỏng? 2. Tìm ví dụ về sự nở vì nhiệt của chất khí."
+    },
+    {
+     "ma": "B29.C6",
+     "trang": 121,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Dựa vào Bảng 29.1 (độ tăng thể tích của 1 000 cm^3 các chất khác nhau khi nhiệt độ tăng thêm 50 °C; SGK trang 121) rút ra nhận xét về sự nở vì nhiệt của các chất khác nhau: rắn, lỏng và khí."
+    },
+    {
+     "ma": "B29.C7",
+     "trang": 121,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "1. Mô tả hoạt động của các loại băng kép trong Hình 29.7 b, c, d (băng kép đóng ngắt mạch điện, băng kép báo cháy, băng kép trong bàn là; SGK trang 121). 2. Tìm thêm ví dụ về công dụng của sự nở vì nhiệt."
+    },
+    {
+     "ma": "B29.C8",
+     "trang": 122,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "1. Tại sao chỗ nối tiếp hai đầu thanh ray xe lửa, hai đầu ống dẫn khí lại được cấu tạo như Hình 29.8 (SGK trang 122)? 2. Tìm thêm ví dụ về tác hại của sự nở vì nhiệt."
+    }
+   ]
+  },
+  {
+   "chuong": "Chương VII. Sinh học cơ thể người",
+   "bai": "Bài 30. Khái quát về cơ thể người",
+   "cac_cau": [
+    {
+     "ma": "B30.C1",
+     "trang": 123,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Mỗi người đều có những đặc điểm riêng để phân biệt với người khác như màu da, chiều cao, nhóm máu,... Ngoài sự khác nhau đó, cấu tạo cơ thể người có những đặc điểm chung nào?"
+    },
+    {
+     "ma": "B30.C2",
+     "trang": 124,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Đọc thông tin trong Bảng 30.1 (vai trò chính của các cơ quan và hệ cơ quan trong cơ thể người; SGK trang 124) và thảo luận để trả lời câu hỏi ở phần khởi động."
+    },
+    {
+     "ma": "B30.C3",
+     "trang": 124,
+     "nhom": "Em có thể",
+     "dang": "CAU_NHO",
+     "de": "Kể tên và nêu vai trò chính của các cơ quan và hệ cơ quan trong cơ thể mình."
+    }
+   ]
+  },
+  {
+   "chuong": "Chương VII. Sinh học cơ thể người",
+   "bai": "Bài 31. Hệ vận động ở người",
+   "cac_cau": [
+    {
+     "ma": "B31.C1",
+     "trang": 125,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Tại sao mỗi người lại có vóc dáng và kích thước khác nhau? Nhờ đâu mà cơ thể người có thể di chuyển, vận động?"
+    },
+    {
+     "ma": "B31.C2",
+     "trang": 126,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "1. Quan sát Hình 31.1 (một số xương và cơ của hệ vận động; SGK trang 125), phân loại các xương vào ba phần của bộ xương. 2. Quan sát Hình 31.2 (tư thế co, duỗi tay), so sánh tư thế của tay khi cơ co và dãn. Liên hệ kiến thức về đòn bẩy đã học ở bài 19, cho biết tay ở tư thế nào có khả năng chịu tải tốt hơn."
+    },
+    {
+     "ma": "B31.C3",
+     "trang": 126,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "1. Quan sát Hình 31.4 (xương của người bình thường và của người mắc bệnh loãng xương; SGK trang 126) và dự đoán xương nào bị giòn, dễ gãy. Từ đó nêu tác hại của bệnh loãng xương. 2. Tìm hiểu các bệnh về hệ vận động (nguyên nhân, số lượng người mắc) trong trường học và khu dân cư; đề xuất và tuyên truyền biện pháp phòng bệnh, bảo vệ hệ vận động."
+    },
+    {
+     "ma": "B31.C4",
+     "trang": 126,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "1. Nêu ý nghĩa của luyện tập thể dục, thể thao. 2. Lựa chọn phương pháp luyện tập thể dục, thể thao phù hợp với lứa tuổi."
+    },
+    {
+     "ma": "B31.C5",
+     "trang": 127,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Về thực hành sơ cứu và băng bó khi người khác bị gãy xương: 1. Khi thực hiện buộc cố định nẹp cần lưu ý những điều gì? 2. Có thể sử dụng những dụng cụ nào tương tự nẹp và dây vải rộng bản trong điều kiện thực tế khi sơ cứu và băng bó người khác bị gãy xương?"
+    },
+    {
+     "ma": "B31.C6",
+     "trang": 127,
+     "nhom": "Em có thể",
+     "dang": "CAU_NHO",
+     "de": "Đề xuất và thực hiện một số biện pháp phòng chống các bệnh, tật liên quan đến hệ vận động ở lứa tuổi học đường."
+    }
+   ]
+  },
+  {
+   "chuong": "Chương VII. Sinh học cơ thể người",
+   "bai": "Bài 32. Dinh dưỡng và tiêu hoá ở người",
+   "cac_cau": [
+    {
+     "ma": "B32.C1",
+     "trang": 128,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Cơ thể cần thường xuyên lấy các chất dinh dưỡng từ nguồn thức ăn để duy trì sự sống và phát triển. Tuy nhiên, thức ăn hầu hết có kích thước lớn nên các tế bào của cơ thể không thể hấp thụ được. Quá trình nào đã giúp cơ thể giải quyết vấn đề này và quá trình đó diễn ra như thế nào?"
+    },
+    {
+     "ma": "B32.C2",
+     "trang": 128,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Nêu khái niệm chất dinh dưỡng và dinh dưỡng."
+    },
+    {
+     "ma": "B32.C3",
+     "trang": 129,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Quan sát Hình 32.1 (cấu tạo hệ tiêu hoá ở người; SGK trang 129) và dựa vào kiến thức đã học để thực hiện các yêu cầu sau: 1. Nêu tên các cơ quan của hệ tiêu hoá tương ứng với những vị trí được đánh số trong hình. 2. Xác định tên ba cơ quan mà thức ăn không đi qua."
+    },
+    {
+     "ma": "B32.C4",
+     "trang": 130,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "1. Thảo luận về sự phối hợp các cơ quan thể hiện chức năng của cả hệ tiêu hoá. 2. Nêu mối quan hệ giữa tiêu hoá và dinh dưỡng."
+    },
+    {
+     "ma": "B32.C5",
+     "trang": 130,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "1. Quan sát Hình 32.2 (các giai đoạn sâu răng; SGK trang 130), thảo luận về các giai đoạn hình thành lỗ sâu răng. 2. Đề xuất một số biện pháp giúp phòng, chống sâu răng và các việc nên làm để hạn chế những ảnh hưởng tới sức khoẻ khi đã bị sâu răng."
+    },
+    {
+     "ma": "B32.C6",
+     "trang": 130,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "1. Người bị viêm loét dạ dày – tá tràng nên và không nên sử dụng các loại thức ăn, đồ uống nào? Em hãy kể tên và giải thích. 2. Dựa vào thông tin trên, em hãy nêu các biện pháp bảo vệ hệ tiêu hoá và cơ sở khoa học của các biện pháp đó."
+    },
+    {
+     "ma": "B32.C7",
+     "trang": 131,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Dựa vào Bảng 32.1 (nhu cầu dinh dưỡng khuyến nghị cho người Việt Nam/ngày; SGK trang 131), thảo luận nhóm để thực hiện yêu cầu và trả lời các câu hỏi sau: 1. Chế độ dinh dưỡng của cơ thể người phụ thuộc vào những yếu tố nào? Cho ví dụ. 2. Thực hành xây dựng khẩu phần ăn cho bản thân theo các bước hướng dẫn trong SGK trang 131-132."
+    },
+    {
+     "ma": "B32.C8",
+     "trang": 133,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Vận dụng hiểu biết về an toàn vệ sinh thực phẩm, em hãy thực hiện các yêu cầu sau: 1. Cho biết ý nghĩa của thông tin trên bao bì (hạn sử dụng, giá trị dinh dưỡng,...) thực phẩm đóng gói. 2. Trình bày một số bệnh do mất vệ sinh an toàn thực phẩm. Đề xuất các biện pháp lựa chọn, bảo quản và chế biến thực phẩm giúp phòng chống các bệnh vừa nêu."
+    },
+    {
+     "ma": "B32.C9",
+     "trang": 134,
+     "nhom": "Em có thể",
+     "dang": "CAU_NHO",
+     "de": "Xây dựng chế độ dinh dưỡng cho bản thân và những người trong gia đình; thực hiện các biện pháp bảo quản, chế biến thực phẩm an toàn."
+    }
+   ]
+  },
+  {
+   "chuong": "Chương VII. Sinh học cơ thể người",
+   "bai": "Bài 33. Máu và hệ tuần hoàn của cơ thể người",
+   "cac_cau": [
+    {
+     "ma": "B33.C1",
+     "trang": 135,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Một người bị mất máu liên tục sẽ yếu dần và nguy hiểm đến tính mạng. Máu có vai trò gì đối với cơ thể? Máu lưu thông trong cơ thể như thế nào và tim có vai trò gì trong quá trình đó?"
+    },
+    {
+     "ma": "B33.C2",
+     "trang": 135,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "1. Xác định tên và chức năng các thành phần của máu được đánh số trong Hình 33.1 (SGK trang 135). 2. Điều gì sẽ xảy ra với cơ thể chúng ta nếu thiếu một trong các thành phần của máu?"
+    },
+    {
+     "ma": "B33.C3",
+     "trang": 136,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "1. Giải thích vì sao con người sống trong môi trường chứa nhiều vi khuẩn có hại nhưng vẫn có thể sống khoẻ mạnh. 2. Tiêm vaccine có vai trò gì trong việc phòng bệnh?"
+    },
+    {
+     "ma": "B33.C4",
+     "trang": 137,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "1. Vẽ Hình 33.4 (nhóm máu và truyền máu; SGK trang 137) vào vở rồi hoàn thành sơ đồ truyền máu bằng cách đánh dấu chiều mũi tên để thể hiện mối quan hệ cho, nhận giữa các nhóm máu. 2. Giả sử một người có nhóm máu A cần được truyền máu, người này có thể nhận những nhóm máu nào? Nếu truyền nhóm máu không phù hợp sẽ dẫn đến hậu quả gì?"
+    },
+    {
+     "ma": "B33.C5",
+     "trang": 138,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Nêu cấu tạo của hệ tuần hoàn và trình bày sự phối hợp các cơ quan thể hiện chức năng của cả hệ tuần hoàn."
+    },
+    {
+     "ma": "B33.C6",
+     "trang": 139,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "1. Tìm hiểu nguyên nhân, triệu chứng, hậu quả của một số bệnh về máu, tim mạch. 2. Vận dụng hiểu biết về các bệnh đã tìm hiểu, đề xuất biện pháp phòng bệnh, bảo vệ hệ tuần hoàn và cơ thể, giải thích cơ sở của các biện pháp đó."
+    },
+    {
+     "ma": "B33.C7",
+     "trang": 140,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Sau khi thực hành sơ cứu cầm máu và đo huyết áp, em hãy trả lời các câu hỏi sau: 1. Khi thực hiện biện pháp buộc dây garô cần lưu ý những điều gì? 2. Vì sao chỉ dùng biện pháp buộc dây garô để sơ cứu những vết thương chảy máu động mạch ở tay hoặc chân? Những vết thương chảy máu động mạch không phải ở tay, chân cần được xử lí như thế nào?"
+    },
+    {
+     "ma": "B33.C8",
+     "trang": 141,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Sau khi điều tra một số bệnh về máu, tim mạch và phong trào hiến máu nhân đạo tại địa phương, hãy trả lời các câu hỏi sau: 1. Hiến máu có hại cho sức khoẻ không? Vì sao? 2. Những ai có thể hiến máu được và những ai không thể hiến máu?"
+    }
+   ]
+  },
+  {
+   "chuong": "Chương VII. Sinh học cơ thể người",
+   "bai": "Bài 34. Hệ hô hấp ở người",
+   "cac_cau": [
+    {
+     "ma": "B34.C1",
+     "trang": 142,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Con người tồn tại và hoạt động được là nhờ có nguồn năng lượng sinh ra từ quá trình hô hấp tế bào. Quá trình đó cần sử dụng khí O2 và thải ra khí CO2. Việc lấy khí O2 từ môi trường và thải khí CO2 ra khỏi cơ thể được thực hiện như thế nào?"
+    },
+    {
+     "ma": "B34.C2",
+     "trang": 142,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Đọc thông tin kết hợp quan sát Hình 34.1 (hệ hô hấp ở người; SGK trang 142), nêu tên các cơ quan của hệ hô hấp, đặc điểm và chức năng của mỗi cơ quan."
+    },
+    {
+     "ma": "B34.C3",
+     "trang": 143,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Quan sát Hình 34.2 (sự thông khí ở phổi; SGK trang 143), mô tả hoạt động của cơ, xương và sự thay đổi thể tích lồng ngực khi cử động hô hấp."
+    },
+    {
+     "ma": "B34.C4",
+     "trang": 143,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "1. Quan sát Hình 34.3 (trao đổi khí ở phổi và các tế bào trong cơ thể; SGK trang 143), mô tả sự trao đổi khí ở phổi và ở tế bào. 2. Trình bày sự phối hợp chức năng của mỗi cơ quan thể hiện chức năng của cả hệ hô hấp."
+    },
+    {
+     "ma": "B34.C5",
+     "trang": 144,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "1. Đọc thông tin và thảo luận, nêu nguyên nhân gây bệnh về phổi và đường hô hấp; vận dụng những hiểu biết về các bệnh, nêu biện pháp phòng chống bệnh để bảo vệ sức khoẻ bản thân và gia đình. 2. Điều tra một số bệnh về đường hô hấp trong trường học hoặc địa phương, số lượng người mắc và đề xuất biện pháp phòng chống bệnh rồi hoàn thành thông tin điều tra theo mẫu Bảng 34.1 (SGK trang 144)."
+    },
+    {
+     "ma": "B34.C6",
+     "trang": 144,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "1. Làm việc nhóm, đưa ra quan điểm của bản thân về việc nên hay không nên hút thuốc lá và kinh doanh thuốc lá. 2. Thiết kế một áp phích (poster) tuyên truyền không hút thuốc lá."
+    },
+    {
+     "ma": "B34.C7",
+     "trang": 145,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Sau khi thực hành hô hấp nhân tạo, em hãy trả lời các câu hỏi sau: 1. Nêu ý nghĩa của việc bịt mũi nạn nhân trong phương pháp hà hơi thổi ngạt. 2. Tại sao phải dùng tay ấn vào lồng ngực trong phương pháp ấn lồng ngực?"
+    }
+   ]
+  },
+  {
+   "chuong": "Chương VII. Sinh học cơ thể người",
+   "bai": "Bài 35. Hệ bài tiết ở người",
+   "cac_cau": [
+    {
+     "ma": "B35.C1",
+     "trang": 146,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Để kéo dài sự sống cho những người bị bệnh suy thận, người ta thường phải chạy thận nhân tạo hoặc ghép thận. Em hãy giải thích tại sao."
+    },
+    {
+     "ma": "B35.C2",
+     "trang": 146,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Đọc đoạn thông tin về hệ bài tiết kết hợp quan sát Hình 35.1 (cấu tạo hệ bài tiết nước tiểu ở người; SGK trang 147), kể tên các cơ quan của hệ bài tiết nước tiểu và các bộ phận chủ yếu của thận."
+    },
+    {
+     "ma": "B35.C3",
+     "trang": 147,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Đề xuất biện pháp bảo vệ hệ bài tiết: đọc thông tin trong Bảng 35.1 (các thói quen ăn quá mặn quá chua nhiều đường, không uống đủ nước, nhịn đi tiểu khi buồn tiểu, không giữ vệ sinh hệ bài tiết nước tiểu, ăn thức ăn ôi thiu và nguy cơ tương ứng; SGK trang 148) và đề xuất biện pháp phù hợp để bảo vệ hệ bài tiết rồi hoàn thành theo mẫu Bảng 35.1."
+    },
+    {
+     "ma": "B35.C4",
+     "trang": 149,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Tìm hiểu một số thành tựu ghép thận, chạy thận nhân tạo. Thảo luận nhóm để thực hiện các yêu cầu sau: 1. Tìm hiểu một số thành tựu ghép thận và chạy thận nhân tạo ở Việt Nam và trên thế giới. 2. Nêu quan điểm của em về tính nhân văn của việc hiến thận."
+    },
+    {
+     "ma": "B35.C5",
+     "trang": 149,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Kể tên một số loại thực phẩm phù hợp với người bị bệnh sỏi thận, suy thận và viêm cầu thận."
+    }
+   ]
+  },
+  {
+   "chuong": "Chương VII. Sinh học cơ thể người",
+   "bai": "Bài 36. Điều hoà môi trường trong của cơ thể người",
+   "cac_cau": [
+    {
+     "ma": "B36.C1",
+     "trang": 150,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Hình ở SGK trang 150 mô tả một số triệu chứng của một người bị bệnh gout. Một trong những nguyên nhân gây bệnh trên là do rối loạn môi trường trong của cơ thể (tăng nồng độ uric acid trong máu). Môi trường trong của cơ thể là gì? Rối loạn môi trường trong gây ra những nguy cơ nào cho cơ thể?"
+    },
+    {
+     "ma": "B36.C2",
+     "trang": 150,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Quan sát Hình 36.1 (môi trường trong của cơ thể; SGK trang 150), mô tả các thành phần môi trường trong của cơ thể."
+    },
+    {
+     "ma": "B36.C3",
+     "trang": 151,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "1. Cân bằng môi trường trong cơ thể là gì và có vai trò như thế nào đối với cơ thể? 2. Sau khi ăn quá mặn, chúng ta thường có cảm giác khát. Việc uống nhiều nước sau khi ăn quá mặn có ý nghĩa gì đối với cơ thể?"
+    },
+    {
+     "ma": "B36.C4",
+     "trang": 151,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Đọc kết quả xét nghiệm nồng độ glucose và uric acid trong máu ở Bảng 36.1 (định lượng glucose máu 9,8 mmol/L với chỉ số bình thường 3,9 – 6,4; định lượng uric acid máu 171 μmol/L với chỉ số bình thường nam 210 – 420, nữ 150 – 350; SGK trang 151). Giả sử Bảng 36.1 là kết quả xét nghiệm của một bệnh nhân nam. Thảo luận nhóm, nhận xét về kết quả xét nghiệm, dự đoán các nguy cơ về sức khoẻ của bệnh (nếu có) và đưa ra lời khuyên phù hợp."
+    }
+   ]
+  },
+  {
+   "chuong": "Chương VII. Sinh học cơ thể người",
+   "bai": "Bài 37. Hệ thần kinh và các giác quan ở người",
+   "cac_cau": [
+    {
+     "ma": "B37.C1",
+     "trang": 152,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Tại sao chúng ta có thể nghe được âm thanh và nhìn được hình dạng, màu sắc của các sự vật, hiện tượng xung quanh?"
+    },
+    {
+     "ma": "B37.C2",
+     "trang": 152,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Đọc thông tin kết hợp quan sát Hình 37.1 (cấu tạo hệ thần kinh ở người; SGK trang 152), trình bày cấu tạo và chức năng của hệ thần kinh; nêu vị trí của mỗi bộ phận."
+    },
+    {
+     "ma": "B37.C3",
+     "trang": 153,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Thảo luận nhóm để trả lời các câu hỏi và thực hiện các yêu cầu sau: 1. Nghiện ma tuý gây ra những tệ nạn gì cho xã hội? 2. Từ những hiểu biết về chất gây nghiện, em sẽ tuyên truyền điều gì đến người thân và mọi người xung quanh?"
+    },
+    {
+     "ma": "B37.C4",
+     "trang": 154,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Đọc thông tin và quan sát Hình 37.3 (cấu tạo của cầu mắt; SGK trang 154), kể tên các bộ phận của mắt."
+    },
+    {
+     "ma": "B37.C5",
+     "trang": 154,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Liên hệ kiến thức truyền ánh sáng, giải thích quá trình thu nhận ánh sáng ở mắt trong Hình 37.4 (SGK trang 154)."
+    },
+    {
+     "ma": "B37.C6",
+     "trang": 155,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Quan sát Hình 37.5 (mắt bình thường và các tật về mắt; SGK trang 155), xác định mắt bình thường và mắt mắc các tật trong hình."
+    },
+    {
+     "ma": "B37.C7",
+     "trang": 155,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Tìm hiểu các bệnh và tật về mắt trong trường học: 1. Tìm hiểu các bệnh và tật về mắt trong trường học rồi hoàn thành thông tin theo mẫu Bảng 37.1 (tên bệnh tật, số lượng người mắc, nguyên nhân, biện pháp phòng chống; SGK trang 155). 2. Thiết kế poster tuyên truyền cho mọi người cách chăm sóc, bảo vệ đôi mắt."
+    },
+    {
+     "ma": "B37.C8",
+     "trang": 156,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Đọc thông tin và quan sát Hình 16.7 (cấu tạo của tai), thực hiện các yêu cầu sau: 1. Sơ đồ hoá quá trình thu nhận âm thanh của tai. 2. Giải thích vai trò của vòi tai trong cân bằng áp suất không khí giữa tai và khoang miệng."
+    },
+    {
+     "ma": "B37.C9",
+     "trang": 156,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Dựa vào thông tin về bệnh viêm tai giữa và ù tai, em hãy nêu cách phòng chống bệnh viêm tai giữa, ù tai để bảo vệ bản thân và gia đình."
+    }
+   ]
+  },
+  {
+   "chuong": "Chương VII. Sinh học cơ thể người",
+   "bai": "Bài 38. Hệ nội tiết ở người",
+   "cac_cau": [
+    {
+     "ma": "B38.C1",
+     "trang": 157,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Với chiều cao 2,51 m, anh Kosen người Thổ Nhĩ Kì được sách Kỉ lục Guinness ghi nhận là người đàn ông cao nhất thế giới vào ngày 9/5/2011. Ngược lại, với chiều cao 0,51 m, anh Dangi người Nepal được ghi nhận là người đàn ông trưởng thành thấp nhất thế giới vào ngày 26/2/2012. Điều gì khiến họ cao lớn hoặc thấp bé bất thường so với chúng ta?"
+    },
+    {
+     "ma": "B38.C2",
+     "trang": 158,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Em hãy giải thích vì sao hoạt động của các hormone tuyến tuỵ giúp ổn định lượng đường trong máu. Quá trình tiết hormone điều hoà đường huyết bị rối loạn có thể dẫn đến hậu quả gì?"
+    },
+    {
+     "ma": "B38.C3",
+     "trang": 159,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Thảo luận nhóm để trả lời các câu hỏi và thực hiện các yêu cầu sau: 1. Bệnh đái tháo đường và bướu cổ có những biểu hiện nào trên cơ thể? Em hãy đề xuất biện pháp phòng chống các bệnh này. 2. Vận dụng hiểu biết về các tuyến nội tiết, em hãy đề xuất các biện pháp bảo vệ sức khoẻ bản thân và gia đình, nêu tác dụng của các biện pháp đó. 3. Tìm hiểu một số bệnh nội tiết thường gặp ở địa phương theo gợi ý trong Bảng 38.1 (SGK trang 159)."
+    },
+    {
+     "ma": "B38.C4",
+     "trang": 159,
+     "nhom": "Em có thể",
+     "dang": "CAU_NHO",
+     "de": "Lựa chọn được khẩu phần ăn phù hợp để phòng chống các bệnh về hệ nội tiết."
+    }
+   ]
+  },
+  {
+   "chuong": "Chương VII. Sinh học cơ thể người",
+   "bai": "Bài 39. Da và điều hoà thân nhiệt ở người",
+   "cac_cau": [
+    {
+     "ma": "B39.C1",
+     "trang": 160,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Nhiệt độ cơ thể tăng cao hoặc hạ thấp quá mức đều là bất thường. Nhiệt độ cơ thể ổn định có vai trò gì và yếu tố nào tham gia duy trì sự ổn định đó?"
+    },
+    {
+     "ma": "B39.C2",
+     "trang": 161,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "1. Quan sát Hình 39.1 (cấu tạo của da; SGK trang 160), em hãy xác định các thành phần của lớp biểu bì, lớp bì và lớp mỡ dưới da. 2. Nêu chức năng các thành phần của da."
+    },
+    {
+     "ma": "B39.C3",
+     "trang": 161,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "1. Vì sao nói giữ gìn vệ sinh môi trường cũng là một biện pháp bảo vệ da? 2. Vận dụng những hiểu biết về da, nêu các biện pháp chăm sóc, bảo vệ và trang điểm da an toàn."
+    },
+    {
+     "ma": "B39.C4",
+     "trang": 162,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Tìm hiểu một số bệnh về da trong trường học hoặc khu dân cư rồi hoàn thành thông tin theo mẫu Bảng 39.1 (tên bệnh, số người mắc, biện pháp phòng chống; SGK trang 162)."
+    },
+    {
+     "ma": "B39.C5",
+     "trang": 162,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Em hãy tìm hiểu và nêu một số thành tựu ghép da trong y học."
+    },
+    {
+     "ma": "B39.C6",
+     "trang": 162,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Về đo thân nhiệt bằng nhiệt kế điện tử: 1. Đọc giá trị đo thân nhiệt của bản thân và nhận xét về giá trị đo. 2. Cho biết ý nghĩa của việc đo thân nhiệt."
+    },
+    {
+     "ma": "B39.C7",
+     "trang": 163,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "1. Duy trì ổn định thân nhiệt ở người có vai trò gì? Nêu các cơ chế duy trì thân nhiệt. 2. Trình bày vai trò của da và hệ thần kinh trong điều hoà thân nhiệt."
+    },
+    {
+     "ma": "B39.C8",
+     "trang": 163,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Cho những hoạt động sau: trồng cây xanh, chống nóng cho nhà ở, sử dụng quạt, mặc áo ấm, luyện tập thể dục, thể thao, sử dụng điều hoà hai chiều. Hoạt động nào có vai trò chống nóng, hoạt động nào có vai trò chống lạnh cho cơ thể?"
+    },
+    {
+     "ma": "B39.C9",
+     "trang": 164,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Thảo luận theo nhóm về cách xử lí tình huống khi gặp một người bị say nắng (cảm nóng) và một người bị cảm lạnh."
+    }
+   ]
+  },
+  {
+   "chuong": "Chương VII. Sinh học cơ thể người",
+   "bai": "Bài 40. Sinh sản ở người",
+   "cac_cau": [
+    {
+     "ma": "B40.C1",
+     "trang": 165,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Để duy trì nòi giống, mọi sinh vật đều trải qua quá trình sinh sản. Ở người, cơ quan và hệ cơ quan nào đảm nhận vai trò sinh sản?"
+    },
+    {
+     "ma": "B40.C2",
+     "trang": 166,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Đọc thông tin kết hợp quan sát Hình 40.1 và 40.2 (cơ quan sinh dục nam và nữ; SGK trang 165-166) để thực hiện yêu cầu và trả lời câu hỏi sau: 1. Trình bày chức năng của các cơ quan sinh dục nam và nữ. 2. Tinh hoàn nằm trong bìu có thuận lợi gì cho việc sản sinh tinh trùng?"
+    },
+    {
+     "ma": "B40.C3",
+     "trang": 166,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Em hãy phân biệt thụ tinh và thụ thai."
+    },
+    {
+     "ma": "B40.C4",
+     "trang": 167,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Dựa vào thông tin trong Hình 40.4 (chu kì kinh nguyệt; SGK trang 167), em hãy mô tả sự thay đổi độ dày niêm mạc tử cung trong chu kì kinh nguyệt. Theo em, sự thay đổi này có ý nghĩa gì?"
+    },
+    {
+     "ma": "B40.C5",
+     "trang": 167,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Tìm hiểu vai trò và các biện pháp tránh thai: 1. Cần sử dụng các biện pháp tránh thai trong những trường hợp nào? Tại sao? 2. Nêu các biện pháp tránh thai và tác dụng của mỗi biện pháp đó theo mẫu Bảng 40.1 (SGK trang 167)."
+    },
+    {
+     "ma": "B40.C6",
+     "trang": 168,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Tìm hiểu tác hại và biện pháp phòng chống các bệnh lây truyền qua đường sinh dục: 1. Các bệnh lây truyền qua đường sinh dục có thể gây ra những hậu quả gì? 2. Từ những hiểu biết về các bệnh lây truyền qua đường sinh dục, em hãy đề xuất biện pháp phòng chống các bệnh đó."
+    },
+    {
+     "ma": "B40.C7",
+     "trang": 168,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "1. Bảo vệ sức khoẻ sinh sản vị thành niên có ý nghĩa gì? 2. Em có thể vận dụng những kiến thức về sinh sản để bảo vệ sức khoẻ bản thân như thế nào?"
+    }
+   ]
+  },
+  {
+   "chuong": "Chương VIII. Sinh vật và môi trường",
+   "bai": "Bài 41. Môi trường và các nhân tố sinh thái",
+   "cac_cau": [
+    {
+     "ma": "B41.C1",
+     "trang": 170,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Một hồ nước, một rừng cây, thậm chí một thân cây cũng được coi là môi trường sống của sinh vật. Vậy, môi trường sống là gì? Có những loại môi trường sống nào? Những nhân tố nào tạo nên môi trường sống?"
+    },
+    {
+     "ma": "B41.C2",
+     "trang": 170,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Quan sát Hình 41.1 (môi trường sống; SGK trang 170), em hãy kể tên các nhân tố trong môi trường sống của cây xanh."
+    },
+    {
+     "ma": "B41.C3",
+     "trang": 171,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Em hãy xác định các loại môi trường sống được thể hiện trong Hình 41.2 (SGK trang 171)."
+    },
+    {
+     "ma": "B41.C4",
+     "trang": 172,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "1. Phân loại các nhân tố trong môi trường sống của cây xanh ở Hình 41.1 vào nhóm nhân tố vô sinh và nhân tố hữu sinh. 2. Tại sao nói trong nhóm nhân tố hữu sinh thì con người là nhân tố có ảnh hưởng lớn nhất tới đời sống của nhiều loài sinh vật?"
+    },
+    {
+     "ma": "B41.C5",
+     "trang": 173,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "1. Ở một địa phương, người ta có ý định nhập nội ba loài cá (A, B, C) về nuôi. Nhiệt độ trung bình trong năm tại đây dao động từ 15 °C đến 30 °C. Dựa vào thông tin về giới hạn sinh thái nhân tố nhiệt độ của mỗi loài cá (Hình 41.4, SGK trang 173: loài A khoảng 0 – 14 °C, loài B khoảng 5 – 38 °C, loài C khoảng 34 – 45 °C), hãy cho biết nên nhập loại cá nào để nuôi tại đây và giải thích. 2. Tại sao một số loài cây nếu được trồng dưới tán rừng thì cho năng suất cao hơn khi trồng ở nơi trống trải?"
+    }
+   ]
+  },
+  {
+   "chuong": "Chương VIII. Sinh vật và môi trường",
+   "bai": "Bài 42. Quần thể sinh vật",
+   "cac_cau": [
+    {
+     "ma": "B42.C1",
+     "trang": 174,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Trong thế giới sống, quần thể sinh vật là cấp độ tổ chức thấp nhất trong các cấp độ tổ chức trên cơ thể. Quần thể sinh vật là gì? Quần thể có những đặc trưng cơ bản nào?"
+    },
+    {
+     "ma": "B42.C2",
+     "trang": 174,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "1. Quan sát Hình 42.1 (một số quần thể sinh vật trong ruộng lúa; SGK trang 174), cho biết trong ruộng lúa này có thể có những quần thể sinh vật nào? 2. Lấy một ví dụ về quần thể sinh vật trong tự nhiên và một quần thể vật nuôi hoặc cây trồng."
+    },
+    {
+     "ma": "B42.C3",
+     "trang": 175,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Hình 42.2 biểu thị kích thước của bốn quần thể cùng sống trong một khu rừng (voi 22 con, hươu 198 con, thỏ 320 con, chuột 1 024 con; SGK trang 175). Em hãy quan sát hình, so sánh và rút ra nhận xét về tương quan giữa kích thước cơ thể và kích thước quần thể của voi, hươu, thỏ, chuột."
+    },
+    {
+     "ma": "B42.C4",
+     "trang": 175,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Dựa vào thông tin trong Bảng 42.1 (lim xanh 11 250 cá thể trên 15 ha; bắp cải 3 000 cá thể trên 750 m^2; cá chép 120 000 cá thể trong 60 000 m^3; SGK trang 175), hãy xác định mật độ cá thể của mỗi quần thể được nhắc đến."
+    },
+    {
+     "ma": "B42.C5",
+     "trang": 175,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Quan sát Hình 42.3 (các kiểu tháp tuổi của quần thể: tháp phát triển, tháp ổn định, tháp suy thoái; SGK trang 175), hãy nhận xét mối tương quan về số lượng cá thể của nhóm tuổi trước sinh sản và nhóm tuổi sinh sản trong mỗi kiểu tháp tuổi."
+    },
+    {
+     "ma": "B42.C6",
+     "trang": 176,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "1. Tại sao bảo vệ môi trường sống của quần thể chính là bảo vệ quần thể? Cho ví dụ về việc bảo vệ môi trường sống của quần thể. 2. Em hãy đề xuất biện pháp bảo vệ đối với các quần thể có nguy cơ tuyệt chủng."
+    }
+   ]
+  },
+  {
+   "chuong": "Chương VIII. Sinh vật và môi trường",
+   "bai": "Bài 43. Quần xã sinh vật",
+   "cac_cau": [
+    {
+     "ma": "B43.C1",
+     "trang": 177,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Trong một khoảng không gian xác định luôn có nhiều quần thể cùng tồn tại tạo nên một cấp độ tổ chức sống cao hơn, đó là quần xã sinh vật. Quần xã sinh vật là gì và có những đặc trưng cơ bản nào?"
+    },
+    {
+     "ma": "B43.C2",
+     "trang": 177,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "1. Kể tên một số quần thể có trong Hình 43.1 (quần xã sinh vật ở ao; SGK trang 177). 2. Lấy thêm ví dụ về quần xã sinh vật và chỉ ra các thành phần quần thể trong quần xã đó."
+    },
+    {
+     "ma": "B43.C3",
+     "trang": 178,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Hãy sắp xếp các quần xã trong Hình 43.2 (đồng cỏ, rừng nhiệt đới, rừng ôn đới, sa mạc; SGK trang 178) theo thứ tự giảm dần về độ đa dạng. Tại sao lại có sự khác biệt lớn về độ đa dạng giữa các quần xã này?"
+    },
+    {
+     "ma": "B43.C4",
+     "trang": 179,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "1. Lấy ví dụ về loài ưu thế trong quần xã. 2. Cho các loài sinh vật gồm lim xanh, gấu trắng, hổ, lạc đà, lúa nước, đước. Em hãy xác định loài đặc trưng tương ứng với các quần xã sinh vật: bắc cực, sa mạc, rừng ngập mặn."
+    },
+    {
+     "ma": "B43.C5",
+     "trang": 179,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Đọc thông tin và thảo luận nhóm về hiệu quả của các biện pháp dưới đây trong việc bảo vệ đa dạng sinh học trong quần xã: 1. Bảo vệ môi trường sống của các loài trong quần xã. 2. Cấm săn bắn động vật hoang dã có nguy cơ tuyệt chủng. 3. Trồng rừng ngập mặn ven biển. 4. Phòng chống cháy rừng."
+    }
+   ]
+  },
+  {
+   "chuong": "Chương VIII. Sinh vật và môi trường",
+   "bai": "Bài 44. Hệ sinh thái",
+   "cac_cau": [
+    {
+     "ma": "B44.C1",
+     "trang": 180,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Một khu rừng hay bể cá cảnh đều được xem là một hệ sinh thái. Vậy, hệ sinh thái là gì?"
+    },
+    {
+     "ma": "B44.C2",
+     "trang": 180,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Em hãy lấy ví dụ về hệ sinh thái."
+    },
+    {
+     "ma": "B44.C3",
+     "trang": 181,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "1. Đọc thông tin và quan sát Hình 44.1 (thành phần cấu trúc của hệ sinh thái; SGK trang 181), phân tích thành phần của một hệ sinh thái. 2. Em hãy lấy ví dụ các loài sinh vật thuộc nhóm sinh vật sản xuất, sinh vật tiêu thụ và sinh vật phân giải trong một hệ sinh thái."
+    },
+    {
+     "ma": "B44.C4",
+     "trang": 182,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Cho các hệ sinh thái sau: hệ sinh thái đồng cỏ, hệ sinh thái suối, hệ sinh thái rừng lá rộng ôn đới, hệ sinh thái rừng ngập mặn, hệ sinh thái ruộng bậc thang, hệ sinh thái rạn san hô. Em hãy xếp các hệ sinh thái trên vào kiểu hệ sinh thái phù hợp."
+    },
+    {
+     "ma": "B44.C5",
+     "trang": 182,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Quan sát Hình 44.3 (chuỗi thức ăn cỏ – châu chấu – ếch – rắn – đại bàng; SGK trang 182), phân tích mối quan hệ dinh dưỡng giữa châu chấu và các sinh vật đứng trước và sau nó trong chuỗi thức ăn."
+    },
+    {
+     "ma": "B44.C6",
+     "trang": 182,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Lấy ví dụ và vẽ sơ đồ về lưới thức ăn."
+    },
+    {
+     "ma": "B44.C7",
+     "trang": 182,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Quan sát Hình 44.4 (tháp sinh thái: ngô 65 000 cây/ha, cào cào 1 200 con/ha, ếch 80 con/ha, rắn 12 con/ha, đại bàng 1 con/ha; SGK trang 182), cho biết đây là loại tháp sinh thái nào?"
+    },
+    {
+     "ma": "B44.C8",
+     "trang": 184,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Sau khi điều tra thành phần quần xã sinh vật trong một hệ sinh thái và hoàn thành Bảng 44.1, hãy phân tích mối quan hệ giữa các sinh vật quan sát được trong hệ sinh thái."
+    }
+   ]
+  },
+  {
+   "chuong": "Chương VIII. Sinh vật và môi trường",
+   "bai": "Bài 45. Sinh quyển",
+   "cac_cau": [
+    {
+     "ma": "B45.C1",
+     "trang": 185,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Trái Đất là ngôi nhà chung của hàng triệu loài sinh vật. Cho đến nay, Trái Đất là nơi duy nhất trong vũ trụ được biết đến là có sự sống. Các loài sinh vật sinh sống ở đâu trên Trái Đất?"
+    },
+    {
+     "ma": "B45.C2",
+     "trang": 185,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Nêu khái niệm và các thành phần cấu tạo chính của sinh quyển."
+    },
+    {
+     "ma": "B45.C3",
+     "trang": 186,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Quan sát Hình 45.2 (các khu sinh học trên cạn; SGK trang 186), cho biết việc hình thành các khu sinh học trên cạn khác nhau do những yếu tố nào quyết định."
+    },
+    {
+     "ma": "B45.C4",
+     "trang": 187,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Thảo luận nhóm, lấy ví dụ về sinh vật ở các khu sinh học."
+    }
+   ]
+  },
+  {
+   "chuong": "Chương VIII. Sinh vật và môi trường",
+   "bai": "Bài 46. Cân bằng tự nhiên",
+   "cac_cau": [
+    {
+     "ma": "B46.C1",
+     "trang": 188,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Cơ thể có quá trình tự điều chỉnh thích ứng với môi trường, ví dụ: quá trình điều hoà thân nhiệt ở động vật hằng nhiệt. Ở cấp độ tổ chức sống trên cơ thể cũng có quá trình tự điều chỉnh để đạt được trạng thái cân bằng tự nhiên. Cân bằng tự nhiên là gì? Cân bằng tự nhiên biểu hiện như thế nào và có ý nghĩa ra sao đối với việc duy trì sự sống?"
+    },
+    {
+     "ma": "B46.C2",
+     "trang": 188,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Khi số lượng cá thể của quần thể tăng lên quá mức, quần thể sẽ tự điều chỉnh như thế nào để đưa số lượng cá thể trở về mức cân bằng?"
+    },
+    {
+     "ma": "B46.C3",
+     "trang": 189,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Quan sát Hình 46.2 (hiện tượng khống chế sinh học giữa hai quần thể thỏ tuyết và linh miêu; SGK trang 189), em hãy cho biết số lượng cá thể thỏ tuyết và linh miêu khống chế lẫn nhau như thế nào."
+    },
+    {
+     "ma": "B46.C4",
+     "trang": 190,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "1. Quan sát Hình 46.3 (sự phân tầng của các quần thể thực vật trong rừng mưa nhiệt đới; SGK trang 189), cho biết sự phân tầng của các quần thể thực vật trong hình phù hợp như thế nào với điều kiện môi trường. 2. Quan sát Hình 46.4 (mối quan hệ dinh dưỡng giữa các loài trong quần xã; SGK trang 189), phân tích một số mối quan hệ về dinh dưỡng giữa các loài và cho biết loài sinh vật nào có ảnh hưởng lớn nhất đến sự tồn tại của các loài khác trong quần xã. Tại sao?"
+    },
+    {
+     "ma": "B46.C5",
+     "trang": 190,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Đọc thông tin về nguyên nhân mất cân bằng tự nhiên kết hợp thảo luận nhóm để thực hiện các yêu cầu sau: 1. Trong các nguyên nhân trên, hãy cho biết những nguyên nhân nào có tác động mạnh gây mất cân bằng tự nhiên ở Việt Nam. 2. Tìm hiểu và nêu thêm các biện pháp bảo vệ, duy trì cân bằng tự nhiên."
+    }
+   ]
+  },
+  {
+   "chuong": "Chương VIII. Sinh vật và môi trường",
+   "bai": "Bài 47. Bảo vệ môi trường",
+   "cac_cau": [
+    {
+     "ma": "B47.C1",
+     "trang": 191,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Năm 1972, lần đầu tiên Liên hợp quốc tổ chức Hội nghị về Môi trường con người phản ánh tính cấp bách đối với một số vấn đề môi trường trên toàn cầu. Môi trường sống của con người đang bị đe doạ như thế nào? Cần có những biện pháp gì để bảo vệ môi trường?"
+    },
+    {
+     "ma": "B47.C2",
+     "trang": 191,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Phân tích tác động của các hoạt động dưới đây đến môi trường trong thời kì xã hội nông nghiệp. a) Cày, xới đất canh tác. b) Định cư tại một khu vực nhất định. c) Thuần hoá cây dại, thú hoang thành cây trồng, vật nuôi. d) Xây dựng hệ thống kênh, mương,... để tưới tiêu nước."
+    },
+    {
+     "ma": "B47.C3",
+     "trang": 192,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Đọc các thông tin và quan sát Hình 47.1 (hoạt động trồng trọt qua một số thời kì phát triển xã hội; SGK trang 192), thảo luận để thực hiện các yêu cầu sau: 1. Trình bày tác động của hoạt động trồng trọt đến môi trường qua các thời kì phát triển xã hội. 2. Liệt kê một số hoạt động của con người trong các thời kì phát triển xã hội làm suy thoái hoặc có tác dụng bảo vệ, cải tạo môi trường tự nhiên."
+    },
+    {
+     "ma": "B47.C4",
+     "trang": 193,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "1. Đọc thông tin và quan sát Hình 47.2 (một số hình ảnh về nguyên nhân gây ô nhiễm môi trường; SGK trang 193), chỉ ra một số nguyên nhân gây ô nhiễm môi trường. 2. Những hoạt động nào tại trường học, gia đình và địa phương em có thể gây ô nhiễm môi trường?"
+    },
+    {
+     "ma": "B47.C5",
+     "trang": 193,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Đọc thông tin, thảo luận và làm việc theo nhóm để thực hiện các yêu cầu sau: 1. Điều tra về tình trạng ô nhiễm môi trường ở địa phương, nêu các biểu hiện và tìm hiểu nguyên nhân gây ra tình trạng đó rồi hoàn thành thông tin theo mẫu Bảng 47.1 (môi trường nước, đất, không khí; SGK trang 193). 2. Dựa vào kết quả điều tra và những kiến thức đã học, em hãy đề xuất các biện pháp hạn chế ô nhiễm môi trường ở địa phương và cho biết việc phân loại rác thải từ gia đình giúp ích gì trong việc hạn chế ô nhiễm môi trường."
+    },
+    {
+     "ma": "B47.C6",
+     "trang": 194,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Em hãy đề xuất thêm các biện pháp thích ứng với biến đổi khí hậu có thể thực hiện ở địa phương."
+    }
+   ]
+  }
+ ]
+}

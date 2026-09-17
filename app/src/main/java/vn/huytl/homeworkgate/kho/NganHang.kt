@@ -44,9 +44,19 @@ object NganHang {
     /**
      * Cac quyen da nap.
      *
-     * Moi co Toan 8 tap mot. Ba Huy chon lam chac mot mon truoc roi tinh tiep; cac
-     * mon khac van chay duong cu - con chon "Bai khac" luc nop, va so cai lay de
-     * bai da chuan hoa lam khoa nhu tu truoc den gio.
+     * Toan 8 ca hai tap va Khoa hoc tu nhien 8. Cac mon khac van chay duong cu -
+     * con chon "Bai khac" luc nop, va so cai lay de bai da chuan hoa lam khoa nhu
+     * tu truoc den gio.
+     *
+     * Thu tu trong danh sach la thu tu hien ra man chon sach, nen tap mot dung
+     * truoc tap hai.
+     *
+     * KHTN khong in ma cau nhu sach Toan: sach chi danh so 1, 2, 3 trong tung o
+     * "Câu hỏi", het o lai dem lai tu dau. Nen ma cau o day la ma tu dat, dang
+     * "B12.C3" - cau thu ba cua bai 12, dem theo thu tu in trong bai. Tu dat nghia
+     * la KHONG duoc xep lai hay chen them cau vao giua khi sua file: lam the la cac
+     * cau sau no doi ma, va so cai khong nhan ra cau da tra gio nua. Them cau moi
+     * thi them so tiep theo o cuoi bai.
      */
     val SACH = listOf(
         Sach(
@@ -54,6 +64,18 @@ object NganHang {
             mon = "Toán",
             ten = "SGK Toán 8 — tập một",
             file = "nganhang/toan8t1.json"
+        ),
+        Sach(
+            nguon = "toan8t2",
+            mon = "Toán",
+            ten = "SGK Toán 8 — tập hai",
+            file = "nganhang/toan8t2.json"
+        ),
+        Sach(
+            nguon = "khtn8",
+            mon = "Khoa học tự nhiên",
+            ten = "SGK Khoa học tự nhiên 8",
+            file = "nganhang/khtn8.json"
         )
     )
 
@@ -161,6 +183,41 @@ object NganHang {
             return null
         }
         return Quyen(ban, cac)
+    }
+
+    /** So cau da lam dung tren tong so cau cua mot quyen. */
+    fun tienBo(context: Context, nguon: String): Pair<Int, Int> {
+        val kho = KhoBai.get(context)
+        val han = System.currentTimeMillis() - 365L * 24 * 60 * 60_000L
+        return kho.soCauDaXongCua(nguon, han) to kho.soCauCua(nguon)
+    }
+
+    /**
+     * Cau nen lam them, gop tu moi quyen cua mot mon.
+     *
+     * Toan co hai tap: giua nam hoc con dang lam tap hai, con phan lon cau chua lam
+     * lai nam o tap mot. Lay deu ca hai roi tron theo thu tu quyen thi danh sach
+     * lam them van co mat quyen dang hoc.
+     *
+     * Danh sach tron nhieu quyen, nhung MOT LAN NOP chi mang ma cua mot quyen -
+     * [PhamVi] chi co mot [PhamVi.nguon]. Man chon bai se gom cac cau cung quyen voi
+     * cau dau tien, giong duong on tap.
+     */
+    fun cauNenLamThemCuaMon(context: Context, mon: String, gioiHan: Int = 12): List<CauHoi> {
+        val quyen = sachCua(mon)
+        if (quyen.size <= 1) {
+            val nguon = quyen.firstOrNull()?.nguon ?: return emptyList()
+            return cauNenLamThem(context, nguon, gioiHan)
+        }
+        // Chia deu suat cho tung quyen, lam tron len de khong quyen nao bi bo troi.
+        val moiQuyen = (gioiHan + quyen.size - 1) / quyen.size
+        return quyen.flatMap { cauNenLamThem(context, it.nguon, moiQuyen) }.take(gioiHan)
+    }
+
+    /** Cau nen lam them: chua lam, uu tien bai con vua sai. */
+    fun cauNenLamThem(context: Context, nguon: String, gioiHan: Int = 12): List<CauHoi> {
+        val han = System.currentTimeMillis() - 365L * 24 * 60 * 60_000L
+        return KhoBai.get(context).cacCauNenLamThem(nguon, han, gioiHan)
     }
 
     fun cacTrang(context: Context, nguon: String): List<TrangSach> =

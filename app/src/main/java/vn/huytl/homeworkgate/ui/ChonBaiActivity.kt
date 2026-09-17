@@ -22,6 +22,8 @@ import vn.huytl.homeworkgate.data.SoCaiBai
 import vn.huytl.homeworkgate.data.ThoiKhoaBieu
 import vn.huytl.homeworkgate.databinding.StActivityChonBaiBinding
 import vn.huytl.homeworkgate.kho.CauHoi
+import android.widget.EditText
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import vn.huytl.homeworkgate.kho.KhoBai
 import vn.huytl.homeworkgate.kho.NganHang
 import vn.huytl.homeworkgate.kho.PhamVi
@@ -53,7 +55,7 @@ import java.util.Calendar
 class ChonBaiActivity : AppCompatActivity() {
 
     /** Bon buoc, dung thu tu con di qua. */
-    private enum class Buoc { MON, SACH, TRANG, CAU }
+    private enum class Buoc { MON, SACH, TRANG, CAU, ON_TAP, LAM_THEM }
 
     private lateinit var binding: StActivityChonBaiBinding
 
@@ -125,6 +127,8 @@ class ChonBaiActivity : AppCompatActivity() {
             Buoc.SACH -> Buoc.MON
             Buoc.TRANG -> Buoc.SACH
             Buoc.CAU -> Buoc.TRANG
+            Buoc.ON_TAP -> Buoc.MON
+            Buoc.LAM_THEM -> Buoc.SACH
         }
         veLai()
     }
@@ -138,6 +142,8 @@ class ChonBaiActivity : AppCompatActivity() {
             Buoc.SACH -> veSach()
             Buoc.TRANG -> veTrang()
             Buoc.CAU -> veCau()
+            Buoc.ON_TAP -> veOnTap()
+            Buoc.LAM_THEM -> veLamThem()
         }
     }
 
@@ -151,6 +157,27 @@ class ChonBaiActivity : AppCompatActivity() {
         // dat chung o tren la con khoi phai doc het danh sach.
         val homNay = ThoiKhoaBieu.monTrongNgay(Calendar.getInstance().get(Calendar.DAY_OF_WEEK))
         val conLai = ThoiKhoaBieu.tatCaMon().filterNot { it in homNay }
+
+        // Cau tung sai ma da sua dung: moi con quay lai lam mot lan nua. Dat ngay dau
+        // man hinh chu khong giau trong menu - no la viec dang lam nhat o day, va neu
+        // phai di tim thi khong dua tre nao di tim.
+        lifecycleScope.launch {
+            val on = withContext(Dispatchers.IO) { SoCaiBai.cacCauDangOn(this@ChonBaiActivity) }
+            if (on.isEmpty() || buoc != Buoc.MON) return@launch
+            val dong = LayoutInflater.from(this@ChonBaiActivity)
+                .inflate(R.layout.st_dong_chon, binding.danhSach, false) as LinearLayout
+            dong.findViewById<TextView>(R.id.ten).text =
+                "Ôn lại ${on.size} câu đến hẹn"
+            dong.findViewById<TextView>(R.id.phu).apply {
+                text = "Đến hẹn nhớ lại. Làm bằng bút đỏ, đúng thì được cộng thêm giờ chơi"
+                visibility = View.VISIBLE
+            }
+            dong.setOnClickListener {
+                buoc = Buoc.ON_TAP
+                veLai()
+            }
+            binding.danhSach.addView(dong, 0)
+        }
 
         if (homNay.isNotEmpty()) {
             themChuong("Học hôm nay")
@@ -179,22 +206,101 @@ class ChonBaiActivity : AppCompatActivity() {
 
     // ----------------------------------------------------------------- buoc sach
 
+    /**
+     * Mot mon co the co nhieu quyen: Toan 8 co hai tap.
+     *
+     * So cau da lam ghi ngay tren dong cua tung quyen chu khong gop lai mot con so:
+     * "da lam 12/683" khong noi len gi, con "tap hai: 12/315" thi con biet minh dang
+     * do dang o dau. So nay lay tu kho nen ve sau dong moi dien vao.
+     */
     private fun veSach() {
         binding.tieuDe.text = "Bài $mon lấy ở đâu?"
-        binding.phuDe.text = ""
+        binding.phuDe.text = "Chọn đúng quyển và trang, máy chấm chắc hơn."
 
-        NganHang.sachCua(mon).forEach { s ->
-            themDong(ten = s.ten, phu = "Chọn đúng trang, máy chấm chắc hơn") {
+        val quyen = NganHang.sachCua(mon)
+        quyen.forEach { s ->
+            val dong = themDong(ten = s.ten, phu = "Chọn đúng trang, máy chấm chắc hơn") {
                 sach = s
                 trangChon.clear()
                 buoc = Buoc.TRANG
                 veLai()
+            }
+            lifecycleScope.launch {
+                val (xong, tong) = withContext(Dispatchers.IO) {
+                    NganHang.tienBo(this@ChonBaiActivity, s.nguon)
+                }
+                if (buoc != Buoc.SACH) return@launch
+                dong.findViewById<TextView>(R.id.phu).text = "Đã làm $xong/$tong câu"
             }
         }
         themDong(
             ten = "Bài khác",
             phu = "Vở bài tập, phiếu photo, đề cô cho riêng"
         ) { chupTuDo() }
+
+        // Duong lam them gop ca mon: con khong phai nho cau minh chua lam nam o tap
+        // nao. Mot lan nop van chi mang ma cua mot quyen - xem chupLamThem.
+        if (quyen.isEmpty()) return
+        themDong(
+            ten = "Làm thêm cho quen tay",
+            phu = "Câu chưa làm, ưu tiên bài con vừa sai"
+        ) {
+            sach = null
+            buoc = Buoc.LAM_THEM
+            veLai()
+        }
+    }
+
+    // ------------------------------------------------------------- buoc lam them
+
+    /**
+     * Cau chua lam, uu tien bai con vua sai.
+     *
+     * Sai mot cau roi chi sua dung moi cau do thi con vua du de qua, chua chac da
+     * hieu. Lam them mot cau khac cung bai moi la cho biet. Day la thu ma ngan hang
+     * cau hoi mo ra: truoc khi co no, app khong co cach nao biet con CHUA lam cau
+     * nao - no chi biet nhung cau con da nop.
+     */
+    private fun veLamThem() {
+        val quyen = NganHang.sachCua(mon)
+        if (quyen.isEmpty()) return
+        binding.tieuDe.text = "Làm thêm cho quen tay"
+        binding.phuDe.text = if (quyen.size == 1) quyen.first().ten else "Sách $mon trong máy"
+        daTich.clear()
+
+        lifecycleScope.launch {
+            val ct = this@ChonBaiActivity
+            val cau = withContext(Dispatchers.IO) { NganHang.cauNenLamThemCuaMon(ct, mon) }
+            if (cau.isEmpty()) {
+                binding.danhSach.removeAllViews()
+                themChuong("Con làm hết sách rồi")
+                return@launch
+            }
+            cacCau = cau
+            daXong = emptySet()
+            canSua = emptySet()
+
+            binding.danhSach.removeAllViews()
+            binding.dayNut.visibility = View.VISIBLE
+            var baiCu = ""
+            var nguonCu = ""
+            cau.forEach { c ->
+                // Danh sach nay tron nhieu quyen: khong ghi ten quyen thi "Bài 1" cua
+                // tap mot va "Bài 21" cua tap hai nam canh nhau ma khong biet la hai
+                // quyen khac nhau - va con chi nop duoc mot quyen mot lan.
+                if (quyen.size > 1 && c.nguon != nguonCu) {
+                    themChuong(NganHang.sachTheoNguon(c.nguon)?.ten ?: c.nguon)
+                    nguonCu = c.nguon
+                    baiCu = ""
+                }
+                if (c.bai.isNotBlank() && c.bai != baiCu) {
+                    themChuong("${c.bai} · trang ${c.trang}")
+                    baiCu = c.bai
+                }
+                themCau(c)
+            }
+            capNhatNut()
+        }
     }
 
     // ---------------------------------------------------------------- buoc trang
@@ -216,10 +322,43 @@ class ChonBaiActivity : AppCompatActivity() {
             }
             binding.danhSach.removeAllViews()
             binding.dayNut.visibility = View.VISIBLE
-            cacTrang.forEach { t -> themOTrang(t) }
+            veDanTrang(cacTrang)
             capNhatNut()
         }
     }
+
+    /**
+     * Ve danh sach trang thanh tung cum, khong do het mot lan.
+     *
+     * Toan 8 tap mot co 83 trang co bai tap. Dung het 83 dong mot luc thi luong giao
+     * dien ban mot nhip thay ro - ma day dung la luc con vua bam vao, nen no se bam
+     * them lan nua tuong may khong an. Ve hai muoi dong roi nhuong luong lai, cuon
+     * den dau thi phan sau da ve xong den do.
+     *
+     * Chen ten chuong vao giua: tam muoi ba dong so trang lien tuc thi khong biet
+     * dang o dau trong quyen, ma co giao thuong noi "chuong II trang 36".
+     */
+    private fun veDanTrang(cacTrang: List<TrangSach>, tu: Int = 0, chuongCu: String = "") {
+        var chuong = chuongCu
+        val den = minOf(tu + MOI_CUM, cacTrang.size)
+        for (i in tu until den) {
+            val t = cacTrang[i]
+            if (t.chuong.isNotBlank() && t.chuong != chuong) {
+                themChuong(t.chuong)
+                chuong = t.chuong
+            }
+            themOTrang(t)
+        }
+        if (den < cacTrang.size) {
+            binding.danhSach.post {
+                // Con bam Quay lai giua chung thi bo do, dung ve tiep vao man khac.
+                if (buoc == Buoc.TRANG) veDanTrang(cacTrang, den, chuong)
+            }
+        }
+    }
+
+    /** Moi nhip ve bay nhieu dong. */
+    private val MOI_CUM = 20
 
     private fun themOTrang(t: TrangSach) {
         val o = LayoutInflater.from(this)
@@ -232,6 +371,47 @@ class ChonBaiActivity : AppCompatActivity() {
             capNhatNut()
         }
         binding.danhSach.addView(o)
+    }
+
+    // -------------------------------------------------------------- buoc on tap
+
+    /**
+     * Cac cau con tung sai, da sua dung, va da DEN HEN nho lai.
+     *
+     * Khong khoa cau nao ca - o day moi cau deu la cau da tra gio roi, va do chinh
+     * la dieu kien de duoc on. Danh sach chi hien cau den hen, nen con khong phai
+     * tu chon xem nen on cai nao: den hen thi no nam day, chua den thi khong.
+     */
+    private fun veOnTap() {
+        binding.tieuDe.text = "Ôn lại câu từng sai"
+        binding.phuDe.text = "Làm lại trong vở bằng BÚT ĐỎ rồi chụp. Đúng thì được " +
+            "cộng thêm giờ chơi. Viết bút thường thì máy không tính giờ."
+        daTich.clear()
+
+        lifecycleScope.launch {
+            val ct = this@ChonBaiActivity
+            val cau = withContext(Dispatchers.IO) {
+                KhoBai.get(ct).cacCauTheoId(SoCaiBai.cacCauDangOn(ct))
+            }
+            if (cau.isEmpty()) {
+                buoc = Buoc.MON
+                veLai()
+                return@launch
+            }
+            cacCau = cau
+            daXong = emptySet()
+            canSua = emptySet()
+
+            binding.danhSach.removeAllViews()
+            binding.dayNut.visibility = View.VISIBLE
+            themDong(ten = "Chọn hết ${cau.size} câu", phu = null) {
+                cau.forEach { daTich.add(it.id) }
+                veLai()
+                danhDauLaiOTich()
+            }
+            cau.forEach { themCau(it) }
+            capNhatNut()
+        }
     }
 
     // ------------------------------------------------------------------ buoc cau
@@ -322,6 +502,26 @@ class ChonBaiActivity : AppCompatActivity() {
     }
 
     private fun capNhatNut() {
+        if (buoc == Buoc.LAM_THEM) {
+            binding.nutChup.isEnabled = daTich.isNotEmpty()
+            binding.nutChup.text = if (daTich.isEmpty()) {
+                "Chọn ít nhất một câu"
+            } else {
+                "Chụp bài (${daTich.size} câu)"
+            }
+            binding.demTich.text = "Chọn câu con vừa làm xong."
+            return
+        }
+        if (buoc == Buoc.ON_TAP) {
+            binding.nutChup.isEnabled = daTich.isNotEmpty()
+            binding.nutChup.text = if (daTich.isEmpty()) {
+                "Chọn ít nhất một câu"
+            } else {
+                "Chụp bài ôn (${daTich.size} câu)"
+            }
+            binding.demTich.text = "Chọn câu con vừa làm lại."
+            return
+        }
         if (buoc == Buoc.TRANG) {
             binding.nutChup.isEnabled = trangChon.isNotEmpty()
             binding.nutChup.text = if (trangChon.isEmpty()) {
@@ -329,7 +529,7 @@ class ChonBaiActivity : AppCompatActivity() {
             } else {
                 "Xem câu ở ${keTenTrang()}"
             }
-            binding.demTich.text = "Cô giao trang nào thì tích trang đó."
+            binding.demTich.text = "Cô giao trang nào thì chọn trang đó."
             return
         }
         binding.nutChup.isEnabled = daTich.isNotEmpty()
@@ -339,7 +539,7 @@ class ChonBaiActivity : AppCompatActivity() {
             "Chụp bài (${daTich.size} câu)"
         }
         binding.demTich.text = if (daTich.isEmpty()) {
-            "Tích vào câu con vừa làm xong."
+            "Chọn câu con vừa làm xong."
         } else {
             "Đã chọn ${daTich.size} câu."
         }
@@ -355,6 +555,8 @@ class ChonBaiActivity : AppCompatActivity() {
     private fun chupTuDo() = moManChup(PhamVi(mon = mon))
 
     private fun chup() {
+        if (buoc == Buoc.ON_TAP) return chupOnTap()
+        if (buoc == Buoc.LAM_THEM) return chupLamThem()
         val s = sach ?: return chupTuDo()
         if (trangChon.isEmpty()) return chupTuDo()
         moManChup(
@@ -369,7 +571,135 @@ class ChonBaiActivity : AppCompatActivity() {
         )
     }
 
+    /**
+     * Chup bai lam them. Cau nam rai rac nhieu trang nen khai theo danh sach cau,
+     * khong theo trang. Van la bai moi nen tinh gio day du, khong phai nua nhu on.
+     *
+     * Danh sach lam them tron ca hai tap Toan, ma mot lan nop chi mang duoc ma cua
+     * mot quyen. Nen lay quyen cua cau dau tien va chi nop cac cau cung quyen do -
+     * giong [chupOnTap]. Con tich lan ca hai tap thi lan nay nop tap cua cau dau,
+     * lan sau quay lai nop tiep tap kia.
+     */
+    private fun chupLamThem() {
+        val chon = cacCau.filter { it.id in daTich }
+        if (chon.isEmpty()) return
+        val nguon = chon.first().nguon
+        val cungQuyen = chon.filter { it.nguon == nguon }
+        val sachDo = NganHang.sachTheoNguon(nguon)
+        moManChup(
+            PhamVi(
+                mon = sachDo?.mon ?: mon,
+                nguon = nguon,
+                tenNguon = sachDo?.ten.orEmpty(),
+                bai = "làm thêm ${cungQuyen.size} câu",
+                cauIds = cungQuyen.map { it.id }
+            )
+        )
+    }
+
+    /**
+     * Chup bai on. Tat ca deu la cau trong ngan hang nen deu co ma sach.
+     *
+     * Lay ten quyen theo cau dau: cau lenh gui AI ke ten mot quyen, tron hai quyen
+     * vao mot danh sach thi dong chu do noi sai. Con on cau cua hai quyen cung luc
+     * la chuyen hiem, va luc do chia lam hai lan nop cung khong sao.
+     */
+    private fun chupOnTap() {
+        val chon = cacCau.filter { it.id in daTich }
+        if (chon.isEmpty()) return
+        val nguon = chon.first().nguon
+        val cungQuyen = chon.filter { it.nguon == nguon }
+        val sachDo = NganHang.sachTheoNguon(nguon)
+        moManChup(
+            PhamVi(
+                mon = sachDo?.mon ?: cungQuyen.first().mon,
+                nguon = nguon,
+                tenNguon = sachDo?.ten.orEmpty(),
+                bai = "ôn lại câu từng sai",
+                cauIds = cungQuyen.map { it.id },
+                onTap = true
+            )
+        )
+    }
+
+    /**
+     * Truoc khi chup, hoi mot cau: cau nao con thay chua chac.
+     *
+     * VI SAO HOI. Cham bai cho biet con lam dung hay sai. Cau hoi nay cho biet mot
+     * thu khac va kho hon: con co BIET minh dang biet gi khong. Cau bao chac ma sai
+     * la cho nguy hiem nhat - con se khong quay lai xem no nua. Cau bao chua chac ma
+     * dung thi nguoc lai, do la cho con dang tu danh gia thap minh.
+     *
+     * KHONG DINH GI DEN SO PHUT, va phai giu dung nhu vay. Gan thuong vao "doan
+     * dung" thi lan sau con khai theo cai co loi chu khong theo cai no nghi, va cau
+     * hoi mat sach gia tri.
+     *
+     * Chi hoi khi danh sach con ngan. Mot trang trac nghiem ba muoi cau ma bat tich
+     * tung cau thi cau hoi tot den may cung thanh mot cai cua ai.
+     */
     private fun moManChup(pham: PhamVi) {
+        // Lan nop de SUA thi hoi cau khac: con da biet minh sai o day roi, hoi
+        // "chac hay chua chac" nua la thua. Hoi mot hop moi lan, khong bao gio hai.
+        val dangSua = pham.cauIds.any { it in canSua }
+        if (dangSua) return hoiSaiChoNao(pham)
+        if (pham.theoSach && !pham.onTap && pham.cauIds.size in 1..MAX_HOI_CHAC) {
+            return hoiChuaChac(pham)
+        }
+        chupThat(pham)
+    }
+
+    /**
+     * Truoc khi nop lai bai da sua, bat con goi ten cai sai cua chinh no.
+     *
+     * Mot dong thoi, khong cham dung sai, khong anh huong so phut. Goi ten duoc thi
+     * lan sau moi tranh duoc; ma khong goi ten duoc thi thuong la vi con chua sua
+     * that, chi chep lai dap an. Dong chu nay di thang sang Telegram cho Ba Huy.
+     *
+     * Bo qua duoc: bat buoc dien thi con se go mot chu cho xong, va luc do o nay
+     * vua vo dung vua thanh mot cai cua phai vuot qua moi lan nop.
+     */
+    private fun hoiSaiChoNao(pham: PhamVi) {
+        val o = EditText(this).apply {
+            hint = "Ví dụ: con đặt nhân tử chung sai ở dòng cuối"
+            setSingleLine(false)
+            maxLines = 3
+            val p = (20 * resources.displayMetrics.density).toInt()
+            setPadding(p, p / 2, p, p / 2)
+        }
+        MaterialAlertDialogBuilder(this)
+            .setTitle("Lần trước con sai ở đâu?")
+            .setView(o)
+            .setPositiveButton("Chụp bài") { _, _ ->
+                chupThat(pham.copy(conNoi = o.text.toString().trim().take(200)))
+            }
+            .setNegativeButton("Bỏ qua") { _, _ -> chupThat(pham) }
+            .show()
+    }
+
+    private fun hoiChuaChac(pham: PhamVi) {
+        val cac = KhoBai.get(this).cacCauTheoId(pham.cauIds)
+        if (cac.isEmpty()) return chupThat(pham)
+        val tick = BooleanArray(cac.size)
+        MaterialAlertDialogBuilder(this)
+            .setTitle("Câu nào con thấy chưa chắc?")
+            .setMultiChoiceItems(
+                cac.map { it.dongChon() }.toTypedArray(), tick
+            ) { _, i, c -> tick[i] = c }
+            .setPositiveButton("Chụp bài") { _, _ ->
+                chupThat(
+                    pham.copy(
+                        chuaChac = cac.filterIndexed { i, _ -> tick[i] }.map { it.id },
+                        daKhaiChac = true
+                    )
+                )
+            }
+            .setNegativeButton("Con chắc hết") { _, _ ->
+                chupThat(pham.copy(daKhaiChac = true))
+            }
+            .show()
+    }
+
+    private fun chupThat(pham: PhamVi) {
         daGui = true
         startActivity(
             Intent(this, CaptureActivity::class.java)
@@ -386,7 +716,18 @@ class ChonBaiActivity : AppCompatActivity() {
         binding.danhSach.addView(t)
     }
 
-    private fun themDong(ten: String, phu: String?, bam: () -> Unit) {
+    companion object {
+        /**
+         * Nhieu hon bay nhieu cau thi khong hoi "chua chac" nua.
+         *
+         * Mot trang trac nghiem ba muoi cau ma bat tich tung cau la mot cai cua ai
+         * dung truoc man chup, va con se bam bua cho xong.
+         */
+        private const val MAX_HOI_CHAC = 12
+    }
+
+    /** Tra ve chinh dong vua them, de cho nao co so lieu ve sau con dien vao. */
+    private fun themDong(ten: String, phu: String?, bam: () -> Unit): LinearLayout {
         val v = LayoutInflater.from(this)
             .inflate(R.layout.st_dong_chon, binding.danhSach, false) as LinearLayout
         v.findViewById<TextView>(R.id.ten).text = ten
@@ -396,5 +737,6 @@ class ChonBaiActivity : AppCompatActivity() {
         }
         v.setOnClickListener { bam() }
         binding.danhSach.addView(v)
+        return v
     }
 }
