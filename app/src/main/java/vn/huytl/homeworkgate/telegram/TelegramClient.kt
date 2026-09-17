@@ -207,15 +207,50 @@ class TelegramClient(private val token: String) {
     }
 
     /**
-     * Hoi thong tin mot nhom.
+     * Doi ban phim cua mot tin da gui.
      *
-     * Dung de doc hop thu cua ba noi. App ben may ba khong go lenh duoc - mot con
-     * bot khong bao gio thay tin nhan cua chinh no trong getUpdates - nen no dat
-     * lenh vao phan mo ta nhom va tin ghim. Ca hai cho do deu nam trong cau tra
-     * loi cua ham nay, mot lan goi la doc duoc het.
+     * Dung sau khi AI cham xong: luc gui anh thi chua ai biet bai nay dang may phut,
+     * nen nut to chi mang duoc con so mac dinh. Cham xong roi thi biet, va luc do
+     * sua lai nut cho khop con so do.
      */
-    fun getChat(chatId: Long): JSONObject =
-        call("getChat", JSONObject().put("chat_id", chatId).toJsonBody())
+    fun datBanPhim(chatId: Long, messageId: Long, markup: JSONObject) {
+        val payload = JSONObject().apply {
+            put("chat_id", chatId)
+            put("message_id", messageId)
+            put("reply_markup", markup)
+        }
+        runCatching { call("editMessageReplyMarkup", payload.toJsonBody()) }
+    }
+
+    /**
+     * Tai mot tam anh Ba Huy gui ve may, de con xem duoc trong khung chat.
+     *
+     * Hai lan goi: getFile lay duong dan, roi tai thang file do ve. Telegram de file
+     * o mot ten mien khac (api.telegram.org/file/bot...), khong phai cho goi lenh.
+     *
+     * Nuot moi loi: anh cua ba khong ve duoc thi con van con dong chu di kem, va
+     * duong nhan tin khong duoc phep ket vi mot lan tai hong.
+     */
+    fun taiAnh(fileId: String, dich: File): Boolean {
+        val duong = runCatching {
+            call("getFile", JSONObject().put("file_id", fileId).toJsonBody())
+                .optJSONObject("result")?.optString("file_path")
+        }.getOrNull()
+        if (duong.isNullOrBlank()) return false
+
+        val req = Request.Builder().url("$FILE_GOC$token/$duong").build()
+        return runCatching {
+            shortClient.newCall(req).execute().use { res ->
+                val than = res.body ?: return@use false
+                if (!res.isSuccessful) return@use false
+                dich.outputStream().use { ra -> than.byteStream().copyTo(ra) }
+                true
+            }
+        }.getOrDefault(false)
+    }
+
+    /** Lay file_id cua ban to nhat trong mot tin anh Ba Huy gui. */
+    fun fileIdToCuaTin(tin: JSONObject): String? = fileIdTo(tin)
 
     /** Sua lai noi dung mot tin da gui. Dung cho nhip tim, de khong rac chat. */
     fun editMessageText(chatId: Long, messageId: Long, text: String): Boolean {
@@ -258,6 +293,7 @@ class TelegramClient(private val token: String) {
         put(cmd("trangthai", "Còn bao nhiêu phút chơi, hôm nay đã duyệt bao nhiêu"))
         put(cmd("nhatky", "Hôm nay đã xảy ra những gì"))
         put(cmd("hoi", "Hôm nay Lê Hòa hỏi app AI những gì"))
+        put(cmd("loi", "Con hay sai kiểu gì, ví dụ /loi 7"))
         put(cmd("lichmai", "Buổi học kế tiếp có môn gì, cần mang vở nào"))
         put(cmd("soanlai", "Bắt soạn lại cặp vì soạn thiếu"))
         put(cmd("mo", "Mở màn chặn cho hết buổi học đang chặn"))
@@ -337,8 +373,18 @@ class TelegramClient(private val token: String) {
     companion object {
         private const val BASE = "https://api.telegram.org/bot"
 
+        /** Telegram de file o ten mien khac cho goi lenh. */
+        private const val FILE_GOC = "https://api.telegram.org/file/bot"
+
         /** Telegram giu ket noi toi da chung nay giay neu chua co update. */
-        const val POLL_TIMEOUT_SEC = 25
+        /**
+         * Hoi Telegram xong thi nam cho bao lau truoc khi no tra ve rong.
+         *
+         * Lenh Ba Huy go van toi tuc thi: co tin la Telegram tra loi ngay, khong
+         * doi het khoang nay. So nay chi quyet dinh bao lau phai bat tay lai mot
+         * lan khi khong co gi - 25 giay la 144 lan moi gio, 45 giay con 80 lan.
+         */
+        const val POLL_TIMEOUT_SEC = 45
 
         /**
          * Ban phim duoi anh bai tap. callback_data chi duoc 1-64 byte theo dac ta,
@@ -351,6 +397,36 @@ class TelegramClient(private val token: String) {
          * duoi cho chon nhanh so khac, de khong phai go /duyet 45 bang mot tay
          * trong luc dang lam viec khac. So phut di kem trong callback_data.
          */
+        /**
+         * Ban phim thay the sau khi AI cham xong, khi may KHONG tu duyet.
+         *
+         * Nut to mang dung con so AI vua tinh. Ban phim cu chi co con so mac dinh -
+         * thuong la 60 phut - vi luc gan no vao tin nop bai thi chua ai cham gi. Ba
+         * Huy doc thay "AI tinh 3 phut" roi nhin xuong thay nut "Duyet 60 phut" thi
+         * hoac phai go tay /duyet 3, hoac tac lua cho qua tay hai muoi lan.
+         */
+        fun banPhimSauCham(requestId: String, phutAi: Int): JSONObject {
+            val rows = JSONArray()
+            rows.put(JSONArray().put(JSONObject().apply {
+                put("text", "Duyệt $phutAi phút (máy tính)")
+                put("callback_data", "a:$requestId:$phutAi")
+            }))
+            val khac = listOf(15, 30, 45, 60, 90).filter { it != phutAi }.take(4)
+            rows.put(JSONArray().apply {
+                khac.forEach { phut ->
+                    put(JSONObject().apply {
+                        put("text", "$phut'")
+                        put("callback_data", "a:$requestId:$phut")
+                    })
+                }
+            })
+            rows.put(JSONArray().put(JSONObject().apply {
+                put("text", "Không duyệt")
+                put("callback_data", "r:$requestId")
+            }))
+            return JSONObject().put("inline_keyboard", rows)
+        }
+
         fun approvalKeyboard(requestId: String, minutes: Int): JSONObject {
             val rows = JSONArray()
 

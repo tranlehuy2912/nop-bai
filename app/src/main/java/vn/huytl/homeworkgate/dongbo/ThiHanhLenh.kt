@@ -11,11 +11,13 @@ import vn.huytl.homeworkgate.data.EndReason
 import vn.huytl.homeworkgate.data.GateState
 import vn.huytl.homeworkgate.data.GateStore
 import vn.huytl.homeworkgate.data.GioiHanApp
+import vn.huytl.homeworkgate.data.LuotBaNoi
 import vn.huytl.homeworkgate.data.Prefs
 import vn.huytl.homeworkgate.guard.ChuongTin
 import vn.huytl.homeworkgate.guard.ParentMode
 import vn.huytl.homeworkgate.guard.Permissions
 import vn.huytl.homeworkgate.telegram.ApprovalService
+import vn.huytl.homeworkgate.telegram.Notifier
 import vn.huytl.homeworkgate.telegram.TelegramClient
 import java.text.SimpleDateFormat
 import java.util.Date
@@ -23,7 +25,7 @@ import java.util.Locale
 import kotlin.concurrent.thread
 
 /**
- * Lam mot lenh gui tu app Bang dieu khien.
+ * Lam mot lenh gui tu app Bang dieu khien hay app Cho gio choi.
  *
  * Doi song doi voi phan xu ly lenh Telegram trong ApprovalService.handleMessage.
  * Khong gop hai duong lam mot vi ben do moi buoc deu ket thuc bang mot cau tra loi
@@ -45,6 +47,8 @@ object ThiHanhLenh {
         val baiId = d.getString(Duong.F_BAI_ID)
         val chu = d.getString(Duong.F_CHU).orEmpty()
         val taoLuc = d.getLong("tao") ?: 0L
+        // Thieu truong nay la ban Bang dieu khien cu, ma ban do thi chi Ba Huy cam.
+        val ai = d.getString(Duong.F_AI) ?: Nguoi.BA_HUY
 
         // Lenh go tu lau qua thi bo.
         //
@@ -54,6 +58,19 @@ object ThiHanhLenh {
         if (DongBo.quaCu(taoLuc)) {
             val luc = SimpleDateFormat("HH:mm", Locale("vi", "VN")).format(Date(taoLuc))
             return "Lệnh bấm lúc $luc, lâu quá rồi nên máy bỏ qua."
+        }
+
+        /*
+         * May ba noi chi go duoc lenh cho gio.
+         *
+         * Luat ben firestore.rules da chan tan goc roi - uid cua may ba nam trong
+         * uidsPhu chu khong phai uids, ma luat chi cho uidsPhu tao document co
+         * kieu CHO. Cho nay chan lan hai, cho truong hop luat bi dan de len bang
+         * ban cu trong console Firebase: luat thi sua bang tay o mot cho khong ai
+         * nhin thay, con dong nay thi di theo ban app.
+         */
+        if (ai == Nguoi.BA_NOI && kieu != Lenh.CHO) {
+            return "Máy bà nội chỉ cho giờ được thôi."
         }
 
         val gate = GateStore(context)
@@ -74,9 +91,11 @@ object ThiHanhLenh {
                 "Đã từ chối bài đó."
             }
 
-            // Gio thuong: khong tru vao han muc ngay, vi day la Ba Huy chu dong cho
-            // chu khong phai con doi bang bai tap.
-            Lenh.CHO -> cho(context, gate, prefs, phut)
+            // Gio thuong: khong tru vao han muc ngay, vi day la nguoi lon chu dong
+            // cho chu khong phai con doi bang bai tap.
+            Lenh.CHO -> cho(context, gate, prefs, phut, ai)
+
+            Lenh.CONG_VIEC_NHA -> congViecNha(context, gate, phut, chu)
 
             Lenh.BOT -> {
                 val bot = phut ?: 15
@@ -131,7 +150,7 @@ object ThiHanhLenh {
 
             Lenh.DONG_MAY -> {
                 ParentMode.disable(context)
-                DayLog.add(context, "Đóng chế độ Ba Huy")
+                DayLog.add(context, "Đóng chế độ ba Huy")
                 "Đã khoá máy lại."
             }
 
@@ -208,18 +227,87 @@ object ThiHanhLenh {
         else "Đã duyệt $duoc phút."
     }
 
-    private fun cho(context: Context, gate: GateStore, prefs: Prefs, phut: Int?): String {
+    /**
+     * Cong bu gio cho mot dot viec nha tablet da bo lo.
+     *
+     * KHI NAO CO LENH NAY: ba bam xong het trong luc tablet dang tat. Den luc tablet
+     * song lai thi ban da qua [Duong.QUA_CU_MS] nen no bo qua, con app ben ba thi giu
+     * nguyen dot do cho den khi tablet bao da nhan - ma tablet khong bao gio bao. Bang
+     * dieu khien nhin thay canh do va go lenh nay thay ba.
+     *
+     * Vi sao khong dung [Lenh.CHO] cho gon: cau nhat ky. Le Hoa doc nhat ky tren man
+     * hinh chinh, va "Xong viec nha (quet nha, rua chen): +20 phut" khac han "Ba Huy
+     * cho 20 phut" - mot cai la cong minh lam ra, mot cai la qua nguoi lon cho.
+     *
+     * Ghi nhat ky va cong gio deu nho [ThiHanhViecNha.congGio], dung cai ham ma duong
+     * binh thuong van dung, de hai duong khong de ra hai cau khac nhau.
+     */
+    private fun congViecNha(
+        context: Context,
+        gate: GateStore,
+        phut: Int?,
+        chu: String
+    ): String {
+        val bu = phut ?: return "Lệnh thiếu số phút, máy không cộng gì cả."
+        if (bu !in 1..240) return "Số phút phải trong khoảng 1 đến 240."
+        val ke = chu.ifBlank { "việc nhà" }
+        // Doc trang thai TRUOC khi cong: cap mot phieu moi doi cong sang GRANTED, nen
+        // hoi sau thi cau tra loi lai noi ve trang thai vua tao ra chu khong phai
+        // trang thai luc nhan lenh.
+        val dangChoi = gate.state == GateState.ACTIVE
+        val duoc = ThiHanhViecNha.congGio(context, gate, bu, ke)
+            ?: return khongCapDuoc(context)
+        return if (dangChoi) {
+            "Đang chơi nên cộng thẳng $bu phút, còn $duoc phút."
+        } else {
+            "Đã cộng $bu phút cho việc nhà."
+        }
+    }
+
+    /**
+     * Cho gio, tu Ba Huy hay tu ba noi.
+     *
+     * Chung mot ham vi phan viec that su lam thi y het nhau: cong vao phien dang
+     * chay, hoac cap mot phieu moi khong tru han muc ngay. Chi khac hai cho, va ca
+     * hai deu la ve ba noi: ba mot luot moi ngay, va cau ghi vao nhat ky phai noi
+     * dung ten nguoi cho - thu do Le Hoa doc tren man hinh chinh.
+     */
+    private fun cho(
+        context: Context,
+        gate: GateStore,
+        prefs: Prefs,
+        phut: Int?,
+        ai: String
+    ): String {
         val xin = phut ?: prefs.grantMinutes
+        val con = context.getString(R.string.child_name)
+        val baNoi = ai == Nguoi.BA_NOI
+        val nguoi = if (baNoi) "Bà nội" else "Ba Huy"
+
+        if (baNoi && LuotBaNoi.daChoHomNay(context)) {
+            return "Hôm nay bà cho một lần rồi, mai bà cho tiếp nhé."
+        }
+
+        /*
+         * Tinh luot cua ba NGAY LUC NAY, truoc ca khi biet cap duoc hay khong.
+         *
+         * Qua gio chot ma khong tinh luot thi ba bam lai duoc - ma bam lai cung the,
+         * van khong cap noi. Luc do ba ngoi bam mai mot cai nut khong bao gio chay.
+         */
+        if (baNoi) {
+            LuotBaNoi.ghiNhanDaCho(context)
+            Notifier.send(context, "Bà nội vừa bấm cho $con chơi $xin phút.")
+        }
 
         if (gate.state == GateState.ACTIVE) {
             val conLai = gate.extend(xin)
-            DayLog.add(context, "Ba Huy cho thêm $xin phút giữa phiên")
+            DayLog.add(context, "$nguoi cho thêm $xin phút giữa phiên")
             return "Đang chơi nên cộng thẳng $xin phút, còn ${conLai ?: 0} phút."
         }
 
         val duoc = gate.approve(wantedMinutes = xin, useQuota = false)
             ?: return khongCapDuoc(context)
-        DayLog.add(context, "Ba Huy cho $duoc phút")
+        DayLog.add(context, "$nguoi cho $duoc phút")
         ApprovalService.ensureRunning(context)
         return "Đã cho $duoc phút (chưa tính giờ)."
     }
@@ -258,6 +346,9 @@ object ThiHanhLenh {
             "gioNgu" -> {
                 val v = so?.coerceIn(0, 24 * 60 - 1) ?: return "Thiếu giờ."
                 prefs.hardStopMinuteOfDay = v
+                // Bao thuc canh moc di ngu phai doi theo, khong thi no con danh
+                // thuc theo gio cu cho den lan khoi dong may sau.
+                vn.huytl.homeworkgate.guard.MocGio.datLai(context)
                 "Giờ ngủ giờ là %02d:%02d.".format(v / 60, v % 60)
             }
             "gioDay" -> {

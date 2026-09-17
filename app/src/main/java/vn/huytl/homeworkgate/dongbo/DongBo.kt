@@ -8,6 +8,7 @@ import android.content.SharedPreferences
 import android.content.pm.PackageManager
 import android.os.BatteryManager
 import android.os.Handler
+import android.os.SystemClock
 import android.os.Looper
 import android.util.Log
 import com.google.firebase.FirebaseApp
@@ -25,7 +26,10 @@ import vn.huytl.homeworkgate.data.GateState
 import vn.huytl.homeworkgate.data.GateStore
 import vn.huytl.homeworkgate.data.GioiHanApp
 import vn.huytl.homeworkgate.data.NhatKyAi
+import vn.huytl.homeworkgate.kho.KhoBai
+import vn.huytl.homeworkgate.kho.TraLoi
 import vn.huytl.homeworkgate.data.Prefs
+import vn.huytl.homeworkgate.data.ViecNha
 import vn.huytl.homeworkgate.guard.ParentMode
 import vn.huytl.homeworkgate.guard.Permissions
 import java.security.SecureRandom
@@ -59,8 +63,6 @@ object DongBo {
 
     private const val TAG = "DongBo"
 
-    /** Lenh cu hon khoang nay thi bo, y het LENH_QUA_CU_MS ben ApprovalService. */
-    private const val LENH_QUA_CU_MS = 30 * 60_000L
 
     /** Ma ghep doi song bao lau. Du de cam dien thoai len go, khong du de quen. */
     private const val MA_GHEP_SONG_MS = 10 * 60_000L
@@ -68,8 +70,35 @@ object DongBo {
     /** Gom nhieu thay doi lien nhau thanh mot lan ghi. */
     private const val DOI_GOM_MS = 1200L
 
-    /** Nhip day lai du khong co gi doi, de dien thoai biet tablet con song. */
+    /**
+     * Gom lau nhat bay nhieu roi phai day, du thay doi van don den.
+     *
+     * Khong co tran nay thi viec gom bi doi vo han: man hinh chinh cua Le Hoa goi
+     * tick moi giay trong luc dang choi, tuc la lan hen nao cung bi huy truoc khi
+     * toi. Dung luc con dang cam may thi bang dieu khien ben dien thoai dung im.
+     */
+    private const val TRAN_GOM_MS = 5_000L
+
+    /**
+     * Nhip day lai du khong co gi doi, de dien thoai biet tablet con song.
+     *
+     * Ban ngay muoi lam phut mot lan, ban dem mot tieng. Nhip tim khong mang tin gi ca, no chi
+     * de ben dien thoai khoi bao "tablet chua bao ve lau roi"; ma tu [DEM_TU] den
+     * [DEM_DEN] thi khong ai mo bang dieu khien ra xem. Cat duoc hai muoi tu luot
+     * danh thuc mot dem, doi lai neu Ba Huy day nua dem mo app ra thi so lieu co the
+     * cu toi mot tieng - va man hinh ben do noi thang ra dieu do.
+     *
+     * Ben Bang dieu khien phai noi nguong "so lieu cu" cho khop, xem
+     * vn.huytl.bangdieukhien.data.TrangThai.CU_SAU_MS.
+     */
     private const val NHIP_TIM_MS = 15 * 60_000L
+
+    /** Nhip tim trong khung gio khuya. */
+    private const val NHIP_TIM_DEM_MS = 60 * 60_000L
+
+    /** Khung gio khuya, tinh bang phut trong ngay. Trung khung thoi nghe Telegram. */
+    private const val DEM_TU = 23 * 60
+    private const val DEM_DEN = 5 * 60
 
     private val tay = Handler(Looper.getMainLooper())
     private var ct: Context? = null
@@ -77,6 +106,7 @@ object DongBo {
 
     private var ngheLenh: ListenerRegistration? = null
     private var ngheGhep: ListenerRegistration? = null
+    private var ngheViecNha: ListenerRegistration? = null
 
     /** Cac lenh da lam trong lan chay nay, de khong lam hai lan neu xoa hut. */
     private val daLam = mutableSetOf<String>()
@@ -88,19 +118,87 @@ object DongBo {
      * thi bo don rac nuot mat sau vai phut, va tu do tablet im lang - khong loi,
      * khong dau hieu gi, chi la dien thoai khong bao gio cap nhat nua.
      */
-    private val ngheDoi = SharedPreferences.OnSharedPreferenceChangeListener { _, _ -> day() }
+    /**
+     * Nhung khoa trong prefs khong lien quan gi den cai day len Firestore.
+     *
+     * Ca app dung chung mot file prefs, nen khong loc thi moi lan ghi offset cua
+     * Telegram hay nhip tim cung keo theo mot luot ghi Firestore, tuc la mot lan
+     * bat song. Danh sach nay la cac khoa ghi deu ma khong co mat trong ban day.
+     */
+    private val KHOA_BO_QUA = setOf(
+        "tg_offset",
+        "da_noi_dien_thoai_ba",
+        "heartbeat_msg",
+        "heartbeat_wall",
+        "menu_lenh_ban",
+        "su_dung_doan",
+        K_DAU_DS_APP,
+        K_NHA
+    )
+
+    private val ngheDoi = SharedPreferences.OnSharedPreferenceChangeListener { _, khoa ->
+        if (khoa !in KHOA_BO_QUA) day()
+    }
 
     private val nhipTim = object : Runnable {
         override fun run() {
+            // Xoa ban da day de lan nay chac chan di, du khong co gi doi: ben dien
+            // thoai coi so lieu qua lau khong ai dong la so lieu cu.
+            banDaDay = null
             dayNgay()
-            tay.postDelayed(this, NHIP_TIM_MS)
+            tay.postDelayed(this, nhipTimMs())
         }
     }
+
+    /** Ban dem thi tha nhip tim ra. Xem [NHIP_TIM_DEM_MS]. */
+    private fun nhipTimMs(): Long {
+        val gio = java.util.Calendar.getInstance()
+        val phut = gio.get(java.util.Calendar.HOUR_OF_DAY) * 60 +
+            gio.get(java.util.Calendar.MINUTE)
+        return if (phut >= DEM_TU || phut < DEM_DEN) NHIP_TIM_DEM_MS else NHIP_TIM_MS
+    }
+
+    /**
+     * Ban trang thai vua day len, de khong day lai y het mot lan nua.
+     *
+     * So sanh bo qua [Duong.F_CAP_NHAT_LUC] vi truong do lan nao cung khac.
+     */
+    private var banDaDay: Map<String, Any?>? = null
+
+    /** Luc bat dau chuoi gom hien tai, de giu [TRAN_GOM_MS]. */
+    private var batDauGom = 0L
+
+    /** Hai so nhat ky da day, de khong ghi lai y het. */
+    private var nhatKyDaDay: List<String>? = null
+    private var hoiAiDaDay: List<String>? = null
 
     // --------------------------------------------------------------- vong doi
 
     /** Da khai bao Firebase chua. Thieu google-services.json thi ca lop nay nam im. */
     fun san(context: Context): Boolean = app(context) != null
+
+    /**
+     * Duong lenh nhanh co dang song khong: Firestore da noi VA co dien thoai o dau kia.
+     *
+     * Ben [vn.huytl.homeworkgate.telegram.ApprovalService] hoi cau nay de biet co con
+     * phai nam cho Telegram tung 25 giay mot hay khong. Phai du ca hai ve: Firestore
+     * chay ma chua ghep dien thoai nao thi khong ai gui lenh qua duong do ca.
+     *
+     * Khong hoi "dien thoai co dang mo khong" - cai do khong biet duoc, va cung khong
+     * can: listener nam ben tablet, lenh Ba Huy go luc nao cung toi ngay luc do.
+     */
+    fun duongNhanhSong(context: Context): Boolean =
+        dangChay && Prefs.get(context).daNoiDienThoaiBa
+
+    /**
+     * Ten du an Firebase ban build nay dang noi toi.
+     *
+     * Ban go loi va ban that nam o hai du an khac nhau, chon bang chinh cai file
+     * google-services.json ma Gradle nhet vao (xem app/build.gradle.kts). Hai du an
+     * nhin tu trong app thi giong het nhau, nen phai co mot cho doc ra duoc dang o
+     * du an nao - khong thi may ao ghi vao du lieu that ma khong ai biet.
+     */
+    fun duAn(context: Context): String = app(context)?.options?.projectId.orEmpty()
 
     fun batDau(context: Context) {
         if (dangChay) return
@@ -111,6 +209,7 @@ object DongBo {
         }
         ct = ung
         dangChay = true
+        Log.i(TAG, "noi Firebase project=${duAn(ung)} (${if (BuildConfig.DEBUG) "ban go loi" else "ban that"})")
 
         dangNhap(ung) { duoc, _ ->
             if (!duoc) {
@@ -128,6 +227,7 @@ object DongBo {
                     return@lapNhaNeuChua
                 }
                 batNgheLenh(ung)
+                batNgheViecNha(ung)
                 batNgheGhep(ung)
                 Prefs.get(ung).raw().registerOnSharedPreferenceChangeListener(ngheDoi)
                 tay.post(nhipTim)
@@ -140,9 +240,14 @@ object DongBo {
     fun dungLai() {
         val ung = ct
         dangChay = false
+        banDaDay = null
+        nhatKyDaDay = null
+        hoiAiDaDay = null
+        batDauGom = 0L
         tay.removeCallbacksAndMessages(null)
         ngheLenh?.remove(); ngheLenh = null
         ngheGhep?.remove(); ngheGhep = null
+        ngheViecNha?.remove(); ngheViecNha = null
         if (ung != null) {
             runCatching { Prefs.get(ung).raw().unregisterOnSharedPreferenceChangeListener(ngheDoi) }
         }
@@ -152,6 +257,9 @@ object DongBo {
 
     /** Day trang thai, gom cac thay doi lien nhau thanh mot lan ghi. */
     fun day() {
+        val gio = SystemClock.elapsedRealtime()
+        if (batDauGom == 0L) batDauGom = gio
+        if (gio - batDauGom >= TRAN_GOM_MS) return dayNgay()
         tay.removeCallbacks(dayThat)
         tay.postDelayed(dayThat, DOI_GOM_MS)
     }
@@ -169,15 +277,36 @@ object DongBo {
         val bayGio = System.currentTimeMillis()
         val conLai = gate.remainingMs()
 
-        val noi = mapOf(
+        val noi: Map<String, Any> = mapOf(
             Duong.F_CONG to gate.state.name,
             // Moc ket thuc theo gio that, khong phai so phut con lai: dien thoai tu
             // tru dan tren may no, nen cho nay khong phai ghi moi giay mot lan.
             Duong.F_KET_THUC_LUC to if (gate.state == GateState.ACTIVE) bayGio + conLai else 0L,
-            Duong.F_CON_LAI_MS to conLai,
+            /*
+             * So ms DUNG YEN, khong phai so dang chay.
+             *
+             * Dang choi thi ben dien thoai tu tru tu [Duong.F_KET_THUC_LUC], khong
+             * nhin truong nay - nen gui 0. Truoc day gui thang remainingMs: no doi
+             * moi giay, lam moi phep so sanh "co gi doi khong" thanh vo nghia, va
+             * ca ngay khong bao gio bo qua duoc mot luot ghi nao.
+             *
+             * Dang tam dung hay dang giu phieu thi so nay dung im, va do moi la luc
+             * ben kia can no.
+             */
+            Duong.F_CON_LAI_MS to when (gate.state) {
+                GateState.PAUSED -> gate.pausedMs()
+                GateState.GRANTED, GateState.PENDING -> gate.grantedMinutes * 60_000L
+                else -> 0L
+            },
+            /** Ca phien dai bao nhieu, de ben kia ve thanh chay cho dung. */
+            Duong.F_TONG_PHIEN_MS to gate.tongPhienMs(),
             Duong.F_PHUT_DA_DUYET to gate.phutDaDuyetHomNay(),
             Duong.F_PHUT_CON_LAI to gate.phutConLaiHomNay(),
             Duong.F_SO_BAI_CHO to gate.soBaiDangCho(),
+            // Viec nha ba noi giao, cac viec CHUA xong. Khong co truong nay thi ben
+            // dien thoai chi thay "dang tam dung" ma khong hieu vi sao, trong khi
+            // tablet dang bi che kin man hinh.
+            Duong.F_VIEC_NHA to ViecNha.dangTreo(context)?.chuaXong.orEmpty().map { it.ten },
             Duong.F_CHE_DO_BA to mapOf(
                 "bat" to ParentMode.isActive(context),
                 "hetLuc" to if (ParentMode.coHan(context)) {
@@ -195,23 +324,47 @@ object DongBo {
             Duong.F_BAN_APP to BuildConfig.VERSION_NAME,
             Duong.F_CAP_NHAT_LUC to bayGio
         )
-        hop.set(noi).addOnFailureListener { Log.w(TAG, "day trang thai hong: ${it.message}") }
+        /*
+         * Khong co gi doi so voi lan truoc thi thoi ghi. Bo [Duong.F_CAP_NHAT_LUC] ra
+         * khoi phep so vi truong do lan nao cung khac.
+         *
+         * PHEP SO NAY CHI AP CHO DOCUMENT TRANG THAI. Nhat ky phai di tiep du trang
+         * thai khong doi: con hoi AI mot cau, hay ba noi bam xong mot viec nha, deu
+         * ghi vao nhat ky ma khong lam doi mot truong nao o tren. Ban dau cho nay
+         * return thang, va hau qua la nhat ky ben dien thoai Ba Huy dung im ca ngay.
+         */
+        val deSo = noi - Duong.F_CAP_NHAT_LUC
+        batDauGom = 0L
+        if (deSo != banDaDay) {
+            banDaDay = deSo
+            hop.set(noi)
+                .addOnFailureListener { Log.w(TAG, "day trang thai hong: ${it.message}") }
+        }
 
         dayNhatKy(context)
     }
 
-    /** Nhat ky hom nay, gop ca ngay vao mot document de khoi ton luot ghi. */
+    /**
+     * Nhat ky hom nay, gop ca ngay vao mot document de khoi ton luot ghi.
+     *
+     * Moi so co dau rieng: mot dong moi trong nhat ky thi khong co ly do gi phai
+     * ghi lai ca so hoi AI, va nguoc lai.
+     */
     private fun dayNhatKy(context: Context) {
         val dong = DayLog.today(context).lines().filter { it.isNotBlank() }
-        if (dong.isEmpty()) return
-        nha(context)?.collection(Duong.NHAT_KY)?.document(homNay())
-            ?.set(mapOf(Duong.F_DONG to dong))
-            ?.addOnFailureListener { Log.w(TAG, "day nhat ky hong: ${it.message}") }
+        if (dong.isNotEmpty() && dong != nhatKyDaDay) {
+            nhatKyDaDay = dong
+            nha(context)?.collection(Duong.NHAT_KY)?.document(homNay())
+                ?.set(mapOf(Duong.F_DONG to dong))
+                ?.addOnFailureListener { Log.w(TAG, "day nhat ky hong: ${it.message}") }
+        }
 
         val hoi = NhatKyAi.homNay(context).lines().filter { it.isNotBlank() }
-        if (hoi.isNotEmpty()) {
+        if (hoi.isNotEmpty() && hoi != hoiAiDaDay) {
+            hoiAiDaDay = hoi
             nha(context)?.collection(Duong.HOI_AI)?.document(homNay())
                 ?.set(mapOf(Duong.F_DONG to hoi))
+                ?.addOnFailureListener { Log.w(TAG, "day so hoi AI hong: ${it.message}") }
         }
     }
 
@@ -294,6 +447,154 @@ object DongBo {
     }
 
     /** Mot cau trong khung chat. Goi ca khi con nhan va khi ba nhan. */
+    // ------------------------------------------------------------------ so cai
+
+    /**
+     * Day cac dong so cai vua ghi len Firestore.
+     *
+     * VI SAO. Go app la mat sach du lieu trong may - ke ca so cai, thu duy nhat chan
+     * viec chup lai bai hom qua de lay gio lan nua. Co ban tren Firestore thi cai lai
+     * may xong, ghep lai voi dien thoai Ba Huy la keo ve duoc nguyen ven.
+     *
+     * Moi lan cham mot document, ma document chu khong phai mot mang trong mot o:
+     * mot nam hoc la hon nghin dong, ma mot document Firestore chi chua duoc 1MB.
+     */
+    fun daySoCai(context: Context, cac: List<TraLoi>) {
+        if (cac.isEmpty()) return
+        val goc = nha(context)?.collection(Duong.SO_CAI) ?: return
+        cac.forEach { d ->
+            goc.document(maDong(d)).set(
+                mapOf(
+                    "cauId" to d.cauId,
+                    "mon" to d.mon,
+                    "ma" to d.ma,
+                    "de" to d.de,
+                    "ketQua" to d.ketQua,
+                    "baiLam" to d.baiLam,
+                    "dongSai" to d.dongSai,
+                    "onTap" to d.onTap,
+                    "dung" to d.dung,
+                    "phut" to d.phut,
+                    "nhanXet" to d.nhanXet,
+                    "luc" to d.luc
+                )
+            )
+        }
+    }
+
+    /**
+     * Keo toan bo so cai tu Firestore ve may, thay cho ban trong may.
+     *
+     * Goi sau khi vua ghep lai voi nha cu. [xong] nhan so dong keo ve, hay mot cau
+     * tieng Viet noi vi sao khong keo duoc.
+     */
+    fun keoSoVe(context: Context, xong: (Int, String) -> Unit) {
+        val goc = nha(context)?.collection(Duong.SO_CAI)
+            ?: return xong(0, "Chưa nối được với Firestore.")
+        goc.get()
+            .addOnSuccessListener { snap ->
+                val cac = snap.documents.mapNotNull { d ->
+                    val cauId = d.getString("cauId") ?: return@mapNotNull null
+                    TraLoi(
+                        cauId = cauId,
+                        mon = d.getString("mon").orEmpty(),
+                        ma = d.getString("ma").orEmpty(),
+                        de = d.getString("de").orEmpty(),
+                        ketQua = d.getString("ketQua").orEmpty(),
+                        baiLam = (d.get("baiLam") as? List<*>).orEmpty().map { it.toString() },
+                        dongSai = (d.getLong("dongSai") ?: 0L).toInt(),
+                        onTap = d.getBoolean("onTap") ?: false,
+                        dung = d.getBoolean("dung") ?: false,
+                        phut = (d.getLong("phut") ?: 0L).toInt(),
+                        nhanXet = d.getString("nhanXet").orEmpty(),
+                        luc = d.getLong("luc") ?: 0L
+                    )
+                }
+                KhoBai.get(context).napSoCai(cac)
+                DayLog.add(context, "Khôi phục sổ cái: ${cac.size} câu")
+                xong(cac.size, "")
+            }
+            .addOnFailureListener { xong(0, noiLoi(it)) }
+    }
+
+    /** Ten document cho mot dong so cai. Dau gach cheo la ky tu Firestore khong cho. */
+    private fun maDong(d: TraLoi): String =
+        "${d.cauId}_${d.luc}".replace('/', '_')
+
+    // ------------------------------------------------------- khoi phuc nha cu
+
+    /** Ma nha dang dung. Hien ra cho Ba Huy ghi lai phong khi phai cai lai may. */
+    fun maNhaHienTai(context: Context): String = maNha(context)
+
+    /**
+     * Xin vao lai mot nha da co - dung sau khi cai lai app.
+     *
+     * NGUOC CHIEU voi luong ghep doi cu. Binh thuong tablet lap nha va ket nap dien
+     * thoai; nhung cai lai app la tablet mat het, ke ca tu cach "nguoi nha" tren
+     * Firestore, nen lan nay TABLET la ben xin va DIEN THOAI la ben ket nap.
+     *
+     * Luat ben Firestore von da cho phep chieu nay: o /ghep/{uid} ai dang nhap cung
+     * ghi duoc phan mang ten minh, con ket nap thi phai la nguoi nha. Chi co phan
+     * ung dung la truoc day chua ai di chieu do.
+     */
+    fun xinVaoNha(
+        context: Context,
+        maNhaCu: String,
+        maGhep: String,
+        xong: (duoc: Boolean, loi: String) -> Unit
+    ) {
+        val ung = context.applicationContext
+        if (!san(ung)) return xong(false, "Máy chưa nối được Firebase.")
+        dangNhap(ung) { duoc, viSao ->
+            if (!duoc) return@dangNhap xong(false, viSao)
+            val uid = FirebaseAuth.getInstance(app(ung)!!).currentUser?.uid.orEmpty()
+            if (uid.isEmpty()) return@dangNhap xong(false, "Chưa đăng nhập được.")
+
+            val cua = db(ung)?.collection(Duong.NHA)?.document(maNhaCu)
+                ?.collection(Duong.GHEP)?.document(uid)
+                ?: return@dangNhap xong(false, "Chưa nối được Firestore.")
+
+            cua.set(mapOf("ma" to maGhep, "luc" to System.currentTimeMillis()))
+                .addOnSuccessListener { choKetNap(ung, maNhaCu, cua, xong) }
+                .addOnFailureListener { xong(false, noiLoi(it)) }
+        }
+    }
+
+    /**
+     * Ngoi cho dien thoai Ba Huy ket nap.
+     *
+     * Chi ghi ma nha xuong may KHI DA duoc ket nap. Ghi som thi lan mo app sau tablet
+     * tuong minh la nguoi nha cua mot nha khong cho minh vao, va moi thu deu tra ve
+     * PERMISSION_DENIED ma khong ai hieu vi sao.
+     */
+    private fun choKetNap(
+        context: Context,
+        maNhaCu: String,
+        cua: DocumentReference,
+        xong: (Boolean, String) -> Unit
+    ) {
+        var nghe: ListenerRegistration? = null
+        nghe = cua.addSnapshotListener { d, loi ->
+            if (loi != null) {
+                nghe?.remove()
+                return@addSnapshotListener xong(false, noiLoi(loi))
+            }
+            when (d?.getString("trangThai")) {
+                "OK" -> {
+                    nghe?.remove()
+                    fileThuong(context).edit().putString(K_NHA, maNhaCu).commit()
+                    dungLai()
+                    batDau(context)
+                    xong(true, "")
+                }
+                "SAI" -> {
+                    nghe?.remove()
+                    xong(false, "Mã ghép sai hoặc đã hết hạn.")
+                }
+            }
+        }
+    }
+
     fun dayTin(context: Context, tin: ChatLine) {
         nha(context)?.collection(Duong.CHAT)?.add(
             mapOf(
@@ -306,15 +607,20 @@ object DongBo {
     }
 
     /**
-     * Cau tra loi cho lenh vua nhan, de ben dien thoai biet no da an vao dau.
+     * Cau tra loi cho lenh vua nhan, de ben go lenh biet no da an vao dau.
      *
      * Can cho nay vi rat nhieu lenh khong lam duoc ma khong phai loi mang: dang gio
      * ngu, het tran phut ngay, khong co bai nao dang cho. Khong noi lai thi man hinh
-     * ben kia im lang, va Ba Huy bam lai lan nua.
+     * ben kia im lang, va nguoi go bam lai lan nua.
+     *
+     * Kem [Duong.F_AI] vi tu khi co ca may ba noi thi o nay co hai nguoi doc. Ba Huy
+     * khong can thay cau tra loi cho cai nut ba vua bam, va nguoc lai - do la cau
+     * cua viec minh vua lam hay cua nguoi khac, ben doc tu loc lay.
      */
-    private fun traLoi(context: Context, chu: String) {
+    private fun traLoi(context: Context, chu: String, ai: String) {
         hop(context, Duong.D_TRANG_THAI)?.update(
-            Duong.F_TRA_LOI, mapOf("chu" to chu, "luc" to System.currentTimeMillis())
+            Duong.F_TRA_LOI,
+            mapOf("chu" to chu, "luc" to System.currentTimeMillis(), Duong.F_AI to ai)
         )
     }
 
@@ -338,7 +644,7 @@ object DongBo {
                         // Xoa du lam duoc hay khong: khong xoa thi cai lenh do nam
                         // lai trong hang va duoc doc lai mai mai.
                         d.reference.delete()
-                        kq?.let { traLoi(context, it) }
+                        kq?.let { traLoi(context, it, d.getString(Duong.F_AI) ?: Nguoi.BA_HUY) }
                         dayNgay()
                     }
                 // Giu danh sach da lam gon lai. Lenh da xoa khoi Firestore thi khong
@@ -347,9 +653,35 @@ object DongBo {
             }
     }
 
+    // ------------------------------------------------------- nghe viec nha
+
+    /**
+     * Nghe viec nha ba noi giao.
+     *
+     * Mot document chu khong phai mot hang doi, va khong xoa sau khi doc: day la
+     * trang thai day du - ca danh sach viec lan viec nao da xong - nen ban moi
+     * nhat luon la ban dung. Xem [ThiHanhViecNha].
+     *
+     * Nghe o day chu khong ghe qua moi phut nhu duong Telegram cu: ba bam "da xong"
+     * trong luc con dang ngoi truoc man hinh bi khoa, va mot phut cho o dung cho do
+     * la mot phut rat dai.
+     */
+    private fun batNgheViecNha(context: Context) {
+        ngheViecNha?.remove()
+        ngheViecNha = hop(context, Duong.D_VIEC_NHA)
+            ?.addSnapshotListener { snap, loi ->
+                if (loi != null) {
+                    Log.w(TAG, "nghe viec nha hong: ${loi.message}")
+                    return@addSnapshotListener
+                }
+                runCatching { ThiHanhViecNha.lam(context, snap) }
+                    .onFailure { Log.w(TAG, "lam viec nha hong", it) }
+            }
+    }
+
     /** Lenh go tu lau qua thi bo. Dung chung cho ca [ThiHanhLenh]. */
     fun quaCu(taoLuc: Long): Boolean =
-        taoLuc > 0L && System.currentTimeMillis() - taoLuc > LENH_QUA_CU_MS
+        taoLuc > 0L && System.currentTimeMillis() - taoLuc > Duong.QUA_CU_MS
 
     // ----------------------------------------------------------- ghep doi
 
@@ -414,11 +746,32 @@ object DongBo {
                             xin.getString("ma") == ma &&
                             System.currentTimeMillis() < han
                         if (dung) {
-                            d.update(Duong.F_UIDS, FieldValue.arrayUnion(xin.id))
+                            /*
+                             * May ba noi vao danh sach phu, khong vao danh sach
+                             * nguoi nha day du.
+                             *
+                             * Khac nhau o cho luat ben Firestore: nguoi nha day du
+                             * go duoc moi lenh, ke ca khoa may va tat quan tri thiet
+                             * bi; danh sach phu thi chi cho gio va giao viec nha.
+                             * Nhet nham may ba vao uids la ba bam nham mot cai la
+                             * tablet khoa cung, ma khong co gi chan lai.
+                             */
+                            val phu = xin.getString(Duong.F_AI) == Nguoi.BA_NOI
+                            d.update(
+                                if (phu) Duong.F_UIDS_PHU else Duong.F_UIDS,
+                                FieldValue.arrayUnion(xin.id)
+                            )
                             xin.reference.update("trangThai", "OK")
                             // Ma dung roi thi thu hoi ngay, mot ma mot lan.
                             d.update(Duong.F_MA_GHEP, "", Duong.F_MA_GHEP_HET_HAN, 0L)
-                            DayLog.add(context, "Đã nối điện thoại Ba Huy vào bảng điều khiển")
+                            DayLog.add(
+                                context,
+                                if (phu) "Đã nối máy bà nội vào"
+                                else "Đã nối điện thoại ba Huy vào bảng điều khiển"
+                            )
+                            // Tu day tro di lenh co duong nhanh de di, nen ben
+                            // Telegram thoi nam cho lien tuc. Xem [duongNhanhSong].
+                            if (!phu) Prefs.get(context).daNoiDienThoaiBa = true
                             dayNgay()
                             dayCaiDat(context)
                             dayDanhSachApp(context)
