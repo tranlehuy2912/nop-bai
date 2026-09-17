@@ -1,6 +1,7 @@
 package vn.huytl.homeworkgate.ai
 
 import org.json.JSONObject
+import vn.huytl.homeworkgate.data.LoaiLoi
 
 /**
  * Doc cau tra loi cua lan goi "nhin lai anh" - xem [PromptCham.CAU_LENH_DOC_LAI].
@@ -23,7 +24,8 @@ object DocLaiJson {
         val dung: Boolean,
         val docRo: Boolean,
         val dungNhuConNoi: Boolean,
-        val nhanXet: String
+        val nhanXet: String,
+        val loaiLoi: String
     )
 
     /** Tra ve theo ma cau da chuan hoa, de ben goi doi chieu khong so lech dau cach. */
@@ -49,7 +51,8 @@ object DocLaiJson {
                 dung = c.optBoolean("dung", false),
                 docRo = c.optBoolean("doc_ro", false),
                 dungNhuConNoi = c.optBoolean("dung_nhu_hoc_sinh_noi", false),
-                nhanXet = c.optString("nhan_xet")
+                nhanXet = c.optString("nhan_xet"),
+                loaiLoi = LoaiLoi.doc(c.optString("loai_loi"), c.optBoolean("dung", false))
             )
         }.toMap()
     }

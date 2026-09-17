@@ -1,27 +1,104 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<!--
+  Chon app cho mot trong ba viec: danh sach duoc dung, danh sach cam han, dat gio
+  rieng tung app.
+
+  Truoc day man nay chi co mot cuc chu huong dan va mot ListView tran. Tablet co
+  vai chuc app, nen moi lan sua danh sach la mot lan cuon tim tung cai, va khong co
+  cho nao noi minh dang chon bao nhieu. Gio co o tim, so da chon ghi thang tren nut
+  Xong, va nhung app dang chon duoc keo len dau danh sach.
+-->
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/root"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="match_parent">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="16dp"
-        android:id="@+id/txt_huong_dan"
-        android:text="Chọn app Lê Hòa vẫn được dùng khi hết giờ chơi, ví dụ từ điển, máy tính, app học. Những app còn lại đều bị khoá."
-        android:textSize="15sp" />
-
-    <ListView
-        android:id="@+id/list_apps"
-        android:layout_width="match_parent"
+    <LinearLayout
+        android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_weight="1" />
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_max="@dimen/st_be_rong_toi_da">
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_done"
-        android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:layout_margin="16dp"
-        android:text="Xong" />
-</LinearLayout>
+        <TextView
+            android:id="@+id/txt_tieu_de"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="20dp"
+            android:paddingTop="16dp"
+            android:paddingEnd="20dp"
+            android:textColor="@color/ink"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/txt_huong_dan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:lineSpacingExtra="2dp"
+            android:paddingHorizontal="20dp"
+            android:paddingTop="4dp"
+            android:textColor="@color/ink_soft"
+            android:textSize="14sp" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/o_tim_khung"
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="14dp"
+            android:hint="Tìm tên app"
+            app:endIconMode="clear_text"
+            app:startIconDrawable="@drawable/ic_tim">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/o_tim"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:imeOptions="actionSearch"
+                android:importantForAutofill="no"
+                android:inputType="text"
+                android:maxLines="1" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <ListView
+            android:id="@+id/list_apps"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            android:layout_weight="1"
+            android:clipToPadding="false"
+            android:divider="@null"
+            android:paddingHorizontal="12dp"
+            android:scrollbars="none" />
+
+        <!-- Khong tim thay app nao khop chu vua go. Khong co dong nay thi man hinh
+             chi con mot khoang trang, va khong biet la go sai hay may hong. -->
+        <TextView
+            android:id="@+id/txt_trong"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="28dp"
+            android:textColor="@color/ink_soft"
+            android:textSize="15sp"
+            android:visibility="gone" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_done"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="20dp"
+            android:text="Xong"
+            android:textSize="16sp"
+            app:cornerRadius="18dp" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

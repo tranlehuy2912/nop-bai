@@ -29,6 +29,9 @@ class NhatKySuDungTest {
     fun setUp() {
         context = InstrumentationRegistry.getInstrumentation().targetContext
         Prefs.get(context).raw().edit().clear().commit()
+        // So nay nam o kho prefs RIENG tu khi tach ra khoi file chinh, nen xoa file
+        // chinh khong dung den no. Khong xoa o day thi cac test noi duoi len nhau.
+        NhatKySuDung.xoaHet(context)
     }
 
     /** Moc gio trong ngay, [lui] ngay truoc hom nay. */

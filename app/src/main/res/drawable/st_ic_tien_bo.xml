@@ -1,0 +1,19 @@
+<!-- Ba cot cao dan. Ve tay bang path chu khong keo icon tu dau ve: ca app khong
+     dung mot bo icon ngoai nao, va ba hinh chu nhat thi khong dang keo them mot
+     thu vien. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24"
+    android:tint="?attr/colorControlNormal">
+    <path
+        android:fillColor="@android:color/white"
+        android:pathData="M4,14h3v6H4z" />
+    <path
+        android:fillColor="@android:color/white"
+        android:pathData="M10.5,9h3v11h-3z" />
+    <path
+        android:fillColor="@android:color/white"
+        android:pathData="M17,4h3v16h-3z" />
+</vector>

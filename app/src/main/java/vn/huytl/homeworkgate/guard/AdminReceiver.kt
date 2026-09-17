@@ -16,7 +16,7 @@ class AdminReceiver : DeviceAdminReceiver() {
 
     override fun onDisableRequested(context: Context, intent: Intent): CharSequence {
         Notifier.adminDisableRequested(context)
-        return "Tắt cái này là Ba Huy biết ngay. Tablet sẽ nhắn tin báo."
+        return "Tắt cái này là ba Huy biết ngay. Tablet sẽ nhắn tin báo."
     }
 
     override fun onDisabled(context: Context, intent: Intent) {

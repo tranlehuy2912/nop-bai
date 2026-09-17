@@ -85,6 +85,39 @@ object SoCaiBai {
     fun tatCa(context: Context, now: Long = System.currentTimeMillis()): List<CauSo> =
         KhoBai.get(context).moiNhatMoiCau(han(now)).map { it.sangCauSo() }
 
+    /**
+     * Bai lam lan nay co giong HET tung dong voi lan lam dung truoc day khong.
+     *
+     * Dung o lan on tap, va chi o do. On tap la duong duy nhat duoc cham lai mot cau
+     * da lam dung, nen no thao mat cai khoa "moi cau chi tra gio mot lan" - con mo
+     * vo ra dung trang cu, chup lai bai tuan truoc, thi tren giay khong co dau thoi
+     * gian nao de phan biet.
+     *
+     * Vi sao so tung dong lai an: hai lan AI doc hai tam anh khac nhau gan nhu khong
+     * bao gio ra chuoi giong het, ke ca khi con lam lai dung cach giai cu - chu viet
+     * khac di mot ti, may ngat dong khac di, doc nham mot ky tu. Trung khop tuyet
+     * doi moi dong thi kha nang cao la cung mot tam anh cua cung mot trang giay.
+     *
+     * KHONG DUNG DE TU CHOI. Ket qua cua no chi la thoi tu duyet, day sang Ba Huy mo
+     * anh ra nhin. Con lam lai that ma khong may trung khop thi mat mot lan cho, chu
+     * khong mat gio.
+     */
+    fun giongHetLanTruoc(context: Context, cau: CauCham): Boolean {
+        if (cau.baiLam.isEmpty()) return false
+        val k = khoaCua(cau)
+        if (k.isEmpty()) return false
+        val truoc = KhoBai.get(context).lichSuCua(k)
+            .firstOrNull { it.dung && it.baiLam.isNotEmpty() } ?: return false
+        return truoc.baiLam == cau.baiLam
+    }
+
+    /** Cau nay truoc day da sai may lan. 0 la chua sai lan nao. */
+    fun soLanSai(context: Context, cau: CauCham, now: Long = System.currentTimeMillis()): Int {
+        val k = khoaCua(cau)
+        if (k.isEmpty()) return 0
+        return KhoBai.get(context).soLanSai(k, han(now))
+    }
+
     /** Cac cau dang sai, cho con sua lai. */
     fun dangChoSua(context: Context, now: Long = System.currentTimeMillis()): List<CauSo> =
         KhoBai.get(context).dangChoSua(han(now)).map { it.sangCauSo() }
@@ -122,35 +155,62 @@ object SoCaiBai {
         context: Context,
         cac: List<CauCham>,
         phutCua: Map<String, Int>,
-        now: Long = System.currentTimeMillis()
-    ) {
-        if (cac.isEmpty()) return
+        now: Long = System.currentTimeMillis(),
+        onTap: Boolean = false,
+        /** Cau con tu bao la chua chac. null nghia la lan nay con khong duoc hoi. */
+        chuaChac: Set<String>? = null,
+        /** Cau con tu viet ra minh sai cho nao. Mot dong chung cho ca lan nop. */
+        conNoiChung: String = ""
+    ): List<TraLoi> {
+        if (cac.isEmpty()) return emptyList()
         val kho = KhoBai.get(context)
         val tuLuc = han(now)
+        val daGhi = mutableListOf<TraLoi>()
 
         cac.forEach { c ->
             val k = khoaCua(c)
             if (k.isEmpty()) return@forEach
-            if (kho.daXong(k, tuLuc)) return@forEach
-            kho.ghiTraLoi(
-                TraLoi(
-                    cauId = k,
-                    mon = c.mon,
-                    ma = c.ma,
-                    de = c.de,
-                    ketQua = c.ketQua,
-                    baiLam = c.baiLam,
-                    dongSai = c.dongSai,
-                    dung = c.dung,
-                    phut = if (c.dung) phutCua[c.ma] ?: 0 else 0,
-                    // Cau da xong thi khong giu loi nhan xet: no chi de con biet duong
-                    // ma sua, xong roi la het viec. Giu lai chi phinh so va de lai loi
-                    // che bai cua mot dua tre trong may ca nam.
-                    nhanXet = if (c.dung) "" else c.nhanXet,
-                    luc = now
-                )
+            // Lan on tap: cau von DA xong - do moi la dieu kien de duoc on. Cho nay
+            // chan lan on CHUA DEN HEN, chu khong chan mai mai nhu ban dau.
+            val boQua = if (onTap) !kho.denHenOn(k, tuLuc, now) else kho.daXong(k, tuLuc)
+            if (boQua) return@forEach
+            val dong = TraLoi(
+                cauId = k,
+                mon = c.mon,
+                ma = c.ma,
+                de = c.de,
+                ketQua = c.ketQua,
+                baiLam = c.baiLam,
+                dongSai = c.dongSai,
+                dung = c.dung,
+                phut = if (c.dung) phutCua[c.ma] ?: 0 else 0,
+                // Cau da xong thi khong giu loi nhan xet: no chi de con biet duong ma
+                // sua, xong roi la het viec. Giu lai chi phinh so va de lai loi che
+                // bai cua mot dua tre trong may ca nam.
+                nhanXet = if (c.dung) "" else c.nhanXet,
+                loaiLoi = c.loaiLoi,
+                onTap = onTap,
+                khaiChac = when {
+                    chuaChac == null -> -1
+                    k in chuaChac -> 0
+                    else -> 1
+                },
+                // Chi gan cho cau dang duoc SUA. Cau lam moi trong cung lan nop thi
+                // dong chu do khong noi ve no.
+                conNoi = if (conNoiChung.isNotBlank() && kho.soLanSai(k, tuLuc) > 0) {
+                    conNoiChung
+                } else {
+                    ""
+                },
+                luc = now
             )
+            kho.ghiTraLoi(dong)
+            daGhi += dong
         }
+        // Tra ve dung nhung dong DA ghi, khong phai danh sach dua vao: ben goi con
+        // day chung len Firestore, ma day nham mot dong bi bo qua la so tren may chu
+        // noi mot dang, so trong may noi mot dang.
+        return daGhi
     }
 
     /** Hom nay da tinh tron goi vo dan do chua. */
@@ -158,22 +218,26 @@ object SoCaiBai {
         KhoBai.get(context).coTrongKhoang(KHOA_GOI, moc0GioCua(now))
 
     /** Danh dau da tinh tron goi hom nay. */
-    fun ghiGoi(context: Context, phut: Int, now: Long = System.currentTimeMillis()) {
+    fun ghiGoi(
+        context: Context,
+        phut: Int,
+        now: Long = System.currentTimeMillis()
+    ): TraLoi? {
         // Mot ngay mot goi. Ghi hai dong la mot buoi chieu duoc chin muoi phut.
-        if (goiDaCoHomNay(context, now)) return
-        KhoBai.get(context).ghiTraLoi(
-            TraLoi(
-                cauId = KHOA_GOI,
-                mon = "",
-                ma = "trọn gói",
-                de = "làm hết bài cô giao",
-                ketQua = "",
-                dung = true,
-                phut = phut,
-                nhanXet = "",
-                luc = now
-            )
+        if (goiDaCoHomNay(context, now)) return null
+        val dong = TraLoi(
+            cauId = KHOA_GOI,
+            mon = "",
+            ma = "trọn gói",
+            de = "làm hết bài cô giao",
+            ketQua = "",
+            dung = true,
+            phut = phut,
+            nhanXet = "",
+            luc = now
         )
+        KhoBai.get(context).ghiTraLoi(dong)
+        return dong
     }
 
     /**
@@ -272,6 +336,20 @@ object SoCaiBai {
      */
     fun chuanHoa(de: String?): String =
         de.orEmpty().lowercase().filter { it.isLetterOrDigit() || it == '^' }
+
+    /** Cac cau den hen on lai: tung sai, da sua dung, va da den luc nho lai. */
+    fun cacCauDangOn(context: Context, now: Long = System.currentTimeMillis()): List<String> =
+        KhoBai.get(context).cacCauDenHenOn(han(now), now)
+
+    /** Cau nay da duoc tra gio cho mot lan on tap chua. */
+    fun daOnTap(context: Context, khoa: String, now: Long = System.currentTimeMillis()): Boolean =
+        KhoBai.get(context).daOnTap(khoa, han(now))
+
+    /** Cau nay da den hen on lai chua. Chua den hen thi on van ghi so, chi la khong co phut. */
+    fun denHenOn(context: Context, cau: CauCham, now: Long = System.currentTimeMillis()): Boolean {
+        val k = khoaCua(cau)
+        return k.isNotEmpty() && KhoBai.get(context).denHenOn(k, han(now), now)
+    }
 
     /** Lich su cham cua mot cau, moi nhat truoc. De xem lai con da viet gi. */
     fun lichSuCua(context: Context, khoa: String): List<TraLoi> =

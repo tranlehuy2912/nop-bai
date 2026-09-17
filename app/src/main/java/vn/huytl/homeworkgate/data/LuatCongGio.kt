@@ -229,11 +229,17 @@ object LuatCongGio {
      * @param daCongLamThemHomNay so phut phan "lam them" da cong trong ngay, de giu
      *   tran. Ben goi lay tu so cai.
      */
+    /**
+     * @param onTap lan nay con lam lai cau da lam dung roi, de on. Tra NUA so phut:
+     *   on lai la viec dang khuyen, nhung no van nhe hon lam mot cau moi, va neu tra
+     *   bang nhau thi lam lai cau cu thanh duong de kiem gio hon lam bai moi.
+     */
     fun tinh(
         goc: KetQuaCham,
         daCongLamThemHomNay: Int = 0,
         bayGio: LocalDateTime = LocalDateTime.now(),
-        goiDaCoHomNay: Boolean = false
+        goiDaCoHomNay: Boolean = false,
+        onTap: Boolean = false
     ): BangTinh {
         val dong = mutableListOf<String>()
 
@@ -298,9 +304,12 @@ object LuatCongGio {
 
         // Trac nghiem gom thanh mot cum, phan con lai tinh tung cau nhu cu.
         val tracNghiem = tinhLe.filter { it.dang == DangBai.TRAC_NGHIEM }
-        val phutCum = (tracNghiem.size / CAU_TRAC_NGHIEM_MOI_PHUT).coerceAtMost(TRAN_TRAC_NGHIEM)
+        val phutCum = nuaNeuOn(
+            (tracNghiem.size / CAU_TRAC_NGHIEM_MOI_PHUT).coerceAtMost(TRAN_TRAC_NGHIEM),
+            onTap
+        )
         val phutTungCau = tinhLe.filterNot { it.dang == DangBai.TRAC_NGHIEM }
-            .map { it to phutChoCau(it) }
+            .map { it to nuaNeuOn(phutChoCau(it), onTap) }
             .filter { it.second > 0 }
 
         // Tran chi ap cho phan lam them, tuc la khi trong ngay da co goi. Khong co
@@ -363,7 +372,7 @@ object LuatCongGio {
 
         val mo = ket.cac.filter { !it.docRo }
         if (mo.isNotEmpty()) {
-            dong += "Máy đọc không rõ: " + mo.joinToString(", ") { it.ma } + " — nhờ Ba Huy xem"
+            dong += "Máy đọc không rõ: " + mo.joinToString(", ") { it.ma } + " — nhờ ba Huy xem"
         }
 
         return BangTinh(
@@ -376,6 +385,16 @@ object LuatCongGio {
             trongGoi = trongGoi
         )
     }
+
+    /**
+     * Nua so phut khi la lan on tap, lam tron LEN.
+     *
+     * Lam tron len chu khong xuong: mot cau hai phut ma on lai ra khong phut thi con
+     * ngoi lam lai de lay mot con so khong - lan sau no khong on nua, ma on lai moi
+     * la cai minh muon no lam.
+     */
+    private fun nuaNeuOn(phut: Int, onTap: Boolean): Int =
+        if (!onTap) phut else (phut + 1) / 2
 
     /** Doi LocalDateTime tu moc may, de cho test dua gio vao thang. */
     fun bayGio(mocMs: Long): LocalDateTime =

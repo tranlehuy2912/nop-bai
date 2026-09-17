@@ -4,6 +4,9 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.updatePadding
 import androidx.lifecycle.lifecycleScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -11,7 +14,9 @@ import kotlinx.coroutines.withContext
 import vn.huytl.homeworkgate.data.KhoaAi
 import vn.huytl.homeworkgate.data.Prefs
 import vn.huytl.homeworkgate.databinding.ActivitySetupBinding
+import vn.huytl.homeworkgate.dongbo.DongBo
 import vn.huytl.homeworkgate.guard.Heartbeat
+import vn.huytl.homeworkgate.guard.MocGio
 import vn.huytl.homeworkgate.guard.ParentMode
 import vn.huytl.homeworkgate.guard.PhienQuanLy
 import vn.huytl.homeworkgate.telegram.ApprovalService
@@ -40,11 +45,13 @@ class SetupActivity : AppCompatActivity() {
             return
         }
 
+        chuaThanhHeThong()
         load()
 
         binding.btnDetectChat.setOnClickListener { detectChatId() }
         binding.btnTest.setOnClickListener { sendTest() }
         binding.btnSave.setOnClickListener { save() }
+        binding.btnKhoiPhuc.setOnClickListener { khoiPhuc() }
         binding.btnPickApps.setOnClickListener {
             startActivity(Intent(this, AppPickerActivity::class.java))
         }
@@ -92,6 +99,11 @@ class SetupActivity : AppCompatActivity() {
     }
 
     private fun load() {
+        binding.txtNhaHienTai.text =
+            DongBo.maNhaHienTai(this).let {
+                if (it.isEmpty()) "Máy này chưa nối với điện thoại ba Huy."
+                else "Mã nhà: $it  —  ba Huy ghi lại mã này phòng khi phải cài lại máy."
+            }
         binding.edtToken.setText(prefs.botToken)
         if (prefs.parentChatId != 0L) {
             binding.edtChatId.setText(prefs.parentChatId.toString())
@@ -104,6 +116,46 @@ class SetupActivity : AppCompatActivity() {
         binding.edtDailyLimit.setText(prefs.tranPhutMoiNgay.toString())
         binding.swLockSettings.isChecked = prefs.lockSystemSettings
         binding.swManChan.isChecked = prefs.batManChan
+    }
+
+    /**
+     * Noi lai voi nha cu sau khi cai lai app, roi keo so cai ve.
+     *
+     * Hai buoc, va buoc hai chi chay khi buoc mot xong: xin vao nha (dien thoai Ba
+     * Huy ket nap), roi moi doc duoc so. Doc truoc khi duoc ket nap thi Firestore
+     * tra PERMISSION_DENIED - dung, vi luc do may nay chua phai nguoi nha.
+     */
+    private fun khoiPhuc() {
+        val maNha = binding.edtMaNha.text?.toString()?.trim().orEmpty()
+        val maGhep = binding.edtMaGhep.text?.toString()?.trim().orEmpty()
+        if (maNha.isEmpty() || maGhep.length != 6) {
+            noiKhoiPhuc("Gõ mã nhà cũ và 6 số mã ghép đang hiện trên điện thoại ba Huy.")
+            return
+        }
+        binding.btnKhoiPhuc.isEnabled = false
+        noiKhoiPhuc("Đang xin vào nhà cũ, chờ ba Huy kết nạp…")
+
+        DongBo.xinVaoNha(this, maNha, maGhep) { duoc, loi ->
+            if (!duoc) {
+                binding.btnKhoiPhuc.isEnabled = true
+                noiKhoiPhuc("Không nối được: $loi")
+                return@xinVaoNha
+            }
+            noiKhoiPhuc("Đã nối lại. Đang kéo sổ cũ về…")
+            DongBo.keoSoVe(this) { soDong, loiKeo ->
+                binding.btnKhoiPhuc.isEnabled = true
+                binding.txtNhaHienTai.text = "Mã nhà: ${DongBo.maNhaHienTai(this)}"
+                noiKhoiPhuc(
+                    if (loiKeo.isEmpty()) "Xong. Kéo về $soDong câu đã làm."
+                    else "Nối được rồi nhưng chưa kéo sổ về: $loiKeo"
+                )
+            }
+        }
+    }
+
+    private fun noiKhoiPhuc(chu: String) {
+        binding.txtKhoiPhuc.text = chu
+        binding.txtKhoiPhuc.visibility = android.view.View.VISIBLE
     }
 
     private fun save() {
@@ -148,6 +200,7 @@ class SetupActivity : AppCompatActivity() {
         if (pin.isNotEmpty()) prefs.setPin(pin)
 
         Heartbeat.schedule(this)
+        MocGio.datLai(this)
         ApprovalService.ensureRunning(this)
         toast("Đã lưu")
         finish()
@@ -225,6 +278,19 @@ class SetupActivity : AppCompatActivity() {
         val m = parts[1].toIntOrNull() ?: return null
         if (h !in 0..23 || m !in 0..59) return null
         return h * 60 + m
+    }
+
+    /**
+     * Tu Android 15 app ve tran ca man hinh, thuoc tinh statusBarColor trong
+     * theme khong con tac dung. Khong chua cho thi dong "Cai dat" nam duoi thanh trang thai,
+     * con nut Luu o day thi dinh thanh dieu huong.
+     */
+    private fun chuaThanhHeThong() {
+        ViewCompat.setOnApplyWindowInsetsListener(binding.root) { view, insets ->
+            val thanh = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+            view.updatePadding(top = thanh.top, bottom = thanh.bottom)
+            insets
+        }
     }
 
     private fun toast(text: String) =

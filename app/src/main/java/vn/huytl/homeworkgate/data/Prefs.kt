@@ -157,6 +157,23 @@ class Prefs private constructor(private val sp: SharedPreferences) {
         set(v) = sp.edit().putBoolean(KEY_TU_KHOI_DONG, v).commit().let {}
 
     /**
+     * Dien thoai Ba Huy da duoc ket nap vao nha tren Firestore chua.
+     *
+     * DUNG DE LAM GI: quyet dinh tablet co con phai nam cho Telegram lien tuc khong.
+     * Co dien thoai roi thi lenh di duong Firestore, toi trong duoi mot giay qua cai
+     * listener von da nam san trong dich vu tro nang; Telegram luc do la duong lui,
+     * nam cho no 25 giay mot lan suot muoi tam tieng la tra tien cho mot duong khong
+     * ai di. Xem [vn.huytl.homeworkgate.telegram.ApprovalService.nhipNgheMs].
+     *
+     * Chi bat len, khong bao gio tu tat: may bi go app thi tablet khong biet, ma
+     * doan sai theo huong "chac la go roi" thi quay ve nam cho ca ngay. Ba Huy go
+     * lenh Telegram trong luc khoa van chay, cham nhat nam phut.
+     */
+    var daNoiDienThoaiBa: Boolean
+        get() = sp.getBoolean(KEY_NOI_DIEN_THOAI_BA, false)
+        set(v) = sp.edit().putBoolean(KEY_NOI_DIEN_THOAI_BA, v).commit().let {}
+
+    /**
      * Ma loi gan nhat Telegram tra ve, 0 la dang binh thuong.
      *
      * Chi giu 401 (token sai) va 409 (co may khac cung nghe mot bot). Hai cai do
@@ -316,6 +333,7 @@ class Prefs private constructor(private val sp: SharedPreferences) {
         private const val KEY_WRONG_PIN = "sai_pin_lien_tiep"
         private const val KEY_TU_KHOI_DONG = "da_xac_nhan_tu_khoi_dong"
         private const val KEY_LOI_TELEGRAM = "loi_telegram"
+        private const val KEY_NOI_DIEN_THOAI_BA = "da_noi_dien_thoai_ba"
         private const val KEY_AI_KEYS = "ai_keys"
         private const val KEY_BAT_CHAN = "bat_man_chan"
         private const val KEY_MO_SOM = "buoi_duoc_mo_som"
@@ -324,6 +342,38 @@ class Prefs private constructor(private val sp: SharedPreferences) {
 
         @Volatile
         private var instance: Prefs? = null
+
+        /** Cac kho ma hoa phu, theo ten file. */
+        private val khoPhu = mutableMapOf<String, SharedPreferences>()
+
+        /**
+         * Mot kho ma hoa RIENG, khong dung chung file voi [FILE_NAME].
+         *
+         * Co cai nay vi [vn.huytl.homeworkgate.dongbo.DongBo] nghe ca file prefs
+         * chinh de biet khi nao can day trang thai sang dien thoai Ba Huy. Thu gi
+         * ghi deu dan ma khong lien quan den trang thai - nhat ky con mo app nao,
+         * chang han - ma nam chung file thi cu moi lan ghi lai keo theo mot luot
+         * ghi Firestore, tuc la mot lan bat song cho khong.
+         *
+         * Van ma hoa nhu kho chinh: nhat ky con dung app gi luc nao khong phai thu
+         * de nam tran trong may.
+         */
+        fun khoRieng(context: Context, ten: String): SharedPreferences =
+            synchronized(khoPhu) {
+                khoPhu.getOrPut(ten) {
+                    val ung = context.applicationContext
+                    val masterKey = MasterKey.Builder(ung)
+                        .setKeyScheme(MasterKey.KeyScheme.AES256_GCM)
+                        .build()
+                    EncryptedSharedPreferences.create(
+                        ung,
+                        ten,
+                        masterKey,
+                        EncryptedSharedPreferences.PrefKeyEncryptionScheme.AES256_SIV,
+                        EncryptedSharedPreferences.PrefValueEncryptionScheme.AES256_GCM
+                    )
+                }
+            }
 
         fun get(context: Context): Prefs = instance ?: synchronized(this) {
             instance ?: create(context.applicationContext).also { instance = it }

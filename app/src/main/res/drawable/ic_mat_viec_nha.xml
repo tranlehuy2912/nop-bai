@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Cai choi: ba noi dang giao viec nha, lam xong may moi mo.
+
+     Ve tay bang path, khong keo bo icon nao tu ngoai ve: ca app dang lam vay, xem
+     st_ic_tien_bo.xml. Mau de trang o day va do lai bang imageTintList trong
+     HomeActivity, vi moi trang thai mot mau khac nhau. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M10.9,2.2h2.2v7.9h-2.2z" />
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M8.7,10.1h6.6v2.4h-6.6z" />
+    <path
+        android:fillColor="#FFFFFF"
+        android:fillType="evenOdd"
+        android:pathData="M8.3,12.9h7.4l2.1,8.6h-11.6z M10.6,15.1l-0.6,4.4h1.5l0.3,-4.4z M13.4,15.1l0.3,4.4h1.5l-0.6,-4.4z" />
+</vector>

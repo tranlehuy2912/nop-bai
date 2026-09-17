@@ -6,6 +6,9 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.updatePadding
 import androidx.lifecycle.lifecycleScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -45,6 +48,7 @@ class ParentActivity : AppCompatActivity() {
         setContentView(binding.root)
         prefs = Prefs.get(this)
         gate = GateStore(this)
+        chuaThanhHeThong()
 
         binding.btnDone.setOnClickListener { traMay() }
         binding.swUnlock.setOnCheckedChangeListener { nut, bat ->
@@ -99,7 +103,7 @@ class ParentActivity : AppCompatActivity() {
                 return@maGhepMoi
             }
             MaterialAlertDialogBuilder(this)
-                .setTitle("Nối điện thoại Ba Huy")
+                .setTitle("Nối điện thoại ba Huy")
                 .setMessage(
                     "Mở app Bảng điều khiển trên điện thoại, gõ hai dòng này:\n\n" +
                         "Mã nhà:\n$maNha\n\n" +
@@ -211,7 +215,7 @@ class ParentActivity : AppCompatActivity() {
             "Mọi chặn đang tắt, kể cả Cài đặt — ${ParentMode.moTa(this)}. " +
                 "Gạt lại để khoá."
         } else {
-            "Gạt để tắt hết chặn khi Ba Huy cần dùng máy. " +
+            "Gạt để tắt hết chặn khi ba Huy cần dùng máy. " +
                 "Vào trang này không tự mở khoá."
         }
 
@@ -223,7 +227,7 @@ class ParentActivity : AppCompatActivity() {
                 binding.txtDetail.text = if (so > 1) {
                     "$so bài đã gửi sang Telegram, duyệt từng bài một"
                 } else {
-                    "Ảnh bài tập đã gửi sang cho Ba Huy"
+                    "Ảnh bài tập đã gửi sang cho ba Huy"
                 }
             }
             gate.state == GateState.GRANTED -> {
@@ -259,7 +263,7 @@ class ParentActivity : AppCompatActivity() {
         veCanhBao()
 
         binding.txtNote.text = if (Permissions.hasDeviceAdmin(this)) {
-            "Đang bật quản trị thiết bị nên không ai gỡ được app, kể cả Ba Huy. " +
+            "Đang bật quản trị thiết bị nên không ai gỡ được app, kể cả ba Huy. " +
                 "Muốn gỡ thì bấm \"Cho phép gỡ app\" ở trên."
         } else {
             "Quản trị thiết bị đang TẮT — lúc này Lê Hòa cũng gỡ được app. " +
@@ -431,7 +435,7 @@ class ParentActivity : AppCompatActivity() {
             .setMessage(
                 "Tắt quản trị thiết bị thì gỡ được app, nhưng lúc đó " +
                     "${getString(R.string.child_name)} cũng gỡ được. " +
-                    "Máy sẽ nhắn Telegram nhắc Ba Huy bật lại."
+                    "Máy sẽ nhắn Telegram nhắc ba Huy bật lại."
             )
             .setPositiveButton("Tắt") { _, _ ->
                 // Go app thi phai vao duoc Cai dat > Ung dung, ma cho do guard chan.
@@ -448,6 +452,19 @@ class ParentActivity : AppCompatActivity() {
             }
             .setNegativeButton(R.string.cancel, null)
             .show()
+    }
+
+    /**
+     * Tu Android 15 app ve tran ca man hinh, thuoc tinh statusBarColor trong
+     * theme khong con tac dung. Khong chua cho thi dong "Cau hinh" chui len duoi dong ho
+     * va pin cua thanh trang thai.
+     */
+    private fun chuaThanhHeThong() {
+        ViewCompat.setOnApplyWindowInsetsListener(binding.root) { view, insets ->
+            val thanh = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+            view.updatePadding(top = thanh.top, bottom = thanh.bottom)
+            insets
+        }
     }
 
     private fun toast(text: String) =

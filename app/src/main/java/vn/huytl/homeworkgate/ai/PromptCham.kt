@@ -37,6 +37,46 @@ package vn.huytl.homeworkgate.ai
  * TRAC_NGHIEM, va so phut ra 6, 6, 5 - thay vi 50, 52, 42 cua luat cu. So cau van
  * nhay nhu truoc, nhung so phut thi thoi.
  *
+ * Ban thu bay (ngay 16/9/2026), ba sua nho:
+ *
+ *  - [CAU_LENH_GIAI_THICH] va [CAU_LENH_DOC_LAI] goi hoc sinh la "em", trong khi hai
+ *    ban kia goi la "con". Loi nhan xet hien duoi ten Ba Huy tren man hinh cua Le
+ *    Hoa, nen mot cau lot chu "em" la lo ngay ra day khong phai loi cua nguoi;
+ *  - bo chu "Hay" dau hai cau lenh do, cho cung giong ra lenh nhu ban chinh;
+ * Ban do co thu hai thu de chan viec keo dai bai lam cho duoc nhieu phut, va BO ca
+ * hai truoc khi chay:
+ *
+ *  - mot truong "so_dong_chuan" (may tu uoc bai nay giai gon nhat het may dong) de
+ *    lam tran cho so dong con viet. Bo vi do la con so may tu nghi ra ma lai tru
+ *    thang vao so phut cua con, trong khi do dai loi giai may sinh ra moi lan mot
+ *    khac;
+ *  - mot muc trong danh sach loai tru cua "bai_lam": dong chi chep lai ket qua vua
+ *    viet o dong ngay tren. Bo vi dong do phan nhieu la dong ket luan ("Vay ... =
+ *    ..."), tuc la cach co giao day trinh bay, chu khong phai con viet them de kiem
+ *    phut. Phan gian lan that - chep di chep lai mot dong cho dai ra - thi muc "dong
+ *    lap lai vo nghia" da chan roi.
+ *
+ * Con lai hai sua ve xung ho, va chung chi la chu nghia.
+ *
+ * Ban thu tam (ngay 16/9/2026), hai them:
+ *
+ *  - RANG BUOC VAN PHONG cho "nhan_xet". Truoc ban nay cho do chi bi rang ve noi
+ *    dung ("sai o buoc nao, sua the nao"), khong bi rang ve giong. De tu do thi may
+ *    viet kieu "Con can xem lai buoc dat nhan tu chung nhe! Hay kiem tra ky dau cua
+ *    tung hang tu." Cau do hien tren man hinh cua Le Hoa duoi ten Ba Huy, ma Ba Huy
+ *    khong noi nhu vay - doc vai chuc cau nhu the la dua tre doan ra ngay day la may
+ *    cham, tuc la mat dung cai ma ca doan tren dang giu. Nen: toi da 15 chu, mo dau
+ *    bang so dong sai, cam "Hay", cam "nhe", cam dau cham than, cam khen, va co mot
+ *    cau mau ngay trong cau lenh;
+ *  - "loai_loi": xep moi cau sai vao mot trong bay nhan co dinh. Truoc day may chi
+ *    biet dem con sai bao nhieu cau, ma con so do khong noi duoc gi de ngoi noi
+ *    chuyen voi con. Xep nhan thi sau mot thang co cau tra loi cho "con hay sai kieu
+ *    gi" - sai dau hay nham cong thuc la hai viec phai day khac han nhau. Bay nhan
+ *    chu khong de may tu dat chu: tu do thi moi lan chay ra mot ten khac, cong don
+ *    lai khong ra con so nao. Xem [vn.huytl.homeworkgate.kho.KhoBai.thongKeLoi].
+ *
+ * Ca hai deu dat o CUOI danh sach quy tac, khong chen vao giua - dung ly do o tren.
+ *
  * Sua cau lenh nay thi phai chay lai thu tren anh that, dung sua bang cam tinh:
  * them mot quy tac o giua co the lam loang quy tac cham diem (dung y nhu vay khi
  * them quy tac dem dong o ban thu tu).
@@ -62,7 +102,7 @@ Bạn chấm bài về nhà giúp phụ huynh. Ảnh gồm (có thể thiếu m�
 
 Chỉ trả về JSON, không thêm chữ nào khác:
 {"mon":"...","ngay_dan_do":"yyyy-MM-dd hoặc null","bai_duoc_giao":["bài 2","bài 3"],"lam_het_dan_do":true,
- "cac_cau":[{"ma":"2.26a","de":"chép lại đề của câu đó","co_de":true,"bai_lam":["dòng 1 học sinh viết","dòng 2 học sinh viết"],"dong_sai":2,"ket_qua":"kết quả cuối cùng học sinh viết","dung":true,"doc_ro":true,"dang":"CAU_NHO","trong_dan_do":true,"so_dong":4,"nhan_xet":"ngắn gọn"}],
+ "cac_cau":[{"ma":"2.26a","de":"chép lại đề của câu đó","co_de":true,"bai_lam":["dòng 1 học sinh viết","dòng 2 học sinh viết"],"dong_sai":2,"ket_qua":"kết quả cuối cùng học sinh viết","dung":true,"doc_ro":true,"dang":"CAU_NHO","trong_dan_do":true,"so_dong":4,"nhan_xet":"ngắn gọn","loai_loi":"SAI_DAU"}],
  "tom_tat":"một câu"}
 
 Quy tắc bắt buộc:
@@ -76,11 +116,19 @@ Quy tắc bắt buộc:
 8. "so_dong": bằng đúng số phần tử của "bai_lam".
 9. "dong_sai": số thứ tự dòng đầu tiên sai trong "bai_lam" (1 là dòng đầu tiên). Cả bài đúng, hoặc không chỉ ra được dòng nào, thì để 0.
 10. "dang" là một trong: TRAC_NGHIEM (chỉ cần khoanh một chữ, ghi Đúng/Sai, nối cột, điền một từ — không phải trình bày lời giải), CAU_NHO (câu nhỏ trong bài nhiều câu, có trình bày lời giải), BAI_RIENG (bài đứng riêng), VIET_DAI (đoạn văn, bài văn, báo cáo), KHONG_TINH (học thuộc, luyện chữ, chép bài).
-11. "nhan_xet" viết cho học sinh đọc, xưng hô gọi học sinh là "con": sai ở bước nào, sửa thế nào. Không giải hộ.
+11. "nhan_xet" viết cho học sinh đọc, xưng hô gọi học sinh là "con": sai ở bước nào, sửa thế nào. Không giải hộ. Tối đa 15 chữ. Có "dong_sai" thì mở đầu bằng số dòng đó. Cấm chữ "Hãy", cấm chữ "nhé", cấm dấu chấm than, cấm khen. Mẫu đúng: "Dòng 3 đổi dấu sai khi chuyển vế." Câu "dung": true thì để chuỗi rỗng.
 12. "ngay_dan_do": ngày ghi trong vở dặn dò, đổi ra yyyy-MM-dd. Vở chỉ ghi ngày và tháng mà không ghi năm thì lấy năm sao cho ngày đó gần hôm nay nhất. Không có vở dặn dò, hoặc không thấy ngày, thì để null.
 13. "bai_duoc_giao": chép ra tên từng BÀI TẬP PHẢI LÀM mà vở dặn dò giao, ví dụ ["bài 2","bài 3","SBT 2.26"]. Dặn dò chỉ nhắc việc chứ không phải bài tập nộp được — "mang sách vở đầy đủ", "tiết sau kiểm tra", "học thuộc", "làm đúng nội quy" — thì KHÔNG phải bài tập, để mảng rỗng []. Không có ảnh vở dặn dò thì cũng để rỗng.
 14. "lam_het_dan_do": true CHỈ KHI "bai_duoc_giao" có ít nhất một bài VÀ trong ảnh thấy học sinh đã làm hết những bài đó. Mảng rỗng thì bắt buộc false.
 15. "trong_dan_do": true nếu câu đó thuộc một bài trong "bai_duoc_giao". Không có ảnh vở dặn dò thì để true.
+16. "loai_loi" xếp câu sai vào ĐÚNG MỘT trong bảy nhãn dưới đây, chép đúng chữ in hoa. Câu "dung": true thì để chuỗi rỗng.
+   SAI_DAU: sai dấu, mất dấu, nhầm dấu khi chuyển vế hay khi phá ngoặc.
+   SAI_BUOC: một bước biến đổi hay một bước lập luận sai, các bước khác đúng.
+   NHAM_CONG_THUC: dùng nhầm công thức, quy tắc, định nghĩa, hằng đẳng thức.
+   TINH_NHAM: cộng trừ nhân chia ra số sai, cách làm vẫn đúng.
+   THIEU: thiếu trường hợp, thiếu điều kiện, thiếu kết luận, hoặc bỏ dở giữa chừng.
+   LAC_DE: làm lệch cái đề hỏi, trả lời sang chuyện khác.
+   KHAC: sai mà không thuộc sáu nhãn trên.
 
 TRƯỚC KHI TRẢ LỜI, KIỂM TRA LẠI:
 - Câu nào bạn không nhìn thấy đề bài thì "co_de": false và "dung": false. Một trang vở chỉ toàn đáp án thì TẤT CẢ các câu đều như vậy.
@@ -124,7 +172,7 @@ TRƯỚC KHI TRẢ LỜI, KIỂM TRA LẠI:
      * thich kem theo.
      */
     val CAU_LENH_GIAI_THICH = """
-Học sinh làm sai mấy câu dưới đây. Hãy chỉ cho em ấy chỗ sai để tự sửa.
+Học sinh làm sai mấy câu dưới đây. Chỉ cho học sinh chỗ sai để tự sửa.
 
 Các câu sai (mã | đề | kết quả em viết):
 {DANH_SACH}
@@ -133,9 +181,10 @@ Chỉ trả về JSON, không thêm chữ nào khác:
 {"giai_thich":[{"ma":"2.27a","loi":"Dòng 2: con viết \"= 2(x+y)(...)\" là sai, ... (chỉ rõ dòng nào, chép lại đoạn sai)"}]}
 
 Quy tắc:
-- Mỗi câu 1-2 câu văn, viết cho học sinh đọc, gọi học sinh là "con".
+- Mỗi câu 1-2 câu văn, viết cho học sinh đọc, gọi học sinh là "con". Tối đa 30 chữ.
 - BẮT BUỘC chép lại đoạn viết sai ra và nói sai ở đâu. Cấm viết chung chung kiểu "cần kiểm tra lại các bước".
-- KHÔNG đưa đáp án đúng. Chỉ nói sai chỗ nào để em tự làm lại.
+- Cấm chữ "Hãy", cấm chữ "nhé", cấm dấu chấm than, cấm khen. Mở đầu bằng số dòng nếu chỉ ra được dòng.
+- KHÔNG đưa đáp án đúng. Chỉ nói sai chỗ nào để học sinh tự làm lại.
     """.trimIndent()
 
     /**
@@ -158,7 +207,9 @@ Quy tắc:
         cac: List<vn.huytl.homeworkgate.kho.CauHoi>,
         tenNguon: String,
         tenBai: String,
-        homNay: java.time.LocalDate = java.time.LocalDate.now()
+        homNay: java.time.LocalDate = java.time.LocalDate.now(),
+        /** Lan nay la on lai bai cu. Them mot cau hoi ve mau muc, xem [DOAN_ON_TAP]. */
+        onTap: Boolean = false
     ): String {
         val danhSach = cac.joinToString("\n") { "${it.ma} | ${it.de}" }
         return "Hôm nay là ngày ${homNay.dayOfMonth} tháng ${homNay.monthValue} " +
@@ -166,8 +217,33 @@ Quy tắc:
             CAU_LENH_KHAI_BAI
                 .replace("{NGUON}", tenNguon)
                 .replace("{BAI}", tenBai)
-                .replace("{DANH_SACH}", danhSach)
+                .replace("{DANH_SACH}", danhSach) +
+            if (onTap) DOAN_ON_TAP else ""
     }
+
+    /**
+     * Noi them vao cuoi cau lenh khi la lan on tap.
+     *
+     * Chi hoi mot thu: bai lam viet bang muc mau gi. Do la quan sat tren anh, khong
+     * phai con so may tu nghi ra - nen no on dinh hon nhieu so voi kieu "uoc xem bai
+     * nay dang may dong".
+     *
+     * Vi sao can: on tap la duong duy nhat duoc cham lai mot cau da lam dung, tuc la
+     * no thao mat cai khoa "moi cau chi tra gio mot lan". Chup lai trang vo cu thi
+     * anh khong khac gi anh bai vua lam. Luat nha bit cho do: on thi viet but do.
+     *
+     * Dat o CUOI chu khong chen vao giua danh sach quy tac: ban thu tu da cho thay
+     * them mot quy tac o giua lam loang han phan cham diem.
+     */
+    val DOAN_ON_TAP = """
+
+Lần này học sinh ÔN LẠI bài cũ. Nhà quy định bài ôn phải viết bằng mực ĐỎ, để phân biệt với bài đã làm từ trước bằng mực thường.
+
+Thêm vào mỗi câu một trường nữa:
+"muc_do": true nếu bài làm của câu đó viết bằng mực đỏ; false nếu viết bằng mực xanh, đen, bút chì, hoặc nhìn không rõ màu.
+
+Chỉ nhìn màu của BÀI LÀM học sinh viết, không tính màu của đề in trong sách hay chữ cô giáo chữa.
+    """.trimIndent()
 
     val CAU_LENH_KHAI_BAI = """
 Bạn chấm bài về nhà giúp phụ huynh. Ảnh gồm (có thể thiếu một số): trang vở dặn dò của cô giáo, trang đề bài in trong sách, và bài làm viết tay của học sinh.
@@ -177,7 +253,7 @@ Học sinh khai là đang làm những câu sau, lấy từ {NGUON} — {BAI}:
 
 Chỉ trả về JSON, không thêm chữ nào khác:
 {"mon":"...","ngay_dan_do":"yyyy-MM-dd hoặc null","bai_duoc_giao":["bài 2","bài 3"],"lam_het_dan_do":true,
- "cac_cau":[{"ma":"2.26a","co_lam":true,"co_de":true,"bai_lam":["dòng 1 học sinh viết","dòng 2 học sinh viết"],"dong_sai":2,"ket_qua":"kết quả cuối cùng học sinh viết","dung":true,"doc_ro":true,"dang":"CAU_NHO","trong_dan_do":true,"so_dong":4,"nhan_xet":"ngắn gọn","ngoai_danh_sach":false,"de":"chỉ cần khi ngoai_danh_sach là true"}],
+ "cac_cau":[{"ma":"2.26a","co_lam":true,"co_de":true,"bai_lam":["dòng 1 học sinh viết","dòng 2 học sinh viết"],"dong_sai":2,"ket_qua":"kết quả cuối cùng học sinh viết","dung":true,"doc_ro":true,"dang":"CAU_NHO","trong_dan_do":true,"so_dong":4,"nhan_xet":"ngắn gọn","loai_loi":"SAI_DAU","ngoai_danh_sach":false,"de":"chỉ cần khi ngoai_danh_sach là true"}],
  "tom_tat":"một câu"}
 
 Quy tắc bắt buộc:
@@ -193,11 +269,19 @@ Quy tắc bắt buộc:
 10. "so_dong": bằng đúng số phần tử của "bai_lam".
 11. "dong_sai": số thứ tự dòng đầu tiên sai trong "bai_lam" (1 là dòng đầu tiên). Cả bài đúng, hoặc không chỉ ra được dòng nào, thì để 0.
 12. "dang" là một trong: TRAC_NGHIEM (chỉ cần khoanh một chữ, ghi Đúng/Sai, nối cột, điền một từ — không phải trình bày lời giải), CAU_NHO (câu nhỏ trong bài nhiều câu, có trình bày lời giải), BAI_RIENG (bài đứng riêng), VIET_DAI (đoạn văn, bài văn, báo cáo), KHONG_TINH (học thuộc, luyện chữ, chép bài).
-13. "nhan_xet" viết cho học sinh đọc, xưng hô gọi học sinh là "con": sai ở bước nào, sửa thế nào. Không giải hộ.
+13. "nhan_xet" viết cho học sinh đọc, xưng hô gọi học sinh là "con": sai ở bước nào, sửa thế nào. Không giải hộ. Tối đa 15 chữ. Có "dong_sai" thì mở đầu bằng số dòng đó. Cấm chữ "Hãy", cấm chữ "nhé", cấm dấu chấm than, cấm khen. Mẫu đúng: "Dòng 3 đổi dấu sai khi chuyển vế." Câu "dung": true thì để chuỗi rỗng.
 14. "ngay_dan_do": ngày ghi trong vở dặn dò, đổi ra yyyy-MM-dd. Vở chỉ ghi ngày và tháng mà không ghi năm thì lấy năm sao cho ngày đó gần hôm nay nhất. Không có vở dặn dò, hoặc không thấy ngày, thì để null.
 15. "bai_duoc_giao": chép ra tên từng BÀI TẬP PHẢI LÀM mà vở dặn dò giao, ví dụ ["bài 2","bài 3","SBT 2.26"]. Dặn dò chỉ nhắc việc chứ không phải bài tập nộp được — "mang sách vở đầy đủ", "tiết sau kiểm tra", "học thuộc", "làm đúng nội quy" — thì KHÔNG phải bài tập, để mảng rỗng []. Không có ảnh vở dặn dò thì cũng để rỗng.
 16. "lam_het_dan_do": true CHỈ KHI "bai_duoc_giao" có ít nhất một bài VÀ trong ảnh thấy học sinh đã làm hết những bài đó. Mảng rỗng thì bắt buộc false.
 17. "trong_dan_do": true nếu câu đó thuộc một bài trong "bai_duoc_giao". Không có ảnh vở dặn dò thì để true.
+18. "loai_loi" xếp câu sai vào ĐÚNG MỘT trong bảy nhãn dưới đây, chép đúng chữ in hoa. Câu "dung": true thì để chuỗi rỗng.
+   SAI_DAU: sai dấu, mất dấu, nhầm dấu khi chuyển vế hay khi phá ngoặc.
+   SAI_BUOC: một bước biến đổi hay một bước lập luận sai, các bước khác đúng.
+   NHAM_CONG_THUC: dùng nhầm công thức, quy tắc, định nghĩa, hằng đẳng thức.
+   TINH_NHAM: cộng trừ nhân chia ra số sai, cách làm vẫn đúng.
+   THIEU: thiếu trường hợp, thiếu điều kiện, thiếu kết luận, hoặc bỏ dở giữa chừng.
+   LAC_DE: làm lệch cái đề hỏi, trả lời sang chuyện khác.
+   KHAC: sai mà không thuộc sáu nhãn trên.
 
 TRƯỚC KHI TRẢ LỜI, KIỂM TRA LẠI:
 - Câu ngoài danh sách mà bạn không nhìn thấy đề thì "co_de": false và "dung": false.
@@ -240,12 +324,12 @@ TRƯỚC KHI TRẢ LỜI, KIỂM TRA LẠI:
     data class KhaiSua(val ma: String, val de: String, val dongKhai: List<String>)
 
     val CAU_LENH_DOC_LAI = """
-Bạn đã chấm bài này rồi. Học sinh nói bạn đọc nhầm chữ viết tay ở mấy câu dưới đây. Hãy NHÌN LẠI ẢNH thật kỹ ở đúng những câu đó, rồi chấm lại.
+Bạn đã chấm bài này rồi. Học sinh nói bạn đọc nhầm chữ viết tay ở mấy câu dưới đây. NHÌN LẠI ẢNH thật kỹ ở đúng những câu đó, rồi chấm lại.
 
 {DANH_SACH}
 
 Chỉ trả về JSON, không thêm chữ nào khác:
-{"cac_cau":[{"ma":"2.26a","dung_nhu_hoc_sinh_noi":true,"bai_lam":["dòng 1","dòng 2"],"dong_sai":2,"ket_qua":"kết quả cuối cùng","dung":false,"doc_ro":true,"so_dong":2,"nhan_xet":"ngắn gọn"}]}
+{"cac_cau":[{"ma":"2.26a","dung_nhu_hoc_sinh_noi":true,"bai_lam":["dòng 1","dòng 2"],"dong_sai":2,"ket_qua":"kết quả cuối cùng","dung":false,"doc_ro":true,"so_dong":2,"nhan_xet":"ngắn gọn","loai_loi":"SAI_DAU"}]}
 
 Quy tắc bắt buộc:
 1. "bai_lam" chép lại cái BẠN ĐỌC ĐƯỢC TRÊN ẢNH sau khi nhìn kỹ — KHÔNG phải chép lại lời học sinh. Học sinh có thể nói sai, cố ý hoặc vô tình.
@@ -253,7 +337,8 @@ Quy tắc bắt buộc:
 3. "doc_ro": false nếu nhìn kỹ rồi mà vẫn phải đoán ký tự.
 4. Chấm lại câu đó theo đúng cái bạn vừa đọc được: tự giải ra nháp trước, rồi so từng ký tự với kết quả cuối cùng. Sai một dấu -> "dung": false.
 5. "dong_sai": số thứ tự dòng đầu tiên sai trong "bai_lam" (1 là dòng đầu). Đúng hết thì 0.
-6. "nhan_xet" viết cho học sinh đọc, gọi học sinh là "con": sai ở bước nào. Không giải hộ, không đưa đáp án.
+6. "nhan_xet" viết cho học sinh đọc, gọi học sinh là "con": sai ở bước nào. Không giải hộ, không đưa đáp án. Tối đa 15 chữ. Có "dong_sai" thì mở đầu bằng số dòng đó. Cấm chữ "Hãy", cấm chữ "nhé", cấm dấu chấm than, cấm khen. Mẫu đúng: "Dòng 3 đổi dấu sai khi chuyển vế." Câu "dung": true thì để chuỗi rỗng.
+7. "loai_loi" xếp câu sai vào ĐÚNG MỘT trong bảy nhãn, chép đúng chữ in hoa: SAI_DAU, SAI_BUOC, NHAM_CONG_THUC, TINH_NHAM, THIEU, LAC_DE, KHAC. Câu "dung": true thì để chuỗi rỗng.
     """.trimIndent()
 
     /** Dat danh sach cau sai vao [CAU_LENH_GIAI_THICH]. */

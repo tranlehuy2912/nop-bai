@@ -5,18 +5,20 @@
     <!-- Ten that cua hai nguoi dung. De o day de sau nay doi ten khong phai lan
          tim trong ma nguon, va de man hinh goi dung ten chu khong phai "bo" voi
          "con" chung chung. -->
-    <string name="parent_name">Ba Huy</string>
+    <string name="parent_name">ba Huy</string>
+    <!-- Ban viet hoa, dung cho cho ten dung dau cau hoac dung mot minh. -->
+    <string name="parent_name_cap">Ba Huy</string>
     <string name="child_name">Lê Hòa</string>
 
 
     <!-- Man cua Le Hoa -->
     <string name="home_submit">Nộp bài tập</string>
     <string name="home_setup_needed">Máy chưa cài đặt xong</string>
-    <string name="home_chat">Khiếu nại với Ba Huy</string>
+    <string name="home_chat">Nhắn cho ba Huy</string>
 
     <!-- Man chup -->
     <string name="capture_take">Chụp</string>
-    <string name="capture_send">Gửi cho Ba Huy</string>
+    <string name="capture_send">Gửi cho ba Huy</string>
     <string name="capture_skip">Không có, bỏ qua</string>
     <string name="capture_next">Bước tiếp theo</string>
     <string name="capture_full">Đủ 10 trang rồi</string>
@@ -44,9 +46,33 @@
          khong phai "Thong ke": cai can biet la app nao va luc nao. -->
     <string name="thong_ke_title">Dùng app gì, lúc nào</string>
 
+    <!-- Man hinh cua chinh Le Hoa, khong phai cua Ba Huy: nhin lai viec da lam.
+         Ten dat theo cau con se hoi chu khong phai "Thong ke". -->
+    <string name="tien_bo_title">Con đã làm được gì</string>
+    <string name="tien_bo_tuan">7 ngày</string>
+    <string name="tien_bo_thang">30 ngày</string>
+    <string name="tien_bo_trong">Chưa có câu nào trong khoảng này. Nộp bài là máy ghi vào đây.</string>
+    <string name="tien_bo_nut">Việc đã làm</string>
+
+    <!-- Hoc thuoc: may hoi, con go thang tren tablet. Ten dat theo viec con lam
+         chu khong phai theo co che ("The ghi nho", "On tu vung"). -->
+    <string name="hoc_thuoc_title">Học thuộc</string>
+    <string name="hoc_thuoc_nut">Học thuộc</string>
+    <string name="hoc_thuoc_go">Gõ câu trả lời</string>
+    <string name="hoc_thuoc_tra_loi">Trả lời</string>
+    <string name="hoc_thuoc_tiep">Thẻ tiếp</string>
+    <string name="hoc_thuoc_xem_ket">Xem kết quả</string>
+    <string name="hoc_thuoc_chua_co_bo">Máy chưa có bộ thẻ nào. Nhờ ba Huy nạp vào.</string>
+    <string name="hoc_thuoc_chan">Gõ đúng thì được cộng giờ chơi. Mỗi thẻ vài ngày mới quay lại một lần.</string>
+
     <string name="pin_title">Nhập mã PIN</string>
     <string name="pin_wrong">Sai mã PIN</string>
     <string name="ok">Xong</string>
     <string name="cancel">Huỷ</string>
-    <string name="accessibility_description">Theo dõi xem những ứng dụng nào đang hiện trên màn hình để khoá game khi hết giờ chơi. Chỉ lấy tên ứng dụng, kể cả khi chia đôi màn hình. Riêng cửa sổ nổi không đẩy đi được thì có tìm nút Đóng của chính cửa sổ đó để bấm hộ. Với một số ứng dụng AI (như ChatGPT, Gemini, NotebookLM), có ghi lại câu hỏi gõ vào để gửi cho phụ huynh xem. Không đọc nội dung của các ứng dụng khác.</string>
+    <!-- Noi dung mo ta nay hien tren man hinh Cai dat tro nang cua Android, tuc la
+         cho Le Hoa doc duoc moi lan phai bat lai dich vu sau khi cap nhat app. Ban
+         cu ke thang ten ChatGPT, Gemini, NotebookLM va hua "khong doc app khac" -
+         doc xong la co san ban do chi cho tranh cho nao. Ban nay khai bao dung va du
+         theo yeu cau cua Google, nhung khong ve ranh gioi ra nua. -->
+    <string name="accessibility_description">Theo dõi ứng dụng nào đang hiện trên màn hình để khoá khi hết giờ chơi, kể cả khi chia đôi màn hình, và đóng hộ những cửa sổ nổi không đẩy đi được. Có ghi lại nội dung gõ vào máy để phụ huynh xem.</string>
 </resources>

@@ -1,12 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Khung chat. Co tinh giong app nhan tin thong thuong de con khong phai hoc
      cach dung: cau cua minh ben phai, cau cua ba ben trai. -->
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<!-- Khung ngoai cung chi de mot viec: giu noi dung lai giua man hinh. Tablet nay
+     rong 1280dp, tha ra thi mot dong chu dai gap doi muc doc duoc va nua man hinh
+     bo trong. Cung con so st_be_rong_toi_da ma cac man chon bai, soat bai dang dung. -->
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/root"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_max="@dimen/st_be_rong_toi_da">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -73,7 +86,7 @@
         android:gravity="center"
         android:paddingHorizontal="40dp"
         android:paddingBottom="16dp"
-        android:text="Có việc gì cần báo Ba Huy thì gõ vào đây. Ba Huy nhận được ngay trên điện thoại."
+        android:text="Có việc gì cần báo ba Huy thì gõ vào đây. Ba Huy nhận được ngay trên điện thoại."
         android:textColor="@color/ink_soft"
         android:textSize="15sp"
         android:visibility="gone" />
@@ -93,7 +106,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="@drawable/bg_bubble_ba"
-            android:hint="Nhắn cho Ba Huy…"
+            android:hint="Nhắn cho ba Huy…"
             android:inputType="textCapSentences|textMultiLine"
             android:maxLines="4"
             android:minHeight="56dp"
@@ -103,6 +116,23 @@
             android:textColorHint="@color/ink_soft"
             android:textSize="17sp"
             android:importantForAutofill="no" />
+
+        <!-- Chup de hoi bai. Mot dua tre khong ta duoc "cho nay con khong hieu"
+             bang chu, nhung chup mot cai la xong. -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_chup"
+            style="@style/Widget.Material3.Button.OutlinedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="56dp"
+            android:layout_marginStart="10dp"
+            android:contentDescription="Chụp hình để hỏi bài"
+            android:minWidth="56dp"
+            android:paddingHorizontal="14dp"
+            app:cornerRadius="20dp"
+            app:icon="@drawable/ic_may_anh"
+            app:iconGravity="textStart"
+            app:iconPadding="0dp"
+            app:iconSize="24dp" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_send"
@@ -114,3 +144,4 @@
             app:cornerRadius="20dp" />
     </LinearLayout>
 </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

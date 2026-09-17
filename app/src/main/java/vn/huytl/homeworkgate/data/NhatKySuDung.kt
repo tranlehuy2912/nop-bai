@@ -43,6 +43,26 @@ object NhatKySuDung {
     private const val K_DOAN = "su_dung_doan"
 
     /**
+     * Kho rieng cho so nay, khong nam chung file prefs voi phan trang thai.
+     *
+     * So nay ghi lai moi vai phut trong suot thoi gian con dung may. Nam chung file
+     * thi moi lan ghi keo theo mot luot day len Firestore, vi ben [vn.huytl
+     * .homeworkgate.dongbo.DongBo] nghe ca file de biet trang thai co doi khong.
+     * Ma trang thai thi khong doi ti nao khi con xem YouTube them ba phut.
+     */
+    private const val KHO = "nhat_ky_su_dung"
+
+    private fun kho(context: Context) = Prefs.khoRieng(context, KHO).also { sp ->
+        // Chuyen mot lan tu kho cu. Bo qua thi bang thong ke mat sach bay ngay gan
+        // nhat dung hom cap nhat app.
+        if (sp.contains(K_DOAN)) return@also
+        val cu = Prefs.get(context).raw()
+        val du = cu.getString(K_DOAN, null) ?: return@also
+        sp.edit().putString(K_DOAN, du).commit()
+        cu.edit().remove(K_DOAN).commit()
+    }
+
+    /**
      * Toi da bao nhieu khoang. Mot ngay dung may nhieu cung chi vai chuc khoang,
      * nen tran nay chi de mot loi nao do khong lam phong file prefs vo han.
      */
@@ -97,7 +117,7 @@ object NhatKySuDung {
 
     /** Xoa sach, dung khi Ba Huy khong muon giu nua. */
     fun xoaHet(context: Context) {
-        Prefs.get(context).raw().edit().remove(K_DOAN).commit()
+        kho(context).edit().remove(K_DOAN).commit()
     }
 
     // ------------------------------------------------------------------- doc
@@ -241,7 +261,7 @@ object NhatKySuDung {
     }
 
     private fun doc(context: Context): List<Doan> =
-        Prefs.get(context).raw().getString(K_DOAN, "").orEmpty()
+        kho(context).getString(K_DOAN, "").orEmpty()
             .lineSequence()
             .mapNotNull { dong ->
                 val phan = dong.split('|')
@@ -264,7 +284,7 @@ object NhatKySuDung {
             .sortedBy { it.tu }
             .toList()
             .takeLast(MAX_DOAN)
-        Prefs.get(context).raw().edit()
+        kho(context).edit()
             .putString(K_DOAN, giu.joinToString("\n") { "${it.goi}|${it.tu}|${it.den}" })
             .apply()
     }

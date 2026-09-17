@@ -102,7 +102,7 @@ object Permissions {
         .putExtra(DevicePolicyManager.EXTRA_DEVICE_ADMIN, adminComponent(context))
         .putExtra(
             DevicePolicyManager.EXTRA_ADD_EXPLANATION,
-            "Bật để tablet không bị gỡ app quản lý giờ chơi, và để Ba Huy nhận tin " +
+            "Bật để tablet không bị gỡ app quản lý giờ chơi, và để ba Huy nhận tin " +
                 "khi có người định tắt nó."
         )
 
@@ -257,7 +257,7 @@ object Permissions {
                 Thieu(
                     Viec.THONG_BAO,
                     "Chưa cho app hiện thông báo",
-                    "Không có đồng hồ đếm ngược, tin nhắn của Ba Huy cũng không kêu.",
+                    "Không có đồng hồ đếm ngược, tin nhắn của ba Huy cũng không kêu.",
                     nang = false
                 )
             )

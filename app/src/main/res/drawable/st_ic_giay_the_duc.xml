@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Doi giay: buoi hoc toi co tiet the duc. Truoc day cho nay la chu "👟". -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <path
+        android:fillColor="#FFFFFF"
+        android:fillType="evenOdd"
+        android:pathData="M2.6,9.4h4.2l2.1,2.2 5.6,1.8a6,6 0 0,1 4.1,4.3l0.3,1.3a1,1 0 0,1 -1,1.2h-14.3a1,1 0 0,1 -1,-1v-8.8a1,1 0 0,1 1,-1z M4.4,11.2v2.2h1.6v-2.2z M4.4,15.2v2.2h13.2l-0.2,-0.7a4.2,4.2 0 0,0 -2.9,-3l-1.2,-0.4 -0.6,1.9z" />
+</vector>

@@ -1,12 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Trang cua Ba Huy: mot trang cau hinh, khong phai mot che do.
      Vao day khong mo khoa gi ca - muon mo thi bat cong tac o tren cung. -->
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<!-- Khung ngoai cung chi de mot viec: giu noi dung lai giua man hinh. Tablet nay
+     rong 1280dp, tha ra thi mot dong chu dai gap doi muc doc duoc va nua man hinh
+     bo trong. Cung con so st_be_rong_toi_da ma cac man chon bai, soat bai dang dung. -->
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/root"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:fillViewport="true">
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_max="@dimen/st_be_rong_toi_da">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -324,7 +337,7 @@
                     android:layout_height="wrap_content"
                     android:gravity="start|center_vertical"
                     android:paddingVertical="18dp"
-                    android:text="Nối điện thoại Ba Huy"
+                    android:text="Nối điện thoại ba Huy"
                     android:textSize="16sp" />
 
                 <View
@@ -353,3 +366,4 @@
             android:textSize="14sp" />
     </LinearLayout>
 </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

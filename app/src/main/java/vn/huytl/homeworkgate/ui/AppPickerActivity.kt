@@ -11,6 +11,10 @@ import android.widget.BaseAdapter
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.updatePadding
+import androidx.core.widget.doAfterTextChanged
 import com.google.android.material.checkbox.MaterialCheckBox
 import vn.huytl.homeworkgate.R
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
@@ -35,7 +39,14 @@ class AppPickerActivity : AppCompatActivity() {
     private lateinit var binding: ActivityAppPickerBinding
     private lateinit var prefs: Prefs
     private val selected = mutableSetOf<String>()
+
+    /** Toan bo app mo duoc tu man hinh chinh, doc mot lan luc vao man. */
+    private var tatCa: List<Entry> = emptyList()
+
+    /** Phan dang hien: [tatCa] sau khi loc theo [tim] va keo cai da chon len dau. */
     private var entries: List<Entry> = emptyList()
+
+    private var tim = ""
     private var danhSachDen = false
     private var datHanGio = false
 
@@ -63,8 +74,15 @@ class AppPickerActivity : AppCompatActivity() {
             return
         }
 
+        chuaThanhHeThong()
+
         datHanGio = intent.getStringExtra(EXTRA_DANH_SACH) == HAN
         danhSachDen = intent.getStringExtra(EXTRA_DANH_SACH) == DEN
+        binding.txtTieuDe.text = when {
+            datHanGio -> "Giờ riêng từng app"
+            danhSachDen -> "App cấm hẳn"
+            else -> "App luôn được dùng"
+        }
         binding.txtHuongDan.text = if (datHanGio) {
             "Đặt số phút mỗi ngày cho từng app. Hết số phút đó là app tự khoá, " +
                 "dù Lê Hòa đang có giờ chơi hay app nằm trong danh sách được dùng. " +
@@ -80,22 +98,29 @@ class AppPickerActivity : AppCompatActivity() {
         if (!datHanGio) {
             selected.addAll(if (danhSachDen) prefs.blockedPackages else prefs.allowedPackages)
         }
-        entries = loadLaunchableApps()
+        tatCa = loadLaunchableApps()
+        locLai()
 
         val adapter = AppAdapter()
         binding.listApps.adapter = adapter
         binding.listApps.setOnItemClickListener { _, _, position, _ ->
             val entry = entries[position]
             if (datHanGio) {
-                hoiSoPhut(entry) { adapter.notifyDataSetChanged() }
+                hoiSoPhut(entry) { veLai(adapter) }
             } else {
                 if (!selected.add(entry.packageName)) selected.remove(entry.packageName)
-                adapter.notifyDataSetChanged()
+                veLai(adapter)
             }
         }
 
-        // Man dat han luu ngay luc chon, nen nut duoi cung chi la dong lai.
-        if (datHanGio) binding.btnDone.text = "Xong"
+        // Go toi dau loc toi do. Danh sach nay khong bao gio dai qua vai chuc dong
+        // nen loc thang tren luong chinh, khong can hoan mot nhip nao.
+        binding.oTim.doAfterTextChanged {
+            tim = it?.toString().orEmpty().trim()
+            veLai(adapter)
+        }
+
+        demLaiNutXong()
 
         binding.btnDone.setOnClickListener {
             if (datHanGio) {
@@ -140,6 +165,67 @@ class AppPickerActivity : AppCompatActivity() {
                 }
             }
             .show()
+    }
+
+    /**
+     * Tu Android 15 app ve tran ca man hinh, thuoc tinh statusBarColor trong theme
+     * khong con tac dung. Khong chua cho thi cau huong dan tren dau nam duoi thanh
+     * trang thai, con nut Xong o day thi dinh thanh dieu huong.
+     */
+    private fun chuaThanhHeThong() {
+        ViewCompat.setOnApplyWindowInsetsListener(binding.root) { view, insets ->
+            val thanh = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+            view.updatePadding(top = thanh.top, bottom = thanh.bottom)
+            insets
+        }
+    }
+
+    /**
+     * Loc theo chu dang go, roi keo nhung app dang chon len dau.
+     *
+     * Keo len dau vi cau hoi thuong gap nhat khi mo man nay la "minh dang cho nhung
+     * cai gi" - ma neu cac app do nam rai rac theo van chu cai thi phai cuon het
+     * danh sach moi tra loi duoc.
+     */
+    private fun locLai() {
+        val theoChu = if (tim.isBlank()) tatCa else {
+            val k = tim.lowercase()
+            tatCa.filter { it.label.lowercase().contains(k) }
+        }
+        entries = if (datHanGio) {
+            // Man dat han khong co o tich; cai da dat gio moi la cai dang chon.
+            theoChu.sortedWith(
+                compareByDescending<Entry> { GioiHanApp.han(this, it.packageName) > 0 }
+                    .thenBy { it.label.lowercase() }
+            )
+        } else {
+            theoChu.sortedWith(
+                compareByDescending<Entry> { it.packageName in selected }
+                    .thenBy { it.label.lowercase() }
+            )
+        }
+    }
+
+    private fun veLai(adapter: AppAdapter) {
+        locLai()
+        adapter.notifyDataSetChanged()
+        demLaiNutXong()
+        binding.txtTrong.visibility = if (entries.isEmpty()) View.VISIBLE else View.GONE
+        binding.txtTrong.text = "Không có app nào tên giống “$tim”."
+    }
+
+    /**
+     * Ghi so dang chon thang len nut Xong.
+     *
+     * Man dat han thi khong dem: o do moi app mot con so rieng, khong co khai niem
+     * "da chon bao nhieu cai".
+     */
+    private fun demLaiNutXong() {
+        binding.btnDone.text = when {
+            datHanGio -> "Xong"
+            selected.isEmpty() -> "Xong — chưa chọn app nào"
+            else -> "Xong — ${selected.size} app"
+        }
     }
 
     private fun loadLaunchableApps(): List<Entry> {

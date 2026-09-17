@@ -107,7 +107,8 @@ object AiChamBai {
             PromptCham.cauLenhTheoDanhSach(
                 danhSach,
                 tenNguon = pham?.tenNguon.orEmpty(),
-                tenBai = pham?.bai.orEmpty()
+                tenBai = pham?.bai.orEmpty(),
+                onTap = pham?.onTap == true
             )
         }
 
@@ -178,7 +179,7 @@ object AiChamBai {
         }
         if (tra == null || tra.maLoi != 0) {
             if (tra != null) KhoaAi.nghiTheoLoi(context, khoa, tra.maLoi, tra.than)
-            Log.w(TAG, "doc lai hong, de Ba Huy xem")
+            Log.w(TAG, "doc lai hong, de ba Huy xem")
             return chiuThua
         }
 
@@ -193,7 +194,10 @@ object AiChamBai {
                 // May khong dam chac anh dung nhu con noi -> khong tu duyet.
                 docRo = moi.docRo && moi.dungNhuConNoi,
                 soDong = moi.baiLam.size.takeIf { it > 0 } ?: cau.soDong,
-                nhanXet = moi.nhanXet.ifBlank { cau.nhanXet }
+                nhanXet = moi.nhanXet.ifBlank { cau.nhanXet },
+                // Doc lai xong thanh cau dung thi xoa nhan loi cu di: cai loi do
+                // hoa ra la may doc nham chu con khong sai.
+                loaiLoi = if (moi.dung) "" else moi.loaiLoi.ifBlank { cau.loaiLoi }
             )
         }
     }

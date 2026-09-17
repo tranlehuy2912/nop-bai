@@ -34,6 +34,17 @@
         <item name="android:textSize">17sp</item>
     </style>
 
+    <!-- Nhan cua mot nhom muc trong trang cai dat. Chu nho, in hoa, mau nhat:
+         no la bien chi duong chu khong phai mot dong noi dung. -->
+    <style name="Nhan.Nhom" parent="">
+        <item name="android:textColor">@color/ink_soft</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:letterSpacing">0.08</item>
+        <item name="android:layout_marginTop">24dp</item>
+        <item name="android:layout_marginBottom">8dp</item>
+    </style>
+
     <style name="Card" parent="Widget.Material3.CardView.Elevated">
         <!-- Chi dinh han mau nen: de mac dinh thi Material3 pha them mau chu dao
              vao nen the, nhin ra mot mau hong nhat khong ai dat. -->

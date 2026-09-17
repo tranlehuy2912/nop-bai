@@ -58,6 +58,20 @@ data class CauCham(
     val soDong: Int = 0,
     val nhanXet: String = "",
     /**
+     * Cau nay sai KIEU gi, mot trong bay nhan co dinh o quy tac cuoi cua
+     * [vn.huytl.homeworkgate.ai.PromptCham.CAU_LENH]. Rong la cau dung, hoac ban
+     * cham cu khong co truong nay.
+     *
+     * VI SAO XEP NHAN CHU KHONG DE MAY TU DAT CHU: con so "hom nay sai 3 cau" khong
+     * noi duoc gi de ngoi noi chuyen voi con. "Ca thang sai dau 14 lan" thi noi
+     * duoc. Ma cong don chi ra con so khi ten loi lan nao cung viet giong lan truoc,
+     * nen tap nhan phai dong va phai nam trong cau lenh.
+     *
+     * KHONG DUNG VAO VIEC TINH GIO, y nhu [mucDo] va [CauSo.khaiChac]: cai gi tru
+     * vao so phut thi con se khai theo cai co loi chu khong theo cai that.
+     */
+    val loaiLoi: String = "",
+    /**
      * Ma co dinh cua cau trong ngan hang, dang "toan8t1:2.26a".
      *
      * Co ma nay thi so cai khong phai doan gi nua - xem [vn.huytl.homeworkgate.data.SoCaiBai].
@@ -108,8 +122,84 @@ data class CauCham(
      * lam hai cau ma van duoc tinh ca loat thi cai man khai bai tro thanh cho de
      * gian lan nhat trong app, chu khong phai cho chac nhat.
      */
-    val coLam: Boolean = true
+    val coLam: Boolean = true,
+    /**
+     * Bai lam cua cau nay co viet bang muc DO khong. Chi hoi o lan on tap.
+     *
+     * VI SAO PHAI HOI: on tap la duong duy nhat trong ca app duoc phep cham lai mot
+     * cau da lam dung - va chinh vi vay no thao mat cai khoa "moi cau chi tra gio
+     * mot lan". Con mo vo ra dung trang cu, chup lai bai da lam tuan truoc, thi anh
+     * do khong khac gi anh cua mot bai vua lam xong: tren giay khong co dau thoi
+     * gian nao ca.
+     *
+     * Nen luat nha: on thi viet bang but do. Mot cai nhin vao anh la biet, ke ca khi
+     * may doc nham chu.
+     *
+     * Khong dung de TU CHOI, chi dung de thoi tu duyet: may nhin nham mau trong anh
+     * thieu sang la chuyen co that, va mot cho hong ben may khong duoc bien thanh
+     * mot lan con mat gio. Bao 0 thi bai do sang tay Ba Huy, kem dong chu noi ro
+     * vi sao.
+     *
+     * BA GIA TRI, va phai la ba chu khong phai hai: 1 la muc do, 0 la muc khac, -1
+     * la MAY KHONG TRA LOI ve mau. Gop -1 vao 1 thi luat but do tu tat di ma khong
+     * ai biet - model bo qua mot truong la chuyen thuong, va luc do moi bai on deu
+     * lot qua nhu khong co luat nao. Giu rieng ra thi tin Telegram noi duoc mot cau
+     * cho Ba Huy hay.
+     */
+    val mucDo: Int = -1
 )
+
+/**
+ * Bay kieu sai, va ten tieng Viet de doc len.
+ *
+ * TAP DONG, va do la ca cai gia tri. De may tu dat ten loi thi moi lan chay ra mot
+ * chu khac ("sai dau", "nham dau", "loi dau") va cong don lai khong ra con so nao.
+ * Bay nhan nay duoc ke thang trong cau lenh gui cho may - xem quy tac cuoi cua
+ * [vn.huytl.homeworkgate.ai.PromptCham.CAU_LENH] - va moi ban cham doc ve deu bi
+ * ep ve dung tap nay.
+ *
+ * Bay la con so chon co chu dich. It hon thi "KHAC" nuot gan het; nhieu hon thi hai
+ * nhan sat nghia nhau (sai dau va sai buoc bien doi) bi may xep loan xa, va cong lai
+ * khong tin duoc nua. Them nhan thi phai sua o CA HAI cho: o day va trong cau lenh.
+ */
+object LoaiLoi {
+
+    const val SAI_DAU = "SAI_DAU"
+    const val SAI_BUOC = "SAI_BUOC"
+    const val NHAM_CONG_THUC = "NHAM_CONG_THUC"
+    const val TINH_NHAM = "TINH_NHAM"
+    const val THIEU = "THIEU"
+    const val LAC_DE = "LAC_DE"
+    const val KHAC = "KHAC"
+
+    /** Ten tieng Viet, theo dung thu tu muon doc len khi hai nhan bang diem nhau. */
+    private val TEN = linkedMapOf(
+        SAI_DAU to "sai dấu",
+        SAI_BUOC to "sai một bước biến đổi",
+        NHAM_CONG_THUC to "nhầm công thức",
+        TINH_NHAM to "tính nhầm số",
+        THIEU to "thiếu trường hợp hoặc bỏ dở",
+        LAC_DE to "lạc đề",
+        KHAC to "kiểu khác"
+    )
+
+    val TAP: Set<String> = TEN.keys
+
+    fun moTa(nhan: String): String = TEN[nhan] ?: TEN.getValue(KHAC)
+
+    /**
+     * Ep nhan may tra ve ve dung [TAP].
+     *
+     * Cau dung thi khong co loi nao, du may co khai gi: khong chan o day thi bang
+     * thong ke co ca nhung cau lam dung nam trong cot "sai dau".
+     */
+    fun doc(chu: String?, dung: Boolean): String {
+        if (dung) return ""
+        val n = chu.orEmpty().trim().uppercase()
+        if (n.isEmpty()) return ""
+        return if (n in TAP) n else KHAC
+    }
+}
 
 /**
  * Toan bo ket qua AI cham mot lan nop.

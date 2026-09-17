@@ -130,7 +130,27 @@ cmd_guithu() {
 cmd_open()   { instrument "$PKG.ManualGate#moCong"; }
 cmd_close()  { instrument "$PKG.ManualGate#dongCong"; }
 
+# Ten du an Firebase trong mot file google-services.json. Rong neu chua co file.
+ten_du_an() {
+  [ -f "$1" ] || return 0
+  grep -o '"project_id"[^,]*' "$1" 2>/dev/null | head -1 | cut -d'"' -f4 || true
+}
+
 cmd_status() {
+  # Du an Firebase truoc tien: day la cho de nham nhat, va nham o day thi may ao
+  # ghi thang vao du lieu that ma khong co dau hieu gi.
+  echo "--- firebase ---"
+  local thu that
+  thu="$(ten_du_an "$ROOT/app/src/debug/google-services.json")"
+  that="$(ten_du_an "$ROOT/app/google-services.json")"
+  if [ -n "$thu" ]; then
+    echo "ban go loi: $thu"
+  else
+    echo "ban go loi: ${that:-chua co} <-- DU AN THAT! chua co app/src/debug/google-services.json"
+  fi
+  echo "ban that:   ${that:-chua co}"
+  # Ban dang cai tren may ao that su noi vao dau, doc tu log chinh no.
+  adb logcat -d -s DongBo 2>/dev/null | grep -o "project=.*" | tail -1 || true
   echo "--- app dang o truoc mat ---"
   adb shell dumpsys activity activities | grep -m1 'ResumedActivity' || true
   echo "--- accessibility ---"

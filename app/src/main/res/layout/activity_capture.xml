@@ -110,6 +110,28 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 
+        <!-- Khung de con dat trang vo vao. Xem @drawable/st_khung_ngam. -->
+        <View
+            android:id="@+id/khung_ngam"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="28dp"
+            android:layout_marginVertical="20dp"
+            android:background="@drawable/st_khung_ngam" />
+
+        <TextView
+            android:id="@+id/chu_khung"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center_horizontal"
+            android:layout_marginBottom="32dp"
+            android:background="#66000000"
+            android:paddingHorizontal="14dp"
+            android:paddingVertical="6dp"
+            android:text="Đưa trang vở lọt vào khung, chụp thẳng từ trên xuống"
+            android:textColor="#F2F5F9"
+            android:textSize="14sp" />
+
         <ProgressBar
             android:id="@+id/progress"
             android:layout_width="wrap_content"

@@ -62,6 +62,22 @@ class ManualChonBai {
         SoCaiBai.dangChoSua(context, now).forEach { println("  cho sua: ${it.khoa} - ${it.nhanXet}") }
     }
 
+    /** Nap vai cau "tung sai roi sua dung" de nhin man on tap. */
+    @Test
+    fun napOnTap() {
+        NganHang.napNeuCan(context)
+        val now = System.currentTimeMillis()
+        listOf("1.3a", "1.4", "1.6").forEach { ma ->
+            val sai = CauCham(
+                ma = ma, de = "", cauId = "toan8t1:$ma", mon = "Toán",
+                dung = false, soDong = 4, nhanXet = "Dòng 2 con nhân thiếu một thừa số"
+            )
+            SoCaiBai.ghi(context, listOf(sai), emptyMap(), now - 86_400_000L)
+            SoCaiBai.ghi(context, listOf(sai.copy(dung = true)), mapOf(ma to 2), now - 86_400_000L)
+        }
+        println("ManualChonBai: dang de on lai -> ${SoCaiBai.cacCauDangOn(context, now)}")
+    }
+
     @Test
     fun xoaSo() {
         SoCaiBai.xoaHet(context)

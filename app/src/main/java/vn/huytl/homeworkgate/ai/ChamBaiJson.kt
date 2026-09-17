@@ -4,6 +4,7 @@ import org.json.JSONObject
 import vn.huytl.homeworkgate.data.CauCham
 import vn.huytl.homeworkgate.data.DangBai
 import vn.huytl.homeworkgate.data.KetQuaCham
+import vn.huytl.homeworkgate.data.LoaiLoi
 import vn.huytl.homeworkgate.kho.CauHoi
 
 /**
@@ -69,10 +70,21 @@ object ChamBaiJson {
                 baiLam = baiLam,
                 dongSai = c.optInt("dong_sai", 0).coerceIn(0, baiLam.size),
                 nhanXet = c.optString("nhan_xet"),
+                // Nhan la nhung chu in hoa may chep lai tu cau lenh. Loc qua mot
+                // lan: may tra ve nhan la thi coi nhu KHAC, con hon de mot ten
+                // lac vao bang thong ke roi nam do mot minh mot dong.
+                loaiLoi = LoaiLoi.doc(c.optString("loai_loi"), c.optBoolean("dung", false)),
                 // Cau trong danh sach con khai thi de lay tu sach, luon co de. Chi
                 // cau tu do moi phai hoi may xem no co nhin thay de khong.
                 coDe = trongSach != null || c.optBoolean("co_de", false),
-                coLam = c.optBoolean("co_lam", true)
+                coLam = c.optBoolean("co_lam", true),
+                // -1 khi may khong tra loi. Chi lan on tap moi hoi den mau muc,
+                // nen lan thuong luon la -1 va khong ai xet den.
+                mucDo = when {
+                    !c.has("muc_do") -> -1
+                    c.optBoolean("muc_do") -> 1
+                    else -> 0
+                }
             )
         }
         if (cac.isEmpty()) return null

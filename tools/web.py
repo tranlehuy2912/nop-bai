@@ -31,6 +31,8 @@ TRANG = GOC / "web" / "index.html"
 PKG = "vn.huytl.homeworkgate"
 RUNNER = f"{PKG}.test/androidx.test.runner.AndroidJUnitRunner"
 DICH_VU_TRO_NANG = f"{PKG}/{PKG}.guard.GuardAccessibilityService"
+DUONG_CAY = "/sdcard/cay-man.xml"
+APK_TEST = GOC.parent / "app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk"
 
 # adb logcat la kenh dung chung: xoa roi doc lai ma hai yeu cau chay chen nhau thi
 # ben nay nuot ket qua cua ben kia. Mot khoa cho tat ca cac lan goi may ao.
@@ -102,6 +104,18 @@ def b64(o):
         json.dumps(o, ensure_ascii=False).encode("utf-8")).decode("ascii")
 
 
+def thieu_apk_test(ket):
+    return ("Unable to find instrumentation" in ket
+            or "Cannot locate ourselves" in ket
+            or "INSTRUMENTATION_CODE: -1" in ket)
+
+
+def cai_lai_apk_test():
+    if not APK_TEST.exists():
+        return False
+    return "Success" in adb("install", "-r", str(APK_TEST), timeout=180)
+
+
 def chay_test(lop, **tham_so):
     """Chay mot lop test roi vot lai nhung dong JSON no in ra."""
     with KHOA:
@@ -114,8 +128,28 @@ def chay_test(lop, **tham_so):
                 lenh += ["-e", k, shlex.quote(str(v))]
         lenh.append(RUNNER)
         ket = adb(*lenh, timeout=180)
+        # "Unable to find instrumentation" khong chua chu FAILURES nao ca, nen neu
+        # chi bat hai chuoi kia thi lan APK test bien mat khoi may se di qua im
+        # lang: moi lenh dat deu khong lam gi, va cac muc thu sau do bao "khong
+        # thay chu" - trong dang le phai bao "khong chay duoc tren may".
+        if thieu_apk_test(ket):
+            # APK test co luc bien mat giua chung: chay "gradlew connectedAndroidTest"
+            # hay bam Run test trong Android Studio deu go no ra khi xong, va mot bo
+            # thu dang chay o day thi nga giua duong. Cai lai roi chay tiep, chu
+            # khong bat nguoi ta chay lai ca bo tu dau.
+            if not cai_lai_apk_test():
+                raise RuntimeError(
+                    "Máy ảo chưa có APK test (vn.huytl.homeworkgate.test) và cài "
+                    "lại không được. Chạy: tools/emu.sh install")
+            ket = adb(*lenh, timeout=180)
+            if thieu_apk_test(ket):
+                raise RuntimeError(
+                    "Cài lại APK test rồi mà vẫn không chạy được. "
+                    "Chạy: tools/emu.sh install")
         if "FAILURES" in ket or "Process crashed" in ket:
             raise RuntimeError(ket[-2000:])
+        if "OK (" not in ket and "INSTRUMENTATION_CODE" not in ket:
+            raise RuntimeError(f"không rõ kết quả chạy {lop}: {ket[-600:]}")
         tho = adb("logcat", "-d", "-s", "System.out")
     ra = []
     for dong in tho.splitlines():
@@ -269,6 +303,16 @@ class May:
         gio_that()
         self._da_ghi = True
 
+    def chay(self, lop_ham):
+        """Chay mot lop Manual bat ky, vi du "ManualTienBo#napThu".
+
+        Cac man hinh moi deu can so lieu co san moi nhin ra duoc cai gi; nguoi viet
+        app da lam san cac lop nap so lieu do, nen o day goi lai chu khong chep mot
+        ban nap khac.
+        """
+        chay_test(f"{PKG}.{lop_ham}")
+        self._da_ghi = True
+
     def _lam_moi(self):
         adb("shell", "am", "force-stop", PKG)
         cap_quyen()
@@ -302,11 +346,19 @@ class May:
         force-stop de app doc lai, ma force-stop giua phien lai lam app tam dung giu
         gio - thanh ra khong bao gio nhin thay canh "dang duoc choi".
         """
-        o = tim_o(chu)
-        if not o:
-            raise RuntimeError(f"không thấy nút “{chu}” trên màn hình")
-        adb("shell", "input", "tap", str(o[0]), str(o[1]))
-        time.sleep(2.0)
+        # Man chinh co luc day the (on lai, thieu viec, soan cap) day nut to xuong
+        # duoi vung nhin thay, ma uiautomator chi doc duoc phan dang hien. Cuon
+        # xuong tim tiep thay vi bao hong - nguoi dung cung se cuon nhu vay.
+        for lan in range(4):
+            o = tim_o(chu)
+            if o:
+                adb("shell", "input", "tap", str(o[0]), str(o[1]))
+                time.sleep(2.0)
+                return
+            if lan < 3:
+                adb("shell", "input", "swipe", "1280", "1200", "1280", "500", "300")
+                time.sleep(1.0)
+        raise RuntimeError(f"không thấy nút “{chu}” trên màn hình, kể cả khi cuộn xuống")
 
     def tat_mo_lai(self):
         """Tat han app roi mo lai, de xem no nho duoc gi qua mot lan bi giet."""
@@ -330,15 +382,35 @@ def chu_tren_man():
     Doc bang uiautomator chu khong doc anh: no thay duoc man chan (mot overlay),
     va so sanh chuoi thi khong co chuyen "gan dung".
     """
-    adb("shell", "uiautomator", "dump", "/sdcard/ui.xml", timeout=40)
-    xml = adb("shell", "cat", "/sdcard/ui.xml", timeout=40)
-    return " | ".join(re.findall(r'text="([^"]*)"', xml))
+    return " | ".join(re.findall(r'text="([^"]*)"', do_cay_man()))
+
+
+def do_cay_man(): 
+    """Cay giao dien dang hien, dang XML.
+
+    Xoa file cu truoc roi moi dump: uiautomator co luc khong dump duoc (man hinh
+    khong chiu dung yen, hoac dang o mot cua so no khong voi toi), va luc do lenh
+    cat van doc ra ban cu. Da mot lan ba man hinh khac nhau deu "chua" cung mot
+    dong chu vi chuyen nay - test bao dat ma thuc ra dang doc lai anh cu.
+    """
+    # Thu vai lan: uiautomator doi man hinh dung yen moi dump, ma man hinh dang co
+    # dong ho dem nguoc thi giay nao no cung doi. Hai muc ve phien choi tung hong vi
+    # dung cai do - khong phai app sai.
+    for lan in range(3):
+        adb("shell", "rm", "-f", DUONG_CAY)
+        ket = adb("shell", "uiautomator", "dump", DUONG_CAY, timeout=20)
+        if "dumped to" in ket:
+            return adb("shell", "cat", DUONG_CAY, timeout=20)
+        if lan < 2:
+            time.sleep(1.5)
+    return ""
 
 
 def tim_o(chu):
     """Tim o vuong cua phan tu mang dong chu nay, tra ve diem giua."""
-    adb("shell", "uiautomator", "dump", "/sdcard/ui.xml", timeout=40)
-    xml = adb("shell", "cat", "/sdcard/ui.xml", timeout=40)
+    xml = do_cay_man()
+    if not xml:
+        return None
     for the in re.findall(r"<node[^>]*/?>", xml):
         m_chu = re.search(r'text="([^"]*)"', the)
         if not m_chu or chu not in m_chu.group(1):
@@ -399,7 +471,12 @@ def nhac_theo_luat(luc):
 
 
 def chup(ma):
-    png = adb("exec-out", "screencap", "-p", nhi_phan=True, timeout=30)
+    # Chup hong thi bo qua, dung de no keo do ca muc thu: tam anh la de nguoi xem,
+    # con cham diem thi da lam bang chu va cua so noi roi.
+    try:
+        png = adb("exec-out", "screencap", "-p", nhi_phan=True, timeout=30)
+    except Exception:
+        return False
     ANH_THU[ma] = png
     thu_muc = TU_DONG.get("thuMuc")
     if thu_muc:
@@ -407,6 +484,7 @@ def chup(ma):
             (Path(thu_muc) / f"{ma}.png").write_bytes(png)
         except OSError:
             pass
+    return True
 
 
 TEN_NOI = {"chan": "màn chắn phủ kín", "the": "thẻ nhắc nhỏ",
@@ -420,6 +498,8 @@ DOI_TOI_DA_GIAY = 15
 def soat_man(muc, chu, noi, tren):
     """Nhung cho khong dat, xet tren mot lan chup man hinh."""
     loi = []
+    if not chu and (muc.get("cho") or muc.get("khong")):
+        loi.append("không đọc được chữ trên màn hình (uiautomator không dump được)")
     for c in muc.get("cho", []):
         if c not in chu:
             loi.append(f"không thấy chữ “{c}” trên màn hình")
@@ -450,14 +530,19 @@ def chay_mot_muc(muc, may):
 
     # Doi man hinh yen vi roi moi ket luan, va chup sau cung - de tam anh nguoi xem
     # dung la canh may da cham diem, khong phai mot khoanh khac truoc do.
+    # Chi doc chu khi muc nay that su soat chu: mot lan uiautomator dump ton vai
+    # giay, va co luc khong dump duoc nen phai thu lai - muc chi hoi "con co con o
+    # trong Chrome khong" thi khong viec gi phai tra cai gia do.
+    can_chu = bool(muc.get("cho") or muc.get("khong"))
     han = time.time() + DOI_TOI_DA_GIAY
     while True:
-        chu, noi, tren = chu_tren_man(), cua_so_noi(), man_tren_cung()
+        chu = chu_tren_man() if can_chu else ""
+        noi, tren = cua_so_noi(), man_tren_cung()
         loi = soat_man(muc, chu, noi, tren)
         if not loi or time.time() >= han:
             break
         time.sleep(1.5)
-    chup(muc["ma"])
+    co_anh = chup(muc["ma"])
 
     ghi = []
     if muc.get("noi") and not loi:
@@ -490,7 +575,8 @@ def chay_mot_muc(muc, may):
     return {"ma": muc["ma"], "ten": muc["ten"], "nhom": muc["nhom"],
             "dat": not loi, "loai": "man",
             "ghi": loi + ghi if loi else (ghi or ["mọi thứ cần có đều đúng"]),
-            "chu": chu[:1200], "giay": round(time.time() - bat_dau, 1), "coAnh": True}
+            "chu": chu[:1200], "giay": round(time.time() - bat_dau, 1),
+            "coAnh": co_anh}
 
 
 def chay_tu_dong(cac_ma):
@@ -507,12 +593,41 @@ def chay_tu_dong(cac_ma):
                    hienTai="", ket=[], thuMuc=str(thu_muc), dung=False)
     ANH_THU.clear()
     may = May()
+
+    # Don rac cua lan truoc truoc khi bat dau.
+    #
+    # Viec nha va che do ba deu phu len MOI muc khac: con viec nha thi man chan che
+    # kin man hinh du dang xet canh nao, va che do ba thi tat het loi nhac. Mot lan
+    # chay do dang bo lai mot trong hai thu la ca bo thu sau do bao hong ma app
+    # khong sai gi.
+    if man:
+        TU_DONG["hienTai"] = "dọn trạng thái còn lại của lần trước"
+        try:
+            may.dat("xoaviecnha")
+            may.dat("badong")
+            # So cai con cau "den hen on lai" tu lan truoc thi man chinh moc them
+            # mot the, va the do day nut to xuong khoi vung nhin thay.
+            may.dat("xoasocai")
+        except Exception as e:
+            TU_DONG["ket"].append({
+                "ma": "don-dep", "ten": "Dọn trạng thái trước khi thử",
+                "nhom": "Chuẩn bị", "dat": False, "loai": "man", "coAnh": False,
+                "ghi": [str(e)], "giay": 0})
     try:
         for m in man:
             if TU_DONG["dung"]:
                 break
             TU_DONG["hienTai"] = m["ten"]
-            TU_DONG["ket"].append(chay_mot_muc(m, may))
+            # Mot muc no ra ngoai (adb treo, may ao lac) thi chi muc do hong. Truoc
+            # day cho nay khong bat gi, nen mot lan screencap qua han la ca lan chay
+            # dung o giua va hai muoi muc con lai khong ai biet the nao.
+            try:
+                TU_DONG["ket"].append(chay_mot_muc(m, may))
+            except Exception as e:
+                TU_DONG["ket"].append({
+                    "ma": m["ma"], "ten": m["ten"], "nhom": m["nhom"],
+                    "dat": False, "loai": "man", "coAnh": False,
+                    "ghi": [f"{type(e).__name__}: {e}"], "giay": 0})
             TU_DONG["xong"] += 1
 
         for ten_lop in lop:
@@ -520,7 +635,10 @@ def chay_tu_dong(cac_ma):
                 break
             TU_DONG["hienTai"] = f"bộ test {ten_lop}"
             t0 = time.time()
-            r = chay_bo_test(f"{PKG}.{ten_lop}")
+            try:
+                r = chay_bo_test(f"{PKG}.{ten_lop}")
+            except Exception as e:
+                r = {"dat": False, "so": 0, "hong": 0, "tho": f"{type(e).__name__}: {e}"}
             TU_DONG["ket"].append({
                 "ma": f"test:{ten_lop}", "ten": ten_lop, "nhom": "Bộ test",
                 "dat": r["dat"], "loai": "test", "coAnh": False,

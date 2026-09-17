@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Dong ho cat: bai da gui, dang cho Ba Huy duyet.
+
+     Ve tay bang path, khong keo bo icon nao tu ngoai ve: ca app dang lam vay, xem
+     st_ic_tien_bo.xml. Mau de trang o day va do lai bang imageTintList trong
+     HomeActivity, vi moi trang thai mot mau khac nhau. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M6.4,2.8h11.2v1.9h-11.2z" />
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M6.4,19.3h11.2v1.9h-11.2z" />
+    <path
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="1.7"
+        android:strokeLineJoin="round"
+        android:strokeLineCap="round"
+        android:fillColor="#00000000"
+        android:pathData="M8.2,4.7L15.8,4.7L12,12L15.8,19.3L8.2,19.3L12,12Z" />
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M9.3,17.9h5.4L12,14.4z" />
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M11.4,6.2h1.2v3.4h-1.2z" />
+</vector>

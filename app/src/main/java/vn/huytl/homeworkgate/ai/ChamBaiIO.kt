@@ -49,7 +49,9 @@ object ChamBaiIO {
                             .put("dang", c.dang.name)
                             .put("trong_dan_do", c.trongDanDo)
                             .put("so_dong", c.soDong)
+                            .put("muc_do", c.mucDo)
                             .put("nhan_xet", c.nhanXet)
+                            .put("loai_loi", c.loaiLoi)
                             .put("co_de", c.coDe)
                             .put("co_lam", c.coLam)
                     )
@@ -78,7 +80,9 @@ object ChamBaiIO {
                     .getOrDefault(DangBai.CAU_NHO),
                 trongDanDo = c.optBoolean("trong_dan_do"),
                 soDong = c.optInt("so_dong"),
+                mucDo = c.optInt("muc_do", -1),
                 nhanXet = c.optString("nhan_xet"),
+                loaiLoi = c.optString("loai_loi"),
                 coDe = c.optBoolean("co_de", true),
                 coLam = c.optBoolean("co_lam", true)
             )

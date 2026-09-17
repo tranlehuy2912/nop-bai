@@ -141,7 +141,7 @@
                 android:id="@+id/nut_gui"
                 android:layout_width="match_parent"
                 android:layout_height="64dp"
-                android:text="Gửi cho Ba Huy"
+                android:text="Gửi cho ba Huy"
                 android:textSize="18sp"
                 app:cornerRadius="20dp" />
 

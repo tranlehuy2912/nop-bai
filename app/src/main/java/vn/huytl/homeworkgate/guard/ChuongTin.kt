@@ -43,7 +43,7 @@ object ChuongTin {
             SO,
             NotificationCompat.Builder(context, KENH)
                 .setSmallIcon(R.drawable.ic_stat_gate)
-                .setContentTitle("${context.getString(R.string.parent_name)} nhắn")
+                .setContentTitle("${context.getString(R.string.parent_name_cap)} nhắn")
                 .setContentText(chu)
                 .setStyle(NotificationCompat.BigTextStyle().bigText(chu))
                 .setContentIntent(mo)

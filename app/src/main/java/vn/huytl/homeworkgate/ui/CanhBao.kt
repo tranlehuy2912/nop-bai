@@ -167,7 +167,7 @@ object CanhBao {
         } else {
             Toast.makeText(
                 activity,
-                "Máy đang khoá Cài đặt. Nhờ Ba Huy bấm ổ khoá góc trên phải, " +
+                "Máy đang khoá Cài đặt. Nhờ ba Huy bấm ổ khoá góc trên phải, " +
                     "nhập PIN rồi sửa trong đó.",
                 Toast.LENGTH_LONG
             ).show()

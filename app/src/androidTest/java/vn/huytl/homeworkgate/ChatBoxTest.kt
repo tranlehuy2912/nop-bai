@@ -13,7 +13,7 @@ import vn.huytl.homeworkgate.data.ChatFrom
 import vn.huytl.homeworkgate.data.Prefs
 
 /**
- * Khung chat phai tu gon lai: giu nam muoi cau gan nhat, cau thu nam muoi mot day
+ * Khung chat phai tu gon lai: giu mot tram cau gan nhat, cau thu mot tram le mot day
  * cau cu nhat ra khoi may han chu khong chi giau di.
  *
  * CAN THAN: giong [GateStoreTest], bo test nay xoa sach prefs. Dung chay tren
@@ -32,19 +32,19 @@ class ChatBoxTest {
     }
 
     @Test
-    fun giu_toi_da_nam_muoi_cau() {
+    fun giu_toi_da_mot_tram_cau() {
         val moc = System.currentTimeMillis()
-        repeat(60) { ChatBox.add(context, ChatFrom.CON, "cau $it", moc + it * 1_000L) }
+        repeat(110) { ChatBox.add(context, ChatFrom.CON, "cau $it", moc + it * 1_000L) }
 
         val cac = ChatBox.read(context)
-        assertEquals(50, cac.size)
+        assertEquals(100, cac.size)
         // Giu cac cau MOI nhat: cau 0..9 la nhung cau bi day ra.
         assertEquals("cau 10", cac.first().text)
-        assertEquals("cau 59", cac.last().text)
+        assertEquals("cau 109", cac.last().text)
     }
 
     @Test
-    fun cau_cu_bao_nhieu_ngay_van_giu_neu_chua_qua_nam_muoi() {
+    fun cau_cu_bao_nhieu_ngay_van_giu_neu_chua_qua_mot_tram() {
         val bayGio = System.currentTimeMillis()
         ChatBox.add(context, ChatFrom.BA, "chuyen thang truoc", bayGio - 40 * ngay)
         ChatBox.add(context, ChatFrom.BA, "chuyen hom nay", bayGio)
@@ -56,15 +56,15 @@ class ChatBoxTest {
     }
 
     @Test
-    fun cau_thu_nam_muoi_mot_day_cau_cu_nhat_ra_khoi_may() {
+    fun cau_thu_mot_tram_le_mot_day_cau_cu_nhat_ra_khoi_may() {
         val moc = System.currentTimeMillis()
-        repeat(51) { ChatBox.add(context, ChatFrom.CON, "cau $it", moc + it * 1_000L) }
+        repeat(101) { ChatBox.add(context, ChatFrom.CON, "cau $it", moc + it * 1_000L) }
 
         val cac = ChatBox.read(context)
-        assertEquals(50, cac.size)
+        assertEquals(100, cac.size)
         assertTrue(cac.none { it.text == "cau 0" })
         assertEquals("cau 1", cac.first().text)
-        assertEquals("cau 50", cac.last().text)
+        assertEquals("cau 100", cac.last().text)
     }
 
     @Test

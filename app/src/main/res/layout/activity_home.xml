@@ -1,13 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Man hinh Le Hoa nhin thay. Mot the trang thai to o giua, mot nut to o duoi.
      Khong co nut nao khac: moi nut them vao day deu la mot thu de bam thu. -->
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<!-- Khung ngoai cung chi de mot viec: giu noi dung lai giua man hinh.
+     Tablet nay rong 1280dp, tha ra thi nut Nop bai keo dai suot be ngang va the
+     trang thai thanh mot o trong menh mong co ba dong chu o giua. Cung con so
+     st_be_rong_toi_da ma cac man chon bai, soat bai dang dung. -->
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/root"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="match_parent">
+
+<LinearLayout
+    android:layout_width="0dp"
+    android:layout_height="0dp"
     android:orientation="vertical"
-    android:padding="28dp">
+    android:padding="28dp"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintWidth_max="@dimen/st_be_rong_toi_da">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -44,7 +58,7 @@
             style="@style/Widget.Material3.Button.IconButton"
             android:layout_width="48dp"
             android:layout_height="48dp"
-            android:contentDescription="@string/parent_name"
+            android:contentDescription="@string/parent_name_cap"
             app:icon="@drawable/ic_khoa"
             app:iconSize="22dp"
             app:iconTint="@color/ink_soft" />
@@ -93,13 +107,17 @@
 
             <!-- Hinh to o tren cung. Doc chu "Dang khoa" voi "Dang duoc choi" thi
                  phai nhin ky moi khac nhau; o khoa voi tay cam thi liec mot cai la
-                 biet, ke ca khi de may o dau ban. -->
-            <TextView
-                android:id="@+id/txt_icon"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                 biet, ke ca khi de may o dau ban.
+
+                 Icon ve tay chu khong phai emoji: emoji ve theo bo font cua may,
+                 tren HyperOS ra mot kieu khac han va khong an voi bang mau o day.
+                 Hinh nay do lai theo dung mau cua tung trang thai, xem doiMat(). -->
+            <ImageView
+                android:id="@+id/anh_mat"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
                 android:layout_marginBottom="12dp"
-                android:textSize="52sp" />
+                android:contentDescription="@null" />
 
             <TextView
                 android:id="@+id/txt_badge"
@@ -282,6 +300,24 @@
         android:textSize="16sp"
         android:visibility="gone" />
 
+    <!-- Hoc thuoc: may hoi, con go tra loi ngay tren tablet.
+
+         Dat NGAY DUOI nut Nop bai chu khong nhet vao hang bieu tuong ben duoi: hang
+         do la nhung cho de di XEM, con day la mot viec lam ra gio, cung ho voi nut
+         to o tren. Chi hien khi con bo the nao dang co the den luot - het luot roi
+         ma nut van nam do thi con bam vao roi quay ra, lan sau khong bam nua. -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_hoc_thuoc"
+        style="@style/Widget.Material3.Button.TonalButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:paddingVertical="14dp"
+        android:text="@string/hoc_thuoc_nut"
+        android:textSize="17sp"
+        android:visibility="gone"
+        app:cornerRadius="18dp" />
+
     <!-- Ba duong phu, gom vao mot khu rieng.
 
          Truoc day ba cai nay xep doc duoi nut Nop bai, moi cai mot kieu - mot
@@ -356,6 +392,27 @@
                 app:iconGravity="top"
                 app:iconPadding="6dp"
                 app:iconSize="24dp" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/line" />
+
+            <!-- Duong vao man Le Hoa nhin lai viec minh da lam. De o hang nay chu
+                 khong giau sau mot man khac: cai gi con khong thay thi khong co. -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_tien_bo"
+                style="@style/Widget.Material3.Button.TextButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingVertical="18dp"
+                android:text="@string/tien_bo_nut"
+                android:textSize="15sp"
+                app:icon="@drawable/st_ic_tien_bo"
+                app:iconGravity="top"
+                app:iconPadding="6dp"
+                app:iconSize="24dp" />
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>
 
@@ -363,3 +420,4 @@
     </LinearLayout>
     </ScrollView>
 </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

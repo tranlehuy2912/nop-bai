@@ -8,7 +8,16 @@
 
      typeViewTextChanged la de ghi lai cau con go vao may app AI (danh sach trong
      Defaults.AI_PACKAGES). Su kien nay bao ve moi app, nhung code chi giu lai chu
-     cua dung may app do va bo het phan con lai - xem GuardAccessibilityService.batChuAi. -->
+     cua dung may app do va bo het phan con lai - xem GuardAccessibilityService.batChuAi.
+
+     notificationTimeout 300 chu khong phai 100: he thong chi gui su kien CUNG MOT
+     LOAI cach nhau it nhat chung nay mili giay, nen mot chum su kien bat ra trong
+     tich tac bi gop lai ngay tai nguon, truoc ca khi no toi app. Day la tang gop
+     thu nhat; tang thu hai nam trong GuardAccessibilityService.GOP_CUA_SO_MS.
+
+     Cai gia: hai lan doi cua so xay ra sat nhau thi lan sau co the toi cham toi 300
+     mili giay. Khong ai bam duoc gi co nghia trong khoang do, con so lan danh thuc
+     tien trinh trong luc con choi game thi giam han. -->
 <accessibility-service xmlns:android="http://schemas.android.com/apk/res/android"
     android:accessibilityEventTypes="typeWindowStateChanged|typeWindowsChanged|typeViewTextChanged"
     android:accessibilityFeedbackType="feedbackGeneric"
@@ -16,4 +25,4 @@
     android:canPerformGestures="false"
     android:canRetrieveWindowContent="true"
     android:description="@string/accessibility_description"
-    android:notificationTimeout="100" />
+    android:notificationTimeout="300" />

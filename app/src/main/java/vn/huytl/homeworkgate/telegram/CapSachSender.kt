@@ -43,7 +43,7 @@ object CapSachSender {
             if (monDaTich.isEmpty()) {
                 append("\nBuổi này không phải mang vở.")
             } else {
-                append("\nĐã tích ").append(monDaTich.size).append(" môn: ")
+                append("\nĐã chọn ").append(monDaTich.size).append(" môn: ")
                 append(monDaTich.joinToString(", "))
             }
             append("\n\nThiếu gì thì gõ /soanlai để bắt soạn lại.")

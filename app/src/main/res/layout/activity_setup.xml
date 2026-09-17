@@ -1,323 +1,515 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<!--
+  Trang cai dat cua Ba Huy.
+
+  Truoc day ca trang la mot cot phang dai gan bon tram dong: token, khoa AI, luat
+  choi, PIN, khoi phuc, tat ca xep chong len nhau va ngan bang mot vach 1dp. Nut
+  Luu nam tan day, nen go sai mot o thi phai cuon xuong cuoi de luu roi cuon nguoc
+  len tim cho sai.
+
+  Gio: nut Luu nam tren cung va khong bao gio troi di, con moi nhom la mot the
+  giong nhu cac man khac trong app dang dung.
+-->
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/root"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:fillViewport="true">
+    android:layout_height="match_parent">
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:orientation="vertical"
-        android:padding="20dp">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_max="@dimen/st_be_rong_toi_da">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:text="Cài đặt"
-            android:textColor="@color/ink"
-            android:textSize="24sp"
-            android:textStyle="bold" />
-
-        <!-- Bang "con thieu gi" nam ngay dau trang Cai dat, vi day la cho Ba Huy
-             mo ra khi muon sua mot thu gi do tren may. Truoc day no nam tan duoi
-             cung, duoi ca o nhap PIN, va chi la mot dong chu khong bam duoc. -->
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/card_warning"
-            style="@style/Card"
+        <!-- Thanh tren. Nut Luu o day chu khong o cuoi trang: sua mot o bat ky roi
+             luu duoc ngay, khong phai cuon het trang moi toi cho luu. -->
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
-            app:cardBackgroundColor="@color/alert_soft"
-            android:visibility="gone">
+            android:gravity="center_vertical"
+            android:paddingStart="20dp"
+            android:paddingTop="16dp"
+            android:paddingEnd="20dp"
+            android:paddingBottom="12dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Cài đặt"
+                android:textColor="@color/ink"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_save"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:minWidth="104dp"
+                android:text="Lưu"
+                android:textSize="16sp"
+                app:cornerRadius="16dp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/line" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:fillViewport="true"
+            android:scrollbars="none">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:padding="18dp">
+                android:paddingHorizontal="20dp"
+                android:paddingTop="16dp"
+                android:paddingBottom="24dp">
 
-                <TextView
-                    android:id="@+id/txt_warning_title"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/ink"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
-
-                <LinearLayout
-                    android:id="@+id/box_warning"
+                <!-- Bang "con thieu gi" nam ngay dau trang Cai dat, vi day la cho Ba
+                     Huy mo ra khi muon sua mot thu gi do tren may. Truoc day no nam
+                     tan duoi cung, duoi ca o nhap PIN, va chi la mot dong chu khong
+                     bam duoc. -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card_warning"
+                    style="@style/Card"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:orientation="vertical" />
+                    android:layout_marginBottom="20dp"
+                    android:visibility="gone"
+                    app:cardBackgroundColor="@color/alert_soft">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="18dp">
+
+                        <TextView
+                            android:id="@+id/txt_warning_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/ink"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:id="@+id/box_warning"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:orientation="vertical" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- ============================================ Ket noi Telegram -->
+                <TextView
+                    style="@style/Nhan.Nhom"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="KẾT NỐI TELEGRAM" />
+
+                <com.google.android.material.card.MaterialCardView
+                    style="@style/Card"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="18dp">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Bot token (lấy từ @BotFather)">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/edt_token"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:inputType="textNoSuggestions" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:hint="Chat id của ba Huy">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/edt_chat_id"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:inputType="numberSigned" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp">
+
+                            <com.google.android.material.button.MaterialButton
+                                android:id="@+id/btn_detect_chat"
+                                style="@style/Widget.Material3.Button.TonalButton"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="8dp"
+                                android:layout_weight="1"
+                                android:text="Lấy chat id tự động" />
+
+                            <com.google.android.material.button.MaterialButton
+                                android:id="@+id/btn_test"
+                                style="@style/Widget.Material3.Button.OutlinedButton"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Gửi tin thử" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/txt_detect_hint"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:textSize="13sp" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- ==================================================== Khoa AI -->
+                <TextView
+                    style="@style/Nhan.Nhom"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="KHOÁ AI" />
+
+                <com.google.android.material.card.MaterialCardView
+                    style="@style/Card"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="18dp">
+
+                        <!-- Moi dong mot khoa. Thu tu la luat: khoa tren cung dung
+                             truoc, het luot hom nay thi tu nhay xuong khoa duoi. -->
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Khoá API, mỗi dòng một khoá">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/edt_ai_keys"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="top"
+                                android:inputType="textMultiLine|textNoSuggestions"
+                                android:minLines="2" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <TextView
+                            android:id="@+id/txt_ai_hint"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:textColor="@color/ink_soft"
+                            android:textSize="13sp" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- ================================================== Luat choi -->
+                <TextView
+                    style="@style/Nhan.Nhom"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="LUẬT CHƠI" />
+
+                <com.google.android.material.card.MaterialCardView
+                    style="@style/Card"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="18dp">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Số phút mỗi lần duyệt tay">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/edt_minutes"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:inputType="number" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:hint="Số phút chơi tối đa mỗi ngày (làm bài)">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/edt_daily_limit"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:inputType="number" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:baselineAligned="false">
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="10dp"
+                                android:layout_weight="1"
+                                android:hint="Giờ đi ngủ, dạng 22:00">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/edt_hard_stop"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:inputType="time" />
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:hint="Giờ mở lại buổi sáng, dạng 06:00">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/edt_gio_day"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:inputType="time" />
+                            </com.google.android.material.textfield.TextInputLayout>
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="Giữa hai mốc này máy khoá hẳn: không duyệt, không bắt đầu, đang chơi cũng dừng. Khung này vắt qua nửa đêm."
+                            android:textColor="@color/ink_soft"
+                            android:textSize="13sp" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- =================================================== Ung dung -->
+                <TextView
+                    style="@style/Nhan.Nhom"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="ỨNG DỤNG" />
+
+                <com.google.android.material.card.MaterialCardView
+                    style="@style/Card"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="18dp">
+
+                        <!-- Cong tac nay chi tac dong len Le Hoa. Ten cu "Khoa luon
+                             app Cai dat" khong noi ro khoa voi ai va khoa luc nao,
+                             doc len tuong ca Ba Huy cung bi khoa. -->
+                        <com.google.android.material.materialswitch.MaterialSwitch
+                            android:id="@+id/sw_lock_settings"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Lê Hòa không mở được Cài đặt" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="Chặn cả trong giờ chơi, vì từ Cài đặt là tắt được app này. Gồm Cài đặt, Bảo mật của Xiaomi, và màn hình cài/gỡ app. Ba Huy gạt “Mở toàn bộ máy” là vào được."
+                            android:textColor="@color/ink_soft"
+                            android:textSize="13sp" />
+
+                        <!-- Chan gio di hoc. De canh cong tac khoa Cai dat vi cung
+                             mot loai: ca hai deu la "co chan hay khong", dat mot lan
+                             roi thoi. Viec hang ngay - mo cho het buoi hoc nay - thi
+                             nam ben trang cua Ba Huy, khong phai o day. -->
+                        <com.google.android.material.materialswitch.MaterialSwitch
+                            android:id="@+id/sw_man_chan"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="18dp"
+                            android:text="Chặn máy trong giờ đi học" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="Theo thời khoá biểu: từ lúc phải thôi xài máy đi chuẩn bị cho tới khi tan học, màn hình bị che kín. Tắt đi thì app chỉ nhắc soạn cặp chứ không chặn."
+                            android:textColor="@color/ink_soft"
+                            android:textSize="13sp" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_marginVertical="16dp"
+                            android:background="@color/line" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btn_pick_apps"
+                            style="@style/Widget.Material3.Button.OutlinedButton"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Chọn app Lê Hòa luôn được dùng" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btn_gioi_han"
+                            style="@style/Widget.Material3.Button.OutlinedButton"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="Đặt giờ riêng từng app (Netflix, YouTube…)" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btn_pick_blocked"
+                            style="@style/Widget.Material3.Button.OutlinedButton"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="Chọn app cấm hẳn, kể cả trong giờ chơi" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- ==================================================== Ma PIN -->
+                <TextView
+                    style="@style/Nhan.Nhom"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="MÃ PIN" />
+
+                <com.google.android.material.card.MaterialCardView
+                    style="@style/Card"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="18dp">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Đặt PIN mới, để trống nếu giữ nguyên">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/edt_pin"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:inputType="numberPassword" />
+                        </com.google.android.material.textfield.TextInputLayout>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- ================================================ Khoi phuc -->
+                <!-- Go app la mat sach du lieu trong may: ma nha, va ca so cai - thu
+                     duy nhat chan viec chup lai bai cu de lay gio lan nua. Ma nha thi
+                     Ba Huy doc duoc tren dien thoai, con so cai thi da co ban tren
+                     Firestore; cho nay noi hai thu do lai voi nhau. -->
+                <TextView
+                    style="@style/Nhan.Nhom"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="KHÔI PHỤC SAU KHI CÀI LẠI APP" />
+
+                <com.google.android.material.card.MaterialCardView
+                    style="@style/Card"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="18dp">
+
+                        <TextView
+                            android:id="@+id/txt_nha_hien_tai"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/ink_soft"
+                            android:textSize="14sp" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:hint="Mã nhà cũ (xem trong app Bảng điều khiển)">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/edt_ma_nha"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:inputType="textNoSuggestions" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:hint="Mã ghép 6 số đang hiện trên điện thoại">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/edt_ma_ghep"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:inputType="number" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btn_khoi_phuc"
+                            style="@style/Widget.Material3.Button.OutlinedButton"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:text="Nối lại và kéo sổ cũ về" />
+
+                        <TextView
+                            android:id="@+id/txt_khoi_phuc"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:textColor="@color/ink_soft"
+                            android:textSize="14sp"
+                            android:visibility="gone" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
             </LinearLayout>
-        </com.google.android.material.card.MaterialCardView>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Kết nối Telegram"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:hint="Bot token (lấy từ @BotFather)">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edt_token"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textNoSuggestions" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:hint="Chat id của Ba Huy">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edt_chat_id"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="numberSigned" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_detect_chat"
-            style="@style/Widget.Material3.Button.TonalButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="Lấy chat id tự động" />
-
-        <TextView
-            android:id="@+id/txt_detect_hint"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="6dp"
-            android:textSize="13sp" />
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginVertical="20dp"
-            android:background="#33888888" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Khoá AI"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-        <!-- Moi dong mot khoa. Thu tu la luat: khoa tren cung dung truoc, het luot
-             hom nay thi tu nhay xuong khoa duoi. -->
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:hint="Khoá API, mỗi dòng một khoá">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edt_ai_keys"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="top"
-                android:inputType="textMultiLine|textNoSuggestions"
-                android:minLines="2" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <TextView
-            android:id="@+id/txt_ai_hint"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="6dp"
-            android:textColor="@color/ink_soft"
-            android:textSize="13sp" />
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginVertical="20dp"
-            android:background="#33888888" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Luật chơi"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:hint="Số phút mỗi lần duyệt tay">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edt_minutes"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="number" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:hint="Giờ đi ngủ, dạng 22:00">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edt_hard_stop"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="time" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:hint="Giờ mở lại buổi sáng, dạng 06:00">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edt_gio_day"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="time" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:text="Giữa hai mốc này máy khoá hẳn: không duyệt, không bắt đầu, đang chơi cũng dừng. Khung này vắt qua nửa đêm."
-            android:textColor="@color/ink_soft"
-            android:textSize="13sp" />
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:hint="Số phút chơi tối đa mỗi ngày (làm bài)">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edt_daily_limit"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="number" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <!-- Cong tac nay chi tac dong len Le Hoa. Ten cu "Khoa luon app Cai dat"
-             khong noi ro khoa voi ai va khoa luc nao, doc len tuong ca Ba Huy cung
-             bi khoa. -->
-        <com.google.android.material.materialswitch.MaterialSwitch
-            android:id="@+id/sw_lock_settings"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="Lê Hòa không mở được Cài đặt" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:text="Chặn cả trong giờ chơi, vì từ Cài đặt là tắt được app này. Gồm Cài đặt, Bảo mật của Xiaomi, và màn hình cài/gỡ app. Ba Huy gạt “Mở toàn bộ máy” là vào được."
-            android:textColor="@color/ink_soft"
-            android:textSize="13sp" />
-
-        <!-- Chan gio di hoc. De canh cong tac khoa Cai dat vi cung mot loai: ca hai
-             deu la "co chan hay khong", dat mot lan roi thoi. Viec hang ngay - mo
-             cho het buoi hoc nay - thi nam ben trang cua Ba Huy, khong phai o day. -->
-        <com.google.android.material.materialswitch.MaterialSwitch
-            android:id="@+id/sw_man_chan"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="Chặn máy trong giờ đi học" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:text="Theo thời khoá biểu: từ lúc phải thôi xài máy đi chuẩn bị cho tới khi tan học, màn hình bị che kín. Tắt đi thì app chỉ nhắc soạn cặp chứ không chặn."
-            android:textColor="@color/ink_soft"
-            android:textSize="13sp" />
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_pick_apps"
-            style="@style/Widget.Material3.Button.OutlinedButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="Chọn app Lê Hòa luôn được dùng" />
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_gioi_han"
-            style="@style/Widget.Material3.Button.OutlinedButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="Đặt giờ riêng từng app (Netflix, YouTube…)" />
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_pick_blocked"
-            style="@style/Widget.Material3.Button.OutlinedButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="Chọn app cấm hẳn, kể cả trong giờ chơi" />
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginVertical="20dp"
-            android:background="#33888888" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Mã PIN"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:hint="Đặt PIN mới, để trống nếu giữ nguyên">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edt_pin"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="numberPassword" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_test"
-            style="@style/Widget.Material3.Button.OutlinedButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:text="Gửi tin thử" />
-
-        <!-- Truoc day duoi nut Luu con mot nut "Khoa may lai ngay" nua. Ba cho khoa
-             may trong cung mot app la qua nhieu: cong tac o trang cau hinh moi la
-             cho khoa, o day chi la cai dat. -->
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_save"
-            android:layout_width="match_parent"
-            android:layout_height="56dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="24dp"
-            android:text="Lưu" />
-
+        </ScrollView>
     </LinearLayout>
-</ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

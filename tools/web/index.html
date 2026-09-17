@@ -237,6 +237,32 @@ td small{display:block;color:var(--mo);font-size:10px}
   </div>
 
   <div class="the">
+    <h2>Việc nhà bà nội giao</h2>
+    <div class="o" id="viecnhao"></div>
+    <div id="viecnhads" style="margin-top:12px"></div>
+    <div class="hang" style="margin-top:12px">
+      <input id="viecchu" placeholder="Quét nhà:10:0,Rửa chén:10:0"
+             style="flex:1;min-width:220px">
+      <button data-viec="viecnha" id="nutgiaoviec">Bà giao việc</button>
+      <button data-viec="viecnhaxong">Bà bấm xong hết</button>
+      <button data-viec="xoaviecnha" class="nguy">Xoá</button>
+    </div>
+    <p class="mo" style="font-size:12px;margin:8px 0 0">Khuôn một việc:
+      <code>tên:số phút:0</code> — số cuối là 1 nếu bà đã bấm xong việc đó.
+      Còn việc chưa xong thì màn chắn che cả máy, không theo giờ nào cả.</p>
+  </div>
+
+  <div class="the">
+    <h2>Kho bài &amp; ôn lại</h2>
+    <div class="o" id="khoo"></div>
+    <div id="khods" style="margin-top:12px"></div>
+    <div class="hang" style="margin-top:12px">
+      <button data-viec="napdenhen" data-ma="1.3a">Nạp một câu đến hẹn ôn lại</button>
+      <button data-viec="xoasocai" class="nguy">Xoá sạch sổ cái</button>
+    </div>
+  </div>
+
+  <div class="the">
     <h2>Màn chắn &amp; soạn cặp</h2>
     <div class="hang">
       <button data-viec="manchan" data-ma="1">Bật màn chắn</button>
@@ -331,14 +357,14 @@ td small{display:block;color:var(--mo);font-size:10px}
   </div>
 
   <div class="the">
-    <h2>Hộp thư ba nội</h2>
+    <h2>Hộp thư bà nội</h2>
     <div class="o" id="htho"></div>
   </div>
 
   <div class="the">
     <h2>Telegram</h2>
     <p class="mo" style="margin-top:0">Nút dưới đây <b>gửi thật</b> lên bot và chat
-      đang cấu hình trên máy ảo — ảnh sẽ hiện trong Telegram của Ba Huy. Không có
+      đang cấu hình trên máy ảo — ảnh sẽ hiện trong Telegram của ba Huy. Không có
       gì tự chạy; phải bấm và xác nhận.</p>
     <div class="hang">
       <button id="tgnut" class="nguy">Gửi thử một lần nộp bài</button>
@@ -653,7 +679,7 @@ const o = (ten,gt,ghi='') =>
 async function napBang(){
   try{
     BANG = await api('/api/bang');
-    veCong(); veSoCai(); veChan(); veHan(); veTin();
+    veCong(); veSoCai(); veChan(); veHan(); veTin(); veViecNha(); veKho();
   }catch(e){ loi(e.message); }
 }
 
@@ -663,7 +689,8 @@ async function viec(tham){
   // chi dung khi doi nhieu thu lien tiep roi khoi dong lai mot lan o cuoi.
   tham.moiApp = $('#moiapp').checked;
   const r = await api('/api/viec',{method:'POST',body:JSON.stringify(tham)});
-  BANG = r.bang; veCong(); veSoCai(); veChan(); veHan(); veTin(); chupLai();
+  BANG = r.bang;
+  veCong(); veSoCai(); veChan(); veHan(); veTin(); veViecNha(); veKho(); chupLai();
   return r.xong;
 }
 document.body.addEventListener('click', async ev => {
@@ -675,6 +702,7 @@ document.body.addEventListener('click', async ev => {
     const tham = {viec:b.dataset.viec};
     if('ma' in b.dataset) tham.ma = b.dataset.ma;
     if('goi' in b.dataset) tham.goi = b.dataset.goi;
+    if('chu' in b.dataset) tham.chu = b.dataset.chu;
     if(b.dataset.viec === 'duyet') tham.phut = $('#congphut').value;
     await viec(tham);
   }catch(e){ loi(e.message); }
@@ -726,7 +754,9 @@ function veChan(){
     o('buổi được mở sớm', c.buoiDuocMoSom || '—') +
     o('buổi đã soạn cặp', c.buoiDaSoan.length ? c.buoiDaSoan.join(', ') : '—') +
     o('khoá cài đặt hệ thống', c.khoaCaiDatHeThong ? 'có' : 'không') +
-    o('sai PIN liên tiếp', c.saiPinLienTiep);
+    o('sai PIN liên tiếp', c.saiPinLienTiep) +
+    o('ba đang cầm máy', c.baDangDung ? 'CÓ' : 'không') +
+    o('máy có mạng', BANG.sudung?.coMang ? 'có' : 'KHÔNG');
 }
 $('#nutmoisom').onclick = async e => {
   // Lay dung ma buoi ke tiep tu app chu khong tu ghep chuoi o day.
@@ -737,6 +767,39 @@ $('#nutmoisom').onclick = async e => {
     await viec({viec:'moisom', ma:l.keTiep.ma});
   }catch(err){ loi(err.message); }
 };
+
+function veViecNha(){
+  const v = BANG.viecnha; if(!v) return;
+  $('#viecnhao').innerHTML =
+    o('đang khoá máy', v.dangKhoa ? 'CÓ' : 'không') +
+    o('việc chưa xong', v.chuaXong || '—') +
+    o('phiên', v.phien ? v.phien.id : '—');
+  $('#viecnhads').innerHTML = v.phien
+    ? '<ul class="ds">' + v.phien.cac.map(x=>`<li><span>${x.xong?'✓':'○'} ${x.ten}</span>
+        <span>${x.phut} phút</span></li>`).join('') + '</ul>'
+    : '<p class="mo">Bà chưa giao việc gì.</p>';
+}
+$('#nutgiaoviec').addEventListener('click', e => {
+  // Nut nay di qua handler chung; nhet noi dung o nhap vao data-chu truoc.
+  e.currentTarget.dataset.chu = $('#viecchu').value.trim() || 'Quét nhà:10:0,Rửa chén:10:0';
+}, true);
+
+function veKho(){
+  const k = BANG.kho; if(!k) return;
+  const tb = k.tienBo7Ngay || {};
+  $('#khoo').innerHTML =
+    o('đến hẹn ôn lại', k.denHenOn.length + ' câu') +
+    o('đang chờ sửa', k.dangChoSua + ' câu') +
+    o('7 ngày: câu đúng', tb.soCauDung ?? '—',
+      `${tb.soNgayCoBai ?? 0} ngày có nộp bài`) +
+    o('7 ngày: câu khó đã gỡ', tb.cauKhoDaGo ?? '—',
+      `đổi được ${tb.phutDaKiem ?? 0} phút`);
+  $('#khods').innerHTML = '<table><tr><th>sách</th><th>môn</th><th>đã xong</th></tr>' +
+    k.sach.map(sa=>`<tr><td>${sa.ten}</td><td>${sa.mon}</td>
+      <td>${sa.daXong}/${sa.tongCau} câu</td></tr>`).join('') + '</table>' +
+    (k.denHenOn.length ? `<p class="mo" style="margin-top:10px">Đến hẹn:
+      ${k.denHenOn.join(', ')}</p>` : '');
+}
 
 /* ================= han app ================= */
 function veHan(){
@@ -789,7 +852,7 @@ $('#conut').onclick = async () => {
   try{ await viec({viec:'tincuaco', chu}); $('#cochu').value=''; }catch(e){ loi(e.message); }
 };
 $('#tgnut').onclick = async e => {
-  if(!confirm('Gửi THẬT một lần nộp bài lên Telegram của Ba Huy?\n' +
+  if(!confirm('Gửi THẬT một lần nộp bài lên Telegram của ba Huy?\n' +
               'Ảnh sẽ hiện trong chat. Đồng ý?')) return;
   e.target.disabled = true; $('#tgket').textContent = 'đang gửi…';
   try{

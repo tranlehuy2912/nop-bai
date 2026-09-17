@@ -65,6 +65,18 @@ class GuardAccessibilityService : AccessibilityService() {
         currentPackage?.let { runCatching { evaluate(it) } }
     }
 
+    /**
+     * Xet lai sau khi mot chum su kien "danh sach cua so doi" da lang xuong.
+     *
+     * Xem [GOP_CUA_SO_MS] de biet vi sao phai hoan. Dung mot Runnable RIENG, khong
+     * dung ke [xetLaiRunnable]: cai kia bi [henXetLai] huy va dat lai theo nhip
+     * chong day lien tuc, hai duong dung chung mot Runnable thi moi cai huy nhau.
+     */
+    private val gopCuaSoRunnable = Runnable {
+        runCatching { evaluate(currentPackage ?: packageName) }
+        syncTicker()
+    }
+
     /** Nho san goi nao mo duoc tu man hinh chinh, khoi hoi PackageManager moi lan. */
     private val moDuocTuNha = HashMap<String, Boolean>()
 
@@ -135,6 +147,9 @@ class GuardAccessibilityService : AccessibilityService() {
      */
     @Volatile
     private var currentPackage: String? = null
+
+    /** Dang nghe su kien go chu hay khong. Xem [ngheChuAi]. */
+    private var dangNgheChu = false
 
     /** Gom chu con go vao app AI de dung lai cau hoan chinh. Xem [BoGoAi]. */
     private val boGoAi = BoGoAi()
@@ -227,19 +242,14 @@ class GuardAccessibilityService : AccessibilityService() {
 
         // Tu dang ky loai su kien go chu ngay o day, khong chi trong cau hinh XML.
         //
-        // Android nho cau hinh dich vu tro nang tu luc BAT no trong Settings. Cai
-        // de mot ban moi len - qua adb hay qua ban cap nhat - KHONG lam no doc lai
-        // XML: service van chay voi cau hinh cu. Nen may da bat truoc khi co tinh
-        // nang ghi cau hoi AI se khong bao gio nghe su kien go chu, du XML ban moi
-        // da khai bao. Trieu chung dung la: cap nhat xong, AI khong bao tin gi.
+        // Vao day la TAT su kien go chu, roi chi bat len khi mot app AI ra truoc
+        // mat. Xem [ngheChuAi].
         //
-        // Sua tay serviceInfo luc ket noi thi co hieu luc ngay, khoi bat ba tu vao
-        // Settings tat/bat lai dich vu sau moi lan cap nhat.
-        runCatching {
-            serviceInfo = serviceInfo.apply {
-                eventTypes = eventTypes or AccessibilityEvent.TYPE_VIEW_TEXT_CHANGED
-            }
-        }.onFailure { Log.w(TAG, "khong dat duoc eventTypes: ${it.message}") }
+        // (Android nho cau hinh dich vu tro nang tu luc BAT no trong Settings. Cai
+        // mot ban moi len - qua adb hay qua ban cap nhat - KHONG lam no doc lai
+        // XML, nen sua tay serviceInfo luc ket noi la cach duy nhat de cau hinh moi
+        // co hieu luc ngay, khoi bat Ba Huy vao Settings tat bat lai dich vu.)
+        ngheChuAi(false, batBuoc = true)
 
         systemEssentials = readSystemEssentials()
         dangChay = true
@@ -298,15 +308,43 @@ class GuardAccessibilityService : AccessibilityService() {
         )
     }
 
+    /**
+     * Bat hay tat viec nghe su kien "chu trong o nhap vua doi".
+     *
+     * Su kien do la thu duy nhat mang theo noi dung, va la duong duy nhat ghi lai
+     * duoc cau Le Hoa go vao app AI. Nhung he thong ban no cho MOI app: con nhan
+     * tin, tim kiem, dien mot o bat ky - moi ky tu la mot lan danh thuc tien trinh
+     * nay, de roi no xem goi khong nam trong danh sach AI va bo di. Hang nghin lan
+     * mot ngay khong de lam gi.
+     *
+     * Nen mac dinh tat, chi bat dung luc mot app AI ra truoc mat. Phan ghi cau hoi
+     * khong doi gi: luc con go thi app do dang duoc tieu diem, tuc la co da bat.
+     */
+    private fun ngheChuAi(bat: Boolean, batBuoc: Boolean = false) {
+        if (!batBuoc && bat == dangNgheChu) return
+        runCatching {
+            serviceInfo = serviceInfo.apply {
+                eventTypes = if (bat) {
+                    eventTypes or AccessibilityEvent.TYPE_VIEW_TEXT_CHANGED
+                } else {
+                    eventTypes and AccessibilityEvent.TYPE_VIEW_TEXT_CHANGED.inv()
+                }
+            }
+            dangNgheChu = bat
+        }.onFailure { Log.w(TAG, "khong doi duoc eventTypes: ${it.message}") }
+    }
+
     override fun onAccessibilityEvent(event: AccessibilityEvent?) {
         val loai = event?.eventType ?: return
 
         // Vao hoac ra khoi che do chia doi man hinh co khi chi ban su kien
         // "danh sach cua so doi" chu khong ban "cua so truoc mat doi". Bo qua no la
         // bo sot dung luc can xet lai nhat.
+        //
+        // Nhung khong xet NGAY: gop ca chum lai roi xet mot lan. Xem [GOP_CUA_SO_MS].
         if (loai == AccessibilityEvent.TYPE_WINDOWS_CHANGED) {
-            evaluate(currentPackage ?: packageName)
-            syncTicker()
+            mainHandler.removeCallbacks(gopCuaSoRunnable)
+            mainHandler.postDelayed(gopCuaSoRunnable, GOP_CUA_SO_MS)
             return
         }
 
@@ -319,8 +357,16 @@ class GuardAccessibilityService : AccessibilityService() {
         }
 
         if (loai != AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED) return
+
+        // Doi han cua so truoc mat thi xet NGAY, khong hoan: day moi la su kien quyet
+        // dinh chan hay khong, va no thua hon han loai kia nen khong can gop. Lan gop
+        // dang treo, neu co, tro thanh thua - [evaluate] ngay duoi doc danh sach cua
+        // so ngay luc nay, tuc la da bao gom moi thay doi ma lan gop do dinh xet.
+        mainHandler.removeCallbacks(gopCuaSoRunnable)
+
         val pkg = event.packageName?.toString() ?: return
         if (pkg != packageName) currentPackage = pkg
+        ngheChuAi(pkg in prefs.aiPackages)
         // Con roi app AI sang app khac: cau dang go do, neu co, la da xong.
         if (pkg !in prefs.aiPackages) {
             boGoAi.roiApp()?.let { chotCauHoi(it) }
@@ -385,6 +431,8 @@ class GuardAccessibilityService : AccessibilityService() {
 
     private fun donDepKhiRoi(): Boolean {
         runCatching { unregisterReceiver(manHinhReceiver) }
+        mainHandler.removeCallbacks(gopCuaSoRunnable)
+        mainHandler.removeCallbacks(xetLaiRunnable)
         // Chot not khoang dang mo truoc khi di, khong thi phan da xem tu lan ghi
         // cuoi den bay gio mat khoi so.
         runCatching { dongSuDung() }
@@ -518,6 +566,11 @@ class GuardAccessibilityService : AccessibilityService() {
             // dang nghe nhac thi day ve man hinh chinh van con nghe duoc.
             AudioHush.hush(this)
             warned = false
+            // Chot lai so dung app ngay tai day. Duong binh thuong la evaluate()
+            // ben duoi day con ra khoi game, va viec doi cua so tu chot ho. Nhung
+            // khi con dang o trong chinh app nay thi khong co cu day nao ca, va
+            // khoang dang mo nam do cho den nhip sau.
+            runCatching { capNhatSuDung() }
             Log.i(TAG, "het phien ($reason), app truoc mat=$currentPackage, " +
                 "man hinh app nha dang mo=${App.manHinhCuaAppDangMo}")
             // Dang o trong app nay thi khong day di dau ca: co the con dang go tin
@@ -901,7 +954,7 @@ class GuardAccessibilityService : AccessibilityService() {
             // ngay, khong phai cho. Bao "dang cho duyet" o day la con ngoi cho oan.
             gate.state == GateState.PENDING && gate.grantedMinutes > 0 ->
                 "Đang giữ ${gate.grantedMinutes} phút. Mở app Nộp bài, bấm Bắt đầu chơi"
-            gate.state == GateState.PENDING -> "Đã gửi bài rồi, đang chờ Ba Huy duyệt"
+            gate.state == GateState.PENDING -> "Đã gửi bài rồi, đang chờ ba Huy duyệt"
             gate.state == GateState.PAUSED -> "Đang tạm dừng. Mở app Nộp bài, bấm Chơi tiếp"
             gate.state == GateState.GRANTED -> "Ba Huy duyệt rồi. Mở app Nộp bài, bấm Bắt đầu"
             gate.phutConLaiHomNay() <= 0 -> "Hôm nay đủ giờ chơi rồi, mai nộp bài tiếp nhé"
@@ -1233,6 +1286,28 @@ class GuardAccessibilityService : AccessibilityService() {
         @Volatile
         var soMienTru = 0
             private set
+        /**
+         * Gop cac su kien "danh sach cua so doi" trong khoang nay thanh mot lan xet.
+         *
+         * VI SAO PHAI GOP. Loai su kien do ban rat day: ban phim len roi xuong, mot
+         * cai toast hien ra roi tat, mot popup trong game, keo thanh thong bao - moi
+         * thu deu la mot lan danh sach cua so doi, va mot thao tac cua nguoi dung
+         * thuong de ra ba den nam su kien trong vai chuc mili giay.
+         *
+         * Ma moi su kien do chay [evaluate], von goi [goiDangHien]: mot luot doc
+         * `windows` sang tien trinh he thong, roi lay `.root` cua TUNG cua so, moi
+         * cai them mot luot nua. Do la goi lien tien trinh, dat hon nhieu lan so voi
+         * doc mot bien. Nam lan chay de ra dung mot ket qua giong nhau.
+         *
+         * Hoan 300 mili giay, su kien moi toi thi huy cai hen cu va hen lai, nen ca
+         * chum chi chay mot lan - dung luc chum do lang xuong. Cach [ChatActivity] va
+         * [vn.huytl.homeworkgate.ui.HomeActivity] da lam voi lang nghe prefs.
+         *
+         * CAI GIA: chan cham di toi da 300 mili giay, va CHI o duong nay. Doi han
+         * sang app khac thi van chan ngay khong hoan - xem [onAccessibilityEvent].
+         */
+        private const val GOP_CUA_SO_MS = 300L
+
         private const val TICK_INTERVAL_MS = 20_000L
 
         /** Bao lau nhin lai mot lan xem app do con nam truoc mat khong. */
@@ -1249,8 +1324,15 @@ class GuardAccessibilityService : AccessibilityService() {
         /** Khoang ngan hon the khong ghi vao so: luot qua chu khong phai dung. */
         private const val NGAN_NHAT_SU_DUNG_MS = 5_000L
 
-        /** Khoang dang mo bao lau moi ghi xuong prefs mot lan. */
-        private const val GHI_SU_DUNG_LAI_MS = 2 * 60_000L
+        /**
+         * Khoang dang mo bao lau moi ghi xuong kho mot lan.
+         *
+         * Day chi la bao hiem cho truong hop tien trinh chet khong kip troi: bi
+         * HyperOS giet, het pin, rut nguon. Moi duong ket thuc binh thuong - doi
+         * app, tat man hinh, het gio bi day ve man hinh chinh - deu la mot su kien,
+         * va su kien nao cung chot khoang ngay luc do. Nen nhip nay khong can day.
+         */
+        private const val GHI_SU_DUNG_LAI_MS = 5 * 60_000L
 
         /** Bat im xong thi chinh viec do lai sinh ra su kien, nen phai cho mot nhip. */
         private const val HUSH_COOLDOWN_MS = 3_000L

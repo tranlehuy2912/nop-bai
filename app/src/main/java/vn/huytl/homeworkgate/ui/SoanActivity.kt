@@ -139,13 +139,13 @@ class SoanActivity : AppCompatActivity() {
         binding.nutChup.isEnabled = du
         binding.demTich.text = when {
             tongMon == 0 -> "Buổi này chỉ cần mặc đồ thể dục, không phải chụp gì."
-            du -> "Đã tích đủ $tongMon môn."
-            else -> "Đã tích ${daTich.size} trên $tongMon môn."
+            du -> "Đã chọn đủ $tongMon môn."
+            else -> "Đã chọn ${daTich.size} trên $tongMon môn."
         }
         binding.nutChup.text = if (tongMon == 0) {
             "Con biết rồi"
         } else {
-            "Chụp cặp sách gửi ${getString(R.string.parent_name)}"
+            "Soạn tập vở xong chụp gửi ${getString(R.string.parent_name)}"
         }
         if (tongMon == 0) binding.nutChup.isEnabled = true
     }

@@ -83,10 +83,15 @@ class ManChan(private val context: Context) {
         v.findViewById<TextView>(R.id.phu_de_chan).text = nhac.chiTiet
         v.findViewById<TextView>(R.id.dong_ho).text = dinhDangGio.format(Date())
 
-        if (nhac.phutHetChan >= 0) {
-            v.findViewById<TextView>(R.id.het_chan_luc).text =
+        // Xoa han khi khong co moc, dung de nguyen dong cu: cung mot view duoc
+        // dung lai, nen man chan viec nha se doi dong "Mo lai luc 12:20" cua buoi
+        // hoc truoc do - ma viec nha thi khong mo theo gio, no mo khi ba bam xong.
+        v.findViewById<TextView>(R.id.het_chan_luc).text =
+            if (nhac.phutHetChan >= 0) {
                 "Mở lại lúc ${TinhLoiNhac.gioPhut(nhac.phutHetChan)}"
-        }
+            } else {
+                ""
+            }
 
         veDanhSachMon(v, nhac)
 

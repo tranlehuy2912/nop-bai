@@ -7,8 +7,19 @@ import org.json.JSONObject
 /** Ai nhan cau do. */
 enum class ChatFrom { CON, BA }
 
-/** Mot cau trong khung chat. */
-data class ChatLine(val from: ChatFrom, val text: String, val at: Long)
+/**
+ * Mot cau trong khung chat.
+ *
+ * @param anh duong dan tam anh di kem, hay null neu chi co chu. Anh nam trong
+ *   [ChatBox.thuMucAnh] chu khong phai cache: mot tam anh Ba Huy gui ma may tu don
+ *   mat sau vai ngay thi con mo chat ra chi con cai khung trong.
+ */
+data class ChatLine(
+    val from: ChatFrom,
+    val text: String,
+    val at: Long,
+    val anh: String? = null
+)
 
 /**
  * Khung chat giua Le Hoa va Ba Huy, di nho duong Telegram.
@@ -32,10 +43,13 @@ object ChatBox {
      * Toi da bay nhieu cau. Vuot qua thi cau cu nhat bi day han ra khoi may.
      *
      * Khong dat them han theo ngay: mot cau ba nhan tuan truoc van la cau ba nhan,
-     * khong co ly do gi de may tu xoa no trong khi hop moi co nam cau. Chi khi day
-     * len hon nam muoi thi cau cu nhat moi phai nhuong cho.
+     * khong co ly do gi de may tu xoa no trong khi hop con thua cho. Chi khi day len
+     * hon mot tram thi cau cu nhat moi phai nhuong cho.
+     *
+     * Len mot tram tu ban co anh trong chat: mot lan con hoi bai co the la ba bon
+     * tam anh lien nhau, nen nam muoi dong het nhanh hon han hoi con toan chu.
      */
-    private const val MAX_LINES = 50
+    private const val MAX_LINES = 100
 
     /** Con nhan xong thi giu duong day mo bay nhieu lau de cho ba tra loi. */
     const val WAIT_WINDOW_MS = 20 * 60_000L
@@ -50,11 +64,27 @@ object ChatBox {
      */
     const val COOLDOWN_MS = 3_000L
 
-    fun add(context: Context, from: ChatFrom, text: String, now: Long = System.currentTimeMillis()) {
+    fun add(
+        context: Context,
+        from: ChatFrom,
+        text: String,
+        now: Long = System.currentTimeMillis(),
+        anh: String? = null
+    ) {
         val lines = read(context).toMutableList()
-        lines.add(ChatLine(from, text.take(500), now))
+        lines.add(ChatLine(from, text.take(500), now, anh))
         ghi(context, lines.takeLast(MAX_LINES))
     }
+
+    /**
+     * Cho de anh di kem tin nhan.
+     *
+     * Trong filesDir chu khong phai cacheDir: Android don cache bat cu luc nao no
+     * thay chat o dia, ma mot tam anh bai tap Ba Huy gui thi con co the mo lai xem
+     * ca tuan sau.
+     */
+    fun thuMucAnh(context: Context): java.io.File =
+        java.io.File(context.filesDir, "chat_anh").apply { mkdirs() }
 
     fun read(context: Context): List<ChatLine> = docThoDay(context).takeLast(MAX_LINES)
 
@@ -86,7 +116,8 @@ object ChatBox {
                 ChatLine(
                     from = ChatFrom.valueOf(o.getString("f")),
                     text = o.getString("t"),
-                    at = o.getLong("a")
+                    at = o.getLong("a"),
+                    anh = o.optString("i").takeIf { it.isNotBlank() }
                 )
             }
         }.getOrDefault(emptyList())
@@ -100,9 +131,28 @@ object ChatBox {
                     .put("f", it.from.name)
                     .put("t", it.text)
                     .put("a", it.at)
+                    .put("i", it.anh)
             )
         }
         Prefs.get(context).raw().edit().putString(K_LINES, array.toString()).commit()
+        donAnhMoCoi(context, lines)
+    }
+
+    /**
+     * Xoa nhung tam anh khong con cau nao tro toi.
+     *
+     * Cau thu 51 day cau cu nhat ra khoi danh sach, nhung tam anh cua no thi van nam
+     * trong o dia mai mai neu khong co cho nay. Quet theo thu muc chu khong theo cau
+     * vua bi day ra: cach do don duoc ca nhung tam sot lai tu ban cu hay tu mot lan
+     * ghi hong giua chung.
+     */
+    private fun donAnhMoCoi(context: Context, lines: List<ChatLine>) {
+        val conDung = lines.mapNotNull { it.anh }.toSet()
+        runCatching {
+            thuMucAnh(context).listFiles()?.forEach { f ->
+                if (f.absolutePath !in conDung) f.delete()
+            }
+        }
     }
 
     /** So cau cua ba ma con chua mo ra xem. */

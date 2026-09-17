@@ -47,6 +47,22 @@ class ChatActivity : AppCompatActivity() {
     /** Vong doc tin moi trong luc man hinh dang mo. */
     private var theoDoi: Job? = null
 
+    /**
+     * Quay ve tu man chup: may tam anh con vua chup de hoi bai.
+     *
+     * Gui lan luot tung tam, kem dong chu con dang go (neu co) dat vao tam dau. Gui
+     * hong tam nao thi bo tam do, khong ghi vao khung chat - de con thay thieu ma
+     * chup lai, chu khong tuong la Ba Huy da nhan.
+     */
+    private val chupTraVe = registerForActivityResult(
+        androidx.activity.result.contract.ActivityResultContracts.StartActivityForResult()
+    ) { ket ->
+        if (ket.resultCode != RESULT_OK) return@registerForActivityResult
+        val anh = ket.data?.getStringArrayListExtra(CaptureActivity.KET_QUA_ANH)
+            .orEmpty().map { java.io.File(it) }
+        if (anh.isNotEmpty()) guiAnh(anh)
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityChatBinding.inflate(layoutInflater)
@@ -61,6 +77,12 @@ class ChatActivity : AppCompatActivity() {
             insets
         }
 
+        binding.btnChup.setOnClickListener {
+            chupTraVe.launch(
+                android.content.Intent(this, CaptureActivity::class.java)
+                    .putExtra(CaptureActivity.EXTRA_CHAT, true)
+            )
+        }
         binding.btnBack.setOnClickListener { finish() }
         binding.btnXoaChat.setOnClickListener { hoiXoaHet() }
         binding.btnSend.setOnClickListener { gui() }
@@ -113,7 +135,7 @@ class ChatActivity : AppCompatActivity() {
         }
         MaterialAlertDialogBuilder(this)
             .setTitle("Xoá hết tin nhắn?")
-            .setMessage("Xoá sạch các tin trong máy. Bên Telegram của Ba Huy vẫn còn.")
+            .setMessage("Xoá sạch các tin trong máy. Bên Telegram của ba Huy vẫn còn.")
             .setPositiveButton("Xoá hết") { _, _ ->
                 ChatBox.xoaHet(this)
                 render()
@@ -137,7 +159,10 @@ class ChatActivity : AppCompatActivity() {
         val dp = resources.displayMetrics.density
 
         val text = TextView(this).apply {
-            setText("${line.text}\n${clock.format(Date(line.at))}")
+            setText(
+                if (line.text.isBlank()) clock.format(Date(line.at))
+                else "${line.text}\n${clock.format(Date(line.at))}"
+            )
             textSize = 17f
             setPadding((18 * dp).toInt(), (12 * dp).toInt(), (18 * dp).toInt(), (12 * dp).toInt())
             setBackgroundResource(
@@ -156,11 +181,110 @@ class ChatActivity : AppCompatActivity() {
                 LinearLayout.LayoutParams.MATCH_PARENT,
                 LinearLayout.LayoutParams.WRAP_CONTENT
             ).apply { topMargin = (8 * dp).toInt() }
-            addView(text, LinearLayout.LayoutParams(
+            val le = LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.WRAP_CONTENT,
                 LinearLayout.LayoutParams.WRAP_CONTENT
-            ).apply { marginEnd = if (cuaCon) 0 else (80 * dp).toInt()
-                      marginStart = if (cuaCon) (80 * dp).toInt() else 0 })
+            ).apply {
+                marginEnd = if (cuaCon) 0 else (80 * dp).toInt()
+                marginStart = if (cuaCon) (80 * dp).toInt() else 0
+            }
+            anhCua(line)?.let { addView(it, le) }
+            addView(text, le)
+        }
+    }
+
+    /**
+     * Tam anh di kem mot cau, neu co va neu file van con.
+     *
+     * Giai ma anh nho thoi - bong bong chat rong chung mot phan ba man, nap ca tam
+     * vai megabyte vao day la phi bo nho ma nhin cung khong ro hon.
+     */
+    private fun anhCua(line: ChatLine): View? {
+        val duong = line.anh ?: return null
+        val f = java.io.File(duong)
+        if (!f.exists()) return null
+        val dp = resources.displayMetrics.density
+        val rong = (260 * dp).toInt()
+
+        val bm = runCatching {
+            val bien = android.graphics.BitmapFactory.Options().apply { inJustDecodeBounds = true }
+            android.graphics.BitmapFactory.decodeFile(duong, bien)
+            var mau = 1
+            while (bien.outWidth / (mau * 2) >= rong) mau *= 2
+            android.graphics.BitmapFactory.decodeFile(
+                duong,
+                android.graphics.BitmapFactory.Options().apply { inSampleSize = mau }
+            )
+        }.getOrNull() ?: return null
+
+        return android.widget.ImageView(this).apply {
+            setImageBitmap(bm)
+            adjustViewBounds = true
+            maxWidth = rong
+            contentDescription = "Ảnh trong tin nhắn"
+            setPadding(0, 0, 0, (4 * dp).toInt())
+        }
+    }
+
+    private fun guiAnh(anh: List<java.io.File>) {
+        if (!prefs.isConfigured) {
+            toast("${getString(R.string.parent_name_cap)} chưa cài đặt xong")
+            anh.forEach { it.delete() }
+            return
+        }
+        val chu = binding.input.text.toString().trim()
+        binding.btnChup.isEnabled = false
+        binding.btnSend.isEnabled = false
+
+        lifecycleScope.launch {
+            val giu = withContext(Dispatchers.IO) {
+                val client = TelegramClient(prefs.botToken)
+                val kho = ChatBox.thuMucAnh(this@ChatActivity)
+                anh.mapIndexedNotNull { i, f ->
+                    val nho = runCatching { ImageUtil.shrinkBaiGiai(f) }.getOrDefault(f)
+                    val ok = runCatching {
+                        client.sendPhoto(
+                            prefs.parentChatId,
+                            nho,
+                            if (i == 0) {
+                                "❓ ${getString(R.string.child_name)} hỏi bài" +
+                                    if (chu.isNotEmpty()) ":\n$chu" else ""
+                            } else {
+                                ""
+                            },
+                            null
+                        )
+                    }.isSuccess
+                    // Giu mot ban trong may de con mo lai xem duoc, roi don ban goc.
+                    val giuLai = java.io.File(kho, "con_${System.currentTimeMillis()}_$i.jpg")
+                    if (ok) runCatching { nho.copyTo(giuLai, overwrite = true) }
+                    if (nho != f) nho.delete()
+                    f.delete()
+                    if (ok) giuLai.absolutePath else null
+                }
+            }
+            binding.btnChup.isEnabled = true
+            binding.btnSend.isEnabled = true
+
+            if (giu.isEmpty()) {
+                toast("Gửi ảnh không được, kiểm tra mạng rồi thử lại")
+                return@launch
+            }
+            val luc = System.currentTimeMillis()
+            giu.forEachIndexed { i, duong ->
+                ChatBox.add(
+                    this@ChatActivity, ChatFrom.CON,
+                    if (i == 0) chu else "", luc + i, duong
+                )
+            }
+            ChatBox.noteSent(this@ChatActivity)
+            DongBo.dayTin(
+                this@ChatActivity,
+                ChatLine(ChatFrom.CON, chu.ifBlank { "(ảnh hỏi bài)" }, luc)
+            )
+            binding.input.setText("")
+            render()
+            ApprovalService.ensureRunning(this@ChatActivity)
         }
     }
 
@@ -168,7 +292,7 @@ class ChatActivity : AppCompatActivity() {
         val text = binding.input.text.toString().trim()
         if (text.isEmpty()) return
         if (!prefs.isConfigured) {
-            toast("${getString(R.string.parent_name)} chưa cài đặt xong")
+            toast("${getString(R.string.parent_name_cap)} chưa cài đặt xong")
             return
         }
         ChatBox.blockReason(this)?.let {

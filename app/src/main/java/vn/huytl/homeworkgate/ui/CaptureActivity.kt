@@ -74,6 +74,19 @@ class CaptureActivity : AppCompatActivity() {
     private val soanTap: Boolean get() = maBuoiSoan != null
 
     /**
+     * Che do chup de hoi bai trong khung chat.
+     *
+     * Khong gui di dau ca: chup xong tra duong dan ve cho [ChatActivity], ben do moi
+     * quyet dinh gui. Dung chung man chup vi phan camera - xin quyen, mo CameraX,
+     * dai anh nho, bam mot tam de bo tam do - y het, va vi hai man chup thi sua mot
+     * cho la phai nho sua ca cho kia.
+     */
+    private val chupChat: Boolean by lazy { intent.getBooleanExtra(EXTRA_CHAT, false) }
+
+    /** Ba che do rut gon deu chi co mot xap anh, khong co ba buoc. */
+    private val motXap: Boolean get() = suaBai || soanTap || chupChat
+
+    /**
      * Bai con da khai o man truoc: mon nao, sach nao, nhung cau nao.
      *
      * Null la vao thang man chup ma khong qua man khai bai - van chay duoc, chi la
@@ -114,7 +127,7 @@ class CaptureActivity : AppCompatActivity() {
         binding.btnNext.setOnClickListener { goNext() }
         // Ca hai che do rut gon deu chi co mot xap anh, nen dung luon o cuoi cung
         // de goNext() la gui thang.
-        if (suaBai || soanTap) jumpTo(CaptureStage.BAI_GIAI)
+        if (motXap) jumpTo(CaptureStage.BAI_GIAI)
 
         binding.stepNotes.setOnClickListener { jumpTo(CaptureStage.DAN_DO) }
         binding.stepProblem.setOnClickListener { jumpTo(CaptureStage.DE_BAI) }
@@ -156,7 +169,7 @@ class CaptureActivity : AppCompatActivity() {
     private fun lui() {
         // Hai che do rut gon vao thang buoc cuoi, nen "quay lai" phai la thoat han.
         // Lui mot buoc se roi vao buoc chup de bai - thu ma lan nay khong can chup.
-        val previous = if (suaBai || soanTap) {
+        val previous = if (motXap) {
             null
         } else {
             CaptureStage.entries.getOrNull(stage.ordinal - 1)
@@ -171,7 +184,7 @@ class CaptureActivity : AppCompatActivity() {
         }
         MaterialAlertDialogBuilder(this)
             .setTitle("Thoát và bỏ ảnh đã chụp?")
-            .setMessage("Ảnh chưa gửi cho Ba Huy sẽ mất, Lê Hòa phải chụp lại từ đầu.")
+            .setMessage("Ảnh chưa gửi cho ba Huy sẽ mất, Lê Hòa phải chụp lại từ đầu.")
             .setPositiveButton("Thoát") { _, _ -> finish() }
             .setNegativeButton("Chụp tiếp", null)
             .show()
@@ -276,6 +289,7 @@ class CaptureActivity : AppCompatActivity() {
         // trang khac la canh de xay ra nhat, va mot dong chu o day chan duoc no.
         val daKhai = pham?.takeIf { it.theoSach }?.let { "${it.bai} · ${it.cauIds.size} câu" }
         binding.txtStageHint.text = when {
+            chupChat -> "Chụp chỗ con không hiểu để hỏi ${getString(R.string.parent_name)}."
             soanTap -> getString(R.string.capture_cap_hint)
             suaBai -> "Chụp lại phần Lê Hòa vừa sửa."
             daKhai != null -> "$daKhai\n${getString(stage.hintRes)}"
@@ -283,9 +297,9 @@ class CaptureActivity : AppCompatActivity() {
         }
 
         binding.btnBack.text =
-            if (suaBai || soanTap || stage.ordinal == 0) "✕  Thoát" else "‹  Quay lại"
+            if (motXap || stage.ordinal == 0) "✕  Thoát" else "‹  Quay lại"
         // Hai che do rut gon khong co ba buoc nao ca, chi co mot viec.
-        val coBaBuoc = !suaBai && !soanTap
+        val coBaBuoc = !motXap
         binding.stepNotes.visibility = if (coBaBuoc) View.VISIBLE else View.GONE
         binding.stepProblem.visibility = if (coBaBuoc) View.VISIBLE else View.GONE
         // O buoc cuoi van hien khi sua bai, vi luc do no la nhan cho biet dang chup
@@ -305,10 +319,17 @@ class CaptureActivity : AppCompatActivity() {
             if (!stage.required && count == 0) View.VISIBLE else View.INVISIBLE
 
         binding.btnNext.text = when {
+            chupChat -> "Xong"
             stage == CaptureStage.BAI_GIAI -> getString(R.string.capture_send)
             else -> getString(R.string.capture_next)
         }
         binding.btnNext.isEnabled = stage != CaptureStage.BAI_GIAI || count > 0
+
+        // Khung ngam chi can khi chup chu de doc. Chup cap sach thi de con lui ra xa
+        // lay ca cai cap, khung chi lam vuong mat.
+        val canKhung = !soanTap
+        binding.khungNgam.visibility = if (canKhung) View.VISIBLE else View.GONE
+        binding.chuKhung.visibility = if (canKhung) View.VISIBLE else View.GONE
 
         binding.txtCount.text = when {
             count == 0 -> ""
@@ -389,6 +410,21 @@ class CaptureActivity : AppCompatActivity() {
             return
         }
 
+        // Chup de hoi bai: khong gui gi ca, tra duong dan ve cho man chat. Phai xoa
+        // danh sach truoc khi dong, neu khong onDestroy don mat may tam vua chup.
+        if (chupChat) {
+            val anh = groups.getValue(CaptureStage.BAI_GIAI)
+            shots.values.forEach { it.clear() }
+            setResult(
+                RESULT_OK,
+                android.content.Intent().putStringArrayListExtra(
+                    KET_QUA_ANH, ArrayList(anh.map { it.absolutePath })
+                )
+            )
+            finish()
+            return
+        }
+
         // Khong gui thang nua: dua sang man soat de con xem may doc ra chu gi da.
         // Xem [SoatBaiActivity] de biet vi sao chen mot buoc vao giua.
         //
@@ -443,6 +479,12 @@ class CaptureActivity : AppCompatActivity() {
     companion object {
         /** Bat che do chup lai phan da sua. */
         const val EXTRA_SUA = "sua_bai"
+
+        /** Bat che do chup de hoi bai trong khung chat. */
+        const val EXTRA_CHAT = "chup_chat"
+
+        /** Duong dan may tam vua chup, tra ve cho man goi. */
+        const val KET_QUA_ANH = "ket_qua_anh"
 
         /** Bai con vua khai o [ChonBaiActivity], dang JSON cua [PhamVi]. */
         const val EXTRA_PHAM = "pham_vi"

@@ -9,6 +9,9 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.updatePadding
 import com.google.android.material.button.MaterialButton
 import vn.huytl.homeworkgate.R
 import vn.huytl.homeworkgate.data.NhatKySuDung
@@ -50,6 +53,7 @@ class ThongKeActivity : AppCompatActivity() {
             return
         }
 
+        chuaThanhHeThong()
         binding.btnDone.setOnClickListener { finish() }
         veHangNgay()
         ve()
@@ -177,6 +181,20 @@ class ThongKeActivity : AppCompatActivity() {
             resources.displayMetrics.density.toInt().coerceAtLeast(1)
         ).apply { marginStart = (70 * resources.displayMetrics.density).toInt() }
         setBackgroundColor(mau(R.color.line))
+    }
+
+    /**
+     * Tu Android 15 app ve tran ca man hinh, thuoc tinh statusBarColor trong theme
+     * khong con tac dung. Cong them le 28dp von co trong layout de dong tieu de
+     * khong dinh thanh trang thai.
+     */
+    private fun chuaThanhHeThong() {
+        val le = (28 * resources.displayMetrics.density).toInt()
+        ViewCompat.setOnApplyWindowInsetsListener(binding.goc) { view, insets ->
+            val thanh = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+            view.updatePadding(top = thanh.top + le, bottom = thanh.bottom + le)
+            insets
+        }
     }
 
     private fun mau(id: Int) = ContextCompat.getColor(this, id)

@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <!-- Chi de biet co mang hay khong, de chan nut Nop bai luc mat mang. -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
@@ -108,6 +110,18 @@
             android:name=".ui.LichActivity"
             android:exported="false" />
 
+        <!-- Hoc thuoc: may hoi, con go tra loi. adjustResize de ban phim khong che
+             mat o go va thanh ky tu toan ngay duoi no. -->
+        <activity
+            android:name=".ui.HocThuocActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
+        <!-- Man Le Hoa nhin lai viec minh da lam. -->
+        <activity
+            android:name=".ui.TienBoActivity"
+            android:exported="false" />
+
         <!-- So con dung app gi, luc nao. exported=false: day la trang cua Ba Huy,
              nam sau PIN, khong mo bang adb hay shortcut duoc. -->
         <activity
@@ -160,6 +174,12 @@
 
         <receiver
             android:name=".guard.Heartbeat$Receiver"
+            android:exported="false" />
+
+        <!-- Danh thuc dung gio di ngu va nua dem, de phieu duyet chua dung va bai
+             dang cho duyet het han dung luc ma khong phai hoi vong. -->
+        <receiver
+            android:name=".guard.MocGio$Receiver"
             android:exported="false" />
     </application>
 </manifest>

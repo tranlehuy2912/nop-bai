@@ -26,6 +26,7 @@ class BootReceiver : BroadcastReceiver() {
         gate.tick()
         ParentMode.disable(context)
         Heartbeat.schedule(context)
+        MocGio.datLai(context)
 
         // Khoi dong lai la luc dau tien app chay lai sau che do an toan, nen cung la
         // luc duy nhat co the bao ve khoang thoi gian vua roi. Kiem truoc ca viec

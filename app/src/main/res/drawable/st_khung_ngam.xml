@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Khung ngam trong man chup.
+
+  Anh Le Hoa chup ngay 16/9/2026 tam nao cung lot ca bia sach, cai giuong va ban tay
+  - trang vo chi chiem chung mot nua khung hinh, nen chu nho di mot nua, va may doc
+  net but kho hon han. Mot cai khung de con dat trang vo vao giup nhieu hon moi lan
+  sua cau lenh gui AI.
+
+  Net trang mo chu khong phai net dam: no la loi nhac, khong phai cai khuon - chup
+  hoi lech ra ngoai khung mot chut van khong sao.
+-->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <solid android:color="@android:color/transparent" />
+    <stroke
+        android:width="2dp"
+        android:color="#8CFFFFFF" />
+    <corners android:radius="10dp" />
+</shape>

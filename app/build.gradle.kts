@@ -37,11 +37,46 @@ fun chuoiBiMat(ten: String): String {
 // Bat vo dieu kien thi may nao chua tai file ve la build do ngay tu dau. Thieu file
 // thi app van chay day du duong Telegram nhu truoc, chi la khong noi duoc sang app
 // Bang dieu khien ben dien thoai Ba Huy. Xem ../homework-gate-3/CAI_DAT_FIREBASE.md.
-val coFirebase = file("google-services.json").exists()
+//
+// HAI DU AN FIREBASE, MOI BAN BUILD MOT CAI:
+//
+//   app/src/debug/google-services.json   du an THU  - may ao dung
+//   app/google-services.json             du an THAT - tablet cua Le Hoa dung
+//
+// Plugin tu chon file theo ban build: co file trong src/debug thi ban go loi dung
+// file do, khong thi tut xuong lay file o goc. Khong phai sua mot dong Kotlin nao,
+// y het cach BOT_TOKEN trong Defaults tach bot Telegram theo BuildConfig.DEBUG.
+//
+// Vi sao phai tach: may ao va tablet that deu ghi vao Firestore, va moi lan chay
+// bo test la mot nha moi mo ra trong du an. Chung du an thi rac cua may ao nam
+// canh du lieu that, dung chung han muc mien phi, va mot lan xoa don dep nham tay
+// la mat du lieu cua may that.
+val fileFirebaseThat = file("google-services.json")
+val fileFirebaseThu = file("src/debug/google-services.json")
+val coFirebase = fileFirebaseThat.exists() || fileFirebaseThu.exists()
 if (coFirebase) {
     apply(plugin = "com.google.gms.google-services")
 } else {
     logger.warn("Chua co app/google-services.json - ban build nay khong noi duoc app Bang dieu khien.")
+}
+
+// Canh bao khi mot trong hai ban build dang phai di muon file cua ban kia.
+//
+// Im lang o day la kieu hong kho tim nhat: khong loi, khong dau hieu gi, chi la
+// may ao lang le ghi vao du an that - va chi phat hien ra khi mo console Firebase
+// thay mot dong nha la.
+if (coFirebase && !fileFirebaseThu.exists()) {
+    logger.warn(
+        "CHU Y: chua co app/src/debug/google-services.json, nen BAN GO LOI DANG NOI " +
+            "VAO DU AN FIREBASE THAT. Tao mot du an Firebase rieng de thu roi tai file " +
+            "ve dat vao do. Xem ../homework-gate-3/CAI_DAT_FIREBASE.md muc 6."
+    )
+}
+if (coFirebase && !fileFirebaseThat.exists()) {
+    logger.warn(
+        "CHU Y: chua co app/google-services.json, ban release se khong build duoc. " +
+            "File do la du an that, tablet cua Le Hoa dung."
+    )
 }
 
 android {

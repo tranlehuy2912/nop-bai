@@ -71,6 +71,9 @@ data class BaiCho(val id: String, val messageId: Long, val at: Long)
  * Phien het khi moc nao het truoc. Day lui dong ho thi moc tuong doi van chay;
  * day tien dong ho thi chinh dua tre mat gio. Reboot giua phien thi cat luon,
  * vi sau reboot khong con cach nao biet phien da tieu bao nhieu.
+ *
+ * Viec bat chinh dong ho khong ton mot lan ghi nao: [start] da luu hai moc cua cung
+ * mot thoi diem, nen do lech giua chung la du de ket luan. Xem [tick].
  */
 class GateStore(context: Context) {
 
@@ -165,15 +168,6 @@ class GateStore(context: Context) {
         get() = sp.getLong(K_HARD_STOP_WALL, 0L)
         set(v) = sp.edit().putLong(K_HARD_STOP_WALL, v).apply()
 
-    /** Moc dong ho lan cuoi [tick] chay, de bat viec day lui dong ho. */
-    private var lastSeenWall: Long
-        get() = sp.getLong(K_SEEN_WALL, 0L)
-        set(v) = sp.edit().putLong(K_SEEN_WALL, v).apply()
-
-    private var lastSeenElapsed: Long
-        get() = sp.getLong(K_SEEN_ELAPSED, 0L)
-        set(v) = sp.edit().putLong(K_SEEN_ELAPSED, v).apply()
-
     /**
      * Luc dich vu canh app roi khoi he thong, neu no roi giua mot phien dang chay.
      * Bang 0 nghia la no dang o day.
@@ -246,11 +240,6 @@ class GateStore(context: Context) {
         nowWall: Long = System.currentTimeMillis(),
         nowElapsed: Long = SystemClock.elapsedRealtime()
     ): EndReason? {
-        val prevWall = lastSeenWall
-        val prevElapsed = lastSeenElapsed
-        lastSeenWall = nowWall
-        lastSeenElapsed = nowElapsed
-
         donDepBaiCho(nowWall)
 
         // Phieu duyet ma con khong dung den: chi co gia tri trong ngay do va khong
@@ -279,13 +268,25 @@ class GateStore(context: Context) {
         if (state != GateState.ACTIVE) return null
 
         // Reboot: dong ho tuong doi khong bao gio tu giam.
-        if (nowElapsed < grantedAtElapsed || (prevElapsed > 0 && nowElapsed < prevElapsed)) {
-            return endSession(EndReason.REBOOT)
-        }
+        if (nowElapsed < grantedAtElapsed) return endSession(EndReason.REBOOT)
 
-        // Day lui dong ho he thong. Cho phep lech CLOCK_SLACK_MS de tru cho
-        // viec dong bo gio qua mang, vi NTP co the keo lui vai giay.
-        if (prevWall > 0 && nowWall < prevWall - CLOCK_SLACK_MS) {
+        /*
+         * Day lui dong ho he thong.
+         *
+         * Khong con ghi moc sau moi lan tick nua. Luc bam Bat dau, [start] da luu
+         * hai moc CUA CUNG MOT THOI DIEM: [grantedAtWall] doc tu dong ho tuong va
+         * [grantedAtElapsed] doc tu dong ho tuong doi. Khong ai chinh dong ho thi
+         * hai cai do troi bang nhau, nen chi can mot phep tru la biet.
+         *
+         * Ban cu so hai lan tick lien nhau, va phai ghi hai so xuong dia moi 20 giay
+         * de so duoc - moi lan ghi keo theo mot luot day len Firestore. Cach nay vua
+         * khong ghi gi, vua bat chac hon: day lui ba muoi giay nam lan thi ban cu lot
+         * ca nam (moi lan deu duoi nguong), con cach nay cong don nen lan thu tu la
+         * dinh.
+         *
+         * Cho phep lech [CLOCK_SLACK_MS] de tru cho viec dong bo gio qua mang.
+         */
+        if (nowWall - grantedAtWall < (nowElapsed - grantedAtElapsed) - CLOCK_SLACK_MS) {
             return endSession(EndReason.CLOCK_TAMPER)
         }
 
@@ -483,8 +484,6 @@ class GateStore(context: Context) {
             .putLong(K_GRANT_ELAPSED, nowElapsed)
             .putLong(K_DURATION, actual)
             .putLong(K_HARD_STOP_WALL, hardStop)
-            .putLong(K_SEEN_WALL, now)
-            .putLong(K_SEEN_ELAPSED, nowElapsed)
             .remove(K_END_REASON)
             .putString(K_STATE, GateState.ACTIVE.name)
             .commit()
@@ -573,14 +572,20 @@ class GateStore(context: Context) {
             .putLong(K_GRANT_ELAPSED, nowElapsed)
             .putLong(K_DURATION, actual)
             .putLong(K_HARD_STOP_WALL, hardStop)
-            .putLong(K_SEEN_WALL, now)
-            .putLong(K_SEEN_ELAPSED, nowElapsed)
             .putLong(K_PAUSED_LEFT, 0L)
             .putString(K_STATE, GateState.ACTIVE.name)
             .commit()
 
         return (actual / 60_000L).toInt()
     }
+
+    /**
+     * Ca phien nay dai bao nhieu ms, 0 neu khong co phien nao chay.
+     *
+     * Dung yen trong suot phien, khac [remainingMs] tru dan tung giay. Ben dien
+     * thoai Ba Huy lay so nay lam moc cua thanh chay.
+     */
+    fun tongPhienMs(): Long = if (state == GateState.ACTIVE) durationMs else 0L
 
     /** So phut con lai khi dang nghi, de man hinh noi duoc "dang dung o 23 phut". */
     fun pausedMinutes(): Int = (pausedRemainingMs / 60_000L).toInt()
@@ -731,8 +736,6 @@ class GateStore(context: Context) {
         private const val K_GRANT_ELAPSED = "grant_elapsed"
         private const val K_DURATION = "grant_duration"
         private const val K_HARD_STOP_WALL = "hard_stop_wall"
-        private const val K_SEEN_WALL = "seen_wall"
-        private const val K_SEEN_ELAPSED = "seen_elapsed"
         private const val K_END_REASON = "end_reason"
         private const val K_DAY_KEY = "day_key"
 
