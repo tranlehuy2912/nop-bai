@@ -157,7 +157,7 @@ class TinhLoiNhacTest {
         val nhac = TinhLoiNhac.tinh(luc(14, 6, 0), emptySet())!!
         assertEquals(LoaiNhac.SOAN_VO, nhac.loai)
         assertTrue(nhac.tieuDe.contains("tiết học thể dục"))
-        assertTrue(!nhac.tieuDe.contains("Soạn tập vở"))
+        assertTrue(!nhac.tieuDe.contains("Soạn tập"))
         assertEquals("Chuẩn bị đồ thể dục", nhac.chiTiet)
     }
 

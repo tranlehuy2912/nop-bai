@@ -126,7 +126,7 @@ object TinhLoiNhac {
             val tieuDe = if (soMon == 0) {
                 "${moTaBuoi(buoi).replaceFirstChar { it.uppercase() }} có tiết học thể dục"
             } else {
-                "Soạn tập vở cho ${moTaBuoi(buoi)}"
+                "Soạn tập cho ${moTaBuoi(buoi)}"
             }
             val chiTiet = when {
                 soMon == 0 -> "Chuẩn bị đồ thể dục"

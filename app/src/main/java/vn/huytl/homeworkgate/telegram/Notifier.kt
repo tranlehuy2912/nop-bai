@@ -51,7 +51,7 @@ object Notifier {
             EndReason.REBOOT -> "Tablet khởi động lại giữa phiên nên cắt phiên."
             EndReason.CLOCK_TAMPER -> "⚠️ Đồng hồ tablet bị đẩy lùi giữa phiên, đã cắt phiên."
             EndReason.PARENT_REVOKED -> "Đã dừng phiên chơi."
-            EndReason.NEVER_STARTED -> "Lê Hòa không bấm Bắt đầu, phiếu hết hạn. Số phút đó trả lại vào định mức hôm nay."
+            EndReason.NEVER_STARTED -> "Lê Hòa không bấm Bắt đầu, phiếu hết hạn. Số phút đó trả lại vào hạn mức hôm nay."
         }
         send(context, text)
     }

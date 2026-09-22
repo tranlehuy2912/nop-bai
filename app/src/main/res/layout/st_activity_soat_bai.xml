@@ -21,8 +21,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintWidth_max="@dimen/st_be_rong_toi_da">
+        app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/nut_quay_lai"
@@ -41,7 +40,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingHorizontal="@dimen/st_le_ngang"
-            android:text="Máy đọc bài con thế này"
+            android:text="Máy đọc bài Lê Hòa thế này"
             android:textColor="@color/ink"
             android:textSize="24sp"
             android:textStyle="bold" />
@@ -52,7 +51,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="2dp"
             android:paddingHorizontal="@dimen/st_le_ngang"
-            android:text="Xem có đúng chữ con viết không. Máy đọc sai thì sửa lại."
+            android:text="Xem có đúng chữ Lê Hòa viết không. Máy đọc sai thì sửa lại."
             android:textColor="@color/ink_soft"
             android:textSize="15sp" />
 
@@ -76,7 +75,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="Đang đọc bài của con…"
+                android:text="Đang đọc bài của Lê Hòa…"
                 android:textColor="@color/ink_soft"
                 android:textSize="16sp" />
         </LinearLayout>

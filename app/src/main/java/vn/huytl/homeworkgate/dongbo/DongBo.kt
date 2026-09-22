@@ -82,14 +82,22 @@ object DongBo {
     /**
      * Nhip day lai du khong co gi doi, de dien thoai biet tablet con song.
      *
-     * Ban ngay muoi lam phut mot lan, ban dem mot tieng. Nhip tim khong mang tin gi ca, no chi
-     * de ben dien thoai khoi bao "tablet chua bao ve lau roi"; ma tu [DEM_TU] den
-     * [DEM_DEN] thi khong ai mo bang dieu khien ra xem. Cat duoc hai muoi tu luot
-     * danh thuc mot dem, doi lai neu Ba Huy day nua dem mo app ra thi so lieu co the
-     * cu toi mot tieng - va man hinh ben do noi thang ra dieu do.
+     * Ban ngay muoi lam phut mot lan, ban dem mot tieng, chay bang [tay] - mot
+     * Handler.
      *
-     * Ben Bang dieu khien phai noi nguong "so lieu cu" cho khop, xem
-     * vn.huytl.bangdieukhien.data.TrangThai.CU_SAU_MS.
+     * NEN NO KHONG DUNG GIO, va cho nay tung ghi sai. Handler hen theo
+     * SystemClock.uptimeMillis, dong ho DUNG LAI khi CPU ngu: tablet nam im tren
+     * ban ca buoi toi thi nhip muoi lam phut co the thanh vai tieng. No cung khong
+     * danh thuc may bao gio - ghi chu cu noi nhip dem "cat duoc hai muoi tu luot
+     * danh thuc mot dem", ma Handler chua tung danh thuc lan nao de ma cat. Cai
+     * nhip dem that su tiet kiem la luot GHI Firestore, khong phai luot thuc day.
+     *
+     * KHONG DOI SANG AlarmManager, va day la lua chon co chu dich. Mot tablet dang
+     * ngu thi khong co tin gi de bao ca; danh thuc no day chi de noi "toi van day"
+     * la dot pin that de mua mot thong tin khong ai dung. Ben Bang dieu khien khong
+     * cho nhip nay nua: mo app ra la no go [Lenh.PING], tablet dap trong duoi mot
+     * giay, va do moi la luc con so can dung. Nhip tim gio chi con la luoi do cho
+     * nhung luc khong ai hoi.
      */
     private const val NHIP_TIM_MS = 15 * 60_000L
 
@@ -267,6 +275,19 @@ object DongBo {
     fun dayNgay() {
         tay.removeCallbacks(dayThat)
         tay.post(dayThat)
+    }
+
+    /**
+     * Day ban trang thai day du, ke ca khi khong co gi doi so voi lan truoc.
+     *
+     * [dayThat] binh thuong bo qua lan ghi neu ban moi giong het ban vua day - do
+     * la cai giu cho so luot ghi Firestore o muc vai chuc mot ngay. Nhung khi ben
+     * kia HOI (xem [Lenh.PING]) thi cau tra loi "khong co gi doi" phai duoc noi ra,
+     * khong thi dien thoai cho mai mot ban tin khong bao gio den.
+     */
+    fun dayDayDu() {
+        banDaDay = null
+        dayNgay()
     }
 
     private val dayThat = Runnable {
@@ -644,7 +665,10 @@ object DongBo {
                         // Xoa du lam duoc hay khong: khong xoa thi cai lenh do nam
                         // lai trong hang va duoc doc lai mai mai.
                         d.reference.delete()
-                        kq?.let { traLoi(context, it, d.getString(Duong.F_AI) ?: Nguoi.BA_HUY) }
+                        // Chuoi rong la lenh co y khong tra loi gi - xem [Lenh.PING].
+                        // Ghi vao o traLoi thi ben dien thoai moc len mot dong trong.
+                        kq?.takeIf { it.isNotBlank() }
+                            ?.let { traLoi(context, it, d.getString(Duong.F_AI) ?: Nguoi.BA_HUY) }
                         dayNgay()
                     }
                 // Giu danh sach da lam gon lai. Lenh da xoa khoi Firestore thi khong

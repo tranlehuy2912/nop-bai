@@ -40,8 +40,28 @@ data class CauHoi(
         else -> "$nhom (tr.$trang)"
     }
 
-    /** Dong hien cho con chon: "2.26a — Phân tích đa thức..." */
-    fun dongChon(): String = "${nhan()}  ·  ${de.take(70)}${if (de.length > 70) "…" else ""}"
+    /**
+     * Dong hien cho con chon: nhan o dong tren, de bai o dong duoi.
+     *
+     *     Luyện tập 1 (tr.6)
+     *     Trong các biểu thức sau đây, biểu thức nào là đơn thức? ...
+     *
+     * XUONG DONG chu khong ngan bang mot dau giua hai phan. Ban truoc ngan bang dau
+     * cham giua ("2.26a  ·  Phân tích..."), va no xau o dung cho hay gap nhat: de bai
+     * dai nen dong tu xuong hang, cai dau cham giua nam lot thom giua mot doan chu va
+     * khong con phan cach duoc gi. Ma khong the thay bang dau ")" kieu sach Toan
+     * duoc: nhan cua sach KHTN da san la "Câu hỏi (tr.11)", them mot dau dong nua
+     * thanh hai dau dong lien nhau.
+     *
+     * Xuong dong thi khong can dau ngan nao ca, va ben goi to dam dong tren de hai
+     * phan tach han nhau - xem [vn.huytl.homeworkgate.ui.ChonBaiActivity].
+     *
+     * Khong cat bot de bai. Truoc day cat o ky tu thu 70 roi cham lung, ma dung cho
+     * do thuong la giua chuoi bieu thuc - "3x^3y; -4; (3 ..." khong noi duoc cau nao
+     * voi cau nao. Dong nay la thu duy nhat con doc de biet minh dang tich cau gi, va
+     * o tich thi cho xuong dong thoai mai.
+     */
+    fun dongChon(nhan: String = nhan()): String = "$nhan\n$de"
 
     private companion object {
         /** Ma do minh dat ra, khong phai ma in trong sach. Xem [nhan]. */
@@ -76,11 +96,99 @@ data class TheHoc(
     val thuTu: Int = 0
 )
 
+/**
+ * Mot tu trong bang GLOSSARY cuoi sach giao khoa.
+ *
+ * VI SAO KHONG DUNG [TheHoc] cho ca tu vung. The hoc thuoc giu mot cap hoi/dap co
+ * dinh: hoi la "(a + b)²", dap la "a² + 2ab + b²", doi cho nhau thi vo nghia. Mot tu
+ * thi nguoc lai - no duoc hoi theo CA HAI chieu, va chieu nao la tuy tu do da gap
+ * may lan: lan dau hoi Anh sang Viet cho con nhan mat chu, quen roi thi hoi Viet
+ * sang Anh bat go ra. Nhet vao hoi/dap thi phai luu moi tu hai dong, va hai dong do
+ * mang hai lich on rieng trong khi chung la mot tu.
+ *
+ * Con hai thu nua chi tu vung moi co. [am] de doc len va de hien sau khi tra loi,
+ * khong tham gia cham - nen may doc nham mot ky tu IPA thi khong ai mat phut. [loai]
+ * de tron moi nhu cho cau trac nghiem: moi nhu phai cung loai tu thi con moi phai
+ * biet nghia, chu lay bua thi no loai tru duoc ma khong can biet gi.
+ *
+ * [id] dang "bo:tu", vi du "anh8:access". Y het [CauHoi.id] va [TheHoc.id]: doi cach
+ * dat la mat het lich on cua cac tu cu.
+ */
+data class TuVung(
+    val id: String,
+    val bo: String,
+    val mon: String,
+    /** So Unit trong sach. 0 la khong biet - chi xay ra khi ban chep bi hong. */
+    val unit: Int,
+    val tu: String,
+    /** n, v, adj, adv, prep, conj. Nhieu loai thi ngan bang dau phay. */
+    val loai: String,
+    /** Phien am IPA, con ca hai dau gach cheo. Rong la sach khong ghi hoac doc khong ro. */
+    val am: String,
+    val nghia: String,
+    val thuTu: Int = 0
+)
+
+/** Con duoc hoi mot tu theo chieu nao. */
+enum class Chieu {
+    /** Hien tu tieng Anh, con chon nghia trong bon lua chon. Cho tu con chua gap. */
+    ANH_VIET,
+
+    /** Hien nghia tieng Viet, con go tu tieng Anh ra. Cho tu con da dung it nhat mot lan. */
+    VIET_ANH
+}
+
+/** Buoi do nay la buoi nao. Quyet dinh tra phut kieu gi, xem [vn.huytl.homeworkgate.data.TuVung]. */
+enum class BuoiDo {
+    /** Buoi do hang ngay, boc ngau nhien co trong so. Tra giay theo tung tu. */
+    HANG_NGAY,
+
+    /** Do het tu cua Unit co giao, buoi toi. Nam trong tron goi 45 phut, khong tra rieng. */
+    DAN_DO_TOI,
+
+    /** Do lai chinh nhung tu do sang hom sau. Tra giay theo tung tu. */
+    DAN_DO_SANG
+}
+
+/** Mot lan con tra loi mot tu. Moi lan thu la mot dong, ke ca lan sai. */
+data class TraTu(
+    val tuId: String,
+    /** Ma phien, de dem "dung du hai lan trong MOT buoi". */
+    val phien: String,
+    val buoi: BuoiDo,
+    val chieu: Chieu,
+    /** Lan thu may cua tu nay trong phien nay, dem tu 1. */
+    val lan: Int,
+    val go: String,
+    val dung: Boolean,
+    /** Da phai mo may bac goi y. 0 la con tu lam duoc. */
+    val goiY: Int,
+    /** Con bam "Chịu rồi" chu khong tu ra duoc. */
+    val chiu: Boolean,
+    /**
+     * So GIAY da tra cho tu nay, khong phai so phut.
+     *
+     * Phai la giay vi mot tu dang gia nua phut. Luu bang phut thi 30 giay lam tron
+     * thanh 0 hay 1 deu sai, ma cong hai muoi con so da lam tron thi lech han vai
+     * phut so voi con so dang le phai tra.
+     */
+    val giay: Int,
+    val luc: Long = System.currentTimeMillis()
+)
+
 /** Mot lan con go tra loi mot the hoc thuoc. */
 data class TraThe(
     val theId: String,
     val go: String,
     val dung: Boolean,
+    /**
+     * Con bam "Chịu rồi" chu khong tu go ra duoc.
+     *
+     * Tach khoi [dung] = false du ca hai deu la khong tra loi duoc. Go sai la con co
+     * thu; bam chiu la con bo. Hai viec do noi hai chuyen khac nhau voi Ba Huy, va
+     * gop lai thanh mot thi khong con cach nao tach ra. Giong [TraTu.chiu].
+     */
+    val chiu: Boolean = false,
     val phut: Int,
     val luc: Long = System.currentTimeMillis()
 )
@@ -91,7 +199,9 @@ data class BoDaNap(
     val mon: String,
     val ten: String,
     val soDenLuot: Int,
-    val tongThe: Int
+    val tongThe: Int,
+    /** So the da qua het cac moc nho lai. Man chon bo ve thanh tien do tu day. */
+    val soThuoc: Int = 0
 )
 
 /** Mot bai trong sach, gom nhieu cau. Dung de con chon truoc khi chup. */

@@ -5,6 +5,8 @@ import android.content.Context
 import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
+import vn.huytl.homeworkgate.data.LoaiLoi
+import vn.huytl.homeworkgate.data.LuatTuVung
 
 /**
  * Kho bai tap nam trong may: ngan hang cau hoi va toan bo cau tra loi cua con.
@@ -132,6 +134,7 @@ class KhoBai private constructor(context: Context) :
               the_id TEXT NOT NULL,
               go     TEXT,
               dung   INTEGER NOT NULL,
+              chiu   INTEGER NOT NULL DEFAULT 0,
               phut   INTEGER NOT NULL,
               luc    INTEGER NOT NULL
             )
@@ -139,6 +142,65 @@ class KhoBai private constructor(context: Context) :
         )
         db.execSQL("CREATE INDEX IF NOT EXISTS ix_tra_the ON tra_the(the_id)")
         db.execSQL("CREATE INDEX IF NOT EXISTS ix_tra_the_luc ON tra_the(luc)")
+        taoBangTuVung(db)
+    }
+
+    /**
+     * Hai bang cua duong tu vung - xem [vn.huytl.homeworkgate.data.LuatTuVung].
+     *
+     * Tach khoi [taoBangThe] du hai duong nhin giong nhau: the hoc thuoc giu mot cap
+     * hoi/dap co dinh, con mot tu duoc hoi ca hai chieu va mang them phien am voi
+     * loai tu. Nhet chung mot bang thi co bon cot rong o moi dong cua ben kia.
+     */
+    private fun taoBangTuVung(db: SQLiteDatabase) {
+        db.execSQL(
+            """
+            CREATE TABLE IF NOT EXISTS tu_vung (
+              id     TEXT PRIMARY KEY,
+              bo     TEXT NOT NULL,
+              mon    TEXT NOT NULL,
+              unit   INTEGER NOT NULL DEFAULT 0,
+              tu     TEXT NOT NULL,
+              loai   TEXT,
+              am     TEXT,
+              nghia  TEXT NOT NULL,
+              thu_tu INTEGER
+            )
+            """.trimIndent()
+        )
+        db.execSQL("CREATE INDEX IF NOT EXISTS ix_tu_bo ON tu_vung(bo)")
+        db.execSQL("CREATE INDEX IF NOT EXISTS ix_tu_unit ON tu_vung(bo, unit)")
+        /*
+         * MOI LAN THU MOT DONG, ke ca lan sai, ke ca lan bam "Chịu rồi".
+         *
+         * Chi ghi lan cuoi cung thi mat dung thu dang gia nhat: TY LE DUNG NGAY LAN
+         * DAU. So phut tra cho viec ngoi go, con ty le lan dau moi tra loi duoc cau
+         * hoi that su cua Ba Huy - con co hoc tu vung khong. Hai con so do tach nhau,
+         * va cai thu hai chi con o day.
+         *
+         * "phien" de dem "dung du hai lan trong MOT buoi": khong co cot nay thi hai
+         * lan dung cua hai ngay khac nhau cong lai thanh mot buoi da xong.
+         */
+        db.execSQL(
+            """
+            CREATE TABLE IF NOT EXISTS tra_tu (
+              id     INTEGER PRIMARY KEY AUTOINCREMENT,
+              tu_id  TEXT NOT NULL,
+              phien  TEXT NOT NULL,
+              buoi   TEXT NOT NULL,
+              chieu  TEXT NOT NULL,
+              lan    INTEGER NOT NULL DEFAULT 1,
+              go     TEXT,
+              dung   INTEGER NOT NULL,
+              goi_y  INTEGER NOT NULL DEFAULT 0,
+              chiu   INTEGER NOT NULL DEFAULT 0,
+              giay   INTEGER NOT NULL DEFAULT 0,
+              luc    INTEGER NOT NULL
+            )
+            """.trimIndent()
+        )
+        db.execSQL("CREATE INDEX IF NOT EXISTS ix_tra_tu ON tra_tu(tu_id)")
+        db.execSQL("CREATE INDEX IF NOT EXISTS ix_tra_tu_luc ON tra_tu(luc)")
     }
 
     /**
@@ -188,6 +250,14 @@ class KhoBai private constructor(context: Context) :
 
         // Ban 6: duong hoc thuoc. Hai bang moi, khong dung den bang nao dang co.
         if (cu < 6) runCatching { taoBangThe(db) }
+
+        // Ban 7: duong tu vung. Cung vay, hai bang moi dung rieng.
+        if (cu < 7) runCatching { taoBangTuVung(db) }
+
+        // Ban 8: phan biet "go sai" voi "bam Chịu rồi" o duong the hoc thuoc.
+        if (cu < 8) {
+            runCatching { db.execSQL("ALTER TABLE tra_the ADD COLUMN chiu INTEGER NOT NULL DEFAULT 0") }
+        }
     }
 
     // ------------------------------------------------------------ ngan hang cau
@@ -477,6 +547,32 @@ class KhoBai private constructor(context: Context) :
             }
         }
 
+    /**
+     * So the trong bo da qua het moi moc nho lai, tuc la coi nhu thuoc.
+     *
+     * Dung chung [mocHen] voi [cacTheDenLuot]: mot the het moc la mot the khong con
+     * hien ra nua, va do cung la dinh nghia cua "thuoc" tren man chon bo.
+     */
+    fun soTheThuoc(bo: String): Int =
+        readableDatabase.rawQuery(
+            """
+            SELECT
+              (SELECT MAX(luc) FROM tra_the WHERE the_id = t.id AND dung = 1) AS lan_dung,
+              (SELECT COUNT(*) FROM tra_the WHERE the_id = t.id AND dung = 1) AS so_dung
+            FROM the_hoc t WHERE t.bo = ?
+            """.trimIndent(),
+            arrayOf(bo)
+        ).use { c ->
+            var n = 0
+            while (c.moveToNext()) {
+                val soDung = c.getInt(c.getColumnIndexOrThrow("so_dung"))
+                if (soDung == 0) continue
+                val hen = mocHen(c.getLong(c.getColumnIndexOrThrow("lan_dung")), soDung - 1)
+                if (hen == null) n++
+            }
+            n
+        }
+
     /** Dem the den luot ma khong doc ca bo ra - cho man chon bo. */
     fun soTheDenLuot(bo: String, bayGio: Long = System.currentTimeMillis()): Int =
         cacTheDenLuot(bo, Int.MAX_VALUE, bayGio).size
@@ -488,6 +584,7 @@ class KhoBai private constructor(context: Context) :
                 put("the_id", t.theId)
                 put("go", t.go)
                 put("dung", if (t.dung) 1 else 0)
+                put("chiu", if (t.chiu) 1 else 0)
                 put("phut", t.phut)
                 put("luc", t.luc)
             }
@@ -517,6 +614,171 @@ class KhoBai private constructor(context: Context) :
         dap = getString(getColumnIndexOrThrow("dap")).orEmpty(),
         dapKhac = getString(getColumnIndexOrThrow("dap_khac")).orEmpty()
             .split(NGAN_DONG).filter { it.isNotEmpty() },
+        thuTu = getInt(getColumnIndexOrThrow("thu_tu"))
+    )
+
+    // ---------------------------------------------------------------- tu vung
+
+    /** Thay toan bo tu cua mot bo bang danh sach moi. Giu nguyen bang tra_tu. */
+    fun napBoTu(bo: String, cac: List<TuVung>) {
+        writableDatabase.beginTransaction()
+        try {
+            writableDatabase.delete("tu_vung", "bo = ?", arrayOf(bo))
+            cac.forEach { t ->
+                writableDatabase.insertWithOnConflict(
+                    "tu_vung", null,
+                    ContentValues().apply {
+                        put("id", t.id)
+                        put("bo", t.bo)
+                        put("mon", t.mon)
+                        put("unit", t.unit)
+                        put("tu", t.tu)
+                        put("loai", t.loai)
+                        put("am", t.am)
+                        put("nghia", t.nghia)
+                        put("thu_tu", t.thuTu)
+                    },
+                    SQLiteDatabase.CONFLICT_REPLACE
+                )
+            }
+            writableDatabase.setTransactionSuccessful()
+        } finally {
+            writableDatabase.endTransaction()
+        }
+    }
+
+    fun soTuCua(bo: String): Int =
+        readableDatabase.rawQuery(
+            "SELECT COUNT(*) FROM tu_vung WHERE bo = ?", arrayOf(bo)
+        ).use { if (it.moveToFirst()) it.getInt(0) else 0 }
+
+    fun cacTuCua(bo: String, unit: Int? = null): List<TuVung> {
+        val (sql, tham) = if (unit == null) {
+            "SELECT * FROM tu_vung WHERE bo = ? ORDER BY unit, thu_tu" to arrayOf(bo)
+        } else {
+            "SELECT * FROM tu_vung WHERE bo = ? AND unit = ? ORDER BY thu_tu" to
+                arrayOf(bo, unit.toString())
+        }
+        return readableDatabase.rawQuery(sql, tham).use { c ->
+            buildList { while (c.moveToNext()) add(c.docTu()) }
+        }
+    }
+
+    /**
+     * Tinh trang tung tu trong mot bo, de ben goi tra trong so ma boc.
+     *
+     * TINH TRONG KOTLIN chu khong trong SQL, cung mot le voi [cacTheDenLuot]: luat
+     * "vua sai" va "da thuoc" nam trong [vn.huytl.homeworkgate.data.LuatTuVung], viet lai
+     * no bang SQL la co hai ban luat song song va den luc sua se chi sua mot.
+     *
+     * Doc het lich su cua ca bo ra mot lan. Mot nam hoc chin tram tu, moi tu chung
+     * sau lan gap, moi lan hai ba lan thu, ra khoang mot van dong - doc het mat vai
+     * phan muoi giay, va chi doc mot lan moi buoi.
+     */
+    fun tinhTrangTu(bo: String, lanDungDeXong: Int): List<Pair<TuVung, LuatTuVung.TinhTrang>> {
+        val cac = cacTuCua(bo)
+        if (cac.isEmpty()) return emptyList()
+
+        // Lich su theo tung tu, moi tu mot danh sach (phien, lan, dung), theo thu tu thoi gian.
+        class Lan(val phien: String, val dung: Boolean)
+        val lichSu = HashMap<String, MutableList<Lan>>()
+        readableDatabase.rawQuery(
+            """
+            SELECT t.tu_id, t.phien, t.dung FROM tra_tu t
+            JOIN tu_vung v ON v.id = t.tu_id
+            WHERE v.bo = ? ORDER BY t.luc
+            """.trimIndent(),
+            arrayOf(bo)
+        ).use { c ->
+            while (c.moveToNext()) {
+                lichSu.getOrPut(c.getString(0)) { mutableListOf() }
+                    .add(Lan(c.getString(1), c.getInt(2) == 1))
+            }
+        }
+
+        return cac.map { tu ->
+            val ls = lichSu[tu.id].orEmpty()
+            if (ls.isEmpty()) return@map tu to LuatTuVung.TinhTrang.CHUA_GAP
+
+            // Phien gan nhat: lan thu DAU TIEN cua phien do co dung khong. Lay lan dau
+            // chu khong lay ca phien: cuoi phien thi tu nao cung dung, vi buoi do
+            // khong cho di tiep khi chua dung.
+            val phienCuoi = ls.last().phien
+            val dauPhienCuoi = ls.first { it.phien == phienCuoi }.dung
+
+            val soPhienXong = ls.groupBy { it.phien }
+                .count { (_, cacLan) -> cacLan.count { it.dung } >= lanDungDeXong }
+
+            tu to when {
+                !dauPhienCuoi -> LuatTuVung.TinhTrang.VUA_SAI
+                soPhienXong <= 0 -> LuatTuVung.TinhTrang.CHUA_GAP
+                soPhienXong == 1 -> LuatTuVung.TinhTrang.DUNG_1
+                soPhienXong == 2 -> LuatTuVung.TinhTrang.DUNG_2
+                else -> LuatTuVung.TinhTrang.DA_THUOC
+            }
+        }
+    }
+
+    fun ghiTraTu(t: TraTu) {
+        writableDatabase.insert(
+            "tra_tu", null,
+            ContentValues().apply {
+                put("tu_id", t.tuId)
+                put("phien", t.phien)
+                put("buoi", t.buoi.name)
+                put("chieu", t.chieu.name)
+                put("lan", t.lan)
+                put("go", t.go)
+                put("dung", if (t.dung) 1 else 0)
+                put("goi_y", t.goiY)
+                put("chiu", if (t.chiu) 1 else 0)
+                put("giay", t.giay)
+                put("luc", t.luc)
+            }
+        )
+    }
+
+    /** So GIAY duong tu vung da tra tu [tuLuc], de giu tran ngay. */
+    fun giayTuVungTu(tuLuc: Long): Int =
+        readableDatabase.rawQuery(
+            "SELECT COALESCE(SUM(giay), 0) FROM tra_tu WHERE luc >= ?",
+            arrayOf(tuLuc.toString())
+        ).use { if (it.moveToFirst()) it.getInt(0) else 0 }
+
+    /**
+     * Ty le dung ngay lan dau, trong khoang tu [tuLuc].
+     *
+     * DAY MOI LA CON SO TRA LOI CAU HOI CUA BA HUY: con co hoc tu vung khong. So phut
+     * thi tra cho viec ngoi go, ai ngoi du lau cung duoc; con ty le lan dau thi khong
+     * co cach nao co.
+     *
+     * Dem theo (tu, phien): moi lan mot tu duoc dua ra trong mot buoi la mot cau hoi,
+     * va chi lan THU DAU TIEN cua no tinh vao day.
+     */
+    fun tyLeDungLanDau(tuLuc: Long): Pair<Int, Int> =
+        readableDatabase.rawQuery(
+            """
+            SELECT COUNT(*), COALESCE(SUM(dau_dung), 0) FROM (
+              SELECT tu_id, phien,
+                     (SELECT dung FROM tra_tu x
+                       WHERE x.tu_id = t.tu_id AND x.phien = t.phien
+                       ORDER BY x.luc LIMIT 1) AS dau_dung
+              FROM tra_tu t WHERE t.luc >= ?
+              GROUP BY t.tu_id, t.phien
+            )
+            """.trimIndent(),
+            arrayOf(tuLuc.toString())
+        ).use { if (it.moveToFirst()) it.getInt(1) to it.getInt(0) else 0 to 0 }
+
+    private fun Cursor.docTu() = TuVung(
+        id = getString(getColumnIndexOrThrow("id")),
+        bo = getString(getColumnIndexOrThrow("bo")).orEmpty(),
+        mon = getString(getColumnIndexOrThrow("mon")).orEmpty(),
+        unit = getInt(getColumnIndexOrThrow("unit")),
+        tu = getString(getColumnIndexOrThrow("tu")).orEmpty(),
+        loai = getString(getColumnIndexOrThrow("loai")).orEmpty(),
+        am = getString(getColumnIndexOrThrow("am")).orEmpty(),
+        nghia = getString(getColumnIndexOrThrow("nghia")).orEmpty(),
         thuTu = getInt(getColumnIndexOrThrow("thu_tu"))
     )
 
@@ -577,6 +839,91 @@ class KhoBai private constructor(context: Context) :
             """.trimIndent(),
             arrayOf(tuLuc.toString())
         ).use { c -> buildList { while (c.moveToNext()) add(c.getString(0) to c.getInt(1)) } }
+
+    /**
+     * Nhan loi con vap nhieu nhat trong khoang, kem so lan. Null la chua du de noi.
+     *
+     * VI SAO CO NGUONG. Bang [thongKeLoi] la cua Ba Huy, doc de biet nen ngoi day
+     * con cai gi; con man hinh cua con thi khong duoc phep noi "con hay sai kieu
+     * nay" khi cho do moi sai hai lan. Sai hai lan co the chi la hai hom mat tap
+     * trung, ma dong chu do thi dua tre mang theo ca thang.
+     *
+     * BO [LoaiLoi.KHAC] ra khoi danh sach ung vien. Sau nhan kia deu chi duoc mot
+     * viec lam tiep - xem lai dau, xem lai cong thuc. Rieng "kieu khac" thi khong:
+     * no la thung rac cua sau nhan tren, va noi voi con rang no hay sai kieu khac
+     * la mot cau vua dung vua vo dung.
+     *
+     * Danh sach da xep giam dan theo so lan nen chi can lay cai dau tien qua duoc
+     * hai cua nay.
+     */
+    fun nhanHayVap(tuLuc: Long, toiThieu: Int = TOI_THIEU_VAP): Pair<String, Int>? =
+        thongKeLoi(tuLuc).firstOrNull { (nhan, lan) ->
+            nhan != LoaiLoi.KHAC && lan >= toiThieu
+        }
+
+    /**
+     * Cau chua lam, nam trong nhung BAI ma con hay vap nhan [nhan].
+     *
+     * CHO CAN BIET TRUOC KHI DOC TIEP: nhan loi la thuoc tinh cua mot LAN LAM, nam
+     * trong bang tra_loi. Ngan hang cau hoi khong co cot nao noi mot cau thuoc dang
+     * kien thuc gi - co "dang" nhung do la TRAC_NGHIEM hay CAU_NHO, chuyen khac han.
+     * Nen khong co duong thang tu "hay sai dau" sang "cac cau ve chuyen ve".
+     *
+     * Duong vong: lay ba BAI ma con vap nhan do nhieu nhat, roi rut cau chua lam
+     * trong dung ba bai ay. Cung bai thi phan lon la cung dang toan - con sai dau
+     * luc chuyen ve thi sai trong bai phuong trinh, va cau khac cung bai do cung bat
+     * chuyen ve. Khong chac bang viec gan nhan dang toan cho tung cau trong ngan
+     * hang, nhung cai do la gan tay cho ca nghin cau, va gan sai mot lan thi khong
+     * ai phat hien ra.
+     *
+     * Bo cau TRAC_NGHIEM va KHONG_TINH: mot cau khoanh A B C D khong luyen duoc cai
+     * dau hay cai buoc bien doi, ma do la ca ly do con duoc dua den day.
+     *
+     * Chi lay cau CHUA DUNG DEN BAO GIO, khong phai cau "chua lam dung". Cau dang
+     * cho sua da nam san o duong khac ngoai man chinh, va dua lai vao day thi con
+     * lam hai lan mot viec ma lan nay khong duoc tinh gio - xem [daXong].
+     */
+    fun cacCauLuyenTheoLoi(
+        nhan: String,
+        tuLuc: Long = System.currentTimeMillis() - CUA_SO_LUYEN_MS,
+        gioiHan: Int = SO_CAU_LUYEN
+    ): List<CauHoi> {
+        if (nhan.isBlank() || gioiHan <= 0) return emptyList()
+
+        data class Bai(val nguon: String, val ten: String)
+        val hayVap = readableDatabase.rawQuery(
+            """
+            SELECT c.nguon, c.bai FROM tra_loi t
+            JOIN cau_hoi c ON c.id = t.cau_id
+            WHERE t.dung = 0 AND t.loai_loi = ? AND t.luc >= ? AND c.bai <> ''
+            GROUP BY c.nguon, c.bai
+            ORDER BY COUNT(*) DESC, MAX(t.luc) DESC
+            LIMIT ?
+            """.trimIndent(),
+            arrayOf(nhan, tuLuc.toString(), SO_BAI_LUYEN.toString())
+        ).use { c ->
+            buildList { while (c.moveToNext()) add(Bai(c.getString(0), c.getString(1))) }
+        }
+        if (hayVap.isEmpty()) return emptyList()
+
+        // Bai gan day nhat truoc: con vua vap o do tuan nay thi no gan hon bai vap
+        // tu thang truoc. Moi bai lay du gioiHan roi cat o cuoi, de mot bai da lam
+        // het khong lam ca danh sach ngan lai.
+        return hayVap.flatMap { bai ->
+            readableDatabase.rawQuery(
+                """
+                SELECT * FROM cau_hoi c
+                WHERE c.nguon = ? AND c.bai = ?
+                  AND c.dang NOT IN ('TRAC_NGHIEM', 'KHONG_TINH')
+                  AND NOT EXISTS (SELECT 1 FROM tra_loi t
+                                  WHERE t.cau_id = c.id AND t.luc >= ?)
+                ORDER BY c.thu_tu
+                LIMIT ?
+                """.trimIndent(),
+                arrayOf(bai.nguon, bai.ten, tuLuc.toString(), gioiHan.toString())
+            ).use { c -> buildList { while (c.moveToNext()) add(c.docCauHoi()) } }
+        }.take(gioiHan)
+    }
 
     /**
      * Cau nay da sai may lan, khong tinh lan on tap.
@@ -729,6 +1076,18 @@ class KhoBai private constructor(context: Context) :
             .use { if (it.moveToFirst()) it.getInt(0) else 0 }
     }
 
+    /**
+     * Tong so phut duong ON da tra trong khoang.
+     *
+     * Tach khoi [tongPhut] vi hai con so giu hai cai tran khac nhau - xem
+     * [vn.huytl.homeworkgate.data.LuatCongGio.TRAN_ON_MOI_NGAY].
+     */
+    fun tongPhutOnTap(tuLuc: Long): Int =
+        readableDatabase.rawQuery(
+            "SELECT SUM(phut) FROM tra_loi WHERE dung = 1 AND on_tap = 1 AND luc >= ?",
+            arrayOf(tuLuc.toString())
+        ).use { if (it.moveToFirst()) it.getInt(0) else 0 }
+
     /** Co ban ghi nao cua [cauId] trong khoang nay khong. */
     fun coTrongKhoang(cauId: String, tuLuc: Long): Boolean =
         readableDatabase.rawQuery(
@@ -754,6 +1113,25 @@ class KhoBai private constructor(context: Context) :
      * Dem theo CAU chu khong theo lan cham: mot cau sai roi sua ba lan van la mot
      * cau. Dem theo lan thi con lam sai nhieu lai ra so to hon.
      */
+    /**
+     * So cau dung theo tung ngay, de man Tien bo ve thanh mot day cot.
+     *
+     * Khoa la ngay dang "yyyy-MM-dd" theo gio may. Ngay khong co bai thi khong co
+     * khoa - ben ve tu dien 0 vao, vi mot ngay trong cung la mot thong tin.
+     */
+    fun cauDungTheoNgay(tuLuc: Long): Map<String, Int> =
+        readableDatabase.rawQuery(
+            """
+            SELECT strftime('%Y-%m-%d', luc / 1000, 'unixepoch', 'localtime') AS ngay,
+                   COUNT(DISTINCT cau_id)
+            FROM tra_loi WHERE dung = 1 AND luc >= ? AND cau_id <> ?
+            GROUP BY ngay
+            """.trimIndent(),
+            arrayOf(tuLuc.toString(), CAU_GOI)
+        ).use { c ->
+            buildMap { while (c.moveToNext()) put(c.getString(0), c.getInt(1)) }
+        }
+
     fun tienBo(tuLuc: Long): TienBo {
         val db = readableDatabase
         val tu = tuLuc.toString()
@@ -896,7 +1274,7 @@ class KhoBai private constructor(context: Context) :
 
     companion object {
         private const val TEN = "kho_bai.db"
-        private const val BAN = 6
+        private const val BAN = 8
 
         /**
          * Dau ngan giua cac dong bai lam khi cat vao mot o.
@@ -924,6 +1302,35 @@ class KhoBai private constructor(context: Context) :
          * viec vat moi toi, du day de con chua kip quen han.
          */
         val KHOANG_HEN_NGAY = listOf(3, 10, 30)
+
+        /**
+         * Vap bay nhieu lan thi man hinh cua con moi noi ra. Xem [nhanHayVap].
+         *
+         * Ba: du de khong phai mot hom mat tap trung, ma van con trong mot thang de
+         * dong chu do con kip co ich.
+         */
+        const val TOI_THIEU_VAP = 3
+
+        /** Rut cau luyen tu bay nhieu bai con hay vap nhat. Xem [cacCauLuyenTheoLoi]. */
+        private const val SO_BAI_LUYEN = 3
+
+        /**
+         * Nhin lai bay nhieu ngay de biet con hay vap o BAI nao.
+         *
+         * Co dinh mot thang, khong theo cai nut 7/30 ngay ben man tien bo. Hai noi
+         * goi ham nay - cai the de quyet dinh co hien nut khong, va man luyen de ve
+         * danh sach - phai ra cung mot ket qua, khong thi con bam nut "Làm thử 3 câu"
+         * roi sang man ben thay ba cau khac han.
+         */
+        private const val CUA_SO_LUYEN_MS = 30L * 24 * 60 * 60_000L
+
+        /**
+         * Mot lan luyen bay nhieu cau.
+         *
+         * Ba, va khong nen hon: day la viec con TU chon lam them sau khi da xong bai
+         * co giao. Mot danh sach dai thi no dong man hinh lai.
+         */
+        const val SO_CAU_LUYEN = 3
 
         @Volatile
         private var ban: KhoBai? = null

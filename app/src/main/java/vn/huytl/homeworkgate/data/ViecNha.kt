@@ -127,6 +127,38 @@ object ViecNha {
         sp(context).edit().remove(K_PHIEN).commit()
     }
 
+    /**
+     * So phut viec nha da cong TRONG NGAY.
+     *
+     * Phai co mot cho de doc lai, vi phien bi xoa ngay sau khi cong gio: lam xong
+     * het la [xoa] don sach, va tu luc do khong con dau vet nao ngoai mot dong chu
+     * trong [DayLog]. Man "Cach kiem gio choi" hoi dung cau "hom nay phan nay cong
+     * chua", ma doc cau tra loi bang cach do chu trong mot dong nhat ky thi den luc
+     * ai do sua cau chu do, con so im lang ve khong.
+     *
+     * Khong cong don sang ngay moi: khoa ngay lech thi coi nhu chua co gi.
+     */
+    fun phutHomNay(context: Context, now: Long = System.currentTimeMillis()): Int {
+        val sp = sp(context)
+        return if (sp.getInt(K_NGAY_PHUT, 0) == khoaNgay(now)) sp.getInt(K_PHUT_NGAY, 0) else 0
+    }
+
+    /** Ghi them so phut vua cong duoc. Goi tu dung mot cho: ThiHanhViecNha.congGio. */
+    fun congPhutHomNay(context: Context, phut: Int, now: Long = System.currentTimeMillis()) {
+        if (phut <= 0) return
+        sp(context).edit()
+            .putInt(K_NGAY_PHUT, khoaNgay(now))
+            .putInt(K_PHUT_NGAY, phutHomNay(context, now) + phut)
+            .commit()
+    }
+
+    private fun khoaNgay(now: Long): Int {
+        val c = java.util.Calendar.getInstance().apply { timeInMillis = now }
+        return c.get(java.util.Calendar.YEAR) * 10_000 +
+            (c.get(java.util.Calendar.MONTH) + 1) * 100 +
+            c.get(java.util.Calendar.DAY_OF_MONTH)
+    }
+
     /** Mot dong ke cac viec chua xong, de hien len man chan va man hinh chinh. */
     fun keChuaXong(context: Context): String =
         dangTreo(context)?.chuaXong.orEmpty().joinToString(", ") { it.ten }
@@ -183,6 +215,8 @@ object ViecNha {
 
     private const val K_PHIEN = "viec_nha_phien"
     private const val K_DA_KHEP = "viec_nha_da_khep"
+    private const val K_NGAY_PHUT = "viec_nha_ngay"
+    private const val K_PHUT_NGAY = "viec_nha_phut_ngay"
 
     private fun sp(context: Context) = Prefs.get(context).raw()
 }

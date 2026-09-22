@@ -188,6 +188,28 @@ object LoaiLoi {
     fun moTa(nhan: String): String = TEN[nhan] ?: TEN.getValue(KHAC)
 
     /**
+     * Cung bay nhan do, nhung viet cho con doc.
+     *
+     * KHAC [TEN] O NGOI NOI. [TEN] la chu cho bang thong ke ben Telegram, Ba Huy doc
+     * mot cot so ("sai dau: 7 lan"). Cho nay la mot cau noi voi chinh dua tre, nen
+     * no phai chi ra duoc CHO can nhin lai chu khong chi dat ten cho cai sai: "dau,
+     * luc chuyen ve hay pha ngoac" thi con biet mo vo ra tim cai gi, con "sai dau"
+     * thi khong.
+     *
+     * Khong co [KHAC] o day, va co y nhu vay: xem [vn.huytl.homeworkgate.kho.KhoBai.nhanHayVap].
+     */
+    private val CHO_CON = mapOf(
+        SAI_DAU to "dấu, lúc chuyển vế hay lúc phá ngoặc",
+        SAI_BUOC to "một bước biến đổi bị hụt giữa chừng",
+        NHAM_CONG_THUC to "nhớ nhầm công thức",
+        TINH_NHAM to "tính nhầm số, cách làm thì đúng",
+        THIEU to "bỏ dở giữa chừng, hoặc thiếu một trường hợp",
+        LAC_DE to "làm lệch cái đề hỏi"
+    )
+
+    fun moTaChoCon(nhan: String): String? = CHO_CON[nhan]
+
+    /**
      * Ep nhan may tra ve ve dung [TAP].
      *
      * Cau dung thi khong co loi nao, du may co khai gi: khong chan o day thi bang

@@ -24,8 +24,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintWidth_max="@dimen/st_be_rong_toi_da">
+        app:layout_constraintTop_toTopOf="parent">
 
         <!-- Thanh tren. Nut Luu o day chu khong o cuoi trang: sua mot o bat ky roi
              luu duoc ngay, khong phai cuon het trang moi toi cho luu. -->
@@ -369,7 +368,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="4dp"
-                            android:text="Theo thời khoá biểu: từ lúc phải thôi xài máy đi chuẩn bị cho tới khi tan học, màn hình bị che kín. Tắt đi thì app chỉ nhắc soạn cặp chứ không chặn."
+                            android:text="Theo thời khoá biểu: từ lúc phải thôi xài máy đi chuẩn bị cho tới khi tan học, màn hình bị che kín. Tắt đi thì app chỉ nhắc soạn tập chứ không chặn."
                             android:textColor="@color/ink_soft"
                             android:textSize="13sp" />
 

@@ -93,9 +93,13 @@ object PromptCham {
      *  - de no biet vo dan do la cua hom nay hay cua tuan truoc;
      *  - may khong tu biet hom nay la ngay nao - no khong co dong ho.
      */
-    fun cauLenh(homNay: java.time.LocalDate = java.time.LocalDate.now()): String =
+    fun cauLenh(
+        homNay: java.time.LocalDate = java.time.LocalDate.now(),
+        /** Vo dan do da chup va soat tu truoc, thay cho tam anh. Xem [doanDanDo]. */
+        danDo: vn.huytl.homeworkgate.data.VoDanDo.DanDo? = null
+    ): String =
         "Hôm nay là ngày ${homNay.dayOfMonth} tháng ${homNay.monthValue} năm ${homNay.year}.\n" +
-            CAU_LENH
+            CAU_LENH + (danDo?.let { doanDanDo(it.ngay, it.cacBai) } ?: "")
 
     val CAU_LENH = """
 Bạn chấm bài về nhà giúp phụ huynh. Ảnh gồm (có thể thiếu một số): trang vở dặn dò của cô giáo, trang đề bài in trong sách, và bài làm viết tay của học sinh.
@@ -209,7 +213,9 @@ Quy tắc:
         tenBai: String,
         homNay: java.time.LocalDate = java.time.LocalDate.now(),
         /** Lan nay la on lai bai cu. Them mot cau hoi ve mau muc, xem [DOAN_ON_TAP]. */
-        onTap: Boolean = false
+        onTap: Boolean = false,
+        /** Vo dan do da chup va soat tu truoc, thay cho tam anh. Xem [doanDanDo]. */
+        danDo: vn.huytl.homeworkgate.data.VoDanDo.DanDo? = null
     ): String {
         val danhSach = cac.joinToString("\n") { "${it.ma} | ${it.de}" }
         return "Hôm nay là ngày ${homNay.dayOfMonth} tháng ${homNay.monthValue} " +
@@ -218,7 +224,65 @@ Quy tắc:
                 .replace("{NGUON}", tenNguon)
                 .replace("{BAI}", tenBai)
                 .replace("{DANH_SACH}", danhSach) +
-            if (onTap) DOAN_ON_TAP else ""
+            (if (onTap) DOAN_ON_TAP else "") +
+            (danDo?.let { doanDanDo(it.ngay, it.cacBai) } ?: "")
+    }
+
+    /**
+     * Doc mot trang vo dan do ra chu. Khong cham gi ca, chi doc.
+     *
+     * Tach han khoi duong cham bai vi hai viec nay xay ra o hai luc khac nhau: doc
+     * vo dan do la viec dau buoi, lam MOT lan; cham bai la viec cuoi buoi, lam bao
+     * nhieu lan cung duoc. Va vi ban doc ra chu con phai qua mat Le Hoa soat lai -
+     * mot buoc ma duong cham bai khong co.
+     *
+     * HOI IT THOI. Chi can ngay va danh sach bai tap: do la hai thu duy nhat
+     * [vn.huytl.homeworkgate.data.LuatCongGio] dung toi. Phan dan do khac hoi them
+     * cho con doc, khong di vao cho nao tinh gio.
+     */
+    fun cauLenhDocDanDo(homNay: java.time.LocalDate = java.time.LocalDate.now()): String =
+        "Hôm nay là ngày ${homNay.dayOfMonth} tháng ${homNay.monthValue} " +
+            "năm ${homNay.year}.\n" + CAU_LENH_DAN_DO
+
+    val CAU_LENH_DAN_DO = """
+Ảnh là một trang trong vở dặn dò của học sinh lớp 8, do chính học sinh chép lại lời cô giáo dặn cuối mỗi buổi học.
+
+MỘT TRANG THƯỜNG CHỨA NHIỀU NGÀY. Mỗi ngày là một khối: một dòng ghi ngày, thường kèm chữ "Dặn dò", rồi vài dòng dặn dò bên dưới, mỗi dòng bắt đầu bằng tên môn. Trả về TẤT CẢ các khối thấy trên trang, đúng thứ tự từ trên xuống. TUYỆT ĐỐI không trộn dòng của ngày này sang ngày khác, và không bỏ sót ngày nào.
+
+Chỉ trả về JSON, không thêm chữ nào khác:
+{"cac_ngay":[{"ngay":"yyyy-MM-dd hoặc null","cac_dong":[{"chu":"Toán: làm bài 2 trang 36","la_bai_tap":true},{"chu":"Tiếng Anh: tiết sau kiểm tra từ vựng","la_bai_tap":false}]}]}
+
+Quy tắc bắt buộc:
+1. "ngay": ngày ghi ở đầu khối, đổi ra yyyy-MM-dd. Vở ghi kiểu nào cũng phải đọc được: "15/9/2026", "Thứ hai, ngày 14 tháng 9", hay tiếng Anh "Monday, september 14th, 2026". Thiếu năm thì lấy năm sao cho ngày đó gần hôm nay nhất. Không thấy ngày thì để null.
+2. "chu": chép NGUYÊN VĂN cả dòng, giữ tên môn ở đầu đúng như vở viết tắt: "KHTN", "NV", "GDCD", "CN", "LS-ĐL", "TTNT", "ÂNhạc", "STEAM". Không viết lại cho hay hơn, không mở rộng chữ viết tắt, không gộp hai dòng làm một, không tách một dòng làm hai.
+3. "la_bai_tap": true CHỈ KHI dòng đó bảo LÀM một bài rồi nộp lại được — "làm bài 2 trang 36", "vẽ ký họa trên giấy A4", "làm luyện tập 3 trang 59". Những thứ sau luôn là false: ôn bài, học thuộc, xem trước bài, tiết sau kiểm tra, mang sách vở, mang đồ, làm đúng nội quy, sinh hoạt ngoài trời.
+4. Không đoán. Chữ nào nhìn không ra thì chép phần đọc được và bỏ phần không đọc được, đừng suy ra nội dung. Con số thì đặc biệt cẩn thận: 4 với 9, 5 với 6 rất dễ nhầm — không chắc thì cứ chép cái mình thấy, người sẽ soát lại.
+5. Trang không có dặn dò nào thì "cac_ngay" là mảng rỗng.
+    """.trimIndent()
+
+    /**
+     * Doan noi them vao cau lenh cham khi lan nop nay KHONG co anh vo dan do, nhung
+     * trong may da co ban da soat.
+     *
+     * Phai noi ro de no de len quy tac "khong co anh vo dan do thi trong_dan_do de
+     * true". Quy tac do sinh ra cho lan nop khong biet gi ve dan do; con o day thi
+     * biet, va biet chac hon ca anh - doan chu nay da qua mat con soat lai.
+     */
+    fun doanDanDo(ngay: String, cacBai: List<String>): String {
+        val ke = if (cacBai.isEmpty()) {
+            "hôm đó cô giáo KHÔNG giao bài tập nào"
+        } else {
+            cacBai.joinToString("; ")
+        }
+        return """
+
+
+Nội dung trang vở dặn dò đã được chép sẵn từ đầu buổi và học sinh đã soát lại:
+- Ngày ghi trên vở: $ngay
+- Bài cô giáo giao: $ke
+
+Dùng đúng nội dung này, KHÔNG suy từ ảnh: "ngay_dan_do" lấy đúng ngày trên, "bai_duoc_giao" lấy đúng danh sách trên. "trong_dan_do" của một câu là true chỉ khi câu đó thuộc một trong các bài được giao ở trên; danh sách rỗng thì mọi câu đều false. Quy tắc "không có ảnh vở dặn dò thì để true" KHÔNG áp dụng lần này.
+        """.trimIndent()
     }
 
     /**

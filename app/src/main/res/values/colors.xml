@@ -26,6 +26,35 @@
     <color name="canvas">#F4F6FA</color>
     <color name="line">#E1E5EC</color>
 
+    <!--
+      Mau cua tung mon hoc.
+
+      Moi mon mot mau va mot chu viet tat, dung lai o moi cho co ten mon: man chon
+      mon, danh sach bai, nhat ky, bang thong ke. Truoc day chin mon la chin o chu
+      nhat giong het nhau, phan biet bang chu - Toan voi Ngu van nhin y nhau, phai
+      doc moi biet. Co mau thi con quen tay, nhin mot cai la bam dung.
+
+      Bay mau du cho mot thoi khoa bieu: hon the thi hai mon ke nhau bat dau lan.
+    -->
+    <color name="mon_1">#2F6FED</color>
+    <color name="mon_1_nen">#E8F0FE</color>
+    <color name="mon_2">#1E8E3E</color>
+    <color name="mon_2_nen">#E6F4EA</color>
+    <color name="mon_3">#C2591A</color>
+    <color name="mon_3_nen">#FBEDE3</color>
+    <color name="mon_4">#7B3FBF</color>
+    <color name="mon_4_nen">#F0E9FA</color>
+    <color name="mon_5">#0F8A8A</color>
+    <color name="mon_5_nen">#E3F5F5</color>
+    <color name="mon_6">#B03060</color>
+    <color name="mon_6_nen">#FAE8EF</color>
+    <color name="mon_7">#5C6BC0</color>
+    <color name="mon_7_nen">#EAECF9</color>
+
+    <!-- Gio ghi trong bong bong cua con. Tren nen brand, chu trang lam mo di
+         khong ra duoc - phai la mot mau xanh nhat rieng. -->
+    <color name="chat_gio_con">#BFD4FF</color>
+
     <!-- Mau cho hai nguoi dung, de phan biet ngay tu xa. -->
     <color name="parent_tint">#5B4BC4</color>
     <color name="parent_soft">#EDEAFB</color>

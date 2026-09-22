@@ -294,6 +294,59 @@ class LuatCongGioTest {
         assertEquals(120, LuatCongGio.tinh(ket, bayGio = toiThuHai).phut)
     }
 
+    // --- tran duong on ---
+
+    @Test
+    fun on_lai_co_tran_rieng_moi_ngay() {
+        // Hai muoi cau muoi dong: lan dau moi cau 5 phut, on lai duoc nua, tuc 3.
+        // Sau muoi phut, nhung tran cua duong on la ba muoi.
+        val ket = KetQuaCham(cac = (1..20).map { cauNho("on$it", soDong = 10) })
+        val b = LuatCongGio.tinh(ket, bayGio = toiThuHai, onTap = true)
+        assertEquals(LuatCongGio.TRAN_ON_MOI_NGAY, b.phut)
+        assertTrue(b.dong.any { it.contains("Ôn lại hôm nay tối đa 30 phút") })
+    }
+
+    @Test
+    fun tran_on_tru_ca_phan_da_on_luc_truoc_trong_ngay() {
+        val ket = KetQuaCham(cac = (1..10).map { cauNho("on$it", soDong = 10) })
+        // Chieu nay da on duoc 25 phut roi, chi con 5.
+        assertEquals(5, LuatCongGio.tinh(ket, bayGio = toiThuHai, onTap = true, daCongOnHomNay = 25).phut)
+    }
+
+    @Test
+    fun tran_on_ap_ca_vao_hom_khong_co_tron_goi() {
+        // Khac han tran lam them: khong co goi thi phan tinh le chinh la bai co
+        // giao nen khong chan: xem [khong_co_tron_goi_thi_khong_ap_tran]. Nhung on
+        // lai thi khong bao gio la bai co giao - co giao khong giao lam lai bai cu.
+        val ket = KetQuaCham(cac = (1..20).map { cauNho("on$it", soDong = 10) })
+        // Hai muoi cau muoi dong: bai moi 5 phut mot cau, khong tran nao cat.
+        assertEquals(100, LuatCongGio.tinh(ket, bayGio = toiThuHai).phut)
+        // Cung xap do nop nhu bai on: 3 phut mot cau, roi tran cat con 30.
+        assertEquals(30, LuatCongGio.tinh(ket, bayGio = toiThuHai, onTap = true).phut)
+    }
+
+    @Test
+    fun bai_moi_khong_bi_tran_on_chan() {
+        // On het ba muoi phut roi van lam bai moi binh thuong: hai duong, hai tran.
+        val ket = KetQuaCham(cac = (1..10).map { cauNho("moi$it", soDong = 10) })
+        assertEquals(50, LuatCongGio.tinh(ket, bayGio = toiThuHai, daCongOnHomNay = 30).phut)
+    }
+
+    @Test
+    fun on_lai_van_bi_tran_lam_them_chan_khi_no_chat_hon() {
+        val ket = KetQuaCham(
+            cac = (1..20).map { cauNho("on$it", trongDanDo = false, soDong = 10) },
+            ngayDanDo = "2026-09-14",
+            baiDuocGiao = listOf("bài 2"),
+            lamHetDanDo = true
+        )
+        // Hom nay da lam them 88 phut: tran lam them chi con 2, chat hon tran on.
+        // Cau bao cat phai goi ten dung cai tran vua cat.
+        val b = LuatCongGio.tinh(ket, 88, toiThuHai, onTap = true)
+        assertEquals(45 + 2, b.phut)
+        assertTrue(b.dong.any { it.contains("Bài làm thêm hôm nay tối đa 90 phút") })
+    }
+
     // --- cho Ba Huy xem ---
 
     @Test

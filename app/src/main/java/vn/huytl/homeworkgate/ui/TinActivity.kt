@@ -28,6 +28,8 @@ class TinActivity : AppCompatActivity() {
             insets
         }
 
+        binding.nutQuayLai.setOnClickListener { finish() }
+
         val kho = KhoTinCuaCo(this)
         val tin = kho.danhSach()
 

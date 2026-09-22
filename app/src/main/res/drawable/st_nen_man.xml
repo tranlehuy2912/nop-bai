@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Nen cua cac man Le Hoa nhin moi ngay.
+
+     Mot lop mau rat nhat o dau man roi nhat dan xuong nen thuong. Khong de noi bat
+     cai gi ca - de man hinh khong phai la mot mang xam phang tu tren xuong duoi, va
+     de mat biet dau la dau trang. -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <gradient
+        android:angle="270"
+        android:centerColor="@color/canvas"
+        android:centerY="0.35"
+        android:endColor="@color/canvas"
+        android:startColor="#E9EFFA"
+        android:type="linear" />
+</shape>

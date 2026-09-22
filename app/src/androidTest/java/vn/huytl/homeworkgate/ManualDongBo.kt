@@ -61,4 +61,69 @@ class ManualDongBo {
         prefs.allowedPackages = prefs.allowedPackages + goi
         println("MANUAL_DONGBO: da cho phep $goi, danh sach=${prefs.allowedPackages}")
     }
+
+    /**
+     * Thu duong PING: go mot lenh hoi nhu app Bang dieu khien van go, roi xem
+     * tablet co day ban trang thai moi khong.
+     *
+     * Dong vai dien thoai bang chinh may nay - khong kiem duoc phan Firestore chuyen
+     * lenh di, nhung kiem duoc cai de hong that: tablet nhan lenh, va no day DU
+     * KHONG CO GI DOI so voi lan day truoc. Cho do la cho co the lang le khong lam
+     * gi, vi [DongBo.dayThat] von bo qua nhung ban giong het ban cu.
+     */
+    @Test
+    fun pingThu() {
+        DongBo.batDau(context)
+        val maNha = DongBo.maNhaHienTai(context)
+        if (maNha.isEmpty()) {
+            println("MANUAL_DONGBO: may nay chua lap nha, khong thu duoc")
+            return
+        }
+        val db = com.google.firebase.firestore.FirebaseFirestore.getInstance()
+        val trangThai = db.collection("nha").document(maNha).collection("hop")
+            .document("trangthai")
+
+        fun doc(truong: String): Long {
+            val cho = CountDownLatch(1)
+            var luc = -1L
+            trangThai.get().addOnCompleteListener {
+                luc = when (truong) {
+                    "capNhatLuc" -> it.result?.getLong("capNhatLuc") ?: 0L
+                    // O tra loi la mot map {chu, luc, ai}. PING khong duoc dong vao
+                    // day: mot dong trong moc len giua man hinh cua Ba Huy.
+                    else -> (it.result?.get("traLoi") as? Map<*, *>)?.get("luc") as? Long ?: 0L
+                }
+                cho.countDown()
+            }
+            cho.await(20, TimeUnit.SECONDS)
+            return luc
+        }
+
+        fun capNhatLuc(): Long = doc("capNhatLuc")
+
+        val truoc = capNhatLuc()
+        val traLoiTruoc = doc("traLoi")
+        // Day ngay mot lan roi doc lai, de chac chan ban tren Firestore la ban
+        // "moi nhat khong co gi doi" - dung canh ma PING phai vuot qua.
+        DongBo.dayNgay()
+        Thread.sleep(3_000)
+        val nen = capNhatLuc()
+
+        db.collection("nha").document(maNha).collection("lenh").add(
+            mapOf(
+                "kieu" to "PING",
+                "ai" to "bahuy",
+                "tao" to System.currentTimeMillis()
+            )
+        )
+        Thread.sleep(6_000)
+        val sau = capNhatLuc()
+
+        val traLoiSau = doc("traLoi")
+        println(
+            "MANUAL_DONGBO: ping truoc=$truoc nen=$nen sau=$sau " +
+                (if (sau > nen) "-> TABLET DA DAP" else "-> KHONG DAP") +
+                ", o traLoi " + (if (traLoiSau == traLoiTruoc) "khong bi dong vao" else "BI GHI DE")
+        )
+    }
 }

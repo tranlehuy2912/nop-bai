@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Khung chat. Co tinh giong app nhan tin thong thuong de con khong phai hoc
-     cach dung: cau cua minh ben phai, cau cua ba ben trai. -->
-<!-- Khung ngoai cung chi de mot viec: giu noi dung lai giua man hinh. Tablet nay
-     rong 1280dp, tha ra thi mot dong chu dai gap doi muc doc duoc va nua man hinh
-     bo trong. Cung con so st_be_rong_toi_da ma cac man chon bai, soat bai dang dung. -->
+     cach dung: cau cua minh ben phai, cau cua ba ben trai.
+
+     THANH GO CHU MANG NEN SURFACE KEO HET BE NGANG, va vach 1dp ngan no voi phan
+     tin nhan. Khong co vach thi hai mang trang va xam giap nhau khong ro, con neu
+     cho dai trang do dung lung chung thi no trong nhu mot manh giay dan de len
+     man hinh. -->
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -12,136 +14,173 @@
     android:layout_height="match_parent">
 
     <LinearLayout
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintWidth_max="@dimen/st_be_rong_toi_da">
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_vertical"
-        android:paddingHorizontal="16dp"
-        android:paddingVertical="10dp">
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_back"
-            style="@style/Widget.Material3.Button.TextButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="‹  Quay lại"
-            android:textSize="16sp" />
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_marginStart="8dp"
-            android:text="@string/home_chat"
-            android:textColor="@color/ink"
-            android:textSize="19sp"
-            android:textStyle="bold" />
-
-        <!-- Icon nho o goc, khong phai nut to: xoa sach la viec hiem va khong lay
-             lai duoc, nen no khong nen nam ngang hang voi nut Gui. -->
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_xoa_chat"
-            style="@style/Widget.Material3.Button.IconButton"
-            android:layout_width="44dp"
-            android:layout_height="44dp"
-            android:contentDescription="Xoá lịch sử trò chuyện"
-            app:icon="@drawable/ic_xoa"
-            app:iconSize="20dp"
-            app:iconTint="@color/ink_soft" />
-    </LinearLayout>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/line" />
-
-    <ScrollView
-        android:id="@+id/scroll"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:paddingHorizontal="20dp">
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
-            android:id="@+id/lines"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:paddingVertical="16dp" />
-    </ScrollView>
+            android:gravity="center_vertical"
+            android:paddingHorizontal="@dimen/st_le_ngang"
+            android:paddingTop="12dp"
+            android:paddingBottom="4dp">
 
-    <TextView
-        android:id="@+id/txt_empty"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:paddingHorizontal="40dp"
-        android:paddingBottom="16dp"
-        android:text="Có việc gì cần báo ba Huy thì gõ vào đây. Ba Huy nhận được ngay trên điện thoại."
-        android:textColor="@color/ink_soft"
-        android:textSize="15sp"
-        android:visibility="gone" />
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_back"
+                style="@style/Widget.Material3.Button.IconButton"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="-12dp"
+                android:layout_marginEnd="4dp"
+                android:contentDescription="Quay lại"
+                app:icon="@drawable/st_ic_quay_lai"
+                app:iconSize="22dp"
+                app:iconTint="@color/ink_soft" />
 
-    <LinearLayout
-        android:id="@+id/row_send"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="bottom"
-        android:paddingHorizontal="16dp"
-        android:paddingVertical="12dp"
-        android:background="@color/surface">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/home_chat"
+                android:textColor="@color/ink"
+                android:textSize="26sp"
+                android:textStyle="bold" />
 
-        <EditText
-            android:id="@+id/input"
-            android:layout_width="0dp"
+            <!-- Icon nho o goc, khong phai nut to: xoa sach la viec hiem va khong
+                 lay lai duoc, nen no khong nen nam ngang hang voi nut Gui. -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_xoa_chat"
+                style="@style/Widget.Material3.Button.IconButton"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:contentDescription="Xoá lịch sử trò chuyện"
+                app:icon="@drawable/ic_xoa"
+                app:iconSize="20dp"
+                app:iconTint="@color/ink_soft" />
+        </LinearLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <ScrollView
+                android:id="@+id/scroll"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clipToPadding="false"
+                android:paddingHorizontal="@dimen/st_le_ngang">
+
+                <LinearLayout
+                    android:id="@+id/lines"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="20dp" />
+            </ScrollView>
+
+            <!-- Loi nhac nam GIUA cho trong chu khong dinh day. Truoc day no la mot
+                 dong chu ngay tren o go, nen ca man hinh la mot mang trang lon voi
+                 mot dong chu lac o mep duoi. -->
+            <LinearLayout
+                android:id="@+id/tin_trong"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingBottom="40dp"
+                android:visibility="gone">
+
+                <ImageView
+                    android:layout_width="96dp"
+                    android:layout_height="96dp"
+                    android:alpha="0.35"
+                    android:contentDescription="@null"
+                    android:src="@drawable/st_ic_trong"
+                    app:tint="@color/ink_soft" />
+
+                <TextView
+                    android:id="@+id/txt_empty"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:gravity="center"
+                    android:lineSpacingExtra="3dp"
+                    android:paddingHorizontal="40dp"
+                    android:text="Có việc gì cần báo ba Huy thì gõ vào đây. Ba Huy nhận được ngay trên điện thoại."
+                    android:textColor="@color/ink_soft"
+                    android:textSize="15sp" />
+            </LinearLayout>
+        </FrameLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/line" />
+
+        <LinearLayout
+            android:id="@+id/row_send"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="@drawable/bg_bubble_ba"
-            android:hint="Nhắn cho ba Huy…"
-            android:inputType="textCapSentences|textMultiLine"
-            android:maxLines="4"
-            android:minHeight="56dp"
-            android:paddingHorizontal="20dp"
-            android:paddingVertical="14dp"
-            android:textColor="@color/ink"
-            android:textColorHint="@color/ink_soft"
-            android:textSize="17sp"
-            android:importantForAutofill="no" />
+            android:background="@color/surface"
+            android:gravity="bottom"
+            android:paddingHorizontal="@dimen/st_le_ngang"
+            android:paddingVertical="12dp">
 
-        <!-- Chup de hoi bai. Mot dua tre khong ta duoc "cho nay con khong hieu"
-             bang chu, nhung chup mot cai la xong. -->
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_chup"
-            style="@style/Widget.Material3.Button.OutlinedButton"
-            android:layout_width="wrap_content"
-            android:layout_height="56dp"
-            android:layout_marginStart="10dp"
-            android:contentDescription="Chụp hình để hỏi bài"
-            android:minWidth="56dp"
-            android:paddingHorizontal="14dp"
-            app:cornerRadius="20dp"
-            app:icon="@drawable/ic_may_anh"
-            app:iconGravity="textStart"
-            app:iconPadding="0dp"
-            app:iconSize="24dp" />
+            <!-- Nen rieng chu khong dung lai bg_bubble_ba: o go ma mang cai vo cua
+                 bong bong ben ba thi no trong nhu mot tin nhan da gui, va dong chu
+                 mo trong do trong nhu ba vua noi cau do. -->
+            <EditText
+                android:id="@+id/input"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/st_nen_o_go"
+                android:hint="Nhắn cho ba Huy…"
+                android:inputType="textCapSentences|textMultiLine"
+                android:maxLines="4"
+                android:minHeight="56dp"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="14dp"
+                android:textColor="@color/ink"
+                android:textColorHint="@color/ink_soft"
+                android:textSize="17sp"
+                android:importantForAutofill="no" />
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_send"
-            android:layout_width="wrap_content"
-            android:layout_height="56dp"
-            android:layout_marginStart="10dp"
-            android:text="Gửi"
-            android:textSize="16sp"
-            app:cornerRadius="20dp" />
+            <!-- Chup hinh gui kem. Mot dua tre khong ta duoc bang chu cai no dang
+                 muon noi - cho khong hieu, cai vo quen o lop - nhung chup mot cai
+                 la xong. Nut khong ghi chup de lam gi: con chup cai gi la viec
+                 cua con. -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_chup"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="56dp"
+                android:layout_marginStart="10dp"
+                android:contentDescription="Chụp hình gửi ba Huy"
+                android:minWidth="56dp"
+                android:paddingHorizontal="14dp"
+                app:cornerRadius="20dp"
+                app:icon="@drawable/ic_may_anh"
+                app:iconGravity="textStart"
+                app:iconPadding="0dp"
+                app:iconSize="24dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_send"
+                android:layout_width="wrap_content"
+                android:layout_height="56dp"
+                android:layout_marginStart="10dp"
+                android:text="Gửi"
+                android:textSize="16sp"
+                app:cornerRadius="20dp" />
+        </LinearLayout>
     </LinearLayout>
-</LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

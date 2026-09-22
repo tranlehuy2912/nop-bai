@@ -236,6 +236,24 @@ object Lenh {
      * Kem so phut o [Duong.F_PHUT] va danh sach ten viec o [Duong.F_CHU].
      */
     const val CONG_VIEC_NHA = "CONGVIECNHA"
+
+    /**
+     * Hoi tablet mot cau duy nhat: con song khong, va trang thai that bay gio la gi.
+     *
+     * VI SAO CAN. Tablet tu day trang thai moi lan co gi doi, cong them mot nhip
+     * tim thua cho nhung luc khong co gi doi. Nhip tim do chay bang Handler, ma
+     * Handler dem theo dong ho DUNG LAI khi CPU ngu - nen mot tablet nam im tren
+     * ban ca buoi toi co the khong day gi trong nhieu tieng. Khong phai no chet,
+     * chi la khong co gi de noi va khong ai hoi.
+     *
+     * Bang dieu khien mo ra thi go lenh nay. Tablet nghe qua listener nam san trong
+     * dich vu tro nang, day mot ban trang thai day du, va man hinh ben kia co so
+     * lieu dung cua GIAY NAY thay vi mot dong "so lieu co the cu".
+     *
+     * Khong tra loi gi vao o traLoi: day khong phai viec Ba Huy bam, khong co gi de
+     * bao. Ban trang thai moi chinh la cau tra loi.
+     */
+    const val PING = "PING"
 }
 
 /** Trang thai cong, y het GateState ben tablet. */

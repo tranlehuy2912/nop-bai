@@ -26,6 +26,7 @@ import vn.huytl.homeworkgate.data.NhatKySuDung
 import vn.huytl.homeworkgate.data.Prefs
 import vn.huytl.homeworkgate.data.SoCaiBai
 import vn.huytl.homeworkgate.data.ViecNha
+import vn.huytl.homeworkgate.data.VoDanDo
 import vn.huytl.homeworkgate.guard.ParentMode
 import vn.huytl.homeworkgate.data.Mang
 import vn.huytl.homeworkgate.kho.KhoBai
@@ -157,6 +158,7 @@ class ManualBang {
         val treo = ViecNha.dangTreo(context)
         ra(JSONObject().apply {
             put("k", "viecnha")
+            put("phutHomNay", ViecNha.phutHomNay(context, now))
             put("dangKhoa", ViecNha.dangKhoa(context))
             put("chuaXong", ViecNha.keChuaXong(context))
             put("phien", if (treo == null) JSONObject.NULL else JSONObject().apply {
@@ -189,6 +191,16 @@ class ManualBang {
                 .put("soNgayCoBai", tb.soNgayCoBai)
                 .put("phutDaKiem", tb.phutDaKiem)
                 .put("cauDangChoSua", tb.cauDangChoSua))
+        })
+
+        val dando = VoDanDo.doc(context)
+        ra(JSONObject().apply {
+            put("k", "dando")
+            put("conHieuLuc", VoDanDo.conHieuLuc(context) != null)
+            put("moTa", dando?.moTa() ?: JSONObject.NULL)
+            put("ngay", dando?.ngay ?: JSONObject.NULL)
+            put("cacBai", JSONArray(dando?.cacBai ?: emptyList<String>()))
+            put("dongKhac", JSONArray(dando?.dongKhac ?: emptyList<String>()))
         })
 
         ra(JSONObject().apply {
@@ -227,6 +239,7 @@ class ManualBang {
      *  -e viec viecnha -e chu "Quét nhà:10:0,Rửa chén:10:0"
      *  -e viec viecnhaxong           ba bam xong het
      *  -e viec xoaviecnha
+     *  -e viec napdando / xoadando  trang vo dan do da soat
      *  -e viec napdenhen -e ma 1.3a  nap mot cau da qua han on lai
      *  -e viec bamo -e phut 30       ba cam may (mo cac man cua ba)
      *  -e viec badong
@@ -342,6 +355,21 @@ class ManualBang {
                 ketQua = ViecNha.apDung(context, xong).name
             }
             "xoaviecnha" -> { ViecNha.xoa(context); ketQua = ViecNha.dangKhoa(context) }
+            // Nap san mot trang vo dan do da soat, de nhin canh "may nho roi" ma
+            // khong phai chup that. Ngay lay HOM NAY de ban con hieu luc.
+            "napdando" -> {
+                val homNay = java.time.LocalDate.now().toString()
+                VoDanDo.luu(context, VoDanDo.DanDo(
+                    ngay = homNay,
+                    cacDong = listOf(
+                        VoDanDo.Dong("Làm bài 2.26 và 2.27 trang 45", laBaiTap = true),
+                        VoDanDo.Dong("Học thuộc bảy hằng đẳng thức", laBaiTap = true),
+                        VoDanDo.Dong("Mang đủ sách vở, mặc đồng phục", laBaiTap = false)
+                    )
+                ))
+                ketQua = VoDanDo.conHieuLuc(context)?.moTa()
+            }
+            "xoadando" -> { VoDanDo.xoa(context); ketQua = VoDanDo.doc(context) == null }
             /*
              * Nap mot cau DA QUA HEN on lai.
              *
@@ -392,7 +420,7 @@ class ManualBang {
      * chep tay trong trang web.
      *
      *   -e cham <base64 cua JSON KetQuaCham>
-     *   -e daCongLamThem 0   -e goiDaCo 0   -e bayGio 2026-09-14T20:00
+     *   -e daCongLamThem 0   -e goiDaCo 0   -e onTap 0   -e bayGio 2026-09-14T20:00
      */
     @Test
     fun conggio() {
@@ -431,7 +459,9 @@ class ManualBang {
             ket,
             daCongLamThemHomNay = args.getString("daCongLamThem")?.toIntOrNull() ?: 0,
             bayGio = bayGio,
-            goiDaCoHomNay = args.getString("goiDaCo") == "1"
+            goiDaCoHomNay = args.getString("goiDaCo") == "1",
+            // Lan nay con lam lai cau da dung roi de on: luat tra NUA so phut.
+            onTap = args.getString("onTap") == "1"
         )
         ra(JSONObject().apply {
             put("k", "conggio")

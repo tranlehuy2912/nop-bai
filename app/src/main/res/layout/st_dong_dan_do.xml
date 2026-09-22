@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Mot dong dan do trong man soat: o tich + chu sua duoc.
+
+  O TICH LA CUA CON, KHONG PHAI CUA MAY. May chi tich san mot ban doan; do tren bon
+  trang vo that cua Le Hoa thi no doan sai hai trong ba bai tap. Nguoi ngoi truoc
+  man hinh la nguoi vua chep dong do, nen chi can liec mot cai la biet.
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="8dp"
+    android:background="@drawable/st_nen_o_go"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingStart="12dp"
+    android:paddingEnd="16dp">
+
+    <com.google.android.material.checkbox.MaterialCheckBox
+        android:id="@+id/o_tich"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="Dòng này là bài tập phải nộp"
+        android:minWidth="48dp"
+        android:minHeight="48dp" />
+
+    <EditText
+        android:id="@+id/o_chu"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@null"
+        android:inputType="textMultiLine|textCapSentences"
+        android:lineSpacingExtra="3dp"
+        android:minHeight="56dp"
+        android:paddingVertical="10dp"
+        android:textColor="@color/ink"
+        android:textColorHint="@color/ink_soft"
+        android:textSize="17sp"
+        android:importantForAutofill="no" />
+</LinearLayout>

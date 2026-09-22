@@ -128,6 +128,9 @@ object NhatKySuDung {
      * Khoang vat qua nua dem bi cat dung o moc giao ngay, de tong cua moi ngay
      * cong lai khong vuot qua chinh no.
      */
+    /** Moc nua dem cua ngay dang xem, cho [vn.huytl.homeworkgate.ui.DaiNgay]. */
+    fun dauNgay(lui: Int = 0): Long = mocDauNgay(lui)
+
     fun cuaNgay(context: Context, lui: Int = 0): List<Doan> {
         val dau = mocDauNgay(lui)
         val cuoi = mocDauNgay(lui - 1)

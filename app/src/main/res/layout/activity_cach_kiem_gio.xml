@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Bang gia gio choi, viet cho Le Hoa doc.
+
+  VI SAO CO MAN NAY: luat cong gio nam day du trong LuatCongGio.kt va trong dau Ba
+  Huy, con phia con thi chi thay ket qua - nop bai xong hien ra mot con so. Khong
+  biet lam gi ra nhieu phut hon thi con khong chon duoc, ma chi doan; va doan sai
+  vai lan thi thanh ra tin rang con so do la tuy hung.
+
+  MOI CON SO O DAY DOC TU CHINH CAC HANG SO DANG CHAY, khong go tay lai. Go tay thi
+  den luc Ba Huy sua mot con so trong luat, man nay im lang noi doi - va noi doi voi
+  dung cai bang ma con dang dung de chon lam gi truoc.
+-->
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/goc"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/st_nen_man">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:paddingHorizontal="28dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!-- Duong ra nam ben trai, hinh mui ten, y het man "Viec da lam". -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_done"
+                style="@style/Widget.Material3.Button.IconButton"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="-12dp"
+                android:layout_marginEnd="4dp"
+                android:contentDescription="Quay lại"
+                app:icon="@drawable/st_ic_quay_lai"
+                app:iconSize="22dp"
+                app:iconTint="@color/ink_soft" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/kiem_gio_title"
+                android:textColor="@color/ink"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginTop="16dp"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- Hom nay dang o dau. Dat tren cung vi day la cau con hoi truoc
+                     tien; bang gia ben duoi chi co nghia khi da biet con bao nhieu
+                     cho trong ngay.
+
+                     Thanh ba doan chep y he thong thanh ngoai man chinh: cung mot
+                     con so, ve khac di o hai cho thi con phai hoc hai cai. -->
+                <com.google.android.material.card.MaterialCardView
+                    style="@style/Card"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="20dp">
+
+                        <TextView
+                            android:id="@+id/txt_hom_nay"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/ok"
+                            android:textSize="30sp"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:id="@+id/khung_thanh"
+                            android:layout_width="match_parent"
+                            android:layout_height="14dp"
+                            android:layout_marginTop="14dp"
+                            android:background="@drawable/st_nen_thanh_ngay"
+                            android:clipToOutline="true"
+                            android:orientation="horizontal">
+
+                            <View
+                                android:id="@+id/phan_da_choi"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent" />
+
+                            <View
+                                android:id="@+id/phan_dang_giu"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/txt_hom_nay_phu"
+                            style="@style/Text.Body"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:textSize="15sp" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <TextView
+                    style="@style/Nhan.Nhom"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/kiem_gio_nhan_duoc" />
+
+                <!-- Ba nguon gio, xep theo so phut mot ngay co the ra: bai tap
+                     truoc, kiem tra bai sau, viec nha cuoi. Con doc tu tren xuong
+                     va dung lai o cai dau tien lam duoc, nen thu tu chinh la loi
+                     khuyen nen lam gi truoc. -->
+                <com.google.android.material.card.MaterialCardView
+                    style="@style/Card"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="20dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical">
+
+                            <ImageView
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_marginEnd="14dp"
+                                android:background="@drawable/st_nen_huy_hieu"
+                                android:backgroundTint="@color/brand_soft"
+                                android:contentDescription="@null"
+                                android:padding="9dp"
+                                android:src="@drawable/ic_may_anh"
+                                app:tint="@color/brand" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="@string/home_submit"
+                                android:textColor="@color/ink"
+                                android:textSize="20sp"
+                                android:textStyle="bold" />
+                            <!-- Tra loi cau "phan nay hom nay cong chua" ngay canh
+                                 ten phan, de con khong phai doc het the moi biet. -->
+                            <TextView
+                                android:id="@+id/nhan_bai_tap"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="12dp"
+                                android:background="@drawable/bg_pill"
+                                android:paddingHorizontal="14dp"
+                                android:paddingVertical="6dp"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/box_bai_tap"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp"
+                            android:orientation="vertical" />
+
+                        <TextView
+                            android:id="@+id/txt_bai_tap_chan"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:background="@drawable/bg_ghi_chu"
+                            android:lineSpacingExtra="2dp"
+                            android:padding="12dp"
+                            android:textColor="@color/ink_soft"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    style="@style/Card"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="20dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical">
+
+                            <ImageView
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_marginEnd="14dp"
+                                android:background="@drawable/st_nen_huy_hieu"
+                                android:backgroundTint="@color/ok_soft"
+                                android:contentDescription="@null"
+                                android:padding="9dp"
+                                android:src="@drawable/st_ic_the_hoc"
+                                app:tint="@color/ok" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="@string/hoc_thuoc_title"
+                                android:textColor="@color/ink"
+                                android:textSize="20sp"
+                                android:textStyle="bold" />
+                            <!-- Tra loi cau "phan nay hom nay cong chua" ngay canh
+                                 ten phan, de con khong phai doc het the moi biet. -->
+                            <TextView
+                                android:id="@+id/nhan_kiem_tra"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="12dp"
+                                android:background="@drawable/bg_pill"
+                                android:paddingHorizontal="14dp"
+                                android:paddingVertical="6dp"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/box_kiem_tra"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp"
+                            android:orientation="vertical" />
+
+                        <TextView
+                            android:id="@+id/txt_kiem_tra_chan"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:background="@drawable/bg_ghi_chu"
+                            android:lineSpacingExtra="2dp"
+                            android:padding="12dp"
+                            android:textColor="@color/ink_soft"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    style="@style/Card"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="20dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical">
+
+                            <ImageView
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_marginEnd="14dp"
+                                android:background="@drawable/st_nen_huy_hieu"
+                                android:backgroundTint="@color/wait_soft"
+                                android:contentDescription="@null"
+                                android:padding="9dp"
+                                android:src="@drawable/ic_mat_viec_nha"
+                                app:tint="@color/wait" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="@string/kiem_gio_viec_nha"
+                                android:textColor="@color/ink"
+                                android:textSize="20sp"
+                                android:textStyle="bold" />
+                            <!-- Tra loi cau "phan nay hom nay cong chua" ngay canh
+                                 ten phan, de con khong phai doc het the moi biet. -->
+                            <TextView
+                                android:id="@+id/nhan_viec_nha"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="12dp"
+                                android:background="@drawable/bg_pill"
+                                android:paddingHorizontal="14dp"
+                                android:paddingVertical="6dp"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/box_viec_nha"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp"
+                            android:orientation="vertical" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Phan nay quan trong ngang phan tren. Khong co no thi con lam
+                     mot xap bai, duoc it phut hon minh doan, va khong biet vi sao -
+                     ma cai "khong biet vi sao" do moi la thu lam con thoi co gang. -->
+                <TextView
+                    style="@style/Nhan.Nhom"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/kiem_gio_nhan_khong" />
+
+                <com.google.android.material.card.MaterialCardView
+                    style="@style/Card"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:id="@+id/box_khong_tinh"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingHorizontal="20dp"
+                        android:paddingVertical="8dp" />
+                </com.google.android.material.card.MaterialCardView>
+
+                <TextView
+                    android:id="@+id/txt_chan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:lineSpacingExtra="3dp"
+                    android:textColor="@color/ink_soft"
+                    android:textSize="13sp" />
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

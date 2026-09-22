@@ -114,6 +114,17 @@ class ThongKeActivity : AppCompatActivity() {
                 " · ${cac.size} app"
         }
 
+        binding.daiNgay.visibility = if (cac.isEmpty()) View.GONE else View.VISIBLE
+        if (cac.isNotEmpty()) {
+            binding.daiNgay.dat(
+                dauNgay = NhatKySuDung.dauNgay(lui),
+                cac = NhatKySuDung.cuaNgay(this, lui).map { it.tu to it.den },
+                mauVach = mau(R.color.brand),
+                mauNen = mau(R.color.line),
+                mauGio = mau(R.color.surface)
+            )
+        }
+
         binding.danhSach.removeAllViews()
         binding.theDanhSach.visibility = if (cac.isEmpty()) View.GONE else View.VISIBLE
         binding.txtTrong.visibility = if (cac.isEmpty()) View.VISIBLE else View.GONE

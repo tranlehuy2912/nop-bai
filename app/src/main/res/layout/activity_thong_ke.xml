@@ -2,9 +2,6 @@
 <!-- Trang Ba Huy doc lai con da dung app gi, tu may gio den may gio.
      Chi de xem, khong bam duoc gi anh huong den may - moi nut o day deu chi la
      doi ngay dang xem. -->
-<!-- Khung ngoai cung chi de mot viec: giu noi dung lai giua man hinh. Tablet nay
-     rong 1280dp, tha ra thi mot dong chu dai gap doi muc doc duoc va nua man hinh
-     bo trong. Cung con so st_be_rong_toi_da ma cac man chon bai, soat bai dang dung. -->
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -20,13 +17,24 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintWidth_max="@dimen/st_be_rong_toi_da">
+        app:layout_constraintTop_toTopOf="parent">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_vertical">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_done"
+            style="@style/Widget.Material3.Button.IconButton"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="-12dp"
+            android:layout_marginEnd="4dp"
+            android:contentDescription="Quay lại"
+            app:icon="@drawable/st_ic_quay_lai"
+            app:iconSize="22dp"
+            app:iconTint="@color/ink_soft" />
 
         <LinearLayout
             android:layout_width="0dp"
@@ -50,14 +58,6 @@
                 android:textColor="@color/ink_soft"
                 android:textSize="14sp" />
         </LinearLayout>
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_done"
-            style="@style/Widget.Material3.Button.TextButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/ok"
-            android:textSize="15sp" />
     </LinearLayout>
 
     <!-- Bay ngay gan nhat. Ngang chu khong doc: bay o thi doc mot dong la het, ma
@@ -114,6 +114,66 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
                         android:textSize="15sp" />
+
+                    <!-- Ca ngay thanh mot dai, moi khoang cam may la mot vach.
+                         Bang duoi noi app nao bao lau; cai nay noi LUC NAO, va do
+                         la thu khong con so nao trong bang tra loi duoc. -->
+                    <vn.huytl.homeworkgate.ui.DaiNgay
+                        android:id="@+id/dai_ngay"
+                        android:layout_width="match_parent"
+                        android:layout_height="26dp"
+                        android:layout_marginTop="18dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="0h"
+                            android:textColor="@color/ink_soft"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="6h"
+                            android:textColor="@color/ink_soft"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="12h"
+                            android:textColor="@color/ink_soft"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="18h"
+                            android:textColor="@color/ink_soft"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="end"
+                            android:text="24h"
+                            android:textColor="@color/ink_soft"
+                            android:textSize="12sp" />
+                    </LinearLayout>
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 

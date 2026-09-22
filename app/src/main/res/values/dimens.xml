@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Tablet nay rong 1280dp. De noi dung keo het be ngang thi mot dong chu dai
-         gap doi muc de doc, mat phai quet rat xa va nua phai man hinh bo trong.
-         Gioi han lai roi can giua. -->
-    <dimen name="st_be_rong_toi_da">720dp</dimen>
     <dimen name="st_le_ngang">24dp</dimen>
 
     <!-- Luoi thoi khoa bieu. Chieu cao o co dinh de cac cot thang hang nhau.

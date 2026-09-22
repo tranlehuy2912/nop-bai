@@ -103,6 +103,11 @@
             android:exported="false" />
 
         <activity
+            android:name=".ui.DanDoActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity
             android:name=".ui.TinActivity"
             android:exported="false" />
 
@@ -120,6 +125,11 @@
         <!-- Man Le Hoa nhin lai viec minh da lam. -->
         <activity
             android:name=".ui.TienBoActivity"
+            android:exported="false" />
+
+        <!-- Bang gia gio choi: lam cai gi thi duoc may phut. -->
+        <activity
+            android:name=".ui.CachKiemGioActivity"
             android:exported="false" />
 
         <!-- So con dung app gi, luc nao. exported=false: day la trang cua Ba Huy,

@@ -250,6 +250,15 @@ object SoCaiBai {
     fun phutLamThemHomNay(context: Context, now: Long = System.currentTimeMillis()): Int =
         KhoBai.get(context).tongPhut(moc0GioCua(now), truCauId = KHOA_GOI)
 
+    /**
+     * So phut duong ON da cong trong ngay, de giu [LuatCongGio.TRAN_ON_MOI_NGAY].
+     *
+     * Nam trong so phut cua [phutLamThemHomNay] chu khong cong them vao: on lai van
+     * la mot phan cua "ngoai goi". Hai con so, hai cai tran, cung mot ro.
+     */
+    fun phutOnHomNay(context: Context, now: Long = System.currentTimeMillis()): Int =
+        KhoBai.get(context).tongPhutOnTap(moc0GioCua(now))
+
     /** Tong so phut da cong trong ngay, ke ca tron goi. Dung de bao cao. */
     fun phutDaCongHomNay(context: Context, now: Long = System.currentTimeMillis()): Int =
         KhoBai.get(context).tongPhut(moc0GioCua(now))

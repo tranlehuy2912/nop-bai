@@ -53,6 +53,21 @@ def co_may_ao():
     return any(d.endswith("\tdevice") for d in adb("devices").splitlines()[1:])
 
 
+def dam_bao_root():
+    """Chac chan adbd dang chay quyen root.
+
+    Cac man hinh cua app deu exported=false - dung nhu no phai the, de con khong mo
+    thang bang adb hay shortcut. Nghia la chi shell quyen root moi mo duoc chung.
+    May ao khoi dong lai la adbd tut ve quyen shell, va luc do moi muc mo man hinh
+    deu bao "Permission Denial" - trong khi app khong sai gi.
+    """
+    if adb("shell", "id", "-u").strip() == "0":
+        return
+    adb("root")
+    adb("wait-for-device", timeout=30)
+    time.sleep(1.0)
+
+
 def app_dang_chay():
     return bool(adb("shell", "pidof", PKG).strip())
 
@@ -314,6 +329,7 @@ class May:
         self._da_ghi = True
 
     def _lam_moi(self):
+        dam_bao_root()
         adb("shell", "am", "force-stop", PKG)
         cap_quyen()
         self._da_ghi = False
@@ -333,9 +349,13 @@ class May:
             f"{PKG}/.telegram.ApprovalService")
         time.sleep(2.5)
 
-    def man(self, ten):
+    def man(self, ten, thu=None):
+        """Mo mot man hinh. [thu] la cac extra kieu boolean di kem intent."""
         self._lam_moi()
-        adb("shell", "am", "start", "-n", f"{PKG}/{PKG}.ui.{ten}")
+        lenh = ["shell", "am", "start", "-n", f"{PKG}/{PKG}.ui.{ten}"]
+        for k, v in (thu or {}).items():
+            lenh += ["--ez", k, "true" if v else "false"]
+        adb(*lenh)
         time.sleep(2.0)
 
     def bam(self, chu):
@@ -359,6 +379,41 @@ class May:
                 adb("shell", "input", "swipe", "1280", "1200", "1280", "500", "300")
                 time.sleep(1.0)
         raise RuntimeError(f"không thấy nút “{chu}” trên màn hình, kể cả khi cuộn xuống")
+
+    def go_chu(self, o, chu):
+        """Bam vao o nhap roi go chu vao do, nhu con go tren tablet.
+
+        Duong hoc thuoc khong chup anh va khong goi AI - con go thang tren may. Muon
+        thu that duong do thi phai go that, khong co cua sau nao de dat san cau tra
+        loi vao.
+        """
+        diem = tim_o(o)
+        if not diem:
+            raise RuntimeError(f"không thấy ô “{o}” để gõ vào")
+        adb("shell", "input", "tap", str(diem[0]), str(diem[1]))
+        time.sleep(0.8)
+        adb("shell", "input", "text", shlex.quote(chu))
+        time.sleep(0.8)
+
+    def go_dap_an_dung(self, o, duong_bo):
+        """Doc cau hoi dang hien roi go dung dap an cua no.
+
+        Khong neo cung dap an cua mot the: so the den luot va thu tu boc doi theo
+        lich on, nen the dau tien hom nay khong phai the dau tien hom qua. Neo cung
+        thi muc thu hong vi hoi sang cau khac, ma app van dung.
+        """
+        chu = chu_tren_man()
+        cac = []
+        o_bo = json.loads((GOC.parent / duong_bo).read_text(encoding="utf-8"))
+        for bai in o_bo.get("cac_bai", []):
+            cac += bai.get("cac_the", [])
+        # Lay the co cau hoi DAI NHAT khop voi man hinh: "(a + b)²" cung nam trong
+        # "(a + b)³" neu so kieu ngan nhat truoc.
+        khop = sorted((t for t in cac if t.get("hoi") and t["hoi"] in chu),
+                      key=lambda t: -len(t["hoi"]))
+        if not khop:
+            raise RuntimeError("không nhận ra thẻ nào đang hiện trên màn hình")
+        self.go_chu(o, go_duoc(khop[0]["dap"]))
 
     def tat_mo_lai(self):
         """Tat han app roi mo lai, de xem no nho duoc gi qua mot lan bi giet."""
@@ -404,6 +459,16 @@ def do_cay_man():
         if lan < 2:
             time.sleep(1.5)
     return ""
+
+
+def go_duoc(dap):
+    """Doi dap an sang dang go duoc bang "adb shell input text".
+
+    HocThuoc.chuanHoa doi "²" thanh "^2" truoc khi so, nen go "^2" van dung - ma
+    "²" thi input text tren may ao khong go ra duoc.
+    """
+    return (dap.replace("²", "^2").replace("³", "^3")
+            .replace("−", "-").replace("–", "-").replace("—", "-"))
 
 
 def tim_o(chu):
@@ -600,6 +665,7 @@ def chay_tu_dong(cac_ma):
     # kin man hinh du dang xet canh nao, va che do ba thi tat het loi nhac. Mot lan
     # chay do dang bo lai mot trong hai thu la ca bo thu sau do bao hong ma app
     # khong sai gi.
+    dam_bao_root()
     if man:
         TU_DONG["hienTai"] = "dọn trạng thái còn lại của lần trước"
         try:
@@ -777,7 +843,8 @@ class Tay(BaseHTTPRequestHandler):
                               cham=b64(than["cham"]),
                               bayGio=than.get("bayGio"),
                               daCongLamThem=than.get("daCongLamThem", 0),
-                              goiDaCo="1" if than.get("goiDaCo") else "0"))))
+                              goiDaCo="1" if than.get("goiDaCo") else "0",
+                              onTap="1" if than.get("onTap") else "0"))))
 
             if u.path == "/api/test":
                 return self._json(giu_app(lambda: chay_bo_test(than["lop"])))

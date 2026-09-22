@@ -92,6 +92,24 @@ object LuatCongGio {
     const val TOI_DA_MOI_NGAY = PHUT_TRON_GOI_DAN_DO + TRAN_LAM_THEM
 
     /**
+     * Tran rieng cho duong ON LAI, moi ngay.
+     *
+     * VI SAO CAN MOT TRAN NUA. On lai truoc day chi chiu chung tran [TRAN_LAM_THEM]
+     * voi bai moi, tuc la hai viec khac han nhau tranh nhau mot cai ro. Cau muoi
+     * dong lan dau duoc 5 phut, on lai duoc 3; hai muoi cau nhu the la sau muoi
+     * phut, an hai phan ba tran ngay bang viec chep lai bai da lam dung. Bai moi hom
+     * do gan nhu khong con cho, va dua tre se chon dung cai re hon.
+     *
+     * Ba muoi phut: du de on het so cau den hen cua mot ngay binh thuong (lich hen
+     * 3/10/30 ngay, moi cau ba lan trong doi - xem
+     * [vn.huytl.homeworkgate.kho.KhoBai.KHOANG_HEN_NGAY]), khong du de thay bai moi.
+     *
+     * Cung ly do voi [vn.huytl.homeworkgate.data.HocThuoc.TRAN_PHUT_MOI_NGAY], va
+     * con so chon theo cung cach: bang khoang cong suc that cua mot buoi on.
+     */
+    const val TRAN_ON_MOI_NGAY = 30
+
+    /**
      * So phut cua mot muc lam dung, theo so dong lam bai.
      *
      * [CauCham.soDong] bang 0 nghia la ben goi khong dem duoc dong nao (AI khong
@@ -233,13 +251,16 @@ object LuatCongGio {
      * @param onTap lan nay con lam lai cau da lam dung roi, de on. Tra NUA so phut:
      *   on lai la viec dang khuyen, nhung no van nhe hon lam mot cau moi, va neu tra
      *   bang nhau thi lam lai cau cu thanh duong de kiem gio hon lam bai moi.
+     * @param daCongOnHomNay so phut duong on da tra trong ngay, de giu
+     *   [TRAN_ON_MOI_NGAY]. Ben goi lay tu so cai. Chi dung khi [onTap] la true.
      */
     fun tinh(
         goc: KetQuaCham,
         daCongLamThemHomNay: Int = 0,
         bayGio: LocalDateTime = LocalDateTime.now(),
         goiDaCoHomNay: Boolean = false,
-        onTap: Boolean = false
+        onTap: Boolean = false,
+        daCongOnHomNay: Int = 0
     ): BangTinh {
         val dong = mutableListOf<String>()
 
@@ -294,8 +315,9 @@ object LuatCongGio {
             dong += "Vở dặn dò ghi ngày ${ket.ngayDanDo} — không phải bài hôm nay nên " +
                 "không tính trọn gói"
         } else if (ket.lamHetDanDo && ngayOk && !coBaiGiao && !goiDaCoHomNay) {
-            dong += "Vở dặn dò hôm đó không giao bài tập nào (chỉ dặn việc) nên không " +
-                "tính trọn gói — bài làm tính lẻ từng câu"
+            dong += "Vở dặn dò hôm đó không giao bài tập nào (chỉ dặn việc) nên máy " +
+                "không tự tính trọn gói — bài làm tính lẻ từng câu. Muốn cho gói thì " +
+                "bấm nút dưới tin vở dặn dò."
         }
 
         // Muc nao tinh le: khong co goi thi tinh het, co goi thi chi tinh bai lam them.
@@ -314,9 +336,18 @@ object LuatCongGio {
 
         // Tran chi ap cho phan lam them, tuc la khi trong ngay da co goi. Khong co
         // goi thi phan tinh le CHINH LA bai co giao, chan lai la phat con vi lam nhieu.
-        val conTran =
+        val tranLamThem =
             if (goiConHieuLuc) (TRAN_LAM_THEM - daCongLamThemHomNay).coerceAtLeast(0)
             else Int.MAX_VALUE
+        /*
+         * Duong on co tran RIENG, va no ap ca vao nhung hom khong co goi.
+         *
+         * Khac han tran lam them o tren: khong co goi nghia la phan tinh le chinh la
+         * bai co giao, ma on lai thi khong bao gio la bai co giao ca - co giao khong
+         * giao lam lai bai tuan truoc. Nen o day khong co ly do nao de tha tran ra.
+         */
+        val tranOn = (TRAN_ON_MOI_NGAY - daCongOnHomNay).coerceAtLeast(0)
+        val conTran = if (onTap) minOf(tranLamThem, tranOn) else tranLamThem
 
         // Cat theo tung cau chu khong cat cuc tong, de con biet cau nao that su duoc
         // tra bao nhieu ma ghi vao so.
@@ -354,7 +385,13 @@ object LuatCongGio {
         }
 
         if (biCat) {
-            dong += "Bài làm thêm hôm nay tối đa $TRAN_LAM_THEM phút, cắt còn $conTran phút"
+            // Noi dung cai tran vua cat, khong phai cai tran to hon: con doc dong
+            // nay de biet hom nay con lam duoc gi nua, ma hai duong thi hai tran.
+            dong += if (onTap && tranOn <= tranLamThem) {
+                "Ôn lại hôm nay tối đa $TRAN_ON_MOI_NGAY phút, cắt còn $conTran phút"
+            } else {
+                "Bài làm thêm hôm nay tối đa $TRAN_LAM_THEM phút, cắt còn $conTran phút"
+            }
         }
         phut += le
 
@@ -400,8 +437,15 @@ object LuatCongGio {
     fun bayGio(mocMs: Long): LocalDateTime =
         LocalDateTime.ofInstant(java.time.Instant.ofEpochMilli(mocMs), ZoneId.systemDefault())
 
-    /** Truoc gio nay sang hom sau thi bai hom qua van con tinh. */
-    private const val GIO_HET_HAN_SANG = 12
+    /**
+     * Truoc gio nay sang hom sau thi bai hom qua van con tinh.
+     *
+     * Khong con private: man hinh bang gia cua Le Hoa
+     * ([vn.huytl.homeworkgate.ui.CachKiemGioActivity]) noi ra con so nay cho con
+     * biet sang mai chup vo con kip khong. Noi bang mot so go tay thi den luc doi
+     * gio o day, cau do im lang noi sai.
+     */
+    const val GIO_HET_HAN_SANG = 12
 
     /** Ke ro toi da bay nhieu cau, con lai gom mot dong. */
     private const val SO_DONG_KE_TOI_DA = 6

@@ -1,0 +1,6 @@
+tr138: "release" cot nghia lech - luot 1 "thải ra, làm thoát ra", luot 2 "thả"
+tr139: "item" cot nghia lech - luot 1 "một món hàng", luot 2 "một món hàng đang (được bán) hạ giá"
+tr139: "shopaholic" cot am lech - luot 1 "/ʃɒpəˈhɒlɪk/", luot 2 "/ˌʃɒpəˈhɒlɪk/"
+trung tu "release" o Unit 5 va Unit 7, da gop hai nghia lam mot
+trung tu "account" o Unit 3 va Unit 10, da gop hai nghia lam mot
+trung tu "face to face" o Unit 11 va Unit 11, da gop hai nghia lam mot

@@ -248,7 +248,7 @@ class ParentActivity : AppCompatActivity() {
         // Nut cho khong an vao tran trong ngay, nen no van dung duoc khi bai tap da
         // dung het tran.
         binding.btnGift.text = if (gate.state == GateState.ACTIVE) {
-            "Cộng thêm giờ (không trừ định mức)"
+            "Cộng thêm giờ (không trừ hạn mức)"
         } else {
             "Cho chơi luôn, không cần nộp bài"
         }
@@ -372,7 +372,7 @@ class ParentActivity : AppCompatActivity() {
         val congDon = minutes != null && minutes > phut
         if (minutes == null) {
             toast(
-                if (truLuot) "Không cấp được: đang giờ ngủ, hoặc hết trần giờ hôm nay"
+                if (truLuot) "Không cấp được: đang giờ ngủ, hoặc hôm nay đã hết số phút tối đa"
                 else "Không cấp được: đang trong giờ ngủ"
             )
             return

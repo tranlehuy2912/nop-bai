@@ -177,7 +177,7 @@ td small{display:block;color:var(--mo);font-size:10px}
         <select id="songay">
           <option>7</option><option>14</option><option>3</option><option>30</option>
         </select></label>
-      <label><input type="checkbox" id="dasoan"> coi như đã soạn cặp</label>
+      <label><input type="checkbox" id="dasoan"> coi như đã soạn tập</label>
       <label><input type="checkbox" id="chan" checked> bật màn chắn</label>
       <button id="ve" class="chinh">Vẽ lại</button>
       <span id="dangchay" class="mo"></span>
@@ -189,7 +189,7 @@ td small{display:block;color:var(--mo);font-size:10px}
     <div id="dai"></div>
     <div class="chu-thich">
       <span><i style="background:var(--ranh)"></i>rảnh</span>
-      <span><i style="background:var(--soan)"></i>nhắc soạn cặp</span>
+      <span><i style="background:var(--soan)"></i>nhắc soạn tập</span>
       <span><i style="background:var(--sap)"></i>sắp đi học</span>
       <span><i style="background:var(--gap)"></i>gấp, đếm ngược</span>
       <span><i style="background:var(--chan)"></i>màn chắn</span>
@@ -263,11 +263,11 @@ td small{display:block;color:var(--mo);font-size:10px}
   </div>
 
   <div class="the">
-    <h2>Màn chắn &amp; soạn cặp</h2>
+    <h2>Màn chắn &amp; soạn tập</h2>
     <div class="hang">
       <button data-viec="manchan" data-ma="1">Bật màn chắn</button>
       <button data-viec="manchan" data-ma="0">Tắt màn chắn</button>
-      <button data-viec="xoasoan">Bỏ hết dấu đã soạn cặp</button>
+      <button data-viec="xoasoan">Bỏ hết dấu đã soạn tập</button>
       <button id="nutmoisom">Cho mở sớm buổi kế tiếp</button>
       <button data-viec="moisom" data-ma="">Thu hồi mở sớm</button>
     </div>
@@ -308,6 +308,8 @@ td small{display:block;color:var(--mo);font-size:10px}
       <label>đã cộng làm thêm hôm nay
         <input type="number" id="gda" value="0" style="width:70px"> phút</label>
       <label><input type="checkbox" id="ggoi"> hôm nay đã tính trọn gói rồi</label>
+      <label title="Câu đã làm đúng rồi, nay đến hẹn làm lại để ôn"><input
+        type="checkbox" id="gon"> lần này là ôn lại</label>
       <button class="chinh" id="gtinh">Tính</button>
       <button id="glaytu">Lấy số thật từ máy ảo</button>
     </div>
@@ -357,8 +359,13 @@ td small{display:block;color:var(--mo);font-size:10px}
   </div>
 
   <div class="the">
-    <h2>Hộp thư bà nội</h2>
+    <h2>Lượt của bà nội</h2>
     <div class="o" id="htho"></div>
+    <div class="hang" style="margin-top:10px">
+      <button data-viec="xoaluotba">Trả lại lượt hôm nay cho bà</button>
+    </div>
+    <p class="mo" style="font-size:12px;margin:10px 0 0">Bà cho giờ được một lượt
+      mỗi ngày. Lệnh của bà giờ đi qua Firestore, không qua hộp thư Telegram nữa.</p>
   </div>
 
   <div class="the">
@@ -752,7 +759,7 @@ function veChan(){
   $('#chano').innerHTML =
     o('màn chắn', c.batManChan ? 'BẬT' : 'TẮT') +
     o('buổi được mở sớm', c.buoiDuocMoSom || '—') +
-    o('buổi đã soạn cặp', c.buoiDaSoan.length ? c.buoiDaSoan.join(', ') : '—') +
+    o('buổi đã soạn tập', c.buoiDaSoan.length ? c.buoiDaSoan.join(', ') : '—') +
     o('khoá cài đặt hệ thống', c.khoaCaiDatHeThong ? 'có' : 'không') +
     o('sai PIN liên tiếp', c.saiPinLienTiep) +
     o('ba đang cầm máy', c.baDangDung ? 'CÓ' : 'không') +
@@ -838,9 +845,7 @@ function veTin(){
     ? t.tinCuaCo.map(x=>`<li><span>${x.noiDung}</span>
         <span class="mo">${gioNgay(x.luc)}${x.daDoc?'':' · mới'}</span></li>`).join('')
     : '<li class="mo">trống</li>';
-  $('#htho').innerHTML = o('id nhóm', t.hopThuNhom || '—') +
-    o('đã cho hôm nay', t.hopThuDaChoHomNay?'rồi':'chưa') +
-    o('nên ngó hộp thư', t.hopThuNenNgo?'có':'không');
+  $('#htho').innerHTML = o('bà đã cho hôm nay', t.baNoiDaChoHomNay ? 'rồi' : 'chưa');
 }
 document.querySelectorAll('[data-nhan]').forEach(b => b.onclick = async () => {
   const chu = $('#tnchu').value.trim(); if(!chu) return;
@@ -922,12 +927,14 @@ $('#gtinh').onclick = async e => {
             baiDuocGiao:$('#ggiao').value.split(',').map(x=>x.trim()).filter(Boolean)},
       bayGio: $('#gluc').value || null,
       daCongLamThem: +$('#gda').value || 0,
-      goiDaCo: $('#ggoi').checked })});
+      goiDaCo: $('#ggoi').checked,
+      onTap: $('#gon').checked })});
     const le = Object.entries(b.phutCua).filter(([,v])=>v>0);
     $('#gket').innerHTML =
       `<div class="so-to">${b.phut} phút</div>
        <p class="mo">tối đa một ngày ${b.toiDaMoiNgay} = trọn gói ${b.tronGoi}
-          + trần làm thêm ${b.tranLamThem}</p>
+          + trần làm thêm ${b.tranLamThem}${$('#gon').checked
+            ? ' · lần ôn lại chỉ được nửa số phút' : ''}</p>
        <h2 style="margin-top:14px">Máy giải thích</h2>
        <ul class="ds">${b.dong.map(d=>`<li>${d}</li>`).join('') ||
          '<li class="mo">không có dòng nào</li>'}</ul>` +

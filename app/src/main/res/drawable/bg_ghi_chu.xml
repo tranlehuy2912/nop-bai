@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Nen cua dong ghi chu nam trong mot the: cung mot khoi voi the, nhung lui ra
+     sau mot buoc. Khi dong do bao mot cai tran DA HET thi doi sang st_nen_luu_y
+     ngay trong ma nguon - luc do no khong con la ghi chu nua. -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <solid android:color="@color/canvas" />
+    <corners android:radius="14dp" />
+</shape>

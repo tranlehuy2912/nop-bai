@@ -189,6 +189,14 @@ object ThiHanhLenh {
 
             Lenh.CAI_DAT -> doiCaiDat(context, chu, d.get("giaTri"))
 
+            // Ben kia vua mo app va hoi tablet con song khong. Day mot ban trang
+            // thai day du roi thoi: khong ghi nhat ky, khong tra loi gi. Ban trang
+            // thai do chinh la cau tra loi, va no den qua duong khac.
+            Lenh.PING -> {
+                DongBo.dayDayDu()
+                ""
+            }
+
             else -> "Không hiểu lệnh $kieu."
         }
     }
@@ -341,7 +349,7 @@ object ThiHanhLenh {
             "tranPhutMoiNgay" -> {
                 val v = so?.coerceIn(15, 480) ?: return "Thiếu số phút."
                 prefs.tranPhutMoiNgay = v
-                "Trần mỗi ngày giờ là $v phút."
+                "Tối đa mỗi ngày giờ là $v phút."
             }
             "gioNgu" -> {
                 val v = so?.coerceIn(0, 24 * 60 - 1) ?: return "Thiếu giờ."

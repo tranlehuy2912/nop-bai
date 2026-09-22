@@ -118,14 +118,14 @@ def danh_sach():
         ),
         dict(
             ma="soan-vo", nhom="Màn chắn",
-            ten="Tối, chưa soạn cặp cho hôm sau",
+            ten="Tối, chưa soạn tập cho hôm sau",
             lam=lambda m: (m.dat("xoasoan"), m.van(TOI_THU_TU), m.nen()),
             luc=TOI_THU_TU, loai="SOAN_VO", noi="the",
-            cho_logic=["Soạn tập vở cho"],
+            cho_logic=["Soạn tập cho"],
         ),
         dict(
             ma="chu-nhat", nhom="Màn chắn",
-            ten="Chủ nhật — không được chắn, nhưng vẫn nhắc soạn cặp",
+            ten="Chủ nhật — không được chắn, nhưng vẫn nhắc soạn tập",
             # Khong doi "khong che gi": chu nhat van con the nhac soan cap cho sang
             # thu hai, dung nhu dai thoi gian o tab Lich. Cai phai khong co la MAN
             # CHAN - do moi la cai giam Le Hoa o nha vao ngay nghi.
@@ -151,7 +151,7 @@ def danh_sach():
         ),
         dict(
             ma="man-soan", nhom="Màn hình",
-            ten="Màn soạn tập vở",
+            ten="Màn soạn tập",
             lam=lambda m: (m.dat("xoasoan"), m.man("SoanActivity")),
             cho=["Soạn tập cho"],
         ),
@@ -214,20 +214,45 @@ def danh_sach():
             lam=lambda m: (m.van(RANH), m.dat("xoaviecnha"), m.dat("dong"),
                            m.dat("xoacho"), m.dat("napdenhen", ma="1.3a"),
                            m.man("HomeActivity")),
-            cho=["câu đến hẹn ôn lại", "Ôn lại"],
+            cho=["Ôn lại 1 câu đến hẹn"],
         ),
         dict(
             ma="man-chonbai", nhom="Kho bài",
             ten="Màn khai bài trước khi chụp",
             lam=lambda m: (m.dat("napdenhen", ma="1.3a"),
                            m.man("ChonBaiActivity")),
-            cho=["Con đang làm bài môn gì?", "Toán", "Ôn lại 1 câu đến hẹn"],
+            # Soat phan khong doi: ten con la cau hinh, doi ten trong cai dat thi
+            # khong co nghia la man hinh hong.
+            cho=["đang làm bài môn gì?", "Toán", "Ôn lại 1 câu đến hẹn"],
+        ),
+        dict(
+            ma="on-vao-thang", nhom="Kho bài",
+            ten="Vào thẳng màn ôn — liệt kê đúng câu đến hẹn",
+            # Nut "Ôn lại" o man chinh mo ChonBaiActivity kem EXTRA_ON_TAP, vao thang
+            # buoc on chu khong bat chon lai mon va bai.
+            lam=lambda m: (m.van(RANH), m.dat("napdenhen", ma="1.3a"),
+                           m.man("ChonBaiActivity", thu={"on_tap": True})),
+            cho=["1.3a"],
+            man_tren_cung="ChonBaiActivity",
+        ),
+        dict(
+            ma="on-bam-nut", nhom="Kho bài",
+            ten="Bấm nút “Ôn lại” trên màn chính thì sang màn ôn",
+            lam=lambda m: (m.van(RANH), m.dat("xoaviecnha"), m.dat("dong"),
+                           m.dat("xoacho"), m.dat("napdenhen", ma="1.3a"),
+                           m.man("HomeActivity"), m.bam("Ôn lại")),
+            man_tren_cung="ChonBaiActivity",
+            cho=["1.3a"],
         ),
         dict(
             ma="man-tienbo", nhom="Kho bài",
             ten="Màn “Con đã làm được gì”",
             lam=lambda m: (m.chay("ManualTienBo#napThu"), m.man("TienBoActivity")),
-            cho=["Con đã làm được gì", "câu đúng", "câu khó đã gỡ"],
+            # Tieu de co ten con trong do, ma ten la cai dat chu khong phai hanh vi.
+            # Khoi "câu khó đã gỡ" nam duoi bieu do nen khong phai luc nao cung lot
+            # vao vung nhin thay - soat phan tren cung.
+            cho=["đã làm được gì", "câu đúng", "ngày có nộp bài",
+                 "SỐ CÂU ĐÚNG MỖI NGÀY"],
         ),
         dict(
             ma="man-thongke", nhom="Kho bài",
@@ -244,6 +269,75 @@ def danh_sach():
             ten="Ba chưa gõ PIN thì màn thống kê không mở được",
             lam=lambda m: (m.dat("badong"), m.man("ThongKeActivity")),
             man_khong="ThongKeActivity",
+        ),
+
+        dict(
+            ma="man-cachkiemgio", nhom="Kho bài",
+            ten="Màn “Cách kiếm giờ chơi” — kể ra từng đường đổi giờ",
+            lam=lambda m: (m.van(RANH), m.man("CachKiemGioActivity")),
+            # Chi soat phan dau danh sach: may duong con lai nam duoi vung nhin
+            # thay, ma uiautomator chi doc duoc phan dang hien.
+            cho=["Cách kiếm giờ chơi", "Hôm nay kiếm được", "LÀM GÌ THÌ ĐƯỢC THÊM GIỜ",
+                 "Nộp bài tập", "Làm hết bài cô giao", "45 phút"],
+        ),
+
+        # ---------------- vo dan do ----------------
+        dict(
+            ma="man-dando", nhom="Vở dặn dò",
+            ten="Chưa chụp vở thì màn dặn dò mở thẳng ra camera",
+            lam=lambda m: (m.van(RANH), m.dat("xoadando"), m.man("DanDoActivity")),
+            cho=["Chụp trang vở dặn dò", "Đưa trang vở lọt vào khung"],
+        ),
+        dict(
+            ma="dando-chua-chup", nhom="Vở dặn dò",
+            ten="Màn khai bài rủ chụp vở khi chưa có bản nào",
+            lam=lambda m: (m.van(RANH), m.dat("xoadando"), m.man("ChonBaiActivity")),
+            cho=["Chụp vở dặn dò hôm nay", "Chụp một lần thôi"],
+        ),
+        dict(
+            ma="dando-da-luu", nhom="Vở dặn dò",
+            ten="Chụp rồi thì mấy lần nộp sau không phải chụp lại",
+            # Day la ly do ca cai man nay ra doi: truoc phai chup trang vo o TUNG lan
+            # nop trong ngay, quen mot lan la lan nop do khong duoc phut nao.
+            lam=lambda m: (m.van(RANH), m.dat("napdando"), m.man("ChonBaiActivity")),
+            cho=["Vở dặn dò", "2 bài", "Máy nhớ rồi, mấy lần nộp sau không phải chụp lại"],
+            khong=["Chụp vở dặn dò hôm nay"],
+            don=lambda m: m.dat("xoadando"),
+        ),
+        # ---------------- hoc thuoc ----------------
+        dict(
+            ma="man-hocthuoc", nhom="Học thuộc",
+            ten="Màn kiểm tra bài — kể bộ câu và số câu đến lượt",
+            lam=lambda m: (m.van(RANH), m.man("HocThuocActivity")),
+            cho=["Kiểm tra bài", "Công thức Toán 8", "câu đến lượt hôm nay",
+                 "Mỗi câu sẽ vài ngày kiểm tra một lần"],
+        ),
+        dict(
+            ma="hocthuoc-dung", nhom="Học thuộc",
+            ten="Gõ đúng một câu — máy chấm đúng ngay trên tablet",
+            # Go THAT vao o nhap, khong dat san ket qua: ca cai hay cua duong nay la
+            # may giu san dap an va cham tai cho, nen phai thu dung cho do. Doc cau
+            # hoi dang hien roi tra dap an trong file bo the, chu khong neo cung mot
+            # cau - cau den luot doi theo lich on.
+            lam=lambda m: (m.van(RANH), m.man("HocThuocActivity"),
+                           m.bam("Công thức Toán 8"),
+                           m.go_dap_an_dung("Gõ câu trả lời",
+                                            "app/src/main/assets/hocthuoc/toan8ct.json"),
+                           m.bam("Trả lời")),
+            cho=["Đúng rồi"],
+            khong=["Chưa đúng"],
+        ),
+        dict(
+            ma="hocthuoc-sai", nhom="Học thuộc",
+            ten="Gõ sai — máy nói chưa đúng và cho một gợi ý",
+            lam=lambda m: (m.van(RANH), m.man("HocThuocActivity"),
+                           m.bam("Công thức Toán 8"),
+                           m.go_chu("Gõ câu trả lời", "a^2+b^2"),
+                           m.bam("Trả lời")),
+            # Sai thi khong hien thang dap an nua, chi goi y - va cau do bi day
+            # xuong cuoi hang de lat lai sau, chu khong bo qua.
+            cho=["Chưa đúng", "Gợi ý:"],
+            khong=["Đúng rồi"],
         ),
 
         # ---------------- chan app ----------------
@@ -279,11 +373,14 @@ BO_TEST = [
     ("KhoaAiTest", "Chùm khoá AI"),
     ("GioiHanAppTest", "Hạn giờ từng app"),
     ("ChatBoxTest", "Hộp tin nhắn"),
-    ("HopThuBaNoiTest", "Hộp thư ba nội"),
     ("BoGoAiTest", "Bộ gõ chữ vào app AI"),
     ("ChamBaiJsonTest", "Đọc JSON chấm bài"),
     ("NganHangTest", "Ngân hàng câu hỏi nạp từ sách"),
     ("NhatKySuDungTest", "Sổ ghi dùng app lúc nào"),
     ("ViecNhaTest", "Việc nhà bà nội giao"),
+    ("LuotBaNoiTest", "Một lượt mỗi ngày của bà nội"),
+    ("HocThuocTest", "Đường học thuộc"),
+    ("TuVungTest", "Đường từ vựng"),
+    ("VoDanDoTest", "Trang vở dặn dò đã soát"),
     ("GateStoreTest", "Cổng — XOÁ SẠCH cấu hình trên máy"),
 ]

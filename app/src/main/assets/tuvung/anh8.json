@@ -1,0 +1,1953 @@
+{
+ "bo": "anh8",
+ "mon": "Tiếng Anh",
+ "ten": "Từ vựng Tiếng Anh 8",
+ "ban": 1,
+ "nguon_trang": [
+  137,
+  138,
+  139,
+  140
+ ],
+ "cac_tu": [
+  {
+   "unit": 1,
+   "tu": "balance",
+   "loai": "n",
+   "am": "/ˈbæləns/",
+   "nghia": "sự thăng bằng, sự cân bằng"
+  },
+  {
+   "unit": 1,
+   "tu": "bracelet",
+   "loai": "n",
+   "am": "/ˈbreɪslət/",
+   "nghia": "vòng đeo tay"
+  },
+  {
+   "unit": 1,
+   "tu": "crazy",
+   "loai": "adj",
+   "am": "/ˈkreɪzi/",
+   "nghia": "rất thích, quá say mê"
+  },
+  {
+   "unit": 1,
+   "tu": "cruel",
+   "loai": "adj",
+   "am": "/ˈkruːəl/",
+   "nghia": "độc ác"
+  },
+  {
+   "unit": 1,
+   "tu": "detest",
+   "loai": "v",
+   "am": "/dɪˈtest/",
+   "nghia": "căm ghét"
+  },
+  {
+   "unit": 1,
+   "tu": "DIY (do-it-yourself)",
+   "loai": "n",
+   "am": "/ˌdiː aɪ ˈwaɪ/ (/ˌduː ɪt jəˈself/)",
+   "nghia": "hoạt động tự làm ra, sửa chữa hoặc trang trí đồ vật tại nhà"
+  },
+  {
+   "unit": 1,
+   "tu": "fancy",
+   "loai": "v",
+   "am": "/ˈfænsi/",
+   "nghia": "mến, thích"
+  },
+  {
+   "unit": 1,
+   "tu": "fold",
+   "loai": "v",
+   "am": "/fəʊld/",
+   "nghia": "gấp, gập"
+  },
+  {
+   "unit": 1,
+   "tu": "fond",
+   "loai": "adj",
+   "am": "/fɒnd/",
+   "nghia": "mến, thích"
+  },
+  {
+   "unit": 1,
+   "tu": "keen",
+   "loai": "adj",
+   "am": "/kiːn/",
+   "nghia": "say mê, ham thích"
+  },
+  {
+   "unit": 1,
+   "tu": "keep in touch",
+   "loai": "",
+   "am": "/kiːp ɪn tʌtʃ/",
+   "nghia": "giữ liên lạc (với ai)"
+  },
+  {
+   "unit": 1,
+   "tu": "kit",
+   "loai": "n",
+   "am": "/kɪt/",
+   "nghia": "bộ đồ nghề"
+  },
+  {
+   "unit": 1,
+   "tu": "leisure",
+   "loai": "n",
+   "am": "/ˈleʒə/",
+   "nghia": "thời gian rảnh rỗi"
+  },
+  {
+   "unit": 1,
+   "tu": "message",
+   "loai": "v, n",
+   "am": "/ˈmesɪdʒ/",
+   "nghia": "gửi tin nhắn, tin nhắn"
+  },
+  {
+   "unit": 1,
+   "tu": "muscle",
+   "loai": "n",
+   "am": "/ˈmʌsl/",
+   "nghia": "cơ bắp"
+  },
+  {
+   "unit": 1,
+   "tu": "origami",
+   "loai": "n",
+   "am": "/ˌɒrɪˈɡɑːmi/",
+   "nghia": "nghệ thuật gấp giấy Nhật Bản"
+  },
+  {
+   "unit": 1,
+   "tu": "the outdoors",
+   "loai": "n",
+   "am": "/ðə ˌaʊtˈdɔːz/",
+   "nghia": "vùng thôn quê"
+  },
+  {
+   "unit": 1,
+   "tu": "prefer",
+   "loai": "v",
+   "am": "/prɪˈfɜː/",
+   "nghia": "thích hơn"
+  },
+  {
+   "unit": 1,
+   "tu": "puzzle",
+   "loai": "n",
+   "am": "/ˈpʌzl/",
+   "nghia": "trò chơi câu đố / giải đố"
+  },
+  {
+   "unit": 1,
+   "tu": "resort",
+   "loai": "n",
+   "am": "/rɪˈzɔːt/",
+   "nghia": "khu nghỉ dưỡng"
+  },
+  {
+   "unit": 1,
+   "tu": "snowboarding",
+   "loai": "n",
+   "am": "/ˈsnəʊbɔːdɪŋ/",
+   "nghia": "trượt tuyết bằng ván"
+  },
+  {
+   "unit": 1,
+   "tu": "stay in shape",
+   "loai": "",
+   "am": "/steɪ ɪn ʃeɪp/",
+   "nghia": "giữ dáng"
+  },
+  {
+   "unit": 2,
+   "tu": "catch",
+   "loai": "v",
+   "am": "/kætʃ/",
+   "nghia": "đánh được, câu được (cá)"
+  },
+  {
+   "unit": 2,
+   "tu": "cattle",
+   "loai": "n",
+   "am": "/ˈkætl/",
+   "nghia": "gia súc"
+  },
+  {
+   "unit": 2,
+   "tu": "combine harvester",
+   "loai": "",
+   "am": "/ˈkɒmbaɪn ˈhɑːvɪstə/",
+   "nghia": "máy gặt đập liên hợp"
+  },
+  {
+   "unit": 2,
+   "tu": "crop",
+   "loai": "n",
+   "am": "/krɒp/",
+   "nghia": "vụ, mùa"
+  },
+  {
+   "unit": 2,
+   "tu": "cultivate",
+   "loai": "v",
+   "am": "/ˈkʌltɪveɪt/",
+   "nghia": "trồng trọt"
+  },
+  {
+   "unit": 2,
+   "tu": "dry",
+   "loai": "v",
+   "am": "/draɪ/",
+   "nghia": "phơi khô, sấy khô"
+  },
+  {
+   "unit": 2,
+   "tu": "feed",
+   "loai": "v",
+   "am": "/fiːd/",
+   "nghia": "cho ăn"
+  },
+  {
+   "unit": 2,
+   "tu": "ferry",
+   "loai": "n",
+   "am": "/ˈferi/",
+   "nghia": "phà"
+  },
+  {
+   "unit": 2,
+   "tu": "harvest",
+   "loai": "n, v",
+   "am": "/ˈhɑːvɪst/",
+   "nghia": "vụ thu hoạch, vụ gặt, gặt hái, thu hoạch"
+  },
+  {
+   "unit": 2,
+   "tu": "herd",
+   "loai": "v",
+   "am": "/hɜːd/",
+   "nghia": "chăn giữ vật nuôi"
+  },
+  {
+   "unit": 2,
+   "tu": "hospitable",
+   "loai": "adj",
+   "am": "/ˈhɒspɪtəbl/, /hɒˈspɪtəbl/",
+   "nghia": "mến khách, hiếu khách"
+  },
+  {
+   "unit": 2,
+   "tu": "lighthouse",
+   "loai": "n",
+   "am": "/ˈlaɪthaʊs/",
+   "nghia": "đèn biển, hải đăng"
+  },
+  {
+   "unit": 2,
+   "tu": "load",
+   "loai": "v",
+   "am": "/ləʊd/",
+   "nghia": "chất, chở"
+  },
+  {
+   "unit": 2,
+   "tu": "milk",
+   "loai": "v",
+   "am": "/mɪlk/",
+   "nghia": "vắt sữa"
+  },
+  {
+   "unit": 2,
+   "tu": "orchard",
+   "loai": "n",
+   "am": "/ˈɔːtʃəd/",
+   "nghia": "vườn cây ăn quả"
+  },
+  {
+   "unit": 2,
+   "tu": "paddy field",
+   "loai": "n",
+   "am": "/ˈpædi fiːld/",
+   "nghia": "ruộng lúa"
+  },
+  {
+   "unit": 2,
+   "tu": "picturesque",
+   "loai": "adj",
+   "am": "/ˌpɪktʃəˈresk/",
+   "nghia": "đẹp, hấp dẫn (phong cảnh)"
+  },
+  {
+   "unit": 2,
+   "tu": "plough",
+   "loai": "v",
+   "am": "/plaʊ/",
+   "nghia": "cày (thửa ruộng)"
+  },
+  {
+   "unit": 2,
+   "tu": "stretch",
+   "loai": "v",
+   "am": "/stretʃ/",
+   "nghia": "kéo dài ra"
+  },
+  {
+   "unit": 2,
+   "tu": "unload",
+   "loai": "v",
+   "am": "/ˌʌnˈləʊd/",
+   "nghia": "dỡ hàng"
+  },
+  {
+   "unit": 2,
+   "tu": "vast",
+   "loai": "adj",
+   "am": "/vɑːst/",
+   "nghia": "rộng lớn, mênh mông, bao la"
+  },
+  {
+   "unit": 2,
+   "tu": "well-trained",
+   "loai": "adj",
+   "am": "/ˌwel ˈtreɪnd/",
+   "nghia": "lành nghề, có tay nghề"
+  },
+  {
+   "unit": 3,
+   "tu": "account",
+   "loai": "n",
+   "am": "/əˈkaʊnt/",
+   "nghia": "tài khoản (ngân hàng, mạng xã hội ...)"
+  },
+  {
+   "unit": 3,
+   "tu": "browse",
+   "loai": "v",
+   "am": "/braʊz/",
+   "nghia": "đọc lướt, tìm (trên mạng)"
+  },
+  {
+   "unit": 3,
+   "tu": "bully",
+   "loai": "n",
+   "am": "/ˈbʊli/",
+   "nghia": "người bắt nạt"
+  },
+  {
+   "unit": 3,
+   "tu": "bullying",
+   "loai": "n",
+   "am": "/ˈbʊliɪŋ/",
+   "nghia": "sự bắt nạt"
+  },
+  {
+   "unit": 3,
+   "tu": "concentrate",
+   "loai": "v",
+   "am": "/ˈkɒnsntreɪt/",
+   "nghia": "tập trung (vào)"
+  },
+  {
+   "unit": 3,
+   "tu": "connect",
+   "loai": "v",
+   "am": "/kəˈnekt/",
+   "nghia": "kết nối"
+  },
+  {
+   "unit": 3,
+   "tu": "craft",
+   "loai": "n",
+   "am": "/krɑːft/",
+   "nghia": "(nghề, đồ, kĩ nghệ) thủ công"
+  },
+  {
+   "unit": 3,
+   "tu": "enjoyable",
+   "loai": "adj",
+   "am": "/ɪnˈdʒɔɪəbl/",
+   "nghia": "thú vị, gây hứng thú"
+  },
+  {
+   "unit": 3,
+   "tu": "expectation",
+   "loai": "n",
+   "am": "/ˌekspekˈteɪʃn/",
+   "nghia": "sự mong chờ, kì vọng"
+  },
+  {
+   "unit": 3,
+   "tu": "focused",
+   "loai": "adj",
+   "am": "/ˈfəʊkəst/",
+   "nghia": "chuyên tâm, tập trung"
+  },
+  {
+   "unit": 3,
+   "tu": "forum",
+   "loai": "n",
+   "am": "/ˈfɔːrəm/",
+   "nghia": "diễn đàn"
+  },
+  {
+   "unit": 3,
+   "tu": "log (on to)",
+   "loai": "v",
+   "am": "/lɒɡ (ɒn tuː)/",
+   "nghia": "đăng nhập"
+  },
+  {
+   "unit": 3,
+   "tu": "mature",
+   "loai": "adj",
+   "am": "/məˈtʃʊə/",
+   "nghia": "chín chắn, trưởng thành"
+  },
+  {
+   "unit": 3,
+   "tu": "media",
+   "loai": "n",
+   "am": "/ˈmiːdiə/",
+   "nghia": "(phương tiện) truyền thông"
+  },
+  {
+   "unit": 3,
+   "tu": "midterm",
+   "loai": "adj",
+   "am": "/ˌmɪdˈtɜːm/",
+   "nghia": "giữa kì"
+  },
+  {
+   "unit": 3,
+   "tu": "notification",
+   "loai": "n",
+   "am": "/ˌnəʊtɪfɪˈkeɪʃn/",
+   "nghia": "sự thông báo"
+  },
+  {
+   "unit": 3,
+   "tu": "peer",
+   "loai": "n",
+   "am": "/pɪə/",
+   "nghia": "người ngang hàng, bạn đồng lứa"
+  },
+  {
+   "unit": 3,
+   "tu": "pressure",
+   "loai": "n",
+   "am": "/ˈpreʃə/",
+   "nghia": "áp lực"
+  },
+  {
+   "unit": 3,
+   "tu": "schoolwork",
+   "loai": "n",
+   "am": "/ˈskuːlwɜːk/",
+   "nghia": "bài làm trên lớp"
+  },
+  {
+   "unit": 3,
+   "tu": "session",
+   "loai": "n",
+   "am": "/ˈseʃn/",
+   "nghia": "tiết học"
+  },
+  {
+   "unit": 3,
+   "tu": "stress",
+   "loai": "n",
+   "am": "/stres/",
+   "nghia": "căng thẳng"
+  },
+  {
+   "unit": 3,
+   "tu": "stressful",
+   "loai": "adj",
+   "am": "/ˈstresfl/",
+   "nghia": "căng thẳng, tạo áp lực"
+  },
+  {
+   "unit": 3,
+   "tu": "upload",
+   "loai": "v",
+   "am": "/ˌʌpˈləʊd/",
+   "nghia": "tải lên"
+  },
+  {
+   "unit": 3,
+   "tu": "user-friendly",
+   "loai": "adj",
+   "am": "/ˌjuːzə ˈfrendli/",
+   "nghia": "thân thiện với người dùng, dễ dùng"
+  },
+  {
+   "unit": 3,
+   "tu": "website",
+   "loai": "n",
+   "am": "/ˈwebsaɪt/",
+   "nghia": "trang mạng"
+  },
+  {
+   "unit": 4,
+   "tu": "communal house",
+   "loai": "n",
+   "am": "/kəˈmjuːnl haʊs/",
+   "nghia": "nhà rông, nhà sinh hoạt cộng đồng"
+  },
+  {
+   "unit": 4,
+   "tu": "costume",
+   "loai": "n",
+   "am": "/ˈkɒstjuːm/",
+   "nghia": "trang phục"
+  },
+  {
+   "unit": 4,
+   "tu": "ethnic",
+   "loai": "adj",
+   "am": "/ˈeθnɪk/ (/gruːp/)",
+   "nghia": "(nhóm) dân tộc"
+  },
+  {
+   "unit": 4,
+   "tu": "feature",
+   "loai": "n",
+   "am": "/ˈfiːtʃə/",
+   "nghia": "nét, đặc điểm"
+  },
+  {
+   "unit": 4,
+   "tu": "flute",
+   "loai": "n",
+   "am": "/fluːt/",
+   "nghia": "cái sáo (nhạc cụ)"
+  },
+  {
+   "unit": 4,
+   "tu": "folk",
+   "loai": "adj",
+   "am": "/fəʊk/",
+   "nghia": "thuộc về dân gian, truyền thống"
+  },
+  {
+   "unit": 4,
+   "tu": "gong",
+   "loai": "n",
+   "am": "/gɒŋ/",
+   "nghia": "cái cồng, cái chiêng"
+  },
+  {
+   "unit": 4,
+   "tu": "highland",
+   "loai": "n",
+   "am": "/ˈhaɪlənd/",
+   "nghia": "vùng cao nguyên"
+  },
+  {
+   "unit": 4,
+   "tu": "livestock",
+   "loai": "n",
+   "am": "/ˈlaɪvstɒk/",
+   "nghia": "gia súc"
+  },
+  {
+   "unit": 4,
+   "tu": "minority",
+   "loai": "n",
+   "am": "/maɪˈnɒrəti/",
+   "nghia": "dân tộc thiểu số"
+  },
+  {
+   "unit": 4,
+   "tu": "overlook",
+   "loai": "v",
+   "am": "/ˌəʊvəˈlʊk/",
+   "nghia": "nhìn ra, đối diện"
+  },
+  {
+   "unit": 4,
+   "tu": "post",
+   "loai": "n",
+   "am": "/pəʊst/",
+   "nghia": "cột"
+  },
+  {
+   "unit": 4,
+   "tu": "raise",
+   "loai": "v",
+   "am": "/reɪz/",
+   "nghia": "chăn nuôi"
+  },
+  {
+   "unit": 4,
+   "tu": "soil",
+   "loai": "n",
+   "am": "/sɔɪl/",
+   "nghia": "đất trồng"
+  },
+  {
+   "unit": 4,
+   "tu": "staircase",
+   "loai": "n",
+   "am": "/ˈsteəkeɪs/",
+   "nghia": "cầu thang bộ"
+  },
+  {
+   "unit": 4,
+   "tu": "statue",
+   "loai": "n",
+   "am": "/ˈstætʃuː/",
+   "nghia": "tượng"
+  },
+  {
+   "unit": 4,
+   "tu": "stilt house",
+   "loai": "",
+   "am": "/stɪlt haʊs/",
+   "nghia": "nhà sàn"
+  },
+  {
+   "unit": 4,
+   "tu": "terraced",
+   "loai": "adj",
+   "am": "/ˈterəst/",
+   "nghia": "có hình bậc thang"
+  },
+  {
+   "unit": 4,
+   "tu": "weave",
+   "loai": "v",
+   "am": "/wiːv/",
+   "nghia": "dệt, đan, kết lại"
+  },
+  {
+   "unit": 4,
+   "tu": "wooden",
+   "loai": "adj",
+   "am": "/ˈwʊdn/",
+   "nghia": "bằng gỗ"
+  },
+  {
+   "unit": 5,
+   "tu": "acrobatics",
+   "loai": "n",
+   "am": "/ˌækrəˈbætɪks/",
+   "nghia": "xiếc, các động tác nhào lộn"
+  },
+  {
+   "unit": 5,
+   "tu": "admire",
+   "loai": "v",
+   "am": "/ədˈmaɪə/",
+   "nghia": "khâm phục, ngưỡng mộ"
+  },
+  {
+   "unit": 5,
+   "tu": "bad spirit",
+   "loai": "",
+   "am": "/bæd ˈspɪrɪt/",
+   "nghia": "điều xấu xa, tà ma"
+  },
+  {
+   "unit": 5,
+   "tu": "bamboo pole",
+   "loai": "",
+   "am": "/bæmˈbuː pəʊl/",
+   "nghia": "cây nêu"
+  },
+  {
+   "unit": 5,
+   "tu": "carp",
+   "loai": "n",
+   "am": "/kɑːp/",
+   "nghia": "con cá chép"
+  },
+  {
+   "unit": 5,
+   "tu": "coastal",
+   "loai": "adj",
+   "am": "/ˈkəʊstl/",
+   "nghia": "thuộc miền ven biển, duyên hải"
+  },
+  {
+   "unit": 5,
+   "tu": "ceremony",
+   "loai": "n",
+   "am": "/ˈserəməni/",
+   "nghia": "nghi thức, nghi lễ"
+  },
+  {
+   "unit": 5,
+   "tu": "chase away",
+   "loai": "",
+   "am": "/tʃeɪs əˈweɪ/",
+   "nghia": "xua đuổi"
+  },
+  {
+   "unit": 5,
+   "tu": "contestant",
+   "loai": "n",
+   "am": "/kənˈtestənt/",
+   "nghia": "thí sinh, người thi đấu"
+  },
+  {
+   "unit": 5,
+   "tu": "decorative",
+   "loai": "adj",
+   "am": "/ˈdekərətɪv/",
+   "nghia": "có tính trang trí, để trang trí"
+  },
+  {
+   "unit": 5,
+   "tu": "family bonding",
+   "loai": "",
+   "am": "/ˌfæməli ˈbɒndɪŋ/",
+   "nghia": "sự gắn kết tình cảm gia đình"
+  },
+  {
+   "unit": 5,
+   "tu": "family reunion",
+   "loai": "",
+   "am": "/ˌfæməli ˌriːˈjuːniən/",
+   "nghia": "cuộc sum họp gia đình"
+  },
+  {
+   "unit": 5,
+   "tu": "festival goer",
+   "loai": "",
+   "am": "/ˈfestɪvl ˌgəʊə/",
+   "nghia": "người đi xem lễ hội"
+  },
+  {
+   "unit": 5,
+   "tu": "lantern",
+   "loai": "n",
+   "am": "/ˈlæntən/",
+   "nghia": "đèn lồng"
+  },
+  {
+   "unit": 5,
+   "tu": "longevity",
+   "loai": "n",
+   "am": "/lɒnˈdʒevəti/",
+   "nghia": "sự sống lâu, tuổi thọ"
+  },
+  {
+   "unit": 5,
+   "tu": "martial arts",
+   "loai": "n",
+   "am": "/ˌmɑːʃl ˈɑːts/",
+   "nghia": "võ thuật"
+  },
+  {
+   "unit": 5,
+   "tu": "monk",
+   "loai": "n",
+   "am": "/mʌŋk/",
+   "nghia": "nhà sư"
+  },
+  {
+   "unit": 5,
+   "tu": "offering",
+   "loai": "n",
+   "am": "/ˈɒfərɪŋ/",
+   "nghia": "đồ thờ cúng"
+  },
+  {
+   "unit": 5,
+   "tu": "ornamental tree",
+   "loai": "",
+   "am": "/ˌɔːnəˈmentl triː/",
+   "nghia": "cây cảnh"
+  },
+  {
+   "unit": 5,
+   "tu": "pray",
+   "loai": "v",
+   "am": "/preɪ/",
+   "nghia": "cầu nguyện, lễ bái"
+  },
+  {
+   "unit": 5,
+   "tu": "release",
+   "loai": "v",
+   "am": "/rɪˈliːs/",
+   "nghia": "thả; thải ra, làm thoát ra"
+  },
+  {
+   "unit": 5,
+   "tu": "table manners",
+   "loai": "n",
+   "am": "/ˈteɪbl ˌmænəz/",
+   "nghia": "phép tắc ăn uống"
+  },
+  {
+   "unit": 5,
+   "tu": "worship",
+   "loai": "v",
+   "am": "/ˈwɜːʃɪp/",
+   "nghia": "thờ phụng, tôn kính, tôn sùng"
+  },
+  {
+   "unit": 5,
+   "tu": "young rice",
+   "loai": "",
+   "am": "/jʌŋ raɪs/",
+   "nghia": "cốm"
+  },
+  {
+   "unit": 6,
+   "tu": "dogsled",
+   "loai": "n",
+   "am": "/ˈdɒgsled/",
+   "nghia": "xe trượt tuyết chó kéo"
+  },
+  {
+   "unit": 6,
+   "tu": "experience",
+   "loai": "v",
+   "am": "/ɪkˈspɪəriəns/",
+   "nghia": "trải nghiệm"
+  },
+  {
+   "unit": 6,
+   "tu": "greet",
+   "loai": "v",
+   "am": "/griːt/",
+   "nghia": "chào, chào hỏi"
+  },
+  {
+   "unit": 6,
+   "tu": "greeting",
+   "loai": "n",
+   "am": "/ˈgriːtɪŋ/",
+   "nghia": "lời chào"
+  },
+  {
+   "unit": 6,
+   "tu": "habit",
+   "loai": "n",
+   "am": "/ˈhæbɪt/",
+   "nghia": "thói quen"
+  },
+  {
+   "unit": 6,
+   "tu": "in the habit of",
+   "loai": "",
+   "am": "/ɪn ðə ˈhæbɪt əv/",
+   "nghia": "có thói quen làm gì"
+  },
+  {
+   "unit": 6,
+   "tu": "hurry",
+   "loai": "n, v",
+   "am": "/ˈhʌri/",
+   "nghia": "vội vàng"
+  },
+  {
+   "unit": 6,
+   "tu": "in a hurry",
+   "loai": "",
+   "am": "/ɪn ə ˈhʌri/",
+   "nghia": "đang vội"
+  },
+  {
+   "unit": 6,
+   "tu": "igloo",
+   "loai": "n",
+   "am": "/ˈɪgluː/",
+   "nghia": "lều tuyết"
+  },
+  {
+   "unit": 6,
+   "tu": "impact",
+   "loai": "n",
+   "am": "/ˈɪmpækt/",
+   "nghia": "sự ảnh hưởng"
+  },
+  {
+   "unit": 6,
+   "tu": "independent",
+   "loai": "adj",
+   "am": "/ˌɪndɪˈpendənt/",
+   "nghia": "độc lập"
+  },
+  {
+   "unit": 6,
+   "tu": "interact",
+   "loai": "v",
+   "am": "/ˌɪntərˈækt/",
+   "nghia": "tương tác"
+  },
+  {
+   "unit": 6,
+   "tu": "interaction",
+   "loai": "n",
+   "am": "/ˌɪntərˈækʃn/",
+   "nghia": "sự tương tác"
+  },
+  {
+   "unit": 6,
+   "tu": "lifestyle",
+   "loai": "n",
+   "am": "/ˈlaɪfstaɪl/",
+   "nghia": "lối sống"
+  },
+  {
+   "unit": 6,
+   "tu": "make craft",
+   "loai": "",
+   "am": "/meɪk krɑːft/",
+   "nghia": "làm hàng thủ công"
+  },
+  {
+   "unit": 6,
+   "tu": "maintain",
+   "loai": "v",
+   "am": "/meɪnˈteɪn/",
+   "nghia": "duy trì, gìn giữ"
+  },
+  {
+   "unit": 6,
+   "tu": "musher",
+   "loai": "n",
+   "am": "/ˈmʌʃə/",
+   "nghia": "người điều khiển xe trượt tuyết chó kéo"
+  },
+  {
+   "unit": 6,
+   "tu": "nomadic",
+   "loai": "adj",
+   "am": "/nəʊˈmædɪk/",
+   "nghia": "du mục"
+  },
+  {
+   "unit": 6,
+   "tu": "offline",
+   "loai": "adj, adv",
+   "am": "/ˌɒfˈlaɪn/",
+   "nghia": "trực tiếp"
+  },
+  {
+   "unit": 6,
+   "tu": "online",
+   "loai": "adj, adv",
+   "am": "/ˌɒnˈlaɪn/",
+   "nghia": "trực tuyến"
+  },
+  {
+   "unit": 6,
+   "tu": "online learning",
+   "loai": "",
+   "am": "/ˌɒnˈlaɪn ˈlɜːnɪŋ/",
+   "nghia": "việc học trực tuyến"
+  },
+  {
+   "unit": 6,
+   "tu": "revive",
+   "loai": "v",
+   "am": "/rɪˈlaɪv/",
+   "nghia": "làm sống lại, hồi sinh"
+  },
+  {
+   "unit": 6,
+   "tu": "serve",
+   "loai": "v",
+   "am": "/sɜːv/",
+   "nghia": "phục vụ"
+  },
+  {
+   "unit": 6,
+   "tu": "staple",
+   "loai": "adj",
+   "am": "/ˈsteɪpl/",
+   "nghia": "cơ bản, chủ yếu"
+  },
+  {
+   "unit": 6,
+   "tu": "street food",
+   "loai": "n",
+   "am": "/ˈstriːt fuːd/",
+   "nghia": "thức ăn đường phố"
+  },
+  {
+   "unit": 6,
+   "tu": "tribal",
+   "loai": "adj",
+   "am": "/ˈtraɪbl/",
+   "nghia": "thuộc bộ tộc, thành bộ lạc"
+  },
+  {
+   "unit": 7,
+   "tu": "carbon dioxide",
+   "loai": "n",
+   "am": "/ˌkɑːbən daɪˈɒksaɪd/",
+   "nghia": "đi ô xít các bon"
+  },
+  {
+   "unit": 7,
+   "tu": "carbon footprint",
+   "loai": "n",
+   "am": "/ˌkɑːbən ˈfʊtprint/",
+   "nghia": "dấu chân các bon"
+  },
+  {
+   "unit": 7,
+   "tu": "coral",
+   "loai": "n",
+   "am": "/ˈkɒrəl/",
+   "nghia": "san hô"
+  },
+  {
+   "unit": 7,
+   "tu": "dugong",
+   "loai": "n",
+   "am": "/ˈduːgɒŋ/",
+   "nghia": "con cá cúi, bò biển"
+  },
+  {
+   "unit": 7,
+   "tu": "ecosystem",
+   "loai": "n",
+   "am": "/ˈiːkəʊsɪstəm/",
+   "nghia": "hệ sinh thái"
+  },
+  {
+   "unit": 7,
+   "tu": "endangered species",
+   "loai": "",
+   "am": "/ɪnˈdeɪndʒəd ˈspiːʃiːz/",
+   "nghia": "các loài động thực vật có nguy cơ bị tuyệt chủng"
+  },
+  {
+   "unit": 7,
+   "tu": "extinction",
+   "loai": "n",
+   "am": "/ɪkˈstɪŋkʃn/",
+   "nghia": "sự tuyệt chủng, tuyệt diệt"
+  },
+  {
+   "unit": 7,
+   "tu": "habitat",
+   "loai": "n",
+   "am": "/ˈhæbɪtæt/",
+   "nghia": "môi trường sống"
+  },
+  {
+   "unit": 7,
+   "tu": "oxygen",
+   "loai": "n",
+   "am": "/ˈɒksɪdʒən/",
+   "nghia": "khí ô-xi"
+  },
+  {
+   "unit": 7,
+   "tu": "participate",
+   "loai": "v",
+   "am": "/pɑːˈtɪsɪpeɪt/",
+   "nghia": "tham gia"
+  },
+  {
+   "unit": 7,
+   "tu": "product",
+   "loai": "n",
+   "am": "/ˈprɒdʌkt/",
+   "nghia": "sản phẩm"
+  },
+  {
+   "unit": 7,
+   "tu": "protect",
+   "loai": "v",
+   "am": "/prəˈtekt/",
+   "nghia": "bảo vệ"
+  },
+  {
+   "unit": 7,
+   "tu": "resident",
+   "loai": "n",
+   "am": "/ˈrezɪdənt/",
+   "nghia": "người dân, dân cư"
+  },
+  {
+   "unit": 7,
+   "tu": "single-use",
+   "loai": "adj",
+   "am": "/ˌsɪŋɡl ˈjuːs/",
+   "nghia": "để sử dụng một lần"
+  },
+  {
+   "unit": 7,
+   "tu": "species",
+   "loai": "n",
+   "am": "/ˈspiːʃiːz/",
+   "nghia": "giống, loài động thực vật"
+  },
+  {
+   "unit": 7,
+   "tu": "substance",
+   "loai": "n",
+   "am": "/ˈsʌbstəns/",
+   "nghia": "chất"
+  },
+  {
+   "unit": 7,
+   "tu": "toxic",
+   "loai": "adj",
+   "am": "/ˈtɒksɪk/",
+   "nghia": "độc hại"
+  },
+  {
+   "unit": 8,
+   "tu": "access",
+   "loai": "n",
+   "am": "/ˈækses/",
+   "nghia": "nguồn để tiếp cận, truy cập vào"
+  },
+  {
+   "unit": 8,
+   "tu": "addicted",
+   "loai": "adj",
+   "am": "/əˈdɪktɪd/",
+   "nghia": "say mê, nghiện"
+  },
+  {
+   "unit": 8,
+   "tu": "advertisement",
+   "loai": "n",
+   "am": "/ədˈvɜːtɪsmənt/",
+   "nghia": "quảng cáo"
+  },
+  {
+   "unit": 8,
+   "tu": "bargain",
+   "loai": "v",
+   "am": "/ˈbɑːɡən/",
+   "nghia": "mặc cả"
+  },
+  {
+   "unit": 8,
+   "tu": "complaint",
+   "loai": "n",
+   "am": "/kəmˈpleɪnt/",
+   "nghia": "lời phàn nàn / khiếu nại"
+  },
+  {
+   "unit": 8,
+   "tu": "convenience store",
+   "loai": "",
+   "am": "/kənˈviːniəns stɔː/",
+   "nghia": "cửa hàng tiện ích"
+  },
+  {
+   "unit": 8,
+   "tu": "customer",
+   "loai": "n",
+   "am": "/ˈkʌstəmə/",
+   "nghia": "khách hàng"
+  },
+  {
+   "unit": 8,
+   "tu": "discount shop",
+   "loai": "",
+   "am": "/ˈdɪskaʊnt ʃɒp/",
+   "nghia": "cửa hàng hạ giá"
+  },
+  {
+   "unit": 8,
+   "tu": "display",
+   "loai": "n, v",
+   "am": "/dɪˈspleɪ/",
+   "nghia": "sự trưng bày, bày biện, trưng bày"
+  },
+  {
+   "unit": 8,
+   "tu": "dollar store",
+   "loai": "",
+   "am": "/ˈdɒlə stɔː/",
+   "nghia": "cửa hàng đồng giá (một đô la)"
+  },
+  {
+   "unit": 8,
+   "tu": "fair",
+   "loai": "n",
+   "am": "/feə/",
+   "nghia": "hội chợ"
+  },
+  {
+   "unit": 8,
+   "tu": "farmers' market",
+   "loai": "n",
+   "am": "/ˈfɑːməz mɑːkɪt/",
+   "nghia": "chợ nông sản"
+  },
+  {
+   "unit": 8,
+   "tu": "goods",
+   "loai": "n",
+   "am": "/ɡʊdz/",
+   "nghia": "hàng hoá"
+  },
+  {
+   "unit": 8,
+   "tu": "home-grown",
+   "loai": "adj",
+   "am": "/ˌhəʊm ˈɡrəʊn/",
+   "nghia": "tự trồng"
+  },
+  {
+   "unit": 8,
+   "tu": "home-made",
+   "loai": "adj",
+   "am": "/ˌhəʊm ˈmeɪd/",
+   "nghia": "tự làm"
+  },
+  {
+   "unit": 8,
+   "tu": "item",
+   "loai": "n",
+   "am": "/ˈaɪtəm/",
+   "nghia": "một món hàng"
+  },
+  {
+   "unit": 8,
+   "tu": "on sale",
+   "loai": "",
+   "am": "/ɒn seɪl/",
+   "nghia": "đang (được bán) hạ giá"
+  },
+  {
+   "unit": 8,
+   "tu": "open-air market",
+   "loai": "",
+   "am": "/ˌəʊpən ˈeə ˈmɑːkɪt/",
+   "nghia": "chợ họp ngoài trời"
+  },
+  {
+   "unit": 8,
+   "tu": "price tag",
+   "loai": "n",
+   "am": "/ˈpraɪs tæɡ/",
+   "nghia": "nhãn ghi giá một mặt hàng"
+  },
+  {
+   "unit": 8,
+   "tu": "schedule",
+   "loai": "n",
+   "am": "/ˈʃedjuːl/",
+   "nghia": "lịch trình, thời gian biểu"
+  },
+  {
+   "unit": 8,
+   "tu": "shopaholic",
+   "loai": "n",
+   "am": "/ʃɒpəˈhɒlɪk/",
+   "nghia": "người nghiện mua sắm"
+  },
+  {
+   "unit": 8,
+   "tu": "shopping",
+   "loai": "n",
+   "am": "/ˈʃɒpɪŋ/",
+   "nghia": "việc mua sắm"
+  },
+  {
+   "unit": 8,
+   "tu": "shopping centre",
+   "loai": "n",
+   "am": "/ˈʃɒpɪŋ sentə/",
+   "nghia": "trung tâm mua sắm"
+  },
+  {
+   "unit": 8,
+   "tu": "shopping list",
+   "loai": "n",
+   "am": "/ˈʃɒpɪŋ lɪst/",
+   "nghia": "danh sách những thứ cần mua"
+  },
+  {
+   "unit": 8,
+   "tu": "speciality shop",
+   "loai": "",
+   "am": "/ˌspeʃiˈæləti ʃɒp/",
+   "nghia": "cửa hàng bán đồ chuyên dụng"
+  },
+  {
+   "unit": 9,
+   "tu": "authority",
+   "loai": "n",
+   "am": "/ɔːˈθɒrəti/",
+   "nghia": "chính quyền"
+  },
+  {
+   "unit": 9,
+   "tu": "damage",
+   "loai": "n, v",
+   "am": "/ˈdæmɪdʒ/",
+   "nghia": "thiệt hại, gây tổn hại"
+  },
+  {
+   "unit": 9,
+   "tu": "destroy",
+   "loai": "v",
+   "am": "/dɪˈstrɔɪ/",
+   "nghia": "phá huỷ"
+  },
+  {
+   "unit": 9,
+   "tu": "disaster",
+   "loai": "n",
+   "am": "/dɪˈzɑːstə/",
+   "nghia": "thảm hoạ"
+  },
+  {
+   "unit": 9,
+   "tu": "earthquake",
+   "loai": "n",
+   "am": "/ˈɜːθkweɪk/",
+   "nghia": "trận động đất"
+  },
+  {
+   "unit": 9,
+   "tu": "emergency kit",
+   "loai": "",
+   "am": "/ɪˈmɜːdʒənsi kɪt/",
+   "nghia": "bộ dụng cụ dùng trong trường hợp khẩn cấp"
+  },
+  {
+   "unit": 9,
+   "tu": "erupt",
+   "loai": "v",
+   "am": "/ɪˈrʌpt/",
+   "nghia": "phun trào"
+  },
+  {
+   "unit": 9,
+   "tu": "Fahrenheit scale",
+   "loai": "",
+   "am": "/ˈfærənhaɪt skeɪl/",
+   "nghia": "thang nhiệt độ Fahrenheit"
+  },
+  {
+   "unit": 9,
+   "tu": "funnel",
+   "loai": "n",
+   "am": "/ˈfʌnl/",
+   "nghia": "cái phễu"
+  },
+  {
+   "unit": 9,
+   "tu": "landslide",
+   "loai": "n",
+   "am": "/ˈlændslaɪd/",
+   "nghia": "vụ sạt lở"
+  },
+  {
+   "unit": 9,
+   "tu": "liquid",
+   "loai": "adj",
+   "am": "/ˈlɪkwɪd/",
+   "nghia": "lỏng"
+  },
+  {
+   "unit": 9,
+   "tu": "predict",
+   "loai": "v",
+   "am": "/prɪˈdɪkt/",
+   "nghia": "dự đoán"
+  },
+  {
+   "unit": 9,
+   "tu": "pretty",
+   "loai": "adv",
+   "am": "/ˈprɪti/",
+   "nghia": "khá là"
+  },
+  {
+   "unit": 9,
+   "tu": "property",
+   "loai": "n",
+   "am": "/ˈprɒpəti/",
+   "nghia": "của cải, nhà cửa"
+  },
+  {
+   "unit": 9,
+   "tu": "pull up",
+   "loai": "",
+   "am": "/pʊl ʌp/",
+   "nghia": "kéo lên, nhổ lên, lôi lên"
+  },
+  {
+   "unit": 9,
+   "tu": "rescue worker",
+   "loai": "n",
+   "am": "/ˈreskjuː wɜːkə/",
+   "nghia": "nhân viên cứu hộ"
+  },
+  {
+   "unit": 9,
+   "tu": "Richter scale",
+   "loai": "n",
+   "am": "/ˈrɪktə skeɪl/",
+   "nghia": "độ rích te (đo độ mạnh của động đất)"
+  },
+  {
+   "unit": 9,
+   "tu": "shake",
+   "loai": "v",
+   "am": "/ʃeɪk/",
+   "nghia": "rung, lắc"
+  },
+  {
+   "unit": 9,
+   "tu": "storm",
+   "loai": "n",
+   "am": "/stɔːm/",
+   "nghia": "bão"
+  },
+  {
+   "unit": 9,
+   "tu": "suddenly",
+   "loai": "adv",
+   "am": "/ˈsʌdənli/",
+   "nghia": "đột nhiên, bỗng nhiên"
+  },
+  {
+   "unit": 9,
+   "tu": "tornado",
+   "loai": "n",
+   "am": "/tɔːˈneɪdəʊ/",
+   "nghia": "lốc xoáy"
+  },
+  {
+   "unit": 9,
+   "tu": "tremble",
+   "loai": "v",
+   "am": "/ˈtrembl/",
+   "nghia": "rung lắc"
+  },
+  {
+   "unit": 9,
+   "tu": "tsunami",
+   "loai": "n",
+   "am": "/tsuːˈnɑːmi/",
+   "nghia": "trận sóng thần"
+  },
+  {
+   "unit": 9,
+   "tu": "victim",
+   "loai": "n",
+   "am": "/ˈvɪktɪm/",
+   "nghia": "nạn nhân"
+  },
+  {
+   "unit": 9,
+   "tu": "volcanic",
+   "loai": "adj",
+   "am": "/vɒlˈkænɪk/",
+   "nghia": "thuộc / gây ra bởi núi lửa"
+  },
+  {
+   "unit": 9,
+   "tu": "wam",
+   "loai": "v",
+   "am": "/wɔːn/",
+   "nghia": "cảnh báo"
+  },
+  {
+   "unit": 10,
+   "tu": "advanced",
+   "loai": "adj",
+   "am": "/ədˈvɑːnst/",
+   "nghia": "tiên tiến"
+  },
+  {
+   "unit": 10,
+   "tu": "carrier pigeon",
+   "loai": "n",
+   "am": "/ˈkæriə pɪdʒɪn/",
+   "nghia": "bồ câu đưa thư"
+  },
+  {
+   "unit": 10,
+   "tu": "charge",
+   "loai": "v",
+   "am": "/tʃɑːdʒ/",
+   "nghia": "nạp, sạc (pin)"
+  },
+  {
+   "unit": 10,
+   "tu": "emoji",
+   "loai": "n",
+   "am": "/ɪˈməʊdʒi/",
+   "nghia": "biểu tượng cảm xúc"
+  },
+  {
+   "unit": 10,
+   "tu": "holography",
+   "loai": "n",
+   "am": "/hɒˈlɒɡrəfi/",
+   "nghia": "hình thức giao tiếp bằng ảnh không gian ba chiều"
+  },
+  {
+   "unit": 10,
+   "tu": "instantly",
+   "loai": "adv",
+   "am": "/ˈɪnstəntli/",
+   "nghia": "ngay lập tức"
+  },
+  {
+   "unit": 10,
+   "tu": "Internet connection",
+   "loai": "",
+   "am": "/ˈɪntənet kəˈnekʃn/",
+   "nghia": "kết nối mạng"
+  },
+  {
+   "unit": 10,
+   "tu": "language barrier",
+   "loai": "",
+   "am": "/ˈlæŋɡwɪdʒ ˈbæriə/",
+   "nghia": "rào cản ngôn ngữ"
+  },
+  {
+   "unit": 10,
+   "tu": "live",
+   "loai": "adj",
+   "am": "/laɪv/",
+   "nghia": "(phát sóng, truyền hình) trực tiếp"
+  },
+  {
+   "unit": 10,
+   "tu": "smartphone",
+   "loai": "n",
+   "am": "/ˈsmɑːtfəʊn/",
+   "nghia": "điện thoại thông minh"
+  },
+  {
+   "unit": 10,
+   "tu": "social network",
+   "loai": "n",
+   "am": "/ˌsəʊʃl ˈnetwɜːk/",
+   "nghia": "mạng xã hội"
+  },
+  {
+   "unit": 10,
+   "tu": "tablet",
+   "loai": "n",
+   "am": "/ˈtæblət/",
+   "nghia": "máy tính bảng"
+  },
+  {
+   "unit": 10,
+   "tu": "telepathy",
+   "loai": "n",
+   "am": "/təˈlepəθi/",
+   "nghia": "hình thức giao tiếp bằng ý nghĩ, thần giao cách cảm"
+  },
+  {
+   "unit": 10,
+   "tu": "text",
+   "loai": "v, n",
+   "am": "/tekst/",
+   "nghia": "nhắn tin, văn bản"
+  },
+  {
+   "unit": 10,
+   "tu": "thought",
+   "loai": "n",
+   "am": "/θɔːt/",
+   "nghia": "ý nghĩ"
+  },
+  {
+   "unit": 10,
+   "tu": "translation machine",
+   "loai": "",
+   "am": "/trænzˈleɪʃn məˈʃiːn/",
+   "nghia": "máy dịch thuật"
+  },
+  {
+   "unit": 10,
+   "tu": "transmit",
+   "loai": "v",
+   "am": "/trænzˈmɪt/",
+   "nghia": "truyền, chuyển giao"
+  },
+  {
+   "unit": 10,
+   "tu": "video conference",
+   "loai": "",
+   "am": "/ˈvɪdiəʊ ˌkɒnfərəns/",
+   "nghia": "cuộc họp trực tuyến"
+  },
+  {
+   "unit": 10,
+   "tu": "voice message",
+   "loai": "",
+   "am": "/ˈvɔɪs mesɪdʒ/",
+   "nghia": "tin nhắn thoại"
+  },
+  {
+   "unit": 10,
+   "tu": "webcam",
+   "loai": "n",
+   "am": "/ˈwebkæm/",
+   "nghia": "thiết bị ghi / truyền hình ảnh"
+  },
+  {
+   "unit": 10,
+   "tu": "zoom (in / out)",
+   "loai": "v",
+   "am": "/zuːm (ɪn/ aʊt)/",
+   "nghia": "phóng (to), thu (nhỏ)"
+  },
+  {
+   "unit": 11,
+   "tu": "application",
+   "loai": "n",
+   "am": "/ˌæplɪˈkeɪʃn/",
+   "nghia": "ứng dụng"
+  },
+  {
+   "unit": 11,
+   "tu": "attendance",
+   "loai": "n",
+   "am": "/əˈtendəns/",
+   "nghia": "sự có mặt, sĩ số"
+  },
+  {
+   "unit": 11,
+   "tu": "biometric",
+   "loai": "adj",
+   "am": "/ˌbaɪəʊˈmetrɪk/",
+   "nghia": "thuộc về sinh trắc"
+  },
+  {
+   "unit": 11,
+   "tu": "breakout room",
+   "loai": "n",
+   "am": "/ˈbreɪkaʊt ruːm/",
+   "nghia": "phòng học chia nhỏ, chia nhóm"
+  },
+  {
+   "unit": 11,
+   "tu": "cheating",
+   "loai": "n",
+   "am": "/ˈtʃiːtɪŋ/",
+   "nghia": "sự lừa dối, gian dối, gian lận"
+  },
+  {
+   "unit": 11,
+   "tu": "complain",
+   "loai": "v",
+   "am": "/kəmˈpleɪn/",
+   "nghia": "phàn nàn, khiếu nại"
+  },
+  {
+   "unit": 11,
+   "tu": "contact lens",
+   "loai": "n",
+   "am": "/ˈkɒntækt lenz/",
+   "nghia": "kính áp tròng"
+  },
+  {
+   "unit": 11,
+   "tu": "convenient",
+   "loai": "adj",
+   "am": "/kənˈviːniənt/",
+   "nghia": "thuận tiện, tiện lợi"
+  },
+  {
+   "unit": 11,
+   "tu": "develop",
+   "loai": "v",
+   "am": "/dɪˈveləp/",
+   "nghia": "phát triển, khai triển"
+  },
+  {
+   "unit": 11,
+   "tu": "digital",
+   "loai": "adj",
+   "am": "/ˈdɪdʒɪtl/",
+   "nghia": "số, kĩ thuật số"
+  },
+  {
+   "unit": 11,
+   "tu": "discover",
+   "loai": "v",
+   "am": "/dɪˈskʌvə/",
+   "nghia": "phát hiện, khám phá"
+  },
+  {
+   "unit": 11,
+   "tu": "epidemic",
+   "loai": "n",
+   "am": "/ˌepɪˈdemɪk/",
+   "nghia": "dịch bệnh"
+  },
+  {
+   "unit": 11,
+   "tu": "experiment",
+   "loai": "n",
+   "am": "/ɪkˈsperɪmənt/",
+   "nghia": "thí nghiệm"
+  },
+  {
+   "unit": 11,
+   "tu": "eye-tracking",
+   "loai": "",
+   "am": "/ˈaɪ ˌtrækɪŋ/",
+   "nghia": "theo dõi (cử động) mắt"
+  },
+  {
+   "unit": 11,
+   "tu": "face-to-face",
+   "loai": "adj",
+   "am": "/ˌfeɪs tə ˈfeɪs/",
+   "nghia": "trực tiếp, mặt đối mặt"
+  },
+  {
+   "unit": 11,
+   "tu": "feedback",
+   "loai": "n",
+   "am": "/ˈfiːdbæk/",
+   "nghia": "(ý kiến) phản hồi, hồi đáp"
+  },
+  {
+   "unit": 11,
+   "tu": "fingerprint",
+   "loai": "n",
+   "am": "/ˈfɪŋɡəprɪnt/",
+   "nghia": "(dấu) vân tay"
+  },
+  {
+   "unit": 11,
+   "tu": "invent",
+   "loai": "v",
+   "am": "/ɪnˈvent/",
+   "nghia": "phát minh"
+  },
+  {
+   "unit": 11,
+   "tu": "invention",
+   "loai": "n",
+   "am": "/ɪnˈvenʃn/",
+   "nghia": "sự phát minh, sáng chế"
+  },
+  {
+   "unit": 11,
+   "tu": "mark",
+   "loai": "v",
+   "am": "/mɑːk/",
+   "nghia": "chấm điểm"
+  },
+  {
+   "unit": 11,
+   "tu": "platform",
+   "loai": "n",
+   "am": "/ˈplætfɔːm/",
+   "nghia": "nền tảng"
+  },
+  {
+   "unit": 11,
+   "tu": "recognition",
+   "loai": "n",
+   "am": "/ˌrekəɡˈnɪʃn/",
+   "nghia": "sự nhận biết, sự công nhận"
+  },
+  {
+   "unit": 11,
+   "tu": "scanner",
+   "loai": "n",
+   "am": "/ˈskænə/",
+   "nghia": "máy quét"
+  },
+  {
+   "unit": 11,
+   "tu": "science",
+   "loai": "n",
+   "am": "/ˈsaɪəns/",
+   "nghia": "khoa học"
+  },
+  {
+   "unit": 11,
+   "tu": "screen",
+   "loai": "n",
+   "am": "/skriːn/",
+   "nghia": "màn hình, màn chiếu"
+  },
+  {
+   "unit": 11,
+   "tu": "solution",
+   "loai": "n",
+   "am": "/səˈluːʃn/",
+   "nghia": "giải pháp, đáp án"
+  },
+  {
+   "unit": 11,
+   "tu": "technology",
+   "loai": "n",
+   "am": "/tekˈnɒlədʒi/",
+   "nghia": "công nghệ"
+  },
+  {
+   "unit": 11,
+   "tu": "truancy",
+   "loai": "n",
+   "am": "/ˈtruːənsi/",
+   "nghia": "trốn học, nghỉ học không phép"
+  },
+  {
+   "unit": 12,
+   "tu": "alien",
+   "loai": "n",
+   "am": "/ˈeɪliən/",
+   "nghia": "người ngoài hành tinh"
+  },
+  {
+   "unit": 12,
+   "tu": "commander",
+   "loai": "n",
+   "am": "/kəˈmɑːndə/",
+   "nghia": "người chỉ huy, người cầm đầu"
+  },
+  {
+   "unit": 12,
+   "tu": "crater",
+   "loai": "n",
+   "am": "/ˈkreɪtə/",
+   "nghia": "miệng núi lửa"
+  },
+  {
+   "unit": 12,
+   "tu": "creature",
+   "loai": "n",
+   "am": "/ˈkriːtʃə/",
+   "nghia": "sinh vật, loài vật"
+  },
+  {
+   "unit": 12,
+   "tu": "galaxy",
+   "loai": "n",
+   "am": "/ˈɡæləksi/",
+   "nghia": "thiên hà"
+  },
+  {
+   "unit": 12,
+   "tu": "gravity",
+   "loai": "n",
+   "am": "/ˈɡrævəti/",
+   "nghia": "trọng lực, lực hút trái đất"
+  },
+  {
+   "unit": 12,
+   "tu": "habitable",
+   "loai": "adj",
+   "am": "/ˈhæbɪtəbl/",
+   "nghia": "có thể ở được, phù hợp để ở"
+  },
+  {
+   "unit": 12,
+   "tu": "Jupiter",
+   "loai": "n",
+   "am": "/ˈdʒuːpɪtə/",
+   "nghia": "Mộc tinh"
+  },
+  {
+   "unit": 12,
+   "tu": "Mars",
+   "loai": "n",
+   "am": "/mɑːz/",
+   "nghia": "Hoả tinh"
+  },
+  {
+   "unit": 12,
+   "tu": "Mercury",
+   "loai": "n",
+   "am": "/ˈmɜːkjəri/",
+   "nghia": "Thuỷ tinh"
+  },
+  {
+   "unit": 12,
+   "tu": "Neptune",
+   "loai": "n",
+   "am": "/ˈneptjuːn/",
+   "nghia": "Hải Vương tinh"
+  },
+  {
+   "unit": 12,
+   "tu": "oppose",
+   "loai": "v",
+   "am": "/əˈpəʊz/",
+   "nghia": "chiến đấu, đánh lại ai"
+  },
+  {
+   "unit": 12,
+   "tu": "possibility",
+   "loai": "n",
+   "am": "/ˌpɒsəˈbɪləti/",
+   "nghia": "khả năng, sự có thể"
+  },
+  {
+   "unit": 12,
+   "tu": "promising",
+   "loai": "adj",
+   "am": "/ˈprɒmɪsɪŋ/",
+   "nghia": "đầy hứa hẹn, nhiều triển vọng"
+  },
+  {
+   "unit": 12,
+   "tu": "rocket",
+   "loai": "n",
+   "am": "/ˈrɒkɪt/",
+   "nghia": "tàu vũ trụ con thoi"
+  },
+  {
+   "unit": 12,
+   "tu": "Saturn",
+   "loai": "n",
+   "am": "/ˈsætən/, /ˈsætɜːn/",
+   "nghia": "Thổ tinh"
+  },
+  {
+   "unit": 12,
+   "tu": "telescope",
+   "loai": "n",
+   "am": "/ˈtelɪskəʊp/",
+   "nghia": "kính thiên văn"
+  },
+  {
+   "unit": 12,
+   "tu": "trace",
+   "loai": "n",
+   "am": "/treɪs/",
+   "nghia": "dấu vết, vết tích, dấu hiệu"
+  },
+  {
+   "unit": 12,
+   "tu": "UFO",
+   "loai": "n",
+   "am": "/ˈjuːfəʊ/, /ˌjuː ef ˈəʊ/",
+   "nghia": "vật thể bay không xác định"
+  },
+  {
+   "unit": 12,
+   "tu": "Uranus",
+   "loai": "n",
+   "am": "/ˈjʊərənəs/",
+   "nghia": "Thiên Vương tinh"
+  },
+  {
+   "unit": 12,
+   "tu": "Venus",
+   "loai": "n",
+   "am": "/ˈviːnəs/",
+   "nghia": "Kim tinh"
+  }
+ ]
+}

@@ -29,6 +29,7 @@ import vn.huytl.homeworkgate.R
 import vn.huytl.homeworkgate.data.CaptureStage
 import vn.huytl.homeworkgate.data.DayLog
 import vn.huytl.homeworkgate.data.Prefs
+import vn.huytl.homeworkgate.data.VoDanDo
 import vn.huytl.homeworkgate.databinding.ActivityCaptureBinding
 import vn.huytl.homeworkgate.telegram.CapSachSender
 import vn.huytl.homeworkgate.kho.PhamVi
@@ -74,7 +75,11 @@ class CaptureActivity : AppCompatActivity() {
     private val soanTap: Boolean get() = maBuoiSoan != null
 
     /**
-     * Che do chup de hoi bai trong khung chat.
+     * Che do chup hinh gui kem tin nhan trong khung chat.
+     *
+     * KHONG DOAN CON CHUP CAI GI. Cho nay tung ghi "chup cho khong hieu de hoi bai",
+     * ma con co the chup cai vo quen o lop, cai may sap het pin, con meo - man hinh
+     * doan sai mot cai la con tuong minh dang bam nham nut.
      *
      * Khong gui di dau ca: chup xong tra duong dan ve cho [ChatActivity], ben do moi
      * quyet dinh gui. Dung chung man chup vi phan camera - xin quyen, mo CameraX,
@@ -83,8 +88,45 @@ class CaptureActivity : AppCompatActivity() {
      */
     private val chupChat: Boolean by lazy { intent.getBooleanExtra(EXTRA_CHAT, false) }
 
-    /** Ba che do rut gon deu chi co mot xap anh, khong co ba buoc. */
-    private val motXap: Boolean get() = suaBai || soanTap || chupChat
+    /**
+     * Che do chup trang vo dan do, goi tu [DanDoActivity].
+     *
+     * Giong [chupChat] o cho khong gui di dau ca: chup xong tra duong dan ve cho man
+     * goi, ben do moi dua cho may doc. Khac o cho tam anh nay se di vao viec tinh
+     * gio, nen van giu khung ngam de con chup thang tu tren xuong.
+     */
+    private val chupDanDo: Boolean by lazy { intent.getBooleanExtra(EXTRA_DAN_DO, false) }
+
+    /** Bon che do rut gon deu chi co mot xap anh, khong co ba buoc. */
+    private val motXap: Boolean get() = suaBai || soanTap || chupChat || chupDanDo
+
+    /**
+     * Cac buoc THAT SU phai chup lan nay, theo thu tu. Dieu huong tien lui chay
+     * tren danh sach nay chu khong tren [CaptureStage.entries].
+     *
+     * BO BUOC DE BAI KHI CON DA KHAI BAI THEO SACH. Luc do de bai da nam san trong
+     * cau lenh gui cho may cham - xem [vn.huytl.homeworkgate.ai.PromptCham]
+     * CAU_LENH_KHAI_BAI, quy tac 4: cau trong danh sach thi "co_de" luon true, du
+     * anh co trang sach hay khong. Bat chup them mot tam nua chi de may nhin lai
+     * cai no da doc roi.
+     *
+     * CON BUOC VO DAN DO THI KHONG BO DUOC, du trong ngay da tinh tron goi. Thieu
+     * trang vo do, may khong biet cau nao thuoc bai co giao nen coi TAT CA la trong
+     * goi (quy tac 17), va lan nop thu hai se khong duoc phut nao.
+     */
+    private val cacBuoc: List<CaptureStage> by lazy {
+        // Trong may da co ban vo dan do da soat thi khong hoi lai trang vo nua: doan
+        // chu do di thang vao cau lenh cham - xem [vn.huytl.homeworkgate.data.VoDanDo].
+        val canVo = VoDanDo.conHieuLuc(this) == null
+        when {
+            motXap -> listOf(CaptureStage.BAI_GIAI)
+            else -> buildList {
+                if (canVo) add(CaptureStage.DAN_DO)
+                if (pham?.theoSach != true) add(CaptureStage.DE_BAI)
+                add(CaptureStage.BAI_GIAI)
+            }
+        }
+    }
 
     /**
      * Bai con da khai o man truoc: mon nao, sach nao, nhung cau nao.
@@ -125,9 +167,9 @@ class CaptureActivity : AppCompatActivity() {
         binding.btnTake.setOnClickListener { takePhoto() }
         binding.btnSkip.setOnClickListener { goNext() }
         binding.btnNext.setOnClickListener { goNext() }
-        // Ca hai che do rut gon deu chi co mot xap anh, nen dung luon o cuoi cung
-        // de goNext() la gui thang.
-        if (motXap) jumpTo(CaptureStage.BAI_GIAI)
+        // Ba che do rut gon chi co mot xap anh nen buoc dau cung la buoc cuoi, va
+        // goNext() thanh gui thang.
+        stage = cacBuoc.first()
 
         binding.stepNotes.setOnClickListener { jumpTo(CaptureStage.DAN_DO) }
         binding.stepProblem.setOnClickListener { jumpTo(CaptureStage.DE_BAI) }
@@ -169,11 +211,7 @@ class CaptureActivity : AppCompatActivity() {
     private fun lui() {
         // Hai che do rut gon vao thang buoc cuoi, nen "quay lai" phai la thoat han.
         // Lui mot buoc se roi vao buoc chup de bai - thu ma lan nay khong can chup.
-        val previous = if (motXap) {
-            null
-        } else {
-            CaptureStage.entries.getOrNull(stage.ordinal - 1)
-        }
+        val previous = cacBuoc.getOrNull(cacBuoc.indexOf(stage) - 1)
         if (previous != null) {
             jumpTo(previous)
             return
@@ -225,10 +263,10 @@ class CaptureActivity : AppCompatActivity() {
         if (stage == CaptureStage.BAI_GIAI) {
             if (current().isEmpty()) {
                 toast(
-                    if (soanTap) {
-                        getString(R.string.capture_need_cap)
-                    } else {
-                        getString(R.string.capture_need_solution)
+                    when {
+                        soanTap -> getString(R.string.capture_need_cap)
+                        chupDanDo -> "Phải chụp trang vở dặn dò đã."
+                        else -> getString(R.string.capture_need_solution)
                     }
                 )
                 return
@@ -236,7 +274,7 @@ class CaptureActivity : AppCompatActivity() {
             sendAll()
             return
         }
-        jumpTo(CaptureStage.entries[stage.ordinal + 1])
+        jumpTo(cacBuoc[cacBuoc.indexOf(stage) + 1])
     }
 
     private fun takePhoto() {
@@ -289,7 +327,9 @@ class CaptureActivity : AppCompatActivity() {
         // trang khac la canh de xay ra nhat, va mot dong chu o day chan duoc no.
         val daKhai = pham?.takeIf { it.theoSach }?.let { "${it.bai} · ${it.cauIds.size} câu" }
         binding.txtStageHint.text = when {
-            chupChat -> "Chụp chỗ con không hiểu để hỏi ${getString(R.string.parent_name)}."
+            chupChat -> "Chụp hình gửi ${getString(R.string.parent_name)}."
+            chupDanDo -> "Chụp trang vở dặn dò. Trang có mấy buổi cũng được, " +
+                "lát nữa chọn đúng buổi hôm nay."
             soanTap -> getString(R.string.capture_cap_hint)
             suaBai -> "Chụp lại phần Lê Hòa vừa sửa."
             daKhai != null -> "$daKhai\n${getString(stage.hintRes)}"
@@ -297,14 +337,15 @@ class CaptureActivity : AppCompatActivity() {
         }
 
         binding.btnBack.text =
-            if (motXap || stage.ordinal == 0) "✕  Thoát" else "‹  Quay lại"
-        // Hai che do rut gon khong co ba buoc nao ca, chi co mot viec.
-        val coBaBuoc = !motXap
-        binding.stepNotes.visibility = if (coBaBuoc) View.VISIBLE else View.GONE
-        binding.stepProblem.visibility = if (coBaBuoc) View.VISIBLE else View.GONE
+            if (stage == cacBuoc.first()) "✕  Thoát" else "‹  Quay lại"
+        binding.stepNotes.visibility = hienBuoc(CaptureStage.DAN_DO)
+        binding.stepProblem.visibility = hienBuoc(CaptureStage.DE_BAI)
         // O buoc cuoi van hien khi sua bai, vi luc do no la nhan cho biet dang chup
         // cai gi. Chup cap thi khong co nhan nao dung ca, an luon.
-        binding.stepSolution.visibility = if (soanTap) View.GONE else View.VISIBLE
+        // Chip "Bai giai" chi co nghia khi con dang nop bai. Ba che do kia chup thu
+        // khac han, de cai nhan do lai thi no doc ra mot dieu khong dung.
+        binding.stepSolution.visibility =
+            if (soanTap || chupChat || chupDanDo) View.GONE else View.VISIBLE
         val tong = shots.values.sumOf { it.size }
         binding.txtTotal.text = when {
             tong == 0 -> ""
@@ -319,7 +360,8 @@ class CaptureActivity : AppCompatActivity() {
             if (!stage.required && count == 0) View.VISIBLE else View.INVISIBLE
 
         binding.btnNext.text = when {
-            chupChat -> "Xong"
+            // Hai che do nay khong gui gi di dau ca, chup xong la tra anh ve man goi.
+            chupChat || chupDanDo -> "Xong"
             stage == CaptureStage.BAI_GIAI -> getString(R.string.capture_send)
             else -> getString(R.string.capture_next)
         }
@@ -340,6 +382,9 @@ class CaptureActivity : AppCompatActivity() {
     }
 
     /** To mau ba o buoc: dang lam thi xanh duong, chup roi thi xanh la. */
+    private fun hienBuoc(buoc: CaptureStage): Int =
+        if (buoc in cacBuoc) View.VISIBLE else View.GONE
+
     private fun renderSteps() {
         val views = mapOf(
             CaptureStage.DAN_DO to binding.stepNotes,
@@ -410,9 +455,9 @@ class CaptureActivity : AppCompatActivity() {
             return
         }
 
-        // Chup de hoi bai: khong gui gi ca, tra duong dan ve cho man chat. Phai xoa
+        // Chup cho khung chat: khong gui gi ca, tra duong dan ve cho man chat. Phai xoa
         // danh sach truoc khi dong, neu khong onDestroy don mat may tam vua chup.
-        if (chupChat) {
+        if (chupChat || chupDanDo) {
             val anh = groups.getValue(CaptureStage.BAI_GIAI)
             shots.values.forEach { it.clear() }
             setResult(
@@ -455,7 +500,7 @@ class CaptureActivity : AppCompatActivity() {
             setBusy(false)
             ketQua.onSuccess {
                 prefs.danhDauDaSoan(ma)
-                DayLog.add(this@CaptureActivity, "Soạn cặp cho $moTa")
+                DayLog.add(this@CaptureActivity, "Soạn tập cho $moTa")
                 anh.forEach { it.delete() }
                 shots.values.forEach { it.clear() }
                 toast("Đã gửi cho ${getString(R.string.parent_name)}")
@@ -480,8 +525,11 @@ class CaptureActivity : AppCompatActivity() {
         /** Bat che do chup lai phan da sua. */
         const val EXTRA_SUA = "sua_bai"
 
-        /** Bat che do chup de hoi bai trong khung chat. */
+        /** Bat che do chup hinh gui kem tin nhan trong khung chat. */
         const val EXTRA_CHAT = "chup_chat"
+
+        /** Bat che do chup trang vo dan do. */
+        const val EXTRA_DAN_DO = "chup_dan_do"
 
         /** Duong dan may tam vua chup, tra ve cho man goi. */
         const val KET_QUA_ANH = "ket_qua_anh"

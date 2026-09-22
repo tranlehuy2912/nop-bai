@@ -16,6 +16,7 @@ import vn.huytl.homeworkgate.data.DayLog
 import vn.huytl.homeworkgate.data.GateState
 import vn.huytl.homeworkgate.data.GateStore
 import vn.huytl.homeworkgate.data.HocThuoc
+import vn.huytl.homeworkgate.data.LuatTuVung
 import vn.huytl.homeworkgate.databinding.ActivityHocThuocBinding
 import vn.huytl.homeworkgate.dongbo.DongBo
 import vn.huytl.homeworkgate.kho.BoThe
@@ -25,6 +26,8 @@ import vn.huytl.homeworkgate.kho.TraThe
 import vn.huytl.homeworkgate.telegram.ApprovalService
 import vn.huytl.homeworkgate.telegram.Notifier
 import java.util.Calendar
+import vn.huytl.homeworkgate.databinding.StTheBoBinding
+import vn.huytl.homeworkgate.kho.BoDaNap
 
 /**
  * Hoc thuoc: may hoi, con go tra loi ngay tren tablet, may cham bang phep so chuoi.
@@ -49,10 +52,40 @@ class HocThuocActivity : AppCompatActivity() {
     private lateinit var gate: GateStore
 
     private var boDangLam: BoThe.Bo? = null
-    private var cac: List<TheHoc> = emptyList()
+
+    /**
+     * Mot cau trong luot nay, kem nhung gi da xay ra voi no.
+     *
+     * Song trong bo nho suot luot chu khong ghi xuong ngay: con so phut chi tinh duoc
+     * khi biet cau nao da qua duoc [LuatTuVung.LAN_DUNG_DE_TINH] lan dung.
+     */
+    private class MucHoi(val the: TheHoc) {
+        /** So lan go dung TRONG LUOT NAY. */
+        var soDung = 0
+
+        /** So lan go sai, dung lam bac goi y - xem [LuatTuVung.goiY]. */
+        var soSai = 0
+
+        /** Con bam "Chịu rồi": bo cau nay khoi luot, khong tinh phut. */
+        var chiu = false
+
+        val xong get() = soDung >= LuatTuVung.LAN_DUNG_DE_TINH
+    }
+
+    /** Cac cau cua luot, theo ma the. Giu thu tu de tong ket doc duoc. */
+    private val muc = LinkedHashMap<String, MucHoi>()
+
+    /**
+     * HANG HOI: danh sach ma the theo dung thu tu se hoi.
+     *
+     * Mot ma co the nam trong day NHIEU LAN, va do la ca co che: go sai thi cau do bi
+     * day xuong cuoi hang, go dung lan dau thi chen lai cach [LuatTuVung.CHEN_LAI] cau
+     * de lan dung thu hai la nho that chu khong phai chep lai cai vua nhin.
+     */
+    private val hang = mutableListOf<String>()
     private var viTri = 0
 
-    /** Da go xong the dang hien chua: chua thi nut la "Trả lời", roi thi la "Thẻ tiếp". */
+    /** Da cham cau dang hien chua: chua thi nut la "Trả lời", roi thi la "Câu tiếp". */
     private var daTraLoi = false
 
     private val ketQua = mutableListOf<TraThe>()
@@ -72,6 +105,7 @@ class HocThuocActivity : AppCompatActivity() {
 
         b.btnThoat.setOnClickListener { finish() }
         b.btnChinh.setOnClickListener { if (daTraLoi) sangTheSau() else traLoi() }
+        b.btnChiu.setOnClickListener { chiuThoi() }
         veChonBo()
     }
 
@@ -98,39 +132,71 @@ class HocThuocActivity : AppCompatActivity() {
         b.txtTrong.visibility = View.GONE
         b.txtChan.text = getString(R.string.hoc_thuoc_chan)
 
-        bang.forEach { bo ->
-            val nut = MaterialButton(
-                this, null, com.google.android.material.R.attr.materialButtonOutlinedStyle
-            ).apply {
-                text = if (bo.soDenLuot > 0) {
-                    "${bo.ten}\n${bo.soDenLuot} thẻ đến lượt"
-                } else {
-                    "${bo.ten}\nHôm nay không còn thẻ nào đến lượt"
-                }
-                isEnabled = bo.soDenLuot > 0
-                textSize = 16f
-                minHeight = 72.dp()
-                layoutParams = LinearLayout.LayoutParams(
-                    LinearLayout.LayoutParams.MATCH_PARENT,
-                    LinearLayout.LayoutParams.WRAP_CONTENT
-                ).apply { bottomMargin = 12.dp() }
-                setOnClickListener { batDau(bo.bo) }
-            }
-            b.boxBo.addView(nut)
-        }
+        bang.forEach { bo -> b.boxBo.addView(theBo(bo)) }
     }
+
+    /**
+     * Mot the bo tren man chon.
+     *
+     * Bo con the den luot thi sang mau mon va bam duoc; het luot hom nay thi xam lai
+     * nhung VAN o day chu khong bien mat - con nhin thay minh da thuoc toi dau, va
+     * biet mai no quay lai.
+     */
+    private fun theBo(bo: BoDaNap): View {
+        val v = StTheBoBinding.inflate(layoutInflater, b.boxBo, false)
+        val conLuot = bo.soDenLuot > 0
+        val mauMon = ContextCompat.getColor(this, MatMon.mau(bo.mon))
+        val nenMon = ContextCompat.getColorStateList(this, MatMon.nen(bo.mon))
+
+        v.huyHieu.text = MatMon.tat(bo.mon)
+        v.huyHieu.setTextColor(if (conLuot) mauMon else mau(R.color.ink_soft))
+        v.huyHieu.backgroundTintList =
+            if (conLuot) nenMon else ContextCompat.getColorStateList(this, R.color.canvas)
+
+        v.tenBo.text = bo.ten
+        v.tenBo.setTextColor(mau(if (conLuot) R.color.ink else R.color.ink_soft))
+
+        v.phuBo.text = if (conLuot) "câu đến lượt hôm nay" else "Hôm nay xong rồi"
+        v.phuBo.setTextColor(if (conLuot) mauMon else mau(R.color.ok))
+
+        v.soDenLuot.text = if (conLuot) bo.soDenLuot.toString() else "✓"
+        v.soDenLuot.setTextColor(if (conLuot) mauMon else mau(R.color.ok))
+
+        // Thanh nay do phan da thuoc, khong phai phan con lai: con nhin thay cai
+        // minh lam duoc, va no chi dai them chu khong bao gio ngan di.
+        v.thanhThuoc.max = bo.tongThe.coerceAtLeast(1)
+        v.thanhThuoc.setProgressCompat(bo.soThuoc, false)
+        v.thanhThuoc.setIndicatorColor(if (conLuot) mauMon else mau(R.color.ok))
+        v.chuThuoc.text = "Đã kiểm ${bo.soThuoc}/${bo.tongThe} câu"
+
+        v.root.isEnabled = conLuot
+        v.root.alpha = if (conLuot) 1f else 0.7f
+        if (conLuot) v.root.setOnClickListener { batDau(bo.bo) }
+        return v.root
+    }
+
+    private fun mau(id: Int) = ContextCompat.getColor(this, id)
 
     // ------------------------------------------------------------------- luot
 
     private fun batDau(ma: String) {
         val bo = BoThe.theoMa(ma) ?: return
-        cac = KhoBai.get(this).cacTheDenLuot(ma, HocThuoc.SO_THE_MOI_LUOT)
+        val cac = KhoBai.get(this).cacTheDenLuot(ma, HocThuoc.SO_THE_MOI_LUOT)
         if (cac.isEmpty()) return veChonBo()
 
         boDangLam = bo
         viTri = 0
         ketQua.clear()
         daChot = false
+        muc.clear()
+        hang.clear()
+        // Tron thu tu, khong hoi theo thu tu in trong sach. Hoi theo thu tu sach thi
+        // con nho duoc theo mach - cau nay xong den cau ke - ma do la nho vi tri chu
+        // khong phai nho noi dung.
+        cac.shuffled().forEach {
+            muc[it.id] = MucHoi(it)
+            hang += it.id
+        }
         b.txtTieuDe.text = bo.ten
         b.boxBo.visibility = View.GONE
         b.txtTrong.visibility = View.GONE
@@ -148,45 +214,114 @@ class HocThuocActivity : AppCompatActivity() {
         veThe()
     }
 
+    /** Muc dang hoi, hay null khi het hang. */
+    private fun dangHoi(): MucHoi? = hang.getOrNull(viTri)?.let { muc[it] }
+
     private fun veThe() {
-        val the = cac.getOrNull(viTri) ?: return xongLuot()
+        val m = dangHoi() ?: return xongLuot()
         daTraLoi = false
-        b.txtTien.text = "Thẻ ${viTri + 1} / ${cac.size}"
-        b.txtBai.text = the.bai
-        b.txtHoi.text = the.hoi
+
+        // Dem theo SO CAU da xong tren tong so cau, khong phai vi tri trong hang:
+        // hang dai ra moi lan con go sai, nen "câu 7 / 5" la con so vo nghia.
+        val xong = muc.values.count { it.xong || it.chiu }
+        b.txtTien.text = "Đã xong $xong / ${muc.size} câu"
+
+        b.txtBai.text = m.the.bai
+        b.txtHoi.text = m.the.hoi
         b.oGo.setText("")
         b.oGo.isEnabled = true
         b.oGo.requestFocus()
-        b.theKet.visibility = View.GONE
         b.btnChinh.setText(R.string.hoc_thuoc_tra_loi)
+
+        // Da sai lan nao thi giu goi y tren man hinh, va mo them mot bac moi lan sai.
+        if (m.soSai > 0) {
+            b.theKet.visibility = View.VISIBLE
+            b.txtKet.text = "Lần trước chưa đúng"
+            b.txtKet.setTextColor(mau(R.color.alert))
+            b.txtDap.text = "Gợi ý: ${LuatTuVung.goiY(m.the.dap, m.soSai)}"
+            b.btnChiu.visibility = View.VISIBLE
+        } else {
+            b.theKet.visibility = View.GONE
+            b.btnChiu.visibility = View.GONE
+        }
     }
 
     /**
-     * Cham the dang hien roi hien ket qua.
+     * Cham cau dang hien roi hien ket qua.
      *
-     * HIEN DAP AN DU DUNG HAY SAI. Sai ma khong thay dap an thi con khong hoc duoc
-     * gi tu lan sai do, chi biet la minh sai. Dung ma van hien thi con doi chieu
-     * duoc cach viet - phan lon cac lan "sai" cua duong nay la sai mot ky tu.
+     * SAI THI KHONG HIEN DAP AN, chi ho them mot bac goi y. Hien dap an thi con go
+     * bua mot cai, doc dap an, go lai cho dung, va an tron so phut ma khong nho gi.
+     * Bat con tu tim thi con phai mo sach hay di hoi, va do chinh la viec hoc.
+     *
+     * DUNG THI HIEN DAP AN, ke ca lan dung dau. Luc do khong con gi de gian nua, ma
+     * con thi doi chieu duoc cach viet cua minh voi cach sach in - phan lon cac lan
+     * "sai" cua duong nay la sai mot ky tu.
      */
     private fun traLoi() {
-        val the = cac.getOrNull(viTri) ?: return
+        val m = dangHoi() ?: return
         val go = b.oGo.text.toString()
         if (go.isBlank()) return
 
-        val dung = HocThuoc.dung(go, the)
-        ketQua += TraThe(theId = the.id, go = go.trim(), dung = dung, phut = 0)
+        val dung = HocThuoc.dung(go, m.the)
+        ketQua += TraThe(theId = m.the.id, go = go.trim(), dung = dung, phut = 0)
         daTraLoi = true
-
         b.oGo.isEnabled = false
         b.theKet.visibility = View.VISIBLE
-        b.txtKet.text = if (dung) "Đúng rồi" else "Chưa đúng"
-        b.txtKet.setTextColor(
-            ContextCompat.getColor(this, if (dung) R.color.ok else R.color.alert)
-        )
-        b.txtDap.text = if (dung) the.dap else "Đáp án: ${the.dap}"
-        b.btnChinh.setText(
-            if (viTri + 1 < cac.size) R.string.hoc_thuoc_tiep else R.string.hoc_thuoc_xem_ket
-        )
+        b.btnChiu.visibility = View.GONE
+
+        if (dung) {
+            m.soDung++
+            b.txtKet.text = if (m.xong) "Đúng rồi" else "Đúng rồi, câu này sẽ hỏi lại một lần"
+            b.txtKet.setTextColor(mau(R.color.ok))
+            b.txtDap.text = m.the.dap
+            // Chua du so lan dung thi chen lai, CACH RA chu khong hoi ngay: hoi ngay
+            // thi cai vua nhin con nam nguyen trong dau, dung gan chac chan, va lan
+            // hai khong do them gi.
+            if (!m.xong) chenLai(m.the.id)
+        } else {
+            m.soSai++
+            b.txtKet.text = "Chưa đúng"
+            b.txtKet.setTextColor(mau(R.color.alert))
+            b.txtDap.text = "Gợi ý: ${LuatTuVung.goiY(m.the.dap, m.soSai)}"
+            // Day xuong cuoi hang. Cau nao cung phai lam cho duoc, nhung khong phai
+            // ngoi mai o mot cau - con di tiep roi quay lai.
+            hang += m.the.id
+        }
+        b.btnChinh.setText(nutTiep())
+    }
+
+    /** Con chiu, khong go ra duoc: hien dap an, bo cau nay khoi luot. */
+    private fun chiuThoi() {
+        val m = dangHoi() ?: return
+        m.chiu = true
+        // Ghi mot dong "chiu" xuong so. Khong ghi thi bang tinh trang ben [KhoBai]
+        // coi nhu con chua he gap cau nay, ma con da gap va da bi no.
+        ketQua += TraThe(theId = m.the.id, go = "", dung = false, phut = 0, chiu = true)
+        // Bo moi lan xuat hien con lai cua cau nay trong hang, tru cho dang dung.
+        for (i in hang.size - 1 downTo viTri + 1) if (hang[i] == m.the.id) hang.removeAt(i)
+
+        daTraLoi = true
+        b.oGo.isEnabled = false
+        b.btnChiu.visibility = View.GONE
+        b.theKet.visibility = View.VISIBLE
+        b.txtKet.text = "Câu này để mai làm lại"
+        b.txtKet.setTextColor(mau(R.color.ink_soft))
+        b.txtDap.text = "Đáp án: ${m.the.dap}"
+        b.btnChinh.setText(nutTiep())
+    }
+
+    /** Con cau nao phia sau khong: co thi "Câu tiếp", het thi "Xem kết quả". */
+    private fun nutTiep(): Int =
+        if (viTri + 1 < hang.size) R.string.hoc_thuoc_tiep else R.string.hoc_thuoc_xem_ket
+
+    /**
+     * Chen ma the vao hang, cach vi tri hien tai [LuatTuVung.CHEN_LAI] cau.
+     *
+     * Gan cuoi hang thi day han xuong cuoi - khong con du cau de chen vao giua.
+     */
+    private fun chenLai(ma: String) {
+        val cho = LuatTuVung.chenLai(viTri, hang.size - viTri - 1).coerceAtMost(hang.size)
+        hang.add(cho, ma)
     }
 
     private fun sangTheSau() {
@@ -196,18 +331,27 @@ class HocThuocActivity : AppCompatActivity() {
 
     private fun xongLuot() {
         chot()
-        val dung = ketQua.count { it.dung }
+        val soXong = muc.values.count { it.xong }
+        val soChiu = muc.values.count { it.chiu }
         val phut = phutVuaTra
         b.boxHoi.visibility = View.GONE
         b.theXong.visibility = View.VISIBLE
-        b.txtXong.text = "$dung / ${ketQua.size} thẻ đúng"
-        b.txtXongPhu.text = when {
-            phut > 0 -> "Được thêm $phut phút chơi."
-            dung == 0 -> "Chưa được phút nào. Xem lại rồi làm tiếp nhé."
-            else -> "Cần ${HocThuoc.THE_MOI_PHUT} thẻ đúng mới được một phút, " +
-                "hoặc hôm nay đã đủ ${HocThuoc.TRAN_PHUT_MOI_NGAY} phút của phần học thuộc."
+        b.txtXong.text = "$soXong / ${muc.size} câu xong"
+        b.txtXongPhu.text = buildString {
+            when {
+                phut > 0 -> append("Được thêm $phut phút chơi.")
+                soXong == 0 -> append("Chưa được phút nào. Xem lại rồi làm tiếp nhé.")
+                else -> append(
+                    "Cần ${HocThuoc.THE_MOI_PHUT} câu xong mới được một phút, hoặc hôm nay " +
+                        "đã đủ ${HocThuoc.TRAN_PHUT_MOI_NGAY} phút của phần kiểm tra bài."
+                )
+            }
+            if (soChiu > 0) append(" Còn $soChiu câu để mai làm lại.")
         }
-        b.txtChan.text = "Mấy thẻ này sẽ quay lại sau vài ngày để con nhớ lâu."
+        // Noi dung su that: cau lam xong moi duoc nghi vai ngay, cau chua xong thi
+        // mai co ngay. Dong cu noi "moi cau vai ngay mot lan" nen con lam sai doc
+        // vao lai tuong phai cho may ngay moi go lai duoc.
+        b.txtChan.text = "Câu làm xong sẽ nghỉ vài ngày. Câu chưa xong thì mai có lại."
         b.btnChinh.visibility = View.GONE
     }
 
@@ -218,9 +362,13 @@ class HocThuocActivity : AppCompatActivity() {
     /**
      * Ghi ca luot xuong so va cap gio. Goi bao nhieu lan cung chi an mot lan.
      *
-     * So phut tinh MOT LAN cho ca luot, khong cong don tung the: [HocThuoc.phutCho]
-     * chia so the dung cho ba, va chia tung the mot thi ba the dung ra khong phut
-     * nao (moi the duoc 0). Tran ngay cung phai hoi mot lan tai day, sau khi da biet
+     * DEM THEO SO CAU DA XONG, khong phai so lan go dung. Mot cau phai dung
+     * [LuatTuVung.LAN_DUNG_DE_TINH] lan moi tinh la xong, nen dem so lan go dung thi
+     * hai lan cua cung mot cau thanh hai cau - va con duoc tra gap doi cho mot cau.
+     *
+     * So phut tinh MOT LAN cho ca luot, khong cong don tung cau: [HocThuoc.phutCho]
+     * chia so cau xong cho ba, va chia tung cau mot thi ba cau xong ra khong phut
+     * nao (moi cau duoc 0). Tran ngay cung phai hoi mot lan tai day, sau khi da biet
      * ca luot duoc bao nhieu.
      */
     private fun chot() {
@@ -229,7 +377,7 @@ class HocThuocActivity : AppCompatActivity() {
 
         val kho = KhoBai.get(this)
         val moc = moc0Gio()
-        val dung = ketQua.count { it.dung }
+        val dung = muc.values.count { it.xong }
         val phut = HocThuoc.phutCho(dung, kho.phutTheTu(moc))
         phutVuaTra = phut
 
@@ -263,13 +411,13 @@ class HocThuocActivity : AppCompatActivity() {
         if (gate.state == GateState.ACTIVE) {
             gate.extend(phut, useQuota = true)
         } else {
-            gate.approve(wantedMinutes = phut, useQuota = true, nhanCho = "Học thuộc")
+            gate.approve(wantedMinutes = phut, useQuota = true, nhanCho = "Kiểm tra bài")
         }
-        DayLog.add(this, "Học thuộc $ten: $soThe thẻ đúng, +$phut phút")
+        DayLog.add(this, "Kiểm tra bài $ten: $soThe câu đúng, +$phut phút")
         runCatching {
             Notifier.send(
                 this,
-                "${getString(R.string.child_name)} học thuộc $ten: $soThe thẻ đúng, " +
+                "${getString(R.string.child_name)} làm kiểm tra bài $ten: $soThe câu đúng, " +
                     "được $phut phút."
             )
         }

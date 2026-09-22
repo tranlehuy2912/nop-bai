@@ -13,6 +13,7 @@ import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.updatePadding
+import androidx.core.graphics.ColorUtils
 import vn.huytl.homeworkgate.R
 import vn.huytl.homeworkgate.data.Buoi
 import vn.huytl.homeworkgate.data.BuoiHoc
@@ -64,13 +65,8 @@ class LichActivity : AppCompatActivity() {
         val maKeTiep = ke?.let { TinhLoiNhac.maBuoi(it.first, it.second) }
         val homNay = Calendar.getInstance().get(Calendar.DAY_OF_WEEK)
 
-        // Chu thich o xanh ghep luon vao dong phu de, khong lam mot dong chu giai
-        // rieng: luoi da kin roi, them mot dong nua o duoi chi lam chat them.
-        binding.phuDeLich.text = buildString {
-            append("Lớp 8A15 · tuần ")
-            append(ngayThang(tuan.first())).append(" – ").append(ngayThang(tuan.last()))
-            if (maKeTiep != null) append(" · ô xanh là buổi kế tiếp")
-        }
+        binding.phuDeLich.text =
+            "Lớp 8A15 · tuần ${ngayThang(tuan.first())} – ${ngayThang(tuan.last())}"
 
         val hang = dungHang(tuan)
         veCotLe(hang)
@@ -84,20 +80,21 @@ class LichActivity : AppCompatActivity() {
     /**
      * Danh sach hang cua luoi, dung tu chinh thoi khoa bieu cua tuan nay.
      *
-     * Chi lay nhung tiet that su co hoc: thoi khoa bieu nay buoi sang chi den tiet
-     * 4, ke du nam tiet thi thua mot hang trong suot ca tuan.
+     * Ke DU cac tiet cua buoi, ke ca tiet tuan nay khong ai hoc. Truoc day chi ke
+     * tiet co mon, nen buoi sang chi ra bon hang: thu hai hoc tiet 3 va 4 thi hai o
+     * do roi xuong day bang, va liec qua tuong la hai tiet cuoi buoi sang - trong
+     * khi buoi sang co nam tiet, va con phai biet minh ve luc may gio.
+     *
+     * Van bo han mot buoi khi ca tuan khong hoc buoi do: mot buoi trong tron thi
+     * khong co gi de doc, ma van chiem nua chieu cao bang.
      */
     private fun dungHang(tuan: List<Calendar>): List<Hang> {
         val cacBuoi = tuan.flatMap { ThoiKhoaBieu.buoiHocCua(it.get(Calendar.DAY_OF_WEEK)) }
         return buildList {
             Buoi.entries.forEach { buoi ->
-                val tiet = cacBuoi.filter { it.buoi == buoi }
-                    .flatMap { it.monTheoTiet.keys }
-                    .distinct()
-                    .sorted()
-                if (tiet.isEmpty()) return@forEach
+                if (cacBuoi.none { it.buoi == buoi && it.monTheoTiet.isNotEmpty() }) return@forEach
                 add(Hang.Bang(if (buoi == Buoi.SANG) "SÁNG" else "CHIỀU"))
-                tiet.forEach { add(Hang.Tiet(buoi, it)) }
+                ThoiKhoaBieu.cacTiet(buoi).forEach { add(Hang.Tiet(buoi, it)) }
             }
         }
     }
@@ -196,12 +193,41 @@ class LichActivity : AppCompatActivity() {
                             o.text = ""
                         }
                     } else {
+                        // Mau nam o CHU, khong o nen, va chi cho bon mon chinh.
+                        //
+                        // Da thu hai muc qua tay: to nen tung o thi nam muoi tu o
+                        // thanh mot tam vai vun; to chu cho ca bay mon thi doc mot
+                        // ten phai luot qua bay mau, ma phan lon so do la mon moi
+                        // tuan mot tiet - khong phai thu ai di tim trong bang.
+                        //
+                        // Rieng buoi ke tiep moi to nen: ca bang chi co mot cho nhu
+                        // vay, va do la cho duy nhat can nhin ra truoc tien.
+                        val chinh = MatMon.laMonChinh(mon)
+                        val keTiep = laKeTiep(ngay, buoi, maKeTiep)
                         o.text = mon
-                        if (buoi != null && laKeTiep(ngay, buoi, maKeTiep)) {
-                            o.background = ke(veTrai = true, veDuoi = !cuoi, nen = mau(R.color.brand_soft))
-                            o.setTextColor(mau(R.color.brand_dark))
-                            o.setTypeface(null, Typeface.BOLD)
-                        }
+                        o.setTextColor(
+                            mau(
+                                when {
+                                    chinh -> MatMon.mau(mon)
+                                    keTiep -> R.color.brand_dark
+                                    else -> R.color.ink_soft
+                                }
+                            )
+                        )
+                        // Nen cua o ke tiep lay mau chu dao chu khong lay mau mon:
+                        // mon phu khong co mau rieng, nen neu lay theo mon thi buoi
+                        // ke tiep hien ra mot mang xam - nhin nhu o bi khoa chu
+                        // khong nhu cho dang phai chu y.
+                        o.background = ke(
+                            veTrai = true,
+                            veDuoi = !cuoi,
+                            nen = if (keTiep) {
+                                ColorUtils.setAlphaComponent(mau(R.color.brand), 34)
+                            } else {
+                                android.graphics.Color.TRANSPARENT
+                            }
+                        )
+                        if (keTiep) o.setTypeface(null, Typeface.BOLD)
                     }
                 }
             }

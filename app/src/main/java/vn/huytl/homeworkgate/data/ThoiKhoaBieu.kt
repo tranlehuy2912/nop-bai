@@ -67,6 +67,16 @@ object ThoiKhoaBieu {
     fun gioTiet(buoi: Buoi, tiet: Int): Int =
         (if (buoi == Buoi.SANG) GIO_SANG else GIO_CHIEU).getValue(tiet)
 
+    /**
+     * Cac tiet CO THAT cua mot buoi, ke ca tiet tuan nay khong ai hoc.
+     *
+     * Luoi thoi khoa bieu ve theo day nay chu khong theo cac tiet dang co mon: bo
+     * tiet trong di thi mon o tiet 3 va 4 tut xuong thanh hai hang cuoi bang, nhin
+     * ra "hoc hai tiet cuoi buoi sang" trong khi buoi sang con mot tiet nua o duoi.
+     */
+    fun cacTiet(buoi: Buoi): List<Int> =
+        (if (buoi == Buoi.SANG) GIO_SANG else GIO_CHIEU).keys.sorted()
+
     private val BUONG_MAY_SANG = mapOf(
         Calendar.MONDAY to 8 * 60 + 45,
         Calendar.FRIDAY to 6 * 60 + 45

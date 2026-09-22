@@ -5,9 +5,11 @@ import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
 import org.junit.Test
 import org.junit.runner.RunWith
+import vn.huytl.homeworkgate.data.LoaiLoi
 import vn.huytl.homeworkgate.kho.KhoBai
 import vn.huytl.homeworkgate.kho.NganHang
 import vn.huytl.homeworkgate.kho.TraLoi
+import vn.huytl.homeworkgate.ui.ChonBaiActivity
 import vn.huytl.homeworkgate.ui.TienBoActivity
 
 /**
@@ -53,12 +55,17 @@ class ManualTienBo {
         }
 
         // Ba cau sai truoc, sua dung sau: day la "cau kho da go".
+        //
+        // Deu mang nhan SAI_DAU, du ba lan de the "Chỗ hay vấp" hien ra - xem
+        // [KhoBai.nhanHayVap]. Khong co nhan thi the do nam im va man hinh nay thieu
+        // mot phan khi nhin bang tay.
         cac.drop(10).take(3).forEach { c ->
             kho.ghiTraLoi(
                 TraLoi(
                     cauId = c.id, mon = c.mon, ma = c.ma, de = c.de,
                     ketQua = "sai", dung = false, phut = 0,
-                    nhanXet = "con nhầm dấu ở dòng cuối", luc = ngayTruoc(3)
+                    nhanXet = "con nhầm dấu ở dòng cuối", luc = ngayTruoc(3),
+                    loaiLoi = LoaiLoi.SAI_DAU
                 )
             )
             kho.ghiTraLoi(
@@ -89,6 +96,22 @@ class ManualTienBo {
             Intent(context, TienBoActivity::class.java).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
         )
         Thread.sleep(2_000)
+    }
+
+    /**
+     * Mo thang man luyen cho hay vap, khoi phai bam nut trong man tien bo.
+     *
+     * Nam o day chu khong o mot file rieng: du lieu cho no do chinh [napThu] gieo
+     * ra, hai cai phai chay lien nhau moi co gi de nhin.
+     */
+    @Test
+    fun moLuyen() {
+        context.startActivity(
+            Intent(context, ChonBaiActivity::class.java)
+                .putExtra(ChonBaiActivity.EXTRA_LUYEN, LoaiLoi.SAI_DAU)
+                .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+        )
+        Thread.sleep(6_000)
     }
 
     @Test

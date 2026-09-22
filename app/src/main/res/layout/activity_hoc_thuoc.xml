@@ -5,15 +5,13 @@
      Mot layout cho ca ba buoc (chon bo, dang hoi, xong luot), bat tat bang
      visibility. Ba man rieng thi phai giu trang thai luot go qua lai giua chung,
      ma luot do song co vai phut roi bo. -->
-<!-- Khung ngoai cung chi de mot viec: giu noi dung lai giua man hinh. Tablet nay
-     rong 1280dp, tha ra thi mot dong chu dai gap doi muc doc duoc va nua man hinh
-     bo trong. Cung con so st_be_rong_toi_da ma cac man chon bai, soat bai dang dung. -->
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/goc"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/st_nen_man">
 
     <LinearLayout
         android:layout_width="0dp"
@@ -23,13 +21,24 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintWidth_max="@dimen/st_be_rong_toi_da">
+        app:layout_constraintTop_toTopOf="parent">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_vertical">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_thoat"
+            style="@style/Widget.Material3.Button.IconButton"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="-12dp"
+            android:layout_marginEnd="4dp"
+            android:contentDescription="Quay lại"
+            app:icon="@drawable/st_ic_quay_lai"
+            app:iconSize="22dp"
+            app:iconTint="@color/ink_soft" />
 
         <TextView
             android:id="@+id/txt_tieu_de"
@@ -40,14 +49,6 @@
             android:textColor="@color/ink"
             android:textSize="24sp"
             android:textStyle="bold" />
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_thoat"
-            style="@style/Widget.Material3.Button.TextButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/ok"
-            android:textSize="15sp" />
     </LinearLayout>
 
     <ScrollView
@@ -186,6 +187,21 @@
                             android:textSize="16sp" />
                     </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>
+
+                <!-- Cua thoat khi bi that.
+                     Chi hien sau khi con da sai it nhat mot lan. Khong co nut nay thi
+                     mot cau con khong go ra duoc se chan ca luot, va mot tuan nhu the
+                     la con thoi mo app. Bam vao thi hien dap an, cau do bo khoi luot
+                     va khong tinh phut - nhung mai no quay lai. -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_chiu"
+                    style="@style/Widget.Material3.Button.TextButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="@string/hoc_thuoc_chiu"
+                    android:textSize="15sp"
+                    android:visibility="gone" />
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btn_chinh"

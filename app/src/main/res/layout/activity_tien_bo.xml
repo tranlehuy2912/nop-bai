@@ -3,15 +3,13 @@
      Moi bang thong ke khac trong app deu la cua Ba Huy - con dung app gi, hoi AI
      nhung gi. Cai nay thi nguoc lai, va vi vay no khong co mot con so nao mang
      nghia trach moc: khong co "so cau sai", chi co "cau kho da go". -->
-<!-- Khung ngoai cung chi de mot viec: giu noi dung lai giua man hinh. Tablet nay
-     rong 1280dp, tha ra thi mot dong chu dai gap doi muc doc duoc va nua man hinh
-     bo trong. Cung con so st_be_rong_toi_da ma cac man chon bai, soat bai dang dung. -->
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/goc"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/st_nen_man">
 
     <LinearLayout
         android:layout_width="0dp"
@@ -21,13 +19,27 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintWidth_max="@dimen/st_be_rong_toi_da">
+        app:layout_constraintTop_toTopOf="parent">
 
+    <!-- Duong ra nam ben trai, hinh mui ten, y het cac man chon bai va soat bai.
+         Truoc day moi man mot kieu: cho thi nut chu "OK" ben phai, cho thi mui ten
+         ben trai, cho thi khong co gi. -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_vertical">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_done"
+            style="@style/Widget.Material3.Button.IconButton"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="-12dp"
+            android:layout_marginEnd="4dp"
+            android:contentDescription="Quay lại"
+            app:icon="@drawable/st_ic_quay_lai"
+            app:iconSize="22dp"
+            app:iconTint="@color/ink_soft" />
 
         <TextView
             android:layout_width="0dp"
@@ -37,14 +49,6 @@
             android:textColor="@color/ink"
             android:textSize="24sp"
             android:textStyle="bold" />
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_done"
-            style="@style/Widget.Material3.Button.TextButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/ok"
-            android:textSize="15sp" />
     </LinearLayout>
 
     <!-- Hai khoang thoi gian. Bay ngay la tuan nay, ba muoi ngay la de nhin thay
@@ -114,6 +118,42 @@
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
+            <!-- Moi ngay mot cot. Mot con so tong khong cho thay duong di: lam
+                 deu hay don mot hom roi nghi ca tuan thi cung ra mot con so. Day
+                 cot nay noi dieu do ma khong can mot chu nao. -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/the_cot"
+                style="@style/Card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:id="@+id/txt_cot_tieu_de"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/ink_soft"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:letterSpacing="0.08" />
+
+                    <LinearLayout
+                        android:id="@+id/box_cot"
+                        android:layout_width="match_parent"
+                        android:layout_height="132dp"
+                        android:layout_marginTop="14dp"
+                        android:baselineAligned="false"
+                        android:gravity="bottom"
+                        android:orientation="horizontal" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
             <!-- Cau tung sai roi tu sua dung. Dat ngay duoi so cau dung, cung co
                  chu, vi hai cai do dang gia nhu nhau. -->
             <com.google.android.material.card.MaterialCardView
@@ -136,14 +176,6 @@
                         android:textColor="@color/brand"
                         android:textSize="22sp"
                         android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/txt_go_phu"
-                        style="@style/Text.Body"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="4dp"
-                        android:textSize="15sp" />
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
@@ -188,6 +220,59 @@
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
+            <!-- Cho hay vap, va mot viec lam tiep.
+                 KHONG CO SO NAO O DAY. So lan sai thi Ba Huy doc trong /loi de biet
+                 nen ngoi day cai gi; con man hinh nay chi noi CHO can nhin lai va
+                 dua ra ba cau de lam. Mot con so kem theo se bien ca the thanh mot
+                 dong diem tru, dung cai ma man hinh nay khong co. -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/the_vap"
+                style="@style/Card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:id="@+id/txt_vap_nhan"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/ink_soft"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:letterSpacing="0.08" />
+
+                    <TextView
+                        android:id="@+id/txt_vap"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:textColor="@color/ink"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/txt_vap_phu"
+                        style="@style/Text.Body"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:textSize="15sp" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_luyen"
+                        style="@style/Widget.Material3.Button.TonalButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="14dp" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/the_mon"
                 style="@style/Card"
@@ -203,15 +288,32 @@
                     android:padding="20dp" />
             </com.google.android.material.card.MaterialCardView>
 
-            <TextView
-                android:id="@+id/txt_trong"
-                style="@style/Text.Body"
+            <LinearLayout
+                android:id="@+id/khung_trong"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="28dp"
+                android:layout_marginTop="40dp"
                 android:gravity="center"
-                android:textSize="16sp"
-                android:visibility="gone" />
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <ImageView
+                    android:layout_width="96dp"
+                    android:layout_height="96dp"
+                    android:alpha="0.35"
+                    android:contentDescription="@null"
+                    android:src="@drawable/st_ic_trong"
+                    app:tint="@color/ink_soft" />
+
+                <TextView
+                    android:id="@+id/txt_trong"
+                    style="@style/Text.Body"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:gravity="center"
+                    android:textSize="16sp" />
+            </LinearLayout>
 
             <TextView
                 android:id="@+id/txt_chan"

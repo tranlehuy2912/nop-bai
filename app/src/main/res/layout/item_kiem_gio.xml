@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Mot hang muc sinh gio choi, trong man "Cach kiem gio choi".
+
+  Cot phai la SO PHUT TOI DA cua muc do, khong phai cach tinh. Ban dau cho nay ghi
+  ti le - "2 dong = 1 phut", "4 cau dung = 1 phut" - va do la tra loi sai cau hoi:
+  con dung truoc mot xap bai muon biet lam cai nay duoc bao nhieu, chu khong muon
+  nhan chia. Ti le khong con o man nay nua; no van nam trong LuatCongGio, va khi
+  cham xong thi tin bao ket qua ke ro tung cau duoc may phut.
+
+  DUOI SO PHUT LA MOT DONG DON VI - "moi cau", "moi bai", "moi ngay". Thieu dong nay
+  thi ca cot la mot day so khong so sanh duoc voi nhau: 10 phut mot cau nam canh 20
+  phut mot ngay, doc luot qua thi tuong kiem tra bai an hon bai tap gap doi.
+
+  KHONG CO DONG GIAI THICH NAO. Mot hang muc chi gom ten, so phut, va tinh trang
+  hom nay. Nhung cai can dan - phai chup ca trang vo dan do, bai on phai viet but do
+  - deu da duoc noi o dung cho con bat tay vao lam, tuc la man chon bai va man chinh.
+  Nhac lai o day thi bang gia dai ra ma khong ai doc, va cai dang can doc - con so
+  phut - bi day xuong duoi mot dam chu.
+
+  Khong bam duoc: day la bang gia, khong phai danh sach viec. Danh sach viec nam o
+  the "Viec hom nay" ngoai man chinh.
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingVertical="11dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:baselineAligned="false">
+
+        <TextView
+            android:id="@+id/ten"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="@color/ink"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="14dp"
+            android:gravity="end"
+            android:orientation="vertical">
+
+            <!-- Mau xanh "duoc choi", giong so phut o moi cho khac trong app: nhin
+                 mot cai la biet cot nay noi ve gio chu khong phai con so gi khac. -->
+            <TextView
+                android:id="@+id/gia"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:textColor="@color/ok"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/gia_phu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:textColor="@color/ink_soft"
+                android:textSize="13sp"
+                android:visibility="gone" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Tinh trang cua rieng hang muc nay HOM NAY, vi du goi 45 phut da tinh roi.
+         De rieng mot dong chu khong nhap vao [phu]: [phu] la luat, khong doi ngay
+         nao; dong nay doi theo ngay, va con can phan biet hai thu do. -->
+    <TextView
+        android:id="@+id/nay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:visibility="gone" />
+</LinearLayout>

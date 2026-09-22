@@ -5,6 +5,7 @@ import android.app.Application
 import android.os.Bundle
 import vn.huytl.homeworkgate.data.SoCaiBai
 import vn.huytl.homeworkgate.kho.BoThe
+import vn.huytl.homeworkgate.kho.BoTuVung
 import vn.huytl.homeworkgate.kho.NganHang
 
 /**
@@ -59,6 +60,7 @@ class App : Application() {
             runCatching { SoCaiBai.chuyenSoCu(ct) }
             runCatching { NganHang.napNeuCan(ct) }
             runCatching { BoThe.napNeuCan(ct) }
+            runCatching { BoTuVung.napNeuCan(ct) }
             runCatching { SoCaiBai.donCu(ct) }
         }.apply { isDaemon = true }.start()
     }

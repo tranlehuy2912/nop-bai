@@ -25,6 +25,7 @@ import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import android.widget.Toast
+import android.widget.LinearLayout
 import vn.huytl.homeworkgate.R
 import vn.huytl.homeworkgate.data.ChatBox
 import vn.huytl.homeworkgate.data.GateState
@@ -42,6 +43,7 @@ import vn.huytl.homeworkgate.kho.PhamVi
 import vn.huytl.homeworkgate.data.ThoiKhoaBieu
 import vn.huytl.homeworkgate.data.TinhLoiNhac
 import vn.huytl.homeworkgate.databinding.ActivityHomeBinding
+import vn.huytl.homeworkgate.databinding.StDongViecBinding
 import vn.huytl.homeworkgate.guard.CountdownOverlay
 import vn.huytl.homeworkgate.guard.ParentMode
 import vn.huytl.homeworkgate.guard.PhienQuanLy
@@ -112,9 +114,9 @@ class HomeActivity : AppCompatActivity() {
         binding.btnChat.setOnClickListener {
             startActivity(Intent(this, ChatActivity::class.java))
         }
+        toMauHangPhu()
         binding.btnParent.setOnClickListener { moChoBaHuy() }
         binding.btnNopThem.setOnClickListener { onSubmit(nopThem = true) }
-        binding.btnSoan.setOnClickListener { moManSoan() }
         binding.btnLich.setOnClickListener {
             startActivity(Intent(this, LichActivity::class.java))
         }
@@ -124,9 +126,15 @@ class HomeActivity : AppCompatActivity() {
         binding.btnTienBo.setOnClickListener {
             startActivity(Intent(this, TienBoActivity::class.java))
         }
-        binding.btnHocThuoc.setOnClickListener {
-            startActivity(Intent(this, HocThuocActivity::class.java))
+        // Hai duong vao cung mot man. Thanh han muc la duong dung cho nhat - con
+        // dang nhin so phut cua hom nay thi cau hoi "lam gi de duoc them" moc len
+        // ngay cho do - nhung mot thanh mau bam duoc thi khong ai doan ra, nen van
+        // phai co mot o co ten o hang duoi cung.
+        val moBangGia = View.OnClickListener {
+            startActivity(Intent(this, CachKiemGioActivity::class.java))
         }
+        binding.btnKiemGio.setOnClickListener(moBangGia)
+        binding.khungHanNgay.setOnClickListener(moBangGia)
 
         askNotificationPermission()
 
@@ -342,10 +350,10 @@ class HomeActivity : AppCompatActivity() {
             "Nộp thêm bài nữa"
         }
         binding.btnNopThem.setOnClickListener { onSubmit(nopThem = true) }
-        veHocThuoc(baDangDung)
 
-        veBangSua()
-        veSoanTap()
+        veVongPhien()
+        veHanNgay()
+        veViecHomNay(baDangDung)
         veTinCuaCo()
 
         val chuaDoc = ChatBox.unread(this)
@@ -359,56 +367,123 @@ class HomeActivity : AppCompatActivity() {
     }
 
     /**
-     * The soan cap cho buoi hoc ke tiep.
+     * Cac duong phu duoi cung, moi cai mot mau.
      *
-     * Hien ca khi da soan xong, chi doi mau va doi chu. An di luc do thi man hinh
-     * nhay mot cai roi mat mot the, ma cai can noi - "khong con no gi" - lai la
-     * cai dang duoc noi nhat.
+     * Truoc day chung xam nhu nhau het, nhin ra mot dai chu chu khong ra may cho
+     * di khac nhau. Mau chi dat cho BIEU TUONG, khong dat cho chu: mot hang chu du
+     * mau thi no lai to tieng hon ca nut Nop bai o ngay tren.
      */
-    private fun veSoanTap() {
-        val ke = TinhLoiNhac.buoiKeTiep(Calendar.getInstance())
-        if (ke == null) {
-            binding.cardSoan.visibility = View.GONE
+    private fun toMauHangPhu() {
+        listOf(
+            binding.btnChat to R.color.parent_tint,
+            binding.btnTin to R.color.wait,
+            binding.btnLich to R.color.brand,
+            binding.btnTienBo to R.color.ok,
+            // Nau la mau cua trang thai dang khoa, va man bang gia noi dung mot
+            // viec: lam gi de mo cai khoa do. Bon mau kia da co chu, con lai nau
+            // voi xanh cua Le Hoa - ma xanh cua Le Hoa dang nam o o ten ngay dau
+            // man nay, dung lai o day thi hai cho do trong nhu co lien quan.
+            binding.btnKiemGio to R.color.locked
+        ).forEach { (nut, mau) ->
+            nut.iconTint = ContextCompat.getColorStateList(this, mau)
+        }
+    }
+
+    /**
+     * Vong tron dem nguoc cua phien dang chay.
+     *
+     * Chi thay cho dong chu to o giua khi that su co gi de dem: dang choi, hay dang
+     * tam dung. Cac trang thai khac ("Chua nop bai", "Cho ba Huy duyet") khong co
+     * moc nao de ve mot vong quanh.
+     */
+    private fun veVongPhien() {
+        val dangChoi = gate.isOpen()
+        val dangDung = gate.state == GateState.PAUSED
+        if (!dangChoi && !dangDung) {
+            binding.khungVong.visibility = View.GONE
+            binding.txtState.visibility = View.VISIBLE
+            binding.anhMat.visibility = View.VISIBLE
             return
         }
-        val (cal, buoi) = ke
-        val ma = TinhLoiNhac.maBuoi(cal, buoi)
-        val daSoan = ma in prefs.buoiDaSoan
-        val mon = buoi.monCanSoan
 
-        // Buoi khong co vo ma cung khong co the duc thi khong co viec gi de bay ra.
-        if (mon.isEmpty() && !buoi.coTheDuc) {
-            binding.cardSoan.visibility = View.GONE
+        val conLai = if (dangChoi) gate.remainingMs() else gate.pausedMs()
+        // Tong cua phien: luc tam dung tongPhienMs() tra 0, nen lay chinh phan con
+        // lai lam tong - vong day, dung nhu y nghia "gio dang duoc giu nguyen".
+        val tong = maxOf(gate.tongPhienMs(), conLai, 1L)
+        val mau = if (dangChoi) R.color.ok else R.color.wait
+
+        binding.khungVong.visibility = View.VISIBLE
+        binding.txtState.visibility = View.GONE
+        binding.anhMat.visibility = View.GONE
+        binding.txtVong.text = CountdownOverlay.dinhDang(conLai)
+        binding.txtVong.setTextColor(ContextCompat.getColor(this, mau))
+        binding.vongPhien.setIndicatorColor(ContextCompat.getColor(this, mau))
+        binding.vongPhien.trackColor =
+            ContextCompat.getColor(this, if (dangChoi) R.color.ok_soft else R.color.wait_soft)
+        binding.vongPhien.max = (tong / 1000L).toInt().coerceAtLeast(1)
+        binding.vongPhien.progress = (conLai / 1000L).toInt()
+    }
+
+    /**
+     * Thanh han muc gio choi trong ngay.
+     *
+     * Ba doan tren cung mot truc, truc la tran cua ngay:
+     *   - da choi: phan da tieu roi, khong lay lai duoc.
+     *   - dang giu: da kiem duoc ma chua bam choi, hoac dang tam dung.
+     *   - con lai: phan hom nay con co the kiem them bang bai tap.
+     *
+     * "Da choi" tinh bang phut da duyet tru phan con dang giu, chu khong dem rieng:
+     * so phut duyet la con so duy nhat duoc ghi xuong, va mot cai so dem thu hai la
+     * mot cho nua de hai ben lech nhau.
+     */
+    private fun veHanNgay() {
+        val tran = prefs.tranPhutMoiNgay
+        if (tran <= 0) {
+            binding.khungHanNgay.visibility = View.GONE
             return
         }
-        binding.cardSoan.visibility = View.VISIBLE
-
-        binding.cardSoan.setCardBackgroundColor(
-            ContextCompat.getColor(this, if (daSoan) R.color.ok_soft else R.color.canvas)
-        )
-        binding.txtSoanTitle.text = if (daSoan) {
-            "Đã soạn cặp cho ${TinhLoiNhac.moTaBuoi(buoi)}"
-        } else {
-            "Chưa soạn cặp cho ${TinhLoiNhac.moTaBuoi(buoi)}"
+        val kiem = gate.phutDaDuyetHomNay()
+        val giuMs = when {
+            gate.isOpen() -> gate.remainingMs()
+            gate.state == GateState.PAUSED -> gate.pausedMs()
+            gate.grantedMinutes > 0 -> gate.grantedMinutes * 60_000L
+            else -> 0L
         }
-        binding.txtSoanDetail.text = buildString {
-            append("Vào học ").append(TinhLoiNhac.gioPhut(buoi.phutVaoHoc))
-            append(", không xài máy lúc ")
-            append(TinhLoiNhac.gioPhut(ThoiKhoaBieu.phutBuongMay(buoi)))
-            append('.')
-            if (mon.isEmpty()) {
-                append("\nChỉ cần mang đồ thể dục.")
-            } else {
-                append("\nCần mang: ").append(mon.joinToString(", "))
-                if (buoi.coTheDuc) append(", và đồ thể dục")
-                append('.')
+        val giu = ((giuMs + 59_999L) / 60_000L).toInt().coerceAtMost(kiem)
+        val daChoi = (kiem - giu).coerceAtLeast(0)
+
+        binding.khungHanNgay.visibility = View.VISIBLE
+        binding.phanDaChoi.setBackgroundColor(ContextCompat.getColor(this, R.color.ok))
+        binding.phanDangGiu.setBackgroundColor(ContextCompat.getColor(this, R.color.brand))
+        // Trong LinearLayout ngang, weight la ty le. Phan con lai khong can View nao:
+        // no chinh la nen cua khung.
+        (binding.phanDaChoi.layoutParams as LinearLayout.LayoutParams).weight = daChoi.toFloat()
+        (binding.phanDangGiu.layoutParams as LinearLayout.LayoutParams).weight = giu.toFloat()
+        val conLai = (tran - kiem).coerceAtLeast(0)
+
+        binding.chuHanNgay.text = buildString {
+            append("Hôm nay kiếm được ").append(kiem).append('/').append(tran).append(" phút")
+            /*
+             * Hai con so sau de TRONG NGOAC chu khong ngan bang dau cham giua.
+             *
+             * Chung la PHAN CUA con so dau, cong lai dung bang no. Dau cham giua thi
+             * ngan nhung thu ngang hang, nen dung o day lam ba con so trong nhu ba su
+             * viec bang vai - doc xong khong biet cai nao gom cai nao.
+             *
+             * Thu tu "da choi" truoc "chua choi" de khop voi thanh mau ngay ben duoi:
+             * phan xanh la nam ben trai, phan xanh duong nam ben phai. Ban truoc chu
+             * va thanh nguoc nhau.
+             */
+            val chia = listOfNotNull(
+                "đã chơi $daChoi".takeIf { daChoi > 0 },
+                "chưa chơi $giu".takeIf { giu > 0 },
+            )
+            when {
+                chia.isNotEmpty() -> append(" (").append(chia.joinToString(", ")).append(")")
+                // Cau nhac thi tach han thanh cau rieng: no khong phai mot mau tin
+                // ngang hang voi hai con so kia.
+                conLai > 0 -> append(". Làm bài để kiếm thêm.")
             }
-            NgayNghi.tenKyNghi(cal)?.let { append("\nHôm đó là ").append(it).append('.') }
-        }
-        binding.btnSoan.text = when {
-            daSoan -> "Soạn lại"
-            mon.isEmpty() -> "Chuẩn bị đồ thể dục"
-            else -> getString(R.string.soan_title)
         }
     }
 
@@ -437,17 +512,6 @@ class HomeActivity : AppCompatActivity() {
     }
 
     /**
-     * Mo man soan. Bam "Soan lai" thi bo danh dau truoc, khong thi man soan vua mo
-     * ra da thay buoi nay xong roi va tu dong lai.
-     */
-    private fun moManSoan() {
-        val ke = TinhLoiNhac.buoiKeTiep(Calendar.getInstance()) ?: return
-        val ma = TinhLoiNhac.maBuoi(ke.first, ke.second)
-        if (ma in prefs.buoiDaSoan) prefs.boDanhDau(ma)
-        startActivity(Intent(this, SoanActivity::class.java))
-    }
-
-    /**
      * Mot mau va mot hinh cho moi trang thai.
      *
      * Truoc day the trang thai luc nao cung mot mau trang giong nhau, chi khac may
@@ -470,13 +534,24 @@ class HomeActivity : AppCompatActivity() {
     }
 
     /**
-     * Bang "con cau nao can sua".
+     * Danh sach viec hom nay: on lai, soan cap, hoc thuoc, chup lai cau da sua.
      *
-     * Loi nhan xet hien duoi ten Ba Huy, khong noi gi den may moc. Mot dua tre biet
-     * minh dang bi may cham se di tim cach lach may, vi may de qua mat hon nguoi
-     * that. Ben Telegram thi ghi ro la AI cham - do la phia cua Ba Huy.
+     * TRUOC DAY LA BON THE RIENG, moi the mot nut. Cong voi nut Nop bai, nut nop
+     * them va hang duoi cung thi man hinh co gan chuc cho bam - nhieu hon han cai
+     * ma mot dua tre lop tam can thay khi cam may len. Gio moi viec la mot dong,
+     * bam ca dong, va khong con nut nao trong do.
+     *
+     * Thu tu la thu tu nen lam: sua bai dang no truoc, roi den viec co gio chot
+     * (soan cap), roi moi den hai viec lam luc ranh.
      */
-    private fun veBangSua() {
+    private fun veViecHomNay(baDangDung: Boolean) {
+        binding.boxViec.removeAllViews()
+        if (baDangDung) {
+            binding.nhanViec.visibility = View.GONE
+            binding.cardViec.visibility = View.GONE
+            return
+        }
+
         val canSua = SoCaiBai.dangChoSua(this)
         val loiNhan = SoCaiBai.loiNhan(this)
         /*
@@ -492,103 +567,150 @@ class HomeActivity : AppCompatActivity() {
         } else {
             emptyList()
         }
-        if ((canSua.isEmpty() && loiNhan == null && denHen.isEmpty()) ||
-            ParentMode.isActive(this)
-        ) {
-            binding.cardSua.visibility = View.GONE
-            return
-        }
-        binding.cardSua.visibility = View.VISIBLE
 
-        // Khong co cau nao can sua ma van co loi nhan: hien mot dong thoi, an nut
-        // chup lai. Day la canh nop lai bai da cham hom truoc - phai noi cho con
-        // biet vi sao khong duoc gi, khong thi no bam nop lai lan nua.
-        if (canSua.isEmpty() && loiNhan != null) {
-            binding.txtSuaTitle.text = "${getString(R.string.parent_name_cap)}: $loiNhan"
-            binding.boxSua.removeAllViews()
-            binding.btnChupSua.visibility = View.GONE
-            return
-        }
-
-        /*
-         * Khong no gi, nhung co cau den hen nho lai.
-         *
-         * De chung cho voi bang "can sua" chu khong them mot the thu hai: hai the
-         * chi hien mot cai moi luc, va ca hai deu tra loi cung mot cau hoi - bay gio
-         * con nen lam gi.
-         */
-        if (canSua.isEmpty()) {
-            binding.txtSuaTitle.text = if (denHen.size == 1) {
-                "1 câu đến hẹn ôn lại"
-            } else {
-                "${denHen.size} câu đến hẹn ôn lại"
+        if (canSua.isNotEmpty()) {
+            val ke = canSua.take(3).joinToString(", ") { it.ma }
+            themViec(
+                hinh = R.drawable.st_ic_dau_hoi,
+                mau = R.color.alert,
+                ten = if (canSua.size == 1) "Sửa 1 câu rồi chụp lại"
+                else "Sửa ${canSua.size} câu rồi chụp lại",
+                phu = ke + if (canSua.size > 3) "…" else ""
+            ) {
+                startActivity(
+                    Intent(this, CaptureActivity::class.java)
+                        .putExtra(CaptureActivity.EXTRA_SUA, true)
+                        .putExtra(CaptureActivity.EXTRA_PHAM, phamViSua(canSua)?.sangJson())
+                )
             }
-            binding.boxSua.removeAllViews()
-            binding.boxSua.addView(
-                android.widget.TextView(this).apply {
-                    text = "Mấy câu con từng sai. Làm lại trong vở bằng bút đỏ " +
-                        "rồi chụp, đúng thì được cộng thêm giờ chơi. Viết bút thường thì " +
-                        "máy không tính giờ."
-                    textSize = 14f
-                    setTextColor(ContextCompat.getColor(this@HomeActivity, R.color.ink))
-                    setPadding(0, (6 * resources.displayMetrics.density).toInt(), 0, 0)
-                }
-            )
-            binding.btnChupSua.visibility = View.VISIBLE
-            binding.btnChupSua.text = "Ôn lại"
-            binding.btnChupSua.setOnClickListener {
-                startActivity(Intent(this, ChonBaiActivity::class.java))
-            }
-            return
-        }
-        binding.btnChupSua.visibility = View.VISIBLE
-        binding.btnChupSua.text = "Chụp lại câu đã sửa"
-        binding.txtSuaTitle.text = if (canSua.size == 1) {
-            "Còn 1 câu cần sửa"
-        } else {
-            "Còn ${canSua.size} câu cần sửa"
+        } else if (loiNhan != null) {
+            // Nop lai bai da cham hom truoc ma khong duoc gi: phai noi vi sao, khong
+            // thi con bam nop lai lan nua.
+            themViec(
+                hinh = R.drawable.st_ic_dau_hoi,
+                mau = R.color.alert,
+                ten = "${getString(R.string.parent_name_cap)} nhắn",
+                phu = loiNhan,
+                mui = false
+            ) {}
         }
 
-        binding.boxSua.removeAllViews()
-        val dp = resources.displayMetrics.density
-        canSua.take(5).forEach { cau ->
-            val dong = android.widget.TextView(this).apply {
-                text = buildString {
-                    append("• ").append(cau.ma)
-                    if (cau.nhanXet.isNotBlank()) append(": ").append(cau.nhanXet)
-                }
-                textSize = 14f
-                setTextColor(ContextCompat.getColor(this@HomeActivity, R.color.ink))
-                setPadding(0, (6 * dp).toInt(), 0, 0)
+        if (denHen.isNotEmpty()) {
+            themViec(
+                hinh = R.drawable.st_ic_on_lai,
+                mau = R.color.wait,
+                ten = if (denHen.size == 1) "Ôn lại 1 câu đến hẹn"
+                else "Ôn lại ${denHen.size} câu đến hẹn",
+                phu = ToChu.toButDo(
+                    this, "Làm trong vở bằng bút đỏ rồi chụp"
+                )
+            ) {
+                startActivity(
+                    Intent(this, ChonBaiActivity::class.java)
+                        .putExtra(ChonBaiActivity.EXTRA_ON_TAP, true)
+                )
             }
-            binding.boxSua.addView(dong)
         }
 
-        binding.btnChupSua.setOnClickListener {
-            startActivity(
-                Intent(this, CaptureActivity::class.java)
-                    .putExtra(CaptureActivity.EXTRA_SUA, true)
-                    .putExtra(CaptureActivity.EXTRA_PHAM, phamViSua(canSua)?.sangJson())
-            )
+        themViecSoan()
+
+        val coThe = runCatching { BoThe.bang(this).any { it.soDenLuot > 0 } }
+            .getOrDefault(false)
+        if (coThe) {
+            themViec(
+                hinh = R.drawable.st_ic_the_hoc,
+                mau = R.color.brand,
+                ten = getString(R.string.hoc_thuoc_nut)
+            ) {
+                startActivity(Intent(this, HocThuocActivity::class.java))
+            }
         }
+
+        val co = binding.boxViec.childCount > 0
+        binding.nhanViec.visibility = if (co) View.VISIBLE else View.GONE
+        binding.cardViec.visibility = if (co) View.VISIBLE else View.GONE
     }
 
     /**
-     * Nut Hoc thuoc: chi hien khi that su co the den luot.
+     * Dong soan cap cho buoi hoc ke tiep.
      *
-     * Het the ma nut van nam do thi con bam vao, thay mot man hinh khong co gi, roi
-     * quay ra - lan sau no khong bam nua, ke ca hom co the. Cung mot le voi the
-     * "cau kho da go" ben [TienBoActivity]: mot con so khong hay mot nut rong deu
-     * chiem cho ma khong noi len gi.
+     * Soan xong roi thi dong VAN o day, chi doi sang dau tich xanh. An di thi man
+     * hinh nhay mot cai roi mat mot dong, ma cai can noi - "khong con no gi" - lai
+     * la cai dang duoc noi nhat.
      *
-     * Dem tren luong ve man hinh, va do la co y: mot bo the vai tram dong thi phep
-     * dem nay mat khong toi mot phan muoi giay, con day ra luong nen thi phai giu
-     * mot cai gi do de biet ket qua ve co con kip khong.
+     * Bam vao dong da xong thi chi mo ra xem lai da soan nhung mon gi. Truoc day
+     * cho nay bo danh dau ngay khi cham, khong hoi gi ca: dong chu ghi "Da soan cap
+     * cho chieu thu tu" va mot dau tich, cham vao de doc ky hon la mat sach, thoat
+     * ra la loi nhac soan lai hien len nhu chua tung soan. Muon bat soan lai thi
+     * vao trong man soan, o do co nut rieng va co hoi lai.
      */
-    private fun veHocThuoc(baDangDung: Boolean) {
-        val co = !baDangDung &&
-            runCatching { BoThe.bang(this).any { it.soDenLuot > 0 } }.getOrDefault(false)
-        binding.btnHocThuoc.visibility = if (co) View.VISIBLE else View.GONE
+    private fun themViecSoan() {
+        val ke = TinhLoiNhac.buoiKeTiep(Calendar.getInstance()) ?: return
+        val (cal, buoi) = ke
+        val ma = TinhLoiNhac.maBuoi(cal, buoi)
+        val daSoan = ma in prefs.buoiDaSoan
+        val mon = buoi.monCanSoan
+        if (mon.isEmpty() && !buoi.coTheDuc) return
+
+        val phu = buildString {
+            append("Vào học ").append(TinhLoiNhac.gioPhut(buoi.phutVaoHoc))
+            append(", không xài máy lúc ")
+            append(TinhLoiNhac.gioPhut(ThoiKhoaBieu.phutBuongMay(buoi))).append('.')
+            if (mon.isEmpty()) {
+                append(" Chỉ cần mang đồ thể dục.")
+            } else {
+                append(" Cần mang: ").append(mon.joinToString(", "))
+                if (buoi.coTheDuc) append(", và đồ thể dục")
+                append('.')
+            }
+            NgayNghi.tenKyNghi(cal)?.let { append(" Hôm đó là ").append(it).append('.') }
+        }
+
+        themViec(
+            hinh = R.drawable.st_ic_cap_sach,
+            mau = if (daSoan) R.color.ok else R.color.brand_dark,
+            ten = if (daSoan) "Đã soạn tập cho ${TinhLoiNhac.moTaBuoi(buoi)}"
+            else "Soạn tập cho ${TinhLoiNhac.moTaBuoi(buoi)}",
+            phu = phu,
+            xong = daSoan
+        ) {
+            startActivity(Intent(this, SoanActivity::class.java))
+        }
+    }
+
+    /** Mot dong trong danh sach viec. */
+    private fun themViec(
+        hinh: Int,
+        mau: Int,
+        ten: String,
+        /**
+         * Dong chu nho duoi ten viec. De trong thi khong hien dong nao.
+         *
+         * CharSequence chu khong String: co cau can to mau mot doan, xem [ToChu].
+         */
+        phu: CharSequence = "",
+        xong: Boolean = false,
+        mui: Boolean = true,
+        bam: () -> Unit
+    ) {
+        val v = StDongViecBinding.inflate(layoutInflater, binding.boxViec, false)
+        v.hinh.setImageResource(hinh)
+        v.hinh.imageTintList = ContextCompat.getColorStateList(this, mau)
+        v.hinh.backgroundTintList = ContextCompat.getColorStateList(
+            this, if (xong) R.color.ok_soft else R.color.canvas
+        )
+        v.ten.text = ten
+        v.phu.text = phu
+        // Viec nao nhin ten la biet thi khong can dong giai thich. Van de View do
+        // trong layout se chua mot khoang trong ngay giua the.
+        v.phu.visibility = if (phu.isBlank()) View.GONE else View.VISIBLE
+        // Dau tich thay cho mui ten o dong da xong: khong con cho nao de di toi nua.
+        v.duoi.text = if (xong) "✓" else if (mui) "›" else ""
+        v.duoi.setTextColor(
+            ContextCompat.getColor(this, if (xong) R.color.ok else R.color.ink_soft)
+        )
+        v.root.setOnClickListener { bam() }
+        binding.boxViec.addView(v.root)
     }
 
     /**

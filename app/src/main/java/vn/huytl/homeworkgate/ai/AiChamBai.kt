@@ -6,6 +6,7 @@ import org.json.JSONObject
 import vn.huytl.homeworkgate.data.CauCham
 import vn.huytl.homeworkgate.data.KetQuaCham
 import vn.huytl.homeworkgate.data.KhoaAi
+import vn.huytl.homeworkgate.data.VoDanDo
 import vn.huytl.homeworkgate.kho.CauHoi
 import vn.huytl.homeworkgate.kho.KhoBai
 import vn.huytl.homeworkgate.kho.PhamVi
@@ -101,14 +102,18 @@ object AiChamBai {
         // Danh sach cau con khai. Rong thi cau lenh quay ve ban tu do - may tu tach
         // cau nhu truoc - nen mat mot ban ngan hang cung khong lam ket duong nop bai.
         val danhSach = danhSachCua(context, pham)
+        // Vo dan do da chup va soat tu dau buoi. Co no thi lan nop nay khong con
+        // trang vo trong xap anh, va doan chu thay vao cho do - xem [VoDanDo].
+        val danDo = VoDanDo.conHieuLuc(context)
         val cauLenh = if (danhSach.isEmpty()) {
-            PromptCham.cauLenh()
+            PromptCham.cauLenh(danDo = danDo)
         } else {
             PromptCham.cauLenhTheoDanhSach(
                 danhSach,
                 tenNguon = pham?.tenNguon.orEmpty(),
                 tenBai = pham?.bai.orEmpty(),
-                onTap = pham?.onTap == true
+                onTap = pham?.onTap == true,
+                danDo = danDo
             )
         }
 

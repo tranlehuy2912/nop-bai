@@ -1,30 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Mot dong de bam trong ba buoc dau: ten o tren, mot dong phu o duoi. -->
+<!-- Mot dong de bam trong ba buoc dau: huy hieu ben trai, ten o tren, mot dong phu
+     o duoi.
+
+     Huy hieu la o tron mang mau cua mon va chu viet tat cua no, xem MatMon.kt. Cac
+     dong khong phai mon (quyen sach, trang, "Bai khac") thi giau huy hieu di va
+     dong tu thut vao nhu cu. -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginBottom="8dp"
     android:background="@drawable/st_nen_the"
     android:clickable="true"
     android:focusable="true"
+    android:gravity="center_vertical"
     android:minHeight="64dp"
-    android:orientation="vertical"
+    android:orientation="horizontal"
     android:paddingHorizontal="16dp"
     android:paddingVertical="12dp">
 
     <TextView
-        android:id="@+id/ten"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textColor="@color/ink"
-        android:textSize="18sp" />
-
-    <TextView
-        android:id="@+id/phu"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="2dp"
-        android:textColor="@color/ink_soft"
-        android:textSize="14sp"
+        android:id="@+id/huy_hieu"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:layout_marginEnd="14dp"
+        android:background="@drawable/st_nen_huy_hieu"
+        android:gravity="center"
+        android:textSize="15sp"
+        android:textStyle="bold"
         android:visibility="gone" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/ten"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/ink"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/phu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:textColor="@color/ink_soft"
+            android:textSize="14sp"
+            android:visibility="gone" />
+
+        <!-- Phan sach da lam. Chi hien o buoc chon quyen: "da lam 12/368 cau" la
+             mot con so phai tinh nham moi biet la nhieu hay it, con mot thanh dai
+             ngan thi khong phai tinh gi. -->
+        <com.google.android.material.progressindicator.LinearProgressIndicator
+            android:id="@+id/thanh_lam"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:visibility="gone"
+            app:indicatorColor="@color/brand"
+            app:trackColor="@color/line"
+            app:trackCornerRadius="3dp"
+            app:trackThickness="6dp" />
+    </LinearLayout>
 </LinearLayout>

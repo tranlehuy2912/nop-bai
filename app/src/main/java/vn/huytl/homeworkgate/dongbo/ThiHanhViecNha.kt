@@ -170,6 +170,10 @@ object ThiHanhViecNha {
             return null
         }
         DayLog.add(context, "Xong việc nhà ($ke): +$phut phút")
+        // Ghi vao so ngay de man bang gia tra loi duoc "hom nay phan viec nha cong
+        // chua". Ghi so XIN chu khong phai so [duoc] tra ve: duoc la tong con lai
+        // cua ca phien, gom ca gio kiem bang bai tap tu truoc do.
+        ViecNha.congPhutHomNay(context, phut)
         ApprovalService.ensureRunning(context)
         return duoc
     }

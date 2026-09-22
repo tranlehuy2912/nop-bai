@@ -17,6 +17,7 @@ import vn.huytl.homeworkgate.data.Prefs
 import vn.huytl.homeworkgate.data.SoCaiBai
 import vn.huytl.homeworkgate.kho.CauHoi
 import vn.huytl.homeworkgate.kho.KhoBai
+import org.junit.After
 import vn.huytl.homeworkgate.kho.NganHang
 import vn.huytl.homeworkgate.kho.PhamVi
 import vn.huytl.homeworkgate.kho.TraLoi
@@ -67,6 +68,24 @@ class NganHangTest {
         Prefs.get(context).raw().edit().clear().commit()
         SoCaiBai.xoaHet(context)
         KhoBai.get(context).napNguon("thu", bai)
+    }
+
+    /**
+     * Don quyen sach gia di sau khi chay xong.
+     *
+     * VI SAO CAN. Bo test nay nap mot quyen ten "thu" vao dung CAI KHO THAT cua app
+     * tren may, chu khong phai mot kho rieng. Khong don thi quyen do nam lai vinh
+     * vien, va no HIEN RA TREN MAN HINH: man on tap nhom cac cau theo quyen, nen o
+     * do moc len mot muc ten "THU" khong ai hieu la gi. Da thay that tren may ao.
+     *
+     * Xoa ca cau tra loi cua quyen do, nhung CHI cua quyen do - loc theo "thu:%" chu
+     * khong goi SoCaiBai.xoaHet, vi ham do quet sach so cai cua ca app.
+     */
+    @After
+    fun tearDown() {
+        val kho = KhoBai.get(context)
+        runCatching { kho.napNguon("thu", emptyList()) }
+        runCatching { kho.writableDatabase.delete("tra_loi", "cau_id LIKE ?", arrayOf("thu:%")) }
     }
 
     // ------------------------------------------------------------------ cai chinh

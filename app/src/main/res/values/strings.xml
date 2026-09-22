@@ -37,7 +37,7 @@
     <string name="capture_need_cap">Phải có ít nhất một tấm ảnh cặp sách mới gửi được.</string>
 
     <!-- Soan tap vo -->
-    <string name="soan_title">Soạn tập vở</string>
+    <string name="soan_title">Soạn tập</string>
     <string name="soan_tin_co">Tin của cô</string>
     <string name="soan_lich">Thời khoá biểu</string>
 
@@ -47,7 +47,7 @@
 
     <!-- Man hinh cua chinh Le Hoa, khong phai cua Ba Huy: nhin lai viec da lam.
          Ten dat theo cau con se hoi chu khong phai "Thong ke". -->
-    <string name="tien_bo_title">Con đã làm được gì</string>
+    <string name="tien_bo_title">Lê Hòa đã làm được gì</string>
     <string name="tien_bo_tuan">7 ngày</string>
     <string name="tien_bo_thang">30 ngày</string>
     <string name="tien_bo_trong">Chưa có câu nào trong khoảng này. Nộp bài là máy ghi vào đây.</string>
@@ -55,14 +55,32 @@
 
     <!-- Hoc thuoc: may hoi, con go thang tren tablet. Ten dat theo viec con lam
          chu khong phai theo co che ("The ghi nho", "On tu vung"). -->
-    <string name="hoc_thuoc_title">Học thuộc</string>
-    <string name="hoc_thuoc_nut">Học thuộc</string>
+    <!-- Ten hien cho Le Hoa la "Kiem tra bai", con ten trong ma nguon van la
+         hoc_thuoc. Hai ten khac nhau co chu dich: phia con thi "kiem tra bai" dung
+         voi viec dang xay ra tren man hinh - may hoi, con tra loi. Con phia ma nguon
+         thi doi het "hoc thuoc" thanh "kiem tra bai" se keo theo HocThuocActivity,
+         HocThuoc.kt, BoThe, ca thu muc assets/hocthuoc - mot dong doi ten cho mot
+         cai nhan, ma moi lan doi ten la mot lan co cho bi bo sot. -->
+    <string name="hoc_thuoc_title">Kiểm tra bài</string>
+    <string name="hoc_thuoc_nut">Kiểm tra bài</string>
     <string name="hoc_thuoc_go">Gõ câu trả lời</string>
     <string name="hoc_thuoc_tra_loi">Trả lời</string>
-    <string name="hoc_thuoc_tiep">Thẻ tiếp</string>
+    <string name="hoc_thuoc_tiep">Câu tiếp</string>
+    <string name="hoc_thuoc_chiu">Chịu rồi, cho xem đáp án</string>
     <string name="hoc_thuoc_xem_ket">Xem kết quả</string>
-    <string name="hoc_thuoc_chua_co_bo">Máy chưa có bộ thẻ nào. Nhờ ba Huy nạp vào.</string>
-    <string name="hoc_thuoc_chan">Gõ đúng thì được cộng giờ chơi. Mỗi thẻ vài ngày mới quay lại một lần.</string>
+    <string name="hoc_thuoc_chua_co_bo">Máy chưa có bộ câu nào. Nhờ ba Huy nạp vào.</string>
+    <string name="hoc_thuoc_chan">Mỗi câu sẽ vài ngày kiểm tra một lần.</string>
+
+    <!-- Bang gia gio choi, viet cho Le Hoa doc. Ten dat theo cau con hoi that
+         ("lam gi thi duoc them gio") chu khong phai ten co che ("Luat cong gio").
+         Cac dong con lai cua man nay khong nam o day ma dung thang trong
+         CachKiemGioActivity: chung ghep tu cac hang so trong LuatCongGio va
+         HocThuoc, nen tach chu ra khoi so chi lam kho doc ma khong duoc gi. -->
+    <string name="kiem_gio_title">Cách kiếm giờ chơi</string>
+    <string name="kiem_gio_nut">Cách kiếm giờ</string>
+    <string name="kiem_gio_nhan_duoc">LÀM GÌ THÌ ĐƯỢC THÊM GIỜ</string>
+    <string name="kiem_gio_nhan_khong">CÁI KHÔNG TÍNH GIỜ</string>
+    <string name="kiem_gio_viec_nha">Việc nhà bà nội giao</string>
 
     <string name="pin_title">Nhập mã PIN</string>
     <string name="pin_wrong">Sai mã PIN</string>

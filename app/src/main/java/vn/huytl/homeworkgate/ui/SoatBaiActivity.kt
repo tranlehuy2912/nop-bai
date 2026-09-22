@@ -112,9 +112,9 @@ class SoatBaiActivity : AppCompatActivity() {
         }
     }
 
-    override fun onSaveInstanceState(out: Bundle) {
-        super.onSaveInstanceState(out)
-        ket?.let { out.putString(LUU_BAN_CHAM, ChamBaiIO.viet(giuBanDangSua(it))) }
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        ket?.let { outState.putString(LUU_BAN_CHAM, ChamBaiIO.viet(giuBanDangSua(it))) }
     }
 
     /** Ban cham kem nhung dong con vua sua, de xoay man khong mat cong go lai. */
@@ -171,7 +171,7 @@ class SoatBaiActivity : AppCompatActivity() {
         binding.danhSach.removeAllViews()
         binding.danhSach.addView(
             TextView(this).apply {
-                text = "Con cứ gửi, ${getString(R.string.parent_name)} xem giúp nhé."
+                text = "Lê Hòa cứ gửi, ${getString(R.string.parent_name)} xem giúp nhé."
                 textSize = 16f
                 setTextColor(ContextCompat.getColor(this@SoatBaiActivity, R.color.ink))
             }
@@ -214,8 +214,8 @@ class SoatBaiActivity : AppCompatActivity() {
         oDong[cau.ma] = cacO
 
         val chuNhac = when {
-            !cau.docRo -> "Máy phải đoán chữ ở câu này. Con xem kỹ giúp."
-            cau.dongSai > 0 -> "Máy thấy dòng ${cau.dongSai} có vấn đề. Con đọc lại dòng đó nhé."
+            !cau.docRo -> "Máy phải đoán chữ ở câu này. Lê Hòa xem kỹ giúp."
+            cau.dongSai > 0 -> "Máy thấy dòng ${cau.dongSai} có vấn đề. Lê Hòa đọc lại dòng đó nhé."
             else -> ""
         }
         the.findViewById<TextView>(R.id.loi_nhac).apply {
@@ -249,7 +249,7 @@ class SoatBaiActivity : AppCompatActivity() {
         binding.demCau.text = when {
             tong == 0 -> ""
             boQua.isEmpty() -> "Gửi $tong câu."
-            gui == 0 -> "Con bỏ hết rồi. Sửa trong vở rồi chụp lại nhé."
+            gui == 0 -> "Lê Hòa bỏ hết rồi. Sửa trong vở rồi chụp lại nhé."
             else -> "Gửi $gui câu, để lại ${boQua.size} câu làm lại."
         }
     }

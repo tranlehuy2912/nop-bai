@@ -77,7 +77,8 @@ object BoThe {
                 mon = bo.mon,
                 ten = bo.ten,
                 soDenLuot = kho.soTheDenLuot(bo.bo),
-                tongThe = kho.soTheCua(bo.bo)
+                tongThe = kho.soTheCua(bo.bo),
+                soThuoc = kho.soTheThuoc(bo.bo)
             )
         }.filter { it.tongThe > 0 }
     }
