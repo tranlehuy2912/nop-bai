@@ -1,5 +1,6 @@
 package vn.huytl.homeworkgate.data
 
+import java.text.Normalizer
 import vn.huytl.homeworkgate.kho.TheHoc
 
 /**
@@ -28,7 +29,7 @@ import vn.huytl.homeworkgate.kho.TheHoc
  *    ba ngay nua the do moi quay lai, va luc do van phai nho.
  *
  * KHONG BAT VIET HOA, KHONG BAT DAU CAU. Xem [chuanHoa] de biet cho nao du di va
- * cho nao khong.
+ * cho nao khong. Rieng bo the ki hieu KHTN thi chu hoa co nghia - xem [dung].
  */
 object HocThuoc {
 
@@ -66,14 +67,25 @@ object HocThuoc {
      * Nhung cho CHO DI, va tung cho deu co ly do:
      *
      *  - chu hoa chu thuong: dau cau tren ban phim tablet tu viet hoa, phat con vi
-     *    cai tu dong do thi vo ly;
+     *    cai tu dong do thi vo ly. Bo nao can giu chu hoa thi goi voi [giuHoa];
      *  - khoang trang: bo sach, vi "a^2+2ab+b^2" va "a² + 2ab + b²" la mot cong
      *    thuc. Doi lai "a book" go lien thanh "abook" cung duoc tinh dung - mot cho
      *    du, nhung du ve phia khong phat oan;
-     *  - luy thua: "²" va "^2" la mot. Ban phim tablet khong co dau mu, ma bat con
-     *    di tim no thi phan lon thoi gian lam bai thanh thoi gian tim phim;
+     *  - luy thua: "²" va "^2" la mot, "10²³" va "10^23" cung vay. Ban phim tablet
+     *    khong co dau mu, ma bat con di tim no thi phan lon thoi gian lam bai thanh
+     *    thoi gian tim phim;
+     *  - chi so duoi: "H₂O" va "H2O" la mot. Sach in so nho duoi chan, ban phim thi
+     *    khong co phim nao go ra no;
      *  - cac loai gach ngang (−, –, —) quy het ve "-": ba ky tu do nhin giong het
      *    nhau tren man hinh;
+     *  - dau nhan: "·", "×", "*" va "." la mot. Chinh sach KHTN viet "d.V" o trang
+     *    nay va "24,79·n" o trang kia;
+     *  - dau chia: ":" va "/" la mot. Tu tieu hoc con da viet phep chia bang hai
+     *    cham, "m : V" va "m/V" la mot cong thuc;
+     *  - dau phay tren: "’" va "'" la mot. Ban phim co khi tu uon dau nay, ma "m'"
+     *    trong cong thuc hieu suat van la "m'";
+     *  - hai kieu ma cua cung mot chu co dau: "à" go lien mot ky tu, hay "a" kem mot
+     *    dau huyen dung rieng. Nhin y het nhau, ban phim nao ra kieu nao la tuy;
      *  - dau cham, cham than, cham hoi o CUOI: khong ai hoc thuoc mot dau cham.
      *
      * Nhung cho KHONG cho di, va day moi la phan quan trong:
@@ -81,16 +93,51 @@ object HocThuoc {
      *  - DAU TIENG VIET. "mà" khac "ma", va do chinh la thu dang hoc;
      *  - chinh ta tieng Anh. Sai mot chu la sai - do la ca noi dung cua the tu vung;
      *  - dau cach GIUA cac tu thi bo, nhung khong cho phep thieu hay thua chu.
+     *
+     * @param giuHoa giu nguyen chu hoa chu thuong. Chi [dung] goi voi true, cho
+     *   nhung dap an ma chu hoa la mot phan cua dap an.
      */
-    fun chuanHoa(chu: String): String = chu
-        .lowercase()
-        .replace('−', '-')  // dau tru toan hoc
-        .replace('–', '-')  // gach ngang ngan
-        .replace('—', '-')  // gach ngang dai
-        .replace("²", "^2")
-        .replace("³", "^3")
-        .filterNot { it.isWhitespace() }
-        .trimEnd('.', '!', '?')
+    fun chuanHoa(chu: String, giuHoa: Boolean = false): String {
+        val lien = Normalizer.normalize(chu, Normalizer.Form.NFC)
+        val mu = (if (giuHoa) lien else lien.lowercase())
+            .replace(CUM_MU) { cum -> "^" + cum.value.map(::doiKyTu).joinToString("") }
+        return buildString {
+            for (c in mu) if (!c.isWhitespace()) append(doiKyTu(c))
+        }.trimEnd('.', '!', '?')
+    }
+
+    /** Chu so nho tren dau, theo thu tu tu 0 den 9. */
+    private const val SO_MU = "⁰¹²³⁴⁵⁶⁷⁸⁹"
+
+    /** Chu so nho duoi chan, theo thu tu tu 0 den 9. */
+    private const val SO_DUOI = "₀₁₂₃₄₅₆₇₈₉"
+
+    /**
+     * Mot cum so mu viet lien, co the kem dau o truoc: "²", "²³", "⁻³".
+     *
+     * Doi CA CUM thanh mot dau mu chu khong doi tung chu: "10²³" doi tung chu ra
+     * "10^2^3", trong khi con go "10^23".
+     */
+    private val CUM_MU = Regex("[⁺⁻]?[⁰¹²³⁴⁵⁶⁷⁸⁹]+")
+
+    /** Dau cham giua, dau nhan, ngoi sao: cung la phep nhan. */
+    private const val DAU_NHAN = "·×∙⋅*"
+
+    /** Cac dau phay tren ma ban phim hay tu uon ra. */
+    private const val DAU_PHAY_TREN = "’‘ʼ′"
+
+    /** Mot ky tu doi ra ky tu go duoc tren ban phim. Xem [chuanHoa]. */
+    private fun doiKyTu(c: Char): Char = when {
+        c in SO_MU -> '0' + SO_MU.indexOf(c)
+        c in SO_DUOI -> '0' + SO_DUOI.indexOf(c)
+        c == '⁺' -> '+'
+        // Dau tru mu, dau tru toan hoc, gach ngang ngan, gach ngang dai.
+        c == '⁻' || c == '−' || c == '–' || c == '—' -> '-'
+        c in DAU_NHAN -> '.'
+        c == ':' || c == '÷' -> '/'
+        c in DAU_PHAY_TREN -> '\''
+        else -> c
+    }
 
     /**
      * Con go the nay dung chua.
@@ -98,11 +145,33 @@ object HocThuoc {
      * So voi [TheHoc.dap] va moi ban trong [TheHoc.dapKhac]. Co dapKhac vi mot cau
      * hoi that su co nhieu cau tra loi dung: "big" va "large", "(a+b)(a-b)" va
      * "(a-b)(a+b)". Liet ke ra trong file chu khong de may doan.
+     *
+     * CHU HOA, voi bo [phanBietHoa]. "CO" la carbon monoxide con "Co" la cobalt, "D"
+     * la khoi luong rieng con "d" la trong luong rieng: o nhung bo ki hieu do, chu hoa
+     * chinh la thu dang hoc. Nen dap an nao CO chu hoa thi phai go dung tung chu hoa
+     * chu thuong, tru dung mot cho: chu DAU duoc viet hoa thay cho viet thuong, vi
+     * ban phim hay tu viet hoa chu dau, va con khong co cach nao can no. Chieu nguoc
+     * lai thi khong tha - ban phim khong bao gio tu ha chu hoa xuong.
+     *
+     * Dap an toan chu thuong ("đỏ", "kg/m³", "ampe kế") thi hoa thuong gi cung duoc,
+     * ke ca trong bo phan biet hoa: o do chu hoa khong mang nghia gi ca.
      */
-    fun dung(go: String, the: TheHoc): Boolean {
-        val g = chuanHoa(go)
-        if (g.isEmpty()) return false
-        return g == chuanHoa(the.dap) || the.dapKhac.any { g == chuanHoa(it) }
+    fun dung(go: String, the: TheHoc, phanBietHoa: Boolean = false): Boolean {
+        if (chuanHoa(go).isEmpty()) return false
+        return (listOf(the.dap) + the.dapKhac).any { dap ->
+            if (phanBietHoa && dap.any { it.isUpperCase() }) {
+                khopGiuHoa(chuanHoa(go, giuHoa = true), chuanHoa(dap, giuHoa = true))
+            } else {
+                chuanHoa(go) == chuanHoa(dap)
+            }
+        }
+    }
+
+    /** So tung chu, rieng chu dau duoc go hoa thay cho thuong. Xem [dung]. */
+    private fun khopGiuHoa(go: String, dap: String): Boolean {
+        if (go.isEmpty() || go.length != dap.length) return false
+        val dau = go[0] == dap[0] || (go[0].isUpperCase() && go[0].lowercaseChar() == dap[0])
+        return dau && go.regionMatches(1, dap, 1, go.length - 1)
     }
 
     /** So giay mot luot lam ra, chua chan tran. */

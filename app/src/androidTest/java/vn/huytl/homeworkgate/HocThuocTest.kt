@@ -1,6 +1,8 @@
 package vn.huytl.homeworkgate
 
 import androidx.test.ext.junit.runners.AndroidJUnit4
+import androidx.test.platform.app.InstrumentationRegistry
+import org.json.JSONObject
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue
@@ -8,13 +10,15 @@ import org.junit.Test
 import org.junit.runner.RunWith
 import vn.huytl.homeworkgate.data.HocThuoc
 import vn.huytl.homeworkgate.data.LuatTuVung
+import vn.huytl.homeworkgate.kho.BoThe
+import vn.huytl.homeworkgate.kho.KhoBai
 import vn.huytl.homeworkgate.kho.TheHoc
 
 /**
  * Luat cham cua duong hoc thuoc.
  *
  * Khong dung den may hay mang, nhung de o day cho cung cho voi cac bo test kia.
- * Bo nay KHONG xoa prefs.
+ * Bo nay KHONG xoa prefs. No co nap cac bo the that vao kho, y het luc app khoi dong.
  *
  * Phan dang test ky nhat la [HocThuoc.chuanHoa], vi no la cho quyet dinh con bi
  * bao sai oan hay khong. Moi cho no CHO DI deu co mot test, va moi cho no KHONG
@@ -98,6 +102,122 @@ class HocThuocTest {
         // Doi cho hai hang tu la dung ve toan, nhung the nay khong khai ra nen may
         // khong tu doan. Muon tinh thi them vao dap_khac trong file.
         assertFalse(HocThuoc.dung("b² + 2ab + a²", the("a² + 2ab + b²")))
+    }
+
+    // --- ki hieu cua bo KHTN ---
+
+    @Test
+    fun chi_so_duoi_go_bang_so_thuong_van_dung() {
+        assertTrue(HocThuoc.dung("H2SO4", the("H₂SO₄"), phanBietHoa = true))
+        assertTrue(HocThuoc.dung("(NH2)2CO", the("(NH₂)₂CO"), phanBietHoa = true))
+    }
+
+    @Test
+    fun mu_nhieu_chu_so_doi_ca_cum() {
+        // Doi tung chu thi "10²³" ra "10^2^3", ma con go "10^23".
+        assertEquals("10^23", HocThuoc.chuanHoa("10²³"))
+        assertTrue(HocThuoc.dung("6,022.10^23", the("6,022·10²³")))
+        assertFalse(HocThuoc.dung("6,022.10^2^3", the("6,022·10²³")))
+    }
+
+    @Test
+    fun cac_kieu_dau_nhan_dau_chia_la_mot() {
+        val t = the("FA = d.V")
+        assertTrue(HocThuoc.dung("FA = d·V", t, phanBietHoa = true))
+        assertTrue(HocThuoc.dung("FA = d×V", t, phanBietHoa = true))
+        assertTrue(HocThuoc.dung("FA=d*V", t, phanBietHoa = true))
+        assertTrue(HocThuoc.dung("D = m : V", the("D = m/V"), phanBietHoa = true))
+    }
+
+    @Test
+    fun dau_phay_tren_ban_phim_uon_van_la_mot() {
+        assertTrue(HocThuoc.dung("H = m’/m·100%", the("H = m'/m·100%"), phanBietHoa = true))
+    }
+
+    @Test
+    fun ion_go_bang_dau_cong_tru_thuong() {
+        assertTrue(HocThuoc.dung("H+", the("H⁺"), phanBietHoa = true))
+        assertTrue(HocThuoc.dung("OH-", the("OH⁻"), phanBietHoa = true))
+        assertTrue(HocThuoc.dung("OH−", the("OH⁻"), phanBietHoa = true))
+    }
+
+    @Test
+    fun hai_kieu_ma_cua_chu_co_dau_la_mot() {
+        // "a" kem dau huyen dung rieng, nhin y het "à" go lien.
+        assertTrue(HocThuoc.dung("màu đỏ", the("màu đỏ")))
+    }
+
+    @Test
+    fun bo_phan_biet_hoa_thi_CO_khac_Co() {
+        val t = the("CO")
+        assertTrue(HocThuoc.dung("CO", t, phanBietHoa = true))
+        assertFalse(HocThuoc.dung("Co", t, phanBietHoa = true))
+        assertFalse(HocThuoc.dung("co", t, phanBietHoa = true))
+        // Bo Toan va tu vung khong bat co nay, van bo qua hoa thuong nhu cu.
+        assertTrue(HocThuoc.dung("co", t))
+    }
+
+    @Test
+    fun chu_dau_viet_hoa_thay_thuong_van_duoc_chieu_nguoc_lai_thi_khong() {
+        // Ban phim tu viet hoa chu dau: "p" thanh "P". Con khong can duoc.
+        assertTrue(HocThuoc.dung("P = F/S", the("p = F/S"), phanBietHoa = true))
+        // Nhung chu hoa o giua van phai dung.
+        assertFalse(HocThuoc.dung("p = f/s", the("p = F/S"), phanBietHoa = true))
+        // Ban phim khong bao gio tu ha chu dau xuong: go "d" cho "D" la sai that,
+        // D la khoi luong rieng con d la trong luong rieng.
+        assertFalse(HocThuoc.dung("d = m/V", the("D = m/V"), phanBietHoa = true))
+    }
+
+    @Test
+    fun dap_an_toan_chu_thuong_thi_hoa_thuong_gi_cung_duoc() {
+        assertTrue(HocThuoc.dung("Đỏ", the("đỏ"), phanBietHoa = true))
+        assertTrue(HocThuoc.dung("KG/M³", the("kg/m³"), phanBietHoa = true))
+        // Dap an phu viet thuong thi cung vay, du dap an chinh co chu hoa.
+        assertTrue(HocThuoc.dung("Ampe", the("ampe (A)", "ampe", "A"), phanBietHoa = true))
+        assertFalse(HocThuoc.dung("a", the("ampe (A)", "ampe", "A"), phanBietHoa = true))
+    }
+
+    // --- cac bo the that trong assets ---
+
+    /**
+     * Moi bo that nap du so the trong file, va moi dap an trong file tu cham dung.
+     *
+     * SO THE TRONG FILE PHAI BANG SO THE TRONG BANG, cung ly do voi bo tu vung:
+     * the thieu ma, thieu hoi hay thieu dap thi [BoThe] bo qua im lang, con hai the
+     * trung ma thi the sau de len the truoc. Ca hai deu chi hien ra o day.
+     *
+     * TU CHAM DUNG CHINH NO: dap an va tung dap an phu phai qua duoc [HocThuoc.dung]
+     * voi dung co cua bo do. Khong qua thi the do khong ai tra loi dung duoc, ke ca
+     * khi go y het dap an in trong sach.
+     */
+    @Test
+    fun bo_the_that_nap_du_va_tu_cham_dung_chinh_no() {
+        val context = InstrumentationRegistry.getInstrumentation().targetContext
+        BoThe.napNeuCan(context)
+        val kho = KhoBai.get(context)
+        BoThe.BO.forEach { bo ->
+            val o = JSONObject(context.assets.open(bo.file).bufferedReader().use { it.readText() })
+            val cacBai = o.getJSONArray("cac_bai")
+            var soThe = 0
+            for (i in 0 until cacBai.length()) {
+                val cacThe = cacBai.getJSONObject(i).getJSONArray("cac_the")
+                for (j in 0 until cacThe.length()) {
+                    soThe++
+                    val t = cacThe.getJSONObject(j)
+                    val khac = t.optJSONArray("dap_khac")
+                    val cacDap = listOf(t.getString("dap")) +
+                        (0 until (khac?.length() ?: 0)).map { khac!!.getString(it) }
+                    val theHoc = the(cacDap.first(), *cacDap.drop(1).toTypedArray())
+                    cacDap.forEach { dap ->
+                        assertTrue(
+                            "${bo.bo}:${t.getString("ma")} khong nhan \"$dap\"",
+                            HocThuoc.dung(dap, theHoc, bo.phanBietHoa)
+                        )
+                    }
+                }
+            }
+            assertEquals("${bo.bo}: file $soThe the ma bang co", soThe, kho.soTheCua(bo.bo))
+        }
     }
 
     // --- so phut ---

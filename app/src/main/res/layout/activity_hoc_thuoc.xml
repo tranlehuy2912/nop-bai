@@ -138,9 +138,9 @@
                     android:textColor="@color/ink"
                     android:textSize="20sp" />
 
-                <!-- Thanh ky tu toan, y het man soat bai: ban phim tablet khong co
-                     dau mu, ma bat con di tim no thi thoi gian hoc thanh thoi gian
-                     tim phim. Chi hien cho bo the mon Toan. -->
+                <!-- Thanh ky tu, y het man soat bai: ban phim tablet khong co dau
+                     mu, ma bat con di tim no thi thoi gian hoc thanh thoi gian tim
+                     phim. Chi hien cho bo Toan va bo KHTN, moi mon mot bo nut. -->
                 <HorizontalScrollView
                     android:id="@+id/dai_toan"
                     android:layout_width="match_parent"

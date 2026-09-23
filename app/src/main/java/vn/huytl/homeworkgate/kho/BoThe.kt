@@ -18,26 +18,42 @@ import vn.huytl.homeworkgate.data.Prefs
  *
  * THEM MOT BO MOI: them mot file vao assets/hocthuoc/, roi them mot dong vao [BO].
  * Ma bo di thang vao [TheHoc.id] nen KHONG duoc doi ve sau - doi la toan bo lich
- * hen on cua cac the cu tro thanh vo nghia.
+ * hen on cua cac the cu tro thanh vo nghia. Ma the ("ma" trong file) cung vay.
+ *
+ * Moi the co the ghi them "trang": trang sach de nguoi soat mo ra doi chieu. May
+ * khong doc truong do.
  */
 object BoThe {
 
+    /**
+     * @param phanBietHoa cham co giu chu hoa chu thuong khong. Chi bat cho bo hoc KI
+     *   HIEU, noi "CO" va "Co" la hai chat khac nhau. Luat cu the o
+     *   [vn.huytl.homeworkgate.data.HocThuoc.dung].
+     */
     data class Bo(
         val bo: String,
         val mon: String,
         val ten: String,
-        val file: String
+        val file: String,
+        val phanBietHoa: Boolean = false
     )
 
     /**
-     * Hien moi co cong thuc Toan 8.
+     * Cong thuc Toan 8, va hai bo KHTN 8: phan Hoa hoc va phan Vat li.
      *
-     * Bo nay vua la thu dung duoc that, vua la BAN MAU cho cac bo sau: mo file ra la
+     * Bo Toan vua la thu dung duoc that, vua la BAN MAU cho cac bo sau: mo file ra la
      * thay du ca bon thu mot the can - ma, cau hoi, dap an, va cac ban viet khac
      * cung tinh dung.
      *
-     * Con thieu tu vung tieng Anh va moc Su - do moi la phan hoc thuoc nang nhat cua
-     * lop 8. Hai cai do phai chep tu sach that ra nen chua co o day.
+     * KHTN TACH HAI BO chu khong gop mot. Truong chia KHTN cho nhieu giao vien day
+     * song song, lop co the dang o Bai 4 phan Hoa trong luc dang o Bai 15 phan Li. Mot
+     * luot lay [vn.huytl.homeworkgate.data.HocThuoc.SO_THE_MOI_LUOT] the dau tien
+     * con den luot theo thu tu trong file, nen gop mot bo thi phai qua het sau muoi
+     * the Hoa moi toi the Li dau tien. Tach ra thi con chon dung phan dang hoc.
+     *
+     * Phan Sinh hoc khong co bo nao: phan lon la dinh nghia dai, may so tung chu thi
+     * khong cham duoc. Tu vung tieng Anh thi di duong rieng, xem [BoTuVung]. Con thieu
+     * moc Su.
      */
     val BO = listOf(
         Bo(
@@ -45,6 +61,20 @@ object BoThe {
             mon = "Toán",
             ten = "Công thức Toán 8",
             file = "hocthuoc/toan8ct.json"
+        ),
+        Bo(
+            bo = "khtn8hoa",
+            mon = "Khoa học tự nhiên",
+            ten = "KHTN 8 phần Hoá học",
+            file = "hocthuoc/khtn8hoa.json",
+            phanBietHoa = true
+        ),
+        Bo(
+            bo = "khtn8li",
+            mon = "Khoa học tự nhiên",
+            ten = "KHTN 8 phần Vật lí",
+            file = "hocthuoc/khtn8li.json",
+            phanBietHoa = true
         )
     )
 

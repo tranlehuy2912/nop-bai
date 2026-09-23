@@ -203,11 +203,12 @@ class HocThuocActivity : AppCompatActivity() {
         b.theXong.visibility = View.GONE
         b.boxHoi.visibility = View.VISIBLE
         b.txtChan.text = ""
-        // Thanh ky tu toan chi co nghia voi bo the mon Toan. Bo tu vung ma hien no
-        // ra thi con phai luot qua mot hang nut vo dung de toi o go.
-        if (bo.mon == "Toán") {
+        // Moi mon mot thanh ky tu rieng, mon nao khong can thi an han: hien mot hang
+        // nut vo dung thi con phai luot qua no moi toi o go.
+        val kyTu = KY_TU_THEO_MON[bo.mon]
+        if (kyTu != null) {
             b.daiToan.visibility = View.VISIBLE
-            if (b.nutToan.childCount == 0) veDaiToan()
+            veDaiKyTu(kyTu)
         } else {
             b.daiToan.visibility = View.GONE
         }
@@ -262,7 +263,7 @@ class HocThuocActivity : AppCompatActivity() {
         val go = b.oGo.text.toString()
         if (go.isBlank()) return
 
-        val dung = HocThuoc.dung(go, m.the)
+        val dung = HocThuoc.dung(go, m.the, boDangLam?.phanBietHoa == true)
         ketQua += TraThe(theId = m.the.id, go = go.trim(), dung = dung, phut = 0)
         daTraLoi = true
         b.oGo.isEnabled = false
@@ -435,9 +436,10 @@ class HocThuocActivity : AppCompatActivity() {
 
     // ------------------------------------------------------------------- linh tinh
 
-    /** Thanh ky tu toan, chep cach lam cua [SoatBaiActivity.veDaiToan]. */
-    private fun veDaiToan() {
-        KY_TU_TOAN.forEach { ky ->
+    /** Thanh ky tu, chep cach lam cua [SoatBaiActivity.veDaiToan]. */
+    private fun veDaiKyTu(kyTu: List<String>) {
+        b.nutToan.removeAllViews()
+        kyTu.forEach { ky ->
             val nut = MaterialButton(
                 this, null, com.google.android.material.R.attr.materialButtonOutlinedStyle
             ).apply {
@@ -478,6 +480,23 @@ class HocThuocActivity : AppCompatActivity() {
         val KY_TU_TOAN = listOf(
             "^", "²", "³", "√", "∛", "/", "·", "−", "≈", "≠", "≤", "≥",
             "°", "∠", "Δ", "∥", "⊥", "π", "(", ")"
+        )
+
+        /**
+         * Du cho hai bo KHTN 8: dau bang, dau chia va dau nhan cua cong thuc, ngoac
+         * cua Ca(OH)₂, mu cua m³ va 10²³, dau cua ion H⁺ va OH⁻, dau so sanh cua
+         * FA < P, dau phay tren cua m'.
+         *
+         * Khong co nut chi so duoi: con go "H2O" bang so thuong la duoc, xem
+         * [HocThuoc.chuanHoa].
+         */
+        val KY_TU_KHTN = listOf(
+            "=", "/", "·", "(", ")", "²", "³", "^", "%", "'", "+", "−", "<", ">"
+        )
+
+        val KY_TU_THEO_MON = mapOf(
+            "Toán" to KY_TU_TOAN,
+            "Khoa học tự nhiên" to KY_TU_KHTN
         )
     }
 }

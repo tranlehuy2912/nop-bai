@@ -1,0 +1,151 @@
+{
+ "bo": "khtn8hoa",
+ "mon": "Khoa học tự nhiên",
+ "ten": "KHTN 8 phần Hoá học",
+ "ban": 1,
+ "cac_bai": [
+  {
+   "bai": "Bài 3. Mol và tỉ khối chất khí",
+   "cac_the": [
+    {"ma": "b3.na", "hoi": "Số Avogadro (NA) bằng bao nhiêu?", "dap": "6,022·10²³",
+     "dap_khac": ["6.022·10²³"], "trang": 16},
+    {"ma": "b3.M", "hoi": "Công thức tính khối lượng mol (M) của một chất", "dap": "M = m/n",
+     "trang": 17},
+    {"ma": "b3.n", "hoi": "Công thức tính số mol (n) theo khối lượng (m) và khối lượng mol (M)",
+     "dap": "n = m/M", "trang": 17},
+    {"ma": "b3.dvM", "hoi": "Đơn vị của khối lượng mol", "dap": "g/mol", "trang": 17},
+    {"ma": "b3.vmol", "hoi": "Ở điều kiện chuẩn (25 °C, 1 bar), 1 mol khí bất kì chiếm thể tích bao nhiêu lít?",
+     "dap": "24,79", "dap_khac": ["24.79", "24,79 l", "24.79 l", "24,79 lít", "24.79 lít"],
+     "trang": 18},
+    {"ma": "b3.V", "hoi": "Công thức tính thể tích (V) của n mol khí ở điều kiện chuẩn (25 °C, 1 bar)",
+     "dap": "V = 24,79·n",
+     "dap_khac": ["V = 24,79n", "V = n·24,79", "V = 24.79·n", "V = 24.79n", "V = n·24.79"],
+     "trang": 18},
+    {"ma": "b3.dAB", "hoi": "Tỉ khối của khí A đối với khí B: dA/B = ?", "dap": "MA/MB",
+     "dap_khac": ["dA/B = MA/MB"], "trang": 19},
+    {"ma": "b3.dAkk", "hoi": "Tỉ khối của khí A so với không khí: dA/kk = ?", "dap": "MA/29",
+     "dap_khac": ["dA/kk = MA/29"], "trang": 19}
+   ]
+  },
+  {
+   "bai": "Bài 4. Dung dịch và nồng độ",
+   "cac_the": [
+    {"ma": "b4.S", "hoi": "Công thức tính độ tan (S) của một chất trong nước",
+     "dap": "S = mct/mnước·100",
+     "dap_khac": ["S = mct·100/mnước", "S = 100·mct/mnước",
+                  "S = mct/mnuoc·100", "S = mct·100/mnuoc", "S = 100·mct/mnuoc"],
+     "trang": 21},
+    {"ma": "b4.C", "hoi": "Công thức tính nồng độ phần trăm (C%) của dung dịch",
+     "dap": "C% = mct/mdd·100%", "dap_khac": ["C% = mct·100%/mdd", "C% = 100%·mct/mdd"],
+     "trang": 21},
+    {"ma": "b4.mdd", "hoi": "Khối lượng dung dịch bằng khối lượng chất tan cộng với khối lượng của gì?",
+     "dap": "dung môi", "dap_khac": ["khối lượng dung môi"], "trang": 21},
+    {"ma": "b4.CM", "hoi": "Công thức tính nồng độ mol (CM) của dung dịch", "dap": "CM = n/V",
+     "dap_khac": ["CM = nct/Vdd"], "trang": 22},
+    {"ma": "b4.dvCM", "hoi": "Đơn vị của nồng độ mol", "dap": "mol/L",
+     "dap_khac": ["mol/l", "mol/lít", "M"], "trang": 22}
+   ]
+  },
+  {
+   "bai": "Bài 6. Tính theo phương trình hoá học",
+   "cac_the": [
+    {"ma": "b6.H", "hoi": "Công thức tính hiệu suất phản ứng (H) theo khối lượng sản phẩm: m tính theo lí thuyết, m' thu được thực tế",
+     "dap": "H = m'/m·100%", "dap_khac": ["H = m'·100%/m", "H = 100%·m'/m"], "trang": 29}
+   ]
+  },
+  {
+   "bai": "Bài 8. Acid",
+   "cac_the": [
+    {"ma": "b8.hcl", "hoi": "Công thức hoá học của hydrochloric acid", "dap": "HCl", "trang": 35},
+    {"ma": "b8.hno3", "hoi": "Công thức hoá học của nitric acid", "dap": "HNO₃", "trang": 35},
+    {"ma": "b8.h2so4", "hoi": "Công thức hoá học của sulfuric acid", "dap": "H₂SO₄", "trang": 35},
+    {"ma": "b8.ch3cooh", "hoi": "Công thức hoá học của acetic acid (có trong giấm ăn)",
+     "dap": "CH₃COOH", "trang": 38},
+    {"ma": "b8.ion", "hoi": "Khi tan trong nước, acid tạo ra ion gì?", "dap": "H⁺", "trang": 36},
+    {"ma": "b8.quy", "hoi": "Dung dịch acid làm giấy quỳ tím chuyển sang màu gì?", "dap": "đỏ",
+     "dap_khac": ["màu đỏ"], "trang": 36}
+   ]
+  },
+  {
+   "bai": "Bài 9. Base. Thang pH",
+   "cac_the": [
+    {"ma": "b9.naoh", "hoi": "Công thức hoá học của sodium hydroxide", "dap": "NaOH", "trang": 39},
+    {"ma": "b9.baoh2", "hoi": "Công thức hoá học của barium hydroxide", "dap": "Ba(OH)₂", "trang": 39},
+    {"ma": "b9.caoh2", "hoi": "Công thức hoá học của calcium hydroxide (vôi tôi)", "dap": "Ca(OH)₂",
+     "trang": 41},
+    {"ma": "b9.feoh2", "hoi": "Công thức hoá học của iron(II) hydroxide", "dap": "Fe(OH)₂", "trang": 40},
+    {"ma": "b9.feoh3", "hoi": "Công thức hoá học của iron(III) hydroxide", "dap": "Fe(OH)₃", "trang": 40},
+    {"ma": "b9.ion", "hoi": "Khi tan trong nước, base tạo ra ion gì?", "dap": "OH⁻", "trang": 39},
+    {"ma": "b9.quy", "hoi": "Dung dịch base làm giấy quỳ tím chuyển sang màu gì?", "dap": "xanh",
+     "dap_khac": ["màu xanh"], "trang": 43},
+    {"ma": "b9.pp", "hoi": "Dung dịch base làm dung dịch phenolphthalein không màu chuyển sang màu gì?",
+     "dap": "hồng", "dap_khac": ["màu hồng"], "trang": 43},
+    {"ma": "b9.trunghoa", "hoi": "Phản ứng giữa dung dịch acid và dung dịch base tạo thành muối và nước gọi là phản ứng gì?",
+     "dap": "trung hoà", "dap_khac": ["trung hòa", "phản ứng trung hoà", "phản ứng trung hòa"],
+     "trang": 43},
+    {"ma": "b9.ph7", "hoi": "Dung dịch trung tính có pH bằng bao nhiêu?", "dap": "7",
+     "dap_khac": ["pH = 7"], "trang": 42},
+    {"ma": "b9.phacid", "hoi": "Dung dịch có pH nhỏ hơn 7 có môi trường gì?", "dap": "acid",
+     "dap_khac": ["môi trường acid", "axit"], "trang": 43},
+    {"ma": "b9.phbase", "hoi": "Dung dịch có pH lớn hơn 7 có môi trường gì?", "dap": "base",
+     "dap_khac": ["môi trường base", "kiềm", "môi trường kiềm", "bazơ"], "trang": 43}
+   ]
+  },
+  {
+   "bai": "Bài 10. Oxide",
+   "cac_the": [
+    {"ma": "b10.dn", "hoi": "Oxide là hợp chất của hai nguyên tố, trong đó có một nguyên tố là gì?",
+     "dap": "oxygen", "dap_khac": ["oxi", "O"], "trang": 44},
+    {"ma": "b10.co2", "hoi": "Công thức hoá học của carbon dioxide", "dap": "CO₂", "trang": 44},
+    {"ma": "b10.co", "hoi": "Công thức hoá học của carbon monoxide", "dap": "CO", "trang": 45},
+    {"ma": "b10.so2", "hoi": "Công thức hoá học của sulfur dioxide", "dap": "SO₂", "trang": 46},
+    {"ma": "b10.so3", "hoi": "Công thức hoá học của sulfur trioxide", "dap": "SO₃", "trang": 44},
+    {"ma": "b10.p2o5", "hoi": "Công thức hoá học của diphosphorus pentoxide", "dap": "P₂O₅", "trang": 44},
+    {"ma": "b10.al2o3", "hoi": "Công thức hoá học của aluminium oxide", "dap": "Al₂O₃", "trang": 44},
+    {"ma": "b10.fe2o3", "hoi": "Công thức hoá học của iron(III) oxide", "dap": "Fe₂O₃", "trang": 45},
+    {"ma": "b10.cao", "hoi": "Công thức hoá học của calcium oxide (vôi sống)", "dap": "CaO", "trang": 44},
+    {"ma": "b10.acid", "hoi": "CO₂ và SO₂ thuộc loại oxide nào?", "dap": "oxide acid",
+     "dap_khac": ["acid"], "trang": 46},
+    {"ma": "b10.base", "hoi": "CaO và Na₂O thuộc loại oxide nào?", "dap": "oxide base",
+     "dap_khac": ["base"], "trang": 46},
+    {"ma": "b10.luongtinh", "hoi": "Al₂O₃ và ZnO thuộc loại oxide nào?", "dap": "oxide lưỡng tính",
+     "dap_khac": ["lưỡng tính"], "trang": 46},
+    {"ma": "b10.trungtinh", "hoi": "CO và NO thuộc loại oxide nào?", "dap": "oxide trung tính",
+     "dap_khac": ["trung tính", "oxide không tạo muối"], "trang": 46}
+   ]
+  },
+  {
+   "bai": "Bài 11. Muối",
+   "cac_the": [
+    {"ma": "b11.nacl", "hoi": "Công thức hoá học của sodium chloride", "dap": "NaCl", "trang": 51},
+    {"ma": "b11.caco3", "hoi": "Công thức hoá học của calcium carbonate (thành phần chính của đá vôi)",
+     "dap": "CaCO₃", "trang": 45},
+    {"ma": "b11.cuso4", "hoi": "Công thức hoá học của copper(II) sulfate", "dap": "CuSO₄", "trang": 48},
+    {"ma": "b11.feso4", "hoi": "Công thức hoá học của iron(II) sulfate", "dap": "FeSO₄", "trang": 48},
+    {"ma": "b11.na2so4", "hoi": "Công thức hoá học của sodium sulfate", "dap": "Na₂SO₄", "trang": 48},
+    {"ma": "b11.nh4cl", "hoi": "Công thức hoá học của ammonium chloride", "dap": "NH₄Cl", "trang": 48},
+    {"ma": "b11.bacl2", "hoi": "Công thức hoá học của barium chloride", "dap": "BaCl₂", "trang": 50},
+    {"ma": "b11.cl", "hoi": "Gốc acid −Cl có tên là gì?", "dap": "chloride", "trang": 49},
+    {"ma": "b11.no3", "hoi": "Gốc acid −NO₃ có tên là gì?", "dap": "nitrate", "trang": 49},
+    {"ma": "b11.so4", "hoi": "Gốc acid =SO₄ có tên là gì?", "dap": "sulfate", "trang": 49},
+    {"ma": "b11.so3", "hoi": "Gốc acid =SO₃ có tên là gì?", "dap": "sulfite", "trang": 49},
+    {"ma": "b11.co3", "hoi": "Gốc acid =CO₃ có tên là gì?", "dap": "carbonate", "trang": 49},
+    {"ma": "b11.po4", "hoi": "Gốc acid ≡PO₄ có tên là gì?", "dap": "phosphate", "trang": 49},
+    {"ma": "b11.hco3", "hoi": "Gốc acid −HCO₃ có tên là gì?", "dap": "hydrogencarbonate", "trang": 49}
+   ]
+  },
+  {
+   "bai": "Bài 12. Phân bón hoá học",
+   "cac_the": [
+    {"ma": "b12.dam", "hoi": "Phân đạm cung cấp cho cây trồng nguyên tố dinh dưỡng nào?",
+     "dap": "nitrogen", "dap_khac": ["N", "nitơ"], "trang": 54},
+    {"ma": "b12.lan", "hoi": "Phân lân cung cấp cho cây trồng nguyên tố dinh dưỡng nào?",
+     "dap": "phosphorus", "dap_khac": ["P", "phosphorous", "photpho"], "trang": 54},
+    {"ma": "b12.kali", "hoi": "Phân kali cung cấp cho cây trồng nguyên tố dinh dưỡng nào?",
+     "dap": "potassium", "dap_khac": ["K", "kali"], "trang": 54},
+    {"ma": "b12.urea", "hoi": "Công thức hoá học của urea (một loại phân đạm)", "dap": "(NH₂)₂CO",
+     "trang": 54}
+   ]
+  }
+ ]
+}

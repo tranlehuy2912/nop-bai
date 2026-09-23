@@ -1,0 +1,118 @@
+{
+ "bo": "khtn8li",
+ "mon": "Khoa học tự nhiên",
+ "ten": "KHTN 8 phần Vật lí",
+ "ban": 1,
+ "cac_bai": [
+  {
+   "bai": "Bài 13. Khối lượng riêng",
+   "cac_the": [
+    {"ma": "b13.D", "hoi": "Công thức tính khối lượng riêng (D) của một chất", "dap": "D = m/V",
+     "trang": 57},
+    {"ma": "b13.dv", "hoi": "Đơn vị khối lượng riêng khi khối lượng tính bằng kg và thể tích tính bằng m³",
+     "dap": "kg/m³", "dap_khac": ["kg/m3"], "trang": 57},
+    {"ma": "b13.gml", "hoi": "1 g/cm³ bằng bao nhiêu g/mL?", "dap": "1",
+     "dap_khac": ["1 g/mL", "1 g/ml"], "trang": 57},
+    {"ma": "b13.kg", "hoi": "1 kg/m³ bằng bao nhiêu g/cm³?", "dap": "0,001",
+     "dap_khac": ["0.001", "0,001 g/cm³", "0,001 g/cm3"], "trang": 57},
+    {"ma": "b13.nuoc", "hoi": "Khối lượng riêng của nước là bao nhiêu kg/m³?", "dap": "1000",
+     "dap_khac": ["1.000", "1000 kg/m³", "1000 kg/m3"], "trang": 58},
+    {"ma": "b13.d", "hoi": "Công thức tính trọng lượng riêng (d) của một chất", "dap": "d = P/V",
+     "trang": 58},
+    {"ma": "b13.dvd", "hoi": "Đơn vị của trọng lượng riêng", "dap": "N/m³", "dap_khac": ["N/m3"],
+     "trang": 58}
+   ]
+  },
+  {
+   "bai": "Bài 15. Áp suất trên một bề mặt",
+   "cac_the": [
+    {"ma": "b15.apluc", "hoi": "Áp lực là lực ép có phương như thế nào với mặt bị ép?",
+     "dap": "vuông góc", "dap_khac": ["vuông góc với mặt bị ép"], "trang": 64},
+    {"ma": "b15.p", "hoi": "Công thức tính áp suất (p)", "dap": "p = F/S", "trang": 65},
+    {"ma": "b15.pa", "hoi": "Đơn vị áp suất N/m² còn gọi là paxcan. Kí hiệu của paxcan là gì?",
+     "dap": "Pa", "trang": 65},
+    {"ma": "b15.atm", "hoi": "1 atm bằng bao nhiêu Pa?", "dap": "1,013.10⁵",
+     "dap_khac": ["1.013.10⁵", "101300", "101.300"], "trang": 65},
+    {"ma": "b15.mmhg", "hoi": "1 mmHg bằng bao nhiêu Pa?", "dap": "133,3", "dap_khac": ["133.3"],
+     "trang": 65},
+    {"ma": "b15.bar", "hoi": "1 bar bằng bao nhiêu Pa?", "dap": "10⁵",
+     "dap_khac": ["100000", "100.000"], "trang": 65}
+   ]
+  },
+  {
+   "bai": "Bài 17. Lực đẩy Archimedes",
+   "cac_the": [
+    {"ma": "b17.FA", "hoi": "Công thức tính độ lớn lực đẩy Archimedes (FA)", "dap": "FA = d.V",
+     "dap_khac": ["FA = dV", "FA = V.d", "FA = Vd"], "trang": 75},
+    {"ma": "b17.chim", "hoi": "Vật ở trong lòng chất lỏng sẽ chìm xuống khi nào? (so sánh FA với trọng lượng P của vật)",
+     "dap": "FA < P", "dap_khac": ["P > FA"], "trang": 75},
+    {"ma": "b17.noi", "hoi": "Vật ở trong lòng chất lỏng sẽ nổi lên khi nào? (so sánh FA với trọng lượng P của vật)",
+     "dap": "FA > P", "dap_khac": ["P < FA"], "trang": 75}
+   ]
+  },
+  {
+   "bai": "Bài 18. Tác dụng làm quay của lực. Moment lực",
+   "cac_the": [
+    {"ma": "b18.moment", "hoi": "Tác dụng làm quay của lực lên một vật quanh một điểm hoặc một trục được đặc trưng bằng đại lượng nào?",
+     "dap": "moment lực", "dap_khac": ["moment", "mômen lực"], "trang": 78}
+   ]
+  },
+  {
+   "bai": "Bài 19. Đòn bẩy và ứng dụng",
+   "cac_the": [
+    {"ma": "b19.canhtay", "hoi": "Khoảng cách từ giá của lực tác dụng tới điểm tựa gọi là gì?",
+     "dap": "cánh tay đòn", "trang": 79},
+    {"ma": "b19.loai1", "hoi": "Đòn bẩy có điểm tựa O nằm trong khoảng giữa hai điểm đặt lực là đòn bẩy loại mấy?",
+     "dap": "1", "dap_khac": ["loại 1", "một", "loại một"], "trang": 80},
+    {"ma": "b19.loai2", "hoi": "Đòn bẩy có điểm tựa O nằm ngoài khoảng giữa hai điểm đặt lực là đòn bẩy loại mấy?",
+     "dap": "2", "dap_khac": ["loại 2", "hai", "loại hai"], "trang": 80}
+   ]
+  },
+  {
+   "bai": "Bài 20. Hiện tượng nhiễm điện do cọ xát",
+   "cac_the": [
+    {"ma": "b20.cung", "hoi": "Hai vật nhiễm điện cùng loại thì hút nhau hay đẩy nhau?",
+     "dap": "đẩy nhau", "dap_khac": ["đẩy"], "trang": 87},
+    {"ma": "b20.khac", "hoi": "Hai vật nhiễm điện khác loại thì hút nhau hay đẩy nhau?",
+     "dap": "hút nhau", "dap_khac": ["hút"], "trang": 87}
+   ]
+  },
+  {
+   "bai": "Bài 21. Dòng điện, nguồn điện",
+   "cac_the": [
+    {"ma": "b21.dong", "hoi": "Dòng điện là dòng chuyển dời có hướng của các hạt gì?",
+     "dap": "hạt mang điện", "dap_khac": ["mang điện"], "trang": 88}
+   ]
+  },
+  {
+   "bai": "Bài 24. Cường độ dòng điện và hiệu điện thế",
+   "cac_the": [
+    {"ma": "b24.I", "hoi": "Cường độ dòng điện được kí hiệu bằng chữ gì?", "dap": "I", "trang": 99},
+    {"ma": "b24.A", "hoi": "Đơn vị đo cường độ dòng điện", "dap": "ampe (A)",
+     "dap_khac": ["ampe", "A"], "trang": 99},
+    {"ma": "b24.mA", "hoi": "1 A bằng bao nhiêu mA?", "dap": "1000",
+     "dap_khac": ["1.000", "1000 mA"], "trang": 99},
+    {"ma": "b24.ampeke", "hoi": "Dụng cụ dùng để đo cường độ dòng điện", "dap": "ampe kế", "trang": 99},
+    {"ma": "b24.U", "hoi": "Hiệu điện thế được kí hiệu bằng chữ gì?", "dap": "U", "trang": 100},
+    {"ma": "b24.V", "hoi": "Đơn vị đo hiệu điện thế", "dap": "vôn (V)", "dap_khac": ["vôn", "V"],
+     "trang": 100},
+    {"ma": "b24.kV", "hoi": "1 kV bằng bao nhiêu V?", "dap": "1000",
+     "dap_khac": ["1.000", "1000 V"], "trang": 100},
+    {"ma": "b24.mV", "hoi": "1 mV bằng bao nhiêu V?", "dap": "0,001",
+     "dap_khac": ["0.001", "0,001 V"], "trang": 100},
+    {"ma": "b24.vonke", "hoi": "Dụng cụ dùng để đo hiệu điện thế", "dap": "vôn kế", "trang": 100},
+    {"ma": "b24.220", "hoi": "Hiệu điện thế của mạng điện trong gia đình là bao nhiêu vôn?",
+     "dap": "220", "dap_khac": ["220 V", "220 vôn"], "trang": 101}
+   ]
+  },
+  {
+   "bai": "Bài 26. Năng lượng nhiệt và nội năng",
+   "cac_the": [
+    {"ma": "b26.nhietnang", "hoi": "Năng lượng mà vật có được nhờ chuyển động nhiệt gọi là gì?",
+     "dap": "năng lượng nhiệt", "dap_khac": ["nhiệt năng"], "trang": 106},
+    {"ma": "b26.noinang", "hoi": "Nội năng của một vật là tổng động năng và gì của các phân tử, nguyên tử cấu tạo nên vật?",
+     "dap": "thế năng", "trang": 107}
+   ]
+  }
+ ]
+}
