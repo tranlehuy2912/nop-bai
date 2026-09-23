@@ -13,6 +13,8 @@ import vn.huytl.homeworkgate.data.GateStore
 import vn.huytl.homeworkgate.data.GioiHanApp
 import vn.huytl.homeworkgate.data.LuotBaNoi
 import vn.huytl.homeworkgate.data.Prefs
+import vn.huytl.homeworkgate.data.SoCaiBai
+import vn.huytl.homeworkgate.data.SuaCham
 import vn.huytl.homeworkgate.guard.ChuongTin
 import vn.huytl.homeworkgate.guard.ParentMode
 import vn.huytl.homeworkgate.guard.Permissions
@@ -189,6 +191,8 @@ object ThiHanhLenh {
 
             Lenh.CAI_DAT -> doiCaiDat(context, chu, d.get("giaTri"))
 
+            Lenh.SUA_CHAM -> suaCham(context, gate, d.get("giaTri"))
+
             // Ben kia vua mo app va hoi tablet con song khong. Day mot ban trang
             // thai day du roi thoi: khong ghi nhat ky, khong tra loi gi. Ban trang
             // thai do chinh la cau tra loi, va no den qua duong khac.
@@ -318,6 +322,60 @@ object ThiHanhLenh {
         DayLog.add(context, "$nguoi cho $duoc phút")
         ApprovalService.ensureRunning(context)
         return "Đã cho $duoc phút (chưa tính giờ)."
+    }
+
+    /**
+     * Sua ban cham theo ket qua Claude cham lai. Luat nam o [SuaCham].
+     *
+     * Cap gio TRUOC, ghi so SAU, y het duong AI tu cham. Cap khong duoc thi cau van
+     * dang cho sua, va Ba Huy gui lai luc khac duoc.
+     *
+     * Ghi ca nhat ky lan loi nhan: Le Hoa doc ca hai tren man hinh chinh, va con can
+     * biet la may da nham chu khong phai con tu dung nhien duoc them gio.
+     */
+    internal fun suaCham(context: Context, gate: GateStore, giaTri: Any?): String {
+        val danhSach = (giaTri as? List<*>).orEmpty().mapNotNull { m ->
+            val o = m as? Map<*, *> ?: return@mapNotNull null
+            val ma = (o["ma"] as? String)?.trim().orEmpty()
+            if (ma.isEmpty()) null else SuaCham.Cau(ma, (o["de"] as? String).orEmpty())
+        }
+        if (danhSach.isEmpty()) return "Lệnh thiếu danh sách câu, máy không sửa gì."
+
+        val chuanBi = SuaCham.chuanBi(context, danhSach)
+        if (chuanBi.cac.isEmpty()) {
+            return "Không còn câu nào trong số đó đang chờ sửa, máy không cộng gì."
+        }
+
+        val phut = chuanBi.phut
+        if (phut > 0) {
+            val dangChoi = gate.state == GateState.ACTIVE
+            val duoc = if (dangChoi) {
+                gate.extend(phut, useQuota = true)
+            } else {
+                gate.approve(wantedMinutes = phut, useQuota = true)
+            }
+            if (duoc == null) return khongCapDuoc(context)
+            if (!dangChoi) ApprovalService.ensureRunning(context)
+        }
+
+        val daGhi = SuaCham.ghi(context, chuanBi)
+        runCatching { DongBo.daySoCai(context, daGhi) }
+
+        val ke = daGhi.joinToString(", ") { it.ma }
+        DayLog.add(
+            context,
+            "Ba Huy chấm lại câu $ke: con làm đúng" + if (phut > 0) ", +$phut phút" else ""
+        )
+        SoCaiBai.datLoiNhan(
+            context,
+            "Ba Huy chấm lại: câu $ke con làm đúng rồi, máy chấm nhầm." +
+                if (phut > 0) " Được thêm $phut phút." else ""
+        )
+        val boQua = if (chuanBi.boQua.isEmpty()) "" else {
+            " Bỏ qua ${chuanBi.boQua.joinToString(", ")} vì không còn chờ sửa."
+        }
+        return "Đã sửa câu $ke thành đúng" +
+            (if (phut > 0) ", cộng $phut phút." else ", không có phút nào để cộng.") + boQua
     }
 
     private fun khongCapDuoc(context: Context): String {

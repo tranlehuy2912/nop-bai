@@ -111,6 +111,11 @@
             android:name=".ui.TinActivity"
             android:exported="false" />
 
+        <!-- Bai da cham: tung cau dung hay sai, sai thi may noi gi. Xem KetQuaActivity. -->
+        <activity
+            android:name=".ui.KetQuaActivity"
+            android:exported="false" />
+
         <activity
             android:name=".ui.LichActivity"
             android:exported="false" />

@@ -17,8 +17,10 @@ import com.google.firebase.firestore.DocumentReference
 import com.google.firebase.firestore.FieldValue
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ListenerRegistration
+import com.google.firebase.firestore.Query
 import vn.huytl.homeworkgate.BuildConfig
 import vn.huytl.homeworkgate.R
+import vn.huytl.homeworkgate.data.BaiDaCham
 import vn.huytl.homeworkgate.data.ChatFrom
 import vn.huytl.homeworkgate.data.ChatLine
 import vn.huytl.homeworkgate.data.DayLog
@@ -487,6 +489,40 @@ object DongBo {
         nha(context)?.collection(Duong.BAI)?.document(baiId)
             ?.update(Duong.F_CHAM, cham)
             ?.addOnFailureListener { Log.w(TAG, "day ban cham hong: ${it.message}") }
+    }
+
+    /**
+     * Nghe cac lan nop gan day kem ban cham, moi nhat truoc.
+     *
+     * Cho man ket qua cua con, xem [vn.huytl.homeworkgate.ui.KetQuaActivity]. Doc dung
+     * thu ma [dayBaiMoi] va [dayChamBai] ghi xuong, nen bai vua nop hien ra ngay va ban
+     * cham tu dien vao khi may cham xong.
+     *
+     * [khi] nhan null khi khong doc duoc: may chua khai bao Firebase, hay Firestore bao
+     * loi. Ben goi quyet co giu danh sach dang hien hay khong.
+     */
+    fun ngheBaiDaCham(
+        context: Context,
+        soLuong: Long,
+        khi: (List<BaiDaCham>?) -> Unit
+    ): ListenerRegistration? {
+        if (!san(context)) {
+            khi(null)
+            return null
+        }
+        val nghe = nha(context)?.collection(Duong.BAI)
+            ?.orderBy(Duong.F_LUC, Query.Direction.DESCENDING)
+            ?.limit(soLuong)
+            ?.addSnapshotListener { snap, loi ->
+                if (loi != null) {
+                    Log.w(TAG, "doc bai da cham hong: ${loi.message}")
+                    khi(null)
+                    return@addSnapshotListener
+                }
+                khi(snap?.documents.orEmpty().map { BaiDaCham.doc(it) })
+            }
+        if (nghe == null) khi(null)
+        return nghe
     }
 
     /** Mot cau trong khung chat. Goi ca khi con nhan va khi ba nhan. */

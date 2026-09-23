@@ -573,29 +573,36 @@ class HomeActivity : AppCompatActivity() {
 
         if (canSua.isNotEmpty()) {
             val ke = canSua.take(3).joinToString(", ") { it.ma }
+            /*
+             * Bam vao la ra man ket qua truoc, chup lai sau.
+             *
+             * Truoc day dong nay mo thang camera: con biet cau nao sai ma khong biet sai
+             * o dau, vi loi nhan xet cua may khong con hien o cho nao tren tablet ke tu
+             * khi man chinh gon lai ngay 18/9/2026. Nut chup lai nam o day man ket qua,
+             * xem xong la chup luon.
+             */
             themViec(
                 hinh = R.drawable.st_ic_dau_hoi,
                 mau = R.color.alert,
                 ten = if (canSua.size == 1) "Sửa 1 câu rồi chụp lại"
                 else "Sửa ${canSua.size} câu rồi chụp lại",
-                phu = ke + if (canSua.size > 3) "…" else ""
+                phu = "Xem sai ở đâu: " + ke + if (canSua.size > 3) "…" else ""
             ) {
                 startActivity(
-                    Intent(this, CaptureActivity::class.java)
-                        .putExtra(CaptureActivity.EXTRA_SUA, true)
-                        .putExtra(CaptureActivity.EXTRA_PHAM, phamViSua(canSua)?.sangJson())
+                    Intent(this, KetQuaActivity::class.java)
+                        .putExtra(KetQuaActivity.EXTRA_SUA, true)
+                        .putExtra(KetQuaActivity.EXTRA_PHAM, phamViSua(canSua)?.sangJson())
                 )
             }
         } else if (loiNhan != null) {
             // Nop lai bai da cham hom truoc ma khong duoc gi: phai noi vi sao, khong
-            // thi con bam nop lai lan nua.
+            // thi con bam nop lai lan nua. Bam vao thi xem ket qua cham tung cau.
             themViec(
                 hinh = R.drawable.st_ic_dau_hoi,
                 mau = R.color.alert,
                 ten = "${getString(R.string.parent_name_cap)} nhắn",
-                phu = loiNhan,
-                mui = false
-            ) {}
+                phu = loiNhan
+            ) { KetQuaActivity.mo(this) }
         }
 
         if (denHen.isNotEmpty()) {
