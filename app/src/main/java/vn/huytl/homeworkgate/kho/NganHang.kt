@@ -44,9 +44,9 @@ object NganHang {
     /**
      * Cac quyen da nap.
      *
-     * Toan 8 ca hai tap va Khoa hoc tu nhien 8. Cac mon khac van chay duong cu -
-     * con chon "Bai khac" luc nop, va so cai lay de bai da chuan hoa lam khoa nhu
-     * tu truoc den gio.
+     * Toan 8 ca hai tap, Khoa hoc tu nhien 8 va Ngu van 8 ca hai tap. Cac mon khac
+     * van chay duong cu - con chon "Bai khac" luc nop, va so cai lay de bai da chuan
+     * hoa lam khoa nhu tu truoc den gio.
      *
      * Thu tu trong danh sach la thu tu hien ra man chon sach, nen tap mot dung
      * truoc tap hai.
@@ -57,6 +57,30 @@ object NganHang {
      * la KHONG duoc xep lai hay chen them cau vao giua khi sua file: lam the la cac
      * cau sau no doi ma, va so cai khong nhan ra cau da tra gio nua. Them cau moi
      * thi them so tiep theo o cuoi bai.
+     *
+     * NGU VAN CUNG MA TU DAT, cung mot luat: sach dem lai tu 1 o moi muc (cau hoi
+     * sau van ban, thuc hanh tieng Viet, cung co), nen "B3.C7" la cau thu bay cua
+     * bai 3, dem lien qua moi muc. On tap hoc ki khong thuoc bai nao nen mang so 0:
+     * "B0.C4".
+     *
+     * De bai Ngu van mang them hai thu sach khong in lien voi cau hoi. Cau sach co
+     * danh so thi mo dau bang so do ("Câu 3."). Cau hoi ve mot van ban thi ket bang
+     * ten van ban ("(văn bản Hịch tướng sĩ của Trần Quốc Tuấn)"), bai thuc hanh tieng
+     * Viet thi ket bang ten muc ("(Thực hành tiếng Việt: trợ từ)"). Ca hai la cho AI
+     * cham: no chi thay ma va de bai, khong thay ten muc hay ten bai. Thieu ten van
+     * ban thi cau "Xác định luận đề của văn bản" khong biet van ban nao ma cham; thieu
+     * so in thi khong ghep duoc voi dong "Câu 3:" con ghi trong vo. Chu in dam cung
+     * mat khi chep ra chu thuong, nen cau nao hoi "tu in dam" thi ghi kem cac tu do:
+     * "(in đậm: làm xe; chim mòng, nhà đi săn, viên đạn)".
+     *
+     * Bai 10 la bai du an doc sach: nhieu viec lam tren cuon sach con tu chon, khong
+     * co van ban nao de ghi ten. Nhung cau do ket bang "(Bài 10: Sách – người bạn
+     * đồng hành)" de AI biet dang cham viec gi.
+     *
+     * Ngu van bo han phan Noi va nghe, Doc mo rong va cac o goi y ben le van ban.
+     * Noi va nghe lam mieng tren lop, anh chup khong thay gi; hai thu con lai khong
+     * de ra bai viet nao de nop. Phan Thuc hanh doc chi co o huong dan va van ban,
+     * khong co cau hoi danh so, nen cung khong co cau nao.
      */
     val SACH = listOf(
         Sach(
@@ -76,6 +100,18 @@ object NganHang {
             mon = "Khoa học tự nhiên",
             ten = "SGK Khoa học tự nhiên 8",
             file = "nganhang/khtn8.json"
+        ),
+        Sach(
+            nguon = "van8t1",
+            mon = "Ngữ văn",
+            ten = "SGK Ngữ văn 8 — tập một",
+            file = "nganhang/van8t1.json"
+        ),
+        Sach(
+            nguon = "van8t2",
+            mon = "Ngữ văn",
+            ten = "SGK Ngữ văn 8 — tập hai",
+            file = "nganhang/van8t2.json"
         )
     )
 
