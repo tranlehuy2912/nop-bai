@@ -360,13 +360,6 @@ object DongBo {
         if (deSo != banDaDay) {
             banDaDay = deSo
             hop.set(noi)
-                // Chi chay khi may chu da nhan, khong phai luc vua goi: Firestore
-                // giu ban ghi trong may khi mat mang. Doc dong nay la biet ben dien
-                // thoai co the thay gi.
-                .addOnSuccessListener {
-                    Log.d(TAG, "may chu da nhan trang thai, truoc mat='${noi[Duong.F_APP_TRUOC_MAT] ?: "?"}' " +
-                        "sang=${noi[Duong.F_MAN_HINH_SANG] ?: "?"}")
-                }
                 .addOnFailureListener { Log.w(TAG, "day trang thai hong: ${it.message}") }
         }
 

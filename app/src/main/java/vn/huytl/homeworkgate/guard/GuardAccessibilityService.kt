@@ -174,6 +174,20 @@ class GuardAccessibilityService : AccessibilityService() {
     /** Gom chu con go vao app AI de dung lai cau hoan chinh. Xem [BoGoAi]. */
     private val boGoAi = BoGoAi()
 
+    /**
+     * Chot cau con go xong roi de do: khong bam gui, khong roi app.
+     *
+     * [BoGoAi] co san luat "o nhap im qua lau thi coi nhu xong", nhung truoc day khong
+     * cho nao goi toi. Cau go xong ma khong gui nam trong bo gom cho den lan con mo
+     * app khac, co khi hang tieng sau, va Ba Huy khong biet gi trong luc do.
+     *
+     * Handler dung khi CPU ngu, nen tat man hinh ngay sau khi go thi lan hen nay tre.
+     * Canh do [manHinhReceiver] lo: tat man hinh la chot luon.
+     */
+    private val imLauRunnable = Runnable {
+        runCatching { boGoAi.imLau(SystemClock.elapsedRealtime())?.let { chotCauHoi(it) } }
+    }
+
     /** App AI con dang go do. Nho lai vi luc chot cau, con co the da sang app khac. */
     private var goiAiDangGo = ""
 
@@ -199,6 +213,9 @@ class GuardAccessibilityService : AccessibilityService() {
                         gate.screenOffAtWall = System.currentTimeMillis()
                     }
                     dongSuDung()
+                    // Tat man hinh la con khong go tiep nua. Chot ngay o day, khong
+                    // doi [imLauRunnable]: lan hen do dung theo CPU khi may ngu.
+                    chotCauDangGo()
                 }
                 Intent.ACTION_SCREEN_ON -> batManHinhLen()
             }
@@ -414,14 +431,46 @@ class GuardAccessibilityService : AccessibilityService() {
         mainHandler.removeCallbacks(gopCuaSoRunnable)
 
         val pkg = event.packageName?.toString() ?: return
-        if (pkg != packageName) currentPackage = pkg
-        ngheChuAi(pkg in prefs.aiPackages)
-        // Con roi app AI sang app khac: cau dang go do, neu co, la da xong.
-        if (pkg !in prefs.aiPackages) {
-            boGoAi.roiApp()?.let { chotCauHoi(it) }
-        }
+        // Ban phim hien len cung ban mot su kien cua so, mang ten goi cua ban phim.
+        // No khong phai app con vua mo, no de len tren app dang dung. Ghi no vao day
+        // thi lan chan sau hoi "con dang mo gi" se nhan ve ten ban phim.
+        val laPhim = laBanPhim(pkg)
+        if (pkg != packageName && !laPhim) currentPackage = pkg
+        xetNgheChuAi(pkg, laPhim)
         evaluate(pkg)
         syncTicker()
+    }
+
+    /**
+     * Bat hay tat nghe chu theo viec con con o trong app AI khong, va chot cau dang
+     * go khi con da roi di.
+     *
+     * TRUOC DAY nhin moi goi cua su kien: goi nao khong phai app AI la coi nhu con da
+     * roi app AI. Hong ngay tu cai cham dau tien - cham vao o nhap thi ban phim hien
+     * len, ban mot su kien cua so mang ten ban phim, va viec nghe chu tat truoc khi
+     * con go chu dau tien. Thu tren may ao: Chrome khong ghi duoc chu nao; Danh ba
+     * ghi duoc nhung mat may chu dau, vi no tu ban them su kien cua so nen nghe bat
+     * lai giua chung.
+     *
+     * Nen gio ban phim thi bo qua han. Goi khac khong phai app AI thi hoi them mot
+     * cau: app AI con cua so nao tren man hinh khong. Hop thoai he thong, lop phu cua
+     * chinh app nay, nua man hinh ben kia khi chia doi - deu la cua so nam canh hay de
+     * len tren; app AI con do nghia la con chua roi. Chi hoi khi dang nghe, tuc la luc
+     * app AI vua truoc mat, nen gan nhu ca ngay khong ton gi.
+     */
+    private fun xetNgheChuAi(pkg: String, laPhim: Boolean) {
+        if (laPhim) return
+        val appAi = prefs.aiPackages
+        val conOAi = pkg in appAi || (dangNgheChu && goiDangHien().any { it in appAi })
+        ngheChuAi(conOAi)
+        // Con roi app AI sang app khac: cau dang go do, neu co, la da xong.
+        if (!conOAi) chotCauDangGo()
+    }
+
+    /** Chot ngay cau dang go do, neu co. Dung khi chac chan con khong go tiep nua. */
+    private fun chotCauDangGo() {
+        mainHandler.removeCallbacks(imLauRunnable)
+        boGoAi.roiApp()?.let { chotCauHoi(it) }
     }
 
     /**
@@ -434,9 +483,25 @@ class GuardAccessibilityService : AccessibilityService() {
         val pkg = event.packageName?.toString() ?: return
         if (pkg !in prefs.aiPackages) return
         if (event.isPassword) return
+        // Dang mo toan bo may thi nguoi go la Ba Huy. Ghi vao day la cau cua ba thanh
+        // "Le Hoa hoi ..." tren Telegram va trong so hoi AI cua con.
+        //
+        // Van de nghe chu bat, chi bo o day: tat nghe thi luc ba khoa may lai, app AI
+        // van dang mo, khong co su kien cua so nao de bat nghe lai - con go gi sau do
+        // cung mat. Cau con go do TRUOC khi ba mo may van nam trong [boGoAi] va van
+        // duoc chot binh thuong, vi do dung la cau cua con.
+        if (ParentMode.isActive(this)) return
         val text = event.text?.joinToString(" ")?.trim().orEmpty()
         goiAiDangGo = pkg
-        boGoAi.goChu(text, SystemClock.elapsedRealtime())?.let { chotCauHoi(it) }
+        mainHandler.removeCallbacks(imLauRunnable)
+        val cau = boGoAi.goChu(text, SystemClock.elapsedRealtime())
+        if (cau != null) {
+            chotCauHoi(cau)
+        } else if (text.isNotEmpty()) {
+            // Con dang go do. Hen xem lai khi o nhap da im du lau; phim moi thi hen
+            // lai tu dau, nen chi lan hen cua phim cuoi cung la chay. Xem [imLauRunnable].
+            mainHandler.postDelayed(imLauRunnable, boGoAi.imMs + 500L)
+        }
     }
 
     /**
@@ -483,6 +548,9 @@ class GuardAccessibilityService : AccessibilityService() {
         mainHandler.removeCallbacks(gopCuaSoRunnable)
         mainHandler.removeCallbacks(xetLaiRunnable)
         mainHandler.removeCallbacks(nhipNhacRunnable)
+        // Cau dang go do van ghi vao so truoc khi di. Phai lam truoc khi huy scope:
+        // tin gui Telegram chay trong scope do.
+        runCatching { chotCauDangGo() }
         // Chot not khoang dang mo truoc khi di, khong thi phan da xem tu lan ghi
         // cuoi den bay gio mat khoi so.
         runCatching { dongSuDung() }

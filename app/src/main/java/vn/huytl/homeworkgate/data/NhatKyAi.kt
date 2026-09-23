@@ -26,7 +26,12 @@ object NhatKyAi {
     /** Ghi mot cau con vua hoi [tenApp]. Tra ve dong da ghi, de con gui di Telegram. */
     fun ghi(context: Context, tenApp: String, cau: String): String {
         val sp = Prefs.get(context).raw()
-        val dong = "${dongHo.format(Date())}  [$tenApp]  $cau"
+        // Mot cau mot dong. So nay noi cac cau bang dau xuong dong roi doc lai bang
+        // lines(), va [homNay] chi giu dong bat dau bang ngay - nen con go cau hai
+        // dong thi dong thu hai roi mat, ca o /hoi lan the "Hoi AI" tren Bang dieu
+        // khien. Tin Telegram van gui cau goc, xem noi goi ham nay.
+        val motDong = cau.replace(Regex("""\s*[\r\n]+\s*"""), " ").trim()
+        val dong = "${dongHo.format(Date())}  [$tenApp]  $motDong"
         val cu = sp.getString(K_TEXT, "").orEmpty()
         val moi = (cu.lines().filter { it.isNotBlank() } + dong).takeLast(MAX_DONG)
         sp.edit().putString(K_TEXT, moi.joinToString("\n")).commit()
