@@ -26,6 +26,7 @@ import vn.huytl.homeworkgate.ai.ChamBaiIO
 import vn.huytl.homeworkgate.data.CauCham
 import vn.huytl.homeworkgate.data.CaptureStage
 import vn.huytl.homeworkgate.data.KetQuaCham
+import vn.huytl.homeworkgate.data.Prefs
 import vn.huytl.homeworkgate.databinding.StActivitySoatBaiBinding
 import vn.huytl.homeworkgate.kho.PhamVi
 import vn.huytl.homeworkgate.telegram.ApprovalService
@@ -139,6 +140,15 @@ class SoatBaiActivity : AppCompatActivity() {
     // ------------------------------------------------------------------ cham bai
 
     private fun cham() {
+        // Tablet dang tat cham AI: khong goi may, cho con gui thang. Ba Huy cham bang
+        // Claude tren dien thoai roi dan ket qua ve, xem [Prefs.chamBangAi].
+        if (!Prefs.get(this).chamBangAi) {
+            binding.khungCho.visibility = View.GONE
+            binding.khungCuon.visibility = View.VISIBLE
+            binding.dayNut.visibility = View.VISIBLE
+            baHuyCham()
+            return
+        }
         lifecycleScope.launch {
             val anh = nhom.values.flatten()
             val giai = nhom[CaptureStage.BAI_GIAI].orEmpty()
@@ -157,6 +167,27 @@ class SoatBaiActivity : AppCompatActivity() {
             ket = k
             ve(k)
         }
+    }
+
+    /**
+     * Man nay khi tablet tat cham AI. Khong co gi de soat: may khong doc chu nao.
+     *
+     * Noi thang la Ba Huy se cham va con cu gui. Khong noi "may hong": may khong hong,
+     * chi la hom nay Ba Huy chon tu cham.
+     */
+    private fun baHuyCham() {
+        binding.tieuDe.text = "${getString(R.string.parent_name_cap)} sẽ chấm bài này"
+        binding.phuDe.text = ""
+        binding.danhSach.removeAllViews()
+        binding.danhSach.addView(
+            TextView(this).apply {
+                text = "Hôm nay máy không tự chấm. Con cứ gửi, " +
+                    "${getString(R.string.parent_name)} chấm xong là có giờ."
+                textSize = 16f
+                setTextColor(ContextCompat.getColor(this@SoatBaiActivity, R.color.ink))
+            }
+        )
+        binding.demCau.text = ""
     }
 
     /**

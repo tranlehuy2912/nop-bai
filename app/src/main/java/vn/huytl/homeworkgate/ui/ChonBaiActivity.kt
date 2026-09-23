@@ -24,6 +24,7 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import vn.huytl.homeworkgate.R
 import vn.huytl.homeworkgate.data.LoaiLoi
+import vn.huytl.homeworkgate.data.Prefs
 import vn.huytl.homeworkgate.data.SoCaiBai
 import vn.huytl.homeworkgate.data.ThoiKhoaBieu
 import vn.huytl.homeworkgate.data.VoDanDo
@@ -273,6 +274,10 @@ class ChonBaiActivity : AppCompatActivity() {
      * chu do lai dang quyet dinh tron goi 45 phut.
      */
     private fun themDanDo() {
+        // Tat cham AI thi khong co may doc de con soat vo dan do ngay tu dau buoi. Trang
+        // vo van phai chup, nhung chup kem luc nop, va Claude doc no cung luc cham bai.
+        // Xem CaptureActivity.cacBuoc.
+        if (!Prefs.get(this).chamBangAi) return
         // Don o day nua chu khong chi luc dich vu khoi dong: [ApprovalService] la
         // foreground START_STICKY, chay lien mach ca tuan nen onCreate cua no gan
         // nhu khong goi lai lan nao. Man nay thi con vao moi lan nop bai.

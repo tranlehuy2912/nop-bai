@@ -35,6 +35,7 @@ import vn.huytl.homeworkgate.data.ChatBox
 import vn.huytl.homeworkgate.data.ChatFrom
 import vn.huytl.homeworkgate.data.ChatLine
 import vn.huytl.homeworkgate.data.DayLog
+import vn.huytl.homeworkgate.data.KhaiChoCham
 import vn.huytl.homeworkgate.data.NhatKyAi
 import vn.huytl.homeworkgate.data.NhatKySuDung
 import vn.huytl.homeworkgate.data.ViecNha
@@ -227,6 +228,18 @@ class ApprovalService : Service() {
             val pham = PhamVi.tuJson(intent.getStringExtra(EXTRA_PHAM))
             val ket = ChamBaiIO.doc(intent.getStringExtra(EXTRA_BAN_CHAM))
             scope?.launch { guiRoiCap(nhom, pham, ket) }
+        }
+
+        // Ba Huy dan ket qua Claude cham tu Bang dieu khien. Chay dung doan xu ly cua
+        // ban cham AI, chi khac la bai da duoc chi dinh san. Xem [chamTheoClaude].
+        if (intent?.action == ACTION_CHAM_CLAUDE) {
+            val baiId = intent.getStringExtra(EXTRA_BAI_ID).orEmpty()
+            val pham = PhamVi.tuJson(intent.getStringExtra(EXTRA_PHAM))
+            val ket = ChamBaiIO.doc(intent.getStringExtra(EXTRA_BAN_CHAM))
+            val coVo = intent.getBooleanExtra(EXTRA_CO_DAN_DO, false)
+            if (baiId.isNotEmpty() && ket != null) {
+                scope?.launch { xuLyBanCham(ket, pham, coVo, baiId = baiId, nguoiCham = "Claude") }
+            }
         }
 
         return START_STICKY
@@ -1319,7 +1332,12 @@ class ApprovalService : Service() {
         }
 
         gate.markPending(sent.requestId, sent.messageId)
-        DongBo.dayBaiMoi(this, sent.requestId, sent.messageId, sent.anh)
+        // Giu pham vi lai: tat cham AI thi lan cham den sau, luc Ba Huy dan ket qua
+        // Claude ve, ma luc do van phai biet con da khai nhung cau nao.
+        pham?.let { KhaiChoCham.luu(this, sent.requestId, it) }
+        DongBo.dayBaiMoi(
+            this, sent.requestId, sent.messageId, sent.anh, DongBo.banKhai(this, pham)
+        )
         DayLog.add(
             this,
             "Nộp bài: " + nhom.entries.joinToString(", ") { (st, files) ->
@@ -1329,9 +1347,14 @@ class ApprovalService : Service() {
         anh.forEach { runCatching { it.delete() } }
 
         if (ket == null) {
-            runCatching {
-                tg.sendMessage(prefs.parentChatId, "⚠️ Máy không chấm được lần này. Ba Huy duyệt tay giúp nhé.")
+            val loi = if (!prefs.chamBangAi) {
+                "📝 Máy đang tắt chấm AI. Ba Huy mở Bảng điều khiển, bấm Nhờ Claude chấm, " +
+                    "rồi dán kết quả về để tablet cộng giờ."
+            } else {
+                "⚠️ Máy không chấm được lần này. Ba Huy duyệt tay, hoặc mở Bảng điều " +
+                    "khiển bấm Nhờ Claude chấm."
             }
+            runCatching { tg.sendMessage(prefs.parentChatId, loi) }
             return
         }
         xuLyBanCham(ket, pham, nhom.containsKey(CaptureStage.DAN_DO))
@@ -1346,10 +1369,42 @@ class ApprovalService : Service() {
      * cap gio thi phai o service, vi no van phai chay xong du con dong man hinh lai
      * hay tablet khoa man.
      */
-    private fun xuLyBanCham(ket: KetQuaCham, pham: PhamVi?, coAnhDanDo: Boolean) {
+    private fun xuLyBanCham(
+        ket: KetQuaCham,
+        pham: PhamVi?,
+        coAnhDanDo: Boolean,
+        /** Bai duoc chi dinh san, o duong Claude cham. null la bai vua nop, moi nhat. */
+        baiId: String? = null,
+        /** Ai cham, de ghi dung vao tin Telegram va nhat ky. */
+        nguoiCham: String = "AI"
+    ) {
         val chatId = prefs.parentChatId
         val con = getString(R.string.child_name)
-        val bai = gate.baiDangCho().lastOrNull()
+        /*
+         * Duong Claude cham chi dinh san bai nao. Bai do da roi hang cho - Ba Huy vua
+         * duyet tay hay tu choi - thi thoi han. KHONG lay bai moi nhat thay vao: nhu
+         * vay la cong gio cua bai nay cho mot bai khac.
+         */
+        val bai = if (baiId != null) {
+            gate.baiDangCho().firstOrNull { it.id == baiId } ?: run {
+                Log.i(TAG, "cham theo $nguoiCham: bai $baiId khong con cho, bo qua")
+                return
+            }
+        } else {
+            gate.baiDangCho().lastOrNull()
+        }
+
+        /*
+         * Moc gio cho cac luat tinh theo ngay: vo dan do con hieu luc khong, hom nay da
+         * co tron goi chua, phan lam them va phan on da duoc bao nhieu.
+         *
+         * AI cham ngay luc con nop, nen lay bay gio la dung. Claude thi cham luc Ba Huy
+         * dan ket qua, co khi tre ca buoi: bai nop toi nay, sang mai moi cham. Lay bay
+         * gio luc do thi vo dan do hom qua qua trua la het han, va goi cua hom nay bi
+         * ghi sang ngay mai, chan mat goi that cua ngay mai. Nen duong Claude lay luc
+         * con nop.
+         */
+        val luc = bai?.at?.takeIf { baiId != null && it > 0L } ?: System.currentTimeMillis()
 
         // Bo cac cau da tra gio tu lan nop truoc: chup lai bai cu khong duoc tinh
         // lan hai. Cau dang cho sua thi KHONG bo - lan nay con sua no.
@@ -1388,13 +1443,16 @@ class ApprovalService : Service() {
             emptyList()
         }
 
-        val goiDaCo = SoCaiBai.goiDaCoHomNay(this)
+        val goiDaCo = SoCaiBai.goiDaCoHomNay(this, luc)
         val bang = LuatCongGio.tinh(
             ket.copy(cac = moi),
-            daCongLamThemHomNay = SoCaiBai.phutLamThemHomNay(this),
+            daCongLamThemHomNay = SoCaiBai.phutLamThemHomNay(this, luc),
+            bayGio = java.time.LocalDateTime.ofInstant(
+                java.time.Instant.ofEpochMilli(luc), java.time.ZoneId.systemDefault()
+            ),
             goiDaCoHomNay = goiDaCo,
             onTap = onTap,
-            daCongOnHomNay = SoCaiBai.phutOnHomNay(this)
+            daCongOnHomNay = SoCaiBai.phutOnHomNay(this, luc)
         )
         /*
          * Cau may khong nhin thay de: tach han ra.
@@ -1457,9 +1515,9 @@ class ApprovalService : Service() {
         val dauDe = if (ket.mon.isBlank()) "" else "${ket.mon} · "
         val than = StringBuilder(
             if (moi.isEmpty() && trung > 0) {
-                "🤖 AI chấm: ${dauDe}cả $trung câu đều đã tính giờ hôm trước"
+                "🤖 $nguoiCham chấm: ${dauDe}cả $trung câu đều đã tính giờ hôm trước"
             } else {
-                "🤖 AI chấm: $dauDe$dung/${moi.size} câu đúng" +
+                "🤖 $nguoiCham chấm: $dauDe$dung/${moi.size} câu đúng" +
                     if (trung > 0) " ($trung câu đã tính giờ hôm trước, bỏ qua)" else ""
             }
         )
@@ -1484,7 +1542,7 @@ class ApprovalService : Service() {
          */
         val danDoDaSoat = VoDanDo.conHieuLuc(this)
         if (coAnhDanDo) {
-            than.append("• Vở dặn dò máy đọc ra: ")
+            than.append("• Vở dặn dò ${if (nguoiCham == "AI") "máy" else nguoiCham} đọc ra: ")
                 .append(
                     if (ket.baiDuocGiao.isEmpty()) "không có bài tập nào"
                     else ket.baiDuocGiao.joinToString(", ")
@@ -1528,7 +1586,7 @@ class ApprovalService : Service() {
                 than.append("Không cấp được (đang giờ ngủ). Ba Huy xem giúp nhé.")
             } else {
                 daCap = true
-                DayLog.add(this, "AI duyệt ${bang.phut} phút")
+                DayLog.add(this, "$nguoiCham duyệt ${bang.phut} phút")
                 than.append("Đã cấp ${bang.phut} phút. Rút lại: /bot ${bang.phut}")
             }
         } else if (baDaXuLy) {
@@ -1558,7 +1616,7 @@ class ApprovalService : Service() {
             than.append("\n⚠️ Máy không trả lời về màu mực nên chưa kiểm được luật bút đỏ.")
         }
         if (!daCap && bang.phut > 0 && !baDaXuLy) {
-            than.append("\nAI tính ${bang.phut} phút")
+            than.append("\n$nguoiCham tính ${bang.phut} phút")
             // Va sua luon cai nut duoi tin nop bai cho mang dung con so do. Khong
             // sua thi nut to van ghi so mac dinh, va bam mot cai la cho qua tay.
             bai?.let {
@@ -1609,7 +1667,7 @@ class ApprovalService : Service() {
         // la thu duy nhat chan viec chup lai bai cu de lay gio lan nua.
         runCatching { DongBo.daySoCai(this, daGhi) }
         if (daCap && bang.daTinhGoi) {
-            SoCaiBai.ghiGoi(this, LuatCongGio.PHUT_TRON_GOI_DAN_DO)?.let {
+            SoCaiBai.ghiGoi(this, LuatCongGio.PHUT_TRON_GOI_DAN_DO, luc)?.let {
                 runCatching { DongBo.daySoCai(this, listOf(it)) }
             }
         }
@@ -2078,6 +2136,15 @@ class ApprovalService : Service() {
         /** Con da soat xong ban may doc, nho service gui anh roi cap gio. */
         const val ACTION_GUI = "vn.huytl.homeworkgate.GUI_BAI"
 
+        /** Cham mot bai dang cho theo ket qua Claude. Xem [chamTheoClaude]. */
+        const val ACTION_CHAM_CLAUDE = "vn.huytl.homeworkgate.CHAM_CLAUDE"
+
+        /** Ma bai dang cho, o duong Claude cham. */
+        private const val EXTRA_BAI_ID = "bai_id"
+
+        /** Lan nop co trang vo dan do khong, o duong Claude cham. */
+        private const val EXTRA_CO_DAN_DO = "co_dan_do"
+
         /** Ban cham con vua soat, dang chu cua [ChamBaiIO]. */
         private const val EXTRA_BAN_CHAM = "ban_cham"
 
@@ -2114,6 +2181,29 @@ class ApprovalService : Service() {
                     EXTRA_ANH + st.name, ArrayList(files.map { it.absolutePath })
                 )
             }
+            context.startForegroundService(intent)
+        }
+
+        /**
+         * Cham mot bai dang cho theo ket qua Claude, dung khi may chua cham bai do.
+         *
+         * Lam o service vi cung ly do voi [guiDaSoat]: cap gio va gui tin Telegram phai
+         * chay cho xong, va doan xu ly ban cham von nam o day. Ban cham tao tu
+         * [vn.huytl.homeworkgate.data.ChamTheoClaude].
+         */
+        fun chamTheoClaude(
+            context: Context,
+            baiId: String,
+            ket: KetQuaCham,
+            pham: PhamVi?,
+            coAnhDanDo: Boolean = false
+        ) {
+            val intent = Intent(context, ApprovalService::class.java)
+                .setAction(ACTION_CHAM_CLAUDE)
+                .putExtra(EXTRA_BAI_ID, baiId)
+                .putExtra(EXTRA_PHAM, pham?.sangJson())
+                .putExtra(EXTRA_BAN_CHAM, ChamBaiIO.viet(ket))
+                .putExtra(EXTRA_CO_DAN_DO, coAnhDanDo)
             context.startForegroundService(intent)
         }
 

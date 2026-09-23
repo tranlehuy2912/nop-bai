@@ -4,6 +4,7 @@ import android.app.admin.DevicePolicyManager
 import android.content.Context
 import com.google.firebase.firestore.DocumentSnapshot
 import vn.huytl.homeworkgate.R
+import vn.huytl.homeworkgate.data.ChamTheoClaude
 import vn.huytl.homeworkgate.data.ChatBox
 import vn.huytl.homeworkgate.data.ChatFrom
 import vn.huytl.homeworkgate.data.DayLog
@@ -11,6 +12,7 @@ import vn.huytl.homeworkgate.data.EndReason
 import vn.huytl.homeworkgate.data.GateState
 import vn.huytl.homeworkgate.data.GateStore
 import vn.huytl.homeworkgate.data.GioiHanApp
+import vn.huytl.homeworkgate.data.KhaiChoCham
 import vn.huytl.homeworkgate.data.LuotBaNoi
 import vn.huytl.homeworkgate.data.Prefs
 import vn.huytl.homeworkgate.data.SoCaiBai
@@ -192,6 +194,8 @@ object ThiHanhLenh {
             Lenh.CAI_DAT -> doiCaiDat(context, chu, d.get("giaTri"))
 
             Lenh.SUA_CHAM -> suaCham(context, gate, d.get("giaTri"))
+
+            Lenh.CHAM_BAI -> chamTheoClaude(context, gate, baiId, d.get("giaTri"))
 
             // Ben kia vua mo app va hoi tablet con song khong. Day mot ban trang
             // thai day du roi thoi: khong ghi nhat ky, khong tra loi gi. Ban trang
@@ -378,6 +382,35 @@ object ThiHanhLenh {
             (if (phut > 0) ", cộng $phut phút." else ", không có phút nào để cộng.") + boQua
     }
 
+    /**
+     * Cham mot bai dang cho theo ket qua Claude. Dung khi may chua cham bai do: tablet
+     * tat cham AI, hay AI hong luc con nop.
+     *
+     * O day chi dung ban cham. Cap gio, ghi so va bao Telegram lam trong ApprovalService,
+     * bang dung doan xu ly ban cham cua AI - xem [ApprovalService.chamTheoClaude]. Nen
+     * cau tra loi o day chi noi da nhan, con so phut thi di tin Telegram.
+     *
+     * Chi cham bai con dang cho duyet. Bai Ba Huy da duyet tay hay tu choi thi thoi:
+     * gio da cap roi, cham them la cap lan hai.
+     */
+    internal fun chamTheoClaude(
+        context: Context,
+        gate: GateStore,
+        baiId: String?,
+        giaTri: Any?
+    ): String {
+        val id = baiId?.trim().orEmpty()
+        if (id.isEmpty()) return "Lệnh thiếu mã bài, máy không chấm."
+        if (gate.baiDangCho().none { it.id == id }) {
+            return "Bài này không còn chờ duyệt nên máy không chấm nữa."
+        }
+        val pham = KhaiChoCham.lay(context, id)
+        val ket = ChamTheoClaude.banCham(context, giaTri, pham)
+            ?: return "Lệnh thiếu danh sách câu, máy không chấm."
+        ApprovalService.chamTheoClaude(context, id, ket, pham, ChamTheoClaude.coAnhDanDo(giaTri))
+        return "Đã nhận kết quả Claude, tablet đang chấm. Số phút báo trên Telegram."
+    }
+
     private fun khongCapDuoc(context: Context): String {
         val prefs = Prefs.get(context)
         val tu = prefs.hardStopMinuteOfDay
@@ -426,6 +459,15 @@ object ThiHanhLenh {
                 val v = giaTri as? Boolean ?: return "Giá trị không phải bật/tắt."
                 prefs.lockSystemSettings = v
                 if (v) "Đã khoá màn Cài đặt của máy." else "Đã mở màn Cài đặt của máy."
+            }
+            "chamBangAi" -> {
+                val v = giaTri as? Boolean ?: return "Giá trị không phải bật/tắt."
+                prefs.chamBangAi = v
+                if (v) {
+                    "Đã bật lại chấm bằng AI trên tablet."
+                } else {
+                    "Đã tắt chấm bằng AI. Bài nộp sẽ chờ Ba Huy chấm bằng Claude."
+                }
             }
             "appChoPhep" -> {
                 prefs.allowedPackages = danhSach(giaTri)

@@ -29,6 +29,7 @@ import vn.huytl.homeworkgate.data.GateStore
 import vn.huytl.homeworkgate.data.GioiHanApp
 import vn.huytl.homeworkgate.data.NhatKyAi
 import vn.huytl.homeworkgate.kho.KhoBai
+import vn.huytl.homeworkgate.kho.PhamVi
 import vn.huytl.homeworkgate.kho.TraLoi
 import vn.huytl.homeworkgate.data.Prefs
 import vn.huytl.homeworkgate.data.ViecNha
@@ -423,6 +424,7 @@ object DongBo {
                 "gioDay" to prefs.gioDayMinuteOfDay,
                 "tranPhutMoiNgay" to prefs.tranPhutMoiNgay,
                 "khoaCaiDat" to prefs.lockSystemSettings,
+                "chamBangAi" to prefs.chamBangAi,
                 "appChoPhep" to prefs.allowedPackages.toList(),
                 "appChan" to prefs.blockedPackages.toList(),
                 "appAi" to prefs.aiPackages.toList(),
@@ -461,20 +463,53 @@ object DongBo {
         )?.addOnSuccessListener { sp.edit().putInt(K_DAU_DS_APP, dau).apply() }
     }
 
-    /** Mot lan con nop bai. Goi ngay sau khi anh da len Telegram. */
-    fun dayBaiMoi(context: Context, baiId: String, messageId: Long, anh: List<Anh>) {
-        nha(context)?.collection(Duong.BAI)?.document(baiId)?.set(
-            mapOf(
-                Duong.F_LUC to System.currentTimeMillis(),
-                Duong.F_TRANG_THAI to "CHO",
-                Duong.F_SO_PHUT to 0,
-                Duong.F_MESSAGE_ID to messageId,
-                Duong.F_ANH to anh.map {
-                    mapOf(Duong.F_FILE_ID to it.fileId, Duong.F_KHAU to it.khau)
-                }
-            )
-        )?.addOnFailureListener { Log.w(TAG, "day bai hong: ${it.message}") }
+    /**
+     * Mot lan con nop bai. Goi ngay sau khi anh da len Telegram.
+     *
+     * [khai] la cac cau con khai kem de, xem [banKhai]. Gui kem de app Bang dieu khien
+     * co de bai cho Claude ngay ca khi tablet khong tu cham.
+     */
+    fun dayBaiMoi(
+        context: Context,
+        baiId: String,
+        messageId: Long,
+        anh: List<Anh>,
+        khai: Map<String, Any>? = null
+    ) {
+        val noi = mutableMapOf<String, Any>(
+            Duong.F_LUC to System.currentTimeMillis(),
+            Duong.F_TRANG_THAI to "CHO",
+            Duong.F_SO_PHUT to 0,
+            Duong.F_MESSAGE_ID to messageId,
+            Duong.F_ANH to anh.map {
+                mapOf(Duong.F_FILE_ID to it.fileId, Duong.F_KHAU to it.khau)
+            }
+        )
+        khai?.let { noi[Duong.F_KHAI] = it }
+        nha(context)?.collection(Duong.BAI)?.document(baiId)?.set(noi)
+            ?.addOnFailureListener { Log.w(TAG, "day bai hong: ${it.message}") }
         dayNgay()
+    }
+
+    /**
+     * Cac cau con khai, kem de va dang bai lay tu ngan hang. Xem [Duong.F_KHAI].
+     *
+     * null la con khong khai theo sach: nop tu do, hay man khai bai khong co sach mon
+     * do. Luc do Claude phai tu nhan ra cau va chep de tu anh.
+     */
+    fun banKhai(context: Context, pham: PhamVi?): Map<String, Any>? {
+        if (pham == null || !pham.theoSach) return null
+        val cac = KhoBai.get(context).cacCauTheoId(pham.cauIds)
+        if (cac.isEmpty()) return null
+        return mapOf(
+            "tenNguon" to pham.tenNguon,
+            "bai" to pham.bai,
+            "mon" to pham.mon,
+            "onTap" to pham.onTap,
+            "cac" to cac.map {
+                mapOf("ma" to it.ma, "cauId" to it.id, "de" to it.de, "dang" to it.dang)
+            }
+        )
     }
 
     /** Doi trang thai mot bai sau khi Ba Huy duyet hoac tu choi. */

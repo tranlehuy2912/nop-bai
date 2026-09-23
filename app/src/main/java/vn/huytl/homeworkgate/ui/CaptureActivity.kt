@@ -117,7 +117,11 @@ class CaptureActivity : AppCompatActivity() {
     private val cacBuoc: List<CaptureStage> by lazy {
         // Trong may da co ban vo dan do da soat thi khong hoi lai trang vo nua: doan
         // chu do di thang vao cau lenh cham - xem [vn.huytl.homeworkgate.data.VoDanDo].
-        val canVo = VoDanDo.conHieuLuc(this) == null
+        //
+        // Tat cham AI thi luon chup, ke ca khi da co ban soat: Claude cham tren dien
+        // thoai cua Ba Huy, chi nhin thay anh, khong doc duoc ban soat nam trong may
+        // nay. Thieu trang vo thi Claude khong biet co giao gi, va mat tron goi.
+        val canVo = VoDanDo.conHieuLuc(this) == null || !Prefs.get(this).chamBangAi
         when {
             motXap -> listOf(CaptureStage.BAI_GIAI)
             else -> buildList {
