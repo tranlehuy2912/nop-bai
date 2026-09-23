@@ -136,6 +136,7 @@ class KhoBai private constructor(context: Context) :
               dung   INTEGER NOT NULL,
               chiu   INTEGER NOT NULL DEFAULT 0,
               phut   INTEGER NOT NULL,
+              giay   INTEGER NOT NULL DEFAULT 0,
               luc    INTEGER NOT NULL
             )
             """.trimIndent()
@@ -257,6 +258,17 @@ class KhoBai private constructor(context: Context) :
         // Ban 8: phan biet "go sai" voi "bam Chịu rồi" o duong the hoc thuoc.
         if (cu < 8) {
             runCatching { db.execSQL("ALTER TABLE tra_the ADD COLUMN chiu INTEGER NOT NULL DEFAULT 0") }
+        }
+
+        /*
+         * Ban 9: the hoc thuoc tinh bang giay, khong con "ba the mot phut".
+         *
+         * Dong cu de giay = 0 chu khong doan nguoc tu cot phut. Doan nguoc thi so
+         * giay cua hom truoc tu nhien moc len, va tran ngay cua HOM NAY bi an mat
+         * mot phan - ma cot nay chi dung cho tran cua chinh ngay hom nay.
+         */
+        if (cu < 9) {
+            runCatching { db.execSQL("ALTER TABLE tra_the ADD COLUMN giay INTEGER NOT NULL DEFAULT 0") }
         }
     }
 
@@ -586,15 +598,23 @@ class KhoBai private constructor(context: Context) :
                 put("dung", if (t.dung) 1 else 0)
                 put("chiu", if (t.chiu) 1 else 0)
                 put("phut", t.phut)
+                put("giay", t.giay)
                 put("luc", t.luc)
             }
         )
     }
 
-    /** So phut duong hoc thuoc da tra tu [tuLuc], de giu tran ngay. */
+    /** So phut duong hoc thuoc da cap duoc tu [tuLuc]. Chi de hien ra man hinh. */
     fun phutTheTu(tuLuc: Long): Int =
         readableDatabase.rawQuery(
             "SELECT COALESCE(SUM(phut), 0) FROM tra_the WHERE luc >= ?",
+            arrayOf(tuLuc.toString())
+        ).use { if (it.moveToFirst()) it.getInt(0) else 0 }
+
+    /** So GIAY duong hoc thuoc da lam ra tu [tuLuc], de giu tran ngay. Giong [giayTuVungTu]. */
+    fun giayTheTu(tuLuc: Long): Int =
+        readableDatabase.rawQuery(
+            "SELECT COALESCE(SUM(giay), 0) FROM tra_the WHERE luc >= ?",
             arrayOf(tuLuc.toString())
         ).use { if (it.moveToFirst()) it.getInt(0) else 0 }
 
@@ -665,7 +685,8 @@ class KhoBai private constructor(context: Context) :
     }
 
     /**
-     * Tinh trang tung tu trong mot bo, de ben goi tra trong so ma boc.
+     * Tinh trang tung tu trong mot bo, kem so phien da xong, de ben goi boc va chon
+     * chieu hoi.
      *
      * TINH TRONG KOTLIN chu khong trong SQL, cung mot le voi [cacTheDenLuot]: luat
      * "vua sai" va "da thuoc" nam trong [vn.huytl.homeworkgate.data.LuatTuVung], viet lai
@@ -675,7 +696,10 @@ class KhoBai private constructor(context: Context) :
      * sau lan gap, moi lan hai ba lan thu, ra khoang mot van dong - doc het mat vai
      * phan muoi giay, va chi doc mot lan moi buoi.
      */
-    fun tinhTrangTu(bo: String, lanDungDeXong: Int): List<Pair<TuVung, LuatTuVung.TinhTrang>> {
+    fun tinhTrangTu(
+        bo: String,
+        lanDungDeXong: Int
+    ): List<Triple<TuVung, LuatTuVung.TinhTrang, Int>> {
         val cac = cacTuCua(bo)
         if (cac.isEmpty()) return emptyList()
 
@@ -698,7 +722,7 @@ class KhoBai private constructor(context: Context) :
 
         return cac.map { tu ->
             val ls = lichSu[tu.id].orEmpty()
-            if (ls.isEmpty()) return@map tu to LuatTuVung.TinhTrang.CHUA_GAP
+            if (ls.isEmpty()) return@map Triple(tu, LuatTuVung.TinhTrang.CHUA_GAP, 0)
 
             // Phien gan nhat: lan thu DAU TIEN cua phien do co dung khong. Lay lan dau
             // chu khong lay ca phien: cuoi phien thi tu nao cung dung, vi buoi do
@@ -709,13 +733,17 @@ class KhoBai private constructor(context: Context) :
             val soPhienXong = ls.groupBy { it.phien }
                 .count { (_, cacLan) -> cacLan.count { it.dung } >= lanDungDeXong }
 
-            tu to when {
+            val tinh = when {
                 !dauPhienCuoi -> LuatTuVung.TinhTrang.VUA_SAI
                 soPhienXong <= 0 -> LuatTuVung.TinhTrang.CHUA_GAP
                 soPhienXong == 1 -> LuatTuVung.TinhTrang.DUNG_1
                 soPhienXong == 2 -> LuatTuVung.TinhTrang.DUNG_2
                 else -> LuatTuVung.TinhTrang.DA_THUOC
             }
+            // So phien da xong di kem chu khong de ben goi tu doan nguoc tu tinh
+            // trang: [LuatTuVung.TinhTrang.VUA_SAI] che mat con so do, ma chinh no
+            // quyet dinh hoi chieu nao - xem [LuatTuVung.chieuCho].
+            Triple(tu, tinh, soPhienXong)
         }
     }
 
@@ -1274,7 +1302,7 @@ class KhoBai private constructor(context: Context) :
 
     companion object {
         private const val TEN = "kho_bai.db"
-        private const val BAN = 8
+        private const val BAN = 9
 
         /**
          * Dau ngan giua cac dong bai lam khi cat vao mot o.

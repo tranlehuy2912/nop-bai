@@ -30,6 +30,10 @@ object NgayNghi {
     /** Ngay hoc cuoi cung cua nam hoc. Sau ngay nay app thoi nhac. */
     private val HET_NAM_HOC = ngay(2027, 5, 31)
 
+    /** Ngay hoc cuoi cung, dang Calendar. Duong tu vung dem nhip nam hoc tu day. */
+    fun ngayHocCuoiCung(): Calendar =
+        calendarCua(HET_NAM_HOC / 10_000, HET_NAM_HOC / 100 % 100, HET_NAM_HOC % 100)
+
     /** Tra ve ten ky nghi, hoac null neu hom do van hoc binh thuong. */
     fun tenKyNghi(cal: Calendar): String? {
         val n = ngay(

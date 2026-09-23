@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Duong tu vung: may hoi, con tra loi thang o day, may cham ngay.
+     Xem data/LuatTuVung.kt.
+
+     Mot layout cho ca ba buoc (chon bo, dang hoi, xong buoi), bat tat bang
+     visibility - y het man hoc thuoc, va co y giong: hai man lam cung mot viec
+     thi khong nen nhin khac nhau.
+
+     KHAC man hoc thuoc o dung mot cho: cau hoi co hai chieu. Nhin tu doan nghia
+     thi bam mot trong bon o; nhin nghia go tu thi go vao o chu. Hai khung do
+     thay nhau, khong bao gio hien cung luc. -->
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/goc"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/st_nen_man">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:paddingHorizontal="28dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_thoat"
+                style="@style/Widget.Material3.Button.IconButton"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="-12dp"
+                android:layout_marginEnd="4dp"
+                android:contentDescription="Quay lại"
+                app:icon="@drawable/st_ic_quay_lai"
+                app:iconSize="22dp"
+                app:iconTint="@color/ink_soft" />
+
+            <TextView
+                android:id="@+id/txt_tieu_de"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/do_tu_title"
+                android:textColor="@color/ink"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginTop="16dp"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- BUOC 1: chon bo tu. -->
+                <LinearLayout
+                    android:id="@+id/box_bo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" />
+
+                <TextView
+                    android:id="@+id/txt_trong"
+                    style="@style/Text.Body"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="28dp"
+                    android:gravity="center"
+                    android:textSize="16sp"
+                    android:visibility="gone" />
+
+                <!-- BUOC 2: mot tu dang hoi. -->
+                <LinearLayout
+                    android:id="@+id/box_hoi"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/txt_tien"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/ink_soft"
+                        android:textSize="14sp" />
+
+                    <com.google.android.material.card.MaterialCardView
+                        style="@style/Card"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="24dp">
+
+                            <TextView
+                                android:id="@+id/txt_nhan"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/ink_soft"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:id="@+id/txt_hoi"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:textColor="@color/ink"
+                                android:textSize="30sp"
+                                android:textStyle="bold" />
+
+                            <!-- Phien am. Chi hien o chieu nhin tu, va chi khi sach
+                                 co ghi - bo nao doc khong ro thi o nay de trong chu
+                                 khong bay ra mot cap gach cheo rong. -->
+                            <TextView
+                                android:id="@+id/txt_am"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:textColor="@color/ink_soft"
+                                android:textSize="17sp"
+                                android:visibility="gone" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <!-- Chieu nhin tu chon nghia: cac o dung len trong ma nguon vi
+                         so lua chon thay doi khi bo thieu moi nhu. -->
+                    <LinearLayout
+                        android:id="@+id/box_chon"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:orientation="vertical"
+                        android:visibility="gone" />
+
+                    <!-- Chieu nhin nghia go tu. -->
+                    <EditText
+                        android:id="@+id/o_go"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:hint="@string/do_tu_go"
+                        android:importantForAutofill="no"
+                        android:inputType="text"
+                        android:imeOptions="actionDone"
+                        android:textColor="@color/ink"
+                        android:textSize="20sp"
+                        android:visibility="gone" />
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/the_ket"
+                        style="@style/Card"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:visibility="gone">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="20dp">
+
+                            <TextView
+                                android:id="@+id/txt_ket"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/txt_dap"
+                                style="@style/Text.Body"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="6dp"
+                                android:textSize="16sp" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_chiu"
+                        style="@style/Widget.Material3.Button.TextButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="@string/do_tu_chiu"
+                        android:textSize="15sp"
+                        android:visibility="gone" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_chinh"
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        android:layout_marginTop="16dp"
+                        android:textSize="17sp" />
+                </LinearLayout>
+
+                <!-- BUOC 3: xong buoi. -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/the_xong"
+                    style="@style/Card"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="20dp">
+
+                        <TextView
+                            android:id="@+id/txt_xong"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/ok"
+                            android:textSize="26sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/txt_xong_phu"
+                            style="@style/Text.Body"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp"
+                            android:textSize="15sp" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <TextView
+                    android:id="@+id/txt_chan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:textColor="@color/ink_soft"
+                    android:textSize="13sp" />
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

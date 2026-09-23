@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Mot o lua chon nghia o chieu "nhin tu chon nghia".
+
+     Nut vien chu khong nut dac: bon nut dac xanh xep chong nhau thi man hinh
+     thanh mot bang mau, va o dang duoc chon khong noi ra duoc nua. -->
+<com.google.android.material.button.MaterialButton
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/Widget.Material3.Button.OutlinedButton"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="8dp"
+    android:minHeight="56dp"
+    android:paddingVertical="12dp"
+    android:textAlignment="viewStart"
+    android:textColor="@color/ink"
+    android:textSize="17sp"
+    app:strokeColor="@color/line" />

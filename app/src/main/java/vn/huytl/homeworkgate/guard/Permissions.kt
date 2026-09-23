@@ -24,6 +24,7 @@ enum class Viec {
     TU_KHOI_DONG,
     QUAN_TRI,
     THONG_BAO,
+    DOC_THONG_BAO,
 }
 
 /**
@@ -120,6 +121,15 @@ object Permissions {
     /** Thong bao bi tat thi khong con dong ho dem nguoc, tin cua ba cung khong keu. */
     fun hasNotifications(context: Context): Boolean =
         NotificationManagerCompat.from(context).areNotificationsEnabled()
+
+    /**
+     * Quyen doc thong bao. Chi can khi Ba Huy da chon app duoc nghe nhac nen.
+     *
+     * App khong doc thong bao cua ai - dich vu [TaiThongBao] rong ruot. Nhung Android
+     * chi cho hoi "app nao dang giu trinh phat" khi co mot dich vu kieu do da duoc
+     * bat, va do la cach duy nhat dem duoc so phut nghe nhac cua dung mot app.
+     */
+    fun hasNotificationAccess(context: Context): Boolean = TrinhPhat.coQuyen(context)
 
     /**
      * May Xiaomi co them cong tac "Tu khoi dong" rieng, tat thi khoi dong lai la
@@ -252,6 +262,20 @@ object Permissions {
             )
         }
 
+        // Chi bao khi Ba Huy da dat app nghe nhac nen. Chua dung tinh nang do thi
+        // mot dong canh bao ve quyen khong ai can chi lam bang canh bao dai them.
+        if (prefs.nhacPackages.isNotEmpty() && !hasNotificationAccess(context)) {
+            add(
+                Thieu(
+                    Viec.DOC_THONG_BAO,
+                    "Chưa cho app đọc thông báo",
+                    "Thiếu thì máy không đếm được số phút nghe nhạc nền, " +
+                        "và hết giờ chơi là mọi tiếng đều bị tắt.",
+                    nang = false
+                )
+            )
+        }
+
         if (!hasNotifications(context)) {
             add(
                 Thieu(
@@ -287,6 +311,21 @@ object Permissions {
             Intent(Settings.ACTION_IGNORE_BATTERY_OPTIMIZATION_SETTINGS),
             thongTinApp(context),
         )
+        Viec.DOC_THONG_BAO -> buildList {
+            // Android 11 tro len mo thang duoc vao dong cua app nay. Man danh sach
+            // chung co ca chuc dich vu, tim dung dong minh can la mot viec vat.
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+                add(
+                    Intent(Settings.ACTION_NOTIFICATION_LISTENER_DETAIL_SETTINGS)
+                        .putExtra(
+                            Settings.EXTRA_NOTIFICATION_LISTENER_COMPONENT_NAME,
+                            ComponentName(context, TaiThongBao::class.java).flattenToString()
+                        )
+                )
+            }
+            add(Intent(Settings.ACTION_NOTIFICATION_LISTENER_SETTINGS))
+            add(thongTinApp(context))
+        }
         Viec.THONG_BAO -> listOf(
             Intent(Settings.ACTION_APP_NOTIFICATION_SETTINGS)
                 .putExtra(Settings.EXTRA_APP_PACKAGE, context.packageName),

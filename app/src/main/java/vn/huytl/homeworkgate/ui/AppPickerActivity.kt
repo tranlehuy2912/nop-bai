@@ -49,6 +49,7 @@ class AppPickerActivity : AppCompatActivity() {
     private var tim = ""
     private var danhSachDen = false
     private var datHanGio = false
+    private var chonNhac = false
 
     private data class Entry(val packageName: String, val label: String, val info: ApplicationInfo)
 
@@ -58,6 +59,9 @@ class AppPickerActivity : AppCompatActivity() {
 
         /** Man dat han gio rieng cho tung app, khong phai chon vao danh sach nao. */
         const val HAN = "han"
+
+        /** Man chon app duoc phat tieng khi het gio choi. */
+        const val NHAC = "nhac"
 
         /** May muc chon san khi dat han, don vi phut. */
         private val MUC_PHUT = listOf(15, 30, 45, 60, 90, 120, 180)
@@ -78,25 +82,39 @@ class AppPickerActivity : AppCompatActivity() {
 
         datHanGio = intent.getStringExtra(EXTRA_DANH_SACH) == HAN
         danhSachDen = intent.getStringExtra(EXTRA_DANH_SACH) == DEN
+        chonNhac = intent.getStringExtra(EXTRA_DANH_SACH) == NHAC
         binding.txtTieuDe.text = when {
             datHanGio -> "Giờ riêng từng app"
             danhSachDen -> "App cấm hẳn"
+            chonNhac -> "App được nghe nền"
             else -> "App luôn được dùng"
         }
-        binding.txtHuongDan.text = if (datHanGio) {
-            "Đặt số phút mỗi ngày cho từng app. Hết số phút đó là app tự khoá, " +
-                "dù Lê Hòa đang có giờ chơi hay app nằm trong danh sách được dùng. " +
-                "Sáng hôm sau tính lại từ đầu."
-        } else if (danhSachDen) {
-            "Chọn app cấm hẳn. Những app này Lê Hòa không mở được kể cả khi đang " +
-                "trong giờ chơi. Không dùng được để cấm màn hình chính hay bàn phím."
-        } else {
-            "Chọn app Lê Hòa vẫn được dùng khi hết giờ chơi, ví dụ từ điển, máy tính, " +
-                "app học. Những app còn lại đều bị khoá khi hết giờ."
+        binding.txtHuongDan.text = when {
+            datHanGio ->
+                "Đặt số phút mỗi ngày cho từng app. Hết số phút đó là app tự khoá, " +
+                    "dù Lê Hòa đang có giờ chơi hay app nằm trong danh sách được dùng. " +
+                    "Sáng hôm sau tính lại từ đầu."
+            danhSachDen ->
+                "Chọn app cấm hẳn. Những app này Lê Hòa không mở được kể cả khi đang " +
+                    "trong giờ chơi. Không dùng được để cấm màn hình chính hay bàn phím."
+            chonNhac ->
+                "Chọn app được phát tiếng khi hết giờ chơi, ví dụ app nghe nhạc. " +
+                    "Chỉ là phát tiếng: muốn mở app ra xem thì vẫn phải còn giờ chơi. " +
+                    "Nhớ đặt số phút mỗi ngày ở mục Giờ riêng từng app, không thì nghe " +
+                    "bao nhiêu cũng được. Quá giờ đi ngủ hoặc tới giờ đi học là tiếng tắt."
+            else ->
+                "Chọn app Lê Hòa vẫn được dùng khi hết giờ chơi, ví dụ từ điển, máy tính, " +
+                    "app học. Những app còn lại đều bị khoá khi hết giờ."
         }
 
         if (!datHanGio) {
-            selected.addAll(if (danhSachDen) prefs.blockedPackages else prefs.allowedPackages)
+            selected.addAll(
+                when {
+                    danhSachDen -> prefs.blockedPackages
+                    chonNhac -> prefs.nhacPackages
+                    else -> prefs.allowedPackages
+                }
+            )
         }
         tatCa = loadLaunchableApps()
         locLai()
@@ -127,10 +145,10 @@ class AppPickerActivity : AppCompatActivity() {
                 finish()
                 return@setOnClickListener
             }
-            if (danhSachDen) {
-                prefs.blockedPackages = selected.toSet()
-            } else {
-                prefs.allowedPackages = selected.toSet()
+            when {
+                danhSachDen -> prefs.blockedPackages = selected.toSet()
+                chonNhac -> prefs.nhacPackages = selected.toSet()
+                else -> prefs.allowedPackages = selected.toSet()
             }
             finish()
         }

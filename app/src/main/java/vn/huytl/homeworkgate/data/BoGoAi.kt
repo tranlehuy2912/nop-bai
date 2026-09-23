@@ -21,8 +21,13 @@ package vn.huytl.homeworkgate.data
 class BoGoAi(
     /** Cau ngan hon nay thi bo. "ok", "hi" khong dang ghi, va thuong la go nham. */
     private val toiThieu: Int = 6,
-    /** O nhap im lau hon nay (mili giay) thi coi nhu cau da xong. */
-    private val imMs: Long = 8_000L,
+    /**
+     * O nhap im lau hon nay (mili giay) thi coi nhu cau da xong.
+     *
+     * De mo chu khong giau: ben goi can biet de hen dung luc goi [imLau]. Lop nay
+     * khong tu hen gio duoc, vi no khong biet gi ve Android.
+     */
+    val imMs: Long = 8_000L,
 ) {
     private var chu = ""
     private var luc = 0L

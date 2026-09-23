@@ -341,9 +341,11 @@ class HocThuocActivity : AppCompatActivity() {
             when {
                 phut > 0 -> append("Được thêm $phut phút chơi.")
                 soXong == 0 -> append("Chưa được phút nào. Xem lại rồi làm tiếp nhé.")
+                // Mot cau tron mot phut, nen co cau xong ma khong ra phut chi con mot
+                // nghia: phan kiem tra bai cua hom nay da day.
                 else -> append(
-                    "Cần ${HocThuoc.THE_MOI_PHUT} câu xong mới được một phút, hoặc hôm nay " +
-                        "đã đủ ${HocThuoc.TRAN_PHUT_MOI_NGAY} phút của phần kiểm tra bài."
+                    "Mỗi câu xong được ${HocThuoc.GIAY_MOI_THE / 60} phút, nhưng hôm nay " +
+                        "đã đủ ${HocThuoc.TRAN_PHUT_MOI_NGAY} phút của phần kiểm tra bài rồi."
                 )
             }
             if (soChiu > 0) append(" Còn $soChiu câu để mai làm lại.")
@@ -366,10 +368,10 @@ class HocThuocActivity : AppCompatActivity() {
      * [LuatTuVung.LAN_DUNG_DE_TINH] lan moi tinh la xong, nen dem so lan go dung thi
      * hai lan cua cung mot cau thanh hai cau - va con duoc tra gap doi cho mot cau.
      *
-     * So phut tinh MOT LAN cho ca luot, khong cong don tung cau: [HocThuoc.phutCho]
-     * chia so cau xong cho ba, va chia tung cau mot thi ba cau xong ra khong phut
-     * nao (moi cau duoc 0). Tran ngay cung phai hoi mot lan tai day, sau khi da biet
-     * ca luot duoc bao nhieu.
+     * So phut tinh MOT LAN cho ca luot, khong cong don tung cau. Hoi mot cau con la
+     * nua phut (truoc 23/9/2026), chia le tung cau thi cau nao cung ra 0; gio mot cau
+     * tron mot phut, nhung tran ngay van phai hoi mot lan tai day, sau khi da biet ca
+     * luot lam ra bao nhieu giay.
      */
     private fun chot() {
         if (daChot || ketQua.isEmpty()) return
@@ -378,7 +380,8 @@ class HocThuocActivity : AppCompatActivity() {
         val kho = KhoBai.get(this)
         val moc = moc0Gio()
         val dung = muc.values.count { it.xong }
-        val phut = HocThuoc.phutCho(dung, kho.phutTheTu(moc))
+        val giayLuot = HocThuoc.giayCho(dung)
+        val phut = HocThuoc.phutThem(kho.giayTheTu(moc), giayLuot)
         phutVuaTra = phut
 
         /*
@@ -396,9 +399,14 @@ class HocThuocActivity : AppCompatActivity() {
          * chi de ra mot cot so khong ai cong nham duoc.
          */
         var conGan = phut
+        var conGanGiay = giayLuot
         ketQua.forEach { t ->
             val cua = if (t.dung && conGan > 0) conGan.also { conGan = 0 } else 0
-            kho.ghiTraThe(t.copy(phut = cua))
+            // Cot giay gan het vao dong dung dau tien, y het cot phut. Gan ca khi
+            // phut bang 0: cot nay la cong suc lam ra, tran ngay doc no - xem
+            // [HocThuoc.phutThem].
+            val cuaGiay = if (t.dung && conGanGiay > 0) conGanGiay.also { conGanGiay = 0 } else 0
+            kho.ghiTraThe(t.copy(phut = cua, giay = cuaGiay))
         }
 
         if (phut > 0) capGio(phut, dung)

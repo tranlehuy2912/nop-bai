@@ -168,9 +168,10 @@ data class TraTu(
     /**
      * So GIAY da tra cho tu nay, khong phai so phut.
      *
-     * Phai la giay vi mot tu dang gia nua phut. Luu bang phut thi 30 giay lam tron
-     * thanh 0 hay 1 deu sai, ma cong hai muoi con so da lam tron thi lech han vai
-     * phut so voi con so dang le phai tra.
+     * Phai la giay vi truoc 23/9/2026 mot tu chi dang gia nua phut, va nhung dong
+     * ghi tu hoi do van con trong kho. Luu bang phut thi 30 giay lam tron thanh 0
+     * hay 1 deu sai, ma cong hai muoi con so da lam tron thi lech han vai phut so
+     * voi con so dang le phai tra.
      */
     val giay: Int,
     val luc: Long = System.currentTimeMillis()
@@ -189,7 +190,18 @@ data class TraThe(
      * gop lai thanh mot thi khong con cach nao tach ra. Giong [TraTu.chiu].
      */
     val chiu: Boolean = false,
+    /**
+     * So PHUT da cong duoc cho luot nay. Ca luot gan het vao mot dong.
+     *
+     * Khac [giay] o cho nay: cot giay la cong suc lam ra, cot phut la cai that su
+     * cap duoc sau khi qua tran. Hai so lech nhau khi tran ngay chung da het.
+     */
     val phut: Int,
+    /**
+     * So GIAY luot nay lam ra, chua qua tran. Tran ngay cua duong hoc thuoc doc
+     * cot nay - xem [vn.huytl.homeworkgate.data.HocThuoc.phutThem]. Giong [TraTu.giay].
+     */
+    val giay: Int = 0,
     val luc: Long = System.currentTimeMillis()
 )
 

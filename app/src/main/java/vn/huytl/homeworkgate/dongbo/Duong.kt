@@ -110,7 +110,30 @@ object Duong {
     const val F_DANG_SAC = "dangSac"
     const val F_BAN_APP = "banApp"
     const val F_CAP_NHAT_LUC = "capNhatLuc"
+
+    /**
+     * Ten app dang tren man hinh tablet: "YouTube", hay "YouTube + Zalo" khi chia
+     * doi man hinh. Rong la khong mo app nao - dang o man hinh chinh hay man khoa.
+     *
+     * Tablet ghi lai moi lan doi app, khong doi nhip tim.
+     *
+     * LUON LA CHUOI, khong duoc doi kieu. Ban Bang dieu khien dau tien doc truong
+     * nay bang getString, ma getString gap kieu khac thi nem loi ngay trong luc doc
+     * trang thai: app ben dien thoai chet moi lan tablet day len. Can them thong tin
+     * thi them truong moi nhu hai truong duoi - ban cu gap truong la chi bo qua.
+     */
     const val F_APP_TRUOC_MAT = "appTruocMat"
+
+    /** Luc mo app do, theo gio tablet. 0 la khong co app nao. */
+    const val F_APP_TRUOC_MAT_TU = "appTruocMatTu"
+
+    /**
+     * Man hinh tablet dang sang hay tat.
+     *
+     * Vang truong nay nghia la khong biet: tablet ban cu, hoac dich vu canh app dang
+     * khong chay nen khong ai nhin thay tren man hinh co gi.
+     */
+    const val F_MAN_HINH_SANG = "manHinhSang"
 
     /** Cau tablet noi lai sau khi lam mot lenh: { chu, luc, ai }. */
     const val F_TRA_LOI = "traLoi"

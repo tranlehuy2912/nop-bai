@@ -1,5 +1,6 @@
 package vn.huytl.homeworkgate.data
 
+import java.util.Calendar
 import vn.huytl.homeworkgate.kho.BuoiDo
 import vn.huytl.homeworkgate.kho.Chieu
 import kotlin.random.Random
@@ -31,8 +32,13 @@ object LuatTuVung {
 
     // ---------------------------------------------------------------- so phut
 
-    /** Mot tu dung du so lan duoc bay nhieu giay. */
-    const val GIAY_MOI_TU = 30
+    /**
+     * Mot tu dung du so lan duoc bay nhieu giay.
+     *
+     * Mot phut, Ba Huy doi ngay 23/9/2026. Truoc do la nua phut. Phai bang gia mot
+     * the o [HocThuoc.GIAY_MOI_THE], ly do ghi o do.
+     */
+    const val GIAY_MOI_TU = 60
 
     /**
      * Mot cau ngu phap duoc bay nhieu giay.
@@ -42,7 +48,7 @@ object LuatTuVung {
      * nhau thi con bo ngu phap di lam tu vung, vi cung mot gia ma tu vung nhanh gap
      * ba - va luc do phan ngu phap nam do khong ai dung.
      */
-    const val GIAY_MOI_CAU_NGU_PHAP = 60
+    const val GIAY_MOI_CAU_NGU_PHAP = 120
 
     /**
      * Mot tu phai dung bay nhieu lan TRONG MOT BUOI moi duoc tra giay.
@@ -56,7 +62,8 @@ object LuatTuVung {
     /**
      * Mot buoi hang ngay toi da bay nhieu tu.
      *
-     * Hai muoi tu nhan nua phut la muoi phut, va go hai muoi tu mat khoang nam phut.
+     * Hai muoi tu, moi tu mot phut, la hai muoi phut; go hai muoi tu mat khoang nam
+     * phut.
      * Dai hon thi buoi do thanh bai tap, ma bai tap thi dua tre ne.
      */
     const val SO_TU_HANG_NGAY = 20
@@ -74,14 +81,113 @@ object LuatTuVung {
         SO_TU_HANG_NGAY * GIAY_MOI_TU + SO_CAU_NGU_PHAP_HANG_NGAY * GIAY_MOI_CAU_NGU_PHAP
 
     /**
+     * Tran ngay cua duong tu vung: dung bang MOT buoi.
+     *
+     * Mot ngay mot buoi, het buoi la het phan tu vung cua ngay. Noi long ra thi
+     * buoi thu hai boc phai chinh nhung tu vua do xong nam phut truoc - trong so
+     * co ha chung xuong that, nhung ha xuong khong phai bang khong - va luc do no
+     * tra gio cho viec go lai cai vua nhin. Muon them gio thi con qua duong khac,
+     * moi duong mot cai tran rieng la co y.
+     */
+    const val GIAY_TRAN_MOI_NGAY = GIAY_TOI_DA_HANG_NGAY
+
+    /**
      * Doi giay sang phut de cap gio.
      *
-     * Lam tron XUONG, phan du bo di. Mot buoi day du ra so chan (hai muoi tu la 600
-     * giay, dung muoi phut) nen phan du chi xuat hien khi con lam do dang, va luc do
-     * bo nua phut le khong ai thac mac. Giu lai phan du sang buoi sau thi phai co
-     * mot cai so no, ma mot cai so no nua phut thi khong bo cong.
+     * Lam tron XUONG, phan du bo di. Tu 23/9/2026 moi tu tron mot phut va moi cau
+     * ngu phap tron hai phut nen so giay trong ngay luon chia het cho 60; phan du chi
+     * con tu nhung luot ghi truoc do (nua phut mot tu), va bo nua phut le khong ai
+     * thac mac. Giu lai phan du sang buoi sau thi phai co mot cai so no, ma mot cai
+     * so no nua phut thi khong bo cong.
      */
     fun phutTu(giay: Int): Int = (giay / 60).coerceAtLeast(0)
+
+    /** So phut ca ngay dang duoc, tu tong giay da hoc trong ngay. Chan tran truoc khi chia. */
+    fun phutTrongNgay(giay: Int): Int = phutTu(giay.coerceAtMost(GIAY_TRAN_MOI_NGAY))
+
+    /**
+     * So phut cong cho mot buoi: phan CHENH cua ca ngay truoc va sau buoi do.
+     *
+     * Giong het [vn.huytl.homeworkgate.data.HocThuoc.phutThem] va co y giong: hai
+     * duong deu dem bang giay, nen phan le duoi mot phut deu nam lai trong ngay chu
+     * khong mat. Hai cach tinh khac nhau cho cung mot viec thi som muon co ngay mot
+     * ben duoc it hon ma khong ai giai thich noi tai sao.
+     */
+    fun phutThem(giayTruoc: Int, giayBuoi: Int): Int =
+        phutTrongNgay(giayTruoc + giayBuoi) - phutTrongNgay(giayTruoc)
+
+    // ------------------------------------------------------ dang hoc unit nao
+
+    /**
+     * Lui may ngay khi tinh Unit dang hoc.
+     *
+     * VI SAO PHAI LUI. Nhip tinh ra o [unitDangHoc] chia deu ca nam, con lop that
+     * thi khong chay deu: co tuan on tap, co tuan kiem tra an mat tiet, co Unit kho
+     * co day cham hon. Cang ve cuoi nam sai so cang don. App cung khong biet ngay
+     * nghi rieng cua truong - [NgayNghi] chi co le quoc gia, chinh no ghi ro nhu vay
+     * - ma moi ngay nghi khong biet lam moc that lui lai trong khi moc tinh thi
+     * khong lui.
+     *
+     * Lech hai chieu khong nang nhu nhau. App cham hon lop thi con bi hoi tu cu,
+     * tuc la on lai, khong hai gi. App nhanh hon lop thi hoi tu chua hoc bao gio, va
+     * con ngoi chiu tran. Mot tuan dem de day han ve phia thu nhat.
+     */
+    const val NGAY_LUI_MOC_UNIT = 7
+
+    /**
+     * So tiet cua mot mon trong khoang [tu] den [den], da tru ngay nghi.
+     *
+     * Dem tu chinh [ThoiKhoaBieu] chu khong go mot con so: sua thoi khoa bieu thi
+     * nhip mo Unit tu di theo, khong phai nho sua them cho nao.
+     */
+    fun soTietCua(mon: String, tu: Calendar, den: Calendar): Int {
+        var n = 0
+        val d = tu.clone() as Calendar
+        while (!d.after(den)) {
+            if (!NgayNghi.laNgayNghi(d)) {
+                n += ThoiKhoaBieu.buoiHocCua(d.get(Calendar.DAY_OF_WEEK))
+                    .sumOf { buoi -> buoi.monTheoTiet.values.count { it == mon } }
+            }
+            d.add(Calendar.DAY_OF_MONTH, 1)
+        }
+        return n
+    }
+
+    /**
+     * Lop dang hoc toi Unit may, tinh theo lich chu khong hoi ai.
+     *
+     * Chia deu [soUnit] Unit cho tong so tiet cua mon do ca nam. Voi Tieng Anh 8 la
+     * ba tiet mot tuan, 109 tiet ca nam, 12 Unit - ra khoang chin tiet moi Unit, tuc
+     * ba tuan, dung bang phan phoi chuong trinh that.
+     *
+     * Con so nay dung lam TRAN chu khong phai de ep: buoi do van boc theo trong so
+     * trong tat ca cac Unit tu 1 den day, nen tu Unit 1 quay lai ca nam. No chi chan
+     * mot viec - hoi tu cua Unit ma lop chua toi.
+     *
+     * Khong dem duoc tiet nao (thoi khoa bieu khong co mon do) thi mo het: tha hoi
+     * rong con hon khoa sach ca quyen ma khong ai hieu tai sao.
+     */
+    fun unitDangHoc(
+        mon: String,
+        soUnit: Int,
+        luc: Calendar = Calendar.getInstance()
+    ): Int {
+        if (soUnit <= 0) return 0
+        val dau = ThoiKhoaBieu.ngayBatDauNamHoc()
+        val cuoi = NgayNghi.ngayHocCuoiCung()
+        val tong = soTietCua(mon, dau, cuoi)
+        if (tong <= 0) return soUnit
+
+        val moc = (luc.clone() as Calendar).apply {
+            add(Calendar.DAY_OF_MONTH, -NGAY_LUI_MOC_UNIT)
+        }
+        if (moc.before(dau)) return 1
+        val daHoc = soTietCua(mon, dau, if (moc.after(cuoi)) cuoi else moc)
+        // Lam tron LEN: hoc duoc mot tiet cua Unit nao la Unit do da mo. Lam tron
+        // xuong thi ca tuan dau nam khong co Unit nao mo ra ca.
+        val u = (daHoc * soUnit + tong - 1) / tong
+        return u.coerceIn(1, soUnit)
+    }
 
     // ------------------------------------------------------------------ cham
 
@@ -253,6 +359,29 @@ object LuatTuVung {
         }
         return ra.toList().shuffled(rnd)
     }
+
+    /**
+     * Mot nghia co lam moi nhu duoc cho [nghiaDung] khong.
+     *
+     * VI SAO CAN. Mot Unit chi co hai muoi tu, va sach xep cac tu cung chu de nam
+     * canh nhau: Unit 1 co fond "men, thich", keen "say me, ham thich", crazy "rat
+     * thich, qua say me". Lay ca ba lam lua chon cua mot cau thi con khong tra loi
+     * duoc bang kien thuc, chi doan - va doan sai thi mat luot ma khong hoc duoc gi.
+     * Cho nay lo ra ngay buoi do dau tien tren may that.
+     *
+     * Phep loc tho: chung mot tieng nao la bo. Tho that, nhung no bat dung cai can
+     * bat, va bat hut mot hai cau thi cung chi la cau do de hon mot chut. Lam tinh
+     * hon thi phai biet nghia cua tieng Viet, ma do la viec cua mot cai tu dien chu
+     * khong phai cua mot ham trong app cham bai.
+     *
+     * Loc het sach thi [chonMoiNhu] tra ve it lua chon hon chu khong hong.
+     */
+    fun moiNhuDuoc(nghiaDung: String, nghia: String): Boolean =
+        (tiengCua(nghiaDung) intersect tiengCua(nghia)).isEmpty()
+
+    /** Cac tieng co nghia trong mot chuoi, da bo dau cau va tieng mot chu. */
+    private fun tiengCua(nghia: String): Set<String> =
+        nghia.lowercase().split(Regex("[^\\p{L}]+")).filter { it.length >= 2 }.toSet()
 
     /**
      * Buoi do nay co tra giay khong.

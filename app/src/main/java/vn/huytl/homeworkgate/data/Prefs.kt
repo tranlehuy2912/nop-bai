@@ -92,6 +92,22 @@ class Prefs private constructor(private val sp: SharedPreferences) {
         set(v) = sp.edit().putStringSet(KEY_AI_PKG, v).commit().let {}
 
     /**
+     * Cac app duoc phat tieng khi con da het gio choi, tuc la nghe nhac nen.
+     *
+     * Khac han danh sach trang. Danh sach trang cho MO APP RA nhin; cai nay chi cho
+     * PHAT TIENG trong khi man hinh dang o cho khac, hoac dang tat. Hai thu tach
+     * nhau vi chung khong cung mot viec: nghe nhac trong luc don phong thi duoc, con
+     * ngoi luot Spotify chon bai nua tieng thi van la dung may ngoai gio.
+     *
+     * Chi la "duoc phep phat", khong phai "phat bao nhieu cung duoc": so phut moi
+     * ngay dat rieng o [vn.huytl.homeworkgate.data.GioiHanApp], va phut phat tieng
+     * duoc cong vao dung so do.
+     */
+    var nhacPackages: Set<String>
+        get() = sp.getStringSet(KEY_NHAC, emptySet()).orEmpty()
+        set(v) = sp.edit().putStringSet(KEY_NHAC, v).commit().let {}
+
+    /**
      * Danh sach den: nhung app cam han, ke ca trong gio choi.
      *
      * Danh sach trang tra loi cau "cai gi duoc dung khi het gio". Cai nay tra loi
@@ -322,6 +338,7 @@ class Prefs private constructor(private val sp: SharedPreferences) {
         private const val KEY_ALLOWED = "allowed_packages"
         private const val KEY_AI_PKG = "ai_packages"
         private const val KEY_BLOCKED = "blocked_packages"
+        private const val KEY_NHAC = "nhac_packages"
         private const val KEY_LOCK_SETTINGS = "lock_settings"
         private const val KEY_TG_OFFSET = "tg_offset"
         private const val KEY_HEARTBEAT = "heartbeat_wall"

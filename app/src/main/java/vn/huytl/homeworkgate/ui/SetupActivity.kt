@@ -61,6 +61,12 @@ class SetupActivity : AppCompatActivity() {
                     .putExtra(AppPickerActivity.EXTRA_DANH_SACH, AppPickerActivity.HAN)
             )
         }
+        binding.btnPickNhac.setOnClickListener {
+            startActivity(
+                Intent(this, AppPickerActivity::class.java)
+                    .putExtra(AppPickerActivity.EXTRA_DANH_SACH, AppPickerActivity.NHAC)
+            )
+        }
         binding.btnPickBlocked.setOnClickListener {
             startActivity(
                 Intent(this, AppPickerActivity::class.java)

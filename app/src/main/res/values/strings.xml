@@ -71,6 +71,22 @@
     <string name="hoc_thuoc_chua_co_bo">Máy chưa có bộ câu nào. Nhờ ba Huy nạp vào.</string>
     <string name="hoc_thuoc_chan">Mỗi câu sẽ vài ngày kiểm tra một lần.</string>
 
+    <!-- Duong tu vung. Ten hien cho Le Hoa la "Do tu vung" chu khong phai "Hoc tu
+         vung": may do, con tra loi - dung viec dang xay ra. Ten trong ma nguon la
+         do_tu, cung mot le voi hoc_thuoc o tren. -->
+    <string name="do_tu_title">Dò từ vựng</string>
+    <string name="do_tu_nut">Dò từ vựng</string>
+    <string name="do_tu_go">Gõ từ tiếng Anh</string>
+    <string name="do_tu_tra_loi">Trả lời</string>
+    <string name="do_tu_tiep">Từ tiếp</string>
+    <string name="do_tu_chiu">Chịu rồi, cho xem đáp án</string>
+    <string name="do_tu_xem_ket">Xem kết quả</string>
+    <string name="do_tu_chua_co_bo">Máy chưa có bộ từ nào. Nhờ ba Huy nạp vào.</string>
+    <string name="do_tu_chan">Từ nào chưa chắc sẽ hay gặp lại hơn từ đã thuộc.</string>
+    <string name="do_tu_nhan_anh">Từ này nghĩa là gì?</string>
+    <string name="do_tu_nhan_viet">Nghĩa này là từ nào?</string>
+    <string name="do_tu_het_hom_nay">Hôm nay dò đủ rồi, mai có buổi mới.</string>
+
     <!-- Bang gia gio choi, viet cho Le Hoa doc. Ten dat theo cau con hoi that
          ("lam gi thi duoc them gio") chu khong phai ten co che ("Luat cong gio").
          Cac dong con lai cua man nay khong nam o day ma dung thang trong

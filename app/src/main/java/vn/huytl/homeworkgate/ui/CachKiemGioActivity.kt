@@ -15,6 +15,7 @@ import vn.huytl.homeworkgate.R
 import vn.huytl.homeworkgate.data.GateState
 import vn.huytl.homeworkgate.data.GateStore
 import vn.huytl.homeworkgate.data.HocThuoc
+import vn.huytl.homeworkgate.data.LuatTuVung
 import vn.huytl.homeworkgate.data.LuatCongGio
 import vn.huytl.homeworkgate.data.Prefs
 import vn.huytl.homeworkgate.data.SoCaiBai
@@ -23,6 +24,7 @@ import vn.huytl.homeworkgate.data.ViecNha
 import vn.huytl.homeworkgate.databinding.ActivityCachKiemGioBinding
 import vn.huytl.homeworkgate.databinding.ItemKiemGioBinding
 import vn.huytl.homeworkgate.kho.BoThe
+import vn.huytl.homeworkgate.kho.BoTuVung
 import vn.huytl.homeworkgate.kho.KhoBai
 
 /**
@@ -269,11 +271,42 @@ class CachKiemGioActivity : AppCompatActivity() {
         val box = binding.boxKiemTra
         box.removeAllViews()
 
+        /*
+         * Hai dong cua the nay treo TRAN NGAY chu khong treo gia mot cau, cung ly do
+         * voi dong "On lai cau den hen" o the tren: moi duong co tran ngay rieng, va
+         * con so con can biet la hom nay ngoi lam thi duoc them toi da bao nhieu.
+         */
         themDong(
             box,
             ten = "Luyện tập trí nhớ",
             gia = "tối đa ${HocThuoc.TRAN_PHUT_MOI_NGAY} phút",
             giaPhu = "mỗi ngày"
+        )
+
+        /*
+         * Duong tu vung nam cung the nay nhung co TRAN RIENG.
+         *
+         * De chung the vi voi Le Hoa hai viec la mot ho: may hoi, con go tra loi
+         * ngay tren may. Nhung con so thi phai tach, va dong "nay" cua tung dong noi
+         * ro phan cua no - gop mot con so thi lam xong mot ben la tuong het ca hai.
+         */
+        val daTu = LuatTuVung.phutTrongNgay(KhoBai.get(this).giayTuVungTu(moc0Gio()))
+        val tranTu = LuatTuVung.phutTrongNgay(LuatTuVung.GIAY_TRAN_MOI_NGAY)
+        val coBoTu = runCatching {
+            BoTuVung.BO.any { KhoBai.get(this).soTuCua(it.bo) > 0 }
+        }.getOrDefault(false)
+        themDong(
+            box,
+            ten = "Dò từ vựng",
+            gia = "tối đa $tranTu phút",
+            giaPhu = "mỗi ngày",
+            nay = when {
+                !coBoTu -> "Máy chưa có bộ từ nào"
+                daTu >= tranTu -> "Hôm nay dò đủ $tranTu phút rồi"
+                daTu > 0 -> "Hôm nay đã được $daTu phút, còn ${tranTu - daTu} phút"
+                else -> "Một buổi ${LuatTuVung.SO_TU_HANG_NGAY} từ, chưa dùng phút nào"
+            },
+            mauNay = if (!coBoTu || daTu >= tranTu) R.color.ink_soft else R.color.brand
         )
 
         val daCoThe = KhoBai.get(this).phutTheTu(moc0Gio())

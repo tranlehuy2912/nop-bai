@@ -10,6 +10,8 @@ import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
 import vn.huytl.homeworkgate.data.LuatTuVung
+import vn.huytl.homeworkgate.data.NgayNghi
+import vn.huytl.homeworkgate.data.ThoiKhoaBieu
 import vn.huytl.homeworkgate.kho.BoTuVung
 import vn.huytl.homeworkgate.kho.BuoiDo
 import vn.huytl.homeworkgate.kho.Chieu
@@ -104,9 +106,9 @@ class TuVungTest {
     // --- so giay va so phut ---
 
     @Test
-    fun hai_muoi_tu_dung_la_muoi_phut() {
-        assertEquals(600, LuatTuVung.SO_TU_HANG_NGAY * LuatTuVung.GIAY_MOI_TU)
-        assertEquals(10, LuatTuVung.phutTu(600))
+    fun hai_muoi_tu_dung_la_hai_muoi_phut() {
+        assertEquals(1200, LuatTuVung.SO_TU_HANG_NGAY * LuatTuVung.GIAY_MOI_TU)
+        assertEquals(20, LuatTuVung.phutTu(1200))
     }
 
     @Test
@@ -115,10 +117,105 @@ class TuVungTest {
     }
 
     @Test
+    fun tran_ngay_bang_dung_mot_buoi() {
+        assertEquals(LuatTuVung.GIAY_TOI_DA_HANG_NGAY, LuatTuVung.GIAY_TRAN_MOI_NGAY)
+        // Hai muoi tu mot phut cong nam cau ngu phap hai phut.
+        assertEquals(30, LuatTuVung.phutTrongNgay(LuatTuVung.GIAY_TRAN_MOI_NGAY))
+        // Qua tran bao nhieu cung chi ra dung tran.
+        assertEquals(30, LuatTuVung.phutTrongNgay(99_999))
+    }
+
+    @Test
+    fun le_duoi_mot_phut_nam_lai_trong_ngay_chu_khong_mat() {
+        // Tu 23/9/2026 moi tu tron mot phut, phan le chi con tu nhung luot ghi truoc
+        // do (nua phut mot tu). Ham van phai giu le trong ngay: hai luot 90 giay,
+        // chia rieng thi moi luot mot phut, tong hai; tinh don ca ngay la ba phut.
+        assertEquals(1, LuatTuVung.phutThem(0, 90))
+        assertEquals(2, LuatTuVung.phutThem(90, 90))
+    }
+
+    @Test
+    fun het_tran_ngay_thi_do_them_khong_ra_phut_nao() {
+        assertEquals(
+            0,
+            LuatTuVung.phutThem(LuatTuVung.GIAY_TRAN_MOI_NGAY, 20 * LuatTuVung.GIAY_MOI_TU)
+        )
+        // Con mot phut trong tran thi chi duoc mot phut, khong am.
+        assertEquals(
+            1,
+            LuatTuVung.phutThem(
+                LuatTuVung.GIAY_TRAN_MOI_NGAY - 60,
+                20 * LuatTuVung.GIAY_MOI_TU
+            )
+        )
+    }
+
+    @Test
     fun le_nua_phut_thi_bo_di_chu_khong_lam_tron_len() {
         assertEquals(9, LuatTuVung.phutTu(570))
         assertEquals(0, LuatTuVung.phutTu(30))
         assertEquals(0, LuatTuVung.phutTu(-10))
+    }
+
+    // --- dang hoc unit nao ---
+
+    private fun unit(nam: Int, thang: Int, ngay: Int): Int =
+        LuatTuVung.unitDangHoc("Tiếng Anh", 12, NgayNghi.calendarCua(nam, thang, ngay))
+
+    @Test
+    fun ca_nam_co_dung_so_tiet_tieng_anh_cua_thoi_khoa_bieu() {
+        // Ba tiet mot tuan (chieu thu hai mot, chieu thu bay hai), tru le va chu
+        // nhat, tu 07/09/2026 den 31/05/2027. Con so nay quyet dinh nhip mo Unit,
+        // nen doi thoi khoa bieu ma quen cho nay thi test do lai.
+        assertEquals(
+            109,
+            LuatTuVung.soTietCua(
+                "Tiếng Anh",
+                ThoiKhoaBieu.ngayBatDauNamHoc(),
+                NgayNghi.ngayHocCuoiCung()
+            )
+        )
+    }
+
+    @Test
+    fun dau_nam_thi_chi_mo_unit_mot() {
+        assertEquals(1, unit(2026, 9, 7))
+        assertEquals(1, unit(2026, 9, 22))
+        // Truoc ca ngay khai giang cung khong duoc am hay bang khong.
+        assertEquals(1, unit(2026, 8, 1))
+    }
+
+    @Test
+    fun cuoi_nam_thi_mo_het_muoi_hai_unit() {
+        assertEquals(12, unit(2027, 5, 31))
+        // Nghi he roi thi van la muoi hai, khong tut xuong.
+        assertEquals(12, unit(2027, 7, 1))
+    }
+
+    @Test
+    fun moc_doi_unit_lui_lai_mot_tuan() {
+        // Chia deu thi Unit 2 roi vao 28/09, cong bay ngay dem thanh 05/10.
+        assertEquals(1, unit(2026, 10, 4))
+        assertEquals(2, unit(2026, 10, 5))
+    }
+
+    @Test
+    fun unit_khong_bao_gio_tut_lui_trong_nam_hoc() {
+        // Di tung ngay ca nam hoc: con so chi duoc dung yen hoac tang.
+        val d = NgayNghi.calendarCua(2026, 9, 7)
+        var truoc = 0
+        repeat(300) {
+            val u = LuatTuVung.unitDangHoc("Tiếng Anh", 12, d)
+            assertTrue("tut tu $truoc xuong $u", u >= truoc)
+            truoc = u
+            d.add(java.util.Calendar.DAY_OF_MONTH, 1)
+        }
+        assertEquals(12, truoc)
+    }
+
+    @Test
+    fun mon_khong_co_trong_thoi_khoa_bieu_thi_mo_het_chu_khong_khoa_sach() {
+        assertEquals(12, LuatTuVung.unitDangHoc("Môn không có thật", 12))
     }
 
     // --- cham ---
@@ -221,6 +318,17 @@ class TuVungTest {
     }
 
     @Test
+    fun moi_nhu_khong_duoc_gan_nghia_voi_dap_an() {
+        // Ba tu that cua Unit 1: keen, fond, crazy. De chung mot cau thi con khong
+        // tra loi duoc bang kien thuc, chi doan.
+        assertFalse(LuatTuVung.moiNhuDuoc("say mê, ham thích", "mến, thích"))
+        assertFalse(LuatTuVung.moiNhuDuoc("say mê, ham thích", "rất thích, quá say mê"))
+        // Nghia khac han thi van lam moi nhu duoc.
+        assertTrue(LuatTuVung.moiNhuDuoc("say mê, ham thích", "độc ác"))
+        assertTrue(LuatTuVung.moiNhuDuoc("say mê, ham thích", "căm ghét"))
+    }
+
+    @Test
     fun thieu_moi_nhu_thi_ra_it_lua_chon_chu_khong_hong() {
         val ra = LuatTuVung.chonMoiNhu("dung", listOf("a"), emptyList(), emptyList(), Random(4))
         assertEquals(2, ra.size)
@@ -286,6 +394,28 @@ class TuVungTest {
         // Dung mot lan roi bo ngang: chua du hai lan nen phien do khong tinh la xong.
         ghi("le", "p1", dung = true, luc = now - 100)
         assertEquals(LuatTuVung.TinhTrang.CHUA_GAP, tinhTrang("le"))
+    }
+
+    @Test
+    fun so_phien_da_xong_di_kem_tinh_trang() {
+        kho.napBoTu("thu", listOf(tu("m"), tu("n")))
+        // m: xong hai phien roi phien thu ba mo dau bang mot lan sai. Tinh trang che
+        // mat con so, nhung con so van phai dung - chieu hoi doc tu no.
+        listOf("p1", "p2").forEachIndexed { i, p ->
+            ghi("m", p, dung = true, luc = now - 500 + i * 100)
+            ghi("m", p, dung = true, lan = 2, luc = now - 490 + i * 100)
+        }
+        ghi("m", "p3", dung = false, luc = now - 10)
+
+        val cac = kho.tinhTrangTu("thu", LuatTuVung.LAN_DUNG_DE_TINH)
+        val m = cac.first { it.first.id == "thu:m" }
+        assertEquals(LuatTuVung.TinhTrang.VUA_SAI, m.second)
+        assertEquals(2, m.third)
+        // Chua gap bao gio thi khong phien nao, va do la tu duoc cho nhan mat truoc.
+        val n = cac.first { it.first.id == "thu:n" }
+        assertEquals(0, n.third)
+        assertEquals(Chieu.ANH_VIET, LuatTuVung.chieuCho(n.third))
+        assertEquals(Chieu.VIET_ANH, LuatTuVung.chieuCho(m.third))
     }
 
     @Test

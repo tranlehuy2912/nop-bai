@@ -37,6 +37,10 @@ package vn.huytl.homeworkgate.ai
  * TRAC_NGHIEM, va so phut ra 6, 6, 5 - thay vi 50, 52, 42 cua luat cu. So cau van
  * nhay nhu truoc, nhung so phut thi thoi.
  *
+ * Ngay 23/9/2026 Ba Huy doi thanh mot cau mot phut. Voi trang dai, cai chan so phut
+ * bay gio la tran moi lan nop [LuatCongGio.TRAN_TRAC_NGHIEM]: ba lan do tren deu
+ * ra 15. Duoi tran thi so phut di theo so cau may dem duoc.
+ *
  * Ban thu bay (ngay 16/9/2026), ba sua nho:
  *
  *  - [CAU_LENH_GIAI_THICH] va [CAU_LENH_DOC_LAI] goi hoc sinh la "em", trong khi hai

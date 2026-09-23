@@ -64,14 +64,17 @@ object LuatCongGio {
     /**
      * Trac nghiem: bay nhieu cau dung moi duoc mot phut.
      *
-     * Tinh theo CUM chu khong theo cau, vi "mot cau" o trang trac nghiem la khai
-     * niem khong on: cung nam tam anh KHTN ngay 14/9/2026, ba lan chay ra 36, 4, roi
-     * 22 cau. Theo cum thi chenh lech do chi con vai phut thay vi gap ba lan.
+     * Mot cau mot phut, Ba Huy doi ngay 23/9/2026. Truoc do la bon cau mot phut, lay
+     * tu cong suc that: khoanh het mot trang chung sau muoi cau mat chung muoi lam
+     * phut.
      *
-     * Con so lay tu cong suc that: khoanh het mot trang trac nghiem chung muoi lam
-     * phut, mot trang chung sau muoi cau -> bon cau mot phut.
+     * Van gom thanh CUM chu khong tra gia rieng tung cau: mot dong trong tin bao
+     * ket qua, tra sau cac cau co loi giai, va chiu tran [TRAN_TRAC_NGHIEM] cua moi
+     * lan nop. Cai tran do bay gio la thu duy nhat chan so phut khoi di theo so cau
+     * may dem ra - cung mot tam anh KHTN ngay 14/9/2026, ba lan chay ra 36, 4, roi
+     * 22 cau; duoi tran thi dem lech bao nhieu cau la lech bay nhieu phut.
      */
-    const val CAU_TRAC_NGHIEM_MOI_PHUT = 4
+    const val CAU_TRAC_NGHIEM_MOI_PHUT = 1
 
     /** Mot lan nop toi da bay nhieu phut tu trac nghiem. */
     const val TRAN_TRAC_NGHIEM = 15

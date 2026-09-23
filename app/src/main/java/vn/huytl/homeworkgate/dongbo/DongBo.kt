@@ -30,6 +30,7 @@ import vn.huytl.homeworkgate.kho.KhoBai
 import vn.huytl.homeworkgate.kho.TraLoi
 import vn.huytl.homeworkgate.data.Prefs
 import vn.huytl.homeworkgate.data.ViecNha
+import vn.huytl.homeworkgate.guard.GuardAccessibilityService
 import vn.huytl.homeworkgate.guard.ParentMode
 import vn.huytl.homeworkgate.guard.Permissions
 import java.security.SecureRandom
@@ -344,7 +345,7 @@ object DongBo {
             Duong.F_DANG_SAC to dangSac(context),
             Duong.F_BAN_APP to BuildConfig.VERSION_NAME,
             Duong.F_CAP_NHAT_LUC to bayGio
-        )
+        ) + truocMat()
         /*
          * Khong co gi doi so voi lan truoc thi thoi ghi. Bo [Duong.F_CAP_NHAT_LUC] ra
          * khoi phep so vi truong do lan nao cung khac.
@@ -359,10 +360,38 @@ object DongBo {
         if (deSo != banDaDay) {
             banDaDay = deSo
             hop.set(noi)
+                // Chi chay khi may chu da nhan, khong phai luc vua goi: Firestore
+                // giu ban ghi trong may khi mat mang. Doc dong nay la biet ben dien
+                // thoai co the thay gi.
+                .addOnSuccessListener {
+                    Log.d(TAG, "may chu da nhan trang thai, truoc mat='${noi[Duong.F_APP_TRUOC_MAT] ?: "?"}' " +
+                        "sang=${noi[Duong.F_MAN_HINH_SANG] ?: "?"}")
+                }
                 .addOnFailureListener { Log.w(TAG, "day trang thai hong: ${it.message}") }
         }
 
         dayNhatKy(context)
+    }
+
+    /**
+     * Ba truong ve man hinh tablet, hoac rong khi khong biet.
+     *
+     * Khong biet la luc dich vu canh app khong chay: no la thu duy nhat nhin thay
+     * man hinh. Luc do bo ca ba truong ra chu khong ghi "khong mo app nao". Bang
+     * dieu khien gap truong vang thi an dong do di, con ghi rong la noi sai.
+     *
+     * Doi app la mot lan ghi Firestore, va Ba Huy da chon cai gia do: so con dang
+     * mo gi phai toi ngay, khong doi nhip tim muoi lam phut. Doi lien tuc thi
+     * [day] gom lai, it nhat 1,2 giay moi mot luot.
+     */
+    private fun truocMat(): Map<String, Any> {
+        if (!GuardAccessibilityService.dangChay) return emptyMap()
+        val tm = GuardAccessibilityService.truocMat
+        return mapOf(
+            Duong.F_APP_TRUOC_MAT to tm.ten,
+            Duong.F_APP_TRUOC_MAT_TU to tm.tu,
+            Duong.F_MAN_HINH_SANG to tm.sang
+        )
     }
 
     /**

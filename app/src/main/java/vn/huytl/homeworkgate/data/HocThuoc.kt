@@ -20,8 +20,9 @@ import vn.huytl.homeworkgate.kho.TheHoc
  * lo do khong rong ra:
  *
  *  - luc hoc thuoc thi cong dang khoa, nen khong co app nao khac de tra;
- *  - gia mot the thap ([THE_MOI_PHUT] the moi duoc mot phut), nen gio sach ra chep
- *    lau hon la ngoi hoc that;
+ *  - moi ngay toi da [TRAN_PHUT_MOI_NGAY] phut, nen chep sach ca buoi cung chi duoc
+ *    chung ay. Truoc 23/9/2026 cho nay con dua vao gia the thap, nua phut mot the,
+ *    de gio sach ra chep lau hon ngoi hoc that; hom do Ba Huy nang len mot phut;
  *  - moi the chi tra gio mot lan cho moi vong hen, y het cau hoi - xem
  *    [vn.huytl.homeworkgate.kho.KhoBai.KHOANG_HEN_NGAY]. Chep mot lan thi lan sau
  *    ba ngay nua the do moi quay lai, va luc do van phai nho.
@@ -32,16 +33,17 @@ import vn.huytl.homeworkgate.kho.TheHoc
 object HocThuoc {
 
     /**
-     * Bay nhieu the dung thi duoc mot phut.
+     * Mot the dung duoc bay nhieu giay.
      *
-     * Ba, chon theo cong suc that giong cach [LuatCongGio] chon cac con so kia: mot
-     * the tu vung nho lai va go ra mat chung muoi lam giay, nen ba the la khoang mot
-     * phut ngoi hoc. Dat ngang voi thuc te thi khong ai phai cai ve no.
+     * Dem bang GIAY chu khong bang "may the mot phut", va dung mot gia voi mot tu o
+     * [LuatTuVung.GIAY_MOI_TU]: hai duong deu la ngoi nho lai roi go ra, cong suc
+     * mot cau nhu nhau, nen tra khac nhau thi con chi chon duong nao re hon.
      *
-     * Ha xuong (moi the mot phut) thi mot buoi hoc thuoc ba muoi tu duoc ba muoi
-     * phut, nhieu hon ca lam het bai co giao - luc do con bo bai tap di hoc thuoc.
+     * Mot phut, Ba Huy doi ngay 23/9/2026 cung luc voi tu vung. Truoc do la ba muoi
+     * giay, de con khong bo bai tap di hoc thuoc. Cai chan cho chuyen do bay gio la
+     * [TRAN_PHUT_MOI_NGAY]: go bao nhieu the thi mot ngay cung chi ra chung ay phut.
      */
-    const val THE_MOI_PHUT = 3
+    const val GIAY_MOI_THE = 60
 
     /**
      * Tran rieng cua duong hoc thuoc, moi ngay.
@@ -51,6 +53,9 @@ object HocThuoc {
      * thi ngoi go mot tram the la an tron tran ngay, va bai tap that khong con cho.
      */
     const val TRAN_PHUT_MOI_NGAY = 20
+
+    /** Cung mot tran, doi ra giay de tinh chung mot don vi voi [GIAY_MOI_THE]. */
+    const val GIAY_TRAN_MOI_NGAY = TRAN_PHUT_MOI_NGAY * 60
 
     /** Mot luot hoi toi da bay nhieu the. Dai hon thi thanh viec vat, khong ai ngoi het. */
     const val SO_THE_MOI_LUOT = 12
@@ -100,14 +105,32 @@ object HocThuoc {
         return g == chuanHoa(the.dap) || the.dapKhac.any { g == chuanHoa(it) }
     }
 
+    /** So giay mot luot lam ra, chua chan tran. */
+    fun giayCho(soDung: Int): Int = soDung.coerceAtLeast(0) * GIAY_MOI_THE
+
     /**
-     * So phut cho mot luot, da chan theo tran ngay.
+     * So phut ca ngay dang duoc, tu tong so giay da hoc trong ngay.
      *
-     * @param daCoHomNay so phut duong hoc thuoc da tra trong ngay.
+     * Chan tran TRUOC khi chia, nen qua tran bao nhieu cung chi ra dung tran.
      */
-    fun phutCho(soDung: Int, daCoHomNay: Int = 0): Int {
-        if (soDung <= 0) return 0
-        val con = (TRAN_PHUT_MOI_NGAY - daCoHomNay).coerceAtLeast(0)
-        return (soDung / THE_MOI_PHUT).coerceAtMost(con)
-    }
+    fun phutTrongNgay(giay: Int): Int = giay.coerceIn(0, GIAY_TRAN_MOI_NGAY) / 60
+
+    /**
+     * So phut cong cho mot luot: phan CHENH cua ca ngay truoc va sau luot do.
+     *
+     * VI SAO KHONG CHIA RIENG TUNG LUOT. Truoc 23/9/2026 mot the la nua phut, nen
+     * luot le the thi chia rieng ra bao nhieu cung mat: ba luot moi luot ba the la
+     * chin the, dang bon phut ruoi, ma chia rieng thi moi luot duoc mot phut - con
+     * mat mot phut ruoi vi da chia lam ba lan ngoi. Tinh bang phan chenh thi phan le
+     * nam lai trong ngay va luot sau nhat duoc.
+     *
+     * Tu hom do mot the tron mot phut nen luot moi khong de ra phan le nua. Van giu
+     * cach tinh nay vi no dung voi moi gia, va gia the doi lan nua thi khong phai
+     * viet lai.
+     *
+     * @param giayTruoc tong giay duong hoc thuoc da lam ra trong ngay, truoc luot nay.
+     * @param giayLuot so giay luot nay lam ra, tu [giayCho].
+     */
+    fun phutThem(giayTruoc: Int, giayLuot: Int): Int =
+        phutTrongNgay(giayTruoc + giayLuot) - phutTrongNgay(giayTruoc)
 }

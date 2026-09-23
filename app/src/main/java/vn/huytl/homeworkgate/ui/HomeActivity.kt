@@ -30,6 +30,7 @@ import vn.huytl.homeworkgate.R
 import vn.huytl.homeworkgate.data.ChatBox
 import vn.huytl.homeworkgate.data.GateState
 import vn.huytl.homeworkgate.data.GateStore
+import vn.huytl.homeworkgate.data.LuatTuVung
 import vn.huytl.homeworkgate.data.KhoTinCuaCo
 import vn.huytl.homeworkgate.data.NgayNghi
 import vn.huytl.homeworkgate.data.Prefs
@@ -38,6 +39,8 @@ import vn.huytl.homeworkgate.data.Mang
 import vn.huytl.homeworkgate.data.SoCaiBai
 import vn.huytl.homeworkgate.data.ViecNha
 import vn.huytl.homeworkgate.kho.BoThe
+import vn.huytl.homeworkgate.kho.BoTuVung
+import vn.huytl.homeworkgate.kho.KhoBai
 import vn.huytl.homeworkgate.kho.NganHang
 import vn.huytl.homeworkgate.kho.PhamVi
 import vn.huytl.homeworkgate.data.ThoiKhoaBieu
@@ -626,6 +629,28 @@ class HomeActivity : AppCompatActivity() {
             }
         }
 
+        /*
+         * Do tu vung. Hien khi may co bo tu va hom nay chua do het phan cua ngay.
+         *
+         * Dong rieng chu khong gop vao dong Kiem tra bai o tren: hai duong hai cai
+         * tran, lam het duong nay van con nguyen duong kia. Gop mot dong thi con
+         * lam xong mot ben la dong do bien mat, va khong biet ben con lai van con.
+         */
+        val coTuVung = runCatching {
+            val kho = KhoBai.get(this)
+            BoTuVung.BO.any { kho.soTuCua(it.bo) > 0 } &&
+                kho.giayTuVungTu(moc0Gio()) < LuatTuVung.GIAY_TRAN_MOI_NGAY
+        }.getOrDefault(false)
+        if (coTuVung) {
+            themViec(
+                hinh = R.drawable.st_ic_the_hoc,
+                mau = MatMon.mau("Tiếng Anh"),
+                ten = getString(R.string.do_tu_nut)
+            ) {
+                startActivity(Intent(this, DoTuVungActivity::class.java))
+            }
+        }
+
         val co = binding.boxViec.childCount > 0
         binding.nhanViec.visibility = if (co) View.VISIBLE else View.GONE
         binding.cardViec.visibility = if (co) View.VISIBLE else View.GONE
@@ -899,4 +924,12 @@ class HomeActivity : AppCompatActivity() {
 
     private fun toast(text: String) =
         Toast.makeText(this, text, Toast.LENGTH_SHORT).show()
+
+    /** Moc 0h hom nay, de hoi cac tran tinh theo ngay duong lich. */
+    private fun moc0Gio(): Long = Calendar.getInstance().apply {
+        set(Calendar.HOUR_OF_DAY, 0)
+        set(Calendar.MINUTE, 0)
+        set(Calendar.SECOND, 0)
+        set(Calendar.MILLISECOND, 0)
+    }.timeInMillis
 }

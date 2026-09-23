@@ -394,6 +394,14 @@
                             android:text="Đặt giờ riêng từng app (Netflix, YouTube…)" />
 
                         <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btn_pick_nhac"
+                            style="@style/Widget.Material3.Button.OutlinedButton"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="Chọn app được nghe nền khi hết giờ (Spotify…)" />
+
+                        <com.google.android.material.button.MaterialButton
                             android:id="@+id/btn_pick_blocked"
                             style="@style/Widget.Material3.Button.OutlinedButton"
                             android:layout_width="match_parent"

@@ -13,15 +13,20 @@ import vn.huytl.homeworkgate.data.Prefs
  *   adb shell am instrument -w -e class vn.huytl.homeworkgate.ManualAi \
  *     -e goi 'com.android.chrome' \
  *     vn.huytl.homeworkgate.test/androidx.test.runner.AndroidJUnitRunner
+ *
+ * Them -e bo 1 de bo goi do ra. Thu xong nho bo: goi con nam trong danh sach thi
+ * go gi vao app do cung ghi thanh cau hoi AI va gui Telegram.
  */
 @RunWith(AndroidJUnit4::class)
 class ManualAi {
     @Test
     fun themGoiAi() {
         val ctx = InstrumentationRegistry.getInstrumentation().targetContext
-        val goi = InstrumentationRegistry.getArguments().getString("goi") ?: error("Thieu -e goi")
+        val args = InstrumentationRegistry.getArguments()
+        val goi = args.getString("goi") ?: error("Thieu -e goi")
         val prefs = Prefs.get(ctx)
-        prefs.aiPackages = prefs.aiPackages + goi
+        prefs.aiPackages = if (args.getString("bo") != null) prefs.aiPackages - goi
+        else prefs.aiPackages + goi
         println("MANUAL_AI: aiPackages = ${prefs.aiPackages}")
     }
 }

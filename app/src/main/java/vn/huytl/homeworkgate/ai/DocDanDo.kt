@@ -6,6 +6,7 @@ import org.json.JSONArray
 import org.json.JSONObject
 import vn.huytl.homeworkgate.data.KhoaAi
 import vn.huytl.homeworkgate.data.VoDanDo
+import vn.huytl.homeworkgate.ui.ImageUtil
 import java.io.File
 import java.time.LocalDate
 
@@ -33,6 +34,24 @@ object DocDanDo {
     /** Chan luong goi - phai goi tu Dispatchers.IO. */
     fun doc(context: Context, anh: List<File>): Ket {
         if (anh.isEmpty()) return Ket(emptyList(), "Chưa có ảnh nào.")
+
+        // Thu anh ve co thuong truoc khi gui. Man dan do dua thang file goc cua
+        // camera vao day - 4000x3000, 3-5MB, base64 con phinh them mot phan ba.
+        // VIEC NAY KHONG BOT TOKEN: Gemini 3 tinh moi anh mot so token co dinh theo
+        // muc media_resolution, anh to hay nho deu vay. Cai bot duoc la dung luong
+        // gui qua wifi nha. Co thuong 1600px la du vi ban doc ra con qua man soat
+        // cua Le Hoa - xem [ImageUtil]. Thu hong thi gui tam goc, con hon khong doc.
+        val nho = anh.map { f -> runCatching { ImageUtil.shrinkInPlace(f) }.getOrDefault(f) }
+        try {
+            return docVoiAnh(context, nho)
+        } finally {
+            // shrinkInPlace tra ve chinh file goc khi khong giai ma duoc anh. Chi
+            // xoa ban da thu: ban goc con phai song de luu va gui kem cho ba Huy.
+            nho.zip(anh).forEach { (moi, goc) -> if (moi != goc) runCatching { moi.delete() } }
+        }
+    }
+
+    private fun docVoiAnh(context: Context, anh: List<File>): Ket {
         var khoa = KhoaAi.hienTai(context)
             ?: return Ket(
                 emptyList(),

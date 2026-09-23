@@ -479,23 +479,24 @@ class LuatCongGioTest {
     )
 
     @Test
-    fun trac_nghiem_bon_cau_dung_duoc_mot_phut() {
-        val ket = KetQuaCham(cac = (1..24).map { tracNghiem("c$it") })
+    fun trac_nghiem_moi_cau_dung_duoc_mot_phut() {
+        val ket = KetQuaCham(cac = (1..12).map { tracNghiem("c$it") })
         val b = LuatCongGio.tinh(ket, bayGio = toiThuHai)
-        // Truoc day: 24 cau x 2 phut = 48. Mot trang khoanh chu het chung 15 phut.
-        assertEquals(6, b.phut)
-        assertTrue(b.dong.any { it.contains("24 câu trắc nghiệm đúng: +6 phút") })
+        // Duoi tran: so phut dung bang so cau. Truoc 23/9/2026 la bon cau mot phut.
+        assertEquals(12, b.phut)
+        assertTrue(b.dong.any { it.contains("12 câu trắc nghiệm đúng: +12 phút") })
     }
 
     @Test
-    fun may_dem_ra_bao_nhieu_cau_cung_khong_lam_so_phut_nhay_gap_ba() {
+    fun may_dem_qua_tay_thi_tran_moi_lan_nop_chan_lai() {
         // Ba lan chay tren dung nam tam anh KHTN ngay 14/9/2026 ra 36, 4, roi 22 cau.
-        // Theo cum thi chenh nhau vai phut; theo tung cau thi la 72 phut va 8 phut.
+        // Mot cau mot phut thi duoi tran so phut di theo so cau may dem; cai chan
+        // phia tren la tran moi lan nop, khong con la ti le nua.
         fun phut(n: Int) =
             LuatCongGio.tinh(KetQuaCham(cac = (1..n).map { tracNghiem("c$it") }), bayGio = toiThuHai).phut
-        assertEquals(9, phut(36))
-        assertEquals(1, phut(4))
-        assertEquals(5, phut(22))
+        assertEquals(LuatCongGio.TRAN_TRAC_NGHIEM, phut(36))
+        assertEquals(4, phut(4))
+        assertEquals(LuatCongGio.TRAN_TRAC_NGHIEM, phut(22))
     }
 
     @Test
@@ -510,7 +511,7 @@ class LuatCongGioTest {
             cac = (1..8).map { tracNghiem("c$it") } + (1..8).map { tracNghiem("s$it", dung = false) }
         )
         val b = LuatCongGio.tinh(ket, bayGio = toiThuHai)
-        assertEquals(2, b.phut)
+        assertEquals(8, b.phut)
         assertTrue(b.dong.any { it.contains("Chưa tính") })
     }
 
@@ -520,19 +521,19 @@ class LuatCongGioTest {
             cac = (1..8).map { tracNghiem("tn$it") } +
                 listOf(cauNho("tự luận 1", trongDanDo = false, soDong = 6))
         )
-        // 8 cau khoanh ra 2 phut, bai tu luan 6 dong ra 3 phut.
-        assertEquals(5, LuatCongGio.tinh(ket, bayGio = toiThuHai).phut)
+        // 8 cau khoanh ra 8 phut, bai tu luan 6 dong ra 3 phut.
+        assertEquals(11, LuatCongGio.tinh(ket, bayGio = toiThuHai).phut)
     }
 
     @Test
     fun so_ghi_dung_tong_phut_cua_cum_trac_nghiem() {
-        val ket = KetQuaCham(cac = (1..10).map { tracNghiem("c$it") })
+        val ket = KetQuaCham(cac = (1..20).map { tracNghiem("c$it") })
         val b = LuatCongGio.tinh(ket, bayGio = toiThuHai)
-        // Muoi cau duoc 2 phut. So phai ghi du ca muoi cau (de lan sau khong tinh
-        // lai) ma cong lai van dung 2 phut, khong phinh thanh 20.
-        assertEquals(2, b.phut)
-        assertEquals(10, b.phutCua.size)
-        assertEquals(2, b.phutCua.values.sum())
+        // Hai muoi cau bi tran cat con 15 phut. So phai ghi du ca hai muoi cau (de
+        // lan sau khong tinh lai) ma cong lai van dung 15 phut, khong phinh thanh 20.
+        assertEquals(15, b.phut)
+        assertEquals(20, b.phutCua.size)
+        assertEquals(15, b.phutCua.values.sum())
     }
 
     @Test
@@ -543,7 +544,7 @@ class LuatCongGioTest {
             baiDuocGiao = listOf("bài 2"),
             lamHetDanDo = true
         )
-        // Con 3 phut tran lam them: cum 10 phut bi cat con 3.
+        // Con 3 phut tran lam them: cum 15 phut bi cat con 3.
         val b = LuatCongGio.tinh(ket, 87, toiThuHai)
         assertEquals(45 + 3, b.phut)
         assertEquals(3, b.phutCua.values.sum())

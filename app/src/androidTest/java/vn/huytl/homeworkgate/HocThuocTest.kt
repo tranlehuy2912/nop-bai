@@ -7,6 +7,7 @@ import org.junit.Assert.assertTrue
 import org.junit.Test
 import org.junit.runner.RunWith
 import vn.huytl.homeworkgate.data.HocThuoc
+import vn.huytl.homeworkgate.data.LuatTuVung
 import vn.huytl.homeworkgate.kho.TheHoc
 
 /**
@@ -102,26 +103,56 @@ class HocThuocTest {
     // --- so phut ---
 
     @Test
-    fun ba_the_dung_duoc_mot_phut() {
-        assertEquals(0, HocThuoc.phutCho(2))
-        assertEquals(1, HocThuoc.phutCho(3))
-        assertEquals(1, HocThuoc.phutCho(5))
-        assertEquals(4, HocThuoc.phutCho(12))
+    fun mot_the_dung_duoc_mot_phut() {
+        assertEquals(120, HocThuoc.giayCho(2))
+        assertEquals(720, HocThuoc.giayCho(12))
+        // Moi the tron mot phut, khong con nua phut de danh nhu truoc 23/9/2026.
+        assertEquals(1, HocThuoc.phutThem(0, HocThuoc.giayCho(1)))
+        assertEquals(3, HocThuoc.phutThem(0, HocThuoc.giayCho(3)))
+        assertEquals(12, HocThuoc.phutThem(0, HocThuoc.giayCho(12)))
     }
 
     @Test
     fun khong_dung_the_nao_thi_khong_co_phut() {
-        assertEquals(0, HocThuoc.phutCho(0))
-        assertEquals(0, HocThuoc.phutCho(-1))
+        assertEquals(0, HocThuoc.giayCho(0))
+        assertEquals(0, HocThuoc.giayCho(-1))
+        assertEquals(0, HocThuoc.phutThem(0, 0))
+    }
+
+    @Test
+    fun le_nua_phut_nam_lai_trong_ngay_chu_khong_mat() {
+        // Tu 23/9/2026 moi the tron mot phut, phan le chi con tu nhung luot ghi theo
+        // gia cu. Ham van phai giu le trong ngay: ba luot 90 giay, chia rieng thi moi
+        // luot mot phut, tong ba; tinh don ca ngay la bon phut ruoi, duoc bon.
+        var giay = 0
+        var tong = 0
+        repeat(3) {
+            tong += HocThuoc.phutThem(giay, 90)
+            giay += 90
+        }
+        assertEquals(4, tong)
     }
 
     @Test
     fun tran_ngay_cat_bot_chu_khong_tu_choi_ca_luot() {
-        // Hom nay da co 18 phut, tran la 20: luot nay dang duoc 4 phut, chi con 2.
-        assertEquals(2, HocThuoc.phutCho(12, daCoHomNay = 18))
+        // Hom nay da lam ra 18 phut, tran la 20: luot nay dang duoc 12 phut, chi con 2.
+        assertEquals(2, HocThuoc.phutThem(18 * 60, HocThuoc.giayCho(12)))
         // Het tran thi khong con gi.
-        assertEquals(0, HocThuoc.phutCho(12, daCoHomNay = HocThuoc.TRAN_PHUT_MOI_NGAY))
+        assertEquals(0, HocThuoc.phutThem(HocThuoc.GIAY_TRAN_MOI_NGAY, HocThuoc.giayCho(12)))
         // Ghi nham lon hon tran cung khong duoc ra so am.
-        assertEquals(0, HocThuoc.phutCho(12, daCoHomNay = 999))
+        assertEquals(0, HocThuoc.phutThem(999 * 60, HocThuoc.giayCho(12)))
+    }
+
+    @Test
+    fun mot_the_va_mot_tu_vung_cung_gia() {
+        assertEquals(LuatTuVung.GIAY_MOI_TU, HocThuoc.GIAY_MOI_THE)
+    }
+
+    @Test
+    fun gia_tron_phut_vi_man_hinh_ghi_bang_phut() {
+        // Cau bao cuoi luot o man hoc thuoc va man do tu ghi gia bang "X phút", lay so
+        // giay chia 60. Gia le giay thi hai cau do im lang noi sai.
+        assertEquals(0, HocThuoc.GIAY_MOI_THE % 60)
+        assertEquals(0, LuatTuVung.GIAY_MOI_TU % 60)
     }
 }

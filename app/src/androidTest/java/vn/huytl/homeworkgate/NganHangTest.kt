@@ -292,8 +292,8 @@ class NganHangTest {
 
     @Test
     fun ca_trang_chi_co_dap_an_thi_khong_duoc_phut_nao() {
-        // Hai muoi cau trac nghiem, may khai dung het - nhung khong co de. Luat cu
-        // se tra 20/4 = 5 phut cho mot trang khong ai cham duoc.
+        // Hai muoi cau trac nghiem, may khai dung het - nhung khong co de. Khong chan
+        // o co_de thi trang nay van ra phut (20 cau, tran 15) du khong ai cham duoc.
         val cac = (1..20).joinToString(",") { i ->
             """{"ma":"câu $i","ngoai_danh_sach":true,"de":"","co_de":false,"dung":true,
                "doc_ro":true,"dang":"TRAC_NGHIEM","ket_qua":"B"}"""
@@ -311,7 +311,8 @@ class NganHangTest {
                "dung":true,"doc_ro":true,"dang":"TRAC_NGHIEM","ket_qua":"B"}"""
         }
         val ket = ChamBaiJson.doc(traLoiAi(cac), bai)!!
-        assertEquals(5, LuatCongGio.tinh(ket).phut)
+        // Mot cau mot phut, hai muoi cau cham tran moi lan nop.
+        assertEquals(LuatCongGio.TRAN_TRAC_NGHIEM, LuatCongGio.tinh(ket).phut)
     }
 
     // ---------------------------------------------------------------- on tap
