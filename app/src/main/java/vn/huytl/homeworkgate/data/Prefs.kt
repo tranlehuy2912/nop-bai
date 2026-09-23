@@ -71,7 +71,8 @@ class Prefs private constructor(private val sp: SharedPreferences) {
 
     /**
      * Danh sach trang: nhung app con duoc dung ca khi het gio, vi du tu dien,
-     * may tinh, app hoc tieng Anh.
+     * may tinh, app hoc tieng Anh. Tru gio ngu va gio di hoc: luc do ca danh sach
+     * nay cung khoa, xem GuardAccessibilityService.lyDoChan.
      *
      * Chon danh sach trang thay vi danh sach den vi danh sach den luon chay sau:
      * con tai ve mot game moi la game do khong nam trong danh sach, khong ai chan.

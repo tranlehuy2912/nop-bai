@@ -89,9 +89,21 @@ class LuatNhacTest {
         )
     }
 
-    /** Gio ngu chi khoa app nhac, khong khoa tu dien - giong luat chan app. */
+    /**
+     * Gio ngu khoa ca danh sach trang, giong luat chan app.
+     *
+     * Truoc day gio ngu chi khoa app nhac, con tu dien va app hoc thi keu ca dem.
+     * Ba Huy doi lai khi thay app AI cung nam trong danh sach trang.
+     */
     @Test
-    fun gio_ngu_khong_dung_tieng_cua_app_trong_danh_sach_trang() {
-        assertEquals(XuLyNhac.CHO_PHAT, xet(duocKhiHetGio = true, trongGioNgu = true))
+    fun gio_ngu_dung_tieng_cua_app_trong_danh_sach_trang() {
+        assertEquals(XuLyNhac.DUNG, xet(duocKhiHetGio = true, trongGioNgu = true))
+    }
+
+    /** Gio choi con thi van phat, ke ca trong khung gio ngu. */
+    @Test
+    fun gio_ngu_ma_con_gio_choi_thi_van_phat() {
+        assertEquals(XuLyNhac.CHO_PHAT, xet(duocKhiHetGio = true, trongGioNgu = true, congMo = true))
+        assertEquals(XuLyNhac.CHO_PHAT, xet(trongGioNgu = true, congMo = true))
     }
 }

@@ -471,7 +471,7 @@ object ThiHanhLenh {
             }
             "appChoPhep" -> {
                 prefs.allowedPackages = danhSach(giaTri)
-                "Danh sách app được chơi: ${prefs.allowedPackages.size} app."
+                "Danh sách app luôn được dùng: ${prefs.allowedPackages.size} app."
             }
             "appChan" -> {
                 prefs.blockedPackages = danhSach(giaTri)

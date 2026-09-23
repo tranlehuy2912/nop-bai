@@ -148,7 +148,37 @@ object DongBo {
         K_NHA
     )
 
+    /**
+     * Nhung khoa prefs co mat trong ban sao cau hinh, xem [dayCaiDat].
+     *
+     * Truoc day ban sao chi duoc ghi luc dong bo vua bat, luc ghep may, va sau mot
+     * lenh tu dien thoai. Ba Huy sua ngay tren tablet, vi du tich them mot app vao
+     * danh sach luon duoc dung, thi dien thoai van hien danh sach cu cho toi lan
+     * dich vu khoi dong lai. Te hon: mo muc do ben dien thoai roi bam Xong la gui
+     * nguyen danh sach cu ve, de len danh sach moi, va app vua tich bien mat ma
+     * khong ai hay.
+     */
+    private val KHOA_CAI_DAT = setOf(
+        "grant_minutes",
+        "hard_stop_minute",
+        "gio_day_minute",
+        "tran_phut_moi_ngay",
+        "lock_settings",
+        "cham_bang_ai",
+        "allowed_packages",
+        "blocked_packages",
+        "ai_packages",
+        "gioi_han_app"
+    )
+
+    /** Bam Luu o man Cai dat la doi may khoa mot luc, gom lai thanh mot lan ghi. */
+    private val dayCaiDatThat = Runnable { ct?.let { dayCaiDat(it) } }
+
     private val ngheDoi = SharedPreferences.OnSharedPreferenceChangeListener { _, khoa ->
+        if (khoa in KHOA_CAI_DAT) {
+            tay.removeCallbacks(dayCaiDatThat)
+            tay.postDelayed(dayCaiDatThat, DOI_GOM_MS)
+        }
         if (khoa !in KHOA_BO_QUA) day()
     }
 
@@ -416,6 +446,9 @@ object DongBo {
 
     /** Ban sao cau hinh dang chay, de man Cai dat ben dien thoai hien so that. */
     fun dayCaiDat(context: Context) {
+        // Lenh tu dien thoai ghi prefs roi goi thang vao day. Lan hen vua dat trong
+        // [ngheDoi] luc ghi prefs thanh thua, bo di cho khoi ghi hai lan.
+        tay.removeCallbacks(dayCaiDatThat)
         val prefs = Prefs.get(context)
         hop(context, Duong.D_CAI_DAT)?.set(
             mapOf(

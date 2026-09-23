@@ -93,7 +93,9 @@ class AppPickerActivity : AppCompatActivity() {
             datHanGio ->
                 "Đặt số phút mỗi ngày cho từng app. Hết số phút đó là app tự khoá, " +
                     "dù Lê Hòa đang có giờ chơi hay app nằm trong danh sách được dùng. " +
-                    "Sáng hôm sau tính lại từ đầu."
+                    "Sáng hôm sau tính lại từ đầu.\n" +
+                    "Đặt giờ ở đây không làm app mở được khi hết giờ chơi. Muốn vậy thì " +
+                    "tích thêm app đó ở mục Chọn app Lê Hòa luôn được dùng."
             danhSachDen ->
                 "Chọn app cấm hẳn. Những app này Lê Hòa không mở được kể cả khi đang " +
                     "trong giờ chơi. Không dùng được để cấm màn hình chính hay bàn phím."
@@ -104,7 +106,8 @@ class AppPickerActivity : AppCompatActivity() {
                     "bao nhiêu cũng được. Quá giờ đi ngủ hoặc tới giờ đi học là tiếng tắt."
             else ->
                 "Chọn app Lê Hòa vẫn được dùng khi hết giờ chơi, ví dụ từ điển, máy tính, " +
-                    "app học. Những app còn lại đều bị khoá khi hết giờ."
+                    "app học. Những app còn lại đều bị khoá khi hết giờ. Từ giờ ngủ tới " +
+                    "giờ dậy thì app ở đây cũng khoá."
         }
 
         if (!datHanGio) {
@@ -281,7 +284,15 @@ class AppPickerActivity : AppCompatActivity() {
                 phu.visibility = if (han > 0) View.VISIBLE else View.GONE
                 if (han > 0) {
                     val daXem = GioiHanApp.daDungMs(this@AppPickerActivity, entry.packageName) / 60_000
-                    phu.text = "$han phút mỗi ngày · hôm nay đã xem $daXem phút"
+                    // Noi ro app co mo duoc khi het gio choi khong. Dat gio o day chi la
+                    // cai tran, khong mo app ra; thieu dong nay thi nhin vao tuong app
+                    // da co rieng bay nhieu phut moi ngay, khong can gio choi.
+                    val khiHetGio = if (entry.packageName in prefs.allowedPackages) {
+                        "mở được khi hết giờ chơi, trừ giờ ngủ"
+                    } else {
+                        "chỉ mở trong giờ chơi"
+                    }
+                    phu.text = "$han phút mỗi ngày · hôm nay đã xem $daXem phút · $khiHetGio"
                 }
             } else {
                 o.visibility = View.VISIBLE

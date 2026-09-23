@@ -123,7 +123,28 @@ class GuardAccessibilityService : AccessibilityService() {
     /** Luc man hinh cua app Nop bai hien len, 0 la dang khong hien. Xem [baoTruocMat]. */
     private var appNhaTu = 0L
 
-    private val nhipSuDungRunnable = Runnable { runCatching { capNhatSuDung() } }
+    /**
+     * Nhip nua phut trong luc co app truoc mat: ghi so su dung, dem gio rieng, roi
+     * xet lai luat chan.
+     *
+     * TRUOC DAY gio rieng chi duoc dem khi co su kien cua so. Ngoi doc mot trang hay
+     * xem mot video khong tieng thi nhieu phut lien khong co su kien nao, ma
+     * [chotGio] bo han khoang nao dai hon mot phut. App dat 30 phut vi the xai duoc
+     * lau hon nhieu moi khoa.
+     *
+     * Viec chan cung vay: chi chay khi co su kien cua so. Nhung co luat doi theo
+     * dong ho ma man hinh khong doi gi: het gio rieng giua chung, hay toi gio ngu
+     * trong luc con dang doc trong app danh sach trang. Xet lai o day thi cham nhat
+     * nua phut la app bi day ra, khong phai doi con cham vao dau do.
+     */
+    private val nhipSuDungRunnable = Runnable {
+        runCatching {
+            val hien = goiDangHienNeuSang()
+            demGioTungApp(hien)
+            capNhatSuDung(hien)
+            if (hien.isNotEmpty()) evaluate(currentPackage ?: packageName)
+        }
+    }
 
     /**
      * Cac goi dang phat tieng va dang duoc phep phat.
@@ -239,7 +260,8 @@ class GuardAccessibilityService : AccessibilityService() {
      * co tieng, nen bat im ca may.
      *
      * Khong chan tieng cua app trong danh sach trang: chung duoc phep dung ca khi
-     * het gio, ma mot app hoc tieng Anh khong doc duoc thanh thi coi nhu hong.
+     * het gio, ma mot app hoc tieng Anh khong doc duoc thanh thi coi nhu hong. Tru
+     * gio ngu, luc do danh sach trang cung khoa, giong [LuatNhac].
      * Nhung KHONG tha theo [systemEssentials] nhu truoc: do la launcher va ban phim,
      * chung khong bao gio phat nhac. Tha chung nghia la con dung o man hinh chinh,
      * vuot thanh thong bao xuong bam play - dung canh hay lam nhat - thi khong ai
@@ -263,7 +285,7 @@ class GuardAccessibilityService : AccessibilityService() {
             if (gate.isOpen()) return
 
             val pkg = currentPackage
-            if (pkg != null && pkg in prefs.allowedPackages) return
+            if (pkg != null && pkg in prefs.allowedPackages && !gate.trongGioNgu()) return
 
             val now = SystemClock.elapsedRealtime()
             if (now - lastHushMs < HUSH_COOLDOWN_MS) return
@@ -745,8 +767,9 @@ class GuardAccessibilityService : AccessibilityService() {
     private fun chotGio(pkg: String, bayGio: Long) {
         val moc = dangDemGio.remove(pkg) ?: return
         val troiQua = bayGio - moc
-        // Mot phut la tran tren cho moi lan chot: nhip xet la hai muoi giay, so lon
-        // hon the nghia la may vua ngu day hoac vua bi dong bang, khong phai xem that.
+        // Mot phut la tran tren cho moi lan chot: nhip dem la nua phut (xem
+        // [nhipSuDungRunnable]), so lon hon the nghia la may vua ngu day hoac vua bi
+        // dong bang, khong phai xem that.
         if (troiQua in 1..60_000L) GioiHanApp.congThem(this, pkg, troiQua)
     }
 
@@ -1221,6 +1244,21 @@ class GuardAccessibilityService : AccessibilityService() {
         }
 
         if (gate.isOpen()) return null
+
+        // Gio ngu khoa ca danh sach trang.
+        //
+        // Truoc day danh sach trang mo ca dem, vi no duoc nghi cho tu dien va may
+        // tinh. Nhung trong do con co app AI, ma so phut rieng cua app lai tinh lai
+        // luc 0 gio: con thuc den 00:05 la co them nua tieng moi. Ba Huy chon khoa.
+        //
+        // Dat SAU gate.isOpen(): gio choi con thi moi app deu mo. Hien gio thi ba
+        // cung khong cap duoc gio trong gio ngu, nhung neu mai sau cap duoc thi do
+        // la y cua ba, khong phai cho de chan.
+        if (gate.trongGioNgu()) {
+            return "Tới giờ ngủ rồi" to
+                "Máy mở lại lúc ${TinhLoiNhac.gioPhut(prefs.gioDayMinuteOfDay)}. Mai chơi tiếp nhé."
+        }
+
         if (pkg in prefs.allowedPackages) return null
 
         // Bao dung viec dang can lam. Truoc day luc nao cung "Nop bai tap de duoc

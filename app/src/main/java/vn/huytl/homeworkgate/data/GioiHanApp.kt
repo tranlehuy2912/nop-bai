@@ -48,7 +48,7 @@ object GioiHanApp {
     /**
      * Cong them [themMs] vao so da dung hom nay cua [pkg].
      *
-     * Ghi bang apply() chu khong commit(): ham nay chay moi hai muoi giay trong suot
+     * Ghi bang apply() chu khong commit(): ham nay chay vai chuc giay mot lan suot
      * luc con dung app, ma mat mot nhip cuoi cung khi tien trinh bi giet thi cung
      * chi sai vai chuc giay.
      */

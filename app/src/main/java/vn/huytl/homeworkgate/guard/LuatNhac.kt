@@ -48,9 +48,12 @@ object LuatNhac {
             return if (trongGioNgu) XuLyNhac.DUNG else XuLyNhac.CHO_PHAT
         }
 
-        // Khong phai app nhac: con dang co gio choi thi phat gi cung duoc, het gio
-        // thi chi app trong danh sach trang con duoc keu (app hoc tieng Anh khong
-        // doc thanh tieng thi coi nhu hong).
-        return if (congMo || duocKhiHetGio) XuLyNhac.CHO_PHAT else XuLyNhac.DUNG
+        // Khong phai app nhac: con dang co gio choi thi phat gi cung duoc.
+        if (congMo) return XuLyNhac.CHO_PHAT
+
+        // Het gio thi chi app trong danh sach trang con duoc keu (app hoc tieng Anh
+        // khong doc thanh tieng thi coi nhu hong). Tru gio ngu: luc do phan chan app
+        // khoa ca danh sach trang, de tieng keu tiep o nen thi khoa cua cho co.
+        return if (duocKhiHetGio && !trongGioNgu) XuLyNhac.CHO_PHAT else XuLyNhac.DUNG
     }
 }
