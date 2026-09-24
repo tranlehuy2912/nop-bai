@@ -2,8 +2,10 @@ package vn.huytl.homeworkgate.ui
 
 import android.os.Bundle
 import android.view.View
+import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
 import android.widget.TextView
+import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
@@ -41,8 +43,9 @@ import vn.huytl.homeworkgate.kho.BoDaNap
  * tung the thi bi giet la con mat cong ma khong duoc phut nao, con cap gio dan tung
  * phut thi moi lan cap la mot luot day len Firestore.
  *
- * CHOT GOI TU HAI CHO: nut Xong, va [onPause]. Con bam nut Home giua luot van duoc
- * tra cho phan da lam. [daChot] giu cho hai duong do khong chot hai lan.
+ * CHOT GOI TU BA CHO: nut Xong, [veLui] khi Back ve man chon bo, va [onPause]. Con bam
+ * nut Home giua luot van duoc tra cho phan da lam. [daChot] giu cho cac duong do khong
+ * chot hai lan.
  */
 class HocThuocActivity : AppCompatActivity() {
 
@@ -101,9 +104,32 @@ class HocThuocActivity : AppCompatActivity() {
             insets
         }
 
-        b.btnThoat.setOnClickListener { finish() }
+        b.btnThoat.setOnClickListener { veLui() }
         b.btnChinh.setOnClickListener { if (daTraLoi) sangTheSau() else traLoi() }
         b.btnChiu.setOnClickListener { chiuThoi() }
+        onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() = veLui()
+        })
+        veChonBo()
+    }
+
+    /**
+     * Lui mot bac, cho ca nut Back lan mui ten goc tren.
+     *
+     * Dang lam luot, hay dang xem ket qua luot, thi ve man chon bo; o man chon bo moi
+     * ra man chinh. Truoc 24/9/2026 ca hai nut deu thoat thang ra man chinh, va con
+     * muon lam bo khac thi phai bam vao "Kiểm tra bài" lai tu dau.
+     *
+     * Chot luot TRUOC khi ve man chon bo. Ra khoi man hinh thi [onPause] chot ho, con
+     * o lai trong man nay thi khong ai goi onPause, va phan con vua lam se mat. Chot
+     * hai lan cung chi an mot lan, xem [chot].
+     */
+    private fun veLui() {
+        if (b.boxBo.visibility == View.VISIBLE) return finish()
+        chot()
+        b.oGo.clearFocus()
+        getSystemService(InputMethodManager::class.java)
+            ?.hideSoftInputFromWindow(b.oGo.windowToken, 0)
         veChonBo()
     }
 
@@ -230,6 +256,9 @@ class HocThuocActivity : AppCompatActivity() {
         b.oGo.setText("")
         b.oGo.isEnabled = true
         b.oGo.requestFocus()
+        // Hien lai nut: het luot truoc thi [xongLuot] da an no. Tu khi Back ve man chon
+        // bo, luot moi chay ngay trong man nay chu khong mo lai man tu dau.
+        b.btnChinh.visibility = View.VISIBLE
         b.btnChinh.setText(R.string.hoc_thuoc_tra_loi)
 
         // Da sai lan nao thi giu goi y tren man hinh, va mo them mot bac moi lan sai.

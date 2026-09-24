@@ -3,6 +3,8 @@ package vn.huytl.homeworkgate.ui
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
+import android.view.inputmethod.InputMethodManager
+import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
@@ -96,9 +98,26 @@ class DoTuVungActivity : AppCompatActivity() {
             insets
         }
 
-        b.btnThoat.setOnClickListener { finish() }
+        b.btnThoat.setOnClickListener { veLui() }
         b.btnChinh.setOnClickListener { if (daTraLoi) sangTuSau() else traLoiGo() }
         b.btnChiu.setOnClickListener { chiuThoi() }
+        onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() = veLui()
+        })
+        veChonBo()
+    }
+
+    /**
+     * Lui mot bac, y het man hoc thuoc: dang do tu hay dang xem ket qua buoi thi ve man
+     * chon bo, o man chon bo moi ra man chinh. Chot buoi truoc khi ve, vi o lai trong
+     * man nay thi khong ai goi [onPause] de chot ho.
+     */
+    private fun veLui() {
+        if (b.boxBo.visibility == View.VISIBLE) return finish()
+        chot()
+        b.oGo.clearFocus()
+        getSystemService(InputMethodManager::class.java)
+            ?.hideSoftInputFromWindow(b.oGo.windowToken, 0)
         veChonBo()
     }
 
