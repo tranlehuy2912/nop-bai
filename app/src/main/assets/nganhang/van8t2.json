@@ -2,7 +2,7 @@
  "nguon": "van8t2",
  "mon": "Ngữ văn",
  "ten": "SGK Ngữ văn 8 — tập hai",
- "ban": 1,
+ "ban": 2,
  "cac_bai": [
   {
    "chuong": "Bài 6. Chân dung cuộc sống",
@@ -1319,7 +1319,7 @@
     },
     {
      "ma": "B10.C15",
-     "trang": 120,
+     "trang": 122,
      "nhom": "Đọc để đồng hành và chia sẻ",
      "dang": "CAU_NHO",
      "de": "Câu 1. Đọc những lời tâm tình của nhà thơ Y Phương về bài thơ Nói với con và thực hiện yêu cầu nêu ở dưới: a. Lời tâm tình của nhà thơ Y Phương cho biết điều gì về hoàn cảnh ra đời của bài thơ Nói với con? Hoàn cảnh ấy có tác động như thế nào đến sự biểu đạt cảm xúc và hình tượng trong bài thơ? b. Không chỉ nói về tình phụ tử, tình cảm gia đình, câu thơ \"Người đồng mình thô sơ da thịt/ Chẳng mấy ai nhỏ bé đâu con\" còn thể hiện ý nghĩa gì? Vì sao nhà thơ thực sự trăn trở, tâm huyết với điều đó? c. Qua lời giải thích của nhà thơ Y Phương, những hình ảnh trong các dòng thơ: \"Chân phải bước tới cha/ Chân trái bước tới mẹ\" và \"Vách nhà ken câu hát\" là hình ảnh thực hay tưởng tượng? Vì sao? d. Theo em, điều gì làm nhà thơ xúc động, trăn trở nhất khi viết bài thơ Nói với con? (văn bản Nhà thơ Y Phương: \"Nói với con\" cũng chính là nói với lòng mình! của Yên Khương)"
@@ -1346,7 +1346,7 @@
     },
     {
      "ma": "B10.C18",
-     "trang": 125,
+     "trang": 123,
      "nhom": "Viết",
      "dang": "VIET_DAI",
      "de": "Viết một nhan đề và sáng tạo một tác phẩm mới (thơ, truyện,...)."

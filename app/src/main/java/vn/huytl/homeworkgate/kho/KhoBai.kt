@@ -7,6 +7,7 @@ import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 import vn.huytl.homeworkgate.data.LoaiLoi
 import vn.huytl.homeworkgate.data.LuatTuVung
+import vn.huytl.homeworkgate.data.SoCaiBai
 
 /**
  * Kho bai tap nam trong may: ngan hang cau hoi va toan bo cau tra loi cua con.
@@ -1261,7 +1262,114 @@ class KhoBai private constructor(context: Context) :
         } finally {
             writableDatabase.endTransaction()
         }
+        // So tren Firestore van giu khoa cu cua nhung cau da noi, keo ve la khoa cu
+        // quay lai. Noi lai ngay, dung doi toi lan mo app sau.
+        noiCauDuongCu()
     }
+
+    /**
+     * Doi khoa cua nhung cau da nop qua "Bai khac" sang ma cau trong sach, neu sach
+     * co dung cau do.
+     *
+     * VI SAO CAN. Truoc khi mot mon co sach trong may, con nop bai mon do qua duong
+     * cu, va so cai ghi khoa bang de bai AI chep lai ("tu:..."). Nap sach xong, cung
+     * cau do mang ma sach ("van8t1:B1.C5"), ma khong co gi noi hai khoa: cau da tra
+     * gio thanh cau chua lam, chup lai trang vo cu la duoc tra gio lan hai, va man
+     * "Lam them" moi con lam lai bai da nop. Sach Ngu van vao may ngay 24/9/2026, khi
+     * nam hoc da di duoc ba tuan.
+     *
+     * So phan cot loi cua de AI chep voi de trong sach cung mon - xem [loiDe]. Khop
+     * thi doi cau_id cua MOI dong cua khoa cu, nen ca lich su sai roi sua di theo, va
+     * khong sinh dong nao moi: so phut va so cau da lam giu nguyen. Mot khoa cu dinh
+     * toi nhieu cau sach thi bo qua: noi nham la con mat gio cua mot cau chua lam, con
+     * bo qua thi chi quay ve duong cu nhu truoc. Thu tren ca ngan hang ngay 24/9/2026,
+     * gia nhu AI chep dung de sach: khong noi nham cau nao, bo qua 2 trong 1361 cau.
+     *
+     * Goi luc mo app va sau khi keo so cu ve. Chay lai bao nhieu lan cung vay: khoa
+     * da doi thi khong con dang "tu:" de doi nua.
+     *
+     * @return so khoa cu da doi.
+     */
+    fun noiCauDuongCu(): Int {
+        val db = writableDatabase
+        // Moi khoa cu mot dong: mon va de cua lan nop gan nhat.
+        val cu = db.rawQuery(
+            """
+            SELECT t.cau_id, t.mon, t.de FROM tra_loi t
+            JOIN (SELECT MAX(id) AS cuoi FROM tra_loi
+                  WHERE cau_id LIKE ? GROUP BY cau_id) m ON t.id = m.cuoi
+            """.trimIndent(),
+            arrayOf(SoCaiBai.DAU_NGOAI_SACH + "%")
+        ).use { c ->
+            buildList {
+                while (c.moveToNext()) {
+                    add(Triple(c.getString(0), c.getString(1).orEmpty(), loiDe(c.getString(2))))
+                }
+            }
+        }
+        if (cu.isEmpty()) return 0
+
+        val sachTheoMon = cu.map { it.second }.filter { it.isNotBlank() }.toSet()
+            .associateWith { mon ->
+                db.rawQuery("SELECT id, de FROM cau_hoi WHERE mon = ?", arrayOf(mon)).use { c ->
+                    buildList { while (c.moveToNext()) add(c.getString(0) to loiDe(c.getString(1))) }
+                }
+            }
+
+        var doi = 0
+        db.beginTransaction()
+        try {
+            for ((khoa, mon, loi) in cu) {
+                val coThe = sachTheoMon[mon].orEmpty().filter { coTheLa(loi, it.second) }
+                // Giong het mot cau thi lay cau do. Khong thi chi noi khi chi co mot cau
+                // sach dinh toi: cau nho 1.17a, 1.17b chung phan dan, AI chi chep phan
+                // dan thi khong biet la cau nao.
+                val chon = coThe.singleOrNull { it.second == loi }
+                    ?: coThe.singleOrNull()?.takeIf { duChac(loi, it.second) }
+                    ?: continue
+                val soDong = db.update(
+                    "tra_loi",
+                    ContentValues().apply { put("cau_id", chon.first) },
+                    "cau_id = ?",
+                    arrayOf(khoa)
+                )
+                if (soDong > 0) doi++
+            }
+            db.setTransactionSuccessful()
+        } finally {
+            db.endTransaction()
+        }
+        return doi
+    }
+
+    /**
+     * Phan cot loi cua mot de bai, de so de AI chep voi de trong sach.
+     *
+     * Bo ghi chu nha minh them vao de sach ("(văn bản ...)", "(Thực hành tiếng Việt:
+     * ...)", "(in đậm: ...)") va nhan so o dau ("Câu 3.", "2.26a."): AI khong chep ghi
+     * chu, con nhan so thi co lan chep co lan khong. Ngoac cua chinh sach thi GIU: o
+     * Toan do la bieu thuc, bo di thi "(2b + 1)^2" voi "(x + 3)^2" thanh mot. Phan con
+     * lai chuan hoa y het khoa so cai, xem [SoCaiBai.chuanHoa].
+     */
+    private fun loiDe(de: String?): String =
+        SoCaiBai.chuanHoa(de.orEmpty().replace(GHI_CHU, " ").replace(NHAN_DAU, ""))
+
+    /**
+     * Hai de (da qua [loiDe]) co the la mot cau khong: giong het, hoac mot ben nam
+     * tron trong ben kia - AI chep them nhan so, hay chi chep cau dau cua de. Ben ngan
+     * phai du [KHOP_TOI_THIEU] ky tu: "rútgọnbiểuthức" nam trong ca chuc cau Toan.
+     */
+    private fun coTheLa(cu: String, sach: String): Boolean = when {
+        cu.isEmpty() || sach.isEmpty() -> false
+        cu == sach -> true
+        cu.length >= KHOP_TOI_THIEU && sach.contains(cu) -> true
+        sach.length >= KHOP_TOI_THIEU && cu.contains(sach) -> true
+        else -> false
+    }
+
+    /** Du chac de noi: AI chep them thi duoc, chep thieu thi phai con sau phan muoi de sach. */
+    private fun duChac(cu: String, sach: String): Boolean =
+        cu == sach || cu.contains(sach) || cu.length * 10 >= sach.length * 6
 
     fun xoaHetTraLoi() {
         writableDatabase.delete("tra_loi", null, null)
@@ -1319,6 +1427,17 @@ class KhoBai private constructor(context: Context) :
          * phai chi tra mot lan mot ngay. Dau @ de khong bao gio dung ma sach that.
          */
         const val CAU_GOI = "@goi-dan-do"
+
+        /** Ghi chu nha minh them vao de sach, xem [NganHang.SACH]. Dung o [loiDe]. */
+        private val GHI_CHU = Regex(
+            """\((?:văn bản |Thực hành tiếng Việt: |Phiếu học tập số |Bài 10: |[^()]*in đậm: )[^()]*\)"""
+        )
+
+        /** Nhan so o dau de bai: "Câu 3.", "Bài 2:", "2.26a.", "3)". Xem [loiDe]. */
+        private val NHAN_DAU = Regex("""^\s*(?:[Cc]âu|[Bb]ài)?\s*\d+(?:\.\d+)*[a-z]?\s*[.:)]\s*""")
+
+        /** De ngan hon chung nay thi chi noi khi giong het. Xem [coTheLa]. */
+        private const val KHOP_TOI_THIEU = 30
 
         /**
          * Sau bao nhieu ngay thi mot cau den hen on lai.

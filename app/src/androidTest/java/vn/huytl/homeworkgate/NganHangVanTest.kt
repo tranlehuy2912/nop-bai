@@ -105,6 +105,10 @@ class NganHangVanTest {
             .contains("A-lớt-xtơ Phơ-dơ-gheo"))
         assertTrue(kho.cauTheoId("van8t2:B10.C17")?.de.orEmpty()
             .startsWith("Viết bài thuyết minh giới thiệu cuốn sách yêu thích"))
+        // Cau a-d cua B10.C15 in o trang 122, trang 120 chi co loi dan; hai de viet deu
+        // nam o dau trang 123. Co giao giao theo trang thi con phai thay cau o dung trang do.
+        assertEquals(122, kho.cauTheoId("van8t2:B10.C15")?.trang)
+        assertEquals(123, kho.cauTheoId("van8t2:B10.C18")?.trang)
 
         // On tap hoc ki mang so bai 0 o ca hai tap. Hai quyen la hai nguon rieng nen
         // "B0.C1" cua tap mot va cua tap hai la hai cau khac nhau.

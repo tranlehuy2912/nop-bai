@@ -148,6 +148,10 @@ object NganHang {
             sp.edit().putInt(khoaBan, doc.ban).apply()
             Log.i(TAG, "nap ${doc.cac.size} cau tu ${sach.ten} (ban ${doc.ban})")
         }
+        // Cau con da nop qua "Bai khac" truoc khi mon do co sach: noi sang ma sach, khong
+        // thi cau da tra gio thanh cau chua lam. Chay moi lan mo app, xem [KhoBai.noiCauDuongCu].
+        val noi = kho.noiCauDuongCu()
+        if (noi > 0) Log.i(TAG, "noi $noi cau nop qua duong cu sang ma sach")
     }
 
     /** Mot quyen vua doc xong: so ban ghi trong file va cac cau trong do. */

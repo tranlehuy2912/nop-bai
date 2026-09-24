@@ -39,6 +39,9 @@ class NganHangTest {
     private val now = System.currentTimeMillis()
     private val ngay = 24 * 60 * 60_000L
 
+    /** Mon khong co that, cho quyen gia cua phan "cau nop truoc khi co sach". */
+    private val MON_RIENG = "Môn thử"
+
     /** Mot bai gia, du de doi chieu ma khong phu thuoc vao file sach that. */
     private val bai = listOf(
         cauHoi("2.26a", "Phân tích đa thức x^2 - 6x + 9 - y^2 thành nhân tử", 0),
@@ -466,6 +469,81 @@ class NganHangTest {
         assertEquals(1, SoCaiBai.ghi(context, listOf(cau), mapOf("2.26a" to 2), now).size)
         // Lan hai: cau da xong roi, khong ghi nua.
         assertEquals(0, SoCaiBai.ghi(context, listOf(cau), mapOf("2.26a" to 2), now).size)
+    }
+
+    // ------------------------------------------------- cau nop truoc khi co sach
+
+    /**
+     * Mot quyen gia mang mon rieng, de sach that trong may (Toan, KHTN, Van cung nam
+     * trong kho nay) khong chen vao phep so de.
+     */
+    private fun napSachRieng(vararg cau: Pair<String, String>) {
+        KhoBai.get(context).napNguon(
+            "thu",
+            cau.mapIndexed { i, (ma, de) -> cauHoi(ma, de, i).copy(mon = MON_RIENG) }
+        )
+    }
+
+    /** Mot lan nop qua "Bai khac": khong co ma sach, khoa lay tu de AI chep. */
+    private fun nopDuongCu(de: String, mon: String = MON_RIENG) {
+        val cau = CauCham(ma = "câu 3", de = de, mon = mon, dung = true, soDong = 4)
+        SoCaiBai.ghi(context, listOf(cau), mapOf("câu 3" to 2), now - ngay)
+    }
+
+    @Test
+    fun cau_nop_qua_bai_khac_truoc_khi_co_sach_duoc_noi_sang_ma_sach() {
+        // Nop tu hoi mon nay chua co sach. AI chep de khong kem ten van ban.
+        nopDuongCu("Câu 3. Trần Quốc Toản có hành động gì khác thường khi bị quân Thánh Dực ngăn cản?")
+        napSachRieng(
+            "B1.C5" to "Câu 3. Trần Quốc Toản có hành động gì khác thường khi bị quân " +
+                "Thánh Dực ngăn cản? (văn bản Lá cờ thêu sáu chữ vàng của Nguyễn Huy Tưởng)",
+            "B1.C6" to "Câu 4. Vua Thiệu Bảo có thái độ và cách xử lí như thế nào? " +
+                "(văn bản Lá cờ thêu sáu chữ vàng của Nguyễn Huy Tưởng)"
+        )
+
+        assertEquals(1, KhoBai.get(context).noiCauDuongCu())
+        // Cau sach gio la da tra gio: nop lai theo sach thi khong duoc them phut nao.
+        assertTrue(SoCaiBai.daTraGioTheoKhoa(context, "thu:B1.C5", now))
+        assertFalse(SoCaiBai.daTraGioTheoKhoa(context, "thu:B1.C6", now))
+        // Doi khoa chu khong them dong: so phut hom do van la 2.
+        assertEquals(2, SoCaiBai.phutDaCongHomNay(context, now - ngay))
+        // Chay lai khong con gi de doi.
+        assertEquals(0, KhoBai.get(context).noiCauDuongCu())
+    }
+
+    @Test
+    fun de_cu_dinh_toi_hai_cau_sach_thi_khong_noi() {
+        // Hai cau nho chung mot phan dan. AI chi chep phan dan thi khong biet la cau nao.
+        val dan = "Cho hai đa thức A = 2x^2y + 3xyz − 2x + 5 và B = 3xyz − 2x^2y + x − 4."
+        nopDuongCu(dan)
+        napSachRieng("1.17a" to "$dan Tính A + B.", "1.17b" to "$dan Tính A − B.")
+
+        assertEquals(0, KhoBai.get(context).noiCauDuongCu())
+        assertFalse(SoCaiBai.daTraGioTheoKhoa(context, "thu:1.17a", now))
+        assertFalse(SoCaiBai.daTraGioTheoKhoa(context, "thu:1.17b", now))
+        // Duong cu van nhan ra cau do nhu truoc.
+        assertTrue(SoCaiBai.daTraGio(context, dan, now))
+    }
+
+    @Test
+    fun khac_mon_thi_khong_noi() {
+        val de = "Hãy khái quát chủ đề của văn bản và cho biết căn cứ vào đâu em khái quát như vậy."
+        nopDuongCu(de, mon = "Mỹ thuật")
+        napSachRieng("B1.C10" to "Câu 8. $de (văn bản Lá cờ thêu sáu chữ vàng của Nguyễn Huy Tưởng)")
+        assertEquals(0, KhoBai.get(context).noiCauDuongCu())
+    }
+
+    @Test
+    fun keo_so_cu_ve_thi_noi_lai_ngay() {
+        // Firestore van giu khoa cu. Keo ve xong ma doi den lan mo app sau moi noi thi
+        // trong khoang do con nop lai cau cu duoc.
+        val de = "Hãy khái quát chủ đề của văn bản và cho biết căn cứ vào đâu em khái quát như vậy."
+        napSachRieng("B1.C10" to "Câu 8. $de (văn bản Lá cờ thêu sáu chữ vàng của Nguyễn Huy Tưởng)")
+        val khoaCu = SoCaiBai.DAU_NGOAI_SACH + SoCaiBai.chuanHoa(de)
+        KhoBai.get(context).napSoCai(
+            listOf(TraLoi(khoaCu, MON_RIENG, "câu 8", de, "", emptyList(), 0, false, true, 2, "", now))
+        )
+        assertTrue(SoCaiBai.daTraGioTheoKhoa(context, "thu:B1.C10", now))
     }
 
     // ----------------------------------------------------------------- kho va pham vi
