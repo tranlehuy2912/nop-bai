@@ -22,7 +22,7 @@ la mot cau hoi that: app co con hien dung cau do nua khong.
 # Vai moc co that trong lich 2026-2027, moi moc soi mot canh khac nhau.
 THU_SAU_SANG = "2026-09-18T07:00"   # dang trong buoi sang thu sau (vao hoc 07:15)
 THU_NAM_CHIEU = "2026-09-17T13:00"  # dang trong buoi chieu thu nam
-THU_NAM_SAP = "2026-09-17T11:50"    # con 10 phut nua phai buong may
+THU_NAM_SAP = "2026-09-17T11:20"    # con 10 phut nua phai buong may
 TOI_THU_TU = "2026-09-16T20:00"     # toi, chua soan cap cho hom sau
 CHU_NHAT = "2026-09-20T10:00"       # nghi, khong duoc chan gi
 

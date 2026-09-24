@@ -57,8 +57,8 @@ class TinhLoiNhacTest {
 
     @Test
     fun mot_gio_truoc_moc_buong_may_thi_nhac_di_hoc() {
-        // Chieu thu ba buong may luc 12h00, nen 11h30 phai bao con 30 phut.
-        val nhac = TinhLoiNhac.tinh(luc(15, 11, 30), emptySet())
+        // Chieu thu ba buong may luc 11h30, nen 11h00 phai bao con 30 phut.
+        val nhac = TinhLoiNhac.tinh(luc(15, 11, 0), emptySet())
         assertEquals(LoaiNhac.SAP_DI_HOC, nhac!!.loai)
         assertTrue(nhac.tieuDe.contains("30 phút"))
         assertTrue(!nhac.gap)
@@ -66,15 +66,15 @@ class TinhLoiNhacTest {
 
     @Test
     fun con_muoi_phut_thi_thanh_gap() {
-        val nhac = TinhLoiNhac.tinh(luc(15, 11, 50), emptySet())
+        val nhac = TinhLoiNhac.tinh(luc(15, 11, 20), emptySet())
         assertEquals(LoaiNhac.SAP_DI_HOC, nhac!!.loai)
         assertTrue(nhac.gap)
     }
 
     @Test
     fun vao_nguong_gap_thi_tieu_de_hien_phut_giay() {
-        // 11h50 con dung 10 phut, phai hien 10:00 chu khong phai "10 phut".
-        val nhac = TinhLoiNhac.tinh(luc(15, 11, 50), emptySet())!!
+        // 11h20 con dung 10 phut, phai hien 10:00 chu khong phai "10 phut".
+        val nhac = TinhLoiNhac.tinh(luc(15, 11, 20), emptySet())!!
         assertTrue(nhac.tieuDe.contains("10:00"))
     }
 
@@ -163,12 +163,14 @@ class TinhLoiNhacTest {
 
     @Test
     fun buoi_co_ca_mon_va_the_duc_thi_nhac_ca_hai() {
-        // Chieu thu hai co 4 mon can vo, sang thu hai co the duc. Kiem buoi chieu
-        // de chac rang phan "va nho do the duc" chi hien khi dung co the duc.
+        // Chieu thu tu co 4 mon can vo, khong co the duc. Kiem de chac rang phan "va
+        // nho do the duc" chi hien khi dung co the duc.
         //
-        // Lay 10h50 chu khong phai 11h: dung 11h la tron 60 phut truoc moc buong
-        // may nen app da chuyen sang nhac di hoc, khong con nhac soan vo nua.
-        val nhac = TinhLoiNhac.tinh(luc(14, 10, 50), emptySet())!!
+        // Truoc day kiem chieu thu hai, vi sang cung ngay co the duc. Tu khi buoi
+        // chieu buong may luc 11h30 thi chieu thu hai khong con luc nao nhac soan vo:
+        // sang hoc toi 10h45, ma 10h30 da vao nguong nhac di hoc. Nen kiem toi thu
+        // ba, luc buoi ke tiep la chieu thu tu.
+        val nhac = TinhLoiNhac.tinh(luc(15, 20, 0), emptySet())!!
         assertEquals(LoaiNhac.SOAN_VO, nhac.loai)
         assertTrue(nhac.chiTiet.contains("4 môn"))
         assertTrue(!nhac.chiTiet.contains("thể dục"))
@@ -181,7 +183,7 @@ class TinhLoiNhacTest {
 
     @Test
     fun trong_gio_hoc_chieu_thi_chan_man_hinh() {
-        // Chieu thu hai chan tu 12h00 toi 17h00.
+        // Chieu thu hai chan tu 11h30 toi 17h00.
         val nhac = chan(luc(14, 12, 30))!!
         assertEquals(LoaiNhac.CHAN, nhac.loai)
         assertEquals(17 * 60, nhac.phutHetChan)
@@ -189,7 +191,7 @@ class TinhLoiNhacTest {
 
     @Test
     fun truoc_moc_buong_may_thi_chua_chan() {
-        assertTrue(chan(luc(14, 11, 55))!!.loai != LoaiNhac.CHAN)
+        assertTrue(chan(luc(14, 11, 25))!!.loai != LoaiNhac.CHAN)
     }
 
     @Test
@@ -207,7 +209,7 @@ class TinhLoiNhacTest {
 
     @Test
     fun giua_hai_buoi_thu_hai_thi_khong_chan() {
-        // 11h00: sang da tan luc 10h45, chieu chua toi moc 12h00. Con ve nha an trua.
+        // 11h00: sang da tan luc 10h45, chieu chua toi moc 11h30. Con ve nha an trua.
         assertTrue(chan(luc(14, 11, 0))!!.loai != LoaiNhac.CHAN)
     }
 
@@ -241,14 +243,14 @@ class TinhLoiNhacTest {
 
     @Test
     fun vao_nguong_gap_thi_dem_tung_giay() {
-        // 11h50 con 10 phut toi moc 12h00, tuc 600 giay.
-        val nhac = TinhLoiNhac.tinh(luc(14, 11, 50), emptySet())!!
+        // 11h20 con 10 phut toi moc 11h30, tuc 600 giay.
+        val nhac = TinhLoiNhac.tinh(luc(14, 11, 20), emptySet())!!
         assertEquals(LoaiNhac.SAP_DI_HOC, nhac.loai)
         assertEquals(600, nhac.giayConLai)
     }
 
     @Test
     fun chua_vao_nguong_gap_thi_khong_dem_giay() {
-        assertEquals(-1, TinhLoiNhac.tinh(luc(14, 11, 30), emptySet())!!.giayConLai)
+        assertEquals(-1, TinhLoiNhac.tinh(luc(14, 11, 0), emptySet())!!.giayConLai)
     }
 }

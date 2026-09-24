@@ -95,10 +95,11 @@ object ThoiKhoaBieu {
      * Moc Le Hoa phai buong may di chuan bi, phut tinh tu 00:00.
      *
      * Khong tinh ra tu gio vao hoc bang mot cong thuc chung: Ba Huy dat tay tung moc.
-     * Buoi chieu duoc 45 phut vi trua Le Hoa hay om may lau, hai buoi sang thi 30.
+     * Buoi chieu buong may luc 11:30, truoc gio vao hoc 75 phut, vi trua Le Hoa hay
+     * om may lau; hai buoi sang thi 30. Truoc ngay 24/9/2026 buoi chieu la 12:00.
      */
     fun phutBuongMay(buoiHoc: BuoiHoc): Int = when (buoiHoc.buoi) {
-        Buoi.CHIEU -> 12 * 60
+        Buoi.CHIEU -> 11 * 60 + 30
         Buoi.SANG -> BUONG_MAY_SANG[buoiHoc.thu] ?: (buoiHoc.phutVaoHoc - 30)
     }
 

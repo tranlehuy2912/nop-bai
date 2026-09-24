@@ -176,7 +176,7 @@ chay_va_doc() {
 # Van dong ho may ao toi mot moc bat ky, de khoi ngoi doi den thu hai.
 #
 #   tools/emu.sh gio                    # xem may ao dang o gio nao
-#   tools/emu.sh gio 2026-09-14 12:05   # thu hai, vua qua moc buong may
+#   tools/emu.sh gio 2026-09-14 11:35   # thu hai, vua qua moc buong may
 #   tools/emu.sh gio 11:50              # giu nguyen ngay, chi doi gio
 #
 # Phai tat auto_time truoc, khong thi may ao keo lai gio that tu mang sau vai phut
