@@ -148,38 +148,25 @@ object DongBo {
         K_NHA
     )
 
-    /**
-     * Nhung khoa prefs co mat trong ban sao cau hinh, xem [dayCaiDat].
-     *
-     * Truoc day ban sao chi duoc ghi luc dong bo vua bat, luc ghep may, va sau mot
-     * lenh tu dien thoai. Ba Huy sua ngay tren tablet, vi du tich them mot app vao
-     * danh sach luon duoc dung, thi dien thoai van hien danh sach cu cho toi lan
-     * dich vu khoi dong lai. Te hon: mo muc do ben dien thoai roi bam Xong la gui
-     * nguyen danh sach cu ve, de len danh sach moi, va app vua tich bien mat ma
-     * khong ai hay.
-     */
-    private val KHOA_CAI_DAT = setOf(
-        "grant_minutes",
-        "hard_stop_minute",
-        "gio_day_minute",
-        "tran_phut_moi_ngay",
-        "lock_settings",
-        "cham_bang_ai",
-        "allowed_packages",
-        "blocked_packages",
-        "ai_packages",
-        "gioi_han_app"
-    )
-
-    /** Bam Luu o man Cai dat la doi may khoa mot luc, gom lai thanh mot lan ghi. */
-    private val dayCaiDatThat = Runnable { ct?.let { dayCaiDat(it) } }
-
     private val ngheDoi = SharedPreferences.OnSharedPreferenceChangeListener { _, khoa ->
-        if (khoa in KHOA_CAI_DAT) {
-            tay.removeCallbacks(dayCaiDatThat)
-            tay.postDelayed(dayCaiDatThat, DOI_GOM_MS)
-        }
         if (khoa !in KHOA_BO_QUA) day()
+    }
+
+    /**
+     * Cai hay go app thi gui lai danh sach app sang dien thoai.
+     *
+     * Truoc day danh sach chi di luc dong bo vua bat va luc ghep may. App cai sau luc
+     * do khong hien ben Bang dieu khien cho toi lan tien trinh khoi dong lai, nen Ba
+     * Huy khong tich duoc app vua cai vao danh sach nao tu dien thoai.
+     *
+     * Cap nhat app cung ban ra hai su kien nay. [dayDanhSachApp] so danh sach ten goi
+     * truoc, khong doi thi thoi, nen moi lan cap nhat chi ton mot luot hoi
+     * PackageManager.
+     */
+    private val ngheCaiApp = object : BroadcastReceiver() {
+        override fun onReceive(context: Context, intent: Intent) {
+            ct?.let { runCatching { dayDanhSachApp(it) } }
+        }
     }
 
     private val nhipTim = object : Runnable {
@@ -206,6 +193,9 @@ object DongBo {
      * So sanh bo qua [Duong.F_CAP_NHAT_LUC] vi truong do lan nao cung khac.
      */
     private var banDaDay: Map<String, Any?>? = null
+
+    /** Ban sao cau hinh vua ghi, de chi ghi lai khi no doi. Xem [dayCaiDatNeuDoi]. */
+    private var caiDatDaDay: Map<String, Any>? = null
 
     /** Luc bat dau chuoi gom hien tai, de giu [TRAN_GOM_MS]. */
     private var batDauGom = 0L
@@ -272,6 +262,11 @@ object DongBo {
                 batNgheViecNha(ung)
                 batNgheGhep(ung)
                 Prefs.get(ung).raw().registerOnSharedPreferenceChangeListener(ngheDoi)
+                ung.registerReceiver(ngheCaiApp, IntentFilter().apply {
+                    addAction(Intent.ACTION_PACKAGE_ADDED)
+                    addAction(Intent.ACTION_PACKAGE_REMOVED)
+                    addDataScheme("package")
+                })
                 tay.post(nhipTim)
                 dayCaiDat(ung)
                 dayDanhSachApp(ung)
@@ -283,6 +278,7 @@ object DongBo {
         val ung = ct
         dangChay = false
         banDaDay = null
+        caiDatDaDay = null
         nhatKyDaDay = null
         hoiAiDaDay = null
         batDauGom = 0L
@@ -292,6 +288,8 @@ object DongBo {
         ngheViecNha?.remove(); ngheViecNha = null
         if (ung != null) {
             runCatching { Prefs.get(ung).raw().unregisterOnSharedPreferenceChangeListener(ngheDoi) }
+            // Chua kip dang ky (dung lai truoc khi lap nha xong) thi ham nay nem loi.
+            runCatching { ung.unregisterReceiver(ngheCaiApp) }
         }
     }
 
@@ -396,6 +394,7 @@ object DongBo {
                 .addOnFailureListener { Log.w(TAG, "day trang thai hong: ${it.message}") }
         }
 
+        dayCaiDatNeuDoi(context)
         dayNhatKy(context)
     }
 
@@ -444,26 +443,55 @@ object DongBo {
         }
     }
 
-    /** Ban sao cau hinh dang chay, de man Cai dat ben dien thoai hien so that. */
+    /**
+     * Ghi ngay ban sao cau hinh dang chay, du no giong ban vua ghi.
+     *
+     * Dung sau mot lenh tu dien thoai (man Cai dat ben do dang mo, doi mot nhip la
+     * Ba Huy bam lai), luc dong bo vua bat va luc ghep may (nha moi thi document cung
+     * moi). Con lai de [dayCaiDatNeuDoi] lo.
+     */
     fun dayCaiDat(context: Context) {
-        // Lenh tu dien thoai ghi prefs roi goi thang vao day. Lan hen vua dat trong
-        // [ngheDoi] luc ghi prefs thanh thua, bo di cho khoi ghi hai lan.
-        tay.removeCallbacks(dayCaiDatThat)
+        caiDatDaDay = null
+        dayCaiDatNeuDoi(context)
+    }
+
+    /**
+     * Ghi ban sao cau hinh neu no khac ban vua ghi. Chay trong [dayThat], tuc la sau
+     * moi lan prefs doi.
+     *
+     * Truoc day ban sao chi duoc ghi luc dong bo vua bat, luc ghep may, va sau mot
+     * lenh tu dien thoai. Ba Huy sua ngay tren tablet, vi du tich them mot app vao
+     * danh sach luon duoc dung, thi dien thoai van hien danh sach cu. Mo muc do ben
+     * dien thoai roi bam Xong la gui nguyen danh sach cu ve, de len danh sach moi.
+     *
+     * So nguyen ban sao voi ban vua ghi: them mot muc vao ban sao la muc do tu duoc
+     * dong bo, khoi phai nho sua them mot danh sach khoa o cho khac.
+     *
+     * Ba danh sach app sap xep lai truoc khi so: Set doc ra tu prefs khong hua giu
+     * thu tu, ma List thi so ca thu tu.
+     */
+    private fun dayCaiDatNeuDoi(context: Context) {
         val prefs = Prefs.get(context)
-        hop(context, Duong.D_CAI_DAT)?.set(
-            mapOf(
-                "phutMacDinh" to prefs.grantMinutes,
-                "gioNgu" to prefs.hardStopMinuteOfDay,
-                "gioDay" to prefs.gioDayMinuteOfDay,
-                "tranPhutMoiNgay" to prefs.tranPhutMoiNgay,
-                "khoaCaiDat" to prefs.lockSystemSettings,
-                "chamBangAi" to prefs.chamBangAi,
-                "appChoPhep" to prefs.allowedPackages.toList(),
-                "appChan" to prefs.blockedPackages.toList(),
-                "appAi" to prefs.aiPackages.toList(),
-                "gioiHanApp" to GioiHanApp.tatCa(context)
-            )
+        val ban = mapOf(
+            "phutMacDinh" to prefs.grantMinutes,
+            "gioNgu" to prefs.hardStopMinuteOfDay,
+            "gioDay" to prefs.gioDayMinuteOfDay,
+            "tranPhutMoiNgay" to prefs.tranPhutMoiNgay,
+            "khoaCaiDat" to prefs.lockSystemSettings,
+            "chamBangAi" to prefs.chamBangAi,
+            "appChoPhep" to prefs.allowedPackages.sorted(),
+            "appChan" to prefs.blockedPackages.sorted(),
+            "appAi" to prefs.aiPackages.sorted(),
+            "gioiHanApp" to GioiHanApp.tatCa(context)
         )
+        if (ban == caiDatDaDay) return
+        val hop = hop(context, Duong.D_CAI_DAT) ?: return
+        caiDatDaDay = ban
+        hop.set(ban).addOnFailureListener {
+            // Quen ban vua nho, de lan prefs doi sau ghi lai.
+            caiDatDaDay = null
+            Log.w(TAG, "day cai dat hong: ${it.message}")
+        }
     }
 
     /**
@@ -475,21 +503,28 @@ object DongBo {
      *
      * Chi day khi danh sach that su doi: may chuc app moi lan mo may la ton mang
      * ma khong duoc gi.
+     *
+     * Goi luc dong bo vua bat, luc ghep may, va moi lan cai hay go app (xem
+     * [ngheCaiApp]). So danh sach ten goi truoc, doc ten tung app sau: doc ten la
+     * phan ton thoi gian, ma cap nhat app thi danh sach goi khong doi.
      */
     fun dayDanhSachApp(context: Context) {
         val pm = context.packageManager
         val y = Intent(Intent.ACTION_MAIN).addCategory(Intent.CATEGORY_LAUNCHER)
+        val tim = runCatching { pm.queryIntentActivities(y, 0) }.getOrDefault(emptyList())
+        if (tim.isEmpty()) return
+
+        val dau = tim.map { it.activityInfo.packageName }.distinct().sorted()
+            .joinToString(",").hashCode()
+        val sp = Prefs.get(context).raw()
+        if (sp.getInt(K_DAU_DS_APP, 0) == dau) return
+
         val cac = runCatching {
-            pm.queryIntentActivities(y, 0)
-                .map { it.activityInfo.packageName to it.loadLabel(pm).toString() }
+            tim.map { it.activityInfo.packageName to it.loadLabel(pm).toString() }
                 .distinctBy { it.first }
                 .sortedBy { it.second.lowercase() }
         }.getOrDefault(emptyList())
         if (cac.isEmpty()) return
-
-        val dau = cac.joinToString(",") { it.first }.hashCode()
-        val sp = Prefs.get(context).raw()
-        if (sp.getInt(K_DAU_DS_APP, 0) == dau) return
 
         hop(context, Duong.D_DANH_SACH_APP)?.set(
             mapOf("app" to cac.map { mapOf("goi" to it.first, "ten" to it.second) })
