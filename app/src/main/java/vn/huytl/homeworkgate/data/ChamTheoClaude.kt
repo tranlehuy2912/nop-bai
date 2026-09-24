@@ -1,6 +1,7 @@
 package vn.huytl.homeworkgate.data
 
 import android.content.Context
+import java.text.Normalizer
 import vn.huytl.homeworkgate.kho.KhoBai
 import vn.huytl.homeworkgate.kho.PhamVi
 
@@ -47,7 +48,7 @@ object ChamTheoClaude {
             if (ma.isEmpty() || dung == null) return@mapNotNull null
 
             val deClaude = (o["de"] as? String)?.trim().orEmpty()
-            val cungMa = sach.filter { it.ma.trim() == ma && it.id !in daDung }
+            val cungMa = sach.filter { chuanMa(it.ma) == chuanMa(ma) && it.id !in daDung }
             val q = if (cungMa.size <= 1) {
                 cungMa.firstOrNull()
             } else {
@@ -58,7 +59,8 @@ object ChamTheoClaude {
 
             val de = q?.de ?: deClaude
             CauCham(
-                ma = ma,
+                // Khop duoc sach thi ghi ma cua sach, de so cai va tin Telegram noi cung mot ma.
+                ma = q?.ma?.trim() ?: ma,
                 de = de,
                 ketQua = (o["conViet"] as? String)?.trim().orEmpty(),
                 dung = dung,
@@ -92,6 +94,23 @@ object ChamTheoClaude {
             baiDuocGiao = (goi?.get("baiDuocGiao") as? List<*>).orEmpty()
                 .mapNotNull { (it as? String)?.trim()?.takeIf { t -> t.isNotEmpty() } }
         )
+    }
+
+    /**
+     * Ma cau da bo het nhung cach viet khac nhau cua cung mot cau, de so voi ngan hang.
+     *
+     * Claude co khi chep "2.33A", "2.33 a", "Câu 2.33a" hay "2.33a)" thay cho "2.33a".
+     * So y het thi cau do khong khop cau nao trong sach, mat de, va tra 0 phut du con lam
+     * dung. Chi bo nhung thu khong bao gio phan biet hai cau: hoa thuong, khoang trang,
+     * chu "câu" hay "bài" o dau, dau cham, ngoac dong va hai cham o cuoi.
+     *
+     * App Bang dieu khien co mot ban y het, NhoClaude.chuanMa, de doi ve ma trong khai
+     * truoc khi gui. Sua ben nay thi sua ca ben do.
+     */
+    internal fun chuanMa(ma: String): String {
+        val t = Normalizer.normalize(ma, Normalizer.Form.NFC).lowercase().filterNot { it.isWhitespace() }
+        val dau = listOf("câu", "cau", "bài", "bai").firstOrNull { t.startsWith(it) }
+        return (if (dau == null) t else t.removePrefix(dau)).trimEnd('.', ')', ']', ':')
     }
 
     /** Lan nop nay co trang vo dan do khong, theo dien thoai bao. Kieu cu thi khong. */

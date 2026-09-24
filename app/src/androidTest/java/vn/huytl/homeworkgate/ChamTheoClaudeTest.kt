@@ -192,6 +192,27 @@ class ChamTheoClaudeTest {
     }
 
     @Test
+    fun ma_lech_cach_viet_van_khop_ngan_hang() {
+        val ket = ChamTheoClaude.banCham(
+            context,
+            listOf(
+                mapOf("ma" to "Câu 2.33A", "dung" to true, "soDong" to 4),
+                mapOf("ma" to " 2.28) ", "dung" to true, "soDong" to 1)
+            ),
+            pham
+        )!!
+        // Truoc day so y het: "Câu 2.33A" khong khop cau nao, mat de va tra 0 phut.
+        val nho = ket.cac.single { it.cauId == "toan8t1:2.33a" }
+        assertEquals("2.33a", nho.ma)
+        assertTrue(nho.coDe)
+        assertEquals(2, LuatCongGio.phutChoCau(nho))
+        assertEquals("toan8t1:2.28", ket.cac.single { it.ma == "2.28" }.cauId)
+
+        assertEquals("2.33a", ChamTheoClaude.chuanMa("2.33 a:"))
+        assertEquals("b3.c7", ChamTheoClaude.chuanMa("Câu B3.C7."))
+    }
+
+    @Test
     fun pham_vi_luu_lai_duoc_theo_ma_bai() {
         KhaiChoCham.luu(context, "thu-khai", pham)
         val lai = KhaiChoCham.lay(context, "thu-khai")!!

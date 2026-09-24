@@ -52,7 +52,9 @@ data class BaiDaCham(
         val dung: Boolean,
         val chac: Boolean,
         val conViet: String,
-        val goiY: String
+        val goiY: String,
+        /** De Claude chep tu anh. Chi co o cau ngoai sach, cau con khai thi rong. */
+        val de: String = ""
     )
 
     companion object {
@@ -64,9 +66,13 @@ data class BaiDaCham(
          * het cho app Bang dieu khien ghi [Duong.F_CHAM_CLAUDE]. Cac ten do khong nam
          * trong [Duong] vi moi ban chi mot app ghi.
          */
-        fun doc(d: DocumentSnapshot): BaiDaCham {
-            val cham = d.get(Duong.F_CHAM) as? Map<*, *>
-            val claudeMap = d.get(Duong.F_CHAM_CLAUDE) as? Map<*, *>
+        fun doc(d: DocumentSnapshot): BaiDaCham = tuDuLieu(d.id, d.data.orEmpty())
+
+        /** Phan doc that cua [doc], tach khoi DocumentSnapshot de kiem thu goi thang duoc. */
+        internal fun tuDuLieu(id: String, du: Map<String, Any?>): BaiDaCham {
+            val cham = du[Duong.F_CHAM] as? Map<*, *>
+            val claudeMap = du[Duong.F_CHAM_CLAUDE] as? Map<*, *>
+            val khai = du[Duong.F_KHAI] as? Map<*, *>
             val claude = (claudeMap?.get("cac") as? List<*>).orEmpty().mapNotNull { c ->
                 val o = c as? Map<*, *> ?: return@mapNotNull null
                 val ma = (o["ma"] as? String)?.trim().orEmpty()
@@ -75,7 +81,8 @@ data class BaiDaCham(
                     dung = o["dung"] as? Boolean ?: false,
                     chac = o["chac"] as? Boolean ?: true,
                     conViet = o["conViet"] as? String ?: "",
-                    goiY = o["goiY"] as? String ?: ""
+                    goiY = o["goiY"] as? String ?: "",
+                    de = o["de"] as? String ?: ""
                 )
             }.toMap()
 
@@ -93,18 +100,31 @@ data class BaiDaCham(
                 )
             }?.takeIf { it.isNotEmpty() }
 
-            // May khong cham duoc ma Claude co cham: hien theo Claude, khong co de.
+            /*
+             * May khong cham ma Claude co cham: hien theo Claude.
+             *
+             * Hay gap nhat khi bai da duyet tay truoc luc Ba Huy dan ket qua, nen tablet
+             * khong cham nua. De thi lay hai noi, vi Claude chi chep de cau ngoai sach:
+             * cau con khai lay tu truong khai tablet ghi luc nop. Thieu de thi con thay
+             * minh sai cau "2.33a" ma khong biet cau do hoi gi.
+             */
+            val deKhai = (khai?.get("cac") as? List<*>).orEmpty().mapNotNull { c ->
+                val o = c as? Map<*, *> ?: return@mapNotNull null
+                val ma = (o["ma"] as? String)?.trim().orEmpty()
+                if (ma.isEmpty()) null else ma to (o["de"] as? String).orEmpty()
+            }.toMap()
             val cac = cacMay ?: claude.takeIf { it.isNotEmpty() }?.map { (ma, cl) ->
                 Cau(
-                    ma = ma, de = "", ketQua = cl.conViet, dung = cl.dung,
-                    docRo = cl.chac, nhanXet = cl.goiY, claude = cl
+                    ma = ma, de = cl.de.ifBlank { deKhai[ma].orEmpty() }, ketQua = cl.conViet,
+                    dung = cl.dung, docRo = cl.chac, nhanXet = cl.goiY, claude = cl
                 )
             }
 
             return BaiDaCham(
-                id = d.id,
-                luc = d.getLong(Duong.F_LUC) ?: 0L,
-                mon = cham?.get("mon") as? String ?: "",
+                id = id,
+                luc = (du[Duong.F_LUC] as? Number)?.toLong() ?: 0L,
+                // Khong co ban cham cua may thi lay mon con khai, de the khong bi trong ten.
+                mon = cham?.get("mon") as? String ?: khai?.get("mon") as? String ?: "",
                 cac = cac,
                 claudeLuc = (claudeMap?.get("luc") as? Number)?.toLong() ?: 0L
             )

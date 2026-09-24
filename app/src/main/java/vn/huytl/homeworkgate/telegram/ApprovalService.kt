@@ -1359,10 +1359,13 @@ class ApprovalService : Service() {
          * co tron goi chua, phan lam them va phan on da duoc bao nhieu.
          *
          * AI cham ngay luc con nop, nen lay bay gio la dung. Claude thi cham luc Ba Huy
-         * dan ket qua, co khi tre ca buoi: bai nop toi nay, sang mai moi cham. Lay bay
-         * gio luc do thi vo dan do hom qua qua trua la het han, va goi cua hom nay bi
-         * ghi sang ngay mai, chan mat goi that cua ngay mai. Nen duong Claude lay luc
+         * dan ket qua, co khi tre vai tieng. Vi du bai lam theo vo dan do hom qua, nop
+         * luc 11 gio: truoc 12 gio trua thi vo con hieu luc, nhung Ba Huy dan luc 13 gio
+         * ma lay bay gio thi vo da het han, va con mat tron goi. Nen duong Claude lay luc
          * con nop.
+         *
+         * Khong co chuyen dan sang ngay hom sau: bai cho duyet khong song qua nua dem,
+         * xem GateStore.donDepBaiCho. Nen moc nay chi lech bay gio trong cung mot ngay.
          */
         val luc = bai?.at?.takeIf { baiId != null && it > 0L } ?: System.currentTimeMillis()
 
