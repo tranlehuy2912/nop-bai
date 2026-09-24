@@ -6,10 +6,13 @@
 #
 # Chay: sh tools/kiem-duong.sh
 
-goc=$(cd "$(dirname "$0")/../.." && pwd)
-a="$goc/homework-gate/app/src/main/java/vn/huytl/homeworkgate/dongbo/Duong.kt"
-b="$goc/homework-gate-3/app/src/main/java/vn/huytl/bangdieukhien/data/Duong.kt"
-c="$goc/homework-gate-2/app/src/main/java/vn/huytl/chogiochoi/data/Duong.kt"
+# Tablet la repo chua script nay, ten thu muc la gi cung duoc. Hai app dien thoai
+# nam canh no trong cung thu muc cha.
+tablet=$(cd "$(dirname "$0")/.." && pwd)
+goc=$(dirname "$tablet")
+a="$tablet/app/src/main/java/vn/huytl/homeworkgate/dongbo/Duong.kt"
+b="$goc/bang-dieu-khien/app/src/main/java/vn/huytl/bangdieukhien/data/Duong.kt"
+c="$goc/cho-gio-choi/app/src/main/java/vn/huytl/chogiochoi/data/Duong.kt"
 
 for f in "$a" "$b" "$c"; do
     [ -f "$f" ] || { echo "THIEU: $f"; exit 1; }

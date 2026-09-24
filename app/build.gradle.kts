@@ -36,7 +36,7 @@ fun chuoiBiMat(ten: String): String {
 //
 // Bat vo dieu kien thi may nao chua tai file ve la build do ngay tu dau. Thieu file
 // thi app van chay day du duong Telegram nhu truoc, chi la khong noi duoc sang app
-// Bang dieu khien ben dien thoai Ba Huy. Xem ../homework-gate-3/CAI_DAT_FIREBASE.md.
+// Bang dieu khien ben dien thoai Ba Huy. Xem ../bang-dieu-khien/CAI_DAT_FIREBASE.md.
 //
 // HAI DU AN FIREBASE, MOI BAN BUILD MOT CAI:
 //
@@ -69,7 +69,7 @@ if (coFirebase && !fileFirebaseThu.exists()) {
     logger.warn(
         "CHU Y: chua co app/src/debug/google-services.json, nen BAN GO LOI DANG NOI " +
             "VAO DU AN FIREBASE THAT. Tao mot du an Firebase rieng de thu roi tai file " +
-            "ve dat vao do. Xem ../homework-gate-3/CAI_DAT_FIREBASE.md muc 6."
+            "ve dat vao do. Xem ../bang-dieu-khien/CAI_DAT_FIREBASE.md muc 6."
     )
 }
 if (coFirebase && !fileFirebaseThat.exists()) {
