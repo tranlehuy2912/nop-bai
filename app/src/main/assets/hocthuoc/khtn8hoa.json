@@ -2,54 +2,54 @@
  "bo": "khtn8hoa",
  "mon": "Khoa học tự nhiên",
  "ten": "KHTN 8 phần Hoá học",
- "ban": 1,
+ "ban": 2,
  "cac_bai": [
   {
    "bai": "Bài 3. Mol và tỉ khối chất khí",
    "cac_the": [
     {"ma": "b3.na", "hoi": "Số Avogadro (NA) bằng bao nhiêu?", "dap": "6,022·10²³",
      "dap_khac": ["6.022·10²³"], "trang": 16},
-    {"ma": "b3.M", "hoi": "Công thức tính khối lượng mol (M) của một chất", "dap": "M = m/n",
+    {"ma": "b3.kl-mol", "hoi": "Công thức tính khối lượng mol (M) của một chất", "dap": "M = m/n",
      "trang": 17},
     {"ma": "b3.n", "hoi": "Công thức tính số mol (n) theo khối lượng (m) và khối lượng mol (M)",
      "dap": "n = m/M", "trang": 17},
-    {"ma": "b3.dvM", "hoi": "Đơn vị của khối lượng mol", "dap": "g/mol", "trang": 17},
+    {"ma": "b3.dv-kl-mol", "hoi": "Đơn vị của khối lượng mol", "dap": "g/mol", "trang": 17},
     {"ma": "b3.vmol", "hoi": "Ở điều kiện chuẩn (25 °C, 1 bar), 1 mol khí bất kì chiếm thể tích bao nhiêu lít?",
      "dap": "24,79", "dap_khac": ["24.79", "24,79 l", "24.79 l", "24,79 lít", "24.79 lít"],
      "trang": 18},
-    {"ma": "b3.V", "hoi": "Công thức tính thể tích (V) của n mol khí ở điều kiện chuẩn (25 °C, 1 bar)",
+    {"ma": "b3.the-tich", "hoi": "Công thức tính thể tích (V) của n mol khí ở điều kiện chuẩn (25 °C, 1 bar)",
      "dap": "V = 24,79·n",
      "dap_khac": ["V = 24,79n", "V = n·24,79", "V = 24.79·n", "V = 24.79n", "V = n·24.79"],
      "trang": 18},
-    {"ma": "b3.dAB", "hoi": "Tỉ khối của khí A đối với khí B: dA/B = ?", "dap": "MA/MB",
-     "dap_khac": ["dA/B = MA/MB"], "trang": 19},
-    {"ma": "b3.dAkk", "hoi": "Tỉ khối của khí A so với không khí: dA/kk = ?", "dap": "MA/29",
-     "dap_khac": ["dA/kk = MA/29"], "trang": 19}
+    {"ma": "b3.ti-khoi", "hoi": "Tỉ khối của khí A đối với khí B: dA/B = ?", "dap": "MA/MB",
+     "dap_khac": ["dA/B = MA/MB", "Ma/Mb", "dA/B = Ma/Mb"], "trang": 19},
+    {"ma": "b3.ti-khoi-kk", "hoi": "Tỉ khối của khí A so với không khí: dA/kk = ?", "dap": "MA/29",
+     "dap_khac": ["dA/kk = MA/29", "Ma/29", "dA/kk = Ma/29"], "trang": 19}
    ]
   },
   {
    "bai": "Bài 4. Dung dịch và nồng độ",
    "cac_the": [
-    {"ma": "b4.S", "hoi": "Công thức tính độ tan (S) của một chất trong nước",
+    {"ma": "b4.do-tan", "hoi": "Công thức tính độ tan (S) của một chất trong nước",
      "dap": "S = mct/mnước·100",
      "dap_khac": ["S = mct·100/mnước", "S = 100·mct/mnước",
                   "S = mct/mnuoc·100", "S = mct·100/mnuoc", "S = 100·mct/mnuoc"],
      "trang": 21},
-    {"ma": "b4.C", "hoi": "Công thức tính nồng độ phần trăm (C%) của dung dịch",
+    {"ma": "b4.c-phan-tram", "hoi": "Công thức tính nồng độ phần trăm (C%) của dung dịch",
      "dap": "C% = mct/mdd·100%", "dap_khac": ["C% = mct·100%/mdd", "C% = 100%·mct/mdd"],
      "trang": 21},
     {"ma": "b4.mdd", "hoi": "Khối lượng dung dịch bằng khối lượng chất tan cộng với khối lượng của gì?",
      "dap": "dung môi", "dap_khac": ["khối lượng dung môi"], "trang": 21},
-    {"ma": "b4.CM", "hoi": "Công thức tính nồng độ mol (CM) của dung dịch", "dap": "CM = n/V",
-     "dap_khac": ["CM = nct/Vdd"], "trang": 22},
-    {"ma": "b4.dvCM", "hoi": "Đơn vị của nồng độ mol", "dap": "mol/L",
+    {"ma": "b4.c-mol", "hoi": "Công thức tính nồng độ mol (CM) của dung dịch", "dap": "CM = n/V",
+     "dap_khac": ["CM = nct/Vdd", "Cm = n/V", "Cm = nct/Vdd"], "trang": 22},
+    {"ma": "b4.dv-c-mol", "hoi": "Đơn vị của nồng độ mol", "dap": "mol/L",
      "dap_khac": ["mol/l", "mol/lít", "M"], "trang": 22}
    ]
   },
   {
    "bai": "Bài 6. Tính theo phương trình hoá học",
    "cac_the": [
-    {"ma": "b6.H", "hoi": "Công thức tính hiệu suất phản ứng (H) theo khối lượng sản phẩm: m tính theo lí thuyết, m' thu được thực tế",
+    {"ma": "b6.hieu-suat", "hoi": "Công thức tính hiệu suất phản ứng (H) theo khối lượng sản phẩm: m tính theo lí thuyết, m' thu được thực tế",
      "dap": "H = m'/m·100%", "dap_khac": ["H = m'·100%/m", "H = 100%·m'/m"], "trang": 29}
    ]
   },

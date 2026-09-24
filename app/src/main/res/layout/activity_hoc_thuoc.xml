@@ -142,7 +142,7 @@
                      mu, ma bat con di tim no thi thoi gian hoc thanh thoi gian tim
                      phim. Chi hien cho bo Toan va bo KHTN, moi mon mot bo nut. -->
                 <HorizontalScrollView
-                    android:id="@+id/dai_toan"
+                    android:id="@+id/dai_ky_tu"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
@@ -150,7 +150,7 @@
                     android:visibility="gone">
 
                     <LinearLayout
-                        android:id="@+id/nut_toan"
+                        android:id="@+id/nut_ky_tu"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal" />

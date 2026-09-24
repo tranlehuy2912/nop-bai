@@ -13,6 +13,7 @@ import vn.huytl.homeworkgate.data.LuatTuVung
 import vn.huytl.homeworkgate.kho.BoThe
 import vn.huytl.homeworkgate.kho.KhoBai
 import vn.huytl.homeworkgate.kho.TheHoc
+import vn.huytl.homeworkgate.kho.TraThe
 
 /**
  * Luat cham cua duong hoc thuoc.
@@ -148,6 +149,13 @@ class HocThuocTest {
     }
 
     @Test
+    fun ky_tu_an_rong_bang_khong_khong_lam_sai() {
+        assertTrue(HocThuoc.dung("đỏ‌", the("đỏ")))
+        assertTrue(HocThuoc.dung("H​2O", the("H₂O"), phanBietHoa = true))
+        assertTrue(HocThuoc.dung("﻿CO2", the("CO₂"), phanBietHoa = true))
+    }
+
+    @Test
     fun bo_phan_biet_hoa_thi_CO_khac_Co() {
         val t = the("CO")
         assertTrue(HocThuoc.dung("CO", t, phanBietHoa = true))
@@ -158,14 +166,21 @@ class HocThuocTest {
     }
 
     @Test
-    fun chu_dau_viet_hoa_thay_thuong_van_duoc_chieu_nguoc_lai_thi_khong() {
-        // Ban phim tu viet hoa chu dau: "p" thanh "P". Con khong can duoc.
-        assertTrue(HocThuoc.dung("P = F/S", the("p = F/S"), phanBietHoa = true))
-        // Nhung chu hoa o giua van phai dung.
-        assertFalse(HocThuoc.dung("p = f/s", the("p = F/S"), phanBietHoa = true))
-        // Ban phim khong bao gio tu ha chu dau xuong: go "d" cho "D" la sai that,
-        // D la khoi luong rieng con d la trong luong rieng.
+    fun bo_phan_biet_hoa_thi_chu_dau_cung_phai_dung() {
+        // P la trong luong, p la ap suat: go "P = F/S" la nham hai dai luong.
+        assertFalse(HocThuoc.dung("P = F/S", the("p = F/S"), phanBietHoa = true))
+        // D la khoi luong rieng, d la trong luong rieng. Sai chieu nao cung la sai.
+        assertFalse(HocThuoc.dung("D = P/V", the("d = P/V"), phanBietHoa = true))
         assertFalse(HocThuoc.dung("d = m/V", the("D = m/V"), phanBietHoa = true))
+        assertTrue(HocThuoc.dung("p = F/S", the("p = F/S"), phanBietHoa = true))
+    }
+
+    @Test
+    fun nhan_viet_thuong_chi_dung_khi_co_ke_trong_dap_khac() {
+        // Chu A trong FA chi la nhan, nen file ke them ban viet thuong.
+        val t = the("FA = d.V", "Fa = d.V")
+        assertTrue(HocThuoc.dung("Fa = d.V", t, phanBietHoa = true))
+        assertFalse(HocThuoc.dung("Fa = d.V", the("FA = d.V"), phanBietHoa = true))
     }
 
     @Test
@@ -180,15 +195,16 @@ class HocThuocTest {
     // --- cac bo the that trong assets ---
 
     /**
-     * Moi bo that nap du so the trong file, va moi dap an trong file tu cham dung.
+     * Moi bo that nap du so the trong file, va moi dap an go duoc bang ban phim thuong.
      *
      * SO THE TRONG FILE PHAI BANG SO THE TRONG BANG, cung ly do voi bo tu vung:
      * the thieu ma, thieu hoi hay thieu dap thi [BoThe] bo qua im lang, con hai the
      * trung ma thi the sau de len the truoc. Ca hai deu chi hien ra o day.
      *
-     * TU CHAM DUNG CHINH NO: dap an va tung dap an phu phai qua duoc [HocThuoc.dung]
-     * voi dung co cua bo do. Khong qua thi the do khong ai tra loi dung duoc, ke ca
-     * khi go y het dap an in trong sach.
+     * GO BANG BAN PHIM THUONG: moi dap an va dap an phu duoc doi sang dang con go
+     * tren tablet - xem [goTrenBanPhim] - roi moi dem cham. Cham thang chuoi in trong
+     * sach thi phep thu vo nghia: no gap lai chinh no trong danh sach dap an. Doi
+     * xong ma con ky tu ban phim khong co thi the do khong ai tra loi duoc.
      */
     @Test
     fun bo_the_that_nap_du_va_tu_cham_dung_chinh_no() {
@@ -208,15 +224,73 @@ class HocThuocTest {
                     val cacDap = listOf(t.getString("dap")) +
                         (0 until (khac?.length() ?: 0)).map { khac!!.getString(it) }
                     val theHoc = the(cacDap.first(), *cacDap.drop(1).toTypedArray())
+                    val ma = "${bo.bo}:${t.getString("ma")}"
                     cacDap.forEach { dap ->
+                        val go = goTrenBanPhim(dap)
                         assertTrue(
-                            "${bo.bo}:${t.getString("ma")} khong nhan \"$dap\"",
-                            HocThuoc.dung(dap, theHoc, bo.phanBietHoa)
+                            "$ma: \"$go\" con ky tu ban phim khong co",
+                            go.all { it.code < 128 || it.isLetter() }
+                        )
+                        assertTrue(
+                            "$ma khong nhan \"$go\" (go cho \"$dap\")",
+                            HocThuoc.dung(go, theHoc, bo.phanBietHoa)
                         )
                     }
                 }
             }
             assertEquals("${bo.bo}: file $soThe the ma bang co", soThe, kho.soTheCua(bo.bo))
+        }
+    }
+
+    /**
+     * Cach con go mot dap an in trong sach tren ban phim tablet: chi so duoi bang so
+     * thuong, cum so mu bang dau mu, dau nhan giua bang dau cham, dau tru toan hoc va
+     * dau cua ion bang dau thuong. Chu tieng Viet thi ban phim go duoc nen giu nguyen.
+     */
+    private fun goTrenBanPhim(s: String): String {
+        val duoi = "₀₁₂₃₄₅₆₇₈₉"
+        val mu = "⁰¹²³⁴⁵⁶⁷⁸⁹"
+        return Regex("[⁰¹²³⁴⁵⁶⁷⁸⁹]+")
+            .replace(s) { cum -> "^" + cum.value.map { '0' + mu.indexOf(it) }.joinToString("") }
+            .map { c ->
+                when (c) {
+                    in duoi -> '0' + duoi.indexOf(c)
+                    '·' -> '.'
+                    '−', '⁻' -> '-'
+                    '⁺' -> '+'
+                    else -> c
+                }
+            }
+            .joinToString("")
+    }
+
+    /**
+     * Hoi nhanh "con the den luot khong" phai ra dung nhu dem [KhoBai.cacTheDenLuot].
+     *
+     * Hai duong cung mot dinh nghia: the chua dung lan nao la den luot, dung roi thi
+     * cho du hen. Lech nhau thi man chinh an dong Kiem tra bai trong khi man chon bo
+     * van con the, hoac nguoc lai.
+     */
+    @Test
+    fun hoi_nhanh_the_den_luot_khop_voi_dem_tung_the() {
+        val kho = KhoBai.get(InstrumentationRegistry.getInstrumentation().targetContext)
+        try {
+            kho.napBoThe("thu", listOf(the("a")))
+            assertTrue(kho.conTheDenLuot("thu"))
+
+            // Vua go dung: hen ba ngay nua moi hoi lai.
+            val bayGio = System.currentTimeMillis()
+            kho.ghiTraThe(TraThe(theId = "thu:1", go = "a", dung = true, phut = 0, luc = bayGio))
+            assertFalse(kho.conTheDenLuot("thu", bayGio))
+            assertEquals(0, kho.soTheDenLuot("thu", bayGio))
+
+            // Qua hen thi ca hai duong deu thay the do.
+            val quaHen = bayGio + 4 * 24 * 60 * 60_000L
+            assertTrue(kho.conTheDenLuot("thu", quaHen))
+            assertEquals(1, kho.soTheDenLuot("thu", quaHen))
+        } finally {
+            kho.napBoThe("thu", emptyList())
+            kho.writableDatabase.delete("tra_the", "the_id LIKE ?", arrayOf("thu:%"))
         }
     }
 

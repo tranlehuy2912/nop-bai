@@ -98,6 +98,18 @@ object BoThe {
         }
     }
 
+    /**
+     * Con bo nao co the den luot khong. Man chinh hoi cau nay de hien dong Kiem tra bai.
+     *
+     * Khong goi [bang] roi dem: man chinh ve lai moi giay khi dong ho dang dem, ma
+     * [bang] quet tung the cua moi bo ba lan - den luot, tong so, da thuoc - trong khi
+     * o day chi can biet co hay khong. Ham nay dung o bo dau tien con the.
+     */
+    fun conTheDenLuot(context: Context): Boolean {
+        val kho = KhoBai.get(context)
+        return BO.any { kho.conTheDenLuot(it.bo) }
+    }
+
     /** Cac bo dang co the den luot, de con chon. Bo nao khong con gi thi van hien. */
     fun bang(context: Context): List<BoDaNap> {
         val kho = KhoBai.get(context)

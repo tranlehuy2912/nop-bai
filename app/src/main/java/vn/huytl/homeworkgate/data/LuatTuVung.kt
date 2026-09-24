@@ -219,12 +219,16 @@ object LuatTuVung {
      *
      * Bac 0 khong ho gi. Bac 1 cho biet tu dai may chu. Bac 2 hien chu cai dau. Bac 3
      * hien nua tu. Het bac thi con van con nut "Chịu rồi" de di tiep.
+     *
+     * Bac 1 dem so ky tu con phai GO, khong phai so ky tu sach in: "10²³" tren ban phim
+     * la "10^23", nam ky tu chu khong phai bon. Dem theo dang in thi con go dung so chu
+     * duoc bao ma van thieu.
      */
     fun goiY(tu: String, bac: Int): String {
         val t = tu.trim()
         return when {
             bac <= 0 -> ""
-            bac == 1 -> "${t.count { !it.isWhitespace() }} chữ cái"
+            bac == 1 -> "${HocThuoc.chuanHoa(t, giuHoa = true).length} chữ cái"
             bac == 2 -> t.first() + "…"
             else -> t.take((t.length + 1) / 2) + "…"
         }

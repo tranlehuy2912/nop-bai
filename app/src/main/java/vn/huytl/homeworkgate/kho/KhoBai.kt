@@ -590,6 +590,26 @@ class KhoBai private constructor(context: Context) :
     fun soTheDenLuot(bo: String, bayGio: Long = System.currentTimeMillis()): Int =
         cacTheDenLuot(bo, Int.MAX_VALUE, bayGio).size
 
+    /**
+     * Bo nay con the nao den luot khong. Cung dinh nghia voi [cacTheDenLuot].
+     *
+     * Hoi nhanh truoc: the chua go dung lan nao thi chac chan den luot, va SQLite dung
+     * ngay o the dau tien nhu vay. Chi khi moi the deu da dung it nhat mot lan moi
+     * phai tinh han tung the. Man chinh hoi cau nay moi giay khi dong ho dang dem -
+     * xem [BoThe.conTheDenLuot].
+     */
+    fun conTheDenLuot(bo: String, bayGio: Long = System.currentTimeMillis()): Boolean {
+        val coTheChuaDung = readableDatabase.rawQuery(
+            """
+            SELECT 1 FROM the_hoc t WHERE t.bo = ?
+              AND NOT EXISTS (SELECT 1 FROM tra_the WHERE the_id = t.id AND dung = 1)
+            LIMIT 1
+            """.trimIndent(),
+            arrayOf(bo)
+        ).use { it.moveToFirst() }
+        return coTheChuaDung || cacTheDenLuot(bo, 1, bayGio).isNotEmpty()
+    }
+
     fun ghiTraThe(t: TraThe) {
         writableDatabase.insert(
             "tra_the", null,

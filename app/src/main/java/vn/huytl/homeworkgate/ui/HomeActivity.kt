@@ -624,8 +624,7 @@ class HomeActivity : AppCompatActivity() {
 
         themViecSoan()
 
-        val coThe = runCatching { BoThe.bang(this).any { it.soDenLuot > 0 } }
-            .getOrDefault(false)
+        val coThe = runCatching { BoThe.conTheDenLuot(this) }.getOrDefault(false)
         if (coThe) {
             themViec(
                 hinh = R.drawable.st_ic_the_hoc,

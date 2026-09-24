@@ -207,10 +207,10 @@ class HocThuocActivity : AppCompatActivity() {
         // nut vo dung thi con phai luot qua no moi toi o go.
         val kyTu = KY_TU_THEO_MON[bo.mon]
         if (kyTu != null) {
-            b.daiToan.visibility = View.VISIBLE
+            b.daiKyTu.visibility = View.VISIBLE
             veDaiKyTu(kyTu)
         } else {
-            b.daiToan.visibility = View.GONE
+            b.daiKyTu.visibility = View.GONE
         }
         veThe()
     }
@@ -438,7 +438,7 @@ class HocThuocActivity : AppCompatActivity() {
 
     /** Thanh ky tu, chep cach lam cua [SoatBaiActivity.veDaiToan]. */
     private fun veDaiKyTu(kyTu: List<String>) {
-        b.nutToan.removeAllViews()
+        b.nutKyTu.removeAllViews()
         kyTu.forEach { ky ->
             val nut = MaterialButton(
                 this, null, com.google.android.material.R.attr.materialButtonOutlinedStyle
@@ -455,7 +455,7 @@ class HocThuocActivity : AppCompatActivity() {
                 isFocusable = false
                 setOnClickListener { chen(ky) }
             }
-            b.nutToan.addView(nut)
+            b.nutKyTu.addView(nut)
         }
     }
 

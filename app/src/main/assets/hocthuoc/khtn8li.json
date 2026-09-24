@@ -2,14 +2,14 @@
  "bo": "khtn8li",
  "mon": "Khoa học tự nhiên",
  "ten": "KHTN 8 phần Vật lí",
- "ban": 1,
+ "ban": 2,
  "cac_bai": [
   {
    "bai": "Bài 13. Khối lượng riêng",
    "cac_the": [
-    {"ma": "b13.D", "hoi": "Công thức tính khối lượng riêng (D) của một chất", "dap": "D = m/V",
+    {"ma": "b13.klr", "hoi": "Công thức tính khối lượng riêng (D) của một chất", "dap": "D = m/V",
      "trang": 57},
-    {"ma": "b13.dv", "hoi": "Đơn vị khối lượng riêng khi khối lượng tính bằng kg và thể tích tính bằng m³",
+    {"ma": "b13.dv-klr", "hoi": "Đơn vị khối lượng riêng khi khối lượng tính bằng kg và thể tích tính bằng m³",
      "dap": "kg/m³", "dap_khac": ["kg/m3"], "trang": 57},
     {"ma": "b13.gml", "hoi": "1 g/cm³ bằng bao nhiêu g/mL?", "dap": "1",
      "dap_khac": ["1 g/mL", "1 g/ml"], "trang": 57},
@@ -17,9 +17,9 @@
      "dap_khac": ["0.001", "0,001 g/cm³", "0,001 g/cm3"], "trang": 57},
     {"ma": "b13.nuoc", "hoi": "Khối lượng riêng của nước là bao nhiêu kg/m³?", "dap": "1000",
      "dap_khac": ["1.000", "1000 kg/m³", "1000 kg/m3"], "trang": 58},
-    {"ma": "b13.d", "hoi": "Công thức tính trọng lượng riêng (d) của một chất", "dap": "d = P/V",
+    {"ma": "b13.tlr", "hoi": "Công thức tính trọng lượng riêng (d) của một chất", "dap": "d = P/V",
      "trang": 58},
-    {"ma": "b13.dvd", "hoi": "Đơn vị của trọng lượng riêng", "dap": "N/m³", "dap_khac": ["N/m3"],
+    {"ma": "b13.dv-tlr", "hoi": "Đơn vị của trọng lượng riêng", "dap": "N/m³", "dap_khac": ["N/m3"],
      "trang": 58}
    ]
   },
@@ -42,12 +42,12 @@
   {
    "bai": "Bài 17. Lực đẩy Archimedes",
    "cac_the": [
-    {"ma": "b17.FA", "hoi": "Công thức tính độ lớn lực đẩy Archimedes (FA)", "dap": "FA = d.V",
-     "dap_khac": ["FA = dV", "FA = V.d", "FA = Vd"], "trang": 75},
+    {"ma": "b17.luc-day", "hoi": "Công thức tính độ lớn lực đẩy Archimedes (FA)", "dap": "FA = d.V",
+     "dap_khac": ["FA = dV", "FA = V.d", "Fa = d.V", "Fa = dV", "Fa = V.d"], "trang": 75},
     {"ma": "b17.chim", "hoi": "Vật ở trong lòng chất lỏng sẽ chìm xuống khi nào? (so sánh FA với trọng lượng P của vật)",
-     "dap": "FA < P", "dap_khac": ["P > FA"], "trang": 75},
+     "dap": "FA < P", "dap_khac": ["P > FA", "Fa < P", "P > Fa"], "trang": 75},
     {"ma": "b17.noi", "hoi": "Vật ở trong lòng chất lỏng sẽ nổi lên khi nào? (so sánh FA với trọng lượng P của vật)",
-     "dap": "FA > P", "dap_khac": ["P < FA"], "trang": 75}
+     "dap": "FA > P", "dap_khac": ["P < FA", "Fa > P", "P < Fa"], "trang": 75}
    ]
   },
   {
@@ -87,18 +87,18 @@
   {
    "bai": "Bài 24. Cường độ dòng điện và hiệu điện thế",
    "cac_the": [
-    {"ma": "b24.I", "hoi": "Cường độ dòng điện được kí hiệu bằng chữ gì?", "dap": "I", "trang": 99},
-    {"ma": "b24.A", "hoi": "Đơn vị đo cường độ dòng điện", "dap": "ampe (A)",
+    {"ma": "b24.i", "hoi": "Cường độ dòng điện được kí hiệu bằng chữ gì?", "dap": "I", "trang": 99},
+    {"ma": "b24.dv-i", "hoi": "Đơn vị đo cường độ dòng điện", "dap": "ampe (A)",
      "dap_khac": ["ampe", "A"], "trang": 99},
-    {"ma": "b24.mA", "hoi": "1 A bằng bao nhiêu mA?", "dap": "1000",
+    {"ma": "b24.doi-ma", "hoi": "1 A bằng bao nhiêu mA?", "dap": "1000",
      "dap_khac": ["1.000", "1000 mA"], "trang": 99},
     {"ma": "b24.ampeke", "hoi": "Dụng cụ dùng để đo cường độ dòng điện", "dap": "ampe kế", "trang": 99},
-    {"ma": "b24.U", "hoi": "Hiệu điện thế được kí hiệu bằng chữ gì?", "dap": "U", "trang": 100},
-    {"ma": "b24.V", "hoi": "Đơn vị đo hiệu điện thế", "dap": "vôn (V)", "dap_khac": ["vôn", "V"],
+    {"ma": "b24.u", "hoi": "Hiệu điện thế được kí hiệu bằng chữ gì?", "dap": "U", "trang": 100},
+    {"ma": "b24.dv-u", "hoi": "Đơn vị đo hiệu điện thế", "dap": "vôn (V)", "dap_khac": ["vôn", "V"],
      "trang": 100},
-    {"ma": "b24.kV", "hoi": "1 kV bằng bao nhiêu V?", "dap": "1000",
+    {"ma": "b24.doi-kv", "hoi": "1 kV bằng bao nhiêu V?", "dap": "1000",
      "dap_khac": ["1.000", "1000 V"], "trang": 100},
-    {"ma": "b24.mV", "hoi": "1 mV bằng bao nhiêu V?", "dap": "0,001",
+    {"ma": "b24.doi-mv", "hoi": "1 mV bằng bao nhiêu V?", "dap": "0,001",
      "dap_khac": ["0.001", "0,001 V"], "trang": 100},
     {"ma": "b24.vonke", "hoi": "Dụng cụ dùng để đo hiệu điện thế", "dap": "vôn kế", "trang": 100},
     {"ma": "b24.220", "hoi": "Hiệu điện thế của mạng điện trong gia đình là bao nhiêu vôn?",
