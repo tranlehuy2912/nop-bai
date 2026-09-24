@@ -138,23 +138,16 @@
                     android:textColor="@color/ink"
                     android:textSize="20sp" />
 
-                <!-- Thanh ky tu, y het man soat bai: ban phim tablet khong co dau
-                     mu, ma bat con di tim no thi thoi gian hoc thanh thoi gian tim
-                     phim. Chi hien cho bo Toan va bo KHTN, moi mon mot bo nut. -->
-                <HorizontalScrollView
+                <!-- Dai ky tu, dung chung voi man soat bai: moi nhom chuc nang mot
+                     hang, hang nao dai qua thi tu xuong dong chu khong cuon. Chi hien
+                     cho bo Toan va bo KHTN. Nut ve trong BanPhimKyTu. -->
+                <LinearLayout
                     android:id="@+id/dai_ky_tu"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:scrollbars="none"
-                    android:visibility="gone">
-
-                    <LinearLayout
-                        android:id="@+id/nut_ky_tu"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal" />
-                </HorizontalScrollView>
+                    android:orientation="vertical"
+                    android:visibility="gone" />
 
                 <!-- Khung ket qua, chi hien sau khi con bam Tra loi. -->
                 <com.google.android.material.card.MaterialCardView

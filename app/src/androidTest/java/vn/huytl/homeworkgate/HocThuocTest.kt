@@ -14,6 +14,7 @@ import vn.huytl.homeworkgate.kho.BoThe
 import vn.huytl.homeworkgate.kho.KhoBai
 import vn.huytl.homeworkgate.kho.TheHoc
 import vn.huytl.homeworkgate.kho.TraThe
+import vn.huytl.homeworkgate.ui.BanPhimKyTu
 
 /**
  * Luat cham cua duong hoc thuoc.
@@ -262,6 +263,71 @@ class HocThuocTest {
                 }
             }
             .joinToString("")
+    }
+
+    // --- dai nut ky hieu ---
+
+    /**
+     * Moi ky hieu trong dap an that ma ban phim thuong khong go ra duoc deu phai co nut
+     * tren dai cua mon do.
+     *
+     * [bo_the_that_nap_du_va_tu_cham_dung_chinh_no] da chac con go bang ban phim thuong
+     * van duoc tinh dung. Phep thu nay lo chieu con lai: con muon go dung chu in trong
+     * sach, "H₂O" hay "H⁺", thi phai co nut ma bam. Them mot bo the co ky hieu la, hay
+     * bot mot nut khoi [BanPhimKyTu], la phep thu nay bao ngay.
+     */
+    @Test
+    fun moi_ky_hieu_trong_dap_an_that_deu_co_nut() {
+        val context = InstrumentationRegistry.getInstrumentation().targetContext
+        BoThe.BO.forEach { bo ->
+            val nut = BanPhimKyTu.cuaMon(bo.mon).orEmpty().flatMap { it.cac }.toSet()
+            val o = JSONObject(context.assets.open(bo.file).bufferedReader().use { it.readText() })
+            val cacBai = o.getJSONArray("cac_bai")
+            for (i in 0 until cacBai.length()) {
+                val cacThe = cacBai.getJSONObject(i).getJSONArray("cac_the")
+                for (j in 0 until cacThe.length()) {
+                    val t = cacThe.getJSONObject(j)
+                    val khac = t.optJSONArray("dap_khac")
+                    val cacDap = listOf(t.getString("dap")) +
+                        (0 until (khac?.length() ?: 0)).map { khac!!.getString(it) }
+                    cacDap.forEach { dap ->
+                        dap.filter { it.code >= 128 && !it.isLetter() }.forEach { c ->
+                            assertTrue(
+                                "${bo.bo}:${t.getString("ma")}: \"$c\" trong \"$dap\" khong co nut",
+                                c.toString() in nut
+                            )
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @Test
+    fun dai_nut_khong_trung_ky_hieu_va_khong_co_hang_rong() {
+        listOf(BanPhimKyTu.TOAN, BanPhimKyTu.KHTN).forEach { dai ->
+            val cac = dai.flatMap { it.cac }
+            assertEquals("co nut trung: $cac", cac.size, cac.toSet().size)
+            assertTrue(dai.none { it.cac.isEmpty() })
+        }
+    }
+
+    @Test
+    fun nut_dien_tich_go_ra_dung_ion() {
+        // Dai cu chi co "^" va "+". Bam hai nut do cho "H⁺" ra "H^+", ma "^+" khong
+        // phai "+": day la ly do co nut "⁺" va "⁻".
+        assertFalse(HocThuoc.dung("H^+", the("H⁺"), phanBietHoa = true))
+        assertTrue(HocThuoc.dung("H⁺", the("H⁺"), phanBietHoa = true))
+        // Bo the nao ghi dap an kieu ban phim thi bam nut van khop.
+        assertTrue(HocThuoc.dung("SO₄²⁻", the("SO4^2-"), phanBietHoa = true))
+    }
+
+    @Test
+    fun go_lan_nut_va_ban_phim_van_dung() {
+        // Bam nut cho chi so dau, quen nut o chi so sau: van la mot cong thuc.
+        assertTrue(HocThuoc.dung("H₂SO4", the("H₂SO₄"), phanBietHoa = true))
+        // Nut "*" cua bo Toan cham nhu dau nhan in trong sach.
+        assertTrue(HocThuoc.dung("2*a*b", the("2·a·b")))
     }
 
     /**

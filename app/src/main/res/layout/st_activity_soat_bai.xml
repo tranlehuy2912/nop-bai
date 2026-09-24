@@ -99,23 +99,17 @@
                 android:paddingBottom="20dp" />
         </ScrollView>
 
-        <!-- Dai nut toan. Chi hien khi con dang go vao mot dong. -->
-        <HorizontalScrollView
-            android:id="@+id/dai_toan"
+        <!-- Dai nut ky tu, moi nhom chuc nang mot hang. Chi hien khi con dang go vao
+             mot dong. Nut ve trong BanPhimKyTu, theo mon con khai. -->
+        <LinearLayout
+            android:id="@+id/dai_ky_tu"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/brand_soft"
-            android:scrollbars="none"
-            android:visibility="gone">
-
-            <LinearLayout
-                android:id="@+id/nut_toan"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:paddingHorizontal="8dp"
-                android:paddingVertical="6dp" />
-        </HorizontalScrollView>
+            android:orientation="vertical"
+            android:paddingHorizontal="8dp"
+            android:paddingVertical="6dp"
+            android:visibility="gone" />
 
         <LinearLayout
             android:id="@+id/day_nut"

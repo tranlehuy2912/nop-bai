@@ -3,14 +3,12 @@ package vn.huytl.homeworkgate.ui
 import android.os.Bundle
 import android.view.View
 import android.widget.EditText
-import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.updatePadding
-import com.google.android.material.button.MaterialButton
 import vn.huytl.homeworkgate.R
 import vn.huytl.homeworkgate.data.DayLog
 import vn.huytl.homeworkgate.data.GateState
@@ -203,12 +201,12 @@ class HocThuocActivity : AppCompatActivity() {
         b.theXong.visibility = View.GONE
         b.boxHoi.visibility = View.VISIBLE
         b.txtChan.text = ""
-        // Moi mon mot thanh ky tu rieng, mon nao khong can thi an han: hien mot hang
-        // nut vo dung thi con phai luot qua no moi toi o go.
-        val kyTu = KY_TU_THEO_MON[bo.mon]
-        if (kyTu != null) {
+        // Moi mon mot dai ky tu rieng, mon nao khong can thi an han: hien may hang
+        // nut vo dung thi con phai luot qua chung moi toi o go. Xem [BanPhimKyTu].
+        val cacNhom = BanPhimKyTu.cuaMon(bo.mon)
+        if (cacNhom != null) {
             b.daiKyTu.visibility = View.VISIBLE
-            veDaiKyTu(kyTu)
+            BanPhimKyTu.ve(b.daiKyTu, cacNhom) { chen(it) }
         } else {
             b.daiKyTu.visibility = View.GONE
         }
@@ -436,29 +434,6 @@ class HocThuocActivity : AppCompatActivity() {
 
     // ------------------------------------------------------------------- linh tinh
 
-    /** Thanh ky tu, chep cach lam cua [SoatBaiActivity.veDaiToan]. */
-    private fun veDaiKyTu(kyTu: List<String>) {
-        b.nutKyTu.removeAllViews()
-        kyTu.forEach { ky ->
-            val nut = MaterialButton(
-                this, null, com.google.android.material.R.attr.materialButtonOutlinedStyle
-            ).apply {
-                text = ky
-                textSize = 17f
-                minWidth = 48.dp()
-                minimumWidth = 48.dp()
-                setPadding(10.dp(), 0, 10.dp(), 0)
-                layoutParams = LinearLayout.LayoutParams(
-                    LinearLayout.LayoutParams.WRAP_CONTENT, 44.dp()
-                ).apply { marginEnd = 6.dp() }
-                // Bam nut khong duoc cuop con tro khoi o dang go.
-                isFocusable = false
-                setOnClickListener { chen(ky) }
-            }
-            b.nutKyTu.addView(nut)
-        }
-    }
-
     private fun chen(chu: String) {
         val o: EditText = b.oGo
         val dau = o.selectionStart.coerceAtLeast(0)
@@ -474,29 +449,4 @@ class HocThuocActivity : AppCompatActivity() {
     }.timeInMillis
 
     private fun Int.dp(): Int = (this * resources.displayMetrics.density).toInt()
-
-    private companion object {
-        /** Y het ban ben [SoatBaiActivity]: du cho Toan 8. */
-        val KY_TU_TOAN = listOf(
-            "^", "²", "³", "√", "∛", "/", "·", "−", "≈", "≠", "≤", "≥",
-            "°", "∠", "Δ", "∥", "⊥", "π", "(", ")"
-        )
-
-        /**
-         * Du cho hai bo KHTN 8: dau bang, dau chia va dau nhan cua cong thuc, ngoac
-         * cua Ca(OH)₂, mu cua m³ va 10²³, dau cua ion H⁺ va OH⁻, dau so sanh cua
-         * FA < P, dau phay tren cua m'.
-         *
-         * Khong co nut chi so duoi: con go "H2O" bang so thuong la duoc, xem
-         * [HocThuoc.chuanHoa].
-         */
-        val KY_TU_KHTN = listOf(
-            "=", "/", "·", "(", ")", "²", "³", "^", "%", "'", "+", "−", "<", ">"
-        )
-
-        val KY_TU_THEO_MON = mapOf(
-            "Toán" to KY_TU_TOAN,
-            "Khoa học tự nhiên" to KY_TU_KHTN
-        )
-    }
 }

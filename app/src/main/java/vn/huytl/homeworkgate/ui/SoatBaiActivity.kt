@@ -72,7 +72,7 @@ class SoatBaiActivity : AppCompatActivity() {
     /** Cau con tu nhan la lam sai, se lam lai - khong gui lan nay. */
     private val boQua = linkedSetOf<String>()
 
-    /** O con dang go, de dai nut toan biet chen ky tu vao dau. */
+    /** O con dang go, de dai nut ky tu biet chen ky tu vao dau. */
     private var dangGo: EditText? = null
 
     private var daGui = false
@@ -95,7 +95,7 @@ class SoatBaiActivity : AppCompatActivity() {
         binding.nutGui.setOnClickListener { gui() }
         binding.nutChupLai.setOnClickListener { chupLai() }
 
-        veDaiToan()
+        veDaiKyTu()
 
         // Xoay man, hay Android thu hoi bo nho trong luc con dang soat: dung lai ban
         // cham da co chu KHONG goi AI lan nua. Goi lai vua ton them mot lan han muc,
@@ -238,7 +238,7 @@ class SoatBaiActivity : AppCompatActivity() {
                     ContextCompat.getColor(this, R.color.wait_soft)
                 )
             }
-            o.setOnFocusChangeListener { v, co -> if (co) moDaiToan(v as EditText) }
+            o.setOnFocusChangeListener { v, co -> if (co) moDaiKyTu(v as EditText) }
             khung.addView(o)
             o
         }
@@ -285,38 +285,24 @@ class SoatBaiActivity : AppCompatActivity() {
         }
     }
 
-    // ------------------------------------------------------------- dai nut toan
+    // ------------------------------------------------------------- dai nut ky tu
 
     /**
-     * Dai ky tu toan ngay tren o go.
+     * Dai ky tu ngay tren o go, theo mon con khai: bai KHTN thi dai KHTN, con lai dai
+     * Toan nhu tu truoc den gio. Xem [BanPhimKyTu].
      *
-     * Khong viet ban phim he thong: ban phim he thong phai bat trong Cai dat, ma Cai
-     * dat thi dang bi chan. Day chi la may cai nut chen chu vao cho con tro - du cho
-     * Toan 8, va con dung duoc ngay khong phai cai gi.
+     * Truoc day man nay luon hien dai Toan, ke ca khi con soat bai Hoa: chep lai mot
+     * phuong trinh phan ung thi khong co mui ten, khong co chi so duoi. Nop tu do, hay
+     * mon chua co dai rieng, thi giu dai Toan nhu cu.
      */
-    private fun veDaiToan() {
-        val dp = resources.displayMetrics.density
-        KY_TU_TOAN.forEach { ky ->
-            val nut = MaterialButton(this, null, com.google.android.material.R.attr.materialButtonOutlinedStyle)
-            nut.text = ky
-            nut.textSize = 17f
-            nut.minWidth = (48 * dp).toInt()
-            nut.minimumWidth = (48 * dp).toInt()
-            nut.setPadding((10 * dp).toInt(), 0, (10 * dp).toInt(), 0)
-            nut.layoutParams = LinearLayout.LayoutParams(
-                LinearLayout.LayoutParams.WRAP_CONTENT,
-                (44 * dp).toInt()
-            ).apply { marginEnd = (6 * dp).toInt() }
-            // Bam nut khong duoc cuop con tro khoi o dang go.
-            nut.isFocusable = false
-            nut.setOnClickListener { chen(ky) }
-            binding.nutToan.addView(nut)
-        }
+    private fun veDaiKyTu() {
+        val cacNhom = BanPhimKyTu.cuaMon(pham?.mon.orEmpty()) ?: BanPhimKyTu.TOAN
+        BanPhimKyTu.ve(binding.daiKyTu, cacNhom) { chen(it) }
     }
 
-    private fun moDaiToan(o: EditText) {
+    private fun moDaiKyTu(o: EditText) {
         dangGo = o
-        binding.daiToan.visibility = View.VISIBLE
+        binding.daiKyTu.visibility = View.VISIBLE
     }
 
     private fun chen(chu: String) {
@@ -391,12 +377,6 @@ class SoatBaiActivity : AppCompatActivity() {
 
         const val EXTRA_PHAM = "pham_vi"
         const val EXTRA_ANH = "anh_"
-
-        /** Bo ky tu du cho Toan 8: luy thua, can, phan so, va may dau hinh hoc. */
-        private val KY_TU_TOAN = listOf(
-            "^", "²", "³", "√", "∛", "/", "·", "−", "≈", "≠", "≤", "≥",
-            "°", "∠", "Δ", "∥", "⊥", "π", "(", ")"
-        )
 
         fun moTu(
             context: android.content.Context,
