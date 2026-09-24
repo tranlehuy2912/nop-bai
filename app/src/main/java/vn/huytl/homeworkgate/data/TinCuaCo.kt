@@ -22,7 +22,8 @@ data class TinCuaCo(
 /**
  * Kho tin co giao nhan tin vao nhom lop.
  *
- * Ba Huy chia se tin tu Zalo sang bot Telegram, app nhan duoc thi cat vao day roi
+ * Ba Huy chep tin trong nhom Zalo roi gui sang, bang lenh /tinco ben Telegram hay
+ * nut Tin cua co giao trong app Bang dieu khien. App nhan duoc thi cat vao day roi
  * hien tren man chinh. Ba noi cam tablet len la doc duoc, khong phai dung Zalo.
  *
  * Giu toi da [TOI_DA] tin. Moi tin vai tram byte nen ca kho chi vai chuc KB,
@@ -32,24 +33,32 @@ class KhoTinCuaCo(context: Context) {
 
     private val sp = Prefs.get(context).raw()
 
-    fun them(noiDung: String) {
+    /**
+     * Them mot tin.
+     *
+     * [luc] la luc Ba Huy gui chu khong phai luc tablet nhan: tablet tat ca dem thi
+     * sang hom sau moi nhan, ma man Tin cua co phai ghi gio toi qua.
+     *
+     * Xep theo gio gui chu khong chen len dau, vi tin den muon co the cu hon tin vua
+     * nhan. Cung mot tin cung gio gui thi bo qua: mot lenh doc lai hai lan khong duoc
+     * thanh hai tin.
+     */
+    fun them(noiDung: String, luc: Long = System.currentTimeMillis()) {
         val sach = noiDung.trim()
         if (sach.isEmpty()) return
+        val gio = if (luc > 0L) luc else System.currentTimeMillis()
 
-        val moi = JSONArray()
-        moi.put(
-            JSONObject().apply {
-                put(K_LUC, System.currentTimeMillis())
-                put(K_NOI_DUNG, sach)
-                put(K_DA_DOC, false)
-            }
-        )
-        // Tin moi nhat len dau, cat bot duoi neu qua day
         val cu = doc()
-        for (i in 0 until minOf(cu.length(), TOI_DA - 1)) {
-            moi.put(cu.getJSONObject(i))
+        val cac = (0 until cu.length()).map { cu.getJSONObject(it) }
+        if (cac.any { it.optLong(K_LUC) == gio && it.optString(K_NOI_DUNG) == sach }) return
+
+        val moi = JSONObject().apply {
+            put(K_LUC, gio)
+            put(K_NOI_DUNG, sach)
+            put(K_DA_DOC, false)
         }
-        ghi(moi)
+        // Tin moi nhat len dau, cat bot duoi neu qua day
+        ghi(JSONArray((cac + moi).sortedByDescending { it.optLong(K_LUC) }.take(TOI_DA)))
     }
 
     fun danhSach(): List<TinCuaCo> {

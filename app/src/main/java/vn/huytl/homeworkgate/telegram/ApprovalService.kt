@@ -811,9 +811,10 @@ class ApprovalService : Service() {
         // xuong mot luc - "/cho 60" go toi qua tu dung mo gio choi vao sang som ma
         // khong ai bam gi. Tra loi de Ba Huy biet no khong chay, chu khong im.
         //
-        // Chi loc lenh. Tin nhan chu thuong gui cho con thi den muon van co nghia.
+        // Chi loc lenh. Tin nhan chu thuong gui cho con thi den muon van co nghia, va
+        // /tinco cung vay: tin cua co gui toi qua thi sang nay van phai hien.
         val guiLuc = msg.optLong("date", 0L) * 1000L
-        if (text.startsWith("/") && guiLuc > 0L &&
+        if (text.startsWith("/") && word != "tinco" && guiLuc > 0L &&
             System.currentTimeMillis() - guiLuc > LENH_QUA_CU_MS
         ) {
             val luc = SimpleDateFormat("HH:mm", Locale("vi", "VN")).format(Date(guiLuc))
@@ -1183,8 +1184,8 @@ class ApprovalService : Service() {
                             "/tinco Mai lớp kiểm tra 15 phút môn Toán."
                     )
                 } else {
-                    khoTin.them(arg)
-                    baoCoTinCuaCo()
+                    khoTin.them(arg, guiLuc)
+                    ChuongTin.baoTinCuaCo(this)
                     client.sendMessage(chatId, "Đã đưa lên tablet rồi.")
                 }
             }
@@ -1242,47 +1243,6 @@ class ApprovalService : Service() {
         client.sendMessage(
             chatId,
             "Đã chuyển cho ${getString(R.string.child_name)}."
-        )
-    }
-
-    /**
-     * Bao co tin cua co giao bang thong bao Android thuong.
-     *
-     * Khong dung the noi nhu loi nhac soan vo: tin cua co can doc ky va can xem
-     * lai, ma the noi thi troi qua roi mat. Thong bao thi nam trong khay cho toi
-     * khi co nguoi bam vao.
-     */
-    private fun baoCoTinCuaCo() {
-        val nm = getSystemService(NotificationManager::class.java)
-        if (nm.getNotificationChannel(TIN_CO_CHANNEL_ID) == null) {
-            nm.createNotificationChannel(
-                NotificationChannel(
-                    TIN_CO_CHANNEL_ID,
-                    "Tin của cô giáo",
-                    NotificationManager.IMPORTANCE_HIGH
-                ).apply {
-                    description = "Báo khi ba Huy chuyển tin của cô từ nhóm lớp sang"
-                }
-            )
-        }
-        val chuaDoc = khoTin.soTinChuaDoc()
-        val open = PendingIntent.getActivity(
-            this,
-            2,
-            Intent(this, vn.huytl.homeworkgate.ui.TinActivity::class.java)
-                .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP),
-            PendingIntent.FLAG_IMMUTABLE
-        )
-        nm.notify(
-            TIN_CO_NOTIFICATION_ID,
-            NotificationCompat.Builder(this, TIN_CO_CHANNEL_ID)
-                .setSmallIcon(R.drawable.st_ic_cap_sach)
-                .setContentTitle("Cô giáo nhắn tin")
-                .setContentText(if (chuaDoc > 1) "$chuaDoc tin chưa đọc" else "Bấm để đọc")
-                .setContentIntent(open)
-                .setAutoCancel(true)
-                .setCategory(NotificationCompat.CATEGORY_MESSAGE)
-                .build()
         )
     }
 
@@ -2060,8 +2020,6 @@ class ApprovalService : Service() {
         private const val TAG = "HomeworkGate"
         private const val CHANNEL_ID = "gate_status"
         private const val NOTIFICATION_ID = 1001
-        private const val TIN_CO_CHANNEL_ID = "tin_cua_co"
-        private const val TIN_CO_NOTIFICATION_ID = 1003
 
         /**
          * Lenh cu hon chung nay thi khong chay nua.

@@ -13,6 +13,7 @@ import vn.huytl.homeworkgate.data.GateState
 import vn.huytl.homeworkgate.data.GateStore
 import vn.huytl.homeworkgate.data.GioiHanApp
 import vn.huytl.homeworkgate.data.KhaiChoCham
+import vn.huytl.homeworkgate.data.KhoTinCuaCo
 import vn.huytl.homeworkgate.data.LuotBaNoi
 import vn.huytl.homeworkgate.data.Prefs
 import vn.huytl.homeworkgate.data.SoCaiBai
@@ -59,7 +60,10 @@ object ThiHanhLenh {
         // Giong het ly do ben Telegram: tablet mat mang ca buoi toi, sang hom sau
         // vua len mang la ca xau lenh do xuong mot luc - "cho 60 phut" bam toi qua
         // tu dung mo gio choi vao sang som ma khong ai bam gi.
-        if (DongBo.quaCu(taoLuc)) {
+        //
+        // Tru tin cua co. Tin gui toi qua thi sang nay van dung nguyen, con bo di la
+        // con khong bao gio biet co dan gi - ma Ba Huy thi tuong da chuyen roi.
+        if (kieu != Lenh.TIN_CO && DongBo.quaCu(taoLuc)) {
             val luc = SimpleDateFormat("HH:mm", Locale("vi", "VN")).format(Date(taoLuc))
             return "Lệnh bấm lúc $luc, lâu quá rồi nên máy bỏ qua."
         }
@@ -190,6 +194,8 @@ object ThiHanhLenh {
                 ChuongTin.keu(context, chu)
                 "Đã chuyển cho $con."
             }
+
+            Lenh.TIN_CO -> tinCo(context, chu, taoLuc)
 
             Lenh.CAI_DAT -> doiCaiDat(context, chu, d.get("giaTri"))
 
@@ -409,6 +415,21 @@ object ThiHanhLenh {
             ?: return "Lệnh thiếu danh sách câu, máy không chấm."
         ApprovalService.chamTheoClaude(context, id, ket, pham, ChamTheoClaude.coAnhDanDo(giaTri))
         return "Đã nhận kết quả Claude, tablet đang chấm. Số phút báo trên Telegram."
+    }
+
+    /**
+     * Dua tin cua co giao vao kho tin tren tablet, roi bao len. Y het lenh /tinco ben
+     * Telegram, chung ca cau tra loi.
+     *
+     * [luc] la luc Ba Huy bam gui tren dien thoai. Lenh nay duoc phep den muon - xem
+     * cho bo lenh qua cu o [lam] - nen gio tablet nhan co the la sang hom sau, ma man
+     * Tin cua co thi ghi gio gui.
+     */
+    internal fun tinCo(context: Context, chu: String, luc: Long): String {
+        if (chu.isBlank()) return "Tin rỗng, không đưa lên."
+        KhoTinCuaCo(context).them(chu, luc)
+        ChuongTin.baoTinCuaCo(context)
+        return "Đã đưa lên tablet rồi."
     }
 
     private fun khongCapDuoc(context: Context): String {

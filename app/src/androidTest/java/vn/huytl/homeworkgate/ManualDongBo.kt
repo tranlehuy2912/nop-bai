@@ -4,7 +4,9 @@ import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
 import org.junit.Test
 import org.junit.runner.RunWith
+import vn.huytl.homeworkgate.data.KhoTinCuaCo
 import vn.huytl.homeworkgate.data.Prefs
+import vn.huytl.homeworkgate.data.TinCuaCo
 import vn.huytl.homeworkgate.dongbo.DongBo
 import java.util.concurrent.CountDownLatch
 import java.util.concurrent.TimeUnit
@@ -124,6 +126,68 @@ class ManualDongBo {
             "MANUAL_DONGBO: ping truoc=$truoc nen=$nen sau=$sau " +
                 (if (sau > nen) "-> TABLET DA DAP" else "-> KHONG DAP") +
                 ", o traLoi " + (if (traLoiSau == traLoiTruoc) "khong bi dong vao" else "BI GHI DE")
+        )
+    }
+
+    /**
+     * Thu duong TINCO qua Firestore: go mot lenh tin cua co nhu app Bang dieu khien van
+     * go, roi xem tablet co cat tin vao kho va tra loi khong.
+     *
+     * Luc tao ghi tu toi qua la co y. Lenh khac cu nhu vay thi tablet bo, con tin cua co
+     * thi phai qua, va phai giu dung gio gui do. Chay xong tra kho tin ve nhu cu.
+     */
+    @Test
+    fun tinCoThu() {
+        DongBo.batDau(context)
+        val maNha = DongBo.maNhaHienTai(context)
+        if (maNha.isEmpty()) {
+            println("MANUAL_DONGBO: may nay chua lap nha, khong thu duoc")
+            return
+        }
+        val nha = com.google.firebase.firestore.FirebaseFirestore.getInstance()
+            .collection("nha").document(maNha)
+        val sp = Prefs.get(context).raw()
+        val khoCu = sp.getString("tin_cua_co", null)
+
+        // Tien trinh test vua mo nen lan day trang thai dau tien luon ghi de ca document,
+        // xoa luon o traLoi. Cho lan day do xong da, y nhu pingThu.
+        DongBo.dayNgay()
+        Thread.sleep(3_000)
+
+        val batDau = System.currentTimeMillis()
+        val toiQua = batDau - 14 * 3_600_000L
+        val chu = "Tin thử đường Firestore lúc $batDau"
+        nha.collection("lenh").add(
+            mapOf("kieu" to "TINCO", "ai" to "bahuy", "chu" to chu, "tao" to toiQua)
+        )
+
+        var tin: TinCuaCo? = null
+        while (tin == null && System.currentTimeMillis() - batDau < 30_000L) {
+            Thread.sleep(500)
+            tin = KhoTinCuaCo(context).danhSach().firstOrNull { it.noiDung == chu }
+        }
+        // Cau tra loi ghi ngay sau khi lam xong lenh. Doi them mot chut roi moi doc.
+        Thread.sleep(3_000)
+        val cho = CountDownLatch(1)
+        var traLoi = "khong doc duoc"
+        nha.collection("hop").document("trangthai").get().addOnCompleteListener {
+            val o = it.result?.get("traLoi") as? Map<*, *>
+            val luc = o?.get("luc") as? Long ?: 0L
+            traLoi = if (luc >= batDau) "\"${o?.get("chu")}\"" else "chua co"
+            cho.countDown()
+        }
+        cho.await(20, TimeUnit.SECONDS)
+
+        val sua = sp.edit()
+        if (khoCu == null) sua.remove("tin_cua_co") else sua.putString("tin_cua_co", khoCu)
+        sua.commit()
+
+        println(
+            "MANUAL_DONGBO: tinco " + when {
+                tin == null -> "KHONG VAO KHO"
+                tin.luc == toiQua -> "vao kho, dung gio gui"
+                else -> "vao kho nhung SAI GIO: ${tin.luc}, gui luc $toiQua"
+            } + ", traLoi=$traLoi"
         )
     }
 }
