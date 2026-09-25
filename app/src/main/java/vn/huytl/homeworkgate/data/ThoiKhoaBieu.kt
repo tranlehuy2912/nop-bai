@@ -44,14 +44,6 @@ object ThoiKhoaBieu {
 
     const val PHUT_MOI_TIET = 45
 
-    /**
-     * Ngay hoc dau tien cua nam hoc.
-     *
-     * Go cung y het bang thoi khoa bieu ben duoi, va vi cung mot le: doi nam hoc thi
-     * sua o day roi cai lai app. Duong tu vung dem nhip mo Unit tu moc nay - xem
-     * [LuatTuVung.unitDangHoc].
-     */
-    fun ngayBatDauNamHoc(): Calendar = NgayNghi.calendarCua(2026, 9, 7)
     const val MON_THE_DUC = "Giáo dục thể chất"
 
     /** Nhung mon khong phai mang vo di. */

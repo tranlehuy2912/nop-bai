@@ -20,6 +20,7 @@ import vn.huytl.homeworkgate.data.LuatTuVung
 import vn.huytl.homeworkgate.databinding.ActivityHocThuocBinding
 import vn.huytl.homeworkgate.dongbo.DongBo
 import vn.huytl.homeworkgate.kho.BoThe
+import vn.huytl.homeworkgate.kho.HocToi
 import vn.huytl.homeworkgate.kho.KhoBai
 import vn.huytl.homeworkgate.kho.TheHoc
 import vn.huytl.homeworkgate.kho.TraThe
@@ -165,47 +166,127 @@ class HocThuocActivity : AppCompatActivity() {
      * Bo con the den luot thi sang mau mon va bam duoc; het luot hom nay thi xam lai
      * nhung VAN o day chu khong bien mat - con nhin thay minh da thuoc toi dau, va
      * biet mai no quay lai.
+     *
+     * Bo chua chon bai da hoc cung sang va bam duoc, nhung bam vao la hoi "lop da hoc
+     * toi bai nao" truoc, chon xong moi vao luot. Ba Huy muon bat con chon chu khong
+     * de may doan, xem [HocToi]. Dong cuoi cua the noi lop dang o dau, kem nut doi
+     * bam duoc ca khi the dang xam.
      */
     private fun theBo(bo: BoDaNap): View {
         val v = StTheBoBinding.inflate(layoutInflater, b.boxBo, false)
+        val chuaChon = bo.hocToi == null
+        val chuaHoc = bo.hocToi == HocToi.CHUA_HOC_BAI_NAO
         val conLuot = bo.soDenLuot > 0
+        val sang = conLuot || chuaChon
         val mauMon = ContextCompat.getColor(this, MatMon.mau(bo.mon))
         val nenMon = ContextCompat.getColorStateList(this, MatMon.nen(bo.mon))
 
         v.huyHieu.text = MatMon.tat(bo.mon)
-        v.huyHieu.setTextColor(if (conLuot) mauMon else mau(R.color.ink_soft))
+        v.huyHieu.setTextColor(if (sang) mauMon else mau(R.color.ink_soft))
         v.huyHieu.backgroundTintList =
-            if (conLuot) nenMon else ContextCompat.getColorStateList(this, R.color.canvas)
+            if (sang) nenMon else ContextCompat.getColorStateList(this, R.color.canvas)
 
         v.tenBo.text = bo.ten
-        v.tenBo.setTextColor(mau(if (conLuot) R.color.ink else R.color.ink_soft))
+        v.tenBo.setTextColor(mau(if (sang) R.color.ink else R.color.ink_soft))
 
-        v.phuBo.text = if (conLuot) "câu đến lượt hôm nay" else "Hôm nay xong rồi"
-        v.phuBo.setTextColor(if (conLuot) mauMon else mau(R.color.ok))
+        v.phuBo.text = when {
+            chuaChon -> "Chọn bài lớp đã học tới"
+            conLuot -> "câu đến lượt hôm nay"
+            // Dong cuoi da noi lop chua hoc toi bai nao, o day noi he qua cua no.
+            chuaHoc -> "Chưa có câu để hỏi"
+            else -> "Hôm nay xong rồi"
+        }
+        v.phuBo.setTextColor(
+            when {
+                sang -> mauMon
+                chuaHoc -> mau(R.color.ink_soft)
+                else -> mau(R.color.ok)
+            }
+        )
 
-        v.soDenLuot.text = if (conLuot) bo.soDenLuot.toString() else "✓"
-        v.soDenLuot.setTextColor(if (conLuot) mauMon else mau(R.color.ok))
+        v.soDenLuot.text = when {
+            chuaChon -> "?"
+            conLuot -> bo.soDenLuot.toString()
+            chuaHoc -> "–"
+            else -> "✓"
+        }
+        v.soDenLuot.setTextColor(
+            when {
+                sang -> mauMon
+                chuaHoc -> mau(R.color.ink_soft)
+                else -> mau(R.color.ok)
+            }
+        )
 
         // Thanh nay do phan da thuoc, khong phai phan con lai: con nhin thay cai
-        // minh lam duoc, va no chi dai them chu khong bao gio ngan di.
+        // minh lam duoc, va no chi dai them chu khong bao gio ngan di. Nen no tinh tren
+        // ca bo chu khong tren phan da hoc: chon them bai thi thanh khong tut.
         v.thanhThuoc.max = bo.tongThe.coerceAtLeast(1)
         v.thanhThuoc.setProgressCompat(bo.soThuoc, false)
-        v.thanhThuoc.setIndicatorColor(if (conLuot) mauMon else mau(R.color.ok))
+        v.thanhThuoc.setIndicatorColor(if (sang) mauMon else mau(R.color.ok))
         v.chuThuoc.text = "Đã kiểm ${bo.soThuoc}/${bo.tongThe} câu"
 
-        v.root.isEnabled = conLuot
-        v.root.alpha = if (conLuot) 1f else 0.7f
-        if (conLuot) v.root.setOnClickListener { batDau(bo.bo) }
+        v.chuHocToi.text = bo.hocToi?.let { "Lớp ${HocToi.moTaBai(it)}" }
+            ?: "Lớp đã học tới: chưa chọn"
+        v.btnHocToi.text = if (chuaChon) "Chọn" else "Đổi"
+        v.btnHocToi.setOnClickListener { hoiHocToi(bo.bo, roiBatDau = chuaChon) }
+
+        v.root.isEnabled = sang
+        v.root.alpha = if (sang) 1f else 0.7f
+        if (sang) {
+            v.root.setOnClickListener {
+                if (chuaChon) hoiHocToi(bo.bo, roiBatDau = true) else batDau(bo.bo)
+            }
+        }
         return v.root
+    }
+
+    /**
+     * Hoi lop da hoc toi bai nao trong bo [ma], ghi lai, roi ve lai man chon bo.
+     *
+     * [roiBatDau] khi con bam vao mot bo chua chon: con bam de lam, nen chon xong la
+     * vao luot luon neu co the den luot, khong bat bam them lan nua.
+     */
+    private fun hoiHocToi(ma: String, roiBatDau: Boolean) {
+        val bo = BoThe.theoMa(ma) ?: return
+        val cacBai = KhoBai.get(this).cacBaiTrongBoThe(ma)
+        if (cacBai.isEmpty()) return
+        val cacMuc = listOf("Chưa học tới bài nào") + cacBai
+        val dangChon = when (val bai = HocToi.baiCua(this, ma)) {
+            null -> -1
+            HocToi.CHUA_HOC_BAI_NAO -> 0
+            else -> cacBai.indexOf(bai).let { if (it < 0) -1 else it + 1 }
+        }
+        ChonHocToi.hoi(
+            this,
+            tieuDe = "${bo.ten}: lớp đã học tới bài nào?",
+            goiY = "Tính cả bài đang học. Máy chỉ hỏi từ bài đầu tới hết bài con chọn. " +
+                "Không thấy bài đang học thì chọn bài gần nhất phía trên nó.",
+            cacMuc = cacMuc,
+            dangChon = dangChon
+        ) { i ->
+            HocToi.datBai(this, bo, if (i == 0) HocToi.CHUA_HOC_BAI_NAO else cacBai[i - 1])
+            val den = BoThe.denThuTu(this, ma)
+            if (roiBatDau && den != null && KhoBai.get(this).conTheDenLuot(ma, denThuTu = den)) {
+                batDau(ma)
+            } else {
+                veChonBo()
+            }
+        }
     }
 
     private fun mau(id: Int) = ContextCompat.getColor(this, id)
 
     // ------------------------------------------------------------------- luot
 
+    /**
+     * Bat dau mot luot, chi voi the trong phan lop da hoc. Bo chua chon thi hoi truoc -
+     * mot duong vao the ma khong qua [theBo] cung khong lot duoc qua cho hoi do.
+     */
     private fun batDau(ma: String) {
         val bo = BoThe.theoMa(ma) ?: return
-        val cac = KhoBai.get(this).cacTheDenLuot(ma, HocThuoc.SO_THE_MOI_LUOT)
+        val den = BoThe.denThuTu(this, ma) ?: return hoiHocToi(ma, roiBatDau = true)
+        val cac = KhoBai.get(this).cacTheDenLuot(ma, HocThuoc.SO_THE_MOI_LUOT, denThuTu = den)
         if (cac.isEmpty()) return veChonBo()
 
         boDangLam = bo

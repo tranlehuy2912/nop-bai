@@ -624,12 +624,26 @@ class HomeActivity : AppCompatActivity() {
 
         themViecSoan()
 
-        val coThe = runCatching { BoThe.conTheDenLuot(this) }.getOrDefault(false)
-        if (coThe) {
+        /*
+         * Kiem tra bai. Het the hom nay ma con bai phia sau thi dong van o day, dang da
+         * xong: day la cua duy nhat vao cho chon "lop da hoc toi bai nao", va an no di
+         * thi hom sau lop hoc bai moi con khong co cho nao de mo them. Xem
+         * [BoThe.tinhTrangManChinh].
+         */
+        val kiemTra = runCatching { BoThe.tinhTrangManChinh(this) }
+            .getOrDefault(BoThe.TinhTrang.KHONG)
+        if (kiemTra != BoThe.TinhTrang.KHONG) {
+            val het = kiemTra == BoThe.TinhTrang.HET_HOM_NAY
             themViec(
                 hinh = R.drawable.st_ic_the_hoc,
-                mau = R.color.brand,
-                ten = getString(R.string.hoc_thuoc_nut)
+                mau = if (het) R.color.ok else R.color.brand,
+                ten = if (het) "Kiểm tra bài: hôm nay hết câu" else getString(R.string.hoc_thuoc_nut),
+                phu = when (kiemTra) {
+                    BoThe.TinhTrang.CHUA_CHON -> "Chọn bài lớp đã học tới để máy hỏi đúng phần"
+                    BoThe.TinhTrang.HET_HOM_NAY -> "Lớp học tới bài mới thì vào chọn lại để có thêm câu"
+                    else -> ""
+                },
+                xong = het
             ) {
                 startActivity(Intent(this, HocThuocActivity::class.java))
             }

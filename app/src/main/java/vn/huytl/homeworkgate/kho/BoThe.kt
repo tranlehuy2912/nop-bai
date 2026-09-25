@@ -99,28 +99,83 @@ object BoThe {
     }
 
     /**
-     * Con bo nao co the den luot khong. Man chinh hoi cau nay de hien dong Kiem tra bai.
+     * Moc cat bo [bo] o bai lop da hoc toi, de dua vao [KhoBai.cacTheDenLuot].
+     *
+     * null khi con chua chon, hoac khi bai con chon khong con trong file (file JSON doi
+     * ten bai): ca hai deu phai hoi lai con, khong doan. -1 khi con chon chua hoc bai
+     * nao: khong the nao lot qua. Xem [HocToi].
+     */
+    fun denThuTu(context: Context, bo: String): Int? {
+        val bai = HocToi.baiCua(context, bo) ?: return null
+        if (bai == HocToi.CHUA_HOC_BAI_NAO) return -1
+        return KhoBai.get(context).thuTuCuoiCua(bo, bai)
+    }
+
+    /** Dong Kiem tra bai tren man chinh dang o tinh trang nao, xem [tinhTrangManChinh]. */
+    enum class TinhTrang {
+        /** Co the den luot trong phan lop da hoc. */
+        CO_THE,
+
+        /** Con bo chua chon bai da hoc: phai vao chon thi may moi biet hoi gi. */
+        CHUA_CHON,
+
+        /** Het the hom nay, nhung con bai phia sau de mo khi lop hoc toi. */
+        HET_HOM_NAY,
+
+        /** Khong co bo nao, hoac bo nao cung da chon toi bai cuoi va het the. */
+        KHONG
+    }
+
+    /**
+     * Man chinh nen hien dong Kiem tra bai the nao.
+     *
+     * Truoc 25/9/2026 dong nay chi hien khi con the den luot. Tu khi cat bo the o bai con
+     * chon, lam vay la co ngo cut: con chon Bai 4, lam het the cua Bai 3 va Bai 4, dong
+     * bien mat - va hom sau lop hoc Bai 6 thi con khong con cua nao de vao chon lai. Nen
+     * het the ma con bai phia sau thi dong van hien, o dang da xong.
      *
      * Khong goi [bang] roi dem: man chinh ve lai moi giay khi dong ho dang dem, ma
      * [bang] quet tung the cua moi bo ba lan - den luot, tong so, da thuoc - trong khi
-     * o day chi can biet co hay khong. Ham nay dung o bo dau tien con the.
+     * o day chi can biet co hay khong. Nen hoi theo thu tu re truoc dat sau, va dung
+     * ngay o bo dau tien con the.
      */
-    fun conTheDenLuot(context: Context): Boolean {
+    fun tinhTrangManChinh(context: Context): TinhTrang {
         val kho = KhoBai.get(context)
-        return BO.any { kho.conTheDenLuot(it.bo) }
+        val cacBo = BO.filter { kho.soTheCua(it.bo) > 0 }
+        val moc = cacBo.map { it to denThuTu(context, it.bo) }
+        if (moc.any { (bo, den) -> den != null && kho.conTheDenLuot(bo.bo, denThuTu = den) }) {
+            return TinhTrang.CO_THE
+        }
+        if (moc.any { it.second == null }) return TinhTrang.CHUA_CHON
+        if (cacBo.any { conBaiSau(context, it.bo) }) return TinhTrang.HET_HOM_NAY
+        return TinhTrang.KHONG
+    }
+
+    /**
+     * Sau bai con da chon con bai nao nua khong. Chua chon thi coi nhu con.
+     *
+     * So theo ten bai cuoi trong file chu khong theo so the: chon "chua hoc bai nao" la
+     * con ca bo phia sau.
+     */
+    private fun conBaiSau(context: Context, bo: String): Boolean {
+        val bai = HocToi.baiCua(context, bo) ?: return true
+        val cac = KhoBai.get(context).cacBaiTrongBoThe(bo)
+        return cac.isNotEmpty() && bai != cac.last()
     }
 
     /** Cac bo dang co the den luot, de con chon. Bo nao khong con gi thi van hien. */
     fun bang(context: Context): List<BoDaNap> {
         val kho = KhoBai.get(context)
         return BO.map { bo ->
+            val den = denThuTu(context, bo.bo)
             BoDaNap(
                 bo = bo.bo,
                 mon = bo.mon,
                 ten = bo.ten,
-                soDenLuot = kho.soTheDenLuot(bo.bo),
+                soDenLuot = if (den == null) 0 else kho.soTheDenLuot(bo.bo, denThuTu = den),
                 tongThe = kho.soTheCua(bo.bo),
-                soThuoc = kho.soTheThuoc(bo.bo)
+                soThuoc = kho.soTheThuoc(bo.bo),
+                hocToi = if (den == null) null else HocToi.baiCua(context, bo.bo)
             )
         }.filter { it.tongThe > 0 }
     }

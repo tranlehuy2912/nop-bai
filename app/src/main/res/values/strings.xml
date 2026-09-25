@@ -69,7 +69,7 @@
     <string name="hoc_thuoc_chiu">Chịu rồi, cho xem đáp án</string>
     <string name="hoc_thuoc_xem_ket">Xem kết quả</string>
     <string name="hoc_thuoc_chua_co_bo">Máy chưa có bộ câu nào. Nhờ ba Huy nạp vào.</string>
-    <string name="hoc_thuoc_chan">Mỗi câu sẽ vài ngày kiểm tra một lần.</string>
+    <string name="hoc_thuoc_chan">Máy chỉ hỏi tới bài lớp đã học, mỗi câu vài ngày một lần. Lớp học bài mới thì bấm Đổi ở bộ đó.</string>
 
     <!-- Duong tu vung. Ten hien cho Le Hoa la "Do tu vung" chu khong phai "Hoc tu
          vung": may do, con tra loi - dung viec dang xay ra. Ten trong ma nguon la
@@ -82,7 +82,7 @@
     <string name="do_tu_chiu">Chịu rồi, cho xem đáp án</string>
     <string name="do_tu_xem_ket">Xem kết quả</string>
     <string name="do_tu_chua_co_bo">Máy chưa có bộ từ nào. Nhờ ba Huy nạp vào.</string>
-    <string name="do_tu_chan">Từ nào chưa chắc sẽ hay gặp lại hơn từ đã thuộc.</string>
+    <string name="do_tu_chan">Máy chỉ hỏi từ trong các Unit lớp đã học. Từ nào chưa chắc sẽ hay gặp lại hơn từ đã thuộc.</string>
     <string name="do_tu_nhan_anh">Từ này nghĩa là gì?</string>
     <string name="do_tu_nhan_viet">Nghĩa này là từ nào?</string>
     <string name="do_tu_het_hom_nay">Hôm nay dò đủ rồi, mai có buổi mới.</string>

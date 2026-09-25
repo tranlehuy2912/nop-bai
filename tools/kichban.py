@@ -34,6 +34,11 @@ CHU_NHAT = "2026-09-20T10:00"       # nghi, khong duoc chan gi
 # app khong sai gi ca. Da dinh mot lan nhu vay that, luc 13:34 chieu thu tu.
 RANH = "2026-09-16T19:30"
 
+# Bai cuoi cua bo Cong thuc Toan 8 (assets/hocthuoc/toan8ct.json). Chon bai cuoi la
+# hoi ca bo, dung nhu cac muc thu nay gia dinh truoc 25/9/2026 khi chua co cho chon
+# "lop da hoc toi bai nao". Doi ten bai trong file thi sua o day.
+BAI_CUOI_TOAN = "Nhìn ra hằng đẳng thức để phân tích thành nhân tử"
+
 
 def danh_sach():
     return [
@@ -308,9 +313,20 @@ def danh_sach():
         dict(
             ma="man-hocthuoc", nhom="Học thuộc",
             ten="Màn kiểm tra bài — kể bộ câu và số câu đến lượt",
-            lam=lambda m: (m.van(RANH), m.man("HocThuocActivity")),
+            # Dat san "da hoc toi bai cuoi" cho bo Toan: tu 25/9/2026 bo chua chon thi
+            # khong co so cau den luot nao, chi co dau hoi.
+            lam=lambda m: (m.van(RANH), m.dat("hoctoi", ma="toan8ct", chu=BAI_CUOI_TOAN),
+                           m.man("HocThuocActivity")),
             cho=["Kiểm tra bài", "Công thức Toán 8", "câu đến lượt hôm nay",
-                 "Mỗi câu sẽ vài ngày kiểm tra một lần"],
+                 "Lớp đã học tới " + BAI_CUOI_TOAN, "Máy chỉ hỏi tới bài lớp đã học"],
+        ),
+        dict(
+            ma="hocthuoc-chua-chon", nhom="Học thuộc",
+            ten="Bộ chưa chọn bài đã học — bấm vào là máy hỏi lớp đã học tới đâu",
+            lam=lambda m: (m.van(RANH), m.dat("xoahoctoi", ma="toan8ct"),
+                           m.man("HocThuocActivity"), m.bam("Công thức Toán 8")),
+            cho=["lớp đã học tới bài nào?", "Chưa học tới bài nào", BAI_CUOI_TOAN],
+            khong=["Gõ câu trả lời"],
         ),
         dict(
             ma="hocthuoc-dung", nhom="Học thuộc",
@@ -319,7 +335,8 @@ def danh_sach():
             # may giu san dap an va cham tai cho, nen phai thu dung cho do. Doc cau
             # hoi dang hien roi tra dap an trong file bo the, chu khong neo cung mot
             # cau - cau den luot doi theo lich on.
-            lam=lambda m: (m.van(RANH), m.man("HocThuocActivity"),
+            lam=lambda m: (m.van(RANH), m.dat("hoctoi", ma="toan8ct", chu=BAI_CUOI_TOAN),
+                           m.man("HocThuocActivity"),
                            m.bam("Công thức Toán 8"),
                            m.go_dap_an_dung("Gõ câu trả lời",
                                             "app/src/main/assets/hocthuoc/toan8ct.json"),
@@ -330,7 +347,8 @@ def danh_sach():
         dict(
             ma="hocthuoc-sai", nhom="Học thuộc",
             ten="Gõ sai — máy nói chưa đúng và cho một gợi ý",
-            lam=lambda m: (m.van(RANH), m.man("HocThuocActivity"),
+            lam=lambda m: (m.van(RANH), m.dat("hoctoi", ma="toan8ct", chu=BAI_CUOI_TOAN),
+                           m.man("HocThuocActivity"),
                            m.bam("Công thức Toán 8"),
                            m.go_chu("Gõ câu trả lời", "a^2+b^2"),
                            m.bam("Trả lời")),

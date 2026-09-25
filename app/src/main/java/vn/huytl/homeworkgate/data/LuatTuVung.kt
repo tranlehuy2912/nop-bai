@@ -1,8 +1,8 @@
 package vn.huytl.homeworkgate.data
 
-import java.util.Calendar
 import vn.huytl.homeworkgate.kho.BuoiDo
 import vn.huytl.homeworkgate.kho.Chieu
+import vn.huytl.homeworkgate.kho.HocToi
 import kotlin.random.Random
 
 /**
@@ -20,8 +20,9 @@ import kotlin.random.Random
  * lai bang tu vung, ke ca khi loi khong ra roi moi nhin dap an - nen mot buoi do
  * nam phut hon han muoi phut ngoi doc.
  *
- * BA BUOI, xem [BuoiDo]. Buoi hang ngay boc ngau nhien tu ca kho. Hai buoi kia neo
- * vao Unit co giao trong vo dan do, mot buoi toi va mot buoi sang hom sau.
+ * BA BUOI, xem [BuoiDo]. Buoi hang ngay boc ngau nhien trong cac Unit con chon la
+ * lop da hoc, xem [daHoc]. Hai buoi kia neo vao Unit co giao trong vo dan do, mot buoi
+ * toi va mot buoi sang hom sau.
  *
  * KHONG BUOI NAO BAT BUOC. Con muon lam thi lam, bo tu nao thi mat phut cua tu do,
  * khong mat gi khac. Bat buoc thi phai co hinh phat, ma hinh phat o day la cat gio
@@ -119,75 +120,24 @@ object LuatTuVung {
     // ------------------------------------------------------ dang hoc unit nao
 
     /**
-     * Lui may ngay khi tinh Unit dang hoc.
+     * Mot tu co nam trong phan lop da hoc khong, khi con chon da hoc toi [unitDaHoc].
      *
-     * VI SAO PHAI LUI. Nhip tinh ra o [unitDangHoc] chia deu ca nam, con lop that
-     * thi khong chay deu: co tuan on tap, co tuan kiem tra an mat tiet, co Unit kho
-     * co day cham hon. Cang ve cuoi nam sai so cang don. App cung khong biet ngay
-     * nghi rieng cua truong - [NgayNghi] chi co le quoc gia, chinh no ghi ro nhu vay
-     * - ma moi ngay nghi khong biet lam moc that lui lai trong khi moc tinh thi
-     * khong lui.
+     * Con tu chon, xem [HocToi]. Truoc 25/9/2026 may doan Unit theo lich: dem tiet Tieng
+     * Anh tu ngay khai giang, chia deu muoi hai Unit cho ca nam, lui mot tuan cho chac.
+     * Lop that khong chay deu (tuan on tap, tuan kiem tra, Unit kho day cham hon), nen
+     * lop cham hon nhip chia deu mot chut la may hoi tu chua hoc bao gio. Ba Huy chon bo
+     * han cach doan.
      *
-     * Lech hai chieu khong nang nhu nhau. App cham hon lop thi con bi hoi tu cu,
-     * tuc la on lai, khong hai gi. App nhanh hon lop thi hoi tu chua hoc bao gio, va
-     * con ngoi chiu tran. Mot tuan dem de day han ve phia thu nhat.
+     * Van boc tu CA cac Unit tu 1 toi day chu khong chi Unit dang hoc: tu Unit 1 phai
+     * quay lai ca nam. Con so nay chi chan mot viec - hoi tu cua Unit lop chua toi.
+     *
+     * Tu ghi unit 0 la ban chep hong, xem [vn.huytl.homeworkgate.kho.TuVung.unit], va
+     * chung KHONG bi loc khi con da hoc it nhat mot Unit: mot cho hong trong file khong
+     * duoc lam mat han mot tu khoi duong hoc. Con chon "chua hoc Unit nao" thi khong tu
+     * nao lot qua, ke ca tu do.
      */
-    const val NGAY_LUI_MOC_UNIT = 7
-
-    /**
-     * So tiet cua mot mon trong khoang [tu] den [den], da tru ngay nghi.
-     *
-     * Dem tu chinh [ThoiKhoaBieu] chu khong go mot con so: sua thoi khoa bieu thi
-     * nhip mo Unit tu di theo, khong phai nho sua them cho nao.
-     */
-    fun soTietCua(mon: String, tu: Calendar, den: Calendar): Int {
-        var n = 0
-        val d = tu.clone() as Calendar
-        while (!d.after(den)) {
-            if (!NgayNghi.laNgayNghi(d)) {
-                n += ThoiKhoaBieu.buoiHocCua(d.get(Calendar.DAY_OF_WEEK))
-                    .sumOf { buoi -> buoi.monTheoTiet.values.count { it == mon } }
-            }
-            d.add(Calendar.DAY_OF_MONTH, 1)
-        }
-        return n
-    }
-
-    /**
-     * Lop dang hoc toi Unit may, tinh theo lich chu khong hoi ai.
-     *
-     * Chia deu [soUnit] Unit cho tong so tiet cua mon do ca nam. Voi Tieng Anh 8 la
-     * ba tiet mot tuan, 109 tiet ca nam, 12 Unit - ra khoang chin tiet moi Unit, tuc
-     * ba tuan, dung bang phan phoi chuong trinh that.
-     *
-     * Con so nay dung lam TRAN chu khong phai de ep: buoi do van boc theo trong so
-     * trong tat ca cac Unit tu 1 den day, nen tu Unit 1 quay lai ca nam. No chi chan
-     * mot viec - hoi tu cua Unit ma lop chua toi.
-     *
-     * Khong dem duoc tiet nao (thoi khoa bieu khong co mon do) thi mo het: tha hoi
-     * rong con hon khoa sach ca quyen ma khong ai hieu tai sao.
-     */
-    fun unitDangHoc(
-        mon: String,
-        soUnit: Int,
-        luc: Calendar = Calendar.getInstance()
-    ): Int {
-        if (soUnit <= 0) return 0
-        val dau = ThoiKhoaBieu.ngayBatDauNamHoc()
-        val cuoi = NgayNghi.ngayHocCuoiCung()
-        val tong = soTietCua(mon, dau, cuoi)
-        if (tong <= 0) return soUnit
-
-        val moc = (luc.clone() as Calendar).apply {
-            add(Calendar.DAY_OF_MONTH, -NGAY_LUI_MOC_UNIT)
-        }
-        if (moc.before(dau)) return 1
-        val daHoc = soTietCua(mon, dau, if (moc.after(cuoi)) cuoi else moc)
-        // Lam tron LEN: hoc duoc mot tiet cua Unit nao la Unit do da mo. Lam tron
-        // xuong thi ca tuan dau nam khong co Unit nao mo ra ca.
-        val u = (daHoc * soUnit + tong - 1) / tong
-        return u.coerceIn(1, soUnit)
-    }
+    fun daHoc(unitTu: Int, unitDaHoc: Int): Boolean =
+        unitDaHoc > HocToi.CHUA_HOC_UNIT_NAO && unitTu <= unitDaHoc
 
     // ------------------------------------------------------------------ cham
 

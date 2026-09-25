@@ -527,6 +527,35 @@ class KhoBai private constructor(context: Context) :
         ).use { if (it.moveToFirst()) it.getInt(0) else 0 }
 
     /**
+     * Cac bai trong mot bo the, theo thu tu trong file, cung la thu tu trong sach.
+     *
+     * Chi co nhung bai co the. Bo KHTN phan Hoa di Bai 3, 4, 6, 8... vi Bai 5 va Bai 7
+     * khong co cong thuc nao de hoc thuoc. Man chon "lop da hoc toi bai nao" hien dung
+     * danh sach nay, xem [vn.huytl.homeworkgate.ui.ChonHocToi].
+     */
+    fun cacBaiTrongBoThe(bo: String): List<String> =
+        readableDatabase.rawQuery(
+            "SELECT bai FROM the_hoc WHERE bo = ? GROUP BY bai ORDER BY MIN(thu_tu)",
+            arrayOf(bo)
+        ).use { c -> buildList { while (c.moveToNext()) add(c.getString(0).orEmpty()) } }
+
+    /**
+     * Thu tu cua the cuoi cung trong [bai]: moc cat bo the o cho con da hoc toi.
+     *
+     * Cat theo thu tu the chu khong theo ten bai vi the cua mot bai nam lien nhau
+     * trong file, va file xep bai theo sach - [BoThe] danh so [TheHoc.thuTu] tu dau
+     * toi cuoi file. Nen "moi the co thu tu tu day tro xuong" dung bang "moi bai tu
+     * bai dau toi het bai nay".
+     *
+     * null khi bo khong con bai nao ten nhu vay, tuc la file JSON da doi ten bai. Ben
+     * goi coi nhu con chua chon va hoi lai, xem [BoThe.denThuTu].
+     */
+    fun thuTuCuoiCua(bo: String, bai: String): Int? =
+        readableDatabase.rawQuery(
+            "SELECT MAX(thu_tu) FROM the_hoc WHERE bo = ? AND bai = ?", arrayOf(bo, bai)
+        ).use { if (it.moveToFirst() && !it.isNull(0)) it.getInt(0) else null }
+
+    /**
      * Cac the DEN LUOT trong mot bo, theo thu tu in trong file.
      *
      * Den luot la mot trong hai: chua bao gio go dung, hoac da dung ma den han nho
@@ -536,16 +565,25 @@ class KhoBai private constructor(context: Context) :
      * Loc trong Kotlin chu khong trong SQL: mot bo the co vai tram dong, doc het ra
      * roi loc mat khong toi mot phan muoi giay, ma [mocHen] la mot ham Kotlin - viet
      * lai no bang SQL la co hai ban luat song song, va den luc sua se chi sua mot.
+     *
+     * @param denThuTu chi xet the co [TheHoc.thuTu] tu so nay tro xuong, tuc la cac
+     *   bai lop da hoc toi. Mac dinh la ca bo. Ben man hinh lay so nay tu
+     *   [BoThe.denThuTu]; truoc 25/9/2026 khong co moc nay, va con bi hoi ca cong thuc
+     *   cua nhung bai o truong chua day.
      */
-    fun cacTheDenLuot(bo: String, gioiHan: Int, bayGio: Long = System.currentTimeMillis()):
-        List<TheHoc> = readableDatabase.rawQuery(
+    fun cacTheDenLuot(
+        bo: String,
+        gioiHan: Int,
+        bayGio: Long = System.currentTimeMillis(),
+        denThuTu: Int = Int.MAX_VALUE
+    ): List<TheHoc> = readableDatabase.rawQuery(
             """
             SELECT t.*,
               (SELECT MAX(luc) FROM tra_the WHERE the_id = t.id AND dung = 1) AS lan_dung,
               (SELECT COUNT(*) FROM tra_the WHERE the_id = t.id AND dung = 1) AS so_dung
-            FROM the_hoc t WHERE t.bo = ? ORDER BY t.thu_tu
+            FROM the_hoc t WHERE t.bo = ? AND t.thu_tu <= ? ORDER BY t.thu_tu
             """.trimIndent(),
-            arrayOf(bo)
+            arrayOf(bo, denThuTu.toString())
         ).use { c ->
             buildList {
                 while (c.moveToNext()) {
@@ -586,28 +624,37 @@ class KhoBai private constructor(context: Context) :
             n
         }
 
-    /** Dem the den luot ma khong doc ca bo ra - cho man chon bo. */
-    fun soTheDenLuot(bo: String, bayGio: Long = System.currentTimeMillis()): Int =
-        cacTheDenLuot(bo, Int.MAX_VALUE, bayGio).size
+    /** Dem the den luot ma khong doc ca bo ra - cho man chon bo. [denThuTu] nhu [cacTheDenLuot]. */
+    fun soTheDenLuot(
+        bo: String,
+        bayGio: Long = System.currentTimeMillis(),
+        denThuTu: Int = Int.MAX_VALUE
+    ): Int = cacTheDenLuot(bo, Int.MAX_VALUE, bayGio, denThuTu).size
 
     /**
-     * Bo nay con the nao den luot khong. Cung dinh nghia voi [cacTheDenLuot].
+     * Bo nay con the nao den luot khong. Cung dinh nghia voi [cacTheDenLuot], ca moc
+     * [denThuTu]: lech moc la man chinh hien dong Kiem tra bai ma vao thi khong co cau
+     * nao, hoac nguoc lai.
      *
      * Hoi nhanh truoc: the chua go dung lan nao thi chac chan den luot, va SQLite dung
      * ngay o the dau tien nhu vay. Chi khi moi the deu da dung it nhat mot lan moi
      * phai tinh han tung the. Man chinh hoi cau nay moi giay khi dong ho dang dem -
-     * xem [BoThe.conTheDenLuot].
+     * xem [BoThe.tinhTrangManChinh].
      */
-    fun conTheDenLuot(bo: String, bayGio: Long = System.currentTimeMillis()): Boolean {
+    fun conTheDenLuot(
+        bo: String,
+        bayGio: Long = System.currentTimeMillis(),
+        denThuTu: Int = Int.MAX_VALUE
+    ): Boolean {
         val coTheChuaDung = readableDatabase.rawQuery(
             """
-            SELECT 1 FROM the_hoc t WHERE t.bo = ?
+            SELECT 1 FROM the_hoc t WHERE t.bo = ? AND t.thu_tu <= ?
               AND NOT EXISTS (SELECT 1 FROM tra_the WHERE the_id = t.id AND dung = 1)
             LIMIT 1
             """.trimIndent(),
-            arrayOf(bo)
+            arrayOf(bo, denThuTu.toString())
         ).use { it.moveToFirst() }
-        return coTheChuaDung || cacTheDenLuot(bo, 1, bayGio).isNotEmpty()
+        return coTheChuaDung || cacTheDenLuot(bo, 1, bayGio, denThuTu).isNotEmpty()
     }
 
     fun ghiTraThe(t: TraThe) {

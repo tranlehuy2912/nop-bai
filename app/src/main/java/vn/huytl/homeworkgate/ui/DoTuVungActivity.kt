@@ -22,6 +22,7 @@ import vn.huytl.homeworkgate.dongbo.DongBo
 import vn.huytl.homeworkgate.kho.BoTuVung
 import vn.huytl.homeworkgate.kho.BuoiDo
 import vn.huytl.homeworkgate.kho.Chieu
+import vn.huytl.homeworkgate.kho.HocToi
 import vn.huytl.homeworkgate.kho.KhoBai
 import vn.huytl.homeworkgate.kho.TraTu
 import vn.huytl.homeworkgate.kho.TuVung
@@ -154,42 +155,117 @@ class DoTuVungActivity : AppCompatActivity() {
      *
      * Het tran ngay thi the xam lai nhung VAN o day, y het man kiem tra bai: con
      * nhin thay minh da thuoc toi dau, va biet mai no quay lai.
+     *
+     * Bo chua chon Unit thi bam vao la hoi "lop da hoc toi Unit nao" truoc, y het man
+     * kiem tra bai, xem [HocToi]. Dong cuoi cua the noi lop dang o Unit may, kem nut doi
+     * bam duoc ca khi the dang xam.
      */
-    private fun theBo(bo: BoTuVung.Bo, conLuot: Boolean): View {
+    private fun theBo(bo: BoTuVung.Bo, conGio: Boolean): View {
         val kho = KhoBai.get(this)
-        val tinh = daMo(bo, kho.tinhTrangTu(bo.bo, LuatTuVung.LAN_DUNG_DE_TINH))
+        val unit = HocToi.unitCua(this, bo.bo)
+        val caBo = kho.tinhTrangTu(bo.bo, LuatTuVung.LAN_DUNG_DE_TINH)
+        // Da chon Unit thi thanh tien do tinh tren phan lop da hoc, nhu truoc khi co cho
+        // chon. Chua chon hay chua hoc Unit nao thi phan do rong, va "Đã thuộc 0/0 từ"
+        // doc nhu may hong, nen luc do tinh tren ca bo.
+        val tinh = if (unit != null && unit > HocToi.CHUA_HOC_UNIT_NAO) daMo(unit, caBo) else caBo
         val thuoc = tinh.count { it.second == LuatTuVung.TinhTrang.DA_THUOC }
-        val unit = unitDaMo(bo)
+        val chuaChon = unit == null
+        val chuaHoc = unit == HocToi.CHUA_HOC_UNIT_NAO
+        // Het tran ngay thi ca bo chua chon cung xam: vao chon xong cung khong duoc phut
+        // nao, con nut doi o dong cuoi van bam duoc.
+        val sang = conGio && !chuaHoc
 
         val v = StTheBoBinding.inflate(layoutInflater, b.boxBo, false)
         val mauMon = ContextCompat.getColor(this, MatMon.mau(bo.mon))
 
         v.huyHieu.text = MatMon.tat(bo.mon)
-        v.huyHieu.setTextColor(if (conLuot) mauMon else mau(R.color.ink_soft))
+        v.huyHieu.setTextColor(if (sang) mauMon else mau(R.color.ink_soft))
         v.huyHieu.backgroundTintList = ContextCompat.getColorStateList(
-            this, if (conLuot) MatMon.nen(bo.mon) else R.color.canvas
+            this, if (sang) MatMon.nen(bo.mon) else R.color.canvas
         )
 
         v.tenBo.text = bo.ten
-        v.tenBo.setTextColor(mau(if (conLuot) R.color.ink else R.color.ink_soft))
+        v.tenBo.setTextColor(mau(if (sang) R.color.ink else R.color.ink_soft))
 
-        // Dau nam chi co mot Unit, luc do "Unit 1–1" doc nhu may hong.
-        val pham = if (unit <= 1) "trong Unit 1" else "trong Unit 1–$unit"
-        v.phuBo.text = if (conLuot) "từ mỗi buổi, $pham" else "Hôm nay dò đủ rồi"
-        v.phuBo.setTextColor(if (conLuot) mauMon else mau(R.color.ok))
+        v.phuBo.text = when {
+            !conGio -> "Hôm nay dò đủ rồi"
+            chuaChon -> "Chọn Unit lớp đã học tới"
+            // Dong cuoi da noi lop chua hoc Unit nao, o day noi he qua cua no.
+            chuaHoc -> "Chưa có từ để hỏi"
+            // Moi hoc Unit 1 thi "Unit 1–1" doc nhu may hong.
+            unit == 1 -> "từ mỗi buổi, trong Unit 1"
+            else -> "từ mỗi buổi, trong Unit 1–$unit"
+        }
+        v.phuBo.setTextColor(
+            when {
+                !conGio -> mau(R.color.ok)
+                sang -> mauMon
+                else -> mau(R.color.ink_soft)
+            }
+        )
 
-        v.soDenLuot.text = if (conLuot) LuatTuVung.SO_TU_HANG_NGAY.toString() else "✓"
-        v.soDenLuot.setTextColor(if (conLuot) mauMon else mau(R.color.ok))
+        v.soDenLuot.text = when {
+            !conGio -> "✓"
+            chuaChon -> "?"
+            chuaHoc -> "–"
+            // Phan da hoc it hon mot buoi thi hoi het phan do, khong phai hai muoi.
+            else -> minOf(LuatTuVung.SO_TU_HANG_NGAY, tinh.size).toString()
+        }
+        v.soDenLuot.setTextColor(
+            when {
+                !conGio -> mau(R.color.ok)
+                sang -> mauMon
+                else -> mau(R.color.ink_soft)
+            }
+        )
 
         v.thanhThuoc.max = tinh.size.coerceAtLeast(1)
         v.thanhThuoc.setProgressCompat(thuoc, false)
-        v.thanhThuoc.setIndicatorColor(if (conLuot) mauMon else mau(R.color.ok))
+        v.thanhThuoc.setIndicatorColor(if (sang) mauMon else mau(R.color.ok))
         v.chuThuoc.text = "Đã thuộc $thuoc/${tinh.size} từ"
 
-        v.root.isEnabled = conLuot
-        v.root.alpha = if (conLuot) 1f else 0.7f
-        if (conLuot) v.root.setOnClickListener { batDau(bo) }
+        v.chuHocToi.text = unit?.let { "Lớp ${HocToi.moTaUnit(it)}" }
+            ?: "Lớp đã học tới: chưa chọn"
+        v.btnHocToi.text = if (chuaChon) "Chọn" else "Đổi"
+        v.btnHocToi.setOnClickListener { hoiHocToi(bo, roiBatDau = chuaChon && conGio) }
+
+        v.root.isEnabled = sang
+        v.root.alpha = if (sang) 1f else 0.7f
+        if (sang) {
+            v.root.setOnClickListener {
+                if (chuaChon) hoiHocToi(bo, roiBatDau = true) else batDau(bo)
+            }
+        }
         return v.root
+    }
+
+    /**
+     * Hoi lop da hoc toi Unit nao trong [bo], ghi lai, roi ve lai man chon bo.
+     *
+     * [roiBatDau] y het ben man kiem tra bai: con bam vao bo chua chon de lam, nen chon
+     * xong la vao buoi luon.
+     */
+    private fun hoiHocToi(bo: BoTuVung.Bo, roiBatDau: Boolean) {
+        val cacUnit = KhoBai.get(this).cacTuCua(bo.bo)
+            .map { it.unit }.filter { it > 0 }.distinct().sorted()
+        if (cacUnit.isEmpty()) return
+        val cacMuc = listOf("Chưa học Unit nào") + cacUnit.map { "Unit $it" }
+        val dangChon = when (val u = HocToi.unitCua(this, bo.bo)) {
+            null -> -1
+            HocToi.CHUA_HOC_UNIT_NAO -> 0
+            else -> cacUnit.indexOf(u).let { if (it < 0) -1 else it + 1 }
+        }
+        ChonHocToi.hoi(
+            this,
+            tieuDe = "${bo.ten}: lớp đã học tới Unit nào?",
+            goiY = "Tính cả Unit đang học. Máy chỉ hỏi từ của Unit 1 tới hết Unit con chọn.",
+            cacMuc = cacMuc,
+            dangChon = dangChon
+        ) { i ->
+            val unit = if (i == 0) HocToi.CHUA_HOC_UNIT_NAO else cacUnit[i - 1]
+            HocToi.datUnit(this, bo, unit)
+            if (roiBatDau && unit > HocToi.CHUA_HOC_UNIT_NAO) batDau(bo) else veChonBo()
+        }
     }
 
     private fun mau(id: Int) = ContextCompat.getColor(this, id)
@@ -205,7 +281,9 @@ class DoTuVungActivity : AppCompatActivity() {
      */
     private fun batDau(bo: BoTuVung.Bo) {
         val kho = KhoBai.get(this)
-        val tinh = daMo(bo, kho.tinhTrangTu(bo.bo, LuatTuVung.LAN_DUNG_DE_TINH))
+        // Bo chua chon Unit thi hoi truoc, du vao tu duong nao.
+        val unit = HocToi.unitCua(this, bo.bo) ?: return hoiHocToi(bo, roiBatDau = true)
+        val tinh = daMo(unit, kho.tinhTrangTu(bo.bo, LuatTuVung.LAN_DUNG_DE_TINH))
         if (tinh.isEmpty()) return veChonBo()
 
         val ghim = tinh.filter { it.second == LuatTuVung.TinhTrang.VUA_SAI }
@@ -247,34 +325,17 @@ class DoTuVungActivity : AppCompatActivity() {
     }
 
     /**
-     * Unit cao nhat duoc hoi hom nay, tinh theo lich nam hoc.
+     * Bo cac tu cua Unit ma lop chua hoc toi, theo Unit con chon. Luat o [LuatTuVung.daHoc].
      *
-     * Bo nao khong chia Unit (moi tu deu unit 0) thi con so nay khong dung den, va
-     * [daMo] cung khong loc gi - xem cho do.
-     */
-    private fun unitDaMo(bo: BoTuVung.Bo): Int {
-        val soUnit = KhoBai.get(this).cacTuCua(bo.bo).maxOfOrNull { it.unit } ?: 0
-        return LuatTuVung.unitDangHoc(bo.mon, soUnit)
-    }
-
-    /**
-     * Bo cac tu cua Unit ma lop chua hoc toi.
-     *
-     * Tu ghi unit 0 la ban chep hong - xem [TuVung.unit] - va chung KHONG bi loc:
-     * mot cho hong trong file khong duoc lam mat han mot tu khoi duong hoc.
-     *
-     * Loc xong ma khong con tu nao thi tra lai het. Chuyen do chi xay ra khi bo tu
-     * danh so Unit kieu khac (bat dau tu 0, hay danh theo bai), va luc do tha hoi
-     * rong con hon mo ra mot man trong.
+     * Khong con tra lai ca bo khi loc ra rong nhu luc con doan theo lich. Hoi do doan
+     * nham thi tha hoi rong con hon mo ra mot man trong; gio rong chi con nghia la con
+     * chon "chua hoc Unit nao", va hoi rong la hoi dung thu con vua noi chua hoc.
      */
     private fun daMo(
-        bo: BoTuVung.Bo,
+        unit: Int,
         cac: List<Triple<TuVung, LuatTuVung.TinhTrang, Int>>
-    ): List<Triple<TuVung, LuatTuVung.TinhTrang, Int>> {
-        val unit = unitDaMo(bo)
-        val loc = cac.filter { it.first.unit <= unit }
-        return loc.ifEmpty { cac }
-    }
+    ): List<Triple<TuVung, LuatTuVung.TinhTrang, Int>> =
+        cac.filter { LuatTuVung.daHoc(it.first.unit, unit) }
 
     /** Ba ro moi nhu, uu tien giam dan - xem [LuatTuVung.chonMoiNhu]. */
     private fun moiNhuCho(tu: TuVung, tatCa: List<TuVung>): List<String> {

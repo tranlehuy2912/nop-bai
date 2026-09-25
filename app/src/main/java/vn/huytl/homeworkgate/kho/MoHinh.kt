@@ -210,10 +210,20 @@ data class BoDaNap(
     val bo: String,
     val mon: String,
     val ten: String,
+    /** So the den luot TRONG PHAN LOP DA HOC. Chua chon bai thi la 0. */
     val soDenLuot: Int,
+    /**
+     * Ca bo, khong chi phan da hoc, va [soThuoc] cung vay: thanh tien do chi dai them
+     * chu khong ngan di khi con chon them bai.
+     */
     val tongThe: Int,
     /** So the da qua het cac moc nho lai. Man chon bo ve thanh tien do tu day. */
-    val soThuoc: Int = 0
+    val soThuoc: Int = 0,
+    /**
+     * Bai cuoi lop da hoc, [HocToi.CHUA_HOC_BAI_NAO], hoac null khi con chua chon (hay
+     * bai con chon khong con trong file). Xem [BoThe.denThuTu].
+     */
+    val hocToi: String? = null
 )
 
 /** Mot bai trong sach, gom nhieu cau. Dung de con chon truoc khi chup. */

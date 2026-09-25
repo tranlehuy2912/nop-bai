@@ -29,6 +29,7 @@ import vn.huytl.homeworkgate.data.ViecNha
 import vn.huytl.homeworkgate.data.VoDanDo
 import vn.huytl.homeworkgate.guard.ParentMode
 import vn.huytl.homeworkgate.data.Mang
+import vn.huytl.homeworkgate.kho.HocToi
 import vn.huytl.homeworkgate.kho.KhoBai
 import vn.huytl.homeworkgate.kho.NganHang
 import java.time.LocalDateTime
@@ -244,6 +245,9 @@ class ManualBang {
      *  -e viec bamo -e phut 30       ba cam may (mo cac man cua ba)
      *  -e viec badong
      *  -e viec moisom -e ma <ma buoi>      cho mo som het buoi do
+     *  -e viec hoctoi -e ma toan8ct -e chu "<ten bai>"   lop da hoc toi bai do
+     *     ("" la chua hoc bai nao); bo tu vung thi -e ma anh8 -e phut <so Unit>
+     *  -e viec xoahoctoi -e ma toan8ct  ve lai "chua chon", may se hoi
      */
     @Test
     fun viec() {
@@ -405,6 +409,19 @@ class ManualBang {
             }
             "badong" -> {
                 ParentMode.disable(context); epGhi(); ketQua = ParentMode.isActive(context)
+            }
+            // Ghi thang, khong qua nhat ky: dat boi canh cho trang thu chu khong phai
+            // Le Hoa chon that. HocToi ghi bang commit() nen khong can epGhi.
+            "hoctoi" -> {
+                val bo = ma ?: error("Thieu -e ma <bo>")
+                if (phut != null) {
+                    HocToi.ghiUnit(context, bo, phut); ketQua = HocToi.unitCua(context, bo)
+                } else {
+                    HocToi.ghiBai(context, bo, chu.orEmpty()); ketQua = HocToi.baiCua(context, bo)
+                }
+            }
+            "xoahoctoi" -> {
+                HocToi.xoa(context, ma ?: error("Thieu -e ma <bo>")); ketQua = 0
             }
             else -> error("Khong biet viec: $v")
         }

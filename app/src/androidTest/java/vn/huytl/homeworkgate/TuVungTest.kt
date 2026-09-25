@@ -5,16 +5,16 @@ import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
+import org.junit.Assert.assertNull
 import org.junit.Assert.assertTrue
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
 import vn.huytl.homeworkgate.data.LuatTuVung
-import vn.huytl.homeworkgate.data.NgayNghi
-import vn.huytl.homeworkgate.data.ThoiKhoaBieu
 import vn.huytl.homeworkgate.kho.BoTuVung
 import vn.huytl.homeworkgate.kho.BuoiDo
 import vn.huytl.homeworkgate.kho.Chieu
+import vn.huytl.homeworkgate.kho.HocToi
 import vn.huytl.homeworkgate.kho.KhoBai
 import vn.huytl.homeworkgate.kho.TraTu
 import vn.huytl.homeworkgate.kho.TuVung
@@ -159,63 +159,52 @@ class TuVungTest {
 
     // --- dang hoc unit nao ---
 
-    private fun unit(nam: Int, thang: Int, ngay: Int): Int =
-        LuatTuVung.unitDangHoc("Tiếng Anh", 12, NgayNghi.calendarCua(nam, thang, ngay))
-
+    /**
+     * Con chon da hoc toi Unit nao thi chi hoi tu Unit 1 toi het Unit do.
+     *
+     * Truoc 25/9/2026 cho nay la may doan Unit theo lich, va test o day kiem nhip doan.
+     * Ba Huy bo han cach doan, cho con tu chon - xem [vn.huytl.homeworkgate.kho.HocToi].
+     */
     @Test
-    fun ca_nam_co_dung_so_tiet_tieng_anh_cua_thoi_khoa_bieu() {
-        // Ba tiet mot tuan (chieu thu hai mot, chieu thu bay hai), tru le va chu
-        // nhat, tu 07/09/2026 den 31/05/2027. Con so nay quyet dinh nhip mo Unit,
-        // nen doi thoi khoa bieu ma quen cho nay thi test do lai.
-        assertEquals(
-            109,
-            LuatTuVung.soTietCua(
-                "Tiếng Anh",
-                ThoiKhoaBieu.ngayBatDauNamHoc(),
-                NgayNghi.ngayHocCuoiCung()
-            )
-        )
+    fun chi_hoi_tu_unit_mot_toi_het_unit_da_chon() {
+        assertTrue(LuatTuVung.daHoc(1, 3))
+        assertTrue(LuatTuVung.daHoc(3, 3))
+        assertFalse(LuatTuVung.daHoc(4, 3))
+        assertFalse(LuatTuVung.daHoc(12, 3))
     }
 
     @Test
-    fun dau_nam_thi_chi_mo_unit_mot() {
-        assertEquals(1, unit(2026, 9, 7))
-        assertEquals(1, unit(2026, 9, 22))
-        // Truoc ca ngay khai giang cung khong duoc am hay bang khong.
-        assertEquals(1, unit(2026, 8, 1))
+    fun chon_chua_hoc_unit_nao_thi_khong_tu_nao_lot_qua() {
+        assertFalse(LuatTuVung.daHoc(1, HocToi.CHUA_HOC_UNIT_NAO))
+        // Ke ca tu chep hong unit 0: con vua noi la chua hoc gi.
+        assertFalse(LuatTuVung.daHoc(0, HocToi.CHUA_HOC_UNIT_NAO))
     }
 
     @Test
-    fun cuoi_nam_thi_mo_het_muoi_hai_unit() {
-        assertEquals(12, unit(2027, 5, 31))
-        // Nghi he roi thi van la muoi hai, khong tut xuong.
-        assertEquals(12, unit(2027, 7, 1))
+    fun tu_chep_hong_unit_0_van_duoc_hoi_khi_da_hoc() {
+        // Mot cho hong trong file khong duoc lam mat han mot tu khoi duong hoc.
+        assertTrue(LuatTuVung.daHoc(0, 1))
     }
 
+    /**
+     * Chua chon la null, khac voi chon "chua hoc Unit nao". Hai cai lan nhau thi hoac
+     * may khong bao gio hoi con chon, hoac con da noi chua hoc ma may van bat chon lai.
+     */
     @Test
-    fun moc_doi_unit_lui_lai_mot_tuan() {
-        // Chia deu thi Unit 2 roi vao 28/09, cong bay ngay dem thanh 05/10.
-        assertEquals(1, unit(2026, 10, 4))
-        assertEquals(2, unit(2026, 10, 5))
-    }
-
-    @Test
-    fun unit_khong_bao_gio_tut_lui_trong_nam_hoc() {
-        // Di tung ngay ca nam hoc: con so chi duoc dung yen hoac tang.
-        val d = NgayNghi.calendarCua(2026, 9, 7)
-        var truoc = 0
-        repeat(300) {
-            val u = LuatTuVung.unitDangHoc("Tiếng Anh", 12, d)
-            assertTrue("tut tu $truoc xuong $u", u >= truoc)
-            truoc = u
-            d.add(java.util.Calendar.DAY_OF_MONTH, 1)
+    fun chua_chon_unit_khac_voi_chon_chua_hoc() {
+        val context = InstrumentationRegistry.getInstrumentation().targetContext
+        // Ghi bang HocToi.ghiUnit chu khong bang datUnit, cung ly do ben HocThuocTest:
+        // datUnit ghi them nhat ky, va nhat ky sang Bang dieu khien.
+        HocToi.xoa(context, "thu")
+        try {
+            assertNull(HocToi.unitCua(context, "thu"))
+            HocToi.ghiUnit(context, "thu", HocToi.CHUA_HOC_UNIT_NAO)
+            assertEquals(HocToi.CHUA_HOC_UNIT_NAO, HocToi.unitCua(context, "thu"))
+            HocToi.ghiUnit(context, "thu", 3)
+            assertEquals(3, HocToi.unitCua(context, "thu"))
+        } finally {
+            HocToi.xoa(context, "thu")
         }
-        assertEquals(12, truoc)
-    }
-
-    @Test
-    fun mon_khong_co_trong_thoi_khoa_bieu_thi_mo_het_chu_khong_khoa_sach() {
-        assertEquals(12, LuatTuVung.unitDangHoc("Môn không có thật", 12))
     }
 
     // --- cham ---

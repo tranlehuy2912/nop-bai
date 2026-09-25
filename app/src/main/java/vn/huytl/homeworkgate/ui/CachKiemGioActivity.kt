@@ -313,19 +313,36 @@ class CachKiemGioActivity : AppCompatActivity() {
         val conThe = (HocThuoc.TRAN_PHUT_MOI_NGAY - daCoThe).coerceAtLeast(0)
         // Moi the chi den luot vai ngay mot lan. Het luot thi phan nay hom nay khong
         // ra duoc phut nao, du tran con nguyen - va do la dieu phai noi ra.
+        //
+        // Chi dem the trong phan lop da hoc, xem [vn.huytl.homeworkgate.kho.HocToi]. Bo
+        // chua chon bai thi dem la 0, va "het cau" luc do la noi sai: con chua chon, chu
+        // khong phai het. Con "mai co lai" thi sai khi het the vi lop chua hoc toi bai
+        // sau: mai cung khong co gi, cho toi luc con vao chon them bai.
         val denLuot = runCatching { BoThe.bang(this).sumOf { it.soDenLuot } }.getOrDefault(0)
+        val tinh = runCatching { BoThe.tinhTrangManChinh(this) }
+            .getOrDefault(BoThe.TinhTrang.KHONG)
+        val chuaChon = tinh == BoThe.TinhTrang.CHUA_CHON
 
         veNhan(
             binding.nhanKiemTra,
             daCoThe,
             het = conThe <= 0,
-            khiTrong = if (denLuot > 0) "Đang có $denLuot câu đến lượt" else "Hôm nay hết câu"
+            khiTrong = when {
+                denLuot > 0 -> "Đang có $denLuot câu đến lượt"
+                chuaChon -> "Chưa chọn bài đã học"
+                else -> "Hôm nay hết câu"
+            }
         )
         ghiChu(
             binding.txtKiemTraChan,
-            het = conThe <= 0 || denLuot == 0,
+            het = conThe <= 0 || (denLuot == 0 && !chuaChon),
             chu = when {
                 conThe <= 0 -> "Hôm nay hết phần này rồi."
+                denLuot == 0 && chuaChon ->
+                    "Vào Kiểm tra bài chọn bài lớp đã học tới, máy mới biết hỏi câu nào."
+                denLuot == 0 && tinh == BoThe.TinhTrang.HET_HOM_NAY ->
+                    "Hôm nay không còn câu nào đến lượt. Lớp học tới bài mới thì vào " +
+                        "Kiểm tra bài chọn lại."
                 denLuot == 0 -> "Hôm nay không còn câu nào đến lượt, mai có lại."
                 daCoThe > 0 -> "Hôm nay đã được $daCoThe phút, còn $conThe phút."
                 else -> "Đang có $denLuot câu đến lượt, chưa dùng phút nào."

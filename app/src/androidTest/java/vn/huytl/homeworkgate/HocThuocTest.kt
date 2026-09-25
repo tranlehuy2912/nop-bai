@@ -5,12 +5,14 @@ import androidx.test.platform.app.InstrumentationRegistry
 import org.json.JSONObject
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
+import org.junit.Assert.assertNull
 import org.junit.Assert.assertTrue
 import org.junit.Test
 import org.junit.runner.RunWith
 import vn.huytl.homeworkgate.data.HocThuoc
 import vn.huytl.homeworkgate.data.LuatTuVung
 import vn.huytl.homeworkgate.kho.BoThe
+import vn.huytl.homeworkgate.kho.HocToi
 import vn.huytl.homeworkgate.kho.KhoBai
 import vn.huytl.homeworkgate.kho.TheHoc
 import vn.huytl.homeworkgate.kho.TraThe
@@ -357,6 +359,106 @@ class HocThuocTest {
         } finally {
             kho.napBoThe("thu", emptyList())
             kho.writableDatabase.delete("tra_the", "the_id LIKE ?", arrayOf("thu:%"))
+        }
+    }
+
+    // --- lop da hoc toi bai nao ---
+
+    /** Bon the trong ba bai, xep y het mot file that: bai theo sach, the lien nhau. */
+    private fun boBaBai() = listOf(
+        TheHoc(id = "thu:a1", mon = "Toán", bo = "thu", bai = "Bài 1", hoi = "h", dap = "d", thuTu = 0),
+        TheHoc(id = "thu:a2", mon = "Toán", bo = "thu", bai = "Bài 1", hoi = "h", dap = "d", thuTu = 1),
+        TheHoc(id = "thu:b1", mon = "Toán", bo = "thu", bai = "Bài 2", hoi = "h", dap = "d", thuTu = 2),
+        TheHoc(id = "thu:d1", mon = "Toán", bo = "thu", bai = "Bài 4", hoi = "h", dap = "d", thuTu = 3)
+    )
+
+    /**
+     * Chon da hoc toi Bai 2 thi ca ba duong dem the chi thay Bai 1 va Bai 2.
+     *
+     * Ba duong la luot hoi, so tren man chon bo, va cau hoi nhanh cua man chinh. Mot
+     * duong quen moc la con vao mot bo "con 4 cau" ma chi duoc hoi 3, hoac man chinh
+     * hien dong Kiem tra bai ma vao thi khong co cau nao.
+     */
+    @Test
+    fun chon_da_hoc_toi_bai_nao_thi_chi_hoi_toi_het_bai_do() {
+        val kho = KhoBai.get(InstrumentationRegistry.getInstrumentation().targetContext)
+        try {
+            kho.napBoThe("thu", boBaBai())
+            assertEquals(listOf("Bài 1", "Bài 2", "Bài 4"), kho.cacBaiTrongBoThe("thu"))
+
+            val den = kho.thuTuCuoiCua("thu", "Bài 2")!!
+            assertEquals(
+                listOf("thu:a1", "thu:a2", "thu:b1"),
+                kho.cacTheDenLuot("thu", 99, denThuTu = den).map { it.id }
+            )
+            assertEquals(3, kho.soTheDenLuot("thu", denThuTu = den))
+            assertTrue(kho.conTheDenLuot("thu", denThuTu = den))
+
+            // Lam het phan da hoc thi hoi nhanh cung thay het, du Bai 4 chua lam cau nao.
+            val bayGio = System.currentTimeMillis()
+            listOf("thu:a1", "thu:a2", "thu:b1").forEach {
+                kho.ghiTraThe(TraThe(theId = it, go = "d", dung = true, phut = 0, luc = bayGio))
+            }
+            assertFalse(kho.conTheDenLuot("thu", bayGio, den))
+            assertEquals(0, kho.soTheDenLuot("thu", bayGio, den))
+            // Khong co moc thi van la ca bo, nhu truoc khi co cho chon.
+            assertTrue(kho.conTheDenLuot("thu", bayGio))
+            assertEquals(listOf("thu:d1"), kho.cacTheDenLuot("thu", 99, bayGio).map { it.id })
+        } finally {
+            kho.napBoThe("thu", emptyList())
+            kho.writableDatabase.delete("tra_the", "the_id LIKE ?", arrayOf("thu:%"))
+        }
+    }
+
+    /**
+     * Chua chon la khong co moc, chon "chua hoc bai nao" la moc -1: khong the nao lot.
+     * Bai con chon ma file doi ten thi cung khong co moc, de may hoi lai chu khong doan.
+     */
+    @Test
+    fun chua_chon_chua_hoc_va_bai_doi_ten_deu_ra_dung_moc() {
+        val context = InstrumentationRegistry.getInstrumentation().targetContext
+        val kho = KhoBai.get(context)
+        // Ghi bang HocToi.ghiBai chu khong bang datBai: datBai ghi them nhat ky, va
+        // dong "Le Hoa chon Bo thu" se sang Bang dieu khien nhu con chon that.
+        HocToi.xoa(context, "thu")
+        try {
+            kho.napBoThe("thu", boBaBai())
+            assertNull(BoThe.denThuTu(context, "thu"))
+
+            HocToi.ghiBai(context, "thu", HocToi.CHUA_HOC_BAI_NAO)
+            assertEquals(-1, BoThe.denThuTu(context, "thu"))
+            assertEquals(0, kho.soTheDenLuot("thu", denThuTu = -1))
+            assertFalse(kho.conTheDenLuot("thu", denThuTu = -1))
+
+            HocToi.ghiBai(context, "thu", "Bài 2")
+            assertEquals(2, BoThe.denThuTu(context, "thu"))
+
+            HocToi.ghiBai(context, "thu", "Bài 2 cũ, file đã đổi tên")
+            assertNull(BoThe.denThuTu(context, "thu"))
+        } finally {
+            HocToi.xoa(context, "thu")
+            kho.napBoThe("thu", emptyList())
+        }
+    }
+
+    /**
+     * Bai trong moi bo that xep dung thu tu sach.
+     *
+     * "Da hoc toi Bai 9" cat bo the theo thu tu trong file, xem [KhoBai.thuTuCuoiCua]. Ai
+     * them Bai 5 vao cuoi file khtn8hoa thay vi chen giua Bai 4 va Bai 6 thi con chon Bai
+     * 4 van bi hoi Bai 5, con chon Bai 9 lai khong duoc hoi. Bai khong danh so (bo Toan)
+     * thi khong so duoc, bo qua.
+     */
+    @Test
+    fun bai_trong_bo_that_xep_theo_so_bai_tang_dan() {
+        val context = InstrumentationRegistry.getInstrumentation().targetContext
+        BoThe.napNeuCan(context)
+        val kho = KhoBai.get(context)
+        BoThe.BO.forEach { bo ->
+            val cacBai = kho.cacBaiTrongBoThe(bo.bo)
+            assertTrue("${bo.bo} khong co bai nao", cacBai.isNotEmpty())
+            val so = cacBai.mapNotNull { Regex("""^Bài (\d+)\.""").find(it)?.groupValues?.get(1)?.toInt() }
+            assertEquals("${bo.bo}: $cacBai", so.sorted().distinct(), so)
         }
     }
 

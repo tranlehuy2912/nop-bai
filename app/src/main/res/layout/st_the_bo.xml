@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-  Mot bo the tren man Hoc thuoc.
+  Mot bo tren man Kiem tra bai (HocThuocActivity) va man Do tu vung.
 
   Truoc day cho nay la mot nut vien mong hai dong chu, va ca man hinh con lai bo
   trong. The nay noi duoc ba thu ma nut khong noi: bo nay cua mon nao (mau va chu
   viet tat, xem MatMon), con bao nhieu the den luot, va con da thuoc duoc bao nhieu
-  phan cua bo - cai cuoi la thu duy nhat cho thay minh dang di toi dau.
+  phan cua bo - cai cuoi la thu duy nhat cho thay minh dang di toi dau. Tu 25/9/2026
+  co them dong cuoi: lop da hoc toi bai nao, may chi hoi trong phan do.
 -->
 <com.google.android.material.card.MaterialCardView
     xmlns:android="http://schemas.android.com/apk/res/android"
@@ -89,5 +90,32 @@
             android:layout_marginTop="8dp"
             android:textColor="@color/ink_soft"
             android:textSize="14sp" />
+
+        <!-- Lop da hoc toi dau (HocToi). Nut nay bam duoc ca khi the dang xam vi het
+             luot hom nay: lop hoc bai moi thi con doi o day, khong phai cho toi mai. -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/chu_hoc_toi"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="@color/ink"
+                android:textSize="15sp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_hoc_toi"
+                style="@style/Widget.Material3.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="-12dp"
+                android:textSize="15sp" />
+        </LinearLayout>
     </LinearLayout>
 </com.google.android.material.card.MaterialCardView>
