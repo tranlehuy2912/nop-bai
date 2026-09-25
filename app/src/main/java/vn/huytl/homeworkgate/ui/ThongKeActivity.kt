@@ -15,11 +15,8 @@ import androidx.core.view.updatePadding
 import com.google.android.material.button.MaterialButton
 import vn.huytl.homeworkgate.R
 import vn.huytl.homeworkgate.data.NhatKySuDung
-import vn.huytl.homeworkgate.data.Prefs
 import vn.huytl.homeworkgate.databinding.ActivityThongKeBinding
 import vn.huytl.homeworkgate.guard.GuardAccessibilityService
-import vn.huytl.homeworkgate.guard.ParentMode
-import vn.huytl.homeworkgate.guard.PhienQuanLy
 
 /**
  * Con da dung app gi, tu may gio den may gio, tong bao nhieu.
@@ -37,6 +34,7 @@ import vn.huytl.homeworkgate.guard.PhienQuanLy
 class ThongKeActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityThongKeBinding
+    private val hoiLaiPin = HoiLaiPin(this)
 
     /** Dang xem ngay nao: 0 la hom nay, 1 la hom qua. */
     private var lui = 0
@@ -46,17 +44,17 @@ class ThongKeActivity : AppCompatActivity() {
         binding = ActivityThongKeBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Y het [AppPickerActivity]: vao thang bang adb ma chua qua PIN thi dong
-        // luon. Day la so con lam gi tren may, khong phai thu de mo ra tu ngoai.
-        if (Prefs.get(this).hasPin() && !PhienQuanLy.daQuaPin && !ParentMode.isActive(this)) {
-            finish()
-            return
-        }
-
         chuaThanhHeThong()
         binding.btnDone.setOnClickListener { finish() }
         veHangNgay()
         ve()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        // Y het [AppPickerActivity]: day la so con lam gi tren may, nam sau PIN. Roi
+        // app lau, hay chua qua PIN, thi hoi PIN ngay day.
+        hoiLaiPin.roiMoi()
     }
 
     /** Hang bay o chon ngay, hom nay dung dau. */

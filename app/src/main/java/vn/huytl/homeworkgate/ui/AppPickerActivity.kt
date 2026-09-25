@@ -21,8 +21,6 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import vn.huytl.homeworkgate.data.GioiHanApp
 import vn.huytl.homeworkgate.data.Prefs
 import vn.huytl.homeworkgate.databinding.ActivityAppPickerBinding
-import vn.huytl.homeworkgate.guard.ParentMode
-import vn.huytl.homeworkgate.guard.PhienQuanLy
 
 /**
  * Chon app cho mot trong hai danh sach.
@@ -38,6 +36,7 @@ class AppPickerActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityAppPickerBinding
     private lateinit var prefs: Prefs
+    private val hoiLaiPin = HoiLaiPin(this)
     private val selected = mutableSetOf<String>()
 
     /** Toan bo app mo duoc tu man hinh chinh, doc mot lan luc vao man. */
@@ -72,11 +71,6 @@ class AppPickerActivity : AppCompatActivity() {
         binding = ActivityAppPickerBinding.inflate(layoutInflater)
         setContentView(binding.root)
         prefs = Prefs.get(this)
-
-        if (prefs.hasPin() && !PhienQuanLy.daQuaPin && !ParentMode.isActive(this)) {
-            finish()
-            return
-        }
 
         chuaThanhHeThong()
 
@@ -155,6 +149,13 @@ class AppPickerActivity : AppCompatActivity() {
             }
             finish()
         }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        // Man nay nam sau PIN nhu Cai dat. Roi app lau, hay chua qua PIN, thi hoi PIN
+        // ngay day; cac app vua tich ma chua bam Xong van con.
+        hoiLaiPin.roiMoi()
     }
 
     /**

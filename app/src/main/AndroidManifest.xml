@@ -48,17 +48,27 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.HomeworkGate">
 
-        <!-- Mo app la vao thang man cua Le Hoa. Day la app quan ly con, con dung
-             no moi ngay; phan cua Ba Huy nam sau mot nut chu nho o goc. -->
+        <!-- Icon app tro vao day chu khong vao thang HomeActivity. App dang chay thi
+             bam icon chi dua lai dung man dang mo, giong mo tu danh sach app gan day.
+             Xem CuaVaoActivity. -->
         <activity
-            android:name=".ui.HomeActivity"
+            android:name=".ui.CuaVaoActivity"
             android:exported="true"
-            android:launchMode="singleTask">
+            android:theme="@android:style/Theme.NoDisplay">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- Mo app la vao thang man cua Le Hoa. Day la app quan ly con, con dung
+             no moi ngay; phan cua Ba Huy nam sau mot nut chu nho o goc.
+             singleTask de guard va man chan mo no la dong het man nam tren. Van
+             exported: tools/web.py mo thang no bang adb. -->
+        <activity
+            android:name=".ui.HomeActivity"
+            android:exported="true"
+            android:launchMode="singleTask" />
 
         <!-- exported=false de con khong mo thang bang adb hay shortcut. -->
         <activity

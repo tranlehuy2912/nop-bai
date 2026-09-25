@@ -46,19 +46,23 @@ object PhienQuanLy {
     }
 
     /**
-     * Trang cau hinh co phai dong lai va tra may ve cho con khong.
+     * Trang cau hinh co phai hoi lai PIN khong.
      *
      * Ba Huy mo trang cau hinh roi bam nut home, hay chi de may xuong ban cho man
      * hinh tat - lan sau mo app len la con nhin thay ngay trang duyet gio choi, bam
-     * mot cai la tu cho minh choi. Vang mat vai giay thi khong tinh, vi doi qua man
-     * Cai dat trong app hay xoay may cung sinh ra khoang do.
+     * mot cai la tu cho minh choi. Nen vang mat lau thi trang bi che sau hop PIN, xem
+     * [vn.huytl.homeworkgate.ui.HoiLaiPin].
      *
-     * Di bat quyen trong Settings thi khong duoi ve, vi chinh app vua day nguoi
-     * dung sang do.
+     * Hai phut moi tinh la lau, theo Ba Huy chon. Muoi giay truoc day chi du cho doi
+     * man trong app hay xoay may; sang Telegram chep token hay sang trinh duyet chep
+     * khoa AI thi lau hon the.
+     *
+     * Di bat quyen trong Settings thi khong hoi, vi chinh app vua day nguoi dung
+     * sang do.
      */
-    fun phaiVeManCon(): Boolean =
+    fun phaiHoiLaiPin(): Boolean =
         vn.huytl.homeworkgate.App.vangMatMs > VANG_MAT_TOI_DA && !dangChoMoCaiDat()
 
-    /** Vang mat lau hon the thi coi nhu da roi khoi app. */
-    private const val VANG_MAT_TOI_DA = 10_000L
+    /** Vang mat lau hon the thi coi nhu Ba Huy da roi may. */
+    private const val VANG_MAT_TOI_DA = 120_000L
 }

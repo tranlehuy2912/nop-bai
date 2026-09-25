@@ -17,33 +17,24 @@ import vn.huytl.homeworkgate.databinding.ActivitySetupBinding
 import vn.huytl.homeworkgate.dongbo.DongBo
 import vn.huytl.homeworkgate.guard.Heartbeat
 import vn.huytl.homeworkgate.guard.MocGio
-import vn.huytl.homeworkgate.guard.ParentMode
-import vn.huytl.homeworkgate.guard.PhienQuanLy
 import vn.huytl.homeworkgate.telegram.ApprovalService
 import vn.huytl.homeworkgate.telegram.TelegramClient
 
 /**
- * Man cai dat cua bo. Chi vao duoc khi da nhap dung PIN o man chinh, hoac khi
- * may chua cai dat lan nao.
+ * Man cai dat cua bo. Chi dung duoc khi da go dung PIN, o man chinh hay ngay tren
+ * man nay khi bi hoi lai, hoac khi may chua cai dat lan nao. Xem [HoiLaiPin].
  */
 class SetupActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivitySetupBinding
     private lateinit var prefs: Prefs
+    private val hoiLaiPin = HoiLaiPin(this)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySetupBinding.inflate(layoutInflater)
         setContentView(binding.root)
         prefs = Prefs.get(this)
-
-        // Vao thang man nay ma khong qua PIN thi dong lai. Lan dau chua co PIN
-        // thi cho vao, vi luc do chua co gi de bao ve.
-        if (prefs.hasPin() && !PhienQuanLy.daQuaPin && !ParentMode.isActive(this)) {
-            toast("Cần nhập mã PIN ở màn hình chính")
-            finish()
-            return
-        }
 
         chuaThanhHeThong()
         load()
@@ -77,16 +68,9 @@ class SetupActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-        // Giong trang cau hinh: roi khoi app roi quay lai thi khong duoc vao thang
-        // day nua. HomeActivity la singleTask nen mo no la don sach ca hai man.
-        if (PhienQuanLy.phaiVeManCon()) {
-            PhienQuanLy.daQuaPin = false
-            PhienQuanLy.thoiMoCaiDat()
-            startActivity(Intent(this, HomeActivity::class.java))
-            finish()
-            return
-        }
-        veCanhBao()
+        // Giong trang cau hinh: roi app lau, hay chua qua PIN, thi hoi PIN ngay tren
+        // trang nay. Chu da go ma chua bam Luu van con nguyen.
+        hoiLaiPin.roiMoi { veCanhBao() }
     }
 
     /**

@@ -34,13 +34,15 @@ import vn.huytl.homeworkgate.telegram.TelegramClient
  * khong muon moc dien thoai ra go lenh Telegram.
  *
  * Vao duoc day nghia la da qua PIN o man chon nguoi dung, nen trong nay khong hoi
- * PIN them lan nao nua.
+ * PIN them nua. Tru hai luc: roi may lau roi quay lai, va Android dung lai trang nay
+ * sau khi tat ngam app. Xem [HoiLaiPin].
  */
 class ParentActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityParentBinding
     private lateinit var prefs: Prefs
     private lateinit var gate: GateStore
+    private val hoiLaiPin = HoiLaiPin(this)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -172,20 +174,10 @@ class ParentActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-        if (PhienQuanLy.phaiVeManCon()) {
-            veManCon()
-            return
+        hoiLaiPin.roiMoi {
+            gate.tick()
+            render()
         }
-        gate.tick()
-        render()
-    }
-
-    /** Dong trang cau hinh, tra man hinh ve cho Le Hoa, va bat hoi lai PIN. */
-    private fun veManCon() {
-        PhienQuanLy.daQuaPin = false
-        PhienQuanLy.thoiMoCaiDat()
-        startActivity(Intent(this, HomeActivity::class.java))
-        finish()
     }
 
     /**
@@ -321,7 +313,7 @@ class ParentActivity : AppCompatActivity() {
      * Muon khoa lai thi gat cong tac, hoac bam "Khoa ngay" neu muon cat luon gio
      * choi cua con. Ra khoi day van phai nhap PIN lai lan sau.
      */
-    private fun traMay() = veManCon()
+    private fun traMay() = HoiLaiPin.veManCon(this)
 
     /**
      * Hoi so phut truoc khi duyet.
