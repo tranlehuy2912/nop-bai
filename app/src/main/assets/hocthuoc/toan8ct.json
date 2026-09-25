@@ -2,32 +2,43 @@
  "bo": "toan8ct",
  "mon": "Toán",
  "ten": "Công thức Toán 8",
- "ban": 1,
+ "ban": 2,
  "cac_bai": [
   {
-   "bai": "Bảy hằng đẳng thức đáng nhớ",
+   "bai": "Bài 6. Hiệu hai bình phương. Bình phương của một tổng hay một hiệu",
    "cac_the": [
-    {"ma": "hdt1", "hoi": "(a + b)²", "dap": "a² + 2ab + b²"},
-    {"ma": "hdt2", "hoi": "(a − b)²", "dap": "a² − 2ab + b²"},
     {"ma": "hdt3", "hoi": "a² − b²", "dap": "(a − b)(a + b)",
-     "dap_khac": ["(a + b)(a − b)"]},
-    {"ma": "hdt4", "hoi": "(a + b)³", "dap": "a³ + 3a²b + 3ab² + b³"},
-    {"ma": "hdt5", "hoi": "(a − b)³", "dap": "a³ − 3a²b + 3ab² − b³"},
-    {"ma": "hdt6", "hoi": "a³ + b³", "dap": "(a + b)(a² − ab + b²)",
-     "dap_khac": ["(a² − ab + b²)(a + b)"]},
-    {"ma": "hdt7", "hoi": "a³ − b³", "dap": "(a − b)(a² + ab + b²)",
-     "dap_khac": ["(a² + ab + b²)(a − b)"]}
+     "dap_khac": ["(a + b)(a − b)"], "trang": 31},
+    {"ma": "hdt1", "hoi": "(a + b)²", "dap": "a² + 2ab + b²", "trang": 31},
+    {"ma": "hdt2", "hoi": "(a − b)²", "dap": "a² − 2ab + b²", "trang": 32}
    ]
   },
   {
-   "bai": "Nhìn ra hằng đẳng thức để phân tích thành nhân tử",
+   "bai": "Bài 7. Lập phương của một tổng. Lập phương của một hiệu",
+   "cac_the": [
+    {"ma": "hdt4", "hoi": "(a + b)³", "dap": "a³ + 3a²b + 3ab² + b³", "trang": 34},
+    {"ma": "hdt5", "hoi": "(a − b)³", "dap": "a³ − 3a²b + 3ab² − b³", "trang": 35}
+   ]
+  },
+  {
+   "bai": "Bài 8. Tổng và hiệu hai lập phương",
+   "cac_the": [
+    {"ma": "hdt6", "hoi": "a³ + b³", "dap": "(a + b)(a² − ab + b²)",
+     "dap_khac": ["(a² − ab + b²)(a + b)"], "trang": 37},
+    {"ma": "hdt7", "hoi": "a³ − b³", "dap": "(a − b)(a² + ab + b²)",
+     "dap_khac": ["(a² + ab + b²)(a − b)"], "trang": 38}
+   ]
+  },
+  {
+   "bai": "Bài 9. Phân tích đa thức thành nhân tử",
    "cac_the": [
     {"ma": "pt1", "hoi": "a² + 2ab + b²", "dap": "(a + b)²",
-     "dap_khac": ["(b + a)²"]},
-    {"ma": "pt2", "hoi": "a² − 2ab + b²", "dap": "(a − b)²"},
+     "dap_khac": ["(b + a)²"], "trang": 43},
+    {"ma": "pt2", "hoi": "a² − 2ab + b²", "dap": "(a − b)²",
+     "dap_khac": ["(b − a)²"], "trang": 43},
     {"ma": "pt3", "hoi": "a³ + 3a²b + 3ab² + b³", "dap": "(a + b)³",
-     "dap_khac": ["(b + a)³"]},
-    {"ma": "pt4", "hoi": "a³ − 3a²b + 3ab² − b³", "dap": "(a − b)³"}
+     "dap_khac": ["(b + a)³"], "trang": 43},
+    {"ma": "pt4", "hoi": "a³ − 3a²b + 3ab² − b³", "dap": "(a − b)³", "trang": 43}
    ]
   }
  ]

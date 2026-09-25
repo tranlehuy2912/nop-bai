@@ -37,7 +37,7 @@ RANH = "2026-09-16T19:30"
 # Bai cuoi cua bo Cong thuc Toan 8 (assets/hocthuoc/toan8ct.json). Chon bai cuoi la
 # hoi ca bo, dung nhu cac muc thu nay gia dinh truoc 25/9/2026 khi chua co cho chon
 # "lop da hoc toi bai nao". Doi ten bai trong file thi sua o day.
-BAI_CUOI_TOAN = "Nhìn ra hằng đẳng thức để phân tích thành nhân tử"
+BAI_CUOI_TOAN = "Bài 9. Phân tích đa thức thành nhân tử"
 
 
 def danh_sach():
