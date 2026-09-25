@@ -15,6 +15,7 @@ import android.os.Looper
 import android.os.SystemClock
 import android.provider.Settings
 import android.util.Log
+import android.view.KeyEvent
 import android.view.accessibility.AccessibilityEvent
 import android.view.accessibility.AccessibilityNodeInfo
 import android.view.accessibility.AccessibilityWindowInfo
@@ -244,8 +245,11 @@ class GuardAccessibilityService : AccessibilityService() {
     }
 
 
-    /** Lan gan nhat da bat im tieng, de khong bat di bat lai lien tuc. */
-    private var lastHushMs = 0L
+    /**
+     * Dang trong mot dot chan nhac khi chua co quyen doc thong bao, de nhat ky chi ghi
+     * mot dong moi dot chu khong ghi moi nhip xet lai. Xem [xetNhacKhiChuaCoQuyen].
+     */
+    private var dangChanNhacMu = false
 
     /** Lan gan nhat doc lai danh sach mien tru he thong. */
     private var lanDocMienTru = 0L
@@ -253,19 +257,14 @@ class GuardAccessibilityService : AccessibilityService() {
     /**
      * Con bam play lai tu thanh thong bao thi khong co cua so nao mo ra, nen
      * [onAccessibilityEvent] khong chay va tieng cu the ma phat. Cho nay nghe
-     * thang su kien phat tieng.
+     * thang su kien phat tieng, roi de [xetNhac] xet - ca khi co lan khi chua co
+     * quyen doc thong bao.
      *
-     * Viec xet de [xetNhac] lam, vi no biet ten goi dang phat. Doan duoi chi chay
-     * khi chua bat quyen doc thong bao: luc do khong biet ai dang keu, chi biet la
-     * co tieng, nen bat im ca may.
-     *
-     * Khong chan tieng cua app trong danh sach trang: chung duoc phep dung ca khi
-     * het gio, ma mot app hoc tieng Anh khong doc duoc thanh thi coi nhu hong. Tru
-     * gio ngu, luc do danh sach trang cung khoa, giong [LuatNhac].
-     * Nhung KHONG tha theo [systemEssentials] nhu truoc: do la launcher va ban phim,
-     * chung khong bao gio phat nhac. Tha chung nghia la con dung o man hinh chinh,
-     * vuot thanh thong bao xuong bam play - dung canh hay lam nhat - thi khong ai
-     * chan gi.
+     * Truoc 25/9/2026 duong chua co quyen bat im ngay tai day, roi nghi ba giay moi
+     * cho bat lan nua. Ba giay do la cho lach: bat im chi lam he thong van nho tieng
+     * va hai giay sau moi bao app kia mat quyen, con bam Phat lai trong luc nghi la
+     * nhac chay mai vi khong con nhip nao xet lai. Gio moi viec nam o
+     * [xetNhacKhiChuaCoQuyen], va no tu hen xet lai den khi may het tieng.
      */
     private val playbackCallback = object : AudioManager.AudioPlaybackCallback() {
         override fun onPlaybackConfigChanged(configs: MutableList<AudioPlaybackConfiguration>) {
@@ -279,20 +278,6 @@ class GuardAccessibilityService : AccessibilityService() {
             // danh sach cua so. Gop chum lai thanh mot lan, giong [gopCuaSoRunnable].
             mainHandler.removeCallbacks(nhipNhacRunnable)
             mainHandler.postDelayed(nhipNhacRunnable, GOP_TIENG_MS)
-
-            if (configs.isEmpty()) return
-            if (TrinhPhat.coQuyen(this@GuardAccessibilityService)) return
-            if (gate.isOpen()) return
-
-            val pkg = currentPackage
-            if (pkg != null && pkg in prefs.allowedPackages && !gate.trongGioNgu()) return
-
-            val now = SystemClock.elapsedRealtime()
-            if (now - lastHushMs < HUSH_COOLDOWN_MS) return
-            lastHushMs = now
-
-            Log.i(TAG, "co tieng phat trong luc dang khoa, bat im (app truoc mat=$pkg)")
-            AudioHush.hush(this@GuardAccessibilityService)
         }
     }
 
@@ -705,7 +690,7 @@ class GuardAccessibilityService : AccessibilityService() {
             Notifier.sessionEnded(this, reason)
             // Im tieng ngay khi cat phien, khong doi den luc con mo lai app: neu
             // dang nghe nhac thi day ve man hinh chinh van con nghe duoc.
-            AudioHush.hush(this)
+            batImVaXetLai()
             warned = false
             // Chot lai so dung app ngay tai day. Duong binh thuong la evaluate()
             // ben duoi day con ra khoi game, va viec doi cua so tu chot ho. Nhung
@@ -802,16 +787,26 @@ class GuardAccessibilityService : AccessibilityService() {
     private fun xetNhac() {
         mainHandler.removeCallbacks(nhipNhacRunnable)
 
-        // Ba Huy dang mo toan bo may thi khong dung gi ca. Chua bat quyen doc thong
-        // bao thi khong biet ai dang keu, luc do [playbackCallback] lo phan bat im
-        // theo cach cu.
-        if (ParentMode.isActive(this) || !TrinhPhat.coQuyen(this)) {
+        // Ba Huy dang mo toan bo may thi khong dung gi ca.
+        if (ParentMode.isActive(this)) {
+            dangChanNhacMu = false
             if (nhacDangPhat.isNotEmpty()) {
                 nhacDangPhat = emptySet()
                 demGioTungApp(goiDangHienNeuSang())
             }
             return
         }
+
+        // Chua bat quyen doc thong bao thi khong biet ai dang keu: di duong rieng.
+        if (!TrinhPhat.coQuyen(this)) {
+            if (nhacDangPhat.isNotEmpty()) {
+                nhacDangPhat = emptySet()
+                demGioTungApp(goiDangHienNeuSang())
+            }
+            henXetNhac(xetNhacKhiChuaCoQuyen())
+            return
+        }
+        dangChanNhacMu = false
 
         val trongGioHoc = buoiDangChan() != null
         val trongGioNgu = gate.trongGioNgu()
@@ -876,9 +871,97 @@ class GuardAccessibilityService : AccessibilityService() {
      * ma no van keu thi phai quay lai xem no da im chua. Lay nhanh kia thi lan bao
      * thu hai - lan doi sang cach bat im ca may - khong bao gio toi.
      */
-    private fun syncNhipNhac(conTieng: Boolean) {
+    private fun syncNhipNhac(conTieng: Boolean) = henXetNhac(if (conTieng) NHIP_NHAC_MS else null)
+
+    /** Hen lan [xetNhac] sau [sauMs], hoac bo moi lan hen khi [sauMs] la null. */
+    private fun henXetNhac(sauMs: Long?) {
         mainHandler.removeCallbacks(nhipNhacRunnable)
-        if (conTieng) mainHandler.postDelayed(nhipNhacRunnable, NHIP_NHAC_MS)
+        if (sauMs != null) mainHandler.postDelayed(nhipNhacRunnable, sauMs)
+    }
+
+    /**
+     * Xet tieng khi CHUA co quyen doc thong bao. Tra ve bao lau nua xet lai, hoac null
+     * khi may da het tieng.
+     *
+     * Khong biet ai dang keu, chi biet trong may co nhac ([AudioManager.isMusicActive]).
+     * Luat van la [LuatNhac], con cau "app nay duoc keu khi het gio khong" thi tra loi
+     * theo app dang truoc mat, y nhu truoc day: dang mo mot app trong danh sach trang
+     * thi tieng cua no duoc keu.
+     *
+     * VI SAO KHONG CHI GIANH QUYEN PHAT TIENG NHU TRUOC. Thu tren may ao Android 13
+     * ngay 25/9/2026, voi mot may nhac thu co the nhac o thanh thong bao: gianh quyen
+     * xong thi he thong chi van nho tieng trinh phat, hai giay sau moi bao no mat
+     * quyen. Con bam Phat lai trong hai giay do la tieng tro lai. App nhac khong chiu
+     * nhuong tieng thi con chang can bam gi: bon giay sau he thong tu tra lai am
+     * luong, va nhac chay tiep den het buoi.
+     *
+     * Nen gio lam hai lop, va xet lai moi [NHIP_CHAN_NHAC_MS] den khi het tieng:
+     *  - bam phim Dung cho trinh phat dang giu nut media, tuc la dung cai con vua bam
+     *    Phat o thanh thong bao. App nao co the nhac o do cung nghe phim nay, ke ca
+     *    app khong chiu nhuong tieng;
+     *  - gianh quyen phat tieng nhu cu, cho app khong nghe phim media.
+     *
+     * Van chua bang duong co quyen: phim Dung di toi trinh phat moi nhat, nen hai app
+     * cung keu thi co the bam nham app duoc phep. Bat quyen doc thong bao thi het
+     * chuyen do - xem canh bao DOC_THONG_BAO trong [Permissions].
+     */
+    private fun xetNhacKhiChuaCoQuyen(): Long? {
+        val am = audioManager ?: return null
+        if (!am.isMusicActive) {
+            dangChanNhacMu = false
+            return null
+        }
+        val pkg = currentPackage
+        val trongGioHoc = buoiDangChan() != null
+        val trongGioNgu = gate.trongGioNgu()
+        val xu = LuatNhac.xet(
+            laAppNhac = false,
+            duocKhiHetGio = pkg != null && pkg in prefs.allowedPackages,
+            hetHanNgay = false,
+            trongGioNgu = trongGioNgu,
+            trongGioHoc = trongGioHoc,
+            congMo = gate.isOpen(),
+        )
+        // Duoc keu thi van theo doi, nhip thua: het gio giua chung, hay con roi app
+        // trong danh sach trang, thi khong co su kien phat tieng nao bao cho biet.
+        if (xu == XuLyNhac.CHO_PHAT) {
+            dangChanNhacMu = false
+            return NHIP_NHAC_MS
+        }
+
+        if (!dangChanNhacMu) {
+            dangChanNhacMu = true
+            val ly = when {
+                trongGioHoc -> "tới giờ đi học"
+                trongGioNgu -> "quá giờ đi ngủ"
+                else -> "đang khoá"
+            }
+            Log.i(TAG, "co nhac luc dang khoa, chua co quyen doc thong bao: bam Dung va bat im (app truoc mat=$pkg)")
+            DayLog.add(this, "Dừng nhạc chạy nền: $ly")
+        }
+        bamPhimDung(am)
+        AudioHush.hush(this)
+        return NHIP_CHAN_NHAC_MS
+    }
+
+    /** Bam phim Dung cua tai nghe, cho trinh phat dang giu nut media. */
+    private fun bamPhimDung(am: AudioManager) {
+        runCatching {
+            am.dispatchMediaKeyEvent(KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_MEDIA_PAUSE))
+            am.dispatchMediaKeyEvent(KeyEvent(KeyEvent.ACTION_UP, KeyEvent.KEYCODE_MEDIA_PAUSE))
+        }.onFailure { Log.w(TAG, "khong bam duoc phim Dung: ${it.message}") }
+    }
+
+    /**
+     * Bat im ngay, roi xet lai nhac ngay sau do.
+     *
+     * Bat im mot lan thi app khong chiu nhuong tieng chi bi van nho vai giay, va khong
+     * ban ra su kien phat tieng nao de [playbackCallback] biet ma xet lai. Hen [xetNhac]
+     * o day thi duong nao cung theo den khi het tieng.
+     */
+    private fun batImVaXetLai() {
+        AudioHush.hush(this)
+        mainHandler.post(nhipNhacRunnable)
     }
 
     /**
@@ -1175,7 +1258,7 @@ class GuardAccessibilityService : AccessibilityService() {
                 }
                 Day.DAY -> {
                     Log.i(TAG, "chan $pkg: ${ly.first} (khongChiuDi=$khongChiuDi)")
-                    AudioHush.hush(this)
+                    batImVaXetLai()
                     // Trong gio di hoc thi KHONG tu mo man cua Le Hoa. Man chan
                     // nhuong cho chinh app nay, nen mo app ra la buc tuong "toi gio
                     // di hoc" tan luon - dung cai vua day di lai tu mo cua sau.
@@ -1694,8 +1777,15 @@ class GuardAccessibilityService : AccessibilityService() {
          */
         private const val GHI_SU_DUNG_LAI_MS = 5 * 60_000L
 
-        /** Bat im xong thi chinh viec do lai sinh ra su kien, nen phai cho mot nhip. */
-        private const val HUSH_COOLDOWN_MS = 3_000L
+        /**
+         * Bao lau xet lai mot lan trong luc dang chan nhac ma chua co quyen doc thong
+         * bao.
+         *
+         * Ba giay: ngan hon bon giay he thong tu tra lai am luong cho app khong chiu
+         * nhuong tieng (thu tren may ao Android 13 ngay 25/9/2026), nen app do khong
+         * kip keu lai.
+         */
+        private const val NHIP_CHAN_NHAC_MS = 3_000L
 
         /** Vang mat ngan hon the thi khong bao, vi bind lai vai giay la chuyen thuong. */
         private const val REPORT_ABSENCE_MS = 60_000L

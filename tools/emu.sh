@@ -92,9 +92,20 @@ cmd_perms() {
   adb shell appops set $PKG SYSTEM_ALERT_WINDOW allow
   adb shell dpm set-active-admin "$PKG/.guard.AdminReceiver" || true
   # Bat Accessibility. Tren may that day la man hinh bo phai tu vao bam.
+  #
+  # Xoa truoc roi moi ghi. "am instrument" giet tien trinh app trong luc dich vu
+  # dang chay, va Android danh dau dich vu la "Crashed services", khong tu bind lai.
+  # Ghi lai dung gia tri cu thi he thong khong thay gi doi, dich vu nam chet: thu tren
+  # may ao ngay 25/9/2026, nhac phat ca buoi ma khong ai chan.
+  adb shell settings delete secure enabled_accessibility_services >/dev/null || true
+  sleep 1
   adb shell settings put secure enabled_accessibility_services \
     "$PKG/$PKG.guard.GuardAccessibilityService"
   adb shell settings put secure accessibility_enabled 1
+  # Quyen doc thong bao: co no thi het gio may dung dung app dang phat nhac, thieu
+  # no thi chi bam phim Dung va gianh tieng mu. Muon thu duong thieu quyen thi go:
+  #   adb shell cmd notification disallow_listener $PKG/$PKG.guard.TaiThongBao
+  adb shell cmd notification allow_listener "$PKG/$PKG.guard.TaiThongBao" || true
   echo "Da cap quyen."
 }
 

@@ -262,16 +262,22 @@ object Permissions {
             )
         }
 
-        // Chi bao khi Ba Huy da dat app nghe nhac nen. Chua dung tinh nang do thi
-        // mot dong canh bao ve quyen khong ai can chi lam bang canh bao dai them.
-        if (prefs.nhacPackages.isNotEmpty() && !hasNotificationAccess(context)) {
+        // Bao ca khi Ba Huy chua dat app nghe nhac nen, va bao nang.
+        //
+        // Truoc 25/9/2026 dong nay chi hien khi da dat app nghe nen, voi y la thieu
+        // quyen thi may van bat im duoc ca may. Thu tren may ao Android 13 thi khong:
+        // bat im chi van nho tieng vai giay, va con bam Phat o thanh thong bao la nghe
+        // tiep. Khong co quyen nay thi may khong biet app nao dang phat de dung dung app
+        // do. Xem [GuardAccessibilityService.xetNhacKhiChuaCoQuyen].
+        if (!hasNotificationAccess(context)) {
             add(
                 Thieu(
                     Viec.DOC_THONG_BAO,
                     "Chưa cho app đọc thông báo",
-                    "Thiếu thì máy không đếm được số phút nghe nhạc nền, " +
-                        "và hết giờ chơi là mọi tiếng đều bị tắt.",
-                    nang = false
+                    "Thiếu thì hết giờ con vẫn có thể bấm Phát nhạc ở thanh thông báo: " +
+                        "máy không biết app nào đang phát để dừng đúng app đó, " +
+                        "và không đếm được số phút nghe nhạc nền.",
+                    nang = true
                 )
             )
         }
