@@ -2,13 +2,58 @@
  "bo": "toan8ct",
  "mon": "Toán",
  "ten": "Công thức Toán 8",
- "ban": 2,
+ "ban": 3,
  "cac_bai": [
+  {
+   "bai": "Bài 1. Đơn thức",
+   "cac_the": [
+    {"ma": "b1.he-so", "hoi": "Đơn thức thu gọn −6x³y có hệ số là bao nhiêu?", "dap": "−6", "trang": 7},
+    {"ma": "b1.phan-bien", "hoi": "Đơn thức thu gọn −6x³y có phần biến là gì?", "dap": "x³y", "trang": 7},
+    {"ma": "b1.bac", "hoi": "Bậc của một đơn thức thu gọn (hệ số khác 0) là tổng các … của các biến", "dap": "số mũ", "dap_khac": ["các số mũ"], "trang": 7},
+    {"ma": "b1.bac-vd", "hoi": "Đơn thức 5x²y³z có bậc là bao nhiêu?", "dap": "6", "trang": 7},
+    {"ma": "b1.bac-so", "hoi": "Một số khác 0 là đơn thức thu gọn bậc mấy?", "dap": "0", "dap_khac": ["bậc 0"], "trang": 7},
+    {"ma": "b1.dong-dang", "hoi": "Hai đơn thức đồng dạng là hai đơn thức với hệ số khác 0 và có … giống nhau", "dap": "phần biến", "trang": 8},
+    {"ma": "b1.cong", "hoi": "Cộng hai đơn thức đồng dạng: 3xy² + (−5)xy² = ?", "dap": "−2xy²", "trang": 9}
+   ]
+  },
+  {
+   "bai": "Bài 2. Đa thức",
+   "cac_the": [
+    {"ma": "b2.da-thuc", "hoi": "Đa thức là tổng của những gì?", "dap": "đơn thức", "dap_khac": ["những đơn thức", "các đơn thức"], "trang": 11},
+    {"ma": "b2.hang-tu", "hoi": "Mỗi đơn thức trong một đa thức gọi là gì của đa thức đó?", "dap": "hạng tử", "dap_khac": ["một hạng tử"], "trang": 11},
+    {"ma": "b2.thu-gon", "hoi": "Đa thức thu gọn là đa thức không có hai hạng tử nào …", "dap": "đồng dạng", "trang": 12},
+    {"ma": "b2.bac", "hoi": "Bậc của một đa thức là bậc của hạng tử có bậc … trong dạng thu gọn của đa thức đó", "dap": "cao nhất", "dap_khac": ["lớn nhất"], "trang": 13},
+    {"ma": "b2.khong", "hoi": "Số 0 cũng là một đa thức và không có bậc. Nó gọi là đa thức gì?", "dap": "đa thức không", "dap_khac": ["không", "đa thức 0"], "trang": 13}
+   ]
+  },
+  {
+   "bai": "Bài 3. Phép cộng và phép trừ đa thức",
+   "cac_the": [
+    {"ma": "b3.cong", "hoi": "Muốn cộng hai đa thức, ta nối chúng bởi dấu “+” rồi bỏ dấu ngoặc (nếu có) và … đa thức nhận được", "dap": "thu gọn", "trang": 15},
+    {"ma": "b3.tru", "hoi": "Với A, B, C là những đa thức: nếu A − B = C thì A = ?", "dap": "B + C", "dap_khac": ["C + B"], "trang": 15}
+   ]
+  },
+  {
+   "bai": "Bài 4. Phép nhân đa thức",
+   "cac_the": [
+    {"ma": "b4.don-thuc", "hoi": "Nhân hai đơn thức: 8x²yz · (−1/4 xy) = ?", "dap": "−2x³y²z", "trang": 19},
+    {"ma": "b4.don-da", "hoi": "Muốn nhân một đơn thức với một đa thức, ta nhân đơn thức với từng hạng tử của đa thức rồi … các tích với nhau", "dap": "cộng", "trang": 20},
+    {"ma": "b4.phan-phoi", "hoi": "Tính chất phân phối: A · (B + C) = ?", "dap": "A.B + A.C", "dap_khac": ["AB + AC", "A.C + A.B", "AC + AB"], "trang": 20}
+   ]
+  },
+  {
+   "bai": "Bài 5. Phép chia đa thức cho đơn thức",
+   "cac_the": [
+    {"ma": "b5.chia-het", "hoi": "Đơn thức A chia hết cho đơn thức B (B ≠ 0) khi mỗi biến của B đều là biến của A với số mũ … số mũ của nó trong A", "dap": "không lớn hơn", "dap_khac": ["nhỏ hơn hoặc bằng", "không vượt quá", "≤"], "trang": 23},
+    {"ma": "b5.vd", "hoi": "Thực hiện phép chia: 5x²yz³ : (−2x²z²) = ?", "dap": "−5/2 yz", "dap_khac": ["−(5/2)yz", "−2,5yz", "−2.5yz"], "trang": 23},
+    {"ma": "b5.da-thuc", "hoi": "Muốn chia đa thức A cho đơn thức B, ta chia từng … của A cho B rồi cộng các kết quả với nhau", "dap": "hạng tử", "trang": 24}
+   ]
+  },
   {
    "bai": "Bài 6. Hiệu hai bình phương. Bình phương của một tổng hay một hiệu",
    "cac_the": [
-    {"ma": "hdt3", "hoi": "a² − b²", "dap": "(a − b)(a + b)",
-     "dap_khac": ["(a + b)(a − b)"], "trang": 31},
+    {"ma": "b6.hdt", "hoi": "Nếu hai biểu thức A và B luôn nhận giá trị bằng nhau với mọi giá trị của biến thì ta nói A = B là một đồng nhất thức hay một …", "dap": "hằng đẳng thức", "trang": 30},
+    {"ma": "hdt3", "hoi": "a² − b²", "dap": "(a − b)(a + b)", "dap_khac": ["(a + b)(a − b)"], "trang": 31},
     {"ma": "hdt1", "hoi": "(a + b)²", "dap": "a² + 2ab + b²", "trang": 31},
     {"ma": "hdt2", "hoi": "(a − b)²", "dap": "a² − 2ab + b²", "trang": 32}
    ]
@@ -23,22 +68,292 @@
   {
    "bai": "Bài 8. Tổng và hiệu hai lập phương",
    "cac_the": [
-    {"ma": "hdt6", "hoi": "a³ + b³", "dap": "(a + b)(a² − ab + b²)",
-     "dap_khac": ["(a² − ab + b²)(a + b)"], "trang": 37},
-    {"ma": "hdt7", "hoi": "a³ − b³", "dap": "(a − b)(a² + ab + b²)",
-     "dap_khac": ["(a² + ab + b²)(a − b)"], "trang": 38}
+    {"ma": "hdt6", "hoi": "a³ + b³", "dap": "(a + b)(a² − ab + b²)", "dap_khac": ["(a² − ab + b²)(a + b)"], "trang": 37},
+    {"ma": "hdt7", "hoi": "a³ − b³", "dap": "(a − b)(a² + ab + b²)", "dap_khac": ["(a² + ab + b²)(a − b)"], "trang": 38}
    ]
   },
   {
    "bai": "Bài 9. Phân tích đa thức thành nhân tử",
    "cac_the": [
-    {"ma": "pt1", "hoi": "a² + 2ab + b²", "dap": "(a + b)²",
-     "dap_khac": ["(b + a)²"], "trang": 43},
-    {"ma": "pt2", "hoi": "a² − 2ab + b²", "dap": "(a − b)²",
-     "dap_khac": ["(b − a)²"], "trang": 43},
-    {"ma": "pt3", "hoi": "a³ + 3a²b + 3ab² + b³", "dap": "(a + b)³",
-     "dap_khac": ["(b + a)³"], "trang": 43},
+    {"ma": "b9.dinh-nghia", "hoi": "Phân tích đa thức thành nhân tử (hay thừa số) là biến đổi đa thức đó thành một … của những đa thức", "dap": "tích", "dap_khac": ["một tích"], "trang": 42},
+    {"ma": "b9.nhan-tu-chung", "hoi": "Phân tích thành nhân tử bằng cách đặt nhân tử chung: x³ + x = ?", "dap": "x(x² + 1)", "dap_khac": ["x(1 + x²)", "(x² + 1)x", "(1 + x²)x"], "trang": 42},
+    {"ma": "pt1", "hoi": "a² + 2ab + b²", "dap": "(a + b)²", "dap_khac": ["(b + a)²"], "trang": 43},
+    {"ma": "pt2", "hoi": "a² − 2ab + b²", "dap": "(a − b)²", "dap_khac": ["(b − a)²"], "trang": 43},
+    {"ma": "pt3", "hoi": "a³ + 3a²b + 3ab² + b³", "dap": "(a + b)³", "dap_khac": ["(b + a)³"], "trang": 43},
     {"ma": "pt4", "hoi": "a³ − 3a²b + 3ab² − b³", "dap": "(a − b)³", "trang": 43}
+   ]
+  },
+  {
+   "bai": "Bài 10. Tứ giác",
+   "cac_the": [
+    {"ma": "b10.duong-cheo", "hoi": "Trong tứ giác, đoạn thẳng nối hai đỉnh đối nhau gọi là gì?", "dap": "đường chéo", "dap_khac": ["một đường chéo"], "trang": 49},
+    {"ma": "b10.tong-goc", "hoi": "Tổng các góc của một tứ giác bằng bao nhiêu độ?", "dap": "360°", "dap_khac": ["360", "360 độ"], "trang": 50}
+   ]
+  },
+  {
+   "bai": "Bài 11. Hình thang cân",
+   "cac_the": [
+    {"ma": "b11.hinh-thang", "hoi": "Hình thang là tứ giác có hai cạnh đối như thế nào?", "dap": "song song", "dap_khac": ["song song với nhau"], "trang": 52},
+    {"ma": "b11.htc", "hoi": "Hình thang cân là hình thang có hai góc kề một … bằng nhau", "dap": "đáy", "dap_khac": ["cạnh đáy"], "trang": 52},
+    {"ma": "b11.ke-ben", "hoi": "Trong một hình thang, hai góc kề một cạnh bên có tổng bằng bao nhiêu độ?", "dap": "180°", "dap_khac": ["180", "180 độ"], "trang": 53},
+    {"ma": "b11.canh-ben", "hoi": "Trong hình thang cân, hai cạnh bên như thế nào với nhau?", "dap": "bằng nhau", "trang": 53},
+    {"ma": "b11.cheo-bang", "hoi": "Trong hình thang cân, ngoài hai cạnh bên thì hai … cũng bằng nhau", "dap": "đường chéo", "trang": 54},
+    {"ma": "b11.dh-cheo", "hoi": "Hình thang có hai đường chéo bằng nhau là hình gì?", "dap": "hình thang cân", "dap_khac": ["thang cân"], "trang": 54}
+   ]
+  },
+  {
+   "bai": "Bài 12. Hình bình hành",
+   "cac_the": [
+    {"ma": "b12.dinh-nghia", "hoi": "Hình bình hành là tứ giác có các cạnh đối như thế nào?", "dap": "song song", "dap_khac": ["song song với nhau"], "trang": 57},
+    {"ma": "b12.goc-doi", "hoi": "Trong hình bình hành, các góc đối như thế nào với nhau?", "dap": "bằng nhau", "trang": 58},
+    {"ma": "b12.cheo", "hoi": "Trong hình bình hành, hai đường chéo cắt nhau tại … của mỗi đường", "dap": "trung điểm", "trang": 58},
+    {"ma": "b12.ke", "hoi": "Trong hình bình hành, hai góc kề một cạnh bất kì có tổng bằng bao nhiêu độ?", "dap": "180°", "dap_khac": ["180", "180 độ"], "trang": 58},
+    {"ma": "b12.dh-canh", "hoi": "Tứ giác có một cặp cạnh đối song song và bằng nhau là hình gì?", "dap": "hình bình hành", "dap_khac": ["bình hành"], "trang": 59},
+    {"ma": "b12.dh-cheo", "hoi": "Tứ giác có hai đường chéo cắt nhau tại trung điểm của mỗi đường là hình gì?", "dap": "hình bình hành", "dap_khac": ["bình hành"], "trang": 60}
+   ]
+  },
+  {
+   "bai": "Bài 13. Hình chữ nhật",
+   "cac_the": [
+    {"ma": "b13.dinh-nghia", "hoi": "Hình chữ nhật là tứ giác có bốn góc gì?", "dap": "vuông", "dap_khac": ["góc vuông", "bốn góc vuông"], "trang": 64},
+    {"ma": "b13.ba-goc", "hoi": "Tứ giác có ba góc vuông là hình gì?", "dap": "hình chữ nhật", "dap_khac": ["chữ nhật"], "trang": 64},
+    {"ma": "b13.cheo", "hoi": "Trong hình chữ nhật, hai đường chéo bằng nhau và cắt nhau tại … của mỗi đường", "dap": "trung điểm", "trang": 64},
+    {"ma": "b13.trung-tuyen", "hoi": "Trong tam giác vuông, đường trung tuyến ứng với cạnh huyền bằng bao nhiêu phần cạnh huyền?", "dap": "một nửa", "dap_khac": ["nửa", "1/2"], "trang": 64},
+    {"ma": "b13.dh-goc", "hoi": "Hình bình hành có một góc vuông là hình gì?", "dap": "hình chữ nhật", "dap_khac": ["chữ nhật"], "trang": 65},
+    {"ma": "b13.dh-cheo", "hoi": "Hình bình hành có hai đường chéo bằng nhau là hình gì?", "dap": "hình chữ nhật", "dap_khac": ["chữ nhật"], "trang": 65}
+   ]
+  },
+  {
+   "bai": "Bài 14. Hình thoi và hình vuông",
+   "cac_the": [
+    {"ma": "b14.thoi", "hoi": "Hình thoi là tứ giác có bốn … bằng nhau", "dap": "cạnh", "dap_khac": ["bốn cạnh"], "trang": 67},
+    {"ma": "b14.thoi-cheo", "hoi": "Trong hình thoi, hai đường chéo như thế nào với nhau?", "dap": "vuông góc", "dap_khac": ["vuông góc với nhau"], "trang": 68},
+    {"ma": "b14.thoi-pg", "hoi": "Trong hình thoi, hai đường chéo là các đường gì của các góc trong hình thoi?", "dap": "phân giác", "dap_khac": ["đường phân giác", "các đường phân giác"], "trang": 68},
+    {"ma": "b14.dh-thoi-ke", "hoi": "Hình bình hành có hai cạnh kề bằng nhau là hình gì?", "dap": "hình thoi", "dap_khac": ["thoi"], "trang": 68},
+    {"ma": "b14.dh-thoi-cheo", "hoi": "Hình bình hành có hai đường chéo vuông góc với nhau là hình gì?", "dap": "hình thoi", "dap_khac": ["thoi"], "trang": 68},
+    {"ma": "b14.vuong", "hoi": "Hình vuông là tứ giác có bốn góc vuông và bốn … bằng nhau", "dap": "cạnh", "dap_khac": ["bốn cạnh"], "trang": 69},
+    {"ma": "b14.dh-vuong-ke", "hoi": "Hình chữ nhật có hai cạnh kề bằng nhau là hình gì?", "dap": "hình vuông", "dap_khac": ["vuông"], "trang": 70},
+    {"ma": "b14.dh-vuong-cheo", "hoi": "Hình chữ nhật có hai đường chéo vuông góc là hình gì?", "dap": "hình vuông", "dap_khac": ["vuông"], "trang": 70},
+    {"ma": "b14.dh-thoi-goc", "hoi": "Hình thoi có một góc vuông là hình gì?", "dap": "hình vuông", "dap_khac": ["vuông"], "trang": 70}
+   ]
+  },
+  {
+   "bai": "Bài 15. Định lí Thalès trong tam giác",
+   "cac_the": [
+    {"ma": "b15.ti-so", "hoi": "Tỉ số của hai đoạn thẳng là tỉ số độ dài của chúng theo cùng một …", "dap": "đơn vị đo", "dap_khac": ["đơn vị"], "trang": 77},
+    {"ma": "b15.thales-1", "hoi": "Tam giác ABC có B'C' ∥ BC (B' thuộc AB, C' thuộc AC). Theo định lí Thalès, AB'/AB bằng tỉ số nào?", "dap": "AC'/AC", "trang": 78},
+    {"ma": "b15.thales-2", "hoi": "Tam giác ABC có B'C' ∥ BC (B' thuộc AB, C' thuộc AC). Theo định lí Thalès, AB'/B'B bằng tỉ số nào?", "dap": "AC'/C'C", "trang": 78},
+    {"ma": "b15.dao", "hoi": "Một đường thẳng cắt hai cạnh của tam giác và định ra trên hai cạnh đó những đoạn thẳng tương ứng tỉ lệ. Đường thẳng đó như thế nào với cạnh còn lại?", "dap": "song song", "dap_khac": ["song song với cạnh còn lại"], "trang": 79}
+   ]
+  },
+  {
+   "bai": "Bài 16. Đường trung bình của tam giác",
+   "cac_the": [
+    {"ma": "b16.dinh-nghia", "hoi": "Đường trung bình của tam giác là đoạn thẳng nối … hai cạnh của tam giác", "dap": "trung điểm", "trang": 81},
+    {"ma": "b16.tinh-chat", "hoi": "Đường trung bình của tam giác song song với cạnh thứ ba và bằng bao nhiêu phần cạnh đó?", "dap": "một nửa", "dap_khac": ["nửa", "1/2"], "trang": 82},
+    {"ma": "b16.vd", "hoi": "Tam giác ABC có M, N lần lượt là trung điểm của AB, AC và BC = 10 cm. MN dài bao nhiêu cm?", "dap": "5", "dap_khac": ["5 cm"], "trang": 82}
+   ]
+  },
+  {
+   "bai": "Bài 17. Tính chất đường phân giác của tam giác",
+   "cac_the": [
+    {"ma": "b17.ti-le", "hoi": "Trong tam giác, đường phân giác của một góc chia cạnh đối diện thành hai đoạn thẳng … với hai cạnh kề hai đoạn ấy", "dap": "tỉ lệ", "trang": 84},
+    {"ma": "b17.phan-giac", "hoi": "AD là đường phân giác của góc BAC trong tam giác ABC (D thuộc BC). DB/DC bằng tỉ số nào?", "dap": "AB/AC", "trang": 84}
+   ]
+  },
+  {
+   "bai": "Bài 18. Thu thập và phân loại dữ liệu",
+   "cac_the": [
+    {"ma": "b18.truc-tiep", "hoi": "Thu thập dữ liệu qua quan sát, làm thí nghiệm, lập bảng hỏi, phỏng vấn là thu thập trực tiếp hay gián tiếp?", "dap": "trực tiếp", "trang": 90},
+    {"ma": "b18.gian-tiep", "hoi": "Thu thập dữ liệu từ những nguồn có sẵn như sách, báo, mạng Internet là thu thập trực tiếp hay gián tiếp?", "dap": "gián tiếp", "trang": 90},
+    {"ma": "b18.lien-tuc", "hoi": "Số liệu có thể nhận giá trị tuỳ ý trong một khoảng nào đó gọi là số liệu gì?", "dap": "liên tục", "dap_khac": ["số liệu liên tục"], "trang": 91},
+    {"ma": "b18.roi-rac", "hoi": "Số liệu không phải là số liệu liên tục gọi là số liệu gì?", "dap": "rời rạc", "dap_khac": ["số liệu rời rạc"], "trang": 91},
+    {"ma": "b18.phep-do", "hoi": "Số liệu thu được từ các phép đo như chiều cao, cân nặng, nhiệt độ thường là số liệu liên tục hay rời rạc?", "dap": "liên tục", "dap_khac": ["số liệu liên tục"], "trang": 91}
+   ]
+  },
+  {
+   "bai": "Bài 19. Biểu diễn dữ liệu bằng bảng, biểu đồ",
+   "cac_the": [
+    {"ma": "b19.doan-thang", "hoi": "Muốn biểu diễn sự thay đổi của một đại lượng theo thời gian, ta dùng biểu đồ gì?", "dap": "biểu đồ đoạn thẳng", "dap_khac": ["đoạn thẳng"], "trang": 95},
+    {"ma": "b19.cot-kep", "hoi": "Muốn so sánh hai tập dữ liệu với nhau, ta dùng biểu đồ gì?", "dap": "biểu đồ cột kép", "dap_khac": ["cột kép"], "trang": 95},
+    {"ma": "b19.quat-tron", "hoi": "Muốn biểu diễn tỉ lệ các phần trong tổng thể, ta dùng biểu đồ gì?", "dap": "biểu đồ hình quạt tròn", "dap_khac": ["hình quạt tròn", "quạt tròn", "biểu đồ quạt tròn"], "trang": 95}
+   ]
+  },
+  {
+   "bai": "Bài 20. Phân tích số liệu thống kê dựa vào biểu đồ",
+   "cac_the": [
+    {"ma": "b20.goc-truc", "hoi": "Trong biểu đồ cột, khi gốc của trục đứng khác 0 thì tỉ lệ chiều cao của các cột … tỉ lệ số liệu mà chúng biểu diễn", "dap": "không bằng", "trang": 100}
+   ]
+  },
+  {
+   "bai": "Bài 21. Phân thức đại số",
+   "cac_the": [
+    {"ma": "b21.mau-khac", "hoi": "Phân thức đại số là biểu thức có dạng A/B, trong đó A, B là hai đa thức và B khác gì?", "dap": "đa thức 0", "dap_khac": ["0", "đa thức không", "khác đa thức 0", "khác 0"], "trang": 5},
+    {"ma": "b21.tu", "hoi": "Trong phân thức A/B, A gọi là gì?", "dap": "tử thức", "dap_khac": ["tử"], "trang": 5},
+    {"ma": "b21.mau", "hoi": "Trong phân thức A/B, B gọi là gì?", "dap": "mẫu thức", "dap_khac": ["mẫu"], "trang": 5},
+    {"ma": "b21.bang", "hoi": "Hai phân thức A/B và C/D gọi là bằng nhau nếu …", "dap": "AD = BC", "dap_khac": ["BC = AD", "A.D = B.C", "B.C = A.D"], "trang": 6},
+    {"ma": "b21.dkxd", "hoi": "Điều kiện xác định của phân thức A/B là điều kiện của biến để giá trị của mẫu thức B như thế nào?", "dap": "khác 0", "dap_khac": ["≠ 0", "B ≠ 0", "B khác 0"], "trang": 7},
+    {"ma": "b21.dkxd-vd", "hoi": "Viết điều kiện xác định của phân thức (x − 3)/(x + 2)", "dap": "x ≠ −2", "dap_khac": ["x khác −2"], "trang": 7}
+   ]
+  },
+  {
+   "bai": "Bài 22. Tính chất cơ bản của phân thức đại số",
+   "cac_the": [
+    {"ma": "b22.nhan", "hoi": "Nhân cả tử và mẫu của A/B với cùng một đa thức M khác đa thức 0 thì được phân thức bằng nó: A/B = ?", "dap": "A.M/(B.M)", "dap_khac": ["AM/(BM)", "(A.M)/(B.M)", "(AM)/(BM)", "A.M/B.M", "AM/BM"], "trang": 8},
+    {"ma": "b22.doi-dau", "hoi": "Quy tắc đổi dấu: đổi dấu cả tử và mẫu của A/B thì được phân thức nào?", "dap": "−A/−B", "dap_khac": ["(−A)/(−B)", "−A/(−B)"], "trang": 9},
+    {"ma": "b22.rut-gon", "hoi": "Muốn rút gọn một phân thức: phân tích tử và mẫu thành nhân tử để tìm nhân tử chung, rồi … cả tử và mẫu cho nhân tử chung đó", "dap": "chia", "trang": 9},
+    {"ma": "b22.nhan-tu-phu", "hoi": "Khi quy đồng mẫu thức, nhân tử phụ của mỗi mẫu thức tìm được bằng cách lấy … chia cho mẫu thức đó", "dap": "MTC", "dap_khac": ["mẫu thức chung", "mẫu chung"], "trang": 10}
+   ]
+  },
+  {
+   "bai": "Bài 23. Phép cộng và phép trừ phân thức đại số",
+   "cac_the": [
+    {"ma": "b23.cung-mau", "hoi": "Cộng hai phân thức cùng mẫu: A/M + B/M = ?", "dap": "(A + B)/M", "dap_khac": ["(B + A)/M"], "trang": 15},
+    {"ma": "b23.khac-mau", "hoi": "Muốn cộng hai phân thức có mẫu thức khác nhau, trước hết ta làm gì?", "dap": "quy đồng mẫu thức", "dap_khac": ["quy đồng mẫu", "quy đồng"], "trang": 16},
+    {"ma": "b23.doi", "hoi": "Phân thức đối của C/D là phân thức nào?", "dap": "−C/D", "dap_khac": ["(−C)/D", "C/(−D)"], "trang": 17},
+    {"ma": "b23.tong-doi", "hoi": "Tổng của một phân thức và phân thức đối của nó bằng bao nhiêu?", "dap": "0", "trang": 17},
+    {"ma": "b23.dau-ngoac", "hoi": "Nếu trước dấu ngoặc có dấu “−” thì bỏ dấu ngoặc và … các số hạng trong dấu ngoặc", "dap": "đổi dấu", "trang": 18}
+   ]
+  },
+  {
+   "bai": "Bài 24. Phép nhân và phép chia phân thức đại số",
+   "cac_the": [
+    {"ma": "b24.nhan", "hoi": "Nhân hai phân thức: A/B · C/D = ?", "dap": "A.C/(B.D)", "dap_khac": ["AC/(BD)", "(A.C)/(B.D)", "(AC)/(BD)", "A.C/B.D", "AC/BD"], "trang": 20},
+    {"ma": "b24.chia", "hoi": "Chia hai phân thức: A/B : C/D (với C/D khác 0) bằng A/B nhân với phân thức nào?", "dap": "D/C", "trang": 21},
+    {"ma": "b24.nghich-dao", "hoi": "Phân thức D/C gọi là phân thức gì của phân thức C/D?", "dap": "nghịch đảo", "dap_khac": ["phân thức nghịch đảo"], "trang": 21}
+   ]
+  },
+  {
+   "bai": "Bài 25. Phương trình bậc nhất một ẩn",
+   "cac_the": [
+    {"ma": "b25.nghiem", "hoi": "Số x₀ gọi là nghiệm của phương trình A(x) = B(x) nếu giá trị của A(x) và B(x) tại x₀ như thế nào?", "dap": "bằng nhau", "trang": 28},
+    {"ma": "b25.tap-nghiem", "hoi": "Tập hợp tất cả các nghiệm của một phương trình gọi là gì?", "dap": "tập nghiệm", "trang": 28},
+    {"ma": "b25.bac-nhat", "hoi": "Phương trình dạng ax + b = 0, với a, b là hai số đã cho và a ≠ 0, gọi là phương trình gì?", "dap": "phương trình bậc nhất một ẩn", "dap_khac": ["bậc nhất một ẩn"], "trang": 29},
+    {"ma": "b25.chuyen-ve", "hoi": "Quy tắc chuyển vế: nếu A + C = B thì A = ?", "dap": "B − C", "trang": 29},
+    {"ma": "b25.nghiem-dn", "hoi": "Phương trình bậc nhất ax + b = 0 (a ≠ 0) luôn có một nghiệm duy nhất x = ?", "dap": "−b/a", "dap_khac": ["x = −b/a"], "trang": 29}
+   ]
+  },
+  {
+   "bai": "Bài 26. Giải bài toán bằng cách lập phương trình",
+   "cac_the": [
+    {"ma": "b26.buoc-1", "hoi": "Giải bài toán bằng cách lập phương trình: bước 1 là gì?", "dap": "lập phương trình", "trang": 33},
+    {"ma": "b26.buoc-3", "hoi": "Bước 3 (trả lời): kiểm tra xem trong các nghiệm của phương trình, nghiệm nào thoả mãn … của ẩn, rồi kết luận", "dap": "điều kiện", "trang": 33}
+   ]
+  },
+  {
+   "bai": "Bài 27. Khái niệm hàm số và đồ thị của hàm số",
+   "cac_the": [
+    {"ma": "b27.ham-so", "hoi": "Nếu y phụ thuộc vào đại lượng thay đổi x sao cho với mỗi giá trị của x ta luôn xác định được chỉ một giá trị tương ứng của y thì y gọi là gì của x?", "dap": "hàm số", "trang": 40},
+    {"ma": "b27.bien-so", "hoi": "Khi y là hàm số của x thì x gọi là gì?", "dap": "biến số", "dap_khac": ["biến"], "trang": 40},
+    {"ma": "b27.truc-hoanh", "hoi": "Trong mặt phẳng toạ độ Oxy, trục Ox gọi là trục gì?", "dap": "trục hoành", "dap_khac": ["hoành"], "trang": 42},
+    {"ma": "b27.truc-tung", "hoi": "Trong mặt phẳng toạ độ Oxy, trục Oy gọi là trục gì?", "dap": "trục tung", "dap_khac": ["tung"], "trang": 42},
+    {"ma": "b27.hoanh-do", "hoi": "Điểm M(x₀; y₀): số x₀ gọi là gì của điểm M?", "dap": "hoành độ", "trang": 42},
+    {"ma": "b27.tung-do", "hoi": "Điểm M(x₀; y₀): số y₀ gọi là gì của điểm M?", "dap": "tung độ", "trang": 42},
+    {"ma": "b27.goc-toa-do", "hoi": "Gốc toạ độ O có toạ độ là gì?", "dap": "(0; 0)", "dap_khac": ["O(0; 0)", "(0, 0)"], "trang": 42},
+    {"ma": "b27.do-thi", "hoi": "Đồ thị của hàm số y = f(x) là tập hợp tất cả các … biểu diễn các cặp giá trị tương ứng (x; y) trên mặt phẳng toạ độ", "dap": "điểm", "trang": 44}
+   ]
+  },
+  {
+   "bai": "Bài 28. Hàm số bậc nhất và đồ thị của hàm số bậc nhất",
+   "cac_the": [
+    {"ma": "b28.dinh-nghia", "hoi": "Hàm số bậc nhất là hàm số cho bởi công thức nào (a, b là các số cho trước và a ≠ 0)?", "dap": "y = ax + b", "dap_khac": ["y = b + ax"], "trang": 47},
+    {"ma": "b28.dieu-kien", "hoi": "Trong công thức của hàm số bậc nhất y = ax + b, số a phải thoả mãn điều kiện gì?", "dap": "a ≠ 0", "dap_khac": ["a khác 0", "khác 0"], "trang": 47},
+    {"ma": "b28.do-thi", "hoi": "Đồ thị của hàm số y = ax + b (a ≠ 0) là một đường gì?", "dap": "đường thẳng", "dap_khac": ["một đường thẳng"], "trang": 49},
+    {"ma": "b28.cat-truc-tung", "hoi": "Đồ thị của y = ax + b (a ≠ 0, b ≠ 0) cắt trục tung Oy tại điểm có toạ độ nào?", "dap": "(0; b)", "dap_khac": ["P(0; b)", "(0, b)"], "trang": 49},
+    {"ma": "b28.cat-truc-hoanh", "hoi": "Đồ thị của y = ax + b (a ≠ 0, b ≠ 0) cắt trục hoành Ox tại điểm có toạ độ nào?", "dap": "(−b/a; 0)", "dap_khac": ["Q(−b/a; 0)", "(−b/a, 0)"], "trang": 49}
+   ]
+  },
+  {
+   "bai": "Bài 29. Hệ số góc của đường thẳng",
+   "cac_the": [
+    {"ma": "b29.he-so-goc", "hoi": "Với đường thẳng y = ax + b (a ≠ 0), số a gọi là gì của đường thẳng?", "dap": "hệ số góc", "trang": 52},
+    {"ma": "b29.nhon", "hoi": "Khi hệ số góc a dương, góc tạo bởi đường thẳng y = ax + b và trục Ox là góc gì?", "dap": "góc nhọn", "dap_khac": ["nhọn"], "trang": 52},
+    {"ma": "b29.tu", "hoi": "Khi hệ số góc a âm, góc tạo bởi đường thẳng y = ax + b và trục Ox là góc gì?", "dap": "góc tù", "dap_khac": ["tù"], "trang": 52},
+    {"ma": "b29.song-song", "hoi": "Hai đường thẳng y = ax + b (a ≠ 0) và y = a'x + b' (a' ≠ 0) song song với nhau khi nào?", "dap": "a = a' và b ≠ b'", "dap_khac": ["a = a', b ≠ b'", "a = a' và b khác b'", "a = a', b khác b'"], "trang": 53},
+    {"ma": "b29.trung", "hoi": "Hai đường thẳng y = ax + b (a ≠ 0) và y = a'x + b' (a' ≠ 0) trùng nhau khi nào?", "dap": "a = a' và b = b'", "dap_khac": ["a = a', b = b'"], "trang": 53},
+    {"ma": "b29.cat", "hoi": "Hai đường thẳng y = ax + b (a ≠ 0) và y = a'x + b' (a' ≠ 0) cắt nhau khi nào?", "dap": "a ≠ a'", "dap_khac": ["a khác a'"], "trang": 53}
+   ]
+  },
+  {
+   "bai": "Bài 30. Kết quả có thể và kết quả thuận lợi",
+   "cac_the": [
+    {"ma": "b30.thuan-loi", "hoi": "Một kết quả có thể của hành động, thực nghiệm T để biến cố E xảy ra gọi là kết quả gì cho biến cố E?", "dap": "kết quả thuận lợi", "dap_khac": ["thuận lợi"], "trang": 61}
+   ]
+  },
+  {
+   "bai": "Bài 31. Cách tính xác suất của biến cố bằng tỉ số",
+   "cac_the": [
+    {"ma": "b31.cong-thuc", "hoi": "Các kết quả có thể là đồng khả năng. Xác suất P(E) bằng tỉ số giữa số kết quả thuận lợi cho E và …", "dap": "tổng số kết quả có thể", "dap_khac": ["số kết quả có thể"], "trang": 63},
+    {"ma": "b31.vd", "hoi": "Tấm bìa tròn chia 12 hình quạt như nhau, đánh số 1 đến 12. Xác suất để mũi tên chỉ vào hình quạt ghi số chính phương là bao nhiêu?", "dap": "1/4", "dap_khac": ["3/12", "0,25", "0.25"], "trang": 64}
+   ]
+  },
+  {
+   "bai": "Bài 32. Mối liên hệ giữa xác suất thực nghiệm với xác suất và ứng dụng",
+   "cac_the": [
+    {"ma": "b32.thuc-nghiem", "hoi": "Trong n lần thực nghiệm, biến cố E xảy ra k lần. Xác suất thực nghiệm của biến cố E bằng bao nhiêu?", "dap": "k/n", "trang": 67},
+    {"ma": "b32.uoc-luong", "hoi": "Xác suất của biến cố E được ước lượng bằng gì?", "dap": "xác suất thực nghiệm", "dap_khac": ["xác suất thực nghiệm của E", "k/n"], "trang": 68}
+   ]
+  },
+  {
+   "bai": "Bài 33. Hai tam giác đồng dạng",
+   "cac_the": [
+    {"ma": "b33.ti-so", "hoi": "ΔA'B'C' ∽ ΔABC. Tỉ số k = A'B'/AB = B'C'/BC = A'C'/AC gọi là gì?", "dap": "tỉ số đồng dạng", "trang": 79},
+    {"ma": "b33.nguoc", "hoi": "ΔA'B'C' ∽ ΔABC với tỉ số đồng dạng k. Khi đó ΔABC ∽ ΔA'B'C' với tỉ số đồng dạng bao nhiêu?", "dap": "1/k", "trang": 79},
+    {"ma": "b33.bang-nhau", "hoi": "Hai tam giác bằng nhau thì đồng dạng với nhau theo tỉ số đồng dạng bao nhiêu?", "dap": "1", "dap_khac": ["k = 1"], "trang": 79},
+    {"ma": "b33.bac-cau", "hoi": "ΔA''B''C'' ∽ ΔA'B'C' tỉ số k và ΔA'B'C' ∽ ΔABC tỉ số m. Khi đó ΔA''B''C'' ∽ ΔABC với tỉ số bao nhiêu?", "dap": "k.m", "dap_khac": ["km", "m.k", "mk"], "trang": 79},
+    {"ma": "b33.song-song", "hoi": "Một đường thẳng cắt hai cạnh của tam giác và song song với cạnh còn lại. Tam giác mới tạo thành như thế nào với tam giác đã cho?", "dap": "đồng dạng", "dap_khac": ["đồng dạng với tam giác đã cho"], "trang": 81}
+   ]
+  },
+  {
+   "bai": "Bài 34. Ba trường hợp đồng dạng của hai tam giác",
+   "cac_the": [
+    {"ma": "b34.ccc", "hoi": "Ba cạnh của tam giác này tỉ lệ với ba cạnh của tam giác kia thì hai tam giác đồng dạng. Đó là trường hợp nào (viết tắt)?", "dap": "c.c.c", "dap_khac": ["ccc", "cạnh - cạnh - cạnh"], "trang": 84},
+    {"ma": "b34.cgc", "hoi": "Hai cạnh của tam giác này tỉ lệ với hai cạnh của tam giác kia và hai góc tạo bởi các cặp cạnh đó bằng nhau thì hai tam giác đồng dạng. Đó là trường hợp nào (viết tắt)?", "dap": "c.g.c", "dap_khac": ["cgc", "cạnh - góc - cạnh"], "trang": 85},
+    {"ma": "b34.trung-tuyen", "hoi": "ΔA'B'C' ∽ ΔABC theo tỉ số k; AM, A'M' là hai đường trung tuyến tương ứng. A'M'/AM bằng bao nhiêu?", "dap": "k", "trang": 87},
+    {"ma": "b34.gg", "hoi": "Hai góc của tam giác này lần lượt bằng hai góc của tam giác kia thì hai tam giác đồng dạng. Đó là trường hợp nào (viết tắt)?", "dap": "g.g", "dap_khac": ["gg", "góc - góc"], "trang": 88},
+    {"ma": "b34.phan-giac", "hoi": "ΔA'B'C' ∽ ΔABC theo tỉ số k; AM, A'M' là hai đường phân giác tương ứng. A'M'/AM bằng bao nhiêu?", "dap": "k", "trang": 89}
+   ]
+  },
+  {
+   "bai": "Bài 35. Định lí Pythagore và ứng dụng",
+   "cac_the": [
+    {"ma": "b35.pythagore", "hoi": "Tam giác ABC vuông tại A. Theo định lí Pythagore, BC² = ?", "dap": "AB² + AC²", "dap_khac": ["AC² + AB²"], "trang": 94},
+    {"ma": "b35.dao", "hoi": "Nếu một tam giác có bình phương của một cạnh bằng tổng các bình phương của hai cạnh kia thì đó là tam giác gì?", "dap": "tam giác vuông", "dap_khac": ["vuông"], "trang": 94},
+    {"ma": "b35.ba-bon-nam", "hoi": "Tam giác vuông có hai cạnh góc vuông dài 3 cm và 4 cm. Cạnh huyền dài bao nhiêu cm?", "dap": "5", "dap_khac": ["5 cm"], "trang": 94},
+    {"ma": "b35.duong-cao", "hoi": "Tam giác ABC vuông tại A có đường cao AH = h, BC = a, AC = b, AB = c. Khi đó h.a bằng gì?", "dap": "b.c", "dap_khac": ["bc", "c.b", "cb"], "trang": 95}
+   ]
+  },
+  {
+   "bai": "Bài 36. Các trường hợp đồng dạng của hai tam giác vuông",
+   "cac_the": [
+    {"ma": "b36.goc-nhon", "hoi": "Nếu một góc … của tam giác vuông này bằng một góc … của tam giác vuông kia thì hai tam giác vuông đó đồng dạng", "dap": "nhọn", "dap_khac": ["góc nhọn"], "trang": 98},
+    {"ma": "b36.canh-goc-vuong", "hoi": "Nếu hai cạnh … của tam giác vuông này tỉ lệ với hai cạnh … của tam giác vuông kia thì hai tam giác vuông đó đồng dạng", "dap": "góc vuông", "dap_khac": ["cạnh góc vuông"], "trang": 98},
+    {"ma": "b36.dac-biet", "hoi": "Nếu cạnh huyền và một … của tam giác vuông này tỉ lệ với cạnh huyền và một … của tam giác vuông kia thì hai tam giác vuông đó đồng dạng", "dap": "cạnh góc vuông", "trang": 100}
+   ]
+  },
+  {
+   "bai": "Bài 37. Hình đồng dạng",
+   "cac_the": [
+    {"ma": "b37.phoi-canh", "hoi": "Các cặp hình phóng to, thu nhỏ mà các đường thẳng nối các điểm tương ứng cùng đi qua một điểm O gọi là các hình đồng dạng gì?", "dap": "phối cảnh", "dap_khac": ["đồng dạng phối cảnh", "hình đồng dạng phối cảnh"], "trang": 105},
+    {"ma": "b37.tam", "hoi": "Điểm đồng quy O của các cặp hình đồng dạng phối cảnh gọi là gì?", "dap": "tâm phối cảnh", "trang": 105}
+   ]
+  },
+  {
+   "bai": "Bài 38. Hình chóp tam giác đều",
+   "cac_the": [
+    {"ma": "b38.day", "hoi": "Hình chóp tam giác đều có mặt đáy là tam giác gì?", "dap": "tam giác đều", "dap_khac": ["đều"], "trang": 113},
+    {"ma": "b38.mat-ben", "hoi": "Các mặt bên của hình chóp tam giác đều là các tam giác gì bằng nhau, có chung một đỉnh?", "dap": "tam giác cân", "dap_khac": ["cân"], "trang": 113},
+    {"ma": "b38.trung-doan", "hoi": "Đường cao vẽ từ đỉnh của mỗi mặt bên của hình chóp tam giác đều gọi là gì?", "dap": "trung đoạn", "trang": 113},
+    {"ma": "b38.sxq", "hoi": "Diện tích xung quanh của hình chóp tam giác đều, với p là nửa chu vi đáy và d là trung đoạn: Sxq = ?", "dap": "p.d", "dap_khac": ["pd", "d.p", "dp", "Sxq = p.d", "Sxq = pd"], "trang": 114},
+    {"ma": "b38.the-tich", "hoi": "Thể tích hình chóp tam giác đều bằng bao nhiêu phần tích của diện tích đáy với chiều cao?", "dap": "1/3", "dap_khac": ["một phần ba"], "trang": 115}
+   ]
+  },
+  {
+   "bai": "Bài 39. Hình chóp tứ giác đều",
+   "cac_the": [
+    {"ma": "b39.day", "hoi": "Hình chóp tứ giác đều có mặt đáy là hình gì?", "dap": "hình vuông", "dap_khac": ["vuông"], "trang": 117},
+    {"ma": "b39.chan-duong-cao", "hoi": "Chân đường cao kẻ từ đỉnh tới mặt đáy của hình chóp tứ giác đều là giao điểm của hai … của mặt đáy", "dap": "đường chéo", "trang": 117},
+    {"ma": "b39.the-tich", "hoi": "Thể tích hình chóp tứ giác đều, với S là diện tích đáy và h là chiều cao: V = ?", "dap": "1/3.S.h", "dap_khac": ["1/3Sh", "(1/3)Sh", "(1/3).S.h", "S.h/3", "Sh/3", "V = 1/3.S.h", "V = 1/3Sh", "V = S.h/3", "V = Sh/3"], "trang": 118}
    ]
   }
  ]

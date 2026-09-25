@@ -248,6 +248,7 @@ class ManualBang {
      *  -e viec hoctoi -e ma toan8ct -e chu "<ten bai>"   lop da hoc toi bai do
      *     ("" la chua hoc bai nao); bo tu vung thi -e ma anh8 -e phut <so Unit>
      *  -e viec xoahoctoi -e ma toan8ct  ve lai "chua chon", may se hoi
+     *  -e viec xoathe -e ma toan8ct     xoa lich su tra loi cua bo the do
      */
     @Test
     fun viec() {
@@ -422,6 +423,14 @@ class ManualBang {
             }
             "xoahoctoi" -> {
                 HocToi.xoa(context, ma ?: error("Thieu -e ma <bo>")); ketQua = 0
+            }
+            // Xoa lich su tra loi cua MOT bo the, de muc thu go dung luon co the den
+            // luot. Trang thu van dong ho ve cung mot buoi toi, nen the nao vua go dung
+            // o lan chay truoc thi lan sau van chua toi hen; chay dom lan la het the.
+            "xoathe" -> {
+                val bo = ma ?: error("Thieu -e ma <bo>")
+                ketQua = KhoBai.get(context).writableDatabase
+                    .delete("tra_the", "the_id LIKE ?", arrayOf("$bo:%"))
             }
             else -> error("Khong biet viec: $v")
         }

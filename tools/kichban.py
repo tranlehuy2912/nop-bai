@@ -39,6 +39,11 @@ RANH = "2026-09-16T19:30"
 # "lop da hoc toi bai nao". Doi ten bai trong file thi sua o day.
 BAI_CUOI_TOAN = "Bài 9. Phân tích đa thức thành nhân tử"
 
+# Bai dau cua bo Toan, cho muc go dung mot cau. Trong Bai 1 phan lon dap an la so va
+# bieu thuc ("−6", "x³y"), thu go duoc bang adb; tu Bai 2 tro di la chu co dau, adb
+# khong go duoc. Xem May.go_dap_an_dung trong web.py.
+BAI_DAU_TOAN = "Bài 1. Đơn thức"
+
 
 def danh_sach():
     return [
@@ -335,7 +340,8 @@ def danh_sach():
             # may giu san dap an va cham tai cho, nen phai thu dung cho do. Doc cau
             # hoi dang hien roi tra dap an trong file bo the, chu khong neo cung mot
             # cau - cau den luot doi theo lich on.
-            lam=lambda m: (m.van(RANH), m.dat("hoctoi", ma="toan8ct", chu=BAI_CUOI_TOAN),
+            lam=lambda m: (m.van(RANH), m.dat("xoathe", ma="toan8ct"),
+                           m.dat("hoctoi", ma="toan8ct", chu=BAI_DAU_TOAN),
                            m.man("HocThuocActivity"),
                            m.bam("Công thức Toán 8"),
                            m.go_dap_an_dung("Gõ câu trả lời",

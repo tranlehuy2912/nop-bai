@@ -41,9 +41,18 @@ object BoThe {
     /**
      * Cong thuc Toan 8, va hai bo KHTN 8: phan Hoa hoc va phan Vat li.
      *
-     * Bo Toan vua la thu dung duoc that, vua la BAN MAU cho cac bo sau: mo file ra la
-     * thay du ca bon thu mot the can - ma, cau hoi, dap an, va cac ban viet khac
-     * cung tinh dung.
+     * Bo Toan phu ca nam hoc, Bai 1 toi Bai 39 cua SGK Toan 8 Ket noi tri thuc (tap mot
+     * Bai 1-20, tap hai Bai 21-39), moi bai mot nhom dung ten in trong sach. Truoc
+     * 25/9/2026 no chi co muoi mot the hang dang thuc chia hai nhom tu dat, lam ban mau
+     * cho cac bo sau; con chua chon duoc "lop da hoc toi Bai 6" vi Bai 6, 7, 8 nam
+     * chung mot nhom. Ten bo van la "Công thức Toán 8" du gio co ca dinh nghia va dinh
+     * li, vi ten do nam trong kich ban thu (tools/kichban.py) va trong nhat ky cu.
+     *
+     * The dinh nghia hoi MOT CHU HAY MOT CUM NGAN chu khong bat go ca cau: may cham bang
+     * phep so chuoi (xem [vn.huytl.homeworkgate.data.HocThuoc.dung]), ma mot dinh nghia
+     * viet lai bang loi cua con thi dung y van khong khop tung chu. Nen the ghi cau
+     * trong sach, bo trong dung cho can nho ("… của mỗi đường" dap "trung điểm"), va ke
+     * cac cach viet khac trong dap_khac.
      *
      * KHTN TACH HAI BO chu khong gop mot. Truong chia KHTN cho nhieu giao vien day
      * song song, lop co the dang o Bai 4 phan Hoa trong luc dang o Bai 15 phan Li. Mot

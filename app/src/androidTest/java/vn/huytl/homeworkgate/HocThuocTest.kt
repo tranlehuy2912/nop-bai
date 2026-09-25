@@ -198,7 +198,7 @@ class HocThuocTest {
     // --- cac bo the that trong assets ---
 
     /**
-     * Moi bo that nap du so the trong file, va moi dap an go duoc bang ban phim thuong.
+     * Moi bo that nap du so the trong file, va moi dap an go duoc tren tablet.
      *
      * SO THE TRONG FILE PHAI BANG SO THE TRONG BANG, cung ly do voi bo tu vung:
      * the thieu ma, thieu hoi hay thieu dap thi [BoThe] bo qua im lang, con hai the
@@ -207,7 +207,13 @@ class HocThuocTest {
      * GO BANG BAN PHIM THUONG: moi dap an va dap an phu duoc doi sang dang con go
      * tren tablet - xem [goTrenBanPhim] - roi moi dem cham. Cham thang chuoi in trong
      * sach thi phep thu vo nghia: no gap lai chinh no trong danh sach dap an. Doi
-     * xong ma con ky tu ban phim khong co thi the do khong ai tra loi duoc.
+     * xong ma con ky tu ma ca ban phim lan dai nut cua mon ([BanPhimKyTu]) deu khong
+     * co, thi the do khong ai tra loi duoc.
+     *
+     * Dai nut duoc tinh tu 25/9/2026, khi bo Toan co dap an "360°" va "a ≠ 0": hai ky
+     * hieu do khong go duoc bang ban phim thuong, chi co nut. Truoc do phep thu chi
+     * nhan chu ban phim, va the nao co "°" thi khong the ghi "360°" vao dap an, trong
+     * khi con bam nut "°" la go ra dung chu do.
      */
     @Test
     fun bo_the_that_nap_du_va_tu_cham_dung_chinh_no() {
@@ -215,6 +221,7 @@ class HocThuocTest {
         BoThe.napNeuCan(context)
         val kho = KhoBai.get(context)
         BoThe.BO.forEach { bo ->
+            val nut = BanPhimKyTu.cuaMon(bo.mon).orEmpty().flatMap { it.cac }.toSet()
             val o = JSONObject(context.assets.open(bo.file).bufferedReader().use { it.readText() })
             val cacBai = o.getJSONArray("cac_bai")
             var soThe = 0
@@ -231,8 +238,8 @@ class HocThuocTest {
                     cacDap.forEach { dap ->
                         val go = goTrenBanPhim(dap)
                         assertTrue(
-                            "$ma: \"$go\" con ky tu ban phim khong co",
-                            go.all { it.code < 128 || it.isLetter() }
+                            "$ma: \"$go\" con ky tu ca ban phim lan dai nut deu khong co",
+                            go.all { it.code < 128 || it.isLetter() || it.toString() in nut }
                         )
                         assertTrue(
                             "$ma khong nhan \"$go\" (go cho \"$dap\")",

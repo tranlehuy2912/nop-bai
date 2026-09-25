@@ -395,25 +395,42 @@ class May:
         adb("shell", "input", "text", shlex.quote(chu))
         time.sleep(0.8)
 
-    def go_dap_an_dung(self, o, duong_bo):
+    def go_dap_an_dung(self, o, duong_bo, so_lan=8):
         """Doc cau hoi dang hien roi go dung dap an cua no.
 
         Khong neo cung dap an cua mot the: so the den luot va thu tu boc doi theo
         lich on, nen the dau tien hom nay khong phai the dau tien hom qua. Neo cung
         thi muc thu hong vi hoi sang cau khac, ma app van dung.
+
+        CHI GO DUOC DAP AN KHONG DAU. "adb shell input text" khong go duoc chu tieng
+        Viet co dau, ma tu 25/9/2026 bo Toan co ca the dinh nghia ("phần biến", "hình
+        thoi"). Gap the nhu vay thi lay ban viet khac go duoc trong dap_khac ("360"
+        cho "360°"); khong co thi lui ve man chon bo roi bam vao bo lan nua cho may boc
+        lai. Lui ra luc chua tra loi cau nao thi app khong ghi gi xuong so.
         """
-        chu = chu_tren_man()
-        cac = []
         o_bo = json.loads((GOC.parent / duong_bo).read_text(encoding="utf-8"))
-        for bai in o_bo.get("cac_bai", []):
-            cac += bai.get("cac_the", [])
-        # Lay the co cau hoi DAI NHAT khop voi man hinh: "(a + b)²" cung nam trong
-        # "(a + b)³" neu so kieu ngan nhat truoc.
-        khop = sorted((t for t in cac if t.get("hoi") and t["hoi"] in chu),
-                      key=lambda t: -len(t["hoi"]))
-        if not khop:
-            raise RuntimeError("không nhận ra thẻ nào đang hiện trên màn hình")
-        self.go_chu(o, go_duoc(khop[0]["dap"]))
+        cac = [t for bai in o_bo.get("cac_bai", []) for t in bai.get("cac_the", [])]
+        for _ in range(so_lan):
+            chu = chu_tren_man()
+            # Lay the co cau hoi DAI NHAT khop voi man hinh: "(a + b)²" cung nam trong
+            # "(a + b)³" neu so kieu ngan nhat truoc.
+            khop = sorted((t for t in cac if t.get("hoi") and t["hoi"] in chu),
+                          key=lambda t: -len(t["hoi"]))
+            if not khop:
+                raise RuntimeError("không nhận ra thẻ nào đang hiện trên màn hình")
+            the = khop[0]
+            go = next((g for g in map(go_duoc, [the["dap"]] + the.get("dap_khac", []))
+                       if g.isascii()), None)
+            if go is not None:
+                return self.go_chu(o, go)
+            # Back lan dau co khi chi dong ban phim; con o go la chua ve man chon bo.
+            for _ in range(2):
+                adb("shell", "input", "keyevent", "KEYCODE_BACK")
+                time.sleep(1.2)
+                if o not in chu_tren_man():
+                    break
+            self.bam(o_bo["ten"])
+        raise RuntimeError(f"bốc {so_lan} lần vẫn toàn thẻ có đáp án adb không gõ được")
 
     def tat_mo_lai(self):
         """Tat han app roi mo lai, de xem no nho duoc gi qua mot lan bi giet."""
