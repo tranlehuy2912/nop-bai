@@ -14,6 +14,7 @@ import vn.huytl.homeworkgate.data.VoDanDo
 import java.io.File
 import java.time.LocalDate
 import java.time.LocalDateTime
+import java.time.ZoneId
 
 /**
  * Vong doi cua ban vo dan do, nhat la luc no bien mat.
@@ -100,11 +101,13 @@ class VoDanDoTest {
     @Test
     fun quaNgayHocMoiThiBanCuHetHan() {
         val f = anhGia()
-        val homQua = LocalDate.now().minusDays(1)
+        // Thu Hai va chieu thu Ba co dinh. Lay "hom qua" theo hom nay thi test nay hong
+        // moi chu nhat: vo thu Bay dung duoc ca ngay chu nhat, xem LuatCongGio.ngayDanDoHopLe.
+        val homQua = LocalDate.of(2026, 9, 21)
         VoDanDo.luu(context, ban(homQua, f))
 
         // Chieu hom sau, sau moc LuatCongGio.GIO_HET_HAN_SANG.
-        val chieu = LocalDateTime.of(LocalDate.now(), java.time.LocalTime.of(17, 0))
+        val chieu = LocalDateTime.of(2026, 9, 22, 17, 0)
         assertNull("chieu hom sau ban cu khong con dung duoc", VoDanDo.conHieuLuc(context, chieu))
 
         VoDanDo.donDep(context, chieu)
@@ -214,6 +217,35 @@ class VoDanDoTest {
         assertNull(VoDanDo.tuLanCham(cu, 4_000L, "2026-09-23", listOf("Bài 2.28")))
         assertNull(VoDanDo.tuLanCham(moi, 5_000L, "2026-09-23", listOf("Bài 2.28")))
         assertNull(VoDanDo.tuLanCham(null, 5_000L, "2026-09-23", listOf("Bài 2.28")))
+    }
+
+    @Test
+    fun voChupKemBaiDocDuocThiGiuLaiChoCaNgay() {
+        // Vo chup o buoc dau man chup bai, khong qua man vo dan do. Truoc day lan doc nay
+        // chi theo lan nop do, lan nop sau lai hoi trang vo.
+        fun ms(t: LocalDateTime) = t.atZone(ZoneId.systemDefault()).toInstant().toEpochMilli()
+        val chieu23 = ms(LocalDateTime.of(2026, 9, 23, 15, 0))
+        val moi = VoDanDo.tuAnhKemBai(
+            "Thứ ba, ngày 23 tháng 9 năm 2026", listOf("Bài 2.28"), "ma-anh", 7_000L, chieu23
+        )!!
+        assertFalse(moi.chuaDoc)
+        assertEquals(VoDanDo.NGUON_LUC_CHAM, moi.nguon)
+        assertEquals("2026-09-23", moi.ngay)
+        assertEquals(listOf("Bài 2.28"), moi.cacBai)
+        assertEquals("ma-anh", moi.fileId)
+        assertEquals(7_000L, moi.chupLuc)
+        // Doc ra la hom do khong giao bai: van giu, va la "khong co bai tap" that.
+        assertTrue(VoDanDo.tuAnhKemBai("2026-09-23", emptyList(), null, 7_000L, chieu23)!!.cacBai.isEmpty())
+
+        // Khong doc ra ngay thi khong giu, ly do nhu tuLanCham.
+        assertNull(VoDanDo.tuAnhKemBai(null, listOf("Bài 2.28"), null, 7_000L, chieu23))
+        // Vo hom qua: sang nay con tinh, qua trua thi het, khong giu mot ban het han.
+        assertNotNull(
+            VoDanDo.tuAnhKemBai("2026-09-23", listOf("Bài 2.28"), null, 7_000L, ms(LocalDateTime.of(2026, 9, 24, 9, 0)))
+        )
+        assertNull(
+            VoDanDo.tuAnhKemBai("2026-09-23", listOf("Bài 2.28"), null, 7_000L, ms(LocalDateTime.of(2026, 9, 24, 15, 0)))
+        )
     }
 
     @Test

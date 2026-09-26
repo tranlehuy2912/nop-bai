@@ -29,6 +29,7 @@ import vn.huytl.homeworkgate.R
 import vn.huytl.homeworkgate.data.CaptureStage
 import vn.huytl.homeworkgate.data.DayLog
 import vn.huytl.homeworkgate.data.Prefs
+import vn.huytl.homeworkgate.data.SoCaiBai
 import vn.huytl.homeworkgate.data.VoDanDo
 import vn.huytl.homeworkgate.databinding.ActivityCaptureBinding
 import vn.huytl.homeworkgate.telegram.CapSachSender
@@ -170,7 +171,7 @@ class CaptureActivity : AppCompatActivity() {
         }
 
         binding.btnTake.setOnClickListener { takePhoto() }
-        binding.btnSkip.setOnClickListener { goNext() }
+        binding.btnSkip.setOnClickListener { boQua() }
         binding.btnNext.setOnClickListener { goNext() }
         // Ba che do rut gon chi co mot xap anh nen buoc dau cung la buoc cuoi, va
         // goNext() thanh gui thang.
@@ -280,6 +281,30 @@ class CaptureActivity : AppCompatActivity() {
             return
         }
         jumpTo(cacBuoc[cacBuoc.indexOf(stage) + 1])
+    }
+
+    /**
+     * Bo qua buoc dang chup, khong chup tam nao.
+     *
+     * Rieng buoc vo dan do, hom nay da tinh tron goi thi hoi lai truoc. Thieu trang vo,
+     * quy tac 17 coi moi cau lan nay la bai co giao, ma bai co giao da tra trong goi: ca
+     * lan nop ra 0 phut, ke ca bai lam them that. Man chinh luc do chi ghi "Chưa cộng giờ
+     * được cho bài này", khong noi vi sao.
+     */
+    private fun boQua() {
+        if (stage == CaptureStage.DAN_DO && SoCaiBai.goiDaCoHomNay(this)) {
+            MaterialAlertDialogBuilder(this)
+                .setTitle("Chụp vở dặn dò nhé")
+                .setMessage(
+                    "Hôm nay đã tính trọn gói bài cô giao. Thiếu trang vở thì máy không biết " +
+                        "câu nào là bài làm thêm, nên cả lần nộp này có thể không được phút nào."
+                )
+                .setPositiveButton("Chụp vở", null)
+                .setNegativeButton("Vẫn bỏ qua") { _, _ -> goNext() }
+                .show()
+            return
+        }
+        goNext()
     }
 
     private fun takePhoto() {

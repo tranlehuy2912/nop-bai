@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Man hinh Le Hoa nhin thay. Mot the trang thai to o giua, mot nut to o duoi.
-     Khong co nut nao khac: moi nut them vao day deu la mot thu de bam thu. -->
+<!-- Man hinh Le Hoa nhin thay. Mot the trang thai o giua, nut viec chinh nam ngay trong
+     the do. Khong co nut nao khac: moi nut them vao day deu la mot thu de bam thu. -->
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -217,6 +217,36 @@
                     android:textColor="@color/ink_soft"
                     android:textSize="14sp" />
             </LinearLayout>
+
+            <!-- Nut viec chinh: Nop bai tap, Bat dau choi, Choi tiep... chu doi theo
+                 trang thai ngay tren no, nen no nam trong the nay.
+
+                 Truoc day no la mot thanh xanh cao 104dp rong het man, dat duoi khoi Viec
+                 hom nay: to qua, va nam xa cai trang thai no dang noi toi. Gio la mot nut
+                 vien tron co vua, rong theo chu nhung khong duoi 300dp de van de bam. -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_submit"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:layout_marginTop="24dp"
+                android:minWidth="300dp"
+                android:paddingHorizontal="32dp"
+                android:text="@string/home_submit"
+                android:textSize="20sp"
+                app:cornerRadius="30dp" />
+
+            <!-- Nut phu ngay duoi nut chinh. Dang giu phieu gio thi la "Nop them bai de
+                 cong don gio"; dang cho duyet thi la "Huy bai vua nop", vi luc do nut
+                 chinh da la nop them. -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_nop_them"
+                style="@style/Widget.Material3.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Nộp thêm bài để cộng dồn giờ"
+                android:textSize="16sp"
+                android:visibility="gone" />
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>
 
@@ -230,7 +260,7 @@
          Bon viec nay truoc day la bon the rieng, moi the mot nut ben trong. Cong
          voi nut Nop bai va hang duoi cung thi man hinh cua mot dua tre lop tam co
          gan chuc cho de bam. Gom lai mot khoi, moi viec mot dong bam duoc, va man
-         hinh chi con dung mot nut to. -->
+         hinh chi con dung mot nut chinh, nam trong the trang thai. -->
     <TextView
         android:id="@+id/nhan_viec"
         android:layout_width="wrap_content"
@@ -259,33 +289,12 @@
             android:paddingVertical="4dp" />
     </com.google.android.material.card.MaterialCardView>
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_submit"
-        android:layout_width="match_parent"
-        android:layout_height="104dp"
-        android:layout_marginTop="20dp"
-        android:text="@string/home_submit"
-        android:textSize="24sp"
-        app:cornerRadius="28dp" />
-
-    <!-- Nop them bai de cong don gio. Chi hien khi dang giu mot phieu chua dung:
-         luc do nut to o tren la "Bat dau choi", khong con cho nao de nop them. -->
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_nop_them"
-        style="@style/Widget.Material3.Button.TextButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:text="Nộp thêm bài để cộng dồn giờ"
-        android:textSize="16sp"
-        android:visibility="gone" />
-
     <!-- Cac duong phu, gom vao mot khu rieng.
 
          Truoc day chung xep doc duoi nut Nop bai, moi cai mot kieu - mot tonal,
          hai text - nhin nhu mot chong nut roi ra chu khong phai mot nhom. Gio cung
-         mot the, cung co chu, cung co icon, chia deu: nut to o tren la viec dang
-         phai lam, con day la may cho de di xem.
+         mot the, cung co chu, cung co icon, chia deu: nut chinh trong the trang thai
+         la viec dang phai lam, con day la may cho de di xem.
 
          Nut nhan tin khong bao gio bi khoa theo gio choi: con phai bao duoc mot
          viec gap ke ca luc dang bi cam choi. -->
@@ -293,7 +302,7 @@
         style="@style/Card"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp">
+        android:layout_marginTop="20dp">
 
         <LinearLayout
             android:layout_width="match_parent"

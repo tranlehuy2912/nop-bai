@@ -254,12 +254,13 @@ class HomeActivity : AppCompatActivity() {
                 doiMat(R.drawable.ic_mat_cho, R.color.wait, R.color.wait_soft)
                 binding.txtBadge.text = if (soBaiCho > 1) "Đã gửi $soBaiCho bài" else "Đã gửi bài"
                 binding.txtState.text = "Chờ ba Huy duyệt"
-                // Dong to o tren da noi "Cho Ba Huy duyet" roi. Dong nay de danh cho
-                // cai con khong tu biet: trong luc cho van lam bai tiep duoc.
+                // Dong to o tren da noi "Cho Ba Huy duyet", nut chinh ben duoi da noi
+                // nop them duoc. Dong nay de danh cho cai con khong tu biet: luc nao thi
+                // dung toi nut huy nho o duoi cung.
                 binding.txtDetail.text = if (soBaiCho > 1) {
                     "Duyệt từng bài một, bài nào xong là cộng giờ bài đó."
                 } else {
-                    "Trong lúc chờ, làm thêm bài nộp tiếp cũng được."
+                    "Ảnh thiếu hay mờ thì huỷ bài vừa nộp rồi chụp lại."
                 }
             }
             gate.state == GateState.GRANTED -> {
@@ -321,7 +322,14 @@ class HomeActivity : AppCompatActivity() {
         val nutLaChoi = gate.state == GateState.GRANTED || gate.state == GateState.PAUSED ||
             gate.isOpen() || (gate.state == GateState.PENDING && gate.grantedMinutes > 0)
         val vuongViec = conViec.isNotEmpty() && nutLaChoi
-        binding.btnSubmit.isEnabled = !baDangDung && !hetLuot && !vuongViec
+        // Dang cho duyet ma chua giu phieu nao: nut chinh la nop them bai. Hang cho da
+        // du bai, hay het tran hom nay, thi nop them cung khong duoc duyet: nut tat va
+        // noi ly do, thay cho viec bam roi hien mot cau toast.
+        val choDuyet = gate.state == GateState.PENDING && gate.grantedMinutes <= 0
+        val hangDay = !gate.conChoNopThem()
+        val hetTran = gate.phutConLaiHomNay() <= 0
+        binding.btnSubmit.isEnabled = !baDangDung && !hetLuot && !vuongViec &&
+            !(choDuyet && (hangDay || hetTran))
         // Cung mot nut to, doi chu theo viec dang can lam, de man hinh khong bao
         // gio co hai nut to cung luc.
         binding.btnSubmit.text = when {
@@ -329,7 +337,11 @@ class HomeActivity : AppCompatActivity() {
             hetLuot -> "Hôm nay đủ giờ chơi rồi"
             gate.state == GateState.GRANTED -> "Bắt đầu chơi"
             gate.state == GateState.PENDING && gate.grantedMinutes > 0 -> "Bắt đầu chơi"
-            gate.state == GateState.PENDING -> "Huỷ, nộp lại bài khác"
+            // Truoc day nut chinh luc nay la "Huy, nop lai bai khac": nut to nhat man
+            // hinh lam viec huy, dung cho con quen tay bam nut nop bai.
+            choDuyet && hangDay -> "Chờ ba Huy duyệt bớt đã"
+            choDuyet && hetTran -> "Chờ ba Huy duyệt"
+            choDuyet -> "Nộp thêm bài nữa"
             gate.state == GateState.PAUSED -> "Chơi tiếp"
             gate.isOpen() -> "Tạm dừng, giữ giờ lại"
             else -> getString(R.string.home_submit)
@@ -342,19 +354,25 @@ class HomeActivity : AppCompatActivity() {
         //
         // Het tran hom nay thi thoi, nop nua cung khong duyet duoc. Xep hang du
         // [GateStore.MAX_BAI_CHO] bai cung thoi, cho ba duyet bot da.
+        //
+        // Rieng luc dang cho duyet ma chua giu phieu nao, nut chinh da la nop them. Nut
+        // phu luc do la huy bai vua nop, luc nao cung hien: chup mo hay thieu trang thi
+        // day la duong duy nhat de nop lai, ke ca khi hang da day.
         val dangCoGi = gate.state != GateState.LOCKED
-        binding.btnNopThem.visibility =
-            if (!baDangDung && dangCoGi && gate.phutConLaiHomNay() > 0 && gate.conChoNopThem()) {
-                View.VISIBLE
-            } else {
-                View.GONE
-            }
-        binding.btnNopThem.text = if (gate.grantedMinutes > 0 || gate.isOpen()) {
-            "Nộp thêm bài để cộng dồn giờ"
-        } else {
-            "Nộp thêm bài nữa"
+        binding.btnNopThem.visibility = when {
+            baDangDung -> View.GONE
+            choDuyet -> View.VISIBLE
+            dangCoGi && gate.phutConLaiHomNay() > 0 && gate.conChoNopThem() -> View.VISIBLE
+            else -> View.GONE
         }
-        binding.btnNopThem.setOnClickListener { onSubmit(nopThem = true) }
+        binding.btnNopThem.text = when {
+            choDuyet -> "Huỷ bài vừa nộp"
+            gate.grantedMinutes > 0 || gate.isOpen() -> "Nộp thêm bài để cộng dồn giờ"
+            else -> "Nộp thêm bài nữa"
+        }
+        binding.btnNopThem.setOnClickListener {
+            if (choDuyet) huyYeuCau() else onSubmit(nopThem = true)
+        }
 
         veVongPhien()
         veHanNgay()
@@ -810,10 +828,8 @@ class HomeActivity : AppCompatActivity() {
             batDau()
             return
         }
-        if (!nopThem && gate.state == GateState.PENDING) {
-            huyYeuCau()
-            return
-        }
+        // Dang cho duyet ma chua giu phieu: nut chinh la nop them bai, di tiep xuong
+        // duong nop binh thuong. Huy bai vua nop nam o nut phu, xem [render].
         if (!nopThem && gate.state == GateState.PAUSED) {
             val phut = gate.resume()
             if (phut == null) {
