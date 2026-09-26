@@ -3,6 +3,7 @@ package vn.huytl.homeworkgate.guard
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
+import android.os.SystemClock
 import vn.huytl.homeworkgate.data.Prefs
 
 /**
@@ -42,9 +43,44 @@ object TelegramThat {
                 .map { it.activityInfo.packageName }
                 .firstOrNull { it in GOI }
         }.getOrNull() ?: return false
+        // Ghi TRUOC khi mo: man chan hoi moc nay trong luc app nay vua tam dung ma cua so
+        // Telegram chua kip hien.
+        lucMoTuNut = SystemClock.elapsedRealtime()
         return runCatching {
             context.startActivity(yDinh.setPackage(goi).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK))
         }.isSuccess
+    }
+
+    /**
+     * Luc bam "Nhan cho ba Huy" lan cuoi, theo elapsedRealtime. Man chan cho Telegram hien
+     * len mot nhip sau luc nay, xem ApprovalService.nhuongAppMoiLuc.
+     */
+    @Volatile
+    var lucMoTuNut = 0L
+        private set
+
+    /** Da tu them Telegram vao "Dung moi luc" mot lan chua. Xem [themVaoMoiLucLanDau]. */
+    const val K_DA_THEM_MOI_LUC = "moi_luc_da_them_telegram"
+
+    /**
+     * Lan dau chay ban co "Dung moi luc", tu them Telegram vao danh sach do neu may da cai.
+     *
+     * Truoc ban nay con nhan cho ba duoc moi luc, bang khung chat trong app. Ban nay bo
+     * khung do, ma "Dung moi luc" luc cai xong thi rong: tu luc cai den luc Ba Huy kip chon,
+     * gio ngu hay gio hoc la con het duong nhan cho ba. Them san thi khong co khoang ho do.
+     *
+     * Chi mot lan. Ba Huy bo Telegram ra sau do thi thoi, khong tu them lai. Chua cai
+     * Telegram thi chua danh dau, lan khoi dong sau xem lai.
+     */
+    fun themVaoMoiLucLanDau(context: Context) {
+        val prefs = Prefs.get(context)
+        val sp = prefs.raw()
+        if (sp.getBoolean(K_DA_THEM_MOI_LUC, false)) return
+        val pm = context.packageManager
+        val daCai = GOI.filter { runCatching { pm.getPackageInfo(it, 0) }.isSuccess }
+        if (daCai.isEmpty()) return
+        prefs.moiLucPackages = prefs.moiLucPackages + daCai
+        sp.edit().putBoolean(K_DA_THEM_MOI_LUC, true).commit()
     }
 }
 

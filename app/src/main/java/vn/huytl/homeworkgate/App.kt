@@ -5,6 +5,7 @@ import android.app.Application
 import android.os.Bundle
 import vn.huytl.homeworkgate.data.ChatCu
 import vn.huytl.homeworkgate.data.SoCaiBai
+import vn.huytl.homeworkgate.guard.TelegramThat
 import vn.huytl.homeworkgate.kho.BoThe
 import vn.huytl.homeworkgate.kho.BoTuVung
 import vn.huytl.homeworkgate.kho.NganHang
@@ -55,7 +56,8 @@ class App : Application() {
      * hinh dau tien khong dung den kho, va neu ba viec nay chua xong luc con bam
      * "Nop bai" thi cung chi la danh sach bai hien ra cham mot nhip.
      *
-     * Cung o day xoa phan con lai cua khung chat cu trong may, xem [ChatCu].
+     * Cung o day xoa phan con lai cua khung chat cu trong may, xem [ChatCu], va them
+     * Telegram vao "Dung moi luc" lan dau, xem [TelegramThat.themVaoMoiLucLanDau].
      */
     private fun donDepKho() {
         Thread {
@@ -66,6 +68,7 @@ class App : Application() {
             runCatching { BoTuVung.napNeuCan(ct) }
             runCatching { SoCaiBai.donCu(ct) }
             runCatching { ChatCu.xoaTrongMay(ct) }
+            runCatching { TelegramThat.themVaoMoiLucLanDau(ct) }
         }.apply { isDaemon = true }.start()
     }
 
@@ -74,15 +77,7 @@ class App : Application() {
         val khoiDongLuc: Long = android.os.SystemClock.elapsedRealtime()
 
         private var dangHien = 0
-
-        /**
-         * Luc man cuoi cung cua app vua roi khoi truoc mat, theo elapsedRealtime. 0 la chua
-         * roi lan nao. Man chan doc no de cho app ke tiep mot nhip hien len, xem
-         * ApprovalService.xetLoiNhac.
-         */
-        @Volatile
-        var roiNenLuc = 0L
-            private set
+        private var roiNenLuc = 0L
 
         /**
          * App vua vang mat bao lau truoc lan quay lai nay.

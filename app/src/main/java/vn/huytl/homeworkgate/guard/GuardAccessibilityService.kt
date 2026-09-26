@@ -442,7 +442,10 @@ class GuardAccessibilityService : AccessibilityService() {
         // No khong phai app con vua mo, no de len tren app dang dung. Ghi no vao day
         // thi lan chan sau hoi "con dang mo gi" se nhan ve ten ban phim.
         val laPhim = laBanPhim(pkg)
-        if (pkg != packageName && !laPhim) currentPackage = pkg
+        if (pkg != packageName && !laPhim) {
+            currentPackage = pkg
+            goiVuaMo = pkg
+        }
         xetNgheChuAi(pkg, laPhim)
         evaluate(pkg)
         syncTicker()
@@ -839,6 +842,8 @@ class GuardAccessibilityService : AccessibilityService() {
             // thi con bam play lai mot lan la so cua ngay them muoi dong giong nhau.
             if (goi in nhacDangPhat) {
                 val ly = when {
+                    // App dung moi luc chi bi dung vi het han rieng, xem [LuatNhac].
+                    goi in prefs.moiLucPackages -> "hết số phút hôm nay"
                     trongGioHoc -> "tới giờ đi học"
                     GioiHanApp.hetGio(this, goi) -> "hết số phút hôm nay"
                     trongGioNgu -> "quá giờ đi ngủ"
@@ -922,7 +927,12 @@ class GuardAccessibilityService : AccessibilityService() {
             trongGioNgu = trongGioNgu,
             trongGioHoc = trongGioHoc,
             congMo = gate.isOpen(),
-            moiLuc = pkg != null && pkg in prefs.moiLucPackages,
+            // Khong mien cho app dung moi luc o nhanh nay. Nhanh nay chi biet app dang
+            // truoc mat, khong biet app nao dang keu: de Telegram mo truoc mat thi mot
+            // Spotify phat nen se keu ca dem. Doi lai, thieu quyen doc thong bao thi tin
+            // thoai trong Telegram cung bi dung luc gio ngu, gio hoc - canh bao
+            // DOC_THONG_BAO trong [Permissions] la de bat quyen do.
+            moiLuc = false,
         )
         // Duoc keu thi van theo doi, nhip thua: het gio giua chung, hay con roi app
         // trong danh sach trang, thi khong co su kien phat tieng nao bao cho biet.
@@ -1723,6 +1733,18 @@ class GuardAccessibilityService : AccessibilityService() {
          */
         @Volatile
         var truocMat: TruocMat = TruocMat.TAT
+            private set
+
+        /**
+         * App vua ra truoc mat theo su kien cua so cuoi cung, tru chinh app nay va ban
+         * phim. Khac [truocMat]: khong bi xoa khi tat man hinh, va giu nguyen khi man chan
+         * che kin (luc do Android khong bao gi ve cua so ben duoi). Man chan doc no de
+         * biet con con dang o app dung moi luc khong, xem ApprovalService.nhuongAppMoiLuc.
+         *
+         * Chi co nghia khi [dangChay], giong [truocMat].
+         */
+        @Volatile
+        var goiVuaMo: String? = null
             private set
         /**
          * Gop cac su kien "danh sach cua so doi" trong khoang nay thanh mot lan xet.

@@ -123,7 +123,8 @@ object Permissions {
         NotificationManagerCompat.from(context).areNotificationsEnabled()
 
     /**
-     * Quyen doc thong bao. Chi can khi Ba Huy da chon app duoc nghe nhac nen.
+     * Quyen doc thong bao. Can cho hai viec: canh tieng phat nen, va dem tin Telegram cua
+     * Ba Huy.
      *
      * Android chi cho hoi "app nao dang giu trinh phat" khi co mot dich vu kieu do da
      * duoc bat, va do la cach duy nhat dem duoc so phut nghe nhac cua dung mot app.

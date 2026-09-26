@@ -65,7 +65,8 @@
              bo qua screenOrientation cua app nham SDK 36, va chia doi man hinh van doi co cua
              so. Luc do man tu ve lai chu khong bi dung lai. Dung lai man thi mat viec dang lam
              do: luot hoc thuoc bi chot giua chung, cac buoc chon bai ve lai tu dau, hop PIN
-             dong mat, tin chat da toi Ba Huy ma khong vao khung chat nen con bam gui lan hai.
+             dong mat, tin da toi Ba Huy ma khong vao khung chat cu (bo ngay 27/9/2026) nen
+             con bam gui lan hai.
              Man chup chi khoa doc. Man moi cung phai khai ca hai: XoayManTest kiem. -->
 
         <!-- Icon app tro vao day chu khong vao thang HomeActivity. App dang chay thi

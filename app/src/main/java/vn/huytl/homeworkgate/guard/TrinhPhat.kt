@@ -30,46 +30,42 @@ import vn.huytl.homeworkgate.data.Prefs
 class TaiThongBao : NotificationListenerService() {
 
     /**
-     * Vua noi lai: tien trinh vua song lai, hay may vua khoi dong. Dem lai tu nhung thong
-     * bao dang nam tren may, vi so cu trong prefs co the da sai: con doc tin trong luc
-     * dich vu nay khong chay thi khong ai bao cho no biet.
+     * Vua noi lai: tien trinh vua song lai, hay may vua khoi dong. Con doc tin trong luc
+     * dich vu nay khong chay thi khong ai bao cho no biet, nen dem lai tu dau.
      */
-    override fun onListenerConnected() {
+    override fun onListenerConnected() = demLai()
+
+    override fun onNotificationPosted(sbn: StatusBarNotification?) {
+        if (sbn?.packageName in TelegramThat.GOI) demLai()
+    }
+
+    /**
+     * Thong bao cua Telegram mat di: Telegram tu go khi con da mo khung chat ra doc, hoac
+     * con vuot bo no. Truong hop sau thi tin van chua doc ben trong Telegram, nhung tu
+     * ngoai nhin vao khong con cach nao biet nua.
+     */
+    override fun onNotificationRemoved(sbn: StatusBarNotification?) {
+        if (sbn?.packageName in TelegramThat.GOI) demLai()
+    }
+
+    /**
+     * Dem lai tu cac thong bao Telegram dang nam tren may, moi lan co mot cai hien hay mat.
+     *
+     * Khong ghi de theo rieng thong bao vua toi: Telegram co the co hai thong bao cung mang
+     * ma khung chat cua ba (tin nhan, va story ba dang), va hai cai do chen so cua nhau.
+     */
+    private fun demLai() {
         runCatching {
             val chatIdBa = Prefs.get(this).parentChatId
             val so = activeNotifications.orEmpty()
                 .filter { it.packageName in TelegramThat.GOI }
                 .sumOf {
-                    ThongBaoTelegram.soTinCuaBa(it.notification.shortcutId, it.notification.number, chatIdBa)
+                    ThongBaoTelegram.soTinCuaBa(
+                        it.id, it.notification.shortcutId, it.notification.number, chatIdBa
+                    )
                 }
             TinCuaBa.dat(this, so)
-        }.onFailure { Log.w(TAG, "khong dem lai duoc tin Telegram: ${it.message}") }
-    }
-
-    override fun onNotificationPosted(sbn: StatusBarNotification?) {
-        val tb = sbn ?: return
-        if (tb.packageName !in TelegramThat.GOI) return
-        runCatching {
-            val chatIdBa = Prefs.get(this).parentChatId
-            val ma = tb.notification.shortcutId
-            if (!ThongBaoTelegram.laCuaBa(ma, chatIdBa)) return
-            TinCuaBa.dat(this, ThongBaoTelegram.soTinCuaBa(ma, tb.notification.number, chatIdBa))
-        }.onFailure { Log.w(TAG, "khong doc duoc thong bao Telegram: ${it.message}") }
-    }
-
-    /**
-     * Thong bao tin cua Ba Huy mat di: Telegram tu go khi con da mo khung chat ra doc,
-     * hoac con vuot bo no. Truong hop sau thi tin van chua doc ben trong Telegram, nhung
-     * tu ngoai nhin vao khong con cach nao biet nua.
-     */
-    override fun onNotificationRemoved(sbn: StatusBarNotification?) {
-        val tb = sbn ?: return
-        if (tb.packageName !in TelegramThat.GOI) return
-        runCatching {
-            if (ThongBaoTelegram.laCuaBa(tb.notification.shortcutId, Prefs.get(this).parentChatId)) {
-                TinCuaBa.dat(this, 0)
-            }
-        }
+        }.onFailure { Log.w(TAG, "khong dem duoc tin Telegram: ${it.message}") }
     }
 
     private companion object {
@@ -79,6 +75,13 @@ class TaiThongBao : NotificationListenerService() {
 
 /** Doc mot thong bao cua Telegram: co phai tin cua Ba Huy khong, may tin. Tach rieng de test. */
 object ThongBaoTelegram {
+
+    /**
+     * Ma thong bao Telegram dung cho story (NotificationsController, ham
+     * showExtraNotifications). Thong bao story cung mang ma khung chat cua nguoi dang, va
+     * so cua no la so story, nen phai bo ra.
+     */
+    const val MA_STORY = Int.MAX_VALUE - 1
 
     /**
      * Thong bao cua khung chat rieng voi Ba Huy.
@@ -93,14 +96,14 @@ object ThongBaoTelegram {
         chatIdBa > 0L && maKhungChat == "ndid_$chatIdBa"
 
     /**
-     * So tin chua doc ma thong bao nay mang, neu la cua Ba Huy.
+     * So tin chua doc ma thong bao nay mang, neu la tin cua Ba Huy.
      *
      * Telegram ghi vao so cua thong bao (Notification.number) dung so tin chua doc cua
      * khung chat do, lay tu danh sach tin dang cho bao. Thong bao con do ma so bang 0
-     * thi van tinh la mot tin.
+     * thi van tinh la mot tin. Thong bao story ([MA_STORY]) khong tinh.
      */
-    fun soTinCuaBa(maKhungChat: String?, so: Int, chatIdBa: Long): Int =
-        if (laCuaBa(maKhungChat, chatIdBa)) so.coerceAtLeast(1) else 0
+    fun soTinCuaBa(maThongBao: Int, maKhungChat: String?, so: Int, chatIdBa: Long): Int =
+        if (maThongBao != MA_STORY && laCuaBa(maKhungChat, chatIdBa)) so.coerceAtLeast(1) else 0
 }
 
 /**

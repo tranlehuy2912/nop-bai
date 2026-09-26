@@ -40,9 +40,18 @@ class TelegramThatTest {
 
     @Test
     fun dem_so_tin_chua_doc_cua_ba() {
-        assertEquals(3, ThongBaoTelegram.soTinCuaBa("ndid_123", 3, 123L))
-        assertEquals(1, ThongBaoTelegram.soTinCuaBa("ndid_123", 0, 123L))
-        assertEquals(0, ThongBaoTelegram.soTinCuaBa("ndid_456", 3, 123L))
-        assertEquals(0, ThongBaoTelegram.soTinCuaBa(null, 3, 123L))
+        assertEquals(3, ThongBaoTelegram.soTinCuaBa(11, "ndid_123", 3, 123L))
+        assertEquals(1, ThongBaoTelegram.soTinCuaBa(11, "ndid_123", 0, 123L))
+        assertEquals(0, ThongBaoTelegram.soTinCuaBa(11, "ndid_456", 3, 123L))
+        assertEquals(0, ThongBaoTelegram.soTinCuaBa(11, null, 3, 123L))
+    }
+
+    /**
+     * Ba dang story thi Telegram cung hien mot thong bao mang ma khung chat cua ba, so cua
+     * no la so story. Khong duoc tinh la tin nhan.
+     */
+    @Test
+    fun story_cua_ba_khong_tinh_la_tin() {
+        assertEquals(0, ThongBaoTelegram.soTinCuaBa(ThongBaoTelegram.MA_STORY, "ndid_123", 2, 123L))
     }
 }

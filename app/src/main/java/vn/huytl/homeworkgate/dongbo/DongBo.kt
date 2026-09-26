@@ -36,6 +36,7 @@ import vn.huytl.homeworkgate.data.VoDanDo
 import vn.huytl.homeworkgate.guard.GuardAccessibilityService
 import vn.huytl.homeworkgate.guard.ParentMode
 import vn.huytl.homeworkgate.guard.Permissions
+import vn.huytl.homeworkgate.guard.TelegramThat
 import vn.huytl.homeworkgate.guard.TinCuaBa
 import java.security.SecureRandom
 import java.text.SimpleDateFormat
@@ -148,6 +149,7 @@ object DongBo {
         TinCuaBa.K_SO,
         K_DAU_DS_APP,
         K_DA_XOA_CHAT,
+        TelegramThat.K_DA_THEM_MOI_LUC,
         K_NHA
     )
 

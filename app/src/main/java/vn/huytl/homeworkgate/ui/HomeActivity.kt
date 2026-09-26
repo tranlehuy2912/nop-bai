@@ -55,6 +55,7 @@ import vn.huytl.homeworkgate.guard.ParentMode
 import vn.huytl.homeworkgate.guard.PhienQuanLy
 import vn.huytl.homeworkgate.guard.TelegramThat
 import vn.huytl.homeworkgate.guard.TinCuaBa
+import vn.huytl.homeworkgate.guard.TrinhPhat
 import vn.huytl.homeworkgate.telegram.ApprovalService
 import vn.huytl.homeworkgate.telegram.Notifier
 import vn.huytl.homeworkgate.telegram.TelegramClient
@@ -400,8 +401,9 @@ class HomeActivity : AppCompatActivity() {
         veViecHomNay(baDangDung)
         veTinCuaCo()
 
-        // So tin Telegram cua ba ma con chua doc, dem theo thong bao cua Telegram.
-        val chuaDoc = TinCuaBa.so(this)
+        // So tin Telegram cua ba ma con chua doc, dem theo thong bao cua Telegram. Mat
+        // quyen doc thong bao thi so trong prefs dung yen o lan dem cuoi, nen khong hien.
+        val chuaDoc = if (TrinhPhat.coQuyen(this)) TinCuaBa.so(this) else 0
         binding.btnChat.text = if (chuaDoc > 0) {
             "${getString(R.string.parent_name_cap)} nhắn $chuaDoc tin mới"
         } else {

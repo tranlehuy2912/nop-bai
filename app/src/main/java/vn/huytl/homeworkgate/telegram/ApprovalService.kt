@@ -58,6 +58,7 @@ import vn.huytl.homeworkgate.guard.ManChan
 import vn.huytl.homeworkgate.dongbo.DongBo
 import vn.huytl.homeworkgate.guard.ChuongTin
 import vn.huytl.homeworkgate.guard.GuardAccessibilityService
+import vn.huytl.homeworkgate.guard.TelegramThat
 import vn.huytl.homeworkgate.guard.ParentMode
 import vn.huytl.homeworkgate.guard.Permissions
 import vn.huytl.homeworkgate.ui.HomeActivity
@@ -309,38 +310,47 @@ class ApprovalService : Service() {
         batNhipNhac()
     }
 
-    /**
-     * Man hinh dang chi co app dung moi luc, co the kem chinh app nay. Xem
-     * [Prefs.moiLucPackages].
-     *
-     * Kem app nay vi luc man chan dang hien thi chinh no cung la mot cua so cua app nay.
-     * Doc tu [GuardAccessibilityService.truocMat]: dich vu do da biet dang mo gi, con hoi
-     * lai danh sach cua so o day moi giay thi ton hon nhieu.
-     */
-    private fun chiConAppMoiLuc(): Boolean {
-        val moiLuc = prefs.moiLucPackages
-        if (moiLuc.isEmpty()) return false
-        val cac = GuardAccessibilityService.truocMat.cac
-        return cac.any { it.goi in moiLuc } &&
-            cac.all { it.goi == packageName || it.goi in moiLuc }
-    }
+    /** Man chan dang nhuong cho mot app dung moi luc. Xem [nhuongAppMoiLuc]. */
+    private var dangNhuongMoiLuc = false
 
     /**
-     * App nay vua roi khoi truoc mat chua qua [CHO_APP_KE_MS], va Ba Huy co dat app dung
-     * moi luc.
+     * Man chan co nen nhuong cho app dung moi luc luc nay khong. Xem [Prefs.moiLucPackages].
      *
-     * Bam "Nhan cho ba Huy" thi man cua app nay tam dung truoc, roi Telegram moi hien,
-     * mat vai tram mili giay, mo lanh thi mot hai giay. Man chan hien vao dung khoang do
-     * thi Telegram mo ra nam ben duoi, ma cua so bi che kin thi Android khong bao cho
-     * dich vu tro nang: [chiConAppMoiLuc] khong bao gio thay no, man chan che mai. Nen
-     * cho mot nhip. App hien len khong phai app dung moi luc thi het nhip la che lai.
+     * KHO O CHO: man chan che kin thi Android khong dua cua so ben duoi vao danh sach cua
+     * so cua dich vu tro nang, cung khong gui su kien cua no. Nen dich vu chi thay app
+     * dung moi luc neu app do mo ra luc man chan dang tam an, tuc la mo tu app Nop bai. Da
+     * nhuong roi thi phai giu cho dung luc: che lai mot lan la khong con cach nao biet con
+     * van dang o trong Telegram.
      *
-     * Chua dat app dung moi luc nao thi van che ngay nhu truoc.
+     * Bat dau nhuong khi app vua ra truoc mat ([GuardAccessibilityService.goiVuaMo]) la
+     * app dung moi luc, hay khi vua bam "Nhan cho ba Huy" chua qua [CHO_APP_KE_MS]: Nop
+     * bai tam dung truoc roi Telegram moi hien, mo lanh mat mot hai giay, ma man chan hien
+     * vao khoang do thi Telegram nam ben duoi va khong ai thay no.
+     *
+     * Dang nhuong thi giu qua luc tat man hinh, man khoa, keo thanh thong bao, hop xin quyen
+     * - nhung goi trong [GuardAccessibilityService.ALWAYS_ALLOWED] - vi khong luc nao trong
+     * do la con da roi Telegram. Sang app khac, ve man hinh chinh, hay chia doi man hinh voi
+     * mot app khong phai dung moi luc thi che lai.
+     *
+     * Dich vu tro nang khong chay thi khong nhuong: hai gia tri doc tu no luc do la cua lan
+     * cuoi no con song.
      */
-    private fun choAppKeHien(): Boolean {
-        if (prefs.moiLucPackages.isEmpty() || App.manHinhCuaAppDangMo) return false
-        val roi = App.roiNenLuc
-        return roi > 0L && SystemClock.elapsedRealtime() - roi < CHO_APP_KE_MS
+    private fun nhuongAppMoiLuc(): Boolean {
+        val moiLuc = prefs.moiLucPackages
+        if (moiLuc.isEmpty() || !GuardAccessibilityService.dangChay) {
+            dangNhuongMoiLuc = false
+            return false
+        }
+        val tm = GuardAccessibilityService.truocMat
+        if (tm.sang && tm.cac.any { it.goi != packageName && it.goi !in moiLuc }) {
+            dangNhuongMoiLuc = false
+            return false
+        }
+        val goi = GuardAccessibilityService.goiVuaMo
+        val vuaBamNut = SystemClock.elapsedRealtime() - TelegramThat.lucMoTuNut < CHO_APP_KE_MS
+        dangNhuongMoiLuc = goi in moiLuc || vuaBamNut ||
+            (dangNhuongMoiLuc && (!manHinhSang() || goi in GuardAccessibilityService.ALWAYS_ALLOWED))
+        return dangNhuongMoiLuc
     }
 
     /**
@@ -380,6 +390,9 @@ class ApprovalService : Service() {
         val trongGioChan = nhac?.loai == LoaiNhac.CHAN
 
         withContext(Dispatchers.Main) {
+            // Het man chan thi quen chuyen dang nhuong: lan man chan sau phai tu thay lai
+            // con dang o dau, khong dua vao mot lan nhuong cu.
+            if (!trongGioChan) dangNhuongMoiLuc = false
             when {
                 nhac == null -> { dai.an(); chan.an() }
 
@@ -395,8 +408,7 @@ class ApprovalService : Service() {
 
                 // Nhuong ca cho app dung moi luc, vi du Telegram de Le Hoa nhan cho ba.
                 // Buoc sang app khac la man chan che lai o nhip sau, nhu voi app Nop bai.
-                nhac.loai == LoaiNhac.CHAN &&
-                    (chiConAppMoiLuc() || choAppKeHien()) -> { dai.an(); chan.an() }
+                nhac.loai == LoaiNhac.CHAN && nhuongAppMoiLuc() -> { dai.an(); chan.an() }
 
                 nhac.loai == LoaiNhac.CHAN -> {
                     dai.an()
@@ -2122,9 +2134,8 @@ class ApprovalService : Service() {
         private const val LENH_QUA_CU_MS = 30 * 60_000L
 
         /**
-         * Roi app nay bao lau thi man chan moi che lai, khi co app dung moi luc. Xem
-         * [choAppKeHien]. Ba giay: du cho Telegram mo lanh tren tablet, ngan den muc app
-         * khac lot vao cung khong lam duoc gi.
+         * Bam "Nhan cho ba Huy" xong thi man chan cho bay nhieu truoc khi che lai. Xem
+         * [nhuongAppMoiLuc]. Ba giay: du cho Telegram mo lanh tren tablet.
          */
         private const val CHO_APP_KE_MS = 3_000L
 
