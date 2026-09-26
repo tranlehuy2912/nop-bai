@@ -48,11 +48,19 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.HomeworkGate">
 
+        <!-- XOAY MAY KHONG DUNG LAI MAN NAO, tru man chup (khoa doc). Tablet cua Le Hoa
+             bat tu xoay, nen moi man khai configChanges de tu ve lai. Dung lai man thi mat
+             viec dang lam do: luot hoc thuoc bi chot giua chung, cac buoc chon bai ve lai
+             tu dau, hop PIN dong mat, tin chat da toi Ba Huy ma khong vao khung chat nen con
+             bam gui lan hai. App khong co layout rieng cho chieu ngang, va khong man nao tinh
+             kich thuoc theo chieu rong man hinh. Man moi cung phai khai: XoayManTest kiem. -->
+
         <!-- Icon app tro vao day chu khong vao thang HomeActivity. App dang chay thi
              bam icon chi dua lai dung man dang mo, giong mo tu danh sach app gan day.
              Xem CuaVaoActivity. -->
         <activity
             android:name=".ui.CuaVaoActivity"
+            android:configChanges="orientation|screenSize|screenLayout|smallestScreenSize"
             android:exported="true"
             android:theme="@android:style/Theme.NoDisplay">
             <intent-filter>
@@ -67,12 +75,14 @@
              exported: tools/web.py mo thang no bang adb. -->
         <activity
             android:name=".ui.HomeActivity"
+            android:configChanges="orientation|screenSize|screenLayout|smallestScreenSize"
             android:exported="true"
             android:launchMode="singleTask" />
 
         <!-- exported=false de con khong mo thang bang adb hay shortcut. -->
         <activity
             android:name=".ui.ParentActivity"
+            android:configChanges="orientation|screenSize|screenLayout|smallestScreenSize"
             android:exported="false" />
 
         <activity
@@ -84,6 +94,7 @@
         <!-- Man con khai dang lam bai nao, di truoc man chup. -->
         <activity
             android:name=".ui.ChonBaiActivity"
+            android:configChanges="orientation|screenSize|screenLayout|smallestScreenSize"
             android:exported="false" />
 
         <!-- Man con soat lai ban may doc, di sau man chup. adjustResize de ban phim
@@ -103,20 +114,24 @@
         <!-- exported=false de con khong mo thang bang adb hay shortcut. -->
         <activity
             android:name=".ui.SetupActivity"
+            android:configChanges="orientation|screenSize|screenLayout|smallestScreenSize"
             android:exported="false" />
 
         <activity
             android:name=".ui.AppPickerActivity"
+            android:configChanges="orientation|screenSize|screenLayout|smallestScreenSize"
             android:exported="false" />
 
         <!-- adjustResize de ban phim khong che mat o go chu. -->
         <activity
             android:name=".ui.ChatActivity"
+            android:configChanges="orientation|screenSize|screenLayout|smallestScreenSize"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
 
         <activity
             android:name=".ui.SoanActivity"
+            android:configChanges="orientation|screenSize|screenLayout|smallestScreenSize"
             android:exported="false" />
 
         <!-- configChanges cung ly do voi SoatBaiActivity. Dung lai man dan do thi mat tam
@@ -129,21 +144,25 @@
 
         <activity
             android:name=".ui.TinActivity"
+            android:configChanges="orientation|screenSize|screenLayout|smallestScreenSize"
             android:exported="false" />
 
         <!-- Bai da cham: tung cau dung hay sai, sai thi may noi gi. Xem KetQuaActivity. -->
         <activity
             android:name=".ui.KetQuaActivity"
+            android:configChanges="orientation|screenSize|screenLayout|smallestScreenSize"
             android:exported="false" />
 
         <activity
             android:name=".ui.LichActivity"
+            android:configChanges="orientation|screenSize|screenLayout|smallestScreenSize"
             android:exported="false" />
 
         <!-- Hoc thuoc: may hoi, con go tra loi. adjustResize de ban phim khong che
              mat o go va thanh ky tu toan ngay duoi no. -->
         <activity
             android:name=".ui.HocThuocActivity"
+            android:configChanges="orientation|screenSize|screenLayout|smallestScreenSize"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
 
@@ -151,23 +170,27 @@
              man tren - ban phim khong duoc che mat o go. -->
         <activity
             android:name=".ui.DoTuVungActivity"
+            android:configChanges="orientation|screenSize|screenLayout|smallestScreenSize"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
 
         <!-- Man Le Hoa nhin lai viec minh da lam. -->
         <activity
             android:name=".ui.TienBoActivity"
+            android:configChanges="orientation|screenSize|screenLayout|smallestScreenSize"
             android:exported="false" />
 
         <!-- Bang gia gio choi: lam cai gi thi duoc may phut. -->
         <activity
             android:name=".ui.CachKiemGioActivity"
+            android:configChanges="orientation|screenSize|screenLayout|smallestScreenSize"
             android:exported="false" />
 
         <!-- So con dung app gi, luc nao. exported=false: day la trang cua Ba Huy,
              nam sau PIN, khong mo bang adb hay shortcut duoc. -->
         <activity
             android:name=".ui.ThongKeActivity"
+            android:configChanges="orientation|screenSize|screenLayout|smallestScreenSize"
             android:exported="false" />
 
 

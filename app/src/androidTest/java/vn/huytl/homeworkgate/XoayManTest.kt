@@ -4,6 +4,8 @@ import android.app.Activity
 import android.app.Instrumentation
 import android.app.UiAutomation
 import android.content.Intent
+import android.content.pm.ActivityInfo
+import android.content.pm.PackageManager
 import android.provider.Settings
 import android.view.View
 import android.widget.CheckBox
@@ -15,6 +17,7 @@ import androidx.test.platform.app.InstrumentationRegistry
 import org.junit.After
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertSame
+import org.junit.Assert.assertTrue
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -25,7 +28,8 @@ import vn.huytl.homeworkgate.ui.SoatBaiActivity
 import java.time.LocalDate
 
 /**
- * Man vo dan do va man soat bai khi tablet xoay, hay khi Android dung lai man.
+ * Man vo dan do va man soat bai khi tablet xoay, hay khi Android dung lai man. Cac man
+ * khac thi [moiManTuVeLaiKhiXoay] kiem la deu khai configChanges.
  *
  * Tablet cua Le Hoa bat tu xoay (Ba Huy xac nhan ngay 26/9/2026), con man chup thi khoa
  * doc. Truoc day xoay may la hai man nay bi dung lai tu dau: man dan do mat tam anh
@@ -152,6 +156,34 @@ class XoayManTest {
         } finally {
             ins.removeMonitor(chan)
         }
+    }
+
+    /**
+     * Moi man cua app tu ve lai khi xoay, tru man chup vi man do khoa doc.
+     *
+     * Hai test xoay that o tren cho thay configChanges giu nguyen man tren may nay. Test
+     * nay giu cho man nao cung co no, ke ca man them sau: quen khai la luot hoc thuoc
+     * bi chot giua chung, hay tin chat gui hai lan - xem chu thich dau AndroidManifest.
+     */
+    @Test
+    fun moiManTuVeLaiKhiXoay() {
+        val canCo = ActivityInfo.CONFIG_ORIENTATION or ActivityInfo.CONFIG_SCREEN_SIZE or
+            ActivityInfo.CONFIG_SCREEN_LAYOUT or ActivityInfo.CONFIG_SMALLEST_SCREEN_SIZE
+        @Suppress("DEPRECATION")
+        val cacMan = context.packageManager
+            .getPackageInfo(context.packageName, PackageManager.GET_ACTIVITIES)
+            .activities.orEmpty()
+            // Bo man cua thu vien (Firebase, Google Play) gop vao manifest.
+            .filter { it.name.startsWith("vn.huytl.homeworkgate.") }
+        val sai = cacMan.filter {
+            if (it.name == CaptureActivity::class.java.name) {
+                it.screenOrientation != ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
+            } else {
+                it.configChanges and canCo != canCo
+            }
+        }.map { it.name.substringAfterLast('.') }
+        assertTrue("chua tu ve lai khi xoay: $sai", sai.isEmpty())
+        assertTrue("khong doc duoc danh sach man", cacMan.size >= 18)
     }
 
     // ------------------------------------------------------------------ linh tinh
