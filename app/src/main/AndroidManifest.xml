@@ -51,6 +51,10 @@
         <!-- MOI MAN KHOA DOC, ca man chup. Ba Huy chon ngay 26/9/2026: tablet cua Le Hoa bat
              tu xoay, ma chay mot chieu thi khong phai lo bo cuc o chieu kia.
 
+             Tru CuaVaoActivity: no khong co giao dien (Theme.NoDisplay, trong suot). Tren
+             Android 8.0 - minSdk van la 26 - man trong suot ma khoa chieu thi app sap ngay
+             luc bam icon ("Only fullscreen opaque activities can request orientation").
+
              configChanges van giu, lam lop chan thu hai: Android 16 tro len tren may man lon
              bo qua screenOrientation cua app nham SDK 36, va chia doi man hinh van doi co cua
              so. Luc do man tu ve lai chu khong bi dung lai. Dung lai man thi mat viec dang lam
@@ -65,7 +69,6 @@
             android:name=".ui.CuaVaoActivity"
             android:configChanges="orientation|screenSize|screenLayout|smallestScreenSize"
             android:exported="true"
-            android:screenOrientation="portrait"
             android:theme="@android:style/Theme.NoDisplay">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

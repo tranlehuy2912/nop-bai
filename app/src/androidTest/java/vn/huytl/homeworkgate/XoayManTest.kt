@@ -161,7 +161,8 @@ class XoayManTest {
     }
 
     /**
-     * Moi man cua app khoa doc, va tru man chup, man nao cung tu ve lai khi doi cau hinh.
+     * Moi man co giao dien cua app khoa doc, va tru man chup, man nao cung tu ve lai khi
+     * doi cau hinh.
      *
      * Khoa doc la Ba Huy chon ngay 26/9/2026. configChanges la lop chan thu hai, cho luc
      * Android bo qua khoa (Android 16 tro len tren may man lon) hay luc chia doi man hinh:
@@ -178,11 +179,20 @@ class XoayManTest {
             .activities.orEmpty()
             // Bo man cua thu vien (Firebase, Google Play) gop vao manifest.
             .filter { it.name.startsWith("vn.huytl.homeworkgate.") }
-        val khongDoc = cacMan.filter { it.screenOrientation != ActivityInfo.SCREEN_ORIENTATION_PORTRAIT }
+        // Man khong co giao dien (CuaVaoActivity) thi nguoc lai, khong duoc khoa: tren
+        // Android 8.0 man trong suot ma khoa chieu la app sap luc bam icon.
+        val trongSuot = { a: ActivityInfo -> a.theme == android.R.style.Theme_NoDisplay }
+        val khongDoc = cacMan.filter {
+            !trongSuot(it) && it.screenOrientation != ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
+        }
+        val trongSuotMaKhoa = cacMan.filter {
+            trongSuot(it) && it.screenOrientation != ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED
+        }
         val khongTuVe = cacMan.filter {
             it.name != CaptureActivity::class.java.name && it.configChanges and canCo != canCo
         }
         assertTrue("chua khoa doc: ${ten(khongDoc)}", khongDoc.isEmpty())
+        assertTrue("man trong suot khong duoc khoa chieu: ${ten(trongSuotMaKhoa)}", trongSuotMaKhoa.isEmpty())
         assertTrue("chua tu ve lai: ${ten(khongTuVe)}", khongTuVe.isEmpty())
         assertTrue("khong doc duoc danh sach man", cacMan.size >= 18)
     }
