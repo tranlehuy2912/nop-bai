@@ -8,6 +8,10 @@ import android.content.Context
 /**
  * Luat mot luot moi ngay cua ba noi, giu o phia tablet.
  *
+ * TU 26/9/2026 KHONG CON LENH NAO TOI DAY: app ba bo sau nut cho gio, va luat
+ * Firestore khong cho may ba tao lenh nao nua. Doan nay giu lai, nhung chi con chay
+ * neu co ai mo lai cua do trong firestore.rules.
+ *
  * Ben may ba cung dem mot lan nua, va do la chu y: may ba go cai dat hay cai lai
  * app la so dem ben do ve khong, luc do chi con cho nay chan. Nguoc lai thi khong
  * - ben do dem de tat nut di cho ba khoi bam vao khoang khong, con cho nay moi la
