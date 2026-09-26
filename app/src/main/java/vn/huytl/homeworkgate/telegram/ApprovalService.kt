@@ -1345,10 +1345,7 @@ class ApprovalService : Service() {
             return
         }
         // Vo chi co anh thi may cham da duoc dua tam anh do, xem SoatBaiActivity.cham.
-        xuLyBanCham(
-            ket, pham, nhom.containsKey(CaptureStage.DAN_DO) || vo?.chuaDoc == true,
-            anhVo = sent.anh.firstOrNull { it.khau == CaptureStage.DAN_DO.name }?.fileId
-        )
+        xuLyBanCham(ket, pham, nhom.containsKey(CaptureStage.DAN_DO) || vo?.chuaDoc == true)
     }
 
 
@@ -1367,12 +1364,7 @@ class ApprovalService : Service() {
         /** Bai duoc chi dinh san, o duong Claude cham. null la bai vua nop, moi nhat. */
         baiId: String? = null,
         /** Ai cham, de ghi dung vao tin Telegram va nhat ky. */
-        nguoiCham: String = "AI",
-        /**
-         * Ma Telegram cua tam anh trang vo chup o buoc dau man chup bai, neu lan nop nay
-         * co. Chi duong AI cham biet ma nay; duong Claude cham thi null. Xem [giuVoKemBai].
-         */
-        anhVo: String? = null
+        nguoiCham: String = "AI"
     ) {
         val chatId = prefs.parentChatId
         val con = getString(R.string.child_name)
@@ -1568,7 +1560,6 @@ class ApprovalService : Service() {
             than.append("\n")
         }
         giuVoDocLucCham(ket, coAnhDanDo, baiId)
-        if (coAnhDanDo) giuVoKemBai(ket, anhVo, luc)
         bang.dong.forEach { than.append("• ").append(it).append("\n") }
         if (thieu.isNotEmpty()) {
             than.append("• Khai làm nhưng ảnh không thấy: ")
@@ -1793,26 +1784,6 @@ class ApprovalService : Service() {
             runCatching { tg.clearReplyMarkup(chatId, bai.messageId) }
         }
         refreshUi()
-    }
-
-    /**
-     * Tam vo chup o buoc dau man chup bai ma lan cham nay vua doc ra: giu lai lam vo dan
-     * do cua ngay, de lan nop sau khong hoi vo nua. Ly do o [VoDanDo.tuAnhKemBai].
-     *
-     * Chay sau [giuVoDocLucCham], va khong de len ban dang con hieu luc: ban con soat hay
-     * Claude doc dang tin hon mot lan may doc chua ai soat.
-     */
-    private fun giuVoKemBai(ket: KetQuaCham, anhVo: String?, chupLuc: Long) {
-        if (VoDanDo.conHieuLuc(this) != null) return
-        // Xet han theo luc con nop, giong luat cong gio: Claude cham co khi tre vai tieng.
-        val moi = VoDanDo.tuAnhKemBai(ket.ngayDanDo, ket.baiDuocGiao, anhVo, chupLuc, chupLuc)
-            ?: return
-        VoDanDo.luu(this, moi)
-        DayLog.add(
-            this,
-            "Giữ vở dặn dò đọc lúc chấm bài: " +
-                if (moi.cacBai.isEmpty()) "không có bài tập" else moi.cacBai.joinToString(", ")
-        )
     }
 
     /**

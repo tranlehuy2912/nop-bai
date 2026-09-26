@@ -29,8 +29,6 @@ import vn.huytl.homeworkgate.R
 import vn.huytl.homeworkgate.data.CaptureStage
 import vn.huytl.homeworkgate.data.DayLog
 import vn.huytl.homeworkgate.data.Prefs
-import vn.huytl.homeworkgate.data.SoCaiBai
-import vn.huytl.homeworkgate.data.VoDanDo
 import vn.huytl.homeworkgate.databinding.ActivityCaptureBinding
 import vn.huytl.homeworkgate.telegram.CapSachSender
 import vn.huytl.homeworkgate.kho.PhamVi
@@ -98,23 +96,18 @@ class CaptureActivity : AppCompatActivity() {
      * anh co trang sach hay khong. Bat chup them mot tam nua chi de may nhin lai
      * cai no da doc roi.
      *
-     * CON BUOC VO DAN DO THI KHONG BO DUOC, du trong ngay da tinh tron goi. Thieu
-     * trang vo do, may khong biet cau nao thuoc bai co giao nen coi TAT CA la trong
-     * goi (quy tac 17), va lan nop thu hai se khong duoc phut nao.
+     * KHONG CO BUOC VO DAN DO. Vo chi chup o mot cho: dong "Chụp vở dặn dò hôm nay"
+     * dau man chon mon, mo [DanDoActivity], chup mot lan cho ca ngay. Truoc day man nay
+     * con mot buoc chup vo du phong, hien o moi lan nop khi trong may chua co vo con
+     * hieu luc, va vo chup o do chi theo dung lan nop ay; con thay bi hoi vo hoai du da
+     * co cho chup rieng. Ban vo da luu di thang vao cau lenh cham (xem
+     * [vn.huytl.homeworkgate.data.VoDanDo]), va Bang dieu khien chep no vao loi nho
+     * Claude (xem [vn.huytl.homeworkgate.dongbo.DongBo.banDanDo]).
      */
     private val cacBuoc: List<CaptureStage> by lazy {
-        // Trong may da co ban vo dan do da soat thi khong hoi lai trang vo nua: doan
-        // chu do di thang vao cau lenh cham - xem [vn.huytl.homeworkgate.data.VoDanDo].
-        //
-        // Tat cham AI cung vay: ban soat di kem bai len Firestore, va Bang dieu khien
-        // chep no vao loi nho Claude - xem [vn.huytl.homeworkgate.dongbo.DongBo.banDanDo].
-        // Chua co ban soat (con chua chup dau buoi, hay may doc khong duoc) thi van chup
-        // trang vo o day, va Claude doc anh nhu truoc.
-        val canVo = VoDanDo.conHieuLuc(this) == null
         when {
             motXap -> listOf(CaptureStage.BAI_GIAI)
             else -> buildList {
-                if (canVo) add(CaptureStage.DAN_DO)
                 if (pham?.theoSach != true) add(CaptureStage.DE_BAI)
                 add(CaptureStage.BAI_GIAI)
             }
@@ -130,10 +123,7 @@ class CaptureActivity : AppCompatActivity() {
      */
     private val pham: PhamVi? by lazy { PhamVi.tuJson(intent.getStringExtra(EXTRA_PHAM)) }
 
-    private var stage = CaptureStage.DAN_DO
-
-    /** Hom nay da tinh tron goi chua, doc san luc mo man cho [boQua]. */
-    private var goiDaCoHomNay = false
+    private var stage = CaptureStage.BAI_GIAI
     private val shots = CaptureStage.entries.associateWith { mutableListOf<File>() }
 
     private val requestCamera = registerForActivityResult(
@@ -161,11 +151,7 @@ class CaptureActivity : AppCompatActivity() {
         }
 
         binding.btnTake.setOnClickListener { takePhoto() }
-        binding.btnSkip.setOnClickListener { boQua() }
-        // Hoi so cai mot lan luc mo man, ngoai luong giao dien. Xem [boQua].
-        lifecycleScope.launch {
-            goiDaCoHomNay = withContext(Dispatchers.IO) { SoCaiBai.goiDaCoHomNay(this@CaptureActivity) }
-        }
+        binding.btnSkip.setOnClickListener { goNext() }
         binding.btnNext.setOnClickListener { goNext() }
         // Ba che do rut gon chi co mot xap anh nen buoc dau cung la buoc cuoi, va
         // goNext() thanh gui thang.
@@ -275,30 +261,6 @@ class CaptureActivity : AppCompatActivity() {
             return
         }
         jumpTo(cacBuoc[cacBuoc.indexOf(stage) + 1])
-    }
-
-    /**
-     * Bo qua buoc dang chup, khong chup tam nao.
-     *
-     * Rieng buoc vo dan do, hom nay da tinh tron goi thi hoi lai truoc. Thieu trang vo,
-     * quy tac 17 coi moi cau lan nay la bai co giao, ma bai co giao da tra trong goi: ca
-     * lan nop ra 0 phut, ke ca bai lam them that. Man chinh luc do chi ghi "Chưa cộng giờ
-     * được cho bài này", khong noi vi sao.
-     */
-    private fun boQua() {
-        if (stage == CaptureStage.DAN_DO && goiDaCoHomNay) {
-            MaterialAlertDialogBuilder(this)
-                .setTitle("Chụp vở dặn dò nhé")
-                .setMessage(
-                    "Hôm nay đã tính trọn gói bài cô giao. Thiếu trang vở thì máy không biết " +
-                        "câu nào là bài làm thêm, nên cả lần nộp này có thể không được phút nào."
-                )
-                .setPositiveButton("Chụp vở", null)
-                .setNegativeButton("Vẫn bỏ qua") { _, _ -> goNext() }
-                .show()
-            return
-        }
-        goNext()
     }
 
     private fun takePhoto() {

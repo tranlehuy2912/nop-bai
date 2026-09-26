@@ -311,54 +311,10 @@ object VoDanDo {
         val ngay = LuatCongGio.docNgay(ngayDanDo) ?: return null
         return cu.copy(
             ngay = ngay.toString(),
-            cacDong = dongTuLanCham(baiDuocGiao),
+            cacDong = baiDuocGiao.map { Dong(it, laBaiTap = true, mayTich = true) },
             luc = bayGio,
             chuaDoc = false,
             nguon = NGUON_LUC_CHAM
         )
     }
-
-    /**
-     * Ban vo moi tu lan cham doc tam anh trang vo chup o buoc dau man chup bai.
-     *
-     * Chi vo chup o man "Chụp vở dặn dò hôm nay" moi duoc giu ca ngay. Vo chup o buoc
-     * dau man chup bai thi chi di theo lan nop do, nen lan nop sau man chup lai hoi
-     * trang vo. Con nghi da chup roi, bam bo qua, va neu hom do da tinh tron goi thi
-     * bai lam them ra 0 phut: khong co vo, quy tac 17 coi moi cau la bai co giao, ma
-     * bai co giao da tra trong goi. Giu lai lan doc nay thi lan nop sau khong hoi vo
-     * nua va mang theo danh sach bai.
-     *
-     * Chua ai soat ban nay, giong [tuLanCham]: con xem va sua duoc o man vo dan do,
-     * ChonBaiActivity ghi ro la doc ra luc cham bai.
-     *
-     * null khi khong dung duoc: lan cham khong doc ra ngay trong vo (ly do nhu o
-     * [tuLanCham]), hay ngay do khong con hieu luc de tinh bai hom nay.
-     *
-     * @param bayGio moc xet han. Duong Claude cham truyen luc con nop chu khong phai luc
-     * Ba Huy dan ket qua, giong cach xuLyBanCham tinh luat cong gio.
-     */
-    fun tuAnhKemBai(
-        ngayDanDo: String?,
-        baiDuocGiao: List<String>,
-        fileId: String?,
-        chupLuc: Long,
-        bayGio: Long = System.currentTimeMillis()
-    ): DanDo? {
-        val luc = LuatCongGio.bayGio(bayGio)
-        val ngay = LuatCongGio.docNgay(ngayDanDo, luc.toLocalDate()) ?: return null
-        if (!LuatCongGio.ngayDanDoHopLe(ngay, luc)) return null
-        return DanDo(
-            ngay = ngay.toString(),
-            cacDong = dongTuLanCham(baiDuocGiao),
-            luc = bayGio,
-            fileId = fileId,
-            chuaDoc = false,
-            nguon = NGUON_LUC_CHAM,
-            chupLuc = chupLuc
-        )
-    }
-
-    /** Lan cham chi doc ra bai tap, nen moi dong la bai tap va la may tich. */
-    private fun dongTuLanCham(baiDuocGiao: List<String>): List<Dong> =
-        baiDuocGiao.map { Dong(it, laBaiTap = true, mayTich = true) }
 }

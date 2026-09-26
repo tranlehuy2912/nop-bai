@@ -281,10 +281,12 @@ class ChonBaiActivity : AppCompatActivity() {
         // nhu khong goi lai lan nao. Man nay thi con vao moi lan nop bai.
         VoDanDo.donDep(this)
         val d = VoDanDo.conHieuLuc(this)
-        themDong(
+        val dong = themDong(
             ten = if (d == null) "Chụp vở dặn dò hôm nay" else "Vở dặn dò ${d.moTa()}",
             phu = when {
-                d == null -> "Chụp một lần thôi. Máy đọc ra chữ cho Lê Hòa soát lại trước khi dùng"
+                // Day la cho DUY NHAT chup vo: man chup bai khong con buoc vo. Nen noi ra
+                // cai duoc, khong thi dong nay chi la mot dong nua trong danh sach mon.
+                d == null -> "Chưa chụp. Chụp một lần để máy tính trọn gói 45 phút bài cô giao"
                 d.chuaDoc -> "Máy chưa đọc được, ảnh đã gửi ba Huy. Mấy lần nộp sau không phải chụp lại"
                 d.nguon == VoDanDo.NGUON_CLAUDE -> "Claude đã đọc giúp. Bấm để xem hoặc sửa"
                 d.nguon == VoDanDo.NGUON_LUC_CHAM -> "Đọc ra lúc chấm bài. Bấm để xem hoặc sửa"
@@ -292,6 +294,20 @@ class ChonBaiActivity : AppCompatActivity() {
             }
         ) {
             startActivity(Intent(this, DanDoActivity::class.java))
+        }
+        if (d != null) return
+        val phu = dong.findViewById<TextView>(R.id.phu)
+        phu.setTextColor(ContextCompat.getColor(this, R.color.brand))
+        /*
+         * Hom nay da tinh tron goi ma khong con vo nao hieu luc (vo hom qua het han luc
+         * trua, vo hom nay chua chup): nop luc nay thi quy tac 17 coi moi cau la bai co
+         * giao, ma bai co giao da tra trong goi, nen bai lam them ra 0 phut. Noi thang ra.
+         */
+        lifecycleScope.launch {
+            val daCoGoi = withContext(Dispatchers.IO) { SoCaiBai.goiDaCoHomNay(this@ChonBaiActivity) }
+            if (!daCoGoi || buoc != Buoc.MON) return@launch
+            phu.text = "Chụp vở mới trước khi nộp. Chưa có vở thì bài làm thêm không được tính phút"
+            phu.setTextColor(ContextCompat.getColor(this@ChonBaiActivity, R.color.alert))
         }
     }
 

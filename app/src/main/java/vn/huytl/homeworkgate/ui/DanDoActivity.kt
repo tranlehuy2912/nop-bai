@@ -25,7 +25,10 @@ import vn.huytl.homeworkgate.telegram.DanDoSender
 import vn.huytl.homeworkgate.databinding.StActivityDanDoBinding
 import vn.huytl.homeworkgate.databinding.StDongDanDoBinding
 import java.io.File
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import vn.huytl.homeworkgate.data.LuatCongGio
 import java.time.LocalDate
+import java.time.LocalDateTime
 
 /**
  * Chup trang vo dan do mot lan, soat lai cai may doc ra, roi luu cho ca ngay.
@@ -282,11 +285,31 @@ class DanDoActivity : AppCompatActivity() {
         ).show()
     }
 
-    /** Chi luu DUNG buoi dang chon. Cac buoi khac tren trang la cua hom khac. */
-    private fun luu() {
+    /**
+     * Chi luu DUNG buoi dang chon. Cac buoi khac tren trang la cua hom khac.
+     *
+     * Ngay tren vo khong tinh duoc cho bai hom nay thi hoi lai truoc. Truoc day man nay
+     * luu im lang, roi tablet coi nhu chua co vo: dong "Chụp vở dặn dò hôm nay" hien lai
+     * nhu chua chup, va khong co tron goi. Hay gap nhat la may doc sai ngay, hay co ghi
+     * ngay han nop.
+     */
+    private fun luu(daHoiNgay: Boolean = false) {
         val cac = docManHinh()
         if (cac.isEmpty()) {
             Toast.makeText(this, "Chưa có dòng nào để lưu", Toast.LENGTH_SHORT).show()
+            return
+        }
+        if (!daHoiNgay && !LuatCongGio.ngayDanDoHopLe(ngay, LocalDateTime.now())) {
+            MaterialAlertDialogBuilder(this)
+                .setTitle("Ngày trên vở không tính cho hôm nay")
+                .setMessage(
+                    "Vở ghi ngày ${ngay.dayOfMonth}/${ngay.monthValue}/${ngay.year}. Máy chỉ tính " +
+                        "vở ghi ngày hôm nay, hoặc hôm qua khi chưa quá 12 giờ trưa. Lưu vở này " +
+                        "thì bài nộp hôm nay vẫn như chưa có vở. Máy đọc sai ngày thì bấm Sửa ngày."
+                )
+                .setPositiveButton("Sửa ngày") { _, _ -> chonNgay() }
+                .setNegativeButton("Vẫn lưu") { _, _ -> luu(daHoiNgay = true) }
+                .show()
             return
         }
         val cu = VoDanDo.doc(this)

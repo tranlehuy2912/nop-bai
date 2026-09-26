@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Chup theo ba buoc: vo dan do, de bai, bai giai.
-     Ba o tren dau luon hien du ba buoc de biet con dang o dau va con may buoc. -->
+<!-- Chup theo tung buoc: de bai, bai giai. Vo dan do khong chup o day ma o man vo dan
+     do, mot lan cho ca ngay. Hang o tren dau hien cac buoc cua lan nop nay de biet con
+     dang o dau va con may buoc. -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/root"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -175,15 +177,20 @@
         android:paddingHorizontal="24dp"
         android:paddingVertical="18dp">
 
+        <!-- Nut vien cung co voi nut Buoc tiep theo ben phai, va cung le 12dp voi nut
+             chup: nut chu tron khong vien dat canh mot nut dac mau thi hang nut lech
+             han sang phai, nut chup cung khong nam giua. -->
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_skip"
-            style="@style/Widget.Material3.Button.TextButton"
+            style="@style/Widget.Material3.Button.OutlinedButton"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:layout_marginEnd="12dp"
             android:text="@string/capture_skip"
-            android:textColor="#B9C0CC"
-            android:textSize="16sp" />
+            android:textColor="#DDE3EC"
+            android:textSize="16sp"
+            app:strokeColor="#6B7482" />
 
         <ImageView
             android:id="@+id/btn_take"
