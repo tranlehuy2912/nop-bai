@@ -38,6 +38,7 @@ import vn.huytl.homeworkgate.data.VoDanDo
 import vn.huytl.homeworkgate.guard.GuardAccessibilityService
 import vn.huytl.homeworkgate.guard.ParentMode
 import vn.huytl.homeworkgate.guard.Permissions
+import vn.huytl.homeworkgate.guard.TinCuaBa
 import java.security.SecureRandom
 import java.text.SimpleDateFormat
 import java.util.Date
@@ -146,6 +147,7 @@ object DongBo {
         "heartbeat_wall",
         "menu_lenh_ban",
         "su_dung_doan",
+        TinCuaBa.K_SO,
         K_DAU_DS_APP,
         K_NHA
     )

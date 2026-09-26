@@ -125,9 +125,10 @@ object Permissions {
     /**
      * Quyen doc thong bao. Chi can khi Ba Huy da chon app duoc nghe nhac nen.
      *
-     * App khong doc thong bao cua ai - dich vu [TaiThongBao] rong ruot. Nhung Android
-     * chi cho hoi "app nao dang giu trinh phat" khi co mot dich vu kieu do da duoc
-     * bat, va do la cach duy nhat dem duoc so phut nghe nhac cua dung mot app.
+     * Android chi cho hoi "app nao dang giu trinh phat" khi co mot dich vu kieu do da
+     * duoc bat, va do la cach duy nhat dem duoc so phut nghe nhac cua dung mot app.
+     * [TaiThongBao] khong doc noi dung thong bao nao. Tu 27/9/2026 no nhin them ma khung
+     * chat va so tin cua thong bao Telegram, de dem so tin Ba Huy gui ma con chua doc.
      */
     fun hasNotificationAccess(context: Context): Boolean = TrinhPhat.coQuyen(context)
 
@@ -276,7 +277,8 @@ object Permissions {
                     "Chưa cho app đọc thông báo",
                     "Thiếu thì hết giờ Lê Hòa vẫn có thể bấm Phát nhạc ở thanh thông báo: " +
                         "máy không biết app nào đang phát để dừng đúng app đó, " +
-                        "và không đếm được số phút nghe nhạc nền.",
+                        "và không đếm được số phút nghe nhạc nền. Nút nhắn tin cũng " +
+                        "không đếm được tin Telegram mới của ba Huy.",
                     nang = true
                 )
             )

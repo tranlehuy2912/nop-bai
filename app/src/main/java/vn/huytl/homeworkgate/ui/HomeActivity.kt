@@ -51,6 +51,8 @@ import vn.huytl.homeworkgate.dongbo.DongBo
 import vn.huytl.homeworkgate.guard.CountdownOverlay
 import vn.huytl.homeworkgate.guard.ParentMode
 import vn.huytl.homeworkgate.guard.PhienQuanLy
+import vn.huytl.homeworkgate.guard.TelegramThat
+import vn.huytl.homeworkgate.guard.TinCuaBa
 import vn.huytl.homeworkgate.telegram.ApprovalService
 import vn.huytl.homeworkgate.telegram.Notifier
 import vn.huytl.homeworkgate.telegram.TelegramClient
@@ -115,8 +117,12 @@ class HomeActivity : AppCompatActivity() {
         applySystemBarPadding()
 
         binding.btnSubmit.setOnClickListener { onSubmit() }
-        binding.btnChat.setOnClickListener {
+        binding.btnChat.setOnClickListener { nhanChoBa() }
+        // Man chat cu con giu lam duong du phong trong luc chuyen sang Telegram. Bam giu
+        // la vao, de Telegram bi dang xuat hay hong thi con van nhan duoc cho ba.
+        binding.btnChat.setOnLongClickListener {
             startActivity(Intent(this, ChatActivity::class.java))
+            true
         }
         toMauHangPhu()
         binding.btnParent.setOnClickListener { moChoBaHuy() }
@@ -379,7 +385,9 @@ class HomeActivity : AppCompatActivity() {
         veViecHomNay(baDangDung)
         veTinCuaCo()
 
-        val chuaDoc = ChatBox.unread(this)
+        // Dem cung mot cho voi viec bam nut, xem [nhanChoBa]: con tin chua doc o man chat
+        // cu thi so do la cua man cu, vi bam vao se ra man cu. Khong thi dem tin Telegram.
+        val chuaDoc = ChatBox.unread(this).takeIf { it > 0 } ?: TinCuaBa.so(this)
         binding.btnChat.text = if (chuaDoc > 0) {
             "${getString(R.string.parent_name_cap)} nhắn $chuaDoc tin mới"
         } else {
@@ -872,6 +880,22 @@ class HomeActivity : AppCompatActivity() {
         // Qua man khai bai truoc, khong vao thang camera nua. Xem [ChonBaiActivity]
         // de biet vi sao them mot buoc vao giua.
         startActivity(Intent(this, ChonBaiActivity::class.java))
+    }
+
+    /**
+     * Nhan cho Ba Huy: mo Telegram ngay khung chat voi ba.
+     *
+     * Tu 27/9/2026 Le Hoa nhan tin bang Telegram that, tai khoan rieng cua con. Telegram
+     * mo duoc luc nao la theo danh sach app Ba Huy dat, nhu moi app khac; Ba Huy bo no
+     * vao "Dung moi luc" thi mo duoc ca gio ngu va gio di hoc. Xem [TelegramThat].
+     *
+     * Man chat cu van mo trong hai truong hop: ba vua nhan qua duong cu (go cho bot hay
+     * tab Chat cua Bang dieu khien) ma con chua doc, va tablet chua co Telegram. Bam
+     * giu nut cung vao duoc man cu.
+     */
+    private fun nhanChoBa() {
+        if (ChatBox.unread(this) == 0 && TelegramThat.moChatVoiBa(this)) return
+        startActivity(Intent(this, ChatActivity::class.java))
     }
 
     /**

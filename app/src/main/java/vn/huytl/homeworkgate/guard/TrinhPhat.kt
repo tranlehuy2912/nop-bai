@@ -7,22 +7,101 @@ import android.media.session.MediaController
 import android.media.session.MediaSessionManager
 import android.media.session.PlaybackState
 import android.service.notification.NotificationListenerService
+import android.service.notification.StatusBarNotification
 import android.util.Log
 import androidx.core.app.NotificationManagerCompat
+import vn.huytl.homeworkgate.data.Prefs
 
 /**
- * Dich vu doc thong bao, rong ruot va se mai rong.
+ * Dich vu doc thong bao.
  *
- * No khong doc mot thong bao nao. Ly do ton tai: Android chi cho doc danh sach
- * trinh phat dang chay (MediaSessionManager) neu app co mot dich vu kieu nay va
- * nguoi dung da bat no trong Settings. Khai bao class rong la cai gia phai tra de
- * hoi duoc cau "app nao dang phat tieng".
+ * Ly do ton tai dau tien: Android chi cho doc danh sach trinh phat dang chay
+ * (MediaSessionManager) neu app co mot dich vu kieu nay va nguoi dung da bat no
+ * trong Settings. Do la cai gia phai tra de hoi duoc cau "app nao dang phat tieng".
  *
- * Khong nhan onNotificationPosted, khong doc noi dung tin nhan cua ai. Neu sau nay
- * co them viec gi o day thi phai can nhac lai: quyen nay doc duoc MOI thong bao
- * tren may, rong hon nhieu so voi phan dang dung.
+ * Tu 27/9/2026 no nhin them thong bao cua Telegram, va chi cua Telegram, de dem so tin
+ * Ba Huy gui ma Le Hoa chua doc: nut "Nhan cho ba Huy" o man chinh ghi "Ba Huy nhan 3
+ * tin moi" nhu thoi man chat cu. Xem [TinCuaBa].
+ *
+ * Chi doc ten goi, ma khung chat va so tin, khong doc tieu de hay noi dung. Quyen nay
+ * doc duoc MOI thong bao tren may, rong hon nhieu so voi phan dang dung, nen them viec
+ * gi o day thi phai can nhac lai.
  */
-class TaiThongBao : NotificationListenerService()
+class TaiThongBao : NotificationListenerService() {
+
+    /**
+     * Vua noi lai: tien trinh vua song lai, hay may vua khoi dong. Dem lai tu nhung thong
+     * bao dang nam tren may, vi so cu trong prefs co the da sai: con doc tin trong luc
+     * dich vu nay khong chay thi khong ai bao cho no biet.
+     */
+    override fun onListenerConnected() {
+        runCatching {
+            val chatIdBa = Prefs.get(this).parentChatId
+            val so = activeNotifications.orEmpty()
+                .filter { it.packageName in TelegramThat.GOI }
+                .sumOf {
+                    ThongBaoTelegram.soTinCuaBa(it.notification.shortcutId, it.notification.number, chatIdBa)
+                }
+            TinCuaBa.dat(this, so)
+        }.onFailure { Log.w(TAG, "khong dem lai duoc tin Telegram: ${it.message}") }
+    }
+
+    override fun onNotificationPosted(sbn: StatusBarNotification?) {
+        val tb = sbn ?: return
+        if (tb.packageName !in TelegramThat.GOI) return
+        runCatching {
+            val chatIdBa = Prefs.get(this).parentChatId
+            val ma = tb.notification.shortcutId
+            if (!ThongBaoTelegram.laCuaBa(ma, chatIdBa)) return
+            TinCuaBa.dat(this, ThongBaoTelegram.soTinCuaBa(ma, tb.notification.number, chatIdBa))
+        }.onFailure { Log.w(TAG, "khong doc duoc thong bao Telegram: ${it.message}") }
+    }
+
+    /**
+     * Thong bao tin cua Ba Huy mat di: Telegram tu go khi con da mo khung chat ra doc,
+     * hoac con vuot bo no. Truong hop sau thi tin van chua doc ben trong Telegram, nhung
+     * tu ngoai nhin vao khong con cach nao biet nua.
+     */
+    override fun onNotificationRemoved(sbn: StatusBarNotification?) {
+        val tb = sbn ?: return
+        if (tb.packageName !in TelegramThat.GOI) return
+        runCatching {
+            if (ThongBaoTelegram.laCuaBa(tb.notification.shortcutId, Prefs.get(this).parentChatId)) {
+                TinCuaBa.dat(this, 0)
+            }
+        }
+    }
+
+    private companion object {
+        const val TAG = "HomeworkGate"
+    }
+}
+
+/** Doc mot thong bao cua Telegram: co phai tin cua Ba Huy khong, may tin. Tach rieng de test. */
+object ThongBaoTelegram {
+
+    /**
+     * Thong bao cua khung chat rieng voi Ba Huy.
+     *
+     * Telegram gan cho thong bao cua moi khung chat mot ma "ndid_" + ma khung chat
+     * (NotificationsController, ham createNotificationShortcut), ma khung chat rieng voi
+     * mot nguoi chinh la id cua nguoi do. Telegram chi gan ma nay khi bat "bong bong
+     * chat", mac dinh bat tu Android 11. Tat di thi nut o man chinh khong dem duoc tin,
+     * con Telegram van mo binh thuong.
+     */
+    fun laCuaBa(maKhungChat: String?, chatIdBa: Long): Boolean =
+        chatIdBa > 0L && maKhungChat == "ndid_$chatIdBa"
+
+    /**
+     * So tin chua doc ma thong bao nay mang, neu la cua Ba Huy.
+     *
+     * Telegram ghi vao so cua thong bao (Notification.number) dung so tin chua doc cua
+     * khung chat do, lay tu danh sach tin dang cho bao. Thong bao con do ma so bang 0
+     * thi van tinh la mot tin.
+     */
+    fun soTinCuaBa(maKhungChat: String?, so: Int, chatIdBa: Long): Int =
+        if (laCuaBa(maKhungChat, chatIdBa)) so.coerceAtLeast(1) else 0
+}
 
 /**
  * Hoi xem app nao dang giu trinh phat, va bam dung ho.
