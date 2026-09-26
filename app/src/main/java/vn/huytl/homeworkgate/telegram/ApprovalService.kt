@@ -1802,7 +1802,9 @@ class ApprovalService : Service() {
      */
     private fun giuVoKemBai(ket: KetQuaCham, anhVo: String?, chupLuc: Long) {
         if (VoDanDo.conHieuLuc(this) != null) return
-        val moi = VoDanDo.tuAnhKemBai(ket.ngayDanDo, ket.baiDuocGiao, anhVo, chupLuc) ?: return
+        // Xet han theo luc con nop, giong luat cong gio: Claude cham co khi tre vai tieng.
+        val moi = VoDanDo.tuAnhKemBai(ket.ngayDanDo, ket.baiDuocGiao, anhVo, chupLuc, chupLuc)
+            ?: return
         VoDanDo.luu(this, moi)
         DayLog.add(
             this,

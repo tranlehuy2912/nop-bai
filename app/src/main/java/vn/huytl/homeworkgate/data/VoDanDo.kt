@@ -312,7 +312,7 @@ object VoDanDo {
         val ngay = LuatCongGio.docNgay(ngayDanDo) ?: return null
         return cu.copy(
             ngay = ngay.toString(),
-            cacDong = baiDuocGiao.map { Dong(it, laBaiTap = true, mayTich = true) },
+            cacDong = dongTuLanCham(baiDuocGiao),
             luc = bayGio,
             chuaDoc = false,
             nguon = NGUON_LUC_CHAM
@@ -334,6 +334,9 @@ object VoDanDo {
      *
      * null khi khong dung duoc: lan cham khong doc ra ngay trong vo (ly do nhu o
      * [tuLanCham]), hay ngay do khong con hieu luc de tinh bai hom nay.
+     *
+     * @param bayGio moc xet han. Duong Claude cham truyen luc con nop chu khong phai luc
+     * Ba Huy dan ket qua, giong cach xuLyBanCham tinh luat cong gio.
      */
     fun tuAnhKemBai(
         ngayDanDo: String?,
@@ -347,7 +350,7 @@ object VoDanDo {
         if (!LuatCongGio.ngayDanDoHopLe(ngay, luc)) return null
         return DanDo(
             ngay = ngay.toString(),
-            cacDong = baiDuocGiao.map { Dong(it, laBaiTap = true, mayTich = true) },
+            cacDong = dongTuLanCham(baiDuocGiao),
             luc = bayGio,
             fileId = fileId,
             chuaDoc = false,
@@ -355,4 +358,8 @@ object VoDanDo {
             chupLuc = chupLuc
         )
     }
+
+    /** Lan cham chi doc ra bai tap, nen moi dong la bai tap va la may tich. */
+    private fun dongTuLanCham(baiDuocGiao: List<String>): List<Dong> =
+        baiDuocGiao.map { Dong(it, laBaiTap = true, mayTich = true) }
 }

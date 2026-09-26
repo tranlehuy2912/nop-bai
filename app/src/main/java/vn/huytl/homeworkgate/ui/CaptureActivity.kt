@@ -144,6 +144,9 @@ class CaptureActivity : AppCompatActivity() {
     private val pham: PhamVi? by lazy { PhamVi.tuJson(intent.getStringExtra(EXTRA_PHAM)) }
 
     private var stage = CaptureStage.DAN_DO
+
+    /** Hom nay da tinh tron goi chua, doc san luc mo man cho [boQua]. */
+    private var goiDaCoHomNay = false
     private val shots = CaptureStage.entries.associateWith { mutableListOf<File>() }
 
     private val requestCamera = registerForActivityResult(
@@ -172,6 +175,10 @@ class CaptureActivity : AppCompatActivity() {
 
         binding.btnTake.setOnClickListener { takePhoto() }
         binding.btnSkip.setOnClickListener { boQua() }
+        // Hoi so cai mot lan luc mo man, ngoai luong giao dien. Xem [boQua].
+        lifecycleScope.launch {
+            goiDaCoHomNay = withContext(Dispatchers.IO) { SoCaiBai.goiDaCoHomNay(this@CaptureActivity) }
+        }
         binding.btnNext.setOnClickListener { goNext() }
         // Ba che do rut gon chi co mot xap anh nen buoc dau cung la buoc cuoi, va
         // goNext() thanh gui thang.
@@ -292,7 +299,7 @@ class CaptureActivity : AppCompatActivity() {
      * được cho bài này", khong noi vi sao.
      */
     private fun boQua() {
-        if (stage == CaptureStage.DAN_DO && SoCaiBai.goiDaCoHomNay(this)) {
+        if (stage == CaptureStage.DAN_DO && goiDaCoHomNay) {
             MaterialAlertDialogBuilder(this)
                 .setTitle("Chụp vở dặn dò nhé")
                 .setMessage(

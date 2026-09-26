@@ -830,6 +830,13 @@ class HomeActivity : AppCompatActivity() {
         }
         // Dang cho duyet ma chua giu phieu: nut chinh la nop them bai, di tiep xuong
         // duong nop binh thuong. Huy bai vua nop nam o nut phu, xem [render].
+        // Hang cho du bai thi nut da tat, nhung man co the chua kip ve lai: chan o day
+        // luon, dung de con chup xong ca xap moi biet khong nop duoc.
+        if (gate.state == GateState.PENDING && !gate.conChoNopThem()) {
+            toast("Đã gửi ${gate.soBaiDangCho()} bài, chờ ba Huy duyệt bớt đã nhé")
+            render()
+            return
+        }
         if (!nopThem && gate.state == GateState.PAUSED) {
             val phut = gate.resume()
             if (phut == null) {
