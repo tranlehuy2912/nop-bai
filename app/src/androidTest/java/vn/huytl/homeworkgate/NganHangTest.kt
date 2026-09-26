@@ -51,6 +51,14 @@ class NganHangTest {
         cauHoi("2.26d", "Phân tích đa thức x^2 - 6x thành nhân tử", 4)
     )
 
+    /**
+     * Mot cau ngoai sach: phieu Tieng Anh nop qua "Bai khac". Khong co ma sach nen
+     * khoa lam tu de bai, dang "tu:..." - xem [SoCaiBai.khoaCua].
+     */
+    private val cauNgoaiSach = CauCham(
+        ma = "câu 3", de = "She ___ (go) to school every day.", mon = "Tiếng Anh", soDong = 1
+    )
+
     private fun cauHoi(ma: String, de: String, thuTu: Int) = CauHoi(
         id = "thu:$ma",
         mon = "Toán",
@@ -82,13 +90,20 @@ class NganHangTest {
      * do moc len mot muc ten "THU" khong ai hieu la gi. Da thay that tren may ao.
      *
      * Xoa ca cau tra loi cua quyen do, nhung CHI cua quyen do - loc theo "thu:%" chu
-     * khong goi SoCaiBai.xoaHet, vi ham do quet sach so cai cua ca app.
+     * khong goi SoCaiBai.xoaHet, vi ham do quet sach so cai cua ca app. Cau ngoai
+     * sach gia [cauNgoaiSach] cung don theo dung khoa cua no. Don hep nhu vay khong
+     * giu duoc so cai that: setUp da xoa sach no truoc moi test, xem canh bao o dau lop.
      */
     @After
     fun tearDown() {
         val kho = KhoBai.get(context)
         runCatching { kho.napNguon("thu", emptyList()) }
         runCatching { kho.writableDatabase.delete("tra_loi", "cau_id LIKE ?", arrayOf("thu:%")) }
+        runCatching {
+            kho.writableDatabase.delete(
+                "tra_loi", "cau_id = ?", arrayOf(SoCaiBai.khoaCua(cauNgoaiSach))
+            )
+        }
     }
 
     // ------------------------------------------------------------------ cai chinh
@@ -321,11 +336,17 @@ class NganHangTest {
     // ---------------------------------------------------------------- on tap
 
     /** Ghi mot cau: sai truoc, roi sua dung - thanh cau co the den hen on. */
-    private fun lamSaiRoiSuaDung(ma: String, luiNgay: Int = 1) {
+    private fun lamSaiRoiSuaDung(ma: String, luiNgay: Int = 1) =
+        lamSaiRoiSuaDung(CauCham(ma = ma, de = "", cauId = "thu:$ma", soDong = 4), luiNgay)
+
+    private fun lamSaiRoiSuaDung(cau: CauCham, luiNgay: Int = 1) {
         val luc = now - luiNgay * ngay
-        val sai = CauCham(ma = ma, de = "", cauId = "thu:$ma", dung = false, soDong = 4)
-        SoCaiBai.ghi(context, listOf(sai), emptyMap(), luc)
-        SoCaiBai.ghi(context, listOf(sai.copy(dung = true)), mapOf(ma to 2), luc)
+        SoCaiBai.ghi(context, listOf(cau.copy(dung = false)), emptyMap(), luc)
+        SoCaiBai.ghi(context, listOf(cau.copy(dung = true)), mapOf(cau.ma to 2), luc)
+        // Kiem ngay o day: buoc dung du lieu ma khong ghi duoc gi thi cac test "khong
+        // den hen" phia sau van qua, ma khong chung minh duoc dieu gi.
+        assertEquals(1, SoCaiBai.soLanSai(context, cau, now))
+        assertTrue(SoCaiBai.daTraGioCua(context, cau, now))
     }
 
     @Test
@@ -388,6 +409,67 @@ class NganHangTest {
 
         // Qua muoi ngay thi den hen lan hai, va lai duoc tinh.
         assertEquals(listOf("thu:2.26d"), SoCaiBai.cacCauDangOn(context, now + 11 * ngay))
+    }
+
+    @Test
+    fun cau_ngoai_sach_sua_dung_roi_cung_khong_den_hen_on() {
+        // Truoc ban nay cau nay den hen sau ba ngay: man chinh bao "Ôn lại 1 câu đến
+        // hẹn", ma man on chi ve duoc cau trong sach nen bam vao khong thay cau nao.
+        lamSaiRoiSuaDung(cauNgoaiSach, luiNgay = 4)
+        assertTrue(SoCaiBai.cacCauDangOn(context, now).isEmpty())
+        assertFalse(SoCaiBai.denHenOn(context, cauNgoaiSach, now))
+    }
+
+    @Test
+    fun cau_ngoai_sach_lot_vao_bai_on_thi_khong_duoc_tinh_gio_on() {
+        // Lan nop bai on, may tach them mot cau ngoai danh sach va chep de trung khoa
+        // cu. Cau do chua bao gio nam tren man on, nen khong duoc ghi la mot lan on
+        // va khong an nua so phut nao.
+        lamSaiRoiSuaDung(cauNgoaiSach, luiNgay = 4)
+        val daGhi = SoCaiBai.ghi(
+            context, listOf(cauNgoaiSach.copy(dung = true)), mapOf(cauNgoaiSach.ma to 1), now,
+            onTap = true
+        )
+        assertTrue(daGhi.isEmpty())
+        assertFalse(SoCaiBai.daOnTap(context, SoCaiBai.khoaCua(cauNgoaiSach), now))
+        assertEquals(0, SoCaiBai.phutOnHomNay(context, now))
+    }
+
+    @Test
+    fun cau_khong_hien_tren_man_on_thi_lan_on_khong_duoc_tinh() {
+        // Hai dieu kien ban nay them cho duong cham tung cau, ngoai khoa "tu:": cau
+        // phai tung sai, va phai con trong ngan hang. Thieu mot trong hai thi cau do
+        // khong nam tren man on, nen lan nop on khong ghi so va khong co phut.
+        val dungNgay = CauCham(ma = "2.26a", de = "", cauId = "thu:2.26a", dung = true, soDong = 4)
+        SoCaiBai.ghi(context, listOf(dungNgay), mapOf("2.26a" to 2), now - 4 * ngay)
+        assertTrue(SoCaiBai.daTraGioCua(context, dungNgay, now))
+        // 2.99z khong co trong [bai]: tung co trong sach roi bi bo khoi file.
+        val boKhoiSach = CauCham(ma = "2.99z", de = "", cauId = "thu:2.99z", soDong = 4)
+        lamSaiRoiSuaDung(boKhoiSach, luiNgay = 4)
+
+        listOf(dungNgay, boKhoiSach).forEach { cau ->
+            assertFalse(cau.ma, SoCaiBai.denHenOn(context, cau, now))
+            val daGhi = SoCaiBai.ghi(
+                context, listOf(cau.copy(dung = true)), mapOf(cau.ma to 1), now, onTap = true
+            )
+            assertTrue(cau.ma, daGhi.isEmpty())
+        }
+        assertEquals(0, SoCaiBai.phutOnHomNay(context, now))
+    }
+
+    @Test
+    fun man_on_ve_du_so_cau_ma_dong_on_lai_dem() {
+        // Ba cau cung den hen, nhung chi mot cau con trong sach. Hai cau kia: cau ngoai
+        // sach, va cau tung co trong sach roi bi bo khoi file (2.99z khong co trong
+        // [bai]). Dong "Ôn lại N câu" dem bao nhieu thi man on phai ve ra bay nhieu.
+        lamSaiRoiSuaDung("2.26d", luiNgay = 4)
+        lamSaiRoiSuaDung("2.99z", luiNgay = 4)
+        lamSaiRoiSuaDung(cauNgoaiSach, luiNgay = 4)
+
+        val dem = SoCaiBai.cacCauDangOn(context, now)
+        val ve = KhoBai.get(context).cacCauTheoId(dem)
+        assertEquals(listOf("thu:2.26d"), dem)
+        assertEquals(dem.size, ve.size)
     }
 
     // --------------------------------------------- chup lai trang cu

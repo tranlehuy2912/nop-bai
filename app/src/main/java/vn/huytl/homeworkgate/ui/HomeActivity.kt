@@ -771,7 +771,12 @@ class HomeActivity : AppCompatActivity() {
      * khong co gi de khai, cu de may tu tach cau nhu truoc.
      */
     private fun phamViSua(canSua: List<CauSo>): PhamVi? {
-        val ids = canSua.map { it.khoa }.filter { it.contains(':') }
+        // Loc theo quyen co trong may, khong theo dau hai cham: khoa ngoai sach cung co
+        // dau do ("tu:..."). Truoc day cau ngoai sach cu nhat dung dau danh sach thi
+        // nguon ra "tu", ca lan sua mat pham vi, va cau trong sach bi cham theo duong
+        // tu do duoi mot khoa moi - co the duoc tra gio lai nhu bai moi.
+        val ids = canSua.map { it.khoa }
+            .filter { NganHang.sachTheoNguon(it.substringBefore(':')) != null }
         if (ids.isEmpty()) return null
         val nguon = ids.first().substringBefore(':')
         val sach = NganHang.sachTheoNguon(nguon) ?: return null

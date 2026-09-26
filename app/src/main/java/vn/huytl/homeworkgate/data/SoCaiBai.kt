@@ -346,7 +346,12 @@ object SoCaiBai {
     fun chuanHoa(de: String?): String =
         de.orEmpty().lowercase().filter { it.isLetterOrDigit() || it == '^' }
 
-    /** Cac cau den hen on lai: tung sai, da sua dung, va da den luc nho lai. */
+    /**
+     * Cac cau den hen on lai: tung sai, da sua dung, va da den luc nho lai.
+     *
+     * Chi cau trong sach. Man on khong ve duoc bai ngoai sach, dem ca no vao thi dong
+     * "Ôn lại N câu" dem nhieu hon so cau con thay. Xem [KhoBai.cacCauDenHenOn].
+     */
     fun cacCauDangOn(context: Context, now: Long = System.currentTimeMillis()): List<String> =
         KhoBai.get(context).cacCauDenHenOn(han(now), now)
 
@@ -354,7 +359,13 @@ object SoCaiBai {
     fun daOnTap(context: Context, khoa: String, now: Long = System.currentTimeMillis()): Boolean =
         KhoBai.get(context).daOnTap(khoa, han(now))
 
-    /** Cau nay da den hen on lai chua. Chua den hen thi on van ghi so, chi la khong co phut. */
+    /**
+     * Cau nay da den hen on lai chua. Chua den hen thi lan on do khong ghi so, khong
+     * co phut - xem [ghi].
+     *
+     * Cung luat voi [cacCauDangOn]: cau nao khong hien tren man on thi o day cung
+     * khong bao gio den hen, ke ca bai ngoai sach da sua dung.
+     */
     fun denHenOn(context: Context, cau: CauCham, now: Long = System.currentTimeMillis()): Boolean {
         val k = khoaCua(cau)
         return k.isNotEmpty() && KhoBai.get(context).denHenOn(k, han(now), now)

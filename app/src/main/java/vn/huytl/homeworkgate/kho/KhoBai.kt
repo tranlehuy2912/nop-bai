@@ -440,22 +440,57 @@ class KhoBai private constructor(context: Context) :
      * lai mot thu ngay truoc khi kip quen la cach lam no o lai. Va no tu chan luon
      * duong kiem gio, vi mot cau ca thang moi tra tien mot lan.
      *
-     * Moi nhat truoc: cau sai tuan nay gan hon cau sai thang truoc.
+     * CHI CAU CO TRONG NGAN HANG. Man on ve danh sach bang [cacCauTheoId], tuc la
+     * doc de bai tu bang cau_hoi, nen cau nao khong co o do thi dem vao day la dem
+     * mot cau khong bao gio hien ra. Bai ngoai sach (khoa "tu:", nop qua "Bài khác")
+     * roi dung vao cho do: phieu Tieng Anh sai roi sua dung, ba ngay sau man chinh
+     * bao "Ôn lại 1 câu đến hẹn", con bam vao thi bi day ve man chon mon, va dong do
+     * van nam nguyen. Cau ngoai sach khong co duong nao on cho het hen, nen no nam
+     * do ca nam.
+     *
+     * Loc bang chinh bang cau_hoi chu khong bang dau "tu:": dem va ve phai doc cung
+     * mot bang thi moi khong lech nhau lan nua. Ma cau bi bo khoi file sach va dong
+     * tron goi [CAU_GOI] cung roi ra o day, vi ca hai deu khong co trong cau_hoi.
+     *
+     * Khong xep thu tu o day: man on xep lai theo thu tu in trong sach, chia theo
+     * quyen - xem [cacCauTheoId]. Cac cho con lai chi dem.
      */
     fun cacCauDenHenOn(tuLuc: Long, bayGio: Long = System.currentTimeMillis()): List<String> =
-        readableDatabase.rawQuery(
+        denHen(tuLuc, bayGio)
+
+    /**
+     * Cau nay co dang den hen on khong. Hoi luc cham, de quyet co tra gio hay khong.
+     *
+     * Chay DUNG cau hoi cua [cacCauDenHenOn], chi loc them mot cau. Truoc day day la
+     * mot cau SQL rieng, thieu hai dieu kien cua ben kia: cau phai tung sai, va phai
+     * co trong ngan hang. Nen mot cau khong bao gio hien tren man on van co the an
+     * nua so phut on. Vi du: trong lan nop bai on, may tach ra them mot cau ngoai
+     * danh sach, chep de trung khoa cua mot bai ngoai sach cu.
+     */
+    fun denHenOn(cauId: String, tuLuc: Long, bayGio: Long = System.currentTimeMillis()): Boolean =
+        denHen(tuLuc, bayGio, chiCau = cauId).isNotEmpty()
+
+    /**
+     * Luat den hen, viet mot lan cho ca hai ham tren. [chiCau] khac null thi chi xet cau do.
+     *
+     * Hoi cau_hoi o HAVING, sau khi da nhom, chu khong JOIN tu dau: JOIN thi dong tra
+     * loi nao cung phai tra bang cau_hoi mot lan, con o day moi cau chi tra mot lan.
+     */
+    private fun denHen(tuLuc: Long, bayGio: Long, chiCau: String? = null): List<String> {
+        val loc = if (chiCau == null) "" else "AND t.cau_id = ?"
+        return readableDatabase.rawQuery(
             """
             SELECT t.cau_id,
                    MAX(CASE WHEN t.dung = 1 THEN t.luc ELSE 0 END) AS lan_dung_cuoi,
                    SUM(CASE WHEN t.on_tap = 1 AND t.dung = 1 THEN 1 ELSE 0 END) AS so_on
             FROM tra_loi t
-            WHERE t.luc >= ? AND t.cau_id <> ?
+            WHERE t.luc >= ? $loc
             GROUP BY t.cau_id
             HAVING MAX(CASE WHEN t.dung = 0 AND t.on_tap = 0 THEN 1 ELSE 0 END) = 1
                AND MAX(CASE WHEN t.dung = 1 THEN 1 ELSE 0 END) = 1
-            ORDER BY MAX(t.luc) DESC
+               AND EXISTS (SELECT 1 FROM cau_hoi c WHERE c.id = t.cau_id)
             """.trimIndent(),
-            arrayOf(tuLuc.toString(), CAU_GOI)
+            (listOf(tuLuc.toString()) + listOfNotNull(chiCau)).toTypedArray()
         ).use { c ->
             buildList {
                 while (c.moveToNext()) {
@@ -464,6 +499,7 @@ class KhoBai private constructor(context: Context) :
                 }
             }
         }
+    }
 
     /**
      * Luc nao cau nay den hen on lai. null la da on du so lan, thoi.
@@ -476,21 +512,6 @@ class KhoBai private constructor(context: Context) :
         val khoang = KHOANG_HEN_NGAY.getOrNull(soLanDaOn) ?: return null
         return lanDungCuoi + khoang * 24L * 60 * 60_000L
     }
-
-    /** Cau nay co dang den hen on khong. Hoi luc cham, de quyet co tra gio hay khong. */
-    fun denHenOn(cauId: String, tuLuc: Long, bayGio: Long = System.currentTimeMillis()): Boolean =
-        readableDatabase.rawQuery(
-            """
-            SELECT MAX(CASE WHEN dung = 1 THEN luc ELSE 0 END),
-                   SUM(CASE WHEN on_tap = 1 AND dung = 1 THEN 1 ELSE 0 END)
-            FROM tra_loi WHERE cau_id = ? AND luc >= ?
-            """.trimIndent(),
-            arrayOf(cauId, tuLuc.toString())
-        ).use { c ->
-            if (!c.moveToFirst()) return false
-            val hen = mocHen(c.getLong(0), c.getInt(1)) ?: return false
-            bayGio >= hen
-        }
 
     // ------------------------------------------------------------- the hoc thuoc
 

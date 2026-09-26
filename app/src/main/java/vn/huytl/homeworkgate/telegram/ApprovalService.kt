@@ -1396,9 +1396,11 @@ class ApprovalService : Service() {
          * Lan ON TAP di duong khac: cau von DA tra gio roi - do moi la dieu kien de
          * duoc on. Loc bang [SoCaiBai.daTraGioCua] o day se vut sach ca xap.
          *
-         * Cai loc o day la LICH HEN: on cau chua den hen thi van ghi vao so va van
-         * duoc khen, nhung khong tra phut. Khong co cho nay thi chep lai hai chuc
-         * cau cu moi toi la mot duong kiem gio deu dan.
+         * Cai loc o day la LICH HEN: on cau chua den hen thi khong ghi so, khong tra
+         * phut, con chi nhan mot cau bao chua den hen. Khong co cho nay thi chep lai
+         * hai chuc cau cu moi toi la mot duong kiem gio deu dan. Cau ngoai danh sach
+         * on (bai ngoai sach may tach them ra) cung roi o day, vi no khong bao gio
+         * den hen - xem [vn.huytl.homeworkgate.kho.KhoBai.cacCauDenHenOn].
          */
         val onTap = pham?.onTap == true
         val moi = if (onTap) {
@@ -1690,9 +1692,14 @@ class ApprovalService : Service() {
                 bang.phut > 0 -> "Được thêm ${bang.phut} phút. Còn ${sai.size} câu sửa lại nhé."
                 // Cau bi loc ra o lan on tap la cau CHUA DEN HEN, khong phai cau
                 // "da on roi". Luat cu chi cho on mot lan, cau nay con sot lai tu do.
-                onTap && moi.isEmpty() && trung > 0 ->
+                //
+                // Nhung con cau trong danh sach on ma anh khong co thi de nhanh "chua
+                // thay bai lam" ben duoi noi: cau bi loc ra luc do co the chi la cau
+                // ngoai danh sach, khong bao gio den hen, va cau "may nhac khi den luc"
+                // thanh mot loi hua khong ai giu.
+                onTap && moi.isEmpty() && trung > 0 && thieu.isEmpty() ->
                     "Mấy câu này chưa đến hẹn ôn lại. Máy nhắc $con khi đến lúc nhé."
-                moi.isEmpty() && trung > 0 ->
+                !onTap && moi.isEmpty() && trung > 0 ->
                     "Mấy bài này chấm hôm trước rồi, làm bài mới thì mới được cộng giờ nhé."
                 // Ca xap chi co dap an: noi thang cho con biet phai chup them cai gi,
                 // dung de no ngoi doan vi sao nop ma khong duoc gi.
