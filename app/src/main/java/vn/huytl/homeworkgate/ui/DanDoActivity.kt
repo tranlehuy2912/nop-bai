@@ -289,9 +289,10 @@ class DanDoActivity : AppCompatActivity() {
      * Chi luu DUNG buoi dang chon. Cac buoi khac tren trang la cua hom khac.
      *
      * Ngay tren vo khong tinh duoc cho bai hom nay thi hoi lai truoc. Truoc day man nay
-     * luu im lang, roi tablet coi nhu chua co vo: dong "Chụp vở dặn dò hôm nay" hien lai
-     * nhu chua chup, va khong co tron goi. Hay gap nhat la may doc sai ngay, hay co ghi
-     * ngay han nop.
+     * luu im lang, roi [VoDanDo.donDep] xoa ban do o lan mo man chon mon ke tiep: dong
+     * "Chụp vở dặn dò hôm nay" hien lai nhu chua chup, va khong co tron goi. Hay gap nhat
+     * la may doc sai ngay, hay co ghi ngay han nop. Bam van gui thi ba Huy van nhan duoc
+     * vo, chi la may khong giu no de tinh gio.
      */
     private fun luu(daHoiNgay: Boolean = false) {
         val cac = docManHinh()
@@ -303,12 +304,13 @@ class DanDoActivity : AppCompatActivity() {
             MaterialAlertDialogBuilder(this)
                 .setTitle("Ngày trên vở không tính cho hôm nay")
                 .setMessage(
-                    "Vở ghi ngày ${ngay.dayOfMonth}/${ngay.monthValue}/${ngay.year}. Máy chỉ tính " +
-                        "vở ghi ngày hôm nay, hoặc hôm qua khi chưa quá 12 giờ trưa. Lưu vở này " +
-                        "thì bài nộp hôm nay vẫn như chưa có vở. Máy đọc sai ngày thì bấm Sửa ngày."
+                    "Vở ghi ngày ${ngay.dayOfMonth}/${ngay.monthValue}/${ngay.year}. Máy chỉ dùng " +
+                        "vở ghi ngày hôm nay, hoặc hôm qua khi chưa quá 12 giờ trưa, nên sẽ không " +
+                        "giữ vở này để tính giờ. Nếu đây là vở của buổi học hôm nay (máy đọc sai " +
+                        "ngày, hay cô ghi ngày hạn nộp) thì bấm Sửa ngày."
                 )
                 .setPositiveButton("Sửa ngày") { _, _ -> chonNgay() }
-                .setNegativeButton("Vẫn lưu") { _, _ -> luu(daHoiNgay = true) }
+                .setNegativeButton("Vẫn gửi ba Huy") { _, _ -> luu(daHoiNgay = true) }
                 .show()
             return
         }

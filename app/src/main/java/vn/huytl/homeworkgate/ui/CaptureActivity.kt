@@ -157,7 +157,6 @@ class CaptureActivity : AppCompatActivity() {
         // goNext() thanh gui thang.
         stage = cacBuoc.first()
 
-        binding.stepNotes.setOnClickListener { jumpTo(CaptureStage.DAN_DO) }
         binding.stepProblem.setOnClickListener { jumpTo(CaptureStage.DE_BAI) }
         binding.stepSolution.setOnClickListener { jumpTo(CaptureStage.BAI_GIAI) }
 
@@ -323,7 +322,6 @@ class CaptureActivity : AppCompatActivity() {
 
         binding.btnBack.text =
             if (stage == cacBuoc.first()) "✕  Thoát" else "‹  Quay lại"
-        binding.stepNotes.visibility = hienBuoc(CaptureStage.DAN_DO)
         binding.stepProblem.visibility = hienBuoc(CaptureStage.DE_BAI)
         // O buoc cuoi van hien khi sua bai, vi luc do no la nhan cho biet dang chup
         // cai gi. Chup cap thi khong co nhan nao dung ca, an luon.
@@ -372,7 +370,6 @@ class CaptureActivity : AppCompatActivity() {
 
     private fun renderSteps() {
         val views = mapOf(
-            CaptureStage.DAN_DO to binding.stepNotes,
             CaptureStage.DE_BAI to binding.stepProblem,
             CaptureStage.BAI_GIAI to binding.stepSolution
         )

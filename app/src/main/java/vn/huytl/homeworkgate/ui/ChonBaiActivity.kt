@@ -1017,7 +1017,36 @@ class ChonBaiActivity : AppCompatActivity() {
             .show()
     }
 
+    /**
+     * Mo man chup. Hom nay da tinh tron goi ma khong con vo nao hieu luc thi hoi truoc.
+     *
+     * Luc do quy tac 17 coi moi cau la bai co giao, ma bai co giao da tra trong goi, nen
+     * ca lan nop ra 0 phut. Dong vo o buoc chon mon da noi dieu nay, nhung duong vao
+     * thang On lai hay Luyen tu man chinh khong qua buoc do, va man chup khong con buoc
+     * vo. Lan nop de sua cau sai thi khong hoi: cau do nam trong goi that.
+     */
     private fun chupThat(pham: PhamVi) {
+        val dangSua = pham.cauIds.any { it in canSua }
+        if (dangSua || VoDanDo.conHieuLuc(this) != null) return moCamera(pham)
+        lifecycleScope.launch {
+            val daCoGoi = withContext(Dispatchers.IO) { SoCaiBai.goiDaCoHomNay(this@ChonBaiActivity) }
+            if (!daCoGoi) return@launch moCamera(pham)
+            MaterialAlertDialogBuilder(this@ChonBaiActivity)
+                .setTitle("Chưa có vở dặn dò mới")
+                .setMessage(
+                    "Hôm nay đã tính trọn gói bài cô giao, mà vở dặn dò hiện có đã hết hạn. " +
+                        "Nộp lúc này thì bài làm thêm không được tính phút. Chụp vở của buổi " +
+                        "học mới trước nhé."
+                )
+                .setPositiveButton("Chụp vở") { _, _ ->
+                    startActivity(Intent(this@ChonBaiActivity, DanDoActivity::class.java))
+                }
+                .setNegativeButton("Vẫn nộp") { _, _ -> moCamera(pham) }
+                .show()
+        }
+    }
+
+    private fun moCamera(pham: PhamVi) {
         daGui = true
         startActivity(
             Intent(this, CaptureActivity::class.java)
