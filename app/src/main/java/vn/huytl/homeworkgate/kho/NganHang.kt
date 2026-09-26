@@ -44,12 +44,46 @@ object NganHang {
     /**
      * Cac quyen da nap.
      *
-     * Toan 8 ca hai tap, Khoa hoc tu nhien 8 va Ngu van 8 ca hai tap. Cac mon khac
-     * van chay duong cu - con chon "Bai khac" luc nop, va so cai lay de bai da chuan
-     * hoa lam khoa nhu tu truoc den gio.
+     * Toan 8 ca hai tap, Khoa hoc tu nhien 8 va Ngu van 8 ca hai tap, cong them sach
+     * bai tap Toan 8 ca hai tap va sach bai tap KHTN 8. Cac mon khac van chay duong cu
+     * - con chon "Bai khac" luc nop, va so cai lay de bai da chuan hoa lam khoa nhu tu
+     * truoc den gio.
      *
      * Thu tu trong danh sach la thu tu hien ra man chon sach, nen tap mot dung
-     * truoc tap hai.
+     * truoc tap hai, va SGK dung truoc SBT.
+     *
+     * SACH BAI TAP (SBT) LA NGUON RIENG, khong gop vao quyen SGK cung tap. SBT danh so
+     * bai y kieu SGK ("1.1" co o ca hai quyen) ma de khac han, nen chung mot nguon thi
+     * hai cau chung mot id. Mot lan nop chi mang mot quyen, nen AI khong bao gio thay
+     * hai cau "1.1" trong cung mot danh sach.
+     *
+     * Ma cau SBT Toan. Bai co y a), b) ma moi y phai trinh bay loi giai thi moi y mot
+     * cau ("1.3a", "1.3b"), de moi y chep kem phan de chung de doc rieng van du. Y chi
+     * can tra loi ngan (chon bieu thuc nao, dung hay sai) thi de chung mot cau. Trac
+     * nghiem trong On tap chuong duoc sach danh lai tu 1 o moi chuong, nen ma kem trang
+     * cho khoi trung: "Trắc nghiệm 1 (tr.17)". On tap cuoi nam la "Ôn cuối năm 4a" nhu
+     * SGK tap hai. Moi y lay trang in so bai, ke ca khi y c tran sang trang sau: co
+     * giao "bai 1.3 trang 7" thi con phai thay du cac y khi chon trang 7.
+     *
+     * HINH VE CHI CON LAI TRONG CHU. Nop theo sach thi man chup bo buoc chup trang de
+     * (xem [vn.huytl.homeworkgate.ui.CaptureActivity]), nen AI khong bao gio thay hinh.
+     * Con cung khong co sach bai tap giay (Ba Huy noi ngay 26/9/2026): cau SBT con doc
+     * ngay tren tablet, o man chon cau. Nen so lieu cua hinh ghi du trong ngoac ngay
+     * sau ten hinh, "(H.5.4, hình a: ... AP = 5, PB = 3,5, AQ = 4, QC = x)", ke ca khi de
+     * bat doc chinh thu do tu hinh (toa do cac diem, ten cac bo phan). Bo di thi con
+     * khong co cach nao lam, va AI khong co gi de cham.
+     *
+     * Vai cau SBT in nham (9.14, trac nghiem 2 trang 47 va On cuoi nam 5b cua tap hai).
+     * De giu nguyen chu in, them mot ngoac ghi cach hieu dung, khong ghi dap an. Thieu
+     * ngoac do thi AI tu giai theo chu in, ra ket qua khong khop phuong an nao va cham
+     * sai bai dung cua con.
+     *
+     * SBT KHTN KHAC SGK KHTN O MA CAU. SGK khong in so cau nen phai tu dat ma ("B12.C3",
+     * xem duoi), con SBT in so tung cau ("11.17"), nen ma la so in va tach y theo cung
+     * luat voi SBT Toan. Quyen nay nha chi co ban Word do may nhan dang chu tu ban in,
+     * khong giu so trang. So trang lay tu muc luc tung cau cua VietJack, khop voi trang
+     * dau moi bai trong muc luc sach. Con so trong de da soat voi loi giai cuoi sach va
+     * voi ban go lai tren VietJack.
      *
      * KHTN khong in ma cau nhu sach Toan: sach chi danh so 1, 2, 3 trong tung o
      * "Câu hỏi", het o lai dem lai tu dau. Nen ma cau o day la ma tu dat, dang
@@ -96,10 +130,28 @@ object NganHang {
             file = "nganhang/toan8t2.json"
         ),
         Sach(
+            nguon = "sbttoan8t1",
+            mon = "Toán",
+            ten = "SBT Toán 8 — tập một",
+            file = "nganhang/sbttoan8t1.json"
+        ),
+        Sach(
+            nguon = "sbttoan8t2",
+            mon = "Toán",
+            ten = "SBT Toán 8 — tập hai",
+            file = "nganhang/sbttoan8t2.json"
+        ),
+        Sach(
             nguon = "khtn8",
             mon = "Khoa học tự nhiên",
             ten = "SGK Khoa học tự nhiên 8",
             file = "nganhang/khtn8.json"
+        ),
+        Sach(
+            nguon = "sbtkhtn8",
+            mon = "Khoa học tự nhiên",
+            ten = "SBT Khoa học tự nhiên 8",
+            file = "nganhang/sbtkhtn8.json"
         ),
         Sach(
             nguon = "van8t1",
@@ -235,9 +287,9 @@ object NganHang {
     /**
      * Cau nen lam them, gop tu moi quyen cua mot mon.
      *
-     * Toan co hai tap: giua nam hoc con dang lam tap hai, con phan lon cau chua lam
-     * lai nam o tap mot. Lay deu ca hai roi tron theo thu tu quyen thi danh sach
-     * lam them van co mat quyen dang hoc.
+     * Toan co bon quyen, SGK va SBT moi thu hai tap: giua nam hoc con dang lam tap
+     * hai, con phan lon cau chua lam lai nam o tap mot. Lay deu moi quyen roi tron
+     * theo thu tu quyen thi danh sach lam them van co mat quyen dang hoc.
      *
      * Danh sach tron nhieu quyen, nhung MOT LAN NOP chi mang ma cua mot quyen -
      * [PhamVi] chi co mot [PhamVi.nguon]. Man chon bai se gom cac cau cung quyen voi

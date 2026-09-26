@@ -638,7 +638,10 @@ class NganHangTest {
         // tap mot, nguoc lai cung vay. Lan la so cai khong con phan biet duoc bai nao.
         assertEquals("Toán", c?.mon)
         assertEquals("toan8t2", c?.nguon)
-        assertEquals(2, NganHang.sachCua("Toán").size)
+        assertEquals(
+            listOf("toan8t1", "toan8t2", "sbttoan8t1", "sbttoan8t2"),
+            NganHang.sachCua("Toán").map { it.nguon }
+        )
     }
 
     /**
