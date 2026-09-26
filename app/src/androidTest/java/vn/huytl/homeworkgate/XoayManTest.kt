@@ -6,6 +6,7 @@ import android.app.UiAutomation
 import android.content.Intent
 import android.content.pm.ActivityInfo
 import android.content.pm.PackageManager
+import android.content.res.Configuration
 import android.provider.Settings
 import android.view.View
 import android.widget.CheckBox
@@ -29,12 +30,13 @@ import java.time.LocalDate
 
 /**
  * Man vo dan do va man soat bai khi tablet xoay, hay khi Android dung lai man. Cac man
- * khac thi [moiManTuVeLaiKhiXoay] kiem la deu khai configChanges.
+ * khac thi [moiManKhoaDocVaTuVeLai] kiem khai bao.
  *
- * Tablet cua Le Hoa bat tu xoay (Ba Huy xac nhan ngay 26/9/2026), con man chup thi khoa
- * doc. Truoc day xoay may la hai man nay bi dung lai tu dau: man dan do mat tam anh
- * vua chup va ban may vua doc, chua co ban luu thi camera bat lai ngay; man soat bai
- * xoa anh bai lam dang cho gui.
+ * Tablet cua Le Hoa bat tu xoay (Ba Huy xac nhan ngay 26/9/2026). Truoc day xoay may la
+ * hai man nay bi dung lai tu dau: man dan do mat tam anh vua chup va ban may vua doc,
+ * chua co ban luu thi camera bat lai ngay; man soat bai xoa anh bai lam dang cho gui. Gio
+ * moi man khoa doc, va van tu ve lai neu Android bo qua khoa - xem chu thich dau
+ * AndroidManifest.
  *
  * XOAY THAT tren may ao qua UiAutomation, xong thi tra ve dung che do xoay cu. Khong
  * test nao goi Gemini: man dan do co san ban luu nen khong mo camera, man soat bai
@@ -80,7 +82,7 @@ class XoayManTest {
                 truoc = it
                 oChu(it, 1).setText("KHTN: làm bài 3 trang 20")
             }
-            xoayQuaLai(sc)
+            thuXoayNgang(sc)
             sc.onActivity {
                 assertSame("xoay may thi khong duoc dung lai man", truoc, it)
                 assertEquals(
@@ -107,7 +109,7 @@ class XoayManTest {
         ActivityScenario.launch<SoatBaiActivity>(moMan).use { sc ->
             lateinit var truoc: Activity
             sc.onActivity { truoc = it }
-            xoayQuaLai(sc)
+            thuXoayNgang(sc)
             sc.onActivity { assertSame("xoay may thi khong duoc dung lai man", truoc, it) }
         }
     }
@@ -159,14 +161,15 @@ class XoayManTest {
     }
 
     /**
-     * Moi man cua app tu ve lai khi xoay, tru man chup vi man do khoa doc.
+     * Moi man cua app khoa doc, va tru man chup, man nao cung tu ve lai khi doi cau hinh.
      *
-     * Hai test xoay that o tren cho thay configChanges giu nguyen man tren may nay. Test
-     * nay giu cho man nao cung co no, ke ca man them sau: quen khai la luot hoc thuoc
-     * bi chot giua chung, hay tin chat gui hai lan - xem chu thich dau AndroidManifest.
+     * Khoa doc la Ba Huy chon ngay 26/9/2026. configChanges la lop chan thu hai, cho luc
+     * Android bo qua khoa (Android 16 tro len tren may man lon) hay luc chia doi man hinh:
+     * thieu no thi luot hoc thuoc bi chot giua chung, tin chat gui hai lan - xem chu thich
+     * dau AndroidManifest. Man them sau ma quen khai thi test nay bao.
      */
     @Test
-    fun moiManTuVeLaiKhiXoay() {
+    fun moiManKhoaDocVaTuVeLai() {
         val canCo = ActivityInfo.CONFIG_ORIENTATION or ActivityInfo.CONFIG_SCREEN_SIZE or
             ActivityInfo.CONFIG_SCREEN_LAYOUT or ActivityInfo.CONFIG_SMALLEST_SCREEN_SIZE
         @Suppress("DEPRECATION")
@@ -175,14 +178,12 @@ class XoayManTest {
             .activities.orEmpty()
             // Bo man cua thu vien (Firebase, Google Play) gop vao manifest.
             .filter { it.name.startsWith("vn.huytl.homeworkgate.") }
-        val sai = cacMan.filter {
-            if (it.name == CaptureActivity::class.java.name) {
-                it.screenOrientation != ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
-            } else {
-                it.configChanges and canCo != canCo
-            }
-        }.map { it.name.substringAfterLast('.') }
-        assertTrue("chua tu ve lai khi xoay: $sai", sai.isEmpty())
+        val khongDoc = cacMan.filter { it.screenOrientation != ActivityInfo.SCREEN_ORIENTATION_PORTRAIT }
+        val khongTuVe = cacMan.filter {
+            it.name != CaptureActivity::class.java.name && it.configChanges and canCo != canCo
+        }
+        assertTrue("chua khoa doc: ${ten(khongDoc)}", khongDoc.isEmpty())
+        assertTrue("chua tu ve lai: ${ten(khongTuVe)}", khongTuVe.isEmpty())
         assertTrue("khong doc duoc danh sach man", cacMan.size >= 18)
     }
 
@@ -201,51 +202,40 @@ class XoayManTest {
         a.findViewById<LinearLayout>(R.id.danh_sach_dong).getChildAt(i)
             .findViewById(R.id.o_chu)
 
+    private fun ten(cac: List<ActivityInfo>) = cac.map { it.name.substringAfterLast('.') }
+
     /**
-     * Xoay may ao sang chieu kia roi xoay ve, cho man nhan du hai lan doi chieu.
+     * Xoay may ao sang goc 0 roi goc 90 - mot trong hai la chieu ngang, tuy may - roi tra
+     * ve dung che do xoay cu. Man khoa doc thi suot luc do van phai dung doc.
      *
      * Tra ve dung che do cu: khoa lai o goc cu truoc, roi moi tha cho tu xoay neu luc
      * dau dang tu xoay, de goc luu trong cai dat cung ve nhu cu.
      */
-    private fun <A : Activity> xoayQuaLai(sc: ActivityScenario<A>) {
+    private fun <A : Activity> thuXoayNgang(sc: ActivityScenario<A>) {
         val ui = ins.getUiAutomation(UiAutomation.FLAG_DONT_SUPPRESS_ACCESSIBILITY_SERVICES)
         val cr = context.contentResolver
         val tuXoay = Settings.System.getInt(cr, Settings.System.ACCELEROMETER_ROTATION, 0)
         val gocCu = Settings.System.getInt(cr, Settings.System.USER_ROTATION, 0)
-        var gocNay = 0
-        sc.onActivity {
-            @Suppress("DEPRECATION")
-            gocNay = it.windowManager.defaultDisplay.rotation
-        }
-        val chieuDau = chieu(sc)
         try {
-            // ROTATION_FREEZE_0..270 trung voi Surface.ROTATION_0..270.
-            ui.setRotation(
-                if (gocNay % 2 == 0) UiAutomation.ROTATION_FREEZE_90
-                else UiAutomation.ROTATION_FREEZE_0
-            )
-            choDen(sc) { it != chieuDau }
+            // ROTATION_FREEZE_0, _90 trung voi Surface.ROTATION_0, _90.
+            for (goc in listOf(UiAutomation.ROTATION_FREEZE_0, UiAutomation.ROTATION_FREEZE_90)) {
+                ui.setRotation(goc)
+                // May ao nay xoay xong trong chua toi mot giay; cho hai giay.
+                val het = System.currentTimeMillis() + 2_000
+                while (System.currentTimeMillis() < het) {
+                    assertEquals("man phai dung doc", Configuration.ORIENTATION_PORTRAIT, chieu(sc))
+                    Thread.sleep(100)
+                }
+            }
         } finally {
             ui.setRotation(gocCu)
             if (tuXoay == 1) ui.setRotation(UiAutomation.ROTATION_UNFREEZE)
         }
-        choDen(sc) { it == chieuDau }
     }
 
     private fun <A : Activity> chieu(sc: ActivityScenario<A>): Int {
         var c = 0
         sc.onActivity { c = it.resources.configuration.orientation }
         return c
-    }
-
-    private fun <A : Activity> choDen(sc: ActivityScenario<A>, dat: (Int) -> Boolean) {
-        val het = System.currentTimeMillis() + 10_000
-        while (true) {
-            // Man bi dung lai thi giua chung onActivity co the nem loi: cho mot nhip.
-            val c = runCatching { chieu(sc) }.getOrNull()
-            if (c != null && dat(c)) return
-            check(System.currentTimeMillis() < het) { "may ao khong xoay" }
-            Thread.sleep(100)
-        }
     }
 }
