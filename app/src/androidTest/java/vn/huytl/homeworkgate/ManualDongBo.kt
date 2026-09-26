@@ -261,4 +261,94 @@ class ManualDongBo {
             } + ", traLoi=$traLoi"
         )
     }
+
+    /**
+     * Thu duong so dung app: go PING nhu app Bang dieu khien van go, roi doc hop/sudung.
+     *
+     * Them vao kho hai khoang thu: mot khoang hom nay, va mot khoang tu tam ngay truoc,
+     * tuc la qua han bay ngay. Ban tren Firestore phai co khoang hom nay kem ten app, va
+     * khong co khoang qua han. Chay xong tra kho ve nhu cu roi day lai mot lan, de ban
+     * tren du an thu khong con hai khoang do.
+     */
+    @Test
+    fun suDungThu() {
+        DongBo.batDau(context)
+        val maNha = DongBo.maNhaHienTai(context)
+        if (maNha.isEmpty()) {
+            println("MANUAL_DONGBO: may nay chua lap nha, khong thu duoc")
+            return
+        }
+        val nha = com.google.firebase.firestore.FirebaseFirestore.getInstance()
+            .collection("nha").document(maNha)
+        val so = nha.collection("hop").document("sudung")
+        val kho = Prefs.khoRieng(context, "nhat_ky_su_dung")
+        val khoCu = kho.getString("su_dung_doan", null)
+
+        fun docSo(): Map<String, Any>? {
+            val cho = CountDownLatch(1)
+            var ra: Map<String, Any>? = null
+            so.get(com.google.firebase.firestore.Source.SERVER).addOnCompleteListener {
+                ra = it.result?.data
+                cho.countDown()
+            }
+            cho.await(20, TimeUnit.SECONDS)
+            return ra
+        }
+
+        val bayGio = System.currentTimeMillis()
+        val ngay = 24 * 3_600_000L
+        val homNay = "thu.sudung.homnay|${bayGio - 20 * 60_000L}|${bayGio - 10 * 60_000L}"
+        val quaHan = "thu.sudung.quahan|${bayGio - 8 * ngay}|${bayGio - 8 * ngay + 30 * 60_000L}"
+        kho.edit().putString(
+            "su_dung_doan",
+            listOfNotNull(khoCu?.takeIf { it.isNotBlank() }, quaHan, homNay).joinToString("\n")
+        ).commit()
+
+        var ban: Map<String, Any>? = null
+        var truoc = 0L
+        try {
+            truoc = docSo()?.get("capNhatLuc") as? Long ?: 0L
+            nha.collection("lenh").add(
+                mapOf("kieu" to "PING", "ai" to "bahuy", "tao" to System.currentTimeMillis())
+            )
+            val batDau = System.currentTimeMillis()
+            do {
+                Thread.sleep(1_000)
+                ban = docSo()
+            } while ((ban?.get("capNhatLuc") as? Long ?: 0L) == truoc &&
+                System.currentTimeMillis() - batDau < 30_000L)
+        } finally {
+            val sua = kho.edit()
+            if (khoCu == null) sua.remove("su_dung_doan") else sua.putString("su_dung_doan", khoCu)
+            sua.commit()
+            DongBo.daySuDung(context)
+            Thread.sleep(3_000)
+        }
+
+        val sau = ban?.get("capNhatLuc") as? Long ?: 0L
+        val doan = (ban?.get("doan") as? List<*>).orEmpty().filterIsInstance<Map<*, *>>()
+        val goi = doan.map { it["goi"] }
+        val han = java.util.Calendar.getInstance().apply {
+            add(java.util.Calendar.DAY_OF_MONTH, -6)
+            set(java.util.Calendar.HOUR_OF_DAY, 0)
+            set(java.util.Calendar.MINUTE, 0)
+            set(java.util.Calendar.SECOND, 0)
+            set(java.util.Calendar.MILLISECOND, 0)
+        }.timeInMillis
+        val ngoaiHan = doan.count { (it["den"] as? Long ?: 0L) < han }
+        val ten = (ban?.get("app") as? List<*>).orEmpty().filterIsInstance<Map<*, *>>()
+            .firstOrNull { it["goi"] == "thu.sudung.homnay" }?.get("ten")
+        val sach = docSo()?.get("doan").toString().contains("thu.sudung")
+
+        println(
+            "MANUAL_DONGBO: sudung truoc=$truoc sau=$sau " +
+                (if (sau > truoc) "-> TABLET DA GHI" else "-> KHONG GHI") +
+                ", doan=${doan.size}" +
+                ", khoang hom nay " + (if ("thu.sudung.homnay" in goi) "co (dung)" else "KHONG CO (SAI)") +
+                ", khoang qua han " + (if ("thu.sudung.quahan" in goi) "CON (SAI)" else "da bo (dung)") +
+                ", ngoai han=$ngoaiHan" + (if (ngoaiHan == 0) " (dung)" else " (SAI)") +
+                ", ten=$ten, giuNgay=${ban?.get("giuNgay")}, dangGhi=${ban?.get("dangGhi")}" +
+                ", don lai " + (if (sach) "CON KHOANG THU (SAI)" else "sach (dung)")
+        )
+    }
 }

@@ -204,8 +204,11 @@ object ThiHanhLenh {
             // Ben kia vua mo app va hoi tablet con song khong. Day mot ban trang
             // thai day du roi thoi: khong ghi nhat ky, khong tra loi gi. Ban trang
             // thai do chinh la cau tra loi, va no den qua duong khac.
+            //
+            // Day kem so dung app. So do chi di vao luc nay, xem [DongBo.daySuDung].
             Lenh.PING -> {
                 DongBo.dayDayDu()
+                DongBo.daySuDung(context)
                 ""
             }
 

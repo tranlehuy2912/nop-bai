@@ -26,6 +26,10 @@ import java.util.Locale
  *
  * GIU [GIU_NGAY] NGAY roi xoa. Du de nhin ra mot thoi quen trong tuan, khong du
  * de thanh ho so theo doi mot dua tre - cung mot le voi [DayLog].
+ *
+ * Ban sao tren Firestore cho Bang dieu khien cung giu dung bay nhieu ngay: moi lan
+ * day la ghi de ca ban bang [banDeDay], ma ban do da cat theo han. Xem
+ * [vn.huytl.homeworkgate.dongbo.DongBo.daySuDung].
  */
 object NhatKySuDung {
 
@@ -100,19 +104,32 @@ object NhatKySuDung {
      * moi nhip lai ghi lai ca khoang tu luc bat dau den bay gio.
      */
     fun ghi(context: Context, goi: String, tu: Long, den: Long) {
-        if (goi.isBlank() || den <= tu) return
-        if (den - tu > DOAN_DAI_NHAT_MS) return
+        val moi = Doan(goi, tu, den)
+        if (!dangTin(moi)) return
+        luu(context, noiVao(doc(context), moi))
+    }
 
-        val cac = doc(context).toMutableList()
+    /** Khoang doc duoc: co ten goi, dai hon 0 va khong dai qua [DOAN_DAI_NHAT_MS]. */
+    private fun dangTin(d: Doan): Boolean =
+        d.goi.isNotBlank() && d.den > d.tu && d.den - d.tu <= DOAN_DAI_NHAT_MS
+
+    /**
+     * Them [moi] vao [cac]. Cung app ma hai khoang chong nhau, hay cach nhau duoi
+     * [NOI_LIEN_MS], thi noi dai khoang cu ra; khong thi them mot khoang moi.
+     */
+    internal fun noiVao(cac: List<Doan>, moi: Doan): List<Doan> {
+        val ra = cac.toMutableList()
         // Tim tu cuoi len: khoang dang mo gan nhu luon la mot trong vai dong cuoi.
-        val cho = cac.indexOfLast { it.goi == goi && tu <= it.den + NOI_LIEN_MS && den >= it.tu }
-        if (cho >= 0) {
-            val cu = cac[cho]
-            cac[cho] = Doan(goi, minOf(cu.tu, tu), maxOf(cu.den, den))
-        } else {
-            cac.add(Doan(goi, tu, den))
+        val cho = ra.indexOfLast {
+            it.goi == moi.goi && moi.tu <= it.den + NOI_LIEN_MS && moi.den >= it.tu
         }
-        luu(context, cac)
+        if (cho >= 0) {
+            val cu = ra[cho]
+            ra[cho] = Doan(moi.goi, minOf(cu.tu, moi.tu), maxOf(cu.den, moi.den))
+        } else {
+            ra.add(moi)
+        }
+        return ra
     }
 
     /** Xoa sach, dung khi Ba Huy khong muon giu nua. */
@@ -164,6 +181,31 @@ object NhatKySuDung {
         if (cac.isEmpty()) return null
         return cac.first().tu to cac.maxOf { it.den }
     }
+
+    // ------------------------------------------------------- day sang dien thoai
+
+    /**
+     * Ca so trong [GIU_NGAY] ngay gan nhat, de day sang Bang dieu khien. Xem
+     * [vn.huytl.homeworkgate.dongbo.DongBo.daySuDung].
+     *
+     * [dangMo] la cac khoang chua chot, tinh den luc day. Khoang dang mo chi xuong kho
+     * nam phut mot lan (xem GHI_SU_DUNG_LAI_MS ben dich vu canh app), nen thieu no thi
+     * Ba Huy mo app giua luc con dang xem YouTube se thay khoang do dung lai tu lan ghi
+     * truoc, co khi cach day gan nam phut.
+     *
+     * Loc lai theo han o day chu khong tin kho: kho chi bo ngay cu luc co khoang moi
+     * ghi vao, nen tablet nam yen ba ngay thi trong kho van con ngay thu tam, thu chin.
+     */
+    fun banDeDay(context: Context, dangMo: List<Doan>): List<Doan> =
+        trongHan(noiHet(doc(context), dangMo), mocDauNgay(GIU_NGAY - 1))
+
+    /** Noi tung khoang dang mo vao [cac], bo khoang nao khong [dangTin]. */
+    internal fun noiHet(cac: List<Doan>, dangMo: List<Doan>): List<Doan> =
+        dangMo.filter { dangTin(it) }.fold(cac) { tich, d -> noiVao(tich, d) }
+
+    /** Cac khoang con cham vao moc [han] tro ve sau, xep theo luc mo. */
+    internal fun trongHan(cac: List<Doan>, han: Long): List<Doan> =
+        cac.filter { it.den >= han }.sortedBy { it.tu }
 
     // ---------------------------------------------------------------- chu nghia
 

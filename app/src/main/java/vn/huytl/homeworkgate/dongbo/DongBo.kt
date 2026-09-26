@@ -28,6 +28,7 @@ import vn.huytl.homeworkgate.data.GateState
 import vn.huytl.homeworkgate.data.GateStore
 import vn.huytl.homeworkgate.data.GioiHanApp
 import vn.huytl.homeworkgate.data.NhatKyAi
+import vn.huytl.homeworkgate.data.NhatKySuDung
 import vn.huytl.homeworkgate.kho.KhoBai
 import vn.huytl.homeworkgate.kho.PhamVi
 import vn.huytl.homeworkgate.kho.TraLoi
@@ -561,6 +562,51 @@ object DongBo {
         hop(context, Duong.D_DANH_SACH_APP)?.set(
             mapOf("app" to cac.map { mapOf("goi" to it.first, "ten" to it.second) })
         )?.addOnSuccessListener { sp.edit().putInt(K_DAU_DS_APP, dau).apply() }
+    }
+
+    /**
+     * Day so dung app sang Bang dieu khien. Xem [Duong.D_SU_DUNG].
+     *
+     * Chi goi khi dien thoai go [Lenh.PING], tuc la luc Ba Huy vua mo app ra. Khong
+     * nghe so nay doi nhu phan trang thai: no doi vai phut mot lan suot luc con dung
+     * may, ma so do chi can dung vao luc co nguoi nhin.
+     *
+     * Ghi de ca ban, khong so voi ban vua day nhu [dayThat]: khoang dang mo tinh den
+     * luc day, nen con dang cam may thi lan nao cung khac. Con PING thi Bang dieu khien
+     * da gian ra it nhat nua phut mot lan.
+     */
+    fun daySuDung(context: Context) {
+        val hop = hop(context, Duong.D_SU_DUNG) ?: return
+        val bayGio = System.currentTimeMillis()
+        val cac = NhatKySuDung.banDeDay(context, dangMo(context, bayGio))
+        hop.set(
+            mapOf(
+                Duong.F_DOAN to cac.map {
+                    mapOf(Duong.F_GOI to it.goi, Duong.F_TU to it.tu, Duong.F_DEN to it.den)
+                },
+                Duong.F_APP to cac.map { it.goi }.distinct().map {
+                    mapOf(Duong.F_GOI to it, Duong.F_TEN to NhatKySuDung.tenApp(context, it))
+                },
+                Duong.F_GIU_NGAY to NhatKySuDung.GIU_NGAY,
+                Duong.F_DANG_GHI to GuardAccessibilityService.dangChay,
+                Duong.F_CAP_NHAT_LUC to bayGio
+            )
+        ).addOnFailureListener { Log.w(TAG, "day so dung app hong: ${it.message}") }
+    }
+
+    /**
+     * Cac app dang tren man hinh, thanh khoang tinh den [bayGio].
+     *
+     * Lay cung mot cho voi dong "dang mo gi" o [truocMat], va bo chinh app Nop bai vi
+     * so ghi khong tinh no. Man hinh tat hay dich vu canh app khong chay thi khong co
+     * khoang nao dang mo.
+     */
+    private fun dangMo(context: Context, bayGio: Long): List<NhatKySuDung.Doan> {
+        if (!GuardAccessibilityService.dangChay) return emptyList()
+        val tm = GuardAccessibilityService.truocMat
+        if (!tm.sang) return emptyList()
+        return tm.cac.filter { it.goi != context.packageName }
+            .map { NhatKySuDung.Doan(it.goi, it.tu, bayGio) }
     }
 
     /**
