@@ -76,6 +76,11 @@ class DanDoActivity : AppCompatActivity() {
             if (cu == null) {
                 finish()
             } else {
+                // Man quay ve ban da luu thi bo luon tam anh vua chup. De lai thi bam
+                // Luu se ghep chu cua ban cu voi tam anh con da bo, roi gui tam do cho
+                // Ba Huy va dua ma anh cua no vao tung bai nop cho Claude doi chieu.
+                anhTam?.delete()
+                anhTam = null
                 anhDaGiu = cu.anh
                 veSoat(listOf(cu))
                 hienAnh(cu.anh?.let { File(it) })
