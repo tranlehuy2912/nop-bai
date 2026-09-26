@@ -98,10 +98,11 @@ class SoatBaiActivity : AppCompatActivity() {
 
         veDaiKyTu()
 
-        // Xoay man, hay Android thu hoi bo nho trong luc con dang soat: dung lai ban
-        // cham da co chu KHONG goi AI lan nua. Goi lai vua ton them mot lan han muc,
-        // vua co the ra ket qua khac ban con dang nhin - va con thi khong hieu vi sao
-        // may vua doi y.
+        // Android dung lai man trong luc con dang soat (cam ban phim, doi co chu, thu
+        // hoi bo nho luc app nam nen): dung lai ban cham da co chu KHONG goi AI lan
+        // nua. Goi lai vua ton them mot lan han muc, vua co the ra ket qua khac ban
+        // con dang nhin - va con thi khong hieu vi sao may vua doi y. Xoay may thi
+        // khong dung lai man, xem configChanges trong AndroidManifest.
         val cu = ChamBaiIO.doc(savedInstanceState?.getString(LUU_BAN_CHAM))
         if (cu != null) {
             binding.khungCho.visibility = View.GONE
@@ -132,9 +133,14 @@ class SoatBaiActivity : AppCompatActivity() {
      *
      * Khong loc theo isFinishing: thoat ra la luc can xoa nhat, ma do lai chinh la
      * luc isFinishing bang true. Gui roi thi service so huu anh va tu xoa.
+     *
+     * Tru luc Android dung lai man vi doi cau hinh: man moi mo ra dung may duong dan
+     * nay tu intent, xoa di thi no khong con anh nao de cham hay gui.
      */
     override fun onDestroy() {
-        if (!daGui) nhom.values.flatten().forEach { runCatching { it.delete() } }
+        if (!daGui && !isChangingConfigurations) {
+            nhom.values.flatten().forEach { runCatching { it.delete() } }
+        }
         super.onDestroy()
     }
 

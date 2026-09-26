@@ -87,9 +87,16 @@
             android:exported="false" />
 
         <!-- Man con soat lai ban may doc, di sau man chup. adjustResize de ban phim
-             khong che mat dong dang sua. -->
+             khong che mat dong dang sua.
+
+             configChanges: xoay may thi man tu ve lai, Android khong dung lai no. Tablet
+             cua Le Hoa bat tu xoay ma man chup khoa doc, nen chup xong hay xoay may. Dung
+             lai man giua luc dang cham thi may cham lai tu dau, ton them mot luot AI, va
+             nhung cau con vua bo ra cung mat. App khong co layout rieng cho chieu ngang
+             nen tu ve lai khong mat gi. -->
         <activity
             android:name=".ui.SoatBaiActivity"
+            android:configChanges="orientation|screenSize|screenLayout|smallestScreenSize"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
 
@@ -112,8 +119,11 @@
             android:name=".ui.SoanActivity"
             android:exported="false" />
 
+        <!-- configChanges cung ly do voi SoatBaiActivity. Dung lai man dan do thi mat tam
+             anh vua chup va ban may vua doc, chua co ban luu thi camera bat lai ngay. -->
         <activity
             android:name=".ui.DanDoActivity"
+            android:configChanges="orientation|screenSize|screenLayout|smallestScreenSize"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
 

@@ -72,6 +72,13 @@ class DanDoActivity : AppCompatActivity() {
     ) { ket ->
         val duong = ket.data?.getStringArrayListExtra(CaptureActivity.KET_QUA_ANH).orEmpty()
         if (ket.resultCode != RESULT_OK || duong.isEmpty()) {
+            // Huy tu man soat thi de nguyen man do. Chu may vua doc, cho con sua tay va
+            // tam anh cua no van nam nguyen sau camera; ve lai tu ban luu hay dong man
+            // la con mat ban vua doc, phai chup lai va may doc them mot luot. Ba Huy
+            // chon giu nguyen ngay 26/9/2026.
+            if (b.boxSoat.visibility == View.VISIBLE) return@registerForActivityResult
+            // Con lai la luc vua mo man, hay dang o man may doc hong. Hai luc do van nhu
+            // cu: co ban luu thi ve lai ban luu, chua co thi dong man.
             val cu = VoDanDo.doc(this)
             if (cu == null) {
                 finish()
@@ -138,6 +145,9 @@ class DanDoActivity : AppCompatActivity() {
     override fun onDestroy() {
         // Chi don ban tam. Ban da giu phai o lai: con vao sua lan sau van can no de
         // gui kem cho Ba Huy.
+        //
+        // Xoay may thi khong toi day: man nay tu ve lai khi xoay, xem configChanges
+        // cua no trong AndroidManifest.
         anhTam?.delete()
         super.onDestroy()
     }
@@ -232,6 +242,10 @@ class DanDoActivity : AppCompatActivity() {
 
     private fun themDong(x: VoDanDo.Dong) {
         val v = StDongDanDoBinding.inflate(layoutInflater, b.danhSachDong, false)
+        // Moi dong deu mang chung id o_chu va o_tich. De Android tu luu thi luc dung
+        // lai man no chep chu va o tich cua dong cuoi de len moi dong, va bam Luu la
+        // luu ca danh sach thanh mot dong lap lai. Tat di thi chi mat cho con vua sua.
+        v.root.isSaveFromParentEnabled = false
         v.oChu.setText(x.chu)
         v.oTich.isChecked = x.laBaiTap
         b.danhSachDong.addView(v.root)
