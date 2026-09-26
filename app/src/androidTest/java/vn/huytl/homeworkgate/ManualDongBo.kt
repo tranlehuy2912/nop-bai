@@ -263,6 +263,53 @@ class ManualDongBo {
     }
 
     /**
+     * Thu xoa chat/ cu tren du an thu, y nhu ban tablet moi lam mot lan luc noi.
+     *
+     * Dat ba tin gia vao chat/, bo dau "da xoa", goi [DongBo.xoaChatCu], roi dem lai:
+     * phai con 0. Chi chay voi ban go loi, tuc la du an thu.
+     *
+     * Khong goi DongBo.batDau nhu cac lenh khac: ham do tu xoa chat/ luc noi, se xoa
+     * ngay trong luc dang dat tin gia va so "truoc" ra 0. Dang nhap Firebase van con tu
+     * lan app chay truoc, nen doc ghi van qua luat.
+     */
+    @Test
+    fun xoaChatCuThu() {
+        val maNha = DongBo.maNhaHienTai(context)
+        if (maNha.isEmpty()) {
+            println("MANUAL_DONGBO: may nay chua lap nha, khong thu duoc")
+            return
+        }
+        val chat = com.google.firebase.firestore.FirebaseFirestore.getInstance()
+            .collection("nha").document(maNha).collection("chat")
+
+        fun cho(viec: com.google.android.gms.tasks.Task<*>) {
+            val xong = CountDownLatch(1)
+            viec.addOnCompleteListener { xong.countDown() }
+            xong.await(20, TimeUnit.SECONDS)
+        }
+        fun dem(): Int {
+            var so = -1
+            val xong = CountDownLatch(1)
+            chat.get().addOnCompleteListener { so = it.result?.size() ?: -1; xong.countDown() }
+            xong.await(20, TimeUnit.SECONDS)
+            return so
+        }
+
+        repeat(3) { i ->
+            cho(chat.add(mapOf("tu" to "CON", "chu" to "tin thu $i", "luc" to System.currentTimeMillis())))
+        }
+        val truoc = dem()
+        Prefs.get(context).raw().edit().remove("dongbo_da_xoa_chat_cu").commit()
+
+        val xong = CountDownLatch(1)
+        var rong = false
+        DongBo.xoaChatCu(context) { rong = it; xong.countDown() }
+        xong.await(60, TimeUnit.SECONDS)
+        val sau = dem()
+        println("MANUAL_DONGBO: chat cu truoc=$truoc sau=$sau rong=$rong")
+    }
+
+    /**
      * Thu duong so dung app: go PING nhu app Bang dieu khien van go, roi doc hop/sudung.
      *
      * Them vao kho hai khoang thu: mot khoang hom nay, va mot khoang tu tam ngay truoc,

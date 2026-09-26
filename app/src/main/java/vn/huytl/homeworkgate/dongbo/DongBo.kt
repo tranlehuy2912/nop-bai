@@ -147,6 +147,7 @@ object DongBo {
         "su_dung_doan",
         TinCuaBa.K_SO,
         K_DAU_DS_APP,
+        K_DA_XOA_CHAT,
         K_NHA
     )
 
@@ -276,6 +277,7 @@ object DongBo {
                 tay.post(nhipTim)
                 dayCaiDat(ung)
                 dayDanhSachApp(ung)
+                xoaChatCu(ung)
             }
         }
     }
@@ -1228,6 +1230,55 @@ object DongBo {
     /** Mot tam anh da gui len Telegram, de dien thoai tai lai bang file_id. */
     data class Anh(val fileId: String, val khau: String)
 
+    /**
+     * Xoa het tin cu trong chat/ cua nha nay, mot lan cho moi may.
+     *
+     * Khung chat trong app bo ngay 27/9/2026, va Ba Huy bao xoa luon tin cu. Phan trong
+     * may o [vn.huytl.homeworkgate.data.ChatCu]. Xoa tung lo [LO_XOA_CHAT] document, lo
+     * nay xong moi doc lo sau, den khi doc ra rong thi danh dau [K_DA_XOA_CHAT] va thoi.
+     * Hong giua chung (mat mang) thi khong danh dau, lan noi sau xoa tiep phan con lai.
+     *
+     * Ten "chat" viet thang o day chu khong o [Duong]: khong app nao con doc hay ghi
+     * duong nay, chi con cho nay xoa no.
+     *
+     * [xong] nhan true khi chat/ da rong, false khi hong giua chung. De ManualDongBo thu
+     * tren du an thu.
+     */
+    fun xoaChatCu(context: Context, xong: (Boolean) -> Unit = {}) {
+        val sp = Prefs.get(context).raw()
+        if (sp.getBoolean(K_DA_XOA_CHAT, false)) return xong(true)
+        val n = nha(context) ?: return xong(false)
+        n.collection(CHAT_CU).limit(LO_XOA_CHAT).get()
+            .addOnSuccessListener { snap ->
+                if (snap.isEmpty) {
+                    sp.edit().putBoolean(K_DA_XOA_CHAT, true).apply()
+                    Log.i(TAG, "chat/ cu da rong")
+                    return@addOnSuccessListener xong(true)
+                }
+                val lo = n.firestore.batch()
+                snap.documents.forEach { lo.delete(it.reference) }
+                lo.commit()
+                    .addOnSuccessListener {
+                        Log.i(TAG, "da xoa ${snap.size()} tin cu trong chat/")
+                        xoaChatCu(context, xong)
+                    }
+                    .addOnFailureListener {
+                        Log.w(TAG, "xoa chat cu hong: ${it.message}")
+                        xong(false)
+                    }
+            }
+            .addOnFailureListener {
+                Log.w(TAG, "doc chat cu hong: ${it.message}")
+                xong(false)
+            }
+    }
+
+    private const val CHAT_CU = "chat"
+    private const val LO_XOA_CHAT = 400L
+
     private const val K_NHA = "dongbo_ma_nha"
     private const val K_DAU_DS_APP = "dongbo_dau_ds_app"
+
+    /** Da xoa het chat/ cu tren Firestore chua. Xem [xoaChatCu]. */
+    private const val K_DA_XOA_CHAT = "dongbo_da_xoa_chat_cu"
 }

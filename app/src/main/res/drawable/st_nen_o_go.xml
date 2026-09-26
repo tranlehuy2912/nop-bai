@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Nen o go chu trong khung chat. Ruot mau canvas chu khong trang: thanh go nam
-     tren dai mau surface, hai mau trang chong len nhau thi khong con thay o go dau. -->
+<!-- Nen o go chu. Ruot mau canvas chu khong trang: o go nam tren nen mau surface, hai
+     mau trang chong len nhau thi khong con thay o go dau. -->
 <shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
     <solid android:color="@color/canvas" />
     <corners android:radius="20dp" />

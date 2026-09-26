@@ -3,6 +3,7 @@ package vn.huytl.homeworkgate
 import android.app.Activity
 import android.app.Application
 import android.os.Bundle
+import vn.huytl.homeworkgate.data.ChatCu
 import vn.huytl.homeworkgate.data.SoCaiBai
 import vn.huytl.homeworkgate.kho.BoThe
 import vn.huytl.homeworkgate.kho.BoTuVung
@@ -53,6 +54,8 @@ class App : Application() {
      * Chay tren luong nen vi co doc file va ghi SQLite. Khong cho ai cai gi ca: man
      * hinh dau tien khong dung den kho, va neu ba viec nay chua xong luc con bam
      * "Nop bai" thi cung chi la danh sach bai hien ra cham mot nhip.
+     *
+     * Cung o day xoa phan con lai cua khung chat cu trong may, xem [ChatCu].
      */
     private fun donDepKho() {
         Thread {
@@ -62,6 +65,7 @@ class App : Application() {
             runCatching { BoThe.napNeuCan(ct) }
             runCatching { BoTuVung.napNeuCan(ct) }
             runCatching { SoCaiBai.donCu(ct) }
+            runCatching { ChatCu.xoaTrongMay(ct) }
         }.apply { isDaemon = true }.start()
     }
 
