@@ -373,14 +373,14 @@ object ThiHanhLenh {
         runCatching { DongBo.daySoCai(context, daGhi) }
 
         val ke = daGhi.joinToString(", ") { it.ma }
+        val con = context.getString(R.string.child_name)
         DayLog.add(
             context,
-            "Ba Huy chấm lại câu $ke: con làm đúng" + if (phut > 0) ", +$phut phút" else ""
+            "Ba Huy chấm lại câu $ke: $con làm đúng" + if (phut > 0) ", +$phut phút" else ""
         )
         SoCaiBai.datLoiNhan(
             context,
-            "Ba Huy chấm lại: câu $ke ${context.getString(R.string.child_name)} làm đúng rồi, " +
-                "máy chấm nhầm." +
+            "Ba Huy chấm lại: câu $ke $con làm đúng rồi, máy chấm nhầm." +
                 if (phut > 0) " Được thêm $phut phút." else ""
         )
         val boQua = if (chuanBi.boQua.isEmpty()) "" else {

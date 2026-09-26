@@ -293,7 +293,7 @@ class TelegramClient(private val token: String) {
         put(cmd("trangthai", "Còn bao nhiêu phút chơi, hôm nay đã duyệt bao nhiêu"))
         put(cmd("nhatky", "Hôm nay đã xảy ra những gì"))
         put(cmd("hoi", "Hôm nay Lê Hòa hỏi app AI những gì"))
-        put(cmd("loi", "Con hay sai kiểu gì, ví dụ /loi 7"))
+        put(cmd("loi", "Lê Hòa hay sai kiểu gì, ví dụ /loi 7"))
         put(cmd("lichmai", "Buổi học kế tiếp có môn gì, cần mang vở nào"))
         put(cmd("soanlai", "Bắt soạn tập lại vì soạn thiếu"))
         put(cmd("mo", "Mở màn chặn cho hết buổi học đang chặn"))

@@ -70,7 +70,7 @@ class SuaChamLenhTest {
         assertTrue(tra, tra.startsWith("Đã sửa câu 2.33a thành đúng, cộng 2 phút"))
         assertTrue(SoCaiBai.dangChoSua(context).isEmpty())
         assertEquals(2, SoCaiBai.phutDaCongHomNay(context))
-        assertTrue(SoCaiBai.loiNhan(context).orEmpty().contains("câu 2.33a con làm đúng rồi"))
+        assertTrue(SoCaiBai.loiNhan(context).orEmpty().contains("câu 2.33a Lê Hòa làm đúng rồi"))
 
         // Gui lai dung lenh do: khong cong them phut nao.
         val lan2 = ThiHanhLenh.suaCham(context, GateStore(context), giaTri)

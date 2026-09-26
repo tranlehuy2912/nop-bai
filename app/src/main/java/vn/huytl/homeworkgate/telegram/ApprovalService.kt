@@ -1223,7 +1223,7 @@ class ApprovalService : Service() {
         ChatBox.stopWaiting(this)
         DongBo.dayTin(this, ChatLine(ChatFrom.BA, chu.ifBlank { "(ảnh)" }, luc))
         ChuongTin.keu(this, chu.ifBlank { "${getString(R.string.parent_name_cap)} gửi một tấm ảnh" })
-        DayLog.add(this, "Ba Huy gửi ảnh cho con")
+        DayLog.add(this, "Ba Huy gửi ảnh cho ${getString(R.string.child_name)}")
 
         client.sendMessage(
             chatId,
@@ -1504,7 +1504,9 @@ class ApprovalService : Service() {
             than.append("• Ôn lại ${moi.size} câu từng sai — trả nửa số phút\n")
         }
         if (pham != null && pham.bai.isNotBlank()) {
-            than.append("• Con khai: ").append(pham.tenNguon.ifBlank { pham.mon })
+            // Bang dieu khien doc dong nay de chep vao loi nho Claude, xem NhoClaude.conKhai
+            // ben do. Truoc ngay 26/9/2026 dong nay ghi "Con khai:", ben do doc ca hai kieu.
+            than.append("• $con khai: ").append(pham.tenNguon.ifBlank { pham.mon })
                 .append(" — ").append(pham.bai).append("\n")
         }
         /*
@@ -1881,8 +1883,8 @@ class ApprovalService : Service() {
         /trangthai  còn mấy phút, đã duyệt bao nhiêu
         /nhatky  hôm nay có gì
         /thongke  dùng app gì, mấy giờ (/thongke 1 = hôm qua)
-        /hoi  con hỏi AI những gì
-        /loi  con hay sai kiểu gì (/loi 7 = bảy ngày)
+        /hoi  ${getString(R.string.child_name)} hỏi AI những gì
+        /loi  ${getString(R.string.child_name)} hay sai kiểu gì (/loi 7 = bảy ngày)
         /ai  danh sách app AI đang ghi (/ai <gói> thêm, /aibo bỏ)
 
         SOẠN TẬP
