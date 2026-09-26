@@ -1332,7 +1332,8 @@ class ApprovalService : Service() {
             runCatching { tg.sendMessage(prefs.parentChatId, loi) }
             return
         }
-        xuLyBanCham(ket, pham, nhom.containsKey(CaptureStage.DAN_DO))
+        // Vo chi co anh thi may cham da duoc dua tam anh do, xem SoatBaiActivity.cham.
+        xuLyBanCham(ket, pham, nhom.containsKey(CaptureStage.DAN_DO) || vo?.chuaDoc == true)
     }
 
 
@@ -1523,10 +1524,12 @@ class ApprovalService : Service() {
          * Duong Claude lay ban chep luc nop ([VoChoCham]) va xet no TRUOC anh: bai do co
          * gan san anh trang vo cho Bang dieu khien ban cu, nen coAnhDanDo la true, ma
          * ngay va danh sach bai van lay tu ban con soat - xem [ChamTheoClaude.banCham].
+         * Ban chi co anh thi khong co danh sach nao: in cai Claude hay may vua doc ra.
          */
-        val danDoDaSoat = if (baiId != null) VoChoCham.lay(this, baiId) else VoDanDo.conHieuLuc(this)
+        val danDoDaSoat = (if (baiId != null) VoChoCham.voChoBai(this, baiId) else VoDanDo.conHieuLuc(this))
+            ?.takeUnless { it.chuaDoc }
         if (danDoDaSoat != null && (baiId != null || !coAnhDanDo)) {
-            than.append("• Vở dặn dò Lê Hòa đã soát: ")
+            than.append("• Vở dặn dò ${danDoDaSoat.aiDoc(con)}: ")
                 .append(
                     if (danDoDaSoat.cacBai.isEmpty()) "không có bài tập nào"
                     else danDoDaSoat.cacBai.joinToString(", ")
@@ -1542,6 +1545,7 @@ class ApprovalService : Service() {
                 ?.let { than.append(" (ngày ").append(it).append(")") }
             than.append("\n")
         }
+        giuVoDocLucCham(ket, coAnhDanDo, baiId)
         bang.dong.forEach { than.append("• ").append(it).append("\n") }
         if (thieu.isNotEmpty()) {
             than.append("• Khai làm nhưng ảnh không thấy: ")
@@ -1761,6 +1765,31 @@ class ApprovalService : Service() {
             runCatching { tg.clearReplyMarkup(chatId, bai.messageId) }
         }
         refreshUi()
+    }
+
+    /**
+     * Tam vo chua ai doc ma lan cham nay vua doc ra: giu lai lam vo dan do cua ngay.
+     *
+     * Tu do cac bai nop sau mang theo danh sach nay thay cho tam anh, Claude khong phai
+     * doc lai trang vo, va moi bai trong ngay cham theo cung mot danh sach. Bai nop truoc
+     * do van mang ban chi co anh, nhung luc cham tablet nhan ra cung tam anh va dung ban
+     * da doc - xem [VoChoCham.voChoBai].
+     *
+     * Ban cua bai lay truc tiep ([VoChoCham.lay]), khong qua voChoBai: da co ban doc roi
+     * thi thoi, khong co gi de giu nua. Dieu kien con lai nam o [VoDanDo.tuLanCham].
+     */
+    private fun giuVoDocLucCham(ket: KetQuaCham, coAnhDanDo: Boolean, baiId: String?) {
+        if (!coAnhDanDo) return
+        val cuaBai = (if (baiId != null) VoChoCham.lay(this, baiId) else VoDanDo.conHieuLuc(this))
+            ?.takeIf { it.chuaDoc } ?: return
+        val moi = VoDanDo.tuLanCham(VoDanDo.doc(this), cuaBai.chupLuc, ket.ngayDanDo, ket.baiDuocGiao)
+            ?: return
+        VoDanDo.luu(this, moi)
+        DayLog.add(
+            this,
+            "Giữ vở dặn dò đọc lúc chấm bài: " +
+                if (moi.cacBai.isEmpty()) "không có bài tập" else moi.cacBai.joinToString(", ")
+        )
     }
 
     /**

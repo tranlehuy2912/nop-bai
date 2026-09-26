@@ -103,8 +103,9 @@ object AiChamBai {
         // cau nhu truoc - nen mat mot ban ngan hang cung khong lam ket duong nop bai.
         val danhSach = danhSachCua(context, pham)
         // Vo dan do da chup va soat tu dau buoi. Co no thi lan nop nay khong con
-        // trang vo trong xap anh, va doan chu thay vao cho do - xem [VoDanDo].
-        val danDo = VoDanDo.conHieuLuc(context)
+        // trang vo trong xap anh, va doan chu thay vao cho do - xem [VoDanDo]. Ban chi
+        // co anh thi khong co chu nao de thay: tam anh da nam trong xap anh roi.
+        val danDo = VoDanDo.conHieuLuc(context)?.takeUnless { it.chuaDoc }
         val cauLenh = if (danhSach.isEmpty()) {
             PromptCham.cauLenh(danDo = danDo)
         } else {

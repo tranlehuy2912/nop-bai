@@ -82,8 +82,12 @@ class DanDoActivity : AppCompatActivity() {
                 anhTam?.delete()
                 anhTam = null
                 anhDaGiu = cu.anh
-                veSoat(listOf(cu))
-                hienAnh(cu.anh?.let { File(it) })
+                if (cu.chuaDoc) {
+                    hienChuaDoc()
+                } else {
+                    veSoat(listOf(cu))
+                    hienAnh(cu.anh?.let { File(it) })
+                }
             }
             return@registerForActivityResult
         }
@@ -106,6 +110,8 @@ class DanDoActivity : AppCompatActivity() {
 
         b.nutQuayLai.setOnClickListener { finish() }
         b.nutThuLai.setOnClickListener { moManChup() }
+        b.nutDocLai.setOnClickListener { docLai() }
+        b.nutGuiBa.setOnClickListener { guiChoBa() }
         b.nutChupLai.setOnClickListener { moManChup() }
         b.nutLuu.setOnClickListener { luu() }
         b.nutNgay.setOnClickListener { chonNgay() }
@@ -115,12 +121,17 @@ class DanDoActivity : AppCompatActivity() {
         // dang ghi "Chụp vở dặn dò hôm nay", bay ra dan do cua tuan truoc la lech.
         VoDanDo.donDep(this)
         val daCo = VoDanDo.doc(this)
-        if (daCo != null) {
-            anhDaGiu = daCo.anh
-            veSoat(listOf(daCo))
-            hienAnh(daCo.anh?.let { File(it) })
-        } else {
-            moManChup()
+        when {
+            daCo == null -> moManChup()
+            daCo.chuaDoc -> {
+                anhDaGiu = daCo.anh
+                hienChuaDoc()
+            }
+            else -> {
+                anhDaGiu = daCo.anh
+                veSoat(listOf(daCo))
+                hienAnh(daCo.anh?.let { File(it) })
+            }
         }
     }
 
@@ -144,6 +155,12 @@ class DanDoActivity : AppCompatActivity() {
             val ket = withContext(Dispatchers.IO) { DocDanDo.doc(this@DanDoActivity, listOf(f)) }
             if (ket.cacNgay.isEmpty()) {
                 b.chuHong.text = ket.loi
+                b.nutDocLai.visibility = View.VISIBLE
+                // Chi tam vua chup moi gui duoc: tam da giu thi ba Huy da co roi. Chua cai
+                // Telegram thi khong co ai de gui.
+                b.nutGuiBa.visibility =
+                    if (anhTam != null && Prefs.get(this@DanDoActivity).isConfigured) View.VISIBLE
+                    else View.GONE
                 hien(hong = true)
             } else {
                 veSoat(ket.cacNgay)
@@ -258,13 +275,19 @@ class DanDoActivity : AppCompatActivity() {
             Toast.makeText(this, "Chưa có dòng nào để lưu", Toast.LENGTH_SHORT).show()
             return
         }
+        val cu = VoDanDo.doc(this)
+        val bayGio = System.currentTimeMillis()
         val ban = VoDanDo.DanDo(
             ngay = ngay.toString(),
             cacDong = cac,
+            luc = bayGio,
             anh = anhTam?.let { giuAnh(it) } ?: anhDaGiu,
             // Khong chup lai thi van la tam anh da gui, nen ma anh cu con dung trong luc
             // tin moi dang gui - bai nop luc do van co anh trang vo cho Claude.
-            fileId = if (anhTam == null) VoDanDo.doc(this)?.fileId else null
+            fileId = if (anhTam == null) cu?.fileId else null,
+            // Cung tam anh thi giu moc chup cu: bai nop luc vo con cho ba Huy doc van
+            // nhan ra day la cung mot trang. Xem VoChoCham.voChoBai.
+            chupLuc = if (anhTam == null) cu?.chupLuc ?: bayGio else bayGio
         )
         VoDanDo.luu(this, ban)
         // Gui ca anh lan noi dung con vua xac nhan. Ba doi chieu duoc chu con tich
@@ -276,6 +299,66 @@ class DanDoActivity : AppCompatActivity() {
             this,
             if (daGui) "Đã lưu và gửi cho ${getString(R.string.parent_name)}" else "Đã lưu",
             Toast.LENGTH_SHORT
+        ).show()
+        finish()
+    }
+
+    // ---------------------------------------------------------- may doc khong duoc
+
+    /**
+     * Man cua ban chi co anh: may chua doc duoc, anh da gui ba Huy.
+     *
+     * Van cho doc lai, vi may doc hong thuong la mat mang hay het han muc mot luc. Doc
+     * duoc thi con soat nhu moi khi, va ban soat do thay cho ban chi co anh.
+     */
+    private fun hienChuaDoc() {
+        b.chuHong.text = "Máy chưa đọc được trang vở này. Ảnh đã gửi " +
+            "${getString(R.string.parent_name)}, ba sẽ nhờ Claude đọc giúp.\n\n" +
+            "Mấy lần nộp bài sau không phải chụp lại vở."
+        b.nutDocLai.visibility = if (anhDaGiu != null) View.VISIBLE else View.GONE
+        b.nutGuiBa.visibility = View.GONE
+        hien(hong = true)
+    }
+
+    /** Doc lai dung tam dang co, khong mo camera. */
+    private fun docLai() {
+        val f = anhTam ?: anhDaGiu?.let { File(it) }?.takeIf { it.exists() }
+        if (f == null) {
+            moManChup()
+            return
+        }
+        docBangMay(f)
+    }
+
+    /**
+     * May doc khong duoc: giu tam anh lam vo dan do cua ngay, chua co chu, roi gui ba
+     * Huy. Xem [VoDanDo.DanDo.chuaDoc].
+     *
+     * Tu day con khong phai chup lai vo o moi lan nop: tablet gan tam nay theo tung bai,
+     * ba Huy nho Claude doc duoc, va lan Nho Claude cham dau tien cung doc duoc no.
+     *
+     * Ngay tam la hom nay, vi chua ai doc thi chua biet vo ghi ngay nao. Doc xong thi
+     * ngay ghi tren vo thay vao.
+     */
+    private fun guiChoBa() {
+        val tam = anhTam ?: return
+        val anh = giuAnh(tam)
+        if (anh == null) {
+            Toast.makeText(this, "Không lưu được ảnh, chụp lại nhé", Toast.LENGTH_SHORT).show()
+            return
+        }
+        val ban = VoDanDo.DanDo(
+            ngay = LocalDate.now().toString(),
+            cacDong = emptyList(),
+            anh = anh,
+            chuaDoc = true
+        )
+        VoDanDo.luu(this, ban)
+        DanDoSender.guiNen(this, ban)
+        Toast.makeText(
+            this,
+            "Đã gửi ảnh cho ${getString(R.string.parent_name)}. Mấy lần nộp sau không phải chụp lại vở.",
+            Toast.LENGTH_LONG
         ).show()
         finish()
     }

@@ -34,8 +34,8 @@ object ChamTheoClaude {
     /**
      * @param giaTri "giaTri" cua lenh CHAMBAI: mot map { cac, ngayDanDo, baiDuocGiao,
      *   lamHetDanDo, coAnhDanDo }. Van nhan kieu cu chi co danh sach cau.
-     * @param vo ban vo con soat ma lan nop do dung, tablet chep luc nop. null la lan nop
-     *   khong dung ban soat nao.
+     * @param vo ban vo ma lan nop do dung, xem [VoChoCham.voChoBai]. null la lan nop khong
+     *   dung ban nao.
      */
     fun banCham(
         context: Context,
@@ -47,7 +47,12 @@ object ChamTheoClaude {
         val cacMuc = ((goi?.get("cac") ?: giaTri) as? List<*>).orEmpty().mapNotNull { it as? Map<*, *> }
         // Co ban soat la co vo dan do, du dien thoai co bao hay khong: Bang dieu khien ban
         // cu khong biet ban soat, ma quy tac 17 duoi day chi danh cho lan nop khong co vo.
-        val coVo = coAnhDanDo(giaTri) || vo != null
+        //
+        // Ban chi co anh thi chua co danh sach nao de dung: ngay va bai lay tu Claude doc
+        // tam anh gan theo bai, y nhu lan nop chup trang vo kem. Co vo hay khong luc do
+        // theo dien thoai bao, vi chi ben do biet bai co mang anh trang vo khong.
+        val soat = vo?.takeUnless { it.chuaDoc }
+        val coVo = coAnhDanDo(giaTri) || soat != null
         val sach = if (pham?.theoSach == true) {
             KhoBai.get(context).cacCauTheoId(pham.cauIds)
         } else {
@@ -97,7 +102,7 @@ object ChamTheoClaude {
                     !coVo -> true
                     // Ban soat ghi hom do co khong giao bai tap nao: khong cau nao thuoc
                     // bai co giao, du Claude noi gi. Cau lenh cua may cham dan y nhu vay.
-                    vo != null && vo.cacBai.isEmpty() -> false
+                    soat != null && soat.cacBai.isEmpty() -> false
                     else -> o["trongDanDo"] as? Boolean ?: false
                 }
             )
@@ -106,12 +111,12 @@ object ChamTheoClaude {
         return KetQuaCham(
             mon = pham?.mon?.takeIf { it.isNotBlank() } ?: cac.first().mon,
             cac = cac,
-            ngayDanDo = vo?.ngay
+            ngayDanDo = soat?.ngay
                 ?: (goi?.get("ngayDanDo") as? String)?.trim()?.takeIf { it.isNotEmpty() },
             // Viet sai kieu la khong co goi, y nhu "dung": mot chu "true" khong duoc
             // thanh 45 phut.
             lamHetDanDo = goi?.get("lamHetDanDo") as? Boolean ?: false,
-            baiDuocGiao = vo?.cacBai ?: (goi?.get("baiDuocGiao") as? List<*>).orEmpty()
+            baiDuocGiao = soat?.cacBai ?: (goi?.get("baiDuocGiao") as? List<*>).orEmpty()
                 .mapNotNull { (it as? String)?.trim()?.takeIf { t -> t.isNotEmpty() } }
         )
     }

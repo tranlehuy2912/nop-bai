@@ -283,10 +283,12 @@ class ChonBaiActivity : AppCompatActivity() {
         val d = VoDanDo.conHieuLuc(this)
         themDong(
             ten = if (d == null) "Chụp vở dặn dò hôm nay" else "Vở dặn dò ${d.moTa()}",
-            phu = if (d == null) {
-                "Chụp một lần thôi. Máy đọc ra chữ cho Lê Hòa soát lại trước khi dùng"
-            } else {
-                "Máy nhớ rồi, mấy lần nộp sau không phải chụp lại. Bấm để xem hoặc sửa"
+            phu = when {
+                d == null -> "Chụp một lần thôi. Máy đọc ra chữ cho Lê Hòa soát lại trước khi dùng"
+                d.chuaDoc -> "Máy chưa đọc được, ảnh đã gửi ba Huy. Mấy lần nộp sau không phải chụp lại"
+                d.nguon == VoDanDo.NGUON_CLAUDE -> "Claude đã đọc giúp. Bấm để xem hoặc sửa"
+                d.nguon == VoDanDo.NGUON_LUC_CHAM -> "Đọc ra lúc chấm bài. Bấm để xem hoặc sửa"
+                else -> "Máy nhớ rồi, mấy lần nộp sau không phải chụp lại. Bấm để xem hoặc sửa"
             }
         ) {
             startActivity(Intent(this, DanDoActivity::class.java))

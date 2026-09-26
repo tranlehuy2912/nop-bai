@@ -46,5 +46,20 @@ object VoChoCham {
         return runCatching { VoDanDo.tuJson(JSONObject(chu).getJSONObject("vo")) }.getOrNull()
     }
 
+    /**
+     * Ban vo ma lan cham nay dung cho bai [baiId].
+     *
+     * Thuong la ban chep luc nop. Rieng khi ban do chi co anh ([VoDanDo.DanDo.chuaDoc])
+     * ma tu luc do chinh tam anh ay da duoc doc ra chu - Ba Huy nho Claude doc, hay mot
+     * lan cham truoc da doc - thi lay ban da doc. Khong thi hai bai cung mot trang vo
+     * lai cham theo hai lan doc khac nhau.
+     */
+    fun voChoBai(context: Context, baiId: String): VoDanDo.DanDo? {
+        val ban = lay(context, baiId) ?: return null
+        if (!ban.chuaDoc) return ban
+        val hienTai = VoDanDo.doc(context) ?: return ban
+        return if (!hienTai.chuaDoc && hienTai.chupLuc == ban.chupLuc) hienTai.copy(anh = null) else ban
+    }
+
     private fun sp(context: Context) = context.getSharedPreferences(FILE, Context.MODE_PRIVATE)
 }

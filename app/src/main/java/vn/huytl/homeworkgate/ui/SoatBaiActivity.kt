@@ -27,6 +27,7 @@ import vn.huytl.homeworkgate.data.CauCham
 import vn.huytl.homeworkgate.data.CaptureStage
 import vn.huytl.homeworkgate.data.KetQuaCham
 import vn.huytl.homeworkgate.data.Prefs
+import vn.huytl.homeworkgate.data.VoDanDo
 import vn.huytl.homeworkgate.databinding.StActivitySoatBaiBinding
 import vn.huytl.homeworkgate.kho.PhamVi
 import vn.huytl.homeworkgate.telegram.ApprovalService
@@ -152,8 +153,15 @@ class SoatBaiActivity : AppCompatActivity() {
         lifecycleScope.launch {
             val anh = nhom.values.flatten()
             val giai = nhom[CaptureStage.BAI_GIAI].orEmpty()
+            // Vo dan do chi co anh (may doc hong luc dau buoi): dua tam do cho may doc
+            // cung luc cham, y nhu lan nop chup trang vo kem. File nay cua VoDanDo, may
+            // cham chi doc ban thu nho cua no nen khong xoa mat.
+            val voChuaDoc = VoDanDo.conHieuLuc(this@SoatBaiActivity)?.takeIf { it.chuaDoc }
+                ?.anh?.let { File(it) }?.takeIf { it.exists() }
             val kq = withContext(Dispatchers.IO) {
-                AiChamBai.cham(this@SoatBaiActivity, anh, giai.ifEmpty { anh }, pham)
+                AiChamBai.cham(
+                    this@SoatBaiActivity, anh + listOfNotNull(voChuaDoc), giai.ifEmpty { anh }, pham
+                )
             }
             binding.khungCho.visibility = View.GONE
             binding.khungCuon.visibility = View.VISIBLE

@@ -198,6 +198,10 @@ object DongBo {
     /** Ban sao cau hinh vua ghi, de chi ghi lai khi no doi. Xem [dayCaiDatNeuDoi]. */
     private var caiDatDaDay: Map<String, Any>? = null
 
+    /** Ban vo dan do vua ghi len hop/dando, null la vua xoa. Xem [dayDanDoNeuDoi]. */
+    private var danDoDaDay: Map<String, Any>? = null
+    private var daDayDanDo = false
+
     /** Luc bat dau chuoi gom hien tai, de giu [TRAN_GOM_MS]. */
     private var batDauGom = 0L
 
@@ -280,6 +284,8 @@ object DongBo {
         dangChay = false
         banDaDay = null
         caiDatDaDay = null
+        danDoDaDay = null
+        daDayDanDo = false
         nhatKyDaDay = null
         hoiAiDaDay = null
         batDauGom = 0L
@@ -396,7 +402,32 @@ object DongBo {
         }
 
         dayCaiDatNeuDoi(context)
+        dayDanDoNeuDoi(context)
         dayNhatKy(context)
+    }
+
+    /**
+     * Vo dan do cua ngay, cho the vo dan do o tab Bang ben dien thoai. Xem [Duong.D_DAN_DO].
+     *
+     * Chay trong [dayThat] y nhu ban sao cau hinh: ban vo nam trong cung file prefs, nen
+     * con luu, Claude doc, hay ban het han bi don deu keo theo mot lan so. Khong co ban
+     * nao con hieu luc thi xoa document, de ben dien thoai khong con nut nho Claude doc
+     * mot tam vo cu. Nhip tim goi [dayThat] deu dan, nen ban het han qua dem cung duoc
+     * xoa ma khong can ai mo man vo dan do.
+     */
+    private fun dayDanDoNeuDoi(context: Context) {
+        val vo = VoDanDo.conHieuLuc(context)
+        val ban = vo?.let { banDanDo(it) + (Duong.F_LUC to it.luc) }
+        if (daDayDanDo && ban == danDoDaDay) return
+        val ref = hop(context, Duong.D_DAN_DO) ?: return
+        daDayDanDo = true
+        danDoDaDay = ban
+        val viec = if (ban == null) ref.delete() else ref.set(ban)
+        viec.addOnFailureListener {
+            // Quen ban vua nho, de lan prefs doi sau ghi lai.
+            daDayDanDo = false
+            Log.w(TAG, "day vo dan do hong: ${it.message}")
+        }
     }
 
     /**
@@ -585,17 +616,23 @@ object DongBo {
     }
 
     /**
-     * Vo dan do con da soat, chep vao bai luc nop. Xem [Duong.F_DAN_DO].
+     * Vo dan do cua ngay, chep vao bai luc nop va vao hop/dando. Xem [Duong.F_DAN_DO].
      *
      * Chi dua len phan Claude can: ngay, bai phai lam, dong dan viec khac, va ma anh
      * trang vo de doi chieu. Dong nao con tich khac may thi khong dua: Ba Huy da thay
      * no trong tin vo dan do tren Telegram.
+     *
+     * Ban chi co anh thi cacBai rong ma chuaDoc la true: ben dien thoai khong duoc hieu
+     * no la hom co khong giao bai tap.
      */
     fun banDanDo(vo: VoDanDo.DanDo): Map<String, Any> = buildMap {
         put("ngay", vo.ngay)
         put("cacBai", vo.cacBai)
         put("dongKhac", vo.dongKhac)
         vo.fileId?.let { put(Duong.F_FILE_ID, it) }
+        put("chuaDoc", vo.chuaDoc)
+        put("nguon", vo.nguon)
+        put("chupLuc", vo.chupLuc)
     }
 
     /** Doi trang thai mot bai sau khi Ba Huy duyet hoac tu choi. */

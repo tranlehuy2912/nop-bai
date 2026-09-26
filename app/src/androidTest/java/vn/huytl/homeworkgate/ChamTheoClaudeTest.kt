@@ -299,6 +299,77 @@ class ChamTheoClaudeTest {
         assertNull(VoChoCham.lay(context, "khong-co-bai-nay"))
     }
 
+    // ------------------------------------------------- vo chi co anh, chua ai doc
+
+    private val chiCoAnh = VoDanDo.DanDo(
+        ngay = "2026-09-26",
+        cacDong = emptyList(),
+        luc = 8_000L,
+        fileId = "ma-anh-vo",
+        chuaDoc = true
+    )
+
+    @Test
+    fun vo_chi_co_anh_thi_ngay_va_bai_lay_tu_claude_doc_anh() {
+        val giaTri = mapOf(
+            "cac" to listOf(
+                mapOf("ma" to "2.28", "dung" to true, "soDong" to 1, "trongDanDo" to true),
+                mapOf("ma" to "2.33a", "dung" to true, "soDong" to 4, "trongDanDo" to false)
+            ),
+            "ngayDanDo" to "2026-09-23",
+            "baiDuocGiao" to listOf("Bài 2.28"),
+            "lamHetDanDo" to true,
+            "coAnhDanDo" to true
+        )
+        val ket = ChamTheoClaude.banCham(context, giaTri, pham, chiCoAnh)!!
+        // Khong co danh sach nao de de len: ban chi co anh khong phai "khong giao bai".
+        assertEquals("2026-09-23", ket.ngayDanDo)
+        assertEquals(listOf("Bài 2.28"), ket.baiDuocGiao)
+        assertTrue(ket.cac.single { it.ma == "2.28" }.trongDanDo)
+        assertFalse(ket.cac.single { it.ma == "2.33a" }.trongDanDo)
+
+        // Bai khong mang duoc anh trang vo (tablet chua gui xong): dien thoai bao khong
+        // co vo, va quy tac 17 van ap nhu lan nop khong co vo nao.
+        val khongAnh = ChamTheoClaude.banCham(
+            context,
+            mapOf("cac" to listOf(mapOf("ma" to "2.33a", "dung" to true, "trongDanDo" to false)), "coAnhDanDo" to false),
+            pham,
+            chiCoAnh.copy(fileId = null)
+        )!!
+        assertTrue(khongAnh.cac.single().trongDanDo)
+    }
+
+    @Test
+    fun bai_mang_ban_chi_co_anh_duoc_cham_theo_ban_da_doc_sau_do() {
+        VoChoCham.luu(context, "thu-vo-chua-doc", chiCoAnh)
+        try {
+            // Chua ai doc: van la ban chi co anh.
+            VoDanDo.luu(context, chiCoAnh)
+            assertTrue(VoChoCham.voChoBai(context, "thu-vo-chua-doc")!!.chuaDoc)
+
+            // Ba Huy nho Claude doc chinh tam do: bai nop truoc van cham theo ban da doc.
+            val daDoc = VoDanDo.tuClaude(
+                chiCoAnh,
+                mapOf(
+                    "chupLuc" to chiCoAnh.chupLuc,
+                    "ngay" to "2026-09-25",
+                    "cacDong" to listOf(mapOf("chu" to "Toán: bài 2.28 trang 47", "bai" to true))
+                )
+            ).ban!!
+            VoDanDo.luu(context, daDoc)
+            val dung = VoChoCham.voChoBai(context, "thu-vo-chua-doc")!!
+            assertFalse(dung.chuaDoc)
+            assertEquals(listOf("Toán: bài 2.28 trang 47"), dung.cacBai)
+            assertNull(dung.anh)
+
+            // Con chup trang khac roi soat: khong phai tam anh bai kia mang theo.
+            VoDanDo.luu(context, daDoc.copy(chupLuc = 9_999L))
+            assertTrue(VoChoCham.voChoBai(context, "thu-vo-chua-doc")!!.chuaDoc)
+        } finally {
+            VoDanDo.xoa(context)
+        }
+    }
+
     @Test
     fun pham_vi_luu_lai_duoc_theo_ma_bai() {
         KhaiChoCham.luu(context, "thu-khai", pham)

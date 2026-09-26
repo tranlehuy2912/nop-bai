@@ -63,7 +63,8 @@ object DanDoSender {
         val prefs = Prefs.get(context)
         val client = TelegramClient(prefs.botToken)
         val chuThich = chuThich(d, context.getString(R.string.child_name))
-        val banPhim = if (d.cacBai.isEmpty()) banPhimDuyet(d.ngay) else null
+        // Ban chi co anh thi cacBai rong vi chua ai doc, khong phai co khong giao bai.
+        val banPhim = if (!d.chuaDoc && d.cacBai.isEmpty()) banPhimDuyet(d.ngay) else null
 
         val goc = d.anh?.let { File(it) }?.takeIf { it.exists() }
         if (goc == null) {
@@ -90,7 +91,18 @@ object DanDoSender {
     fun chuThich(d: VoDanDo.DanDo, con: String = "Lê Hòa"): String = buildString {
         val ngay = d.ngayDoc()
         val gio = SimpleDateFormat("HH:mm 'ngày' dd/MM", Locale("vi", "VN")).format(Date())
-        append("📒 ").append(con).append(" soát xong vở dặn dò")
+        if (d.chuaDoc) {
+            // May doc khong duoc, con gui anh sang. Noi ro hai duong doc de Ba Huy biet
+            // khong can lam gi ngay: lan Nho Claude cham dau tien cung doc duoc.
+            append("📒 ").append(con).append(" chụp vở dặn dò lúc ").append(gio).append('.')
+            append("\n\nMáy chưa đọc được trang này. Ba Huy mở Bảng điều khiển, chạm thẻ vở ")
+            append("dặn dò ở tab Bảng để nhờ Claude đọc. Không đọc riêng thì lần Nhờ Claude ")
+            append("chấm đầu tiên sẽ đọc luôn.")
+            return@buildString
+        }
+        append("📒 ")
+        if (d.nguon == VoDanDo.NGUON_CLAUDE) append("Claude đọc vở dặn dò")
+        else append(con).append(" soát xong vở dặn dò")
         if (ngay != null) append(" ngày ${ngay.dayOfMonth}/${ngay.monthValue}")
         append(".\nLúc ").append(gio).append('.')
 

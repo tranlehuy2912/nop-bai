@@ -132,6 +132,90 @@ class VoDanDoTest {
         assertNull(VoDanDo.doc(context)!!.fileId)
     }
 
+    // ------------------------------------------------------ may doc khong duoc
+
+    private fun chiCoAnh(chup: Long = 1_000L) = VoDanDo.DanDo(
+        ngay = LocalDate.now().toString(),
+        cacDong = emptyList(),
+        luc = chup,
+        anh = anhGia().absolutePath,
+        chuaDoc = true
+    )
+
+    @Test
+    fun banChiCoAnhLuuXongDocLaiVanChiCoAnh() {
+        val d = chiCoAnh()
+        VoDanDo.luu(context, d)
+        val doc = VoDanDo.doc(context)!!
+        assertTrue(doc.chuaDoc)
+        assertEquals(1_000L, doc.chupLuc)
+        assertEquals(VoDanDo.NGUON_CON, doc.nguon)
+        // Chua doc thi khong duoc hien la "khong co bai tap".
+        assertTrue(doc.moTa().endsWith("chờ ba Huy đọc"))
+        // Ban luu truoc khi co moc chup: moc chup la luc luu.
+        val cu = VoDanDo.tuJson(org.json.JSONObject().put("ngay", "2026-09-23").put("luc", 77L))
+        assertEquals(77L, cu.chupLuc)
+        assertFalse(cu.chuaDoc)
+    }
+
+    private fun ketQuaClaude(chup: Long, ngay: Any? = "2026-09-23") = mapOf(
+        "chupLuc" to chup,
+        "ngay" to ngay,
+        "cacDong" to listOf(
+            mapOf("chu" to "Toán: làm bài 2 trang 36", "bai" to true),
+            mapOf("chu" to "KHTN: mang sách vở", "bai" to false),
+            mapOf("chu" to " ", "bai" to true)
+        )
+    )
+
+    @Test
+    fun ketQuaClaudeChiGhiVaoDungTamChuaDoc() {
+        val cu = chiCoAnh(chup = 5_000L)
+        val kq = VoDanDo.tuClaude(cu, ketQuaClaude(5_000L), bayGio = 9_000L)
+        val ban = kq.ban!!
+        assertFalse(ban.chuaDoc)
+        assertEquals(VoDanDo.NGUON_CLAUDE, ban.nguon)
+        assertEquals("2026-09-23", ban.ngay)
+        assertEquals(listOf("Toán: làm bài 2 trang 36"), ban.cacBai)
+        assertEquals(listOf("KHTN: mang sách vở"), ban.dongKhac)
+        // Cung tam anh: giu moc chup va anh, chi doi luc luu.
+        assertEquals(5_000L, ban.chupLuc)
+        assertEquals(cu.anh, ban.anh)
+        assertEquals(9_000L, ban.luc)
+        // O tich cua Claude di vao ca mayTich, de con sua thi Ba Huy thay cho sua.
+        assertTrue(ban.cacDong.none { it.conSua })
+
+        // Tam khac, ban da co chu, ngay hong, khong co dong nao: deu khong ghi.
+        assertNull(VoDanDo.tuClaude(cu, ketQuaClaude(4_000L)).ban)
+        assertNull(VoDanDo.tuClaude(ban, ketQuaClaude(5_000L)).ban)
+        assertNull(VoDanDo.tuClaude(cu, ketQuaClaude(5_000L, ngay = "23/9")).ban)
+        assertNull(VoDanDo.tuClaude(cu, ketQuaClaude(5_000L, ngay = null)).ban)
+        assertNull(
+            VoDanDo.tuClaude(cu, mapOf("chupLuc" to 5_000L, "ngay" to "2026-09-23", "cacDong" to emptyList<Any>())).ban
+        )
+        assertNull(VoDanDo.tuClaude(null, ketQuaClaude(5_000L)).ban)
+        assertTrue(VoDanDo.tuClaude(cu, ketQuaClaude(4_000L)).loi.isNotBlank())
+    }
+
+    @Test
+    fun lanChamDauDocDuocVoThiGiuLaiDanhSach() {
+        val cu = chiCoAnh(chup = 5_000L)
+        val moi = VoDanDo.tuLanCham(cu, 5_000L, "Thứ ba, ngày 23 tháng 9 năm 2026", listOf("Bài 2.28"))!!
+        assertFalse(moi.chuaDoc)
+        assertEquals(VoDanDo.NGUON_LUC_CHAM, moi.nguon)
+        assertEquals("2026-09-23", moi.ngay)
+        assertEquals(listOf("Bài 2.28"), moi.cacBai)
+        assertEquals(5_000L, moi.chupLuc)
+        // Doc ra la hom do khong giao bai: van giu, va la "khong co bai tap" that.
+        assertTrue(VoDanDo.tuLanCham(cu, 5_000L, "2026-09-23", emptyList())!!.cacBai.isEmpty())
+
+        // Khong doc ra ngay, tam anh khac, hay ban da co chu: khong giu.
+        assertNull(VoDanDo.tuLanCham(cu, 5_000L, null, listOf("Bài 2.28")))
+        assertNull(VoDanDo.tuLanCham(cu, 4_000L, "2026-09-23", listOf("Bài 2.28")))
+        assertNull(VoDanDo.tuLanCham(moi, 5_000L, "2026-09-23", listOf("Bài 2.28")))
+        assertNull(VoDanDo.tuLanCham(null, 5_000L, "2026-09-23", listOf("Bài 2.28")))
+    }
+
     @Test
     fun xoaThiAnhDiTheo() {
         val f = anhGia()

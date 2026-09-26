@@ -18,11 +18,14 @@ import vn.huytl.homeworkgate.data.LuotBaNoi
 import vn.huytl.homeworkgate.data.Prefs
 import vn.huytl.homeworkgate.data.SoCaiBai
 import vn.huytl.homeworkgate.data.SuaCham
+import vn.huytl.homeworkgate.data.LuatCongGio
 import vn.huytl.homeworkgate.data.VoChoCham
+import vn.huytl.homeworkgate.data.VoDanDo
 import vn.huytl.homeworkgate.guard.ChuongTin
 import vn.huytl.homeworkgate.guard.ParentMode
 import vn.huytl.homeworkgate.guard.Permissions
 import vn.huytl.homeworkgate.telegram.ApprovalService
+import vn.huytl.homeworkgate.telegram.DanDoSender
 import vn.huytl.homeworkgate.telegram.Notifier
 import vn.huytl.homeworkgate.telegram.TelegramClient
 import java.text.SimpleDateFormat
@@ -203,6 +206,8 @@ object ThiHanhLenh {
             Lenh.SUA_CHAM -> suaCham(context, gate, d.get("giaTri"))
 
             Lenh.CHAM_BAI -> chamTheoClaude(context, gate, baiId, d.get("giaTri"))
+
+            Lenh.DOC_VO -> docVo(context, d.get("giaTri"))
 
             // Ben kia vua mo app va hoi tablet con song khong. Day mot ban trang
             // thai day du roi thoi: khong ghi nhat ky, khong tra loi gi. Ban trang
@@ -413,11 +418,40 @@ object ThiHanhLenh {
             return "Bài này không còn chờ duyệt nên máy không chấm nữa."
         }
         val pham = KhaiChoCham.lay(context, id)
-        // Vo dan do con soat ma lan nop do dung, chep lai tu luc nop. Xem [VoChoCham].
-        val ket = ChamTheoClaude.banCham(context, giaTri, pham, VoChoCham.lay(context, id))
+        // Vo dan do ma lan nop do dung, chep lai tu luc nop. Xem [VoChoCham.voChoBai].
+        val ket = ChamTheoClaude.banCham(context, giaTri, pham, VoChoCham.voChoBai(context, id))
             ?: return "Lệnh thiếu danh sách câu, máy không chấm."
         ApprovalService.chamTheoClaude(context, id, ket, pham, ChamTheoClaude.coAnhDanDo(giaTri))
         return "Đã nhận kết quả Claude, tablet đang chấm. Số phút báo trên Telegram."
+    }
+
+    /**
+     * Luu ket qua Claude doc vo dan do, Ba Huy dan tu Bang dieu khien. Xem [Lenh.DOC_VO].
+     *
+     * Chi cho ban chi co anh, xem [VoDanDo.tuClaude]. Luu xong thi gui lai tin vo dan do
+     * kem danh sach Claude doc: Ba Huy doi chieu voi anh ngay trong Telegram, va hom co
+     * khong giao bai tap thi tin do co nut Duyet 45 phut, y nhu luc con soat. Con thi
+     * duoc nhac mo vo ra xem lai, vi o tich bai tap van la cua con.
+     */
+    internal fun docVo(context: Context, giaTri: Any?): String {
+        val kq = VoDanDo.tuClaude(VoDanDo.doc(context), giaTri)
+        val ban = kq.ban ?: return kq.loi
+        VoDanDo.luu(context, ban)
+        DanDoSender.guiNen(context, ban)
+        val con = context.getString(R.string.child_name)
+        SoCaiBai.datLoiNhan(
+            context,
+            "${context.getString(R.string.parent_name_cap)} đã nhờ Claude đọc vở dặn dò. " +
+                "$con mở Vở dặn dò xem lại giúp nhé."
+        )
+        val ngay = ban.ngayDoc()?.let { "${it.dayOfMonth}/${it.monthValue}" } ?: ban.ngay
+        DayLog.add(context, "Claude đọc vở dặn dò ngày $ngay: ${ban.cacBai.size} bài")
+        val hetHan = if (LuatCongGio.ngayDanDoHopLe(ban.ngayDoc())) "" else {
+            " Vở ghi ngày này nên không còn hiệu lực, máy không dùng để tính gói."
+        }
+        return "Đã lưu vở dặn dò ngày $ngay: " +
+            (if (ban.cacBai.isEmpty()) "cô không giao bài tập nào." else "${ban.cacBai.size} bài phải làm.") +
+            hetHan
     }
 
     /**

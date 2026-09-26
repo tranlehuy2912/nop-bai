@@ -100,6 +100,33 @@
                 android:text="Chụp lại"
                 android:textSize="16sp"
                 app:cornerRadius="20dp" />
+
+            <!-- Doc lai dung tam anh vua chup, hay tam da gui ba Huy: mat mang mot luc
+                 thi khong phai chup lai. -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/nut_doc_lai"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="56dp"
+                android:layout_marginTop="12dp"
+                android:paddingHorizontal="28dp"
+                android:text="Thử đọc lại"
+                android:textSize="16sp"
+                android:visibility="gone"
+                app:cornerRadius="20dp" />
+
+            <!-- May doc khong duoc: gui tam anh sang ba Huy, de Claude doc. -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/nut_gui_ba"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="56dp"
+                android:layout_marginTop="12dp"
+                android:paddingHorizontal="28dp"
+                android:text="Gửi ảnh để ba Huy đọc"
+                android:textSize="16sp"
+                android:visibility="gone"
+                app:cornerRadius="20dp" />
         </LinearLayout>
 
         <!-- Trang thai 3: soat lai cai may vua doc. -->

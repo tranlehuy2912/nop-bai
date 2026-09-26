@@ -31,6 +31,11 @@ import java.time.LocalDateTime
  * tren Firestore, va Bang dieu khien dua dung ngay va danh sach bai do vao loi nho
  * Claude - xem [vn.huytl.homeworkgate.dongbo.DongBo.banDanDo] va [VoChoCham]. Nen con
  * chup vo mot lan dau buoi du bai do may cham hay Claude cham.
+ *
+ * MAY DOC HONG THI VAN GIU TAM ANH ([DanDo.chuaDoc]). Truoc day may doc khong duoc la
+ * man vo dan do khong luu gi, va lan nop nao cung hoi chup lai trang vo. Gio con gui
+ * tam anh cho Ba Huy, cac lan nop sau mang theo tam do, va chu duoc doc ra sau: Ba Huy
+ * nho Claude doc, hay lan cham bai dau tien doc luon.
  */
 object VoDanDo {
 
@@ -76,7 +81,28 @@ object VoDanDo {
          * chieu voi danh sach con da tich - xem [vn.huytl.homeworkgate.dongbo.DongBo
          * .banDanDo].
          */
-        val fileId: String? = null
+        val fileId: String? = null,
+        /**
+         * Chi co anh, chua ai doc ra chu: may doc khong duoc va con bam "Gửi ảnh để ba
+         * Huy đọc". Luc do [cacDong] rong nhung KHONG co nghia la co khong giao bai tap,
+         * ma la chua biet. Ngay tam la ngay chup, doc xong se thay bang ngay ghi tren vo.
+         *
+         * Ba duong doc ra chu: con bam "Thử đọc lại" khi may doc duoc tro lai, Ba Huy
+         * nho Claude doc ([tuClaude]), hoac lan cham bai dau tien doc tam anh gan theo
+         * bai ([tuLanCham]).
+         */
+        val chuaDoc: Boolean = false,
+        /** Ai doc ra danh sach nay: [NGUON_CON], [NGUON_CLAUDE] hay [NGUON_LUC_CHAM]. */
+        val nguon: String = NGUON_CON,
+        /**
+         * Luc chup tam anh trang vo. Doc lai hay sua chu thi giu nguyen, chi doi khi
+         * con chup tam khac.
+         *
+         * Dung de biet hai ban co cung mot tam anh khong: bai nop luc vo con chua doc
+         * mang theo ban chi co anh, va khi cham phai nhan ra ban da doc sau do la cua
+         * dung trang ay - xem [VoChoCham.voChoBai].
+         */
+        val chupLuc: Long = luc
     ) {
         /** Cac bai phai lam roi nop. Day la thu di vao cau lenh cham. */
         val cacBai: List<String> get() = cacDong.filter { it.laBaiTap }.map { it.chu }
@@ -90,10 +116,27 @@ object VoDanDo {
         fun moTa(): String {
             val d = ngayDoc()
             val phanNgay = if (d != null) "${d.dayOfMonth}/${d.monthValue}" else ngay
+            if (chuaDoc) return "$phanNgay · chờ ba Huy đọc"
             val soBai = cacBai.size
             return "$phanNgay · " + if (soBai == 0) "không có bài tập" else "$soBai bài"
         }
+
+        /** Ai dung sau danh sach nay, cho dong chu gui Ba Huy: "Lê Hòa đã soát". */
+        fun aiDoc(con: String): String = when (nguon) {
+            NGUON_CLAUDE -> "Claude đọc"
+            NGUON_LUC_CHAM -> "đọc lúc chấm bài"
+            else -> "$con đã soát"
+        }
     }
+
+    /** Con soat ban may doc ra, hay tu go lai. */
+    const val NGUON_CON = "CON"
+
+    /** Claude doc, Ba Huy dan ket qua tu Bang dieu khien ve (lenh DOCVO). */
+    const val NGUON_CLAUDE = "CLAUDE"
+
+    /** Doc ra o lan cham bai dau tien, tu tam anh trang vo gan theo bai. */
+    const val NGUON_LUC_CHAM = "LUCCHAM"
 
     private const val KHOA = "vo_dan_do"
 
@@ -165,6 +208,9 @@ object VoDanDo {
         .put("luc", d.luc)
         .put("anh", d.anh)
         .put("fileId", d.fileId)
+        .put("chuaDoc", d.chuaDoc)
+        .put("nguon", d.nguon)
+        .put("chupLuc", d.chupLuc)
         .put(
             "dong",
             JSONArray().apply {
@@ -193,7 +239,83 @@ object VoDanDo {
             },
             luc = o.optLong("luc"),
             anh = o.optString("anh").takeIf { it.isNotBlank() },
-            fileId = if (o.isNull("fileId")) null else o.optString("fileId").takeIf { it.isNotBlank() }
+            fileId = if (o.isNull("fileId")) null else o.optString("fileId").takeIf { it.isNotBlank() },
+            chuaDoc = o.optBoolean("chuaDoc"),
+            nguon = o.optString("nguon").ifBlank { NGUON_CON },
+            // Ban luu truoc khi co truong nay thi moc chup la luc luu: hoi do moi lan
+            // luu deu di kem mot lan chup.
+            chupLuc = o.optLong("chupLuc", o.optLong("luc"))
+        )
+    }
+
+    /** Ket qua cua [tuClaude]: ban moi de luu, hoac cau noi vi sao khong luu. */
+    data class TuClaude(val ban: DanDo?, val loi: String = "")
+
+    /**
+     * Ban vo moi tu ket qua Claude doc, Ba Huy dan ve qua lenh DOCVO.
+     *
+     * CHI GHI VAO BAN CHUA DOC, va dung tam anh do. Ket qua den muon - con da chup
+     * trang khac, hay da bam "Thử đọc lại" va soat xong - thi bo: ghi de len la mat
+     * phan con soat, hay dung chu cua trang nay cho tam anh cua trang kia.
+     *
+     * O tich cua Claude vao ca [Dong.mayTich], de con mo ra sua thi tin gui Ba Huy
+     * van ke dung cho con sua khac Claude.
+     *
+     * @param giaTri { chupLuc, ngay, cacDong: [{ chu, bai }] }.
+     */
+    fun tuClaude(cu: DanDo?, giaTri: Any?, bayGio: Long = System.currentTimeMillis()): TuClaude {
+        val goi = giaTri as? Map<*, *> ?: return TuClaude(null, "Lệnh thiếu kết quả đọc vở, máy không lưu.")
+        if (cu == null) return TuClaude(null, "Tablet không còn giữ vở dặn dò nào nên không lưu được.")
+        if ((goi["chupLuc"] as? Number)?.toLong() != cu.chupLuc) {
+            return TuClaude(null, "Kết quả này của tấm vở cũ, tablet đang giữ tấm khác nên không lưu.")
+        }
+        if (!cu.chuaDoc) {
+            return TuClaude(null, "Vở dặn dò này đã có chữ rồi, máy không ghi đè.")
+        }
+        val ngay = (goi["ngay"] as? String)?.trim()?.let { runCatching { LocalDate.parse(it) }.getOrNull() }
+            ?: return TuClaude(null, "Ngày trong kết quả không đọc được, máy không lưu.")
+        val cac = (goi["cacDong"] as? List<*>).orEmpty().mapNotNull { m ->
+            val o = m as? Map<*, *> ?: return@mapNotNull null
+            val chu = (o["chu"] as? String)?.trim().orEmpty()
+            if (chu.isEmpty()) return@mapNotNull null
+            val bai = o["bai"] as? Boolean ?: false
+            Dong(chu = chu, laBaiTap = bai, mayTich = bai)
+        }
+        if (cac.isEmpty()) return TuClaude(null, "Kết quả không có dòng dặn dò nào, máy không lưu.")
+        return TuClaude(
+            cu.copy(
+                ngay = ngay.toString(), cacDong = cac, luc = bayGio,
+                chuaDoc = false, nguon = NGUON_CLAUDE
+            )
+        )
+    }
+
+    /**
+     * Ban vo moi tu lan cham dau tien doc tam anh trang vo gan theo bai.
+     *
+     * Giu lai ket qua do thi cac bai nop sau mang theo danh sach nay, Claude khong phai
+     * doc lai trang vo o moi lan cham, va moi bai trong ngay cham theo cung mot danh
+     * sach. Chi co bai tap vi lan cham chi doc ra bai tap, khong ke dan viec khac.
+     *
+     * null khi khong dung duoc: ban trong may khong con la tam anh bai do mang theo, da
+     * co chu roi, hay lan cham khong doc ra ngay trong vo. Thieu ngay thi khong giu: dien
+     * ngay chup vao la cho tron goi 45 phut theo mot ngay khong ai doc thay tren vo.
+     */
+    fun tuLanCham(
+        cu: DanDo?,
+        chupLucCuaBai: Long,
+        ngayDanDo: String?,
+        baiDuocGiao: List<String>,
+        bayGio: Long = System.currentTimeMillis()
+    ): DanDo? {
+        if (cu == null || !cu.chuaDoc || cu.chupLuc != chupLucCuaBai) return null
+        val ngay = LuatCongGio.docNgay(ngayDanDo) ?: return null
+        return cu.copy(
+            ngay = ngay.toString(),
+            cacDong = baiDuocGiao.map { Dong(it, laBaiTap = true, mayTich = true) },
+            luc = bayGio,
+            chuaDoc = false,
+            nguon = NGUON_LUC_CHAM
         )
     }
 }
