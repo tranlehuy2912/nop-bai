@@ -6,8 +6,6 @@ import com.google.firebase.firestore.DocumentSnapshot
 import vn.huytl.homeworkgate.R
 import vn.huytl.homeworkgate.data.BaiCho
 import vn.huytl.homeworkgate.data.ChamTheoClaude
-import vn.huytl.homeworkgate.data.ChatBox
-import vn.huytl.homeworkgate.data.ChatFrom
 import vn.huytl.homeworkgate.data.DayLog
 import vn.huytl.homeworkgate.data.EndReason
 import vn.huytl.homeworkgate.data.GateState
@@ -179,16 +177,6 @@ object ThiHanhLenh {
                 ParentMode.enable(context)
                 DayLog.add(context, "Ba Huy xoá mã PIN")
                 "Đã xoá PIN và mở khoá. Đặt PIN mới ngay trên tablet."
-            }
-
-            Lenh.NHAN -> {
-                // Tin da duoc ghi xuong Firestore o ben dien thoai roi. Cho nay chi
-                // lam not phan tren may: cho vao khung chat cua con va keu len.
-                if (chu.isBlank()) return "Tin rỗng, không chuyển."
-                ChatBox.add(context, ChatFrom.BA, chu)
-                ChatBox.stopWaiting(context)
-                ChuongTin.keu(context, chu)
-                "Đã chuyển cho $con."
             }
 
             Lenh.TIN_CO -> tinCo(context, chu, taoLuc)

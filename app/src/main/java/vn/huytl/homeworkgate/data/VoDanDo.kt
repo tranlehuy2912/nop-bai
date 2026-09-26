@@ -180,9 +180,8 @@ object VoDanDo {
      * Xoa ban dang co, ke ca tam anh.
      *
      * Anh phai di theo ban ghi chu khong o lai: no la anh mot trang vo cua tre con,
-     * va app nay da chon phia can than o moi cho khac - tin nhan thi cat trong cho
-     * da ma hoa, khung chat chi giu mot tram cau. Giu mot tam anh khong ai con doc
-     * nua thi khong co ly do gi bien ho duoc.
+     * va app nay da chon phia can than o moi cho khac - cau hinh cat trong cho da ma
+     * hoa. Giu mot tam anh khong ai con doc nua thi khong co ly do gi bien ho duoc.
      */
     @Synchronized
     fun xoa(context: Context) {
@@ -191,7 +190,7 @@ object VoDanDo {
     }
 
     /**
-     * Don ban da qua han. Goi luc dich vu khoi dong, y het [ChatBox.donDep].
+     * Don ban da qua han. Goi luc dich vu khoi dong.
      *
      * Het han la het duong dung: [conHieuLuc] khong tra no ra nua, tin cho Ba Huy
      * cung khong kem no nua. De nam lai thi mot trang vo cua thu Hai van con trong

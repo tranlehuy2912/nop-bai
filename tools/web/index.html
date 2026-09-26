@@ -92,11 +92,6 @@ pre{background:var(--ranh);border-radius:9px;padding:10px;overflow:auto;
 .ds li{padding:6px 0;border-bottom:1px solid var(--vien);display:flex;gap:8px;
   justify-content:space-between}
 .ds li:last-child{border:0}
-.tn{display:flex;flex-direction:column;gap:6px;max-height:280px;overflow:auto;
-  padding:4px 0}
-.tn div{max-width:82%;padding:6px 10px;border-radius:12px;font-size:13px}
-.tn .con{align-self:flex-end;background:var(--nhan);color:#fff}
-.tn .ba{align-self:flex-start;background:var(--ranh)}
 .nguy{border-color:#d1483f;color:#d1483f}
 .dat{color:#2ea043;font-weight:600}
 .hong{color:#d1483f;font-weight:600}
@@ -336,17 +331,6 @@ td small{display:block;color:var(--mo);font-size:10px}
 </section>
 
 <section data-tab="tin">
-  <div class="the">
-    <h2>Nhắn tin con ↔ ba</h2>
-    <div class="tn" id="tnds"></div>
-    <div class="hang" style="margin-top:10px">
-      <input id="tnchu" placeholder="nội dung tin" style="flex:1;min-width:180px">
-      <button data-nhan="CON">Gửi kiểu con</button>
-      <button data-nhan="BA">Gửi kiểu ba</button>
-    </div>
-    <div class="o" id="tno" style="margin-top:12px"></div>
-  </div>
-
   <div class="the">
     <h2>Tin của cô</h2>
     <ul class="ds" id="cods"></ul>
@@ -836,22 +820,12 @@ $('#handat').onclick = async e => {
 /* ================= tin nhan ================= */
 function veTin(){
   const t = BANG.tinnhan; if(!t) return;
-  $('#tnds').innerHTML = t.dong.length
-    ? t.dong.map(d=>`<div class="${d.ai==='CON'?'con':'ba'}">${d.chu}</div>`).join('')
-    : '<p class="mo">Chưa có tin nào.</p>';
-  $('#tno').innerHTML = o('chưa đọc', t.chuaDoc) + o('đang chờ ba trả lời',
-    t.dangCho?'có':'không') + o('bị khoá vì', t.khoaVi || '—');
   $('#cods').innerHTML = t.tinCuaCo.length
     ? t.tinCuaCo.map(x=>`<li><span>${x.noiDung}</span>
         <span class="mo">${gioNgay(x.luc)}${x.daDoc?'':' · mới'}</span></li>`).join('')
     : '<li class="mo">trống</li>';
   $('#htho').innerHTML = o('bà đã cho hôm nay', t.baNoiDaChoHomNay ? 'rồi' : 'chưa');
 }
-document.querySelectorAll('[data-nhan]').forEach(b => b.onclick = async () => {
-  const chu = $('#tnchu').value.trim(); if(!chu) return;
-  try{ await viec({viec:'nhantin', ai:b.dataset.nhan, chu}); $('#tnchu').value=''; }
-  catch(e){ loi(e.message); }
-});
 $('#conut').onclick = async () => {
   const chu = $('#cochu').value.trim(); if(!chu) return;
   try{ await viec({viec:'tincuaco', chu}); $('#cochu').value=''; }catch(e){ loi(e.message); }

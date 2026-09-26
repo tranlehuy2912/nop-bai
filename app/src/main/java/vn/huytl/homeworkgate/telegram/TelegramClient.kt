@@ -222,36 +222,6 @@ class TelegramClient(private val token: String) {
         runCatching { call("editMessageReplyMarkup", payload.toJsonBody()) }
     }
 
-    /**
-     * Tai mot tam anh Ba Huy gui ve may, de con xem duoc trong khung chat.
-     *
-     * Hai lan goi: getFile lay duong dan, roi tai thang file do ve. Telegram de file
-     * o mot ten mien khac (api.telegram.org/file/bot...), khong phai cho goi lenh.
-     *
-     * Nuot moi loi: anh cua ba khong ve duoc thi con van con dong chu di kem, va
-     * duong nhan tin khong duoc phep ket vi mot lan tai hong.
-     */
-    fun taiAnh(fileId: String, dich: File): Boolean {
-        val duong = runCatching {
-            call("getFile", JSONObject().put("file_id", fileId).toJsonBody())
-                .optJSONObject("result")?.optString("file_path")
-        }.getOrNull()
-        if (duong.isNullOrBlank()) return false
-
-        val req = Request.Builder().url("$FILE_GOC$token/$duong").build()
-        return runCatching {
-            shortClient.newCall(req).execute().use { res ->
-                val than = res.body ?: return@use false
-                if (!res.isSuccessful) return@use false
-                dich.outputStream().use { ra -> than.byteStream().copyTo(ra) }
-                true
-            }
-        }.getOrDefault(false)
-    }
-
-    /** Lay file_id cua ban to nhat trong mot tin anh Ba Huy gui. */
-    fun fileIdToCuaTin(tin: JSONObject): String? = fileIdTo(tin)
-
     /** Sua lai noi dung mot tin da gui. Dung cho nhip tim, de khong rac chat. */
     fun editMessageText(chatId: Long, messageId: Long, text: String): Boolean {
         val payload = JSONObject().apply {
@@ -372,9 +342,6 @@ class TelegramClient(private val token: String) {
 
     companion object {
         private const val BASE = "https://api.telegram.org/bot"
-
-        /** Telegram de file o ten mien khac cho goi lenh. */
-        private const val FILE_GOC = "https://api.telegram.org/file/bot"
 
         /** Telegram giu ket noi toi da chung nay giay neu chua co update. */
         /**

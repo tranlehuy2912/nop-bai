@@ -8,8 +8,6 @@ import org.json.JSONObject
 import org.junit.Test
 import org.junit.runner.RunWith
 import vn.huytl.homeworkgate.data.CauCham
-import vn.huytl.homeworkgate.data.ChatBox
-import vn.huytl.homeworkgate.data.ChatFrom
 import vn.huytl.homeworkgate.data.DangBai
 import vn.huytl.homeworkgate.data.DayLog
 import vn.huytl.homeworkgate.data.EndReason
@@ -123,12 +121,6 @@ class ManualBang {
 
         ra(JSONObject().apply {
             put("k", "tinnhan")
-            put("chuaDoc", ChatBox.unread(context))
-            put("dangCho", ChatBox.isWaiting(context, now))
-            put("khoaVi", ChatBox.blockReason(context, now) ?: JSONObject.NULL)
-            put("dong", JSONArray(ChatBox.read(context).takeLast(30).map {
-                JSONObject().put("ai", it.from.name).put("chu", it.text).put("luc", it.at)
-            }))
             val kho = KhoTinCuaCo(context)
             put("tinCuaCo", JSONArray(kho.danhSach().map {
                 JSONObject().put("luc", it.luc).put("noiDung", it.noiDung)
@@ -232,7 +224,6 @@ class ManualBang {
      *  -e viec dathan -e goi com.x -e phut 15
      *  -e viec dunghet -e goi com.x  coi nhu da xem het han hom nay
      *  -e viec xoahan -e goi com.x
-     *  -e viec nhantin -e ai CON|BA -e chu "..."
      *  -e viec tincuaco -e chu "..."
      *  -e viec soan -e ma 20260914-CHIEU   danh dau da soan cap
      *  -e viec xoasoan
@@ -300,20 +291,12 @@ class ManualBang {
                 GioiHanApp.datHan(context, goi, GioiHanApp.han(context, goi))
                 ketQua = 0
             }
-            "nhantin" -> {
-                ChatBox.add(
-                    context,
-                    if (args.getString("ai") == "BA") ChatFrom.BA else ChatFrom.CON,
-                    chu ?: ""
-                )
-                ketQua = ChatBox.read(context).size
-            }
             "tincuaco" -> {
                 KhoTinCuaCo(context).them(chu ?: "")
                 ketQua = KhoTinCuaCo(context).soTinChuaDoc()
             }
             "xoatin" -> {
-                ChatBox.xoaHet(context); KhoTinCuaCo(context).xoaHet(); ketQua = 0
+                KhoTinCuaCo(context).xoaHet(); ketQua = 0
             }
             "soan" -> { prefs.danhDauDaSoan(ma!!); ketQua = prefs.buoiDaSoan.size }
             "xoasoan" -> {

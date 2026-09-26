@@ -21,8 +21,6 @@ import com.google.firebase.firestore.Query
 import vn.huytl.homeworkgate.BuildConfig
 import vn.huytl.homeworkgate.R
 import vn.huytl.homeworkgate.data.BaiDaCham
-import vn.huytl.homeworkgate.data.ChatFrom
-import vn.huytl.homeworkgate.data.ChatLine
 import vn.huytl.homeworkgate.data.DayLog
 import vn.huytl.homeworkgate.data.GateState
 import vn.huytl.homeworkgate.data.GateStore
@@ -750,7 +748,6 @@ object DongBo {
         return nghe
     }
 
-    /** Mot cau trong khung chat. Goi ca khi con nhan va khi ba nhan. */
     // ------------------------------------------------------------------ so cai
 
     /**
@@ -897,17 +894,6 @@ object DongBo {
                 }
             }
         }
-    }
-
-    fun dayTin(context: Context, tin: ChatLine) {
-        nha(context)?.collection(Duong.CHAT)?.add(
-            mapOf(
-                Duong.F_TU to if (tin.from == ChatFrom.CON) "CON" else "BA",
-                Duong.F_CHU to tin.text,
-                Duong.F_LUC to tin.at,
-                Duong.F_DA_DOC to false
-            )
-        )?.addOnFailureListener { Log.w(TAG, "day tin hong: ${it.message}") }
     }
 
     /**

@@ -31,9 +31,6 @@ import vn.huytl.homeworkgate.R
 import vn.huytl.homeworkgate.data.EndReason
 import vn.huytl.homeworkgate.data.GateState
 import vn.huytl.homeworkgate.data.GateStore
-import vn.huytl.homeworkgate.data.ChatBox
-import vn.huytl.homeworkgate.data.ChatFrom
-import vn.huytl.homeworkgate.data.ChatLine
 import vn.huytl.homeworkgate.data.DayLog
 import vn.huytl.homeworkgate.data.KhaiChoCham
 import vn.huytl.homeworkgate.data.NhatKyAi
@@ -62,7 +59,6 @@ import vn.huytl.homeworkgate.guard.ChuongTin
 import vn.huytl.homeworkgate.guard.GuardAccessibilityService
 import vn.huytl.homeworkgate.guard.ParentMode
 import vn.huytl.homeworkgate.guard.Permissions
-import vn.huytl.homeworkgate.ui.ChatActivity
 import vn.huytl.homeworkgate.ui.HomeActivity
 import android.content.BroadcastReceiver
 import android.content.IntentFilter
@@ -171,9 +167,6 @@ class ApprovalService : Service() {
         runCatching { vn.huytl.homeworkgate.guard.MocGio.datLai(this) }
         runCatching { DongBo.batDau(this) }
         createChannel()
-        // Don cau chat qua cu ngay o day: service nay khoi dong lai nhieu lan trong
-        // ngay, nen lich su cu khong nam lai trong may du khong ai mo man chat.
-        ChatBox.donDep(this)
         VoDanDo.donDep(this)
 
         khoTin = KhoTinCuaCo(this)
@@ -509,8 +502,8 @@ class ApprovalService : Service() {
      * BON MUC:
      *
      *  - 0, nam cho lien tuc: co nguoi that dang doi. Dang co phien choi hay bai cho
-     *    duyet (cong khac LOCKED) VA man hinh dang sang, may dang mo toan bo, hay con
-     *    vua nhan tin dang cho tra loi. Lenh phai toi trong vai giay.
+     *    duyet (cong khac LOCKED) VA man hinh dang sang, hay may dang mo toan bo.
+     *    Lenh phai toi trong vai giay.
      *  - [NHIP_NGAY_MS], cong dang khoa giua ban ngay va DUONG FIRESTORE DANG SONG.
      *    Ban truoc muc nay khong ton tai: ghi chu cu noi phai nam cho ca ngay vi lenh
      *    Ba Huy go luc khoa khong duoc nghe thi im lang, ma dong do viet tu truoc khi
@@ -535,15 +528,14 @@ class ApprovalService : Service() {
      *
      * Dat TRUOC phep kiem khoa, khong phai sau: dat sau thi ca hai truong hop ngoai
      * LOCKED (PENDING, va phieu da duyet chua bam) deu khong bao gio toi duoc dong
-     * nay. Nhung ChatBox va ParentMode van dung tren cung - con vua nhan tin roi tat
-     * man hinh cho tra loi la truong hop that, va o do do tre dang gia hon pin.
+     * nay. Nhung ParentMode van dung tren cung: Ba Huy dang cam may thi do tre dang gia
+     * hon pin.
      *
      * Moi muc cham hon deu phai nho hon [LENH_QUA_CU_MS] mot khoang rong, khong thi
      * lenh nam cho den luc duoc doc lai bi chinh app bao la "cu qua" va bo di.
      */
     private fun nhipNgheMs(): Long {
         if (ParentMode.isActive(this)) return 0L
-        if (ChatBox.isWaiting(this)) return 0L
         if (!manHinhSang() && gate.state != GateState.ACTIVE) return NHIP_NGAY_MS
         if (gate.state != GateState.LOCKED) return 0L
 
@@ -842,11 +834,11 @@ class ApprovalService : Service() {
         val fromId = msg.optJSONObject("from")?.optLong("id") ?: 0L
         if (fromId != prefs.parentChatId) return
 
-        // Ba Huy gui anh (vi du chup lai cho con cho sai, hay mot trang de). Truoc ban
-        // nay cho nay chi doc truong "text", nen anh cua ba roi thang vao thung rac -
-        // ke ca dong chu ba go kem, vi Telegram de no o "caption" chu khong phai "text".
+        // Ba Huy gui anh cho bot. Truoc 27/9/2026 anh va chu thuong gui cho bot duoc
+        // chuyen vao khung chat trong app; khung do da bo, Le Hoa nhan tin bang Telegram
+        // that. Tra loi de ba biet phai gui o dau, chu khong im.
         if ((msg.optJSONArray("photo")?.length() ?: 0) > 0) {
-            nhanAnhChoCon(client, msg)
+            baoNhanThang(client, msg.optJSONObject("chat")?.optLong("id") ?: prefs.parentChatId)
             return
         }
         val text = msg.optString("text").trim()
@@ -862,8 +854,8 @@ class ApprovalService : Service() {
         // xuong mot luc - "/cho 60" go toi qua tu dung mo gio choi vao sang som ma
         // khong ai bam gi. Tra loi de Ba Huy biet no khong chay, chu khong im.
         //
-        // Chi loc lenh. Tin nhan chu thuong gui cho con thi den muon van co nghia, va
-        // /tinco cung vay: tin cua co gui toi qua thi sang nay van phai hien.
+        // Chi loc lenh. /tinco thi khong: tin cua co gui toi qua thi sang nay van phai
+        // hien.
         val guiLuc = msg.optLong("date", 0L) * 1000L
         if (text.startsWith("/") && word != "tinco" && guiLuc > 0L &&
             System.currentTimeMillis() - guiLuc > LENH_QUA_CU_MS
@@ -1224,9 +1216,9 @@ class ApprovalService : Service() {
                 }
             }
 
-            // Tin co giao chia se tu nhom lop Zalo. Phai co lenh chu khong the go
-            // chu thuong nhu ben app Soan tap: o day go chu thuong da co nghia roi,
-            // do la nhan tin cho Le Hoa.
+            // Tin co giao chia se tu nhom lop Zalo. Phai co lenh chu khong nhan chu
+            // thuong nhu ben app Soan tap: chu thuong go cho bot la ba tuong minh dang
+            // nhan cho Le Hoa, xem [baoNhanThang].
             "tinco" -> {
                 if (arg.isEmpty()) {
                     client.sendMessage(
@@ -1246,54 +1238,24 @@ class ApprovalService : Service() {
             else -> if (text.startsWith("/")) {
                 client.sendMessage(chatId, "Không có lệnh đó. Gõ /trogiup để xem danh sách.")
             } else if (text.isNotEmpty()) {
-                // Ba go chu thuong, khong phai lenh: day la cau tra loi cho con.
-                nhanTinChoCon(client, chatId, text)
+                baoNhanThang(client, chatId)
             }
         }
     }
 
     /**
-     * Ba Huy gui anh cho con: tai ve may roi dua vao khung chat.
+     * Ba go chu thuong hay gui anh cho bot: nhac ba nhan thang cho Le Hoa tren Telegram.
      *
-     * Tai ve chu khong giu moi file_id: con mo chat ra luc mat mang van phai xem
-     * duoc. Tai hong thi van nhan dong chu di kem - mot lan tai hong khong duoc phep
-     * lam mat ca tin nhan.
+     * Truoc 27/9/2026 bot chuyen nhung tin do vao khung chat trong app Nop bai. Khung
+     * do da bo; Le Hoa co tai khoan Telegram rieng, va nut "Nhan cho ba Huy" mo thang
+     * khung chat voi ba. Tin gui cho bot tu gio khong toi tay con.
      */
-    private fun nhanAnhChoCon(client: TelegramClient, msg: JSONObject) {
-        val chatId = msg.optJSONObject("chat")?.optLong("id") ?: prefs.parentChatId
-        val chu = msg.optString("caption").trim()
-        val fileId = client.fileIdToCuaTin(msg)
-
-        val dich = java.io.File(ChatBox.thuMucAnh(this), "ba_${System.currentTimeMillis()}.jpg")
-        val duoc = fileId != null && runCatching { client.taiAnh(fileId, dich) }.getOrDefault(false)
-        if (!duoc) runCatching { dich.delete() }
-
-        val luc = System.currentTimeMillis()
-        ChatBox.add(this, ChatFrom.BA, chu, luc, if (duoc) dich.absolutePath else null)
-        ChatBox.stopWaiting(this)
-        DongBo.dayTin(this, ChatLine(ChatFrom.BA, chu.ifBlank { "(ảnh)" }, luc))
-        ChuongTin.keu(this, chu.ifBlank { "${getString(R.string.parent_name_cap)} gửi một tấm ảnh" })
-        DayLog.add(this, "Ba Huy gửi ảnh cho ${getString(R.string.child_name)}")
-
+    private fun baoNhanThang(client: TelegramClient, chatId: Long) {
+        val con = getString(R.string.child_name)
         client.sendMessage(
             chatId,
-            if (duoc) "Đã chuyển ảnh cho ${getString(R.string.child_name)}."
-            else "Không tải được ảnh. ${getString(R.string.child_name)} chỉ nhận được phần chữ."
-        )
-    }
-
-    /**
-     * Ba nhan cho con. Hien thanh thong bao co tieng, vi con co the dang o app khac
-     * hoac dang de may xuong ban, ma tin cua ba thuong la tra loi cho mot viec gap.
-     */
-    private fun nhanTinChoCon(client: TelegramClient, chatId: Long, text: String) {
-        ChatBox.add(this, ChatFrom.BA, text)
-        ChatBox.stopWaiting(this)
-        DongBo.dayTin(this, ChatLine(ChatFrom.BA, text, System.currentTimeMillis()))
-        ChuongTin.keu(this, text)
-        client.sendMessage(
-            chatId,
-            "Đã chuyển cho ${getString(R.string.child_name)}."
+            "Tin này không tới $con. Giờ $con đọc tin trên Telegram riêng, " +
+                "nhắn thẳng vào khung chat với $con nhé. Gõ /trogiup để xem lệnh."
         )
     }
 
@@ -2017,7 +1979,7 @@ class ApprovalService : Service() {
         /xoapin  xoá PIN, đặt lại trên tablet
         /trogiup  bảng này
 
-        Gõ chữ thường = nhắn cho Lê Hòa.
+        Nhắn cho Lê Hòa thì nhắn thẳng trên Telegram của Lê Hòa.
         Số phút, giờ ngủ, danh sách app: sửa trong app.
     """.trimIndent()
 

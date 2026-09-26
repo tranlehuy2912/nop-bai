@@ -76,30 +76,17 @@ class CaptureActivity : AppCompatActivity() {
     private val soanTap: Boolean get() = maBuoiSoan != null
 
     /**
-     * Che do chup hinh gui kem tin nhan trong khung chat.
-     *
-     * KHONG DOAN CON CHUP CAI GI. Cho nay tung ghi "chup cho khong hieu de hoi bai",
-     * ma con co the chup cai vo quen o lop, cai may sap het pin, con meo - man hinh
-     * doan sai mot cai la con tuong minh dang bam nham nut.
-     *
-     * Khong gui di dau ca: chup xong tra duong dan ve cho [ChatActivity], ben do moi
-     * quyet dinh gui. Dung chung man chup vi phan camera - xin quyen, mo CameraX,
-     * dai anh nho, bam mot tam de bo tam do - y het, va vi hai man chup thi sua mot
-     * cho la phai nho sua ca cho kia.
-     */
-    private val chupChat: Boolean by lazy { intent.getBooleanExtra(EXTRA_CHAT, false) }
-
-    /**
      * Che do chup trang vo dan do, goi tu [DanDoActivity].
      *
-     * Giong [chupChat] o cho khong gui di dau ca: chup xong tra duong dan ve cho man
-     * goi, ben do moi dua cho may doc. Khac o cho tam anh nay se di vao viec tinh
-     * gio, nen van giu khung ngam de con chup thang tu tren xuong.
+     * Khong gui di dau ca: chup xong tra duong dan ve cho man goi, ben do moi dua cho
+     * may doc. Dung chung man chup vi phan camera - xin quyen, mo CameraX, dai anh nho,
+     * bam mot tam de bo tam do - y het. Tam anh nay se di vao viec tinh gio, nen van
+     * giu khung ngam de con chup thang tu tren xuong.
      */
     private val chupDanDo: Boolean by lazy { intent.getBooleanExtra(EXTRA_DAN_DO, false) }
 
-    /** Bon che do rut gon deu chi co mot xap anh, khong co ba buoc. */
-    private val motXap: Boolean get() = suaBai || soanTap || chupChat || chupDanDo
+    /** Ba che do rut gon deu chi co mot xap anh, khong co ba buoc. */
+    private val motXap: Boolean get() = suaBai || soanTap || chupDanDo
 
     /**
      * Cac buoc THAT SU phai chup lan nay, theo thu tu. Dieu huong tien lui chay
@@ -364,7 +351,6 @@ class CaptureActivity : AppCompatActivity() {
         // trang khac la canh de xay ra nhat, va mot dong chu o day chan duoc no.
         val daKhai = pham?.takeIf { it.theoSach }?.let { "${it.bai} · ${it.cauIds.size} câu" }
         binding.txtStageHint.text = when {
-            chupChat -> "Chụp hình gửi ${getString(R.string.parent_name)}."
             chupDanDo -> "Chụp trang vở dặn dò. Trang có mấy buổi cũng được, " +
                 "lát nữa chọn đúng buổi hôm nay."
             soanTap -> getString(R.string.capture_cap_hint)
@@ -379,10 +365,10 @@ class CaptureActivity : AppCompatActivity() {
         binding.stepProblem.visibility = hienBuoc(CaptureStage.DE_BAI)
         // O buoc cuoi van hien khi sua bai, vi luc do no la nhan cho biet dang chup
         // cai gi. Chup cap thi khong co nhan nao dung ca, an luon.
-        // Chip "Bai giai" chi co nghia khi con dang nop bai. Ba che do kia chup thu
+        // Chip "Bai giai" chi co nghia khi con dang nop bai. Hai che do kia chup thu
         // khac han, de cai nhan do lai thi no doc ra mot dieu khong dung.
         binding.stepSolution.visibility =
-            if (soanTap || chupChat || chupDanDo) View.GONE else View.VISIBLE
+            if (soanTap || chupDanDo) View.GONE else View.VISIBLE
         val tong = shots.values.sumOf { it.size }
         binding.txtTotal.text = when {
             tong == 0 -> ""
@@ -397,8 +383,8 @@ class CaptureActivity : AppCompatActivity() {
             if (!stage.required && count == 0) View.VISIBLE else View.INVISIBLE
 
         binding.btnNext.text = when {
-            // Hai che do nay khong gui gi di dau ca, chup xong la tra anh ve man goi.
-            chupChat || chupDanDo -> "Xong"
+            // Che do nay khong gui gi di dau ca, chup xong la tra anh ve man goi.
+            chupDanDo -> "Xong"
             stage == CaptureStage.BAI_GIAI -> getString(R.string.capture_send)
             else -> getString(R.string.capture_next)
         }
@@ -492,9 +478,9 @@ class CaptureActivity : AppCompatActivity() {
             return
         }
 
-        // Chup cho khung chat: khong gui gi ca, tra duong dan ve cho man chat. Phai xoa
-        // danh sach truoc khi dong, neu khong onDestroy don mat may tam vua chup.
-        if (chupChat || chupDanDo) {
+        // Chup vo dan do: khong gui gi ca, tra duong dan ve cho man goi. Phai xoa danh
+        // sach truoc khi dong, neu khong onDestroy don mat may tam vua chup.
+        if (chupDanDo) {
             val anh = groups.getValue(CaptureStage.BAI_GIAI)
             shots.values.forEach { it.clear() }
             setResult(
@@ -561,9 +547,6 @@ class CaptureActivity : AppCompatActivity() {
     companion object {
         /** Bat che do chup lai phan da sua. */
         const val EXTRA_SUA = "sua_bai"
-
-        /** Bat che do chup hinh gui kem tin nhan trong khung chat. */
-        const val EXTRA_CHAT = "chup_chat"
 
         /** Bat che do chup trang vo dan do. */
         const val EXTRA_DAN_DO = "chup_dan_do"

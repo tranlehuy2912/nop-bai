@@ -138,14 +138,6 @@
             android:exported="false"
             android:screenOrientation="portrait" />
 
-        <!-- adjustResize de ban phim khong che mat o go chu. -->
-        <activity
-            android:name=".ui.ChatActivity"
-            android:configChanges="orientation|screenSize|screenLayout|smallestScreenSize"
-            android:exported="false"
-            android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustResize" />
-
         <activity
             android:name=".ui.SoanActivity"
             android:configChanges="orientation|screenSize|screenLayout|smallestScreenSize"

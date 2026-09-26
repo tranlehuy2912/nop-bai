@@ -118,7 +118,7 @@ object Permissions {
         context.getSystemService(PowerManager::class.java)
             .isIgnoringBatteryOptimizations(context.packageName)
 
-    /** Thong bao bi tat thi khong con dong ho dem nguoc, tin cua ba cung khong keu. */
+    /** Thong bao bi tat thi khong con dong ho dem nguoc, tin cua co giao cung khong bao. */
     fun hasNotifications(context: Context): Boolean =
         NotificationManagerCompat.from(context).areNotificationsEnabled()
 
@@ -289,7 +289,7 @@ object Permissions {
                 Thieu(
                     Viec.THONG_BAO,
                     "Chưa cho app hiện thông báo",
-                    "Không có đồng hồ đếm ngược, tin nhắn của ba Huy cũng không kêu.",
+                    "Không có đồng hồ đếm ngược, tin của cô giáo cũng không báo.",
                     nang = false
                 )
             )

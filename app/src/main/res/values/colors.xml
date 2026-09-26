@@ -51,10 +51,6 @@
     <color name="mon_7">#5C6BC0</color>
     <color name="mon_7_nen">#EAECF9</color>
 
-    <!-- Gio ghi trong bong bong cua con. Tren nen brand, chu trang lam mo di
-         khong ra duoc - phai la mot mau xanh nhat rieng. -->
-    <color name="chat_gio_con">#BFD4FF</color>
-
     <!-- Mau cho hai nguoi dung, de phan biet ngay tu xa. -->
     <color name="parent_tint">#5B4BC4</color>
     <color name="parent_soft">#EDEAFB</color>

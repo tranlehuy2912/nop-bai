@@ -1738,7 +1738,7 @@ class GuardAccessibilityService : AccessibilityService() {
          * doc mot bien. Nam lan chay de ra dung mot ket qua giong nhau.
          *
          * Hoan 300 mili giay, su kien moi toi thi huy cai hen cu va hen lai, nen ca
-         * chum chi chay mot lan - dung luc chum do lang xuong. Cach [ChatActivity] va
+         * chum chi chay mot lan - dung luc chum do lang xuong. Cach
          * [vn.huytl.homeworkgate.ui.HomeActivity] da lam voi lang nghe prefs.
          *
          * CAI GIA: chan cham di toi da 300 mili giay, va CHI o duong nay. Doi han

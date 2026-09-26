@@ -166,12 +166,6 @@ def danh_sach():
             cho=["Soạn tập cho"],
         ),
         dict(
-            ma="man-chat", nhom="Màn hình",
-            ten="Màn nhắn tin cho ba Huy",
-            lam=lambda m: (m.man("ChatActivity"),),
-            cho=["Có việc gì cần báo ba Huy"],
-        ),
-        dict(
             ma="man-tin", nhom="Màn hình",
             ten="Màn tin của cô giáo",
             lam=lambda m: (m.dat("tincuaco", chu="Ngày mai kiểm tra 15 phút bài 3"),
@@ -396,7 +390,6 @@ BO_TEST = [
     ("SoCaiBaiTest", "Sổ cái bài đã nộp"),
     ("KhoaAiTest", "Chùm khoá AI"),
     ("GioiHanAppTest", "Hạn giờ từng app"),
-    ("ChatBoxTest", "Hộp tin nhắn"),
     ("BoGoAiTest", "Bộ gõ chữ vào app AI"),
     ("ChamBaiJsonTest", "Đọc JSON chấm bài"),
     ("NganHangTest", "Ngân hàng câu hỏi nạp từ sách"),
