@@ -1,6 +1,7 @@
 package vn.huytl.homeworkgate.guard
 
 import android.accessibilityservice.AccessibilityService
+import android.app.KeyguardManager
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
@@ -10,6 +11,7 @@ import android.content.pm.PackageManager
 import android.graphics.Rect
 import android.media.AudioManager
 import android.media.AudioPlaybackConfiguration
+import android.os.Build
 import android.os.Handler
 import android.os.Looper
 import android.os.SystemClock
@@ -123,6 +125,19 @@ class GuardAccessibilityService : AccessibilityService() {
 
     /** Luc man hinh cua app Nop bai hien len, 0 la dang khong hien. Xem [baoTruocMat]. */
     private var appNhaTu = 0L
+
+    /**
+     * Cac goi hien lan cuoi con doc duoc danh sach cua so. Thanh thong bao dang keo
+     * xuong thi day la cai nam duoi no. Xem [docManHinh].
+     */
+    @Volatile
+    private var hienTruocKhiKeo: Set<String> = emptySet()
+
+    /** Goi dang bi che duoi thanh thong bao, de moi lan keo chi ghi mot dong. */
+    private var goiCheDuoi = ""
+
+    /** Lan cuoi ghi nhat ky chuyen keo thanh thong bao. Xem [cheDuoiThongBao]. */
+    private var lucGhiCheDuoi = 0L
 
     /**
      * Nhip nua phut trong luc co app truoc mat: ghi so su dung, dem gio rieng, roi
@@ -447,7 +462,10 @@ class GuardAccessibilityService : AccessibilityService() {
             goiVuaMo = pkg
         }
         xetNgheChuAi(pkg, laPhim)
-        evaluate(pkg)
+        // Thanh thong bao cung ban su kien nay, mang ten giao dien he thong. No khong
+        // phai app vua mo ben duoi thanh, nen khong truyen vao.
+        val goiSuKienMoi = pkg.takeIf { it != packageName && !laPhim && it !in ALWAYS_ALLOWED }
+        evaluate(pkg, goiSuKienMoi)
         syncTicker()
     }
 
@@ -1133,27 +1151,6 @@ class GuardAccessibilityService : AccessibilityService() {
     }
 
     /**
-     * Thanh thong bao (hoac trung tam dieu khien) dang keo xuong hay khong.
-     *
-     * Cua so cua no do he thong giu, kieu TYPE_SYSTEM, va chi nhan tieu diem khi
-     * dang mo that. Thanh trang thai nam yen o tren thi khong nhan tieu diem, nen
-     * khong nham.
-     */
-    private fun manThongBaoDangMo(): Boolean = runCatching {
-        windows.any { it.type == AccessibilityWindowInfo.TYPE_SYSTEM && it.isFocused }
-    }.getOrDefault(false)
-
-    /**
-     * Tat ca goi dang co cua so ung dung tren man hinh.
-     *
-     * Chia doi man hinh thi co hai, nen khong the chi nhin goi cua su kien vua roi:
-     * dua tre de mot app duoc phep o nua tren, YouTube o nua duoi, va su kien cuoi
-     * cung mang ten cai duoc phep.
-     *
-     * Tra ve tap rong neu he thong khong cho doc - luc do [evaluate] quay ve cach cu
-     * la xet mot goi cua su kien.
-     */
-    /**
      * Goi nay co bieu tuong tren man hinh chinh khong, tuc la co tu mo thang duoc
      * khong. Khong co thi no chi la hop thoai cua app khac goi len.
      *
@@ -1164,38 +1161,111 @@ class GuardAccessibilityService : AccessibilityService() {
             .getOrDefault(true)
     }
 
-    private fun goiDangHien(): Set<String> = runCatching {
-        windows.asSequence()
-            .filter { it.type == AccessibilityWindowInfo.TYPE_APPLICATION }
-            .mapNotNull { cuaSo ->
-                val root = cuaSo.root
-                val ten = root?.packageName?.toString()
-                root?.recycle()
-                ten
-            }
-            .toSet()
-    }.getOrDefault(emptySet())
+    /** Mot lan doc danh sach cua so: cac goi coi nhu dang hien, va nen xet the nao. */
+    private class ManHinh(val goi: Set<String>, val cach: CachXet)
 
-    private fun evaluate(pkgSuKien: String) {
+    /**
+     * Tat ca goi dang co cua so ung dung tren man hinh.
+     *
+     * Chia doi man hinh thi co hai, nen khong the chi nhin goi cua su kien vua roi:
+     * dua tre de mot app duoc phep o nua tren, YouTube o nua duoi, va su kien cuoi
+     * cung mang ten cai duoc phep.
+     *
+     * Thanh thong bao dang keo xuong thi la cac goi nam duoi no. Nhip ghi so su dung
+     * va dem gio rieng cung hoi qua day, nen giu thanh ma xem tiep thi so phut van
+     * chay.
+     *
+     * Tra ve tap rong neu he thong khong cho doc - luc do [evaluate] quay ve cach cu
+     * la xet mot goi cua su kien.
+     */
+    private fun goiDangHien(): Set<String> = docManHinh().goi
+
+    /**
+     * Doc danh sach cua so mot lan, roi de [LuatManHinh] noi nen xet the nao.
+     *
+     * Lan nao doc duoc app thi nho lai vao [hienTruocKhiKeo]: thanh thong bao keo
+     * xuong la he thong thoi bao cac cua so nam duoi no, va luc do chi con cach nho.
+     *
+     * Chi hoi them khi co mot cua so he thong dang giu tieu diem, tuc la gan nhu chi
+     * luc thanh thong bao dang mo. Luc thuong khong ton them luot goi nao.
+     *
+     * @param goiSuKienMoi xem [LuatManHinh.appDangHien]
+     */
+    private fun docManHinh(goiSuKienMoi: String? = null): ManHinh {
+        val ds = runCatching { windows }.getOrNull().orEmpty()
+        val docDuoc = ds.asSequence()
+            .filter { it.type == AccessibilityWindowInfo.TYPE_APPLICATION }
+            .mapNotNull { goiCua(it) }
+            .toSet()
+
+        val tieuDiem = ds
+            .firstOrNull { it.type == AccessibilityWindowInfo.TYPE_SYSTEM && it.isFocused }
+            ?.let { LuatManHinh.TieuDiem(cuaMinh = goiCua(it) == packageName, phuKin = phuKin(it)) }
+        val manKhoa = tieuDiem != null && !tieuDiem.cuaMinh && dangKhoaManHinh()
+        val cach = LuatManHinh.cachXet(tieuDiem, manKhoa, docDuoc.isNotEmpty())
+        val goi = LuatManHinh.appDangHien(cach, docDuoc, hienTruocKhiKeo, goiSuKienMoi)
+        hienTruocKhiKeo = when {
+            // Man chan gio hoc hay man hinh khoa dang che: khong biet ben duoi con gi.
+            // Quen di, khong thi keo thanh thong bao tren man chan gio hoc se bi xet theo
+            // app cua tu truoc buoi hoc.
+            cach == CachXet.BO_QUA -> emptySet()
+            // Doc duoc thi nho cai doc duoc. Dang phu thi nho ca app vua mo len ben
+            // duoi, de lan xet sau - khong do su kien goi - van con thay no.
+            docDuoc.isNotEmpty() || cach == CachXet.DUOI_THONG_BAO -> goi
+            else -> hienTruocKhiKeo
+        }
+        return ManHinh(goi, cach)
+    }
+
+    /** Ten goi cua mot cua so, doc tu nut goc cua no. */
+    private fun goiCua(cuaSo: AccessibilityWindowInfo): String? = runCatching {
+        val root = cuaSo.root
+        val ten = root?.packageName?.toString()
+        root?.recycle()
+        ten
+    }.getOrNull()
+
+    /** Cua so rong gan bang ca man hinh. Cung phep so voi [cuaSoNhoCua]. */
+    private fun phuKin(cuaSo: AccessibilityWindowInfo): Boolean = runCatching {
+        val man = resources.displayMetrics
+        val khung = Rect().also { cuaSo.getBoundsInScreen(it) }
+        khung.width() >= man.widthPixels - LECH_CHO_PHEP &&
+            khung.height() >= man.heightPixels - LECH_CHO_PHEP
+    }.getOrDefault(false)
+
+    private fun dangKhoaManHinh(): Boolean = runCatching {
+        getSystemService(KeyguardManager::class.java)?.isKeyguardLocked == true
+    }.getOrDefault(false)
+
+    /**
+     * @param goiSuKienMoi goi cua su kien "cua so truoc mat doi" vua toi, chi duong su kien
+     *   do truyen. Xem [LuatManHinh.appDangHien].
+     */
+    private fun evaluate(pkgSuKien: String, goiSuKienMoi: String? = null) {
         if (ParentMode.isActive(this)) {
             overlay.hide()
             return
         }
 
-        // Dang keo thanh thong bao xuong thi khong xet gi ca. Luc do app nam phia sau
-        // van con trong danh sach cua so, nhung nguoi dung dang nhin thanh thong bao
-        // chu khong dung app do - vao day ma xet thi cu keo thanh thong bao xuong la
-        // bi bao "het gio roi", ke ca khi chi dinh bam nut tam dung nhac. Dong thanh
-        // do lai la xet lai binh thuong.
-        if (manThongBaoDangMo()) return
+        // Man chan gio hoc cua chinh app nay dang giu tieu diem, hoac dang o man hinh
+        // khoa: ca hai che het moi app, khong co gi de xet. Thanh thong bao dang keo
+        // xuong thi van xet, chi doi cach chan - xem [cheDuoiThongBao].
+        val man = docManHinh(goiSuKienMoi)
+        if (man.cach == CachXet.BO_QUA) return
+        val duoiThongBao = man.cach == CachXet.DUOI_THONG_BAO
+        if (!duoiThongBao) goiCheDuoi = ""
 
-        val docDuocCuaSo = goiDangHien()
-        val hien = docDuocCuaSo.ifEmpty { setOf(pkgSuKien) }
+        val docDuocCuaSo = man.goi
+        // Duoi thanh thong bao thi khong doan theo goi cua su kien: tru duong su kien
+        // cua so (da nam trong [goiSuKienMoi]), cac duong khac truyen [currentPackage], co
+        // khi la app da bi day di tu lau. Khong biet ben duoi co gi thi thoi.
+        val hien = if (duoiThongBao) docDuocCuaSo else docDuocCuaSo.ifEmpty { setOf(pkgSuKien) }
         demGioTungApp(hien)
         capNhatSuDung(hien)
         Log.d(TAG, "xet ${hien.joinToString(",")}: state=${gate.state} " +
             "conGio=${gate.isOpen()} moToanBo=${ParentMode.isActive(this)} " +
-            "docDuocCuaSo=${docDuocCuaSo.isNotEmpty()}")
+            "docDuocCuaSo=${docDuocCuaSo.isNotEmpty()} duoiThongBao=$duoiThongBao")
+        if (hien.isEmpty()) return
 
         // App nha chi duoc mien khi no dung MOT MINH tren man hinh. Mien ca khi no
         // chia man voi app khac thi chi can de no o mot nua la tat duoc toan bo viec
@@ -1252,6 +1322,10 @@ class GuardAccessibilityService : AccessibilityService() {
                 Log.i(TAG, "bo qua $pkg: la mot phan cua man hinh chinh")
                 continue
             }
+            if (duoiThongBao) {
+                cheDuoiThongBao(pkg, ly)
+                return
+            }
             // Cua so nho hon man hinh = cua so noi, hoac mot nua khi chia doi man
             // hinh. Loai do co nut dong cua rieng no, bam mot cai la xong - lam ngay
             // tu lan dau chu khong doi day hut ba lan roi moi thu. Cua so toan man
@@ -1284,6 +1358,55 @@ class GuardAccessibilityService : AccessibilityService() {
             }
             return
         }
+    }
+
+    /**
+     * Thanh thong bao dang keo xuong, ma ben duoi la app khong duoc dung: che app do
+     * lai va dong thanh thong bao, nhung khong bam Home.
+     *
+     * Truoc 27/9/2026 luc nay guard khong xet gi, va Le Hoa giu thanh o sat dau man
+     * hinh de xem tiep app ben duoi. Xem [LuatManHinh].
+     *
+     * Thu tren may ao Android 13: lop phu cua dich vu nay nam TREN thanh thong bao, va
+     * trong luc ngon tay con giu thanh thi ca lenh dong thanh lan nut Back deu khong an.
+     * Nen moi nhip lam ca hai viec:
+     *  - hien lop phu, de giu tay bao lau cung khong xem duoc gi ben duoi;
+     *  - dong thanh. Tay con giu thi lenh khong an, tay vua buong la thanh dong. Thieu
+     *    buoc nay thi buong tay luc thanh dang keo het co la ket: thanh nam yen, lop phu
+     *    cu hai giay hien lai mot lan va an het cham, vuot thanh len cung khong duoc.
+     * Thanh dong roi thi danh sach cua so doc duoc nhu thuong, va duong chan thuong lo
+     * tiep: bam Home, mo man hinh cua Le Hoa.
+     *
+     * Khong bam Home ngay tu day vi trong luc thanh con phu, danh sach cua so khong thay
+     * app ben duoi: day xong cung khong biet no da di chua, va [xetDay] se tuong app
+     * khong chiu di roi bao nham la cua so noi.
+     */
+    private fun cheDuoiThongBao(pkg: String, ly: Pair<String, String>) {
+        overlay.show(ly.first, ly.second, autoHideMs = CHE_DUOI_THONG_BAO_MS)
+        dongThanhThongBao()
+        henXetLai(XET_LAI_DUOI_THONG_BAO_MS)
+        if (pkg == goiCheDuoi) return
+        goiCheDuoi = pkg
+        Log.i(TAG, "thanh thong bao dang keo tren $pkg: che lai, khong bam Home")
+        // Nhat ky chi ghi muoi phut mot lan: keo di keo lai ca chuc lan thi bon muoi
+        // dong cua ngay khong bi chuyen nay chiem het.
+        val bayGio = SystemClock.elapsedRealtime()
+        if (lucGhiCheDuoi == 0L || bayGio - lucGhiCheDuoi >= GHI_CHE_DUOI_MS) {
+            lucGhiCheDuoi = bayGio
+            DayLog.add(this, "Kéo thanh thông báo xuống khi ${tenApp(pkg)} đang bị chặn, máy che lại")
+        }
+    }
+
+    /** Dong thanh thong bao lai. Xem [cheDuoiThongBao]. */
+    private fun dongThanhThongBao() {
+        val lenh = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+            GLOBAL_ACTION_DISMISS_NOTIFICATION_SHADE
+        } else {
+            // Truoc Android 12 chua co lenh rieng. Thanh dang giu tieu diem, nen nut
+            // Back di thang vao no va dong no lai.
+            GLOBAL_ACTION_BACK
+        }
+        runCatching { performGlobalAction(lenh) }
     }
 
     /** Buoi hoc dang bi chan ngay luc nay, hoac null. Cung mot cau tra loi voi [ManChan]. */
@@ -1856,6 +1979,18 @@ class GuardAccessibilityService : AccessibilityService() {
 
         /** Roi lui ra bao lau cho con kip bam dong cua so do. */
         private const val NHAC_LUI_MS = 2_000L
+
+        /** Thanh thong bao con mo tren app bi chan thi bao lau xet lai mot lan. */
+        private const val XET_LAI_DUOI_THONG_BAO_MS = 2_000L
+
+        /**
+         * Lop phu che app duoi thanh thong bao tu tat sau chung nay. Dai hon nhip xet
+         * lai o tren mot chut, de lop phu khong nhay giua hai lan hien.
+         */
+        private const val CHE_DUOI_THONG_BAO_MS = 3_000L
+
+        /** Nhat ky ghi chuyen keo thanh thong bao it nhat chung nay moi mot lan. */
+        private const val GHI_CHE_DUOI_MS = 10 * 60_000L
 
         /** Bao truoc khi con 5 phut. */
         private const val WARN_BEFORE_MS = 5 * 60_000L
