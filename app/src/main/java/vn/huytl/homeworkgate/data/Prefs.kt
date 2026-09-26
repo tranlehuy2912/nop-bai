@@ -83,6 +83,19 @@ class Prefs private constructor(private val sp: SharedPreferences) {
         set(v) = sp.edit().putStringSet(KEY_ALLOWED, v).commit().let {}
 
     /**
+     * App dung moi luc: khong bao gio khoa theo gio, ke ca gio ngu va gio di hoc, va man
+     * chan (gio hoc, viec nha) cung nhuong cho no. Ba Huy them tu 27/9/2026 cho Telegram:
+     * Le Hoa nhan tin voi ba bang Telegram that, va nhan cho ba thi luc nao cung phai
+     * duoc, y nhu man chat trong app truoc day.
+     *
+     * Chi thoat cac luat theo gio. Danh sach cam va gio rieng tung app van ap dung: do la
+     * hai cau Ba Huy noi thang cho dung app do. Xem GuardAccessibilityService.lyDoChan.
+     */
+    var moiLucPackages: Set<String>
+        get() = sp.getStringSet(KEY_MOI_LUC, emptySet()).orEmpty()
+        set(v) = sp.edit().putStringSet(KEY_MOI_LUC, v).commit().let {}
+
+    /**
      * Cac app AI can ghi lai cau con hoi. Nap san tu [Defaults.AI_PACKAGES].
      *
      * De o Prefs chu khong dung thang hang so, de sau nay them mot app AI moi bang
@@ -354,6 +367,7 @@ class Prefs private constructor(private val sp: SharedPreferences) {
         private const val KEY_GIO_DAY = "gio_day_minute"
         private const val KEY_TRAN_PHUT = "tran_phut_moi_ngay"
         private const val KEY_ALLOWED = "allowed_packages"
+        private const val KEY_MOI_LUC = "moi_luc_packages"
         private const val KEY_AI_PKG = "ai_packages"
         private const val KEY_BLOCKED = "blocked_packages"
         private const val KEY_NHAC = "nhac_packages"

@@ -827,6 +827,7 @@ class GuardAccessibilityService : AccessibilityService() {
                 trongGioNgu = trongGioNgu,
                 trongGioHoc = trongGioHoc,
                 congMo = congMo,
+                moiLuc = goi in prefs.moiLucPackages,
             )
             if (xu == XuLyNhac.CHO_PHAT) {
                 duocPhat.add(goi)
@@ -921,6 +922,7 @@ class GuardAccessibilityService : AccessibilityService() {
             trongGioNgu = trongGioNgu,
             trongGioHoc = trongGioHoc,
             congMo = gate.isOpen(),
+            moiLuc = pkg != null && pkg in prefs.moiLucPackages,
         )
         // Duoc keu thi van theo doi, nhip thua: het gio giua chung, hay con roi app
         // trong danh sach trang, thi khong co su kien phat tieng nao bao cho biet.
@@ -1310,6 +1312,11 @@ class GuardAccessibilityService : AccessibilityService() {
             return "Hết giờ ${tenApp(pkg)} hôm nay" to
                 "Mỗi ngày chỉ $han phút. Mai xem tiếp nhé."
         }
+
+        // App dung moi luc xet sau danh sach cam va han rieng, truoc moi luat ve gio: gio
+        // di hoc, gio choi, gio ngu. Ba Huy dat cho Telegram, de Le Hoa nhan cho ba duoc
+        // ca luc bi khoa. Xem [Prefs.moiLucPackages].
+        if (pkg in prefs.moiLucPackages) return null
 
         // Gio di hoc xet truoc ca gio choi.
         //

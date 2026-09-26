@@ -24,6 +24,7 @@ object LuatNhac {
      * @param trongGioNgu   dang trong khung tu gio di ngu den gio day
      * @param trongGioHoc   dang trong buoi hoc bi man chan che
      * @param congMo        phien choi dang chay, tuc la con van con phut
+     * @param moiLuc        goi nay nam trong danh sach app dung moi luc
      */
     fun xet(
         laAppNhac: Boolean,
@@ -32,9 +33,15 @@ object LuatNhac {
         trongGioNgu: Boolean,
         trongGioHoc: Boolean,
         congMo: Boolean,
+        moiLuc: Boolean = false,
     ): XuLyNhac {
-        // Gio di hoc xet truoc moi thu, giong het phan chan app: man chan da che kin
-        // man hinh roi ma trong tai van co nhac thi buc tuong do chi con mot nua.
+        // App dung moi luc keu duoc ca gio ngu va gio di hoc, tru khi het han rieng cua
+        // no. Cung mot thu tu voi phan chan app: sau han rieng, truoc moi luat ve gio.
+        // Khong the thi tin nhan thoai cua ba trong Telegram bi tat giua chung.
+        if (moiLuc) return if (hetHanNgay) XuLyNhac.DUNG else XuLyNhac.CHO_PHAT
+
+        // Gio di hoc xet truoc moi thu con lai, giong het phan chan app: man chan da
+        // che kin man hinh roi ma trong tai van co nhac thi buc tuong do chi con mot nua.
         if (trongGioHoc) return XuLyNhac.DUNG
 
         // Han rieng cua app xet truoc ca gio choi. Cung mot cau voi phan chan app:

@@ -23,11 +23,12 @@ import vn.huytl.homeworkgate.data.Prefs
 import vn.huytl.homeworkgate.databinding.ActivityAppPickerBinding
 
 /**
- * Chon app cho mot trong hai danh sach.
+ * Chon app cho mot trong cac danh sach.
  *
- * Danh sach trang tra loi "cai gi van dung duoc khi het gio", danh sach den tra loi
- * "cai gi khong bao gio duoc dung". Hai cau hoi khac nhau nhung cung mot thao tac
- * chon, nen dung chung mot man hinh, phan biet bang [EXTRA_DANH_SACH].
+ * Danh sach trang tra loi "cai gi van dung duoc khi het gio", danh sach dung moi luc
+ * tra loi "cai gi khong bao gio khoa theo gio", danh sach den tra loi "cai gi khong
+ * bao gio duoc dung". Cau hoi khac nhau nhung cung mot thao tac chon, nen dung chung
+ * mot man hinh, phan biet bang [EXTRA_DANH_SACH].
  *
  * Chi liet ke app co the mo tu man hinh chinh, vi chan mot service nen thi vo
  * nghia, con lam danh sach dai them vai tram dong.
@@ -49,6 +50,7 @@ class AppPickerActivity : AppCompatActivity() {
     private var danhSachDen = false
     private var datHanGio = false
     private var chonNhac = false
+    private var moiLuc = false
 
     private data class Entry(val packageName: String, val label: String, val info: ApplicationInfo)
 
@@ -61,6 +63,9 @@ class AppPickerActivity : AppCompatActivity() {
 
         /** Man chon app duoc phat tieng khi het gio choi. */
         const val NHAC = "nhac"
+
+        /** Man chon app dung moi luc, ke ca gio ngu va gio di hoc. */
+        const val MOI_LUC = "moiluc"
 
         /** May muc chon san khi dat han, don vi phut. */
         private val MUC_PHUT = listOf(15, 30, 45, 60, 90, 120, 180)
@@ -77,11 +82,13 @@ class AppPickerActivity : AppCompatActivity() {
         datHanGio = intent.getStringExtra(EXTRA_DANH_SACH) == HAN
         danhSachDen = intent.getStringExtra(EXTRA_DANH_SACH) == DEN
         chonNhac = intent.getStringExtra(EXTRA_DANH_SACH) == NHAC
+        moiLuc = intent.getStringExtra(EXTRA_DANH_SACH) == MOI_LUC
         binding.txtTieuDe.text = when {
             datHanGio -> "Giờ riêng từng app"
             danhSachDen -> "App cấm hẳn"
             chonNhac -> "App được nghe nền"
-            else -> "App luôn được dùng"
+            moiLuc -> "Dùng mọi lúc"
+            else -> "Dùng khi hết giờ chơi"
         }
         binding.txtHuongDan.text = when {
             datHanGio ->
@@ -89,7 +96,7 @@ class AppPickerActivity : AppCompatActivity() {
                     "dù Lê Hòa đang có giờ chơi hay app nằm trong danh sách được dùng. " +
                     "Sáng hôm sau tính lại từ đầu.\n" +
                     "Đặt giờ ở đây không làm app mở được khi hết giờ chơi. Muốn vậy thì " +
-                    "tích thêm app đó ở mục Chọn app Lê Hòa luôn được dùng."
+                    "tích thêm app đó ở mục Chọn app dùng khi hết giờ chơi."
             danhSachDen ->
                 "Chọn app cấm hẳn. Những app này Lê Hòa không mở được kể cả khi đang " +
                     "trong giờ chơi. Không dùng được để cấm màn hình chính hay bàn phím."
@@ -98,10 +105,14 @@ class AppPickerActivity : AppCompatActivity() {
                     "Chỉ là phát tiếng: muốn mở app ra xem thì vẫn phải còn giờ chơi. " +
                     "Nhớ đặt số phút mỗi ngày ở mục Giờ riêng từng app, không thì nghe " +
                     "bao nhiêu cũng được. Quá giờ đi ngủ hoặc tới giờ đi học là tiếng tắt."
+            moiLuc ->
+                "Chọn app Lê Hòa dùng được mọi lúc, kể cả giờ ngủ, giờ đi học và lúc " +
+                    "màn chặn việc nhà đang che, ví dụ Telegram để nhắn cho ba Huy. " +
+                    "App cấm hẳn và giờ riêng từng app vẫn áp dụng cho app ở đây."
             else ->
                 "Chọn app Lê Hòa vẫn được dùng khi hết giờ chơi, ví dụ từ điển, máy tính, " +
                     "app học. Những app còn lại đều bị khoá khi hết giờ. Từ giờ ngủ tới " +
-                    "giờ dậy thì app ở đây cũng khoá."
+                    "giờ dậy và trong giờ đi học thì app ở đây cũng khoá."
         }
 
         if (!datHanGio) {
@@ -109,6 +120,7 @@ class AppPickerActivity : AppCompatActivity() {
                 when {
                     danhSachDen -> prefs.blockedPackages
                     chonNhac -> prefs.nhacPackages
+                    moiLuc -> prefs.moiLucPackages
                     else -> prefs.allowedPackages
                 }
             )
@@ -145,6 +157,7 @@ class AppPickerActivity : AppCompatActivity() {
             when {
                 danhSachDen -> prefs.blockedPackages = selected.toSet()
                 chonNhac -> prefs.nhacPackages = selected.toSet()
+                moiLuc -> prefs.moiLucPackages = selected.toSet()
                 else -> prefs.allowedPackages = selected.toSet()
             }
             finish()
@@ -288,10 +301,11 @@ class AppPickerActivity : AppCompatActivity() {
                     // Noi ro app co mo duoc khi het gio choi khong. Dat gio o day chi la
                     // cai tran, khong mo app ra; thieu dong nay thi nhin vao tuong app
                     // da co rieng bay nhieu phut moi ngay, khong can gio choi.
-                    val khiHetGio = if (entry.packageName in prefs.allowedPackages) {
-                        "mở được khi hết giờ chơi, trừ giờ ngủ"
-                    } else {
-                        "chỉ mở trong giờ chơi"
+                    val khiHetGio = when (entry.packageName) {
+                        in prefs.moiLucPackages -> "mở được mọi lúc"
+                        in prefs.allowedPackages ->
+                            "mở được khi hết giờ chơi, trừ giờ ngủ, giờ học"
+                        else -> "chỉ mở trong giờ chơi"
                     }
                     phu.text = "$han phút mỗi ngày · hôm nay đã xem $daXem phút · $khiHetGio"
                 }

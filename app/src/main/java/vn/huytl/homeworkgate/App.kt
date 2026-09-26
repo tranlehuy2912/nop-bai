@@ -70,7 +70,15 @@ class App : Application() {
         val khoiDongLuc: Long = android.os.SystemClock.elapsedRealtime()
 
         private var dangHien = 0
-        private var roiNenLuc = 0L
+
+        /**
+         * Luc man cuoi cung cua app vua roi khoi truoc mat, theo elapsedRealtime. 0 la chua
+         * roi lan nao. Man chan doc no de cho app ke tiep mot nhip hien len, xem
+         * ApprovalService.xetLoiNhac.
+         */
+        @Volatile
+        var roiNenLuc = 0L
+            private set
 
         /**
          * App vua vang mat bao lau truoc lan quay lai nay.

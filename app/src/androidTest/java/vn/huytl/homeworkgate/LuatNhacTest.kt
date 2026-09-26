@@ -24,6 +24,7 @@ class LuatNhacTest {
         trongGioNgu: Boolean = false,
         trongGioHoc: Boolean = false,
         congMo: Boolean = false,
+        moiLuc: Boolean = false,
     ) = LuatNhac.xet(
         laAppNhac = laAppNhac,
         duocKhiHetGio = duocKhiHetGio,
@@ -31,6 +32,7 @@ class LuatNhacTest {
         trongGioNgu = trongGioNgu,
         trongGioHoc = trongGioHoc,
         congMo = congMo,
+        moiLuc = moiLuc,
     )
 
     @Test
@@ -105,5 +107,19 @@ class LuatNhacTest {
     fun gio_ngu_ma_con_gio_choi_thi_van_phat() {
         assertEquals(XuLyNhac.CHO_PHAT, xet(duocKhiHetGio = true, trongGioNgu = true, congMo = true))
         assertEquals(XuLyNhac.CHO_PHAT, xet(trongGioNgu = true, congMo = true))
+    }
+
+    /** App dung moi luc (Telegram) keu duoc ca gio ngu, gio hoc, luc het gio choi. */
+    @Test
+    fun app_dung_moi_luc_keu_ca_gio_ngu_va_gio_hoc() {
+        assertEquals(XuLyNhac.CHO_PHAT, xet(moiLuc = true))
+        assertEquals(XuLyNhac.CHO_PHAT, xet(moiLuc = true, trongGioNgu = true))
+        assertEquals(XuLyNhac.CHO_PHAT, xet(moiLuc = true, trongGioHoc = true))
+    }
+
+    /** Han rieng van ap dung: Ba Huy dat bao nhieu phut cho app do la bay nhieu. */
+    @Test
+    fun app_dung_moi_luc_het_han_ngay_thi_im() {
+        assertEquals(XuLyNhac.DUNG, xet(moiLuc = true, hetHanNgay = true))
     }
 }

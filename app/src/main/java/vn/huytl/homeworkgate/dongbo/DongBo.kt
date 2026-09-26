@@ -502,7 +502,7 @@ object DongBo {
      * So nguyen ban sao voi ban vua ghi: them mot muc vao ban sao la muc do tu duoc
      * dong bo, khoi phai nho sua them mot danh sach khoa o cho khac.
      *
-     * Ba danh sach app sap xep lai truoc khi so: Set doc ra tu prefs khong hua giu
+     * Cac danh sach app sap xep lai truoc khi so: Set doc ra tu prefs khong hua giu
      * thu tu, ma List thi so ca thu tu.
      */
     private fun dayCaiDatNeuDoi(context: Context) {
@@ -515,6 +515,7 @@ object DongBo {
             "khoaCaiDat" to prefs.lockSystemSettings,
             "chamBangAi" to prefs.chamBangAi,
             "appChoPhep" to prefs.allowedPackages.sorted(),
+            "appMoiLuc" to prefs.moiLucPackages.sorted(),
             "appChan" to prefs.blockedPackages.sorted(),
             "appAi" to prefs.aiPackages.sorted(),
             "gioiHanApp" to GioiHanApp.tatCa(context)

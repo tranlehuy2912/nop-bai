@@ -46,6 +46,12 @@ class SetupActivity : AppCompatActivity() {
         binding.btnPickApps.setOnClickListener {
             startActivity(Intent(this, AppPickerActivity::class.java))
         }
+        binding.btnPickMoiLuc.setOnClickListener {
+            startActivity(
+                Intent(this, AppPickerActivity::class.java)
+                    .putExtra(AppPickerActivity.EXTRA_DANH_SACH, AppPickerActivity.MOI_LUC)
+            )
+        }
         binding.btnGioiHan.setOnClickListener {
             startActivity(
                 Intent(this, AppPickerActivity::class.java)

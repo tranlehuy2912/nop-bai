@@ -59,6 +59,7 @@ import vn.huytl.homeworkgate.guard.DaiNhac
 import vn.huytl.homeworkgate.guard.ManChan
 import vn.huytl.homeworkgate.dongbo.DongBo
 import vn.huytl.homeworkgate.guard.ChuongTin
+import vn.huytl.homeworkgate.guard.GuardAccessibilityService
 import vn.huytl.homeworkgate.guard.ParentMode
 import vn.huytl.homeworkgate.guard.Permissions
 import vn.huytl.homeworkgate.ui.ChatActivity
@@ -315,6 +316,40 @@ class ApprovalService : Service() {
     }
 
     /**
+     * Man hinh dang chi co app dung moi luc, co the kem chinh app nay. Xem
+     * [Prefs.moiLucPackages].
+     *
+     * Kem app nay vi luc man chan dang hien thi chinh no cung la mot cua so cua app nay.
+     * Doc tu [GuardAccessibilityService.truocMat]: dich vu do da biet dang mo gi, con hoi
+     * lai danh sach cua so o day moi giay thi ton hon nhieu.
+     */
+    private fun chiConAppMoiLuc(): Boolean {
+        val moiLuc = prefs.moiLucPackages
+        if (moiLuc.isEmpty()) return false
+        val cac = GuardAccessibilityService.truocMat.cac
+        return cac.any { it.goi in moiLuc } &&
+            cac.all { it.goi == packageName || it.goi in moiLuc }
+    }
+
+    /**
+     * App nay vua roi khoi truoc mat chua qua [CHO_APP_KE_MS], va Ba Huy co dat app dung
+     * moi luc.
+     *
+     * Bam "Nhan cho ba Huy" thi man cua app nay tam dung truoc, roi Telegram moi hien,
+     * mat vai tram mili giay, mo lanh thi mot hai giay. Man chan hien vao dung khoang do
+     * thi Telegram mo ra nam ben duoi, ma cua so bi che kin thi Android khong bao cho
+     * dich vu tro nang: [chiConAppMoiLuc] khong bao gio thay no, man chan che mai. Nen
+     * cho mot nhip. App hien len khong phai app dung moi luc thi het nhip la che lai.
+     *
+     * Chua dat app dung moi luc nao thi van che ngay nhu truoc.
+     */
+    private fun choAppKeHien(): Boolean {
+        if (prefs.moiLucPackages.isEmpty() || App.manHinhCuaAppDangMo) return false
+        val roi = App.roiNenLuc
+        return roi > 0L && SystemClock.elapsedRealtime() - roi < CHO_APP_KE_MS
+    }
+
+    /**
      * Xet xem ngay luc nay co gi dang treo khong, roi hien dung mot thu.
      *
      * Thu tu xet la thu tu uu tien, tu tren xuong:
@@ -363,6 +398,11 @@ class ApprovalService : Service() {
                 // Buoc ra khoi app mot cai la man chan che lai ngay.
                 nhac.loai == LoaiNhac.CHAN &&
                     App.manHinhCuaAppDangMo -> { dai.an(); chan.an() }
+
+                // Nhuong ca cho app dung moi luc, vi du Telegram de Le Hoa nhan cho ba.
+                // Buoc sang app khac la man chan che lai o nhip sau, nhu voi app Nop bai.
+                nhac.loai == LoaiNhac.CHAN &&
+                    (chiConAppMoiLuc() || choAppKeHien()) -> { dai.an(); chan.an() }
 
                 nhac.loai == LoaiNhac.CHAN -> {
                     dai.an()
@@ -2128,6 +2168,13 @@ class ApprovalService : Service() {
          * vao sang hom sau.
          */
         private const val LENH_QUA_CU_MS = 30 * 60_000L
+
+        /**
+         * Roi app nay bao lau thi man chan moi che lai, khi co app dung moi luc. Xem
+         * [choAppKeHien]. Ba giay: du cho Telegram mo lanh tren tablet, ngan den muc app
+         * khac lot vao cung khong lam duoc gi.
+         */
+        private const val CHO_APP_KE_MS = 3_000L
 
         /** Khung gio thoi nam cho Telegram, tinh bang phut trong ngay. */
         private const val NGUNG_TU = 23 * 60
