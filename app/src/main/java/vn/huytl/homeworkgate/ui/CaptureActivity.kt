@@ -118,10 +118,11 @@ class CaptureActivity : AppCompatActivity() {
         // Trong may da co ban vo dan do da soat thi khong hoi lai trang vo nua: doan
         // chu do di thang vao cau lenh cham - xem [vn.huytl.homeworkgate.data.VoDanDo].
         //
-        // Tat cham AI thi luon chup, ke ca khi da co ban soat: Claude cham tren dien
-        // thoai cua Ba Huy, chi nhin thay anh, khong doc duoc ban soat nam trong may
-        // nay. Thieu trang vo thi Claude khong biet co giao gi, va mat tron goi.
-        val canVo = VoDanDo.conHieuLuc(this) == null || !Prefs.get(this).chamBangAi
+        // Tat cham AI cung vay: ban soat di kem bai len Firestore, va Bang dieu khien
+        // chep no vao loi nho Claude - xem [vn.huytl.homeworkgate.dongbo.DongBo.banDanDo].
+        // Chua co ban soat (con chua chup dau buoi, hay may doc khong duoc) thi van chup
+        // trang vo o day, va Claude doc anh nhu truoc.
+        val canVo = VoDanDo.conHieuLuc(this) == null
         when {
             motXap -> listOf(CaptureStage.BAI_GIAI)
             else -> buildList {

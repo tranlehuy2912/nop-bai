@@ -33,6 +33,7 @@ import vn.huytl.homeworkgate.kho.PhamVi
 import vn.huytl.homeworkgate.kho.TraLoi
 import vn.huytl.homeworkgate.data.Prefs
 import vn.huytl.homeworkgate.data.ViecNha
+import vn.huytl.homeworkgate.data.VoDanDo
 import vn.huytl.homeworkgate.guard.GuardAccessibilityService
 import vn.huytl.homeworkgate.guard.ParentMode
 import vn.huytl.homeworkgate.guard.Permissions
@@ -535,14 +536,16 @@ object DongBo {
      * Mot lan con nop bai. Goi ngay sau khi anh da len Telegram.
      *
      * [khai] la cac cau con khai kem de, xem [banKhai]. Gui kem de app Bang dieu khien
-     * co de bai cho Claude ngay ca khi tablet khong tu cham.
+     * co de bai cho Claude ngay ca khi tablet khong tu cham. [danDo] la vo dan do con
+     * soat ma lan nop nay dung, xem [banDanDo].
      */
     fun dayBaiMoi(
         context: Context,
         baiId: String,
         messageId: Long,
         anh: List<Anh>,
-        khai: Map<String, Any>? = null
+        khai: Map<String, Any>? = null,
+        danDo: Map<String, Any>? = null
     ) {
         val noi = mutableMapOf<String, Any>(
             Duong.F_LUC to System.currentTimeMillis(),
@@ -554,6 +557,7 @@ object DongBo {
             }
         )
         khai?.let { noi[Duong.F_KHAI] = it }
+        danDo?.let { noi[Duong.F_DAN_DO] = it }
         nha(context)?.collection(Duong.BAI)?.document(baiId)?.set(noi)
             ?.addOnFailureListener { Log.w(TAG, "day bai hong: ${it.message}") }
         dayNgay()
@@ -578,6 +582,20 @@ object DongBo {
                 mapOf("ma" to it.ma, "cauId" to it.id, "de" to it.de, "dang" to it.dang)
             }
         )
+    }
+
+    /**
+     * Vo dan do con da soat, chep vao bai luc nop. Xem [Duong.F_DAN_DO].
+     *
+     * Chi dua len phan Claude can: ngay, bai phai lam, dong dan viec khac, va ma anh
+     * trang vo de doi chieu. Dong nao con tich khac may thi khong dua: Ba Huy da thay
+     * no trong tin vo dan do tren Telegram.
+     */
+    fun banDanDo(vo: VoDanDo.DanDo): Map<String, Any> = buildMap {
+        put("ngay", vo.ngay)
+        put("cacBai", vo.cacBai)
+        put("dongKhac", vo.dongKhac)
+        vo.fileId?.let { put(Duong.F_FILE_ID, it) }
     }
 
     /** Doi trang thai mot bai sau khi Ba Huy duyet hoac tu choi. */

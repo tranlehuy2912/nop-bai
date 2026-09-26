@@ -22,6 +22,10 @@ import vn.huytl.homeworkgate.kho.PhamVi
  * giao, va con da lam het chua. Ba thu do vao dung ba truong ma may cham van dien, nen
  * [LuatCongGio] tu quyet tron goi nhu moi lan.
  *
+ * Lan nop dung ban vo con soat tu dau buoi ([VoChoCham]) thi ngay va danh sach bai lay
+ * tu ban do, Claude chi noi con lam het chua va cau nao thuoc bai co giao. Y het cau
+ * lenh cua may cham luc co ban soat, xem PromptCham.doanDanDo.
+ *
  * Muc nao khong co ket luan dung hay sai that thi bo di: mot chu "dung" viet thieu hay
  * viet sai kieu khong duoc phep thanh mot lan cong gio.
  */
@@ -30,11 +34,20 @@ object ChamTheoClaude {
     /**
      * @param giaTri "giaTri" cua lenh CHAMBAI: mot map { cac, ngayDanDo, baiDuocGiao,
      *   lamHetDanDo, coAnhDanDo }. Van nhan kieu cu chi co danh sach cau.
+     * @param vo ban vo con soat ma lan nop do dung, tablet chep luc nop. null la lan nop
+     *   khong dung ban soat nao.
      */
-    fun banCham(context: Context, giaTri: Any?, pham: PhamVi?): KetQuaCham? {
+    fun banCham(
+        context: Context,
+        giaTri: Any?,
+        pham: PhamVi?,
+        vo: VoDanDo.DanDo? = null
+    ): KetQuaCham? {
         val goi = giaTri as? Map<*, *>
         val cacMuc = ((goi?.get("cac") ?: giaTri) as? List<*>).orEmpty().mapNotNull { it as? Map<*, *> }
-        val coVo = coAnhDanDo(giaTri)
+        // Co ban soat la co vo dan do, du dien thoai co bao hay khong: Bang dieu khien ban
+        // cu khong biet ban soat, ma quy tac 17 duoi day chi danh cho lan nop khong co vo.
+        val coVo = coAnhDanDo(giaTri) || vo != null
         val sach = if (pham?.theoSach == true) {
             KhoBai.get(context).cacCauTheoId(pham.cauIds)
         } else {
@@ -80,18 +93,25 @@ object ChamTheoClaude {
                  * bai lam them thi xap bai da nam trong tron goi hom nay lai duoc tinh
                  * le them lan nua - ngay 14/9/2026 la 45 phut goi cong 40 phut nua.
                  */
-                trongDanDo = if (coVo) o["trongDanDo"] as? Boolean ?: false else true
+                trongDanDo = when {
+                    !coVo -> true
+                    // Ban soat ghi hom do co khong giao bai tap nao: khong cau nao thuoc
+                    // bai co giao, du Claude noi gi. Cau lenh cua may cham dan y nhu vay.
+                    vo != null && vo.cacBai.isEmpty() -> false
+                    else -> o["trongDanDo"] as? Boolean ?: false
+                }
             )
         }
         if (cac.isEmpty()) return null
         return KetQuaCham(
             mon = pham?.mon?.takeIf { it.isNotBlank() } ?: cac.first().mon,
             cac = cac,
-            ngayDanDo = (goi?.get("ngayDanDo") as? String)?.trim()?.takeIf { it.isNotEmpty() },
+            ngayDanDo = vo?.ngay
+                ?: (goi?.get("ngayDanDo") as? String)?.trim()?.takeIf { it.isNotEmpty() },
             // Viet sai kieu la khong co goi, y nhu "dung": mot chu "true" khong duoc
             // thanh 45 phut.
             lamHetDanDo = goi?.get("lamHetDanDo") as? Boolean ?: false,
-            baiDuocGiao = (goi?.get("baiDuocGiao") as? List<*>).orEmpty()
+            baiDuocGiao = vo?.cacBai ?: (goi?.get("baiDuocGiao") as? List<*>).orEmpty()
                 .mapNotNull { (it as? String)?.trim()?.takeIf { t -> t.isNotEmpty() } }
         )
     }

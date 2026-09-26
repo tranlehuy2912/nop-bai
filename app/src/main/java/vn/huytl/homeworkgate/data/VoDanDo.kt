@@ -26,6 +26,11 @@ import java.time.LocalDateTime
  *
  * HAN DUNG DI THEO [LuatCongGio.ngayDanDoHopLe] chu khong tu dat mot cai khac: doan
  * chu nay thay cho tam anh, nen no phai het hieu luc dung luc tam anh do het.
+ *
+ * TAT CHAM AI VAN DUNG BAN NAY. Moi lan nop, tablet chep ban dang con hieu luc vao bai
+ * tren Firestore, va Bang dieu khien dua dung ngay va danh sach bai do vao loi nho
+ * Claude - xem [vn.huytl.homeworkgate.dongbo.DongBo.banDanDo] va [VoChoCham]. Nen con
+ * chup vo mot lan dau buoi du bai do may cham hay Claude cham.
  */
 object VoDanDo {
 
@@ -62,7 +67,16 @@ object VoDanDo {
          * Ba Huy lan hai van phai co anh, neu khong ba chi nhan duoc mot danh sach
          * chu khong doi chieu duoc voi cai gi.
          */
-        val anh: String? = null
+        val anh: String? = null,
+        /**
+         * Ma cua tam anh trang vo tren Telegram, co sau khi [vn.huytl.homeworkgate
+         * .telegram.DanDoSender] gui xong. null la chua gui duoc.
+         *
+         * Bang dieu khien cam ma nay tai lai dung tam anh do, gui kem cho Claude doi
+         * chieu voi danh sach con da tich - xem [vn.huytl.homeworkgate.dongbo.DongBo
+         * .banDanDo].
+         */
+        val fileId: String? = null
     ) {
         /** Cac bai phai lam roi nop. Day la thu di vao cau lenh cham. */
         val cacBai: List<String> get() = cacDong.filter { it.laBaiTap }.map { it.chu }
@@ -98,8 +112,25 @@ object VoDanDo {
         return runCatching { tuJson(JSONObject(chu)) }.getOrNull()
     }
 
+    // Ba ham ghi deu khoa chung mot cho: [ghiMaAnh] chay o luong nen cua DanDoSender,
+    // dung luc con co the dang bam Luu lan nua tren man soat.
+    @Synchronized
     fun luu(context: Context, d: DanDo) {
         Prefs.get(context).raw().edit().putString(KHOA, sangJson(d).toString()).commit()
+    }
+
+    /**
+     * Ghi ma anh Telegram vao ban dang luu, sau khi tin vo dan do gui xong.
+     *
+     * Chi ghi khi ban trong may van la ban vua gui, so bang [DanDo.luc]. Con bam Luu
+     * lan nua trong luc tin dang gui thi ban moi da thay cho, va ma anh cu khong con la
+     * anh cua ban do.
+     */
+    @Synchronized
+    fun ghiMaAnh(context: Context, luc: Long, fileId: String) {
+        val d = doc(context) ?: return
+        if (d.luc != luc) return
+        luu(context, d.copy(fileId = fileId))
     }
 
     /**
@@ -110,6 +141,7 @@ object VoDanDo {
      * da ma hoa, khung chat chi giu mot tram cau. Giu mot tam anh khong ai con doc
      * nua thi khong co ly do gi bien ho duoc.
      */
+    @Synchronized
     fun xoa(context: Context) {
         doc(context)?.anh?.let { runCatching { java.io.File(it).delete() } }
         Prefs.get(context).raw().edit().remove(KHOA).commit()
@@ -132,6 +164,7 @@ object VoDanDo {
         .put("ngay", d.ngay)
         .put("luc", d.luc)
         .put("anh", d.anh)
+        .put("fileId", d.fileId)
         .put(
             "dong",
             JSONArray().apply {
@@ -159,7 +192,8 @@ object VoDanDo {
                 )
             },
             luc = o.optLong("luc"),
-            anh = o.optString("anh").takeIf { it.isNotBlank() }
+            anh = o.optString("anh").takeIf { it.isNotBlank() },
+            fileId = if (o.isNull("fileId")) null else o.optString("fileId").takeIf { it.isNotBlank() }
         )
     }
 }

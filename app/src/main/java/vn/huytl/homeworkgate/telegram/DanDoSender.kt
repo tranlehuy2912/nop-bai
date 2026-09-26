@@ -71,7 +71,10 @@ object DanDoSender {
             return
         }
         val guiDi = if (shrink) ImageUtil.shrinkInPlace(goc) else goc
-        client.sendPhoto(prefs.parentChatId, guiDi, chuThich, banPhim)
+        val daGui = client.sendPhoto(prefs.parentChatId, guiDi, chuThich, banPhim)
+        // Giu ma anh de moi bai nop sau do mang theo dung tam nay, cho Claude doi chieu
+        // danh sach con tich voi chu tren giay. Xem [VoDanDo.DanDo.fileId].
+        daGui.fileIds.firstOrNull()?.let { VoDanDo.ghiMaAnh(context, d.luc, it) }
         // shrinkInPlace tra ve chinh file goc khi khong giai ma duoc anh; xoa luc do
         // la mat ban duy nhat trong may.
         if (guiDi != goc) guiDi.delete()

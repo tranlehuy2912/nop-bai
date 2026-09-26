@@ -112,6 +112,26 @@ class VoDanDoTest {
         assertFalse(f.exists())
     }
 
+    /**
+     * Ma anh Telegram chi vao dung ban vua gui.
+     *
+     * Tin vo dan do gui o luong nen. Con bam Luu lan nua trong luc tin cu dang gui thi
+     * ma anh cua ban cu khong duoc de len ban moi: bai nop sau do se gui nham tam anh
+     * cho Claude doi chieu.
+     */
+    @Test
+    fun maAnhChiGhiVaoDungBanVuaGui() {
+        val d = ban(LocalDate.now(), anhGia())
+        VoDanDo.luu(context, d)
+        VoDanDo.ghiMaAnh(context, d.luc, "ma-anh-1")
+        assertEquals("ma-anh-1", VoDanDo.doc(context)!!.fileId)
+
+        val moi = d.copy(luc = d.luc + 1, fileId = null)
+        VoDanDo.luu(context, moi)
+        VoDanDo.ghiMaAnh(context, d.luc, "ma-anh-cu")
+        assertNull(VoDanDo.doc(context)!!.fileId)
+    }
+
     @Test
     fun xoaThiAnhDiTheo() {
         val f = anhGia()

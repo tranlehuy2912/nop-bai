@@ -22,6 +22,11 @@ import java.time.LocalDate
  * da - xem [vn.huytl.homeworkgate.ui.DanDoActivity]. May doc nham mot ngay hay bo
  * sot mot bai deu la chuyen thuong, va o day thi sua duoc bang mat, khong phai doi
  * den luc mat phut moi biet.
+ *
+ * CHAY CA KHI TAT CHAM AI, xem [vn.huytl.homeworkgate.data.Prefs.chamBangAi]. Ngay
+ * 26/9/2026 Ba Huy chon giu buoc soat vo dau buoi ca khi Claude cham: khong co no thi
+ * lan nop nao cung phai chup lai trang vo, va Claude phai tu doan buoi nao la hom nay
+ * tren mot trang chep nhieu buoi.
  */
 object DocDanDo {
 

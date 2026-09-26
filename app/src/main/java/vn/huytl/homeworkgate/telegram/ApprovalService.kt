@@ -40,6 +40,7 @@ import vn.huytl.homeworkgate.data.NhatKyAi
 import vn.huytl.homeworkgate.data.NhatKySuDung
 import vn.huytl.homeworkgate.data.ViecNha
 import vn.huytl.homeworkgate.data.VoDanDo
+import vn.huytl.homeworkgate.data.VoChoCham
 import vn.huytl.homeworkgate.data.LoaiLoi
 import vn.huytl.homeworkgate.data.LuatCongGio
 import vn.huytl.homeworkgate.data.Prefs
@@ -1295,8 +1296,22 @@ class ApprovalService : Service() {
         // Giu pham vi lai: tat cham AI thi lan cham den sau, luc Ba Huy dan ket qua
         // Claude ve, ma luc do van phai biet con da khai nhung cau nao.
         pham?.let { KhaiChoCham.luu(this, sent.requestId, it) }
+        /*
+         * Vo dan do con soat tu dau buoi, neu lan nop nay dung ban do thay cho trang vo.
+         *
+         * Chep lai ngay luc nop, ca khi dang bat cham AI: AI hong thi Ba Huy nho Claude
+         * cham, va luc do Claude van phai co danh sach bai cua dung buoi nay. Xem
+         * [VoChoCham] ve chuyen vi sao khong doc lai luc cham.
+         *
+         * Anh trang vo gan vao CUOI danh sach anh cua bai: dau danh sach la anh tab Bai
+         * ben dien thoai lay ra lam hinh nho, ma hinh do phai la bai con vua lam.
+         */
+        val vo = if (nhom.containsKey(CaptureStage.DAN_DO)) null else VoDanDo.conHieuLuc(this)
+        vo?.let { VoChoCham.luu(this, sent.requestId, it) }
+        val anhVo = vo?.fileId?.let { DongBo.Anh(it, CaptureStage.DAN_DO.name) }
         DongBo.dayBaiMoi(
-            this, sent.requestId, sent.messageId, sent.anh, DongBo.banKhai(this, pham)
+            this, sent.requestId, sent.messageId, sent.anh + listOfNotNull(anhVo),
+            DongBo.banKhai(this, pham), vo?.let { DongBo.banDanDo(it) }
         )
         DayLog.add(
             this,
@@ -1502,9 +1517,20 @@ class ApprovalService : Service() {
          * HAI NGUON, tuy lan nop lay mot: xap anh lan nay co trang vo dan do, hoac
          * trong may da co ban Le Hoa soat tu dau buoi - xem [VoDanDo]. Ban da soat
          * thi tin rieng cua no nam phia tren trong cung khung chat, kem ca tam anh.
+         *
+         * Duong Claude lay ban chep luc nop ([VoChoCham]) va xet no TRUOC anh: bai do co
+         * gan san anh trang vo cho Bang dieu khien ban cu, nen coAnhDanDo la true, ma
+         * ngay va danh sach bai van lay tu ban con soat - xem [ChamTheoClaude.banCham].
          */
-        val danDoDaSoat = VoDanDo.conHieuLuc(this)
-        if (coAnhDanDo) {
+        val danDoDaSoat = if (baiId != null) VoChoCham.lay(this, baiId) else VoDanDo.conHieuLuc(this)
+        if (danDoDaSoat != null && (baiId != null || !coAnhDanDo)) {
+            than.append("• Vở dặn dò Lê Hòa đã soát: ")
+                .append(
+                    if (danDoDaSoat.cacBai.isEmpty()) "không có bài tập nào"
+                    else danDoDaSoat.cacBai.joinToString(", ")
+                )
+            than.append(" (ngày ").append(danDoDaSoat.ngay).append(")\n")
+        } else if (coAnhDanDo) {
             than.append("• Vở dặn dò ${if (nguoiCham == "AI") "máy" else nguoiCham} đọc ra: ")
                 .append(
                     if (ket.baiDuocGiao.isEmpty()) "không có bài tập nào"
@@ -1513,13 +1539,6 @@ class ApprovalService : Service() {
             ket.ngayDanDo?.takeIf { it.isNotBlank() }
                 ?.let { than.append(" (ngày ").append(it).append(")") }
             than.append("\n")
-        } else if (danDoDaSoat != null) {
-            than.append("• Vở dặn dò Lê Hòa đã soát: ")
-                .append(
-                    if (danDoDaSoat.cacBai.isEmpty()) "không có bài tập nào"
-                    else danDoDaSoat.cacBai.joinToString(", ")
-                )
-            than.append(" (ngày ").append(danDoDaSoat.ngay).append(")\n")
         }
         bang.dong.forEach { than.append("• ").append(it).append("\n") }
         if (thieu.isNotEmpty()) {

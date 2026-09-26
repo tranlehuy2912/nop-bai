@@ -256,7 +256,10 @@ class DanDoActivity : AppCompatActivity() {
         val ban = VoDanDo.DanDo(
             ngay = ngay.toString(),
             cacDong = cac,
-            anh = anhTam?.let { giuAnh(it) } ?: anhDaGiu
+            anh = anhTam?.let { giuAnh(it) } ?: anhDaGiu,
+            // Khong chup lai thi van la tam anh da gui, nen ma anh cu con dung trong luc
+            // tin moi dang gui - bai nop luc do van co anh trang vo cho Claude.
+            fileId = if (anhTam == null) VoDanDo.doc(this)?.fileId else null
         )
         VoDanDo.luu(this, ban)
         // Gui ca anh lan noi dung con vua xac nhan. Ba doi chieu duoc chu con tich

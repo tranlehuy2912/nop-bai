@@ -18,6 +18,7 @@ import vn.huytl.homeworkgate.data.LuotBaNoi
 import vn.huytl.homeworkgate.data.Prefs
 import vn.huytl.homeworkgate.data.SoCaiBai
 import vn.huytl.homeworkgate.data.SuaCham
+import vn.huytl.homeworkgate.data.VoChoCham
 import vn.huytl.homeworkgate.guard.ChuongTin
 import vn.huytl.homeworkgate.guard.ParentMode
 import vn.huytl.homeworkgate.guard.Permissions
@@ -411,7 +412,8 @@ object ThiHanhLenh {
             return "Bài này không còn chờ duyệt nên máy không chấm nữa."
         }
         val pham = KhaiChoCham.lay(context, id)
-        val ket = ChamTheoClaude.banCham(context, giaTri, pham)
+        // Vo dan do con soat ma lan nop do dung, chep lai tu luc nop. Xem [VoChoCham].
+        val ket = ChamTheoClaude.banCham(context, giaTri, pham, VoChoCham.lay(context, id))
             ?: return "Lệnh thiếu danh sách câu, máy không chấm."
         ApprovalService.chamTheoClaude(context, id, ket, pham, ChamTheoClaude.coAnhDanDo(giaTri))
         return "Đã nhận kết quả Claude, tablet đang chấm. Số phút báo trên Telegram."

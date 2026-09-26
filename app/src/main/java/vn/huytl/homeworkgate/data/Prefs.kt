@@ -149,9 +149,10 @@ class Prefs private constructor(private val sp: SharedPreferences) {
      * [vn.huytl.homeworkgate.dongbo.Lenh.CHAM_BAI]. Bat mac dinh: ca app viet quanh
      * viec AI cham ngay luc con nop, con tat di thi con phai cho Ba Huy moi co gio.
      *
-     * Tat AI thi con khong soat vo dan do truoc duoc nua, vi khong co may doc. Trang vo
-     * chup kem luc nop, Claude doc no cung luc cham bai, nen tron goi 45 phut van tinh
-     * theo dung luat cu.
+     * Chi viec CHAM la tat. May van doc vo dan do dau buoi cho con soat, moi ngay mot
+     * luot Gemini - xem [vn.huytl.homeworkgate.ai.DocDanDo]. Ban soat di kem tung bai
+     * len Firestore, va Claude dung dung ngay va danh sach bai do nhu may cham van dung.
+     * May doc khong duoc thi lan nop chup trang vo kem, va Claude doc anh.
      */
     var chamBangAi: Boolean
         get() = sp.getBoolean(KEY_CHAM_BANG_AI, true)
