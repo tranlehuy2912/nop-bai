@@ -165,6 +165,28 @@ class ViecNhaTest {
     }
 
     @Test
+    fun phien_ban_cu_luu_khong_co_ai_thi_la_ba_noi() {
+        // Ban app truoc luu phien khong co khoa "ai". Ten khoa viet thang de doi ten
+        // trong ViecNha la bai nay do.
+        Prefs.get(context).raw().edit().putString(
+            "viec_nha_phien",
+            """{"id":"ab12","luc":0,"cac":[{"ten":"Quét nhà","phut":10,"xong":false}]}"""
+        ).commit()
+        assertEquals("banoi", ViecNha.dangTreo(context)!!.ai)
+        assertEquals("Bà nội", ViecNha.nguoiGiao(ViecNha.dangTreo(context)))
+    }
+
+    @Test
+    fun cung_dot_ma_nguoi_giao_khac_thi_sua_lai_nguoi_giao() {
+        // Dot do ban tablet cu luu thanh ba noi, ban moi doc lai thay la Ba Huy giao.
+        ViecNha.apDung(context, ban("ab12", viec("Quét nhà", 10, false)))
+        val moi = ViecNha.tuBan("ab12", listOf(viec("Quét nhà", 10, false)), 0L, "bahuy")!!
+        assertEquals(ViecNha.Doi.KHONG_DOI, ViecNha.apDung(context, moi))
+        assertEquals("bahuy", ViecNha.dangTreo(context)!!.ai)
+        assertTrue(ViecNha.dangKhoa(context))
+    }
+
+    @Test
     fun phien_moi_ma_da_xong_het_thi_khong_khoa() {
         // Gap khi mang rot dung luc: tablet bo lo ca doan giua, den luc doc duoc thi
         // ba da bam xong het. Khong duoc khoa may mot nhip nao, nhung van cong gio.

@@ -107,7 +107,13 @@ object ViecNha {
             xoa(context)
             return Doi.BO_HET
         }
-        if (moi.cac == cu.cac) return Doi.KHONG_DOI
+        if (moi.cac == cu.cac) {
+            // Viec khong doi nhung nguoi giao doi: chi xay ra voi dot ban app truoc da
+            // luu, luc chua doc truong ai nen luu thanh ba noi. Sua lai cho man chan goi
+            // dung nguoi, van khong co gi de lam.
+            if (moi.ai != cu.ai) luu(context, cu.copy(ai = moi.ai))
+            return Doi.KHONG_DOI
+        }
 
         if (moi.xongHet) {
             // Giu lai de ben goi con doc duoc tong so phut, roi no tu goi [xoa].

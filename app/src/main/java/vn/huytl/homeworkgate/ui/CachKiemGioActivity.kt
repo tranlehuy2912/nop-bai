@@ -385,6 +385,8 @@ class CachKiemGioActivity : AppCompatActivity() {
             het = false,
             khiTrong = when {
                 choSan > 0 -> "Làm xong được $choSan phút"
+                // Viec 0 phut van la viec dang giao, khong phai "chua ai giao".
+                chuaXong.isNotEmpty() -> "Việc đang giao không có phút"
                 else -> "Hôm nay chưa ai giao việc"
             }
         )

@@ -221,6 +221,15 @@ class ApprovalService : Service() {
             danhThucPoll()
         }
 
+        // Vua co viec nha moi: che man hinh ngay, khong doi het nhip mot phut cua vong
+        // xet. Man hinh dang tat thi thoi, bat man hinh len la tu xet lai; chay vong luc
+        // man tat thi nhip mot giay cua man chan an pin ca buoi.
+        if (intent?.action == ACTION_XET_LAI &&
+            getSystemService(android.os.PowerManager::class.java)?.isInteractive == true
+        ) {
+            xetLaiNgay()
+        }
+
         if (intent?.action == ACTION_GUI) {
             val nhom = CaptureStage.entries.associateWith { st ->
                 intent.getStringArrayListExtra(EXTRA_ANH + st.name).orEmpty()
@@ -2158,6 +2167,9 @@ class ApprovalService : Service() {
         /** Cham mot bai dang cho theo ket qua Claude. Xem [chamTheoClaude]. */
         const val ACTION_CHAM_CLAUDE = "vn.huytl.homeworkgate.CHAM_CLAUDE"
 
+        /** Xet lai loi nhac ngay, vi du vua co dot viec nha moi. Xem [ensureRunning]. */
+        private const val ACTION_XET_LAI = "vn.huytl.homeworkgate.XET_LAI"
+
         /** Ma bai dang cho, o duong Claude cham. */
         private const val EXTRA_BAI_ID = "bai_id"
 
@@ -2226,12 +2238,19 @@ class ApprovalService : Service() {
             context.startForegroundService(intent)
         }
 
-        /** Bat service neu dang can, khong thi thoi. */
-        fun ensureRunning(context: Context) {
+        /**
+         * Bat service neu dang can, khong thi thoi.
+         *
+         * [xetLaiNgay] la xet lai loi nhac ngay luc do. Can khi vua co viec nha moi:
+         * service dang chay thi lenh bat chi danh thuc duong Telegram, con vong xet man
+         * chan van ngu het nhip mot phut, va trong phut do man hinh van mo.
+         */
+        fun ensureRunning(context: Context, xetLaiNgay: Boolean = false) {
             val st = GateStore(context).state
             Log.i(TAG, "ensureRunning: state=$st canGiu=${canGiuKetNoi(context)}")
             if (!canGiuKetNoi(context)) return
             val intent = Intent(context, ApprovalService::class.java)
+            if (xetLaiNgay) intent.action = ACTION_XET_LAI
             context.startForegroundService(intent)
         }
     }

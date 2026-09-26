@@ -72,8 +72,9 @@ object ThiHanhViecNha {
                 )
                 // Man chan song trong ApprovalService, ma cong dang khoa thi service
                 // do co the da tat. Khong goi dong nay la ba giao viec xong man hinh
-                // van mo binh thuong.
-                ApprovalService.ensureRunning(context)
+                // van mo binh thuong. Xet lai ngay: service dang chay ma khong co gi
+                // chan thi vong xet cua no dang ngu mot phut mot nhip.
+                ApprovalService.ensureRunning(context, xetLaiNgay = true)
                 Log.i(TAG, "${moi.ai} giao ${moi.cac.size} viec")
             }
 
