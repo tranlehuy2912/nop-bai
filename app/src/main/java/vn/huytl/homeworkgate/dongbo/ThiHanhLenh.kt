@@ -4,6 +4,7 @@ import android.app.admin.DevicePolicyManager
 import android.content.Context
 import com.google.firebase.firestore.DocumentSnapshot
 import vn.huytl.homeworkgate.R
+import vn.huytl.homeworkgate.data.BaiCho
 import vn.huytl.homeworkgate.data.ChamTheoClaude
 import vn.huytl.homeworkgate.data.ChatBox
 import vn.huytl.homeworkgate.data.ChatFrom
@@ -92,16 +93,7 @@ object ThiHanhLenh {
         return when (kieu) {
             Lenh.DUYET -> duyet(context, gate, baiId, phut)
 
-            Lenh.TU_CHOI -> {
-                val bai = baiId?.let { id -> gate.baiDangCho().firstOrNull { it.id == id } }
-                    ?: gate.baiChoCuNhat()
-                    ?: return "Không có bài nào đang chờ."
-                gate.boBaiCho(bai.id)
-                goNutBenTelegram(context, bai.messageId)
-                baiId?.let { DongBo.datTrangThaiBai(context, it, "TUCHOI") }
-                DayLog.add(context, "Ba Huy không duyệt" + if (chu.isBlank()) "" else ": $chu")
-                "Đã từ chối bài đó."
-            }
+            Lenh.TU_CHOI -> tuChoi(context, gate, baiId, chu)
 
             // Gio thuong: khong tru vao han muc ngay, vi day la nguoi lon chu dong
             // cho chu khong phai con doi bang bai tap.
@@ -222,15 +214,50 @@ object ThiHanhLenh {
     }
 
     /**
+     * Bai ma lenh nhac toi, neu no con trong hang cho.
+     *
+     * Lenh co ma bai thi chi tim dung bai do. Truoc day khong thay thi lay bai cu nhat
+     * dang cho, nen bam Duyet o mot bai may da bo (bai nop hom qua, bai con da huy) la
+     * duyet nham bai khac voi so phut cua bai kia. Lay bai cu nhat chi con danh cho ban
+     * Bang dieu khien cu khong gui ma bai.
+     */
+    private fun baiTrongHang(gate: GateStore, baiId: String?): BaiCho? {
+        val hang = gate.baiDangCho()
+        return if (baiId == null) hang.firstOrNull() else hang.firstOrNull { it.id == baiId }
+    }
+
+    /**
+     * Khong duyet mot bai.
+     *
+     * Bai khong con trong hang cho thi van ghi TUCHOI len Firestore, neu ben do con ghi
+     * CHO. Sang ngay moi, GateStore.tick bo bai nop hom truoc khoi hang cho ma khong bao
+     * dien thoai, nen Bang dieu khien van ghi bai do la dang cho. Truoc day bam Khong
+     * duyet o bai do chi duoc cau "Khong co bai nao dang cho", con bai thi van nam nguyen
+     * o do.
+     */
+    internal fun tuChoi(context: Context, gate: GateStore, baiId: String?, chu: String): String {
+        val bai = baiTrongHang(gate, baiId)
+        if (bai == null) {
+            if (baiId == null) return "Không có bài nào đang chờ."
+            DongBo.datTrangThaiBaiNeuDangCho(context, baiId, "TUCHOI")
+            return "Bài đó không còn trong hàng chờ của tablet. Đã gỡ khỏi danh sách chờ duyệt."
+        }
+        gate.boBaiCho(bai.id)
+        goNutBenTelegram(context, bai.messageId)
+        DongBo.datTrangThaiBai(context, bai.id, "TUCHOI")
+        DayLog.add(context, "Ba Huy không duyệt" + if (chu.isBlank()) "" else ": $chu")
+        return "Đã từ chối bài đó."
+    }
+
+    /**
      * Duyet mot bai.
      *
      * Dang choi ma duyet them thi cong thang vao phien dang chay chu khong cat phien
      * roi cap lai tu dau - y het duong Telegram.
      */
-    private fun duyet(context: Context, gate: GateStore, baiId: String?, phut: Int?): String {
-        val bai = baiId?.let { id -> gate.baiDangCho().firstOrNull { it.id == id } }
-            ?: gate.baiChoCuNhat()
-            ?: return "Bài đó không còn trong hàng chờ nữa."
+    internal fun duyet(context: Context, gate: GateStore, baiId: String?, phut: Int?): String {
+        val bai = baiTrongHang(gate, baiId)
+            ?: return "Bài đó không còn trong hàng chờ nữa. Muốn cho giờ thì bấm Cho chơi ngay."
 
         val xin = phut ?: Prefs.get(context).grantMinutes
 

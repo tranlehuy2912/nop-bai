@@ -642,6 +642,24 @@ object DongBo {
             ?.addOnFailureListener { Log.w(TAG, "doi trang thai bai hong: ${it.message}") }
     }
 
+    /**
+     * Doi trang thai mot bai, chi khi ban tren Firestore con ghi CHO.
+     *
+     * Dung cho bai khong con trong hang cho tren may. Luc do may khong biet bai da duoc
+     * duyet ben Telegram hay chua, nen phai doc lai truoc. Ghi de len mot bai da duyet
+     * thi con van giu gio, ma danh sach ben dien thoai lai ghi la khong duyet.
+     */
+    fun datTrangThaiBaiNeuDangCho(context: Context, baiId: String, trangThai: String) {
+        val ref = nha(context)?.collection(Duong.BAI)?.document(baiId) ?: return
+        ref.firestore.runTransaction { tr ->
+            val d = tr.get(ref)
+            if (d.exists() && d.getString(Duong.F_TRANG_THAI) == "CHO") {
+                tr.update(ref, mapOf(Duong.F_TRANG_THAI to trangThai, Duong.F_SO_PHUT to 0))
+            }
+            null
+        }.addOnFailureListener { Log.w(TAG, "doi trang thai bai hong: ${it.message}") }
+    }
+
     /** Ket qua AI cham, gan vao dung bai do de Ba Huy nhin mot cai la quyet duoc. */
     fun dayChamBai(context: Context, baiId: String, cham: Map<String, Any>) {
         nha(context)?.collection(Duong.BAI)?.document(baiId)

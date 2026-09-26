@@ -47,6 +47,7 @@ import vn.huytl.homeworkgate.data.ThoiKhoaBieu
 import vn.huytl.homeworkgate.data.TinhLoiNhac
 import vn.huytl.homeworkgate.databinding.ActivityHomeBinding
 import vn.huytl.homeworkgate.databinding.StDongViecBinding
+import vn.huytl.homeworkgate.dongbo.DongBo
 import vn.huytl.homeworkgate.guard.CountdownOverlay
 import vn.huytl.homeworkgate.guard.ParentMode
 import vn.huytl.homeworkgate.guard.PhienQuanLy
@@ -907,7 +908,11 @@ class HomeActivity : AppCompatActivity() {
             .setTitle("Huỷ yêu cầu đã gửi?")
             .setMessage(loi)
             .setPositiveButton("Huỷ yêu cầu") { _, _ ->
-                val messageId = gate.huyBaiMoiNhat()?.messageId ?: 0L
+                val bai = gate.huyBaiMoiNhat()
+                val messageId = bai?.messageId ?: 0L
+                // Bao ca Bang dieu khien. Khong thi ben do bai nay van ghi dang cho, con
+                // hai nut Duyet, Khong duyet thi bam nut nao tablet cung khong con bai de lam.
+                bai?.let { DongBo.datTrangThaiBai(this, it.id, "HUY") }
                 render()
                 toast("Đã huỷ, Lê Hòa nộp lại nhé")
                 lifecycleScope.launch(Dispatchers.IO) {

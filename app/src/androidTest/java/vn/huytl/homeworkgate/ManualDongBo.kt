@@ -130,6 +130,77 @@ class ManualDongBo {
     }
 
     /**
+     * Thu lenh TUCHOI cho bai khong con trong hang cho, qua dung duong Firestore.
+     *
+     * Dat hai bai thu khong nam trong hang cho: mot bai hom qua van ghi CHO, y nhu bai
+     * 20:29 ngay 24/9/2026, va mot bai da duyet. Go lenh TUCHOI cho ca hai nhu app Bang
+     * dieu khien van go. Bai CHO phai thanh TUCHOI, con bai da duyet phai giu nguyen.
+     * Chay xong xoa hai bai thu.
+     */
+    @Test
+    fun tuChoiBaiDaBoThu() {
+        DongBo.batDau(context)
+        val maNha = DongBo.maNhaHienTai(context)
+        if (maNha.isEmpty()) {
+            println("MANUAL_DONGBO: may nay chua lap nha, khong thu duoc")
+            return
+        }
+        val nha = com.google.firebase.firestore.FirebaseFirestore.getInstance()
+            .collection("nha").document(maNha)
+        val batDau = System.currentTimeMillis()
+        val quaNgay = nha.collection("bai").document("thu-qua-ngay-$batDau")
+        val daDuyet = nha.collection("bai").document("thu-da-duyet-$batDau")
+
+        fun cho(viec: com.google.android.gms.tasks.Task<*>) {
+            val xong = CountDownLatch(1)
+            viec.addOnCompleteListener { xong.countDown() }
+            xong.await(20, TimeUnit.SECONDS)
+        }
+
+        fun trangThai(d: com.google.firebase.firestore.DocumentReference): String {
+            val xong = CountDownLatch(1)
+            var tt = "khong doc duoc"
+            d.get(com.google.firebase.firestore.Source.SERVER).addOnCompleteListener {
+                tt = it.result?.getString("trangThai") ?: "khong co"
+                xong.countDown()
+            }
+            xong.await(20, TimeUnit.SECONDS)
+            return tt
+        }
+
+        val homQua = batDau - 24 * 3_600_000L
+        cho(quaNgay.set(mapOf("luc" to homQua, "trangThai" to "CHO", "soPhut" to 0)))
+        cho(daDuyet.set(mapOf("luc" to batDau, "trangThai" to "DUYET", "soPhut" to 30)))
+
+        listOf(quaNgay.id, daDuyet.id).forEach { id ->
+            cho(
+                nha.collection("lenh").add(
+                    mapOf("kieu" to "TUCHOI", "ai" to "bahuy", "baiId" to id, "tao" to batDau)
+                )
+            )
+        }
+
+        var ttQuaNgay = trangThai(quaNgay)
+        while (ttQuaNgay == "CHO" && System.currentTimeMillis() - batDau < 30_000L) {
+            Thread.sleep(1_000)
+            ttQuaNgay = trangThai(quaNgay)
+        }
+        // Lenh thu hai den sau lenh dau, cho them mot nhip cho chac.
+        Thread.sleep(3_000)
+        val ttDaDuyet = trangThai(daDuyet)
+
+        cho(quaNgay.delete())
+        cho(daDuyet.delete())
+
+        println(
+            "MANUAL_DONGBO: tuchoi bai qua ngay -> $ttQuaNgay" +
+                (if (ttQuaNgay == "TUCHOI") " (dung)" else " (SAI)") +
+                ", bai da duyet -> $ttDaDuyet" +
+                (if (ttDaDuyet == "DUYET") " (dung)" else " (SAI)")
+        )
+    }
+
+    /**
      * Thu duong TINCO qua Firestore: go mot lenh tin cua co nhu app Bang dieu khien van
      * go, roi xem tablet co cat tin vao kho va tra loi khong.
      *
