@@ -181,7 +181,7 @@ class SoatBaiActivity : AppCompatActivity() {
         binding.danhSach.removeAllViews()
         binding.danhSach.addView(
             TextView(this).apply {
-                text = "Hôm nay máy không tự chấm. Con cứ gửi, " +
+                text = "Hôm nay máy không tự chấm. ${getString(R.string.child_name)} cứ gửi, " +
                     "${getString(R.string.parent_name)} chấm xong là có giờ."
                 textSize = 16f
                 setTextColor(ContextCompat.getColor(this@SoatBaiActivity, R.color.ink))

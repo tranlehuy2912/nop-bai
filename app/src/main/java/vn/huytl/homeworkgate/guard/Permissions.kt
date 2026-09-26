@@ -274,7 +274,7 @@ object Permissions {
                 Thieu(
                     Viec.DOC_THONG_BAO,
                     "Chưa cho app đọc thông báo",
-                    "Thiếu thì hết giờ con vẫn có thể bấm Phát nhạc ở thanh thông báo: " +
+                    "Thiếu thì hết giờ Lê Hòa vẫn có thể bấm Phát nhạc ở thanh thông báo: " +
                         "máy không biết app nào đang phát để dừng đúng app đó, " +
                         "và không đếm được số phút nghe nhạc nền.",
                     nang = true

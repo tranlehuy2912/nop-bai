@@ -260,7 +260,8 @@ class HocThuocActivity : AppCompatActivity() {
         ChonHocToi.hoi(
             this,
             tieuDe = "${bo.ten}: lớp đã học tới bài nào?",
-            goiY = "Tính cả bài đang học. Máy chỉ hỏi từ bài đầu tới hết bài con chọn. " +
+            goiY = "Tính cả bài đang học. Máy chỉ hỏi từ bài đầu tới hết bài " +
+                "${getString(R.string.child_name)} chọn. " +
                 "Không thấy bài đang học thì chọn bài gần nhất phía trên nó.",
             cacMuc = cacMuc,
             dangChon = dangChon

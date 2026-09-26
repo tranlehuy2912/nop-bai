@@ -20,6 +20,14 @@ package vn.huytl.homeworkgate.ai
  * lach may, vi may thi de qua mat hon nguoi that. Trong app, phia con KHONG bao gio
  * nhac den AI; phia Telegram cua Ba Huy thi noi ro la AI cham.
  *
+ * Ngay 26/9/2026 Ba Huy muon man cua Le Hoa goi con bang ten, khong goi "con". Chi
+ * [CAU_LENH_GIAI_THICH] doi theo: cau sai nao cung lay loi cua lan goi do lam nhan
+ * xet. Thu doi ca quy tac "nhan_xet" cua [CAU_LENH] thi, cung ba tam anh bai 2.26,
+ * cau 2.26c (con lam dung) duoc cham dung 1/6 lan, con ban cu 5/6 lan. Nen ba cau
+ * lenh co cham diem van goi "con". Nhan xet cua [CAU_LENH] va [CAU_LENH_KHAI_BAI] chi
+ * hien khi lan goi giai thich hong, cua [CAU_LENH_DOC_LAI] thi hien thang; man ket qua
+ * bo chu "Con" o dau goi y, xem [vn.huytl.homeworkgate.ui.KetQuaActivity].
+ *
  * Ban thu sau them "bai_duoc_giao" (ngay 14/9/2026). Vo dan do hom do khong giao
  * bai tap nao - chi "tiet sau kiem tra tu vung", "tiet sau kiem tra bai 2 bai 3",
  * "mang sach vo day du" - ma may van tra "lam_het_dan_do": true, tuc la 45 phut
@@ -182,14 +190,14 @@ TRƯỚC KHI TRẢ LỜI, KIỂM TRA LẠI:
     val CAU_LENH_GIAI_THICH = """
 Học sinh làm sai mấy câu dưới đây. Chỉ cho học sinh chỗ sai để tự sửa.
 
-Các câu sai (mã | đề | kết quả em viết):
+Các câu sai (mã | đề | kết quả học sinh viết):
 {DANH_SACH}
 
 Chỉ trả về JSON, không thêm chữ nào khác:
-{"giai_thich":[{"ma":"2.27a","loi":"Dòng 2: con viết \"= 2(x+y)(...)\" là sai, ... (chỉ rõ dòng nào, chép lại đoạn sai)"}]}
+{"giai_thich":[{"ma":"2.27a","loi":"Dòng 2: Lê Hòa viết \"= 2(x+y)(...)\" là sai, ... (chỉ rõ dòng nào, chép lại đoạn sai)"}]}
 
 Quy tắc:
-- Mỗi câu 1-2 câu văn, viết cho học sinh đọc, gọi học sinh là "con". Tối đa 30 chữ.
+- Mỗi câu 1-2 câu văn, viết cho học sinh đọc, không gọi học sinh là "con" hay "em", cần nhắc tới học sinh thì gọi là "Lê Hòa". Tối đa 30 chữ.
 - BẮT BUỘC chép lại đoạn viết sai ra và nói sai ở đâu. Cấm viết chung chung kiểu "cần kiểm tra lại các bước".
 - Cấm chữ "Hãy", cấm chữ "nhé", cấm dấu chấm than, cấm khen. Mở đầu bằng số dòng nếu chỉ ra được dòng.
 - KHÔNG đưa đáp án đúng. Chỉ nói sai chỗ nào để học sinh tự làm lại.

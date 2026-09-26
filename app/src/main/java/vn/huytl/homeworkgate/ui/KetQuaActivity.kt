@@ -108,8 +108,8 @@ class KetQuaActivity : AppCompatActivity() {
         ds.forEach { binding.danhSach.addView(theBai(it)) }
         binding.danhSach.addView(
             chu(
-                "Máy chấm có thể nhầm. Câu nào con chắc mình làm đúng mà máy bảo sai thì " +
-                    "nhắn ${getString(R.string.parent_name_cap)} nhé.",
+                "Máy chấm có thể nhầm. Câu nào ${getString(R.string.child_name)} chắc mình làm " +
+                    "đúng mà máy bảo sai thì nhắn ${getString(R.string.parent_name_cap)} nhé.",
                 13f, mau = R.color.ink_soft
             ).apply { (layoutParams as LinearLayout.LayoutParams).topMargin = dp(4) }
         )
@@ -206,17 +206,21 @@ class KetQuaActivity : AppCompatActivity() {
         val viet = cl?.conViet?.takeIf { it.isNotBlank() } ?: c.ketQua
         if (viet.isNotBlank()) {
             cot.addView(
-                chu("Con viết: $viet", 15f)
+                chu("${getString(R.string.child_name)} viết: $viet", 15f)
                     .apply { (layoutParams as LinearLayout.LayoutParams).topMargin = dp(4) }
             )
         }
 
         val mayDung = c.docRo && c.dung
-        val goiY = cl?.goiY?.trim()?.takeIf { it.isNotEmpty() } ?: c.nhanXet.trim()
+        val goiY = boConDau(cl?.goiY?.trim()?.takeIf { it.isNotEmpty() } ?: c.nhanXet.trim())
         when {
             c.chuaRo -> cot.addView(chu("Máy đọc không rõ câu này.", 14f, mau = R.color.wait))
             cl != null && cl.dung && !mayDung -> cot.addView(
-                ghiChu("Máy chấm nhầm. Claude chấm lại thấy câu này con làm đúng.", R.color.ok)
+                ghiChu(
+                    "Máy chấm nhầm. Claude chấm lại thấy câu này " +
+                        "${getString(R.string.child_name)} làm đúng.",
+                    R.color.ok
+                )
             )
             cl != null && !cl.dung && mayDung -> cot.addView(
                 ghiChu(
@@ -234,6 +238,21 @@ class KetQuaActivity : AppCompatActivity() {
     private fun ghiChu(noi: String, mau: Int): TextView =
         chu(noi, 14f, mau = mau).apply {
             (layoutParams as LinearLayout.LayoutParams).topMargin = dp(2)
+        }
+
+    /**
+     * Bo chu "Con" o dau goi y: "Con sửa dấu ở dòng 2." thanh "Sửa dấu ở dòng 2."
+     *
+     * Truoc ngay 26/9/2026 loi nho gui Claude dan goi hoc sinh la "con", nen goi y trong
+     * cac ban cham cu van mo dau bang chu do. Nhan xet cua may cham cung co the nhu vay,
+     * vi cau lenh cham cua may van goi "con", xem [vn.huytl.homeworkgate.ai.PromptCham].
+     * Ba Huy muon man nay chi ghi "Sửa ...", cho nao can goi thi goi ten.
+     */
+    private fun boConDau(goiY: String): String =
+        if (goiY.startsWith("Con ")) {
+            goiY.removePrefix("Con ").trimStart().replaceFirstChar { it.titlecase(VN) }
+        } else {
+            goiY
         }
 
     // -------------------------------------------------------------- ve vat

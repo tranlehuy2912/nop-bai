@@ -379,7 +379,8 @@ object ThiHanhLenh {
         )
         SoCaiBai.datLoiNhan(
             context,
-            "Ba Huy chấm lại: câu $ke con làm đúng rồi, máy chấm nhầm." +
+            "Ba Huy chấm lại: câu $ke ${context.getString(R.string.child_name)} làm đúng rồi, " +
+                "máy chấm nhầm." +
                 if (phut > 0) " Được thêm $phut phút." else ""
         )
         val boQua = if (chuanBi.boQua.isEmpty()) "" else {

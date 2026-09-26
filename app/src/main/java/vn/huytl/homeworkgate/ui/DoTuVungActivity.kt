@@ -258,7 +258,8 @@ class DoTuVungActivity : AppCompatActivity() {
         ChonHocToi.hoi(
             this,
             tieuDe = "${bo.ten}: lớp đã học tới Unit nào?",
-            goiY = "Tính cả Unit đang học. Máy chỉ hỏi từ của Unit 1 tới hết Unit con chọn.",
+            goiY = "Tính cả Unit đang học. Máy chỉ hỏi từ của Unit 1 tới hết Unit " +
+                "${getString(R.string.child_name)} chọn.",
             cacMuc = cacMuc,
             dangChon = dangChon
         ) { i ->

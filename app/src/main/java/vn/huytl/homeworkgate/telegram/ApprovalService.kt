@@ -1671,7 +1671,7 @@ class ApprovalService : Service() {
                 bang.phut > 0 && sai.isEmpty() && thieu.isEmpty() && vuaGo.isNotEmpty() -> {
                     val ten = vuaGo.take(3).joinToString(", ") { it.first.ma } +
                         if (vuaGo.size > 3) " và ${vuaGo.size - 3} câu nữa" else ""
-                    "Câu $ten con làm sai rồi sửa lại đúng. Được thêm ${bang.phut} phút."
+                    "Câu $ten $con làm sai rồi sửa lại đúng. Được thêm ${bang.phut} phút."
                 }
                 bang.phut > 0 && sai.isEmpty() && thieu.isEmpty() ->
                     "Bài tốt! Được thêm ${bang.phut} phút."
@@ -1684,16 +1684,16 @@ class ApprovalService : Service() {
                 // Cau bi loc ra o lan on tap la cau CHUA DEN HEN, khong phai cau
                 // "da on roi". Luat cu chi cho on mot lan, cau nay con sot lai tu do.
                 onTap && moi.isEmpty() && trung > 0 ->
-                    "Mấy câu này chưa đến hẹn ôn lại. Máy nhắc con khi đến lúc nhé."
+                    "Mấy câu này chưa đến hẹn ôn lại. Máy nhắc $con khi đến lúc nhé."
                 moi.isEmpty() && trung > 0 ->
                     "Mấy bài này chấm hôm trước rồi, làm bài mới thì mới được cộng giờ nhé."
                 // Ca xap chi co dap an: noi thang cho con biet phai chup them cai gi,
                 // dung de no ngoi doan vi sao nop ma khong duoc gi.
                 coDe.isEmpty() && khongCoDe.isNotEmpty() ->
                     "Ảnh chỉ có đáp án, không có đề bài nên máy không chấm được. " +
-                        "Con chụp thêm trang đề giúp nhé."
+                        "$con chụp thêm trang đề giúp nhé."
                 khongCoDe.isNotEmpty() ->
-                    "Có ${khongCoDe.size} câu không thấy đề bài. Con chụp thêm trang đề nhé."
+                    "Có ${khongCoDe.size} câu không thấy đề bài. $con chụp thêm trang đề nhé."
                 thieu.isNotEmpty() && sai.isEmpty() ->
                     "Chưa thấy bài làm của ${keTenCau(thieu)} trong ảnh. Chụp lại cho rõ nhé."
                 sai.isEmpty() -> "Chưa cộng giờ được cho bài này."
@@ -1702,10 +1702,10 @@ class ApprovalService : Service() {
         // Mot cau ve loi khai, dat sau cau chinh. Chi noi khi co gi dang noi.
         val doiChieu = when {
             hutTay.isNotEmpty() ->
-                " Câu ${hutTay.joinToString(", ") { it.ma }} con thấy chắc mà lại sai, " +
+                " Câu ${hutTay.joinToString(", ") { it.ma }} $con thấy chắc mà lại sai, " +
                     "xem kỹ chỗ đó nhé."
             batNgo.isNotEmpty() ->
-                " Mấy câu con bảo chưa chắc (${batNgo.joinToString(", ") { it.ma }}) " +
+                " Mấy câu $con bảo chưa chắc (${batNgo.joinToString(", ") { it.ma }}) " +
                     "hoá ra đúng hết."
             else -> ""
         }
