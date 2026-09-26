@@ -2,7 +2,7 @@
  "nguon": "sbttoan8t2",
  "mon": "Toán",
  "ten": "SBT Toán 8 — tập hai",
- "ban": 1,
+ "ban": 2,
  "cac_bai": [
   {
    "chuong": "Chương VI. Phân thức đại số",
@@ -13,35 +13,45 @@
      "de": "Viết phân thức với tử và mẫu lần lượt là a) 2x − 1 và x + 1; b) x^2 − x và −2; c) 3 và 2x + 5.",
      "trang": 4,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "a) (2x − 1)/(x + 1); b) (x^2 − x)/(−2); c) 3/(2x + 5)",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "6.2",
      "de": "Viết điều kiện xác định của các phân thức sau: a) (2x + 1)/(x^2 − 1); b) (x^3 + 1)/(x^2 − x + 1); c) (2x^2 + 1)/(3x − 1).",
      "trang": 4,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "a) x^2 − 1 ≠ 0, tức x ≠ 1 và x ≠ −1; b) x^2 − x + 1 ≠ 0, đúng với mọi x; c) 3x − 1 ≠ 0, tức x ≠ 1/3",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "6.3",
      "de": "Viết phân thức có tử thức là 2x^2 − 1 và mẫu thức là 2x + 1. Viết điều kiện xác định của phân thức nhận được. Tính giá trị của phân thức đó tại x = −3.",
      "trang": 4,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "Phân thức (2x^2 − 1)/(2x + 1); điều kiện xác định 2x + 1 ≠ 0 (x ≠ −1/2); tại x = −3 giá trị là −3,4",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "6.4",
      "de": "Giải thích vì sao hai phân thức sau bằng nhau: (x^2 − x − 2)/(x + 1) và (x^2 − 3x + 2)/(x − 1).",
      "trang": 4,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "Ta có (x^2 − x − 2)(x − 1) = x^3 − 2x^2 − x + 2 và (x + 1)(x^2 − 3x + 2) = x^3 − 2x^2 − x + 2. Suy ra (x^2 − x − 2)(x − 1) = (x + 1)(x^2 − 3x + 2), do đó (x^2 − x − 2)/(x + 1) = (x^2 − 3x + 2)/(x − 1).",
+     "loai_dap_an": "LOI_GIAI"
     },
     {
      "ma": "6.5",
      "de": "Tìm tập hợp các giá trị nguyên của x sao cho P(x) = 2/(x + 1) có giá trị là số nguyên.",
      "trang": 4,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "{0; −2; 1; −3}",
+     "loai_dap_an": "DAP_SO"
     }
    ]
   },
@@ -54,84 +64,108 @@
      "de": "Dùng tính chất cơ bản của phân thức, chứng minh (x^4 − 1)/(x − 1) = x^3 + x^2 + x + 1.",
      "trang": 6,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "x^4 − 1 = (x^2)^2 − 1 = (x^2 − 1)(x^2 + 1) = (x − 1)(x + 1)(x^2 + 1) nên tử và mẫu có nhân tử chung x − 1. Chia cả tử và mẫu cho x − 1 được (x^4 − 1)/(x − 1) = x^3 + x^2 + x + 1.",
+     "loai_dap_an": "LOI_GIAI"
     },
     {
      "ma": "6.7",
      "de": "Sử dụng tính chất cơ bản của phân thức và quy tắc đổi dấu, viết phân thức 24x^2y^2/(3xy^5) thành một phân thức có mẫu là −y^3 rồi tìm đa thức B trong đẳng thức 24x^2y^2/(3xy^5) = B/(−y^3).",
      "trang": 6,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "24x^2y^2/(3xy^5) = 8x/y^3 = −8x/(−y^3); B = −8x",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "6.8",
      "de": "Rút gọn phân thức (x − x^2)/(5x^2 − 5) rồi tìm đa thức A trong đẳng thức (x − x^2)/(5x^2 − 5) = x/A.",
      "trang": 7,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "(x − x^2)/(5x^2 − 5) = x/(−5(1 + x)); A = −5(1 + x)",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "6.9",
      "de": "Rút gọn phân thức (2x + 2xy + y + y^2)/(y^3 + 3y^2 + 3y + 1).",
      "trang": 7,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "(2x + y)/(y + 1)^2",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "6.10a",
      "de": "Rút gọn rồi tính giá trị của phân thức P = ((2x^2 + 2x)(2 − x)^2)/((x^3 − 4x)(x + 1)) với x = 0,5.",
      "trang": 7,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "P = 2(x − 2)/(x + 2); tại x = 0,5 thì P = −1,2",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "6.10b",
      "de": "Rút gọn rồi tính giá trị của phân thức Q = (x^3 − x^2y + xy^2)/(x^3 + y^3) với x = −5; y = 10.",
      "trang": 7,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "Q = x/(x + y); tại x = −5, y = 10 thì Q = −1",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "6.11a",
      "de": "Quy đồng mẫu thức các phân thức 25/(14x^2y) và 14/(21xy^5).",
      "trang": 7,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "MTC = 42x^2y^5; 25/(14x^2y) = 75y^4/(42x^2y^5); 14/(21xy^5) = 28x/(42x^2y^5)",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "6.11b",
      "de": "Quy đồng mẫu thức các phân thức (4x − 4)/(2x(x + 3)) và (x − 3)/(3x(x + 1)).",
      "trang": 7,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "MTC = 3x(x + 3)(x + 1); (4x − 4)/(2x(x + 3)) = (6x − 6)(x + 1)/(3x(x + 3)(x + 1)); (x − 3)/(3x(x + 1)) = (x − 3)(x + 3)/(3x(x + 3)(x + 1))",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "6.12",
      "de": "Tìm mẫu thức chung của ba phân thức sau: 1/(x^2 − x); x/(1 − x^3) và −1/(x^2 + x + 1). Quy đồng mẫu thức ba phân thức đã cho với mẫu thức chung tìm được.",
      "trang": 7,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "MTC = x(x − 1)(x^2 + x + 1) = x(x^3 − 1); 1/(x^2 − x) = (x^2 + x + 1)/(x(x^3 − 1)); x/(1 − x^3) = −x^2/(x(x^3 − 1)); −1/(x^2 + x + 1) = −x(x − 1)/(x(x^3 − 1))",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "6.13a",
      "de": "Quy đồng mẫu thức các phân thức 1/(x^2y); 1/(y^2z) và 1/(z^2x).",
      "trang": 7,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "MTC = x^2y^2z^2; 1/(x^2y) = yz^2/(x^2y^2z^2); 1/(y^2z) = zx^2/(x^2y^2z^2); 1/(z^2x) = xy^2/(x^2y^2z^2)",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "6.13b",
      "de": "Quy đồng mẫu thức các phân thức 1/(1 − x); 1/(x + 1) và 1/(x^2 + 1).",
      "trang": 7,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "MTC = (1 − x)(1 + x)(x^2 + 1) = 1 − x^4; 1/(1 − x) = (1 + x)(1 + x^2)/(1 − x^4); 1/(x + 1) = (1 − x)(1 + x^2)/(1 − x^4); 1/(x^2 + 1) = (1 − x^2)/(1 − x^4)",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "6.14",
      "de": "Cho x, y, z thoả mãn x + y + z = 0 và x ≠ 0, y ≠ z. Hãy rút gọn phân thức x/(y^2 − z^2).",
      "trang": 7,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "x/(y^2 − z^2) = −1/(y − z)",
+     "loai_dap_an": "DAP_SO"
     }
    ]
   },
@@ -144,154 +178,198 @@
      "de": "Tính tổng (x^2 − 2)/(x(x − 1)^2) + (2 − x)/(x(x − 1)^2).",
      "trang": 9,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "1/(x − 1)",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "6.15b",
      "de": "Tính tổng (1 − 2x)/(6x^3y) + (3 + 2x)/(6x^3y) + (2x − 4)/(6x^3y).",
      "trang": 9,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "1/(3x^2y)",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "6.16a",
      "de": "Tính hiệu (2x^2 − 1)/(x^2 − 3x) − ((x − 1)(x + 1))/(x^2 − 3x).",
      "trang": 9,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "x/(x − 3)",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "6.16b",
      "de": "Tính hiệu 1/(2x − 3) − 13/((2x − 3)(4x + 7)).",
      "trang": 9,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "2/(4x + 7)",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "6.17a",
      "de": "Tính: (5x + y^2)/(x^2y) − (5y − x^2)/(xy^2).",
      "trang": 9,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "(x^3 + y^3)/(x^2y^2)",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "6.17b",
      "de": "Tính: y/(2x^2 − xy) + 4x/(y^2 − 2xy).",
      "trang": 9,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "−(2x + y)/(xy)",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "6.18a",
      "de": "Tính tổng 5/(6x^2y) + 7/(12xy^2) + 11/(18xy).",
      "trang": 9,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "(30y + 21x + 22xy)/(36x^2y^2)",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "6.18b",
      "de": "Tính tổng (x^3 + 2x)/(x^3 + 1) + 2x/(x^2 − x + 1) + 1/(x + 1).",
      "trang": 9,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "(x + 1)^2/(x^2 − x + 1)",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "6.19a",
      "de": "Rút gọn biểu thức P = x^4/(1 − x) + x^3 + x^2 + x + 1.",
      "trang": 9,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "P = 1/(1 − x)",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "6.19b",
      "de": "Cho biểu thức P = x^4/(1 − x) + x^3 + x^2 + x + 1. Tính giá trị của P tại x = −99.",
      "trang": 9,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "P = 0,01",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "6.20a",
      "de": "Rút gọn biểu thức Q = 18/((x − 3)(x^2 − 9)) − 3/(x^2 − 6x + 9) − x/(x^2 − 9).",
      "trang": 10,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "Q = −1/(x − 3)",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "6.20b",
      "de": "Cho biểu thức Q = 18/((x − 3)(x^2 − 9)) − 3/(x^2 − 6x + 9) − x/(x^2 − 9). Tính giá trị của Q tại x = 103.",
      "trang": 10,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "Q = −0,01",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "6.21a",
      "de": "Chứng minh rằng nếu a, b, c ≠ 0, a + b + c = 0 thì 1/(ab) + 1/(bc) + 1/(ca) = 0.",
      "trang": 10,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "Quy đồng với mẫu chung abc: 1/(ab) + 1/(bc) + 1/(ca) = (c + a + b)/(abc) = 0/(abc) = 0 vì a + b + c = 0.",
+     "loai_dap_an": "LOI_GIAI"
     },
     {
      "ma": "6.21b",
      "de": "Chứng minh rằng nếu x ≠ y, y ≠ z, z ≠ x thì 1/((x − y)(y − z)) + 1/((y − z)(z − x)) + 1/((z − x)(x − y)) = 0.",
      "trang": 10,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "Quy đồng với mẫu chung (x − y)(y − z)(z − x): tổng bằng ((z − x) + (x − y) + (y − z))/((x − y)(y − z)(z − x)) = 0/((x − y)(y − z)(z − x)) = 0.",
+     "loai_dap_an": "LOI_GIAI"
     },
     {
      "ma": "6.22",
      "de": "Cho biểu thức P = x/(y − 2) + (2x − 3y)/(x − 6). Chứng minh rằng khi x, y thay đổi luôn thoả mãn điều kiện 3y − x = 6 thì P có giá trị không đổi.",
      "trang": 10,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "Từ 3y − x = 6 suy ra x = 3y − 6 và 3y = x + 6. Do đó x/(y − 2) = (3y − 6)/(y − 2) = 3 và (2x − 3y)/(x − 6) = (2x − (x + 6))/(x − 6) = 1. Vậy P = 4, không đổi.",
+     "loai_dap_an": "LOI_GIAI"
     },
     {
      "ma": "6.23a",
      "de": "Cho biểu thức P = (2x − 6)/(x^3 − 3x^2 − x + 3) + 2x^2/(1 − x^2) − 6/(x − 3) (x ≠ 3, x ≠ 1, x ≠ −1). Rút gọn phân thức (2x − 6)/(x^3 − 3x^2 − x + 3).",
      "trang": 10,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "2/(x^2 − 1)",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "6.23b",
      "de": "Cho biểu thức P = (2x − 6)/(x^3 − 3x^2 − x + 3) + 2x^2/(1 − x^2) − 6/(x − 3) (x ≠ 3, x ≠ 1, x ≠ −1). Chứng tỏ rằng có thể viết P = a + b/(x − 3) trong đó a, b là những hằng số.",
      "trang": 10,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "Theo câu a: P = 2/(x^2 − 1) + 2x^2/(1 − x^2) − 6/(x − 3) = −2/(1 − x^2) + 2x^2/(1 − x^2) − 6/(x − 3) = (2x^2 − 2)/(1 − x^2) − 6/(x − 3) = −2 + (−6)/(x − 3). Vậy P = a + b/(x − 3) với a = −2, b = −6.",
+     "loai_dap_an": "LOI_GIAI"
     },
     {
      "ma": "6.23c",
      "de": "Cho biểu thức P = (2x − 6)/(x^3 − 3x^2 − x + 3) + 2x^2/(1 − x^2) − 6/(x − 3) (x ≠ 3, x ≠ 1, x ≠ −1). Tìm tập hợp các giá trị nguyên của x để P có giá trị là số nguyên.",
      "trang": 10,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "{4; 5; 6; 9; 2; 0; −3}",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "6.24a",
      "de": "Rút gọn biểu thức P = (x^2 + 2x)/(x^3 − 1) − 1/(x^2 − x) − 1/(x^2 + x + 1) (x ≠ 0, x ≠ 1).",
      "trang": 10,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "P = 1/x",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "6.24b",
      "de": "Cho biểu thức P = (x^2 + 2x)/(x^3 − 1) − 1/(x^2 − x) − 1/(x^2 + x + 1) (x ≠ 0, x ≠ 1). Chứng tỏ rằng chỉ có một giá trị nguyên của x để P cũng nhận giá trị nguyên.",
      "trang": 10,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "Theo câu a, P = 1/x. Nếu x, P đều nguyên thì x là ước nguyên của 1, do đó x ∈ {1; −1}. Loại x = 1 vì không thoả mãn điều kiện x ≠ 0, x ≠ 1. Vậy chỉ có x = −1 để P nhận giá trị nguyên.",
+     "loai_dap_an": "LOI_GIAI"
     },
     {
      "ma": "6.25",
      "de": "Một tàu chở hàng đi từ cảng A đến cảng B cách nhau 900 km với vận tốc không đổi là x (km/h). Khi đi được 1/3 quãng đường thì một động cơ của tàu bị hỏng nên tàu chỉ còn chạy với vận tốc 12 km/h trong suốt 3 giờ tàu sửa chữa động cơ. Để về cảng B không muộn hơn dự định, tàu phải tăng vận tốc thêm 5 km/h. Viết phân thức tính thời gian thực tế để tàu đi từ cảng A đến cảng B.",
      "trang": 10,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "300/x + 3 + 564/(x + 5) = (3x^2 + 879x + 1 500)/(x(x + 5)) (giờ)",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "6.26",
      "de": "Cho hai hình hộp chữ nhật bằng nhau cùng có thể tích 200 cm^3 và một hình hộp chữ nhật có thể tích 500 cm^3 sắp xếp như trong hình bên (Hình bên: hình hộp 500 cm^3 có mặt trước là hình chữ nhật ABDF, cạnh đáy AF = x + 2, các cạnh đứng AB và FD; một hình hộp 200 cm^3 đặt chồng lên trên, cạnh đứng BC nối tiếp AB (A, B, C thẳng hàng); hình hộp 200 cm^3 thứ hai đặt sát bên phải, mặt trước có cạnh đáy x + 1 bắt đầu từ F và cạnh đứng FE, E nằm trên FD; hai hình hộp 200 cm^3 đặt cùng chiều; cả ba hình hộp có chiều sâu x) (độ dài các cạnh hình hộp được tính bằng đơn vị cm). Viết các phân thức biểu thị độ dài (tính bằng cm) của các đoạn thẳng AC và DE.",
      "trang": 10,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "AC = 500/(x(x + 2)) + 200/(x(x + 1)) = 100(7x + 9)/(x(x + 1)(x + 2)) (cm); DE = 500/(x(x + 2)) − 200/(x(x + 1)) = 100(3x + 1)/(x(x + 1)(x + 2)) (cm)",
+     "loai_dap_an": "DAP_SO"
     }
    ]
   },
@@ -304,112 +382,144 @@
      "de": "Thực hiện phép tính 2x^3/(5y^2) · 125y^5/(8x).",
      "trang": 12,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "25x^2y^3/4",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "6.27b",
      "de": "Thực hiện phép tính 24y^5/(7x^2) · (−21x/(12y^3)).",
      "trang": 12,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "−6y^2/x",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "6.28a",
      "de": "Tính: (x^2 − 6x + 9)/(x^2 − 3x + 9) · (x^3 + 27)/(3x − 9).",
      "trang": 12,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "(x^2 − 9)/3",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "6.28b",
      "de": "Tính: (2x^2 − 20x + 50)/(3x + 3) · (x^2 − 1)/(4(x − 5)^3).",
      "trang": 12,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "(x − 1)/(6(x − 5))",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "6.29a",
      "de": "Tính: (x^2 − y^2)/(6x^2y) : (x + y)/(3xy).",
      "trang": 12,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "(x − y)/(2x)",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "6.29b",
      "de": "Tính: 16x^2y^2 : (−18x^2y^5/5).",
      "trang": 12,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "−40/(9y^3)",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "6.29c",
      "de": "Tính: (1 − 4x^2)/(x^2 + 4x) : (2 − 4x)/(3x).",
      "trang": 12,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "3(1 + 2x)/(2(x + 4))",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "6.30a",
      "de": "Thực hiện phép tính (1/(x^2 + x) − (2 − x)/(x + 1)) : (1/x + x − 2).",
      "trang": 12,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "1/(x + 1)",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "6.30b",
      "de": "Thực hiện phép tính (3x/(1 − 3x) + 2x/(3x + 1)) : (6x^2 + 10x)/(1 − 6x + 9x^2).",
      "trang": 12,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "(1 − 3x)/(2(1 + 3x))",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "6.31a",
      "de": "Rút gọn biểu thức (9/(x^3 − 9x) + 1/(x + 3)) : ((x − 3)/(x^2 + 3x) − x/(3x + 9)).",
      "trang": 13,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "−3/(x − 3)",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "6.31b",
      "de": "Rút gọn biểu thức (x + 1)/(x + 2) · ((x + 2)/(x + 3) : (x + 3)/(x + 1)).",
      "trang": 13,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "(x + 1)^2/(x + 3)^2",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "6.32a",
      "de": "Cho biểu thức P = (1/(x − 1) − x/(1 − x^3) · (x^2 + x + 1)/(x + 1)) : (2x + 1)/(x^2 + 2x + 1). Viết điều kiện xác định của P.",
      "trang": 13,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "x − 1 ≠ 0; 1 − x^3 ≠ 0; x + 1 ≠ 0; 2x + 1 ≠ 0 và x^2 + 2x + 1 ≠ 0, tức x ≠ 1; x ≠ −1; x ≠ −1/2",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "6.32b",
      "de": "Cho biểu thức P = (1/(x − 1) − x/(1 − x^3) · (x^2 + x + 1)/(x + 1)) : (2x + 1)/(x^2 + 2x + 1). Rút gọn biểu thức P.",
      "trang": 13,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "P = (x + 1)/(x − 1)",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "6.32c",
      "de": "Cho biểu thức P = (1/(x − 1) − x/(1 − x^3) · (x^2 + x + 1)/(x + 1)) : (2x + 1)/(x^2 + 2x + 1). Tính giá trị của P khi x = 1/2.",
      "trang": 13,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "P = −3",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "6.33a",
      "de": "Hai công nhân cùng làm một mặt hàng. Người công nhân thứ nhất làm được 1 000 sản phẩm trong x (giờ); người công nhân thứ hai làm được 1 250 sản phẩm trong x + 10 (giờ). Viết các phân thức biểu thị số sản phẩm người công nhân thứ nhất làm được trong 1 giờ; số sản phẩm người công nhân thứ hai làm được trong 1 giờ; tỉ số giữa năng suất của người công nhân thứ hai so với năng suất của người công nhân thứ nhất.",
      "trang": 13,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "Người thứ nhất: 1 000/x (sản phẩm/giờ); người thứ hai: 1 250/(x + 10) (sản phẩm/giờ); tỉ số năng suất người thứ hai so với người thứ nhất: 1,25x/(x + 10)",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "6.33b",
      "de": "Hai công nhân cùng làm một mặt hàng. Người công nhân thứ nhất làm được 1 000 sản phẩm trong x (giờ); người công nhân thứ hai làm được 1 250 sản phẩm trong x + 10 (giờ). Tính giá trị tỉ số giữa năng suất của người công nhân thứ hai so với năng suất của người công nhân thứ nhất trong trường hợp x = 240. Hãy cho biết trong trường hợp này, năng suất lao động của người công nhân thứ hai tăng bao nhiêu phần trăm so với năng suất lao động của người công nhân thứ nhất.",
      "trang": 13,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "Tỉ số bằng 1,2 (tức 6/5); năng suất người thứ hai tăng 20% so với người thứ nhất",
+     "loai_dap_an": "DAP_SO"
     }
    ]
   },
@@ -422,140 +532,180 @@
      "de": "Biểu thức nào sau đây không phải là phân thức đại số? A. 2x + 1. B. √5. C. π. D. √x.",
      "trang": 14,
      "nhom": "Trắc nghiệm",
-     "dang": "TRAC_NGHIEM"
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "D",
+     "loai_dap_an": "TN"
     },
     {
      "ma": "Trắc nghiệm 2 (tr.14)",
      "de": "Phân thức nào sau đây bằng phân thức (16x^4 − 1)/(12x^3 − 3x)? A. (4x^2 − 1)/(3x). B. (4x^2 + 1)/(3x). C. (4x^2 − 1)/(4x − 3). D. (4x^2 + 1)/(4 − 3x).",
      "trang": 14,
      "nhom": "Trắc nghiệm",
-     "dang": "TRAC_NGHIEM"
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN"
     },
     {
      "ma": "Trắc nghiệm 3 (tr.14)",
      "de": "Đa thức nào sau đây không thể chọn làm mẫu thức chung của hai phân thức x/(3(x^2 − 1)(x + 2)) và (x^3 − x + 1)/((x^2 − 4)(x^3 + 1))? A. 3(x^2 − 1)(x^2 − 4)(x^2 − x + 1). B. 3(x^2 − 1)(x^2 − 4)(x^3 + 1). C. 3(x^2 − 1)(x^2 − 4)(x^2 + x + 1). D. 3(x^4 − 1)(x^6 − 1)(x^6 − 64).",
      "trang": 14,
      "nhom": "Trắc nghiệm",
-     "dang": "TRAC_NGHIEM"
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "C",
+     "loai_dap_an": "TN"
     },
     {
      "ma": "Trắc nghiệm 4 (tr.14)",
      "de": "Giá trị của phân thức (8x − 4)/(8x^3 − 1) tại x = −0,5 là A. 4. B. −4. C. 0,25. D. −0,25.",
      "trang": 14,
      "nhom": "Trắc nghiệm",
-     "dang": "TRAC_NGHIEM"
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN"
     },
     {
      "ma": "Trắc nghiệm 5 (tr.14)",
      "de": "Rút gọn biểu thức (x − 1)/(x^3 + 1) + (1 − 2x)/(x − 1) − (3x + 2)/(x^3 + 1) + (1 − x)/(x^3 + 1) + 3x/(x^3 + 1) + (1 − 2x)/(1 − x), ta được kết quả là A. 2/(x − 1). B. −2/(x^3 + 1). C. 2/(x^3 + 1). D. 2/(x + 1).",
      "trang": 14,
      "nhom": "Trắc nghiệm",
-     "dang": "TRAC_NGHIEM"
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN"
     },
     {
      "ma": "6.34a",
      "de": "Cho phân thức P = (x^2 − 4x + 3)/(x^2 − 9). Viết điều kiện xác định của phân thức. Tìm tập hợp tất cả các giá trị của x không thoả mãn điều kiện xác định.",
      "trang": 14,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "Điều kiện xác định: x^2 − 9 ≠ 0 (x ≠ 3 và x ≠ −3); tập hợp các giá trị không thoả mãn: {3; −3}",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "6.34b",
      "de": "Cho phân thức P = (x^2 − 4x + 3)/(x^2 − 9). Rút gọn phân thức đã cho.",
      "trang": 14,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "P = (x − 1)/(x + 3)",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "6.34c",
      "de": "Cho phân thức P = (x^2 − 4x + 3)/(x^2 − 9). Tìm tập hợp tất cả các giá trị nguyên của x để phân thức P nhận giá trị là số nguyên.",
      "trang": 14,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "{−7; −5; −4; −2; −1; 1}",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "6.35",
      "de": "Cho hai phân thức: P = 1/(2x^2 + 7x − 15) và Q = 1/(x^2 + 3x − 10). Có thể quy đồng mẫu thức hai phân thức đã cho với mẫu thức chung là M = 2x^3 + 3x^2 − 29x + 30 được không? Vì sao?",
      "trang": 15,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "Có. Chia M cho 2x^2 + 7x − 15 được thương x − 2, dư 0 nên M = (2x^2 + 7x − 15)(x − 2). Chia M cho x^2 + 3x − 10 được thương 2x − 3, dư 0 nên M = (x^2 + 3x − 10)(2x − 3). Vậy P = (x − 2)/M, Q = (2x − 3)/M, quy đồng được với mẫu thức chung M.",
+     "loai_dap_an": "LOI_GIAI"
     },
     {
      "ma": "6.36",
      "de": "Rút gọn biểu thức P = (x − (x^2 + y^2)/(x + y)) · (2x/y + 4x/(x − y)) : 1/y (y ≠ 0, y ≠ x, y ≠ −x).",
      "trang": 15,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "P = 2xy",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "6.37",
      "de": "Cho phân thức P = (x^2 − y^2)/((x + y)(ay − ax)) (a ≠ 0, y ≠ x, y ≠ −x). Chứng minh rằng P có giá trị không phụ thuộc vào x, y.",
      "trang": 15,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "P = (x + y)(x − y)/((x + y)a(y − x)) = −1/a, không phụ thuộc vào x, y.",
+     "loai_dap_an": "LOI_GIAI"
     },
     {
      "ma": "6.38",
      "de": "Biết x + y + z = 0 và x, y ≠ 0. Chứng minh phân thức xy/(x^2 + y^2 − z^2) có giá trị không đổi.",
      "trang": 15,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "Từ x + y + z = 0 suy ra z = −(x + y) nên x^2 + y^2 − z^2 = x^2 + y^2 − (x + y)^2 = −2xy. Do đó xy/(x^2 + y^2 − z^2) = xy/(−2xy) = −1/2, không đổi.",
+     "loai_dap_an": "LOI_GIAI"
     },
     {
      "ma": "6.39",
      "de": "Cho x + y + z = 0 và x, y, z ≠ 0. Rút gọn biểu thức sau: xy/(x^2 + y^2 − z^2) + yz/(y^2 + z^2 − x^2) + zx/(z^2 + x^2 − y^2).",
      "trang": 15,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "−3/2",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "6.40a",
      "de": "Cho phân thức P = (4x^2 + 2x + 3)/(2x + 1) (x ≠ −1/2). Tìm thương và dư của phép chia đa thức 4x^2 + 2x + 3 cho đa thức 2x + 1.",
      "trang": 15,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "Thương 2x, dư 3: 4x^2 + 2x + 3 = (2x + 1)·2x + 3",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "6.40b",
      "de": "Cho phân thức P = (4x^2 + 2x + 3)/(2x + 1) (x ≠ −1/2). Sử dụng kết quả của câu a, hãy viết P dưới dạng tổng của một đa thức và một phân thức với tử thức là một hằng số. Dùng kết quả đó để tìm tất cả các giá trị nguyên của x để phân thức đã cho có giá trị cũng là số nguyên.",
      "trang": 15,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "P = 2x + 3/(2x + 1); x ∈ {0; 1; −1; −2}",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "6.41a",
      "de": "Rút gọn biểu thức P = (x + 2)^2/x · (1 − x^2/(x + 2)) − (x^2 + 6x + 4)/x.",
      "trang": 15,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "P = −x^2 − 2x − 2",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "6.41b",
      "de": "Cho biểu thức P = (x + 2)^2/x · (1 − x^2/(x + 2)) − (x^2 + 6x + 4)/x. Tìm giá trị lớn nhất của P.",
      "trang": 15,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "Giá trị lớn nhất của P là −1, đạt tại x = −1",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "6.42",
      "de": "Cho phân thức P = (x^2 − 4x + 12)/(x^2 − 4x + 10). Đặt t = x − 2, hãy biểu diễn P dưới dạng một phân thức của biến t. Từ đó suy ra P luôn nhận giá trị dương.",
      "trang": 15,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "t = x − 2 suy ra t^2 = x^2 − 4x + 4, nên x^2 − 4x = t^2 − 4. Do đó P = (t^2 − 4 + 12)/(t^2 − 4 + 10) = (t^2 + 8)/(t^2 + 6) > 0 vì tử và mẫu đều dương.",
+     "loai_dap_an": "LOI_GIAI"
     },
     {
      "ma": "6.43a",
      "de": "Một bể chứa nước có hai vòi thoát. Biết rằng khi bể chứa đầy nước thì thời gian cần thiết để xả hết nước trong bể mà chỉ dùng vòi thứ nhất là x (giờ) và thời gian cần thiết để xả hết nước trong bể mà chỉ dùng vòi thứ hai là y (giờ). Viết phân thức biểu thị thời gian cần thiết để xả hết nước trong bể (khi bể chứa đầy nước) nếu mở cả hai vòi.",
      "trang": 15,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "xy/(x + y) (giờ)",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "6.43b",
      "de": "Một bể chứa nước có hai vòi thoát. Biết rằng khi bể chứa đầy nước thì thời gian cần thiết để xả hết nước trong bể mà chỉ dùng vòi thứ nhất là x (giờ) và thời gian cần thiết để xả hết nước trong bể mà chỉ dùng vòi thứ hai là y (giờ). Tính thời gian cần thiết để xả hết nước trong bể (khi bể chứa đầy nước) nếu mở cả hai vòi, biết rằng khi chỉ mở một vòi, vòi thứ nhất xả hết nước trong 2 giờ, vòi thứ hai xả hết nước trong 3 giờ.",
      "trang": 15,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "6/5 giờ, tức 1 giờ 12 phút",
+     "loai_dap_an": "DAP_SO"
     }
    ]
   },
@@ -568,154 +718,198 @@
      "de": "Giải phương trình 2x + 5 = 0.",
      "trang": 18,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "x = −5/2",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "7.1b",
      "de": "Giải phương trình 8 − 4x = 0.",
      "trang": 18,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "x = 2",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "7.1c",
      "de": "Giải phương trình (3/2)x + 9/4 = 0.",
      "trang": 18,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "x = −3/2",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "7.1d",
      "de": "Giải phương trình 0,2 − 2,5x = 0.",
      "trang": 18,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "x = 0,08",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "7.2a",
      "de": "Giải phương trình 4x − 2 = x + 5.",
      "trang": 18,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "x = 7/3",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "7.2b",
      "de": "Giải phương trình −2x − 5 = 5x − 7.",
      "trang": 18,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "x = 2/7",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "7.2c",
      "de": "Giải phương trình 2(2x − 1) = 5(x − 1).",
      "trang": 18,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "x = 3",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "7.2d",
      "de": "Giải phương trình 5(1 − 3x) = −2(4x + 5).",
      "trang": 18,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "x = 15/7",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "7.3a",
      "de": "Giải phương trình x/2 − 1/5 = 2 − x/3.",
      "trang": 18,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "x = 66/25",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "7.3b",
      "de": "Giải phương trình 1 − (x + 5)/3 = 3(x − 1)/4.",
      "trang": 18,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "x = 1/13",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "7.3c",
      "de": "Giải phương trình 6(x − 2)/7 − 12 = 2(x − 7)/3.",
      "trang": 18,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "x = 95/2",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "7.3d",
      "de": "Giải phương trình (7 − 2x)/2 − (2/5)(2 − x) = 1 1/4.",
      "trang": 18,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "x = 29/12",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "7.4a",
      "de": "Tìm tất cả các số thực a sao cho x = 4 là một nghiệm của phương trình: x + 2a = 16 + ax − 6a.",
      "trang": 18,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "a = 3",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "7.4b",
      "de": "Tìm tất cả các số thực a sao cho x = −2 là một nghiệm của phương trình: x + 2a = x − 4 + 2ax.",
      "trang": 18,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "a = −2/3",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "7.5",
      "de": "Tuỳ theo các giá trị của m, hãy giải phương trình ẩn x sau: (m^2 − 1)x + 1 − m = 0.",
      "trang": 18,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "m = 1: vô số nghiệm (S = ℝ); m = −1: vô nghiệm; m ≠ 1 và m ≠ −1: nghiệm duy nhất x = 1/(m + 1)",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "7.6a",
      "de": "Bác Minh gửi tiết kiệm ngân hàng số tiền 100 triệu đồng theo thể thức lãi đơn với lãi suất năm không đổi là r (r ở dạng số thập phân). Khi đó số tiền A (triệu đồng) bác Minh nhận được (cả vốn lẫn lãi) sau t năm gửi tiết kiệm được cho bởi công thức A = 100(1 + rt). Nếu thời gian gửi tiết kiệm là 2 năm và bác Minh thu được số tiền cả vốn lẫn lãi là 116 triệu đồng thì lãi suất năm là bao nhiêu?",
      "trang": 18,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "r = 0,08, tức lãi suất năm 8%",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "7.6b",
      "de": "Bác Minh gửi tiết kiệm ngân hàng số tiền 100 triệu đồng theo thể thức lãi đơn với lãi suất năm không đổi là r (r ở dạng số thập phân). Khi đó số tiền A (triệu đồng) bác Minh nhận được (cả vốn lẫn lãi) sau t năm gửi tiết kiệm được cho bởi công thức A = 100(1 + rt). Nếu lãi suất năm là 8,5% thì hỏi sau bao nhiêu năm gửi tiết kiệm, bác Minh sẽ thu được 134 triệu đồng?",
      "trang": 18,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "Sau 4 năm (t = 4)",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "7.7a",
      "de": "Ở Mỹ, một đơn vị thường được sử dụng để đo nhiệt độ là độ F (°F). Công thức chuyển đổi từ độ F sang độ C là C = (5/9)(F − 32). Nhiệt độ cao nhất ở Mỹ được ghi lại ở Thung lũng Chết ở bang California là 134 °F. Nhiệt độ này tính bằng độ C là bao nhiêu?",
      "trang": 19,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "C = 170/3 ≈ 56,67 °C",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "7.7b",
      "de": "Ở Mỹ, một đơn vị thường được sử dụng để đo nhiệt độ là độ F (°F). Công thức chuyển đổi từ độ F sang độ C là C = (5/9)(F − 32). Vào mùa đông ở Mỹ, nhiệt độ thường xuống dưới 0 °C. Có phải khi đó nhiệt độ cũng giảm xuống dưới 0 °F không?",
      "trang": 19,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "Không nhất thiết. Từ C = (5/9)(F − 32) thấy C < 0 khi F < 32. Vậy khi nhiệt độ dưới 0 °C thì nhiệt độ chỉ dưới 32 °F, có thể chưa giảm xuống dưới 0 °F.",
+     "loai_dap_an": "LOI_GIAI"
     },
     {
      "ma": "7.7c",
      "de": "Ở Mỹ, một đơn vị thường được sử dụng để đo nhiệt độ là độ F (°F). Công thức chuyển đổi từ độ F sang độ C là C = (5/9)(F − 32). Nhiệt độ thấp nhất ở Mỹ được ghi lại ở khe núi Triển Vọng (Prospect Creek) bang ở Alaska là −62,1 °C. Nhiệt độ này tính bằng độ F là bao nhiêu?",
      "trang": 19,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "F = −79,78 °F",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "7.8a",
      "de": "Khi bê tông khô đi, nó sẽ co lại. Hàm lượng nước trong bê tông càng cao thì độ co càng lớn. Giả sử một dầm bê tông có hàm lượng nước là w (kg/m^3) sẽ co lại theo hệ số: S = (0,032w − 2,5)/10 000, trong đó S là phần nhỏ của chiều dài dầm ban đầu biến mất do co lại. Một thanh dầm dài 12,025 m được đúc bằng bê tông chứa 250 kg/m^3 nước. Hệ số co S là bao nhiêu?",
      "trang": 19,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "S = 0,00055",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "7.8b",
      "de": "Khi bê tông khô đi, nó sẽ co lại. Hàm lượng nước trong bê tông càng cao thì độ co càng lớn. Giả sử một dầm bê tông có hàm lượng nước là w (kg/m^3) sẽ co lại theo hệ số: S = (0,032w − 2,5)/10 000, trong đó S là phần nhỏ của chiều dài dầm ban đầu biến mất do co lại. Một thanh dầm dài 10,014 m khi bị ướt. Nếu muốn nó co lại đến 10,0135 m thì hệ số co phải là S = 0,0005. Hàm lượng nước nào sẽ cung cấp lượng co ngót này?",
      "trang": 19,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "w = 234,375 kg/m^3",
+     "loai_dap_an": "DAP_SO"
     }
    ]
   },
@@ -728,56 +922,72 @@
      "de": "Giả sử nhiệt độ tại thời điểm hiện tại là 18 °C. Dự kiến là trong những giờ tới nhiệt độ sẽ tăng thêm 1,5 °C mỗi giờ. Hỏi sau bao lâu thì nhiệt độ sẽ là 26 °C?",
      "trang": 22,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "Gọi x (giờ) là thời gian nhiệt độ tăng thêm, x > 0. Phương trình: 1,5x + 18 = 26. x = 16/3 = 5 1/3. Sau 5 giờ 20 phút nhiệt độ là 26 °C",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "7.10",
      "de": "Hai tổ sản xuất cùng may một loại áo. Nếu tổ thứ nhất may trong 5 ngày, tổ thứ hai may trong 7 ngày thì cả hai tổ may được 1 000 chiếc áo. Biết rằng năng suất lao động của tổ thứ nhất hơn tổ thứ hai là 8 chiếc áo/ngày. Tính năng suất lao động của mỗi tổ.",
      "trang": 22,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "Gọi x (chiếc áo/ngày) là năng suất tổ thứ nhất, x ∈ ℕ, x > 8. Phương trình: 5x + 7(x − 8) = 1 000. x = 88. Tổ thứ nhất 88 chiếc áo/ngày, tổ thứ hai 80 chiếc áo/ngày",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "7.11",
      "de": "Một công ty nước giải khát quảng cáo soda cam của họ là \"có hương vị tự nhiên\", mặc dù nó chỉ chứa 5% nước cam. Theo quy định, một nước uống được gọi là \"có hương vị tự nhiên\" phải chứa ít nhất 10% nước trái cây. Nhà sản xuất này phải thêm ít nhất bao nhiêu mililít nước cam nguyên chất vào 900 ml soda cam để đảm bảo yêu cầu này?",
      "trang": 22,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "Gọi x (ml) là lượng nước cam nguyên chất thêm vào, x > 0. Phương trình: (900·5% + x)/(900 + x) = 10%, hay 45 + x = 90 + 0,1x. x = 50. Phải thêm ít nhất 50 ml",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "7.12",
      "de": "Chu vi của một hình chữ nhật là 40 cm. Chiều rộng ngắn hơn chiều dài 8 cm. Hãy tìm các kích thước của hình chữ nhật đó.",
      "trang": 22,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "Gọi x (cm) là chiều dài, x > 8. Phương trình: 2x + 2(x − 8) = 40. x = 14. Chiều dài 14 cm, chiều rộng 6 cm",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "7.13",
      "de": "Tìm ba số chẵn liên tiếp có tổng bằng 54.",
      "trang": 22,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "Gọi x là số chẵn thứ nhất. Phương trình: x + (x + 2) + (x + 4) = 54. x = 16. Ba số: 16; 18; 20",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "7.14",
      "de": "Hai công ty cho thuê ô tô du lịch tính phí như sau: Công ty A tính phí 3 triệu đồng một ngày và 15 nghìn đồng cho mỗi kilômét di chuyển. Công ty B tính phí 2,5 triệu đồng một ngày và 20 nghìn đồng cho mỗi kilômét di chuyển. Hỏi trong một ngày, số kilômét di chuyển bằng bao nhiêu thì chi phí thuê xe của hai công ty là như nhau?",
      "trang": 22,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "Gọi x là số kilômét đi trong ngày, x > 0. Phương trình (nghìn đồng): 15x + 3 000 = 20x + 2 500. x = 100. Đi 100 km thì chi phí hai công ty như nhau",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "7.15",
      "de": "Trong đợt phát động làm kế hoạch nhỏ của một trường trung học cơ sở, các học sinh khối 7 đã thu nhặt được 345 vỏ lon và dự định sẽ thu nhặt 115 lon trong mỗi ngày sắp tới. Các học sinh khối 8 đã thu nhặt được 255 vỏ lon và dự định sẽ thu nhặt 130 vỏ lon trong mỗi ngày sắp tới. Nếu cả hai khối lớp này tiếp tục thu nhặt được số vỏ lon đúng như dự định thì sau bao nhiêu ngày, kể từ thời điểm hiện tại, số vỏ lon mà hai khối lớp thu được sẽ bằng nhau?",
      "trang": 22,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "Gọi x là số ngày kể từ hiện tại, x > 0. Phương trình: 345 + 115x = 255 + 130x. x = 6. Sau 6 ngày",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "7.16",
      "de": "Một tàu thuỷ du lịch xuôi dòng từ bến A đến bến B mất 2 giờ và ngược dòng từ bến B về bến A hết 2,5 giờ. Tính khoảng cách giữa hai bến A và B, biết rằng vận tốc của dòng nước là 2 km/h và vận tốc riêng của tàu thuỷ là không đổi.",
      "trang": 22,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "Gọi x (km/h) là vận tốc riêng của tàu, x > 2. Phương trình: 2(x + 2) = 2,5(x − 2). x = 18. Khoảng cách AB = 2·(18 + 2) = 40 km",
+     "loai_dap_an": "DAP_SO"
     }
    ]
   },
@@ -790,42 +1000,54 @@
      "de": "Các giá trị tương ứng của hai đại lượng x và y cho bởi các bảng dưới đây. Đại lượng y có phải là một hàm số của x không? a) (Bảng: x nhận các giá trị −3; −1; 0; 2; 4 với y tương ứng là 1; 1; 1; 1; 1); b) (Bảng: x nhận các giá trị −2; 1; 0; 1; 2 với y tương ứng là −2; 1; 0; 2; 2).",
      "trang": 26,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "a) Có, y là hàm số của x; b) Không, y không là hàm số của x",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "7.18",
      "de": "Mối quan hệ giữa số tháng tuổi x (tháng) và cân nặng y (kg) của một em bé trong 6 tháng đầu đời được cho bởi bảng sau: (Bảng: tháng tuổi x (tháng) nhận các giá trị 1; 2; 3; 4; 5; 6 với cân nặng y (kg) tương ứng là 3,6; 4,5; 5,3; 6,2; 7; 7,5). Hỏi cân nặng y của em bé đó có phải là hàm số của số tháng tuổi x không? Hãy xác định cân nặng của em bé đó lúc 4 tháng tuổi.",
      "trang": 26,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "Có, y là hàm số của x; lúc 4 tháng tuổi em bé nặng 6,2 kg",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "7.19a",
      "de": "Cho hàm số y = f(x) = 2x^2 − 1. Tính f(0); f(−1).",
      "trang": 26,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "f(0) = −1; f(−1) = 1",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "7.19b",
      "de": "Cho hàm số y = f(x) = 2x^2 − 1. Hoàn thành bảng sau: (Bảng: x nhận các giá trị −2; −1; 0; 1; 2 với y = f(x) tương ứng là ?; ?; ?; ?; ?).",
      "trang": 26,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "x = −2; −1; 0; 1; 2 thì y = 7; 1; −1; 1; 7",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "7.19c",
      "de": "Cho hàm số y = f(x) = 2x^2 − 1. Tìm tất cả các giá trị x sao cho y = 17.",
      "trang": 26,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "x = 3 hoặc x = −3",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "7.20a",
      "de": "Xác định toạ độ của các điểm A; B; C; D trong hình bên (Hình bên: mặt phẳng toạ độ Oxy trên lưới ô vuông, mỗi ô 1 đơn vị; A(−3; 4), B(−2; −2), C(1; −3), D(3; 0)).",
      "trang": 26,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "A(−3; 4); B(−2; −2); C(1; −3); D(3; 0)",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "7.20b",
@@ -839,28 +1061,36 @@
      "de": "Hàm số y = f(x) được cho trong bảng sau: (Bảng: x nhận các giá trị −2; −1; 0; 1; 2 với y = f(x) tương ứng là 6; 3; 0; −3; −6). Vẽ đồ thị của hàm số y = f(x).",
      "trang": 27,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "Đồ thị gồm 5 điểm A(−2; 6), B(−1; 3), O(0; 0), C(1; −3) và D(2; −6) biểu diễn trên mặt phẳng toạ độ Oxy.",
+     "loai_dap_an": "LOI_GIAI"
     },
     {
      "ma": "7.22",
      "de": "Hệ thức y^2 + x^2 = 1 có xác định một hàm số y = f(x) không? Vì sao?",
      "trang": 27,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "Không. Với x = 0 có hai giá trị tương ứng của y là y = −1 và y = 1, nên hệ thức y^2 + x^2 = 1 không xác định một hàm số y = f(x).",
+     "loai_dap_an": "LOI_GIAI"
     },
     {
      "ma": "7.23",
      "de": "Hãy biểu thị diện tích S của hình chữ nhật dưới dạng một hàm số của chiều dài x nếu chiều dài của hình chữ nhật gấp đôi chiều rộng.",
      "trang": 27,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "S = (1/2)x^2",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "7.24",
      "de": "Đồ thị sau biểu diễn vận tốc xe máy v (tính bằng km/h) của anh Nam dưới dạng một hàm số của thời gian t (tính bằng phút) (Đồ thị: đường gấp khúc nối lần lượt các điểm (t; v) sau: O(0; 0), (2; 30), (4; 30), (4,2; 0), (6; 0), (7; 50), (7,4; 50), (7,6; 38), (8; 38), (9,1; 0)). Dựa vào đồ thị trên, hãy trả lời các câu hỏi sau: a) Anh Nam đi nhanh nhất trong khoảng thời gian nào? b) Vận tốc của anh Nam bằng 0 trong khoảng thời gian nào? c) Vận tốc của anh Nam trong khoảng thời gian từ 2 phút đến 4 phút là bao nhiêu? d) Trong khoảng thời gian nào anh Nam đi với vận tốc 38 km/h?",
      "trang": 27,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "a) Từ 7 phút đến 7,4 phút; b) Từ 4,2 phút đến 6 phút; c) 30 km/h; d) Từ 7,6 phút đến 8 phút",
+     "loai_dap_an": "DAP_SO"
     }
    ]
   },
@@ -873,126 +1103,162 @@
      "de": "Cho hàm số y = (1 − 2m)x + 3. Với những giá trị nào của m thì hàm số đã cho là hàm số bậc nhất?",
      "trang": 30,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "m ≠ 1/2",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "7.25b",
      "de": "Cho hàm số y = (1 − 2m)x + 3. Tìm m, biết đồ thị hàm số đã cho đi qua điểm (−1; 4).",
      "trang": 30,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "m = 1",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "7.25c",
      "de": "Cho hàm số y = (1 − 2m)x + 3. Với giá trị m tìm được ở câu b, hãy hoàn thành bảng giá trị sau vào vở: (Bảng: x: −2; −1; 0; 1; 2; y: ?; ?; ?; ?; ?).",
      "trang": 30,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "Với m = 1: y = −x + 3; x = −2; −1; 0; 1; 2 thì y = 5; 4; 3; 2; 1",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "7.26a",
      "de": "Vẽ đồ thị của hàm số y = 2x + 3.",
      "trang": 30,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "Đồ thị của y = 2x + 3 là đường thẳng đi qua hai điểm (0; 3) và (−3/2; 0).",
+     "loai_dap_an": "LOI_GIAI"
     },
     {
      "ma": "7.26b",
      "de": "Vẽ đồ thị của hàm số y = −3x + 5.",
      "trang": 30,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "Đồ thị của y = −3x + 5 là đường thẳng đi qua hai điểm (0; 5) và (5/3; 0).",
+     "loai_dap_an": "LOI_GIAI"
     },
     {
      "ma": "7.26c",
      "de": "Vẽ đồ thị của hàm số y = (1/2)x.",
      "trang": 30,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "Đồ thị của y = (1/2)x là đường thẳng đi qua gốc toạ độ O(0; 0) và điểm (2; 1).",
+     "loai_dap_an": "LOI_GIAI"
     },
     {
      "ma": "7.26d",
      "de": "Vẽ đồ thị của hàm số y = −(3/2)x.",
      "trang": 30,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "Đồ thị của y = −(3/2)x là đường thẳng đi qua gốc toạ độ O(0; 0) và điểm (−2; 3).",
+     "loai_dap_an": "LOI_GIAI"
     },
     {
      "ma": "7.27a",
      "de": "Cho ba đường thẳng: (d₁): y = −2x + 1; (d₂): y = x + 4 và (d₃): y = 2mx − 3 (m ≠ 0). Tìm giao điểm của hai đường thẳng (d₁) và (d₂).",
      "trang": 30,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "I(−1; 3)",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "7.27b",
      "de": "Cho ba đường thẳng: (d₁): y = −2x + 1; (d₂): y = x + 4 và (d₃): y = 2mx − 3 (m ≠ 0). Xác định giá trị của m để ba đường thẳng đã cho đồng quy.",
      "trang": 30,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "m = −3",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "7.28",
      "de": "Một cửa hàng sửa chữa máy điều hoà không khí tính phí bao gồm 50 nghìn đồng cho một cuộc gọi dịch vụ và 80 nghìn đồng cho mỗi giờ nhân công. Viết hàm số biểu thị phí C (tính theo nghìn đồng) cho một cuộc gọi dịch vụ với x (giờ) lao động. Phí dịch vụ sẽ là bao nhiêu nếu có 3 giờ lao động?",
      "trang": 30,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "C = 80x + 50 (nghìn đồng); với 3 giờ lao động: C = 290 nghìn đồng",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "7.29a",
      "de": "Anh Nam đang tiết kiệm tiền để mua một chiếc máy tính mới với giá 15 triệu đồng. Anh Nam đã có 4,5 triệu đồng và dự định sẽ tiết kiệm 300 nghìn đồng mỗi tuần. Viết hàm số y = f(x) biểu thị số tiền y (triệu đồng) mà anh Nam tiết kiệm được sau x (tuần).",
      "trang": 30,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "y = 0,3x + 4,5 (triệu đồng)",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "7.29b",
      "de": "Anh Nam đang tiết kiệm tiền để mua một chiếc máy tính mới với giá 15 triệu đồng. Anh Nam đã có 4,5 triệu đồng và dự định sẽ tiết kiệm 300 nghìn đồng mỗi tuần. Vẽ đồ thị của hàm số tìm được ở câu a. Từ đó xác định số tuần anh Nam sẽ tiết kiệm đủ tiền để mua chiếc máy tính đó.",
      "trang": 30,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "35 tuần. Đồ thị là đường thẳng y = 0,3x + 4,5 đi qua (0; 4,5) và (35; 15)",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "7.30a",
      "de": "Hải lí (còn gọi là dặm biển) là một đơn vị chiều dài hàng hải và 1 hải lí bằng 1,852 km. Viết công thức biểu thị y (km) theo x (hải lí). Giá trị âm của x có ý nghĩa gì trong tình huống này không? Giải thích.",
      "trang": 30,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "y = 1,852x; giá trị âm của x không có ý nghĩa vì chiều dài là đại lượng không âm",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "7.30b",
      "de": "Hải lí (còn gọi là dặm biển) là một đơn vị chiều dài hàng hải và 1 hải lí bằng 1,852 km. Vẽ đồ thị của hàm số y = f(x) nhận được ở câu a.",
      "trang": 30,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "Đồ thị của y = 1,852x (với x không âm) là một phần đường thẳng xuất phát từ gốc toạ độ O, đi qua điểm (5; 9,26).",
+     "loai_dap_an": "LOI_GIAI"
     },
     {
      "ma": "7.30c",
      "de": "Hải lí (còn gọi là dặm biển) là một đơn vị chiều dài hàng hải và 1 hải lí bằng 1,852 km. Một hành trình đi biển dài 350 hải lí. Hỏi hành trình đó dài bao nhiêu kilômét?",
      "trang": 30,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "648,2 km",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "7.31a",
      "de": "Một công ty cho thuê ô tô tính phí bao gồm 1,5 triệu đồng/ngày và 10 nghìn đồng cho mỗi kilômét di chuyển. Viết hàm số bậc nhất biểu thị chi phí thuê xe mỗi ngày C (đơn vị nghìn đồng) theo x (km) đã di chuyển trong ngày.",
      "trang": 31,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "C = 10x + 1 500 (nghìn đồng)",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "7.31b",
      "de": "Một công ty cho thuê ô tô tính phí bao gồm 1,5 triệu đồng/ngày và 10 nghìn đồng cho mỗi kilômét di chuyển. Chi phí thuê xe trong ngày là bao nhiêu nếu trong ngày đó xe di chuyển quãng đường tổng cộng dài 180 km?",
      "trang": 31,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "C = 3 300 nghìn đồng, tức 3,3 triệu đồng",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "7.32a",
      "de": "Giá trị sổ sách là giá trị của tài sản mà một công ty sử dụng để tạo ra bảng cân đối kế toán của mình. Một số công ty khấu hao tài sản của họ bằng cách sử dụng phương pháp khấu hao đường thẳng để giá trị của tài sản giảm đi một lượng cố định mỗi năm. Mức suy giảm phụ thuộc vào thời gian sử dụng hữu ích mà công ty đặt vào tài sản. Giả sử rằng một công ty vận tải vừa mua một số ô tô mới với giá là 640 triệu đồng một chiếc. Công ty lựa chọn khấu hao từng chiếc xe theo phương pháp khấu hao đường thẳng trong vòng 8 năm. Điều này có nghĩa là sau mỗi năm, mỗi chiếc xe sẽ giảm giá 640 : 8 = 80 triệu đồng. Tìm hàm số bậc nhất biểu thị giá trị sổ sách V (tính theo triệu đồng) của mỗi chiếc ô tô theo tuổi x (năm) của nó.",
      "trang": 31,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "V = −80x + 640 (triệu đồng)",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "7.32b",
@@ -1006,14 +1272,18 @@
      "de": "Giá trị sổ sách là giá trị của tài sản mà một công ty sử dụng để tạo ra bảng cân đối kế toán của mình. Một số công ty khấu hao tài sản của họ bằng cách sử dụng phương pháp khấu hao đường thẳng để giá trị của tài sản giảm đi một lượng cố định mỗi năm. Mức suy giảm phụ thuộc vào thời gian sử dụng hữu ích mà công ty đặt vào tài sản. Giả sử rằng một công ty vận tải vừa mua một số ô tô mới với giá là 640 triệu đồng một chiếc. Công ty lựa chọn khấu hao từng chiếc xe theo phương pháp khấu hao đường thẳng trong vòng 8 năm. Điều này có nghĩa là sau mỗi năm, mỗi chiếc xe sẽ giảm giá 640 : 8 = 80 triệu đồng. Giá trị sổ sách của mỗi chiếc xe sau 3 năm là bao nhiêu?",
      "trang": 31,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "V = 400 triệu đồng",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "7.32d",
      "de": "Giá trị sổ sách là giá trị của tài sản mà một công ty sử dụng để tạo ra bảng cân đối kế toán của mình. Một số công ty khấu hao tài sản của họ bằng cách sử dụng phương pháp khấu hao đường thẳng để giá trị của tài sản giảm đi một lượng cố định mỗi năm. Mức suy giảm phụ thuộc vào thời gian sử dụng hữu ích mà công ty đặt vào tài sản. Giả sử rằng một công ty vận tải vừa mua một số ô tô mới với giá là 640 triệu đồng một chiếc. Công ty lựa chọn khấu hao từng chiếc xe theo phương pháp khấu hao đường thẳng trong vòng 8 năm. Điều này có nghĩa là sau mỗi năm, mỗi chiếc xe sẽ giảm giá 640 : 8 = 80 triệu đồng. Khi nào giá trị sổ sách của mỗi chiếc xe là 160 triệu đồng?",
      "trang": 31,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "Sau 6 năm (x = 6)",
+     "loai_dap_an": "DAP_SO"
     }
    ]
   },
@@ -1026,77 +1296,99 @@
      "de": "Tìm hàm số bậc nhất có đồ thị là đường thẳng đi qua điểm (1; 2) và có hệ số góc là −3.",
      "trang": 33,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "y = −3x + 5",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "7.34",
      "de": "Tìm hàm số bậc nhất có đồ thị là đường thẳng với hệ số góc là 2 và cắt trục hoành tại điểm có hoành độ bằng −3.",
      "trang": 33,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "y = 2x + 6",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "7.35",
      "de": "Hãy chỉ ra các cặp đường thẳng song song và các cặp đường thẳng cắt nhau trong các đường thẳng sau: a) y = 2x + 1; b) y = −3x + 1; c) y = −3x + 2; d) y = 2x + 2.",
      "trang": 33,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "Song song: y = 2x + 1 và y = 2x + 2; y = −3x + 1 và y = −3x + 2. Cắt nhau: y = 2x + 1 và y = −3x + 1; y = 2x + 1 và y = −3x + 2; y = 2x + 2 và y = −3x + 1; y = 2x + 2 và y = −3x + 2",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "7.36a",
      "de": "Cho hai hàm số y = 2x + 3m và y = (2m + 1)x − 5. Tìm các giá trị của m để đồ thị của hai hàm số là hai đường thẳng song song.",
      "trang": 33,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "m = 1/2",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "7.36b",
      "de": "Cho hai hàm số y = 2x + 3m và y = (2m + 1)x − 5. Tìm các giá trị của m để đồ thị của hai hàm số là hai đường thẳng cắt nhau.",
      "trang": 33,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "m ≠ 1/2",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "7.37",
      "de": "Tìm hàm số bậc nhất có đồ thị là đường thẳng song song với đường thẳng y = −2x + 1 và đi qua điểm (−1; 4).",
      "trang": 33,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "y = −2x + 2",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "7.38",
      "de": "Người ta chứng minh được rằng hai đường thẳng y = ax + b (a ≠ 0) và y = a'x + b' (a' ≠ 0) vuông góc với nhau khi tích hai hệ số góc của chúng bằng −1, tức là khi aa' = −1. Tìm giá trị của m để đường thẳng y = (2m − 4)x + 3 (m ≠ 2) vuông góc với đường thẳng y = −(1/2)x + 1.",
      "trang": 34,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "m = 3",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "7.39",
      "de": "Trên cùng mặt phẳng toạ độ Oxy, cho hai đường thẳng: (dₘ): y = (1 − m)x + 2 và (d'ₘ): y = (m + 1)x − 3. Tuỳ theo giá trị của m, xét vị trí tương đối giữa hai đường thẳng đã cho.",
      "trang": 34,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "m = 0: hai đường thẳng song song; m ≠ 0: hai đường thẳng cắt nhau",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "7.40a",
      "de": "Inch (viết tắt là in) là một đơn vị chiều dài trong hệ đo lường Mỹ. Phần đường thẳng trong hình vẽ sau (Hình: phần đường thẳng xuất phát từ gốc toạ độ O và đi qua điểm (50; 127)) mô tả sự quy đổi từ x (in) sang y (cm). Tính hệ số góc của đường thẳng này.",
      "trang": 34,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "Hệ số góc 2,54 (= 127/50)",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "7.40b",
      "de": "Inch (viết tắt là in) là một đơn vị chiều dài trong hệ đo lường Mỹ. Phần đường thẳng trong hình vẽ sau (Hình: phần đường thẳng xuất phát từ gốc toạ độ O và đi qua điểm (50; 127)) mô tả sự quy đổi từ x (in) sang y (cm). Đại lượng y có tỉ lệ thuận với đại lượng x không? Nếu có thì hệ số tỉ lệ bằng bao nhiêu?",
      "trang": 34,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "Có, y = 2,54x; hệ số tỉ lệ 2,54",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "7.40c",
      "de": "Inch (viết tắt là in) là một đơn vị chiều dài trong hệ đo lường Mỹ. Phần đường thẳng trong hình vẽ sau (Hình: phần đường thẳng xuất phát từ gốc toạ độ O và đi qua điểm (50; 127)) mô tả sự quy đổi từ x (in) sang y (cm). Đại lượng x có tỉ lệ thuận với đại lượng y không? Nếu có thì hệ số tỉ lệ bằng bao nhiêu?",
      "trang": 34,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "Có, x = (50/127)y; hệ số tỉ lệ 50/127",
+     "loai_dap_an": "DAP_SO"
     }
    ]
   },
@@ -1109,217 +1401,279 @@
      "de": "Phương trình nào sau đây là phương trình bậc nhất một ẩn? A. 0x + 1 = 0. B. x − 1 = x + 2. C. 3x^2 + 2 = 0. D. −3x = 2.",
      "trang": 35,
      "nhom": "Trắc nghiệm",
-     "dang": "TRAC_NGHIEM"
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "D",
+     "loai_dap_an": "TN"
     },
     {
      "ma": "Trắc nghiệm 2 (tr.35)",
      "de": "Tập nghiệm S của phương trình 3(x + 1) − (x − 2) = 7 − 2x là A. S = {0}. B. S = {1/2}. C. S = ∅. D. S = ℝ.",
      "trang": 35,
      "nhom": "Trắc nghiệm",
-     "dang": "TRAC_NGHIEM"
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN"
     },
     {
      "ma": "Trắc nghiệm 3 (tr.35)",
      "de": "Hàm số nào sau đây là hàm số bậc nhất? A. y = 0x + 3. B. y = 2x^2 + 5. C. y = −x. D. y = 0.",
      "trang": 35,
      "nhom": "Trắc nghiệm",
-     "dang": "TRAC_NGHIEM"
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "C",
+     "loai_dap_an": "TN"
     },
     {
      "ma": "Trắc nghiệm 4 (tr.35)",
      "de": "Phương trình đường thẳng có hệ số góc −2 và đi qua điểm (1; 3) là A. y = −2x + 3. B. y = −2x + 1. C. y = −2x + 4. D. y = −2x + 5.",
      "trang": 35,
      "nhom": "Trắc nghiệm",
-     "dang": "TRAC_NGHIEM"
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "D",
+     "loai_dap_an": "TN"
     },
     {
      "ma": "Trắc nghiệm 5 (tr.35)",
      "de": "Hệ số góc của đường thẳng y = (1 − 4x)/2 là A. −4. B. 1. C. 1/2. D. −2.",
      "trang": 35,
      "nhom": "Trắc nghiệm",
-     "dang": "TRAC_NGHIEM"
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "D",
+     "loai_dap_an": "TN"
     },
     {
      "ma": "Trắc nghiệm 6 (tr.35)",
      "de": "Giá trị m để đường thẳng y = (m − 1)x + 3 (m ≠ 1) song song với đường thẳng y = x là A. m = 2. B. m = 1. C. m = 0. D. Không có giá trị của m.",
      "trang": 35,
      "nhom": "Trắc nghiệm",
-     "dang": "TRAC_NGHIEM"
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN"
     },
     {
      "ma": "Trắc nghiệm 7 (tr.35)",
      "de": "Hàm số bậc nhất có đồ thị là đường thẳng song song với đường thẳng y = −x + 2 và cắt trục tung tại điểm có tung độ bằng 1 là A. y = x + 1. B. y = −x + 1. C. y = 1. D. Không có hàm số nào.",
      "trang": 35,
      "nhom": "Trắc nghiệm",
-     "dang": "TRAC_NGHIEM"
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN"
     },
     {
      "ma": "Trắc nghiệm 8 (tr.35)",
      "de": "Hàm số bậc nhất có đồ thị là đường thẳng song song với đường thẳng y = −2x và đi qua điểm A(1; −1) là A. y = 2x + 1. B. y = −2x + 1. C. y = 1. D. Không có hàm số nào.",
      "trang": 35,
      "nhom": "Trắc nghiệm",
-     "dang": "TRAC_NGHIEM"
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN"
     },
     {
      "ma": "Trắc nghiệm 9 (tr.35)",
      "de": "Giá trị m để phương trình (m − 2)x + 4 − m^2 = 0 có vô số nghiệm là A. m ≠ 2. B. m = −2. C. m = 0. D. m = 2.",
      "trang": 35,
      "nhom": "Trắc nghiệm",
-     "dang": "TRAC_NGHIEM"
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "D",
+     "loai_dap_an": "TN"
     },
     {
      "ma": "Trắc nghiệm 10 (tr.35)",
      "de": "Giá trị m để phương trình (m^2 − 9)x + 3 − m = 0 vô nghiệm là A. m ≠ ±3. B. m = 3. C. m = −3. D. m = 0.",
      "trang": 35,
      "nhom": "Trắc nghiệm",
-     "dang": "TRAC_NGHIEM"
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "C",
+     "loai_dap_an": "TN"
     },
     {
      "ma": "7.41a",
      "de": "Giải phương trình 5(x − 1) − (6 − 2x) = 8x − 3.",
      "trang": 36,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "x = −8",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "7.41b",
      "de": "Giải phương trình (2x − 1)/3 − (5 − 3x)/2 = (x + 7)/4.",
      "trang": 36,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "x = 55/23",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "7.42a",
      "de": "Với hãng taxi A, số tiền khách phải trả khi di chuyển trên quãng đường không quá 30 km được cho bởi công thức sau: T(x) = 12x + 10 (nghìn đồng), trong đó 0 ≤ x ≤ 30 là số kilômét mà khách hàng đã di chuyển. Tính số tiền khách phải trả khi di chuyển 15 km.",
      "trang": 36,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "T = 190 nghìn đồng",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "7.42b",
      "de": "Với hãng taxi A, số tiền khách phải trả khi di chuyển trên quãng đường không quá 30 km được cho bởi công thức sau: T(x) = 12x + 10 (nghìn đồng), trong đó 0 ≤ x ≤ 30 là số kilômét mà khách hàng đã di chuyển. Nếu một người khách phải trả số tiền là 250 nghìn đồng thì người đó đã di chuyển bao nhiêu kilômét?",
      "trang": 36,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "20 km",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "7.43",
      "de": "Theo kế hoạch, hai tổ sản xuất phải làm 900 sản phẩm. Do cải tiến kĩ thuật nên tổ I vượt mức 15% và tổ II vượt mức 10% so với kế hoạch. Vì vậy hai tổ vượt mức được 110 sản phẩm. Hỏi mỗi tổ đã sản xuất được bao nhiêu sản phẩm?",
      "trang": 36,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "Gọi x là số sản phẩm tổ I làm theo kế hoạch, 0 < x < 900. Phương trình: 0,15x + 0,1(900 − x) = 110. x = 400. Tổ I sản xuất được 460 sản phẩm, tổ II sản xuất được 550 sản phẩm",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "7.44",
      "de": "Hoà 400 gam dung dịch NaCl loại I với 600 gam dung dịch NaCl loại II được một dung dịch NaCl có nồng độ phần trăm là 27%. Tính nồng độ phần trăm của mỗi dung dịch NaCl loại I và loại II, biết rằng nồng độ phần trăm dung dịch NaCl loại I ít hơn nồng độ phần trăm dung dịch NaCl loại II là 5%.",
      "trang": 36,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "Gọi x (%) là nồng độ dung dịch loại I, 0 ≤ x ≤ 100; loại II là x + 5. Phương trình: (10x + 30)/1 000 = 27/100. x = 24. Loại I 24%, loại II 29%",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "7.45",
      "de": "Trong mỗi học kì, điểm đánh giá môn Toán gồm 4 điểm thường xuyên tính hệ số 1, điểm thi giữa kì tính hệ số 2 và điểm thi cuối học kì tính hệ số 3. Bạn An được 4 điểm thường xuyên là 8; 9; 10; 10 và điểm giữa kì là 8,5. Biết rằng điểm trung bình môn Toán của bạn An là 9,0. Hỏi bạn An được mấy điểm thi cuối học kì?",
      "trang": 36,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "Gọi x là điểm thi cuối kì, 0 ≤ x ≤ 10. Phương trình: ((8 + 9 + 10 + 10)·1 + 8,5·2 + 3·x)/9 = 9,0. x = 9. An được 9 điểm thi cuối học kì",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "7.46a",
      "de": "Cho hàm số y = (2m − 1)x + 5 (m ≠ 1/2). Tìm m để đồ thị hàm số song song với đường thẳng y = −3x.",
      "trang": 36,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "m = −1",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "7.46b",
      "de": "Cho hàm số y = (2m − 1)x + 5 (m ≠ 1/2). Vẽ đồ thị hàm số với giá trị m tìm được ở câu a.",
      "trang": 36,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "Với m = −1 ta có y = −3x + 5. Đồ thị là đường thẳng đi qua hai điểm (0; 5) và (5/3; 0).",
+     "loai_dap_an": "LOI_GIAI"
     },
     {
      "ma": "7.46c",
      "de": "Cho hàm số y = (2m − 1)x + 5 (m ≠ 1/2). Tìm giao điểm A của đồ thị hàm số ở câu b và đồ thị của hàm số y = x + 5. Tính diện tích của tam giác OAB, trong đó B là giao điểm của đồ thị hàm số y = x + 5 với trục Ox.",
      "trang": 36,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "A(0; 5); B(−5; 0); diện tích tam giác OAB bằng 25/2",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "7.47a",
      "de": "Cho đường thẳng y = mx − 4 (m ≠ 0). Tìm m sao cho đường thẳng đã cho cắt đường thẳng y = −2x + 1 tại điểm có hoành độ bằng 2.",
      "trang": 37,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "m = 1/2",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "7.47b",
      "de": "Cho đường thẳng y = mx − 4 (m ≠ 0). Tìm m sao cho đường thẳng đã cho cắt đường thẳng y = 3x − 2 tại điểm có tung độ bằng 4.",
      "trang": 37,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "m = 4",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "7.48a",
      "de": "Một công ty cho thuê thuyền du lịch tính phí thuê thuyền là 1 triệu đồng, ngoài ra tính phí sử dụng 500 nghìn đồng một giờ. Viết công thức của hàm số biểu thị tổng chi phí y (nghìn đồng) để thuê một chiếc thuyền du lịch trong x (giờ).",
      "trang": 37,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "y = 500x + 1 000 (nghìn đồng)",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "7.48b",
      "de": "Một công ty cho thuê thuyền du lịch tính phí thuê thuyền là 1 triệu đồng, ngoài ra tính phí sử dụng 500 nghìn đồng một giờ. Vẽ đồ thị của hàm số thu được ở câu a để tìm tổng chi phí cho một lần thuê trong 3 giờ.",
      "trang": 37,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "Thuê 3 giờ: y = 2 500 nghìn đồng, tức 2,5 triệu đồng",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "7.48c",
      "de": "Một công ty cho thuê thuyền du lịch tính phí thuê thuyền là 1 triệu đồng, ngoài ra tính phí sử dụng 500 nghìn đồng một giờ. Giao điểm của đồ thị với trục tung biểu thị điều gì?",
      "trang": 37,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "Giao điểm của đồ thị với trục tung là (0; 1 000). Nó biểu thị chi phí cố định 1 000 nghìn đồng khi thuê thuyền: dù không sử dụng giờ nào (x = 0) vẫn phải trả phí này nếu đã đặt thuê.",
+     "loai_dap_an": "LOI_GIAI"
     },
     {
      "ma": "7.49a",
      "de": "Chị Lan vay mẹ 900 nghìn đồng và dự định trả cho mẹ 100 nghìn đồng mỗi tuần. Viết công thức của hàm số biểu thị số tiền y (nghìn đồng) mà chị Lan còn nợ mẹ sau x (tuần) vay.",
      "trang": 37,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "y = 900 − 100x (nghìn đồng)",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "7.49b",
      "de": "Chị Lan vay mẹ 900 nghìn đồng và dự định trả cho mẹ 100 nghìn đồng mỗi tuần. Vẽ đồ thị của hàm số thu được ở câu a. Từ đó, tìm số tiền mà chị Lan nợ mẹ sau 4 tuần.",
      "trang": 37,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "Sau 4 tuần chị Lan còn nợ 500 nghìn đồng",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "7.49c",
      "de": "Chị Lan vay mẹ 900 nghìn đồng và dự định trả cho mẹ 100 nghìn đồng mỗi tuần. Giao điểm của đồ thị với trục hoành biểu thị điều gì?",
      "trang": 37,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "Giao điểm của đồ thị với trục Ox là (9; 0). Nó biểu thị số tuần cần thiết để chị Lan trả hết nợ cho mẹ (số tiền còn nợ y = 0): sau 9 tuần.",
+     "loai_dap_an": "LOI_GIAI"
     },
     {
      "ma": "7.50a",
      "de": "Giả sử rằng lượng cung S và lượng cầu D về áo phông tại một buổi biểu diễn được cho bởi các hàm số sau: S(p) = −600 + 10p, D(p) = 1 200 − 20p, trong đó p (nghìn đồng) là giá của một chiếc áo phông. Tìm mức giá cân bằng (tức là mức giá mà lượng cung bằng lượng cầu) của áo phông tại buổi biểu diễn này.",
      "trang": 37,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "p = 60 (nghìn đồng)",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "7.50b",
      "de": "Giả sử rằng lượng cung S và lượng cầu D về áo phông tại một buổi biểu diễn được cho bởi các hàm số sau: S(p) = −600 + 10p, D(p) = 1 200 − 20p, trong đó p (nghìn đồng) là giá của một chiếc áo phông. Vẽ đồ thị của hai hàm số S(p) và D(p) trên cùng một hệ trục toạ độ.",
      "trang": 37,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "Vẽ hai đường thẳng S(p) = −600 + 10p và D(p) = 1 200 − 20p trên cùng hệ trục; hai đường thẳng cắt nhau tại điểm (60; 0).",
+     "loai_dap_an": "LOI_GIAI"
     },
     {
      "ma": "7.50c",
      "de": "Giả sử rằng lượng cung S và lượng cầu D về áo phông tại một buổi biểu diễn được cho bởi các hàm số sau: S(p) = −600 + 10p, D(p) = 1 200 − 20p, trong đó p (nghìn đồng) là giá của một chiếc áo phông. Từ kết quả của câu b, xác định mức giá của áo phông mà lượng cung lớn hơn lượng cầu. Khi đó, điều gì sẽ xảy ra?",
      "trang": 37,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "Khi giá áo lớn hơn 60 nghìn đồng (p > 60) thì lượng cung lớn hơn lượng cầu; khi đó sẽ có một lượng áo phông bị tồn kho (không bán được)",
+     "loai_dap_an": "DAP_SO"
     }
    ]
   },
@@ -1332,56 +1686,72 @@
      "de": "Lớp 8C có 16 học sinh nam và 22 học sinh nữ, trong đó có 3 bạn nam thuận tay trái, 2 bạn nữ thuận tay trái. Chọn ngẫu nhiên một học sinh trong lớp và kèm theo ghi chú: nam hay nữ và thuận tay trái hay tay phải. Liệt kê các kết quả có thể của hành động trên.",
      "trang": 39,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "38 kết quả có thể, mỗi kết quả là một học sinh: 13 nam thuận tay phải (A1,..., A13), 3 nam thuận tay trái (B1, B2, B3), 20 nữ thuận tay phải (C1,..., C20), 2 nữ thuận tay trái (D1, D2)",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "8.1b",
      "de": "Lớp 8C có 16 học sinh nam và 22 học sinh nữ, trong đó có 3 bạn nam thuận tay trái, 2 bạn nữ thuận tay trái. Chọn ngẫu nhiên một học sinh trong lớp và kèm theo ghi chú: nam hay nữ và thuận tay trái hay tay phải. Liệt kê các kết quả thuận lợi cho biến cố E: \"Chọn được học sinh nam thuận tay phải\".",
      "trang": 39,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "E = {A1,..., A13}: 13 kết quả, là 13 học sinh nam thuận tay phải",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "8.1c",
      "de": "Lớp 8C có 16 học sinh nam và 22 học sinh nữ, trong đó có 3 bạn nam thuận tay trái, 2 bạn nữ thuận tay trái. Chọn ngẫu nhiên một học sinh trong lớp và kèm theo ghi chú: nam hay nữ và thuận tay trái hay tay phải. Liệt kê các kết quả thuận lợi cho biến cố F: \"Chọn được học sinh nữ thuận tay trái\".",
      "trang": 39,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "F = {D1, D2}: 2 kết quả, là 2 học sinh nữ thuận tay trái",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "8.1d",
      "de": "Lớp 8C có 16 học sinh nam và 22 học sinh nữ, trong đó có 3 bạn nam thuận tay trái, 2 bạn nữ thuận tay trái. Chọn ngẫu nhiên một học sinh trong lớp và kèm theo ghi chú: nam hay nữ và thuận tay trái hay tay phải. Liệt kê các kết quả thuận lợi cho biến cố G: \"Chọn được học sinh thuận tay trái\".",
      "trang": 39,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "G = {B1, B2, B3, D1, D2}: 5 kết quả, là 3 nam và 2 nữ thuận tay trái",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "8.2a",
      "de": "Một hộp đựng 20 tấm thẻ được ghi số 1, 2,..., 20. Bạn Mai rút ngẫu nhiên một tấm thẻ từ trong hộp. Liệt kê các kết quả có thể của hành động trên.",
      "trang": 39,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "20 kết quả có thể: rút được tấm thẻ ghi số 1, 2,..., 20",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "8.2b",
      "de": "Một hộp đựng 20 tấm thẻ được ghi số 1, 2,..., 20. Bạn Mai rút ngẫu nhiên một tấm thẻ từ trong hộp. Liệt kê các kết quả thuận lợi cho các biến cố sau: E: \"Rút được tấm thẻ ghi số lẻ\"; F: \"Rút được tấm thẻ ghi số chia hết cho 5\"; G: \"Rút được tấm thẻ ghi số nguyên tố\".",
      "trang": 39,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "E: 1, 3, 5, 7, 9, 11, 13, 15, 17, 19; F: 5, 10, 15, 20; G: 2, 3, 5, 7, 11, 13, 17, 19",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "8.3a",
      "de": "Một túi đựng 5 viên bi được ghi số 1, 2, 3, 4, 5. Bạn Bình lấy ngẫu nhiên hai viên bi từ trong hộp. Liệt kê các kết quả có thể của hành động trên.",
      "trang": 39,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "10 kết quả có thể: {1, 2}, {1, 3}, {1, 4}, {1, 5}, {2, 3}, {2, 4}, {2, 5}, {3, 4}, {3, 5}, {4, 5}",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "8.3b",
      "de": "Một túi đựng 5 viên bi được ghi số 1, 2, 3, 4, 5. Bạn Bình lấy ngẫu nhiên hai viên bi từ trong hộp. Liệt kê các kết quả thuận lợi cho các biến cố sau: M: \"Tổng hai số ghi trên hai viên bi là một số chẵn\"; N: \"Tích hai số ghi trên hai viên bi là một số lẻ\".",
      "trang": 39,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "M: {1, 3}, {1, 5}, {2, 4}, {3, 5}; N: {1, 3}, {1, 5}, {3, 5}",
+     "loai_dap_an": "DAP_SO"
     }
    ]
   },
@@ -1394,105 +1764,135 @@
      "de": "Một túi đựng 15 viên bi màu xanh, 13 viên bi màu đỏ, 17 viên bi màu trắng, có cùng khối lượng và kích thước. Bạn Việt lấy ngẫu nhiên một viên bi từ trong túi. Tính xác suất để bạn Việt lấy được viên bi trắng.",
      "trang": 41,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "P = 17/45",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "8.5a",
      "de": "Một hộp đựng các tấm thẻ được ghi số 10, 11, 12,..., 20. Rút ngẫu nhiên một tấm thẻ từ hộp. Tính xác suất để rút được tấm thẻ ghi số là: Số nguyên tố.",
      "trang": 42,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "4 kết quả thuận lợi (11, 13, 17, 19); P = 4/11",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "8.5b",
      "de": "Một hộp đựng các tấm thẻ được ghi số 10, 11, 12,..., 20. Rút ngẫu nhiên một tấm thẻ từ hộp. Tính xác suất để rút được tấm thẻ ghi số là: Số lẻ.",
      "trang": 42,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "5 kết quả thuận lợi (11, 13, 15, 17, 19); P = 5/11",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "8.5c",
      "de": "Một hộp đựng các tấm thẻ được ghi số 10, 11, 12,..., 20. Rút ngẫu nhiên một tấm thẻ từ hộp. Tính xác suất để rút được tấm thẻ ghi số là: Số chia hết cho 4.",
      "trang": 42,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "3 kết quả thuận lợi (12, 16, 20); P = 3/11",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "8.6a",
      "de": "Bạn An có 10 tấm thẻ, mỗi tấm thẻ ghi một chữ cái trong từ \"TELEVISION\". Bạn An rút ngẫu nhiên một tấm thẻ. Tính xác suất để rút được tấm thẻ ghi: Chữ E.",
      "trang": 42,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "P = 2/10 = 0,2",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "8.6b",
      "de": "Bạn An có 10 tấm thẻ, mỗi tấm thẻ ghi một chữ cái trong từ \"TELEVISION\". Bạn An rút ngẫu nhiên một tấm thẻ. Tính xác suất để rút được tấm thẻ ghi: Chữ I hoặc chữ V.",
      "trang": 42,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "P = 3/10 = 0,3",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "8.7a",
      "de": "Một nhóm 30 người gồm 9 ông, 6 bà, 12 em trai và 3 em gái. Chọn ngẫu nhiên một người trong nhóm. Tính xác suất để chọn được: Một người có giới tính nam.",
      "trang": 42,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "P = 21/30 = 7/10 = 0,7",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "8.7b",
      "de": "Một nhóm 30 người gồm 9 ông, 6 bà, 12 em trai và 3 em gái. Chọn ngẫu nhiên một người trong nhóm. Tính xác suất để chọn được: Một bà hoặc một em trai.",
      "trang": 42,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "P = 18/30 = 3/5 = 0,6",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "8.8a",
      "de": "Một chiếc hộp chứa 36 quả cầu được ghi số từ 1 đến 36. Lấy ngẫu nhiên một quả cầu trong hộp. Tính xác suất của các biến cố sau: E: \"Lấy được quả cầu ghi số là bội của 4 và 6\".",
      "trang": 42,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "E gồm các số 12, 24, 36; P(E) = 3/36 = 1/12",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "8.8b",
      "de": "Một chiếc hộp chứa 36 quả cầu được ghi số từ 1 đến 36. Lấy ngẫu nhiên một quả cầu trong hộp. Tính xác suất của các biến cố sau: F: \"Lấy được quả cầu ghi số là bội của 4 hoặc là bội của 6\".",
      "trang": 42,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "F gồm 4, 6, 8, 12, 16, 18, 20, 24, 28, 30, 32, 36 (12 kết quả); P(F) = 12/36 = 1/3",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "8.9a",
      "de": "Một túi đựng các viên kẹo có cùng khối lượng và kích thước với 9 viên kẹo màu đỏ, 6 viên kẹo màu xanh, 4 viên kẹo màu vàng và 5 viên kẹo màu đen. Lấy ngẫu nhiên một viên kẹo từ trong túi. Tính xác suất của các biến cố sau: E: \"Lấy được viên kẹo màu đỏ hoặc màu vàng\".",
      "trang": 42,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "P(E) = 13/24",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "8.9b",
      "de": "Một túi đựng các viên kẹo có cùng khối lượng và kích thước với 9 viên kẹo màu đỏ, 6 viên kẹo màu xanh, 4 viên kẹo màu vàng và 5 viên kẹo màu đen. Lấy ngẫu nhiên một viên kẹo từ trong túi. Tính xác suất của các biến cố sau: F: \"Lấy được viên kẹo màu đen hoặc màu xanh\".",
      "trang": 42,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "P(F) = 11/24",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "8.9c",
      "de": "Một túi đựng các viên kẹo có cùng khối lượng và kích thước với 9 viên kẹo màu đỏ, 6 viên kẹo màu xanh, 4 viên kẹo màu vàng và 5 viên kẹo màu đen. Lấy ngẫu nhiên một viên kẹo từ trong túi. Tính xác suất của các biến cố sau: G: \"Lấy được viên kẹo không có màu đen\".",
      "trang": 42,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "P(G) = 19/24",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "8.10",
      "de": "Một hộp đựng 24 viên bi có cùng khối lượng và kích thước, trong đó có một số viên bi màu đỏ, một số viên bi màu xanh, còn lại là màu đen. Lấy ngẫu nhiên một viên bi từ trong hộp. Biết rằng xác suất lấy được viên bi màu đỏ và màu xanh tương ứng là 1/3 và 1/6. Tính số viên bi màu đen trong hộp.",
      "trang": 42,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "12 viên bi màu đen (có 8 viên đỏ, 4 viên xanh)",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "8.11",
      "de": "Một túi đựng một số tấm thẻ được đánh số 1, 2, 3, 4. Rút ngẫu nhiên một tấm thẻ trong túi. Biết rằng xác suất rút được tấm thẻ ghi số 3 gấp đôi xác suất rút được tấm thẻ ghi số 1; xác suất rút được tấm thẻ ghi số 2 gấp ba lần xác suất rút được tấm thẻ ghi số 3 và xác suất rút được tấm thẻ ghi số 2 bằng xác suất rút được tấm thẻ ghi số 4. Tính xác suất để rút được tấm thẻ ghi số nguyên tố.",
      "trang": 42,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "P = 8/15 (số tấm thẻ ghi 1, 2, 3, 4 lần lượt là x, 6x, 2x, 6x)",
+     "loai_dap_an": "DAP_SO"
     }
    ]
   },
@@ -1505,63 +1905,81 @@
      "de": "Một trò chơi có nội dung như sau: Ở mỗi ván chơi, người chơi gieo đồng thời hai con xúc xắc. Người chơi thắng nếu tổng số chấm xuất hiện trên hai con xúc xắc là bội của 3. Một người chơi 100 ván và kết quả trong 100 ván chơi được ghi trong bảng sau: (Bảng: tổng 2 có 2 ván; tổng 3 có 6 ván; tổng 4 có 9 ván; tổng 5 có 10 ván; tổng 6 có 14 ván; tổng 7 có 16 ván; tổng 8 có 13 ván; tổng 9 có 11 ván; tổng 10 có 8 ván; tổng 11 có 7 ván; tổng 12 có 4 ván). Tính xác suất thực nghiệm của biến cố A: \"Người chơi thắng trong một ván chơi\".",
      "trang": 44,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "P(A) = 35/100 = 0,35 (35 ván thắng)",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "8.13a",
      "de": "Một cửa hàng điện máy thống kê lại số lượng các mặt hàng bán trong năm qua như bảng sau: (Bảng: Ti vi 2 545 chiếc; Tủ lạnh 3 136 chiếc; Điện thoại 719 chiếc; Máy tính 311 chiếc; Quạt 55 chiếc; Điều hoà 57 chiếc). Tính xác suất thực nghiệm tiêu thụ mỗi mặt hàng của cửa hàng.",
      "trang": 45,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "Tổng 6 823 chiếc. Ti vi 2545/6823; tủ lạnh 3136/6823; điện thoại 719/6823; máy tính 311/6823; quạt 55/6823; điều hoà 57/6823",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "8.13b",
      "de": "Một cửa hàng điện máy thống kê lại số lượng các mặt hàng bán trong năm qua như bảng sau: (Bảng: Ti vi 2 545 chiếc; Tủ lạnh 3 136 chiếc; Điện thoại 719 chiếc; Máy tính 311 chiếc; Quạt 55 chiếc; Điều hoà 57 chiếc). Giả sử năm sau cửa hàng bán được tổng số 7 500 chiếc các loại. Hãy dự đoán xem trong đó có: Bao nhiêu chiếc ti vi. Bao nhiêu chiếc tủ lạnh, quạt hoặc điều hoà.",
      "trang": 45,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "Khoảng 2 798 chiếc ti vi; khoảng 3 570 chiếc tủ lạnh, quạt hoặc điều hoà",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "8.14a",
      "de": "Số liệu thống kê về 1 830 vụ tai nạn giao thông ở một thành phố cho trong bảng sau: (Bảng số vụ tai nạn theo phương tiện: Ô tô 380; Xe máy 1 354; Xe đạp 55; Phương tiện khác hoặc đi bộ 41). Tính xác suất thực nghiệm của các biến cố sau: E: \"Gặp tai nạn khi đi ô tô\".",
      "trang": 45,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "P(E) = 380/1830 = 38/183",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "8.14b",
      "de": "Số liệu thống kê về 1 830 vụ tai nạn giao thông ở một thành phố cho trong bảng sau: (Bảng số vụ tai nạn theo phương tiện: Ô tô 380; Xe máy 1 354; Xe đạp 55; Phương tiện khác hoặc đi bộ 41). Tính xác suất thực nghiệm của các biến cố sau: F: \"Gặp tai nạn khi đi xe máy hoặc xe đạp\".",
      "trang": 45,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "P(F) = 1409/1830",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "8.14c",
      "de": "Số liệu thống kê về 1 830 vụ tai nạn giao thông ở một thành phố cho trong bảng sau: (Bảng số vụ tai nạn theo phương tiện: Ô tô 380; Xe máy 1 354; Xe đạp 55; Phương tiện khác hoặc đi bộ 41). Tính xác suất thực nghiệm của các biến cố sau: G: \"Gặp tai nạn khi đi xe đạp, phương tiện khác hoặc đi bộ\".",
      "trang": 45,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "P(G) = 96/1830 = 16/305",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "8.15a",
      "de": "Trong tháng vừa qua có 3 084 người nhập cảnh ngắn hạn vào nước X. Cơ quan hải quan thống kê mục đích nhập cảnh của họ và cho kết quả trong bảng sau: (Bảng: Dự hội nghị 88 người; Kinh doanh 320 người; Thăm thân nhân 599 người; Du lịch 1 565 người; Làm việc 55 người; Đi học 125 người; Lí do khác 332 người; Tổng số 3 084 người). Tính xác suất thực nghiệm để người nhập cảnh ngắn hạn vào nước X tháng qua (biểu diễn bằng phần trăm) với mục đích: Kinh doanh; Du lịch; Làm việc hoặc đi học; Kinh doanh hoặc dự hội nghị.",
      "trang": 45,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "Kinh doanh 320/3084 ≈ 10,38%; du lịch 1565/3084 ≈ 50,75%; làm việc hoặc đi học 180/3084 ≈ 5,84%; kinh doanh hoặc dự hội nghị 408/3084 ≈ 13,23%",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "8.15b",
      "de": "Trong tháng vừa qua có 3 084 người nhập cảnh ngắn hạn vào nước X. Cơ quan hải quan thống kê mục đích nhập cảnh của họ và cho kết quả trong bảng sau: (Bảng: Dự hội nghị 88 người; Kinh doanh 320 người; Thăm thân nhân 599 người; Du lịch 1 565 người; Làm việc 55 người; Đi học 125 người; Lí do khác 332 người; Tổng số 3 084 người). Biết rằng tháng tới có 2 156 người nhập cảnh ngắn hạn vào nước X. Hãy dự đoán xem trong đó có: Bao nhiêu người với mục đích du lịch. Bao nhiêu người với mục đích kinh doanh, làm việc hoặc đi học.",
      "trang": 45,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "Khoảng 1 094 người du lịch; khoảng 350 người kinh doanh, làm việc hoặc đi học",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "8.16",
      "de": "Camera quan sát tại đường X trong 365 ngày liên tiếp ghi nhận 217 ngày bị tắc đường vào giờ cao điểm buổi sáng (từ 7 giờ 30 phút đến 8 giờ). Từ số liệu thống kê đó, hãy dự đoán xem trong 100 ngày tới có khoảng bao nhiêu ngày bị tắc đường vào giờ cao điểm buổi sáng tại đường X.",
      "trang": 46,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "Khoảng 59 ngày",
+     "loai_dap_an": "DAP_SO"
     }
    ]
   },
@@ -1574,168 +1992,216 @@
      "de": "Chọn ngẫu nhiên một số có hai chữ số. Xác suất để chọn được số chính phương là A. 1/15. B. 1/16. C. 1/14. D. 2/31.",
      "trang": 46,
      "nhom": "Trắc nghiệm",
-     "dang": "TRAC_NGHIEM"
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN"
     },
     {
      "ma": "Trắc nghiệm 2 (tr.47)",
      "de": "Lớp 12A gồm 38 học sinh, trong đó có 18 học sinh nam, tổ chức đi du lịch bằng máy bay. Khi làm thủ tục có 6 học sinh nam gửi hành lí và 8 học sinh nữ không gửi hành lí. Chọn ngẫu nhiên một học sinh trong lớp. Xác suất để chọn được một học sinh nữ có gửi hành lí là (sách in thiếu ý: phải hiểu là chọn ngẫu nhiên một học sinh trong số học sinh nữ thì mới có phương án đúng) A. 7/20. B. 3/5. C. 8/21. D. 9/23.",
      "trang": 47,
      "nhom": "Trắc nghiệm",
-     "dang": "TRAC_NGHIEM"
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN"
     },
     {
      "ma": "Trắc nghiệm 3 (tr.47)",
      "de": "Lớp 12A gồm 38 học sinh, trong đó có 18 học sinh nam, tổ chức đi du lịch bằng máy bay. Khi làm thủ tục có 6 học sinh nam gửi hành lí và 8 học sinh nữ không gửi hành lí. Chọn ngẫu nhiên một học sinh trong lớp. Xác suất để chọn được một học sinh không gửi hành lí là A. 11/20. B. 12/19. C. 13/21. D. 10/19.",
      "trang": 47,
      "nhom": "Trắc nghiệm",
-     "dang": "TRAC_NGHIEM"
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "D",
+     "loai_dap_an": "TN"
     },
     {
      "ma": "Trắc nghiệm 4 (tr.47)",
      "de": "Một túi đựng các viên bi có cùng khối lượng và kích thước với 26 viên bi màu đỏ, 62 viên bi màu tím, 8 viên bi màu vàng, 9 viên bi màu trắng và 12 viên bi màu đen. Lấy ngẫu nhiên một viên bi trong túi. Xác suất để lấy được viên bi có màu tím là A. 62/117. B. 20/39. C. 63/118. D. 65/118.",
      "trang": 47,
      "nhom": "Trắc nghiệm",
-     "dang": "TRAC_NGHIEM"
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN"
     },
     {
      "ma": "Trắc nghiệm 5 (tr.47)",
      "de": "Một túi đựng các viên bi có cùng khối lượng và kích thước với 26 viên bi màu đỏ, 62 viên bi màu tím, 8 viên bi màu vàng, 9 viên bi màu trắng và 12 viên bi màu đen. Lấy ngẫu nhiên một viên bi trong túi. Xác suất để lấy được viên bi có màu trắng là A. 11/117. B. 1/13. C. 13/118. D. 15/118.",
      "trang": 47,
      "nhom": "Trắc nghiệm",
-     "dang": "TRAC_NGHIEM"
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN"
     },
     {
      "ma": "Trắc nghiệm 6 (tr.47)",
      "de": "Một túi đựng các viên bi có cùng khối lượng và kích thước với 26 viên bi màu đỏ, 62 viên bi màu tím, 8 viên bi màu vàng, 9 viên bi màu trắng và 12 viên bi màu đen. Lấy ngẫu nhiên một viên bi trong túi. Xác suất để lấy được viên bi có màu trắng hoặc màu đen là A. 20/117. B. 19/119. C. 7/39. D. 20/119.",
      "trang": 47,
      "nhom": "Trắc nghiệm",
-     "dang": "TRAC_NGHIEM"
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "C",
+     "loai_dap_an": "TN"
     },
     {
      "ma": "Trắc nghiệm 7 (tr.47)",
      "de": "Một túi đựng các viên bi có cùng khối lượng và kích thước với 26 viên bi màu đỏ, 62 viên bi màu tím, 8 viên bi màu vàng, 9 viên bi màu trắng và 12 viên bi màu đen. Lấy ngẫu nhiên một viên bi trong túi. Lấy 2 viên bi màu đỏ và 1 viên bi màu trắng ra khỏi túi. Chọn ngẫu nhiên một viên bi trong túi. Xác suất để chọn được viên bi không phải màu vàng là A. 107/114. B. 109/115. C. 103/115. D. 53/57.",
      "trang": 47,
      "nhom": "Trắc nghiệm",
-     "dang": "TRAC_NGHIEM"
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "D",
+     "loai_dap_an": "TN"
     },
     {
      "ma": "Trắc nghiệm 8 (tr.47)",
      "de": "Một túi đựng các viên bi có cùng khối lượng và kích thước với 26 viên bi màu đỏ, 62 viên bi màu tím, 8 viên bi màu vàng, 9 viên bi màu trắng và 12 viên bi màu đen. Lấy ngẫu nhiên một viên bi trong túi. Bỏ thêm 2 viên bi màu đỏ và 1 viên bi màu trắng vào túi. Chọn ngẫu nhiên một viên bi trong túi. Xác suất để chọn được viên bi không phải màu đỏ là A. 23/30. B. 91/120. C. 93/121. D. 92/121.",
      "trang": 47,
      "nhom": "Trắc nghiệm",
-     "dang": "TRAC_NGHIEM"
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN"
     },
     {
      "ma": "8.17a",
      "de": "Một bộ bài tú lơ khơ gồm 52 lá bài chia thành bốn chất: rô (hình thoi, màu đỏ), cơ (hình trái tim, màu đỏ), bích (hình mâu, màu đen) và nhép (hình cây, màu đen). Mỗi chất có 13 lá bài là: 2, 3, 4, 5, 6, 7, 8, 9, 10, J, Q, K, A. Rút ngẫu nhiên một lá bài. Tính xác suất của các biến cố sau: A: \"Rút được lá bài có màu đen\".",
      "trang": 48,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "P(A) = 26/52 = 1/2",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "8.17b",
      "de": "Một bộ bài tú lơ khơ gồm 52 lá bài chia thành bốn chất: rô (hình thoi, màu đỏ), cơ (hình trái tim, màu đỏ), bích (hình mâu, màu đen) và nhép (hình cây, màu đen). Mỗi chất có 13 lá bài là: 2, 3, 4, 5, 6, 7, 8, 9, 10, J, Q, K, A. Rút ngẫu nhiên một lá bài. Tính xác suất của các biến cố sau: B: \"Rút được lá bài A màu đỏ\".",
      "trang": 48,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "P(B) = 2/52 = 1/26",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "8.17c",
      "de": "Một bộ bài tú lơ khơ gồm 52 lá bài chia thành bốn chất: rô (hình thoi, màu đỏ), cơ (hình trái tim, màu đỏ), bích (hình mâu, màu đen) và nhép (hình cây, màu đen). Mỗi chất có 13 lá bài là: 2, 3, 4, 5, 6, 7, 8, 9, 10, J, Q, K, A. Rút ngẫu nhiên một lá bài. Tính xác suất của các biến cố sau: C: \"Rút được lá bài mang số 3\".",
      "trang": 48,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "P(C) = 4/52 = 1/13",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "8.17d",
      "de": "Một bộ bài tú lơ khơ gồm 52 lá bài chia thành bốn chất: rô (hình thoi, màu đỏ), cơ (hình trái tim, màu đỏ), bích (hình mâu, màu đen) và nhép (hình cây, màu đen). Mỗi chất có 13 lá bài là: 2, 3, 4, 5, 6, 7, 8, 9, 10, J, Q, K, A. Rút ngẫu nhiên một lá bài. Tính xác suất của các biến cố sau: D: \"Rút được lá bài chất rô\".",
      "trang": 48,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "P(D) = 13/52 = 1/4",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "8.17e",
      "de": "Một bộ bài tú lơ khơ gồm 52 lá bài chia thành bốn chất: rô (hình thoi, màu đỏ), cơ (hình trái tim, màu đỏ), bích (hình mâu, màu đen) và nhép (hình cây, màu đen). Mỗi chất có 13 lá bài là: 2, 3, 4, 5, 6, 7, 8, 9, 10, J, Q, K, A. Rút ngẫu nhiên một lá bài. Tính xác suất của các biến cố sau: E: \"Rút được lá bài không phải chất bích\".",
      "trang": 48,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "P(E) = 39/52 = 3/4",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "8.17f",
      "de": "Một bộ bài tú lơ khơ gồm 52 lá bài chia thành bốn chất: rô (hình thoi, màu đỏ), cơ (hình trái tim, màu đỏ), bích (hình mâu, màu đen) và nhép (hình cây, màu đen). Mỗi chất có 13 lá bài là: 2, 3, 4, 5, 6, 7, 8, 9, 10, J, Q, K, A. Rút ngẫu nhiên một lá bài. Tính xác suất của các biến cố sau: F: \"Rút được lá bài tranh\" (Các lá bài J, Q, K gọi là lá bài tranh).",
      "trang": 48,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "P(F) = 12/52 = 3/13",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "8.18",
      "de": "Lớp 8A có 23 học sinh nam và 35 học sinh nữ. Giả sử cuối năm lớp có 7 học sinh nam và 11 học sinh nữ chuyển lớp. Chọn ngẫu nhiên một học sinh trong lớp 8A. Tính xác suất để chọn được học sinh nam.",
      "trang": 48,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "P = 16/40 = 2/5 (cuối năm còn 16 nam, 24 nữ)",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "8.19",
      "de": "Một hộp có 40 viên bi có cùng khối lượng và kích thước, gồm ba màu: đỏ, vàng, đen. Biết rằng nếu lấy ngẫu nhiên một viên bi trong hộp thì xác suất lấy được viên bi màu đỏ, viên bi màu vàng tương ứng là 1/4 và 2/5. Bạn Minh bỏ thêm 25 viên bi màu đỏ, 14 viên bi vàng vào hộp và lấy ra 9 viên bi màu đen. Bạn Minh lấy ngẫu nhiên một viên bi trong hộp. Tính xác suất để Minh lấy được viên bi màu vàng.",
      "trang": 48,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "P = 30/70 = 3/7 (lúc sau có 35 bi đỏ, 30 bi vàng, 5 bi đen)",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "8.20",
      "de": "Tại một quán ăn, lúc đầu có 50 khách hàng, trong đó có 32 khách hàng nam. Sau một giờ, quán ăn có 12 khách hàng nam ra về và 27 khách hàng mới đến là nữ. Chọn ngẫu nhiên một người khách hàng trong quán ăn. Tính xác suất để chọn được một khách hàng nữ.",
      "trang": 48,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "P = 45/65 = 9/13 (còn 20 khách nam, 45 khách nữ)",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "8.21a",
      "de": "Bạn Bình thống kê số điểm trong 44 bài kiểm tra tiếng Anh của mình như sau (điểm tối đa là 100): (Bảng: Nhỏ hơn 83 điểm có 3 bài; Từ 84 đến 87 điểm có 5 bài; Từ 88 đến 91 điểm có 7 bài; Từ 92 đến 95 điểm có 20 bài; Từ 96 đến 100 điểm có 9 bài). Bạn Bình sẽ làm bài kiểm tra trong tuần tới. Tính xác suất thực nghiệm của các biến cố sau: A: \"Bạn Bình được ít hơn 84 điểm\".",
      "trang": 48,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "P(A) = 3/44 ≈ 0,068",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "8.21b",
      "de": "Bạn Bình thống kê số điểm trong 44 bài kiểm tra tiếng Anh của mình như sau (điểm tối đa là 100): (Bảng: Nhỏ hơn 83 điểm có 3 bài; Từ 84 đến 87 điểm có 5 bài; Từ 88 đến 91 điểm có 7 bài; Từ 92 đến 95 điểm có 20 bài; Từ 96 đến 100 điểm có 9 bài). Bạn Bình sẽ làm bài kiểm tra trong tuần tới. Tính xác suất thực nghiệm của các biến cố sau: B: \"Bạn Bình được số điểm từ 84 đến 95 điểm\".",
      "trang": 48,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "P(B) = 32/44 = 8/11 ≈ 0,727",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "8.22a",
      "de": "Thống kê số vụ tai nạn giao thông trong tháng 8 và 9 vừa qua của thành phố X, ta có bảng sau: (Bảng số vụ tai nạn giao thông xảy ra trong một ngày: 0 vụ có 4 ngày; 1 vụ có 9 ngày; 2 vụ có 15 ngày; 3 vụ có 10 ngày; 4 vụ có 8 ngày; 5 vụ có 6 ngày; 6 vụ có 4 ngày; 7 vụ có 3 ngày; > 7 vụ có 2 ngày). Tính xác suất thực nghiệm của biến cố A: \"Ở thành phố X, trong một ngày có nhiều nhất 3 vụ tai nạn giao thông\".",
      "trang": 49,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "P(A) = 38/61",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "8.22b",
      "de": "Thống kê số vụ tai nạn giao thông trong tháng 8 và 9 vừa qua của thành phố X, ta có bảng sau: (Bảng số vụ tai nạn giao thông xảy ra trong một ngày: 0 vụ có 4 ngày; 1 vụ có 9 ngày; 2 vụ có 15 ngày; 3 vụ có 10 ngày; 4 vụ có 8 ngày; 5 vụ có 6 ngày; 6 vụ có 4 ngày; 7 vụ có 3 ngày; > 7 vụ có 2 ngày). Tính xác suất thực nghiệm của biến cố B: \"Ở thành phố X, trong một ngày có từ 5 vụ tai nạn giao thông trở lên\".",
      "trang": 49,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "P(B) = 15/61",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "8.22c",
      "de": "Thống kê số vụ tai nạn giao thông trong tháng 8 và 9 vừa qua của thành phố X, ta có bảng sau: (Bảng số vụ tai nạn giao thông xảy ra trong một ngày: 0 vụ có 4 ngày; 1 vụ có 9 ngày; 2 vụ có 15 ngày; 3 vụ có 10 ngày; 4 vụ có 8 ngày; 5 vụ có 6 ngày; 6 vụ có 4 ngày; 7 vụ có 3 ngày; > 7 vụ có 2 ngày). Từ số liệu thống kê trên, hãy dự đoán xem trong 100 ngày tới ở thành phố X: Có bao nhiêu ngày có nhiều nhất 3 vụ tai nạn giao thông. Có bao nhiêu ngày có từ 5 vụ tai nạn giao thông trở lên.",
      "trang": 49,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "Khoảng 62 ngày có nhiều nhất 3 vụ; khoảng 25 ngày có từ 5 vụ trở lên",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "8.23a",
      "de": "Khảo sát vị trí công việc của 100 cán bộ công tác trong ngành giáo dục tại quận X, thu được kết quả như bảng sau: (Bảng: Cán bộ hành chính 16 người; Giáo viên 76 người; Công việc khác 8 người). Chọn ngẫu nhiên một cán bộ công tác trong ngành giáo dục được khảo sát tại quận X. Tính xác suất thực nghiệm của các biến cố sau: A: \"Người đó là giáo viên\". B: \"Người đó là cán bộ hành chính\".",
      "trang": 49,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "P(A) = 76/100 = 0,76; P(B) = 16/100 = 0,16",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "8.23b",
      "de": "Khảo sát vị trí công việc của 100 cán bộ công tác trong ngành giáo dục tại quận X, thu được kết quả như bảng sau: (Bảng: Cán bộ hành chính 16 người; Giáo viên 76 người; Công việc khác 8 người). Giả sử quận X có 921 cán bộ công tác ngành giáo dục. Hãy dự đoán xem trong đó: Có bao nhiêu người là giáo viên. Có bao nhiêu người là cán bộ hành chính.",
      "trang": 49,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "Khoảng 700 giáo viên; khoảng 147 cán bộ hành chính",
+     "loai_dap_an": "DAP_SO"
     }
    ]
   },
@@ -1748,84 +2214,108 @@
      "de": "Khi viết ΔABC ᔕ ΔMNP thì góc nào của tam giác ABC tương ứng với góc PNM của tam giác MNP. Hãy viết các cặp góc bằng nhau và các cặp cạnh tương ứng tỉ lệ của hai tam giác đã cho.",
      "trang": 51,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "Góc CBA của ΔABC ứng với góc PNM. Các cặp góc bằng nhau: góc BAC = góc NMP, góc ABC = góc MNP, góc ACB = góc MPN. Các cặp cạnh tỉ lệ: AB/MN = AC/MP = BC/NP",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "9.2",
      "de": "Cho ΔABC ᔕ ΔDEF. Những cách viết nào dưới đây đúng? (1) ΔBCA ᔕ ΔFED. (2) ΔCAB ᔕ ΔEDF. (3) ΔBAC ᔕ ΔEDF. (4) ΔCBA ᔕ ΔFED.",
      "trang": 51,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "(3) và (4) đúng; (1) và (2) sai",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "9.3",
      "de": "Với hai tam giác ABC và MNP bất kì sao cho ΔABC ᔕ ΔMNP. Những câu nào dưới đây đúng? (1) AB = MN, AC = MP, BC = NP. (2) góc A = góc M, góc B = góc N, góc C = góc P. (3) AB/MN = AC/MP = BC/NP. (4) góc B = góc P, góc C = góc M, góc A = góc N.",
      "trang": 52,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "(2) và (3) đúng; (1) và (4) sai",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "9.4",
      "de": "Cho ΔABC ᔕ ΔA'B'C', biết góc A = 60°, góc B' = 50°. Hãy tính số đo các góc còn lại của tam giác ABC và tam giác A'B'C'.",
      "trang": 52,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "Góc A' = 60°, góc B = 50°, góc C = góc C' = 70°",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "9.5",
      "de": "Cho ΔABC ᔕ ΔMNP. Biết AB = 5 cm, MN = 8 cm và chu vi tam giác ABC bằng 20 cm. Hỏi ΔABC ᔕ ΔMNP với tỉ số đồng dạng bằng bao nhiêu và chu vi tam giác MNP bằng bao nhiêu?",
      "trang": 52,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "Tỉ số đồng dạng 5/8; chu vi ΔMNP = 32 cm",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "9.6",
      "de": "Cho tam giác ABC đồng dạng với một tam giác có ba đỉnh là D, E, F. Biết rằng góc A > góc B = 60° = góc D > góc E, hãy chỉ ra các đỉnh tương ứng và viết đúng kí hiệu đồng dạng của hai tam giác đó.",
      "trang": 52,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "Góc A = góc F, góc B = góc D, góc C = góc E; ΔABC ᔕ ΔFDE",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "9.7",
      "de": "Cho tam giác không cân ABC đồng dạng với một tam giác có ba đỉnh là M, N, P. Biết rằng AB/NP = AC/PM = BC/MN, hãy chỉ ra các đỉnh tương ứng và viết đúng kí hiệu đồng dạng của hai tam giác đó.",
      "trang": 52,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "Đỉnh tương ứng: A với P, B với N, C với M; ΔABC ᔕ ΔPNM",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "9.8",
      "de": "Trong Hình 9.3 (hai đoạn thẳng AM và BN cắt nhau tại C; P nằm trên đoạn CM, Q nằm trên đoạn CN), cho PQ và MN cùng song song với AB. Hãy liệt kê ba cặp tam giác phân biệt đồng dạng với nhau.",
      "trang": 52,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "ΔCPQ ᔕ ΔCAB; ΔCMN ᔕ ΔCAB; ΔCPQ ᔕ ΔCMN",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "9.9",
      "de": "Cho hình bình hành ABCD và cho E, F lần lượt là trung điểm của AB và AC. Chứng minh rằng ΔAEF ᔕ ΔCDA.",
      "trang": 52,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "EF là đường trung bình của ΔABC nên EF // BC, suy ra ΔAEF ᔕ ΔABC với tỉ số AE/AB = 1/2. ABCD là hình bình hành nên ΔABC = ΔCDA (c.c.c), tức ΔABC ᔕ ΔCDA tỉ số 1. Do đó ΔAEF ᔕ ΔCDA (tỉ số 1/2).",
+     "loai_dap_an": "LOI_GIAI"
     },
     {
      "ma": "9.10",
      "de": "Cho tam giác ABC cân tại đỉnh A và tam giác MNP cân tại đỉnh M. Biết rằng góc ABC = góc MNP và BC = 2NP. Chứng minh rằng ΔABC ᔕ ΔMNP và tìm tỉ số đồng dạng.",
      "trang": 52,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "Lấy E, F là trung điểm của AB, AC; ΔABC ᔕ ΔAEF tỉ số 2. Xét ΔAEF và ΔMNP: góc AEF = góc ABC = góc MNP, EF = BC/2 = NP, góc AFE = góc ACB = góc ABC = góc MNP = góc MPN, nên ΔAEF = ΔMNP (g.c.g). Vậy ΔABC ᔕ ΔMNP với tỉ số đồng dạng 2.",
+     "loai_dap_an": "LOI_GIAI"
     },
     {
      "ma": "9.11a",
      "de": "Cho tam giác ABC với AB = 6 cm, AC = 9 cm. Lấy các điểm M, N lần lượt trên các cạnh AB, AC sao cho AM = 4 cm, AN = 6 cm. Chứng minh rằng ΔAMN ᔕ ΔABC và tìm tỉ số đồng dạng.",
      "trang": 52,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "AM/AB = AN/AC = 2/3 nên theo định lí Thalès đảo MN // BC, suy ra ΔAMN ᔕ ΔABC với tỉ số đồng dạng 2/3.",
+     "loai_dap_an": "LOI_GIAI"
     },
     {
      "ma": "9.11b",
      "de": "Cho tam giác ABC với AB = 6 cm, AC = 9 cm. Lấy điểm P trên cạnh AC sao cho AP = 4 cm. Chứng minh rằng ΔAPB ᔕ ΔABC.",
      "trang": 52,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "Lấy M, N như câu a (AM = 4 cm, AN = 6 cm). ΔAPB và ΔAMN có AP = AM = 4 cm, góc A chung, AB = AN = 6 cm nên ΔAPB = ΔAMN (c.g.c). Mà ΔAMN ᔕ ΔABC nên ΔAPB ᔕ ΔABC. (Cách khác: AP/AB = AB/AC = 2/3, góc A chung, trường hợp c.g.c.)",
+     "loai_dap_an": "LOI_GIAI"
     }
    ]
   },
@@ -1838,175 +2328,225 @@
      "de": "Hai tam giác có độ dài ba cạnh như sau có đồng dạng không? Vì sao? (1) 2 cm, 3 cm, 4 cm và 6 cm, 9 cm, 12 cm. (2) 3 cm, 5 cm, 6 cm và 6 cm, 10 cm, 11 cm. (3) 2 cm, 3 cm, 3 cm và 2 cm, 2 cm, 3 cm. (4) 4 cm, 4 cm, 4 cm và 3 cm, 3 cm, 3 cm.",
      "trang": 55,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "(1) đồng dạng (c.c.c) vì 2/6 = 3/9 = 4/12; (2) không đồng dạng vì 3/6 = 5/10 ≠ 6/11; (3) không đồng dạng vì 2/2 ≠ 3/2; (4) đồng dạng (c.c.c) vì 4/3 = 4/3 = 4/3",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "9.13",
      "de": "Cho hai tam giác ABC và DEF lần lượt có chu vi là 15 cm và 20 cm. Biết rằng AB/DE = AC/DF = 3/4. Chứng minh rằng ΔABC ᔕ ΔDEF.",
      "trang": 55,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "Từ AB/DE = AC/DF = 3/4 suy ra 3/4 = (AB + AC)/(DE + DF) = (15 − BC)/(20 − EF), nên 60 − 3EF = 60 − 4BC, hay BC/EF = 3/4. Vậy AB/DE = AC/DF = BC/EF, do đó ΔABC ᔕ ΔDEF (c.c.c).",
+     "loai_dap_an": "LOI_GIAI"
     },
     {
      "ma": "9.14",
      "de": "Cho hai tam giác ABC và MNP thoả mãn 2AB = 3AC = 4BC và DE = 6 cm, DF = 4 cm, EF = 3 cm. Chứng minh rằng ΔABC ᔕ ΔMNP. (Sách in lẫn tên: DE, DF, EF là cạnh của tam giác DEF, lời giải cuối sách chứng minh ΔABC ᔕ ΔDEF.)",
      "trang": 55,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "Từ DE = 6 cm, DF = 4 cm, EF = 3 cm suy ra 2DE = 3DF = 4EF (= 12). Kết hợp 2AB = 3AC = 4BC được AB/DE = AC/DF = BC/EF. Vậy ΔABC ᔕ ΔDEF (c.c.c).",
+     "loai_dap_an": "LOI_GIAI"
     },
     {
      "ma": "9.15",
      "de": "Cho tam giác ABC và điểm O nằm trong tam giác. Lấy M, N, P là các điểm lần lượt trên các tia OA, OB, OC sao cho OA = 3OM, OB = 3ON, OC = 3OP. Chứng minh rằng ΔABC ᔕ ΔMNP và tìm tỉ số đồng dạng.",
      "trang": 55,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "OM/OA = ON/OB = 1/3 nên MN // AB (Thalès đảo), ΔOMN ᔕ ΔOAB, suy ra MN/AB = 1/3. Tương tự MP/AC = 1/3, NP/BC = 1/3. Vậy AB/MN = AC/MP = BC/NP = 3, ΔABC ᔕ ΔMNP (c.c.c) với tỉ số đồng dạng 3.",
+     "loai_dap_an": "LOI_GIAI"
     },
     {
      "ma": "9.16",
      "de": "Cho tam giác ABC và các điểm M, N, P lần lượt là trung điểm của các cạnh BC, CA, AB. Chứng minh rằng ΔABC ᔕ ΔMNP và tìm tỉ số đồng dạng.",
      "trang": 55,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "NP, PM, MN là các đường trung bình của ΔABC nên NP/BC = PM/CA = MN/AB = 1/2. Do đó ΔMNP ᔕ ΔABC (c.c.c) tỉ số 1/2, tức ΔABC ᔕ ΔMNP với tỉ số đồng dạng 2.",
+     "loai_dap_an": "LOI_GIAI"
     },
     {
      "ma": "9.17",
      "de": "Cho tứ giác ABCD với AB = 2 cm, AD = 3 cm, BD = 4 cm, BC = 6 cm, CD = 8 cm. Chứng minh rằng ΔABD ᔕ ΔBDC và AB song song với CD.",
      "trang": 55,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "AB/BD = AD/BC = BD/DC = 1/2 (2/4 = 3/6 = 4/8) nên ΔABD ᔕ ΔBDC (c.c.c). Suy ra góc ABD = góc BDC, hai góc so le trong bằng nhau nên AB // CD.",
+     "loai_dap_an": "LOI_GIAI"
     },
     {
      "ma": "9.18",
      "de": "Cho tam giác ABC có độ dài các cạnh là AB = 4 cm, BC = 5 cm, CA = 6 cm. Tam giác MNP đồng dạng với tam giác ABC và có độ dài cạnh lớn nhất bằng 9 cm. Hãy cho biết độ dài các cạnh MN, MP, NP của tam giác MNP.",
      "trang": 55,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "MN = 6 cm, NP = 7,5 cm, MP = 9 cm (tỉ số đồng dạng 3/2)",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "9.19",
      "de": "Với hai tam giác bất kì ABC và DEF thoả mãn AB/EF = BC/DF, góc ABC = góc DFE. Những khẳng định nào sau đây là đúng? (1) ΔABC ᔕ ΔDEF. (2) ΔCAB ᔕ ΔDEF. (3) ΔABC ᔕ ΔEFD. (4) ΔBCA ᔕ ΔEFD. (5) ΔABC ᔕ ΔFDE. (6) ΔBAC ᔕ ΔFED.",
      "trang": 55,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "ΔABC ᔕ ΔEFD (c.g.c); (2), (3), (6) đúng; (1), (4), (5) sai",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "9.20",
      "de": "Với hai tam giác bất kì ABC và MNP thoả mãn góc ABC = góc NMP, góc ACB = góc MNP. Những khẳng định nào sau đây là đúng? (1) ΔABC ᔕ ΔMNP. (2) ΔBCA ᔕ ΔMNP. (3) ΔABC ᔕ ΔNPM. (4) ΔCAB ᔕ ΔNPM. (5) ΔABC ᔕ ΔPMN. (6) ΔBAC ᔕ ΔMNP.",
      "trang": 56,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "ΔABC ᔕ ΔPMN (g.g); (2), (4), (5) đúng; (1), (3), (6) sai",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "9.21a",
      "de": "Cho hai điểm M, N lần lượt nằm trên hai cạnh AB, AC của tam giác ABC sao cho AM · AB = AN · AC. Chứng minh rằng ΔAMN ᔕ ΔACB.",
      "trang": 56,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "Từ AM · AB = AN · AC suy ra AM/AC = AN/AB. ΔAMN và ΔACB có AM/AC = AN/AB, góc MAN = góc BAC (chung) nên ΔAMN ᔕ ΔACB (c.g.c).",
+     "loai_dap_an": "LOI_GIAI"
     },
     {
      "ma": "9.21b",
      "de": "Cho hai điểm M, N lần lượt nằm trên hai cạnh AB, AC của tam giác ABC sao cho AM · AB = AN · AC. Lấy E, F lần lượt là trung điểm của MN, BC. Chứng minh rằng góc EAB = góc FAC.",
      "trang": 56,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "Từ ΔAMN ᔕ ΔACB: góc AMN = góc ACB và AM/AC = MN/CB. Vì ME = MN/2, CF = CB/2 nên AM/AC = ME/CF. ΔAME và ΔACF có AM/AC = ME/CF, góc AME = góc AMN = góc ACB = góc ACF nên ΔAME ᔕ ΔACF (c.g.c). Suy ra góc EAM = góc FAC, tức góc EAB = góc FAC.",
+     "loai_dap_an": "LOI_GIAI"
     },
     {
      "ma": "9.22a",
      "de": "Cho tam giác ABC và hai điểm P, Q lần lượt nằm trên các tia đối của tia AB và AC sao cho góc APQ = góc ACB. Chứng minh rằng AP · AB = AQ · AC.",
      "trang": 56,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "ΔACB và ΔAPQ có góc BAC = góc QAP (đối đỉnh), góc ACB = góc APQ (giả thiết) nên ΔACB ᔕ ΔAPQ (g.g). Suy ra AB/AQ = AC/AP, hay AP · AB = AQ · AC.",
+     "loai_dap_an": "LOI_GIAI"
     },
     {
      "ma": "9.22b",
      "de": "Cho tam giác ABC và hai điểm P, Q lần lượt nằm trên các tia đối của tia AB và AC sao cho góc APQ = góc ACB. Chứng minh rằng ΔAPC ᔕ ΔAQB.",
      "trang": 56,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "Từ AP · AB = AQ · AC suy ra AP/AQ = AC/AB. ΔAPC và ΔAQB có góc PAC = góc QAB (đối đỉnh), AP/AQ = AC/AB nên ΔAPC ᔕ ΔAQB (c.g.c).",
+     "loai_dap_an": "LOI_GIAI"
     },
     {
      "ma": "9.23a",
      "de": "Cho tam giác ABC và hai điểm M, N lần lượt nằm trên hai cạnh AB, AC sao cho MN song song với BC. Gọi ME, BF lần lượt là phân giác của các góc M, B của các tam giác AMN và ABC. Chứng minh rằng ΔMEN ᔕ ΔBFC.",
      "trang": 56,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "ME, BF là phân giác nên góc NME = góc AMN/2, góc CBF = góc ABC/2. MN // BC nên góc AMN = góc ABC (đồng vị), suy ra góc NME = góc CBF. ΔMEN và ΔBFC có góc MNE = góc BCF (đồng vị), góc NME = góc CBF nên ΔMEN ᔕ ΔBFC (g.g).",
+     "loai_dap_an": "LOI_GIAI"
     },
     {
      "ma": "9.23b",
      "de": "Cho tam giác ABC và hai điểm M, N lần lượt nằm trên hai cạnh AB, AC sao cho MN song song với BC. Gọi ME, BF lần lượt là phân giác của các góc M, B của các tam giác AMN và ABC. Chứng minh rằng AE/AF = MN/BC.",
      "trang": 56,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "Góc AME = góc AMN/2 = góc ABC/2 = góc ABF nên ME // BF (đồng vị). Theo định lí Thalès: AE/AF = AM/AB. Mặt khác MN // BC nên ΔAMN ᔕ ΔABC, AM/AB = MN/BC. Vậy AE/AF = MN/BC.",
+     "loai_dap_an": "LOI_GIAI"
     },
     {
      "ma": "9.24",
      "de": "Cho hình thang ABCD (AB // CD). Biết rằng AB = 2 cm, BD = 4 cm, CD = 8 cm. Chứng minh rằng BC = 2AD.",
      "trang": 56,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "ΔABD và ΔBDC có AB/BD = BD/DC = 1/2 (2/4 = 4/8), góc ABD = góc BDC (so le trong, AB // CD) nên ΔABD ᔕ ΔBDC (c.g.c). Suy ra AD/BC = AB/BD = 1/2, vậy BC = 2AD.",
+     "loai_dap_an": "LOI_GIAI"
     },
     {
      "ma": "9.25a",
      "de": "Cho hình thang ABCD (AB // CD). Biết rằng AD cắt BC tại E, AC cắt BD tại F. Chứng minh rằng: ΔEAB ᔕ ΔEDC, ΔFAB ᔕ ΔFCD.",
      "trang": 56,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "AB song song với cạnh DC của ΔEDC nên ΔEAB ᔕ ΔEDC. Tương tự, AB song song với cạnh CD của ΔFCD nên ΔFAB ᔕ ΔFCD.",
+     "loai_dap_an": "LOI_GIAI"
     },
     {
      "ma": "9.25b",
      "de": "Cho hình thang ABCD (AB // CD). Biết rằng AD cắt BC tại E, AC cắt BD tại F. Lấy hai điểm M, N lần lượt là trung điểm của AB, CD. Chứng minh rằng bốn điểm M, N, E, F thẳng hàng.",
      "trang": 56,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "Từ ΔEAB ᔕ ΔEDC: EA/ED = AB/DC = AM/DN; lại có góc EAM = góc EDN (đồng vị) nên ΔEAM ᔕ ΔEDN (c.g.c), góc AEM = góc DEN, suy ra E, M, N thẳng hàng. Từ ΔFAB ᔕ ΔFCD: FA/FC = AB/CD = AM/CN; góc FAM = góc FCN (so le trong) nên ΔFAM ᔕ ΔFCN, góc AFM = góc CFN, suy ra F, M, N thẳng hàng. Vậy M, N, E, F thẳng hàng.",
+     "loai_dap_an": "LOI_GIAI"
     },
     {
      "ma": "9.26",
      "de": "Cho tam giác ABC với AB = 6 cm, AC = 9 cm. Lấy điểm D trên cạnh AC sao cho AD = 4 cm. Chứng minh rằng ΔABD ᔕ ΔACB và BC = (3/2)BD.",
      "trang": 56,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "ΔABD và ΔACB có AB/AC = AD/AB = 2/3 (6/9 = 4/6), góc BAD = góc CAB (chung) nên ΔABD ᔕ ΔACB (c.g.c). Suy ra BD/BC = AB/AC = 2/3, do đó BC = (3/2)BD.",
+     "loai_dap_an": "LOI_GIAI"
     },
     {
      "ma": "9.27",
      "de": "Cho tứ giác ABCD như Hình 9.6. Biết rằng AB = 2 cm, AC = 4 cm, AD = 8 cm và AC là phân giác của góc BAD. Chứng minh rằng CD = 2BC.",
      "trang": 57,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "ΔACD và ΔABC có AC/AB = AD/AC = 2 (4/2 = 8/4), góc DAC = góc CAB (AC là phân giác) nên ΔACD ᔕ ΔABC (c.g.c). Suy ra CD/BC = AC/AB = 2, vậy CD = 2BC.",
+     "loai_dap_an": "LOI_GIAI"
     },
     {
      "ma": "9.28",
      "de": "Cho tam giác ABC và điểm D trên cạnh AC sao cho góc ABD = góc BCA. Chứng minh rằng AB^2 = AD · AC.",
      "trang": 57,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "ΔABD và ΔACB có góc A chung, góc ABD = góc ACB (giả thiết) nên ΔABD ᔕ ΔACB (g.g). Suy ra AB/AC = AD/AB, hay AB^2 = AD · AC.",
+     "loai_dap_an": "LOI_GIAI"
     },
     {
      "ma": "9.29a",
      "de": "Cho hai điểm M, N lần lượt nằm trên các cạnh AB, AC của tam giác ABC sao cho góc ABN = góc ACM. Gọi O là giao điểm của BN và CM. Chứng minh rằng AM · AB = AN · AC.",
      "trang": 57,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "ΔABN và ΔACM có góc A chung, góc ABN = góc ACM (giả thiết) nên ΔABN ᔕ ΔACM (g.g). Suy ra AB/AC = AN/AM, hay AM · AB = AN · AC.",
+     "loai_dap_an": "LOI_GIAI"
     },
     {
      "ma": "9.29b",
      "de": "Cho hai điểm M, N lần lượt nằm trên các cạnh AB, AC của tam giác ABC sao cho góc ABN = góc ACM. Gọi O là giao điểm của BN và CM. Chứng minh rằng OM · OC = ON · OB.",
      "trang": 57,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "ΔOBM và ΔOCN có góc MOB = góc NOC (đối đỉnh), góc MBO = góc ABN = góc ACM = góc NCO nên ΔOBM ᔕ ΔOCN (g.g). Suy ra OM/ON = OB/OC, hay OM · OC = ON · OB.",
+     "loai_dap_an": "LOI_GIAI"
     },
     {
      "ma": "9.30a",
      "de": "Cho tam giác ABC với AB = 6 cm, AC = 4 cm, BC = 5 cm. Trên tia đối của tia CA, lấy điểm D sao cho CD = CB. Chứng minh rằng ΔABC ᔕ ΔADB.",
      "trang": 57,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "AD = AC + CD = AC + BC = 9 cm. ΔABC và ΔADB có AB/AD = 6/9 = 2/3 = AC/AB (4/6), góc A chung nên ΔABC ᔕ ΔADB (c.g.c).",
+     "loai_dap_an": "LOI_GIAI"
     },
     {
      "ma": "9.30b",
      "de": "Cho tam giác ABC với AB = 6 cm, AC = 4 cm, BC = 5 cm. Trên tia đối của tia CA, lấy điểm D sao cho CD = CB. Chứng minh rằng góc ACB = 2 góc ABC.",
      "trang": 57,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "ΔCBD cân tại C (CD = CB) nên góc ngoài ACB = 2 góc CDB = 2 góc ADB. Mà góc ADB = góc ABC (vì ΔABC ᔕ ΔADB). Suy ra góc ACB = 2 góc ABC.",
+     "loai_dap_an": "LOI_GIAI"
     }
    ]
   },
@@ -2019,77 +2559,99 @@
      "de": "Cho tam giác ABC vuông tại A. Khẳng định nào sau đây là đúng? (1) AB^2 + BC^2 = AC^2. (2) AB + BC = AC. (3) AB^2 + AC^2 = BC^2. (4) AB + AC = BC. (5) AC^2 + BC^2 = AB^2. (6) AC + BC = AB.",
      "trang": 59,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "Chỉ (3) đúng (BC^2 = AB^2 + AC^2); các câu còn lại sai",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "9.32",
      "de": "Những bộ ba số đo nào dưới đây là độ dài ba cạnh của một tam giác vuông? (1) 1 cm, 1 cm, 2 cm. (2) 1 cm, 1 cm, √2 cm. (3) 2 cm, 4 cm, 20 cm. (4) 2 cm, 4 cm, √20 cm. (5) 3 cm, 4 cm, 5 cm. (6) 9 cm, 16 cm, 25 cm.",
      "trang": 59,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "(2), (4), (5)",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "9.33",
      "de": "Tính các độ dài x, y, z, t trong Hình 9.8 (bốn tam giác vuông: tam giác thứ nhất có hai cạnh góc vuông là 3 và 2, cạnh huyền là x; tam giác thứ hai có hai cạnh góc vuông là 2 và y, cạnh huyền là 2√5; tam giác thứ ba có hai cạnh góc vuông là 3 và 1, cạnh huyền là z; tam giác thứ tư có hai cạnh góc vuông là t và 5, cạnh huyền là √29).",
      "trang": 59,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "x = √13; y = 4; z = √10; t = 2",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "9.34",
      "de": "Cho tam giác ABC vuông cân tại đỉnh A có đường cao AH. Biết rằng AB = 4 cm, hãy tính độ dài cạnh đáy BC và chiều cao AH.",
      "trang": 59,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "BC = 4√2 cm; AH = 2√2 cm",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "9.35",
      "de": "Hãy tính độ dài các cạnh của một hình thoi với hai đường chéo lần lượt có độ dài bằng 6 cm và 8 cm.",
      "trang": 60,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "Mỗi cạnh hình thoi dài 5 cm",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "9.36",
      "de": "Cho tam giác ABC vuông tại đỉnh A, có BC = 26 cm và AB/AC = 5/12. Tính độ dài các cạnh AB, AC.",
      "trang": 60,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "AB = 10 cm; AC = 24 cm",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "9.37",
      "de": "Cho tam giác ABC vuông tại đỉnh A. Gọi AD là đường cao của tam giác. Biết rằng BD = 2 cm, CD = 8 cm. Hãy tính độ dài các cạnh AB, AC và chiều cao AD của tam giác ABC.",
      "trang": 60,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "AB = 2√5 cm; AC = 4√5 cm; AD = 4 cm",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "9.38",
      "de": "Tìm độ dài cạnh huyền của một tam giác vuông biết rằng tỉ số của độ dài hai cạnh góc vuông là 3 : 4 và chu vi tam giác bằng 48 cm.",
      "trang": 60,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "Cạnh huyền dài 20 cm (hai cạnh góc vuông 12 cm và 16 cm)",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "9.39",
      "de": "Tính diện tích của một tam giác cân, biết rằng tam giác đó có hai cạnh với độ dài bằng 4 cm và 8 cm.",
      "trang": 60,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "Diện tích 4√15 cm^2 (ba cạnh là 8 cm, 8 cm, 4 cm; đường cao ứng với đáy 4 cm là 2√15 cm)",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "9.40",
      "de": "Tính chiều cao và diện tích của một tam giác đều có cạnh bằng 4 cm.",
      "trang": 60,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "Chiều cao 2√3 cm; diện tích 4√3 cm^2",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "9.41",
      "de": "Một chiếc ti vi màn hình phẳng 32 inch với chiều ngang màn hình là 72 cm (1 inch = 2,54 cm). Tính chiều cao của màn hình ti vi đó.",
      "trang": 60,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "Chiều cao màn hình h ≈ 37,72 cm (đường chéo 81,28 cm)",
+     "loai_dap_an": "DAP_SO"
     }
    ]
   },
@@ -2102,140 +2664,180 @@
      "de": "Những điều kiện nào dưới đây kéo theo hai tam giác vuông đồng dạng. (1) Một góc nhọn của tam giác này bằng một góc nhọn của tam giác kia. (2) Một cạnh góc vuông của tam giác này bằng một cạnh góc vuông của tam giác kia. (3) Hai cạnh góc vuông của tam giác này tỉ lệ với hai cạnh góc vuông của tam giác kia. (4) Một góc nhọn của tam giác này phụ với một góc nhọn của tam giác kia. (5) Cạnh huyền của tam giác này bằng cạnh huyền của tam giác kia. (6) Một cạnh góc vuông và cạnh huyền của tam giác này tỉ lệ với một cạnh góc vuông và cạnh huyền của tam giác kia.",
      "trang": 62,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "(1), (3), (4), (6)",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "9.43",
      "de": "Cho tam giác ABC vuông cân tại A và tam giác MNP có MN = MP = 4 cm và NP = 4√2 cm. Chứng minh rằng ΔABC ᔕ ΔMNP.",
      "trang": 62,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "MN^2 + MP^2 = 16 + 16 = 32 = NP^2 nên ΔMNP vuông tại M (Pythagore đảo); lại có MN = MP nên ΔMNP vuông cân tại M. Hai tam giác vuông cân ABC (vuông tại A) và MNP (vuông tại M) có AB/MN = AC/MP nên ΔABC ᔕ ΔMNP (hai cạnh góc vuông tỉ lệ).",
+     "loai_dap_an": "LOI_GIAI"
     },
     {
      "ma": "9.44",
      "de": "Hãy liệt kê ba cặp tam giác vuông trong Hình 9.10 (ΔABC vuông tại A có AB = 2, AC = 3, BC = √13; ΔMNP vuông tại M có MN = 4,5, MP = 3; ΔDEF vuông tại E, không ghi độ dài; ΔGHK vuông tại G có GH = 1, HK = √13/2; góc DFE và góc MPN được đánh dấu bằng nhau) đồng dạng và giải thích chúng đồng dạng dựa theo trường hợp nào của hai tam giác vuông đồng dạng?",
      "trang": 63,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "ΔABC ᔕ ΔMPN (hai cạnh góc vuông tỉ lệ); ΔMNP ᔕ ΔEDF (một cặp góc nhọn bằng nhau); ΔABC ᔕ ΔGHK (cạnh huyền và cạnh góc vuông tỉ lệ)",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "9.45a",
      "de": "Cho tam giác ABC vuông tại A có đường cao AH. Từ H kẻ đường thẳng HE vuông góc với AB (E thuộc AB). Chứng minh rằng ΔABC ᔕ ΔHAC và CA^2 = CH · CB.",
      "trang": 63,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "Hai tam giác vuông ABC (vuông tại A) và HAC (vuông tại H) có góc C chung nên ΔABC ᔕ ΔHAC. Suy ra CA/CH = CB/CA, hay CA^2 = CH · CB.",
+     "loai_dap_an": "LOI_GIAI"
     },
     {
      "ma": "9.45b",
      "de": "Cho tam giác ABC vuông tại A có đường cao AH. Từ H kẻ đường thẳng HE vuông góc với AB (E thuộc AB). Chứng minh rằng AH/BC = HE/AB.",
      "trang": 63,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "Hai tam giác vuông ABC (vuông tại A) và EHA (vuông tại E) có góc ACB = 90° − góc ABC = góc HAB = góc HAE nên ΔABC ᔕ ΔEHA. Do đó AB/EH = BC/HA, hay AH/BC = HE/AB.",
+     "loai_dap_an": "LOI_GIAI"
     },
     {
      "ma": "9.46",
      "de": "Cho tam giác ABC vuông tại A có đường cao AH. Biết rằng AB = 6 cm và AC = 8 cm, hãy tính độ dài các đoạn thẳng BC, AH, BH, CH.",
      "trang": 63,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "BC = 10 cm; AH = 4,8 cm; BH = 3,6 cm; CH = 6,4 cm",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "9.47a",
      "de": "Cho tam giác nhọn ABC có các đường cao AD, BE, CF cắt nhau ở H. Chứng minh rằng HA · HD = HB · HE = HC · HF.",
      "trang": 63,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "Hai tam giác vuông HAE (vuông tại E) và HBD (vuông tại D) có góc AHE = góc DHB (đối đỉnh) nên ΔHAE ᔕ ΔHBD. Suy ra HA/HB = HE/HD, hay HA · HD = HB · HE. Tương tự HA · HD = HC · HF.",
+     "loai_dap_an": "LOI_GIAI"
     },
     {
      "ma": "9.47b",
      "de": "Cho tam giác nhọn ABC có các đường cao AD, BE, CF cắt nhau ở H. Chứng minh rằng ΔAFC ᔕ ΔAEB và AF · AB = AE · AC.",
      "trang": 63,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "Hai tam giác vuông AFC (vuông tại F) và AEB (vuông tại E) có góc A chung nên ΔAFC ᔕ ΔAEB. Suy ra AF/AE = AC/AB, hay AF · AB = AE · AC.",
+     "loai_dap_an": "LOI_GIAI"
     },
     {
      "ma": "9.47c",
      "de": "Cho tam giác nhọn ABC có các đường cao AD, BE, CF cắt nhau ở H. Chứng minh rằng ΔBDF ᔕ ΔEDC và DA là tia phân giác của góc EDF.",
      "trang": 63,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "Từ HA · HD = HB · HE: HA/HE = HB/HD, lại có góc AHB = góc EHD nên ΔAHB ᔕ ΔEHD (c.g.c), góc HAB = góc HED. Do đó góc CED = 90° − góc HED = 90° − góc HAB = góc FBD; tương tự góc BFD = góc ECD. Vậy ΔBDF ᔕ ΔEDC (g.g), suy ra góc FDB = góc CDE, nên góc FDA = 90° − góc FDB = 90° − góc CDE = góc EDA: DA là phân giác góc EDF.",
+     "loai_dap_an": "LOI_GIAI"
     },
     {
      "ma": "9.48a",
      "de": "Cho tam giác nhọn ABC có các đường cao AD, BE, CF. Chứng minh rằng ΔBDF ᔕ ΔBAC và ΔCDE ᔕ ΔCAB.",
      "trang": 63,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "Hai tam giác vuông BDA (vuông tại D) và BFC (vuông tại F) có góc B chung nên ΔBDA ᔕ ΔBFC, suy ra BF/BC = BD/BA. ΔBDF và ΔBAC có BF/BC = BD/BA, góc B chung nên ΔBDF ᔕ ΔBAC (c.g.c). Chứng minh tương tự được ΔCDE ᔕ ΔCAB.",
+     "loai_dap_an": "LOI_GIAI"
     },
     {
      "ma": "9.48b",
      "de": "Cho tam giác nhọn ABC có các đường cao AD, BE, CF. Chứng minh rằng BF · BA + CE · CA = BC^2.",
      "trang": 63,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "Từ ΔBDF ᔕ ΔBAC: BF/BC = BD/BA, hay BF · BA = BD · BC. Từ ΔCDE ᔕ ΔCAB: CE/CB = CD/CA, hay CE · CA = CD · BC. Cộng lại: BF · BA + CE · CA = BD · BC + DC · BC = BC^2.",
+     "loai_dap_an": "LOI_GIAI"
     },
     {
      "ma": "9.49a",
      "de": "Cho tam giác ABC vuông tại A có đường cao AH. Cho M là một điểm nằm trên cạnh BC (M nằm giữa C và H). Kẻ đường thẳng qua M vuông góc với BC lần lượt cắt AC và tia đối của tia AB tại N và P. Chứng minh rằng ΔANP ᔕ ΔHBA và ΔMCN ᔕ ΔMPB.",
      "trang": 63,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "Hai tam giác vuông ANP (vuông tại A) và HBA (vuông tại H) có góc ANP = góc MNC = 90° − góc ACB = góc CBA = góc HBA nên ΔANP ᔕ ΔHBA. Hai tam giác vuông MCN và MPB (cùng vuông tại M) có góc MNC = 90° − góc BCA = góc CBA = góc MBP nên ΔMCN ᔕ ΔMPB.",
+     "loai_dap_an": "LOI_GIAI"
     },
     {
      "ma": "9.49b",
      "de": "Cho tam giác ABC vuông tại A có đường cao AH. Cho M là một điểm nằm trên cạnh BC (M nằm giữa C và H). Kẻ đường thẳng qua M vuông góc với BC lần lượt cắt AC và tia đối của tia AB tại N và P. Chứng minh rằng (MB/MC) · (NC/NA) · (PA/PB) = 1.",
      "trang": 63,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "Áp dụng định lí Thalès với MN // AH và AH // MP: MB/PB = MH/PA, NC/NA = MC/MH. Do đó (MB/MC) · (NC/NA) · (PA/PB) = (MB/PB) · (NC/NA) · (PA/MC) = (MH/PA) · (MC/MH) · (PA/MC) = 1.",
+     "loai_dap_an": "LOI_GIAI"
     },
     {
      "ma": "9.50",
      "de": "Cho tứ giác ABCD như Hình 9.11. Biết rằng góc BAD = góc BDC = 90°, AD = 4 cm, BD = 6 cm và BC = 9 cm. Chứng minh rằng BC // AD.",
      "trang": 64,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "Hai tam giác vuông ABD (vuông tại A) và DCB (vuông tại D) có AD/DB = DB/BC = 2/3 (4/6 = 6/9) nên ΔABD ᔕ ΔDCB (cạnh huyền và cạnh góc vuông tỉ lệ). Suy ra góc ADB = góc DBC, hai góc so le trong bằng nhau nên AD // BC.",
+     "loai_dap_an": "LOI_GIAI"
     },
     {
      "ma": "9.51a",
      "de": "Cho tam giác ABC vuông tại A có đường cao AH. Gọi M, N lần lượt là chân đường vuông góc kẻ từ H xuống AB và AC. Chứng minh rằng AM · AB = AH^2 và AM · AB = AN · AC.",
      "trang": 64,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "Hai tam giác vuông AHM (vuông tại M) và ABH (vuông tại H) có góc HAM = góc BAH (chung) nên ΔAHM ᔕ ΔABH, suy ra AM/AH = AH/AB, hay AM · AB = AH^2. Tương tự AN · AC = AH^2. Do đó AM · AB = AN · AC.",
+     "loai_dap_an": "LOI_GIAI"
     },
     {
      "ma": "9.51b",
      "de": "Cho tam giác ABC vuông tại A có đường cao AH. Gọi M, N lần lượt là chân đường vuông góc kẻ từ H xuống AB và AC. Chứng minh rằng ΔAMN ᔕ ΔACB.",
      "trang": 64,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "Từ AM · AB = AN · AC suy ra AM/AC = AN/AB. ΔAMN và ΔACB có AM/AC = AN/AB, góc MAN = góc CAB (chung) nên ΔAMN ᔕ ΔACB (c.g.c).",
+     "loai_dap_an": "LOI_GIAI"
     },
     {
      "ma": "9.52a",
      "de": "Cho ABC và A'B'C' lần lượt là các tam giác vuông tại đỉnh A và A'. Gọi M, M' lần lượt là trung điểm của AC và A'C'. Chứng minh rằng BC^2 + 3BA^2 = 4BM^2 và B'C'^2 + 3B'A'^2 = 4B'M'^2.",
      "trang": 64,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "Áp dụng định lí Pythagore cho ΔABM vuông tại A, với AC = 2AM: 4BM^2 = 4(BA^2 + AM^2) = 4BA^2 + AC^2 = 3BA^2 + BC^2 (vì BA^2 + AC^2 = BC^2). Tương tự 4B'M'^2 = 4B'A'^2 + A'C'^2 = 3B'A'^2 + B'C'^2.",
+     "loai_dap_an": "LOI_GIAI"
     },
     {
      "ma": "9.52b",
      "de": "Cho ABC và A'B'C' lần lượt là các tam giác vuông tại đỉnh A và A'. Gọi M, M' lần lượt là trung điểm của AC và A'C'. Chứng minh rằng nếu BC/BM = B'C'/B'M' thì ΔABC ᔕ ΔA'B'C'.",
      "trang": 64,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "Giả sử BC/BM = B'C'/B'M'. Theo câu a: BC^2/BM^2 + 3BA^2/BM^2 = 4 = B'C'^2/B'M'^2 + 3B'A'^2/B'M'^2, suy ra BA/BM = B'A'/B'M'. Vậy BC/B'C' = BM/B'M' = BA/B'A'. Hai tam giác vuông ABC và A'B'C' có BC/B'C' = BA/B'A' nên ΔABC ᔕ ΔA'B'C' (cạnh huyền và cạnh góc vuông tỉ lệ).",
+     "loai_dap_an": "LOI_GIAI"
     },
     {
      "ma": "9.53a",
      "de": "Cho hình vuông ABCD và M, N lần lượt là trung điểm của AB, BC. Gọi O là giao điểm của CM và DN. Chứng minh rằng CM ⊥ DN.",
      "trang": 64,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "ΔCBM = ΔDCN (hai tam giác vuông có CB = DC, BM = CN). Do đó góc CNO + góc NCO = góc CND + góc BCM = góc BMC + góc BCM = 90°. Trong ΔCNO: góc NOC = 180° − góc CNO − góc NCO = 90°, suy ra CM ⊥ DN.",
+     "loai_dap_an": "LOI_GIAI"
     },
     {
      "ma": "9.53b",
      "de": "Cho hình vuông ABCD và M, N lần lượt là trung điểm của AB, BC. Gọi O là giao điểm của CM và DN. Biết AB = 4 cm, hãy tính diện tích tam giác ONC.",
      "trang": 64,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "Diện tích ΔONC = 0,8 cm^2 (ON = 2/√5 cm, OC = 4/√5 cm)",
+     "loai_dap_an": "DAP_SO"
     }
    ]
   },
@@ -2248,49 +2850,63 @@
      "de": "Hãy vẽ hình đồng dạng phối cảnh của đoạn thẳng AB với tâm phối cảnh là điểm A và tỉ số đồng dạng bằng 3.",
      "trang": 66,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "Trên tia AB lấy điểm M sao cho AM = 3AB. Đoạn thẳng AM là hình đồng dạng phối cảnh của đoạn thẳng AB với tâm phối cảnh A và tỉ số đồng dạng 3.",
+     "loai_dap_an": "LOI_GIAI"
     },
     {
      "ma": "9.55",
      "de": "Lấy một điểm O nằm ngoài một đoạn thẳng AB. Hãy vẽ hình đồng dạng phối cảnh của đoạn thẳng AB với tâm phối cảnh là điểm O và tỉ số đồng dạng bằng 2.",
      "trang": 66,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "Trên các tia OA, OB lấy M, N sao cho OM = 2OA, ON = 2OB. Nối M với N, đoạn thẳng MN là hình đồng dạng phối cảnh của đoạn thẳng AB với tâm phối cảnh O và tỉ số đồng dạng 2.",
+     "loai_dap_an": "LOI_GIAI"
     },
     {
      "ma": "9.56",
      "de": "Lấy một điểm O nằm trong tam giác ABC. Hãy vẽ hình đồng dạng phối cảnh của tam giác ABC với tâm phối cảnh là điểm O và tỉ số đồng dạng bằng 2.",
      "trang": 66,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "Trên các tia OA, OB, OC lấy M, N, P sao cho OM = 2OA, ON = 2OB, OP = 2OC. Nối M, N, P được tam giác MNP là hình đồng dạng phối cảnh của ΔABC với tâm phối cảnh O và tỉ số đồng dạng 2.",
+     "loai_dap_an": "LOI_GIAI"
     },
     {
      "ma": "9.57",
      "de": "Những cặp hình vuông nào dưới đây (H.9.16, trên lưới ô vuông: cặp hình 1 gồm một hình vuông đặt nghiêng và một hình vuông lớn hơn có cạnh song song với các đường lưới; cặp hình 2 gồm hai hình vuông khác kích thước đặt rời nhau, cạnh của cả hai đều song song với các đường lưới; cặp hình 3 gồm một hình vuông nhỏ nằm bên trong một hình vuông lớn, cạnh của cả hai đều song song với các đường lưới) là hình đồng dạng phối cảnh?",
      "trang": 66,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "Cặp hình 2 và cặp hình 3",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "9.58",
      "de": "Những cặp hình nào dưới đây (H.9.17: hai lục giác đều; hai mũi tên, mũi tên thứ hai ngắn hơn nhưng cao hơn mũi tên thứ nhất; hai tam giác vuông cân; hình bầu dục và hình tròn) là hình đồng dạng?",
      "trang": 67,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "Cặp hai lục giác đều và cặp hai tam giác vuông cân",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "9.59",
      "de": "Những câu nào sau đây là đúng? (1) Hai tam giác cân có một cặp góc bằng nhau thì đồng dạng. (2) Hai tam giác đều bất kì luôn đồng dạng. (3) Hai tam giác đều bất kì luôn đồng dạng phối cảnh. (4) Hai lục giác đều bất kì luôn đồng dạng phối cảnh. (5) Hai hình vuông bất kì luôn đồng dạng. (6) Hai hình bình hành bất kì luôn đồng dạng.",
      "trang": 67,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "(2), (5) đúng; (1), (3), (4), (6) sai",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "9.60",
      "de": "Những câu nào sau đây là đúng? (1) Hai hình bằng nhau thì đồng dạng phối cảnh với nhau. (2) Hai hình đồng dạng phối cảnh với nhau thì đồng dạng với nhau. (3) Hai hình bằng nhau thì đồng dạng với nhau. (4) Hai hình cùng đồng dạng với một hình khác thì đồng dạng với nhau. (5) Hai hình cùng là phóng to của một hình thì bằng nhau. (6) Hai hình cùng là thu nhỏ của một hình thì đồng dạng với nhau.",
      "trang": 67,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "(2), (3), (4), (6) đúng; (1), (5) sai",
+     "loai_dap_an": "DAP_SO"
     }
    ]
   },
@@ -2303,112 +2919,144 @@
      "de": "Câu nào sau đây là sai? A. Hai tam giác có các cặp cạnh tương ứng tỉ lệ thì có các cặp góc tương ứng bằng nhau. B. Hai tam giác có hai cặp góc tương ứng bằng nhau thì có cặp các cạnh tương ứng tỉ lệ. C. Hai tam giác có một cặp góc tương ứng bằng nhau và hai cặp cạnh tương ứng tỉ lệ thì đồng dạng với nhau. D. Hai tam giác cùng đồng dạng với một tam giác theo cùng một tỉ số đồng dạng thì bằng nhau.",
      "trang": 68,
      "nhom": "Trắc nghiệm",
-     "dang": "TRAC_NGHIEM"
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "C",
+     "loai_dap_an": "TN"
     },
     {
      "ma": "Trắc nghiệm 2 (tr.68)",
      "de": "Bộ ba số đo nào dưới đây không là độ dài ba cạnh của một tam giác vuông? A. √2 cm, √2 cm, 2 cm. B. 1 cm, 1 cm, 1/√2 cm. C. 2 cm, 4 cm, √20 cm. D. 3 cm, 4 cm, 5 cm.",
      "trang": 68,
      "nhom": "Trắc nghiệm",
-     "dang": "TRAC_NGHIEM"
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN"
     },
     {
      "ma": "9.61",
      "de": "Cho ΔABC ᔕ ΔMNP với góc A = 60°, góc N = 40°. Hãy tính số đo các góc còn lại của hai tam giác ABC và MNP.",
      "trang": 68,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "Góc M = 60°, góc B = 40°, góc C = góc P = 80°",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "9.62",
      "de": "Cho ΔABC ᔕ ΔMNP với AB = 5 cm, AC = 6 cm, BC = 7 cm. Biết rằng tam giác MNP có chu vi bằng 36 cm, hãy tính độ dài các cạnh của tam giác MNP và tỉ số đồng dạng của tam giác ABC với tam giác MNP.",
      "trang": 68,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "Tỉ số đồng dạng 1/2; MN = 10 cm, MP = 12 cm, NP = 14 cm",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "9.63",
      "de": "Cho tam giác ABC có AB = √15 cm và AC = 2BC. Tìm độ dài hai cạnh AC, BC sao cho ABC là một tam giác vuông.",
      "trang": 68,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "Vuông tại B: BC = √5 cm, AC = 2√5 cm; hoặc vuông tại C: BC = √3 cm, AC = 2√3 cm (BC không thể là cạnh huyền vì AC = 2BC > BC)",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "9.64a",
      "de": "Cho tam giác ABC với AB > AC. Lấy điểm D trên cạnh BC (sách in nhầm, đúng là cạnh AB) sao cho AC = AD. Qua D kẻ đường thẳng song song với BC và cắt AC tại E. Qua E kẻ đường thẳng song song với CD và cắt AB tại F. Chứng minh rằng AD^2 = AF · AB.",
      "trang": 68,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "DE // BC nên ΔADE ᔕ ΔABC, AD/AB = AE/AC, hay AD = AB · AE/AC (1). EF // CD nên ΔAEF ᔕ ΔACD, AF/AD = AE/AC, hay AD = AF · AC/AE (2). Nhân (1) với (2) được AD^2 = AF · AB.",
+     "loai_dap_an": "LOI_GIAI"
     },
     {
      "ma": "9.64b",
      "de": "Cho tam giác ABC với AB > AC. Lấy điểm D trên cạnh BC (sách in nhầm, đúng là cạnh AB) sao cho AC = AD. Qua D kẻ đường thẳng song song với BC và cắt AC tại E. Qua E kẻ đường thẳng song song với CD và cắt AB tại F. Chứng minh rằng ΔACF ᔕ ΔABC.",
      "trang": 68,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "Từ câu a: AE/AD = AC/AB và AF/AD = AE/AC; vì AD = AC nên AE = AF. ΔACF và ΔABC có góc A chung, AC/AB = AE/AD = AE/AC = AF/AC nên ΔACF ᔕ ΔABC (c.g.c).",
+     "loai_dap_an": "LOI_GIAI"
     },
     {
      "ma": "9.65a",
      "de": "Cho tam giác ABC vuông tại A (AC > AB), có AD là đường phân giác của góc A (D thuộc BC). Qua D vẽ đường thẳng vuông góc với BC cắt cạnh AC tại E và cắt tia BA tại F. Chứng minh rằng ΔBDF ᔕ ΔEDC.",
      "trang": 69,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "ΔBDF (vuông tại D) và ΔEDC (vuông tại D) có góc FBD = 90° − góc DCE = góc CED nên ΔBDF ᔕ ΔEDC (một cặp góc nhọn bằng nhau).",
+     "loai_dap_an": "LOI_GIAI"
     },
     {
      "ma": "9.65b",
      "de": "Cho tam giác ABC vuông tại A (AC > AB), có AD là đường phân giác của góc A (D thuộc BC). Qua D vẽ đường thẳng vuông góc với BC cắt cạnh AC tại E và cắt tia BA tại F. Chứng minh rằng DB = DE.",
      "trang": 69,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "ΔABC (vuông tại A) và ΔDEC (vuông tại D) có góc C chung nên ΔABC ᔕ ΔDEC, suy ra AB/DE = AC/DC. AD là phân giác góc BAC nên AC/DC = AB/BD. Do đó AB/DE = AB/BD, suy ra DB = DE.",
+     "loai_dap_an": "LOI_GIAI"
     },
     {
      "ma": "9.66a",
      "de": "Cho tam giác ABC vuông tại A có đường cao AH. Biết AB = 3 cm, AC = 4 cm, hãy tính độ dài các đoạn thẳng AH, BH, CH.",
      "trang": 69,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "AH = 2,4 cm; BH = 1,8 cm; CH = 3,2 cm (BC = 5 cm)",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "9.66b",
      "de": "Cho tam giác ABC vuông tại A có đường cao AH. Gọi M, N lần lượt là chân các đường vuông góc kẻ từ H đến AB, AC. Chứng minh rằng ΔHMN ᔕ ΔABC.",
      "trang": 69,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "AMHN là hình chữ nhật nên góc MHN = 90°. HM // AC nên theo Thalès HM/AC = BH/BC = AB^2/BC^2, suy ra HM/AB = AB · AC/BC^2; tương tự HN/AC = AB · AC/BC^2. Hai tam giác vuông HMN (vuông tại H) và ABC (vuông tại A) có HM/AB = HN/AC nên ΔHMN ᔕ ΔABC (hai cạnh góc vuông tỉ lệ).",
+     "loai_dap_an": "LOI_GIAI"
     },
     {
      "ma": "9.67a",
      "de": "Cho tam giác ABC vuông tại A có đường cao AH. Gọi M, N, P lần lượt là trung điểm của HA, HB, HC. Chứng minh rằng ΔMNP ᔕ ΔABC và tìm tỉ số đồng dạng.",
      "trang": 69,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "MN, MP là đường trung bình của ΔHAB, ΔHAC nên MN/AB = MP/AC = 1/2; NP/BC = (HN + HP)/(HB + HC) = 1/2. Vậy ΔMNP ᔕ ΔABC (c.c.c) với tỉ số đồng dạng 1/2.",
+     "loai_dap_an": "LOI_GIAI"
     },
     {
      "ma": "9.67b",
      "de": "Cho tam giác ABC vuông tại A có đường cao AH. Gọi M, N, P lần lượt là trung điểm của HA, HB, HC. Chứng minh rằng ΔABN ᔕ ΔCAM và ΔACP ᔕ ΔBAM.",
      "trang": 69,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "Hai tam giác vuông ABH và CAH có góc ABH = 90° − góc ACH = góc CAH nên ΔABH ᔕ ΔCAH, suy ra AB/AC = BH/AH = BN/AM. ΔABN và ΔCAM có góc ABN = góc ABH = góc CAH = góc CAM, AB/CA = BN/AM nên ΔABN ᔕ ΔCAM (c.g.c). Chứng minh tương tự được ΔACP ᔕ ΔBAM.",
+     "loai_dap_an": "LOI_GIAI"
     },
     {
      "ma": "9.67c",
      "de": "Cho tam giác ABC vuông tại A có đường cao AH. Gọi M, N, P lần lượt là trung điểm của HA, HB, HC. Chứng minh rằng AN ⊥ CM và AP ⊥ BM.",
      "trang": 69,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "Xét ΔANC: AM ⊥ CN (vì AH ⊥ BC), NM ⊥ AC (vì MN // AB mà AB ⊥ AC). Ba đường cao của ΔANC đồng quy tại M, suy ra CM ⊥ AN. Tương tự, M là trực tâm của ΔABP nên BM ⊥ AP.",
+     "loai_dap_an": "LOI_GIAI"
     },
     {
      "ma": "9.68",
      "de": "Cho tam giác ABC vuông tại A có đường cao AH. Gọi M, N lần lượt là trung điểm của AH, AB. Chứng minh rằng ΔCAM ᔕ ΔCBN và ΔCHM ᔕ ΔCAN.",
      "trang": 69,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "Hai tam giác vuông CAH và CBA có góc C chung nên ΔCAH ᔕ ΔCBA, suy ra CA/CB = AH/BA = AM/BN và góc CAH = góc CBA. ΔCAM và ΔCBN có CA/CB = AM/BN, góc CAM = góc CBN nên ΔCAM ᔕ ΔCBN (c.g.c). Hai tam giác vuông CHM và CAN có HC/AC = HA/AB = HM/AN nên ΔCHM ᔕ ΔCAN (hai cạnh góc vuông tỉ lệ).",
+     "loai_dap_an": "LOI_GIAI"
     },
     {
      "ma": "9.69",
      "de": "Vẽ lại Hình 9.18 (trên lưới ô vuông, lấy O làm gốc toạ độ, đơn vị là cạnh một ô lớn, trục hoành hướng sang phải, trục tung hướng lên: A(4; 4), B(4; 0), C(6; −2), D(9; 2)) vào vở và vẽ tứ giác A'B'C'D' là hình đồng dạng phối cảnh của tứ giác ABCD theo tỉ số đồng dạng 3/2 và tâm phối cảnh là điểm O.",
      "trang": 69,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "Trên các tia OA, OB, OC, OD lấy A', B', C', D' sao cho OA' = (3/2)OA, OB' = (3/2)OB, OC' = (3/2)OC, OD' = (3/2)OD; nối lại được tứ giác A'B'C'D'. Toạ độ: A'(6; 6), B'(6; 0), C'(9; −3), D'(13,5; 3).",
+     "loai_dap_an": "LOI_GIAI"
     }
    ]
   },
@@ -2421,49 +3069,63 @@
      "de": "Gọi tên đỉnh, cạnh bên, mặt bên, mặt đáy, đường cao, một trung đoạn của hình chóp tam giác đều trong Hình 10.5 (H.10.5: hình chóp D.HKQ, I là tâm của tam giác đều HKQ, E là trung điểm của HQ).",
      "trang": 72,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "Đỉnh D; cạnh bên DH, DK, DQ; mặt bên DHK, DHQ, DKQ; mặt đáy HKQ; đường cao DI; một trung đoạn DE",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "10.2",
      "de": "Cho hình chóp tam giác đều S.MNE có cạnh bên SM = 10 cm và cạnh đáy MN = 5 cm. Hãy cho biết: a) Mặt bên và mặt đáy của hình chóp tam giác đều đó. b) Độ dài cạnh bên và cạnh đáy còn lại của hình chóp tam giác đều đó.",
      "trang": 72,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "a) Mặt bên SMN, SME, SNE; mặt đáy MNE; b) SN = SE = 10 cm; ME = NE = 5 cm",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "10.3",
      "de": "Nhân dịp tết Trung thu, bạn Khôi dự định làm một chiếc đèn lồng có dạng hình chóp tam giác đều, có độ dài cạnh đáy và đường cao của mặt bên tương ứng với 30 cm và 40 cm. Hỏi bạn Khôi phải dùng bao nhiêu mét vuông giấy màu vừa đủ để dán tất cả các mặt bên của chiếc đèn lồng, biết rằng nếp gấp không đáng kể.",
      "trang": 72,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "0,18 m^2 (diện tích xung quanh (1/2) · 90 · 40 = 1 800 cm^2)",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "10.4",
      "de": "Một khối gỗ trang trí có dạng hình chóp tam giác đều. Diện tích đáy của khối gỗ bằng 43 cm^2, chiều cao của khối gỗ bằng 8 cm. Hỏi thể tích của khối gỗ bằng bao nhiêu?",
      "trang": 72,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "V = (1/3) · 43 · 8 ≈ 114,67 cm^3",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "10.5",
      "de": "Từ một miếng bìa hình tam giác đều có cạnh 8 cm gấp theo các nét đứt (H.10.6: tam giác ABC, các nét đứt nối trung điểm của ba cạnh, chia miếng bìa thành bốn tam giác đều cạnh 4; đường cao AH của tam giác đều nhỏ chứa đỉnh A bằng 2√3) để được một hình chóp tam giác đều. Diện tích xung quanh của hình chóp tam giác đều tạo thành bằng bao nhiêu?",
      "trang": 72,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "Diện tích xung quanh 12√3 cm^2 (cạnh đáy 4 cm, trung đoạn 2√3 cm)",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "10.6",
      "de": "Một đồ chơi có dạng hình chóp tam giác đều như Hình 10.7. Tất cả các cạnh của hình chóp bằng 4 cm. Đường cao kẻ từ đỉnh tới cạnh đáy của các mặt bằng 3,5 cm. Tính diện tích giấy để làm vỏ bọc bốn mặt của đồ chơi này (coi mép dán không đáng kể).",
      "trang": 73,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "28 cm^2 (xung quanh 21 cm^2, đáy 7 cm^2)",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "10.7",
      "de": "Cho hình chóp tam giác đều S.MNP có cạnh đáy bằng 8 cm, đường cao bằng 6 cm (H.10.8). Hãy tính thể tích của hình chóp S.MNP. Cho biết √48 ≈ 6,9.",
      "trang": 73,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "V ≈ 55,2 cm^3 (NE = √48 ≈ 6,9 cm, diện tích đáy ≈ 27,6 cm^2)",
+     "loai_dap_an": "DAP_SO"
     }
    ]
   },
@@ -2476,63 +3138,81 @@
      "de": "Hãy cho biết đỉnh, cạnh bên, mặt bên, mặt đáy, đường cao, một trung đoạn của hình chóp tứ giác đều S.PQEF trong Hình 10.12 (H.10.12: H là giao điểm của hai đường chéo PE và QF của đáy; A nằm trên cạnh PQ và SA ⊥ PQ).",
      "trang": 76,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "Đỉnh S; cạnh bên SP, SQ, SE, SF; mặt bên SPQ, SQE, SEF, SPF; mặt đáy PQEF; đường cao SH; một trung đoạn SA",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "10.9",
      "de": "Kẻ lại bảng sau vào vở và điền vào ô còn trống. (Bảng gồm các cột Đáy, Mặt bên, Số cạnh đáy, Số cạnh bên, Số mặt; hàng Hình chóp tam giác đều đã điền sẵn Đáy: Tam giác đều; hàng Hình chóp tứ giác đều đã điền sẵn Mặt bên: Tam giác cân; các ô còn lại để trống.)",
      "trang": 76,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "Hình chóp tam giác đều: đáy tam giác đều, mặt bên tam giác cân, 3 cạnh đáy, 3 cạnh bên, 4 mặt; hình chóp tứ giác đều: đáy hình vuông, mặt bên tam giác cân, 4 cạnh đáy, 4 cạnh bên, 5 mặt",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "10.10",
      "de": "Cho hình chóp tứ giác đều S.HKIJ có cạnh bên SI = 10 cm, cạnh đáy HK = 8 cm. Hãy cho biết: a) Mặt bên và mặt đáy của hình chóp. b) Độ dài các cạnh bên và các cạnh đáy còn lại của hình chóp.",
      "trang": 76,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "a) Mặt bên SHK, SKI, SIJ, SJH; mặt đáy HKIJ; b) SH = SK = SJ = 10 cm; KI = IJ = JH = 8 cm",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "10.11a",
      "de": "Cho hình chóp tứ giác đều D.ABCE có cạnh đáy bằng 6 cm, trung đoạn bằng 4 cm như Hình 10.13. Tính diện tích xung quanh của hình chóp.",
      "trang": 76,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "Diện tích xung quanh 48 cm^2",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "10.11b",
      "de": "Cho hình chóp tứ giác đều D.ABCE có cạnh đáy bằng 6 cm, trung đoạn bằng 4 cm như Hình 10.13. Tính diện tích toàn phần của hình chóp.",
      "trang": 76,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "Diện tích toàn phần 84 cm^2 (đáy 36 cm^2)",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "10.12",
      "de": "Sau khi cắt và gấp miếng bìa như Hình 10.14 (H.10.14: miếng bìa gồm một hình vuông cạnh 8 cm và bốn tam giác cân bằng nhau có đáy là bốn cạnh của hình vuông; đường cao kẻ từ đỉnh tam giác xuống cạnh hình vuông bằng 9 cm), ta được một hình chóp tứ giác đều. Tính diện tích toàn phần của hình chóp tứ giác đều tạo thành.",
      "trang": 77,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "Diện tích toàn phần 208 cm^2 (xung quanh 144 cm^2, đáy 64 cm^2)",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "10.13",
      "de": "Bạn Thu dự định làm một chiếc đèn lồng có dạng là một hình chóp tứ giác đều cạnh đáy bằng 20 cm, chiều cao bằng 30 cm. Chiếc đèn lồng này có thể tích bằng bao nhiêu?",
      "trang": 77,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "V = 4 000 cm^3",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "10.14",
      "de": "Một hình chóp tứ giác đều có chiều cao bằng 12 cm, chu vi đáy bằng 32 cm. Thể tích của khối chóp này bằng bao nhiêu?",
      "trang": 77,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "V = 256 cm^3 (cạnh đáy 8 cm)",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "10.15",
      "de": "Tính diện tích xung quanh của hình chóp tứ giác đều S.ABCD trong Hình 10.15 (H.10.15: cạnh bên SD = 5 cm, cạnh đáy CD = 5 cm, I nằm trên BC và SI ⊥ BC). Biết √18,75 ≈ 4,3.",
      "trang": 77,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "Diện tích xung quanh ≈ 43 cm^2 (trung đoạn SI ≈ 4,3 cm)",
+     "loai_dap_an": "DAP_SO"
     }
    ]
   },
@@ -2545,105 +3225,135 @@
      "de": "Diện tích xung quanh của hình chóp tam giác đều, tứ giác đều bằng: A. Tích nửa chu vi đáy và đường cao của hình chóp. B. Tích nửa chu vi đáy và trung đoạn. C. Tích chu vi đáy và trung đoạn. D. Tổng chu vi đáy và trung đoạn.",
      "trang": 78,
      "nhom": "Trắc nghiệm",
-     "dang": "TRAC_NGHIEM"
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN"
     },
     {
      "ma": "Trắc nghiệm 2 (tr.78)",
      "de": "Hình chóp tam giác đều có chiều cao h, thể tích V. Diện tích đáy S bằng: A. S = h/V. B. S = V/h. C. S = 3V/h. D. S = 3h/V.",
      "trang": 78,
      "nhom": "Trắc nghiệm",
-     "dang": "TRAC_NGHIEM"
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "C",
+     "loai_dap_an": "TN"
     },
     {
      "ma": "Trắc nghiệm 3 (tr.78)",
      "de": "Tổng số cạnh bên và cạnh đáy của một hình chóp tứ giác đều là: A. 4. B. 6. C. 8. D. 10.",
      "trang": 78,
      "nhom": "Trắc nghiệm",
-     "dang": "TRAC_NGHIEM"
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "C",
+     "loai_dap_an": "TN"
     },
     {
      "ma": "Trắc nghiệm 4 (tr.78)",
      "de": "Mặt đáy của hình chóp tứ giác đều là hình: A. Tam giác đều. B. Hình bình hành. C. Tam giác cân. D. Hình vuông.",
      "trang": 78,
      "nhom": "Trắc nghiệm",
-     "dang": "TRAC_NGHIEM"
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "D",
+     "loai_dap_an": "TN"
     },
     {
      "ma": "Trắc nghiệm 5 (tr.78)",
      "de": "Một hình chóp tam giác đều có diện tích đáy bằng 4 cm^2, thể tích bằng 8 cm^3. Chiều cao của khối chóp bằng: A. 8 cm. B. 9 cm. C. 4 cm. D. 6 cm.",
      "trang": 78,
      "nhom": "Trắc nghiệm",
-     "dang": "TRAC_NGHIEM"
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "D",
+     "loai_dap_an": "TN"
     },
     {
      "ma": "Trắc nghiệm 6 (tr.78)",
      "de": "Một đèn lồng có dạng hình chóp tứ giác đều có cạnh đáy bằng 15 cm, độ dài trung đoạn bằng 10 cm. Diện tích giấy dán kín bốn mặt bên của đèn lồng (coi như mép dán không đáng kể) là: A. 200 cm^2. B. 300 cm^2. C. 400 cm^2. D. 500 cm^2.",
      "trang": 78,
      "nhom": "Trắc nghiệm",
-     "dang": "TRAC_NGHIEM"
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN"
     },
     {
      "ma": "Trắc nghiệm 7 (tr.78)",
      "de": "Thể tích của hình chóp tứ giác đều S.MNPQ trong Hình 10.16 (H.10.16: đường cao SI = 8 cm, I là giao điểm hai đường chéo của đáy; cạnh đáy PQ = 6 cm) là: A. 288 cm^3. B. 14 cm^3. C. 96 cm^3. D. 48 cm^3.",
      "trang": 78,
      "nhom": "Trắc nghiệm",
-     "dang": "TRAC_NGHIEM"
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "C",
+     "loai_dap_an": "TN"
     },
     {
      "ma": "Trắc nghiệm 8 (tr.79)",
      "de": "Từ một mảnh bìa hình tam giác đều có cạnh 6 cm, gấp theo các nét đứt ta được một hình chóp tam giác đều (H.10.17: tam giác ABC; M, N, P lần lượt là trung điểm của AB, AC, BC; các nét đứt là MN, NP, PM; các đoạn AM, MB, BP, PC, CN, NA, MN, NP, PM đều bằng 3). Hình chóp tam giác đều này có cạnh bên bằng: A. 6 cm. B. 3 cm. C. 9 cm. D. (3√3)/2 cm.",
      "trang": 79,
      "nhom": "Trắc nghiệm",
-     "dang": "TRAC_NGHIEM"
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN"
     },
     {
      "ma": "Trắc nghiệm 9 (tr.79)",
      "de": "Một hình chóp tứ giác đều có thể tích bằng 64 cm^3, chiều cao bằng 12 cm. Độ dài cạnh đáy là: A. 16 cm. B. 8 cm. C. 4 cm. D. 10 cm.",
      "trang": 79,
      "nhom": "Trắc nghiệm",
-     "dang": "TRAC_NGHIEM"
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "C",
+     "loai_dap_an": "TN"
     },
     {
      "ma": "Trắc nghiệm 10 (tr.79)",
      "de": "Một khối gỗ (H.10.18: chiều cao của cả khối gỗ, từ mặt đáy của đế đến đỉnh hình chóp, bằng 17 cm) gồm đế là hình lập phương cạnh 9 cm và phần trên là một hình chóp tứ giác đều. Thể tích khối gỗ bằng: A. 1 539 cm^3. B. 945 cm^3. C. 270 cm^3. D. 513 cm^3.",
      "trang": 79,
      "nhom": "Trắc nghiệm",
-     "dang": "TRAC_NGHIEM"
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN"
     },
     {
      "ma": "10.16",
      "de": "Cho hình chóp tam giác đều S.ABC có cạnh đáy bằng 6 cm, chiều cao 8 cm như Hình 10.19. Tính thể tích hình chóp, biết √27 ≈ 5,2.",
      "trang": 79,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "V ≈ 41,6 cm^3 (CI ≈ 5,2 cm, diện tích đáy ≈ 15,6 cm^2)",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "10.17",
      "de": "Cho hình chóp tam giác đều A.BCD có cạnh đáy bằng 12 cm, cạnh bên bằng 10 cm (H.10.20). Tính diện tích xung quanh của hình chóp.",
      "trang": 80,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "Diện tích xung quanh 144 cm^2 (trung đoạn AH = 8 cm)",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "10.18",
      "de": "Hình chóp tứ giác đều S.ABCD có thể tích bằng 144 cm^3. Gọi M, N, P, Q lần lượt là trung điểm của AB, BC, CD, DA (H.10.21). Tính thể tích của hình chóp S.MNPQ.",
      "trang": 80,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "Thể tích hình chóp S.MNPQ bằng 72 cm^3",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "10.19",
      "de": "Một cái lều đồ chơi cho trẻ em có hình dạng gồm một hình lập phương có cạnh 1,2 m và nóc lều là một hình chóp tứ giác đều có cạnh đáy 1,2 m, trung đoạn bằng 0,8 m (H.10.22). Tính diện tích vải để phủ nóc và các mặt bên của lều (coi các mép nối không đáng kể).",
      "trang": 80,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "7,68 m^2 (các mặt bên 5,76 m^2, nóc 1,92 m^2)",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "10.20",
      "de": "Một khối đồ chơi làm bằng gỗ được tạo thành từ hai hình chóp tứ giác đều. Cạnh đáy của mỗi hình chóp tứ giác đều bằng 6 cm, trung đoạn của nó bằng 4 cm (H.10.23: hai hình chóp ghép chung mặt đáy, một đỉnh hướng lên trên, một đỉnh hướng xuống dưới). Người ta sơn mặt ngoài của món đồ chơi. Hỏi diện tích cần sơn bằng bao nhiêu centimét vuông?",
      "trang": 80,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "96 cm^2",
+     "loai_dap_an": "DAP_SO"
     }
    ]
   },
@@ -2656,266 +3366,342 @@
      "de": "Biết rằng hai đa thức A và B thoả mãn các điều kiện sau: A · (−0,5x^2y) = −6x^2y^3 + x^3y^2 + 3x^2y − 2x^4y; A + B = 9y^2 + 4x^2 − 6. Tìm các đa thức A và B, xác định bậc của mỗi đa thức đó.",
      "trang": 81,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "A = 12y^2 − 2xy − 6 + 4x^2, bậc 2; B = −3y^2 + 2xy, bậc 2",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "Ôn cuối năm 1b",
      "de": "Biết rằng hai đa thức A và B thoả mãn các điều kiện sau: A · (−0,5x^2y) = −6x^2y^3 + x^3y^2 + 3x^2y − 2x^4y; A + B = 9y^2 + 4x^2 − 6. Tính giá trị của B tại x = 3; y = 2.",
      "trang": 81,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "B = −3 · 2^2 + 2 · 3 · 2 = 0",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "Ôn cuối năm 2",
      "de": "Cho các đa thức: A = 27x^3y^6 − (1/8)y^3; B = 9x^2y^4 + (3/2)xy^3 + (1/4)y^2; C = 3xy^2 − (1/2)y. Chứng minh rằng A : B = C.",
      "trang": 81,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "A : B = C tương đương A = B · C. Nhân: B · C = (9x^2y^4 + (3/2)xy^3 + (1/4)y^2)(3xy^2 − (1/2)y) = 27x^3y^6 − (9/2)x^2y^5 + (9/2)x^2y^5 − (3/4)xy^4 + (3/4)xy^4 − (1/8)y^3 = 27x^3y^6 − (1/8)y^3 = A. Vậy A : B = C.",
+     "loai_dap_an": "LOI_GIAI"
     },
     {
      "ma": "Ôn cuối năm 3",
      "de": "Chứng minh rằng giá trị của biểu thức sau không phụ thuộc vào giá trị của biến x. M = (3x − 2)^2 − (3x + 2)^2 + (x + 2)^3 + (x − 2)^3 − 2x^3.",
      "trang": 81,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "Khai triển: M = (9x^2 − 12x + 4) − (9x^2 + 12x + 4) + (x^3 + 6x^2 + 12x + 8) + (x^3 − 6x^2 + 12x − 8) − 2x^3 = 0. Vậy M = 0 với mọi x, giá trị của M không phụ thuộc vào x.",
+     "loai_dap_an": "LOI_GIAI"
     },
     {
      "ma": "Ôn cuối năm 4a",
      "de": "Phân tích đa thức x^3 + y^3 + 5x + 5y thành nhân tử.",
      "trang": 81,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "(x + y)(x^2 − xy + y^2 + 5)",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "Ôn cuối năm 4b",
      "de": "Phân tích đa thức 16x^2 + 8xy + y^2 − 4x^2 thành nhân tử.",
      "trang": 81,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "(2x + y)(6x + y)",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "Ôn cuối năm 5a",
      "de": "Thực hiện phép tính: (2x + 4)/(x + 3) + 3/x − 6/(x^2 + 3x).",
      "trang": 81,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "(2x + 1)/x",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "Ôn cuối năm 5b",
      "de": "Thực hiện phép tính: (x^2 − 3x + 4)/(x^2 + x) : (x^2 − x − 12)/(x^2 − x). (Sách in tử thức x^2 − 3x + 4; lời giải cuối sách tính với x^2 − 3x − 4.)",
      "trang": 81,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "(x − 1)/(x + 3)",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "Ôn cuối năm 6a",
      "de": "Cho phân thức đại số P = (x^3 + 8)/(x^2 − 4). Tìm điều kiện xác định của phân thức.",
      "trang": 81,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "x ≠ 2 và x ≠ −2",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "Ôn cuối năm 6b",
      "de": "Cho phân thức đại số P = (x^3 + 8)/(x^2 − 4). Rút gọn phân thức đã cho.",
      "trang": 81,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "P = (x^2 − 2x + 4)/(x − 2) = x + 4/(x − 2)",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "Ôn cuối năm 6c",
      "de": "Cho phân thức đại số P = (x^3 + 8)/(x^2 − 4). Sử dụng kết quả câu b) (rút gọn phân thức P), tìm tất cả các số nguyên x sao cho giá trị của phân thức P đã cho là số nguyên.",
      "trang": 81,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "x ∈ {0; 1; 3; 4; 6} (x − 2 là ước của 4; loại x = −2 vì không thoả điều kiện xác định)",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "Ôn cuối năm 7",
-     "de": "Quãng đường AC gồm hai đoạn AB và BC. Đoạn BC dài hơn đoạn AB là 60 km. Một ô tô đi từ A đến B với vận tốc 50 km/h, rồi tiếp tục đi từ B đến C với vận tốc 60 km/h. Tính quãng đường AC biết thời gian đi trên đoạn đường AB ít hơn thời gian đi trên đoạn đường BC là 1 giờ 30 phút.",
+     "de": "Quãng đường AC gồm hai đoạn AB và BC. Đoạn BC dài hơn đoạn AB là 60 km. Một ô tô đi từ A đến B với vận tốc 50 km/h, rồi tiếp tục đi từ B đến C với vận tốc 60 km/h. Tính quãng đường AC biết thời gian đi trên đoạn đường AB ít hơn thời gian đi trên đoạn đường BC là 1 giờ 30 phút. (Sách in đảo hai vận tốc: lời giải cuối sách tính với đoạn AB đi 60 km/h, đoạn BC đi 50 km/h.)",
      "trang": 81,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "AC = 240 km (AB = 90 km, BC = 150 km)",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "Ôn cuối năm 8a",
      "de": "Cho hàm số y = (3m + 1)x − 2m. Tìm điều kiện của m để hàm số đã cho là hàm số bậc nhất.",
      "trang": 81,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "m ≠ −1/3",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "Ôn cuối năm 8b",
      "de": "Cho hàm số y = (3m + 1)x − 2m. Tìm m để đồ thị hàm số đã cho là đường thẳng song song với đường thẳng y = −2x + 5.",
      "trang": 81,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "m = −1 (3m + 1 = −2 và −2m ≠ 5)",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "Ôn cuối năm 8c",
      "de": "Cho hàm số y = (3m + 1)x − 2m. Với m tìm được ở câu b) (đồ thị hàm số song song với đường thẳng y = −2x + 5), hãy vẽ đồ thị của hàm số đã cho.",
      "trang": 81,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "Với m = −1: y = −2x + 2. Đồ thị là đường thẳng đi qua hai điểm (0; 2) và (1; 0).",
+     "loai_dap_an": "LOI_GIAI"
     },
     {
      "ma": "Ôn cuối năm 9a",
      "de": "Cho tam giác ABC vuông tại A. Gọi M, N, P lần lượt là trung điểm của các cạnh AB, BC, CA. Từ M kẻ đường thẳng song song với BP, đường thẳng này cắt NP tại K. Tứ giác AMNP là hình gì?",
      "trang": 82,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "Hình chữ nhật (MN // AC, NP // AB nên AMNP là hình bình hành, lại có góc MAP = 90°)",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "Ôn cuối năm 9b",
      "de": "Cho tam giác ABC vuông tại A. Gọi M, N, P lần lượt là trung điểm của các cạnh AB, BC, CA. Từ M kẻ đường thẳng song song với BP, đường thẳng này cắt NP tại K. Chứng minh tứ giác BMKP là hình bình hành.",
      "trang": 82,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "NP // AB nên PK // BM; MK // BP (giả thiết). Tứ giác BMKP có hai cặp cạnh đối song song nên là hình bình hành.",
+     "loai_dap_an": "LOI_GIAI"
     },
     {
      "ma": "Ôn cuối năm 9c",
      "de": "Cho tam giác ABC vuông tại A. Gọi M, N, P lần lượt là trung điểm của các cạnh AB, BC, CA. Từ M kẻ đường thẳng song song với BP, đường thẳng này cắt NP tại K. Chứng minh tứ giác ANCK là hình thoi.",
      "trang": 82,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "NP là đường trung bình của ΔABC nên NP = (1/2)AB = BM; BMKP là hình bình hành nên PK = BM. Suy ra NP = PK: P là trung điểm của NK và của AC, nên ANCK là hình bình hành. Lại có NP // AB, AB ⊥ AC nên NK ⊥ AC tại P. Hình bình hành có hai đường chéo vuông góc nên ANCK là hình thoi.",
+     "loai_dap_an": "LOI_GIAI"
     },
     {
      "ma": "Ôn cuối năm 9d",
      "de": "Cho tam giác ABC vuông tại A. Gọi M, N, P lần lượt là trung điểm của các cạnh AB, BC, CA. Từ M kẻ đường thẳng song song với BP, đường thẳng này cắt NP tại K. Tìm điều kiện của tam giác ABC để tứ giác ANCK là hình vuông.",
      "trang": 82,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "Tam giác ABC vuông cân tại A (AB = AC), vì cần AC = NK mà NK = 2NP = 2BM = AB",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "Ôn cuối năm 10a",
      "de": "Cho tam giác ABC vuông tại A, đường cao AH. Gọi E, F lần lượt là chân các đường vuông góc hạ từ H xuống các cạnh AB, AC và M là trung điểm của BC. Chứng minh rằng EF = AH.",
      "trang": 82,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "Tứ giác AEHF có ba góc vuông (tại A, E, F) nên là hình chữ nhật. Do đó hai đường chéo bằng nhau: EF = AH.",
+     "loai_dap_an": "LOI_GIAI"
     },
     {
      "ma": "Ôn cuối năm 10b",
      "de": "Cho tam giác ABC vuông tại A, đường cao AH. Gọi E, F lần lượt là chân các đường vuông góc hạ từ H xuống các cạnh AB, AC và M là trung điểm của BC. Chứng minh rằng AM ⊥ EF.",
      "trang": 82,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "Gọi O là giao điểm của EF và AH, K là giao điểm của AM và EF. OA = OE nên góc AEO = góc EAO (1). AM là trung tuyến ứng với cạnh huyền nên MA = MC, góc CAM = góc ACM (2). Góc EAO = góc ACB (cùng phụ góc B) (3). Từ (1), (2), (3): góc AEF = góc CAM. Mà góc AFE + góc AEF = 90° nên góc AFE + góc CAM = 90°, suy ra góc AKF = 90°, hay AM ⊥ EF.",
+     "loai_dap_an": "LOI_GIAI"
     },
     {
      "ma": "Ôn cuối năm 11a",
      "de": "Cho tam giác ABC. Giả sử M là điểm trên cạnh AB sao cho MB/MA = 1/3, N là điểm trên cạnh BC sao cho NB/NC = 1/3. Chứng minh MN // AC và MN = (1/4)AC.",
      "trang": 82,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "MB/MA = NB/NC = 1/3 nên MN // AC (Thalès đảo). Do đó MN/AC = MB/AB = 1/4, vậy MN = (1/4)AC.",
+     "loai_dap_an": "LOI_GIAI"
     },
     {
      "ma": "Ôn cuối năm 11b",
      "de": "Cho tam giác ABC. Giả sử M là điểm trên cạnh AB sao cho MB/MA = 1/3, N là điểm trên cạnh BC sao cho NB/NC = 1/3. Gọi K là giao điểm của AN và CM. Chứng minh KN/KA = KM/KC = 1/4.",
      "trang": 82,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "Vì MN // AC nên (hệ quả định lí Thalès) KN/KA = KM/KC = MN/AC = 1/4.",
+     "loai_dap_an": "LOI_GIAI"
     },
     {
      "ma": "Ôn cuối năm 11c",
      "de": "Cho tam giác ABC. Giả sử M là điểm trên cạnh AB sao cho MB/MA = 1/3, N là điểm trên cạnh BC sao cho NB/NC = 1/3. Nếu thay điều kiện MB/MA = 1/3 và NB/NC = 1/3 bằng điều kiện CM là phân giác của góc C, AN là phân giác của góc A thì tam giác ABC phải thoả mãn điều kiện gì để MN // AC?",
      "trang": 82,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "Tam giác ABC cân tại B (AB = BC): MN // AC khi NB/NC = MB/MA; theo tính chất phân giác NB/NC = AB/AC, MB/MA = BC/AC nên AB = BC; đảo lại cũng đúng",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "Ôn cuối năm 12a",
      "de": "Cho tam giác ABC có đường cao AH. Lấy các điểm E, F lần lượt trên AB, AC sao cho HE, HF lần lượt vuông góc với AB, AC. Lấy điểm D trên EF sao cho AD vuông góc EF. Đường thẳng AD cắt BC tại M. Chứng minh rằng AE · AB = AF · AC.",
      "trang": 82,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "Hai tam giác vuông AHE (vuông tại E) và ABH (vuông tại H) có góc HAE = góc BAH (chung) nên ΔAHE ᔕ ΔABH, suy ra AH/AE = AB/AH, hay AE · AB = AH^2. Tương tự ΔAHF ᔕ ΔACH nên AF · AC = AH^2. Vậy AE · AB = AF · AC.",
+     "loai_dap_an": "LOI_GIAI"
     },
     {
      "ma": "Ôn cuối năm 12b",
      "de": "Cho tam giác ABC có đường cao AH. Lấy các điểm E, F lần lượt trên AB, AC sao cho HE, HF lần lượt vuông góc với AB, AC. Lấy điểm D trên EF sao cho AD vuông góc EF. Đường thẳng AD cắt BC tại M. Chứng minh rằng ΔADE ᔕ ΔAHC và ΔANF ᔕ ΔAMB (đề không nói N là điểm nào; theo hình vẽ ở phần lời giải, N là giao điểm của AH và EF).",
      "trang": 82,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "Từ câu a: AE/AC = AF/AB, góc EAF chung nên ΔAEF ᔕ ΔACB (c.g.c), góc AEF = góc ACB, góc AFE = góc ABC. Hai tam giác vuông ADE và AHC có góc AED = góc AEF = góc ACH nên ΔADE ᔕ ΔAHC, suy ra góc EAD = góc CAH, tức góc NAF = góc MAB. ΔANF và ΔAMB có góc NAF = góc MAB, góc AFN = góc AFE = góc ABM nên ΔANF ᔕ ΔAMB (g.g).",
+     "loai_dap_an": "LOI_GIAI"
     },
     {
      "ma": "Ôn cuối năm 13a",
      "de": "Cho tam giác ABC có AB = 3 cm, AC = 4 cm, BC = 5 cm. Lấy điểm D trên cạnh BC sao cho BD = 2 cm. Lấy các điểm E, F trên các cạnh AB, AC sao cho DE, DF lần lượt vuông góc với AB, AC. Chứng minh rằng ΔBDE ᔕ ΔDCF.",
      "trang": 82,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "BC^2 = 25 = AB^2 + AC^2 nên ΔABC vuông tại A (Pythagore đảo). Hai tam giác vuông BDE (vuông tại E) và DCF (vuông tại F) có góc EBD = góc CBA = 90° − góc ACB = 90° − góc FCD = góc FDC nên ΔBDE ᔕ ΔDCF (một cặp góc nhọn bằng nhau).",
+     "loai_dap_an": "LOI_GIAI"
     },
     {
      "ma": "Ôn cuối năm 13b",
      "de": "Cho tam giác ABC có AB = 3 cm, AC = 4 cm, BC = 5 cm. Lấy điểm D trên cạnh BC sao cho BD = 2 cm. Lấy các điểm E, F trên các cạnh AB, AC sao cho DE, DF lần lượt vuông góc với AB, AC. Tính độ dài đoạn thẳng AD.",
      "trang": 82,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "AD = √(29/5) cm ≈ 2,41 cm (DE = 8/5 cm, BE = 6/5 cm, AE = 9/5 cm)",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "Ôn cuối năm 14a",
      "de": "Cho hình chóp tứ giác đều S.ABCD có cạnh đáy AB = 10 cm, cạnh bên SD = 15 cm. Gọi O là giao điểm của AC và BD, M và N lần lượt là trung điểm của AB và CD. Chứng minh SO ⊥ MN. Từ đó tính độ dài đường cao SO của hình chóp.",
      "trang": 83,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "Các mặt bên là tam giác cân bằng nhau nên SM = SN; ΔSMN cân tại S, O là trung điểm của MN nên SO ⊥ MN. OA = (1/2)AC = (1/2)√(10^2 + 10^2) = 5√2 cm. Áp dụng Pythagore cho ΔSOA vuông tại O: SO = √(15^2 − (5√2)^2) = √175 = 5√7 cm.",
+     "loai_dap_an": "LOI_GIAI"
     },
     {
      "ma": "Ôn cuối năm 14b",
      "de": "Cho hình chóp tứ giác đều S.ABCD có cạnh đáy AB = 10 cm, cạnh bên SD = 15 cm. Gọi O là giao điểm của AC và BD, M và N lần lượt là trung điểm của AB và CD. Tính thể tích của hình chóp.",
      "trang": 83,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "V = (1/3) · 5√7 · 10^2 = (500√7)/3 cm^3 ≈ 440,96 cm^3",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "Ôn cuối năm 14c",
      "de": "Cho hình chóp tứ giác đều S.ABCD có cạnh đáy AB = 10 cm, cạnh bên SD = 15 cm. Gọi O là giao điểm của AC và BD, M và N lần lượt là trung điểm của AB và CD. Tính diện tích toàn phần của hình chóp.",
      "trang": 83,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "Diện tích toàn phần 200√2 + 100 = 100(2√2 + 1) cm^2 (trung đoạn SM = 10√2 cm, xung quanh 200√2 cm^2, đáy 100 cm^2)",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "Ôn cuối năm 15a",
      "de": "Khảo sát trên 1 200 người trẻ tuổi ở Việt Nam với câu hỏi \"Bạn sử dụng nguồn thông tin nào cho các vấn đề hiện tại?\" với các lựa chọn Mạng xã hội, Internet, Ti vi, Bạn bè, Báo chí, Gia đình, Đài phát thanh, Giáo viên, Thành viên cộng đồng cho kết quả như sau: (Bảng tỉ lệ người lựa chọn (%): Mạng xã hội 73; Internet 69; Ti vi 59; Bạn bè 50; Báo chí 43; Gia đình 39; Đài phát thanh 25; Giáo viên 16; Thành viên cộng đồng 16). Dữ liệu nhóm khảo sát thu được từ câu hỏi trên thuộc loại nào?",
      "trang": 83,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "Dữ liệu không là số, không thể sắp thứ tự",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "Ôn cuối năm 15b",
      "de": "Khảo sát trên 1 200 người trẻ tuổi ở Việt Nam với câu hỏi \"Bạn sử dụng nguồn thông tin nào cho các vấn đề hiện tại?\" với các lựa chọn Mạng xã hội, Internet, Ti vi, Bạn bè, Báo chí, Gia đình, Đài phát thanh, Giáo viên, Thành viên cộng đồng cho kết quả như sau: (Bảng tỉ lệ người lựa chọn (%): Mạng xã hội 73; Internet 69; Ti vi 59; Bạn bè 50; Báo chí 43; Gia đình 39; Đài phát thanh 25; Giáo viên 16; Thành viên cộng đồng 16). Lựa chọn và vẽ biểu đồ biểu diễn dữ liệu trong bảng thống kê trên.",
      "trang": 83,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "Chọn biểu đồ cột: mỗi cột ứng với một nguồn thông tin, chiều cao cột là tỉ lệ người chọn: Mạng xã hội 73%, Internet 69%, Ti vi 59%, Bạn bè 50%, Báo chí 43%, Gia đình 39%, Đài phát thanh 25%, Giáo viên 16%, Thành viên cộng đồng 16%.",
+     "loai_dap_an": "LOI_GIAI"
     },
     {
      "ma": "Ôn cuối năm 15c",
      "de": "Khảo sát trên 1 200 người trẻ tuổi ở Việt Nam với câu hỏi \"Bạn sử dụng nguồn thông tin nào cho các vấn đề hiện tại?\" với các lựa chọn Mạng xã hội, Internet, Ti vi, Bạn bè, Báo chí, Gia đình, Đài phát thanh, Giáo viên, Thành viên cộng đồng cho kết quả như sau: (Bảng tỉ lệ người lựa chọn (%): Mạng xã hội 73; Internet 69; Ti vi 59; Bạn bè 50; Báo chí 43; Gia đình 39; Đài phát thanh 25; Giáo viên 16; Thành viên cộng đồng 16). Tính tổng số lượng lựa chọn T cho các loại nguồn thông tin. Giải thích tại sao T > 1 200.",
      "trang": 83,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "T = 876 + 828 + 708 + 600 + 516 + 468 + 300 + 192 + 192 = 4 680; T > 1 200 vì mỗi người có thể chọn nhiều nguồn thông tin",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "Ôn cuối năm 16a",
      "de": "Một túi đựng 24 viên bi giống hệt nhau chỉ khác màu, với 9 viên bi màu đỏ, 6 viên bi màu xanh, 4 viên bi màu vàng và 5 viên bi màu đen. Bạn Mai rút ngẫu nhiên một viên bi từ túi. Có bao nhiêu kết quả có thể?",
      "trang": 83,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "4 kết quả có thể: rút được viên bi màu đỏ, màu xanh, màu vàng, màu đen",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "Ôn cuối năm 16b",
      "de": "Một túi đựng 24 viên bi giống hệt nhau chỉ khác màu, với 9 viên bi màu đỏ, 6 viên bi màu xanh, 4 viên bi màu vàng và 5 viên bi màu đen. Bạn Mai rút ngẫu nhiên một viên bi từ túi. Chứng tỏ rằng các kết quả có thể không đồng khả năng. Tính xác suất để xảy ra mỗi kết quả có thể đó.",
      "trang": 83,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "P(đỏ) = 9/24 = 3/8; P(xanh) = 6/24 = 1/4; P(vàng) = 4/24 = 1/6; P(đen) = 5/24; các xác suất khác nhau nên các kết quả không đồng khả năng",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "Ôn cuối năm 16c",
      "de": "Một túi đựng 24 viên bi giống hệt nhau chỉ khác màu, với 9 viên bi màu đỏ, 6 viên bi màu xanh, 4 viên bi màu vàng và 5 viên bi màu đen. Bạn Mai rút ngẫu nhiên một viên bi từ túi. Tính xác suất để rút được viên bi màu đỏ hoặc màu vàng.",
      "trang": 83,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "P = 13/24",
+     "loai_dap_an": "DAP_SO"
     },
     {
      "ma": "Ôn cuối năm 16d",
      "de": "Một túi đựng 24 viên bi giống hệt nhau chỉ khác màu, với 9 viên bi màu đỏ, 6 viên bi màu xanh, 4 viên bi màu vàng và 5 viên bi màu đen. Bạn Mai rút ngẫu nhiên một viên bi từ túi. Tính xác suất để rút được viên bi không có màu đen.",
      "trang": 83,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "dap_an": "P = 19/24",
+     "loai_dap_an": "DAP_SO"
     }
    ]
   }
