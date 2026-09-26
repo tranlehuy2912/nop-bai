@@ -199,7 +199,7 @@ class KetQuaActivity : AppCompatActivity() {
             layoutParams = LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.WRAP_CONTENT, 1f)
         }
         cot.addView(chu("Câu ${c.ma.ifBlank { "chưa rõ số" }}", 16f, bold = true))
-        if (c.de.isNotBlank()) cot.addView(chu(c.de.trim(), 14f, mau = R.color.ink_soft))
+        if (c.de.isNotBlank()) cot.addView(chu(SoMu.hien(c.de.trim()), 14f, mau = R.color.ink_soft))
         // Claude da doc chac thi lay chu Claude doc: may doc nham la mot trong hai ly
         // do de nho Claude cham lai, nhu cau 2.32b bi doc chu "b" thanh so 1.
         val cl = c.claude?.takeIf { it.chac }

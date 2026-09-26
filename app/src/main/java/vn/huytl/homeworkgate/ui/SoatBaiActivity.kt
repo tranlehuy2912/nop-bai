@@ -235,8 +235,9 @@ class SoatBaiActivity : AppCompatActivity() {
         val the = LayoutInflater.from(this)
             .inflate(R.layout.st_the_soat_cau, binding.danhSach, false) as LinearLayout
         the.findViewById<TextView>(R.id.ma_cau).text = cau.ma
+        val de = SoMu.hien(cau.de)
         the.findViewById<TextView>(R.id.de_cau).text =
-            cau.de.take(110) + if (cau.de.length > 110) "…" else ""
+            de.take(110) + if (de.length > 110) "…" else ""
 
         // Khong co danh sach dong (ban cu, hay may tra ve thieu) thi bay ra dung ket
         // qua cuoi - van con mot thu de con soat, con hon mot the trong.

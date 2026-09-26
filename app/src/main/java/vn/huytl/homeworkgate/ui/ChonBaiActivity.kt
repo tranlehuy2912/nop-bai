@@ -675,9 +675,10 @@ class ChonBaiActivity : AppCompatActivity() {
         nhan: String = cau.nhan(),
         them: SpannableStringBuilder.() -> Unit = {}
     ): CharSequence =
-        SpannableStringBuilder(cau.dongChon(nhan)).apply {
+        // So mu doi ngay luc hien, chu trong kho van giu dau "^". Xem [SoMu].
+        SpannableStringBuilder(SoMu.hien(cau.dongChon(nhan))).apply {
             setSpan(
-                StyleSpan(Typeface.BOLD), 0, nhan.length,
+                StyleSpan(Typeface.BOLD), 0, SoMu.hien(nhan).length,
                 Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
             )
             them()
