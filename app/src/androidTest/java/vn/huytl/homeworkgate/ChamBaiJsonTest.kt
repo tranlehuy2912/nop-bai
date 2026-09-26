@@ -62,9 +62,10 @@ class ChamBaiJsonTest {
         val ket = ChamBaiJson.doc(THAT)!!
         val b = LuatCongGio.tinh(ket, bayGio = toiThuHai)
 
-        // Ba cau dung, moi cau 4 dong -> 2 phut mot cau. Cau d sai: khong tinh.
-        // Khong chup vo dan do (ngay_dan_do null) nen khong co tron goi 45.
-        assertEquals(6, b.phut)
+        // Ba cau dung, moi cau 4 dong -> 4 phut mot cau (mot dong mot phut tu 27/9/2026).
+        // Cau d sai: khong tinh. Khong chup vo dan do (ngay_dan_do null) nen khong co
+        // tron goi 45.
+        assertEquals(12, b.phut)
         assertTrue(b.dong.any { it.contains("2.26d") && it.contains("sửa lại") })
     }
 
@@ -93,7 +94,7 @@ class ChamBaiJsonTest {
                "doc_ro":true,"dang":"viet_dai","so_dong":22}]}"""
         )!!
         assertEquals(DangBai.VIET_DAI, ket.cac.first().dang)
-        assertEquals(14, LuatCongGio.tinh(ket, bayGio = toiThuHai).phut)
+        assertEquals(29, LuatCongGio.tinh(ket, bayGio = toiThuHai).phut)
     }
 
     @Test
@@ -140,6 +141,6 @@ class ChamBaiJsonTest {
                "so_dong":4}]}"""
         )!!
         assertTrue(trong.baiDuocGiao.isEmpty())
-        assertEquals(2, LuatCongGio.tinh(trong, bayGio = toiThuHai).phut)
+        assertEquals(4, LuatCongGio.tinh(trong, bayGio = toiThuHai).phut)
     }
 }

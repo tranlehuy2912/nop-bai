@@ -81,8 +81,8 @@ class ChamTheoClaudeTest {
             pham
         )!!
         val bang = LuatCongGio.tinh(ket)
-        // Bon dong lam bai cua mot cau nho: hai dong mot phut, it nhat hai phut.
-        assertEquals(2, bang.phut)
+        // Bon dong lam bai cua mot cau nho: mot dong mot phut, it nhat bon phut.
+        assertEquals(4, bang.phut)
     }
 
     @Test
@@ -207,7 +207,7 @@ class ChamTheoClaudeTest {
         val nho = ket.cac.single { it.cauId == "toan8t1:2.33a" }
         assertEquals("2.33a", nho.ma)
         assertTrue(nho.coDe)
-        assertEquals(2, LuatCongGio.phutChoCau(nho))
+        assertEquals(4, LuatCongGio.phutChoCau(nho))
         assertEquals("toan8t1:2.28", ket.cac.single { it.ma == "2.28" }.cauId)
 
         assertEquals("2.33a", ChamTheoClaude.chuanMa("2.33 a:"))

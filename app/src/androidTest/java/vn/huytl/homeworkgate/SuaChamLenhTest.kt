@@ -67,15 +67,16 @@ class SuaChamLenhTest {
             assertEquals(listOf("2.33a"), SoCaiBai.dangChoSua(context).map { it.ma })
             return
         }
-        assertTrue(tra, tra.startsWith("Đã sửa câu 2.33a thành đúng, cộng 2 phút"))
+        // Mot dong lam bai, cau nho toi thieu 4 phut tu 27/9/2026 (truoc do 2).
+        assertTrue(tra, tra.startsWith("Đã sửa câu 2.33a thành đúng, cộng 4 phút"))
         assertTrue(SoCaiBai.dangChoSua(context).isEmpty())
-        assertEquals(2, SoCaiBai.phutDaCongHomNay(context))
+        assertEquals(4, SoCaiBai.phutDaCongHomNay(context))
         assertTrue(SoCaiBai.loiNhan(context).orEmpty().contains("câu 2.33a Lê Hòa làm đúng rồi"))
 
         // Gui lai dung lenh do: khong cong them phut nao.
         val lan2 = ThiHanhLenh.suaCham(context, GateStore(context), giaTri)
         assertTrue(lan2, lan2.startsWith("Không còn câu nào"))
-        assertEquals(2, SoCaiBai.phutDaCongHomNay(context))
+        assertEquals(4, SoCaiBai.phutDaCongHomNay(context))
     }
 
     @Test

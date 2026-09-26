@@ -375,20 +375,13 @@ class NganHangTest {
     }
 
     @Test
-    fun on_tap_tra_nua_so_phut() {
+    fun on_tap_tra_du_gia_nhu_bai_moi() {
+        // Truoc 27/9/2026 on lai chi duoc nua so phut. Ba Huy bo nua gia: bai moi va
+        // lan on cung mot gia, cai giu on lai o phan phu la tran on moi ngay.
         val cau = CauCham(ma = "2.26d", de = "", cauId = "thu:2.26d", dung = true, soDong = 4)
         val ket = KetQuaCham(cac = listOf(cau))
-        // Bai moi: 4 dong -> 2 phut. On lai cung cau do -> 1 phut.
-        assertEquals(2, LuatCongGio.tinh(ket).phut)
-        assertEquals(1, LuatCongGio.tinh(ket, onTap = true).phut)
-    }
-
-    @Test
-    fun on_tap_lam_tron_len_chu_khong_ve_khong() {
-        // Cau toi thieu 2 phut, nua la 1 - khong duoc ra 0, khong thi con on lai de
-        // lay mot con so khong, va lan sau no khong on nua.
-        val cau = CauCham(ma = "2.26d", de = "", cauId = "thu:2.26d", dung = true, soDong = 3)
-        assertEquals(1, LuatCongGio.tinh(KetQuaCham(cac = listOf(cau)), onTap = true).phut)
+        assertEquals(4, LuatCongGio.tinh(ket).phut)
+        assertEquals(4, LuatCongGio.tinh(ket, onTap = true).phut)
     }
 
     @Test
@@ -396,7 +389,7 @@ class NganHangTest {
         lamSaiRoiSuaDung("2.26d", luiNgay = 4)
         val cau = CauCham(ma = "2.26d", de = "", cauId = "thu:2.26d", dung = true, soDong = 4)
 
-        // Lan on dau: da den hen (ba ngay), duoc nua so phut.
+        // Lan on dau: da den hen (ba ngay), duoc tinh gio.
         SoCaiBai.ghi(context, listOf(cau), mapOf("2.26d" to 1), now, onTap = true)
         assertTrue(SoCaiBai.daOnTap(context, "thu:2.26d", now))
         assertEquals(1, SoCaiBai.phutDaCongHomNay(context, now))
