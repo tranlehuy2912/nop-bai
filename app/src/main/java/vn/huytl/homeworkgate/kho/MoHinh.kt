@@ -24,8 +24,31 @@ data class CauHoi(
     val de: String,
     val trang: Int,
     val dang: String,
-    val thuTu: Int
+    val thuTu: Int,
+    /**
+     * Dap an in cuoi sach bai tap, chi co o cau SBT. Rong la sach khong co loi giai.
+     *
+     * KHONG BAO GIO HIEN CHO LE HOA. Chi hai noi doc no: may cham tu luan, qua doan
+     * dap so dan them vao cau lenh (xem [vn.huytl.homeworkgate.ai.PromptCham]), va man
+     * Giai de, de cham ngay tren tablet cau trac nghiem con bam.
+     */
+    val dapAn: String = "",
+    /**
+     * Dap an thuoc kieu nao: [DAP_AN_TN] (mot chu A, B, C hay D), [DAP_AN_DAP_SO]
+     * (ket qua cuoi so duoc), [DAP_AN_LOI_GIAI] (y chinh cua mot chung minh, mot cau
+     * giai thich). Rong khi khong co [dapAn].
+     */
+    val loaiDapAn: String = ""
 ) {
+    /**
+     * Cau nay bam duoc ngay tren tablet: trac nghiem bon phuong an, sach chon mot chu.
+     *
+     * Cau trac nghiem khac kieu (dung/sai tung y, noi cot, dien tu) thi khong: chung
+     * van mang dang TRAC_NGHIEM, nhung dap an khong phai mot chu de so.
+     */
+    val bamTrenMay: Boolean get() = dang == "TRAC_NGHIEM" && loaiDapAn == DAP_AN_TN
+
+
     /**
      * Nhan hien cho con, khong phai luc nao cung la [ma].
      *
@@ -63,9 +86,13 @@ data class CauHoi(
      */
     fun dongChon(nhan: String = nhan()): String = "$nhan\n$de"
 
-    private companion object {
+    companion object {
         /** Ma do minh dat ra, khong phai ma in trong sach. Xem [nhan]. */
-        val MA_TU_DAT = Regex("""^B\d+\.C\d+$""")
+        private val MA_TU_DAT = Regex("""^B\d+\.C\d+$""")
+
+        const val DAP_AN_TN = "TN"
+        const val DAP_AN_DAP_SO = "DAP_SO"
+        const val DAP_AN_LOI_GIAI = "LOI_GIAI"
     }
 }
 
@@ -261,8 +288,9 @@ data class TraLoi(
     /**
      * Lan nay la lam lai de on chu khong phai bai moi.
      *
-     * Tach ra vi hai loai tra cong khac nhau (on duoc nua so phut, va chi mot lan),
-     * va vi bang tien bo phai dem duoc "cau tung sai nay da on lai chua".
+     * Tach ra vi hai loai tra cong khac nhau (on chiu tran rieng moi ngay, va chi tra
+     * theo lich hen; truoc 27/9/2026 con chi duoc nua so phut), va vi bang tien bo phai
+     * dem duoc "cau tung sai nay da on lai chua".
      */
     val onTap: Boolean = false,
     val dung: Boolean,
@@ -290,7 +318,14 @@ data class TraLoi(
      *
      * Xem [vn.huytl.homeworkgate.kho.KhoBai.thongKeLoi] de biet cot nay de lam gi.
      */
-    val loaiLoi: String = ""
+    val loaiLoi: String = "",
+    /**
+     * Lan lam nay thuoc de Giai de nao, rong la bai thuong. Xem [vn.huytl.homeworkgate.data.GiaiDe].
+     *
+     * Can de tinh diem cua de: diem la so cau dung o LAN DAU trong de, khong tinh lan
+     * sua sau do. Cau sai trong de van di duong sua nhu moi cau khac.
+     */
+    val deId: String = ""
 )
 
 /**
@@ -317,7 +352,7 @@ data class PhamVi(
      * Lan nop nay la ON LAI cau da lam dung roi, khong phai bai moi.
      *
      * Doi hai thu: so cai khong duoc bo qua cau "da tra gio" nua (cai chinh no vua
-     * chan), va so phut chi con mot nua - va chi tra mot lan trong doi moi cau.
+     * chan), va so phut chiu tran on rieng moi ngay, chi tra khi cau den hen.
      */
     val onTap: Boolean = false,
     /**
@@ -340,7 +375,15 @@ data class PhamVi(
      * duoc cai sai cua chinh no - goi ten duoc thi lan sau moi tranh - va de Ba Huy
      * doc mot dong la biet con that su hieu hay chi chep lai dap an.
      */
-    val conNoi: String = ""
+    val conNoi: String = "",
+    /**
+     * Lan nop nay la phan tu luan cua de Giai de nao. Rong la bai thuong.
+     *
+     * Phan trac nghiem cua de da cham tren tablet luc con bam Nop bai, chi phan tu luan
+     * moi di qua duong chup va cham nay. Luc cham xong, so cau dung ghi nguoc vao de -
+     * xem [vn.huytl.homeworkgate.data.GiaiDe.nhanTuLuan].
+     */
+    val giaiDe: String = ""
 ) {
     val theoSach: Boolean get() = nguon.isNotBlank() && cauIds.isNotEmpty()
 
@@ -354,6 +397,7 @@ data class PhamVi(
         .put("chua_chac", JSONArray(chuaChac))
         .put("da_khai_chac", daKhaiChac)
         .put("con_noi", conNoi)
+        .put("giai_de", giaiDe)
         .toString()
 
     companion object {
@@ -374,7 +418,8 @@ data class PhamVi(
                         .filter { it.isNotBlank() }
                 },
                 daKhaiChac = o.optBoolean("da_khai_chac", false),
-                conNoi = o.optString("con_noi")
+                conNoi = o.optString("con_noi"),
+                giaiDe = o.optString("giai_de")
             )
         }
     }
@@ -422,3 +467,52 @@ data class TienBo(
     val phutDaKiem: Int,
     val cauDangChoSua: Int
 )
+
+/**
+ * Mot de Giai de: mot xap cau SBT may ra san, Le Hoa lam mot mach co dong ho.
+ *
+ * Luat ra de, cham de va tinh diem nam o [vn.huytl.homeworkgate.data.GiaiDe]. Day chi
+ * la mot dong trong bang de_giai cua [KhoBai].
+ *
+ * @param khoa khoa chong trung, moi nguon ra de chi sinh MOT de: "tuan:2026-09-26:Toán"
+ *   cho de tuan, "kt:..." cho de on truoc kiem tra. Bang dat UNIQUE tren cot nay.
+ * @param ten pham vi de hien cho con: "Bài 3, 4, 5", "Ôn tập chương I".
+ * @param cauIds cac cau trong de, theo thu tu hien tren man.
+ * @param ghiChu dong chu da sinh ra de on truoc kiem tra, chep nguyen tu vo dan do hay
+ *   tin cua co. Rong voi de tuan.
+ * @param ngayKiemTra "yyyy-MM-dd", ngay lop kiem tra that. Rong voi de tuan.
+ * @param batDau luc con bam Bat dau, 0 la chua bat dau.
+ * @param nopLuc luc con bam Nop bai: phan trac nghiem cham xong ngay luc do.
+ * @param guiLuc luc phan tu luan da chup va gui di cham. 0 la chua chup.
+ * @param chon chu con bam o tung cau trac nghiem, theo id cau.
+ * @param tnDung so cau trac nghiem dung, -1 la chua cham.
+ * @param tlDung so cau tu luan dung, -1 la chua co ket qua.
+ * @param ketTuLuan tung cau tu luan dung hay chua, theo id cau, ghi luc cham xong. Giu
+ *   trong de chu khong doc lai tu so: cau dung chi vao so khi gio da cap duoc.
+ */
+data class DeGiai(
+    val id: String,
+    val mon: String,
+    val nguon: String,
+    val loai: String,
+    val khoa: String,
+    val ten: String,
+    val cauIds: List<String>,
+    val phutGoiY: Int,
+    val taoLuc: Long,
+    val hetHan: Long,
+    val ghiChu: String = "",
+    val ngayKiemTra: String = "",
+    val batDau: Long = 0L,
+    val nopLuc: Long = 0L,
+    val guiLuc: Long = 0L,
+    val chon: Map<String, String> = emptyMap(),
+    val tnDung: Int = -1,
+    val tlDung: Int = -1,
+    val chamLuc: Long = 0L,
+    val ketTuLuan: Map<String, Boolean> = emptyMap()
+) {
+    val daBatDau: Boolean get() = batDau > 0L
+    val daNop: Boolean get() = nopLuc > 0L
+    val daGuiTuLuan: Boolean get() = guiLuc > 0L
+}

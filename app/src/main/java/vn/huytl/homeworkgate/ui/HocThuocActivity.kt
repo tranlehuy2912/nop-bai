@@ -22,6 +22,7 @@ import vn.huytl.homeworkgate.dongbo.DongBo
 import vn.huytl.homeworkgate.kho.BoThe
 import vn.huytl.homeworkgate.kho.HocToi
 import vn.huytl.homeworkgate.kho.KhoBai
+import vn.huytl.homeworkgate.kho.PhanHoc
 import vn.huytl.homeworkgate.kho.TheHoc
 import vn.huytl.homeworkgate.kho.TraThe
 import vn.huytl.homeworkgate.telegram.ApprovalService
@@ -249,6 +250,12 @@ class HocThuocActivity : AppCompatActivity() {
      */
     private fun hoiHocToi(ma: String, roiBatDau: Boolean) {
         val bo = BoThe.theoMa(ma) ?: return
+        // Bo trung mot phan hoc (ca ba bo hien nay) thi hoi du cac bai cua phan, dung
+        // chung moc voi kho sach bai tap. Xem [PhanHoc].
+        PhanHoc.theoMa(ma)?.let { phan ->
+            ChonHocToi.hoiPhan(this, phan) { sauKhiChon(ma, roiBatDau) }
+            return
+        }
         val cacBai = KhoBai.get(this).cacBaiTrongBoThe(ma)
         if (cacBai.isEmpty()) return
         val cacMuc = listOf("Chưa học tới bài nào") + cacBai
@@ -267,12 +274,16 @@ class HocThuocActivity : AppCompatActivity() {
             dangChon = dangChon
         ) { i ->
             HocToi.datBai(this, bo, if (i == 0) HocToi.CHUA_HOC_BAI_NAO else cacBai[i - 1])
-            val den = BoThe.denThuTu(this, ma)
-            if (roiBatDau && den != null && KhoBai.get(this).conTheDenLuot(ma, denThuTu = den)) {
-                batDau(ma)
-            } else {
-                veChonBo()
-            }
+            sauKhiChon(ma, roiBatDau)
+        }
+    }
+
+    private fun sauKhiChon(ma: String, roiBatDau: Boolean) {
+        val den = BoThe.denThuTu(this, ma)
+        if (roiBatDau && den != null && KhoBai.get(this).conTheDenLuot(ma, denThuTu = den)) {
+            batDau(ma)
+        } else {
+            veChonBo()
         }
     }
 

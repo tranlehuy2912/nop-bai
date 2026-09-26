@@ -117,7 +117,16 @@ object BoThe {
     fun denThuTu(context: Context, bo: String): Int? {
         val bai = HocToi.baiCua(context, bo) ?: return null
         if (bai == HocToi.CHUA_HOC_BAI_NAO) return -1
-        return KhoBai.get(context).thuTuCuoiCua(bo, bai)
+        val kho = KhoBai.get(context)
+        kho.thuTuCuoiCua(bo, bai)?.let { return it }
+        /*
+         * Bai con chon khong co the nao. Tu 27/9/2026 hop chon liet ke du bai cua sach
+         * chu khong chi bai co the (xem [PhanHoc]): chon Bai 7 phan Hoa thi bo the dung
+         * o the cuoi cua Bai 6. Lop chua toi the dau tien cua bo thi -1, khong the nao.
+         * Ten bai khong doc ra so thi van la file doi ten bai, hoi lai nhu truoc.
+         */
+        val so = PhanHoc.soBai(bai) ?: return null
+        return kho.thuTuCuoiDenBaiSo(bo, so) ?: -1
     }
 
     /** Dong Kiem tra bai tren man chinh dang o tinh trang nao, xem [tinhTrangManChinh]. */
@@ -169,7 +178,12 @@ object BoThe {
     private fun conBaiSau(context: Context, bo: String): Boolean {
         val bai = HocToi.baiCua(context, bo) ?: return true
         val cac = KhoBai.get(context).cacBaiTrongBoThe(bo)
-        return cac.isNotEmpty() && bai != cac.last()
+        if (cac.isEmpty()) return false
+        // So theo so bai: con co the chon mot bai khong co the nao, nam giua hai bai co the.
+        val so = PhanHoc.soBai(bai)
+        val cuoi = PhanHoc.soBai(cac.last())
+        if (so != null && cuoi != null) return so < cuoi
+        return bai != cac.last()
     }
 
     /** Cac bo dang co the den luot, de con chon. Bo nao khong con gi thi van hien. */

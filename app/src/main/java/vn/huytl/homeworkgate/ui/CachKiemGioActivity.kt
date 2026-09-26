@@ -14,6 +14,7 @@ import java.util.Calendar
 import vn.huytl.homeworkgate.R
 import vn.huytl.homeworkgate.data.GateState
 import vn.huytl.homeworkgate.data.GateStore
+import vn.huytl.homeworkgate.data.GiaiDe
 import vn.huytl.homeworkgate.data.HocThuoc
 import vn.huytl.homeworkgate.data.LuatTuVung
 import vn.huytl.homeworkgate.data.LuatCongGio
@@ -175,6 +176,22 @@ class CachKiemGioActivity : AppCompatActivity() {
             giaPhu = "mỗi câu"
         )
 
+        /*
+         * Giai de tinh y het bai lam them, khong co gia rieng - xem [GiaiDe]. Van co dong
+         * rieng vi con can biet dong do tren man chinh la mot cho kiem gio, va biet luc
+         * nao co de moi.
+         */
+        val deMo = runCatching { GiaiDe.dangMo(this) }.getOrDefault(emptyList())
+        themDong(
+            box,
+            ten = "Giải đề",
+            gia = "tối đa ${LuatCongGio.TRAN_MOT_BAI_TAP} phút",
+            giaPhu = "mỗi câu",
+            nay = if (deMo.isEmpty()) "Đề mới mở sáng thứ Bảy"
+            else "Đang có: " + deMo.joinToString(", ") { GiaiDe.tenDe(it) },
+            mauNay = if (deMo.isEmpty()) R.color.ink_soft else R.color.brand
+        )
+
         themDong(
             box,
             ten = "Bài văn, đoạn văn dài",
@@ -198,8 +215,9 @@ class CachKiemGioActivity : AppCompatActivity() {
             /*
              * TRAN NGAY, khong phai gia mot cau.
              *
-             * Duong nay co ca hai con so - moi cau duoc nua gia, va ca ngay nhieu
-             * nhat [LuatCongGio.TRAN_ON_MOI_NGAY] - nhung cot phai chi treo duoc mot.
+             * Duong nay tra moi cau du gia nhu bai moi (tu 27/9/2026, truoc do nua gia),
+             * va ca ngay nhieu nhat [LuatCongGio.TRAN_ON_MOI_NGAY]. Cot phai chi treo
+             * duoc mot con so.
              * Treo con so ngay, vi do la con so con thuc su can: no dang doi xem toi
              * nay ngoi on thi duoc them bao nhieu gio choi, chu khong phai mot cau
              * le dang bao nhieu.

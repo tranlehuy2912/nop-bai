@@ -68,4 +68,51 @@ object ChonHocToi {
             .setNegativeButton("Để sau", null)
             .show()
     }
+
+    /**
+     * Hoi moc cua mot phan hoc, liet ke du cac bai cua phan lay tu SGK - xem
+     * [vn.huytl.homeworkgate.kho.PhanHoc]. Chon xong thi ghi lai roi goi [xong].
+     *
+     * Dung chung cho man Kiem tra bai (bo the cung phan) va duong sach bai tap: lam
+     * them, Giai de. Mot moc cho ca hai, nen con chon mot lan la ca hai cung biet.
+     *
+     * Bam "Để sau" thi [xong] khong duoc goi, phan do van chua chon.
+     */
+    fun hoiPhan(
+        activity: Activity,
+        phan: vn.huytl.homeworkgate.kho.PhanHoc.Phan,
+        xong: () -> Unit
+    ) {
+        val cacBai = vn.huytl.homeworkgate.kho.PhanHoc.cacBai(activity, phan)
+        if (cacBai.isEmpty()) return
+        val dangChon = when (val bai = vn.huytl.homeworkgate.kho.HocToi.baiCua(activity, phan.ma)) {
+            null -> -1
+            vn.huytl.homeworkgate.kho.HocToi.CHUA_HOC_BAI_NAO -> 0
+            else -> cacBai.indexOf(bai).let { if (it < 0) -1 else it + 1 }
+        }
+        hoi(
+            activity,
+            tieuDe = "${phan.ten}: lớp đã học tới bài nào?",
+            goiY = "Tính cả bài đang học. Máy chỉ ra bài từ bài đầu tới hết bài " +
+                "${activity.getString(R.string.child_name)} chọn.",
+            cacMuc = listOf("Chưa học tới bài nào") + cacBai,
+            dangChon = dangChon
+        ) { i ->
+            vn.huytl.homeworkgate.kho.HocToi.datBai(
+                activity, phan,
+                if (i == 0) vn.huytl.homeworkgate.kho.HocToi.CHUA_HOC_BAI_NAO else cacBai[i - 1]
+            )
+            xong()
+        }
+    }
+
+    /**
+     * Hoi lan luot moi phan con chua chon cua [mon], roi goi [xong] khi da chon het.
+     * Con bam "Để sau" o phan nao thi dung o do.
+     */
+    fun hoiPhanConThieu(activity: Activity, mon: String, xong: () -> Unit) {
+        val thieu = vn.huytl.homeworkgate.kho.PhanHoc.chuaChon(activity, mon)
+        if (thieu.isEmpty()) return xong()
+        hoiPhan(activity, thieu.first()) { hoiPhanConThieu(activity, mon, xong) }
+    }
 }

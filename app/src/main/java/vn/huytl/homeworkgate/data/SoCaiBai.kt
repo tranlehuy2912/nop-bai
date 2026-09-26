@@ -160,7 +160,9 @@ object SoCaiBai {
         /** Cau con tu bao la chua chac. null nghia la lan nay con khong duoc hoi. */
         chuaChac: Set<String>? = null,
         /** Cau con tu viet ra minh sai cho nao. Mot dong chung cho ca lan nop. */
-        conNoiChung: String = ""
+        conNoiChung: String = "",
+        /** Lan nop nay la phan tu luan cua de Giai de nao. Xem [TraLoi.deId]. */
+        deId: String = ""
     ): List<TraLoi> {
         if (cac.isEmpty()) return emptyList()
         val kho = KhoBai.get(context)
@@ -202,7 +204,8 @@ object SoCaiBai {
                 } else {
                     ""
                 },
-                luc = now
+                luc = now,
+                deId = deId
             )
             kho.ghiTraLoi(dong)
             daGhi += dong

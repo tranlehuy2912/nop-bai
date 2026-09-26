@@ -237,8 +237,44 @@ Quy tắc:
                 .replace("{BAI}", tenBai)
                 .replace("{DANH_SACH}", danhSach) +
             (if (onTap) DOAN_ON_TAP else "") +
+            doanDapAn(cac) +
             (danDo?.let { doanDanDo(it.ngay, it.cacBai) } ?: "")
     }
+
+    /**
+     * Doan dan dap an in cuoi sach bai tap, cho nhung cau trong danh sach co dap an.
+     * Rong khi khong cau nao co (SGK, Ngu van): cau lenh y het truoc 27/9/2026.
+     *
+     * VI SAO. Cau SBT kho hon SGK - nhieu bai chung minh hinh, bai hoa tinh nhieu buoc -
+     * ma model cham la ban lite khong suy nghi, chi tu giai roi so. Tu giai sai thi cham
+     * sai bai dung cua con. Co dap so cua sach de doi chieu thi hai ben lech nhau la mot
+     * dau hieu de xem lai, thay vi mot ket luan.
+     *
+     * VAN BAT TU GIAI TRUOC, khong cho so thang: dap an do cac tac tu chep tu ban quet,
+     * da soat nhung van co the sot mot chu; va sach cung in nham, vai cho da ghi lai
+     * trong ghi chu luc nap (6.34c, 7.4a, 7.16 tap hai...). Cam chep dap an sang cac
+     * truong ma con doc: ket qua, bai lam, nhan xet.
+     *
+     * Dat o CUOI cau lenh, sau ca doan on tap, khong chen vao giua cac quy tac: ban thu
+     * tu da cho thay them mot quy tac o giua lam loang phan cham diem.
+     *
+     * CHUA THU TREN ANH BAI LAM THAT: ngay nap (27/9/2026) Le Hoa chua lam cau SBT nao.
+     * Lan dau con nop cau SBT, xem ky ban cham ben Telegram.
+     */
+    fun doanDapAn(cac: List<vn.huytl.homeworkgate.kho.CauHoi>): String {
+        val co = cac.filter { it.dapAn.isNotBlank() }
+        if (co.isEmpty()) return ""
+        return "\n\n" + DOAN_DAP_AN.replace(
+            "{DANH_SACH}", co.joinToString("\n") { "${it.ma} | ${it.dapAn}" }
+        )
+    }
+
+    val DOAN_DAP_AN = """
+ĐÁP ÁN IN CUỐI SÁCH của một số câu trong danh sách trên (học sinh không thấy phần này):
+{DANH_SACH}
+
+Cách dùng: vẫn tự giải ra nháp trước như quy tắc 8, rồi mới so với đáp án sách. Hai bên lệch nhau thì xem kỹ lại cả hai rồi mới kết luận. Học sinh viết kết quả tương đương (khác cách viết, khác thứ tự, thêm bước rút gọn) vẫn là đúng. Câu chứng minh, giải thích thì đáp án sách chỉ ghi ý chính: học sinh làm cách khác mà lập luận đúng, đủ ý thì vẫn đúng. Câu trắc nghiệm so đúng chữ cái. TUYỆT ĐỐI không chép đáp án sách vào "ket_qua", "bai_lam" hay "nhan_xet".
+    """.trimIndent()
 
     /**
      * Doc mot trang vo dan do ra chu. Khong cham gi ca, chi doc.

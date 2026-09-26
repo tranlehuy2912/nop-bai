@@ -38,7 +38,13 @@ object NganHang {
         val nguon: String,
         val mon: String,
         val ten: String,
-        val file: String
+        val file: String,
+        /**
+         * Quyen nay la sach bai tap. Co giao khong giao cau nao trong do, vi Le Hoa khong
+         * co sach bai tap giay (Ba Huy noi ngay 27/9/2026), nen day la kho tu do cho lam
+         * them, luyen cho hay vap va Giai de - xem [cauNenLamThemCuaMon].
+         */
+        val baiTap: Boolean = false
     )
 
     /**
@@ -77,6 +83,16 @@ object NganHang {
      * De giu nguyen chu in, them mot ngoac ghi cach hieu dung, khong ghi dap an. Thieu
      * ngoac do thi AI tu giai theo chu in, ra ket qua khong khop phuong an nao va cham
      * sai bai dung cua con.
+     *
+     * DAP AN SBT, nap ngay 27/9/2026. Moi cau SBT mang them "dap_an" va "loai_dap_an":
+     * TN la mot chu A-D, DAP_SO la ket qua cuoi so duoc, LOI_GIAI la y chinh cua mot
+     * chung minh hay mot cau giai thich - xem [CauHoi.dapAn]. Chep tu phan loi giai cuoi
+     * sach: SBT Toan tu ban quet, SBT KHTN tu ban Word nhan dang chu, doi chieu VietJack
+     * cho nao chu hong. Sach in nham dap an thi ghi dap an dung (6.34c, 7.4a, 7.16, 8.8b
+     * tap hai; 6.15, 45.5 KHTN...). Hai de in nham them ngoac nhu tren: Trac nghiem 8
+     * trang 54 tap mot (khong phuong an nao dung) va On cuoi nam 7 (dao hai van toc). Cau
+     * sach khong giai ("HS tự làm", "tuỳ HS") thi khong co hai truong nay. Dap an khong
+     * bao gio hien cho Le Hoa.
      *
      * SBT KHTN KHAC SGK KHTN O MA CAU. SGK khong in so cau nen phai tu dat ma ("B12.C3",
      * xem duoi), con SBT in so tung cau ("11.17"), nen ma la so in va tach y theo cung
@@ -133,13 +149,15 @@ object NganHang {
             nguon = "sbttoan8t1",
             mon = "Toán",
             ten = "SBT Toán 8 — tập một",
-            file = "nganhang/sbttoan8t1.json"
+            file = "nganhang/sbttoan8t1.json",
+            baiTap = true
         ),
         Sach(
             nguon = "sbttoan8t2",
             mon = "Toán",
             ten = "SBT Toán 8 — tập hai",
-            file = "nganhang/sbttoan8t2.json"
+            file = "nganhang/sbttoan8t2.json",
+            baiTap = true
         ),
         Sach(
             nguon = "khtn8",
@@ -151,7 +169,8 @@ object NganHang {
             nguon = "sbtkhtn8",
             mon = "Khoa học tự nhiên",
             ten = "SBT Khoa học tự nhiên 8",
-            file = "nganhang/sbtkhtn8.json"
+            file = "nganhang/sbtkhtn8.json",
+            baiTap = true
         ),
         Sach(
             nguon = "van8t1",
@@ -168,6 +187,9 @@ object NganHang {
     )
 
     fun sachCua(mon: String): List<Sach> = SACH.filter { it.mon == mon }
+
+    /** Cac quyen sach bai tap cua mot mon, theo thu tu tap. Xem [Sach.baiTap]. */
+    fun sachBaiTapCua(mon: String): List<Sach> = SACH.filter { it.mon == mon && it.baiTap }
 
     fun sachTheoNguon(nguon: String): Sach? = SACH.firstOrNull { it.nguon == nguon }
 
@@ -264,7 +286,9 @@ object NganHang {
                             de = de,
                             trang = c.optInt("trang"),
                             dang = c.optString("dang").ifBlank { "CAU_NHO" },
-                            thuTu = thuTu++
+                            thuTu = thuTu++,
+                            dapAn = c.optString("dap_an").trim(),
+                            loaiDapAn = c.optString("loai_dap_an").trim()
                         )
                     )
                 }
@@ -285,17 +309,79 @@ object NganHang {
     }
 
     /**
-     * Cau nen lam them, gop tu moi quyen cua mot mon.
+     * Cau nen lam them cua mot mon.
      *
-     * Toan co bon quyen, SGK va SBT moi thu hai tap: giua nam hoc con dang lam tap
-     * hai, con phan lon cau chua lam lai nam o tap mot. Lay deu moi quyen roi tron
-     * theo thu tu quyen thi danh sach lam them van co mat quyen dang hoc.
+     * MON CO SACH BAI TAP THI CHI LAY SACH BAI TAP, tu 27/9/2026. Co giao khong giao cau
+     * SBT nao nen do la kho tu do; SGK de danh cho bai ve nha. Truoc day duong nay rut
+     * ca cau SGK chua lam, ma cau do tuan sau co co the giao: luc do no da khoa "da tinh
+     * gio", va lan nop tron goi hom ay roi len.
      *
-     * Danh sach tron nhieu quyen, nhung MOT LAN NOP chi mang ma cua mot quyen -
-     * [PhamVi] chi co mot [PhamVi.nguon]. Man chon bai se gom cac cau cung quyen voi
-     * cau dau tien, giong duong on tap.
+     * CHI TRONG CAC BAI LOP DA HOC, theo moc cua [PhanHoc]. Truoc day moi quyen lay cau
+     * chua lam theo thu tu in, nen giua thang chin da co cau Bai 21 cua tap hai, bai lop
+     * chua hoc. Con chua chon moc thi tra rong: man chon bai hoi con truoc.
+     *
+     * Thu tu bai: bai vua sai truoc (sai o SGK Bai 4 thi lay SBT Bai 4, cung ten bai),
+     * roi bai gan moc nhat lui dan ve bai dau. Moi bai toi da [MOI_BAI_LAM_THEM] cau de
+     * danh sach trai ra vai bai. KHTN co ba phan day song song, nen "gan moc" tinh trong
+     * tung phan: Bai 9 cua Hoa va Bai 15 cua Li deu la bai lop vua hoc.
+     *
+     * Bo hai muc "Ôn tập chương" va "Bài tập ôn tập cuối năm": ten muc khong phai mot bai
+     * nen khong thuoc moc nao, va de danh cho Giai de. Bo ca cau dang nam trong mot de con
+     * han, de con khong lam truoc cau cua de - xem [vn.huytl.homeworkgate.data.GiaiDe].
+     *
+     * Danh sach co the tron hai tap Toan, nhung MOT LAN NOP chi mang ma cua mot quyen -
+     * [PhamVi] chi co mot [PhamVi.nguon]. Man chon bai gom cac cau cung quyen voi cau
+     * dau tien.
      */
     fun cauNenLamThemCuaMon(context: Context, mon: String, gioiHan: Int = 12): List<CauHoi> {
+        val sbt = sachBaiTapCua(mon)
+        if (sbt.isEmpty()) return cauNenLamThemCu(context, mon, gioiHan)
+        if (PhanHoc.baiDaHoc(context, mon) == null) return emptyList()
+        val kho = KhoBai.get(context)
+        val bayGio = System.currentTimeMillis()
+        val han = bayGio - 365L * 24 * 60 * 60_000L
+        val xong = kho.cacCauDaXong(han)
+        val trongDe = kho.cauTrongDeConHan(bayGio)
+        val theoBai = cauSbtDaHoc(context, mon)
+            .filter { it.id !in xong && it.id !in trongDe }
+            .groupBy { it.bai }
+        if (theoBai.isEmpty()) return emptyList()
+        val vuaSai = kho.baiVuaSaiCuaMon(mon, han).filter { it in theoBai }
+        val thuTu = (vuaSai + theoBai.keys.sortedBy { khoangCachMoc(context, mon, it) })
+            .distinct()
+        return thuTu.flatMap { theoBai.getValue(it).take(MOI_BAI_LAM_THEM) }.take(gioiHan)
+    }
+
+    /**
+     * Moi cau SBT cua mon nam trong cac bai lop da hoc, theo thu tu in. Moc chua chon
+     * thi rong. Bo muc on tap chuong, xem [cauNenLamThemCuaMon].
+     */
+    fun cauSbtDaHoc(context: Context, mon: String): List<CauHoi> {
+        val daHoc = PhanHoc.baiDaHoc(context, mon) ?: return emptyList()
+        val kho = KhoBai.get(context)
+        return sachBaiTapCua(mon).flatMap { kho.cacCauCuaNguon(it.nguon) }
+            .filter { c -> PhanHoc.soBai(c.bai)?.let { it in daHoc } == true }
+    }
+
+    /**
+     * Bai nay cach moc cua phan no bao nhieu bai: 0 la bai lop vua hoc. Bai khong doc ra
+     * so thi xep cuoi.
+     */
+    fun khoangCachMoc(context: Context, mon: String, bai: String): Int {
+        val so = PhanHoc.soBai(bai) ?: return Int.MAX_VALUE
+        val phan = PhanHoc.cuaBai(mon, so) ?: return Int.MAX_VALUE
+        val moc = PhanHoc.hocToi(context, phan) ?: return Int.MAX_VALUE
+        return moc - so
+    }
+
+    /** Moi bai lay toi da bay nhieu cau cho danh sach lam them. */
+    const val MOI_BAI_LAM_THEM = 4
+
+    /**
+     * Duong lam them cu, cho mon chua co sach bai tap (Ngu van): lay deu moi quyen roi
+     * tron theo thu tu quyen.
+     */
+    private fun cauNenLamThemCu(context: Context, mon: String, gioiHan: Int): List<CauHoi> {
         val quyen = sachCua(mon)
         if (quyen.size <= 1) {
             val nguon = quyen.firstOrNull()?.nguon ?: return emptyList()

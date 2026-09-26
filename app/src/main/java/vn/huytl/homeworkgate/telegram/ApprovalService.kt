@@ -31,6 +31,7 @@ import vn.huytl.homeworkgate.R
 import vn.huytl.homeworkgate.data.EndReason
 import vn.huytl.homeworkgate.data.GateState
 import vn.huytl.homeworkgate.data.GateStore
+import vn.huytl.homeworkgate.data.GiaiDe
 import vn.huytl.homeworkgate.data.DayLog
 import vn.huytl.homeworkgate.data.KhaiChoCham
 import vn.huytl.homeworkgate.data.NhatKyAi
@@ -1305,6 +1306,8 @@ class ApprovalService : Service() {
         }
 
         gate.markPending(sent.requestId, sent.messageId)
+        // Phan tu luan cua de Giai de da gui: man chinh thoi nhac chup, cho diem ve.
+        pham?.giaiDe?.takeIf { it.isNotBlank() }?.let { GiaiDe.daGuiTuLuan(this, it) }
         // Giu pham vi lai: tat cham AI thi lan cham den sau, luc Ba Huy dan ket qua
         // Claude ve, ma luc do van phai biet con da khai nhung cau nao.
         pham?.let { KhaiChoCham.luu(this, sent.requestId, it) }
@@ -1358,7 +1361,7 @@ class ApprovalService : Service() {
      * hay tablet khoa man.
      */
     private fun xuLyBanCham(
-        ket: KetQuaCham,
+        banCham: KetQuaCham,
         pham: PhamVi?,
         coAnhDanDo: Boolean,
         /** Bai duoc chi dinh san, o duong Claude cham. null la bai vua nop, moi nhat. */
@@ -1368,6 +1371,15 @@ class ApprovalService : Service() {
     ) {
         val chatId = prefs.parentChatId
         val con = getString(R.string.child_name)
+        /*
+         * Phan tu luan cua de Giai de khong bao gio la bai co giao: de do may ra tu sach bai
+         * tap, ma co khong giao cau SBT nao. Hom khong co vo dan do con hieu luc thi quy tac
+         * 17 cua cau lenh coi moi cau la bai co giao, va hom da tinh tron goi la ca de ra
+         * 0 phut. Chot o day cho chac, khong doi may.
+         */
+        val deId = pham?.giaiDe.orEmpty()
+        val ket = if (deId.isBlank()) banCham
+        else banCham.copy(cac = banCham.cac.map { it.copy(trongDanDo = false) })
         /*
          * Duong Claude cham chi dinh san bai nao. Bai do da roi hang cho - Ba Huy vua
          * duyet tay hay tu choi - thi thoi han. KHONG lay bai moi nhat thay vao: nhu
@@ -1516,7 +1528,7 @@ class ApprovalService : Service() {
         )
         than.append("\n")
         if (onTap) {
-            than.append("• Ôn lại ${moi.size} câu từng sai — trả nửa số phút\n")
+            than.append("• Ôn lại ${moi.size} câu từng sai\n")
         }
         if (pham != null && pham.bai.isNotBlank()) {
             // Bang dieu khien doc dong nay de chep vao loi nho Claude, xem NhoClaude.conKhai
@@ -1663,8 +1675,15 @@ class ApprovalService : Service() {
         val daGhi = SoCaiBai.ghi(
             this, ghiVaoSo, if (daCap) bang.phutCua else emptyMap(), onTap = onTap,
             chuaChac = if (coKhai) chuaChac else null,
-            conNoiChung = pham?.conNoi.orEmpty()
+            conNoiChung = pham?.conNoi.orEmpty(),
+            deId = deId
         )
+        // De Giai de: ghi diem phan tu luan vao de, va noi diem ca de ngay trong tin nay.
+        // Diem tinh tu ban cham, ca khi chua tu duyet: no noi con lam duoc gi, khong phai
+        // con duoc bao nhieu phut.
+        if (deId.isNotBlank()) {
+            GiaiDe.nhanTuLuan(this, deId, moi)?.let { than.append("\n").append(it) }
+        }
         // Day len Firestore ngay: cai lai app la mat sach so cai trong may, ma so cai
         // la thu duy nhat chan viec chup lai bai cu de lay gio lan nua.
         runCatching { DongBo.daySoCai(this, daGhi) }

@@ -54,7 +54,9 @@ class KhoBai private constructor(context: Context) :
               de     TEXT NOT NULL,
               trang  INTEGER,
               dang   TEXT,
-              thu_tu INTEGER
+              thu_tu INTEGER,
+              dap_an TEXT,
+              loai_dap_an TEXT
             )
             """.trimIndent()
         )
@@ -86,13 +88,56 @@ class KhoBai private constructor(context: Context) :
               dung     INTEGER NOT NULL,
               phut     INTEGER NOT NULL,
               nhan_xet TEXT,
-              luc      INTEGER NOT NULL
+              luc      INTEGER NOT NULL,
+              de_id    TEXT
             )
             """.trimIndent()
         )
         db.execSQL("CREATE INDEX ix_tra_cau ON tra_loi(cau_id)")
         db.execSQL("CREATE INDEX ix_tra_luc ON tra_loi(luc)")
         taoBangThe(db)
+        taoBangDe(db)
+    }
+
+    /**
+     * Bang de Giai de - xem [vn.huytl.homeworkgate.data.GiaiDe].
+     *
+     * Mot de mot dong, ghi de len chinh dong do moi lan con bam Bat dau, bam mot chu,
+     * nop bai, hay khi may cham xong phan tu luan. Khac bang tra_loi, noi moi lan lam
+     * mot dong: de la mot viec dang lam do, cai can biet la no dang o buoc nao. Con
+     * tung lan lam cau trong de thi van ghi vao tra_loi nhu moi bai khac, kem ma de.
+     *
+     * khoa UNIQUE: moi nguon ra de (mot tuan, mot dong dan kiem tra) chi sinh mot de,
+     * ke ca khi ham ra de chay hai lan cung luc tu man chinh va tu service.
+     */
+    private fun taoBangDe(db: SQLiteDatabase) {
+        db.execSQL(
+            """
+            CREATE TABLE IF NOT EXISTS de_giai (
+              id        TEXT PRIMARY KEY,
+              khoa      TEXT NOT NULL UNIQUE,
+              mon       TEXT NOT NULL,
+              nguon     TEXT NOT NULL,
+              loai      TEXT NOT NULL,
+              ten       TEXT,
+              cau_ids   TEXT NOT NULL,
+              phut_goi_y INTEGER NOT NULL DEFAULT 0,
+              tao_luc   INTEGER NOT NULL,
+              het_han   INTEGER NOT NULL,
+              ghi_chu   TEXT,
+              ngay_kiem_tra TEXT,
+              bat_dau   INTEGER NOT NULL DEFAULT 0,
+              nop_luc   INTEGER NOT NULL DEFAULT 0,
+              gui_luc   INTEGER NOT NULL DEFAULT 0,
+              chon      TEXT,
+              tn_dung   INTEGER NOT NULL DEFAULT -1,
+              tl_dung   INTEGER NOT NULL DEFAULT -1,
+              cham_luc  INTEGER NOT NULL DEFAULT 0,
+              ket_tl    TEXT
+            )
+            """.trimIndent()
+        )
+        db.execSQL("CREATE INDEX IF NOT EXISTS ix_de_tao ON de_giai(tao_luc)")
     }
 
     /**
@@ -230,7 +275,9 @@ class KhoBai private constructor(context: Context) :
               de     TEXT NOT NULL,
               trang  INTEGER,
               dang   TEXT,
-              thu_tu INTEGER
+              thu_tu INTEGER,
+              dap_an TEXT,
+              loai_dap_an TEXT
             )
             """.trimIndent()
         )
@@ -271,6 +318,13 @@ class KhoBai private constructor(context: Context) :
         if (cu < 9) {
             runCatching { db.execSQL("ALTER TABLE tra_the ADD COLUMN giay INTEGER NOT NULL DEFAULT 0") }
         }
+
+        // Ban 10: dap an SBT trong bang cau hoi (bang do vua tao lai o tren), ma de
+        // tren tung lan lam, va bang de Giai de. Dong cu de de_id rong: la bai thuong.
+        if (cu < 10) {
+            runCatching { db.execSQL("ALTER TABLE tra_loi ADD COLUMN de_id TEXT") }
+            runCatching { taoBangDe(db) }
+        }
     }
 
     // ------------------------------------------------------------ ngan hang cau
@@ -295,6 +349,8 @@ class KhoBai private constructor(context: Context) :
                         put("trang", c.trang)
                         put("dang", c.dang)
                         put("thu_tu", c.thuTu)
+                        put("dap_an", c.dapAn)
+                        put("loai_dap_an", c.loaiDapAn)
                     },
                     SQLiteDatabase.CONFLICT_REPLACE
                 )
@@ -420,6 +476,7 @@ class KhoBai private constructor(context: Context) :
                 put("phut", t.phut)
                 put("nhan_xet", t.nhanXet)
                 put("luc", t.luc)
+                put("de_id", t.deId)
             }
         )
     }
@@ -513,6 +570,162 @@ class KhoBai private constructor(context: Context) :
         return lanDungCuoi + khoang * 24L * 60 * 60_000L
     }
 
+    // ------------------------------------------------------------ de giai de
+
+    /**
+     * Them mot de moi. Tra ve false khi da co de mang cung [DeGiai.khoa]: nguon ra de
+     * do da sinh de roi, lan nay khong lam gi. Xem [taoBangDe].
+     */
+    fun themDe(de: DeGiai): Boolean =
+        writableDatabase.insertWithOnConflict(
+            "de_giai", null, de.giaTri(), SQLiteDatabase.CONFLICT_IGNORE
+        ) != -1L
+
+    /** Ghi de len dong cua de nay: con vua bam bat dau, bam mot chu, nop bai... */
+    fun luuDe(de: DeGiai) {
+        writableDatabase.update("de_giai", de.giaTri(), "id = ?", arrayOf(de.id))
+    }
+
+    fun deTheoId(id: String): DeGiai? =
+        readableDatabase.query("de_giai", null, "id = ?", arrayOf(id), null, null, null)
+            .use { if (it.moveToFirst()) it.docDe() else null }
+
+    /** Xoa mot de va moi lan lam mang ma de do. Chi test goi, de don sau khi chay. */
+    internal fun xoaDe(id: String) {
+        writableDatabase.delete("de_giai", "id = ?", arrayOf(id))
+        writableDatabase.delete("tra_loi", "de_id = ?", arrayOf(id))
+    }
+
+    /** Cac de tao tu [tuLuc] tro di, moi nhat truoc. */
+    fun cacDeTu(tuLuc: Long): List<DeGiai> =
+        readableDatabase.query(
+            "de_giai", null, "tao_luc >= ?", arrayOf(tuLuc.toString()),
+            null, null, "tao_luc DESC"
+        ).use { c -> buildList { while (c.moveToNext()) add(c.docDe()) } }
+
+    private fun DeGiai.giaTri() = ContentValues().apply {
+        put("id", id)
+        put("khoa", khoa)
+        put("mon", mon)
+        put("nguon", nguon)
+        put("loai", loai)
+        put("ten", ten)
+        put("cau_ids", cauIds.joinToString(NGAN_DONG))
+        put("phut_goi_y", phutGoiY)
+        put("tao_luc", taoLuc)
+        put("het_han", hetHan)
+        put("ghi_chu", ghiChu)
+        put("ngay_kiem_tra", ngayKiemTra)
+        put("bat_dau", batDau)
+        put("nop_luc", nopLuc)
+        put("gui_luc", guiLuc)
+        put("chon", org.json.JSONObject(chon).toString())
+        put("tn_dung", tnDung)
+        put("tl_dung", tlDung)
+        put("cham_luc", chamLuc)
+        put("ket_tl", org.json.JSONObject(ketTuLuan).toString())
+    }
+
+    private fun Cursor.docDe(): DeGiai {
+        val chon = runCatching {
+            val o = org.json.JSONObject(getString(getColumnIndexOrThrow("chon")).orEmpty())
+            o.keys().asSequence().associateWith { o.optString(it) }
+        }.getOrDefault(emptyMap())
+        val ketTl = runCatching {
+            val o = org.json.JSONObject(getString(getColumnIndexOrThrow("ket_tl")).orEmpty())
+            o.keys().asSequence().associateWith { o.optBoolean(it) }
+        }.getOrDefault(emptyMap())
+        return DeGiai(
+            id = getString(getColumnIndexOrThrow("id")),
+            mon = getString(getColumnIndexOrThrow("mon")).orEmpty(),
+            nguon = getString(getColumnIndexOrThrow("nguon")).orEmpty(),
+            loai = getString(getColumnIndexOrThrow("loai")).orEmpty(),
+            khoa = getString(getColumnIndexOrThrow("khoa")).orEmpty(),
+            ten = getString(getColumnIndexOrThrow("ten")).orEmpty(),
+            cauIds = getString(getColumnIndexOrThrow("cau_ids")).orEmpty()
+                .split(NGAN_DONG).filter { it.isNotEmpty() },
+            phutGoiY = getInt(getColumnIndexOrThrow("phut_goi_y")),
+            taoLuc = getLong(getColumnIndexOrThrow("tao_luc")),
+            hetHan = getLong(getColumnIndexOrThrow("het_han")),
+            ghiChu = getString(getColumnIndexOrThrow("ghi_chu")).orEmpty(),
+            ngayKiemTra = getString(getColumnIndexOrThrow("ngay_kiem_tra")).orEmpty(),
+            batDau = getLong(getColumnIndexOrThrow("bat_dau")),
+            nopLuc = getLong(getColumnIndexOrThrow("nop_luc")),
+            guiLuc = getLong(getColumnIndexOrThrow("gui_luc")),
+            chon = chon,
+            tnDung = getInt(getColumnIndexOrThrow("tn_dung")),
+            tlDung = getInt(getColumnIndexOrThrow("tl_dung")),
+            chamLuc = getLong(getColumnIndexOrThrow("cham_luc")),
+            ketTuLuan = ketTl
+        )
+    }
+
+    /** Cac cau da lam dung it nhat mot lan tu [tuLuc]. Cung luat voi [daXong]. */
+    fun cacCauDaXong(tuLuc: Long): Set<String> =
+        readableDatabase.rawQuery(
+            "SELECT DISTINCT cau_id FROM tra_loi WHERE dung = 1 AND luc >= ?",
+            arrayOf(tuLuc.toString())
+        ).use { c -> buildSet { while (c.moveToNext()) add(c.getString(0)) } }
+
+    /**
+     * Cau dang nam trong mot de con han. Lam them va luyen bo cac cau nay ra, de con
+     * khong gap truoc cau cua de. De het han hay da bi de tuan sau thay thi tra cau lai.
+     *
+     * De con dang lam do (bat dau roi, chua nop) thi giu cau them [nopMuonMs] sau han,
+     * dung bang khoang ma [vn.huytl.homeworkgate.data.GiaiDe.dangMo] con cho nop.
+     */
+    fun cauTrongDeConHan(
+        bayGio: Long = System.currentTimeMillis(),
+        nopMuonMs: Long = 24L * 60 * 60_000L
+    ): Set<String> =
+        readableDatabase.rawQuery(
+            "SELECT cau_ids FROM de_giai WHERE het_han > ? " +
+                "OR (bat_dau > 0 AND nop_luc = 0 AND het_han > ?)",
+            arrayOf(bayGio.toString(), (bayGio - nopMuonMs).toString())
+        ).use { c ->
+            buildSet {
+                while (c.moveToNext()) {
+                    c.getString(0).orEmpty().split(NGAN_DONG).filterTo(this) { it.isNotEmpty() }
+                }
+            }
+        }
+
+    /** Moi cau cua mot quyen, theo thu tu in. Mot quyen SBT duoi bay tram cau. */
+    fun cacCauCuaNguon(nguon: String): List<CauHoi> =
+        readableDatabase.query(
+            "cau_hoi", null, "nguon = ?", arrayOf(nguon), null, null, "thu_tu"
+        ).use { c -> buildList { while (c.moveToNext()) add(c.docCauHoi()) } }
+
+    /**
+     * Cac cau da tung nop tu [tuLuc] tro di, dung hay sai deu tinh.
+     *
+     * Khac [daXongTrong] (chi cau da dung): de Giai de phai la cau con CHUA DINH toi.
+     * Cau dang sai cho sua ma lot vao de thi con lam no hai noi mot luc.
+     */
+    fun cacCauDaNop(tuLuc: Long): Set<String> =
+        readableDatabase.rawQuery(
+            "SELECT DISTINCT cau_id FROM tra_loi WHERE luc >= ?", arrayOf(tuLuc.toString())
+        ).use { c -> buildSet { while (c.moveToNext()) add(c.getString(0)) } }
+
+    /**
+     * Bai vua sai gan day cua mot mon, moi nhat truoc, theo TEN BAI chu khong theo quyen.
+     *
+     * Theo ten bai vi SGK va SBT dat ten bai y het nhau ("Bài 4. Phép nhân đa thức"):
+     * sai o SGK Bai 4 thi lay cau SBT Bai 4 cho con lam them.
+     */
+    fun baiVuaSaiCuaMon(mon: String, tuLuc: Long, gioiHan: Int = 3): List<String> =
+        readableDatabase.rawQuery(
+            """
+            SELECT c.bai FROM tra_loi t
+            JOIN cau_hoi c ON c.id = t.cau_id
+            WHERE t.dung = 0 AND t.luc >= ? AND c.mon = ? AND c.bai <> ''
+            GROUP BY c.bai
+            ORDER BY MAX(t.luc) DESC
+            LIMIT ?
+            """.trimIndent(),
+            arrayOf(tuLuc.toString(), mon, gioiHan.toString())
+        ).use { c -> buildList { while (c.moveToNext()) add(c.getString(0)) } }
+
     // ------------------------------------------------------------- the hoc thuoc
 
     /** Thay toan bo the cua mot bo bang danh sach moi. Giu nguyen bang tra_the. */
@@ -575,6 +788,29 @@ class KhoBai private constructor(context: Context) :
         readableDatabase.rawQuery(
             "SELECT MAX(thu_tu) FROM the_hoc WHERE bo = ? AND bai = ?", arrayOf(bo, bai)
         ).use { if (it.moveToFirst() && !it.isNull(0)) it.getInt(0) else null }
+
+    /**
+     * Thu tu cua the cuoi cung thuoc nhung bai co so khong lon hon [soBai].
+     *
+     * Cho bai con chon KHONG co trong bo the. Tu 27/9/2026 hop "lop da hoc toi bai nao"
+     * cua KHTN liet ke du cac bai cua sach, vi cung moc do con cat ca kho cau SBT - xem
+     * [PhanHoc]. Bo Hoa lai khong co the nao cho Bai 5, Bai 7: con chon Bai 7 thi bo
+     * the dung o the cuoi cua Bai 6.
+     *
+     * null khi khong co bai nao trong bo nho hon hay bang [soBai], tuc la lop chua toi
+     * the dau tien cua bo.
+     */
+    fun thuTuCuoiDenBaiSo(bo: String, soBai: Int): Int? =
+        readableDatabase.rawQuery(
+            "SELECT bai, MAX(thu_tu) FROM the_hoc WHERE bo = ? GROUP BY bai", arrayOf(bo)
+        ).use { c ->
+            var cuoi: Int? = null
+            while (c.moveToNext()) {
+                val so = PhanHoc.soBai(c.getString(0).orEmpty()) ?: continue
+                if (so <= soBai) cuoi = maxOf(cuoi ?: Int.MIN_VALUE, c.getInt(1))
+            }
+            cuoi
+        }
 
     /**
      * Cac the DEN LUOT trong mot bo, theo thu tu in trong file.
@@ -1022,6 +1258,36 @@ class KhoBai private constructor(context: Context) :
             buildList { while (c.moveToNext()) add(Bai(c.getString(0), c.getString(1))) }
         }
         if (hayVap.isEmpty()) return emptyList()
+
+        /*
+         * Mon co sach bai tap thi rut cau SBT CUNG TEN BAI, tu 27/9/2026. Cau sai phan
+         * lon la bai co giao trong SGK, ma cau SGK chua lam thi tuan sau co co the giao
+         * - xem [NganHang.cauNenLamThemCuaMon]. SBT dat ten bai y het SGK, nen "Bài 4.
+         * Phép nhân đa thức" o hai quyen la mot bai. Bai SBT khong co (muc "Luyện tập
+         * chung" cua SGK, mon Ngu van) thi quay ve cau cung quyen nhu truoc.
+         */
+        val bayGio = System.currentTimeMillis()
+        val motNam = bayGio - 365L * 24 * 60 * 60_000L
+        val trongDe = cauTrongDeConHan(bayGio)
+        val tuSbt = hayVap.flatMap { bai ->
+            val mon = NganHang.sachTheoNguon(bai.nguon)?.mon ?: return@flatMap emptyList()
+            NganHang.sachBaiTapCua(mon).flatMap { sbt ->
+                readableDatabase.rawQuery(
+                    """
+                    SELECT * FROM cau_hoi c
+                    WHERE c.nguon = ? AND c.bai = ?
+                      AND c.dang NOT IN ('TRAC_NGHIEM', 'KHONG_TINH')
+                      AND NOT EXISTS (SELECT 1 FROM tra_loi t
+                                      WHERE t.cau_id = c.id AND t.luc >= ?)
+                    ORDER BY c.thu_tu
+                    LIMIT ?
+                    """.trimIndent(),
+                    arrayOf(sbt.nguon, bai.ten, motNam.toString(), gioiHan.toString())
+                ).use { c -> buildList { while (c.moveToNext()) add(c.docCauHoi()) } }
+                    .filter { it.id !in trongDe }
+            }
+        }
+        if (tuSbt.isNotEmpty()) return tuSbt.take(gioiHan)
 
         // Bai gan day nhat truoc: con vua vap o do tuan nay thi no gan hon bai vap
         // tu thang truoc. Moi bai lay du gioiHan roi cat o cuoi, de mot bai da lam
@@ -1474,7 +1740,9 @@ class KhoBai private constructor(context: Context) :
         de = getString(getColumnIndexOrThrow("de")),
         trang = getInt(getColumnIndexOrThrow("trang")),
         dang = getString(getColumnIndexOrThrow("dang")).orEmpty(),
-        thuTu = getInt(getColumnIndexOrThrow("thu_tu"))
+        thuTu = getInt(getColumnIndexOrThrow("thu_tu")),
+        dapAn = getString(getColumnIndexOrThrow("dap_an")).orEmpty(),
+        loaiDapAn = getString(getColumnIndexOrThrow("loai_dap_an")).orEmpty()
     )
 
     private fun Cursor.docTraLoi() = TraLoi(
@@ -1493,12 +1761,13 @@ class KhoBai private constructor(context: Context) :
         dung = getInt(getColumnIndexOrThrow("dung")) == 1,
         phut = getInt(getColumnIndexOrThrow("phut")),
         nhanXet = getString(getColumnIndexOrThrow("nhan_xet")).orEmpty(),
-        luc = getLong(getColumnIndexOrThrow("luc"))
+        luc = getLong(getColumnIndexOrThrow("luc")),
+        deId = getString(getColumnIndexOrThrow("de_id")).orEmpty()
     )
 
     companion object {
         private const val TEN = "kho_bai.db"
-        private const val BAN = 9
+        private const val BAN = 10
 
         /**
          * Dau ngan giua cac dong bai lam khi cat vao mot o.

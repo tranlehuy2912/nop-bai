@@ -55,11 +55,20 @@ object HocToi {
      * commit() chu khong apply(): con chon xong la bat dau luot ngay, va tien trinh bi
      * giet truoc khi apply() kip xuong dia thi lan sau may lai hoi.
      */
-    fun datBai(context: Context, bo: BoThe.Bo, bai: String) {
-        val cu = baiCua(context, bo.bo)
+    fun datBai(context: Context, bo: BoThe.Bo, bai: String) = datBai(context, bo.bo, bo.ten, bai)
+
+    /**
+     * Ghi moc cua mot phan hoc - xem [PhanHoc]. Phan Sinh KHTN khong co bo the nao, nen
+     * khong di qua [BoThe.Bo] duoc; ma phan trung ma bo the nen dung chung khoa.
+     */
+    fun datBai(context: Context, phan: PhanHoc.Phan, bai: String) =
+        datBai(context, phan.ma, phan.ten, bai)
+
+    private fun datBai(context: Context, ma: String, ten: String, bai: String) {
+        val cu = baiCua(context, ma)
         if (cu == bai) return
-        ghiBai(context, bo.bo, bai)
-        ghiNhatKy(context, bo.ten, moTaBai(bai), cu?.let(::moTaBai))
+        ghiBai(context, ma, bai)
+        ghiNhatKy(context, ten, moTaBai(bai), cu?.let(::moTaBai))
     }
 
     /** Unit cuoi lop da hoc trong bo tu [bo], [CHUA_HOC_UNIT_NAO], hoac null khi chua chon. */

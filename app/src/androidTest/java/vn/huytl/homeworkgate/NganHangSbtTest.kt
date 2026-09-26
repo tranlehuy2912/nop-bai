@@ -166,5 +166,69 @@ class NganHangSbtTest {
             .contains("trong số học sinh nữ"))
         assertTrue(kho.cauTheoId("sbttoan8t2:Ôn cuối năm 5b")?.de.orEmpty()
             .contains("x^2 − 3x − 4"))
+        // Hai cho in nham tim ra luc chep dap an ngay 27/9/2026.
+        assertTrue(kho.cauTheoId("sbttoan8t2:Ôn cuối năm 7")?.de.orEmpty()
+            .contains("đoạn AB đi 60 km/h"))
+        assertTrue(kho.cauTheoId("sbttoan8t1:Trắc nghiệm 8 (tr.54)")?.de.orEmpty()
+            .contains("không phương án nào đúng"))
+    }
+
+    // -------------------------------------------------------------- dap an
+
+    /**
+     * Dap an in cuoi sach, nap ngay 27/9/2026. Cau trac nghiem bam tren may phai co dung
+     * mot chu, va chu do phai la mot phuong an co trong de: sai o day la man Giai de cham
+     * sai bai dung cua con, im lang.
+     */
+    @Test
+    fun trac_nghiem_bam_duoc_co_mot_chu_nam_trong_de() {
+        val soBam = mapOf("sbttoan8t1" to 38, "sbttoan8t2" to 35, "sbtkhtn8" to 209)
+        for ((nguon, so) in soBam) {
+            val tn = tatCaCau(nguon).filter { it.bamTrenMay }
+            assertEquals("$nguon: so cau trac nghiem bam duoc", so, tn.size)
+            tn.forEach { c ->
+                assertTrue("${c.id} dap an '${c.dapAn}'", c.dapAn in listOf("A", "B", "C", "D"))
+                assertTrue("${c.id} de thieu phuong an ${c.dapAn}", c.de.contains("${c.dapAn}. "))
+            }
+        }
+    }
+
+    /** Moi cau co dap an thi co kieu, va nguoc lai. Chi vai chuc cau sach khong giai. */
+    @Test
+    fun dap_an_di_cung_kieu_va_hau_het_cau_co_dap_an() {
+        for (nguon in listOf("sbttoan8t1", "sbttoan8t2", "sbtkhtn8")) {
+            val tatCa = tatCaCau(nguon)
+            tatCa.forEach { c ->
+                assertEquals("${c.id}: dap an va kieu lech nhau", c.dapAn.isBlank(), c.loaiDapAn.isBlank())
+                if (c.loaiDapAn.isNotBlank()) {
+                    assertTrue(c.id, c.loaiDapAn in listOf("TN", "DAP_SO", "LOI_GIAI"))
+                }
+            }
+            val khong = tatCa.count { it.dapAn.isBlank() }
+            assertTrue("$nguon: $khong cau khong co dap an", khong <= 30)
+        }
+    }
+
+    @Test
+    fun ghim_vai_dap_an() {
+        assertEquals("B", kho.cauTheoId("sbttoan8t1:Trắc nghiệm 1 (tr.17)")?.dapAn)
+        assertEquals("A", kho.cauTheoId("sbtkhtn8:6.1")?.dapAn)
+        assertEquals("C", kho.cauTheoId("sbtkhtn8:6.3")?.dapAn)
+        // Sach bo sot loi giai 7.19c; tu giai va doi chieu VietJack.
+        assertEquals("x = 3 hoặc x = −3", kho.cauTheoId("sbttoan8t2:7.19c")?.dapAn)
+        // Trac nghiem 8 trang 54 khong co phuong an dung: khong cho bam tren may.
+        val tn8 = kho.cauTheoId("sbttoan8t1:Trắc nghiệm 8 (tr.54)")
+        assertEquals("TRAC_NGHIEM", tn8?.dang)
+        assertEquals(false, tn8?.bamTrenMay)
+        // Cau dung/sai tung y mang dang TRAC_NGHIEM nhung khong bam mot chu duoc.
+        assertEquals(false, kho.cauTheoId("sbtkhtn8:3.11")?.bamTrenMay)
+    }
+
+    /** SGK khong co dap an: cau lenh cham SGK y het truoc ngay nap dap an. */
+    @Test
+    fun sgk_khong_co_dap_an() {
+        for (nguon in listOf("toan8t1", "toan8t2", "khtn8")) {
+            assertTrue(nguon, tatCaCau(nguon).all { it.dapAn.isBlank() && !it.bamTrenMay })
+        }
     }
 }

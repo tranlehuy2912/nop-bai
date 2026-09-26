@@ -36,6 +36,7 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import vn.huytl.homeworkgate.kho.KhoBai
 import vn.huytl.homeworkgate.kho.NganHang
 import vn.huytl.homeworkgate.kho.PhamVi
+import vn.huytl.homeworkgate.kho.PhanHoc
 import vn.huytl.homeworkgate.kho.TrangSach
 import java.util.Calendar
 
@@ -373,7 +374,11 @@ class ChonBaiActivity : AppCompatActivity() {
         if (quyen.isEmpty()) return
         themDong(
             ten = "Làm thêm cho quen tay",
-            phu = "Câu chưa làm, ưu tiên bài Lê Hòa vừa sai"
+            phu = if (NganHang.sachBaiTapCua(mon).isNotEmpty()) {
+                "Câu sách bài tập trong các bài lớp đã học, bài vừa sai trước"
+            } else {
+                "Câu chưa làm, ưu tiên bài Lê Hòa vừa sai"
+            }
         ) {
             sach = null
             buoc = Buoc.LAM_THEM
@@ -394,16 +399,42 @@ class ChonBaiActivity : AppCompatActivity() {
     private fun veLamThem() {
         val quyen = NganHang.sachCua(mon)
         if (quyen.isEmpty()) return
+        val coSbt = NganHang.sachBaiTapCua(mon).isNotEmpty()
         binding.tieuDe.text = "Làm thêm cho quen tay"
-        binding.phuDe.text = if (quyen.size == 1) quyen.first().ten else "Sách $mon trong máy"
+        binding.phuDe.text = when {
+            coSbt -> "Sách bài tập, các bài lớp đã học"
+            quyen.size == 1 -> quyen.first().ten
+            else -> "Sách $mon trong máy"
+        }
         xoaTich()
+
+        /*
+         * Mon co sach bai tap chi lay cau SBT trong cac bai lop da hoc - xem
+         * [NganHang.cauNenLamThemCuaMon] - nen phai co moc truoc. Chua chon thi hoi ngay,
+         * va de lai mot dong de hoi lai neu con bam "Để sau".
+         */
+        if (coSbt && PhanHoc.chuaChon(this, mon).isNotEmpty()) {
+            val xong = { if (buoc == Buoc.LAM_THEM) veLai() }
+            themDong(
+                ten = "Chọn bài lớp đã học tới",
+                phu = "Máy chỉ lấy câu trong các bài lớp đã học"
+            ) { ChonHocToi.hoiPhanConThieu(this, mon, xong) }
+            ChonHocToi.hoiPhanConThieu(this, mon, xong)
+            return
+        }
 
         lifecycleScope.launch {
             val ct = this@ChonBaiActivity
             val cau = withContext(Dispatchers.IO) { NganHang.cauNenLamThemCuaMon(ct, mon) }
+            if (buoc != Buoc.LAM_THEM) return@launch
             if (cau.isEmpty()) {
                 binding.danhSach.removeAllViews()
-                themChuong("Lê Hòa làm hết sách rồi")
+                if (coSbt) {
+                    themDongMoc()
+                    themChuong("Hết câu trong các bài lớp đã học")
+                } else {
+                    themChuong("Lê Hòa làm hết sách rồi")
+                }
                 return@launch
             }
             cacCau = cau
@@ -412,6 +443,7 @@ class ChonBaiActivity : AppCompatActivity() {
 
             binding.danhSach.removeAllViews()
             binding.dayNut.visibility = View.VISIBLE
+            if (coSbt) themDongMoc()
             var baiCu = ""
             var nguonCu = ""
             cau.forEach { c ->
@@ -431,6 +463,31 @@ class ChonBaiActivity : AppCompatActivity() {
             }
             capNhatNut()
         }
+    }
+
+    /**
+     * Dong moc "lop da hoc toi bai nao" o dau danh sach lam them. Bam vao de doi: lop hoc
+     * bai moi ma con khong doi thi danh sach cu mai la bai cu. Cung moc voi man Kiem tra
+     * bai, doi o day la doi ca hai - xem [PhanHoc].
+     */
+    private fun themDongMoc() {
+        themDong(
+            ten = PhanHoc.moTa(this, mon),
+            phu = "Lớp học bài mới thì bấm vào đây để đổi"
+        ) { doiMoc() }
+    }
+
+    private fun doiMoc() {
+        val cac = PhanHoc.cuaMon(mon)
+        val xong = { if (buoc == Buoc.LAM_THEM) veLai() }
+        if (cac.size == 1) return ChonHocToi.hoiPhan(this, cac.first(), xong)
+        MaterialAlertDialogBuilder(this)
+            .setTitle("Đổi phần nào?")
+            .setItems(cac.map { PhanHoc.moTaPhan(this, it) }.toTypedArray()) { _, i ->
+                ChonHocToi.hoiPhan(this, cac[i], xong)
+            }
+            .setNegativeButton("Để sau", null)
+            .show()
     }
 
     // ----------------------------------------------------------------- buoc luyen

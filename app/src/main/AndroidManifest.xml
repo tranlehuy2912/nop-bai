@@ -113,6 +113,13 @@
             android:exported="false"
             android:screenOrientation="portrait" />
 
+        <!-- Giai de: de may ra tu sach bai tap, lam mot mach co dong ho. -->
+        <activity
+            android:name=".ui.GiaiDeActivity"
+            android:configChanges="orientation|screenSize|screenLayout|smallestScreenSize"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+
         <!-- Man con soat lai ban may doc, di sau man chup. adjustResize de ban phim
              khong che mat dong dang sua.
 

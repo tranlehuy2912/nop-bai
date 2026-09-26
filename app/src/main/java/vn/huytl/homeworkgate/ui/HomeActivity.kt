@@ -24,11 +24,13 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import android.widget.Toast
 import android.widget.LinearLayout
 import vn.huytl.homeworkgate.R
 import vn.huytl.homeworkgate.data.GateState
 import vn.huytl.homeworkgate.data.GateStore
+import vn.huytl.homeworkgate.data.GiaiDe
 import vn.huytl.homeworkgate.data.LuatTuVung
 import vn.huytl.homeworkgate.data.KhoTinCuaCo
 import vn.huytl.homeworkgate.data.NgayNghi
@@ -42,6 +44,7 @@ import vn.huytl.homeworkgate.kho.BoTuVung
 import vn.huytl.homeworkgate.kho.KhoBai
 import vn.huytl.homeworkgate.kho.NganHang
 import vn.huytl.homeworkgate.kho.PhamVi
+import vn.huytl.homeworkgate.kho.PhanHoc
 import vn.huytl.homeworkgate.data.ThoiKhoaBieu
 import vn.huytl.homeworkgate.data.TinhLoiNhac
 import vn.huytl.homeworkgate.databinding.ActivityHomeBinding
@@ -96,7 +99,13 @@ class HomeActivity : AppCompatActivity() {
     private val ngheDoi = SharedPreferences.OnSharedPreferenceChangeListener { _, _ ->
         tay.removeCallbacks(veLai)
         tay.postDelayed(veLai, 300L)
+        // Vo dan do vua luu hay tin cua co vua toi deu nam trong prefs: xem co can mo de on
+        // truoc kiem tra khong. Hoan lau hon lan ve, va bo qua luc dang choi.
+        tay.removeCallbacks(moDe)
+        tay.postDelayed(moDe, 2_000L)
     }
+
+    private val moDe = Runnable { if (!gate.isOpen()) moDeNeuCan() }
 
     /**
      * Tu Android 13 thong bao phai xin. Khong co quyen nay thi thong bao dem
@@ -176,6 +185,18 @@ class HomeActivity : AppCompatActivity() {
         gate.tick()
         Prefs.get(this).raw().registerOnSharedPreferenceChangeListener(ngheDoi)
         render()
+        moDeNeuCan()
+    }
+
+    /**
+     * Mo de Giai de den luc (sang thu Bay, hay vo dan do bao sap kiem tra). Chay ngoai
+     * luong giao dien vi doc ca kho sach bai tap; co de moi thi ve lai danh sach viec.
+     */
+    private fun moDeNeuCan() {
+        lifecycleScope.launch(Dispatchers.IO) {
+            val moi = runCatching { GiaiDe.taoNeuCan(this@HomeActivity) }.getOrDefault(emptyList())
+            if (moi.isNotEmpty()) withContext(Dispatchers.Main) { render() }
+        }
     }
 
     /**
@@ -207,6 +228,7 @@ class HomeActivity : AppCompatActivity() {
             Prefs.get(this).raw().unregisterOnSharedPreferenceChangeListener(ngheDoi)
         }
         tay.removeCallbacks(veLai)
+        tay.removeCallbacks(moDe)
         lamTuoi?.cancel()
         lamTuoi = null
         super.onPause()
@@ -643,6 +665,7 @@ class HomeActivity : AppCompatActivity() {
         }
 
         themViecSoan()
+        if (!gate.isOpen()) themViecGiaiDe()
 
         /*
          * Kiem tra bai. Het the hom nay ma con bai phia sau thi dong van o day, dang da
@@ -740,6 +763,65 @@ class HomeActivity : AppCompatActivity() {
             xong = daSoan
         ) {
             startActivity(Intent(this, SoanActivity::class.java))
+        }
+    }
+
+    /**
+     * Cac dong Giai de: de dang mo, va de cham xong hom nay kem diem. Xem [GiaiDe].
+     *
+     * Khong hoi trong luc dang choi, cung ly do voi dong on lai: ham nay chay moi giay khi
+     * dong ho dang dem.
+     *
+     * De da xong thi dong VAN o lai het ngay, doi sang dau tich va diem, nhu dong soan
+     * tap: an di thi con khong con cho nao nhin lai diem cua minh.
+     *
+     * Mon co sach bai tap ma chua phan nao chon moc "lop da hoc toi bai nao" thi may khong
+     * ra de duoc: hien mot dong moi con chon.
+     */
+    private fun themViecGiaiDe() {
+        val bayGio = System.currentTimeMillis()
+        val mo = runCatching { GiaiDe.dangMo(this, bayGio) }.getOrDefault(emptyList())
+        mo.forEach { de ->
+            val phu = when {
+                !de.daBatDau ->
+                    "${de.ten} · ${de.cauIds.size} câu · khoảng ${de.phutGoiY} phút" +
+                        GiaiDe.ngayKiemTra(de)
+                !de.daNop -> {
+                    val con = de.phutGoiY - ((bayGio - de.batDau) / 60_000L).toInt()
+                    if (con >= 0) "Đang làm, còn $con phút" else "Đang làm, quá ${-con} phút"
+                }
+                else -> "Còn chụp phần tự luận"
+            }
+            themViec(
+                hinh = R.drawable.st_ic_giai_de,
+                mau = MatMon.mau(de.mon),
+                ten = GiaiDe.tenDe(de),
+                phu = phu
+            ) { GiaiDeActivity.mo(this, de.id) }
+        }
+        runCatching { GiaiDe.xongHomNay(this, bayGio) }.getOrDefault(emptyList()).forEach { de ->
+            val (dung, tong) = GiaiDe.diem(this, de)
+            themViec(
+                hinh = R.drawable.st_ic_giai_de,
+                mau = R.color.ok,
+                ten = "${GiaiDe.tenDe(de)}: đúng $dung/$tong câu",
+                xong = true
+            ) { GiaiDeActivity.mo(this, de.id) }
+        }
+        GiaiDe.MON.forEach { mon ->
+            val cacPhan = PhanHoc.cuaMon(mon)
+            if (cacPhan.isEmpty() || PhanHoc.chuaChon(this, mon).size < cacPhan.size) return@forEach
+            themViec(
+                hinh = R.drawable.st_ic_giai_de,
+                mau = MatMon.mau(mon),
+                ten = GiaiDe.tenMon(mon).let { "Giải đề $it" },
+                phu = "Chọn bài lớp đã học tới để máy ra đề"
+            ) {
+                ChonHocToi.hoiPhanConThieu(this, mon) {
+                    moDeNeuCan()
+                    render()
+                }
+            }
         }
     }
 
