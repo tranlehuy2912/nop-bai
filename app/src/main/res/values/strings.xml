@@ -96,7 +96,7 @@
     <string name="kiem_gio_nut">Cách kiếm giờ</string>
     <string name="kiem_gio_nhan_duoc">LÀM GÌ THÌ ĐƯỢC THÊM GIỜ</string>
     <string name="kiem_gio_nhan_khong">CÁI KHÔNG TÍNH GIỜ</string>
-    <string name="kiem_gio_viec_nha">Việc nhà bà nội giao</string>
+    <string name="kiem_gio_viec_nha">Việc nhà bà nội hay Ba Huy giao</string>
 
     <string name="pin_title">Nhập mã PIN</string>
     <string name="pin_wrong">Sai mã PIN</string>

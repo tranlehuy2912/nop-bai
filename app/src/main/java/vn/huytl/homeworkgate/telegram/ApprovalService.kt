@@ -357,10 +357,10 @@ class ApprovalService : Service() {
 
                 nhac.loai == LoaiNhac.CHAN -> {
                     dai.an()
-                    // Dung lai thi chi thay kim dong ho, khong ve lai ca danh sach
-                    // mon moi giay. Noi dung chi doi khi sang buoi khac, ma giua hai
-                    // buoi thi man chan da an di roi hien lai.
-                    if (chan.dangHien) chan.capNhatDongHo() else chan.hien(nhac)
+                    // Loi nhac khong doi thi chi chay kim dong ho, khong ve lai ca
+                    // danh sach mon moi giay. Doi thi ve lai ngay: bam xong mot viec
+                    // nha, hay het viec nha dung luc toi gio di hoc. Xem ManChan.capNhat.
+                    chan.capNhat(nhac)
                 }
 
                 // Chinh app nay dang mo thi thoi: man hinh da noi du, ma the nhac
@@ -389,16 +389,17 @@ class ApprovalService : Service() {
      *
      * Dung chung lop phu voi man chan gio di hoc: cung la che kin man hinh, cung
      * cham vao thi mo app Nop bai, cung nhuong cho khi app do dang mo. Khac o cho
-     * no khong co moc het gio - no het khi ba bam xong het viec.
+     * no khong co moc het gio - no het khi nguoi lon bam xong het viec.
      */
     private fun nhacViecNha(): vn.huytl.homeworkgate.data.LoiNhac? {
-        val con = ViecNha.dangTreo(this)?.chuaXong.orEmpty()
+        val phien = ViecNha.dangTreo(this)
+        val con = phien?.chuaXong.orEmpty()
         if (con.isEmpty()) return null
         return vn.huytl.homeworkgate.data.LoiNhac(
             loai = LoaiNhac.CHAN,
-            tieuDe = "Bà nội giao việc nhà",
+            tieuDe = "${ViecNha.nguoiGiao(phien)} giao việc nhà",
             chiTiet = "Còn phải làm: " + con.joinToString(", ") { it.ten } +
-                ".\nLàm xong nhờ bà bấm trên điện thoại của bà.",
+                ".\n" + ViecNha.NHO_BAM,
             gap = true,
             buoi = null,
             maBuoi = null

@@ -12,7 +12,7 @@ import vn.huytl.homeworkgate.telegram.ApprovalService
 import vn.huytl.homeworkgate.telegram.Notifier
 
 /**
- * Ap ban viec nha ba noi vua dat xuong hop/viecnha.
+ * Ap ban viec nha vua dat xuong hop/viecnha, tu may ba noi hay tu Bang dieu khien.
  *
  * Doi song doi voi [ThiHanhLenh], va co chu tach ra: lenh la su kien, lam xong thi
  * xoa document di; viec nha la trang thai, document nam nguyen do va bi ghi de moi
@@ -61,19 +61,20 @@ object ThiHanhViecNha {
         when (ViecNha.apDung(context, moi)) {
             ViecNha.Doi.MOI -> {
                 val ke = moi.chuaXong.joinToString(", ") { it.ten }
-                DayLog.add(context, "Bà nội giao việc nhà: $ke")
+                val nguoi = ViecNha.nguoiGiao(moi)
+                DayLog.add(context, "$nguoi giao việc nhà: $ke")
                 // Dang choi thi giu gio lai chu khong cat: so phut do la do lam bai
                 // ma co, khong lien quan gi den viec nha.
                 gate.pause()
                 Notifier.send(
                     context,
-                    "Bà nội giao $con làm việc nhà: $ke. Tablet khoá cho đến khi bà bấm xong hết."
+                    "$nguoi giao $con làm việc nhà: $ke. Tablet khoá cho đến khi bấm xong hết."
                 )
                 // Man chan song trong ApprovalService, ma cong dang khoa thi service
                 // do co the da tat. Khong goi dong nay la ba giao viec xong man hinh
                 // van mo binh thuong.
                 ApprovalService.ensureRunning(context)
-                Log.i(TAG, "ba giao ${moi.cac.size} viec")
+                Log.i(TAG, "${moi.ai} giao ${moi.cac.size} viec")
             }
 
             ViecNha.Doi.BOT_MOT_VIEC ->
@@ -87,17 +88,18 @@ object ThiHanhViecNha {
                 donBan(d, moi.id)
                 Notifier.send(
                     context,
-                    "$con làm xong việc nhà bà nội giao ($ke), được $phut phút."
+                    "$con làm xong việc nhà ($ke), được $phut phút."
                 )
                 congGio(context, gate, phut, ke)
                 Log.i(TAG, "xong het, cong $phut phut")
             }
 
             ViecNha.Doi.BO_HET -> {
-                DayLog.add(context, "Bà nội bỏ việc nhà đã giao")
+                // Khong biet ai bam bo, chi biet ai giao: document chi ghi nguoi giao.
+                DayLog.add(context, "Bỏ hết việc nhà đã giao")
                 ViecNha.ghiDaKhep(context, moi.id)
                 donBan(d, moi.id)
-                Log.i(TAG, "ba bo het")
+                Log.i(TAG, "bo het")
             }
 
             ViecNha.Doi.KHONG_DOI -> return
@@ -162,7 +164,9 @@ object ThiHanhViecNha {
             gate.approve(
                 wantedMinutes = phut,
                 useQuota = false,
-                nhanCho = "Làm việc nhà cho bà"
+                // Khong ghi "cho ba": Ba Huy cung giao viec nha, va lenh cong bu
+                // CONGVIECNHA thi khong biet dot do ai giao.
+                nhanCho = "Làm việc nhà"
             )
         }
         if (duoc == null) {
@@ -189,6 +193,9 @@ object ThiHanhViecNha {
         if (d == null || !d.exists()) return null
         val ma = d.getString(Duong.F_MA_PHIEN).orEmpty()
         val cac = (d.get(Duong.F_VIEC) as? List<*>).orEmpty().filterIsInstance<Map<*, *>>()
-        return ViecNha.tuBan(ma, cac, d.getLong(Duong.F_LUC) ?: 0L)
+        // Doc bang get chu khong bang getString: getString nem loi khi truong khong
+        // phai chuoi, va mot truong phu thi khong dang de ca dot viec bi bo.
+        val ai = d.get(Duong.F_AI) as? String ?: Nguoi.BA_NOI
+        return ViecNha.tuBan(ma, cac, d.getLong(Duong.F_LUC) ?: 0L, ai)
     }
 }

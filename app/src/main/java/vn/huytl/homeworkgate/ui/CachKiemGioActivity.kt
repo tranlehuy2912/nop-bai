@@ -355,10 +355,10 @@ class CachKiemGioActivity : AppCompatActivity() {
     /**
      * Viec nha khac hai duong kia o mot cho: con khong tu bat dau duoc.
      *
-     * Ba giao thi moi co, ba khong giao thi khong co gi de lam - nen o day "chua
-     * cong" khong co nghia la "con chua lam". Huy hieu phai noi dung the: dang co
-     * viec cho thi ke ra con bao nhieu phut, khong co viec thi noi thang la hom nay
-     * ba chua giao, de con thoi doi o cho khong the co gi.
+     * Nguoi lon giao thi moi co, khong ai giao thi khong co gi de lam - nen o day
+     * "chua cong" khong co nghia la "con chua lam". Huy hieu phai noi dung the: dang
+     * co viec cho thi ke ra con bao nhieu phut, khong co viec thi noi thang la hom nay
+     * chua ai giao, de con thoi doi o cho khong the co gi.
      */
     private fun veViecNha() {
         val box = binding.boxViecNha
@@ -371,8 +371,8 @@ class CachKiemGioActivity : AppCompatActivity() {
 
         themDong(
             box,
-            ten = "Làm xong việc bà giao",
-            gia = "bà đặt số phút",
+            ten = "Làm xong việc nhà được giao",
+            gia = "mỗi việc một số phút",
             giaPhu = "không giới hạn",
             nay = if (chuaXong.isEmpty()) "" else
                 "Đang chờ: " + chuaXong.joinToString(", ") { "${it.ten} (${it.phut} phút)" },
@@ -385,7 +385,7 @@ class CachKiemGioActivity : AppCompatActivity() {
             het = false,
             khiTrong = when {
                 choSan > 0 -> "Làm xong được $choSan phút"
-                else -> "Hôm nay bà chưa giao việc"
+                else -> "Hôm nay chưa ai giao việc"
             }
         )
     }

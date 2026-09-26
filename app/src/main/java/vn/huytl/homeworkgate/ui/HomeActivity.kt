@@ -218,10 +218,11 @@ class HomeActivity : AppCompatActivity() {
         // So bai dang xep hang cho Ba Huy duyet. Co the nhieu hon mot: con lam xong
         // dot nay nop tiep dot khac ma khong phai cho duyet xong dot truoc.
         val soBaiCho = gate.soBaiDangCho()
-        // Viec ba noi giao, con chua lam xong. Man chan dang che ca may, nhung no
+        // Viec nha nguoi lon giao, con chua lam xong. Man chan dang che ca may, nhung no
         // nhuong cho chinh app nay - nen day la cho duy nhat con doc duoc con phai
         // lam gi.
-        val conViec = ViecNha.dangTreo(this)?.chuaXong.orEmpty()
+        val phienViec = ViecNha.dangTreo(this)
+        val conViec = phienViec?.chuaXong.orEmpty()
         when {
             baDangDung -> {
                 doiMat(R.drawable.ic_mat_mo_khoa, R.color.parent_tint, R.color.parent_soft)
@@ -231,14 +232,14 @@ class HomeActivity : AppCompatActivity() {
             }
             conViec.isNotEmpty() -> {
                 doiMat(R.drawable.ic_mat_viec_nha, R.color.wait, R.color.wait_soft)
-                binding.txtBadge.text = "Bà nội giao việc"
+                binding.txtBadge.text = "${ViecNha.nguoiGiao(phienViec)} giao việc"
                 binding.txtState.text = if (conViec.size == 1) {
                     conViec.first().ten
                 } else {
                     "Còn ${conViec.size} việc"
                 }
                 binding.txtDetail.text = conViec.joinToString(", ") { it.ten } +
-                    ".\nLàm xong nhờ bà bấm trên điện thoại của bà."
+                    ".\n" + ViecNha.NHO_BAM
             }
             gate.state == GateState.PENDING && gate.grantedMinutes > 0 -> {
                 // Nop them bai de cong don, ma trong tay van con phieu cu.

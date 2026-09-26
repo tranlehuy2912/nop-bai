@@ -47,6 +47,9 @@ class ManChan(private val context: Context) {
 
     private var view: View? = null
 
+    /** Loi nhac dang ve tren man chan, de [capNhat] biet luc nao phai ve lai. */
+    private var dangVe: LoiNhac? = null
+
     /** Cham vao man chan. Mo app Nop bai, khong mo khoa may. */
     var khiBam: (() -> Unit)? = null
 
@@ -57,6 +60,22 @@ class ManChan(private val context: Context) {
     fun hien(nhac: LoiNhac) {
         if (!coQuyen()) return
         handler.post { hienTrenMain(nhac) }
+    }
+
+    /**
+     * Goi moi giay trong luc chan: noi dung doi thi ve lai, khong thi chi chay dong ho.
+     *
+     * Truoc day nhip moi giay chi chay dong ho, voi y la noi dung chi doi khi sang buoi
+     * khac, ma giua hai buoi thi man chan da an roi hien lai. Man chan viec nha pha y
+     * do hai lan: nguoi lon bam xong mot viec luc man chan dang hien thi man hinh van ke
+     * viec vua xong; con xong het dung luc toi gio di hoc thi man chan doi ly do ngay,
+     * ma tieu de van la "giao viec nha". Thu tren may ao ngay 26/9/2026.
+     *
+     * So ca loi nhac chu khong so tung dong: loi nhac cua mot buoi hoc giong het nhau
+     * giua cac giay, nen danh sach mon khong bi ve lai moi giay.
+     */
+    fun capNhat(nhac: LoiNhac) {
+        if (view == null || nhac != dangVe) hien(nhac) else capNhatDongHo()
     }
 
     @SuppressLint("InflateParams", "ClickableViewAccessibility")
@@ -94,6 +113,7 @@ class ManChan(private val context: Context) {
             }
 
         veDanhSachMon(v, nhac)
+        dangVe = nhac
 
         // Cham vao dau cung mo app Nop bai, y het lop phu "Het gio roi" cua app chu.
         // Khong mo khoa gi ca: trong app do co viec that de lam (soan cap), va co o
@@ -145,6 +165,7 @@ class ManChan(private val context: Context) {
             val v = view ?: return@post
             runCatching { windowManager.removeView(v) }
             view = null
+            dangVe = null
         }
     }
 

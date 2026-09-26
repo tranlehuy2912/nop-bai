@@ -153,6 +153,18 @@ class ViecNhaTest {
     }
 
     @Test
+    fun nho_ai_giao_de_goi_dung_nguoi() {
+        // Bang dieu khien gui "bahuy". May ba gui "banoi", ban cu khong gui gi.
+        val p = ViecNha.tuBan("ab12", listOf(viec("Quét nhà", 10, false)), 0L, "bahuy")!!
+        assertEquals(ViecNha.Doi.MOI, ViecNha.apDung(context, p))
+        assertEquals("bahuy", ViecNha.dangTreo(context)!!.ai)
+        assertEquals("Ba Huy", ViecNha.nguoiGiao(ViecNha.dangTreo(context)))
+
+        assertEquals("banoi", ban("cd34", viec("Rửa chén", 10, false)).ai)
+        assertEquals("Bà nội", ViecNha.nguoiGiao(null))
+    }
+
+    @Test
     fun phien_moi_ma_da_xong_het_thi_khong_khoa() {
         // Gap khi mang rot dung luc: tablet bo lo ca doan giua, den luc doc duoc thi
         // ba da bam xong het. Khong duoc khoa may mot nhip nao, nhung van cong gio.

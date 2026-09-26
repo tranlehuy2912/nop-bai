@@ -4,21 +4,23 @@ import android.content.Context
 import org.json.JSONArray
 import org.json.JSONObject
 import vn.huytl.homeworkgate.dongbo.Duong
+import vn.huytl.homeworkgate.dongbo.Nguoi
 
 /**
- * Viec nha ba noi giao, va cai khoa di kem.
+ * Viec nha nguoi lon giao, va cai khoa di kem.
  *
- * CACH CHAY: ba bam mot hay nhieu viec tren dien thoai cua ba. Tablet khoa toan bo
- * man hinh cho den khi ba bam "Da xong" cho tung viec. Xong het thi may mo ra va
- * cong so phut cua cac viec do vao gio choi.
+ * CACH CHAY: ba noi bam mot hay nhieu viec tren dien thoai cua ba, hay Ba Huy giao
+ * tren Bang dieu khien. Tablet khoa toan bo man hinh cho den khi co nguoi bam "Xong"
+ * cho tung viec, tren may nao cung duoc: hai dien thoai ghi chung mot document. Xong
+ * het thi may mo ra va cong so phut cua cac viec do vao gio choi.
  *
  * VI SAO KHOA CA MAY chu khong chi khoa game: khoa game thi dua tre van ngoi xem
  * YouTube trong danh sach trang, va cai viec nha kia nam do mai. Man chan thi noi
  * thang ra con gi chua lam, va cham vao la mo dung app Nop bai de doc lai - khong
  * co duong nao khac.
  *
- * AI XAC NHAN: ba, va chi ba. Con khong tu bao xong duoc, khong thi ca co che nay
- * chi la mot cai nut "toi xong roi" tu bam.
+ * AI XAC NHAN: nguoi lon, tren dien thoai cua nguoi lon. Con khong tu bao xong duoc,
+ * khong thi ca co che nay chi la mot cai nut "toi xong roi" tu bam.
  *
  * KHONG CO TRAN NGAY: gio doi bang viec nha khong tru vao han muc bai tap, va Ba
  * Huy chon khong dat tran. Viec nha thi ba noi giao theo viec that trong nha, khong
@@ -35,11 +37,18 @@ object ViecNha {
     data class Viec(val ten: String, val phut: Int, val xong: Boolean)
 
     /**
-     * Mot lan ba giao viec.
+     * Mot lan giao viec.
      *
-     * @param id ma ngan cua phien, do may ba dat. Doi id nghia la phien moi.
+     * @param id ma ngan cua phien, do dien thoai giao dat. Doi id nghia la phien moi.
+     * @param ai nguoi giao, [Nguoi.BA_NOI] hay [Nguoi.BA_HUY]. Chi de goi dung nguoi
+     *   tren man hinh va trong nhat ky, khong doi gi trong cach khoa hay cong gio.
      */
-    data class Phien(val id: String, val cac: List<Viec>, val nhanLuc: Long) {
+    data class Phien(
+        val id: String,
+        val cac: List<Viec>,
+        val nhanLuc: Long,
+        val ai: String = Nguoi.BA_NOI
+    ) {
         val chuaXong: List<Viec> get() = cac.filter { !it.xong }
         val xongHet: Boolean get() = cac.isNotEmpty() && chuaXong.isEmpty()
         val tongPhut: Int get() = cac.sumOf { it.phut }
@@ -163,6 +172,18 @@ object ViecNha {
     fun keChuaXong(context: Context): String =
         dangTreo(context)?.chuaXong.orEmpty().joinToString(", ") { it.ten }
 
+    /** "Bà nội" hay "Ba Huy": ai giao phien nay, de ghi dung tren man hinh va nhat ky. */
+    fun nguoiGiao(p: Phien?): String = if (p?.ai == Nguoi.BA_HUY) "Ba Huy" else "Bà nội"
+
+    /**
+     * Cau noi voi Le Hoa lam xong thi nho ai.
+     *
+     * Ca hai nguoi lon deu bam xong duoc, khong can dung nguoi da giao: ba giao ma
+     * ba di vang thi Ba Huy bam tren Bang dieu khien. Chung mot cau cho man chan va
+     * man hinh chinh, de hai cho khong noi hai kieu.
+     */
+    const val NHO_BAM = "Làm xong thì nhờ bà nội hoặc Ba Huy bấm Xong trên điện thoại."
+
     // ---------------------------------------------------------------- doc ghi
 
     private fun luu(context: Context, p: Phien) {
@@ -174,7 +195,8 @@ object ViecNha {
         }
         sp(context).edit().putString(
             K_PHIEN,
-            JSONObject().put("id", p.id).put("luc", p.nhanLuc).put("cac", cac).toString()
+            JSONObject().put("id", p.id).put("luc", p.nhanLuc).put("ai", p.ai)
+                .put("cac", cac).toString()
         ).commit()
     }
 
@@ -184,6 +206,8 @@ object ViecNha {
         Phien(
             id = o.optString("id"),
             nhanLuc = o.optLong("luc"),
+            // Phien luu tu ban app truoc khong co "ai": luc do chi ba noi giao viec.
+            ai = o.optString("ai", Nguoi.BA_NOI),
             cac = (0 until a.length()).map { i ->
                 val v = a.getJSONObject(i)
                 Viec(v.optString("ten"), v.optInt("phut"), v.optBoolean("xong"))
@@ -198,11 +222,19 @@ object ViecNha {
      * du lieu, va keo Firebase vao day thi moi bai test don gian nhat cung phai co
      * mot du an Firebase that de chay.
      *
-     * Ten viec do may ba gui kem chu khong phai bang ma cung o hai dau: Ba Huy sua
-     * danh sach viec trong app cua ba, ma sua xong thi tablet phai goi dung ten moi
-     * ngay - khong the doi cai lai ca hai may.
+     * Ten viec do dien thoai gui kem chu khong phai bang ma cung o hai dau: Ba Huy sua
+     * danh sach viec tren Bang dieu khien, ma sua xong thi tablet phai goi dung ten moi
+     * ngay - khong the doi cai lai may nao.
+     *
+     * [ai] thieu thi la ba noi: may ba ban cu khong gui truong nay, va truoc khi Bang
+     * dieu khien giao duoc viec thi chi may ba ghi o do.
      */
-    fun tuBan(maPhien: String, cac: List<Map<*, *>>, nhanLuc: Long): Phien? {
+    fun tuBan(
+        maPhien: String,
+        cac: List<Map<*, *>>,
+        nhanLuc: Long,
+        ai: String = Nguoi.BA_NOI
+    ): Phien? {
         if (maPhien.isBlank()) return null
         val viec = cac.mapNotNull { o ->
             val ten = (o[Duong.F_TEN] as? String)?.trim()?.takeIf { it.isNotEmpty() }
@@ -210,7 +242,7 @@ object ViecNha {
             val phut = ((o[Duong.F_PHUT] as? Number)?.toInt() ?: 0).coerceIn(0, 240)
             Viec(ten, phut, o[Duong.F_XONG] == true)
         }
-        return Phien(maPhien, viec, nhanLuc)
+        return Phien(maPhien, viec, nhanLuc, ai)
     }
 
     private const val K_PHIEN = "viec_nha_phien"
