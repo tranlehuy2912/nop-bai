@@ -375,6 +375,9 @@ class ApprovalService : Service() {
      * man PIN bi che mat gan mot phut truoc khi vong sau kip nhuong cho no.
      */
     private suspend fun xetLoiNhac(): Boolean {
+        // Luoi do cho VPN cat mang luc man hinh sang, phong khi co gi doi ma khong qua
+        // prefs, vi du con vua cai lai YouTube.
+        vn.huytl.homeworkgate.guard.CatMangVpn.dongBoThua(this)
         if (ParentMode.isActive(this)) {
             withContext(Dispatchers.Main) { dai.an(); chan.an() }
             dangDemGiay = false

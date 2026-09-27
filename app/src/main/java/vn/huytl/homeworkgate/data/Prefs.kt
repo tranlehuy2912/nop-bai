@@ -137,6 +137,21 @@ class Prefs private constructor(private val sp: SharedPreferences) {
         set(v) = sp.edit().putStringSet(KEY_BLOCKED, v).commit().let {}
 
     /**
+     * App cat mang khi bi khoa: het gio choi, gio di hoc, gio ngu thi mat mang, ke
+     * ca khi chay nen. Con trong gio choi that thi van co mang.
+     *
+     * Khac han danh sach chan: chan chi tac dong khi app o truoc mat, con day cat ca
+     * cua so noi (PiP) va tai ngam. Cung khac danh sach trang: day khong cho phep gi,
+     * chi cat mang cua dung nhung app Ba Huy chon. Xem [LuatCatMang] va
+     * [vn.huytl.homeworkgate.guard.CatMangVpn].
+     *
+     * Rong thi khong bat VpnService, nen khong dung toi quyen VPN.
+     */
+    var catMangPackages: Set<String>
+        get() = sp.getStringSet(KEY_CAT_MANG, emptySet()).orEmpty()
+        set(v) = sp.edit().putStringSet(KEY_CAT_MANG, v).commit().let {}
+
+    /**
      * Cac khoa API cua AI, theo thu tu uu tien.
      *
      * Luu thanh mot chuoi moi dong mot khoa chu khong phai StringSet: StringSet
@@ -370,6 +385,7 @@ class Prefs private constructor(private val sp: SharedPreferences) {
         private const val KEY_MOI_LUC = "moi_luc_packages"
         private const val KEY_AI_PKG = "ai_packages"
         private const val KEY_BLOCKED = "blocked_packages"
+        private const val KEY_CAT_MANG = "cat_mang_packages"
         private const val KEY_NHAC = "nhac_packages"
         private const val KEY_LOCK_SETTINGS = "lock_settings"
         private const val KEY_TG_OFFSET = "tg_offset"

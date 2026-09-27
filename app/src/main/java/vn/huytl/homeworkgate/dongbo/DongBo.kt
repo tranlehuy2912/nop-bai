@@ -521,6 +521,7 @@ object DongBo {
             "appChoPhep" to prefs.allowedPackages.sorted(),
             "appMoiLuc" to prefs.moiLucPackages.sorted(),
             "appChan" to prefs.blockedPackages.sorted(),
+            "appCatMang" to prefs.catMangPackages.sorted(),
             "appAi" to prefs.aiPackages.sorted(),
             "gioiHanApp" to GioiHanApp.tatCa(context)
         )

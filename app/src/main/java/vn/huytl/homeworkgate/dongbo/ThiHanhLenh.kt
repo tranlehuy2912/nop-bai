@@ -19,6 +19,7 @@ import vn.huytl.homeworkgate.data.SuaCham
 import vn.huytl.homeworkgate.data.LuatCongGio
 import vn.huytl.homeworkgate.data.VoChoCham
 import vn.huytl.homeworkgate.data.VoDanDo
+import vn.huytl.homeworkgate.guard.CatMangVpn
 import vn.huytl.homeworkgate.guard.ChuongTin
 import vn.huytl.homeworkgate.guard.ParentMode
 import vn.huytl.homeworkgate.guard.Permissions
@@ -533,6 +534,21 @@ object ThiHanhLenh {
             "appChan" -> {
                 prefs.blockedPackages = danhSach(giaTri)
                 "Danh sách app chặn hẳn: ${prefs.blockedPackages.size} app."
+            }
+            // Gui lai danh sach cung la cach Ba Huy bat lai VPN vua bi app khac chiem,
+            // nen quen dau bi da va xet lai ngay ca khi danh sach khong doi.
+            "appCatMang" -> {
+                prefs.catMangPackages = danhSach(giaTri)
+                CatMangVpn.boCoBiDa(context)
+                CatMangVpn.dongBo(context)
+                val so = prefs.catMangPackages.size
+                if (so > 0 && !CatMangVpn.daChoPhep(context)) {
+                    "Danh sách app cắt mạng khi bị khoá: $so app. Tablet chưa cho phép " +
+                        "VPN nên chưa cắt được: vào Cài đặt của app Nộp bài trên tablet, " +
+                        "bấm dòng cảnh báo VPN rồi chọn OK."
+                } else {
+                    "Danh sách app cắt mạng khi bị khoá: $so app."
+                }
             }
             "appAi" -> {
                 prefs.aiPackages = danhSach(giaTri)

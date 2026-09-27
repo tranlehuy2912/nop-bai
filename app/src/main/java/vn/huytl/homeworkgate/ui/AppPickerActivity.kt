@@ -3,6 +3,7 @@ package vn.huytl.homeworkgate.ui
 import android.content.Intent
 import android.content.pm.ApplicationInfo
 import android.content.pm.PackageManager
+import android.net.VpnService
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -10,6 +11,8 @@ import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
@@ -21,14 +24,16 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import vn.huytl.homeworkgate.data.GioiHanApp
 import vn.huytl.homeworkgate.data.Prefs
 import vn.huytl.homeworkgate.databinding.ActivityAppPickerBinding
+import vn.huytl.homeworkgate.guard.CatMangVpn
 
 /**
  * Chon app cho mot trong cac danh sach.
  *
  * Danh sach trang tra loi "cai gi van dung duoc khi het gio", danh sach dung moi luc
  * tra loi "cai gi khong bao gio khoa theo gio", danh sach den tra loi "cai gi khong
- * bao gio duoc dung". Cau hoi khac nhau nhung cung mot thao tac chon, nen dung chung
- * mot man hinh, phan biet bang [EXTRA_DANH_SACH].
+ * bao gio duoc dung", danh sach cat mang tra loi "cai gi mat mang khi bi khoa". Cau
+ * hoi khac nhau nhung cung mot thao tac chon, nen dung chung mot man hinh, phan biet
+ * bang [EXTRA_DANH_SACH].
  *
  * Chi liet ke app co the mo tu man hinh chinh, vi chan mot service nen thi vo
  * nghia, con lam danh sach dai them vai tram dong.
@@ -48,7 +53,7 @@ class AppPickerActivity : AppCompatActivity() {
 
     private var tim = ""
     /** Man nay dang lam danh sach nao. Mot bien thay cho bon co, de moi danh sach chi khai mot cho. */
-    private enum class Loai { TRANG, DEN, HAN, NHAC, MOI_LUC }
+    private enum class Loai { TRANG, DEN, HAN, NHAC, MOI_LUC, CAT_MANG }
 
     private var loai = Loai.TRANG
 
@@ -59,8 +64,29 @@ class AppPickerActivity : AppCompatActivity() {
         Loai.DEN -> prefs::blockedPackages
         Loai.NHAC -> prefs::nhacPackages
         Loai.MOI_LUC -> prefs::moiLucPackages
+        Loai.CAT_MANG -> prefs::catMangPackages
         Loai.TRANG -> prefs::allowedPackages
         Loai.HAN -> null
+    }
+
+    /**
+     * Hop thoai VPN cua he thong, mo ngay sau khi luu danh sach cat mang. Chua bam OK
+     * lan nao thi VPN khong bat duoc, va danh sach vua chon khong cat duoc gi.
+     */
+    private val xinVpn = registerForActivityResult(
+        ActivityResultContracts.StartActivityForResult()
+    ) { kq ->
+        if (kq.resultCode == RESULT_OK) {
+            CatMangVpn.dongBo(this)
+        } else {
+            Toast.makeText(
+                this,
+                "Chưa cho phép VPN nên các app này chưa bị cắt mạng. Bấm dòng cảnh báo " +
+                    "trong Cài đặt để cho phép lại.",
+                Toast.LENGTH_LONG
+            ).show()
+        }
+        finish()
     }
 
     private data class Entry(val packageName: String, val label: String, val info: ApplicationInfo)
@@ -77,6 +103,9 @@ class AppPickerActivity : AppCompatActivity() {
 
         /** Man chon app dung moi luc, ke ca gio ngu va gio di hoc. */
         const val MOI_LUC = "moiluc"
+
+        /** Man chon app mat mang khi bi khoa. Xem [CatMangVpn]. */
+        const val CAT_MANG = "catmang"
 
         /** May muc chon san khi dat han, don vi phut. */
         private val MUC_PHUT = listOf(15, 30, 45, 60, 90, 120, 180)
@@ -95,6 +124,7 @@ class AppPickerActivity : AppCompatActivity() {
             DEN -> Loai.DEN
             NHAC -> Loai.NHAC
             MOI_LUC -> Loai.MOI_LUC
+            CAT_MANG -> Loai.CAT_MANG
             else -> Loai.TRANG
         }
         val con = getString(R.string.child_name)
@@ -103,6 +133,7 @@ class AppPickerActivity : AppCompatActivity() {
             Loai.DEN -> "App cấm hẳn"
             Loai.NHAC -> "App được nghe nền"
             Loai.MOI_LUC -> "Dùng mọi lúc"
+            Loai.CAT_MANG -> "Cắt mạng khi bị khoá"
             Loai.TRANG -> "Dùng khi hết giờ chơi"
         }
         binding.txtHuongDan.text = when (loai) {
@@ -124,6 +155,12 @@ class AppPickerActivity : AppCompatActivity() {
                 "Chọn app $con dùng được mọi lúc, kể cả giờ ngủ, giờ đi học và lúc " +
                     "màn chặn việc nhà đang che, ví dụ Telegram để nhắn cho ba Huy. " +
                     "App cấm hẳn và giờ riêng từng app vẫn áp dụng cho app ở đây."
+            Loai.CAT_MANG ->
+                "Chọn app mất mạng khi máy khoá: hết giờ chơi, giờ ngủ, giờ đi học. " +
+                    "Trong giờ chơi app vẫn có mạng. Cắt cả khi app chạy nền, như cửa sổ " +
+                    "nổi của YouTube. App ở mục Dùng mọi lúc thì không bị cắt.\n" +
+                    "Lần đầu bấm Xong máy hỏi quyền VPN, chọn OK. Lúc đang cắt, thanh " +
+                    "trạng thái có biểu tượng chìa khoá."
             Loai.TRANG ->
                 "Chọn app $con vẫn được dùng khi hết giờ chơi, ví dụ từ điển, máy tính, " +
                     "app học. Những app còn lại đều bị khoá khi hết giờ. Từ giờ ngủ tới " +
@@ -156,9 +193,30 @@ class AppPickerActivity : AppCompatActivity() {
         demLaiNutXong()
 
         binding.btnDone.setOnClickListener {
+            if (loai == Loai.CAT_MANG) {
+                luuCatMang()
+                return@setOnClickListener
+            }
             danhSach()?.set(selected.toSet())
             finish()
         }
+    }
+
+    /**
+     * Luu danh sach cat mang, roi xin quyen VPN neu chua co.
+     *
+     * Bam Xong cung la cach Ba Huy bat lai VPN vua bi app khac chiem: quen dau bi da
+     * roi xet lai ngay, khong doi toi lan khoa sau.
+     */
+    private fun luuCatMang() {
+        prefs.catMangPackages = selected.toSet()
+        CatMangVpn.boCoBiDa(this)
+        if (selected.isNotEmpty() && !CatMangVpn.daChoPhep(this)) {
+            val xin = runCatching { VpnService.prepare(this) }.getOrNull()
+            if (xin != null && runCatching { xinVpn.launch(xin) }.isSuccess) return
+        }
+        CatMangVpn.dongBo(this)
+        finish()
     }
 
     override fun onResume() {

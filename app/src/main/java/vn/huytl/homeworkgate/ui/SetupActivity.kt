@@ -70,6 +70,12 @@ class SetupActivity : AppCompatActivity() {
                     .putExtra(AppPickerActivity.EXTRA_DANH_SACH, AppPickerActivity.DEN)
             )
         }
+        binding.btnPickCatMang.setOnClickListener {
+            startActivity(
+                Intent(this, AppPickerActivity::class.java)
+                    .putExtra(AppPickerActivity.EXTRA_DANH_SACH, AppPickerActivity.CAT_MANG)
+            )
+        }
     }
 
     override fun onResume() {

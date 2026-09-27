@@ -132,6 +132,12 @@ object CanhBao {
             Viec.TELEGRAM ->
                 activity.startActivity(Intent(activity, SetupActivity::class.java))
 
+            // Hop thoai VPN cua he thong mo tu man chon app cat mang, luc bam Xong.
+            Viec.CAT_MANG_VPN -> activity.startActivity(
+                Intent(activity, AppPickerActivity::class.java)
+                    .putExtra(AppPickerActivity.EXTRA_DANH_SACH, AppPickerActivity.CAT_MANG)
+            )
+
             // Cong tac nay khong doc duoc tu trong app, nen phai hoi. Mo man hinh
             // cua MIUI ra roi van phai quay lai bam "Đã bật rồi", khong thi dong
             // canh bao nam mai o do.

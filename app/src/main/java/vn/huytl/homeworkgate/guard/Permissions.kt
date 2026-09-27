@@ -26,6 +26,7 @@ enum class Viec {
     QUAN_TRI,
     THONG_BAO,
     DOC_THONG_BAO,
+    CAT_MANG_VPN,
 }
 
 /**
@@ -286,6 +287,33 @@ object Permissions {
             )
         }
 
+        // Chi hoi khi Ba Huy da chon app cat mang: chua chon thi VPN khong bao gio bat.
+        // Bao nang vi ca hai truong hop deu la het gio ma app Ba Huy chon van co mang.
+        if (prefs.catMangPackages.isNotEmpty()) {
+            if (!CatMangVpn.daChoPhep(context)) {
+                add(
+                    Thieu(
+                        Viec.CAT_MANG_VPN,
+                        "Chưa cho phép cắt mạng (VPN)",
+                        "Hết giờ thì app trong danh sách cắt mạng vẫn lên mạng được. " +
+                            "Bấm vào đây, bấm Xong, rồi chọn OK ở hộp thoại VPN.",
+                        nang = true
+                    )
+                )
+            } else if (CatMangVpn.biDa(context)) {
+                add(
+                    Thieu(
+                        Viec.CAT_MANG_VPN,
+                        "VPN cắt mạng vừa bị tắt",
+                        "Có app VPN khác vừa bật, hoặc VPN bị ngắt trong Cài đặt. Hết " +
+                            "giờ chơi lần sau máy tự bật lại. Bấm vào đây rồi bấm Xong " +
+                            "để bật lại ngay.",
+                        nang = true
+                    )
+                )
+            }
+        }
+
         if (!hasNotifications(context)) {
             add(
                 Thieu(
@@ -309,7 +337,8 @@ object Permissions {
      * Mo khong duoc thi roi xuong man hinh thong tin app, tu do van di tiep duoc.
      */
     fun duongVao(context: Context, viec: Viec): List<Intent> = when (viec) {
-        Viec.TELEGRAM -> emptyList()
+        // Hai viec nay sua ngay trong app, CanhBao tu mo man can den.
+        Viec.TELEGRAM, Viec.CAT_MANG_VPN -> emptyList()
         Viec.TRO_NANG, Viec.TRO_NANG_CHET -> listOf(accessibilityIntent())
         Viec.LOP_PHU -> listOf(overlayIntent(context))
         Viec.QUAN_TRI -> listOf(deviceAdminIntent(context))

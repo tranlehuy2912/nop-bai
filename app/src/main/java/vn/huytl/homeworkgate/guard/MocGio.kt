@@ -90,6 +90,7 @@ object MocGio {
             Log.i(TAG, "toi moc gio: state=${gate.state} ly=$ly")
             if (ly != null) runCatching { Notifier.sessionEnded(context, ly) }
             runCatching { DongBo.dayNgay() }
+            CatMangVpn.dongBo(context)
             // Dat moc ke tiep ngay tai day: bao thuc nay khong lap lai.
             datLai(context)
         }

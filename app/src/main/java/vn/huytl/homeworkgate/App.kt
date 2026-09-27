@@ -5,6 +5,7 @@ import android.app.Application
 import android.os.Bundle
 import vn.huytl.homeworkgate.data.ChatCu
 import vn.huytl.homeworkgate.data.SoCaiBai
+import vn.huytl.homeworkgate.guard.CatMangVpn
 import vn.huytl.homeworkgate.guard.TelegramThat
 import vn.huytl.homeworkgate.kho.BoThe
 import vn.huytl.homeworkgate.kho.BoTuVung
@@ -26,6 +27,8 @@ class App : Application() {
     override fun onCreate() {
         super.onCreate()
         donDepKho()
+        // Cat mang theo moi lan cong mo hay dong, du ai doi no. Xem CatMangVpn.theoDoi.
+        runCatching { CatMangVpn.theoDoi(this) }
         registerActivityLifecycleCallbacks(object : ActivityLifecycleCallbacks {
             override fun onActivityResumed(activity: Activity) {
                 if (dangHien == 0 && roiNenLuc > 0L) {

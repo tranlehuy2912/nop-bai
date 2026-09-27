@@ -403,6 +403,15 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="10dp"
                             android:text="Chọn app cấm hẳn, kể cả trong giờ chơi" />
+
+                        <!-- Mat mang khi bi khoa, ke ca luc chay nen. Xem CatMangVpn. -->
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btn_pick_cat_mang"
+                            style="@style/Widget.Material3.Button.OutlinedButton"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="Chọn app cắt mạng khi bị khoá (YouTube, game…)" />
                     </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>
 

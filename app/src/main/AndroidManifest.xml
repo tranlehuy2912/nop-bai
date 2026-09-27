@@ -256,6 +256,18 @@
             </intent-filter>
         </service>
 
+        <!-- VPN cat mang cac app Ba Huy chon, luc chung dang bi khoa. Xem CatMangVpn.
+             Quyen BIND_VPN_SERVICE la cua chinh service: chi he thong bind duoc vao day.
+             App khong can xin them quyen nao, Ba Huy bam OK o hop thoai VPN mot lan. -->
+        <service
+            android:name=".guard.CatMangVpn"
+            android:exported="false"
+            android:permission="android.permission.BIND_VPN_SERVICE">
+            <intent-filter>
+                <action android:name="android.net.VpnService" />
+            </intent-filter>
+        </service>
+
         <receiver
             android:name=".guard.AdminReceiver"
             android:exported="true"

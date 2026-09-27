@@ -369,6 +369,9 @@ class GuardAccessibilityService : AccessibilityService() {
         // day len dau tien mang gia tri khoi dau - "man hinh tat" - va Bang dieu
         // khien noi sai cho den khi co ai cham vao may.
         runCatching { capNhatSuDung() }
+        // Dich vu len lai thuong la luc tien trinh vua song lai, va VPN cat mang da mat
+        // theo tien trinh cu.
+        CatMangVpn.dongBo(this)
     }
 
     /**
@@ -697,6 +700,10 @@ class GuardAccessibilityService : AccessibilityService() {
     }
 
     private fun onTick() {
+        // Het han che do Ba Huy, hay toi gio di hoc giua phien, deu khong ghi gi vao
+        // prefs nen CatMangVpn khong tu biet. Nhip nay chi chay khi dang choi hoac
+        // dang mo toan bo may, dung hai luc do.
+        CatMangVpn.dongBo(this)
         // Man hinh tat du lau thi dung dong ho lai ngay, de phien khong chet trong
         // luc khong ai dung may.
         val tatMs = nghiVoiManHinhTat()
