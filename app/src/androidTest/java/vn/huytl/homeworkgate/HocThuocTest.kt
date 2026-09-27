@@ -134,6 +134,25 @@ class HocThuocTest {
     }
 
     @Test
+    fun mic_ghi_dau_nhan_thanh_chu_x_van_dung() {
+        // Doc "a nhân b" vao mic thi ban phim ghi "a x b", chu x thuong.
+        assertTrue(HocThuoc.dung("a x b + a x c", the("A.B + A.C", "AB + AC")))
+        assertTrue(HocThuoc.dung("FA = d x V", the("FA = d.V"), phanBietHoa = true))
+        assertTrue(HocThuoc.dung("V = 24,79 x n", the("V = 24,79·n"), phanBietHoa = true))
+        assertTrue(HocThuoc.dung("1/3 x S x h", the("1/3.S.h")))
+        assertTrue(HocThuoc.dung("b X c", the("b.c")))
+    }
+
+    @Test
+    fun chu_x_la_bien_thi_van_doc_la_chu_x() {
+        // Mic tach bien x ra rieng: cach doc chu x van con.
+        assertTrue(HocThuoc.dung("y = a x + b", the("y = ax + b")))
+        // Chu x dinh lien chu khac khong phai dau nhan.
+        assertFalse(HocThuoc.dung("axb", the("a.b")))
+        assertTrue(HocThuoc.dung("−2x³y²z", the("−2x³y²z")))
+    }
+
+    @Test
     fun dau_phay_tren_ban_phim_uon_van_la_mot() {
         assertTrue(HocThuoc.dung("H = m’/m·100%", the("H = m'/m·100%"), phanBietHoa = true))
     }

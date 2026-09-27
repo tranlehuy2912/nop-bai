@@ -80,7 +80,8 @@ object HocThuoc {
      *  - cac loai gach ngang (−, –, —) quy het ve "-": ba ky tu do nhin giong het
      *    nhau tren man hinh;
      *  - dau nhan: "·", "×", "*" va "." la mot. Chinh sach KHTN viet "d.V" o trang
-     *    nay va "24,79·n" o trang kia;
+     *    nay va "24,79·n" o trang kia. Chu "x" mic ghi thay dau nhan thi [dung] lo,
+     *    khong phai o day;
      *  - dau chia: ":" va "/" la mot. Tu tieu hoc con da viet phep chia bang hai
      *    cham, "m : V" va "m/V" la mot cong thuc;
      *  - dau phay tren: "’" va "'" la mot. Ban phim co khi tu uon dau nay, ma "m'"
@@ -129,6 +130,9 @@ object HocThuoc {
     /** Dau cham giua, dau nhan, ngoi sao: cung la phep nhan. */
     private const val DAU_NHAN = "·×∙⋅*"
 
+    /** Chu x dung rieng giua hai dau cach, kieu mic ghi "a nhân b" thanh "a x b". Xem [dung]. */
+    private val X_DUNG_RIENG = Regex("(?<=\\s)[xX](?=\\s)")
+
     /** Cac dau phay tren ma ban phim hay tu uon ra. */
     private const val DAU_PHAY_TREN = "’‘ʼ′"
 
@@ -165,12 +169,22 @@ object HocThuoc {
      * Chu hoa lam nhan cho dai luong ("FA", "MA", "CM") thi hoa hay thuong deu la mot
      * cach viet, nhung luat nay khong tu biet chu nao la nhan. Ban viet thuong cua nhan
      * phai ke trong dap_khac, vi du "Fa = d.V".
+     *
+     * CHU X CUA MIC. Le Hoa co luc tra loi bang mic, ma doc "a nhân b" thi ban phim ghi ra
+     * "a x b": chu x thuong, khong phai dau "×". Truoc 27/9/2026 cau do bi cham sai du
+     * con doc dung. Khong quy han "x" ve dau nhan nhu [DAU_NHAN] duoc, vi o bo Toan x
+     * la bien: "−2xy²", "y = ax + b". Nen chu x DUNG RIENG giua hai dau cach thi doc ca
+     * hai nghia, nghia nao khop dap an cung tinh dung. Cach doc chu x van con, nen mic
+     * tach bien ra "y = a x + b" van khop "y = ax + b". Chu x dinh lien chu khac, nhu
+     * "axb", thi chi la chu x.
      */
     fun dung(go: String, the: TheHoc, phanBietHoa: Boolean = false): Boolean {
         if (chuanHoa(go).isEmpty()) return false
+        val cacCachDoc = listOf(go, go.replace(X_DUNG_RIENG, "·")).distinct()
         return (listOf(the.dap) + the.dapKhac).any { dap ->
             val giuHoa = phanBietHoa && dap.any { it.isUpperCase() }
-            chuanHoa(go, giuHoa) == chuanHoa(dap, giuHoa)
+            val dich = chuanHoa(dap, giuHoa)
+            cacCachDoc.any { chuanHoa(it, giuHoa) == dich }
         }
     }
 
