@@ -46,4 +46,43 @@ object LuatCatMang {
         // Con lai: co gio choi thi co mang, het gio thi cat.
         return !gateMo
     }
+
+    /** Viec phai lam voi VPN sau mot lan xet lai. Xem [viecVpn]. */
+    enum class ViecVpn {
+        /** Khong con app nao phai cat: go VPN, quen dau bi da va dau hong. */
+        TAT,
+
+        /** De nguyen nhu dang co. */
+        GIU,
+
+        /** Bat VPN, hay dung lai voi danh sach moi. */
+        BAT,
+    }
+
+    /**
+     * Sau mot lan xet lai thi tat, giu hay bat VPN.
+     *
+     * Thu tu la thu tu uu tien. Het phai cat thi tat truoc moi thu, ke ca luc dang bi da:
+     * do la luc quen dau bi da. Con phai cat ma VPN vua bi app khac chiem thi giu nguyen,
+     * khong gianh lai (Ba Huy chon ngay 27/9/2026). Chua cho phep thi bat cung vo ich, con
+     * vua hong thi cho het khoang nghi.
+     *
+     * @param can      nhung app phai cat ngay luc nay
+     * @param dangCat  nhung app VPN dang cat, rong la VPN dang tat
+     * @param biDa     VPN vua bi app khac chiem hay bi ngat giua buoi khoa nay
+     * @param choPhep  Ba Huy da bam OK o hop thoai VPN
+     * @param dangNghi vua bat hong, chua het khoang nghi
+     */
+    fun viecVpn(
+        can: Set<String>,
+        dangCat: Set<String>,
+        biDa: Boolean,
+        choPhep: Boolean,
+        dangNghi: Boolean,
+    ): ViecVpn = when {
+        can.isEmpty() -> ViecVpn.TAT
+        can == dangCat -> ViecVpn.GIU
+        biDa || !choPhep || dangNghi -> ViecVpn.GIU
+        else -> ViecVpn.BAT
+    }
 }

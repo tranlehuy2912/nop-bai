@@ -288,10 +288,11 @@ object Permissions {
         }
 
         // Chi hoi khi Ba Huy da chon app cat mang: chua chon thi VPN khong bao gio bat.
-        // Bao nang vi ca hai truong hop deu la het gio ma app Ba Huy chon van co mang.
+        // Bao nang vi ca ba truong hop deu la het gio ma app Ba Huy chon van co mang.
         if (prefs.catMangPackages.isNotEmpty()) {
-            if (!CatMangVpn.daChoPhep(context)) {
-                add(
+            val hong = CatMangVpn.hong(context)
+            when {
+                !CatMangVpn.daChoPhep(context) -> add(
                     Thieu(
                         Viec.CAT_MANG_VPN,
                         "Chưa cho phép cắt mạng (VPN)",
@@ -300,14 +301,22 @@ object Permissions {
                         nang = true
                     )
                 )
-            } else if (CatMangVpn.biDa(context)) {
-                add(
+                CatMangVpn.biDa(context) -> add(
                     Thieu(
                         Viec.CAT_MANG_VPN,
                         "VPN cắt mạng vừa bị tắt",
                         "Có app VPN khác vừa bật, hoặc VPN bị ngắt trong Cài đặt. Hết " +
                             "giờ chơi lần sau máy tự bật lại. Bấm vào đây rồi bấm Xong " +
                             "để bật lại ngay.",
+                        nang = true
+                    )
+                )
+                hong != null -> add(
+                    Thieu(
+                        Viec.CAT_MANG_VPN,
+                        "VPN cắt mạng không bật được",
+                        "Lý do: $hong. Hết giờ thì app trong danh sách cắt mạng vẫn " +
+                            "lên mạng được. Máy tự thử lại hai phút một lần.",
                         nang = true
                     )
                 )

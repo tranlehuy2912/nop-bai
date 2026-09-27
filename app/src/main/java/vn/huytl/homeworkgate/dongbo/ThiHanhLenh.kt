@@ -546,7 +546,7 @@ object ThiHanhLenh {
                 if (so > 0 && !CatMangVpn.daChoPhep(context)) {
                     "Danh sách app cắt mạng khi bị khoá: $so app. Tablet chưa cho phép " +
                         "VPN nên chưa cắt được: vào Cài đặt của app Nộp bài trên tablet, " +
-                        "bấm dòng cảnh báo VPN rồi chọn OK."
+                        "bấm dòng cảnh báo VPN, bấm Xong rồi chọn OK."
                 } else {
                     "Danh sách app cắt mạng khi bị khoá: $so app."
                 }

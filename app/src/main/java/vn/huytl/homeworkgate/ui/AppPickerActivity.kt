@@ -5,6 +5,7 @@ import android.content.pm.ApplicationInfo
 import android.content.pm.PackageManager
 import android.net.VpnService
 import android.os.Bundle
+import android.os.Process
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -77,6 +78,7 @@ class AppPickerActivity : AppCompatActivity() {
         ActivityResultContracts.StartActivityForResult()
     ) { kq ->
         if (kq.resultCode == RESULT_OK) {
+            CatMangVpn.ghiChoPhep(this)
             CatMangVpn.dongBo(this)
         } else {
             Toast.makeText(
@@ -168,7 +170,12 @@ class AppPickerActivity : AppCompatActivity() {
         }
 
         danhSach()?.let { selected.addAll(it.get()) }
-        tatCa = loadLaunchableApps()
+        // Man cat mang an app chay UID he thong (Cai dat, Bao mat cua Xiaomi): VPN chia
+        // theo UID, cat mot app nhu vay la cat ca dong tien trinh he thong, nen CatMangVpn
+        // bo qua chung. Hien ra cho tich thi tich xong khong co tac dung gi.
+        tatCa = loadLaunchableApps().filter {
+            loai != Loai.CAT_MANG || it.info.uid >= Process.FIRST_APPLICATION_UID
+        }
         locLai()
 
         val adapter = AppAdapter()
@@ -207,13 +214,19 @@ class AppPickerActivity : AppCompatActivity() {
      *
      * Bam Xong cung la cach Ba Huy bat lai VPN vua bi app khac chiem: quen dau bi da
      * roi xet lai ngay, khong doi toi lan khoa sau.
+     *
+     * Hoi thang prepare, khong tin dau "da cho phep": dau do co the da cu, vi du Ba Huy
+     * vua bam "Quen VPN" trong Cai dat. prepare cua app da duoc cho phep thi gianh cho
+     * cua app VPN khac, nhung day la luc Ba Huy chu dong bat nen dung y.
      */
     private fun luuCatMang() {
         prefs.catMangPackages = selected.toSet()
         CatMangVpn.boCoBiDa(this)
-        if (selected.isNotEmpty() && !CatMangVpn.daChoPhep(this)) {
-            val xin = runCatching { VpnService.prepare(this) }.getOrNull()
+        if (selected.isNotEmpty()) {
+            val hoi = runCatching { VpnService.prepare(this) }
+            val xin = hoi.getOrNull()
             if (xin != null && runCatching { xinVpn.launch(xin) }.isSuccess) return
+            if (hoi.isSuccess && xin == null) CatMangVpn.ghiChoPhep(this)
         }
         CatMangVpn.dongBo(this)
         finish()

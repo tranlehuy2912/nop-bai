@@ -266,6 +266,12 @@
             <intent-filter>
                 <action android:name="android.net.VpnService" />
             </intent-filter>
+            <!-- Cai dat khong cho bat "VPN luon bat" va "Chan ket noi khong qua VPN" voi
+                 VPN nay. VPN chi bat luc bi khoa; con che do chan thi lam moi app ngoai
+                 danh sach mat mang theo. -->
+            <meta-data
+                android:name="android.net.VpnService.SUPPORTS_ALWAYS_ON"
+                android:value="false" />
         </service>
 
         <receiver

@@ -42,9 +42,12 @@ import java.util.Calendar
  * KHONG BAO GIO ESTABLISH KHI CHUA THEM DUOC APP NAO: Builder khong co app nao trong
  * addAllowedApplication la MOI app di vao VPN, ke ca app nay. Tablet mat mang hoan
  * toan, Telegram va Bang dieu khien cung chet theo. Nen [apDung] dem so app da them.
+ * Cung vi VPN chia theo UID, [canCat] bo app chay UID he thong: Cai dat, Bao mat cua
+ * Xiaomi chung UID 1000 voi ca dong tien trinh he thong.
  *
  * Khong dung "Chan ket noi khong qua VPN" (lockdown): Android chan luon moi app nam
- * ngoai VPN, tuc la chan ca danh sach trang.
+ * ngoai VPN, tuc la chan ca danh sach trang. Manifest khai SUPPORTS_ALWAYS_ON = false
+ * de Cai dat khong cho bat che do do voi VPN nay.
  *
  * Day la service thuong, khong phai foreground. Establish xong thi he thong tu bind
  * vao service nay voi co BIND_FOREGROUND_SERVICE, tien trinh duoc giu nhu dang co dich
@@ -67,13 +70,18 @@ class CatMangVpn : VpnService() {
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
         // Tinh lai ngay luc nay chu khong mang danh sach theo intent: tu luc goi toi luc
         // service chay, cong co the da doi.
-        val duoc = runCatching { apDung(canCat(this)) }.getOrElse {
-            Log.w(TAG, "cat mang hong: ${it.message}")
-            false
-        }
-        if (!duoc) {
+        //
+        // Bi da thi coi nhu khong cat, ke ca lan he thong goi lai service sau khi tien
+        // trinh chet, hay mot lan startService xep hang tu truoc luc onRevoke chay. Thieu
+        // dong nay thi prepare trong apDung gianh lai VPN cua app kia.
+        val goi = if (biDa(this)) emptySet() else canCat(this)
+        val loi = runCatching { apDung(goi) }.getOrElse { "lỗi ${it.javaClass.simpleName}" }
+        if (loi != null) {
             lanHong = SystemClock.elapsedRealtime()
-            tat()
+            if (loi != CHUA_CHO_PHEP) ghiHong(this, loi)
+            // Dang co tun thi giu: doi danh sach giua luc khoa ma hong thi van cat theo
+            // danh sach cu, con hon bo trong hoan toan.
+            if (tun == null) tat()
         }
         // Tien trinh bi giet giua luc dang cat thi he thong goi lai service, va lan goi
         // do tu tinh xem con can cat khong.
@@ -86,22 +94,27 @@ class CatMangVpn : VpnService() {
      * Establish lan hai thi he thong thay tun cu bang tun moi roi moi go tun cu, nen doi
      * danh sach giua luc dang cat khong ho nhip nao. Dong tun cu sau cung.
      *
-     * @return false la phai cat ma khong bat duoc VPN.
+     * @return null la xong; con lai la ly do phai cat ma khong bat duoc VPN,
+     *         [CHUA_CHO_PHEP] la mat quyen VPN.
      */
-    private fun apDung(goi: Set<String>): Boolean {
+    private fun apDung(goi: Set<String>): String? {
         if (goi.isEmpty()) {
             tat()
-            return true
+            return null
         }
-        if (goi == dangCat && tun != null) return true
+        if (goi == dangCat && tun != null) return null
 
         // Goi truoc moi lan establish: khoi dong lai may thi he thong quen app nao dang
         // giu VPN, va establish cua app chua prepare tra ve null. Da duoc cho phep thi
         // ham nay tra null ngay, va gianh cho neu mot app VPN khac dang giu.
         if (VpnService.prepare(this) != null) {
-            Log.i(TAG, "cat mang: chua duoc cho phep VPN")
-            return false
+            // Van con quyen ma prepare doi hop thoai: mot app VPN khac dang dat luon bat,
+            // he thong khong cho ai gianh cho cua no.
+            if (theoAppOps(this) == true) return "có app VPN khác đang đặt chế độ luôn bật"
+            boChoPhep(this)
+            return CHUA_CHO_PHEP
         }
+        ghiChoPhep(this)
 
         val b = Builder()
             .setSession("Cắt mạng khi bị khoá")
@@ -110,20 +123,17 @@ class CatMangVpn : VpnService() {
             .addRoute("0.0.0.0", 0)
             .addRoute("::", 0)
         val daThem = goi.filter { runCatching { b.addAllowedApplication(it) }.isSuccess }
-        if (daThem.isEmpty()) return false
+        if (daThem.isEmpty()) return "không thêm được app nào vào VPN"
 
-        val moi = b.establish()
-        if (moi == null) {
-            Log.w(TAG, "cat mang: establish tra ve null")
-            return false
-        }
+        val moi = b.establish() ?: return "hệ thống không dựng được VPN"
         val cu = tun
         tun = moi
         dangCat = goi
         lanHong = 0L
+        xoaHong(this)
         runCatching { cu?.close() }
         Log.i(TAG, "cat mang ${daThem.joinToString(",")}")
-        return true
+        return null
     }
 
     /** Go VPN va dung service. Chay tren luong chinh. */
@@ -155,6 +165,9 @@ class CatMangVpn : VpnService() {
             tat()
             if (!dangCo) return@post
             Prefs.get(this).raw().edit().putBoolean(K_BI_DA, true).apply()
+            // Ba Huy bam "Quen VPN" trong Cai dat thi mat quyen luon, bang canh bao phai noi
+            // "chua cho phep" chu khong phai "vua bi tat".
+            if (theoAppOps(this) == false) boChoPhep(this)
             val ten = daCat.map { tenApp(this, it) }.sorted().joinToString(", ")
             Log.w(TAG, "VPN cat mang bi thu lai")
             DayLog.add(this, "VPN cắt mạng bị tắt, $ten lên mạng lại được")
@@ -165,7 +178,7 @@ class CatMangVpn : VpnService() {
                     "trong Cài đặt.\n" +
                     "Máy không tự giành lại. Hết giờ chơi lần sau máy bật lại. Muốn bật " +
                     "ngay thì gửi lại danh sách cắt mạng từ Bảng điều khiển, hoặc bấm " +
-                    "dòng cảnh báo VPN trong Cài đặt của app Nộp bài."
+                    "dòng cảnh báo VPN trong Cài đặt của app Nộp bài rồi bấm Xong."
             )
         }
     }
@@ -187,6 +200,15 @@ class CatMangVpn : VpnService() {
 
         /** VPN vua bi thu lai giua luc dang cat. Xem [onRevoke]. */
         private const val K_BI_DA = "cat_mang_bi_da"
+
+        /** Ly do lan bat VPN hong gan nhat trong buoi khoa nay. Xem [ghiHong]. */
+        private const val K_HONG = "cat_mang_hong"
+
+        /** App nay tu ghi: Ba Huy da bam OK o hop thoai VPN. Xem [daChoPhep]. */
+        private const val K_CHO_PHEP = "cat_mang_cho_phep"
+
+        /** Ly do [apDung] tra ve khi mat quyen VPN. Khong phai hong: bang canh bao da bao. */
+        private const val CHUA_CHO_PHEP = "chưa được cho phép VPN"
 
         /** Ten appop cua quyen VPN. Hang AppOpsManager.OPSTR_ACTIVATE_VPN khong co trong SDK. */
         private const val OP_VPN = "android:activate_vpn"
@@ -214,6 +236,10 @@ class CatMangVpn : VpnService() {
         @Volatile
         private var lanHong = 0L
 
+        /** So lan hong lien tiep tu lan bat duoc gan nhat. Xem [ghiHong]. */
+        @Volatile
+        private var soLanHong = 0
+
         /** Lan cuoi [dongBoThua] cho qua, theo elapsedRealtime. */
         @Volatile
         private var lanThua = 0L
@@ -223,7 +249,7 @@ class CatMangVpn : VpnService() {
             runCatching { xetThat(c) }.onFailure {
                 // Thuong la startService bi tu choi luc app o nen.
                 lanHong = SystemClock.elapsedRealtime()
-                Log.w(TAG, "cat mang: ${it.message}")
+                ghiHong(c, "không bật được dịch vụ VPN (${it.javaClass.simpleName})")
             }
         }
 
@@ -276,23 +302,26 @@ class CatMangVpn : VpnService() {
         }
 
         private fun xetThat(c: Context) {
-            val can = canCat(c)
-            val sp = Prefs.get(c).raw()
-            if (can.isEmpty()) {
-                lanHong = 0L
-                if (sp.getBoolean(K_BI_DA, false)) sp.edit().remove(K_BI_DA).apply()
-                dangSong?.tat()
-                return
+            val viec = LuatCatMang.viecVpn(
+                can = canCat(c),
+                dangCat = dangCat,
+                biDa = biDa(c),
+                choPhep = daChoPhep(c),
+                dangNghi = lanHong > 0L &&
+                    SystemClock.elapsedRealtime() - lanHong < NGHI_SAU_HONG_MS,
+            )
+            when (viec) {
+                LuatCatMang.ViecVpn.TAT -> {
+                    // Het buoi khoa: quen ca dau bi da lan dau hong, lan khoa sau thu lai.
+                    lanHong = 0L
+                    xoaHong(c)
+                    val sp = Prefs.get(c).raw()
+                    if (sp.getBoolean(K_BI_DA, false)) sp.edit().remove(K_BI_DA).apply()
+                    dangSong?.tat()
+                }
+                LuatCatMang.ViecVpn.GIU -> Unit
+                LuatCatMang.ViecVpn.BAT -> c.startService(Intent(c, CatMangVpn::class.java))
             }
-            if (can == dangCat) return
-            if (sp.getBoolean(K_BI_DA, false)) return
-            // Chua cho phep thi thoi, bang canh bao da bao Ba Huy. Hoi truoc o day de khoi
-            // bat service chi de no tu tat.
-            if (!daChoPhep(c)) return
-            // Vua bat hong thi nghi mot luc. Khong nghi thi moi lan prefs doi, vai lan mot
-            // phut, lai bat service len roi tat.
-            if (lanHong > 0L && SystemClock.elapsedRealtime() - lanHong < NGHI_SAU_HONG_MS) return
-            c.startService(Intent(c, CatMangVpn::class.java))
         }
 
         /**
@@ -320,18 +349,35 @@ class CatMangVpn : VpnService() {
             )
             if (!cat) return emptySet()
             val pm = c.packageManager
-            return ds.filter { daCai(pm, it) }.toSet()
+            return ds.filter { laAppThuong(pm, it) }.toSet()
         }
+
+        /**
+         * App con cai va chay UID rieng cua no. App chay UID he thong (duoi
+         * [Process.FIRST_APPLICATION_UID]) thi khong cat: VPN chia theo UID, cat Cai dat
+         * la cat ca dong tien trinh he thong chung UID 1000.
+         */
+        fun laAppThuong(pm: PackageManager, goi: String): Boolean = runCatching {
+            pm.getApplicationInfo(goi, 0).uid >= Process.FIRST_APPLICATION_UID
+        }.getOrDefault(false)
 
         /**
          * Ba Huy da bam OK o hop thoai VPN cua he thong chua.
          *
-         * Hoi AppOps chu khong goi [VpnService.prepare]: prepare cua mot app da duoc cho
-         * phep se gianh VPN cua app khac ngay luc goi. Ham nay chay moi lan ve bang canh
-         * bao va thong bao trang thai, ke ca giua gio choi. Hoi AppOps hong thi moi phai
-         * dung prepare.
+         * Khong goi [VpnService.prepare]: prepare cua mot app da duoc cho phep se gianh
+         * VPN cua app khac ngay luc goi, ma ham nay chay moi lan ve bang canh bao va thong
+         * bao trang thai, ke ca giua gio choi.
+         *
+         * Hoi hai cho: AppOps, va dau chinh app nay ghi luc Ba Huy bam OK. Android 9 tro
+         * xuong chua co ten op nay, hoi AppOps la nem loi; con ROM nao lam khac AOSP thi
+         * AppOps co the khong doi sau hop thoai. Dau cu ma quyen da mat thi lan bat that
+         * dau tien biet ngay ([apDung] xoa dau).
          */
-        fun daChoPhep(c: Context): Boolean = runCatching {
+        fun daChoPhep(c: Context): Boolean =
+            theoAppOps(c) == true || Prefs.get(c).raw().getBoolean(K_CHO_PHEP, false)
+
+        /** AppOps noi gi ve quyen VPN cua app nay. null la khong hoi duoc. */
+        private fun theoAppOps(c: Context): Boolean? = runCatching {
             val ao = c.getSystemService(AppOpsManager::class.java)
             val che = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
                 ao.unsafeCheckOpNoThrow(OP_VPN, Process.myUid(), c.packageName)
@@ -340,7 +386,18 @@ class CatMangVpn : VpnService() {
                 ao.checkOpNoThrow(OP_VPN, Process.myUid(), c.packageName)
             }
             che == AppOpsManager.MODE_ALLOWED
-        }.getOrElse { VpnService.prepare(c) == null }
+        }.getOrNull()
+
+        /** Ba Huy vua bam OK o hop thoai VPN, hay prepare vua tra null. */
+        fun ghiChoPhep(c: Context) {
+            val sp = Prefs.get(c).raw()
+            if (!sp.getBoolean(K_CHO_PHEP, false)) sp.edit().putBoolean(K_CHO_PHEP, true).apply()
+        }
+
+        private fun boChoPhep(c: Context) {
+            val sp = Prefs.get(c).raw()
+            if (sp.contains(K_CHO_PHEP)) sp.edit().remove(K_CHO_PHEP).apply()
+        }
 
         /** VPN vua bi thu lai va chua bat lai. Xem [onRevoke]. */
         fun biDa(c: Context): Boolean = Prefs.get(c).raw().getBoolean(K_BI_DA, false)
@@ -351,8 +408,38 @@ class CatMangVpn : VpnService() {
             Prefs.get(c).raw().edit().remove(K_BI_DA).apply()
         }
 
-        private fun daCai(pm: PackageManager, goi: String): Boolean =
-            runCatching { pm.getApplicationInfo(goi, 0) }.isSuccess
+        /** Ly do lan bat VPN hong gan nhat trong buoi khoa nay, null la khong hong. */
+        fun hong(c: Context): String? = Prefs.get(c).raw().getString(K_HONG, null)
+
+        /**
+         * Phai cat ma bat VPN khong duoc.
+         *
+         * Bang canh bao hien ngay tu lan dau. Tin Telegram chi gui o lan hong thu hai lien
+         * tiep, tuc la da thu lai sau khoang nghi van hong: mot lan hong thoang qua luc may
+         * vua khoi dong thi khong nen thanh tin bao dong. Moi buoi khoa gui nhieu nhat mot
+         * tin, vi [xoaHong] chi chay khi bat duoc hay het khoa.
+         */
+        private fun ghiHong(c: Context, lyDo: String) {
+            soLanHong += 1
+            Log.w(TAG, "cat mang hong lan $soLanHong: $lyDo")
+            val sp = Prefs.get(c).raw()
+            if (sp.getString(K_HONG, null) != lyDo) sp.edit().putString(K_HONG, lyDo).apply()
+            if (soLanHong != 2) return
+            DayLog.add(c, "Không bật được VPN cắt mạng: $lyDo")
+            Notifier.send(
+                c,
+                "⚠️ Tablet không bật được VPN cắt mạng ($lyDo), nên app trong danh sách " +
+                    "cắt mạng vẫn lên mạng được dù đang bị khoá. Máy tự thử lại hai phút " +
+                    "một lần. Nếu có app VPN khác đang đặt chế độ luôn bật thì tắt chế độ " +
+                    "đó trong Cài đặt của tablet."
+            )
+        }
+
+        private fun xoaHong(c: Context) {
+            soLanHong = 0
+            val sp = Prefs.get(c).raw()
+            if (sp.contains(K_HONG)) sp.edit().remove(K_HONG).apply()
+        }
 
         private fun tenApp(c: Context, goi: String): String = runCatching {
             val pm = c.packageManager
