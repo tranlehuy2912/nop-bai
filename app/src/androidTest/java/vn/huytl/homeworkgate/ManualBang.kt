@@ -243,7 +243,17 @@ class ManualBang {
      */
     @Test
     fun viec() {
-        val v = args.getString("viec") ?: error("Thieu -e viec")
+        val dat = args.getString("viec") ?: error("Thieu -e viec")
+        // Nhieu viec cach nhau dau phay thi lam lien mot lan chay.
+        //
+        // Moi lan "am instrument" la mot lan tien trinh app khoi dong lai, ma khoi
+        // dong bay gio ton han: App.onCreate soat lai nam quyen sach, bo the va bo
+        // tu vung. Mot muc thu dat bon thu truoc khi mo man hinh thi bon lan khoi
+        // dong do cong lai lau hon ca phan dang thu.
+        dat.split(",").map { it.trim() }.filter { it.isNotEmpty() }.forEach { motViec(it) }
+    }
+
+    private fun motViec(v: String) {
         val phut = args.getString("phut")?.toIntOrNull()
         val ma = args.getString("ma")
         val goi = args.getString("goi")

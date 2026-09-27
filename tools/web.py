@@ -349,14 +349,49 @@ class May:
             f"{PKG}/.telegram.ApprovalService")
         time.sleep(2.5)
 
-    def man(self, ten, thu=None):
-        """Mo mot man hinh. [thu] la cac extra kieu boolean di kem intent."""
+    def man(self, ten, thu=None, chu=None):
+        """Mo mot man hinh.
+
+        [thu] la cac extra kieu boolean, [chu] la cac extra kieu chuoi.
+        """
         self._lam_moi()
         lenh = ["shell", "am", "start", "-n", f"{PKG}/{PKG}.ui.{ten}"]
         for k, v in (thu or {}).items():
             lenh += ["--ez", k, "true" if v else "false"]
+        for k, v in (chu or {}).items():
+            lenh += ["--es", k, shlex.quote(str(v))]
         adb(*lenh)
         time.sleep(2.0)
+
+    def bam_icon(self):
+        """Bam icon app tren man hinh nen, nhu Le Hoa van bam."""
+        self._lam_moi()
+        adb("shell", "monkey", "-p", PKG, "-c",
+            "android.intent.category.LAUNCHER", "1")
+        time.sleep(3.0)
+
+    def mo_de(self):
+        """Ra mot de roi mo man Giai de voi dung de vua ra.
+
+        [GiaiDeActivity] doi ma de trong intent, khong co thi no dong ngay. Ma de
+        do [GiaiDe] sinh ra chu khong doan duoc, nen phai ra de truoc roi nhat ma
+        tu dong ManualGiaiDe in ra.
+        """
+        chay_test(f"{PKG}.ManualGiaiDe#moc")
+        with KHOA:
+            adb("logcat", "-c")
+            adb("shell", "am", "instrument", "-w", "-e", "class",
+                f"{PKG}.ManualGiaiDe#rade", RUNNER, timeout=180)
+            tho = adb("logcat", "-d", "-s", "System.out")
+        ma = None
+        for dong in tho.splitlines():
+            m = re.search(r"MANUAL_GIAIDE: (?:moi|dang mo) (\S+)", dong)
+            if m:
+                ma = m.group(1)
+        if not ma:
+            raise RuntimeError("ManualGiaiDe không ra được đề nào")
+        self._da_ghi = True
+        self.man("GiaiDeActivity", chu={"de_giai": ma})
 
     def bam(self, chu):
         """Bam vao nut mang dong chu nay, bang tay that chu khong goi ham trong app.
@@ -369,13 +404,21 @@ class May:
         # Man chinh co luc day the (on lai, thieu viec, soan cap) day nut to xuong
         # duoi vung nhin thay, ma uiautomator chi doc duoc phan dang hien. Cuon
         # xuong tim tiep thay vi bao hong - nguoi dung cung se cuon nhu vay.
-        for lan in range(4):
+        # App khong con o truoc mat thi bam gi cung vo nghia - bao ngay thay vi
+        # cuon di cuon lai tren man hinh nen cua Android mat may phut. Mot lan bo
+        # thu dung ca luot vi cho nay: app chet giua chung, ma muc do van mai mien
+        # tim nut tren launcher.
+        tren = man_tren_cung()
+        if PKG not in tren:
+            raise RuntimeError(f"app không còn ở trước mặt (đang là {tren or 'không rõ'}), "
+                               f"không bấm được “{chu}”")
+        for lan in range(3):
             o = tim_o(chu)
             if o:
                 adb("shell", "input", "tap", str(o[0]), str(o[1]))
                 time.sleep(2.0)
                 return
-            if lan < 3:
+            if lan < 2:
                 adb("shell", "input", "swipe", "1280", "1200", "1280", "500", "300")
                 time.sleep(1.0)
         raise RuntimeError(f"không thấy nút “{chu}” trên màn hình, kể cả khi cuộn xuống")
@@ -468,12 +511,12 @@ def do_cay_man():
     # Thu vai lan: uiautomator doi man hinh dung yen moi dump, ma man hinh dang co
     # dong ho dem nguoc thi giay nao no cung doi. Hai muc ve phien choi tung hong vi
     # dung cai do - khong phai app sai.
-    for lan in range(3):
+    for lan in range(2):
         adb("shell", "rm", "-f", DUONG_CAY)
-        ket = adb("shell", "uiautomator", "dump", DUONG_CAY, timeout=20)
+        ket = adb("shell", "uiautomator", "dump", DUONG_CAY, timeout=15)
         if "dumped to" in ket:
-            return adb("shell", "cat", DUONG_CAY, timeout=20)
-        if lan < 2:
+            return adb("shell", "cat", DUONG_CAY, timeout=15)
+        if lan < 1:
             time.sleep(1.5)
     return ""
 
@@ -686,8 +729,7 @@ def chay_tu_dong(cac_ma):
     if man:
         TU_DONG["hienTai"] = "dọn trạng thái còn lại của lần trước"
         try:
-            may.dat("xoaviecnha")
-            may.dat("badong")
+            may.dat("xoaviecnha,badong")
             # So cai con cau "den hen on lai" tu lan truoc thi man chinh moc them
             # mot the, va the do day nut to xuong khoi vung nhin thay.
             may.dat("xoasocai")
@@ -712,6 +754,20 @@ def chay_tu_dong(cac_ma):
                     "dat": False, "loai": "man", "coAnh": False,
                     "ghi": [f"{type(e).__name__}: {e}"], "giay": 0})
             TU_DONG["xong"] += 1
+
+        # Don so cai truoc khi chay bo test.
+        #
+        # Cac muc thu man hinh nap du thu vao kho bai - cau den hen on, de giai, the
+        # da tra loi. Mot so lop test lai doi kho rong: LuyenTheoLoiTest hong ca bay
+        # test va GiaiDeTest hong mot, chi vi doc phai bai cua muc thu chay truoc.
+        # Chay rieng tren so sach thi ca hai deu dat.
+        if lop and man:
+            TU_DONG["hienTai"] = "dọn sổ cái trước khi chạy bộ test"
+            try:
+                may.dat("xoasocai,xoaviecnha,badong")
+                may.chay("ManualGiaiDe#xoa")
+            except Exception:
+                pass
 
         for ten_lop in lop:
             if TU_DONG["dung"]:
