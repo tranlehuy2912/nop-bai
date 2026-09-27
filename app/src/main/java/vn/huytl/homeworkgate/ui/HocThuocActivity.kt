@@ -61,7 +61,7 @@ class HocThuocActivity : AppCompatActivity() {
      * Mot cau trong luot nay, kem nhung gi da xay ra voi no.
      *
      * Song trong bo nho suot luot chu khong ghi xuong ngay: con so phut chi tinh duoc
-     * khi biet cau nao da qua duoc [LuatTuVung.LAN_DUNG_DE_TINH] lan dung.
+     * khi biet cau nao da xong.
      */
     private class MucHoi(val the: TheHoc) {
         /** So lan go dung TRONG LUOT NAY. */
@@ -73,7 +73,17 @@ class HocThuocActivity : AppCompatActivity() {
         /** Con bam "Chịu rồi": bo cau nay khoi luot, khong tinh phut. */
         var chiu = false
 
+        /**
+         * Go dung mot lan la xong, ke ca cau da sai truoc do trong luot - xem
+         * [LuatTuVung.LAN_DUNG_DE_TINH]. Truoc 27/9/2026 phai dung hai lan.
+         */
         val xong get() = soDung >= LuatTuVung.LAN_DUNG_DE_TINH
+
+        /** Goi y da hien het dap an: van phai go dung moi xong, nhung khong duoc cong gio. */
+        val loHet get() = LuatTuVung.hienHet(the.dap, soSai)
+
+        /** Xong ma khong phai doc dap an tren man: cau duoc tinh gio. */
+        val duocGio get() = xong && !loHet
     }
 
     /** Cac cau cua luot, theo ma the. Giu thu tu de tong ket doc duoc. */
@@ -82,9 +92,8 @@ class HocThuocActivity : AppCompatActivity() {
     /**
      * HANG HOI: danh sach ma the theo dung thu tu se hoi.
      *
-     * Mot ma co the nam trong day NHIEU LAN, va do la ca co che: go sai thi cau do bi
-     * day xuong cuoi hang, go dung lan dau thi chen lai cach [LuatTuVung.CHEN_LAI] cau
-     * de lan dung thu hai la nho that chu khong phai chep lai cai vua nhin.
+     * Mot ma co the nam trong day NHIEU LAN: go sai thi cau do bi day xuong cuoi hang,
+     * sai may lan thi quay lai may lan, cho toi khi go dung.
      */
     private val hang = mutableListOf<String>()
     private var viTri = 0
@@ -365,14 +374,34 @@ class HocThuocActivity : AppCompatActivity() {
         // Da sai lan nao thi giu goi y tren man hinh, va mo them mot bac moi lan sai.
         if (m.soSai > 0) {
             b.theKet.visibility = View.VISIBLE
-            b.txtKet.text = "Lần trước chưa đúng"
+            b.txtKet.text = if (m.loHet) "Gõ lại cho đúng đáp án" else "Lần trước chưa đúng"
             b.txtKet.setTextColor(mau(R.color.alert))
-            b.txtDap.text = "Gợi ý: ${LuatTuVung.goiY(m.the.dap, m.soSai)}"
-            b.btnChiu.visibility = View.VISIBLE
+            hienGoiY(m)
+            // Dap an da hien het thi bat go cho dung, khong cho bam chiu de bo qua.
+            b.btnChiu.visibility = if (m.loHet) View.GONE else View.VISIBLE
         } else {
             b.theKet.visibility = View.GONE
             b.btnChiu.visibility = View.GONE
         }
+    }
+
+    /**
+     * Dong goi y sau lan sai, kem nut chep phan dap an da ho ra.
+     *
+     * Chep dung phan chu cua dap an, bo chu "Gợi ý:" va dau "…": con dan thang vao o go
+     * roi go tiep phan con lai, do phai go lai nhung ky tu kho go nhu "·" hay "²³". Goi y
+     * bac 1 chi noi so chu cai nen khong co nut. Ba Huy chon cho chep ngay 27/9/2026.
+     *
+     * Dap an da hien het thi khong co nut chep: Ba Huy muon con tu go lai cho dung, dan
+     * vao thi viec go lai khong con nghia gi.
+     */
+    private fun hienGoiY(m: MucHoi) {
+        b.txtDap.text = if (m.loHet) "Đáp án: ${m.the.dap}"
+        else "Gợi ý: ${LuatTuVung.goiY(m.the.dap, m.soSai)}"
+        val phan = if (m.loHet) null else LuatTuVung.phanGoiY(m.the.dap, m.soSai)
+        val nut = b.nutChepGoiY.root
+        nut.visibility = if (phan.isNullOrEmpty()) View.GONE else View.VISIBLE
+        nut.setOnClickListener { if (!phan.isNullOrEmpty()) Chep.vao(this, phan) }
     }
 
     /**
@@ -399,19 +428,19 @@ class HocThuocActivity : AppCompatActivity() {
         b.btnChiu.visibility = View.GONE
 
         if (dung) {
+            // Dung mot lan la xong, khong chen lai nua - xem [MucHoi.xong].
             m.soDung++
-            b.txtKet.text = if (m.xong) "Đúng rồi" else "Đúng rồi, câu này sẽ hỏi lại một lần"
+            b.txtKet.text = if (m.loHet) "Đúng rồi. Câu này đã xem đáp án nên không được cộng giờ"
+            else "Đúng rồi"
             b.txtKet.setTextColor(mau(R.color.ok))
             b.txtDap.text = m.the.dap
-            // Chua du so lan dung thi chen lai, CACH RA chu khong hoi ngay: hoi ngay
-            // thi cai vua nhin con nam nguyen trong dau, dung gan chac chan, va lan
-            // hai khong do them gi.
-            if (!m.xong) chenLai(m.the.id)
+            b.nutChepGoiY.root.visibility = View.GONE
         } else {
             m.soSai++
-            b.txtKet.text = "Chưa đúng"
+            b.txtKet.text = if (m.loHet) "Chưa đúng. Câu này không được cộng giờ nữa"
+            else "Chưa đúng"
             b.txtKet.setTextColor(mau(R.color.alert))
-            b.txtDap.text = "Gợi ý: ${LuatTuVung.goiY(m.the.dap, m.soSai)}"
+            hienGoiY(m)
             // Day xuong cuoi hang. Cau nao cung phai lam cho duoc, nhung khong phai
             // ngoi mai o mot cau - con di tiep roi quay lai.
             hang += m.the.id
@@ -436,22 +465,13 @@ class HocThuocActivity : AppCompatActivity() {
         b.txtKet.text = "Câu này để mai làm lại"
         b.txtKet.setTextColor(mau(R.color.ink_soft))
         b.txtDap.text = "Đáp án: ${m.the.dap}"
+        b.nutChepGoiY.root.visibility = View.GONE
         b.btnChinh.setText(nutTiep())
     }
 
     /** Con cau nao phia sau khong: co thi "Câu tiếp", het thi "Xem kết quả". */
     private fun nutTiep(): Int =
         if (viTri + 1 < hang.size) R.string.hoc_thuoc_tiep else R.string.hoc_thuoc_xem_ket
-
-    /**
-     * Chen ma the vao hang, cach vi tri hien tai [LuatTuVung.CHEN_LAI] cau.
-     *
-     * Gan cuoi hang thi day han xuong cuoi - khong con du cau de chen vao giua.
-     */
-    private fun chenLai(ma: String) {
-        val cho = LuatTuVung.chenLai(viTri, hang.size - viTri - 1).coerceAtMost(hang.size)
-        hang.add(cho, ma)
-    }
 
     private fun sangTheSau() {
         viTri++
@@ -461,6 +481,8 @@ class HocThuocActivity : AppCompatActivity() {
     private fun xongLuot() {
         chot()
         val soXong = muc.values.count { it.xong }
+        val soDuocGio = muc.values.count { it.duocGio }
+        val soXemDapAn = muc.values.count { it.xong && it.loHet }
         val soChiu = muc.values.count { it.chiu }
         val phut = phutVuaTra
         b.boxHoi.visibility = View.GONE
@@ -469,7 +491,7 @@ class HocThuocActivity : AppCompatActivity() {
         b.txtXongPhu.text = buildString {
             when {
                 phut > 0 -> append("Được thêm $phut phút chơi.")
-                soXong == 0 -> append("Chưa được phút nào. Xem lại rồi làm tiếp nhé.")
+                soDuocGio == 0 -> append("Chưa được phút nào. Xem lại rồi làm tiếp nhé.")
                 // Mot cau tron mot phut, nen co cau xong ma khong ra phut chi con mot
                 // nghia: phan kiem tra bai cua hom nay da day.
                 else -> append(
@@ -477,6 +499,7 @@ class HocThuocActivity : AppCompatActivity() {
                         "đã đủ ${HocThuoc.TRAN_PHUT_MOI_NGAY} phút của phần kiểm tra bài rồi."
                 )
             }
+            if (soXemDapAn > 0) append(" $soXemDapAn câu phải xem đáp án nên không được giờ.")
             if (soChiu > 0) append(" Còn $soChiu câu để mai làm lại.")
         }
         // Noi dung su that: cau lam xong moi duoc nghi vai ngay, cau chua xong thi
@@ -494,9 +517,9 @@ class HocThuocActivity : AppCompatActivity() {
      * Ghi phan moi lam cua luot xuong so va cap gio cho phan do. Goi nhieu lan thi moi
      * lan chi an phan lam them tu lan truoc.
      *
-     * DEM THEO SO CAU DA XONG, khong phai so lan go dung. Mot cau phai dung
-     * [LuatTuVung.LAN_DUNG_DE_TINH] lan moi tinh la xong, nen dem so lan go dung thi
-     * hai lan cua cung mot cau thanh hai cau - va con duoc tra gap doi cho mot cau.
+     * DEM THEO SO CAU DA XONG, khong phai so lan go dung. Truoc 27/9/2026 mot cau phai
+     * dung hai lan moi xong, dem so lan go dung thi con duoc tra gap doi cho mot cau. Gio
+     * dung mot lan la xong, nhung dem theo cau van la cach dem dung.
      *
      * So phut tinh MOT LAN cho ca luot, khong cong don tung cau. Hoi mot cau con la
      * nua phut (truoc 23/9/2026), chia le tung cau thi cau nao cung ra 0; gio mot cau
@@ -510,7 +533,8 @@ class HocThuocActivity : AppCompatActivity() {
 
         val kho = KhoBai.get(this)
         val moc = moc0Gio()
-        val xongHet = muc.values.count { it.xong }
+        // Chi dem cau duoc gio: cau phai doc dap an tren man thi xong ma khong tra gio.
+        val xongHet = muc.values.count { it.duocGio }
         val dung = (xongHet - daTraXong).coerceAtLeast(0)
         daTraXong = xongHet
         val giayLuot = HocThuoc.giayCho(dung)

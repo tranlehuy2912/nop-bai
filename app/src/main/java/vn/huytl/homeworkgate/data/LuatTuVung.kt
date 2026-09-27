@@ -52,13 +52,15 @@ object LuatTuVung {
     const val GIAY_MOI_CAU_NGU_PHAP = 120
 
     /**
-     * Mot tu phai dung bay nhieu lan TRONG MOT BUOI moi duoc tra giay.
+     * Mot tu phai dung bay nhieu lan TRONG MOT BUOI moi duoc tra giay. Man kiem tra bai
+     * dung chung so nay cho moi the.
      *
-     * Hai, va lan thu hai khong duoc hoi ngay sau lan thu nhat - xem [chenLai]. Hoi
-     * ngay thi con con nho nguyen tu cai vua nhin, dung gan chac chan, va lan hai
-     * khong do them gi ngoai viec nhan doi so lan go.
+     * Mot: dung ngay lan dau la tinh gio luon, chi tu sai moi phai lam lai cho toi khi
+     * dung. Truoc 27/9/2026 la hai, lan hai hoi lai cach muoi tu de biet con nho that chu
+     * khong phai chep lai cai vua nhin; Ba Huy bo lan hoi lai do. [KhoBai.tinhTrangTu]
+     * cung doc so nay: buoi nao tu dat du so lan dung la buoi do tu da xong.
      */
-    const val LAN_DUNG_DE_TINH = 2
+    const val LAN_DUNG_DE_TINH = 1
 
     /**
      * Mot buoi hang ngay toi da bay nhieu tu.
@@ -156,9 +158,9 @@ object LuatTuVung {
     // ------------------------------------------------------------------ goi y
 
     /**
-     * Sau moi lan sai thi ho ra them mot chut, KHONG hien thang dap an.
+     * Sau moi lan sai thi ho ra them mot chut, cho toi luc hien het dap an.
      *
-     * VI SAO KHONG HIEN DAP AN. Hien ra thi con go bua mot cai, doc dap an, go lai
+     * VI SAO KHONG HIEN DAP AN NGAY. Hien ra thi con go bua mot cai, doc dap an, go lai
      * cho dung, va an tron so giay ma khong nho gi. Bat con tu tim thi con phai mo
      * sach hay di hoi - va do chinh la viec hoc.
      *
@@ -168,7 +170,10 @@ object LuatTuVung {
      * con ket cung o mot tu, va mot tuan nhu the la con thoi mo app.
      *
      * Bac 0 khong ho gi. Bac 1 cho biet tu dai may chu. Bac 2 hien chu cai dau. Bac 3
-     * hien nua tu. Het bac thi con van con nut "Chịu rồi" de di tiep.
+     * hien nua tu. Bac 4 hien hai phan ba. Bac [BAC_HIEN_HET] hien het. Truoc 27/9/2026
+     * dung o nua tu, con thi bam "Chịu rồi" de di tiep; Ba Huy them hai bac cuoi, dung
+     * cho ca man do tu vung lan man kiem tra bai. Hien het roi van phai go lai cho dung
+     * moi qua, nhung tu do khong duoc cong gio - xem [hienHet].
      *
      * Bac 1 dem so ky tu con phai GO, khong phai so ky tu sach in: "10²³" tren ban phim
      * la "10^23", nam ky tu chu khong phai bon. Dem theo dang in thi con go dung so chu
@@ -179,13 +184,46 @@ object LuatTuVung {
         return when {
             bac <= 0 -> ""
             bac == 1 -> "${HocThuoc.chuanHoa(t, giuHoa = true).length} chữ cái"
-            bac == 2 -> t.first() + "…"
-            else -> t.take((t.length + 1) / 2) + "…"
+            hienHet(t, bac) -> t
+            else -> phanBac(t, bac) + "…"
         }
     }
 
-    /** Het bac goi y thi thoi, khong ho them. */
-    const val BAC_GOI_Y_TOI_DA = 3
+    /**
+     * Phan chu cua dap an ma [goiY] bac [bac] ho ra, khong kem dau "…".
+     *
+     * Nut chep o dong goi y man kiem tra bai chep dung phan nay, de con dan vao o go roi
+     * go tiep. null khi goi y chua co chu nao cua dap an: bac 0, va bac 1 chi noi so chu
+     * cai.
+     */
+    fun phanGoiY(tu: String, bac: Int): String? {
+        val t = tu.trim()
+        return if (bac <= 1 || t.isEmpty()) null else phanBac(t, bac)
+    }
+
+    /**
+     * Goi y bac [bac] da lo het dap an chua. Lo het thi con go dung van qua, nhung khong
+     * duoc cong gio: con doc tren man chu khong tu nho ra.
+     *
+     * Toi [BAC_HIEN_HET] la lo het. Dap an ngan thi lo som hon: "0" chi co mot chu, nen
+     * bac 2 (chu dau) da la ca dap an. Tinh nhu hien het tu luc do, khong thi tu mot hai
+     * ky tu duoc gio du con doc dap an ngay tren man.
+     */
+    fun hienHet(tu: String, bac: Int): Boolean {
+        val t = tu.trim()
+        return bac >= BAC_HIEN_HET || (bac >= 2 && t.isNotEmpty() && phanBac(t, bac) == t)
+    }
+
+    /** Phan dap an bac [bac] ho ra theo thang, tu bac 2 tro len. */
+    private fun phanBac(t: String, bac: Int): String = when {
+        bac >= BAC_HIEN_HET -> t
+        bac == 4 -> t.take((2 * t.length + 2) / 3)
+        bac == 3 -> t.take((t.length + 1) / 2)
+        else -> t.take(1)
+    }
+
+    /** Bac goi y hien het dap an, cung la bac cao nhat. Xem [goiY]. */
+    const val BAC_HIEN_HET = 5
 
     // ----------------------------------------------------------- chon tu nao
 
@@ -270,19 +308,6 @@ object LuatTuVung {
      */
     fun chieuCho(soLanDung: Int): Chieu =
         if (soLanDung <= 0) Chieu.ANH_VIET else Chieu.VIET_ANH
-
-    /**
-     * Sau lan tra loi dau, tu do quay lai sau bay nhieu tu khac trong cung buoi.
-     *
-     * Khong hoi lai ngay. Hoi ngay thi cai vua nhin con nam nguyen trong dau, dung
-     * gan chac chan, va lan hai khong do them gi. Cach ra muoi tu thi lan hai la nho
-     * that. Buoi ngan hon muoi tu thi day xuong cuoi buoi.
-     */
-    const val CHEN_LAI = 10
-
-    /** Vi tri chen lai tu vua tra loi, tinh tu vi tri hien tai. */
-    fun chenLai(viTriHienTai: Int, soConLai: Int): Int =
-        viTriHienTai + minOf(CHEN_LAI, soConLai.coerceAtLeast(1))
 
     // ------------------------------------------------------------ trac nghiem
 

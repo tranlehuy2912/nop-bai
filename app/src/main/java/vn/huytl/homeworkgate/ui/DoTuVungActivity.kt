@@ -55,7 +55,7 @@ class DoTuVungActivity : AppCompatActivity() {
 
     private var boDangLam: BoTuVung.Bo? = null
 
-    /** Ma phien, de [KhoBai.tinhTrangTu] dem duoc "dung du hai lan trong MOT buoi". */
+    /** Ma phien, de [KhoBai.tinhTrangTu] dem duoc tu nao da xong trong MOT buoi. */
     private var phien = ""
 
     /**
@@ -73,7 +73,17 @@ class DoTuVungActivity : AppCompatActivity() {
         /** So lan da thu, de ghi [TraTu.lan]. */
         var lan = 0
 
+        /** Go dung mot lan la xong - xem [LuatTuVung.LAN_DUNG_DE_TINH]. */
         val xong get() = soDung >= LuatTuVung.LAN_DUNG_DE_TINH
+
+        /**
+         * Goi y da hien het tu: van phai go dung moi xong, nhung khong duoc cong gio. Chi
+         * chieu go tu co thang goi y; chieu chon nghia chi noi tu o Unit nao.
+         */
+        val loHet get() = chieu == Chieu.VIET_ANH && LuatTuVung.hienHet(tu.tu, soSai)
+
+        /** Xong ma khong phai doc dap an tren man: tu duoc tinh gio. */
+        val duocGio get() = xong && !loHet
     }
 
     private val muc = LinkedHashMap<String, MucHoi>()
@@ -377,15 +387,19 @@ class DoTuVungActivity : AppCompatActivity() {
         // Da sai lan nao thi giu goi y tren man hinh, va mo them mot bac moi lan sai.
         if (m.soSai > 0) {
             b.theKet.visibility = View.VISIBLE
-            b.txtKet.text = "Lần trước chưa đúng"
+            b.txtKet.text = if (m.loHet) "Gõ lại cho đúng đáp án" else "Lần trước chưa đúng"
             b.txtKet.setTextColor(mau(R.color.alert))
-            b.txtDap.text = if (m.chieu == Chieu.ANH_VIET) {
-                "Từ này ở Unit ${m.tu.unit}"
-            } else {
-                "Gợi ý: ${LuatTuVung.goiY(m.tu.tu, m.soSai)}"
-            }
-            b.btnChiu.visibility = View.VISIBLE
+            b.txtDap.text = goiYSauSai(m)
+            // Dap an da hien het thi bat go cho dung, khong cho bam chiu de bo qua.
+            b.btnChiu.visibility = if (m.loHet) View.GONE else View.VISIBLE
         }
+    }
+
+    /** Dong duoi chu "Chưa đúng": Unit cua tu, goi y, hay ca tu khi da hien het. */
+    private fun goiYSauSai(m: MucHoi): String = when {
+        m.chieu == Chieu.ANH_VIET -> "Từ này ở Unit ${m.tu.unit}"
+        m.loHet -> "Đáp án: ${m.tu.tu}"
+        else -> "Gợi ý: ${LuatTuVung.goiY(m.tu.tu, m.soSai)}"
     }
 
     /** Nhin tu tieng Anh, bam mot trong bon nghia. */
@@ -447,7 +461,7 @@ class DoTuVungActivity : AppCompatActivity() {
             lan = m.lan,
             go = go,
             dung = dung,
-            goiY = m.soSai.coerceAtMost(LuatTuVung.BAC_GOI_Y_TOI_DA),
+            goiY = m.soSai.coerceAtMost(LuatTuVung.BAC_HIEN_HET),
             chiu = false,
             giay = 0
         )
@@ -458,24 +472,22 @@ class DoTuVungActivity : AppCompatActivity() {
         b.btnChiu.visibility = View.GONE
 
         if (dung) {
+            // Dung mot lan la xong, khong chen lai nua - xem [MucHoi.xong].
             m.soDung++
-            b.txtKet.text = if (m.xong) "Đúng rồi" else "Đúng rồi, từ này sẽ hỏi lại một lần"
+            b.txtKet.text = if (m.loHet) "Đúng rồi. Từ này đã xem đáp án nên không được cộng giờ"
+            else "Đúng rồi"
             b.txtKet.setTextColor(mau(R.color.ok))
             b.txtDap.text = dapAn(m)
-            if (!m.xong) chenLai(m.tu.id)
         } else {
             m.soSai++
-            b.txtKet.text = "Chưa đúng"
+            b.txtKet.text = if (m.loHet) "Chưa đúng. Từ này không được cộng giờ nữa"
+            else "Chưa đúng"
             b.txtKet.setTextColor(mau(R.color.alert))
-            b.txtDap.text = if (m.chieu == Chieu.ANH_VIET) {
-                "Từ này ở Unit ${m.tu.unit}"
-            } else {
-                "Gợi ý: ${LuatTuVung.goiY(m.tu.tu, m.soSai)}"
-            }
+            b.txtDap.text = goiYSauSai(m)
             // Day xuong cuoi hang: tu nao cung phai lam cho duoc, nhung khong ngoi
             // mai o mot tu.
             hang += m.tu.id
-            b.btnChiu.visibility = View.VISIBLE
+            b.btnChiu.visibility = if (m.loHet) View.GONE else View.VISIBLE
         }
         b.btnChinh.visibility = View.VISIBLE
         b.btnChinh.setText(nutTiep())
@@ -500,7 +512,7 @@ class DoTuVungActivity : AppCompatActivity() {
             lan = m.lan,
             go = "",
             dung = false,
-            goiY = LuatTuVung.BAC_GOI_Y_TOI_DA,
+            goiY = LuatTuVung.BAC_HIEN_HET,
             chiu = true,
             giay = 0
         )
@@ -521,11 +533,6 @@ class DoTuVungActivity : AppCompatActivity() {
     private fun nutTiep(): Int =
         if (viTri + 1 < hang.size) R.string.do_tu_tiep else R.string.do_tu_xem_ket
 
-    private fun chenLai(ma: String) {
-        val cho = LuatTuVung.chenLai(viTri, hang.size - viTri - 1).coerceAtMost(hang.size)
-        hang.add(cho, ma)
-    }
-
     private fun sangTuSau() {
         viTri++
         veTu()
@@ -534,6 +541,8 @@ class DoTuVungActivity : AppCompatActivity() {
     private fun xongBuoi() {
         chot()
         val soXong = muc.values.count { it.xong }
+        val soDuocGio = muc.values.count { it.duocGio }
+        val soXemDapAn = muc.values.count { it.xong && it.loHet }
         val soChiu = muc.values.count { it.chiu }
         b.boxHoi.visibility = View.GONE
         b.theXong.visibility = View.VISIBLE
@@ -541,7 +550,7 @@ class DoTuVungActivity : AppCompatActivity() {
         b.txtXongPhu.text = buildString {
             when {
                 phutVuaTra > 0 -> append("Được thêm $phutVuaTra phút chơi.")
-                soXong == 0 -> append("Chưa được phút nào. Xem lại rồi làm tiếp nhé.")
+                soDuocGio == 0 -> append("Chưa được phút nào. Xem lại rồi làm tiếp nhé.")
                 // Mot tu tron mot phut, nen co tu xong ma khong ra phut chi con mot
                 // nghia: phan tu vung cua hom nay da day.
                 else -> append(
@@ -549,6 +558,7 @@ class DoTuVungActivity : AppCompatActivity() {
                         "đã dò đủ phần của ngày rồi."
                 )
             }
+            if (soXemDapAn > 0) append(" $soXemDapAn từ phải xem đáp án nên không được giờ.")
             if (soChiu > 0) append(" Còn $soChiu từ để mai gặp lại.")
         }
         b.txtChan.setText(R.string.do_tu_het_hom_nay)
@@ -564,7 +574,8 @@ class DoTuVungActivity : AppCompatActivity() {
      * Ghi ca buoi xuong so va cap gio. Goi bao nhieu lan cung chi an mot lan.
      *
      * DEM THEO SO TU DA XONG, khong phai so lan go dung: mot tu phai dung
-     * [LuatTuVung.LAN_DUNG_DE_TINH] lan moi tinh la xong.
+     * [LuatTuVung.LAN_DUNG_DE_TINH] lan moi tinh la xong. Tu phai doc dap an tren man thi
+     * xong ma khong tra giay - xem [MucHoi.loHet].
      *
      * Giay gan vao TUNG TU da xong chu khong don het vao mot dong, vi [TraTu.giay]
      * la "so giay da tra cho tu nay" - dem le ra thi sau nay con hoi duoc tu nao da
@@ -578,7 +589,7 @@ class DoTuVungActivity : AppCompatActivity() {
         daGhi = ketQua.size
 
         val kho = KhoBai.get(this)
-        val xong = muc.values.filter { it.xong }.map { it.tu.id }.toSet() - tuDaTra
+        val xong = muc.values.filter { it.duocGio }.map { it.tu.id }.toSet() - tuDaTra
         tuDaTra += xong
         val giayBuoi = xong.size * LuatTuVung.GIAY_MOI_TU
         val phut = LuatTuVung.phutThem(kho.giayTuVungTu(moc0Gio()), giayBuoi)

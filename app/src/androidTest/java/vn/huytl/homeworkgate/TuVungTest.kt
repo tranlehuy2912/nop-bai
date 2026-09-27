@@ -224,18 +224,47 @@ class TuVungTest {
     // --- goi y ---
 
     @Test
-    fun goi_y_ho_dan_chu_khong_hien_thang_dap_an() {
+    fun goi_y_ho_dan_toi_hai_phan_ba_roi_moi_hien_het() {
         assertEquals("", LuatTuVung.goiY("library", 0))
         assertEquals("7 chữ cái", LuatTuVung.goiY("library", 1))
         assertEquals("l…", LuatTuVung.goiY("library", 2))
         assertEquals("libr…", LuatTuVung.goiY("library", 3))
-        // Bac cao nhat van khong duoc ra ca tu.
-        assertFalse(LuatTuVung.goiY("library", LuatTuVung.BAC_GOI_Y_TOI_DA) == "library")
+        assertEquals("libra…", LuatTuVung.goiY("library", 4))
+        // Hai phan ba van chua la ca tu, van duoc cong gio neu go dung.
+        assertFalse(LuatTuVung.hienHet("library", 4))
+        // Bac hien het moi ra ca tu (Ba Huy them hai bac cuoi ngay 27/9/2026).
+        assertTrue(LuatTuVung.hienHet("library", LuatTuVung.BAC_HIEN_HET))
+        assertEquals("library", LuatTuVung.goiY("library", LuatTuVung.BAC_HIEN_HET))
+        assertEquals("library", LuatTuVung.goiY("library", LuatTuVung.BAC_HIEN_HET + 2))
+    }
+
+    /** Dap an mot chu thi chu dau da la ca dap an: tinh nhu hien het, khong ghi "0…". */
+    @Test
+    fun dap_an_ngan_lo_het_som_thi_tinh_nhu_hien_het() {
+        assertFalse(LuatTuVung.hienHet("0", 1))
+        assertEquals("1 chữ cái", LuatTuVung.goiY("0", 1))
+        assertTrue(LuatTuVung.hienHet("0", 2))
+        assertEquals("0", LuatTuVung.goiY("0", 2))
+        // Hai chu: chu dau va nua dap an chua lo het, hai phan ba thi lo het.
+        assertFalse(LuatTuVung.hienHet("ab", 3))
+        assertTrue(LuatTuVung.hienHet("ab", 4))
     }
 
     @Test
     fun dem_chu_cai_thi_khong_dem_dau_cach() {
         assertEquals("5 chữ cái", LuatTuVung.goiY("a book", 1))
+    }
+
+    @Test
+    fun phan_chep_duoc_cua_goi_y_la_dung_chu_dang_hien() {
+        // Bac 0 va bac 1 chua lo chu nao cua dap an nen khong co gi de chep.
+        assertNull(LuatTuVung.phanGoiY("library", 0))
+        assertNull(LuatTuVung.phanGoiY("library", 1))
+        assertEquals("l", LuatTuVung.phanGoiY("library", 2))
+        assertEquals("libr", LuatTuVung.phanGoiY("library", 3))
+        assertEquals("libra", LuatTuVung.phanGoiY("library", 4))
+        // Dung chu dang hien tren man, chi bo dau "…".
+        assertEquals(LuatTuVung.goiY("6,022·10²³", 3), LuatTuVung.phanGoiY("6,022·10²³", 3) + "…")
     }
 
     // --- chieu hoi ---
@@ -278,15 +307,6 @@ class TuVungTest {
         val rnd = Random(7)
         val demSai = (1..1000).count { "sai" in LuatTuVung.bocTheoTrongSo(cac, 1, rnd) }
         assertTrue("boc duoc $demSai/1000 lan", demSai in 150..400)
-    }
-
-    // --- chen lai trong mot buoi ---
-
-    @Test
-    fun tu_vua_tra_loi_khong_duoc_hoi_lai_ngay() {
-        assertEquals(15, LuatTuVung.chenLai(5, 20))
-        // Cuoi buoi, khong con du muoi tu de chen thi day xuong cuoi.
-        assertEquals(8, LuatTuVung.chenLai(5, 3))
     }
 
     // --- moi nhu trac nghiem ---
@@ -378,11 +398,11 @@ class TuVungTest {
     }
 
     @Test
-    fun mot_lan_dung_le_chua_du_de_tinh_la_xong_phien() {
+    fun dung_mot_lan_trong_phien_la_xong_phien() {
         kho.napBoTu("thu", listOf(tu("le")))
-        // Dung mot lan roi bo ngang: chua du hai lan nen phien do khong tinh la xong.
+        // Tu 27/9/2026 dung mot lan la xong tu do trong buoi, khong hoi lai lan hai.
         ghi("le", "p1", dung = true, luc = now - 100)
-        assertEquals(LuatTuVung.TinhTrang.CHUA_GAP, tinhTrang("le"))
+        assertEquals(LuatTuVung.TinhTrang.DUNG_1, tinhTrang("le"))
     }
 
     @Test

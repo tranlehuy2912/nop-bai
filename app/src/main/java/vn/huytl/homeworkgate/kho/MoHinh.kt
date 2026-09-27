@@ -180,7 +180,10 @@ enum class BuoiDo {
 /** Mot lan con tra loi mot tu. Moi lan thu la mot dong, ke ca lan sai. */
 data class TraTu(
     val tuId: String,
-    /** Ma phien, de dem "dung du hai lan trong MOT buoi". */
+    /**
+     * Ma phien, de dem tu nao da xong trong MOT buoi - xem
+     * [vn.huytl.homeworkgate.data.LuatTuVung.LAN_DUNG_DE_TINH].
+     */
     val phien: String,
     val buoi: BuoiDo,
     val chieu: Chieu,
