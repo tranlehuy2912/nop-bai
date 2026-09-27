@@ -77,10 +77,12 @@ class DoTuVungActivity : AppCompatActivity() {
         val xong get() = soDung >= LuatTuVung.LAN_DUNG_DE_TINH
 
         /**
-         * Goi y da hien het tu: van phai go dung moi xong, nhung khong duoc cong gio. Chi
-         * chieu go tu co thang goi y; chieu chon nghia chi noi tu o Unit nao.
+         * Goi y da lo het tu - xem [LuatTuVung.loHet]: van phai go dung moi xong, nhung
+         * khong duoc cong gio. Chi chieu go tu co thang goi y; chieu chon nghia chi noi tu
+         * o Unit nao.
          */
-        val loHet get() = chieu == Chieu.VIET_ANH && LuatTuVung.hienHet(tu.tu, soSai)
+        val loHet get() = chieu == Chieu.VIET_ANH &&
+            LuatTuVung.loHet(tu.tu, soSai) { LuatTuVung.dung(it, tu.tu) }
 
         /** Xong ma khong phai doc dap an tren man: tu duoc tinh gio. */
         val duocGio get() = xong && !loHet
@@ -453,6 +455,9 @@ class DoTuVungActivity : AppCompatActivity() {
      */
     private fun cham(m: MucHoi, go: String, dung: Boolean) {
         m.lan++
+        // Go dung sau khi da doc dap an tren man thi ghi nhu bam chiu: buoi nay khong tinh
+        // la buoi tu da xong, mai tu do van duoc ghim. Xem [TraTu.chiu].
+        val docDapAn = dung && m.loHet
         ketQua += TraTu(
             tuId = m.tu.id,
             phien = phien,
@@ -460,9 +465,9 @@ class DoTuVungActivity : AppCompatActivity() {
             chieu = m.chieu,
             lan = m.lan,
             go = go,
-            dung = dung,
+            dung = dung && !docDapAn,
             goiY = m.soSai.coerceAtMost(LuatTuVung.BAC_HIEN_HET),
-            chiu = false,
+            chiu = docDapAn,
             giay = 0
         )
         daTraLoi = true
@@ -558,7 +563,9 @@ class DoTuVungActivity : AppCompatActivity() {
                         "đã dò đủ phần của ngày rồi."
                 )
             }
-            if (soXemDapAn > 0) append(" $soXemDapAn từ phải xem đáp án nên không được giờ.")
+            if (soXemDapAn > 0) {
+                append(" $soXemDapAn từ phải xem đáp án nên không được giờ, mai gặp lại.")
+            }
             if (soChiu > 0) append(" Còn $soChiu từ để mai gặp lại.")
         }
         b.txtChan.setText(R.string.do_tu_het_hom_nay)

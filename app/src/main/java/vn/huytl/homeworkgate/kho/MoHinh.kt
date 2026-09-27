@@ -193,7 +193,10 @@ data class TraTu(
     val dung: Boolean,
     /** Da phai mo may bac goi y. 0 la con tu lam duoc. */
     val goiY: Int,
-    /** Con bam "Chịu rồi" chu khong tu ra duoc. */
+    /**
+     * Con bam "Chịu rồi" chu khong tu ra duoc. Tu 27/9/2026 dong con go dung sau khi goi y
+     * da lo het tu cung ghi chiu, dung = false: con doc tu tren man chu khong tu nho ra.
+     */
     val chiu: Boolean,
     /**
      * So GIAY da tra cho tu nay, khong phai so phut.
@@ -218,6 +221,10 @@ data class TraThe(
      * Tach khoi [dung] = false du ca hai deu la khong tra loi duoc. Go sai la con co
      * thu; bam chiu la con bo. Hai viec do noi hai chuyen khac nhau voi Ba Huy, va
      * gop lai thanh mot thi khong con cach nao tach ra. Giong [TraTu.chiu].
+     *
+     * Tu 27/9/2026 dong con go dung sau khi goi y da lo het dap an cung ghi chiu, dung =
+     * false: con doc dap an tren man chu khong tu nho ra, nen the do mai co lai nhu the
+     * bam chiu. Hai loai dong nay tach duoc qua [go]: bam chiu thi [go] rong.
      */
     val chiu: Boolean = false,
     /**

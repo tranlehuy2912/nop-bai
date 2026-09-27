@@ -238,6 +238,16 @@ class TuVungTest {
         assertEquals("library", LuatTuVung.goiY("library", LuatTuVung.BAC_HIEN_HET + 2))
     }
 
+    /** Dap an phu: the "360°" nhan ca "360", nen goi y "360…" da la dap an, tinh nhu hien het. */
+    @Test
+    fun goi_y_da_la_dap_an_phu_thi_tinh_nhu_hien_het() {
+        val chamDung = { go: String -> go == "360" || go == "360°" }
+        assertFalse(LuatTuVung.hienHet("360°", 4))
+        assertFalse(LuatTuVung.loHet("360°", 3, chamDung))
+        assertTrue(LuatTuVung.loHet("360°", 4, chamDung))
+        assertTrue(LuatTuVung.loHet("360°", LuatTuVung.BAC_HIEN_HET) { false })
+    }
+
     /** Dap an mot chu thi chu dau da la ca dap an: tinh nhu hien het, khong ghi "0…". */
     @Test
     fun dap_an_ngan_lo_het_som_thi_tinh_nhu_hien_het() {

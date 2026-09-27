@@ -63,7 +63,7 @@ class HocThuocActivity : AppCompatActivity() {
      * Song trong bo nho suot luot chu khong ghi xuong ngay: con so phut chi tinh duoc
      * khi biet cau nao da xong.
      */
-    private class MucHoi(val the: TheHoc) {
+    private class MucHoi(val the: TheHoc, private val phanBietHoa: Boolean) {
         /** So lan go dung TRONG LUOT NAY. */
         var soDung = 0
 
@@ -79,8 +79,11 @@ class HocThuocActivity : AppCompatActivity() {
          */
         val xong get() = soDung >= LuatTuVung.LAN_DUNG_DE_TINH
 
-        /** Goi y da hien het dap an: van phai go dung moi xong, nhung khong duoc cong gio. */
-        val loHet get() = LuatTuVung.hienHet(the.dap, soSai)
+        /**
+         * Goi y da lo het dap an, hay da la mot dap an duoc cham dung - xem [LuatTuVung.loHet].
+         * Van phai go dung moi xong, nhung khong duoc cong gio.
+         */
+        val loHet get() = LuatTuVung.loHet(the.dap, soSai) { HocThuoc.dung(it, the, phanBietHoa) }
 
         /** Xong ma khong phai doc dap an tren man: cau duoc tinh gio. */
         val duocGio get() = xong && !loHet
@@ -328,7 +331,7 @@ class HocThuocActivity : AppCompatActivity() {
         // con nho duoc theo mach - cau nay xong den cau ke - ma do la nho vi tri chu
         // khong phai nho noi dung.
         cac.shuffled().forEach {
-            muc[it.id] = MucHoi(it)
+            muc[it.id] = MucHoi(it, bo.phanBietHoa)
             hang += it.id
         }
         b.txtTieuDe.text = bo.ten
@@ -421,7 +424,12 @@ class HocThuocActivity : AppCompatActivity() {
         if (go.isBlank()) return
 
         val dung = HocThuoc.dung(go, m.the, boDangLam?.phanBietHoa == true)
-        ketQua += TraThe(theId = m.the.id, go = go.trim(), dung = dung, phut = 0)
+        // Go dung sau khi da doc dap an tren man thi ghi xuong so nhu bam chiu: kho khong
+        // coi la con da nho, the do mai co lai chu khong di nghi ba ngay. Xem [TraThe.chiu].
+        val docDapAn = dung && m.loHet
+        ketQua += TraThe(
+            theId = m.the.id, go = go.trim(), dung = dung && !docDapAn, phut = 0, chiu = docDapAn
+        )
         daTraLoi = true
         b.oGo.isEnabled = false
         b.theKet.visibility = View.VISIBLE
@@ -499,7 +507,9 @@ class HocThuocActivity : AppCompatActivity() {
                         "đã đủ ${HocThuoc.TRAN_PHUT_MOI_NGAY} phút của phần kiểm tra bài rồi."
                 )
             }
-            if (soXemDapAn > 0) append(" $soXemDapAn câu phải xem đáp án nên không được giờ.")
+            if (soXemDapAn > 0) {
+                append(" $soXemDapAn câu phải xem đáp án nên không được giờ, mai có lại.")
+            }
             if (soChiu > 0) append(" Còn $soChiu câu để mai làm lại.")
         }
         // Noi dung su that: cau lam xong moi duoc nghi vai ngay, cau chua xong thi

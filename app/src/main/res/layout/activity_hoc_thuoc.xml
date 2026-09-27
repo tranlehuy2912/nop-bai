@@ -172,11 +172,15 @@
                             android:textStyle="bold" />
 
                         <!-- Dong goi y, dap an khi dung. Nut chep chi hien khi goi y da ho ra
-                             mot phan dap an, xem HocThuocActivity.hienGoiY. -->
+                             mot phan dap an, xem HocThuocActivity.hienGoiY. Le am dat vao
+                             hang chu khong vao nut, nhu st_the_cau_de: hang cao du 48dp thi
+                             cham vao dau nut cung toi nut. -->
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="6dp"
+                            android:layout_marginTop="-6dp"
+                            android:layout_marginEnd="-14dp"
+                            android:layout_marginBottom="-12dp"
                             android:gravity="center_vertical"
                             android:orientation="horizontal">
 
@@ -193,9 +197,6 @@
                                 layout="@layout/st_nut_chep"
                                 android:layout_width="48dp"
                                 android:layout_height="48dp"
-                                android:layout_marginTop="-12dp"
-                                android:layout_marginEnd="-14dp"
-                                android:layout_marginBottom="-12dp"
                                 android:visibility="gone" />
                         </LinearLayout>
                     </LinearLayout>

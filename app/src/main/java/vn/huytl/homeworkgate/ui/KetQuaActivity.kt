@@ -179,9 +179,14 @@ class KetQuaActivity : AppCompatActivity() {
     }
 
     private fun dongCau(c: BaiDaCham.Cau): View {
+        // Hang lan sang le phai cua the cho icon chep thang mep chu, xem cho them nut o duoi.
         val hang = LinearLayout(this).apply {
             orientation = LinearLayout.HORIZONTAL
             setPadding(0, dp(14), 0, 0)
+            layoutParams = LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT
+            ).apply { marginEnd = -dp(14) }
         }
         val (dau, mau) = when {
             c.chuaRo -> "?" to R.color.wait
@@ -246,13 +251,14 @@ class KetQuaActivity : AppCompatActivity() {
             chep += noi
         }
         hang.addView(cot)
-        // Keo nut len cho icon ngang dong "Câu ...", va sang phai cho icon thang mep chu
-        // trong the: nut 48dp, icon chi 20dp o giua.
+        // Keo nut len cho icon ngang dong "Câu ...": nut 48dp, icon chi 20dp o giua. Nut van
+        // nam trong hang nho le tren 14dp cua hang, nen cham vao dau nut cung toi nut. Le
+        // phai dat vao hang (o tren) chu khong vao nut: nut tran ra ngoai hang thi phan tran
+        // khong nhan cham.
         hang.addView(
             Chep.nut(hang) { chep.joinToString("\n") }.apply {
                 layoutParams = LinearLayout.LayoutParams(dp(48), dp(48)).apply {
                     topMargin = -dp(13)
-                    marginEnd = -dp(14)
                 }
             }
         )

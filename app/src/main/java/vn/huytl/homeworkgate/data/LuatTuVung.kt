@@ -214,6 +214,17 @@ object LuatTuVung {
         return bac >= BAC_HIEN_HET || (bac >= 2 && t.isNotEmpty() && phanBac(t, bac) == t)
     }
 
+    /**
+     * Nhu [hienHet], them mot canh: doan goi y tu no da duoc cham dung.
+     *
+     * The co dap an phu thi goi y co the thanh dap an truoc bac hien het: the "360°" nhan
+     * ca "360", ma bac 4 hien "360…". Chep doan do dan vao la dung va duoc gio, nen tinh
+     * nhu da hien het. [chamDung] la cach man do cham: man kiem tra bai co dap an phu va
+     * bo phan biet chu hoa, man do tu so thang voi tu.
+     */
+    fun loHet(dap: String, bac: Int, chamDung: (String) -> Boolean): Boolean =
+        hienHet(dap, bac) || phanGoiY(dap, bac)?.let(chamDung) == true
+
     /** Phan dap an bac [bac] ho ra theo thang, tu bac 2 tro len. */
     private fun phanBac(t: String, bac: Int): String = when {
         bac >= BAC_HIEN_HET -> t

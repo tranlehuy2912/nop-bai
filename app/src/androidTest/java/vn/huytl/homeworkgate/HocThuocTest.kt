@@ -359,6 +359,18 @@ class HocThuocTest {
     }
 
     /**
+     * The co dap an phu: goi y "360…" cua dap an "360°" da la dap an duoc cham dung, nen
+     * man kiem tra bai tinh nhu da hien het - chep dan vao khong duoc gio.
+     */
+    @Test
+    fun goi_y_trung_dap_an_phu_thi_tinh_nhu_hien_het() {
+        val the = the("360°", "360")
+        assertTrue(HocThuoc.dung("360", the))
+        assertFalse(LuatTuVung.loHet(the.dap, 3) { HocThuoc.dung(it, the) })
+        assertTrue(LuatTuVung.loHet(the.dap, 4) { HocThuoc.dung(it, the) })
+    }
+
+    /**
      * Hoi nhanh "con the den luot khong" phai ra dung nhu dem [KhoBai.cacTheDenLuot].
      *
      * Hai duong cung mot dinh nghia: the chua dung lan nao la den luot, dung roi thi
