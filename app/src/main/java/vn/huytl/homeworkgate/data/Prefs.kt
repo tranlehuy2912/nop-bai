@@ -180,7 +180,7 @@ class Prefs private constructor(private val sp: SharedPreferences) {
      * Chi viec CHAM la tat. May van doc vo dan do dau buoi cho con soat, moi ngay mot
      * luot Gemini - xem [vn.huytl.homeworkgate.ai.DocDanDo]. Ban soat di kem tung bai
      * len Firestore, va Claude dung dung ngay va danh sach bai do nhu may cham van dung.
-     * May doc khong duoc thi lan nop chup trang vo kem, va Claude doc anh.
+     * May doc khong duoc thi tablet gan tam anh vo vao bai, va Claude doc anh.
      */
     var chamBangAi: Boolean
         get() = sp.getBoolean(KEY_CHAM_BANG_AI, true)

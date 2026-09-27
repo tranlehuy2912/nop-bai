@@ -32,6 +32,7 @@ import vn.huytl.homeworkgate.kho.PhamVi
 import vn.huytl.homeworkgate.kho.TraLoi
 import vn.huytl.homeworkgate.data.Prefs
 import vn.huytl.homeworkgate.data.ViecNha
+import vn.huytl.homeworkgate.data.VoChoCham
 import vn.huytl.homeworkgate.data.VoDanDo
 import vn.huytl.homeworkgate.guard.GuardAccessibilityService
 import vn.huytl.homeworkgate.guard.ParentMode
@@ -701,6 +702,24 @@ object DongBo {
         put("chuaDoc", vo.chuaDoc)
         put("nguon", vo.nguon)
         put("chupLuc", vo.chupLuc)
+    }
+
+    /**
+     * Tam vo chi co anh vua duoc doc ra chu (Claude doc, hay lan cham truoc doc): chep ban
+     * da doc vao truong danDo cua cac bai dang mang tam anh do.
+     *
+     * Truong nay ghi mot lan luc nop. Khong chep lai thi dien thoai van thay ban chi co
+     * anh, bat Claude doc lai trang vo o lan nho cham; lan doc do co the ra danh sach khac,
+     * ma tablet thi cham theo danh sach minh da giu ([VoChoCham.voChoBai]) nhung lay "da
+     * lam het dan do" cua lan doc kia. Mat mang thi Firestore giu lenh ghi, co mang lai ghi.
+     */
+    fun dayVoDaDocVaoBai(context: Context, vo: VoDanDo.DanDo) {
+        if (vo.chuaDoc || vo.chupLuc == 0L) return
+        val n = nha(context) ?: return
+        VoChoCham.baiMangAnhChuaDoc(context, vo.chupLuc).forEach { id ->
+            n.collection(Duong.BAI).document(id).update(Duong.F_DAN_DO, banDanDo(vo))
+                .addOnFailureListener { Log.w(TAG, "chep vo da doc vao bai hong: ${it.message}") }
+        }
     }
 
     /** Doi trang thai mot bai sau khi Ba Huy duyet hoac tu choi. */

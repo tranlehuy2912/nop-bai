@@ -61,5 +61,14 @@ object VoChoCham {
         return if (!hienTai.chuaDoc && hienTai.chupLuc == ban.chupLuc) hienTai.copy(anh = null) else ban
     }
 
+    /** Cac bai dang giu ban chi co anh cua tam vo chup luc [chupLuc]. */
+    fun baiMangAnhChuaDoc(context: Context, chupLuc: Long): List<String> =
+        sp(context).all.mapNotNull { (baiId, giaTri) ->
+            val vo = runCatching {
+                VoDanDo.tuJson(JSONObject(giaTri as String).getJSONObject("vo"))
+            }.getOrNull()
+            baiId.takeIf { vo != null && vo.chuaDoc && vo.chupLuc == chupLuc }
+        }
+
     private fun sp(context: Context) = context.getSharedPreferences(FILE, Context.MODE_PRIVATE)
 }

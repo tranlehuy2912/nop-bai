@@ -1884,6 +1884,7 @@ class ApprovalService : Service() {
         val moi = VoDanDo.tuLanCham(VoDanDo.doc(this), cuaBai.chupLuc, ket.ngayDanDo, ket.baiDuocGiao)
             ?: return
         VoDanDo.luu(this, moi)
+        DongBo.dayVoDaDocVaoBai(this, moi)
         DayLog.add(
             this,
             "Giữ vở dặn dò đọc lúc chấm bài: " +

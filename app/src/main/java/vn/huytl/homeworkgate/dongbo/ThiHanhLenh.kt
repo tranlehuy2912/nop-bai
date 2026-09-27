@@ -435,6 +435,7 @@ object ThiHanhLenh {
         val kq = VoDanDo.tuClaude(VoDanDo.doc(context), giaTri)
         val ban = kq.ban ?: return kq.loi
         VoDanDo.luu(context, ban)
+        DongBo.dayVoDaDocVaoBai(context, ban)
         DanDoSender.guiNen(context, ban)
         val con = context.getString(R.string.child_name)
         SoCaiBai.datLoiNhan(
