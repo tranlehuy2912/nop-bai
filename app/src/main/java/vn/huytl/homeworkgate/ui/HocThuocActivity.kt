@@ -438,15 +438,15 @@ class HocThuocActivity : AppCompatActivity() {
         if (dung) {
             // Dung mot lan la xong, khong chen lai nua - xem [MucHoi.xong].
             m.soDung++
-            b.txtKet.text = if (m.loHet) "Đúng rồi. Câu này đã xem đáp án nên không được cộng giờ"
-            else "Đúng rồi"
+            b.txtKet.text = "Đúng rồi"
             b.txtKet.setTextColor(mau(R.color.ok))
             b.txtDap.text = m.the.dap
             b.nutChepGoiY.root.visibility = View.GONE
         } else {
             m.soSai++
-            b.txtKet.text = if (m.loHet) "Chưa đúng. Câu này không được cộng giờ nữa"
-            else "Chưa đúng"
+            // Hien het dap an cung chi ghi "Chưa đúng": Ba Huy bo cau "không được cộng giờ" o
+            // day (27/9/2026). Dong tong ket cuoi luot van ke so cau phai xem dap an.
+            b.txtKet.text = "Chưa đúng"
             b.txtKet.setTextColor(mau(R.color.alert))
             hienGoiY(m)
             // Day xuong cuoi hang. Cau nao cung phai lam cho duoc, nhung khong phai

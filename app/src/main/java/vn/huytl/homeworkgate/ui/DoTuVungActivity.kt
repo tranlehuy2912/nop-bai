@@ -479,14 +479,14 @@ class DoTuVungActivity : AppCompatActivity() {
         if (dung) {
             // Dung mot lan la xong, khong chen lai nua - xem [MucHoi.xong].
             m.soDung++
-            b.txtKet.text = if (m.loHet) "Đúng rồi. Từ này đã xem đáp án nên không được cộng giờ"
-            else "Đúng rồi"
+            b.txtKet.text = "Đúng rồi"
             b.txtKet.setTextColor(mau(R.color.ok))
             b.txtDap.text = dapAn(m)
         } else {
             m.soSai++
-            b.txtKet.text = if (m.loHet) "Chưa đúng. Từ này không được cộng giờ nữa"
-            else "Chưa đúng"
+            // Hien het tu cung chi ghi "Chưa đúng", nhu man kiem tra bai. Dong tong ket cuoi
+            // buoi van ke so tu phai xem dap an.
+            b.txtKet.text = "Chưa đúng"
             b.txtKet.setTextColor(mau(R.color.alert))
             b.txtDap.text = goiYSauSai(m)
             // Day xuong cuoi hang: tu nao cung phai lam cho duoc, nhung khong ngoi
