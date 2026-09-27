@@ -389,7 +389,7 @@ class DoTuVungActivity : AppCompatActivity() {
         // Da sai lan nao thi giu goi y tren man hinh, va mo them mot bac moi lan sai.
         if (m.soSai > 0) {
             b.theKet.visibility = View.VISIBLE
-            b.txtKet.text = if (m.loHet) "Gõ lại cho đúng đáp án" else "Lần trước chưa đúng"
+            b.txtKet.text = if (m.loHet) "Gõ lại cho đúng đáp án" else "Lần trước sai"
             b.txtKet.setTextColor(mau(R.color.alert))
             b.txtDap.text = goiYSauSai(m)
             // Dap an da hien het thi bat go cho dung, khong cho bam chiu de bo qua.
@@ -397,7 +397,7 @@ class DoTuVungActivity : AppCompatActivity() {
         }
     }
 
-    /** Dong duoi chu "Chưa đúng": Unit cua tu, goi y, hay ca tu khi da hien het. */
+    /** Dong duoi chu "Sai": Unit cua tu, goi y, hay ca tu khi da hien het. */
     private fun goiYSauSai(m: MucHoi): String = when {
         m.chieu == Chieu.ANH_VIET -> "Từ này ở Unit ${m.tu.unit}"
         m.loHet -> "Đáp án: ${m.tu.tu}"
@@ -484,9 +484,9 @@ class DoTuVungActivity : AppCompatActivity() {
             b.txtDap.text = dapAn(m)
         } else {
             m.soSai++
-            // Hien het tu cung chi ghi "Chưa đúng", nhu man kiem tra bai. Dong tong ket cuoi
-            // buoi van ke so tu phai xem dap an.
-            b.txtKet.text = "Chưa đúng"
+            // Chi mot chu "Sai", ke ca khi da hien het tu, nhu man kiem tra bai. Dong tong ket
+            // cuoi buoi van ke so tu phai xem dap an.
+            b.txtKet.text = "Sai"
             b.txtKet.setTextColor(mau(R.color.alert))
             b.txtDap.text = goiYSauSai(m)
             // Day xuong cuoi hang: tu nao cung phai lam cho duoc, nhung khong ngoi

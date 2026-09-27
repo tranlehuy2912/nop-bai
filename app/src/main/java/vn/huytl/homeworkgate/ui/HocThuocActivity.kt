@@ -377,7 +377,7 @@ class HocThuocActivity : AppCompatActivity() {
         // Da sai lan nao thi giu goi y tren man hinh, va mo them mot bac moi lan sai.
         if (m.soSai > 0) {
             b.theKet.visibility = View.VISIBLE
-            b.txtKet.text = if (m.loHet) "Gõ lại cho đúng đáp án" else "Lần trước chưa đúng"
+            b.txtKet.text = if (m.loHet) "Gõ lại cho đúng đáp án" else "Lần trước sai"
             b.txtKet.setTextColor(mau(R.color.alert))
             hienGoiY(m)
             // Dap an da hien het thi bat go cho dung, khong cho bam chiu de bo qua.
@@ -444,9 +444,10 @@ class HocThuocActivity : AppCompatActivity() {
             b.nutChepGoiY.root.visibility = View.GONE
         } else {
             m.soSai++
-            // Hien het dap an cung chi ghi "Chưa đúng": Ba Huy bo cau "không được cộng giờ" o
-            // day (27/9/2026). Dong tong ket cuoi luot van ke so cau phai xem dap an.
-            b.txtKet.text = "Chưa đúng"
+            // Chi mot chu "Sai", ke ca khi da hien het dap an: Ba Huy bo cau "không được cộng
+            // giờ" o day, va doi "Chưa đúng" thanh "Sai" (27/9/2026). Dong tong ket cuoi luot
+            // van ke so cau phai xem dap an.
+            b.txtKet.text = "Sai"
             b.txtKet.setTextColor(mau(R.color.alert))
             hienGoiY(m)
             // Day xuong cuoi hang. Cau nao cung phai lam cho duoc, nhung khong phai

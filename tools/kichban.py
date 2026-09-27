@@ -337,11 +337,11 @@ def danh_sach():
                                             "app/src/main/assets/hocthuoc/toan8ct.json"),
                            m.bam("Trả lời")),
             cho=["Đúng rồi"],
-            khong=["Chưa đúng"],
+            khong=["Sai"],
         ),
         dict(
             ma="hocthuoc-sai", nhom="Học thuộc",
-            ten="Gõ sai — máy nói chưa đúng và cho một gợi ý",
+            ten="Gõ sai — máy báo Sai và cho một gợi ý",
             lam=lambda m: (m.van(RANH), m.dat("hoctoi", ma="toan8ct", chu=BAI_CUOI_TOAN),
                            m.man("HocThuocActivity"),
                            m.bam("Công thức Toán 8"),
@@ -349,7 +349,7 @@ def danh_sach():
                            m.bam("Trả lời")),
             # Sai thi khong hien thang dap an nua, chi goi y - va cau do bi day
             # xuong cuoi hang de lat lai sau, chu khong bo qua.
-            cho=["Chưa đúng", "Gợi ý:"],
+            cho=["Sai", "Gợi ý:"],
             khong=["Đúng rồi"],
         ),
 
