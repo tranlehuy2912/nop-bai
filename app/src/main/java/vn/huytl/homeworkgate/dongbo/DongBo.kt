@@ -512,20 +512,7 @@ object DongBo {
      * thu tu, ma List thi so ca thu tu.
      */
     private fun dayCaiDatNeuDoi(context: Context) {
-        val prefs = Prefs.get(context)
-        val ban = mapOf(
-            "gioNgu" to prefs.hardStopMinuteOfDay,
-            "gioDay" to prefs.gioDayMinuteOfDay,
-            "tranPhutMoiNgay" to prefs.tranPhutMoiNgay,
-            "khoaCaiDat" to prefs.lockSystemSettings,
-            "chamBangAi" to prefs.chamBangAi,
-            "appChoPhep" to prefs.allowedPackages.sorted(),
-            "appMoiLuc" to prefs.moiLucPackages.sorted(),
-            "appChan" to prefs.blockedPackages.sorted(),
-            "appCatMang" to prefs.catMangPackages.sorted(),
-            "appAi" to prefs.aiPackages.sorted(),
-            "gioiHanApp" to GioiHanApp.tatCa(context)
-        )
+        val ban = banCaiDat(context)
         if (ban == caiDatDaDay) return
         val hop = hop(context, Duong.D_CAI_DAT) ?: return
         caiDatDaDay = ban
@@ -534,6 +521,30 @@ object DongBo {
             caiDatDaDay = null
             Log.w(TAG, "day cai dat hong: ${it.message}")
         }
+    }
+
+    /**
+     * Ban sao cau hinh dang chay, dung nhu ghi vao [Duong.D_CAI_DAT].
+     *
+     * appNhac co tu 27/9/2026, cung luc Bang dieu khien co muc "App duoc nghe nen".
+     * Truoc do danh sach nay chi sua duoc tren tablet.
+     */
+    internal fun banCaiDat(context: Context): Map<String, Any> {
+        val prefs = Prefs.get(context)
+        return mapOf(
+            "gioNgu" to prefs.hardStopMinuteOfDay,
+            "gioDay" to prefs.gioDayMinuteOfDay,
+            "tranPhutMoiNgay" to prefs.tranPhutMoiNgay,
+            "khoaCaiDat" to prefs.lockSystemSettings,
+            "chamBangAi" to prefs.chamBangAi,
+            "appChoPhep" to prefs.allowedPackages.sorted(),
+            "appMoiLuc" to prefs.moiLucPackages.sorted(),
+            "appChan" to prefs.blockedPackages.sorted(),
+            "appNhac" to prefs.nhacPackages.sorted(),
+            "appCatMang" to prefs.catMangPackages.sorted(),
+            "appAi" to prefs.aiPackages.sorted(),
+            "gioiHanApp" to GioiHanApp.tatCa(context)
+        )
     }
 
     /**

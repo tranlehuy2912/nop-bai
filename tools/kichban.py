@@ -457,6 +457,7 @@ BO_TEST = [
     ("DuyetTheoMaTest", "Lệnh DUYỆT và TỪ CHỐI kèm mã bài"),
     ("SuaChamLenhTest", "Lệnh SỬA CHẤM"),
     ("TinCoLenhTest", "Lệnh TIN CÔ và kho tin của cô"),
+    ("CaiDatLenhTest", "Lệnh CÀI ĐẶT: app nghe nền, giờ riêng từng app"),
     ("BanDaySuDungTest", "Bản số dùng app đẩy sang Bảng điều khiển"),
     ("TelegramThatTest", "Đếm tin ba Huy gửi qua Telegram"),
     ("TrinhPhatTest", "Từ dịch vụ đọc thông báo tới trình phát"),

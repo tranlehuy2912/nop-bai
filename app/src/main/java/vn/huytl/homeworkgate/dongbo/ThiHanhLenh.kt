@@ -484,7 +484,7 @@ object ThiHanhLenh {
      * qua day. Nho the, moi gia tri deu di qua dung mot cho kiem tra, va con so hien
      * ben kia luon la con so that dang chay chu khong phai con so vua mong muon.
      */
-    private fun doiCaiDat(context: Context, ten: String, giaTri: Any?): String {
+    internal fun doiCaiDat(context: Context, ten: String, giaTri: Any?): String {
         val prefs = Prefs.get(context)
         val so = (giaTri as? Number)?.toInt()
 
@@ -535,6 +535,11 @@ object ThiHanhLenh {
             "appChan" -> {
                 prefs.blockedPackages = danhSach(giaTri)
                 "Danh sách app chặn hẳn: ${prefs.blockedPackages.size} app."
+            }
+            // Bang dieu khien co muc nay tu 27/9/2026. Truoc do chi sua tren tablet.
+            "appNhac" -> {
+                prefs.nhacPackages = danhSach(giaTri)
+                "Danh sách app được nghe nền: ${prefs.nhacPackages.size} app."
             }
             // Gui lai danh sach cung la cach Ba Huy bat lai VPN vua bi app khac chiem,
             // nen quen dau bi da va xet lai ngay ca khi danh sach khong doi.
