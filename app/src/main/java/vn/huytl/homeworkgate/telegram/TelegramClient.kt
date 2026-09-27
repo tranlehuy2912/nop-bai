@@ -79,16 +79,22 @@ class TelegramClient(private val token: String) {
         return AnhDaGui(result.optLong("message_id", 0L), listOfNotNull(fileIdTo(result)))
     }
 
+    /**
+     * [entities] la cac doan dinh dang cua Telegram, vi tri dem theo ky tu UTF-16 nhu
+     * String cua Kotlin. Kieu "code" hien chu mono, cham vao la Telegram tu chep doan do.
+     */
     fun sendMessage(
         chatId: Long,
         text: String,
         replyMarkup: JSONObject? = null,
-        replyToMessageId: Long = 0L
+        replyToMessageId: Long = 0L,
+        entities: JSONArray? = null
     ): Long {
         val payload = JSONObject().apply {
             put("chat_id", chatId)
             put("text", text.take(4096))
             if (replyMarkup != null) put("reply_markup", replyMarkup)
+            if (entities != null) put("entities", entities)
             if (replyToMessageId != 0L) {
                 put("reply_parameters", JSONObject().put("message_id", replyToMessageId))
             }

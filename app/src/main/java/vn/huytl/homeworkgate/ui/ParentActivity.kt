@@ -1,6 +1,7 @@
 package vn.huytl.homeworkgate.ui
 
 import android.app.admin.DevicePolicyManager
+import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
@@ -9,7 +10,13 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.updatePadding
+import androidx.lifecycle.lifecycleScope
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
+import org.json.JSONArray
+import org.json.JSONObject
 import vn.huytl.homeworkgate.R
 import vn.huytl.homeworkgate.data.EndReason
 import vn.huytl.homeworkgate.data.GateState
@@ -24,6 +31,7 @@ import vn.huytl.homeworkgate.guard.PhienQuanLy
 import vn.huytl.homeworkgate.guard.Permissions
 import vn.huytl.homeworkgate.telegram.ApprovalService
 import vn.huytl.homeworkgate.telegram.Notifier
+import vn.huytl.homeworkgate.telegram.TelegramClient
 
 /**
  * Bang dieu khien cua Ba Huy ngay tren may, cho luc dang cam tablet trong tay va
@@ -98,7 +106,7 @@ class ParentActivity : AppCompatActivity() {
                     .show()
                 return@maGhepMoi
             }
-            MaterialAlertDialogBuilder(this)
+            val hop = MaterialAlertDialogBuilder(this)
                 .setTitle("Nối điện thoại ba Huy")
                 .setMessage(
                     "Mở app Bảng điều khiển trên điện thoại, gõ hai dòng này:\n\n" +
@@ -107,7 +115,67 @@ class ParentActivity : AppCompatActivity() {
                         "Mã ghép sống 10 phút. Hết thì bấm lại là ra mã mới."
                 )
                 .setPositiveButton("Xong", null)
+                .apply {
+                    if (prefs.isConfigured) setNeutralButton("Gửi sang Telegram ba Huy", null)
+                }
                 .show()
+            // Gui xong van de hop mo: Ba Huy co the dang nhin ma tren man de go.
+            hop.getButton(DialogInterface.BUTTON_NEUTRAL)?.let { nut ->
+                nut.setOnClickListener {
+                    nut.isEnabled = false
+                    guiMaGhep(maNha, maGhep) { loi ->
+                        if (loi == null) {
+                            nut.text = "Đã gửi"
+                            toast("Đã gửi hai mã sang Telegram ba Huy.")
+                        } else {
+                            nut.isEnabled = true
+                            toast("Không gửi được: $loi")
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    /**
+     * Gui ma nha va ma ghep sang Telegram cua Ba Huy qua bot, de ben dien thoai cham vao
+     * ma la chep, khong phai go tay hai muoi ky tu.
+     *
+     * KHONG CHEP VAO BO NHO TAM CUA TABLET. Bo nho do Le Hoa dung chung sau khi Ba Huy
+     * tra may, ma ai co du hai ma trong muoi phut la ghep duoc mot may vao nha, khoa mo
+     * duoc tablet. Tin bot thi chi toi chat cua Ba Huy.
+     *
+     * Moi ma nam trong mot khung "code" cua Telegram: cham vao la Telegram chep dung ma
+     * do. Vi tri khung tinh theo cach ghep chuoi chu khong tim lai ma trong tin, vi ma
+     * ghep sau so co the trung mot doan cua ma nha.
+     *
+     * [xong] nhan null khi gui duoc, hay cau Telegram bao hong.
+     */
+    private fun guiMaGhep(maNha: String, maGhep: String, xong: (String?) -> Unit) {
+        val dau = "Mã nối điện thoại với tablet\n\nMã nhà: "
+        val giua = "\nMã ghép: "
+        val chu = dau + maNha + giua + maGhep +
+            "\n\nChạm vào mã là chép. Mã ghép dùng được 10 phút, một lần."
+        fun khungMa(tu: Int, dai: Int) =
+            JSONObject().put("type", "code").put("offset", tu).put("length", dai)
+        val khung = JSONArray()
+            .put(khungMa(dau.length, maNha.length))
+            .put(khungMa(dau.length + maNha.length + giua.length, maGhep.length))
+        val token = prefs.botToken
+        val chatId = prefs.parentChatId
+        lifecycleScope.launch {
+            val loi = withContext(Dispatchers.IO) {
+                runCatching { TelegramClient(token).sendMessage(chatId, chu, entities = khung) }
+                    .exceptionOrNull()
+            }
+            // Loi mang co the kem dia chi goi, ma dia chi do chua token: che di truoc khi hien.
+            xong(
+                loi?.let {
+                    val cau = (it as? TelegramClient.ApiException)?.description
+                        ?: it.message ?: "lỗi không rõ"
+                    if (token.isEmpty()) cau else cau.replace(token, "…")
+                }
+            )
         }
     }
 

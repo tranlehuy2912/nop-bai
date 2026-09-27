@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Nut chep cua tung cau, dung chung cho moi man co nut nay. Xem ui/Chep.kt.
+
+  Icon chu khong ghi chu "Chép" (Ba Huy chon 27/9/2026): moi cau mot chu thi danh sach
+  roi mat. Cung kieu voi nut quay lai: nut icon 48dp, icon xam. Nhan giu hien chu "Chép".
+-->
+<com.google.android.material.button.MaterialButton xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nut_chep"
+    style="@style/Widget.Material3.Button.IconButton"
+    android:layout_width="48dp"
+    android:layout_height="48dp"
+    android:contentDescription="Chép"
+    android:tooltipText="Chép"
+    app:icon="@drawable/st_ic_chep"
+    app:iconSize="20dp"
+    app:iconTint="@color/ink_soft" />

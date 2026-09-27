@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Mot cau de tich o man chon cau, kem nut chep de bai ben phai. Nut nam ngoai o tich nen
+  bam chep khong tich nham cau. Hop "cau nao chua chac" van dung st_dong_cau tran.
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:orientation="horizontal">
+
+    <include
+        android:id="@+id/o_cau"
+        layout="@layout/st_dong_cau"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1" />
+
+    <include
+        android:id="@+id/nut_chep"
+        layout="@layout/st_nut_chep"
+        android:layout_width="48dp"
+        android:layout_height="48dp" />
+</LinearLayout>

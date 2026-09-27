@@ -768,16 +768,22 @@ class ChonBaiActivity : AppCompatActivity() {
     }
 
     private fun themCau(cau: CauHoi, keoTrang: Boolean = false) {
-        val o = LayoutInflater.from(this)
-            .inflate(R.layout.st_dong_cau, binding.danhSach, false) as MaterialCheckBox
+        val dong = LayoutInflater.from(this)
+            .inflate(R.layout.st_dong_cau_chep, binding.danhSach, false)
+        val o = dong.findViewById<MaterialCheckBox>(R.id.o_cau)
         val xong = cau.id in daXong
         val sua = cau.id in canSua
 
-        o.text = dongCau(cau, if (keoTrang) nhanKemTrang(cau) else cau.nhan()) {
+        val nhan = if (keoTrang) nhanKemTrang(cau) else cau.nhan()
+        o.text = dongCau(cau, nhan) {
             if (xong) append("\n✓ đã tính giờ rồi")
             if (sua) append("\n● đang cần sửa lại")
         }
         o.tag = cau.id
+        // Chep nhan va de, bo hai dong "đã tính giờ", "đang cần sửa": do la chuyen cua may.
+        dong.findViewById<View>(R.id.nut_chep).setOnClickListener {
+            Chep.vao(this, SoMu.hien(cau.dongChon(nhan)))
+        }
 
         if (xong) {
             // Cau da tra gio thi khong tich duoc nua. Chan ngay o day chu khong de
@@ -810,7 +816,7 @@ class ChonBaiActivity : AppCompatActivity() {
                 if (doiQuyen) danhDauLaiOTich() else capNhatNut()
             }
         }
-        binding.danhSach.addView(o)
+        binding.danhSach.addView(dong)
     }
 
     /** Bo het tich dang co, ke ca quyen dang chon. */
@@ -822,7 +828,9 @@ class ChonBaiActivity : AppCompatActivity() {
     /** Tich lai cac o theo [daTich] sau khi ve lai danh sach. */
     private fun danhDauLaiOTich() {
         for (i in 0 until binding.danhSach.childCount) {
-            val v = binding.danhSach.getChildAt(i) as? MaterialCheckBox ?: continue
+            // O tich nam trong dong co nut Chep, xem [themCau].
+            val v = binding.danhSach.getChildAt(i)
+                .findViewById<MaterialCheckBox>(R.id.o_cau) ?: continue
             val id = v.tag as? String ?: continue
             if (v.isEnabled) v.isChecked = id in daTich
         }

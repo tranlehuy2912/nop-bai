@@ -198,40 +198,64 @@ class KetQuaActivity : AppCompatActivity() {
             orientation = LinearLayout.VERTICAL
             layoutParams = LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.WRAP_CONTENT, 1f)
         }
-        cot.addView(chu("Câu ${c.ma.ifBlank { "chưa rõ số" }}", 16f, bold = true))
-        if (c.de.isNotBlank()) cot.addView(chu(SoMu.hien(c.de.trim()), 14f, mau = R.color.ink_soft))
+        val ten = "Câu ${c.ma.ifBlank { "chưa rõ số" }}"
+        cot.addView(chu(ten, 16f, bold = true))
+        // Chu cua nut chep: dung cac dong dang hien, kem ket luan va chu "Đề:" cho de doc
+        // khi dan sang cho khac.
+        val chep = mutableListOf(
+            "$ten (" + when {
+                c.chuaRo -> "máy đọc chưa rõ"
+                c.dungCuoi -> "đúng"
+                else -> "chưa đúng"
+            } + ")"
+        )
+        if (c.de.isNotBlank()) {
+            val de = SoMu.hien(c.de.trim())
+            cot.addView(chu(de, 14f, mau = R.color.ink_soft))
+            chep += "Đề: $de"
+        }
         // Claude da doc chac thi lay chu Claude doc: may doc nham la mot trong hai ly
         // do de nho Claude cham lai, nhu cau 2.32b bi doc chu "b" thanh so 1.
         val cl = c.claude?.takeIf { it.chac }
         val viet = cl?.conViet?.takeIf { it.isNotBlank() } ?: c.ketQua
         if (viet.isNotBlank()) {
+            val dong = "${getString(R.string.child_name)} viết: $viet"
             cot.addView(
-                chu("${getString(R.string.child_name)} viết: $viet", 15f)
+                chu(dong, 15f)
                     .apply { (layoutParams as LinearLayout.LayoutParams).topMargin = dp(4) }
             )
+            chep += dong
         }
 
         val mayDung = c.docRo && c.dung
         val goiY = boConDau(cl?.goiY?.trim()?.takeIf { it.isNotEmpty() } ?: c.nhanXet.trim())
-        when {
-            c.chuaRo -> cot.addView(chu("Máy đọc không rõ câu này.", 14f, mau = R.color.wait))
-            cl != null && cl.dung && !mayDung -> cot.addView(
-                ghiChu(
-                    "Máy chấm nhầm. Claude chấm lại thấy câu này " +
-                        "${getString(R.string.child_name)} làm đúng.",
-                    R.color.ok
-                )
-            )
-            cl != null && !cl.dung && mayDung -> cot.addView(
-                ghiChu(
-                    "Claude chấm lại thấy câu này chưa đúng." +
-                        if (goiY.isNotEmpty()) " $goiY" else "",
-                    R.color.alert
-                )
-            )
-            !c.dungCuoi && goiY.isNotEmpty() -> cot.addView(ghiChu(goiY, R.color.alert))
+        val ghi: Pair<String, Int>? = when {
+            c.chuaRo -> "Máy đọc không rõ câu này." to R.color.wait
+            cl != null && cl.dung && !mayDung ->
+                "Máy chấm nhầm. Claude chấm lại thấy câu này " +
+                    "${getString(R.string.child_name)} làm đúng." to R.color.ok
+            cl != null && !cl.dung && mayDung ->
+                "Claude chấm lại thấy câu này chưa đúng." +
+                    (if (goiY.isNotEmpty()) " $goiY" else "") to R.color.alert
+            !c.dungCuoi && goiY.isNotEmpty() -> goiY to R.color.alert
+            else -> null
+        }
+        if (ghi != null) {
+            val (noi, mauGhi) = ghi
+            cot.addView(if (c.chuaRo) chu(noi, 14f, mau = mauGhi) else ghiChu(noi, mauGhi))
+            chep += noi
         }
         hang.addView(cot)
+        // Keo nut len cho icon ngang dong "Câu ...", va sang phai cho icon thang mep chu
+        // trong the: nut 48dp, icon chi 20dp o giua.
+        hang.addView(
+            Chep.nut(hang) { chep.joinToString("\n") }.apply {
+                layoutParams = LinearLayout.LayoutParams(dp(48), dp(48)).apply {
+                    topMargin = -dp(13)
+                    marginEnd = -dp(14)
+                }
+            }
+        )
         return hang
     }
 
