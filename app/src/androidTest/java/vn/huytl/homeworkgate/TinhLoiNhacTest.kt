@@ -135,6 +135,18 @@ class TinhLoiNhacTest {
     }
 
     @Test
+    fun sang_thu_sau_chi_con_tin_hoc_tu_tiet_3() {
+        // Tu 27/9/2026 sang thu sau khong con hai tiet AVNN o tiet 1 va 2. Toi thu nam
+        // 17/9/2026 thi buoi ke tiep la sang thu sau, vao hoc luc 9h15.
+        val nhac = TinhLoiNhac.tinh(luc(17, 20, 0), emptySet())!!
+        assertEquals(LoaiNhac.SOAN_VO, nhac.loai)
+        assertEquals(Calendar.FRIDAY, nhac.buoi!!.thu)
+        assertEquals(Buoi.SANG, nhac.buoi!!.buoi)
+        assertEquals(listOf("Tin học"), nhac.buoi!!.monCanSoan)
+        assertEquals(9 * 60 + 15, nhac.buoi!!.phutVaoHoc)
+    }
+
+    @Test
     fun ngay_le_thi_khong_tinh_la_ngay_hoc() {
         // 1/1/2027 la Tet Duong lich.
         val tet = NgayNghi.calendarCua(2027, 1, 1, 10, 0)
@@ -211,6 +223,16 @@ class TinhLoiNhacTest {
     fun giua_hai_buoi_thu_hai_thi_khong_chan() {
         // 11h00: sang da tan luc 10h45, chieu chua toi moc 11h30. Con ve nha an trua.
         assertTrue(chan(luc(14, 11, 0))!!.loai != LoaiNhac.CHAN)
+    }
+
+    @Test
+    fun sang_thu_sau_chan_tu_8h45_toi_10h45() {
+        // 18/9/2026 la thu sau. Luc 7h15, truoc day la gio vao tiet AVNN, nay chua chan.
+        assertTrue(chan(luc(18, 7, 15))?.loai != LoaiNhac.CHAN)
+        assertTrue(chan(luc(18, 8, 40))?.loai != LoaiNhac.CHAN)
+        val nhac = chan(luc(18, 8, 45))!!
+        assertEquals(LoaiNhac.CHAN, nhac.loai)
+        assertEquals(10 * 60 + 45, nhac.phutHetChan)
     }
 
     @Test

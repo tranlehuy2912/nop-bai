@@ -2283,7 +2283,7 @@ class ApprovalService : Service() {
         /**
          * Nhip xet loi nhac soan tap luc binh thuong.
          *
-         * Mot phut: moc som nhat trong thoi khoa bieu la 6:45, va cham mot phut so
+         * Mot phut: moc som nhat trong thoi khoa bieu la 8:45, va cham mot phut so
          * voi moc do thi khong ai thay. Rieng luc dang dem nguoc hay dang chan thi
          * vong tu ha xuong mot giay.
          */

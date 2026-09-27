@@ -80,7 +80,7 @@ object ThoiKhoaBieu {
 
     private val BUONG_MAY_SANG = mapOf(
         Calendar.MONDAY to 8 * 60 + 45,
-        Calendar.FRIDAY to 6 * 60 + 45
+        Calendar.FRIDAY to 8 * 60 + 45
     )
 
     /**
@@ -89,6 +89,7 @@ object ThoiKhoaBieu {
      * Khong tinh ra tu gio vao hoc bang mot cong thuc chung: Ba Huy dat tay tung moc.
      * Buoi chieu buong may luc 11:30, truoc gio vao hoc 75 phut, vi trua Le Hoa hay
      * om may lau; hai buoi sang thi 30. Truoc ngay 24/9/2026 buoi chieu la 12:00.
+     * Truoc ngay 27/9/2026 sang thu sau vao hoc tu tiet 1 nen buong may luc 6:45.
      */
     fun phutBuongMay(buoiHoc: BuoiHoc): Int = when (buoiHoc.buoi) {
         Buoi.CHIEU -> 11 * 60 + 30
@@ -100,9 +101,8 @@ object ThoiKhoaBieu {
             3 to "Giáo dục thể chất",
             4 to "Giáo dục thể chất"
         ),
+        // Tiet 1 va 2 truoc la AVNN, tu 27/9/2026 khong con hoc.
         Calendar.FRIDAY to mapOf(
-            1 to "AVNN",
-            2 to "AVNN",
             3 to "Tin học",
             4 to "Tin học"
         )

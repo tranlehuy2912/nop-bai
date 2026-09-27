@@ -20,7 +20,7 @@ la mot cau hoi that: app co con hien dung cau do nua khong.
 """
 
 # Vai moc co that trong lich 2026-2027, moi moc soi mot canh khac nhau.
-THU_SAU_SANG = "2026-09-18T07:00"   # dang trong buoi sang thu sau (vao hoc 07:15)
+THU_SAU_SANG = "2026-09-18T09:00"   # dang trong buoi sang thu sau (vao hoc 09:15)
 THU_NAM_CHIEU = "2026-09-17T13:00"  # dang trong buoi chieu thu nam
 THU_NAM_SAP = "2026-09-17T11:20"    # con 10 phut nua phai buong may
 TOI_THU_TU = "2026-09-16T20:00"     # toi, chua soan cap cho hom sau
@@ -99,11 +99,12 @@ def danh_sach():
         # ---------------- man chan theo thoi khoa bieu ----------------
         dict(
             ma="chan-sang", nhom="Màn chắn",
-            ten="Sáng thứ sáu — màn chắn, nhắc mang AVNN và Tin học",
+            ten="Sáng thứ sáu — màn chắn, nhắc mang Tin học",
             lam=lambda m: (m.van(THU_SAU_SANG), m.nen()),
             luc=THU_SAU_SANG, loai="CHAN", noi="chan",
             cho=["Tới giờ đi học rồi", "Sáng thứ sáu", "NHỚ MANG THEO",
-                 "AVNN", "Tin học", "Mở lại lúc 10:45"],
+                 "Tin học", "Mở lại lúc 10:45"],
+            khong=["AVNN"],
         ),
         dict(
             ma="chan-chieu", nhom="Màn chắn",
