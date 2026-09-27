@@ -245,23 +245,27 @@ class HomeActivity : AppCompatActivity() {
         // lam gi.
         val phienViec = ViecNha.dangTreo(this)
         val conViec = phienViec?.chuaXong.orEmpty()
+        // Dong chu nho duoi chu to chi con khi co dieu dong to chua noi: ten tung viec
+        // luc giao nhieu viec, va so phut con lai luc Ba Huy cam may. Nhung cau giai
+        // thich tung nam o day (bam gi, cho gi, duoc toi da bao nhieu phut) Ba Huy thay
+        // thua, bo ngay 27/9/2026.
+        var chiTiet = ""
         when {
             baDangDung -> {
                 doiMat(R.drawable.ic_mat_mo_khoa, R.color.parent_tint, R.color.parent_soft)
                 binding.txtBadge.text = "Máy đang mở"
                 binding.txtState.text = getString(R.string.parent_name_cap)
-                binding.txtDetail.text = "Đang dùng máy — ${ParentMode.moTa(this)}"
+                chiTiet = ParentMode.moTa(this).replaceFirstChar { it.uppercase() }
             }
             conViec.isNotEmpty() -> {
                 doiMat(R.drawable.ic_mat_viec_nha, R.color.wait, R.color.wait_soft)
                 binding.txtBadge.text = "${ViecNha.nguoiGiao(phienViec)} giao việc"
-                binding.txtState.text = if (conViec.size == 1) {
-                    conViec.first().ten
+                if (conViec.size == 1) {
+                    binding.txtState.text = conViec.first().ten
                 } else {
-                    "Còn ${conViec.size} việc"
+                    binding.txtState.text = "Còn ${conViec.size} việc"
+                    chiTiet = conViec.joinToString(", ") { it.ten }
                 }
-                binding.txtDetail.text = conViec.joinToString(", ") { it.ten } +
-                    ".\n" + ViecNha.NHO_BAM
             }
             gate.state == GateState.PENDING && gate.grantedMinutes > 0 -> {
                 // Nop them bai de cong don, ma trong tay van con phieu cu.
@@ -269,21 +273,11 @@ class HomeActivity : AppCompatActivity() {
                 binding.txtBadge.text =
                     if (soBaiCho > 1) "Đã gửi thêm $soBaiCho bài" else "Đã gửi thêm bài"
                 binding.txtState.text = "${gate.grantedMinutes} phút"
-                binding.txtDetail.text =
-                    "Không phải đợi duyệt — chơi được rồi, duyệt xong máy cộng thêm."
             }
             gate.state == GateState.PENDING -> {
                 doiMat(R.drawable.ic_mat_cho, R.color.wait, R.color.wait_soft)
                 binding.txtBadge.text = if (soBaiCho > 1) "Đã gửi $soBaiCho bài" else "Đã gửi bài"
                 binding.txtState.text = "Chờ ba Huy duyệt"
-                // Dong to o tren da noi "Cho Ba Huy duyet", nut chinh ben duoi da noi
-                // nop them duoc. Dong nay de danh cho cai con khong tu biet: luc nao thi
-                // dung toi nut huy nho o duoi cung.
-                binding.txtDetail.text = if (soBaiCho > 1) {
-                    "Duyệt từng bài một, bài nào xong là cộng giờ bài đó."
-                } else {
-                    "Ảnh thiếu hay mờ thì huỷ bài vừa nộp rồi chụp lại."
-                }
             }
             gate.state == GateState.GRANTED -> {
                 doiMat(R.drawable.ic_mat_da_duyet, R.color.brand, R.color.brand_soft)
@@ -291,10 +285,6 @@ class HomeActivity : AppCompatActivity() {
                 binding.txtBadge.text = gate.nhanCho
                     .ifEmpty { "${getString(R.string.parent_name_cap)} đã duyệt" }
                 binding.txtState.text = "${gate.grantedMinutes} phút"
-                // Nut to ngay duoi da ghi "Bat dau choi", nhac lai la thua. Giu dung
-                // cai con khong tu doan duoc: dong ho chua chay, khong bam som cung
-                // khong mat gi.
-                binding.txtDetail.text = "Chưa tính giờ đâu — sẵn sàng chơi mới bấm."
             }
             gate.state == GateState.PAUSED -> {
                 doiMat(R.drawable.ic_mat_tam_dung, R.color.wait, R.color.wait_soft)
@@ -303,8 +293,6 @@ class HomeActivity : AppCompatActivity() {
                 // khi bam "Choi tiep", nen hien khac di la sau do thay hut mat may
                 // chuc giay.
                 binding.txtState.text = CountdownOverlay.dinhDang(gate.pausedMs())
-                binding.txtDetail.text = "Giờ giữ nguyên, không chạy tiếp." +
-                    if (soBaiCho > 0) " Còn $soBaiCho bài chờ duyệt." else ""
             }
             gate.isOpen() -> {
                 doiMat(R.drawable.ic_mat_dang_choi, R.color.ok, R.color.ok_soft)
@@ -312,27 +300,16 @@ class HomeActivity : AppCompatActivity() {
                 // Dem den tung giay: nhin mot cai la biet con bao lau, khong phai
                 // doan giua "con 1 phut" va "con 59 giay".
                 binding.txtState.text = CountdownOverlay.dinhDang(gate.remainingMs())
-                // Nop them bai trong luc dang choi thi dong ho van chay. Ghi ro o day
-                // de con biet bai da gui di roi, khong phai chup lai.
-                binding.txtDetail.text = if (soBaiCho > 0) {
-                    "Đã gửi $soBaiCho bài, duyệt xong là cộng thêm."
-                } else {
-                    "Hết giờ máy tự khoá."
-                }
             }
             else -> {
                 doiMat(R.drawable.ic_mat_khoa, R.color.locked, R.color.locked_soft)
                 binding.txtBadge.text = "Đang khoá"
                 binding.txtState.text = "Chưa nộp bài"
-                val con = gate.phutConLaiHomNay()
-                val daCo = gate.phutDaDuyetHomNay()
-                binding.txtDetail.text = when {
-                    con <= 0 -> "Hôm nay đủ giờ chơi rồi, mai nộp bài tiếp nhé"
-                    daCo > 0 -> "Hôm nay đã được $daCo phút, làm bài thêm được tối đa $con phút nữa"
-                    else -> "Làm bài xong được tối đa $con phút chơi hôm nay"
-                }
             }
         }
+        binding.txtDetail.text = chiTiet
+        // TextView rong ma de hien van chiem mot dong, cong khoang cach phia tren.
+        binding.txtDetail.visibility = if (chiTiet.isEmpty()) View.GONE else View.VISIBLE
 
         // Het tran trong ngay thi nut nop bai khong lam duoc gi ngoai hien mot cau
         // toast. De no sang xanh nhu binh thuong la moi con bam di bam lai roi tuong
@@ -506,7 +483,6 @@ class HomeActivity : AppCompatActivity() {
         // no chinh la nen cua khung.
         (binding.phanDaChoi.layoutParams as LinearLayout.LayoutParams).weight = daChoi.toFloat()
         (binding.phanDangGiu.layoutParams as LinearLayout.LayoutParams).weight = giu.toFloat()
-        val conLai = (tran - kiem).coerceAtLeast(0)
 
         binding.chuHanNgay.text = buildString {
             append("Hôm nay kiếm được ").append(kiem).append('/').append(tran).append(" phút")
@@ -525,12 +501,7 @@ class HomeActivity : AppCompatActivity() {
                 "đã chơi $daChoi".takeIf { daChoi > 0 },
                 "chưa chơi $giu".takeIf { giu > 0 },
             )
-            when {
-                chia.isNotEmpty() -> append(" (").append(chia.joinToString(", ")).append(")")
-                // Cau nhac thi tach han thanh cau rieng: no khong phai mot mau tin
-                // ngang hang voi hai con so kia.
-                conLai > 0 -> append(". Làm bài để kiếm thêm.")
-            }
+            if (chia.isNotEmpty()) append(" (").append(chia.joinToString(", ")).append(")")
         }
     }
 
@@ -654,10 +625,7 @@ class HomeActivity : AppCompatActivity() {
                 hinh = R.drawable.st_ic_on_lai,
                 mau = R.color.wait,
                 ten = if (denHen.size == 1) "Ôn lại 1 câu đến hẹn"
-                else "Ôn lại ${denHen.size} câu đến hẹn",
-                phu = ToChu.toButDo(
-                    this, "Làm trong vở bằng bút đỏ rồi chụp"
-                )
+                else "Ôn lại ${denHen.size} câu đến hẹn"
             ) {
                 startActivity(
                     Intent(this, ChonBaiActivity::class.java)
@@ -683,11 +651,6 @@ class HomeActivity : AppCompatActivity() {
                 hinh = R.drawable.st_ic_the_hoc,
                 mau = if (het) R.color.ok else R.color.brand,
                 ten = if (het) "Kiểm tra bài: hôm nay hết câu" else getString(R.string.hoc_thuoc_nut),
-                phu = when (kiemTra) {
-                    BoThe.TinhTrang.CHUA_CHON -> "Chọn bài lớp đã học tới để máy hỏi đúng phần"
-                    BoThe.TinhTrang.HET_HOM_NAY -> "Lớp học tới bài mới thì vào chọn lại để có thêm câu"
-                    else -> ""
-                },
                 xong = het
             ) {
                 startActivity(Intent(this, HocThuocActivity::class.java))
@@ -816,8 +779,7 @@ class HomeActivity : AppCompatActivity() {
             themViec(
                 hinh = R.drawable.st_ic_giai_de,
                 mau = MatMon.mau(mon),
-                ten = GiaiDe.tenMon(mon).let { "Giải đề $it" },
-                phu = "Chọn bài lớp đã học tới để máy ra đề"
+                ten = GiaiDe.tenMon(mon).let { "Giải đề $it" }
             ) {
                 ChonHocToi.hoiPhanConThieu(this, mon) {
                     moDeNeuCan()
@@ -832,12 +794,8 @@ class HomeActivity : AppCompatActivity() {
         hinh: Int,
         mau: Int,
         ten: String,
-        /**
-         * Dong chu nho duoi ten viec. De trong thi khong hien dong nao.
-         *
-         * CharSequence chu khong String: co cau can to mau mot doan, xem [ToChu].
-         */
-        phu: CharSequence = "",
+        /** Dong chu nho duoi ten viec. De trong thi khong hien dong nao. */
+        phu: String = "",
         xong: Boolean = false,
         mui: Boolean = true,
         bam: () -> Unit

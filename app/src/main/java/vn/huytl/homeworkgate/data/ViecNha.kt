@@ -181,15 +181,6 @@ object ViecNha {
     /** "Bà nội" hay "Ba Huy": ai giao phien nay, de ghi dung tren man hinh va nhat ky. */
     fun nguoiGiao(p: Phien?): String = if (p?.ai == Nguoi.BA_HUY) "Ba Huy" else "Bà nội"
 
-    /**
-     * Cau noi voi Le Hoa lam xong thi nho ai.
-     *
-     * Ca hai nguoi lon deu bam xong duoc, khong can dung nguoi da giao: ba giao ma
-     * ba di vang thi Ba Huy bam tren Bang dieu khien. Chung mot cau cho man chan va
-     * man hinh chinh, de hai cho khong noi hai kieu.
-     */
-    const val NHO_BAM = "Làm xong thì nhờ bà nội hoặc Ba Huy bấm Xong trên điện thoại."
-
     // ---------------------------------------------------------------- doc ghi
 
     private fun luu(context: Context, p: Phien) {

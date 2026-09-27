@@ -453,8 +453,7 @@ class ApprovalService : Service() {
         return vn.huytl.homeworkgate.data.LoiNhac(
             loai = LoaiNhac.CHAN,
             tieuDe = "${ViecNha.nguoiGiao(phien)} giao việc nhà",
-            chiTiet = "Còn phải làm: " + con.joinToString(", ") { it.ten } +
-                ".\n" + ViecNha.NHO_BAM,
+            chiTiet = "Còn phải làm: " + con.joinToString(", ") { it.ten } + ".",
             gap = true,
             buoi = null,
             maBuoi = null
