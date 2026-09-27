@@ -91,7 +91,6 @@ object ChamTheoClaude {
                 cauId = q?.id,
                 mon = q?.mon ?: pham?.mon.orEmpty(),
                 coDe = de.isNotBlank(),
-                mucDo = (o["mucDo"] as? Number)?.toInt() ?: -1,
                 /*
                  * Quy tac 17 cua may cham: lan nop KHONG co trang vo dan do thi moi cau
                  * la bai co giao. Day la lan nop de sua bai, chi co anh bai giai. Coi la

@@ -733,10 +733,27 @@ object DongBo {
         }
     }
 
-    /** Doi trang thai mot bai sau khi Ba Huy duyet hoac tu choi. */
-    fun datTrangThaiBai(context: Context, baiId: String, trangThai: String, soPhut: Int = 0) {
+    /**
+     * Doi trang thai mot bai sau khi Ba Huy duyet hoac tu choi.
+     *
+     * [congLuc] lon hon 0 la bai cham xong trong gio ngu: [soPhut] phut se cong luc do, xem
+     * [Duong.F_CONG_LUC] va [vn.huytl.homeworkgate.data.CongSang]. Bang 0 thi xoa truong do.
+     */
+    fun datTrangThaiBai(
+        context: Context,
+        baiId: String,
+        trangThai: String,
+        soPhut: Int = 0,
+        congLuc: Long = 0L
+    ) {
         nha(context)?.collection(Duong.BAI)?.document(baiId)
-            ?.update(mapOf(Duong.F_TRANG_THAI to trangThai, Duong.F_SO_PHUT to soPhut))
+            ?.update(
+                mapOf(
+                    Duong.F_TRANG_THAI to trangThai,
+                    Duong.F_SO_PHUT to soPhut,
+                    Duong.F_CONG_LUC to if (congLuc > 0L) congLuc else FieldValue.delete()
+                )
+            )
             ?.addOnFailureListener { Log.w(TAG, "doi trang thai bai hong: ${it.message}") }
     }
 

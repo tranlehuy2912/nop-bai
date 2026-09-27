@@ -91,7 +91,7 @@ class ChonBaiActivity : AppCompatActivity() {
      * danh sach tron nhieu quyen (on tap, lam them) truoc day van cho tich lan lon,
      * roi luc chup lang le bo cac cau khong cung quyen voi cau dau tien: con tich
      * tam cau, nut ghi "chup bai on (8 cau)", ma chi nam cau di cham. Ba cau kia con
-     * van lam trong vo bang but do, khong ai tinh.
+     * van lam trong vo, khong ai tinh.
      *
      * Nen chan ngay o cho tich: tich sang quyen khac thi cac tich cu bo di, va man
      * hinh luon chi co mot quyen dang chon.
@@ -241,10 +241,7 @@ class ChonBaiActivity : AppCompatActivity() {
             dong.findViewById<TextView>(R.id.ten).text =
                 "Ôn lại ${on.size} câu đến hẹn"
             dong.findViewById<TextView>(R.id.phu).apply {
-                text = ToChu.toButDo(
-                    this@ChonBaiActivity,
-                    "Đến hẹn nhớ lại. Làm trong vở bằng bút đỏ rồi chụp"
-                )
+                text = "Đến hẹn nhớ lại. Làm trong vở rồi chụp"
                 visibility = View.VISIBLE
             }
             dong.setOnClickListener {
@@ -631,10 +628,7 @@ class ChonBaiActivity : AppCompatActivity() {
      */
     private fun veOnTap() {
         binding.tieuDe.text = "Ôn lại bài"
-        binding.phuDe.text = ToChu.toButDo(
-            this,
-            "Làm lại trong vở bằng bút đỏ rồi chụp. Viết bút thường thì máy không tính."
-        )
+        binding.phuDe.text = "Làm lại trong vở rồi chụp."
         xoaTich()
 
         lifecycleScope.launch {

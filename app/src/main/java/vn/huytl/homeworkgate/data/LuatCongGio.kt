@@ -433,6 +433,24 @@ object LuatCongGio {
     }
 
     /**
+     * Chia so phut tablet cap THAT cho goi va tung cau, khi tran phut moi ngay cat bot
+     * [BangTinh.phut].
+     *
+     * So cai phai ghi so da tra, khong phai gia niem yet, xem [BangTinh.phutCua]. Tran
+     * ngay nam trong GateStore chu khong nam o day, nen [tinh] khong biet no. Goi lay
+     * truoc, roi toi tung cau theo thu tu trong [BangTinh.phutCua]; cau het phan thi
+     * duoc 0 phut. Cap du thi tra ve dung goi va [BangTinh.phutCua] nhu cu.
+     *
+     * @return phut cua goi (0 neu lan nay khong tinh goi) va phut tung cau.
+     */
+    fun chiaPhutDaCap(bang: BangTinh, daCap: Int): Pair<Int, Map<String, Int>> {
+        var con = daCap.coerceAtLeast(0)
+        val goi = if (bang.daTinhGoi) minOf(PHUT_TRON_GOI_DAN_DO, con) else 0
+        con -= goi
+        return goi to bang.phutCua.mapValues { (_, p) -> minOf(p, con).also { con -= it } }
+    }
+
+    /**
      * So phut cho phan trac nghiem con bam ngay tren tablet o man Giai de.
      *
      * Cung gia va cung tran moi lan nop voi trac nghiem chup anh ([PHUT_MOI_CAU_TRAC_NGHIEM],

@@ -6,6 +6,7 @@ import com.google.firebase.firestore.DocumentSnapshot
 import vn.huytl.homeworkgate.R
 import vn.huytl.homeworkgate.data.BaiCho
 import vn.huytl.homeworkgate.data.ChamTheoClaude
+import vn.huytl.homeworkgate.data.CongSang
 import vn.huytl.homeworkgate.data.DayLog
 import vn.huytl.homeworkgate.data.EndReason
 import vn.huytl.homeworkgate.data.GateState
@@ -342,7 +343,8 @@ object ThiHanhLenh {
      * Sua ban cham theo ket qua Claude cham lai. Luat nam o [SuaCham].
      *
      * Cap gio TRUOC, ghi so SAU, y het duong AI tu cham. Cap khong duoc thi cau van
-     * dang cho sua, va Ba Huy gui lai luc khac duoc.
+     * dang cho sua, va Ba Huy gui lai luc khac duoc. Rieng gio ngu thi ghi so ngay va giu
+     * so phut toi luc het gio ngu, xem [CongSang].
      *
      * Ghi ca nhat ky lan loi nhan: Le Hoa doc ca hai tren man hinh chinh, va con can
      * biet la may da nham chu khong phai con tu dung nhien duoc them gio.
@@ -359,9 +361,34 @@ object ThiHanhLenh {
         if (chuanBi.cac.isEmpty()) {
             return "Không còn câu nào trong số đó đang chờ sửa, máy không cộng gì."
         }
+        val con = context.getString(R.string.child_name)
+        val boQua = if (chuanBi.boQua.isEmpty()) "" else {
+            " Bỏ qua ${chuanBi.boQua.joinToString(", ")} vì không còn chờ sửa."
+        }
 
-        val phut = chuanBi.phut
-        if (phut > 0) {
+        // Ba Huy cham lai trong gio ngu (Ba Huy chon ngay 27/9/2026): ghi so ngay, phut thi
+        // giu toi luc het gio ngu. Tran ngay xet luc cong, xem CongSang.
+        val xin = chuanBi.phut
+        if (xin > 0 && gate.trongGioNgu()) {
+            val daGhi = SuaCham.ghi(context, chuanBi)
+            runCatching { DongBo.daySoCai(context, daGhi) }
+            CongSang.them(context, xin)
+            val ke = daGhi.joinToString(", ") { it.ma }
+            val gio = CongSang.gioCong(context)
+            DayLog.add(context, "Ba Huy chấm lại câu $ke: $con làm đúng, giữ $xin phút tới $gio")
+            SoCaiBai.datLoiNhan(
+                context,
+                "Ba Huy chấm lại: câu $ke $con làm đúng rồi, máy chấm nhầm. " +
+                    "Hết giờ ngủ lúc $gio thì được thêm $xin phút."
+            )
+            return "Đã sửa câu $ke thành đúng. Đang giờ ngủ nên giữ $xin phút, $gio tablet cộng.$boQua"
+        }
+
+        // Tinh truoc so phut con vao duoc tran ngay, y nhu [duyet]: GateStore cat bot ma
+        // khong bao ai, con cau tra loi, nhat ky va so thi phai noi so phut con nhan that.
+        val phut = minOf(xin, gate.phutConLaiHomNay())
+        if (xin > 0) {
+            if (phut <= 0) return khongCapDuoc(context)
             val dangChoi = gate.state == GateState.ACTIVE
             val duoc = if (dangChoi) {
                 gate.extend(phut, useQuota = true)
@@ -372,11 +399,10 @@ object ThiHanhLenh {
             if (!dangChoi) ApprovalService.ensureRunning(context)
         }
 
-        val daGhi = SuaCham.ghi(context, chuanBi)
+        val daGhi = SuaCham.ghi(context, chuanBi, daCap = phut)
         runCatching { DongBo.daySoCai(context, daGhi) }
 
         val ke = daGhi.joinToString(", ") { it.ma }
-        val con = context.getString(R.string.child_name)
         DayLog.add(
             context,
             "Ba Huy chấm lại câu $ke: $con làm đúng" + if (phut > 0) ", +$phut phút" else ""
@@ -386,11 +412,9 @@ object ThiHanhLenh {
             "Ba Huy chấm lại: câu $ke $con làm đúng rồi, máy chấm nhầm." +
                 if (phut > 0) " Được thêm $phut phút." else ""
         )
-        val boQua = if (chuanBi.boQua.isEmpty()) "" else {
-            " Bỏ qua ${chuanBi.boQua.joinToString(", ")} vì không còn chờ sửa."
-        }
+        val catBot = if (phut in 1 until xin) " Hôm nay chỉ còn $phut phút trong hạn mức." else ""
         return "Đã sửa câu $ke thành đúng" +
-            (if (phut > 0) ", cộng $phut phút." else ", không có phút nào để cộng.") + boQua
+            (if (phut > 0) ", cộng $phut phút." else ", không có phút nào để cộng.") + catBot + boQua
     }
 
     /**
@@ -468,13 +492,23 @@ object ThiHanhLenh {
         return "Đã đưa lên tablet rồi."
     }
 
+    /**
+     * Vi sao khong cap duoc. Trong gio ngu thi noi rieng: luc do Cho choi ngay cung khong
+     * cap duoc, ma cau cu van bao bam no.
+     */
     private fun khongCapDuoc(context: Context): String {
         val prefs = Prefs.get(context)
         val tu = prefs.hardStopMinuteOfDay
         val den = prefs.gioDayMinuteOfDay
-        return "Không cấp được: đang trong giờ ngủ " +
-            "%02d:%02d-%02d:%02d".format(tu / 60, tu % 60, den / 60, den % 60) +
-            ", hoặc hôm nay đã đủ ${prefs.tranPhutMoiNgay} phút. Bấm Cho chơi ngay để cho thêm."
+        val gate = GateStore(context)
+        if (gate.trongGioNgu()) {
+            return "Không cấp được: đang trong giờ ngủ " +
+                "%02d:%02d-%02d:%02d.".format(tu / 60, tu % 60, den / 60, den % 60)
+        }
+        if (gate.phutConLaiHomNay() <= 0) {
+            return "Không cấp được: hôm nay đã đủ ${prefs.tranPhutMoiNgay} phút. Bấm Cho chơi ngay để cho thêm."
+        }
+        return "Không cấp được lúc này, tablet vừa đổi trạng thái. Bấm lại lần nữa."
     }
 
     /**

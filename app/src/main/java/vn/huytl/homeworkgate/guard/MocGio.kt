@@ -6,6 +6,7 @@ import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
 import android.util.Log
+import vn.huytl.homeworkgate.data.CongSang
 import vn.huytl.homeworkgate.data.GateStore
 import vn.huytl.homeworkgate.data.Prefs
 import vn.huytl.homeworkgate.dongbo.DongBo
@@ -13,7 +14,8 @@ import vn.huytl.homeworkgate.telegram.Notifier
 import java.util.Calendar
 
 /**
- * Danh thuc dung hai moc trong ngay: gio di ngu, va nua dem.
+ * Danh thuc dung hai moc trong ngay: gio di ngu, va nua dem. Dang giu phut cham trong gio
+ * ngu thi them moc thu ba, luc het gio ngu, xem [CongSang].
  *
  * VI SAO CAN: hai thu het han theo dong ho chu khong theo viec ai bam gi. Phieu
  * duyet chua dung chi song trong ngay va khong qua gio ngu; bai dang cho duyet
@@ -36,7 +38,7 @@ object MocGio {
         val prefs = Prefs.get(context)
         if (!prefs.isConfigured) return
         val am = context.getSystemService(AlarmManager::class.java) ?: return
-        val moc = mocKeTiep(prefs.hardStopMinuteOfDay)
+        val moc = listOfNotNull(mocKeTiep(prefs.hardStopMinuteOfDay), CongSang.mocBaoThuc(context)).min()
         runCatching {
             am.setAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, moc, pendingIntent(context))
         }.onFailure { Log.w(TAG, "khong dat duoc moc gio: ${it.message}") }
@@ -89,6 +91,7 @@ object MocGio {
             val ly = gate.tick()
             Log.i(TAG, "toi moc gio: state=${gate.state} ly=$ly")
             if (ly != null) runCatching { Notifier.sessionEnded(context, ly) }
+            runCatching { CongSang.congNeuDenLuc(context)?.let { CongSang.baoBaHuy(context, it) } }
             runCatching { DongBo.dayNgay() }
             CatMangVpn.dongBo(context)
             // Dat moc ke tiep ngay tai day: bao thuc nay khong lap lai.

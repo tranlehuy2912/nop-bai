@@ -1327,10 +1327,10 @@ class KhoBai private constructor(context: Context) :
      * Dem de noi lai voi con mot cau cho dung: sua ba lan moi xong thi khac voi dung
      * ngay lan dau, va cai khac do dang duoc noi ra.
      */
-    fun soLanSai(cauId: String, tuLuc: Long): Int =
+    fun soLanSai(cauId: String, tuLuc: Long, truocLuc: Long = Long.MAX_VALUE): Int =
         readableDatabase.rawQuery(
-            "SELECT COUNT(*) FROM tra_loi WHERE cau_id = ? AND luc >= ? AND dung = 0 AND on_tap = 0",
-            arrayOf(cauId, tuLuc.toString())
+            "SELECT COUNT(*) FROM tra_loi WHERE cau_id = ? AND luc >= ? AND luc < ? AND dung = 0 AND on_tap = 0",
+            arrayOf(cauId, tuLuc.toString(), truocLuc.toString())
         ).use { if (it.moveToFirst()) it.getInt(0) else 0 }
 
     /** Cau nay da duoc tra gio cho mot lan on tap chua. */

@@ -113,7 +113,6 @@ object AiChamBai {
                 danhSach,
                 tenNguon = pham?.tenNguon.orEmpty(),
                 tenBai = pham?.bai.orEmpty(),
-                onTap = pham?.onTap == true,
                 danDo = danDo
             )
         }

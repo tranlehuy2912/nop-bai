@@ -77,14 +77,7 @@ object ChamBaiJson {
                 // Cau trong danh sach con khai thi de lay tu sach, luon co de. Chi
                 // cau tu do moi phai hoi may xem no co nhin thay de khong.
                 coDe = trongSach != null || c.optBoolean("co_de", false),
-                coLam = c.optBoolean("co_lam", true),
-                // -1 khi may khong tra loi. Chi lan on tap moi hoi den mau muc,
-                // nen lan thuong luon la -1 va khong ai xet den.
-                mucDo = when {
-                    !c.has("muc_do") -> -1
-                    c.optBoolean("muc_do") -> 1
-                    else -> 0
-                }
+                coLam = c.optBoolean("co_lam", true)
             )
         }
         if (cac.isEmpty()) return null

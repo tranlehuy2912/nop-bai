@@ -67,7 +67,7 @@ data class CauCham(
      * duoc. Ma cong don chi ra con so khi ten loi lan nao cung viet giong lan truoc,
      * nen tap nhan phai dong va phai nam trong cau lenh.
      *
-     * KHONG DUNG VAO VIEC TINH GIO, y nhu [mucDo] va [CauSo.khaiChac]: cai gi tru
+     * KHONG DUNG VAO VIEC TINH GIO, y nhu [CauSo.khaiChac]: cai gi tru
      * vao so phut thi con se khai theo cai co loi chu khong theo cai that.
      */
     val loaiLoi: String = "",
@@ -122,31 +122,7 @@ data class CauCham(
      * lam hai cau ma van duoc tinh ca loat thi cai man khai bai tro thanh cho de
      * gian lan nhat trong app, chu khong phai cho chac nhat.
      */
-    val coLam: Boolean = true,
-    /**
-     * Bai lam cua cau nay co viet bang muc DO khong. Chi hoi o lan on tap.
-     *
-     * VI SAO PHAI HOI: on tap la duong duy nhat trong ca app duoc phep cham lai mot
-     * cau da lam dung - va chinh vi vay no thao mat cai khoa "moi cau chi tra gio
-     * mot lan". Con mo vo ra dung trang cu, chup lai bai da lam tuan truoc, thi anh
-     * do khong khac gi anh cua mot bai vua lam xong: tren giay khong co dau thoi
-     * gian nao ca.
-     *
-     * Nen luat nha: on thi viet bang but do. Mot cai nhin vao anh la biet, ke ca khi
-     * may doc nham chu.
-     *
-     * Khong dung de TU CHOI, chi dung de thoi tu duyet: may nhin nham mau trong anh
-     * thieu sang la chuyen co that, va mot cho hong ben may khong duoc bien thanh
-     * mot lan con mat gio. Bao 0 thi bai do sang tay Ba Huy, kem dong chu noi ro
-     * vi sao.
-     *
-     * BA GIA TRI, va phai la ba chu khong phai hai: 1 la muc do, 0 la muc khac, -1
-     * la MAY KHONG TRA LOI ve mau. Gop -1 vao 1 thi luat but do tu tat di ma khong
-     * ai biet - model bo qua mot truong la chuyen thuong, va luc do moi bai on deu
-     * lot qua nhu khong co luat nao. Giu rieng ra thi tin Telegram noi duoc mot cau
-     * cho Ba Huy hay.
-     */
-    val mucDo: Int = -1
+    val coLam: Boolean = true
 )
 
 /**

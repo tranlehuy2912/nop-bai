@@ -111,11 +111,20 @@ object SoCaiBai {
         return truoc.baiLam == cau.baiLam
     }
 
-    /** Cau nay truoc day da sai may lan. 0 la chua sai lan nao. */
-    fun soLanSai(context: Context, cau: CauCham, now: Long = System.currentTimeMillis()): Int {
+    /**
+     * Cau nay truoc day da sai may lan. 0 la chua sai lan nao.
+     *
+     * [truocLuc] chi dem lan sai ghi truoc moc do, vi du truoc lan nop dang cham lai.
+     */
+    fun soLanSai(
+        context: Context,
+        cau: CauCham,
+        now: Long = System.currentTimeMillis(),
+        truocLuc: Long = Long.MAX_VALUE
+    ): Int {
         val k = khoaCua(cau)
         if (k.isEmpty()) return 0
-        return KhoBai.get(context).soLanSai(k, han(now))
+        return KhoBai.get(context).soLanSai(k, han(now), truocLuc)
     }
 
     /** Cac cau dang sai, cho con sua lai. */

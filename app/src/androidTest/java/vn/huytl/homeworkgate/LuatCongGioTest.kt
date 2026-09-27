@@ -561,6 +561,43 @@ class LuatCongGioTest {
         assertEquals(3, b.phutCua.values.sum())
     }
 
+    // --- tran phut moi ngay cua cong cat bot ---
+
+    @Test
+    fun cap_du_thi_so_ghi_dung_bang_tinh() {
+        val b = LuatCongGio.tinh(
+            KetQuaCham(cac = listOf(cauNho("1", soDong = 6), cauNho("2", soDong = 6))),
+            bayGio = toiThuHai
+        )
+        assertEquals(12, b.phut)
+        assertEquals(0 to b.phutCua, LuatCongGio.chiaPhutDaCap(b, 12))
+    }
+
+    @Test
+    fun tran_ngay_cat_bot_thi_cau_truoc_lay_truoc_cau_sau_con_0() {
+        val b = LuatCongGio.tinh(
+            KetQuaCham(cac = listOf(cauNho("1", soDong = 6), cauNho("2", soDong = 6))),
+            bayGio = toiThuHai
+        )
+        // Tablet chi con 3 phut trong tran ngay: so ghi 3 phut da tra, khong phai 12.
+        assertEquals(0 to mapOf("1" to 3, "2" to 0), LuatCongGio.chiaPhutDaCap(b, 3))
+    }
+
+    @Test
+    fun tran_ngay_cat_bot_thi_goi_lay_truoc() {
+        val ket = KetQuaCham(
+            cac = listOf(cauNho("1"), cauNho("9", trongDanDo = false, soDong = 6)),
+            ngayDanDo = "2026-09-14",
+            baiDuocGiao = listOf("bài 1"),
+            lamHetDanDo = true
+        )
+        val b = LuatCongGio.tinh(ket, bayGio = toiThuHai)
+        assertEquals(45 + 6, b.phut)
+        assertEquals(45 to mapOf("9" to 6), LuatCongGio.chiaPhutDaCap(b, 51))
+        assertEquals(45 to mapOf("9" to 2), LuatCongGio.chiaPhutDaCap(b, 47))
+        assertEquals(30 to mapOf("9" to 0), LuatCongGio.chiaPhutDaCap(b, 30))
+    }
+
     // --- trac nghiem bam tren may, man Giai de ---
 
     @Test

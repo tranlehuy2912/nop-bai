@@ -98,10 +98,15 @@ object SuaCham {
         return ChuanBi(cac, bang, boQua)
     }
 
-    /** Ghi cac cau da chuan bi vao so, voi dung so phut [LuatCongGio] da tinh. */
+    /**
+     * Ghi cac cau da chuan bi vao so, voi so phut tablet cap that. [daCap] it hon
+     * [ChuanBi.phut] khi tran ngay cat bot, xem [LuatCongGio.chiaPhutDaCap].
+     */
     fun ghi(
         context: Context,
         chuanBi: ChuanBi,
-        now: Long = System.currentTimeMillis()
-    ): List<TraLoi> = SoCaiBai.ghi(context, chuanBi.cac, chuanBi.bang.phutCua, now)
+        now: Long = System.currentTimeMillis(),
+        daCap: Int = chuanBi.phut
+    ): List<TraLoi> =
+        SoCaiBai.ghi(context, chuanBi.cac, LuatCongGio.chiaPhutDaCap(chuanBi.bang, daCap).second, now)
 }

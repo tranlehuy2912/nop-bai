@@ -54,6 +54,18 @@ class SoCaiBaiTest {
     }
 
     @Test
+    fun dem_lan_sai_truoc_mot_moc_bo_lan_sai_cua_chinh_lan_nop_dang_cham_lai() {
+        val sai = cau("2.33a", "Rút gọn (2x + 5y)^2 − (2x − 5y)^2", dung = false)
+        SoCaiBai.ghi(context, listOf(sai), emptyMap(), now - ngay)
+        SoCaiBai.ghi(context, listOf(sai), emptyMap(), now)
+
+        assertEquals(2, SoCaiBai.soLanSai(context, sai, now))
+        // Claude cham lai lan nop luc [now]: lan sai may ghi luc do khong tinh.
+        assertEquals(1, SoCaiBai.soLanSai(context, sai, now, truocLuc = now))
+        assertEquals(0, SoCaiBai.soLanSai(context, sai, now, truocLuc = now - ngay))
+    }
+
+    @Test
     fun chep_lai_dung_trang_hom_qua_thi_khong_duoc_tinh_lan_hai() {
         val c = cau("2.26a", "x^2 - 6x + 9 - y^2", dung = true)
         SoCaiBai.ghi(context, listOf(c), mapOf("2.26a" to 2), now - ngay)

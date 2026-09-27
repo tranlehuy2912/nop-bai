@@ -456,6 +456,7 @@ BO_TEST = [
     ("ChamBaiLenhTest", "Lệnh CHAMBAI"),
     ("DuyetTheoMaTest", "Lệnh DUYỆT và TỪ CHỐI kèm mã bài"),
     ("SuaChamLenhTest", "Lệnh SỬA CHẤM"),
+    ("CongSangTest", "Giữ phút chấm trong giờ ngủ, cộng lúc hết giờ ngủ"),
     ("TinCoLenhTest", "Lệnh TIN CÔ và kho tin của cô"),
     ("CaiDatLenhTest", "Lệnh CÀI ĐẶT: app nghe nền, giờ riêng từng app"),
     ("BanDaySuDungTest", "Bản số dùng app đẩy sang Bảng điều khiển"),

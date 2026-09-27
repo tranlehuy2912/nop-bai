@@ -224,8 +224,6 @@ Quy tắc:
         tenNguon: String,
         tenBai: String,
         homNay: java.time.LocalDate = java.time.LocalDate.now(),
-        /** Lan nay la on lai bai cu. Them mot cau hoi ve mau muc, xem [DOAN_ON_TAP]. */
-        onTap: Boolean = false,
         /** Vo dan do da chup va soat tu truoc, thay cho tam anh. Xem [doanDanDo]. */
         danDo: vn.huytl.homeworkgate.data.VoDanDo.DanDo? = null
     ): String {
@@ -236,7 +234,6 @@ Quy tắc:
                 .replace("{NGUON}", tenNguon)
                 .replace("{BAI}", tenBai)
                 .replace("{DANH_SACH}", danhSach) +
-            (if (onTap) DOAN_ON_TAP else "") +
             doanDapAn(cac) +
             (danDo?.let { doanDanDo(it.ngay, it.cacBai) } ?: "")
     }
@@ -332,30 +329,6 @@ Nội dung trang vở dặn dò đã được chép sẵn từ đầu buổi và
 Dùng đúng nội dung này, KHÔNG suy từ ảnh: "ngay_dan_do" lấy đúng ngày trên, "bai_duoc_giao" lấy đúng danh sách trên. "trong_dan_do" của một câu là true chỉ khi câu đó thuộc một trong các bài được giao ở trên; danh sách rỗng thì mọi câu đều false. Quy tắc "không có ảnh vở dặn dò thì để true" KHÔNG áp dụng lần này.
         """.trimIndent()
     }
-
-    /**
-     * Noi them vao cuoi cau lenh khi la lan on tap.
-     *
-     * Chi hoi mot thu: bai lam viet bang muc mau gi. Do la quan sat tren anh, khong
-     * phai con so may tu nghi ra - nen no on dinh hon nhieu so voi kieu "uoc xem bai
-     * nay dang may dong".
-     *
-     * Vi sao can: on tap la duong duy nhat duoc cham lai mot cau da lam dung, tuc la
-     * no thao mat cai khoa "moi cau chi tra gio mot lan". Chup lai trang vo cu thi
-     * anh khong khac gi anh bai vua lam. Luat nha bit cho do: on thi viet but do.
-     *
-     * Dat o CUOI chu khong chen vao giua danh sach quy tac: ban thu tu da cho thay
-     * them mot quy tac o giua lam loang han phan cham diem.
-     */
-    val DOAN_ON_TAP = """
-
-Lần này học sinh ÔN LẠI bài cũ. Nhà quy định bài ôn phải viết bằng mực ĐỎ, để phân biệt với bài đã làm từ trước bằng mực thường.
-
-Thêm vào mỗi câu một trường nữa:
-"muc_do": true nếu bài làm của câu đó viết bằng mực đỏ; false nếu viết bằng mực xanh, đen, bút chì, hoặc nhìn không rõ màu.
-
-Chỉ nhìn màu của BÀI LÀM học sinh viết, không tính màu của đề in trong sách hay chữ cô giáo chữa.
-    """.trimIndent()
 
     val CAU_LENH_KHAI_BAI = """
 Bạn chấm bài về nhà giúp phụ huynh. Ảnh gồm (có thể thiếu một số): trang vở dặn dò của cô giáo, trang đề bài in trong sách, và bài làm viết tay của học sinh.
