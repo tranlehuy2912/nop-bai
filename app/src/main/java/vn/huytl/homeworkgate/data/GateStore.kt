@@ -347,6 +347,16 @@ class GateStore(context: Context) {
         return bai
     }
 
+    /**
+     * Cong gio doi bang viec hoc tren tablet (kiem tra bai, do tu vung, Giai de): dang
+     * choi thi cong vao phien, khong thi cap phieu. Ca hai deu an vao tran ngay.
+     *
+     * @return so phut con lai (dang choi) hay so phut cua phieu, null la khong cap duoc.
+     */
+    fun congGioHoc(phut: Int, nhanCho: String): Int? =
+        if (state == GateState.ACTIVE) extend(phut, useQuota = true)
+        else approve(wantedMinutes = phut, useQuota = true, nhanCho = nhanCho)
+
     /** Con bam "Huy bai vua nop": bo bai moi nhat, giu nguyen cac bai cu con cho. */
     fun huyBaiMoiNhat(): BaiCho? {
         val hangDoi = baiDangCho()

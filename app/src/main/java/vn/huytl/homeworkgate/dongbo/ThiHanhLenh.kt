@@ -13,7 +13,6 @@ import vn.huytl.homeworkgate.data.GateStore
 import vn.huytl.homeworkgate.data.GioiHanApp
 import vn.huytl.homeworkgate.data.KhaiChoCham
 import vn.huytl.homeworkgate.data.KhoTinCuaCo
-import vn.huytl.homeworkgate.data.LuotBaNoi
 import vn.huytl.homeworkgate.data.Prefs
 import vn.huytl.homeworkgate.data.SoCaiBai
 import vn.huytl.homeworkgate.data.SuaCham
@@ -25,7 +24,6 @@ import vn.huytl.homeworkgate.guard.ParentMode
 import vn.huytl.homeworkgate.guard.Permissions
 import vn.huytl.homeworkgate.telegram.ApprovalService
 import vn.huytl.homeworkgate.telegram.DanDoSender
-import vn.huytl.homeworkgate.telegram.Notifier
 import vn.huytl.homeworkgate.telegram.TelegramClient
 import java.text.SimpleDateFormat
 import java.util.Date
@@ -72,16 +70,14 @@ object ThiHanhLenh {
         }
 
         /*
-         * May ba noi chi go duoc lenh cho gio.
-         *
-         * Luat ben firestore.rules da chan tan goc roi - uid cua may ba nam trong
-         * uidsPhu chu khong phai uids, ma luat chi cho uidsPhu tao document co
-         * kieu CHO. Cho nay chan lan hai, cho truong hop luat bi dan de len bang
-         * ban cu trong console Firebase: luat thi sua bang tay o mot cho khong ai
-         * nhin thay, con dong nay thi di theo ban app.
+         * May ba noi khong con go duoc lenh nao (tu 26/9/2026, app ba chi con viec
+         * nha). Luat ben firestore.rules da dong cua lenh/ cua uidsPhu. Cho nay chan
+         * lan hai, cho truong hop luat bi dan de len bang ban cu trong console
+         * Firebase: luat thi sua bang tay o mot cho khong ai nhin thay, con dong nay
+         * thi di theo ban app.
          */
-        if (ai == Nguoi.BA_NOI && kieu != Lenh.CHO) {
-            return "Máy bà nội chỉ cho giờ được thôi."
+        if (ai == Nguoi.BA_NOI) {
+            return "Máy bà nội không gửi lệnh được nữa."
         }
 
         val gate = GateStore(context)
@@ -95,7 +91,7 @@ object ThiHanhLenh {
 
             // Gio thuong: khong tru vao han muc ngay, vi day la nguoi lon chu dong
             // cho chu khong phai con doi bang bai tap.
-            Lenh.CHO -> cho(context, gate, prefs, phut, ai)
+            Lenh.CHO -> cho(context, gate, phut)
 
             Lenh.CONG_VIEC_NHA -> congViecNha(context, gate, phut, chu)
 
@@ -250,27 +246,37 @@ object ThiHanhLenh {
         val bai = baiTrongHang(gate, baiId)
             ?: return "Bài đó không còn trong hàng chờ nữa. Muốn cho giờ thì bấm Cho chơi ngay."
 
-        val xin = phut ?: Prefs.get(context).grantMinutes
+        val xin = phut ?: return "Lệnh thiếu số phút, máy không duyệt gì cả."
+
+        // Duyet bai an vao tran ngay: cham tran thi GateStore cat bot. Tinh truoc so
+        // phut that su cong duoc, de ghi len Firestore va bao Ba Huy dung so do.
+        // Truoc day het tran ma dang choi thi van go bai, ghi DUYET du so xin va bao
+        // "cong thang 30 phut", trong khi khong cong phut nao.
+        val them = minOf(xin, gate.phutConLaiHomNay())
+        if (them <= 0) return khongCapDuoc(context)
+        val catBot = if (them < xin) " Hôm nay chỉ còn $them phút trong hạn mức nên chỉ duyệt $them phút." else ""
 
         if (gate.state == GateState.ACTIVE) {
-            val conLai = gate.extend(xin, useQuota = true)
+            val conLai = gate.extend(them, useQuota = true) ?: return khongCapDuoc(context)
             gate.boBaiCho(bai.id)
             goNutBenTelegram(context, bai.messageId)
-            DongBo.datTrangThaiBai(context, bai.id, "DUYET", xin)
-            DayLog.add(context, "Duyệt $xin phút giữa phiên")
-            return "Đang chơi nên cộng thẳng $xin phút, còn ${conLai ?: 0} phút."
+            DongBo.datTrangThaiBai(context, bai.id, "DUYET", them)
+            vn.huytl.homeworkgate.data.GiaiDe.baDuyetBai(context, bai.id)
+            DayLog.add(context, "Duyệt $them phút giữa phiên")
+            return "Đang chơi nên cộng thẳng $them phút, còn $conLai phút.$catBot"
         }
 
-        val duoc = gate.approve(wantedMinutes = xin, useQuota = true, requestId = bai.id)
+        val duoc = gate.approve(wantedMinutes = them, useQuota = true, requestId = bai.id)
             ?: return khongCapDuoc(context)
 
         goNutBenTelegram(context, bai.messageId)
-        DongBo.datTrangThaiBai(context, bai.id, "DUYET", xin)
+        DongBo.datTrangThaiBai(context, bai.id, "DUYET", them)
+        vn.huytl.homeworkgate.data.GiaiDe.baDuyetBai(context, bai.id)
         DayLog.add(context, "Duyệt $duoc phút (Bảng điều khiển)")
         ApprovalService.ensureRunning(context)
         // Con dang giu phieu cu ma nop them bai thi duyet la cong don, khong de len.
-        return if (duoc > xin) "Đã duyệt thêm $xin phút, cộng dồn thành $duoc phút."
-        else "Đã duyệt $duoc phút."
+        return (if (duoc > them) "Đã duyệt thêm $them phút, cộng dồn thành $duoc phút."
+        else "Đã duyệt $duoc phút.") + catBot
     }
 
     /**
@@ -311,39 +317,12 @@ object ThiHanhLenh {
     }
 
     /**
-     * Cho gio, tu Ba Huy hay tu ba noi.
-     *
-     * Chung mot ham vi phan viec that su lam thi y het nhau: cong vao phien dang
-     * chay, hoac cap mot phieu moi khong tru han muc ngay. Chi khac hai cho, va ca
-     * hai deu la ve ba noi: ba mot luot moi ngay, va cau ghi vao nhat ky phai noi
-     * dung ten nguoi cho - thu do Le Hoa doc tren man hinh chinh.
+     * Ba Huy cho gio: cong vao phien dang chay, hoac cap mot phieu moi khong tru han
+     * muc ngay. Lenh phai kem so phut: so phut mac dinh da bo (27/9/2026).
      */
-    private fun cho(
-        context: Context,
-        gate: GateStore,
-        prefs: Prefs,
-        phut: Int?,
-        ai: String
-    ): String {
-        val xin = phut ?: prefs.grantMinutes
-        val con = context.getString(R.string.child_name)
-        val baNoi = ai == Nguoi.BA_NOI
-        val nguoi = if (baNoi) "Bà nội" else "Ba Huy"
-
-        if (baNoi && LuotBaNoi.daChoHomNay(context)) {
-            return "Hôm nay bà cho một lần rồi, mai bà cho tiếp nhé."
-        }
-
-        /*
-         * Tinh luot cua ba NGAY LUC NAY, truoc ca khi biet cap duoc hay khong.
-         *
-         * Qua gio chot ma khong tinh luot thi ba bam lai duoc - ma bam lai cung the,
-         * van khong cap noi. Luc do ba ngoi bam mai mot cai nut khong bao gio chay.
-         */
-        if (baNoi) {
-            LuotBaNoi.ghiNhanDaCho(context)
-            Notifier.send(context, "Bà nội vừa bấm cho $con chơi $xin phút.")
-        }
+    private fun cho(context: Context, gate: GateStore, phut: Int?): String {
+        val xin = phut ?: return "Lệnh thiếu số phút, máy không cho gì cả."
+        val nguoi = "Ba Huy"
 
         if (gate.state == GateState.ACTIVE) {
             val conLai = gate.extend(xin)
@@ -508,11 +487,9 @@ object ThiHanhLenh {
         val so = (giaTri as? Number)?.toInt()
 
         val cau = when (ten) {
-            "phutMacDinh" -> {
-                val v = so?.coerceIn(5, 180) ?: return "Thiếu số phút."
-                prefs.grantMinutes = v
-                "Mỗi lần duyệt giờ là $v phút."
-            }
+            // Bang dieu khien ban cu con dong "Moi lan duyet". So phut mac dinh da bo
+            // (27/9/2026): nut duyet nao cung ghi so phut cu the.
+            "phutMacDinh" -> return "Số phút mặc định đã bỏ, nút duyệt nào cũng ghi số phút."
             "tranPhutMoiNgay" -> {
                 val v = so?.coerceIn(15, 480) ?: return "Thiếu số phút."
                 prefs.tranPhutMoiNgay = v

@@ -238,10 +238,13 @@ object NhatKySuDung {
     }
 
     /** Ten app doc duoc, hoac chinh ten goi neu app da go khoi may. */
-    fun tenApp(context: Context, goi: String): String = runCatching {
+    fun tenApp(context: Context, goi: String): String = tenDaBiet[goi] ?: runCatching {
         val pm = context.packageManager
         pm.getApplicationLabel(pm.getApplicationInfo(goi, 0)).toString()
-    }.getOrDefault(goi)
+    }.getOrNull()?.also { tenDaBiet[goi] = it } ?: goi
+
+    /** Ten app da tim duoc, nho trong tien trinh: moi lan PING can ten cua ca chuc app. */
+    private val tenDaBiet = java.util.concurrent.ConcurrentHashMap<String, String>()
 
     /**
      * Ca ngay gom trong mot doan chu, cho tin nhan Telegram.

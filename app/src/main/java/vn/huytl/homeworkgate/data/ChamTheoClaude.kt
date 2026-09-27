@@ -49,7 +49,7 @@ object ChamTheoClaude {
         // cu khong biet ban soat, ma quy tac 17 duoi day chi danh cho lan nop khong co vo.
         //
         // Ban chi co anh thi chua co danh sach nao de dung: ngay va bai lay tu Claude doc
-        // tam anh gan theo bai, y nhu lan nop chup trang vo kem. Co vo hay khong luc do
+        // tam anh gan theo bai (khau DAN_DO, xem KHAU_DAN_DO). Co vo hay khong luc do
         // theo dien thoai bao, vi chi ben do biet bai co mang anh trang vo khong.
         val soat = vo?.takeUnless { it.chuaDoc }
         val coVo = coAnhDanDo(giaTri) || soat != null

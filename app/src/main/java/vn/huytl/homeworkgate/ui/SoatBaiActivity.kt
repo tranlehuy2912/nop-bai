@@ -160,7 +160,7 @@ class SoatBaiActivity : AppCompatActivity() {
             val anh = nhom.values.flatten()
             val giai = nhom[CaptureStage.BAI_GIAI].orEmpty()
             // Vo dan do chi co anh (may doc hong luc dau buoi): dua tam do cho may doc
-            // cung luc cham, y nhu lan nop chup trang vo kem. File nay cua VoDanDo, may
+            // cung luc cham, de may cham biet bai nao co giao. File nay cua VoDanDo, may
             // cham chi doc ban thu nho cua no nen khong xoa mat.
             val voChuaDoc = VoDanDo.conHieuLuc(this@SoatBaiActivity)?.takeIf { it.chuaDoc }
                 ?.anh?.let { File(it) }?.takeIf { it.exists() }
@@ -359,6 +359,15 @@ class SoatBaiActivity : AppCompatActivity() {
     }
 
     private fun guiDi(k: KetQuaCham?) {
+        // Chan lan hai o luc gui: trong luc con soat bai, hang cho co the vua du bai
+        // (xem CaptureActivity.onCreate). Gui luc nay la day bai cu nhat ra khoi hang.
+        if (!vn.huytl.homeworkgate.data.GateStore(this).conChoNopThem()) {
+            Toast.makeText(
+                this, "Đã gửi đủ bài, chờ ba Huy duyệt bớt rồi bấm Gửi lại", Toast.LENGTH_LONG
+            ).show()
+            binding.nutGui.isEnabled = true
+            return
+        }
         daGui = true
         ApprovalService.ensureRunning(this)
         ApprovalService.guiDaSoat(this, nhom, pham, k)

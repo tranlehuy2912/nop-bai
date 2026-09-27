@@ -46,6 +46,7 @@ class GiaiDeTest {
     private val cacPhan = listOf("toan8ct", "khtn8hoa", "khtn8li", "khtn8sinh")
     private val mocCu = mutableMapOf<String, String?>()
     private var voCu: VoDanDo.DanDo? = null
+    private var anhCu: java.io.File? = null
     private val deDaTao = mutableListOf<String>()
     private val cauDaGhi = mutableListOf<String>()
 
@@ -62,6 +63,11 @@ class GiaiDeTest {
         kho = KhoBai.get(context)
         cacPhan.forEach { mocCu[it] = HocToi.baiCua(context, it) }
         voCu = VoDanDo.doc(context)
+        // VoDanDo.xoa xoa ca tam anh vo: chep ra truoc de tra lai, khong thi test xong vo
+        // tren may mat anh (doc lai, gui ba deu hong).
+        anhCu = voCu?.anh?.let { java.io.File(it) }?.takeIf { it.exists() }?.let { f ->
+            java.io.File(context.cacheDir, "giai_de_test_vo.jpg").also { f.copyTo(it, overwrite = true) }
+        }
         // Ban vo that tren may co the dang bao sap kiem tra: bo di cho de tuan khong lan.
         VoDanDo.xoa(context)
     }
@@ -76,6 +82,10 @@ class GiaiDeTest {
         }
         val cu = voCu
         if (cu != null) VoDanDo.luu(context, cu) else VoDanDo.xoa(context)
+        anhCu?.let { tam ->
+            cu?.anh?.let { tam.copyTo(java.io.File(it), overwrite = true) }
+            tam.delete()
+        }
     }
 
     private fun datMoc(ma: String, soBai: Int?) {
@@ -336,7 +346,7 @@ class GiaiDeTest {
         val tomTat = GiaiDe.nhanTuLuan(context, de.id, daCham)
         val sau = GiaiDe.theoId(context, de.id)!!
         assertEquals(1, sau.tlDung)
-        assertEquals(mapOf(tl[0].id to true, tl[1].id to false), GiaiDe.ketQuaTuLuan(context, sau))
+        assertEquals(mapOf(tl[0].id to true, tl[1].id to false), sau.ketTuLuan)
         assertTrue(GiaiDe.daCoDiem(context, sau))
         assertEquals(tn.size + 1 to cac.size, GiaiDe.diem(context, sau))
         assertTrue(tomTat.orEmpty(), tomTat.orEmpty().contains("đúng ${tn.size + 1}/${cac.size} câu"))
@@ -391,5 +401,43 @@ class GiaiDeTest {
         assertTrue(doc("Toán: làm xong bài thì chụp gửi cô").isEmpty())
         // So cau bai tap SGK "2.26" khong phai so bai.
         assertEquals(emptyList<Int>(), doc("Toán: kiểm tra bài 2.26 đầu giờ").single().cacBai)
+    }
+
+    @Test
+    fun doc_so_bai_hai_chu_so_va_ngay_tuan_sau() {
+        // So cau bai tap hai chu so ("10.5", "25.1") khong phai so bai.
+        assertEquals(emptyList<Int>(), doc("Toán: tiết sau kiểm tra, ôn bài 10.5 và 10.6").single().cacBai)
+        assertEquals(emptyList<Int>(), doc("KHTN: tiết sau kiểm tra, ôn bài 25.1 đến 25.4").single().cacBai)
+        // "thứ 5 tuần sau" la thu Nam cua tuan sau, khong phai thu Nam tuan nay.
+        assertEquals(LocalDate.of(2026, 10, 8), doc("Toán: thứ 5 tuần sau kiểm tra 1 tiết").single().ngay)
+        // Ten co giao khong phai "mai".
+        assertEquals(thuHai.plusDays(7), doc("Toán: cô Mai dặn tuần sau kiểm tra chương II").single().ngay)
+        // Ngay viet bang chu.
+        assertEquals(
+            LocalDate.of(2026, 10, 5),
+            doc("Ngày 5 tháng 10 lớp kiểm tra 1 tiết Toán chương II.").single().ngay
+        )
+        // Ngay cua tin khong phai ngay kiem tra.
+        assertEquals(
+            LocalDate.of(2026, 9, 30),
+            doc("Thông báo ngày 28/9: thứ 4 kiểm tra 15 phút môn Toán.").single().ngay
+        )
+        // Moi mon mot ngay.
+        val hai = doc("Kiểm tra: Toán ngày 5/11, KHTN ngày 7/11").associateBy { it.mon }
+        assertEquals(LocalDate.of(2026, 11, 5), hai.getValue(LichKiemTra.TOAN).ngay)
+        assertEquals(LocalDate.of(2026, 11, 7), hai.getValue(LichKiemTra.KHTN).ngay)
+    }
+
+    @Test
+    fun tach_phuong_an_khi_trong_phuong_an_co_chu_cai() {
+        // Cau 18.2 SBT KHTN: phuong an B la "Vị trí C.".
+        assertEquals(
+            "Hỏi?\n\nA. Vị trí O.\nB. Vị trí C.\nC. Vị trí A.\nD. Vị trí B.",
+            vn.huytl.homeworkgate.ui.GiaiDeActivity.tachPhuongAn("Hỏi? A. Vị trí O. B. Vị trí C. C. Vị trí A. D. Vị trí B.")
+        )
+        assertEquals(
+            "Khối lượng là\n\nA. 10 g.\nB. 3 g.\nC. 0,9 g.\nD. 0,1 g.",
+            vn.huytl.homeworkgate.ui.GiaiDeActivity.tachPhuongAn("Khối lượng là A. 10 g. B. 3 g. C. 0,9 g. D. 0,1 g.")
+        )
     }
 }

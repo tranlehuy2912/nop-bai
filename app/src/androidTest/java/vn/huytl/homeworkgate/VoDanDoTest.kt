@@ -202,14 +202,19 @@ class VoDanDoTest {
     @Test
     fun lanChamDauDocDuocVoThiGiuLaiDanhSach() {
         val cu = chiCoAnh(chup = 5_000L)
-        val moi = VoDanDo.tuLanCham(cu, 5_000L, "Thứ ba, ngày 23 tháng 9 năm 2026", listOf("Bài 2.28"))!!
+        // Xet han vo theo luc cham: 10 gio sang 23/9, vo ngay 23/9 con han.
+        val luc23 = java.time.LocalDateTime.of(2026, 9, 23, 10, 0)
+            .atZone(java.time.ZoneId.systemDefault()).toInstant().toEpochMilli()
+        val moi = VoDanDo.tuLanCham(cu, 5_000L, "Thứ ba, ngày 23 tháng 9 năm 2026", listOf("Bài 2.28"), luc23)!!
         assertFalse(moi.chuaDoc)
         assertEquals(VoDanDo.NGUON_LUC_CHAM, moi.nguon)
         assertEquals("2026-09-23", moi.ngay)
         assertEquals(listOf("Bài 2.28"), moi.cacBai)
         assertEquals(5_000L, moi.chupLuc)
         // Doc ra la hom do khong giao bai: van giu, va la "khong co bai tap" that.
-        assertTrue(VoDanDo.tuLanCham(cu, 5_000L, "2026-09-23", emptyList())!!.cacBai.isEmpty())
+        assertTrue(VoDanDo.tuLanCham(cu, 5_000L, "2026-09-23", emptyList(), luc23)!!.cacBai.isEmpty())
+        // Lan cham doc ra mot khoi ngay cu tren trang vo: khong giu, van giu ban chi co anh.
+        assertNull(VoDanDo.tuLanCham(cu, 5_000L, "2026-09-20", listOf("Bài 2.28"), luc23))
 
         // Khong doc ra ngay, tam anh khac, hay ban da co chu: khong giu.
         assertNull(VoDanDo.tuLanCham(cu, 5_000L, null, listOf("Bài 2.28")))

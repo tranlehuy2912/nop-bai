@@ -603,6 +603,16 @@ class KhoBai private constructor(context: Context) :
             null, null, "tao_luc DESC"
         ).use { c -> buildList { while (c.moveToNext()) add(c.docDe()) } }
 
+    /**
+     * De con han hay vua het han sau [tuHetHan], bat ke tao luc nao. De on truoc kiem tra
+     * co the tao truoc ca thang, nen loc theo ngay tao thi de con mo ma bien khoi man chinh.
+     */
+    fun cacDeConHan(tuHetHan: Long): List<DeGiai> =
+        readableDatabase.query(
+            "de_giai", null, "het_han > ?", arrayOf(tuHetHan.toString()),
+            null, null, "tao_luc DESC"
+        ).use { c -> buildList { while (c.moveToNext()) add(c.docDe()) } }
+
     private fun DeGiai.giaTri() = ContentValues().apply {
         put("id", id)
         put("khoa", khoa)
@@ -671,8 +681,11 @@ class KhoBai private constructor(context: Context) :
      * Cau dang nam trong mot de con han. Lam them va luyen bo cac cau nay ra, de con
      * khong gap truoc cau cua de. De het han hay da bi de tuan sau thay thi tra cau lai.
      *
-     * De con dang lam do (bat dau roi, chua nop) thi giu cau them [nopMuonMs] sau han,
-     * dung bang khoang ma [vn.huytl.homeworkgate.data.GiaiDe.dangMo] con cho nop.
+     * De da bat dau ma phan tu luan chua co diem (chua nop, da nop trac nghiem ma chua gui
+     * hay chua cham tu luan) thi giu cau them [nopMuonMs] sau han. Rong hon mot chut so
+     * voi [vn.huytl.homeworkgate.data.GiaiDe.dangMo], de khong bao gio co cau cua mot de
+     * con mo lot vao de tuan moi. Truoc day chi giu khi chua nop, nen tu luan dang cho
+     * chup cua de cu co the bi lay lai lam de tuan moi.
      */
     fun cauTrongDeConHan(
         bayGio: Long = System.currentTimeMillis(),
@@ -680,7 +693,7 @@ class KhoBai private constructor(context: Context) :
     ): Set<String> =
         readableDatabase.rawQuery(
             "SELECT cau_ids FROM de_giai WHERE het_han > ? " +
-                "OR (bat_dau > 0 AND nop_luc = 0 AND het_han > ?)",
+                "OR (bat_dau > 0 AND tl_dung < 0 AND het_han > ?)",
             arrayOf(bayGio.toString(), (bayGio - nopMuonMs).toString())
         ).use { c ->
             buildSet {

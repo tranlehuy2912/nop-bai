@@ -23,7 +23,6 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import vn.huytl.homeworkgate.R
 import vn.huytl.homeworkgate.data.DayLog
-import vn.huytl.homeworkgate.data.GateState
 import vn.huytl.homeworkgate.data.GateStore
 import vn.huytl.homeworkgate.data.GiaiDe
 import vn.huytl.homeworkgate.databinding.StActivityGiaiDeBinding
@@ -93,7 +92,7 @@ class GiaiDeActivity : AppCompatActivity() {
         lifecycleScope.launch {
             val nap = withContext(Dispatchers.IO) {
                 val d = GiaiDe.theoId(this@GiaiDeActivity, id) ?: return@withContext null
-                Triple(d, GiaiDe.cacCau(this@GiaiDeActivity, d), GiaiDe.ketQuaTuLuan(this@GiaiDeActivity, d))
+                Triple(d, GiaiDe.cacCau(this@GiaiDeActivity, d), d.ketTuLuan)
             }
             if (nap == null) return@launch finish()
             de = nap.first
@@ -101,13 +100,20 @@ class GiaiDeActivity : AppCompatActivity() {
             ketTuLuan = nap.third
             ve()
             tay.removeCallbacks(nhip)
-            tay.post(nhip)
+            // Doc xong co the ve sau onPause (con vua bam ra ngoai): luc do dung chay dong
+            // ho, khong thi nhip mot giay tu dat lai mai va giu man da dong trong bo nho.
+            if (lifecycle.currentState.isAtLeast(androidx.lifecycle.Lifecycle.State.RESUMED)) tay.post(nhip)
         }
     }
 
     override fun onPause() {
         tay.removeCallbacks(nhip)
         super.onPause()
+    }
+
+    override fun onDestroy() {
+        tay.removeCallbacks(nhip)
+        super.onDestroy()
     }
 
     // ------------------------------------------------------------------- ve
@@ -177,17 +183,6 @@ class GiaiDeActivity : AppCompatActivity() {
             v.ket.setTextColor(mau(mauKet))
         }
         b.danhSach.addView(v.root)
-    }
-
-    /**
-     * De trac nghiem viet lien mot dong ("... là A. 10 g. B. 3 g. C. 0,9 g. D. 0,1 g."):
-     * dua moi phuong an xuong mot dong cho con doc. Lay lan xuat hien CUOI cua "A. ", de
-     * ten diem trong de ("tam giác A. ...") khong cat nham. Khong tach duoc thi giu nguyen.
-     */
-    private fun tachPhuongAn(de: String): String {
-        val m = PHUONG_AN.find(de) ?: return de
-        val (hoi, a, b, c, d) = m.destructured
-        return "$hoi\n\nA. $a\nB. $b\nC. $c\nD. $d"
     }
 
     /** Dong ket qua duoi mot cau sau khi nop. Khong noi dap an dung. */
@@ -276,11 +271,16 @@ class GiaiDeActivity : AppCompatActivity() {
             }
             if (dongPhut.isNotEmpty()) khung.addView(chu(dongPhut, 15f).apply { dem(top = 6) })
         }
-        if (tl.isNotEmpty() && !d.daGuiTuLuan) {
+        if (tl.isNotEmpty() && !GiaiDe.daGuiThat(this, d)) {
             khung.addView(
                 chu("Còn phần tự luận: $ten chụp các câu đã làm trong vở.", 16f).apply { dem(top = 10) }
             )
             khung.addView(nut("Chụp phần tự luận") { chupTuLuan() }.apply { dem(top = 14) })
+        } else if (tl.isNotEmpty() && GiaiDe.baDuyetKhongCham(this, d)) {
+            khung.addView(
+                chu("Ba Huy đã duyệt phần tự luận, không chấm điểm. Điểm trên chỉ tính trắc nghiệm.",
+                    15f, mauChu = R.color.ink_soft).apply { dem(top = 10) }
+            )
         } else if (tl.isNotEmpty() && d.tlDung < 0) {
             khung.addView(
                 chu("Đã gửi phần tự luận. Chấm xong máy báo điểm ở đây.", 15f, mauChu = R.color.ink_soft)
@@ -379,18 +379,11 @@ class GiaiDeActivity : AppCompatActivity() {
         if (coTuLuan) chupTuLuan()
     }
 
-    private fun capGio(phut: Int): Boolean {
-        val gate = GateStore(this)
-        return if (gate.state == GateState.ACTIVE) {
-            gate.extend(phut, useQuota = true) != null
-        } else {
-            gate.approve(wantedMinutes = phut, useQuota = true, nhanCho = "Giải đề") != null
-        }
-    }
+    private fun capGio(phut: Int): Boolean = GateStore(this).congGioHoc(phut, nhanCho = "Giải đề") != null
 
     /**
      * Mo camera cho phan tu luan, di duong cham nhu bai lam them. Pham vi mang ma de de
-     * luc cham xong ghi diem vao de, va de man chup bo buoc vo dan do.
+     * luc cham xong ghi diem vao de.
      */
     private fun chupTuLuan() {
         val d = de ?: return
@@ -461,9 +454,22 @@ class GiaiDeActivity : AppCompatActivity() {
         private val CHU = listOf("A", "B", "C", "D")
 
         private val PHUONG_AN = Regex(
-            """^(.*)\s+A\.\s+(.*?)\s+B\.\s+(.*?)\s+C\.\s+(.*?)\s+D\.\s+(.*)$""",
+            """^(.*)\s+A\.\s+(.*)\s+B\.\s+(.*)\s+C\.\s+(.*)\s+D\.\s+(.*)$""",
             RegexOption.DOT_MATCHES_ALL
         )
+
+        /**
+         * De trac nghiem viet lien mot dong ("... là A. 10 g. B. 3 g. C. 0,9 g. D. 0,1 g."):
+         * dua moi phuong an xuong mot dong cho con doc. Moi moc "A. ", "B. ", "C. ", "D. " deu lay
+         * lan xuat hien CUOI (ca bon nhom deu tham), de ten diem trong de ("tam giác A. ...") hay
+         * trong mot phuong an (18.2 KHTN: "B. Vị trí C.") khong cat nham. Da so tren 282 cau
+         * trac nghiem cua ba quyen SBT ngay 27/9/2026: chi 18.2 doi. Khong tach duoc thi giu nguyen.
+         */
+        internal fun tachPhuongAn(de: String): String {
+            val m = PHUONG_AN.find(de) ?: return de
+            val (hoi, a, b, c, d) = m.destructured
+            return "$hoi\n\nA. $a\nB. $b\nC. $c\nD. $d"
+        }
 
         fun mo(context: Context, deId: String) {
             context.startActivity(Intent(context, GiaiDeActivity::class.java).putExtra(EXTRA_DE, deId))

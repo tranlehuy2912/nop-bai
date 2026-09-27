@@ -89,8 +89,8 @@ object HomeworkSender {
         val messageId = client.sendMessage(
             chatId = prefs.parentChatId,
             text = "${context.getString(R.string.child_name)} nộp bài: $summary.\n" +
-                dongGio(context, prefs.grantMinutes),
-            replyMarkup = TelegramClient.approvalKeyboard(requestId, prefs.grantMinutes)
+                dongGio(context),
+            replyMarkup = TelegramClient.approvalKeyboard(requestId)
         )
         return Sent(requestId, messageId, maAnh)
     }
@@ -99,15 +99,15 @@ object HomeworkSender {
      * Dong noi ve gio o cuoi tin nop bai.
      *
      * Con dang giu mot phieu chua dung ma nop them bai thi duyet la cong don. Ghi ro
-     * so cu va so moi, de Ba Huy biet minh dang duyet cai gi truoc khi bam.
+     * so dang giu, de Ba Huy biet minh dang duyet cai gi truoc khi bam.
      */
-    private fun dongGio(context: Context, them: Int): String {
+    private fun dongGio(context: Context): String {
         val gate = GateStore(context)
         val giu = gate.grantedMinutes
         val dong = if (giu > 0) {
-            "Đang giữ $giu phút, duyệt là cộng thành ${giu + them} phút."
+            "Đang giữ $giu phút, duyệt bao nhiêu phút thì cộng dồn vào đó."
         } else {
-            "Duyệt là được chơi $them phút."
+            "Duyệt thì bấm số phút."
         }
         // Ham nay chay truoc khi bai moi duoc xep vao hang, nen cong mot cho chinh no.
         // Ba can biet minh dang nhin bai thu may, vi moi bai mot nut duyet rieng va

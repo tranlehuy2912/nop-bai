@@ -252,19 +252,6 @@
                         <com.google.android.material.textfield.TextInputLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="Số phút mỗi lần duyệt tay">
-
-                            <com.google.android.material.textfield.TextInputEditText
-                                android:id="@+id/edt_minutes"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:inputType="number" />
-                        </com.google.android.material.textfield.TextInputLayout>
-
-                        <com.google.android.material.textfield.TextInputLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
                             android:hint="Số phút chơi tối đa mỗi ngày (làm bài)">
 
                             <com.google.android.material.textfield.TextInputEditText

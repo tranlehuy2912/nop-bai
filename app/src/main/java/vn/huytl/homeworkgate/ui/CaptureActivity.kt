@@ -139,6 +139,17 @@ class CaptureActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        // Hang cho du bai thi khong mo camera cho mot bai moi. Nop them luc nay thi
+        // GateStore.markPending chi giu MAX_BAI_CHO bai moi nhat, bai cu nhat roi khoi
+        // hang ma khong ai hay, va phut cua no mat luon. Truoc day chi man chinh chan,
+        // con phan tu luan cua Giai de, sua cau sai, on lai thi lot qua.
+        if (!chupDanDo && !suaBai && !soanTap && !vn.huytl.homeworkgate.data.GateStore(this).conChoNopThem()) {
+            Toast.makeText(
+                this, "Đã gửi đủ bài, chờ ba Huy duyệt bớt rồi hẵng nộp tiếp", Toast.LENGTH_LONG
+            ).show()
+            finish()
+            return
+        }
         binding = ActivityCaptureBinding.inflate(layoutInflater)
         setContentView(binding.root)
 

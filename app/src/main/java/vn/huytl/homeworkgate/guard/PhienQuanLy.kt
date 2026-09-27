@@ -17,6 +17,36 @@ object PhienQuanLy {
     @Volatile
     var daQuaPin = false
 
+    /**
+     * Dang hoi lai PIN tren mot trang sau PIN, xem [vn.huytl.homeworkgate.ui.HoiLaiPin].
+     *
+     * Giu qua luc Android dung lai trang (doi che do toi, co chu, ban phim): trang moi
+     * phai hoi tiep. Truoc day trang moi thay vua vang mat vai mili giay, lai dang bat
+     * che do Ba Huy, nen mo thang ma khong can PIN.
+     */
+    @Volatile
+    var dangHoiPin = false
+
+    /**
+     * Kiem mot lan go PIN. Dung chung cho o PIN o man chinh va hop hoi lai tren trang sau
+     * PIN, de hai cho dem go sai cung mot kieu: sai thi dem, cu ba lan bao Ba Huy mot lan;
+     * dung thi xoa dem va ghi da qua PIN.
+     */
+    fun thuPin(context: android.content.Context, pin: String): Boolean {
+        val prefs = vn.huytl.homeworkgate.data.Prefs.get(context)
+        if (!prefs.checkPin(pin)) {
+            val soLan = prefs.saiPinLienTiep + 1
+            prefs.saiPinLienTiep = soLan
+            if (soLan % 3 == 0) vn.huytl.homeworkgate.telegram.Notifier.wrongPinAttempts(context, soLan)
+            return false
+        }
+        prefs.saiPinLienTiep = 0
+        daQuaPin = true
+        dangHoiPin = false
+        vn.huytl.homeworkgate.telegram.Notifier.parentModeEntered(context)
+        return true
+    }
+
     /** Den moc nay (elapsedRealtime) thi thoi mo duong vao Cai dat. */
     @Volatile
     private var moCaiDatDen = 0L

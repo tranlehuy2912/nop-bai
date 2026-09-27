@@ -58,7 +58,9 @@ object ImageUtil {
         val rotated = applyExifRotation(decoded, source)
         val scaled = scaleDown(rotated, canhToiDa)
 
-        val out = File(source.parentFile, "send_${source.nameWithoutExtension}.jpg")
+        // Ten rieng cho moi lan: gui ba, doc lai va may cham co the cung thu nho mot tam
+        // anh mot luc, dung chung mot ten thi lan nay ghi de hay xoa mat file cua lan kia.
+        val out = File(source.parentFile, "send_${source.nameWithoutExtension}_${System.nanoTime()}.jpg")
         FileOutputStream(out).use { stream ->
             scaled.compress(Bitmap.CompressFormat.JPEG, JPEG_QUALITY, stream)
         }

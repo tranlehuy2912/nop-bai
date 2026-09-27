@@ -394,30 +394,27 @@ class TelegramClient(private val token: String) {
             return JSONObject().put("inline_keyboard", rows)
         }
 
-        fun approvalKeyboard(requestId: String, minutes: Int): JSONObject {
+        /**
+         * Nut duyet duoi tin nop bai: nut nao cung ghi so phut.
+         *
+         * Khong con nut "Duyet N phut" theo so mac dinh (Ba Huy bo ngay 27/9/2026): bai
+         * nao cung duoc may hay Claude tinh gio, nen duyet tay thi ba chon dung so phut
+         * minh muon. Tin cu con nut mac dinh thi bam vao se duoc nhac chon so.
+         */
+        fun approvalKeyboard(requestId: String): JSONObject {
             val rows = JSONArray()
-
-            rows.put(JSONArray().put(JSONObject().apply {
-                put("text", "Duyệt $minutes phút")
-                put("callback_data", "a:$requestId")
-            }))
-
-            // Bo di lua chon trung voi so mac dinh, khong de hai nut giong nhau.
-            val khac = listOf(15, 30, 45, 60, 90).filter { it != minutes }.take(4)
             rows.put(JSONArray().apply {
-                khac.forEach { phut ->
+                listOf(15, 30, 45, 60, 90).forEach { phut ->
                     put(JSONObject().apply {
                         put("text", "$phut'")
                         put("callback_data", "a:$requestId:$phut")
                     })
                 }
             })
-
             rows.put(JSONArray().put(JSONObject().apply {
                 put("text", "Không duyệt")
                 put("callback_data", "r:$requestId")
             }))
-
             return JSONObject().put("inline_keyboard", rows)
         }
     }

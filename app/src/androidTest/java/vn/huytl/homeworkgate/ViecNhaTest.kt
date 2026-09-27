@@ -194,4 +194,20 @@ class ViecNhaTest {
         assertEquals(ViecNha.Doi.XONG_HET, ViecNha.apDung(context, p))
         assertFalse(ViecNha.dangKhoa(context))
     }
+
+    @Test
+    fun dot_khac_da_bo_het_thi_bo_luon_dot_cu_dang_giu() {
+        ViecNha.apDung(context, ViecNha.tuBan("ab12", listOf(viec("Quét nhà", 10, false)), 1_000L)!!)
+        // Tablet ngu qua dem: tren Firestore da la dot cd34, ma dot do cung da bo het.
+        // Dot ab12 trong may khong con ai giu, giu lai la khoa con voi viec da bo.
+        assertEquals(ViecNha.Doi.BO_HET, ViecNha.apDung(context, ViecNha.tuBan("cd34", emptyList(), 2_000L)!!))
+        assertFalse(ViecNha.dangKhoa(context))
+    }
+
+    @Test
+    fun ban_cu_hon_dot_dang_giu_thi_khong_bo_dot_do() {
+        ViecNha.apDung(context, ViecNha.tuBan("ab12", listOf(viec("Quét nhà", 10, false)), 2_000L)!!)
+        assertEquals(ViecNha.Doi.KHONG_DOI, ViecNha.apDung(context, ViecNha.tuBan("cd34", emptyList(), 1_000L)!!))
+        assertTrue(ViecNha.dangKhoa(context))
+    }
 }

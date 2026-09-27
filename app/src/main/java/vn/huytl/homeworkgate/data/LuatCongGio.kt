@@ -476,14 +476,18 @@ object LuatCongGio {
      * roi. Chia deu, phan du rai cho may cau dau, de cong lai van dung so phut da
      * tra that chu khong phinh len.
      */
-    private fun chiaDeu(cac: List<CauCham>, phut: Int): Map<String, Int> {
-        if (cac.isEmpty()) return emptyMap()
-        val moi = phut / cac.size
-        var du = phut % cac.size
-        return cac.associate { c ->
+    private fun chiaDeu(cac: List<CauCham>, phut: Int): Map<String, Int> =
+        chiaDeuTheoMa(cac.map { it.ma }, phut)
+
+    /** Chia deu [phut] cho [cacMa], phan du cho may ma dau. Dung chung voi Giai de. */
+    internal fun chiaDeuTheoMa(cacMa: List<String>, phut: Int): Map<String, Int> {
+        if (cacMa.isEmpty()) return emptyMap()
+        val moi = phut / cacMa.size
+        var du = phut % cacMa.size
+        return cacMa.associateWith {
             val them = moi + if (du > 0) 1 else 0
             if (du > 0) du--
-            c.ma to them
+            them
         }
     }
 

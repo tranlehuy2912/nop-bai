@@ -52,6 +52,7 @@ import vn.huytl.homeworkgate.ai.ChamBaiIO
 import vn.huytl.homeworkgate.data.CaptureStage
 import vn.huytl.homeworkgate.data.KetQuaCham
 import vn.huytl.homeworkgate.kho.KhoBai
+import vn.huytl.homeworkgate.kho.NganHang
 import vn.huytl.homeworkgate.kho.PhamVi
 import vn.huytl.homeworkgate.guard.DaiNhac
 import vn.huytl.homeworkgate.guard.ManChan
@@ -220,9 +221,7 @@ class ApprovalService : Service() {
         // Vua co viec nha moi: che man hinh ngay, khong doi het nhip mot phut cua vong
         // xet. Man hinh dang tat thi thoi, bat man hinh len la tu xet lai; chay vong luc
         // man tat thi nhip mot giay cua man chan an pin ca buoi.
-        if (intent?.action == ACTION_XET_LAI &&
-            getSystemService(android.os.PowerManager::class.java)?.isInteractive == true
-        ) {
+        if (intent?.action == ACTION_XET_LAI && manHinhSang()) {
             xetLaiNgay()
         }
 
@@ -233,7 +232,9 @@ class ApprovalService : Service() {
             }.filterValues { it.isNotEmpty() }
             val pham = PhamVi.tuJson(intent.getStringExtra(EXTRA_PHAM))
             val ket = ChamBaiIO.doc(intent.getStringExtra(EXTRA_BAN_CHAM))
-            scope?.launch { guiRoiCap(nhom, pham, ket) }
+            val lucNop = intent.getLongExtra(EXTRA_LUC_NOP, 0L).takeIf { it > 0L }
+                ?: System.currentTimeMillis()
+            scope?.launch { guiRoiCap(nhom, pham, ket, lucNop) }
         }
 
         // Ba Huy dan ket qua Claude cham tu Bang dieu khien. Chay dung doan xu ly cua
@@ -244,7 +245,9 @@ class ApprovalService : Service() {
             val ket = ChamBaiIO.doc(intent.getStringExtra(EXTRA_BAN_CHAM))
             val coVo = intent.getBooleanExtra(EXTRA_CO_DAN_DO, false)
             if (baiId.isNotEmpty() && ket != null) {
-                scope?.launch { xuLyBanCham(ket, pham, coVo, baiId = baiId, nguoiCham = "Claude") }
+                scope?.launch {
+                    synchronized(khoaCham) { xuLyBanCham(ket, pham, coVo, baiId = baiId, nguoiCham = "Claude") }
+                }
             }
         }
 
@@ -349,7 +352,8 @@ class ApprovalService : Service() {
         val goi = GuardAccessibilityService.goiVuaMo
         val vuaBamNut = SystemClock.elapsedRealtime() - TelegramThat.lucMoTuNut < CHO_APP_KE_MS
         dangNhuongMoiLuc = goi in moiLuc || vuaBamNut ||
-            (dangNhuongMoiLuc && (!manHinhSang() || goi in GuardAccessibilityService.ALWAYS_ALLOWED))
+            (dangNhuongMoiLuc && (!manHinhSang() || goi in GuardAccessibilityService.ALWAYS_ALLOWED ||
+                goi in HOP_THOAI_CUA_APP))
         return dangNhuongMoiLuc
     }
 
@@ -648,10 +652,15 @@ class ApprovalService : Service() {
 
         when {
             data.startsWith("a:") -> {
-                // "a:<ma>" la so phut mac dinh, "a:<ma>:<phut>" la ba chon so khac.
+                // "a:<ma>:<phut>". Tin cu con nut "a:<ma>" theo so mac dinh; so mac
+                // dinh da bo, nen nut do chi nhac ba chon mot nut co so phut.
                 val phan = data.removePrefix("a:").split(":")
                 val requestId = phan[0]
                 val soPhut = phan.getOrNull(1)?.toIntOrNull()
+                if (soPhut == null) {
+                    client.answerCallbackQuery(callbackId, "Bấm một nút có ghi số phút.")
+                    return
+                }
                 if (gate.baiDangCho().none { it.id == requestId }) {
                     client.answerCallbackQuery(callbackId, "Yêu cầu này cũ rồi.")
                     if (messageId != 0L) client.clearReplyMarkup(chatId, messageId)
@@ -662,7 +671,7 @@ class ApprovalService : Service() {
                 // "khong cap duoc" thi ba tuong hong.
                 val dangChoi = gate.state == GateState.ACTIVE
                 val minutes = if (dangChoi) {
-                    gate.extend(soPhut ?: prefs.grantMinutes)?.also { gate.boBaiCho(requestId) }
+                    gate.extend(soPhut)?.also { gate.boBaiCho(requestId) }
                 } else {
                     gate.approve(wantedMinutes = soPhut, requestId = requestId)
                 }
@@ -674,7 +683,7 @@ class ApprovalService : Service() {
                             "hoặc hôm nay Lê Hòa đã dùng hết hạn mức."
                     )
                 } else if (dangChoi) {
-                    val them = soPhut ?: prefs.grantMinutes
+                    val them = soPhut
                     DayLog.add(this, "Duyệt $them phút, cộng vào phiên đang chạy")
                     client.answerCallbackQuery(callbackId, "Đã cộng $them phút.")
                     client.editCaption(chatId, messageId, "Đã duyệt, cộng $them phút.")
@@ -696,9 +705,8 @@ class ApprovalService : Service() {
                 if (minutes != null) {
                     // Danh dau ben Bang dieu khien nua, khong thi bai da duyet o
                     // Telegram van nam trong danh sach "dang cho" ben dien thoai.
-                    DongBo.datTrangThaiBai(
-                        this, requestId, "DUYET", soPhut ?: prefs.grantMinutes
-                    )
+                    DongBo.datTrangThaiBai(this, requestId, "DUYET", soPhut)
+                    GiaiDe.baDuyetBai(this, requestId)
                 }
                 if (messageId != 0L) client.clearReplyMarkup(chatId, messageId)
                 withContext(Dispatchers.Main) { refreshNotification() }
@@ -708,6 +716,13 @@ class ApprovalService : Service() {
                 // Bo dung bai cua nut vua bam. Cac bai khac dang cho van nam nguyen:
                 // bai nay sai khong co nghia la bai kia cung sai.
                 val boBai = data.removePrefix("r:").substringBefore(':')
+                if (gate.baiDangCho().none { it.id == boBai }) {
+                    // Nut con sot lai duoi mot bai da duyet (go nut hong): ghi TUCHOI
+                    // luc nay la de len DUYET ma con van giu gio. Xem DongBo.kt.
+                    client.answerCallbackQuery(callbackId, "Yêu cầu này cũ rồi.")
+                    if (messageId != 0L) client.clearReplyMarkup(chatId, messageId)
+                    return
+                }
                 gate.boBaiCho(boBai)
                 DongBo.datTrangThaiBai(this, boBai, "TUCHOI")
                 DayLog.add(this, "Ba Huy bấm không duyệt")
@@ -1306,7 +1321,9 @@ class ApprovalService : Service() {
     private fun guiRoiCap(
         nhom: Map<CaptureStage, List<java.io.File>>,
         pham: PhamVi?,
-        ket: KetQuaCham?
+        ket: KetQuaCham?,
+        /** Luc con bam Gui. Xet han vo va goi 45 phut theo luc nay, khong theo luc gui xong. */
+        lucNop: Long = System.currentTimeMillis()
     ) {
         val anh = nhom.values.flatten()
         val sent = runCatching { HomeworkSender.send(this, nhom) }.getOrElse { e ->
@@ -1318,7 +1335,10 @@ class ApprovalService : Service() {
 
         gate.markPending(sent.requestId, sent.messageId)
         // Phan tu luan cua de Giai de da gui: man chinh thoi nhac chup, cho diem ve.
-        pham?.giaiDe?.takeIf { it.isNotBlank() }?.let { GiaiDe.daGuiTuLuan(this, it) }
+        pham?.giaiDe?.takeIf { it.isNotBlank() }?.let {
+            GiaiDe.daGuiTuLuan(this, it)
+            GiaiDe.ghiBaiTuLuan(this, it, sent.requestId)
+        }
         // Giu pham vi lai: tat cham AI thi lan cham den sau, luc Ba Huy dan ket qua
         // Claude ve, ma luc do van phai biet con da khai nhung cau nao.
         pham?.let { KhaiChoCham.luu(this, sent.requestId, it) }
@@ -1332,9 +1352,12 @@ class ApprovalService : Service() {
          * Anh trang vo gan vao CUOI danh sach anh cua bai: dau danh sach la anh tab Bai
          * ben dien thoai lay ra lam hinh nho, ma hinh do phai la bai con vua lam.
          */
-        val vo = if (nhom.containsKey(CaptureStage.DAN_DO)) null else VoDanDo.conHieuLuc(this)
+        val vo = VoDanDo.conHieuLuc(
+            this,
+            java.time.Instant.ofEpochMilli(lucNop).atZone(java.time.ZoneId.systemDefault()).toLocalDateTime()
+        )
         vo?.let { VoChoCham.luu(this, sent.requestId, it) }
-        val anhVo = vo?.fileId?.let { DongBo.Anh(it, CaptureStage.DAN_DO.name) }
+        val anhVo = vo?.fileId?.let { DongBo.Anh(it, vn.huytl.homeworkgate.data.KHAU_DAN_DO) }
         DongBo.dayBaiMoi(
             this, sent.requestId, sent.messageId, sent.anh + listOfNotNull(anhVo),
             DongBo.banKhai(this, pham), vo?.let { DongBo.banDanDo(it) }
@@ -1359,7 +1382,9 @@ class ApprovalService : Service() {
             return
         }
         // Vo chi co anh thi may cham da duoc dua tam anh do, xem SoatBaiActivity.cham.
-        xuLyBanCham(ket, pham, nhom.containsKey(CaptureStage.DAN_DO) || vo?.chuaDoc == true)
+        synchronized(khoaCham) {
+            xuLyBanCham(ket, pham, vo?.chuaDoc == true, lucNop = lucNop)
+        }
     }
 
 
@@ -1371,6 +1396,13 @@ class ApprovalService : Service() {
      * cap gio thi phai o service, vi no van phai chay xong du con dong man hinh lai
      * hay tablet khoa man.
      */
+    /**
+     * Moi lan chi mot ban cham duoc xu ly. Hai ban cham cho cung mot bai toi cung luc (ba
+     * dan ket qua Claude hai lan luc tablet mat mang) thi ca hai deu thay bai con cho, va
+     * con duoc cap gio hai lan. Xu ly lan luot thi lan sau thay bai da xong.
+     */
+    private val khoaCham = Any()
+
     private fun xuLyBanCham(
         banCham: KetQuaCham,
         pham: PhamVi?,
@@ -1378,19 +1410,34 @@ class ApprovalService : Service() {
         /** Bai duoc chi dinh san, o duong Claude cham. null la bai vua nop, moi nhat. */
         baiId: String? = null,
         /** Ai cham, de ghi dung vao tin Telegram va nhat ky. */
-        nguoiCham: String = "AI"
+        nguoiCham: String = "AI",
+        /** Luc con bam Gui o duong may cham. Upload lau qua 12 gio trua cung khong mat goi. */
+        lucNop: Long? = null
     ) {
         val chatId = prefs.parentChatId
         val con = getString(R.string.child_name)
         /*
-         * Phan tu luan cua de Giai de khong bao gio la bai co giao: de do may ra tu sach bai
-         * tap, ma co khong giao cau SBT nao. Hom khong co vo dan do con hieu luc thi quy tac
-         * 17 cua cau lenh coi moi cau la bai co giao, va hom da tinh tron goi la ca de ra
-         * 0 phut. Chot o day cho chac, khong doi may.
+         * Cau sach bai tap khong bao gio la bai co giao: co khong giao cau SBT nao (Le Hoa
+         * khong co SBT giay), SBT chi dung cho lam them, luyen va Giai de. Hom khong co vo
+         * dan do con hieu luc thi quy tac 17 cua cau lenh coi moi cau la bai co giao, va
+         * hom da tinh tron goi la cau SBT ra 0 phut roi bi ghi la da xong. Chot o day cho
+         * chac, khong doi may. Truoc day chi chot cho phan tu luan cua Giai de.
+         *
+         * Bai Giai de cung khong duoc tinh la da lam het vo dan do: de ra tu SBT, ma ma
+         * cau SBT ("2.26") trung ma cau SGK co giao, may cham de nhan nham.
          */
         val deId = pham?.giaiDe.orEmpty()
-        val ket = if (deId.isBlank()) banCham
-        else banCham.copy(cac = banCham.cac.map { it.copy(trongDanDo = false) })
+        val cauSbt = runCatching {
+            KhoBai.get(this).cacCauTheoId(banCham.cac.mapNotNull { it.cauId })
+                .filter { NganHang.sachTheoNguon(it.nguon)?.baiTap == true }
+                .map { it.id }.toSet()
+        }.getOrDefault(emptySet())
+        val ket = banCham.copy(
+            cac = banCham.cac.map {
+                if (deId.isNotBlank() || it.cauId in cauSbt) it.copy(trongDanDo = false) else it
+            },
+            lamHetDanDo = banCham.lamHetDanDo && deId.isBlank()
+        )
         /*
          * Duong Claude cham chi dinh san bai nao. Bai do da roi hang cho - Ba Huy vua
          * duyet tay hay tu choi - thi thoi han. KHONG lay bai moi nhat thay vao: nhu
@@ -1418,7 +1465,7 @@ class ApprovalService : Service() {
          * Khong co chuyen dan sang ngay hom sau: bai cho duyet khong song qua nua dem,
          * xem GateStore.donDepBaiCho. Nen moc nay chi lech bay gio trong cung mot ngay.
          */
-        val luc = bai?.at?.takeIf { baiId != null && it > 0L } ?: System.currentTimeMillis()
+        val luc = bai?.at?.takeIf { baiId != null && it > 0L } ?: lucNop ?: System.currentTimeMillis()
 
         // Bo cac cau da tra gio tu lan nop truoc: chup lai bai cu khong duoc tinh
         // lan hai. Cau dang cho sua thi KHONG bo - lan nay con sua no.
@@ -1868,18 +1915,24 @@ class ApprovalService : Service() {
         nhanCho: String? = null
     ) {
         val con = getString(R.string.child_name)
+        // Khong con so phut mac dinh: go thieu so thi nhac, khong tu doan.
+        if (minutes == null) {
+            client.sendMessage(chatId, "Gõ kèm số phút, ví dụ /duyet 30 hay /cho 30.")
+            return
+        }
 
         // Dang choi ma ba cho them thi cong vao phien dang chay, chu khong cat
         // phien roi cap lai tu dau. "Cho them 30 phut" luc con con 10 phut nghia
         // la 40, khong phai 30.
         if (gate.state == GateState.ACTIVE) {
-            val them = minutes ?: prefs.grantMinutes
+            val them = minutes
             val left = gate.extend(them)
             // Duyet mot bai trong luc con dang choi: cong vao phien va go bai do ra
             // khoi hang cho, khong thi no nam do cho den khi qua ngay.
             bai?.let {
                 gate.boBaiCho(it.id)
                 DongBo.datTrangThaiBai(this, it.id, "DUYET", them)
+                GiaiDe.baDuyetBai(this, it.id)
             }
             if (bai != null && bai.messageId != 0L) client.clearReplyMarkup(chatId, bai.messageId)
             DayLog.add(this, "Ba Huy cho thêm $them phút giữa phiên")
@@ -1893,7 +1946,7 @@ class ApprovalService : Service() {
         }
 
         val messageId = bai?.messageId ?: 0L
-        val xin = minutes ?: prefs.grantMinutes
+        val xin = minutes
         val granted = gate.approve(
             wantedMinutes = minutes,
             useQuota = useQuota,
@@ -1909,7 +1962,10 @@ class ApprovalService : Service() {
             return
         }
         if (messageId != 0L) client.clearReplyMarkup(chatId, messageId)
-        bai?.let { DongBo.datTrangThaiBai(this, it.id, "DUYET", granted) }
+        bai?.let {
+            DongBo.datTrangThaiBai(this, it.id, "DUYET", granted)
+            GiaiDe.baDuyetBai(this, it.id)
+        }
         DayLog.add(this, "Duyệt $granted phút ($why)")
         ensureRunning(this)
         // Con dang giu phieu cu ma nop them bai thi duyet la cong don, khong de len.
@@ -1980,7 +2036,7 @@ class ApprovalService : Service() {
         /xoapin  xoá PIN, đặt lại trên tablet
         /trogiup  bảng này
 
-        Nhắn cho Lê Hòa thì nhắn thẳng trên Telegram của Lê Hòa.
+        Nhắn cho ${getString(R.string.child_name)} thì nhắn thẳng trên Telegram của ${getString(R.string.child_name)}.
         Số phút, giờ ngủ, danh sách app: sửa trong app.
     """.trimIndent()
 
@@ -2222,6 +2278,22 @@ class ApprovalService : Service() {
 
         /** Bai con da khai truoc khi chup, dang JSON cua [PhamVi]. */
         private const val EXTRA_PHAM = "pham_vi"
+        private const val EXTRA_LUC_NOP = "luc_nop"
+
+        /**
+         * Hop thoai ma app dung moi luc goi len: xin quyen cua HyperOS (Telegram xin mic
+         * luc ghi am lan dau), chon anh, chon file. Chung hien tren app, mang ten goi
+         * rieng. Dang nhuong ma thay mot trong so nay thi van nhuong, khong thi man chan
+         * che mat ca hop lan Telegram. Khong dua vao ALWAYS_ALLOWED: trinh quan ly quyen
+         * cua Xiaomi van phai bi guard chan khi con tu mo no.
+         */
+        private val HOP_THOAI_CUA_APP = setOf(
+            "com.lbe.security.miui",
+            "com.google.android.providers.media.module",
+            "com.android.providers.media.module",
+            "com.google.android.documentsui",
+            "com.android.documentsui"
+        )
 
         /**
          * Gui mot lan nop con da soat xong.
@@ -2243,6 +2315,7 @@ class ApprovalService : Service() {
         ) {
             val intent = Intent(context, ApprovalService::class.java)
                 .setAction(ACTION_GUI)
+                .putExtra(EXTRA_LUC_NOP, System.currentTimeMillis())
                 .putExtra(EXTRA_PHAM, pham?.sangJson())
                 .putExtra(EXTRA_BAN_CHAM, ket?.let { ChamBaiIO.viet(it) })
             nhom.forEach { (st, files) ->

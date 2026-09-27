@@ -24,8 +24,6 @@
     <string name="capture_need_solution">Phải có ít nhất một tấm bài giải mới gửi được.</string>
     <string name="capture_remove_hint">Bấm vào ảnh để bỏ tấm đó.</string>
 
-    <string name="stage_notes">Vở dặn dò</string>
-    <string name="stage_notes_hint">Cô ghi bài về nhà.</string>
     <string name="stage_problem">Đề bài</string>
     <string name="stage_problem_hint">Chụp nếu đề nằm riêng. Đề in chung với bài làm thì bỏ qua.</string>
     <string name="stage_solution">Bài giải</string>

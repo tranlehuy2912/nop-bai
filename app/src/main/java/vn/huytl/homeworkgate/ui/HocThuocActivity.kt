@@ -13,7 +13,6 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.updatePadding
 import vn.huytl.homeworkgate.R
 import vn.huytl.homeworkgate.data.DayLog
-import vn.huytl.homeworkgate.data.GateState
 import vn.huytl.homeworkgate.data.GateStore
 import vn.huytl.homeworkgate.data.HocThuoc
 import vn.huytl.homeworkgate.data.LuatTuVung
@@ -46,8 +45,10 @@ import vn.huytl.homeworkgate.kho.BoDaNap
  * phut thi moi lan cap la mot luot day len Firestore.
  *
  * CHOT GOI TU BA CHO: nut Xong, [veLui] khi Back ve man chon bo, va [onPause]. Con bam
- * nut Home giua luot van duoc tra cho phan da lam. [daChot] giu cho cac duong do khong
- * chot hai lan.
+ * nut Home giua luot van duoc tra cho phan da lam. Moi lan chot chi ghi va tra phan
+ * lam them tu lan chot truoc ([daGhi], [daTraXong]): tat man hinh giua luot roi bat len
+ * lam tiep thi phan sau van duoc tinh. Truoc day lan chot dau khoa ca luot, va moi cau
+ * lam sau lan tat man hinh do deu khong duoc ghi, khong duoc gio.
  */
 class HocThuocActivity : AppCompatActivity() {
 
@@ -92,7 +93,12 @@ class HocThuocActivity : AppCompatActivity() {
     private var daTraLoi = false
 
     private val ketQua = mutableListOf<TraThe>()
-    private var daChot = false
+
+    /** So dong trong [ketQua] da ghi xuong so. */
+    private var daGhi = 0
+
+    /** So cau da xong va da tra gio trong luot nay. */
+    private var daTraXong = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -304,7 +310,9 @@ class HocThuocActivity : AppCompatActivity() {
         boDangLam = bo
         viTri = 0
         ketQua.clear()
-        daChot = false
+        daGhi = 0
+        daTraXong = 0
+        phutVuaTra = 0
         muc.clear()
         hang.clear()
         // Tron thu tu, khong hoi theo thu tu in trong sach. Hoi theo thu tu sach thi
@@ -483,7 +491,8 @@ class HocThuocActivity : AppCompatActivity() {
     private var phutVuaTra = 0
 
     /**
-     * Ghi ca luot xuong so va cap gio. Goi bao nhieu lan cung chi an mot lan.
+     * Ghi phan moi lam cua luot xuong so va cap gio cho phan do. Goi nhieu lan thi moi
+     * lan chi an phan lam them tu lan truoc.
      *
      * DEM THEO SO CAU DA XONG, khong phai so lan go dung. Mot cau phai dung
      * [LuatTuVung.LAN_DUNG_DE_TINH] lan moi tinh la xong, nen dem so lan go dung thi
@@ -495,15 +504,18 @@ class HocThuocActivity : AppCompatActivity() {
      * luot lam ra bao nhieu giay.
      */
     private fun chot() {
-        if (daChot || ketQua.isEmpty()) return
-        daChot = true
+        if (ketQua.size <= daGhi) return
+        val moi = ketQua.subList(daGhi, ketQua.size).toList()
+        daGhi = ketQua.size
 
         val kho = KhoBai.get(this)
         val moc = moc0Gio()
-        val dung = muc.values.count { it.xong }
+        val xongHet = muc.values.count { it.xong }
+        val dung = (xongHet - daTraXong).coerceAtLeast(0)
+        daTraXong = xongHet
         val giayLuot = HocThuoc.giayCho(dung)
         val phut = HocThuoc.phutThem(kho.giayTheTu(moc), giayLuot)
-        phutVuaTra = phut
+        phutVuaTra += phut
 
         /*
          * Cot phut ghi so phut LAM RA, khong phai so phut cong duoc that.
@@ -521,7 +533,7 @@ class HocThuocActivity : AppCompatActivity() {
          */
         var conGan = phut
         var conGanGiay = giayLuot
-        ketQua.forEach { t ->
+        moi.forEach { t ->
             val cua = if (t.dung && conGan > 0) conGan.also { conGan = 0 } else 0
             // Cot giay gan het vao dong dung dau tien, y het cot phut. Gan ca khi
             // phut bang 0: cot nay la cong suc lam ra, tran ngay doc no - xem
@@ -537,11 +549,7 @@ class HocThuocActivity : AppCompatActivity() {
         val ten = boDangLam?.ten.orEmpty()
         // Tinh vao tran ngay, khac gio viec nha: day la gio doi bang viec hoc, cung
         // mot ho voi bai tap, nen no phai nam trong cung mot cai tran.
-        if (gate.state == GateState.ACTIVE) {
-            gate.extend(phut, useQuota = true)
-        } else {
-            gate.approve(wantedMinutes = phut, useQuota = true, nhanCho = "Kiểm tra bài")
-        }
+        gate.congGioHoc(phut, nhanCho = "Kiểm tra bài")
         DayLog.add(this, "Kiểm tra bài $ten: $soThe câu đúng, +$phut phút")
         runCatching {
             Notifier.send(

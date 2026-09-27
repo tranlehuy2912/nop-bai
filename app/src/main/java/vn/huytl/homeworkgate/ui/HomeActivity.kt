@@ -97,13 +97,17 @@ class HomeActivity : AppCompatActivity() {
      * Hoan mot nhip ngan roi moi ve: mot lan cap gio ghi vai khoa lien nhau, gom
      * lai thanh mot lan ve.
      */
-    private val ngheDoi = SharedPreferences.OnSharedPreferenceChangeListener { _, _ ->
+    private val ngheDoi = SharedPreferences.OnSharedPreferenceChangeListener { _, khoa ->
         tay.removeCallbacks(veLai)
         tay.postDelayed(veLai, 300L)
-        // Vo dan do vua luu hay tin cua co vua toi deu nam trong prefs: xem co can mo de on
-        // truoc kiem tra khong. Hoan lau hon lan ve, va bo qua luc dang choi.
-        tay.removeCallbacks(moDe)
-        tay.postDelayed(moDe, 2_000L)
+        // Vo dan do vua luu, tin cua co vua toi, hay moc "lop da hoc toi" vua doi: xem co
+        // can mo de on truoc kiem tra khong. Hoan lau hon lan ve, va bo qua luc dang choi.
+        // Chi nghe dung may khoa do: nhat ky, gio cua app han rieng... ghi vao file nay
+        // vai giay mot lan, moi lan lai quet ca kho SBT de ra de.
+        if (khoa == null || khoa == "vo_dan_do" || khoa == "tin_cua_co" || khoa.startsWith("hoc_toi_")) {
+            tay.removeCallbacks(moDe)
+            tay.postDelayed(moDe, 2_000L)
+        }
     }
 
     private val moDe = Runnable { if (!gate.isOpen()) moDeNeuCan() }
@@ -959,19 +963,13 @@ class HomeActivity : AppCompatActivity() {
             .setTitle(R.string.pin_title)
             .setView(input)
             .setPositiveButton(R.string.ok) { _, _ ->
-                if (prefs.checkPin(input.text.toString())) {
-                    prefs.saiPinLienTiep = 0
+                if (PhienQuanLy.thuPin(this, input.text.toString())) {
                     // Chi mo trang cau hinh, KHONG mo khoa may. Muon mo khoa thi
                     // gat cong tac trong do. Truoc day hai viec nay tron lam mot,
                     // nen chi vao xem lai gio nghi cung lam tablet mo toang.
-                    PhienQuanLy.daQuaPin = true
-                    Notifier.parentModeEntered(this)
                     ApprovalService.ensureRunning(this)
                     startActivity(Intent(this, ParentActivity::class.java))
                 } else {
-                    val soLan = prefs.saiPinLienTiep + 1
-                    prefs.saiPinLienTiep = soLan
-                    if (soLan % 3 == 0) Notifier.wrongPinAttempts(this, soLan)
                     toast(getString(R.string.pin_wrong))
                 }
             }
@@ -990,6 +988,9 @@ class HomeActivity : AppCompatActivity() {
      * mot yeu cau da khong con.
      */
     private fun huyYeuCau() {
+        // Nho dung bai luc mo hop. Trong luc hop dang mo, ba co the vua duyet bai do ben
+        // Telegram: luc bam xac nhan ma lay "bai moi nhat" thi se huy nham bai nop truoc.
+        val muonHuy = gate.baiDangCho().lastOrNull()?.id ?: return
         val con = gate.soBaiDangCho()
         val loi = if (con > 1) {
             "Huỷ bài vừa nộp. ${con - 1} bài nộp trước vẫn nằm chờ ba Huy duyệt."
@@ -1000,11 +1001,17 @@ class HomeActivity : AppCompatActivity() {
             .setTitle("Huỷ yêu cầu đã gửi?")
             .setMessage(loi)
             .setPositiveButton("Huỷ yêu cầu") { _, _ ->
-                val bai = gate.huyBaiMoiNhat()
-                val messageId = bai?.messageId ?: 0L
+                val bai = gate.baiDangCho().firstOrNull { it.id == muonHuy }
+                if (bai == null) {
+                    toast("Bài đó ba Huy đã xử lý rồi, không huỷ nữa")
+                    render()
+                    return@setPositiveButton
+                }
+                gate.boBaiCho(bai.id)
+                val messageId = bai.messageId
                 // Bao ca Bang dieu khien. Khong thi ben do bai nay van ghi dang cho, con
                 // hai nut Duyet, Khong duyet thi bam nut nao tablet cung khong con bai de lam.
-                bai?.let { DongBo.datTrangThaiBai(this, it.id, "HUY") }
+                DongBo.datTrangThaiBai(this, bai.id, "HUY")
                 render()
                 toast("Đã huỷ, Lê Hòa nộp lại nhé")
                 lifecycleScope.launch(Dispatchers.IO) {

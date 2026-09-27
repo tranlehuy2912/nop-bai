@@ -309,6 +309,11 @@ object VoDanDo {
     ): DanDo? {
         if (cu == null || !cu.chuaDoc || cu.chupLuc != chupLucCuaBai) return null
         val ngay = LuatCongGio.docNgay(ngayDanDo) ?: return null
+        // Lan cham doc nham mot khoi ngay cu tren trang vo (hay ngay co hen nop) thi
+        // dung giu: lan don dep sau se xoa ca ban lan tam anh duy nhat, va ca ngay mat
+        // vo. Giu ban chi co anh thi Ba Huy van nho Claude doc lai duoc.
+        val luc = java.time.Instant.ofEpochMilli(bayGio).atZone(java.time.ZoneId.systemDefault()).toLocalDateTime()
+        if (!LuatCongGio.ngayDanDoHopLe(ngay, luc)) return null
         return cu.copy(
             ngay = ngay.toString(),
             cacDong = baiDuocGiao.map { Dong(it, laBaiTap = true, mayTich = true) },

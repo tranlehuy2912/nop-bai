@@ -227,15 +227,13 @@ object GiaiDe {
                     ?.let { return Chon(it.first().nguon, onTap, it) }
             }
         }
+        val khoang = NganHang.boDoKhoangCach(context, mon)
         val baiGan = tuDo.map { it.bai }.distinct()
-            .filter { NganHang.khoangCachMoc(context, mon, it) < SO_BAI_GAN_MOC }
-            .sortedBy { NganHang.khoangCachMoc(context, mon, it) }
+            .filter { khoang(it) < SO_BAI_GAN_MOC }
+            .sortedBy(khoang)
         return chonTheoBai(tuDo, mon, baiGan)
             // Bai gan moc da het cau: lui ve moi bai da hoc, gan moc truoc.
-            ?: chonTheoBai(
-                tuDo, mon,
-                tuDo.map { it.bai }.distinct().sortedBy { NganHang.khoangCachMoc(context, mon, it) }
-            )
+            ?: chonTheoBai(tuDo, mon, tuDo.map { it.bai }.distinct().sortedBy(khoang))
     }
 
     /** Cau cua de on truoc kiem tra: dung may bai, may chuong dong chu nhac toi. */
@@ -401,18 +399,17 @@ object GiaiDe {
     }
 
     /** "1.28a" ra "1.28", "Ôn cuối năm 4a" ra "Ôn cuối năm 4": cac y cua cung mot bai. */
-    private fun goc(ma: String): String = Regex("""^(.*\d)[a-z]$""").find(ma)?.groupValues?.get(1) ?: ma
+    private fun goc(ma: String): String = MA_CO_Y.find(ma)?.groupValues?.get(1) ?: ma
+
+    /** "2.26d" la y d cua cau 2.26. Dung mot lan cho moi cau luc ra de, nen dung san mot lan. */
+    private val MA_CO_Y = Regex("""^(.*\d)[a-z]$""")
 
     /** "Chương IV. Định lí Thalès" ra 4. */
     private fun soChuong(ten: String): Int? {
-        val t = Regex("""Chương\s+([IVX]+)""").find(ten)?.groupValues?.get(1) ?: return null
-        val gia = mapOf('I' to 1, 'V' to 5, 'X' to 10)
-        var tong = 0
-        for (i in t.indices) {
-            val g = gia.getValue(t[i])
-            val sau = t.getOrNull(i + 1)?.let { gia[it] } ?: 0
-            tong += if (g < sau) -g else g
-        }
+        // Cung mot cach doc voi lich kiem tra ([LichKiemTra.laMa]): hai ben phai ra cung
+        // mot so thi "kiểm tra chương III" moi khop cau cua chuong do.
+        val t = Regex("""Chương\s+([IVX]+|\d+)""").find(ten)?.groupValues?.get(1) ?: return null
+        val tong = t.toIntOrNull() ?: LichKiemTra.laMa(t.lowercase()) ?: return null
         return tong
     }
 
@@ -437,7 +434,7 @@ object GiaiDe {
      * bat dau thi het han van cho nop them [GIO_NOP_MUON] gio.
      */
     fun dangMo(context: Context, bayGio: Long = System.currentTimeMillis()): List<DeGiai> =
-        KhoBai.get(context).cacDeTu(bayGio - 30 * MOT_NGAY).filter { de ->
+        KhoBai.get(context).cacDeConHan(bayGio - GIO_NOP_MUON * 60 * 60_000L).filter { de ->
             val conHan = de.hetHan > bayGio ||
                 (de.daBatDau && de.hetHan + GIO_NOP_MUON * 60 * 60_000L > bayGio)
             conHan && !xongViecCuaCon(context, de)
@@ -446,9 +443,11 @@ object GiaiDe {
     /** De da cham xong trong ngay hom nay, de man chinh hien dong da xong kem diem. */
     fun xongHomNay(context: Context, bayGio: Long = System.currentTimeMillis()): List<DeGiai> {
         val homNay = ngayCua(bayGio)
-        return KhoBai.get(context).cacDeTu(bayGio - 30 * MOT_NGAY).filter { de ->
-            daCoDiem(context, de) && ngayCua(maxOf(de.nopLuc, de.chamLuc)) == homNay
-        }
+        val kho = KhoBai.get(context)
+        // Xet ngay truoc: daCoDiem doc cau cua de tu kho, ma phan lon de khong xong hom nay.
+        return (kho.cacDeTu(bayGio - 30 * MOT_NGAY) + kho.cacDeConHan(bayGio - 2 * MOT_NGAY))
+            .distinctBy { it.id }
+            .filter { de -> ngayCua(maxOf(de.nopLuc, de.chamLuc)) == homNay && daCoDiem(context, de) }
     }
 
     fun theoId(context: Context, id: String): DeGiai? = KhoBai.get(context).deTheoId(id)
@@ -461,25 +460,68 @@ object GiaiDe {
     /** Con da lam het phan cua minh chua: nop trac nghiem, va gui tu luan neu de co. */
     fun xongViecCuaCon(context: Context, de: DeGiai): Boolean {
         if (!de.daNop) return false
-        return de.daGuiTuLuan || cacCau(context, de).none { !it.bamTrenMay }
+        return daGuiThat(context, de) || cacCau(context, de).none { !it.bamTrenMay }
     }
 
-    /** De da co diem ca hai phan chua. */
+    /** De da co diem ca hai phan chua. Ba duyet tu luan ma khong cham cung tinh la xong. */
     fun daCoDiem(context: Context, de: DeGiai): Boolean {
         if (!de.daNop) return false
         val coTuLuan = cacCau(context, de).any { !it.bamTrenMay }
-        return !coTuLuan || de.tlDung >= 0
+        return !coTuLuan || de.tlDung >= 0 || baDuyetKhongCham(context, de)
+    }
+
+    // ------------------------------------------------ bai nop cua phan tu luan
+
+    /*
+     * Phan tu luan di nhu mot bai nop thuong, nhung chi duong cham ([nhanTuLuan]) moi ghi
+     * diem. Bai ra khoi hang cho bang duong khac thi truoc day de ket o "da gui, chua cham"
+     * mai mai: khong diem, khong nut chup lai, bien khoi man chinh. Gio (Ba Huy chon ngay
+     * 27/9/2026):
+     * - Con huy, Ba Huy khong duyet, bai roi hang luc qua ngay: de mo lai nut chup tu luan.
+     * - Ba Huy duyet ma khong cham: de dong, chi co diem trac nghiem.
+     *
+     * Nho bai nao la tu luan cua de nao trong prefs rieng, khong them cot vao KhoBai: xet
+     * "bai con cho khong" luc doc, nen duong nao lam bai roi hang cung ra dung mot ket qua.
+     */
+
+    private fun spBai(context: Context) =
+        context.applicationContext.getSharedPreferences("giai_de_bai", Context.MODE_PRIVATE)
+
+    /** Ghi ma bai nop cua phan tu luan. Goi ngay sau khi bai vao hang cho. */
+    fun ghiBaiTuLuan(context: Context, deId: String, baiId: String) {
+        spBai(context).edit().putString("bai_$deId", baiId).remove("duyet_$deId").apply()
+    }
+
+    /** Ba Huy duyet bai [baiId]. Bai do la tu luan cua mot de chua cham thi dong de lai. */
+    fun baDuyetBai(context: Context, baiId: String) {
+        val sp = spBai(context)
+        val deId = sp.all.entries.firstOrNull { it.key.startsWith("bai_") && it.value == baiId }
+            ?.key?.removePrefix("bai_") ?: return
+        val de = KhoBai.get(context).deTheoId(deId) ?: return
+        if (de.tlDung >= 0) return
+        sp.edit().putBoolean("duyet_$deId", true).apply()
+        DayLog.add(context, tomTat(context, de))
+    }
+
+    /** Ba Huy da duyet phan tu luan cua [de] ma khong cham. */
+    fun baDuyetKhongCham(context: Context, de: DeGiai): Boolean =
+        de.tlDung < 0 && spBai(context).getBoolean("duyet_${de.id}", false)
+
+    /**
+     * Phan tu luan da gui va con dung: da cham, ba da duyet, hay bai con nam trong hang
+     * cho. Bai roi hang ma khong ai cham hay duyet thi la chua gui, de con chup lai.
+     * De gui tu ban truoc (chua nho ma bai) thi giu nhu cu.
+     */
+    fun daGuiThat(context: Context, de: DeGiai): Boolean {
+        if (!de.daGuiTuLuan) return false
+        if (de.tlDung >= 0 || baDuyetKhongCham(context, de)) return true
+        val baiId = spBai(context).getString("bai_${de.id}", null) ?: return true
+        return GateStore(context).baiDangCho().any { it.id == baiId }
     }
 
     /** So cau dung ca de va tong so cau. Phan chua cham tinh la chua dung. */
     fun diem(context: Context, de: DeGiai): Pair<Int, Int> =
         (de.tnDung.coerceAtLeast(0) + de.tlDung.coerceAtLeast(0)) to de.cauIds.size
-
-    /**
-     * Tung cau tu luan dung hay chua, ghi luc cham xong - xem [DeGiai.ketTuLuan]. Cau con
-     * bo ra o man soat, hay may khong tra ve, thi khong co trong ket qua.
-     */
-    fun ketQuaTuLuan(context: Context, de: DeGiai): Map<String, Boolean> = de.ketTuLuan
 
     /** "Giải đề Toán", "Ôn kiểm tra KHTN". */
     fun tenDe(de: DeGiai): String {
@@ -550,7 +592,7 @@ object GiaiDe {
             goiDaCoHomNay = SoCaiBai.goiDaCoHomNay(context, bayGio)
         )
         val daCap = phut > 0 && capGio(phut)
-        val phutCua = if (daCap) chiaDeu(dung.toList(), phut) else emptyMap()
+        val phutCua = if (daCap) LuatCongGio.chiaDeuTheoMa(dung.toList(), phut) else emptyMap()
 
         val kho = KhoBai.get(context)
         val daGhi = mutableListOf<TraLoi>()
@@ -586,7 +628,8 @@ object GiaiDe {
     fun daGuiTuLuan(context: Context, deId: String, bayGio: Long = System.currentTimeMillis()) {
         val kho = KhoBai.get(context)
         val de = kho.deTheoId(deId) ?: return
-        if (de.daGuiTuLuan) return
+        // Gui lai sau khi bai truoc roi hang (xem [daGuiThat]) thi ghi lai luc gui.
+        if (de.daGuiTuLuan && daGuiThat(context, de)) return
         kho.luuDe(de.copy(guiLuc = bayGio))
     }
 
@@ -609,7 +652,9 @@ object GiaiDe {
         val kho = KhoBai.get(context)
         val de = kho.deTheoId(deId) ?: return null
         val tl = cacCau(context, de).filter { !it.bamTrenMay }.map { it.id }.toSet()
-        val ket = daCham.filter { tl.contains(it.cauId.orEmpty()) }
+        // Gop voi ket qua da co, khong thay het: lan cham sau (con chup lai phan tu luan,
+        // hay bai sua) chi mang nhung cau chua tra gio, thay het thi diem cua lan dau mat.
+        val ket = de.ketTuLuan + daCham.filter { tl.contains(it.cauId.orEmpty()) }
             .associate { it.cauId.orEmpty() to it.dung }
         val moi = de.copy(
             tlDung = ket.count { it.value },
@@ -633,7 +678,13 @@ object GiaiDe {
         val tl = cac.size - tn
         val phan = buildList {
             if (tn > 0) add("trắc nghiệm ${de.tnDung.coerceAtLeast(0)}/$tn")
-            if (tl > 0) add(if (de.tlDung >= 0) "tự luận ${de.tlDung}/$tl" else "tự luận chưa chấm")
+            if (tl > 0) add(
+                when {
+                    de.tlDung >= 0 -> "tự luận ${de.tlDung}/$tl"
+                    baDuyetKhongCham(context, de) -> "tự luận ba duyệt, không chấm"
+                    else -> "tự luận chưa chấm"
+                }
+            )
         }
         val dung = de.tnDung.coerceAtLeast(0) + de.tlDung.coerceAtLeast(0)
         val lam = if (de.daBatDau && de.daNop) ((de.nopLuc - de.batDau) / 60_000L).toInt() else -1
@@ -651,18 +702,6 @@ object GiaiDe {
         if (de.loai != LOAI_KIEM_TRA || de.ngayKiemTra.isBlank()) return ""
         val d = runCatching { LocalDate.parse(de.ngayKiemTra) }.getOrNull() ?: return ""
         return ", kiểm tra ngày ${d.dayOfMonth}/${d.monthValue}"
-    }
-
-    /** Chia deu [phut] cho [ids], phan du cho may cau dau. Cung cach [LuatCongGio]. */
-    private fun chiaDeu(ids: List<String>, phut: Int): Map<String, Int> {
-        if (ids.isEmpty()) return emptyMap()
-        val moi = phut / ids.size
-        var du = phut % ids.size
-        return ids.associateWith {
-            val them = moi + if (du > 0) 1 else 0
-            if (du > 0) du--
-            them
-        }
     }
 
     private fun ngayCua(ms: Long): LocalDate =

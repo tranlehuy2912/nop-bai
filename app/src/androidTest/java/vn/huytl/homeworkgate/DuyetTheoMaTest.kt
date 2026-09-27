@@ -97,4 +97,32 @@ class DuyetTheoMaTest {
         assertEquals("Đã từ chối bài đó.", ThiHanhLenh.tuChoi(context, gate, null, ""))
         assertEquals(listOf(conCho), gate.baiDangCho().map { it.id })
     }
+
+    @Test
+    fun dang_choi_ma_het_tran_thi_giu_bai_va_bao_khong_cap_duoc() {
+        assumeTrue(gate.baiDangCho().isEmpty())
+        // Test dung het tran cua hom nay: giu lai so dem cua GateStore de tra ve sau, khong
+        // thi cac test cap gio chay sau no trong cung ngay deu hong.
+        val sp = vn.huytl.homeworkgate.data.Prefs.get(context).raw()
+        val ngayCu = sp.getInt("day_key", 0)
+        val phutCu = sp.getInt("day_phut", 0)
+        try {
+            // Dung het tran ngay roi bat dau choi. Gio ngu thi khong cap duoc gi: bo qua.
+            val con = gate.phutConLaiHomNay()
+            assumeTrue(con > 0 && gate.approve(wantedMinutes = con, useQuota = true) != null)
+            assumeTrue(gate.start() != null)
+            gate.markPending(conCho, 0L)
+            val conLaiTruoc = gate.remainingMs() / 60_000L
+
+            val tra = ThiHanhLenh.duyet(context, gate, conCho, 30)
+            assertTrue(tra, tra.startsWith("Không cấp được"))
+            // Bai con nam trong hang de ba cho gio cach khac, va phien khong duoc cong.
+            assertTrue(gate.baiDangCho().any { it.id == conCho })
+            assertEquals(conLaiTruoc, gate.remainingMs() / 60_000L)
+        } finally {
+            gate.boBaiCho(conCho)
+            gate.endSession(EndReason.PARENT_REVOKED)
+            sp.edit().putInt("day_key", ngayCu).putInt("day_phut", phutCu).commit()
+        }
+    }
 }

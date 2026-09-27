@@ -402,7 +402,10 @@ object DongBo {
         batDauGom = 0L
         if (deSo != banDaDay) {
             banDaDay = deSo
-            hop.set(noi)
+            // set() thay ca document: phai mang theo cau tra loi lenh vua ghi, khong thi
+            // lenh nao doi trang thai cung bi xoa mat cau tra loi vai mili giay sau khi
+            // ghi, va dien thoai khong bao duoc "Da cho 15 phut".
+            hop.set(traLoiCuoi?.let { noi + (Duong.F_TRA_LOI to it) } ?: noi)
                 .addOnFailureListener { Log.w(TAG, "day trang thai hong: ${it.message}") }
         }
 
@@ -510,7 +513,6 @@ object DongBo {
     private fun dayCaiDatNeuDoi(context: Context) {
         val prefs = Prefs.get(context)
         val ban = mapOf(
-            "phutMacDinh" to prefs.grantMinutes,
             "gioNgu" to prefs.hardStopMinuteOfDay,
             "gioDay" to prefs.gioDayMinuteOfDay,
             "tranPhutMoiNgay" to prefs.tranPhutMoiNgay,
@@ -583,7 +585,21 @@ object DongBo {
     fun daySuDung(context: Context) {
         val hop = hop(context, Duong.D_SU_DUNG) ?: return
         val bayGio = System.currentTimeMillis()
-        val cac = NhatKySuDung.banDeDay(context, dangMo(context, bayGio))
+        val moi = dangMo(context, bayGio)
+        // Giai ma, noi va sap xep ca tuan so ghi cung tim ten tung app la viec nang, ma lenh
+        // PING toi tren luong chinh (listener Firestore). Lam o luong nen, khong giat man.
+        luongNen.execute { daySuDungNen(context.applicationContext, hop, bayGio, moi) }
+    }
+
+    private val luongNen = java.util.concurrent.Executors.newSingleThreadExecutor()
+
+    private fun daySuDungNen(
+        context: Context,
+        hop: DocumentReference,
+        bayGio: Long,
+        moi: List<NhatKySuDung.Doan>
+    ) {
+        val cac = NhatKySuDung.banDeDay(context, moi)
         hop.set(
             mapOf(
                 Duong.F_DOAN to cac.map {
@@ -912,11 +928,14 @@ object DongBo {
      * cua viec minh vua lam hay cua nguoi khac, ben doc tu loc lay.
      */
     private fun traLoi(context: Context, chu: String, ai: String) {
-        hop(context, Duong.D_TRANG_THAI)?.update(
-            Duong.F_TRA_LOI,
-            mapOf("chu" to chu, "luc" to System.currentTimeMillis(), Duong.F_AI to ai)
-        )
+        val tra = mapOf("chu" to chu, "luc" to System.currentTimeMillis(), Duong.F_AI to ai)
+        traLoiCuoi = tra
+        hop(context, Duong.D_TRANG_THAI)?.update(Duong.F_TRA_LOI, tra)
     }
+
+    /** Cau tra loi lenh gan nhat, de ban trang thai ghi de ca document van giu no. */
+    @Volatile
+    private var traLoiCuoi: Map<String, Any>? = null
 
     // ----------------------------------------------------------- nghe lenh
 
@@ -1250,7 +1269,10 @@ object DongBo {
         val sp = Prefs.get(context).raw()
         if (sp.getBoolean(K_DA_XOA_CHAT, false)) return xong(true)
         val n = nha(context) ?: return xong(false)
-        n.collection(CHAT_CU).limit(LO_XOA_CHAT).get()
+        // Doc tu may chu: mat mang thi get() mac dinh tra ban trong bo nho dem, ma bo nho
+        // dem cua tablet khong co tin Ba Huy gui tu dien thoai. Ban rong do se danh dau
+        // "da xoa xong" mai mai trong khi tin cu con nguyen tren Firestore.
+        n.collection(CHAT_CU).limit(LO_XOA_CHAT).get(com.google.firebase.firestore.Source.SERVER)
             .addOnSuccessListener { snap ->
                 if (snap.isEmpty) {
                     sp.edit().putBoolean(K_DA_XOA_CHAT, true).apply()

@@ -52,6 +52,15 @@ object ThiHanhViecNha {
         val dangCo = ViecNha.dangTreo(context)
         if (dangCo?.id != moi.id && moi.nhanLuc > 0L && DongBo.quaCu(moi.nhanLuc)) {
             Log.i(TAG, "bo phien ${moi.id}: ba giao tu lau qua")
+            // Dot moi qua cu nen khong bat dau, nhung dot dang giu trong may thi da bi
+            // thay tren Firestore roi (vi du: tablet ngu qua dem, sang ba bo dot cu va
+            // giao dot moi). Giu no lai la khoa con voi nhung viec nguoi lon da bo.
+            if (dangCo != null && ViecNha.laBanMoiHon(moi, dangCo)) {
+                ViecNha.xoa(context)
+                DayLog.add(context, "Đợt việc nhà cũ đã được thay bằng đợt khác")
+                ApprovalService.ensureRunning(context, xetLaiNgay = true)
+                DongBo.dayNgay()
+            }
             return
         }
 

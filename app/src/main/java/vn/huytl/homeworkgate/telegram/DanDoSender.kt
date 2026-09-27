@@ -4,6 +4,7 @@ import android.content.Context
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import org.json.JSONArray
 import org.json.JSONObject
@@ -46,12 +47,43 @@ object DanDoSender {
      * Gui o luong nen, khong cho ket qua. Chep [Notifier]: scope rieng cua object
      * chu khong lifecycleScope, vi man soat dong ngay sau khi con bam Luu - buoc
      * vao lifecycleScope la tin bi huy giua chung.
+     *
+     * Hong thi thu lai hai lan (sau 20 giay, roi mot phut), vi may doc vo hong thuong
+     * la dung luc mat mang. Van hong thi ghi lai [guiHong], de man vo dan do bao con
+     * va cho gui lai. Truoc day loi bi nuot: ban vo chi co anh mat ma anh ca ngay, ba
+     * khong nhan duoc gi ma man van ghi "Ảnh đã gửi ba Huy".
      */
     fun guiNen(context: Context, d: VoDanDo.DanDo) {
         val ct = context.applicationContext
         if (!Prefs.get(ct).isConfigured) return
-        scope.launch { runCatching { send(ct, d) } }
+        sp(ct).edit().remove(K_HONG_LUC).apply()
+        dangGuiLuc = d.luc
+        scope.launch {
+            var xong = false
+            for (cho in listOf(0L, 20_000L, 60_000L)) {
+                if (cho > 0L) delay(cho)
+                xong = runCatching { send(ct, d) }.isSuccess
+                if (xong) break
+            }
+            if (dangGuiLuc == d.luc) dangGuiLuc = 0L
+            if (!xong) sp(ct).edit().putLong(K_HONG_LUC, d.luc).apply()
+        }
     }
+
+    /** Dang gui ban vo chup luc [luc] (con trong lan thu). */
+    fun dangGui(luc: Long): Boolean = luc != 0L && dangGuiLuc == luc
+
+    /** Ban vo chup luc [luc] da thu het ma van khong gui duoc. */
+    fun guiHong(context: Context, luc: Long): Boolean =
+        luc != 0L && sp(context).getLong(K_HONG_LUC, 0L) == luc
+
+    @Volatile
+    private var dangGuiLuc = 0L
+
+    private const val K_HONG_LUC = "gui_hong_luc"
+
+    private fun sp(context: Context) =
+        context.applicationContext.getSharedPreferences("dando_sender", Context.MODE_PRIVATE)
 
     private val scope = CoroutineScope(SupervisorJob() + Dispatchers.IO)
 

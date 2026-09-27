@@ -9,9 +9,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.updatePadding
-import androidx.lifecycle.lifecycleScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import vn.huytl.homeworkgate.R
 import vn.huytl.homeworkgate.data.EndReason
@@ -27,7 +24,6 @@ import vn.huytl.homeworkgate.guard.PhienQuanLy
 import vn.huytl.homeworkgate.guard.Permissions
 import vn.huytl.homeworkgate.telegram.ApprovalService
 import vn.huytl.homeworkgate.telegram.Notifier
-import vn.huytl.homeworkgate.telegram.TelegramClient
 
 /**
  * Bang dieu khien cua Ba Huy ngay tren may, cho luc dang cam tablet trong tay va
@@ -64,8 +60,6 @@ class ParentActivity : AppCompatActivity() {
             ApprovalService.ensureRunning(this)
             render()
         }
-        binding.btnGrant.setOnClickListener { moGioChoi(truLuot = true) }
-        binding.btnGift.setOnClickListener { moGioChoi(truLuot = false) }
         binding.btnLock.setOnClickListener { dungGioChoi() }
         binding.btnSettings.setOnClickListener {
             startActivity(Intent(this, SetupActivity::class.java))
@@ -237,14 +231,6 @@ class ParentActivity : AppCompatActivity() {
             }
         }
 
-        // Nut cho khong an vao tran trong ngay, nen no van dung duoc khi bai tap da
-        // dung het tran.
-        binding.btnGift.text = if (gate.state == GateState.ACTIVE) {
-            "Cộng thêm giờ (không trừ hạn mức)"
-        } else {
-            "Cho chơi luôn, không cần nộp bài"
-        }
-
         // Khong co phien nao thi khong co gi de dung: an nut di cho trang con mot
         // nut khoa duy nhat la cai cong tac o tren.
         binding.btnLock.visibility =
@@ -314,87 +300,6 @@ class ParentActivity : AppCompatActivity() {
      * choi cua con. Ra khoi day van phai nhap PIN lai lan sau.
      */
     private fun traMay() = HoiLaiPin.veManCon(this)
-
-    /**
-     * Hoi so phut truoc khi duyet.
-     *
-     * Ben Telegram co hang nut chon nhanh, ben may thi truoc day chi cap dung so
-     * mac dinh, muon khac phai vao Cai dat sua. Hai duong dieu khien nen giong nhau.
-     *
-     * Dang choi thi hop thoai doi thanh cong them, vi luc do y cua ba gan nhu chac
-     * chan la cho them chu khong phai cap lai tu dau.
-     */
-    private fun moGioChoi(truLuot: Boolean) {
-        val dangChoi = gate.state == GateState.ACTIVE
-        val macDinh = prefs.grantMinutes
-        // Dua so mac dinh len dau va danh dau, de chin lan muoi chi can bam dong dau.
-        val lua = (listOf(macDinh) + listOf(15, 30, 45, 60, 90).filter { it != macDinh })
-        val nhan = lua.mapIndexed { i, phut ->
-            if (i == 0) "$phut phút  (mặc định)" else "$phut phút"
-        }.toTypedArray()
-
-        val tieuDe = when {
-            dangChoi -> "Cộng thêm bao nhiêu phút?"
-            truLuot -> "Duyệt bao nhiêu phút?"
-            else -> "Cho chơi bao nhiêu phút?"
-        }
-
-        MaterialAlertDialogBuilder(this)
-            .setTitle(tieuDe)
-            .setItems(nhan) { _, which -> capGio(lua[which], dangChoi, truLuot) }
-            .setNegativeButton(R.string.cancel, null)
-            .show()
-    }
-
-    private fun capGio(phut: Int, dangChoi: Boolean, truLuot: Boolean) {
-        if (dangChoi) {
-            val left = gate.extend(phut)
-            toast("Đã cộng thêm $phut phút, còn ${left ?: 0} phút")
-            render()
-            return
-        }
-        // Lay truoc khi duyet, vi duyet xong la bai do bi go ra khoi hang cho.
-        // Duyet tren may thi duyet bai cu nhat - muon chon dung mot bai giua dam thi
-        // bam nut ngay duoi anh bai do ben Telegram.
-        val bai = gate.baiChoCuNhat()
-        val messageId = bai?.messageId ?: 0L
-        val dangChoDuyet = gate.state == GateState.PENDING
-
-        val minutes = gate.approve(wantedMinutes = phut, useQuota = truLuot, requestId = bai?.id)
-        val congDon = minutes != null && minutes > phut
-        if (minutes == null) {
-            toast(
-                if (truLuot) "Không cấp được: đang giờ ngủ, hoặc hôm nay đã hết số phút tối đa"
-                else "Không cấp được: đang trong giờ ngủ"
-            )
-            return
-        }
-        ApprovalService.ensureRunning(this)
-        val conCho = gate.soBaiDangCho()
-        toast(
-            (if (congDon) "Đã cộng dồn thành $minutes phút"
-            else "Đã duyệt $minutes phút (chưa tính giờ)") +
-                if (conCho > 0) ", còn $conCho bài chờ duyệt" else ""
-        )
-        render()
-
-        // Duyet tren may thi go luon ban phim duoi anh ben Telegram. Khong go thi
-        // nut "Duyet 60 phut" van nam do, bam vao chi nhan duoc cau "yeu cau nay cu
-        // roi" - dung nhung kho hieu.
-        if (dangChoDuyet && messageId != 0L) {
-            lifecycleScope.launch(Dispatchers.IO) {
-                runCatching {
-                    val client = TelegramClient(prefs.botToken)
-                    client.clearReplyMarkup(prefs.parentChatId, messageId)
-                    client.editCaption(
-                        prefs.parentChatId,
-                        messageId,
-                        "Đã duyệt $minutes phút ngay trên tablet."
-                    )
-                }
-            }
-        }
-    }
 
     /**
      * Cat phien choi cua Le Hoa ngay, mat so phut con lai.

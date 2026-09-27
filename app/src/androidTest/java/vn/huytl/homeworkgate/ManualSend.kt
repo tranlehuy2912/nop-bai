@@ -40,7 +40,6 @@ class ManualSend {
             args.getString(key)?.toIntOrNull() ?: macDinh
 
         val ke = mapOf(
-            CaptureStage.DAN_DO to soTrang("dando", 1),
             CaptureStage.DE_BAI to soTrang("debai", 2),
             CaptureStage.BAI_GIAI to soTrang("baigiai", 2)
         )

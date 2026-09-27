@@ -12,6 +12,7 @@ import android.provider.Settings
 import android.text.TextUtils
 import androidx.core.app.NotificationManagerCompat
 import vn.huytl.homeworkgate.App
+import vn.huytl.homeworkgate.R
 import vn.huytl.homeworkgate.data.Prefs
 
 /** Mot viec chua lam xong, de man hinh nao cung bao giong nhau. */
@@ -276,7 +277,7 @@ object Permissions {
                 Thieu(
                     Viec.DOC_THONG_BAO,
                     "Chưa cho app đọc thông báo",
-                    "Thiếu thì hết giờ Lê Hòa vẫn có thể bấm Phát nhạc ở thanh thông báo: " +
+                    "Thiếu thì hết giờ ${context.getString(R.string.child_name)} vẫn có thể bấm Phát nhạc ở thanh thông báo: " +
                         "máy không biết app nào đang phát để dừng đúng app đó, " +
                         "và không đếm được số phút nghe nhạc nền. Nút nhắn tin cũng " +
                         "không đếm được tin Telegram mới của ba Huy.",

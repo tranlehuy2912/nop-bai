@@ -13,7 +13,6 @@ import androidx.core.view.updatePadding
 import com.google.android.material.button.MaterialButton
 import vn.huytl.homeworkgate.R
 import vn.huytl.homeworkgate.data.DayLog
-import vn.huytl.homeworkgate.data.GateState
 import vn.huytl.homeworkgate.data.GateStore
 import vn.huytl.homeworkgate.data.LuatTuVung
 import vn.huytl.homeworkgate.databinding.StActivityDoTuBinding
@@ -85,7 +84,12 @@ class DoTuVungActivity : AppCompatActivity() {
 
     private var daTraLoi = false
     private val ketQua = mutableListOf<TraTu>()
-    private var daChot = false
+
+    /** So dong trong [ketQua] da ghi xuong so. Moi lan chot chi ghi va tra phan moi. */
+    private var daGhi = 0
+
+    /** Tu da xong va da tra gio trong buoi nay. */
+    private val tuDaTra = HashSet<String>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -306,7 +310,9 @@ class DoTuVungActivity : AppCompatActivity() {
         phien = "tv-${System.currentTimeMillis()}"
         viTri = 0
         ketQua.clear()
-        daChot = false
+        daGhi = 0
+        tuDaTra.clear()
+        phutVuaTra = 0
         muc.clear()
         hang.clear()
         chon.forEach { (tu, _, soPhienXong) ->
@@ -565,34 +571,35 @@ class DoTuVungActivity : AppCompatActivity() {
      * tra bao nhieu. Ben the hoc thuoc don mot cuc vi cot ben do khong hua gi ca.
      */
     private fun chot() {
-        if (daChot || ketQua.isEmpty()) return
-        daChot = true
+        // Chot nhieu lan trong mot buoi (tat man hinh giua chung roi lam tiep): moi lan
+        // chi ghi dong moi va tra cho tu moi xong. Truoc day lan chot dau khoa ca buoi.
+        if (ketQua.size <= daGhi) return
+        val moi = ketQua.subList(daGhi, ketQua.size).toList()
+        daGhi = ketQua.size
 
         val kho = KhoBai.get(this)
-        val xong = muc.values.filter { it.xong }.map { it.tu.id }.toSet()
+        val xong = muc.values.filter { it.xong }.map { it.tu.id }.toSet() - tuDaTra
+        tuDaTra += xong
         val giayBuoi = xong.size * LuatTuVung.GIAY_MOI_TU
-        phutVuaTra = LuatTuVung.phutThem(kho.giayTuVungTu(moc0Gio()), giayBuoi)
+        val phut = LuatTuVung.phutThem(kho.giayTuVungTu(moc0Gio()), giayBuoi)
+        phutVuaTra += phut
 
-        // Gan giay vao dong DUNG CUOI CUNG cua moi tu da xong: mot tu mot lan, du no
+        // Gan giay vao dong DUNG CUOI CUNG cua moi tu vua xong: mot tu mot lan, du no
         // co bao nhieu dong trong buoi.
         val daGan = HashSet<String>()
-        ketQua.asReversed().map { t ->
+        moi.asReversed().map { t ->
             val cho = t.dung && t.tuId in xong && daGan.add(t.tuId)
             if (cho) t.copy(giay = LuatTuVung.GIAY_MOI_TU) else t
         }.asReversed().forEach { kho.ghiTraTu(it) }
 
-        if (phutVuaTra > 0) capGio(phutVuaTra, xong.size)
+        if (phut > 0) capGio(phut, xong.size)
     }
 
     private fun capGio(phut: Int, soTu: Int) {
         val ten = boDangLam?.ten.orEmpty()
         // Tinh vao tran ngay, khac gio viec nha: day la gio doi bang viec hoc, cung
         // mot ho voi bai tap, nen no phai nam trong cung mot cai tran.
-        if (gate.state == GateState.ACTIVE) {
-            gate.extend(phut, useQuota = true)
-        } else {
-            gate.approve(wantedMinutes = phut, useQuota = true, nhanCho = "Dò từ vựng")
-        }
+        gate.congGioHoc(phut, nhanCho = "Dò từ vựng")
         DayLog.add(this, "Dò từ vựng $ten: $soTu từ xong, +$phut phút")
         runCatching {
             Notifier.send(

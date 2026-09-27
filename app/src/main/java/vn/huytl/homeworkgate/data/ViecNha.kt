@@ -78,6 +78,14 @@ object ViecNha {
         return doc(chu)
     }
 
+    /**
+     * Ban [moi] (ma khac) moi hon dot [cu] dang giu trong may. Khong ro gio thi coi la moi
+     * hon: hop/viecnha chi chua mot dot, ma khac thi dot cu da bi thay tren Firestore.
+     * Chi ban cu hon ro rang (doc tu bo nho dem) moi khong duoc dung de bo dot dang giu.
+     */
+    fun laBanMoiHon(moi: Phien, cu: Phien): Boolean =
+        moi.nhanLuc == 0L || cu.nhanLuc == 0L || moi.nhanLuc >= cu.nhanLuc
+
     /** Dang co viec chua lam xong khong. Man chan hoi cau nay moi nhip. */
     fun dangKhoa(context: Context): Boolean = dangTreo(context)?.chuaXong?.isNotEmpty() == true
 
@@ -93,7 +101,16 @@ object ViecNha {
         // Phien khac han: ba giao dot moi. Dot cu con do dang thi bo, vi chinh ba
         // la nguoi vua quyet dinh nhu vay.
         if (cu == null || cu.id != moi.id) {
-            if (moi.cac.isEmpty()) return Doi.KHONG_DOI
+            if (moi.cac.isEmpty()) {
+                // Tren Firestore la mot dot khac, ma dot do cung da bo: dot cu trong may
+                // khong con ai giu nua (hop/viecnha chi chua mot dot). Truoc day tra
+                // KHONG_DOI, va tablet cu khoa voi dot cu da bi thay tu lau.
+                if (cu != null && laBanMoiHon(moi, cu)) {
+                    xoa(context)
+                    return Doi.BO_HET
+                }
+                return Doi.KHONG_DOI
+            }
             luu(context, moi)
             return if (moi.xongHet) {
                 xoa(context)

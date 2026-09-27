@@ -106,7 +106,6 @@ class SetupActivity : AppCompatActivity() {
         }
         binding.edtAiKeys.setText(prefs.aiKeys.joinToString("\n"))
         veDongKhoaAi()
-        binding.edtMinutes.setText(prefs.grantMinutes.toString())
         binding.edtHardStop.setText(formatMinuteOfDay(prefs.hardStopMinuteOfDay))
         binding.edtGioDay.setText(formatMinuteOfDay(prefs.gioDayMinuteOfDay))
         binding.edtDailyLimit.setText(prefs.tranPhutMoiNgay.toString())
@@ -184,7 +183,6 @@ class SetupActivity : AppCompatActivity() {
         prefs.botToken = token
         prefs.parentChatId = chatId
         prefs.aiKeys = binding.edtAiKeys.text?.toString().orEmpty().split("\n")
-        prefs.grantMinutes = binding.edtMinutes.text?.toString()?.toIntOrNull() ?: 60
         prefs.hardStopMinuteOfDay = hardStop
         prefs.gioDayMinuteOfDay = gioDay
         prefs.tranPhutMoiNgay = binding.edtDailyLimit.text?.toString()?.toIntOrNull() ?: 135

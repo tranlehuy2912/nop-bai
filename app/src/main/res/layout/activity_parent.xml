@@ -165,14 +165,6 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="18dp">
 
-                    <com.google.android.material.button.MaterialButton
-                        android:id="@+id/btn_grant"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:layout_marginEnd="8dp"
-                        android:text="Duyệt giờ chơi" />
-
                     <!-- "Dung gio choi" chu khong phai "Khoa ngay": khoa may la viec
                          cua cong tac o tren, con nut nay chi cat phien choi cua Le
                          Hoa. Hai cai cung ten thi khong ai biet bam cai nao. An di
@@ -180,22 +172,11 @@
                     <com.google.android.material.button.MaterialButton
                         android:id="@+id/btn_lock"
                         style="@style/Widget.Material3.Button.TonalButton"
-                        android:layout_width="0dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
                         android:text="Dừng giờ chơi" />
                 </LinearLayout>
 
-                <!-- Cho choi la mot viec lam ngay, khong phai mot muc cai dat. Truoc
-                     day no nam trong danh sach Cai dat ben duoi, giua may dong dan
-                     sang man hinh khac. -->
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btn_gift"
-                    style="@style/Widget.Material3.Button.TextButton"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:text="Cho chơi luôn, không cần nộp bài" />
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 

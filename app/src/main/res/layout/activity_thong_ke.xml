@@ -141,7 +141,7 @@
                         <TextView
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
+                            android:layout_weight="2"
                             android:gravity="center"
                             android:text="6h"
                             android:textColor="@color/ink_soft"
@@ -150,7 +150,7 @@
                         <TextView
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
+                            android:layout_weight="2"
                             android:gravity="center"
                             android:text="12h"
                             android:textColor="@color/ink_soft"
@@ -159,7 +159,7 @@
                         <TextView
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
+                            android:layout_weight="2"
                             android:gravity="center"
                             android:text="18h"
                             android:textColor="@color/ink_soft"

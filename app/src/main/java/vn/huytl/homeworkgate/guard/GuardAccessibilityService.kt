@@ -317,6 +317,9 @@ class GuardAccessibilityService : AccessibilityService() {
 
     override fun onServiceConnected() {
         super.onServiceConnected()
+        // Dich vu dung lai trong cung tien trinh thi currentPackage ve null, ma bien tinh
+        // nay van giu app cua lan truoc. Man chan doc no de nhuong, nen phai xoa theo.
+        goiVuaMo = null
 
         // Tu dang ky loai su kien go chu ngay o day, khong chi trong cau hinh XML.
         //
@@ -742,8 +745,8 @@ class GuardAccessibilityService : AccessibilityService() {
      * Cong gio cho nhung app co dat han rieng.
      *
      * Dem theo cua so dang hien chu khong theo su kien: chia doi man hinh thi ca hai
-     * ben deu dang duoc xem, va app nam duoi thanh thong bao thi da bi loai tu truoc
-     * khi vao day.
+     * ben deu dang duoc xem. App nam duoi thanh thong bao dang keo xuong van tinh la dang
+     * xem (tu 9447ce5, xem [LuatManHinh]).
      *
      * Moc thoi gian lay tu dong ho tuong doi, khong phai dong ho he thong - doi gio
      * may khong lam so nay nhay.

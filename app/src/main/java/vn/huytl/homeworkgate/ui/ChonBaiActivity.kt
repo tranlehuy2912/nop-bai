@@ -288,6 +288,8 @@ class ChonBaiActivity : AppCompatActivity() {
                 // Day la cho DUY NHAT chup vo: man chup bai khong con buoc vo. Nen noi ra
                 // cai duoc, khong thi dong nay chi la mot dong nua trong danh sach mon.
                 d == null -> "Chưa chụp. Chụp một lần để máy tính trọn gói 45 phút bài cô giao"
+                d.chuaDoc && d.fileId.isNullOrEmpty() && !vn.huytl.homeworkgate.telegram.DanDoSender.dangGui(d.luc) ->
+                    "Máy chưa đọc được, ảnh chưa gửi được cho ba Huy. Bấm để gửi lại"
                 d.chuaDoc -> "Máy chưa đọc được, ảnh đã gửi ba Huy. Mấy lần nộp sau không phải chụp lại"
                 d.nguon == VoDanDo.NGUON_CLAUDE -> "Claude đã đọc giúp. Bấm để xem hoặc sửa"
                 d.nguon == VoDanDo.NGUON_LUC_CHAM -> "Đọc ra lúc chấm bài. Bấm để xem hoặc sửa"
@@ -688,10 +690,9 @@ class ChonBaiActivity : AppCompatActivity() {
         val s = sach ?: return
         if (trangChon.isEmpty()) return
         binding.tieuDe.text = "Lê Hòa làm câu nào?"
-        // Ngoac chu khong dau cham giua: ten sach tu no da co mot gach ngang dai ben
-        // trong ("SGK Toán 8 — tập một"), them mot dau ngan cung suc nang nua thi hai
-        // dau danh nhau. Ngoac la loai dau khac han nen no long vao gon, va trung dung
-        // quy uoc dang dung cho nhan cau: "2.26d (tr.36)", "Câu hỏi (tr.11)".
+        // Ngoac chu khong dau cham giua: ngoac long vao ten sach gon hon ("SGK Toán 8 tập
+        // một (tr.36)"), va trung dung quy uoc dang dung cho nhan cau: "2.26d (tr.36)",
+        // "Câu hỏi (tr.11)".
         binding.phuDe.text = "${s.ten} (${keTenTrang()})"
         xoaTich()
 
@@ -1083,8 +1084,10 @@ class ChonBaiActivity : AppCompatActivity() {
      * vo. Lan nop de sua cau sai thi khong hoi: cau do nam trong goi that.
      */
     private fun chupThat(pham: PhamVi) {
-        val dangSua = pham.cauIds.any { it in canSua }
-        if (dangSua || VoDanDo.conHieuLuc(this) != null) return moCamera(pham)
+        // Chi bo qua khi MOI cau deu la cau dang sua. Lan nop tron cau sua voi cau moi
+        // thi cau moi van can vo: thieu vo la cau moi 0 phut ma khong ai bao truoc.
+        val chiSua = pham.cauIds.isNotEmpty() && pham.cauIds.all { it in canSua }
+        if (chiSua || VoDanDo.conHieuLuc(this) != null) return moCamera(pham)
         lifecycleScope.launch {
             val daCoGoi = withContext(Dispatchers.IO) { SoCaiBai.goiDaCoHomNay(this@ChonBaiActivity) }
             if (!daCoGoi) return@launch moCamera(pham)

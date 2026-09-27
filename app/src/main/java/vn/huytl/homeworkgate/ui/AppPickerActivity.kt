@@ -47,10 +47,21 @@ class AppPickerActivity : AppCompatActivity() {
     private var entries: List<Entry> = emptyList()
 
     private var tim = ""
-    private var danhSachDen = false
-    private var datHanGio = false
-    private var chonNhac = false
-    private var moiLuc = false
+    /** Man nay dang lam danh sach nao. Mot bien thay cho bon co, de moi danh sach chi khai mot cho. */
+    private enum class Loai { TRANG, DEN, HAN, NHAC, MOI_LUC }
+
+    private var loai = Loai.TRANG
+
+    private val datHanGio get() = loai == Loai.HAN
+
+    /** Danh sach trong Prefs cua man nay. Man dat han gio khong chon vao danh sach nao. */
+    private fun danhSach(): kotlin.reflect.KMutableProperty0<Set<String>>? = when (loai) {
+        Loai.DEN -> prefs::blockedPackages
+        Loai.NHAC -> prefs::nhacPackages
+        Loai.MOI_LUC -> prefs::moiLucPackages
+        Loai.TRANG -> prefs::allowedPackages
+        Loai.HAN -> null
+    }
 
     private data class Entry(val packageName: String, val label: String, val info: ApplicationInfo)
 
@@ -79,52 +90,47 @@ class AppPickerActivity : AppCompatActivity() {
 
         chuaThanhHeThong()
 
-        datHanGio = intent.getStringExtra(EXTRA_DANH_SACH) == HAN
-        danhSachDen = intent.getStringExtra(EXTRA_DANH_SACH) == DEN
-        chonNhac = intent.getStringExtra(EXTRA_DANH_SACH) == NHAC
-        moiLuc = intent.getStringExtra(EXTRA_DANH_SACH) == MOI_LUC
-        binding.txtTieuDe.text = when {
-            datHanGio -> "Giờ riêng từng app"
-            danhSachDen -> "App cấm hẳn"
-            chonNhac -> "App được nghe nền"
-            moiLuc -> "Dùng mọi lúc"
-            else -> "Dùng khi hết giờ chơi"
+        loai = when (intent.getStringExtra(EXTRA_DANH_SACH)) {
+            HAN -> Loai.HAN
+            DEN -> Loai.DEN
+            NHAC -> Loai.NHAC
+            MOI_LUC -> Loai.MOI_LUC
+            else -> Loai.TRANG
         }
-        binding.txtHuongDan.text = when {
-            datHanGio ->
+        val con = getString(R.string.child_name)
+        binding.txtTieuDe.text = when (loai) {
+            Loai.HAN -> "Giờ riêng từng app"
+            Loai.DEN -> "App cấm hẳn"
+            Loai.NHAC -> "App được nghe nền"
+            Loai.MOI_LUC -> "Dùng mọi lúc"
+            Loai.TRANG -> "Dùng khi hết giờ chơi"
+        }
+        binding.txtHuongDan.text = when (loai) {
+            Loai.HAN ->
                 "Đặt số phút mỗi ngày cho từng app. Hết số phút đó là app tự khoá, " +
-                    "dù Lê Hòa đang có giờ chơi hay app nằm trong danh sách được dùng. " +
+                    "dù $con đang có giờ chơi hay app nằm trong danh sách được dùng. " +
                     "Sáng hôm sau tính lại từ đầu.\n" +
                     "Đặt giờ ở đây không làm app mở được khi hết giờ chơi. Muốn vậy thì " +
                     "tích thêm app đó ở mục Chọn app dùng khi hết giờ chơi."
-            danhSachDen ->
-                "Chọn app cấm hẳn. Những app này Lê Hòa không mở được kể cả khi đang " +
+            Loai.DEN ->
+                "Chọn app cấm hẳn. Những app này $con không mở được kể cả khi đang " +
                     "trong giờ chơi. Không dùng được để cấm màn hình chính hay bàn phím."
-            chonNhac ->
+            Loai.NHAC ->
                 "Chọn app được phát tiếng khi hết giờ chơi, ví dụ app nghe nhạc. " +
                     "Chỉ là phát tiếng: muốn mở app ra xem thì vẫn phải còn giờ chơi. " +
                     "Nhớ đặt số phút mỗi ngày ở mục Giờ riêng từng app, không thì nghe " +
                     "bao nhiêu cũng được. Quá giờ đi ngủ hoặc tới giờ đi học là tiếng tắt."
-            moiLuc ->
-                "Chọn app Lê Hòa dùng được mọi lúc, kể cả giờ ngủ, giờ đi học và lúc " +
+            Loai.MOI_LUC ->
+                "Chọn app $con dùng được mọi lúc, kể cả giờ ngủ, giờ đi học và lúc " +
                     "màn chặn việc nhà đang che, ví dụ Telegram để nhắn cho ba Huy. " +
                     "App cấm hẳn và giờ riêng từng app vẫn áp dụng cho app ở đây."
-            else ->
-                "Chọn app Lê Hòa vẫn được dùng khi hết giờ chơi, ví dụ từ điển, máy tính, " +
+            Loai.TRANG ->
+                "Chọn app $con vẫn được dùng khi hết giờ chơi, ví dụ từ điển, máy tính, " +
                     "app học. Những app còn lại đều bị khoá khi hết giờ. Từ giờ ngủ tới " +
                     "giờ dậy và trong giờ đi học thì app ở đây cũng khoá."
         }
 
-        if (!datHanGio) {
-            selected.addAll(
-                when {
-                    danhSachDen -> prefs.blockedPackages
-                    chonNhac -> prefs.nhacPackages
-                    moiLuc -> prefs.moiLucPackages
-                    else -> prefs.allowedPackages
-                }
-            )
-        }
+        danhSach()?.let { selected.addAll(it.get()) }
         tatCa = loadLaunchableApps()
         locLai()
 
@@ -150,16 +156,7 @@ class AppPickerActivity : AppCompatActivity() {
         demLaiNutXong()
 
         binding.btnDone.setOnClickListener {
-            if (datHanGio) {
-                finish()
-                return@setOnClickListener
-            }
-            when {
-                danhSachDen -> prefs.blockedPackages = selected.toSet()
-                chonNhac -> prefs.nhacPackages = selected.toSet()
-                moiLuc -> prefs.moiLucPackages = selected.toSet()
-                else -> prefs.allowedPackages = selected.toSet()
-            }
+            danhSach()?.set(selected.toSet())
             finish()
         }
     }

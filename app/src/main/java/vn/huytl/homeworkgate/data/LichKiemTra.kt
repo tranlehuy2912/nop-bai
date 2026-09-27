@@ -69,7 +69,7 @@ object LichKiemTra {
         val bai = cacBai(khong)
         val chuong = chuong(khong)
         return cacMon.map { m ->
-            KiemTra(m, bai, chuong, ngay(co, khong, m, ngayNguon), goc)
+            KiemTra(m, bai, chuong, ngayCuaMon(goc, co, khong, m, cacMon.size > 1, ngayNguon), goc)
         }
     }
 
@@ -123,11 +123,14 @@ object LichKiemTra {
     }
 
     /**
-     * Mot cum so bai sau chu "bai". So dung truoc dau cham va mot chu so ("bài 2.26") la
-     * so cau bai tap cua SGK Toan chu khong phai so bai: bo qua.
+     * Mot cum so bai sau chu "bai". So dung truoc dau cham va mot chu so ("bài 2.26",
+     * "bài 10.3") la so cau bai tap chu khong phai so bai: bo qua.
+     *
+     * Moi so phai lay tron chu so, `(?!\d|\.\d)`: chi co `(?!\.\d)` thi may lui bot mot
+     * chu so cho qua duoc dieu kien, va "bài 10.3" doc thanh bai 1, "bài 25.1" thanh bai 2.
      */
     private val CUM_BAI = Regex(
-        """(?<![a-z])bai\s*(\d+(?!\.\d)(?:\s*(?:,|;|&|\+|va|-|–|den|toi)\s*(?:bai\s*)?\d+(?!\.\d))*)"""
+        """(?<![a-z])bai\s*(\d+(?!\d|\.\d)(?:\s*(?:,|;|&|\+|va|-|–|den|toi)\s*(?:bai\s*)?\d+(?!\d|\.\d))*)"""
     )
 
     /** "chương 1", "chương II". */
@@ -137,7 +140,8 @@ object LichKiemTra {
         return t.toIntOrNull() ?: laMa(t)
     }
 
-    private fun laMa(t: String): Int? {
+    /** So La Ma viet thuong ra so, 1 den 20. Dung chung voi [GiaiDe] luc doc ten chuong. */
+    internal fun laMa(t: String): Int? {
         val gia = mapOf('i' to 1, 'v' to 5, 'x' to 10)
         var tong = 0
         for (i in t.indices) {
@@ -148,30 +152,96 @@ object LichKiemTra {
         return tong.takeIf { it in 1..20 }
     }
 
-    /** Ngay kiem tra, tinh tu [nguon]. null la khong doc ra. */
-    private fun ngay(co: String, khong: String, mon: String, nguon: LocalDate): LocalDate? {
-        Regex("""(?<!\d)(\d{1,2})\s*/\s*(\d{1,2})(?:\s*/\s*(\d{4}))?(?!\d)""").find(co)?.let { m ->
-            val d = m.groupValues[1].toInt()
-            val t = m.groupValues[2].toInt()
-            val nam = m.groupValues[3].toIntOrNull() ?: nguon.year
-            runCatching { LocalDate.of(nam, t, d) }.getOrNull()?.let { ngay ->
-                // "2/1" viet trong thang muoi hai la thang mot nam sau.
-                return if (m.groupValues[3].isEmpty() && ngay.isBefore(nguon.minusMonths(6))) {
-                    ngay.plusYears(1)
-                } else {
-                    ngay
-                }
+    /**
+     * Ngay kiem tra cua mot mon. Dong nhac nhieu mon ("Toán ngày 5/11, KHTN ngày 7/11")
+     * thi doc trong doan cua mon do truoc, khong thi mon nao cung lay ngay dau tien.
+     */
+    private fun ngayCuaMon(
+        goc: String,
+        co: String,
+        khong: String,
+        mon: String,
+        nhieuMon: Boolean,
+        nguon: LocalDate
+    ): LocalDate? {
+        if (nhieuMon) {
+            val cacDoan = goc.split(Regex("""[,;]"""))
+            val cua = cacDoan.filter { d ->
+                val c = Normalizer.normalize(d, Normalizer.Form.NFC).lowercase()
+                this.mon(c, boDau(c)).contains(mon)
+            }
+            if (cua.size == 1) {
+                val d = cua[0]
+                val c = Normalizer.normalize(d, Normalizer.Form.NFC).lowercase()
+                ngay(d, c, boDau(c), mon, nguon)?.let { return it }
             }
         }
+        return ngay(goc, co, khong, mon, nguon)
+    }
+
+    /**
+     * Ngay kiem tra, tinh tu [nguon]. null la khong doc ra.
+     *
+     * Thu tu: ngay viet so ("5/11", "ngày 5 tháng 11"), roi thu trong tuan ("thứ 5", co
+     * "tuần sau" thi la thu do cua tuan sau), roi "mai", "tiết sau", "tuần sau".
+     *
+     * Ngay viet so ma khong sau [nguon] thi thuong la ngay cua tin chu khong phai ngay
+     * kiem tra, nen xet cac dau hieu khac truoc.
+     */
+    private fun ngay(goc: String, co: String, khong: String, mon: String, nguon: LocalDate): LocalDate? {
+        val tuanSau = "tuan sau" in khong || "tuan toi" in khong
+        // Ngay viet so dung bang ngay cua tin thi chi dung khi khong con dau hieu nao
+        // khac: "Thông báo ngày 28/9: thứ 4 kiểm tra" la kiem tra thu Tu.
+        val vietSo = ngayVietSo(khong, nguon)
+        if (vietSo != null && vietSo.isAfter(nguon)) return vietSo
+        val homNay = vietSo?.takeIf { it == nguon }
         THU.forEach { (mau, thu) ->
-            if (Regex(mau).containsMatchIn(co)) return ngaySau(nguon) { it.dayOfWeek == thu }
+            if (Regex(mau).containsMatchIn(co)) {
+                if (tuanSau) {
+                    // Thu Hai cua tuan sau, roi toi dung thu do.
+                    val dauTuanSau = nguon.plusDays((8 - nguon.dayOfWeek.value).toLong())
+                    return dauTuanSau.plusDays((thu.value - 1).toLong())
+                }
+                return ngaySau(nguon) { it.dayOfWeek == thu }
+            }
         }
-        if (Regex("""(?<![a-z])(ngay\s*)?mai(?![a-z])""").containsMatchIn(khong)) return nguon.plusDays(1)
+        if (laNgayMai(goc)) return nguon.plusDays(1)
         if ("tiet sau" in khong || "tiet toi" in khong || "buoi sau" in khong || "buoi toi" in khong) {
             return ngaySau(nguon) { d -> mon in ThoiKhoaBieu.monTrongNgay(thuCua(d)) }
         }
-        if ("tuan sau" in khong || "tuan toi" in khong) return nguon.plusDays(7)
-        return null
+        if (tuanSau) return nguon.plusDays(7)
+        return homNay
+    }
+
+    /**
+     * "5/11", "5/11/2026", "ngày 5 tháng 11", "ngày 5 tháng 11 năm 2026".
+     *
+     * Khong ghi nam thi lay nam lam ngay gan [nguon] nhat: "2/1" viet trong thang muoi hai
+     * la thang mot nam sau, "29/12" viet trong thang mot la thang muoi hai nam truoc.
+     */
+    private fun ngayVietSo(khong: String, nguon: LocalDate): LocalDate? {
+        val m = Regex("""(?<![\d/])(\d{1,2})\s*/\s*(\d{1,2})(?:\s*/\s*(\d{4}))?(?![\d/])""").find(khong)
+            ?: Regex("""(?<![a-z])ngay\s*(\d{1,2})\s*thang\s*(\d{1,2})(?:\s*nam\s*(\d{4}))?(?!\d)""").find(khong)
+            ?: return null
+        val d = m.groupValues[1].toInt()
+        val t = m.groupValues[2].toInt()
+        m.groupValues[3].toIntOrNull()?.let { nam -> return runCatching { LocalDate.of(nam, t, d) }.getOrNull() }
+        return (nguon.year - 1..nguon.year + 1)
+            .mapNotNull { nam -> runCatching { LocalDate.of(nam, t, d) }.getOrNull() }
+            .minByOrNull { kotlin.math.abs(java.time.temporal.ChronoUnit.DAYS.between(nguon, it)) }
+    }
+
+    /**
+     * "mai", "ngày mai", "Mai" o dau cau. Doc tren chu goc, con dau va hoa thuong: bo dau
+     * thi "mãi", "mái" cung thanh "mai", viet thuong thi ten co giao "cô Mai" cung thanh
+     * "cô mai". Ten nguoi dung sau cô, thầy, bạn... thi khong tinh.
+     */
+    private fun laNgayMai(goc: String): Boolean {
+        val chu = Normalizer.normalize(goc, Normalizer.Form.NFC)
+        val ten = Regex("""(?i)(?<![\p{L}])(cô|thầy|bạn|chị|anh|em|bà|ông|bác|chú|dì|cậu)\s+mai(?![\p{L}])""")
+        val sach = ten.replace(chu, " ")
+        return Regex("""(?<![\p{L}])(?:[Nn]gày\s+)?mai(?![\p{L}])""").containsMatchIn(sach) ||
+            Regex("""(?:^|[.:;!?\-–]\s*)Mai(?![\p{L}])""").containsMatchIn(sach)
     }
 
     private val THU = listOf(

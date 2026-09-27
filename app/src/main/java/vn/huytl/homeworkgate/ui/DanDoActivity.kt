@@ -70,9 +70,13 @@ class DanDoActivity : AppCompatActivity() {
     /** Duong dan ban da giu lai trong may, cua lan luu truoc. */
     private var anhDaGiu: String? = null
 
+    /** Camera dang mo, cho ket qua. Giu qua luc Android dung lai man. */
+    private var dangChup = false
+
     private val chupTraVe = registerForActivityResult(
         ActivityResultContracts.StartActivityForResult()
     ) { ket ->
+        dangChup = false
         val duong = ket.data?.getStringArrayListExtra(CaptureActivity.KET_QUA_ANH).orEmpty()
         if (ket.resultCode != RESULT_OK || duong.isEmpty()) {
             // Huy tu man soat thi de nguyen man do. Chu may vua doc, cho con sua tay va
@@ -101,14 +105,17 @@ class DanDoActivity : AppCompatActivity() {
             }
             return@registerForActivityResult
         }
+        // Chup nhieu tam thi lay tam CUOI: thuong la tam con chup lai vi tam truoc mo.
         val cac = duong.map { File(it) }
-        doiAnh(cac.first())
-        cac.drop(1).forEach { it.delete() }
-        docBangMay(cac.first())
+        val chon = cac.last()
+        cac.dropLast(1).forEach { it.delete() }
+        doiAnh(chon)
+        docBangMay(chon)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        dangChup = savedInstanceState?.getBoolean(K_DANG_CHUP) == true
         b = StActivityDanDoBinding.inflate(layoutInflater)
         setContentView(b.root)
 
@@ -132,7 +139,9 @@ class DanDoActivity : AppCompatActivity() {
         VoDanDo.donDep(this)
         val daCo = VoDanDo.doc(this)
         when {
-            daCo == null -> moManChup()
+            // Man bi dung lai trong luc camera dang mo thi ket qua van se ve: mo camera
+            // lan nua la con phai chup lai, va tam anh vua chup bi bo.
+            daCo == null -> if (!dangChup) moManChup()
             daCo.chuaDoc -> {
                 anhDaGiu = daCo.anh
                 hienChuaDoc()
@@ -155,7 +164,13 @@ class DanDoActivity : AppCompatActivity() {
         super.onDestroy()
     }
 
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putBoolean(K_DANG_CHUP, dangChup)
+    }
+
     private fun moManChup() {
+        dangChup = true
         chupTraVe.launch(
             Intent(this, CaptureActivity::class.java)
                 .putExtra(CaptureActivity.EXTRA_DAN_DO, true)
@@ -249,6 +264,10 @@ class DanDoActivity : AppCompatActivity() {
         // lai man no chep chu va o tich cua dong cuoi de len moi dong, va bam Luu la
         // luu ca danh sach thanh mot dong lap lai. Tat di thi chi mat cho con vua sua.
         v.root.isSaveFromParentEnabled = false
+        // Giu o tich goc cua may (hay cua Claude) theo tung dong. Mat cai nay thi luc
+        // luu dong nao cung thanh "con tu them", va tin gui Ba Huy khong con bao duoc
+        // cho con doi o tich - thu quyet dinh tron goi 45 phut.
+        v.root.tag = x.mayTich
         v.oChu.setText(x.chu)
         v.oTich.isChecked = x.laBaiTap
         b.danhSachDong.addView(v.root)
@@ -266,7 +285,7 @@ class DanDoActivity : AppCompatActivity() {
     }
 
     private fun docManHinh(): List<VoDanDo.Dong> = dong
-        .map { VoDanDo.Dong(it.oChu.text.toString().trim(), it.oTich.isChecked) }
+        .map { VoDanDo.Dong(it.oChu.text.toString().trim(), it.oTich.isChecked, it.root.tag as? Boolean) }
         .filter { it.chu.isNotEmpty() }
 
     private fun veNutNgay() {
@@ -305,7 +324,7 @@ class DanDoActivity : AppCompatActivity() {
                 .setTitle("Ngày trên vở không tính cho hôm nay")
                 .setMessage(
                     "Vở ghi ngày ${ngay.dayOfMonth}/${ngay.monthValue}/${ngay.year}. Máy chỉ dùng " +
-                        "vở ghi ngày hôm nay, hoặc hôm qua khi chưa quá 12 giờ trưa, nên sẽ không " +
+                        "vở ghi ngày hôm nay, hoặc hôm qua khi chưa quá ${LuatCongGio.GIO_HET_HAN_SANG} giờ trưa, nên sẽ không " +
                         "giữ vở này để tính giờ. Nếu đây là vở của buổi học hôm nay (máy đọc sai " +
                         "ngày, hay cô ghi ngày hạn nộp) thì bấm Sửa ngày."
                 )
@@ -351,11 +370,29 @@ class DanDoActivity : AppCompatActivity() {
      * duoc thi con soat nhu moi khi, va ban soat do thay cho ban chi co anh.
      */
     private fun hienChuaDoc() {
-        b.chuHong.text = "Máy chưa đọc được trang vở này. Ảnh đã gửi " +
-            "${getString(R.string.parent_name)}, ba sẽ nhờ Claude đọc giúp.\n\n" +
-            "Mấy lần nộp bài sau không phải chụp lại vở."
+        val ba = getString(R.string.parent_name)
+        val vo = VoDanDo.doc(this)
+        val daToi = !vo?.fileId.isNullOrEmpty()
+        val dangGui = vo != null && DanDoSender.dangGui(vo.luc)
+        b.chuHong.text = when {
+            daToi || vo == null -> "Máy chưa đọc được trang vở này. Ảnh đã gửi " +
+                "$ba, ba sẽ nhờ Claude đọc giúp.\n\nMấy lần nộp bài sau không phải chụp lại vở."
+            dangGui -> "Máy chưa đọc được trang vở này. Đang gửi ảnh cho $ba…"
+            else -> "Máy chưa đọc được trang vở này, mà ảnh cũng chưa gửi được cho $ba " +
+                "(có thể do mất mạng). Có mạng rồi thì bấm gửi lại."
+        }
         b.nutDocLai.visibility = if (anhDaGiu != null) View.VISIBLE else View.GONE
-        b.nutGuiBa.visibility = View.GONE
+        // Chua toi ba va khong con dang gui thi cho gui lai dung ban da luu.
+        if (vo != null && !daToi && !dangGui && Prefs.get(this).isConfigured) {
+            b.nutGuiBa.visibility = View.VISIBLE
+            b.nutGuiBa.setOnClickListener {
+                DanDoSender.guiNen(this, vo)
+                Toast.makeText(this, "Đang gửi lại ảnh cho $ba", Toast.LENGTH_SHORT).show()
+                hienChuaDoc()
+            }
+        } else {
+            b.nutGuiBa.visibility = View.GONE
+        }
         hien(hong = true)
     }
 
@@ -396,7 +433,7 @@ class DanDoActivity : AppCompatActivity() {
         DanDoSender.guiNen(this, ban)
         Toast.makeText(
             this,
-            "Đã gửi ảnh cho ${getString(R.string.parent_name)}. Mấy lần nộp sau không phải chụp lại vở.",
+            "Đang gửi ảnh cho ${getString(R.string.parent_name)}. Mấy lần nộp sau không phải chụp lại vở.",
             Toast.LENGTH_LONG
         ).show()
         finish()
@@ -447,4 +484,8 @@ class DanDoActivity : AppCompatActivity() {
     }
 
     private fun Int.dp(): Int = (this * resources.displayMetrics.density).toInt()
+
+    private companion object {
+        const val K_DANG_CHUP = "dang_chup"
+    }
 }

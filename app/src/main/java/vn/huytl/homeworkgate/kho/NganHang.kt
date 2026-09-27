@@ -136,26 +136,26 @@ object NganHang {
         Sach(
             nguon = "toan8t1",
             mon = "Toán",
-            ten = "SGK Toán 8 — tập một",
+            ten = "SGK Toán 8 tập một",
             file = "nganhang/toan8t1.json"
         ),
         Sach(
             nguon = "toan8t2",
             mon = "Toán",
-            ten = "SGK Toán 8 — tập hai",
+            ten = "SGK Toán 8 tập hai",
             file = "nganhang/toan8t2.json"
         ),
         Sach(
             nguon = "sbttoan8t1",
             mon = "Toán",
-            ten = "SBT Toán 8 — tập một",
+            ten = "SBT Toán 8 tập một",
             file = "nganhang/sbttoan8t1.json",
             baiTap = true
         ),
         Sach(
             nguon = "sbttoan8t2",
             mon = "Toán",
-            ten = "SBT Toán 8 — tập hai",
+            ten = "SBT Toán 8 tập hai",
             file = "nganhang/sbttoan8t2.json",
             baiTap = true
         ),
@@ -175,13 +175,13 @@ object NganHang {
         Sach(
             nguon = "van8t1",
             mon = "Ngữ văn",
-            ten = "SGK Ngữ văn 8 — tập một",
+            ten = "SGK Ngữ văn 8 tập một",
             file = "nganhang/van8t1.json"
         ),
         Sach(
             nguon = "van8t2",
             mon = "Ngữ văn",
-            ten = "SGK Ngữ văn 8 — tập hai",
+            ten = "SGK Ngữ văn 8 tập hai",
             file = "nganhang/van8t2.json"
         )
     )
@@ -207,12 +207,18 @@ object NganHang {
         val kho = KhoBai.get(context)
         val sp = Prefs.get(context).raw()
         SACH.forEach { sach ->
+            val khoaBan = "nganhang_ban_${sach.nguon}"
+            // Doc truoc rieng so ban o dau file, khoi phai phan tich ca quyen (8 quyen,
+            // 1,3 MB) moi lan app khoi dong chi de biet la khong co gi moi.
+            val banNhanh = runCatching { docBan(context, sach) }.getOrNull()
+            if (banNhanh != null && sp.getInt(khoaBan, 0) == banNhanh && kho.soCauCua(sach.nguon) > 0) {
+                return@forEach
+            }
             val doc = runCatching { doc(context, sach) }.getOrElse { e ->
                 Log.w(TAG, "khong doc duoc ${sach.file}: ${e.message}")
                 return@forEach
             } ?: return@forEach
 
-            val khoaBan = "nganhang_ban_${sach.nguon}"
             // Nap lai khi so ban trong file khac so da ghi, hoac khi trong kho khong
             // con cau nao - kho rong thi so ban co khop cung vo nghia.
             if (sp.getInt(khoaBan, 0) == doc.ban && kho.soCauCua(sach.nguon) > 0) {
@@ -227,6 +233,24 @@ object NganHang {
         val noi = kho.noiCauDuongCu()
         if (noi > 0) Log.i(TAG, "noi $noi cau nop qua duong cu sang ma sach")
     }
+
+    /**
+     * So "ban" cua file, doc tung khoa tu dau file va dung ngay khi gap. Moi file ghi
+     * "ban" truoc "cac_bai", nen gan nhu khong phai doc gi. Gap "cac_bai" truoc thi tra
+     * null, ben goi doc ca file nhu cu.
+     */
+    private fun docBan(context: Context, sach: Sach): Int? =
+        android.util.JsonReader(context.assets.open(sach.file).bufferedReader()).use { r ->
+            r.beginObject()
+            while (r.hasNext()) {
+                when (r.nextName()) {
+                    "ban" -> return@use r.nextInt()
+                    "cac_bai" -> return@use null
+                    else -> r.skipValue()
+                }
+            }
+            null
+        }
 
     /** Mot quyen vua doc xong: so ban ghi trong file va cac cau trong do. */
     private class Quyen(val ban: Int, val cac: List<CauHoi>)
@@ -347,7 +371,8 @@ object NganHang {
             .groupBy { it.bai }
         if (theoBai.isEmpty()) return emptyList()
         val vuaSai = kho.baiVuaSaiCuaMon(mon, han).filter { it in theoBai }
-        val thuTu = (vuaSai + theoBai.keys.sortedBy { khoangCachMoc(context, mon, it) })
+        val khoang = boDoKhoangCach(context, mon)
+        val thuTu = (vuaSai + theoBai.keys.sortedBy(khoang))
             .distinct()
         return thuTu.flatMap { theoBai.getValue(it).take(MOI_BAI_LAM_THEM) }.take(gioiHan)
     }
@@ -372,6 +397,15 @@ object NganHang {
         val phan = PhanHoc.cuaBai(mon, so) ?: return Int.MAX_VALUE
         val moc = PhanHoc.hocToi(context, phan) ?: return Int.MAX_VALUE
         return moc - so
+    }
+
+    /**
+     * Nhu [khoangCachMoc] nhung nho ket qua tung bai. Dung trong sortedBy: ham chon o do
+     * chay hai lan moi lan so sanh, ma moi lan doc moc hoc la mot lan giai ma prefs.
+     */
+    fun boDoKhoangCach(context: Context, mon: String): (String) -> Int {
+        val nho = HashMap<String, Int>()
+        return { bai -> nho.getOrPut(bai) { khoangCachMoc(context, mon, bai) } }
     }
 
     /** Moi bai lay toi da bay nhieu cau cho danh sach lam them. */

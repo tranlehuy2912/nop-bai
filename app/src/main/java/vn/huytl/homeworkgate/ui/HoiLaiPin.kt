@@ -15,7 +15,6 @@ import vn.huytl.homeworkgate.R
 import vn.huytl.homeworkgate.data.Prefs
 import vn.huytl.homeworkgate.guard.ParentMode
 import vn.huytl.homeworkgate.guard.PhienQuanLy
-import vn.huytl.homeworkgate.telegram.Notifier
 
 /**
  * Hoi lai PIN ngay tren trang cua Ba Huy, khi trang do mo lai ma chua chac Ba Huy
@@ -41,8 +40,12 @@ class HoiLaiPin(private val man: AppCompatActivity) {
     private var hop: AlertDialog? = null
 
     init {
+        // Anh chup trang de hien trong danh sach app gan day se lo token, khoa AI cho con
+        // doc: trang nay co y nam lai trong danh sach do (4742134). Android 13 tro len
+        // thi tat anh chup do; man hinh van chup anh duoc nhu thuong.
+        if (android.os.Build.VERSION.SDK_INT >= 33) man.setRecentsScreenshotEnabled(false)
         // Xoay may luc hop dang mo thi man cu bi huy, hop phai di theo. Man moi tu hoi
-        // lai o onResume, vi co da-qua-PIN da ve false tu luc khoa.
+        // lai o onResume, vi co [PhienQuanLy.dangHoiPin] con bat.
         man.lifecycle.addObserver(object : DefaultLifecycleObserver {
             override fun onDestroy(owner: LifecycleOwner) {
                 hop?.dismiss()
@@ -65,6 +68,7 @@ class HoiLaiPin(private val man: AppCompatActivity) {
             return
         }
         PhienQuanLy.daQuaPin = false
+        PhienQuanLy.dangHoiPin = true
         PhienQuanLy.thoiMoCaiDat()
         noiDung(hien = false)
         hoi(viec)
@@ -72,6 +76,7 @@ class HoiLaiPin(private val man: AppCompatActivity) {
 
     private fun phaiHoi(): Boolean {
         if (!Prefs.get(man).hasPin()) return false
+        if (PhienQuanLy.dangHoiPin) return true
         if (PhienQuanLy.phaiHoiLaiPin()) return true
         return !PhienQuanLy.daQuaPin && !ParentMode.isActive(man)
     }
@@ -102,20 +107,13 @@ class HoiLaiPin(private val man: AppCompatActivity) {
     private fun kiem(pin: String, viec: () -> Unit) {
         hop = null
         if (man.isFinishing || man.isDestroyed) return
-        val prefs = Prefs.get(man)
-        if (!prefs.checkPin(pin)) {
-            // Dem chung voi o PIN o man chinh: go sai o day hay o do cung la mot nguoi
-            // dang do ma.
-            val soLan = prefs.saiPinLienTiep + 1
-            prefs.saiPinLienTiep = soLan
-            if (soLan % 3 == 0) Notifier.wrongPinAttempts(man, soLan)
+        // Dem chung voi o PIN o man chinh: go sai o day hay o do cung la mot nguoi dang
+        // do ma. Xem [PhienQuanLy.thuPin].
+        if (!PhienQuanLy.thuPin(man, pin)) {
             Toast.makeText(man, R.string.pin_wrong, Toast.LENGTH_SHORT).show()
             hoi(viec)
             return
         }
-        prefs.saiPinLienTiep = 0
-        PhienQuanLy.daQuaPin = true
-        Notifier.parentModeEntered(man)
         noiDung(hien = true)
         viec()
     }
