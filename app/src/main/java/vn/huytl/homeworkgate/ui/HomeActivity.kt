@@ -28,6 +28,8 @@ import kotlinx.coroutines.withContext
 import android.widget.Toast
 import android.widget.LinearLayout
 import vn.huytl.homeworkgate.R
+import vn.huytl.homeworkgate.data.BaiGuiHong
+import vn.huytl.homeworkgate.data.DayLog
 import vn.huytl.homeworkgate.data.GateState
 import vn.huytl.homeworkgate.data.GateStore
 import vn.huytl.homeworkgate.data.GiaiDe
@@ -43,6 +45,7 @@ import vn.huytl.homeworkgate.kho.BoTuVung
 import vn.huytl.homeworkgate.kho.KhoBai
 import vn.huytl.homeworkgate.kho.NganHang
 import vn.huytl.homeworkgate.kho.PhanHoc
+import vn.huytl.homeworkgate.kho.PhamVi
 import vn.huytl.homeworkgate.data.ThoiKhoaBieu
 import vn.huytl.homeworkgate.data.TinhLoiNhac
 import vn.huytl.homeworkgate.databinding.ActivityHomeBinding
@@ -597,6 +600,15 @@ class HomeActivity : AppCompatActivity() {
             emptyList()
         }
 
+        /*
+         * Bai da lam xong ma chua toi tay Ba Huy: dung truoc het, truoc ca dong cau can sua.
+         *
+         * Lan 21:13 ngay 28/9/2026 la mot lan nop lai cau sai gui hong. Loi nhan "Gửi không
+         * được" cu nam o nhanh else ben duoi dong cau can sua, ma cau chua gui duoc thi van la
+         * cau can sua, nen Le Hoa khong bao gio thay no.
+         */
+        BaiGuiHong.cacLan(this).forEach { themViecGuiHong(it) }
+
         if (canSua.isNotEmpty()) {
             val ke = canSua.take(3).joinToString(", ") { it.ma }
             /*
@@ -792,6 +804,96 @@ class HomeActivity : AppCompatActivity() {
             }
         }
     }
+
+    /**
+     * Mot lan nop gui khong xong, anh con giu trong may. Xem [BaiGuiHong].
+     *
+     * Bam vao thi hoi Gui lai hay Bo anh chu khong gui ngay: co khi Le Hoa muon chup lai
+     * cho ro hon, va luc do anh cu phai bo di, khong thi dong nay nam do ca ngay.
+     */
+    private fun themViecGuiHong(lan: BaiGuiHong.Lan) {
+        val gio = BaiGuiHong.gioPhut(lan.lucNop)
+        if (BaiGuiHong.dangGui(lan)) {
+            // Service chua kip nhan viec thi het khoang cho phai ve lai, khong thi dong nam
+            // mai o "Đang gửi lại" du khong con ai gui.
+            val con = BaiGuiHong.conChoService(lan)
+            if (con > 0L) tay.postDelayed(veLai, con + 200L)
+            themViec(
+                hinh = R.drawable.st_ic_dong_ho,
+                mau = R.color.wait,
+                ten = "Đang gửi lại bài lúc $gio",
+                phu = keTrang(lan),
+                mui = false
+            ) { toast("Đang gửi, đợi một chút") }
+            return
+        }
+        themViec(
+            hinh = R.drawable.st_ic_dau_hoi,
+            mau = R.color.alert,
+            ten = "Bài lúc $gio chưa gửi được",
+            phu = keTrang(lan)
+        ) { hoiGuiLai(lan.ma) }
+    }
+
+    private fun hoiGuiLai(ma: String) {
+        val lan = BaiGuiHong.lay(this, ma) ?: return render()
+        if (BaiGuiHong.dangGui(lan)) return toast("Đang gửi, đợi một chút")
+        MaterialAlertDialogBuilder(this)
+            .setTitle("Bài lúc ${BaiGuiHong.gioPhut(lan.lucNop)} chưa gửi được")
+            .setMessage(
+                keTrang(lan) + "." +
+                    if (lan.soLan > 1) " Đã gửi ${lan.soLan} lần chưa được." else ""
+            )
+            .setPositiveButton("Gửi lại") { _, _ -> guiLai(ma) }
+            .setNegativeButton("Bỏ ảnh") { _, _ -> boAnhGuiHong(ma) }
+            .setNeutralButton("Để sau", null)
+            .show()
+    }
+
+    private fun guiLai(ma: String) {
+        val lan = BaiGuiHong.lay(this, ma) ?: return render()
+        // Hop hoi mo tu truoc, trong luc do mot lan bam khac da gui roi.
+        if (BaiGuiHong.dangGui(lan)) return toast("Đang gửi, đợi một chút")
+        val gon = BaiGuiHong.lamGon(this, ma)
+        if (gon == null) {
+            // He dieu hanh don cacheDir luc may day bo nho: anh bai giai lan do khong con.
+            BaiGuiHong.bo(this, ma)
+            DayLog.add(this, "Bỏ bài gửi hỏng lúc ${BaiGuiHong.gioPhut(lan.lucNop)}: ảnh không còn trong máy")
+            runCatching { DongBo.dayNgay() }
+            toast("Ảnh lần đó không còn, ${getString(R.string.child_name)} chụp lại nhé")
+            return
+        }
+        val pham = PhamVi.tuJson(gon.pham)
+        if (!gate.conChoNop(pham)) {
+            toast("Đã gửi đủ bài, chờ ba Huy duyệt bớt rồi bấm Gửi lại")
+            return
+        }
+        BaiGuiHong.danhDauBamGui(this, ma)
+        ApprovalService.ensureRunning(this)
+        ApprovalService.guiBai(this, gon.anh, pham, gon.lucNop)
+        toast("Đang gửi lại cho ${getString(R.string.parent_name)}")
+    }
+
+    private fun boAnhGuiHong(ma: String) {
+        val lan = BaiGuiHong.lay(this, ma) ?: return render()
+        // Bo anh giua luc dang gui thi lan dang gui hong vi mat anh.
+        if (BaiGuiHong.dangGui(lan)) return toast("Đang gửi, đợi một chút")
+        BaiGuiHong.bo(this, ma)
+        // Ghi vao nhat ky: Ba Huy biet anh cua lan do ben Telegram (neu co) khong con tinh.
+        DayLog.add(
+            this,
+            "Bỏ ảnh bài gửi hỏng lúc ${BaiGuiHong.gioPhut(lan.lucNop)} (${BaiGuiHong.keAnh(this, lan.anh)})"
+        )
+        runCatching { DongBo.dayNgay() }
+        toast("Đã bỏ ảnh")
+    }
+
+    /** "Đề bài 5 trang, bài giải 4 trang". */
+    private fun keTrang(lan: BaiGuiHong.Lan): String =
+        lan.anh.entries.mapIndexed { i, (st, files) ->
+            val ten = getString(st.labelRes)
+            (if (i == 0) ten else ten.lowercase()) + " ${files.size} trang"
+        }.joinToString(", ")
 
     /** Mot dong trong danh sach viec. */
     private fun themViec(

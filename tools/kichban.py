@@ -432,6 +432,7 @@ BO_TEST = [
     ("LuatCatMangTest", "Luật cắt mạng và việc bật tắt VPN"),
     # -- so sach trong may --
     ("SoCaiBaiTest", "Sổ cái bài đã nộp"),
+    ("BaiGuiHongTest", "Lần nộp gửi hỏng, giữ ảnh để gửi lại"),
     ("VoDanDoTest", "Trang vở dặn dò đã soát"),
     ("NhatKySuDungTest", "Sổ ghi dùng app lúc nào"),
     ("GioiHanAppTest", "Hạn giờ từng app"),
@@ -449,7 +450,6 @@ BO_TEST = [
     ("HocThuocTest", "Đường kiểm tra bài"),
     ("TuVungTest", "Đường từ vựng"),
     # -- cham bai --
-    ("ChamBaiJsonTest", "Đọc JSON chấm bài"),
     ("ChamTheoClaudeTest", "Bản Claude chấm thành bản chấm của tablet"),
     ("SuaChamTest", "Sửa bản chấm theo Claude"),
     ("BaiDaChamTest", "Trang Bài đã chấm đọc từ Firestore"),

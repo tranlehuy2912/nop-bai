@@ -4,6 +4,7 @@ import android.content.Context
 import android.os.SystemClock
 import org.json.JSONArray
 import org.json.JSONObject
+import vn.huytl.homeworkgate.kho.PhamVi
 import java.util.Calendar
 
 enum class GateState {
@@ -127,6 +128,17 @@ class GateStore(context: Context) {
 
     /** Con cho nop them bai nua khong, hay da xep hang du [MAX_BAI_CHO] bai. */
     fun conChoNopThem(): Boolean = baiDangCho().size < MAX_BAI_CHO
+
+    /**
+     * Nhu [conChoNopThem], cho mot lan nop cu the. Lan nop lai ma se huy bai cu (xem
+     * [PhamVi.huyBaiCu]) thi bai cu nhuong cho: service huy no ngay truoc khi xep bai moi.
+     */
+    fun conChoNop(pham: PhamVi?): Boolean {
+        val hang = baiDangCho()
+        val nhuongCho = pham?.takeIf { it.laSua && it.huyBaiCu }
+            ?.let { p -> hang.any { it.id == p.suaBai } } == true
+        return hang.size - (if (nhuongCho) 1 else 0) < MAX_BAI_CHO
+    }
 
     private var grantedAtWall: Long
         get() = sp.getLong(K_GRANT_WALL, 0L)

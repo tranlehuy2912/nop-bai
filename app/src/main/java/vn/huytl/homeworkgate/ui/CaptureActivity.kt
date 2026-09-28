@@ -510,11 +510,7 @@ class CaptureActivity : AppCompatActivity() {
      * moi vao hang.
      */
     private fun guiBai(groups: Map<CaptureStage, List<File>>) {
-        val gate = vn.huytl.homeworkgate.data.GateStore(this)
-        val hang = gate.baiDangCho()
-        val nhuongCho = pham?.takeIf { it.laSua && it.huyBaiCu }
-            ?.let { p -> hang.any { it.id == p.suaBai } } == true
-        if (hang.size - (if (nhuongCho) 1 else 0) >= vn.huytl.homeworkgate.data.GateStore.MAX_BAI_CHO) {
+        if (!vn.huytl.homeworkgate.data.GateStore(this).conChoNop(pham)) {
             toast("Đã gửi đủ bài, chờ ba Huy duyệt bớt rồi bấm Gửi lại")
             return
         }

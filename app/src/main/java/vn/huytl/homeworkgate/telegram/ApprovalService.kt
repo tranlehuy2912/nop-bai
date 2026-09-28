@@ -28,6 +28,7 @@ import java.util.Date
 import java.util.Locale
 import vn.huytl.homeworkgate.App
 import vn.huytl.homeworkgate.R
+import vn.huytl.homeworkgate.data.BaiGuiHong
 import vn.huytl.homeworkgate.data.CongSang
 import vn.huytl.homeworkgate.data.EndReason
 import vn.huytl.homeworkgate.data.GateState
@@ -233,7 +234,17 @@ class ApprovalService : Service() {
             val pham = PhamVi.tuJson(intent.getStringExtra(EXTRA_PHAM))
             val lucNop = intent.getLongExtra(EXTRA_LUC_NOP, 0L).takeIf { it > 0L }
                 ?: System.currentTimeMillis()
-            scope?.launch { guiRoiCho(nhom, pham, lucNop) }
+            val tep = nhom.values.flatten()
+            scope?.let { s ->
+                BaiGuiHong.nhanGui(tep)
+                s.launch {
+                    try {
+                        synchronized(khoaGui) { guiRoiCho(nhom, pham, lucNop) }
+                    } finally {
+                        BaiGuiHong.traGui(this@ApprovalService, tep)
+                    }
+                }
+            }
         }
 
         // Ba Huy dan ket qua Claude cham tu Bang dieu khien. Chay dung doan xu ly cua
@@ -1328,10 +1339,32 @@ class ApprovalService : Service() {
         lucNop: Long = System.currentTimeMillis()
     ) {
         val anh = nhom.values.flatten()
+        /*
+         * Anh da mat thi thoi: khong gui, khong giu lai gi. Xay ra khi cung mot bo anh duoc
+         * nho gui hai lan (bam Gui lai hai lan): lan truoc gui xong da xoa anh, lan nay toi
+         * luot sau. Gui tiep thi hong vi mat anh, roi dong "chưa gửi được" hien lai cho mot
+         * bai da nop.
+         */
+        if (anh.any { !it.exists() }) {
+            Log.i(TAG, "bo lan gui: anh khong con")
+            return
+        }
         val sent = runCatching { HomeworkSender.send(this, nhom) }.getOrElse { e ->
-            Log.w(TAG, "gui bai hong: ${e.message}")
-            SoCaiBai.datLoiNhan(this, "Gửi không được, kiểm tra mạng rồi chụp lại nhé.")
-            anh.forEach { runCatching { it.delete() } }
+            Log.w(TAG, "gui bai hong: ${e.message}", e)
+            /*
+             * Giu anh de Le Hoa bam Gui lai, va ghi vao nhat ky anh nao da len Telegram, hong
+             * o dau, vi sao (Ba Huy chon ngay 28/9/2026). Truoc do cho nay xoa anh va bao
+             * chup lai. Ma hong giua chung thi Telegram da co anh: lan 21:13 ngay 28/9/2026
+             * Ba Huy thay album bai giai ma Bang dieu khien khong co bai, va khong biet vi sao.
+             */
+            val lan = BaiGuiHong.giu(this, nhom, pham?.sangJson(), lucNop)
+            DayLog.add(
+                this,
+                "Gửi bài hỏng (" + BaiGuiHong.keAnh(this, nhom) +
+                    (if (lan.soLan > 1) ", lần ${lan.soLan}" else "") + "): " +
+                    HomeworkSender.moTaHong(this, e)
+            )
+            runCatching { DongBo.dayNgay() }
             return
         }
 
@@ -1368,11 +1401,12 @@ class ApprovalService : Service() {
             this, sent.requestId, sent.messageId, sent.anh + listOfNotNull(anhVo),
             DongBo.banKhai(this, pham), vo?.let { DongBo.banDanDo(it) }
         )
+        // Dung bo anh cua mot lan gui hong dang giu: Le Hoa vua bam Gui lai va lan nay xong.
+        // Lan hong nao cung bai voi lan nay thi bo, con da chup lai bai do roi.
+        val xong = BaiGuiHong.xong(this, anh, pham)
         DayLog.add(
             this,
-            "Nộp bài: " + nhom.entries.joinToString(", ") { (st, files) ->
-                "${getString(st.labelRes).lowercase()} ${files.size}"
-            }
+            (if (xong.guiLai != null) "Nộp bài (gửi lại): " else "Nộp bài: ") + BaiGuiHong.keAnh(this, nhom)
         )
         anh.forEach { runCatching { it.delete() } }
 
@@ -1419,6 +1453,13 @@ class ApprovalService : Service() {
      * con duoc cap gio hai lan. Xu ly lan luot thi lan sau thay bai da xong.
      */
     private val khoaCham = Any()
+
+    /**
+     * Moi lan chi gui mot lan nop, cac lan khac cho toi luot. Hai lan cung bo anh chay song
+     * song (Le Hoa bam Gui lai luc lan truoc chua xong) thi mot bai vao hang hai lan, hoac
+     * lan xong truoc xoa anh giua luc lan kia dang doc. Xem [BaiGuiHong.dangGui].
+     */
+    private val khoaGui = Any()
 
     /**
      * Xu ly mot ban cham cua Claude: cap gio, ghi so, bao Telegram, day sang dien thoai.
@@ -2375,11 +2416,13 @@ class ApprovalService : Service() {
         fun guiBai(
             context: Context,
             nhom: Map<CaptureStage, List<java.io.File>>,
-            pham: PhamVi?
+            pham: PhamVi?,
+            /** Luc bam Gui. Gui lai mot lan hong thi van la luc bam Gui lan dau, xem [BaiGuiHong]. */
+            lucNop: Long = System.currentTimeMillis()
         ) {
             val intent = Intent(context, ApprovalService::class.java)
                 .setAction(ACTION_GUI)
-                .putExtra(EXTRA_LUC_NOP, System.currentTimeMillis())
+                .putExtra(EXTRA_LUC_NOP, lucNop)
                 .putExtra(EXTRA_PHAM, pham?.sangJson())
             nhom.forEach { (st, files) ->
                 intent.putStringArrayListExtra(
