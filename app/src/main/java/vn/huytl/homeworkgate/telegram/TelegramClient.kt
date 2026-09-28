@@ -92,7 +92,7 @@ class TelegramClient(private val token: String) {
     ): Long {
         val payload = JSONObject().apply {
             put("chat_id", chatId)
-            put("text", text.take(4096))
+            put("text", text.take(MAX_TIN))
             if (replyMarkup != null) put("reply_markup", replyMarkup)
             if (entities != null) put("entities", entities)
             if (replyToMessageId != 0L) {
@@ -233,7 +233,7 @@ class TelegramClient(private val token: String) {
         val payload = JSONObject().apply {
             put("chat_id", chatId)
             put("message_id", messageId)
-            put("text", text.take(4096))
+            put("text", text.take(MAX_TIN))
         }
         return runCatching { call("editMessageText", payload.toJsonBody()) }.isSuccess
     }
@@ -348,6 +348,13 @@ class TelegramClient(private val token: String) {
 
     companion object {
         private const val BASE = "https://api.telegram.org/bot"
+
+        /**
+         * Tin dai nhat Telegram nhan. [sendMessage] va [editMessageText] cat duoi phan
+         * thua, nen tin nao xep cai moi nhat xuong cuoi thi phai tu bo phan cu truoc khi
+         * gui: tin /hoi, xem NhatKyAi.tinHoi.
+         */
+        const val MAX_TIN = 4096
 
         /** Telegram giu ket noi toi da chung nay giay neu chua co update. */
         /**

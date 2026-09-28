@@ -36,6 +36,9 @@ object NhatKyAi {
 
     private val dongHo = SimpleDateFormat("dd/MM HH:mm", Locale.forLanguageTag("vi-VN"))
 
+    /** Dau moi cau trong so, dung nhu [ghi] viet: ngay gio, hai dau cach, [ten app]. */
+    private val DAU_CAU = Regex("""^\d{2}/\d{2} \d{2}:\d{2}  \[""")
+
     /** Ghi mot cau con vua hoi [tenApp]. Tra ve dong da ghi, de con gui di Telegram. */
     fun ghi(context: Context, tenApp: String, cau: String): String {
         val sp = Prefs.get(context).raw()
@@ -80,13 +83,65 @@ object NhatKyAi {
      *
      * Moi cau van mo dau bang ngay gio va [ten app], nen dong khong co ngay o dau la
      * phan tiep cua cau ben tren. Khong them dong trong giua hai cau nhu the Hoi AI ben
-     * Bang dieu khien: /hoi tatca dai toi [MAX_DONG] cau, ma tin Telegram bi cat o 4096
-     * chu (TelegramClient.sendMessage).
+     * Bang dieu khien: mot tin Telegram chi chua 4096 chu (TelegramClient.MAX_TIN), them
+     * dong trong la [tinHoi] phai bo them cau cu.
      *
      * Chi doi dung chuoi [motDong] ghi, nen dau ↵ con tu go ma khong co hai dau cach
      * hai ben thi giu nguyen.
      */
     fun traXuongDong(so: String): String = so.replace(XUONG_DONG, "\n")
+
+    /**
+     * Than tin /hoi: dong [tieuDe], roi cac cau trong [so] (ban cua [tatCa] hay [homNay])
+     * voi cho con xuong dong tra lai nhu [traXuongDong].
+     *
+     * Dai qua [toiDa] chu thi bo cau cu nhat truoc, bo ca cau chu khong cat giua cau, va
+     * dong thu hai cua tin noi bao nhieu cau khong hien. So xep cau cu len truoc, ma
+     * TelegramClient.sendMessage cat duoi tin dai qua mot tin, nen truoc 28/9/2026 tin dai
+     * mat dung may cau moi nhat, la cau Ba Huy dang muon doc. /hoi tatca giu toi
+     * [MAX_DONG] dong, so day la chac chan dai qua mot tin.
+     *
+     * Cau moi nhat luon duoc giu, ke ca khi mot minh no da dai qua [toiDa]: [BoGoAi]
+     * khong co tran do dai, con dan ca bai doc vao app AI la co. Khi do sendMessage cat
+     * duoi cau do, y nhu tin bao luc con vua hoi.
+     */
+    fun tinHoi(tieuDe: String, so: String, toiDa: Int): String {
+        val cac = tachCau(so).map { traXuongDong(it) }
+        val ca = tieuDe + "\n" + cac.joinToString("\n")
+        if (ca.length <= toiDa || cac.size < 2) return ca
+
+        // Chua cho cho dong bao viet voi cac.size: so cau bo luon it hon cac.size, nen dong
+        // bao that khong dai hon. Con 2 la hai dau xuong dong, sau [tieuDe] va sau dong bao.
+        var con = toiDa - tieuDe.length - baoBot(cac.size).length - 2 - cac.last().length
+        var tu = cac.lastIndex
+        while (tu > 0 && cac[tu - 1].length + 1 <= con) {
+            tu--
+            con -= cac[tu].length + 1
+        }
+        return tieuDe + "\n" + baoBot(tu) + "\n" + cac.drop(tu).joinToString("\n")
+    }
+
+    /** Dong thu hai cua tin /hoi khi [tinHoi] phai bo [n] cau cu nhat. */
+    private fun baoBot(n: Int) = "(Tin dài quá nên không hiện $n câu cũ nhất.)"
+
+    /**
+     * Cac cau trong [so], cu nhat truoc.
+     *
+     * Dong khong mo dau bang [DAU_CAU] la phan tiep cua cau ben tren. Tu 16/9 den 23/9/2026
+     * [ghi] con de nguyen cho con xuong dong, nen cau nhieu dong ghi trong khoang do nam
+     * tren nhieu dong cua so. [homNay] bo mat cac dong tiep do, [tatCa] thi van con. Gop
+     * lai de [tinHoi] bo cau nao thi bo ca dong tiep cua no: dau tin khong treo mot dong
+     * le khong ro cua cau nao, va so cau khong hien dem dung.
+     */
+    private fun tachCau(so: String): List<String> {
+        val cac = mutableListOf<String>()
+        for (dong in so.lines()) {
+            if (dong.isBlank()) continue
+            if (cac.isEmpty() || DAU_CAU.containsMatchIn(dong)) cac += dong
+            else cac[cac.lastIndex] += "\n" + dong
+        }
+        return cac
+    }
 
     /** Toan bo nhat ky con giu. */
     fun tatCa(context: Context): String =
