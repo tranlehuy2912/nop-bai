@@ -28,9 +28,9 @@ data class CauHoi(
     /**
      * Dap an in cuoi sach bai tap, chi co o cau SBT. Rong la sach khong co loi giai.
      *
-     * KHONG BAO GIO HIEN CHO LE HOA. Chi hai noi doc no: may cham tu luan, qua doan
-     * dap so dan them vao cau lenh (xem [vn.huytl.homeworkgate.ai.PromptCham]), va man
-     * Giai de, de cham ngay tren tablet cau trac nghiem con bam.
+     * KHONG BAO GIO HIEN CHO LE HOA. Tu 28/9/2026 chi man Giai de doc no, de cham ngay
+     * tren tablet cau trac nghiem con bam. Truoc do may cham tu luan tren tablet con doc
+     * no qua mot doan dap so dan them vao cau lenh; phan may cham da bo.
      */
     val dapAn: String = "",
     /**
@@ -323,8 +323,9 @@ data class TraLoi(
     /** Cau con tu viet ra minh sai cho nao, truoc khi nop lai bai da sua. */
     val conNoi: String = "",
     /**
-     * Cau nay sai KIEU gi: mot trong bay nhan o [vn.huytl.homeworkgate.ai.ChamBaiJson.NHAN_LOI].
-     * Rong la cau dung, hoac ban cham cu chua co truong nay.
+     * Cau nay sai KIEU gi: mot trong bay nhan cua [vn.huytl.homeworkgate.data.LoaiLoi].
+     * Rong la cau dung, hoac ban cham khong co truong nay. Chi may cham tren tablet dat
+     * nhan; may cham bo ngay 28/9/2026, nen tu do cau Claude cham deu de rong.
      *
      * Xem [vn.huytl.homeworkgate.kho.KhoBai.thongKeLoi] de biet cot nay de lam gi.
      */
@@ -384,6 +385,10 @@ data class PhamVi(
      * Khong cham dung sai, khong anh huong so phut. Muc dich la bat dua tre goi ten
      * duoc cai sai cua chinh no - goi ten duoc thi lan sau moi tranh - va de Ba Huy
      * doc mot dong la biet con that su hieu hay chi chep lai dap an.
+     *
+     * Tu 28/9/2026 khong con man nao hoi cau nay: Ba Huy bo buoc hoi o nut nop lai, va
+     * duong nop lai qua man chon cau (noi tung hoi) cung bo. Truong nay giu de doc pham
+     * vi cu con nam trong KhaiChoCham, va de tin Telegram van in dong "Con tự nói" neu co.
      */
     val conNoi: String = "",
     /**
@@ -393,9 +398,40 @@ data class PhamVi(
      * moi di qua duong chup va cham nay. Luc cham xong, so cau dung ghi nguoc vao de -
      * xem [vn.huytl.homeworkgate.data.GiaiDe.nhanTuLuan].
      */
-    val giaiDe: String = ""
+    val giaiDe: String = "",
+    /**
+     * Lan nop nay la NOP LAI cac cau sai cua bai nao (ma bai, y nhu tren Firestore). Rong
+     * la bai moi.
+     *
+     * Con bam nut "Nộp lại N câu sai" tren the cua mot bai o man ket qua (Ba Huy chon
+     * ngay 28/9/2026). Con thuong sua de len chinh trang vo cu, nen anh co ca nhung cau
+     * da dung tu lan truoc. Co ma nay thi chi cau trong [cauIds] va [cauNgoai] duoc cham,
+     * cau khac trong anh bi bo han - xem [vn.huytl.homeworkgate.data.ChamTheoClaude]. Khong
+     * bo thi cau da tra gio ma nam ngoai danh sach khai bi coi la bai ngoai sach, so cai
+     * khong nhan ra, va con duoc tra gio lan hai.
+     */
+    val suaBai: String = "",
+    /**
+     * Cau NGOAI SACH cua lan nop lai: ma va de chep tu ban cham cu cua bai [suaBai].
+     *
+     * Cau ngoai sach khong co ma sach nen khong vao duoc [cauIds]. So cai nhan cau ngoai
+     * sach theo de bai (SoCaiBai.khoaCua), ma de do la chu may hay Claude chep tu anh o lan
+     * cham truoc. Mang dung chuoi de cu sang lan nay thi so cai nhan ra dung cau cu, thay
+     * vi de Claude chep lai mot kieu khac.
+     */
+    val cauNgoai: List<CauNgoai> = emptyList(),
+    /**
+     * Bai [suaBai] con nam cho duyet ma khong co phut nao de duyet (sai het). Gui xong lan
+     * nop lai thi tablet huy bai cu, y nhu con tu bam "Huỷ bài vừa nộp": bai cu khong con
+     * gi cho Ba Huy bam, ma de do thi no chiem mot cho trong hang cho va man chinh cu ghi
+     * "Chờ ba Huy duyệt". Ba Huy chon ngay 28/9/2026.
+     */
+    val huyBaiCu: Boolean = false
 ) {
     val theoSach: Boolean get() = nguon.isNotBlank() && cauIds.isNotEmpty()
+
+    /** Lan nop lai cac cau sai cua mot bai, xem [suaBai]. */
+    val laSua: Boolean get() = suaBai.isNotBlank()
 
     fun sangJson(): String = JSONObject()
         .put("mon", mon)
@@ -408,6 +444,12 @@ data class PhamVi(
         .put("da_khai_chac", daKhaiChac)
         .put("con_noi", conNoi)
         .put("giai_de", giaiDe)
+        .put("sua_bai", suaBai)
+        .put(
+            "cau_ngoai",
+            JSONArray(cauNgoai.map { JSONObject().put("ma", it.ma).put("de", it.de) })
+        )
+        .put("huy_bai_cu", huyBaiCu)
         .toString()
 
     companion object {
@@ -429,11 +471,23 @@ data class PhamVi(
                 },
                 daKhaiChac = o.optBoolean("da_khai_chac", false),
                 conNoi = o.optString("con_noi"),
-                giaiDe = o.optString("giai_de")
+                giaiDe = o.optString("giai_de"),
+                suaBai = o.optString("sua_bai"),
+                cauNgoai = o.optJSONArray("cau_ngoai").let { m ->
+                    (0 until (m?.length() ?: 0)).mapNotNull { i ->
+                        val c = m?.optJSONObject(i) ?: return@mapNotNull null
+                        val ma = c.optString("ma").trim()
+                        if (ma.isEmpty()) null else CauNgoai(ma, c.optString("de"))
+                    }
+                },
+                huyBaiCu = o.optBoolean("huy_bai_cu", false)
             )
         }
     }
 }
+
+/** Mot cau ngoai sach trong lan nop lai, xem [PhamVi.cauNgoai]. */
+data class CauNgoai(val ma: String, val de: String)
 
 /**
  * Cac con so cho man hinh "Con da lam duoc gi".

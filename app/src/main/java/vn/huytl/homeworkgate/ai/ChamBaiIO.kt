@@ -9,19 +9,18 @@ import vn.huytl.homeworkgate.data.KetQuaCham
 /**
  * Goi mot ban cham lai thanh chu de gui qua Intent, va mo ra o dau kia.
  *
- * VI SAO CAN. Tu ban co man soat bai, hai viec truoc day lam lien nhau bi tach doi:
- * CHAM thi xay ra trong man hinh cua con (con phai ngoi xem ket qua doc va sua),
- * con CAP GIO - gui Telegram, ghi so, day sang dien thoai Ba Huy - thi van phai
- * nam trong service, vi no phai chay xong du con co dong man hinh lai.
+ * VI SAO CAN. Ban cham cua Claude toi tablet qua lenh CHAMBAI (ThiHanhLenh, chay trong
+ * listener Firestore), con CAP GIO - gui Telegram, ghi so, day sang dien thoai Ba Huy -
+ * thi nam trong service, vi no phai chay xong du tien trinh nghe lenh co bi dung giua
+ * chung. Giua hai noi do chi co Intent, ma Intent thi khong mang duoc doi tuong Kotlin.
  *
- * Giua hai noi do chi co Intent, ma Intent thi khong mang duoc doi tuong Kotlin.
+ * Truoc 28/9/2026 lop nay con chuyen ban may tren tablet cham, tu man soat bai sang
+ * service. Phan may cham da bo, lop nay giu cho duong Claude.
+ *
  * KHONG dung Serializable/Parcelable: ban cham nay con di tiep xuong so va sang
- * Firestore duoi dang chu, nen co san mot ban chu la tien ca duong sau.
- *
- * KHAC [ChamBaiJson]: ben do doc chu cua AI - dinh dang cua Google, thieu truong
- * la chuyen thuong, doc phai thu than. Ben nay doc chu do CHINH APP viet ra, nen
- * duoc phep tin hon; nhung van khong nem loi, vi mot ban cham hong thi tha mat
- * lan nop con hon ket ca app.
+ * Firestore duoi dang chu, nen co san mot ban chu la tien ca duong sau. Chu o day do
+ * CHINH APP viet ra nen duoc phep tin; nhung van khong nem loi, vi mot ban cham hong
+ * thi tha mat lan cham con hon ket ca app.
  */
 object ChamBaiIO {
 
@@ -99,9 +98,8 @@ object ChamBaiIO {
     /**
      * Doc mang chuoi, GIU ca o rong.
      *
-     * Khac cho doc chu cua AI: o do o rong la rac nen bo di. O day mot dong rong
-     * co the la dong con vua xoa het chu trong man soat, ma bo di thi cac dong sau
-     * tut len mot bac - va so dong thi quy ra phut.
+     * Mot dong rong van la mot dong cua bai lam: bo di thi cac dong sau tut len mot bac,
+     * va so thu tu dong sai lech theo.
      */
     private fun docDong(a: JSONArray?): List<String> {
         if (a == null) return emptyList()

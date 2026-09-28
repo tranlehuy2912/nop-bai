@@ -35,7 +35,6 @@ import vn.huytl.homeworkgate.data.LuatTuVung
 import vn.huytl.homeworkgate.data.KhoTinCuaCo
 import vn.huytl.homeworkgate.data.NgayNghi
 import vn.huytl.homeworkgate.data.Prefs
-import vn.huytl.homeworkgate.data.CauSo
 import vn.huytl.homeworkgate.data.Mang
 import vn.huytl.homeworkgate.data.SoCaiBai
 import vn.huytl.homeworkgate.data.ViecNha
@@ -43,7 +42,6 @@ import vn.huytl.homeworkgate.kho.BoThe
 import vn.huytl.homeworkgate.kho.BoTuVung
 import vn.huytl.homeworkgate.kho.KhoBai
 import vn.huytl.homeworkgate.kho.NganHang
-import vn.huytl.homeworkgate.kho.PhamVi
 import vn.huytl.homeworkgate.kho.PhanHoc
 import vn.huytl.homeworkgate.data.ThoiKhoaBieu
 import vn.huytl.homeworkgate.data.TinhLoiNhac
@@ -574,7 +572,16 @@ class HomeActivity : AppCompatActivity() {
             return
         }
 
-        val canSua = SoCaiBai.dangChoSua(this)
+        /*
+         * Cau con phai sua, tru cau con da nop lai va dang cho cham: dem ca nhung cau do thi
+         * con vua nop xong van thay "Có 2 câu cần sửa" va tuong minh chua gui. Xem
+         * [vn.huytl.homeworkgate.data.KhaiChoCham.cauChoCham]. Hang cho rong thi ham do tra
+         * ve ngay, khong hoi kho.
+         */
+        val canSua = SoCaiBai.dangChoSua(this).let { ds ->
+            val cho = vn.huytl.homeworkgate.data.KhaiChoCham.cauChoCham(this)
+            if (cho.isEmpty()) ds else ds.filterNot { it.khoa in cho }
+        }
         val loiNhan = SoCaiBai.loiNhan(this)
         /*
          * Cau den hen nho lai. Chi hoi khi khong con no gi: sua bai dang lam do
@@ -593,26 +600,19 @@ class HomeActivity : AppCompatActivity() {
         if (canSua.isNotEmpty()) {
             val ke = canSua.take(3).joinToString(", ") { it.ma }
             /*
-             * Bam vao la ra man ket qua truoc, chup lai sau.
+             * Bam vao chi mo man ket qua. Nut nop lai nam tren the cua tung bai o do.
              *
-             * Truoc day dong nay mo thang camera: con biet cau nao sai ma khong biet sai
-             * o dau, vi loi nhan xet cua may khong con hien o cho nao tren tablet ke tu
-             * khi man chinh gon lai ngay 18/9/2026. Nut chup lai nam o day man ket qua,
-             * xem xong la chup luon.
+             * Truoc 18/9/2026 dong nay mo thang camera: con biet cau nao sai ma khong biet
+             * sai o dau. Tu do toi 28/9/2026 no mo man ket qua kem mot nut chup lai chung o
+             * cuoi, gom cau sai cua moi bai. Ba Huy bo nut chung ay: moi bai nop lai bang
+             * nut tren the cua chinh no, xem [KetQuaActivity].
              */
             themViec(
                 hinh = R.drawable.st_ic_dau_hoi,
                 mau = R.color.alert,
-                ten = if (canSua.size == 1) "Sửa 1 câu rồi chụp lại"
-                else "Sửa ${canSua.size} câu rồi chụp lại",
+                ten = "Có ${canSua.size} câu cần sửa",
                 phu = "Xem sai ở đâu: " + ke + if (canSua.size > 3) "…" else ""
-            ) {
-                startActivity(
-                    Intent(this, KetQuaActivity::class.java)
-                        .putExtra(KetQuaActivity.EXTRA_SUA, true)
-                        .putExtra(KetQuaActivity.EXTRA_PHAM, phamViSua(canSua)?.sangJson())
-                )
-            }
+            ) { KetQuaActivity.mo(this) }
         } else if (loiNhan != null) {
             // Nop lai bai da cham hom truoc ma khong duoc gi: phai noi vi sao, khong
             // thi con bam nop lai lan nua. Bam vao thi xem ket qua cham tung cau.
@@ -822,38 +822,6 @@ class HomeActivity : AppCompatActivity() {
         )
         v.root.setOnClickListener { bam() }
         binding.boxViec.addView(v.root)
-    }
-
-    /**
-     * Pham vi cho lan chup sua bai: dung cac cau dang cho sua.
-     *
-     * Con khong phai khai lai gi ca - may da biet no dang no nhung cau nao. Va vi
-     * biet, lan cham nay cung di duong ma cau co dinh chu khong phai doan lai tu
-     * de bai, tuc la sua xong nop lai thi dung cau do duoc danh dau la xong.
-     *
-     * Tra ve null khi khong cau nao trong so do co ma sach - bai ngoai sach thi
-     * khong co gi de khai, cu de may tu tach cau nhu truoc.
-     */
-    private fun phamViSua(canSua: List<CauSo>): PhamVi? {
-        // Loc theo quyen co trong may, khong theo dau hai cham: khoa ngoai sach cung co
-        // dau do ("tu:..."). Truoc day cau ngoai sach cu nhat dung dau danh sach thi
-        // nguon ra "tu", ca lan sua mat pham vi, va cau trong sach bi cham theo duong
-        // tu do duoi mot khoa moi - co the duoc tra gio lai nhu bai moi.
-        val ids = canSua.map { it.khoa }
-            .filter { NganHang.sachTheoNguon(it.substringBefore(':')) != null }
-        if (ids.isEmpty()) return null
-        val nguon = ids.first().substringBefore(':')
-        val sach = NganHang.sachTheoNguon(nguon) ?: return null
-        // Chi lay cau cung mot quyen: cau lenh gui cho AI ke ten mot quyen, tron hai
-        // quyen vao mot danh sach thi dong chu do noi sai.
-        val cungSach = ids.filter { it.startsWith("$nguon:") }
-        return PhamVi(
-            mon = sach.mon,
-            nguon = nguon,
-            tenNguon = sach.ten,
-            bai = "các câu cần sửa",
-            cauIds = cungSach
-        )
     }
 
     /**

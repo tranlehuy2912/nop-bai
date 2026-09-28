@@ -170,22 +170,6 @@ class Prefs private constructor(private val sp: SharedPreferences) {
         get() = sp.getBoolean(KEY_LOCK_SETTINGS, true)
         set(v) = sp.edit().putBoolean(KEY_LOCK_SETTINGS, v).commit().let {}
 
-    /**
-     * Tablet co tu cham bai bang AI khong.
-     *
-     * Tat thi bai nop nam cho Ba Huy cham bang Claude tren dien thoai, xem
-     * [vn.huytl.homeworkgate.dongbo.Lenh.CHAM_BAI]. Bat mac dinh: ca app viet quanh
-     * viec AI cham ngay luc con nop, con tat di thi con phai cho Ba Huy moi co gio.
-     *
-     * Chi viec CHAM la tat. May van doc vo dan do dau buoi cho con soat, moi ngay mot
-     * luot Gemini - xem [vn.huytl.homeworkgate.ai.DocDanDo]. Ban soat di kem tung bai
-     * len Firestore, va Claude dung dung ngay va danh sach bai do nhu may cham van dung.
-     * May doc khong duoc thi tablet gan tam anh vo vao bai, va Claude doc anh.
-     */
-    var chamBangAi: Boolean
-        get() = sp.getBoolean(KEY_CHAM_BANG_AI, true)
-        set(v) = sp.edit().putBoolean(KEY_CHAM_BANG_AI, v).commit().let {}
-
     /** Offset cho getUpdates cua Telegram. */
     var telegramOffset: Long
         get() = sp.getLong(KEY_TG_OFFSET, 0L)
@@ -374,7 +358,6 @@ class Prefs private constructor(private val sp: SharedPreferences) {
     companion object {
         private const val FILE_NAME = "gate_prefs"
 
-        private const val KEY_CHAM_BANG_AI = "cham_bang_ai"
         private const val KEY_BOT_TOKEN = "bot_token"
         private const val KEY_PARENT_CHAT_ID = "parent_chat_id"
         private const val KEY_GRANT_MINUTES = "grant_minutes"

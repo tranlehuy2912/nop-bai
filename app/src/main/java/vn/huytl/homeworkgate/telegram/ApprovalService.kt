@@ -48,7 +48,6 @@ import vn.huytl.homeworkgate.data.KhoTinCuaCo
 import vn.huytl.homeworkgate.data.LoaiNhac
 import vn.huytl.homeworkgate.data.NgayNghi
 import vn.huytl.homeworkgate.data.TinhLoiNhac
-import vn.huytl.homeworkgate.ai.AiChamBai
 import vn.huytl.homeworkgate.ai.ChamBaiIO
 import vn.huytl.homeworkgate.data.CaptureStage
 import vn.huytl.homeworkgate.data.KetQuaCham
@@ -232,10 +231,9 @@ class ApprovalService : Service() {
                     .map { java.io.File(it) }
             }.filterValues { it.isNotEmpty() }
             val pham = PhamVi.tuJson(intent.getStringExtra(EXTRA_PHAM))
-            val ket = ChamBaiIO.doc(intent.getStringExtra(EXTRA_BAN_CHAM))
             val lucNop = intent.getLongExtra(EXTRA_LUC_NOP, 0L).takeIf { it > 0L }
                 ?: System.currentTimeMillis()
-            scope?.launch { guiRoiCap(nhom, pham, ket, lucNop) }
+            scope?.launch { guiRoiCho(nhom, pham, lucNop) }
         }
 
         // Ba Huy dan ket qua Claude cham tu Bang dieu khien. Chay dung doan xu ly cua
@@ -1300,20 +1298,6 @@ class ApprovalService : Service() {
         )
     }
 
-    /**
-     * Cham bai vua nop bang AI, roi tu duyet neu duoc.
-     *
-     * Luat cua Ba Huy: cau nao dung thi cong gio cau do ngay, cau nao sai thi bao
-     * de con sua roi nop lai. Nen o day KHONG doi "dung het moi duyet" - cham xong
-     * la cap luon phan da dung.
-     *
-     * Hai truong hop khong tu duyet:
-     *  - AI bao co cho no doc khong ro: cho Ba Huy nhin, vi doan mo la de duyet nham
-     *    bai sai thanh bai dung;
-     *  - khong cham duoc (het han muc, mat mang, Google doi model): bao ro ly do de
-     *    Ba Huy duyet tay. Anh va hai nut Duyet/Khong duyet van nam nguyen ben
-     *    Telegram nhu truoc gio, nen hong AI khong lam ket bai cua con.
-     */
     /** Ke ma cau cho con doc: "câu 2.26a, 2.26b", dai qua thi cat bot. */
     private fun keTenCau(cac: List<vn.huytl.homeworkgate.kho.CauHoi>): String = when {
         cac.isEmpty() -> ""
@@ -1322,21 +1306,25 @@ class ApprovalService : Service() {
     }
 
     /**
-     * Con da soat xong ban may doc: gui anh sang Telegram roi cap gio.
+     * Gui anh bai con vua chup sang Telegram, xep bai vao hang cho, roi cho Ba Huy cham.
      *
-     * Thu tu quan trong. GUI ANH TRUOC, cap gio sau: gui anh la viec co the hong vi
-     * mang, ma hong thi phai bao con biet de chup lai - con neu cap gio truoc roi
-     * gui hong thi con duoc gio ma Ba Huy khong thay bai dau ca.
+     * Tu 28/9/2026 tablet khong tu cham nua (Ba Huy bo han phan may cham): bai nao cung
+     * nam cho toi luc Ba Huy nho Claude cham tren Bang dieu khien va dan ket qua ve. Gio
+     * cap o [xuLyBanCham], luc lenh CHAMBAI toi.
      *
-     * [ket] null nghia la man soat khong co ban cham nao de dua sang (AI hong luc do).
-     * Van gui anh: Ba Huy con hai nut Duyet/Khong duyet ben Telegram nhu tu truoc
-     * den gio, nen hong AI khong lam ket bai cua con.
+     * Thu tu quan trong. GUI ANH TRUOC, xep hang sau: gui anh la viec co the hong vi mang,
+     * ma hong thi phai bao con chup lai - xep hang truoc roi gui hong thi co mot bai nam
+     * cho ma Ba Huy khong co tam anh nao de cham.
+     *
+     * Lan nop lai cac cau sai cua mot bai sai het (xem [PhamVi.huyBaiCu]) thi huy bai cu
+     * ngay sau khi gui anh duoc, va TRUOC khi xep bai moi vao hang: hang dang du ba bai ma
+     * xep truoc thi [GateStore.markPending] day bai cu nhat ra, co khi la mot bai khac con
+     * dang cho Ba Huy duyet.
      */
-    private fun guiRoiCap(
+    private fun guiRoiCho(
         nhom: Map<CaptureStage, List<java.io.File>>,
         pham: PhamVi?,
-        ket: KetQuaCham?,
-        /** Luc con bam Gui. Xet han vo va goi 45 phut theo luc nay, khong theo luc gui xong. */
+        /** Luc con bam Gui. Xet han vo dan do theo luc nay, khong theo luc gui xong. */
         lucNop: Long = System.currentTimeMillis()
     ) {
         val anh = nhom.values.flatten()
@@ -1347,21 +1335,25 @@ class ApprovalService : Service() {
             return
         }
 
+        val baiCu = pham?.takeIf { it.laSua && it.huyBaiCu }
+            ?.let { p -> gate.baiDangCho().firstOrNull { it.id == p.suaBai } }
+        if (baiCu != null) huyBaiCuKhiNopLai(baiCu)
+
         gate.markPending(sent.requestId, sent.messageId)
         // Phan tu luan cua de Giai de da gui: man chinh thoi nhac chup, cho diem ve.
         pham?.giaiDe?.takeIf { it.isNotBlank() }?.let {
             GiaiDe.daGuiTuLuan(this, it)
             GiaiDe.ghiBaiTuLuan(this, it, sent.requestId)
         }
-        // Giu pham vi lai: tat cham AI thi lan cham den sau, luc Ba Huy dan ket qua
-        // Claude ve, ma luc do van phai biet con da khai nhung cau nao.
+        // Giu pham vi lai: lan cham den sau, luc Ba Huy dan ket qua Claude ve, ma luc do
+        // van phai biet con da khai nhung cau nao.
         pham?.let { KhaiChoCham.luu(this, sent.requestId, it) }
         /*
          * Vo dan do con soat tu dau buoi, neu lan nop nay dung ban do thay cho trang vo.
          *
-         * Chep lai ngay luc nop, ca khi dang bat cham AI: AI hong thi Ba Huy nho Claude
-         * cham, va luc do Claude van phai co danh sach bai cua dung buoi nay. Xem
-         * [VoChoCham] ve chuyen vi sao khong doc lai luc cham.
+         * Chep lai ngay luc nop: Claude cham co khi vai tieng sau, va luc do Claude van
+         * phai co danh sach bai cua dung buoi nay. Xem [VoChoCham] ve chuyen vi sao khong
+         * doc lai luc cham.
          *
          * Anh trang vo gan vao CUOI danh sach anh cua bai: dau danh sach la anh tab Bai
          * ben dien thoai lay ra lam hinh nho, ma hinh do phai la bai con vua lam.
@@ -1384,32 +1376,43 @@ class ApprovalService : Service() {
         )
         anh.forEach { runCatching { it.delete() } }
 
-        if (ket == null) {
-            val loi = if (!prefs.chamBangAi) {
-                "📝 Máy đang tắt chấm AI. Ba Huy mở Bảng điều khiển, bấm Nhờ Claude chấm, " +
-                    "rồi dán kết quả về để tablet cộng giờ."
-            } else {
-                "⚠️ Máy không chấm được lần này. Ba Huy duyệt tay, hoặc mở Bảng điều " +
-                    "khiển bấm Nhờ Claude chấm."
-            }
-            runCatching { tg.sendMessage(prefs.parentChatId, loi) }
-            return
+        val baoCu = if (baiCu != null) {
+            " Bài nộp lúc ${gioPhut(baiCu.at)} sai hết nên tablet đã bỏ, thay bằng lần nộp lại này."
+        } else {
+            ""
         }
-        // Vo chi co anh thi may cham da duoc dua tam anh do, xem SoatBaiActivity.cham.
-        synchronized(khoaCham) {
-            xuLyBanCham(ket, pham, vo?.chuaDoc == true, lucNop = lucNop)
+        runCatching {
+            tg.sendMessage(
+                prefs.parentChatId,
+                "📝 Ba Huy mở Bảng điều khiển, bấm Nhờ Claude chấm, rồi dán kết quả về " +
+                    "để tablet cộng giờ.$baoCu"
+            )
         }
     }
 
-
     /**
-     * Xu ly mot ban cham da co: cap gio, ghi so, bao Telegram, day sang dien thoai.
+     * Huy bai cu sai het khi con nop lai cac cau sai cua no. Xem [PhamVi.huyBaiCu].
      *
-     * Tach khoi phan goi AI vi tu ban co man soat bai, HAI VIEC NAY XAY RA O HAI NOI:
-     * cham thi trong man hinh cua con (con phai ngoi xem may doc co dung khong), con
-     * cap gio thi phai o service, vi no van phai chay xong du con dong man hinh lai
-     * hay tablet khoa man.
+     * Lam y nhu con tu bam "Huỷ bài vừa nộp" o man chinh (HomeActivity.huyYeuCau): go bai
+     * khoi hang cho, bao Bang dieu khien la con da huy, go hai nut duyet duoi tin cu ben
+     * Telegram. Chi khac la khong hoi con: con da bam nut nop lai cua dung bai nay.
      */
+    private fun huyBaiCuKhiNopLai(bai: vn.huytl.homeworkgate.data.BaiCho) {
+        gate.boBaiCho(bai.id)
+        DongBo.datTrangThaiBai(this, bai.id, "HUY")
+        if (bai.messageId != 0L) {
+            runCatching { tg.clearReplyMarkup(prefs.parentChatId, bai.messageId) }
+        }
+        DayLog.add(
+            this,
+            "${getString(R.string.child_name)} nộp lại, bỏ bài lúc ${gioPhut(bai.at)} (sai hết)"
+        )
+    }
+
+    /** "11:18" cua mot moc gio, cho cac cau bao ve bai cu. */
+    private fun gioPhut(luc: Long): String =
+        java.text.SimpleDateFormat("HH:mm", java.util.Locale("vi", "VN")).format(java.util.Date(luc))
+
     /**
      * Moi lan chi mot ban cham duoc xu ly. Hai ban cham cho cung mot bai toi cung luc (ba
      * dan ket qua Claude hai lan luc tablet mat mang) thi ca hai deu thay bai con cho, va
@@ -1417,6 +1420,12 @@ class ApprovalService : Service() {
      */
     private val khoaCham = Any()
 
+    /**
+     * Xu ly mot ban cham cua Claude: cap gio, ghi so, bao Telegram, day sang dien thoai.
+     *
+     * Truoc 28/9/2026 doan nay con chay cho ca ban may tren tablet cham. Ba Huy bo han
+     * phan may cham, nen gio chi con duong Claude: lenh CHAMBAI, xem [chamTheoClaude].
+     */
     private fun xuLyBanCham(
         banCham: KetQuaCham,
         pham: PhamVi?,
@@ -1424,9 +1433,7 @@ class ApprovalService : Service() {
         /** Bai duoc chi dinh san, o duong Claude cham. null la bai vua nop, moi nhat. */
         baiId: String? = null,
         /** Ai cham, de ghi dung vao tin Telegram va nhat ky. */
-        nguoiCham: String = "AI",
-        /** Luc con bam Gui o duong may cham. Upload lau qua 12 gio trua cung khong mat goi. */
-        lucNop: Long? = null
+        nguoiCham: String = "Claude"
     ) {
         val chatId = prefs.parentChatId
         val con = getString(R.string.child_name)
@@ -1470,16 +1477,15 @@ class ApprovalService : Service() {
          * Moc gio cho cac luat tinh theo ngay: vo dan do con hieu luc khong, hom nay da
          * co tron goi chua, phan lam them va phan on da duoc bao nhieu.
          *
-         * AI cham ngay luc con nop, nen lay bay gio la dung. Claude thi cham luc Ba Huy
-         * dan ket qua, co khi tre vai tieng. Vi du bai lam theo vo dan do hom qua, nop
-         * luc 11 gio: truoc 12 gio trua thi vo con hieu luc, nhung Ba Huy dan luc 13 gio
-         * ma lay bay gio thi vo da het han, va con mat tron goi. Nen duong Claude lay luc
-         * con nop.
+         * Claude cham luc Ba Huy dan ket qua, co khi tre vai tieng sau luc con nop. Vi du
+         * bai lam theo vo dan do hom qua, nop luc 11 gio: truoc 12 gio trua thi vo con
+         * hieu luc, nhung Ba Huy dan luc 13 gio ma lay bay gio thi vo da het han, va con
+         * mat tron goi. Nen lay luc con nop.
          *
          * Khong co chuyen dan sang ngay hom sau: bai cho duyet khong song qua nua dem,
          * xem GateStore.donDepBaiCho. Nen moc nay chi lech bay gio trong cung mot ngay.
          */
-        val luc = bai?.at?.takeIf { baiId != null && it > 0L } ?: lucNop ?: System.currentTimeMillis()
+        val luc = bai?.at?.takeIf { baiId != null && it > 0L } ?: System.currentTimeMillis()
 
         // Bo cac cau da tra gio tu lan nop truoc: chup lai bai cu khong duoc tinh
         // lan hai. Cau dang cho sua thi KHONG bo - lan nay con sua no.
@@ -1636,7 +1642,7 @@ class ApprovalService : Service() {
                 )
             than.append(" (ngày ").append(danDoDaSoat.ngay).append(")\n")
         } else if (coAnhDanDo) {
-            than.append("• Vở dặn dò ${if (nguoiCham == "AI") "máy" else nguoiCham} đọc ra: ")
+            than.append("• Vở dặn dò $nguoiCham đọc ra: ")
                 .append(
                     if (ket.baiDuocGiao.isEmpty()) "không có bài tập nào"
                     else ket.baiDuocGiao.joinToString(", ")
@@ -1676,7 +1682,7 @@ class ApprovalService : Service() {
         var khongCapCho: String? = null
         /** Lon hon 0 la phut chua vao tay con: giu toi luc nay, luc het gio ngu. Xem CongSang. */
         var congLuc = 0L
-        // Ba Huy bam Duyet ben Telegram trong luc AI dang cham: bai da bien khoi hang
+        // Ba Huy bam Duyet ben Telegram trong luc tablet dang xu ly ban cham: bai da bien khoi hang
         // cho. Tu duyet them lan nua la cong gio hai lan cho cung mot bai.
         val baDaXuLy = bai != null && gate.baiDangCho().none { it.id == bai.id }
         val tuDuyet = bang.phut > 0 && !bang.canBaHuyXem && !baDaXuLy && nghiChupLai.isEmpty()
@@ -1721,14 +1727,14 @@ class ApprovalService : Service() {
                 than.append(". Rút lại: /bot $them")
             }
         } else if (baDaXuLy) {
-            than.append("Ba Huy đã xử bài này trước khi máy chấm xong nên không cộng thêm.")
+            than.append("Ba Huy đã xử bài này trước khi $nguoiCham chấm xong nên không cộng thêm.")
         } else if (nghiChupLai.isNotEmpty()) {
             than.append("Chưa cấp giờ: bài ôn ")
                 .append(nghiChupLai.joinToString(", ") { it.ma })
                 .append(" giống hệt lần trước từng dòng, có thể là chụp lại trang cũ. ")
                 .append("Ba Huy xem ảnh giúp.")
         } else if (bang.canBaHuyXem) {
-            than.append("Chưa cấp giờ: có chỗ máy đọc không rõ. Ba Huy xem ảnh rồi duyệt giúp.")
+            than.append("Chưa cấp giờ: có chỗ $nguoiCham đọc chưa chắc. Ba Huy xem ảnh rồi duyệt giúp.")
         } else if (bang.trongGoi.isNotEmpty()) {
             than.append("Không cộng thêm phút: phần này nằm trong trọn gói bài cô giao đã tính hôm nay.")
         } else {
@@ -2329,7 +2335,7 @@ class ApprovalService : Service() {
         /** Lan nop co trang vo dan do khong, o duong Claude cham. */
         private const val EXTRA_CO_DAN_DO = "co_dan_do"
 
-        /** Ban cham con vua soat, dang chu cua [ChamBaiIO]. */
+        /** Ban cham theo ket qua Claude, dang chu cua [ChamBaiIO]. */
         private const val EXTRA_BAN_CHAM = "ban_cham"
 
         /** Duong dan anh, moi buoc chup mot mang: EXTRA_ANH + ten buoc. */
@@ -2355,28 +2361,26 @@ class ApprovalService : Service() {
         )
 
         /**
-         * Gui mot lan nop con da soat xong.
+         * Gui mot lan nop con vua chup xong.
          *
-         * Lam o service chu khong o man hinh vi hai viec nay deu phai chay cho xong
-         * du con dong man hinh lai ngay sau khi bam gui: tai anh len Telegram mat vai
-         * giay, va cap gio thi khong duoc phep lam nua chung.
+         * Lam o service chu khong o man hinh vi viec nay phai chay cho xong du con dong
+         * man hinh lai ngay sau khi bam gui: tai anh len Telegram mat vai giay.
          *
          * Anh chia theo tung buoc chup, vi tin nhan Telegram van phai co nhan
-         * "vo dan do / de bai / bai giai" nhu tu truoc den gio.
+         * "de bai / bai giai" nhu tu truoc den gio.
          *
-         * [ket] null la may khong cham duoc lan nay - van gui anh, Ba Huy duyet tay.
+         * Khong con ban cham nao di kem: tu 28/9/2026 tablet khong tu cham nua, bai nao
+         * cung cho Ba Huy nho Claude cham roi dan ket qua ve - xem [chamTheoClaude].
          */
-        fun guiDaSoat(
+        fun guiBai(
             context: Context,
             nhom: Map<CaptureStage, List<java.io.File>>,
-            pham: PhamVi?,
-            ket: KetQuaCham?
+            pham: PhamVi?
         ) {
             val intent = Intent(context, ApprovalService::class.java)
                 .setAction(ACTION_GUI)
                 .putExtra(EXTRA_LUC_NOP, System.currentTimeMillis())
                 .putExtra(EXTRA_PHAM, pham?.sangJson())
-                .putExtra(EXTRA_BAN_CHAM, ket?.let { ChamBaiIO.viet(it) })
             nhom.forEach { (st, files) ->
                 intent.putStringArrayListExtra(
                     EXTRA_ANH + st.name, ArrayList(files.map { it.absolutePath })
@@ -2388,7 +2392,7 @@ class ApprovalService : Service() {
         /**
          * Cham mot bai dang cho theo ket qua Claude, dung khi may chua cham bai do.
          *
-         * Lam o service vi cung ly do voi [guiDaSoat]: cap gio va gui tin Telegram phai
+         * Lam o service vi cung ly do voi [guiBai]: cap gio va gui tin Telegram phai
          * chay cho xong, va doan xu ly ban cham von nam o day. Ban cham tao tu
          * [vn.huytl.homeworkgate.data.ChamTheoClaude].
          */

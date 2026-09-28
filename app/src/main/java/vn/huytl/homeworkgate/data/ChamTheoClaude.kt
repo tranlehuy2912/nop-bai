@@ -8,10 +8,10 @@ import vn.huytl.homeworkgate.kho.PhamVi
 /**
  * Doi ket qua Claude cham, do Ba Huy dan tu dien thoai, thanh mot ban cham cua tablet.
  *
- * Dung khi tablet tat cham AI, xem [Prefs.chamBangAi]. Ban cham nay di vao dung cho ban
- * cham cua AI van di: ApprovalService.xuLyBanCham. Nen moi luat - gia moi cau, tran
+ * Tu 28/9/2026 day la duong cham DUY NHAT: Ba Huy bo han phan may cham tren tablet.
+ * Ban cham nay di vao ApprovalService.xuLyBanCham, noi moi luat - gia moi cau, tran
  * ngay, moi cau chi tra gio mot lan, danh sach can sua, tron goi vo dan do, tin
- * Telegram - van chi nam o mot noi.
+ * Telegram - nam o mot cho.
  *
  * CAU TRONG SACH lay de, ma sach va dang bai tu ngan hang, theo pham vi con da khai.
  * Claude chi can noi dung hay sai, con viet gi, va bao nhieu dong. CAU NGOAI SACH thi
@@ -24,7 +24,7 @@ import vn.huytl.homeworkgate.kho.PhamVi
  *
  * Lan nop dung ban vo con soat tu dau buoi ([VoChoCham]) thi ngay va danh sach bai lay
  * tu ban do, Claude chi noi con lam het chua va cau nao thuoc bai co giao. Y het cau
- * lenh cua may cham luc co ban soat, xem PromptCham.doanDanDo.
+ * lenh cua may cham tren tablet luc co ban soat (phan may cham bo ngay 28/9/2026).
  *
  * Muc nao khong co ket luan dung hay sai that thi bo di: mot chu "dung" viet thieu hay
  * viet sai kieu khong duoc phep thanh mot lan cong gio.
@@ -59,6 +59,8 @@ object ChamTheoClaude {
             emptyList()
         }
         val daDung = mutableSetOf<String>()
+        val ngoai = pham?.cauNgoai.orEmpty()
+        val daDungNgoai = mutableSetOf<String>()
 
         val cac = cacMuc.mapNotNull { o ->
             val ma = (o["ma"] as? String)?.trim().orEmpty()
@@ -74,11 +76,28 @@ object ChamTheoClaude {
                     ?: cungMa.first()
             }
             q?.let { daDung += it.id }
+            // Cau ngoai sach cua lan nop lai, xem [PhamVi.cauNgoai]. Khop theo ma.
+            val cn = if (q != null) null else ngoai.firstOrNull {
+                chuanMa(it.ma) == chuanMa(ma) && it.ma !in daDungNgoai
+            }
+            cn?.let { daDungNgoai += it.ma }
 
-            val de = q?.de ?: deClaude
+            /*
+             * Lan NOP LAI cac cau sai cua mot bai: chi cham cau trong danh sach khai.
+             *
+             * Con sua de len chinh trang vo cu, nen anh co ca nhung cau da dung tu lan truoc.
+             * Loi nho da dan Claude bo qua chung, nhung dat chot o day: cau ngoai danh sach
+             * thi coi la bai ngoai sach, khoa so cai theo de bai, so cai khong nhan ra la cau
+             * da tra gio, va con duoc tra gio lan hai. Ba Huy chon ngay 28/9/2026.
+             */
+            if (pham?.laSua == true && q == null && cn == null) return@mapNotNull null
+
+            // Cau ngoai sach cua lan nop lai lay de chep tu ban cham cu, khong lay de Claude
+            // chep lan nay: so cai khoa cau ngoai sach theo de, xem [PhamVi.cauNgoai].
+            val de = q?.de ?: cn?.de?.takeIf { it.isNotBlank() } ?: deClaude
             CauCham(
                 // Khop duoc sach thi ghi ma cua sach, de so cai va tin Telegram noi cung mot ma.
-                ma = q?.ma?.trim() ?: ma,
+                ma = q?.ma?.trim() ?: cn?.ma ?: ma,
                 de = de,
                 ketQua = (o["conViet"] as? String)?.trim().orEmpty(),
                 dung = dung,

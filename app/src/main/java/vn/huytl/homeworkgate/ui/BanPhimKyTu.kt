@@ -10,7 +10,8 @@ import com.google.android.material.button.MaterialButton
 import vn.huytl.homeworkgate.R
 
 /**
- * Dai nut ky hieu ngay duoi o go, dung chung cho man hoc thuoc va man soat bai.
+ * Dai nut ky hieu ngay duoi o go cua man hoc thuoc. Truoc 28/9/2026 man soat bai cung
+ * dung, man do bo cung luc voi phan may cham.
  *
  * VI SAO CO. Ban phim tablet khong co dau mu, chi so duoi, dau cua ion hay mui ten
  * phan ung, con "+" va "*" thi nam sau mot trang ky tu. Bat con di tim phim thi thoi

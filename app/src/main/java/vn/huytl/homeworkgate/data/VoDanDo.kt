@@ -12,12 +12,11 @@ import java.time.LocalDateTime
  * VI SAO TACH RA KHOI LAN NOP BAI. Truoc day trang vo dan do la mot trong ba buoc
  * chup moi lan nop, va con phai chup lai no o TUNG lan nop trong ngay. Chup mot lan
  * thi hong: thieu trang vo, may khong biet cau nao thuoc bai co giao nen coi tat ca
- * la trong tron goi - xem quy tac 17 trong [vn.huytl.homeworkgate.ai.PromptCham] va
- * cach [LuatCongGio] dung trongDanDo - va lan nop thu hai trong ngay khong duoc phut
- * nao.
+ * la trong tron goi - xem quy tac 17 o [ChamTheoClaude.banCham] va cach [LuatCongGio]
+ * dung trongDanDo - va lan nop thu hai trong ngay khong duoc phut nao.
  *
  * Nen doi cho: chup mot lan, doc ra CHU, con soat lai bang mat roi luu. Cac lan nop
- * sau khong hoi lai trang vo nua, chi kem doan chu do vao cau lenh cham.
+ * sau khong hoi lai trang vo nua, chi kem doan chu do theo bai sang loi nho Claude.
  *
  * GIU TUNG DONG KEM MOT O TICH chu khong giu hai cuc chu "bai tap" va "viec khac".
  * Do ra tu bon trang vo that cua Le Hoa: may xep "TOÁN: làm luyện tập 3 trang 59"

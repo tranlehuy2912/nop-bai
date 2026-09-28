@@ -1424,6 +1424,22 @@ class KhoBai private constructor(context: Context) :
     }
 
     /**
+     * Lan ghi gan nhat cua moi cau trong [ids], theo cau_id. Cau chua ghi lan nao thi
+     * khong co trong ket qua.
+     *
+     * Mot cau hoi cho ca danh sach, cung ly do voi [daXongTrong]: man chinh goi no moi
+     * lan ve lai. Xem [vn.huytl.homeworkgate.data.KhaiChoCham.cauChoCham].
+     */
+    fun lucGhiMoiNhat(ids: Collection<String>): Map<String, Long> {
+        if (ids.isEmpty()) return emptyMap()
+        val cho = ids.joinToString(",") { "?" }
+        return readableDatabase.rawQuery(
+            "SELECT cau_id, MAX(luc) FROM tra_loi WHERE cau_id IN ($cho) GROUP BY cau_id",
+            ids.toTypedArray()
+        ).use { c -> buildMap { while (c.moveToNext()) put(c.getString(0), c.getLong(1)) } }
+    }
+
+    /**
      * Lan cham GAN NHAT cua moi cau - tuc la tinh trang hien tai cua tung cau.
      *
      * Chon dong bang MAX(id) chu khong phai MAX(luc). Hai lan cham cach nhau mot

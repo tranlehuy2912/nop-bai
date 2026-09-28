@@ -549,15 +549,9 @@ object ThiHanhLenh {
                 prefs.lockSystemSettings = v
                 if (v) "Đã khoá màn Cài đặt của máy." else "Đã mở màn Cài đặt của máy."
             }
-            "chamBangAi" -> {
-                val v = giaTri as? Boolean ?: return "Giá trị không phải bật/tắt."
-                prefs.chamBangAi = v
-                if (v) {
-                    "Đã bật lại chấm bằng AI trên tablet."
-                } else {
-                    "Đã tắt chấm bằng AI. Bài nộp sẽ chờ Ba Huy chấm bằng Claude."
-                }
-            }
+            // Bang dieu khien ban cu con cong tac "Chấm bài bằng AI trên tablet". Tu
+            // 28/9/2026 tablet khong con may cham nao de bat: bai nao cung do Claude cham.
+            "chamBangAi" -> return "Tablet không còn tự chấm, bài nào cũng chấm bằng Claude."
             "appChoPhep" -> {
                 prefs.allowedPackages = danhSach(giaTri)
                 "Danh sách app dùng khi hết giờ chơi: ${prefs.allowedPackages.size} app."

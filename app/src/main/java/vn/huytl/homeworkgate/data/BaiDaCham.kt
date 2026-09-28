@@ -22,7 +22,18 @@ data class BaiDaCham(
     /** null la bai chua co ban cham tung cau: may dang cham, hoac cham khong duoc. */
     val cac: List<Cau>?,
     /** Luc Ba Huy dan ket qua Claude cham lai. 0 la chua cham lai lan nao. */
-    val claudeLuc: Long = 0L
+    val claudeLuc: Long = 0L,
+    /**
+     * Ban Claude la ban cham DAU TIEN cua bai (Claude cham luon), khong phai cham lai mot
+     * ban da co. Tu 28/9/2026 bai nao cung vay: tablet khong tu cham nua.
+     */
+    val claudeChinh: Boolean = false,
+    /** Trang thai bai tren Firestore: CHO, DUYET, TUCHOI, HUY. */
+    val trangThai: String = "",
+    /** So phut tablet tinh ra luc cham. 0 la khong co phut nao, hay chua cham. */
+    val phutDeNghi: Int = 0,
+    /** Ten quyen con khai, vi du "SBT Toán 8 tập một". Rong la nop tu do. */
+    val tenNguon: String = ""
 ) {
     data class Cau(
         val ma: String,
@@ -32,7 +43,12 @@ data class BaiDaCham(
         val docRo: Boolean,
         val nhanXet: String,
         /** Ket luan cua Claude cho cau nay, null la Claude chua cham lai. */
-        val claude: Claude? = null
+        val claude: Claude? = null,
+        /**
+         * Ma cau trong sach ("sbttoan8t1:2.19a"), lay tu phan khai cua bai. null la cau
+         * ngoai sach, hay bai nop tu do: so cai nhan cau do theo de bai.
+         */
+        val cauId: String? = null
     ) {
         /**
          * Ket luan cuoi cung: cua Claude neu Claude doc chac, khong thi cua may.
@@ -86,6 +102,14 @@ data class BaiDaCham(
                 )
             }.toMap()
 
+            // Ma sach cua tung cau con khai. Cau ngoai sach cua lan nop lai co cauId rong.
+            val idKhai = (khai?.get("cac") as? List<*>).orEmpty().mapNotNull { c ->
+                val o = c as? Map<*, *> ?: return@mapNotNull null
+                val ma = (o["ma"] as? String)?.trim().orEmpty()
+                val id = (o["cauId"] as? String)?.trim().orEmpty()
+                if (ma.isEmpty() || id.isEmpty()) null else ma to id
+            }.toMap()
+
             val cacMay = (cham?.get("cac") as? List<*>)?.mapNotNull { c ->
                 val o = c as? Map<*, *> ?: return@mapNotNull null
                 val ma = o["ma"] as? String ?: ""
@@ -96,7 +120,8 @@ data class BaiDaCham(
                     dung = o["dung"] as? Boolean ?: false,
                     docRo = o["docRo"] as? Boolean ?: true,
                     nhanXet = o["nhanXet"] as? String ?: "",
-                    claude = claude[ma.trim()]
+                    claude = claude[ma.trim()],
+                    cauId = idKhai[ma.trim()]
                 )
             }?.takeIf { it.isNotEmpty() }
 
@@ -116,7 +141,8 @@ data class BaiDaCham(
             val cac = cacMay ?: claude.takeIf { it.isNotEmpty() }?.map { (ma, cl) ->
                 Cau(
                     ma = ma, de = cl.de.ifBlank { deKhai[ma].orEmpty() }, ketQua = cl.conViet,
-                    dung = cl.dung, docRo = cl.chac, nhanXet = cl.goiY, claude = cl
+                    dung = cl.dung, docRo = cl.chac, nhanXet = cl.goiY, claude = cl,
+                    cauId = idKhai[ma]
                 )
             }
 
@@ -126,7 +152,11 @@ data class BaiDaCham(
                 // Khong co ban cham cua may thi lay mon con khai, de the khong bi trong ten.
                 mon = cham?.get("mon") as? String ?: khai?.get("mon") as? String ?: "",
                 cac = cac,
-                claudeLuc = (claudeMap?.get("luc") as? Number)?.toLong() ?: 0L
+                claudeLuc = (claudeMap?.get("luc") as? Number)?.toLong() ?: 0L,
+                claudeChinh = claudeMap?.get("chinh") as? Boolean ?: false,
+                trangThai = du[Duong.F_TRANG_THAI] as? String ?: "",
+                phutDeNghi = (cham?.get("phutDeNghi") as? Number)?.toInt() ?: 0,
+                tenNguon = khai?.get("tenNguon") as? String ?: ""
             )
         }
     }

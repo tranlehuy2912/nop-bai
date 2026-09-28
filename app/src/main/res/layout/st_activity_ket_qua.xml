@@ -74,23 +74,7 @@
                 android:paddingBottom="24dp" />
         </ScrollView>
 
-        <!-- Chi hien khi mo tu dong "Sua N cau": xem xong cho sai roi chup lai luon,
-             khong phai quay ra man chinh tim nut. -->
-        <FrameLayout
-            android:id="@+id/khung_nut"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingHorizontal="@dimen/st_le_ngang"
-            android:paddingVertical="12dp"
-            android:visibility="gone">
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/nut_chup_lai"
-                android:layout_width="match_parent"
-                android:layout_height="64dp"
-                android:text="Chụp lại câu đã sửa"
-                android:textSize="18sp"
-                app:cornerRadius="20dp" />
-        </FrameLayout>
+        <!-- Khong con nut chup lai chung o day (bo ngay 28/9/2026): moi the bai con cau
+             sai co nut "Nộp lại N câu sai" cua rieng no, xem KetQuaActivity.nutNopLai. -->
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

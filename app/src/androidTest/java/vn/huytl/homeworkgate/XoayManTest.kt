@@ -3,7 +3,6 @@ package vn.huytl.homeworkgate
 import android.app.Activity
 import android.app.Instrumentation
 import android.app.UiAutomation
-import android.content.Intent
 import android.content.pm.ActivityInfo
 import android.content.pm.PackageManager
 import android.content.res.Configuration
@@ -25,23 +24,21 @@ import org.junit.runner.RunWith
 import vn.huytl.homeworkgate.data.VoDanDo
 import vn.huytl.homeworkgate.ui.CaptureActivity
 import vn.huytl.homeworkgate.ui.DanDoActivity
-import vn.huytl.homeworkgate.ui.SoatBaiActivity
 import java.time.LocalDate
 
 /**
- * Man vo dan do va man soat bai khi tablet xoay, hay khi Android dung lai man. Cac man
- * khac thi [moiManKhoaDocVaTuVeLai] kiem khai bao.
+ * Man vo dan do khi tablet xoay, hay khi Android dung lai man. Cac man khac thi
+ * [moiManKhoaDocVaTuVeLai] kiem khai bao.
  *
  * Tablet cua Le Hoa bat tu xoay (Ba Huy xac nhan ngay 26/9/2026). Truoc day xoay may la
- * hai man nay bi dung lai tu dau: man dan do mat tam anh vua chup va ban may vua doc,
- * chua co ban luu thi camera bat lai ngay; man soat bai xoa anh bai lam dang cho gui. Gio
- * moi man khoa doc, va van tu ve lai neu Android bo qua khoa - xem chu thich dau
- * AndroidManifest.
+ * man dan do bi dung lai tu dau: mat tam anh vua chup va ban may vua doc, chua co ban
+ * luu thi camera bat lai ngay. Man soat bai tung cung bi nhu vay, nhung man do bo ngay
+ * 28/9/2026 cung phan may cham. Gio moi man khoa doc, va van tu ve lai neu Android bo
+ * qua khoa - xem chu thich dau AndroidManifest.
  *
  * XOAY THAT tren may ao qua UiAutomation, xong thi tra ve dung che do xoay cu. Khong
- * test nao goi Gemini: man dan do co san ban luu nen khong mo camera, man soat bai
- * khong kem anh nen may cham tra ve ngay - xem [xoayMayThiManSoatBaiGiuNguyen]. Ban vo
- * dan do dang co trong may duoc tra lai sau moi test.
+ * test nao goi Gemini: man dan do co san ban luu nen khong mo camera. Ban vo dan do
+ * dang co trong may duoc tra lai sau moi test.
  */
 @RunWith(AndroidJUnit4::class)
 class XoayManTest {
@@ -94,23 +91,6 @@ class XoayManTest {
                     cacDong(it)
                 )
             }
-        }
-    }
-
-    /**
-     * Man soat bai mo khong kem anh, nen may cham tra ve ngay ma khong goi Gemini. Ban
-     * vo dan do luc nay phai la ban co chu cua [napBan]: ban chi co anh thi man soat gan
-     * tam anh do vao lan cham, va lan cham do goi Gemini that.
-     */
-    @Test
-    fun xoayMayThiManSoatBaiGiuNguyen() {
-        check(VoDanDo.conHieuLuc(context)?.chuaDoc != true) { "vo chi co anh se goi Gemini" }
-        val moMan = Intent(context, SoatBaiActivity::class.java)
-        ActivityScenario.launch<SoatBaiActivity>(moMan).use { sc ->
-            lateinit var truoc: Activity
-            sc.onActivity { truoc = it }
-            thuXoayNgang(sc)
-            sc.onActivity { assertSame("xoay may thi khong duoc dung lai man", truoc, it) }
         }
     }
 

@@ -5,8 +5,13 @@ import androidx.test.platform.app.InstrumentationRegistry
 import com.google.firebase.firestore.FirebaseFirestore
 import org.junit.Test
 import org.junit.runner.RunWith
+import vn.huytl.homeworkgate.data.CauCham
+import vn.huytl.homeworkgate.data.SoCaiBai
 import vn.huytl.homeworkgate.dongbo.DongBo
 import vn.huytl.homeworkgate.dongbo.Duong
+import vn.huytl.homeworkgate.kho.KhoBai
+import vn.huytl.homeworkgate.kho.NganHang
+import vn.huytl.homeworkgate.kho.PhamVi
 import java.util.concurrent.CountDownLatch
 import java.util.concurrent.TimeUnit
 
@@ -27,6 +32,9 @@ import java.util.concurrent.TimeUnit
  *   # xoa bai mau
  *   adb shell am instrument -w -e class vn.huytl.homeworkgate.ManualKetQua#xoaThu \
  *     vn.huytl.homeworkgate.test/androidx.test.runner.AndroidJUnitRunner
+ *
+ * Muon nhin nut "Nộp lại N câu sai" (tu 28/9/2026) thi chay [napBaiSai]: bai do co
+ * phan khai theo sach va ghi ca so cai, nen man ket qua biet cau nao con phai sua.
  */
 @RunWith(AndroidJUnit4::class)
 class ManualKetQua {
@@ -99,6 +107,61 @@ class ManualKetQua {
         choGhiXong("napClaude")
     }
 
+    /**
+     * Mot bai 5 cau SBT, 3 dung 2 sai, da duyet 12 phut: dung canh Ba Huy ke ngay
+     * 28/9/2026. Ghi ca phan khai (ma sach tung cau) va so cai (3 cau da tra gio, 2 cau
+     * sai), y nhu ApprovalService ghi sau khi cham theo Claude. Mo man ket qua la thay
+     * nut "Nộp lại 2 câu sai" tren the bai nay.
+     *
+     *   adb shell am instrument -w -e class vn.huytl.homeworkgate.ManualKetQua#napBaiSai \
+     *     vn.huytl.homeworkgate.test/androidx.test.runner.AndroidJUnitRunner
+     *   adb shell am start -n vn.huytl.homeworkgate/.ui.KetQuaActivity
+     *
+     * Ghi so cai that cua may ao. Dung chay tren tablet cua Le Hoa.
+     */
+    @Test
+    fun napBaiSai() {
+        NganHang.napNeuCan(context)
+        val cau = KhoBai.get(context).cacCauTheoId(ID_SBT)
+        check(cau.size == ID_SBT.size) { "ngan hang SBT chua nap du" }
+        val pham = PhamVi(
+            mon = "Toán", nguon = "sbttoan8t1", tenNguon = "SBT Toán 8 tập một",
+            bai = "Ôn tập chương II", cauIds = ID_SBT
+        )
+        DongBo.dayBaiMoi(context, ID_SAI, 0L, emptyList(), DongBo.banKhai(context, pham))
+        val cham = cau.map { c ->
+            val sai = c.ma in MA_SAI
+            CauCham(
+                ma = c.ma, de = c.de, cauId = c.id, mon = "Toán", dung = !sai, soDong = 1,
+                ketQua = if (sai) "999000" else "đúng",
+                nhanXet = if (sai) {
+                    "Dòng 1 viết (x - 3)^3 rồi thay x = 103 được 100^3 là đúng, nhưng dòng 2 " +
+                        "tính 100^3 ra 999000. Tính lại 100 nhân 100 nhân 100 ở dòng 2."
+                } else {
+                    ""
+                }
+            )
+        }
+        DongBo.dayChamBai(
+            context, ID_SAI,
+            mapOf(
+                "mon" to "Toán",
+                "tomTat" to "Bai mau cho ManualKetQua.napBaiSai, khong phai bai that.",
+                "phutDeNghi" to 12,
+                "lamHetDanDo" to false,
+                "cac" to cham.map { c ->
+                    mapOf(
+                        "ma" to c.ma, "de" to c.de, "ketQua" to c.ketQua, "dung" to c.dung,
+                        "docRo" to true, "soDong" to c.soDong, "nhanXet" to c.nhanXet
+                    )
+                }
+            )
+        )
+        DongBo.datTrangThaiBai(context, ID_SAI, "DUYET", 12)
+        SoCaiBai.ghi(context, cham, cham.filter { it.dung }.associate { it.ma to 4 })
+        choGhiXong("napBaiSai")
+    }
+
     @Test
     fun xoaThu() {
         val maNha = DongBo.maNhaHienTai(context)
@@ -106,8 +169,10 @@ class ManualKetQua {
             println("MANUAL_KETQUA: may nay chua lap nha")
             return
         }
-        FirebaseFirestore.getInstance().collection(Duong.NHA).document(maNha)
-            .collection(Duong.BAI).document(ID_MAU).delete()
+        listOf(ID_MAU, ID_SAI).forEach {
+            FirebaseFirestore.getInstance().collection(Duong.NHA).document(maNha)
+                .collection(Duong.BAI).document(it).delete()
+        }
         choGhiXong("xoaThu")
     }
 
@@ -138,6 +203,11 @@ class ManualKetQua {
 
     private companion object {
         const val ID_MAU = "thu-ket-qua"
+
+        /** Bai cua [napBaiSai]. */
+        const val ID_SAI = "thu-nop-lai"
+        val ID_SBT = listOf("2.19a", "2.19b", "2.20a", "2.20b", "2.20c").map { "sbttoan8t1:$it" }
+        val MA_SAI = setOf("2.19b", "2.20b")
 
         val CAC = listOf(
             Mau(

@@ -30,6 +30,7 @@ import vn.huytl.homeworkgate.data.CaptureStage
 import vn.huytl.homeworkgate.data.DayLog
 import vn.huytl.homeworkgate.data.Prefs
 import vn.huytl.homeworkgate.databinding.ActivityCaptureBinding
+import vn.huytl.homeworkgate.telegram.ApprovalService
 import vn.huytl.homeworkgate.telegram.CapSachSender
 import vn.huytl.homeworkgate.kho.PhamVi
 import vn.huytl.homeworkgate.telegram.HomeworkSender
@@ -56,10 +57,41 @@ class CaptureActivity : AppCompatActivity() {
     /**
      * Con dang chup lai phan da sua, khong phai nop bai moi.
      *
-     * Luc do bo qua hai buoc dau (vo dan do, de bai): bai cu da co trong so cai roi,
-     * cai can bay gio chi la may dong con vua lam lai.
+     * Luc do bo qua buoc de bai: de cua cac cau da co tu lan nop dau. Con mo man nay tu
+     * nut "Nộp lại N câu sai" tren the mot bai o man ket qua, va [pham] mang dung cac cau
+     * sai cua bai do - xem [vn.huytl.homeworkgate.kho.PhamVi.suaBai].
      */
     private val suaBai by lazy { intent.getBooleanExtra(EXTRA_SUA, false) }
+
+    /**
+     * Cac cau phai chup lai, kem de, hien o dau man chup luc nop lai.
+     *
+     * Ba Huy muon con nhin thay de cua dung may cau sai (28/9/2026): anh chup ca trang vo
+     * thi van phai co hai cau nay, con cau khac tren trang may bo qua. Doc mot lan tu kho,
+     * khong doc lai moi lan ve man: render() chay sau moi tam chup.
+     */
+    private val cauCanChup: String by lazy {
+        val p = pham ?: return@lazy ""
+        val trongSach = if (p.theoSach) {
+            runCatching { vn.huytl.homeworkgate.kho.KhoBai.get(this).cacCauTheoId(p.cauIds) }
+                .getOrDefault(emptyList()).map { it.ma to it.de }
+        } else {
+            emptyList()
+        }
+        val cac = trongSach + p.cauNgoai.map { it.ma to it.de }
+        if (cac.isEmpty()) return@lazy ""
+        buildString {
+            append("Chụp lại ${cac.size} câu này:")
+            cac.forEach { (ma, de) ->
+                val chu = SoMu.hien(de.trim())
+                append("\n").append(ma)
+                if (chu.isNotEmpty()) {
+                    append(". ").append(chu.take(DE_TOI_DA))
+                    if (chu.length > DE_TOI_DA) append("…")
+                }
+            }
+        }
+    }
 
     /**
      * Che do chup cap sach da soan, khong phai nop bai.
@@ -91,18 +123,17 @@ class CaptureActivity : AppCompatActivity() {
      * tren danh sach nay chu khong tren [CaptureStage.entries].
      *
      * BO BUOC DE BAI KHI CON DA KHAI BAI THEO SACH. Luc do de bai da nam san trong
-     * cau lenh gui cho may cham - xem [vn.huytl.homeworkgate.ai.PromptCham]
-     * CAU_LENH_KHAI_BAI, quy tac 4: cau trong danh sach thi "co_de" luon true, du
-     * anh co trang sach hay khong. Bat chup them mot tam nua chi de may nhin lai
-     * cai no da doc roi.
+     * phan khai cua bai, va Bang dieu khien chep no vao loi nho Claude (NhoClaude ben
+     * do): cau trong danh sach luon co de, du anh co trang sach hay khong. Bat chup them
+     * mot tam nua chi de Claude nhin lai cai da co.
      *
      * KHONG CO BUOC VO DAN DO. Vo chi chup o mot cho: dong "Chụp vở dặn dò hôm nay"
      * dau man chon mon, mo [DanDoActivity], chup mot lan cho ca ngay. Truoc day man nay
      * con mot buoc chup vo du phong, hien o moi lan nop khi trong may chua co vo con
      * hieu luc, va vo chup o do chi theo dung lan nop ay; con thay bi hoi vo hoai du da
-     * co cho chup rieng. Ban vo da luu di thang vao cau lenh cham (xem
-     * [vn.huytl.homeworkgate.data.VoDanDo]), va Bang dieu khien chep no vao loi nho
-     * Claude (xem [vn.huytl.homeworkgate.dongbo.DongBo.banDanDo]).
+     * co cho chup rieng. Ban vo da luu di kem bai (xem [vn.huytl.homeworkgate.data.VoDanDo]),
+     * va Bang dieu khien chep no vao loi nho Claude (xem
+     * [vn.huytl.homeworkgate.dongbo.DongBo.banDanDo]).
      */
     private val cacBuoc: List<CaptureStage> by lazy {
         when {
@@ -326,7 +357,7 @@ class CaptureActivity : AppCompatActivity() {
             chupDanDo -> "Chụp trang vở dặn dò. Trang có mấy buổi cũng được, " +
                 "lát nữa chọn đúng buổi hôm nay."
             soanTap -> getString(R.string.capture_cap_hint)
-            suaBai -> "Chụp lại phần Lê Hòa vừa sửa."
+            suaBai -> cauCanChup.ifEmpty { "Chụp lại phần Lê Hòa vừa sửa." }
             daKhai != null -> "$daKhai\n${getString(stage.hintRes)}"
             else -> getString(stage.hintRes)
         }
@@ -463,13 +494,36 @@ class CaptureActivity : AppCompatActivity() {
             return
         }
 
-        // Khong gui thang nua: dua sang man soat de con xem may doc ra chu gi da.
-        // Xem [SoatBaiActivity] de biet vi sao chen mot buoc vao giua.
-        //
-        // Xoa danh sach o day de onDestroy khong xoa file: tu luc nay man soat so
-        // huu may tam anh, va no se don khi con bo ngang.
+        guiBai(groups)
+    }
+
+    /**
+     * Gui bai cho Ba Huy: chup xong la gui, khong con man nao o giua.
+     *
+     * Truoc 28/9/2026 bai di qua man soat (SoatBaiActivity): may tren tablet cham, con
+     * soat chu may doc roi moi gui. Ba Huy bo han phan may cham, bai nao cung do Claude
+     * cham tren Bang dieu khien, nen man do chi con mot cau ghi chu va mot nut Gui. Ba
+     * Huy bo ca cau ghi chu: chup la gui.
+     *
+     * Hang cho du bai thi chua gui, noi ro vi sao. Lan nop lai ma se huy bai cu (xem
+     * [PhamVi.huyBaiCu]) thi bai cu nhuong cho: service huy no ngay truoc khi xep bai
+     * moi vao hang.
+     */
+    private fun guiBai(groups: Map<CaptureStage, List<File>>) {
+        val gate = vn.huytl.homeworkgate.data.GateStore(this)
+        val hang = gate.baiDangCho()
+        val nhuongCho = pham?.takeIf { it.laSua && it.huyBaiCu }
+            ?.let { p -> hang.any { it.id == p.suaBai } } == true
+        if (hang.size - (if (nhuongCho) 1 else 0) >= vn.huytl.homeworkgate.data.GateStore.MAX_BAI_CHO) {
+            toast("Đã gửi đủ bài, chờ ba Huy duyệt bớt rồi bấm Gửi lại")
+            return
+        }
+        // Xoa danh sach truoc khi dong, de onDestroy khong xoa file: tu luc nay service
+        // so huu may tam anh va tu xoa sau khi gui.
         shots.values.forEach { it.clear() }
-        startActivity(SoatBaiActivity.moTu(this, groups, pham))
+        ApprovalService.ensureRunning(this)
+        ApprovalService.guiBai(this, groups, pham)
+        toast("Đã gửi cho ${getString(R.string.parent_name)}")
         finish()
     }
 
@@ -537,6 +591,9 @@ class CaptureActivity : AppCompatActivity() {
 
         /** Album cua Telegram chua toi da 10 anh, nen moi nhom toi da 10 trang. */
         const val MAX_PER_STAGE = 10
+
+        /** De moi cau o dau man chup lai dai toi da bay nhieu chu, dai hon thi cat. */
+        private const val DE_TOI_DA = 140
 
         /** Cho camera bao nhieu lau truoc khi coi nhu no treo. */
         const val CAPTURE_TIMEOUT_MS = 8_000L

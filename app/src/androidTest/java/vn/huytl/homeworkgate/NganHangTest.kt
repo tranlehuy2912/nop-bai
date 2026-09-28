@@ -9,13 +9,16 @@ import org.junit.Assert.assertTrue
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
-import vn.huytl.homeworkgate.ai.ChamBaiJson
 import vn.huytl.homeworkgate.data.CauCham
+import vn.huytl.homeworkgate.data.ChamTheoClaude
+import vn.huytl.homeworkgate.data.GateStore
+import vn.huytl.homeworkgate.data.KhaiChoCham
 import vn.huytl.homeworkgate.data.KetQuaCham
 import vn.huytl.homeworkgate.data.LuatCongGio
 import vn.huytl.homeworkgate.data.Prefs
 import vn.huytl.homeworkgate.data.SoCaiBai
 import vn.huytl.homeworkgate.kho.CauHoi
+import vn.huytl.homeworkgate.kho.CauNgoai
 import vn.huytl.homeworkgate.kho.KhoBai
 import org.junit.After
 import vn.huytl.homeworkgate.kho.NganHang
@@ -109,21 +112,16 @@ class NganHangTest {
     // ------------------------------------------------------------------ cai chinh
 
     @Test
-    fun cung_mot_cau_ma_AI_chep_de_khac_di_van_bi_nhan_ra_la_da_lam() {
-        // Hom qua: AI chep de day du.
-        val homQua = ChamBaiJson.doc(
-            traLoiAi("""{"ma":"2.26a","co_lam":true,"dung":true,"doc_ro":true,"so_dong":4}"""),
-            bai
-        )!!
+    fun cung_mot_cau_ma_chep_ma_khac_di_van_bi_nhan_ra_la_da_lam() {
+        // Hom qua: Claude chep dung ma sach.
+        val homQua = chamClaude(cau("2.26a"))
         SoCaiBai.ghi(context, homQua.cac, mapOf("2.26a" to 2), now - ngay)
         assertEquals(2, SoCaiBai.phutDaCongHomNay(context, now - ngay))
 
-        // Hom nay con chup lai chinh trang do. Lan nay AI chep de cut di mot nua -
-        // ngay o duong cu la mot khoa khac, va con duoc cong gio lan hai.
-        val homNay = ChamBaiJson.doc(
-            traLoiAi("""{"ma":"2.26 a","co_lam":true,"dung":true,"doc_ro":true,"so_dong":4}"""),
-            bai
-        )!!
+        // Hom nay con chup lai chinh trang do, lan nay ma viet kieu khac. Khoa theo de
+        // bai la mot khoa khac han, va con duoc cong gio lan hai; khoa theo ma sach thi
+        // van la mot cau.
+        val homNay = chamClaude(cau("2.26 a"))
         assertTrue(SoCaiBai.daTraGioCua(context, homNay.cac.first(), now))
         assertEquals(0, SoCaiBai.phutDaCongHomNay(context, now))
     }
@@ -132,13 +130,7 @@ class NganHangTest {
     fun hai_cau_khac_nhau_co_de_giong_het_nhau_van_la_hai_cau() {
         // 2.27a va 2.27b cung mang de "Rút gọn biểu thức" - chuan hoa ra y het nhau.
         // Duong cu se coi cau thu hai la da lam roi va khong tra gio cho no.
-        val ket = ChamBaiJson.doc(
-            traLoiAi(
-                """{"ma":"2.27a","co_lam":true,"dung":true,"doc_ro":true,"so_dong":4}""",
-                """{"ma":"2.27b","co_lam":true,"dung":true,"doc_ro":true,"so_dong":4}"""
-            ),
-            bai
-        )!!
+        val ket = chamClaude(cau("2.27a"), cau("2.27b"))
 
         SoCaiBai.ghi(context, listOf(ket.cac[0]), mapOf("2.27a" to 2), now)
         assertTrue(SoCaiBai.daTraGioCua(context, ket.cac[0], now))
@@ -151,130 +143,40 @@ class NganHangTest {
     // ----------------------------------------------------------------- doc ket qua
 
     @Test
-    fun de_bai_lay_tu_sach_chu_khong_phai_tu_chu_AI_doc_duoc() {
-        val ket = ChamBaiJson.doc(
-            traLoiAi("""{"ma":"2.26a","co_lam":true,"dung":true,"doc_ro":true,"de":"chép sai"}"""),
-            bai
-        )!!
+    fun de_bai_lay_tu_sach_chu_khong_phai_chu_Claude_chep() {
+        val ket = chamClaude(cau("2.26a", de = "chép sai"))
         assertEquals("Phân tích đa thức x^2 - 6x + 9 - y^2 thành nhân tử", ket.cac.first().de)
         assertEquals("thu:2.26a", ket.cac.first().cauId)
     }
 
     @Test
-    fun con_khai_lam_ma_anh_khong_thay_thi_khong_vao_so() {
-        val ket = ChamBaiJson.doc(
-            traLoiAi(
-                """{"ma":"2.26a","co_lam":true,"dung":true,"doc_ro":true,"so_dong":4}""",
-                """{"ma":"2.26b","co_lam":false,"dung":false,"doc_ro":true}"""
-            ),
-            bai
-        )!!
-
-        // Chi con cau that su co bai lam. Cau khai suong khong duoc coi la sai - ghi
-        // vao thi man hinh cua con day nhung cau no chua dinh vao bao gio.
-        assertEquals(listOf("2.26a"), ket.cac.map { it.ma })
-        SoCaiBai.ghi(context, ket.cac, mapOf("2.26a" to 2), now)
-        assertTrue(SoCaiBai.dangChoSua(context, now).isEmpty())
-    }
-
-    @Test
     fun cau_ngoai_danh_sach_van_duoc_cham_nhung_di_duong_de_bai() {
-        val ket = ChamBaiJson.doc(
-            traLoiAi(
-                """{"ma":"2.99","ngoai_danh_sach":true,"de":"Bài con tự làm thêm",
-                   "co_lam":true,"dung":true,"doc_ro":true,"so_dong":6}"""
-            ),
-            bai
-        )!!
-        val cau = ket.cac.first()
-        assertEquals(null, cau.cauId)
-        assertEquals("Bài con tự làm thêm", cau.de)
+        val ket = chamClaude(cau("2.99", de = "Bài con tự làm thêm", soDong = 6))
+        val c = ket.cac.first()
+        assertEquals(null, c.cauId)
+        assertEquals("Bài con tự làm thêm", c.de)
 
-        SoCaiBai.ghi(context, listOf(cau), mapOf("2.99" to 3), now)
+        SoCaiBai.ghi(context, listOf(c), mapOf("2.99" to 3), now)
         assertTrue(SoCaiBai.daTraGio(context, "Bài con tự làm thêm", now))
     }
 
     @Test
-    fun dang_bai_lay_theo_sach_chu_khong_theo_cai_may_doan() {
-        // Sach ghi 2.26a la CAU_NHO. May bao TRAC_NGHIEM thi khong nghe: dang quyet
-        // dinh so phut, ma cung mot cau ba lan chay may co the ra ba dang khac nhau.
-        val ket = ChamBaiJson.doc(
-            traLoiAi(
-                """{"ma":"2.26a","co_lam":true,"dung":true,"doc_ro":true,
-                   "dang":"TRAC_NGHIEM","so_dong":4}"""
-            ),
-            bai
-        )!!
+    fun dang_bai_lay_theo_sach_chu_khong_theo_Claude() {
+        // Sach ghi 2.26a la CAU_NHO. Claude bao TRAC_NGHIEM thi khong nghe: dang quyet
+        // dinh so phut, ma cung mot cau hai lan cham co the ra hai dang khac nhau.
+        val ket = chamClaude(cau("2.26a", dang = "TRAC_NGHIEM"))
         assertEquals(vn.huytl.homeworkgate.data.DangBai.CAU_NHO, ket.cac.first().dang)
-    }
-
-    // --------------------------------------------------- may chep lai bai lam
-
-    @Test
-    fun may_chep_lai_tung_dong_con_viet() {
-        val ket = ChamBaiJson.doc(
-            traLoiAi(
-                """{"ma":"2.26a","co_lam":true,"dung":false,"doc_ro":true,"dong_sai":2,
-                   "bai_lam":["x^2 - 6x + 9 - y^2","= (x-3)^2 + y^2","= (x-3-y)(x-3+y)"],
-                   "so_dong":3}"""
-            ),
-            bai
-        )!!
-        val cau = ket.cac.first()
-        assertEquals(3, cau.baiLam.size)
-        assertEquals("= (x-3)^2 + y^2", cau.baiLam[1])
-        assertEquals(2, cau.dongSai)
-    }
-
-    @Test
-    fun so_dong_lay_theo_so_dong_may_chep_ra_chu_khong_theo_con_so_may_khai() {
-        // So dong quy ra phut. May khai 99 dong ma chi chep ra 3 dong thi tin 3:
-        // danh sach dong thi Ba Huy doc duoc, con con so thi khong ai soat.
-        val ket = ChamBaiJson.doc(
-            traLoiAi(
-                """{"ma":"2.26a","co_lam":true,"dung":true,"doc_ro":true,"so_dong":99,
-                   "bai_lam":["dòng 1","dòng 2","dòng 3"]}"""
-            ),
-            bai
-        )!!
-        assertEquals(3, ket.cac.first().soDong)
-    }
-
-    @Test
-    fun ban_cu_khong_co_bai_lam_thi_van_doc_duoc() {
-        // Model thinh thoang tra ve thieu truong. Thieu "bai_lam" thi quay ve con so
-        // "so_dong" nhu truoc, khong duoc lam hong ca lan cham.
-        val ket = ChamBaiJson.doc(
-            traLoiAi("""{"ma":"2.26a","co_lam":true,"dung":true,"doc_ro":true,"so_dong":4}"""),
-            bai
-        )!!
-        assertEquals(4, ket.cac.first().soDong)
-        assertTrue(ket.cac.first().baiLam.isEmpty())
-        assertEquals(0, ket.cac.first().dongSai)
-    }
-
-    @Test
-    fun dong_sai_khong_vuot_qua_so_dong_chep_ra() {
-        val ket = ChamBaiJson.doc(
-            traLoiAi(
-                """{"ma":"2.26a","co_lam":true,"dung":false,"doc_ro":true,"dong_sai":9,
-                   "bai_lam":["dòng 1","dòng 2"]}"""
-            ),
-            bai
-        )!!
-        assertEquals(2, ket.cac.first().dongSai)
     }
 
     @Test
     fun bai_lam_di_xuong_so_va_doc_lai_duoc() {
-        val ket = ChamBaiJson.doc(
-            traLoiAi(
-                """{"ma":"2.26d","co_lam":true,"dung":false,"doc_ro":true,"dong_sai":1,
-                   "bai_lam":["= x(x-6)","= x^2-6x"],"nhan_xet":"Dòng 1 sai"}"""
-            ),
-            bai
-        )!!
-        SoCaiBai.ghi(context, ket.cac, emptyMap(), now)
+        // So cai van giu tung dong bai lam va dong sai, du tu 28/9/2026 khong con may
+        // cham nao chep dong ra: ban cham cu trong so van doc lai duoc.
+        val c = CauCham(
+            ma = "2.26d", de = bai[4].de, cauId = "thu:2.26d", dung = false, dongSai = 1,
+            baiLam = listOf("= x(x-6)", "= x^2-6x"), nhanXet = "Dòng 1 sai"
+        )
+        SoCaiBai.ghi(context, listOf(c), emptyMap(), now)
 
         val dong = SoCaiBai.lichSuCua(context, "thu:2.26d").first()
         assertEquals(listOf("= x(x-6)", "= x^2-6x"), dong.baiLam)
@@ -285,52 +187,112 @@ class NganHangTest {
 
     @Test
     fun cau_trong_danh_sach_con_khai_thi_luon_co_de() {
-        // De lay tu sach nen khong can hoi may. May co quen tra "co_de" cung khong sao.
-        val ket = ChamBaiJson.doc(
-            traLoiAi("""{"ma":"2.26a","co_lam":true,"dung":true,"doc_ro":true,"so_dong":3}"""),
-            bai
-        )!!
+        // De lay tu sach nen Claude khong phai chep de cho cau con da khai.
+        val ket = chamClaude(cau("2.26a", soDong = 3))
         assertTrue(ket.cac.first().coDe)
     }
 
     @Test
-    fun cau_tu_do_ma_may_khong_thay_de_thi_khong_tra_gio() {
+    fun cau_ngoai_danh_sach_khong_co_de_thi_khong_tra_gio() {
         // Canh ngay 16/9/2026: vo KHTN chi ghi "cau 1 B", khong mot dong de nao.
-        val ket = ChamBaiJson.doc(
-            traLoiAi(
-                """{"ma":"câu 1","ngoai_danh_sach":true,"de":"","co_de":false,
-                   "dung":true,"doc_ro":true,"dang":"TRAC_NGHIEM","ket_qua":"B"}"""
-            ),
-            bai
-        )!!
-        val cau = ket.cac.first()
-        assertFalse("may khai khong co de ma van coi la co", cau.coDe)
-        assertEquals(0, LuatCongGio.phutChoCau(cau))
+        val ket = chamClaude(cau("câu 1", de = "", dang = "TRAC_NGHIEM", conViet = "B"))
+        val c = ket.cac.first()
+        assertFalse("khong co de ma van coi la co", c.coDe)
+        assertEquals(0, LuatCongGio.phutChoCau(c))
     }
 
     @Test
     fun ca_trang_chi_co_dap_an_thi_khong_duoc_phut_nao() {
-        // Hai muoi cau trac nghiem, may khai dung het - nhung khong co de. Khong chan
-        // o co_de thi trang nay van ra phut (20 cau, tran 15) du khong ai cham duoc.
-        val cac = (1..20).joinToString(",") { i ->
-            """{"ma":"câu $i","ngoai_danh_sach":true,"de":"","co_de":false,"dung":true,
-               "doc_ro":true,"dang":"TRAC_NGHIEM","ket_qua":"B"}"""
-        }
-        val ket = ChamBaiJson.doc(traLoiAi(cac), bai)!!
+        // Hai muoi cau trac nghiem, Claude bao dung het - nhung khong co de. Khong chan
+        // o co de thi trang nay van ra phut du khong ai cham duoc.
+        val cac = (1..20).map { i -> cau("câu $i", de = "", dang = "TRAC_NGHIEM", conViet = "B") }
+        val ket = chamClaude(*cac.toTypedArray())
         assertEquals(20, ket.cac.size)
         assertEquals(0, LuatCongGio.tinh(ket).phut)
     }
 
     @Test
-    fun may_khai_co_de_thi_van_tra_gio_binh_thuong() {
+    fun cau_ngoai_danh_sach_co_de_thi_tra_gio_binh_thuong() {
         // Doi chung voi test tren: cung 20 cau trac nghiem, lan nay co de.
-        val cac = (1..20).joinToString(",") { i ->
-            """{"ma":"câu $i","ngoai_danh_sach":true,"de":"Câu $i hỏi gì đó","co_de":true,
-               "dung":true,"doc_ro":true,"dang":"TRAC_NGHIEM","ket_qua":"B"}"""
-        }
-        val ket = ChamBaiJson.doc(traLoiAi(cac), bai)!!
-        // Mot cau mot phut, hai muoi cau cham tran moi lan nop.
+        val cac = (1..20).map { i -> cau("câu $i", de = "Câu $i hỏi gì đó", dang = "TRAC_NGHIEM") }
+        val ket = chamClaude(*cac.toTypedArray())
+        // Hai muoi cau cham tran moi lan nop.
         assertEquals(LuatCongGio.TRAN_TRAC_NGHIEM, LuatCongGio.tinh(ket).phut)
+    }
+
+    // ------------------------------------------------------------ nop lai cau sai
+
+    /**
+     * Lan nop lai cac cau sai cua mot bai: cau ngoai danh sach khai bi bo.
+     *
+     * Canh Ba Huy tim ra ngay 28/9/2026: con sua de len chinh trang vo cu, anh co ca cau
+     * da dung tu lan truoc, va Claude duoc dan chep them moi cau thay trong anh. Cau do
+     * khong nam trong danh sach nen khoa so cai theo de bai, so cai khong nhan ra la da
+     * tra gio, va con duoc tra gio lan hai.
+     */
+    @Test
+    fun lan_nop_lai_bo_cau_ngoai_danh_sach() {
+        val sua = PhamVi(
+            mon = "Toán", nguon = "thu", tenNguon = "Sách thử", bai = "sửa bài lúc 11:18",
+            cauIds = listOf("thu:2.26b"), suaBai = "bai-cu"
+        )
+        val ket = chamClaude(
+            cau("2.26a", de = "Phân tích đa thức x^2 - 6x + 9 - y^2 thành nhân tử"),
+            cau("2.26b"),
+            pham = sua
+        )
+        assertEquals(listOf("2.26b"), ket.cac.map { it.ma })
+        assertEquals("thu:2.26b", ket.cac.first().cauId)
+    }
+
+    /**
+     * Cau ngoai sach cua lan nop lai mang de chep tu ban cham cu, khong lay de Claude chep
+     * lan nay: so cai khoa cau ngoai sach theo de, lay de moi thi lan sai cu va lan sua
+     * dung nay thanh hai cau khac nhau.
+     */
+    @Test
+    fun lan_nop_lai_cau_ngoai_sach_lay_de_cua_ban_cham_cu() {
+        SoCaiBai.ghi(context, listOf(cauNgoaiSach.copy(dung = false)), emptyMap(), now - ngay)
+        val sua = PhamVi(
+            mon = "Tiếng Anh", bai = "sửa bài lúc 11:18",
+            cauNgoai = listOf(CauNgoai("câu 3", cauNgoaiSach.de)), suaBai = "bai-cu"
+        )
+        val ket = chamClaude(
+            cau("Câu 3", de = "She ____ (go) to school every day"),
+            cau("câu 4", de = "Câu đã đúng từ lần trước"),
+            pham = sua
+        )
+        val c = ket.cac.single()
+        assertEquals(cauNgoaiSach.de, c.de)
+        assertEquals(SoCaiBai.khoaCua(cauNgoaiSach), SoCaiBai.khoaCua(c))
+        assertEquals(1, SoCaiBai.soLanSai(context, c, now))
+        assertFalse(SoCaiBai.daTraGioCua(context, c, now))
+    }
+
+    /**
+     * Cau dang nam trong mot bai cho chua cham thi bi khoa o man chon cau va man ket qua,
+     * xem [KhaiChoCham.cauChoCham]. Cham xong (co dong ghi sau luc nop) thi het khoa.
+     */
+    @Test
+    fun cau_trong_bai_cho_chua_cham_thi_dang_cho_cham() {
+        val gate = GateStore(context)
+        val luc = System.currentTimeMillis()
+        gate.markPending("bai-cho", 0L, luc)
+        KhaiChoCham.luu(
+            context, "bai-cho",
+            PhamVi(mon = "Toán", nguon = "thu", cauIds = listOf("thu:2.26a", "thu:2.26b"))
+        )
+        try {
+            assertEquals(setOf("thu:2.26a", "thu:2.26b"), KhaiChoCham.cauChoCham(context))
+            // Claude cham: 2.26b sai, co dong sai ghi sau luc nop - het "cho cham".
+            SoCaiBai.ghi(
+                context, listOf(CauCham(ma = "2.26b", de = bai[1].de, cauId = "thu:2.26b", dung = false)),
+                emptyMap(), luc + 1_000
+            )
+            assertEquals(setOf("thu:2.26a"), KhaiChoCham.cauChoCham(context))
+        } finally {
+            gate.boBaiCho("bai-cho")
+        }
     }
 
     // ---------------------------------------------------------------- on tap
@@ -646,10 +608,14 @@ class NganHangTest {
             nguon = "thu",
             tenNguon = "Sách thử",
             bai = "Bài 6 (trang 36)",
-            cauIds = listOf("thu:2.26a", "thu:2.26b")
+            cauIds = listOf("thu:2.26a", "thu:2.26b"),
+            suaBai = "bai-cu",
+            cauNgoai = listOf(CauNgoai("câu 3", "She ___ (go) to school every day.")),
+            huyBaiCu = true
         )
         val ve = PhamVi.tuJson(goc.sangJson())
         assertEquals(goc, ve)
+        assertTrue(ve!!.laSua)
         assertTrue(ve!!.theoSach)
         // Khong co cau nao thi khong con la lan nop theo sach - phai quay ve duong cu.
         assertFalse(goc.copy(cauIds = emptyList()).theoSach)
@@ -758,7 +724,27 @@ class NganHangTest {
     }
 
     /** Boc may cau JSON vao mot cau tra loi day du nhu cua Gemini. */
-    private fun traLoiAi(vararg cau: String): String =
-        """{"mon":"Toán","ngay_dan_do":null,"bai_duoc_giao":[],"lam_het_dan_do":false,
-           "cac_cau":[${cau.joinToString(",")}],"tom_tat":"thử"}"""
+    /** Pham vi con khai ca bai gia: moi cau trong [bai] la cau trong sach. */
+    private val phamThu = PhamVi(
+        mon = "Toán", nguon = "thu", tenNguon = "Sách thử", bai = "Bài 6 (trang 36)",
+        cauIds = bai.map { it.id }
+    )
+
+    /** Mot muc trong ket qua Claude, dung kieu lenh CHAMBAI tu Bang dieu khien gui ve. */
+    private fun cau(
+        ma: String,
+        dung: Boolean = true,
+        chac: Boolean = true,
+        soDong: Int = 4,
+        de: String = "",
+        dang: String = "",
+        conViet: String = ""
+    ): Map<String, Any> = mapOf(
+        "ma" to ma, "dung" to dung, "chac" to chac, "soDong" to soDong,
+        "de" to de, "dang" to dang, "conViet" to conViet, "goiY" to ""
+    )
+
+    /** Doi ket qua Claude thanh ban cham cua tablet, y nhu lenh CHAMBAI. */
+    private fun chamClaude(vararg cac: Map<String, Any>, pham: PhamVi = phamThu): KetQuaCham =
+        ChamTheoClaude.banCham(context, mapOf("cac" to cac.toList()), pham)!!
 }

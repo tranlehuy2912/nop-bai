@@ -58,9 +58,9 @@ data class CauCham(
     val soDong: Int = 0,
     val nhanXet: String = "",
     /**
-     * Cau nay sai KIEU gi, mot trong bay nhan co dinh o quy tac cuoi cua
-     * [vn.huytl.homeworkgate.ai.PromptCham.CAU_LENH]. Rong la cau dung, hoac ban
-     * cham cu khong co truong nay.
+     * Cau nay sai KIEU gi, mot trong bay nhan co dinh cua [LoaiLoi]. Rong la cau dung,
+     * hoac ban cham khong co truong nay. Nhan do may cham tren tablet dat; may cham bo
+     * ngay 28/9/2026 va Claude khong tra nhan, nen tu do truong nay de rong.
      *
      * VI SAO XEP NHAN CHU KHONG DE MAY TU DAT CHU: con so "hom nay sai 3 cau" khong
      * noi duoc gi de ngoi noi chuyen voi con. "Ca thang sai dau 14 lan" thi noi
@@ -130,13 +130,13 @@ data class CauCham(
  *
  * TAP DONG, va do la ca cai gia tri. De may tu dat ten loi thi moi lan chay ra mot
  * chu khac ("sai dau", "nham dau", "loi dau") va cong don lai khong ra con so nao.
- * Bay nhan nay duoc ke thang trong cau lenh gui cho may - xem quy tac cuoi cua
- * [vn.huytl.homeworkgate.ai.PromptCham.CAU_LENH] - va moi ban cham doc ve deu bi
- * ep ve dung tap nay.
+ * Bay nhan nay tung duoc ke thang trong cau lenh gui cho may cham tren tablet, va moi
+ * ban cham doc ve deu bi ep ve dung tap nay. May cham bo ngay 28/9/2026; Claude khong
+ * tra nhan, nen tu do chi con cac nhan cu trong so.
  *
  * Bay la con so chon co chu dich. It hon thi "KHAC" nuot gan het; nhieu hon thi hai
  * nhan sat nghia nhau (sai dau va sai buoc bien doi) bi may xep loan xa, va cong lai
- * khong tin duoc nua. Them nhan thi phai sua o CA HAI cho: o day va trong cau lenh.
+ * khong tin duoc nua.
  */
 object LoaiLoi {
 

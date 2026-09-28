@@ -536,7 +536,6 @@ object DongBo {
             "gioDay" to prefs.gioDayMinuteOfDay,
             "tranPhutMoiNgay" to prefs.tranPhutMoiNgay,
             "khoaCaiDat" to prefs.lockSystemSettings,
-            "chamBangAi" to prefs.chamBangAi,
             "appChoPhep" to prefs.allowedPackages.sorted(),
             "appMoiLuc" to prefs.moiLucPackages.sorted(),
             "appChan" to prefs.blockedPackages.sorted(),
@@ -681,18 +680,27 @@ object DongBo {
      * do. Luc do Claude phai tu nhan ra cau va chep de tu anh.
      */
     fun banKhai(context: Context, pham: PhamVi?): Map<String, Any>? {
-        if (pham == null || !pham.theoSach) return null
-        val cac = KhoBai.get(context).cacCauTheoId(pham.cauIds)
+        if (pham == null) return null
+        val trongSach = if (pham.theoSach) KhoBai.get(context).cacCauTheoId(pham.cauIds) else emptyList()
+        /*
+         * Cau ngoai sach cua lan nop lai (xem [PhamVi.cauNgoai]) cung vao danh sach, voi
+         * cauId rong va de chep tu ban cham cu. Nho vay loi nho Claude ke du cac cau phai
+         * cham kem de, ke ca bai vo bai tap hay phieu photo.
+         */
+        val cac = trongSach.map {
+            mapOf("ma" to it.ma, "cauId" to it.id, "de" to it.de, "dang" to it.dang)
+        } + pham.cauNgoai.map { mapOf("ma" to it.ma, "cauId" to "", "de" to it.de, "dang" to "") }
         if (cac.isEmpty()) return null
-        return mapOf(
-            "tenNguon" to pham.tenNguon,
-            "bai" to pham.bai,
-            "mon" to pham.mon,
-            "onTap" to pham.onTap,
-            "cac" to cac.map {
-                mapOf("ma" to it.ma, "cauId" to it.id, "de" to it.de, "dang" to it.dang)
-            }
-        )
+        return buildMap {
+            put("tenNguon", pham.tenNguon)
+            put("bai", pham.bai)
+            put("mon", pham.mon)
+            put("onTap", pham.onTap)
+            // Lan nop lai cac cau sai cua bai nao. Bang dieu khien doc de dan Claude chi
+            // cham cac cau trong danh sach, va ghi ro day la nop lai cua bai nao.
+            if (pham.laSua) put("suaBai", pham.suaBai)
+            put("cac", cac)
+        }
     }
 
     /**
