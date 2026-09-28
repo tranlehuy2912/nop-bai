@@ -252,11 +252,11 @@ def danh_sach():
         ),
         dict(
             ma="man-thongke", nhom="Kho bài",
-            ten="Màn “Dùng app gì, lúc nào” (trang của ba Huy)",
+            ten="Màn “Thời gian dùng app” (trang của ba Huy)",
             # Man nay nam sau PIN: khong bat che do ba thi no tu dong dong lai ngay.
             lam=lambda m: (m.chay("ManualThongKe#napThu"), m.dat("bamo", phut=30),
                            m.man("ThongKeActivity")),
-            cho=["Dùng app gì, lúc nào"],
+            cho=["Thời gian dùng app"],
             man_tren_cung="ThongKeActivity",
             don=lambda m: m.dat("badong"),
         ),
