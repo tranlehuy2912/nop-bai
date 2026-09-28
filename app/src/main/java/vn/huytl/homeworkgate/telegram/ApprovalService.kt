@@ -1082,6 +1082,8 @@ class ApprovalService : Service() {
              *
              * /hoi        - cua hom nay
              * /hoi tatca  - toan bo nhat ky con giu
+             *
+             * Cau con go nhieu dong hien dung cho con xuong dong, xem NhatKyAi.traXuongDong.
              */
             "hoi" -> {
                 val log = if (arg == "tatca") NhatKyAi.tatCa(this) else NhatKyAi.homNay(this)
@@ -1091,7 +1093,8 @@ class ApprovalService : Service() {
                         "Chưa ghi được câu hỏi AI nào" +
                             if (arg == "tatca") "." else " hôm nay. Gõ /hoi tatca để xem cả tuần."
                     } else {
-                        (if (arg == "tatca") "Câu hỏi AI đã ghi:\n" else "Hôm nay hỏi AI:\n") + log
+                        (if (arg == "tatca") "Câu hỏi AI đã ghi:\n" else "Hôm nay hỏi AI:\n") +
+                            NhatKyAi.traXuongDong(log)
                     }
                 )
             }

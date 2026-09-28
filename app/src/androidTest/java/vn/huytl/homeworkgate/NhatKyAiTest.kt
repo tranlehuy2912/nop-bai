@@ -52,4 +52,25 @@ class NhatKyAiTest {
         assertEquals(listOf(dong), dong.lines())
         assertTrue(Regex(".*").matches(dong))
     }
+
+    /** Tin /hoi: moi cau van mo dau bang ngay gio, cho con xuong dong thanh dong moi. */
+    @Test
+    fun tin_hoi_tra_lai_cho_xuong_dong() {
+        val so = listOf(
+            "28/09 12:56  [Gemini]  " + NhatKyAi.motDong("Cho tam giác ABC.\na) Tính AH."),
+            "28/09 12:57  [Dola]  past simple của go là gì"
+        ).joinToString("\n")
+        assertEquals(
+            "28/09 12:56  [Gemini]  Cho tam giác ABC.\na) Tính AH.\n" +
+                "28/09 12:57  [Dola]  past simple của go là gì",
+            NhatKyAi.traXuongDong(so)
+        )
+    }
+
+    /** Dau ↵ con tu go ma khong co hai dau cach hai ben thi khong phai cho xuong dong. */
+    @Test
+    fun dau_con_tu_go_giu_nguyen() {
+        val dong = "28/09 12:58  [ChatGPT]  phím↵ trên bàn phím là phím gì"
+        assertEquals(dong, NhatKyAi.traXuongDong(dong))
+    }
 }

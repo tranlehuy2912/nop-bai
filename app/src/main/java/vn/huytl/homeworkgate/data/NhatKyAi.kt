@@ -25,8 +25,9 @@ object NhatKyAi {
      * Dau ghi thay cho moi lan con xuong dong trong cau, xem [motDong].
      *
      * Bang dieu khien doi dau nay lai thanh xuong dong that khi ve the "Hoi AI"
-     * (DongHoiAi ben bang-dieu-khien). Cho nao chua doi lai - tin /hoi, logcat, ban
-     * Bang dieu khien cu - van doc ra la sang dong moi, nho mui ten va hai dau cach.
+     * (DongHoiAi ben bang-dieu-khien), tin /hoi cung vay (xem [traXuongDong]). Cho nao
+     * chua doi lai - logcat, ban Bang dieu khien cu - van doc ra la sang dong moi, nho
+     * mui ten va hai dau cach.
      */
     const val XUONG_DONG = " ↵ "
 
@@ -56,8 +57,8 @@ object NhatKyAi {
      * Tu 23/9 den 28/9/2026 cho xuong dong bi thay bang dau cach. Ngay 28/9 Ba Huy bao
      * the Hoi AI "chua xuong hang": de bai con dan vao bon dong ("... duong cao AH." /
      * "a) ..." / "b) ..." / "c) ...") hien thanh mot doan lien, chu "b)" treo cuoi dong.
-     * Nen gio moi cho xuong dong ghi thanh [XUONG_DONG] de Bang dieu khien tra lai duoc.
-     * Cau ghi trong khoang do van la mot doan lien, khong khoi phuc duoc.
+     * Nen gio moi cho xuong dong ghi thanh [XUONG_DONG] de Bang dieu khien va tin /hoi
+     * tra lai duoc. Cau ghi trong khoang do van la mot doan lien, khong khoi phuc duoc.
      *
      * Dong trong va khoang trang quanh cho xuong dong gop lai thanh mot lan xuong
      * dong: the Hoi AI dung dong trong de ngan hai cau, de dong trong ben trong mot cau
@@ -72,6 +73,20 @@ object NhatKyAi {
             .map { it.trim() }
             .filter { it.isNotEmpty() }
             .joinToString(XUONG_DONG)
+
+    /**
+     * Doi [XUONG_DONG] trong so (ban cua [tatCa] hay [homNay]) ve lai xuong dong that,
+     * cho tin /hoi.
+     *
+     * Moi cau van mo dau bang ngay gio va [ten app], nen dong khong co ngay o dau la
+     * phan tiep cua cau ben tren. Khong them dong trong giua hai cau nhu the Hoi AI ben
+     * Bang dieu khien: /hoi tatca dai toi [MAX_DONG] cau, ma tin Telegram bi cat o 4096
+     * chu (TelegramClient.sendMessage).
+     *
+     * Chi doi dung chuoi [motDong] ghi, nen dau ↵ con tu go ma khong co hai dau cach
+     * hai ben thi giu nguyen.
+     */
+    fun traXuongDong(so: String): String = so.replace(XUONG_DONG, "\n")
 
     /** Toan bo nhat ky con giu. */
     fun tatCa(context: Context): String =
