@@ -324,8 +324,8 @@ data class TraLoi(
     val conNoi: String = "",
     /**
      * Cau nay sai KIEU gi: mot trong bay nhan cua [vn.huytl.homeworkgate.data.LoaiLoi].
-     * Rong la cau dung, hoac ban cham khong co truong nay. Chi may cham tren tablet dat
-     * nhan; may cham bo ngay 28/9/2026, nen tu do cau Claude cham deu de rong.
+     * Rong la cau dung, hoac ban cham khong co truong nay. Truoc 28/9/2026 may cham tren
+     * tablet dat nhan; tu do Claude dat, xem [vn.huytl.homeworkgate.data.ChamTheoClaude].
      *
      * Xem [vn.huytl.homeworkgate.kho.KhoBai.thongKeLoi] de biet cot nay de lam gi.
      */

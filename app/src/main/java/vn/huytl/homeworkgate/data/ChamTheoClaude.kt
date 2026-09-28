@@ -107,6 +107,9 @@ object ChamTheoClaude {
                 dang = dangBai(q?.dang) ?: dangBai(o["dang"] as? String) ?: DangBai.CAU_NHO,
                 soDong = (o["soDong"] as? Number)?.toInt()?.coerceAtLeast(0) ?: 0,
                 nhanXet = if (dung) "" else (o["goiY"] as? String)?.trim().orEmpty(),
+                // Kieu sai Claude xep (tu 28/9/2026), ep ve bay nhan cua LoaiLoi. Cau dung
+                // thi khong co nhan nao, du Claude co ghi gi.
+                loaiLoi = LoaiLoi.doc(o["loaiLoi"] as? String, dung),
                 cauId = q?.id,
                 mon = q?.mon ?: pham?.mon.orEmpty(),
                 coDe = de.isNotBlank(),

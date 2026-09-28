@@ -13,6 +13,7 @@ import org.junit.runner.RunWith
 import vn.huytl.homeworkgate.data.ChamTheoClaude
 import vn.huytl.homeworkgate.data.DangBai
 import vn.huytl.homeworkgate.data.KhaiChoCham
+import vn.huytl.homeworkgate.data.LoaiLoi
 import vn.huytl.homeworkgate.data.LuatCongGio
 import vn.huytl.homeworkgate.data.VoChoCham
 import vn.huytl.homeworkgate.data.VoDanDo
@@ -118,6 +119,29 @@ class ChamTheoClaudeTest {
         assertEquals(DangBai.KHONG_TINH, ket.cac.single { it.ma == "5" }.dang)
         assertEquals(DangBai.CAU_NHO, ket.cac.single { it.ma == "6" }.dang)
         assertEquals(0, LuatCongGio.phutChoCau(ket.cac.single { it.ma == "5" }))
+    }
+
+    /**
+     * Kieu sai Claude xep (tu 28/9/2026) di vao ban cham, ep ve bay nhan cua LoaiLoi: nhan
+     * la thanh KHAC, cau dung thi khong co nhan nao du Claude co ghi. Man Tien bo va "Luyện
+     * chỗ hay vấp" cong don theo nhan nay, ma tu khi bo may cham chi con Claude dat nhan.
+     */
+    @Test
+    fun kieu_sai_claude_xep_ep_ve_bay_nhan() {
+        val ket = ChamTheoClaude.banCham(
+            context,
+            listOf(
+                mapOf("ma" to "2.28", "dung" to true, "loaiLoi" to "SAI_DAU"),
+                mapOf("ma" to "2.33a", "dung" to false, "loaiLoi" to "sai_buoc"),
+                mapOf("ma" to "7", "dung" to false, "de" to "Tính 3 - 5.", "loaiLoi" to "SAI_LUNG_TUNG"),
+                mapOf("ma" to "8", "dung" to false, "de" to "Tính 4 - 9.")
+            ),
+            pham
+        )!!
+        assertEquals("", ket.cac.single { it.ma == "2.28" }.loaiLoi)
+        assertEquals(LoaiLoi.SAI_BUOC, ket.cac.single { it.ma == "2.33a" }.loaiLoi)
+        assertEquals(LoaiLoi.KHAC, ket.cac.single { it.ma == "7" }.loaiLoi)
+        assertEquals("", ket.cac.single { it.ma == "8" }.loaiLoi)
     }
 
     @Test

@@ -59,8 +59,8 @@ data class CauCham(
     val nhanXet: String = "",
     /**
      * Cau nay sai KIEU gi, mot trong bay nhan co dinh cua [LoaiLoi]. Rong la cau dung,
-     * hoac ban cham khong co truong nay. Nhan do may cham tren tablet dat; may cham bo
-     * ngay 28/9/2026 va Claude khong tra nhan, nen tu do truong nay de rong.
+     * hoac ban cham khong co truong nay. Truoc 28/9/2026 may cham tren tablet dat nhan;
+     * tu do Claude dat, qua loi nho ben Bang dieu khien - xem [ChamTheoClaude].
      *
      * VI SAO XEP NHAN CHU KHONG DE MAY TU DAT CHU: con so "hom nay sai 3 cau" khong
      * noi duoc gi de ngoi noi chuyen voi con. "Ca thang sai dau 14 lan" thi noi
@@ -130,13 +130,14 @@ data class CauCham(
  *
  * TAP DONG, va do la ca cai gia tri. De may tu dat ten loi thi moi lan chay ra mot
  * chu khac ("sai dau", "nham dau", "loi dau") va cong don lai khong ra con so nao.
- * Bay nhan nay tung duoc ke thang trong cau lenh gui cho may cham tren tablet, va moi
- * ban cham doc ve deu bi ep ve dung tap nay. May cham bo ngay 28/9/2026; Claude khong
- * tra nhan, nen tu do chi con cac nhan cu trong so.
+ * Bay nhan nay duoc ke thang trong loi nho gui Claude (NhoClaude.LOAI_LOI ben Bang dieu
+ * khien), va moi ban cham doc ve deu bi ep ve dung tap nay, xem [doc]. Truoc 28/9/2026 no
+ * nam trong cau lenh cua may cham tren tablet; may cham bo thi Ba Huy cho Claude dat nhan
+ * thay, de man Tien bo va "Luyện chỗ hay vấp" khong dung lai o so cu.
  *
  * Bay la con so chon co chu dich. It hon thi "KHAC" nuot gan het; nhieu hon thi hai
  * nhan sat nghia nhau (sai dau va sai buoc bien doi) bi may xep loan xa, va cong lai
- * khong tin duoc nua.
+ * khong tin duoc nua. Them nhan thi phai sua o CA HAI cho: o day va trong loi nho Claude.
  */
 object LoaiLoi {
 
