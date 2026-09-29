@@ -82,7 +82,7 @@ class ChamTheoClaudeTest {
             pham
         )!!
         val bang = LuatCongGio.tinh(ket)
-        // Bon dong lam bai cua mot cau nho: mot dong mot phut, it nhat bon phut.
+        // Bon dong lam bai cua mot cau nho: mot dong mot phut, it nhat hai phut.
         assertEquals(4, bang.phut)
     }
 

@@ -73,14 +73,14 @@ class SuaChamLenhTest {
         Prefs.get(context).gioDayMinuteOfDay = (bayGio + if (dangNgu) 60 else 240) % ngay
     }
 
-    /** Cau 2.33a may bao sai, dang cho sua. */
-    private fun ghiCauSai() {
+    /** Cau 2.33a may bao sai, dang cho sua. Sua xong thi gia tinh theo [dong] dong bai lam. */
+    private fun ghiCauSai(dong: Int = 1) {
         SoCaiBai.ghi(
             context,
             listOf(
                 CauCham(
-                    ma = "2.33a", de = de, ketQua = "8x^2 + 20xy", dung = false, soDong = 1,
-                    baiLam = listOf("a) 8x^2 + 20xy"), cauId = "sachthu:2.33a", mon = "Toán",
+                    ma = "2.33a", de = de, ketQua = "8x^2 + 20xy", dung = false, soDong = dong,
+                    baiLam = List(dong) { "dòng ${it + 1}" }, cauId = "sachthu:2.33a", mon = "Toán",
                     nhanXet = "máy bảo thiếu hạng tử y^2"
                 )
             ),
@@ -94,23 +94,23 @@ class SuaChamLenhTest {
         val tra = ThiHanhLenh.suaCham(context, GateStore(context), giaTri)
 
         println("SUACHAM_LENH: $tra")
-        // Mot dong lam bai, cau nho toi thieu 4 phut tu 27/9/2026 (truoc do 2).
-        assertTrue(tra, tra.startsWith("Đã sửa câu 2.33a thành đúng, cộng 4 phút"))
+        // Mot dong lam bai, cau nho toi thieu 2 phut tu 28/9/2026 (27/9 la 4, truoc nua la 2).
+        assertTrue(tra, tra.startsWith("Đã sửa câu 2.33a thành đúng, cộng 2 phút"))
         assertTrue(SoCaiBai.dangChoSua(context).isEmpty())
-        assertEquals(4, SoCaiBai.phutDaCongHomNay(context))
+        assertEquals(2, SoCaiBai.phutDaCongHomNay(context))
         assertTrue(SoCaiBai.loiNhan(context).orEmpty().contains("câu 2.33a Lê Hòa làm đúng rồi"))
 
         // Gui lai dung lenh do: khong cong them phut nao.
         val lan2 = ThiHanhLenh.suaCham(context, GateStore(context), giaTri)
         assertTrue(lan2, lan2.startsWith("Không còn câu nào"))
-        assertEquals(4, SoCaiBai.phutDaCongHomNay(context))
+        assertEquals(2, SoCaiBai.phutDaCongHomNay(context))
     }
 
     @Test
     fun tran_ngay_cat_bot_thi_tra_loi_nhat_ky_va_so_noi_so_phut_that() {
-        ghiCauSai()
-        // Cau nay gia 4 phut, ma hom nay chi con 2 phut trong tran. Tran thap nhat la 15
-        // phut, nen dung truoc cho du 13 phut roi moi dat tran.
+        ghiCauSai(dong = 4)
+        // Bon dong nen cau nay gia 4 phut, ma hom nay chi con 2 phut trong tran. Tran thap
+        // nhat la 15 phut, nen dung truoc cho du 13 phut roi moi dat tran.
         val gate = GateStore(context)
         if (gate.phutDaDuyetHomNay() < 13) {
             gate.approve(wantedMinutes = 13 - gate.phutDaDuyetHomNay(), useQuota = true)
@@ -135,12 +135,12 @@ class SuaChamLenhTest {
         val tra = ThiHanhLenh.suaCham(context, GateStore(context), giaTri)
 
         println("SUACHAM_NGU: $tra")
-        assertTrue(tra, tra.startsWith("Đã sửa câu 2.33a thành đúng. Đang giờ ngủ nên giữ 4 phút"))
+        assertTrue(tra, tra.startsWith("Đã sửa câu 2.33a thành đúng. Đang giờ ngủ nên giữ 2 phút"))
         // So ghi ngay: cau het cho sua, gui lai dung lenh do khong giu them.
         assertTrue(SoCaiBai.dangChoSua(context).isEmpty())
-        assertEquals(4, SoCaiBai.phutDaCongHomNay(context))
-        assertEquals(listOf(4), CongSang.cacMuc(context).map { it.phut })
-        assertTrue(SoCaiBai.loiNhan(context).orEmpty().contains("thì được thêm 4 phút"))
+        assertEquals(2, SoCaiBai.phutDaCongHomNay(context))
+        assertEquals(listOf(2), CongSang.cacMuc(context).map { it.phut })
+        assertTrue(SoCaiBai.loiNhan(context).orEmpty().contains("thì được thêm 2 phút"))
         assertTrue(ThiHanhLenh.suaCham(context, GateStore(context), giaTri).startsWith("Không còn câu nào"))
         assertEquals(1, CongSang.cacMuc(context).size)
     }

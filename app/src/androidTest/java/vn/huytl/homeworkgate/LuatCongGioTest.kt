@@ -178,12 +178,15 @@ class LuatCongGioTest {
 
     // --- tinh theo so dong lam bai ---
 
-    // Tu 27/9/2026 moi bai tinh le gap doi: mot dong mot phut, mot cau 4 toi 20 phut.
+    // Tu 27/9/2026 moi bai tinh le gap doi: mot dong mot phut, mot cau toi da 20 phut.
+    // Toi thieu 4 phut cua dot do, tu 28/9/2026 ha lai con 2.
 
     @Test
-    fun cau_ngan_toi_thieu_bon_phut() {
-        // Bon cau trong anh that cua Le Hoa: moi cau 3-5 dong.
-        assertEquals(4, LuatCongGio.phutChoCau(cauNho("a", soDong = 3)))
+    fun cau_ngan_toi_thieu_hai_phut() {
+        assertEquals(2, LuatCongGio.phutChoCau(cauNho("a", soDong = 1)))
+        assertEquals(2, LuatCongGio.phutChoCau(cauNho("a", soDong = 2)))
+        // Bon cau trong anh that cua Le Hoa: moi cau 3-5 dong, tinh dung theo so dong.
+        assertEquals(3, LuatCongGio.phutChoCau(cauNho("a", soDong = 3)))
         assertEquals(4, LuatCongGio.phutChoCau(cauNho("a", soDong = 4)))
         assertEquals(5, LuatCongGio.phutChoCau(cauNho("a", soDong = 5)))
     }
@@ -203,7 +206,7 @@ class LuatCongGioTest {
 
     @Test
     fun khong_dem_duoc_dong_thi_quay_ve_luat_phang() {
-        assertEquals(4, LuatCongGio.phutChoCau(cauNho("a", soDong = 0)))
+        assertEquals(2, LuatCongGio.phutChoCau(cauNho("a", soDong = 0)))
         assertEquals(
             10,
             LuatCongGio.phutChoCau(CauCham("bài 1", "de", dung = true, dang = DangBai.BAI_RIENG))
@@ -464,7 +467,8 @@ class LuatCongGioTest {
             lamHetDanDo = true
         )
         val b = LuatCongGio.tinh(ket, bayGio = toiThuHai)
-        assertEquals(8, b.phut)
+        // Hai cau mot dong, moi cau an muc toi thieu.
+        assertEquals(4, b.phut)
         assertFalse(b.daTinhGoi)
         assertTrue(b.dong.any { it.contains("không giao bài tập nào") })
     }

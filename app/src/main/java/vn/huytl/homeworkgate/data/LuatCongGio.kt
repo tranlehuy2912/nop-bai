@@ -43,12 +43,19 @@ object LuatCongGio {
      * Ba Huy tang gap doi cho moi bai tinh le: mot dong mot phut, toi thieu va toi da
      * mot cau cung gap doi, trac nghiem hai phut mot cau. Tron goi 45 phut va cac tran
      * ngay giu nguyen, nen mot ngay van khong duoc nhieu hon truoc, chi la bai lam them
-     * cham toi tran nhanh hon.
+     * cham toi tran nhanh hon. Rieng muc toi thieu, hom sau Ba Huy ha lai, xem
+     * [TOI_THIEU_BAI_TAP].
      */
     const val DONG_MOI_PHUT = 1
 
-    /** Cau ngan may cung duoc chung nay. */
-    const val TOI_THIEU_BAI_TAP = 4
+    /**
+     * Cau ngan may cung duoc chung nay.
+     *
+     * Hai phut tu 28/9/2026 (Ba Huy chon). Dot gap doi hom truoc da nang len bon, tuc la
+     * cau mot dong cung duoc bon phut nhu cau bon dong. Gio cau mot, hai dong duoc hai
+     * phut, tu ba dong tro len tinh dung theo so dong.
+     */
+    const val TOI_THIEU_BAI_TAP = 2
 
     /** Mot cau toi da bay nhieu: chan viec viet dai dong de kiem gio. */
     const val TRAN_MOT_BAI_TAP = 20
@@ -124,8 +131,8 @@ object LuatCongGio {
      *
      * [CauCham.soDong] bang 0 nghia la ben goi khong dem duoc dong nao (AI khong
      * tra ve, hay bai khong co dong nao de dem). Luc do quay ve luat phang: cau nho
-     * [TOI_THIEU_BAI_TAP] phut, bai rieng 10 phut (gap doi luat cu tu 27/9/2026) - de
-     * mot cho hong khong lam con mat gio.
+     * [TOI_THIEU_BAI_TAP] phut, bai rieng 10 phut (bai rieng gap doi luat cu tu 27/9/2026)
+     * - de mot cho hong khong lam con mat gio.
      */
     fun phutChoCau(cau: CauCham): Int = when {
         // Khong co de thi khong ai cham duoc, nen khong tra gio. Xem [CauCham.coDe].
