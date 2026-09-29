@@ -368,6 +368,7 @@ object DongBo {
             Duong.F_TONG_PHIEN_MS to gate.tongPhienMs(),
             Duong.F_PHUT_DA_DUYET to gate.phutDaDuyetHomNay(),
             Duong.F_PHUT_CON_LAI to gate.phutConLaiHomNay(),
+            Duong.F_QUY_GIO to Prefs.get(context).quyGio,
             Duong.F_SO_BAI_CHO to gate.soBaiDangCho(),
             // Viec nha ba noi giao, cac viec CHUA xong. Khong co truong nay thi ben
             // dien thoai chi thay "dang tam dung" ma khong hieu vi sao, trong khi
@@ -853,7 +854,14 @@ object DongBo {
                     "dung" to d.dung,
                     "phut" to d.phut,
                     "nhanXet" to d.nhanXet,
-                    "luc" to d.luc
+                    "luc" to d.luc,
+                    // Luot tren may (29/9/2026): thieu nam truong nay thi cai lai may xong,
+                    // luat sao khong con biet cau nao da du sao, cau nao dang cho lam lai.
+                    "trenMay" to d.trenMay,
+                    "sao" to d.sao,
+                    "saoToiDa" to d.saoToiDa,
+                    "vong" to d.vong,
+                    "lanSai" to d.lanSai
                 )
             )
         }
@@ -884,7 +892,12 @@ object DongBo {
                         dung = d.getBoolean("dung") ?: false,
                         phut = (d.getLong("phut") ?: 0L).toInt(),
                         nhanXet = d.getString("nhanXet").orEmpty(),
-                        luc = d.getLong("luc") ?: 0L
+                        luc = d.getLong("luc") ?: 0L,
+                        trenMay = d.getBoolean("trenMay") ?: false,
+                        sao = (d.getLong("sao") ?: -1L).toInt(),
+                        saoToiDa = (d.getLong("saoToiDa") ?: 0L).toInt(),
+                        vong = (d.getLong("vong") ?: 0L).toInt(),
+                        lanSai = (d.getLong("lanSai") ?: 0L).toInt()
                     )
                 }
                 KhoBai.get(context).napSoCai(cac)

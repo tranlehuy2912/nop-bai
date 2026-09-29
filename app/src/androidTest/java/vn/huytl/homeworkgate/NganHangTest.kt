@@ -216,8 +216,9 @@ class NganHangTest {
         // Doi chung voi test tren: cung 20 cau trac nghiem, lan nay co de.
         val cac = (1..20).map { i -> cau("câu $i", de = "Câu $i hỏi gì đó", dang = "TRAC_NGHIEM") }
         val ket = chamClaude(*cac.toTypedArray())
-        // Hai muoi cau cham tran moi lan nop.
-        assertEquals(LuatCongGio.TRAN_TRAC_NGHIEM, LuatCongGio.tinh(ket).phut)
+        // Mot phut mot cau dung, khong con tran trac nghiem moi lan nop (29/9/2026): hai
+        // muoi cau van duoi tran 45 cua duong chup anh.
+        assertEquals(20 * LuatCongGio.PHUT_MOI_CAU_TRAC_NGHIEM, LuatCongGio.tinh(ket).phut)
     }
 
     // ------------------------------------------------------------ nop lai cau sai
@@ -337,16 +338,6 @@ class NganHangTest {
     }
 
     @Test
-    fun on_tap_tra_du_gia_nhu_bai_moi() {
-        // Truoc 27/9/2026 on lai chi duoc nua so phut. Ba Huy bo nua gia: bai moi va
-        // lan on cung mot gia, cai giu on lai o phan phu la tran on moi ngay.
-        val cau = CauCham(ma = "2.26d", de = "", cauId = "thu:2.26d", dung = true, soDong = 4)
-        val ket = KetQuaCham(cac = listOf(cau))
-        assertEquals(4, LuatCongGio.tinh(ket).phut)
-        assertEquals(4, LuatCongGio.tinh(ket, onTap = true).phut)
-    }
-
-    @Test
     fun on_tap_tinh_gio_moi_lan_den_hen_chu_khong_phai_moi_lan_on() {
         lamSaiRoiSuaDung("2.26d", luiNgay = 4)
         val cau = CauCham(ma = "2.26d", de = "", cauId = "thu:2.26d", dung = true, soDong = 4)
@@ -387,7 +378,9 @@ class NganHangTest {
         )
         assertTrue(daGhi.isEmpty())
         assertFalse(SoCaiBai.daOnTap(context, SoCaiBai.khoaCua(cauNgoaiSach), now))
-        assertEquals(0, SoCaiBai.phutOnHomNay(context, now))
+        // Tu 29/9/2026 phutOnHomNay chi dem luot on tren may, nen o day hoi tong phut hom
+        // nay: hai dong cua lamSaiRoiSuaDung ghi tu bon ngay truoc.
+        assertEquals(0, SoCaiBai.phutDaCongHomNay(context, now))
     }
 
     @Test
@@ -409,7 +402,9 @@ class NganHangTest {
             )
             assertTrue(cau.ma, daGhi.isEmpty())
         }
-        assertEquals(0, SoCaiBai.phutOnHomNay(context, now))
+        // Xem cau_ngoai_sach_lot_vao_bai_on_thi_khong_duoc_tinh_gio_on: phutOnHomNay chi
+        // con dem luot on tren may.
+        assertEquals(0, SoCaiBai.phutDaCongHomNay(context, now))
     }
 
     @Test

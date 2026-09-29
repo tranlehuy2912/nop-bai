@@ -82,7 +82,7 @@ class ChamTheoClaudeTest {
             pham
         )!!
         val bang = LuatCongGio.tinh(ket)
-        // Bon dong lam bai cua mot cau nho: mot dong mot phut, it nhat bon phut.
+        // Bon dong lam bai cua mot cau nho: mot dong mot phut (khong con san tu 29/9/2026).
         assertEquals(4, bang.phut)
     }
 
@@ -180,10 +180,11 @@ class ChamTheoClaudeTest {
         assertFalse(ket.cac.single { it.ma == "2.33a" }.trongDanDo)
         assertTrue(ChamTheoClaude.coAnhDanDo(giaTri))
 
-        // Toi hom do: goi 45 phut cho bai co giao, cau lam them 2.33a tinh le.
-        val lamThem = LuatCongGio.phutChoCau(ket.cac.single { it.ma == "2.33a" })
+        // Toi hom do: goi 45 phut, va tu 29/9/2026 goi bao ca cau Claude ghi la ngoai vo
+        // (2.33a): moi bai chup anh la bai dan do, khong con tinh le them ngoai goi.
         val bang = LuatCongGio.tinh(ket, bayGio = LocalDateTime.of(2026, 9, 23, 20, 0))
-        assertEquals(LuatCongGio.PHUT_TRON_GOI_DAN_DO + lamThem, bang.phut)
+        assertEquals(LuatCongGio.PHUT_TRON_GOI_DAN_DO, bang.phut)
+        assertEquals(listOf("2.28", "2.33a"), bang.trongGoi.map { it.ma })
         // Qua trua hom sau thi vo hom qua het han. Vi vay duong Claude tinh theo luc con
         // nop chu khong theo luc Ba Huy dan ket qua.
         val tre = LuatCongGio.tinh(ket, bayGio = LocalDateTime.of(2026, 9, 24, 13, 0))
@@ -238,6 +239,68 @@ class ChamTheoClaudeTest {
         assertEquals("b3.c7", ChamTheoClaude.chuanMa("Câu B3.C7."))
     }
 
+    /**
+     * Ma nguyen van cua Claude giu o [vn.huytl.homeworkgate.data.CauCham.maGoc] (29/9/2026),
+     * ke ca khi khop sach doi [vn.huytl.homeworkgate.data.CauCham.ma] sang ma cua sach. Bang
+     * dieu khien dung ma nay de tim lai cau trong ban Claude no giu, luc Ba Huy tu xu cau
+     * chua chac (lenh XUCAU).
+     */
+    @Test
+    fun ma_goc_giu_ma_claude_khi_ma_sach_khac() {
+        val ket = ChamTheoClaude.banCham(
+            context,
+            listOf(
+                mapOf("ma" to "Câu 2.33A", "dung" to true, "soDong" to 4),
+                mapOf("ma" to " 2.28) ", "dung" to true, "soDong" to 1),
+                mapOf("ma" to "câu 5", "dung" to true, "de" to "Tính 1 + 1.", "soDong" to 1)
+            ),
+            pham
+        )!!
+        val nho = ket.cac.single { it.cauId == "toan8t1:2.33a" }
+        assertEquals("2.33a", nho.ma)
+        assertEquals("Câu 2.33A", nho.maGoc)
+        // Khoang trang hai dau da cat, con lai nguyen van.
+        assertEquals("2.28)", ket.cac.single { it.cauId == "toan8t1:2.28" }.maGoc)
+        // Cau ngoai sach: ma va ma goc la mot.
+        val ngoai = ket.cac.single { it.cauId == null }
+        assertEquals("câu 5", ngoai.ma)
+        assertEquals("câu 5", ngoai.maGoc)
+    }
+
+    /**
+     * Ba Huy xem anh roi bam "Chụp lại" cho mot cau (lenh XUCAU, 29/9/2026): coi nhu may khong
+     * nhin thay de, ke ca cau trong sach von luon co de. Khong co de thi khong cham, khong
+     * cong phut, va luat cong gio coi la chua dung.
+     */
+    @Test
+    fun chup_lai_thi_cau_do_coi_nhu_khong_co_de() {
+        val ket = ChamTheoClaude.banCham(
+            context,
+            listOf(
+                mapOf("ma" to "2.33a", "dung" to true, "soDong" to 4, "chupLai" to true),
+                mapOf("ma" to "2.28", "dung" to true, "soDong" to 1, "chupLai" to false),
+                mapOf("ma" to "7", "dung" to true, "de" to "Tính 3 - 5.", "soDong" to 2, "chupLai" to true),
+                // Viet sai kieu thi khong phai lenh chup lai: van cham binh thuong.
+                mapOf("ma" to "8", "dung" to true, "de" to "Tính 4 - 9.", "soDong" to 2, "chupLai" to "true")
+            ),
+            pham
+        )!!
+        val chup = ket.cac.single { it.ma == "2.33a" }
+        assertFalse(chup.coDe)
+        // De sach van giu, chi la khong cham.
+        assertTrue(chup.de.isNotBlank())
+        assertFalse(ket.cac.single { it.ma == "7" }.coDe)
+        assertTrue(ket.cac.single { it.ma == "2.28" }.coDe)
+        assertTrue(ket.cac.single { it.ma == "8" }.coDe)
+
+        val bang = LuatCongGio.tinh(ket, bayGio = LocalDateTime.of(2026, 9, 23, 20, 0))
+        // Chi 2.28 (trac nghiem, 1 phut) va 8 (2 dong) duoc tinh.
+        assertEquals(3, bang.phut)
+        assertEquals(setOf("2.28", "8"), bang.phutCua.keys)
+        // Cau chup lai khong phai cau thieu so dong: khong hoi Ba Huy lan nua.
+        assertTrue(bang.thieuDong.isEmpty())
+    }
+
     // ------------------------------------------------------- vo dan do con soat
 
     private val voSoat = VoDanDo.DanDo(
@@ -269,10 +332,10 @@ class ChamTheoClaudeTest {
         assertTrue(ket.cac.single { it.ma == "2.28" }.trongDanDo)
         assertFalse(ket.cac.single { it.ma == "2.33a" }.trongDanDo)
 
-        // Toi hom do: goi 45 phut cho bai co giao, cau lam them 2.33a tinh le.
-        val lamThem = LuatCongGio.phutChoCau(ket.cac.single { it.ma == "2.33a" })
+        // Toi hom do: goi 45 phut bao ca cau 2.33a (29/9/2026: khong con bai lam them chup
+        // anh tinh le ngoai goi).
         val bang = LuatCongGio.tinh(ket, bayGio = LocalDateTime.of(2026, 9, 23, 20, 0))
-        assertEquals(LuatCongGio.PHUT_TRON_GOI_DAN_DO + lamThem, bang.phut)
+        assertEquals(LuatCongGio.PHUT_TRON_GOI_DAN_DO, bang.phut)
     }
 
     @Test
@@ -303,12 +366,18 @@ class ChamTheoClaudeTest {
         )!!
         assertFalse(ket.cac.single().trongDanDo)
         assertTrue(ket.baiDuocGiao.isEmpty())
-        // Ba Huy da bam Duyet 45 phut duoi tin vo dan do: bai lam hom do van tinh le,
-        // khong bi nuot vao goi.
+        // Khong co bai giao thi may khong tu tinh goi, cau tinh le.
+        val tuTinh = LuatCongGio.tinh(ket, bayGio = LocalDateTime.of(2026, 9, 23, 20, 0))
+        assertFalse(tuTinh.daTinhGoi)
+        assertEquals(LuatCongGio.phutChoCau(ket.cac.single()), tuTinh.phut)
+        // Ba Huy da bam Duyet 45 phut duoi tin vo dan do: tu 29/9/2026 moi bai chup anh
+        // la bai dan do, nen bai nop sau goi nam trong goi, khong cong them phut (truoc do
+        // van tinh le).
         val bang = LuatCongGio.tinh(
             ket, bayGio = LocalDateTime.of(2026, 9, 23, 20, 0), goiDaCoHomNay = true
         )
-        assertEquals(LuatCongGio.phutChoCau(ket.cac.single()), bang.phut)
+        assertEquals(0, bang.phut)
+        assertEquals(listOf("2.33a"), bang.trongGoi.map { it.ma })
     }
 
     @Test

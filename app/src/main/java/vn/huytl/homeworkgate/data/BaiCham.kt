@@ -122,7 +122,15 @@ data class CauCham(
      * lam hai cau ma van duoc tinh ca loat thi cai man khai bai tro thanh cho de
      * gian lan nhat trong app, chu khong phai cho chac nhat.
      */
-    val coLam: Boolean = true
+    val coLam: Boolean = true,
+    /**
+     * Ma cau nguyen van trong ban cham cua Claude, truoc khi khop voi sach ([ma] khi do la
+     * ma cua sach). Rong khi ban cham khong di qua Claude.
+     *
+     * Bang dieu khien dung ma nay de tim lai dung cau trong ban Claude no giu, khi Ba Huy tu
+     * xu cau chua chac (lenh XUCAU, 29/9/2026): hai ma co the khac nhau ("Câu 3" va "3").
+     */
+    val maGoc: String = ""
 )
 
 /**

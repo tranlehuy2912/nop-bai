@@ -106,15 +106,13 @@ object CongSang {
         if (cac.isEmpty()) return null
         val gate = GateStore(context)
         if (gate.trongGioNgu(now)) return null
-        val prefs = Prefs.get(context)
         val xin = cac.sumOf { it.phut }
-        val them = minOf(xin, gate.phutConLaiHomNay(now))
+        // Khong con tran ngay (29/9/2026): phut giu da qua tran rieng cua bai dan do luc
+        // cham, sang ra cong du.
+        val them = xin
         if (them <= 0) {
             luu(context, emptyList())
-            cac.filter { it.baiId.isNotEmpty() }
-                .forEach { DongBo.datTrangThaiBai(context, it.baiId, "DUYET", 0) }
-            DayLog.add(context, "Bỏ $xin phút giữ từ giờ ngủ: hôm nay đã đủ ${prefs.tranPhutMoiNgay} phút")
-            return "Không cộng được $xin phút giữ từ giờ ngủ: hôm nay đã đủ ${prefs.tranPhutMoiNgay} phút."
+            return null
         }
         val duoc = if (gate.state == GateState.ACTIVE) {
             gate.extend(them, now = now, useQuota = true)

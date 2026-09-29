@@ -294,8 +294,10 @@ class ParentActivity : AppCompatActivity() {
             }
             else -> {
                 binding.txtState.text = "Máy đang khoá với $child"
-                binding.txtDetail.text =
-                    "Hôm nay còn duyệt được ${gate.phutConLaiHomNay()} phút cho bài tập"
+                // Khong con tran chung moi ngay (29/9/2026): noi da duyet bao nhieu va quy.
+                val quy = vn.huytl.homeworkgate.data.QuyGio.so(this)
+                binding.txtDetail.text = "Hôm nay đã duyệt ${gate.phutDaDuyetHomNay()} phút" +
+                    if (quy > 0) " · Quỹ giờ chơi $quy phút" else ""
             }
         }
 

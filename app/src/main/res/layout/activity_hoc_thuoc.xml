@@ -158,9 +158,15 @@
                     android:layout_marginTop="16dp"
                     android:visibility="gone">
 
+                    <!-- clipToPadding false: le am cua hang goi y ben duoi chi du cho mot dong
+                         chu co mac dinh. Chu to hon (cai dat co chu cua may) hay goi y dai hai
+                         dong thi dong chu lan vao padding duoi, va phan lan do van phai ve ra.
+                         Thu tren may ao pad5 ngay 29/9/2026: co chu 1,6 lan thi mot dong goi y da
+                         lan 9 px qua mep padding. -->
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:clipToPadding="false"
                         android:orientation="vertical"
                         android:padding="20dp">
 
@@ -174,7 +180,16 @@
                         <!-- Dong goi y, dap an khi dung. Nut chep chi hien khi goi y da ho ra
                              mot phan dap an, xem HocThuocActivity.hienGoiY. Le am dat vao
                              hang chu khong vao nut, nhu st_the_cau_de: hang cao du 48dp thi
-                             cham vao dau nut cung toi nut. -->
+                             cham vao dau nut cung toi nut.
+
+                             minHeight giu hang cao 48dp KE CA KHI NUT AN, vi ba le am tinh cho
+                             hang 48dp: dong chu nam giua hang thi cach chu "Sai" va mep duoi
+                             khung gan bang man Do tu vung, noi dong nay chi co le tren 6dp. Khac
+                             st_the_cau_de, o day nut an phan lon thoi gian: goi y bac 1, dap an
+                             khi dung, khi chiu. Truoc 29/9/2026 thieu dong nay, nut an thi hang
+                             chi cao mot dong chu, le duoi keo mep duoi khung len giua dong chu,
+                             va khung cat mat nua duoi chu "Gợi ý: 11 chữ cái" (anh Ba Huy chup
+                             tren tablet that; tren may ao pad5 mat 21 trong 38 px). -->
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -182,6 +197,7 @@
                             android:layout_marginEnd="-14dp"
                             android:layout_marginBottom="-12dp"
                             android:gravity="center_vertical"
+                            android:minHeight="48dp"
                             android:orientation="horizontal">
 
                             <TextView

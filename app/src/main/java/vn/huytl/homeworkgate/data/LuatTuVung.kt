@@ -20,9 +20,10 @@ import kotlin.random.Random
  * lai bang tu vung, ke ca khi loi khong ra roi moi nhin dap an - nen mot buoi do
  * nam phut hon han muoi phut ngoi doc.
  *
- * BA BUOI, xem [BuoiDo]. Buoi hang ngay boc ngau nhien trong cac Unit con chon la
- * lop da hoc, xem [daHoc]. Hai buoi kia neo vao Unit co giao trong vo dan do, mot buoi
- * toi va mot buoi sang hom sau.
+ * MOT BUOI MOI NGAY, xem [BuoiDo]: boc ngau nhien trong cac Unit con chon la lop da hoc,
+ * xem [daHoc]. Truoc 29/9/2026 chu thich nay ta them hai buoi neo vao Unit co giao trong vo
+ * dan do (buoi toi va sang hom sau), nhung man Do tu vung chua bao gio lam hai buoi do; Ba
+ * Huy chon bo phan thua thay vi lam tiep.
  *
  * KHONG BUOI NAO BAT BUOC. Con muon lam thi lam, bo tu nao thi mat phut cua tu do,
  * khong mat gi khac. Bat buoc thi phai co hinh phat, ma hinh phat o day la cat gio
@@ -372,12 +373,4 @@ object LuatTuVung {
     /** Cac tieng co nghia trong mot chuoi, da bo dau cau va tieng mot chu. */
     private fun tiengCua(nghia: String): Set<String> =
         nghia.lowercase().split(Regex("[^\\p{L}]+")).filter { it.length >= 2 }.toSet()
-
-    /**
-     * Buoi do nay co tra giay khong.
-     *
-     * [BuoiDo.DAN_DO_TOI] thi khong: no nam trong tron goi 45 phut cua bai co giao,
-     * tra them nua la tra hai lan cho mot viec. Hai buoi kia tra theo tung tu.
-     */
-    fun coTraGiay(buoi: BuoiDo): Boolean = buoi != BuoiDo.DAN_DO_TOI
 }

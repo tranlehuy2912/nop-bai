@@ -549,18 +549,21 @@ class HocThuocActivity : AppCompatActivity() {
         val dung = (xongHet - daTraXong).coerceAtLeast(0)
         daTraXong = xongHet
         val giayLuot = HocThuoc.giayCho(dung)
-        val phut = HocThuoc.phutThem(kho.giayTheTu(moc), giayLuot)
+        val giayTruoc = kho.giayTheTu(moc)
+        val phut = HocThuoc.phutThem(giayTruoc, giayLuot)
         phutVuaTra += phut
+        // Phan tran rieng cua Kiem tra bai cat di thi vao quy gio choi (Ba Huy chot ngay
+        // 29/9/2026), khong mat nhu truoc. Xem [vn.huytl.homeworkgate.data.QuyGio].
+        val vuot = ((giayTruoc + giayLuot) / 60 - giayTruoc / 60 - phut).coerceAtLeast(0)
+        if (vuot > 0) vn.huytl.homeworkgate.data.QuyGio.them(this, vuot, "Kiểm tra bài")
 
         /*
          * Cot phut ghi so phut LAM RA, khong phai so phut cong duoc that.
          *
-         * Hai con so nay lech nhau dung mot truong hop: tran ngay chung (135 phut)
-         * da het, luc do [GateStore.approve] cat bot hoac tu choi han. Van ghi so
-         * lam ra, vi cot nay chi de giu tran RIENG cua duong hoc thuoc - cai tran
-         * hoi "hom nay da hoc thuoc bao nhieu", khong phai "da choi bao nhieu". Ghi
-         * so cong duoc thi ngay nao tran chung het som, tran rieng tu noi ra va con
-         * ngoi go them ca tram the ma khong duoc gi.
+         * Hai con so nay tung lech nhau khi tran ngay chung (135 phut) da het. Tran do bo
+         * tu 29/9/2026, nhung van ghi so lam ra, vi cot nay chi de giu tran RIENG cua
+         * duong hoc thuoc - cai tran hoi "hom nay da hoc thuoc bao nhieu", khong phai
+         * "da choi bao nhieu".
          *
          * Gan het vao THE DAU TIEN dung cua luot: ben tren cong cot nay lai nen tong
          * phai dung, con no nam o dong nao thi khong ai hoi. Chia le ra tung dong
@@ -582,8 +585,8 @@ class HocThuocActivity : AppCompatActivity() {
 
     private fun capGio(phut: Int, soThe: Int) {
         val ten = boDangLam?.ten.orEmpty()
-        // Tinh vao tran ngay, khac gio viec nha: day la gio doi bang viec hoc, cung
-        // mot ho voi bai tap, nen no phai nam trong cung mot cai tran.
+        // Ghi vao so dem gio doi bang hoc cua ngay, khac gio viec nha. Tran rieng 20 phut
+        // da chan o [HocThuoc.phutThem], khong con tran chung (29/9/2026).
         gate.congGioHoc(phut, nhanCho = "Kiểm tra bài")
         DayLog.add(this, "Kiểm tra bài $ten: $soThe câu đúng, +$phut phút")
         runCatching {

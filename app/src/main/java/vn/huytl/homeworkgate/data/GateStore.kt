@@ -214,15 +214,14 @@ class GateStore(context: Context) {
         if (quotaDayKey == dayKeyOf(now)) phutDaDuyet else 0
 
     /**
-     * Con duoc duyet them bao nhieu phut hom nay.
+     * Con kiem them duoc bao nhieu phut hom nay, CHI DE HIEN RA man hinh.
      *
-     * Truoc day cho nay dem SO LUOT duyet chu khong dem phut. Dem luot hop khi moi
-     * lan duyet la mot cuc gio bang nhau, nhung tu luc AI cham tung cau thi mot lan
-     * nop chi con hai phut - dem luot thanh ra chan dung cai khong can chan (con nop
-     * nhieu lan) va tha cai can chan (tong gio trong ngay).
+     * Tu 29/9/2026 khong con tran chung chan gio: moi phan tu chan bang tran rieng (xem
+     * [LuatCongGio]), va tran ngay bang tong cac tran do. Con so nay khong con chan ai
+     * duyet hay cap gi ca - [approve] va [extend] khong doc no nua.
      */
     fun phutConLaiHomNay(now: Long = System.currentTimeMillis()): Int =
-        (prefs.tranPhutMoiNgay - phutDaDuyetHomNay(now)).coerceAtLeast(0)
+        (LuatCongGio.TRAN_NGAY - phutDaDuyetHomNay(now)).coerceAtLeast(0)
 
     /**
      * So milli giay con lai cua phien. Tra 0 neu khong con gio.
@@ -361,7 +360,8 @@ class GateStore(context: Context) {
 
     /**
      * Cong gio doi bang viec hoc tren tablet (kiem tra bai, do tu vung, Giai de): dang
-     * choi thi cong vao phien, khong thi cap phieu. Ca hai deu an vao tran ngay.
+     * choi thi cong vao phien, khong thi cap phieu. Tran rieng cua tung phan do ben goi
+     * tu chan truoc (xem [LuatCongGio]); o day chi ghi vao so dem cua ngay.
      *
      * @return so phut con lai (dang choi) hay so phut cua phieu, null la khong cap duoc.
      */
@@ -425,10 +425,6 @@ class GateStore(context: Context) {
 
         val hardStop = hardStopWallFor(now)
         if (now >= hardStop) return null
-        // Gio thuong (useQuota=false) khong tru vao han muc trong ngay: no la ba
-        // chu dong cho chu khong phai con doi bang bai tap.
-        val conTran = phutConLaiHomNay(now)
-        if (useQuota && conTran <= 0) return null
 
         // Cong don, khong de len. Con lam xong bai duoc duyet 60 phut nhung chua
         // choi, lam them bai nua nop tiep - duyet lan hai la thanh 120 phut chu
@@ -442,10 +438,11 @@ class GateStore(context: Context) {
             GateState.PAUSED -> ((pausedRemainingMs + 59_999L) / 60_000L).toInt()
             else -> 0
         }
-        // Cham tran trong ngay thi cat bot cho vua, chu khong tu choi ca lan duyet:
-        // con lam bai that, cat con 10 phut van hon la khong duoc gi.
+        // Khong con tran chung (29/9/2026): phan nao da tu chan bang tran rieng truoc khi
+        // goi vao day. useQuota chi con ghi so phut doi bang hoc vao so dem cua ngay, de
+        // man hinh noi "hom nay kiem duoc bao nhieu".
         val xin = (wantedMinutes ?: prefs.grantMinutes).coerceIn(1, 600)
-        val them = if (useQuota) xin.coerceAtMost(conTran) else xin
+        val them = xin
         val minutes = (them + dangGiu).coerceIn(1, 600)
         val today = dayKeyOf(now)
         val daDuyet = phutDaDuyetHomNay(now)
@@ -636,18 +633,14 @@ class GateStore(context: Context) {
     ): Int? {
         if (state != GateState.ACTIVE) return null
 
-        // Cong gio giua phien cung an vao tran ngay, neu do la gio doi bang bai tap.
-        val them = if (useQuota && deltaMinutes > 0) {
-            val conTran = phutConLaiHomNay(now)
-            if (conTran <= 0) return null
-            deltaMinutes.coerceAtMost(conTran).also {
-                sp.edit()
-                    .putInt(K_DAY_KEY, dayKeyOf(now))
-                    .putInt(K_DAY_PHUT, phutDaDuyetHomNay(now) + it)
-                    .apply()
-            }
-        } else {
-            deltaMinutes
+        // Gio doi bang hoc thi ghi vao so dem cua ngay. Khong con tran chung de cat bot
+        // (29/9/2026): moi phan da tu chan bang tran rieng.
+        val them = deltaMinutes
+        if (useQuota && deltaMinutes > 0) {
+            sp.edit()
+                .putInt(K_DAY_KEY, dayKeyOf(now))
+                .putInt(K_DAY_PHUT, phutDaDuyetHomNay(now) + deltaMinutes)
+                .apply()
         }
 
         val newDuration = durationMs + them * 60_000L

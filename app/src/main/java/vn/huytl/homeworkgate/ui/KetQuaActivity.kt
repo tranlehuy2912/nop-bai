@@ -212,7 +212,11 @@ class KetQuaActivity : AppCompatActivity() {
             val k = khoaCua(c) ?: return@filter false
             k in tt.conSua && k !in tt.choCham && k !in tt.daXong
         }
-        if (canNop.isNotEmpty()) the.addView(nutNopLai(b, canNop))
+        // Hom da tinh tron goi bai dan do thi khong nop lai bang anh nua (29/9/2026): sua
+        // xong cung khong ra phut, cau trong ngan hang chuyen sang lam tren may sau 24 gio.
+        if (canNop.isNotEmpty() && !vn.huytl.homeworkgate.data.SoCaiBai.goiDaCoHomNay(this)) {
+            the.addView(nutNopLai(b, canNop))
+        }
         return the
     }
 

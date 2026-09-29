@@ -64,10 +64,26 @@ class Prefs private constructor(private val sp: SharedPreferences) {
      * lan) va tha cai can chan (tong gio trong ngay).
      *
      * Gio Ba Huy hay ba noi chu dong cho khong tinh vao day.
+     *
+     * KHONG CON DUNG TU 29/9/2026. Ba Huy bo tran ngay: moi phan co tran rieng, va tran
+     * ngay bang tong cac tran do - xem [LuatCongGio.TRAN_NGAY]. Giu lai khoa nay de ban
+     * Bang dieu khien cu gui lenh CAIDAT tranPhutMoiNgay khong lam hong gi, nhung khong
+     * cho nao doc no de chan gio nua.
      */
     var tranPhutMoiNgay: Int
         get() = sp.getInt(KEY_TRAN_PHUT, Defaults.TRAN_PHUT_MOI_NGAY)
         set(v) = sp.edit().putInt(KEY_TRAN_PHUT, v.coerceIn(15, 600)).commit().let {}
+
+    /**
+     * "Quỹ giờ chơi": so phut con lam ra tren may ma bi tran rieng cua phan do cat (Ba Huy
+     * chon ngay 29/9/2026). Chi Ba Huy cap duoc tu quy, xem [QuyGio].
+     *
+     * Nam trong file prefs chinh la co y: doi so nay thi [vn.huytl.homeworkgate.dongbo
+     * .DongBo] day ban trang thai moi len Firestore, va Bang dieu khien thay ngay.
+     */
+    var quyGio: Int
+        get() = sp.getInt(KEY_QUY_GIO, 0)
+        set(v) = sp.edit().putInt(KEY_QUY_GIO, v.coerceAtLeast(0)).commit().let {}
 
     /**
      * Danh sach trang: nhung app con duoc dung ca khi het gio, vi du tu dien,
@@ -364,6 +380,7 @@ class Prefs private constructor(private val sp: SharedPreferences) {
         private const val KEY_HARD_STOP = "hard_stop_minute"
         private const val KEY_GIO_DAY = "gio_day_minute"
         private const val KEY_TRAN_PHUT = "tran_phut_moi_ngay"
+        private const val KEY_QUY_GIO = "quy_gio"
         private const val KEY_ALLOWED = "allowed_packages"
         private const val KEY_MOI_LUC = "moi_luc_packages"
         private const val KEY_AI_PKG = "ai_packages"

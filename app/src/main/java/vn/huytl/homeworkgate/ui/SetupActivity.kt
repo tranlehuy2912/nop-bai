@@ -114,7 +114,6 @@ class SetupActivity : AppCompatActivity() {
         veDongKhoaAi()
         binding.edtHardStop.setText(formatMinuteOfDay(prefs.hardStopMinuteOfDay))
         binding.edtGioDay.setText(formatMinuteOfDay(prefs.gioDayMinuteOfDay))
-        binding.edtDailyLimit.setText(prefs.tranPhutMoiNgay.toString())
         binding.swLockSettings.isChecked = prefs.lockSystemSettings
         binding.swManChan.isChecked = prefs.batManChan
     }
@@ -191,7 +190,6 @@ class SetupActivity : AppCompatActivity() {
         prefs.aiKeys = binding.edtAiKeys.text?.toString().orEmpty().split("\n")
         prefs.hardStopMinuteOfDay = hardStop
         prefs.gioDayMinuteOfDay = gioDay
-        prefs.tranPhutMoiNgay = binding.edtDailyLimit.text?.toString()?.toIntOrNull() ?: 135
         prefs.lockSystemSettings = binding.swLockSettings.isChecked
         // Tat man chan thi bo luon viec da mo som truoc do, khong de mot ma buoi cu
         // nam lai lam buoi do thoi chan sau khi bat lai.
