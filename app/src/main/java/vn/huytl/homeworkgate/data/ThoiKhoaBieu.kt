@@ -39,6 +39,10 @@ data class BuoiHoc(
  *
  * Nam thang trong code chu khong co man nhap: doi lich thi sua o day roi cai lai
  * app. Doi lai khong co o nhap nao de nhap sai, va go app cung khong mat gi.
+ *
+ * Bang dieu khien giu mot ban chep y het file nay, chi khac dong package, de ve tab
+ * Lich hoc (tu 29/9/2026). Sua o day thi chep sang ban do, chay tools/kiem-duong.sh,
+ * roi cai lai ca hai app.
  */
 object ThoiKhoaBieu {
 

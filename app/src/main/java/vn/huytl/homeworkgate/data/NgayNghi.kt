@@ -12,6 +12,9 @@ import java.util.GregorianCalendar
  * Lich nghi Tet 2027 tinh den luc viet van chua co quyet dinh chinh thuc, Bo Noi
  * vu moi dang trinh phuong an. So o day lay theo phuong an hoc sinh nghi 10 ngay
  * dang duoc de xuat, co quyet dinh that thi sua lai.
+ *
+ * Bang dieu khien giu mot ban chep y het file nay, chi khac dong package, de ve tab
+ * Lich hoc (tu 29/9/2026). Sua o day thi chep sang ban do va chay tools/kiem-duong.sh.
  */
 object NgayNghi {
 

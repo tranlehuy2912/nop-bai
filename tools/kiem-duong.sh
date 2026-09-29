@@ -1,8 +1,11 @@
 #!/bin/sh
-# So ba ban Duong.kt xem con giong nhau khong.
+# So cac file ba app chep cua nhau xem con giong nhau khong.
 #
 # Ba app noi chuyen voi nhau bang ten truong trong Firestore. Lech mot chuoi thi
 # lenh gui di khong ai nhan va khong co gi bao loi - chay cai nay sau moi lan sua.
+#
+# Tu 29/9/2026 Bang dieu khien chep them ThoiKhoaBieu.kt va NgayNghi.kt de ve tab
+# Lich hoc. Lech thi dien thoai hien mot lich khac lich tablet dang dung de khoa may.
 #
 # Chay: sh tools/kiem-duong.sh
 
@@ -13,8 +16,12 @@ goc=$(dirname "$tablet")
 a="$tablet/app/src/main/java/vn/huytl/homeworkgate/dongbo/Duong.kt"
 b="$goc/bang-dieu-khien/app/src/main/java/vn/huytl/bangdieukhien/data/Duong.kt"
 c="$goc/cho-gio-choi/app/src/main/java/vn/huytl/chogiochoi/data/Duong.kt"
+lichTablet="$tablet/app/src/main/java/vn/huytl/homeworkgate/data"
+lichBang="$goc/bang-dieu-khien/app/src/main/java/vn/huytl/bangdieukhien/data"
 
-for f in "$a" "$b" "$c"; do
+for f in "$a" "$b" "$c" \
+    "$lichTablet/ThoiKhoaBieu.kt" "$lichBang/ThoiKhoaBieu.kt" \
+    "$lichTablet/NgayNghi.kt" "$lichBang/NgayNghi.kt"; do
     [ -f "$f" ] || { echo "THIEU: $f"; exit 1; }
 done
 
@@ -37,6 +44,18 @@ diff -u "$tam/tablet" "$tam/ba" > "$tam/d2" || {
     tail -n +3 "$tam/d2"
     lech=1
 }
-
 [ "$lech" = 0 ] && echo "Ba ban Duong.kt giong nhau."
-exit $lech
+
+lechLich=0
+for ten in ThoiKhoaBieu NgayNghi; do
+    sed '/^package /d' "$lichTablet/$ten.kt" > "$tam/lt"
+    sed '/^package /d' "$lichBang/$ten.kt" > "$tam/lb"
+    diff -u "$tam/lt" "$tam/lb" > "$tam/d3" || {
+        echo "LECH: $ten.kt tablet (-) va Bang dieu khien (+)"
+        tail -n +3 "$tam/d3"
+        lechLich=1
+    }
+done
+[ "$lechLich" = 0 ] && echo "Hai ban ThoiKhoaBieu.kt, NgayNghi.kt giong nhau."
+
+[ "$lech" = 0 ] && [ "$lechLich" = 0 ]
