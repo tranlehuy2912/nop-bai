@@ -430,6 +430,7 @@ BO_TEST = [
     ("SoMuTest", "Đổi số mũ khi hiện đề"),
     ("LuyenTheoLoiTest", "Chỗ hay vấp và câu luyện lại"),
     ("LuatCatMangTest", "Luật cắt mạng và việc bật tắt VPN"),
+    ("LuatGhepTest", "Luật sao của bài làm trên máy"),
     # -- so sach trong may --
     ("SoCaiBaiTest", "Sổ cái bài đã nộp"),
     ("BaiGuiHongTest", "Lần nộp gửi hỏng, giữ ảnh để gửi lại"),
@@ -442,12 +443,14 @@ BO_TEST = [
     ("LuotBaNoiTest", "Một lượt mỗi ngày của bà nội"),
     ("ChatCuTest", "Dọn khung chat cũ khỏi máy"),
     ("CatMangVpnTest", "App nào đang phải cắt mạng"),
+    ("QuyGioTest", "Quỹ giờ chơi: vào quỹ, Ba Huy cấp"),
     # -- ngan hang cau hoi --
     ("NganHangTest", "Ngân hàng câu hỏi nạp từ sách"),
     ("NganHangSbtTest", "Ba quyển sách bài tập"),
     ("NganHangVanTest", "Hai quyển Ngữ văn 8"),
     ("GiaiDeTest", "Giải đề và làm thêm theo bài đã học"),
     ("GhepTest", "Câu làm trên máy: gõ ra được, chấm đúng"),
+    ("LamTrenMayTest", "Bài làm trên máy: chọn câu, làm lại, ôn, cộng phút"),
     ("HocThuocTest", "Đường kiểm tra bài"),
     ("TuVungTest", "Đường từ vựng"),
     # -- cham bai --

@@ -4,6 +4,7 @@ import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
 import org.json.JSONArray
 import org.json.JSONObject
+import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -64,6 +65,45 @@ class GhepTest {
             return listOf(t) + tiep
         }
         return null
+    }
+
+    private fun bieuThuc(json: String) = Ghep.doc(json) as Ghep.BieuThuc
+
+    /**
+     * BIEU_THUC khong ke thu tu hang tu, dung luat ghi trong DINH_DANG.md: Toan nhan moi thu
+     * tu hang tu va thu tu thua so trong don thuc; mon khac khong xep thua so; "thu_tu" giu
+     * dung thu tu; may khong gop gi, va thu tu hai ve giu nguyen. Soan du lieu dua vao luat
+     * nay de khong liet ke cac cach xep, nen lech mot cho la con go dung ma bi cham sai.
+     */
+    @Test
+    fun bieu_thuc_khong_ke_thu_tu_hang_tu_theo_dung_luat() {
+        val toan = bieuThuc("""{"kieu":"BIEU_THUC","sao":2,"dap":["x³ + 5x²y − 10xy"],"phim":["x","y"],"nhieu":[]}""")
+        assertTrue(toan.dung("−10xy+x³+5x²y", "Toán"))
+        assertTrue(toan.dung("x³+5yx²−10yx", "Toán"))
+        assertFalse(toan.dung("x³+5x²y+10xy", "Toán"))
+
+        // May khong gop hang tu: bai chua rut gon van bi bat.
+        val gon = bieuThuc("""{"kieu":"BIEU_THUC","sao":1,"dap":["5x"],"phim":["x"],"nhieu":[]}""")
+        assertFalse(gon.dung("2x+3x", "Toán"))
+        val donThuc = bieuThuc("""{"kieu":"BIEU_THUC","sao":1,"dap":["x²y"],"phim":["x","y","²"],"nhieu":[]}""")
+        assertFalse(donThuc.dung("xyx", "Toán"))
+
+        // Hai ve giu nguyen thu tu.
+        val pt = bieuThuc("""{"kieu":"BIEU_THUC","sao":1,"dap":["x = 2"],"phim":["x"],"nhieu":[]}""")
+        assertFalse(pt.dung("2=x", "Toán"))
+
+        // "thu_tu": chi nhan dung thu tu trong dap.
+        val coThuTu = bieuThuc("""{"kieu":"BIEU_THUC","sao":1,"dap":["x³ + 5x² − 10x"],"thu_tu":true,"phim":["x"],"nhieu":[]}""")
+        assertTrue(coThuTu.dung("x³+5x²−10x", "Toán"))
+        assertFalse(coThuTu.dung("5x²+x³−10x", "Toán"))
+
+        // Hoa hoc: doi cho chat trong mot ve thi duoc, doi hai ve hay doi thu tu trong cong thuc thi khong.
+        val khtn = "Khoa học tự nhiên"
+        val hoa = bieuThuc("""{"kieu":"BIEU_THUC","sao":1,"dap":["2H₂ + O₂ → 2H₂O"],"phim":["H","O"],"nhieu":[]}""")
+        assertTrue(hoa.dung("O₂+2H₂→2H₂O", khtn))
+        assertFalse(hoa.dung("2H₂O→2H₂+O₂", khtn))
+        val chat = bieuThuc("""{"kieu":"BIEU_THUC","sao":1,"dap":["H₂O"],"phim":["H","O"],"nhieu":[]}""")
+        assertFalse(chat.dung("OH₂", khtn))
     }
 
     @Test
