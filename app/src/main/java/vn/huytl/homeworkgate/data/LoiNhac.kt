@@ -43,11 +43,16 @@ object TinhLoiNhac {
     /** Tim toi da bao nhieu ngay toi de ra buoi hoc ke tiep. */
     private const val TIM_TOI_DA_NGAY = 14
 
+    /**
+     * @param soBaiCho so bai trong vo dan do han dung mot buoi, xem [NhacBai]. Loi nhac soan
+     *   tap ke kem so bai, de soan tap thi nho ca bai phai nop (Ba Huy chon 30/9/2026).
+     */
     fun tinh(
         now: Calendar,
         maBuoiDaSoan: Set<String>,
         batManChan: Boolean = false,
-        buoiDuocMoSom: String = ""
+        buoiDuocMoSom: String = "",
+        soBaiCho: (Calendar, BuoiHoc) -> Int = { _, _ -> 0 }
     ): LoiNhac? {
         val phutHienTai = now.get(Calendar.HOUR_OF_DAY) * 60 + now.get(Calendar.MINUTE)
 
@@ -128,10 +133,14 @@ object TinhLoiNhac {
             } else {
                 "Soạn tập cho ${moTaBuoi(buoi)}"
             }
+            val soBai = soBaiCho(calBuoi, buoi)
             val chiTiet = when {
                 soMon == 0 -> "Chuẩn bị đồ thể dục"
-                buoi.coTheDuc -> "$soMon môn cần mang, và nhớ đồ thể dục"
-                else -> "$soMon môn cần mang"
+                else -> buildString {
+                    append("$soMon môn cần mang")
+                    if (soBai > 0) append(", $soBai bài phải làm")
+                    if (buoi.coTheDuc) append(", và nhớ đồ thể dục")
+                }
             }
             return LoiNhac(
                 loai = LoaiNhac.SOAN_VO,

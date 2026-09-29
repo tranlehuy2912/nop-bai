@@ -32,7 +32,7 @@ import vn.huytl.homeworkgate.kho.PhamVi
 import vn.huytl.homeworkgate.kho.TraLoi
 import vn.huytl.homeworkgate.data.Prefs
 import vn.huytl.homeworkgate.data.ViecNha
-import vn.huytl.homeworkgate.data.VoChoCham
+import vn.huytl.homeworkgate.data.NhacBai
 import vn.huytl.homeworkgate.data.VoDanDo
 import vn.huytl.homeworkgate.guard.GuardAccessibilityService
 import vn.huytl.homeworkgate.guard.ParentMode
@@ -207,6 +207,10 @@ object DongBo {
     private var danDoDaDay: Map<String, Any>? = null
     private var daDayDanDo = false
 
+    /** Ban nhac bai vua ghi len hop/nhacbai, null la vua xoa. Xem [dayNhacBaiNeuDoi]. */
+    private var nhacBaiDaDay: Map<String, Any>? = null
+    private var daDayNhacBai = false
+
     /** Luc bat dau chuoi gom hien tai, de giu [TRAN_GOM_MS]. */
     private var batDauGom = 0L
 
@@ -292,6 +296,8 @@ object DongBo {
         caiDatDaDay = null
         danDoDaDay = null
         daDayDanDo = false
+        nhacBaiDaDay = null
+        daDayNhacBai = false
         nhatKyDaDay = null
         hoiAiDaDay = null
         batDauGom = 0L
@@ -413,6 +419,7 @@ object DongBo {
 
         dayCaiDatNeuDoi(context)
         dayDanDoNeuDoi(context)
+        dayNhacBaiNeuDoi(context)
         dayNhatKy(context)
     }
 
@@ -438,6 +445,50 @@ object DongBo {
             daDayDanDo = false
             Log.w(TAG, "day vo dan do hong: ${it.message}")
         }
+    }
+
+    /**
+     * Cac dong dan do chua toi han, gom theo buoi, cho the "Bài dặn dò sắp tới" ben dien
+     * thoai. Xem [Duong.D_NHAC_BAI] va [NhacBai].
+     *
+     * Chay trong [dayThat] y nhu vo dan do. Danh sach nay doi theo gio - toi luc vao hoc
+     * thi cac dong cua buoi do roi ra - nen nhip tim tu don no, khong can ai mo man nao.
+     * Khong con dong nao thi xoa document.
+     */
+    private fun dayNhacBaiNeuDoi(context: Context) {
+        val ban = banNhacBai(NhacBai.sapToi(context))
+        if (daDayNhacBai && ban == nhacBaiDaDay) return
+        val ref = hop(context, Duong.D_NHAC_BAI) ?: return
+        daDayNhacBai = true
+        nhacBaiDaDay = ban
+        val viec = if (ban == null) ref.delete() else ref.set(ban)
+        viec.addOnFailureListener {
+            daDayNhacBai = false
+            Log.w(TAG, "day nhac bai hong: ${it.message}")
+        }
+    }
+
+    /** Ban cua hop/nhacbai. null khi khong con dong nao. */
+    fun banNhacBai(cac: List<NhacBai.NhomBuoi>): Map<String, Any>? {
+        if (cac.isEmpty()) return null
+        return mapOf(
+            Duong.F_CAC_BUOI to cac.map { n ->
+                mapOf(
+                    "ma" to n.ma,
+                    "ngay" to n.ngay.toString(),
+                    "ten" to n.ten(),
+                    "vaoHoc" to n.hetLuc.atZone(java.time.ZoneId.systemDefault()).toInstant().toEpochMilli(),
+                    "cac" to n.cac.map { m ->
+                        mapOf(
+                            "chu" to m.chu,
+                            "bai" to m.laBaiTap,
+                            "mon" to m.mon.orEmpty(),
+                            "ngayVo" to m.ngayVo.toString()
+                        )
+                    }
+                )
+            }
+        )
     }
 
     /**
@@ -655,8 +706,7 @@ object DongBo {
         baiId: String,
         messageId: Long,
         anh: List<Anh>,
-        khai: Map<String, Any>? = null,
-        danDo: Map<String, Any>? = null
+        khai: Map<String, Any>? = null
     ) {
         val noi = mutableMapOf<String, Any>(
             Duong.F_LUC to System.currentTimeMillis(),
@@ -668,7 +718,6 @@ object DongBo {
             }
         )
         khai?.let { noi[Duong.F_KHAI] = it }
-        danDo?.let { noi[Duong.F_DAN_DO] = it }
         nha(context)?.collection(Duong.BAI)?.document(baiId)?.set(noi)
             ?.addOnFailureListener { Log.w(TAG, "day bai hong: ${it.message}") }
         dayNgay()
@@ -705,14 +754,16 @@ object DongBo {
     }
 
     /**
-     * Vo dan do cua ngay, chep vao bai luc nop va vao hop/dando. Xem [Duong.F_DAN_DO].
+     * Vo dan do dang giu, cho hop/dando. Xem [Duong.D_DAN_DO] va [Duong.F_DAN_DO].
      *
-     * Chi dua len phan Claude can: ngay, bai phai lam, dong dan viec khac, va ma anh
-     * trang vo de doi chieu. Dong nao con tich khac may thi khong dua: Ba Huy da thay
-     * no trong tin vo dan do tren Telegram.
+     * Chi dua len phan dien thoai can: ngay, bai phai lam, dong dan viec khac, va ma anh
+     * trang vo de Ba Huy nho Claude doc. Dong nao con tich khac may thi khong dua: Ba Huy
+     * da thay no trong tin vo dan do tren Telegram.
      *
      * Ban chi co anh thi cacBai rong ma chuaDoc la true: ben dien thoai khong duoc hieu
      * no la hom co khong giao bai tap.
+     *
+     * Truoc 30/9/2026 ban nay con chep vao tung bai luc nop, de Claude tinh tron goi.
      */
     fun banDanDo(vo: VoDanDo.DanDo): Map<String, Any> = buildMap {
         put("ngay", vo.ngay)
@@ -722,24 +773,6 @@ object DongBo {
         put("chuaDoc", vo.chuaDoc)
         put("nguon", vo.nguon)
         put("chupLuc", vo.chupLuc)
-    }
-
-    /**
-     * Tam vo chi co anh vua duoc doc ra chu (Claude doc, hay lan cham truoc doc): chep ban
-     * da doc vao truong danDo cua cac bai dang mang tam anh do.
-     *
-     * Truong nay ghi mot lan luc nop. Khong chep lai thi dien thoai van thay ban chi co
-     * anh, bat Claude doc lai trang vo o lan nho cham; lan doc do co the ra danh sach khac,
-     * ma tablet thi cham theo danh sach minh da giu ([VoChoCham.voChoBai]) nhung lay "da
-     * lam het dan do" cua lan doc kia. Mat mang thi Firestore giu lenh ghi, co mang lai ghi.
-     */
-    fun dayVoDaDocVaoBai(context: Context, vo: VoDanDo.DanDo) {
-        if (vo.chuaDoc || vo.chupLuc == 0L) return
-        val n = nha(context) ?: return
-        VoChoCham.baiMangAnhChuaDoc(context, vo.chupLuc).forEach { id ->
-            n.collection(Duong.BAI).document(id).update(Duong.F_DAN_DO, banDanDo(vo))
-                .addOnFailureListener { Log.w(TAG, "chep vo da doc vao bai hong: ${it.message}") }
-        }
     }
 
     /**

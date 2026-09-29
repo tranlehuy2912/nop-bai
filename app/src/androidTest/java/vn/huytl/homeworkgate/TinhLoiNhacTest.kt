@@ -188,6 +188,19 @@ class TinhLoiNhacTest {
         assertTrue(!nhac.chiTiet.contains("thể dục"))
     }
 
+    /**
+     * Loi nhac soan tap ke kem so bai trong vo dan do han dung buoi do (30/9/2026), xem
+     * NhacBai. Khong co bai thi giu nguyen cau cu.
+     */
+    @Test
+    fun soan_tap_ke_kem_so_bai_phai_lam_cho_buoi_do() {
+        val nhac = TinhLoiNhac.tinh(luc(15, 20, 0), emptySet(), soBaiCho = { cal, buoi ->
+            if (cal.get(Calendar.DAY_OF_MONTH) == 16 && buoi.buoi == Buoi.CHIEU) 2 else 0
+        })!!
+        assertEquals("4 môn cần mang, 2 bài phải làm", nhac.chiTiet)
+        assertEquals("4 môn cần mang", TinhLoiNhac.tinh(luc(15, 20, 0), emptySet())!!.chiTiet)
+    }
+
     // ---- man chan ----
 
     private fun chan(cal: Calendar, moSom: String = "") =

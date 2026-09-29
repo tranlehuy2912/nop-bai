@@ -164,18 +164,19 @@ class SoCaiBaiTest {
         assertEquals(0, SoCaiBai.phutDaCongHomNay(context, now))
     }
 
+    /**
+     * Du tran anh trong ngay thi man chinh doi nut Nop bai sang lam bai tren may. Thay cho
+     * "hom nay da tinh tron goi" tu 30/9/2026, khi Ba Huy bo tron goi.
+     */
     @Test
-    fun tron_goi_vo_dan_do_chi_mot_lan_trong_ngay() {
-        assertFalse(SoCaiBai.goiDaCoHomNay(context, now))
-
-        SoCaiBai.ghiGoi(context, 45, now)
-        assertTrue(SoCaiBai.goiDaCoHomNay(context, now))
-        assertEquals(45, SoCaiBai.phutDaCongHomNay(context, now))
-        // Tron goi khong phai cau cua con: dung hien trong danh sach "can sua".
-        assertTrue(SoCaiBai.dangChoSua(context, now).isEmpty())
-
-        // Sang hom sau lai duoc goi moi.
-        assertFalse(SoCaiBai.goiDaCoHomNay(context, now + ngay))
+    fun du_tran_anh_trong_ngay_thi_het_tran_anh() {
+        assertFalse(SoCaiBai.hetTranAnhHomNay(context, now))
+        SoCaiBai.ghi(context, listOf(cau("a", "de a", dung = true)), mapOf("a" to 40), now)
+        assertFalse(SoCaiBai.hetTranAnhHomNay(context, now))
+        SoCaiBai.ghi(context, listOf(cau("b", "de b", dung = true)), mapOf("b" to 5), now)
+        assertTrue(SoCaiBai.hetTranAnhHomNay(context, now))
+        // Sang hom sau lai tu dau.
+        assertFalse(SoCaiBai.hetTranAnhHomNay(context, now + ngay))
     }
 
     @Test
@@ -224,16 +225,15 @@ class SoCaiBaiTest {
         assertNull(SoCaiBai.loiNhan(context, now + 13 * 60 * 60_000L))
     }
     /**
-     * Ba phan ba tran rieng (29/9/2026): chup anh 45 (tron goi va tinh le chung), lam
-     * tren may 90, on lai tren may 30. Moi phan dem rieng, khong phan nao an cua phan kia.
+     * Ba phan ba tran rieng (29/9/2026): chup anh 45, lam tren may 90, on lai tren may 30.
+     * Moi phan dem rieng, khong phan nao an cua phan kia.
      *
-     * Truoc do tran lam them 90 nam ngoai goi va on lai chup anh chung ro lam them. Test
-     * cu tran_lam_them_khong_bi_tron_goi_an_mat giu dieu nguoc lai voi luat moi (goi nam
-     * ngoai phan chup anh), nen thay bang test nay.
+     * Dong tron goi cu (truoc 30/9/2026) van la phut chup anh cua ngay do: ghi thang vao kho
+     * nhu mot dong cu con nam trong so.
      */
     @Test
-    fun phut_anh_gom_ca_goi_va_tinh_le_con_tren_may_va_on_lai_dem_rieng() {
-        SoCaiBai.ghiGoi(context, 40, now)
+    fun phut_anh_gom_ca_goi_cu_con_tren_may_va_on_lai_dem_rieng() {
+        KhoBai.get(context).ghiTraLoi(dongGoiCu(phut = 40))
         SoCaiBai.ghi(context, listOf(cau("anh", "bài ảnh", dung = true)), mapOf("anh" to 5), now)
         val kho = KhoBai.get(context)
         kho.ghiTraLoi(dongTrenMay("tren may", phut = 7, onTap = false))
@@ -252,18 +252,24 @@ class SoCaiBaiTest {
     }
 
     /**
-     * Cau sai vao mot ngay da tinh tron goi thi khong hien cho sua (Ba Huy chot 29/9/2026):
-     * sua xong cung khong ra phut, vi moi bai chup la bai dan do va da nam trong goi. Cau
-     * sai hom khac, hom khong co goi, thi van hien.
+     * Cau sai vao mot ngay cu da tinh tron goi thi khong hien cho sua (Ba Huy chot 29/9/2026):
+     * sua xong cung khong ra phut, vi bai do da nam trong goi. Cau sai hom khong co goi thi
+     * van hien. Tu 30/9/2026 khong con goi moi, nen chi con ngay cu bi bo.
      */
     @Test
-    fun cau_sai_vao_ngay_da_co_goi_thi_khong_hien_cho_sua() {
+    fun cau_sai_vao_ngay_cu_da_co_goi_thi_khong_hien_cho_sua() {
         SoCaiBai.ghi(context, listOf(cau("hôm qua", "bài hôm qua", dung = false)), emptyMap(), now - ngay)
-        SoCaiBai.ghiGoi(context, 45, now)
+        KhoBai.get(context).ghiTraLoi(dongGoiCu(phut = 45))
         SoCaiBai.ghi(context, listOf(cau("hôm nay", "bài hôm nay", dung = false)), emptyMap(), now)
 
         assertEquals(listOf("hôm qua"), SoCaiBai.dangChoSua(context, now).map { it.ma })
     }
+
+    /** Dong tron goi vo dan do nhu ban cu ghi, luc [now]. */
+    private fun dongGoiCu(phut: Int) = TraLoi(
+        cauId = KhoBai.CAU_GOI, mon = "", ma = "trọn gói", de = "làm hết bài cô giao",
+        ketQua = "", dung = true, phut = phut, nhanXet = "", luc = now
+    )
 
     /** Luot sai tren may mat sao va 24 gio sau lam lai tren may, khong phai chup vo nop lai. */
     @Test

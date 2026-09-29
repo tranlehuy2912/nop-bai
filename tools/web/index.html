@@ -271,25 +271,15 @@ td small{display:block;color:var(--mo);font-size:10px}
 </section>
 
 <section data-tab="conggio">
-  <div class="the">
-    <h2>Vở dặn dò</h2>
-    <div class="hang">
-      <label>ngày ghi trong vở <input type="date" id="gngay"></label>
-      <label><input type="checkbox" id="ghet"> làm hết bài cô giao</label>
-    </div>
-    <label style="display:block;margin-top:10px">bài được giao (cách nhau bằng dấu phẩy)
-      <input id="ggiao" style="width:100%;margin-top:4px"
-             placeholder="bài 2.26, bài 2.27"></label>
-    <p class="mo" style="font-size:12px;margin:8px 0 0">Không kể được tên bài nào
-      thì không có trọn gói — đó là chốt chặn để máy khỏi tự cho 45 phút.</p>
-  </div>
+  <p class="mo" style="font-size:12px">Từ 30/9/2026 không còn trọn gói vở dặn dò: bài
+    chụp ảnh tính lẻ từng câu, tối đa 45 phút một ngày.</p>
 
   <div class="the">
     <h2>Các mục đã làm</h2>
     <table class="go" id="gbang"></table>
     <div class="hang" style="margin-top:10px">
       <button id="gthem">+ thêm mục</button>
-      <button id="gmau1">Mẫu: hết vở dặn dò</button>
+      <button id="gmau1">Mẫu: bài cô giao</button>
       <button id="gmau2">Mẫu: một trang trắc nghiệm</button>
       <button id="gmau3">Mẫu: bài văn một trang</button>
       <button id="gxoa">Xoá hết</button>
@@ -299,10 +289,8 @@ td small{display:block;color:var(--mo);font-size:10px}
   <div class="the">
     <h2>Bối cảnh lúc chấm</h2>
     <div class="hang">
-      <label>lúc <input type="datetime-local" id="gluc"></label>
-      <label>đã cộng làm thêm hôm nay
+      <label>đã cộng bài chụp ảnh hôm nay
         <input type="number" id="gda" value="0" style="width:70px"> phút</label>
-      <label><input type="checkbox" id="ggoi"> hôm nay đã tính trọn gói rồi</label>
       <label title="Câu đã làm đúng rồi, nay đến hẹn làm lại để ôn"><input
         type="checkbox" id="gon"> lần này là ôn lại</label>
       <button class="chinh" id="gtinh">Tính</button>
@@ -723,8 +711,8 @@ function veCong(){
 function veSoCai(){
   const c = BANG.socai; if(!c) return;
   $('#socaio').innerHTML =
-    o('trọn gói hôm nay', c.goiDaCoHomNay ? 'đã tính' : 'chưa') +
-    o('phút làm thêm hôm nay', c.phutLamThemHomNay) +
+    o('bài chụp ảnh hôm nay', c.hetTranAnhHomNay ? 'đã đủ 45 phút' : 'chưa đủ') +
+    o('phút chụp ảnh hôm nay', c.phutAnhHomNay) +
     o('tổng đã cộng hôm nay', c.phutDaCongHomNay) +
     o('đang chờ sửa', c.dangChoSua.length + ' câu');
   const ds = l => l.length
@@ -847,7 +835,7 @@ let MUC = [];
 function veMuc(){
   $('#gbang').innerHTML =
     '<tr><th>mã</th><th>dạng</th><th>số dòng</th><th>đúng</th><th>đọc rõ</th>' +
-    '<th>trong dặn dò</th><th></th></tr>' +
+    '<th></th></tr>' +
     MUC.map((m,i)=>`<tr>
       <td><input value="${m.ma}" data-i="${i}" data-f="ma" style="width:100px"></td>
       <td><select data-i="${i}" data-f="dang">${DANG.map(d=>
@@ -856,8 +844,6 @@ function veMuc(){
           style="width:64px"></td>
       <td><input type="checkbox" ${m.dung?'checked':''} data-i="${i}" data-f="dung"></td>
       <td><input type="checkbox" ${m.docRo?'checked':''} data-i="${i}" data-f="docRo"></td>
-      <td><input type="checkbox" ${m.trongDanDo?'checked':''} data-i="${i}"
-          data-f="trongDanDo"></td>
       <td><button data-xoa="${i}">✕</button></td></tr>`).join('');
 }
 $('#gbang').addEventListener('input', e => {
@@ -868,55 +854,44 @@ $('#gbang').addEventListener('input', e => {
 $('#gbang').addEventListener('click', e => {
   if(e.target.dataset.xoa !== undefined){ MUC.splice(+e.target.dataset.xoa,1); veMuc(); }
 });
-const mucMoi = (ma,dang,soDong,trongDanDo=false) =>
-  ({ma,dang,soDong,dung:true,docRo:true,trongDanDo});
+const mucMoi = (ma,dang,soDong) => ({ma,dang,soDong,dung:true,docRo:true});
 $('#gthem').onclick = ()=>{ MUC.push(mucMoi('câu '+(MUC.length+1),'CAU_NHO',4)); veMuc(); };
 $('#gxoa').onclick = ()=>{ MUC=[]; veMuc(); };
 $('#gmau1').onclick = ()=>{
-  MUC = [mucMoi('2.26a','CAU_NHO',4,true), mucMoi('2.26b','CAU_NHO',6,true),
-         mucMoi('2.27','BAI_RIENG',9,true)];
-  $('#ghet').checked = true; $('#ggiao').value = 'bài 2.26, bài 2.27';
-  $('#gngay').value = homNay(); veMuc();
+  MUC = [mucMoi('2.26a','CAU_NHO',4), mucMoi('2.26b','CAU_NHO',6),
+         mucMoi('2.27','BAI_RIENG',9)];
+  veMuc();
 };
 $('#gmau2').onclick = ()=>{
   MUC = Array.from({length:20},(_,i)=>mucMoi('TN'+(i+1),'TRAC_NGHIEM',0));
-  $('#ghet').checked = false; $('#ggiao').value = ''; veMuc();
+  veMuc();
 };
 $('#gmau3').onclick = ()=>{
   MUC = [mucMoi('đoạn văn','VIET_DAI',21)];
-  $('#ghet').checked = false; $('#ggiao').value = ''; veMuc();
+  veMuc();
 };
 $('#glaytu').onclick = async ()=>{
   await napBang();
-  $('#gda').value = BANG.socai.phutLamThemHomNay;
-  $('#ggoi').checked = BANG.socai.goiDaCoHomNay;
+  $('#gda').value = BANG.socai.phutAnhHomNay;
 };
 $('#gtinh').onclick = async e => {
   e.target.disabled = true;
   $('#gket').innerHTML = '<p class="mo">đang tính trên máy ảo…</p>';
   try{
     const b = await api('/api/conggio',{method:'POST',body:JSON.stringify({
-      cham:{mon:'', cac:MUC, ngayDanDo:$('#gngay').value || null,
-            lamHetDanDo:$('#ghet').checked,
-            baiDuocGiao:$('#ggiao').value.split(',').map(x=>x.trim()).filter(Boolean)},
-      bayGio: $('#gluc').value || null,
+      cham:{mon:'', cac:MUC},
       daCongLamThem: +$('#gda').value || 0,
-      goiDaCo: $('#ggoi').checked,
       onTap: $('#gon').checked })});
     const le = Object.entries(b.phutCua).filter(([,v])=>v>0);
     $('#gket').innerHTML =
       `<div class="so-to">${b.phut} phút</div>
-       <p class="mo">tối đa một ngày ${b.toiDaMoiNgay} = trọn gói ${b.tronGoi}
-          + trần làm thêm ${b.tranLamThem}${$('#gon').checked
-            ? ' · lần ôn lại chỉ được nửa số phút' : ''}</p>
+       <p class="mo">bài chụp ảnh tối đa ${b.tranAnh} phút một ngày</p>
        <h2 style="margin-top:14px">Máy giải thích</h2>
        <ul class="ds">${b.dong.map(d=>`<li>${d}</li>`).join('') ||
          '<li class="mo">không có dòng nào</li>'}</ul>` +
       (le.length ? `<h2 style="margin-top:14px">Phút trả cho từng mục</h2>
         <ul class="ds">${le.map(([k,v])=>`<li><span>${k}</span><span>${v} phút</span></li>`)
         .join('')}</ul>` : '') +
-      (b.trongGoi.length ? `<p class="mo" style="margin-top:10px">Nằm trong trọn gói
-        nên không cộng lẻ: ${b.trongGoi.join(', ')}</p>` : '') +
       (b.canBaHuyXem ? '<p class="hong" style="margin-top:10px">Có chỗ máy đọc không rõ — dừng tự duyệt.</p>' : '');
   }catch(err){ $('#gket').innerHTML = `<p class="loi">${err.message}</p>`; }
   e.target.disabled = false;

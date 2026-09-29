@@ -276,7 +276,7 @@ def danh_sach():
             # Chi soat phan dau danh sach: may duong con lai nam duoi vung nhin
             # thay, ma uiautomator chi doc duoc phan dang hien.
             cho=["Cách kiếm giờ chơi", "Hôm nay kiếm được", "LÀM GÌ THÌ ĐƯỢC THÊM GIỜ",
-                 "Nộp bài tập", "Làm hết bài cô giao", "45 phút"],
+                 "Chụp bài cô giao", "45 phút"],
         ),
 
         # ---------------- vo dan do ----------------
@@ -286,20 +286,19 @@ def danh_sach():
             lam=lambda m: (m.van(RANH), m.dat("xoadando"), m.man("DanDoActivity")),
             cho=["Chụp trang vở dặn dò", "Đưa trang vở lọt vào khung"],
         ),
+        # Tu 30/9/2026 dong vo dan do chi con o man chinh: vo khong con dinh gi toi so phut,
+        # no de nhac bai (NhacBai), nen man khai bai khong ru chup vo nua.
         dict(
             ma="dando-chua-chup", nhom="Vở dặn dò",
-            ten="Màn khai bài rủ chụp vở khi chưa có bản nào",
-            lam=lambda m: (m.van(RANH), m.dat("xoadando"), m.man("ChonBaiActivity")),
-            cho=["Chụp vở dặn dò hôm nay",
-                 "Chụp một lần để máy tính trọn gói 45 phút bài cô giao"],
+            ten="Màn chính rủ chụp vở khi chưa có bản nào",
+            lam=lambda m: (m.van(RANH), m.dat("xoadando"), m.man("HomeActivity")),
+            cho=["Chụp vở dặn dò hôm nay"],
         ),
         dict(
             ma="dando-da-luu", nhom="Vở dặn dò",
-            ten="Chụp rồi thì mấy lần nộp sau không phải chụp lại",
-            # Day la ly do ca cai man nay ra doi: truoc phai chup trang vo o TUNG lan
-            # nop trong ngay, quen mot lan la lan nop do khong duoc phut nao.
-            lam=lambda m: (m.van(RANH), m.dat("napdando"), m.man("ChonBaiActivity")),
-            cho=["Vở dặn dò", "2 bài", "Máy nhớ rồi, mấy lần nộp sau không phải chụp lại"],
+            ten="Chụp rồi thì màn chính ghi ngày vở và số bài",
+            lam=lambda m: (m.van(RANH), m.dat("napdando"), m.man("HomeActivity")),
+            cho=["Vở dặn dò", "2 bài"],
             khong=["Chụp vở dặn dò hôm nay"],
             don=lambda m: m.dat("xoadando"),
         ),
@@ -435,6 +434,7 @@ BO_TEST = [
     ("SoCaiBaiTest", "Sổ cái bài đã nộp"),
     ("BaiGuiHongTest", "Lần nộp gửi hỏng, giữ ảnh để gửi lại"),
     ("VoDanDoTest", "Trang vở dặn dò đã soát"),
+    ("NhacBaiTest", "Nhắc bài theo tiết sau của từng môn"),
     ("NhatKySuDungTest", "Sổ ghi dùng app lúc nào"),
     ("GioiHanAppTest", "Hạn giờ từng app"),
     ("KhoaAiTest", "Chùm khoá AI"),

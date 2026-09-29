@@ -6,7 +6,6 @@ import androidx.test.platform.app.InstrumentationRegistry
 import org.junit.Test
 import org.junit.runner.RunWith
 import vn.huytl.homeworkgate.data.LuatCongGio
-import vn.huytl.homeworkgate.data.SoCaiBai
 import vn.huytl.homeworkgate.data.ViecNha
 import vn.huytl.homeworkgate.kho.KhoBai
 import vn.huytl.homeworkgate.kho.TraLoi
@@ -21,14 +20,12 @@ import vn.huytl.homeworkgate.ui.CachKiemGioActivity
  *     vn.huytl.homeworkgate.test/androidx.test.runner.AndroidJUnitRunner
  *
  *   ...#daCong   ca ba phan deu da cong gio hom nay
- *   ...#coGoi    chi tinh tron goi, hai phan kia van trong
+ *   ...#duAnh    chi bai chup anh da du tran, hai phan kia van trong
  *   ...#xoa      don lai de ve ngay trang
  *
  * VI SAO PHAI CO MAY THE NGAY NAY. Man do tra loi hai cau hoi ma chi nhin duoc khi
- * co so lieu that: hom nay phan nao da cong, phan nao chua. Va tran lam them 90 phut
- * chi song vao hom da tinh goi (xem bien conTran trong [LuatCongGio.tinh]), nen dong
- * ghi chu duoi the bai tap noi hai cau khac han nhau tuy hom. Ngoi cho du lieu that
- * de kiem hai nhanh do thi mat ca ngay.
+ * co so lieu that: hom nay phan nao da cong, phan nao chua. Ngoi cho du lieu that de
+ * kiem tung nhanh thi mat ca ngay.
  */
 @RunWith(AndroidJUnit4::class)
 class ManualKiemGio {
@@ -48,7 +45,7 @@ class ManualKiemGio {
     @Test
     fun daCong() {
         val kho = KhoBai.get(context)
-        SoCaiBai.ghiGoi(context, LuatCongGio.PHUT_TRON_GOI_DAN_DO)
+        ghiDuAnh()
         kho.ghiTraLoi(
             TraLoi(
                 cauId = MA_BAI, mon = "Toán", ma = "Bài 1", de = "thử",
@@ -58,14 +55,25 @@ class ManualKiemGio {
         )
         kho.ghiTraThe(TraThe(theId = MA_THE, go = "thử", dung = true, phut = 6))
         ViecNha.congPhutHomNay(context, 20)
-        println("MANUAL_KIEMGIO: goi 45 + lam them 12 + kiem tra bai 6 + viec nha 20")
+        println("MANUAL_KIEMGIO: anh 45 + lam them 12 + kiem tra bai 6 + viec nha 20")
     }
 
-    /** Chi danh dau goi, de nhin the "da tinh goi" ma cac phan kia van trong. */
+    /** Chi bai chup anh du tran, de nhin the "đã đủ" ma cac phan kia van trong. */
     @Test
-    fun coGoi() {
-        SoCaiBai.ghiGoi(context, LuatCongGio.PHUT_TRON_GOI_DAN_DO)
-        println("MANUAL_KIEMGIO: da danh dau goi hom nay")
+    fun duAnh() {
+        ghiDuAnh()
+        println("MANUAL_KIEMGIO: bai chup anh hom nay da du tran")
+    }
+
+    /** Mot dong bai chup anh du [LuatCongGio.TRAN_ANH] phut. */
+    private fun ghiDuAnh() {
+        KhoBai.get(context).ghiTraLoi(
+            TraLoi(
+                cauId = MA_ANH, mon = "Toán", ma = "Bài chụp", de = "thử ảnh",
+                ketQua = "", dung = true, phut = LuatCongGio.TRAN_ANH,
+                nhanXet = "", luc = System.currentTimeMillis()
+            )
+        )
     }
 
     /**
@@ -82,13 +90,14 @@ class ManualKiemGio {
     @Test
     fun xoa() {
         val db = KhoBai.get(context).writableDatabase
-        db.delete("tra_loi", "cau_id IN (?, ?)", arrayOf(KhoBai.CAU_GOI, MA_BAI))
+        db.delete("tra_loi", "cau_id IN (?, ?)", arrayOf(MA_ANH, MA_BAI))
         db.delete("tra_the", "the_id = ?", arrayOf(MA_THE))
         println("MANUAL_KIEMGIO: da don cac dong vua nap (tru so phut viec nha)")
     }
 
     private companion object {
         const val MA_BAI = "manual:kiemgio"
+        const val MA_ANH = "manual:kiemgio-anh"
         const val MA_THE = "manual:kiemgio-the"
     }
 }

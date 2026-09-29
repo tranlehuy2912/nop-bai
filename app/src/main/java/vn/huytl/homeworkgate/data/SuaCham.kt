@@ -57,7 +57,7 @@ object SuaCham {
         /** Ma cac cau duoc gui sang ma khong con dang cho sua. */
         val boQua: List<String>,
         /**
-         * Cau dung ma khong co so dong, trong hom chua tinh tron goi: 0 phut theo
+         * Cau dung ma khong co so dong: 0 phut theo
          * [LuatCongGio.thieuSoDong]. Khong ghi vao so, nen van nam trong danh sach cho sua.
          */
         val choSoDong: List<CauCham> = emptyList()
@@ -109,13 +109,11 @@ object SuaCham {
 
         fun tinh(cac: List<CauCham>) = LuatCongGio.tinh(
             KetQuaCham(mon = cac.firstOrNull()?.mon.orEmpty(), cac = cac),
-            daCongAnhHomNay = SoCaiBai.phutAnhHomNay(context, now),
-            bayGio = LuatCongGio.bayGio(now),
-            goiDaCoHomNay = SoCaiBai.goiDaCoHomNay(context, now)
+            daCongAnhHomNay = SoCaiBai.phutAnhHomNay(context, now)
         )
 
-        // Lay danh sach thieu so dong tu chinh bang tinh, khong xet lai tung cau: hom da co
-        // tron goi thi cau dung nam trong goi, 0 phut la dung luat, van ghi nhu cu.
+        // Lay danh sach thieu so dong tu chinh bang tinh, khong xet lai tung cau: bang tinh
+        // la mot cho duy nhat biet cau nao duoc tinh le.
         val bangDu = tinh(tatCa)
         val thieu = bangDu.thieuDong.map { it.cauId }.toSet()
         if (thieu.isEmpty()) return ChuanBi(tatCa, bangDu, boQua)
@@ -133,5 +131,5 @@ object SuaCham {
         now: Long = System.currentTimeMillis(),
         daCap: Int = chuanBi.phut
     ): List<TraLoi> =
-        SoCaiBai.ghi(context, chuanBi.cac, LuatCongGio.chiaPhutDaCap(chuanBi.bang, daCap).second, now)
+        SoCaiBai.ghi(context, chuanBi.cac, LuatCongGio.chiaPhutDaCap(chuanBi.bang, daCap), now)
 }

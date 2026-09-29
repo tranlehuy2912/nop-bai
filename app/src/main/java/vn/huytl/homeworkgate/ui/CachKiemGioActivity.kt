@@ -134,44 +134,44 @@ class CachKiemGioActivity : AppCompatActivity() {
     /**
      * Duong bai tap, duong ra nhieu gio nhat nen dat dau tien.
      *
-     * Hai nhom rieng nhau chu khong cong vao nhau, va man nay phai noi ro cho do:
-     * lam het bai co giao la mot cuc tron goi, con lai la tinh le tung cau. Con
-     * doc nham thanh cong ca hai thi no trong cho mot so phut khong bao gio ra.
+     * Moi phan mot tran rieng, va man nay phai noi ro cho do: con doc nham thanh cong
+     * don ca hai tran thi no trong cho mot so phut khong bao gio ra.
      */
     private fun veBaiTap() {
         val box = binding.boxBaiTap
         box.removeAllViews()
 
         /*
-         * Hai duong kiem gio bang bai tap tu 29/9/2026: bai trong vo dan do (chup anh, Claude
-         * cham) va bai lam tren may. Bai lam them chup anh khong con nua.
+         * Hai duong kiem gio bang bai tap tu 29/9/2026: bai co giao (chup anh, Claude cham)
+         * va bai lam tren may. Bai lam them chup anh khong con nua. Tu 30/9/2026 bai co giao
+         * chi tinh le, khong con tron goi.
          */
-        val goiDaCo = SoCaiBai.goiDaCoHomNay(this)
+        val hetTranAnh = SoCaiBai.hetTranAnhHomNay(this)
         val daAnh = SoCaiBai.phutAnhHomNay(this)
         themDong(
             box,
-            ten = "Làm bài trong vở dặn dò",
+            ten = "Chụp bài cô giao",
             gia = "tối đa ${LuatCongGio.TRAN_ANH} phút",
             giaPhu = "mỗi ngày",
             nay = when {
-                goiDaCo -> "Hôm nay đã tính trọn gói"
+                hetTranAnh -> "Hôm nay đã đủ ${LuatCongGio.TRAN_ANH} phút"
                 daAnh > 0 -> "Hôm nay đã được $daAnh phút"
                 else -> "Hôm nay chưa cộng"
             },
-            mauNay = if (goiDaCo) R.color.ok else R.color.ink_soft
+            mauNay = if (hetTranAnh) R.color.ok else R.color.ink_soft
         )
 
         /*
-         * Cau dang cho sua la gio dang nam san tren ban, nhung chi hom chua tinh goi: hom da
-         * co goi thi cau sai cua bai dan do chuyen sang lam tren may (Ba Huy chot 29/9/2026).
+         * Cau dang cho sua la gio dang nam san tren ban, nhung chi hom chua du tran anh: du
+         * roi thi cau sai chuyen sang lam tren may (Ba Huy chot 29/9/2026).
          */
         val canSua = SoCaiBai.dangChoSua(this)
-        if (canSua.isNotEmpty() && !goiDaCo) {
+        if (canSua.isNotEmpty() && !hetTranAnh) {
             themDong(
                 box,
                 ten = "Sửa câu sai trong vở",
                 gia = "tính chung ${LuatCongGio.TRAN_ANH} phút",
-                giaPhu = "của bài dặn dò",
+                giaPhu = "của bài chụp ảnh",
                 nay = "Đang có ${canSua.size} câu chờ sửa: " +
                     canSua.take(3).joinToString(", ") { it.ma } +
                     if (canSua.size > 3) "…" else "",
@@ -361,12 +361,7 @@ class CachKiemGioActivity : AppCompatActivity() {
         listOf(
             "Câu làm sai thì chưa được tính. Sửa lại rồi chụp nộp lại thì mới tính.",
             "Mỗi câu chỉ tính giờ một lần. Nộp lại câu đã được tính rồi thì không cộng nữa.",
-            "Ảnh không thấy đề bài thì máy không chấm được, nên câu đó không tính.",
-            "Vở dặn dò của hôm khác thì không tính gói " +
-                "${LuatCongGio.PHUT_TRON_GOI_DAN_DO} phút.",
-            "Vở dặn dò hôm đó cô chỉ dặn việc, không giao bài tập nào, thì máy không " +
-                "tự cộng gói. Bài làm hôm đó tính lẻ từng câu, còn gói thì ba Huy xem " +
-                "vở rồi quyết."
+            "Ảnh không thấy đề bài thì máy không chấm được, nên câu đó không tính."
         ).forEach { themDongChu(box, it) }
     }
 

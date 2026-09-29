@@ -17,6 +17,7 @@ import vn.huytl.homeworkgate.data.DangBai
 import vn.huytl.homeworkgate.data.GiaiDe
 import vn.huytl.homeworkgate.data.LichKiemTra
 import vn.huytl.homeworkgate.data.LuatCongGio
+import vn.huytl.homeworkgate.data.NhacBai
 import vn.huytl.homeworkgate.data.VoDanDo
 import vn.huytl.homeworkgate.kho.BoThe
 import vn.huytl.homeworkgate.kho.CauHoi
@@ -51,6 +52,7 @@ class GiaiDeTest {
     /** Moc Unit Tieng Anh that tren may, tra lai sau test. Tu 29/9/2026 Tieng Anh cung ra de. */
     private var unitCu: Int? = null
     private var voCu: VoDanDo.DanDo? = null
+    private var nhacCu: List<NhacBai.Trang> = emptyList()
     private var anhCu: java.io.File? = null
     private val deDaTao = mutableListOf<String>()
     private val cauDaGhi = mutableListOf<String>()
@@ -79,6 +81,9 @@ class GiaiDeTest {
         }
         // Ban vo that tren may co the dang bao sap kiem tra: bo di cho de tuan khong lan.
         VoDanDo.xoa(context)
+        // Luu vo la chep chu sang NhacBai: giu ban cu de tra lai, khong thi test de lai loi
+        // nhac bai tren may.
+        nhacCu = NhacBai.docTrang(context)
     }
 
     @After
@@ -91,6 +96,10 @@ class GiaiDeTest {
         }
         HocToi.xoa(context, PhanHoc.BO_TIENG_ANH)
         unitCu?.let { HocToi.ghiUnit(context, PhanHoc.BO_TIENG_ANH, it) }
+        NhacBai.xoaHet(context)
+        nhacCu.forEach {
+            NhacBai.ghi(context, VoDanDo.DanDo(ngay = it.ngay.toString(), cacDong = it.cacDong, chupLuc = it.chupLuc))
+        }
         val cu = voCu
         if (cu != null) VoDanDo.luu(context, cu) else VoDanDo.xoa(context)
         anhCu?.let { tam ->

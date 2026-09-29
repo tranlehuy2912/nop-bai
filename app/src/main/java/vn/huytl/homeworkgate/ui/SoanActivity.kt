@@ -14,6 +14,7 @@ import com.google.android.material.checkbox.MaterialCheckBox
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import vn.huytl.homeworkgate.R
 import vn.huytl.homeworkgate.data.BuoiHoc
+import vn.huytl.homeworkgate.data.NhacBai
 import vn.huytl.homeworkgate.data.Prefs
 import vn.huytl.homeworkgate.data.TinhLoiNhac
 import vn.huytl.homeworkgate.databinding.StActivitySoanBinding
@@ -150,7 +151,23 @@ class SoanActivity : AppCompatActivity() {
         binding.khungTheDuc.visibility = if (b.coTheDuc) View.VISIBLE else View.GONE
         // Khong co mon nao thi giau luon khung danh sach cho khoi tho mot o rong.
         binding.khungMon.visibility = if (mon.isEmpty()) View.GONE else View.VISIBLE
+        veBai(cal, b)
         capNhatNut()
+    }
+
+    /**
+     * Cac dong vo dan do han dung buoi nay, xem [NhacBai]. Chi de doc: con soan tap xong
+     * hay chua khong phu thuoc vao bai da lam chua.
+     */
+    private fun veBai(cal: Calendar, b: BuoiHoc) {
+        val cac = runCatching { NhacBai.choBuoi(this, cal, b) }.getOrDefault(emptyList())
+        binding.khungBai.visibility = if (cac.isEmpty()) View.GONE else View.VISIBLE
+        if (cac.isEmpty()) return
+        val soBai = cac.count { it.laBaiTap }
+        binding.tieuDeBai.text = if (soBai > 0) "Bài phải làm cho buổi này" else "Cô dặn cho buổi này"
+        binding.danhSachBai.text = cac.joinToString("\n") {
+            (if (it.laBaiTap) "• " else "· ") + NhacBai.moTa(it)
+        }
     }
 
     private fun capNhatNut() {

@@ -10,21 +10,16 @@ import vn.huytl.homeworkgate.kho.PhamVi
  *
  * Tu 28/9/2026 day la duong cham DUY NHAT: Ba Huy bo han phan may cham tren tablet.
  * Ban cham nay di vao ApprovalService.xuLyBanCham, noi moi luat - gia moi cau, tran
- * ngay, moi cau chi tra gio mot lan, danh sach can sua, tron goi vo dan do, tin
- * Telegram - nam o mot cho.
+ * ngay, moi cau chi tra gio mot lan, danh sach can sua, tin Telegram - nam o mot cho.
  *
  * CAU TRONG SACH lay de, ma sach va dang bai tu ngan hang, theo pham vi con da khai.
  * Claude chi can noi dung hay sai, con viet gi, va bao nhieu dong. CAU NGOAI SACH thi
  * lay de Claude chep tu anh. Khong co de thi coi nhu khong co de, va luat cong gio tra
  * 0 phut cho cau do, y nhu duong AI.
  *
- * VO DAN DO: Claude doc trang vo chup kem lan nop, tra ve ngay trong vo, cac bai co
- * giao, va con da lam het chua. Ba thu do vao dung ba truong ma may cham van dien, nen
- * [LuatCongGio] tu quyet tron goi nhu moi lan.
- *
- * Lan nop dung ban vo con soat tu dau buoi ([VoChoCham]) thi ngay va danh sach bai lay
- * tu ban do, Claude chi noi con lam het chua va cau nao thuoc bai co giao. Y het cau
- * lenh cua may cham tren tablet luc co ban soat (phan may cham bo ngay 28/9/2026).
+ * KHONG CON PHAN VO DAN DO (30/9/2026). Truoc do ban cham mang ngay trong vo, cac bai co
+ * giao va con da lam het chua, de tinh tron goi 45 phut. Ba Huy bo tron goi, nen ban cham
+ * chi con tung cau. Bang dieu khien ban cu con gui cac truong do thi o day bo qua.
  *
  * Muc nao khong co ket luan dung hay sai that thi bo di: mot chu "dung" viet thieu hay
  * viet sai kieu khong duoc phep thanh mot lan cong gio.
@@ -32,27 +27,16 @@ import vn.huytl.homeworkgate.kho.PhamVi
 object ChamTheoClaude {
 
     /**
-     * @param giaTri "giaTri" cua lenh CHAMBAI: mot map { cac, ngayDanDo, baiDuocGiao,
-     *   lamHetDanDo, coAnhDanDo }. Van nhan kieu cu chi co danh sach cau.
-     * @param vo ban vo ma lan nop do dung, xem [VoChoCham.voChoBai]. null la lan nop khong
-     *   dung ban nao.
+     * @param giaTri "giaTri" cua lenh CHAMBAI: mot map { cac, ... }. Van nhan kieu cu chi
+     *   co danh sach cau.
      */
     fun banCham(
         context: Context,
         giaTri: Any?,
-        pham: PhamVi?,
-        vo: VoDanDo.DanDo? = null
+        pham: PhamVi?
     ): KetQuaCham? {
         val goi = giaTri as? Map<*, *>
         val cacMuc = ((goi?.get("cac") ?: giaTri) as? List<*>).orEmpty().mapNotNull { it as? Map<*, *> }
-        // Co ban soat la co vo dan do, du dien thoai co bao hay khong: Bang dieu khien ban
-        // cu khong biet ban soat, ma quy tac 17 duoi day chi danh cho lan nop khong co vo.
-        //
-        // Ban chi co anh thi chua co danh sach nao de dung: ngay va bai lay tu Claude doc
-        // tam anh gan theo bai (khau DAN_DO, xem KHAU_DAN_DO). Co vo hay khong luc do
-        // theo dien thoai bao, vi chi ben do biet bai co mang anh trang vo khong.
-        val soat = vo?.takeUnless { it.chuaDoc }
-        val coVo = coAnhDanDo(giaTri) || soat != null
         val sach = if (pham?.theoSach == true) {
             KhoBai.get(context).cacCauTheoId(pham.cauIds)
         } else {
@@ -119,33 +103,13 @@ object ChamTheoClaude {
                 cauId = q?.id,
                 mon = q?.mon ?: pham?.mon.orEmpty(),
                 coDe = de.isNotBlank() && !chupLai,
-                maGoc = ma,
-                /*
-                 * Quy tac 17 cua may cham: lan nop KHONG co trang vo dan do thi moi cau
-                 * la bai co giao. Day la lan nop de sua bai, chi co anh bai giai. Coi la
-                 * bai lam them thi xap bai da nam trong tron goi hom nay lai duoc tinh
-                 * le them lan nua - ngay 14/9/2026 la 45 phut goi cong 40 phut nua.
-                 */
-                trongDanDo = when {
-                    !coVo -> true
-                    // Ban soat ghi hom do co khong giao bai tap nao: khong cau nao thuoc
-                    // bai co giao, du Claude noi gi. Cau lenh cua may cham dan y nhu vay.
-                    soat != null && soat.cacBai.isEmpty() -> false
-                    else -> o["trongDanDo"] as? Boolean ?: false
-                }
+                maGoc = ma
             )
         }
         if (cac.isEmpty()) return null
         return KetQuaCham(
             mon = pham?.mon?.takeIf { it.isNotBlank() } ?: cac.first().mon,
-            cac = cac,
-            ngayDanDo = soat?.ngay
-                ?: (goi?.get("ngayDanDo") as? String)?.trim()?.takeIf { it.isNotEmpty() },
-            // Viet sai kieu la khong co goi, y nhu "dung": mot chu "true" khong duoc
-            // thanh 45 phut.
-            lamHetDanDo = goi?.get("lamHetDanDo") as? Boolean ?: false,
-            baiDuocGiao = soat?.cacBai ?: (goi?.get("baiDuocGiao") as? List<*>).orEmpty()
-                .mapNotNull { (it as? String)?.trim()?.takeIf { t -> t.isNotEmpty() } }
+            cac = cac
         )
     }
 
@@ -165,10 +129,6 @@ object ChamTheoClaude {
         val dau = listOf("câu", "cau", "bài", "bai").firstOrNull { t.startsWith(it) }
         return (if (dau == null) t else t.removePrefix(dau)).trimEnd('.', ')', ']', ':')
     }
-
-    /** Lan nop nay co trang vo dan do khong, theo dien thoai bao. Kieu cu thi khong. */
-    fun coAnhDanDo(giaTri: Any?): Boolean =
-        (giaTri as? Map<*, *>)?.get("coAnhDanDo") as? Boolean ?: false
 
     private fun dangBai(ten: String?): DangBai? =
         ten?.trim()?.takeIf { it.isNotEmpty() }?.let { runCatching { DangBai.valueOf(it) }.getOrNull() }

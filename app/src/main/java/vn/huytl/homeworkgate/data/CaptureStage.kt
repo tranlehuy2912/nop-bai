@@ -18,6 +18,3 @@ enum class CaptureStage(val labelRes: Int, val hintRes: Int, val required: Boole
     DE_BAI(R.string.stage_problem, R.string.stage_problem_hint, false),
     BAI_GIAI(R.string.stage_solution, R.string.stage_solution_hint, true)
 }
-
-/** Khau cua anh trang vo gan vao bai tren Firestore. Bang dieu khien doc dung chu nay. */
-const val KHAU_DAN_DO = "DAN_DO"

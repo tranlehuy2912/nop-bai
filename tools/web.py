@@ -914,9 +914,7 @@ class Tay(BaseHTTPRequestHandler):
                                                    {"loi": "khong co ket qua"})(
                     chay_test(f"{PKG}.ManualBang#conggio",
                               cham=b64(than["cham"]),
-                              bayGio=than.get("bayGio"),
                               daCongLamThem=than.get("daCongLamThem", 0),
-                              goiDaCo="1" if than.get("goiDaCo") else "0",
                               onTap="1" if than.get("onTap") else "0"))))
 
             if u.path == "/api/test":

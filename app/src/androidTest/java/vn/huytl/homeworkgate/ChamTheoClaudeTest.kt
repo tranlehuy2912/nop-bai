@@ -15,11 +15,8 @@ import vn.huytl.homeworkgate.data.DangBai
 import vn.huytl.homeworkgate.data.KhaiChoCham
 import vn.huytl.homeworkgate.data.LoaiLoi
 import vn.huytl.homeworkgate.data.LuatCongGio
-import vn.huytl.homeworkgate.data.VoChoCham
-import vn.huytl.homeworkgate.data.VoDanDo
 import vn.huytl.homeworkgate.kho.NganHang
 import vn.huytl.homeworkgate.kho.PhamVi
-import java.time.LocalDateTime
 
 /**
  * Ket qua Claude cham, do Ba Huy dan ve, thanh ban cham cua tablet.
@@ -160,62 +157,29 @@ class ChamTheoClaudeTest {
         assertFalse(ket.cac.single().docRo)
     }
 
+    /**
+     * Bang dieu khien ban cu con gui phan vo dan do (ngayDanDo, baiDuocGiao, lamHetDanDo,
+     * coAnhDanDo, trongDanDo tung cau). Tu 30/9/2026 khong con tron goi: tablet bo qua cac
+     * truong do, moi cau tinh le.
+     */
     @Test
-    fun claude_doc_vo_dan_do_thi_tron_goi_tinh_nhu_may_cham() {
+    fun ban_cham_con_mang_phan_vo_dan_do_thi_bo_qua_va_tinh_le() {
         val giaTri = mapOf(
             "cac" to listOf(
                 mapOf("ma" to "2.28", "dung" to true, "soDong" to 1, "trongDanDo" to true),
                 mapOf("ma" to "2.33a", "dung" to true, "soDong" to 4, "trongDanDo" to false)
             ),
             "ngayDanDo" to "2026-09-23",
-            "baiDuocGiao" to listOf("Bài 2.28", " "),
+            "baiDuocGiao" to listOf("Bài 2.28"),
             "lamHetDanDo" to true,
             "coAnhDanDo" to true
         )
         val ket = ChamTheoClaude.banCham(context, giaTri, pham)!!
-        assertEquals("2026-09-23", ket.ngayDanDo)
-        assertEquals(listOf("Bài 2.28"), ket.baiDuocGiao)
-        assertTrue(ket.lamHetDanDo)
-        assertTrue(ket.cac.single { it.ma == "2.28" }.trongDanDo)
-        assertFalse(ket.cac.single { it.ma == "2.33a" }.trongDanDo)
-        assertTrue(ChamTheoClaude.coAnhDanDo(giaTri))
-
-        // Toi hom do: goi 45 phut, va tu 29/9/2026 goi bao ca cau Claude ghi la ngoai vo
-        // (2.33a): moi bai chup anh la bai dan do, khong con tinh le them ngoai goi.
-        val bang = LuatCongGio.tinh(ket, bayGio = LocalDateTime.of(2026, 9, 23, 20, 0))
-        assertEquals(LuatCongGio.PHUT_TRON_GOI_DAN_DO, bang.phut)
-        assertEquals(listOf("2.28", "2.33a"), bang.trongGoi.map { it.ma })
-        // Qua trua hom sau thi vo hom qua het han. Vi vay duong Claude tinh theo luc con
-        // nop chu khong theo luc Ba Huy dan ket qua.
-        val tre = LuatCongGio.tinh(ket, bayGio = LocalDateTime.of(2026, 9, 24, 13, 0))
-        assertTrue(tre.phut < LuatCongGio.PHUT_TRON_GOI_DAN_DO)
-    }
-
-    @Test
-    fun lan_nop_khong_co_vo_dan_do_thi_moi_cau_la_bai_co_giao() {
-        val ds = listOf(mapOf("ma" to "2.33a", "dung" to true, "soDong" to 4, "trongDanDo" to false))
-        // Kieu cu, va kieu moi ma khong co trang vo: quy tac 17 cua may cham.
-        assertTrue(ChamTheoClaude.banCham(context, ds, pham)!!.cac.single().trongDanDo)
-        assertTrue(
-            ChamTheoClaude.banCham(context, mapOf("cac" to ds, "coAnhDanDo" to false), pham)!!
-                .cac.single().trongDanDo
-        )
-        // Co trang vo ma Claude khong noi cau nay thuoc bai giao: coi la lam them, nhu may.
-        assertFalse(
-            ChamTheoClaude.banCham(
-                context,
-                mapOf("cac" to listOf(mapOf("ma" to "2.33a", "dung" to true)), "coAnhDanDo" to true),
-                pham
-            )!!.cac.single().trongDanDo
-        )
-        // Hom nay da co goi: nop lai bai da sua khong duoc tinh le them lan nua.
-        val sua = ChamTheoClaude.banCham(context, ds, pham)!!
-        assertEquals(0, LuatCongGio.tinh(sua, goiDaCoHomNay = true).phut)
-        // "lamHetDanDo" viet thanh chu thi khong co goi.
-        assertFalse(
-            ChamTheoClaude.banCham(context, mapOf("cac" to ds, "lamHetDanDo" to "true"), pham)!!
-                .lamHetDanDo
-        )
+        assertEquals(2, ket.cac.size)
+        val bang = LuatCongGio.tinh(ket)
+        // Trac nghiem 2.28 mot phut, cau nho 2.33a bon dong bon phut: 5, khong phai 45.
+        assertEquals(5, bang.phut)
+        assertEquals(setOf("2.28", "2.33a"), bang.phutCua.keys)
     }
 
     @Test
@@ -293,174 +257,12 @@ class ChamTheoClaudeTest {
         assertTrue(ket.cac.single { it.ma == "2.28" }.coDe)
         assertTrue(ket.cac.single { it.ma == "8" }.coDe)
 
-        val bang = LuatCongGio.tinh(ket, bayGio = LocalDateTime.of(2026, 9, 23, 20, 0))
+        val bang = LuatCongGio.tinh(ket)
         // Chi 2.28 (trac nghiem, 1 phut) va 8 (2 dong) duoc tinh.
         assertEquals(3, bang.phut)
         assertEquals(setOf("2.28", "8"), bang.phutCua.keys)
         // Cau chup lai khong phai cau thieu so dong: khong hoi Ba Huy lan nua.
         assertTrue(bang.thieuDong.isEmpty())
-    }
-
-    // ------------------------------------------------------- vo dan do con soat
-
-    private val voSoat = VoDanDo.DanDo(
-        ngay = "2026-09-23",
-        cacDong = listOf(
-            VoDanDo.Dong("Toán: bài 2.28 trang 47", laBaiTap = true),
-            VoDanDo.Dong("KHTN: mang sách vở đầy đủ", laBaiTap = false)
-        ),
-        fileId = "ma-anh-vo"
-    )
-
-    @Test
-    fun vo_con_soat_thi_ngay_va_bai_lay_tu_ban_soat_claude_chi_noi_lam_het_chua() {
-        val giaTri = mapOf(
-            "cac" to listOf(
-                mapOf("ma" to "2.28", "dung" to true, "soDong" to 1, "trongDanDo" to true),
-                mapOf("ma" to "2.33a", "dung" to true, "soDong" to 4, "trongDanDo" to false)
-            ),
-            // Dien thoai hay Claude ghi khac thi cung khong doi duoc ngay va danh sach bai.
-            "ngayDanDo" to "2026-09-20",
-            "baiDuocGiao" to listOf("bài 9"),
-            "lamHetDanDo" to true,
-            "coAnhDanDo" to true
-        )
-        val ket = ChamTheoClaude.banCham(context, giaTri, pham, voSoat)!!
-        assertEquals("2026-09-23", ket.ngayDanDo)
-        assertEquals(listOf("Toán: bài 2.28 trang 47"), ket.baiDuocGiao)
-        assertTrue(ket.lamHetDanDo)
-        assertTrue(ket.cac.single { it.ma == "2.28" }.trongDanDo)
-        assertFalse(ket.cac.single { it.ma == "2.33a" }.trongDanDo)
-
-        // Toi hom do: goi 45 phut bao ca cau 2.33a (29/9/2026: khong con bai lam them chup
-        // anh tinh le ngoai goi).
-        val bang = LuatCongGio.tinh(ket, bayGio = LocalDateTime.of(2026, 9, 23, 20, 0))
-        assertEquals(LuatCongGio.PHUT_TRON_GOI_DAN_DO, bang.phut)
-    }
-
-    @Test
-    fun co_ban_soat_ma_dien_thoai_khong_bao_co_vo_thi_van_khong_coi_moi_cau_la_bai_giao() {
-        // Bang dieu khien ban cu: khong gui coAnhDanDo, khong noi trongDanDo.
-        val ds = listOf(mapOf("ma" to "2.33a", "dung" to true, "soDong" to 4))
-        val ket = ChamTheoClaude.banCham(context, ds, pham, voSoat)!!
-        // Quy tac 17 chi danh cho lan nop khong co vo nao. Co ban soat thi cau Claude
-        // khong noi gi la bai lam them, nhu may cham.
-        assertFalse(ket.cac.single().trongDanDo)
-        assertFalse(ket.lamHetDanDo)
-        assertEquals("2026-09-23", ket.ngayDanDo)
-    }
-
-    @Test
-    fun vo_con_soat_khong_giao_bai_tap_thi_khong_cau_nao_nam_trong_goi() {
-        val khongBai = voSoat.copy(
-            cacDong = listOf(VoDanDo.Dong("Tiết sau kiểm tra bài 2", laBaiTap = false))
-        )
-        val ket = ChamTheoClaude.banCham(
-            context,
-            mapOf(
-                "cac" to listOf(mapOf("ma" to "2.33a", "dung" to true, "soDong" to 4, "trongDanDo" to true)),
-                "lamHetDanDo" to true
-            ),
-            pham,
-            khongBai
-        )!!
-        assertFalse(ket.cac.single().trongDanDo)
-        assertTrue(ket.baiDuocGiao.isEmpty())
-        // Khong co bai giao thi may khong tu tinh goi, cau tinh le.
-        val tuTinh = LuatCongGio.tinh(ket, bayGio = LocalDateTime.of(2026, 9, 23, 20, 0))
-        assertFalse(tuTinh.daTinhGoi)
-        assertEquals(LuatCongGio.phutChoCau(ket.cac.single()), tuTinh.phut)
-        // Ba Huy da bam Duyet 45 phut duoi tin vo dan do: tu 29/9/2026 moi bai chup anh
-        // la bai dan do, nen bai nop sau goi nam trong goi, khong cong them phut (truoc do
-        // van tinh le).
-        val bang = LuatCongGio.tinh(
-            ket, bayGio = LocalDateTime.of(2026, 9, 23, 20, 0), goiDaCoHomNay = true
-        )
-        assertEquals(0, bang.phut)
-        assertEquals(listOf("2.33a"), bang.trongGoi.map { it.ma })
-    }
-
-    @Test
-    fun ban_vo_cua_lan_nop_luu_lai_duoc_theo_ma_bai() {
-        VoChoCham.luu(context, "thu-vo", voSoat.copy(anh = "/duong/gia/trang.jpg"))
-        val lai = VoChoCham.lay(context, "thu-vo")!!
-        assertEquals("2026-09-23", lai.ngay)
-        assertEquals(listOf("Toán: bài 2.28 trang 47"), lai.cacBai)
-        assertEquals("ma-anh-vo", lai.fileId)
-        // Chi giu chu, khong giu duong dan anh: tam anh di theo VoDanDo luc het han.
-        assertNull(lai.anh)
-        assertNull(VoChoCham.lay(context, "khong-co-bai-nay"))
-    }
-
-    // ------------------------------------------------- vo chi co anh, chua ai doc
-
-    private val chiCoAnh = VoDanDo.DanDo(
-        ngay = "2026-09-26",
-        cacDong = emptyList(),
-        luc = 8_000L,
-        fileId = "ma-anh-vo",
-        chuaDoc = true
-    )
-
-    @Test
-    fun vo_chi_co_anh_thi_ngay_va_bai_lay_tu_claude_doc_anh() {
-        val giaTri = mapOf(
-            "cac" to listOf(
-                mapOf("ma" to "2.28", "dung" to true, "soDong" to 1, "trongDanDo" to true),
-                mapOf("ma" to "2.33a", "dung" to true, "soDong" to 4, "trongDanDo" to false)
-            ),
-            "ngayDanDo" to "2026-09-23",
-            "baiDuocGiao" to listOf("Bài 2.28"),
-            "lamHetDanDo" to true,
-            "coAnhDanDo" to true
-        )
-        val ket = ChamTheoClaude.banCham(context, giaTri, pham, chiCoAnh)!!
-        // Khong co danh sach nao de de len: ban chi co anh khong phai "khong giao bai".
-        assertEquals("2026-09-23", ket.ngayDanDo)
-        assertEquals(listOf("Bài 2.28"), ket.baiDuocGiao)
-        assertTrue(ket.cac.single { it.ma == "2.28" }.trongDanDo)
-        assertFalse(ket.cac.single { it.ma == "2.33a" }.trongDanDo)
-
-        // Bai khong mang duoc anh trang vo (tablet chua gui xong): dien thoai bao khong
-        // co vo, va quy tac 17 van ap nhu lan nop khong co vo nao.
-        val khongAnh = ChamTheoClaude.banCham(
-            context,
-            mapOf("cac" to listOf(mapOf("ma" to "2.33a", "dung" to true, "trongDanDo" to false)), "coAnhDanDo" to false),
-            pham,
-            chiCoAnh.copy(fileId = null)
-        )!!
-        assertTrue(khongAnh.cac.single().trongDanDo)
-    }
-
-    @Test
-    fun bai_mang_ban_chi_co_anh_duoc_cham_theo_ban_da_doc_sau_do() {
-        VoChoCham.luu(context, "thu-vo-chua-doc", chiCoAnh)
-        try {
-            // Chua ai doc: van la ban chi co anh.
-            VoDanDo.luu(context, chiCoAnh)
-            assertTrue(VoChoCham.voChoBai(context, "thu-vo-chua-doc")!!.chuaDoc)
-
-            // Ba Huy nho Claude doc chinh tam do: bai nop truoc van cham theo ban da doc.
-            val daDoc = VoDanDo.tuClaude(
-                chiCoAnh,
-                mapOf(
-                    "chupLuc" to chiCoAnh.chupLuc,
-                    "ngay" to "2026-09-25",
-                    "cacDong" to listOf(mapOf("chu" to "Toán: bài 2.28 trang 47", "bai" to true))
-                )
-            ).ban!!
-            VoDanDo.luu(context, daDoc)
-            val dung = VoChoCham.voChoBai(context, "thu-vo-chua-doc")!!
-            assertFalse(dung.chuaDoc)
-            assertEquals(listOf("Toán: bài 2.28 trang 47"), dung.cacBai)
-            assertNull(dung.anh)
-
-            // Con chup trang khac roi soat: khong phai tam anh bai kia mang theo.
-            VoDanDo.luu(context, daDoc.copy(chupLuc = 9_999L))
-            assertTrue(VoChoCham.voChoBai(context, "thu-vo-chua-doc")!!.chuaDoc)
-        } finally {
-            VoDanDo.xoa(context)
-        }
     }
 
     @Test

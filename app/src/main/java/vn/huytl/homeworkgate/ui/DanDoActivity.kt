@@ -26,25 +26,24 @@ import vn.huytl.homeworkgate.databinding.StActivityDanDoBinding
 import vn.huytl.homeworkgate.databinding.StDongDanDoBinding
 import java.io.File
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
-import vn.huytl.homeworkgate.data.LuatCongGio
 import java.time.LocalDate
 import java.time.LocalDateTime
 
 /**
  * Chup trang vo dan do mot lan, soat lai cai may doc ra, roi luu cho ca ngay.
  *
- * VI SAO PHAI SOAT. Ban doc ra quyet dinh tron goi 45 phut va quyet dinh cau nao la
- * bai lam them - xem [vn.huytl.homeworkgate.data.LuatCongGio]. Truoc day may doc
- * tam anh ngay trong luc cham bai, doc nham thi con mat phut ma khong biet vi sao.
+ * VI SAO PHAI SOAT. Ban doc ra la thu may dung de nhac bai theo tung mon, xem
+ * [vn.huytl.homeworkgate.data.NhacBai]. Tu 30/9/2026 no khong con dinh toi so phut: Ba
+ * Huy bo tron goi 45 phut.
  *
  * Do tren bon trang vo that cua Le Hoa cho thay soat khong phai buoc cho co: may
  * doc "trang 19" thanh "trang 14", "luyen tap 3 trang 59" thanh "quyen tap 3 trang
  * 54", va xep hai bai tap that vao muc viec khac. Khong co buoc nay thi ba cho do
- * deu lang le di vao so phut.
+ * deu lang le di vao loi nhac.
  *
  * MOT TRANG CHUA NHIEU NGAY. Vo cua Le Hoa chep lien tay, mot trang co hai ba buoi.
- * May tra ve tung khoi, man nay bay ra thanh hang nut de con chon dung buoi cua
- * hom nay - chu khong tu doan, vi doan sai la lay nham bai cua hom khac.
+ * May tra ve tung khoi, man nay bay ra thanh hang nut de con chon dung buoi vua hoc
+ * - chu khong tu doan, vi doan sai la nhac nham bai cua hom khac.
  *
  * KHONG CHAN CON SUA GI CA. O ngay, o chu va o tich deu sua tay duoc. Chan lai thi
  * phai chan bang mot cai luat nao do, ma moi luat o day deu se sai vao dung hom co
@@ -266,7 +265,7 @@ class DanDoActivity : AppCompatActivity() {
         v.root.isSaveFromParentEnabled = false
         // Giu o tich goc cua may (hay cua Claude) theo tung dong. Mat cai nay thi luc
         // luu dong nao cung thanh "con tu them", va tin gui Ba Huy khong con bao duoc
-        // cho con doi o tich - thu quyet dinh tron goi 45 phut.
+        // cho con doi o tich.
         v.root.tag = x.mayTich
         v.oChu.setText(x.chu)
         v.oTich.isChecked = x.laBaiTap
@@ -307,11 +306,11 @@ class DanDoActivity : AppCompatActivity() {
     /**
      * Chi luu DUNG buoi dang chon. Cac buoi khac tren trang la cua hom khac.
      *
-     * Ngay tren vo khong tinh duoc cho bai hom nay thi hoi lai truoc. Truoc day man nay
-     * luu im lang, roi [VoDanDo.donDep] xoa ban do o lan mo man chon mon ke tiep: dong
-     * "Chụp vở dặn dò hôm nay" hien lai nhu chua chup, va khong co tron goi. Hay gap nhat
-     * la may doc sai ngay, hay co ghi ngay han nop. Bam van gui thi ba Huy van nhan duoc
-     * vo, chi la may khong giu no de tinh gio.
+     * Ngay tren vo quyet dong nao nhac cho buoi nao, nen ngay la la hoi lai truoc:
+     *  - ngay sau hom nay: vo ghi ngay cua buoi vua hoc, khong ghi ngay cua buoi sau. Hay
+     *    gap nhat la may doc sai ngay, hay con quen thoi cu ghi ngay mai;
+     *  - vo cua buoi truoc (buoi hoc sau ngay do da bat dau): van luu de nhac nhung mon
+     *    chua toi tiet, nhung man chinh se van hien "Chụp vở dặn dò hôm nay", nen noi ra.
      */
     private fun luu(daHoiNgay: Boolean = false) {
         val cac = docManHinh()
@@ -319,17 +318,30 @@ class DanDoActivity : AppCompatActivity() {
             Toast.makeText(this, "Chưa có dòng nào để lưu", Toast.LENGTH_SHORT).show()
             return
         }
-        if (!daHoiNgay && !LuatCongGio.ngayDanDoHopLe(ngay, LocalDateTime.now())) {
+        val homNay = LocalDate.now()
+        val chuNgay = "${ngay.dayOfMonth}/${ngay.monthValue}/${ngay.year}"
+        if (!daHoiNgay && ngay.isAfter(homNay)) {
             MaterialAlertDialogBuilder(this)
-                .setTitle("Ngày trên vở không tính cho hôm nay")
+                .setTitle("Ngày trên vở là ngày sau hôm nay")
                 .setMessage(
-                    "Vở ghi ngày ${ngay.dayOfMonth}/${ngay.monthValue}/${ngay.year}. Máy chỉ dùng " +
-                        "vở ghi ngày hôm nay, hoặc hôm qua khi chưa quá ${LuatCongGio.GIO_HET_HAN_SANG} giờ trưa, nên sẽ không " +
-                        "giữ vở này để tính giờ. Nếu đây là vở của buổi học hôm nay (máy đọc sai " +
-                        "ngày, hay cô ghi ngày hạn nộp) thì bấm Sửa ngày."
+                    "Vở ghi ngày $chuNgay. Vở dặn dò ghi ngày của buổi vừa học, cô dặn gì là " +
+                        "cho tiết sau của môn đó. Nếu máy đọc sai ngày thì bấm Sửa ngày."
                 )
                 .setPositiveButton("Sửa ngày") { _, _ -> chonNgay() }
-                .setNegativeButton("Vẫn gửi ba Huy") { _, _ -> luu(daHoiNgay = true) }
+                .setNegativeButton("Vẫn lưu") { _, _ -> luu(daHoiNgay = true) }
+                .show()
+            return
+        }
+        if (!daHoiNgay && !VoDanDo.conDung(ngay, LocalDateTime.now())) {
+            MaterialAlertDialogBuilder(this)
+                .setTitle("Vở của buổi học trước")
+                .setMessage(
+                    "Vở ghi ngày $chuNgay. Máy vẫn giữ để nhắc bài môn nào chưa tới tiết. " +
+                        "Vở của buổi học mới thì chụp thêm sau nhé. Nếu máy đọc sai ngày thì " +
+                        "bấm Sửa ngày."
+                )
+                .setPositiveButton("Lưu") { _, _ -> luu(daHoiNgay = true) }
+                .setNegativeButton("Sửa ngày") { _, _ -> chonNgay() }
                 .show()
             return
         }
@@ -349,7 +361,7 @@ class DanDoActivity : AppCompatActivity() {
         )
         VoDanDo.luu(this, ban)
         // Gui ca anh lan noi dung con vua xac nhan. Ba doi chieu duoc chu con tich
-        // voi chu tren giay, va ngay khong co bai tap thi bam nut duyet ngay duoi.
+        // voi chu tren giay, va thay tung dong se nhac cho buoi nao.
         DanDoSender.guiNen(this, ban)
         // Chua cai dat xong thi khong co cho nao de gui; dung hua voi con la da gui.
         val daGui = Prefs.get(this).isConfigured
@@ -376,7 +388,7 @@ class DanDoActivity : AppCompatActivity() {
         val dangGui = vo != null && DanDoSender.dangGui(vo.luc)
         b.chuHong.text = when {
             daToi || vo == null -> "Máy chưa đọc được trang vở này. Ảnh đã gửi " +
-                "$ba, ba sẽ nhờ Claude đọc giúp.\n\nMấy lần nộp bài sau không phải chụp lại vở."
+                "$ba, ba sẽ nhờ Claude đọc giúp.\n\nĐọc xong thì máy nhắc bài theo vở này."
             dangGui -> "Máy chưa đọc được trang vở này. Đang gửi ảnh cho $ba…"
             else -> "Máy chưa đọc được trang vở này, mà ảnh cũng chưa gửi được cho $ba " +
                 "(có thể do mất mạng). Có mạng rồi thì bấm gửi lại."
@@ -410,8 +422,8 @@ class DanDoActivity : AppCompatActivity() {
      * May doc khong duoc: giu tam anh lam vo dan do cua ngay, chua co chu, roi gui ba
      * Huy. Xem [VoDanDo.DanDo.chuaDoc].
      *
-     * Tu day con khong phai chup lai vo o moi lan nop: tablet gan tam nay theo tung bai,
-     * ba Huy nho Claude doc duoc, va lan Nho Claude cham dau tien cung doc duoc no.
+     * Ba Huy nho Claude doc tren Bang dieu khien; doc xong thi [VoDanDo.tuClaude] luu chu,
+     * va [vn.huytl.homeworkgate.data.NhacBai] nhac bai theo trang nay.
      *
      * Ngay tam la hom nay, vi chua ai doc thi chua biet vo ghi ngay nao. Doc xong thi
      * ngay ghi tren vo thay vao.
@@ -433,7 +445,7 @@ class DanDoActivity : AppCompatActivity() {
         DanDoSender.guiNen(this, ban)
         Toast.makeText(
             this,
-            "Đang gửi ảnh cho ${getString(R.string.parent_name)}. Mấy lần nộp sau không phải chụp lại vở.",
+            "Đang gửi ảnh cho ${getString(R.string.parent_name)} để nhờ Claude đọc.",
             Toast.LENGTH_LONG
         ).show()
         finish()

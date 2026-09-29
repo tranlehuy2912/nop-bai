@@ -10,6 +10,7 @@ import org.junit.Assert.assertNull
 import org.junit.Assert.assertTrue
 import org.junit.Test
 import org.junit.runner.RunWith
+import vn.huytl.homeworkgate.data.NhacBai
 import vn.huytl.homeworkgate.data.VoDanDo
 import java.io.File
 import java.time.LocalDate
@@ -28,7 +29,10 @@ class VoDanDoTest {
     private val context = InstrumentationRegistry.getInstrumentation().targetContext
 
     @After
-    fun don() = VoDanDo.xoa(context)
+    fun don() {
+        VoDanDo.xoa(context)
+        NhacBai.xoaHet(context)
+    }
 
     private fun anhGia(): File =
         File(context.cacheDir, "vo_thu_${System.nanoTime()}.jpg").apply { writeText("x") }
@@ -75,7 +79,7 @@ class VoDanDoTest {
 
     /**
      * Vo dan do hom qua van dung duoc vao buoi sang, va don dep phai theo dung luat
-     * do chu khong tu dat mot moc khac - xem [vn.huytl.homeworkgate.data.LuatCongGio].
+     * do chu khong tu dat mot moc khac - xem [VoDanDo.conDung].
      */
     @Test
     fun banHomQuaConDungDuocVaoBuoiSang() {
@@ -93,19 +97,18 @@ class VoDanDoTest {
     /**
      * Qua ngay hoc moi thi ban cu KHONG duoc dung lai.
      *
-     * Day la cho de sai nhat cua ca duong nay: neu ban thu Hai con song sang chieu
-     * thu Ba thi bai co giao thu Ba bi cham theo danh sach cua thu Hai, va con hoac
-     * mat oan tron goi hoac duoc no cho mot hom khac han.
+     * Qua luc vao buoi hoc sau thi vo can chup la vo cua buoi moi: man chinh phai hien
+     * lai "Chụp vở dặn dò hôm nay", khong bay ra vo cua hom truoc.
      */
     @Test
     fun quaNgayHocMoiThiBanCuHetHan() {
         val f = anhGia()
         // Thu Hai va chieu thu Ba co dinh. Lay "hom qua" theo hom nay thi test nay hong
-        // moi chu nhat: vo thu Bay dung duoc ca ngay chu nhat, xem LuatCongGio.ngayDanDoHopLe.
+        // moi chu nhat: vo thu Bay dung duoc ca ngay chu nhat, xem VoDanDo.conDung.
         val homQua = LocalDate.of(2026, 9, 21)
         VoDanDo.luu(context, ban(homQua, f))
 
-        // Chieu hom sau, sau moc LuatCongGio.GIO_HET_HAN_SANG.
+        // Chieu hom sau, sau luc vao hoc buoi chieu thu Ba (12:45).
         val chieu = LocalDateTime.of(2026, 9, 22, 17, 0)
         assertNull("chieu hom sau ban cu khong con dung duoc", VoDanDo.conHieuLuc(context, chieu))
 
@@ -199,28 +202,65 @@ class VoDanDoTest {
         assertTrue(VoDanDo.tuClaude(cu, ketQuaClaude(4_000L)).loi.isNotBlank())
     }
 
+    /**
+     * Vo song toi luc vao buoi hoc ke tiep, theo thoi khoa bieu (30/9/2026). Truoc do vo
+     * chi song toi 12 gio trua hom sau, rieng vo thu Bay toi het chu nhat: luat do coi
+     * bai trong vo la bai cho ngay mai.
+     */
     @Test
-    fun lanChamDauDocDuocVoThiGiuLaiDanhSach() {
-        val cu = chiCoAnh(chup = 5_000L)
-        // Xet han vo theo luc cham: 10 gio sang 23/9, vo ngay 23/9 con han.
-        val luc23 = java.time.LocalDateTime.of(2026, 9, 23, 10, 0)
-            .atZone(java.time.ZoneId.systemDefault()).toInstant().toEpochMilli()
-        val moi = VoDanDo.tuLanCham(cu, 5_000L, "Thứ ba, ngày 23 tháng 9 năm 2026", listOf("Bài 2.28"), luc23)!!
-        assertFalse(moi.chuaDoc)
-        assertEquals(VoDanDo.NGUON_LUC_CHAM, moi.nguon)
-        assertEquals("2026-09-23", moi.ngay)
-        assertEquals(listOf("Bài 2.28"), moi.cacBai)
-        assertEquals(5_000L, moi.chupLuc)
-        // Doc ra la hom do khong giao bai: van giu, va la "khong co bai tap" that.
-        assertTrue(VoDanDo.tuLanCham(cu, 5_000L, "2026-09-23", emptyList(), luc23)!!.cacBai.isEmpty())
-        // Lan cham doc ra mot khoi ngay cu tren trang vo: khong giu, van giu ban chi co anh.
-        assertNull(VoDanDo.tuLanCham(cu, 5_000L, "2026-09-20", listOf("Bài 2.28"), luc23))
+    fun voSongToiLucVaoBuoiHocKeTiep() {
+        val thuHai = LocalDate.of(2026, 9, 28)
+        // Chieu thu Ba vao hoc 12:45.
+        assertTrue(VoDanDo.conDung(thuHai, LocalDateTime.of(2026, 9, 28, 20, 0)))
+        assertTrue(VoDanDo.conDung(thuHai, LocalDateTime.of(2026, 9, 29, 12, 30)))
+        assertFalse(VoDanDo.conDung(thuHai, LocalDateTime.of(2026, 9, 29, 12, 45)))
 
-        // Khong doc ra ngay, tam anh khac, hay ban da co chu: khong giu.
-        assertNull(VoDanDo.tuLanCham(cu, 5_000L, null, listOf("Bài 2.28")))
-        assertNull(VoDanDo.tuLanCham(cu, 4_000L, "2026-09-23", listOf("Bài 2.28")))
-        assertNull(VoDanDo.tuLanCham(moi, 5_000L, "2026-09-23", listOf("Bài 2.28")))
-        assertNull(VoDanDo.tuLanCham(null, 5_000L, "2026-09-23", listOf("Bài 2.28")))
+        // Vo thu Nam: sang thu Sau co tiet Tin 9:15, nen het han luc do.
+        val thuNam = LocalDate.of(2026, 10, 1)
+        assertTrue(VoDanDo.conDung(thuNam, LocalDateTime.of(2026, 10, 2, 9, 0)))
+        assertFalse(VoDanDo.conDung(thuNam, LocalDateTime.of(2026, 10, 2, 9, 15)))
+
+        // Vo thu Bay: dung het chu nhat, toi 9:15 sang thu Hai (tiet the duc).
+        val thuBay = LocalDate.of(2026, 10, 3)
+        assertTrue(VoDanDo.conDung(thuBay, LocalDateTime.of(2026, 10, 4, 21, 0)))
+        assertTrue(VoDanDo.conDung(thuBay, LocalDateTime.of(2026, 10, 5, 8, 0)))
+        assertFalse(VoDanDo.conDung(thuBay, LocalDateTime.of(2026, 10, 5, 9, 30)))
+
+        // Truoc Tet (nghi 1/2 toi 10/2/2027): vo thu Bay 30/1 dung toi chieu thu Nam 11/2.
+        val truocTet = LocalDate.of(2027, 1, 30)
+        assertTrue(VoDanDo.conDung(truocTet, LocalDateTime.of(2027, 2, 8, 20, 0)))
+        assertFalse(VoDanDo.conDung(truocTet, LocalDateTime.of(2027, 2, 11, 13, 0)))
+
+        // Vo ghi ngay mai thi khong: vo ghi ngay cua buoi vua hoc.
+        assertFalse(VoDanDo.conDung(LocalDate.of(2026, 9, 29), LocalDateTime.of(2026, 9, 28, 20, 0)))
+        assertFalse(VoDanDo.conDung(null, LocalDateTime.of(2026, 9, 28, 20, 0)))
+    }
+
+    /**
+     * Luu vo la chep chu sang so nhac bai. Vo het han roi thi chu van o [NhacBai] toi tiet
+     * sau cua tung mon, xem NhacBaiTest.
+     */
+    @Test
+    fun luuVoThiChepChuSangNhacBai() {
+        // Vo hom nay: dong nao cung han sau hom nay, nen chac chan con trong so.
+        val homNay = LocalDate.now()
+        VoDanDo.luu(context, ban(homNay, anhGia()))
+        val trang = NhacBai.docTrang(context).single()
+        assertEquals(homNay, trang.ngay)
+        assertEquals(
+            listOf("Toán: làm bài 2 trang 36", "KHTN: mang sách vở đầy đủ"),
+            trang.cacDong.map { it.chu }
+        )
+
+        // Vo luu bang app cu (truoc khi co NhacBai): lan don dep dau tien chep chu sang.
+        NhacBai.xoaHet(context)
+        VoDanDo.donDep(context)
+        assertEquals(homNay, NhacBai.docTrang(context).single().ngay)
+
+        // Ban chi co anh thi chua co gi de nhac.
+        NhacBai.xoaHet(context)
+        VoDanDo.luu(context, ban(homNay, null).copy(cacDong = emptyList(), chuaDoc = true))
+        assertTrue(NhacBai.docTrang(context).isEmpty())
     }
 
     @Test

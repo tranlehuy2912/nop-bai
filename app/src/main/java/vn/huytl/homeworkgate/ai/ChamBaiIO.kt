@@ -26,9 +26,6 @@ object ChamBaiIO {
 
     fun viet(ket: KetQuaCham): String = JSONObject()
         .put("mon", ket.mon)
-        .put("ngay_dan_do", ket.ngayDanDo)
-        .put("lam_het_dan_do", ket.lamHetDanDo)
-        .put("bai_duoc_giao", JSONArray(ket.baiDuocGiao))
         .put("tom_tat", ket.tomTat)
         .put(
             "cac_cau",
@@ -46,7 +43,6 @@ object ChamBaiIO {
                             .put("dung", c.dung)
                             .put("doc_ro", c.docRo)
                             .put("dang", c.dang.name)
-                            .put("trong_dan_do", c.trongDanDo)
                             .put("so_dong", c.soDong)
                             .put("nhan_xet", c.nhanXet)
                             .put("loai_loi", c.loaiLoi)
@@ -76,7 +72,6 @@ object ChamBaiIO {
                 docRo = c.optBoolean("doc_ro"),
                 dang = runCatching { DangBai.valueOf(c.optString("dang")) }
                     .getOrDefault(DangBai.CAU_NHO),
-                trongDanDo = c.optBoolean("trong_dan_do"),
                 soDong = c.optInt("so_dong"),
                 nhanXet = c.optString("nhan_xet"),
                 loaiLoi = c.optString("loai_loi"),
@@ -88,9 +83,6 @@ object ChamBaiIO {
         return KetQuaCham(
             mon = o.optString("mon"),
             cac = cac,
-            ngayDanDo = o.optString("ngay_dan_do").takeIf { it.isNotBlank() && it != "null" },
-            lamHetDanDo = o.optBoolean("lam_het_dan_do"),
-            baiDuocGiao = docDong(o.optJSONArray("bai_duoc_giao")),
             tomTat = o.optString("tom_tat")
         )
     }

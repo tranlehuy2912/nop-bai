@@ -43,7 +43,6 @@ enum class DangBai {
  * @param docRo AI co doc ro muc nay khong. Khong ro thi dung tu duyet - de Ba Huy
  *   nhin. Thu nghiem ngay 13/9 cho thay gap chu mo, model co xu huong dien vao
  *   bang dap an dung ma no biet, tuc la bai sai co the thanh bai dung.
- * @param trongDanDo muc nay nam trong bai co giao (vo dan do) hay la bai lam them.
  * @param soDong so dong LAM BAI cua muc nay: khong tinh dong chep de, dong bo trong,
  *   dong da gach xoa. Day la thuoc do cong suc - xem [LuatCongGio].
  */
@@ -54,7 +53,6 @@ data class CauCham(
     val dung: Boolean = false,
     val docRo: Boolean = true,
     val dang: DangBai = DangBai.CAU_NHO,
-    val trongDanDo: Boolean = false,
     val soDong: Int = 0,
     val nhanXet: String = "",
     /**
@@ -211,19 +209,11 @@ object LoaiLoi {
 /**
  * Toan bo ket qua AI cham mot lan nop.
  *
- * @param ngayDanDo ngay ghi trong vo dan do, dang yyyy-MM-dd. Null la khong chup
- *   vo dan do, hoac chup ma khong doc duoc ngay.
- * @param lamHetDanDo AI doi chieu bai lam voi vo dan do: da lam het chua.
- * @param baiDuocGiao ten cac bai tap ma vo dan do giao phai lam: "bai 2", "SBT 2.26".
- *   Rong nghia la vo dan do khong giao bai tap nao - chi dan viec khong nop duoc
- *   bai ("mang sach vo day du", "tiet sau kiem tra", "hoc thuoc"). Luc do khong co
- *   "lam het bai co giao" de ma tra tron goi; xem [LuatCongGio].
+ * Truoc 30/9/2026 con ba truong ve vo dan do (ngay trong vo, bai co giao, da lam het
+ * chua) de tinh tron goi. Bo tron goi thi bo ca ba: cham bai khong can vo nua.
  */
 data class KetQuaCham(
     val mon: String = "",
     val cac: List<CauCham> = emptyList(),
-    val ngayDanDo: String? = null,
-    val lamHetDanDo: Boolean = false,
-    val baiDuocGiao: List<String> = emptyList(),
     val tomTat: String = ""
 )

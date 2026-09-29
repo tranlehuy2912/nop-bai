@@ -6,11 +6,10 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
-import org.json.JSONArray
-import org.json.JSONObject
 import vn.huytl.homeworkgate.R
-import vn.huytl.homeworkgate.data.LuatCongGio
+import vn.huytl.homeworkgate.data.NhacBai
 import vn.huytl.homeworkgate.data.Prefs
+import vn.huytl.homeworkgate.data.TinhLoiNhac
 import vn.huytl.homeworkgate.data.VoDanDo
 import vn.huytl.homeworkgate.ui.ImageUtil
 import java.io.File
@@ -27,21 +26,15 @@ import java.util.Locale
  * trang vo dan do di lac vao duong duyet gio.
  *
  * VI SAO PHAI GUI. Truoc day trang vo di kem moi lan nop bai nen ba van thay no.
- * Tach thanh mot buoc rieng la ba mat duong nhin, ma o tich tren man do lai la thu
- * quyet dinh tron goi 45 phut. Gui anh kem danh sach thi ba liec mot cai la doi
- * chieu duoc chu con tich voi chu tren giay.
+ * Tach thanh mot buoc rieng la ba mat duong nhin. Gui anh kem danh sach thi ba liec mot
+ * cai la doi chieu duoc chu con tich voi chu tren giay.
  *
- * NGAY KHONG CO BAI TAP THI GAN THEM NUT. Ngay do khong co tron goi tu dong - luat
- * doi phai co bai tap duoc giao, xem [LuatCongGio]. Nhung con van phai on bai hay
- * hoc thuoc, nen quyen cho 45 phut do chuyen sang tay Ba Huy, bam ngay duoi tin nay.
+ * MOI DONG GHI KEM BUOI SE NHAC (tu 30/9/2026). Vo dan do dung de nhac bai theo tiet sau
+ * cua tung mon, xem [NhacBai]. May doc nham ten mon thi nhac sai buoi, va dong nay la cho
+ * Ba Huy thay ngay. Truoc do ngay khong co bai tap thi tin nay gan nut Duyet 45 phut; bo
+ * tron goi thi bo luon nut.
  */
 object DanDoSender {
-
-    /** Tien to callback_data: duyet tron goi cho ngay do. */
-    const val MA_DUYET = "dd:"
-
-    /** Tien to callback_data: khong duyet. */
-    const val MA_TU_CHOI = "ddk:"
 
     /**
      * Gui o luong nen, khong cho ket qua. Chep [Notifier]: scope rieng cua object
@@ -95,18 +88,16 @@ object DanDoSender {
         val prefs = Prefs.get(context)
         val client = TelegramClient(prefs.botToken)
         val chuThich = chuThich(d, context.getString(R.string.child_name))
-        // Ban chi co anh thi cacBai rong vi chua ai doc, khong phai co khong giao bai.
-        val banPhim = if (!d.chuaDoc && d.cacBai.isEmpty()) banPhimDuyet(d.ngay) else null
 
         val goc = d.anh?.let { File(it) }?.takeIf { it.exists() }
         if (goc == null) {
-            client.sendMessage(prefs.parentChatId, chuThich, banPhim)
+            client.sendMessage(prefs.parentChatId, chuThich)
             return
         }
         val guiDi = if (shrink) ImageUtil.shrinkInPlace(goc) else goc
-        val daGui = client.sendPhoto(prefs.parentChatId, guiDi, chuThich, banPhim)
-        // Giu ma anh de moi bai nop sau do mang theo dung tam nay, cho Claude doi chieu
-        // danh sach con tich voi chu tren giay. Xem [VoDanDo.DanDo.fileId].
+        val daGui = client.sendPhoto(prefs.parentChatId, guiDi, chuThich, null)
+        // Giu ma anh de Bang dieu khien tai lai dung tam nay khi Ba Huy nho Claude doc.
+        // Xem [VoDanDo.DanDo.fileId].
         daGui.fileIds.firstOrNull()?.let { VoDanDo.ghiMaAnh(context, d.luc, it) }
         // shrinkInPlace tra ve chinh file goc khi khong giai ma duoc anh; xoa luc do
         // la mat ban duy nhat trong may.
@@ -117,19 +108,17 @@ object DanDoSender {
      * Chu di kem anh.
      *
      * KE RIENG CHO CON SUA KHAC MAY. Do khong phai de bat loi con; do la cho duy
-     * nhat trong ca duong nay ma mot nguoi co the doi so phut bang cach go tay, nen
+     * nhat trong ca duong nay ma mot nguoi co the doi loi nhac bang cach go tay, nen
      * no phai hien ra chu khong lang le troi qua.
      */
     fun chuThich(d: VoDanDo.DanDo, con: String = "Lê Hòa"): String = buildString {
         val ngay = d.ngayDoc()
         val gio = SimpleDateFormat("HH:mm 'ngày' dd/MM", Locale("vi", "VN")).format(Date())
         if (d.chuaDoc) {
-            // May doc khong duoc, con gui anh sang. Noi ro hai duong doc de Ba Huy biet
-            // khong can lam gi ngay: lan Nho Claude cham dau tien cung doc duoc.
+            // May doc khong duoc, con gui anh sang. Chua ai doc thi chua co gi de nhac.
             append("📒 ").append(con).append(" chụp vở dặn dò lúc ").append(gio).append('.')
             append("\n\nMáy chưa đọc được trang này. Ba Huy mở Bảng điều khiển, chạm thẻ vở ")
-            append("dặn dò ở tab Bảng để nhờ Claude đọc. Không đọc riêng thì lần Nhờ Claude ")
-            append("chấm đầu tiên sẽ đọc luôn.")
+            append("dặn dò ở tab Bảng để nhờ Claude đọc. Đọc xong thì máy nhắc bài theo trang này.")
             return@buildString
         }
         append("📒 ")
@@ -138,17 +127,28 @@ object DanDoSender {
         if (ngay != null) append(" ngày ${ngay.dayOfMonth}/${ngay.monthValue}")
         append(".\nLúc ").append(gio).append('.')
 
+        // Buoi se nhac cua tung dong, tinh y nhu [NhacBai] tinh.
+        val hanCua = ngay?.let { n ->
+            NhacBai.cacMuc(listOf(NhacBai.Trang(n, d.cacDong))).associateBy { it.chu }
+        }.orEmpty()
+        fun kem(chu: String): String = hanCua[chu]?.let {
+            "$chu → ${TinhLoiNhac.moTaBuoi(it.buoi)} ${it.ngayHan.dayOfMonth}/${it.ngayHan.monthValue}"
+        } ?: chu
+
         if (d.cacBai.isEmpty()) {
             append("\n\nHôm đó cô KHÔNG giao bài tập nào.")
         } else {
             append("\n\nBài phải làm rồi nộp:")
-            d.cacBai.forEach { append("\n• ").append(it) }
+            d.cacBai.forEach { append("\n• ").append(kem(it)) }
         }
 
         val khac = d.dongKhac
         if (khac.isNotEmpty()) {
             append("\n\nDặn dò khác:")
-            khac.forEach { append("\n· ").append(it) }
+            khac.forEach { append("\n· ").append(kem(it)) }
+        }
+        if (hanCua.isNotEmpty()) {
+            append("\n\nMáy nhắc ").append(con).append(" từ hôm trước buổi đó.")
         }
 
         val sua = d.cacDong.filter { it.conSua }
@@ -161,29 +161,5 @@ object DanDoSender {
             }
             tuThem.forEach { append("\n+ tự thêm dòng: ").append(it.chu) }
         }
-
-        if (d.cacBai.isEmpty()) {
-            append("\n\nHôm đó không có bài tập nên máy không tự tính trọn gói ")
-            append(LuatCongGio.PHUT_TRON_GOI_DAN_DO).append(" phút. Ba Huy duyệt thì bấm nút dưới.")
-        }
-    }
-
-    private fun banPhimDuyet(ngay: String): JSONObject {
-        val rows = JSONArray()
-        rows.put(
-            JSONArray().put(
-                JSONObject()
-                    .put("text", "Duyệt ${LuatCongGio.PHUT_TRON_GOI_DAN_DO} phút")
-                    .put("callback_data", "$MA_DUYET$ngay")
-            )
-        )
-        rows.put(
-            JSONArray().put(
-                JSONObject()
-                    .put("text", "Không duyệt")
-                    .put("callback_data", "$MA_TU_CHOI$ngay")
-            )
-        )
-        return JSONObject().put("inline_keyboard", rows)
     }
 }

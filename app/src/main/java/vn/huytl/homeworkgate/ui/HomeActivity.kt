@@ -36,6 +36,7 @@ import vn.huytl.homeworkgate.data.GiaiDe
 import vn.huytl.homeworkgate.data.LuatTuVung
 import vn.huytl.homeworkgate.data.KhoTinCuaCo
 import vn.huytl.homeworkgate.data.NgayNghi
+import vn.huytl.homeworkgate.data.NhacBai
 import vn.huytl.homeworkgate.data.Prefs
 import vn.huytl.homeworkgate.data.Mang
 import vn.huytl.homeworkgate.data.SoCaiBai
@@ -323,11 +324,11 @@ class HomeActivity : AppCompatActivity() {
         // Het tran trong ngay thi nut nop bai khong lam duoc gi ngoai hien mot cau
         // toast. De no sang xanh nhu binh thuong la moi con bam di bam lai roi tuong
         // may hong.
-        // Khong con tran ngay chan nut nay (29/9/2026). Hom da tinh tron goi bai dan do thi
-        // nop them bai chup khong duoc gi (moi bai chup deu la dan do), nen nut chinh doi
-        // thanh lam bai tren may - xem [LamBaiActivity].
+        // Khong con tran ngay chan nut nay (29/9/2026). Bai chup anh hom nay da du tran thi
+        // nop them bai chup khong duoc gi, nen nut chinh doi thanh lam bai tren may - xem
+        // [LamBaiActivity]. Truoc 30/9/2026 moc doi la luc da tinh tron goi vo dan do.
         val hetLuot = false
-        val goiDaCo = SoCaiBai.goiDaCoHomNay(this)
+        val hetTranAnh = SoCaiBai.hetTranAnhHomNay(this)
         // Con viec nha thi khong bam chơi duoc: man chan van che ca may, bam vao
         // chi ton mot cai bam ma khong thay gi doi. Nop bai thi van cho - bai co the
         // da lam xong tu truoc, va giu lai cung khong duoc gi.
@@ -356,7 +357,7 @@ class HomeActivity : AppCompatActivity() {
             choDuyet -> "Nộp thêm bài nữa"
             gate.state == GateState.PAUSED -> "Chơi tiếp"
             gate.isOpen() -> "Tạm dừng, giữ giờ lại"
-            goiDaCo -> "Làm bài trên máy"
+            hetTranAnh -> "Làm bài trên máy"
             else -> getString(R.string.home_submit)
         }
 
@@ -375,7 +376,7 @@ class HomeActivity : AppCompatActivity() {
         binding.btnNopThem.visibility = when {
             baDangDung -> View.GONE
             choDuyet -> View.VISIBLE
-            dangCoGi && !goiDaCo && gate.conChoNopThem() -> View.VISIBLE
+            dangCoGi && !hetTranAnh && gate.conChoNopThem() -> View.VISIBLE
             else -> View.GONE
         }
         binding.btnNopThem.text = when {
@@ -593,10 +594,11 @@ class HomeActivity : AppCompatActivity() {
          * [vn.huytl.homeworkgate.data.KhaiChoCham.cauChoCham]. Hang cho rong thi ham do tra
          * ve ngay, khong hoi kho.
          */
-        // Hom da co goi thi khong nop lai cau sai bang anh nua (29/9/2026): cau sai cua bai
-        // dan do trong ngan hang chuyen sang lam tren may sau 24 gio, xem [LamTrenMay].
-        val goiDaCo = SoCaiBai.goiDaCoHomNay(this)
-        val canSua = if (goiDaCo) emptyList() else SoCaiBai.dangChoSua(this).let { ds ->
+        // Bai chup anh da du tran hom nay thi khong nop lai cau sai bang anh nua: sua xong cung
+        // khong ra phut. Cau sai trong ngan hang chuyen sang lam tren may sau 24 gio, xem
+        // [LamTrenMay]. Truoc 30/9/2026 moc nay la luc da tinh tron goi.
+        val hetTranAnh = SoCaiBai.hetTranAnhHomNay(this)
+        val canSua = if (hetTranAnh) emptyList() else SoCaiBai.dangChoSua(this).let { ds ->
             val cho = vn.huytl.homeworkgate.data.KhaiChoCham.cauChoCham(this)
             if (cho.isEmpty()) ds else ds.filterNot { it.khoa in cho }
         }
@@ -621,9 +623,8 @@ class HomeActivity : AppCompatActivity() {
         BaiGuiHong.cacLan(this).forEach { themViecGuiHong(it) }
 
         /*
-         * Vo dan do nam ngay man chinh (29/9/2026), khong chi trong man Nop bai: hom da co
-         * goi thi nut Nop bai an, ma buoi toi van phai chup duoc vo moi de de on truoc kiem
-         * tra mo ngay tu toi hom co bao.
+         * Vo dan do nam ngay man chinh (29/9/2026), khong trong man Nop bai: tu 30/9/2026 vo
+         * khong con dinh gi toi cham bai, no de nhac bai va de mo de on truoc kiem tra.
          */
         val vo = VoDanDo.conHieuLuc(this)
         themViec(
@@ -632,6 +633,7 @@ class HomeActivity : AppCompatActivity() {
             ten = if (vo == null) "Chụp vở dặn dò hôm nay" else "Vở dặn dò ${vo.moTa()}",
             xong = vo != null
         ) { startActivity(Intent(this, DanDoActivity::class.java)) }
+        themViecNhacBai()
 
         if (canSua.isNotEmpty()) {
             val ke = canSua.take(3).joinToString(", ") { it.ma }
@@ -743,6 +745,54 @@ class HomeActivity : AppCompatActivity() {
     }
 
     /**
+     * Moi buoi co dong dan do den han mai (hay som hon) mot dong: "Bài cho chiều thứ bảy".
+     *
+     * Nhac truoc mot ngay, cho tiet sau cua dung mon do (Ba Huy chon 30/9/2026), xem
+     * [NhacBai]. Dong chu nho ke tung dong dan do; bam vao thi mo danh sach day du kem ngay
+     * cua trang vo co dong do.
+     */
+    private fun themViecNhacBai() {
+        val cac = runCatching { NhacBai.canNhac(this) }.getOrDefault(emptyList())
+        cac.forEach { n ->
+            val phu = buildString {
+                n.cacBai.forEach { if (isNotEmpty()) append("\n"); append("• ").append(it.chu) }
+                n.dongKhac.forEach { if (isNotEmpty()) append("\n"); append("· ").append(it.chu) }
+            }
+            themViec(
+                hinh = R.drawable.st_ic_lich,
+                mau = R.color.wait,
+                ten = tenNhacBai(n),
+                phu = phu
+            ) { hienNhacBai(n) }
+        }
+    }
+
+    /** "Bài cho chiều thứ bảy", hay "Dặn dò cho ..." khi buoi do khong co bai tap nao. */
+    private fun tenNhacBai(n: NhacBai.NhomBuoi): String =
+        (if (n.cacBai.isEmpty()) "Dặn dò cho " else "Bài cho ") + TinhLoiNhac.moTaBuoi(n.buoi)
+
+    /** Danh sach day du cua mot buoi, kem ngay tren vo cua tung dong. */
+    private fun hienNhacBai(n: NhacBai.NhomBuoi) {
+        val chu = buildString {
+            append("Vào học ").append(TinhLoiNhac.gioPhut(n.buoi.phutVaoHoc))
+            append(", ").append(n.ten()).append('.')
+            if (n.cacBai.isNotEmpty()) {
+                append("\n\nBài phải làm:")
+                n.cacBai.forEach { append("\n• ").append(NhacBai.moTa(it)) }
+            }
+            if (n.dongKhac.isNotEmpty()) {
+                append("\n\nDặn dò khác:")
+                n.dongKhac.forEach { append("\n· ").append(NhacBai.moTa(it)) }
+            }
+        }
+        MaterialAlertDialogBuilder(this)
+            .setTitle(tenNhacBai(n))
+            .setMessage(chu)
+            .setPositiveButton("Đã hiểu", null)
+            .show()
+    }
+
+    /**
      * Dong soan cap cho buoi hoc ke tiep.
      *
      * Soan xong roi thi dong VAN o day, chi doi sang dau tich xanh. An di thi man
@@ -763,6 +813,11 @@ class HomeActivity : AppCompatActivity() {
         val mon = buoi.monCanSoan
         if (mon.isEmpty() && !buoi.coTheDuc) return
 
+        // Bai trong vo dan do han dung buoi nay, xem [NhacBai]. Dong "Bài cho ..." o tren da
+        // ke tung bai; o day chi nhac so bai, de soan tap thi nho ca vo bai tap.
+        val soBai = runCatching {
+            NhacBai.choBuoi(this, cal, buoi).count { it.laBaiTap }
+        }.getOrDefault(0)
         val phu = buildString {
             append("Vào học ").append(TinhLoiNhac.gioPhut(buoi.phutVaoHoc))
             append(", không xài máy lúc ")
@@ -774,6 +829,7 @@ class HomeActivity : AppCompatActivity() {
                 if (buoi.coTheDuc) append(", và đồ thể dục")
                 append('.')
             }
+            if (soBai > 0) append(" Có $soBai bài phải làm cho buổi này.")
             NgayNghi.tenKyNghi(cal)?.let { append(" Hôm đó là ").append(it).append('.') }
         }
 
@@ -1015,9 +1071,9 @@ class HomeActivity : AppCompatActivity() {
             render()
             return
         }
-        // Hom da tinh tron goi bai dan do: nop them bai chup khong duoc gi, nut chinh la lam
-        // bai tren may (29/9/2026). Lam tren may khong can mang.
-        if (SoCaiBai.goiDaCoHomNay(this)) {
+        // Bai chup anh hom nay da du tran: nop them bai chup khong duoc gi, nut chinh la lam
+        // bai tren may. Lam tren may khong can mang.
+        if (SoCaiBai.hetTranAnhHomNay(this)) {
             hoiMonLamTrenMay()
             return
         }

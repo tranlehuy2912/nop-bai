@@ -9,32 +9,25 @@ import java.time.LocalDateTime
 /**
  * Trang vo dan do cua co giao, da doc ra chu va da duoc Le Hoa soat lai.
  *
- * VI SAO TACH RA KHOI LAN NOP BAI. Truoc day trang vo dan do la mot trong ba buoc
- * chup moi lan nop, va con phai chup lai no o TUNG lan nop trong ngay. Chup mot lan
- * thi hong: thieu trang vo, may khong biet cau nao thuoc bai co giao nen coi tat ca
- * la trong tron goi - xem quy tac 17 o [ChamTheoClaude.banCham] va cach [LuatCongGio]
- * dung trongDanDo - va lan nop thu hai trong ngay khong duoc phut nao.
+ * TU 30/9/2026 VO KHONG CON DUNG DE TINH GIO. Ba Huy bo tron goi 45 phut, bai chup anh chi
+ * con tinh le, nen Claude cham bai khong can vo nua. Vo con hai viec: nhac bai theo tung mon
+ * ([NhacBai]), va bao truoc lan kiem tra de Giai de mo de on ([GiaiDe]). Le Hoa hoc xong thi
+ * ghi vo cua ngay hom do; co dan gi la cho buoi hoc ke tiep cua mon do.
  *
- * Nen doi cho: chup mot lan, doc ra CHU, con soat lai bang mat roi luu. Cac lan nop
- * sau khong hoi lai trang vo nua, chi kem doan chu do theo bai sang loi nho Claude.
+ * VI SAO VAN CHUP MOT LAN, DOC RA CHU, CON SOAT LAI. May doc nham mot ngay hay bo sot mot
+ * dong thi nhac sai buoi hay quen nhac; o man soat thi sua duoc bang mat.
  *
  * GIU TUNG DONG KEM MOT O TICH chu khong giu hai cuc chu "bai tap" va "viec khac".
  * Do ra tu bon trang vo that cua Le Hoa: may xep "TOÁN: làm luyện tập 3 trang 59"
  * va "CN: làm bài trang 19" vao viec khac, ma hai cai do moi la bai tap. Bat con
  * cat dan chu giua hai o de sua lai la viec vat; tich mot o thi khong.
  *
- * HAN DUNG DI THEO [LuatCongGio.ngayDanDoHopLe] chu khong tu dat mot cai khac: doan
- * chu nay thay cho tam anh, nen no phai het hieu luc dung luc tam anh do het.
+ * BAN NAY SONG TOI LUC VAO BUOI HOC KE TIEP ([conDung]). Qua luc do thi vo cua buoi moi
+ * moi la vo can chup, va man chinh lai hien "Chụp vở dặn dò hôm nay". Chu cua tung dong thi
+ * [NhacBai] giu rieng, toi tiet sau cua dung mon do.
  *
- * TAT CHAM AI VAN DUNG BAN NAY. Moi lan nop, tablet chep ban dang con hieu luc vao bai
- * tren Firestore, va Bang dieu khien dua dung ngay va danh sach bai do vao loi nho
- * Claude - xem [vn.huytl.homeworkgate.dongbo.DongBo.banDanDo] va [VoChoCham]. Nen con
- * chup vo mot lan dau buoi du bai do may cham hay Claude cham.
- *
- * MAY DOC HONG THI VAN GIU TAM ANH ([DanDo.chuaDoc]). Truoc day may doc khong duoc la
- * man vo dan do khong luu gi, va lan nop nao cung hoi chup lai trang vo. Gio con gui
- * tam anh cho Ba Huy, cac lan nop sau mang theo tam do, va chu duoc doc ra sau: Ba Huy
- * nho Claude doc, hay lan cham bai dau tien doc luon.
+ * MAY DOC HONG THI VAN GIU TAM ANH ([DanDo.chuaDoc]). Con gui tam anh cho Ba Huy, va Ba
+ * Huy nho Claude doc tren Bang dieu khien.
  */
 object VoDanDo {
 
@@ -76,9 +69,8 @@ object VoDanDo {
          * Ma cua tam anh trang vo tren Telegram, co sau khi [vn.huytl.homeworkgate
          * .telegram.DanDoSender] gui xong. null la chua gui duoc.
          *
-         * Bang dieu khien cam ma nay tai lai dung tam anh do, gui kem cho Claude doi
-         * chieu voi danh sach con da tich - xem [vn.huytl.homeworkgate.dongbo.DongBo
-         * .banDanDo].
+         * Bang dieu khien cam ma nay tai lai dung tam anh do khi Ba Huy nho Claude doc
+         * mot trang may doc khong duoc - xem [vn.huytl.homeworkgate.dongbo.DongBo.banDanDo].
          */
         val fileId: String? = null,
         /**
@@ -86,9 +78,8 @@ object VoDanDo {
          * Huy đọc". Luc do [cacDong] rong nhung KHONG co nghia la co khong giao bai tap,
          * ma la chua biet. Ngay tam la ngay chup, doc xong se thay bang ngay ghi tren vo.
          *
-         * Ba duong doc ra chu: con bam "Thử đọc lại" khi may doc duoc tro lai, Ba Huy
-         * nho Claude doc ([tuClaude]), hoac lan cham bai dau tien doc tam anh gan theo
-         * bai ([tuLanCham]).
+         * Hai duong doc ra chu: con bam "Thử đọc lại" khi may doc duoc tro lai, hay Ba
+         * Huy nho Claude doc ([tuClaude]).
          */
         val chuaDoc: Boolean = false,
         /** Ai doc ra danh sach nay: [NGUON_CON], [NGUON_CLAUDE] hay [NGUON_LUC_CHAM]. */
@@ -97,13 +88,13 @@ object VoDanDo {
          * Luc chup tam anh trang vo. Doc lai hay sua chu thi giu nguyen, chi doi khi
          * con chup tam khac.
          *
-         * Dung de biet hai ban co cung mot tam anh khong: bai nop luc vo con chua doc
-         * mang theo ban chi co anh, va khi cham phai nhan ra ban da doc sau do la cua
-         * dung trang ay - xem [VoChoCham.voChoBai].
+         * Dung de biet hai ban co cung mot tam anh khong: ket qua Claude doc den muon
+         * phai dung tam anh dang giu ([tuClaude]), va con sua ngay cua trang da luu thi
+         * [NhacBai] thay dung trang cu.
          */
         val chupLuc: Long = luc
     ) {
-        /** Cac bai phai lam roi nop. Day la thu di vao cau lenh cham. */
+        /** Cac bai phai lam roi nop. */
         val cacBai: List<String> get() = cacDong.filter { it.laBaiTap }.map { it.chu }
 
         /** Cac dong con danh dau la khong phai bai tap. */
@@ -134,18 +125,39 @@ object VoDanDo {
     /** Claude doc, Ba Huy dan ket qua tu Bang dieu khien ve (lenh DOCVO). */
     const val NGUON_CLAUDE = "CLAUDE"
 
-    /** Doc ra o lan cham bai dau tien, tu tam anh trang vo gan theo bai. */
+    /**
+     * Doc ra o lan cham bai dau tien, tu tam anh trang vo gan theo bai. Chi con o ban luu
+     * truoc 30/9/2026: tu do cham bai khong doc vo nua.
+     */
     const val NGUON_LUC_CHAM = "LUCCHAM"
 
     private const val KHOA = "vo_dan_do"
 
-    /** Ban dang con hieu luc, hay null neu chua chup hoac ngay da qua han. */
+    /** Ban dang con hieu luc, hay null neu chua chup hoac da vao buoi hoc sau. */
     fun conHieuLuc(
         context: Context,
         bayGio: LocalDateTime = LocalDateTime.now()
     ): DanDo? {
         val d = doc(context) ?: return null
-        return if (LuatCongGio.ngayDanDoHopLe(d.ngayDoc(), bayGio)) d else null
+        return if (conDung(d.ngayDoc(), bayGio)) d else null
+    }
+
+    /**
+     * Vo ghi ngay [ngay] con la vo cua buoi vua hoc khong: tu ngay do toi luc vao buoi hoc
+     * ke tiep, theo thoi khoa bieu va ngay nghi.
+     *
+     * Thay cho luat cu "hom nay, hay hom qua truoc 12 gio trua" (bo 30/9/2026). Luat cu coi
+     * vo la bai cho ngay mai, nen vo thu Bay het han toi chu nhat trong khi buoi hoc sau
+     * la sang thu Hai, va vo truoc ky nghi het han giua ky nghi.
+     *
+     * Vo ghi ngay mai thi khong: vo ghi ngay cua buoi vua hoc, xem [NhacBai]. Tim khong ra
+     * buoi hoc nao sau (nghi he) thi vo dung toi het ngay hom sau.
+     */
+    fun conDung(ngay: LocalDate?, bayGio: LocalDateTime = LocalDateTime.now()): Boolean {
+        if (ngay == null || ngay.isAfter(bayGio.toLocalDate())) return false
+        val het = NhacBai.buoiSau(ngay)?.let { (n, b) -> NhacBai.lucVaoHoc(n, b) }
+            ?: ngay.plusDays(2).atStartOfDay()
+        return bayGio.isBefore(het)
     }
 
     /** Ban dang nam trong may, khong hoi han. Cho man soat de hien lai cai vua luu. */
@@ -156,9 +168,13 @@ object VoDanDo {
 
     // Ba ham ghi deu khoa chung mot cho: [ghiMaAnh] chay o luong nen cua DanDoSender,
     // dung luc con co the dang bam Luu lan nua tren man soat.
+    //
+    // Luu thi chep luon chu sang [NhacBai]: moi duong luu - con soat, Claude doc - deu
+    // phai ra loi nhac, khong de duong nao quen.
     @Synchronized
     fun luu(context: Context, d: DanDo) {
         Prefs.get(context).raw().edit().putString(KHOA, sangJson(d).toString()).commit()
+        NhacBai.ghi(context, d)
     }
 
     /**
@@ -189,16 +205,22 @@ object VoDanDo {
     }
 
     /**
-     * Don ban da qua han. Goi luc dich vu khoi dong.
+     * Don ban da qua han, ca trang da het nhac ben [NhacBai]. Goi luc dich vu khoi dong.
      *
-     * Het han la het duong dung: [conHieuLuc] khong tra no ra nua, tin cho Ba Huy
-     * cung khong kem no nua. De nam lai thi mot trang vo cua thu Hai van con trong
-     * may vao thu Sau ma khong ai mo, va man soat mo ra lai bay ra dan do cua tuan
-     * truoc trong khi man chon mon dang ghi "Chụp vở dặn dò hôm nay".
+     * Het han la het duong dung: [conHieuLuc] khong tra no ra nua. De nam lai thi mot
+     * trang vo cua thu Hai van con trong may vao thu Sau ma khong ai mo, va man soat mo
+     * ra lai bay ra dan do cua tuan truoc trong khi man chinh dang ghi "Chụp vở dặn dò
+     * hôm nay". Chu cua trang do thi [NhacBai] van giu toi tiet sau cua tung mon.
      */
     fun donDep(context: Context, bayGio: LocalDateTime = LocalDateTime.now()) {
-        val d = doc(context) ?: return
-        if (!LuatCongGio.ngayDanDoHopLe(d.ngayDoc(), bayGio)) xoa(context)
+        val d = doc(context)
+        // Ban luu bang app truoc 30/9/2026 chua co chu ben NhacBai: chep sang mot lan, khong
+        // thi trang vo chup truoc luc cai ban moi khong duoc nhac dong nao.
+        if (d != null && !d.chuaDoc && NhacBai.docTrang(context).none { it.chupLuc == d.chupLuc }) {
+            NhacBai.ghi(context, d, bayGio)
+        }
+        NhacBai.donDep(context, bayGio)
+        if (d != null && !conDung(d.ngayDoc(), bayGio)) xoa(context)
     }
 
     fun sangJson(d: DanDo): JSONObject = JSONObject()
@@ -285,40 +307,6 @@ object VoDanDo {
                 ngay = ngay.toString(), cacDong = cac, luc = bayGio,
                 chuaDoc = false, nguon = NGUON_CLAUDE
             )
-        )
-    }
-
-    /**
-     * Ban vo moi tu lan cham dau tien doc tam anh trang vo gan theo bai.
-     *
-     * Giu lai ket qua do thi cac bai nop sau mang theo danh sach nay, Claude khong phai
-     * doc lai trang vo o moi lan cham, va moi bai trong ngay cham theo cung mot danh
-     * sach. Chi co bai tap vi lan cham chi doc ra bai tap, khong ke dan viec khac.
-     *
-     * null khi khong dung duoc: ban trong may khong con la tam anh bai do mang theo, da
-     * co chu roi, hay lan cham khong doc ra ngay trong vo. Thieu ngay thi khong giu: dien
-     * ngay chup vao la cho tron goi 45 phut theo mot ngay khong ai doc thay tren vo.
-     */
-    fun tuLanCham(
-        cu: DanDo?,
-        chupLucCuaBai: Long,
-        ngayDanDo: String?,
-        baiDuocGiao: List<String>,
-        bayGio: Long = System.currentTimeMillis()
-    ): DanDo? {
-        if (cu == null || !cu.chuaDoc || cu.chupLuc != chupLucCuaBai) return null
-        val ngay = LuatCongGio.docNgay(ngayDanDo) ?: return null
-        // Lan cham doc nham mot khoi ngay cu tren trang vo (hay ngay co hen nop) thi
-        // dung giu: lan don dep sau se xoa ca ban lan tam anh duy nhat, va ca ngay mat
-        // vo. Giu ban chi co anh thi Ba Huy van nho Claude doc lai duoc.
-        val luc = java.time.Instant.ofEpochMilli(bayGio).atZone(java.time.ZoneId.systemDefault()).toLocalDateTime()
-        if (!LuatCongGio.ngayDanDoHopLe(ngay, luc)) return null
-        return cu.copy(
-            ngay = ngay.toString(),
-            cacDong = baiDuocGiao.map { Dong(it, laBaiTap = true, mayTich = true) },
-            luc = bayGio,
-            chuaDoc = false,
-            nguon = NGUON_LUC_CHAM
         )
     }
 }

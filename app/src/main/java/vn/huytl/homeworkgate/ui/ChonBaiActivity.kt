@@ -27,7 +27,6 @@ import vn.huytl.homeworkgate.data.LoaiLoi
 import vn.huytl.homeworkgate.data.KhaiChoCham
 import vn.huytl.homeworkgate.data.SoCaiBai
 import vn.huytl.homeworkgate.data.ThoiKhoaBieu
-import vn.huytl.homeworkgate.data.VoDanDo
 import vn.huytl.homeworkgate.databinding.StActivityChonBaiBinding
 import vn.huytl.homeworkgate.databinding.StDongTrangBinding
 import vn.huytl.homeworkgate.kho.CauHoi
@@ -176,9 +175,6 @@ class ChonBaiActivity : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
         if (daGui) finish()
-        // Ve tu man vo dan do thi dong dau tien phai doi chu ngay, khong thi con
-        // vua luu xong quay ra van thay "Chụp vở dặn dò hôm nay".
-        else if (buoc == Buoc.MON) veLai()
     }
 
     private var daGui = false
@@ -236,8 +232,6 @@ class ChonBaiActivity : AppCompatActivity() {
         binding.tieuDe.text = "Lê Hòa đang làm bài môn gì?"
         binding.phuDe.text = "Chọn môn rồi chọn bài, xong mới chụp."
 
-        themDanDo()
-
         // Mon hoc hom nay len dau: phan lon bai ve nha la cua buoi hoc vua xong, nen
         // dat chung o tren la con khoi phai doc het danh sach.
         val homNay = ThoiKhoaBieu.monTrongNgay(Calendar.getInstance().get(Calendar.DAY_OF_WEEK))
@@ -278,58 +272,6 @@ class ChonBaiActivity : AppCompatActivity() {
                 chupTuDo()
             }
             .show()
-    }
-
-    /**
-     * Dong vo dan do, luon nam tren cung man chon mon.
-     *
-     * DE O DAY CHU KHONG NHET VAO LUC NOP BAI. Trang vo dan do la viec dau buoi, lam
-     * MOT lan cho ca ngay; nop bai la viec cuoi buoi, lam bao nhieu lan cung duoc.
-     * Truoc day hai viec dinh vao nhau nen con phai chup lai trang vo o tung lan nop.
-     *
-     * Chup roi thi dong nay VAN o day, chi doi chu: bam vao la xem lai va sua duoc
-     * cai may da doc. An di thi con khong con duong nao sua mot chu doc nham, ma cai
-     * chu do lai dang quyet dinh tron goi 45 phut.
-     */
-    private fun themDanDo() {
-        // May khong cham bai nua (28/9/2026) nhung van doc vo dan do cho con soat: day
-        // la viec duy nhat con goi Gemini, xem [vn.huytl.homeworkgate.ai.DocDanDo].
-        //
-        // Don o day nua chu khong chi luc dich vu khoi dong: [ApprovalService] la
-        // foreground START_STICKY, chay lien mach ca tuan nen onCreate cua no gan
-        // nhu khong goi lai lan nao. Man nay thi con vao moi lan nop bai.
-        VoDanDo.donDep(this)
-        val d = VoDanDo.conHieuLuc(this)
-        val dong = themDong(
-            ten = if (d == null) "Chụp vở dặn dò hôm nay" else "Vở dặn dò ${d.moTa()}",
-            phu = when {
-                // Day la cho DUY NHAT chup vo: man chup bai khong con buoc vo. Nen noi ra
-                // cai duoc, khong thi dong nay chi la mot dong nua trong danh sach mon.
-                d == null -> "Chưa chụp. Chụp một lần để máy tính trọn gói 45 phút bài cô giao"
-                d.chuaDoc && d.fileId.isNullOrEmpty() && !vn.huytl.homeworkgate.telegram.DanDoSender.dangGui(d.luc) ->
-                    "Máy chưa đọc được, ảnh chưa gửi được cho ba Huy. Bấm để gửi lại"
-                d.chuaDoc -> "Máy chưa đọc được, ảnh đã gửi ba Huy. Mấy lần nộp sau không phải chụp lại"
-                d.nguon == VoDanDo.NGUON_CLAUDE -> "Claude đã đọc giúp. Bấm để xem hoặc sửa"
-                d.nguon == VoDanDo.NGUON_LUC_CHAM -> "Đọc ra lúc chấm bài. Bấm để xem hoặc sửa"
-                else -> "Máy nhớ rồi, mấy lần nộp sau không phải chụp lại. Bấm để xem hoặc sửa"
-            }
-        ) {
-            startActivity(Intent(this, DanDoActivity::class.java))
-        }
-        if (d != null) return
-        val phu = dong.findViewById<TextView>(R.id.phu)
-        phu.setTextColor(ContextCompat.getColor(this, R.color.brand))
-        /*
-         * Hom nay da tinh tron goi ma khong con vo nao hieu luc (vo hom qua het han luc
-         * trua, vo hom nay chua chup): nop luc nay thi quy tac 17 coi moi cau la bai co
-         * giao, ma bai co giao da tra trong goi, nen bai lam them ra 0 phut. Noi thang ra.
-         */
-        lifecycleScope.launch {
-            val daCoGoi = withContext(Dispatchers.IO) { SoCaiBai.goiDaCoHomNay(this@ChonBaiActivity) }
-            if (!daCoGoi || buoc != Buoc.MON) return@launch
-            phu.text = "Chụp vở mới trước khi nộp. Chưa có vở thì bài làm thêm không được tính phút"
-            phu.setTextColor(ContextCompat.getColor(this@ChonBaiActivity, R.color.alert))
-        }
     }
 
     private fun themMon(ten: String) {
@@ -1030,7 +972,7 @@ class ChonBaiActivity : AppCompatActivity() {
         if (pham.theoSach && !pham.onTap && pham.cauIds.size in 1..MAX_HOI_CHAC) {
             return hoiChuaChac(pham)
         }
-        chupThat(pham)
+        moCamera(pham)
     }
 
     /**
@@ -1047,7 +989,7 @@ class ChonBaiActivity : AppCompatActivity() {
      */
     private fun hoiChuaChac(pham: PhamVi) {
         val cac = KhoBai.get(this).cacCauTheoId(pham.cauIds)
-        if (cac.isEmpty()) return chupThat(pham)
+        if (cac.isEmpty()) return moCamera(pham)
         val tick = BooleanArray(cac.size)
 
         val cot = LinearLayout(this).apply {
@@ -1068,7 +1010,7 @@ class ChonBaiActivity : AppCompatActivity() {
             .setTitle("Trong những câu dưới đây, có câu nào Lê Hòa không tự tin làm đúng không?")
             .setView(ScrollView(this).apply { addView(cot) })
             .setPositiveButton("Chụp bài để gửi") { _, _ ->
-                chupThat(
+                moCamera(
                     pham.copy(
                         chuaChac = cac.filterIndexed { i, _ -> tick[i] }.map { it.id },
                         daKhaiChac = true
@@ -1077,37 +1019,6 @@ class ChonBaiActivity : AppCompatActivity() {
             }
             .setNegativeButton(R.string.cancel, null)
             .show()
-    }
-
-    /**
-     * Mo man chup. Hom nay da tinh tron goi ma khong con vo nao hieu luc thi hoi truoc.
-     *
-     * Luc do quy tac 17 coi moi cau la bai co giao, ma bai co giao da tra trong goi, nen
-     * ca lan nop ra 0 phut. Dong vo o buoc chon mon da noi dieu nay, nhung duong vao
-     * thang On lai hay Luyen tu man chinh khong qua buoc do, va man chup khong con buoc
-     * vo. Lan nop de sua cau sai thi khong hoi: cau do nam trong goi that.
-     */
-    private fun chupThat(pham: PhamVi) {
-        // Chi bo qua khi MOI cau deu la cau dang sua. Lan nop tron cau sua voi cau moi
-        // thi cau moi van can vo: thieu vo la cau moi 0 phut ma khong ai bao truoc.
-        val chiSua = pham.cauIds.isNotEmpty() && pham.cauIds.all { it in canSua }
-        if (chiSua || VoDanDo.conHieuLuc(this) != null) return moCamera(pham)
-        lifecycleScope.launch {
-            val daCoGoi = withContext(Dispatchers.IO) { SoCaiBai.goiDaCoHomNay(this@ChonBaiActivity) }
-            if (!daCoGoi) return@launch moCamera(pham)
-            MaterialAlertDialogBuilder(this@ChonBaiActivity)
-                .setTitle("Chưa có vở dặn dò mới")
-                .setMessage(
-                    "Hôm nay đã tính trọn gói bài cô giao, mà vở dặn dò hiện có đã hết hạn. " +
-                        "Nộp lúc này thì bài làm thêm không được tính phút. Chụp vở của buổi " +
-                        "học mới trước nhé."
-                )
-                .setPositiveButton("Chụp vở") { _, _ ->
-                    startActivity(Intent(this@ChonBaiActivity, DanDoActivity::class.java))
-                }
-                .setNegativeButton("Vẫn nộp") { _, _ -> moCamera(pham) }
-                .show()
-        }
     }
 
     private fun moCamera(pham: PhamVi) {

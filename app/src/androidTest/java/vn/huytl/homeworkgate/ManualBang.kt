@@ -24,13 +24,13 @@ import vn.huytl.homeworkgate.data.NhatKySuDung
 import vn.huytl.homeworkgate.data.Prefs
 import vn.huytl.homeworkgate.data.SoCaiBai
 import vn.huytl.homeworkgate.data.ViecNha
+import vn.huytl.homeworkgate.data.NhacBai
 import vn.huytl.homeworkgate.data.VoDanDo
 import vn.huytl.homeworkgate.guard.ParentMode
 import vn.huytl.homeworkgate.data.Mang
 import vn.huytl.homeworkgate.kho.HocToi
 import vn.huytl.homeworkgate.kho.KhoBai
 import vn.huytl.homeworkgate.kho.NganHang
-import java.time.LocalDateTime
 
 /**
  * Khong phai test that. Day la cai tay quay cho trang web o tools/web.py: no doc
@@ -84,7 +84,7 @@ class ManualBang {
 
         ra(JSONObject().apply {
             put("k", "socai")
-            put("goiDaCoHomNay", SoCaiBai.goiDaCoHomNay(context, now))
+            put("hetTranAnhHomNay", SoCaiBai.hetTranAnhHomNay(context, now))
             // Trang web lay so nay dien vao o "da cong" cua may tinh cong gio ([conggio]).
             // Tu 29/9/2026 o do la so phut duong chup anh da cong (tran 45), nen khoa cu
             // mang so cua duong chup anh. Ba so moi ghi rieng tung phan.
@@ -364,19 +364,28 @@ class ManualBang {
             "xoaviecnha" -> { ViecNha.xoa(context); ketQua = ViecNha.dangKhoa(context) }
             // Nap san mot trang vo dan do da soat, de nhin canh "may nho roi" ma
             // khong phai chup that. Ngay lay HOM NAY de ban con hieu luc.
+            /*
+             * Nap mot trang vo da soat. -e ngay yyyy-MM-dd de nap vo cua hom khac (mac dinh hom
+             * nay). Moi dong mang ten mon o dau, de [NhacBai] tinh han theo tiet sau cua mon.
+             */
             "napdando" -> {
-                val homNay = java.time.LocalDate.now().toString()
+                val ngay = args.getString("ngay") ?: java.time.LocalDate.now().toString()
                 VoDanDo.luu(context, VoDanDo.DanDo(
-                    ngay = homNay,
+                    ngay = ngay,
                     cacDong = listOf(
-                        VoDanDo.Dong("Làm bài 2.26 và 2.27 trang 45", laBaiTap = true),
-                        VoDanDo.Dong("Học thuộc bảy hằng đẳng thức", laBaiTap = true),
+                        VoDanDo.Dong("Toán: làm bài 2.26 và 2.27 trang 45", laBaiTap = true),
+                        VoDanDo.Dong("Tiếng Anh: làm bài tập Unit 2 trang 14", laBaiTap = true),
+                        VoDanDo.Dong("KHTN: tiết sau kiểm tra bài 2, bài 3", laBaiTap = false),
                         VoDanDo.Dong("Mang đủ sách vở, mặc đồng phục", laBaiTap = false)
                     )
                 ))
-                ketQua = VoDanDo.conHieuLuc(context)?.moTa()
+                ketQua = VoDanDo.conHieuLuc(context)?.moTa() ?: "đã lưu vở ngày $ngay (hết hạn)"
             }
-            "xoadando" -> { VoDanDo.xoa(context); ketQua = VoDanDo.doc(context) == null }
+            "xoadando" -> {
+                VoDanDo.xoa(context)
+                NhacBai.xoaHet(context)
+                ketQua = VoDanDo.doc(context) == null
+            }
             /*
              * Nap mot cau DA QUA HEN on lai.
              *
@@ -448,9 +457,10 @@ class ManualBang {
      * chep tay trong trang web.
      *
      *   -e cham <base64 cua JSON KetQuaCham>
-     *   -e daCongLamThem 0   -e goiDaCo 0   -e bayGio 2026-09-14T20:00
+     *   -e daCongLamThem 0
      *
-     * Tu 29/9/2026 day chi con la luat duong chup anh (bai dan do, tran 45). Tham so
+     * Tu 29/9/2026 day chi con la luat duong chup anh (bai co giao, tran 45); tu 30/9/2026
+     * khong con tron goi nen ban cham khong mang phan vo dan do nua. Tham so
      * "daCongLamThem" giu ten cu vi tools/web.py van gui ten do, nhung nghia moi la so
      * phut chup anh da cong trong ngay (daCongAnhHomNay). "onTap" van nhan nhung bo qua:
      * on lai da sang lam tren may, khong con di qua ham nay.
@@ -469,48 +479,22 @@ class ManualBang {
                 docRo = c.optBoolean("docRo", true),
                 dang = runCatching { DangBai.valueOf(c.optString("dang", "CAU_NHO")) }
                     .getOrDefault(DangBai.CAU_NHO),
-                trongDanDo = c.optBoolean("trongDanDo", false),
                 soDong = c.optInt("soDong", 0)
             )
         }
-        val giao = mutableListOf<String>()
-        val mangGiao = o.optJSONArray("baiDuocGiao") ?: JSONArray()
-        for (i in 0 until mangGiao.length()) giao += mangGiao.getString(i)
-
-        val ket = KetQuaCham(
-            mon = o.optString("mon", ""),
-            cac = cac,
-            ngayDanDo = o.optString("ngayDanDo").ifBlank { null },
-            lamHetDanDo = o.optBoolean("lamHetDanDo", false),
-            baiDuocGiao = giao
-        )
-        val bayGio = args.getString("bayGio")?.let {
-            LocalDateTime.parse(it.replace(" ", "T").let { s -> if (s.length == 16) "$s:00" else s })
-        } ?: LocalDateTime.now()
-
+        val ket = KetQuaCham(mon = o.optString("mon", ""), cac = cac)
         val b = LuatCongGio.tinh(
             ket,
             daCongAnhHomNay = (args.getString("daCongAnh") ?: args.getString("daCongLamThem"))
-                ?.toIntOrNull() ?: 0,
-            bayGio = bayGio,
-            goiDaCoHomNay = args.getString("goiDaCo") == "1"
+                ?.toIntOrNull() ?: 0
         )
         ra(JSONObject().apply {
             put("k", "conggio")
             put("phut", b.phut)
-            put("daTinhGoi", b.daTinhGoi)
             put("canBaHuyXem", b.canBaHuyXem)
             put("dong", JSONArray(b.dong))
             put("phutCua", JSONObject(b.phutCua as Map<*, *>))
-            put("trongGoi", JSONArray(b.trongGoi.map { it.ma }))
-            put("bayGio", bayGio.toString())
-            put("phutGoi", b.phutGoi)
             put("thieuDong", JSONArray(b.thieuDong.map { it.ma }))
-            // Trang web ghi "tối đa một ngày {toiDaMoiNgay} = trọn gói {tronGoi} + trần làm
-            // thêm {tranLamThem}". Duong chup anh khong con bai lam them (29/9/2026): ca
-            // phan toi da 45, nen tran lam them o day la 0 cho phep cong van dung.
-            put("tranLamThem", 0)
-            put("tronGoi", LuatCongGio.PHUT_TRON_GOI_DAN_DO)
             put("toiDaMoiNgay", LuatCongGio.TRAN_ANH)
             put("tranAnh", LuatCongGio.TRAN_ANH)
             put("tranTrenMay", LuatCongGio.TRAN_TREN_MAY)
