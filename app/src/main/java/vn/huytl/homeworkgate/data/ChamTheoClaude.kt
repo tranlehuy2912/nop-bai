@@ -95,6 +95,12 @@ object ChamTheoClaude {
             // Cau ngoai sach cua lan nop lai lay de chep tu ban cham cu, khong lay de Claude
             // chep lan nay: so cai khoa cau ngoai sach theo de, xem [PhamVi.cauNgoai].
             val de = q?.de ?: cn?.de?.takeIf { it.isNotBlank() } ?: deClaude
+            /*
+             * Ba Huy xem anh roi bam "Chụp lại" cho cau nay (lenh XUCAU, 29/9/2026): anh mo toi
+             * ca Ba Huy cung khong doc ra. Coi nhu may khong nhin thay de - khong cham, khong
+             * ghi so, khong ghi kieu sai - de con chup lai cau do cho ro.
+             */
+            val chupLai = o["chupLai"] as? Boolean == true
             CauCham(
                 // Khop duoc sach thi ghi ma cua sach, de so cai va tin Telegram noi cung mot ma.
                 ma = q?.ma?.trim() ?: cn?.ma ?: ma,
@@ -112,7 +118,8 @@ object ChamTheoClaude {
                 loaiLoi = LoaiLoi.doc(o["loaiLoi"] as? String, dung),
                 cauId = q?.id,
                 mon = q?.mon ?: pham?.mon.orEmpty(),
-                coDe = de.isNotBlank(),
+                coDe = de.isNotBlank() && !chupLai,
+                maGoc = ma,
                 /*
                  * Quy tac 17 cua may cham: lan nop KHONG co trang vo dan do thi moi cau
                  * la bai co giao. Day la lan nop de sua bai, chi co anh bai giai. Coi la

@@ -12,6 +12,7 @@ import org.junit.runner.RunWith
 import vn.huytl.homeworkgate.data.EndReason
 import vn.huytl.homeworkgate.data.GateState
 import vn.huytl.homeworkgate.data.GateStore
+import vn.huytl.homeworkgate.data.LuatCongGio
 import vn.huytl.homeworkgate.data.Prefs
 import java.util.Calendar
 
@@ -50,7 +51,8 @@ class GateStoreTest {
         prefs.raw().edit().clear().commit()
         prefs.grantMinutes = 60
         prefs.hardStopMinuteOfDay = 21 * 60
-        prefs.tranPhutMoiNgay = 120
+        // Khong dat tran ngay nua: tu 29/9/2026 GateStore khong cat theo tran chung, so dem
+        // phut trong ngay chi de hien ([LuatCongGio.TRAN_NGAY]).
         gate = GateStore(context)
     }
 
@@ -162,14 +164,16 @@ class GateStoreTest {
     @Test
     fun duyet_ma_khong_bam_bat_dau_thi_het_ngay_la_bo_va_tra_lai_phut() {
         gate.approve(at(19, 0))
-        assertEquals(60, gate.phutConLaiHomNay(at(19, 0)))
+        assertEquals(60, gate.phutDaDuyetHomNay(at(19, 0)))
+        assertEquals(LuatCongGio.TRAN_NGAY - 60, gate.phutConLaiHomNay(at(19, 0)))
 
         val reason = gate.tick(at(21, 30), 1_000L)
 
         assertEquals(EndReason.NEVER_STARTED, reason)
         assertEquals(GateState.LOCKED, gate.state)
-        // Khong dung den thi khong mat phut nao trong tran ngay.
-        assertEquals(120, gate.phutConLaiHomNay(at(21, 30)))
+        // Khong dung den thi so "hom nay kiem duoc" tra lai phan do.
+        assertEquals(0, gate.phutDaDuyetHomNay(at(21, 30)))
+        assertEquals(LuatCongGio.TRAN_NGAY, gate.phutConLaiHomNay(at(21, 30)))
     }
 
     /**
@@ -225,52 +229,49 @@ class GateStoreTest {
         assertEquals(GateState.LOCKED, gate.state)
     }
 
+    /**
+     * Khong con tran chung chan nut duyet (29/9/2026). Truoc do het 120 phut trong ngay
+     * thi approve tra null, cham tran thi cat bot. Nay moi phan tu chan bang tran rieng
+     * truoc khi goi vao GateStore (xem [LuatCongGio]), nen GateStore cap du so xin.
+     */
     @Test
-    fun het_tran_phut_trong_ngay_thi_khong_duyet_them() {
-        assertEquals(60, gate.approve(at(15, 0)))
+    fun khong_con_tran_chung_nen_duyet_bao_nhieu_cap_bay_nhieu() {
+        assertEquals(200, gate.approve(at(15, 0), wantedMinutes = 200))
         gate.endSession(EndReason.RAN_OUT)
-        assertEquals(60, gate.approve(at(17, 0)))
-        gate.endSession(EndReason.RAN_OUT)
+        assertEquals(60, gate.approve(at(17, 0), wantedMinutes = 60))
 
-        assertNull(gate.approve(at(19, 0)))
-        assertEquals(0, gate.phutConLaiHomNay(at(19, 0)))
-    }
-
-    @Test
-    fun cham_tran_thi_cat_bot_cho_vua_chu_khong_tu_choi() {
-        // Tran 120, da duyet 90. Xin them 60 thi duoc 30, khong phai bi tu choi:
-        // con lam bai that, duoc it con hon khong duoc gi.
-        assertEquals(90, gate.approve(at(15, 0), wantedMinutes = 90))
-        gate.endSession(EndReason.RAN_OUT)
-
-        assertEquals(30, gate.approve(at(17, 0), wantedMinutes = 60))
+        assertEquals(260, gate.phutDaDuyetHomNay(at(17, 0)))
+        // So con lai chi de hien, qua tran ngay thi dung o 0 chu khong am.
         assertEquals(0, gate.phutConLaiHomNay(at(17, 0)))
     }
 
     @Test
-    fun gio_ba_cho_khong_an_vao_tran_ngay() {
+    fun gio_ba_cho_khong_tinh_vao_so_phut_kiem_duoc_trong_ngay() {
         // /cho la nguoi lon chu dong cho, khong phai con doi bang bai tap.
         assertEquals(60, gate.approve(at(15, 0), wantedMinutes = 60, useQuota = false))
-        assertEquals(120, gate.phutConLaiHomNay(at(15, 0)))
+        assertEquals(0, gate.phutDaDuyetHomNay(at(15, 0)))
+        assertEquals(LuatCongGio.TRAN_NGAY, gate.phutConLaiHomNay(at(15, 0)))
     }
 
     @Test
-    fun tran_phut_dat_lai_vao_ngay_hom_sau() {
+    fun so_phut_kiem_duoc_dat_lai_vao_ngay_hom_sau() {
         assertEquals(120, gate.approve(at(15, 0), wantedMinutes = 120))
-        assertEquals(0, gate.phutConLaiHomNay(at(15, 0)))
-        assertEquals(120, gate.phutConLaiHomNay(at(15, 0) + 24 * 60 * minute))
+        assertEquals(120, gate.phutDaDuyetHomNay(at(15, 0)))
+        assertEquals(0, gate.phutDaDuyetHomNay(at(15, 0) + 24 * 60 * minute))
+        assertEquals(LuatCongGio.TRAN_NGAY, gate.phutConLaiHomNay(at(15, 0) + 24 * 60 * minute))
     }
 
     @Test
-    fun cong_gio_giua_phien_bang_bai_tap_cung_an_vao_tran() {
+    fun cong_gio_giua_phien_bang_bai_tap_cong_du_va_ghi_vao_so_dem() {
         val now = at(15, 0)
         gate.approve(now, wantedMinutes = 100)
         gate.start(now, nowElapsed = 1_000L)
-        assertEquals(20, gate.phutConLaiHomNay(now))
+        assertEquals(100, gate.phutDaDuyetHomNay(now))
 
-        // Con nop them bai trong luc dang choi, AI cham duoc 30 phut: chi cong 20.
-        gate.extend(30, now + minute, nowElapsed = 1_000L + minute, useQuota = true)
-        assertEquals(0, gate.phutConLaiHomNay(now))
+        // Con nop them bai trong luc dang choi, cham duoc 30 phut: cong du 30 (truoc
+        // 29/9/2026 tran 120 cat con 20). Mot phut da troi nen con 129.
+        assertEquals(129, gate.extend(30, now + minute, nowElapsed = 1_000L + minute, useQuota = true))
+        assertEquals(130, gate.phutDaDuyetHomNay(now))
     }
 
     @Test
@@ -428,8 +429,8 @@ class GateStoreTest {
         assertEquals(120, gate.approve(at(19, 10)))
         assertEquals(GateState.GRANTED, gate.state)
         assertEquals(120, gate.grantedMinutes)
-        // Ca hai lan duyet deu an vao tran ngay: 60 + 60 = het 120.
-        assertEquals(0, gate.phutConLaiHomNay(at(19, 10)))
+        // Ca hai lan duyet deu vao so dem cua ngay: 60 + 60.
+        assertEquals(120, gate.phutDaDuyetHomNay(at(19, 10)))
     }
 
     @Test

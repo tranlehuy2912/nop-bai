@@ -250,17 +250,13 @@ class TienBoActivity : AppCompatActivity() {
         binding.txtVapPhu.text =
             "Mấy lần gần đây Lê Hòa vướng ở chỗ này nhiều hơn cả."
 
-        val cau = kho.cacCauLuyenTheoLoi(nhan)
+        // Luyen lam tren may tu 29/9/2026, chi cau co ban phim ghep. Xem [LamTrenMay.cauLuyen].
+        val cau = vn.huytl.homeworkgate.data.LamTrenMay.cauLuyen(this, nhan)
         binding.btnLuyen.visibility = if (cau.isEmpty()) View.GONE else View.VISIBLE
         if (cau.isEmpty()) return
         binding.btnLuyen.text =
             if (cau.size == 1) "Làm thử một câu" else "Làm thử ${cau.size} câu"
-        binding.btnLuyen.setOnClickListener {
-            startActivity(
-                Intent(this, ChonBaiActivity::class.java)
-                    .putExtra(ChonBaiActivity.EXTRA_LUYEN, nhan)
-            )
-        }
+        binding.btnLuyen.setOnClickListener { LamBaiActivity.moLuyen(this, nhan) }
     }
 
     private fun themDong(chu: String, mau: Int) {

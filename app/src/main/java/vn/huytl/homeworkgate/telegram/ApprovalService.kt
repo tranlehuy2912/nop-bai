@@ -52,6 +52,8 @@ import vn.huytl.homeworkgate.data.TinhLoiNhac
 import vn.huytl.homeworkgate.ai.ChamBaiIO
 import vn.huytl.homeworkgate.data.CaptureStage
 import vn.huytl.homeworkgate.data.KetQuaCham
+import vn.huytl.homeworkgate.data.CauCham
+import vn.huytl.homeworkgate.data.DangBai
 import vn.huytl.homeworkgate.kho.KhoBai
 import vn.huytl.homeworkgate.kho.NganHang
 import vn.huytl.homeworkgate.kho.PhamVi
@@ -714,8 +716,7 @@ class ApprovalService : Service() {
                     client.editCaption(chatId, messageId, "Đã duyệt $minutes phút.")
                     client.sendMessage(
                         chatId,
-                        "Đã duyệt $minutes phút (chưa tính giờ). Hôm nay còn " +
-                            "${gate.phutConLaiHomNay()} phút.${conChoBaoNhieu()}"
+                        "Đã duyệt $minutes phút (chưa tính giờ). ${homNayDaDuyet()}${conChoBaoNhieu()}"
                     )
                 }
                 if (minutes != null) {
@@ -814,10 +815,18 @@ class ApprovalService : Service() {
             return
         }
 
-        val phut = LuatCongGio.PHUT_TRON_GOI_DAN_DO
         if (SoCaiBai.goiDaCoHomNay(this)) {
             client.answerCallbackQuery(callbackId, "Hôm nay đã tính trọn gói rồi.")
-            donNut("Hôm nay đã tính trọn gói $phut phút rồi.")
+            donNut("Hôm nay đã tính trọn gói rồi.")
+            return
+        }
+        // Gói và tính lẻ chung trần 45 phút (29/9/2026): da tinh le bao nhieu thi goi chi
+        // cong phan con lai cho tron. Du roi thi van ghi goi, de man chinh an nut Nop bai.
+        val phut = (LuatCongGio.TRAN_ANH - SoCaiBai.phutAnhHomNay(this)).coerceAtLeast(0)
+        if (phut == 0) {
+            SoCaiBai.ghiGoi(this, 0)?.let { runCatching { DongBo.daySoCai(this, listOf(it)) } }
+            client.answerCallbackQuery(callbackId, "Bài dặn dò hôm nay đã đủ ${LuatCongGio.TRAN_ANH} phút.")
+            donNut("Bài dặn dò hôm nay đã được đủ ${LuatCongGio.TRAN_ANH} phút từ phần tính lẻ.")
             return
         }
 
@@ -837,11 +846,10 @@ class ApprovalService : Service() {
 
         if (duoc == null) {
             // Giu nguyen nut de ba bam lai luc khac, dung don di.
-            client.answerCallbackQuery(callbackId, "Chưa cấp được: giờ ngủ hoặc hết hạn mức.")
+            client.answerCallbackQuery(callbackId, "Chưa cấp được: đang giờ ngủ.")
             client.sendMessage(
                 chatId,
-                "Chưa cấp $phut phút được. Hoặc đang trong giờ ngủ, hoặc hôm nay đã hết " +
-                    "hạn mức. Nút vẫn còn đó, bấm lại sau cũng được."
+                "Chưa cấp $phut phút được vì đang trong giờ ngủ. Nút vẫn còn đó, bấm lại sau cũng được."
             )
             return
         }
@@ -856,8 +864,7 @@ class ApprovalService : Service() {
                 "${getString(R.string.child_name)} đang chơi nên cộng thẳng $phut phút " +
                     "vào phiên. Còn $duoc phút."
             } else {
-                "Đã duyệt $phut phút (chưa tính giờ). Hôm nay còn " +
-                    "${gate.phutConLaiHomNay()} phút."
+                "Đã duyệt $phut phút (chưa tính giờ). ${homNayDaDuyet()}"
             }
         )
         runCatching { DongBo.dayNgay() }
@@ -969,6 +976,17 @@ class ApprovalService : Service() {
                 }
             }
 
+            // Cap gio tu quy gio choi (29/9/2026): /quy 30, hay /quy de cap het. Duong du
+            // phong cua nut tren Bang dieu khien.
+            "quy" -> {
+                val kq = vn.huytl.homeworkgate.data.QuyGio.cap(this, arg.toIntOrNull()?.takeIf { it > 0 })
+                client.sendMessage(
+                    chatId,
+                    kq.loi ?: "Đã cấp ${kq.cap} phút từ quỹ giờ chơi. Quỹ còn ${kq.conLai} phút."
+                )
+                refreshUi()
+            }
+
             "dung", "nghi" -> {
                 val left = gate.pause()
                 if (left == null) {
@@ -1024,8 +1042,7 @@ class ApprovalService : Service() {
                     "\n⚠ Quản trị thiết bị đang tắt, app gỡ được."
                 client.sendMessage(
                     chatId,
-                    "$state. Hôm nay đã duyệt ${gate.phutDaDuyetHomNay()} phút, " +
-                        "còn ${gate.phutConLaiHomNay()} phút. Giờ ngủ ${gioChot()}.$admin"
+                    "$state. ${homNayDaDuyet()} Giờ ngủ ${gioChot()}.$admin"
                 )
             }
 
@@ -1570,13 +1587,11 @@ class ApprovalService : Service() {
         val goiDaCo = SoCaiBai.goiDaCoHomNay(this, luc)
         val bang = LuatCongGio.tinh(
             ket.copy(cac = moi),
-            daCongLamThemHomNay = SoCaiBai.phutLamThemHomNay(this, luc),
+            daCongAnhHomNay = SoCaiBai.phutAnhHomNay(this, luc),
             bayGio = java.time.LocalDateTime.ofInstant(
                 java.time.Instant.ofEpochMilli(luc), java.time.ZoneId.systemDefault()
             ),
-            goiDaCoHomNay = goiDaCo,
-            onTap = onTap,
-            daCongOnHomNay = SoCaiBai.phutOnHomNay(this, luc)
+            goiDaCoHomNay = goiDaCo
         )
         /*
          * Cau may khong nhin thay de: tach han ra.
@@ -1742,14 +1757,12 @@ class ApprovalService : Service() {
             DayLog.add(this, "$nguoiCham chấm trong giờ ngủ, giữ ${bang.phut} phút tới $gio")
             than.append("Đang giờ ngủ ${gioChot()}: giữ ${bang.phut} phút, $gio tablet cộng.")
         } else if (tuDuyet) {
-            val them = minOf(bang.phut, gate.phutConLaiHomNay())
+            // Tran rieng cua bai dan do da nam trong [LuatCongGio.tinh]; khong con tran
+            // ngay cat them (29/9/2026).
+            val them = bang.phut
             val duoc = if (them > 0) capGioTuAi(them, bai) else null
             if (duoc == null) {
                 when {
-                    them <= 0 -> {
-                        than.append("Không cấp được: hôm nay đã đủ ${prefs.tranPhutMoiNgay} phút.")
-                        khongCapCho = "Hôm nay đủ giờ chơi rồi nên máy không cộng thêm."
-                    }
                     gate.trongGioNgu() -> {
                         than.append("Không cấp được: đang giờ ngủ ${gioChot()}.")
                         khongCapCho = "Chấm xong lúc đang giờ ngủ nên máy không cộng giờ."
@@ -1932,6 +1945,17 @@ class ApprovalService : Service() {
                         "tomTat" to than.toString(),
                         "phutDeNghi" to bang.phut,
                         "lamHetDanDo" to ket.lamHetDanDo,
+                        /*
+                         * Cau cho Ba Huy tu xu (29/9/2026): Claude doc chua chac, hay cham dung
+                         * ma khong ghi so dong. Bang dieu khien hien ba nut Dung (kem so dong
+                         * khi canSoDong), Sai, Chup lai cho tung cau, roi gui lenh XUCAU.
+                         * maClaude la ma trong ban Claude, de dien thoai tim lai dung cau.
+                         * Tablet tu tinh danh sach nay de ben kia khong phai chep lai luat.
+                         */
+                        "canXem" to (
+                            moi.filter { !it.docRo }.map { c -> cauCanXem(c, "CHUA_CHAC") } +
+                                bang.thieuDong.filter { it.docRo }.map { c -> cauCanXem(c, "THIEU_DONG") }
+                            ),
                         "cac" to moi.map { c ->
                             mapOf(
                                 "ma" to c.ma,
@@ -1967,6 +1991,16 @@ class ApprovalService : Service() {
         }
         refreshUi()
     }
+
+    /** Mot dong trong danh sach "canXem" cua ban cham, xem cho day ban cham len. */
+    private fun cauCanXem(c: CauCham, lyDo: String): Map<String, Any> = mapOf(
+        "ma" to c.ma,
+        "maClaude" to c.maGoc.ifBlank { c.ma },
+        "lyDo" to lyDo,
+        // Trac nghiem va hoc thuoc khong tinh theo dong, nen nut Dung khong hoi so dong.
+        "canSoDong" to (c.dang != DangBai.TRAC_NGHIEM && c.dang != DangBai.KHONG_TINH),
+        "soDong" to c.soDong
+    )
 
     /**
      * Tam vo chua ai doc ma lan cham nay vua doc ra: giu lai lam vo dan do cua ngay.
@@ -2062,8 +2096,9 @@ class ApprovalService : Service() {
         if (granted == null) {
             client.sendMessage(
                 chatId,
-                "Không cấp được: đang trong giờ ngủ ${gioChot()}, hoặc hôm nay đã đủ " +
-                    "${prefs.tranPhutMoiNgay} phút. Gõ /cho để cho thêm ngoài hạn mức."
+                // Tu 29/9/2026 khong con tran chung moi ngay, nen chi con gio ngu (hay gio chot)
+                // lam lan cap nay hong.
+                "Không cấp được: đang trong giờ ngủ, hay đã quá giờ chốt ${gioChot()}."
             )
             return
         }
@@ -2084,9 +2119,22 @@ class ApprovalService : Service() {
         }
         client.sendMessage(
             chatId,
-            "$dong Hôm nay còn ${gate.phutConLaiHomNay()} phút.${conChoBaoNhieu()}"
+            "$dong ${homNayDaDuyet()}${conChoBaoNhieu()}"
         )
         refreshUi()
+    }
+
+    /**
+     * "Hôm nay đã duyệt 60 phút. Quỹ giờ chơi 25 phút." cho cac tin sau mot lan cap.
+     *
+     * Truoc 29/9/2026 cho nay ghi "Hôm nay còn N phút", tinh theo tran chung 135 phut. Tran
+     * chung da bo, moi phan co tran rieng, nen con so "còn" khong con nghia: chi noi da duyet
+     * bao nhieu va quy dang giu bao nhieu.
+     */
+    private fun homNayDaDuyet(): String {
+        val quy = vn.huytl.homeworkgate.data.QuyGio.so(this)
+        return "Hôm nay đã duyệt ${GateStore(this).phutDaDuyetHomNay()} phút." +
+            if (quy > 0) " Quỹ giờ chơi $quy phút." else ""
     }
 
     /** Doi chu nhac con may bai nua dang xep hang, hoac chuoi rong neu het. */
@@ -2115,6 +2163,7 @@ class ApprovalService : Service() {
         /tuchoi  không duyệt bài cũ nhất
         /cho 30  cho chơi, đang chơi thì cộng thêm
         /bot 15  bớt giờ
+        /quy 30  cấp từ quỹ giờ chơi (/quy = cấp hết)
         /dung  tạm dừng, giữ giờ lại
         /tiep  chơi tiếp
         /khoa  khoá ngay, mất giờ còn lại

@@ -59,13 +59,33 @@ class SuaChamTest {
         val chuanBi = SuaCham.chuanBi(context, listOf(SuaCham.Cau("2.33a", de)), now + 1000)
         assertEquals(1, chuanBi.cac.size)
         assertTrue(chuanBi.cac.single().dung)
-        // Mot dong lam bai thi duoc muc toi thieu cua bai tap, y nhu luc may tu cham.
-        assertEquals(LuatCongGio.TOI_THIEU_BAI_TAP, chuanBi.phut)
+        // Mot dong lam bai thi mot phut, y nhu luc cham lan dau. Truoc 29/9/2026 la muc
+        // toi thieu 4 phut cua bai tap; Ba Huy bo san.
+        assertEquals(1 * LuatCongGio.DONG_MOI_PHUT, chuanBi.phut)
 
         val daGhi = SuaCham.ghi(context, chuanBi, now + 1000)
         assertEquals(1, daGhi.size)
         assertTrue(SoCaiBai.dangChoSua(context, now + 2000).isEmpty())
-        assertEquals(LuatCongGio.TOI_THIEU_BAI_TAP, SoCaiBai.phutDaCongHomNay(context, now + 2000))
+        assertEquals(chuanBi.phut, SoCaiBai.phutDaCongHomNay(context, now + 2000))
+    }
+
+    /**
+     * Cau sua theo Claude cung chiu tran 45 cua duong chup anh (29/9/2026): hom nay da
+     * cong 43 phut chup anh thi cau bon dong chi con 2.
+     */
+    @Test
+    fun cau_sua_cung_chiu_tran_anh_trong_ngay() {
+        val de = "Phân tích đa thức 4x^2 − 9 thành nhân tử."
+        SoCaiBai.ghi(
+            context, listOf(CauCham(ma = "da xong", de = "bài đã chấm", dung = true, soDong = 43)),
+            mapOf("da xong" to 43), now
+        )
+        SoCaiBai.ghi(context, listOf(cauSai("2.9", de, "sachthu:2.9", dong = 4)), emptyMap(), now)
+
+        val chuanBi = SuaCham.chuanBi(context, listOf(SuaCham.Cau("2.9", de)), now + 1000)
+        assertEquals(2, chuanBi.phut)
+        SuaCham.ghi(context, chuanBi, now + 1000)
+        assertEquals(LuatCongGio.TRAN_ANH, SoCaiBai.phutAnhHomNay(context, now + 2000))
     }
 
     @Test

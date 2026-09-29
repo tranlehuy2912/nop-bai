@@ -354,15 +354,6 @@ class TuVungTest {
         assertTrue("dung" in ra)
     }
 
-    // --- buoi nao tra giay ---
-
-    @Test
-    fun buoi_toi_cua_vo_dan_do_nam_trong_tron_goi_nen_khong_tra_rieng() {
-        assertFalse(LuatTuVung.coTraGiay(BuoiDo.DAN_DO_TOI))
-        assertTrue(LuatTuVung.coTraGiay(BuoiDo.DAN_DO_SANG))
-        assertTrue(LuatTuVung.coTraGiay(BuoiDo.HANG_NGAY))
-    }
-
     // --- tinh trang tu, doc tu SQLite ---
 
     private fun tinhTrang(ma: String): LuatTuVung.TinhTrang =

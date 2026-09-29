@@ -98,31 +98,53 @@ class DuyetTheoMaTest {
         assertEquals(listOf(conCho), gate.baiDangCho().map { it.id })
     }
 
+    /**
+     * Khong con tran ngay chan nut Duyet (29/9/2026): hom nay da kiem du tran ngay ma Ba
+     * Huy van bam Duyet thi cong thang vao phien. Truoc do test nay giu dieu nguoc lai: het
+     * tran thi giu bai va bao "Không cấp được".
+     */
     @Test
-    fun dang_choi_ma_het_tran_thi_giu_bai_va_bao_khong_cap_duoc() {
+    fun dang_choi_ma_da_kiem_du_tran_ngay_van_duyet_cong_thang() {
         assumeTrue(gate.baiDangCho().isEmpty())
-        // Test dung het tran cua hom nay: giu lai so dem cua GateStore de tra ve sau, khong
-        // thi cac test cap gio chay sau no trong cung ngay deu hong.
-        val sp = vn.huytl.homeworkgate.data.Prefs.get(context).raw()
+        // Test ghi de so dem cua GateStore: giu lai de tra ve sau, khong thi cac test cap
+        // gio chay sau no trong cung ngay doc phai so gia.
+        val prefs = vn.huytl.homeworkgate.data.Prefs.get(context)
+        val sp = prefs.raw()
         val ngayCu = sp.getInt("day_key", 0)
         val phutCu = sp.getInt("day_phut", 0)
+        val nguCu = prefs.hardStopMinuteOfDay
+        val dayCu = prefs.gioDayMinuteOfDay
         try {
-            // Dung het tran ngay roi bat dau choi. Gio ngu thi khong cap duoc gi: bo qua.
-            val con = gate.phutConLaiHomNay()
-            assumeTrue(con > 0 && gate.approve(wantedMinutes = con, useQuota = true) != null)
+            // Gio ngu dat quanh gio that, ba tieng nua moi ngu, nhu SuaChamLenhTest: gio chot
+            // khong cat phan vua cong.
+            val c = java.util.Calendar.getInstance()
+            val bayGio = c.get(java.util.Calendar.HOUR_OF_DAY) * 60 + c.get(java.util.Calendar.MINUTE)
+            prefs.hardStopMinuteOfDay = (bayGio + 180) % (24 * 60)
+            prefs.gioDayMinuteOfDay = (bayGio + 240) % (24 * 60)
+            assumeTrue(gate.approve(wantedMinutes = 20, useQuota = true) != null)
             assumeTrue(gate.start() != null)
+            // Gia nhu hom nay da kiem du tran ngay.
+            sp.edit().putInt("day_phut", vn.huytl.homeworkgate.data.LuatCongGio.TRAN_NGAY).commit()
+            assertEquals(0, gate.phutConLaiHomNay())
             gate.markPending(conCho, 0L)
             val conLaiTruoc = gate.remainingMs() / 60_000L
 
             val tra = ThiHanhLenh.duyet(context, gate, conCho, 30)
-            assertTrue(tra, tra.startsWith("Không cấp được"))
-            // Bai con nam trong hang de ba cho gio cach khac, va phien khong duoc cong.
-            assertTrue(gate.baiDangCho().any { it.id == conCho })
-            assertEquals(conLaiTruoc, gate.remainingMs() / 60_000L)
+            assertTrue(tra, tra.startsWith("Đang chơi nên cộng thẳng 30 phút"))
+            assertFalse(gate.baiDangCho().any { it.id == conCho })
+            // Cong du 30 phut. Lech mot phut la do lam tron xuong trong luc dong ho chay.
+            val conLaiSau = gate.remainingMs() / 60_000L
+            assertTrue("truoc $conLaiTruoc, sau $conLaiSau", conLaiSau - conLaiTruoc in 29L..30L)
+            assertEquals(
+                vn.huytl.homeworkgate.data.LuatCongGio.TRAN_NGAY + 30,
+                gate.phutDaDuyetHomNay()
+            )
         } finally {
             gate.boBaiCho(conCho)
             gate.endSession(EndReason.PARENT_REVOKED)
             sp.edit().putInt("day_key", ngayCu).putInt("day_phut", phutCu).commit()
+            prefs.hardStopMinuteOfDay = nguCu
+            prefs.gioDayMinuteOfDay = dayCu
         }
     }
 }

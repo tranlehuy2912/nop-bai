@@ -243,33 +243,41 @@ class ChonBaiActivity : AppCompatActivity() {
         val homNay = ThoiKhoaBieu.monTrongNgay(Calendar.getInstance().get(Calendar.DAY_OF_WEEK))
         val conLai = ThoiKhoaBieu.tatCaMon().filterNot { it in homNay }
 
-        // Cau tung sai ma da sua dung: moi con quay lai lam mot lan nua. Dat ngay dau
-        // man hinh chu khong giau trong menu - no la viec dang lam nhat o day, va neu
-        // phai di tim thi khong dua tre nao di tim.
-        lifecycleScope.launch {
-            val on = withContext(Dispatchers.IO) { SoCaiBai.cacCauDangOn(this@ChonBaiActivity) }
-            if (on.isEmpty() || buoc != Buoc.MON) return@launch
-            val dong = LayoutInflater.from(this@ChonBaiActivity)
-                .inflate(R.layout.st_dong_chon, binding.danhSach, false) as LinearLayout
-            dong.findViewById<TextView>(R.id.ten).text =
-                "Ôn lại ${on.size} câu đến hẹn"
-            dong.findViewById<TextView>(R.id.phu).apply {
-                text = "Đến hẹn nhớ lại. Làm trong vở rồi chụp"
-                visibility = View.VISIBLE
-            }
-            dong.setOnClickListener {
-                buoc = Buoc.ON_TAP
-                veLai()
-            }
-            binding.danhSach.addView(dong, 1)
-        }
-
-        if (homNay.isNotEmpty()) {
+        /*
+         * On lai cau den hen khong con o day (29/9/2026): on lai lam tren may, dong cua no
+         * nam ngoai man chinh. Man nay chi con bai trong vo dan do.
+         *
+         * Mon chua co sach trong may gop vao mot dong "Bài môn khác" (Ba Huy chon ngay
+         * 29/9/2026): mot lan chup chung, bam vao thi chon mon. Truoc do moi mon mot dong,
+         * muoi hai dong chup y het nhau. Mon nao sau nay co sach thi tu hien thanh dong rieng.
+         */
+        val coSachHomNay = homNay.filter { NganHang.coSach(it) }
+        val coSachKhac = conLai.filter { NganHang.coSach(it) }
+        val chuaCoSach = (homNay + conLai).filterNot { NganHang.coSach(it) }
+        if (coSachHomNay.isNotEmpty()) {
             themChuong("Học hôm nay")
-            homNay.forEach { themMon(it) }
+            coSachHomNay.forEach { themMon(it) }
             themChuong("Môn khác")
         }
-        conLai.forEach { themMon(it) }
+        coSachKhac.forEach { themMon(it) }
+        if (chuaCoSach.isNotEmpty()) {
+            themDong(
+                ten = "Bài môn khác",
+                phu = "Môn chưa có sách trong máy: " + chuaCoSach.take(3).joinToString(", ") +
+                    if (chuaCoSach.size > 3) "…" else ""
+            ) { hoiMonKhac(chuaCoSach) }
+        }
+    }
+
+    /** Chon mot mon chua co sach roi chup nhu truoc gio. Mon hoc hom nay xep truoc. */
+    private fun hoiMonKhac(cac: List<String>) {
+        MaterialAlertDialogBuilder(this)
+            .setTitle("Bài môn gì?")
+            .setItems(cac.toTypedArray()) { _, i ->
+                mon = cac[i]
+                chupTuDo()
+            }
+            .show()
     }
 
     /**
@@ -381,21 +389,8 @@ class ChonBaiActivity : AppCompatActivity() {
             phu = "Vở bài tập, phiếu photo, đề cô cho riêng"
         ) { chupTuDo() }
 
-        // Duong lam them gop ca mon: con khong phai nho cau minh chua lam nam o tap
-        // nao. Mot lan nop van chi mang ma cua mot quyen - xem chupLamThem.
-        if (quyen.isEmpty()) return
-        themDong(
-            ten = "Làm thêm cho quen tay",
-            phu = if (NganHang.sachBaiTapCua(mon).isNotEmpty()) {
-                "Câu sách bài tập trong các bài lớp đã học, bài vừa sai trước"
-            } else {
-                "Câu chưa làm, ưu tiên bài Lê Hòa vừa sai"
-            }
-        ) {
-            sach = null
-            buoc = Buoc.LAM_THEM
-            veLai()
-        }
+        // Lam them khong con chup anh (29/9/2026): no la bai lam tren may, dong cua no nam
+        // ngoai man chinh. Man nay chi con bai trong vo dan do.
     }
 
     // ------------------------------------------------------------- buoc lam them

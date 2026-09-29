@@ -91,7 +91,7 @@ object SuaCham {
 
         val bang = LuatCongGio.tinh(
             KetQuaCham(mon = cac.firstOrNull()?.mon.orEmpty(), cac = cac),
-            daCongLamThemHomNay = SoCaiBai.phutLamThemHomNay(context, now),
+            daCongAnhHomNay = SoCaiBai.phutAnhHomNay(context, now),
             bayGio = LuatCongGio.bayGio(now),
             goiDaCoHomNay = SoCaiBai.goiDaCoHomNay(context, now)
         )

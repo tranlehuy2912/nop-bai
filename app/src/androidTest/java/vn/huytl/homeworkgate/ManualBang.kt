@@ -67,7 +67,10 @@ class ManualBang {
             put("dangMo", gate.isOpen())
             put("phutDaDuyetHomNay", gate.phutDaDuyetHomNay(now))
             put("phutConLaiHomNay", gate.phutConLaiHomNay(now))
-            put("tranMoiNgay", prefs.tranPhutMoiNgay)
+            // Tu 29/9/2026 khong con tran chung trong prefs: tran ngay la tong cac tran
+            // rieng, chi de hien. Giu ten khoa cu vi trang web van doc "tranMoiNgay".
+            put("tranMoiNgay", LuatCongGio.TRAN_NGAY)
+            put("quyGio", prefs.quyGio)
             put("nhanCho", gate.nhanCho)
             put("lyDoDungGanNhat", gate.lastEndReason?.name ?: JSONObject.NULL)
             put("trongGioNgu", gate.trongGioNgu(now))
@@ -82,7 +85,13 @@ class ManualBang {
         ra(JSONObject().apply {
             put("k", "socai")
             put("goiDaCoHomNay", SoCaiBai.goiDaCoHomNay(context, now))
-            put("phutLamThemHomNay", SoCaiBai.phutLamThemHomNay(context, now))
+            // Trang web lay so nay dien vao o "da cong" cua may tinh cong gio ([conggio]).
+            // Tu 29/9/2026 o do la so phut duong chup anh da cong (tran 45), nen khoa cu
+            // mang so cua duong chup anh. Ba so moi ghi rieng tung phan.
+            put("phutLamThemHomNay", SoCaiBai.phutAnhHomNay(context, now))
+            put("phutAnhHomNay", SoCaiBai.phutAnhHomNay(context, now))
+            put("phutTrenMayHomNay", SoCaiBai.phutTrenMayHomNay(context, now))
+            put("phutOnHomNay", SoCaiBai.phutOnHomNay(context, now))
             put("phutDaCongHomNay", SoCaiBai.phutDaCongHomNay(context, now))
             put("loiNhan", SoCaiBai.loiNhan(context, now) ?: JSONObject.NULL)
             put("dangChoSua", JSONArray(SoCaiBai.dangChoSua(context, now).map { c ->
@@ -439,7 +448,12 @@ class ManualBang {
      * chep tay trong trang web.
      *
      *   -e cham <base64 cua JSON KetQuaCham>
-     *   -e daCongLamThem 0   -e goiDaCo 0   -e onTap 0   -e bayGio 2026-09-14T20:00
+     *   -e daCongLamThem 0   -e goiDaCo 0   -e bayGio 2026-09-14T20:00
+     *
+     * Tu 29/9/2026 day chi con la luat duong chup anh (bai dan do, tran 45). Tham so
+     * "daCongLamThem" giu ten cu vi tools/web.py van gui ten do, nhung nghia moi la so
+     * phut chup anh da cong trong ngay (daCongAnhHomNay). "onTap" van nhan nhung bo qua:
+     * on lai da sang lam tren may, khong con di qua ham nay.
      */
     @Test
     fun conggio() {
@@ -476,11 +490,10 @@ class ManualBang {
 
         val b = LuatCongGio.tinh(
             ket,
-            daCongLamThemHomNay = args.getString("daCongLamThem")?.toIntOrNull() ?: 0,
+            daCongAnhHomNay = (args.getString("daCongAnh") ?: args.getString("daCongLamThem"))
+                ?.toIntOrNull() ?: 0,
             bayGio = bayGio,
-            goiDaCoHomNay = args.getString("goiDaCo") == "1",
-            // Lan nay con lam lai cau da dung roi de on: luat tra NUA so phut.
-            onTap = args.getString("onTap") == "1"
+            goiDaCoHomNay = args.getString("goiDaCo") == "1"
         )
         ra(JSONObject().apply {
             put("k", "conggio")
@@ -491,9 +504,18 @@ class ManualBang {
             put("phutCua", JSONObject(b.phutCua as Map<*, *>))
             put("trongGoi", JSONArray(b.trongGoi.map { it.ma }))
             put("bayGio", bayGio.toString())
-            put("tranLamThem", LuatCongGio.TRAN_LAM_THEM)
+            put("phutGoi", b.phutGoi)
+            put("thieuDong", JSONArray(b.thieuDong.map { it.ma }))
+            // Trang web ghi "tối đa một ngày {toiDaMoiNgay} = trọn gói {tronGoi} + trần làm
+            // thêm {tranLamThem}". Duong chup anh khong con bai lam them (29/9/2026): ca
+            // phan toi da 45, nen tran lam them o day la 0 cho phep cong van dung.
+            put("tranLamThem", 0)
             put("tronGoi", LuatCongGio.PHUT_TRON_GOI_DAN_DO)
-            put("toiDaMoiNgay", LuatCongGio.TOI_DA_MOI_NGAY)
+            put("toiDaMoiNgay", LuatCongGio.TRAN_ANH)
+            put("tranAnh", LuatCongGio.TRAN_ANH)
+            put("tranTrenMay", LuatCongGio.TRAN_TREN_MAY)
+            put("tranOn", LuatCongGio.TRAN_ON_MOI_NGAY)
+            put("tranNgay", LuatCongGio.TRAN_NGAY)
         })
     }
 

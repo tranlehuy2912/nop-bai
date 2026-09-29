@@ -51,7 +51,7 @@ object NganHang {
      * Cac quyen da nap.
      *
      * Toan 8 ca hai tap, Khoa hoc tu nhien 8 va Ngu van 8 ca hai tap, cong them sach
-     * bai tap Toan 8 ca hai tap va sach bai tap KHTN 8. Cac mon khac van chay duong cu
+     * bai tap Toan 8 ca hai tap, sach bai tap KHTN 8 va sach bai tap Tieng Anh 8. Cac mon khac van chay duong cu
      * - con chon "Bai khac" luc nop, va so cai lay de bai da chuan hoa lam khoa nhu tu
      * truoc den gio.
      *
@@ -172,6 +172,19 @@ object NganHang {
             file = "nganhang/sbtkhtn8.json",
             baiTap = true
         ),
+        /*
+         * Sach bai tap Tieng Anh 8 Global Success (29/9/2026): Ba Huy dua ban quet, cac Unit
+         * chep ra va soan ghep bang tools/ghep. Chi co sach bai tap, khong co SGK. Bai la
+         * "Unit N. ..." va "Test Yourself N", moc da hoc la Unit o man Do tu vung, xem
+         * [PhanHoc.baiDaHoc].
+         */
+        Sach(
+            nguon = "sbtanh8",
+            mon = PhanHoc.TIENG_ANH,
+            ten = "SBT Tiếng Anh 8",
+            file = "nganhang/sbtanh8.json",
+            baiTap = true
+        ),
         Sach(
             nguon = "van8t1",
             mon = "Ngữ văn",
@@ -286,6 +299,9 @@ object NganHang {
         }
 
         val cacBai = o.optJSONArray("cac_bai") ?: return null
+        // Doan van cua cac cau doc hieu, chep vao tung cau luc nap: moi cau chi can biet
+        // doan cua no, khong phai tra lai bang cua ca file. Xem tools/ghep/DINH_DANG.md.
+        val doanVan = o.optJSONObject("doan_van")
         var thuTu = 0
         val cac = buildList {
             for (i in 0 until cacBai.length()) {
@@ -312,7 +328,14 @@ object NganHang {
                             dang = c.optString("dang").ifBlank { "CAU_NHO" },
                             thuTu = thuTu++,
                             dapAn = c.optString("dap_an").trim(),
-                            loaiDapAn = c.optString("loai_dap_an").trim()
+                            loaiDapAn = c.optString("loai_dap_an").trim(),
+                            ghep = c.optJSONObject("ghep")?.toString().orEmpty(),
+                            hinh = c.optJSONArray("hinh")?.let { a ->
+                                (0 until a.length()).map { a.optString(it) }.filter { it.isNotBlank() }
+                            }.orEmpty(),
+                            doan = c.optString("doan").takeIf { it.isNotBlank() }
+                                ?.let { doanVan?.optString(it) }.orEmpty(),
+                            boMay = c.optString("bo_may").trim()
                         )
                     )
                 }

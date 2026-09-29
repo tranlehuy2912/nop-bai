@@ -392,7 +392,8 @@ class GiaiDeTest {
 
     @Test
     fun khong_nham_dong_khong_phai_kiem_tra_toan_khtn() {
-        assertTrue(doc("Tiếng Anh: tiết sau kiểm tra từ vựng").isEmpty())
+        // Truoc 29/9/2026 dong nay ra rong vi chua co sach bai tap Tieng Anh. Tu hom do
+        // Tieng Anh la mon thu ba: xem doc_kiem_tra_tieng_anh_theo_unit.
         assertTrue(doc("Toán: làm bài 2.26 trang 36").isEmpty())
         assertTrue(doc("NV: học thuộc bài thơ thì mới làm được").isEmpty())
         // "học sinh", "sinh hoạt" khong phai mon Sinh.
@@ -426,6 +427,76 @@ class GiaiDeTest {
         val hai = doc("Kiểm tra: Toán ngày 5/11, KHTN ngày 7/11").associateBy { it.mon }
         assertEquals(LocalDate.of(2026, 11, 5), hai.getValue(LichKiemTra.TOAN).ngay)
         assertEquals(LocalDate.of(2026, 11, 7), hai.getValue(LichKiemTra.KHTN).ngay)
+    }
+
+    // ---------------------------------------------- lich kiem tra Tieng Anh (29/9/2026)
+
+    /**
+     * Lop kiem tra Tieng Anh theo Unit. So Unit vao [LichKiemTra.KiemTra.cacBai] y nhu so
+     * bai cua Toan, de Giai de lay dung cac Unit do. Tieng Anh khong co chuong.
+     */
+    @Test
+    fun doc_kiem_tra_tieng_anh_theo_unit() {
+        // Khong ghi mon, chi co "Unit": van la Tieng Anh.
+        val kt = doc("kiểm tra 15 phút Unit 2").single()
+        assertEquals(LichKiemTra.TIENG_ANH, kt.mon)
+        assertEquals(listOf(2), kt.cacBai)
+        assertNull(kt.chuong)
+        assertNull(kt.ngay)
+
+        // "Tiếng Anh:" dau dong, Unit viet kieu khoang. Tiet sau la buoi Tieng Anh ke tiep
+        // theo thoi khoa bieu: tu thu Hai 28/9 la thu Bay 3/10.
+        val khoang = doc("Tiếng Anh: tiết sau kiểm tra unit 1-3").single()
+        assertEquals(LichKiemTra.TIENG_ANH, khoang.mon)
+        assertEquals(listOf(1, 2, 3), khoang.cacBai)
+        assertEquals(LocalDate.of(2026, 10, 3), khoang.ngay)
+
+        // "Anh văn" dau dong va giua cau.
+        assertEquals(listOf(4), doc("Anh văn: kiểm tra 15 phút unit 4").single().cacBai)
+        val giua = doc("Mai kiểm tra Anh văn unit 3").single()
+        assertEquals(LichKiemTra.TIENG_ANH, giua.mon)
+        assertEquals(thuHai.plusDays(1), giua.ngay)
+
+        // "English", ngay theo thu trong tuan.
+        val eng = doc("Kiểm tra English unit 5 vào thứ 6").single()
+        assertEquals(LichKiemTra.TIENG_ANH, eng.mon)
+        assertEquals(listOf(5), eng.cacBai)
+        assertEquals(LocalDate.of(2026, 10, 2), eng.ngay)
+
+        // Kiem tra tu vung khong noi Unit: van la mot lan kiem tra Tieng Anh, khong Unit nao.
+        val tuVung = doc("Tiếng Anh: tiết sau kiểm tra từ vựng").single()
+        assertEquals(LichKiemTra.TIENG_ANH, tuVung.mon)
+        assertTrue(tuVung.cacBai.isEmpty())
+
+        // Co giao ghi "bài" cho Tieng Anh thi van hieu la Unit.
+        assertEquals(listOf(6), doc("Tiếng Anh: kiểm tra bài 6").single().cacBai)
+    }
+
+    @Test
+    fun anh_trai_khong_phai_mon_tieng_anh() {
+        // "anh" dung mot minh la anh trai, khong phai mon.
+        assertTrue(doc("Hôm nay anh trai kiểm tra bài cho em").isEmpty())
+        val toan = doc("Toán: anh trai kiểm tra giúp bài 3").single()
+        assertEquals(LichKiemTra.TOAN, toan.mon)
+        assertEquals(listOf(3), toan.cacBai)
+        // Nhac ca Toan va Tieng Anh thi ra hai lan.
+        assertEquals(
+            setOf(LichKiemTra.TOAN, LichKiemTra.TIENG_ANH),
+            doc("Ngày 5/10 kiểm tra Toán và tiếng Anh").map { it.mon }.toSet()
+        )
+    }
+
+    @Test
+    fun doc_so_unit_theo_nhieu_cach_viet() {
+        // Ham nhan chu da bo dau, viet thuong, nhu [LichKiemTra.doc] dua vao.
+        assertEquals(listOf(2, 3), LichKiemTra.cacUnit("kiem tra unit 2, 3"))
+        assertEquals(listOf(1, 2, 3), LichKiemTra.cacUnit("unit 1 den unit 3"))
+        assertEquals(listOf(1, 2, 3), LichKiemTra.cacUnit("unit 1-3"))
+        assertEquals(listOf(2, 5), LichKiemTra.cacUnit("unit 2 va unit 5"))
+        // Sach chi co 12 Unit.
+        assertTrue(LichKiemTra.cacUnit("unit 13").isEmpty())
+        // "unit" nam trong mot tu khac thi khong phai.
+        assertTrue(LichKiemTra.cacUnit("community 3").isEmpty())
     }
 
     @Test

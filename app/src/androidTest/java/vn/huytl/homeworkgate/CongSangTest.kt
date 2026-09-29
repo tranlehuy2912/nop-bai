@@ -5,6 +5,7 @@ import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
 import org.junit.After
 import org.junit.Assert.assertEquals
+import org.junit.Assert.assertFalse
 import org.junit.Assert.assertNull
 import org.junit.Assert.assertTrue
 import org.junit.Before
@@ -27,7 +28,7 @@ import java.util.Calendar
  * Service co the dang chay tu bo test truoc, va nhip xet cua no cung goi congNeuDenLuc. Nen
  * test xet ket qua tren cong, khong doi chinh lan goi o day phai la lan cong.
  *
- * Don dep: xoa phan giu, dong phieu gio, tra gio ngu va tran ngay nhu cu.
+ * Don dep: xoa phan giu, dong phieu gio, tra gio ngu nhu cu.
  */
 @RunWith(AndroidJUnit4::class)
 class CongSangTest {
@@ -36,7 +37,6 @@ class CongSangTest {
     private lateinit var prefs: Prefs
     private var nguCu = 0
     private var dayCu = 0
-    private var tranCu = 0
 
     @Before
     fun setUp() {
@@ -44,7 +44,6 @@ class CongSangTest {
         prefs = Prefs.get(context)
         nguCu = prefs.hardStopMinuteOfDay
         dayCu = prefs.gioDayMinuteOfDay
-        tranCu = prefs.tranPhutMoiNgay
         CongSang.xoaHet(context)
         GateStore(context).endSession(EndReason.PARENT_REVOKED)
     }
@@ -55,7 +54,6 @@ class CongSangTest {
         GateStore(context).endSession(EndReason.PARENT_REVOKED)
         prefs.hardStopMinuteOfDay = nguCu
         prefs.gioDayMinuteOfDay = dayCu
-        prefs.tranPhutMoiNgay = tranCu
         SoCaiBai.xoaLoiNhan(context)
     }
 
@@ -80,7 +78,6 @@ class CongSangTest {
 
     @Test
     fun trong_gio_ngu_thi_giu_het_gio_ngu_thi_cong() {
-        prefs.tranPhutMoiNgay = GateStore(context).phutDaDuyetHomNay() + 100
         datDangNgu()
         CongSang.them(context, 12, "thu-cong-sang")
         assertEquals(listOf(12), CongSang.cacMuc(context).map { it.phut })
@@ -102,21 +99,24 @@ class CongSangTest {
         assertTrue(SoCaiBai.loiNhan(context).orEmpty().contains("Được thêm 12 phút"))
     }
 
+    /**
+     * Sang ra cong du phan giu (29/9/2026). Truoc do phan giu an vao tran ngay cua ngay
+     * duoc cong, tran het thi cat bot. Bo tran chung roi thi phut giu da qua tran rieng cua
+     * bai dan do luc cham (xem [vn.huytl.homeworkgate.data.LuatCongGio.TRAN_ANH]), khong
+     * con gi de cat, ke ca khi so phut kiem duoc hom nay da vuot tran ngay.
+     */
     @Test
-    fun cong_luc_het_gio_ngu_van_an_vao_tran_ngay() {
+    fun cong_luc_het_gio_ngu_thi_cong_du_khong_con_tran_ngay() {
         datDangNgu()
         CongSang.them(context, 10, "thu-cong-sang-1")
         CongSang.them(context, 8, "thu-cong-sang-2")
         datHetNgu()
-        // Hom nay chi con 5 phut trong tran: cong 5, bai giu truoc lay truoc.
-        prefs.tranPhutMoiNgay = maxOf(15, GateStore(context).phutDaDuyetHomNay() + 5)
-        val conTran = GateStore(context).phutConLaiHomNay()
         val bao = CongSang.congNeuDenLuc(context)
-        if (bao != null && conTran < 18) {
-            assertTrue(bao, bao.contains("đã cộng $conTran phút"))
-            assertTrue(bao, bao.contains("hôm nay chỉ còn $conTran phút trong hạn mức"))
+        if (bao != null) {
+            assertTrue(bao, bao.contains("đã cộng 18 phút"))
+            assertFalse(bao, bao.contains("hạn mức"))
         }
-        assertEquals(minOf(18, conTran), GateStore(context).grantedMinutes)
+        assertEquals(18, GateStore(context).grantedMinutes)
         assertTrue(CongSang.cacMuc(context).isEmpty())
     }
 

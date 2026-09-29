@@ -11,6 +11,7 @@ import java.time.temporal.TemporalAdjusters
 import java.util.UUID
 import vn.huytl.homeworkgate.kho.CauHoi
 import vn.huytl.homeworkgate.kho.DeGiai
+import vn.huytl.homeworkgate.kho.Ghep
 import vn.huytl.homeworkgate.kho.KhoBai
 import vn.huytl.homeworkgate.kho.NganHang
 import vn.huytl.homeworkgate.kho.PhanHoc
@@ -32,25 +33,23 @@ import vn.huytl.homeworkgate.kho.TraLoi
  *  - [LOAI_KIEM_TRA]: vo dan do hay tin cua co bao sap kiem tra Toan, KHTN thi mo mot de
  *    on dung may bai do, toi het ngay kiem tra. Doc lich bang [LichKiemTra].
  *
- * CACH LAM. Con bam Bat dau thi dong ho chay. Cau trac nghiem bam chu ngay tren may, cau
- * tu luan lam ra vo. Bam Nop bai: trac nghiem cham ngay bang dap an in cuoi sach, cong
- * gio luon; roi con chup phan tu luan, di dung duong cham nhu bai lam them - xem
- * [vn.huytl.homeworkgate.kho.PhamVi.giaiDe]. Het gio van nop duoc, tin cho Ba Huy ghi
- * lam bao lau (Ba Huy chon ngay 27/9/2026).
+ * CACH LAM (tu 29/9/2026). Ca de lam tren may bang ban phim ghep, khong chup phan tu luan
+ * nua (Le Hoa bo qua moi bai bat viet). Con bam Bat dau thi dong ho chay; moi cau mot khung
+ * ghep co sao rieng, bam Kiem tra sai thi mat sao ngay trong de - cung luat sao voi bai lam
+ * them, xem [LuatGhep]. Bam Nop bai thi moi cau ghi so, cong phut. Het gio van nop duoc,
+ * tin cho Ba Huy ghi lam bao lau (Ba Huy chon ngay 27/9/2026). Thoat ra vao lai thi sao
+ * tung cau giu nguyen ([luotCua]): khong co cach nao thoat ra de lay lai sao.
  *
- * GIO CHOI tinh y het bai lam them, khong co gia rieng: tu luan theo so dong, trac nghiem
- * [LuatCongGio.PHUT_MOI_CAU_TRAC_NGHIEM] mot cau, chung tran lam them. Diem cua de khong
- * doi ra phut nao: thuong theo diem la cho con mot ly do de tra loi giai, ma loi giai moi
- * cau SBT deu co tren mang.
+ * GIO CHOI tinh y het bai lam them: moi sao mot phut, chung tran
+ * [LuatCongGio.TRAN_TREN_MAY], phan vuot tran vao Quỹ giờ chơi. Diem cua de khong doi ra
+ * phut nao them.
  *
- * DIEM la so cau dung o lan lam dau trong de, moi y a), b) la mot cau. Cau sai trong de
- * van vao duong sua va lich on lai nhu moi cau khac; sua xong khong doi diem.
+ * DIEM la tong sao con dat duoc luc nop tren tong sao toi da cua de (Ba Huy chot 29/9/2026).
+ * Cau chua xong luc nop tinh 0 sao, va 24 gio sau mo lam lai nhu moi cau khac.
  *
- * CAU NAO DUOC VAO DE. Chi cau SBT co dap an, chua tung nop, khong nam trong de khac con
- * han, cung mot quyen (mot lan nop chi mang ma cua mot quyen). Cau trac nghiem khac kieu
- * (dung/sai tung y, noi cot) thi khong, vi khong bam mot chu duoc. Moi de co it nhat mot
- * cau tu luan: de chi toan trac nghiem thi khong co gi de viet ra vo, va cung khong con
- * la mot bai kiem tra.
+ * CAU NAO DUOC VAO DE. Chi cau lam duoc tren may (co "ghep"), chua tung lam, khong nam
+ * trong de khac con han, cung mot quyen. Moi de co it nhat mot cau khong phai trac nghiem.
+ * De cu (truoc 29/9/2026, [DeGiai.trenMay] = false) van chay theo luat cu cho toi het han.
  */
 object GiaiDe {
 
@@ -79,6 +78,10 @@ object GiaiDe {
     private const val SO_BAI_TL_CHUONG = 3
     private const val SO_BAI_TL_TOAN = 4
     private const val TOI_DA_Y_TU_LUAN = 6
+
+    /** De tuan Tieng Anh: bay nhieu cau chon, bay nhieu cau ghep (tu, cau, doan). */
+    private const val SO_TN_ANH = 10
+    private const val SO_BAI_TL_ANH = 6
 
     /** Cau it hon chung nay thi khong ra de: ba cau khong phai mot bai kiem tra. */
     private const val TOI_THIEU_CAU = 3
@@ -116,10 +119,10 @@ object GiaiDe {
         return moi
     }
 
-    /** Hai mon co sach bai tap trong may. */
-    val MON = listOf(LichKiemTra.TOAN, LichKiemTra.KHTN)
+    /** Ba mon co sach bai tap lam tren may. */
+    val MON = listOf(LichKiemTra.TOAN, LichKiemTra.KHTN, PhanHoc.TIENG_ANH)
 
-    /** Ten mon cho dong chu ngan: "Toán", "KHTN". */
+    /** Ten mon cho dong chu ngan: "Toán", "KHTN", "Tiếng Anh". */
     fun tenMon(mon: String): String = if (mon == LichKiemTra.KHTN) "KHTN" else mon
 
     /** Moc thu Bay cua tuan chua [bayGio]: thu Bay gan nhat da qua [GIO_MO_DE_TUAN] gio. */
@@ -206,6 +209,7 @@ object GiaiDe {
         ten = chon.ten,
         cauIds = chon.cac.map { it.id },
         phutGoiY = phutGoiY(chon.cac),
+        saoToiDa = tongSao(chon.cac),
         taoLuc = bayGio,
         hetHan = hetHan,
         ghiChu = ghiChu,
@@ -220,6 +224,12 @@ object GiaiDe {
      */
     private fun chonCauTuan(context: Context, mon: String, bayGio: Long): Chon? {
         val tuDo = cauTuDo(context, mon, bayGio)
+        if (mon == PhanHoc.TIENG_ANH) {
+            testVuaToi(context, bayGio)?.let { ten ->
+                val cua = cauCuaMuc(context, mon, ten, bayGio)
+                if (cua.size >= TOI_THIEU_CAU) return Chon(cua.first().nguon, ten, cua)
+            }
+        }
         if (mon == LichKiemTra.TOAN) {
             chuongVuaXong(context, bayGio)?.let { onTap ->
                 val cua = tuDo.filter { it.bai == onTap }
@@ -261,8 +271,33 @@ object GiaiDe {
     }
 
     /**
+     * Bai Test Yourself cua sach bai tap Tieng Anh ma lop vua hoc toi (xong Unit 3, 6, 9 hay
+     * 12) va chua cau nao cua no tung ra. Dung nhu muc "Ôn tập chương" cua SBT Toan: tuan do
+     * de tuan la nguyen bai Test Yourself (Ba Huy dong y ngay 29/9/2026).
+     */
+    private fun testVuaToi(context: Context, bayGio: Long): String? {
+        val daHoc = PhanHoc.baiDaHoc(context, PhanHoc.TIENG_ANH) ?: return null
+        val unit = daHoc.maxOrNull() ?: return null
+        if (unit < 3) return null
+        val ten = "Test Yourself ${unit / 3}"
+        val kho = KhoBai.get(context)
+        val daDung = kho.cacCauDaNop(bayGio - MOT_NAM) + kho.cacDeTu(bayGio - MOT_NAM).flatMap { it.cauIds }
+        val cua = NganHang.sachBaiTapCua(PhanHoc.TIENG_ANH).flatMap { kho.cacCauCuaNguon(it.nguon) }
+            .filter { it.bai == ten }
+        return ten.takeIf { cua.isNotEmpty() && cua.none { it.id in daDung } }
+    }
+
+    /** Moi cau lam duoc tren may cua mot muc (mot bai, mot Test Yourself), theo thu tu in. */
+    private fun cauCuaMuc(context: Context, mon: String, bai: String, bayGio: Long): List<CauHoi> {
+        val kho = KhoBai.get(context)
+        val trongDe = kho.cauTrongDeConHan(bayGio)
+        return NganHang.sachBaiTapCua(mon).flatMap { kho.cacCauCuaNguon(it.nguon) }
+            .filter { it.bai == bai && hopLe(it) && it.id !in trongDe }
+    }
+
+    /**
      * Cau SBT co the vao de: trong cac bai lop da hoc (ca muc on tap chuong cua chuong
-     * da hoc xong), co dap an, chua tung nop, khong nam trong de khac con han.
+     * da hoc xong), lam duoc tren may, chua tung nop, khong nam trong de khac con han.
      */
     private fun cauTuDo(context: Context, mon: String, bayGio: Long): List<CauHoi> {
         val daHoc = PhanHoc.baiDaHoc(context, mon, chiPhanDaChon = true) ?: return emptyList()
@@ -279,12 +314,14 @@ object GiaiDe {
     }
 
     /**
-     * Cau hop le cho mot de: co dap an, va la trac nghiem bam duoc hay mot cau tu luan.
-     * Cau trac nghiem khac kieu (dung/sai, noi cot) thi bo, xem [CauHoi.bamTrenMay].
+     * Cau hop le cho mot de: lam duoc tren may (co "ghep", khong bi "bo_may"). Tu 29/9/2026
+     * moi kieu cau deu lam tren may, ke ca dung/sai tung y va noi cot.
      */
     private fun hopLe(c: CauHoi): Boolean =
-        c.dapAn.isNotBlank() && c.dang != "KHONG_TINH" && c.id !in KHONG_RA_DE &&
-            (c.dang != "TRAC_NGHIEM" || c.bamTrenMay)
+        c.lamTrenMay && c.dang != "KHONG_TINH" && c.id !in KHONG_RA_DE
+
+    /** Cau chon mot phuong an (kieu CHON): xep vao phan trac nghiem cua de. */
+    private fun laChon(c: CauHoi): Boolean = c.ghep.contains("\"kieu\":\"CHON\"")
 
     /**
      * Cau sach in loi so lieu, luc chep dap an ngay 27/9/2026 da doi chieu ma khong gan
@@ -335,11 +372,18 @@ object GiaiDe {
         if (cacBai.isEmpty()) return null
         val nguon = tuDo.firstOrNull { it.bai == cacBai.first() }?.nguon ?: return null
         val cua = tuDo.filter { it.nguon == nguon && it.bai in cacBai }
-        val laKhtn = mon == LichKiemTra.KHTN
         val cac = ghep(
             cua,
-            soTn = if (laKhtn) SO_TN_KHTN else SO_TN_CHUONG,
-            soBaiTl = if (laKhtn) SO_BAI_TL_KHTN else SO_BAI_TL_TOAN,
+            soTn = when (mon) {
+                LichKiemTra.KHTN -> SO_TN_KHTN
+                PhanHoc.TIENG_ANH -> SO_TN_ANH
+                else -> SO_TN_CHUONG
+            },
+            soBaiTl = when (mon) {
+                LichKiemTra.KHTN -> SO_BAI_TL_KHTN
+                PhanHoc.TIENG_ANH -> SO_BAI_TL_ANH
+                else -> SO_BAI_TL_TOAN
+            },
             uuTien = cacBai
         ) ?: return null
         val tenBai = cacBai.filter { b -> cac.any { it.bai == b } }
@@ -355,9 +399,9 @@ object GiaiDe {
      */
     private fun ghep(cua: List<CauHoi>, soTn: Int, soBaiTl: Int, uuTien: List<String>): List<CauHoi>? {
         val theoBai = uuTien.associateWith { b -> cua.filter { it.bai == b } }
-        val tn = xoay(theoBai.mapValues { (_, c) -> c.filter { it.bamTrenMay } }, soTn)
+        val tn = xoay(theoBai.mapValues { (_, c) -> c.filter(::laChon) }, soTn)
         val baiToan = theoBai.mapValues { (_, c) ->
-            c.filter { it.dang != "TRAC_NGHIEM" }.groupBy { goc(it.ma) }.values.toList()
+            c.filterNot(::laChon).groupBy { goc(it.ma) }.values.toList()
         }
         val tl = mutableListOf<List<CauHoi>>()
         var soY = 0
@@ -420,12 +464,21 @@ object GiaiDe {
         return "Bài " + so.sorted().joinToString(", ")
     }
 
-    /** Gio goi y, lam tron len boi cua nam phut, trong khoang 10 toi 45. */
+    /**
+     * Gio goi y, lam tron len boi cua nam phut, trong khoang 10 toi 60: cau chon mot phut
+     * ruoi, cau khac mot phut moi sao (sao di theo so dong loi giai).
+     */
     fun phutGoiY(cac: List<CauHoi>): Int {
-        val giay = cac.sumOf { if (it.bamTrenMay) GIAY_MOI_TN else PHUT_MOI_Y_TU_LUAN * 60 }
+        val giay = cac.sumOf { c ->
+            val sao = Ghep.doc(c.ghep)?.sao ?: 1
+            if (laChon(c)) GIAY_MOI_TN else sao * 60
+        }
         val phut = (giay + 59) / 60
-        return (((phut + 4) / 5) * 5).coerceIn(10, 45)
+        return (((phut + 4) / 5) * 5).coerceIn(10, 60)
     }
+
+    /** Tong sao toi da cua cac cau, ghi vao de luc tao. */
+    private fun tongSao(cac: List<CauHoi>): Int = cac.sumOf { Ghep.doc(it.ghep)?.sao ?: 0 }
 
     // ------------------------------------------------------------ doc de
 
@@ -460,12 +513,14 @@ object GiaiDe {
     /** Con da lam het phan cua minh chua: nop trac nghiem, va gui tu luan neu de co. */
     fun xongViecCuaCon(context: Context, de: DeGiai): Boolean {
         if (!de.daNop) return false
+        if (de.trenMay) return true
         return daGuiThat(context, de) || cacCau(context, de).none { !it.bamTrenMay }
     }
 
     /** De da co diem ca hai phan chua. Ba duyet tu luan ma khong cham cung tinh la xong. */
     fun daCoDiem(context: Context, de: DeGiai): Boolean {
         if (!de.daNop) return false
+        if (de.trenMay) return true
         val coTuLuan = cacCau(context, de).any { !it.bamTrenMay }
         return !coTuLuan || de.tlDung >= 0 || baDuyetKhongCham(context, de)
     }
@@ -519,9 +574,79 @@ object GiaiDe {
         return GateStore(context).baiDangCho().any { it.id == baiId }
     }
 
-    /** So cau dung ca de va tong so cau. Phan chua cham tinh la chua dung. */
+    /**
+     * Diem cua de. De lam tren may: tong sao dat duoc tren tong sao toi da. De cu: so cau
+     * dung tren tong so cau, phan chua cham tinh la chua dung.
+     */
     fun diem(context: Context, de: DeGiai): Pair<Int, Int> =
-        (de.tnDung.coerceAtLeast(0) + de.tlDung.coerceAtLeast(0)) to de.cauIds.size
+        if (de.trenMay) de.saoDat.coerceAtLeast(0) to de.saoToiDa
+        else (de.tnDung.coerceAtLeast(0) + de.tlDung.coerceAtLeast(0)) to de.cauIds.size
+
+    // ------------------------------------------------------------ de lam tren may
+
+    /**
+     * Trang thai sao cua mot cau trong de dang lam. Luu trong [DeGiai.chon], moi cau mot khoi
+     * JSON: s sao con, l so lan sai, x xong, d dung, b da bot nhieu, t dang thu them, h hien
+     * loi giai, a cau tra loi. Chua co thi la luot moi du sao.
+     */
+    fun luotCua(de: DeGiai, cauId: String, saoToiDa: Int): LuatGhep.Luot {
+        val o = runCatching { org.json.JSONObject(de.chon[cauId].orEmpty()) }.getOrNull()
+            ?: return LuatGhep.Luot(saoToiDa)
+        return LuatGhep.Luot(
+            saoToiDa = saoToiDa,
+            sao = o.optInt("s", saoToiDa).coerceIn(0, saoToiDa),
+            lanSai = o.optInt("l"),
+            botNhieu = o.optBoolean("b"),
+            thuThem = o.optBoolean("t"),
+            xong = o.optBoolean("x"),
+            dung = o.optBoolean("d"),
+            hienLoiGiai = o.optBoolean("h")
+        )
+    }
+
+    /** Cau tra loi con da ghep o mot cau cua de, ghi vao so luc nop. */
+    fun traLoiCua(de: DeGiai, cauId: String): String =
+        runCatching { org.json.JSONObject(de.chon[cauId].orEmpty()).optString("a") }.getOrDefault("")
+
+    /** Ghi trang thai sao cua mot cau sau moi lan bam Kiem tra, de thoat ra vao lai van giu. */
+    fun luuLuot(context: Context, de: DeGiai, cauId: String, luot: LuatGhep.Luot, traLoi: String): DeGiai {
+        if (de.daNop) return de
+        val o = org.json.JSONObject()
+            .put("s", luot.sao).put("l", luot.lanSai).put("x", luot.xong).put("d", luot.dung)
+            .put("b", luot.botNhieu).put("t", luot.thuThem).put("h", luot.hienLoiGiai).put("a", traLoi)
+        val moi = de.copy(chon = de.chon + (cauId to o.toString()))
+        KhoBai.get(context).luuDe(moi)
+        return moi
+    }
+
+    /** Ket qua nop mot de lam tren may. */
+    data class KetQuaNop(
+        val de: DeGiai,
+        val saoDat: Int,
+        val saoToiDa: Int,
+        val phutCap: Int,
+        val phutQuy: Int,
+        val phutGiu: Int
+    )
+
+    /**
+     * Con bam Nop bai o de lam tren may: moi cau ghi so va cong phut theo luat sao. Cau chua
+     * xong tinh la het luot, 0 sao; 24 gio sau cau do mo lam lai nhu moi cau khac.
+     */
+    fun nop(context: Context, de: DeGiai, bayGio: Long = System.currentTimeMillis()): KetQuaNop {
+        if (de.daNop) return KetQuaNop(de, de.saoDat.coerceAtLeast(0), de.saoToiDa, 0, 0, 0)
+        val ghi = cacCau(context, de).mapNotNull { c ->
+            val m = LamTrenMay.muc(context, c) ?: return@mapNotNull null
+            val l = luotCua(de, c.id, m.ghep.sao)
+            val xong = if (l.xong) l else l.copy(xong = true, dung = false)
+            LamTrenMay.ghi(context, m, xong, traLoiCua(de, c.id), LamTrenMay.Loai.GIAI_DE, deId = de.id, bayGio = bayGio)
+        }
+        val sao = ghi.sumOf { it.sao }
+        val moi = de.copy(nopLuc = bayGio, saoDat = sao)
+        KhoBai.get(context).luuDe(moi)
+        DayLog.add(context, tomTat(context, moi))
+        return KetQuaNop(moi, sao, de.saoToiDa, ghi.sumOf { it.phutCap }, ghi.sumOf { it.phutQuy }, ghi.sumOf { it.phutGiu })
+    }
 
     /** "Giải đề Toán", "Ôn kiểm tra KHTN". */
     fun tenDe(de: DeGiai): String {
@@ -586,11 +711,12 @@ object GiaiDe {
         }
         val tn = cacCau(context, de).filter { it.bamTrenMay }
         val dung = tn.filter { de.chon[it.id] == it.dapAn }.map { it.id }.toSet()
-        val phut = LuatCongGio.phutTracNghiemTrenMay(
-            dung.size,
-            daCongLamThemHomNay = SoCaiBai.phutLamThemHomNay(context, bayGio),
-            goiDaCoHomNay = SoCaiBai.goiDaCoHomNay(context, bayGio)
-        )
+        // De cu (truoc 29/9/2026): trac nghiem mot phut mot cau, chung tran lam bai tren may.
+        val phut = LuatGhep.chiaTran(
+            dung.size * LuatCongGio.PHUT_MOI_CAU_TRAC_NGHIEM,
+            SoCaiBai.phutTrenMayHomNay(context, bayGio),
+            LuatCongGio.TRAN_TREN_MAY
+        ).first
         val daCap = phut > 0 && capGio(phut)
         val phutCua = if (daCap) LuatCongGio.chiaDeuTheoMa(dung.toList(), phut) else emptyMap()
 
@@ -612,7 +738,10 @@ object GiaiDe {
                 phut = phutCua[c.id] ?: 0,
                 nhanXet = "",
                 luc = bayGio,
-                deId = de.id
+                deId = de.id,
+                trenMay = true,
+                sao = if (laDung) 1 else 0,
+                saoToiDa = 1
             )
             kho.ghiTraLoi(dong)
             daGhi += dong
@@ -673,6 +802,16 @@ object GiaiDe {
      * 4/4, tự luận 3/6), làm 32 phút, gợi ý 30 phút".
      */
     fun tomTat(context: Context, de: DeGiai): String {
+        if (de.trenMay) {
+            val lam = if (de.daBatDau && de.daNop) ((de.nopLuc - de.batDau) / 60_000L).toInt() else -1
+            val gio = when {
+                lam < 0 -> ""
+                lam > de.phutGoiY -> ", làm $lam phút (gợi ý ${de.phutGoiY}, quá ${lam - de.phutGoiY} phút)"
+                else -> ", làm $lam phút (gợi ý ${de.phutGoiY})"
+            }
+            val ket = if (de.daNop) "${de.saoDat.coerceAtLeast(0)}/${de.saoToiDa} sao" else "chưa nộp"
+            return "${tenDe(de)} (${de.ten}${ngayKiemTra(de)}): $ket$gio"
+        }
         val cac = cacCau(context, de)
         val tn = cac.count { it.bamTrenMay }
         val tl = cac.size - tn

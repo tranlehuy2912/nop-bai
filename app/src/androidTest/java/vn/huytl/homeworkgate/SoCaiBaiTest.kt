@@ -13,6 +13,8 @@ import org.junit.runner.RunWith
 import vn.huytl.homeworkgate.data.CauCham
 import vn.huytl.homeworkgate.data.Prefs
 import vn.huytl.homeworkgate.data.SoCaiBai
+import vn.huytl.homeworkgate.kho.KhoBai
+import vn.huytl.homeworkgate.kho.TraLoi
 
 /**
  * So cai cac cau da nop: moi cau chi tra gio mot lan, va nho cau nao dang cho sua.
@@ -221,14 +223,72 @@ class SoCaiBaiTest {
         // Sang hom sau thi thoi, khong de loi nhan cua toi qua nam lai tren man hinh.
         assertNull(SoCaiBai.loiNhan(context, now + 13 * 60 * 60_000L))
     }
+    /**
+     * Ba phan ba tran rieng (29/9/2026): chup anh 45 (tron goi va tinh le chung), lam
+     * tren may 90, on lai tren may 30. Moi phan dem rieng, khong phan nao an cua phan kia.
+     *
+     * Truoc do tran lam them 90 nam ngoai goi va on lai chup anh chung ro lam them. Test
+     * cu tran_lam_them_khong_bi_tron_goi_an_mat giu dieu nguoc lai voi luat moi (goi nam
+     * ngoai phan chup anh), nen thay bang test nay.
+     */
     @Test
-    fun tran_lam_them_khong_bi_tron_goi_an_mat() {
-        // Tran 90 phut la cua rieng phan lam them; goi 45 nam ngoai no. Gop chung
-        // thi ngay nao co goi, tran lam them tut xuong con 45 ma khong ai noi gi.
-        SoCaiBai.ghiGoi(context, 45, now)
-        SoCaiBai.ghi(context, listOf(cau("thêm", "bài ngoài", dung = true)), mapOf("thêm" to 6), now)
+    fun phut_anh_gom_ca_goi_va_tinh_le_con_tren_may_va_on_lai_dem_rieng() {
+        SoCaiBai.ghiGoi(context, 40, now)
+        SoCaiBai.ghi(context, listOf(cau("anh", "bài ảnh", dung = true)), mapOf("anh" to 5), now)
+        val kho = KhoBai.get(context)
+        kho.ghiTraLoi(dongTrenMay("tren may", phut = 7, onTap = false))
+        kho.ghiTraLoi(dongTrenMay("on lai", phut = 3, onTap = true))
+        // Cau sai chup anh: dung = 0 nen khong vao phan chup anh.
+        SoCaiBai.ghi(context, listOf(cau("sai", "bài sai", dung = false)), emptyMap(), now)
 
-        assertEquals(51, SoCaiBai.phutDaCongHomNay(context, now))
-        assertEquals(6, SoCaiBai.phutLamThemHomNay(context, now))
+        assertEquals(45, SoCaiBai.phutAnhHomNay(context, now))
+        assertEquals(7, SoCaiBai.phutTrenMayHomNay(context, now))
+        assertEquals(3, SoCaiBai.phutOnHomNay(context, now))
+        assertEquals(55, SoCaiBai.phutDaCongHomNay(context, now))
+        // Hom sau ca ba ve 0.
+        assertEquals(0, SoCaiBai.phutAnhHomNay(context, now + ngay))
+        assertEquals(0, SoCaiBai.phutTrenMayHomNay(context, now + ngay))
+        assertEquals(0, SoCaiBai.phutOnHomNay(context, now + ngay))
     }
+
+    /**
+     * Cau sai vao mot ngay da tinh tron goi thi khong hien cho sua (Ba Huy chot 29/9/2026):
+     * sua xong cung khong ra phut, vi moi bai chup la bai dan do va da nam trong goi. Cau
+     * sai hom khac, hom khong co goi, thi van hien.
+     */
+    @Test
+    fun cau_sai_vao_ngay_da_co_goi_thi_khong_hien_cho_sua() {
+        SoCaiBai.ghi(context, listOf(cau("hôm qua", "bài hôm qua", dung = false)), emptyMap(), now - ngay)
+        SoCaiBai.ghiGoi(context, 45, now)
+        SoCaiBai.ghi(context, listOf(cau("hôm nay", "bài hôm nay", dung = false)), emptyMap(), now)
+
+        assertEquals(listOf("hôm qua"), SoCaiBai.dangChoSua(context, now).map { it.ma })
+    }
+
+    /** Luot sai tren may mat sao va 24 gio sau lam lai tren may, khong phai chup vo nop lai. */
+    @Test
+    fun luot_sai_tren_may_khong_nam_trong_danh_sach_cho_sua() {
+        KhoBai.get(context).ghiTraLoi(dongTrenMay("tren may sai", phut = 0, onTap = false, dung = false))
+        SoCaiBai.ghi(context, listOf(cau("anh sai", "bài ảnh sai", dung = false)), emptyMap(), now)
+
+        assertEquals(listOf("anh sai"), SoCaiBai.dangChoSua(context, now).map { it.ma })
+    }
+
+    /** Mot luot lam tren may, chi dien nhung truong phep dem phut doc. */
+    private fun dongTrenMay(ma: String, phut: Int, onTap: Boolean, dung: Boolean = true) = TraLoi(
+        cauId = "somay:$ma",
+        mon = "Toán",
+        ma = ma,
+        de = "đề $ma",
+        ketQua = "",
+        onTap = onTap,
+        dung = dung,
+        phut = phut,
+        nhanXet = "",
+        luc = now,
+        trenMay = true,
+        sao = if (dung) phut else 0,
+        saoToiDa = 5,
+        vong = if (onTap) 1 else 0
+    )
 }

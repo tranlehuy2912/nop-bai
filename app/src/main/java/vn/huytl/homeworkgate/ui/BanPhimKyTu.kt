@@ -135,7 +135,7 @@ object BanPhimKyTu {
  * Tu viet chu khong keo them FlexboxLayout: mot phu thuoc moi chi de xep vai chuc cai
  * nut. Flow cua ConstraintLayout cung lam duoc, nhung phai dat id cho tung nut.
  */
-private class DongNut(
+internal class DongNut(
     context: Context,
     private val khoangNgang: Int,
     private val khoangDoc: Int

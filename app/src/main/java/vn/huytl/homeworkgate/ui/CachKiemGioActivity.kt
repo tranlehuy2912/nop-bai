@@ -18,6 +18,8 @@ import vn.huytl.homeworkgate.data.GiaiDe
 import vn.huytl.homeworkgate.data.HocThuoc
 import vn.huytl.homeworkgate.data.LuatTuVung
 import vn.huytl.homeworkgate.data.LuatCongGio
+import vn.huytl.homeworkgate.data.LamTrenMay
+import vn.huytl.homeworkgate.data.QuyGio
 import vn.huytl.homeworkgate.data.Prefs
 import vn.huytl.homeworkgate.data.SoCaiBai
 import vn.huytl.homeworkgate.data.TinhLoiNhac
@@ -42,7 +44,7 @@ import vn.huytl.homeworkgate.kho.KhoBai
  * va con phai doan xem cho nao moi la cho that.
  *
  * MOI CON SO DOC TU CHINH CAC HANG SO DANG CHAY - [LuatCongGio], [HocThuoc],
- * [Prefs.tranPhutMoiNgay]. Go tay lai vao day thi den luc Ba Huy sua mot con so
+ * [LuatCongGio.TRAN_NGAY]. Go tay lai vao day thi den luc Ba Huy sua mot con so
  * trong luat, man nay im lang noi doi, ma noi doi dung cai bang con dang dua vao
  * de chon lam gi.
  */
@@ -94,7 +96,8 @@ class CachKiemGioActivity : AppCompatActivity() {
      * phai hoc hai lan, va lan nao cung phai doi chieu xem co khop nhau khong.
      */
     private fun veHomNay() {
-        val tran = prefs.tranPhutMoiNgay
+        // Tran ngay bang tong tran rieng cua moi phan (29/9/2026), khong con so Ba Huy chinh.
+        val tran = LuatCongGio.TRAN_NGAY
         val kiem = gate.phutDaDuyetHomNay()
         val con = gate.phutConLaiHomNay()
 
@@ -121,6 +124,8 @@ class CachKiemGioActivity : AppCompatActivity() {
                 append("Hôm nay đủ giờ rồi, mai nộp bài tiếp nhé.")
             }
             if (giu > 0) append(" Đang giữ $giu phút chưa chơi.")
+            val quy = QuyGio.so(this@CachKiemGioActivity)
+            if (quy > 0) append(" Quỹ giờ chơi: $quy phút.")
         }
     }
 
@@ -137,31 +142,36 @@ class CachKiemGioActivity : AppCompatActivity() {
         val box = binding.boxBaiTap
         box.removeAllViews()
 
+        /*
+         * Hai duong kiem gio bang bai tap tu 29/9/2026: bai trong vo dan do (chup anh, Claude
+         * cham) va bai lam tren may. Bai lam them chup anh khong con nua.
+         */
         val goiDaCo = SoCaiBai.goiDaCoHomNay(this)
+        val daAnh = SoCaiBai.phutAnhHomNay(this)
         themDong(
             box,
-            ten = "Làm hết bài cô giao",
-            gia = "${LuatCongGio.PHUT_TRON_GOI_DAN_DO} phút",
-            giaPhu = "mỗi ngày một lần",
-            nay = if (goiDaCo) "Hôm nay đã cộng ${LuatCongGio.PHUT_TRON_GOI_DAN_DO} phút"
-            else "Hôm nay chưa cộng",
+            ten = "Làm bài trong vở dặn dò",
+            gia = "tối đa ${LuatCongGio.TRAN_ANH} phút",
+            giaPhu = "mỗi ngày",
+            nay = when {
+                goiDaCo -> "Hôm nay đã tính trọn gói"
+                daAnh > 0 -> "Hôm nay đã được $daAnh phút"
+                else -> "Hôm nay chưa cộng"
+            },
             mauNay = if (goiDaCo) R.color.ok else R.color.ink_soft
         )
 
         /*
-         * Cau dang cho sua la gio dang nam san tren ban.
-         *
-         * No chua duoc tra lan nao - cau sai tra 0 - nen sua xong nop lai la an dung
-         * gia goc cua cau do. Chi hien khi that su dang no: khong no gi ma van bay ra
-         * mot dong "sua cau sai" thi no la mot loi trach chung chung.
+         * Cau dang cho sua la gio dang nam san tren ban, nhung chi hom chua tinh goi: hom da
+         * co goi thi cau sai cua bai dan do chuyen sang lam tren may (Ba Huy chot 29/9/2026).
          */
         val canSua = SoCaiBai.dangChoSua(this)
-        if (canSua.isNotEmpty()) {
+        if (canSua.isNotEmpty() && !goiDaCo) {
             themDong(
                 box,
-                ten = "Sửa câu đã làm sai",
-                gia = "tối đa ${LuatCongGio.TRAN_MOT_BAI_TAP} phút",
-                giaPhu = "mỗi câu",
+                ten = "Sửa câu sai trong vở",
+                gia = "tính chung ${LuatCongGio.TRAN_ANH} phút",
+                giaPhu = "của bài dặn dò",
                 nay = "Đang có ${canSua.size} câu chờ sửa: " +
                     canSua.take(3).joinToString(", ") { it.ma } +
                     if (canSua.size > 3) "…" else "",
@@ -169,117 +179,43 @@ class CachKiemGioActivity : AppCompatActivity() {
             )
         }
 
-        themDong(
-            box,
-            ten = "Bài tập làm thêm",
-            gia = "tối đa ${LuatCongGio.TRAN_MOT_BAI_TAP} phút",
-            giaPhu = "mỗi câu"
-        )
-
-        /*
-         * Giai de tinh y het bai lam them, khong co gia rieng - xem [GiaiDe]. Van co dong
-         * rieng vi con can biet dong do tren man chinh la mot cho kiem gio, va biet luc
-         * nao co de moi.
-         */
+        val daMay = SoCaiBai.phutTrenMayHomNay(this)
         val deMo = runCatching { GiaiDe.dangMo(this) }.getOrDefault(emptyList())
         themDong(
             box,
-            ten = "Giải đề",
-            gia = "tối đa ${LuatCongGio.TRAN_MOT_BAI_TAP} phút",
-            giaPhu = "mỗi câu",
-            nay = if (deMo.isEmpty()) "Đề mới mở sáng thứ Bảy"
-            else "Đang có: " + deMo.joinToString(", ") { GiaiDe.tenDe(it) },
-            mauNay = if (deMo.isEmpty()) R.color.ink_soft else R.color.brand
+            ten = "Làm bài trên máy, Giải đề",
+            gia = "tối đa ${LuatCongGio.TRAN_TREN_MAY} phút",
+            giaPhu = "mỗi ngày",
+            nay = buildString {
+                append(if (daMay > 0) "Hôm nay đã được $daMay phút" else "Hôm nay chưa cộng")
+                if (deMo.isNotEmpty()) append(". Đang có: " + deMo.joinToString(", ") { GiaiDe.tenDe(it) })
+            },
+            mauNay = if (daMay >= LuatCongGio.TRAN_TREN_MAY) R.color.wait else R.color.ink_soft
         )
 
-        themDong(
-            box,
-            ten = "Bài văn, đoạn văn dài",
-            gia = "tối đa ${LuatCongGio.TRAN_MOT_BAI_VIET_DAI} phút",
-            giaPhu = "mỗi bài"
-        )
-
-        themDong(
-            box,
-            ten = "Trắc nghiệm",
-            gia = "tối đa ${LuatCongGio.TRAN_TRAC_NGHIEM} phút",
-            giaPhu = "mỗi lần nộp"
-        )
-
-        val denHen = SoCaiBai.cacCauDangOn(this)
+        val soOn = LamTrenMay.soCauOn(this)
         val daOn = SoCaiBai.phutOnHomNay(this)
         val conOn = (LuatCongGio.TRAN_ON_MOI_NGAY - daOn).coerceAtLeast(0)
         themDong(
             box,
             ten = "Ôn lại câu đến hẹn",
-            /*
-             * TRAN NGAY, khong phai gia mot cau.
-             *
-             * Duong nay tra moi cau du gia nhu bai moi (tu 27/9/2026, truoc do nua gia),
-             * va ca ngay nhieu nhat [LuatCongGio.TRAN_ON_MOI_NGAY]. Cot phai chi treo
-             * duoc mot con so.
-             * Treo con so ngay, vi do la con so con thuc su can: no dang doi xem toi
-             * nay ngoi on thi duoc them bao nhieu gio choi, chu khong phai mot cau
-             * le dang bao nhieu.
-             *
-             * Cac dong khac trong the nay van treo gia le ("mỗi câu", "mỗi bài") vi
-             * chung khong co tran ngay rieng: ca nhom dung chung tran
-             * [LuatCongGio.TRAN_LAM_THEM], va cho noi con so do la dong ghi chu cuoi
-             * the. Treo 90 vao tung dong thi thanh noi moi dong duoc 90.
-             */
             gia = "tối đa ${LuatCongGio.TRAN_ON_MOI_NGAY} phút",
             giaPhu = "mỗi ngày",
-            // Den hen hay khong la viec cua may, con khong ep duoc. Noi ra de con
-            // biet hom nay o day co gi de lam hay khong. Het tran thi cau do thanh
-            // thua: co den hen cung khong ra phut nao nua, va do moi la thu phai noi.
             nay = when {
                 conOn <= 0 -> "Hôm nay ôn đủ ${LuatCongGio.TRAN_ON_MOI_NGAY} phút rồi"
-                denHen.isEmpty() -> "Hôm nay chưa có câu nào đến hẹn"
-                daOn > 0 -> "Đang có ${denHen.size} câu đến hẹn, còn $conOn phút"
-                else -> "Đang có ${denHen.size} câu đến hẹn"
+                soOn == 0 -> "Hôm nay chưa có câu nào đến hẹn"
+                daOn > 0 -> "Đang có $soOn câu đến hẹn, còn $conOn phút"
+                else -> "Đang có $soOn câu đến hẹn"
             },
-            mauNay = if (denHen.isEmpty() || conOn <= 0) R.color.ink_soft else R.color.brand
+            mauNay = if (soOn == 0 || conOn <= 0) R.color.ink_soft else R.color.brand
         )
 
-        val daLamThem = SoCaiBai.phutLamThemHomNay(this)
-        val conLamThem = (LuatCongGio.TRAN_LAM_THEM - daLamThem).coerceAtLeast(0)
-        /*
-         * Tran lam them CHI SONG VAO NHUNG HOM DA TINH GOI - xem bien conTran trong
-         * [LuatCongGio.tinh]. Hom nao khong co goi thi phan tinh le chinh la bai co
-         * giao, chan no lai la phat con vi lam nhieu, nen hom do chi con tran chung
-         * cua ngay.
-         *
-         * Viet hai cau khac nhau cho hai hom chu khong mot cau chung. Cau chung thi
-         * phai noi "neu... thi...", ma mot dua tre doc cau dieu kien ve mot con so
-         * no chua gap bao gio se hieu thanh "hom nay toi da 90" - tuc la tu bo dung
-         * luc dang con cho.
-         */
-        val goiChanTran = goiDaCo && conLamThem <= 0
-        /*
-         * Huy hieu dem CA THE: goi cong bai le, tuc la [SoCaiBai.phutDaCongHomNay].
-         *
-         * So nay chi gom duong bai tap that: the hoc ghi sang bang tra_the, viec nha
-         * va gio Ba Huy cho thi khong di qua so cai bai bao gio. Nen no khong phai
-         * mot lat cat cua con so o the tren cung, no la tong cua dung the nay.
-         */
-        veNhan(binding.nhanBaiTap, SoCaiBai.phutDaCongHomNay(this), het = goiChanTran)
+        veNhan(binding.nhanBaiTap, SoCaiBai.phutDaCongHomNay(this), het = false)
         ghiChu(
             binding.txtBaiTapChan,
-            het = goiChanTran,
-            chu = if (goiDaCo) {
-                "Hôm nay đã tính gói ${LuatCongGio.PHUT_TRON_GOI_DAN_DO} phút, nên mọi " +
-                    "thứ ngoài gói cộng lại nhiều nhất ${LuatCongGio.TRAN_LAM_THEM} phút. " +
-                    when {
-                        conLamThem <= 0 -> "Hôm nay hết phần này rồi."
-                        daLamThem > 0 -> "Đã được $daLamThem phút, còn $conLamThem phút."
-                        else -> "Chưa dùng phút nào."
-                    }
-            } else {
-                "Hôm nào tính gói ${LuatCongGio.PHUT_TRON_GOI_DAN_DO} phút thì mọi thứ " +
-                    "ngoài gói cộng lại nhiều nhất ${LuatCongGio.TRAN_LAM_THEM} phút. " +
-                    "Hôm nay chưa tính gói, nên chỉ còn tối đa ${prefs.tranPhutMoiNgay} " +
-                    "phút của cả ngày."
-            }
+            het = false,
+            chu = "Phần làm trên máy vượt trần của ngày thì vào Quỹ giờ chơi. " +
+                "${getString(R.string.parent_name_cap)} cấp từ quỹ khi nào thì chơi khi đó."
         )
     }
 
@@ -437,8 +373,8 @@ class CachKiemGioActivity : AppCompatActivity() {
     private fun veChan() {
         val ngu = TinhLoiNhac.gioPhut(prefs.hardStopMinuteOfDay)
         binding.txtChan.text =
-            "${getString(R.string.parent_name_cap)} hoặc bà nội cho thêm giờ thì không " +
-                "tính vào ${prefs.tranPhutMoiNgay} phút này.\n" +
+            "${getString(R.string.parent_name_cap)} cho thêm giờ, việc nhà và quỹ giờ chơi thì " +
+                "không tính vào ${LuatCongGio.TRAN_NGAY} phút này.\n" +
                 "Giờ chơi phải xài trước $ngu, tới giờ đó là máy khoá."
     }
 

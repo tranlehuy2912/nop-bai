@@ -25,6 +25,8 @@ import vn.huytl.homeworkgate.R
 import vn.huytl.homeworkgate.data.DayLog
 import vn.huytl.homeworkgate.data.GateStore
 import vn.huytl.homeworkgate.data.GiaiDe
+import vn.huytl.homeworkgate.data.LamTrenMay
+import vn.huytl.homeworkgate.data.LuatGhep
 import vn.huytl.homeworkgate.databinding.StActivityGiaiDeBinding
 import vn.huytl.homeworkgate.databinding.StTheCauDeBinding
 import vn.huytl.homeworkgate.dongbo.DongBo
@@ -64,6 +66,9 @@ class GiaiDeActivity : AppCompatActivity() {
 
     /** Ket qua phan trac nghiem vua nop, chi de noi so phut o the ket qua. */
     private var vuaNop: GiaiDe.KetQuaTracNghiem? = null
+
+    /** Ket qua de lam tren may vua nop, de hien "+N" o the cuoi. */
+    private var vuaNopMay: GiaiDe.KetQuaNop? = null
 
     private val tay = Handler(Looper.getMainLooper())
     private val nhip = object : Runnable {
@@ -125,10 +130,150 @@ class GiaiDeActivity : AppCompatActivity() {
             GiaiDe.ngayKiemTra(d)
         b.danhSach.removeAllViews()
         nutChu.clear()
+        if (d.trenMay) return veTrenMay(d)
         if (!d.daBatDau) return veHuongDan(d)
 
         cacCau.forEachIndexed { i, c -> theCau(i + 1, c, d) }
         if (!d.daNop) veNutNop() else veKetQua(d)
+    }
+
+    // ------------------------------------------------------- de lam tren may
+
+    /**
+     * De tao tu 29/9/2026: moi cau mot the co sao, khung ghep va nut Kiem tra rieng. Sai thi
+     * mat sao ngay trong de, cung luat voi bai lam them ([vn.huytl.homeworkgate.data.LuatGhep]).
+     * Khong co chu nao giai thich luat sao.
+     */
+    private fun veTrenMay(d: DeGiai) {
+        if (!d.daBatDau) {
+            val khung = theTrang()
+            khung.addView(chu("Làm một mạch, như giờ kiểm tra ở lớp.", 18f, dam = true))
+            listOf(
+                "${cacCau.size} câu, làm ngay trên máy.",
+                "Gợi ý khoảng ${d.phutGoiY} phút. Quá giờ vẫn nộp được."
+            ).forEach { khung.addView(chu("• $it", 16f).apply { dem(top = 8) }) }
+            khung.addView(nut("Bắt đầu") { batDau() }.apply { dem(top = 18) })
+            b.danhSach.addView(khung)
+            return
+        }
+        cacCau.forEachIndexed { i, c -> theCauTrenMay(i + 1, c, d) }
+        val khung = theTrang()
+        if (!d.daNop) {
+            khung.addView(nut("Nộp bài") { hoiNopTrenMay() })
+        } else {
+            val (dat, toiDa) = GiaiDe.diem(this, d)
+            khung.addView(chu("$dat/$toiDa ★", 26f, dam = true))
+            vuaNopMay?.let { kq ->
+                val phut = kq.phutCap + kq.phutQuy + kq.phutGiu
+                if (phut > 0) khung.addView(chu("+$phut", 20f, dam = true, mauChu = R.color.ok).apply { dem(top = 6) })
+            }
+        }
+        b.danhSach.addView(khung)
+    }
+
+    private fun theCauTrenMay(so: Int, c: CauHoi, d: DeGiai) {
+        val muc = LamTrenMay.muc(this, c) ?: return
+        val the = theTrang()
+        val dau = LinearLayout(this).apply {
+            orientation = LinearLayout.HORIZONTAL
+            gravity = android.view.Gravity.CENTER_VERTICAL
+        }
+        dau.addView(chu("Câu $so · ${c.nhan()}", 14f, mauChu = R.color.ink_soft).apply {
+            layoutParams = LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.WRAP_CONTENT, 1f)
+        })
+        var luot = GiaiDe.luotCua(d, c.id, muc.ghep.sao)
+        val sao = TextView(this).apply {
+            textSize = 22f
+            setTextColor(mau(R.color.wait))
+        }
+        fun veSao() {
+            val con = if (luot.xong && !luot.dung) 0 else luot.sao
+            sao.text = "★".repeat(con) + "☆".repeat((luot.saoToiDa - con).coerceAtLeast(0))
+        }
+        veSao()
+        dau.addView(sao)
+        the.addView(dau)
+        val deBai = LinearLayout(this).apply {
+            orientation = LinearLayout.VERTICAL
+            layoutParams = LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT
+            ).apply { topMargin = 8.dp() }
+        }
+        KhungGhep.veDe(deBai, muc)
+        the.addView(deBai)
+        val o = LinearLayout(this).apply {
+            orientation = LinearLayout.VERTICAL
+            layoutParams = LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT
+            ).apply { topMargin = 12.dp() }
+        }
+        the.addView(o)
+        if (luot.xong || d.daNop) {
+            // Da xong (hay da nop): hien cau tra loi da ghi, khong ve lai ban phim.
+            val traLoi = GiaiDe.traLoiCua(d, c.id)
+            if (traLoi.isNotBlank()) o.addView(chu(KhungGhep.boThe(traLoi), 17f))
+            if (luot.hienLoiGiai) KhungGhep(o, muc).khoa(true)
+            b.danhSach.addView(the)
+            return
+        }
+        val khung = KhungGhep(o, muc).also { it.ve(luot.botNhieu) }
+        val bao = chu("", 15f, mauChu = R.color.ink_soft)
+        the.addView(nut("Kiểm tra") {
+            val dd = de ?: return@nut
+            if (dd.daNop || luot.xong) return@nut
+            val soSai = khung.kiem()
+            if (soSai == null) {
+                bao.text = "Chưa làm xong câu này"
+                return@nut
+            }
+            bao.text = ""
+            luot = LuatGhep.kiem(luot, soSai)
+            de = GiaiDe.luuLuot(this, dd, c.id, luot, khung.traLoi())
+            veSao()
+            if (luot.xong) khung.khoa(luot.hienLoiGiai) else khung.ve(luot.botNhieu)
+        }.apply { dem(top = 12) })
+        the.addView(bao)
+        b.danhSach.addView(the)
+    }
+
+    private fun hoiNopTrenMay() {
+        val d = de ?: return
+        val chuaXong = cacCau.count { c ->
+            val g = LamTrenMay.muc(this, c)?.ghep ?: return@count false
+            !GiaiDe.luotCua(d, c.id, g.sao).xong
+        }
+        if (chuaXong == 0) return nopTrenMay()
+        MaterialAlertDialogBuilder(this)
+            .setTitle("Còn $chuaXong câu chưa xong")
+            .setMessage("Nộp luôn thì câu chưa xong tính là chưa làm được.")
+            .setPositiveButton("Nộp luôn") { _, _ -> nopTrenMay() }
+            .setNegativeButton("Làm tiếp", null)
+            .show()
+    }
+
+    private fun nopTrenMay() {
+        val d = de ?: return
+        lifecycleScope.launch {
+            val kq = withContext(Dispatchers.IO) { GiaiDe.nop(this@GiaiDeActivity, d) }
+            vuaNopMay = kq
+            de = kq.de
+            val ten = getString(R.string.child_name)
+            val phut = kq.phutCap + kq.phutGiu
+            runCatching {
+                Notifier.send(
+                    this@GiaiDeActivity,
+                    "$ten nộp ${GiaiDe.tenDe(d)} (${d.ten}" + GiaiDe.ngayKiemTra(d) + "): " +
+                        "${kq.saoDat}/${kq.saoToiDa} sao" +
+                        (if (phut > 0) ", được $phut phút" else "") +
+                        (if (kq.phutQuy > 0) ", vào quỹ ${kq.phutQuy} phút" else "") +
+                        ". Làm ${((kq.de.nopLuc - kq.de.batDau) / 60_000L)} phút, gợi ý ${d.phutGoiY}."
+                )
+            }
+            runCatching { DongBo.dayNgay() }
+            ApprovalService.ensureRunning(this@GiaiDeActivity)
+            ve()
+            veDongHo()
+        }
     }
 
     private fun veHuongDan(d: DeGiai) {

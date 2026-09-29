@@ -58,9 +58,21 @@ object PhanHoc {
      * "Bài 12. Muối" ra 12. Muc khong phai mot bai ("Ôn tập chương I", "Luyện tập chung
      * (trang 17)") ra null.
      */
-    fun soBai(ten: String): Int? = SO_BAI.find(ten)?.groupValues?.get(1)?.toIntOrNull()
+    fun soBai(ten: String): Int? {
+        SO_BAI.find(ten)?.groupValues?.get(1)?.toIntOrNull()?.let { return it }
+        // Sach Tieng Anh danh so theo Unit. Bai Test Yourself k kiem tra ba Unit truoc no,
+        // nen tinh la Unit 3k: lop hoc xong Unit 3 moi co Test Yourself 1.
+        SO_UNIT.find(ten)?.groupValues?.get(1)?.toIntOrNull()?.let { return it }
+        return SO_TEST.find(ten)?.groupValues?.get(1)?.toIntOrNull()?.let { it * 3 }
+    }
 
     private val SO_BAI = Regex("""^\s*Bài\s+(\d+)\.""")
+    private val SO_UNIT = Regex("""^\s*Unit\s+(\d+)\b""")
+    private val SO_TEST = Regex("""^\s*Test Yourself\s+(\d+)\b""")
+
+    /** Bo tu vung giu moc "lop da hoc toi Unit nao" cua mon Tieng Anh, xem [HocToi.unitCua]. */
+    const val BO_TIENG_ANH = "anh8"
+    const val TIENG_ANH = "Tiếng Anh"
 
     /** Ten cac bai cua phan, theo thu tu sach, lay tu SGK trong kho. */
     fun cacBai(context: Context, phan: Phan): List<String> =
@@ -88,6 +100,15 @@ object PhanHoc {
      *   con lam them thi van hoi du ca ba phan.
      */
     fun baiDaHoc(context: Context, mon: String, chiPhanDaChon: Boolean = false): Set<Int>? {
+        /*
+         * Tieng Anh dung chung moc Unit con chon o man Do tu vung (Ba Huy dong y ngay
+         * 29/9/2026), khong co phan nao trong [TAT_CA]. Bai trong sach bai tap danh so
+         * theo Unit, xem [soBai].
+         */
+        if (mon == TIENG_ANH) {
+            val unit = HocToi.unitCua(context, BO_TIENG_ANH) ?: return null
+            return if (unit <= HocToi.CHUA_HOC_UNIT_NAO) emptySet() else (1..unit).toSet()
+        }
         val cac = cuaMon(mon)
         if (cac.isEmpty()) return null
         val ra = mutableSetOf<Int>()

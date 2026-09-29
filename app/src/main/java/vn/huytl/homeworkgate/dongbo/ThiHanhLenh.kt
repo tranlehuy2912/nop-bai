@@ -185,6 +185,13 @@ object ThiHanhLenh {
 
             Lenh.CHAM_BAI -> chamTheoClaude(context, gate, baiId, d.get("giaTri"))
 
+            Lenh.XU_CAU -> xuCau(context, gate, baiId, d.get("giaTri"))
+
+            Lenh.CAP_QUY -> {
+                val kq = vn.huytl.homeworkgate.data.QuyGio.cap(context, phut?.takeIf { it > 0 })
+                kq.loi ?: "Đã cấp ${kq.cap} phút từ quỹ giờ chơi, quỹ còn ${kq.conLai} phút."
+            }
+
             Lenh.DOC_VO -> docVo(context, d.get("giaTri"))
 
             // Ben kia vua mo app va hoi tablet con song khong. Day mot ban trang
@@ -250,13 +257,10 @@ object ThiHanhLenh {
 
         val xin = phut ?: return "Lệnh thiếu số phút, máy không duyệt gì cả."
 
-        // Duyet bai an vao tran ngay: cham tran thi GateStore cat bot. Tinh truoc so
-        // phut that su cong duoc, de ghi len Firestore va bao Ba Huy dung so do.
-        // Truoc day het tran ma dang choi thi van go bai, ghi DUYET du so xin va bao
-        // "cong thang 30 phut", trong khi khong cong phut nao.
-        val them = minOf(xin, gate.phutConLaiHomNay())
-        if (them <= 0) return khongCapDuoc(context)
-        val catBot = if (them < xin) " Hôm nay chỉ còn $them phút trong hạn mức nên chỉ duyệt $them phút." else ""
+        // Khong con tran ngay chan nut Duyet (29/9/2026): Ba Huy duyet bao nhieu la bay
+        // nhieu. So phut may de nghi tren nut da qua tran rieng cua bai dan do.
+        val them = xin
+        val catBot = ""
 
         if (gate.state == GateState.ACTIVE) {
             val conLai = gate.extend(them, useQuota = true) ?: return khongCapDuoc(context)
@@ -386,7 +390,9 @@ object ThiHanhLenh {
 
         // Tinh truoc so phut con vao duoc tran ngay, y nhu [duyet]: GateStore cat bot ma
         // khong bao ai, con cau tra loi, nhat ky va so thi phai noi so phut con nhan that.
-        val phut = minOf(xin, gate.phutConLaiHomNay())
+        // So phut cua cac cau sua da qua tran rieng cua bai dan do trong [SuaCham]; khong
+        // con tran ngay de cat them (29/9/2026).
+        val phut = xin
         if (xin > 0) {
             if (phut <= 0) return khongCapDuoc(context)
             val dangChoi = gate.state == GateState.ACTIVE
@@ -448,6 +454,37 @@ object ThiHanhLenh {
     }
 
     /**
+     * Ba Huy tu xu cac cau Claude doc chua chac hay khong ghi so dong. Xem [Lenh.XU_CAU].
+     *
+     * Bang dieu khien gui lai nguyen ban cham cua Claude, cau nao Ba Huy xu thi da doi: chac
+     * la true, dung va soDong theo Ba Huy, cau can chup lai thi chupLai la true. Nen o day di
+     * dung duong [chamTheoClaude]: mot luat tinh phut, mot cho ghi so. Cau chup lai thi nhan
+     * con chup lai, khong tinh la sai.
+     */
+    internal fun xuCau(
+        context: Context,
+        gate: GateStore,
+        baiId: String?,
+        giaTri: Any?
+    ): String {
+        val cac = ((giaTri as? Map<*, *>)?.get("cac") ?: giaTri) as? List<*>
+        val chupLai = cac.orEmpty().mapNotNull { it as? Map<*, *> }
+            .filter { it["chupLai"] as? Boolean == true }
+            .mapNotNull { (it["ma"] as? String)?.trim()?.takeIf { m -> m.isNotEmpty() } }
+        val tra = chamTheoClaude(context, gate, baiId, giaTri)
+        if (chupLai.isNotEmpty()) {
+            SoCaiBai.datLoiNhan(
+                context,
+                "${context.getString(R.string.parent_name_cap)} nhờ chụp lại câu " +
+                    chupLai.joinToString(", ") + " cho rõ rồi nộp lại."
+            )
+        }
+        DayLog.add(context, "Ba Huy tự xử câu chưa chắc của bài" +
+            if (chupLai.isEmpty()) "" else ", nhờ chụp lại ${chupLai.joinToString(", ")}")
+        return tra
+    }
+
+    /**
      * Luu ket qua Claude doc vo dan do, Ba Huy dan tu Bang dieu khien. Xem [Lenh.DOC_VO].
      *
      * Chi cho ban chi co anh, xem [VoDanDo.tuClaude]. Luu xong thi gui lai tin vo dan do
@@ -505,9 +542,6 @@ object ThiHanhLenh {
             return "Không cấp được: đang trong giờ ngủ " +
                 "%02d:%02d-%02d:%02d.".format(tu / 60, tu % 60, den / 60, den % 60)
         }
-        if (gate.phutConLaiHomNay() <= 0) {
-            return "Không cấp được: hôm nay đã đủ ${prefs.tranPhutMoiNgay} phút. Bấm Cho chơi ngay để cho thêm."
-        }
         return "Không cấp được lúc này, tablet vừa đổi trạng thái. Bấm lại lần nữa."
     }
 
@@ -526,11 +560,9 @@ object ThiHanhLenh {
             // Bang dieu khien ban cu con dong "Moi lan duyet". So phut mac dinh da bo
             // (27/9/2026): nut duyet nao cung ghi so phut cu the.
             "phutMacDinh" -> return "Số phút mặc định đã bỏ, nút duyệt nào cũng ghi số phút."
-            "tranPhutMoiNgay" -> {
-                val v = so?.coerceIn(15, 480) ?: return "Thiếu số phút."
-                prefs.tranPhutMoiNgay = v
-                "Tối đa mỗi ngày giờ là $v phút."
-            }
+            // Bang dieu khien ban cu con dong "Tối đa mỗi ngày". Tran ngay da bo (29/9/2026):
+            // moi phan co tran rieng, khong con mot so chung de chinh.
+            "tranPhutMoiNgay" -> return "Trần mỗi ngày đã bỏ: mỗi phần có trần riêng, tối đa ${LuatCongGio.TRAN_NGAY} phút một ngày."
             "gioNgu" -> {
                 val v = so?.coerceIn(0, 24 * 60 - 1) ?: return "Thiếu giờ."
                 prefs.hardStopMinuteOfDay = v

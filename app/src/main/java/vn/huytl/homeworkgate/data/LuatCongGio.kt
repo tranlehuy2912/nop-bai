@@ -6,24 +6,29 @@ import java.time.LocalDateTime
 import java.time.ZoneId
 
 /**
- * Luat quy bai lam ra so phut choi.
+ * Luat quy bai lam ra so phut choi, va tran rieng cua tung phan.
  *
- * Hai cach tinh, khong cong chung vao nhau:
+ * TU 29/9/2026 KHONG CON TRAN CHUNG. Ba Huy bo tran ngay 135 phut; moi phan co tran
+ * rieng, va tran ngay bang tong cac tran do ([TRAN_NGAY]):
  *
- *  - LAM HET BAI CO GIAO: tron goi [PHUT_TRON_GOI_DAN_DO] phut. Day la cach tinh
- *    dung nhat, vi no neo vao luong bai that su cua mot buoi hoc - co giao la nguoi
- *    biet hom nay nen lam bao nhieu, khong phai may.
- *  - BAI LAM THEM: tinh le tung muc, co tran [TRAN_LAM_THEM] phut moi ngay.
+ *  - duong chup anh (bai trong vo dan do, ke ca bai co giao le va "Bài khác"): toi da
+ *    [TRAN_ANH] phut, tron goi hay tinh le deu chung tran nay;
+ *  - bai lam tren may (lam them, luyen cho hay vap, Giai de): [TRAN_TREN_MAY];
+ *  - on lai theo hen, cung lam tren may: [TRAN_ON_MOI_NGAY];
+ *  - Kiem tra bai: [HocThuoc.TRAN_PHUT_MOI_NGAY]; Do tu vung: tran cua [LuatTuVung].
  *
- * Neu cong ca hai cho cung mot bai thi thanh tinh hai lan, va mo duong cho viec
- * lam that nhieu cau de de kiem gio. Nen: lam het vo dan do thi cac muc trong do
- * nam trong goi, chi muc NGOAI vo dan do moi tinh le. Lam chua het thi khong co
- * goi, tinh le tung muc - de con muon du gio thi lam cho het chu khong lam nua
- * chung roi di tim bai de.
+ * Phut lam tren may ma bi tran cat thi vao "Quỹ giờ chơi" ([QuyGio]); duong chup anh thi
+ * khong. Gio sao cua bai lam tren may o [LuatGhep]; file nay chi con luat cua duong chup
+ * anh.
  *
- * Moi muc chi sinh gio MOT lan trong doi. Cau sai thi khong duoc gi; sua dung roi
- * nop lai thi luc do moi tinh, va tinh dung mot lan. Viec nho "muc nay tra gio
- * chua" la cua so cai bai da nop, khong phai cua ham nay.
+ * DUONG CHUP ANH CHI CON BAI DAN DO. Bai co giao le, phieu photo, bai mon chua co sach
+ * deu coi la dan do (Ba Huy chot 29/9/2026). Lam het vo dan do thi tron goi; chua het thi
+ * tinh le tung cau, mot dong mot phut, trac nghiem mot phut mot cau, khong san khong tran
+ * tung cau. Da tinh le bao nhieu thi luc du goi chi cong them cho tron [TRAN_ANH].
+ *
+ * Moi muc chi sinh gio MOT lan trong doi. Cau sai thi khong duoc gi; sua dung roi nop
+ * lai thi luc do moi tinh, va tinh dung mot lan. Viec nho "muc nay tra gio chua" la cua
+ * so cai bai da nop, khong phai cua ham nay.
  */
 object LuatCongGio {
 
@@ -31,108 +36,61 @@ object LuatCongGio {
     const val PHUT_TRON_GOI_DAN_DO = 45
 
     /**
-     * Bai tap: mot dong lam bai duoc mot phut.
+     * Tran ca ngay cua duong chup anh: tron goi va tinh le cong lai khong qua chung nay.
      *
-     * Do CONG SUC NHIN THAY DUOC chu khong do "do kho". Do kho thi may doan khong
-     * noi - cung mot trang, cung mot model, ba lan chay no con doi y ve mot cau; ma
-     * kho hay de con tuy dua tre nao lam. So dong thi dem duoc, kiem lai duoc bang
-     * chinh tam anh, va khong cai duoc.
+     * Bang gia tron goi la co y: bai dan do chup anh dang dung chung nay, lam het hay lam
+     * mot nua cung vay. Truoc 29/9/2026 bai lam them chup anh co tran rieng 90 phut; tu do
+     * bai lam them chi con tren may.
+     */
+    const val TRAN_ANH = PHUT_TRON_GOI_DAN_DO
+
+    /**
+     * Bai chup anh tinh le: mot dong lam bai duoc mot phut, ca bai tap lan bai viet dai.
      *
-     * Ban dau la hai dong mot phut, chon cho trung luat cu cua Ba Huy: mot cau phan
-     * tich nhan tu viet 3-4 dong ra 2 phut, bai dai 10 dong ra 5 phut. Ngay 27/9/2026
-     * Ba Huy tang gap doi cho moi bai tinh le: mot dong mot phut, toi thieu va toi da
-     * mot cau cung gap doi, trac nghiem hai phut mot cau. Tron goi 45 phut va cac tran
-     * ngay giu nguyen, nen mot ngay van khong duoc nhieu hon truoc, chi la bai lam them
-     * cham toi tran nhanh hon. Rieng muc toi thieu, hom sau Ba Huy ha lai, xem
-     * [TOI_THIEU_BAI_TAP].
+     * Do CONG SUC NHIN THAY DUOC chu khong do "do kho": so dong dem duoc, kiem lai duoc
+     * bang chinh tam anh. Truoc 29/9/2026 co san 4 phut mot cau, tran 20 phut mot cau, va
+     * bai viet dai tinh ba dong bon phut; Ba Huy bo het san va tran tung cau, de chung
+     * tran [TRAN_ANH] cua ca phan.
      */
     const val DONG_MOI_PHUT = 1
 
+    /** Trac nghiem chup anh: moi cau dung mot phut, khong con tran moi lan nop (29/9/2026). */
+    const val PHUT_MOI_CAU_TRAC_NGHIEM = 1
+
     /**
-     * Cau ngan may cung duoc chung nay.
+     * Tran moi ngay cua bai lam tren may: lam them, luyen cho hay vap, Giai de.
      *
-     * Hai phut tu 28/9/2026 (Ba Huy chon). Dot gap doi hom truoc da nang len bon, tuc la
-     * cau mot dong cung duoc bon phut nhu cau bon dong. Gio cau mot, hai dong duoc hai
-     * phut, tu ba dong tro len tinh dung theo so dong.
+     * Khong co tran thi mot quyen bai tap nang cao la ca buoi toi choi game. Phan vuot
+     * tran khong mat: vao "Quỹ giờ chơi", Ba Huy cap khi nao thi con choi khi do.
      */
-    const val TOI_THIEU_BAI_TAP = 2
-
-    /** Mot cau toi da bay nhieu: chan viec viet dai dong de kiem gio. */
-    const val TRAN_MOT_BAI_TAP = 20
+    const val TRAN_TREN_MAY = 90
 
     /**
-     * Bai viet dai (doan van, bai van, bao cao): ba dong duoc bon phut.
+     * Tran rieng cho duong ON LAI tren may, moi ngay.
      *
-     * Nhinh hon bai tap vi moi dong phai tu nghi ra chu. Ban dau ba dong hai phut: mot
-     * trang vo khoang hai muoi dong ra khoang 14 phut, dung bang "15 phut mot trang"
-     * ma Ba Huy uoc luong. Ngay 27/9/2026 gap doi cung bai tap, xem [DONG_MOI_PHUT].
-     * Dem dong thay vi dem trang vi chu to chu nho moi hom mot khac.
-     */
-    const val DONG_MOI_PHUT_VIET_DAI = 3
-    const val PHUT_MOI_NHIP_VIET_DAI = 4
-    const val TOI_THIEU_VIET_DAI = 10
-
-    /**
-     * Trac nghiem: moi cau dung duoc bay nhieu phut.
-     *
-     * Hai phut mot cau tu 27/9/2026, cung dot gap doi voi bai tap. Truoc do mot cau mot
-     * phut (Ba Huy doi ngay 23/9/2026), va truoc nua la bon cau mot phut, lay tu cong
-     * suc that: khoanh het mot trang chung sau muoi cau mat chung muoi lam phut.
-     *
-     * Van gom thanh CUM chu khong tra gia rieng tung cau: mot dong trong tin bao
-     * ket qua, tra sau cac cau co loi giai, va chiu tran [TRAN_TRAC_NGHIEM] cua moi
-     * lan nop. Cai tran do bay gio la thu duy nhat chan so phut khoi di theo so cau
-     * may dem ra - cung mot tam anh KHTN ngay 14/9/2026, ba lan chay ra 36, 4, roi
-     * 22 cau; duoi tran thi dem lech bao nhieu cau la lech bay nhieu phut.
-     */
-    const val PHUT_MOI_CAU_TRAC_NGHIEM = 2
-
-    /** Mot lan nop toi da bay nhieu phut tu trac nghiem. Gap doi cung gia, 27/9/2026. */
-    const val TRAN_TRAC_NGHIEM = 30
-
-    /** Mot bai viet dai toi da bay nhieu, du con viet may trang. */
-    const val TRAN_MOT_BAI_VIET_DAI = 60
-
-    /**
-     * Tran cho phan bai lam them moi ngay.
-     *
-     * Khong co tran thi mot quyen bai tap nang cao la ca buoi toi choi game: cu lam
-     * cau de, cau nao cung hai phut. Tran nay khong dinh gi den goi vo dan do, nen
-     * mot ngay toi da la 45 + 90 = [TOI_DA_MOI_NGAY] phut.
-     */
-    const val TRAN_LAM_THEM = 90
-
-    /** Toi da mot ngay: tron goi vo dan do cong het tran lam them. */
-    const val TOI_DA_MOI_NGAY = PHUT_TRON_GOI_DAN_DO + TRAN_LAM_THEM
-
-    /**
-     * Tran rieng cho duong ON LAI, moi ngay.
-     *
-     * VI SAO CAN MOT TRAN NUA. On lai truoc day chi chiu chung tran [TRAN_LAM_THEM]
-     * voi bai moi, tuc la hai viec khac han nhau tranh nhau mot cai ro. Cau muoi
-     * dong lan dau duoc 5 phut, on lai duoc 3; hai muoi cau nhu the la sau muoi
-     * phut, an hai phan ba tran ngay bang viec chep lai bai da lam dung. Bai moi hom
-     * do gan nhu khong con cho, va dua tre se chon dung cai re hon.
-     *
-     * Ba muoi phut: du de on het so cau den hen cua mot ngay binh thuong (lich hen
-     * 3/10/30 ngay, moi cau ba lan trong doi - xem
+     * On lai la mot phan rieng voi tran rieng (Ba Huy chot 29/9/2026), khong nam trong
+     * [TRAN_TREN_MAY]. Truoc do on lai nam trong tran lam them. Ba muoi phut: du de on het
+     * so cau den hen cua mot ngay binh thuong (lich hen 3/10/20/30 ngay - xem
      * [vn.huytl.homeworkgate.kho.KhoBai.KHOANG_HEN_NGAY]), khong du de thay bai moi.
-     *
-     * Tu 27/9/2026 on lai tra DU GIA nhu bai moi (Ba Huy chon), khong con nua gia. Tran
-     * nay giu nguyen ba muoi phut, nen no gio la cai duy nhat giu on lai o phan phu.
-     *
-     * Cung ly do voi [vn.huytl.homeworkgate.data.HocThuoc.TRAN_PHUT_MOI_NGAY], va
-     * con so chon theo cung cach: bang khoang cong suc that cua mot buoi on.
      */
     const val TRAN_ON_MOI_NGAY = 30
 
     /**
-     * So phut cua mot muc lam dung, theo so dong lam bai.
+     * Tran ngay: tong tran cua moi phan. Chi de hien ra man hinh ("hôm nay kiếm được
+     * 60/215 phút"), khong chan gi, vi tung phan da tu chan. Ba Huy chot 215 phut ngay
+     * 29/9/2026.
+     */
+    val TRAN_NGAY: Int
+        get() = TRAN_ANH + TRAN_TREN_MAY + TRAN_ON_MOI_NGAY + HocThuoc.TRAN_PHUT_MOI_NGAY +
+            LuatTuVung.phutTrongNgay(LuatTuVung.GIAY_TRAN_MOI_NGAY)
+
+    /**
+     * So phut cua mot muc chup anh lam dung, theo so dong lam bai.
      *
-     * [CauCham.soDong] bang 0 nghia la ben goi khong dem duoc dong nao (AI khong
-     * tra ve, hay bai khong co dong nao de dem). Luc do quay ve luat phang: cau nho
-     * [TOI_THIEU_BAI_TAP] phut, bai rieng 10 phut (bai rieng gap doi luat cu tu 27/9/2026)
-     * - de mot cho hong khong lam con mat gio.
+     * [CauCham.soDong] bang 0 nghia la Claude khong ghi so dong (quen truong, bai ve, bai
+     * dien bang). Truoc 29/9/2026 luc do tra muc du phong 4 hay 10 phut; bo san roi thi
+     * muc do thanh nguoc doi (cau quen dem duoc nhieu hon cau mot dong that), nen cau do
+     * ra 0 va ca bai cho Ba Huy xem - xem [BangTinh.canBaHuyXem].
      */
     fun phutChoCau(cau: CauCham): Int = when {
         // Khong co de thi khong ai cham duoc, nen khong tra gio. Xem [CauCham.coDe].
@@ -140,12 +98,14 @@ object LuatCongGio {
         cau.dang == DangBai.KHONG_TINH -> 0
         // Trac nghiem khong co gia rieng tung cau, tinh theo cum trong [tinh].
         cau.dang == DangBai.TRAC_NGHIEM -> 0
-        cau.soDong <= 0 -> if (cau.dang == DangBai.BAI_RIENG) 10 else TOI_THIEU_BAI_TAP
-        cau.dang == DangBai.VIET_DAI ->
-            (cau.soDong * PHUT_MOI_NHIP_VIET_DAI / DONG_MOI_PHUT_VIET_DAI)
-                .coerceIn(TOI_THIEU_VIET_DAI, TRAN_MOT_BAI_VIET_DAI)
-        else -> (cau.soDong / DONG_MOI_PHUT).coerceIn(TOI_THIEU_BAI_TAP, TRAN_MOT_BAI_TAP)
+        cau.soDong <= 0 -> 0
+        else -> cau.soDong / DONG_MOI_PHUT
     }
+
+    /** Cau lam dung ma Claude khong ghi so dong: khong tu cap, cho Ba Huy chon so dong. */
+    fun thieuSoDong(cau: CauCham): Boolean =
+        cau.dung && cau.coDe && cau.soDong <= 0 &&
+            cau.dang != DangBai.TRAC_NGHIEM && cau.dang != DangBai.KHONG_TINH
 
     /** Ket qua tinh, kem dong giai thich de ghi ra Telegram va man hinh con. */
     data class BangTinh(
@@ -164,7 +124,14 @@ object LuatCongGio {
          */
         val phutCua: Map<String, Int> = emptyMap(),
         /** Cau lam dung nhung khong cong phut, vi da nam trong tron goi da tra. */
-        val trongGoi: List<CauCham> = emptyList()
+        val trongGoi: List<CauCham> = emptyList(),
+        /**
+         * So phut cua tron goi trong [phut], khi [daTinhGoi]. Khong con luon la 45: da tinh
+         * le truoc do bao nhieu thi goi chi cong phan con lai cho tron [TRAN_ANH].
+         */
+        val phutGoi: Int = 0,
+        /** Cau lam dung ma Claude khong ghi so dong, xem [thieuSoDong]. */
+        val thieuDong: List<CauCham> = emptyList()
     )
 
     /**
@@ -260,26 +227,16 @@ object LuatCongGio {
     }.getOrNull()
 
     /**
-     * Quy mot lan cham ra so phut.
+     * Quy mot lan cham bai chup anh ra so phut.
      *
-     * @param daCongLamThemHomNay so phut phan "lam them" da cong trong ngay, de giu
-     *   tran. Ben goi lay tu so cai.
-     */
-    /**
-     * @param onTap lan nay con lam lai cau da lam dung roi, de on. Truoc 27/9/2026 lan
-     *   on chi duoc nua so phut, de lam lai cau cu khong thanh duong de kiem gio hon
-     *   lam bai moi. Tu hom do Ba Huy cho on tra du gia; cai giu on lai o phan phu la
-     *   [TRAN_ON_MOI_NGAY].
-     * @param daCongOnHomNay so phut duong on da tra trong ngay, de giu
-     *   [TRAN_ON_MOI_NGAY]. Ben goi lay tu so cai. Chi dung khi [onTap] la true.
+     * @param daCongAnhHomNay so phut duong chup anh da cong trong ngay (tinh le va tron
+     *   goi), de giu [TRAN_ANH]. Ben goi lay tu so cai, xem [SoCaiBai.phutAnhHomNay].
      */
     fun tinh(
         goc: KetQuaCham,
-        daCongLamThemHomNay: Int = 0,
+        daCongAnhHomNay: Int = 0,
         bayGio: LocalDateTime = LocalDateTime.now(),
-        goiDaCoHomNay: Boolean = false,
-        onTap: Boolean = false,
-        daCongOnHomNay: Int = 0
+        goiDaCoHomNay: Boolean = false
     ): BangTinh {
         val dong = mutableListOf<String>()
 
@@ -295,8 +252,6 @@ object LuatCongGio {
 
         val ngay = docNgay(ket.ngayDanDo, bayGio.toLocalDate())
         val ngayOk = ngayDanDoHopLe(ngay, bayGio)
-        // Tron goi moi ngay chi mot lan. Khong co dong nay thi chup lai vo dan do
-        // vao buoi toi la them 45 phut nua, ma bai thi van la bai ban chieu.
         /*
          * Tron goi la tra cho viec LAM HET BAI CO GIAO, nen phai co bai duoc giao da.
          *
@@ -307,11 +262,15 @@ object LuatCongGio {
          * khong co goi, ma ke ra thi Ba Huy doc duoc ngay tren Telegram.
          */
         val coBaiGiao = ket.baiDuocGiao.isNotEmpty()
+        // Tron goi moi ngay chi mot lan. Khong co dong nay thi chup lai vo dan do
+        // vao buoi toi la them 45 phut nua, ma bai thi van la bai ban chieu.
         val coGoi = ket.lamHetDanDo && ngayOk && coBaiGiao && !goiDaCoHomNay
 
         /*
-         * Trong ngay DA CO tron goi - lan nay tra hay lan truoc tra cung vay. Bai co
-         * giao da nam gon trong 45 phut do roi, khong duoc tinh le them lan nua.
+         * Trong ngay DA CO tron goi - lan nay tra hay lan truoc tra cung vay. Moi bai chup
+         * anh deu la bai dan do (29/9/2026), nen hom da co goi thi bai nop them khong duoc
+         * tinh le nua: gio cua chung da nam trong goi. Man chinh cung an nut Nop bai tu luc
+         * do toi het ngay.
          *
          * Phai tach khoi [coGoi]. Lan nop de SUA BAI chi gui anh bai giai, khong co
          * trang vo dan do, nen ngay_dan_do ve null va coGoi = false. Lay coGoi lam
@@ -320,15 +279,19 @@ object LuatCongGio {
          * mot xap bai, tong 85 phut cho mot buoi khong co bai tap nao duoc giao.
          */
         val goiConHieuLuc = coGoi || goiDaCoHomNay
+        val conTran = (TRAN_ANH - daCongAnhHomNay).coerceAtLeast(0)
 
         var phut = 0
+        var phutGoi = 0
         if (goiDaCoHomNay) {
-            dong += "Hôm nay đã tính trọn gói bài cô giao rồi, lần này chỉ tính bài làm thêm"
+            dong += "Hôm nay đã tính trọn gói bài dặn dò rồi, bài nộp thêm không cộng phút"
         }
         if (coGoi) {
-            phut += PHUT_TRON_GOI_DAN_DO
+            phutGoi = conTran
+            phut += phutGoi
             dong += "Làm hết bài cô giao ngày ${ngay!!.dayOfMonth}/${ngay.monthValue} " +
-                "(${keTen(ket.baiDuocGiao)}): +$PHUT_TRON_GOI_DAN_DO phút"
+                "(${keTen(ket.baiDuocGiao)}): +$phutGoi phút" +
+                if (daCongAnhHomNay > 0) " (cộng cho tròn $TRAN_ANH, đã tính lẻ $daCongAnhHomNay phút)" else ""
         } else if (ket.lamHetDanDo && ket.ngayDanDo != null && !ngayOk) {
             // Co chup vo dan do, co lam het, nhung ngay khong con hieu luc.
             dong += "Vở dặn dò ghi ngày ${ket.ngayDanDo} — không phải bài hôm nay nên " +
@@ -339,31 +302,17 @@ object LuatCongGio {
                 "bấm nút dưới tin vở dặn dò."
         }
 
-        // Muc nao tinh le: khong co goi thi tinh het, co goi thi chi tinh bai lam them.
-        val trongGoi = ket.cac.filter { it.dung && goiConHieuLuc && it.trongDanDo }
-        val tinhLe = ket.cac.filter { it.dung && (!goiConHieuLuc || !it.trongDanDo) }
+        // Co goi thi moi cau dung nam trong goi; chua co goi thi tinh le tung cau.
+        val trongGoi = if (goiConHieuLuc) ket.cac.filter { it.dung } else emptyList()
+        val tinhLe = if (goiConHieuLuc) emptyList() else ket.cac.filter { it.dung }
+        val thieuDong = tinhLe.filter(::thieuSoDong)
 
-        // Trac nghiem gom thanh mot cum, phan con lai tinh tung cau nhu cu.
+        // Trac nghiem gom thanh mot cum, phan con lai tinh tung cau.
         val tracNghiem = tinhLe.filter { it.dang == DangBai.TRAC_NGHIEM }
-        val phutCum = (tracNghiem.size * PHUT_MOI_CAU_TRAC_NGHIEM).coerceAtMost(TRAN_TRAC_NGHIEM)
+        val phutCum = tracNghiem.size * PHUT_MOI_CAU_TRAC_NGHIEM
         val phutTungCau = tinhLe.filterNot { it.dang == DangBai.TRAC_NGHIEM }
             .map { it to phutChoCau(it) }
             .filter { it.second > 0 }
-
-        // Tran chi ap cho phan lam them, tuc la khi trong ngay da co goi. Khong co
-        // goi thi phan tinh le CHINH LA bai co giao, chan lai la phat con vi lam nhieu.
-        val tranLamThem =
-            if (goiConHieuLuc) (TRAN_LAM_THEM - daCongLamThemHomNay).coerceAtLeast(0)
-            else Int.MAX_VALUE
-        /*
-         * Duong on co tran RIENG, va no ap ca vao nhung hom khong co goi.
-         *
-         * Khac han tran lam them o tren: khong co goi nghia la phan tinh le chinh la
-         * bai co giao, ma on lai thi khong bao gio la bai co giao ca - co giao khong
-         * giao lam lai bai tuan truoc. Nen o day khong co ly do nao de tha tran ra.
-         */
-        val tranOn = (TRAN_ON_MOI_NGAY - daCongOnHomNay).coerceAtLeast(0)
-        val conTran = if (onTap) minOf(tranLamThem, tranOn) else tranLamThem
 
         // Cat theo tung cau chu khong cat cuc tong, de con biet cau nao that su duoc
         // tra bao nhieu ma ghi vao so.
@@ -381,8 +330,7 @@ object LuatCongGio {
         // Ghi ro tung cau duoc may phut, nhung dai qua thi gom lai: mot lan nop hai
         // muoi cau ma liet ke het thi tin nhan Telegram thanh mot man chu.
         duoc.take(SO_DONG_KE_TOI_DA).forEach { (cau, p) ->
-            val dem = if (cau.soDong > 0) " (${cau.soDong} dòng)" else ""
-            dong += "${cau.ma}$dem: +$p phút"
+            dong += "${cau.ma} (${cau.soDong} dòng): +$p phút"
         }
         if (duoc.size > SO_DONG_KE_TOI_DA) {
             val con = duoc.drop(SO_DONG_KE_TOI_DA)
@@ -392,7 +340,7 @@ object LuatCongGio {
         // Cum trac nghiem: tra sau cac cau co loi giai, va cung phai qua tran.
         var phutCumThat = 0
         if (phutCum > 0) {
-            phutCumThat = phutCum.coerceAtMost(conTran - le)
+            phutCumThat = phutCum.coerceAtMost((conTran - le).coerceAtLeast(0))
             if (phutCumThat < phutCum) biCat = true
             if (phutCumThat > 0) {
                 le += phutCumThat
@@ -401,20 +349,14 @@ object LuatCongGio {
         }
 
         if (biCat) {
-            // Noi dung cai tran vua cat, khong phai cai tran to hon: con doc dong
-            // nay de biet hom nay con lam duoc gi nua, ma hai duong thi hai tran.
-            dong += if (onTap && tranOn <= tranLamThem) {
-                "Ôn lại hôm nay tối đa $TRAN_ON_MOI_NGAY phút, cắt còn $conTran phút"
-            } else {
-                "Bài làm thêm hôm nay tối đa $TRAN_LAM_THEM phút, cắt còn $conTran phút"
-            }
+            dong += "Bài dặn dò mỗi ngày tối đa $TRAN_ANH phút, hôm nay đã đủ"
         }
         phut += le
 
         // Noi ro vi sao lam dung ma khong duoc phut nao - neu khong, lan nop de sua
         // bai tra ve mot tin nhan im lang va con tuong la may cham hong.
         if (goiDaCoHomNay && trongGoi.isNotEmpty()) {
-            dong += "Đúng rồi, nhưng nằm trong trọn gói bài cô giao hôm nay nên không " +
+            dong += "Đúng rồi, nhưng nằm trong trọn gói bài dặn dò hôm nay nên không " +
                 "cộng thêm: " + keTen(trongGoi.map { it.ma })
         }
 
@@ -427,24 +369,29 @@ object LuatCongGio {
         if (mo.isNotEmpty()) {
             dong += "Máy đọc không rõ: " + mo.joinToString(", ") { it.ma } + " — nhờ ba Huy xem"
         }
+        if (thieuDong.isNotEmpty()) {
+            dong += "Claude chưa ghi số dòng: " + thieuDong.joinToString(", ") { it.ma } +
+                " (nhờ ba Huy chọn số dòng)"
+        }
 
         return BangTinh(
             phut = phut,
             dong = dong,
-            canBaHuyXem = mo.isNotEmpty(),
+            canBaHuyXem = mo.isNotEmpty() || thieuDong.isNotEmpty(),
             daTinhGoi = coGoi,
             phutCua = duoc.associate { (cau, p) -> cau.ma to p } +
                 chiaDeu(tracNghiem, phutCumThat),
-            trongGoi = trongGoi
+            trongGoi = trongGoi,
+            phutGoi = phutGoi,
+            thieuDong = thieuDong
         )
     }
 
     /**
-     * Chia so phut tablet cap THAT cho goi va tung cau, khi tran phut moi ngay cat bot
-     * [BangTinh.phut].
+     * Chia so phut tablet cap THAT cho goi va tung cau, khi cap khong du [BangTinh.phut]
+     * (vi du phan con lai cua mot phieu cat o gio chot trong ngay).
      *
-     * So cai phai ghi so da tra, khong phai gia niem yet, xem [BangTinh.phutCua]. Tran
-     * ngay nam trong GateStore chu khong nam o day, nen [tinh] khong biet no. Goi lay
+     * So cai phai ghi so da tra, khong phai gia niem yet, xem [BangTinh.phutCua]. Goi lay
      * truoc, roi toi tung cau theo thu tu trong [BangTinh.phutCua]; cau het phan thi
      * duoc 0 phut. Cap du thi tra ve dung goi va [BangTinh.phutCua] nhu cu.
      *
@@ -452,29 +399,9 @@ object LuatCongGio {
      */
     fun chiaPhutDaCap(bang: BangTinh, daCap: Int): Pair<Int, Map<String, Int>> {
         var con = daCap.coerceAtLeast(0)
-        val goi = if (bang.daTinhGoi) minOf(PHUT_TRON_GOI_DAN_DO, con) else 0
+        val goi = if (bang.daTinhGoi) minOf(bang.phutGoi, con) else 0
         con -= goi
         return goi to bang.phutCua.mapValues { (_, p) -> minOf(p, con).also { con -= it } }
-    }
-
-    /**
-     * So phut cho phan trac nghiem con bam ngay tren tablet o man Giai de.
-     *
-     * Cung gia va cung tran moi lan nop voi trac nghiem chup anh ([PHUT_MOI_CAU_TRAC_NGHIEM],
-     * [TRAN_TRAC_NGHIEM]), va cung tran lam them khi hom nay da tinh tron goi - y het
-     * [tinh]: phan nay khong bao gio la bai co giao. Tach ham rieng vi o day khong co
-     * ban cham nao cua AI de dua vao [tinh], chi co so cau may tu so dung.
-     *
-     * @param daCongLamThemHomNay so phut ngoai goi da cong trong ngay, lay tu so cai.
-     */
-    fun phutTracNghiemTrenMay(
-        soDung: Int,
-        daCongLamThemHomNay: Int = 0,
-        goiDaCoHomNay: Boolean = false
-    ): Int {
-        val phut = (soDung.coerceAtLeast(0) * PHUT_MOI_CAU_TRAC_NGHIEM).coerceAtMost(TRAN_TRAC_NGHIEM)
-        if (!goiDaCoHomNay) return phut
-        return phut.coerceAtMost((TRAN_LAM_THEM - daCongLamThemHomNay).coerceAtLeast(0))
     }
 
     /** Doi LocalDateTime tu moc may, de cho test dua gio vao thang. */

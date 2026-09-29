@@ -38,8 +38,25 @@ data class CauHoi(
      * (ket qua cuoi so duoc), [DAP_AN_LOI_GIAI] (y chinh cua mot chung minh, mot cau
      * giai thich). Rong khi khong co [dapAn].
      */
-    val loaiDapAn: String = ""
+    val loaiDapAn: String = "",
+    /**
+     * Cach lam cau nay ngay tren may: mot khoi JSON theo tools/ghep/DINH_DANG.md, doc ra
+     * bang [Ghep.doc]. Rong la cau khong lam tren may duoc (chua soan, hay [boMay]).
+     *
+     * Giu nguyen chuoi JSON chu khong tach ra thanh cot: bay kieu ghep, moi kieu mot bo
+     * truong khac nhau, ma bang cau hoi thi nap lai tu file moi lan doi ban.
+     */
+    val ghep: String = "",
+    /** Anh di kem de, duong dan tinh tu assets/hinh/. Xem tools/ghep/DINH_DANG.md. */
+    val hinh: List<String> = emptyList(),
+    /** Doan van cua cau doc hieu, da tra ra chu tu "doan_van" cua file sach. */
+    val doan: String = "",
+    /** Ly do cau nay co y khong lam tren may ("vẽ hình"...). Rong la khong co ly do nao. */
+    val boMay: String = ""
 ) {
+    /** Cau nay lam duoc ngay tren may, bang ban phim ghep. */
+    val lamTrenMay: Boolean get() = ghep.isNotBlank() && boMay.isBlank()
+
     /**
      * Cau nay bam duoc ngay tren tablet: trac nghiem bon phuong an, sach chon mot chu.
      *
@@ -165,16 +182,17 @@ enum class Chieu {
     VIET_ANH
 }
 
-/** Buoi do nay la buoi nao. Quyet dinh tra phut kieu gi, xem [vn.huytl.homeworkgate.data.TuVung]. */
+/**
+ * Buoi do nay la buoi nao, ghi vao cot buoi cua bang tra_tu.
+ *
+ * Chi con mot buoi. Truoc 29/9/2026 o day con hai gia tri DAN_DO_TOI, DAN_DO_SANG cho hai
+ * buoi do theo Unit co giao trong vo dan do, nhung man Do tu vung chua bao gio mo hai buoi
+ * do va khong dong nao trong bang ghi chung. Ba Huy chon bo phan thua. Giu kieu enum de cot
+ * buoi van doc duoc neu sau nay them buoi moi.
+ */
 enum class BuoiDo {
     /** Buoi do hang ngay, boc ngau nhien co trong so. Tra giay theo tung tu. */
-    HANG_NGAY,
-
-    /** Do het tu cua Unit co giao, buoi toi. Nam trong tron goi 45 phut, khong tra rieng. */
-    DAN_DO_TOI,
-
-    /** Do lai chinh nhung tu do sang hom sau. Tra giay theo tung tu. */
-    DAN_DO_SANG
+    HANG_NGAY
 }
 
 /** Mot lan con tra loi mot tu. Moi lan thu la mot dong, ke ca lan sai. */
@@ -336,7 +354,23 @@ data class TraLoi(
      * Can de tinh diem cua de: diem la so cau dung o LAN DAU trong de, khong tinh lan
      * sua sau do. Cau sai trong de van di duong sua nhu moi cau khac.
      */
-    val deId: String = ""
+    val deId: String = "",
+    /**
+     * Lan nay con lam ngay tren may bang ban phim ghep, khong phai bai chup anh. Xem
+     * [vn.huytl.homeworkgate.data.LuatGhep]. Bon truong duoi day chi co nghia khi true.
+     */
+    val trenMay: Boolean = false,
+    /** So sao con lai luc xong luot (0 la het sao). -1 la khong phai luot tren may. */
+    val sao: Int = -1,
+    /** So sao toi da cua cau luc lam, de biet luot nay da du sao chua. */
+    val saoToiDa: Int = 0,
+    /**
+     * Vong thu may cua cau: 0 la vong dau (lan dau va cac lan lam lai sau 24 gio), 1 tro
+     * di la cac lan on theo hen. Moi vong la mot phan sao moi.
+     */
+    val vong: Int = 0,
+    /** So lan bam Kiem tra ma sai trong luot nay. Co sai la cau vao lich on. */
+    val lanSai: Int = 0
 )
 
 /**
@@ -574,8 +608,19 @@ data class DeGiai(
     val tnDung: Int = -1,
     val tlDung: Int = -1,
     val chamLuc: Long = 0L,
-    val ketTuLuan: Map<String, Boolean> = emptyMap()
+    val ketTuLuan: Map<String, Boolean> = emptyMap(),
+    /**
+     * De lam tren may (tu 29/9/2026): tong sao con dat duoc luc nop, -1 la chua nop. Cung
+     * la diem cua de. [chon] luc do giu trang thai sao tung cau, xem
+     * [vn.huytl.homeworkgate.data.GiaiDe.luotCua].
+     */
+    val saoDat: Int = -1,
+    /** Tong sao toi da cua moi cau trong de. 0 la de cu, lam theo kieu chup phan tu luan. */
+    val saoToiDa: Int = 0
 ) {
+    /** De lam het tren may, theo luat sao. De cu (truoc 29/9/2026) co [saoToiDa] = 0. */
+    val trenMay: Boolean get() = saoToiDa > 0
+
     val daBatDau: Boolean get() = batDau > 0L
     val daNop: Boolean get() = nopLuc > 0L
     val daGuiTuLuan: Boolean get() = guiLuc > 0L

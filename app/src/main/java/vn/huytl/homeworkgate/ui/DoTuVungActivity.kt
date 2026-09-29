@@ -35,7 +35,7 @@ import java.util.Calendar
  * TACH KHOI [HocThuocActivity] du hai man chay cung mot vong - hoi, cham, sai thi
  * hoi lai, xong thi cap gio. Ly do o hai cho khong gop duoc:
  *
- *  - the hoc thuoc giu mot cap hoi/dap co dinh va den luot theo lich hen 3/10/30
+ *  - the hoc thuoc giu mot cap hoi/dap co dinh va den luot theo lich hen 3/10/20/30
  *    ngay; mot tu thi hoi duoc CA HAI CHIEU va duoc boc theo trong so moi buoi;
  *  - chieu nhin tu doan nghia la mot cau trac nghiem bon o, khong phai o go chu.
  *
@@ -187,9 +187,10 @@ class DoTuVungActivity : AppCompatActivity() {
         val thuoc = tinh.count { it.second == LuatTuVung.TinhTrang.DA_THUOC }
         val chuaChon = unit == null
         val chuaHoc = unit == HocToi.CHUA_HOC_UNIT_NAO
-        // Het tran ngay thi ca bo chua chon cung xam: vao chon xong cung khong duoc phut
-        // nao, con nut doi o dong cuoi van bam duoc.
-        val sang = conGio && !chuaHoc
+        // Het tran ngay thi the VAN bam duoc (29/9/2026): phut do tu dung them tu do vao
+        // "Quỹ giờ chơi", xem [chot]. Truoc do the xam lai va con khong do them duoc, nen
+        // phan cong con muon lam them khong duoc ghi o dau ca.
+        val sang = !chuaHoc
 
         val v = StTheBoBinding.inflate(layoutInflater, b.boxBo, false)
         val mauMon = ContextCompat.getColor(this, MatMon.mau(bo.mon))
@@ -204,8 +205,8 @@ class DoTuVungActivity : AppCompatActivity() {
         v.tenBo.setTextColor(mau(if (sang) R.color.ink else R.color.ink_soft))
 
         v.phuBo.text = when {
-            !conGio -> "Hôm nay dò đủ rồi"
             chuaChon -> "Chọn Unit lớp đã học tới"
+            !conGio && !chuaHoc -> "Đủ phút hôm nay, dò thêm vẫn được"
             // Dong cuoi da noi lop chua hoc Unit nao, o day noi he qua cua no.
             chuaHoc -> "Chưa có từ để hỏi"
             // Moi hoc Unit 1 thi "Unit 1–1" doc nhu may hong.
@@ -221,7 +222,6 @@ class DoTuVungActivity : AppCompatActivity() {
         )
 
         v.soDenLuot.text = when {
-            !conGio -> "✓"
             chuaChon -> "?"
             chuaHoc -> "–"
             // Phan da hoc it hon mot buoi thi hoi het phan do, khong phai hai muoi.
@@ -243,7 +243,7 @@ class DoTuVungActivity : AppCompatActivity() {
         v.chuHocToi.text = unit?.let { "Lớp ${HocToi.moTaUnit(it)}" }
             ?: "Lớp đã học tới: chưa chọn"
         v.btnHocToi.text = if (chuaChon) "Chọn" else "Đổi"
-        v.btnHocToi.setOnClickListener { hoiHocToi(bo, roiBatDau = chuaChon && conGio) }
+        v.btnHocToi.setOnClickListener { hoiHocToi(bo, roiBatDau = chuaChon) }
 
         v.root.isEnabled = sang
         v.root.alpha = if (sang) 1f else 0.7f
@@ -599,8 +599,14 @@ class DoTuVungActivity : AppCompatActivity() {
         val xong = muc.values.filter { it.duocGio }.map { it.tu.id }.toSet() - tuDaTra
         tuDaTra += xong
         val giayBuoi = xong.size * LuatTuVung.GIAY_MOI_TU
-        val phut = LuatTuVung.phutThem(kho.giayTuVungTu(moc0Gio()), giayBuoi)
+        val giayTruoc = kho.giayTuVungTu(moc0Gio())
+        val phut = LuatTuVung.phutThem(giayTruoc, giayBuoi)
         phutVuaTra += phut
+        // Phan tran rieng cat di thi vao quy gio choi (Ba Huy chot ngay 29/9/2026), y nhu
+        // Kiem tra bai. Xem [vn.huytl.homeworkgate.data.QuyGio].
+        val vuot = (LuatTuVung.phutTu(giayTruoc + giayBuoi) - LuatTuVung.phutTu(giayTruoc) - phut)
+            .coerceAtLeast(0)
+        if (vuot > 0) vn.huytl.homeworkgate.data.QuyGio.them(this, vuot, "Dò từ vựng")
 
         // Gan giay vao dong DUNG CUOI CUNG cua moi tu vua xong: mot tu mot lan, du no
         // co bao nhieu dong trong buoi.

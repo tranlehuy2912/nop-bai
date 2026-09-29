@@ -127,9 +127,20 @@ object SoCaiBai {
         return KhoBai.get(context).soLanSai(k, han(now), truocLuc)
     }
 
-    /** Cac cau dang sai, cho con sua lai. */
-    fun dangChoSua(context: Context, now: Long = System.currentTimeMillis()): List<CauSo> =
-        KhoBai.get(context).dangChoSua(han(now)).map { it.sangCauSo() }
+    /**
+     * Cac cau dang sai, cho con sua lai bang anh.
+     *
+     * Bo cau sai vao mot ngay da tinh tron goi (Ba Huy chot 29/9/2026): sua xong cung khong
+     * ra phut, vi moi bai chup la bai dan do va da nam trong goi. Cau do neu co trong ngan
+     * hang thi 24 gio sau hien o duong lam tren may - xem [LamTrenMay.cauLamThem]; cau ngoai
+     * ngan hang thi thoi.
+     */
+    fun dangChoSua(context: Context, now: Long = System.currentTimeMillis()): List<CauSo> {
+        val kho = KhoBai.get(context)
+        val tu = han(now)
+        val ngayGoi = kho.lucCacGoi(tu).map { moc0GioCua(it) }.toSet()
+        return kho.dangChoSua(tu).filter { moc0GioCua(it.luc) !in ngayGoi }.map { it.sangCauSo() }
+    }
 
     /** Cau nay da duoc tra gio lan nao chua, hoi bang de bai (bai ngoai sach). */
     fun daTraGio(context: Context, de: String, now: Long = System.currentTimeMillis()): Boolean {
@@ -253,23 +264,27 @@ object SoCaiBai {
     }
 
     /**
-     * So phut phan LAM THEM da cong trong ngay, de giu tran cua [LuatCongGio].
-     *
-     * Khong tinh tron goi vo dan do. Tran 90 phut la tran rieng cua phan lam them;
-     * goi 45 phut nam ngoai no, nen mot ngay toi da 135. Cong ca goi vao day thi
-     * ngay nao co goi, tran lam them tu tut xuong con 45 ma khong ai noi gi.
+     * So phut duong CHUP ANH da cong trong ngay, ca tinh le lan tron goi, de giu
+     * [LuatCongGio.TRAN_ANH]. Tu 29/9/2026 duong nay chi con bai dan do.
      */
-    fun phutLamThemHomNay(context: Context, now: Long = System.currentTimeMillis()): Int =
-        KhoBai.get(context).tongPhut(moc0GioCua(now), truCauId = KHOA_GOI)
+    fun phutAnhHomNay(context: Context, now: Long = System.currentTimeMillis()): Int =
+        KhoBai.get(context).tongPhutAnh(moc0GioCua(now))
 
     /**
-     * So phut duong ON da cong trong ngay, de giu [LuatCongGio.TRAN_ON_MOI_NGAY].
+     * So phut bai lam TREN MAY (lam them, luyen, Giai de) da cap trong ngay, de giu
+     * [LuatCongGio.TRAN_TREN_MAY]. Phan vao quy khong tinh o day.
+     */
+    fun phutTrenMayHomNay(context: Context, now: Long = System.currentTimeMillis()): Int =
+        KhoBai.get(context).tongPhutTrenMay(moc0GioCua(now), onTap = false)
+
+    /**
+     * So phut duong ON LAI tren may da cap trong ngay, de giu [LuatCongGio.TRAN_ON_MOI_NGAY].
      *
-     * Nam trong so phut cua [phutLamThemHomNay] chu khong cong them vao: on lai van
-     * la mot phan cua "ngoai goi". Hai con so, hai cai tran, cung mot ro.
+     * Tu 29/9/2026 on lai la mot phan rieng voi tran rieng, khong nam trong
+     * [phutTrenMayHomNay]. Truoc do on lai la bai chup anh va nam chung ro lam them.
      */
     fun phutOnHomNay(context: Context, now: Long = System.currentTimeMillis()): Int =
-        KhoBai.get(context).tongPhutOnTap(moc0GioCua(now))
+        KhoBai.get(context).tongPhutTrenMay(moc0GioCua(now), onTap = true)
 
     /** Tong so phut da cong trong ngay, ke ca tron goi. Dung de bao cao. */
     fun phutDaCongHomNay(context: Context, now: Long = System.currentTimeMillis()): Int =

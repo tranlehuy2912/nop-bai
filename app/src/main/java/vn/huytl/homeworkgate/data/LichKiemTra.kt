@@ -27,14 +27,20 @@ import java.util.Calendar
  *  - "thứ tự" gan giong "thứ tư": so co dau.
  * Tu viet tat va cach viet khong dau thi so tren ban da bo dau: "kiem tra", "ktra",
  * "bai 2 den bai 5".
+ *
+ * TIENG ANH (tu 29/9/2026, khi co sach bai tap Tieng Anh trong may). Lop kiem tra theo
+ * Unit ("kiểm tra 15 phút Unit 2"), nen so Unit di vao [KiemTra.cacBai] y nhu so bai cua
+ * Toan: [PhanHoc.soBai] doc "Unit 2. ..." ra 2. Chu "anh" dung mot minh la "anh trai",
+ * nen chi nhan mon khi co "tiếng Anh", "Anh văn", "English", "môn Anh", hay "Anh:" dau dong.
  */
 object LichKiemTra {
 
     /**
      * Mot lan kiem tra doc ra duoc.
      *
-     * @param mon "Toán" hay "Khoa học tự nhiên": hai mon co sach bai tap trong may.
-     * @param cacBai so bai dong chu nhac toi, rong la khong noi bai nao.
+     * @param mon "Toán", "Khoa học tự nhiên" hay "Tiếng Anh": ba mon co sach bai tap
+     *   trong may.
+     * @param cacBai so bai dong chu nhac toi (Tieng Anh la so Unit), rong la khong noi.
      * @param chuong so chuong dong chu nhac toi, null la khong noi.
      * @param ngay ngay kiem tra, null la khong doc ra.
      * @param chu dong chu goc, de ghi vao de va vao tin cho Ba Huy.
@@ -50,8 +56,12 @@ object LichKiemTra {
     const val TOAN = "Toán"
     const val KHTN = "Khoa học tự nhiên"
 
+    /** Phai giong het [vn.huytl.homeworkgate.kho.PhanHoc.TIENG_ANH]. */
+    const val TIENG_ANH = "Tiếng Anh"
+
     /**
-     * Doc mot dong. Rong khi dong khong noi ve kiem tra, hay khong noi mon Toan, KHTN.
+     * Doc mot dong. Rong khi dong khong noi ve kiem tra, hay khong noi mon Toan, KHTN,
+     * Tieng Anh.
      * Dong nhac ca hai mon ("kiểm tra Toán và KHTN") thi ra hai lan kiem tra.
      *
      * @param ngayNguon ngay cua dong chu: ngay ghi tren vo dan do, hay ngay co nhan tin.
@@ -67,9 +77,15 @@ object LichKiemTra {
         val cacMon = mon(co, khong)
         if (cacMon.isEmpty()) return emptyList()
         val bai = cacBai(khong)
+        val unit = cacUnit(khong)
         val chuong = chuong(khong)
         return cacMon.map { m ->
-            KiemTra(m, bai, chuong, ngayCuaMon(goc, co, khong, m, cacMon.size > 1, ngayNguon), goc)
+            // Tieng Anh noi Unit; co giao ghi "bài 2" thi van hieu la Unit 2.
+            val cua = if (m == TIENG_ANH) unit.ifEmpty { bai } else bai
+            KiemTra(
+                m, cua, if (m == TIENG_ANH) null else chuong,
+                ngayCuaMon(goc, co, khong, m, cacMon.size > 1, ngayNguon), goc
+            )
         }
     }
 
@@ -86,11 +102,16 @@ object LichKiemTra {
     private val DAU_DONG_KHTN = Regex(
         """^\s*(khtn|khoa học tự nhiên|hoá|hóa|hoá học|hóa học|lí|lý|vật lí|vật lý|sinh|sinh học)\s*[:\-–]"""
     )
+    private val DAU_DONG_ANH = Regex("""^\s*(tiếng anh|t\.\s?anh|anh văn|anh|english)\s*[:\-–]""")
+
+    /** "tiếng Anh", "Anh văn", "English", "môn Anh", ca khi go khong dau ("tieng anh"). */
+    private val TEN_ANH = Regex("""(?<![a-z])(tieng\s*anh|anh\s*van|english|mon\s*anh)(?![a-z])""")
 
     /** Mon cua dong chu, theo thu tu: ten mon dau dong, "môn ...", roi ten mon o bat cu dau. */
     private fun mon(co: String, khong: String): List<String> {
         if (DAU_DONG_TOAN.containsMatchIn(co)) return listOf(TOAN)
         if (DAU_DONG_KHTN.containsMatchIn(co)) return listOf(KHTN)
+        if (DAU_DONG_ANH.containsMatchIn(co)) return listOf(TIENG_ANH)
         return buildList {
             if (Regex("""(?<![\p{L}])toán(?![\p{L}])""").containsMatchIn(co)) add(TOAN)
             val khtn = Regex("""(?<![a-z])khtn(?![a-z])""").containsMatchIn(khong) ||
@@ -98,8 +119,31 @@ object LichKiemTra {
                 Regex("""(?<![\p{L}])(hoá|hóa)(?![\p{L}])""").containsMatchIn(co) ||
                 Regex("""vật\s*(lí|lý)|môn\s*(lí|lý|sinh)|sinh\s*học""").containsMatchIn(co)
             if (khtn) add(KHTN)
+            // "kiểm tra Unit 3" khong ghi mon thi cung chi la Tieng Anh.
+            if (TEN_ANH.containsMatchIn(khong) || (isEmpty() && CUM_UNIT.containsMatchIn(khong))) add(TIENG_ANH)
         }
     }
+
+    /** Cac so Unit nhac toi: "Unit 2", "unit 2, 3", "Unit 1-3", "unit 1 đến unit 3". */
+    fun cacUnit(khong: String): List<Int> {
+        val ra = linkedSetOf<Int>()
+        CUM_UNIT.findAll(khong).forEach { m ->
+            val so = Regex("""\d+""").findAll(m.groupValues[1]).map { it.value.toInt() to it.range }.toList()
+            so.forEachIndexed { i, (n, khoang) ->
+                ra += n
+                val sau = so.getOrNull(i + 1) ?: return@forEachIndexed
+                val giua = m.groupValues[1].substring(khoang.last + 1, sau.second.first)
+                if (Regex("""-|–|den|toi""").containsMatchIn(giua) && sau.first > n && sau.first - n <= 12) {
+                    for (k in n + 1 until sau.first) ra += k
+                }
+            }
+        }
+        return ra.filter { it in 1..12 }
+    }
+
+    private val CUM_UNIT = Regex(
+        """(?<![a-z])unit\s*(\d+(?!\d)(?:\s*(?:,|;|&|\+|va|-|–|den|toi)\s*(?:unit\s*)?\d+(?!\d))*)"""
+    )
 
     /**
      * Cac so bai nhac toi: "bài 2, 3", "bài 2 và bài 3", "bài 2-5", "bài 2 đến bài 5".

@@ -56,7 +56,11 @@ class KhoBai private constructor(context: Context) :
               dang   TEXT,
               thu_tu INTEGER,
               dap_an TEXT,
-              loai_dap_an TEXT
+              loai_dap_an TEXT,
+              ghep   TEXT,
+              hinh   TEXT,
+              doan   TEXT,
+              bo_may TEXT
             )
             """.trimIndent()
         )
@@ -89,7 +93,12 @@ class KhoBai private constructor(context: Context) :
               phut     INTEGER NOT NULL,
               nhan_xet TEXT,
               luc      INTEGER NOT NULL,
-              de_id    TEXT
+              de_id    TEXT,
+              tren_may INTEGER NOT NULL DEFAULT 0,
+              sao      INTEGER NOT NULL DEFAULT -1,
+              sao_toi_da INTEGER NOT NULL DEFAULT 0,
+              vong     INTEGER NOT NULL DEFAULT 0,
+              lan_sai  INTEGER NOT NULL DEFAULT 0
             )
             """.trimIndent()
         )
@@ -133,7 +142,9 @@ class KhoBai private constructor(context: Context) :
               tn_dung   INTEGER NOT NULL DEFAULT -1,
               tl_dung   INTEGER NOT NULL DEFAULT -1,
               cham_luc  INTEGER NOT NULL DEFAULT 0,
-              ket_tl    TEXT
+              ket_tl    TEXT,
+              sao_dat   INTEGER NOT NULL DEFAULT -1,
+              sao_toi_da INTEGER NOT NULL DEFAULT 0
             )
             """.trimIndent()
         )
@@ -277,7 +288,11 @@ class KhoBai private constructor(context: Context) :
               dang   TEXT,
               thu_tu INTEGER,
               dap_an TEXT,
-              loai_dap_an TEXT
+              loai_dap_an TEXT,
+              ghep   TEXT,
+              hinh   TEXT,
+              doan   TEXT,
+              bo_may TEXT
             )
             """.trimIndent()
         )
@@ -325,6 +340,21 @@ class KhoBai private constructor(context: Context) :
             runCatching { db.execSQL("ALTER TABLE tra_loi ADD COLUMN de_id TEXT") }
             runCatching { taoBangDe(db) }
         }
+
+        /*
+         * Ban 11: bai lam ngay tren may bang ban phim ghep (29/9/2026). Bang cau hoi vua
+         * tao lai o tren da co bon cot moi; so cai thi them cot ghi luot tren may va so
+         * sao. Dong cu giu mac dinh: tren_may = 0 la bai chup anh, sao = -1 la khong co sao.
+         */
+        if (cu < 11) {
+            runCatching { db.execSQL("ALTER TABLE tra_loi ADD COLUMN tren_may INTEGER NOT NULL DEFAULT 0") }
+            runCatching { db.execSQL("ALTER TABLE tra_loi ADD COLUMN sao INTEGER NOT NULL DEFAULT -1") }
+            runCatching { db.execSQL("ALTER TABLE tra_loi ADD COLUMN sao_toi_da INTEGER NOT NULL DEFAULT 0") }
+            runCatching { db.execSQL("ALTER TABLE tra_loi ADD COLUMN vong INTEGER NOT NULL DEFAULT 0") }
+            runCatching { db.execSQL("ALTER TABLE tra_loi ADD COLUMN lan_sai INTEGER NOT NULL DEFAULT 0") }
+            runCatching { db.execSQL("ALTER TABLE de_giai ADD COLUMN sao_dat INTEGER NOT NULL DEFAULT -1") }
+            runCatching { db.execSQL("ALTER TABLE de_giai ADD COLUMN sao_toi_da INTEGER NOT NULL DEFAULT 0") }
+        }
     }
 
     // ------------------------------------------------------------ ngan hang cau
@@ -351,6 +381,10 @@ class KhoBai private constructor(context: Context) :
                         put("thu_tu", c.thuTu)
                         put("dap_an", c.dapAn)
                         put("loai_dap_an", c.loaiDapAn)
+                        put("ghep", c.ghep)
+                        put("hinh", c.hinh.joinToString(NGAN_DONG))
+                        put("doan", c.doan)
+                        put("bo_may", c.boMay)
                     },
                     SQLiteDatabase.CONFLICT_REPLACE
                 )
@@ -477,6 +511,11 @@ class KhoBai private constructor(context: Context) :
                 put("nhan_xet", t.nhanXet)
                 put("luc", t.luc)
                 put("de_id", t.deId)
+                put("tren_may", if (t.trenMay) 1 else 0)
+                put("sao", t.sao)
+                put("sao_toi_da", t.saoToiDa)
+                put("vong", t.vong)
+                put("lan_sai", t.lanSai)
             }
         )
     }
@@ -543,7 +582,7 @@ class KhoBai private constructor(context: Context) :
             FROM tra_loi t
             WHERE t.luc >= ? $loc
             GROUP BY t.cau_id
-            HAVING MAX(CASE WHEN t.dung = 0 AND t.on_tap = 0 THEN 1 ELSE 0 END) = 1
+            HAVING MAX(CASE WHEN t.on_tap = 0 AND (t.dung = 0 OR t.lan_sai > 0) THEN 1 ELSE 0 END) = 1
                AND MAX(CASE WHEN t.dung = 1 THEN 1 ELSE 0 END) = 1
                AND EXISTS (SELECT 1 FROM cau_hoi c WHERE c.id = t.cau_id)
             """.trimIndent(),
@@ -634,6 +673,8 @@ class KhoBai private constructor(context: Context) :
         put("tl_dung", tlDung)
         put("cham_luc", chamLuc)
         put("ket_tl", org.json.JSONObject(ketTuLuan).toString())
+        put("sao_dat", saoDat)
+        put("sao_toi_da", saoToiDa)
     }
 
     private fun Cursor.docDe(): DeGiai {
@@ -666,7 +707,9 @@ class KhoBai private constructor(context: Context) :
             tnDung = getInt(getColumnIndexOrThrow("tn_dung")),
             tlDung = getInt(getColumnIndexOrThrow("tl_dung")),
             chamLuc = getLong(getColumnIndexOrThrow("cham_luc")),
-            ketTuLuan = ketTl
+            ketTuLuan = ketTl,
+            saoDat = getInt(getColumnIndexOrThrow("sao_dat")),
+            saoToiDa = getInt(getColumnIndexOrThrow("sao_toi_da"))
         )
     }
 
@@ -829,7 +872,7 @@ class KhoBai private constructor(context: Context) :
      * Cac the DEN LUOT trong mot bo, theo thu tu in trong file.
      *
      * Den luot la mot trong hai: chua bao gio go dung, hoac da dung ma den han nho
-     * lai. Han lay thang [mocHen] - dung cai lich 3/10/30 ngay cua cau hoi, khong
+     * lai. Han lay thang [mocHen] - dung cai lich 3/10/20/30 ngay cua cau hoi, khong
      * de ra mot lich thu hai. Qua het ba moc thi coi nhu thuoc, the do thoi hien ra.
      *
      * Loc trong Kotlin chu khong trong SQL: mot bo the co vai tram dong, doc het ra
@@ -1472,9 +1515,49 @@ class KhoBai private constructor(context: Context) :
             arrayOf(tuLuc.toString())
         ).use { c -> buildSet { while (c.moveToNext()) add(c.getString(0)) } }
 
+        // Luot tren may khong vao day: sai tren may thi mat sao va lam lai sau 24 gio,
+        // khong phai chup vo nop lai. Xem [vn.huytl.homeworkgate.data.LuatGhep].
         return moiNhatMoiCau(tuLuc)
-            .filter { !it.dung && it.cauId != CAU_GOI && it.cauId !in daXong }
+            .filter { !it.dung && !it.trenMay && it.cauId != CAU_GOI && it.cauId !in daXong }
     }
+
+    /**
+     * Tong phut cac luot lam tren may tu [tuLuc]: [onTap] true la duong on lai, false la
+     * lam them, luyen va Giai de. Hai phan hai tran rieng - xem [vn.huytl.homeworkgate
+     * .data.LuatCongGio.TRAN_TREN_MAY] va [vn.huytl.homeworkgate.data.LuatCongGio.TRAN_ON_MOI_NGAY].
+     */
+    fun tongPhutTrenMay(tuLuc: Long, onTap: Boolean): Int =
+        readableDatabase.rawQuery(
+            "SELECT SUM(phut) FROM tra_loi WHERE tren_may = 1 AND on_tap = ? AND luc >= ?",
+            arrayOf(if (onTap) "1" else "0", tuLuc.toString())
+        ).use { if (it.moveToFirst()) it.getInt(0) else 0 }
+
+    /** Tong phut duong chup anh (vo dan do) tu [tuLuc], ke ca dong tron goi. */
+    fun tongPhutAnh(tuLuc: Long): Int =
+        readableDatabase.rawQuery(
+            "SELECT SUM(phut) FROM tra_loi WHERE tren_may = 0 AND dung = 1 AND luc >= ?",
+            arrayOf(tuLuc.toString())
+        ).use { if (it.moveToFirst()) it.getInt(0) else 0 }
+
+    /**
+     * Cac luot tren may cua mot cau, cu nhat truoc. Luat sao doc tu day: vong nao, lan
+     * tot nhat bao nhieu sao, luot cuoi xong luc nao - xem [vn.huytl.homeworkgate.data.LuatGhep].
+     */
+    fun cacLuotTrenMay(cauId: String): List<TraLoi> =
+        readableDatabase.rawQuery(
+            "SELECT * FROM tra_loi WHERE cau_id = ? AND tren_may = 1 ORDER BY luc, id",
+            arrayOf(cauId)
+        ).use { c -> buildList { while (c.moveToNext()) add(c.docTraLoi()) } }
+
+    /**
+     * Moi luot tren may tu [tuLuc], de chon cau cho man lam bai trong mot lan doc thay
+     * vi hoi tung cau. Cu nhat truoc.
+     */
+    fun moiLuotTrenMay(tuLuc: Long): List<TraLoi> =
+        readableDatabase.rawQuery(
+            "SELECT * FROM tra_loi WHERE tren_may = 1 AND luc >= ? ORDER BY luc, id",
+            arrayOf(tuLuc.toString())
+        ).use { c -> buildList { while (c.moveToNext()) add(c.docTraLoi()) } }
 
     /** Tong so phut da cong trong khoang, bo qua [truCauId] neu co. */
     fun tongPhut(tuLuc: Long, truCauId: String? = null): Int {
@@ -1506,6 +1589,16 @@ class KhoBai private constructor(context: Context) :
             "SELECT 1 FROM tra_loi WHERE cau_id = ? AND luc >= ? LIMIT 1",
             arrayOf(cauId, tuLuc.toString())
         ).use { it.moveToFirst() }
+
+    /**
+     * Luc cac dong tron goi tu [tuLuc], de biet mot ngay da co goi chua. Xem
+     * [vn.huytl.homeworkgate.data.SoCaiBai.dangChoSua].
+     */
+    fun lucCacGoi(tuLuc: Long): List<Long> =
+        readableDatabase.rawQuery(
+            "SELECT luc FROM tra_loi WHERE cau_id = ? AND luc >= ?",
+            arrayOf(CAU_GOI, tuLuc.toString())
+        ).use { c -> buildList { while (c.moveToNext()) add(c.getLong(0)) } }
 
     /** Lich su cham cua mot cau, moi nhat truoc. De Ba Huy xem lai. */
     fun lichSuCua(cauId: String): List<TraLoi> =
@@ -1575,7 +1668,7 @@ class KhoBai private constructor(context: Context) :
               SELECT t.cau_id FROM tra_loi t
               WHERE t.luc >= ? AND t.cau_id <> ?
               GROUP BY t.cau_id
-              HAVING MAX(CASE WHEN t.dung = 0 AND t.on_tap = 0 THEN 1 ELSE 0 END) = 1
+              HAVING MAX(CASE WHEN t.on_tap = 0 AND (t.dung = 0 OR t.lan_sai > 0) THEN 1 ELSE 0 END) = 1
                  AND MAX(CASE WHEN t.dung = 1 THEN 1 ELSE 0 END) = 1
             )
             """.trimIndent(),
@@ -1771,7 +1864,12 @@ class KhoBai private constructor(context: Context) :
         dang = getString(getColumnIndexOrThrow("dang")).orEmpty(),
         thuTu = getInt(getColumnIndexOrThrow("thu_tu")),
         dapAn = getString(getColumnIndexOrThrow("dap_an")).orEmpty(),
-        loaiDapAn = getString(getColumnIndexOrThrow("loai_dap_an")).orEmpty()
+        loaiDapAn = getString(getColumnIndexOrThrow("loai_dap_an")).orEmpty(),
+        ghep = getString(getColumnIndexOrThrow("ghep")).orEmpty(),
+        hinh = getString(getColumnIndexOrThrow("hinh")).orEmpty()
+            .split(NGAN_DONG).filter { it.isNotEmpty() },
+        doan = getString(getColumnIndexOrThrow("doan")).orEmpty(),
+        boMay = getString(getColumnIndexOrThrow("bo_may")).orEmpty()
     )
 
     private fun Cursor.docTraLoi() = TraLoi(
@@ -1791,12 +1889,17 @@ class KhoBai private constructor(context: Context) :
         phut = getInt(getColumnIndexOrThrow("phut")),
         nhanXet = getString(getColumnIndexOrThrow("nhan_xet")).orEmpty(),
         luc = getLong(getColumnIndexOrThrow("luc")),
-        deId = getString(getColumnIndexOrThrow("de_id")).orEmpty()
+        deId = getString(getColumnIndexOrThrow("de_id")).orEmpty(),
+        trenMay = getInt(getColumnIndexOrThrow("tren_may")) == 1,
+        sao = getInt(getColumnIndexOrThrow("sao")),
+        saoToiDa = getInt(getColumnIndexOrThrow("sao_toi_da")),
+        vong = getInt(getColumnIndexOrThrow("vong")),
+        lanSai = getInt(getColumnIndexOrThrow("lan_sai"))
     )
 
     companion object {
         private const val TEN = "kho_bai.db"
-        private const val BAN = 10
+        private const val BAN = 11
 
         /**
          * Dau ngan giua cac dong bai lam khi cat vao mot o.
@@ -1831,10 +1934,12 @@ class KhoBai private constructor(context: Context) :
          * Lan dau tinh tu luc con SUA XONG cau do, cac lan sau tinh tu lan on truoc.
          * Het day nay thi thoi, coi nhu cau do da thuoc.
          *
-         * Ba moc thua dan: ba ngay, muoi ngay, mot thang. Du thua de khong thanh
-         * viec vat moi toi, du day de con chua kip quen han.
+         * Bon moc thua dan: ba ngay, muoi ngay, hai muoi ngay, mot thang. Du thua de
+         * khong thanh viec vat moi toi, du day de con chua kip quen han. Truoc 29/9/2026
+         * la ba moc 3/10/30; Ba Huy them moc 20 ngay. The hoc thuoc dung chung lich nay,
+         * xem [cacTheDenLuot].
          */
-        val KHOANG_HEN_NGAY = listOf(3, 10, 30)
+        val KHOANG_HEN_NGAY = listOf(3, 10, 20, 30)
 
         /**
          * Vap bay nhieu lan thi man hinh cua con moi noi ra. Xem [nhanHayVap].
