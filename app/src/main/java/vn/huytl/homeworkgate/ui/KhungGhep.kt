@@ -424,7 +424,7 @@ class KhungGhep(
     /** Nut vua chu, cho phim, the tu, phuong an ngan. */
     private fun nut(chu: String, chon: Boolean = false, to: Boolean = false, bam: () -> Unit): MaterialButton =
         MaterialButton(ct, null, com.google.android.material.R.attr.materialButtonOutlinedStyle).apply {
-            text = hien(chu)
+            text = hien(chu, muc.cau.mon)
             isAllCaps = false
             textSize = when {
                 to -> 18f
@@ -450,7 +450,7 @@ class KhungGhep(
     /** Nut rong het be ngang, chu canh trai, cho phuong an dai va dong loi giai. */
     private fun nutRong(dau: String, chu: String, chon: Boolean, mauChu: Int? = null, bam: () -> Unit): MaterialButton =
         MaterialButton(ct, null, com.google.android.material.R.attr.materialButtonOutlinedStyle).apply {
-            text = hien("$dau$chu")
+            text = hien("$dau$chu", muc.cau.mon)
             isAllCaps = false
             textSize = 17f
             gravity = Gravity.START or Gravity.CENTER_VERTICAL
@@ -486,7 +486,7 @@ class KhungGhep(
 
     private fun chu(s: String, co: Float, mau: Int = R.color.ink, dam: Boolean = false): TextView =
         TextView(ct).apply {
-            text = hien(s)
+            text = hien(s, muc.cau.mon)
             textSize = co
             setTextColor(mau(mau))
             if (dam) setTypeface(typeface, Typeface.BOLD)
@@ -508,10 +508,11 @@ class KhungGhep(
          *
          * So mu viet bang "^" trong de sach ("x^2y") doi ra chu so mu that nhu moi man khac
          * ([SoMu]): cau khong co "hoi" thi man nay hien thang [vn.huytl.homeworkgate.kho.CauHoi.de],
-         * va truoc 29/9/2026 con doc "x^2" o day.
+         * va truoc 29/9/2026 con doc "x^2" o day. Cau KHTN doi them chi so cong thuc hoa hoc
+         * ([SoMu.hienDe]), nen truyen [mon] cua cau.
          */
-        fun hien(goc: String): CharSequence {
-            val chu = SoMu.hien(goc)
+        fun hien(goc: String, mon: String = ""): CharSequence {
+            val chu = SoMu.hienDe(goc, mon)
             if (!chu.contains('<') && !chu.contains('\n') && !chu.contains('&')) return chu
             val thoat = chu.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
                 .replace(Regex("&lt;(/?)([ub])&gt;"), "<$1$2>")
@@ -547,7 +548,7 @@ class KhungGhep(
                 })
             }
             khung.addView(TextView(ct).apply {
-                text = hien(muc.ghep.hoi.ifBlank { muc.cau.de })
+                text = hien(muc.ghep.hoi.ifBlank { muc.cau.de }, muc.cau.mon)
                 textSize = 19f
                 setTextColor(ContextCompat.getColor(ct, R.color.ink))
                 setLineSpacing(3f * mat, 1f)

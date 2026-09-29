@@ -301,7 +301,7 @@ class GiaiDeActivity : AppCompatActivity() {
         val v = StTheCauDeBinding.inflate(LayoutInflater.from(this), b.danhSach, false)
         v.nhan.text = "Câu $so · " + (if (c.bamTrenMay) "Trắc nghiệm" else "Làm ra vở") +
             " · ${c.ma}"
-        v.de.text = SoMu.hien(if (c.bamTrenMay) tachPhuongAn(c.de) else c.de)
+        v.de.text = SoMu.hienDe(if (c.bamTrenMay) tachPhuongAn(c.de) else c.de, c.mon)
         v.nutChep.root.setOnClickListener { Chep.vao(this, "${v.nhan.text}\n${v.de.text}") }
         if (c.bamTrenMay) {
             v.hangChu.visibility = View.VISIBLE

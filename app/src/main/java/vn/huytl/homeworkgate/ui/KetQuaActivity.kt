@@ -205,7 +205,7 @@ class KetQuaActivity : AppCompatActivity() {
             chu(tomTat, 15f, mau = if (sai.isEmpty() && khongRo == 0) R.color.ok else R.color.ink_soft)
                 .apply { (layoutParams as LinearLayout.LayoutParams).topMargin = dp(2) }
         )
-        cac.forEach { the.addView(dongCau(it, tt)) }
+        cac.forEach { the.addView(dongCau(it, tt, b.mon)) }
 
         // Chi cau so cai con ghi la sai, va chua nam trong mot lan nop lai dang cho cham.
         val canNop = sai.filter { c ->
@@ -265,7 +265,7 @@ class KetQuaActivity : AppCompatActivity() {
         )
     }
 
-    private fun dongCau(c: BaiDaCham.Cau, tt: TinhTrang): View {
+    private fun dongCau(c: BaiDaCham.Cau, tt: TinhTrang, mon: String): View {
         // Hang lan sang le phai cua the cho icon chep thang mep chu, xem cho them nut o duoi.
         val hang = LinearLayout(this).apply {
             orientation = LinearLayout.HORIZONTAL
@@ -302,7 +302,7 @@ class KetQuaActivity : AppCompatActivity() {
             } + ")"
         )
         if (c.de.isNotBlank()) {
-            val de = SoMu.hien(c.de.trim())
+            val de = SoMu.hienDe(c.de.trim(), mon)
             cot.addView(chu(de, 14f, mau = R.color.ink_soft))
             chep += "Đề: $de"
         }

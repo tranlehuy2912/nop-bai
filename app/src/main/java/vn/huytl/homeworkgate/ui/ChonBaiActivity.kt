@@ -769,7 +769,7 @@ class ChonBaiActivity : AppCompatActivity() {
         them: SpannableStringBuilder.() -> Unit = {}
     ): CharSequence =
         // So mu doi ngay luc hien, chu trong kho van giu dau "^". Xem [SoMu].
-        SpannableStringBuilder(SoMu.hien(cau.dongChon(nhan))).apply {
+        SpannableStringBuilder(SoMu.hienDe(cau.dongChon(nhan), cau.mon)).apply {
             setSpan(
                 StyleSpan(Typeface.BOLD), 0, SoMu.hien(nhan).length,
                 Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
@@ -819,7 +819,7 @@ class ChonBaiActivity : AppCompatActivity() {
         // Chep nhan va de, bo dong tinh trang ("đã tính giờ", "đang cần sửa"...): do la
         // chuyen cua may.
         dong.findViewById<View>(R.id.nut_chep).setOnClickListener {
-            Chep.vao(this, SoMu.hien(cau.dongChon(nhan)))
+            Chep.vao(this, SoMu.hienDe(cau.dongChon(nhan), cau.mon))
         }
 
         if (xong || sua || cho) {

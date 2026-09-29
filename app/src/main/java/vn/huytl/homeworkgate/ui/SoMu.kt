@@ -1,5 +1,7 @@
 package vn.huytl.homeworkgate.ui
 
+import vn.huytl.homeworkgate.data.LichKiemTra
+
 /**
  * Doi so mu viet bang dau "^" trong de bai ra chu so mu that, chi de hien cho con doc:
  * "x^2y^3" thanh "x²y³", "10^23" thanh "10²³", ion "Ca^2+" thanh "Ca²⁺".
@@ -21,6 +23,7 @@ object SoMu {
 
     private const val SO = "0123456789"
     private const val SO_MU = "⁰¹²³⁴⁵⁶⁷⁸⁹"
+    private const val SO_DUOI = "₀₁₂₃₄₅₆₇₈₉"
 
     /** Chu so ngay sau "^", co the kem mot dau ion; hoac chi mot dau ion ("H^+"). */
     private val MU = Regex("""\^(\d*)([+−-](?![\p{L}\d(]))?""")
@@ -42,4 +45,27 @@ object SoMu {
             }
         }
     }
+
+    /**
+     * Chu so ngay sau ky hieu nguyen to (mot chu hoa, co the them mot chu thuong) hay sau dau
+     * ")": chi so trong cong thuc hoa hoc, "C2H6", "Ca(OH)2", "Fe2(SO4)3", "CuSO4.5H2O".
+     *
+     * Chi xet sau chu hoa. Trong de KHTN (quet 29/9/2026) ngoai cong thuc chi con ky hieu dai
+     * luong M1, T1, Et1, ma viet chi so duoi cung la dung. Chu thuong thi de nguyen: "n1" hien
+     * lech voi "M₁" mot chut, nhung doi ca chu thuong thi don vi "m3", "cm3" viet thieu dau "^"
+     * se thanh chi so duoi.
+     */
+    private val CHI_SO = Regex("""(?<=[A-Z][a-z]?|\))\d+""")
+
+    /** Doi chi so cong thuc hoa hoc viet bang so thuong ra chi so duoi: "C2H6" thanh "C₂H₆". */
+    fun chiSoHoa(chu: String): String =
+        CHI_SO.replace(chu) { m -> m.value.map { SO_DUOI[SO.indexOf(it)] }.joinToString("") }
+
+    /**
+     * Hien de cua mot cau mon [mon]: moi mon doi so mu, rieng KHTN doi them chi so cong thuc
+     * hoa hoc. Sach KHTN luu cong thuc bang so thuong ("CO2"), nen truoc ngay 29/9/2026 toi
+     * cau khong co "hoi" hien "C2H6" trong khi phuong an ghep ghi "C₂H₆".
+     */
+    fun hienDe(chu: String, mon: String): String =
+        if (mon == LichKiemTra.KHTN) chiSoHoa(hien(chu)) else hien(chu)
 }

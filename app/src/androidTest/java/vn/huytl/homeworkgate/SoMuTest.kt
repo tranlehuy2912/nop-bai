@@ -40,4 +40,29 @@ class SoMuTest {
         assertEquals("x^(n+1)", SoMu.hien("x^(n+1)"))
         assertEquals("Không có số mũ", SoMu.hien("Không có số mũ"))
     }
+
+    @Test
+    fun khtn_doi_chi_so_cong_thuc_hoa_hoc() {
+        val khtn = "Khoa học tự nhiên"
+        assertEquals(
+            "Hỗn hợp CO và C₂H₆ có tỉ lệ 1 : 2 về số mol.",
+            SoMu.hienDe("Hỗn hợp CO và C2H6 có tỉ lệ 1 : 2 về số mol.", khtn)
+        )
+        assertEquals("Ca(OH)₂, Fe₂(SO₄)₃, CuSO₄.5H₂O", SoMu.hienDe("Ca(OH)2, Fe2(SO4)3, CuSO4.5H2O", khtn))
+        assertEquals("2H₂ + O₂ ⟶ 2H₂O", SoMu.hienDe("2H2 + O2 ⟶ 2H2O", khtn))
+        // So mu va dien tich ion doi truoc, roi moi toi chi so.
+        assertEquals("SO₄²⁻ và 6,02·10²³", SoMu.hienDe("SO4^2− và 6,02·10^23", khtn))
+        // Ky hieu dai luong chu hoa cung thanh chi so duoi; chu thuong giu nguyen.
+        assertEquals("M₁·n1 + M₂·n2", SoMu.hienDe("M1·n1 + M2·n2", khtn))
+        assertEquals(
+            "Hình 3.1, Bài 5, 0,3 M, phản ứng (1)",
+            SoMu.hienDe("Hình 3.1, Bài 5, 0,3 M, phản ứng (1)", khtn)
+        )
+    }
+
+    @Test
+    fun mon_khac_khong_doi_chi_so() {
+        assertEquals("Điểm A1, B1 và x²", SoMu.hienDe("Điểm A1, B1 và x^2", "Toán"))
+        assertEquals("Unit 2, A1", SoMu.hienDe("Unit 2, A1", "Tiếng Anh"))
+    }
 }

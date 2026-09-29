@@ -83,7 +83,7 @@ class CaptureActivity : AppCompatActivity() {
         buildString {
             append("Chụp lại ${cac.size} câu này:")
             cac.forEach { (ma, de) ->
-                val chu = SoMu.hien(de.trim())
+                val chu = SoMu.hienDe(de.trim(), p.mon)
                 append("\n").append(ma)
                 if (chu.isNotEmpty()) {
                     append(". ").append(chu.take(DE_TOI_DA))
