@@ -2,7 +2,7 @@
  "nguon": "sbtkhtn8",
  "mon": "Khoa học tự nhiên",
  "ten": "SBT Khoa học tự nhiên 8",
- "ban": 2,
+ "ban": 5,
  "cac_bai": [
   {
    "chuong": "Chương I. Phản ứng hoá học",
@@ -15,7 +15,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "A",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Quá trình nào sau đây là biến đổi hoá học?",
+      "cac": [
+       "Đốt cháy cồn trong đĩa",
+       "Hơ nóng chiếc thìa inox",
+       "Hoà tan muối ăn vào nước",
+       "Nước hoa trong lọ mở nắp bị bay hơi"
+      ],
+      "dap": "A"
+     }
     },
     {
      "ma": "2.2",
@@ -24,7 +36,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "B",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Quá trình nào sau đây chỉ xảy ra biến đổi vật lí?",
+      "cac": [
+       "Đốt cháy củi trong bếp",
+       "Thắp sáng bóng đèn dây tóc",
+       "Đốt sợi dây đồng trên lửa đèn cồn",
+       "Để sợi dây thép ngoài không khí ẩm bị gỉ"
+      ],
+      "dap": "B"
+     }
     },
     {
      "ma": "2.3",
@@ -33,7 +57,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "C",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Cho hai quá trình sau:\n(1) Đun nước đá nóng chảy thành nước lỏng.\n(2) Nung thuốc tím rắn chuyển thành bột màu đen và có khí không màu thoát ra.\nKết luận đúng là:",
+      "cac": [
+       "(1) và (2) đều là biến đổi vật lí",
+       "(1) và (2) đều là biến đổi hoá học",
+       "(1) là biến đổi vật lí, (2) là biến đổi hoá học",
+       "(1) là biến đổi hoá học, (2) là biến đổi vật lí"
+      ],
+      "dap": "C"
+     }
     },
     {
      "ma": "2.4",
@@ -42,7 +78,53 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Hoà tan và cô cạn đều là biến đổi vật lí: muối ăn chỉ thay đổi trạng thái tồn tại, không tạo ra chất mới; sau khi cô cạn, muối ăn lại trở về trạng thái ban đầu.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "dong": [
+       {
+        "chu": "Hoà tan muối ăn vào nước: {0}",
+        "o": [
+         {
+          "dung": [
+           "biến đổi vật lí"
+          ],
+          "sai": [
+           "biến đổi hoá học"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Cô cạn dung dịch muối ăn: {0}",
+        "o": [
+         {
+          "dung": [
+           "biến đổi vật lí"
+          ],
+          "sai": [
+           "biến đổi hoá học"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Vì {0}",
+        "o": [
+         {
+          "dung": [
+           "muối ăn chỉ thay đổi trạng thái tồn tại, không tạo ra chất mới; cô cạn xong lại được muối ăn như ban đầu"
+          ],
+          "sai": [
+           "muối ăn tan hết, không còn nhìn thấy nên đã biến thành chất mới",
+           "nước đã phản ứng với muối ăn tạo thành dung dịch có vị mặn"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "2.5",
@@ -51,7 +133,66 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Nến chảy lỏng và nến lỏng hoá hơi là biến đổi vật lí: nến chỉ chuyển từ rắn sang lỏng, từ lỏng sang hơi, không tạo chất mới. Hơi nến cháy là biến đổi hoá học: tạo ra chất mới là carbon dioxide và hơi nước.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "dong": [
+       {
+        "chu": "Nến rắn chảy thành nến lỏng: {0}",
+        "o": [
+         {
+          "dung": [
+           "biến đổi vật lí"
+          ],
+          "sai": [
+           "biến đổi hoá học"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Nến lỏng hoá hơi: {0}",
+        "o": [
+         {
+          "dung": [
+           "biến đổi vật lí"
+          ],
+          "sai": [
+           "biến đổi hoá học"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Hơi nến cháy trong không khí: {0}",
+        "o": [
+         {
+          "dung": [
+           "biến đổi hoá học"
+          ],
+          "sai": [
+           "biến đổi vật lí"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Hơi nến cháy là biến đổi hoá học vì {0}",
+        "o": [
+         {
+          "dung": [
+           "tạo ra chất mới là carbon dioxide và hơi nước"
+          ],
+          "sai": [
+           "nến chuyển từ thể lỏng sang thể hơi",
+           "nến bị nóng chảy ra"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "2.6",
@@ -60,7 +201,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "D",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Nung nóng đá vôi (calcium carbonate) thu được vôi sống (calcium oxide) và khí carbon dioxide. Chất đầu của phản ứng là",
+      "cac": [
+       "không khí",
+       "calcium oxide",
+       "carbon dioxide",
+       "calcium carbonate"
+      ],
+      "dap": "D"
+     }
     },
     {
      "ma": "2.7",
@@ -69,7 +222,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "A",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Trong công nghiệp, người ta sản xuất ammonia từ phản ứng tổng hợp giữa nitrogen và hydrogen, có xúc tác bột sắt (iron). Sản phẩm của phản ứng là",
+      "cac": [
+       "ammonia",
+       "nitrogen",
+       "hydrogen",
+       "iron"
+      ],
+      "dap": "A"
+     }
     },
     {
      "ma": "2.8",
@@ -78,35 +243,183 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "B",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Trong một phản ứng bất kì thì đại lượng nào sau đây không thay đổi?",
+      "cac": [
+       "Số phân tử",
+       "Số nguyên tử của mỗi nguyên tố",
+       "Số chất (số chất phản ứng bằng số sản phẩm)",
+       "Tổng thể tích hỗn hợp phản ứng"
+      ],
+      "dap": "B"
+     }
     },
     {
      "ma": "2.9a",
      "de": "Phản ứng hoá học là gì?",
      "trang": 6,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 1,
+      "dong": [
+       {
+        "chu": "Phản ứng hoá học là quá trình {0}",
+        "o": [
+         {
+          "dung": [
+           "biến đổi từ chất này thành chất khác"
+          ],
+          "sai": [
+           "chất chuyển từ thể này sang thể khác",
+           "trộn lẫn hai hay nhiều chất với nhau"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "2.9b",
      "de": "Chất nào gọi là chất phản ứng (hay chất đầu)? Chất nào là sản phẩm (hay chất cuối)?",
      "trang": 6,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "dong": [
+       {
+        "chu": "Chất phản ứng (chất đầu) là {0}",
+        "o": [
+         {
+          "dung": [
+           "chất ban đầu, bị biến đổi trong phản ứng"
+          ],
+          "sai": [
+           "chất mới sinh ra trong phản ứng",
+           "chất giúp phản ứng xảy ra nhanh hơn"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Sản phẩm (chất cuối) là {0}",
+        "o": [
+         {
+          "dung": [
+           "chất mới sinh ra trong phản ứng"
+          ],
+          "sai": [
+           "chất ban đầu, bị biến đổi trong phản ứng",
+           "chất giúp phản ứng xảy ra nhanh hơn"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "2.9c",
      "de": "Trong quá trình phản ứng, lượng chất đầu và chất cuối thay đổi thế nào?",
      "trang": 6,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "dong": [
+       {
+        "chu": "Lượng chất đầu {0}",
+        "o": [
+         {
+          "dung": [
+           "giảm dần"
+          ],
+          "sai": [
+           "tăng dần",
+           "không thay đổi"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Lượng chất cuối (sản phẩm) {0}",
+        "o": [
+         {
+          "dung": [
+           "tăng dần"
+          ],
+          "sai": [
+           "giảm dần",
+           "không thay đổi"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "2.10",
      "de": "Viết phương trình chữ của các phản ứng xảy ra trong các câu hỏi 2.5, 2.6, 2.7. (Câu 2.5: khi đốt nến (làm bằng paraffin), nến lỏng hoá hơi rồi cháy trong không khí tạo thành khí carbon dioxide và hơi nước. Câu 2.6: nung nóng đá vôi (calcium carbonate) thu được vôi sống (calcium oxide) và khí carbon dioxide. Câu 2.7: sản xuất ammonia từ phản ứng tổng hợp giữa nitrogen và hydrogen, có xúc tác bột sắt (iron).)",
      "trang": 6,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "dong": [
+       {
+        "chu": "Câu 2.5 (đốt nến): {0}",
+        "o": [
+         {
+          "dung": [
+           "paraffin + oxygen → carbon dioxide + nước"
+          ],
+          "sai": [
+           "paraffin → carbon dioxide + nước",
+           "carbon dioxide + nước → paraffin + oxygen"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Câu 2.6 (nung đá vôi): {0}",
+        "o": [
+         {
+          "dung": [
+           "calcium carbonate → calcium oxide + carbon dioxide"
+          ],
+          "sai": [
+           "calcium oxide + carbon dioxide → calcium carbonate",
+           "calcium carbonate + oxygen → calcium oxide + carbon dioxide"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Câu 2.7 (tổng hợp ammonia): {0}",
+        "o": [
+         {
+          "dung": [
+           "nitrogen + hydrogen → ammonia"
+          ],
+          "sai": [
+           "nitrogen + hydrogen + iron → ammonia",
+           "ammonia → nitrogen + hydrogen"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "2.11",
@@ -115,7 +428,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "D",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Trong phản ứng tổng hợp ammonia từ nitrogen và hydrogen, các liên kết giữa các nguyên tử ...(1)... bị phá vỡ, liên kết giữa các nguyên tử ...(2)... được hình thành. Các từ thích hợp để điền vào vị trí (1), (2) lần lượt là:",
+      "cac": [
+       "cùng loại, cùng loại",
+       "khác loại, khác loại",
+       "khác loại, cùng loại",
+       "cùng loại, khác loại"
+      ],
+      "dap": "D"
+     }
     },
     {
      "ma": "2.12",
@@ -124,7 +449,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "A",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Trong phản ứng giữa oxygen với hydrogen tạo thành nước, lượng chất nào sau đây tăng lên trong quá trình phản ứng?",
+      "cac": [
+       "Chỉ có nước",
+       "Oxygen và hydrogen",
+       "Oxygen và nước",
+       "Hydrogen và nước"
+      ],
+      "dap": "A"
+     }
     },
     {
      "ma": "2.13",
@@ -133,7 +470,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "B",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Chất nào sau đây không phải là nhiên liệu sử dụng trong nhà bếp để đun nấu?",
+      "cac": [
+       "Khí gas",
+       "Khí hydrogen",
+       "Than đá",
+       "Dầu hoả"
+      ],
+      "dap": "B"
+     }
     },
     {
      "ma": "2.14",
@@ -142,7 +491,41 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Phản ứng hoá học xảy ra khi liên kết giữa các nguyên tử thay đổi, tạo liên kết mới. Các chất phải tiếp xúc với nhau thì nguyên tử của chúng mới tạo được liên kết mới, tức là mới tạo ra chất mới.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "dong": [
+       {
+        "chu": "Trong phản ứng hoá học, {0}",
+        "o": [
+         {
+          "dung": [
+           "liên kết giữa các nguyên tử thay đổi, tạo thành liên kết mới"
+          ],
+          "sai": [
+           "nguyên tử của nguyên tố này biến thành nguyên tử của nguyên tố khác",
+           "một số nguyên tử bị mất đi"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Các chất phải tiếp xúc với nhau thì {0}",
+        "o": [
+         {
+          "dung": [
+           "nguyên tử của chất này mới liên kết được với nguyên tử của chất kia, tạo ra chất mới"
+          ],
+          "sai": [
+           "các chất mới truyền nhiệt được cho nhau",
+           "các chất mới trộn lẫn thành hỗn hợp"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "2.15",
@@ -151,7 +534,54 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Không bằng nhau. Mỗi phân tử nước (H2O) có 2 nguyên tử H và 1 nguyên tử O, nên số phân tử hydrogen (H2) đã phản ứng gấp đôi số phân tử oxygen (O2): 2H2 + O2 ⟶ 2H2O.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "dong": [
+       {
+        "chu": "Số phân tử hydrogen và số phân tử oxygen đã phản ứng: {0}",
+        "o": [
+         {
+          "dung": [
+           "không bằng nhau"
+          ],
+          "sai": [
+           "bằng nhau"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Mỗi phân tử nước H₂O được tạo từ {0}",
+        "o": [
+         {
+          "dung": [
+           "2 nguyên tử H và 1 nguyên tử O"
+          ],
+          "sai": [
+           "1 nguyên tử H và 2 nguyên tử O",
+           "1 nguyên tử H và 1 nguyên tử O"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Phân tử hydrogen là H₂, phân tử oxygen là O₂, nên số phân tử H₂ đã phản ứng {0} số phân tử O₂",
+        "o": [
+         {
+          "dung": [
+           "gấp đôi"
+          ],
+          "sai": [
+           "bằng",
+           "bằng một nửa"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "2.16a",
@@ -160,7 +590,66 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Biến đổi hoá học: (1), (2); biến đổi vật lí: (3), (4)",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "hoi": "Nguyên liệu chủ yếu để sản xuất vôi sống là đá vôi trong tự nhiên hay các nguồn calcium carbonate (CaCO₃) có nguồn gốc sinh vật như san hô, vỏ các loài thân mềm,... Nhiên liệu để cung cấp nhiệt cho các lò nung vôi đầu tiên là gỗ, củi; sau này thường dùng nhiên liệu là than đá hoặc than cốc.\nỞ nhiệt độ từ khoảng 500 °C, CaCO₃ bắt đầu bị phân huỷ bởi nhiệt và quá trình phân huỷ xảy ra mạnh ở nhiệt độ khoảng từ 900 đến 1 000 °C.\nCaCO₃ → CaO + CO₂.\nTrong thực tế sản xuất, người ta thường để kích thước hạt của nguyên liệu khá lớn (60 – 150 mm). Do vậy, để phân huỷ hoàn toàn khối calcium carbonate cần nhiệt độ khá cao (900 – 1 400 °C).\nTrong công nghiệp, lò được xây bằng gạch chịu lửa và sản xuất theo công nghệ nung liên tục. Lò nung vôi công nghiệp có ưu điểm là sản xuất vôi liên tục và không gây ô nhiễm không khí. Sau một thời gian nhất định, đá vôi và than được nạp lại vào lò, vôi sống được lấy ra qua cửa ở đáy lò, khí CO₂ được thu qua cửa ở miệng lò và sử dụng sản xuất muối carbonate, nước đá khô.\nTrong các quá trình sau đây, quá trình nào là biến đổi vật lí, quá trình nào là biến đổi hoá học?",
+      "dong": [
+       {
+        "chu": "(1) Đốt cháy củi, than đá, than cốc: {0}",
+        "o": [
+         {
+          "dung": [
+           "biến đổi hoá học"
+          ],
+          "sai": [
+           "biến đổi vật lí"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "(2) Phân huỷ đá vôi ở nhiệt độ cao thành vôi sống: {0}",
+        "o": [
+         {
+          "dung": [
+           "biến đổi hoá học"
+          ],
+          "sai": [
+           "biến đổi vật lí"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "(3) Vôi sống nóng để nguội: {0}",
+        "o": [
+         {
+          "dung": [
+           "biến đổi vật lí"
+          ],
+          "sai": [
+           "biến đổi hoá học"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "(4) Khí carbon dioxide nóng bay lên và được thu ở cửa miệng lò theo đường ống dẫn: {0}",
+        "o": [
+         {
+          "dung": [
+           "biến đổi vật lí"
+          ],
+          "sai": [
+           "biến đổi hoá học"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "2.16b",
@@ -169,7 +658,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "A",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Nguyên liệu chủ yếu để sản xuất vôi sống là đá vôi trong tự nhiên hay các nguồn calcium carbonate (CaCO₃) có nguồn gốc sinh vật như san hô, vỏ các loài thân mềm,... Nhiên liệu để cung cấp nhiệt cho các lò nung vôi đầu tiên là gỗ, củi; sau này thường dùng nhiên liệu là than đá hoặc than cốc.\nỞ nhiệt độ từ khoảng 500 °C, CaCO₃ bắt đầu bị phân huỷ bởi nhiệt và quá trình phân huỷ xảy ra mạnh ở nhiệt độ khoảng từ 900 đến 1 000 °C.\nCaCO₃ → CaO + CO₂.\nTrong thực tế sản xuất, người ta thường để kích thước hạt của nguyên liệu khá lớn (60 – 150 mm). Do vậy, để phân huỷ hoàn toàn khối calcium carbonate cần nhiệt độ khá cao (900 – 1 400 °C).\nTrong công nghiệp, lò được xây bằng gạch chịu lửa và sản xuất theo công nghệ nung liên tục. Lò nung vôi công nghiệp có ưu điểm là sản xuất vôi liên tục và không gây ô nhiễm không khí. Sau một thời gian nhất định, đá vôi và than được nạp lại vào lò, vôi sống được lấy ra qua cửa ở đáy lò, khí CO₂ được thu qua cửa ở miệng lò và sử dụng sản xuất muối carbonate, nước đá khô.\nPhát biểu nào sau đây đúng?",
+      "cac": [
+       "Than đá cháy là phản ứng toả nhiệt; phân huỷ đá vôi là phản ứng thu nhiệt",
+       "Than đá cháy là phản ứng thu nhiệt; phân huỷ đá vôi là phản ứng toả nhiệt",
+       "Than đá cháy và phân huỷ đá vôi đều là phản ứng toả nhiệt",
+       "Than đá cháy và phân huỷ đá vôi đều là phản ứng thu nhiệt"
+      ],
+      "dap": "A"
+     }
     },
     {
      "ma": "2.16c",
@@ -178,7 +679,40 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Không đúng. Đóng kín cửa lò sẽ ngăn không khí đưa oxygen vào lò, than không cháy được nên không có nhiệt, phản ứng nung vôi sẽ không xảy ra.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "dong": [
+       {
+        "chu": "Ý kiến của bạn An: {0}",
+        "o": [
+         {
+          "dung": [
+           "không đúng"
+          ],
+          "sai": [
+           "đúng"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Vì khi đóng kín các cửa lò thì {0}",
+        "o": [
+         {
+          "dung": [
+           "không khí không vào được lò, thiếu oxygen nên than không cháy, không có nhiệt để nung vôi"
+          ],
+          "sai": [
+           "nhiệt không thoát ra ngoài nên đá vôi phân huỷ nhanh hơn",
+           "than cháy chậm lại nên tốn ít nhiên liệu hơn"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     }
    ]
   },
@@ -193,7 +727,27 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "0,14 mol nguyên tử K",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "hoi": "Tính số mol nguyên tử hoặc mol phân tử trong lượng chất sau (lấy số Avogadro là 6,02·10²³): 8,428·10²² nguyên tử K.",
+      "dap": [
+       "0,14",
+       "0,14mol"
+      ],
+      "phim": [
+       "mol"
+      ],
+      "nhieu": [
+       "g",
+       "L"
+      ],
+      "loi_giai": [
+       "n(K) = 8,428·10²² : (6,02·10²³)",
+       "= 0,14 (mol)"
+      ]
+     }
     },
     {
      "ma": "3.1b",
@@ -202,7 +756,27 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "2,5 mol phân tử SO2",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "hoi": "Tính số mol nguyên tử hoặc mol phân tử trong lượng chất sau (lấy số Avogadro là 6,02·10²³): 1,505·10²⁴ phân tử SO₂.",
+      "dap": [
+       "2,5",
+       "2,5mol"
+      ],
+      "phim": [
+       "mol"
+      ],
+      "nhieu": [
+       "g",
+       "L"
+      ],
+      "loi_giai": [
+       "n(SO₂) = 1,505·10²⁴ : (6,02·10²³)",
+       "= 2,5 (mol)"
+      ]
+     }
     },
     {
      "ma": "3.1c",
@@ -211,7 +785,27 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "1,2 mol nguyên tử Na",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "hoi": "Tính số mol nguyên tử hoặc mol phân tử trong lượng chất sau (lấy số Avogadro là 6,02·10²³): 7,224·10²³ nguyên tử Na.",
+      "dap": [
+       "1,2",
+       "1,2mol"
+      ],
+      "phim": [
+       "mol"
+      ],
+      "nhieu": [
+       "g",
+       "L"
+      ],
+      "loi_giai": [
+       "n(Na) = 7,224·10²³ : (6,02·10²³)",
+       "= 1,2 (mol)"
+      ]
+     }
     },
     {
      "ma": "3.1d",
@@ -220,7 +814,27 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "0,002 mol phân tử K2O",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "hoi": "Tính số mol nguyên tử hoặc mol phân tử trong lượng chất sau (lấy số Avogadro là 6,02·10²³): 1,204·10²¹ phân tử K₂O.",
+      "dap": [
+       "0,002",
+       "0,002mol"
+      ],
+      "phim": [
+       "mol"
+      ],
+      "nhieu": [
+       "g",
+       "L"
+      ],
+      "loi_giai": [
+       "n(K₂O) = 1,204·10²¹ : (6,02·10²³)",
+       "= 0,002 (mol)"
+      ]
+     }
     },
     {
      "ma": "3.2a",
@@ -229,7 +843,29 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "6,02·10^22 nguyên tử O",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "hoi": "Tính số nguyên tử hoặc phân tử có trong lượng chất sau (lấy số Avogadro là 6,02·10²³): 0,1 mol nguyên tử O.",
+      "dap": [
+       "6,02·10²²",
+       "0,602·10²³"
+      ],
+      "phim": [
+       "²",
+       "³"
+      ],
+      "nhieu": [
+       "¹",
+       "⁴",
+       "⁻"
+      ],
+      "loi_giai": [
+       "Số nguyên tử O = 0,1 · 6,02·10²³",
+       "= 6,02·10²² (nguyên tử)"
+      ]
+     }
     },
     {
      "ma": "3.2b",
@@ -238,7 +874,28 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "6,923·10^23 nguyên tử C",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "hoi": "Tính số nguyên tử hoặc phân tử có trong lượng chất sau (lấy số Avogadro là 6,02·10²³): 1,15 mol nguyên tử C.",
+      "dap": [
+       "6,923·10²³"
+      ],
+      "phim": [
+       "²",
+       "³"
+      ],
+      "nhieu": [
+       "¹",
+       "⁴",
+       "⁻"
+      ],
+      "loi_giai": [
+       "Số nguyên tử C = 1,15 · 6,02·10²³",
+       "= 6,923·10²³ (nguyên tử)"
+      ]
+     }
     },
     {
      "ma": "3.2c",
@@ -247,7 +904,29 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "3,01·10^22 phân tử O2",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "hoi": "Tính số nguyên tử hoặc phân tử có trong lượng chất sau (lấy số Avogadro là 6,02·10²³): 0,05 mol phân tử O₂.",
+      "dap": [
+       "3,01·10²²",
+       "0,301·10²³"
+      ],
+      "phim": [
+       "²",
+       "³"
+      ],
+      "nhieu": [
+       "¹",
+       "⁴",
+       "⁻"
+      ],
+      "loi_giai": [
+       "Số phân tử O₂ = 0,05 · 6,02·10²³",
+       "= 3,01·10²² (phân tử)"
+      ]
+     }
     },
     {
      "ma": "3.2d",
@@ -256,7 +935,30 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "1,204·10^24 phân tử NO2",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "hoi": "Tính số nguyên tử hoặc phân tử có trong lượng chất sau (lấy số Avogadro là 6,02·10²³): 2 mol phân tử NO₂.",
+      "dap": [
+       "1,204·10²⁴",
+       "12,04·10²³"
+      ],
+      "phim": [
+       "²",
+       "³",
+       "⁴"
+      ],
+      "nhieu": [
+       "¹",
+       "⁵",
+       "⁻"
+      ],
+      "loi_giai": [
+       "Số phân tử NO₂ = 2 · 6,02·10²³",
+       "= 1,204·10²⁴ (phân tử)"
+      ]
+     }
     },
     {
      "ma": "3.3a",
@@ -265,7 +967,27 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "1 g (khối lượng mol nguyên tử H là 1 g/mol)",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 1,
+      "dap": [
+       "1",
+       "1g",
+       "1g/mol"
+      ],
+      "phim": [
+       "g",
+       "g/mol"
+      ],
+      "nhieu": [
+       "mol",
+       "L"
+      ],
+      "loi_giai": [
+       "m = n · M = 1 · 1 = 1 (g)"
+      ]
+     }
     },
     {
      "ma": "3.3b",
@@ -274,7 +996,27 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "35,5 g (khối lượng mol nguyên tử Cl là 35,5 g/mol)",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 1,
+      "dap": [
+       "35,5",
+       "35,5g",
+       "35,5g/mol"
+      ],
+      "phim": [
+       "g",
+       "g/mol"
+      ],
+      "nhieu": [
+       "mol",
+       "L"
+      ],
+      "loi_giai": [
+       "m = n · M = 1 · 35,5 = 35,5 (g)"
+      ]
+     }
     },
     {
      "ma": "3.3c",
@@ -283,7 +1025,28 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "71 g (khối lượng mol phân tử Cl2 là 71 g/mol)",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "dap": [
+       "71",
+       "71g",
+       "71g/mol"
+      ],
+      "phim": [
+       "g",
+       "g/mol"
+      ],
+      "nhieu": [
+       "mol",
+       "L"
+      ],
+      "loi_giai": [
+       "M(Cl₂) = 2 · 35,5 = 71 (g/mol)",
+       "m = n · M = 1 · 71 = 71 (g)"
+      ]
+     }
     },
     {
      "ma": "3.4a",
@@ -292,7 +1055,26 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "8,4 g",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "dap": [
+       "8,4",
+       "8,4g"
+      ],
+      "phim": [
+       "g"
+      ],
+      "nhieu": [
+       "mol",
+       "L"
+      ],
+      "loi_giai": [
+       "m(Fe) = n · M = 0,15 · 56",
+       "= 8,4 (g)"
+      ]
+     }
     },
     {
      "ma": "3.4b",
@@ -301,7 +1083,26 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "71,68 g",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "dap": [
+       "71,68",
+       "71,68g"
+      ],
+      "phim": [
+       "g"
+      ],
+      "nhieu": [
+       "mol",
+       "L"
+      ],
+      "loi_giai": [
+       "M(SO₂) = 32 + 2 · 16 = 64 (g/mol)",
+       "m(SO₂) = 1,12 · 64 = 71,68 (g)"
+      ]
+     }
     },
     {
      "ma": "3.4c",
@@ -310,7 +1111,27 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "74,25 g (NaCl 5,85 g; đường 68,4 g)",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "dap": [
+       "74,25",
+       "74,25g"
+      ],
+      "phim": [
+       "g"
+      ],
+      "nhieu": [
+       "mol",
+       "L"
+      ],
+      "loi_giai": [
+       "M(NaCl) = 23 + 35,5 = 58,5 (g/mol); m(NaCl) = 0,1 · 58,5 = 5,85 (g)",
+       "M(C₁₂H₂₂O₁₁) = 12 · 12 + 22 · 1 + 11 · 16 = 342 (g/mol); m(đường) = 0,2 · 342 = 68,4 (g)",
+       "Khối lượng hỗn hợp: m = 5,85 + 68,4 = 74,25 (g)"
+      ]
+     }
     },
     {
      "ma": "3.4d",
@@ -319,7 +1140,27 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "82 g (C2H5OH 46 g; H2O 36 g)",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "dap": [
+       "82",
+       "82g"
+      ],
+      "phim": [
+       "g"
+      ],
+      "nhieu": [
+       "mol",
+       "L"
+      ],
+      "loi_giai": [
+       "M(C₂H₅OH) = 2 · 12 + 6 · 1 + 16 = 46 (g/mol); m(C₂H₅OH) = 1 · 46 = 46 (g)",
+       "M(H₂O) = 2 · 1 + 16 = 18 (g/mol); m(H₂O) = 2 · 18 = 36 (g)",
+       "Khối lượng dung dịch: m = 46 + 36 = 82 (g)"
+      ]
+     }
     },
     {
      "ma": "3.5",
@@ -328,7 +1169,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "A",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Lượng chất nào sau đây chứa số mol nhiều nhất?",
+      "cac": [
+       "16 gam O₂",
+       "8 gam SO₂",
+       "16 gam CuSO₄",
+       "32 gam Fe₂O₃"
+      ],
+      "dap": "A"
+     }
     },
     {
      "ma": "3.6a",
@@ -337,7 +1190,26 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "1 mol nguyên tử Cl",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "dap": [
+       "1",
+       "1mol"
+      ],
+      "phim": [
+       "mol"
+      ],
+      "nhieu": [
+       "g",
+       "L"
+      ],
+      "loi_giai": [
+       "M(HCl) = 1 + 35,5 = 36,5 (g/mol); n(HCl) = 36,5 : 36,5 = 1 (mol)",
+       "Mỗi phân tử HCl có 1 nguyên tử Cl nên n(Cl) = 1 · 1 = 1 (mol)"
+      ]
+     }
     },
     {
      "ma": "3.6b",
@@ -346,7 +1218,26 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "0,5 mol nguyên tử O",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "dap": [
+       "0,5",
+       "0,5mol"
+      ],
+      "phim": [
+       "mol"
+      ],
+      "nhieu": [
+       "g",
+       "L"
+      ],
+      "loi_giai": [
+       "M(CO₂) = 12 + 2 · 16 = 44 (g/mol); n(CO₂) = 11 : 44 = 0,25 (mol)",
+       "Mỗi phân tử CO₂ có 2 nguyên tử O nên n(O) = 2 · 0,25 = 0,5 (mol)"
+      ]
+     }
     },
     {
      "ma": "3.6c",
@@ -355,7 +1246,27 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "0,12 mol nguyên tử C",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "dap": [
+       "0,12",
+       "0,12mol"
+      ],
+      "phim": [
+       "mol"
+      ],
+      "nhieu": [
+       "g",
+       "L"
+      ],
+      "loi_giai": [
+       "M(C₁₂H₂₂O₁₁) = 12 · 12 + 22 · 1 + 11 · 16 = 342 (g/mol)",
+       "n(C₁₂H₂₂O₁₁) = 3,42 : 342 = 0,01 (mol)",
+       "Mỗi phân tử C₁₂H₂₂O₁₁ có 12 nguyên tử C nên n(C) = 12 · 0,01 = 0,12 (mol)"
+      ]
+     }
     },
     {
      "ma": "3.7a",
@@ -364,7 +1275,26 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "37,185 L",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "dap": [
+       "37,185",
+       "37,185L"
+      ],
+      "phim": [
+       "L"
+      ],
+      "nhieu": [
+       "mL",
+       "mol"
+      ],
+      "loi_giai": [
+       "V(CH₄) = 24,79 · n = 24,79 · 1,5",
+       "= 37,185 (L)"
+      ]
+     }
     },
     {
      "ma": "3.7b",
@@ -373,7 +1303,26 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "37,185 L (1,5 mol N2)",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "dap": [
+       "37,185",
+       "37,185L"
+      ],
+      "phim": [
+       "L"
+      ],
+      "nhieu": [
+       "mL",
+       "mol"
+      ],
+      "loi_giai": [
+       "n(N₂) = 42 : 28 = 1,5 (mol)",
+       "V(N₂) = 24,79 · 1,5 = 37,185 (L)"
+      ]
+     }
     },
     {
      "ma": "3.7c",
@@ -382,7 +1331,27 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "1,2395 L (0,05 mol H2)",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "hoi": "Tìm thể tích ở 25 °C, 1 bar của lượng khí sau (lấy số Avogadro là 6,02·10²³): 3,01·10²² phân tử H₂.",
+      "dap": [
+       "1,2395",
+       "1,2395L"
+      ],
+      "phim": [
+       "L"
+      ],
+      "nhieu": [
+       "mL",
+       "mol"
+      ],
+      "loi_giai": [
+       "n(H₂) = 3,01·10²² : (6,02·10²³) = 0,05 (mol)",
+       "V(H₂) = 24,79 · 0,05 = 1,2395 (L)"
+      ]
+     }
     },
     {
      "ma": "3.8a",
@@ -391,7 +1360,26 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "49,58 L",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "dap": [
+       "49,58",
+       "49,58L"
+      ],
+      "phim": [
+       "L"
+      ],
+      "nhieu": [
+       "mL",
+       "mol"
+      ],
+      "loi_giai": [
+       "Tổng số mol khí: n = 1 + 1 = 2 (mol)",
+       "V = 24,79 · 2 = 49,58 (L)"
+      ]
+     }
     },
     {
      "ma": "3.8b",
@@ -400,7 +1388,26 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "9,916 L",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "dap": [
+       "9,916",
+       "9,916L"
+      ],
+      "phim": [
+       "L"
+      ],
+      "nhieu": [
+       "mL",
+       "mol"
+      ],
+      "loi_giai": [
+       "Tổng số mol khí: n = 0,05 + 0,15 + 0,2 = 0,4 (mol)",
+       "V = 24,79 · 0,4 = 9,916 (L)"
+      ]
+     }
     },
     {
      "ma": "3.8c",
@@ -409,7 +1416,31 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "20,142 L (0,8125 mol khí)",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "dap": [
+       "20,142",
+       "20,142L",
+       "20,14",
+       "20,14L",
+       "20,141875",
+       "20,141875L"
+      ],
+      "phim": [
+       "L"
+      ],
+      "nhieu": [
+       "mL",
+       "mol"
+      ],
+      "loi_giai": [
+       "n(O₂) = 10 : 32 = 0,3125 (mol); n(N₂) = 14 : 28 = 0,5 (mol)",
+       "Tổng số mol khí: n = 0,3125 + 0,5 = 0,8125 (mol)",
+       "V = 24,79 · 0,8125 ≈ 20,142 (L)"
+      ]
+     }
     },
     {
      "ma": "3.9",
@@ -418,7 +1449,29 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "3,564 g (khoảng 3,55 g)",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "hoi": "Ở điều kiện 25 °C, 1 bar, một quả bóng cao su chứa đầy khí carbon dioxide (CO₂) có thể tích 2 L. Hãy tính khối lượng khí carbon dioxide trong quả bóng (làm tròn đến hàng phần trăm).",
+      "dap": [
+       "3,55",
+       "3,55g",
+       "3,56",
+       "3,56g"
+      ],
+      "phim": [
+       "g"
+      ],
+      "nhieu": [
+       "mol",
+       "L"
+      ],
+      "loi_giai": [
+       "n(CO₂) = 2 : 24,79 ≈ 0,0807 (mol)",
+       "m(CO₂) = 0,0807 · 44 ≈ 3,55 (g)"
+      ]
+     }
     },
     {
      "ma": "3.10",
@@ -427,7 +1480,98 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "HCl: 1,259; NH3: 0,586; C2H6: 1,034; H2S: 1,172; NO: 1,034; NO2: 1,586",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 6,
+      "hoi": "Tính tỉ khối đối với không khí của mỗi khí sau (làm tròn đến hàng phần nghìn).",
+      "dong": [
+       {
+        "chu": "HCl: {0}",
+        "o": [
+         {
+          "dung": [
+           "1,259"
+          ],
+          "sai": [
+           "0,795",
+           "1,241"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "NH₃: {0}",
+        "o": [
+         {
+          "dung": [
+           "0,586"
+          ],
+          "sai": [
+           "1,706",
+           "0,517"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "C₂H₆: {0}",
+        "o": [
+         {
+          "dung": [
+           "1,034"
+          ],
+          "sai": [
+           "0,967",
+           "0,621"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "H₂S: {0}",
+        "o": [
+         {
+          "dung": [
+           "1,172"
+          ],
+          "sai": [
+           "0,853",
+           "1,138"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "NO: {0}",
+        "o": [
+         {
+          "dung": [
+           "1,034"
+          ],
+          "sai": [
+           "0,967",
+           "1,586"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "NO₂: {0}",
+        "o": [
+         {
+          "dung": [
+           "1,586"
+          ],
+          "sai": [
+           "0,630",
+           "1,034"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "3.11",
@@ -436,7 +1580,53 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "a) sai; b) đúng; c) sai",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "hoi": "Trong các câu sau đây, câu nào đúng, câu nào sai?",
+      "dong": [
+       {
+        "chu": "a) Trong 0,12 mol phân tử Cl₂ có 0,06 mol nguyên tử Cl: {0}",
+        "o": [
+         {
+          "dung": [
+           "Sai"
+          ],
+          "sai": [
+           "Đúng"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "b) Số nguyên tử O trong 0,15 mol phân tử O₂ và trong 0,1 mol phân tử O₃ bằng nhau: {0}",
+        "o": [
+         {
+          "dung": [
+           "Đúng"
+          ],
+          "sai": [
+           "Sai"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "c) Ở cùng điều kiện nhiệt độ và áp suất, thể tích của 0,1 mol khí H₂ bằng thể tích của hỗn hợp gồm 1 mol khí HCl và 0,1 mol khí HBr: {0}",
+        "o": [
+         {
+          "dung": [
+           "Sai"
+          ],
+          "sai": [
+           "Đúng"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "3.12",
@@ -445,7 +1635,54 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Lớn nhất: quả bóng chứa Cl2; nhỏ nhất: quả bóng chứa H2 (khối lượng tăng dần: H2 < He < CO2 < Cl2)",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "dong": [
+       {
+        "chu": "Bốn quả bóng giống hệt nhau, ở cùng nhiệt độ và áp suất nên số mol khí trong các quả bóng {0}",
+        "o": [
+         {
+          "dung": [
+           "bằng nhau"
+          ],
+          "sai": [
+           "khác nhau"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Khối lượng khí lớn nhất: quả bóng chứa {0}",
+        "o": [
+         {
+          "dung": [
+           "Cl₂"
+          ],
+          "sai": [
+           "CO₂",
+           "He"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Khối lượng khí nhỏ nhất: quả bóng chứa {0}",
+        "o": [
+         {
+          "dung": [
+           "H₂"
+          ],
+          "sai": [
+           "He",
+           "CO₂"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "3.13",
@@ -454,7 +1691,93 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Acetylene (C2H2) và hydrogen (H2), vì khối lượng mol nhỏ hơn 29 g/mol (nhẹ hơn không khí)",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 6,
+      "hoi": "Bơm đầy một loại khí vào quả bóng, thấy quả bóng bị đẩy bay lên. Hỏi trong quả bóng có thể chứa những loại khí nào sau đây? Hãy giải thích.",
+      "dong": [
+       {
+        "chu": "Acetylene (C₂H₂): {0}",
+        "o": [
+         {
+          "dung": [
+           "Có"
+          ],
+          "sai": [
+           "Không"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Oxygen (O₂): {0}",
+        "o": [
+         {
+          "dung": [
+           "Không"
+          ],
+          "sai": [
+           "Có"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Hydrogen (H₂): {0}",
+        "o": [
+         {
+          "dung": [
+           "Có"
+          ],
+          "sai": [
+           "Không"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Carbon dioxide (CO₂): {0}",
+        "o": [
+         {
+          "dung": [
+           "Không"
+          ],
+          "sai": [
+           "Có"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Sulfur dioxide (SO₂): {0}",
+        "o": [
+         {
+          "dung": [
+           "Không"
+          ],
+          "sai": [
+           "Có"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Vì khí trong quả bóng phải có khối lượng mol {0}",
+        "o": [
+         {
+          "dung": [
+           "nhỏ hơn 29 g/mol (nhẹ hơn không khí)"
+          ],
+          "sai": [
+           "lớn hơn 29 g/mol (nặng hơn không khí)",
+           "bằng 29 g/mol"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "3.14a",
@@ -463,7 +1786,27 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "36,5 g/mol",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "dap": [
+       "36,5",
+       "36,5g/mol"
+      ],
+      "phim": [
+       "g/mol"
+      ],
+      "nhieu": [
+       "g",
+       "L"
+      ],
+      "loi_giai": [
+       "M(H₂) = 2 · 1 = 2 (g/mol); M(Cl₂) = 2 · 35,5 = 71 (g/mol)",
+       "MTB = (2 · 1 + 71 · 1) : (1 + 1)",
+       "= 36,5 (g/mol)"
+      ]
+     }
     },
     {
      "ma": "3.14b",
@@ -472,7 +1815,27 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "28 g/mol",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "dap": [
+       "28",
+       "28g/mol"
+      ],
+      "phim": [
+       "g/mol"
+      ],
+      "nhieu": [
+       "g",
+       "L"
+      ],
+      "loi_giai": [
+       "M(CO) = 12 + 16 = 28 (g/mol); M(N₂) = 2 · 14 = 28 (g/mol)",
+       "MTB = (28 · 2 + 28 · 3) : (2 + 3)",
+       "= 28 (g/mol)"
+      ]
+     }
     },
     {
      "ma": "3.14c",
@@ -481,7 +1844,27 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "29,5 g/mol",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "dap": [
+       "29,5",
+       "29,5g/mol"
+      ],
+      "phim": [
+       "g/mol"
+      ],
+      "nhieu": [
+       "g",
+       "L"
+      ],
+      "loi_giai": [
+       "M(H₂) = 2 · 1 = 2; M(CO₂) = 12 + 2 · 16 = 44; M(N₂) = 2 · 14 = 28 (g/mol)",
+       "MTB = (2 · 1 + 44 · 2 + 28 · 1) : (1 + 2 + 1)",
+       "= 29,5 (g/mol)"
+      ]
+     }
     },
     {
      "ma": "3.15",
@@ -490,7 +1873,79 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Nặng hơn không khí: (a), (c); nhẹ hơn không khí: (b). Tỉ khối: (a) 1,259; (b) 0,966; (c) 1,017",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 6,
+      "dong": [
+       {
+        "chu": "Hỗn hợp a (H₂ và Cl₂, tỉ lệ mol 1 : 1): {0}, tỉ khối đối với không khí là {1}",
+        "o": [
+         {
+          "dung": [
+           "nặng hơn không khí"
+          ],
+          "sai": [
+           "nhẹ hơn không khí"
+          ]
+         },
+         {
+          "dung": [
+           "1,259"
+          ],
+          "sai": [
+           "0,795",
+           "1,017"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Hỗn hợp b (CO và N₂, tỉ lệ mol 2 : 3): {0}, tỉ khối đối với không khí là {1}",
+        "o": [
+         {
+          "dung": [
+           "nhẹ hơn không khí"
+          ],
+          "sai": [
+           "nặng hơn không khí"
+          ]
+         },
+         {
+          "dung": [
+           "0,966"
+          ],
+          "sai": [
+           "1,036",
+           "1,259"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Hỗn hợp c (H₂, CO₂ và N₂, tỉ lệ mol 1 : 2 : 1): {0}, tỉ khối đối với không khí là {1}",
+        "o": [
+         {
+          "dung": [
+           "nặng hơn không khí"
+          ],
+          "sai": [
+           "nhẹ hơn không khí"
+          ]
+         },
+         {
+          "dung": [
+           "1,017"
+          ],
+          "sai": [
+           "0,983",
+           "0,966"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "3.16",
@@ -499,7 +1954,29 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Khối lượng ethanol cần lấy: 1,56·46 = 71,76 g; thể tích: 71,76 : 0,78 = 92 mL. Dùng ống đong lấy 92 mL ethanol, đó là 1,56 mol ethanol.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "hoi": "Trong phòng thí nghiệm có các dụng cụ và hoá chất sau: ống đong (giới hạn đo là 100 mL, độ chia nhỏ nhất là 1 mL), ống hút, ethanol (công thức phân tử là C₂H₅OH). Hãy trình bày cách lấy một lượng ethanol bằng 1,56 mol, biết rằng khối lượng riêng của ethanol là 0,78 g/mL. Cần dùng ống đong lấy bao nhiêu mL ethanol?",
+      "dap": [
+       "92",
+       "92mL"
+      ],
+      "phim": [
+       "mL"
+      ],
+      "nhieu": [
+       "g",
+       "L"
+      ],
+      "loi_giai": [
+       "M(C₂H₅OH) = 2 · 12 + 6 · 1 + 16 = 46 (g/mol)",
+       "m(C₂H₅OH) = 1,56 · 46 = 71,76 (g)",
+       "V = 71,76 : 0,78 = 92 (mL)",
+       "Dùng ống đong lấy 92 mL ethanol (gần tới vạch thì dùng ống hút nhỏ từng giọt cho đúng vạch), đó là 1,56 mol ethanol"
+      ]
+     }
     },
     {
      "ma": "3.17",
@@ -508,7 +1985,29 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "khoảng 244 kg (243 964 g)",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "hoi": "Tính khối lượng không khí (theo kg, làm tròn đến hàng đơn vị) có trong một lớp học dạng hình hộp chữ nhật có chiều dài 10 m, chiều rộng 6 m và cao 3,5 m. Biết rằng nhiệt độ phòng là 25 °C và áp suất không khí trong phòng là 1 bar. Coi không khí có gần đúng 20% O₂ và 80% N₂ về thể tích.",
+      "dap": [
+       "244",
+       "244kg"
+      ],
+      "phim": [
+       "kg"
+      ],
+      "nhieu": [
+       "g",
+       "L"
+      ],
+      "loi_giai": [
+       "V = 10 · 6 · 3,5 = 210 (m³) = 210 000 (L)",
+       "n(không khí) = 210 000 : 24,79 ≈ 8471 (mol)",
+       "M(không khí) = 0,2 · 32 + 0,8 · 28 = 28,8 (g/mol)",
+       "m = 8471 · 28,8 ≈ 243 965 (g) ≈ 244 (kg)"
+      ]
+     }
     },
     {
      "ma": "3.18a",
@@ -517,7 +2016,70 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Quả bóng A chứa hỗn hợp (1) (M = 29,33 g/mol, nặng hơn không khí); quả bóng B chứa hỗn hợp (2) (M = 25,33 g/mol, nhẹ hơn không khí)",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "dong": [
+       {
+        "chu": "Khối lượng mol trung bình của hỗn hợp (1): {0}",
+        "o": [
+         {
+          "dung": [
+           "29,33 g/mol"
+          ],
+          "sai": [
+           "29 g/mol",
+           "25,33 g/mol"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Khối lượng mol trung bình của hỗn hợp (2): {0}",
+        "o": [
+         {
+          "dung": [
+           "25,33 g/mol"
+          ],
+          "sai": [
+           "30 g/mol",
+           "29,33 g/mol"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Quả bóng A (nằm trên mặt bàn) chứa {0}",
+        "o": [
+         {
+          "dung": [
+           "hỗn hợp (1)"
+          ],
+          "sai": [
+           "hỗn hợp (2)"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Quả bóng B (bay lên cao) chứa {0}",
+        "o": [
+         {
+          "dung": [
+           "hỗn hợp (2)"
+          ],
+          "sai": [
+           "hỗn hợp (1)"
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     "hinh": [
+      "sbtkhtn8/H.3.1.webp"
+     ]
     },
     {
      "ma": "3.18b",
@@ -526,7 +2088,43 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Nằm trên mặt bàn",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "dong": [
+       {
+        "chu": "Quả bóng bơm đầy không khí sẽ {0}",
+        "o": [
+         {
+          "dung": [
+           "nằm trên mặt bàn"
+          ],
+          "sai": [
+           "bị đẩy bay lên"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Vì {0}",
+        "o": [
+         {
+          "dung": [
+           "khí trong bóng nặng bằng không khí bên ngoài, lại thêm vỏ bóng có khối lượng"
+          ],
+          "sai": [
+           "không khí trong bóng nhẹ hơn không khí bên ngoài",
+           "quả bóng nào bơm đầy khí cũng bị đẩy bay lên"
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     "hinh": [
+      "sbtkhtn8/H.3.1.webp"
+     ]
     },
     {
      "ma": "3.19",
@@ -535,7 +2133,27 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "23 g",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "dap": [
+       "23",
+       "23g"
+      ],
+      "phim": [
+       "g"
+      ],
+      "nhieu": [
+       "mol",
+       "L"
+      ],
+      "loi_giai": [
+       "n(N₂) = 14 : 28 = 0,5 (mol)",
+       "Hai khí có cùng thể tích ở cùng điều kiện nhiệt độ và áp suất nên số mol hơi ethanol bằng số mol N₂, tức 0,5 mol",
+       "M(C₂H₅OH) = 2 · 12 + 6 · 1 + 16 = 46 (g/mol); m = 0,5 · 46 = 23 (g)"
+      ]
+     }
     }
    ]
   },
@@ -550,7 +2168,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "C",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Khối lượng H₂O₂ có trong 30 g dung dịch nồng độ 3% là",
+      "cac": [
+       "10 g",
+       "3 g",
+       "0,9 g",
+       "0,1 g"
+      ],
+      "dap": "C"
+     }
     },
     {
      "ma": "4.2",
@@ -559,7 +2189,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "A",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Khối lượng NaOH có trong 300 mL dung dịch nồng độ 0,15 M là",
+      "cac": [
+       "1,8 g",
+       "0,045 g",
+       "4,5 g",
+       "0,125 g"
+      ],
+      "dap": "A"
+     }
     },
     {
      "ma": "4.3",
@@ -568,7 +2210,66 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "a) đúng; b) sai; c) sai; d) đúng",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "hoi": "Trong các câu sau đây, câu nào đúng, câu nào sai?",
+      "dong": [
+       {
+        "chu": "a) Hai dung dịch đường và muối ăn có cùng khối lượng, cùng nồng độ phần trăm thì chứa khối lượng đường và muối ăn bằng nhau: {0}",
+        "o": [
+         {
+          "dung": [
+           "Đúng"
+          ],
+          "sai": [
+           "Sai"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "b) Hai dung dịch đường và muối ăn có cùng khối lượng, cùng nồng độ phần trăm thì số mol đường và muối ăn bằng nhau: {0}",
+        "o": [
+         {
+          "dung": [
+           "Sai"
+          ],
+          "sai": [
+           "Đúng"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "c) Hai dung dịch NaOH và H₂SO₄ có cùng thể tích, cùng nồng độ mol thì chứa khối lượng chất tan bằng nhau: {0}",
+        "o": [
+         {
+          "dung": [
+           "Sai"
+          ],
+          "sai": [
+           "Đúng"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "d) Hai dung dịch NaOH và H₂SO₄ có cùng thể tích, cùng nồng độ mol thì chứa số mol chất tan bằng nhau: {0}",
+        "o": [
+         {
+          "dung": [
+           "Đúng"
+          ],
+          "sai": [
+           "Sai"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "4.4a",
@@ -577,7 +2278,26 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "20%",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "dap": [
+       "20",
+       "20%"
+      ],
+      "phim": [
+       "%"
+      ],
+      "nhieu": [
+       "g",
+       "M"
+      ],
+      "loi_giai": [
+       "m(dd) = m(NaCl) + m(nước) = 20 + 80 = 100 (g)",
+       "C% = 20 : 100 · 100% = 20%"
+      ]
+     }
     },
     {
      "ma": "4.4b",
@@ -586,7 +2306,40 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Không phải dung dịch bão hoà (dung dịch bão hoà có C% = 26,47%, lớn hơn 20%)",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "dong": [
+       {
+        "chu": "Dung dịch trên có 20 g NaCl trong 80 g nước, tức là {0} NaCl trong 100 g nước",
+        "o": [
+         {
+          "dung": [
+           "25 g"
+          ],
+          "sai": [
+           "20 g",
+           "16 g"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Ở 25 °C, 100 g nước hoà tan tối đa 36 g NaCl, nên dung dịch trên {0}",
+        "o": [
+         {
+          "dung": [
+           "chưa bão hoà"
+          ],
+          "sai": [
+           "đã bão hoà"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "4.5a",
@@ -595,7 +2348,27 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "68,94%",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "hoi": "Ở 25 °C, độ tan của AgNO₃ trong nước là 222 g. Tính nồng độ phần trăm của dung dịch AgNO₃ bão hoà ở 25 °C (làm tròn đến hàng phần trăm).",
+      "dap": [
+       "68,94",
+       "68,94%"
+      ],
+      "phim": [
+       "%"
+      ],
+      "nhieu": [
+       "g",
+       "M"
+      ],
+      "loi_giai": [
+       "Dung dịch bão hoà có 222 g AgNO₃ trong 100 g nước: m(dd) = 222 + 100 = 322 (g)",
+       "C% = 222 : 322 · 100% ≈ 68,94%"
+      ]
+     }
     },
     {
      "ma": "4.5b",
@@ -604,7 +2377,41 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "34,47 g AgNO3 và 15,53 g nước",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "dong": [
+       {
+        "chu": "Khối lượng AgNO₃ cần lấy: {0}",
+        "o": [
+         {
+          "dung": [
+           "34,47 g"
+          ],
+          "sai": [
+           "15,53 g",
+           "111 g"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Khối lượng nước cần lấy: {0}",
+        "o": [
+         {
+          "dung": [
+           "15,53 g"
+          ],
+          "sai": [
+           "34,47 g",
+           "22,52 g"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "4.6a",
@@ -613,7 +2420,55 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "A: 10 g; B: 22,5 g; C: 32,5 g",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "dong": [
+       {
+        "chu": "Khối lượng glucose trong dung dịch A: {0}",
+        "o": [
+         {
+          "dung": [
+           "10 g"
+          ],
+          "sai": [
+           "90 g",
+           "0,1 g"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Khối lượng glucose trong dung dịch B: {0}",
+        "o": [
+         {
+          "dung": [
+           "22,5 g"
+          ],
+          "sai": [
+           "15 g",
+           "127,5 g"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Khối lượng glucose trong dung dịch C: {0}",
+        "o": [
+         {
+          "dung": [
+           "32,5 g"
+          ],
+          "sai": [
+           "25 g",
+           "31,25 g"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "4.6b",
@@ -622,7 +2477,41 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "13%; nồng độ dung dịch C nằm giữa nồng độ dung dịch A (10%) và B (15%)",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "dong": [
+       {
+        "chu": "Nồng độ phần trăm của dung dịch C: {0}",
+        "o": [
+         {
+          "dung": [
+           "13%"
+          ],
+          "sai": [
+           "12,5%",
+           "25%"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "So với hai dung dịch A và B, nồng độ phần trăm của dung dịch C {0}",
+        "o": [
+         {
+          "dung": [
+           "nằm giữa nồng độ của dung dịch A (10%) và dung dịch B (15%)"
+          ],
+          "sai": [
+           "bằng tổng nồng độ của hai dung dịch A và B",
+           "nhỏ hơn nồng độ của cả hai dung dịch A và B"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "4.7",
@@ -631,7 +2520,27 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "0,05 M",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "dap": [
+       "0,05",
+       "0,05M"
+      ],
+      "phim": [
+       "M"
+      ],
+      "nhieu": [
+       "mol",
+       "%"
+      ],
+      "loi_giai": [
+       "100 mL = 0,1 L; n(H₂SO₄) = 0,15 · 0,1 = 0,015 (mol)",
+       "V(dd) = 0,1 + 0,2 = 0,3 (L)",
+       "CM = 0,015 : 0,3 = 0,05 (M)"
+      ]
+     }
     },
     {
      "ma": "4.8a",
@@ -640,7 +2549,26 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "5%",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "dap": [
+       "5",
+       "5%"
+      ],
+      "phim": [
+       "%"
+      ],
+      "nhieu": [
+       "g",
+       "M"
+      ],
+      "loi_giai": [
+       "Khối lượng đĩa tăng thêm 0,25 g chính là khối lượng KCl có trong 5 g dung dịch",
+       "C% = 0,25 : 5 · 100% = 5%"
+      ]
+     }
     },
     {
      "ma": "4.8b",
@@ -649,7 +2577,26 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "5 g",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "dap": [
+       "5",
+       "5g"
+      ],
+      "phim": [
+       "g"
+      ],
+      "nhieu": [
+       "mol",
+       "%"
+      ],
+      "loi_giai": [
+       "Theo câu a, dung dịch KCl có nồng độ 5%",
+       "m(KCl) = 100 · 5% = 5 (g)"
+      ]
+     }
     },
     {
      "ma": "4.9a",
@@ -658,7 +2605,27 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "2,5 M",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "dap": [
+       "2,5",
+       "2,5M"
+      ],
+      "phim": [
+       "M"
+      ],
+      "nhieu": [
+       "mol",
+       "%"
+      ],
+      "loi_giai": [
+       "M(KNO₃) = 39 + 14 + 3 · 16 = 101 (g/mol); n(KNO₃) = 1,01 : 101 = 0,01 (mol)",
+       "4 mL = 0,004 L",
+       "CM = 0,01 : 0,004 = 2,5 (M)"
+      ]
+     }
     },
     {
      "ma": "4.9b",
@@ -667,7 +2634,26 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "37,875 g",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "dap": [
+       "37,875",
+       "37,875g"
+      ],
+      "phim": [
+       "g"
+      ],
+      "nhieu": [
+       "mol",
+       "M"
+      ],
+      "loi_giai": [
+       "150 mL = 0,15 L; n(KNO₃) = 2,5 · 0,15 = 0,375 (mol)",
+       "m(KNO₃) = 0,375 · 101 = 37,875 (g)"
+      ]
+     }
     },
     {
      "ma": "4.10a",
@@ -676,7 +2662,55 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "NaOH: 3,2%; KOH: 2,24%",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "dong": [
+       {
+        "chu": "Khối lượng dung dịch: {0}",
+        "o": [
+         {
+          "dung": [
+           "125 g"
+          ],
+          "sai": [
+           "118,2 g",
+           "122,2 g"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Nồng độ phần trăm của NaOH: {0}",
+        "o": [
+         {
+          "dung": [
+           "3,2%"
+          ],
+          "sai": [
+           "3,38%",
+           "3,27%"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Nồng độ phần trăm của KOH: {0}",
+        "o": [
+         {
+          "dung": [
+           "2,24%"
+          ],
+          "sai": [
+           "2,37%",
+           "2,31%"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "4.10b",
@@ -685,7 +2719,41 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "NaOH: 0,8 M; KOH: 0,4 M",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "dong": [
+       {
+        "chu": "Nồng độ mol của NaOH: {0}",
+        "o": [
+         {
+          "dung": [
+           "0,8 M"
+          ],
+          "sai": [
+           "0,1 M",
+           "0,0008 M"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Nồng độ mol của KOH: {0}",
+        "o": [
+         {
+          "dung": [
+           "0,4 M"
+          ],
+          "sai": [
+           "0,05 M",
+           "0,0004 M"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "4.11a",
@@ -694,7 +2762,28 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "3,55 g",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "dap": [
+       "3,55",
+       "3,55g"
+      ],
+      "phim": [
+       "g"
+      ],
+      "nhieu": [
+       "mol",
+       "M"
+      ],
+      "loi_giai": [
+       "50 mL = 0,05 L; n(Na₂SO₄) ban đầu = 0,5 · 0,05 = 0,025 (mol)",
+       "n(Na₂SO₄) lúc sau = 1 · 0,05 = 0,05 (mol)",
+       "n(Na₂SO₄) cần thêm = 0,05 − 0,025 = 0,025 (mol)",
+       "M(Na₂SO₄) = 2 · 23 + 32 + 4 · 16 = 142 (g/mol); m = 0,025 · 142 = 3,55 (g)"
+      ]
+     }
     },
     {
      "ma": "4.11b",
@@ -703,7 +2792,28 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "25 g",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "dap": [
+       "25",
+       "25g"
+      ],
+      "phim": [
+       "g"
+      ],
+      "nhieu": [
+       "mol",
+       "%"
+      ],
+      "loi_giai": [
+       "m(KOH) ban đầu = 75 · 10% = 7,5 (g)",
+       "Gọi khối lượng KOH cần thêm là x (g); C% = (7,5 + x) : (75 + x) · 100% = 32,5%",
+       "7,5 + x = 0,325 · (75 + x) ⇔ 0,675x = 16,875",
+       "x = 16,875 : 0,675 = 25"
+      ]
+     }
     },
     {
      "ma": "4.12a",
@@ -712,7 +2822,26 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "60,15 g",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "dap": [
+       "60,15",
+       "60,15g"
+      ],
+      "phim": [
+       "g"
+      ],
+      "nhieu": [
+       "mol",
+       "%"
+      ],
+      "loi_giai": [
+       "Ở nhiệt độ phòng, 100 g nước hoà tan tối đa 40,1 g KCl",
+       "m(KCl) còn lại trong dung dịch = 150 · 40,1 : 100 = 60,15 (g)"
+      ]
+     }
     },
     {
      "ma": "4.12b",
@@ -721,7 +2850,26 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "14,85 g",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "dap": [
+       "14,85",
+       "14,85g"
+      ],
+      "phim": [
+       "g"
+      ],
+      "nhieu": [
+       "mol",
+       "%"
+      ],
+      "loi_giai": [
+       "m(KCl) còn tan trong 150 g nước ở nhiệt độ phòng = 150 · 40,1 : 100 = 60,15 (g)",
+       "m(KCl) tách ra = 75 − 60,15 = 14,85 (g)"
+      ]
+     }
     },
     {
      "ma": "4.13",
@@ -730,7 +2878,41 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Khi nhiệt độ giảm, độ tan của NaCl giảm nên dung dịch không giữ được hết muối: có chất rắn NaCl tách ra khỏi dung dịch.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "dong": [
+       {
+        "chu": "Khi nhiệt độ giảm, độ tan của NaCl trong nước {0}",
+        "o": [
+         {
+          "dung": [
+           "giảm"
+          ],
+          "sai": [
+           "tăng",
+           "không thay đổi"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Hiện tượng trong cốc: {0}",
+        "o": [
+         {
+          "dung": [
+           "có chất rắn NaCl tách ra khỏi dung dịch"
+          ],
+          "sai": [
+           "dung dịch hoà tan thêm được NaCl",
+           "dung dịch đông đặc lại thành nước đá"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "4.14",
@@ -739,7 +2921,22 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Bước 1: cân đĩa thuỷ tinh (m0). Bước 2: hút khoảng 5 – 10 mL dung dịch Na2CO3 cho lên đĩa, cân đĩa và dung dịch (m1). Bước 3: sấy đĩa trong tủ sấy, thỉnh thoảng lấy ra để nguội rồi cân, đến khi khối lượng không đổi (nước bay hơi hết) thì cân được m2. Tính: C% = (m2 − m0)/(m1 − m0)·100%.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 5,
+      "buoc": [
+       "Cân đĩa thuỷ tinh khô, được khối lượng m₀ (g)",
+       "Dùng pipette hút khoảng 5 – 10 mL dung dịch Na₂CO₃ cho lên đĩa, cân đĩa cùng dung dịch, được m₁ (g)",
+       "Cho đĩa vào tủ sấy; thỉnh thoảng lấy ra để nguội rồi cân, đến khi khối lượng không đổi nữa (nước đã bay hơi hết) thì được m₂ (g)",
+       "Khối lượng dung dịch là m₁ − m₀, khối lượng Na₂CO₃ là m₂ − m₀",
+       "C% = (m₂ − m₀) : (m₁ − m₀) · 100%"
+      ],
+      "nhieu": [
+       "C% = (m₂ − m₀) : (m₁ − m₂) · 100%",
+       "Khối lượng dung dịch là m₁, khối lượng Na₂CO₃ là m₂"
+      ]
+     }
     },
     {
      "ma": "4.15",
@@ -748,7 +2945,22 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Bước 1: dùng ống đong lấy chính xác V mL dung dịch H2SO4 10% (ví dụ 10 mL). Bước 2: cân lượng dung dịch đó được m g. Tính: khối lượng H2SO4 = 0,1m g; số mol H2SO4 = 0,1m/98; CM = 0,1m/(98·0,001V) = 100m/(98V) (M).",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 5,
+      "buoc": [
+       "Đặt ống đong khô lên cân rồi đưa số chỉ của cân về 0",
+       "Rót dung dịch H₂SO₄ 10% vào ống đong đến đúng vạch V mL (ví dụ 10 mL)",
+       "Đọc số chỉ của cân, được khối lượng dung dịch là m (g)",
+       "Khối lượng H₂SO₄ là 0,1m (g); số mol H₂SO₄ là n = 0,1m : 98 (mol)",
+       "Đổi V mL = 0,001V L; nồng độ CM = n : (0,001V) = 100m : (98V) (M)"
+      ],
+      "nhieu": [
+       "Khối lượng H₂SO₄ là 0,1m (g); số mol H₂SO₄ là n = 0,1m · 98 (mol)",
+       "Nồng độ CM = n : V = 0,1m : (98V) (M)"
+      ]
+     }
     },
     {
      "ma": "4.16",
@@ -757,7 +2969,21 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Số mol HCl cần: 0,25·0,1 = 0,025 mol; thể tích dung dịch HCl 5 M cần lấy: 0,025 : 5 = 0,005 L = 5 mL. Cách pha: lấy chính xác 5 mL dung dịch HCl 5 M cho vào ống đong loại từ 100 mL trở lên, cho từ từ nước cất vào, thỉnh thoảng lắc đều, đến khi thể tích dung dịch là 100 mL thì dừng.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 4,
+      "buoc": [
+       "Số mol HCl cần có: n = 0,25 · 0,1 = 0,025 (mol)",
+       "Thể tích dung dịch HCl 5 M chứa 0,025 mol HCl: V = 0,025 : 5 = 0,005 (L) = 5 (mL)",
+       "Dùng ống hút lấy chính xác 5 mL dung dịch HCl 5 M cho vào ống đong loại từ 100 mL trở lên",
+       "Rót từ từ nước cất vào ống đong, thỉnh thoảng lắc đều, đến khi thể tích dung dịch đúng 100 mL thì dừng"
+      ],
+      "nhieu": [
+       "Thể tích dung dịch HCl 5 M chứa 0,025 mol HCl: V = 0,025 · 5 = 0,125 (L) = 125 (mL)",
+       "Rót thêm 100 mL nước cất vào ống đong, lắc đều"
+      ]
+     }
     },
     {
      "ma": "4.17",
@@ -766,7 +2992,22 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Khối lượng NaCl cần: 50·0,9% = 0,45 g; khối lượng dung dịch NaCl 15% cần lấy: 0,45·100 : 15 = 3 g; khối lượng nước cần thêm: 50 − 3 = 47 g. Cách pha: cân chính xác 3 g dung dịch NaCl 15% vào cốc thuỷ tinh, cân thêm 47 g nước cho vào cốc, lắc đều.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 5,
+      "buoc": [
+       "Khối lượng NaCl cần có: m(NaCl) = 50 · 0,9% = 0,45 (g)",
+       "Khối lượng dung dịch NaCl 15% chứa 0,45 g NaCl: m = 0,45 · 100 : 15 = 3 (g)",
+       "Khối lượng nước cần thêm: m(nước) = 50 − 3 = 47 (g)",
+       "Cân 3 g dung dịch NaCl 15% cho vào cốc thuỷ tinh",
+       "Cân thêm 47 g nước cất cho vào cốc, lắc đều"
+      ],
+      "nhieu": [
+       "Khối lượng nước cần thêm: m(nước) = 50 − 0,45 = 49,55 (g)",
+       "Khối lượng dung dịch NaCl 15% chứa 0,45 g NaCl: m = 0,45 · 15 : 100 = 0,0675 (g)"
+      ]
+     }
     },
     {
      "ma": "4.18a",
@@ -775,7 +3016,29 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "40 g/100 g nước",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "dap": [
+       "40",
+       "40g",
+       "40g/100g"
+      ],
+      "phim": [
+       "g"
+      ],
+      "nhieu": [
+       "%",
+       "mol"
+      ],
+      "loi_giai": [
+       "m(dd) = 19,6 − 9,8 = 9,8 (g)",
+       "m(KCl) = 12,6 − 9,8 = 2,8 (g)",
+       "m(nước) = 9,8 − 2,8 = 7 (g)",
+       "S = 2,8 : 7 · 100 = 40 (g/100 g nước)"
+      ]
+     }
     },
     {
      "ma": "4.18b",
@@ -784,7 +3047,40 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Được. Lấy nhiều hơn 40 g KCl vẫn được, miễn là lượng chất tan và dung môi bảo đảm tạo được dung dịch bão hoà ở nhiệt độ phòng.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "dong": [
+       {
+        "chu": "Lấy nhiều hơn 40 g KCl ở bước 1: {0}",
+        "o": [
+         {
+          "dung": [
+           "vẫn được"
+          ],
+          "sai": [
+           "không được"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Vì {0}",
+        "o": [
+         {
+          "dung": [
+           "chỉ cần dung dịch ở nhiệt độ phòng là dung dịch bão hoà; phần KCl dư không tan, không có trong phần dung dịch hút ra"
+          ],
+          "sai": [
+           "lấy càng nhiều KCl thì độ tan đo được càng lớn",
+           "phần KCl dư sẽ tan hết khi hạ về nhiệt độ phòng"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "4.19",
@@ -793,7 +3089,35 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Cần 0,5 mol H2SO4 = 49 g, tức 50 g dung dịch H2SO4 98%, thể tích 50 : 1,84 khoảng 27,2 mL. Cách pha: đong 27,2 mL dung dịch H2SO4 98%; cho khoảng 250 mL nước vào cốc loại từ 500 mL trở lên; rót từ từ acid vào cốc nước, khuấy đều (không đổ nước vào acid đặc); thêm từ từ nước đến khi được 500 mL.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 7,
+      "buoc": [
+       "Số mol H₂SO₄ cần có: n = 1 · 0,5 = 0,5 (mol); m(H₂SO₄) = 0,5 · 98 = 49 (g)",
+       "Khối lượng dung dịch H₂SO₄ 98% chứa 49 g H₂SO₄: m(dd) = 49 · 100 : 98 = 50 (g)",
+       "Thể tích dung dịch H₂SO₄ 98% cần lấy: V = 50 : 1,84 ≈ 27,2 (mL)",
+       "Dùng ống đong lấy 27,2 mL dung dịch H₂SO₄ 98%",
+       "Cho khoảng 250 mL nước cất vào cốc thuỷ tinh loại từ 500 mL trở lên",
+       "Rót từ từ acid vào cốc nước, vừa rót vừa khuấy đều",
+       "Thêm từ từ nước cất vào cốc đến khi được 500 mL dung dịch"
+      ],
+      "nhieu": [
+       "Thể tích dung dịch H₂SO₄ 98% cần lấy: V = 50 · 1,84 = 92 (mL)",
+       "Rót từ từ nước cất vào ống đong đựng acid đặc, khuấy đều"
+      ],
+      "thu_tu_khac": [
+       [
+        0,
+        1,
+        2,
+        4,
+        3,
+        5,
+        6
+       ]
+      ]
+     }
     },
     {
      "ma": "4.20a",
@@ -802,7 +3126,34 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "C% = (m1·C1 + m2·C2)/(m1 + m2) (%)",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "hoi": "Trộn m₁ g dung dịch chất X có nồng độ C₁% với m₂ g dung dịch chất X có nồng độ C₂%. Tính nồng độ phần trăm C% của dung dịch thu được theo m₁, m₂, C₁, C₂.",
+      "dap": [
+       "(m₁C₁+m₂C₂)/(m₁+m₂)",
+       "(C₁m₁+C₂m₂)/(m₁+m₂)",
+       "(m₁C₁+C₂m₂)/(m₁+m₂)",
+       "(C₁m₁+m₂C₂)/(m₁+m₂)"
+      ],
+      "phim": [
+       "m₁",
+       "m₂",
+       "C₁",
+       "C₂"
+      ],
+      "nhieu": [
+       "V₁",
+       "V₂",
+       "%"
+      ],
+      "loi_giai": [
+       "Khối lượng chất X trong hai dung dịch: m₁C₁ : 100 + m₂C₂ : 100 (g)",
+       "Khối lượng dung dịch thu được: m₁ + m₂ (g)",
+       "C% = (m₁C₁ : 100 + m₂C₂ : 100) : (m₁ + m₂) · 100% = (m₁C₁ + m₂C₂) : (m₁ + m₂) (%)"
+      ]
+     }
     },
     {
      "ma": "4.20b",
@@ -811,7 +3162,34 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "CM = (C1·V1 + C2·V2)/(V1 + V2) (M)",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "hoi": "Trộn V₁ mL dung dịch chất Y có nồng độ C₁ M với V₂ mL dung dịch chất Y có nồng độ C₂ M. Tính nồng độ mol CM của dung dịch thu được theo V₁, V₂, C₁, C₂ (coi thể tích dung dịch thu được bằng tổng thể tích hai dung dịch ban đầu).",
+      "dap": [
+       "(C₁V₁+C₂V₂)/(V₁+V₂)",
+       "(V₁C₁+V₂C₂)/(V₁+V₂)",
+       "(C₁V₁+V₂C₂)/(V₁+V₂)",
+       "(V₁C₁+C₂V₂)/(V₁+V₂)"
+      ],
+      "phim": [
+       "C₁",
+       "C₂",
+       "V₁",
+       "V₂"
+      ],
+      "nhieu": [
+       "m₁",
+       "m₂",
+       "1000"
+      ],
+      "loi_giai": [
+       "Số mol chất Y trong hai dung dịch: C₁V₁ : 1000 + C₂V₂ : 1000 (mol)",
+       "Thể tích dung dịch thu được: (V₁ + V₂) : 1000 (L)",
+       "CM = (C₁V₁ : 1000 + C₂V₂ : 1000) : ((V₁ + V₂) : 1000) = (C₁V₁ + C₂V₂) : (V₁ + V₂) (M)"
+      ]
+     }
     },
     {
      "ma": "4.21a",
@@ -820,7 +3198,8 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Vẽ hệ trục: trục hoành là nhiệt độ (°C), trục tung là độ tan S (g/100 g nước). Chấm các điểm (10; 31,2), (20; 37,2), (30; 40,1), (40; 42,6), (50; 45,8) rồi nối lại, được đường đi lên từ trái sang phải.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "bo_may": "vẽ đồ thị"
     },
     {
      "ma": "4.21b",
@@ -829,7 +3208,27 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Nhiệt độ tăng thì độ tan của KCl tăng",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 1,
+      "dong": [
+       {
+        "chu": "Khi nhiệt độ tăng, độ tan của KCl {0}",
+        "o": [
+         {
+          "dung": [
+           "tăng"
+          ],
+          "sai": [
+           "giảm",
+           "không thay đổi"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "4.21c",
@@ -838,7 +3237,31 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "khoảng 38,7 g/100 g nước",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "hoi": "Cho biết độ tan của KCl tại các nhiệt độ như sau: (Bảng: Nhiệt độ (°C): 10; 20; 30; 40; 50. Độ tan (g/100 g nước): 31,2; 37,2; 40,1; 42,6; 45,8.) Ước tính độ tan của KCl tại 25 °C (coi độ tan tăng đều từ 20 °C đến 30 °C, làm tròn đến hàng phần mười).",
+      "dap": [
+       "38,7",
+       "38,7g",
+       "38,7g/100g",
+       "38,65",
+       "38,65g",
+       "38,65g/100g"
+      ],
+      "phim": [
+       "g"
+      ],
+      "nhieu": [
+       "%",
+       "mol"
+      ],
+      "loi_giai": [
+       "25 °C nằm giữa 20 °C và 30 °C nên độ tan ở 25 °C nằm giữa 37,2 g và 40,1 g",
+       "S ≈ (37,2 + 40,1) : 2 = 38,65 ≈ 38,7 (g/100 g nước)"
+      ]
+     }
     }
    ]
   },
@@ -853,7 +3276,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "A",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Một lá sắt (iron) nặng 28 g để ngoài không khí, xảy ra phản ứng với oxygen, tạo ra gỉ sắt. Sau một thời gian, cân lại lá sắt, thấy khối lượng thu được là 31,2 g. Khối lượng khí oxygen đã phản ứng là",
+      "cac": [
+       "3,2 g",
+       "1,6 g",
+       "6,4 g",
+       "24,8 g"
+      ],
+      "dap": "A"
+     }
     },
     {
      "ma": "5.2",
@@ -862,7 +3297,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "B",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Muối copper sulfate (CuSO₄) ngậm nước khi đun nóng sẽ bị tách nước. Nếu đun 25 g muối ngậm nước, thu được 16 g muối khan thì số mol nước tách ra là",
+      "cac": [
+       "0,25 mol",
+       "0,5 mol",
+       "1 mol",
+       "9 mol"
+      ],
+      "dap": "B"
+     }
     },
     {
      "ma": "5.3",
@@ -871,7 +3318,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "C",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Hấp thụ hoàn toàn một lượng khí carbon dioxide (CO₂) vào nước vôi trong (dung dịch Ca(OH)₂) dư, tạo ra 10 g kết tủa calcium carbonate (CaCO₃). Phản ứng xảy ra như sau: CO₂ + Ca(OH)₂ → CaCO₃ + H₂O. Khối lượng dung dịch nước vôi trong",
+      "cac": [
+       "giảm 10 g",
+       "tăng 10 g",
+       "giảm 5,6 g",
+       "tăng 4,4 g"
+      ],
+      "dap": "C"
+     }
     },
     {
      "ma": "5.4",
@@ -880,7 +3339,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "D",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Nhúng một thanh Zn vào dung dịch CuSO₄, Zn phản ứng tạo muối ZnSO₄ và kim loại Cu bám vào thanh Zn. Phản ứng xảy ra như sau: Zn + CuSO₄ → ZnSO₄ + Cu. Vậy, nếu 13 g Zn phản ứng thì khối lượng thanh kim loại",
+      "cac": [
+       "giảm 13 g",
+       "tăng 12,8 g",
+       "tăng 0,2 g",
+       "giảm 0,2 g"
+      ],
+      "dap": "D"
+     }
     },
     {
      "ma": "5.5",
@@ -889,7 +3360,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "A",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Nung một lượng đá vôi (CaCO₃) có khối lượng 12 g, thu được hỗn hợp rắn có khối lượng 8,4 g. Khối lượng của khí CO₂ thoát ra là",
+      "cac": [
+       "3,6 g",
+       "2,8 g",
+       "1,2 g",
+       "2,4 g"
+      ],
+      "dap": "A"
+     }
     },
     {
      "ma": "5.6a",
@@ -898,7 +3381,30 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "mMg + mHCl = mMgCl2 + mH2",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "dap": [
+       "m(Mg)+m(HCl)=m(MgCl₂)+m(H₂)",
+       "m(MgCl₂)+m(H₂)=m(Mg)+m(HCl)"
+      ],
+      "phim": [
+       "m(Mg)",
+       "m(HCl)",
+       "m(MgCl₂)",
+       "m(H₂)"
+      ],
+      "nhieu": [
+       "m(H)",
+       "m(Cl₂)",
+       "m(MgCl)"
+      ],
+      "loi_giai": [
+       "Chất phản ứng: Mg và HCl; sản phẩm: MgCl₂ và H₂",
+       "Theo định luật bảo toàn khối lượng: m(Mg) + m(HCl) = m(MgCl₂) + m(H₂)"
+      ]
+     }
     },
     {
      "ma": "5.6b",
@@ -907,7 +3413,26 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "0,2 g",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "dap": [
+       "0,2",
+       "0,2g"
+      ],
+      "phim": [
+       "g"
+      ],
+      "nhieu": [
+       "mol",
+       "L"
+      ],
+      "loi_giai": [
+       "Theo định luật bảo toàn khối lượng: m(Mg) + m(HCl) = m(MgCl₂) + m(H₂)",
+       "m(H₂) = 2,4 + 7,3 − 9,5 = 0,2 (g)"
+      ]
+     }
     },
     {
      "ma": "5.7a",
@@ -916,7 +3441,41 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Cốc bên phải (cốc đựng dung dịch HCl): có bọt khí thoát ra, viên đá vôi tan dần",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "dong": [
+       {
+        "chu": "Cốc có phản ứng hoá học xảy ra: {0}",
+        "o": [
+         {
+          "dung": [
+           "cốc bên phải (cốc đựng dung dịch HCl)"
+          ],
+          "sai": [
+           "cốc bên trái (cốc đựng nước)",
+           "cả hai cốc"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Dấu hiệu: {0}",
+        "o": [
+         {
+          "dung": [
+           "có bọt khí thoát ra, viên đá vôi tan dần (có chất mới tạo thành)"
+          ],
+          "sai": [
+           "viên đá vôi bị chất lỏng làm ướt",
+           "viên đá vôi chìm xuống đáy cốc"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "5.7b",
@@ -925,7 +3484,41 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Không còn thăng bằng; cân nghiêng về bên trái (cốc bên phải có khí thoát ra nên nhẹ đi)",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "dong": [
+       {
+        "chu": "Sau khi cho đá vôi vào hai cốc, cân {0}",
+        "o": [
+         {
+          "dung": [
+           "nghiêng về bên trái"
+          ],
+          "sai": [
+           "vẫn thăng bằng",
+           "nghiêng về bên phải"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Vì {0}",
+        "o": [
+         {
+          "dung": [
+           "khí tạo thành ở cốc bên phải (carbon dioxide) thoát ra ngoài nên cốc bên phải nhẹ đi"
+          ],
+          "sai": [
+           "theo định luật bảo toàn khối lượng, khối lượng mỗi cốc không đổi",
+           "cốc bên phải có thêm chất mới tạo thành nên nặng hơn"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "5.8a",
@@ -934,7 +3527,42 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Khi nung, đá vôi bị phân huỷ: Đá vôi(rắn) ⟶ Calcium oxide(rắn) + Carbon dioxide(khí). Khí carbon dioxide thoát ra ngoài nên khối lượng cục đá giảm.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "Hãy giải thích: Khi nung nóng cục đá vôi thì thấy khối lượng giảm đi. Biết phản ứng hoá học xảy ra khi nung đá vôi là: Đá vôi (rắn) → Calcium oxide (rắn) + Carbon dioxide (khí).",
+      "dong": [
+       {
+        "chu": "Theo định luật bảo toàn khối lượng: m(đá vôi) = {0}",
+        "o": [
+         {
+          "dung": [
+           "m(calcium oxide) + m(carbon dioxide)"
+          ],
+          "sai": [
+           "m(calcium oxide)",
+           "m(calcium oxide) − m(carbon dioxide)"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Khối lượng chất rắn sau khi nung giảm vì {0}",
+        "o": [
+         {
+          "dung": [
+           "khí carbon dioxide tạo thành bay ra ngoài"
+          ],
+          "sai": [
+           "một phần khối lượng các chất bị mất đi trong phản ứng",
+           "đá vôi bị nóng chảy thành chất lỏng chảy ra ngoài"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "5.8b",
@@ -943,16 +3571,69 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Khi nung, đồng kết hợp với oxygen trong không khí tạo copper oxide: 2Cu + O2 ⟶ 2CuO. Khối lượng tăng thêm chính là khối lượng oxygen đã phản ứng.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "dong": [
+       {
+        "chu": "Theo định luật bảo toàn khối lượng: m(copper oxide) = {0}",
+        "o": [
+         {
+          "dung": [
+           "m(đồng) + m(oxygen)"
+          ],
+          "sai": [
+           "m(đồng)",
+           "m(đồng) − m(oxygen)"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Khối lượng miếng đồng sau khi nung tăng lên vì {0}",
+        "o": [
+         {
+          "dung": [
+           "đồng đã kết hợp với oxygen trong không khí; phần tăng thêm là khối lượng oxygen đã phản ứng"
+          ],
+          "sai": [
+           "đồng nóng lên thì nở ra nên nặng hơn",
+           "phản ứng hoá học tạo thêm ra khối lượng mới"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "5.9",
-     "de": "Nung nóng hỗn hợp gồm 7 g bột sắt và 5 g bột lưu huỳnh, thu được 11 g chất iron(II) sulfur màu xám. Biết rằng để cho phản ứng hoá hợp xảy ra hoàn toàn, người ta đã lấy dư lưu huỳnh. Tính khối lượng lưu huỳnh dư.",
+     "de": "Nung nóng hỗn hợp gồm 7 g bột sắt và 5 g bột lưu huỳnh, thu được 11 g chất iron(II) sulfide màu xám. Biết rằng để cho phản ứng hoá hợp xảy ra hoàn toàn, người ta đã lấy dư lưu huỳnh. Tính khối lượng lưu huỳnh dư.",
      "trang": 16,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "1 g",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "dap": [
+       "1",
+       "1g"
+      ],
+      "phim": [
+       "g"
+      ],
+      "nhieu": [
+       "mol",
+       "L"
+      ],
+      "loi_giai": [
+       "Lưu huỳnh lấy dư nên 7 g sắt phản ứng hết; theo định luật bảo toàn khối lượng: m(S phản ứng) = 11 − 7 = 4 (g)",
+       "m(S dư) = 5 − 4 = 1 (g)"
+      ]
+     }
     },
     {
      "ma": "5.10a",
@@ -961,7 +3642,26 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "9,25 g",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "dap": [
+       "9,25",
+       "9,25g"
+      ],
+      "phim": [
+       "g"
+      ],
+      "nhieu": [
+       "mol",
+       "L"
+      ],
+      "loi_giai": [
+       "Nước lấy dư nên 7 g CaO phản ứng hết; m(H₂O) phản ứng = 7 · 18 : 56 = 2,25 (g)",
+       "Theo định luật bảo toàn khối lượng: m(Ca(OH)₂) = 7 + 2,25 = 9,25 (g)"
+      ]
+     }
     },
     {
      "ma": "5.10b",
@@ -970,7 +3670,26 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "1 007 g",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "dap": [
+       "1007",
+       "1007g"
+      ],
+      "phim": [
+       "g"
+      ],
+      "nhieu": [
+       "mol",
+       "L"
+      ],
+      "loi_giai": [
+       "Ca(OH)₂ tạo thành tan trong nước, không có chất khí hay chất rắn tách ra khỏi dung dịch",
+       "Theo định luật bảo toàn khối lượng: m(dd Ca(OH)₂) = m(CaO) + m(nước) = 7 + 1 000 = 1 007 (g)"
+      ]
+     }
     },
     {
      "ma": "5.11",
@@ -979,7 +3698,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "A",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Trong một phản ứng hoá học:",
+      "cac": [
+       "số nguyên tử của mỗi nguyên tố được bảo toàn",
+       "số nguyên tử trong mỗi chất được bảo toàn",
+       "số phân tử của mỗi chất không đổi",
+       "số chất không đổi"
+      ],
+      "dap": "A"
+     }
     },
     {
      "ma": "5.12",
@@ -988,7 +3719,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "B",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Cho sơ đồ phản ứng: CO₂ + Ca(OH)₂ → CaCO₃ + ?. Cần điền chất nào sau đây để hoàn thành PTHH của phản ứng trên?",
+      "cac": [
+       "CaO",
+       "H₂O",
+       "CO",
+       "CH₄"
+      ],
+      "dap": "B"
+     }
     },
     {
      "ma": "5.13",
@@ -997,7 +3740,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "C",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Cho sơ đồ phản ứng: ?CO + Fe₂O₃ → 2Fe + ?CO₂. Cần điền hệ số nào sau đây để hoàn thành PTHH của phản ứng trên?",
+      "cac": [
+       "1",
+       "2",
+       "3",
+       "4"
+      ],
+      "dap": "C"
+     }
     },
     {
      "ma": "5.14",
@@ -1006,7 +3761,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "D",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Cho sơ đồ phản ứng: 2HCl + CaCO₃ → CaCl₂ + H₂O + ?. Cần điền chất nào sau đây để hoàn thành PTHH của phản ứng trên?",
+      "cac": [
+       "CaO",
+       "Ca(OH)₂",
+       "CO",
+       "CO₂"
+      ],
+      "dap": "D"
+     }
     },
     {
      "ma": "5.15",
@@ -1015,7 +3782,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "A",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Cho sơ đồ phản ứng: Fe₃O₄ + ?HCl → 2FeCl₃ + FeCl₂ + 4H₂O. Cần điền hệ số nào sau đây để hoàn thành PTHH của phản ứng trên?",
+      "cac": [
+       "8",
+       "6",
+       "5",
+       "4"
+      ],
+      "dap": "A"
+     }
     },
     {
      "ma": "5.16a",
@@ -1024,7 +3803,30 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "4Cr + 3O2 ⟶ 2Cr2O3; số nguyên tử Cr : số phân tử O2 : số phân tử Cr2O3 = 4 : 3 : 2",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "hoi": "Cho sơ đồ phản ứng: Cr + O₂ → Cr₂O₃. Lập phương trình hoá học của phản ứng.",
+      "dap": [
+       "4Cr+3O₂→2Cr₂O₃"
+      ],
+      "phim": [
+       "Cr",
+       "O₂",
+       "Cr₂O₃"
+      ],
+      "nhieu": [
+       "O",
+       "CrO",
+       "Cr₂"
+      ],
+      "loi_giai": [
+       "O₂ có 2 nguyên tử O, Cr₂O₃ có 3 nguyên tử O: đặt 2 trước Cr₂O₃ và 3 trước O₂ (mỗi vế có 6 nguyên tử O)",
+       "Vế phải có 4 nguyên tử Cr nên đặt 4 trước Cr",
+       "4Cr + 3O₂ → 2Cr₂O₃"
+      ]
+     }
     },
     {
      "ma": "5.16b",
@@ -1033,7 +3835,30 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "2Fe + 3Cl2 ⟶ 2FeCl3; số nguyên tử Fe : số phân tử Cl2 : số phân tử FeCl3 = 2 : 3 : 2",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "hoi": "Cho sơ đồ phản ứng: Fe + Cl₂ → FeCl₃. Lập phương trình hoá học của phản ứng.",
+      "dap": [
+       "2Fe+3Cl₂→2FeCl₃"
+      ],
+      "phim": [
+       "Fe",
+       "Cl₂",
+       "FeCl₃"
+      ],
+      "nhieu": [
+       "Cl",
+       "FeCl₂",
+       "Fe₂"
+      ],
+      "loi_giai": [
+       "Cl₂ có 2 nguyên tử Cl, FeCl₃ có 3 nguyên tử Cl: đặt 2 trước FeCl₃ và 3 trước Cl₂ (mỗi vế có 6 nguyên tử Cl)",
+       "Vế phải có 2 nguyên tử Fe nên đặt 2 trước Fe",
+       "2Fe + 3Cl₂ → 2FeCl₃"
+      ]
+     }
     },
     {
      "ma": "5.17a",
@@ -1042,7 +3867,30 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "2KClO3 ⟶ 2KCl + 3O2; KClO3 : KCl : O2 = 2 : 2 : 3",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "hoi": "Cho sơ đồ phản ứng: KClO₃ → KCl + O₂. Lập phương trình hoá học của phản ứng.",
+      "dap": [
+       "2KClO₃→2KCl+3O₂"
+      ],
+      "phim": [
+       "KClO₃",
+       "KCl",
+       "O₂"
+      ],
+      "nhieu": [
+       "O",
+       "KClO",
+       "Cl₂"
+      ],
+      "loi_giai": [
+       "KClO₃ có 3 nguyên tử O, O₂ có 2 nguyên tử O: đặt 2 trước KClO₃ và 3 trước O₂ (mỗi vế có 6 nguyên tử O)",
+       "Vế trái có 2 nguyên tử K và 2 nguyên tử Cl nên đặt 2 trước KCl",
+       "2KClO₃ → 2KCl + 3O₂"
+      ]
+     }
     },
     {
      "ma": "5.17b",
@@ -1051,7 +3899,30 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "2NaNO3 ⟶ 2NaNO2 + O2; NaNO3 : NaNO2 : O2 = 2 : 2 : 1",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "hoi": "Cho sơ đồ phản ứng: NaNO₃ → NaNO₂ + O₂. Lập phương trình hoá học của phản ứng.",
+      "dap": [
+       "2NaNO₃→2NaNO₂+O₂"
+      ],
+      "phim": [
+       "NaNO₃",
+       "NaNO₂",
+       "O₂"
+      ],
+      "nhieu": [
+       "O",
+       "NO₂",
+       "Na₂O"
+      ],
+      "loi_giai": [
+       "Vế trái có 3 nguyên tử O, vế phải có 4 nguyên tử O: đặt 2 trước NaNO₃ và 2 trước NaNO₂",
+       "Khi đó mỗi vế có 2 nguyên tử Na, 2 nguyên tử N và 6 nguyên tử O",
+       "2NaNO₃ → 2NaNO₂ + O₂"
+      ]
+     }
     },
     {
      "ma": "5.18a",
@@ -1060,7 +3931,35 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "(1) 2Al + 3CuO ⟶ Al2O3 + 3Cu; (2) 8Al + 3Fe3O4 ⟶ 4Al2O3 + 9Fe",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "hoi": "Cho sơ đồ của các phản ứng hoá học sau:\nAl + CuO → Al₂O₃ + Cu (1)\nAl + Fe₃O₄ → Al₂O₃ + Fe (2)\nLập phương trình hoá học của các phản ứng (viết phương trình (1) trước, phương trình (2) sau, cách nhau bằng dấu ;).",
+      "dap": [
+       "2Al+3CuO→Al₂O₃+3Cu;8Al+3Fe₃O₄→4Al₂O₃+9Fe"
+      ],
+      "phim": [
+       "Al",
+       "CuO",
+       "Al₂O₃",
+       "Cu",
+       "Fe₃O₄",
+       "Fe",
+       ";"
+      ],
+      "nhieu": [
+       "Al₂",
+       "FeO",
+       "O"
+      ],
+      "loi_giai": [
+       "Phản ứng (1): Al₂O₃ có 3 nguyên tử O nên đặt 3 trước CuO và 3 trước Cu; vế phải có 2 nguyên tử Al nên đặt 2 trước Al",
+       "2Al + 3CuO → Al₂O₃ + 3Cu",
+       "Phản ứng (2): 3Fe₃O₄ và 4Al₂O₃ cùng có 12 nguyên tử O; khi đó vế trái có 9 nguyên tử Fe, vế phải có 8 nguyên tử Al nên đặt 9 trước Fe và 8 trước Al",
+       "8Al + 3Fe₃O₄ → 4Al₂O₃ + 9Fe"
+      ]
+     }
     },
     {
      "ma": "5.18b",
@@ -1069,7 +3968,41 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "(1) Al : CuO : Al2O3 : Cu = 2 : 3 : 1 : 3; (2) Al : Fe3O4 : Al2O3 : Fe = 8 : 3 : 4 : 9",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "dong": [
+       {
+        "chu": "Phản ứng (1): số nguyên tử Al : số phân tử CuO : số phân tử Al₂O₃ : số nguyên tử Cu = {0}",
+        "o": [
+         {
+          "dung": [
+           "2 : 3 : 1 : 3"
+          ],
+          "sai": [
+           "2 : 1 : 1 : 1",
+           "2 : 3 : 2 : 3"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Phản ứng (2): số nguyên tử Al : số phân tử Fe₃O₄ : số phân tử Al₂O₃ : số nguyên tử Fe = {0}",
+        "o": [
+         {
+          "dung": [
+           "8 : 3 : 4 : 9"
+          ],
+          "sai": [
+           "2 : 1 : 1 : 3",
+           "8 : 3 : 4 : 3"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "5.19a",
@@ -1078,7 +4011,30 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "BaCl2 + 2AgNO3 ⟶ 2AgCl + Ba(NO3)2",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "dap": [
+       "BaCl₂+2AgNO₃→2AgCl+Ba(NO₃)₂"
+      ],
+      "phim": [
+       "BaCl₂",
+       "AgNO₃",
+       "AgCl",
+       "Ba(NO₃)₂"
+      ],
+      "nhieu": [
+       "AgCl₂",
+       "BaNO₃",
+       "Ag(NO₃)₂"
+      ],
+      "loi_giai": [
+       "Coi nhóm NO₃ như một nguyên tố: vế phải có 2 nhóm NO₃ nên đặt 2 trước AgNO₃",
+       "Khi đó vế trái có 2 nguyên tử Ag và 2 nguyên tử Cl nên đặt 2 trước AgCl",
+       "BaCl₂ + 2AgNO₃ → 2AgCl + Ba(NO₃)₂"
+      ]
+     }
     },
     {
      "ma": "5.19b",
@@ -1087,7 +4043,22 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "BaCl2 : AgNO3 : AgCl : Ba(NO3)2 = 1 : 2 : 2 : 1",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "hoi": "Cho sơ đồ của phản ứng hoá học sau: BaCl₂ + AgNO₃ → AgCl + Ba(NO₃)₂. Cho biết tỉ lệ số phân tử BaCl₂ : số phân tử AgNO₃ : số phân tử AgCl : số phân tử Ba(NO₃)₂ trong phản ứng.",
+      "dap": [
+       "1:2:2:1"
+      ],
+      "phim": [],
+      "nhieu": [],
+      "loi_giai": [
+       "Vế phải có 2 nhóm NO₃ nên đặt 2 trước AgNO₃, rồi đặt 2 trước AgCl",
+       "BaCl₂ + 2AgNO₃ → 2AgCl + Ba(NO₃)₂",
+       "Số phân tử BaCl₂ : số phân tử AgNO₃ : số phân tử AgCl : số phân tử Ba(NO₃)₂ = 1 : 2 : 2 : 1"
+      ]
+     }
     },
     {
      "ma": "5.20a",
@@ -1096,7 +4067,30 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "2NaOH + H2SO4 ⟶ Na2SO4 + 2H2O",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "dap": [
+       "2NaOH+H₂SO₄→Na₂SO₄+2H₂O"
+      ],
+      "phim": [
+       "NaOH",
+       "H₂SO₄",
+       "Na₂SO₄",
+       "H₂O"
+      ],
+      "nhieu": [
+       "NaSO₄",
+       "Na₂O",
+       "H₂O₂"
+      ],
+      "loi_giai": [
+       "Sơ đồ phản ứng: NaOH + H₂SO₄ → Na₂SO₄ + H₂O",
+       "Vế phải có 2 nguyên tử Na nên đặt 2 trước NaOH; khi đó vế trái có 4 nguyên tử H nên đặt 2 trước H₂O",
+       "2NaOH + H₂SO₄ → Na₂SO₄ + 2H₂O"
+      ]
+     }
     },
     {
      "ma": "5.20b",
@@ -1105,7 +4099,55 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "NaOH : H2SO4 = 2 : 1; NaOH : Na2SO4 = 2 : 1; NaOH : H2O = 1 : 1",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "dong": [
+       {
+        "chu": "Số phân tử NaOH : số phân tử H₂SO₄ = {0}",
+        "o": [
+         {
+          "dung": [
+           "2 : 1"
+          ],
+          "sai": [
+           "1 : 2",
+           "1 : 1"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Số phân tử NaOH : số phân tử Na₂SO₄ = {0}",
+        "o": [
+         {
+          "dung": [
+           "2 : 1"
+          ],
+          "sai": [
+           "1 : 2",
+           "1 : 1"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Số phân tử NaOH : số phân tử H₂O = {0}",
+        "o": [
+         {
+          "dung": [
+           "1 : 1"
+          ],
+          "sai": [
+           "2 : 1",
+           "1 : 2"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "5.21a",
@@ -1114,7 +4156,30 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "CaO + H2O ⟶ Ca(OH)2; chất phản ứng: CaO và H2O; sản phẩm: Ca(OH)2",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "hoi": "Vôi tôi (Ca(OH)₂) thu được khi cho vôi sống (CaO) tác dụng với nước, phản ứng này gọi là tôi vôi. Ca(OH)₂ là một chất rắn tinh thể không màu hoặc dạng bột trắng.\nThả một viên vôi sống vào cốc thuỷ tinh lớn đựng nước, vôi sống tan ra và cốc nước nóng lên rất nhanh, tạo ra một dung dịch trong suốt không màu, gọi là nước vôi trong. Nếu lượng vôi sống nhiều, cốc nước sẽ sôi lên và tạo ra chất lỏng đục trắng, gọi là sữa vôi. Trong sữa vôi có các hạt calcium hydroxide nhỏ mịn chưa tan hết, lơ lửng trong nước ở dạng huyền phù.\nViết phương trình hoá học của phản ứng giữa vôi sống và nước.",
+      "dap": [
+       "CaO+H₂O→Ca(OH)₂"
+      ],
+      "phim": [
+       "CaO",
+       "H₂O",
+       "Ca(OH)₂"
+      ],
+      "nhieu": [
+       "CaOH",
+       "CaO₂",
+       "H₂"
+      ],
+      "loi_giai": [
+       "Vôi sống là CaO, nước là H₂O, vôi tôi là Ca(OH)₂",
+       "CaO + H₂O → Ca(OH)₂",
+       "Chất phản ứng: CaO và H₂O; sản phẩm: Ca(OH)₂"
+      ]
+     }
     },
     {
      "ma": "5.21b",
@@ -1123,7 +4188,30 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Khối lượng vôi sống + khối lượng nước = khối lượng vôi tôi (mCaO + mH2O = mCa(OH)2)",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "hoi": "Vôi tôi (Ca(OH)₂) thu được khi cho vôi sống (CaO) tác dụng với nước, phản ứng này gọi là tôi vôi. Ca(OH)₂ là một chất rắn tinh thể không màu hoặc dạng bột trắng.\nThả một viên vôi sống vào cốc thuỷ tinh lớn đựng nước, vôi sống tan ra và cốc nước nóng lên rất nhanh, tạo ra một dung dịch trong suốt không màu, gọi là nước vôi trong. Nếu lượng vôi sống nhiều, cốc nước sẽ sôi lên và tạo ra chất lỏng đục trắng, gọi là sữa vôi. Trong sữa vôi có các hạt calcium hydroxide nhỏ mịn chưa tan hết, lơ lửng trong nước ở dạng huyền phù.\nNhận xét về mối liên hệ giữa khối lượng vôi sống, nước đã phản ứng và vôi tôi được tạo thành (viết dưới dạng công thức về khối lượng).",
+      "dap": [
+       "m(CaO)+m(H₂O)=m(Ca(OH)₂)",
+       "m(Ca(OH)₂)=m(CaO)+m(H₂O)"
+      ],
+      "phim": [
+       "m(CaO)",
+       "m(H₂O)",
+       "m(Ca(OH)₂)"
+      ],
+      "nhieu": [
+       "m(CaOH)",
+       "m(O₂)",
+       "m(H₂)"
+      ],
+      "loi_giai": [
+       "Chất phản ứng: CaO (vôi sống) và H₂O; sản phẩm: Ca(OH)₂ (vôi tôi)",
+       "Theo định luật bảo toàn khối lượng: m(CaO) + m(H₂O) = m(Ca(OH)₂)"
+      ]
+     }
     },
     {
      "ma": "5.21c",
@@ -1132,7 +4220,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "A",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Vôi tôi (Ca(OH)₂) thu được khi cho vôi sống (CaO) tác dụng với nước, phản ứng này gọi là tôi vôi. Ca(OH)₂ là một chất rắn tinh thể không màu hoặc dạng bột trắng.\nThả một viên vôi sống vào cốc thuỷ tinh lớn đựng nước, vôi sống tan ra và cốc nước nóng lên rất nhanh, tạo ra một dung dịch trong suốt không màu, gọi là nước vôi trong. Nếu lượng vôi sống nhiều, cốc nước sẽ sôi lên và tạo ra chất lỏng đục trắng, gọi là sữa vôi. Trong sữa vôi có các hạt calcium hydroxide nhỏ mịn chưa tan hết, lơ lửng trong nước ở dạng huyền phù.\nNếu khối lượng vôi sống là 6,72 g, khối lượng nước phản ứng là 2,16 g thì khối lượng vôi tôi thu được là",
+      "cac": [
+       "8,88 g",
+       "4,56 g",
+       "10,00 g",
+       "4,44 g"
+      ],
+      "dap": "A"
+     }
     },
     {
      "ma": "5.21d",
@@ -1141,7 +4241,66 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "1. đúng; 2. sai; 3. đúng; 4. đúng",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "hoi": "Vôi tôi (Ca(OH)₂) thu được khi cho vôi sống (CaO) tác dụng với nước, phản ứng này gọi là tôi vôi. Ca(OH)₂ là một chất rắn tinh thể không màu hoặc dạng bột trắng.\nThả một viên vôi sống vào cốc thuỷ tinh lớn đựng nước, vôi sống tan ra và cốc nước nóng lên rất nhanh, tạo ra một dung dịch trong suốt không màu, gọi là nước vôi trong. Nếu lượng vôi sống nhiều, cốc nước sẽ sôi lên và tạo ra chất lỏng đục trắng, gọi là sữa vôi. Trong sữa vôi có các hạt calcium hydroxide nhỏ mịn chưa tan hết, lơ lửng trong nước ở dạng huyền phù.\nTrong các câu sau, câu nào đúng, câu nào sai?",
+      "dong": [
+       {
+        "chu": "1. Khối lượng nước vôi trong bằng tổng khối lượng vôi sống và nước: {0}",
+        "o": [
+         {
+          "dung": [
+           "Đúng"
+          ],
+          "sai": [
+           "Sai"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "2. Nước vôi trong là dung dịch, vôi sống là chất tan: {0}",
+        "o": [
+         {
+          "dung": [
+           "Sai"
+          ],
+          "sai": [
+           "Đúng"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "3. Sữa vôi để lâu ngày sẽ có lớp bột màu trắng lắng xuống đáy: {0}",
+        "o": [
+         {
+          "dung": [
+           "Đúng"
+          ],
+          "sai": [
+           "Sai"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "4. Thổi khí carbon dioxide vào nước vôi trong sẽ xuất hiện vẩn đục: {0}",
+        "o": [
+         {
+          "dung": [
+           "Đúng"
+          ],
+          "sai": [
+           "Sai"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     }
    ]
   },
@@ -1156,7 +4315,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "A",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Đốt cháy hoàn toàn 6,2 g phosphorus (P), thu được khối lượng oxide P₂O₅ là",
+      "cac": [
+       "14,2 g",
+       "28,4 g",
+       "11,0 g",
+       "22,0 g"
+      ],
+      "dap": "A"
+     }
     },
     {
      "ma": "6.2",
@@ -1165,7 +4336,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "B",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Cho 6,48 g Al tác dụng hoàn toàn với dung dịch HCl dư, thu được muối AlCl₃ và khí H₂. Thể tích khí H₂ ở 25 °C, 1 bar là",
+      "cac": [
+       "17,8488 L",
+       "8,9244 L",
+       "5,9496 L",
+       "8,0640 L"
+      ],
+      "dap": "B"
+     }
     },
     {
      "ma": "6.3",
@@ -1174,7 +4357,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "C",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Cho 2,9748 L khí CO₂ (ở 25 °C, 1 bar) tác dụng hoàn toàn với dung dịch Ba(OH)₂ dư, thu được muối BaCO₃ và H₂O. Khối lượng muối BaCO₃ kết tủa là",
+      "cac": [
+       "12,00 g",
+       "13,28 g",
+       "23,64 g",
+       "26,16 g"
+      ],
+      "dap": "C"
+     }
     },
     {
      "ma": "6.4",
@@ -1183,7 +4378,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "D",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Cho miếng đồng (Cu) dư vào 200 mL dung dịch AgNO₃, thu được muối Cu(NO₃)₂ và Ag bám vào miếng đồng. Khối lượng Cu phản ứng là 6,4 g. Khối lượng Ag tạo ra là",
+      "cac": [
+       "8,8 g",
+       "10,8 g",
+       "15,2 g",
+       "21,6 g"
+      ],
+      "dap": "D"
+     }
     },
     {
      "ma": "6.5",
@@ -1192,7 +4399,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "A",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Cho m g CaCO₃ vào dung dịch HCl dư, thu được muối CaCl₂ và 1,9832 L khí CO₂ (ở 25 °C, 1 bar) thoát ra. Giá trị của m là",
+      "cac": [
+       "8",
+       "10",
+       "12",
+       "16"
+      ],
+      "dap": "A"
+     }
     },
     {
      "ma": "6.6",
@@ -1201,7 +4420,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "B",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Đốt cháy hoàn toàn 12,8 g lưu huỳnh bằng khí oxygen, thu được khí SO₂. Số mol oxygen đã phản ứng là",
+      "cac": [
+       "0,2",
+       "0,4",
+       "0,6",
+       "0,8"
+      ],
+      "dap": "B"
+     }
     },
     {
      "ma": "6.7",
@@ -1210,7 +4441,34 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "FeCl3",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 6,
+      "hoi": "Cho từ từ 300 mL dung dịch NaOH 0,3 M vào dung dịch muối chloride của sắt (FeClx), phản ứng vừa đủ thu được 3,21 g kết tủa Fe(OH)x. Xác định công thức của muối sắt.",
+      "dap": [
+       "FeCl₃"
+      ],
+      "phim": [
+       "Fe",
+       "Cl",
+       "₂",
+       "₃"
+      ],
+      "nhieu": [
+       "O",
+       "₄",
+       "H"
+      ],
+      "loi_giai": [
+       "300 mL = 0,3 L; n(NaOH) = 0,3 · 0,3 = 0,09 (mol)",
+       "FeClx + xNaOH → Fe(OH)x + xNaCl",
+       "Gọi số mol FeClx là a (mol): theo PTHH, n(NaOH) = ax = 0,09 (mol)",
+       "Khối lượng kết tủa: m(Fe(OH)x) = a · (56 + 17x) = 56a + 17ax = 3,21 (g)",
+       "56a = 3,21 − 17 · 0,09 = 1,68 ⇒ a = 1,68 : 56 = 0,03 (mol) ⇒ số nhóm OH là x = 0,09 : 0,03 = 3",
+       "Công thức của muối sắt là FeCl₃"
+      ]
+     }
     },
     {
      "ma": "6.8a",
@@ -1219,7 +4477,30 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "M là Mg (magnesium), muối MgCl2",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 5,
+      "dap": [
+       "Mg"
+      ],
+      "phim": [
+       "Mg"
+      ],
+      "nhieu": [
+       "Ca",
+       "Zn",
+       "Fe",
+       "Cu"
+      ],
+      "loi_giai": [
+       "m(MCl₂) = 50 · 1,9% = 0,95 (g)",
+       "M(AgCl) = 108 + 35,5 = 143,5 (g/mol); n(AgCl) = 2,87 : 143,5 = 0,02 (mol)",
+       "Theo PTHH: n(MCl₂) = 0,02 : 2 = 0,01 (mol)",
+       "M(MCl₂) = 0,95 : 0,01 = 95 (g/mol) ⇒ M = 95 − 2 · 35,5 = 24 (g/mol)",
+       "Kim loại M là Mg (magnesium)"
+      ]
+     }
     },
     {
      "ma": "6.8b",
@@ -1228,7 +4509,27 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "0,2 M",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "dap": [
+       "0,2",
+       "0,2M"
+      ],
+      "phim": [
+       "M"
+      ],
+      "nhieu": [
+       "mol",
+       "%"
+      ],
+      "loi_giai": [
+       "n(AgCl) = 2,87 : 143,5 = 0,02 (mol)",
+       "Theo PTHH: n(AgNO₃) = 2 · 0,02 : 2 = 0,02 (mol)",
+       "100 mL = 0,1 L; CM = 0,02 : 0,1 = 0,2 (M)"
+      ]
+     }
     },
     {
      "ma": "6.9a",
@@ -1237,7 +4538,28 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "2KNO3 ⟶ 2KNO2 + O2",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "dap": [
+       "2KNO₃→2KNO₂+O₂"
+      ],
+      "phim": [
+       "KNO₃",
+       "KNO₂",
+       "O₂"
+      ],
+      "nhieu": [
+       "O",
+       "NO₂",
+       "K₂O"
+      ],
+      "loi_giai": [
+       "Vế trái có 3 nguyên tử O, vế phải có 4 nguyên tử O: đặt 2 trước KNO₃ và 2 trước KNO₂ (mỗi vế có 6 nguyên tử O)",
+       "2KNO₃ → 2KNO₂ + O₂"
+      ]
+     }
     },
     {
      "ma": "6.9b",
@@ -1246,7 +4568,41 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "0,2 mol KNO2; 0,1 mol O2",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "dong": [
+       {
+        "chu": "Số mol KNO₂ thu được: {0}",
+        "o": [
+         {
+          "dung": [
+           "0,2 mol"
+          ],
+          "sai": [
+           "0,1 mol",
+           "0,4 mol"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Số mol O₂ thu được: {0}",
+        "o": [
+         {
+          "dung": [
+           "0,1 mol"
+          ],
+          "sai": [
+           "0,2 mol",
+           "0,4 mol"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "6.9c",
@@ -1255,7 +4611,28 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "20,2 g",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "dap": [
+       "20,2",
+       "20,2g"
+      ],
+      "phim": [
+       "g"
+      ],
+      "nhieu": [
+       "mol",
+       "L"
+      ],
+      "loi_giai": [
+       "PTHH: 2KNO₃ → 2KNO₂ + O₂",
+       "n(O₂) = 2,479 : 24,79 = 0,1 (mol)",
+       "Theo PTHH: n(KNO₃) = 2 · 0,1 = 0,2 (mol)",
+       "M(KNO₃) = 39 + 14 + 3 · 16 = 101 (g/mol); m(KNO₃) = 0,2 · 101 = 20,2 (g)"
+      ]
+     }
     },
     {
      "ma": "6.10a",
@@ -1264,7 +4641,29 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "H2 + CuO ⟶ (t°) Cu + H2O",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "dap": [
+       "H₂+CuO→Cu+H₂O"
+      ],
+      "phim": [
+       "H₂",
+       "CuO",
+       "Cu",
+       "H₂O"
+      ],
+      "nhieu": [
+       "H",
+       "Cu₂O",
+       "O₂"
+      ],
+      "loi_giai": [
+       "Chất phản ứng: hydrogen (H₂) và copper(II) oxide (CuO); sản phẩm: đồng (Cu) và nước (H₂O)",
+       "H₂ + CuO → (t°) Cu + H₂O"
+      ]
+     }
     },
     {
      "ma": "6.10b",
@@ -1273,7 +4672,55 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "CuO: 16 g; H2: 4,958 L; H2O: 3,6 g",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "dong": [
+       {
+        "chu": "Khối lượng CuO đã phản ứng: {0}",
+        "o": [
+         {
+          "dung": [
+           "16 g"
+          ],
+          "sai": [
+           "12,8 g",
+           "9,6 g"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Thể tích khí H₂ đã phản ứng (ở 25 °C, 1 bar): {0}",
+        "o": [
+         {
+          "dung": [
+           "4,958 L"
+          ],
+          "sai": [
+           "4,48 L",
+           "2,479 L"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Khối lượng hơi nước tạo thành: {0}",
+        "o": [
+         {
+          "dung": [
+           "3,6 g"
+          ],
+          "sai": [
+           "1,8 g",
+           "0,4 g"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "6.11",
@@ -1282,7 +4729,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "C",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Nhiệt phân 19,6 g KClO₃ thu được 0,18 mol O₂. Biết rằng phản ứng nhiệt phân KClO₃ xảy ra theo sơ đồ sau: KClO₃ → KCl + O₂. Hiệu suất phản ứng nhiệt phân là",
+      "cac": [
+       "25%",
+       "50%",
+       "75%",
+       "60%"
+      ],
+      "dap": "C"
+     }
     },
     {
      "ma": "6.12",
@@ -1291,7 +4750,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "D",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Nhiệt phân 10 g CaCO₃ thu được hỗn hợp rắn gồm CaO và CaCO₃ dư, trong đó khối lượng CaO là 4,48 g. Biết rằng phản ứng nhiệt phân CaCO₃ xảy ra theo sơ đồ sau: CaCO₃ → CaO + CO₂. Hiệu suất phản ứng nhiệt phân là",
+      "cac": [
+       "60%",
+       "64,8%",
+       "75%",
+       "80%"
+      ],
+      "dap": "D"
+     }
     },
     {
      "ma": "6.13",
@@ -1300,7 +4771,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "A",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Đun nóng 50 g dung dịch H₂O₂ nồng độ 34%. Biết rằng phản ứng phân huỷ H₂O₂ xảy ra theo sơ đồ sau: H₂O₂ → H₂O + O₂. Hiệu suất phản ứng nhiệt phân là 80%. Thể tích khí O₂ thu được (ở 25 °C, 1 bar) là",
+      "cac": [
+       "4,958 L",
+       "2,479 L",
+       "9,916 L",
+       "17 L"
+      ],
+      "dap": "A"
+     }
     },
     {
      "ma": "6.14",
@@ -1309,7 +4792,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "B",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Nung nóng hỗn hợp gồm 20 g lưu huỳnh và 32 g sắt thu được 44 g FeS. Biết rằng phản ứng xảy ra theo sơ đồ sau: Fe + S → FeS. Hiệu suất phản ứng hoá hợp là",
+      "cac": [
+       "60%",
+       "87,5%",
+       "75%",
+       "80%"
+      ],
+      "dap": "B"
+     }
     },
     {
      "ma": "6.15",
@@ -1318,7 +4813,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "C",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Nung nóng hỗn hợp gồm 10 g hydrogen và 100 g bromine. Sau phản ứng thu được hỗn hợp gồm HBr, H₂ và Br₂, trong đó khối lượng H₂ là 9 g. Hiệu suất phản ứng hoá hợp là",
+      "cac": [
+       "10%",
+       "20%",
+       "80%",
+       "90%"
+      ],
+      "dap": "C"
+     }
     },
     {
      "ma": "6.16",
@@ -1327,7 +4834,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "D",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Nung nóng hỗn hợp gồm 0,5 mol SO₂ và 0,4 mol O₂, sau phản ứng thu được hỗn hợp gồm SO₃, SO₂ và O₂. Biết hiệu suất phản ứng hoá hợp là 40%. Số mol SO₃ tạo thành là",
+      "cac": [
+       "0,10",
+       "0,16",
+       "0,32",
+       "0,20"
+      ],
+      "dap": "D"
+     }
     },
     {
      "ma": "6.17a",
@@ -1336,7 +4855,26 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "0,88 mol O2",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "dap": [
+       "0,88",
+       "0,88mol"
+      ],
+      "phim": [
+       "mol"
+      ],
+      "nhieu": [
+       "g",
+       "L"
+      ],
+      "loi_giai": [
+       "Theo PTHH: n(O₂) phản ứng = 3 · 0,08 : 2 = 0,12 (mol)",
+       "n(O₂) còn lại = 1 − 0,12 = 0,88 (mol)"
+      ]
+     }
     },
     {
      "ma": "6.17b",
@@ -1345,7 +4883,26 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "12%",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "dap": [
+       "12",
+       "12%"
+      ],
+      "phim": [
+       "%"
+      ],
+      "nhieu": [
+       "g",
+       "M"
+      ],
+      "loi_giai": [
+       "Theo PTHH: n(O₂) phản ứng = 3 · 0,08 : 2 = 0,12 (mol)",
+       "H = 0,12 : 1 · 100% = 12%"
+      ]
+     }
     },
     {
      "ma": "6.18a",
@@ -1354,7 +4911,55 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "C2H4: 0,4 mol; H2: 1,4 mol; C2H6: 0,6 mol",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "dong": [
+       {
+        "chu": "Số mol C₂H₄ trong Y: {0}",
+        "o": [
+         {
+          "dung": [
+           "0,4 mol"
+          ],
+          "sai": [
+           "0,6 mol",
+           "1 mol"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Số mol H₂ trong Y: {0}",
+        "o": [
+         {
+          "dung": [
+           "1,4 mol"
+          ],
+          "sai": [
+           "0,8 mol",
+           "2 mol"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Số mol C₂H₆ trong Y: {0}",
+        "o": [
+         {
+          "dung": [
+           "0,6 mol"
+          ],
+          "sai": [
+           "0,4 mol",
+           "2,4 mol"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "6.18b",
@@ -1363,7 +4968,27 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "60%",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "dap": [
+       "60",
+       "60%"
+      ],
+      "phim": [
+       "%"
+      ],
+      "nhieu": [
+       "g",
+       "M"
+      ],
+      "loi_giai": [
+       "Số mol khí giảm đúng bằng số mol C₂H₄ đã phản ứng: n(C₂H₄ phản ứng) = 1 + 2 − 2,4 = 0,6 (mol)",
+       "H₂ dư (2 mol, cần 1 mol) nên hiệu suất tính theo C₂H₄",
+       "H = 0,6 : 1 · 100% = 60%"
+      ]
+     }
     },
     {
      "ma": "6.19a",
@@ -1372,7 +4997,30 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "2Mg(NO3)2 ⟶ (t°) 2MgO + 4NO2 + O2",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "dap": [
+       "2Mg(NO₃)₂→2MgO+4NO₂+O₂"
+      ],
+      "phim": [
+       "Mg(NO₃)₂",
+       "MgO",
+       "NO₂",
+       "O₂"
+      ],
+      "nhieu": [
+       "NO",
+       "MgO₂",
+       "O"
+      ],
+      "loi_giai": [
+       "Mg(NO₃)₂ có 2 nguyên tử N nên đặt 2 trước NO₂: vế trái có 6 nguyên tử O, vế phải mới có 5 (1 trong MgO, 4 trong 2NO₂), còn thiếu 1 nguyên tử O, tức nửa phân tử O₂",
+       "Nhân đôi các hệ số: đặt 2 trước Mg(NO₃)₂, 2 trước MgO, 4 trước NO₂ và 1 phân tử O₂",
+       "2Mg(NO₃)₂ → (t°) 2MgO + 4NO₂ + O₂"
+      ]
+     }
     },
     {
      "ma": "6.19b",
@@ -1381,7 +5029,29 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "75%",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 5,
+      "dap": [
+       "75",
+       "75%"
+      ],
+      "phim": [
+       "%"
+      ],
+      "nhieu": [
+       "g",
+       "M"
+      ],
+      "loi_giai": [
+       "PTHH: 2Mg(NO₃)₂ → (t°) 2MgO + 4NO₂ + O₂",
+       "M(Mg(NO₃)₂) = 24 + 2 · (14 + 3 · 16) = 148 (g/mol); n(Mg(NO₃)₂) ban đầu = 11,84 : 148 = 0,08 (mol)",
+       "n(O₂) = 0,7437 : 24,79 = 0,03 (mol)",
+       "Theo PTHH: n(Mg(NO₃)₂) phản ứng = 2 · 0,03 = 0,06 (mol)",
+       "H = 0,06 : 0,08 · 100% = 75%"
+      ]
+     }
     },
     {
      "ma": "6.19c",
@@ -1390,7 +5060,55 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "MgO: 0,06 mol; NO2: 0,12 mol; O2: 0,03 mol",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "dong": [
+       {
+        "chu": "Số mol MgO tạo thành: {0}",
+        "o": [
+         {
+          "dung": [
+           "0,06 mol"
+          ],
+          "sai": [
+           "0,08 mol",
+           "0,03 mol"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Số mol NO₂ tạo thành: {0}",
+        "o": [
+         {
+          "dung": [
+           "0,12 mol"
+          ],
+          "sai": [
+           "0,16 mol",
+           "0,06 mol"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Số mol O₂ tạo thành: {0}",
+        "o": [
+         {
+          "dung": [
+           "0,03 mol"
+          ],
+          "sai": [
+           "0,04 mol",
+           "0,06 mol"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "6.19d",
@@ -1399,7 +5117,29 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "5,36 g",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 5,
+      "dap": [
+       "5,36",
+       "5,36g"
+      ],
+      "phim": [
+       "g"
+      ],
+      "nhieu": [
+       "mol",
+       "L"
+      ],
+      "loi_giai": [
+       "PTHH: 2Mg(NO₃)₂ → (t°) 2MgO + 4NO₂ + O₂",
+       "n(Mg(NO₃)₂) ban đầu = 11,84 : 148 = 0,08 (mol); n(O₂) = 0,7437 : 24,79 = 0,03 (mol)",
+       "Theo PTHH: n(MgO) = n(Mg(NO₃)₂) phản ứng = 2 · 0,03 = 0,06 (mol)",
+       "n(Mg(NO₃)₂) dư = 0,08 − 0,06 = 0,02 (mol)",
+       "M(MgO) = 24 + 16 = 40 (g/mol); m(rắn) = 0,06 · 40 + 0,02 · 148 = 5,36 (g)"
+      ]
+     }
     },
     {
      "ma": "6.20a",
@@ -1408,16 +5148,58 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "N2 + 3H2 ⟶ 2NH3",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "dap": [
+       "N₂+3H₂→2NH₃"
+      ],
+      "phim": [
+       "N₂",
+       "H₂",
+       "NH₃"
+      ],
+      "nhieu": [
+       "N",
+       "H",
+       "NH₄"
+      ],
+      "loi_giai": [
+       "Vế trái có 2 nguyên tử N nên đặt 2 trước NH₃; khi đó vế phải có 6 nguyên tử H nên đặt 3 trước H₂",
+       "N₂ + 3H₂ → 2NH₃"
+      ]
+     }
     },
     {
      "ma": "6.20b",
-     "de": "Hỗn hợp khí X gồm 1 mol nitrogen và 2 mol hydrogen. Nung nóng hỗn hợp X có xúc tác, phản ứng xảy ra theo sơ đồ sau: N2 + H2 ⟶ NH3; thu được hỗn hợp khí Y gồm N2, H2 và NH3 trong đó số mol NH3 là 0,6 mol. Tính hiệu suất phản ứng tổng hợp ammonium.",
+     "de": "Hỗn hợp khí X gồm 1 mol nitrogen và 2 mol hydrogen. Nung nóng hỗn hợp X có xúc tác, phản ứng xảy ra theo sơ đồ sau: N2 + H2 ⟶ NH3; thu được hỗn hợp khí Y gồm N2, H2 và NH3 trong đó số mol NH3 là 0,6 mol. Tính hiệu suất phản ứng tổng hợp ammonia.",
      "trang": 22,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "45%",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "dap": [
+       "45",
+       "45%"
+      ],
+      "phim": [
+       "%"
+      ],
+      "nhieu": [
+       "g",
+       "M"
+      ],
+      "loi_giai": [
+       "PTHH: N₂ + 3H₂ → 2NH₃",
+       "1 mol N₂ cần 3 mol H₂ mà chỉ có 2 mol H₂ nên hiệu suất tính theo H₂",
+       "Theo PTHH: n(H₂) phản ứng = 3 · 0,6 : 2 = 0,9 (mol)",
+       "H = 0,9 : 2 · 100% = 45%"
+      ]
+     }
     },
     {
      "ma": "6.20c",
@@ -1426,7 +5208,28 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "2,4 mol (N2 0,7 mol; H2 1,1 mol; NH3 0,6 mol)",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "dap": [
+       "2,4",
+       "2,4mol"
+      ],
+      "phim": [
+       "mol"
+      ],
+      "nhieu": [
+       "g",
+       "L"
+      ],
+      "loi_giai": [
+       "PTHH: N₂ + 3H₂ → 2NH₃",
+       "Theo PTHH: n(N₂) phản ứng = 0,6 : 2 = 0,3 (mol); n(H₂) phản ứng = 3 · 0,6 : 2 = 0,9 (mol)",
+       "Trong Y: n(N₂) = 1 − 0,3 = 0,7 (mol); n(H₂) = 2 − 0,9 = 1,1 (mol); n(NH₃) = 0,6 (mol)",
+       "Tổng số mol khí trong Y: n = 0,7 + 1,1 + 0,6 = 2,4 (mol)"
+      ]
+     }
     },
     {
      "ma": "6.21a",
@@ -1435,7 +5238,34 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "S + O2 ⟶ (t°) SO2; 2SO2 + O2 ⟶ (V2O5, t°) 2SO3; SO3 + H2O ⟶ H2SO4",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "hoi": "Phần lớn sulfuric acid (H₂SO₄) được sản xuất từ lưu huỳnh, oxygen và nước theo công nghệ tiếp xúc. Giai đoạn đầu, đốt lưu huỳnh để tạo ra sulfur dioxide (SO₂). Tiếp theo, sulfur dioxide bị oxi hoá thành sulfur trioxide (SO₃) bởi oxygen với sự có mặt của chất xúc tác vanadium(V) oxide. Cuối cùng, dùng H₂SO₄ 98% hấp thụ sulfur trioxide được oleum H₂SO₄·nSO₃ để sản xuất sulfuric acid 98 – 99%.\nViết phương trình hoá học các phản ứng của mỗi giai đoạn trong quy trình trên (theo thứ tự các giai đoạn, các phương trình cách nhau bằng dấu ;).",
+      "dap": [
+       "S+O₂→SO₂;2SO₂+O₂→2SO₃;SO₃+H₂O→H₂SO₄"
+      ],
+      "phim": [
+       "S",
+       "O₂",
+       "SO₂",
+       "SO₃",
+       "H₂O",
+       "H₂SO₄",
+       ";"
+      ],
+      "nhieu": [
+       "O",
+       "SO₄",
+       "H₂"
+      ],
+      "loi_giai": [
+       "S + O₂ → (t°) SO₂",
+       "2SO₂ + O₂ → (V₂O₅, t°) 2SO₃",
+       "SO₃ + H₂O → H₂SO₄"
+      ]
+     }
     },
     {
      "ma": "6.21b",
@@ -1444,7 +5274,28 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "98 tấn",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "hoi": "Phần lớn sulfuric acid (H₂SO₄) được sản xuất từ lưu huỳnh, oxygen và nước theo công nghệ tiếp xúc. Giai đoạn đầu, đốt lưu huỳnh để tạo ra sulfur dioxide (SO₂). Tiếp theo, sulfur dioxide bị oxi hoá thành sulfur trioxide (SO₃) bởi oxygen với sự có mặt của chất xúc tác vanadium(V) oxide. Cuối cùng, dùng H₂SO₄ 98% hấp thụ sulfur trioxide được oleum H₂SO₄·nSO₃ để sản xuất sulfuric acid 98 – 99%.\nTính khối lượng H₂SO₄ tối đa có thể thu được từ 32 tấn lưu huỳnh (theo tấn).",
+      "dap": [
+       "98",
+       "98tấn"
+      ],
+      "phim": [
+       "tấn"
+      ],
+      "nhieu": [
+       "kg",
+       "g"
+      ],
+      "loi_giai": [
+       "Theo PTHH của ba giai đoạn: 1 mol S tạo ra 1 mol SO₂, rồi 1 mol SO₃, rồi 1 mol H₂SO₄",
+       "M(S) = 32 (g/mol); M(H₂SO₄) = 2 · 1 + 32 + 4 · 16 = 98 (g/mol)",
+       "Cứ 32 g S tạo ra tối đa 98 g H₂SO₄ nên từ 32 tấn S: m(H₂SO₄) = 32 · 98 : 32 = 98 (tấn)"
+      ]
+     }
     },
     {
      "ma": "6.21c",
@@ -1453,7 +5304,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "B",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Phần lớn sulfuric acid (H₂SO₄) được sản xuất từ lưu huỳnh, oxygen và nước theo công nghệ tiếp xúc. Giai đoạn đầu, đốt lưu huỳnh để tạo ra sulfur dioxide (SO₂). Tiếp theo, sulfur dioxide bị oxi hoá thành sulfur trioxide (SO₃) bởi oxygen với sự có mặt của chất xúc tác vanadium(V) oxide. Cuối cùng, dùng H₂SO₄ 98% hấp thụ sulfur trioxide được oleum H₂SO₄·nSO₃ để sản xuất sulfuric acid 98 – 99%.\nTrong giai đoạn đầu tiên, nếu khối lượng lưu huỳnh bị đốt là 64 kg thì thể tích khí oxygen (ở 25 °C, 1 bar) phản ứng và khối lượng sulfur dioxide tạo thành là",
+      "cac": [
+       "49,58 lít; 128 kg",
+       "49,58 m³; 128 kg",
+       "49,58 lít; 160 kg",
+       "49,58 m³; 160 kg"
+      ],
+      "dap": "B"
+     }
     },
     {
      "ma": "6.21d",
@@ -1462,7 +5325,23 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Cần 880 g nước (100 g dung dịch 98% có 98 g H2SO4, pha thành 980 g dung dịch 10%). Cách pha: cho 880 g nước cất vào cốc to (2 L), cho dần từng giọt dung dịch H2SO4 98% vào cốc, khuấy đều bằng đũa thuỷ tinh. Tuyệt đối không làm ngược lại (cho nước vào acid đặc).",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 5,
+      "buoc": [
+       "Khối lượng H₂SO₄ có trong 100 g dung dịch 98%: m(H₂SO₄) = 100 · 98% = 98 (g)",
+       "Khối lượng dung dịch H₂SO₄ 10% chứa 98 g H₂SO₄: m(dd) = 98 · 100 : 10 = 980 (g)",
+       "Khối lượng nước cần thêm: m(nước) = 980 − 100 = 880 (g)",
+       "Cân 880 g nước cất cho vào cốc thuỷ tinh loại to (2 L)",
+       "Rót từ từ từng giọt dung dịch H₂SO₄ 98% vào cốc nước, vừa rót vừa khuấy đều bằng đũa thuỷ tinh"
+      ],
+      "nhieu": [
+       "Khối lượng nước cần thêm: m(nước) = 980 − 98 = 882 (g)",
+       "Khối lượng dung dịch H₂SO₄ 10% chứa 98 g H₂SO₄: m(dd) = 98 · 10 : 100 = 9,8 (g)",
+       "Rót từ từ nước cất vào cốc đựng dung dịch H₂SO₄ 98%, khuấy đều"
+      ]
+     }
     },
     {
      "ma": "6.21e",
@@ -1471,7 +5350,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "C",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Phần lớn sulfuric acid (H₂SO₄) được sản xuất từ lưu huỳnh, oxygen và nước theo công nghệ tiếp xúc. Giai đoạn đầu, đốt lưu huỳnh để tạo ra sulfur dioxide (SO₂). Tiếp theo, sulfur dioxide bị oxi hoá thành sulfur trioxide (SO₃) bởi oxygen với sự có mặt của chất xúc tác vanadium(V) oxide. Cuối cùng, dùng H₂SO₄ 98% hấp thụ sulfur trioxide được oleum H₂SO₄·nSO₃ để sản xuất sulfuric acid 98 – 99%.\nĐể thu được 48 kg sulfur dioxide thì cần phải đốt bao nhiêu kg lưu huỳnh, biết hiệu suất phản ứng là 96%?",
+      "cac": [
+       "50,00 kg",
+       "24,00 kg",
+       "25,00 kg",
+       "23,04 kg"
+      ],
+      "dap": "C"
+     }
     }
    ]
   },
@@ -1486,7 +5377,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "B",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Than cháy trong bình khí oxygen nhanh hơn cháy trong không khí. Yếu tố đã làm tăng tốc độ của phản ứng này là",
+      "cac": [
+       "tăng nhiệt độ",
+       "tăng nồng độ",
+       "tăng diện tích bề mặt tiếp xúc",
+       "dùng chất xúc tác"
+      ],
+      "dap": "B"
+     }
     },
     {
      "ma": "7.2",
@@ -1495,7 +5398,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "C",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Để điều chế CO₂ trong phòng thí nghiệm, người ta cho đá vôi (rắn) phản ứng với dung dịch hydrochloric acid. Phản ứng xảy ra như sau: CaCO₃ + 2HCl → CaCl₂ + H₂O + CO₂. Biện pháp nào sau đây không làm phản ứng xảy ra nhanh hơn?",
+      "cac": [
+       "Đập nhỏ đá vôi",
+       "Tăng nhiệt độ phản ứng",
+       "Thêm CaCl₂ vào dung dịch",
+       "Dùng HCl nồng độ cao hơn"
+      ],
+      "dap": "C"
+     }
     },
     {
      "ma": "7.3",
@@ -1504,7 +5419,66 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "a) đúng; b) đúng; c) sai; d) đúng",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "hoi": "Trong các câu sau, câu nào đúng, câu nào sai?",
+      "dong": [
+       {
+        "chu": "a) Phản ứng giữa nước chanh và nước rau muống (xuất hiện màu hồng nhạt) là phản ứng hoá học xảy ra nhanh: {0}",
+        "o": [
+         {
+          "dung": [
+           "Đúng"
+          ],
+          "sai": [
+           "Sai"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "b) Phản ứng lên men rượu xảy ra chậm: {0}",
+        "o": [
+         {
+          "dung": [
+           "Đúng"
+          ],
+          "sai": [
+           "Sai"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "c) Phản ứng cháy nổ xảy ra chậm: {0}",
+        "o": [
+         {
+          "dung": [
+           "Sai"
+          ],
+          "sai": [
+           "Đúng"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "d) Phản ứng đốt cháy than trong không khí nhanh hơn phản ứng sắt bị gỉ trong không khí: {0}",
+        "o": [
+         {
+          "dung": [
+           "Đúng"
+          ],
+          "sai": [
+           "Sai"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "7.4",
@@ -1513,7 +5487,54 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Thanh thứ hai (khối lượng giảm 0,21 g, phản ứng nhanh hơn), đó là thanh có nhiều lỗ rỗng trên bề mặt",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "dong": [
+       {
+        "chu": "Trong cùng thời gian, phản ứng xảy ra nhanh hơn ở {0}",
+        "o": [
+         {
+          "dung": [
+           "thanh thứ hai (khối lượng giảm 0,21 g)"
+          ],
+          "sai": [
+           "thanh thứ nhất (khối lượng giảm 0,15 g)"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Diện tích bề mặt tiếp xúc càng lớn thì tốc độ phản ứng {0}",
+        "o": [
+         {
+          "dung": [
+           "càng lớn"
+          ],
+          "sai": [
+           "càng nhỏ",
+           "không thay đổi"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Thanh có diện tích bề mặt tiếp xúc với acid lớn hơn là {0}",
+        "o": [
+         {
+          "dung": [
+           "thanh thứ hai, thanh có nhiều lỗ rỗng trên bề mặt"
+          ],
+          "sai": [
+           "thanh thứ nhất, thanh có nhiều lỗ rỗng trên bề mặt",
+           "thanh thứ hai, thanh có bề mặt mịn và chắc"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "7.5",
@@ -1522,7 +5543,53 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Ống nghiệm 2: trong cùng thời gian thu được nhiều khí hơn (7 mL) nên phản ứng nhanh hơn, do nhiệt độ cao hơn",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "dong": [
+       {
+        "chu": "Trong cùng 30 giây, phản ứng xảy ra nhanh hơn ở {0}",
+        "o": [
+         {
+          "dung": [
+           "ống nghiệm 2 (thu được 7 mL khí)"
+          ],
+          "sai": [
+           "ống nghiệm 1 (thu được 5 mL khí)"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Nhiệt độ càng cao thì tốc độ phản ứng {0}",
+        "o": [
+         {
+          "dung": [
+           "càng lớn"
+          ],
+          "sai": [
+           "càng nhỏ",
+           "không thay đổi"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Ống nghiệm được ngâm trong cốc nước nóng là {0}",
+        "o": [
+         {
+          "dung": [
+           "ống nghiệm 2"
+          ],
+          "sai": [
+           "ống nghiệm 1"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "7.6",
@@ -1531,7 +5598,53 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Ống nghiệm B: khối lượng giảm nhiều hơn (0,56 g) tức khí CO2 thoát ra nhiều hơn trong cùng thời gian, phản ứng nhanh hơn nên nồng độ HCl cao hơn",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "dong": [
+       {
+        "chu": "Khối lượng ống nghiệm giảm vì {0}",
+        "o": [
+         {
+          "dung": [
+           "khí CO₂ tạo thành thoát ra ngoài"
+          ],
+          "sai": [
+           "đá vôi tan vào dung dịch",
+           "nước trong dung dịch bay hơi"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Trong cùng 1 phút, phản ứng xảy ra nhanh hơn ở {0}",
+        "o": [
+         {
+          "dung": [
+           "ống nghiệm B (khối lượng giảm 0,56 g)"
+          ],
+          "sai": [
+           "ống nghiệm A (khối lượng giảm 0,44 g)"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Dung dịch HCl có nồng độ cao hơn ở {0}",
+        "o": [
+         {
+          "dung": [
+           "ống nghiệm B"
+          ],
+          "sai": [
+           "ống nghiệm A"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "7.7",
@@ -1540,7 +5653,60 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "a) MnO2; b) SiO2",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "dong": [
+       {
+        "chu": "a) Chất có tác dụng xúc tác tốt nhất: {0}, vì thời gian đến khi phản ứng kết thúc {1}",
+        "o": [
+         {
+          "dung": [
+           "MnO₂"
+          ],
+          "sai": [
+           "Fe",
+           "KI",
+           "SiO₂"
+          ]
+         },
+         {
+          "dung": [
+           "ngắn nhất (15 s)"
+          ],
+          "sai": [
+           "dài nhất (35 s)"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "b) Chất không có tác dụng xúc tác: {0}, vì thời gian đến khi phản ứng kết thúc {1}",
+        "o": [
+         {
+          "dung": [
+           "SiO₂"
+          ],
+          "sai": [
+           "Fe",
+           "MnO₂",
+           "KI"
+          ]
+         },
+         {
+          "dung": [
+           "bằng khi không có chất xúc tác (35 s)"
+          ],
+          "sai": [
+           "ngắn nhất (15 s)",
+           "dài hơn khi không có chất xúc tác"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "7.8",
@@ -1549,7 +5715,20 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "7 lần",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "dap": [
+       "7"
+      ],
+      "phim": [],
+      "nhieu": [],
+      "loi_giai": [
+       "Tốc độ phản ứng tỉ lệ nghịch với thời gian: thời gian đến khi cơm thiu càng ngắn thì phản ứng càng nhanh",
+       "Số lần = 84 : 12 = 7"
+      ]
+     }
     }
    ]
   },

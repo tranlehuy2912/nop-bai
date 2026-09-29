@@ -2,7 +2,7 @@
  "nguon": "sbttoan8t1",
  "mon": "Toán",
  "ten": "SBT Toán 8 — tập một",
- "ban": 3,
+ "ban": 5,
  "cac_bai": [
   {
    "chuong": "Chương I. Đa thức",
@@ -2457,7 +2457,66 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "a) và d)",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "hoi": "Những đẳng thức nào sau đây là hằng đẳng thức?",
+      "dong": [
+       {
+        "chu": "a² − b² = (a − b)(a + b): {0}",
+        "o": [
+         {
+          "dung": [
+           "Là hằng đẳng thức"
+          ],
+          "sai": [
+           "Không phải"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "3x(2x − 1) = 6x² + 3x: {0}",
+        "o": [
+         {
+          "dung": [
+           "Không phải"
+          ],
+          "sai": [
+           "Là hằng đẳng thức"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "2(x − 1) = 4x + 3: {0}",
+        "o": [
+         {
+          "dung": [
+           "Không phải"
+          ],
+          "sai": [
+           "Là hằng đẳng thức"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "(2y + 3)(y + 1) = 2y² + 5y + 3: {0}",
+        "o": [
+         {
+          "dung": [
+           "Là hằng đẳng thức"
+          ],
+          "sai": [
+           "Không phải"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "2.2a",
@@ -2466,7 +2525,26 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "9x^2 + 6x + 1",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "dap": [
+       "9x²+6x+1"
+      ],
+      "phim": [
+       "x",
+       "²"
+      ],
+      "nhieu": [
+       "³",
+       "y"
+      ],
+      "loi_giai": [
+       "(3x + 1)² = (3x)² + 2 · 3x · 1 + 1²",
+       "= 9x² + 6x + 1"
+      ]
+     }
     },
     {
      "ma": "2.2b",
@@ -2475,7 +2553,28 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "4y^2 + 12yx + 9x^2",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "dap": [
+       "4y²+12yx+9x²"
+      ],
+      "phim": [
+       "x",
+       "y",
+       "²"
+      ],
+      "nhieu": [
+       "³",
+       "⁴",
+       "z"
+      ],
+      "loi_giai": [
+       "(2y + 3x)² = (2y)² + 2 · 2y · 3x + (3x)²",
+       "= 4y² + 12yx + 9x²"
+      ]
+     }
     },
     {
      "ma": "2.2c",
@@ -2484,7 +2583,26 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "4x^2 − 12x + 9",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "dap": [
+       "4x²−12x+9"
+      ],
+      "phim": [
+       "x",
+       "²"
+      ],
+      "nhieu": [
+       "³",
+       "y"
+      ],
+      "loi_giai": [
+       "(2x − 3)² = (2x)² − 2 · 2x · 3 + 3²",
+       "= 4x² − 12x + 9"
+      ]
+     }
     },
     {
      "ma": "2.2d",
@@ -2493,7 +2611,28 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "9y^2 − 6yx + x^2",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "dap": [
+       "9y²−6yx+x²"
+      ],
+      "phim": [
+       "x",
+       "y",
+       "²"
+      ],
+      "nhieu": [
+       "³",
+       "⁴",
+       "z"
+      ],
+      "loi_giai": [
+       "(3y − x)² = (3y)² − 2 · 3y · x + x²",
+       "= 9y² − 6yx + x²"
+      ]
+     }
     },
     {
      "ma": "2.3a",
@@ -2502,7 +2641,27 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "(2x + 3)^2",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "dap": [
+       "(2x+3)²",
+       "(2x+3)(2x+3)"
+      ],
+      "phim": [
+       "x",
+       "²"
+      ],
+      "nhieu": [
+       "³",
+       "y"
+      ],
+      "loi_giai": [
+       "4x² + 12x + 9 = (2x)² + 2 · 2x · 3 + 3²",
+       "= (2x + 3)²"
+      ]
+     }
     },
     {
      "ma": "2.3b",
@@ -2511,7 +2670,31 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "(4x − y)^2",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "dap": [
+       "(4x−y)²",
+       "(y−4x)²",
+       "(4x−y)(4x−y)",
+       "(y−4x)(y−4x)"
+      ],
+      "phim": [
+       "x",
+       "y",
+       "²"
+      ],
+      "nhieu": [
+       "³",
+       "⁴",
+       "z"
+      ],
+      "loi_giai": [
+       "16x² − 8xy + y² = (4x)² − 2 · 4x · y + y²",
+       "= (4x − y)²"
+      ]
+     }
     },
     {
      "ma": "2.3c",
@@ -2520,7 +2703,28 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "(9xy − 4z)(9xy + 4z)",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "dap": [
+       "(9xy−4z)(9xy+4z)"
+      ],
+      "phim": [
+       "x",
+       "y",
+       "z"
+      ],
+      "nhieu": [
+       "²",
+       "³",
+       "⁴"
+      ],
+      "loi_giai": [
+       "81x²y² − 16z² = (9xy)² − (4z)²",
+       "= (9xy − 4z)(9xy + 4z)"
+      ]
+     }
     },
     {
      "ma": "2.4a",
@@ -2529,7 +2733,21 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "999 991",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "dap": [
+       "999991"
+      ],
+      "phim": [],
+      "nhieu": [],
+      "loi_giai": [
+       "997 · 1 003 = (1 000 − 3)(1 000 + 3)",
+       "= 1 000² − 3²",
+       "= 1 000 000 − 9 = 999 991"
+      ]
+     }
     },
     {
      "ma": "2.4b",
@@ -2538,7 +2756,21 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "1 008 016",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "dap": [
+       "1008016"
+      ],
+      "phim": [],
+      "nhieu": [],
+      "loi_giai": [
+       "1 004² = (1 000 + 4)²",
+       "= 1 000² + 2 · 1 000 · 4 + 4²",
+       "= 1 000 000 + 8 000 + 16 = 1 008 016"
+      ]
+     }
     },
     {
      "ma": "2.5a",
@@ -2547,7 +2779,27 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "4x^2",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "dap": [
+       "4x²"
+      ],
+      "phim": [
+       "x",
+       "²"
+      ],
+      "nhieu": [
+       "y",
+       "³"
+      ],
+      "loi_giai": [
+       "Biểu thức = (x + y)² + 2(x + y)(x − y) + (x − y)²",
+       "= [(x + y) + (x − y)]²",
+       "= (2x)² = 4x²"
+      ]
+     }
     },
     {
      "ma": "2.5b",
@@ -2556,7 +2808,28 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "z^2",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "dap": [
+       "z²"
+      ],
+      "phim": [
+       "z",
+       "²"
+      ],
+      "nhieu": [
+       "x",
+       "y"
+      ],
+      "loi_giai": [
+       "(x − y − z)² = [(x − y) − z]² = (x − y)² − 2(x − y)z + z²",
+       "Biểu thức = (x − y)² − 2(x − y)z + z² − (x − y)² + 2(x − y)z",
+       "= [(x − y)² − (x − y)²] + [−2(x − y)z + 2(x − y)z] + z²",
+       "= z²"
+      ]
+     }
     },
     {
      "ma": "2.6a",
@@ -2565,7 +2838,22 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "a chia 3 dư 2 nên a = 3n + 2 (n ∈ ℕ). Ta có a^2 = (3n + 2)^2 = 9n^2 + 12n + 4 = 3(3n^2 + 4n + 1) + 1. Vì 3(3n^2 + 4n + 1) chia hết cho 3 nên a^2 chia 3 dư 1.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 5,
+      "buoc": [
+       "a chia 3 dư 2 nên a = 3n + 2 (n ∈ ℕ)",
+       "Ta có a² = (3n + 2)²",
+       "= 9n² + 12n + 4",
+       "= 3(3n² + 4n + 1) + 1",
+       "Vì 3(3n² + 4n + 1) chia hết cho 3 nên a² chia 3 dư 1"
+      ],
+      "nhieu": [
+       "= 9n² + 6n + 4",
+       "a chia 3 dư 2 nên a = 2n + 3 (n ∈ ℕ)"
+      ]
+     }
     },
     {
      "ma": "2.6b",
@@ -2574,7 +2862,22 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "a chia 5 dư 3 nên a = 5n + 3 (n ∈ ℕ). Ta có a^2 = (5n + 3)^2 = 25n^2 + 30n + 9 = 5(5n^2 + 6n + 1) + 4. Vì 5(5n^2 + 6n + 1) chia hết cho 5 nên a^2 chia 5 dư 4.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 5,
+      "buoc": [
+       "a chia 5 dư 3 nên a = 5n + 3 (n ∈ ℕ)",
+       "Ta có a² = (5n + 3)²",
+       "= 25n² + 30n + 9",
+       "= 5(5n² + 6n + 1) + 4",
+       "Vì 5(5n² + 6n + 1) chia hết cho 5 nên a² chia 5 dư 4"
+      ],
+      "nhieu": [
+       "= 25n² + 15n + 9",
+       "a chia 5 dư 3 nên a = 3n + 5 (n ∈ ℕ)"
+      ]
+     }
     },
     {
      "ma": "2.7a",
@@ -2583,7 +2886,27 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "a + b = √12 (= 2√3)",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "dap": [
+       "√12",
+       "2√3"
+      ],
+      "phim": [
+       "√"
+      ],
+      "nhieu": [
+       "²",
+       "³"
+      ],
+      "loi_giai": [
+       "(a + b)² = a² + 2ab + b²",
+       "Với a² + b² = 8 và ab = 2 thì (a + b)² = 8 + 2 · 2 = 12",
+       "Vì a, b > 0 nên a + b > 0, do đó a + b = √12 = 2√3"
+      ]
+     }
     },
     {
      "ma": "2.7b",
@@ -2592,7 +2915,21 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "a − b = 2",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "dap": [
+       "2"
+      ],
+      "phim": [],
+      "nhieu": [],
+      "loi_giai": [
+       "(a − b)² = a² − 2ab + b²",
+       "Với a² + b² = 8 và ab = 2 thì (a − b)² = 8 − 2 · 2 = 4",
+       "Vì a > b nên a − b > 0, do đó a − b = √4 = 2"
+      ]
+     }
     }
    ]
   },
@@ -2607,7 +2944,26 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "(x + 2)^3",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "dap": [
+       "(x+2)³"
+      ],
+      "phim": [
+       "x",
+       "³"
+      ],
+      "nhieu": [
+       "²",
+       "y"
+      ],
+      "loi_giai": [
+       "x³ + 6x² + 12x + 8 = x³ + 3 · x² · 2 + 3 · x · 2² + 2³",
+       "= (x + 2)³"
+      ]
+     }
     },
     {
      "ma": "2.8b",
@@ -2616,7 +2972,28 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "(2a − b)^3",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "dap": [
+       "(2a−b)³"
+      ],
+      "phim": [
+       "a",
+       "b",
+       "³"
+      ],
+      "nhieu": [
+       "²",
+       "⁴",
+       "c"
+      ],
+      "loi_giai": [
+       "8a³ − 12a²b + 6ab² − b³ = (2a)³ − 3 · (2a)² · b + 3 · 2a · b² − b³",
+       "= (2a − b)³"
+      ]
+     }
     },
     {
      "ma": "2.9a",
@@ -2625,7 +3002,21 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "1 000 000",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "dap": [
+       "1000000"
+      ],
+      "phim": [],
+      "nhieu": [],
+      "loi_giai": [
+       "8x³ + 12x² + 6x + 1 = (2x)³ + 3 · (2x)² · 1 + 3 · 2x · 1² + 1³ = (2x + 1)³",
+       "Tại x = 49,5 thì (2x + 1)³ = (2 · 49,5 + 1)³ = 100³",
+       "= 1 000 000"
+      ]
+     }
     },
     {
      "ma": "2.9b",
@@ -2634,7 +3025,21 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "1 000 000",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "dap": [
+       "1000000"
+      ],
+      "phim": [],
+      "nhieu": [],
+      "loi_giai": [
+       "x³ − 9x² + 27x − 27 = x³ − 3 · x² · 3 + 3 · x · 3² − 3³ = (x − 3)³",
+       "Tại x = 103 thì (x − 3)³ = (103 − 3)³ = 100³",
+       "= 1 000 000"
+      ]
+     }
     },
     {
      "ma": "2.10a",
@@ -2643,7 +3048,22 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "26",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "dap": [
+       "26"
+      ],
+      "phim": [],
+      "nhieu": [],
+      "loi_giai": [
+       "(x + 1)³ − (x − 1)³ = (x³ + 3x² + 3x + 1) − (x³ − 3x² + 3x − 1) = 6x² + 2",
+       "6(x − 2)(x + 2) = 6(x² − 4) = 6x² − 24",
+       "Biểu thức = 6x² + 2 − (6x² − 24)",
+       "= 6x² + 2 − 6x² + 24 = 26"
+      ]
+     }
     },
     {
      "ma": "2.10b",
@@ -2652,7 +3072,30 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "x^3 + y^3",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "dap": [
+       "x³+y³"
+      ],
+      "phim": [
+       "x",
+       "y",
+       "³"
+      ],
+      "nhieu": [
+       "²",
+       "⁴",
+       "z"
+      ],
+      "loi_giai": [
+       "(x − y)³ + (y − x)³ = (x − y)³ − (x − y)³ = 0",
+       "(x + y)³ − 3xy(x + y) = x³ + 3x²y + 3xy² + y³ − 3x²y − 3xy²",
+       "= x³ + y³",
+       "Biểu thức = 0 + x³ + y³ = x³ + y³"
+      ]
+     }
     },
     {
      "ma": "2.11",
@@ -2661,7 +3104,22 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "a chia 6 dư 5 nên a = 6n + 5 (n ∈ ℕ). Dùng lập phương của một tổng: a^3 = (6n + 5)^3 = (6n)^3 + 3·(6n)^2·5 + 3·6n·5^2 + 5^3 = 6n[(6n)^2 + 3·6n·5 + 3·5^2] + 125. Số hạng đầu chia hết cho 6, còn 125 chia 6 dư 5 nên a^3 chia 6 dư 5.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 5,
+      "buoc": [
+       "a chia 6 dư 5 nên a = 6n + 5 (n ∈ ℕ)",
+       "Ta có a³ = (6n + 5)³",
+       "= (6n)³ + 3 · (6n)² · 5 + 3 · 6n · 5² + 5³",
+       "= 6n[(6n)² + 3 · 6n · 5 + 3 · 5²] + 125",
+       "Vì 6n[(6n)² + 3 · 6n · 5 + 3 · 5²] chia hết cho 6 và 125 chia 6 dư 5 nên a³ chia 6 dư 5"
+      ],
+      "nhieu": [
+       "= (6n)³ + 5³",
+       "= (6n)³ + 3 · (6n)² · 5 + 3 · 6n · 5 + 5³"
+      ]
+     }
     },
     {
      "ma": "2.12",
@@ -2670,7 +3128,31 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "12x^2 + 24x + 28 (cm^3)",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "dap": [
+       "12x²+24x+28"
+      ],
+      "phim": [
+       "x",
+       "²"
+      ],
+      "nhieu": [
+       "³",
+       "y"
+      ],
+      "loi_giai": [
+       "Thể tích phần còn lại, tính bằng cm³: V = (x + 3)³ − (x − 1)³",
+       "= (x³ + 9x² + 27x + 27) − (x³ − 3x² + 3x − 1)",
+       "= x³ + 9x² + 27x + 27 − x³ + 3x² − 3x + 1",
+       "= 12x² + 24x + 28"
+      ]
+     },
+     "hinh": [
+      "sbttoan8t1/H.2.3.webp"
+     ]
     }
    ]
   },
@@ -2685,7 +3167,26 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "8x^3 + 1",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "dap": [
+       "8x³+1"
+      ],
+      "phim": [
+       "x",
+       "³"
+      ],
+      "nhieu": [
+       "²",
+       "y"
+      ],
+      "loi_giai": [
+       "(2x + 1)(4x² − 2x + 1) = (2x + 1)[(2x)² − 2x · 1 + 1²]",
+       "= (2x)³ + 1³ = 8x³ + 1"
+      ]
+     }
     },
     {
      "ma": "2.13b",
@@ -2694,7 +3195,26 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "8x^3 − 1",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "dap": [
+       "8x³−1"
+      ],
+      "phim": [
+       "x",
+       "³"
+      ],
+      "nhieu": [
+       "²",
+       "y"
+      ],
+      "loi_giai": [
+       "(2x − 1)(4x² + 2x + 1) = (2x − 1)[(2x)² + 2x · 1 + 1²]",
+       "= (2x)³ − 1³ = 8x³ − 1"
+      ]
+     }
     },
     {
      "ma": "2.14",
@@ -2703,7 +3223,51 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "a) dấu ? là 5x: x^3 + 125 = (x + 5)(x^2 − 5x + 25); b) hai dấu ? lần lượt là 2x và 4x^2: 8x^3 − 27y^3 = (2x − 3y)(4x^2 + 6xy + 9y^2)",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "hoi": "Thay dấu ? bằng các biểu thức thích hợp.",
+      "dong": [
+       {
+        "chu": "x³ + 125 = (x + 5)(x² − {0} + 25)",
+        "o": [
+         {
+          "dung": [
+           "5x"
+          ],
+          "sai": [
+           "10x",
+           "5"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "8x³ − 27y³ = ({0} − 3y)({1} + 6xy + 9y²)",
+        "o": [
+         {
+          "dung": [
+           "2x"
+          ],
+          "sai": [
+           "8x",
+           "4x"
+          ]
+         },
+         {
+          "dung": [
+           "4x²"
+          ],
+          "sai": [
+           "2x²",
+           "8x²"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "2.15a",
@@ -2712,7 +3276,21 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "a^3 + b^3 = 28",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "dap": [
+       "28"
+      ],
+      "phim": [],
+      "nhieu": [],
+      "loi_giai": [
+       "a³ + b³ = (a + b)³ − 3ab(a + b)",
+       "Với a + b = 4 và ab = 3 thì a³ + b³ = 4³ − 3 · 3 · 4",
+       "= 64 − 36 = 28"
+      ]
+     }
     },
     {
      "ma": "2.15b",
@@ -2721,7 +3299,21 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "a^3 − b^3 = 124",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "dap": [
+       "124"
+      ],
+      "phim": [],
+      "nhieu": [],
+      "loi_giai": [
+       "a³ − b³ = (a − b)³ + 3ab(a − b)",
+       "Với a − b = 4 và ab = 5 thì a³ − b³ = 4³ + 3 · 5 · 4",
+       "= 64 + 60 = 124"
+      ]
+     }
     },
     {
      "ma": "2.16a",
@@ -2730,7 +3322,31 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Dùng tổng và hiệu hai lập phương: (2x + 3)(4x^2 − 6x + 9) = 8x^3 + 27; (2x − 3)(4x^2 + 6x + 9) = 8x^3 − 27. Biểu thức bằng (8x^3 + 27) − (8x^3 − 27) = 54, không phụ thuộc vào x.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 5,
+      "buoc": [
+       "(2x + 3)(4x² − 6x + 9) = (2x)³ + 3³ = 8x³ + 27",
+       "(2x − 3)(4x² + 6x + 9) = (2x)³ − 3³ = 8x³ − 27",
+       "Biểu thức = (8x³ + 27) − (8x³ − 27)",
+       "= 8x³ + 27 − 8x³ + 27 = 54",
+       "Vậy giá trị của biểu thức luôn bằng 54, không phụ thuộc vào giá trị của biến x"
+      ],
+      "nhieu": [
+       "(2x + 3)(4x² − 6x + 9) = (2x)³ + 3³ = 2x³ + 27",
+       "= 8x³ + 27 − 8x³ − 27 = 0"
+      ],
+      "thu_tu_khac": [
+       [
+        1,
+        0,
+        2,
+        3,
+        4
+       ]
+      ]
+     }
     },
     {
      "ma": "2.16b",
@@ -2739,7 +3355,31 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Dùng tổng và hiệu hai lập phương: (2x − 1)(4x^2 + 2x + 1) = 8x^3 − 1; 8(x + 2)(x^2 − 2x + 4) = 8(x^3 + 8) = 8x^3 + 64. Biểu thức bằng 8x^3 − 1 − 8x^3 − 64 = −65, không phụ thuộc vào x.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 5,
+      "buoc": [
+       "(2x − 1)(4x² + 2x + 1) = (2x)³ − 1³ = 8x³ − 1",
+       "8(x + 2)(x² − 2x + 4) = 8(x³ + 2³) = 8x³ + 64",
+       "Biểu thức = 8x³ − 1 − (8x³ + 64)",
+       "= 8x³ − 1 − 8x³ − 64 = −65",
+       "Vậy giá trị của biểu thức luôn bằng −65, không phụ thuộc vào giá trị của biến x"
+      ],
+      "nhieu": [
+       "8(x + 2)(x² − 2x + 4) = 8(x³ + 2³) = 8x³ + 8",
+       "= 8x³ − 1 − 8x³ + 64 = 63"
+      ],
+      "thu_tu_khac": [
+       [
+        1,
+        0,
+        2,
+        3,
+        4
+       ]
+      ]
+     }
     }
    ]
   },
@@ -2754,7 +3394,27 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "(x − y)(x + y + 8)",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "dap": [
+       "(x−y)(x+y+8)"
+      ],
+      "phim": [
+       "x",
+       "y"
+      ],
+      "nhieu": [
+       "²",
+       "z"
+      ],
+      "loi_giai": [
+       "x² − y² + 8x − 8y = (x² − y²) + (8x − 8y)",
+       "= (x − y)(x + y) + 8(x − y)",
+       "= (x − y)(x + y + 8)"
+      ]
+     }
     },
     {
      "ma": "2.17b",
@@ -2763,7 +3423,27 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "(2x + y)(2x + y − 2)",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "dap": [
+       "(2x+y)(2x+y−2)"
+      ],
+      "phim": [
+       "x",
+       "y"
+      ],
+      "nhieu": [
+       "²",
+       "z"
+      ],
+      "loi_giai": [
+       "4x² + 4xy + y² − 4x − 2y = (4x² + 4xy + y²) − (4x + 2y)",
+       "= (2x + y)² − 2(2x + y)",
+       "= (2x + y)(2x + y − 2)"
+      ]
+     }
     },
     {
      "ma": "2.17c",
@@ -2772,7 +3452,29 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "(x + y)(x^2 − xy + y^2 + 4)",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "dap": [
+       "(x+y)(x²−xy+y²+4)"
+      ],
+      "phim": [
+       "x",
+       "y",
+       "²"
+      ],
+      "nhieu": [
+       "³",
+       "⁴",
+       "z"
+      ],
+      "loi_giai": [
+       "x³ + y³ + 4x + 4y = (x³ + y³) + (4x + 4y)",
+       "= (x + y)(x² − xy + y²) + 4(x + y)",
+       "= (x + y)(x² − xy + y² + 4)"
+      ]
+     }
     },
     {
      "ma": "2.17d",
@@ -2781,7 +3483,30 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "(x − y)[(x − y)^2 + x + y]",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "dap": [
+       "(x−y)((x−y)²+x+y)",
+       "(x−y)(x²−2xy+y²+x+y)"
+      ],
+      "phim": [
+       "x",
+       "y",
+       "²"
+      ],
+      "nhieu": [
+       "³",
+       "⁴",
+       "z"
+      ],
+      "loi_giai": [
+       "x³ − 3x²y + 3xy² − y³ + x² − y² = (x³ − 3x²y + 3xy² − y³) + (x² − y²)",
+       "= (x − y)³ + (x − y)(x + y)",
+       "= (x − y)[(x − y)² + x + y]"
+      ]
+     }
     },
     {
      "ma": "2.18a",
@@ -2790,7 +3515,26 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "(x + 2)(x + 1)",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "dap": [
+       "(x+2)(x+1)"
+      ],
+      "phim": [
+       "x"
+      ],
+      "nhieu": [
+       "²",
+       "y"
+      ],
+      "loi_giai": [
+       "x² + 3x + 2 = x² + x + 2x + 2",
+       "= x(x + 1) + 2(x + 1)",
+       "= (x + 2)(x + 1)"
+      ]
+     }
     },
     {
      "ma": "2.18b",
@@ -2799,7 +3543,26 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "(x − 6)(x − 1)",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "dap": [
+       "(x−6)(x−1)"
+      ],
+      "phim": [
+       "x"
+      ],
+      "nhieu": [
+       "²",
+       "y"
+      ],
+      "loi_giai": [
+       "x² − 7x + 6 = x² − x − 6x + 6",
+       "= x(x − 1) − 6(x − 1)",
+       "= (x − 6)(x − 1)"
+      ]
+     }
     }
    ]
   },
@@ -2814,7 +3577,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "D",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Trong các đẳng thức sau, cái nào là hằng đẳng thức?",
+      "cac": [
+       "a(a + 1) = a + 1",
+       "a² − 1 = a",
+       "(a + b)(a − b) = a² + b²",
+       "(a + 1)(a + 2) = a² + 3a + 2"
+      ],
+      "dap": "D"
+     }
     },
     {
      "ma": "Trắc nghiệm 2 (tr.29)",
@@ -2823,7 +3598,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "C",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Đa thức x³ − 8 được phân tích thành tích của hai đa thức",
+      "cac": [
+       "x − 2 và x² − 2x − 4",
+       "x − 2 và x² + 2x − 4",
+       "x − 2 và x² + 2x + 4",
+       "x − 2 và x² − 2x + 4"
+      ],
+      "dap": "C"
+     }
     },
     {
      "ma": "Trắc nghiệm 3 (tr.29)",
@@ -2832,7 +3619,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "B",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Biểu thức x² + x + 1/4 viết được dưới dạng bình phương của một tổng là",
+      "cac": [
+       "[x + (−1/2)]²",
+       "(x + 1/2)²",
+       "(2x + 1/2)²",
+       "((1/2)x + 1)²"
+      ],
+      "dap": "B"
+     }
     },
     {
      "ma": "Trắc nghiệm 4 (tr.29)",
@@ -2841,7 +3640,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "D",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Khẳng định nào sau đây là đúng?",
+      "cac": [
+       "(A − B)(A² − AB + B²) = A³ − B³",
+       "(A + B)(A² + AB + B²) = A³ + B³",
+       "(A + B)(A² − AB + B²) = A³ − B³",
+       "(A + B)(A² − AB + B²) = A³ + B³"
+      ],
+      "dap": "D"
+     }
     },
     {
      "ma": "Trắc nghiệm 5 (tr.29)",
@@ -2850,7 +3661,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "C",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Rút gọn biểu thức (x + 1)(x − 1) − (x + 2)(x − 2) ta được",
+      "cac": [
+       "5",
+       "4",
+       "3",
+       "−3"
+      ],
+      "dap": "C"
+     }
     },
     {
      "ma": "2.19a",
@@ -2859,7 +3682,21 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "1 000 000",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "dap": [
+       "1000000"
+      ],
+      "phim": [],
+      "nhieu": [],
+      "loi_giai": [
+       "x² + 12x + 36 = x² + 2 · x · 6 + 6² = (x + 6)²",
+       "Tại x = −1 006 thì (x + 6)² = (−1 006 + 6)² = (−1 000)²",
+       "= 1 000 000"
+      ]
+     }
     },
     {
      "ma": "2.19b",
@@ -2868,7 +3705,21 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "1 000 000",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "dap": [
+       "1000000"
+      ],
+      "phim": [],
+      "nhieu": [],
+      "loi_giai": [
+       "x³ − 9x² + 27x − 27 = x³ − 3 · x² · 3 + 3 · x · 3² − 3³ = (x − 3)³",
+       "Tại x = 103 thì (x − 3)³ = (103 − 3)³ = 100³",
+       "= 1 000 000"
+      ]
+     }
     },
     {
      "ma": "2.20a",
@@ -2877,7 +3728,31 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Dùng lập phương của tổng, hiệu: (x + 1)^3 − (x − 1)^3 = (x^3 + 3x^2 + 3x + 1) − (x^3 − 3x^2 + 3x − 1) = 6x^2 + 2. Biểu thức bằng 6x^2 + 2 − 6x^2 = 2, không phụ thuộc vào x.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 5,
+      "buoc": [
+       "(x + 1)³ = x³ + 3x² + 3x + 1",
+       "(x − 1)³ = x³ − 3x² + 3x − 1",
+       "Biểu thức = x³ + 3x² + 3x + 1 − (x³ − 3x² + 3x − 1) − 6x²",
+       "= x³ + 3x² + 3x + 1 − x³ + 3x² − 3x + 1 − 6x² = 2",
+       "Vậy giá trị của biểu thức luôn bằng 2, không phụ thuộc vào giá trị của biến x"
+      ],
+      "nhieu": [
+       "(x − 1)³ = x³ − 3x² − 3x − 1",
+       "= x³ + 3x² + 3x + 1 − x³ − 3x² + 3x − 1 − 6x² = 6x − 6x²"
+      ],
+      "thu_tu_khac": [
+       [
+        1,
+        0,
+        2,
+        3,
+        4
+       ]
+      ]
+     }
     },
     {
      "ma": "2.20b",
@@ -2886,7 +3761,22 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Biểu thức có dạng A^2 + B^2 − 2AB = (A − B)^2 với A = 2x − 3, B = 2x + 3, nên bằng [(2x − 3) − (2x + 3)]^2 = (−6)^2 = 36, không phụ thuộc vào x.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 5,
+      "buoc": [
+       "Biểu thức = (2x − 3)² − 2(2x − 3)(2x + 3) + (2x + 3)²",
+       "= [(2x − 3) − (2x + 3)]²",
+       "= (2x − 3 − 2x − 3)²",
+       "= (−6)² = 36",
+       "Vậy giá trị của biểu thức luôn bằng 36, không phụ thuộc vào giá trị của biến x"
+      ],
+      "nhieu": [
+       "= [(2x − 3) + (2x + 3)]²",
+       "= (2x − 3 − 2x + 3)²"
+      ]
+     }
     },
     {
      "ma": "2.20c",
@@ -2895,7 +3785,31 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Dùng hiệu và tổng hai lập phương: (x − 3)(x^2 + 3x + 9) = x^3 − 27; (x + 2)(x^2 − 2x + 4) = x^3 + 8. Biểu thức bằng x^3 − 27 − x^3 − 8 = −35, không phụ thuộc vào x.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 5,
+      "buoc": [
+       "(x − 3)(x² + 3x + 9) = x³ − 3³ = x³ − 27",
+       "(x + 2)(x² − 2x + 4) = x³ + 2³ = x³ + 8",
+       "Biểu thức = x³ − 27 − (x³ + 8)",
+       "= x³ − 27 − x³ − 8 = −35",
+       "Vậy giá trị của biểu thức luôn bằng −35, không phụ thuộc vào giá trị của biến x"
+      ],
+      "nhieu": [
+       "(x − 3)(x² + 3x + 9) = x³ − 3³ = x³ − 9",
+       "= x³ − 27 − x³ + 8 = −19"
+      ],
+      "thu_tu_khac": [
+       [
+        1,
+        0,
+        2,
+        3,
+        4
+       ]
+      ]
+     }
     },
     {
      "ma": "2.21a",
@@ -2904,7 +3818,43 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "A < B (vì A = (2 022 − 1)(2 022 + 1) = 2 022^2 − 1 < 2 022^2 = B)",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "Không cần tính, hãy so sánh số A = 2 021 · 2 023 với số B = 2 022².",
+      "dong": [
+       {
+        "chu": "A = 2 021 · 2 023 = {0}",
+        "o": [
+         {
+          "dung": [
+           "2 022² − 1"
+          ],
+          "sai": [
+           "2 022² + 1",
+           "2 022²",
+           "2 022² − 2"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Vậy A {0} B",
+        "o": [
+         {
+          "dung": [
+           "<"
+          ],
+          "sai": [
+           ">",
+           "="
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "2.21b",
@@ -2913,7 +3863,43 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "A < B (vì A = (2 023 − 2)(2 023 + 2) = 2 023^2 − 4 < 2 023^2 = B)",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "Không cần tính, hãy so sánh số A = 2 021 · 2 025 với số B = 2 023².",
+      "dong": [
+       {
+        "chu": "A = 2 021 · 2 025 = {0}",
+        "o": [
+         {
+          "dung": [
+           "2 023² − 4"
+          ],
+          "sai": [
+           "2 023² − 2",
+           "2 023² + 4",
+           "2 023² − 1"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Vậy A {0} B",
+        "o": [
+         {
+          "dung": [
+           "<"
+          ],
+          "sai": [
+           ">",
+           "="
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "2.22a",
@@ -2922,7 +3908,29 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "(x − y)(x^2 + xy + y^2 + 2)",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "dap": [
+       "(x−y)(x²+xy+y²+2)"
+      ],
+      "phim": [
+       "x",
+       "y",
+       "²"
+      ],
+      "nhieu": [
+       "³",
+       "⁴",
+       "z"
+      ],
+      "loi_giai": [
+       "x³ − y³ + 2x − 2y = (x³ − y³) + (2x − 2y)",
+       "= (x − y)(x² + xy + y²) + 2(x − y)",
+       "= (x − y)(x² + xy + y² + 2)"
+      ]
+     }
     },
     {
      "ma": "2.22b",
@@ -2931,7 +3939,30 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "(x + 4y − 2z)(x + 4y + 2z)",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "dap": [
+       "(x+4y−2z)(x+4y+2z)"
+      ],
+      "phim": [
+       "x",
+       "y",
+       "z"
+      ],
+      "nhieu": [
+       "²",
+       "³",
+       "⁴"
+      ],
+      "loi_giai": [
+       "x² + 8xy + 16y² − 4z² = (x² + 8xy + 16y²) − 4z²",
+       "= [x² + 2 · x · 4y + (4y)²] − (2z)²",
+       "= (x + 4y)² − (2z)²",
+       "= (x + 4y − 2z)(x + 4y + 2z)"
+      ]
+     }
     },
     {
      "ma": "2.23a",
@@ -2940,7 +3971,26 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "(x − 1)(x − 2)",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "dap": [
+       "(x−1)(x−2)"
+      ],
+      "phim": [
+       "x"
+      ],
+      "nhieu": [
+       "²",
+       "y"
+      ],
+      "loi_giai": [
+       "x² − 3x + 2 = x² − x − 2x + 2",
+       "= x(x − 1) − 2(x − 1)",
+       "= (x − 1)(x − 2)"
+      ]
+     }
     },
     {
      "ma": "2.23b",
@@ -2949,7 +3999,26 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "(x + 1)(x + 6)",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "dap": [
+       "(x+1)(x+6)"
+      ],
+      "phim": [
+       "x"
+      ],
+      "nhieu": [
+       "²",
+       "y"
+      ],
+      "loi_giai": [
+       "x² + 7x + 6 = x² + x + 6x + 6",
+       "= x(x + 1) + 6(x + 1)",
+       "= (x + 1)(x + 6)"
+      ]
+     }
     },
     {
      "ma": "2.24a",
@@ -2958,7 +4027,36 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "S = π(R^2 − r^2) (cm^2)",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "dap": [
+       "π(R²−r²)",
+       "πR²−πr²",
+       "(R²−r²)π",
+       "π(R−r)(R+r)",
+       "π(R+r)(R−r)"
+      ],
+      "phim": [
+       "π",
+       "R",
+       "r",
+       "²"
+      ],
+      "nhieu": [
+       "³",
+       "d",
+       "x"
+      ],
+      "loi_giai": [
+       "Diện tích hình tròn bán kính R là πR², diện tích hình tròn bán kính r là πr²",
+       "Diện tích phần còn lại: S = πR² − πr² = π(R² − r²)"
+      ]
+     },
+     "hinh": [
+      "sbttoan8t1/H.2.4.webp"
+     ]
     },
     {
      "ma": "2.24b",
@@ -2967,7 +4065,31 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "30π cm^2",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "dap": [
+       "30π",
+       "30πcm²"
+      ],
+      "phim": [
+       "π",
+       "cm²"
+      ],
+      "nhieu": [
+       "cm",
+       "cm³",
+       "²"
+      ],
+      "loi_giai": [
+       "S = π(R² − r²) = π(R − r)(R + r)",
+       "Với R + r = 10 và R − r = 3 thì S = π · 3 · 10 = 30π (cm²)"
+      ]
+     },
+     "hinh": [
+      "sbttoan8t1/H.2.4.webp"
+     ]
     }
    ]
   },
@@ -2982,7 +4104,29 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Tổng bốn góc của tứ giác bằng 360°. Nếu cả bốn góc đều nhọn (bé hơn 90°) thì tổng của chúng bé hơn 360°, vô lí. Nếu cả bốn góc đều tù (lớn hơn 90°) thì tổng lớn hơn 360°, vô lí.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 4,
+      "buoc": [
+       "Tổng bốn góc của một tứ giác bằng 360°",
+       "Nếu cả bốn góc đều nhọn thì mỗi góc bé hơn 90°, nên tổng bốn góc bé hơn 4 · 90° = 360°, vô lí",
+       "Nếu cả bốn góc đều tù thì mỗi góc lớn hơn 90°, nên tổng bốn góc lớn hơn 4 · 90° = 360°, vô lí",
+       "Vậy bốn góc của một tứ giác không thể đều là góc nhọn, không thể đều là góc tù"
+      ],
+      "nhieu": [
+       "Tổng bốn góc của một tứ giác bằng 180°",
+       "Nếu cả bốn góc đều tù thì mỗi góc lớn hơn 90°, nên tổng bốn góc bé hơn 4 · 180° = 720°, vô lí"
+      ],
+      "thu_tu_khac": [
+       [
+        0,
+        2,
+        1,
+        3
+       ]
+      ]
+     }
     },
     {
      "ma": "3.2",
@@ -2991,7 +4135,31 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Với tứ giác ABCD, dùng bất đẳng thức tam giác trong tam giác ABD và tam giác BCD: AB < AD + DB < AD + (BC + CD). Làm tương tự với mỗi cạnh còn lại.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 5,
+      "buoc": [
+       "Xét tứ giác ABCD, ta chứng minh chẳng hạn AB bé hơn BC + CD + DA",
+       "Trong tam giác ABD: AD + DB > AB (bất đẳng thức tam giác)",
+       "Trong tam giác BCD: BC + CD > DB",
+       "Suy ra AD + BC + CD > AD + DB > AB",
+       "Làm tương tự với mỗi cạnh BC, CD, DA còn lại"
+      ],
+      "nhieu": [
+       "Trong tam giác ABD: AB > AD + DB (bất đẳng thức tam giác)",
+       "Suy ra AD + BC + CD = AD + DB > AB"
+      ],
+      "thu_tu_khac": [
+       [
+        0,
+        2,
+        1,
+        3,
+        4
+       ]
+      ]
+     }
     },
     {
      "ma": "3.3a",
@@ -3000,7 +4168,31 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Gọi P là chu vi tứ giác ABCD. Có AC < AB + BC và AC < CD + DA nên 2AC < P. Tương tự 2BD < P. Vậy 2(AC + BD) < 2P, do đó AC + BD < P.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 5,
+      "buoc": [
+       "Gọi P là chu vi của tứ giác ABCD: P = AB + BC + CD + DA",
+       "Trong tam giác ABC: AB + BC > AC; trong tam giác ACD: CD + DA > AC",
+       "Cộng hai bất đẳng thức: P = AB + BC + CD + DA > 2AC",
+       "Trong hai tam giác ABD và BCD: AB + DA > BD, BC + CD > BD, cộng lại được P > 2BD",
+       "Vậy 2P > 2(AC + BD), do đó P > AC + BD: tổng hai đường chéo bé hơn chu vi"
+      ],
+      "nhieu": [
+       "Trong tam giác ABC: AC > AB + BC; trong tam giác ACD: AC > CD + DA",
+       "Vậy P > 2(AC + BD), do đó tổng hai đường chéo bé hơn nửa chu vi"
+      ],
+      "thu_tu_khac": [
+       [
+        0,
+        3,
+        1,
+        2,
+        4
+       ]
+      ]
+     }
     },
     {
      "ma": "3.3b",
@@ -3009,7 +4201,22 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Gọi O là giao điểm của AC và BD. Có OA + OB > AB, OC + OD > CD nên AC + BD = OA + OC + OB + OD > AB + CD. Tương tự AC + BD > AD + BC. Cộng lại: 2(AC + BD) > AB + BC + CD + DA = P, tức AC + BD > P/2.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 5,
+      "buoc": [
+       "Gọi O là giao điểm của hai đường chéo AC và BD",
+       "Trong tam giác OAB: OA + OB > AB; trong tam giác OCD: OC + OD > CD",
+       "Nên AC + BD = (OA + OC) + (OB + OD) > AB + CD",
+       "Tương tự, từ hai tam giác OAD và OBC: AC + BD > AD + BC",
+       "Cộng lại: 2(AC + BD) > AB + BC + CD + DA, tức AC + BD lớn hơn nửa chu vi của tứ giác"
+      ],
+      "nhieu": [
+       "Trong tam giác OAB: AB > OA + OB; trong tam giác OCD: CD > OC + OD",
+       "Cộng lại: AC + BD > AB + BC + CD + DA, tức AC + BD lớn hơn chu vi của tứ giác"
+      ]
+     }
     },
     {
      "ma": "3.4",
@@ -3018,7 +4225,33 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "M là giao điểm O của hai đường chéo AC và BD. Với hai điểm P, Q thì MP + MQ ≥ PQ, dấu bằng chỉ khi M thuộc đoạn PQ. Do đó MA + MC ≥ AC, MB + MD ≥ BD nên MA + MB + MC + MD ≥ AC + BD; dấu bằng chỉ khi M vừa thuộc đoạn AC vừa thuộc đoạn BD, tức M trùng O.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 6,
+      "buoc": [
+       "Với hai điểm P, Q và điểm M bất kì: MP + MQ ≥ PQ, dấu bằng chỉ khi M thuộc đoạn thẳng PQ",
+       "MA + MC ≥ AC, dấu bằng chỉ khi M thuộc đoạn AC",
+       "MB + MD ≥ BD, dấu bằng chỉ khi M thuộc đoạn BD",
+       "Cộng lại: MA + MB + MC + MD ≥ AC + BD",
+       "Dấu bằng chỉ khi M vừa thuộc đoạn AC vừa thuộc đoạn BD",
+       "Vậy tổng khoảng cách bé nhất khi M là giao điểm O của hai đường chéo AC và BD"
+      ],
+      "nhieu": [
+       "MA + MC ≥ AC, dấu bằng chỉ khi M là trung điểm của AC",
+       "Vậy tổng khoảng cách bé nhất khi M cách đều bốn đỉnh A, B, C, D"
+      ],
+      "thu_tu_khac": [
+       [
+        0,
+        2,
+        1,
+        3,
+        4,
+        5
+       ]
+      ]
+     }
     },
     {
      "ma": "3.5",
@@ -3027,7 +4260,72 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "góc A = 70°; góc C = 70°",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "hoi": "Cho tứ giác ABCD với AB = BC, CD = DA, góc B = 100°, góc D = 120°. Tính góc A và góc C.",
+      "dong": [
+       {
+        "chu": "Tam giác BAC cân tại B nên góc BAC = góc BCA = {0}",
+        "o": [
+         {
+          "dung": [
+           "40°"
+          ],
+          "sai": [
+           "80°",
+           "50°"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Tam giác DAC cân tại D nên góc DAC = góc DCA = {0}",
+        "o": [
+         {
+          "dung": [
+           "30°"
+          ],
+          "sai": [
+           "60°",
+           "40°"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "góc A = góc BAC + góc DAC = {0}",
+        "o": [
+         {
+          "dung": [
+           "70°"
+          ],
+          "sai": [
+           "140°",
+           "80°",
+           "60°"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "góc C = góc BCA + góc DCA = {0}",
+        "o": [
+         {
+          "dung": [
+           "70°"
+          ],
+          "sai": [
+           "140°",
+           "80°",
+           "60°"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "3.6a",
@@ -3036,7 +4334,27 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "360°",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "dap": [
+       "360°",
+       "360"
+      ],
+      "phim": [
+       "°"
+      ],
+      "nhieu": [
+       "cm",
+       "cm²"
+      ],
+      "loi_giai": [
+       "Tổng bốn góc ngoài = (180° − góc A) + (180° − góc B) + (180° − góc C) + (180° − góc D)",
+       "= 4 · 180° − (góc A + góc B + góc C + góc D)",
+       "= 720° − 360° = 360°"
+      ]
+     }
     },
     {
      "ma": "3.6b",
@@ -3045,7 +4363,27 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "360°",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "dap": [
+       "360°",
+       "360"
+      ],
+      "phim": [
+       "°"
+      ],
+      "nhieu": [
+       "cm",
+       "cm²"
+      ],
+      "loi_giai": [
+       "Tổng ba góc ngoài = (180° − góc A) + (180° − góc B) + (180° − góc C)",
+       "= 3 · 180° − (góc A + góc B + góc C)",
+       "= 540° − 180° = 360°"
+      ]
+     }
     }
    ]
   },
@@ -3060,7 +4398,70 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "góc A = 120°; góc B = 110°; góc C = 70°; góc D = 60°",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "hoi": "Tính các góc của hình thang ABCD (AB, CD là hai đáy) biết góc A = 2 góc D, góc B = góc C + 40°.",
+      "dong": [
+       {
+        "chu": "góc A = {0}",
+        "o": [
+         {
+          "dung": [
+           "120°"
+          ],
+          "sai": [
+           "60°",
+           "90°"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "góc B = {0}",
+        "o": [
+         {
+          "dung": [
+           "110°"
+          ],
+          "sai": [
+           "70°",
+           "140°"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "góc C = {0}",
+        "o": [
+         {
+          "dung": [
+           "70°"
+          ],
+          "sai": [
+           "110°",
+           "40°"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "góc D = {0}",
+        "o": [
+         {
+          "dung": [
+           "60°"
+          ],
+          "sai": [
+           "120°",
+           "90°"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "3.8",
@@ -3069,7 +4470,35 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Hai góc kề một cạnh bên của hình thang bù nhau (tổng 180°) nên trong hai góc đó có không quá một góc tù. Hình thang có hai cạnh bên nên có nhiều nhất hai góc tù.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 4,
+      "buoc": [
+       "Hai góc kề một cạnh bên của hình thang là hai góc trong cùng phía nên bù nhau (tổng bằng 180°)",
+       "Hai góc có tổng 180° thì không thể cùng là góc tù, nên mỗi cạnh bên kề nhiều nhất một góc tù",
+       "Mỗi góc của hình thang đều kề với một trong hai cạnh bên",
+       "Vậy hình thang có nhiều nhất hai góc tù"
+      ],
+      "nhieu": [
+       "Hai góc kề một đáy của hình thang là hai góc bù nhau (tổng bằng 180°)",
+       "Hai góc có tổng 180° thì có đúng một góc tù, nên mỗi cạnh bên kề đúng một góc tù"
+      ],
+      "thu_tu_khac": [
+       [
+        2,
+        0,
+        1,
+        3
+       ],
+       [
+        0,
+        2,
+        1,
+        3
+       ]
+      ]
+     }
     },
     {
      "ma": "3.9",
@@ -3078,7 +4507,31 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Tam giác ABC vuông cân tại A nên góc ABC = 45°; tam giác BCD vuông cân tại B nên góc BCD = 45°. Hai góc này so le trong và bằng nhau nên AB // CD, ABDC là hình thang với hai đáy AB, CD. Cạnh bên AC vuông góc với đáy AB nên ABDC là hình thang vuông.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 5,
+      "buoc": [
+       "Tam giác ABC vuông cân tại A nên góc ABC = 45°",
+       "Tam giác BCD vuông cân tại B nên góc BCD = 45°",
+       "Hai góc ABC và BCD ở vị trí so le trong và bằng nhau nên AB // CD",
+       "Tứ giác ABDC có AB // CD nên là hình thang với hai đáy AB, CD",
+       "Cạnh bên AC vuông góc với đáy AB nên ABDC là hình thang vuông"
+      ],
+      "nhieu": [
+       "Hai góc ABC và BCD ở vị trí đồng vị và bằng nhau nên AB // CD",
+       "Cạnh bên BD vuông góc với đáy AB nên ABDC là hình thang vuông"
+      ],
+      "thu_tu_khac": [
+       [
+        1,
+        0,
+        2,
+        3,
+        4
+       ]
+      ]
+     }
     },
     {
      "ma": "3.10",
@@ -3087,7 +4540,45 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "ABCD là hình thang cân nên AD = BC, AC = BD, suy ra ΔABC = ΔBAD (c.c.c), góc BAC = góc ABD. Vậy tam giác OAB cân tại O, OA = OB; từ AC = BD suy ra OC = OD. Tam giác SAB, SCD cân tại S nên SA = SB, SC = SD. Do đó S và O cùng nằm trên đường trung trực của AB và của CD, nên SO đi qua trung điểm của AB và của CD.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 5,
+      "buoc": [
+       "ABCD là hình thang cân nên AD = BC, AC = BD",
+       "ΔABC = ΔBAD (c.c.c) nên góc BAC = góc ABD, tam giác OAB cân tại O: OA = OB",
+       "Mà AC = BD nên OC = AC − OA = BD − OB = OD",
+       "Hai góc kề một đáy của hình thang cân bằng nhau nên các tam giác SAB, SCD cân tại S: SA = SB, SC = SD",
+       "Vậy S và O cùng nằm trên đường trung trực của AB và trên đường trung trực của CD, nên đường thẳng SO đi qua trung điểm của AB và trung điểm của CD"
+      ],
+      "nhieu": [
+       "ΔABC = ΔBAD (c.c.c) nên góc BAC = góc BAD, tam giác OAB cân tại O: OA = OB",
+       "Vậy S và O cùng nằm trên đường trung trực của AD và trên đường trung trực của BC, nên đường thẳng SO đi qua trung điểm của AB và trung điểm của CD"
+      ],
+      "thu_tu_khac": [
+       [
+        3,
+        0,
+        1,
+        2,
+        4
+       ],
+       [
+        0,
+        3,
+        1,
+        2,
+        4
+       ],
+       [
+        0,
+        1,
+        3,
+        2,
+        4
+       ]
+      ]
+     }
     },
     {
      "ma": "3.11",
@@ -3096,7 +4587,28 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Chu vi = 10 cm (AB = BC = AD = 2 cm, CD = 4 cm)",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "dap": [
+       "10",
+       "10cm"
+      ],
+      "phim": [
+       "cm"
+      ],
+      "nhieu": [
+       "cm²",
+       "°"
+      ],
+      "loi_giai": [
+       "AB // CD nên góc BAC = góc ACD; CA là tia phân giác của góc C nên góc ACD = góc ACB. Vậy tam giác ABC cân tại B: AB = BC = AD = 2 cm",
+       "Đặt góc ACD = α thì góc ADC = góc BCD = 2α; tam giác ADC vuông tại A nên 2α + α = 90°, α = 30°, góc ADC = 60°",
+       "Lấy M trên DC với DM = AD thì tam giác AMD đều, tam giác MAC cân tại M (hai góc đáy bằng 30°), nên DC = DM + MC = 2AD = 4 cm",
+       "Chu vi = AB + BC + CD + DA = 2 + 2 + 4 + 2 = 10 (cm)"
+      ]
+     }
     }
    ]
   },
@@ -3111,7 +4623,28 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "MNBA là hình bình hành nên AB // MN; MNCB là hình bình hành nên BC // MN. Qua B chỉ có một đường thẳng song song với MN nên A, B, C thẳng hàng.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 4,
+      "buoc": [
+       "MNBA là hình bình hành nên AB // MN",
+       "MNCB là hình bình hành nên BC // MN",
+       "Qua điểm B chỉ có một đường thẳng song song với MN",
+       "Nên hai đường thẳng AB và BC trùng nhau, tức A, B, C thẳng hàng"
+      ],
+      "nhieu": [
+       "Hai đường thẳng AB và BC cùng song song với MN nên AB // BC"
+      ],
+      "thu_tu_khac": [
+       [
+        1,
+        0,
+        2,
+        3
+       ]
+      ]
+     }
     },
     {
      "ma": "3.12b",
@@ -3120,7 +4653,28 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Từ hai hình bình hành có AB = MN và BC = MN nên AB = BC; mà A, B, C thẳng hàng (câu a) nên B là trung điểm của AC.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 4,
+      "buoc": [
+       "MNBA là hình bình hành nên AB = MN",
+       "MNCB là hình bình hành nên BC = MN",
+       "Suy ra AB = BC",
+       "Mà A, B, C thẳng hàng (câu a) nên B là trung điểm của AC"
+      ],
+      "nhieu": [
+       "MNCB là hình bình hành nên BC = NC"
+      ],
+      "thu_tu_khac": [
+       [
+        1,
+        0,
+        2,
+        3
+       ]
+      ]
+     }
     },
     {
      "ma": "3.12c",
@@ -3129,7 +4683,21 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Tam giác MAB cân tại M (khi đó góc MAB = góc MBA = góc NCB)",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 4,
+      "buoc": [
+       "MN // AB và A, B, C thẳng hàng (câu a) nên MN // AC, MNCA là hình thang với hai đáy MN và AC",
+       "MNCB là hình bình hành nên NC // MB, suy ra góc NCB = góc MBA (hai góc đồng vị)",
+       "Hình thang MNCA là hình thang cân khi góc MAC = góc NCA, tức là góc MAB = góc NCB = góc MBA",
+       "Vậy điều kiện là tam giác MAB cân tại M"
+      ],
+      "nhieu": [
+       "MNCB là hình bình hành nên NC // MB, suy ra góc NCB = góc MAB (hai góc đồng vị)",
+       "Vậy điều kiện là tam giác MAB cân tại A"
+      ]
+     }
     },
     {
      "ma": "3.12d",
@@ -3138,7 +4706,22 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Tam giác MAB vuông tại B (MB ⊥ AC)",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 5,
+      "buoc": [
+       "MNDC là hình bình hành nên DC // MN, mà AC // MN nên D thuộc đường thẳng AC; MNDA là hình thang với hai đáy MN và AD",
+       "ND // MC nên góc NDC = góc MCA (hai góc đồng vị)",
+       "Hình thang MNDA là hình thang cân khi góc NDA = góc MAD, tức là góc MCA = góc MAC: tam giác MAC cân tại M",
+       "B là trung điểm của AC (câu b) nên MB là đường trung tuyến của tam giác MAC; tam giác MAC cân tại M khi và chỉ khi MB ⊥ AC",
+       "Vậy điều kiện là tam giác MAB vuông tại B"
+      ],
+      "nhieu": [
+       "ND // MC nên góc NDC = góc MAC (hai góc đồng vị)",
+       "Vậy điều kiện là tam giác MAB vuông tại M"
+      ]
+     }
     },
     {
      "ma": "3.13",
@@ -3147,7 +4730,23 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Xét hình thang ABCD với hai đáy AB < CD. Kẻ qua B đường thẳng song song với AD cắt CD tại E thì ABED là hình bình hành nên DE = AB, BE = AD; E nằm giữa C và D nên EC = DC − AB. Trong tam giác BEC: BE + BC > EC, tức AD + BC > DC − AB.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 6,
+      "buoc": [
+       "Xét hình thang ABCD với hai đáy AB, CD, giả sử CD > AB",
+       "Kẻ qua B đường thẳng song song với AD, cắt CD tại E",
+       "ABED là hình bình hành nên DE = AB, BE = AD",
+       "Vì CD > AB = DE nên E nằm giữa C và D, EC = DC − DE = DC − AB",
+       "Trong tam giác BEC: BE + BC > EC",
+       "Tức là AD + BC > DC − AB"
+      ],
+      "nhieu": [
+       "ABED là hình bình hành nên DE = AD, BE = AB",
+       "Trong tam giác BEC: EC > BE + BC"
+      ]
+     }
     },
     {
      "ma": "3.14",
@@ -3156,7 +4755,60 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Các góc EAF, CDF, EBC đều bằng 240° − góc BAD. Hai cạnh kề các góc đó lần lượt bằng AB và AD (AE = DC = BE = AB, AF = DF = BC = AD) nên ΔAEF = ΔDCF = ΔBEC (c.g.c). Suy ra EF = CF = EC, tam giác CEF đều.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 5,
+      "buoc": [
+       "AE = BE = DC (cùng bằng AB), AF = DF = BC (cùng bằng AD)",
+       "góc EAF = 360° − 60° − 60° − góc BAD = 240° − góc BAD",
+       "góc CDF = góc EBC = (180° − góc BAD) + 60° = 240° − góc BAD",
+       "Nên ΔAEF = ΔDCF = ΔBEC (c.g.c)",
+       "Suy ra EF = CF = EC, tam giác CEF đều"
+      ],
+      "nhieu": [
+       "góc EAF = 360° − 60° − góc BAD = 300° − góc BAD",
+       "góc CDF = góc EBC = góc BAD + 60°",
+       "Nên ΔAEF = ΔDCF = ΔBEC (c.c.c)"
+      ],
+      "thu_tu_khac": [
+       [
+        0,
+        2,
+        1,
+        3,
+        4
+       ],
+       [
+        1,
+        0,
+        2,
+        3,
+        4
+       ],
+       [
+        1,
+        2,
+        0,
+        3,
+        4
+       ],
+       [
+        2,
+        0,
+        1,
+        3,
+        4
+       ],
+       [
+        2,
+        1,
+        0,
+        3,
+        4
+       ]
+      ]
+     }
     },
     {
      "ma": "3.15",
@@ -3165,7 +4817,29 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Xét tứ giác ABCD có hai góc kề mỗi cạnh bù nhau. Góc A và góc C cùng bù với góc B nên góc A = góc C; góc B và góc D cùng bù với góc A nên góc B = góc D. Tứ giác có các cặp góc đối bằng nhau nên là hình bình hành.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 4,
+      "buoc": [
+       "Xét tứ giác ABCD có hai góc kề mỗi cạnh là hai góc bù nhau",
+       "góc A và góc C cùng bù với góc B nên góc A = góc C",
+       "góc B và góc D cùng bù với góc A nên góc B = góc D",
+       "Tứ giác ABCD có các cặp góc đối bằng nhau nên là hình bình hành"
+      ],
+      "nhieu": [
+       "góc A và góc B cùng bù với góc C nên góc A = góc B",
+       "Tứ giác ABCD có các cặp góc đối bằng nhau nên là hình thang cân"
+      ],
+      "thu_tu_khac": [
+       [
+        0,
+        2,
+        1,
+        3
+       ]
+      ]
+     }
     },
     {
      "ma": "3.16",
@@ -3174,7 +4848,43 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Hình bình hành. Tứ giác AD'A'D có hai đường chéo AA' và DD' cắt nhau tại K là trung điểm của mỗi đường nên là hình bình hành.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "Cho hình thang ABCD với hai đáy AB, CD. Gọi K là trung điểm của BC. Lấy điểm A', D' sao cho K là trung điểm của AA' và DD'. Hỏi tứ giác AD'A'D là hình gì? Vì sao?",
+      "dong": [
+       {
+        "chu": "Tứ giác AD'A'D là {0}",
+        "o": [
+         {
+          "dung": [
+           "hình bình hành"
+          ],
+          "sai": [
+           "hình thang cân",
+           "hình chữ nhật",
+           "hình thoi"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "vì {0}",
+        "o": [
+         {
+          "dung": [
+           "hai đường chéo AA' và DD' cắt nhau tại trung điểm K của mỗi đường"
+          ],
+          "sai": [
+           "hai đường chéo AA' và DD' bằng nhau và cắt nhau tại K",
+           "hai đường chéo AA' và DD' vuông góc với nhau tại K"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "3.17",
@@ -3183,7 +4893,23 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Gọi K là trung điểm của AB; cần tìm D thuộc Ox, E thuộc Oy sao cho K là trung điểm của DE. Lấy M sao cho K là trung điểm của OM. Qua M kẻ đường thẳng song song với Oy cắt Ox tại D và đường thẳng song song với Ox cắt Oy tại E. ODME là hình bình hành nên K là trung điểm của DE, do đó ADBE là hình bình hành.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 6,
+      "buoc": [
+       "Gọi K là trung điểm của AB; ADBE là hình bình hành khi K cũng là trung điểm của DE",
+       "Lấy điểm M sao cho K là trung điểm của OM",
+       "Qua M kẻ đường thẳng song song với Oy, cắt Ox tại D; kẻ đường thẳng song song với Ox, cắt Oy tại E",
+       "ODME có hai cặp cạnh đối song song nên là hình bình hành",
+       "Hai đường chéo OM và DE của hình bình hành ODME cắt nhau tại trung điểm của mỗi đường, nên K là trung điểm của DE",
+       "Tứ giác ADBE có hai đường chéo AB, DE cắt nhau tại trung điểm K của mỗi đường nên là hình bình hành"
+      ],
+      "nhieu": [
+       "Lấy điểm M là trung điểm của OK",
+       "Hai đường chéo OM và DE của hình bình hành ODME bằng nhau, nên K là trung điểm của DE"
+      ]
+     }
     },
     {
      "ma": "3.18",
@@ -3192,7 +4918,89 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "ΔAEH = ΔCFG (c.g.c) nên EH = FG; ΔBEG = ΔDFH (c.g.c) nên EG = FH. Tứ giác EGFH có các cạnh đối bằng nhau nên là hình bình hành. Gọi O là giao điểm của AC và BD thì O là trung điểm của BD. BEDF là hình bình hành (EB = DF, EB // DF) nên EF đi qua O; tương tự GH đi qua O. Vậy AC, BD, EF, GH đồng quy tại O.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 7,
+      "buoc": [
+       "AD = BC, DH = BG nên AH = CG; ΔAEH = ΔCFG (c.g.c: AE = CF, góc A = góc C, AH = CG) nên EH = FG",
+       "AB = CD, AE = CF nên BE = DF; ΔBEG = ΔDFH (c.g.c: BE = DF, góc B = góc D, BG = DH) nên EG = FH",
+       "Tứ giác EGFH có các cặp cạnh đối bằng nhau nên là hình bình hành",
+       "Gọi O là giao điểm của AC và BD thì O là trung điểm của BD",
+       "BEDF có EB // DF và EB = DF nên là hình bình hành, đường chéo EF đi qua trung điểm O của BD",
+       "BGDH có BG // DH và BG = DH nên là hình bình hành, đường chéo GH đi qua trung điểm O của BD",
+       "Vậy các đường thẳng AC, BD, EF, GH đồng quy tại O"
+      ],
+      "nhieu": [
+       "Tứ giác EGFH có một cặp cạnh đối bằng nhau nên là hình bình hành",
+       "BEDF có EB = DF nên là hình bình hành, đường chéo EF đi qua trung điểm O của BD"
+      ],
+      "thu_tu_khac": [
+       [
+        0,
+        1,
+        2,
+        3,
+        5,
+        4,
+        6
+       ],
+       [
+        1,
+        0,
+        2,
+        3,
+        4,
+        5,
+        6
+       ],
+       [
+        1,
+        0,
+        2,
+        3,
+        5,
+        4,
+        6
+       ],
+       [
+        3,
+        4,
+        5,
+        6,
+        0,
+        1,
+        2
+       ],
+       [
+        3,
+        5,
+        4,
+        6,
+        0,
+        1,
+        2
+       ],
+       [
+        3,
+        4,
+        5,
+        6,
+        1,
+        0,
+        2
+       ],
+       [
+        3,
+        5,
+        4,
+        6,
+        1,
+        0,
+        2
+       ]
+      ]
+     }
     },
     {
      "ma": "3.19a",
@@ -3201,7 +5009,29 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "góc ADI + góc DAE = 180° (hai góc kề một cạnh của hình bình hành AEID); góc BAC + góc DAE = 180° (tổng bốn góc quanh đỉnh A bằng 360°, trong đó góc DAB = góc CAE = 90°). Suy ra góc ADI = góc BAC. Lại có AD = AB, DI = AE = AC nên ΔADI = ΔBAC (c.g.c).",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 4,
+      "buoc": [
+       "AEID là hình bình hành nên góc ADI + góc DAE = 180° (hai góc kề cạnh AD)",
+       "Bốn góc quanh đỉnh A có tổng 360°, mà góc DAB = góc CAE = 90° nên góc BAC + góc DAE = 180°",
+       "Suy ra góc ADI = góc BAC",
+       "Lại có AD = AB, DI = AE = AC nên ΔADI = ΔBAC (c.g.c)"
+      ],
+      "nhieu": [
+       "AEID là hình bình hành nên góc ADI = góc DAE (hai góc kề cạnh AD)",
+       "Lại có AD = AB, DI = AE = AC nên ΔADI = ΔABC (c.g.c)"
+      ],
+      "thu_tu_khac": [
+       [
+        1,
+        0,
+        2,
+        3
+       ]
+      ]
+     }
     },
     {
      "ma": "3.19b",
@@ -3210,7 +5040,20 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Gọi H là giao điểm của AI và BC. Vì góc DAB = 90° nên góc DAI + góc BAH = 90°; mà góc DAI = góc ABC (câu a) nên góc ABC + góc BAH = 90°, do đó góc AHB = 90°, tức AI ⊥ BC.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 4,
+      "buoc": [
+       "Gọi H là giao điểm của đường thẳng AI và BC",
+       "góc DAB = 90° nên góc DAI + góc BAH = 180° − 90° = 90°",
+       "Mà góc DAI = góc ABC (vì ΔADI = ΔBAC ở câu a) nên góc ABC + góc BAH = 90°",
+       "Trong tam giác ABH: góc AHB = 180° − (góc ABH + góc BAH) = 90°, tức AI ⊥ BC"
+      ],
+      "nhieu": [
+       "Mà góc DAI = góc BCA (vì ΔADI = ΔBAC ở câu a) nên góc BCA + góc BAH = 90°"
+      ]
+     }
     },
     {
      "ma": "3.19c",
@@ -3219,7 +5062,34 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "góc BAE = góc BAC + 90° = góc DAC, AB = AD, AE = AC nên ΔBAE = ΔDAC (c.g.c), suy ra góc ABE = góc ADC. Gọi J là giao điểm của DC và BE thì góc JBA = góc JDA; kết hợp góc BAD = 90° suy ra góc DJB = 90°, tức BE ⊥ CD.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 4,
+      "buoc": [
+       "góc BAE = góc BAC + 90° = góc DAC",
+       "Mà AB = AD, AE = AC nên ΔBAE = ΔDAC (c.g.c), suy ra góc ABE = góc ADC",
+       "Gọi J là giao điểm của BE và CD, P là giao điểm của AB và CD",
+       "Hai tam giác PAD và PJB có góc ADP = góc JBP, góc APD = góc JPB (đối đỉnh) nên góc PJB = góc PAD = 90°, tức BE ⊥ CD"
+      ],
+      "nhieu": [
+       "Mà AB = AC, AE = AD nên ΔBAE = ΔDAC (c.g.c), suy ra góc ABE = góc ADC"
+      ],
+      "thu_tu_khac": [
+       [
+        2,
+        0,
+        1,
+        3
+       ],
+       [
+        0,
+        2,
+        1,
+        3
+       ]
+      ]
+     }
     },
     {
      "ma": "3.19d",
@@ -3228,7 +5098,33 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Tam giác KAB vuông cân tại K nên KA = KB, góc KAB = góc KBA = 45°. góc KAI = 45° + góc DAI = 45° + góc ABC = góc KBC, AI = BC (câu a) nên ΔAKI = ΔBKC (c.g.c). Suy ra KI = KC và góc AKI = góc BKC, do đó góc IKC = góc AKB = 90°, tức KI ⊥ KC.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 6,
+      "buoc": [
+       "Tam giác ABD vuông cân tại A, K là trung điểm của BD nên KA = KB, AK ⊥ BD, góc KAB = góc KAD = góc KBA = 45°",
+       "góc KAI = góc KAD + góc DAI = 45° + góc ABC",
+       "góc KBC = góc KBA + góc ABC = 45° + góc ABC",
+       "Suy ra góc KAI = góc KBC; lại có KA = KB, AI = BC (câu a) nên ΔAKI = ΔBKC (c.g.c)",
+       "Suy ra KI = KC và góc AKI = góc BKC",
+       "Do đó góc IKC = góc IKA + góc AKC = góc BKC + góc AKC = góc AKB = 90°, tức KC ⊥ KI"
+      ],
+      "nhieu": [
+       "góc KAI = góc KAD + góc DAI = 45° + góc BCA",
+       "Suy ra góc KAI = góc KBC; lại có KA = KB, AI = BC (câu a) nên ΔAKI = ΔBKC (g.c.g)"
+      ],
+      "thu_tu_khac": [
+       [
+        0,
+        2,
+        1,
+        3,
+        4,
+        5
+       ]
+      ]
+     }
     }
    ]
   },
@@ -3243,7 +5139,31 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "M là trung điểm của AB và HD nên AHBD là hình bình hành, có góc AHB = 90° nên là hình chữ nhật; tương tự AHCE là hình chữ nhật. DA và AE cùng song song với BC nên D, A, E thẳng hàng, DE = BH + HC = BC; BCED là hình bình hành có góc DBC = 90° nên là hình chữ nhật.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 5,
+      "buoc": [
+       "M là trung điểm của AB và của HD nên AHBD là hình bình hành, lại có góc AHB = 90° nên AHBD là hình chữ nhật",
+       "N là trung điểm của AC và của HE nên AHCE là hình bình hành, lại có góc AHC = 90° nên AHCE là hình chữ nhật",
+       "DA // BC và AE // BC nên D, A, E thẳng hàng, DE // BC",
+       "DE = DA + AE = BH + HC = BC",
+       "BCED có DE // BC, DE = BC nên là hình bình hành, lại có góc DBC = 90° nên BCED là hình chữ nhật"
+      ],
+      "nhieu": [
+       "DA // BC và AE // BC nên DA // AE",
+       "BCED có DE // BC nên là hình chữ nhật"
+      ],
+      "thu_tu_khac": [
+       [
+        1,
+        0,
+        2,
+        3,
+        4
+       ]
+      ]
+     }
     },
     {
      "ma": "3.20b",
@@ -3252,7 +5172,29 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "ADHC là hình bình hành (AD // HC, AD = HC) nên đường chéo CD cắt AH tại trung điểm của AH. AEHB là hình bình hành nên đường chéo BE cắt AH tại trung điểm của AH. Vậy giao điểm của BE và CD là trung điểm của AH.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 4,
+      "buoc": [
+       "Tam giác ABC cân tại A nên đường cao AH cũng là đường trung tuyến: BH = HC",
+       "AHBD là hình chữ nhật (câu a) nên AD // BC, AD = BH = HC; ADHC là hình bình hành, đường chéo CD đi qua trung điểm của đường chéo AH",
+       "AHCE là hình chữ nhật (câu a) nên AE // BC, AE = HC = HB; AEHB là hình bình hành, đường chéo BE đi qua trung điểm của đường chéo AH",
+       "Vậy BE và CD cắt nhau tại trung điểm của AH"
+      ],
+      "nhieu": [
+       "Tam giác ABC cân tại A nên AH = BH = HC",
+       "AHBD là hình chữ nhật (câu a) nên AD // BC, AD = BH = HC; ADHC là hình bình hành, đường chéo CD đi qua trung điểm của AC"
+      ],
+      "thu_tu_khac": [
+       [
+        0,
+        2,
+        1,
+        3
+       ]
+      ]
+     }
     },
     {
      "ma": "3.20c",
@@ -3261,7 +5203,28 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Hai đường chéo của hình chữ nhật bằng nhau: trong AHBD có DH = AB, trong AHCE có HE = AC, mà AB = AC nên DH = HE; trong hình chữ nhật BCED có BE = CD.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 4,
+      "buoc": [
+       "Hai đường chéo của một hình chữ nhật thì bằng nhau",
+       "AHBD là hình chữ nhật (câu a) nên DH = AB; AHCE là hình chữ nhật (câu a) nên HE = AC",
+       "Mà AB = AC (tam giác ABC cân tại A) nên DH = HE",
+       "BCED là hình chữ nhật (câu a) nên BE = CD"
+      ],
+      "nhieu": [
+       "AHBD là hình chữ nhật (câu a) nên DH = AH; AHCE là hình chữ nhật (câu a) nên HE = AH"
+      ],
+      "thu_tu_khac": [
+       [
+        0,
+        3,
+        1,
+        2
+       ]
+      ]
+     }
     },
     {
      "ma": "3.21",
@@ -3270,7 +5233,52 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "M là trung điểm của AC và GH nên AGCH là hình bình hành, HC = AG, HC // AG. Tương tự KB = AG, KB // AG. Vậy BCHK có BK, CH song song và bằng nhau nên là hình bình hành. Tam giác ABC cân tại A nên trung tuyến AG cũng là đường cao, AG ⊥ BC, suy ra KB ⊥ BC. Hình bình hành BCHK có một góc vuông nên là hình chữ nhật.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 5,
+      "buoc": [
+       "M là trung điểm của AC và của GH nên AGCH là hình bình hành: HC = AG, HC // AG",
+       "N là trung điểm của AB và của GK nên AGBK là hình bình hành: KB = AG, KB // AG",
+       "Suy ra BK và CH song song và bằng nhau, nên BCHK là hình bình hành",
+       "Tam giác ABC cân tại A nên đường trung tuyến AG cũng là đường cao: AG ⊥ BC, suy ra KB ⊥ BC",
+       "Hình bình hành BCHK có góc KBC = 90° nên là hình chữ nhật"
+      ],
+      "nhieu": [
+       "Tam giác ABC cân tại A nên đường trung tuyến BM cũng là đường cao: BM ⊥ AC, suy ra KB ⊥ BC",
+       "Suy ra BK = CH, nên BCHK là hình bình hành"
+      ],
+      "thu_tu_khac": [
+       [
+        0,
+        1,
+        3,
+        2,
+        4
+       ],
+       [
+        1,
+        0,
+        2,
+        3,
+        4
+       ],
+       [
+        1,
+        0,
+        3,
+        2,
+        4
+       ],
+       [
+        1,
+        3,
+        0,
+        2,
+        4
+       ]
+      ]
+     }
     },
     {
      "ma": "3.22",
@@ -3279,7 +5287,26 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "1a) Lấy M thuộc BC với góc BAM = góc ABM thì MA = MB; góc MAC = góc ACM (cùng phụ với hai góc bằng nhau) nên MA = MC, vậy AM = BC/2. 1b) MA = MB = MC thì ΔMAB, ΔMAC cân tại M nên góc A = góc B + góc C = 90°. 2) Lấy P để M là trung điểm AP thì ABPC là hình bình hành. a) Góc A vuông thì ABPC là hình chữ nhật, AP = BC nên AM = BC/2. b) AM = BC/2 thì AP = BC, ABPC là hình chữ nhật nên góc A = 90°.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 8,
+      "hoi": "1. Sử dụng tính chất tổng các góc của một tam giác bằng 180° để chứng minh:\na) Trong tam giác vuông, đường trung tuyến ứng với cạnh huyền bằng nửa cạnh huyền.\nb) Tam giác ABC có đường trung tuyến AM bằng nửa BC thì vuông tại A.\n2. Sử dụng tính chất hai đường chéo của hình chữ nhật bằng nhau để chứng minh a), b) của ý 1.",
+      "buoc": [
+       "1a) Tam giác ABC vuông tại A. Lấy M thuộc BC sao cho góc BAM = góc ABM thì tam giác ABM cân tại M: MA = MB",
+       "1a) góc MAC = 90° − góc BAM = 90° − góc ABM = góc ACM nên tam giác ACM cân tại M: MA = MC",
+       "1a) Vậy MB = MC, AM là đường trung tuyến ứng với cạnh huyền và AM = MB = BC/2",
+       "1b) AM là đường trung tuyến, AM = BC/2 nên MA = MB = MC, các tam giác MAB và MAC cân tại M",
+       "1b) góc BAC = góc BAM + góc MAC = góc B + góc C, mà góc BAC + góc B + góc C = 180° nên góc BAC = 90°",
+       "2) Lấy P sao cho M là trung điểm của AP; ABPC có hai đường chéo BC, AP cắt nhau tại trung điểm M của mỗi đường nên là hình bình hành",
+       "2a) góc BAC = 90° thì hình bình hành ABPC là hình chữ nhật, hai đường chéo bằng nhau: AP = BC, nên AM = AP/2 = BC/2",
+       "2b) AM = BC/2 thì AP = 2AM = BC, hình bình hành ABPC có hai đường chéo bằng nhau nên là hình chữ nhật: góc BAC = 90°"
+      ],
+      "nhieu": [
+       "1b) góc BAC = góc BAM + góc MAC = góc B + góc C, mà góc BAC + góc B + góc C = 180° nên góc BAC = 60°",
+       "2a) góc BAC = 90° thì hình bình hành ABPC là hình thoi, hai đường chéo vuông góc: AP ⊥ BC"
+      ]
+     }
     }
    ]
   },
@@ -3294,7 +5321,21 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Xét hình bình hành ABCD có đường cao AH (H thuộc đường thẳng CD), AK (K thuộc đường thẳng BC), AH = AK. Hai tam giác vuông ACH và ACK bằng nhau (cạnh huyền AC chung, AH = AK) nên CA là tia phân giác của góc C. Hình bình hành có đường chéo là phân giác của một góc nên là hình thoi.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 4,
+      "buoc": [
+       "Xét hình bình hành ABCD có đường cao AH (H thuộc đường thẳng CD), đường cao AK (K thuộc đường thẳng BC) và AH = AK",
+       "Hai tam giác vuông ACH và ACK có cạnh huyền AC chung, AH = AK nên bằng nhau (cạnh huyền và cạnh góc vuông)",
+       "Suy ra góc ACH = góc ACK, tức CA là tia phân giác của góc BCD",
+       "Hình bình hành có một đường chéo là tia phân giác của một góc nên là hình thoi"
+      ],
+      "nhieu": [
+       "Hai tam giác vuông ACH và ACK có cạnh huyền AC chung, AH = AK nên bằng nhau (c.g.c)",
+       "Hình bình hành có một đường chéo là tia phân giác của một góc nên là hình chữ nhật"
+      ]
+     }
     },
     {
      "ma": "3.24",
@@ -3303,7 +5344,23 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Gọi P, Q, R, S là giao điểm ba đường phân giác của các tam giác OAB, OCD, OAD, OBC. O, P, Q thẳng hàng trên phân giác của góc AOB và ΔPAB = ΔQCD (g.c.g) nên OP = OQ. Tương tự O là trung điểm của RS và RS là phân giác của góc AOD. Góc AOB và góc AOD kề bù nên PQ ⊥ RS. Tứ giác PSQR có hai đường chéo cắt nhau tại trung điểm mỗi đường và vuông góc nên là hình thoi.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 6,
+      "buoc": [
+       "Gọi P, Q, R, S lần lượt là giao điểm ba đường phân giác của các tam giác OAB, OCD, OAD, OBC",
+       "góc AOB và góc COD đối đỉnh nên hai tia phân giác của chúng là hai tia đối nhau: P, O, Q thẳng hàng",
+       "AB // CD nên góc OAB = góc OCD; ΔOPA = ΔOQC (g.c.g: góc POA = góc QOC, OA = OC, góc PAO = góc QCO) nên OP = OQ",
+       "Tương tự, R, O, S thẳng hàng trên đường phân giác của góc AOD và OR = OS",
+       "góc AOB và góc AOD kề bù nên hai đường phân giác của chúng vuông góc: PQ ⊥ RS",
+       "Tứ giác PSQR có hai đường chéo PQ, RS cắt nhau tại trung điểm O của mỗi đường và vuông góc với nhau nên là hình thoi"
+      ],
+      "nhieu": [
+       "AB // CD nên góc OAB = góc OCD; ΔOPA = ΔOQC (c.c.c) nên OP = OQ",
+       "góc AOB và góc AOD đối đỉnh nên hai đường phân giác của chúng vuông góc: PQ ⊥ RS"
+      ]
+     }
     },
     {
      "ma": "3.25",
@@ -3312,7 +5369,28 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "góc NAP = 45°",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "dap": [
+       "45°",
+       "45"
+      ],
+      "phim": [
+       "°"
+      ],
+      "nhieu": [
+       "cm",
+       "cm²"
+      ],
+      "loi_giai": [
+       "Gọi Q là giao điểm của NP và AM thì NQ ⊥ AM; N thuộc tia phân giác của góc DAM nên ND = NQ",
+       "Hai tam giác vuông ADN và AQN có cạnh huyền AN chung, ND = NQ nên bằng nhau: AQ = AD = AB, góc NAQ = góc NAD",
+       "Hai tam giác vuông AQP và ABP có cạnh huyền AP chung, AQ = AB nên bằng nhau: góc QAP = góc BAP",
+       "góc NAP = góc NAQ + góc QAP = (1/2)góc DAQ + (1/2)góc QAB = (1/2) · 90° = 45°"
+      ]
+     }
     },
     {
      "ma": "3.26",
@@ -3321,7 +5399,28 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "1 cm^2 (bằng 1/4 diện tích hình vuông)",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "dap": [
+       "1",
+       "1cm²"
+      ],
+      "phim": [
+       "cm²"
+      ],
+      "nhieu": [
+       "cm",
+       "°"
+      ],
+      "loi_giai": [
+       "Nếu Ox đi qua một đỉnh của hình vuông thì Oy đi qua đỉnh kề nó, phần cần tìm là một phần tư hình vuông",
+       "Nếu không, giả sử Ox cắt cạnh AB tại M nằm giữa A và B, khi đó Oy cắt cạnh BC (hoặc AD, làm tương tự) tại N",
+       "ΔOAM = ΔOBN (g.c.g: góc OAM = góc OBN = 45°, OA = OB, góc AOM = góc BON vì cùng phụ với góc MOB) nên S(OAM) = S(OBN)",
+       "Phần hình vuông trong góc xOy có diện tích S(OMB) + S(OBN) = S(OMB) + S(OAM) = S(OAB) = (1/4) · 2² = 1 (cm²)"
+      ]
+     }
     },
     {
      "ma": "3.27",
@@ -3330,7 +5429,33 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Góc B, góc C bằng 45° nên tam giác GDB, CEF vuông cân: GD = BD, EF = EC. Do đó GD = DE = EF (= BC/3) và GD // EF (cùng vuông góc với BC). Tứ giác GDEF có GD // EF, GD = EF và góc D vuông nên là hình chữ nhật; lại có hai cạnh kề GD = DE nên là hình vuông.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 6,
+      "buoc": [
+       "Tam giác ABC vuông cân tại A nên góc B = góc C = 45°",
+       "Tam giác GDB vuông tại D có góc B = 45° nên vuông cân tại D: GD = BD",
+       "Tam giác FEC vuông tại E có góc C = 45° nên vuông cân tại E: EF = EC",
+       "Suy ra GD = DE = EF (cùng bằng BC/3)",
+       "GD // EF (cùng vuông góc với BC) và GD = EF nên DEFG là hình bình hành, lại có góc GDE = 90° nên là hình chữ nhật",
+       "Hình chữ nhật DEFG có hai cạnh kề GD = DE nên là hình vuông"
+      ],
+      "nhieu": [
+       "Tam giác GDB vuông tại D có góc B = 45° nên vuông cân tại D: GD = GB",
+       "Hình chữ nhật DEFG có hai cạnh đối GD = EF nên là hình vuông"
+      ],
+      "thu_tu_khac": [
+       [
+        0,
+        2,
+        1,
+        3,
+        4,
+        5
+       ]
+      ]
+     }
     }
    ]
   },
@@ -3345,7 +5470,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "D",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Trong các câu sau, câu nào đúng?",
+      "cac": [
+       "Tứ giác có các góc đối bằng nhau là hình thoi.",
+       "Tứ giác có hai đường chéo vuông góc là hình thoi.",
+       "Hình thang có các đường chéo bằng nhau là hình thoi.",
+       "Hình bình hành có các đường chéo vuông góc là hình thoi."
+      ],
+      "dap": "D"
+     }
     },
     {
      "ma": "Trắc nghiệm 2 (tr.43)",
@@ -3354,7 +5491,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "B",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Trong các câu sau, câu nào đúng?",
+      "cac": [
+       "Trong hình thoi, hai đường chéo bằng nhau.",
+       "Trong hình thoi, hai đường chéo vuông góc.",
+       "Trong hình thang, hai đường chéo bằng nhau.",
+       "Trong hình thang, hai đường chéo song song."
+      ],
+      "dap": "B"
+     }
     },
     {
      "ma": "Trắc nghiệm 3 (tr.43)",
@@ -3363,7 +5512,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "D",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Tìm câu sai trong các câu sau:",
+      "cac": [
+       "Hình chữ nhật có hai cạnh kề bằng nhau là hình vuông.",
+       "Hình chữ nhật có hai đường chéo vuông góc là hình vuông.",
+       "Hình chữ nhật có một đường chéo là đường phân giác của một góc là hình vuông.",
+       "Hình chữ nhật có bốn góc vuông là hình vuông."
+      ],
+      "dap": "D"
+     }
     },
     {
      "ma": "Trắc nghiệm 4 (tr.43)",
@@ -3372,7 +5533,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "A",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Cho các câu sau:\na) Tứ giác mà hai góc kề một cạnh tuỳ ý của nó là hai góc bù nhau là một hình bình hành.\nb) Tứ giác mà hai góc kề một cạnh tuỳ ý của nó là hai góc bằng nhau là một hình chữ nhật.\nc) Tứ giác có một cặp cạnh đối mà mỗi cạnh có hai góc kề nó bằng nhau là một hình thang cân.\nSố các câu sai là",
+      "cac": [
+       "0",
+       "1",
+       "2",
+       "3"
+      ],
+      "dap": "A"
+     }
     },
     {
      "ma": "3.28a",
@@ -3381,7 +5554,43 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Hình bình hành (có hai cặp cạnh đối song song)",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "Cho tam giác ABC. Với mỗi điểm M nằm giữa B và C, lấy điểm N thuộc cạnh AB, điểm P thuộc cạnh AC sao cho MN // AC, MP // AB. Hỏi tứ giác ANMP là hình gì?",
+      "dong": [
+       {
+        "chu": "Tứ giác ANMP là {0}",
+        "o": [
+         {
+          "dung": [
+           "hình bình hành"
+          ],
+          "sai": [
+           "hình thang cân",
+           "hình chữ nhật",
+           "hình thoi"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "vì {0}",
+        "o": [
+         {
+          "dung": [
+           "AN // MP và AP // MN"
+          ],
+          "sai": [
+           "AN = AP và MN = MP",
+           "hai đường chéo AM và NP bằng nhau"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "3.28b",
@@ -3390,7 +5599,42 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "M là giao điểm của tia phân giác góc A với cạnh BC (AM là tia phân giác của góc A)",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "Cho tam giác ABC. Với mỗi điểm M nằm giữa B và C, lấy điểm N thuộc cạnh AB, điểm P thuộc cạnh AC sao cho MN // AC, MP // AB. Hỏi M ở vị trí nào để tứ giác ANMP là một hình thoi?",
+      "dong": [
+       {
+        "chu": "Hình bình hành ANMP là hình thoi khi đường chéo AM {0}",
+        "o": [
+         {
+          "dung": [
+           "là tia phân giác của góc NAP"
+          ],
+          "sai": [
+           "vuông góc với BC",
+           "bằng đường chéo NP"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Vậy M là {0}",
+        "o": [
+         {
+          "dung": [
+           "giao điểm của tia phân giác góc A với cạnh BC"
+          ],
+          "sai": [
+           "trung điểm của cạnh BC",
+           "chân đường cao kẻ từ A xuống BC"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "3.28c",
@@ -3399,7 +5643,43 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Tam giác ABC vuông tại A",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "Cho tam giác ABC. Với mỗi điểm M nằm giữa B và C, lấy điểm N thuộc cạnh AB, điểm P thuộc cạnh AC sao cho MN // AC, MP // AB. Tam giác ABC phải thoả mãn điều kiện gì để tứ giác ANMP là một hình chữ nhật?",
+      "dong": [
+       {
+        "chu": "Hình bình hành ANMP là hình chữ nhật khi {0}",
+        "o": [
+         {
+          "dung": [
+           "góc NAP là góc vuông"
+          ],
+          "sai": [
+           "AN = AP",
+           "AM vuông góc với NP"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Vậy tam giác ABC phải {0}",
+        "o": [
+         {
+          "dung": [
+           "vuông tại A"
+          ],
+          "sai": [
+           "cân tại A",
+           "vuông tại B",
+           "đều"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "3.28d",
@@ -3408,7 +5688,42 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "M là chân đường cao kẻ từ A của tam giác ABC (AM ⊥ BC), vì NP = AM",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "Cho tam giác ABC. Với mỗi điểm M nằm giữa B và C, lấy điểm N thuộc cạnh AB, điểm P thuộc cạnh AC sao cho MN // AC, MP // AB. Khi tam giác ABC thoả mãn điều kiện để ANMP là hình chữ nhật (câu c), tìm vị trí của M để NP ngắn nhất.",
+      "dong": [
+       {
+        "chu": "ANMP là hình chữ nhật nên NP = {0}",
+        "o": [
+         {
+          "dung": [
+           "AM"
+          ],
+          "sai": [
+           "AB",
+           "BC/2"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "NP ngắn nhất khi AM ngắn nhất, tức là M là {0}",
+        "o": [
+         {
+          "dung": [
+           "chân đường cao kẻ từ A xuống BC"
+          ],
+          "sai": [
+           "trung điểm của cạnh BC",
+           "giao điểm của tia phân giác góc A với cạnh BC"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "3.28e",
@@ -3417,7 +5732,42 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Tam giác ABC vuông tại A và M là giao điểm của tia phân giác góc A với cạnh BC",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "Cho tam giác ABC. Với mỗi điểm M nằm giữa B và C, lấy điểm N thuộc cạnh AB, điểm P thuộc cạnh AC sao cho MN // AC, MP // AB. Tam giác ABC thoả mãn điều kiện gì và M ở vị trí nào trên cạnh BC để tứ giác ANMP là một hình vuông?",
+      "dong": [
+       {
+        "chu": "ANMP là hình vuông khi nó vừa là hình chữ nhật vừa là hình thoi, nên tam giác ABC phải {0}",
+        "o": [
+         {
+          "dung": [
+           "vuông tại A"
+          ],
+          "sai": [
+           "cân tại A",
+           "đều"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "và M là {0}",
+        "o": [
+         {
+          "dung": [
+           "giao điểm của tia phân giác góc A với cạnh BC"
+          ],
+          "sai": [
+           "trung điểm của cạnh BC",
+           "chân đường cao kẻ từ A xuống BC"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "3.29",
@@ -3426,7 +5776,41 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Gọi S là diện tích. Tam giác HBC và ABC chung đáy BC nên S(HBC)/S(ABC) = HI/AI; tương tự S(HCA)/S(ABC) = HJ/BJ, S(HAB)/S(ABC) = HK/CK. H nằm trong tam giác nhọn nên S(HBC) + S(HCA) + S(HAB) = S(ABC), cộng lại được tổng bằng 1. Khi góc A tù, H nằm trong góc đối đỉnh với góc BAC, S(ABC) = S(HBC) − S(HAB) − S(HAC) nên HI/AI − HJ/BJ − HK/CK = 1.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 6,
+      "buoc": [
+       "Kí hiệu S(XYZ) là diện tích tam giác XYZ. Tam giác HBC và ABC chung đáy BC, đường cao HI và AI nên S(HBC)/S(ABC) = HI/AI",
+       "Tương tự S(HCA)/S(ABC) = HJ/BJ và S(HAB)/S(ABC) = HK/CK",
+       "Tam giác ABC nhọn nên H nằm bên trong tam giác: S(HBC) + S(HCA) + S(HAB) = S(ABC)",
+       "Cộng lại: HI/AI + HJ/BJ + HK/CK = (S(HBC) + S(HCA) + S(HAB))/S(ABC) = 1",
+       "Khi góc A tù, H nằm trong góc đối đỉnh với góc BAC: S(ABC) = S(HBC) − S(HAB) − S(HCA)",
+       "Khi đó công thức trở thành HI/AI − HJ/BJ − HK/CK = 1"
+      ],
+      "nhieu": [
+       "Khi góc A tù, H vẫn nằm trong tam giác ABC nên công thức không đổi",
+       "Khi đó công thức trở thành HI/AI + HJ/BJ − HK/CK = 1"
+      ],
+      "thu_tu_khac": [
+       [
+        0,
+        2,
+        1,
+        3,
+        4,
+        5
+       ],
+       [
+        2,
+        0,
+        1,
+        3,
+        4,
+        5
+       ]
+      ]
+     }
     },
     {
      "ma": "3.30a",
@@ -3435,7 +5819,22 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Một đỉnh không nối với chính nó và với hai đỉnh kề nó bằng đường chéo nên qua mỗi đỉnh có n − 3 đường chéo. Tính theo n đỉnh được n(n − 3) đường chéo, nhưng mỗi đường chéo có hai đầu mút nên được tính hai lần. Vậy n-giác có n(n − 3)/2 đường chéo.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 5,
+      "buoc": [
+       "Mỗi đỉnh nối được với n − 1 đỉnh còn lại, trong đó hai đỉnh kề nó nối thành cạnh, không phải đường chéo",
+       "Qua mỗi đỉnh: số đường chéo = (n − 1) − 2 = n − 3",
+       "Tính qua n đỉnh được n(n − 3) đường chéo",
+       "Mỗi đường chéo có hai đầu mút là hai đỉnh nên đã được tính hai lần",
+       "Vậy n-giác có n(n − 3)/2 đường chéo"
+      ],
+      "nhieu": [
+       "Qua mỗi đỉnh: số đường chéo = (n − 1) − 2 = n − 2",
+       "Vậy n-giác có n(n − 3) đường chéo"
+      ]
+     }
     },
     {
      "ma": "3.30b",
@@ -3444,7 +5843,8 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "5 đường chéo: AC, AD, BD, BE, CE",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "bo_may": "vẽ hình"
     },
     {
      "ma": "3.31a",
@@ -3453,7 +5853,21 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Kẻ n − 3 đường chéo qua đỉnh A₀ thì n-giác được chia thành n − 2 tam giác. Tổng các góc của n-giác bằng tổng các góc của n − 2 tam giác đó, tức bằng (n − 2) · 180°.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 4,
+      "buoc": [
+       "Kẻ n − 3 đường chéo qua đỉnh A₀, chúng chia n-giác thành các tam giác có chung đỉnh A₀",
+       "Mỗi tam giác đó có đúng một cạnh là cạnh của n-giác không đi qua A₀; có n − 2 cạnh như vậy nên có n − 2 tam giác",
+       "Các góc của n − 2 tam giác đó ghép lại vừa đủ thành các góc của n-giác",
+       "Vậy tổng các góc của n-giác bằng (n − 2) · 180°"
+      ],
+      "nhieu": [
+       "Mỗi đường chéo qua A₀ tạo thành một tam giác nên có n − 3 tam giác",
+       "Mỗi tam giác đó có một cạnh là cạnh của n-giác; n-giác có n cạnh nên có n tam giác"
+      ]
+     }
     },
     {
      "ma": "3.31b",
@@ -3462,7 +5876,28 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "360°",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "dap": [
+       "360°",
+       "360"
+      ],
+      "phim": [
+       "°"
+      ],
+      "nhieu": [
+       "n",
+       "cm"
+      ],
+      "loi_giai": [
+       "Góc ngoài tại mỗi đỉnh bằng 180° trừ góc của n-giác tại đỉnh đó",
+       "Tổng n góc ngoài = n · 180° − (tổng các góc của n-giác)",
+       "= n · 180° − (n − 2) · 180°",
+       "= 2 · 180° = 360°"
+      ]
+     }
     },
     {
      "ma": "3.32a",
@@ -3471,7 +5906,43 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "((n − 2)/n) · 180°",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "n-giác gọi là n-giác đều nếu tất cả các cạnh của nó bằng nhau và tất cả các góc của nó bằng nhau. Tính số đo mỗi góc của một n-giác đều.",
+      "dong": [
+       {
+        "chu": "Tổng các góc của n-giác bằng {0}",
+        "o": [
+         {
+          "dung": [
+           "(n − 2) · 180°"
+          ],
+          "sai": [
+           "(n − 3) · 180°",
+           "n · 180°"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "n góc bằng nhau nên mỗi góc bằng {0}",
+        "o": [
+         {
+          "dung": [
+           "((n − 2)/n) · 180°"
+          ],
+          "sai": [
+           "(n − 2) · 180°",
+           "360°/n",
+           "((n − 3)/n) · 180°"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "3.32b",
@@ -3480,7 +5951,42 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Hình vuông",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "n-giác gọi là n-giác đều nếu tất cả các cạnh của nó bằng nhau và tất cả các góc của nó bằng nhau. Tứ giác đều là hình gì?",
+      "dong": [
+       {
+        "chu": "Mỗi góc của tứ giác đều bằng {0}",
+        "o": [
+         {
+          "dung": [
+           "90°"
+          ],
+          "sai": [
+           "60°",
+           "180°"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Tứ giác đều là {0}",
+        "o": [
+         {
+          "dung": [
+           "hình vuông"
+          ],
+          "sai": [
+           "hình thoi",
+           "hình chữ nhật"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     }
    ]
   },

@@ -193,9 +193,9 @@ class GiaiDeTest {
     // ------------------------------------------------------------------ ra de
 
     /**
-     * Tu 29/9/2026 de chi lay cau lam tren may (co "ghep"). Luc soan lai test nay moi co ghep
-     * cho SBT Toan tap mot chuong I va SBT Tieng Anh Unit 1, 2; KHTN chua co cau nao nen chua
-     * co de, du lop da chon moc. Soan ghep cho KHTN roi thi dua KHTN vao lai day.
+     * Tu 29/9/2026 de chi lay cau lam tren may (co "ghep"). Test nay dua vao du lieu ghep that:
+     * SBT Toan tap mot chuong I tro di, SBT Tieng Anh Unit 1, 2, SBT KHTN chuong I tu Bai 2
+     * (gop toi 29/9/2026). Ban dau chi co Toan va Tieng Anh; KHTN duoc dua vao lai khi co ghep.
      */
     @Test
     fun sang_thu_bay_ra_de_tuan_moi_mon_mot_lan() {
@@ -206,7 +206,7 @@ class GiaiDeTest {
         HocToi.ghiUnit(context, PhanHoc.BO_TIENG_ANH, 2)
 
         val moi = taoDe(sangThuBay).filter { it.loai == GiaiDe.LOAI_TUAN }
-        assertEquals(setOf("Toán", PhanHoc.TIENG_ANH), moi.map { it.mon }.toSet())
+        assertEquals(setOf("Toán", "Khoa học tự nhiên", PhanHoc.TIENG_ANH), moi.map { it.mon }.toSet())
         // Chay lai thi khong sinh them de nao.
         assertTrue(taoDe(sangThuBay + 60_000L).none { it.loai == GiaiDe.LOAI_TUAN })
 
@@ -234,8 +234,15 @@ class GiaiDeTest {
         assertTrue("unit ngoai moc: $unit", unit.all { it != null && it in 1..2 })
         assertTrue(anh.ten, anh.ten.startsWith("Unit "))
 
-        // Hai de khong chung cau nao.
-        assertTrue(toan.cauIds.intersect(anh.cauIds.toSet()).isEmpty())
+        // KHTN: chi phan Hoa da hoc, cac bai gan moc (4, 5, 6).
+        val khtn = moi.first { it.mon == "Khoa học tự nhiên" }
+        val soBai = GiaiDe.cacCau(context, khtn).map { PhanHoc.soBai(it.bai) }.toSet()
+        assertTrue("bai ngoai moc: $soBai", soBai.all { it != null && it in 4..6 })
+        assertTrue(GiaiDe.cacCau(context, khtn).count(::laChon) <= 8)
+
+        // Cac de khong chung cau nao.
+        val cauIds = moi.flatMap { it.cauIds }
+        assertEquals(cauIds.size, cauIds.toSet().size)
     }
 
     @Test
