@@ -1,0 +1,4401 @@
+{
+ "nguon": "sbtanh8",
+ "mon": "Tiếng Anh",
+ "ten": "SBT Tiếng Anh 8",
+ "ban": 1,
+ "doan_van": {
+  "1.D1": "Dear Nick,\nI'm so happy to receive your email. Now I'm going to (1) ___ you about my leisure activities.\nIt may sound strange, but the leisure activity I like (2) ___ is volunteering. There is a volunteer club in my (3) ___. Last year I took part in one of its programmes. I really enjoyed the activities, so I decided to (4) ___ a member. Our volunteer club mostly helps the (5) ___ in our neighbourhood. We go to their homes and help them with their housework. We also talk and read (6) ___ to them.\nBesides volunteering, I also love drawing and (7) ___ DIY. I can make paper flowers and flower vases from used bottles.\n(8) ___ about you? What do you like doing in your free time? Tell me.\nBest wishes,\nMinh",
+  "1.D2": "There are a lot of pastimes that young people like, and one of (1) ___ is mountain climbing. It is an active leisure activity that people can do either indoors or outdoors. If you go climbing outdoors, it is a great way to (2) ___ your strength and enjoy nature at the same time. You can even set up your own climbing wall in your backyard or (3) ___ your home. This way you don't have to go out and still can (4) ___ fit and enjoy the activity.\nSo how can you start mountain climbing? Many people take a class to learn how to climb and use their equipment (5) ___. Others join climbing clubs to make new friends with the same interest and go climbing together. If you are an active person and like outdoor activities, (6) ___ don't you try this activity?",
+  "1.D3": "My grandma and I share a <b>pastime</b>: knitting. She taught me how to knit when I was ten years old. In the evening, we both sit in front of the TV and knit. Now I can knit scarves, hats, and even sweaters. I remember last year I had to find a birthday present for my dad. Then I thought of knitting a sweater for him. I searched the Internet for a day, and finally I found the <b>pattern</b> that came with a YouTube video showing me how to make a sweater. It took me a week to finish it. Dad was so happy with the present and said it was his favourite sweater.\nThe best thing about knitting is that it makes you be more careful and patient. Sometimes you drop <b>stitches</b> or hold the wool too tight, so you need to continually practise. My grandma says knitting is <b>magical</b> because you can create anything you want with just wool and a pair of <b>needles</b>. I love knitting!",
+  "2.D1": "I live in a small village in Ninh Binh. I love the (1) ___ peace and quiet of my village. The air is unpolluted, and the (2) ___ of life is slow. The people in my village are friendly and hospitable. They are always willing (3) ___ each other. We cultivate mainly rice and beans. We raise cows and buffaloes too. We can also enjoy (4) ___ in the nearby area. It is actually a national park, so the wildlife there can live and move about (5) ___. All these things make me love my village more, and I intend to live here my whole life.",
+  "2.D2": "Besides its beauty, the countryside of Britain is well known for its many contrasts: its bare mountains and moorland, its lakes, rivers and woods, and its long, often wild coastline. National parks which are protected from development by the government have the most beautiful and picturesque scenery. British people often associate the countryside with farmland, open spaces like fields of wheat and barley, green fields enclosed by hedges or stone walls in which cows or sheep are raised. Most farmland is now owned by individual people or independent companies. However, the government has built a network of public footpaths across the farmland.\nMany British people enjoy the peace and relaxation of life in the countryside where they can spend their free time walking, cycling, or going for a picnic or a pub lunch. In summer they can pick strawberries and other fruit in fruit farms. Nowadays, few rural people work on farms. Many of them <b><u>commute</u></b> to work in towns. Many others wish to live in the countryside so that <b><u>they</u></b> could have a better and healthier lifestyle.",
+  "2.D3": "Few Americans live in the areas of wild and beautiful scenery, like the Western states of Montana and Colorado. We often see small farms surrounded by hills and green areas in the New England states, such as Vermont and New Hampshire. In Ohio, Indiana, Illinois, and other Midwestern states, there are very large fields of corn or wheat with great distances between towns.\nAbout a quarter of Americans live outside cities and towns because life there is harder. Shops, post offices, hospitals, schools, etc. may be further away and it takes rural people a very long time to get there. However, many people choose to live in the countryside because of its safe, clean, and attractive environment. But their children often move to a town or city when they grow up."
+ },
+ "cac_bai": [
+  {
+   "chuong": "Unit 1. Leisure time",
+   "bai": "Unit 1. Leisure time",
+   "cac_cau": [
+    {
+     "ma": "1.A1.1",
+     "de": "Write a word under each picture. The first letter of the word has been provided. Then put the words in the correct column.\nb___",
+     "trang": 3,
+     "nhom": "A. Pronunciation",
+     "dang": "CAU_NHO",
+     "dap_an": "book",
+     "loai_dap_an": "DAP_SO",
+     "hinh": [
+      "sbtanh8/1.A1.1.webp"
+     ],
+     "ghep": {
+      "kieu": "CHU",
+      "sao": 2,
+      "hoi": "Write a word under each picture. The first letter of the word has been provided.",
+      "truoc": "b",
+      "dap": [
+       "book"
+      ],
+      "nhieu": [
+       "u",
+       "c",
+       "e",
+       "a"
+      ]
+     }
+    },
+    {
+     "ma": "1.A1.2",
+     "de": "Write a word under each picture. The first letter of the word has been provided. Then put the words in the correct column.\nt___",
+     "trang": 3,
+     "nhom": "A. Pronunciation",
+     "dang": "CAU_NHO",
+     "dap_an": "tofu",
+     "loai_dap_an": "DAP_SO",
+     "hinh": [
+      "sbtanh8/1.A1.2.webp"
+     ],
+     "ghep": {
+      "kieu": "CHU",
+      "sao": 2,
+      "hoi": "Write a word under each picture. The first letter of the word has been provided.",
+      "truoc": "t",
+      "dap": [
+       "tofu"
+      ],
+      "nhieu": [
+       "e",
+       "a",
+       "p",
+       "h"
+      ]
+     }
+    },
+    {
+     "ma": "1.A1.3",
+     "de": "Write a word under each picture. The first letter of the word has been provided. Then put the words in the correct column.\ns___",
+     "trang": 3,
+     "nhom": "A. Pronunciation",
+     "dang": "CAU_NHO",
+     "dap_an": "soup",
+     "loai_dap_an": "DAP_SO",
+     "hinh": [
+      "sbtanh8/1.A1.3.webp"
+     ],
+     "ghep": {
+      "kieu": "CHU",
+      "sao": 2,
+      "hoi": "Write a word under each picture. The first letter of the word has been provided.",
+      "truoc": "s",
+      "dap": [
+       "soup"
+      ],
+      "nhieu": [
+       "e",
+       "a",
+       "b",
+       "h"
+      ]
+     }
+    },
+    {
+     "ma": "1.A1.4",
+     "de": "Write a word under each picture. The first letter of the word has been provided. Then put the words in the correct column.\nw___",
+     "trang": 3,
+     "nhom": "A. Pronunciation",
+     "dang": "CAU_NHO",
+     "dap_an": "wolf",
+     "loai_dap_an": "DAP_SO",
+     "hinh": [
+      "sbtanh8/1.A1.4.webp"
+     ],
+     "ghep": {
+      "kieu": "CHU",
+      "sao": 2,
+      "hoi": "Write a word under each picture. The first letter of the word has been provided.",
+      "truoc": "w",
+      "dap": [
+       "wolf"
+      ],
+      "nhieu": [
+       "u",
+       "v",
+       "e",
+       "a"
+      ]
+     }
+    },
+    {
+     "ma": "1.A1.5",
+     "de": "Write a word under each picture. The first letter of the word has been provided. Then put the words in the correct column.\nc___",
+     "trang": 3,
+     "nhom": "A. Pronunciation",
+     "dang": "CAU_NHO",
+     "dap_an": "cook",
+     "loai_dap_an": "DAP_SO",
+     "hinh": [
+      "sbtanh8/1.A1.5.webp"
+     ],
+     "ghep": {
+      "kieu": "CHU",
+      "sao": 2,
+      "hoi": "Write a word under each picture. The first letter of the word has been provided.",
+      "truoc": "c",
+      "dap": [
+       "cook"
+      ],
+      "nhieu": [
+       "u",
+       "l",
+       "a",
+       "e"
+      ]
+     }
+    },
+    {
+     "ma": "1.A1.6",
+     "de": "Write a word under each picture. The first letter of the word has been provided. Then put the words in the correct column.\ng___",
+     "trang": 3,
+     "nhom": "A. Pronunciation",
+     "dang": "CAU_NHO",
+     "dap_an": "glue",
+     "loai_dap_an": "DAP_SO",
+     "hinh": [
+      "sbtanh8/1.A1.6.webp"
+     ],
+     "ghep": {
+      "kieu": "CHU",
+      "sao": 2,
+      "hoi": "Write a word under each picture. The first letter of the word has been provided.",
+      "truoc": "g",
+      "dap": [
+       "glue"
+      ],
+      "nhieu": [
+       "o",
+       "a",
+       "i",
+       "w"
+      ]
+     }
+    },
+    {
+     "ma": "1.A1.7",
+     "de": "Write a word under each picture. The first letter of the word has been provided. Then put the words in the correct column.\nn___",
+     "trang": 3,
+     "nhom": "A. Pronunciation",
+     "dang": "CAU_NHO",
+     "dap_an": "noodles",
+     "loai_dap_an": "DAP_SO",
+     "hinh": [
+      "sbtanh8/1.A1.7.webp"
+     ],
+     "ghep": {
+      "kieu": "CHU",
+      "sao": 2,
+      "hoi": "Write a word under each picture. The first letter of the word has been provided.",
+      "truoc": "n",
+      "dap": [
+       "noodles"
+      ],
+      "nhieu": [
+       "u",
+       "a",
+       "t",
+       "i",
+       "r"
+      ]
+     }
+    },
+    {
+     "ma": "1.A1.8",
+     "de": "Write a word under each picture. The first letter of the word has been provided. Then put the words in the correct column.\ns___",
+     "trang": 3,
+     "nhom": "A. Pronunciation",
+     "dang": "CAU_NHO",
+     "dap_an": "sugar",
+     "loai_dap_an": "DAP_SO",
+     "hinh": [
+      "sbtanh8/1.A1.8.webp"
+     ],
+     "ghep": {
+      "kieu": "CHU",
+      "sao": 2,
+      "hoi": "Write a word under each picture. The first letter of the word has been provided.",
+      "truoc": "s",
+      "dap": [
+       "sugar"
+      ],
+      "nhieu": [
+       "o",
+       "e",
+       "h",
+       "c"
+      ]
+     }
+    },
+    {
+     "ma": "1.A1.cot",
+     "de": "Write a word under each picture. The first letter of the word has been provided. Then put the words in the correct column.\n/ʊ/: ___\n/uː/: ___",
+     "trang": 3,
+     "nhom": "A. Pronunciation",
+     "dang": "CAU_NHO",
+     "dap_an": "/ʊ/: book, wolf, cook, sugar; /uː/: tofu, soup, glue, noodles",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 8,
+      "hoi": "Put the words in the correct column.",
+      "dong": [
+       {
+        "chu": "b<u>oo</u>k: {0}",
+        "o": [
+         {
+          "dung": [
+           "/ʊ/"
+          ],
+          "sai": [
+           "/uː/"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "tof<u>u</u>: {0}",
+        "o": [
+         {
+          "dung": [
+           "/uː/"
+          ],
+          "sai": [
+           "/ʊ/"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "s<u>ou</u>p: {0}",
+        "o": [
+         {
+          "dung": [
+           "/uː/"
+          ],
+          "sai": [
+           "/ʊ/"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "w<u>o</u>lf: {0}",
+        "o": [
+         {
+          "dung": [
+           "/ʊ/"
+          ],
+          "sai": [
+           "/uː/"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "c<u>oo</u>k: {0}",
+        "o": [
+         {
+          "dung": [
+           "/ʊ/"
+          ],
+          "sai": [
+           "/uː/"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "gl<u>ue</u>: {0}",
+        "o": [
+         {
+          "dung": [
+           "/uː/"
+          ],
+          "sai": [
+           "/ʊ/"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "n<u>oo</u>dles: {0}",
+        "o": [
+         {
+          "dung": [
+           "/uː/"
+          ],
+          "sai": [
+           "/ʊ/"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "s<u>u</u>gar: {0}",
+        "o": [
+         {
+          "dung": [
+           "/ʊ/"
+          ],
+          "sai": [
+           "/uː/"
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "ma": "1.A2.1",
+     "de": "Choose the word in which the underlined part is pronounced differently.\nA. ch<u>oo</u>se B. c<u>oo</u>l C. g<u>oo</u>d D. t<u>oo</u>l",
+     "trang": 3,
+     "nhom": "A. Pronunciation",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "C",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Choose the word in which the underlined part is pronounced differently.",
+      "cac": [
+       "ch<u>oo</u>se",
+       "c<u>oo</u>l",
+       "g<u>oo</u>d",
+       "t<u>oo</u>l"
+      ],
+      "dap": "C"
+     }
+    },
+    {
+     "ma": "1.A2.2",
+     "de": "Choose the word in which the underlined part is pronounced differently.\nA. J<u>u</u>ne B. b<u>u</u>ll C. tr<u>u</u>th D. fl<u>u</u>",
+     "trang": 3,
+     "nhom": "A. Pronunciation",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Choose the word in which the underlined part is pronounced differently.",
+      "cac": [
+       "J<u>u</u>ne",
+       "b<u>u</u>ll",
+       "tr<u>u</u>th",
+       "fl<u>u</u>"
+      ],
+      "dap": "B"
+     }
+    },
+    {
+     "ma": "1.A2.3",
+     "de": "Choose the word in which the underlined part is pronounced differently.\nA. w<u>o</u>man B. wh<u>o</u> C. m<u>o</u>ve D. l<u>o</u>se",
+     "trang": 3,
+     "nhom": "A. Pronunciation",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Choose the word in which the underlined part is pronounced differently.",
+      "cac": [
+       "w<u>o</u>man",
+       "wh<u>o</u>",
+       "m<u>o</u>ve",
+       "l<u>o</u>se"
+      ],
+      "dap": "A"
+     }
+    },
+    {
+     "ma": "1.A2.4",
+     "de": "Choose the word in which the underlined part is pronounced differently.\nA. p<u>u</u>dding B. p<u>u</u>sh C. c<u>u</u>shion D. incl<u>u</u>de",
+     "trang": 3,
+     "nhom": "A. Pronunciation",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "D",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Choose the word in which the underlined part is pronounced differently.",
+      "cac": [
+       "p<u>u</u>dding",
+       "p<u>u</u>sh",
+       "c<u>u</u>shion",
+       "incl<u>u</u>de"
+      ],
+      "dap": "D"
+     }
+    },
+    {
+     "ma": "1.A2.5",
+     "de": "Choose the word in which the underlined part is pronounced differently.\nA. w<u>oo</u>d B. m<u>oo</u>n C. s<u>oo</u>n D. l<u>oo</u>se",
+     "trang": 3,
+     "nhom": "A. Pronunciation",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Choose the word in which the underlined part is pronounced differently.",
+      "cac": [
+       "w<u>oo</u>d",
+       "m<u>oo</u>n",
+       "s<u>oo</u>n",
+       "l<u>oo</u>se"
+      ],
+      "dap": "A"
+     }
+    },
+    {
+     "ma": "1.B1.1",
+     "de": "Solve the crossword puzzle below.\n1 (across): ___",
+     "trang": 4,
+     "nhom": "B. Vocabulary & Grammar",
+     "dang": "CAU_NHO",
+     "dap_an": "doing puzzles",
+     "loai_dap_an": "DAP_SO",
+     "hinh": [
+      "sbtanh8/1.B1.1.webp"
+     ],
+     "ghep": {
+      "kieu": "CHU",
+      "sao": 2,
+      "dap": [
+       "doing puzzles"
+      ],
+      "nhieu": [
+       "t",
+       "r",
+       "m",
+       "h",
+       "b",
+       "k",
+       "y",
+       "f"
+      ]
+     }
+    },
+    {
+     "ma": "1.B1.2",
+     "de": "Solve the crossword puzzle below.\n2 (across): ___",
+     "trang": 4,
+     "nhom": "B. Vocabulary & Grammar",
+     "dang": "CAU_NHO",
+     "dap_an": "messaging friends",
+     "loai_dap_an": "DAP_SO",
+     "hinh": [
+      "sbtanh8/1.B1.2.webp"
+     ],
+     "ghep": {
+      "kieu": "CHU",
+      "sao": 2,
+      "dap": [
+       "messaging friends"
+      ],
+      "nhieu": [
+       "o",
+       "u",
+       "p",
+       "b",
+       "k",
+       "w",
+       "y",
+       "c"
+      ]
+     }
+    },
+    {
+     "ma": "1.B1.3",
+     "de": "Solve the crossword puzzle below.\n3 (across): ___",
+     "trang": 4,
+     "nhom": "B. Vocabulary & Grammar",
+     "dang": "CAU_NHO",
+     "dap_an": "surfing the net",
+     "loai_dap_an": "DAP_SO",
+     "hinh": [
+      "sbtanh8/1.B1.3.webp"
+     ],
+     "ghep": {
+      "kieu": "CHU",
+      "sao": 2,
+      "dap": [
+       "surfing the net"
+      ],
+      "nhieu": [
+       "a",
+       "o",
+       "l",
+       "m",
+       "c",
+       "p",
+       "d",
+       "k"
+      ]
+     }
+    },
+    {
+     "ma": "1.B1.4",
+     "de": "Solve the crossword puzzle below.\n4 (across): ___",
+     "trang": 4,
+     "nhom": "B. Vocabulary & Grammar",
+     "dang": "CAU_NHO",
+     "dap_an": "going shopping",
+     "loai_dap_an": "DAP_SO",
+     "hinh": [
+      "sbtanh8/1.B1.4.webp"
+     ],
+     "ghep": {
+      "kieu": "CHU",
+      "sao": 2,
+      "dap": [
+       "going shopping"
+      ],
+      "nhieu": [
+       "a",
+       "u",
+       "e",
+       "t",
+       "c",
+       "l",
+       "m"
+      ]
+     }
+    },
+    {
+     "ma": "1.B1.5",
+     "de": "Solve the crossword puzzle below.\n5 (across): ___",
+     "trang": 4,
+     "nhom": "B. Vocabulary & Grammar",
+     "dang": "CAU_NHO",
+     "dap_an": "doing DIY",
+     "loai_dap_an": "DAP_SO",
+     "hinh": [
+      "sbtanh8/1.B1.5.webp"
+     ],
+     "ghep": {
+      "kieu": "CHU",
+      "sao": 2,
+      "dap": [
+       "doing DIY"
+      ],
+      "nhieu": [
+       "a",
+       "e",
+       "m",
+       "k",
+       "t",
+       "u"
+      ]
+     }
+    },
+    {
+     "ma": "1.B1.6",
+     "de": "Solve the crossword puzzle below.\n6 (across): ___",
+     "trang": 4,
+     "nhom": "B. Vocabulary & Grammar",
+     "dang": "CAU_NHO",
+     "dap_an": "cooking",
+     "loai_dap_an": "DAP_SO",
+     "hinh": [
+      "sbtanh8/1.B1.6.webp"
+     ],
+     "ghep": {
+      "kieu": "CHU",
+      "sao": 2,
+      "dap": [
+       "cooking"
+      ],
+      "nhieu": [
+       "u",
+       "e",
+       "h",
+       "l",
+       "r",
+       "s"
+      ]
+     }
+    },
+    {
+     "ma": "1.B1.7",
+     "de": "Solve the crossword puzzle below.\n7 (down): ___",
+     "trang": 4,
+     "nhom": "B. Vocabulary & Grammar",
+     "dang": "CAU_NHO",
+     "dap_an": "playing sport",
+     "loai_dap_an": "DAP_SO",
+     "hinh": [
+      "sbtanh8/1.B1.7.webp"
+     ],
+     "ghep": {
+      "kieu": "CHU",
+      "sao": 2,
+      "dap": [
+       "playing sport"
+      ],
+      "nhieu": [
+       "e",
+       "u",
+       "m",
+       "d",
+       "c",
+       "h",
+       "w",
+       "f"
+      ]
+     }
+    },
+    {
+     "ma": "1.B1.8",
+     "de": "Solve the crossword puzzle below.\n8 (down): ___",
+     "trang": 4,
+     "nhom": "B. Vocabulary & Grammar",
+     "dang": "CAU_NHO",
+     "dap_an": "gardening",
+     "loai_dap_an": "DAP_SO",
+     "hinh": [
+      "sbtanh8/1.B1.8.webp"
+     ],
+     "ghep": {
+      "kieu": "CHU",
+      "sao": 2,
+      "dap": [
+       "gardening"
+      ],
+      "nhieu": [
+       "o",
+       "u",
+       "t",
+       "l",
+       "s",
+       "m",
+       "h"
+      ]
+     }
+    },
+    {
+     "ma": "1.B2",
+     "de": "Match the sentence half in A with the other half in B to make a complete sentence.\nA\n1. I'm not keen\n2. My sister isn't\n3. Are you interested\n4. Mi and Thuc Anh are crazy\n5. Phong isn't fond\nB\na. in doing DIY?\nb. on going shopping because it takes so much time.\nc. of doing puzzles very much.\nd. into playing sport.\ne. about playing board games.",
+     "trang": 4,
+     "nhom": "B. Vocabulary & Grammar",
+     "dang": "CAU_NHO",
+     "dap_an": "1-b, 2-d, 3-a, 4-e, 5-c",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 5,
+      "hoi": "Match the sentence half in A with the other half in B to make a complete sentence.",
+      "dong": [
+       {
+        "chu": "I'm not keen {0}",
+        "o": [
+         {
+          "dung": [
+           "on going shopping because it takes so much time."
+          ],
+          "sai": [
+           "in doing DIY?",
+           "of doing puzzles very much.",
+           "into playing sport.",
+           "about playing board games."
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "My sister isn't {0}",
+        "o": [
+         {
+          "dung": [
+           "into playing sport."
+          ],
+          "sai": [
+           "in doing DIY?",
+           "on going shopping because it takes so much time.",
+           "of doing puzzles very much.",
+           "about playing board games."
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Are you interested {0}",
+        "o": [
+         {
+          "dung": [
+           "in doing DIY?"
+          ],
+          "sai": [
+           "on going shopping because it takes so much time.",
+           "of doing puzzles very much.",
+           "into playing sport.",
+           "about playing board games."
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Mi and Thuc Anh are crazy {0}",
+        "o": [
+         {
+          "dung": [
+           "about playing board games."
+          ],
+          "sai": [
+           "in doing DIY?",
+           "on going shopping because it takes so much time.",
+           "of doing puzzles very much.",
+           "into playing sport."
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Phong isn't fond {0}",
+        "o": [
+         {
+          "dung": [
+           "of doing puzzles very much."
+          ],
+          "sai": [
+           "in doing DIY?",
+           "on going shopping because it takes so much time.",
+           "into playing sport.",
+           "about playing board games."
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "ma": "1.B3.1",
+     "de": "Fill in each blank with a suitable word.\nMark is ___ about sport, and he can play basketball, football, table tennis, and golf.",
+     "trang": 5,
+     "nhom": "B. Vocabulary & Grammar",
+     "dang": "CAU_NHO",
+     "dap_an": "crazy (mad cũng đúng)",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "CHU",
+      "sao": 2,
+      "dap": [
+       "crazy",
+       "mad"
+      ],
+      "nhieu": [
+       "e",
+       "o",
+       "u",
+       "s"
+      ]
+     }
+    },
+    {
+     "ma": "1.B3.2",
+     "de": "Fill in each blank with a suitable word.\nAre you keen ___ gardening or going shopping?",
+     "trang": 5,
+     "nhom": "B. Vocabulary & Grammar",
+     "dang": "CAU_NHO",
+     "dap_an": "on",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "CHU",
+      "sao": 2,
+      "dap": [
+       "on"
+      ],
+      "nhieu": [
+       "i",
+       "f",
+       "a",
+       "t"
+      ]
+     }
+    },
+    {
+     "ma": "1.B3.3",
+     "de": "Fill in each blank with a suitable word.\nMany girls are interested in ___ DIY.",
+     "trang": 5,
+     "nhom": "B. Vocabulary & Grammar",
+     "dang": "CAU_NHO",
+     "dap_an": "doing",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "CHU",
+      "sao": 2,
+      "dap": [
+       "doing"
+      ],
+      "nhieu": [
+       "m",
+       "a",
+       "k",
+       "e",
+       "t"
+      ]
+     }
+    },
+    {
+     "ma": "1.B3.4",
+     "de": "Fill in each blank with a suitable word.\nMy mum and I love ___, so we can spend hours in the kitchen.",
+     "trang": 5,
+     "nhom": "B. Vocabulary & Grammar",
+     "dang": "CAU_NHO",
+     "dap_an": "cooking (baking cũng đúng)",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "CHU",
+      "sao": 2,
+      "dap": [
+       "cooking",
+       "baking"
+      ],
+      "nhieu": [
+       "u",
+       "r",
+       "l",
+       "p",
+       "w"
+      ]
+     }
+    },
+    {
+     "ma": "1.B3.5",
+     "de": "Fill in each blank with a suitable word.\nIs your grandfather ___ of collecting stamps and coins? – Yes, he is.",
+     "trang": 5,
+     "nhom": "B. Vocabulary & Grammar",
+     "dang": "CAU_NHO",
+     "dap_an": "fond",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "CHU",
+      "sao": 2,
+      "dap": [
+       "fond"
+      ],
+      "nhieu": [
+       "a",
+       "u",
+       "e",
+       "l"
+      ]
+     }
+    },
+    {
+     "ma": "1.B3.6",
+     "de": "Fill in each blank with a suitable word.\nWhat does your brother do in his free time? – He usually ___ the net.",
+     "trang": 5,
+     "nhom": "B. Vocabulary & Grammar",
+     "dang": "CAU_NHO",
+     "dap_an": "surfs",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "CHU",
+      "sao": 2,
+      "dap": [
+       "surfs"
+      ],
+      "nhieu": [
+       "a",
+       "i",
+       "t",
+       "p"
+      ]
+     }
+    },
+    {
+     "ma": "1.B4.1",
+     "de": "Choose the correct answer A, B, C, or D. Sometimes you can choose two answers.\nAccording to a survey, 21% of children under 18 in the UK enjoy ___ football.\nA. to play B. play C. playing D. played",
+     "trang": 5,
+     "nhom": "B. Vocabulary & Grammar",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "C",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Choose the correct answer A, B, C, or D. Sometimes you can choose two answers.\nAccording to a survey, 21% of children under 18 in the UK enjoy ___ football.",
+      "cac": [
+       "to play",
+       "play",
+       "playing",
+       "played"
+      ],
+      "nhieu_dap": true,
+      "dap": [
+       "C"
+      ]
+     }
+    },
+    {
+     "ma": "1.B4.2",
+     "de": "Choose the correct answer A, B, C, or D. Sometimes you can choose two answers.\nAbout 16% of them love ___ swimming.\nA. to go B. go C. going D. went",
+     "trang": 5,
+     "nhom": "B. Vocabulary & Grammar",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A, C",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Choose the correct answer A, B, C, or D. Sometimes you can choose two answers.\nAbout 16% of them love ___ swimming.",
+      "cac": [
+       "to go",
+       "go",
+       "going",
+       "went"
+      ],
+      "nhieu_dap": true,
+      "dap": [
+       "A",
+       "C"
+      ]
+     }
+    },
+    {
+     "ma": "1.B4.3",
+     "de": "Choose the correct answer A, B, C, or D. Sometimes you can choose two answers.\nA lot of young families in Viet Nam prefer ___ time doing outdoor activities together.\nA. spending B. spend C. spent D. to spend",
+     "trang": 5,
+     "nhom": "B. Vocabulary & Grammar",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A, D",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Choose the correct answer A, B, C, or D. Sometimes you can choose two answers.\nA lot of young families in Viet Nam prefer ___ time doing outdoor activities together.",
+      "cac": [
+       "spending",
+       "spend",
+       "spent",
+       "to spend"
+      ],
+      "nhieu_dap": true,
+      "dap": [
+       "A",
+       "D"
+      ]
+     }
+    },
+    {
+     "ma": "1.B4.4",
+     "de": "Choose the correct answer A, B, C, or D. Sometimes you can choose two answers.\nMy sister hates ___ up early to do exercise.\nA. getting B. get C. gets D. to get",
+     "trang": 5,
+     "nhom": "B. Vocabulary & Grammar",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A, D",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Choose the correct answer A, B, C, or D. Sometimes you can choose two answers.\nMy sister hates ___ up early to do exercise.",
+      "cac": [
+       "getting",
+       "get",
+       "gets",
+       "to get"
+      ],
+      "nhieu_dap": true,
+      "dap": [
+       "A",
+       "D"
+      ]
+     }
+    },
+    {
+     "ma": "1.B4.5",
+     "de": "Choose the correct answer A, B, C, or D. Sometimes you can choose two answers.\nOur cousins detest ___ books and ___.\nA. reading / draw B. reading / drawing\nC. to read / to draw D. read / draw",
+     "trang": 5,
+     "nhom": "B. Vocabulary & Grammar",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Choose the correct answer A, B, C, or D. Sometimes you can choose two answers.\nOur cousins detest ___ books and ___.",
+      "cac": [
+       "reading / draw",
+       "reading / drawing",
+       "to read / to draw",
+       "read / draw"
+      ],
+      "nhieu_dap": true,
+      "dap": [
+       "B"
+      ]
+     }
+    },
+    {
+     "ma": "1.B4.6",
+     "de": "Choose the correct answer A, B, C, or D. Sometimes you can choose two answers.\nDoes your brother dislike ___ his friends? – Yes, he prefers ___ them.\nA. call / message B. calling / messaging\nC. to call / to message D. to call / message",
+     "trang": 5,
+     "nhom": "B. Vocabulary & Grammar",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Choose the correct answer A, B, C, or D. Sometimes you can choose two answers.\nDoes your brother dislike ___ his friends? – Yes, he prefers ___ them.",
+      "cac": [
+       "call / message",
+       "calling / messaging",
+       "to call / to message",
+       "to call / message"
+      ],
+      "nhieu_dap": true,
+      "dap": [
+       "B"
+      ]
+     }
+    },
+    {
+     "ma": "1.B5.1",
+     "de": "Write complete sentences, using the verbs and pictures given.\nenjoy",
+     "trang": 5,
+     "nhom": "B. Vocabulary & Grammar",
+     "dang": "CAU_NHO",
+     "dap_an": "She enjoys playing the piano. / She enjoys playing piano.",
+     "loai_dap_an": "DAP_SO",
+     "hinh": [
+      "sbtanh8/1.B5.1.webp"
+     ],
+     "ghep": {
+      "kieu": "CAU",
+      "sao": 2,
+      "the": [
+       "She",
+       "enjoys",
+       "playing",
+       "the",
+       "piano."
+      ],
+      "nhieu": [
+       "enjoy",
+       "to play"
+      ],
+      "dap": [
+       "She enjoys playing the piano.",
+       "She enjoys playing piano."
+      ]
+     }
+    },
+    {
+     "ma": "1.B5.2",
+     "de": "Write complete sentences, using the verbs and pictures given.\nlike",
+     "trang": 5,
+     "nhom": "B. Vocabulary & Grammar",
+     "dang": "CAU_NHO",
+     "dap_an": "They like chatting to each other. / They like to chat to each other.",
+     "loai_dap_an": "DAP_SO",
+     "hinh": [
+      "sbtanh8/1.B5.2.webp"
+     ],
+     "ghep": {
+      "kieu": "CAU",
+      "sao": 2,
+      "the": [
+       "They",
+       "like",
+       "chatting",
+       "to chat",
+       "to",
+       "each",
+       "other."
+      ],
+      "nhieu": [
+       "likes",
+       "chat"
+      ],
+      "dap": [
+       "They like chatting to each other.",
+       "They like to chat to each other."
+      ]
+     }
+    },
+    {
+     "ma": "1.B5.3",
+     "de": "Write complete sentences, using the verbs and pictures given.\nhate",
+     "trang": 5,
+     "nhom": "B. Vocabulary & Grammar",
+     "dang": "CAU_NHO",
+     "dap_an": "He hates watering the flowers. / He hates to water the flowers. / He hates watering flowers. / He hates to water flowers.",
+     "loai_dap_an": "DAP_SO",
+     "hinh": [
+      "sbtanh8/1.B5.3.webp"
+     ],
+     "ghep": {
+      "kieu": "CAU",
+      "sao": 2,
+      "the": [
+       "He",
+       "hates",
+       "watering",
+       "to water",
+       "the",
+       "flowers."
+      ],
+      "nhieu": [
+       "hate",
+       "water"
+      ],
+      "dap": [
+       "He hates watering the flowers.",
+       "He hates to water the flowers.",
+       "He hates watering flowers.",
+       "He hates to water flowers."
+      ]
+     }
+    },
+    {
+     "ma": "1.B5.4",
+     "de": "Write complete sentences, using the verbs and pictures given.\nlove",
+     "trang": 6,
+     "nhom": "B. Vocabulary & Grammar",
+     "dang": "CAU_NHO",
+     "dap_an": "They love making models. / They love to make models.",
+     "loai_dap_an": "DAP_SO",
+     "hinh": [
+      "sbtanh8/1.B5.4.webp"
+     ],
+     "ghep": {
+      "kieu": "CAU",
+      "sao": 2,
+      "the": [
+       "They",
+       "love",
+       "making",
+       "to make",
+       "models."
+      ],
+      "nhieu": [
+       "loves",
+       "make"
+      ],
+      "dap": [
+       "They love making models.",
+       "They love to make models."
+      ]
+     }
+    },
+    {
+     "ma": "1.B5.5",
+     "de": "Write complete sentences, using the verbs and pictures given.\ndetest",
+     "trang": 6,
+     "nhom": "B. Vocabulary & Grammar",
+     "dang": "CAU_NHO",
+     "dap_an": "He detests cooking.",
+     "loai_dap_an": "DAP_SO",
+     "hinh": [
+      "sbtanh8/1.B5.5.webp"
+     ],
+     "ghep": {
+      "kieu": "CAU",
+      "sao": 2,
+      "the": [
+       "He",
+       "detests",
+       "cooking."
+      ],
+      "nhieu": [
+       "detest",
+       "to cook."
+      ],
+      "dap": [
+       "He detests cooking."
+      ]
+     }
+    },
+    {
+     "ma": "1.B5.6",
+     "de": "Write complete sentences, using the verbs and pictures given.\ndislike",
+     "trang": 6,
+     "nhom": "B. Vocabulary & Grammar",
+     "dang": "CAU_NHO",
+     "dap_an": "They dislike dancing.",
+     "loai_dap_an": "DAP_SO",
+     "hinh": [
+      "sbtanh8/1.B5.6.webp"
+     ],
+     "ghep": {
+      "kieu": "CAU",
+      "sao": 2,
+      "the": [
+       "They",
+       "dislike",
+       "dancing."
+      ],
+      "nhieu": [
+       "dislikes",
+       "to dance."
+      ],
+      "dap": [
+       "They dislike dancing."
+      ]
+     }
+    },
+    {
+     "ma": "1.C1.1",
+     "de": "Choose the most suitable response A, B, C, or D to complete each of the following exchanges.\nA: Would you like to go to the cinema with me?\nB: ___\nA. Yes, I watch films every day. B. Yes, I don't like it.\nC. I'd love to. Thanks. D. We can go there together.",
+     "trang": 6,
+     "nhom": "C. Speaking",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "C",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Choose the most suitable response A, B, C, or D to complete each of the following exchanges.\nA: Would you like to go to the cinema with me?\nB: ___",
+      "cac": [
+       "Yes, I watch films every day.",
+       "Yes, I don't like it.",
+       "I'd love to. Thanks.",
+       "We can go there together."
+      ],
+      "dap": "C"
+     }
+    },
+    {
+     "ma": "1.C1.2",
+     "de": "Choose the most suitable response A, B, C, or D to complete each of the following exchanges.\nA: Do you fancy going out for a drink?\nB: ___\nA. I usually drink tea. B. Sure, thanks.\nC. Why are you asking? D. No, I prefer coffee.",
+     "trang": 6,
+     "nhom": "C. Speaking",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Choose the most suitable response A, B, C, or D to complete each of the following exchanges.\nA: Do you fancy going out for a drink?\nB: ___",
+      "cac": [
+       "I usually drink tea.",
+       "Sure, thanks.",
+       "Why are you asking?",
+       "No, I prefer coffee."
+      ],
+      "dap": "B"
+     }
+    },
+    {
+     "ma": "1.C1.3",
+     "de": "Choose the most suitable response A, B, C, or D to complete each of the following exchanges.\nA: Would you like to come to my house this afternoon?\nB: ___\nA. That's very kind of you. Thanks. B. No, I can go there myself.\nC. Yes, I like staying at home. D. I think I can.",
+     "trang": 6,
+     "nhom": "C. Speaking",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Choose the most suitable response A, B, C, or D to complete each of the following exchanges.\nA: Would you like to come to my house this afternoon?\nB: ___",
+      "cac": [
+       "That's very kind of you. Thanks.",
+       "No, I can go there myself.",
+       "Yes, I like staying at home.",
+       "I think I can."
+      ],
+      "dap": "A"
+     }
+    },
+    {
+     "ma": "1.C1.4",
+     "de": "Choose the most suitable response A, B, C, or D to complete each of the following exchanges.\nA: What leisure activities do you usually do with your mum?\nB: ___\nA. She enjoys doing yoga. B. She goes to work at 7 a.m.\nC. She watches TV in her leisure time. D. We cook, do DIY, and cycle together.",
+     "trang": 6,
+     "nhom": "C. Speaking",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "D",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Choose the most suitable response A, B, C, or D to complete each of the following exchanges.\nA: What leisure activities do you usually do with your mum?\nB: ___",
+      "cac": [
+       "She enjoys doing yoga.",
+       "She goes to work at 7 a.m.",
+       "She watches TV in her leisure time.",
+       "We cook, do DIY, and cycle together."
+      ],
+      "dap": "D"
+     }
+    },
+    {
+     "ma": "1.C1.5",
+     "de": "Choose the most suitable response A, B, C, or D to complete each of the following exchanges.\nA: How do you feel when you spend time with your mum?\nB: ___\nA. Yes, I'd love to. B. I feel very happy.\nC. I like it too. D. I love cooking with her.",
+     "trang": 6,
+     "nhom": "C. Speaking",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Choose the most suitable response A, B, C, or D to complete each of the following exchanges.\nA: How do you feel when you spend time with your mum?\nB: ___",
+      "cac": [
+       "Yes, I'd love to.",
+       "I feel very happy.",
+       "I like it too.",
+       "I love cooking with her."
+      ],
+      "dap": "B"
+     }
+    },
+    {
+     "ma": "1.C2",
+     "de": "Phong and Mark are talking about their leisure activities. Choose A - E to complete their conversation. Then practise it with a friend.\nPhong: What do you usually do in your leisure time?\nMark: (1) ___\nPhong: What sport can you play?\nMark: (2) ___\nPhong: Really? Are you a member of any sport club?\nMark: (3) ___\nPhong: How often do the club members meet?\nMark: (4) ___\nPhong: I like swimming and playing football.\nMark: (5) ___\nPhong: I'd love to. Thanks.\nA. We meet twice a week, on Thursdays and Sundays. What about you? What do you enjoy doing in your free time?\nB. I usually play sport. You know I love playing sport more than doing anything else.\nC. Playing football? Would you like to join us this Sunday? We're having a match against another school.\nD. Yes. I'm a member of my school's football club.\nE. I can play football, volleyball, and basketball.",
+     "trang": 7,
+     "nhom": "C. Speaking",
+     "dang": "CAU_NHO",
+     "dap_an": "1-B, 2-E, 3-D, 4-A, 5-C",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 5,
+      "hoi": "Phong and Mark are talking about their leisure activities. Choose A - E to complete their conversation.",
+      "dong": [
+       {
+        "chu": "Phong: What do you usually do in your leisure time?\nMark: (1) {0}",
+        "o": [
+         {
+          "dung": [
+           "I usually play sport. You know I love playing sport more than doing anything else."
+          ],
+          "sai": [
+           "We meet twice a week, on Thursdays and Sundays. What about you? What do you enjoy doing in your free time?",
+           "Playing football? Would you like to join us this Sunday? We're having a match against another school.",
+           "Yes. I'm a member of my school's football club.",
+           "I can play football, volleyball, and basketball."
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Phong: What sport can you play?\nMark: (2) {0}",
+        "o": [
+         {
+          "dung": [
+           "I can play football, volleyball, and basketball."
+          ],
+          "sai": [
+           "We meet twice a week, on Thursdays and Sundays. What about you? What do you enjoy doing in your free time?",
+           "I usually play sport. You know I love playing sport more than doing anything else.",
+           "Playing football? Would you like to join us this Sunday? We're having a match against another school.",
+           "Yes. I'm a member of my school's football club."
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Phong: Really? Are you a member of any sport club?\nMark: (3) {0}",
+        "o": [
+         {
+          "dung": [
+           "Yes. I'm a member of my school's football club."
+          ],
+          "sai": [
+           "We meet twice a week, on Thursdays and Sundays. What about you? What do you enjoy doing in your free time?",
+           "I usually play sport. You know I love playing sport more than doing anything else.",
+           "Playing football? Would you like to join us this Sunday? We're having a match against another school.",
+           "I can play football, volleyball, and basketball."
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Phong: How often do the club members meet?\nMark: (4) {0}",
+        "o": [
+         {
+          "dung": [
+           "We meet twice a week, on Thursdays and Sundays. What about you? What do you enjoy doing in your free time?"
+          ],
+          "sai": [
+           "I usually play sport. You know I love playing sport more than doing anything else.",
+           "Playing football? Would you like to join us this Sunday? We're having a match against another school.",
+           "Yes. I'm a member of my school's football club.",
+           "I can play football, volleyball, and basketball."
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Phong: I like swimming and playing football.\nMark: (5) {0}\nPhong: I'd love to. Thanks.",
+        "o": [
+         {
+          "dung": [
+           "Playing football? Would you like to join us this Sunday? We're having a match against another school."
+          ],
+          "sai": [
+           "We meet twice a week, on Thursdays and Sundays. What about you? What do you enjoy doing in your free time?",
+           "I usually play sport. You know I love playing sport more than doing anything else.",
+           "Yes. I'm a member of my school's football club.",
+           "I can play football, volleyball, and basketball."
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "ma": "1.D1",
+     "de": "Fill in each blank in the email with a suitable word from the box.\nbecome | doing | tell | neighbourhood | elderly | best | What | books",
+     "trang": 7,
+     "nhom": "D. Reading",
+     "dang": "CAU_NHO",
+     "dap_an": "(1) tell, (2) best, (3) neighbourhood, (4) become, (5) elderly, (6) books, (7) doing, (8) What. Ô (2) máy nhận cả doing vì câu vẫn đúng ngữ pháp.",
+     "loai_dap_an": "DAP_SO",
+     "doan": "1.D1",
+     "ghep": {
+      "kieu": "O",
+      "sao": 8,
+      "dong": [
+       {
+        "chu": "(1) {0}",
+        "o": [
+         {
+          "dung": [
+           "tell"
+          ],
+          "sai": [
+           "become",
+           "doing",
+           "neighbourhood",
+           "elderly",
+           "best",
+           "What",
+           "books"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "(2) {0}",
+        "o": [
+         {
+          "dung": [
+           "best",
+           "doing"
+          ],
+          "sai": [
+           "become",
+           "tell",
+           "neighbourhood",
+           "elderly",
+           "What",
+           "books"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "(3) {0}",
+        "o": [
+         {
+          "dung": [
+           "neighbourhood"
+          ],
+          "sai": [
+           "become",
+           "doing",
+           "tell",
+           "elderly",
+           "best",
+           "What",
+           "books"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "(4) {0}",
+        "o": [
+         {
+          "dung": [
+           "become"
+          ],
+          "sai": [
+           "doing",
+           "tell",
+           "neighbourhood",
+           "elderly",
+           "best",
+           "What",
+           "books"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "(5) {0}",
+        "o": [
+         {
+          "dung": [
+           "elderly"
+          ],
+          "sai": [
+           "become",
+           "doing",
+           "tell",
+           "neighbourhood",
+           "best",
+           "What",
+           "books"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "(6) {0}",
+        "o": [
+         {
+          "dung": [
+           "books"
+          ],
+          "sai": [
+           "become",
+           "doing",
+           "tell",
+           "neighbourhood",
+           "elderly",
+           "best",
+           "What"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "(7) {0}",
+        "o": [
+         {
+          "dung": [
+           "doing"
+          ],
+          "sai": [
+           "become",
+           "tell",
+           "neighbourhood",
+           "elderly",
+           "best",
+           "What",
+           "books"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "(8) {0}",
+        "o": [
+         {
+          "dung": [
+           "What"
+          ],
+          "sai": [
+           "become",
+           "doing",
+           "tell",
+           "neighbourhood",
+           "elderly",
+           "best",
+           "books"
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "ma": "1.D2.1",
+     "de": "Choose the correct answer A, B, C, or D to fill in each blank in the following passage.\n(1) There are a lot of pastimes that young people like, and one of ___ is mountain climbing.\nA. them B. they C. theirs D. their",
+     "trang": 8,
+     "nhom": "D. Reading",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN",
+     "doan": "1.D2",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Choose the correct answer A, B, C, or D to fill in each blank in the following passage.\n(1) There are a lot of pastimes that young people like, and one of ___ is mountain climbing.",
+      "cac": [
+       "them",
+       "they",
+       "theirs",
+       "their"
+      ],
+      "dap": "A"
+     }
+    },
+    {
+     "ma": "1.D2.2",
+     "de": "Choose the correct answer A, B, C, or D to fill in each blank in the following passage.\n(2) If you go climbing outdoors, it is a great way to ___ your strength and enjoy nature at the same time.\nA. decrease B. reduce C. increase D. raise",
+     "trang": 8,
+     "nhom": "D. Reading",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "C",
+     "loai_dap_an": "TN",
+     "doan": "1.D2",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Choose the correct answer A, B, C, or D to fill in each blank in the following passage.\n(2) If you go climbing outdoors, it is a great way to ___ your strength and enjoy nature at the same time.",
+      "cac": [
+       "decrease",
+       "reduce",
+       "increase",
+       "raise"
+      ],
+      "dap": "C"
+     }
+    },
+    {
+     "ma": "1.D2.3",
+     "de": "Choose the correct answer A, B, C, or D to fill in each blank in the following passage.\n(3) You can even set up your own climbing wall in your backyard or ___ your home.\nA. indoor B. inside C. within D. among",
+     "trang": 8,
+     "nhom": "D. Reading",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "doan": "1.D2",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Choose the correct answer A, B, C, or D to fill in each blank in the following passage.\n(3) You can even set up your own climbing wall in your backyard or ___ your home.",
+      "cac": [
+       "indoor",
+       "inside",
+       "within",
+       "among"
+      ],
+      "dap": "B"
+     }
+    },
+    {
+     "ma": "1.D2.4",
+     "de": "Choose the correct answer A, B, C, or D to fill in each blank in the following passage.\n(4) This way you don't have to go out and still can ___ fit and enjoy the activity.\nA. keep B. stay C. go D. give",
+     "trang": 8,
+     "nhom": "D. Reading",
+     "dang": "CAU_NHO",
+     "dap_an": "A. keep (sách chỉ nhận A; B. stay cũng đúng, máy nhận cả hai)",
+     "loai_dap_an": "DAP_SO",
+     "doan": "1.D2",
+     "ghep": {
+      "kieu": "O",
+      "sao": 1,
+      "hoi": "Choose the correct answer A, B, C, or D to fill in each blank in the following passage.",
+      "dong": [
+       {
+        "chu": "(4) This way you don't have to go out and still can {0} fit and enjoy the activity.",
+        "o": [
+         {
+          "dung": [
+           "keep",
+           "stay"
+          ],
+          "sai": [
+           "go",
+           "give"
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "ma": "1.D2.5",
+     "de": "Choose the correct answer A, B, C, or D to fill in each blank in the following passage.\n(5) Many people take a class to learn how to climb and use their equipment ___.\nA. effective B. effect C. effectively D. effectiveness",
+     "trang": 8,
+     "nhom": "D. Reading",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "C",
+     "loai_dap_an": "TN",
+     "doan": "1.D2",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Choose the correct answer A, B, C, or D to fill in each blank in the following passage.\n(5) Many people take a class to learn how to climb and use their equipment ___.",
+      "cac": [
+       "effective",
+       "effect",
+       "effectively",
+       "effectiveness"
+      ],
+      "dap": "C"
+     }
+    },
+    {
+     "ma": "1.D2.6",
+     "de": "Choose the correct answer A, B, C, or D to fill in each blank in the following passage.\n(6) If you are an active person and like outdoor activities, ___ don't you try this activity?\nA. what B. when C. how D. why",
+     "trang": 8,
+     "nhom": "D. Reading",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "D",
+     "loai_dap_an": "TN",
+     "doan": "1.D2",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Choose the correct answer A, B, C, or D to fill in each blank in the following passage.\n(6) If you are an active person and like outdoor activities, ___ don't you try this activity?",
+      "cac": [
+       "what",
+       "when",
+       "how",
+       "why"
+      ],
+      "dap": "D"
+     }
+    },
+    {
+     "ma": "1.D3a",
+     "de": "Read the passage and do the following tasks.\na. Match each word in A with its meaning in B.\nA\n1. pastime\n2. pattern\n3. stitches\n4. magical\n5. needles\nB\na. small circles of wool made around knitting needles\nb. something that you enjoy doing when you are not working\nc. long thin pieces of plastic or metal with a point at one end used for knitting\nd. a design that you use to make something\ne. having a special quality that makes something seem different from ordinary things",
+     "trang": 9,
+     "nhom": "D. Reading",
+     "dang": "CAU_NHO",
+     "dap_an": "1-b, 2-d, 3-a, 4-e, 5-c",
+     "loai_dap_an": "DAP_SO",
+     "doan": "1.D3",
+     "ghep": {
+      "kieu": "O",
+      "sao": 5,
+      "hoi": "Match each word in A with its meaning in B.",
+      "dong": [
+       {
+        "chu": "pastime: {0}",
+        "o": [
+         {
+          "dung": [
+           "something that you enjoy doing when you are not working"
+          ],
+          "sai": [
+           "small circles of wool made around knitting needles",
+           "long thin pieces of plastic or metal with a point at one end used for knitting",
+           "a design that you use to make something",
+           "having a special quality that makes something seem different from ordinary things"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "pattern: {0}",
+        "o": [
+         {
+          "dung": [
+           "a design that you use to make something"
+          ],
+          "sai": [
+           "small circles of wool made around knitting needles",
+           "something that you enjoy doing when you are not working",
+           "long thin pieces of plastic or metal with a point at one end used for knitting",
+           "having a special quality that makes something seem different from ordinary things"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "stitches: {0}",
+        "o": [
+         {
+          "dung": [
+           "small circles of wool made around knitting needles"
+          ],
+          "sai": [
+           "something that you enjoy doing when you are not working",
+           "long thin pieces of plastic or metal with a point at one end used for knitting",
+           "a design that you use to make something",
+           "having a special quality that makes something seem different from ordinary things"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "magical: {0}",
+        "o": [
+         {
+          "dung": [
+           "having a special quality that makes something seem different from ordinary things"
+          ],
+          "sai": [
+           "small circles of wool made around knitting needles",
+           "something that you enjoy doing when you are not working",
+           "long thin pieces of plastic or metal with a point at one end used for knitting",
+           "a design that you use to make something"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "needles: {0}",
+        "o": [
+         {
+          "dung": [
+           "long thin pieces of plastic or metal with a point at one end used for knitting"
+          ],
+          "sai": [
+           "small circles of wool made around knitting needles",
+           "something that you enjoy doing when you are not working",
+           "a design that you use to make something",
+           "having a special quality that makes something seem different from ordinary things"
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "ma": "1.D3b.1",
+     "de": "Read the passage and do the following tasks.\nb. Tick (✓) T (True) or F (False) for each sentence.\nThe girl started knitting when she was in grade 10.",
+     "trang": 9,
+     "nhom": "D. Reading",
+     "dang": "CAU_NHO",
+     "dap_an": "F",
+     "loai_dap_an": "DAP_SO",
+     "doan": "1.D3",
+     "ghep": {
+      "kieu": "DUNG_SAI",
+      "sao": 1,
+      "hoi": "The girl started knitting when she was in grade 10.",
+      "dap": false,
+      "nhan": [
+       "True",
+       "False"
+      ]
+     }
+    },
+    {
+     "ma": "1.D3b.2",
+     "de": "Read the passage and do the following tasks.\nb. Tick (✓) T (True) or F (False) for each sentence.\nShe found the pattern for her dad's sweater online.",
+     "trang": 9,
+     "nhom": "D. Reading",
+     "dang": "CAU_NHO",
+     "dap_an": "T",
+     "loai_dap_an": "DAP_SO",
+     "doan": "1.D3",
+     "ghep": {
+      "kieu": "DUNG_SAI",
+      "sao": 1,
+      "hoi": "She found the pattern for her dad's sweater online.",
+      "dap": true,
+      "nhan": [
+       "True",
+       "False"
+      ]
+     }
+    },
+    {
+     "ma": "1.D3b.3",
+     "de": "Read the passage and do the following tasks.\nb. Tick (✓) T (True) or F (False) for each sentence.\nShe spent more than a week knitting the sweater.",
+     "trang": 9,
+     "nhom": "D. Reading",
+     "dang": "CAU_NHO",
+     "dap_an": "F",
+     "loai_dap_an": "DAP_SO",
+     "doan": "1.D3",
+     "ghep": {
+      "kieu": "DUNG_SAI",
+      "sao": 1,
+      "hoi": "She spent more than a week knitting the sweater.",
+      "dap": false,
+      "nhan": [
+       "True",
+       "False"
+      ]
+     }
+    },
+    {
+     "ma": "1.D3b.4",
+     "de": "Read the passage and do the following tasks.\nb. Tick (✓) T (True) or F (False) for each sentence.\nKnitting makes people be more careful and patient.",
+     "trang": 9,
+     "nhom": "D. Reading",
+     "dang": "CAU_NHO",
+     "dap_an": "T",
+     "loai_dap_an": "DAP_SO",
+     "doan": "1.D3",
+     "ghep": {
+      "kieu": "DUNG_SAI",
+      "sao": 1,
+      "hoi": "Knitting makes people be more careful and patient.",
+      "dap": true,
+      "nhan": [
+       "True",
+       "False"
+      ]
+     }
+    },
+    {
+     "ma": "1.D3b.5",
+     "de": "Read the passage and do the following tasks.\nb. Tick (✓) T (True) or F (False) for each sentence.\nThe girl's dad says knitting is magical.",
+     "trang": 9,
+     "nhom": "D. Reading",
+     "dang": "CAU_NHO",
+     "dap_an": "F",
+     "loai_dap_an": "DAP_SO",
+     "doan": "1.D3",
+     "ghep": {
+      "kieu": "DUNG_SAI",
+      "sao": 1,
+      "hoi": "The girl's dad says knitting is magical.",
+      "dap": false,
+      "nhan": [
+       "True",
+       "False"
+      ]
+     }
+    },
+    {
+     "ma": "1.E1.1",
+     "de": "Circle A, B, C, or D to indicate the sentence that is closest in meaning to the sentence given.\nI like reading books, listening to music, and drawing in my free time.\nA. My after-school activities are reading books, listening to music, and drawing.\nB. I like books, music, and pictures.\nC. My leisure activities are reading books, listening to music, and drawing.\nD. I prefer reading books to listening to music and drawing.",
+     "trang": 9,
+     "nhom": "E. Writing",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "C",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Circle A, B, C, or D to indicate the sentence that is closest in meaning to the sentence given.\nI like reading books, listening to music, and drawing in my free time.",
+      "cac": [
+       "My after-school activities are reading books, listening to music, and drawing.",
+       "I like books, music, and pictures.",
+       "My leisure activities are reading books, listening to music, and drawing.",
+       "I prefer reading books to listening to music and drawing."
+      ],
+      "dap": "C"
+     }
+    },
+    {
+     "ma": "1.E1.2",
+     "de": "Circle A, B, C, or D to indicate the sentence that is closest in meaning to the sentence given.\nMy brother is interested in doing puzzles.\nA. My brother likes doing puzzles.\nB. My brother finds doing puzzles boring.\nC. My brother does puzzles every day.\nD. My brother prefers doing puzzles to anything else.",
+     "trang": 9,
+     "nhom": "E. Writing",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Circle A, B, C, or D to indicate the sentence that is closest in meaning to the sentence given.\nMy brother is interested in doing puzzles.",
+      "cac": [
+       "My brother likes doing puzzles.",
+       "My brother finds doing puzzles boring.",
+       "My brother does puzzles every day.",
+       "My brother prefers doing puzzles to anything else."
+      ],
+      "dap": "A"
+     }
+    },
+    {
+     "ma": "1.E1.3",
+     "de": "Circle A, B, C, or D to indicate the sentence that is closest in meaning to the sentence given.\nMy favourite leisure activity is doing DIY.\nA. I enjoy doing DIY.\nB. I'm keen on doing DIY.\nC. I'm into doing DIY.\nD. I like doing DIY the most.",
+     "trang": 9,
+     "nhom": "E. Writing",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "D",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Circle A, B, C, or D to indicate the sentence that is closest in meaning to the sentence given.\nMy favourite leisure activity is doing DIY.",
+      "cac": [
+       "I enjoy doing DIY.",
+       "I'm keen on doing DIY.",
+       "I'm into doing DIY.",
+       "I like doing DIY the most."
+      ],
+      "dap": "D"
+     }
+    },
+    {
+     "ma": "1.E1.4",
+     "de": "Circle A, B, C, or D to indicate the sentence that is closest in meaning to the sentence given.\nThey are crazy about cooking.\nA. They like cooking.\nB. They like cooking very much.\nC. They are fond of cooking.\nD. Their favourite activity is cooking.",
+     "trang": 10,
+     "nhom": "E. Writing",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Circle A, B, C, or D to indicate the sentence that is closest in meaning to the sentence given.\nThey are crazy about cooking.",
+      "cac": [
+       "They like cooking.",
+       "They like cooking very much.",
+       "They are fond of cooking.",
+       "Their favourite activity is cooking."
+      ],
+      "dap": "B"
+     }
+    },
+    {
+     "ma": "1.E1.5",
+     "de": "Circle A, B, C, or D to indicate the sentence that is closest in meaning to the sentence given.\nPhong detests playing computer games.\nA. Phong doesn't like playing computer games.\nB. Phong prefers playing computer games.\nC. Phong isn't fond of playing computer games.\nD. Phong hates playing computer games very much.",
+     "trang": 10,
+     "nhom": "E. Writing",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "D",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Circle A, B, C, or D to indicate the sentence that is closest in meaning to the sentence given.\nPhong detests playing computer games.",
+      "cac": [
+       "Phong doesn't like playing computer games.",
+       "Phong prefers playing computer games.",
+       "Phong isn't fond of playing computer games.",
+       "Phong hates playing computer games very much."
+      ],
+      "dap": "D"
+     }
+    },
+    {
+     "ma": "1.E2",
+     "de": "Write true sentences about you and a family member.\nMe: I enjoy ___. I'm keen on ___. I hate ___.\nMy ___: He / She loves ___. He / She is fond of ___. He / She dislikes ___.",
+     "trang": 10,
+     "nhom": "E. Writing",
+     "dang": "CAU_NHO",
+     "dap_an": "Tuỳ HS. Ví dụ: I enjoy playing badminton. I'm keen on reading comics. I hate doing housework. My brother: He loves watching cartoons. He is fond of listening to music. He dislikes going shopping.",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 12,
+      "hoi": "Write true sentences about you and a family member.",
+      "dong": [
+       {
+        "chu": "I enjoy {0} {1}.",
+        "o": [
+         {
+          "dung": [
+           "playing"
+          ],
+          "sai": [
+           "play",
+           "to play"
+          ]
+         },
+         {
+          "dung": [
+           "badminton",
+           "chess",
+           "football",
+           "the guitar",
+           "computer games"
+          ],
+          "sai": [
+           "shopping"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "I'm keen on {0} {1}.",
+        "o": [
+         {
+          "dung": [
+           "reading"
+          ],
+          "sai": [
+           "read",
+           "to read"
+          ]
+         },
+         {
+          "dung": [
+           "comics",
+           "books",
+           "short stories",
+           "novels"
+          ],
+          "sai": [
+           "football"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "I hate {0} {1}.",
+        "o": [
+         {
+          "dung": [
+           "doing",
+           "to do"
+          ],
+          "sai": [
+           "do"
+          ]
+         },
+         {
+          "dung": [
+           "housework",
+           "homework",
+           "puzzles",
+           "exercise"
+          ],
+          "sai": [
+           "football"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "My {0}:",
+        "o": [
+         {
+          "go": true,
+          "goi_y": "mum, brother..."
+         }
+        ]
+       },
+       {
+        "chu": "He / She loves {0} {1}.",
+        "o": [
+         {
+          "dung": [
+           "watching",
+           "to watch"
+          ],
+          "sai": [
+           "watch"
+          ]
+         },
+         {
+          "dung": [
+           "cartoons",
+           "films",
+           "TV",
+           "football matches"
+          ],
+          "sai": [
+           "music"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "He / She is fond of {0} {1}.",
+        "o": [
+         {
+          "dung": [
+           "listening"
+          ],
+          "sai": [
+           "listen",
+           "to listen"
+          ]
+         },
+         {
+          "dung": [
+           "to music",
+           "to the radio",
+           "to pop songs"
+          ],
+          "sai": [
+           "music"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "He / She dislikes {0} {1}.",
+        "o": [
+         {
+          "dung": [
+           "going"
+          ],
+          "sai": [
+           "go",
+           "to go"
+          ]
+         },
+         {
+          "dung": [
+           "shopping",
+           "swimming",
+           "camping",
+           "fishing"
+          ],
+          "sai": [
+           "football"
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "ma": "1.E3a",
+     "de": "Think about your best friend and his / her leisure activities. Then write a short paragraph of about 80 words about his / her favourite leisure activity.\nUse the following questions as cues:\n1. What leisure activity does he / she like doing the most?\n2. How often does he / she do it?\n3. Who does he / she do the activity with?\n4. When does he / she usually do it?\n5. Why does he / she like it?\nMy best friend's name is ___",
+     "trang": 10,
+     "nhom": "E. Writing",
+     "dang": "CAU_NHO",
+     "dap_an": "My best friend's name is Khoa. His favourite leisure activity is building models from old boxes and plastic bottles. He works on his models three or four times a week. Each time, his younger sister helps him and paints the finished models. They usually work on the balcony after dinner, when their homework is done. Khoa enjoys this hobby because he can turn rubbish into useful things. It also teaches him to be patient, as one model can take many days to finish.",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 7,
+      "hoi": "Put the sentences in the correct order to make a paragraph about Khoa's favourite leisure activity. Follow the order of the cues:\n1. What leisure activity does he like doing the most?\n2. How often does he do it?\n3. Who does he do the activity with?\n4. When does he usually do it?\n5. Why does he like it?",
+      "buoc": [
+       "My best friend's name is Khoa.",
+       "His favourite leisure activity is building models from old boxes and plastic bottles.",
+       "He works on his models three or four times a week.",
+       "Each time, his younger sister helps him and paints the finished models.",
+       "They usually work on the balcony after dinner, when their homework is done.",
+       "Khoa enjoys this hobby because he can turn rubbish into useful things.",
+       "It also teaches him to be patient, as one model can take many days to finish."
+      ],
+      "nhieu": [
+       "My favourite subject at school is maths.",
+       "Khoa's house is next to a big park in our neighbourhood."
+      ],
+      "thu_tu_khac": []
+     }
+    },
+    {
+     "ma": "1.E3b",
+     "de": "Think about your best friend and his / her leisure activities. Then write a short paragraph of about 80 words about his / her favourite leisure activity.\nUse the following questions as cues:\n1. What leisure activity does he / she like doing the most?\n2. How often does he / she do it?\n3. Who does he / she do the activity with?\n4. When does he / she usually do it?\n5. Why does he / she like it?\nMy best friend's name is ___",
+     "trang": 10,
+     "nhom": "E. Writing",
+     "dang": "CAU_NHO",
+     "dap_an": "Tuỳ HS. Ví dụ: My best friend's name is Mai. She likes drawing pictures the most. She does it every day. She often does it with her classmates. She usually does it on Sunday mornings. She likes it because it makes her relaxed.",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 10,
+      "gioi": true,
+      "dong": [
+       {
+        "chu": "My best friend's name is {0}.",
+        "o": [
+         {
+          "go": true
+         }
+        ]
+       },
+       {
+        "chu": "{He} {0} {1} the most.",
+        "o": [
+         {
+          "dung": [
+           "likes"
+          ],
+          "sai": [
+           "like"
+          ]
+         },
+         {
+          "dung": [
+           "playing basketball",
+           "drawing pictures",
+           "playing the guitar",
+           "swimming"
+          ],
+          "sai": [
+           "play basketball",
+           "to swimming"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "{He} {0} it {1}.",
+        "o": [
+         {
+          "dung": [
+           "does"
+          ],
+          "sai": [
+           "do",
+           "doing"
+          ]
+         },
+         {
+          "dung": [
+           "every day",
+           "twice a week",
+           "at weekends",
+           "once a week"
+          ],
+          "sai": [
+           "every days"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "{He} {0} it with {1}.",
+        "o": [
+         {
+          "dung": [
+           "often does"
+          ],
+          "sai": [
+           "does often"
+          ]
+         },
+         {
+          "dung": [
+           "{his} cousins",
+           "{his} classmates",
+           "me",
+           "{his} dad"
+          ],
+          "sai": [
+           "{he} cousins"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "{He} usually does it {0} {1}.",
+        "o": [
+         {
+          "dung": [
+           "on"
+          ],
+          "sai": [
+           "in",
+           "at"
+          ]
+         },
+         {
+          "dung": [
+           "Sunday mornings",
+           "Saturday afternoons",
+           "Friday evenings"
+          ],
+          "sai": [
+           "weekend"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "{He} likes it because it {0} {1}.",
+        "o": [
+         {
+          "dung": [
+           "makes"
+          ],
+          "sai": [
+           "make",
+           "making"
+          ]
+         },
+         {
+          "dung": [
+           "{him} happy",
+           "{him} relaxed",
+           "{him} healthy",
+           "{him} stronger"
+          ],
+          "sai": [
+           "{him} to relax"
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "chuong": "Unit 2. Life in the countryside",
+   "bai": "Unit 2. Life in the countryside",
+   "cac_cau": [
+    {
+     "ma": "2.A1.1",
+     "de": "Find the word having a different sound in the underlined part. Say them aloud.\nA. activ<u>i</u>ty B. s<u>i</u>ck C. th<u>i</u>nk D. c<u>i</u>ty",
+     "trang": 11,
+     "nhom": "A. Pronunciation",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Find the word having a different sound in the underlined part.",
+      "cac": [
+       "activ<u>i</u>ty",
+       "s<u>i</u>ck",
+       "th<u>i</u>nk",
+       "c<u>i</u>ty"
+      ],
+      "dap": "A"
+     }
+    },
+    {
+     "ma": "2.A1.2",
+     "de": "Find the word having a different sound in the underlined part. Say them aloud.\nA. b<u>u</u>sy B. pict<u>u</u>resque C. s<u>u</u>pport D. camp<u>u</u>s",
+     "trang": 11,
+     "nhom": "A. Pronunciation",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Find the word having a different sound in the underlined part.",
+      "cac": [
+       "b<u>u</u>sy",
+       "pict<u>u</u>resque",
+       "s<u>u</u>pport",
+       "camp<u>u</u>s"
+      ],
+      "dap": "A"
+     }
+    },
+    {
+     "ma": "2.A1.3",
+     "de": "Find the word having a different sound in the underlined part. Say them aloud.\nA. or<u>a</u>nge B. vill<u>a</u>ge C. buff<u>a</u>lo D. cabb<u>a</u>ge",
+     "trang": 11,
+     "nhom": "A. Pronunciation",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "C",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Find the word having a different sound in the underlined part.",
+      "cac": [
+       "or<u>a</u>nge",
+       "vill<u>a</u>ge",
+       "buff<u>a</u>lo",
+       "cabb<u>a</u>ge"
+      ],
+      "dap": "C"
+     }
+    },
+    {
+     "ma": "2.A1.4",
+     "de": "Find the word having a different sound in the underlined part. Say them aloud.\nA. b<u>e</u>gin B. wom<u>e</u>n C. harv<u>e</u>st D. entertainm<u>e</u>nt",
+     "trang": 11,
+     "nhom": "A. Pronunciation",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "D",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Find the word having a different sound in the underlined part.",
+      "cac": [
+       "b<u>e</u>gin",
+       "wom<u>e</u>n",
+       "harv<u>e</u>st",
+       "entertainm<u>e</u>nt"
+      ],
+      "dap": "D"
+     }
+    },
+    {
+     "ma": "2.A1.5",
+     "de": "Find the word having a different sound in the underlined part. Say them aloud.\nA. p<u>o</u>lice B. c<u>o</u>ver C. c<u>o</u>llect D. c<u>o</u>mbine",
+     "trang": 11,
+     "nhom": "A. Pronunciation",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Find the word having a different sound in the underlined part.",
+      "cac": [
+       "p<u>o</u>lice",
+       "c<u>o</u>ver",
+       "c<u>o</u>llect",
+       "c<u>o</u>mbine"
+      ],
+      "dap": "B"
+     }
+    },
+    {
+     "ma": "2.A2.1",
+     "de": "Give the names of the following pictures. Then read the words aloud. (The first letter of each word is given.)\nc___",
+     "trang": 11,
+     "nhom": "A. Pronunciation",
+     "dang": "CAU_NHO",
+     "dap_an": "cottage",
+     "loai_dap_an": "DAP_SO",
+     "hinh": [
+      "sbtanh8/2.A2.1.webp"
+     ],
+     "ghep": {
+      "kieu": "CHU",
+      "sao": 2,
+      "hoi": "Give the names of the following pictures. (The first letter of each word is given.)",
+      "truoc": "c",
+      "dap": [
+       "cottage"
+      ],
+      "nhieu": [
+       "i",
+       "u",
+       "r",
+       "s",
+       "d"
+      ]
+     }
+    },
+    {
+     "ma": "2.A2.2",
+     "de": "Give the names of the following pictures. Then read the words aloud. (The first letter of each word is given.)\nd___",
+     "trang": 11,
+     "nhom": "A. Pronunciation",
+     "dang": "CAU_NHO",
+     "dap_an": "dragon",
+     "loai_dap_an": "DAP_SO",
+     "hinh": [
+      "sbtanh8/2.A2.2.webp"
+     ],
+     "ghep": {
+      "kieu": "CHU",
+      "sao": 2,
+      "hoi": "Give the names of the following pictures. (The first letter of each word is given.)",
+      "truoc": "d",
+      "dap": [
+       "dragon"
+      ],
+      "nhieu": [
+       "e",
+       "u",
+       "i",
+       "l",
+       "t"
+      ]
+     }
+    },
+    {
+     "ma": "2.A2.3",
+     "de": "Give the names of the following pictures. Then read the words aloud. (The first letter of each word is given.)\nm___",
+     "trang": 11,
+     "nhom": "A. Pronunciation",
+     "dang": "CAU_NHO",
+     "dap_an": "market",
+     "loai_dap_an": "DAP_SO",
+     "hinh": [
+      "sbtanh8/2.A2.3.webp"
+     ],
+     "ghep": {
+      "kieu": "CHU",
+      "sao": 2,
+      "hoi": "Give the names of the following pictures. (The first letter of each word is given.)",
+      "truoc": "m",
+      "dap": [
+       "market"
+      ],
+      "nhieu": [
+       "i",
+       "c",
+       "s",
+       "o",
+       "u"
+      ]
+     }
+    },
+    {
+     "ma": "2.A2.4",
+     "de": "Give the names of the following pictures. Then read the words aloud. (The first letter of each word is given.)\no___",
+     "trang": 11,
+     "nhom": "A. Pronunciation",
+     "dang": "CAU_NHO",
+     "dap_an": "orchard",
+     "loai_dap_an": "DAP_SO",
+     "hinh": [
+      "sbtanh8/2.A2.4.webp"
+     ],
+     "ghep": {
+      "kieu": "CHU",
+      "sao": 2,
+      "hoi": "Give the names of the following pictures. (The first letter of each word is given.)",
+      "truoc": "o",
+      "dap": [
+       "orchard"
+      ],
+      "nhieu": [
+       "e",
+       "t",
+       "s",
+       "i",
+       "u"
+      ]
+     }
+    },
+    {
+     "ma": "2.A2.5",
+     "de": "Give the names of the following pictures. Then read the words aloud. (The first letter of each word is given.)\nh___",
+     "trang": 11,
+     "nhom": "A. Pronunciation",
+     "dang": "CAU_NHO",
+     "dap_an": "harvest",
+     "loai_dap_an": "DAP_SO",
+     "hinh": [
+      "sbtanh8/2.A2.5.webp"
+     ],
+     "ghep": {
+      "kieu": "CHU",
+      "sao": 2,
+      "hoi": "Give the names of the following pictures. (The first letter of each word is given.)",
+      "truoc": "h",
+      "dap": [
+       "harvest"
+      ],
+      "nhieu": [
+       "i",
+       "o",
+       "u",
+       "l",
+       "d",
+       "n"
+      ]
+     }
+    },
+    {
+     "ma": "2.A2.6",
+     "de": "Give the names of the following pictures. Then read the words aloud. (The first letter of each word is given.)\nc___",
+     "trang": 11,
+     "nhom": "A. Pronunciation",
+     "dang": "CAU_NHO",
+     "dap_an": "carrot",
+     "loai_dap_an": "DAP_SO",
+     "hinh": [
+      "sbtanh8/2.A2.6.webp"
+     ],
+     "ghep": {
+      "kieu": "CHU",
+      "sao": 2,
+      "hoi": "Give the names of the following pictures. (The first letter of each word is given.)",
+      "truoc": "c",
+      "dap": [
+       "carrot"
+      ],
+      "nhieu": [
+       "e",
+       "u",
+       "i",
+       "l"
+      ]
+     }
+    },
+    {
+     "ma": "2.A2.cot",
+     "de": "Give the names of the following pictures. Then read the words aloud. (The first letter of each word is given.)\nNow put the words in the correct column.\n/ɪ/: ___\n/ə/: ___",
+     "trang": 11,
+     "nhom": "A. Pronunciation",
+     "dang": "CAU_NHO",
+     "dap_an": "/ɪ/: cottage, market, harvest; /ə/: dragon, orchard, carrot",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 6,
+      "hoi": "Now put the words in the correct column.",
+      "dong": [
+       {
+        "chu": "cott<u>a</u>ge: {0}",
+        "o": [
+         {
+          "dung": [
+           "/ɪ/"
+          ],
+          "sai": [
+           "/ə/"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "drag<u>o</u>n: {0}",
+        "o": [
+         {
+          "dung": [
+           "/ə/"
+          ],
+          "sai": [
+           "/ɪ/"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "mark<u>e</u>t: {0}",
+        "o": [
+         {
+          "dung": [
+           "/ɪ/"
+          ],
+          "sai": [
+           "/ə/"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "orch<u>a</u>rd: {0}",
+        "o": [
+         {
+          "dung": [
+           "/ə/"
+          ],
+          "sai": [
+           "/ɪ/"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "harv<u>e</u>st: {0}",
+        "o": [
+         {
+          "dung": [
+           "/ɪ/"
+          ],
+          "sai": [
+           "/ə/"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "carr<u>o</u>t: {0}",
+        "o": [
+         {
+          "dung": [
+           "/ə/"
+          ],
+          "sai": [
+           "/ɪ/"
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "ma": "2.B1.1",
+     "de": "Choose the noun (A, B, C, or D) that does NOT go with the given verb.\nto ride ...\nA. a buffalo B. a bicycle C. a ship D. a horse",
+     "trang": 12,
+     "nhom": "B. Vocabulary & Grammar",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "C",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Choose the noun (A, B, C, or D) that does NOT go with the given verb.\nto ride ...",
+      "cac": [
+       "a buffalo",
+       "a bicycle",
+       "a ship",
+       "a horse"
+      ],
+      "dap": "C"
+     }
+    },
+    {
+     "ma": "2.B1.2",
+     "de": "Choose the noun (A, B, C, or D) that does NOT go with the given verb.\nto collect ...\nA. wood B. water C. eggs D. chickens",
+     "trang": 12,
+     "nhom": "B. Vocabulary & Grammar",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "D",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Choose the noun (A, B, C, or D) that does NOT go with the given verb.\nto collect ...",
+      "cac": [
+       "wood",
+       "water",
+       "eggs",
+       "chickens"
+      ],
+      "dap": "D"
+     }
+    },
+    {
+     "ma": "2.B1.3",
+     "de": "Choose the noun (A, B, C, or D) that does NOT go with the given verb.\nto pick ...\nA. plants B. flowers C. tomatoes D. grapes",
+     "trang": 12,
+     "nhom": "B. Vocabulary & Grammar",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Choose the noun (A, B, C, or D) that does NOT go with the given verb.\nto pick ...",
+      "cac": [
+       "plants",
+       "flowers",
+       "tomatoes",
+       "grapes"
+      ],
+      "dap": "A"
+     }
+    },
+    {
+     "ma": "2.B1.4",
+     "de": "Choose the noun (A, B, C, or D) that does NOT go with the given verb.\nto herd ...\nA. fish B. horses C. buffaloes D. cows",
+     "trang": 12,
+     "nhom": "B. Vocabulary & Grammar",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Choose the noun (A, B, C, or D) that does NOT go with the given verb.\nto herd ...",
+      "cac": [
+       "fish",
+       "horses",
+       "buffaloes",
+       "cows"
+      ],
+      "dap": "A"
+     }
+    },
+    {
+     "ma": "2.B1.5",
+     "de": "Choose the noun (A, B, C, or D) that does NOT go with the given verb.\nto catch ...\nA. fish B. fruits C. mice D. rabbits",
+     "trang": 12,
+     "nhom": "B. Vocabulary & Grammar",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Choose the noun (A, B, C, or D) that does NOT go with the given verb.\nto catch ...",
+      "cac": [
+       "fish",
+       "fruits",
+       "mice",
+       "rabbits"
+      ],
+      "dap": "B"
+     }
+    },
+    {
+     "ma": "2.B2.1",
+     "de": "Use the verbs in 1 to complete the following sentences. Use the correct form of the verbs.\nThe children in my village enjoy ___ blackberries to eat in the nearby forest.",
+     "trang": 12,
+     "nhom": "B. Vocabulary & Grammar",
+     "dang": "CAU_NHO",
+     "dap_an": "picking",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "CHU",
+      "sao": 2,
+      "hoi": "Use the verbs in 1 (ride, collect, pick, herd, catch) to complete the following sentences. Use the correct form of the verbs.\nThe children in my village enjoy ___ blackberries to eat in the nearby forest.",
+      "dap": [
+       "picking"
+      ],
+      "nhieu": [
+       "e",
+       "s",
+       "d",
+       "u",
+       "l",
+       "r"
+      ]
+     }
+    },
+    {
+     "ma": "2.B2.2",
+     "de": "Use the verbs in 1 to complete the following sentences. Use the correct form of the verbs.\nAfter school, we have to help our parents ___ water from the village well.",
+     "trang": 12,
+     "nhom": "B. Vocabulary & Grammar",
+     "dang": "CAU_NHO",
+     "dap_an": "collect (to collect cũng đúng)",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "CHU",
+      "sao": 2,
+      "hoi": "Use the verbs in 1 (ride, collect, pick, herd, catch) to complete the following sentences. Use the correct form of the verbs.\nAfter school, we have to help our parents ___ water from the village well.",
+      "dap": [
+       "collect",
+       "to collect"
+      ],
+      "nhieu": [
+       "s",
+       "d",
+       "i",
+       "n",
+       "k"
+      ]
+     }
+    },
+    {
+     "ma": "2.B2.3",
+     "de": "Use the verbs in 1 to complete the following sentences. Use the correct form of the verbs.\nCan you ___ a horse?",
+     "trang": 12,
+     "nhom": "B. Vocabulary & Grammar",
+     "dang": "CAU_NHO",
+     "dap_an": "ride",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "CHU",
+      "sao": 2,
+      "hoi": "Use the verbs in 1 (ride, collect, pick, herd, catch) to complete the following sentences. Use the correct form of the verbs.\nCan you ___ a horse?",
+      "dap": [
+       "ride"
+      ],
+      "nhieu": [
+       "o",
+       "s",
+       "u",
+       "y"
+      ]
+     }
+    },
+    {
+     "ma": "2.B2.4",
+     "de": "Use the verbs in 1 to complete the following sentences. Use the correct form of the verbs.\nMy cat is very good at ___ mice.",
+     "trang": 12,
+     "nhom": "B. Vocabulary & Grammar",
+     "dang": "CAU_NHO",
+     "dap_an": "catching",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "CHU",
+      "sao": 2,
+      "hoi": "Use the verbs in 1 (ride, collect, pick, herd, catch) to complete the following sentences. Use the correct form of the verbs.\nMy cat is very good at ___ mice.",
+      "dap": [
+       "catching"
+      ],
+      "nhieu": [
+       "e",
+       "k",
+       "o",
+       "s",
+       "u",
+       "d",
+       "l"
+      ]
+     }
+    },
+    {
+     "ma": "2.B2.5",
+     "de": "Use the verbs in 1 to complete the following sentences. Use the correct form of the verbs.\nThey trained the dog to ___ sheep.",
+     "trang": 12,
+     "nhom": "B. Vocabulary & Grammar",
+     "dang": "CAU_NHO",
+     "dap_an": "herd",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "CHU",
+      "sao": 2,
+      "hoi": "Use the verbs in 1 (ride, collect, pick, herd, catch) to complete the following sentences. Use the correct form of the verbs.\nThey trained the dog to ___ sheep.",
+      "dap": [
+       "herd"
+      ],
+      "nhieu": [
+       "a",
+       "u",
+       "o",
+       "i"
+      ]
+     }
+    },
+    {
+     "ma": "2.B3.1",
+     "de": "Choose the correct words to complete the following sentences.\nThe workers are ___ a truck with timber.\nA. unloading B. loading C. taking D. filling",
+     "trang": 12,
+     "nhom": "B. Vocabulary & Grammar",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Choose the correct words to complete the following sentences.\nThe workers are ___ a truck with timber.",
+      "cac": [
+       "unloading",
+       "loading",
+       "taking",
+       "filling"
+      ],
+      "dap": "B"
+     }
+    },
+    {
+     "ma": "2.B3.2",
+     "de": "Choose the correct words to complete the following sentences.\nHe often ___ holes in his garden to plant trees.\nA. ploughs B. picks C. digs D. collects",
+     "trang": 12,
+     "nhom": "B. Vocabulary & Grammar",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "C",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Choose the correct words to complete the following sentences.\nHe often ___ holes in his garden to plant trees.",
+      "cac": [
+       "ploughs",
+       "picks",
+       "digs",
+       "collects"
+      ],
+      "dap": "C"
+     }
+    },
+    {
+     "ma": "2.B3.3",
+     "de": "Choose the correct words to complete the following sentences.\nMy uncle hired extra workers to help at harvest ___.\nA. time B. point C. period D. season",
+     "trang": 12,
+     "nhom": "B. Vocabulary & Grammar",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Choose the correct words to complete the following sentences.\nMy uncle hired extra workers to help at harvest ___.",
+      "cac": [
+       "time",
+       "point",
+       "period",
+       "season"
+      ],
+      "dap": "A"
+     }
+    },
+    {
+     "ma": "2.B3.4",
+     "de": "Choose the correct words to complete the following sentences.\nFrom the hilltop, we can see row after row of orange trees ___ to the horizon.\nA. running B. expanding C. enlarging D. stretching",
+     "trang": 12,
+     "nhom": "B. Vocabulary & Grammar",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "D",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Choose the correct words to complete the following sentences.\nFrom the hilltop, we can see row after row of orange trees ___ to the horizon.",
+      "cac": [
+       "running",
+       "expanding",
+       "enlarging",
+       "stretching"
+      ],
+      "dap": "D"
+     }
+    },
+    {
+     "ma": "2.B3.5",
+     "de": "Choose the correct words to complete the following sentences.\nPeople in my village grow rice in vast ___ fields.\nA. corn B. wheat C. pad D. paddy",
+     "trang": 12,
+     "nhom": "B. Vocabulary & Grammar",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "D",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Choose the correct words to complete the following sentences.\nPeople in my village grow rice in vast ___ fields.",
+      "cac": [
+       "corn",
+       "wheat",
+       "pad",
+       "paddy"
+      ],
+      "dap": "D"
+     }
+    },
+    {
+     "ma": "2.B4.1",
+     "de": "Underline the correct words or phrases to complete the following sentences.\nIt usually rains (heavier / more heavily) in my country than in yours.",
+     "trang": 12,
+     "nhom": "B. Vocabulary & Grammar",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Underline the correct words or phrases to complete the following sentences.\nIt usually rains ___ in my country than in yours.",
+      "cac": [
+       "heavier",
+       "more heavily"
+      ],
+      "dap": "B"
+     }
+    },
+    {
+     "ma": "2.B4.2",
+     "de": "Underline the correct words or phrases to complete the following sentences.\nPeople in the countryside work (harder / more hard) than those in the city.",
+     "trang": 12,
+     "nhom": "B. Vocabulary & Grammar",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Underline the correct words or phrases to complete the following sentences.\nPeople in the countryside work ___ than those in the city.",
+      "cac": [
+       "harder",
+       "more hard"
+      ],
+      "dap": "A"
+     }
+    },
+    {
+     "ma": "2.B4.3",
+     "de": "Underline the correct words or phrases to complete the following sentences.\nNowadays children adapt (more quickly / quicklier) to technical developments than their parents.",
+     "trang": 13,
+     "nhom": "B. Vocabulary & Grammar",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Underline the correct words or phrases to complete the following sentences.\nNowadays children adapt ___ to technical developments than their parents.",
+      "cac": [
+       "more quickly",
+       "quicklier"
+      ],
+      "dap": "A"
+     }
+    },
+    {
+     "ma": "2.B4.4",
+     "de": "Underline the correct words or phrases to complete the following sentences.\nI think countryside dwellers live (happier / more happily) than city dwellers.",
+     "trang": 13,
+     "nhom": "B. Vocabulary & Grammar",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Underline the correct words or phrases to complete the following sentences.\nI think countryside dwellers live ___ than city dwellers.",
+      "cac": [
+       "happier",
+       "more happily"
+      ],
+      "dap": "B"
+     }
+    },
+    {
+     "ma": "2.B4.5",
+     "de": "Underline the correct words or phrases to complete the following sentences.\nThis morning, the farmers in my village got up (more early / earlier) than usual.",
+     "trang": 13,
+     "nhom": "B. Vocabulary & Grammar",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Underline the correct words or phrases to complete the following sentences.\nThis morning, the farmers in my village got up ___ than usual.",
+      "cac": [
+       "more early",
+       "earlier"
+      ],
+      "dap": "B"
+     }
+    },
+    {
+     "ma": "2.B5.1",
+     "de": "Complete the sentences with the suitable forms of the adverbs in the box.\nfluently | carefully | fast | hard | early\nHorses can run ___ than buffaloes.",
+     "trang": 13,
+     "nhom": "B. Vocabulary & Grammar",
+     "dang": "CAU_NHO",
+     "dap_an": "faster",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "CHU",
+      "sao": 2,
+      "dap": [
+       "faster"
+      ],
+      "nhieu": [
+       "l",
+       "y",
+       "m",
+       "o",
+       "u",
+       "k"
+      ]
+     }
+    },
+    {
+     "ma": "2.B5.2",
+     "de": "Complete the sentences with the suitable forms of the adverbs in the box.\nfluently | carefully | fast | hard | early\nYou made the same mistake again. You should check your paper ___ before handing it in.",
+     "trang": 13,
+     "nhom": "B. Vocabulary & Grammar",
+     "dang": "CAU_NHO",
+     "dap_an": "more carefully",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "CHU",
+      "sao": 2,
+      "dap": [
+       "more carefully"
+      ],
+      "nhieu": [
+       "t",
+       "i",
+       "n",
+       "s",
+       "d",
+       "h",
+       "p",
+       "g"
+      ]
+     }
+    },
+    {
+     "ma": "2.B5.3",
+     "de": "Complete the sentences with the suitable forms of the adverbs in the box.\nfluently | carefully | fast | hard | early\nAll these students are good, but some work ___ than others.",
+     "trang": 13,
+     "nhom": "B. Vocabulary & Grammar",
+     "dang": "CAU_NHO",
+     "dap_an": "harder",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "CHU",
+      "sao": 2,
+      "dap": [
+       "harder"
+      ],
+      "nhieu": [
+       "l",
+       "y",
+       "i",
+       "m",
+       "u"
+      ]
+     }
+    },
+    {
+     "ma": "2.B5.4",
+     "de": "Complete the sentences with the suitable forms of the adverbs in the box.\nfluently | carefully | fast | hard | early\nGirls normally become mature ___ than boys.",
+     "trang": 13,
+     "nhom": "B. Vocabulary & Grammar",
+     "dang": "CAU_NHO",
+     "dap_an": "earlier",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "CHU",
+      "sao": 2,
+      "dap": [
+       "earlier"
+      ],
+      "nhieu": [
+       "y",
+       "m",
+       "o",
+       "s",
+       "t"
+      ]
+     }
+    },
+    {
+     "ma": "2.B5.5",
+     "de": "Complete the sentences with the suitable forms of the adverbs in the box.\nfluently | carefully | fast | hard | early\nMy sister speaks English much ___ than I do.",
+     "trang": 13,
+     "nhom": "B. Vocabulary & Grammar",
+     "dang": "CAU_NHO",
+     "dap_an": "more fluently",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "CHU",
+      "sao": 2,
+      "dap": [
+       "more fluently"
+      ],
+      "nhieu": [
+       "i",
+       "c",
+       "k",
+       "w",
+       "d",
+       "g",
+       "b",
+       "v"
+      ]
+     }
+    },
+    {
+     "ma": "2.C1.1",
+     "de": "Choose the most suitable response A, B, C, or D to complete each of the following exchanges.\nA: You look nice today.\nB: ___\nA. Do you really think so?\nB. I don't think so.\nC. I beg your pardon.\nD. I'm fine, thank you.",
+     "trang": 13,
+     "nhom": "C. Speaking",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Choose the most suitable response A, B, C, or D to complete each of the following exchanges.\nA: You look nice today.\nB: ___",
+      "cac": [
+       "Do you really think so?",
+       "I don't think so.",
+       "I beg your pardon.",
+       "I'm fine, thank you."
+      ],
+      "dap": "A"
+     }
+    },
+    {
+     "ma": "2.C1.2",
+     "de": "Choose the most suitable response A, B, C, or D to complete each of the following exchanges.\nA: I've had a very enjoyable summer holiday with my family.\nB: ___\nA. I'm jealous of your holiday.\nB. I envy you.\nC. That's great, thanks.\nD. No, I don't envy you.",
+     "trang": 13,
+     "nhom": "C. Speaking",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Choose the most suitable response A, B, C, or D to complete each of the following exchanges.\nA: I've had a very enjoyable summer holiday with my family.\nB: ___",
+      "cac": [
+       "I'm jealous of your holiday.",
+       "I envy you.",
+       "That's great, thanks.",
+       "No, I don't envy you."
+      ],
+      "dap": "B"
+     }
+    },
+    {
+     "ma": "2.C1.3",
+     "de": "Choose the most suitable response A, B, C, or D to complete each of the following exchanges.\nA: Ooh, what a great tie! Where did you get it?\nB: ___\nA. Oh, thank you! I got it at a shop in Le Loi Street.\nB. Don't mention it. I bought it at a shop in Ha Noi.\nC. No, it doesn't look great at all.\nD. Yes, I like it very much.",
+     "trang": 13,
+     "nhom": "C. Speaking",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Choose the most suitable response A, B, C, or D to complete each of the following exchanges.\nA: Ooh, what a great tie! Where did you get it?\nB: ___",
+      "cac": [
+       "Oh, thank you! I got it at a shop in Le Loi Street.",
+       "Don't mention it. I bought it at a shop in Ha Noi.",
+       "No, it doesn't look great at all.",
+       "Yes, I like it very much."
+      ],
+      "dap": "A"
+     }
+    },
+    {
+     "ma": "2.C1.4",
+     "de": "Choose the most suitable response A, B, C, or D to complete each of the following exchanges.\nA: Why do you like living in the countryside?\nB: ___\nA. Because there's a great sense of community there.\nB. Because I like the excitement of the city.\nC. Because life in the countryside is boring.\nD. Because I don't like the public transport here.",
+     "trang": 14,
+     "nhom": "C. Speaking",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Choose the most suitable response A, B, C, or D to complete each of the following exchanges.\nA: Why do you like living in the countryside?\nB: ___",
+      "cac": [
+       "Because there's a great sense of community there.",
+       "Because I like the excitement of the city.",
+       "Because life in the countryside is boring.",
+       "Because I don't like the public transport here."
+      ],
+      "dap": "A"
+     }
+    },
+    {
+     "ma": "2.C1.5",
+     "de": "Choose the most suitable response A, B, C, or D to complete each of the following exchanges.\nA: Let me congratulate you on your cake!\nB: ___\nA. That's my strong point!\nB. Making cakes is not my forte.\nC. Why do you say that?\nD. That's very kind of you!",
+     "trang": 14,
+     "nhom": "C. Speaking",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "D",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Choose the most suitable response A, B, C, or D to complete each of the following exchanges.\nA: Let me congratulate you on your cake!\nB: ___",
+      "cac": [
+       "That's my strong point!",
+       "Making cakes is not my forte.",
+       "Why do you say that?",
+       "That's very kind of you!"
+      ],
+      "dap": "D"
+     }
+    },
+    {
+     "ma": "2.C2",
+     "de": "Binh and Lan are talking about lives in the city and in the countryside. Choose A - E to complete their conversation. Then practise it with a friend.\nBinh: Are you OK? You look ... nervous.\nLan: (1) ___\nBinh: I'm from the countryside too! And I understand. When I first came here, I also felt lost.\nLan: So, do you like living in the countryside or in the city?\nBinh: (2) ___\nLan: Why?\nBinh: (3) ___\nLan: Well, there is more excitement in the city and there might be more jobs too. But the countryside is closer to nature. The city isn't very beautiful, and it's noisy and dirty.\nBinh: (4) ___\nLan: That's another thing that is different. People in the countryside are friendlier. They always say hello. Here, no one says hello. I think city people are rude.\nBinh: (5) ___\nA. The city is exciting! It has more interesting things to do than in the countryside. And there are more jobs. That's why I'm here.\nB. I like living in the city more.\nC. I agree that countryside people are friendlier. But I think city people aren't rude, they're just busy.\nD. Well, this is my first visit to Ho Chi Minh City. I'm from a small village in the countryside. I feel a little lost.\nE. I disagree. I think all the different types of buildings in the city are beautiful. And I like to watch all the different people.",
+     "trang": 14,
+     "nhom": "C. Speaking",
+     "dang": "CAU_NHO",
+     "dap_an": "1-D, 2-B, 3-A, 4-E, 5-C",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 5,
+      "hoi": "Binh and Lan are talking about lives in the city and in the countryside. Choose A - E to complete their conversation.",
+      "dong": [
+       {
+        "chu": "Binh: Are you OK? You look ... nervous.\nLan: (1) {0}\nBinh: I'm from the countryside too! And I understand. When I first came here, I also felt lost.",
+        "o": [
+         {
+          "dung": [
+           "Well, this is my first visit to Ho Chi Minh City. I'm from a small village in the countryside. I feel a little lost."
+          ],
+          "sai": [
+           "The city is exciting! It has more interesting things to do than in the countryside. And there are more jobs. That's why I'm here.",
+           "I like living in the city more.",
+           "I agree that countryside people are friendlier. But I think city people aren't rude, they're just busy.",
+           "I disagree. I think all the different types of buildings in the city are beautiful. And I like to watch all the different people."
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Lan: So, do you like living in the countryside or in the city?\nBinh: (2) {0}",
+        "o": [
+         {
+          "dung": [
+           "I like living in the city more."
+          ],
+          "sai": [
+           "The city is exciting! It has more interesting things to do than in the countryside. And there are more jobs. That's why I'm here.",
+           "I agree that countryside people are friendlier. But I think city people aren't rude, they're just busy.",
+           "Well, this is my first visit to Ho Chi Minh City. I'm from a small village in the countryside. I feel a little lost.",
+           "I disagree. I think all the different types of buildings in the city are beautiful. And I like to watch all the different people."
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Lan: Why?\nBinh: (3) {0}",
+        "o": [
+         {
+          "dung": [
+           "The city is exciting! It has more interesting things to do than in the countryside. And there are more jobs. That's why I'm here."
+          ],
+          "sai": [
+           "I like living in the city more.",
+           "I agree that countryside people are friendlier. But I think city people aren't rude, they're just busy.",
+           "Well, this is my first visit to Ho Chi Minh City. I'm from a small village in the countryside. I feel a little lost.",
+           "I disagree. I think all the different types of buildings in the city are beautiful. And I like to watch all the different people."
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Lan: Well, there is more excitement in the city and there might be more jobs too. But the countryside is closer to nature. The city isn't very beautiful, and it's noisy and dirty.\nBinh: (4) {0}",
+        "o": [
+         {
+          "dung": [
+           "I disagree. I think all the different types of buildings in the city are beautiful. And I like to watch all the different people."
+          ],
+          "sai": [
+           "The city is exciting! It has more interesting things to do than in the countryside. And there are more jobs. That's why I'm here.",
+           "I like living in the city more.",
+           "I agree that countryside people are friendlier. But I think city people aren't rude, they're just busy.",
+           "Well, this is my first visit to Ho Chi Minh City. I'm from a small village in the countryside. I feel a little lost."
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Lan: That's another thing that is different. People in the countryside are friendlier. They always say hello. Here, no one says hello. I think city people are rude.\nBinh: (5) {0}",
+        "o": [
+         {
+          "dung": [
+           "I agree that countryside people are friendlier. But I think city people aren't rude, they're just busy."
+          ],
+          "sai": [
+           "The city is exciting! It has more interesting things to do than in the countryside. And there are more jobs. That's why I'm here.",
+           "I like living in the city more.",
+           "Well, this is my first visit to Ho Chi Minh City. I'm from a small village in the countryside. I feel a little lost.",
+           "I disagree. I think all the different types of buildings in the city are beautiful. And I like to watch all the different people."
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "ma": "2.D1.1",
+     "de": "Choose the correct answer A, B, or C to fill in each blank in the following passage.\n(1) I love the ___ peace and quiet of my village.\nA. urban B. rural C. suburban",
+     "trang": 15,
+     "nhom": "D. Reading",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "doan": "2.D1",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Choose the correct answer A, B, or C to fill in each blank in the following passage.\n(1) I love the ___ peace and quiet of my village.",
+      "cac": [
+       "urban",
+       "rural",
+       "suburban"
+      ],
+      "dap": "B"
+     }
+    },
+    {
+     "ma": "2.D1.2",
+     "de": "Choose the correct answer A, B, or C to fill in each blank in the following passage.\n(2) The air is unpolluted, and the ___ of life is slow.\nA. speed B. step C. pace",
+     "trang": 15,
+     "nhom": "D. Reading",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "C",
+     "loai_dap_an": "TN",
+     "doan": "2.D1",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Choose the correct answer A, B, or C to fill in each blank in the following passage.\n(2) The air is unpolluted, and the ___ of life is slow.",
+      "cac": [
+       "speed",
+       "step",
+       "pace"
+      ],
+      "dap": "C"
+     }
+    },
+    {
+     "ma": "2.D1.3",
+     "de": "Choose the correct answer A, B, or C to fill in each blank in the following passage.\n(3) They are always willing ___ each other.\nA. to help B. helping C. help",
+     "trang": 15,
+     "nhom": "D. Reading",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN",
+     "doan": "2.D1",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Choose the correct answer A, B, or C to fill in each blank in the following passage.\n(3) They are always willing ___ each other.",
+      "cac": [
+       "to help",
+       "helping",
+       "help"
+      ],
+      "dap": "A"
+     }
+    },
+    {
+     "ma": "2.D1.4",
+     "de": "Choose the correct answer A, B, or C to fill in each blank in the following passage.\n(4) We can also enjoy ___ in the nearby area.\nA. nature B. environment C. countryside",
+     "trang": 15,
+     "nhom": "D. Reading",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN",
+     "doan": "2.D1",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Choose the correct answer A, B, or C to fill in each blank in the following passage.\n(4) We can also enjoy ___ in the nearby area.",
+      "cac": [
+       "nature",
+       "environment",
+       "countryside"
+      ],
+      "dap": "A"
+     }
+    },
+    {
+     "ma": "2.D1.5",
+     "de": "Choose the correct answer A, B, or C to fill in each blank in the following passage.\n(5) It is actually a national park, so the wildlife there can live and move about ___.\nA. safe B. safety C. safely",
+     "trang": 15,
+     "nhom": "D. Reading",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "C",
+     "loai_dap_an": "TN",
+     "doan": "2.D1",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Choose the correct answer A, B, or C to fill in each blank in the following passage.\n(5) It is actually a national park, so the wildlife there can live and move about ___.",
+      "cac": [
+       "safe",
+       "safety",
+       "safely"
+      ],
+      "dap": "C"
+     }
+    },
+    {
+     "ma": "2.D2.1",
+     "de": "Read the passage about the countryside in Britain and choose the correct answer A, B, C, or D to each of the questions.\nThe countryside of Britain is NOT famous for its ___.\nA. farmland B. moorland\nC. bare mountains D. lakes, rivers, and woods",
+     "trang": 16,
+     "nhom": "D. Reading",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN",
+     "doan": "2.D2",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Read the passage about the countryside in Britain and choose the correct answer A, B, C, or D to each of the questions.\nThe countryside of Britain is NOT famous for its ___.",
+      "cac": [
+       "farmland",
+       "moorland",
+       "bare mountains",
+       "lakes, rivers, and woods"
+      ],
+      "dap": "A"
+     }
+    },
+    {
+     "ma": "2.D2.2",
+     "de": "Read the passage about the countryside in Britain and choose the correct answer A, B, C, or D to each of the questions.\nIndividual people or independent companies own ___.\nA. some of the farmland in Britain B. most farmland in Britain\nC. footpaths across the farmland D. a network of public footpaths",
+     "trang": 16,
+     "nhom": "D. Reading",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "doan": "2.D2",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Read the passage about the countryside in Britain and choose the correct answer A, B, C, or D to each of the questions.\nIndividual people or independent companies own ___.",
+      "cac": [
+       "some of the farmland in Britain",
+       "most farmland in Britain",
+       "footpaths across the farmland",
+       "a network of public footpaths"
+      ],
+      "dap": "B"
+     }
+    },
+    {
+     "ma": "2.D2.3",
+     "de": "Read the passage about the countryside in Britain and choose the correct answer A, B, C, or D to each of the questions.\nMany British people think the countryside goes with ___.\nA. work in towns B. work on farms\nC. peace and relaxation D. public farmland",
+     "trang": 16,
+     "nhom": "D. Reading",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "C",
+     "loai_dap_an": "TN",
+     "doan": "2.D2",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Read the passage about the countryside in Britain and choose the correct answer A, B, C, or D to each of the questions.\nMany British people think the countryside goes with ___.",
+      "cac": [
+       "work in towns",
+       "work on farms",
+       "peace and relaxation",
+       "public farmland"
+      ],
+      "dap": "C"
+     }
+    },
+    {
+     "ma": "2.D2.4",
+     "de": "Read the passage about the countryside in Britain and choose the correct answer A, B, C, or D to each of the questions.\nThe word \"<b><u>commute</u></b>\" in the passage is closest in meaning to ___.\nA. go on foot B. travel a long distance to get to work\nC. go by bicycle D. travel or move around an area",
+     "trang": 16,
+     "nhom": "D. Reading",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "doan": "2.D2",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Read the passage about the countryside in Britain and choose the correct answer A, B, C, or D to each of the questions.\nThe word \"<b><u>commute</u></b>\" in the passage is closest in meaning to ___.",
+      "cac": [
+       "go on foot",
+       "travel a long distance to get to work",
+       "go by bicycle",
+       "travel or move around an area"
+      ],
+      "dap": "B"
+     }
+    },
+    {
+     "ma": "2.D2.5",
+     "de": "Read the passage about the countryside in Britain and choose the correct answer A, B, C, or D to each of the questions.\nWhat does the word \"<b><u>they</u></b>\" in the passage refer to?\nA. Those who commute to work in towns.\nB. Those who go to the countryside for a picnic.\nC. Those who go to fruit farms in summer.\nD. Those who dream of living in the countryside.",
+     "trang": 16,
+     "nhom": "D. Reading",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "D",
+     "loai_dap_an": "TN",
+     "doan": "2.D2",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Read the passage about the countryside in Britain and choose the correct answer A, B, C, or D to each of the questions.\nWhat does the word \"<b><u>they</u></b>\" in the passage refer to?",
+      "cac": [
+       "Those who commute to work in towns.",
+       "Those who go to the countryside for a picnic.",
+       "Those who go to fruit farms in summer.",
+       "Those who dream of living in the countryside."
+      ],
+      "dap": "D"
+     }
+    },
+    {
+     "ma": "2.D3.1",
+     "de": "Read the passage about the countryside in America and tick (✓) T (True) or F (False) for each sentence.\nA large number of people live in the areas in the West, such as Montana and Colorado.",
+     "trang": 16,
+     "nhom": "D. Reading",
+     "dang": "CAU_NHO",
+     "dap_an": "F",
+     "loai_dap_an": "DAP_SO",
+     "doan": "2.D3",
+     "ghep": {
+      "kieu": "DUNG_SAI",
+      "sao": 1,
+      "hoi": "A large number of people live in the areas in the West, such as Montana and Colorado.",
+      "dap": false,
+      "nhan": [
+       "True",
+       "False"
+      ]
+     }
+    },
+    {
+     "ma": "2.D3.2",
+     "de": "Read the passage about the countryside in America and tick (✓) T (True) or F (False) for each sentence.\nThere are very large fields of corn or wheat in Ohio, Indiana, Illinois, and other Midwestern states.",
+     "trang": 16,
+     "nhom": "D. Reading",
+     "dang": "CAU_NHO",
+     "dap_an": "T",
+     "loai_dap_an": "DAP_SO",
+     "doan": "2.D3",
+     "ghep": {
+      "kieu": "DUNG_SAI",
+      "sao": 1,
+      "hoi": "There are very large fields of corn or wheat in Ohio, Indiana, Illinois, and other Midwestern states.",
+      "dap": true,
+      "nhan": [
+       "True",
+       "False"
+      ]
+     }
+    },
+    {
+     "ma": "2.D3.3",
+     "de": "Read the passage about the countryside in America and tick (✓) T (True) or F (False) for each sentence.\nThe majority of Americans live outside cities or towns.",
+     "trang": 16,
+     "nhom": "D. Reading",
+     "dang": "CAU_NHO",
+     "dap_an": "F",
+     "loai_dap_an": "DAP_SO",
+     "doan": "2.D3",
+     "ghep": {
+      "kieu": "DUNG_SAI",
+      "sao": 1,
+      "hoi": "The majority of Americans live outside cities or towns.",
+      "dap": false,
+      "nhan": [
+       "True",
+       "False"
+      ]
+     }
+    },
+    {
+     "ma": "2.D3.4",
+     "de": "Read the passage about the countryside in America and tick (✓) T (True) or F (False) for each sentence.\nMany Americans choose to live in the countryside because everything is convenient there.",
+     "trang": 16,
+     "nhom": "D. Reading",
+     "dang": "CAU_NHO",
+     "dap_an": "F",
+     "loai_dap_an": "DAP_SO",
+     "doan": "2.D3",
+     "ghep": {
+      "kieu": "DUNG_SAI",
+      "sao": 1,
+      "hoi": "Many Americans choose to live in the countryside because everything is convenient there.",
+      "dap": false,
+      "nhan": [
+       "True",
+       "False"
+      ]
+     }
+    },
+    {
+     "ma": "2.D3.5",
+     "de": "Read the passage about the countryside in America and tick (✓) T (True) or F (False) for each sentence.\nMany Americans living in the countryside like the safe, clean, and attractive environment there.",
+     "trang": 16,
+     "nhom": "D. Reading",
+     "dang": "CAU_NHO",
+     "dap_an": "T",
+     "loai_dap_an": "DAP_SO",
+     "doan": "2.D3",
+     "ghep": {
+      "kieu": "DUNG_SAI",
+      "sao": 1,
+      "hoi": "Many Americans living in the countryside like the safe, clean, and attractive environment there.",
+      "dap": true,
+      "nhan": [
+       "True",
+       "False"
+      ]
+     }
+    },
+    {
+     "ma": "2.E1.1",
+     "de": "Complete the second sentence so that it means the same as the first. Use the word in brackets. Do NOT change the word given.\nHis car can run 120 km/h while my car can run only 110 km/h. (faster)\nHis car can run ___.",
+     "trang": 17,
+     "nhom": "E. Writing",
+     "dang": "CAU_NHO",
+     "dap_an": "His car can run faster than my car.",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "CAU",
+      "sao": 2,
+      "the": [
+       "faster",
+       "than",
+       "my",
+       "car."
+      ],
+      "nhieu": [
+       "fast",
+       "more",
+       "then"
+      ],
+      "dap": [
+       "faster than my car."
+      ]
+     }
+    },
+    {
+     "ma": "2.E1.2",
+     "de": "Complete the second sentence so that it means the same as the first. Use the word in brackets. Do NOT change the word given.\nThe workers in your factory work more responsibly than those in my factory. (carelessly)\nThe workers in my factory work ___.",
+     "trang": 17,
+     "nhom": "E. Writing",
+     "dang": "CAU_NHO",
+     "dap_an": "The workers in my factory work more carelessly than those in your factory.",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "CAU",
+      "sao": 2,
+      "the": [
+       "more",
+       "carelessly",
+       "than",
+       "those",
+       "in",
+       "your",
+       "factory."
+      ],
+      "nhieu": [
+       "careless",
+       "less",
+       "my"
+      ],
+      "dap": [
+       "more carelessly than those in your factory."
+      ]
+     }
+    },
+    {
+     "ma": "2.E1.3",
+     "de": "Complete the second sentence so that it means the same as the first. Use the word in brackets. Do NOT change the word given.\nMore than 60% of the people in my town are happy with their life while only 38% in her city are as happy. (happily)\nThe people in my town ___.",
+     "trang": 17,
+     "nhom": "E. Writing",
+     "dang": "CAU_NHO",
+     "dap_an": "The people in my town live more happily than those in her city.",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "CAU",
+      "sao": 2,
+      "the": [
+       "live",
+       "more",
+       "happily",
+       "than",
+       "those",
+       "in",
+       "her",
+       "city."
+      ],
+      "nhieu": [
+       "lives",
+       "happier",
+       "happy"
+      ],
+      "dap": [
+       "live more happily than those in her city."
+      ]
+     }
+    },
+    {
+     "ma": "2.E1.4",
+     "de": "Complete the second sentence so that it means the same as the first. Use the word in brackets. Do NOT change the word given.\nI can't cook as well as my mother. (better)\nMy mother can ___.",
+     "trang": 17,
+     "nhom": "E. Writing",
+     "dang": "CAU_NHO",
+     "dap_an": "My mother can cook better than me.",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "CAU",
+      "sao": 2,
+      "the": [
+       "cook",
+       "better",
+       "than",
+       "me."
+      ],
+      "nhieu": [
+       "well",
+       "good",
+       "more"
+      ],
+      "dap": [
+       "cook better than me."
+      ]
+     }
+    },
+    {
+     "ma": "2.E1.5",
+     "de": "Complete the second sentence so that it means the same as the first. Use the word in brackets. Do NOT change the word given.\nLiving in the countryside is not as convenient as living in the city. (than)\nLiving in the city ___.",
+     "trang": 17,
+     "nhom": "E. Writing",
+     "dang": "CAU_NHO",
+     "dap_an": "Living in the city is more convenient than living in the countryside. / Living in the city is more convenient than in the countryside.",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "CAU",
+      "sao": 2,
+      "the": [
+       "is",
+       "more",
+       "convenient",
+       "than",
+       "living",
+       "in",
+       "the",
+       "countryside."
+      ],
+      "nhieu": [
+       "less",
+       "as",
+       "convenienter"
+      ],
+      "dap": [
+       "is more convenient than living in the countryside.",
+       "is more convenient than in the countryside."
+      ]
+     }
+    },
+    {
+     "ma": "2.E2",
+     "de": "Write the answers to the questions about the rural village / town you live in or have visited.\n1. What is the name of the village / town?\n2. Where is it?\n3. What is the scenery like?\n4. What are the people there like?\n5. What do they do for a living?\n6. Does the village / town have any historical buildings or sites?\n7. What is the most interesting part of it?\n8. Would you say it is a good place to live in? Why?",
+     "trang": 17,
+     "nhom": "E. Writing",
+     "dang": "CAU_NHO",
+     "dap_an": "Tuỳ HS. Ví dụ: 1. Its name is Duong Lam. 2. It is in the north of Viet Nam. 3. It is peaceful, with green rice fields. 4. They are friendly and hospitable. 5. Most of them are farmers. 6. Yes, it does. It has an old pagoda. 7. The most interesting part is the old market. 8. Yes, I would, because the air is fresh.",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 15,
+      "hoi": "Write the answers to the questions about the rural village / town you live in or have visited.",
+      "dong": [
+       {
+        "chu": "1. What is the name of the village / town?\n{0} name is {1}.",
+        "o": [
+         {
+          "dung": [
+           "Its"
+          ],
+          "sai": [
+           "It's",
+           "Their"
+          ]
+         },
+         {
+          "go": true,
+          "goi_y": "Gõ tên làng"
+         }
+        ]
+       },
+       {
+        "chu": "2. Where is it?\nIt is {0} the {1} of Viet Nam.",
+        "o": [
+         {
+          "dung": [
+           "in"
+          ],
+          "sai": [
+           "on",
+           "at"
+          ]
+         },
+         {
+          "dung": [
+           "north",
+           "south",
+           "centre"
+          ],
+          "sai": [
+           "northern"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "3. What is the scenery like?\nIt is {0}, with {1}.",
+        "o": [
+         {
+          "dung": [
+           "beautiful",
+           "picturesque",
+           "peaceful"
+          ],
+          "sai": [
+           "beauty"
+          ]
+         },
+         {
+          "dung": [
+           "green rice fields",
+           "high mountains",
+           "a clear river",
+           "fruit gardens"
+          ],
+          "sai": [
+           "a green rice fields"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "4. What are the people there like?\nThey are {0} and {1}.",
+        "o": [
+         {
+          "dung": [
+           "friendly",
+           "kind"
+          ],
+          "sai": [
+           "friend"
+          ]
+         },
+         {
+          "dung": [
+           "helpful",
+           "hard-working",
+           "hospitable"
+          ],
+          "sai": [
+           "help"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "5. What do they do for a living?\nMost of them {0} {1}.",
+        "o": [
+         {
+          "dung": [
+           "are"
+          ],
+          "sai": [
+           "is",
+           "work"
+          ]
+         },
+         {
+          "dung": [
+           "farmers",
+           "fishermen",
+           "craftsmen"
+          ],
+          "sai": [
+           "farmer"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "6. Does the village / town have any historical buildings or sites?\nYes, it {0}. It has {1}.",
+        "o": [
+         {
+          "dung": [
+           "does"
+          ],
+          "sai": [
+           "do",
+           "has"
+          ]
+         },
+         {
+          "dung": [
+           "an old pagoda",
+           "an old temple",
+           "an old communal house"
+          ],
+          "sai": [
+           "a old pagoda"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "7. What is the most interesting part of it?\nThe most interesting part {0} {1}.",
+        "o": [
+         {
+          "dung": [
+           "is"
+          ],
+          "sai": [
+           "are"
+          ]
+         },
+         {
+          "dung": [
+           "the old market",
+           "the village festival",
+           "the fruit gardens",
+           "the river"
+          ],
+          "sai": [
+           "the market old"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "8. Would you say it is a good place to live in? Why?\nYes, I {0}, because the air is {1}.",
+        "o": [
+         {
+          "dung": [
+           "would"
+          ],
+          "sai": [
+           "do",
+           "am"
+          ]
+         },
+         {
+          "dung": [
+           "fresh",
+           "clean"
+          ],
+          "sai": [
+           "polluted"
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "ma": "2.E3a",
+     "de": "Write a short paragraph (60 – 80 words) describing the rural village / town you live in or have visited. You may use the ideas in 2.",
+     "trang": 17,
+     "nhom": "E. Writing",
+     "dang": "CAU_NHO",
+     "dap_an": "Last summer, I visited Hong Phong, my grandparents' village. It lies in the Red River Delta. Green paddy fields and a quiet river surround it. The villagers are warm and always smile at visitors. They mostly grow rice, and some families raise ducks too. The village also has an old stone bridge over the river. My favourite part was catching fish under that bridge with my cousins. Hong Phong is a good place to live because neighbours help each other.",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 8,
+      "hoi": "Put the sentences in the correct order to make a paragraph about Hong Phong village. Follow the order of the ideas in 2:\n1. What is the name of the village / town?\n2. Where is it?\n3. What is the scenery like?\n4. What are the people there like?\n5. What do they do for a living?\n6. Does the village / town have any historical buildings or sites?\n7. What is the most interesting part of it?\n8. Would you say it is a good place to live in? Why?",
+      "buoc": [
+       "Last summer, I visited Hong Phong, my grandparents' village.",
+       "It lies in the Red River Delta.",
+       "Green paddy fields and a quiet river surround it.",
+       "The villagers are warm and always smile at visitors.",
+       "They mostly grow rice, and some families raise ducks too.",
+       "The village also has an old stone bridge over the river.",
+       "My favourite part was catching fish under that bridge with my cousins.",
+       "Hong Phong is a good place to live because neighbours help each other."
+      ],
+      "nhieu": [
+       "I usually go to school by bike with my best friend.",
+       "My grandmother makes very tasty spring rolls."
+      ],
+      "thu_tu_khac": []
+     }
+    },
+    {
+     "ma": "2.E3b",
+     "de": "Write a short paragraph (60 – 80 words) describing the rural village / town you live in or have visited. You may use the ideas in 2.",
+     "trang": 17,
+     "nhom": "E. Writing",
+     "dang": "CAU_NHO",
+     "dap_an": "Tuỳ HS. Ví dụ: I have been to Duong Lam several times. There is a small forest near the village. People there are friendlier than people in the city. Many of them make a living by making pottery. The village is famous for its old houses. I really enjoy cycling through the fields. Life there is quieter than in the city, so it is a good place to live in.",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 11,
+      "hoi": "Write a short paragraph describing the rural village / town you live in or have visited. You may use the ideas in 2.",
+      "dong": [
+       {
+        "chu": "I {0} {1} several times.",
+        "o": [
+         {
+          "dung": [
+           "have been to"
+          ],
+          "sai": [
+           "has been to",
+           "have went to"
+          ]
+         },
+         {
+          "go": true,
+          "goi_y": "Gõ tên làng"
+         }
+        ]
+       },
+       {
+        "chu": "There {0} {1} near the village.",
+        "o": [
+         {
+          "dung": [
+           "is"
+          ],
+          "sai": [
+           "are",
+           "have"
+          ]
+         },
+         {
+          "dung": [
+           "a big lake",
+           "a small forest",
+           "a green hill",
+           "a long beach"
+          ],
+          "sai": [
+           "a lot hills"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "People there are {0} than people in the city.",
+        "o": [
+         {
+          "dung": [
+           "friendlier",
+           "more friendly",
+           "more hospitable"
+          ],
+          "sai": [
+           "friendlyer",
+           "more friendlier"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Many of them {0} a living by {1}.",
+        "o": [
+         {
+          "dung": [
+           "make"
+          ],
+          "sai": [
+           "makes",
+           "do"
+          ]
+         },
+         {
+          "dung": [
+           "keeping bees",
+           "making pottery",
+           "weaving baskets",
+           "selling fruit"
+          ],
+          "sai": [
+           "make pottery"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "The village is famous {0} {1}.",
+        "o": [
+         {
+          "dung": [
+           "for"
+          ],
+          "sai": [
+           "of",
+           "with"
+          ]
+         },
+         {
+          "dung": [
+           "its old pagoda",
+           "its ancient temple",
+           "its old communal house",
+           "its old houses"
+          ],
+          "sai": [
+           "it's old pagoda"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "I really enjoy {0} {1}.",
+        "o": [
+         {
+          "dung": [
+           "walking",
+           "cycling"
+          ],
+          "sai": [
+           "to walk",
+           "walk"
+          ]
+         },
+         {
+          "dung": [
+           "around the village",
+           "through the fields",
+           "up the hill",
+           "by the lake"
+          ],
+          "sai": [
+           "in the lake"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Life there is {0} than in the city, so it is a good place to live in.",
+        "o": [
+         {
+          "dung": [
+           "quieter",
+           "more peaceful",
+           "calmer"
+          ],
+          "sai": [
+           "more quieter",
+           "peacefuller"
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    }
+   ]
+  }
+ ]
+}

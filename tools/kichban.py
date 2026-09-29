@@ -447,6 +447,7 @@ BO_TEST = [
     ("NganHangSbtTest", "Ba quyển sách bài tập"),
     ("NganHangVanTest", "Hai quyển Ngữ văn 8"),
     ("GiaiDeTest", "Giải đề và làm thêm theo bài đã học"),
+    ("GhepTest", "Câu làm trên máy: gõ ra được, chấm đúng"),
     ("HocThuocTest", "Đường kiểm tra bài"),
     ("TuVungTest", "Đường từ vựng"),
     # -- cham bai --

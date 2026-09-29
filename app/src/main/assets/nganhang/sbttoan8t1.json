@@ -2,7 +2,7 @@
  "nguon": "sbttoan8t1",
  "mon": "Toán",
  "ten": "SBT Toán 8 — tập một",
- "ban": 2,
+ "ban": 3,
  "cac_bai": [
   {
    "chuong": "Chương I. Đa thức",
@@ -15,7 +15,105 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Là đơn thức: −xy2y; (1 + √2)x^2y; (1 − √2)xyx; 1,5xy^2; (−x)0,5y^2. Không là đơn thức: x + 1 và x/y",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 7,
+      "hoi": "Trong các biểu thức sau, biểu thức nào là đơn thức?",
+      "dong": [
+       {
+        "chu": "−xy2y: {0}",
+        "o": [
+         {
+          "dung": [
+           "Là đơn thức"
+          ],
+          "sai": [
+           "Không phải"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "(1 + √2)x²y: {0}",
+        "o": [
+         {
+          "dung": [
+           "Là đơn thức"
+          ],
+          "sai": [
+           "Không phải"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "x + 1: {0}",
+        "o": [
+         {
+          "dung": [
+           "Không phải"
+          ],
+          "sai": [
+           "Là đơn thức"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "(1 − √2)xyx: {0}",
+        "o": [
+         {
+          "dung": [
+           "Là đơn thức"
+          ],
+          "sai": [
+           "Không phải"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "1,5xy²: {0}",
+        "o": [
+         {
+          "dung": [
+           "Là đơn thức"
+          ],
+          "sai": [
+           "Không phải"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "x/y: {0}",
+        "o": [
+         {
+          "dung": [
+           "Không phải"
+          ],
+          "sai": [
+           "Là đơn thức"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "(−x)0,5y²: {0}",
+        "o": [
+         {
+          "dung": [
+           "Là đơn thức"
+          ],
+          "sai": [
+           "Không phải"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "1.1b",
@@ -24,7 +122,83 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Đơn thức thu gọn: (1 + √2)x^2y; 1,5xy^2. Thu gọn các đơn thức còn lại: −xy2y = −2xy^2; (1 − √2)xyx = (1 − √2)x^2y; (−x)0,5y^2 = −0,5xy^2",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 5,
+      "hoi": "Trong các đơn thức sau, những đơn thức nào đã thu gọn? Thu gọn các đơn thức còn lại.",
+      "dong": [
+       {
+        "chu": "−xy2y: {0}",
+        "o": [
+         {
+          "dung": [
+           "Thu gọn thành −2xy²"
+          ],
+          "sai": [
+           "Đã thu gọn",
+           "Thu gọn thành 2xy²",
+           "Thu gọn thành −xy³"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "(1 + √2)x²y: {0}",
+        "o": [
+         {
+          "dung": [
+           "Đã thu gọn"
+          ],
+          "sai": [
+           "Thu gọn thành √3x²y"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "(1 − √2)xyx: {0}",
+        "o": [
+         {
+          "dung": [
+           "Thu gọn thành (1 − √2)x²y"
+          ],
+          "sai": [
+           "Đã thu gọn",
+           "Thu gọn thành (1 − √2)xy²"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "1,5xy²: {0}",
+        "o": [
+         {
+          "dung": [
+           "Đã thu gọn"
+          ],
+          "sai": [
+           "Chưa thu gọn"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "(−x)0,5y²: {0}",
+        "o": [
+         {
+          "dung": [
+           "Thu gọn thành −0,5xy²"
+          ],
+          "sai": [
+           "Đã thu gọn",
+           "Thu gọn thành 0,5xy²"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "1.1c",
@@ -33,7 +207,108 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Nhóm 1: −2xy^2; 1,5xy^2; −0,5xy^2, tổng bằng −xy^2. Nhóm 2: (1 + √2)x^2y; (1 − √2)x^2y, tổng bằng 2x^2y",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 7,
+      "hoi": "Thu gọn các đơn thức −xy2y; (1 + √2)x²y; (1 − √2)xyx; 1,5xy²; (−x)0,5y² rồi chia chúng thành hai nhóm đơn thức đồng dạng: nhóm có phần biến xy² và nhóm có phần biến x²y. Mỗi đơn thức thuộc nhóm nào, và tổng các đơn thức trong mỗi nhóm bằng bao nhiêu?",
+      "dong": [
+       {
+        "chu": "−xy2y: {0}",
+        "o": [
+         {
+          "dung": [
+           "nhóm xy²"
+          ],
+          "sai": [
+           "nhóm x²y"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "(1 + √2)x²y: {0}",
+        "o": [
+         {
+          "dung": [
+           "nhóm x²y"
+          ],
+          "sai": [
+           "nhóm xy²"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "(1 − √2)xyx: {0}",
+        "o": [
+         {
+          "dung": [
+           "nhóm x²y"
+          ],
+          "sai": [
+           "nhóm xy²"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "1,5xy²: {0}",
+        "o": [
+         {
+          "dung": [
+           "nhóm xy²"
+          ],
+          "sai": [
+           "nhóm x²y"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "(−x)0,5y²: {0}",
+        "o": [
+         {
+          "dung": [
+           "nhóm xy²"
+          ],
+          "sai": [
+           "nhóm x²y"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Tổng nhóm xy²: {0}",
+        "o": [
+         {
+          "dung": [
+           "−xy²"
+          ],
+          "sai": [
+           "0",
+           "3xy²",
+           "−4xy²"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Tổng nhóm x²y: {0}",
+        "o": [
+         {
+          "dung": [
+           "2x²y"
+          ],
+          "sai": [
+           "2√2x²y",
+           "(2 + 2√2)x²y"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "1.2",
@@ -42,7 +317,106 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "3xy^2x^2√5 = 3√5x^3y^2, hệ số 3√5, bậc 5; −7,5xz(−2)yz = 15xyz^2, hệ số 15, bậc 4; x(1 + π)xy = (1 + π)x^2y, hệ số 1 + π, bậc 3; (yx^2/3)yz^2 = (1/3)x^2y^2z^2, hệ số (1/3), bậc 6",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 8,
+      "hoi": "Thu gọn rồi tìm hệ số và bậc của mỗi đơn thức sau.",
+      "dong": [
+       {
+        "chu": "3xy²x²√5: hệ số {0}, bậc {1}",
+        "o": [
+         {
+          "dung": [
+           "3√5"
+          ],
+          "sai": [
+           "3",
+           "√5"
+          ]
+         },
+         {
+          "dung": [
+           "5"
+          ],
+          "sai": [
+           "4",
+           "6"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "−7,5xz(−2)yz: hệ số {0}, bậc {1}",
+        "o": [
+         {
+          "dung": [
+           "15"
+          ],
+          "sai": [
+           "−15",
+           "−9,5"
+          ]
+         },
+         {
+          "dung": [
+           "4"
+          ],
+          "sai": [
+           "3",
+           "5"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "x(1 + π)xy: hệ số {0}, bậc {1}",
+        "o": [
+         {
+          "dung": [
+           "1 + π"
+          ],
+          "sai": [
+           "1",
+           "π"
+          ]
+         },
+         {
+          "dung": [
+           "3"
+          ],
+          "sai": [
+           "2",
+           "4"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "(yx²/3)yz²: hệ số {0}, bậc {1}",
+        "o": [
+         {
+          "dung": [
+           "1/3"
+          ],
+          "sai": [
+           "3",
+           "1"
+          ]
+         },
+         {
+          "dung": [
+           "6"
+          ],
+          "sai": [
+           "5",
+           "4"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "1.3a",
@@ -51,7 +425,21 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "M = −2x^2y^2; tại x = √2, y = √3 thì M = −12",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "dap": [
+       "−12"
+      ],
+      "phim": [],
+      "nhieu": [],
+      "loi_giai": [
+       "M = (1/2) · (−4) · x²y · y = −2x²y²",
+       "Khi x = √2, y = √3 thì x² = 2, y² = 3",
+       "M = −2 · 2 · 3 = −12"
+      ]
+     }
     },
     {
      "ma": "1.3b",
@@ -60,7 +448,21 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "N = √5x^3y; tại x = −2, y = √5 thì N = −40",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "dap": [
+       "−40"
+      ],
+      "phim": [],
+      "nhieu": [],
+      "loi_giai": [
+       "N = xy√5x² = √5x³y",
+       "Khi x = −2, y = √5: N = √5 · (−2)³ · √5",
+       "= 5 · (−8) = −40"
+      ]
+     }
     },
     {
      "ma": "1.4a",
@@ -69,7 +471,31 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "(1 + √3)x^2yz^3",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "dap": [
+       "(1+√3)x²yz³"
+      ],
+      "phim": [
+       "x",
+       "y",
+       "z",
+       "²",
+       "³",
+       "√"
+      ],
+      "nhieu": [
+       "⁴",
+       "⁵",
+       "t"
+      ],
+      "loi_giai": [
+       "Đơn thức đồng dạng với M có cùng phần biến x²yz³",
+       "Hệ số bằng 1 + √3 nên đơn thức cần tìm là (1 + √3)x²yz³"
+      ]
+     }
     },
     {
      "ma": "1.4b",
@@ -78,7 +504,32 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "(1 − √3)x^3yz^2",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "dap": [
+       "(1−√3)x³yz²"
+      ],
+      "phim": [
+       "x",
+       "y",
+       "z",
+       "²",
+       "³",
+       "√"
+      ],
+      "nhieu": [
+       "⁴",
+       "⁵",
+       "t"
+      ],
+      "loi_giai": [
+       "M có bậc 2 + 1 + 3 = 6",
+       "Gọi số mũ của x là n thì n + 1 + 2 = 6, suy ra n = 3",
+       "Đơn thức cần tìm là (1 − √3)x³yz²"
+      ]
+     }
     },
     {
      "ma": "1.5a",
@@ -87,7 +538,29 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "A = 5xy^2z",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "dap": [
+       "5xy²z"
+      ],
+      "phim": [
+       "x",
+       "y",
+       "z",
+       "²"
+      ],
+      "nhieu": [
+       "³",
+       "⁴",
+       "t"
+      ],
+      "loi_giai": [
+       "A = 4xy²z + xy²z",
+       "A = 5xy²z"
+      ]
+     }
     },
     {
      "ma": "1.5b",
@@ -96,7 +569,29 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "B = −x^2yz",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "dap": [
+       "−x²yz"
+      ],
+      "phim": [
+       "x",
+       "y",
+       "z",
+       "²"
+      ],
+      "nhieu": [
+       "³",
+       "⁴",
+       "t"
+      ],
+      "loi_giai": [
+       "B = 2x²yz − 3x²yz",
+       "B = −x²yz"
+      ]
+     }
     },
     {
      "ma": "1.6",
@@ -105,7 +600,21 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Tổng bốn đơn thức bằng 0 (hệ số 11 − (3/7) − 12 + (10/7) = 0) nên tại x = −6, y = 15 giá trị là 0",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "dap": [
+       "0"
+      ],
+      "phim": [],
+      "nhieu": [],
+      "loi_giai": [
+       "11x²y³ − (3/7)x²y³ − 12x²y³ + (10/7)x²y³ = (11 − 3/7 − 12 + 10/7)x²y³",
+       "= [(11 − 12) + (10/7 − 3/7)]x²y³ = (−1 + 1)x²y³ = 0",
+       "Vậy tại x = −6, y = 15 giá trị của tổng bằng 0"
+      ]
+     }
     }
    ]
   },
@@ -120,7 +629,79 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Là đa thức: 3x^2y − (1/√2)xy^2 + 0,7xy − 1; π; −0,5 + x. Không là đa thức: xy + x/y và 1/(x^2 + y)",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 5,
+      "hoi": "Những biểu thức nào sau đây là đa thức?",
+      "dong": [
+       {
+        "chu": "3x²y − (1/√2)xy² + 0,7xy − 1: {0}",
+        "o": [
+         {
+          "dung": [
+           "Là đa thức"
+          ],
+          "sai": [
+           "Không phải"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "xy + x/y: {0}",
+        "o": [
+         {
+          "dung": [
+           "Không phải"
+          ],
+          "sai": [
+           "Là đa thức"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "π: {0}",
+        "o": [
+         {
+          "dung": [
+           "Là đa thức"
+          ],
+          "sai": [
+           "Không phải"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "1/(x² + y): {0}",
+        "o": [
+         {
+          "dung": [
+           "Không phải"
+          ],
+          "sai": [
+           "Là đa thức"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "−0,5 + x: {0}",
+        "o": [
+         {
+          "dung": [
+           "Là đa thức"
+          ],
+          "sai": [
+           "Không phải"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "1.8a",
@@ -129,7 +710,31 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "M = x^3 − 10xy − 3xyz + 3xy^2 + 5x^2y",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "dap": [
+       "x³−10xy−3xyz+3xy²+5x²y"
+      ],
+      "phim": [
+       "x",
+       "y",
+       "z",
+       "²",
+       "³"
+      ],
+      "nhieu": [
+       "⁴",
+       "⁵",
+       "t"
+      ],
+      "loi_giai": [
+       "M = x³ + (−2xy − 8xy) + (3xyz − 6xyz) + (−4xy² + 7xy²) + 5x²y",
+       "= x³ + (−2 − 8)xy + (3 − 6)xyz + (−4 + 7)xy² + 5x²y",
+       "= x³ − 10xy − 3xyz + 3xy² + 5x²y"
+      ]
+     }
     },
     {
      "ma": "1.8b",
@@ -138,7 +743,105 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "x^3; −3xyz; 3xy^2; 5x^2y",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 7,
+      "hoi": "Cho đa thức M = x³ − 2xy + 3xyz − 4xy² + 5x²y − 6xyz + 7xy² − 8xy. Mỗi đơn thức sau có phải là một hạng tử bậc 3 trong dạng thu gọn của M không?",
+      "dong": [
+       {
+        "chu": "x³: {0}",
+        "o": [
+         {
+          "dung": [
+           "Có"
+          ],
+          "sai": [
+           "Không"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "3xyz: {0}",
+        "o": [
+         {
+          "dung": [
+           "Không"
+          ],
+          "sai": [
+           "Có"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "−10xy: {0}",
+        "o": [
+         {
+          "dung": [
+           "Không"
+          ],
+          "sai": [
+           "Có"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "3xy²: {0}",
+        "o": [
+         {
+          "dung": [
+           "Có"
+          ],
+          "sai": [
+           "Không"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "−3xyz: {0}",
+        "o": [
+         {
+          "dung": [
+           "Có"
+          ],
+          "sai": [
+           "Không"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "7xy²: {0}",
+        "o": [
+         {
+          "dung": [
+           "Không"
+          ],
+          "sai": [
+           "Có"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "5x²y: {0}",
+        "o": [
+         {
+          "dung": [
+           "Có"
+          ],
+          "sai": [
+           "Không"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "1.9",
@@ -147,7 +850,29 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "P = x^2 + xy + y^2",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "dap": [
+       "x²+xy+y²"
+      ],
+      "phim": [
+       "x",
+       "y",
+       "²"
+      ],
+      "nhieu": [
+       "³",
+       "⁴",
+       "z"
+      ],
+      "loi_giai": [
+       "Mỗi hạng tử của P là một đơn thức bậc 2 của x và y, có hệ số 1",
+       "Các đơn thức như vậy là x², xy, y², vừa đủ 3 hạng tử",
+       "Vậy P = x² + xy + y²"
+      ]
+     }
     },
     {
      "ma": "1.10",
@@ -156,7 +881,34 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Q = x^3 + y^3 + z^3 + xy^2 + yz^2 + zx^2 + x^2y + y^2z + z^2x + xyz",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 6,
+      "dap": [
+       "x³+y³+z³+xy²+yz²+zx²+x²y+y²z+z²x+xyz"
+      ],
+      "phim": [
+       "x",
+       "y",
+       "z",
+       "²",
+       "³"
+      ],
+      "nhieu": [
+       "⁴",
+       "⁵",
+       "t"
+      ],
+      "loi_giai": [
+       "Mỗi hạng tử của Q là một đơn thức bậc 3 của x, y, z, có hệ số 1",
+       "Các hạng tử chỉ có một biến: x³, y³, z³",
+       "Các hạng tử có đúng hai biến: x²y, xy², y²z, yz², z²x, zx²",
+       "Hạng tử có cả ba biến: xyz",
+       "Có tất cả 3 + 6 + 1 = 10 đơn thức, vừa đủ 10 hạng tử của Q",
+       "Vậy Q = x³ + y³ + z³ + xy² + yz² + zx² + x²y + y²z + z²x + xyz"
+      ]
+     }
     },
     {
      "ma": "1.11a",
@@ -165,7 +917,21 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "N = −0,5xyz + 2x^2y + xy^2z; bậc 4",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "dap": [
+       "4"
+      ],
+      "phim": [],
+      "nhieu": [],
+      "loi_giai": [
+       "N = (1,5x³y² − 1,5x³y²) + (−3xyz + 2,5xyz) + 2x²y + xy²z",
+       "= −0,5xyz + 2x²y + xy²z",
+       "Hạng tử xy²z có bậc cao nhất là 4 nên N có bậc 4"
+      ]
+     }
     },
     {
      "ma": "1.11b",
@@ -174,7 +940,21 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "N = 14",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "dap": [
+       "14"
+      ],
+      "phim": [],
+      "nhieu": [],
+      "loi_giai": [
+       "Thu gọn: N = −0,5xyz + 2x²y + xy²z",
+       "Tại x = 2, y = −2, z = 3: N = −0,5 · 2 · (−2) · 3 + 2 · 2² · (−2) + 2 · (−2)² · 3",
+       "= 6 − 16 + 24 = 14"
+      ]
+     }
     },
     {
      "ma": "1.12a",
@@ -183,7 +963,21 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Thu gọn: 5x^4 − 4x^3y + 2y^4 − 6x^2y^2; bậc 4",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "dap": [
+       "4"
+      ],
+      "phim": [],
+      "nhieu": [],
+      "loi_giai": [
+       "5x⁴ − 3x³y + 2xy³ − x³y + 2y⁴ − 6x²y² − 2xy³ = 5x⁴ + (−3x³y − x³y) + (2xy³ − 2xy³) + 2y⁴ − 6x²y²",
+       "= 5x⁴ − 4x³y + 2y⁴ − 6x²y²",
+       "Mọi hạng tử đều có bậc 4 nên đa thức có bậc 4"
+      ]
+     }
     },
     {
      "ma": "1.12b",
@@ -192,7 +986,21 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Thu gọn: yz^3 + 0,25y^4 − 5; bậc 4",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "dap": [
+       "4"
+      ],
+      "phim": [],
+      "nhieu": [],
+      "loi_giai": [
+       "0,75yz³ − √3y²z³ + 0,25y⁴ + √3y²z³ + 0,25z³y − 5 = (0,75yz³ + 0,25z³y) + (−√3y²z³ + √3y²z³) + 0,25y⁴ − 5",
+       "= yz³ + 0,25y⁴ − 5",
+       "Bậc cao nhất của các hạng tử là 4 nên đa thức có bậc 4"
+      ]
+     }
     }
    ]
   },
@@ -207,7 +1015,32 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "P + Q = −7xy^3 + 4x^3y + 2x + y − 2; P − Q = 8x^2y^2 + xy^3 + 6x^3y − 2xy + 2x − y − 4",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 5,
+      "buoc": [
+       "P + Q = (4x²y² − 4x²y²) + (−3xy³ − 4xy³) + (5x³y − x³y) + (−xy + xy) + 2x + y + (−3 + 1)",
+       "= −7xy³ + 4x³y + 2x + y − 2",
+       "P − Q = 4x²y² − 3xy³ + 5x³y − xy + 2x − 3 + 4x²y² + 4xy³ + x³y − xy − y − 1",
+       "= (4x²y² + 4x²y²) + (−3xy³ + 4xy³) + (5x³y + x³y) + (−xy − xy) + 2x − y + (−3 − 1)",
+       "= 8x²y² + xy³ + 6x³y − 2xy + 2x − y − 4"
+      ],
+      "nhieu": [
+       "P − Q = 4x²y² − 3xy³ + 5x³y − xy + 2x − 3 + 4x²y² − 4xy³ − x³y + xy + y + 1",
+       "= −7xy³ + 4x³y + 2x + y − 4",
+       "= 8x²y² − 7xy³ + 6x³y − 2xy + 2x − y − 4"
+      ],
+      "thu_tu_khac": [
+       [
+        2,
+        3,
+        4,
+        0,
+        1
+       ]
+      ]
+     }
     },
     {
      "ma": "1.14",
@@ -216,7 +1049,71 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "M có bậc 4; M + N = −xy^2 + 2y^2 + 1 có bậc 3; bậc của M + N nhỏ hơn bậc của M",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "hoi": "Cho hai đa thức M = 3x²y² − 0,8xy² + 2y² − 1 và N = −3x²y² − 0,2xy² + 2. So sánh bậc của đa thức M và đa thức M + N.",
+      "dong": [
+       {
+        "chu": "Bậc của M là {0}",
+        "o": [
+         {
+          "dung": [
+           "4"
+          ],
+          "sai": [
+           "3",
+           "2"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "M + N = {0}",
+        "o": [
+         {
+          "dung": [
+           "−xy² + 2y² + 1"
+          ],
+          "sai": [
+           "−xy² + 2y² − 3",
+           "−0,6xy² + 2y² + 1",
+           "6x²y² − xy² + 2y² + 1"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Bậc của M + N là {0}",
+        "o": [
+         {
+          "dung": [
+           "3"
+          ],
+          "sai": [
+           "4",
+           "2"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Bậc của M + N {0} bậc của M",
+        "o": [
+         {
+          "dung": [
+           "nhỏ hơn"
+          ],
+          "sai": [
+           "bằng",
+           "lớn hơn"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "1.15",
@@ -225,7 +1122,31 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "U = −xy + 3x^2y + 5y^3 + 1",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "dap": [
+       "−xy+3x²y+5y³+1"
+      ],
+      "phim": [
+       "x",
+       "y",
+       "²",
+       "³"
+      ],
+      "nhieu": [
+       "⁴",
+       "z",
+       "t"
+      ],
+      "loi_giai": [
+       "U = 2xy² − xy + 1 + (3x²y − 2xy² + 5y³)",
+       "= 2xy² − xy + 1 + 3x²y − 2xy² + 5y³",
+       "= (2xy² − 2xy²) − xy + 3x²y + 5y³ + 1",
+       "= −xy + 3x²y + 5y³ + 1"
+      ]
+     }
     },
     {
      "ma": "1.16",
@@ -234,7 +1155,29 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "V = 2xy^2 − x^2y + 6",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "dap": [
+       "2xy²−x²y+6"
+      ],
+      "phim": [
+       "x",
+       "y",
+       "²"
+      ],
+      "nhieu": [
+       "³",
+       "⁴",
+       "z"
+      ],
+      "loi_giai": [
+       "V = 4y³ − 3 − (4y³ − 2xy² + x²y − 9)",
+       "= 4y³ − 3 − 4y³ + 2xy² − x²y + 9",
+       "= 2xy² − x²y + 6"
+      ]
+     }
     },
     {
      "ma": "1.17",
@@ -243,7 +1186,34 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "M + N − P = −6x^2y − 2y + 4xy − 1; M − N − P = −6x^2y + 8x − 4y − 4xy − 1",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 6,
+      "buoc": [
+       "M + N − P = 3x³ − 5x²y + 5x − 3y + 4xy − 4x + y − 3x³ − x²y − x − 1",
+       "= (3x³ − 3x³) + (−5x²y − x²y) + 4xy + (5x − 4x − x) + (−3y + y) − 1",
+       "= −6x²y + 4xy − 2y − 1",
+       "M − N − P = 3x³ − 5x²y + 5x − 3y − 4xy + 4x − y − 3x³ − x²y − x − 1",
+       "= (3x³ − 3x³) + (−5x²y − x²y) − 4xy + (5x + 4x − x) + (−3y − y) − 1",
+       "= −6x²y − 4xy + 8x − 4y − 1"
+      ],
+      "nhieu": [
+       "M − N − P = 3x³ − 5x²y + 5x − 3y − 4xy − 4x + y − 3x³ − x²y − x − 1",
+       "= −4x²y + 4xy − 2y − 1",
+       "= −6x²y − 4xy + 10x − 4y − 1"
+      ],
+      "thu_tu_khac": [
+       [
+        3,
+        4,
+        5,
+        0,
+        1,
+        2
+       ]
+      ]
+     }
     }
    ]
   },
@@ -258,7 +1228,32 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "2x^4y − 3x^3y^2 + 0,5x^2y^3",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "dap": [
+       "2x⁴y−3x³y²+0,5x²y³",
+       "2x⁴y−3x³y²+(1/2)x²y³",
+       "2x⁴y−3x³y²+1/2x²y³"
+      ],
+      "phim": [
+       "x",
+       "y",
+       "²",
+       "³",
+       "⁴"
+      ],
+      "nhieu": [
+       "⁵",
+       "⁶",
+       "z"
+      ],
+      "loi_giai": [
+       "0,5x²y(4x² − 6xy + y²) = 0,5x²y · 4x² − 0,5x²y · 6xy + 0,5x²y · y²",
+       "= 2x⁴y − 3x³y² + 0,5x²y³"
+      ]
+     }
     },
     {
      "ma": "1.18b",
@@ -267,7 +1262,30 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "−2x^4y^2 + 4x^3y^3 − 6x^2y^4",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "dap": [
+       "−2x⁴y²+4x³y³−6x²y⁴"
+      ],
+      "phim": [
+       "x",
+       "y",
+       "²",
+       "³",
+       "⁴"
+      ],
+      "nhieu": [
+       "⁵",
+       "⁶",
+       "z"
+      ],
+      "loi_giai": [
+       "(3x³ − 6x²y + 9xy²)(−(2/3)xy²) = 3x³ · (−(2/3)xy²) − 6x²y · (−(2/3)xy²) + 9xy² · (−(2/3)xy²)",
+       "= −2x⁴y² + 4x³y³ − 6x²y⁴"
+      ]
+     }
     },
     {
      "ma": "1.19a",
@@ -276,7 +1294,22 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "A = x^2 + y^2 + x − y; tại x = 3, y = 3 thì A = 18",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "dap": [
+       "18"
+      ],
+      "phim": [],
+      "nhieu": [],
+      "loi_giai": [
+       "A = x(x − y + 1) + y(x + y − 1) = x² − xy + x + xy + y² − y",
+       "= x² + y² + x − y",
+       "Tại x = 3, y = 3: A = 3² + 3² + 3 − 3",
+       "= 18"
+      ]
+     }
     },
     {
      "ma": "1.19b",
@@ -285,7 +1318,25 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "B = x^2y − xy^2; tại x = 2, y = −0,5 thì B = −2,5",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 5,
+      "dap": [
+       "−2,5",
+       "−5/2",
+       "−(5/2)"
+      ],
+      "phim": [],
+      "nhieu": [],
+      "loi_giai": [
+       "x(x − y²) + y(x² − y) = x² − xy² + x²y − y²",
+       "(x + y)(x − y) = x² − xy + xy − y² = x² − y²",
+       "B = x² − xy² + x²y − y² − (x² − y²) = x²y − xy²",
+       "Tại x = 2, y = −0,5: B = 2² · (−0,5) − 2 · (−0,5)²",
+       "= −2 − 0,5 = −2,5"
+      ]
+     }
     },
     {
      "ma": "1.20a",
@@ -294,7 +1345,30 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "x^3z − 8y^3z",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "dap": [
+       "x³z−8y³z"
+      ],
+      "phim": [
+       "x",
+       "y",
+       "z",
+       "³"
+      ],
+      "nhieu": [
+       "²",
+       "⁴",
+       "t"
+      ],
+      "loi_giai": [
+       "(x − 2y)(x²z + 2xyz + 4y²z) = x · x²z + x · 2xyz + x · 4y²z − 2y · x²z − 2y · 2xyz − 2y · 4y²z",
+       "= x³z + 2x²yz + 4xy²z − 2x²yz − 4xy²z − 8y³z",
+       "= x³z − 8y³z"
+      ]
+     }
     },
     {
      "ma": "1.20b",
@@ -303,7 +1377,31 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "x^3 + (1/27)y^3",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "dap": [
+       "x³+(1/27)y³",
+       "x³+1/27y³",
+       "x³+y³/27"
+      ],
+      "phim": [
+       "x",
+       "y",
+       "³"
+      ],
+      "nhieu": [
+       "²",
+       "⁶",
+       "z"
+      ],
+      "loi_giai": [
+       "(x² − (1/3)xy + (1/9)y²)(x + (1/3)y) = x² · x + x² · (1/3)y − (1/3)xy · x − (1/3)xy · (1/3)y + (1/9)y² · x + (1/9)y² · (1/3)y",
+       "= x³ + (1/3)x²y − (1/3)x²y − (1/9)xy² + (1/9)xy² + (1/27)y³",
+       "= x³ + (1/27)y³"
+      ]
+     }
     },
     {
      "ma": "1.21a",
@@ -312,7 +1410,38 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "2x^8 + 5x^7y − 3x^6y^2 + 6x^5y^3 + 18x^4y^4 + 7x^3y^5 − 6xy^7 − 2y^8",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 6,
+      "dap": [
+       "2x⁸+5x⁷y−3x⁶y²+6x⁵y³+18x⁴y⁴+7x³y⁵−6xy⁷−2y⁸"
+      ],
+      "phim": [
+       "x",
+       "y",
+       "²",
+       "³",
+       "⁴",
+       "⁵",
+       "⁶",
+       "⁷",
+       "⁸"
+      ],
+      "nhieu": [
+       "⁹",
+       "z",
+       "t"
+      ],
+      "loi_giai": [
+       "2x⁴(x⁴ + 3x³y − y⁴) = 2x⁸ + 6x⁷y − 2x⁴y⁴",
+       "−x³y(x⁴ + 3x³y − y⁴) = −x⁷y − 3x⁶y² + x³y⁵",
+       "6xy³(x⁴ + 3x³y − y⁴) = 6x⁵y³ + 18x⁴y⁴ − 6xy⁷",
+       "2y⁴(x⁴ + 3x³y − y⁴) = 2x⁴y⁴ + 6x³y⁵ − 2y⁸",
+       "Tích = 2x⁸ + (6x⁷y − x⁷y) − 3x⁶y² + 6x⁵y³ + (−2x⁴y⁴ + 18x⁴y⁴ + 2x⁴y⁴) + (x³y⁵ + 6x³y⁵) − 6xy⁷ − 2y⁸",
+       "= 2x⁸ + 5x⁷y − 3x⁶y² + 6x⁵y³ + 18x⁴y⁴ + 7x³y⁵ − 6xy⁷ − 2y⁸"
+      ]
+     }
     },
     {
      "ma": "1.21b",
@@ -321,7 +1450,36 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "5x^5y − 0,5x^4y^2 − x^3y^3 + 4,5x^2y^4 − 5xy^5",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 5,
+      "dap": [
+       "5x⁵y−0,5x⁴y²−x³y³+4,5x²y⁴−5xy⁵",
+       "5x⁵y−(1/2)x⁴y²−x³y³+(9/2)x²y⁴−5xy⁵",
+       "5x⁵y−1/2x⁴y²−x³y³+9/2x²y⁴−5xy⁵"
+      ],
+      "phim": [
+       "x",
+       "y",
+       "²",
+       "³",
+       "⁴",
+       "⁵"
+      ],
+      "nhieu": [
+       "⁶",
+       "⁷",
+       "z"
+      ],
+      "loi_giai": [
+       "x³y(5x² − 2,5xy + 5y²) = 5x⁵y − 2,5x⁴y² + 5x³y³",
+       "0,4x²y²(5x² − 2,5xy + 5y²) = 2x⁴y² − x³y³ + 2x²y⁴",
+       "−xy³(5x² − 2,5xy + 5y²) = −5x³y³ + 2,5x²y⁴ − 5xy⁵",
+       "Tích = 5x⁵y + (−2,5x⁴y² + 2x⁴y²) + (5x³y³ − x³y³ − 5x³y³) + (2x²y⁴ + 2,5x²y⁴) − 5xy⁵",
+       "= 5x⁵y − 0,5x⁴y² − x³y³ + 4,5x²y⁴ − 5xy⁵"
+      ]
+     }
     },
     {
      "ma": "1.22",
@@ -330,7 +1488,22 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Vì (x − y)(x + y) = x^2 − y^2 nên P = x^4 − (x^2 − y^2)(x^2 + y^2) − y^4 = x^4 − (x^4 − y^4) − y^4 = 0. Vậy P luôn bằng 0, không phụ thuộc vào giá trị của các biến.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 5,
+      "buoc": [
+       "(x − y)(x + y) = x² + xy − xy − y² = x² − y²",
+       "(x² − y²)(x² + y²) = x⁴ + x²y² − x²y² − y⁴ = x⁴ − y⁴",
+       "P = x⁴ − (x⁴ − y⁴) − y⁴",
+       "= x⁴ − x⁴ + y⁴ − y⁴ = 0",
+       "Vậy P = 0 với mọi giá trị của x và y, nên giá trị của P không phụ thuộc vào giá trị của các biến"
+      ],
+      "nhieu": [
+       "= x⁴ − x⁴ − y⁴ − y⁴ = −2y⁴",
+       "(x² − y²)(x² + y²) = x⁴ + y⁴"
+      ]
+     }
     },
     {
      "ma": "1.23a",
@@ -339,7 +1512,32 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "x^2y − xy^2 + xz^2 − x^2z + y^2z − yz^2",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 5,
+      "dap": [
+       "x²y−xy²+xz²−x²z+y²z−yz²"
+      ],
+      "phim": [
+       "x",
+       "y",
+       "z",
+       "²"
+      ],
+      "nhieu": [
+       "³",
+       "⁴",
+       "t"
+      ],
+      "loi_giai": [
+       "(x − y)(y + z)(z + x) = (xy + xz − y² − yz)(z + x) = x²y − xy² + xz² + x²z − y²z − yz²",
+       "(x + y)(y − z)(z + x) = (xy − xz + y² − yz)(z + x) = x²y + xy² − xz² − x²z + y²z − yz²",
+       "(x + y)(y + z)(z − x) = (xy + xz + y² + yz)(z − x) = −x²y − xy² + xz² − x²z + y²z + yz²",
+       "Tổng = (x²y + x²y − x²y) + (−xy² + xy² − xy²) + (xz² − xz² + xz²) + (x²z − x²z − x²z) + (−y²z + y²z + y²z) + (−yz² − yz² + yz²)",
+       "= x²y − xy² + xz² − x²z + y²z − yz²"
+      ]
+     }
     },
     {
      "ma": "1.23b",
@@ -348,7 +1546,33 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "2xyz + 8x^2y + 8y^2z + 8z^2x",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 6,
+      "dap": [
+       "2xyz+8x²y+8y²z+8z²x"
+      ],
+      "phim": [
+       "x",
+       "y",
+       "z",
+       "²"
+      ],
+      "nhieu": [
+       "³",
+       "⁴",
+       "t"
+      ],
+      "loi_giai": [
+       "(2x + y)(2y + z) = 4xy + 2xz + 2y² + yz",
+       "(4xy + 2xz + 2y² + yz)(2z + x) = 9xyz + 4x²y + 4y²z + 4xz² + 2x²z + 2xy² + 2yz²",
+       "(2x − y)(2y − z) = 4xy − 2xz − 2y² + yz",
+       "(4xy − 2xz − 2y² + yz)(2z − x) = 7xyz − 4x²y − 4y²z − 4xz² + 2x²z + 2xy² + 2yz²",
+       "Hiệu = (9xyz − 7xyz) + (4x²y + 4x²y) + (4y²z + 4y²z) + (4xz² + 4xz²) + (2x²z − 2x²z) + (2xy² − 2xy²) + (2yz² − 2yz²)",
+       "= 2xyz + 8x²y + 8y²z + 8z²x"
+      ]
+     }
     }
    ]
   },
@@ -363,7 +1587,30 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "M = 3xy^3z",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "dap": [
+       "3xy³z"
+      ],
+      "phim": [
+       "x",
+       "y",
+       "z",
+       "³"
+      ],
+      "nhieu": [
+       "²",
+       "⁴",
+       "t"
+      ],
+      "loi_giai": [
+       "M = 2,7x³y⁴z² : 0,9x²yz",
+       "= (2,7 : 0,9) · (x³ : x²) · (y⁴ : y) · (z² : z)",
+       "= 3xy³z"
+      ]
+     }
     },
     {
      "ma": "1.24b",
@@ -372,7 +1619,33 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "N = −(5/2)x^2y^2z",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "dap": [
+       "−(5/2)x²y²z",
+       "−5/2x²y²z",
+       "−2,5x²y²z",
+       "(−5/2)x²y²z"
+      ],
+      "phim": [
+       "x",
+       "y",
+       "z",
+       "²"
+      ],
+      "nhieu": [
+       "³",
+       "⁴",
+       "t"
+      ],
+      "loi_giai": [
+       "N = x⁴y³z² : (−(2/5)x²yz)",
+       "= [1 : (−2/5)] · (x⁴ : x²) · (y³ : y) · (z² : z)",
+       "= −(5/2)x²y²z"
+      ]
+     }
     },
     {
      "ma": "1.25a",
@@ -381,7 +1654,30 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "0,5x^2 − 0,2xy + 0,3y^2",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "dap": [
+       "0,5x²−0,2xy+0,3y²",
+       "(1/2)x²−(1/5)xy+(3/10)y²",
+       "1/2x²−1/5xy+3/10y²"
+      ],
+      "phim": [
+       "x",
+       "y",
+       "²"
+      ],
+      "nhieu": [
+       "³",
+       "⁴",
+       "z"
+      ],
+      "loi_giai": [
+       "(2,5x³y² − x²y³ + 1,5xy⁴) : 5xy² = 2,5x³y² : 5xy² − x²y³ : 5xy² + 1,5xy⁴ : 5xy²",
+       "= 0,5x² − 0,2xy + 0,3y²"
+      ]
+     }
     },
     {
      "ma": "1.25b",
@@ -390,7 +1686,31 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "1,5x^3y + 2x^2y^2 − 2,5xy^3",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "dap": [
+       "1,5x³y+2x²y²−2,5xy³",
+       "(3/2)x³y+2x²y²−(5/2)xy³",
+       "3/2x³y+2x²y²−5/2xy³"
+      ],
+      "phim": [
+       "x",
+       "y",
+       "²",
+       "³"
+      ],
+      "nhieu": [
+       "⁴",
+       "⁵",
+       "z"
+      ],
+      "loi_giai": [
+       "(3x⁵y³ + 4x⁴y⁴ − 5x³y⁵) : 2x²y² = 3x⁵y³ : 2x²y² + 4x⁴y⁴ : 2x²y² − 5x³y⁵ : 2x²y²",
+       "= 1,5x³y + 2x²y² − 2,5xy³"
+      ]
+     }
     },
     {
      "ma": "1.26a",
@@ -399,7 +1719,30 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "1,5x",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "dap": [
+       "1,5x",
+       "(3/2)x",
+       "3/2x",
+       "3x/2"
+      ],
+      "phim": [
+       "x"
+      ],
+      "nhieu": [
+       "y",
+       "²"
+      ],
+      "loi_giai": [
+       "(5x³y² − 4x²y³) : 2x²y² = 2,5x − 2y",
+       "(3x²y − 6xy²) : 3xy = x − 2y",
+       "Biểu thức = 2,5x − 2y − (x − 2y) = 2,5x − 2y − x + 2y",
+       "= 1,5x"
+      ]
+     }
     },
     {
      "ma": "1.26b",
@@ -408,7 +1751,32 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "3x^2yz − 5xy^2z",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 5,
+      "dap": [
+       "3x²yz−5xy²z"
+      ],
+      "phim": [
+       "x",
+       "y",
+       "z",
+       "²"
+      ],
+      "nhieu": [
+       "³",
+       "⁴",
+       "t"
+      ],
+      "loi_giai": [
+       "5x²yz³ : z² = 5x²yz",
+       "3x²y³z : xy = 3xy²z",
+       "2xyz(x + y) = 2x²yz + 2xy²z",
+       "Biểu thức = 5x²yz − 3xy²z − (2x²yz + 2xy²z) = 5x²yz − 3xy²z − 2x²yz − 2xy²z",
+       "= 3x²yz − 5xy²z"
+      ]
+     }
     }
    ]
   },
@@ -423,7 +1791,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "B",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Khi thu gọn đơn thức 3xy⁵(−(2/3)x³y²z), ta được đơn thức",
+      "cac": [
+       "2x²y³z",
+       "−2x⁴y⁷z",
+       "−2x³y⁶z",
+       "−(2/9)x⁴y⁷z"
+      ],
+      "dap": "B"
+     }
     },
     {
      "ma": "Trắc nghiệm 2 (tr.17)",
@@ -432,7 +1812,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "D",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Trong các đơn thức M = 2xyz²; N = −0,2y²z; P = −xz²; Q = 3,5yz², đơn thức đồng dạng với đơn thức yz² là",
+      "cac": [
+       "M",
+       "N",
+       "P",
+       "Q"
+      ],
+      "dap": "D"
+     }
     },
     {
      "ma": "Trắc nghiệm 3 (tr.17)",
@@ -441,7 +1833,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "C",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Bậc của đa thức 7x⁵ + 5x⁴y³ − 2x³y³ − 5x⁴y³ + 2,5x³y³ − 7y⁵ là",
+      "cac": [
+       "4",
+       "5",
+       "6",
+       "7"
+      ],
+      "dap": "C"
+     }
     },
     {
      "ma": "Trắc nghiệm 4 (tr.17)",
@@ -450,7 +1854,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "B",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Khi cộng hai đơn thức (1 + √5)x²y³ và (1 − √5)x²y³ ta được đơn thức",
+      "cac": [
+       "x²y³",
+       "2x²y³",
+       "2√5x²y³",
+       "−√5x²y³"
+      ],
+      "dap": "B"
+     }
     },
     {
      "ma": "Trắc nghiệm 5 (tr.17)",
@@ -459,7 +1875,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "C",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Kết quả của phép cộng hai đơn thức 2xy²z và −0,2x²yz là",
+      "cac": [
+       "Một đơn thức",
+       "Không xác định",
+       "Một đa thức",
+       "Một số"
+      ],
+      "dap": "C"
+     }
     },
     {
      "ma": "Trắc nghiệm 6 (tr.17)",
@@ -468,7 +1896,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "D",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Cho hai đa thức A và B có cùng bậc 4. Gọi C là tổng của A và B. Khi đó:",
+      "cac": [
+       "C là đa thức bậc 4",
+       "C là đa thức có bậc lớn hơn 4",
+       "C là đa thức có bậc nhỏ hơn 4",
+       "C là đa thức bậc không lớn hơn 4"
+      ],
+      "dap": "D"
+     }
     },
     {
      "ma": "Trắc nghiệm 7 (tr.17)",
@@ -477,7 +1917,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "A",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Tích của một đa thức bậc 3 với một đa thức bậc 2 là một đa thức",
+      "cac": [
+       "bậc 5",
+       "bậc 6",
+       "bậc nhỏ hơn 5",
+       "bậc lớn hơn 6"
+      ],
+      "dap": "A"
+     }
     },
     {
      "ma": "Trắc nghiệm 8 (tr.17)",
@@ -486,7 +1938,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "B",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Thu gọn các tích A = (x²y + xy²)(x² − xy + y²) và B = (x − y)(x³y + x²y² + xy³), ta được:",
+      "cac": [
+       "A = x⁴y − xy⁴ và B = x⁴y + xy⁴",
+       "A = x⁴y + xy⁴ và B = x⁴y − xy⁴",
+       "A = xy⁴ − x⁴y và B = x⁴y + xy⁴",
+       "A = x⁴y + xy⁴ và B = xy⁴ − x⁴y"
+      ],
+      "dap": "B"
+     }
     },
     {
      "ma": "Trắc nghiệm 9 (tr.17)",
@@ -495,7 +1959,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "D",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Khi chia đơn thức 2,5x³y⁴z² cho đơn thức −5x²y⁴z, ta được kết quả là:",
+      "cac": [
+       "−0,5xz²",
+       "0,5xz",
+       "−0,5x²z",
+       "−0,5xz"
+      ],
+      "dap": "D"
+     }
     },
     {
      "ma": "Trắc nghiệm 10 (tr.18)",
@@ -504,7 +1980,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "C",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Kết quả của phép chia 5x³y² − 10x²y³ + 15x²y² cho −5x²y² là:",
+      "cac": [
+       "−xy + 2y − 3",
+       "−x + 2y − 3xy",
+       "−x + 2y − 3",
+       "−x + 2xy − 3"
+      ],
+      "dap": "C"
+     }
     },
     {
      "ma": "1.27",
@@ -513,7 +2001,31 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Diện tích toàn phần: 12xy + 12x^2; đa thức bậc 2",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "hoi": "Một hình lăng trụ đứng có đáy là một tam giác với ba cạnh bằng 3x, 4x và 5x (đó là một tam giác vuông), chiều cao của hình lăng trụ bằng y (x > 0, y > 0). Tìm đa thức với hai biến x và y biểu thị diện tích toàn phần (tổng diện tích xung quanh và diện tích hai đáy) của hình lăng trụ đó.",
+      "dap": [
+       "12xy+12x²"
+      ],
+      "phim": [
+       "x",
+       "y",
+       "²"
+      ],
+      "nhieu": [
+       "³",
+       "⁴",
+       "z"
+      ],
+      "loi_giai": [
+       "Chu vi đáy: C = 3x + 4x + 5x = 12x",
+       "Diện tích xung quanh: Sxq = 12x · y = 12xy",
+       "Đáy là tam giác vuông có hai cạnh góc vuông 3x và 4x: Sđáy = (1/2) · 3x · 4x = 6x²",
+       "Diện tích toàn phần: Stp = Sxq + 2Sđáy = 12xy + 2 · 6x² = 12xy + 12x²"
+      ]
+     }
     },
     {
      "ma": "1.28a",
@@ -522,7 +2034,34 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "P = 2x^3yz^2 − 2x^2y − 2xy + y + 5, bậc 6; Q = 2x^3yz^2 − 2x^2y + xy − y + 5, bậc 6",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 6,
+      "buoc": [
+       "P = (4x³yz² − 2x³yz²) + (−3x²y + x²y) − 2xy + y + 5",
+       "= 2x³yz² − 2x²y − 2xy + y + 5",
+       "Hạng tử 2x³yz² có bậc cao nhất là 6 nên P có bậc 6",
+       "Q = (−x³yz² + 3x³yz²) − 2x²y + xy − y + (3 + 2)",
+       "= 2x³yz² − 2x²y + xy − y + 5",
+       "Hạng tử 2x³yz² có bậc cao nhất là 6 nên Q có bậc 6"
+      ],
+      "nhieu": [
+       "= 2x³yz² − 4x²y − 2xy + y + 5",
+       "Hạng tử 2x³yz² có bậc cao nhất là 3 nên P có bậc 3",
+       "= −4x³yz² − 2x²y + xy − y + 5"
+      ],
+      "thu_tu_khac": [
+       [
+        3,
+        4,
+        5,
+        0,
+        1,
+        2
+       ]
+      ]
+     }
     },
     {
      "ma": "1.28b",
@@ -531,7 +2070,61 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "P + Q = 4x^3yz^2 − 4x^2y − xy + 10, bậc 6; P − Q = −3xy + 2y, bậc 2",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "hoi": "Cho hai đa thức P = 4x³yz² − 3x²y − 2x³yz² + x²y − 2xy + y + 5 và Q = −x³yz² − 2x²y + 3 + 3x³yz² + xy − y + 2. Xác định bậc của mỗi đa thức P + Q và P − Q.",
+      "dong": [
+       {
+        "chu": "P + Q = {0}, có bậc {1}",
+        "o": [
+         {
+          "dung": [
+           "4x³yz² − 4x²y − xy + 10"
+          ],
+          "sai": [
+           "4x³yz² − 4x²y − 3xy + 10",
+           "4x³yz² − 4x²y − xy + 2y + 10"
+          ]
+         },
+         {
+          "dung": [
+           "6"
+          ],
+          "sai": [
+           "3",
+           "5"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "P − Q = {0}, có bậc {1}",
+        "o": [
+         {
+          "dung": [
+           "−3xy + 2y"
+          ],
+          "sai": [
+           "−xy + 2y",
+           "−4x²y − 3xy + 2y",
+           "−3xy + 2y + 10"
+          ]
+         },
+         {
+          "dung": [
+           "2"
+          ],
+          "sai": [
+           "6",
+           "1"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "1.29a",
@@ -540,7 +2133,32 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Q = −3x^2y + 6xy^2 + 2y^3 − xy − 2y + 2",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 5,
+      "dap": [
+       "−3x²y+6xy²+2y³−xy−2y+2"
+      ],
+      "phim": [
+       "x",
+       "y",
+       "²",
+       "³"
+      ],
+      "nhieu": [
+       "⁴",
+       "z",
+       "t"
+      ],
+      "loi_giai": [
+       "(x + y)(2xy + 2y² − 1) = 2x²y + 2xy² − x + 2xy² + 2y³ − y",
+       "= 2x²y + 4xy² + 2y³ − x − y",
+       "Q = (2x²y + 4xy² + 2y³ − x − y) − (5x²y − 2xy² + xy − x + y − 2)",
+       "= 2x²y + 4xy² + 2y³ − x − y − 5x²y + 2xy² − xy + x − y + 2",
+       "= −3x²y + 6xy² + 2y³ − xy − 2y + 2"
+      ]
+     }
     },
     {
      "ma": "1.29b",
@@ -549,7 +2167,29 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "R = 6x^2y − 3xy^2 + xy − x + y − 2",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "dap": [
+       "6x²y−3xy²+xy−x+y−2"
+      ],
+      "phim": [
+       "x",
+       "y",
+       "²"
+      ],
+      "nhieu": [
+       "³",
+       "⁴",
+       "z"
+      ],
+      "loi_giai": [
+       "−xy(x − y) = −x²y + xy²",
+       "R = P − (−x²y + xy²) = 5x²y − 2xy² + xy − x + y − 2 + x²y − xy²",
+       "= 6x²y − 3xy² + xy − x + y − 2"
+      ]
+     }
     },
     {
      "ma": "1.30a",
@@ -558,7 +2198,32 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "2x^4y^2 − 4x^3y^3 + (4/5)x^2y^4",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "dap": [
+       "2x⁴y²−4x³y³+(4/5)x²y⁴",
+       "2x⁴y²−4x³y³+4/5x²y⁴",
+       "2x⁴y²−4x³y³+0,8x²y⁴"
+      ],
+      "phim": [
+       "x",
+       "y",
+       "²",
+       "³",
+       "⁴"
+      ],
+      "nhieu": [
+       "⁵",
+       "⁶",
+       "z"
+      ],
+      "loi_giai": [
+       "(2/5)x²y(5x²y − 10xy² + 2y³) = (2/5)x²y · 5x²y − (2/5)x²y · 10xy² + (2/5)x²y · 2y³",
+       "= 2x⁴y² − 4x³y³ + (4/5)x²y⁴"
+      ]
+     }
     },
     {
      "ma": "1.30b",
@@ -567,7 +2232,33 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "x^5 + x^4y − 11x^3y^2 + 9x^2y^3 + 2xy^4",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "dap": [
+       "x⁵+x⁴y−11x³y²+9x²y³+2xy⁴"
+      ],
+      "phim": [
+       "x",
+       "y",
+       "²",
+       "³",
+       "⁴",
+       "⁵"
+      ],
+      "nhieu": [
+       "⁶",
+       "⁷",
+       "z"
+      ],
+      "loi_giai": [
+       "(x² − 2xy)(x³ + 3x²y − 5xy² − y³) = x²(x³ + 3x²y − 5xy² − y³) − 2xy(x³ + 3x²y − 5xy² − y³)",
+       "= x⁵ + 3x⁴y − 5x³y² − x²y³ − 2x⁴y − 6x³y² + 10x²y³ + 2xy⁴",
+       "= x⁵ + (3x⁴y − 2x⁴y) + (−5x³y² − 6x³y²) + (−x²y³ + 10x²y³) + 2xy⁴",
+       "= x⁵ + x⁴y − 11x³y² + 9x²y³ + 2xy⁴"
+      ]
+     }
     },
     {
      "ma": "1.31",
@@ -576,7 +2267,23 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "A = 8x^2y^2 − xy^3; tại x = 1, y = 8 thì A = 0",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 5,
+      "dap": [
+       "0"
+      ],
+      "phim": [],
+      "nhieu": [],
+      "loi_giai": [
+       "(5xy − 4y²)(3x² + 4xy) = 15x³y + 20x²y² − 12x²y² − 16xy³ = 15x³y + 8x²y² − 16xy³",
+       "15xy(x + y)(x − y) = 15xy(x² − y²) = 15x³y − 15xy³",
+       "A = 15x³y + 8x²y² − 16xy³ − (15x³y − 15xy³) = 8x²y² − xy³",
+       "Tại x = 1, y = 8: A = 8 · 1² · 8² − 1 · 8³",
+       "= 512 − 512 = 0"
+      ]
+     }
     },
     {
      "ma": "1.32a",
@@ -585,7 +2292,28 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "−2x^2 + 3xy + y^2",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "dap": [
+       "−2x²+3xy+y²"
+      ],
+      "phim": [
+       "x",
+       "y",
+       "²"
+      ],
+      "nhieu": [
+       "³",
+       "⁴",
+       "z"
+      ],
+      "loi_giai": [
+       "(4x⁴y² − 6x³y³ − 2x²y⁴) : (−2x²y²) = 4x⁴y² : (−2x²y²) − 6x³y³ : (−2x²y²) − 2x²y⁴ : (−2x²y²)",
+       "= −2x² + 3xy + y²"
+      ]
+     }
     },
     {
      "ma": "1.32b",
@@ -594,7 +2322,32 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "6x^3y + (3/5)x^2y^2 − (4/5)xy^3 − (6/5)y^4",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "dap": [
+       "6x³y+(3/5)x²y²−(4/5)xy³−(6/5)y⁴",
+       "6x³y+3/5x²y²−4/5xy³−6/5y⁴",
+       "6x³y+0,6x²y²−0,8xy³−1,2y⁴"
+      ],
+      "phim": [
+       "x",
+       "y",
+       "²",
+       "³",
+       "⁴"
+      ],
+      "nhieu": [
+       "⁵",
+       "⁶",
+       "z"
+      ],
+      "loi_giai": [
+       "(5x⁴y³ + (1/2)x³y⁴ − (2/3)x²y⁵ − xy⁶) : (5/6)xy² = 5x⁴y³ : (5/6)xy² + (1/2)x³y⁴ : (5/6)xy² − (2/3)x²y⁵ : (5/6)xy² − xy⁶ : (5/6)xy²",
+       "= 6x³y + (3/5)x²y² − (4/5)xy³ − (6/5)y⁴"
+      ]
+     }
     },
     {
      "ma": "1.33a",
@@ -603,7 +2356,29 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "A = 12x + 2y",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 5,
+      "dap": [
+       "12x+2y"
+      ],
+      "phim": [
+       "x",
+       "y"
+      ],
+      "nhieu": [
+       "²",
+       "³"
+      ],
+      "loi_giai": [
+       "(9x² − 6xy + 4y² + 1)(3x + 2y) = 27x³ + 18x²y − 18x²y − 12xy² + 12xy² + 8y³ + 3x + 2y",
+       "= 27x³ + 8y³ + 3x + 2y",
+       "(3x⁵y + (8/9)x²y⁴ − x³y) : (1/9)x²y = 27x³ + 8y³ − 9x",
+       "A = 27x³ + 8y³ + 3x + 2y − (27x³ + 8y³ − 9x)",
+       "= 12x + 2y"
+      ]
+     }
     },
     {
      "ma": "1.33b",
@@ -612,7 +2387,28 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "B = 3x",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 5,
+      "dap": [
+       "3x"
+      ],
+      "phim": [
+       "x"
+      ],
+      "nhieu": [
+       "y",
+       "²"
+      ],
+      "loi_giai": [
+       "(5x³y² − 4x²y³) : 2x²y² = 2,5x − 2y",
+       "(3x⁴y + 6xy²) : 3xy = x³ + 2y",
+       "x(x² − 0,5) = x³ − 0,5x",
+       "B = 2,5x − 2y + x³ + 2y − (x³ − 0,5x)",
+       "= 3x"
+      ]
+     }
     },
     {
      "ma": "1.34",
@@ -621,7 +2417,32 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Với y = x^2 − 1, thương là 3x^2 − 2xy + 4, tức là −2x^3 + 3x^2 + 2x + 4",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "dap": [
+       "−2x³+3x²+2x+4",
+       "3x²−2xy+4"
+      ],
+      "phim": [
+       "x",
+       "y",
+       "²",
+       "³"
+      ],
+      "nhieu": [
+       "⁴",
+       "z",
+       "t"
+      ],
+      "loi_giai": [
+       "Đặt y = x² − 1, phép chia trở thành (9x³y − 6x²y² + 12xy) : 3xy",
+       "(9x³y − 6x²y² + 12xy) : 3xy = 9x³y : 3xy − 6x²y² : 3xy + 12xy : 3xy",
+       "= 3x² − 2xy + 4",
+       "Thay y = x² − 1 vào thương: 3x² − 2x(x² − 1) + 4 = −2x³ + 3x² + 2x + 4"
+      ]
+     }
     }
    ]
   },
