@@ -357,18 +357,31 @@ object ThiHanhLenh {
         val danhSach = (giaTri as? List<*>).orEmpty().mapNotNull { m ->
             val o = m as? Map<*, *> ?: return@mapNotNull null
             val ma = (o["ma"] as? String)?.trim().orEmpty()
-            if (ma.isEmpty()) null else SuaCham.Cau(ma, (o["de"] as? String).orEmpty())
+            // soDong: so dong Claude ghi o lan cham lai, Bang dieu khien gui kem tu 29/9/2026.
+            // Firestore tra so la Long.
+            val soDong = (o["soDong"] as? Number)?.toInt()?.coerceAtLeast(0) ?: 0
+            if (ma.isEmpty()) null else SuaCham.Cau(ma, (o["de"] as? String).orEmpty(), soDong)
         }
         if (danhSach.isEmpty()) return "Lệnh thiếu danh sách câu, máy không sửa gì."
 
         val chuanBi = SuaCham.chuanBi(context, danhSach)
-        if (chuanBi.cac.isEmpty()) {
+        if (chuanBi.cac.isEmpty() && chuanBi.choSoDong.isEmpty()) {
             return "Không còn câu nào trong số đó đang chờ sửa, máy không cộng gì."
         }
         val con = context.getString(R.string.child_name)
         val boQua = if (chuanBi.boQua.isEmpty()) "" else {
             " Bỏ qua ${chuanBi.boQua.joinToString(", ")} vì không còn chờ sửa."
         }
+
+        // Cau dung ma chua co so dong: khong ghi so, van cho sua (29/9/2026). Ghi xong voi 0
+        // phut thi cau do khong bao gio duoc tra gio nua, xem SuaCham.
+        val keThieu = chuanBi.choSoDong.joinToString(", ") { it.ma }
+        val choDong = if (keThieu.isEmpty()) "" else {
+            DayLog.add(context, "Ba Huy chấm lại câu $keThieu: đúng nhưng chưa có số dòng, câu vẫn chờ sửa")
+            " Câu $keThieu đúng nhưng chưa có số dòng nên máy chưa cộng giờ, câu vẫn chờ sửa. " +
+                "Dán lại kết quả Claude có số dòng bằng bản Bảng điều khiển mới."
+        }
+        if (chuanBi.cac.isEmpty()) return choDong.trim() + boQua
 
         // Ba Huy cham lai trong gio ngu (Ba Huy chon ngay 27/9/2026): ghi so ngay, phut thi
         // giu toi luc het gio ngu. Tran ngay xet luc cong, xem CongSang.
@@ -385,7 +398,7 @@ object ThiHanhLenh {
                 "Ba Huy chấm lại: câu $ke $con làm đúng rồi, máy chấm nhầm. " +
                     "Hết giờ ngủ lúc $gio thì được thêm $xin phút."
             )
-            return "Đã sửa câu $ke thành đúng. Đang giờ ngủ nên giữ $xin phút, $gio tablet cộng.$boQua"
+            return "Đã sửa câu $ke thành đúng. Đang giờ ngủ nên giữ $xin phút, $gio tablet cộng.$choDong$boQua"
         }
 
         // Tinh truoc so phut con vao duoc tran ngay, y nhu [duyet]: GateStore cat bot ma
@@ -420,7 +433,7 @@ object ThiHanhLenh {
         )
         val catBot = if (phut in 1 until xin) " Hôm nay chỉ còn $phut phút trong hạn mức." else ""
         return "Đã sửa câu $ke thành đúng" +
-            (if (phut > 0) ", cộng $phut phút." else ", không có phút nào để cộng.") + catBot + boQua
+            (if (phut > 0) ", cộng $phut phút." else ", không có phút nào để cộng.") + catBot + choDong + boQua
     }
 
     /**

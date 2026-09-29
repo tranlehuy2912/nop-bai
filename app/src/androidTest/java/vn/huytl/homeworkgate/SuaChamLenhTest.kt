@@ -149,14 +149,10 @@ class SuaChamLenhTest {
     /**
      * Cau Claude cham lan dau (lenh CHAMBAI) khong co dong bai lam nao trong so: Claude chi
      * noi so dong, [vn.huytl.homeworkgate.data.ChamTheoClaude] khong chep dong ra, va so cai
-     * khong luu so dong. SuaCham lay so dong bang so dong bai lam trong so, nen ra 0.
+     * khong luu so dong. Lenh SUACHAM cua ban Bang dieu khien cu cung khong kem so dong.
      *
-     * Theo luat 29/9/2026 cau dung thieu so dong thi 0 phut va CHO BA HUY chon so dong. Duong
-     * SUACHAM thi khong cho: no ghi cau la xong voi 0 phut, va cau do khong bao gio con duoc
-     * tra gio nua. Test nay giu dieu toi thieu: hoac duoc cong phut, hoac cau van con cho.
-     *
-     * DO VI CODE CHINH (ghi ngay 29/9/2026), xem bao cao: ThiHanhLenh.suaCham va SuaCham.ghi
-     * khong xet ChuanBi.bang.thieuDong.
+     * Truoc ngay 29/9/2026 toi, SuaCham ghi cau la xong voi 0 phut, va cau do khong bao gio
+     * con duoc tra gio nua. Nay cau van cho sua, khong ghi so, va cau tra loi noi vi sao.
      */
     @Test
     fun cau_claude_cham_khong_co_dong_bai_lam_thi_khong_bi_ghi_xong_voi_0_phut() {
@@ -165,10 +161,29 @@ class SuaChamLenhTest {
         val tra = ThiHanhLenh.suaCham(context, GateStore(context), giaTri)
 
         println("SUACHAM_THIEU_DONG: $tra")
-        assertTrue(
-            "cau bi ghi xong voi 0 phut: $tra",
-            SoCaiBai.phutDaCongHomNay(context) > 0 || SoCaiBai.dangChoSua(context).isNotEmpty()
-        )
+        assertEquals(listOf("2.33a"), SoCaiBai.dangChoSua(context).map { it.ma })
+        assertEquals(0, SoCaiBai.phutDaCongHomNay(context))
+        assertTrue(tra, tra.startsWith("Câu 2.33a đúng nhưng chưa có số dòng"))
+        assertTrue(tra, tra.contains("câu vẫn chờ sửa"))
+    }
+
+    /**
+     * Bang dieu khien gui kem so dong Claude ghi o lan cham lai (29/9/2026): tablet tinh phut
+     * theo so do, du so cai khong co dong bai lam nao. Gui lai thi khong cong them.
+     */
+    @Test
+    fun lenh_kem_so_dong_thi_tinh_phut_theo_so_dong_claude_ghi() {
+        ghiCauSai(dong = emptyList())
+        val kemDong = listOf(mapOf("ma" to "2.33a", "de" to de, "soDong" to 3L))
+
+        val tra = ThiHanhLenh.suaCham(context, GateStore(context), kemDong)
+
+        println("SUACHAM_KEM_DONG: $tra")
+        assertTrue(tra, tra.startsWith("Đã sửa câu 2.33a thành đúng, cộng 3 phút."))
+        assertTrue(SoCaiBai.dangChoSua(context).isEmpty())
+        assertEquals(3, SoCaiBai.phutDaCongHomNay(context))
+        assertTrue(ThiHanhLenh.suaCham(context, GateStore(context), kemDong).startsWith("Không còn câu nào"))
+        assertEquals(3, SoCaiBai.phutDaCongHomNay(context))
     }
 
     @Test

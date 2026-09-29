@@ -27,6 +27,15 @@ import vn.huytl.homeworkgate.kho.TraLoi
  * Chia hai buoc [chuanBi] va [ghi] de ben goi cap gio o giua. Cap khong duoc, vi du
  * dang gio ngu, thi khong ghi so: cau van cho sua va Ba Huy gui lai luc khac duoc.
  * Dung le cua duong AI tu cham.
+ *
+ * SO DONG LAY TU LENH (29/9/2026). Tu khi bo may cham, lan cham dau la ban Claude (lenh
+ * CHAMBAI): Claude chi noi so dong, khong chep tung dong, nen so cai khong co dong bai
+ * lam nao cua cau do. Truoc day o day dem so dong bang so dong bai lam trong so, ra 0, va
+ * tu khi bo san 4 phut (29/9/2026) cau sua duoc ghi la xong voi 0 phut: con lam dung ma
+ * mat han phut cua cau. Nay Bang dieu khien gui kem so dong Claude ghi o lan cham lai
+ * ([Cau.soDong]). Van thieu so dong (ban Bang dieu khien cu, hay Claude khong ghi) thi cau
+ * KHONG duoc ghi, van cho sua, xem [ChuanBi.choSoDong]: dung luat cua duong CHAMBAI, cau
+ * dung ma thieu so dong thi khong tu cap, cho Ba Huy.
  */
 object SuaCham {
 
@@ -35,15 +44,23 @@ object SuaCham {
      *
      * Kem de bai de phan biet hai cau trung ma o hai quyen sach, vi du 2.28 cua Toan
      * tap mot va 2.28 cua mot sach khac cung dang cho sua.
+     *
+     * [soDong] la so dong Claude ghi o lan cham lai, 0 la khong co (lenh cua ban Bang dieu
+     * khien cu). Luc do lay so dong bai lam trong so, nhu truoc.
      */
-    data class Cau(val ma: String, val de: String = "")
+    data class Cau(val ma: String, val de: String = "", val soDong: Int = 0)
 
     data class ChuanBi(
         /** Cac cau se ghi la dung, da dien du dang bai va so dong de tinh phut. */
         val cac: List<CauCham>,
         val bang: LuatCongGio.BangTinh,
         /** Ma cac cau duoc gui sang ma khong con dang cho sua. */
-        val boQua: List<String>
+        val boQua: List<String>,
+        /**
+         * Cau dung ma khong co so dong, trong hom chua tinh tron goi: 0 phut theo
+         * [LuatCongGio.thieuSoDong]. Khong ghi vao so, nen van nam trong danh sach cho sua.
+         */
+        val choSoDong: List<CauCham> = emptyList()
     ) {
         val phut: Int get() = bang.phut
     }
@@ -58,7 +75,7 @@ object SuaCham {
         val boQua = mutableListOf<String>()
         val daChon = mutableSetOf<String>()
 
-        val cac = danhSach.mapNotNull { yeu ->
+        val tatCa = danhSach.mapNotNull { yeu ->
             val cungMa = cho.filter { it.ma.trim() == yeu.ma.trim() }
             val so = if (cungMa.size <= 1) {
                 cungMa.firstOrNull()
@@ -70,7 +87,8 @@ object SuaCham {
                 return@mapNotNull null
             }
             // Lan cham gan nhat cua cau, de lay lai dung chu con viet va so dong: so
-            // phut cua cau nho tinh theo so dong lam bai.
+            // phut cua cau nho tinh theo so dong lam bai. So dong Claude ghi o lan cham lai
+            // dung truoc, xem [Cau.soDong].
             val cuoi = kho.lichSuCua(so.khoa).firstOrNull()
             val dang = kho.cauTheoId(so.khoa)?.dang
                 ?.let { runCatching { DangBai.valueOf(it) }.getOrNull() }
@@ -82,20 +100,27 @@ object SuaCham {
                 dung = true,
                 docRo = true,
                 dang = dang,
-                soDong = cuoi?.baiLam?.size ?: 0,
+                soDong = yeu.soDong.takeIf { it > 0 } ?: cuoi?.baiLam?.size ?: 0,
                 baiLam = cuoi?.baiLam.orEmpty(),
                 cauId = so.khoa,
                 mon = cuoi?.mon.orEmpty()
             )
         }
 
-        val bang = LuatCongGio.tinh(
+        fun tinh(cac: List<CauCham>) = LuatCongGio.tinh(
             KetQuaCham(mon = cac.firstOrNull()?.mon.orEmpty(), cac = cac),
             daCongAnhHomNay = SoCaiBai.phutAnhHomNay(context, now),
             bayGio = LuatCongGio.bayGio(now),
             goiDaCoHomNay = SoCaiBai.goiDaCoHomNay(context, now)
         )
-        return ChuanBi(cac, bang, boQua)
+
+        // Lay danh sach thieu so dong tu chinh bang tinh, khong xet lai tung cau: hom da co
+        // tron goi thi cau dung nam trong goi, 0 phut la dung luat, van ghi nhu cu.
+        val bangDu = tinh(tatCa)
+        val thieu = bangDu.thieuDong.map { it.cauId }.toSet()
+        if (thieu.isEmpty()) return ChuanBi(tatCa, bangDu, boQua)
+        val cac = tatCa.filterNot { it.cauId in thieu }
+        return ChuanBi(cac, tinh(cac), boQua, choSoDong = tatCa.filter { it.cauId in thieu })
     }
 
     /**

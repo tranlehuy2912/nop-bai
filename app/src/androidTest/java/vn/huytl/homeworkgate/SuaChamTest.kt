@@ -102,6 +102,26 @@ class SuaChamTest {
         assertEquals(lan1.phut, SoCaiBai.phutDaCongHomNay(context, now + 3000))
     }
 
+    /**
+     * So dong Claude ghi o lan cham lai ([SuaCham.Cau.soDong], tu 29/9/2026) dung truoc so
+     * dong bai lam trong so. Khong co ca hai thi cau khong duoc ghi, van cho sua.
+     */
+    @Test
+    fun so_dong_lan_cham_lai_dung_truoc_va_thieu_thi_van_cho_sua() {
+        val de = "Rút gọn biểu thức (x + 1)^2 − (x − 1)^2."
+        SoCaiBai.ghi(context, listOf(cauSai("2.34", de, "sachthu:2.34", dong = 0)), emptyMap(), now)
+
+        val thieu = SuaCham.chuanBi(context, listOf(SuaCham.Cau("2.34", de)), now + 1000)
+        assertTrue(thieu.cac.isEmpty())
+        assertEquals(listOf("sachthu:2.34"), thieu.choSoDong.map { it.cauId })
+        assertEquals(0, thieu.phut)
+
+        val kem = SuaCham.chuanBi(context, listOf(SuaCham.Cau("2.34", de, soDong = 5)), now + 1000)
+        assertEquals(listOf("sachthu:2.34"), kem.cac.map { it.cauId })
+        assertTrue(kem.choSoDong.isEmpty())
+        assertEquals(5, kem.phut)
+    }
+
     @Test
     fun cau_khong_dang_cho_sua_thi_bo_qua() {
         val chuanBi = SuaCham.chuanBi(context, listOf(SuaCham.Cau("9.99", "không có câu này")), now)
