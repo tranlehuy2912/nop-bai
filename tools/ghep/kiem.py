@@ -69,7 +69,11 @@ def doi_ky_tu(c):
     return c
 
 
-def chuan_hoa(chu, giu_hoa=False):
+def chuan_hoa(chu, giu_hoa=False, cat_cuoi=True):
+    """cat_cuoi=False khi chuan hoa tung phim: app noi phim lai roi moi chuan hoa ca chuoi,
+    nen dau cham cuoi chi cat o cuoi dap an. Cat o tung phim thi phim "·" (KHTN) va "×"
+    (Toan), vi chuan hoa ra dau cham, thanh rong, va dap an "6,02·10²³" bi bao la khong ghep
+    duoc tu bo phim du app van nhan (thay luc soan KHTN ngay 29/9/2026)."""
     s = unicodedata.normalize("NFC", chu)
     if not giu_hoa:
         s = s.lower()
@@ -79,7 +83,8 @@ def chuan_hoa(chu, giu_hoa=False):
         if c.isspace() or unicodedata.category(c) == "Cf":
             continue
         ra.append(doi_ky_tu(c))
-    return "".join(ra).rstrip(".!?")
+    ra = "".join(ra)
+    return ra.rstrip(".!?") if cat_cuoi else ra
 
 
 # ------------------------------------------------------------------ khong ke thu tu
@@ -427,7 +432,7 @@ def kiem_bieu_thuc(so, ma, g, mon):
             so.l(ma, f"BIEU_THUC: phím rỗng trong 'phim'")
         elif p in co_ban:
             so.l(ma, f"BIEU_THUC: {p!r} đã có trong bộ phím cơ bản, bỏ khỏi 'phim'")
-    tat_ca = [chuan_hoa(p, giu_hoa=True) for p in co_ban + phim if isinstance(p, str) and p.strip()]
+    tat_ca = [chuan_hoa(p, giu_hoa=True, cat_cuoi=False) for p in co_ban + phim if isinstance(p, str) and p.strip()]
     for x in nhieu:
         if not isinstance(x, str) or not x.strip():
             so.l(ma, "BIEU_THUC: phím nhiễu rỗng")
