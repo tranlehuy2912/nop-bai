@@ -19,7 +19,9 @@ import vn.huytl.homeworkgate.data.LichKiemTra
 import vn.huytl.homeworkgate.data.LuatCongGio
 import vn.huytl.homeworkgate.data.VoDanDo
 import vn.huytl.homeworkgate.kho.BoThe
+import vn.huytl.homeworkgate.kho.CauHoi
 import vn.huytl.homeworkgate.kho.DeGiai
+import vn.huytl.homeworkgate.kho.Ghep
 import vn.huytl.homeworkgate.kho.HocToi
 import vn.huytl.homeworkgate.kho.KhoBai
 import vn.huytl.homeworkgate.kho.NganHang
@@ -45,6 +47,9 @@ class GiaiDeTest {
 
     private val cacPhan = listOf("toan8ct", "khtn8hoa", "khtn8li", "khtn8sinh")
     private val mocCu = mutableMapOf<String, String?>()
+
+    /** Moc Unit Tieng Anh that tren may, tra lai sau test. Tu 29/9/2026 Tieng Anh cung ra de. */
+    private var unitCu: Int? = null
     private var voCu: VoDanDo.DanDo? = null
     private var anhCu: java.io.File? = null
     private val deDaTao = mutableListOf<String>()
@@ -62,6 +67,10 @@ class GiaiDeTest {
         BoThe.napNeuCan(context)
         kho = KhoBai.get(context)
         cacPhan.forEach { mocCu[it] = HocToi.baiCua(context, it) }
+        // Moc Unit that ma dang chon thi de tuan Tieng Anh lan vao moi test: bo di, test nao
+        // can thi tu dat.
+        unitCu = HocToi.unitCua(context, PhanHoc.BO_TIENG_ANH)
+        HocToi.xoa(context, PhanHoc.BO_TIENG_ANH)
         voCu = VoDanDo.doc(context)
         // VoDanDo.xoa xoa ca tam anh vo: chep ra truoc de tra lai, khong thi test xong vo
         // tren may mat anh (doc lai, gui ba deu hong).
@@ -80,6 +89,8 @@ class GiaiDeTest {
             HocToi.xoa(context, ma)
             mocCu[ma]?.let { HocToi.ghiBai(context, ma, it) }
         }
+        HocToi.xoa(context, PhanHoc.BO_TIENG_ANH)
+        unitCu?.let { HocToi.ghiUnit(context, PhanHoc.BO_TIENG_ANH, it) }
         val cu = voCu
         if (cu != null) VoDanDo.luu(context, cu) else VoDanDo.xoa(context)
         anhCu?.let { tam ->
@@ -99,6 +110,9 @@ class GiaiDeTest {
 
     private fun taoDe(bayGio: Long): List<DeGiai> =
         GiaiDe.taoNeuCan(context, bayGio).also { moi -> deDaTao += moi.map { it.id } }
+
+    /** Cau chon mot phuong an: GiaiDe xep vao phan trac nghiem cua de. */
+    private fun laChon(c: CauHoi) = Ghep.doc(c.ghep) is Ghep.Chon
 
     // ------------------------------------------------------------- moc hoc toi
 
@@ -178,15 +192,21 @@ class GiaiDeTest {
 
     // ------------------------------------------------------------------ ra de
 
+    /**
+     * Tu 29/9/2026 de chi lay cau lam tren may (co "ghep"). Luc soan lai test nay moi co ghep
+     * cho SBT Toan tap mot chuong I va SBT Tieng Anh Unit 1, 2; KHTN chua co cau nao nen chua
+     * co de, du lop da chon moc. Soan ghep cho KHTN roi thi dua KHTN vao lai day.
+     */
     @Test
     fun sang_thu_bay_ra_de_tuan_moi_mon_mot_lan() {
         datMoc("toan8ct", 6)
         datMoc("khtn8hoa", 6)
         datMoc("khtn8li", 0)
         datMoc("khtn8sinh", null)
+        HocToi.ghiUnit(context, PhanHoc.BO_TIENG_ANH, 2)
 
         val moi = taoDe(sangThuBay).filter { it.loai == GiaiDe.LOAI_TUAN }
-        assertEquals(setOf("Toán", "Khoa học tự nhiên"), moi.map { it.mon }.toSet())
+        assertEquals(setOf("Toán", PhanHoc.TIENG_ANH), moi.map { it.mon }.toSet())
         // Chay lai thi khong sinh them de nao.
         assertTrue(taoDe(sangThuBay + 60_000L).none { it.loai == GiaiDe.LOAI_TUAN })
 
@@ -196,25 +216,26 @@ class GiaiDeTest {
             val cac = GiaiDe.cacCau(context, de)
             assertEquals(de.cauIds.size, cac.size)
             assertEquals("mot de mot quyen", 1, cac.map { it.nguon }.toSet().size)
-            assertTrue("thieu tu luan", cac.any { !it.bamTrenMay })
-            assertTrue("cau khong co dap an", cac.all { it.dapAn.isNotBlank() })
-            assertTrue("trac nghiem khac kieu", cac.none { it.dang == "TRAC_NGHIEM" && !it.bamTrenMay })
-            assertTrue(de.phutGoiY in 10..45)
+            assertTrue("cau khong lam tren may", cac.all { it.lamTrenMay })
+            assertTrue("toan cau chon", cac.any { !laChon(it) })
+            assertTrue(de.trenMay)
+            assertEquals(cac.sumOf { Ghep.doc(it.ghep)!!.sao }, de.saoToiDa)
+            assertTrue(de.phutGoiY in 10..60)
         }
 
         // Toan: lop vua hoc xong chuong I (Bai 1-5) nen de tuan la muc on tap chuong I.
         val toan = moi.first { it.mon == "Toán" }
         assertEquals("Ôn tập chương I", toan.ten)
-        assertTrue(GiaiDe.cacCau(context, toan).count { it.bamTrenMay } in 1..4)
+        assertTrue(GiaiDe.cacCau(context, toan).count(::laChon) in 1..4)
 
-        // KHTN: chi phan Hoa da hoc, cac bai gan moc (4, 5, 6).
-        val khtn = moi.first { it.mon == "Khoa học tự nhiên" }
-        val soBai = GiaiDe.cacCau(context, khtn).map { PhanHoc.soBai(it.bai) }.toSet()
-        assertTrue("bai ngoai moc: $soBai", soBai.all { it != null && it in 4..6 })
-        assertTrue(GiaiDe.cacCau(context, khtn).count { it.bamTrenMay } in 1..8)
+        // Tieng Anh: lop hoc toi Unit 2, chua toi Test Yourself 1 (phai xong Unit 3).
+        val anh = moi.first { it.mon == PhanHoc.TIENG_ANH }
+        val unit = GiaiDe.cacCau(context, anh).map { PhanHoc.soBai(it.bai) }.toSet()
+        assertTrue("unit ngoai moc: $unit", unit.all { it != null && it in 1..2 })
+        assertTrue(anh.ten, anh.ten.startsWith("Unit "))
 
         // Hai de khong chung cau nao.
-        assertTrue(toan.cauIds.intersect(khtn.cauIds.toSet()).isEmpty())
+        assertTrue(toan.cauIds.intersect(anh.cauIds.toSet()).isEmpty())
     }
 
     @Test
@@ -232,6 +253,10 @@ class GiaiDeTest {
         assertEquals(LocalDateTime.of(2026, 9, 26, 6, 0), GiaiDe.mocTuan(ms(LocalDateTime.of(2026, 10, 3, 5, 0))))
     }
 
+    /**
+     * Dong dan noi bai 3, 4 (chuong I): tu 29/9/2026 de chi lay cau lam tren may, va luc soan
+     * lai test nay moi co ghep cho chuong I. Ban truoc ngay do noi bai 7, 8.
+     */
     @Test
     fun vo_dan_do_bao_kiem_tra_thi_mo_de_on_dung_bai() {
         datMoc("toan8ct", 9)
@@ -242,7 +267,7 @@ class GiaiDeTest {
                 ngay = homNay.toString(),
                 cacDong = listOf(
                     VoDanDo.Dong("Toán: làm bài 2.28 trang 47", laBaiTap = true),
-                    VoDanDo.Dong("Toán: tiết sau kiểm tra 15 phút bài 7, 8", laBaiTap = false)
+                    VoDanDo.Dong("Toán: tiết sau kiểm tra 15 phút bài 3, 4", laBaiTap = false)
                 )
             )
         )
@@ -251,8 +276,10 @@ class GiaiDeTest {
         val de = kt.first()
         assertEquals("Toán", de.mon)
         assertTrue(de.ghiChu.contains("kiểm tra 15 phút"))
-        val soBai = GiaiDe.cacCau(context, de).map { PhanHoc.soBai(it.bai) }.toSet()
-        assertTrue("bai ngoai dong dan: $soBai", soBai.all { it == 7 || it == 8 })
+        val cac = GiaiDe.cacCau(context, de)
+        assertTrue("cau khong lam tren may", cac.all { it.lamTrenMay })
+        val soBai = cac.map { PhanHoc.soBai(it.bai) }.toSet()
+        assertTrue("bai ngoai dong dan: $soBai", soBai.all { it == 3 || it == 4 })
         // Ngay kiem tra la buoi Toan ke tiep, de het han cuoi ngay do.
         val ngay = LocalDate.parse(de.ngayKiemTra)
         assertTrue(ngay.isAfter(homNay))

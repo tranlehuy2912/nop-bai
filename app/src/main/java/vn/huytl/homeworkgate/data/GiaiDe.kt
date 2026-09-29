@@ -387,7 +387,7 @@ object GiaiDe {
             uuTien = cacBai
         ) ?: return null
         val tenBai = cacBai.filter { b -> cac.any { it.bai == b } }
-        return Chon(nguon, keTenBai(tenBai), cac)
+        return Chon(nguon, keTenBai(tenBai, mon), cac)
     }
 
     /**
@@ -457,10 +457,19 @@ object GiaiDe {
         return tong
     }
 
-    /** "Bài 3, 4, 5", hay ten muc on tap. */
-    private fun keTenBai(cacBai: List<String>): String {
+    /**
+     * "Bài 3, 4, 5", "Unit 1, Unit 2" (Tieng Anh), hay ten muc on tap.
+     *
+     * Tieng Anh ke ten ngan cua tung muc chu khong ke so: [PhanHoc.soBai] doc "Unit 2. Life
+     * in the countryside" ra 2 va "Test Yourself 1" ra 3, nen truoc ngay 29/9/2026 toi de
+     * Tieng Anh mang ten "Bài 1, 2".
+     */
+    private fun keTenBai(cacBai: List<String>, mon: String): String {
         val so = cacBai.mapNotNull { PhanHoc.soBai(it) }
         if (so.size != cacBai.size) return cacBai.joinToString(", ")
+        if (mon == PhanHoc.TIENG_ANH) {
+            return cacBai.sortedBy { PhanHoc.soBai(it) }.joinToString(", ") { it.substringBefore(".").trim() }
+        }
         return "Bài " + so.sorted().joinToString(", ")
     }
 
