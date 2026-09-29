@@ -414,9 +414,18 @@ object NganHang {
     /**
      * Bai nay cach moc cua phan no bao nhieu bai: 0 la bai lop vua hoc. Bai khong doc ra
      * so thi xep cuoi.
+     *
+     * Tieng Anh khong co phan hoc nao, moc la Unit con chon o man Do tu vung (xem
+     * [PhanHoc.baiDaHoc]). Truoc ngay 29/9/2026 toi o day khong xet Tieng Anh, moi Unit deu
+     * cach "vo cung", nen lam them va Giai de Tieng Anh luon bat dau tu Unit 1 thay vi Unit
+     * lop vua hoc.
      */
     fun khoangCachMoc(context: Context, mon: String, bai: String): Int {
         val so = PhanHoc.soBai(bai) ?: return Int.MAX_VALUE
+        if (mon == PhanHoc.TIENG_ANH) {
+            val unit = HocToi.unitCua(context, PhanHoc.BO_TIENG_ANH) ?: return Int.MAX_VALUE
+            return unit - so
+        }
         val phan = PhanHoc.cuaBai(mon, so) ?: return Int.MAX_VALUE
         val moc = PhanHoc.hocToi(context, phan) ?: return Int.MAX_VALUE
         return moc - so
