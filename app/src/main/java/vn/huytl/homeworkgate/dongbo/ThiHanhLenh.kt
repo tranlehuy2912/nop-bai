@@ -193,6 +193,8 @@ object ThiHanhLenh {
 
             Lenh.DOC_VO -> docVo(context)
 
+            Lenh.MO_DE_THI -> moDeThi(context, chu)
+
             // Ben kia vua mo app va hoi tablet con song khong. Day mot ban trang
             // thai day du roi thoi: khong ghi nhat ky, khong tra loi gi. Ban trang
             // thai do chinh la cau tra loi, va no den qua duong khac.
@@ -462,6 +464,20 @@ object ThiHanhLenh {
             ?: return "Lệnh thiếu danh sách câu, máy không chấm."
         ApprovalService.chamTheoClaude(context, id, ket, pham)
         return "Đã nhận kết quả Claude, tablet đang chấm. Số phút báo trên Telegram."
+    }
+
+    /**
+     * Ba Huy mo mot de thi in san cho con, xem [Lenh.MO_DE_THI]. De mo ra nam o trang Luyen
+     * tap nhu moi de Giai de; con bam vao, bam Bat dau thi dong ho moi chay.
+     */
+    internal fun moDeThi(context: Context, ma: String?): String {
+        val maDe = ma?.trim().orEmpty()
+        if (maDe.isEmpty()) return "Lệnh thiếu mã đề, máy không mở đề nào."
+        val kq = vn.huytl.homeworkgate.data.GiaiDe.moDeThi(context, maDe, choBa = true)
+        val de = kq.de ?: return kq.loi ?: "Máy chưa mở được đề $maDe."
+        val con = context.getString(R.string.child_name)
+        return if (de.daBatDau) "$con đang làm ${de.ten}."
+        else "Đã mở ${de.ten} (${de.cauIds.size} câu, ${de.phutGoiY} phút). $con vào Luyện tập để làm."
     }
 
     /**

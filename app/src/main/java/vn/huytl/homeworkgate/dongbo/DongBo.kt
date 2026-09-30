@@ -377,6 +377,7 @@ object DongBo {
             // dien thoai chi thay "dang tam dung" ma khong hieu vi sao, trong khi
             // tablet dang bi che kin man hinh.
             Duong.F_VIEC_NHA to ViecNha.dangTreo(context)?.chuaXong.orEmpty().map { it.ten },
+            Duong.F_DE_THI to banDeThi(context, bayGio),
             Duong.F_CHE_DO_BA to mapOf(
                 "bat" to ParentMode.isActive(context),
                 "hetLuc" to if (ParentMode.coHan(context)) {
@@ -419,6 +420,28 @@ object DongBo {
         dayNhacBaiNeuDoi(context)
         dayNhatKy(context)
     }
+
+    /**
+     * Cac de thi in san va tinh trang tung de, cho hang "Đề thi thử" ben Bang dieu khien. Xem
+     * [Duong.F_DE_THI].
+     *
+     * Nam trong ban trang thai chu khong rieng mot document: danh sach chi doi khi mot de mo ra
+     * hay nop, va phep so "co gi doi khong" ben duoi da bo luot ghi khi no dung yen. Mo de
+     * khong cham prefs nen khong tu day; ben kia mo man Bang la go PING, luc do ban moi di.
+     */
+    private fun banDeThi(context: Context, bayGio: Long): List<Map<String, Any>> =
+        runCatching { vn.huytl.homeworkgate.data.GiaiDe.tinhTrangDeThi(context, bayGio) }
+            .getOrDefault(emptyList())
+            .map { t ->
+                mapOf(
+                    "ma" to t.de.ma,
+                    "ten" to t.de.ten,
+                    "den" to t.de.denUnit,
+                    "tt" to t.trangThai,
+                    "sao" to (t.lanCuoi?.saoDat ?: -1),
+                    "toiDa" to (t.lanCuoi?.saoToiDa ?: -1)
+                )
+            }
 
     /**
      * Xoa hop/dando ([Duong.D_DAN_DO]) mot lan moi lan chay.

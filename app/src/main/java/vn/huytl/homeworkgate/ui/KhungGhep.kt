@@ -567,11 +567,19 @@ class KhungGhep(
         /**
          * Ve de bai cua mot cau vao [khung]: chu (hay [Ghep.hoi]), anh, doan van. Dung chung
          * cho man lam bai va man Giai de.
+         *
+         * Hai tham so sau chi de thi in san dung (man Giai de, [vn.huytl.homeworkgate.kho.DeThi]):
+         * ten phan va loi dan da in mot lan o dau phan, doan van in o cau dau cua doan.
+         *
+         * @param hienDoan false thi khong ve doan van: cau truoc trong de da ve roi.
+         * @param boDau dong dau cua chu can bo khi no dung bang chuoi nay. Chu cua cau de thi la
+         *   "loi dan\nnoi dung cau", de cau do dung mot minh (On lai, lam lai) van du nghia;
+         *   trong de thi loi dan da in o dau phan.
          */
-        fun veDe(khung: LinearLayout, muc: LamTrenMay.Muc) {
+        fun veDe(khung: LinearLayout, muc: LamTrenMay.Muc, hienDoan: Boolean = true, boDau: String = "") {
             val ct = khung.context
             val mat = ct.resources.displayMetrics.density
-            if (muc.cau.doan.isNotBlank()) {
+            if (hienDoan && muc.cau.doan.isNotBlank()) {
                 khung.addView(TextView(ct).apply {
                     text = hien(muc.cau.doan)
                     textSize = 16f
@@ -584,8 +592,13 @@ class KhungGhep(
                     ).apply { bottomMargin = (10 * mat).toInt() }
                 })
             }
-            khung.addView(TextView(ct).apply {
-                text = hien(muc.ghep.hoi.ifBlank { muc.cau.de }, muc.cau.mon)
+            val chu = muc.ghep.hoi.ifBlank { muc.cau.de }.let { c ->
+                if (boDau.isNotBlank() && c.startsWith(boDau)) c.removePrefix(boDau).trimStart('\n') else c
+            }
+            // Cau phat am cua de thi: loi dan da o dau phan, cau khong con chu nao, chi con
+            // cac phuong an. Khong ve mot dong trong.
+            if (chu.isNotBlank()) khung.addView(TextView(ct).apply {
+                text = hien(chu, muc.cau.mon)
                 textSize = 19f
                 setTextColor(ContextCompat.getColor(ct, R.color.ink))
                 setLineSpacing(3f * mat, 1f)

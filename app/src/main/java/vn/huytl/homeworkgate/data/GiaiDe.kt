@@ -9,9 +9,12 @@ import java.time.LocalDateTime
 import java.time.ZoneId
 import java.time.temporal.TemporalAdjusters
 import java.util.UUID
+import vn.huytl.homeworkgate.R
 import vn.huytl.homeworkgate.kho.CauHoi
 import vn.huytl.homeworkgate.kho.DeGiai
+import vn.huytl.homeworkgate.kho.DeThi
 import vn.huytl.homeworkgate.kho.Ghep
+import vn.huytl.homeworkgate.kho.HocToi
 import vn.huytl.homeworkgate.kho.KhoBai
 import vn.huytl.homeworkgate.kho.NganHang
 import vn.huytl.homeworkgate.kho.PhanHoc
@@ -26,12 +29,16 @@ import vn.huytl.homeworkgate.kho.TraLoi
  * [NganHang.cauNenLamThemCuaMon]) va de kiem tra o day. Ten "Giải đề" la Ba Huy dat, de
  * khong lan voi dong "Kiểm tra bài" cua the hoc thuoc tren man chinh.
  *
- * HAI LOAI DE, deu tu mo, khong ai phai bam ra:
+ * BA LOAI DE:
  *  - [LOAI_TUAN]: sang thu Bay, moi mon co SBT mot de, on cac bai lop vua hoc. Lop hoc
  *    xong mot chuong Toan thi de tuan do la muc "Ôn tập chương" cua SBT, von da la mot
  *    de kiem tra chuong. De de do toi thu Bay sau.
  *  - [LOAI_KIEM_TRA]: vo dan do hay tin cua co bao sap kiem tra Toan, KHTN thi mo mot de
  *    on dung may bai do, toi het ngay kiem tra. Doc lich bang [LichKiemTra].
+ *  - [LOAI_DE_THI] (tu 30/9/2026): mot de thi in san nguyen ven ([DeThi]), giu thu tu va
+ *    ten cac phan nhu to de. Tu mo khi lop hoc toi pham vi cua de, con mo them duoc bang
+ *    tay o trang Luyen tap, va Ba Huy mo tu Bang dieu khien. Xem [taoDeThi], [moDeThi].
+ * Hai loai dau va de thi tu mo thi khong ai phai bam ra.
  *
  * CACH LAM (tu 29/9/2026). Ca de lam tren may bang ban phim ghep, khong chup phan tu luan
  * nua (Le Hoa bo qua moi bai bat viet). Con bam Bat dau thi dong ho chay; moi cau mot khung
@@ -55,6 +62,14 @@ object GiaiDe {
 
     const val LOAI_TUAN = "TUAN"
     const val LOAI_KIEM_TRA = "KIEM_TRA"
+    const val LOAI_DE_THI = "DE_THI"
+
+    /**
+     * De thi mo ra ma con chua bat dau thi giu bay nhieu ngay. Het han ma chua nop thi luot
+     * sau [taoDeThi] mo lai chinh de do, nen con so nay chi don nhung dong cu, khong lam mat
+     * de nao.
+     */
+    private const val NGAY_GIU_DE_THI = 30
 
     /** De tuan mo luc bay nhieu gio sang thu Bay. */
     const val GIO_MO_DE_TUAN = 6
@@ -113,8 +128,12 @@ object GiaiDe {
             MON.forEach { mon -> taoDeTuan(context, mon, bayGio)?.let { moi += it } }
             moi += taoDeKiemTra(context, bayGio)
         }.onFailure { Log.w(TAG, "ra de hong: ${it.message}") }
+        // Rieng mot runCatching: de thi hong (file de loi) khong duoc keo de tuan theo.
+        runCatching { taoDeThi(context, bayGio)?.let { moi += it } }
+            .onFailure { Log.w(TAG, "mo de thi hong: ${it.message}") }
         moi.forEach { de ->
-            DayLog.add(context, "Máy ra đề ${tenDe(de)}: ${de.cauIds.size} câu, khoảng ${de.phutGoiY} phút")
+            val ten = if (de.loai == LOAI_DE_THI) "${tenDe(de)} (${de.ten})" else tenDe(de)
+            DayLog.add(context, "Máy ra đề $ten: ${de.cauIds.size} câu, khoảng ${de.phutGoiY} phút")
         }
         return moi
     }
@@ -186,6 +205,150 @@ object GiaiDe {
                     hetHan = hetHan, ghiChu = kt.chu, ngayKiemTra = kt.ngay?.toString().orEmpty()
                 ).takeIf { kho.themDe(it) }?.also { if (buoi != null) buoiDaCo += buoi }
             }
+    }
+
+    // -------------------------------------------------------------- de thi in san
+
+    /**
+     * Tu mo mot de thi khi lop da hoc toi pham vi cua de. Ba Huy chot ngay 30/9/2026: Le Hoa
+     * chon "Lớp đã học tới" Unit nao thi coi nhu sap kiem tra moi de toi Unit do.
+     *
+     * MOI LUC MOT DE. Ba de giua ki 1 cung toi Unit 3; mo ca ba mot luc la con thay ba dong
+     * 45 phut mot luc. Con de thi dang mo (chua nop) thi khong mo them, va de tiep theo mo tu
+     * hom sau ngay con nop de truoc. Uu tien de co pham vi cao nhat trong so da toi - de cua lan
+     * kiem tra sap toi - roi theo thu tu trong file.
+     *
+     * De da nop mot lan thi khong tu mo lai. Con muon lam lai thi bam o trang Luyen tap
+     * ([moDeThi]); de het han ma chua nop thi luot nay mo lai.
+     *
+     * Chua chon moc Unit thi khong mo gi: trang Luyen tap to do dong chon moc roi.
+     *
+     * @return de vua mo, null khi khong co gi de mo.
+     */
+    fun taoDeThi(context: Context, bayGio: Long = System.currentTimeMillis()): DeGiai? {
+        val moc = HocToi.unitCua(context, PhanHoc.BO_TIENG_ANH) ?: return null
+        if (dangMo(context, bayGio).any { it.loai == LOAI_DE_THI }) return null
+        val daNop = cacDeThiDaNop(context, bayGio)
+        val nopCuoi = daNop.maxOfOrNull { it.nopLuc }
+        if (nopCuoi != null && ngayCua(nopCuoi) == ngayCua(bayGio)) return null
+        val maDaNop = daNop.mapNotNull { maDeThi(it) }.toSet()
+        val chon = DeThi.tatCa(context)
+            .filter { it.denUnit <= moc && it.ma !in maDaNop }
+            // sortedByDescending giu thu tu cu giua hai de cung pham vi: thu tu trong file.
+            .sortedByDescending { it.denUnit }
+            .firstOrNull() ?: return null
+        return taoTuDeThi(context, chon, bayGio)
+    }
+
+    /** Ket qua mo mot de thi bang tay: de da mo, hay cau noi vi sao khong mo. */
+    data class MoDeThi(val de: DeGiai?, val loi: String?)
+
+    /**
+     * Mo mot de thi bang tay: Le Hoa bam o trang Luyen tap, hay Ba Huy bam o Bang dieu khien
+     * (lenh [vn.huytl.homeworkgate.dongbo.Lenh.MO_DE_THI]).
+     *
+     * De dang mo thi tra lai chinh de do, khong mo de thu hai. De da nop thi mo lai duoc tu
+     * hom sau: lam lai la luot moi cua tung cau, va sao chi cong phan hon lan tot nhat nhu moi
+     * cau lam lai ([LamTrenMay.ghi]). Le Hoa chi mo duoc de da toi pham vi theo moc Unit; Ba
+     * Huy mo duoc moi de, ke ca de chua toi pham vi.
+     *
+     * @param choBa lenh cua Ba Huy: bo qua moc Unit.
+     */
+    fun moDeThi(
+        context: Context,
+        ma: String,
+        choBa: Boolean,
+        bayGio: Long = System.currentTimeMillis()
+    ): MoDeThi {
+        val dt = DeThi.theoMa(context, ma) ?: return MoDeThi(null, "Máy không có đề $ma.")
+        dangMo(context, bayGio).firstOrNull { maDeThi(it) == ma }?.let { return MoDeThi(it, null) }
+        if (!choBa) {
+            val moc = HocToi.unitCua(context, PhanHoc.BO_TIENG_ANH)
+            if (moc == null || moc < dt.denUnit) {
+                return MoDeThi(null, "${dt.ten} mở khi lớp học tới Unit ${dt.denUnit}.")
+            }
+        }
+        val nopCuoi = cacDeThiDaNop(context, bayGio).filter { maDeThi(it) == ma }.maxOfOrNull { it.nopLuc }
+        if (nopCuoi != null && ngayCua(nopCuoi) == ngayCua(bayGio)) {
+            return MoDeThi(null, "${dt.ten} vừa làm hôm nay, từ mai mới làm lại được.")
+        }
+        val de = taoTuDeThi(context, dt, bayGio) ?: return MoDeThi(null, "Máy chưa dựng được ${dt.ten}.")
+        val ai = if (choBa) "Ba Huy mở" else "${context.getString(R.string.child_name)} tự mở"
+        DayLog.add(context, "$ai ${tenDe(de)} (${de.ten}): ${de.cauIds.size} câu, ${de.phutGoiY} phút")
+        return MoDeThi(de, null)
+    }
+
+    /**
+     * Tinh trang cua mot de thi, cho trang Luyen tap va cho Bang dieu khien.
+     *
+     * @param trangThai [TT_KHOA] chua toi pham vi, [TT_SAN] mo duoc, [TT_MO] dang mo chua bat
+     *   dau, [TT_DANG] dang lam, [TT_XONG] da nop va khong dang mo.
+     * @param dangMo de dang mo cua de thi nay, neu co.
+     * @param lanCuoi lan nop gan nhat, neu co: diem cua de.
+     */
+    data class TinhTrangDeThi(
+        val de: DeThi.De,
+        val trangThai: String,
+        val dangMo: DeGiai?,
+        val lanCuoi: DeGiai?
+    )
+
+    const val TT_KHOA = "KHOA"
+    const val TT_SAN = "SAN"
+    const val TT_MO = "MO"
+    const val TT_DANG = "DANG"
+    const val TT_XONG = "XONG"
+
+    fun tinhTrangDeThi(context: Context, bayGio: Long = System.currentTimeMillis()): List<TinhTrangDeThi> {
+        val cac = DeThi.tatCa(context)
+        if (cac.isEmpty()) return emptyList()
+        val moc = HocToi.unitCua(context, PhanHoc.BO_TIENG_ANH)
+        val mo = dangMo(context, bayGio).filter { it.loai == LOAI_DE_THI }
+        val daNop = cacDeThiDaNop(context, bayGio)
+        return cac.map { dt ->
+            val dangMoCua = mo.firstOrNull { maDeThi(it) == dt.ma }
+            val lanCuoi = daNop.filter { maDeThi(it) == dt.ma }.maxByOrNull { it.nopLuc }
+            val tt = when {
+                dangMoCua != null -> if (dangMoCua.daBatDau) TT_DANG else TT_MO
+                lanCuoi != null -> TT_XONG
+                moc != null && moc >= dt.denUnit -> TT_SAN
+                else -> TT_KHOA
+            }
+            TinhTrangDeThi(dt, tt, dangMoCua, lanCuoi)
+        }
+    }
+
+    /** Ma de thi ("GK1-1") cua mot de loai [LOAI_DE_THI], nam trong khoa. Loai khac thi null. */
+    fun maDeThi(de: DeGiai): String? =
+        if (de.loai == LOAI_DE_THI) de.khoa.split(":").getOrNull(1) else null
+
+    private fun cacDeThiDaNop(context: Context, bayGio: Long): List<DeGiai> =
+        KhoBai.get(context).cacDeTu(bayGio - MOT_NAM).filter { it.loai == LOAI_DE_THI && it.daNop }
+
+    /**
+     * Dung mot [DeGiai] tu khung de thi: moi cau lam tren may theo dung thu tu in, gio lam bai
+     * cua de. Khoa mang ma de va luc mo, nen mo lai cung mot de (lam lai) la mot dong moi.
+     */
+    private fun taoTuDeThi(context: Context, dt: DeThi.De, bayGio: Long): DeGiai? {
+        val kho = KhoBai.get(context)
+        val theoId = kho.cacCauTheoId(dt.cauIds).associateBy { it.id }
+        val cac = dt.cauIds.mapNotNull { theoId[it] }.filter { hopLe(it) }
+        if (cac.size < TOI_THIEU_CAU) return null
+        val de = DeGiai(
+            id = "de-" + UUID.randomUUID().toString().take(8),
+            mon = dt.mon,
+            nguon = dt.nguon,
+            loai = LOAI_DE_THI,
+            khoa = "dethi:${dt.ma}:$bayGio",
+            ten = dt.ten,
+            cauIds = cac.map { it.id },
+            phutGoiY = dt.phut,
+            saoToiDa = tongSao(cac),
+            taoLuc = bayGio,
+            hetHan = bayGio + NGAY_GIU_DE_THI * MOT_NGAY,
+            ghiChu = dt.ma
+        )
+        return de.takeIf { kho.themDe(it) }
     }
 
     /** Ket qua chon cau: quyen, ten pham vi, cac cau theo thu tu hien. */
@@ -657,10 +820,14 @@ object GiaiDe {
         return KetQuaNop(moi, sao, de.saoToiDa, ghi.sumOf { it.phutCap }, ghi.sumOf { it.phutQuy }, ghi.sumOf { it.phutGiu })
     }
 
-    /** "Giải đề Toán", "Ôn kiểm tra KHTN". */
+    /** "Giải đề Toán", "Ôn kiểm tra KHTN", "Đề thi thử Tiếng Anh". */
     fun tenDe(de: DeGiai): String {
         val mon = tenMon(de.mon)
-        return if (de.loai == LOAI_KIEM_TRA) "Ôn kiểm tra $mon" else "Giải đề $mon"
+        return when (de.loai) {
+            LOAI_KIEM_TRA -> "Ôn kiểm tra $mon"
+            LOAI_DE_THI -> "Đề thi thử $mon"
+            else -> "Giải đề $mon"
+        }
     }
 
     // ------------------------------------------------------------ lam de

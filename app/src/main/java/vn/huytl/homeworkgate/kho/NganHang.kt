@@ -44,7 +44,14 @@ object NganHang {
          * co sach bai tap giay (Ba Huy noi ngay 27/9/2026), nen day la kho tu do cho lam
          * them, luyen cho hay vap va Giai de - xem [cauNenLamThemCuaMon].
          */
-        val baiTap: Boolean = false
+        val baiTap: Boolean = false,
+        /**
+         * Quyen nay la bo de thi in san (30/9/2026), moi "bai" la mot de nguyen ven. Chi
+         * Giai de dung, theo dung thu tu in - xem [DeThi]. Khong phai sach nen khong hien
+         * o man chon sach luc nop bai ([sachCua] bo qua), va khong phai sach bai tap nen
+         * lam them, luyen, de tuan khong rut cau cua no ([sachBaiTapCua] bo qua).
+         */
+        val deThi: Boolean = false
     )
 
     /**
@@ -185,6 +192,19 @@ object NganHang {
             file = "nganhang/sbtanh8.json",
             baiTap = true
         ),
+        /*
+         * De thi Tieng Anh 8 Global Success cua loigiaihay.com (30/9/2026): Ba Huy dua 28 de
+         * giua ki, cuoi ki va hai de cuong, muon Le Hoa giai de tren may cho quen dang de
+         * truoc gio kiem tra that. Dot dau chi ba de giua ki 1 so 1, 2, 3; phan nghe bo vi
+         * khong co file am thanh. Cach mo de o [vn.huytl.homeworkgate.data.GiaiDe.taoDeThi].
+         */
+        Sach(
+            nguon = "dethianh8",
+            mon = PhanHoc.TIENG_ANH,
+            ten = "Đề thi Tiếng Anh 8",
+            file = "nganhang/dethianh8.json",
+            deThi = true
+        ),
         Sach(
             nguon = "van8t1",
             mon = "Ngữ văn",
@@ -199,10 +219,14 @@ object NganHang {
         )
     )
 
-    fun sachCua(mon: String): List<Sach> = SACH.filter { it.mon == mon }
+    /** Cac quyen sach cua mot mon, khong ke bo de thi (xem [Sach.deThi]). */
+    fun sachCua(mon: String): List<Sach> = SACH.filter { it.mon == mon && !it.deThi }
 
     /** Cac quyen sach bai tap cua mot mon, theo thu tu tap. Xem [Sach.baiTap]. */
     fun sachBaiTapCua(mon: String): List<Sach> = SACH.filter { it.mon == mon && it.baiTap }
+
+    /** Cac bo de thi in san, moi mon. Xem [Sach.deThi] va [DeThi]. */
+    fun boDeThi(): List<Sach> = SACH.filter { it.deThi }
 
     fun sachTheoNguon(nguon: String): Sach? = SACH.firstOrNull { it.nguon == nguon }
 
@@ -245,6 +269,9 @@ object NganHang {
         // thi cau da tra gio thanh cau chua lam. Chay moi lan mo app, xem [KhoBai.noiCauDuongCu].
         val noi = kho.noiCauDuongCu()
         if (noi > 0) Log.i(TAG, "noi $noi cau nop qua duong cu sang ma sach")
+        // Doc san khung de thi o luong nen nay: ban trang thai cua DongBo hoi no tren luong
+        // giao dien, va lan doc dau phai phan tich ca file JSON.
+        runCatching { DeThi.tatCa(context) }
     }
 
     /**

@@ -651,18 +651,67 @@ def kiem_cau_hoi(so, c, mon, doan_van, hinh_goc):
         so.l(ma, f"đoạn văn {d!r} không có trong 'doan_van'")
 
 
+def kiem_de_thi(so, b, dt, ma_de):
+    """Bai la mot de thi in san (tu 30/9/2026, xem DINH_DANG.md): kiem khung de."""
+    ma = dt.get("ma") if isinstance(dt, dict) else None
+    ten = b.get("bai", "?")
+    if not isinstance(ma, str) or not ma.strip():
+        so.l(ten, "'de_thi' thiếu 'ma'")
+        return
+    if ma in ma_de:
+        so.l(ma, "mã đề thi trùng")
+    ma_de.add(ma)
+    den = dt.get("den_unit")
+    if not isinstance(den, int) or not 1 <= den <= 12:
+        so.l(ma, f"'den_unit' phải là số Unit 1 tới 12, đang là {den!r}")
+    phut = dt.get("phut")
+    if not isinstance(phut, int) or not 10 <= phut <= 120:
+        so.l(ma, f"'phut' phải là số phút 10 tới 120, đang là {phut!r}")
+    truoc = 0
+    for c in b.get("cac_cau", []):
+        mc = c.get("ma", "?")
+        if not str(mc).startswith(ma + "."):
+            so.l(mc, f"câu của đề {ma} phải có mã bắt đầu bằng '{ma}.'")
+        so_in = re.match(r"^(\d+)", str(mc).rsplit(".", 1)[-1])
+        if not so_in:
+            so.l(mc, "mã câu đề thi phải kết bằng số câu in trên đề")
+        elif int(so_in.group(1)) <= truoc:
+            so.l(mc, "số câu in phải tăng dần theo thứ tự trong đề")
+        else:
+            truoc = int(so_in.group(1))
+        if not str(c.get("nhom", "")).strip():
+            so.c(mc, "câu đề thi thiếu 'nhom' (lời dẫn của bài), máy không in được đầu phần")
+    if not any("ghep" in c or "trung" in c for c in b.get("cac_cau", [])):
+        so.l(ma, "đề thi không có câu nào làm được trên máy")
+
+
 def kiem_sach(duong, hinh_goc):
     so = So()
     o = json.load(open(duong, encoding="utf-8"))
     mon = o.get("mon", "")
     doan_van = o.get("doan_van", {}) or {}
     ma_da_gap = set()
+    ma_de = set()
+    # Cau "trung" (de thi): tro ve cau cua de khac trong cung file, dung chung id cau do.
+    ma_co_noi_dung = {c.get("ma") for b in o.get("cac_bai", []) for c in b.get("cac_cau", [])
+                      if "trung" not in c and "ghep" in c}
     for b in o.get("cac_bai", []):
+        if "de_thi" in b:
+            kiem_de_thi(so, b, b["de_thi"], ma_de)
         for c in b.get("cac_cau", []):
             ma = c.get("ma", "?")
             if ma in ma_da_gap:
                 so.l(ma, "mã câu trùng")
             ma_da_gap.add(ma)
+            if "trung" in c:
+                if "de_thi" not in b:
+                    so.l(ma, "'trung' chỉ dùng cho câu của đề thi")
+                if c["trung"] not in ma_co_noi_dung:
+                    so.l(ma, f"'trung' trỏ tới {c['trung']!r}, không phải câu có ghép trong file")
+                for k in ("de", "ghep", "bo_may", "doan", "hinh"):
+                    if k in c:
+                        so.l(ma, f"câu 'trung' lấy nội dung của câu gốc, không được có '{k}'")
+                continue
             kiem_chu_hien(so, ma, "de", c.get("de", ""))
             kiem_cau_hoi(so, c, mon, doan_van, hinh_goc)
     for k, v in doan_van.items():
