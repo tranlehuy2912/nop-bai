@@ -15,12 +15,14 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import vn.huytl.homeworkgate.R
+import vn.huytl.homeworkgate.data.CauBoQua
 import vn.huytl.homeworkgate.data.GiaiDe
 import vn.huytl.homeworkgate.data.LamTrenMay
 import vn.huytl.homeworkgate.data.LuatGhep
 import vn.huytl.homeworkgate.data.LuotDangLam
 import vn.huytl.homeworkgate.databinding.StActivityLamBaiBinding
 import vn.huytl.homeworkgate.kho.BoTuVung
+import vn.huytl.homeworkgate.kho.CauHoi
 import vn.huytl.homeworkgate.kho.HocToi
 import vn.huytl.homeworkgate.kho.NganHang
 import vn.huytl.homeworkgate.kho.PhanHoc
@@ -39,6 +41,11 @@ import vn.huytl.homeworkgate.kho.PhanHoc
  * THOAT GIUA CHUNG THI GIU NGUYEN LUOT. Moi lan bam Kiem tra sai, luot do (sao con, so lan
  * sai) duoc ghi lai ngay ([LuotDangLam]); vao lai cau do la lam tiep dung cho cu. Thoat ra vao
  * lai khong xoa duoc lan sai nao, ma man hinh tu tat luc con dang nghi cung khong bi phat.
+ *
+ * CAU TIEP KHI CHUA LAM XONG (Ba Huy chot 30/9/2026). Gap cau khong biet lam thi truoc day con
+ * dung o do hoai. Nay nut vien "Câu tiếp" nam canh Kiem tra suot luc lam: bam la sang cau sau,
+ * cau nay coi nhu chua lam - khong ghi so cai, khong cap phut, luot sau lui ra cuoi ([CauBoQua]).
+ * Cau dang do ma bo qua thi sao da mat van mat, nhu thoat man giua chung.
  */
 class LamBaiActivity : AppCompatActivity() {
 
@@ -53,6 +60,7 @@ class LamBaiActivity : AppCompatActivity() {
     private var khung: KhungGhep? = null
     private var dangGhi = false
     private val daGhi = mutableListOf<LamTrenMay.Ghi>()
+    private val cauBoQua = mutableListOf<CauHoi>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -70,6 +78,7 @@ class LamBaiActivity : AppCompatActivity() {
         b.nutQuayLai.setOnClickListener { finish() }
         b.nutKiem.setOnClickListener { kiem() }
         b.nutTiep.setOnClickListener { tiep() }
+        b.nutBoQua.setOnClickListener { boQuaCau() }
         b.tieuDe.text = tenMan()
         b.phuDe.text = "Đang lấy câu…"
         hoiMocRoiTai()
@@ -78,7 +87,7 @@ class LamBaiActivity : AppCompatActivity() {
     private fun tenMan(): String = when (loai) {
         LamTrenMay.Loai.ON -> "Ôn lại câu đến hẹn"
         LamTrenMay.Loai.LUYEN -> "Luyện chỗ hay vấp"
-        else -> "Làm bài ${GiaiDe.tenMon(mon)}"
+        else -> "Luyện tập ${GiaiDe.tenMon(mon)}"
     }
 
     /**
@@ -133,6 +142,7 @@ class LamBaiActivity : AppCompatActivity() {
                     else -> "Hết câu trong phần lớp đã học. Học bài mới thì chọn lại mốc."
                 }
                 b.nutKiem.visibility = View.GONE
+                b.nutBoQua.visibility = View.GONE
                 return@launch
             }
             veCau()
@@ -150,6 +160,8 @@ class LamBaiActivity : AppCompatActivity() {
         khung = KhungGhep(b.khung, m) { b.ket.text = "" }.also { it.ve(luot.botNhieu) }
         b.nutKiem.visibility = View.VISIBLE
         b.nutTiep.visibility = View.GONE
+        b.nutBoQua.visibility = View.VISIBLE
+        b.nutBoQua.text = if (vt + 1 < cac.size) "Câu tiếp" else "Xong"
         b.ket.text = ""
         veSao()
         val truoc = LamTrenMay.saoLanTruoc(this, m, loai)
@@ -182,6 +194,7 @@ class LamBaiActivity : AppCompatActivity() {
             return
         }
         k.khoa(luot.hienLoiGiai)
+        b.nutBoQua.visibility = View.GONE
         ghiLuot(k)
     }
 
@@ -214,10 +227,22 @@ class LamBaiActivity : AppCompatActivity() {
         veCau()
     }
 
+    /**
+     * Con chua lam duoc cau nay: sang cau sau, cau nay coi nhu chua lam. Khong ghi so cai; luot
+     * dang do (neu con da sai) van nam o [LuotDangLam]. Xem [CauBoQua].
+     */
+    private fun boQuaCau() {
+        if (luot.xong || dangGhi || cac.isEmpty()) return
+        val m = cac[vt]
+        CauBoQua.ghi(this, m.cau.id)
+        cauBoQua += m.cau
+        tiep()
+    }
+
     /** Roi han man thi ghi mot dong nhat ky cho ca luot. Luot dang do da nam o [LuotDangLam]. */
     override fun onStop() {
         super.onStop()
-        if (isFinishing) LamTrenMay.ghiNhatKy(applicationContext, mon, loai, daGhi.toList())
+        if (isFinishing) LamTrenMay.ghiNhatKy(applicationContext, mon, loai, daGhi.toList(), cauBoQua.toList())
     }
 
     companion object {

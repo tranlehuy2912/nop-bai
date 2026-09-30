@@ -183,7 +183,7 @@ class CachKiemGioActivity : AppCompatActivity() {
         val deMo = runCatching { GiaiDe.dangMo(this) }.getOrDefault(emptyList())
         themDong(
             box,
-            ten = "Làm bài trên máy, Giải đề",
+            ten = "Luyện tập, Giải đề",
             gia = "tối đa ${LuatCongGio.TRAN_TREN_MAY} phút",
             giaPhu = "mỗi ngày",
             nay = buildString {

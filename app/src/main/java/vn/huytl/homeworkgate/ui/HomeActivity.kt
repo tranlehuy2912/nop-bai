@@ -357,7 +357,7 @@ class HomeActivity : AppCompatActivity() {
             choDuyet -> "Nộp thêm bài nữa"
             gate.state == GateState.PAUSED -> "Chơi tiếp"
             gate.isOpen() -> "Tạm dừng, giữ giờ lại"
-            hetTranAnh -> "Làm bài trên máy"
+            hetTranAnh -> "Luyện tập trên máy"
             else -> getString(R.string.home_submit)
         }
 
@@ -685,7 +685,7 @@ class HomeActivity : AppCompatActivity() {
         if (mon.isEmpty()) return
         if (mon.size == 1) return LamBaiActivity.moLamThem(this, mon.first())
         MaterialAlertDialogBuilder(this)
-            .setTitle("Làm bài môn gì?")
+            .setTitle("Luyện tập môn gì?")
             .setItems(mon.toTypedArray()) { _, i -> LamBaiActivity.moLamThem(this, mon[i]) }
             .show()
     }

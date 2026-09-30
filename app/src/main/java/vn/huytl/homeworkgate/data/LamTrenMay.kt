@@ -82,7 +82,7 @@ object LamTrenMay {
      *  3. cau moi trong cac bai lop da hoc, bai vua sai truoc, roi bai gan moc.
      *
      * Bo cau cua de Giai de con han, va bo muc "Ôn tập chương", "Test Yourself": de danh
-     * cho Giai de.
+     * cho Giai de. Cau con vua bam Câu tiếp bo qua ([CauBoQua]) xep sau moi cau khac.
      */
     fun cauLamThem(
         context: Context,
@@ -94,10 +94,16 @@ object LamTrenMay {
         val han = bayGio - MOT_NAM
         val trongDe = kho.cauTrongDeConHan(bayGio)
         val luot = kho.moiLuotTrenMay(han).groupBy { it.cauId }
+        val boQua = CauBoQua.vuaBoQua(context, bayGio)
         val ra = mutableListOf<Muc>()
+        val sau = mutableListOf<Muc>()
         val daChon = mutableSetOf<String>()
         fun them(m: Muc) {
-            if (ra.size < gioiHan && daChon.add(m.cau.id)) ra += m
+            if (m.cau.id in boQua) {
+                if (daChon.add(m.cau.id)) sau += m
+            } else if (ra.size < gioiHan && daChon.add(m.cau.id)) {
+                ra += m
+            }
         }
 
         // 1. Lam lai trong vong dau.
@@ -128,7 +134,7 @@ object LamTrenMay {
                 theoBai.getValue(bai).take(MOI_BAI).mapNotNull { muc(context, it) }.forEach(::them)
             }
         }
-        return ra
+        return ra + sau.take((gioiHan - ra.size).coerceAtLeast(0))
     }
 
     /**
@@ -151,7 +157,7 @@ object LamTrenMay {
                 m.cau.id in denHen ||
                     (m.tinhTrang.vong >= 1 && LuatGhep.moLamLai(m.tinhTrang, m.ghep.sao, bayGio))
             }
-        return cac.take(gioiHan)
+        return CauBoQua.sapSau(cac, CauBoQua.vuaBoQua(context, bayGio)) { it.cau.id }.take(gioiHan)
     }
 
     /** So cau dang cho on, cho dong On lai o trang Luyen tap va dong "Luyện tập" ngoai man chinh. */
@@ -161,10 +167,10 @@ object LamTrenMay {
     /** Cau luyen cho hay vap theo nhan loi, chi cau lam duoc tren may va chua lam tren may. */
     fun cauLuyen(context: Context, nhan: String, gioiHan: Int = KhoBai.SO_CAU_LUYEN): List<Muc> {
         val kho = KhoBai.get(context)
-        return kho.cacCauLuyenTheoLoi(nhan, gioiHan = gioiHan * 3)
+        val cac = kho.cacCauLuyenTheoLoi(nhan, gioiHan = gioiHan * 3)
             .filter { kho.cacLuotTrenMay(it.id).isEmpty() }
             .mapNotNull { muc(context, it) }
-            .take(gioiHan)
+        return CauBoQua.sapSau(cac, CauBoQua.vuaBoQua(context)) { it.cau.id }.take(gioiHan)
     }
 
     /**
@@ -241,7 +247,7 @@ object LamTrenMay {
         var giu = 0
         if (cap > 0) {
             val gate = GateStore(context)
-            val nhan = if (onTap) "Ôn lại" else "Làm bài trên máy"
+            val nhan = nhanCong(loai, onTap)
             val duoc = if (gate.trongGioNgu(bayGio)) null else gate.congGioHoc(cap, nhanCho = nhan)
             if (duoc == null) {
                 CongSang.them(context, cap, now = bayGio)
@@ -268,29 +274,48 @@ object LamTrenMay {
             lanSai = luot.lanSai
         )
         kho.ghiTraLoi(dong)
-        if (quy > 0) QuyGio.them(context, quy, if (onTap) "Ôn lại" else "Làm bài trên máy")
+        CauBoQua.xoa(context, muc.cau.id)
+        if (quy > 0) QuyGio.them(context, quy, nhanCong(loai, onTap))
         runCatching { DongBo.daySoCai(context, listOf(dong)) }
         return Ghi(sao, cap, quy, giu, dong)
     }
 
-    /** Dong nhat ky cho ca mot luot lam, ghi mot lan luc thoat man chu khong tung cau. */
-    fun ghiNhatKy(context: Context, mon: String, loai: Loai, cac: List<Ghi>) {
-        if (cac.isEmpty()) return
+    /** Nhan cua dong cong gio va dong vao quy: Ba Huy doc o nhat ky. */
+    private fun nhanCong(loai: Loai, onTap: Boolean): String = when {
+        onTap -> "Ôn lại"
+        loai == Loai.GIAI_DE -> "Giải đề"
+        else -> "Luyện tập"
+    }
+
+    /**
+     * Dong nhat ky cho ca mot luot lam, ghi mot lan luc thoat man chu khong tung cau. Cau con
+     * bam Câu tiếp bo qua ([boQua]) ke them o cuoi dong, de Ba Huy biet cau nao con chua lam duoc.
+     */
+    fun ghiNhatKy(context: Context, mon: String, loai: Loai, cac: List<Ghi>, boQua: List<CauHoi> = emptyList()) {
+        if (cac.isEmpty() && boQua.isEmpty()) return
         val ten = when (loai) {
             Loai.ON -> "Ôn lại"
             Loai.LUYEN -> "Luyện chỗ hay vấp"
             Loai.GIAI_DE -> "Giải đề"
-            Loai.LAM_THEM -> "Làm bài trên máy"
+            Loai.LAM_THEM -> "Luyện tập"
         }
-        val sao = cac.sumOf { it.sao }
-        val toiDa = cac.sumOf { it.dong.saoToiDa }
-        val phut = cac.sumOf { it.phutCap }
-        val quy = cac.sumOf { it.phutQuy }
         val tenMon = if (mon.isBlank()) "" else " " + GiaiDe.tenMon(mon)
-        DayLog.add(
-            context,
-            "$ten$tenMon: ${cac.size} câu, $sao/$toiDa sao, +$phut phút" +
-                if (quy > 0) " (vào quỹ $quy phút)" else ""
-        )
+        val phan = mutableListOf<String>()
+        if (cac.isNotEmpty()) {
+            val sao = cac.sumOf { it.sao }
+            val toiDa = cac.sumOf { it.dong.saoToiDa }
+            val phut = cac.sumOf { it.phutCap }
+            val quy = cac.sumOf { it.phutQuy }
+            phan += "${cac.size} câu, $sao/$toiDa sao, +$phut phút" + if (quy > 0) " (vào quỹ $quy phút)" else ""
+        }
+        val cauBo = boQua.distinctBy { it.id }
+        if (cauBo.isNotEmpty()) {
+            phan += "bỏ qua ${cauBo.size} câu: " + cauBo.take(MA_BO_QUA_TOI_DA).joinToString(", ") { it.ma } +
+                if (cauBo.size > MA_BO_QUA_TOI_DA) "…" else ""
+        }
+        DayLog.add(context, "$ten$tenMon: " + phan.joinToString(", "))
     }
+
+    /** Dong nhat ky ke toi da bay nhieu ma cau bo qua. */
+    private const val MA_BO_QUA_TOI_DA = 5
 }

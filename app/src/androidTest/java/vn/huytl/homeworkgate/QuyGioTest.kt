@@ -67,12 +67,12 @@ class QuyGioTest {
 
     @Test
     fun them_cong_vao_quy_so_0_hay_am_thi_bo_qua() {
-        QuyGio.them(context, 7, "Làm bài trên máy")
-        QuyGio.them(context, 0, "Làm bài trên máy")
-        QuyGio.them(context, -3, "Làm bài trên máy")
+        QuyGio.them(context, 7, "Luyện tập")
+        QuyGio.them(context, 0, "Luyện tập")
+        QuyGio.them(context, -3, "Luyện tập")
 
         assertEquals(7, QuyGio.so(context))
-        assertTrue(DayLog.today(context).contains("Vào quỹ giờ chơi 7 phút (Làm bài trên máy vượt trần hôm nay)"))
+        assertTrue(DayLog.today(context).contains("Vào quỹ giờ chơi 7 phút (Luyện tập vượt trần hôm nay)"))
     }
 
     @Test

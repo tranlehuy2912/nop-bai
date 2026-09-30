@@ -24,7 +24,7 @@ object QuyGio {
 
     /**
      * Cong [phut] vao quy, kem mot dong nhat ky noi phut do tu dau ra ("Kiểm tra bài",
-     * "Làm bài trên máy"). Khoa lai de hai luong cung cong mot luc khong nuot mat nhau.
+     * "Luyện tập"). Khoa lai de hai luong cung cong mot luc khong nuot mat nhau.
      */
     fun them(context: Context, phut: Int, tuDau: String) {
         if (phut <= 0) return

@@ -133,13 +133,14 @@ class LuyenTapActivity : AppCompatActivity() {
             xong = n.soOn == 0
         ) { if (n.soOn > 0) LamBaiActivity.moOn(this) }
 
-        // Lam bai tren may: moi mon mot dong, thay cho hop hoi mon cua man chinh cu.
+        // Luyen tap tung mon (truoc 30/9/2026 ten la "Làm bài <mon> trên máy"): moi mon mot
+        // dong, thay cho hop hoi mon cua man chinh cu.
         LamTrenMay.MON.filter { NganHang.sachBaiTapCua(it).isNotEmpty() }.forEach { mon ->
             themDong(
                 b.boxLuyen,
                 hinh = R.drawable.st_ic_the_hoc,
                 mau = MatMon.mau(mon),
-                ten = "Làm bài ${GiaiDe.tenMon(mon)} trên máy",
+                ten = "Luyện tập ${GiaiDe.tenMon(mon)}",
                 phu = if (chuaChonMoc(mon)) "Chọn bài lớp đã học trước" else ""
             ) { LamBaiActivity.moLamThem(this, mon) }
         }

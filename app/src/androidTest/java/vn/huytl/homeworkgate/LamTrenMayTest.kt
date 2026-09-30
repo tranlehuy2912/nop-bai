@@ -10,6 +10,7 @@ import org.junit.Assert.assertTrue
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
+import vn.huytl.homeworkgate.data.CauBoQua
 import vn.huytl.homeworkgate.data.CongSang
 import vn.huytl.homeworkgate.data.DayLog
 import vn.huytl.homeworkgate.data.EndReason
@@ -58,6 +59,7 @@ class LamTrenMayTest {
         kho = KhoBai.get(context)
         SoCaiBai.xoaHet(context)
         CongSang.xoaHet(context)
+        CauBoQua.xoaHet(context)
         mocToanCu = MocToanThu.luu(context)
         unitCu = HocToi.unitCua(context, PhanHoc.BO_TIENG_ANH)
         val p = Prefs.get(context)
@@ -72,6 +74,7 @@ class LamTrenMayTest {
     fun tearDown() {
         SoCaiBai.xoaHet(context)
         CongSang.xoaHet(context)
+        CauBoQua.xoaHet(context)
         MocToanThu.tra(context, mocToanCu)
         HocToi.xoa(context, PhanHoc.BO_TIENG_ANH)
         unitCu?.let { HocToi.ghiUnit(context, PhanHoc.BO_TIENG_ANH, it) }
@@ -310,6 +313,62 @@ class LamTrenMayTest {
 
         LamTrenMay.ghiNhatKy(context, "Toán", LamTrenMay.Loai.LAM_THEM, cac)
 
-        assertTrue(DayLog.today(context).contains("Làm bài trên máy Toán: 2 câu, $sao/$sao sao, +0 phút"))
+        assertTrue(DayLog.today(context).contains("Luyện tập Toán: 2 câu, $sao/$sao sao, +0 phút"))
+    }
+
+    // ------------------------------------------------------------ bo qua (Câu tiếp, 30/9/2026)
+
+    @Test
+    fun cau_bo_qua_coi_nhu_chua_lam_lui_ra_sau_mot_ngay_roi_ve_cho_cu() {
+        datMocToan(3)
+        val t0 = System.currentTimeMillis()
+        val dau = LamTrenMay.cauLamThem(context, "Toán", bayGio = t0)
+        assertTrue("can it nhat hai cau de thu", dau.size >= 2)
+        val kho1 = dau.first().cau.id
+
+        CauBoQua.ghi(context, kho1, luc = t0)
+
+        val sau1Gio = LamTrenMay.cauLamThem(context, "Toán", bayGio = t0 + gio)
+        assertEquals("cau ke tiep len dau", dau[1].cau.id, sau1Gio.first().cau.id)
+        val vt = sau1Gio.indexOfFirst { it.cau.id == kho1 }
+        assertTrue("cau bo qua xep cuoi hay ra khoi luot, dang o $vt", vt == -1 || vt == sau1Gio.lastIndex)
+        assertTrue("khong ghi so cai", kho.cacLuotTrenMay(kho1).isEmpty())
+        assertTrue("van la cau chua lam", LamTrenMay.muc(context, dau.first().cau)!!.tinhTrang.vong < 0)
+
+        val homSau = LamTrenMay.cauLamThem(context, "Toán", bayGio = t0 + 25 * gio)
+        assertEquals("qua mot ngay ve cho cu", kho1, homSau.first().cau.id)
+    }
+
+    @Test
+    fun luot_it_cau_van_giu_cau_bo_qua_o_cuoi() {
+        datMocToan(3)
+        val t0 = System.currentTimeMillis()
+        val hai = LamTrenMay.cauLamThem(context, "Toán", gioiHan = 2, bayGio = t0)
+        CauBoQua.ghi(context, hai.first().cau.id, luc = t0)
+        val tatCa = LamTrenMay.cauLamThem(context, "Toán", gioiHan = 500, bayGio = t0 + gio)
+        assertEquals(hai.first().cau.id, tatCa.last().cau.id)
+    }
+
+    @Test
+    fun lam_xong_cau_da_bo_qua_thi_thoi_lui() {
+        datMocToan(3)
+        val m = LamTrenMay.cauLamThem(context, "Toán").first()
+        CauBoQua.ghi(context, m.cau.id)
+        assertTrue(m.cau.id in CauBoQua.vuaBoQua(context))
+        LamTrenMay.ghi(context, m, luot(m.ghep.sao), "x", LamTrenMay.Loai.LAM_THEM, congNgay = false)
+        assertFalse(m.cau.id in CauBoQua.vuaBoQua(context))
+    }
+
+    @Test
+    fun nhat_ky_ke_cau_bo_qua() {
+        datMocToan(3)
+        val ds = LamTrenMay.cauLamThem(context, "Toán").take(3)
+        val cac = listOf(LamTrenMay.ghi(context, ds[0], luot(ds[0].ghep.sao), "x", LamTrenMay.Loai.LAM_THEM, congNgay = false))
+
+        LamTrenMay.ghiNhatKy(context, "Toán", LamTrenMay.Loai.LAM_THEM, cac, listOf(ds[1].cau, ds[2].cau))
+        assertTrue(DayLog.today(context).contains("bỏ qua 2 câu: ${ds[1].cau.ma}, ${ds[2].cau.ma}"))
+
+        LamTrenMay.ghiNhatKy(context, "Toán", LamTrenMay.Loai.LAM_THEM, emptyList(), listOf(ds[1].cau))
+        assertTrue("chi bo qua cung ghi", DayLog.today(context).contains("Luyện tập Toán: bỏ qua 1 câu: ${ds[1].cau.ma}"))
     }
 }
