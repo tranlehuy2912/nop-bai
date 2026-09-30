@@ -237,7 +237,7 @@ class ManualBang {
      *  -e viec viecnha -e chu "Quét nhà:10:0,Rửa chén:10:0"
      *  -e viec viecnhaxong           ba bam xong het
      *  -e viec xoaviecnha
-     *  -e viec napdando / xoadando  trang vo dan do da soat
+     *  -e viec napdando / xoadando  trang vo dan do da soat, ca dau da chup hom nay
      *  -e viec napdenhen -e ma 1.3a  nap mot cau da qua han on lai
      *  -e viec bamo -e phut 30       ba cam may (mo cac man cua ba)
      *  -e viec badong
@@ -378,9 +378,13 @@ class ManualBang {
                 VoDanDo.ghiDaLuu(context)
                 ketQua = NhacBai.trangNgay(context, ngay)?.moTa() ?: "đã lưu vở ngày $ngay (không còn gì để nhắc)"
             }
+            // Xoa ca dau "da chup vo hom nay" (khoa KHOA_NGAY_LUU cua VoDanDo). Chi xoa trang
+            // o NhacBai thi muc "chua chup" chay sau napdando cung ngay van thay dong "Đã chụp vở
+            // hôm nay" o man chinh.
             "xoadando" -> {
                 NhacBai.xoaHet(context)
-                ketQua = NhacBai.docTrang(context).isEmpty()
+                prefs.raw().edit().remove("vo_dan_do_luu_ngay").commit()
+                ketQua = NhacBai.docTrang(context).isEmpty() && !VoDanDo.daLuuHomNay(context)
             }
             /*
              * Nap mot cau DA QUA HEN on lai.

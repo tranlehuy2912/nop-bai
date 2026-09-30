@@ -85,8 +85,15 @@ def cap_quyen():
     adb("shell", "settings", "put", "secure", "accessibility_enabled", "1")
 
 
+# "Bam icon" bang monkey. Ti le phim he thong phai ve 0: tren may ao khong co phim cung,
+# monkey bo ngang truoc khi mo app ("SYS_KEYS has no physical keys but with factor 2.0%",
+# thoat ma -5) ma khong mo app nao. Ngay 30/9/2026 vi vay muc cua-vao hong, con chan-app va
+# han-app dat ma Chrome chua he mo.
+MONKEY = ("monkey", "--pct-syskeys", "0")
+
+
 def mo_app(cho_dich_vu=True):
-    adb("shell", "monkey", "-p", PKG, "-c", "android.intent.category.LAUNCHER", "1")
+    adb("shell", *MONKEY, "-p", PKG, "-c", "android.intent.category.LAUNCHER", "1")
     if not cho_dich_vu:
         return
     # Cho den khi dich vu len that, thay vi ngu mot khoang doan chung.
@@ -366,7 +373,7 @@ class May:
     def bam_icon(self):
         """Bam icon app tren man hinh nen, nhu Le Hoa van bam."""
         self._lam_moi()
-        adb("shell", "monkey", "-p", PKG, "-c",
+        adb("shell", *MONKEY, "-p", PKG, "-c",
             "android.intent.category.LAUNCHER", "1")
         time.sleep(3.0)
 
@@ -486,7 +493,7 @@ class May:
     def mo_goi(self, goi):
         self._lam_moi()
         mo_app()
-        adb("shell", "monkey", "-p", goi, "-c",
+        adb("shell", *MONKEY, "-p", goi, "-c",
             "android.intent.category.LAUNCHER", "1")
         time.sleep(4)
 

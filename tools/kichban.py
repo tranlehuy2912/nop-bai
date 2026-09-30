@@ -34,9 +34,9 @@ CHU_NHAT = "2026-09-20T10:00"       # nghi, khong duoc chan gi
 # app khong sai gi ca. Da dinh mot lan nhu vay that, luc 13:34 chieu thu tu.
 RANH = "2026-09-16T19:30"
 
-# Bai cuoi cua bo Cong thuc Toan 8 (assets/hocthuoc/toan8ct.json). Chon bai cuoi la
-# hoi ca bo, dung nhu cac muc thu nay gia dinh truoc 25/9/2026 khi chua co cho chon
-# "lop da hoc toi bai nao". Doi ten bai trong file thi sua o day.
+# Bai 9 cua bo Cong thuc Toan 8 (assets/hocthuoc/toan8ct.json). Luc dat hang nay no la bai
+# cuoi, chon no la hoi ca bo; nay bo co toi Bai 39, va tu 30/9/2026 Toan tach hai phan nen
+# dat moc Bai 9 la Dai so toi Bai 9, Hinh hoc chua hoc. Doi ten bai trong file thi sua o day.
 BAI_CUOI_TOAN = "Bài 9. Phân tích đa thức thành nhân tử"
 
 # Bai dau cua bo Toan, cho muc go dung mot cau. Trong Bai 1 phan lon dap an la so va
@@ -66,9 +66,10 @@ def danh_sach():
             lam=lambda m: (m.van(RANH), m.dat("dong,xoacho,xoaluot"), m.dat("duyet", phut=30),
                            m.man("HomeActivity")),
             # Khong soat chu tren nut to: no nam cuoi trang va bi day khoi vung
-            # nhin thay khi man hinh dang co nhieu the. Soat phan the trang thai -
-            # do moi la cho noi "phieu con nguyen, chua bam".
-            cho=["30 phút", "Chưa tính giờ đâu"],
+            # nhin thay khi man hinh dang co nhieu the. Soat phan the trang thai va dong
+            # "Hôm nay kiếm được 30/... phút (chưa chơi 30)" - do moi la cho noi "phieu con
+            # nguyen, chua bam". Cau "Chưa tính giờ đâu" da bo khoi the tu 4110de0 (27/9/2026).
+            cho=["Ba Huy đã duyệt", "30 phút", "chưa chơi 30"],
         ),
         dict(
             ma="cong-choi", nhom="Cổng & giờ chơi",
@@ -216,11 +217,11 @@ def danh_sach():
         dict(
             ma="man-chonbai", nhom="Kho bài",
             ten="Màn khai bài trước khi chụp",
-            lam=lambda m: (m.dat("napdenhen", ma="1.3a"),
-                           m.man("ChonBaiActivity")),
+            lam=lambda m: (m.van(RANH), m.man("ChonBaiActivity")),
             # Soat phan khong doi: ten con la cau hinh, doi ten trong cai dat thi
-            # khong co nghia la man hinh hong.
-            cho=["đang làm bài môn gì?", "Toán", "Ôn lại 1 câu đến hẹn"],
+            # khong co nghia la man hinh hong. Dong on lai khong con o man nay, tu
+            # 30/9/2026 no nam o trang Luyen tap.
+            cho=["đang làm bài môn gì?", "Chọn môn rồi chọn bài", "Toán"],
         ),
         dict(
             ma="on-vao-thang", nhom="Kho bài",
@@ -280,26 +281,45 @@ def danh_sach():
         ),
 
         # ---------------- vo dan do ----------------
+        # Tu 30/9/2026 man vo dan do khong mo thang camera nua: con chon ngay ghi tren vo
+        # truoc (mac dinh hom nay, o day la ngay RANH 16/9), roi moi bam chup.
         dict(
             ma="man-dando", nhom="Vở dặn dò",
-            ten="Chưa chụp vở thì màn dặn dò mở thẳng ra camera",
+            ten="Màn vở dặn dò hỏi vở của ngày nào, mặc định hôm nay",
             lam=lambda m: (m.van(RANH), m.dat("xoadando"), m.man("DanDoActivity")),
+            cho=["VỞ CỦA NGÀY NÀO", "Hôm nay, 16/9/2026", "Chụp vở ngày 16/9"],
+            khong=["VỞ ĐANG NHẮC BÀI"],
+        ),
+        dict(
+            ma="dando-camera", nhom="Vở dặn dò",
+            ten="Bấm chụp vở thì mở camera chụp trang vở dặn dò",
+            lam=lambda m: (m.van(RANH), m.dat("xoadando"), m.man("DanDoActivity"),
+                           m.bam("Chụp vở ngày 16/9")),
+            man_tren_cung="CaptureActivity",
             cho=["Chụp trang vở dặn dò", "Đưa trang vở lọt vào khung"],
         ),
         # Tu 30/9/2026 dong vo dan do chi con o man chinh: vo khong con dinh gi toi so phut,
-        # no de nhac bai (NhacBai), nen man khai bai khong ru chup vo nua.
+        # no de nhac bai (NhacBai), nen man khai bai khong ru chup vo nua. Ten dong luon la
+        # "Chụp vở dặn dò"; hom nay da luu mot trang thi co them dong phu "Đã chụp vở hôm
+        # nay", xem HomeActivity.veViecHomNay.
         dict(
             ma="dando-chua-chup", nhom="Vở dặn dò",
-            ten="Màn chính rủ chụp vở khi chưa có bản nào",
+            ten="Hôm nay chưa lưu vở thì màn chính chưa ghi đã chụp",
             lam=lambda m: (m.van(RANH), m.dat("xoadando"), m.man("HomeActivity")),
-            cho=["Chụp vở dặn dò hôm nay"],
+            cho=["Chụp vở dặn dò"],
+            khong=["Đã chụp vở hôm nay"],
         ),
+        # Vo napdando mang ngay RANH (thu Tu 16/9): Toan, KHTN va dong khong co mon han chieu
+        # thu Nam 17/9 nen toi nay da nhac; Tieng Anh han chieu thu Bay 19/9, chua toi luc
+        # nhac. Soat ca chu tung dong vo: ten dong nhac doi mot lan roi ngay 30/9/2026 ("Bài
+        # cho ..." thanh "Bài dặn dò cho ..."), con chu dong vo la chu cua napdando.
         dict(
             ma="dando-da-luu", nhom="Vở dặn dò",
-            ten="Chụp rồi thì màn chính ghi ngày vở và số bài",
+            ten="Lưu vở rồi thì màn chính ghi đã chụp và nhắc bài cho buổi mai",
             lam=lambda m: (m.van(RANH), m.dat("napdando"), m.man("HomeActivity")),
-            cho=["Vở dặn dò", "2 bài"],
-            khong=["Chụp vở dặn dò hôm nay"],
+            cho=["Đã chụp vở hôm nay", "Bài dặn dò cho chiều thứ năm",
+                 "Toán: làm bài 2.26 và 2.27 trang 45", "KHTN: tiết sau kiểm tra bài 2, bài 3"],
+            khong=["Tiếng Anh: làm bài tập Unit 2"],
             don=lambda m: m.dat("xoadando"),
         ),
         # Bam dong "Bài dặn dò cho ..." o man chinh thi mo man nay (30/9/2026). Vo ngay 16/9
@@ -322,8 +342,10 @@ def danh_sach():
             # khong co so cau den luot nao, chi co dau hoi.
             lam=lambda m: (m.van(RANH), m.dat("hoctoi", ma="toan8ct", chu=BAI_CUOI_TOAN),
                            m.man("HocThuocActivity")),
+            # Toan hai phan tu 30/9/2026: moc Bai 9 thi dong moc ghi "Lớp: Đại số tới Bài 9,
+            # Hình học chưa học".
             cho=["Kiểm tra bài", "Công thức Toán 8", "câu đến lượt hôm nay",
-                 "Lớp đã học tới " + BAI_CUOI_TOAN, "Máy chỉ hỏi tới bài lớp đã học"],
+                 "Đại số tới Bài 9", "Máy chỉ hỏi tới bài lớp đã học"],
         ),
         dict(
             ma="hocthuoc-chua-chon", nhom="Học thuộc",
@@ -453,6 +475,7 @@ BO_TEST = [
     ("GioiHanAppTest", "Hạn giờ từng app"),
     ("KhoaAiTest", "Chùm khoá AI"),
     ("BoGoAiTest", "Bộ gõ chữ vào app AI"),
+    ("NhatKyAiTest", "Sổ câu hỏi AI giữ chỗ xuống dòng, tin /hoi"),
     ("ViecNhaTest", "Việc nhà bà nội giao"),
     ("LuotBaNoiTest", "Một lượt mỗi ngày của bà nội"),
     ("ChatCuTest", "Dọn khung chat cũ khỏi máy"),
@@ -463,6 +486,7 @@ BO_TEST = [
     ("NganHangSbtTest", "Ba quyển sách bài tập"),
     ("NganHangVanTest", "Hai quyển Ngữ văn 8"),
     ("GiaiDeTest", "Giải đề và làm thêm theo bài đã học"),
+    ("DeThiTest", "Đề thi thử: khung đề, tự mở theo Unit đã học"),
     ("GhepTest", "Câu làm trên máy: gõ ra được, chấm đúng"),
     ("HangSaoTest", "Ba dạng sao: rỗng, xám, vàng"),
     ("KhungGhepTest", "Thứ tự nút: giữ trong một lượt, trộn lại lượt sau"),
