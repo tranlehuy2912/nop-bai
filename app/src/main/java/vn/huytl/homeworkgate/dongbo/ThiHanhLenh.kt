@@ -186,6 +186,8 @@ object ThiHanhLenh {
 
             Lenh.XU_CAU -> xuCau(context, gate, baiId, d.get("giaTri"))
 
+            Lenh.BO_SUA -> boSua(context, d.get("giaTri"))
+
             Lenh.CAP_QUY -> {
                 val kq = vn.huytl.homeworkgate.data.QuyGio.cap(context, phut?.takeIf { it > 0 })
                 kq.loi ?: "Đã cấp ${kq.cap} phút từ quỹ giờ chơi, quỹ còn ${kq.conLai} phút."
@@ -462,6 +464,29 @@ object ThiHanhLenh {
             ?: return "Lệnh thiếu danh sách câu, máy không chấm."
         ApprovalService.chamTheoClaude(context, id, ket, pham)
         return "Đã nhận kết quả Claude, tablet đang chấm. Số phút báo trên Telegram."
+    }
+
+    /**
+     * Ba Huy bo cau sai khoi danh sach can sua cua con, khong cong phut. Xem [Lenh.BO_SUA]
+     * va [vn.huytl.homeworkgate.data.BoSua].
+     *
+     * Ghi nhat ky de Le Hoa (va Ba Huy khi xem lai) biet dong "câu cần sửa" ngan di vi dau.
+     */
+    internal fun boSua(context: Context, giaTri: Any?): String {
+        val danhSach = (giaTri as? List<*>).orEmpty().mapNotNull { m ->
+            val o = m as? Map<*, *> ?: return@mapNotNull null
+            val ma = (o["ma"] as? String)?.trim().orEmpty()
+            if (ma.isEmpty()) null else ma to (o["de"] as? String).orEmpty()
+        }
+        if (danhSach.isEmpty()) return "Lệnh thiếu danh sách câu, máy không bỏ câu nào."
+        val kq = vn.huytl.homeworkgate.data.BoSua.boTheoMa(context, danhSach)
+        val khongThay = if (kq.khongThay.isEmpty()) "" else {
+            " Câu ${kq.khongThay.joinToString(", ")} không còn chờ sửa."
+        }
+        if (kq.daBo.isEmpty()) return "Không có câu nào để bỏ.$khongThay"
+        val ke = kq.daBo.joinToString(", ")
+        DayLog.add(context, "Ba Huy bỏ câu $ke khỏi danh sách cần sửa")
+        return "Đã bỏ câu $ke khỏi danh sách cần sửa, không cộng phút.$khongThay"
     }
 
     /**

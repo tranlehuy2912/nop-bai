@@ -186,9 +186,11 @@ class GiaiDeActivity : AppCompatActivity() {
             textSize = 22f
             setTextColor(mau(R.color.wait))
         }
+        // Ba dang sao nhu man lam bai ([HangSao]). De da nop ma cau chua xong thi tinh la chua
+        // lam duoc: xam het, dung de o rong nhu con dang lam do.
         fun veSao() {
-            val con = if (luot.xong && !luot.dung) 0 else luot.sao
-            sao.text = "★".repeat(con) + "☆".repeat((luot.saoToiDa - con).coerceAtLeast(0))
+            val hien = if (d.daNop && !luot.xong) luot.copy(xong = true, dung = false) else luot
+            sao.text = HangSao.chu(this, hien)
         }
         veSao()
         dau.addView(sao)
@@ -212,11 +214,11 @@ class GiaiDeActivity : AppCompatActivity() {
             // Da xong (hay da nop): hien cau tra loi da ghi, khong ve lai ban phim.
             val traLoi = GiaiDe.traLoiCua(d, c.id)
             if (traLoi.isNotBlank()) o.addView(chu(KhungGhep.boThe(traLoi), 17f))
-            if (luot.hienLoiGiai) KhungGhep(o, muc).khoa(true)
+            if (luot.hienLoiGiai) KhungGhep(o, muc, KhungGhep.hatDe(d.id, c.id)).khoa(true)
             b.danhSach.addView(the)
             return
         }
-        val khung = KhungGhep(o, muc).also { it.ve(luot.botNhieu) }
+        val khung = KhungGhep(o, muc, KhungGhep.hatDe(d.id, c.id)).also { it.ve(luot.botNhieu) }
         val bao = chu("", 15f, mauChu = R.color.ink_soft)
         the.addView(nut("Kiểm tra") {
             val dd = de ?: return@nut
@@ -230,6 +232,7 @@ class GiaiDeActivity : AppCompatActivity() {
             luot = LuatGhep.kiem(luot, soSai)
             de = GiaiDe.luuLuot(this, dd, c.id, luot, khung.traLoi())
             veSao()
+            if (luot.xong && luot.dung && luot.sao > 0) HangSao.nhip(sao)
             if (luot.xong) khung.khoa(luot.hienLoiGiai) else khung.ve(luot.botNhieu)
         }.apply { dem(top = 12) })
         the.addView(bao)

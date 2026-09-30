@@ -25,6 +25,9 @@
     <color name="surface">#FFFFFF</color>
     <color name="canvas">#F4F6FA</color>
     <color name="line">#E1E5EC</color>
+    <!-- Sao da mat vi sai o bai lam tren may (HangSao): xam dac, dam hon `line` mot chut de
+         con van dem duoc so o, nhung khong lan voi sao rong con co the duoc. -->
+    <color name="sao_mat">#C5CAD3</color>
 
     <!--
       Mau cua tung mon hoc.

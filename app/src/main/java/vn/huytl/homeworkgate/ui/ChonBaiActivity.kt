@@ -429,16 +429,7 @@ class ChonBaiActivity : AppCompatActivity() {
     }
 
     private fun doiMoc() {
-        val cac = PhanHoc.cuaMon(mon)
-        val xong = { if (buoc == Buoc.LAM_THEM) veLai() }
-        if (cac.size == 1) return ChonHocToi.hoiPhan(this, cac.first(), xong)
-        MaterialAlertDialogBuilder(this)
-            .setTitle("Đổi phần nào?")
-            .setItems(cac.map { PhanHoc.moTaPhan(this, it) }.toTypedArray()) { _, i ->
-                ChonHocToi.hoiPhan(this, cac[i], xong)
-            }
-            .setNegativeButton("Để sau", null)
-            .show()
+        ChonHocToi.hoiDoiPhan(this, PhanHoc.cuaMon(mon)) { if (buoc == Buoc.LAM_THEM) veLai() }
     }
 
     // ----------------------------------------------------------------- buoc luyen
@@ -665,7 +656,7 @@ class ChonBaiActivity : AppCompatActivity() {
                 Nap(
                     cau = cau,
                     xong = kho.daXongTrong(cau.map { it.id }, han),
-                    sua = SoCaiBai.dangChoSua(ct).map { it.khoa }.toSet(),
+                    sua = SoCaiBai.canSua(ct).map { it.khoa }.toSet(),
                     cho = KhaiChoCham.cauChoCham(ct)
                 )
             }
@@ -739,7 +730,7 @@ class ChonBaiActivity : AppCompatActivity() {
      * luong giao dien: ca hai deu hoi kho.
      */
     private fun khoaHienTai(ct: android.content.Context): Pair<Set<String>, Set<String>> =
-        SoCaiBai.dangChoSua(ct).map { it.khoa }.toSet() to KhaiChoCham.cauChoCham(ct)
+        SoCaiBai.canSua(ct).map { it.khoa }.toSet() to KhaiChoCham.cauChoCham(ct)
 
     private fun themCau(cau: CauHoi, keoTrang: Boolean = false) {
         val dong = LayoutInflater.from(this)

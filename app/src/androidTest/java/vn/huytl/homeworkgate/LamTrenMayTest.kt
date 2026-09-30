@@ -42,7 +42,7 @@ class LamTrenMayTest {
 
     private lateinit var context: Context
     private lateinit var kho: KhoBai
-    private var mocToanCu: String? = null
+    private var mocToanCu: Map<String, String?> = emptyMap()
     private var unitCu: Int? = null
     private var quyCu = 0
     private var nguCu = 0
@@ -58,7 +58,7 @@ class LamTrenMayTest {
         kho = KhoBai.get(context)
         SoCaiBai.xoaHet(context)
         CongSang.xoaHet(context)
-        mocToanCu = HocToi.baiCua(context, "toan8ct")
+        mocToanCu = MocToanThu.luu(context)
         unitCu = HocToi.unitCua(context, PhanHoc.BO_TIENG_ANH)
         val p = Prefs.get(context)
         quyCu = p.quyGio
@@ -72,8 +72,7 @@ class LamTrenMayTest {
     fun tearDown() {
         SoCaiBai.xoaHet(context)
         CongSang.xoaHet(context)
-        HocToi.xoa(context, "toan8ct")
-        mocToanCu?.let { HocToi.ghiBai(context, "toan8ct", it) }
+        MocToanThu.tra(context, mocToanCu)
         HocToi.xoa(context, PhanHoc.BO_TIENG_ANH)
         unitCu?.let { HocToi.ghiUnit(context, PhanHoc.BO_TIENG_ANH, it) }
         GateStore(context).endSession(EndReason.PARENT_REVOKED)
@@ -93,8 +92,7 @@ class LamTrenMayTest {
     }
 
     private fun datMocToan(soBai: Int) {
-        val phan = PhanHoc.theoMa("toan8ct")!!
-        HocToi.ghiBai(context, "toan8ct", PhanHoc.cacBai(context, phan).first { PhanHoc.soBai(it) == soBai })
+        MocToanThu.dat(context, soBai)
     }
 
     private fun muc(id: String): LamTrenMay.Muc = LamTrenMay.muc(context, kho.cauTheoId(id)!!)!!
@@ -126,7 +124,7 @@ class LamTrenMayTest {
 
     @Test
     fun chua_chon_moc_thi_khong_co_cau_moi() {
-        HocToi.xoa(context, "toan8ct")
+        MocToanThu.dat(context, null)
         assertTrue(LamTrenMay.cauLamThem(context, "Toán").isEmpty())
     }
 
@@ -202,6 +200,37 @@ class LamTrenMayTest {
 
         // Da on xong hen dau: hen sau la 10 ngay.
         assertTrue(LamTrenMay.cauOn(context, bayGio = hen + gio).none { it.cau.id == m.cau.id })
+    }
+
+    /**
+     * Dong "Lần trước" o man lam bai (Ba Huy chot 30/9/2026): sao TOT NHAT cua vong dang lam,
+     * khong hien khi chua lam lan nao va khi on lai den hen (vong moi, duoc tron so sao).
+     */
+    @Test
+    fun lan_truoc_la_sao_tot_nhat_cua_vong_va_khong_hien_khi_mo_vong_moi() {
+        datMocToan(3)
+        val m = LamTrenMay.cauLamThem(context, "Toán").first { it.ghep.sao >= 3 }
+        val v = m.ghep.sao
+        val t0 = System.currentTimeMillis()
+        assertEquals(null, LamTrenMay.saoLanTruoc(context, m, LamTrenMay.Loai.LAM_THEM, t0))
+
+        // Luot dau mat mot sao, luot sau (24 gio sau) mat hai sao: moc van la luot dau.
+        LamTrenMay.ghi(context, m, luot(v, sai = 1), "x", LamTrenMay.Loai.LAM_THEM, bayGio = t0, congNgay = false)
+        val lai = muc(m.cau.id)
+        assertEquals(v - 1, LamTrenMay.saoLanTruoc(context, lai, LamTrenMay.Loai.LAM_THEM, t0 + 25 * gio))
+        LamTrenMay.ghi(
+            context, lai, luot(v, sai = 2), "x", LamTrenMay.Loai.LAM_THEM, bayGio = t0 + 25 * gio, congNgay = false
+        )
+        assertEquals(v - 1, LamTrenMay.saoLanTruoc(context, muc(m.cau.id), LamTrenMay.Loai.LAM_THEM, t0 + 50 * gio))
+
+        // Den hen on (3 ngay sau luot dung gan nhat): vong moi, khong hien moc cu.
+        val hen = t0 + 25 * gio + 3 * ngay + gio
+        assertTrue(LamTrenMay.cauOn(context, bayGio = hen).any { it.cau.id == m.cau.id })
+        assertEquals(null, LamTrenMay.saoLanTruoc(context, muc(m.cau.id), LamTrenMay.Loai.ON, hen))
+
+        // On mat mot sao, lam lai trong vong on sau 24 gio: hien moc cua vong on.
+        LamTrenMay.ghi(context, muc(m.cau.id), luot(v, sai = 1), "x", LamTrenMay.Loai.ON, bayGio = hen, congNgay = false)
+        assertEquals(v - 1, LamTrenMay.saoLanTruoc(context, muc(m.cau.id), LamTrenMay.Loai.ON, hen + 25 * gio))
     }
 
     @Test

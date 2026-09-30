@@ -598,20 +598,11 @@ class HomeActivity : AppCompatActivity() {
         // khong ra phut. Cau sai trong ngan hang chuyen sang lam tren may sau 24 gio, xem
         // [LamTrenMay]. Truoc 30/9/2026 moc nay la luc da tinh tron goi.
         val hetTranAnh = SoCaiBai.hetTranAnhHomNay(this)
-        val canSua = if (hetTranAnh) emptyList() else SoCaiBai.dangChoSua(this).let { ds ->
+        val canSua = if (hetTranAnh) emptyList() else SoCaiBai.canSua(this).let { ds ->
             val cho = vn.huytl.homeworkgate.data.KhaiChoCham.cauChoCham(this)
             if (cho.isEmpty()) ds else ds.filterNot { it.khoa in cho }
         }
         val loiNhan = SoCaiBai.loiNhan(this)
-        /*
-         * Cau den hen nho lai. Chi hoi khi khong con no gi: sua bai dang lam do
-         * truoc, on lai la viec cua hom nao ranh.
-         *
-         * Va khong hoi trong luc dang choi. Ham nay chay moi giay khi dong ho dang
-         * dem, ma cau tra loi thi la mot cau GROUP BY tren ca bang tra loi - hoi moi
-         * giay de ru mot dua tre dang choi di on bai thi vua ton vua vo ich.
-         */
-        val soOn = if (canSua.isEmpty() && !gate.isOpen()) LamTrenMay.soCauOn(this) else 0
 
         /*
          * Bai da lam xong ma chua toi tay Ba Huy: dung truoc het, truoc ca dong cau can sua.
@@ -662,67 +653,16 @@ class HomeActivity : AppCompatActivity() {
             ) { KetQuaActivity.mo(this) }
         }
 
-        if (soOn > 0) {
-            themViec(
-                hinh = R.drawable.st_ic_on_lai,
-                mau = R.color.wait,
-                ten = if (soOn == 1) "Ôn lại 1 câu đến hẹn" else "Ôn lại $soOn câu đến hẹn"
-            ) { LamBaiActivity.moOn(this) }
-        }
-
-        // Bai may giao lam ngay tren may (29/9/2026): lam them, sua cau sai, luyen.
-        if (monLamTrenMay().isNotEmpty()) {
-            themViec(
-                hinh = R.drawable.st_ic_the_hoc,
-                mau = R.color.brand,
-                ten = "Làm bài trên máy"
-            ) { hoiMonLamTrenMay() }
-        }
-
         themViecSoan()
-        if (!gate.isOpen()) themViecGiaiDe()
 
         /*
-         * Kiem tra bai. Het the hom nay ma con bai phia sau thi dong van o day, dang da
-         * xong: day la cua duy nhat vao cho chon "lop da hoc toi bai nao", va an no di
-         * thi hom sau lop hoc bai moi con khong co cho nao de mo them. Xem
-         * [BoThe.tinhTrangManChinh].
+         * De Giai de da bat dau (dang chay gio, hay con chup phan tu luan) o lai day: giau vao
+         * trang Luyen tap thi con de quen mot de dang tinh gio. De chua bat dau va de da
+         * xong thi nam trong trang do.
          */
-        val kiemTra = runCatching { BoThe.tinhTrangManChinh(this) }
-            .getOrDefault(BoThe.TinhTrang.KHONG)
-        if (kiemTra != BoThe.TinhTrang.KHONG) {
-            val het = kiemTra == BoThe.TinhTrang.HET_HOM_NAY
-            themViec(
-                hinh = R.drawable.st_ic_the_hoc,
-                mau = if (het) R.color.ok else R.color.brand,
-                ten = if (het) "Kiểm tra bài: hôm nay hết câu" else getString(R.string.hoc_thuoc_nut),
-                xong = het
-            ) {
-                startActivity(Intent(this, HocThuocActivity::class.java))
-            }
-        }
+        if (!gate.isOpen()) themViecGiaiDeDangLam()
 
-        /*
-         * Do tu vung. Hien khi may co bo tu va hom nay chua do het phan cua ngay.
-         *
-         * Dong rieng chu khong gop vao dong Kiem tra bai o tren: hai duong hai cai
-         * tran, lam het duong nay van con nguyen duong kia. Gop mot dong thi con
-         * lam xong mot ben la dong do bien mat, va khong biet ben con lai van con.
-         */
-        val coTuVung = runCatching {
-            val kho = KhoBai.get(this)
-            BoTuVung.BO.any { kho.soTuCua(it.bo) > 0 } &&
-                kho.giayTuVungTu(moc0Gio()) < LuatTuVung.GIAY_TRAN_MOI_NGAY
-        }.getOrDefault(false)
-        if (coTuVung) {
-            themViec(
-                hinh = R.drawable.st_ic_the_hoc,
-                mau = MatMon.mau("Tiếng Anh"),
-                ten = getString(R.string.do_tu_nut)
-            ) {
-                startActivity(Intent(this, DoTuVungActivity::class.java))
-            }
-        }
+        themViecLuyenTap(demSo = canSua.isEmpty() && !gate.isOpen())
 
         val co = binding.boxViec.childCount > 0
         binding.nhanViec.visibility = if (co) View.VISIBLE else View.GONE
@@ -846,30 +786,23 @@ class HomeActivity : AppCompatActivity() {
     }
 
     /**
-     * Cac dong Giai de: de dang mo, va de cham xong hom nay kem diem. Xem [GiaiDe].
+     * De Giai de con da bat dau ma chua xong: dang lam (con bao nhieu phut), hay da nop phan
+     * trac nghiem ma con chup phan tu luan. Xem [GiaiDe].
      *
-     * Khong hoi trong luc dang choi, cung ly do voi dong on lai: ham nay chay moi giay khi
-     * dong ho dang dem.
+     * Chi nhung de nay o lai man chinh (30/9/2026). De chua bat dau, de da xong kem diem, va
+     * dong "Giai de <mon>" hoi moc lop da hoc nam trong [LuyenTapActivity].
      *
-     * De da xong thi dong VAN o lai het ngay, doi sang dau tich va diem, nhu dong soan
-     * tap: an di thi con khong con cho nao nhin lai diem cua minh.
-     *
-     * Mon co sach bai tap ma chua phan nao chon moc "lop da hoc toi bai nao" thi may khong
-     * ra de duoc: hien mot dong moi con chon.
+     * Khong hoi trong luc dang choi: ham nay chay moi giay khi dong ho dang dem.
      */
-    private fun themViecGiaiDe() {
+    private fun themViecGiaiDeDangLam() {
         val bayGio = System.currentTimeMillis()
         val mo = runCatching { GiaiDe.dangMo(this, bayGio) }.getOrDefault(emptyList())
-        mo.forEach { de ->
-            val phu = when {
-                !de.daBatDau ->
-                    "${de.ten} · ${de.cauIds.size} câu · khoảng ${de.phutGoiY} phút" +
-                        GiaiDe.ngayKiemTra(de)
-                !de.daNop -> {
-                    val con = de.phutGoiY - ((bayGio - de.batDau) / 60_000L).toInt()
-                    if (con >= 0) "Đang làm, còn $con phút" else "Đang làm, quá ${-con} phút"
-                }
-                else -> "Còn chụp phần tự luận"
+        mo.filter { it.daBatDau }.forEach { de ->
+            val phu = if (!de.daNop) {
+                val con = de.phutGoiY - ((bayGio - de.batDau) / 60_000L).toInt()
+                if (con >= 0) "Đang làm, còn $con phút" else "Đang làm, quá ${-con} phút"
+            } else {
+                "Còn chụp phần tự luận"
             }
             themViec(
                 hinh = R.drawable.st_ic_giai_de,
@@ -878,29 +811,32 @@ class HomeActivity : AppCompatActivity() {
                 phu = phu
             ) { GiaiDeActivity.mo(this, de.id) }
         }
-        runCatching { GiaiDe.xongHomNay(this, bayGio) }.getOrDefault(emptyList()).forEach { de ->
-            val (dung, tong) = GiaiDe.diem(this, de)
-            themViec(
-                hinh = R.drawable.st_ic_giai_de,
-                mau = R.color.ok,
-                ten = "${GiaiDe.tenDe(de)}: đúng $dung/$tong câu",
-                xong = true
-            ) { GiaiDeActivity.mo(this, de.id) }
-        }
-        GiaiDe.MON.forEach { mon ->
-            val cacPhan = PhanHoc.cuaMon(mon)
-            if (cacPhan.isEmpty() || PhanHoc.chuaChon(this, mon).size < cacPhan.size) return@forEach
-            themViec(
-                hinh = R.drawable.st_ic_giai_de,
-                mau = MatMon.mau(mon),
-                ten = GiaiDe.tenMon(mon).let { "Giải đề $it" }
-            ) {
-                ChonHocToi.hoiPhanConThieu(this, mon) {
-                    moDeNeuCan()
-                    render()
-                }
-            }
-        }
+    }
+
+    /**
+     * Mot dong "Luyện tập" thay cho nam dong cu: Lam bai tren may, On lai, Giai de, Kiem tra
+     * bai, Do tu vung (Ba Huy chot 30/9/2026). Moi mon, moi de them vao la them dong, nen
+     * khoi Viec hom nay cu dai ra. Ben trong la [LuyenTapActivity].
+     *
+     * [demSo] false thi khong ghi dong phu. Hai luc: dang choi, vi ham nay chay moi giay
+     * ma dem cau on la mot cau GROUP BY tren ca bang tra loi; va con cau can sua, vi sua bai
+     * dang lam do truoc, on lai la viec cua hom nao ranh (giu dung luat cua dong On lai cu).
+     */
+    private fun themViecLuyenTap(demSo: Boolean) {
+        val phu = if (!demSo) "" else runCatching {
+            buildList {
+                LamTrenMay.soCauOn(this@HomeActivity).takeIf { it > 0 }?.let { add("ôn $it câu") }
+                GiaiDe.dangMo(this@HomeActivity).count { !it.daBatDau }.takeIf { it > 0 }
+                    ?.let { add("$it đề đang mở") }
+                if (BoThe.tinhTrangManChinh(this@HomeActivity) == BoThe.TinhTrang.CO_THE) add("kiểm tra bài")
+            }.joinToString(" · ").replaceFirstChar { it.uppercase() }
+        }.getOrDefault("")
+        themViec(
+            hinh = R.drawable.st_ic_the_hoc,
+            mau = R.color.brand,
+            ten = "Luyện tập",
+            phu = phu
+        ) { LuyenTapActivity.mo(this) }
     }
 
     /**

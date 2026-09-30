@@ -32,18 +32,31 @@ import vn.huytl.homeworkgate.kho.Ghep
  * KHONG CO CHU NAO GIAI THICH LUAT (Ba Huy chot 29/9/2026): con tu kham pha qua sao tat dan.
  * Chu tren man chi la de bai, nhan nut, va loi giai khi da het luot.
  *
- * THU TU PHIM CO DINH TUNG CAU. Tron bang hat giong la ma cau, nen ve lai (sau lan sai dau,
- * khi bot phim nhieu) phim khong nhay cho, con khong phai tim lai tu dau.
+ * THU TU NUT GIU NGUYEN TRONG MOT LUOT, DOI SANG LUOT SAU (Ba Huy chot 30/9/2026). Tron bang
+ * mot hat giong co dinh cho ca luot, nen ve lai (sau lan sai dau, khi bot phim nhieu; hay tat
+ * man roi mo lai giua luot) phim khong nhay cho, con khong phai tim lai tu dau. Truoc ngay do
+ * hat giong chi la ma cau, nen lam lai sau 24 gio va on lai sau 3, 10, 20, 30 ngay deu ra dung
+ * thu tu cu: con co the nho vi tri nut thay vi nho dap an. Nay hat giong la ma cau cong so
+ * luot da xong ([hatLuot]); o man Giai de la ma de cong ma cau ([hatDe]), de ca luc xem lai de
+ * da nop van dung thu tu con da thay.
+ *
+ * Trac nghiem cung tron, va chu A, B, C, D danh lai theo thu tu moi: [chon] va [Ghep.Chon.dap]
+ * van la chi so trong sach, chi cho hien moi doi. Du lieu khong co phuong an nao nhac chu cai
+ * cua phuong an khac ("Cả A và B"), tools/ghep/kiem.py canh bao neu co. Cau Dung/Sai thi khong
+ * tron, nut Dung luon dung truoc: doi cho hai nut khong lam con kho nho hon, chi de bam nham.
+ * Hang phim co ban cua cau bieu thuc (so, dau) cung giu nguyen nhu mot ban phim.
  */
 class KhungGhep(
     private val khung: LinearLayout,
     val muc: LamTrenMay.Muc,
+    /** Hat giong tron thu tu nut cua luot nay, xem [hatLuot] va [hatDe]. */
+    hatTron: Int = hatLuot(muc),
     /** Goi moi lan cau tra loi doi, de ben goi xoa dong bao loi cu. */
     private val khiDoi: () -> Unit = {}
 ) {
     private val ct: Context = khung.context
     private val g: Ghep = muc.ghep
-    private val tron = Random(muc.cau.id.hashCode())
+    private val tron = Random(hatTron)
 
     private var botNhieu = false
     private var daXong = false
@@ -80,6 +93,12 @@ class KhungGhep(
         val b = g as Ghep.Buoc
         (b.buoc.map { Muc2(it, false) } + b.nhieu.map { Muc2(it, true) }).shuffled(tron)
     }
+    /** Thu tu hien cac phuong an trac nghiem: phan tu thu k la chi so trong sach cua nut k. */
+    private val thuTuChon: List<Int> by lazy { (g as Ghep.Chon).cac.indices.shuffled(tron) }
+
+    /** Chu cai dang hien cua phuong an [i] (chi so trong sach). */
+    private fun chuCai(i: Int): Char = 'A' + thuTuChon.indexOf(i)
+
     private val tronO: Map<Pair<Int, Int>, List<String>> by lazy {
         val o = g as Ghep.O
         o.cacOChon.associateWith { (i, k) ->
@@ -171,7 +190,9 @@ class KhungGhep(
 
     /** Cau tra loi dang chu, ghi vao so cai de Ba Huy xem lai. */
     fun traLoi(): String = when (g) {
-        is Ghep.Chon -> chon.sorted().joinToString("; ") { "${'A' + it}. ${boThe(g.cac[it])}" }
+        // Chu cai con da thay tren nut luot nay, kem chu cua phuong an: chu cai doi theo luot.
+        is Ghep.Chon -> chon.sortedBy { thuTuChon.indexOf(it) }
+            .joinToString("; ") { "${chuCai(it)}. ${boThe(g.cac[it])}" }
         is Ghep.DungSai -> chonDs?.let { if (it) g.nhan[0] else g.nhan[1] }.orEmpty()
         is Ghep.Chu -> g.truoc + phimDaGo.joinToString("")
         is Ghep.Cau -> theDaChon.joinToString(" ") { cacThe[it].chu }
@@ -183,8 +204,8 @@ class KhungGhep(
     // ------------------------------------------------------------------ tung kieu
 
     private fun veChon(c: Ghep.Chon) {
-        c.cac.forEachIndexed { i, pa ->
-            khung.addView(nutRong("${'A' + i}. ", pa, i in chon, mauDung(i in c.dap)) {
+        thuTuChon.forEachIndexed { vt, i ->
+            khung.addView(nutRong("${'A' + vt}. ", c.cac[i], i in chon, mauDung(i in c.dap)) {
                 // Cau nhieu dap an: bam lan nua la bo chon. Cau mot dap an: bam la doi.
                 if (c.nhieuDap) {
                     if (!chon.remove(i)) chon += i
@@ -389,7 +410,7 @@ class KhungGhep(
         }
         hop.addView(chu("Lời giải", 14f, mau = R.color.ink_soft, dam = true))
         val cac: List<String> = when (g) {
-            is Ghep.Chon -> g.dap.sorted().map { "${'A' + it}. ${g.cac[it]}" }
+            is Ghep.Chon -> g.dap.sortedBy { thuTuChon.indexOf(it) }.map { "${chuCai(it)}. ${g.cac[it]}" }
             is Ghep.DungSai -> listOf(if (g.dap) g.nhan[0] else g.nhan[1])
             is Ghep.Chu -> listOf(g.dap.first())
             is Ghep.Cau -> listOf(g.dap.first())
@@ -502,6 +523,22 @@ class KhungGhep(
     private fun Int.dp(): Int = (this * ct.resources.displayMetrics.density).toInt()
 
     companion object {
+        /**
+         * Hat tron cua mot luot o man lam bai tren may: ma cau cong so luot da xong.
+         *
+         * Luot dang lam chua ghi vao so cai (chi nam o [vn.huytl.homeworkgate.data.LuotDangLam]
+         * toi khi xong), nen trong luot so luot dung yen: tat man roi mo lai giua luot van dung
+         * thu tu cu. Xong luot la them mot dong, luot sau (lam lai sau 24 gio, on lai) tron khac.
+         */
+        fun hatLuot(muc: LamTrenMay.Muc): Int = muc.cau.id.hashCode() * 31 + muc.soLuot
+
+        /**
+         * Hat tron cua mot cau trong de Giai de: ma de cong ma cau. Cau trong de chi ghi vao so
+         * cai luc nop ca de, nen khong lay theo so luot duoc: nop xong thi so luot tang, va man
+         * xem lai de se hien thu tu khac voi luc con lam. Moi de mot thu tu, de sau khac.
+         */
+        fun hatDe(deId: String, cauId: String): Int = "$deId/$cauId".hashCode()
+
         /**
          * Chu co the <u>, <b> va xuong dong sang chu hien duoc. Cac dau <, >, & khac trong
          * chu (bat dang thuc, mui ten) phai giu nguyen, nen thoat het roi tra lai hai the.

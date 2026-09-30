@@ -129,6 +129,37 @@ object BoThe {
         return kho.thuTuCuoiDenBaiSo(bo, so) ?: -1
     }
 
+    /**
+     * Moc cat mot bo the: [denThuTu] voi bo mot phan (KHTN), [chiBai] voi bo nhieu phan.
+     * Dua thang vao [KhoBai.cacTheDenLuot], [KhoBai.conTheDenLuot].
+     */
+    data class Moc(val denThuTu: Int = Int.MAX_VALUE, val chiBai: Set<String>? = null) {
+        /** Lop chua hoc bai nao trong bo: khong the nao lot qua. */
+        val rong: Boolean get() = denThuTu < 0 || chiBai?.isEmpty() == true
+    }
+
+    /**
+     * Moc cua bo [bo], null khi con phan nao chua chon (hoi lai, khong doan).
+     *
+     * Bo Toan dung hai phan Dai so va Hinh hoc tu 30/9/2026 ([PhanHoc.cuaBoThe]). Bai cua hai
+     * phan xen nhau trong sach (Bai 1-9 dai so, 10-17 hinh, 18-32 dai so...), nen khong cat
+     * bang thu tu the duoc nhu [denThuTu]: lay dung cac bai lop da hoc cua ca hai phan. Bo
+     * mot phan thi van di [denThuTu], khoa prefs cua no la ma bo nhu truoc.
+     */
+    fun mocCua(context: Context, bo: String): Moc? {
+        val cacPhan = PhanHoc.cuaBoThe(bo)
+        if (cacPhan.size <= 1) return denThuTu(context, bo)?.let { Moc(denThuTu = it) }
+        val daHoc = mutableSetOf<Int>()
+        for (p in cacPhan) {
+            val den = PhanHoc.hocToi(context, p) ?: return null
+            daHoc += p.cacSoToi(den)
+        }
+        return Moc(
+            chiBai = KhoBai.get(context).cacBaiTrongBoThe(bo)
+                .filter { PhanHoc.soBai(it)?.let { so -> so in daHoc } == true }.toSet()
+        )
+    }
+
     /** Dong Kiem tra bai tren man chinh dang o tinh trang nao, xem [tinhTrangManChinh]. */
     enum class TinhTrang {
         /** Co the den luot trong phan lop da hoc. */
@@ -145,12 +176,15 @@ object BoThe {
     }
 
     /**
-     * Man chinh nen hien dong Kiem tra bai the nao.
+     * Dong Kiem tra bai nen hien the nao. Tu 30/9/2026 dong do nam o trang Luyen tap
+     * ([vn.huytl.homeworkgate.ui.LuyenTapActivity]), man chinh chi hoi co the den luot khong
+     * de ghi vao dong "Luyện tập".
      *
      * Truoc 25/9/2026 dong nay chi hien khi con the den luot. Tu khi cat bo the o bai con
      * chon, lam vay la co ngo cut: con chon Bai 4, lam het the cua Bai 3 va Bai 4, dong
      * bien mat - va hom sau lop hoc Bai 6 thi con khong con cua nao de vao chon lai. Nen
-     * het the ma con bai phia sau thi dong van hien, o dang da xong.
+     * het the ma con bai phia sau thi dong van hien, o dang da xong. Tu 30/9/2026 trang Luyen
+     * tap con co khoi "Lớp đã học tới" rieng, nhung dong van giu nhu vay.
      *
      * Khong goi [bang] roi dem: man chinh ve lai moi giay khi dong ho dang dem, ma
      * [bang] quet tung the cua moi bo ba lan - den luot, tong so, da thuoc - trong khi
@@ -160,8 +194,8 @@ object BoThe {
     fun tinhTrangManChinh(context: Context): TinhTrang {
         val kho = KhoBai.get(context)
         val cacBo = BO.filter { kho.soTheCua(it.bo) > 0 }
-        val moc = cacBo.map { it to denThuTu(context, it.bo) }
-        if (moc.any { (bo, den) -> den != null && kho.conTheDenLuot(bo.bo, denThuTu = den) }) {
+        val moc = cacBo.map { it to mocCua(context, it.bo) }
+        if (moc.any { (bo, m) -> m != null && kho.conTheDenLuot(bo.bo, denThuTu = m.denThuTu, chiBai = m.chiBai) }) {
             return TinhTrang.CO_THE
         }
         if (moc.any { it.second == null }) return TinhTrang.CHUA_CHON
@@ -176,9 +210,14 @@ object BoThe {
      * con ca bo phia sau.
      */
     private fun conBaiSau(context: Context, bo: String): Boolean {
-        val bai = HocToi.baiCua(context, bo) ?: return true
         val cac = KhoBai.get(context).cacBaiTrongBoThe(bo)
         if (cac.isEmpty()) return false
+        // Bo nhieu phan (Toan): con bai nao chua nam trong phan da hoc cua hai phan.
+        if (PhanHoc.cuaBoThe(bo).size > 1) {
+            val chi = mocCua(context, bo)?.chiBai ?: return true
+            return cac.any { it !in chi }
+        }
+        val bai = HocToi.baiCua(context, bo) ?: return true
         // So theo so bai: con co the chon mot bai khong co the nao, nam giua hai bai co the.
         val so = PhanHoc.soBai(bai)
         val cuoi = PhanHoc.soBai(cac.last())
@@ -190,15 +229,29 @@ object BoThe {
     fun bang(context: Context): List<BoDaNap> {
         val kho = KhoBai.get(context)
         return BO.map { bo ->
-            val den = denThuTu(context, bo.bo)
+            val m = mocCua(context, bo.bo)
+            val nhieuPhan = PhanHoc.cuaBoThe(bo.bo).size > 1
+            val hocToi = when {
+                m == null -> null
+                !nhieuPhan -> HocToi.baiCua(context, bo.bo)
+                // Bo nhieu phan: bai cuoi da hoc theo thu tu sach, chi de biet co hay khong.
+                else -> kho.cacBaiTrongBoThe(bo.bo).lastOrNull { it in m.chiBai.orEmpty() }
+                    ?: HocToi.CHUA_HOC_BAI_NAO
+            }
             BoDaNap(
                 bo = bo.bo,
                 mon = bo.mon,
                 ten = bo.ten,
-                soDenLuot = if (den == null) 0 else kho.soTheDenLuot(bo.bo, denThuTu = den),
+                soDenLuot = if (m == null) 0
+                else kho.soTheDenLuot(bo.bo, denThuTu = m.denThuTu, chiBai = m.chiBai),
                 tongThe = kho.soTheCua(bo.bo),
                 soThuoc = kho.soTheThuoc(bo.bo),
-                hocToi = if (den == null) null else HocToi.baiCua(context, bo.bo)
+                hocToi = hocToi,
+                moTaHocToi = when {
+                    hocToi == null -> null
+                    nhieuPhan -> "Lớp: " + PhanHoc.moTa(context, bo.mon)
+                    else -> "Lớp ${HocToi.moTaBai(hocToi)}"
+                }
             )
         }.filter { it.tongThe > 0 }
     }

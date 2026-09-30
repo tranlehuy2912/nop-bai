@@ -36,6 +36,12 @@ class ManualGiaiDe {
         val khoa = mapOf("toan8ct" to "toan", "khtn8hoa" to "hoa", "khtn8li" to "li", "khtn8sinh" to "sinh")
         mac.forEach { (ma, macDinh) ->
             val so = args.getString(khoa.getValue(ma))?.toIntOrNull() ?: macDinh
+            // Toan hai phan tu 30/9/2026: so bai cua ca sach doi ra moc hai phan.
+            if (ma == "toan8ct") {
+                MocToanThu.dat(context, so)
+                println("MANUAL_GIAIDE: moc Toan = ${MocToanThu.luu(context)}")
+                return@forEach
+            }
             val phan = PhanHoc.theoMa(ma) ?: return@forEach
             val ten = if (so == 0) HocToi.CHUA_HOC_BAI_NAO
             else PhanHoc.cacBai(context, phan).firstOrNull { PhanHoc.soBai(it) == so } ?: return@forEach

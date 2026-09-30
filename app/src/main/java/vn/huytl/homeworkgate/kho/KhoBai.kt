@@ -883,12 +883,16 @@ class KhoBai private constructor(context: Context) :
      *   bai lop da hoc toi. Mac dinh la ca bo. Ben man hinh lay so nay tu
      *   [BoThe.denThuTu]; truoc 25/9/2026 khong co moc nay, va con bi hoi ca cong thuc
      *   cua nhung bai o truong chua day.
+     * @param chiBai chi xet the cua cac bai nay, null la khong loc. Cho bo Toan tu 30/9/2026:
+     *   Dai so va Hinh hoc hai moc, bai cua hai phan xen nhau trong sach nen khong cat bang
+     *   mot [denThuTu] duoc. Xem [BoThe.mocCua].
      */
     fun cacTheDenLuot(
         bo: String,
         gioiHan: Int,
         bayGio: Long = System.currentTimeMillis(),
-        denThuTu: Int = Int.MAX_VALUE
+        denThuTu: Int = Int.MAX_VALUE,
+        chiBai: Set<String>? = null
     ): List<TheHoc> = readableDatabase.rawQuery(
             """
             SELECT t.*,
@@ -900,6 +904,7 @@ class KhoBai private constructor(context: Context) :
         ).use { c ->
             buildList {
                 while (c.moveToNext()) {
+                    if (chiBai != null && c.getString(c.getColumnIndexOrThrow("bai")) !in chiBai) continue
                     val soDung = c.getInt(c.getColumnIndexOrThrow("so_dung"))
                     val denLuot = if (soDung == 0) true else {
                         val hen = mocHen(c.getLong(c.getColumnIndexOrThrow("lan_dung")), soDung - 1)
@@ -941,8 +946,9 @@ class KhoBai private constructor(context: Context) :
     fun soTheDenLuot(
         bo: String,
         bayGio: Long = System.currentTimeMillis(),
-        denThuTu: Int = Int.MAX_VALUE
-    ): Int = cacTheDenLuot(bo, Int.MAX_VALUE, bayGio, denThuTu).size
+        denThuTu: Int = Int.MAX_VALUE,
+        chiBai: Set<String>? = null
+    ): Int = cacTheDenLuot(bo, Int.MAX_VALUE, bayGio, denThuTu, chiBai).size
 
     /**
      * Bo nay con the nao den luot khong. Cung dinh nghia voi [cacTheDenLuot], ca moc
@@ -957,8 +963,11 @@ class KhoBai private constructor(context: Context) :
     fun conTheDenLuot(
         bo: String,
         bayGio: Long = System.currentTimeMillis(),
-        denThuTu: Int = Int.MAX_VALUE
+        denThuTu: Int = Int.MAX_VALUE,
+        chiBai: Set<String>? = null
     ): Boolean {
+        // Loc theo bai thi khong co duong hoi nhanh bang SQL; bo Toan vai tram the, doc het.
+        if (chiBai != null) return cacTheDenLuot(bo, 1, bayGio, denThuTu, chiBai).isNotEmpty()
         val coTheChuaDung = readableDatabase.rawQuery(
             """
             SELECT 1 FROM the_hoc t WHERE t.bo = ? AND t.thu_tu <= ?

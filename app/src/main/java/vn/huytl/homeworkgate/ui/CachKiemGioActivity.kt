@@ -165,7 +165,7 @@ class CachKiemGioActivity : AppCompatActivity() {
          * Cau dang cho sua la gio dang nam san tren ban, nhung chi hom chua du tran anh: du
          * roi thi cau sai chuyen sang lam tren may (Ba Huy chot 29/9/2026).
          */
-        val canSua = SoCaiBai.dangChoSua(this)
+        val canSua = SoCaiBai.canSua(this)
         if (canSua.isNotEmpty() && !hetTranAnh) {
             themDong(
                 box,

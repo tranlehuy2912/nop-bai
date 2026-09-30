@@ -432,6 +432,8 @@ BO_TEST = [
     ("LuatGhepTest", "Luật sao của bài làm trên máy"),
     # -- so sach trong may --
     ("SoCaiBaiTest", "Sổ cái bài đã nộp"),
+    ("PhanToanTest", "Toán hai phần Đại số, Hình học"),
+    ("CanSuaTest", "Câu cần sửa: hết hạn, sang làm trên máy, Ba Huy bỏ"),
     ("BaiGuiHongTest", "Lần nộp gửi hỏng, giữ ảnh để gửi lại"),
     ("VoDanDoTest", "Trang vở dặn dò đã soát"),
     ("NhacBaiTest", "Nhắc bài theo tiết sau của từng môn"),
@@ -450,6 +452,8 @@ BO_TEST = [
     ("NganHangVanTest", "Hai quyển Ngữ văn 8"),
     ("GiaiDeTest", "Giải đề và làm thêm theo bài đã học"),
     ("GhepTest", "Câu làm trên máy: gõ ra được, chấm đúng"),
+    ("HangSaoTest", "Ba dạng sao: rỗng, xám, vàng"),
+    ("KhungGhepTest", "Thứ tự nút: giữ trong một lượt, trộn lại lượt sau"),
     ("LamTrenMayTest", "Bài làm trên máy: chọn câu, làm lại, ôn, cộng phút"),
     ("HocThuocTest", "Đường kiểm tra bài"),
     ("TuVungTest", "Đường từ vựng"),

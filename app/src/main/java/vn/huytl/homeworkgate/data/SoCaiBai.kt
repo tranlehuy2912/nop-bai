@@ -146,6 +146,36 @@ object SoCaiBai {
         return kho.dangChoSua(tu).filter { moc0GioCua(it.luc) !in ngayGoi }.map { it.sangCauSo() }
     }
 
+    /**
+     * Lan sai con giu tren danh sach cua con bao nhieu ngay (Ba Huy chot 30/9/2026).
+     *
+     * So cai van nho mot nam ([GIU_NGAY]) de chan nop lai lay gio lan hai. Nhung dong
+     * "Có N câu cần sửa" dung chung han do thi cu dai ra: ngay 30/9/2026 no ghi 19 cau, co cau
+     * cua trang vo con khong con giu. Mot tuan la du cho tiet sau cua moi mon.
+     */
+    const val HIEN_SUA_NGAY = 7
+
+    /**
+     * Cac cau con phai tu chup lai de sua: danh sach tren man chinh, man Ket qua, va cho
+     * khoa cau o man chon bai. Bot tu [dangChoSua] ba loai (30/9/2026):
+     *  1. lan sai cu hon [HIEN_SUA_NGAY] ngay;
+     *  2. cau lam duoc tren may, da qua 24 gio: tu luc do no nam o duong Lam bai tren may
+     *     ([LamTrenMay.cauLamThem]), hien them o day la dem mot cau hai lan;
+     *  3. cau Ba Huy da bo bang lenh BOSUA ([BoSua]).
+     *
+     * [SuaCham] van dung [dangChoSua]: Ba Huy sua cham mot bai tuan truoc thi van phai duoc,
+     * cau do khong con tren danh sach cua con khong co nghia la may cham dung.
+     */
+    fun canSua(context: Context, now: Long = System.currentTimeMillis()): List<CauSo> {
+        val tuan = now - HIEN_SUA_NGAY * 24 * 60 * 60_000L
+        val con = dangChoSua(context, now).filter { it.luc >= tuan && !BoSua.daBo(context, it.khoa, it.luc) }
+        if (con.isEmpty()) return con
+        val trenMay = LamTrenMay.lamDuocTrenMay(context, con.filter { now >= it.luc + MOT_NGAY }.map { it.khoa })
+        return con.filterNot { it.khoa in trenMay }
+    }
+
+    private const val MOT_NGAY = 24L * 60 * 60_000L
+
     /** Cau nay da duoc tra gio lan nao chua, hoi bang de bai (bai ngoai sach). */
     fun daTraGio(context: Context, de: String, now: Long = System.currentTimeMillis()): Boolean {
         val k = chuanHoa(de)

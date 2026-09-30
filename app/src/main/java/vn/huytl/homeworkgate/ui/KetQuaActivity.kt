@@ -129,7 +129,7 @@ class KetQuaActivity : AppCompatActivity() {
         val han = System.currentTimeMillis() - 365L * 24 * 60 * 60_000L
         return runCatching {
             TinhTrang(
-                conSua = SoCaiBai.dangChoSua(this).map { it.khoa }.toSet(),
+                conSua = SoCaiBai.canSua(this).map { it.khoa }.toSet(),
                 choCham = KhaiChoCham.cauChoCham(this),
                 daXong = KhoBai.get(this).daXongTrong(khoa, han)
             )

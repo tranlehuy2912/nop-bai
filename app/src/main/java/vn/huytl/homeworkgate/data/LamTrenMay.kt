@@ -39,13 +39,37 @@ object LamTrenMay {
 
     enum class Loai { LAM_THEM, ON, LUYEN, GIAI_DE }
 
-    /** Mot cau da doc san cach ghep, kem tinh trang vong hien tai. */
-    data class Muc(val cau: CauHoi, val ghep: Ghep, val tinhTrang: LuatGhep.TinhTrang)
+    /**
+     * Mot cau da doc san cach ghep, kem tinh trang vong hien tai.
+     *
+     * [soLuot] la so luot tren may da xong cua cau (moi luot mot dong trong so cai). Khung
+     * ghep lay no lam hat tron thu tu nut: trong mot luot so nay dung yen, luot sau thi khac,
+     * xem [vn.huytl.homeworkgate.ui.KhungGhep.hatLuot].
+     */
+    data class Muc(
+        val cau: CauHoi,
+        val ghep: Ghep,
+        val tinhTrang: LuatGhep.TinhTrang,
+        val soLuot: Int = 0
+    )
 
     fun muc(context: Context, cau: CauHoi): Muc? {
         if (!cau.lamTrenMay) return null
         val g = Ghep.doc(cau.ghep) ?: return null
-        return Muc(cau, g, LuatGhep.tinhTrang(KhoBai.get(context).cacLuotTrenMay(cau.id)))
+        val cacLuot = KhoBai.get(context).cacLuotTrenMay(cau.id)
+        return Muc(cau, g, LuatGhep.tinhTrang(cacLuot), cacLuot.size)
+    }
+
+    /**
+     * Trong cac cau [ids], cau nao lam duoc tren may: co trong ngan hang, thuoc [MON], da
+     * soan ghep. Cung dieu kien voi buoc 2 cua [cauLamThem], de cau roi danh sach can sua
+     * ([SoCaiBai.canSua]) la cau con thay o Lam bai tren may.
+     */
+    fun lamDuocTrenMay(context: Context, ids: List<String>): Set<String> {
+        if (ids.isEmpty()) return emptySet()
+        return KhoBai.get(context).cacCauTheoId(ids)
+            .filter { it.mon in MON && it.lamTrenMay && Ghep.doc(it.ghep) != null }
+            .map { it.id }.toSet()
     }
 
     // ------------------------------------------------------------------ chon cau
@@ -130,7 +154,7 @@ object LamTrenMay {
         return cac.take(gioiHan)
     }
 
-    /** So cau dang cho on, cho dong "Ôn lại N câu đến hẹn" ngoai man chinh. */
+    /** So cau dang cho on, cho dong On lai o trang Luyen tap va dong "Luyện tập" ngoai man chinh. */
     fun soCauOn(context: Context, bayGio: Long = System.currentTimeMillis()): Int =
         runCatching { cauOn(context, Int.MAX_VALUE, bayGio).size }.getOrDefault(0)
 
@@ -142,6 +166,32 @@ object LamTrenMay {
             .mapNotNull { muc(context, it) }
             .take(gioiHan)
     }
+
+    /**
+     * So sao tot nhat cua cau trong vong dang lam, cho dong "Lần trước" o man lam bai (Ba Huy
+     * chot 30/9/2026). null la khong hien: cau chua lam tren may lan nao, hay luot nay mo vong
+     * moi (on lai den hen: vong moi duoc tron so sao, khong co moc nao de vuot).
+     *
+     * La sao TOT NHAT chu khong phai luot gan nhat, vi phut chi cong phan hon lan tot nhat
+     * ([LuatGhep.phutCong]). Luot dau 2 sao, luot sau 1 sao: hien "lần trước 1 sao" thi con tuong
+     * lan nay duoc 2 sao la co phut, ma that ra +0. Hien moc 2 thi "+N" luon bang so sao vuot moc.
+     *
+     * Dung chung dieu kien vong moi voi [ghi] ([moVongMoi]), de dong nay khong noi khac luat.
+     */
+    fun saoLanTruoc(
+        context: Context,
+        muc: Muc,
+        loai: Loai,
+        bayGio: Long = System.currentTimeMillis()
+    ): Int? {
+        if (muc.tinhTrang.vong < 0) return null
+        if (moVongMoi(KhoBai.get(context), muc.cau.id, loai, bayGio)) return null
+        return muc.tinhTrang.totNhat
+    }
+
+    /** Luot nay co mo vong sao moi khong: chi khi on lai mot cau dang den hen. */
+    private fun moVongMoi(kho: KhoBai, cauId: String, loai: Loai, bayGio: Long): Boolean =
+        loai == Loai.ON && kho.denHenOn(cauId, bayGio - MOT_NAM, bayGio)
 
     // ------------------------------------------------------------------ ghi va cong
 
@@ -169,7 +219,7 @@ object LamTrenMay {
     ): Ghi {
         val kho = KhoBai.get(context)
         val tt = LuatGhep.tinhTrang(kho.cacLuotTrenMay(muc.cau.id))
-        val vongMoi = loai == Loai.ON && kho.denHenOn(muc.cau.id, bayGio - MOT_NAM, bayGio)
+        val vongMoi = moVongMoi(kho, muc.cau.id, loai, bayGio)
         val vong = when {
             tt.vong < 0 -> 0
             vongMoi -> tt.vong + 1

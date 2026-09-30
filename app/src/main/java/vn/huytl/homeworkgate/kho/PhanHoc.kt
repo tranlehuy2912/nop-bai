@@ -13,11 +13,19 @@ import android.content.Context
  * sach cua bo the thi con khong noi duoc "lop dang o Bai 7", ma SBT Bai 7 cung khong
  * bao gio duoc ra.
  *
- * Nen moc tinh theo PHAN: Toan mot phan (Bai 1-39), KHTN ba phan Hoa, Li, Sinh, vi
- * truong day ba phan song song voi ba giao vien. Hop chon liet ke du cac bai cua phan,
- * lay ten tu SGK. Ma phan trung ma bo the cung phan, nen khoa trong prefs khong doi va
- * lua chon cu cua con giu nguyen - xem [HocToi]. Bo the cat o bai con chon theo SO bai,
- * xem [BoThe.denThuTu].
+ * Nen moc tinh theo PHAN: KHTN ba phan Hoa, Li, Sinh, vi truong day ba phan song song voi
+ * ba giao vien. Hop chon liet ke du cac bai cua phan, lay ten tu SGK. Ma phan KHTN trung ma
+ * bo the cung phan, nen khoa trong prefs khong doi va lua chon cu cua con giu nguyen - xem
+ * [HocToi]. Bo the cat o bai con chon theo SO bai, xem [BoThe.denThuTu].
+ *
+ * TOAN HAI PHAN (Ba Huy chot 30/9/2026): Dai so va Hinh hoc, cung day song song. Khac KHTN,
+ * bai cua moi phan khong lien nhau trong sach: Dai so la Chuong I, II (Bai 1-9) va VI, VII
+ * (Bai 21-29), Hinh hoc la Chuong III, IV (Bai 10-17) va IX, X (Bai 33-39). Hai chuong
+ * Thong ke (Bai 18-20) va Xac suat (Bai 30-32) tinh theo Dai so. Nen moi phan la mot danh
+ * sach khoang [Phan.cacKhoang], khong phai mot khoang. Truoc ngay do Toan la mot phan ma
+ * "toan8ct" (Bai 1-39); lua chon cu do bi bo, con chon lai hai phan moi (Ba Huy chon hoi
+ * lai thay vi tu suy tu moc cu). Bo the Toan van mot bo, cat theo ca hai moc, xem
+ * [BoThe.mocCua].
  */
 object PhanHoc {
 
@@ -28,12 +36,18 @@ object PhanHoc {
         val ten: String,
         /** Ten ngan cho dong mo ta gop ca mon: "Hoá", "Lí", "Sinh". */
         val tenNgan: String,
-        /** Bai dau va bai cuoi cua phan, theo so in trong SGK. */
-        val tu: Int,
-        val den: Int,
+        /** Cac khoang so bai cua phan, theo so in trong SGK. */
+        val cacKhoang: List<IntRange>,
         /** Quyen SGK de lay ten cac bai cho hop chon. */
-        val sgk: List<String>
-    )
+        val sgk: List<String>,
+        /** Bo the hoc thuoc cua phan, null khi phan khong co bo nao (Sinh). */
+        val boThe: String? = null
+    ) {
+        fun chua(so: Int): Boolean = cacKhoang.any { so in it }
+
+        /** Cac so bai cua phan tu bai dau toi [den], theo thu tu sach. */
+        fun cacSoToi(den: Int): List<Int> = cacKhoang.flatMap { it }.filter { it <= den }
+    }
 
     /**
      * KHTN 8 Ket noi tri thuc: Chuong I, II la Hoa (Bai 1-12, ke ca bai mo dau ve hoa
@@ -41,10 +55,17 @@ object PhanHoc {
      * VIII la Sinh (Bai 30-47).
      */
     val TAT_CA = listOf(
-        Phan("toan8ct", "Toán", "Toán 8", "Toán", 1, 39, listOf("toan8t1", "toan8t2")),
-        Phan("khtn8hoa", "Khoa học tự nhiên", "KHTN 8 phần Hoá học", "Hoá", 1, 12, listOf("khtn8")),
-        Phan("khtn8li", "Khoa học tự nhiên", "KHTN 8 phần Vật lí", "Lí", 13, 29, listOf("khtn8")),
-        Phan("khtn8sinh", "Khoa học tự nhiên", "KHTN 8 phần Sinh học", "Sinh", 30, 47, listOf("khtn8"))
+        Phan(
+            "toan8ds", "Toán", "Toán 8 Đại số", "Đại số", listOf(1..9, 18..32),
+            listOf("toan8t1", "toan8t2"), boThe = "toan8ct"
+        ),
+        Phan(
+            "toan8hh", "Toán", "Toán 8 Hình học", "Hình học", listOf(10..17, 33..39),
+            listOf("toan8t1", "toan8t2"), boThe = "toan8ct"
+        ),
+        Phan("khtn8hoa", "Khoa học tự nhiên", "KHTN 8 phần Hoá học", "Hoá", listOf(1..12), listOf("khtn8"), "khtn8hoa"),
+        Phan("khtn8li", "Khoa học tự nhiên", "KHTN 8 phần Vật lí", "Lí", listOf(13..29), listOf("khtn8"), "khtn8li"),
+        Phan("khtn8sinh", "Khoa học tự nhiên", "KHTN 8 phần Sinh học", "Sinh", listOf(30..47), listOf("khtn8"))
     )
 
     fun cuaMon(mon: String): List<Phan> = TAT_CA.filter { it.mon == mon }
@@ -52,7 +73,10 @@ object PhanHoc {
     fun theoMa(ma: String): Phan? = TAT_CA.firstOrNull { it.ma == ma }
 
     /** Phan chua bai so [so] cua mon [mon]. */
-    fun cuaBai(mon: String, so: Int): Phan? = cuaMon(mon).firstOrNull { so in it.tu..it.den }
+    fun cuaBai(mon: String, so: Int): Phan? = cuaMon(mon).firstOrNull { it.chua(so) }
+
+    /** Cac phan dung bo the [bo]: KHTN mot phan, bo Toan hai phan. */
+    fun cuaBoThe(bo: String): List<Phan> = TAT_CA.filter { it.boThe == bo }
 
     /**
      * "Bài 12. Muối" ra 12. Muc khong phai mot bai ("Ôn tập chương I", "Luyện tập chung
@@ -78,7 +102,7 @@ object PhanHoc {
     fun cacBai(context: Context, phan: Phan): List<String> =
         phan.sgk.flatMap { NganHang.cacBai(context, it) }
             .map { it.bai }
-            .filter { ten -> soBai(ten)?.let { it in phan.tu..phan.den } == true }
+            .filter { ten -> soBai(ten)?.let { phan.chua(it) } == true }
             .distinct()
 
     /**
@@ -119,7 +143,7 @@ object PhanHoc {
                 if (chiPhanDaChon) continue else return null
             }
             coChon = true
-            if (den >= p.tu) ra.addAll(p.tu..minOf(den, p.den))
+            ra.addAll(p.cacSoToi(den))
         }
         return if (coChon) ra else null
     }

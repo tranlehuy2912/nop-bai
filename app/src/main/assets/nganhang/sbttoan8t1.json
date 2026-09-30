@@ -2,7 +2,7 @@
  "nguon": "sbttoan8t1",
  "mon": "Toán",
  "ten": "SBT Toán 8 — tập một",
- "ban": 5,
+ "ban": 6,
  "cac_bai": [
   {
    "chuong": "Chương I. Đa thức",
@@ -30,7 +30,8 @@
           ],
           "sai": [
            "Không phải"
-          ]
+          ],
+          "hai": true
          }
         ]
        },
@@ -43,7 +44,8 @@
           ],
           "sai": [
            "Không phải"
-          ]
+          ],
+          "hai": true
          }
         ]
        },
@@ -56,7 +58,8 @@
           ],
           "sai": [
            "Là đơn thức"
-          ]
+          ],
+          "hai": true
          }
         ]
        },
@@ -69,7 +72,8 @@
           ],
           "sai": [
            "Không phải"
-          ]
+          ],
+          "hai": true
          }
         ]
        },
@@ -82,7 +86,8 @@
           ],
           "sai": [
            "Không phải"
-          ]
+          ],
+          "hai": true
          }
         ]
        },
@@ -95,7 +100,8 @@
           ],
           "sai": [
            "Là đơn thức"
-          ]
+          ],
+          "hai": true
          }
         ]
        },
@@ -108,7 +114,8 @@
           ],
           "sai": [
            "Không phải"
-          ]
+          ],
+          "hai": true
          }
         ]
        }
@@ -151,7 +158,8 @@
            "Đã thu gọn"
           ],
           "sai": [
-           "Thu gọn thành √3x²y"
+           "Thu gọn thành √3x²y",
+           "Thu gọn thành (1 + √2)xy²"
           ]
          }
         ]
@@ -178,7 +186,8 @@
            "Đã thu gọn"
           ],
           "sai": [
-           "Chưa thu gọn"
+           "Chưa thu gọn",
+           "Thu gọn thành 1,5x²y"
           ]
          }
         ]
@@ -222,7 +231,8 @@
           ],
           "sai": [
            "nhóm x²y"
-          ]
+          ],
+          "hai": true
          }
         ]
        },
@@ -235,7 +245,8 @@
           ],
           "sai": [
            "nhóm xy²"
-          ]
+          ],
+          "hai": true
          }
         ]
        },
@@ -248,7 +259,8 @@
           ],
           "sai": [
            "nhóm xy²"
-          ]
+          ],
+          "hai": true
          }
         ]
        },
@@ -261,7 +273,8 @@
           ],
           "sai": [
            "nhóm x²y"
-          ]
+          ],
+          "hai": true
          }
         ]
        },
@@ -274,7 +287,8 @@
           ],
           "sai": [
            "nhóm x²y"
-          ]
+          ],
+          "hai": true
          }
         ]
        },
@@ -644,7 +658,8 @@
           ],
           "sai": [
            "Không phải"
-          ]
+          ],
+          "hai": true
          }
         ]
        },
@@ -657,7 +672,8 @@
           ],
           "sai": [
            "Là đa thức"
-          ]
+          ],
+          "hai": true
          }
         ]
        },
@@ -670,7 +686,8 @@
           ],
           "sai": [
            "Không phải"
-          ]
+          ],
+          "hai": true
          }
         ]
        },
@@ -683,7 +700,8 @@
           ],
           "sai": [
            "Là đa thức"
-          ]
+          ],
+          "hai": true
          }
         ]
        },
@@ -696,7 +714,8 @@
           ],
           "sai": [
            "Không phải"
-          ]
+          ],
+          "hai": true
          }
         ]
        }
@@ -758,7 +777,8 @@
           ],
           "sai": [
            "Không"
-          ]
+          ],
+          "hai": true
          }
         ]
        },
@@ -771,7 +791,8 @@
           ],
           "sai": [
            "Có"
-          ]
+          ],
+          "hai": true
          }
         ]
        },
@@ -784,7 +805,8 @@
           ],
           "sai": [
            "Có"
-          ]
+          ],
+          "hai": true
          }
         ]
        },
@@ -797,7 +819,8 @@
           ],
           "sai": [
            "Không"
-          ]
+          ],
+          "hai": true
          }
         ]
        },
@@ -810,7 +833,8 @@
           ],
           "sai": [
            "Không"
-          ]
+          ],
+          "hai": true
          }
         ]
        },
@@ -823,7 +847,8 @@
           ],
           "sai": [
            "Có"
-          ]
+          ],
+          "hai": true
          }
         ]
        },
@@ -836,7 +861,8 @@
           ],
           "sai": [
            "Không"
-          ]
+          ],
+          "hai": true
          }
         ]
        }
@@ -2472,7 +2498,8 @@
           ],
           "sai": [
            "Không phải"
-          ]
+          ],
+          "hai": true
          }
         ]
        },
@@ -2485,7 +2512,8 @@
           ],
           "sai": [
            "Là hằng đẳng thức"
-          ]
+          ],
+          "hai": true
          }
         ]
        },
@@ -2498,7 +2526,8 @@
           ],
           "sai": [
            "Là hằng đẳng thức"
-          ]
+          ],
+          "hai": true
          }
         ]
        },
@@ -2511,7 +2540,8 @@
           ],
           "sai": [
            "Không phải"
-          ]
+          ],
+          "hai": true
          }
         ]
        }

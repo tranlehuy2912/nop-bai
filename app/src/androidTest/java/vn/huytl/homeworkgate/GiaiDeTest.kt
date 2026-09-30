@@ -46,7 +46,7 @@ class GiaiDeTest {
     private lateinit var context: Context
     private lateinit var kho: KhoBai
 
-    private val cacPhan = listOf("toan8ct", "khtn8hoa", "khtn8li", "khtn8sinh")
+    private val cacPhan = listOf("toan8ds", "toan8hh", "khtn8hoa", "khtn8li", "khtn8sinh")
     private val mocCu = mutableMapOf<String, String?>()
 
     /** Moc Unit Tieng Anh that tren may, tra lai sau test. Tu 29/9/2026 Tieng Anh cung ra de. */
@@ -109,6 +109,8 @@ class GiaiDeTest {
     }
 
     private fun datMoc(ma: String, soBai: Int?) {
+        // "toan8ct" la cach viet cu cho ca sach Toan, doi ra hai phan Dai so, Hinh hoc.
+        if (ma == "toan8ct") return MocToanThu.dat(context, soBai)
         HocToi.xoa(context, ma)
         if (soBai == null) return
         val phan = PhanHoc.theoMa(ma)!!
@@ -130,7 +132,15 @@ class GiaiDeTest {
         val hoa = PhanHoc.cacBai(context, PhanHoc.theoMa("khtn8hoa")!!)
         assertEquals((1..12).toList(), hoa.map { PhanHoc.soBai(it) })
         assertEquals((30..47).toList(), PhanHoc.cacBai(context, PhanHoc.theoMa("khtn8sinh")!!).map { PhanHoc.soBai(it) })
-        assertEquals(39, PhanHoc.cacBai(context, PhanHoc.theoMa("toan8ct")!!).size)
+        // Toan hai phan tu 30/9/2026, bai xen nhau; Thong ke, Xac suat theo Dai so.
+        assertEquals(
+            (1..9) + (18..32),
+            PhanHoc.cacBai(context, PhanHoc.theoMa("toan8ds")!!).map { PhanHoc.soBai(it) }
+        )
+        assertEquals(
+            (10..17) + (33..39),
+            PhanHoc.cacBai(context, PhanHoc.theoMa("toan8hh")!!).map { PhanHoc.soBai(it) }
+        )
     }
 
     @Test

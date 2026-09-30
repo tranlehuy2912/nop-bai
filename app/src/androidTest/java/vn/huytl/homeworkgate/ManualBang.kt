@@ -428,12 +428,19 @@ class ManualBang {
                 val bo = ma ?: error("Thieu -e ma <bo>")
                 if (phut != null) {
                     HocToi.ghiUnit(context, bo, phut); ketQua = HocToi.unitCua(context, bo)
+                } else if (vn.huytl.homeworkgate.kho.PhanHoc.cuaBoThe(bo).size > 1) {
+                    // Bo Toan hai phan (30/9/2026): doi ten bai ra so, dat ca hai phan theo so do.
+                    MocToanThu.dat(context, vn.huytl.homeworkgate.kho.PhanHoc.soBai(chu.orEmpty()) ?: 0)
+                    ketQua = MocToanThu.luu(context)
                 } else {
                     HocToi.ghiBai(context, bo, chu.orEmpty()); ketQua = HocToi.baiCua(context, bo)
                 }
             }
             "xoahoctoi" -> {
-                HocToi.xoa(context, ma ?: error("Thieu -e ma <bo>")); ketQua = 0
+                val bo = ma ?: error("Thieu -e ma <bo>")
+                if (vn.huytl.homeworkgate.kho.PhanHoc.cuaBoThe(bo).size > 1) MocToanThu.dat(context, null)
+                else HocToi.xoa(context, bo)
+                ketQua = 0
             }
             // Xoa lich su tra loi cua MOT bo the, de muc thu go dung luon co the den
             // luot. Trang thu van dong ho ve cung mot buoi toi, nen the nao vua go dung

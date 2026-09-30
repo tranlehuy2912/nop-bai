@@ -245,8 +245,7 @@ class HocThuocActivity : AppCompatActivity() {
         v.thanhThuoc.setIndicatorColor(if (sang) mauMon else mau(R.color.ok))
         v.chuThuoc.text = "Đã kiểm ${bo.soThuoc}/${bo.tongThe} câu"
 
-        v.chuHocToi.text = bo.hocToi?.let { "Lớp ${HocToi.moTaBai(it)}" }
-            ?: "Lớp đã học tới: chưa chọn"
+        v.chuHocToi.text = bo.moTaHocToi ?: "Lớp đã học tới: chưa chọn"
         v.btnHocToi.text = if (chuaChon) "Chọn" else "Đổi"
         v.btnHocToi.setOnClickListener { hoiHocToi(bo.bo, roiBatDau = chuaChon) }
 
@@ -268,10 +267,14 @@ class HocThuocActivity : AppCompatActivity() {
      */
     private fun hoiHocToi(ma: String, roiBatDau: Boolean) {
         val bo = BoThe.theoMa(ma) ?: return
-        // Bo trung mot phan hoc (ca ba bo hien nay) thi hoi du cac bai cua phan, dung
-        // chung moc voi kho sach bai tap. Xem [PhanHoc].
-        PhanHoc.theoMa(ma)?.let { phan ->
-            ChonHocToi.hoiPhan(this, phan) { sauKhiChon(ma, roiBatDau) }
+        // Bo cua mot phan hoc (ca ba bo hien nay) thi hoi du cac bai cua phan, dung chung moc
+        // voi kho sach bai tap. Xem [PhanHoc]. Bo Toan hai phan Dai so, Hinh hoc (30/9/2026):
+        // con phan chua chon thi hoi lan luot, chon du roi thi hoi doi phan nao.
+        val cacPhan = PhanHoc.cuaBoThe(ma)
+        if (cacPhan.isNotEmpty()) {
+            val xong = { sauKhiChon(ma, roiBatDau) }
+            if (cacPhan.any { PhanHoc.hocToi(this, it) == null }) ChonHocToi.hoiCacPhanThieu(this, cacPhan, xong)
+            else ChonHocToi.hoiDoiPhan(this, cacPhan, xong)
             return
         }
         val cacBai = KhoBai.get(this).cacBaiTrongBoThe(ma)
@@ -297,8 +300,8 @@ class HocThuocActivity : AppCompatActivity() {
     }
 
     private fun sauKhiChon(ma: String, roiBatDau: Boolean) {
-        val den = BoThe.denThuTu(this, ma)
-        if (roiBatDau && den != null && KhoBai.get(this).conTheDenLuot(ma, denThuTu = den)) {
+        val m = BoThe.mocCua(this, ma)
+        if (roiBatDau && m != null && KhoBai.get(this).conTheDenLuot(ma, denThuTu = m.denThuTu, chiBai = m.chiBai)) {
             batDau(ma)
         } else {
             veChonBo()
@@ -315,8 +318,10 @@ class HocThuocActivity : AppCompatActivity() {
      */
     private fun batDau(ma: String) {
         val bo = BoThe.theoMa(ma) ?: return
-        val den = BoThe.denThuTu(this, ma) ?: return hoiHocToi(ma, roiBatDau = true)
-        val cac = KhoBai.get(this).cacTheDenLuot(ma, HocThuoc.SO_THE_MOI_LUOT, denThuTu = den)
+        val m = BoThe.mocCua(this, ma) ?: return hoiHocToi(ma, roiBatDau = true)
+        val cac = KhoBai.get(this).cacTheDenLuot(
+            ma, HocThuoc.SO_THE_MOI_LUOT, denThuTu = m.denThuTu, chiBai = m.chiBai
+        )
         if (cac.isEmpty()) return veChonBo()
 
         boDangLam = bo

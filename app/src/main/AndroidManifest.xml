@@ -163,6 +163,13 @@
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize" />
 
+        <!-- Trang Luyen tap: gom viec luyen them va cho chon lop da hoc toi dau. -->
+        <activity
+            android:name=".ui.LuyenTapActivity"
+            android:configChanges="orientation|screenSize|screenLayout|smallestScreenSize"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+
         <!-- Bai da cham: tung cau dung hay sai, sai thi may noi gi. Xem KetQuaActivity. -->
         <activity
             android:name=".ui.KetQuaActivity"

@@ -328,6 +328,16 @@ def ghep_duoc_the(cau, the):
     return thu(0)
 
 
+# Tu 30/9/2026 app tron phuong an trac nghiem moi luot va danh lai chu A, B, C (xem KhungGhep).
+# Phuong an nhac chu cai hay vi tri cua phuong an khac thi sai nghia sau khi tron.
+NHAC_CHU_CAI = re.compile(r"\b[A-F]\s*(?:và|hoặc|hay|,|and|or|&)\s*[A-F]\b")
+NHAC_VI_TRI = re.compile(
+    r"tất cả|cả hai|các (?:phương án|đáp án|ý|câu) trên|all of the above|none of the above"
+    r"|both of the above", re.I)
+# Chu hien tren may ma con in san "A. ... B. ...": chu cai tren de se lech voi nut sau khi tron.
+IN_PHUONG_AN = re.compile(r"(?:^|\s)A[.)]\s.*(?:^|\s)B[.)]\s", re.S)
+
+
 def kiem_chon(so, ma, g):
     cac = g.get("cac")
     if not isinstance(cac, list) or not 2 <= len(cac) <= 6:
@@ -337,6 +347,8 @@ def kiem_chon(so, ma, g):
         kiem_chu_hien(so, ma, f"cac[{i}]", x)
         if isinstance(x, str) and re.match(r"^\s*[A-F][.)]\s", x):
             so.l(ma, f"CHON: phương án không kèm chữ 'A.' ở đầu: {x!r}")
+        if isinstance(x, str) and (NHAC_CHU_CAI.search(bo_the(x)) or NHAC_VI_TRI.search(bo_the(x))):
+            so.c(ma, f"CHON: phương án nhắc tới phương án khác, máy trộn thứ tự nên sẽ sai nghĩa: {x!r}")
     if len(set(bo_the(x).strip() for x in cac if isinstance(x, str))) != len(cac):
         so.l(ma, "CHON: có hai phương án giống nhau")
     dap = g.get("dap")
@@ -547,8 +559,20 @@ def kiem_o(so, ma, g):
                     co_gioi = True
             if set(map(gon_cach, dung)) & set(map(gon_cach, sai)):
                 so.l(ma, f"O: dòng {i} ô {k} có phương án vừa đúng vừa sai")
-            if len(dung) + len(sai) < 2:
+            # It nhat 3 nut moi o (Ba Huy chot 30/9/2026): hai nut la doan mo trung mot nua.
+            # Ngoai le la o von chi co hai gia tri (Dung/Sai, Co/Khong, hai cot, hai vat dem
+            # so), ghi "hai": true de nguoi soan phai tu quyet chu khong lot vi quen them.
+            n = len(dung) + len(sai)
+            hai = x.get("hai", False)
+            if n < 2:
                 so.l(ma, f"O: dòng {i} ô {k} chỉ có một phương án, không có gì để chọn")
+            elif not isinstance(hai, bool):
+                so.l(ma, f"O: dòng {i} ô {k} 'hai' phải là true hay false")
+            elif hai and n != 2:
+                so.l(ma, f"O: dòng {i} ô {k} ghi 'hai' mà có {n} nút; 'hai' chỉ dùng cho ô đúng hai nút")
+            elif not hai and n < 3:
+                so.l(ma, f"O: dòng {i} ô {k} chỉ có {n} nút, cần ít nhất 3: thêm phương án sai, "
+                         "hoặc ghi \"hai\": true nếu ô vốn chỉ có hai giá trị (Đúng/Sai, Có/Không, hai cột)")
             so_o += 1
     if co_gioi and not g.get("gioi"):
         so.l(ma, "O: có {He}/{his}... mà không bật 'gioi'")
@@ -607,6 +631,11 @@ def kiem_cau_hoi(so, c, mon, doan_van, hinh_goc):
         kiem_ghep(so, ma, cho, mon)
     if g is not None:
         kiem_ghep(so, ma, g, mon)
+        # App hien 'hoi', thieu thi hien 'de' (KhungGhep.veDe).
+        hien = g.get("hoi") or c.get("de") or ""
+        if g.get("kieu") == "CHON" and isinstance(hien, str) and IN_PHUONG_AN.search(hien):
+            so.c(ma, "CHON: chữ hiện trên máy còn in 'A. … B. …', máy trộn phương án nên chữ cái sẽ "
+                     "lệch với nút; thêm 'hoi' bỏ các phương án")
         if g.get("kieu") == "CHON" and c.get("dang") == "TRAC_NGHIEM" and c.get("dap_an"):
             d = g.get("dap")
             tn = sorted(set(re.findall(r"\b[A-F]\b", c["dap_an"]))) if isinstance(d, list) else c["dap_an"].strip()

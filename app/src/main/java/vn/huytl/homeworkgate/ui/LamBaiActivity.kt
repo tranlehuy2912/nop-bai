@@ -28,9 +28,12 @@ import vn.huytl.homeworkgate.kho.PhanHoc
 /**
  * Man lam bai may giao ngay tren tablet: lam them, on lai, luyen cho hay vap.
  *
- * MOI LAN MOT CAU. Sao cua cau o goc tren, sang la con, xam la da mat; bam Kiem tra sai thi
- * mot sao tat. Dung thi hien "+N" canh nut - do la phut vua duoc (hay vua vao quy, con khong
- * can biet). Khong co chu nao giai thich luat: Ba Huy chot ngay 29/9/2026 de con tu kham pha.
+ * MOI LAN MOT CAU. Sao cua cau o goc tren, ba dang ([HangSao], Ba Huy chot 30/9/2026): vao cau
+ * la ca hang rong, bam Kiem tra sai thi mot o chuyen xam, lam xong dung thi cac o con lai chuyen
+ * vang va sang len mot nhip. Dung thi hien "+N" canh nut - do la phut vua duoc (hay vua vao quy,
+ * con khong can biet). Lam lai thi duoi hang sao co dong "Lần trước" la sao tot nhat cua vong
+ * ([LamTrenMay.saoLanTruoc]), nen "+N" bang dung so sao vuot dong do. Khong co chu nao giai
+ * thich luat: Ba Huy chot ngay 29/9/2026 de con tu kham pha.
  * Luat o [LuatGhep], chon cau va cong phut o [LamTrenMay].
  *
  * THOAT GIUA CHUNG THI GIU NGUYEN LUOT. Moi lan bam Kiem tra sai, luot do (sao con, so lan
@@ -149,13 +152,15 @@ class LamBaiActivity : AppCompatActivity() {
         b.nutTiep.visibility = View.GONE
         b.ket.text = ""
         veSao()
+        val truoc = LamTrenMay.saoLanTruoc(this, m, loai)
+        b.saoTruoc.visibility = if (truoc == null) View.GONE else View.VISIBLE
+        b.saoTruoc.text = truoc?.let { HangSao.chuLanTruoc(this, it, m.ghep.sao) } ?: ""
         b.khungCuon.post { b.khungCuon.scrollTo(0, 0) }
     }
 
-    /** Sao sang la con, sao rong la da mat. Het sao ma con thu them thi rong het. */
+    /** Ba dang sao, xem [HangSao]. Het sao ma con thu them, hay xong ma sai, thi xam het. */
     private fun veSao() {
-        val con = if (luot.xong && !luot.dung) 0 else luot.sao
-        b.sao.text = "★".repeat(con) + "☆".repeat((luot.saoToiDa - con).coerceAtLeast(0))
+        b.sao.text = HangSao.chu(this, luot)
     }
 
     private fun kiem() {
@@ -169,6 +174,7 @@ class LamBaiActivity : AppCompatActivity() {
         }
         luot = LuatGhep.kiem(luot, soSai)
         veSao()
+        if (luot.xong && luot.dung && luot.sao > 0) HangSao.nhip(b.sao)
         if (!luot.xong) {
             LuotDangLam.ghi(this, k.muc.cau.id, luot)
             k.ve(luot.botNhieu)
