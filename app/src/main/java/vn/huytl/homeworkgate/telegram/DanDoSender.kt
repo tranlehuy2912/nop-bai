@@ -136,7 +136,7 @@ object DanDoSender {
         val khac = d.dongKhac
         if (khac.isNotEmpty()) {
             append("\n\nDặn dò khác:")
-            khac.forEach { append("\n· ").append(kem(it)) }
+            khac.forEach { append("\n• ").append(kem(it)) }
         }
         if (hanCua.isNotEmpty()) {
             append("\n\nMáy nhắc ").append(con).append(" từ hôm trước buổi đó.")

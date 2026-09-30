@@ -1,5 +1,9 @@
 package vn.huytl.homeworkgate
 
+import android.view.View
+import android.widget.LinearLayout
+import android.widget.TextView
+import androidx.test.core.app.ActivityScenario
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
 import org.junit.After
@@ -16,6 +20,7 @@ import vn.huytl.homeworkgate.data.VoDanDo
 import vn.huytl.homeworkgate.dongbo.DongBo
 import vn.huytl.homeworkgate.dongbo.Duong
 import vn.huytl.homeworkgate.telegram.DanDoSender
+import vn.huytl.homeworkgate.ui.NhacBaiActivity
 import java.time.LocalDate
 import java.time.LocalDateTime
 import java.util.Calendar
@@ -188,7 +193,7 @@ class NhacBaiTest {
         )
         assertTrue(chu, chu.contains("• Mỹ thuật: Vẽ ký họa dáng người trên giấy A4 → chiều thứ tư 23/9"))
         assertTrue(chu, chu.contains("• TOÁN: Làm luyện tập 3 trang 59 → chiều thứ năm 17/9"))
-        assertTrue(chu, chu.contains("· LS-ĐL: Sinh hoạt ngoài trời → chiều thứ năm 17/9"))
+        assertTrue(chu, chu.contains("• LS-ĐL: Sinh hoạt ngoài trời → chiều thứ năm 17/9"))
         assertTrue(chu, !chu.contains("trọn gói"))
     }
 
@@ -209,6 +214,53 @@ class NhacBaiTest {
         assertEquals("2026-09-28", dong["ngayVo"])
         // Khong con dong nao thi xoa document.
         assertNull(DongBo.banNhacBai(emptyList()))
+    }
+
+    /**
+     * Man Bài dặn dò sắp tới ke moi buoi con dong chua toi han, chu y nhu the tren Bang dieu
+     * khien (Ba Huy chon 30/9/2026): ten buoi viet hoa chu dau, moi dong mot dau "•", bai tap
+     * truoc, cuoi dong la ngay tren vo.
+     */
+    @Test
+    fun man_bai_dan_do_sap_toi_viet_nhu_the_tren_dien_thoai() {
+        val vo = listOf(
+            trang(
+                thuHai,
+                "Toán: ôn hằng đẳng thức" to false,
+                "Toán: làm bài 2 trang 36" to true,
+                "Mang sách vở đầy đủ" to false
+            )
+        )
+        val cac = NhacBai.sapToi(vo, LocalDateTime.of(2026, 9, 28, 20, 0))
+        assertEquals(
+            listOf("Chiều thứ ba 29/9", "Chiều thứ tư 30/9"),
+            cac.map { NhacBaiActivity.tenBuoi(it) }
+        )
+        assertEquals("• Mang sách vở đầy đủ (vở 28/9)", NhacBaiActivity.cacDong(cac[0]))
+        assertEquals(
+            "• Toán: làm bài 2 trang 36 (vở 28/9)\n• Toán: ôn hằng đẳng thức (vở 28/9)",
+            NhacBaiActivity.cacDong(cac[1])
+        )
+
+        // Mo that man hinh voi trang vo hom nay: moi buoi mot the, buoi som truoc.
+        NhacBai.ghi(
+            context, LocalDate.now(),
+            listOf(VoDanDo.Dong("Toán: làm bài 2 trang 36", true), VoDanDo.Dong("Mang sách vở đầy đủ", false))
+        )
+        val mong = NhacBai.sapToi(context)
+        assertTrue(mong.isNotEmpty())
+        ActivityScenario.launch(NhacBaiActivity::class.java).use { sc ->
+            sc.onActivity { a ->
+                val ds = a.findViewById<LinearLayout>(R.id.danh_sach)
+                assertEquals(mong.size, ds.childCount)
+                mong.forEachIndexed { i, n ->
+                    val the = ds.getChildAt(i)
+                    assertEquals(NhacBaiActivity.tenBuoi(n), the.findViewById<TextView>(R.id.ten_buoi).text.toString())
+                    assertEquals(NhacBaiActivity.cacDong(n), the.findViewById<TextView>(R.id.cac_dong).text.toString())
+                }
+                assertEquals(View.GONE, a.findViewById<View>(R.id.trong).visibility)
+            }
+        }
     }
 
     // ------------------------------------------------------------------ luu trong may

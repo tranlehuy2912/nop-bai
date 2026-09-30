@@ -158,16 +158,17 @@ class SoanActivity : AppCompatActivity() {
     /**
      * Cac dong vo dan do han dung buoi nay, xem [NhacBai]. Chi de doc: con soan tap xong
      * hay chua khong phu thuoc vao bai da lam chua.
+     *
+     * Tieu de la "Bài dặn dò cho buổi này" du co bai tap hay khong, cung ten voi dong o man
+     * chinh (Ba Huy chon 30/9/2026). Truoc do la "Bài phải làm cho buổi này", ma tu khi moi
+     * dong mot dau "•" thi no doc nhu dong "Mang sách vở" cung la bai phai lam.
      */
     private fun veBai(cal: Calendar, b: BuoiHoc) {
         val cac = runCatching { NhacBai.choBuoi(this, cal, b) }.getOrDefault(emptyList())
         binding.khungBai.visibility = if (cac.isEmpty()) View.GONE else View.VISIBLE
         if (cac.isEmpty()) return
-        val soBai = cac.count { it.laBaiTap }
-        binding.tieuDeBai.text = if (soBai > 0) "Bài phải làm cho buổi này" else "Cô dặn cho buổi này"
-        binding.danhSachBai.text = cac.joinToString("\n") {
-            (if (it.laBaiTap) "• " else "· ") + NhacBai.moTa(it)
-        }
+        binding.tieuDeBai.text = "Bài dặn dò cho buổi này"
+        binding.danhSachBai.text = cac.joinToString("\n") { "• " + NhacBai.moTa(it) }
     }
 
     private fun capNhatNut() {

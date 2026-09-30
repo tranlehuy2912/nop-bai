@@ -577,8 +577,9 @@ class HomeActivity : AppCompatActivity() {
      * ma mot dua tre lop tam can thay khi cam may len. Gio moi viec la mot dong,
      * bam ca dong, va khong con nut nao trong do.
      *
-     * Thu tu la thu tu nen lam: sua bai dang no truoc, roi den viec co gio chot
-     * (soan cap), roi moi den hai viec lam luc ranh.
+     * Thu tu Ba Huy chot 30/9/2026: chup vo dan do, soan tap, bai dan do cho buoi sap
+     * toi, cau can sua, Luyen tap. Truoc do cau can sua dung tren soan tap. Lan nop gui
+     * hong thi van dung truoc het, xem ben duoi.
      */
     private fun veViecHomNay(baDangDung: Boolean) {
         binding.boxViec.removeAllViews()
@@ -619,7 +620,7 @@ class HomeActivity : AppCompatActivity() {
          *
          * Ten luon la "Chụp vở dặn dò" (30/9/2026): may giu nhieu trang, moi ngay mot trang,
          * nen khong con "vo cua hom nay" de ghi len ten. Cac bai sap toi da hien o cac dong
-         * nhac bai ngay duoi. Dau tich la hom nay con da luu mot trang, tinh theo ngay bam
+         * nhac bai ben duoi. Dau tich la hom nay con da luu mot trang, tinh theo ngay bam
          * Luu, de con biet minh chup chua.
          */
         val daLuu = VoDanDo.daLuuHomNay(this)
@@ -630,6 +631,7 @@ class HomeActivity : AppCompatActivity() {
             phu = if (daLuu) "Đã chụp vở hôm nay" else "",
             xong = daLuu
         ) { startActivity(Intent(this, DanDoActivity::class.java)) }
+        themViecSoan()
         themViecNhacBai()
 
         if (canSua.isNotEmpty()) {
@@ -658,8 +660,6 @@ class HomeActivity : AppCompatActivity() {
                 phu = loiNhan
             ) { KetQuaActivity.mo(this) }
         }
-
-        themViecSoan()
 
         /*
          * De Giai de da bat dau (dang chay gio, hay con chup phan tu luan) o lai day: giau vao
@@ -691,51 +691,26 @@ class HomeActivity : AppCompatActivity() {
     }
 
     /**
-     * Moi buoi co dong dan do den han mai (hay som hon) mot dong: "Bài cho chiều thứ bảy".
+     * Moi buoi co dong dan do den han mai (hay som hon) mot dong: "Bài dặn dò cho chiều thứ
+     * bảy".
      *
      * Nhac truoc mot ngay, cho tiet sau cua dung mon do (Ba Huy chon 30/9/2026), xem
-     * [NhacBai]. Dong chu nho ke tung dong dan do; bam vao thi mo danh sach day du kem ngay
-     * cua trang vo co dong do.
+     * [NhacBai]. Dong chu nho ke tung dong dan do; bam vao thi mo man Bài dặn dò sắp tới
+     * ([NhacBaiActivity]), cung danh sach voi the tren Bang dieu khien. Truoc 30/9/2026 bam
+     * vao chi hien mot hop thoai cua rieng buoi do.
      */
     private fun themViecNhacBai() {
         val cac = runCatching { NhacBai.canNhac(this) }.getOrDefault(emptyList())
         cac.forEach { n ->
-            val phu = buildString {
-                n.cacBai.forEach { if (isNotEmpty()) append("\n"); append("• ").append(it.chu) }
-                n.dongKhac.forEach { if (isNotEmpty()) append("\n"); append("· ").append(it.chu) }
-            }
+            // Moi dong mot dau "•", bai tap hay dan do khac cung vay (Ba Huy chon 30/9/2026).
+            val phu = (n.cacBai + n.dongKhac).joinToString("\n") { "• " + it.chu }
             themViec(
                 hinh = R.drawable.st_ic_lich,
                 mau = R.color.wait,
-                ten = tenNhacBai(n),
+                ten = "Bài dặn dò cho " + TinhLoiNhac.moTaBuoi(n.buoi),
                 phu = phu
-            ) { hienNhacBai(n) }
+            ) { startActivity(Intent(this, NhacBaiActivity::class.java)) }
         }
-    }
-
-    /** "Bài cho chiều thứ bảy", hay "Dặn dò cho ..." khi buoi do khong co bai tap nao. */
-    private fun tenNhacBai(n: NhacBai.NhomBuoi): String =
-        (if (n.cacBai.isEmpty()) "Dặn dò cho " else "Bài cho ") + TinhLoiNhac.moTaBuoi(n.buoi)
-
-    /** Danh sach day du cua mot buoi, kem ngay tren vo cua tung dong. */
-    private fun hienNhacBai(n: NhacBai.NhomBuoi) {
-        val chu = buildString {
-            append("Vào học ").append(TinhLoiNhac.gioPhut(n.buoi.phutVaoHoc))
-            append(", ").append(n.ten()).append('.')
-            if (n.cacBai.isNotEmpty()) {
-                append("\n\nBài phải làm:")
-                n.cacBai.forEach { append("\n• ").append(NhacBai.moTa(it)) }
-            }
-            if (n.dongKhac.isNotEmpty()) {
-                append("\n\nDặn dò khác:")
-                n.dongKhac.forEach { append("\n· ").append(NhacBai.moTa(it)) }
-            }
-        }
-        MaterialAlertDialogBuilder(this)
-            .setTitle(tenNhacBai(n))
-            .setMessage(chu)
-            .setPositiveButton("Đã hiểu", null)
-            .show()
     }
 
     /**
@@ -759,8 +734,8 @@ class HomeActivity : AppCompatActivity() {
         val mon = buoi.monCanSoan
         if (mon.isEmpty() && !buoi.coTheDuc) return
 
-        // Bai trong vo dan do han dung buoi nay, xem [NhacBai]. Dong "Bài cho ..." o tren da
-        // ke tung bai; o day chi nhac so bai, de soan tap thi nho ca vo bai tap.
+        // Bai trong vo dan do han dung buoi nay, xem [NhacBai]. Dong "Bài dặn dò cho ..." ngay
+        // duoi da ke tung bai; o day chi nhac so bai, de soan tap thi nho ca vo bai tap.
         val soBai = runCatching {
             NhacBai.choBuoi(this, cal, buoi).count { it.laBaiTap }
         }.getOrDefault(0)

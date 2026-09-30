@@ -302,6 +302,18 @@ def danh_sach():
             khong=["Chụp vở dặn dò hôm nay"],
             don=lambda m: m.dat("xoadando"),
         ),
+        # Bam dong "Bài dặn dò cho ..." o man chinh thi mo man nay (30/9/2026). Vo ngay 16/9
+        # (thu Tu): Toan, KHTN va dong khong co mon han chieu thu Nam 17/9, Tieng Anh han
+        # chieu thu Bay 19/9.
+        dict(
+            ma="man-nhac-bai", nhom="Vở dặn dò",
+            ten="Màn bài dặn dò sắp tới kể mọi buổi còn bài",
+            lam=lambda m: (m.van(RANH), m.dat("napdando", ngay="2026-09-16"),
+                           m.man("NhacBaiActivity")),
+            cho=["Bài dặn dò sắp tới", "Chiều thứ năm 17/9", "Chiều thứ bảy 19/9",
+                 "Toán: làm bài 2.26 và 2.27 trang 45 (vở 16/9)"],
+            don=lambda m: m.dat("xoadando"),
+        ),
         # ---------------- hoc thuoc ----------------
         dict(
             ma="man-hocthuoc", nhom="Học thuộc",

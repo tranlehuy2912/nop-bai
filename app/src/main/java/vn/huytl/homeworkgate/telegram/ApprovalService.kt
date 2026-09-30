@@ -680,7 +680,7 @@ class ApprovalService : Service() {
         n.cacBai.forEach { append("\n• ").append(NhacBai.moTa(it)) }
         if (n.dongKhac.isNotEmpty()) {
             if (n.cacBai.isNotEmpty()) append("\n\nDặn dò khác:")
-            n.dongKhac.forEach { append("\n· ").append(NhacBai.moTa(it)) }
+            n.dongKhac.forEach { append("\n• ").append(NhacBai.moTa(it)) }
         }
     }
 
