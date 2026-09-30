@@ -18,7 +18,9 @@ import vn.huytl.homeworkgate.data.LuotBaNoi
 import vn.huytl.homeworkgate.data.KetQuaCham
 import vn.huytl.homeworkgate.data.KhoTinCuaCo
 import vn.huytl.homeworkgate.data.KhoaAi
+import vn.huytl.homeworkgate.data.LamTrenMay
 import vn.huytl.homeworkgate.data.LuatCongGio
+import vn.huytl.homeworkgate.data.LuatGhep
 import vn.huytl.homeworkgate.data.NhatKyAi
 import vn.huytl.homeworkgate.data.NhatKySuDung
 import vn.huytl.homeworkgate.data.Prefs
@@ -239,6 +241,7 @@ class ManualBang {
      *  -e viec xoaviecnha
      *  -e viec napdando / xoadando  trang vo dan do da soat, ca dau da chup hom nay
      *  -e viec napdenhen -e ma 1.3a  nap mot cau da qua han on lai
+     *  -e viec napontrenmay          nap mot cau lam tren may da toi hen on
      *  -e viec bamo -e phut 30       ba cam may (mo cac man cua ba)
      *  -e viec badong
      *  -e viec moisom -e ma <ma buoi>      cho mo som het buoi do
@@ -410,6 +413,29 @@ class ManualBang {
                 SoCaiBai.ghi(context, listOf(sai.copy(dung = true)), mapOf(ma to 2), luc)
                 ketQua = KhoBai.get(context)
                     .cacCauDenHenOn(luc - 86_400_000L).joinToString(", ")
+            }
+            /*
+             * Nap mot cau LAM TREN MAY da toi hen on. Tu 30/9/2026 on lai nam o trang Luyen tap
+             * va chi dem cau lam duoc tren may ([LamTrenMay.cauOn]), nen cau chup anh cua
+             * napdenhen khong hien o do.
+             *
+             * Lay cau Toan dau tien ma Luyen tap giao khi lop hoc toi Bai 3, roi tra lai moc Toan
+             * cu. Ghi mot luot sai mot lan roi dung, lui bon ngay: hen on dau tien la ba ngay sau
+             * lan lam dung, giong LamTrenMayTest. Khong cong phut (congNgay = false). Xoa so truoc
+             * de chi con dung cau nay den hen; don bang xoasocai.
+             */
+            "napontrenmay" -> {
+                SoCaiBai.xoaHet(context)
+                NganHang.napNeuCan(context)
+                val mocCu = MocToanThu.luu(context)
+                MocToanThu.dat(context, 3)
+                val m = LamTrenMay.cauLamThem(context, "Toán").firstOrNull()
+                MocToanThu.tra(context, mocCu)
+                m ?: error("khong co cau Toan nao lam duoc tren may")
+                val luot = LuatGhep.kiem(LuatGhep.kiem(LuatGhep.Luot(m.ghep.sao), soSai = 1), soSai = 0)
+                val luc = System.currentTimeMillis() - 4L * 24 * 60 * 60 * 1000
+                LamTrenMay.ghi(context, m, luot, "thu", LamTrenMay.Loai.LAM_THEM, bayGio = luc, congNgay = false)
+                ketQua = "${m.cau.id}: ${LamTrenMay.soCauOn(context)} câu đến hẹn"
             }
             // Ba dang cam may. Cac man cua ba (thong ke...) nam sau cua nay.
             // ParentMode ghi bang apply(), tuc la ghi khong dong bo. Tien trinh test

@@ -207,12 +207,17 @@ def danh_sach():
         ),
 
         # ---------------- kho bai, on lai, cac man moi ----------------
+        # Tu 30/9/2026 on lai nam o trang Luyen tap (LuyenTapActivity) va chi dem cau lam
+        # duoc tren may (LamTrenMay.cauOn). napontrenmay nap dung mot cau nhu vay da toi hen;
+        # cau chup anh cua napdenhen khong con hien o day. Man chinh chi con mot dong
+        # "Luyện tập", dong chu nho dem "Ôn N câu".
         dict(
             ma="on-lai", nhom="Kho bài",
-            ten="Câu từng sai đến hẹn ôn lại — hiện trên màn chính",
-            lam=lambda m: (m.van(RANH), m.dat("xoaviecnha,dong,xoacho"), m.dat("napdenhen", ma="1.3a"),
+            ten="Câu làm trên máy đến hẹn ôn — dòng Luyện tập ở màn chính đếm ra",
+            lam=lambda m: (m.van(RANH), m.dat("xoaviecnha,dong,xoacho,napontrenmay"),
                            m.man("HomeActivity")),
-            cho=["Ôn lại 1 câu đến hẹn"],
+            cho=["Luyện tập", "Ôn 1 câu"],
+            don=lambda m: m.dat("xoasocai"),
         ),
         dict(
             ma="man-chonbai", nhom="Kho bài",
@@ -225,21 +230,24 @@ def danh_sach():
         ),
         dict(
             ma="on-vao-thang", nhom="Kho bài",
-            ten="Vào thẳng màn ôn — liệt kê đúng câu đến hẹn",
-            # Nut "Ôn lại" o man chinh mo ChonBaiActivity kem EXTRA_ON_TAP, vao thang
-            # buoc on chu khong bat chon lai mon va bai.
-            lam=lambda m: (m.van(RANH), m.dat("napdenhen", ma="1.3a"),
-                           m.man("ChonBaiActivity", thu={"on_tap": True})),
-            cho=["1.3a"],
-            man_tren_cung="ChonBaiActivity",
+            ten="Trang Luyện tập kể đúng số câu đến hẹn ôn",
+            # Truoc 30/9/2026 muc nay mo ChonBaiActivity kem EXTRA_ON_TAP. Khong con cho nao
+            # trong app mo duong do nua: dong on lai o trang Luyen tap mo LamBaiActivity.
+            lam=lambda m: (m.van(RANH), m.dat("napontrenmay"), m.man("LuyenTapActivity")),
+            cho=["Ôn lại 1 câu đến hẹn"],
+            man_tren_cung="LuyenTapActivity",
+            don=lambda m: m.dat("xoasocai"),
         ),
         dict(
             ma="on-bam-nut", nhom="Kho bài",
-            ten="Bấm nút “Ôn lại” trên màn chính thì sang màn ôn",
-            lam=lambda m: (m.van(RANH), m.dat("xoaviecnha,dong,xoacho"), m.dat("napdenhen", ma="1.3a"),
-                           m.man("HomeActivity"), m.bam("Ôn lại")),
-            man_tren_cung="ChonBaiActivity",
-            cho=["1.3a"],
+            ten="Bấm Luyện tập rồi bấm dòng ôn lại thì mở màn ôn câu đến hẹn",
+            lam=lambda m: (m.van(RANH), m.dat("xoaviecnha,dong,xoacho,napontrenmay"),
+                           m.man("HomeActivity"), m.bam("Luyện tập"),
+                           m.bam("Ôn lại 1 câu đến hẹn")),
+            # Man on tai xong thi tieu de doi tu "Ôn lại câu đến hẹn" sang "Câu 1/1".
+            man_tren_cung="LamBaiActivity",
+            cho=["Câu 1/1"],
+            don=lambda m: m.dat("xoasocai"),
         ),
         dict(
             ma="man-tienbo", nhom="Kho bài",
