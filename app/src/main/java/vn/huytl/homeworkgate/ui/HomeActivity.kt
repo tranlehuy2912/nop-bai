@@ -616,13 +616,19 @@ class HomeActivity : AppCompatActivity() {
         /*
          * Vo dan do nam ngay man chinh (29/9/2026), khong trong man Nop bai: tu 30/9/2026 vo
          * khong con dinh gi toi cham bai, no de nhac bai va de mo de on truoc kiem tra.
+         *
+         * Ten luon la "Chụp vở dặn dò" (30/9/2026): may giu nhieu trang, moi ngay mot trang,
+         * nen khong con "vo cua hom nay" de ghi len ten. Cac bai sap toi da hien o cac dong
+         * nhac bai ngay duoi. Dau tich la hom nay con da luu mot trang, tinh theo ngay bam
+         * Luu, de con biet minh chup chua.
          */
-        val vo = VoDanDo.conHieuLuc(this)
+        val daLuu = VoDanDo.daLuuHomNay(this)
         themViec(
             hinh = R.drawable.st_ic_dau_hoi,
             mau = R.color.brand,
-            ten = if (vo == null) "Chụp vở dặn dò hôm nay" else "Vở dặn dò ${vo.moTa()}",
-            xong = vo != null
+            ten = "Chụp vở dặn dò",
+            phu = if (daLuu) "Đã chụp vở hôm nay" else "",
+            xong = daLuu
         ) { startActivity(Intent(this, DanDoActivity::class.java)) }
         themViecNhacBai()
 

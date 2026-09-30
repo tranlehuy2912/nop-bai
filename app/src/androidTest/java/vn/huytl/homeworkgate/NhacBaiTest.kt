@@ -38,8 +38,8 @@ class NhacBaiTest {
 
     private val thuHai = LocalDate.of(2026, 9, 28)
 
-    private fun trang(ngay: LocalDate, vararg dong: Pair<String, Boolean>, chupLuc: Long = 0L) =
-        NhacBai.Trang(ngay, dong.map { (chu, bai) -> VoDanDo.Dong(chu, bai) }, chupLuc)
+    private fun trang(ngay: LocalDate, vararg dong: Pair<String, Boolean>) =
+        NhacBai.Trang(ngay, dong.map { (chu, bai) -> VoDanDo.Dong(chu, bai) })
 
     // ------------------------------------------------------------------ ten mon
 
@@ -213,39 +213,53 @@ class NhacBaiTest {
 
     // ------------------------------------------------------------------ luu trong may
 
-    private fun danDo(ngay: String, chupLuc: Long, vararg dong: String, chuaDoc: Boolean = false) =
-        VoDanDo.DanDo(
-            ngay = ngay,
-            cacDong = dong.map { VoDanDo.Dong(it, true) },
-            chupLuc = chupLuc,
-            chuaDoc = chuaDoc
+    private fun ghi(ngay: String, vararg dong: String, boNgay: String? = null, bayGio: LocalDateTime) =
+        NhacBai.ghi(
+            context, LocalDate.parse(ngay), dong.map { VoDanDo.Dong(it, true) },
+            boNgay = boNgay?.let { LocalDate.parse(it) }, bayGio = bayGio
         )
 
+    /**
+     * Moi ngay ghi tren vo mot trang, trung ngay thi trang sau thay trang truoc (Ba Huy chon
+     * 30/9/2026). Truoc do hai trang chung mot tam anh cung thay nhau, nen mot tam anh chep
+     * lien hai buoi luu buoi thu hai la mat buoi thu nhat.
+     */
     @Test
-    fun luu_thay_trang_cung_ngay_hay_cung_tam_anh_va_bo_trang_het_han() {
+    fun luu_thay_trang_cung_ngay_giu_trang_khac_ngay_va_bo_trang_het_han() {
         val toiThuHai = LocalDateTime.of(2026, 9, 28, 20, 0)
-        NhacBai.ghi(context, danDo("2026-09-28", 1L, "Toán: làm bài 2"), toiThuHai)
-        // Soat lai trang do: thay, khong them.
-        NhacBai.ghi(context, danDo("2026-09-28", 1L, "Toán: làm bài 2", "Tiếng Anh: Unit 2"), toiThuHai)
+        ghi("2026-09-28", "Toán: làm bài 2", bayGio = toiThuHai)
+        // Chup lai vo cung ngay: thay, khong them.
+        ghi("2026-09-28", "Toán: làm bài 2", "Tiếng Anh: Unit 2", bayGio = toiThuHai)
         assertEquals(2, NhacBai.docTrang(context).single().cacDong.size)
 
-        // Sua ngay cua chinh tam anh do: ban ngay cu phai di.
-        NhacBai.ghi(context, danDo("2026-09-27", 1L, "Toán: làm bài 2"), toiThuHai)
-        assertEquals(listOf(LocalDate.of(2026, 9, 27)), NhacBai.docTrang(context).map { it.ngay })
+        // Vo hom kia va vo hom qua, chup chung mot luc: giu ca hai.
+        ghi("2026-09-27", "Toán: làm bài 2", bayGio = toiThuHai)
+        assertEquals(
+            listOf(LocalDate.of(2026, 9, 27), LocalDate.of(2026, 9, 28)),
+            NhacBai.docTrang(context).map { it.ngay }
+        )
 
-        // Trang khac cua ngay khac: giu ca hai.
-        NhacBai.ghi(context, danDo("2026-09-29", 2L, "KHTN: làm bài 3.2"), toiThuHai)
-        assertEquals(2, NhacBai.docTrang(context).size)
+        // Con mo trang 27/9 ra sua ngay thanh 26/9: trang 27/9 phai di, trang 28/9 o lai.
+        ghi("2026-09-26", "Toán: làm bài 2", boNgay = "2026-09-27", bayGio = toiThuHai)
+        assertEquals(
+            listOf(LocalDate.of(2026, 9, 26), LocalDate.of(2026, 9, 28)),
+            NhacBai.docTrang(context).map { it.ngay }
+        )
+        assertNull(NhacBai.trangNgay(context, LocalDate.of(2026, 9, 27)))
 
-        // Ban chi co anh: chua co gi de nhac, khong dong vao so.
-        NhacBai.ghi(context, danDo("2026-09-30", 3L, chuaDoc = true), toiThuHai)
-        assertEquals(2, NhacBai.docTrang(context).size)
+        // Trang 29/9: KHTN han chieu thu Nam 1/10.
+        ghi("2026-09-29", "KHTN: làm bài 3.2", bayGio = toiThuHai)
+        assertEquals(3, NhacBai.docTrang(context).size)
 
-        // Trang 27/9 chi co bai Toan, han chieu thu Tu 30/9: toi thu Tu la qua han, bo trang.
-        // Trang 29/9: KHTN han chieu thu Nam 1/10, con giu.
+        // Toan cua trang 26/9 va 28/9 han chieu thu Tu 30/9, Tieng Anh cua trang 28/9 han
+        // thu Bay 3/10. Toi thu Tu thi trang 26/9 het dong, trang 28/9 con dong Tieng Anh.
         NhacBai.donDep(context, LocalDateTime.of(2026, 9, 30, 20, 0))
-        assertEquals(listOf(LocalDate.of(2026, 9, 29)), NhacBai.docTrang(context).map { it.ngay })
-        NhacBai.donDep(context, LocalDateTime.of(2026, 10, 1, 13, 0))
+        assertEquals(
+            listOf(LocalDate.of(2026, 9, 28), LocalDate.of(2026, 9, 29)),
+            NhacBai.docTrang(context).map { it.ngay }
+        )
+        NhacBai.donDep(context, LocalDateTime.of(2026, 10, 3, 20, 0))
         assertTrue(NhacBai.docTrang(context).isEmpty())
     }
+
 }

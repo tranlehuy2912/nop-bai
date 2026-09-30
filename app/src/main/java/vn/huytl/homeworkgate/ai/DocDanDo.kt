@@ -100,9 +100,11 @@ object DocDanDo {
     /**
      * Doc JSON may tra ve ra tung khoi ngay.
      *
-     * KHOI THIEU NGAY VAN GIU LAI, dien tam ngay hom nay. Con dang dung truoc man
-     * soat, sua mot o ngay de hon nhieu so voi chup lai ca trang vo - va vut ca khoi
-     * di thi con mat het nhung dong may doc dung.
+     * KHOI THIEU NGAY VAN GIU LAI, ngay de trong ([VoDanDo.DanDo.ngayDoc] ra null). Vut
+     * ca khoi di thi con mat het nhung dong may doc dung. Tu 30/9/2026 con chon ngay truoc
+     * khi chup, nen khoi thieu ngay lay ngay con chon, xem [vn.huytl.homeworkgate.ui
+     * .DanDoActivity]. Truoc do o day dien tam hom nay, va man soat khong phan biet duoc
+     * "vo ghi hom nay" voi "may khong doc ra ngay".
      */
     private fun docJson(chu: String?): List<VoDanDo.DanDo>? {
         val o = runCatching { JSONObject(chu.orEmpty()) }.getOrNull() ?: return null
@@ -124,7 +126,7 @@ object DocDanDo {
             }
             if (cac.isEmpty()) return@mapNotNull null
             VoDanDo.DanDo(
-                ngay = k.optString("ngay").takeIf { hopLe(it) } ?: LocalDate.now().toString(),
+                ngay = k.optString("ngay").takeIf { hopLe(it) } ?: "",
                 cacDong = cac
             )
         }

@@ -150,11 +150,11 @@ object GiaiDe {
     }
 
     private fun taoDeKiemTra(context: Context, bayGio: Long): List<DeGiai> {
-        val homNay = ngayCua(bayGio)
         val nguon = buildList {
-            VoDanDo.conHieuLuc(context)?.takeUnless { it.chuaDoc }?.let { vo ->
-                val ngay = vo.ngayDoc() ?: homNay
-                vo.dongKhac.forEach { add(it to ngay) }
+            // Moi trang vo con dong de nhac, khong chi trang luu sau cung (30/9/2026): vo thu
+            // Hai bao "thứ năm kiểm tra", thu Ba con chup vo moi, ma lan kiem tra van o do.
+            NhacBai.docTrang(context).forEach { tr ->
+                tr.cacDong.filterNot { it.laBaiTap }.forEach { add(it.chu to tr.ngay) }
             }
             KhoTinCuaCo(context).danhSach()
                 .filter { bayGio - it.luc < NGAY_DOC_TIN * MOT_NGAY }

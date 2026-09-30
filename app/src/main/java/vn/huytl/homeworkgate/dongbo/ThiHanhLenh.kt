@@ -18,13 +18,11 @@ import vn.huytl.homeworkgate.data.Prefs
 import vn.huytl.homeworkgate.data.SoCaiBai
 import vn.huytl.homeworkgate.data.SuaCham
 import vn.huytl.homeworkgate.data.LuatCongGio
-import vn.huytl.homeworkgate.data.VoDanDo
 import vn.huytl.homeworkgate.guard.CatMangVpn
 import vn.huytl.homeworkgate.guard.ChuongTin
 import vn.huytl.homeworkgate.guard.ParentMode
 import vn.huytl.homeworkgate.guard.Permissions
 import vn.huytl.homeworkgate.telegram.ApprovalService
-import vn.huytl.homeworkgate.telegram.DanDoSender
 import vn.huytl.homeworkgate.telegram.TelegramClient
 import java.text.SimpleDateFormat
 import java.util.Date
@@ -193,7 +191,7 @@ object ThiHanhLenh {
                 kq.loi ?: "Đã cấp ${kq.cap} phút từ quỹ giờ chơi, quỹ còn ${kq.conLai} phút."
             }
 
-            Lenh.DOC_VO -> docVo(context, d.get("giaTri"))
+            Lenh.DOC_VO -> docVo(context)
 
             // Ben kia vua mo app va hoi tablet con song khong. Day mot ban trang
             // thai day du roi thoi: khong ghi nhat ky, khong tra loi gi. Ban trang
@@ -521,33 +519,15 @@ object ThiHanhLenh {
     }
 
     /**
-     * Luu ket qua Claude doc vo dan do, Ba Huy dan tu Bang dieu khien. Xem [Lenh.DOC_VO].
+     * Ket qua Claude doc vo dan do, tu Bang dieu khien ban cu. Xem [Lenh.DOC_VO].
      *
-     * Chi cho ban chi co anh, xem [VoDanDo.tuClaude]. Luu xong thi gui lai tin vo dan do
-     * kem danh sach Claude doc, y nhu luc con soat: Ba Huy doi chieu voi anh ngay trong
-     * Telegram, va thay tung dong se nhac cho buoi nao. Con thi duoc nhac mo vo ra xem lai,
-     * vi o tich bai tap van la cua con.
+     * Tu 30/9/2026 may doc khong duoc thi con tu go ngay tren tablet, khong con tam vo nao cho
+     * Ba Huy nho Claude doc, nen lenh nay khong con cho nao de ghi. Tra loi cho ro thay vi im
+     * lang, de Ba Huy biet vi sao.
      */
-    internal fun docVo(context: Context, giaTri: Any?): String {
-        val kq = VoDanDo.tuClaude(VoDanDo.doc(context), giaTri)
-        val ban = kq.ban ?: return kq.loi
-        VoDanDo.luu(context, ban)
-        DanDoSender.guiNen(context, ban)
-        val con = context.getString(R.string.child_name)
-        SoCaiBai.datLoiNhan(
-            context,
-            "${context.getString(R.string.parent_name_cap)} đã nhờ Claude đọc vở dặn dò. " +
-                "$con mở Vở dặn dò xem lại giúp nhé."
-        )
-        val ngay = ban.ngayDoc()?.let { "${it.dayOfMonth}/${it.monthValue}" } ?: ban.ngay
-        DayLog.add(context, "Claude đọc vở dặn dò ngày $ngay: ${ban.cacBai.size} bài")
-        val hetHan = if (VoDanDo.conDung(ban.ngayDoc())) "" else {
-            " Vở này của buổi trước, máy chỉ giữ để nhắc bài môn nào chưa tới tiết."
-        }
-        return "Đã lưu vở dặn dò ngày $ngay: " +
-            (if (ban.cacBai.isEmpty()) "cô không giao bài tập nào." else "${ban.cacBai.size} bài phải làm.") +
-            hetHan
-    }
+    internal fun docVo(context: Context): String =
+        "Tablet không còn nhận kết quả đọc vở: từ 30/9/2026 máy đọc không được thì " +
+            "${context.getString(R.string.child_name)} tự gõ vở dặn dò trên tablet."
 
     /**
      * Dua tin cua co giao vao kho tin tren tablet, roi bao len. Y het lenh /tinco ben

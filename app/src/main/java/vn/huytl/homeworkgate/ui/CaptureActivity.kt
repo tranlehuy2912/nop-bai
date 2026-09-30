@@ -127,13 +127,11 @@ class CaptureActivity : AppCompatActivity() {
      * do): cau trong danh sach luon co de, du anh co trang sach hay khong. Bat chup them
      * mot tam nua chi de Claude nhin lai cai da co.
      *
-     * KHONG CO BUOC VO DAN DO. Vo chi chup o mot cho: dong "Chụp vở dặn dò hôm nay"
-     * dau man chon mon, mo [DanDoActivity], chup mot lan cho ca ngay. Truoc day man nay
-     * con mot buoc chup vo du phong, hien o moi lan nop khi trong may chua co vo con
-     * hieu luc, va vo chup o do chi theo dung lan nop ay; con thay bi hoi vo hoai du da
-     * co cho chup rieng. Ban vo da luu di kem bai (xem [vn.huytl.homeworkgate.data.VoDanDo]),
-     * va Bang dieu khien chep no vao loi nho Claude (xem
-     * [vn.huytl.homeworkgate.dongbo.DongBo.banDanDo]).
+     * KHONG CO BUOC VO DAN DO. Vo chi chup o mot cho: dong "Chụp vở dặn dò" o man chinh,
+     * mo [DanDoActivity]. Truoc day man nay con mot buoc chup vo du phong, hien o moi lan
+     * nop khi trong may chua co vo con hieu luc; con thay bi hoi vo hoai du da co cho chup
+     * rieng. Tu 30/9/2026 vo khong di kem bai nop nua: cham bai khong dung vo, vo chi de
+     * nhac bai ([vn.huytl.homeworkgate.data.NhacBai]).
      */
     private val cacBuoc: List<CaptureStage> by lazy {
         when {
@@ -354,8 +352,9 @@ class CaptureActivity : AppCompatActivity() {
         // trang khac la canh de xay ra nhat, va mot dong chu o day chan duoc no.
         val daKhai = pham?.takeIf { it.theoSach }?.let { "${it.bai} · ${it.cauIds.size} câu" }
         binding.txtStageHint.text = when {
+            // Tu 30/9/2026 con chon ngay truoc khi chup, may lay dung buoi ngay do.
             chupDanDo -> "Chụp trang vở dặn dò. Trang có mấy buổi cũng được, " +
-                "lát nữa chọn đúng buổi hôm nay."
+                "máy lấy đúng buổi ngày đã chọn."
             soanTap -> getString(R.string.capture_cap_hint)
             suaBai -> cauCanChup.ifEmpty { "Chụp lại phần Lê Hòa vừa sửa." }
             daKhai != null -> "$daKhai\n${getString(stage.hintRes)}"

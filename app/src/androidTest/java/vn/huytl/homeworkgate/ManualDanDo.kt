@@ -6,6 +6,7 @@ import androidx.test.platform.app.InstrumentationRegistry
 import org.junit.Test
 import org.junit.runner.RunWith
 import vn.huytl.homeworkgate.ai.DocDanDo
+import vn.huytl.homeworkgate.data.NhacBai
 import vn.huytl.homeworkgate.data.VoDanDo
 import vn.huytl.homeworkgate.telegram.DanDoSender
 import java.io.File
@@ -57,7 +58,7 @@ class ManualDanDo {
     }
 
     /**
-     * Nap san mot ban dan do de xem man soat ma khong ton mot lan goi AI.
+     * Nap san trang vo cua hom nay de xem danh sach va man sua ma khong ton mot lan goi AI.
      *
      *   adb shell am instrument -w -e class vn.huytl.homeworkgate.ManualDanDo#luuThuDeXemMan \
      *     vn.huytl.homeworkgate.test/androidx.test.runner.AndroidJUnitRunner
@@ -66,19 +67,18 @@ class ManualDanDo {
     @Test
     fun luuThuDeXemMan() {
         val context = InstrumentationRegistry.getInstrumentation().targetContext
-        VoDanDo.luu(
+        val homNay = java.time.LocalDate.now()
+        NhacBai.ghi(
             context,
-            VoDanDo.DanDo(
-                ngay = java.time.LocalDate.now().toString(),
-                cacDong = listOf(
-                    VoDanDo.Dong("Ngữ Văn: Ôn bài tuần sau KT", false),
-                    VoDanDo.Dong("KHTN: Ôn bài tuần sau KT", false),
-                    VoDanDo.Dong("TTNT: Làm bài cô giao", true),
-                    VoDanDo.Dong("ÂNhạc: Mang sách vở đầy đủ", false)
-                )
+            homNay,
+            listOf(
+                VoDanDo.Dong("Ngữ Văn: Ôn bài tuần sau KT", false),
+                VoDanDo.Dong("KHTN: Ôn bài tuần sau KT", false),
+                VoDanDo.Dong("TTNT: Làm bài cô giao", true),
+                VoDanDo.Dong("ÂNhạc: Mang sách vở đầy đủ", false)
             )
         )
-        Log.i(TAG, "da luu: ${VoDanDo.doc(context)}")
+        Log.i(TAG, "da luu: ${NhacBai.trangNgay(context, homNay)}")
     }
 
     /**

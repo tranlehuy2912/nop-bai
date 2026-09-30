@@ -41,42 +41,29 @@ object DanDoSender {
      * chu khong lifecycleScope, vi man soat dong ngay sau khi con bam Luu - buoc
      * vao lifecycleScope la tin bi huy giua chung.
      *
-     * Hong thi thu lai hai lan (sau 20 giay, roi mot phut), vi may doc vo hong thuong
-     * la dung luc mat mang. Van hong thi ghi lai [guiHong], de man vo dan do bao con
-     * va cho gui lai. Truoc day loi bi nuot: ban vo chi co anh mat ma anh ca ngay, ba
-     * khong nhan duoc gi ma man van ghi "Ảnh đã gửi ba Huy".
+     * Hong thi thu lai hai lan (sau 20 giay, roi mot phut), vi hong thuong la dung luc mat
+     * mang. Van hong thi thoi: trang da nam trong [NhacBai] va may van nhac, chi la Ba Huy
+     * khong nhan duoc tin nay. Xong thi xoa anh, gui duoc hay khong cung vay: [NhacBai]
+     * khong giu anh, va khong co nut gui lai.
      */
-    fun guiNen(context: Context, d: VoDanDo.DanDo) {
+    fun guiNen(context: Context, d: VoDanDo.DanDo, sua: Boolean = false) {
         val ct = context.applicationContext
-        if (!Prefs.get(ct).isConfigured) return
-        sp(ct).edit().remove(K_HONG_LUC).apply()
-        dangGuiLuc = d.luc
+        if (!Prefs.get(ct).isConfigured) {
+            boAnh(d)
+            return
+        }
         scope.launch {
-            var xong = false
             for (cho in listOf(0L, 20_000L, 60_000L)) {
                 if (cho > 0L) delay(cho)
-                xong = runCatching { send(ct, d) }.isSuccess
-                if (xong) break
+                if (runCatching { send(ct, d, sua = sua) }.isSuccess) break
             }
-            if (dangGuiLuc == d.luc) dangGuiLuc = 0L
-            if (!xong) sp(ct).edit().putLong(K_HONG_LUC, d.luc).apply()
+            boAnh(d)
         }
     }
 
-    /** Dang gui ban vo chup luc [luc] (con trong lan thu). */
-    fun dangGui(luc: Long): Boolean = luc != 0L && dangGuiLuc == luc
-
-    /** Ban vo chup luc [luc] da thu het ma van khong gui duoc. */
-    fun guiHong(context: Context, luc: Long): Boolean =
-        luc != 0L && sp(context).getLong(K_HONG_LUC, 0L) == luc
-
-    @Volatile
-    private var dangGuiLuc = 0L
-
-    private const val K_HONG_LUC = "gui_hong_luc"
-
-    private fun sp(context: Context) =
-        context.applicationContext.getSharedPreferences("dando_sender", Context.MODE_PRIVATE)
+    private fun boAnh(d: VoDanDo.DanDo) {
+        d.anh?.let { runCatching { File(it).delete() } }
+    }
 
     private val scope = CoroutineScope(SupervisorJob() + Dispatchers.IO)
 
@@ -84,10 +71,10 @@ object DanDoSender {
      * [shrink] de test tat di duoc. Ham nay chan luong goi - nguoi goi tu dua sang
      * luong nen.
      */
-    fun send(context: Context, d: VoDanDo.DanDo, shrink: Boolean = true) {
+    fun send(context: Context, d: VoDanDo.DanDo, shrink: Boolean = true, sua: Boolean = false) {
         val prefs = Prefs.get(context)
         val client = TelegramClient(prefs.botToken)
-        val chuThich = chuThich(d, context.getString(R.string.child_name))
+        val chuThich = chuThich(d, context.getString(R.string.child_name), sua)
 
         val goc = d.anh?.let { File(it) }?.takeIf { it.exists() }
         if (goc == null) {
@@ -95,10 +82,7 @@ object DanDoSender {
             return
         }
         val guiDi = if (shrink) ImageUtil.shrinkInPlace(goc) else goc
-        val daGui = client.sendPhoto(prefs.parentChatId, guiDi, chuThich, null)
-        // Giu ma anh de Bang dieu khien tai lai dung tam nay khi Ba Huy nho Claude doc.
-        // Xem [VoDanDo.DanDo.fileId].
-        daGui.fileIds.firstOrNull()?.let { VoDanDo.ghiMaAnh(context, d.luc, it) }
+        client.sendPhoto(prefs.parentChatId, guiDi, chuThich, null)
         // shrinkInPlace tra ve chinh file goc khi khong giai ma duoc anh; xoa luc do
         // la mat ban duy nhat trong may.
         if (guiDi != goc) guiDi.delete()
@@ -110,22 +94,29 @@ object DanDoSender {
      * KE RIENG CHO CON SUA KHAC MAY. Do khong phai de bat loi con; do la cho duy
      * nhat trong ca duong nay ma mot nguoi co the doi loi nhac bang cach go tay, nen
      * no phai hien ra chu khong lang le troi qua.
+     *
+     * [sua] la con mo trang da luu ra sua, khong chup anh moi. Luc do tin khong co anh
+     * (anh goc nam o tin lan dau), va [VoDanDo.Dong.mayTich] cua moi dong la o tich cua
+     * lan luu truoc, nen phan ke cho sua la so voi lan luu truoc chu khong so voi may.
+     *
+     * Trang con tu go ([VoDanDo.NGUON_TU_GO]) thi khong co ban may doc de so: dong nao
+     * cung la con go, nen noi mot cau o dau tin thay cho danh sach "tự thêm dòng".
      */
-    fun chuThich(d: VoDanDo.DanDo, con: String = "Lê Hòa"): String = buildString {
+    fun chuThich(d: VoDanDo.DanDo, con: String = "Lê Hòa", sua: Boolean = false): String = buildString {
         val ngay = d.ngayDoc()
         val gio = SimpleDateFormat("HH:mm 'ngày' dd/MM", Locale("vi", "VN")).format(Date())
-        if (d.chuaDoc) {
-            // May doc khong duoc, con gui anh sang. Chua ai doc thi chua co gi de nhac.
-            append("📒 ").append(con).append(" chụp vở dặn dò lúc ").append(gio).append('.')
-            append("\n\nMáy chưa đọc được trang này. Ba Huy mở Bảng điều khiển, chạm thẻ vở ")
-            append("dặn dò ở tab Bảng để nhờ Claude đọc. Đọc xong thì máy nhắc bài theo trang này.")
-            return@buildString
-        }
-        append("📒 ")
-        if (d.nguon == VoDanDo.NGUON_CLAUDE) append("Claude đọc vở dặn dò")
-        else append(con).append(" soát xong vở dặn dò")
+        val tuGo = d.nguon == VoDanDo.NGUON_TU_GO
+        append("📒 ").append(con)
+        append(
+            when {
+                sua -> " sửa lại vở dặn dò"
+                tuGo -> " tự gõ vở dặn dò"
+                else -> " soát xong vở dặn dò"
+            }
+        )
         if (ngay != null) append(" ngày ${ngay.dayOfMonth}/${ngay.monthValue}")
         append(".\nLúc ").append(gio).append('.')
+        if (tuGo && !sua) append("\nMáy không đọc được ảnh, ").append(con).append(" nhìn vở gõ lại từng dòng.")
 
         // Buoi se nhac cua tung dong, tinh y nhu [NhacBai] tinh.
         val hanCua = ngay?.let { n ->
@@ -151,11 +142,11 @@ object DanDoSender {
             append("\n\nMáy nhắc ").append(con).append(" từ hôm trước buổi đó.")
         }
 
-        val sua = d.cacDong.filter { it.conSua }
-        val tuThem = d.cacDong.filter { it.mayTich == null }
-        if (sua.isNotEmpty() || tuThem.isNotEmpty()) {
-            append("\n\n").append(con).append(" sửa khác máy đọc:")
-            sua.forEach {
+        val doiTich = d.cacDong.filter { it.conSua }
+        val tuThem = if (tuGo && !sua) emptyList() else d.cacDong.filter { it.mayTich == null }
+        if (doiTich.isNotEmpty() || tuThem.isNotEmpty()) {
+            append("\n\n").append(con).append(if (sua) " sửa so với lần lưu trước:" else " sửa khác máy đọc:")
+            doiTich.forEach {
                 append(if (it.laBaiTap) "\n+ tính là bài tập: " else "\n− bỏ khỏi bài tập: ")
                 append(it.chu)
             }

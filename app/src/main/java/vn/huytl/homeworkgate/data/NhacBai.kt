@@ -23,21 +23,28 @@ import java.util.Calendar
  *
  * GIU CHU CUA NHIEU TRANG VO. Bai giao thu Hai co khi toi thu Bay moi den han, trong khi thu
  * Ba, thu Tu con da chup vo moi. Nen o day giu ban chu cua moi trang da soat, toi khi dong
- * cuoi cung cua trang do qua han. Tam anh van chi mot, o [VoDanDo].
+ * cuoi cung cua trang do qua han.
+ *
+ * MOI NGAY GHI TREN VO MOT TRANG (Ba Huy chon 30/9/2026). Luu trang trung ngay thi trang sau
+ * de trang truoc; khac ngay thi giu ca hai, du chup chung mot luc hay chung mot tam anh. Day
+ * la noi duy nhat giu vo da soat: truoc do con mot ban "vo dang dung" o [VoDanDo], ban luu
+ * sau de ban luu truoc du khac ngay. Anh khong giu o day.
  */
 object NhacBai {
 
     /** Mot trang vo da doc ra chu. Chi giu phan nhac bai can, khong giu anh. */
     data class Trang(
-        /** Ngay ghi tren vo: ngay Le Hoa hoc buoi co dan. */
+        /** Ngay ghi tren vo: ngay Le Hoa hoc buoi co dan. Khoa cua trang. */
         val ngay: LocalDate,
-        val cacDong: List<VoDanDo.Dong>,
-        /**
-         * Moc chup tam anh, lay tu [VoDanDo.DanDo.chupLuc]. Con sua ngay cua chinh trang da
-         * luu thi moc nay giu nguyen, nho vay ban cu duoc thay chu khong nam lai voi ngay sai.
-         */
-        val chupLuc: Long = 0L
-    )
+        val cacDong: List<VoDanDo.Dong>
+    ) {
+        /** Mot dong cho danh sach trang: "29/9 · 2 bài". */
+        fun moTa(): String {
+            val soBai = cacDong.count { it.laBaiTap }
+            return "${ngay.dayOfMonth}/${ngay.monthValue} · " +
+                if (soBai == 0) "không có bài tập" else "$soBai bài"
+        }
+    }
 
     /** Mot dong dan do kem han cua no. */
     data class Muc(
@@ -255,21 +262,27 @@ object NhacBai {
     }
 
     /**
-     * Giu chu cua mot trang vo vua luu. Ban chi co anh thi chua co gi de nhac.
+     * Luu mot trang vo da soat. Trang cung ngay bi thay.
      *
-     * Thay trang cung ngay, hay cung tam anh: con soat lai trang da luu, hay sua ngay cua no,
-     * thi ban cu phai di. Trang da het han o moi dong thi bo.
+     * [boNgay] la ngay cu cua chinh trang nay khi con mo trang da luu ra sua ngay: trang o
+     * ngay cu phai di, khong thi no nam lai thanh mot trang thu hai voi ngay sai. Trang da
+     * het han o moi dong thi bo.
      */
     @Synchronized
-    fun ghi(context: Context, vo: VoDanDo.DanDo, bayGio: LocalDateTime = LocalDateTime.now()) {
-        if (vo.chuaDoc) return
-        val ngay = vo.ngayDoc() ?: return
-        val moi = Trang(ngay, vo.cacDong, vo.chupLuc)
-        val giu = docTrang(context).filterNot {
-            it.ngay == ngay || (vo.chupLuc != 0L && it.chupLuc == vo.chupLuc)
-        }
-        luu(context, don(giu + moi, bayGio))
+    fun ghi(
+        context: Context,
+        ngay: LocalDate,
+        cacDong: List<VoDanDo.Dong>,
+        boNgay: LocalDate? = null,
+        bayGio: LocalDateTime = LocalDateTime.now()
+    ) {
+        val giu = docTrang(context).filterNot { it.ngay == ngay || it.ngay == boNgay }
+        luu(context, don(giu + Trang(ngay, cacDong), bayGio))
     }
+
+    /** Trang cua ngay [ngay], hay null. */
+    fun trangNgay(context: Context, ngay: LocalDate): Trang? =
+        docTrang(context).firstOrNull { it.ngay == ngay }
 
     /** Bo cac trang da het han o moi dong. Goi cung luc don [VoDanDo]. */
     @Synchronized
@@ -324,7 +337,6 @@ object NhacBai {
             put(
                 JSONObject()
                     .put("ngay", tr.ngay.toString())
-                    .put("chupLuc", tr.chupLuc)
                     .put(
                         "dong",
                         JSONArray().apply {
@@ -345,8 +357,7 @@ object NhacBai {
                 val x = dong.optJSONObject(j) ?: return@mapNotNull null
                 val chu = x.optString("chu").trim()
                 if (chu.isEmpty()) null else VoDanDo.Dong(chu, x.optBoolean("bai"))
-            },
-            chupLuc = o.optLong("chupLuc")
+            }
         )
     }
 }

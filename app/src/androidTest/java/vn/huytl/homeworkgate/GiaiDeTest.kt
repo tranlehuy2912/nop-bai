@@ -51,9 +51,7 @@ class GiaiDeTest {
 
     /** Moc Unit Tieng Anh that tren may, tra lai sau test. Tu 29/9/2026 Tieng Anh cung ra de. */
     private var unitCu: Int? = null
-    private var voCu: VoDanDo.DanDo? = null
     private var nhacCu: List<NhacBai.Trang> = emptyList()
-    private var anhCu: java.io.File? = null
     private val deDaTao = mutableListOf<String>()
     private val cauDaGhi = mutableListOf<String>()
 
@@ -73,17 +71,10 @@ class GiaiDeTest {
         // can thi tu dat.
         unitCu = HocToi.unitCua(context, PhanHoc.BO_TIENG_ANH)
         HocToi.xoa(context, PhanHoc.BO_TIENG_ANH)
-        voCu = VoDanDo.doc(context)
-        // VoDanDo.xoa xoa ca tam anh vo: chep ra truoc de tra lai, khong thi test xong vo
-        // tren may mat anh (doc lai, gui ba deu hong).
-        anhCu = voCu?.anh?.let { java.io.File(it) }?.takeIf { it.exists() }?.let { f ->
-            java.io.File(context.cacheDir, "giai_de_test_vo.jpg").also { f.copyTo(it, overwrite = true) }
-        }
-        // Ban vo that tren may co the dang bao sap kiem tra: bo di cho de tuan khong lan.
-        VoDanDo.xoa(context)
-        // Luu vo la chep chu sang NhacBai: giu ban cu de tra lai, khong thi test de lai loi
-        // nhac bai tren may.
+        // Giai de doc lich kiem tra tu moi trang vo dang nhac (tu 30/9/2026). Trang that tren
+        // may co the dang bao sap kiem tra: giu lai de tra, roi bo di cho de tuan khong lan.
         nhacCu = NhacBai.docTrang(context)
+        NhacBai.xoaHet(context)
     }
 
     @After
@@ -97,15 +88,7 @@ class GiaiDeTest {
         HocToi.xoa(context, PhanHoc.BO_TIENG_ANH)
         unitCu?.let { HocToi.ghiUnit(context, PhanHoc.BO_TIENG_ANH, it) }
         NhacBai.xoaHet(context)
-        nhacCu.forEach {
-            NhacBai.ghi(context, VoDanDo.DanDo(ngay = it.ngay.toString(), cacDong = it.cacDong, chupLuc = it.chupLuc))
-        }
-        val cu = voCu
-        if (cu != null) VoDanDo.luu(context, cu) else VoDanDo.xoa(context)
-        anhCu?.let { tam ->
-            cu?.anh?.let { tam.copyTo(java.io.File(it), overwrite = true) }
-            tam.delete()
-        }
+        nhacCu.forEach { NhacBai.ghi(context, it.ngay, it.cacDong) }
     }
 
     private fun datMoc(ma: String, soBai: Int?) {
@@ -287,14 +270,12 @@ class GiaiDeTest {
     fun vo_dan_do_bao_kiem_tra_thi_mo_de_on_dung_bai() {
         datMoc("toan8ct", 9)
         val homNay = LocalDate.now()
-        VoDanDo.luu(
+        NhacBai.ghi(
             context,
-            VoDanDo.DanDo(
-                ngay = homNay.toString(),
-                cacDong = listOf(
-                    VoDanDo.Dong("Toán: làm bài 2.28 trang 47", laBaiTap = true),
-                    VoDanDo.Dong("Toán: tiết sau kiểm tra 15 phút bài 3, 4", laBaiTap = false)
-                )
+            homNay,
+            listOf(
+                VoDanDo.Dong("Toán: làm bài 2.28 trang 47", laBaiTap = true),
+                VoDanDo.Dong("Toán: tiết sau kiểm tra 15 phút bài 3, 4", laBaiTap = false)
             )
         )
         val kt = taoDe(System.currentTimeMillis()).filter { it.loai == GiaiDe.LOAI_KIEM_TRA }

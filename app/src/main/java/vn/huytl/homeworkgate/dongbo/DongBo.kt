@@ -33,7 +33,6 @@ import vn.huytl.homeworkgate.kho.TraLoi
 import vn.huytl.homeworkgate.data.Prefs
 import vn.huytl.homeworkgate.data.ViecNha
 import vn.huytl.homeworkgate.data.NhacBai
-import vn.huytl.homeworkgate.data.VoDanDo
 import vn.huytl.homeworkgate.guard.GuardAccessibilityService
 import vn.huytl.homeworkgate.guard.ParentMode
 import vn.huytl.homeworkgate.guard.Permissions
@@ -203,9 +202,8 @@ object DongBo {
     /** Ban sao cau hinh vua ghi, de chi ghi lai khi no doi. Xem [dayCaiDatNeuDoi]. */
     private var caiDatDaDay: Map<String, Any>? = null
 
-    /** Ban vo dan do vua ghi len hop/dando, null la vua xoa. Xem [dayDanDoNeuDoi]. */
-    private var danDoDaDay: Map<String, Any>? = null
-    private var daDayDanDo = false
+    /** Da xoa hop/dando trong lan chay nay. Xem [xoaDanDoCu]. */
+    private var daXoaDanDo = false
 
     /** Ban nhac bai vua ghi len hop/nhacbai, null la vua xoa. Xem [dayNhacBaiNeuDoi]. */
     private var nhacBaiDaDay: Map<String, Any>? = null
@@ -294,8 +292,7 @@ object DongBo {
         dangChay = false
         banDaDay = null
         caiDatDaDay = null
-        danDoDaDay = null
-        daDayDanDo = false
+        daXoaDanDo = false
         nhacBaiDaDay = null
         daDayNhacBai = false
         nhatKyDaDay = null
@@ -418,32 +415,26 @@ object DongBo {
         }
 
         dayCaiDatNeuDoi(context)
-        dayDanDoNeuDoi(context)
+        xoaDanDoCu(context)
         dayNhacBaiNeuDoi(context)
         dayNhatKy(context)
     }
 
     /**
-     * Vo dan do cua ngay, cho the vo dan do o tab Bang ben dien thoai. Xem [Duong.D_DAN_DO].
+     * Xoa hop/dando ([Duong.D_DAN_DO]) mot lan moi lan chay.
      *
-     * Chay trong [dayThat] y nhu ban sao cau hinh: ban vo nam trong cung file prefs, nen
-     * con luu, Claude doc, hay ban het han bi don deu keo theo mot lan so. Khong co ban
-     * nao con hieu luc thi xoa document, de ben dien thoai khong con nut nho Claude doc
-     * mot tam vo cu. Nhip tim goi [dayThat] deu dan, nen ban het han qua dem cung duoc
-     * xoa ma khong can ai mo man vo dan do.
+     * Document do giu tam vo may doc khong duoc, cho the "Nhờ Claude đọc vở" ben dien thoai.
+     * Tu 30/9/2026 may doc khong duoc thi con tu go, khong con tam nao cho doc, nen tablet
+     * khong ghi no nua. Xoa di de Bang dieu khien ban cu khong con hien mot tam vo cu; xoa
+     * mot document khong co thi Firestore cung khong bao loi, nen goi lai khong hai gi.
      */
-    private fun dayDanDoNeuDoi(context: Context) {
-        val vo = VoDanDo.conHieuLuc(context)
-        val ban = vo?.let { banDanDo(it) + (Duong.F_LUC to it.luc) }
-        if (daDayDanDo && ban == danDoDaDay) return
+    private fun xoaDanDoCu(context: Context) {
+        if (daXoaDanDo) return
         val ref = hop(context, Duong.D_DAN_DO) ?: return
-        daDayDanDo = true
-        danDoDaDay = ban
-        val viec = if (ban == null) ref.delete() else ref.set(ban)
-        viec.addOnFailureListener {
-            // Quen ban vua nho, de lan prefs doi sau ghi lai.
-            daDayDanDo = false
-            Log.w(TAG, "day vo dan do hong: ${it.message}")
+        daXoaDanDo = true
+        ref.delete().addOnFailureListener {
+            daXoaDanDo = false
+            Log.w(TAG, "xoa vo dan do cu hong: ${it.message}")
         }
     }
 
@@ -698,8 +689,7 @@ object DongBo {
      * Mot lan con nop bai. Goi ngay sau khi anh da len Telegram.
      *
      * [khai] la cac cau con khai kem de, xem [banKhai]. Gui kem de app Bang dieu khien
-     * co de bai cho Claude ngay ca khi tablet khong tu cham. [danDo] la vo dan do con
-     * soat ma lan nop nay dung, xem [banDanDo].
+     * co de bai cho Claude ngay ca khi tablet khong tu cham.
      */
     fun dayBaiMoi(
         context: Context,
@@ -751,28 +741,6 @@ object DongBo {
             if (pham.laSua) put("suaBai", pham.suaBai)
             put("cac", cac)
         }
-    }
-
-    /**
-     * Vo dan do dang giu, cho hop/dando. Xem [Duong.D_DAN_DO] va [Duong.F_DAN_DO].
-     *
-     * Chi dua len phan dien thoai can: ngay, bai phai lam, dong dan viec khac, va ma anh
-     * trang vo de Ba Huy nho Claude doc. Dong nao con tich khac may thi khong dua: Ba Huy
-     * da thay no trong tin vo dan do tren Telegram.
-     *
-     * Ban chi co anh thi cacBai rong ma chuaDoc la true: ben dien thoai khong duoc hieu
-     * no la hom co khong giao bai tap.
-     *
-     * Truoc 30/9/2026 ban nay con chep vao tung bai luc nop, de Claude tinh tron goi.
-     */
-    fun banDanDo(vo: VoDanDo.DanDo): Map<String, Any> = buildMap {
-        put("ngay", vo.ngay)
-        put("cacBai", vo.cacBai)
-        put("dongKhac", vo.dongKhac)
-        vo.fileId?.let { put(Duong.F_FILE_ID, it) }
-        put("chuaDoc", vo.chuaDoc)
-        put("nguon", vo.nguon)
-        put("chupLuc", vo.chupLuc)
     }
 
     /**

@@ -21,6 +21,8 @@ import org.junit.Assert.assertTrue
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
+import android.content.Intent
+import vn.huytl.homeworkgate.data.NhacBai
 import vn.huytl.homeworkgate.data.VoDanDo
 import vn.huytl.homeworkgate.ui.CaptureActivity
 import vn.huytl.homeworkgate.ui.DanDoActivity
@@ -37,8 +39,9 @@ import java.time.LocalDate
  * qua khoa - xem chu thich dau AndroidManifest.
  *
  * XOAY THAT tren may ao qua UiAutomation, xong thi tra ve dung che do xoay cu. Khong
- * test nao goi Gemini: man dan do co san ban luu nen khong mo camera. Ban vo dan do
- * dang co trong may duoc tra lai sau moi test.
+ * test nao goi Gemini: man dan do mo thang mot trang da luu ra sua
+ * ([DanDoActivity.EXTRA_SUA_NGAY]) nen khong mo camera. Cac trang vo dang co trong may
+ * duoc tra lai sau moi test.
  */
 @RunWith(AndroidJUnit4::class)
 class XoayManTest {
@@ -46,8 +49,10 @@ class XoayManTest {
     private val ins = InstrumentationRegistry.getInstrumentation()
     private val context = ins.targetContext
 
-    private val ban = VoDanDo.DanDo(
-        ngay = LocalDate.now().toString(),
+    private val homNay = LocalDate.now()
+
+    private val ban = NhacBai.Trang(
+        ngay = homNay,
         cacDong = listOf(
             VoDanDo.Dong("Toán: làm bài 2.28 trang 47", laBaiTap = true),
             VoDanDo.Dong("KHTN: mang sách vở đầy đủ", laBaiTap = false),
@@ -55,25 +60,28 @@ class XoayManTest {
         )
     )
 
-    private var banCu: VoDanDo.DanDo? = null
+    private var trangCu: List<NhacBai.Trang> = emptyList()
 
     @Before
     fun napBan() {
-        banCu = VoDanDo.doc(context)
-        VoDanDo.luu(context, ban)
+        trangCu = NhacBai.docTrang(context)
+        NhacBai.ghi(context, ban.ngay, ban.cacDong)
     }
 
-    // Tra lai ban co truoc test, ca tam anh cua no. VoDanDo.xoa chi chay khi truoc do
-    // khong co ban nao, luc do ban thu khong co anh nen khong xoa file nao.
+    // Tra lai cac trang co truoc test.
     @After
     fun traBan() {
-        val cu = banCu
-        if (cu != null) VoDanDo.luu(context, cu) else VoDanDo.xoa(context)
+        NhacBai.xoaHet(context)
+        trangCu.forEach { NhacBai.ghi(context, it.ngay, it.cacDong) }
     }
+
+    private fun moMan() = ActivityScenario.launch<DanDoActivity>(
+        Intent(context, DanDoActivity::class.java).putExtra(DanDoActivity.EXTRA_SUA_NGAY, homNay.toString())
+    )
 
     @Test
     fun xoayMayThiManDanDoGiuNguyenChoConDangSua() {
-        ActivityScenario.launch(DanDoActivity::class.java).use { sc ->
+        moMan().use { sc ->
             lateinit var truoc: Activity
             sc.onActivity {
                 truoc = it
@@ -101,7 +109,7 @@ class XoayManTest {
      */
     @Test
     fun dungLaiManDanDoKhongChepDongCuoiLenMoiDong() {
-        ActivityScenario.launch(DanDoActivity::class.java).use { sc ->
+        moMan().use { sc ->
             sc.recreate()
             sc.onActivity {
                 assertEquals(ban.cacDong.map { d -> d.chu to d.laBaiTap }, cacDong(it))
@@ -123,7 +131,7 @@ class XoayManTest {
             true
         )
         try {
-            ActivityScenario.launch(DanDoActivity::class.java).use { sc ->
+            moMan().use { sc ->
                 sc.onActivity {
                     oChu(it, 1).setText("KHTN: làm bài 3 trang 20")
                     it.findViewById<View>(R.id.nut_chup_lai).performClick()

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-  Man soat trang vo dan do: may doc ra chu, Le Hoa sua lai cho dung, roi luu.
+  Man vo dan do: chon ngay roi chup, may doc ra chu, Le Hoa sua lai cho dung, roi luu.
 
-  Mot layout cho ca ba trang thai (dang doc, soat, hong), bat tat bang visibility -
+  Mot layout cho ca ba trang thai (chon ngay, dang doc, soat), bat tat bang visibility -
   y het cach [activity_hoc_thuoc.xml] lam. Ba man rieng thi phai chuyen ban doc qua
   lai giua chung, ma ban do song co mot phut roi bo.
 -->
@@ -48,6 +48,96 @@
                 android:textStyle="bold" />
         </LinearLayout>
 
+        <!-- Trang thai 0: chon ngay truoc khi chup, va cac trang dang nhac. -->
+        <ScrollView
+            android:id="@+id/box_chon"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:paddingHorizontal="@dimen/st_le_ngang"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingTop="8dp"
+                android:paddingBottom="24dp">
+
+                <TextView
+                    style="@style/Nhan.Nhom"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="VỞ CỦA NGÀY NÀO" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:lineSpacingExtra="3dp"
+                    android:text="Chọn ngày ghi trên trang vở rồi chụp. Chụp vở buổi trước thì đổi ngày."
+                    android:textColor="@color/ink_soft"
+                    android:textSize="14sp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/nut_ngay_chup"
+                    style="@style/Widget.Material3.Button.OutlinedButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="56dp"
+                    android:layout_marginTop="10dp"
+                    android:paddingHorizontal="24dp"
+                    android:textSize="17sp"
+                    app:cornerRadius="20dp" />
+
+                <!-- Ngay nay da co trang: chup nua thi trang moi thay trang cu. -->
+                <TextView
+                    android:id="@+id/chu_da_co"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:lineSpacingExtra="3dp"
+                    android:textColor="@color/ink_soft"
+                    android:textSize="14sp"
+                    android:visibility="gone" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/nut_chup"
+                    android:layout_width="match_parent"
+                    android:layout_height="64dp"
+                    android:layout_marginTop="16dp"
+                    android:textSize="18sp"
+                    app:cornerRadius="20dp" />
+
+                <TextView
+                    android:id="@+id/nhan_dang_nhac"
+                    style="@style/Nhan.Nhom"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="28dp"
+                    android:text="VỞ ĐANG NHẮC BÀI"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/chu_dang_nhac"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:lineSpacingExtra="3dp"
+                    android:text="Bấm vào một trang để xem lại hay sửa. Bài nào qua tiết rồi thì máy tự bỏ."
+                    android:textColor="@color/ink_soft"
+                    android:textSize="14sp"
+                    android:visibility="gone" />
+
+                <LinearLayout
+                    android:id="@+id/danh_sach_trang"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:orientation="vertical" />
+            </LinearLayout>
+        </ScrollView>
+
         <!-- Trang thai 1: may dang doc. -->
         <LinearLayout
             android:id="@+id/box_doc"
@@ -71,65 +161,7 @@
                 android:textSize="17sp" />
         </LinearLayout>
 
-        <!-- Trang thai 2: doc hong. -->
-        <LinearLayout
-            android:id="@+id/box_hong"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:orientation="vertical"
-            android:paddingHorizontal="40dp"
-            android:visibility="gone">
-
-            <TextView
-                android:id="@+id/chu_hong"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:lineSpacingExtra="3dp"
-                android:textColor="@color/ink_soft"
-                android:textSize="16sp" />
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/nut_thu_lai"
-                android:layout_width="wrap_content"
-                android:layout_height="56dp"
-                android:layout_marginTop="24dp"
-                android:paddingHorizontal="28dp"
-                android:text="Chụp lại"
-                android:textSize="16sp"
-                app:cornerRadius="20dp" />
-
-            <!-- Doc lai dung tam anh vua chup, hay tam da gui ba Huy: mat mang mot luc
-                 thi khong phai chup lai. -->
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/nut_doc_lai"
-                style="@style/Widget.Material3.Button.OutlinedButton"
-                android:layout_width="wrap_content"
-                android:layout_height="56dp"
-                android:layout_marginTop="12dp"
-                android:paddingHorizontal="28dp"
-                android:text="Thử đọc lại"
-                android:textSize="16sp"
-                android:visibility="gone"
-                app:cornerRadius="20dp" />
-
-            <!-- May doc khong duoc: gui tam anh sang ba Huy, de Claude doc. -->
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/nut_gui_ba"
-                style="@style/Widget.Material3.Button.OutlinedButton"
-                android:layout_width="wrap_content"
-                android:layout_height="56dp"
-                android:layout_marginTop="12dp"
-                android:paddingHorizontal="28dp"
-                android:text="Gửi ảnh để ba Huy đọc"
-                android:textSize="16sp"
-                android:visibility="gone"
-                app:cornerRadius="20dp" />
-        </LinearLayout>
-
-        <!-- Trang thai 3: soat lai cai may vua doc. -->
+        <!-- Trang thai 2: soat lai cai may vua doc, hay con tu go khi may doc khong duoc. -->
         <ScrollView
             android:id="@+id/box_soat"
             android:layout_width="match_parent"
@@ -146,6 +178,7 @@
                 android:paddingBottom="24dp">
 
                 <TextView
+                    android:id="@+id/chu_soat"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:lineSpacingExtra="3dp"
@@ -162,23 +195,6 @@
                     android:contentDescription="Trang vở vừa chụp"
                     android:maxHeight="240dp"
                     android:scaleType="fitStart" />
-
-                <!-- Mot trang vo that co hai ba ngay chep noi nhau. Hang nay de
-                     con chon dung khoi cua hom nay; mot ngay thi an di. -->
-                <HorizontalScrollView
-                    android:id="@+id/cuon_ngay"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="18dp"
-                    android:scrollbars="none"
-                    android:visibility="gone">
-
-                    <LinearLayout
-                        android:id="@+id/hang_ngay"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal" />
-                </HorizontalScrollView>
 
                 <TextView
                     style="@style/Nhan.Nhom"

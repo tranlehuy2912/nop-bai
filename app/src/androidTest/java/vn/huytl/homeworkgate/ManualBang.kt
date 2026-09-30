@@ -195,14 +195,11 @@ class ManualBang {
                 .put("cauDangChoSua", tb.cauDangChoSua))
         })
 
-        val dando = VoDanDo.doc(context)
+        // Tu 30/9/2026: moi ngay mot trang o NhacBai.
         ra(JSONObject().apply {
             put("k", "dando")
-            put("conHieuLuc", VoDanDo.conHieuLuc(context) != null)
-            put("moTa", dando?.moTa() ?: JSONObject.NULL)
-            put("ngay", dando?.ngay ?: JSONObject.NULL)
-            put("cacBai", JSONArray(dando?.cacBai ?: emptyList<String>()))
-            put("dongKhac", JSONArray(dando?.dongKhac ?: emptyList<String>()))
+            put("daLuuHomNay", VoDanDo.daLuuHomNay(context))
+            put("cacTrang", JSONArray(NhacBai.docTrang(context).sortedBy { it.ngay }.map { it.moTa() }))
         })
 
         ra(JSONObject().apply {
@@ -362,29 +359,28 @@ class ManualBang {
                 ketQua = ViecNha.apDung(context, xong).name
             }
             "xoaviecnha" -> { ViecNha.xoa(context); ketQua = ViecNha.dangKhoa(context) }
-            // Nap san mot trang vo dan do da soat, de nhin canh "may nho roi" ma
-            // khong phai chup that. Ngay lay HOM NAY de ban con hieu luc.
             /*
-             * Nap mot trang vo da soat. -e ngay yyyy-MM-dd de nap vo cua hom khac (mac dinh hom
-             * nay). Moi dong mang ten mon o dau, de [NhacBai] tinh han theo tiet sau cua mon.
+             * Nap mot trang vo da soat, de nhin canh "may nho roi" ma khong phai chup that.
+             * -e ngay yyyy-MM-dd de nap vo cua hom khac (mac dinh hom nay); trung ngay thi thay
+             * trang cu. Moi dong mang ten mon o dau, de [NhacBai] tinh han theo tiet sau cua mon.
              */
             "napdando" -> {
-                val ngay = args.getString("ngay") ?: java.time.LocalDate.now().toString()
-                VoDanDo.luu(context, VoDanDo.DanDo(
-                    ngay = ngay,
-                    cacDong = listOf(
+                val ngay = java.time.LocalDate.parse(args.getString("ngay") ?: java.time.LocalDate.now().toString())
+                NhacBai.ghi(
+                    context, ngay,
+                    listOf(
                         VoDanDo.Dong("Toán: làm bài 2.26 và 2.27 trang 45", laBaiTap = true),
                         VoDanDo.Dong("Tiếng Anh: làm bài tập Unit 2 trang 14", laBaiTap = true),
                         VoDanDo.Dong("KHTN: tiết sau kiểm tra bài 2, bài 3", laBaiTap = false),
                         VoDanDo.Dong("Mang đủ sách vở, mặc đồng phục", laBaiTap = false)
                     )
-                ))
-                ketQua = VoDanDo.conHieuLuc(context)?.moTa() ?: "đã lưu vở ngày $ngay (hết hạn)"
+                )
+                VoDanDo.ghiDaLuu(context)
+                ketQua = NhacBai.trangNgay(context, ngay)?.moTa() ?: "đã lưu vở ngày $ngay (không còn gì để nhắc)"
             }
             "xoadando" -> {
-                VoDanDo.xoa(context)
                 NhacBai.xoaHet(context)
-                ketQua = VoDanDo.doc(context) == null
+                ketQua = NhacBai.docTrang(context).isEmpty()
             }
             /*
              * Nap mot cau DA QUA HEN on lai.
