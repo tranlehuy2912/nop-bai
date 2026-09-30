@@ -171,7 +171,7 @@ Toán và Khoa học tự nhiên cắt hình sau cùng (anh Huy chốt 29/09/202
 
 ## Bộ đề thi in sẵn (`dethianh8.json`, từ 30/09/2026)
 
-Một file như file sách, nhưng mỗi `bai` là một đề nguyên vẹn, giữ đúng thứ tự in. Khai trong `NganHang.SACH` với `deThi = true`: không hiện ở màn chọn sách khi nộp bài, không vào làm thêm hay đề tuần, chỉ Giải đề dùng (`kho/DeThi.kt`, `GiaiDe.taoDeThi`, `GiaiDe.moDeThi`). Script sinh file nằm ngoài git, ở `ghep-nhap/dethianh/tao_de.py` cạnh ba repo.
+Một file như file sách, nhưng mỗi `bai` là một đề nguyên vẹn, giữ đúng thứ tự in. Khai trong `NganHang.SACH` với `deThi = true`: không hiện ở màn chọn sách khi nộp bài, không vào làm thêm hay đề tuần, chỉ Giải đề dùng (`kho/DeThi.kt`, `GiaiDe.taoDeThi`, `GiaiDe.moDeThi`). Script sinh file nằm ngoài git, ở `ghep-nhap/dethianh/tao_de.py` cạnh ba repo. Đợt hai (giữa kì 1 số 4 tới 6, cuối kì 1 số 1 tới 8 trừ số 6, ngày 30/09/2026) soạn từ PDF bằng tác tử; bản chữ đề, file từng đề, ghi chú soát và script gộp nằm trong gói `de-thi-anh-dot2-2026-09-30.zip`, cũng ngoài git.
 
 Ở mức bài, thêm `de_thi`:
 
@@ -181,8 +181,8 @@ Một file như file sách, nhưng mỗi `bai` là một đề nguyên vẹn, gi
  "cac_cau": [...]}
 ```
 
-- `ma`: mã ngắn của đề, đi vào khoá của đề đã mở và lệnh `MODETHI` của Bảng điều khiển. Không đổi về sau.
-- `den_unit`: Unit cuối cùng mà các câu làm trên máy chạm tới. Tablet tự mở đề khi Lê Hòa chọn "Lớp đã học tới" Tiếng Anh bằng hoặc vượt số này. Câu phát âm dùng từ của Unit sau (earthquake, nomadic) không tính, vì câu đó hỏi cách đọc chứ không hỏi nghĩa.
+- `ma`: mã ngắn của đề, đi vào khoá của đề đã mở và lệnh `MODETHI` của Bảng điều khiển. Không đổi về sau. Đề giữa kì 1 là `GK1-N` (`chuong` "Giữa học kì 1", `bai` "Đề giữa kì 1 số N"), đề học kì 1 là `CK1-N` (`chuong` "Cuối học kì 1", `bai` "Đề cuối kì 1 số N"), N là số đề của bản in.
+- `den_unit`: Unit cuối cùng mà các câu làm trên máy chạm tới. Tablet tự mở đề khi Lê Hòa chọn "Lớp đã học tới" Tiếng Anh bằng hoặc vượt số này. Câu phát âm dùng từ của Unit sau (earthquake, nomadic) không tính, vì câu đó hỏi cách đọc chứ không hỏi nghĩa. Tên đề không quyết định số này: các đề giữa kì 1, cuối kì 1 loigiaihay đăng năm 2024 có câu của Unit 7 tới 9 (tornado, earthquake, mệnh đề Whenever), nên ghi 9 và chỉ mở ở học kì 2 (anh Huy chốt 30/09/2026).
 - `phut`: giờ làm bài, cũng là đồng hồ của đề trên máy.
 
 Ở mức câu:
@@ -190,9 +190,12 @@ Một file như file sách, nhưng mỗi `bai` là một đề nguyên vẹn, gi
 - `ma`: `<mã đề>.<số câu in>`, ví dụ `GK1-1.36`. Số câu in tăng dần; máy hiện "Câu 36" đúng như đề.
 - `phan`: phần lớn in trên đề (`A. LANGUAGE FOCUS`), `nhom`: lời dẫn của bài (`Exercise 3. Fill each blank ...`). Máy in phần và lời dẫn một lần ở đầu mỗi bài, cùng đoạn văn nếu bài có đoạn.
 - `hoi` của mọi câu bắt đầu bằng đúng chuỗi `nhom`, xuống dòng, rồi mới tới nội dung câu. Làm trong đề thì máy bỏ dòng đầu đó (lời dẫn đã in ở đầu bài); câu đứng một mình ở Ôn lại hay làm lại thì vẫn đủ nghĩa. Câu phát âm, trọng âm chỉ có lời dẫn, nội dung nằm ở các phương án.
-- `trung`: câu in y hệt một câu của đề khác trong cùng file, ví dụ `{"ma": "GK1-2.1", "phan": "...", "nhom": "...", "trung": "GK1-1.1"}`. Câu này không có `de`, `ghep`, `doan`; máy dùng chung id của câu gốc, nên sổ cái chỉ trả giờ một lần, làm lại ở đề sau chỉ cộng phần hơn lần tốt nhất.
+- `trung`: câu in y hệt một câu của đề khác trong cùng file, ví dụ `{"ma": "GK1-2.1", "phan": "...", "nhom": "...", "trung": "GK1-1.1"}`. Câu này không có `de`, `ghep`, `doan`; máy dùng chung id của câu gốc, nên sổ cái chỉ trả giờ một lần, làm lại ở đề sau chỉ cộng phần hơn lần tốt nhất. Câu điền đoạn văn trùng mà số câu in khác (CK1-4 câu 26 tới 30 và CK1-5 câu 23 tới 27) thì không ghi `trung`: đề sau sẽ in đoạn văn của đề trước với số chỗ trống lệch số câu. Cả một đề in lại y hệt đề khác thì bỏ đề sau (CK1-6 là GK1-4).
 - Phần nghe chưa có âm thanh: mỗi câu vẫn ghi `de` và `bo_may: "nghe"` để máy biết phần đó ở đâu và in "Phần nghe không làm trên máy (câu 31–35)".
 - `ghi_chu`: chỗ sửa so với đề in (đề in hai phương án cùng đúng, lỗi gõ, câu trỏ "dòng 4" của đoạn văn). App không đọc trường này.
 - Câu điền một từ vào đoạn văn: ghi thêm vào `dap` các từ khác cũng đúng, vì đáp án in thường chỉ có một.
+- Câu tìm lỗi sai: `CHON`, `hoi` sau dòng lời dẫn là câu có các phần gạch chân, `cac` là các phần gạch chân theo thứ tự in, cách sửa ghi ở `ghi_chu`. Không tách câu sửa lại (mã câu phải kết bằng số in).
+- Chỗ không dùng mạo từ ghi `Ø` như sách bài tập, kể cả khi đề in `x` hay `-`.
+- Đề in không có tên phần lớn thì `phan` là chuỗi rỗng, máy chỉ in lời dẫn.
 
 `kiem.py` kiểm thêm: mã đề không trùng, `den_unit` 1 tới 12, `phut` 10 tới 120, mã câu bắt đầu bằng mã đề và số câu in tăng dần, `trung` trỏ tới câu có ghép trong file và không mang nội dung riêng.

@@ -89,6 +89,52 @@ class DeThiTest {
         assertEquals("Đề giữa kì 1 số 1", cac.first().ten)
     }
 
+    /**
+     * Dot hai (30/9/2026): giua ki 1 so 4 toi 6, cuoi ki 1 so 1 toi 5 va 7, 8. Ba Huy chot: de
+     * dang nam 2024 co cau cua Unit 7 toi 9 thi doi lop hoc toi Unit 9 moi mo; cuoi ki 1 so 6 in
+     * lai y het giua ki 1 so 4 nen bo.
+     */
+    @Test
+    fun du_muoi_ba_de_moi_de_du_so_cau_in_va_pham_vi_unit() {
+        val cac = DeThi.tatCa(context)
+        val denUnit = linkedMapOf(
+            "GK1-1" to 3, "GK1-2" to 3, "GK1-3" to 3, "GK1-4" to 9, "GK1-5" to 9, "GK1-6" to 9,
+            "CK1-1" to 5, "CK1-2" to 6, "CK1-3" to 6, "CK1-4" to 6, "CK1-5" to 6, "CK1-7" to 9, "CK1-8" to 9
+        )
+        assertEquals(denUnit.keys.toList(), cac.map { it.ma })
+        cac.forEach { de ->
+            assertEquals("${de.ma}: pham vi", denUnit[de.ma], de.denUnit)
+            assertEquals("${de.ma}: gio lam", 45, de.phut)
+            assertEquals("${de.ma}: so cau in", (1..40).toList(), de.cacMuc.map { it.so })
+            val nghe = de.cacMuc.filter { it.boMay.isNotBlank() }.map { it.so }
+            assertTrue("${de.ma}: phan nghe lien mot khuc: $nghe", nghe.isNotEmpty() && nghe == (nghe.first()..nghe.last()).toList())
+            assertTrue("${de.ma}: chi bo phan nghe", de.cacMuc.all { it.boMay.isBlank() || it.boMay == "nghe" })
+            assertEquals("${de.ma}: cau lam tren may", 40 - nghe.size, de.cauIds.size)
+            assertTrue("${de.ma}: moi cau co loi dan", de.cacMuc.all { it.nhom.isNotBlank() })
+        }
+        assertEquals("Đề cuối kì 1 số 1", cac.first { it.ma == "CK1-1" }.ten)
+        assertEquals((1..10).toList(), cac.first { it.ma == "CK1-1" }.cacMuc.filter { it.boMay == "nghe" }.map { it.so })
+    }
+
+    @Test
+    fun de_cuoi_ki_1_mo_khi_lop_hoc_toi_pham_vi_de_co_cau_hoc_ki_2_doi_toi_unit_9() {
+        moc(5)
+        assertEquals("Unit 5: de cuoi ki 1 so 1 cham toi Unit 5, mo truoc de giua ki", "CK1-1", tuMo(toi)?.let { GiaiDe.maDeThi(it) })
+        deDaTao.forEach { kho.xoaDe(it) }
+        deDaTao.clear()
+
+        moc(6)
+        assertEquals("Unit 6: de pham vi cao nhat, theo thu tu trong file", "CK1-2", tuMo(toi)?.let { GiaiDe.maDeThi(it) })
+        val con = moTay("GK1-4", choBa = false, bayGio = toi)
+        assertNull("de co cau Unit 9 chua mo cho con o Unit 6", con.de)
+        assertTrue(con.loi.orEmpty(), con.loi.orEmpty().contains("Unit 9"))
+        deDaTao.forEach { kho.xoaDe(it) }
+        deDaTao.clear()
+
+        moc(9)
+        assertEquals("Unit 9: de giua ki 1 so 4 dung dau cac de pham vi 9", "GK1-4", tuMo(toi)?.let { GiaiDe.maDeThi(it) })
+    }
+
     @Test
     fun cau_trung_giua_hai_de_dung_chung_id_cau_goc() {
         val (d1, d2, d3) = DeThi.tatCa(context).take(3)
