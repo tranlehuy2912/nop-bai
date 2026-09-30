@@ -2,7 +2,7 @@
  "nguon": "sbttoan8t1",
  "mon": "Toán",
  "ten": "SBT Toán 8 — tập một",
- "ban": 6,
+ "ban": 7,
  "cac_bai": [
   {
    "chuong": "Chương I. Đa thức",
@@ -6031,7 +6031,19 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "HK/MN = 1/3",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 1,
+      "dap": [
+       "1/3"
+      ],
+      "phim": [],
+      "nhieu": [],
+      "loi_giai": [
+       "HK/MN = 3/9 = 1/3"
+      ]
+     }
     },
     {
      "ma": "4.1b",
@@ -6040,7 +6052,21 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "AB/PQ = 3/10 (đổi 12 dm = 120 cm)",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "dap": [
+       "3/10",
+       "0,3"
+      ],
+      "phim": [],
+      "nhieu": [],
+      "loi_giai": [
+       "Đổi PQ = 12 dm = 120 cm",
+       "AB/PQ = 36/120 = 3/10"
+      ]
+     }
     },
     {
      "ma": "4.1c",
@@ -6049,7 +6075,20 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "EF/GH = 5 (đổi 1,5 m = 150 cm)",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "dap": [
+       "5"
+      ],
+      "phim": [],
+      "nhieu": [],
+      "loi_giai": [
+       "Đổi EF = 1,5 m = 150 cm",
+       "EF/GH = 150/30 = 5"
+      ]
+     }
     },
     {
      "ma": "4.2a",
@@ -6058,7 +6097,22 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "x = 2,8",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "dap": [
+       "2,8",
+       "14/5"
+      ],
+      "phim": [],
+      "nhieu": [],
+      "loi_giai": [
+       "PQ // BC nên AP/PB = AQ/QC (định lí Thalès)",
+       "5/3,5 = 4/x",
+       "x = 4 · 3,5 : 5 = 2,8"
+      ]
+     }
     },
     {
      "ma": "4.2b",
@@ -6067,7 +6121,22 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "x = 6,3",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "dap": [
+       "6,3"
+      ],
+      "phim": [],
+      "nhieu": [],
+      "loi_giai": [
+       "FP = NP − NF = 24 − 15 = 9",
+       "EF // MN nên PE/EM = PF/FN (định lí Thalès)",
+       "x/10,5 = 9/15",
+       "x = 10,5 · 9 : 15 = 6,3"
+      ]
+     }
     },
     {
      "ma": "4.3a",
@@ -6076,7 +6145,24 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "x = 3,75",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 5,
+      "dap": [
+       "3,75",
+       "15/4"
+      ],
+      "phim": [],
+      "nhieu": [],
+      "loi_giai": [
+       "Góc AMN = góc ABC, hai góc này ở vị trí đồng vị nên MN // BC",
+       "AB = AM + MB = 2 + 3 = 5",
+       "MN // BC nên AM/AB = AN/AC (định lí Thalès)",
+       "2/5 = 1,5/x",
+       "x = 1,5 · 5 : 2 = 3,75"
+      ]
+     }
     },
     {
      "ma": "4.3b",
@@ -6085,7 +6171,23 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "x = 3",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 5,
+      "dap": [
+       "3"
+      ],
+      "phim": [],
+      "nhieu": [],
+      "loi_giai": [
+       "DE ⊥ AB và AC ⊥ AB nên DE // AC",
+       "DE // AC nên BD/DA = BE/EC (định lí Thalès)",
+       "6/3 = 3x/4,5",
+       "3x = 6 · 4,5 : 3 = 9",
+       "x = 3"
+      ]
+     }
     },
     {
      "ma": "4.4",
@@ -6094,7 +6196,29 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "HA/AK = 5/2 và HB/BI = 6,25/2,5 = 5/2 nên HA/AK = HB/BI. Theo định lí Thalès đảo, AB // KI.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 4,
+      "buoc": [
+       "HA/AK = 5/2",
+       "HB/BI = 6,25/2,5 = 5/2",
+       "Suy ra HA/AK = HB/BI",
+       "Tam giác HKI có A ∈ HK, B ∈ HI và HA/AK = HB/BI nên AB // KI (định lí Thalès đảo)"
+      ],
+      "nhieu": [
+       "HB/BI = 6,25/2,5 = 2/5",
+       "Tam giác HKI có HA/AK = HB/BI nên AB // KI (định lí Thalès)"
+      ],
+      "thu_tu_khac": [
+       [
+        1,
+        0,
+        2,
+        3
+       ]
+      ]
+     }
     },
     {
      "ma": "4.5a",
@@ -6103,7 +6227,29 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Tam giác ADC có MI // DC nên AM/MD = AI/IC (định lí Thalès). Tam giác ABC có IN // AB nên AI/IC = BN/NC. Suy ra AM/MD = BN/NC.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 4,
+      "buoc": [
+       "MN // AB và MN // DC nên MI // DC, IN // AB",
+       "Tam giác ADC có MI // DC nên AM/MD = AI/IC (định lí Thalès)",
+       "Tam giác ABC có IN // AB nên AI/IC = BN/NC (định lí Thalès)",
+       "Suy ra AM/MD = BN/NC"
+      ],
+      "nhieu": [
+       "Tam giác ABC có IN // AB nên AI/IC = NC/BN (định lí Thalès)",
+       "Tam giác ADC có MI // DC nên AM/MD = MI/DC (định lí Thalès)"
+      ],
+      "thu_tu_khac": [
+       [
+        0,
+        2,
+        1,
+        3
+       ]
+      ]
+     }
     },
     {
      "ma": "4.5b",
@@ -6112,7 +6258,29 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Tam giác ADC có MI // DC nên AM/AD = AI/AC. Tam giác ABC có IN // AB nên CN/CB = CI/CA. Do đó AM/AD + CN/CB = AI/AC + CI/AC = (AI + CI)/AC = 1.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 4,
+      "buoc": [
+       "Tam giác ADC có MI // DC nên AM/AD = AI/AC (định lí Thalès)",
+       "Tam giác ABC có IN // AB nên CN/CB = CI/CA (định lí Thalès)",
+       "Cộng vế theo vế: AM/AD + CN/CB = AI/AC + CI/AC",
+       "Mà AI + CI = AC nên AM/AD + CN/CB = AC/AC = 1"
+      ],
+      "nhieu": [
+       "Tam giác ABC có IN // AB nên CN/CB = AI/AC (định lí Thalès)",
+       "Cộng vế theo vế: AM/AD + CN/CB = (AI + CI)/(AC + AC)"
+      ],
+      "thu_tu_khac": [
+       [
+        1,
+        0,
+        2,
+        3
+       ]
+      ]
+     }
     },
     {
      "ma": "4.6",
@@ -6121,7 +6289,31 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "AM // NC và AM = NC nên AMCN là hình bình hành, suy ra AN // MC. Tam giác ABP có MQ // AP nên BQ/QP = BM/MA = 1, BQ = QP. Tam giác DQC có PN // QC nên DP/PQ = DN/NC = 1, DP = PQ. Vậy DP = PQ = QB.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 5,
+      "buoc": [
+       "M, N là trung điểm của AB, CD mà AB // CD, AB = CD nên AM // NC và AM = NC",
+       "Tứ giác AMCN có AM // NC và AM = NC nên là hình bình hành, suy ra AN // CM",
+       "Tam giác ABP có MQ // AP nên BQ/QP = BM/MA = 1 (định lí Thalès), do đó BQ = QP",
+       "Tam giác CDQ có NP // CQ nên DP/PQ = DN/NC = 1 (định lí Thalès), do đó DP = PQ",
+       "Vậy DP = PQ = QB"
+      ],
+      "nhieu": [
+       "Tứ giác AMCN có AM // NC nên là hình bình hành, suy ra AN // CM",
+       "Tam giác ABP có MQ // AP nên BQ/QP = BM/AB = 1/2 (định lí Thalès), do đó QP = 2BQ"
+      ],
+      "thu_tu_khac": [
+       [
+        0,
+        1,
+        3,
+        2,
+        4
+       ]
+      ]
+     }
     }
    ]
   },
@@ -6136,7 +6328,22 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "x = 5",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "hoi": "Tìm độ dài x trong Hình 5.9a (tam giác ABC có M ∈ AB, N ∈ AC, BM = 3, MA = 3, AN = 4,5, NC = 4,5, BC = 10, MN = x).",
+      "dap": [
+       "5"
+      ],
+      "phim": [],
+      "nhieu": [],
+      "loi_giai": [
+       "MA = MB = 3 nên M là trung điểm của AB; NA = NC = 4,5 nên N là trung điểm của AC",
+       "MN là đường trung bình của tam giác ABC nên MN = BC/2",
+       "x = MN = 10 : 2 = 5"
+      ]
+     }
     },
     {
      "ma": "4.7b",
@@ -6145,7 +6352,23 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "y = 5",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "hoi": "Tìm độ dài y trong Hình 5.9b (tam giác MNP vuông tại N có I ∈ PN, H ∈ PM, HI ⊥ PN, PI = 4, IN = 4, PH = 5, HM = y).",
+      "dap": [
+       "5"
+      ],
+      "phim": [],
+      "nhieu": [],
+      "loi_giai": [
+       "HI ⊥ PN và MN ⊥ PN nên HI // MN",
+       "PI = IN = 4 nên I là trung điểm của PN",
+       "Tam giác PMN có I là trung điểm của PN và IH // NM nên H là trung điểm của PM",
+       "y = HM = PH = 5"
+      ]
+     }
     },
     {
      "ma": "4.8",
@@ -6154,7 +6377,38 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "H, K là trung điểm của DE, DF nên HK là đường trung bình của tam giác DEF: HK // EF, HK = (1/2)EF. Mà EI = (1/2)EF nên HK = EI. Tứ giác HKIE có HK // EI và HK = EI nên là hình bình hành.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 5,
+      "buoc": [
+       "H, K lần lượt là trung điểm của DE, DF nên HK là đường trung bình của tam giác DEF",
+       "Suy ra HK // EF và HK = EF/2",
+       "I là trung điểm của EF nên EI = EF/2",
+       "Do đó HK // EI và HK = EI",
+       "Tứ giác HKIE có HK // EI và HK = EI nên là hình bình hành"
+      ],
+      "nhieu": [
+       "Suy ra HK // EF và HK = 2EF",
+       "Tứ giác HKIE có HK // EI nên là hình bình hành"
+      ],
+      "thu_tu_khac": [
+       [
+        2,
+        0,
+        1,
+        3,
+        4
+       ],
+       [
+        0,
+        2,
+        1,
+        3,
+        4
+       ]
+      ]
+     }
     },
     {
      "ma": "4.9",
@@ -6163,7 +6417,31 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "DE là đường trung bình của tam giác ABC nên ED // BC, ED = (1/2)BC. IK là đường trung bình của tam giác GBC nên IK // BC, IK = (1/2)BC. Suy ra ED // IK, ED = IK nên EDKI là hình bình hành, do đó EI = DK.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 5,
+      "buoc": [
+       "E, D lần lượt là trung điểm của AB, AC nên ED là đường trung bình của tam giác ABC: ED // BC, ED = BC/2",
+       "I, K lần lượt là trung điểm của GB, GC nên IK là đường trung bình của tam giác GBC: IK // BC, IK = BC/2",
+       "Suy ra ED // IK và ED = IK",
+       "Tứ giác EDKI có ED // IK và ED = IK nên là hình bình hành",
+       "Do đó EI = DK"
+      ],
+      "nhieu": [
+       "Tứ giác EDKI có ED // IK nên là hình bình hành",
+       "Suy ra ED // IK và ED = 2IK"
+      ],
+      "thu_tu_khac": [
+       [
+        1,
+        0,
+        2,
+        3,
+        4
+       ]
+      ]
+     }
     },
     {
      "ma": "4.10",
@@ -6172,7 +6450,60 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Hình thoi. DE là đường trung bình của tam giác ABC nên DE = (1/2)AC; tương tự GF = (1/2)AC, DG = (1/2)BD, EF = (1/2)BD. Hình chữ nhật có AC = BD nên DE = EF = FG = GD, tứ giác DEFG là hình thoi.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 5,
+      "hoi": "Cho hình chữ nhật ABCD. Gọi M, E, F, G lần lượt là trung điểm của các cạnh AB, BC, CD, DA. Tứ giác MEFG là hình gì? Vì sao?",
+      "buoc": [
+       "ME, GF lần lượt là đường trung bình của tam giác ABC, ADC nên ME = GF = AC/2",
+       "MG, EF lần lượt là đường trung bình của tam giác ABD, CBD nên MG = EF = BD/2",
+       "ABCD là hình chữ nhật nên AC = BD",
+       "Suy ra ME = EF = FG = GM",
+       "Vậy tứ giác MEFG là hình thoi"
+      ],
+      "nhieu": [
+       "ABCD là hình chữ nhật nên AC ⊥ BD",
+       "Vậy tứ giác MEFG là hình vuông"
+      ],
+      "thu_tu_khac": [
+       [
+        0,
+        2,
+        1,
+        3,
+        4
+       ],
+       [
+        1,
+        0,
+        2,
+        3,
+        4
+       ],
+       [
+        1,
+        2,
+        0,
+        3,
+        4
+       ],
+       [
+        2,
+        0,
+        1,
+        3,
+        4
+       ],
+       [
+        2,
+        1,
+        0,
+        3,
+        4
+       ]
+      ]
+     }
     }
    ]
   },
@@ -6187,7 +6518,21 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "x = 5,1",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "dap": [
+       "5,1"
+      ],
+      "phim": [],
+      "nhieu": [],
+      "loi_giai": [
+       "MK là tia phân giác của góc EMF nên KE/KF = ME/MF",
+       "3/x = 5/8,5",
+       "x = 3 · 8,5 : 5 = 5,1"
+      ]
+     }
     },
     {
      "ma": "4.12",
@@ -6196,7 +6541,59 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Trong tam giác AIB, IM là phân giác góc AIB nên MA/MB = IA/IB. Trong tam giác AIC, IN là phân giác góc AIC nên NA/NC = IA/IC. Mà IB = IC (I là trung điểm BC) nên MA/MB = NA/NC, suy ra MN // BC (định lí Thalès đảo).",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 5,
+      "buoc": [
+       "IM là tia phân giác của góc AIB nên MA/MB = IA/IB",
+       "IN là tia phân giác của góc AIC nên NA/NC = IA/IC",
+       "AI là đường trung tuyến nên IB = IC",
+       "Suy ra MA/MB = NA/NC",
+       "Tam giác ABC có MA/MB = NA/NC nên MN // BC (định lí Thalès đảo)"
+      ],
+      "nhieu": [
+       "IM là tia phân giác của góc AIB nên MA/MB = IB/IA",
+       "Suy ra MN là đường trung bình của tam giác ABC"
+      ],
+      "thu_tu_khac": [
+       [
+        0,
+        2,
+        1,
+        3,
+        4
+       ],
+       [
+        1,
+        0,
+        2,
+        3,
+        4
+       ],
+       [
+        1,
+        2,
+        0,
+        3,
+        4
+       ],
+       [
+        2,
+        0,
+        1,
+        3,
+        4
+       ],
+       [
+        2,
+        1,
+        0,
+        3,
+        4
+       ]
+      ]
+     }
     },
     {
      "ma": "4.13",
@@ -6205,7 +6602,53 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "AD là phân giác góc A nên CD/DB = AC/AB; tương tự AE/EC = BA/BC, BF/FA = CB/CA. Nhân vế theo vế: (AE/EC) · (CD/DB) · (BF/FA) = (BA/BC) · (AC/AB) · (CB/CA) = 1.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 4,
+      "buoc": [
+       "AD là đường phân giác của góc A nên CD/DB = AC/AB",
+       "BE là đường phân giác của góc B nên AE/EC = BA/BC",
+       "CF là đường phân giác của góc C nên BF/FA = CB/CA",
+       "Nhân vế theo vế: (AE/EC) · (CD/DB) · (BF/FA) = (BA/BC) · (AC/AB) · (CB/CA) = 1"
+      ],
+      "nhieu": [
+       "AD là đường phân giác của góc A nên CD/DB = AB/AC",
+       "CF là đường phân giác của góc C nên BF/FA = CA/CB"
+      ],
+      "thu_tu_khac": [
+       [
+        0,
+        2,
+        1,
+        3
+       ],
+       [
+        1,
+        0,
+        2,
+        3
+       ],
+       [
+        1,
+        2,
+        0,
+        3
+       ],
+       [
+        2,
+        0,
+        1,
+        3
+       ],
+       [
+        2,
+        1,
+        0,
+        3
+       ]
+      ]
+     }
     },
     {
      "ma": "4.14",
@@ -6214,7 +6657,29 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "AD là phân giác góc A nên DB/DC = AB/AC. DE // AB nên DB/DC = EA/EC (định lí Thalès). Suy ra AB/AC = EA/EC, do đó AB · EC = AC · EA.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 4,
+      "buoc": [
+       "AD là đường phân giác của góc A nên DB/DC = AB/AC",
+       "DE // AB nên DB/DC = EA/EC (định lí Thalès trong tam giác CAB)",
+       "Suy ra AB/AC = EA/EC",
+       "Do đó AB · EC = AC · EA"
+      ],
+      "nhieu": [
+       "DE // AB nên DB/DC = EC/EA (định lí Thalès trong tam giác CAB)",
+       "AD là đường phân giác của góc A nên DB/DC = AC/AB"
+      ],
+      "thu_tu_khac": [
+       [
+        1,
+        0,
+        2,
+        3
+       ]
+      ]
+     }
     }
    ]
   },
@@ -6229,7 +6694,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "C",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Cho tam giác ABC có BC = 13 cm. E và F lần lượt là trung điểm của AB, AC. Độ dài EF bằng",
+      "cac": [
+       "13 cm",
+       "26 cm",
+       "6,5 cm",
+       "3 cm"
+      ],
+      "dap": "C"
+     }
     },
     {
      "ma": "Trắc nghiệm 2 (tr.53)",
@@ -6238,7 +6715,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "A",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Độ dài x trong Hình 5.13 (tam giác ABC có D ∈ AB, E ∈ AC, góc ADE = góc ABC, AD = 12, DB = 18, AE = x, EC = 30) là",
+      "cac": [
+       "20",
+       "50",
+       "12",
+       "30"
+      ],
+      "dap": "A"
+     }
     },
     {
      "ma": "Trắc nghiệm 3 (tr.53)",
@@ -6247,7 +6736,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "D",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Cho tam giác ABC cân tại B. Hai trung tuyến AM, BN cắt nhau tại G. Gọi I và K lần lượt là trung điểm của GB, GC. Khẳng định nào đúng?",
+      "cac": [
+       "MN = (1/2)AC",
+       "BC = (1/2)IK",
+       "MN > IK",
+       "MN = IK"
+      ],
+      "dap": "D"
+     }
     },
     {
      "ma": "Trắc nghiệm 4 (tr.53)",
@@ -6256,7 +6757,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "C",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Cho hình thang ABCD (AB // DC), O là giao điểm của AC và BD. Xét các khẳng định sau: (1) OA/OC = OD/OB; (2) OA · OD = OB · OC; (3) AO/AC = BO/BD. Số khẳng định đúng là",
+      "cac": [
+       "0",
+       "1",
+       "2",
+       "3"
+      ],
+      "dap": "C"
+     }
     },
     {
      "ma": "Trắc nghiệm 5 (tr.53)",
@@ -6265,7 +6778,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "D",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Cho Hình 5.14 (tam giác ABC có D ∈ AB, E ∈ BC, BD = 5, DA = 2, BE = x, EC = 2,5), biết DE // AC. Độ dài x là",
+      "cac": [
+       "5",
+       "7",
+       "6,5",
+       "6,25"
+      ],
+      "dap": "D"
+     }
     },
     {
      "ma": "Trắc nghiệm 6 (tr.54)",
@@ -6274,7 +6799,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "C",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Cho tam giác ABC, các đường trung tuyến BD và CE cắt nhau ở G. Gọi I, K theo thứ tự là trung điểm của GB, GC. Biết AG = 4 cm, độ dài của EI, DK là",
+      "cac": [
+       "EI = DK = 3 cm",
+       "EI = 3 cm; DK = 2 cm",
+       "EI = DK = 2 cm",
+       "EI = 1 cm; DK = 2 cm"
+      ],
+      "dap": "C"
+     }
     },
     {
      "ma": "Trắc nghiệm 7 (tr.54)",
@@ -6283,7 +6820,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "C",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Cho Hình 5.15 (tam giác ABC có D ∈ AB, E ∈ BC, BD = 6, DA = 3, BE = 3x, BC = 13,5), biết ED ⊥ AB, AC ⊥ AB. Khi đó, x có giá trị là",
+      "cac": [
+       "2,5",
+       "2",
+       "3",
+       "4"
+      ],
+      "dap": "C"
+     }
     },
     {
      "ma": "Trắc nghiệm 8 (tr.54)",
@@ -6292,7 +6841,23 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "x = 8 (không có phương án đúng)",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "hoi": "Cho ΔABC. Tia phân giác góc trong của góc A cắt BC tại D. Cho AB = 6, AC = x, BD = 9, BC = 21. Tính độ dài x.",
+      "dap": [
+       "8"
+      ],
+      "phim": [],
+      "nhieu": [],
+      "loi_giai": [
+       "DC = BC − BD = 21 − 9 = 12",
+       "AD là tia phân giác của góc A nên DB/DC = AB/AC",
+       "9/12 = 6/x",
+       "x = 6 · 12 : 9 = 8"
+      ]
+     }
     },
     {
      "ma": "Trắc nghiệm 9 (tr.54)",
@@ -6301,7 +6866,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "D",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Cho tam giác ABC có AD là tia phân giác của góc BAC. Biết AB = 3 cm, BD = 4 cm, CD = 6 cm. Độ dài AC bằng",
+      "cac": [
+       "4 cm",
+       "5 cm",
+       "6 cm",
+       "4,5 cm"
+      ],
+      "dap": "D"
+     }
     },
     {
      "ma": "Trắc nghiệm 10 (tr.54)",
@@ -6310,7 +6887,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "B",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Cho ΔABC đều, cạnh 3 cm; M, N lần lượt là trung điểm của AB và AC. Chu vi của tứ giác MNCB bằng",
+      "cac": [
+       "8 cm",
+       "7,5 cm",
+       "6 cm",
+       "7 cm"
+      ],
+      "dap": "B"
+     }
     },
     {
      "ma": "Trắc nghiệm 11 (tr.54)",
@@ -6319,7 +6908,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "B",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Cho tam giác ABC có AB = 6 cm, AC = 8 cm, BC = 10 cm. Gọi H, I, K lần lượt là trung điểm của AB, BC, AC. Chu vi của tứ giác AHIK bằng",
+      "cac": [
+       "7 cm",
+       "14 cm",
+       "24 cm",
+       "12 cm"
+      ],
+      "dap": "B"
+     }
     },
     {
      "ma": "Trắc nghiệm 12 (tr.54)",
@@ -6328,7 +6929,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "C",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Cho hình thoi ABCD có M là trung điểm AD, đường chéo AC cắt BM tại điểm E (H.5.16). Tỉ số EM/EB bằng",
+      "cac": [
+       "1/3",
+       "2",
+       "1/2",
+       "2/3"
+      ],
+      "dap": "C"
+     }
     },
     {
      "ma": "4.15",
@@ -6337,7 +6950,28 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "DE // AB nên ID/IA = IE/IB; EF // BC nên IE/IB = IF/IC (định lí Thalès trong tam giác IAB, IBC). Suy ra ID/IA = IF/IC nên DF // AC (định lí Thalès đảo trong tam giác IAC).",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 4,
+      "buoc": [
+       "Tam giác IAB có DE // AB nên ID/IA = IE/IB (định lí Thalès)",
+       "Tam giác IBC có EF // BC nên IE/IB = IF/IC (định lí Thalès)",
+       "Suy ra ID/IA = IF/IC",
+       "Tam giác IAC có ID/IA = IF/IC nên DF // AC (định lí Thalès đảo)"
+      ],
+      "nhieu": [
+       "Tam giác IBC có EF // BC nên IE/IB = IC/IF (định lí Thalès)"
+      ],
+      "thu_tu_khac": [
+       [
+        1,
+        0,
+        2,
+        3
+       ]
+      ]
+     }
     },
     {
      "ma": "4.16",
@@ -6346,7 +6980,89 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "ED là đường trung bình của tam giác ABC nên ED // BC, ED = (1/2)BC. MN là đường trung bình của hình thang BCDE nên MN // BC // ED. Tam giác BED có M là trung điểm BE, MI // ED nên IB = ID, MI = (1/2)ED; tương tự KC = KE, KN = (1/2)ED, MK = (1/2)BC = ED. Do đó IK = MK − MI = (1/2)ED. Vậy MI = IK = KN = (1/2)ED.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 7,
+      "buoc": [
+       "ED là đường trung bình của tam giác ABC nên ED // BC và ED = BC/2",
+       "MN là đường trung bình của hình thang BCDE nên MN // BC // ED",
+       "Tam giác BED có M là trung điểm của BE và MI // ED nên MI là đường trung bình, MI = ED/2",
+       "Tam giác CDE có N là trung điểm của CD và NK // ED nên KN là đường trung bình, KN = ED/2",
+       "Tam giác EBC có M là trung điểm của BE và MK // BC nên MK là đường trung bình, MK = BC/2 = ED",
+       "IK = MK − MI = ED − ED/2 = ED/2",
+       "Vậy MI = IK = KN"
+      ],
+      "nhieu": [
+       "Tam giác BED có M là trung điểm của BE và MI // ED nên MI = ED",
+       "Tam giác EBC có M là trung điểm của BE và MK // BC nên MK là đường trung bình, MK = BC/2 = 2ED"
+      ],
+      "thu_tu_khac": [
+       [
+        0,
+        1,
+        2,
+        4,
+        3,
+        5,
+        6
+       ],
+       [
+        0,
+        1,
+        3,
+        2,
+        4,
+        5,
+        6
+       ],
+       [
+        0,
+        1,
+        3,
+        4,
+        2,
+        5,
+        6
+       ],
+       [
+        0,
+        1,
+        4,
+        2,
+        3,
+        5,
+        6
+       ],
+       [
+        0,
+        1,
+        4,
+        3,
+        2,
+        5,
+        6
+       ],
+       [
+        0,
+        1,
+        2,
+        4,
+        5,
+        3,
+        6
+       ],
+       [
+        0,
+        1,
+        4,
+        2,
+        5,
+        3,
+        6
+       ]
+      ]
+     }
     },
     {
      "ma": "4.17",
@@ -6355,7 +7071,59 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "BD là phân giác góc B nên DA/DC = BA/BC; CE là phân giác góc C nên EA/EB = CA/CB. Mà AB = AC (tam giác ABC cân tại A) nên DA/DC = EA/EB, suy ra ED // BC (định lí Thalès đảo).",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 5,
+      "buoc": [
+       "BD là đường phân giác của góc B nên DA/DC = BA/BC",
+       "CE là đường phân giác của góc C nên EA/EB = CA/CB",
+       "Tam giác ABC cân tại A nên AB = AC",
+       "Suy ra DA/DC = EA/EB",
+       "Tam giác ABC có DA/DC = EA/EB nên ED // BC (định lí Thalès đảo)"
+      ],
+      "nhieu": [
+       "BD là đường phân giác của góc B nên DA/DC = BC/BA",
+       "Tam giác ABC cân tại A nên AB = BC"
+      ],
+      "thu_tu_khac": [
+       [
+        0,
+        2,
+        1,
+        3,
+        4
+       ],
+       [
+        1,
+        0,
+        2,
+        3,
+        4
+       ],
+       [
+        1,
+        2,
+        0,
+        3,
+        4
+       ],
+       [
+        2,
+        0,
+        1,
+        3,
+        4
+       ],
+       [
+        2,
+        1,
+        0,
+        3,
+        4
+       ]
+      ]
+     }
     },
     {
      "ma": "4.18a",
@@ -6364,7 +7132,57 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "ΔADI = ΔCBK (g.c.g): AD = CB, góc DAI = góc BCK (so le trong, AD // BC), góc ADI = góc CBK (DI // BK vì cùng song song với EF, AD // BC). Suy ra AI = CK.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 6,
+      "buoc": [
+       "DI // EF và BK // EF nên DI // BK",
+       "Xét ΔADI và ΔCBK có AD = CB (hai cạnh đối của hình bình hành)",
+       "Góc DAI = góc BCK (so le trong, AD // BC)",
+       "Góc ADI = góc CBK (hai góc có cạnh tương ứng song song: DA // BC, DI // BK)",
+       "Suy ra ΔADI = ΔCBK (g.c.g)",
+       "Do đó AI = CK"
+      ],
+      "nhieu": [
+       "Suy ra ΔADI = ΔCBK (c.g.c)",
+       "Góc DAI = góc BCK (đồng vị, AD // BC)"
+      ],
+      "thu_tu_khac": [
+       [
+        0,
+        1,
+        3,
+        2,
+        4,
+        5
+       ],
+       [
+        1,
+        0,
+        2,
+        3,
+        4,
+        5
+       ],
+       [
+        1,
+        0,
+        3,
+        2,
+        4,
+        5
+       ],
+       [
+        1,
+        2,
+        0,
+        3,
+        4,
+        5
+       ]
+      ]
+     }
     },
     {
      "ma": "4.18b",
@@ -6373,7 +7191,38 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "NE // BK nên AB/AE = AK/AN; FN // DI nên AD/AF = AI/AN (định lí Thalès). Mà AI = CK (câu a) nên AD/AF = CK/AN. Cộng lại: AB/AE + AD/AF = (AK + CK)/AN = AC/AN.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 5,
+      "buoc": [
+       "Tam giác ABK có EN // BK nên AB/AE = AK/AN (định lí Thalès)",
+       "Tam giác ADI có FN // DI nên AD/AF = AI/AN (định lí Thalès)",
+       "Theo câu a, AI = CK nên AD/AF = CK/AN",
+       "Cộng vế theo vế: AB/AE + AD/AF = AK/AN + CK/AN = (AK + CK)/AN",
+       "Mà AK + KC = AC nên AB/AE + AD/AF = AC/AN"
+      ],
+      "nhieu": [
+       "Tam giác ABK có EN // BK nên AB/AE = AN/AK (định lí Thalès)",
+       "Cộng vế theo vế: AB/AE + AD/AF = AK/AN + CK/AN = (AK + CK)/(2AN)"
+      ],
+      "thu_tu_khac": [
+       [
+        1,
+        0,
+        2,
+        3,
+        4
+       ],
+       [
+        1,
+        2,
+        0,
+        3,
+        4
+       ]
+      ]
+     }
     },
     {
      "ma": "4.19",
@@ -6382,7 +7231,28 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Tam giác OMN có AI // ON nên MA/MO = MI/MN; IB // MO nên NB/NO = NI/NM (định lí Thalès). Cộng lại: MA/MO + NB/NO = (MI + NI)/MN = MN/MN = 1.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 4,
+      "buoc": [
+       "Tam giác OMN có AI // ON nên MA/MO = MI/MN (định lí Thalès)",
+       "Tam giác OMN có IB // OM nên NB/NO = NI/NM (định lí Thalès)",
+       "Cộng vế theo vế: MA/MO + NB/NO = MI/MN + NI/MN = (MI + NI)/MN",
+       "Mà MI + NI = MN nên MA/MO + NB/NO = MN/MN = 1"
+      ],
+      "nhieu": [
+       "Tam giác OMN có AI // ON nên MA/MO = NI/NM (định lí Thalès)"
+      ],
+      "thu_tu_khac": [
+       [
+        1,
+        0,
+        2,
+        3
+       ]
+      ]
+     }
     },
     {
      "ma": "4.20",
@@ -6391,7 +7261,33 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Tam giác ABD có AM là phân giác góc A nên MB/MD = AB/AD; tam giác ADC có DN là phân giác góc D nên NC/NA = DC/DA. Mà AB = DC nên MB/MD = NC/NA, suy ra MB/MD + 1 = NC/NA + 1 hay BD/MD = AC/NA. Vì BD = 2DO, AC = 2AO nên DO/DM = AO/AN, do đó MN // AD (định lí Thalès đảo).",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 6,
+      "buoc": [
+       "Tam giác ABD có AM là đường phân giác của góc A nên MB/MD = AB/AD",
+       "Tam giác ADC có DN là đường phân giác của góc D nên NC/NA = DC/DA",
+       "ABCD là hình bình hành nên AB = DC, suy ra MB/MD = NC/NA",
+       "Cộng 1 vào hai vế: (MB + MD)/MD = (NC + NA)/NA, tức là BD/MD = AC/NA",
+       "Mà BD = 2DO, AC = 2AO nên DO/DM = AO/AN",
+       "Tam giác OAD có DO/DM = AO/AN nên MN // AD (định lí Thalès đảo)"
+      ],
+      "nhieu": [
+       "Tam giác ADC có DN là đường phân giác của góc D nên NC/NA = DA/DC",
+       "ABCD là hình bình hành nên AB = AD, suy ra MB/MD = NC/NA"
+      ],
+      "thu_tu_khac": [
+       [
+        1,
+        0,
+        2,
+        3,
+        4,
+        5
+       ]
+      ]
+     }
     }
    ]
   },
@@ -6406,7 +7302,89 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "a) Thu thập gián tiếp từ nguồn có sẵn, ví dụ website của NASA (solarsystem.nasa.gov); b) Khối lượng, bán kính, khoảng cách đến Mặt Trời: số liệu liên tục; số mặt trăng: số liệu rời rạc",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 5,
+      "hoi": "Em muốn thu thập dữ liệu về khối lượng, bán kính, khoảng cách đến Mặt Trời, số mặt trăng của các hành tinh trong Hệ Mặt Trời. a) Nên thu thập bằng phương pháp nào? b) Xác định mỗi dữ liệu thu được thuộc loại nào.",
+      "dong": [
+       {
+        "chu": "a) Cách thu thập: {0}",
+        "o": [
+         {
+          "dung": [
+           "Thu thập gián tiếp từ nguồn có sẵn (sách, báo, website)"
+          ],
+          "sai": [
+           "Thu thập trực tiếp bằng quan sát",
+           "Thu thập trực tiếp bằng làm thí nghiệm",
+           "Thu thập trực tiếp bằng lập bảng hỏi"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "b) Khối lượng: {0}",
+        "o": [
+         {
+          "dung": [
+           "Số liệu liên tục"
+          ],
+          "sai": [
+           "Số liệu rời rạc",
+           "Dữ liệu không là số, có thể sắp thứ tự",
+           "Dữ liệu không là số, không thể sắp thứ tự"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Bán kính: {0}",
+        "o": [
+         {
+          "dung": [
+           "Số liệu liên tục"
+          ],
+          "sai": [
+           "Số liệu rời rạc",
+           "Dữ liệu không là số, có thể sắp thứ tự",
+           "Dữ liệu không là số, không thể sắp thứ tự"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Khoảng cách đến Mặt Trời: {0}",
+        "o": [
+         {
+          "dung": [
+           "Số liệu liên tục"
+          ],
+          "sai": [
+           "Số liệu rời rạc",
+           "Dữ liệu không là số, có thể sắp thứ tự",
+           "Dữ liệu không là số, không thể sắp thứ tự"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Số mặt trăng: {0}",
+        "o": [
+         {
+          "dung": [
+           "Số liệu rời rạc"
+          ],
+          "sai": [
+           "Số liệu liên tục",
+           "Dữ liệu không là số, có thể sắp thứ tự",
+           "Dữ liệu không là số, không thể sắp thứ tự"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "5.2a",
@@ -6415,7 +7393,8 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Câu mở. Sách gợi ý đặt câu hỏi về: loại sách ưa thích; thời gian dành cho đọc sách mỗi ngày; số cuốn sách đọc trong 1 năm; địa điểm đọc sách. Ví dụ: 'Bạn thích đọc loại sách nào?', 'Mỗi ngày bạn đọc sách bao nhiêu phút?', 'Một năm bạn đọc bao nhiêu cuốn sách?'.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "bo_may": "câu mở: tự đặt câu hỏi khảo sát"
     },
     {
      "ma": "5.2b",
@@ -6424,7 +7403,59 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Tuỳ câu hỏi đã đặt ở câu a. Với các câu hỏi gợi ý: loại sách ưa thích, địa điểm đọc sách là dữ liệu không là số, không thể sắp thứ tự; thời gian đọc sách mỗi ngày là số liệu liên tục; số cuốn sách đọc trong 1 năm là số liệu rời rạc.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "hoi": "Minh muốn tìm hiểu về thói quen đọc sách của các bạn trong lớp và đặt ba câu hỏi dưới đây để thu thập dữ liệu. Dữ liệu thu được từ mỗi câu hỏi thuộc loại nào?",
+      "dong": [
+       {
+        "chu": "\"Bạn thích đọc loại sách nào?\": {0}",
+        "o": [
+         {
+          "dung": [
+           "Dữ liệu không là số, không thể sắp thứ tự"
+          ],
+          "sai": [
+           "Số liệu rời rạc",
+           "Số liệu liên tục",
+           "Dữ liệu không là số, có thể sắp thứ tự"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "\"Mỗi ngày bạn dành bao nhiêu phút để đọc sách?\": {0}",
+        "o": [
+         {
+          "dung": [
+           "Số liệu liên tục"
+          ],
+          "sai": [
+           "Số liệu rời rạc",
+           "Dữ liệu không là số, có thể sắp thứ tự",
+           "Dữ liệu không là số, không thể sắp thứ tự"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "\"Một năm bạn đọc bao nhiêu cuốn sách?\": {0}",
+        "o": [
+         {
+          "dung": [
+           "Số liệu rời rạc"
+          ],
+          "sai": [
+           "Số liệu liên tục",
+           "Dữ liệu không là số, có thể sắp thứ tự",
+           "Dữ liệu không là số, không thể sắp thứ tự"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "5.3",
@@ -6433,7 +7464,42 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "a) Số liệu liên tục; b) Thu thập dữ liệu trực tiếp",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "Một nhà nghiên cứu muốn đánh giá hiệu quả của một loại thức ăn mới đến cân nặng của cá basa. Họ đã cân và ghi lại khối lượng của 200 con cá sau 1 tháng cho cá ăn loại thức ăn này. a) Số liệu thu được là số liệu rời rạc hay liên tục? b) Nhà nghiên cứu này đã thực hiện thu thập dữ liệu trực tiếp hay gián tiếp?",
+      "dong": [
+       {
+        "chu": "a) Số liệu thu được là {0}",
+        "o": [
+         {
+          "dung": [
+           "số liệu liên tục"
+          ],
+          "sai": [
+           "số liệu rời rạc"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "b) Nhà nghiên cứu đã thu thập dữ liệu {0}",
+        "o": [
+         {
+          "dung": [
+           "trực tiếp"
+          ],
+          "sai": [
+           "gián tiếp"
+          ],
+          "hai": true
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "5.4",
@@ -6442,7 +7508,74 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "a – B; b – D; c – A; d – C",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "hoi": "Mỗi dữ liệu sau thuộc loại nào? Ghép mỗi dữ liệu với một loại cho phù hợp.",
+      "dong": [
+       {
+        "chu": "Số trường THCS tại các huyện, thị xã của tỉnh: {0}",
+        "o": [
+         {
+          "dung": [
+           "Số liệu rời rạc"
+          ],
+          "sai": [
+           "Số liệu liên tục",
+           "Dữ liệu không là số, có thể sắp thứ tự",
+           "Dữ liệu không là số, không thể sắp thứ tự"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Tên của các huyện, thị xã của tỉnh: {0}",
+        "o": [
+         {
+          "dung": [
+           "Dữ liệu không là số, không thể sắp thứ tự"
+          ],
+          "sai": [
+           "Số liệu rời rạc",
+           "Số liệu liên tục",
+           "Dữ liệu không là số, có thể sắp thứ tự"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Tốc độ tăng trưởng của các huyện, thị xã của tỉnh năm 2022 (đơn vị tính là %): {0}",
+        "o": [
+         {
+          "dung": [
+           "Số liệu liên tục"
+          ],
+          "sai": [
+           "Số liệu rời rạc",
+           "Dữ liệu không là số, có thể sắp thứ tự",
+           "Dữ liệu không là số, không thể sắp thứ tự"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Kết quả xếp loại công tác cải cách hành chính của các huyện, thị xã của tỉnh với các mức: Xuất sắc, Tốt, Khá, Trung bình, Yếu: {0}",
+        "o": [
+         {
+          "dung": [
+           "Dữ liệu không là số, có thể sắp thứ tự"
+          ],
+          "sai": [
+           "Số liệu rời rạc",
+           "Số liệu liên tục",
+           "Dữ liệu không là số, không thể sắp thứ tự"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "5.5a",
@@ -6451,7 +7584,70 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Câu mở, có nhiều cách chọn 30 bạn; căn cứ vào cách chọn để xét tính đại diện. Ví dụ: chọn ngẫu nhiên các bạn ở nhiều lớp trong khối 8 thì dữ liệu có tính đại diện; chỉ hỏi các bạn trong một lớp hoặc một nhóm bạn thân thì không đại diện cho cả khối 8.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "hoi": "Em muốn khảo sát ý kiến đánh giá của các bạn trong khối 8 về chuyến đi dã ngoại do nhà trường tổ chức bằng cách lấy ý kiến của 30 bạn. Với mỗi cách chọn 30 bạn dưới đây, dữ liệu thu được có tính đại diện cho các bạn khối 8 không?",
+      "dong": [
+       {
+        "chu": "Chọn ngẫu nhiên 30 bạn trong danh sách học sinh của cả khối 8: {0}",
+        "o": [
+         {
+          "dung": [
+           "Có tính đại diện"
+          ],
+          "sai": [
+           "Không có tính đại diện"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Mỗi lớp khối 8 chọn ngẫu nhiên vài bạn, cộng lại đủ 30 bạn: {0}",
+        "o": [
+         {
+          "dung": [
+           "Có tính đại diện"
+          ],
+          "sai": [
+           "Không có tính đại diện"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Hỏi 30 bạn trong lớp em: {0}",
+        "o": [
+         {
+          "dung": [
+           "Không có tính đại diện"
+          ],
+          "sai": [
+           "Có tính đại diện"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Hỏi 30 bạn trong nhóm bạn thân của em: {0}",
+        "o": [
+         {
+          "dung": [
+           "Không có tính đại diện"
+          ],
+          "sai": [
+           "Có tính đại diện"
+          ],
+          "hai": true
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "5.5b",
@@ -6460,7 +7656,19 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Dữ liệu không là số, có thể sắp thứ tự",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Em muốn khảo sát về ý kiến đánh giá của các bạn trong khối 8 về chuyến đi dã ngoại do nhà trường tổ chức bằng cách lấy ý kiến của 30 bạn với các mức đánh giá từ Rất hài lòng đến Thất vọng. Dữ liệu thu được thuộc loại nào?",
+      "cac": [
+       "Số liệu rời rạc",
+       "Số liệu liên tục",
+       "Dữ liệu không là số, có thể sắp thứ tự",
+       "Dữ liệu không là số, không thể sắp thứ tự"
+      ],
+      "dap": "C"
+     }
     }
    ]
   },
@@ -6475,7 +7683,8 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Bảng thống kê: Học sinh: An, Bình, Nam; Số trận đã xem: 5, 8, 3.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "bo_may": "lập bảng"
     },
     {
      "ma": "5.6b",
@@ -6484,7 +7693,8 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Biểu đồ cột: trục ngang là Học sinh (An, Bình, Nam), trục đứng là Số trận; ba cột cao 5, 8, 3. Tiêu đề trong sách: 'Bạn đã xem bao nhiêu trận bóng của giải vô địch quốc gia mùa giải 2021 – 2022?'.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "bo_may": "vẽ biểu đồ"
     },
     {
      "ma": "5.7a",
@@ -6493,7 +7703,70 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Số lượng = 7 754 · tỉ lệ, làm tròn đến hàng đơn vị. Bảng: Ủng hộ phương án 1: 543; Ủng hộ phương án 2: 1 008; Ủng hộ phương án 3: 3 412; Không ủng hộ: 2 791.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "hoi": "Biểu đồ Hình 5.1 (biểu đồ hình quạt tròn gồm Ủng hộ phương án 1: 7%; Ủng hộ phương án 2: 13%; Ủng hộ phương án 3: 44%; Không ủng hộ phương án nào: 36%) cho biết tỉ lệ độc giả của báo điện tử Vnexpress ủng hộ các phương án thiết kế cầu Trần Hưng Đạo, Hà Nội (Phương án 1: Cầu dầm – cáp hỗn hợp; Phương án 2: Cầu vòm kết hợp dây văng; Phương án 3: Cầu dầm hộp bê tông cốt thép dự ứng lực kết hợp trụ tháp). Biết rằng có 7 754 lượt độc giả tham gia bình chọn. Tính số lượng bình chọn cho mỗi loại (làm tròn đến hàng đơn vị) để lập bảng thống kê.",
+      "dong": [
+       {
+        "chu": "Ủng hộ phương án 1: {0} lượt",
+        "o": [
+         {
+          "dung": [
+           "543"
+          ],
+          "sai": [
+           "542",
+           "54 278"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Ủng hộ phương án 2: {0} lượt",
+        "o": [
+         {
+          "dung": [
+           "1 008"
+          ],
+          "sai": [
+           "100 802",
+           "596"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Ủng hộ phương án 3: {0} lượt",
+        "o": [
+         {
+          "dung": [
+           "3 412"
+          ],
+          "sai": [
+           "3 411",
+           "341 176"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Không ủng hộ phương án nào: {0} lượt",
+        "o": [
+         {
+          "dung": [
+           "2 791"
+          ],
+          "sai": [
+           "2 792",
+           "279 144"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "5.7b",
@@ -6502,7 +7775,8 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Biểu đồ cột 'Kết quả thăm dò về phương án thiết kế cầu Trần Hưng Đạo, Hà Nội': trục ngang là Lựa chọn, trục đứng là Số lượng; bốn cột cao 543 (phương án 1), 1 008 (phương án 2), 3 412 (phương án 3), 2 791 (không ủng hộ).",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "bo_may": "vẽ biểu đồ"
     },
     {
      "ma": "5.8",
@@ -6511,7 +7785,8 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Biểu đồ cột kép 'Tỉ lệ đi học đúng tuổi ở các cấp': trục ngang là Cấp học (Tiểu học, THCS, THPT), trục đứng là Tỉ lệ (%); mỗi cấp hai cột: Đồng bằng sông Hồng 99; 98,7; 92,9 và Đồng bằng sông Cửu Long 98,5; 87,2; 63,9; có chú thích màu cho hai vùng.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "bo_may": "vẽ biểu đồ"
     },
     {
      "ma": "5.9a",
@@ -6520,7 +7795,8 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Bảng thống kê: Năm 2015, 2016, 2017, 2018, 2019, 2020, 2021; Tỉ lệ (%): 14,1; 13,9; 13,4; 13,2; 12,2; 11,5; 11,2.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "bo_may": "lập bảng"
     },
     {
      "ma": "5.9b",
@@ -6529,7 +7805,8 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Biểu đồ cột: trục ngang là Năm (2015 đến 2021), trục đứng là Tỉ lệ (%); bảy cột cao 14,1; 13,9; 13,4; 13,2; 12,2; 11,5; 11,2.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "bo_may": "vẽ biểu đồ"
     },
     {
      "ma": "5.10a",
@@ -6538,7 +7815,8 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Dùng biểu đồ cột kép: 3 nhóm cột cho 3 câu lạc bộ, mỗi nhóm 2 cột cho 2 mùa giải 2020 – 2021 và 2021 – 2022: Arsenal 18 và 22; Chelsea 19 và 21; Tottenham Hotspur 18 và 22.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "bo_may": "vẽ biểu đồ"
     },
     {
      "ma": "5.10b",
@@ -6547,7 +7825,8 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Dùng biểu đồ cột bội (mỗi nhóm 3 cột): 2 nhóm cột cho 2 mùa giải, mỗi nhóm 3 cột cho 3 câu lạc bộ: 2020 – 2021: Arsenal 18, Chelsea 19, Tottenham Hotspur 18; 2021 – 2022: Arsenal 22, Chelsea 21, Tottenham Hotspur 22.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "bo_may": "vẽ biểu đồ"
     },
     {
      "ma": "5.11",
@@ -6556,7 +7835,43 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Dùng biểu đồ đoạn thẳng, vì cần biểu diễn sự thay đổi của số dân theo thời gian (các năm từ 1945 đến nay) để thấy tốc độ tăng dân số.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "Để tìm hiểu về tốc độ tăng dân số Việt Nam, Tuấn đã thu thập số liệu về số dân trong các năm từ 1945 đến nay. Tuấn nên dùng biểu đồ nào để biểu diễn? Tại sao?",
+      "dong": [
+       {
+        "chu": "Tuấn nên dùng {0}",
+        "o": [
+         {
+          "dung": [
+           "biểu đồ đoạn thẳng"
+          ],
+          "sai": [
+           "biểu đồ hình quạt tròn",
+           "biểu đồ tranh",
+           "biểu đồ cột kép"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Vì {0}",
+        "o": [
+         {
+          "dung": [
+           "cần biểu diễn sự thay đổi của số dân theo thời gian"
+          ],
+          "sai": [
+           "cần biểu diễn tỉ lệ số dân của mỗi năm so với tổng số dân các năm",
+           "cần so sánh số dân của hai quốc gia"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "5.12a",
@@ -6565,7 +7880,8 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Biểu đồ cột: trục ngang là Trình độ, trục đứng là Số học sinh; bốn cột cao 40 (Bắt đầu), 70 (Sơ cấp), 80 (Trung cấp), 10 (Trên trung cấp).",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "bo_may": "vẽ biểu đồ"
     },
     {
      "ma": "5.12b",
@@ -6574,7 +7890,19 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Biểu đồ hình quạt tròn",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Kết quả khảo sát tiếng Anh tại khối 8 của một trường THCS như sau: (Bảng, số học sinh theo trình độ: Bắt đầu (Beginner) 40; Sơ cấp (Elementary) 70; Trung cấp (Intermediate) 80; Trên trung cấp (Upper Intermediate) 10). Nếu muốn biểu diễn tỉ lệ học sinh ở từng trình độ tiếng Anh so với tổng số học sinh thì nên dùng biểu đồ nào để biểu diễn?",
+      "cac": [
+       "Biểu đồ hình quạt tròn",
+       "Biểu đồ cột",
+       "Biểu đồ đoạn thẳng",
+       "Biểu đồ tranh"
+      ],
+      "dap": "A"
+     }
     },
     {
      "ma": "5.13a",
@@ -6583,7 +7911,42 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Không nên. ƯCLN(58, 56, 51, 49) = 1 nên nếu dùng biểu đồ tranh thì mỗi biểu tượng chỉ ứng với 1 di sản, phải vẽ rất nhiều biểu tượng.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "Bảng thống kê sau cho biết số lượng di sản thế giới của 5 quốc gia đứng đầu tính đến tháng 8 năm 2021: (Bảng, số di sản thế giới: Ý 58; Trung Quốc 56; Đức 51; Tây Ban Nha 49; Pháp 49). Có nên dùng biểu đồ tranh biểu diễn bảng thống kê trên? Tại sao?",
+      "dong": [
+       {
+        "chu": "Có nên dùng biểu đồ tranh không? {0}",
+        "o": [
+         {
+          "dung": [
+           "Không nên"
+          ],
+          "sai": [
+           "Nên"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Vì {0}",
+        "o": [
+         {
+          "dung": [
+           "ƯCLN(58, 56, 51, 49) = 1 nên mỗi biểu tượng chỉ ứng với 1 di sản, phải vẽ rất nhiều biểu tượng"
+          ],
+          "sai": [
+           "58, 56, 51, 49 đều chia hết cho 7 nên mỗi biểu tượng ứng với 7 di sản",
+           "biểu đồ tranh chỉ dùng cho dữ liệu không là số"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "5.13b",
@@ -6592,7 +7955,8 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Dùng biểu đồ cột: trục ngang là Quốc gia, trục đứng là Số di sản thế giới; năm cột cao 58 (Ý), 56 (Trung Quốc), 51 (Đức), 49 (Tây Ban Nha), 49 (Pháp).",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "bo_may": "vẽ biểu đồ"
     }
    ]
   },
@@ -6607,7 +7971,42 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Cả hình tròn trong biểu đồ hình quạt tròn biểu diễn 100%, nhưng ở Hình 5.5 cả hình tròn lại biểu diễn 70% + 63% + 60% = 193%, không hợp lí.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "Bình vẽ biểu đồ sau đây để biểu diễn tỉ lệ học sinh trong lớp tham gia vào các câu lạc bộ (CLB) tiếng Anh, tiếng Pháp, tiếng Trung của trường. (Hình 5.5: biểu đồ hình quạt tròn \"Tỉ lệ học sinh trong lớp tham gia các câu lạc bộ\" gồm CLB tiếng Anh 70%; CLB tiếng Pháp 63%; CLB tiếng Trung 60%) Hãy cho biết biểu đồ này có điểm nào không hợp lí.",
+      "dong": [
+       {
+        "chu": "Tổng các tỉ lệ trên biểu đồ: 70% + 63% + 60% = {0}",
+        "o": [
+         {
+          "dung": [
+           "193%"
+          ],
+          "sai": [
+           "100%",
+           "183%"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Điểm không hợp lí: {0}",
+        "o": [
+         {
+          "dung": [
+           "cả hình tròn biểu diễn 100% nhưng các phần cộng lại là 193%"
+          ],
+          "sai": [
+           "các phần phải xếp từ lớn đến bé theo chiều kim đồng hồ",
+           "không được dùng biểu đồ hình quạt tròn để biểu diễn tỉ lệ phần trăm"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "5.15a",
@@ -6616,7 +8015,28 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Có, dữ liệu trên hai biểu đồ như nhau. Bảng thống kê: Tháng 7, 8, 9, 10, 11, 12; Doanh thu (tỉ đồng): 3; 5; 6; 6; 9; 11.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "O",
+      "sao": 1,
+      "hoi": "Cho hai biểu đồ Hình 5.6 (biểu đồ đoạn thẳng \"Doanh thu 6 tháng cuối năm\", doanh thu (tỉ đồng): Tháng 7: 3; Tháng 8: 5; Tháng 9: 6; Tháng 10: 6; Tháng 11: 9; Tháng 12: 11; trục đứng chia từ 0 đến 20, mỗi vạch 5) và Hình 5.7 (biểu đồ đoạn thẳng \"Doanh thu 6 tháng cuối năm\", doanh thu (tỉ đồng): Tháng 7: 3; Tháng 8: 5; Tháng 9: 6; Tháng 10: 6; Tháng 11: 9; Tháng 12: 11; trục đứng chia từ 2 đến 14, mỗi vạch 3). Dữ liệu biểu diễn trên hai biểu đồ có như nhau không?",
+      "dong": [
+       {
+        "chu": "Dữ liệu biểu diễn trên hai biểu đồ {0}",
+        "o": [
+         {
+          "dung": [
+           "như nhau"
+          ],
+          "sai": [
+           "khác nhau"
+          ],
+          "hai": true
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "5.15b",
@@ -6625,7 +8045,42 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Không. Gốc trục đứng và đơn vị độ dài trên trục đứng của hai biểu đồ khác nhau nên không thể căn cứ vào độ dốc của hai đường gấp khúc để đánh giá tốc độ tăng doanh thu.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "Cho hai biểu đồ Hình 5.6 (biểu đồ đoạn thẳng \"Doanh thu 6 tháng cuối năm\", doanh thu (tỉ đồng): Tháng 7: 3; Tháng 8: 5; Tháng 9: 6; Tháng 10: 6; Tháng 11: 9; Tháng 12: 11; trục đứng chia từ 0 đến 20, mỗi vạch 5) và Hình 5.7 (biểu đồ đoạn thẳng \"Doanh thu 6 tháng cuối năm\", doanh thu (tỉ đồng): Tháng 7: 3; Tháng 8: 5; Tháng 9: 6; Tháng 10: 6; Tháng 11: 9; Tháng 12: 11; trục đứng chia từ 2 đến 14, mỗi vạch 3). Có thể căn cứ vào độ dốc trên của hai đường gấp khúc trên hai biểu đồ để đánh giá về tốc độ tăng doanh thu trong 6 tháng cuối năm của dữ liệu được biểu diễn không? Tại sao?",
+      "dong": [
+       {
+        "chu": "Có thể căn cứ vào độ dốc của hai đường gấp khúc để đánh giá tốc độ tăng doanh thu không? {0}",
+        "o": [
+         {
+          "dung": [
+           "Không"
+          ],
+          "sai": [
+           "Có"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Vì {0}",
+        "o": [
+         {
+          "dung": [
+           "gốc và đơn vị độ dài trên trục đứng của hai biểu đồ khác nhau"
+          ],
+          "sai": [
+           "dữ liệu trên hai biểu đồ khác nhau",
+           "doanh thu tháng 9 và tháng 10 bằng nhau"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "5.16a",
@@ -6634,7 +8089,56 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Số bước đi trung bình trong ngày: của người này 3 455 bước; của những người dùng cùng độ tuổi 5 285 bước; của tất cả người dùng ứng dụng 4 399 bước",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "hoi": "Một người sử dụng ứng dụng đếm số bước chân trên điện thoại. Sau một thời gian anh ta vào kiểm tra ứng dụng thì thấy có biểu đồ Hình 5.8 (biểu đồ cột \"Số bước trung bình trong ngày của một số đối tượng\": Cá nhân người dùng 3 455 bước; Những người dùng cùng độ tuổi 5 285 bước; Tất cả người dùng 4 399 bước). Hãy đọc và giải thích số liệu được biểu diễn trên biểu đồ.",
+      "dong": [
+       {
+        "chu": "Cột \"Cá nhân người dùng\" (3 455 bước) cho biết {0}",
+        "o": [
+         {
+          "dung": [
+           "số bước đi trung bình trong ngày của người này"
+          ],
+          "sai": [
+           "tổng số bước người này đã đi từ khi dùng ứng dụng",
+           "số bước nhiều nhất người này đi trong một ngày"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Cột \"Những người dùng cùng độ tuổi\" (5 285 bước) cho biết {0}",
+        "o": [
+         {
+          "dung": [
+           "số bước đi trung bình trong ngày của những người dùng cùng độ tuổi với người này"
+          ],
+          "sai": [
+           "tổng số bước của những người dùng cùng độ tuổi với người này",
+           "số người dùng cùng độ tuổi với người này"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Cột \"Tất cả người dùng\" (4 399 bước) cho biết {0}",
+        "o": [
+         {
+          "dung": [
+           "số bước đi trung bình trong ngày của tất cả người dùng ứng dụng"
+          ],
+          "sai": [
+           "tổng số bước của tất cả người dùng ứng dụng",
+           "số người đang dùng ứng dụng"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "5.16b",
@@ -6643,7 +8147,20 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "1 830",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "dap": [
+       "1830"
+      ],
+      "phim": [],
+      "nhieu": [],
+      "loi_giai": [
+       "Người này đi trung bình 3455 bước mỗi ngày, những người dùng cùng độ tuổi đi trung bình 5285 bước",
+       "Số bước ít hơn = 5285 − 3455 = 1830"
+      ]
+     }
     },
     {
      "ma": "5.17a",
@@ -6652,7 +8169,28 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Độ tuổi càng tăng thì thời gian ngủ trung bình trong ngày càng giảm",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 1,
+      "hoi": "Cho biểu đồ Hình 5.9 (biểu đồ cột \"Thời gian ngủ trung bình trong ngày theo độ tuổi\": từ 0 đến 3 tháng 15,5 giờ; từ 4 đến 24 tháng 13,5 giờ; từ 3 đến 5 năm 11,5 giờ; từ 6 đến 13 năm 10,5 giờ; từ 14 đến 17 năm 9 giờ; từ 18 đến 64 năm 8 giờ; 65 năm trở lên 7,5 giờ). Nhận xét về xu thế thời gian ngủ trung bình trong ngày theo độ tuổi.",
+      "dong": [
+       {
+        "chu": "Độ tuổi càng tăng thì thời gian ngủ trung bình trong ngày {0}",
+        "o": [
+         {
+          "dung": [
+           "càng giảm"
+          ],
+          "sai": [
+           "càng tăng",
+           "không thay đổi"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "5.17b",
@@ -6661,7 +8199,70 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Học: 8/24 ≈ 33,3%; ăn uống: 3/24 = 12,5%; ngủ: 9/24 = 37,5%; việc khác: 4/24 ≈ 16,7%",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "hoi": "Cho biểu đồ Hình 5.9 (biểu đồ cột \"Thời gian ngủ trung bình trong ngày theo độ tuổi\": từ 0 đến 3 tháng 15,5 giờ; từ 4 đến 24 tháng 13,5 giờ; từ 3 đến 5 năm 11,5 giờ; từ 6 đến 13 năm 10,5 giờ; từ 14 đến 17 năm 9 giờ; từ 18 đến 64 năm 8 giờ; 65 năm trở lên 7,5 giờ). An là học sinh lớp 8 (15 tuổi). Mỗi ngày An dành 8 tiếng cho việc học ở trường và ở nhà; 3 tiếng dành cho việc ăn uống. An đảm bảo thời gian ngủ trong ngày theo độ tuổi. Tính tỉ lệ phần trăm thời gian trong ngày An dành cho việc học, việc ăn uống, việc ngủ và các việc khác (làm tròn đến hàng phần mười).",
+      "dong": [
+       {
+        "chu": "Việc học: {0}",
+        "o": [
+         {
+          "dung": [
+           "≈ 33,3%"
+          ],
+          "sai": [
+           "8%",
+           "≈ 53,3%"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Việc ăn uống: {0}",
+        "o": [
+         {
+          "dung": [
+           "12,5%"
+          ],
+          "sai": [
+           "3%",
+           "20%"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Việc ngủ: {0}",
+        "o": [
+         {
+          "dung": [
+           "37,5%"
+          ],
+          "sai": [
+           "≈ 33,3%",
+           "≈ 43,8%"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Các việc khác: {0}",
+        "o": [
+         {
+          "dung": [
+           "≈ 16,7%"
+          ],
+          "sai": [
+           "≈ 20,8%",
+           "≈ 10,4%"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "5.18a",
@@ -6670,7 +8271,8 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Bảng thống kê: Năm 2016, 2017, 2018, 2019, 2020, 2021, 2022; Doanh thu (tỉ đô la): 1,478; 1,535; 1,579; 1,59; 1,378; 1,45; 1,484.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "bo_may": "lập bảng"
     },
     {
      "ma": "5.18b",
@@ -6679,7 +8281,42 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Từ năm 2016 đến 2019 (và từ 2020 đến 2022) doanh thu có xu thế tăng. Riêng năm 2020 doanh thu giảm mạnh so với năm 2019 do đại dịch Covid.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "Cho biểu đồ Hình 5.10 (biểu đồ đoạn thẳng \"Doanh thu từ đồ uống có cồn toàn cầu\", doanh thu (tỉ đô la) theo năm: 2016: 1,478; 2017: 1,535; 2018: 1,579; 2019: 1,59; 2020: 1,378; 2021: 1,45; 2022: 1,484). Nhận xét về xu thế của doanh thu từ đồ uống có cồn trên toàn cầu trước năm 2020. Tại sao doanh thu năm 2020 có sụt giảm mạnh?",
+      "dong": [
+       {
+        "chu": "Từ năm 2016 đến năm 2019, doanh thu từ đồ uống có cồn trên toàn cầu {0}",
+        "o": [
+         {
+          "dung": [
+           "có xu thế tăng"
+          ],
+          "sai": [
+           "có xu thế giảm",
+           "không thay đổi"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Năm 2020 doanh thu giảm mạnh vì {0}",
+        "o": [
+         {
+          "dung": [
+           "đại dịch Covid 19 (nhiều nhà hàng, quán bar phải đóng cửa)"
+          ],
+          "sai": [
+           "dân số thế giới năm 2020 giảm mạnh",
+           "người dân uống nhiều đồ uống có cồn hơn"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "5.18c",
@@ -6688,7 +8325,56 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Rượu mạnh: 1,45 · 41,3% = 0,59885 tỉ đô la; rượu vang: 1,45 · 16,1% = 0,23345 tỉ đô la; bia: 1,45 · 42,5% = 0,61625 tỉ đô la",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "hoi": "Cho biểu đồ Hình 5.10 (biểu đồ đoạn thẳng \"Doanh thu từ đồ uống có cồn toàn cầu\", doanh thu (tỉ đô la) theo năm: 2016: 1,478; 2017: 1,535; 2018: 1,579; 2019: 1,59; 2020: 1,378; 2021: 1,45; 2022: 1,484). Năm 2021, tỉ lệ doanh thu đồ uống có cồn theo loại được cho trong biểu đồ Hình 5.11 (biểu đồ hình quạt tròn \"Tỉ lệ theo doanh thu các loại đồ uống có cồn năm 2021\" gồm Rượu mạnh 41,30%; Rượu vang 16,10%; Bia 42,50%). Tính doanh thu mỗi loại trong năm 2021.",
+      "dong": [
+       {
+        "chu": "Rượu mạnh: {0} tỉ đô la",
+        "o": [
+         {
+          "dung": [
+           "0,59885"
+          ],
+          "sai": [
+           "0,569114",
+           "5,9885"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Rượu vang: {0} tỉ đô la",
+        "o": [
+         {
+          "dung": [
+           "0,23345"
+          ],
+          "sai": [
+           "0,221858",
+           "2,3345"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Bia: {0} tỉ đô la",
+        "o": [
+         {
+          "dung": [
+           "0,61625"
+          ],
+          "sai": [
+           "0,58565",
+           "6,1625"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "5.19a",
@@ -6697,7 +8383,28 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Ở mọi mùa giải từ 2015/2016 đến 2021/2022, chủ nhân chiếc giày vàng ở La Liga luôn ghi nhiều bàn thắng hơn ở Ngoại hạng Anh",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 1,
+      "hoi": "Biểu đồ Hình 5.12 (biểu đồ đoạn thẳng \"Số bàn thắng ghi được của chủ nhân chiếc giày vàng qua các mùa giải\", số bàn: mùa giải 2015/2016: Ngoại hạng Anh 25, La Liga 40; 2016/2017: Ngoại hạng Anh 29, La Liga 37; 2017/2018: Ngoại hạng Anh 32, La Liga 34; 2018/2019: Ngoại hạng Anh 22, La Liga 36; 2019/2020: Ngoại hạng Anh 23, La Liga 25; 2020/2021: Ngoại hạng Anh 23, La Liga 30; 2021/2022: Ngoại hạng Anh 23, La Liga 27) cho biết số bàn thắng ghi được của chủ nhân chiếc giày vàng tại giải ngoại hạng Anh và La Liga (giải vô địch quốc gia Tây Ban Nha) trong một số năm gần đây. So sánh về số bàn thắng mà chủ nhân chiếc giày vàng ghi được tại hai giải bóng đá từ mùa giải 2015/2016 đến mùa giải 2021/2022.",
+      "dong": [
+       {
+        "chu": "Từ mùa giải 2015/2016 đến mùa giải 2021/2022: {0}",
+        "o": [
+         {
+          "dung": [
+           "chủ nhân chiếc giày vàng ở La Liga luôn ghi nhiều bàn thắng hơn ở Ngoại hạng Anh"
+          ],
+          "sai": [
+           "chủ nhân chiếc giày vàng ở Ngoại hạng Anh luôn ghi nhiều bàn thắng hơn ở La Liga",
+           "có mùa giải Ngoại hạng Anh nhiều bàn hơn, có mùa giải La Liga nhiều bàn hơn"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "5.19b",
@@ -6706,7 +8413,20 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "40 bàn thắng",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "dap": [
+       "40"
+      ],
+      "phim": [],
+      "nhieu": [],
+      "loi_giai": [
+       "Số bàn thắng nhiều nhất trong một mùa giải ở Ngoại hạng Anh là 32, ở La Liga là 40",
+       "Vậy nhiều nhất là 40 bàn thắng (La Liga, mùa giải 2015/2016)"
+      ]
+     }
     }
    ]
   },
@@ -6721,7 +8441,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "B",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Người ta đặt các trạm đo mưa tự động trên toàn quốc để phục vụ cho công tác phòng, chống thiên tai của các tỉnh, thành phố, các hồ thủy lợi, thuỷ điện trên toàn quốc. Dữ liệu gửi về từ các trạm được hiển thị trên một website với các thông tin: Địa điểm, Lượng mưa (đo bằng mm) và Mức độ mưa (Không mưa, mưa nhỏ, mưa vừa, mưa to). Người ta đã thực hiện thu thập dữ liệu bằng cách",
+      "cac": [
+       "Thu thập trực tiếp thông qua quan sát",
+       "Thu thập trực tiếp thông qua làm thí nghiệm",
+       "Thu thập trực tiếp bằng cách lập bảng hỏi",
+       "Thu thập gián tiếp"
+      ],
+      "dap": "B"
+     }
     },
     {
      "ma": "Trắc nghiệm 2 (tr.72)",
@@ -6730,7 +8462,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "D",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Người ta đặt các trạm đo mưa tự động trên toàn quốc để phục vụ cho công tác phòng, chống thiên tai của các tỉnh, thành phố, các hồ thủy lợi, thuỷ điện trên toàn quốc. Dữ liệu gửi về từ các trạm được hiển thị trên một website với các thông tin: Địa điểm, Lượng mưa (đo bằng mm) và Mức độ mưa (Không mưa, mưa nhỏ, mưa vừa, mưa to). Dữ liệu thu được về lượng mưa là",
+      "cac": [
+       "Dữ liệu không phải là số, không thể sắp thứ tự",
+       "Dữ liệu không phải là số, có thể sắp thứ tự",
+       "Số liệu rời rạc",
+       "Số liệu liên tục"
+      ],
+      "dap": "D"
+     }
     },
     {
      "ma": "Trắc nghiệm 3 (tr.72)",
@@ -6739,7 +8483,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "B",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Người ta đặt các trạm đo mưa tự động trên toàn quốc để phục vụ cho công tác phòng, chống thiên tai của các tỉnh, thành phố, các hồ thủy lợi, thuỷ điện trên toàn quốc. Dữ liệu gửi về từ các trạm được hiển thị trên một website với các thông tin: Địa điểm, Lượng mưa (đo bằng mm) và Mức độ mưa (Không mưa, mưa nhỏ, mưa vừa, mưa to). Dữ liệu thu được về mức độ mưa là",
+      "cac": [
+       "Dữ liệu không phải là số, không thể sắp thứ tự",
+       "Dữ liệu không phải là số, có thể sắp thứ tự",
+       "Số liệu rời rạc",
+       "Số liệu liên tục"
+      ],
+      "dap": "B"
+     }
     },
     {
      "ma": "Trắc nghiệm 4 (tr.72)",
@@ -6748,7 +8504,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "C",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Muốn biểu diễn số ngày trời không mưa, mưa nhỏ, mưa vừa, mưa to trong một tháng ta nên dùng biểu đồ nào?",
+      "cac": [
+       "Biểu đồ đoạn thẳng",
+       "Biểu đồ hình quạt tròn",
+       "Biểu đồ cột",
+       "Biểu đồ cột kép"
+      ],
+      "dap": "C"
+     }
     },
     {
      "ma": "Trắc nghiệm 5 (tr.73)",
@@ -6757,7 +8525,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "B",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Muốn biểu diễn tỉ lệ ngày trời không mưa, mưa nhỏ, mưa vừa, mưa to trong một tháng ta nên dùng biểu đồ nào?",
+      "cac": [
+       "Biểu đồ đoạn thẳng",
+       "Biểu đồ hình quạt tròn",
+       "Biểu đồ cột",
+       "Biểu đồ cột kép"
+      ],
+      "dap": "B"
+     }
     },
     {
      "ma": "Trắc nghiệm 6 (tr.73)",
@@ -6766,7 +8546,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "C",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Muốn biểu diễn sự khác nhau về lượng mưa trong một ngày tại 5 thành phố lớn ta nên dùng biểu đồ nào?",
+      "cac": [
+       "Biểu đồ đoạn thẳng",
+       "Biểu đồ hình quạt tròn",
+       "Biểu đồ cột",
+       "Biểu đồ cột kép"
+      ],
+      "dap": "C"
+     }
     },
     {
      "ma": "Trắc nghiệm 7 (tr.73)",
@@ -6775,7 +8567,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "A",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Muốn biểu diễn sự thay đổi về lượng mưa tại Hà Nội trong tháng ta nên dùng biểu đồ nào?",
+      "cac": [
+       "Biểu đồ đoạn thẳng",
+       "Biểu đồ hình quạt tròn",
+       "Biểu đồ cột",
+       "Biểu đồ cột kép"
+      ],
+      "dap": "A"
+     }
     },
     {
      "ma": "Trắc nghiệm 8 (tr.73)",
@@ -6784,7 +8588,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "C",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Muốn so sánh lượng mưa tại Hà Nội và Thành phố Hồ Chí Minh trong các tháng năm 2022 ta nên dùng biểu đồ nào?",
+      "cac": [
+       "Biểu đồ đoạn thẳng",
+       "Biểu đồ hình quạt tròn",
+       "Biểu đồ cột kép",
+       "Biểu đồ tranh"
+      ],
+      "dap": "C"
+     }
     },
     {
      "ma": "5.20a",
@@ -6793,7 +8609,19 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Thu thập trực tiếp thông qua lập bảng hỏi",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Ngay sau vòng tứ kết World Cup 2022, một website điện tử đã khảo sát dự đoán đội vô địch của độc giả với câu hỏi \"Theo bạn, đội bóng nào sẽ vô địch World Cup 2022?\" với 4 phương án trả lời: Argentina, Croatia, Ma rốc, Pháp. Trước khi vòng bán kết bắt đầu, ban quản trị website đã thu được 1 765 phản hồi gồm 800 lựa chọn Argentina, 350 lựa chọn Croatia, 115 lựa chọn Ma rốc và 500 lựa chọn Pháp. Dữ liệu trên đã được thu thập bằng cách nào?",
+      "cac": [
+       "Thu thập trực tiếp thông qua lập bảng hỏi",
+       "Thu thập trực tiếp thông qua quan sát",
+       "Thu thập trực tiếp thông qua làm thí nghiệm",
+       "Thu thập gián tiếp"
+      ],
+      "dap": "A"
+     }
     },
     {
      "ma": "5.20b",
@@ -6802,7 +8630,8 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Dùng biểu đồ cột 'Theo bạn, đội nào vô địch World Cup 2022?': trục ngang là Lựa chọn, trục đứng là Số lượng; bốn cột cao 800 (Argentina), 350 (Croatia), 115 (Ma rốc), 500 (Pháp).",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "bo_may": "vẽ biểu đồ"
     },
     {
      "ma": "5.20c",
@@ -6811,7 +8640,19 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Biểu đồ hình quạt tròn",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Ngay sau vòng tứ kết World Cup 2022, một website điện tử đã khảo sát dự đoán đội vô địch của độc giả với câu hỏi \"Theo bạn, đội bóng nào sẽ vô địch World Cup 2022?\" với 4 phương án trả lời: Argentina, Croatia, Ma rốc, Pháp. Trước khi vòng bán kết bắt đầu, ban quản trị website đã thu được 1 765 phản hồi gồm 800 lựa chọn Argentina, 350 lựa chọn Croatia, 115 lựa chọn Ma rốc và 500 lựa chọn Pháp. Nếu muốn biểu diễn tỉ lệ bình chọn cho mỗi đội bóng thì nên dùng biểu đồ nào để biểu diễn?",
+      "cac": [
+       "Biểu đồ hình quạt tròn",
+       "Biểu đồ cột",
+       "Biểu đồ đoạn thẳng",
+       "Biểu đồ tranh"
+      ],
+      "dap": "A"
+     }
     },
     {
      "ma": "5.21a",
@@ -6820,7 +8661,17 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Có, dữ liệu trên hai biểu đồ như nhau",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Biểu đồ Hình 5.13 (biểu đồ đoạn thẳng \"Xếp hạng FIFA của bóng đá Việt Nam và Thái Lan trong 10 năm\"; trục ngang Năm đặt ở phía trên; trục đứng Hạng ghi từ 50 ở trên cùng xuống 190 ở dưới cùng, mỗi vạch 20; thứ hạng: 2013: Việt Nam 144, Thái Lan 146; 2014: Việt Nam 136, Thái Lan 165; 2015: Việt Nam 149, Thái Lan 145; 2016: Việt Nam 136, Thái Lan 146; 2017: Việt Nam 121, Thái Lan 138; 2018: Việt Nam 102, Thái Lan 121; 2019: Việt Nam 97, Thái Lan 109; 2020: Việt Nam 94, Thái Lan 113; 2021: Việt Nam 98, Thái Lan 117; 2022: Việt Nam 96, Thái Lan 111) biểu diễn xếp hạng thế giới của đội tuyển bóng đá nam Việt Nam và Thái Lan vào tháng 10 trong 10 năm từ năm 2013 đến năm 2022. Dữ liệu được biểu diễn trên biểu đồ Hình 5.13 và biểu đồ Hình 5.3 (biểu đồ ở Ví dụ 1 Bài 20, trang 66, tiêu đề \"Xếp hạng FIFA của bóng đá nam Việt Nam và Thái Lan trong 10 năm\"; trục ngang Năm đặt ở phía dưới; trục đứng Hạng ghi từ 50 ở dưới cùng lên 190 ở trên cùng, mỗi vạch 20; các thứ hạng ghi trên biểu đồ giống hệt Hình 5.13) có như nhau?",
+      "cac": [
+       "Có, dữ liệu trên hai biểu đồ như nhau",
+       "Không, dữ liệu trên hai biểu đồ khác nhau"
+      ],
+      "dap": "A"
+     }
     },
     {
      "ma": "5.21b",
@@ -6829,7 +8680,17 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Số liệu rời rạc",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Biểu đồ Hình 5.13 (biểu đồ đoạn thẳng \"Xếp hạng FIFA của bóng đá Việt Nam và Thái Lan trong 10 năm\"; trục ngang Năm đặt ở phía trên; trục đứng Hạng ghi từ 50 ở trên cùng xuống 190 ở dưới cùng, mỗi vạch 20; thứ hạng: 2013: Việt Nam 144, Thái Lan 146; 2014: Việt Nam 136, Thái Lan 165; 2015: Việt Nam 149, Thái Lan 145; 2016: Việt Nam 136, Thái Lan 146; 2017: Việt Nam 121, Thái Lan 138; 2018: Việt Nam 102, Thái Lan 121; 2019: Việt Nam 97, Thái Lan 109; 2020: Việt Nam 94, Thái Lan 113; 2021: Việt Nam 98, Thái Lan 117; 2022: Việt Nam 96, Thái Lan 111) biểu diễn xếp hạng thế giới của đội tuyển bóng đá nam Việt Nam và Thái Lan vào tháng 10 trong 10 năm từ năm 2013 đến năm 2022. Dãy số liệu về xếp hạng thế giới của bóng đá nam Việt Nam là dãy số liệu rời rạc hay liên tục?",
+      "cac": [
+       "Số liệu rời rạc",
+       "Số liệu liên tục"
+      ],
+      "dap": "A"
+     }
     },
     {
      "ma": "5.21c",
@@ -6838,7 +8699,42 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Giá trị trên trục đứng của hai biểu đồ theo thứ tự ngược nhau (Hình 5.13 ghi hạng 50 ở trên, 190 ở dưới, trục Năm đặt phía trên). Biểu diễn như Hình 5.13 thuận lợi hơn để nhận ra xu thế vì đường gấp khúc đi lên biểu diễn việc tăng hạng (thứ hạng nhỏ đi).",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "Biểu đồ Hình 5.13 (biểu đồ đoạn thẳng \"Xếp hạng FIFA của bóng đá Việt Nam và Thái Lan trong 10 năm\"; trục ngang Năm đặt ở phía trên; trục đứng Hạng ghi từ 50 ở trên cùng xuống 190 ở dưới cùng, mỗi vạch 20; thứ hạng: 2013: Việt Nam 144, Thái Lan 146; 2014: Việt Nam 136, Thái Lan 165; 2015: Việt Nam 149, Thái Lan 145; 2016: Việt Nam 136, Thái Lan 146; 2017: Việt Nam 121, Thái Lan 138; 2018: Việt Nam 102, Thái Lan 121; 2019: Việt Nam 97, Thái Lan 109; 2020: Việt Nam 94, Thái Lan 113; 2021: Việt Nam 98, Thái Lan 117; 2022: Việt Nam 96, Thái Lan 111) biểu diễn xếp hạng thế giới của đội tuyển bóng đá nam Việt Nam và Thái Lan vào tháng 10 trong 10 năm từ năm 2013 đến năm 2022. So sánh sự khác nhau trong việc biểu diễn các trục ở Hình 5.13 và Hình 5.3 (biểu đồ ở Ví dụ 1 Bài 20, trang 66, tiêu đề \"Xếp hạng FIFA của bóng đá nam Việt Nam và Thái Lan trong 10 năm\"; trục ngang Năm đặt ở phía dưới; trục đứng Hạng ghi từ 50 ở dưới cùng lên 190 ở trên cùng, mỗi vạch 20; các thứ hạng ghi trên biểu đồ giống hệt Hình 5.13). Biểu diễn như ở Hình 5.13 có ưu điểm gì trong việc nhận ra xu thế của thứ hạng?",
+      "dong": [
+       {
+        "chu": "Khác nhau về các trục: {0}",
+        "o": [
+         {
+          "dung": [
+           "Hình 5.13 ghi hạng 50 ở trên cùng, 190 ở dưới cùng (ngược với Hình 5.3) và đặt trục Năm ở phía trên"
+          ],
+          "sai": [
+           "Hình 5.13 chia trục đứng mỗi vạch 10 hạng, Hình 5.3 mỗi vạch 20 hạng",
+           "Hình 5.13 bỏ bớt một số năm so với Hình 5.3"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Ưu điểm của cách biểu diễn ở Hình 5.13: {0}",
+        "o": [
+         {
+          "dung": [
+           "đường gấp khúc đi lên là tăng hạng (thứ hạng nhỏ đi), nên dễ nhận ra xu thế"
+          ],
+          "sai": [
+           "đọc được thứ hạng chính xác hơn",
+           "thấy ngay tổng thứ hạng của hai đội"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "5.22a",
@@ -6847,7 +8743,8 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Bảng thống kê: Năm 1990, 1995, 2000, 2005, 2010, 2015, 2019; Lượng CO2 (nghìn tấn): 19 330; 31 400; 51 210; 92 370; 151 410; 220 650; 336 490.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "bo_may": "lập bảng"
     },
     {
      "ma": "5.22b",
@@ -6856,7 +8753,22 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Xu thế tăng theo thời gian; năm 2019 tăng khoảng 17,4 lần so với năm 1990 (336 490/19 330 ≈ 17,4)",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "hoi": "Cho biểu đồ Hình 5.14 (biểu đồ cột \"Lượng khí thải CO₂ của Việt Nam\", lượng khí thải CO₂ (nghìn tấn) theo năm: 1990: 19 330; 1995: 31 400; 2000: 51 210; 2005: 92 370; 2010: 151 410; 2015: 220 650; 2019: 336 490). Năm 2019 lượng khí thải CO₂ của Việt Nam tăng bao nhiêu lần so với năm 1990? Làm tròn kết quả đến hàng phần mười.",
+      "dap": [
+       "17,4"
+      ],
+      "phim": [],
+      "nhieu": [],
+      "loi_giai": [
+       "Năm 1990: 19330 nghìn tấn; năm 2019: 336490 nghìn tấn",
+       "Tỉ số: 336490 : 19330 ≈ 17,41",
+       "Làm tròn đến hàng phần mười: năm 2019 lượng khí thải CO₂ tăng khoảng 17,4 lần so với năm 1990"
+      ]
+     }
     },
     {
      "ma": "5.22c",
@@ -6865,7 +8777,84 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Điện và chất đốt: 154 785,4; Sản xuất và xây dựng: 74 027,8; Công nghiệp: 53 838,4; Giao thông: 40 378,8; Khác: 13 459,6 (nghìn tấn)",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 5,
+      "hoi": "Cho biểu đồ Hình 5.14 (biểu đồ cột \"Lượng khí thải CO₂ của Việt Nam\", lượng khí thải CO₂ (nghìn tấn) theo năm: 1990: 19 330; 1995: 31 400; 2000: 51 210; 2005: 92 370; 2010: 151 410; 2015: 220 650; 2019: 336 490). Nguồn sinh khí thải CO₂ tại Việt Nam năm 2019 được cho trong biểu đồ Hình 5.15 (biểu đồ hình quạt tròn \"Các nguồn sinh khí thải CO₂\" gồm Điện và chất đốt 46%; Sản xuất và xây dựng 22%; Công nghiệp 16%; Giao thông 12%; Khác 4%). Hãy tính lượng CO₂ sinh bởi mỗi nguồn.",
+      "dong": [
+       {
+        "chu": "Điện và chất đốt: {0} nghìn tấn",
+        "o": [
+         {
+          "dung": [
+           "154 785,4"
+          ],
+          "sai": [
+           "101 499",
+           "15 478,54"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Sản xuất và xây dựng: {0} nghìn tấn",
+        "o": [
+         {
+          "dung": [
+           "74 027,8"
+          ],
+          "sai": [
+           "48 543",
+           "7 402,78"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Công nghiệp: {0} nghìn tấn",
+        "o": [
+         {
+          "dung": [
+           "53 838,4"
+          ],
+          "sai": [
+           "35 304",
+           "5 383,84"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Giao thông: {0} nghìn tấn",
+        "o": [
+         {
+          "dung": [
+           "40 378,8"
+          ],
+          "sai": [
+           "26 478",
+           "4 037,88"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Khác: {0} nghìn tấn",
+        "o": [
+         {
+          "dung": [
+           "13 459,6"
+          ],
+          "sai": [
+           "8 826",
+           "1 345,96"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "5.23a",
@@ -6874,7 +8863,17 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Số liệu liên tục",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Biểu đồ Hình 5.16 (biểu đồ đoạn thẳng \"Kinh phí chi cho chăm sóc sức khoẻ của chính phủ tính theo % GDP\", lượng chi (%) theo năm: 1960: Anh 2,92 và Mỹ 1,09; 1970: Anh 3,43 và Mỹ 2,32; 1980: Anh 4,53 và Mỹ 3,46; 1990: Anh 4,29 và Mỹ 4,54; 2000: Anh 5,48 và Mỹ 5,54; 2010: Anh 8,01 và Mỹ 7,89; 2020: Anh 9,92 và Mỹ 15,95) cho biết kinh phí chính phủ Mỹ, Anh chi cho hệ thống chăm sóc sức khoẻ, bảo hiểm sức khoẻ xã hội bao gồm cả bảo hiểm sức khoẻ bắt buộc (gọi chung là chăm sóc sức khoẻ) từ năm 1960 đến 2020. Số liệu về chi phí cho chăm sóc sức khoẻ là số liệu rời rạc hay số liệu liên tục?",
+      "cac": [
+       "Số liệu liên tục",
+       "Số liệu rời rạc"
+      ],
+      "dap": "A"
+     }
     },
     {
      "ma": "5.23b",
@@ -6883,7 +8882,42 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Chi phí chăm sóc sức khoẻ của Anh và Mỹ có xu thế tăng (Anh từ 2,92% năm 1960 lên 9,92% năm 2020, Mỹ từ 1,09% lên 15,95%). Năm 2020 tăng mạnh so với 2019 (Anh từ 7,84% lên 9,92%, Mỹ từ 13,81% lên 15,95%) là do đại dịch Covid 19.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "Biểu đồ Hình 5.16 (biểu đồ đoạn thẳng \"Kinh phí chi cho chăm sóc sức khoẻ của chính phủ tính theo % GDP\", lượng chi (%) theo năm: 1960: Anh 2,92 và Mỹ 1,09; 1970: Anh 3,43 và Mỹ 2,32; 1980: Anh 4,53 và Mỹ 3,46; 1990: Anh 4,29 và Mỹ 4,54; 2000: Anh 5,48 và Mỹ 5,54; 2010: Anh 8,01 và Mỹ 7,89; 2020: Anh 9,92 và Mỹ 15,95) cho biết kinh phí chính phủ Mỹ, Anh chi cho hệ thống chăm sóc sức khoẻ, bảo hiểm sức khoẻ xã hội bao gồm cả bảo hiểm sức khoẻ bắt buộc (gọi chung là chăm sóc sức khoẻ) từ năm 1960 đến 2020. Cho biết xu thế chi phí chi cho chăm sóc sức khoẻ của Anh, Mỹ. Biết rằng chi phí này của Anh, Mỹ năm 2019 tương ứng là 7,84% và 13,81%. Giải thích tại sao chi phí cho chăm sóc sức khoẻ năm 2020 tăng mạnh so với năm 2019.",
+      "dong": [
+       {
+        "chu": "Từ năm 1960 đến năm 2020, chi phí cho chăm sóc sức khoẻ của Anh và Mỹ {0}",
+        "o": [
+         {
+          "dung": [
+           "có xu thế tăng"
+          ],
+          "sai": [
+           "có xu thế giảm",
+           "gần như không thay đổi"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Năm 2020 chi phí tăng mạnh so với năm 2019 (Anh từ 7,84% lên 9,92%, Mỹ từ 13,81% lên 15,95%) vì {0}",
+        "o": [
+         {
+          "dung": [
+           "đại dịch Covid 19"
+          ],
+          "sai": [
+           "người dân ít đi khám chữa bệnh hơn",
+           "dân số Anh và Mỹ giảm mạnh"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "5.23c",
@@ -6892,7 +8926,8 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Bảng 3 dòng: Năm 1960, 1970, 1980, 1990, 2000, 2010, 2020; Anh (%): 2,92; 3,43; 4,53; 4,29; 5,48; 8,01; 9,92; Mỹ (%): 1,09; 2,32; 3,46; 4,54; 5,54; 7,89; 15,95.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "bo_may": "lập bảng"
     },
     {
      "ma": "5.23d",
@@ -6901,7 +8936,20 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "20 890 · 15,95% = 3 331,955 tỉ đô la",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "dap": [
+       "3331,955"
+      ],
+      "phim": [],
+      "nhieu": [],
+      "loi_giai": [
+       "Năm 2020 Mỹ chi 15,95% GDP cho chăm sóc sức khoẻ",
+       "Số tiền = 20890 · 15,95 : 100 = 3331,955"
+      ]
+     }
     },
     {
      "ma": "5.24a",
@@ -6910,7 +8958,8 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Dùng biểu đồ đoạn thẳng: trục ngang là Năm (2002 đến 2021), trục đứng là X (số bé trai trên 100 bé gái); đánh dấu các điểm 107,6; 108,2; 108,8; 109,5; 110,4; 111,1; 111,5; 111,8; 112; 112,2; 112,3; 112,3; 112,3; 112,3; 112,2; 112,1; 112; 111,8; 111,6; 111,4 rồi nối thành đường gấp khúc.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "bo_may": "vẽ biểu đồ"
     },
     {
      "ma": "5.24b",
@@ -6919,7 +8968,28 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Tỉ số giới tính khi sinh ở Việt Nam giai đoạn 2002 – 2021 luôn cao hơn mức sinh học bình thường (104 đến 106)",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 1,
+      "hoi": "Tỉ số giới tính khi sinh được xác định bằng tỉ số bé trai trên 100 bé gái sinh ra trong một thời kì nhất định, thường là 1 năm. Số bé trai trên 100 bé gái (kí hiệu là X) sinh ra ở Việt Nam giai đoạn 1999 – 2020 được cho trong bảng sau: (Bảng, giá trị X theo năm: 2002: 107,6; 2003: 108,2; 2004: 108,8; 2005: 109,5; 2006: 110,4; 2007: 111,1; 2008: 111,5; 2009: 111,8; 2010: 112; 2011: 112,2; 2012: 112,3; 2013: 112,3; 2014: 112,3; 2015: 112,3; 2016: 112,2; 2017: 112,1; 2018: 112; 2019: 111,8; 2020: 111,6; 2021: 111,4). Ở mức sinh học bình thường, tỉ số này bình thường dao động từ 104 đến 106 trên 100 bé gái khi sinh. Nhận xét về tỉ số giới tính khi sinh ở Việt Nam so với tỉ số này ở mức sinh học bình thường.",
+      "dong": [
+       {
+        "chu": "Tỉ số giới tính khi sinh ở Việt Nam giai đoạn 2002 – 2021 {0} mức sinh học bình thường (từ 104 đến 106)",
+        "o": [
+         {
+          "dung": [
+           "luôn cao hơn"
+          ],
+          "sai": [
+           "luôn thấp hơn",
+           "luôn nằm trong"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "5.24c",
@@ -6928,7 +8998,98 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Cao hơn mức chung cả nước: Trung du và miền núi phía Bắc, Đồng bằng sông Hồng; ở mức sinh học bình thường: Tây Nguyên",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 6,
+      "hoi": "Tỉ số giới tính khi sinh được xác định bằng tỉ số bé trai trên 100 bé gái sinh ra trong một thời kì nhất định, thường là 1 năm. Số bé trai trên 100 bé gái (kí hiệu là X) sinh ra ở Việt Nam giai đoạn 1999 – 2020 được cho trong bảng sau: (Bảng, giá trị X theo năm: 2002: 107,6; 2003: 108,2; 2004: 108,8; 2005: 109,5; 2006: 110,4; 2007: 111,1; 2008: 111,5; 2009: 111,8; 2010: 112; 2011: 112,2; 2012: 112,3; 2013: 112,3; 2014: 112,3; 2015: 112,3; 2016: 112,2; 2017: 112,1; 2018: 112; 2019: 111,8; 2020: 111,6; 2021: 111,4). (Câu b cho biết: Ở mức sinh học bình thường, tỉ số này bình thường dao động từ 104 đến 106 trên 100 bé gái khi sinh.) Biểu đồ sau cho biết tỉ số giới tính khi sinh theo vùng địa lí – kinh tế của Việt Nam năm 2020 (Hình 5.17: biểu đồ cột, số bé trai trên 100 bé gái: Trung du và miền núi phía Bắc 112,67; Đồng bằng sông Hồng 113,63; Bắc trung bộ và duyên hải miền Trung 111,2; Tây Nguyên 105,97; Đông Nam Bộ 109,82; Đồng bằng sông Cửu Long 107,2). Những vùng nào có tỉ số giới tính khi sinh cao hơn mức chung của cả nước? Vùng nào có tỉ số giới tính khi sinh ở mức sinh học bình thường?",
+      "dong": [
+       {
+        "chu": "Trung du và miền núi phía Bắc (112,67): {0}",
+        "o": [
+         {
+          "dung": [
+           "cao hơn mức chung của cả nước"
+          ],
+          "sai": [
+           "ở mức sinh học bình thường",
+           "không thuộc hai nhóm trên"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Đồng bằng sông Hồng (113,63): {0}",
+        "o": [
+         {
+          "dung": [
+           "cao hơn mức chung của cả nước"
+          ],
+          "sai": [
+           "ở mức sinh học bình thường",
+           "không thuộc hai nhóm trên"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Bắc trung bộ và duyên hải miền Trung (111,2): {0}",
+        "o": [
+         {
+          "dung": [
+           "không thuộc hai nhóm trên"
+          ],
+          "sai": [
+           "cao hơn mức chung của cả nước",
+           "ở mức sinh học bình thường"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Tây Nguyên (105,97): {0}",
+        "o": [
+         {
+          "dung": [
+           "ở mức sinh học bình thường"
+          ],
+          "sai": [
+           "cao hơn mức chung của cả nước",
+           "không thuộc hai nhóm trên"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Đông Nam Bộ (109,82): {0}",
+        "o": [
+         {
+          "dung": [
+           "không thuộc hai nhóm trên"
+          ],
+          "sai": [
+           "cao hơn mức chung của cả nước",
+           "ở mức sinh học bình thường"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Đồng bằng sông Cửu Long (107,2): {0}",
+        "o": [
+         {
+          "dung": [
+           "không thuộc hai nhóm trên"
+          ],
+          "sai": [
+           "cao hơn mức chung của cả nước",
+           "ở mức sinh học bình thường"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "5.25",
@@ -6937,7 +9098,8 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Dùng biểu đồ cột: trục ngang là Quốc gia, trục đứng là Khối lượng (tấn); năm cột cao 193 386 (Indonesia), 165 827 (Malaysia), 56 385 (Singapore), 196 839 (Thái Lan), 302 159 (Việt Nam).",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "bo_may": "vẽ biểu đồ"
     }
    ]
   }
