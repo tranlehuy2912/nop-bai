@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Nut xoa the bai khong duoc duyet o man Bai da cham, xem KetQuaActivity. Cung kieu voi nut
+  chep (st_nut_chep): nut icon 48dp, icon xam, nhan giu hien chu.
+-->
+<com.google.android.material.button.MaterialButton xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nut_xoa"
+    style="@style/Widget.Material3.Button.IconButton"
+    android:layout_width="48dp"
+    android:layout_height="48dp"
+    android:contentDescription="Xoá khỏi danh sách"
+    android:tooltipText="Xoá khỏi danh sách"
+    app:icon="@drawable/st_ic_xoa"
+    app:iconSize="20dp"
+    app:iconTint="@color/ink_soft" />

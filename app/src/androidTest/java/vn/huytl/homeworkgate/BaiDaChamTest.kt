@@ -2,7 +2,9 @@ package vn.huytl.homeworkgate
 
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import org.junit.Assert.assertEquals
+import org.junit.Assert.assertFalse
 import org.junit.Assert.assertNull
+import org.junit.Assert.assertTrue
 import org.junit.Test
 import org.junit.runner.RunWith
 import vn.huytl.homeworkgate.data.BaiDaCham
@@ -82,5 +84,20 @@ class BaiDaChamTest {
     @Test
     fun chua_co_ban_cham_nao_thi_chua_co_cau() {
         assertNull(BaiDaCham.tuDuLieu("b3", mapOf(Duong.F_KHAI to khai)).cac)
+    }
+
+    /** Bai Ba Huy khong duyet (30/9/2026): the ghi "Không được duyệt" kem ly do. */
+    @Test
+    fun bai_khong_duyet_doc_ra_ly_do() {
+        val bai = BaiDaCham.tuDuLieu(
+            "b4",
+            mapOf(Duong.F_TRANG_THAI to "TUCHOI", Duong.F_LY_DO to " Ba Huy yêu cầu làm lại ")
+        )
+        assertTrue(bai.khongDuyet)
+        assertEquals("Ba Huy yêu cầu làm lại", bai.lyDo)
+
+        val cho = BaiDaCham.tuDuLieu("b5", mapOf(Duong.F_TRANG_THAI to "CHO"))
+        assertFalse(cho.khongDuyet)
+        assertEquals("", cho.lyDo)
     }
 }

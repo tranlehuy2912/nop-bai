@@ -5,6 +5,7 @@ import android.content.Context
 import com.google.firebase.firestore.DocumentSnapshot
 import vn.huytl.homeworkgate.R
 import vn.huytl.homeworkgate.data.BaiCho
+import vn.huytl.homeworkgate.data.CauChuaRo
 import vn.huytl.homeworkgate.data.ChamTheoClaude
 import vn.huytl.homeworkgate.data.CongSang
 import vn.huytl.homeworkgate.data.DayLog
@@ -231,17 +232,19 @@ object ThiHanhLenh {
      * dien thoai, nen Bang dieu khien van ghi bai do la dang cho. Truoc day bam Khong
      * duyet o bai do chi duoc cau "Khong co bai nao dang cho", con bai thi van nam nguyen
      * o do.
+     *
+     * Ly do [chu] ghi vao bai de the bai o man Bai da cham hien cho Le Hoa (30/9/2026).
      */
     internal fun tuChoi(context: Context, gate: GateStore, baiId: String?, chu: String): String {
         val bai = baiTrongHang(gate, baiId)
         if (bai == null) {
             if (baiId == null) return "Không có bài nào đang chờ."
-            DongBo.datTrangThaiBaiNeuDangCho(context, baiId, "TUCHOI")
+            DongBo.datTrangThaiBaiNeuDangCho(context, baiId, "TUCHOI", lyDo = chu)
             return "Bài đó không còn trong hàng chờ của tablet. Đã gỡ khỏi danh sách chờ duyệt."
         }
         gate.boBaiCho(bai.id)
         goNutBenTelegram(context, bai.messageId)
-        DongBo.datTrangThaiBai(context, bai.id, "TUCHOI")
+        DongBo.datTrangThaiBai(context, bai.id, "TUCHOI", lyDo = chu)
         DayLog.add(context, "Ba Huy không duyệt" + if (chu.isBlank()) "" else ": $chu")
         return "Đã từ chối bài đó."
     }
@@ -521,6 +524,7 @@ object ThiHanhLenh {
         val chupLai = cac.orEmpty().mapNotNull { it as? Map<*, *> }
             .filter { it["chupLai"] as? Boolean == true }
             .mapNotNull { (it["ma"] as? String)?.trim()?.takeIf { m -> m.isNotEmpty() } }
+        hienCauChupLai(context, gate, baiId, giaTri, chupLai)
         val tra = chamTheoClaude(context, gate, baiId, giaTri)
         if (chupLai.isNotEmpty()) {
             SoCaiBai.datLoiNhan(
@@ -532,6 +536,25 @@ object ThiHanhLenh {
         DayLog.add(context, "Ba Huy tự xử câu chưa chắc của bài" +
             if (chupLai.isEmpty()) "" else ", nhờ chụp lại ${chupLai.joinToString(", ")}")
         return tra
+    }
+
+    /**
+     * Cau Ba Huy nho chup lai ([chupLai], ma Claude) thoi an khoi danh sach can sua cua con, xem
+     * [CauChuaRo]: con thay cau do va bam nop lai tren the bai. Chi khi bai con cho, tuc la lenh
+     * XU_CAU con duoc cham. Tach rieng de kiem thu goi thang, khong phai bat ApprovalService.
+     */
+    internal fun hienCauChupLai(
+        context: Context,
+        gate: GateStore,
+        baiId: String?,
+        giaTri: Any?,
+        chupLai: List<String>
+    ) {
+        val id = baiId?.trim().orEmpty()
+        if (chupLai.isEmpty() || gate.baiDangCho().none { it.id == id }) return
+        ChamTheoClaude.banCham(context, giaTri, KhaiChoCham.lay(context, id))?.cac.orEmpty()
+            .filter { it.maGoc.ifBlank { it.ma }.trim() in chupLai }
+            .forEach { CauChuaRo.bo(context, SoCaiBai.khoaCua(it)) }
     }
 
     /**

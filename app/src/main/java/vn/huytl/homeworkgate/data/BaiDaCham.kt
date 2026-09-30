@@ -33,8 +33,13 @@ data class BaiDaCham(
     /** So phut tablet tinh ra luc cham. 0 la khong co phut nao, hay chua cham. */
     val phutDeNghi: Int = 0,
     /** Ten quyen con khai, vi du "SBT Toán 8 tập một". Rong la nop tu do. */
-    val tenNguon: String = ""
+    val tenNguon: String = "",
+    /** Ly do Ba Huy khong duyet, xem [Duong.F_LY_DO]. Rong la khong ghi ly do. */
+    val lyDo: String = ""
 ) {
+    /** Ba Huy da bam Khong duyet bai nay. */
+    val khongDuyet: Boolean get() = trangThai == "TUCHOI"
+
     data class Cau(
         val ma: String,
         val de: String,
@@ -156,7 +161,8 @@ data class BaiDaCham(
                 claudeChinh = claudeMap?.get("chinh") as? Boolean ?: false,
                 trangThai = du[Duong.F_TRANG_THAI] as? String ?: "",
                 phutDeNghi = (cham?.get("phutDeNghi") as? Number)?.toInt() ?: 0,
-                tenNguon = khai?.get("tenNguon") as? String ?: ""
+                tenNguon = khai?.get("tenNguon") as? String ?: "",
+                lyDo = (du[Duong.F_LY_DO] as? String)?.trim().orEmpty()
             )
         }
     }

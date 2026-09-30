@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.graphics.Typeface
 import android.os.Bundle
+import android.view.LayoutInflater
 import android.view.View
 import android.widget.LinearLayout
 import android.widget.TextView
@@ -15,7 +16,9 @@ import androidx.core.view.updatePadding
 import com.google.firebase.firestore.ListenerRegistration
 import vn.huytl.homeworkgate.R
 import com.google.android.material.button.MaterialButton
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import vn.huytl.homeworkgate.data.BaiDaCham
+import vn.huytl.homeworkgate.data.BaiKhongDuyet
 import vn.huytl.homeworkgate.data.KhaiChoCham
 import vn.huytl.homeworkgate.data.SoCaiBai
 import vn.huytl.homeworkgate.databinding.StActivityKetQuaBinding
@@ -57,6 +60,10 @@ import java.util.Locale
  *
  * KHI BA HUY DA NHO CLAUDE CHAM LAI, xem [vn.huytl.homeworkgate.data.SuaCham], moi cau
  * hien theo ket luan cua Claude, kem mot dong noi ro cho nao lan cham truoc da nham.
+ *
+ * BAI KHONG DUOC DUYET (30/9/2026) ghi "Không được duyệt" kem ly do Ba Huy chon, va co nut
+ * xoa o goc the. Truoc do the bai 21:48 ngay 30/9/2026 Ba Huy khong duyet chi ghi "chưa có kết
+ * quả chấm từng câu", nhu mot bai dang cho. Xoa chi an the tren tablet, xem [BaiKhongDuyet].
  */
 class KetQuaActivity : AppCompatActivity() {
 
@@ -65,6 +72,9 @@ class KetQuaActivity : AppCompatActivity() {
 
     /** Da ve duoc danh sach lan nao chua. Roi thi mot lan doc hong khong xoa no di. */
     private var daCoDanhSach = false
+
+    /** Danh sach doc duoc lan cuoi, de ve lai ngay khi Le Hoa xoa mot the. */
+    private var dsCuoi: List<BaiDaCham> = emptyList()
 
     private val gio = SimpleDateFormat("HH:mm", VN)
     private val ngay = SimpleDateFormat("dd/MM", VN)
@@ -101,12 +111,15 @@ class KetQuaActivity : AppCompatActivity() {
         super.onStop()
     }
 
-    private fun ve(ds: List<BaiDaCham>?) {
-        if (ds == null) {
+    private fun ve(tatCa: List<BaiDaCham>?) {
+        if (tatCa == null) {
             if (!daCoDanhSach) hienTrong("Chưa xem được kết quả. Kiểm tra mạng rồi mở lại nhé.")
             return
         }
         daCoDanhSach = true
+        dsCuoi = tatCa
+        val an = BaiKhongDuyet.daAn(this)
+        val ds = tatCa.filter { it.id !in an }
         if (ds.isEmpty()) {
             hienTrong("Chưa có bài nào được chấm.")
             return
@@ -161,7 +174,8 @@ class KetQuaActivity : AppCompatActivity() {
                 LinearLayout.LayoutParams.WRAP_CONTENT
             ).apply { bottomMargin = dp(14) }
         }
-        the.addView(chu("${b.mon.ifBlank { "Bài nộp" }} · ${luc(b.luc)}", 18f, bold = true))
+        val ten = chu("${b.mon.ifBlank { "Bài nộp" }} · ${luc(b.luc)}", 18f, bold = true)
+        the.addView(if (b.khongDuyet) tenCoNutXoa(ten, b) else ten)
         if (b.claudeLuc > 0L) {
             val khi = Calendar.getInstance().apply { timeInMillis = b.claudeLuc }
             val luc = gio.format(Date(b.claudeLuc)) +
@@ -175,12 +189,26 @@ class KetQuaActivity : AppCompatActivity() {
             )
         }
 
+        // Ba Huy khong duyet: noi ngay duoi ten the, kem ly do. Bai da cham thi cac cau van
+        // hien ben duoi nhu moi bai.
+        if (b.khongDuyet) {
+            val lyDo = b.lyDo.trim().trimEnd('.')
+            the.addView(
+                chu(
+                    "Không được duyệt." + if (lyDo.isEmpty()) "" else " Lý do: $lyDo.",
+                    15f, mau = R.color.alert
+                ).apply { (layoutParams as LinearLayout.LayoutParams).topMargin = dp(4) }
+            )
+        }
+
         val cac = b.cac
         if (cac == null) {
-            the.addView(
-                chu("Bài này chưa có kết quả chấm từng câu.", 15f, mau = R.color.wait)
-                    .apply { (layoutParams as LinearLayout.LayoutParams).topMargin = dp(4) }
-            )
+            if (!b.khongDuyet) {
+                the.addView(
+                    chu("Bài này chưa có kết quả chấm từng câu.", 15f, mau = R.color.wait)
+                        .apply { (layoutParams as LinearLayout.LayoutParams).topMargin = dp(4) }
+                )
+            }
             return the
         }
 
@@ -219,6 +247,44 @@ class KetQuaActivity : AppCompatActivity() {
             the.addView(nutNopLai(b, canNop))
         }
         return the
+    }
+
+    /**
+     * Ten the kem nut xoa o goc phai, cho bai Ba Huy khong duyet. Hang lan sang le phai cua
+     * the cho icon thang mep voi icon chep cua cac cau ben duoi, xem [dongCau].
+     */
+    private fun tenCoNutXoa(ten: TextView, b: BaiDaCham): View {
+        val hang = LinearLayout(this).apply {
+            orientation = LinearLayout.HORIZONTAL
+            gravity = android.view.Gravity.CENTER_VERTICAL
+            layoutParams = LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT
+            ).apply { marginEnd = -dp(14) }
+        }
+        ten.layoutParams = LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.WRAP_CONTENT, 1f)
+        hang.addView(ten)
+        // Le am tren duoi: nut 48dp khong lam dong ten cao len.
+        val nut = LayoutInflater.from(this).inflate(R.layout.st_nut_xoa, hang, false) as MaterialButton
+        nut.layoutParams = LinearLayout.LayoutParams(dp(48), dp(48)).apply {
+            topMargin = -dp(12)
+            bottomMargin = -dp(12)
+        }
+        nut.setOnClickListener { hoiXoa(b) }
+        hang.addView(nut)
+        return hang
+    }
+
+    /** Hoi lai truoc khi xoa: tablet khong co cho nao de lay lai the da xoa. */
+    private fun hoiXoa(b: BaiDaCham) {
+        MaterialAlertDialogBuilder(this)
+            .setTitle("Xoá bài nộp ${BaiKhongDuyet.lucNop(b.luc)} khỏi danh sách?")
+            .setNegativeButton(R.string.cancel, null)
+            .setPositiveButton("Xoá") { _, _ ->
+                BaiKhongDuyet.an(this, b.id)
+                ve(dsCuoi)
+            }
+            .show()
     }
 
     /**
@@ -291,7 +357,8 @@ class KetQuaActivity : AppCompatActivity() {
             orientation = LinearLayout.VERTICAL
             layoutParams = LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.WRAP_CONTENT, 1f)
         }
-        val ten = "Câu ${c.ma.ifBlank { "chưa rõ số" }}"
+        // Ma phieu Claude tu dat thi kem nghia: "B5-TL3g: Bài 5, tự luận, câu 3g", xem [MaCau].
+        val ten = if (MaCau.moTa(c.ma) != null) MaCau.hien(c.ma) else "Câu ${c.ma.ifBlank { "chưa rõ số" }}"
         cot.addView(chu(ten, 16f, bold = true))
         // Chu cua nut chep: dung cac dong dang hien, kem ket luan va chu "Đề:" cho de doc
         // khi dan sang cho khac.

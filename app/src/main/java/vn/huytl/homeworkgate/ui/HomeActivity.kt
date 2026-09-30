@@ -29,6 +29,7 @@ import android.widget.Toast
 import android.widget.LinearLayout
 import vn.huytl.homeworkgate.R
 import vn.huytl.homeworkgate.data.BaiGuiHong
+import vn.huytl.homeworkgate.data.CauSo
 import vn.huytl.homeworkgate.data.DayLog
 import vn.huytl.homeworkgate.data.GateState
 import vn.huytl.homeworkgate.data.GateStore
@@ -635,7 +636,6 @@ class HomeActivity : AppCompatActivity() {
         themViecNhacBai()
 
         if (canSua.isNotEmpty()) {
-            val ke = canSua.take(3).joinToString(", ") { it.ma }
             /*
              * Bam vao chi mo man ket qua. Nut nop lai nam tren the cua tung bai o do.
              *
@@ -643,12 +643,16 @@ class HomeActivity : AppCompatActivity() {
              * sai o dau. Tu do toi 28/9/2026 no mo man ket qua kem mot nut chup lai chung o
              * cuoi, gom cau sai cua moi bai. Ba Huy bo nut chung ay: moi bai nop lai bang
              * nut tren the cua chinh no, xem [KetQuaActivity].
+             *
+             * Dong chu nho ke du cac cau, moi mon mot dong (Ba Huy chon 30/9/2026). Truoc do no
+             * ghi "Xem sai ở đâu:" kem ba ma dau roi dau ba cham, dong con rong ca khoang ma cau
+             * cua mon khac nam khuat sau dau ba cham.
              */
             themViec(
                 hinh = R.drawable.st_ic_dau_hoi,
                 mau = R.color.alert,
                 ten = "Có ${canSua.size} câu cần sửa",
-                phu = "Xem sai ở đâu: " + ke + if (canSua.size > 3) "…" else ""
+                phu = keCauCanSua(canSua)
             ) { KetQuaActivity.mo(this) }
         } else if (loiNhan != null) {
             // Nop lai bai da cham hom truoc ma khong duoc gi: phai noi vi sao, khong
@@ -658,6 +662,15 @@ class HomeActivity : AppCompatActivity() {
                 mau = R.color.alert,
                 ten = "${getString(R.string.parent_name_cap)} nhắn",
                 phu = loiNhan
+            ) { KetQuaActivity.mo(this) }
+        } else {
+            // Khong co cau nao phai sua thi dung cho do la loi vao man Bai da cham (Ba Huy chon
+            // 30/9/2026). Truoc do man nay chi mo duoc tu hai dong tren, nen hom khong co cau
+            // can sua thi Le Hoa khong xem duoc bai Ba Huy khong duyet va ly do.
+            themViec(
+                hinh = R.drawable.st_ic_da_cham,
+                mau = R.color.brand,
+                ten = "Bài đã chấm"
             ) { KetQuaActivity.mo(this) }
         }
 
@@ -674,6 +687,22 @@ class HomeActivity : AppCompatActivity() {
         binding.nhanViec.visibility = if (co) View.VISIBLE else View.GONE
         binding.cardViec.visibility = if (co) View.VISIBLE else View.GONE
     }
+
+    /**
+     * Moi mon mot dong ("Toán: 2, 3b"), mon co cau cu nhat truoc, trong mon theo thu tu cua
+     * [SoCaiBai.canSua]. Ma phieu Claude tu dat thi moi cau mot dong kem nghia, ngay duoi ten
+     * mon: "B5-TL3g: Bài 5, tự luận, câu 3g", xem [MaCau].
+     */
+    private fun keCauCanSua(ds: List<CauSo>): String =
+        ds.groupBy { it.mon.trim() }.entries.joinToString("\n") { (mon, cac) ->
+            val (phieu, thuong) = cac.map { it.ma.trim().ifEmpty { "chưa rõ số" } }
+                .partition { MaCau.moTa(it) != null }
+            val dau = listOfNotNull(
+                mon.takeIf { it.isNotEmpty() }?.let { "$it:" },
+                thuong.takeIf { it.isNotEmpty() }?.joinToString(", ")
+            ).joinToString(" ")
+            (listOf(dau).filter { it.isNotEmpty() } + phieu.map { MaCau.hien(it) }).joinToString("\n")
+        }
 
     /** Cac mon co sach bai tap lam tren may trong kho. */
     private fun monLamTrenMay(): List<String> =

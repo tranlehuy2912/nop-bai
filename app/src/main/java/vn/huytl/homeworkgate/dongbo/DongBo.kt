@@ -771,22 +771,25 @@ object DongBo {
      *
      * [congLuc] lon hon 0 la bai cham xong trong gio ngu: [soPhut] phut se cong luc do, xem
      * [Duong.F_CONG_LUC] va [vn.huytl.homeworkgate.data.CongSang]. Bang 0 thi xoa truong do.
+     *
+     * [lyDo] la ly do Ba Huy khong duyet, xem [Duong.F_LY_DO]. Rong thi khong ghi truong do.
      */
     fun datTrangThaiBai(
         context: Context,
         baiId: String,
         trangThai: String,
         soPhut: Int = 0,
-        congLuc: Long = 0L
+        congLuc: Long = 0L,
+        lyDo: String = ""
     ) {
+        val noi = mutableMapOf<String, Any>(
+            Duong.F_TRANG_THAI to trangThai,
+            Duong.F_SO_PHUT to soPhut,
+            Duong.F_CONG_LUC to if (congLuc > 0L) congLuc else FieldValue.delete()
+        )
+        if (lyDo.isNotBlank()) noi[Duong.F_LY_DO] = lyDo.trim()
         nha(context)?.collection(Duong.BAI)?.document(baiId)
-            ?.update(
-                mapOf(
-                    Duong.F_TRANG_THAI to trangThai,
-                    Duong.F_SO_PHUT to soPhut,
-                    Duong.F_CONG_LUC to if (congLuc > 0L) congLuc else FieldValue.delete()
-                )
-            )
+            ?.update(noi)
             ?.addOnFailureListener { Log.w(TAG, "doi trang thai bai hong: ${it.message}") }
     }
 
@@ -797,12 +800,19 @@ object DongBo {
      * duyet ben Telegram hay chua, nen phai doc lai truoc. Ghi de len mot bai da duyet
      * thi con van giu gio, ma danh sach ben dien thoai lai ghi la khong duyet.
      */
-    fun datTrangThaiBaiNeuDangCho(context: Context, baiId: String, trangThai: String) {
+    fun datTrangThaiBaiNeuDangCho(
+        context: Context,
+        baiId: String,
+        trangThai: String,
+        lyDo: String = ""
+    ) {
         val ref = nha(context)?.collection(Duong.BAI)?.document(baiId) ?: return
+        val noi = mutableMapOf<String, Any>(Duong.F_TRANG_THAI to trangThai, Duong.F_SO_PHUT to 0)
+        if (lyDo.isNotBlank()) noi[Duong.F_LY_DO] = lyDo.trim()
         ref.firestore.runTransaction { tr ->
             val d = tr.get(ref)
             if (d.exists() && d.getString(Duong.F_TRANG_THAI) == "CHO") {
-                tr.update(ref, mapOf(Duong.F_TRANG_THAI to trangThai, Duong.F_SO_PHUT to 0))
+                tr.update(ref, noi)
             }
             null
         }.addOnFailureListener { Log.w(TAG, "doi trang thai bai hong: ${it.message}") }

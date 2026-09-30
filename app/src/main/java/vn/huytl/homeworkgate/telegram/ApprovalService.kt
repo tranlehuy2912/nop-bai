@@ -29,6 +29,7 @@ import java.util.Locale
 import vn.huytl.homeworkgate.App
 import vn.huytl.homeworkgate.R
 import vn.huytl.homeworkgate.data.BaiGuiHong
+import vn.huytl.homeworkgate.data.CauChuaRo
 import vn.huytl.homeworkgate.data.CongSang
 import vn.huytl.homeworkgate.data.EndReason
 import vn.huytl.homeworkgate.data.GateState
@@ -873,7 +874,7 @@ class ApprovalService : Service() {
                     return
                 }
                 gate.boBaiCho(bai.id)
-                DongBo.datTrangThaiBai(this, bai.id, "TUCHOI")
+                DongBo.datTrangThaiBai(this, bai.id, "TUCHOI", lyDo = arg)
                 if (bai.messageId != 0L) client.clearReplyMarkup(chatId, bai.messageId)
                 DayLog.add(this, "Ba Huy không duyệt" + if (arg.isEmpty()) "" else ": $arg")
                 client.sendMessage(
@@ -1699,6 +1700,9 @@ class ApprovalService : Service() {
             conNoiChung = pham?.conNoi.orEmpty(),
             deId = deId
         )
+        // Cau Claude doc chua chac ma cham chua dung: so van ghi sai, nhung an khoi danh sach
+        // can sua cua con toi khi Ba Huy xu (30/9/2026), xem CauChuaRo.
+        CauChuaRo.danhDau(this, ghiVaoSo, daGhi)
         // De Giai de: ghi diem phan tu luan vao de, va noi diem ca de ngay trong tin nay.
         // Diem tinh tu ban cham, ca khi chua tu duyet: no noi con lam duoc gi, khong phai
         // con duoc bao nhieu phut.

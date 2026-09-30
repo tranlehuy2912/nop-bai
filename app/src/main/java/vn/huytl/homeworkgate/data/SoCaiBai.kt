@@ -19,7 +19,9 @@ data class CauSo(
     val phut: Int,
     val xong: Boolean,
     val nhanXet: String,
-    val luc: Long
+    val luc: Long,
+    /** Mon cua cau, nhu so cai ghi. Rong la ban cham khong noi mon. */
+    val mon: String = ""
 )
 
 /**
@@ -161,14 +163,18 @@ object SoCaiBai {
      *  1. lan sai cu hon [HIEN_SUA_NGAY] ngay;
      *  2. cau lam duoc tren may, da qua 24 gio: tu luc do no nam o duong Lam bai tren may
      *     ([LamTrenMay.cauLamThem]), hien them o day la dem mot cau hai lan;
-     *  3. cau Ba Huy da bo bang lenh BOSUA ([BoSua]).
+     *  3. cau Ba Huy da bo bang lenh BOSUA ([BoSua]);
+     *  4. cau Claude doc chua chac, dang cho Ba Huy xem ([CauChuaRo]).
      *
      * [SuaCham] van dung [dangChoSua]: Ba Huy sua cham mot bai tuan truoc thi van phai duoc,
      * cau do khong con tren danh sach cua con khong co nghia la may cham dung.
      */
     fun canSua(context: Context, now: Long = System.currentTimeMillis()): List<CauSo> {
         val tuan = now - HIEN_SUA_NGAY * 24 * 60 * 60_000L
-        val con = dangChoSua(context, now).filter { it.luc >= tuan && !BoSua.daBo(context, it.khoa, it.luc) }
+        val con = dangChoSua(context, now).filter {
+            it.luc >= tuan && !BoSua.daBo(context, it.khoa, it.luc) &&
+                !CauChuaRo.dangAn(context, it.khoa, it.luc)
+        }
         if (con.isEmpty()) return con
         val trenMay = LamTrenMay.lamDuocTrenMay(context, con.filter { now >= it.luc + MOT_NGAY }.map { it.khoa })
         return con.filterNot { it.khoa in trenMay }
@@ -426,7 +432,8 @@ object SoCaiBai {
         phut = phut,
         xong = dung,
         nhanXet = nhanXet,
-        luc = luc
+        luc = luc,
+        mon = mon
     )
 
     private fun moc0GioCua(now: Long): Long {

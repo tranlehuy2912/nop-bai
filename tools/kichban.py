@@ -461,13 +461,14 @@ BO_TEST = [
     ("LuatNhacTest", "Tiếng phát ra khi con rời app"),
     ("LuatManHinhTest", "Đọc danh sách cửa sổ ra cách xét"),
     ("SoMuTest", "Đổi số mũ khi hiện đề"),
+    ("MaCauTest", "Mã câu phiếu Claude đặt: B5-TL3g là Bài 5, tự luận, câu 3g"),
     ("LuyenTheoLoiTest", "Chỗ hay vấp và câu luyện lại"),
     ("LuatCatMangTest", "Luật cắt mạng và việc bật tắt VPN"),
     ("LuatGhepTest", "Luật sao của bài làm trên máy"),
     # -- so sach trong may --
     ("SoCaiBaiTest", "Sổ cái bài đã nộp"),
     ("PhanToanTest", "Toán hai phần Đại số, Hình học"),
-    ("CanSuaTest", "Câu cần sửa: hết hạn, sang làm trên máy, Ba Huy bỏ"),
+    ("CanSuaTest", "Câu cần sửa: hết hạn, sang làm trên máy, Ba Huy bỏ, câu chưa đọc rõ"),
     ("BaiGuiHongTest", "Lần nộp gửi hỏng, giữ ảnh để gửi lại"),
     ("VoDanDoTest", "Trang vở dặn dò đã soát"),
     ("NhacBaiTest", "Nhắc bài theo tiết sau của từng môn"),
@@ -500,6 +501,7 @@ BO_TEST = [
     # -- lenh tu Bang dieu khien, va duong day ra ngoai --
     ("ChamBaiLenhTest", "Lệnh CHAMBAI"),
     ("DuyetTheoMaTest", "Lệnh DUYỆT và TỪ CHỐI kèm mã bài"),
+    ("BaiKhongDuyetTest", "Bài Ba Huy không duyệt: xoá thẻ ở Bài đã chấm"),
     ("SuaChamLenhTest", "Lệnh SỬA CHẤM"),
     ("CongSangTest", "Giữ phút chấm trong giờ ngủ, cộng lúc hết giờ ngủ"),
     ("TinCoLenhTest", "Lệnh TIN CÔ và kho tin của cô"),
