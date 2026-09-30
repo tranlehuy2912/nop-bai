@@ -592,11 +592,15 @@ class KhungGhep(
                     ).apply { bottomMargin = (10 * mat).toInt() }
                 })
             }
-            val chu = muc.ghep.hoi.ifBlank { muc.cau.de }.let { c ->
-                if (boDau.isNotBlank() && c.startsWith(boDau)) c.removePrefix(boDau).trimStart('\n') else c
+            // Cau phat am, trong am cua de thi chi co loi dan, noi dung nam o cac phuong an. Bo
+            // dong loi dan thi the cau trong tron, chi con bon nut (Ba Huy thay kho hieu ngay
+            // 30/9/2026), nen cau chi co loi dan thi in lai loi dan ngay trong the.
+            val goc = muc.ghep.hoi.ifBlank { muc.cau.de }
+            val chu = if (boDau.isNotBlank() && goc.startsWith(boDau)) {
+                goc.removePrefix(boDau).trimStart('\n').ifBlank { goc }
+            } else {
+                goc
             }
-            // Cau phat am cua de thi: loi dan da o dau phan, cau khong con chu nao, chi con
-            // cac phuong an. Khong ve mot dong trong.
             if (chu.isNotBlank()) khung.addView(TextView(ct).apply {
                 text = hien(chu, muc.cau.mon)
                 textSize = 19f
