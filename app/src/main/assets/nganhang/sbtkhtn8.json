@@ -2,7 +2,7 @@
  "nguon": "sbtkhtn8",
  "mon": "Khoa học tự nhiên",
  "ten": "SBT Khoa học tự nhiên 8",
- "ban": 9,
+ "ban": 10,
  "cac_bai": [
   {
    "chuong": "Chương I. Phản ứng hoá học",
@@ -13189,7 +13189,71 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Moment lực. Moment lực phụ thuộc vào độ lớn của lực và khoảng cách từ trục quay tới giá của lực.",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "hoi": "Tác dụng làm quay của lực được đặc trưng bởi đại lượng nào? Đại lượng đó phụ thuộc vào những yếu tố nào?",
+      "dong": [
+       {
+        "chu": "Đại lượng đặc trưng cho tác dụng làm quay của lực: {0}",
+        "o": [
+         {
+          "dung": [
+           "moment lực"
+          ],
+          "sai": [
+           "áp lực",
+           "áp suất",
+           "trọng lượng"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Đại lượng đó phụ thuộc vào độ lớn của lực: {0}",
+        "o": [
+         {
+          "dung": [
+           "Có"
+          ],
+          "sai": [
+           "Không"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Đại lượng đó phụ thuộc vào khoảng cách từ trục quay tới giá của lực: {0}",
+        "o": [
+         {
+          "dung": [
+           "Có"
+          ],
+          "sai": [
+           "Không"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Đại lượng đó phụ thuộc vào khối lượng của vật bị quay: {0}",
+        "o": [
+         {
+          "dung": [
+           "Không"
+          ],
+          "sai": [
+           "Có"
+          ],
+          "hai": true
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "18.2",
@@ -13198,7 +13262,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "C",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Một thanh thẳng nằm ngang có thể quay quanh trục O ở khoảng giữa thanh. Điểm A ở đầu bên trái của thanh; hai điểm B và C ở bên phải O, C xa O hơn B; khoảng cách OA lớn hơn OC. Lần lượt tác dụng lực F (phương thẳng đứng, chiều từ trên xuống dưới, độ lớn không đổi) vào các vị trí A, B, C, O. Tác dụng làm quay của lực F tại vị trí nào là lớn nhất?",
+      "cac": [
+       "Vị trí O",
+       "Vị trí C",
+       "Vị trí A",
+       "Vị trí B"
+      ],
+      "dap": "C"
+     }
     },
     {
      "ma": "18.3",
@@ -13207,7 +13283,84 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "1) Sai; 2) Sai; 3) Đúng; 4) Đúng; 5) Đúng",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 5,
+      "hoi": "Đánh giá đúng hay sai các câu dưới đây khi nói về tác dụng làm quay của lực.",
+      "dong": [
+       {
+        "chu": "Lực tác dụng vào vật có giá song song với trục quay thì sẽ làm quay vật: {0}",
+        "o": [
+         {
+          "dung": [
+           "Sai"
+          ],
+          "sai": [
+           "Đúng"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Lực tác dụng vào vật có giá cắt trục quay thì sẽ làm quay vật: {0}",
+        "o": [
+         {
+          "dung": [
+           "Sai"
+          ],
+          "sai": [
+           "Đúng"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Lực tác dụng vào vật có giá không song song và không cắt trục quay thì sẽ làm quay vật: {0}",
+        "o": [
+         {
+          "dung": [
+           "Đúng"
+          ],
+          "sai": [
+           "Sai"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Lực càng lớn, moment lực càng lớn, tác dụng làm quay càng lớn: {0}",
+        "o": [
+         {
+          "dung": [
+           "Đúng"
+          ],
+          "sai": [
+           "Sai"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Giá của lực càng cách xa trục quay, moment lực càng lớn, tác dụng làm quay càng lớn: {0}",
+        "o": [
+         {
+          "dung": [
+           "Đúng"
+          ],
+          "sai": [
+           "Sai"
+          ],
+          "hai": true
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "18.4a",
@@ -13216,14 +13369,50 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Đòn cân nghiêng về phía đĩa A (đĩa A thấp hơn đĩa B, cân nghiêng về bên trái), nên vật đặt trên đĩa A nặng hơn vật đặt trên đĩa B.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "Một cân đòn trong phòng thí nghiệm có trục quay ở giữa đòn cân; hai đĩa cân A (bên trái) và B (bên phải) cách đều trục quay. Trên hình vẽ, đòn cân đang nghiêng: đĩa A thấp hơn đĩa B; vật đặt trên đĩa A nhỏ hơn vật đặt trên đĩa B. Dựa vào điều gì mà em có thể kết luận rằng vật ở đĩa A nặng hơn vật ở đĩa B?",
+      "dong": [
+       {
+        "chu": "Em dựa vào {0}",
+        "o": [
+         {
+          "dung": [
+           "việc đòn cân nghiêng về phía đĩa A (đĩa A thấp hơn đĩa B)"
+          ],
+          "sai": [
+           "kích thước của hai vật: vật nhỏ hơn thì nặng hơn",
+           "vị trí của hai đĩa: đĩa bên trái luôn chứa vật nặng hơn"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Vật nặng hơn tạo ra moment lực {0} nên làm đòn cân quay về phía nó",
+        "o": [
+         {
+          "dung": [
+           "lớn hơn"
+          ],
+          "sai": [
+           "nhỏ hơn",
+           "bằng moment lực của vật kia"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "18.4b",
      "de": "Hình 18.2 mô tả cân đòn ở trong phòng thí nghiệm, đây là loại cân có trục quay ở giữa (Hình 18.2: trục quay M ở giữa đòn cân; đòn cân đang nghiêng, đĩa A bên trái thấp hơn đĩa B bên phải; vật trên đĩa A nhỏ hơn vật trên đĩa B). Đòn cân được cân bằng ở trục quay. Cái cân được dùng để cân khối lượng của một vật. Hãy vẽ hình biểu diễn các lực do các vật đặt ở hai bên đĩa cân tác dụng lên đĩa cân.",
      "trang": 52,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "bo_may": "vẽ hình"
     },
     {
      "ma": "18.5",
@@ -13232,7 +13421,70 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Bập bênh đang nghiêng về phía bạn B. Hai cách làm bập bênh cân bằng: bạn A dịch chuyển ra xa trục quay; hoặc bạn B dịch chuyển lại gần trục quay.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "hoi": "Hai bạn A và B ngồi trên một cái bập bênh. Bập bênh là một thanh dài cân bằng trên trục quay nằm ở chính giữa thanh. Bập bênh đang nghiêng: đầu phía bạn B ở thấp, đầu phía bạn A ở cao. Hãy đề xuất hai cách để hai bạn A và B có thể làm cân bằng được cái bập bênh. Mỗi cách dưới đây có làm cân bằng được bập bênh không?",
+      "dong": [
+       {
+        "chu": "Bạn A dịch chuyển ra xa trục quay: {0}",
+        "o": [
+         {
+          "dung": [
+           "Có"
+          ],
+          "sai": [
+           "Không"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Bạn A dịch chuyển lại gần trục quay: {0}",
+        "o": [
+         {
+          "dung": [
+           "Không"
+          ],
+          "sai": [
+           "Có"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Bạn B dịch chuyển lại gần trục quay: {0}",
+        "o": [
+         {
+          "dung": [
+           "Có"
+          ],
+          "sai": [
+           "Không"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Bạn B dịch chuyển ra xa trục quay: {0}",
+        "o": [
+         {
+          "dung": [
+           "Không"
+          ],
+          "sai": [
+           "Có"
+          ],
+          "hai": true
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "18.6",
@@ -13241,21 +13493,72 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Bác thợ cầm ở cuối tay cầm, xa bu lông (trục quay), để giá của lực cách xa trục quay: moment lực lớn hơn, tác dụng làm quay lớn hơn nên vặn bu lông dễ hơn.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "hoi": "Bác thợ dùng cờ lê để vặn một cái bu lông: lực của tay bác đẩy vào tay cầm của cờ lê làm cờ lê quay. Tay bác thợ nắm ở cuối tay cầm của cờ lê, phía xa bu lông. Dựa vào kiến thức đã học, hãy giải thích vị trí đặt tay của bác thợ khi dùng cờ lê.",
+      "dong": [
+       {
+        "chu": "Trục quay của cờ lê là {0}",
+        "o": [
+         {
+          "dung": [
+           "bu lông (chốt)"
+          ],
+          "sai": [
+           "bàn tay của bác thợ",
+           "đầu cuối tay cầm"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Nắm ở cuối tay cầm thì khoảng cách từ trục quay tới giá của lực {0}",
+        "o": [
+         {
+          "dung": [
+           "lớn nhất"
+          ],
+          "sai": [
+           "nhỏ nhất",
+           "như khi nắm ở chỗ khác"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Vì vậy moment lực {0}",
+        "o": [
+         {
+          "dung": [
+           "lớn hơn, vặn bu lông dễ hơn"
+          ],
+          "sai": [
+           "nhỏ hơn, vặn bu lông dễ hơn",
+           "không đổi, chỉ đỡ mỏi tay hơn"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "18.7a",
      "de": "Em hãy tự làm một cái cân đơn giản bằng cách dùng một mảnh gỗ cân bằng trên một trục quay (Hình 18.5: thanh gỗ có ba lỗ, lỗ ở giữa làm trục quay, hai cốc treo ở hai lỗ gần hai đầu thanh, cách đều trục quay). Chuẩn bị một số vật dụng: thanh gỗ, móc áo, cốc nhựa,... Dùng quả nặng có trọng lượng 1 N. Hãy tìm trong số các đồ vật mà em có, vật nào nặng hơn 1 N, vật nào nhẹ hơn 1 N.",
      "trang": 52,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "bo_may": "làm thí nghiệm"
     },
     {
      "ma": "18.7b",
      "de": "Em hãy tự làm một cái cân đơn giản bằng cách dùng một mảnh gỗ cân bằng trên một trục quay (Hình 18.5: thanh gỗ có ba lỗ, lỗ ở giữa làm trục quay, hai cốc treo ở hai lỗ gần hai đầu thanh, cách đều trục quay). Chuẩn bị một số vật dụng: thanh gỗ, móc áo, cốc nhựa,... Em hãy đề xuất cách dùng cái cân của em để xác định trọng lượng của các vật em có ở trên.",
      "trang": 52,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "bo_may": "làm thí nghiệm"
     }
    ]
   },
@@ -13270,14 +13573,76 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "C",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Một xe đạp có bán kính líp xe là 3 cm, bán kính bánh xe là 36 cm; líp gắn cùng trục với bánh sau. Phát biểu nào dưới đây là đúng?",
+      "cac": [
+       "Bánh xe cho lợi về đường đi 3 lần",
+       "Líp xe quay nhanh gấp 12 lần bánh xe",
+       "Lực tác dụng ở líp xe lớn gấp 12 lần lực tác dụng ở lốp xe",
+       "Lực tác dụng ở bánh xe lớn gấp 12 lần lực tác dụng ở líp xe"
+      ],
+      "dap": "C"
+     }
     },
     {
      "ma": "19.2a",
      "de": "Hình 19.2 là ảnh chụp một phanh xe đạp (Hình 19.2: ảnh tay phanh; ở gốc tay phanh có đánh dấu hai điểm tròn nhỏ, một điểm ở trên, một điểm ở dưới; hai đường nằm ngang kẻ qua hai điểm này cách nhau 3 cm; khoảng cách theo phương ngang từ điểm tròn phía trên tới đầu tay phanh là 12 cm). Chỉ rõ đâu là trục quay, đâu là cánh tay đòn.",
      "trang": 53,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "ghep_cho_hinh": {
+      "kieu": "O",
+      "sao": 3,
+      "hoi": "Một tay phanh xe đạp: ở gốc tay phanh có hai điểm tròn nhỏ, một điểm ở trên và một điểm ở dưới (chỗ đầu dây phanh móc vào tay phanh); hai đường nằm ngang kẻ qua hai điểm này cách nhau 3 cm; khoảng cách theo phương ngang từ điểm tròn phía trên tới đầu tay phanh (chỗ tay bóp) là 12 cm. Chỉ rõ đâu là trục quay, đâu là cánh tay đòn.",
+      "dong": [
+       {
+        "chu": "Trục quay là {0}",
+        "o": [
+         {
+          "dung": [
+           "điểm tròn phía trên, ở gốc tay phanh"
+          ],
+          "sai": [
+           "điểm tròn phía dưới, chỗ móc dây phanh",
+           "đầu tay phanh, chỗ tay bóp"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Cánh tay đòn của lực bóp của tay dài {0}",
+        "o": [
+         {
+          "dung": [
+           "12 cm"
+          ],
+          "sai": [
+           "3 cm",
+           "15 cm"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Cánh tay đòn của lực kéo dây phanh dài {0}",
+        "o": [
+         {
+          "dung": [
+           "3 cm"
+          ],
+          "sai": [
+           "12 cm",
+           "9 cm"
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     "bo_may": "chờ hình: Hình 19.2 (tr.53): ảnh chụp tay phanh xe đạp, ở gốc tay phanh có hai điểm tròn nhỏ, hai đường nằm ngang qua hai điểm cách nhau 3 cm, khoảng cách ngang từ điểm trên tới đầu tay phanh 12 cm"
     },
     {
      "ma": "19.2b",
@@ -13286,7 +13651,27 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Lợi 4 lần về lực (12 cm : 3 cm)",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "hoi": "Một tay phanh xe đạp: ở gốc tay phanh có hai điểm tròn nhỏ, một điểm ở trên và một điểm ở dưới (chỗ đầu dây phanh móc vào tay phanh); hai đường nằm ngang kẻ qua hai điểm này cách nhau 3 cm; khoảng cách theo phương ngang từ điểm tròn phía trên tới đầu tay phanh (chỗ tay bóp) là 12 cm. Với cấu tạo như này, khi bóp phanh, ta được lợi bao nhiêu lần về lực?",
+      "dap": [
+       "4",
+       "4lần"
+      ],
+      "phim": [
+       "lần"
+      ],
+      "nhieu": [
+       "cm",
+       "N"
+      ],
+      "loi_giai": [
+       "Cánh tay đòn của lực bóp: d₁ = 12 cm; của lực kéo dây phanh: d₂ = 3 cm",
+       "Lợi về lực: d₁ : d₂ = 12 cm : 3 cm = 4 (lần)"
+      ]
+     }
     },
     {
      "ma": "19.3a",
@@ -13295,7 +13680,56 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Bập bênh lệch về phía bạn A (bên trái), vì A cách trục quay 1,1 m, xa hơn B (1,0 m) mà hai bạn nặng bằng nhau.",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "hoi": "Hai bạn học sinh chơi bập bênh có trục quay ở chính giữa, mỗi bên dài 1,5 m. Bạn A có khối lượng 40 kg, ngồi bên trái, cách đầu bập bênh bên trái 40 cm; bạn B có khối lượng 40 kg, ngồi cách trục quay 1,0 m về bên phải. Bập bênh bị lệch về bên nào khi cả hai bạn ngồi trên bập bênh (không chạm chân xuống đất)?",
+      "dong": [
+       {
+        "chu": "Bạn A ngồi cách trục quay {0}",
+        "o": [
+         {
+          "dung": [
+           "1,1 m"
+          ],
+          "sai": [
+           "0,4 m",
+           "1,9 m"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Moment lực do bạn A gây ra {0} moment lực do bạn B gây ra",
+        "o": [
+         {
+          "dung": [
+           "lớn hơn"
+          ],
+          "sai": [
+           "nhỏ hơn",
+           "bằng"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Bập bênh lệch về phía {0}",
+        "o": [
+         {
+          "dung": [
+           "bạn A (bên trái)"
+          ],
+          "sai": [
+           "bạn B (bên phải)",
+           "không bên nào, bập bênh nằm ngang"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "19.3b",
@@ -13304,7 +13738,28 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Bạn B ngồi cách trục quay 1,1 m về bên phải (cách đầu bập bênh bên phải 40 cm).",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "hoi": "Hai bạn học sinh chơi bập bênh có trục quay ở chính giữa, mỗi bên dài 1,5 m. Bạn A có khối lượng 40 kg, ngồi bên trái, cách đầu bập bênh bên trái 40 cm; bạn B có khối lượng 40 kg, ngồi cách trục quay 1,0 m về bên phải. Bạn B cần ngồi cách trục quay bao nhiêu mét về bên phải để bập bênh cân bằng (nằm ngang)?",
+      "dap": [
+       "1,1",
+       "1,1m"
+      ],
+      "phim": [
+       "m"
+      ],
+      "nhieu": [
+       "cm",
+       "kg"
+      ],
+      "loi_giai": [
+       "Bạn A cách trục quay: 1,5 m − 40 cm = 1,5 m − 0,4 m = 1,1 m",
+       "Hai bạn nặng bằng nhau nên bập bênh cân bằng khi hai bạn cách trục quay bằng nhau",
+       "Bạn B cách trục quay: d(B) = d(A) = 1,1 m"
+      ]
+     }
     },
     {
      "ma": "19.4",
@@ -13313,7 +13768,29 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "PG = 2,75 N",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "hoi": "Một học sinh tạo ra một đồ chơi thăng bằng: thanh AB dài 30 cm nằm ngang, được treo tại một điểm cách đầu B 6,0 cm; vật G treo ở đầu A; đầu B treo một thanh nhỏ nằm ngang, hai đầu thanh nhỏ treo hai vật có trọng lượng 7,0 N và 4,0 N. Bỏ qua khối lượng của các thanh, coi các điểm treo có thể quay dễ dàng. Tính trọng lượng vật G.",
+      "dap": [
+       "2,75",
+       "2,75N"
+      ],
+      "phim": [
+       "N"
+      ],
+      "nhieu": [
+       "cm",
+       "kg"
+      ],
+      "loi_giai": [
+       "Điểm treo O cách đầu B: OB = 6,0 cm; cách đầu A: OA = 30 cm − 6,0 cm = 24 cm",
+       "Lực kéo xuống ở đầu B: F = 7,0 + 4,0 = 11 (N)",
+       "Thanh AB cân bằng: P(G) · OA = F · OB",
+       "P(G) = F · OB : OA = 11 · 6 : 24 = 2,75 (N)"
+      ]
+     }
     },
     {
      "ma": "19.5a",
@@ -13322,7 +13799,56 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Trục quay O là chỗ đầu búa tì lên mặt gỗ. Lực tác dụng F1 là lực của tay lên cán búa; cánh tay đòn d1 là khoảng cách từ O tới giá của F1. Lực cản F2 của đinh có cánh tay đòn d2 là khoảng cách từ O tới giá của F2.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "hoi": "Dùng búa để nhổ đinh: đầu búa nằm sát mặt gỗ, một đầu tì lên mặt gỗ, đầu kia (phần có khe chữ V) kẹp lấy đinh ngay dưới mũ đinh; tay nắm phần trên của cán búa và kéo cán búa. Hãy chỉ ra trục quay, lực tác dụng, cánh tay đòn trong trường hợp này.",
+      "dong": [
+       {
+        "chu": "Trục quay là {0}",
+        "o": [
+         {
+          "dung": [
+           "chỗ đầu búa tì lên mặt gỗ"
+          ],
+          "sai": [
+           "chỗ tay nắm cán búa",
+           "chỗ khe chữ V kẹp đinh"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Lực tác dụng F₁ là {0}",
+        "o": [
+         {
+          "dung": [
+           "lực của tay lên cán búa"
+          ],
+          "sai": [
+           "lực cản của đinh",
+           "trọng lượng của búa"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Cánh tay đòn d₁ của lực F₁ là {0}",
+        "o": [
+         {
+          "dung": [
+           "khoảng cách từ trục quay tới giá của lực F₁"
+          ],
+          "sai": [
+           "khoảng cách từ trục quay tới cây đinh",
+           "chiều dài của cả cán búa"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "19.5b",
@@ -13331,7 +13857,42 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Lợi d1/d2 lần về lực (d1: cánh tay đòn của lực tay F1; d2: cánh tay đòn của lực cản F2 của đinh).",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "Dùng búa để nhổ đinh: đầu búa nằm sát mặt gỗ, một đầu tì lên mặt gỗ, đầu kia (phần có khe chữ V) kẹp lấy đinh ngay dưới mũ đinh; tay nắm phần trên của cán búa và kéo cán búa. Gọi F₁ là lực của tay, d₁ là cánh tay đòn của F₁; F₂ là lực cản của đinh, d₂ là cánh tay đòn của F₂. Ước tính tỉ lệ lợi về lực trong trường hợp này.",
+      "dong": [
+       {
+        "chu": "Búa cân bằng khi F₁ · d₁ = F₂ · d₂, nên lực cản của đinh lớn gấp lực của tay số lần là {0}",
+        "o": [
+         {
+          "dung": [
+           "d₁/d₂"
+          ],
+          "sai": [
+           "d₂/d₁",
+           "d₁ · d₂"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Tay nắm xa trục quay nên d₁ {0} d₂, dùng búa được lợi về lực",
+        "o": [
+         {
+          "dung": [
+           "lớn hơn nhiều"
+          ],
+          "sai": [
+           "nhỏ hơn",
+           "bằng"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "19.6",
@@ -13340,7 +13901,43 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Tư thế (4): vật M gần như ở ngay trên trục bánh xe, cánh tay đòn của trọng lực vật nhỏ nhất nên lực nâng cần thiết nhỏ nhất.",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "Dùng xe cút kít dịch chuyển vật nặng M theo bốn tư thế (1), (2), (3), (4): từ (1) đến (4) tay cầm được nâng cao dần, thùng xe nghiêng dần về phía bánh xe; ở tư thế (4) vật M nằm gần như ngay phía trên trục bánh xe. Theo tư thế nào thì lực nâng cần thiết của người là nhỏ nhất? Giải thích.",
+      "dong": [
+       {
+        "chu": "Lực nâng cần thiết nhỏ nhất ở tư thế {0}",
+        "o": [
+         {
+          "dung": [
+           "(4)"
+          ],
+          "sai": [
+           "(1)",
+           "(2)",
+           "(3)"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Vì ở tư thế đó {0}",
+        "o": [
+         {
+          "dung": [
+           "vật M gần như ở ngay trên trục bánh xe, cánh tay đòn của trọng lực của vật nhỏ nhất"
+          ],
+          "sai": [
+           "vật M ở xa trục bánh xe nhất, cánh tay đòn của trọng lực của vật lớn nhất",
+           "tay cầm được nâng cao nhất nên trọng lượng của vật M nhỏ đi"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     }
    ]
   },
@@ -13355,7 +13952,70 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "1. Sai; 2. Đúng; 3. Sai; 4. Sai",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "hoi": "Đánh giá đúng hay sai các câu dưới đây khi nói về sự nhiễm điện do cọ xát.",
+      "dong": [
+       {
+        "chu": "Thanh nam châm luôn bị nhiễm điện do nó hút được vụn sắt: {0}",
+        "o": [
+         {
+          "dung": [
+           "Sai"
+          ],
+          "sai": [
+           "Đúng"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Khi cọ xát thanh thuỷ tinh vào mảnh vải lụa thì cả hai vật đều bị nhiễm điện: {0}",
+        "o": [
+         {
+          "dung": [
+           "Đúng"
+          ],
+          "sai": [
+           "Sai"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Đưa một chiếc đũa nhựa sau khi cọ xát vào mảnh vải len lại gần các vụn giấy thì nó đẩy các vụn giấy ra xa: {0}",
+        "o": [
+         {
+          "dung": [
+           "Sai"
+          ],
+          "sai": [
+           "Đúng"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Muốn biết một vật có bị nhiễm điện hay không, ta đưa vật đó lại gần các mẩu giấy vụn thì nó hút hoặc đẩy các vụn giấy: {0}",
+        "o": [
+         {
+          "dung": [
+           "Sai"
+          ],
+          "sai": [
+           "Đúng"
+          ],
+          "hai": true
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "20.2",
@@ -13364,7 +14024,56 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Treo một vật lên giá đỡ, đưa vật kia lại gần: nếu hai vật đẩy nhau thì chúng nhiễm điện cùng loại; nếu hai vật hút nhau thì chúng nhiễm điện khác loại.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "hoi": "Làm thế nào để phân biệt được hai vật nhiễm điện cùng loại hay khác loại?",
+      "dong": [
+       {
+        "chu": "Cách làm: {0}",
+        "o": [
+         {
+          "dung": [
+           "treo một vật lên giá đỡ, rồi đưa vật kia lại gần"
+          ],
+          "sai": [
+           "lần lượt đưa từng vật lại gần các vụn giấy nhỏ",
+           "lần lượt đưa từng vật lại gần một thanh nam châm"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Nếu hai vật đẩy nhau thì {0}",
+        "o": [
+         {
+          "dung": [
+           "chúng nhiễm điện cùng loại"
+          ],
+          "sai": [
+           "chúng nhiễm điện khác loại",
+           "một trong hai vật không bị nhiễm điện"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Nếu hai vật hút nhau thì chúng nhiễm điện {0}",
+        "o": [
+         {
+          "dung": [
+           "khác loại"
+          ],
+          "sai": [
+           "cùng loại"
+          ],
+          "hai": true
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "20.3",
@@ -13373,7 +14082,31 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Treo thanh nhựa (đã cọ xát vào vải len) lên giá đỡ, đưa thanh thuỷ tinh (đã cọ xát vào vải lụa) lại gần: hai thanh hút nhau, chứng tỏ chúng nhiễm điện khác loại.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 5,
+      "buoc": [
+       "Cọ xát thanh nhựa vào mảnh vải len, rồi treo thanh nhựa lên giá đỡ bằng sợi chỉ",
+       "Cọ xát thanh thuỷ tinh vào mảnh vải lụa",
+       "Đưa thanh thuỷ tinh lại gần một đầu thanh nhựa đang treo",
+       "Thấy hai thanh hút nhau",
+       "Kết luận: điện tích trên thanh thuỷ tinh khác loại với điện tích trên thanh nhựa"
+      ],
+      "nhieu": [
+       "Thấy hai thanh đẩy nhau",
+       "Đưa thanh thuỷ tinh lại gần các vụn giấy nhỏ"
+      ],
+      "thu_tu_khac": [
+       [
+        1,
+        0,
+        2,
+        3,
+        4
+       ]
+      ]
+     }
     },
     {
      "ma": "20.4",
@@ -13382,7 +14115,42 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Đưa vật lại gần các vụn giấy nhỏ: nếu vật hút các vụn giấy thì vật đã bị nhiễm điện; nếu không hút thì vật không nhiễm điện.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "Có thể phát hiện bằng cách nào một vật đã bị nhiễm điện khi ta không có bất cứ dụng cụ thí nghiệm nào?",
+      "dong": [
+       {
+        "chu": "Đưa vật đó lại gần {0}",
+        "o": [
+         {
+          "dung": [
+           "các vụn giấy nhỏ"
+          ],
+          "sai": [
+           "một thanh nam châm",
+           "một chiếc đinh sắt"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Nếu vật hút các vụn giấy thì vật {0}",
+        "o": [
+         {
+          "dung": [
+           "đã bị nhiễm điện"
+          ],
+          "sai": [
+           "không bị nhiễm điện",
+           "đã bị nhiễm từ như nam châm"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "20.5",
@@ -13391,7 +14159,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "B",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Dùng một mảnh vải len cọ xát nhiều lần vào mảnh phim nhựa thì mảnh phim nhựa này có thể hút được các vụn giấy vì",
+      "cac": [
+       "mảnh phim nhựa được làm sạch bề mặt",
+       "mảnh phim nhựa bị nhiễm điện",
+       "mảnh phim nhựa có tính chất từ như nam châm",
+       "mảnh phim nhựa bị nóng lên"
+      ],
+      "dap": "B"
+     }
     },
     {
      "ma": "20.6",
@@ -13400,7 +14180,42 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Sau khi cọ xát, lần lượt đưa thanh thuỷ tinh và mảnh vải lụa lại gần các vụn giấy: nếu cả hai đều hút các vụn giấy thì cả thanh thuỷ tinh và mảnh lụa đều bị nhiễm điện.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "Có thể chứng minh bằng cách nào khi thanh thuỷ tinh cọ xát vào mảnh vải lụa thì cả thanh thuỷ tinh lẫn mảnh vải lụa đều bị nhiễm điện?",
+      "dong": [
+       {
+        "chu": "Sau khi cọ xát, đưa {0} lại gần các vụn giấy nhỏ",
+        "o": [
+         {
+          "dung": [
+           "lần lượt thanh thuỷ tinh và mảnh vải lụa"
+          ],
+          "sai": [
+           "chỉ thanh thuỷ tinh",
+           "chỉ mảnh vải lụa"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Nếu {0} thì cả hai vật đều bị nhiễm điện",
+        "o": [
+         {
+          "dung": [
+           "cả hai đều hút các vụn giấy"
+          ],
+          "sai": [
+           "chỉ thanh thuỷ tinh hút các vụn giấy",
+           "cả hai đều đẩy các vụn giấy ra xa"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "20.7",
@@ -13409,7 +14224,42 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Khi chải bằng bàn chải lông, quần áo bị cọ xát nên nhiễm điện, vì vậy nó hút các hạt bụi và lông tơ bám vào.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "Vì sao lông tơ, bụi bặm vẫn bám vào quần áo khi quần áo đã được chải sạch bằng bàn chải lông?",
+      "dong": [
+       {
+        "chu": "Khi chải bằng bàn chải lông, quần áo {0}",
+        "o": [
+         {
+          "dung": [
+           "bị cọ xát nên bị nhiễm điện"
+          ],
+          "sai": [
+           "bị nóng lên nên bị nhiễm điện",
+           "bị cọ xát nên bị nhiễm từ như nam châm"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Vì vậy quần áo {0} các hạt bụi, lông tơ",
+        "o": [
+         {
+          "dung": [
+           "hút"
+          ],
+          "sai": [
+           "đẩy",
+           "không tác dụng lực lên"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "20.8a",
@@ -13418,7 +14268,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "A",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Sấm sét lúc trời mưa dông\nMột hiện tượng thiên nhiên đặc biệt phổ biến xảy ra ở khắp mọi nơi trên Trái Đất của chúng ta, đó là sấm sét. Sự cọ xát mạnh giữa những giọt nước trong luồng không khí bốc lên cao là một trong những nguyên nhân tạo thành các đám mây dông bị nhiễm điện.\nKhi hai đám mây tích điện trái dấu lại gần nhau, giữa hai đám mây có hiện tượng phóng tia lửa điện và ta nhìn thấy tia chớp. Vài giây sau ta mới nghe thấy tiếng nổ, đó là sấm (do tốc độ ánh sáng nhanh hơn tốc độ của âm thanh nên ta nhìn thấy tia chớp trước).\nKhi đám mây dông tích điện đi gần mặt đất tới những khu vực trống trải, gặp vật có độ cao như cây cối, nhà cao tầng,... thì sẽ có hiện tượng phóng tia lửa điện giữa đám mây và mặt đất. Đó là hiện tượng sét đánh.\nHãy chọn câu đúng.",
+      "cac": [
+       "Sấm và sét diễn ra cùng một lúc",
+       "Sấm và sét đều là hiện tượng phóng điện",
+       "Sấm và sét là hai tên gọi khác nhau của cùng một hiện tượng vật lí",
+       "Sấm là nguyên nhân gây ra sét"
+      ],
+      "dap": "A"
+     }
     },
     {
      "ma": "20.8b",
@@ -13427,7 +14289,70 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "a) Sai; b) Sai; c) Đúng; d) Sai",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "hoi": "Sấm sét lúc trời mưa dông\nMột hiện tượng thiên nhiên đặc biệt phổ biến xảy ra ở khắp mọi nơi trên Trái Đất của chúng ta, đó là sấm sét. Sự cọ xát mạnh giữa những giọt nước trong luồng không khí bốc lên cao là một trong những nguyên nhân tạo thành các đám mây dông bị nhiễm điện.\nKhi hai đám mây tích điện trái dấu lại gần nhau, giữa hai đám mây có hiện tượng phóng tia lửa điện và ta nhìn thấy tia chớp. Vài giây sau ta mới nghe thấy tiếng nổ, đó là sấm (do tốc độ ánh sáng nhanh hơn tốc độ của âm thanh nên ta nhìn thấy tia chớp trước).\nKhi đám mây dông tích điện đi gần mặt đất tới những khu vực trống trải, gặp vật có độ cao như cây cối, nhà cao tầng,... thì sẽ có hiện tượng phóng tia lửa điện giữa đám mây và mặt đất. Đó là hiện tượng sét đánh.\nĐánh giá đúng hay sai mỗi nhận định dưới đây về hiện tượng sấm, sét.",
+      "dong": [
+       {
+        "chu": "Tia sét là hiện tượng phóng điện trong khí quyển giữa các đám mây và mặt đất hay giữa các đám mây mang các điện tích cùng dấu: {0}",
+        "o": [
+         {
+          "dung": [
+           "Sai"
+          ],
+          "sai": [
+           "Đúng"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Tiếng sấm là âm thanh phát ra khi tia sét tiếp xúc với mặt đất: {0}",
+        "o": [
+         {
+          "dung": [
+           "Sai"
+          ],
+          "sai": [
+           "Đúng"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Hiện tượng sấm sét chỉ xảy ra khi trời mưa dông: {0}",
+        "o": [
+         {
+          "dung": [
+           "Đúng"
+          ],
+          "sai": [
+           "Sai"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Sét đánh là sự phóng điện giữa hai đám mây tích điện trái dấu: {0}",
+        "o": [
+         {
+          "dung": [
+           "Sai"
+          ],
+          "sai": [
+           "Đúng"
+          ],
+          "hai": true
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "20.8c",
@@ -13436,7 +14361,84 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Trong nhà: đứng xa cửa sổ, cửa ra vào, các đồ dùng điện; tránh chỗ ẩm ướt (buồng tắm, bể nước, vòi nước); hạn chế dùng điện thoại; rút phích cắm các thiết bị điện trước khi có dông. Ngoài trời: không đứng trú mưa dưới gốc cây, tránh chỗ cao hơn xung quanh, tránh xa vật bằng kim loại (xe đạp, xe máy, hàng rào sắt,...).",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "O",
+      "sao": 5,
+      "hoi": "Sấm sét lúc trời mưa dông\nMột hiện tượng thiên nhiên đặc biệt phổ biến xảy ra ở khắp mọi nơi trên Trái Đất của chúng ta, đó là sấm sét. Sự cọ xát mạnh giữa những giọt nước trong luồng không khí bốc lên cao là một trong những nguyên nhân tạo thành các đám mây dông bị nhiễm điện.\nKhi hai đám mây tích điện trái dấu lại gần nhau, giữa hai đám mây có hiện tượng phóng tia lửa điện và ta nhìn thấy tia chớp. Vài giây sau ta mới nghe thấy tiếng nổ, đó là sấm (do tốc độ ánh sáng nhanh hơn tốc độ của âm thanh nên ta nhìn thấy tia chớp trước).\nKhi đám mây dông tích điện đi gần mặt đất tới những khu vực trống trải, gặp vật có độ cao như cây cối, nhà cao tầng,... thì sẽ có hiện tượng phóng tia lửa điện giữa đám mây và mặt đất. Đó là hiện tượng sét đánh.\nHãy nêu cách phòng tránh sét lúc trời mưa dông. Mỗi việc dưới đây nên hay không nên làm?",
+      "dong": [
+       {
+        "chu": "Ở trong nhà, đứng xa cửa sổ, cửa ra vào và các đồ dùng điện: {0}",
+        "o": [
+         {
+          "dung": [
+           "Nên"
+          ],
+          "sai": [
+           "Không nên"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Rút phích cắm các thiết bị điện trước lúc có dông: {0}",
+        "o": [
+         {
+          "dung": [
+           "Nên"
+          ],
+          "sai": [
+           "Không nên"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Ở ngoài trời, đứng trú mưa dưới gốc cây to: {0}",
+        "o": [
+         {
+          "dung": [
+           "Không nên"
+          ],
+          "sai": [
+           "Nên"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Ở ngoài trời, đứng ở chỗ cao hơn xung quanh: {0}",
+        "o": [
+         {
+          "dung": [
+           "Không nên"
+          ],
+          "sai": [
+           "Nên"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Ở ngoài trời, tránh xa các vật bằng kim loại như xe đạp, xe máy, hàng rào sắt: {0}",
+        "o": [
+         {
+          "dung": [
+           "Nên"
+          ],
+          "sai": [
+           "Không nên"
+          ],
+          "hai": true
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "20.8d",
@@ -13445,7 +14447,56 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Sét là sự phóng tia lửa điện (tia chớp); cùng lúc đó không khí bị dồn ép đột ngột phát ra tiếng nổ là sấm. Tốc độ ánh sáng lớn hơn tốc độ âm thanh rất nhiều nên ta thấy tia sét trước rồi sau đó mới nghe tiếng sấm.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "hoi": "Sấm sét lúc trời mưa dông\nMột hiện tượng thiên nhiên đặc biệt phổ biến xảy ra ở khắp mọi nơi trên Trái Đất của chúng ta, đó là sấm sét. Sự cọ xát mạnh giữa những giọt nước trong luồng không khí bốc lên cao là một trong những nguyên nhân tạo thành các đám mây dông bị nhiễm điện.\nKhi hai đám mây tích điện trái dấu lại gần nhau, giữa hai đám mây có hiện tượng phóng tia lửa điện và ta nhìn thấy tia chớp. Vài giây sau ta mới nghe thấy tiếng nổ, đó là sấm (do tốc độ ánh sáng nhanh hơn tốc độ của âm thanh nên ta nhìn thấy tia chớp trước).\nKhi đám mây dông tích điện đi gần mặt đất tới những khu vực trống trải, gặp vật có độ cao như cây cối, nhà cao tầng,... thì sẽ có hiện tượng phóng tia lửa điện giữa đám mây và mặt đất. Đó là hiện tượng sét đánh.\nVì sao khi trời mưa dông đều xuất hiện tia sét trước rồi sau đó mới nghe thấy tiếng sấm?",
+      "dong": [
+       {
+        "chu": "Tia sét và tiếng sấm xảy ra {0}",
+        "o": [
+         {
+          "dung": [
+           "cùng một lúc"
+          ],
+          "sai": [
+           "tia sét trước, tiếng sấm sau vài giây",
+           "tiếng sấm trước, tia sét sau"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Tiếng sấm là do {0}",
+        "o": [
+         {
+          "dung": [
+           "không khí bị dồn ép đột ngột khi có tia sét"
+          ],
+          "sai": [
+           "tia sét chạm tới mặt đất",
+           "hai đám mây va vào nhau"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Ta thấy tia sét trước rồi mới nghe tiếng sấm vì {0}",
+        "o": [
+         {
+          "dung": [
+           "tốc độ ánh sáng lớn hơn tốc độ âm thanh rất nhiều"
+          ],
+          "sai": [
+           "tốc độ âm thanh lớn hơn tốc độ ánh sáng",
+           "mắt nhìn nhanh hơn tai nghe"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     }
    ]
   },
@@ -13460,7 +14511,70 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "1. Sai; 2. Đúng; 3. Đúng; 4. Sai",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "hoi": "Đánh giá đúng hay sai các câu dưới đây khi nói về dòng điện, nguồn điện.",
+      "dong": [
+       {
+        "chu": "Dòng điện chỉ là dòng chuyển dời có hướng của các electron: {0}",
+        "o": [
+         {
+          "dung": [
+           "Sai"
+          ],
+          "sai": [
+           "Đúng"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Muốn duy trì dòng điện trong các thiết bị tiêu thụ điện phải có nguồn điện: {0}",
+        "o": [
+         {
+          "dung": [
+           "Đúng"
+          ],
+          "sai": [
+           "Sai"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Pin là nguồn điện, có thể tạo ra dòng điện làm sáng bóng đèn, làm quay quạt điện: {0}",
+        "o": [
+         {
+          "dung": [
+           "Đúng"
+          ],
+          "sai": [
+           "Sai"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Dòng điện trong dây dẫn bằng kim loại là dòng chuyển động theo hướng xác định của các hạt nhân nguyên tử và các electron: {0}",
+        "o": [
+         {
+          "dung": [
+           "Sai"
+          ],
+          "sai": [
+           "Đúng"
+          ],
+          "hai": true
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "21.2",
@@ -13469,7 +14583,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "B",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Kim loại dẫn điện vì",
+      "cac": [
+       "trong kim loại có nhiều ion dương",
+       "trong kim loại có các electron tự do chuyển động không ngừng",
+       "kim loại cấu tạo từ các nguyên tử",
+       "các nguyên tử cấu tạo nên kim loại luôn chuyển động hỗn loạn"
+      ],
+      "dap": "B"
+     }
     },
     {
      "ma": "21.3",
@@ -13478,7 +14604,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "D",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Bỏ ít muối vào nước nguyên chất (nước cất), nước trở nên dẫn điện vì",
+      "cac": [
+       "muối dẫn điện tốt",
+       "muối làm các phân tử nước bị phân li",
+       "các điện tích của muối dễ bị tách ra trong nước",
+       "các phân tử muối dễ bị phân li thành các ion dương và ion âm chuyển động tự do trong nước"
+      ],
+      "dap": "D"
+     }
     },
     {
      "ma": "21.4",
@@ -13487,7 +14625,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "C",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Loại hạt nào dưới đây khi chuyển động có hướng thì không tạo thành dòng điện?",
+      "cac": [
+       "Các hạt mang điện tích dương",
+       "Các hạt nhân nguyên tử",
+       "Các nguyên tử",
+       "Các hạt mang điện tích âm"
+      ],
+      "dap": "C"
+     }
     },
     {
      "ma": "21.5",
@@ -13496,7 +14646,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "C",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Khi nối liền hai cực của pin bằng dây dẫn kim loại với hai đầu của bóng đèn thì các điện tích dịch chuyển như thế nào qua dây dẫn và dây tóc bóng đèn?",
+      "cac": [
+       "Các điện tích dương dịch chuyển từ cực dương sang cực âm",
+       "Các điện tích dương dịch chuyển từ cực âm sang cực dương",
+       "Các electron tự do dịch chuyển từ cực âm sang cực dương",
+       "Các electron tự do dịch chuyển từ cực dương sang cực âm"
+      ],
+      "dap": "C"
+     }
     },
     {
      "ma": "21.6a",
@@ -13505,7 +14667,42 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Không nhất thiết phải có dây dẫn. Chỉ cần có các hạt mang điện chuyển động tự do (electron tự do trong kim loại, ion dương và ion âm trong dung dịch điện phân,...).",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "Để có dòng điện thì có nhất thiết phải cần dây dẫn hay không?",
+      "dong": [
+       {
+        "chu": "Để có dòng điện, dây dẫn {0}",
+        "o": [
+         {
+          "dung": [
+           "không nhất thiết phải có"
+          ],
+          "sai": [
+           "bắt buộc phải có"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Chỉ cần có {0}",
+        "o": [
+         {
+          "dung": [
+           "các hạt mang điện chuyển động tự do (electron tự do trong kim loại, ion trong dung dịch muối)"
+          ],
+          "sai": [
+           "các nguyên tử trung hoà về điện chuyển động hỗn loạn trong vật",
+           "các hạt nhân nguyên tử đứng yên, sắp xếp đều đặn trong vật"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "21.6b",
@@ -13514,7 +14711,56 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Cần có nguồn điện và có các hạt mang điện chuyển động tự do trong môi trường đó.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "hoi": "Để tồn tại dòng điện cần có những điều kiện gì?",
+      "dong": [
+       {
+        "chu": "Có nguồn điện: {0}",
+        "o": [
+         {
+          "dung": [
+           "Cần"
+          ],
+          "sai": [
+           "Không cần"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Có các hạt mang điện chuyển động tự do trong môi trường đó: {0}",
+        "o": [
+         {
+          "dung": [
+           "Cần"
+          ],
+          "sai": [
+           "Không cần"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Có dây dẫn bằng kim loại: {0}",
+        "o": [
+         {
+          "dung": [
+           "Không cần"
+          ],
+          "sai": [
+           "Cần"
+          ],
+          "hai": true
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "21.7",
@@ -13523,7 +14769,8 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Acquy được dùng để: khởi động động cơ xe máy, ô tô; làm nguồn điện dự trữ khi mất điện lưới; cung cấp năng lượng cho động cơ điện của xe đạp điện, ô tô điện; thắp sáng ở nơi không có điện lưới,... Khi mô tả cần nêu loại acquy, hiệu điện thế, cách hoạt động.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "bo_may": "tìm hiểu thực tế"
     },
     {
      "ma": "21.8",
@@ -13532,7 +14779,57 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Có dòng điện trong dây dẫn. Đó là dòng chuyển dời có hướng của các electron từ vật A (thừa electron) sang vật B (thiếu electron).",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "hoi": "Có hai vật A và B, vật A tích điện âm, vật B tích điện dương. Nối hai vật bằng sợi dây dẫn kim loại thì trong dây dẫn có dòng điện hay không? Dòng điện đó là dòng chuyển dời của điện tích nào?",
+      "dong": [
+       {
+        "chu": "Vật A tích điện âm là vật {0} electron",
+        "o": [
+         {
+          "dung": [
+           "thừa"
+          ],
+          "sai": [
+           "thiếu",
+           "không có"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Trong dây dẫn {0} dòng điện",
+        "o": [
+         {
+          "dung": [
+           "có"
+          ],
+          "sai": [
+           "không có"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Đó là dòng chuyển dời có hướng của {0}",
+        "o": [
+         {
+          "dung": [
+           "các electron từ vật A sang vật B"
+          ],
+          "sai": [
+           "các electron từ vật B sang vật A",
+           "các điện tích dương từ vật B sang vật A",
+           "các hạt nhân nguyên tử từ vật B sang vật A"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "21.9",
@@ -13541,7 +14838,42 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Cần có nguồn điện (pin), bóng đèn pin và dây dẫn kim loại. Dùng dây dẫn nối hai đầu (hai cực) của bóng đèn với hai cực của pin thành mạch kín thì đèn phát sáng.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "Để thắp sáng một bóng đèn pin thì cần có những dụng cụ gì? Phải làm như thế nào để bóng đèn pin phát sáng?",
+      "dong": [
+       {
+        "chu": "Cần có {0}",
+        "o": [
+         {
+          "dung": [
+           "nguồn điện (pin), bóng đèn pin và dây dẫn kim loại"
+          ],
+          "sai": [
+           "pin, bóng đèn pin và một sợi dây bằng nhựa",
+           "bóng đèn pin, dây dẫn kim loại và một thanh nam châm"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Cách làm: dùng dây dẫn nối {0}",
+        "o": [
+         {
+          "dung": [
+           "hai đầu bóng đèn với hai cực của pin thành mạch kín"
+          ],
+          "sai": [
+           "cả hai đầu bóng đèn vào cùng một cực của pin",
+           "một đầu bóng đèn với một cực của pin, đầu kia để hở"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     }
    ]
   },
@@ -13556,7 +14888,70 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "1. Đúng; 2. Sai; 3. Sai; 4. Đúng",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "hoi": "Đánh giá đúng hay sai các câu dưới đây khi nói về mạch điện, sơ đồ mạch điện.",
+      "dong": [
+       {
+        "chu": "Mạch điện bao gồm các bộ phận: nguồn điện, các vật tiêu thụ điện và các dây dẫn nối các vật tiêu thụ điện với hai cực nguồn điện: {0}",
+        "o": [
+         {
+          "dung": [
+           "Đúng"
+          ],
+          "sai": [
+           "Sai"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Mạch điện kín chỉ bao gồm các dụng cụ tiêu thụ điện được nối lại với nhau bằng dây dẫn: {0}",
+        "o": [
+         {
+          "dung": [
+           "Sai"
+          ],
+          "sai": [
+           "Đúng"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Sơ đồ mạch điện là ảnh chụp mạch điện thật hoặc là hình vẽ mạch điện thật nhưng với kích thước được thu nhỏ: {0}",
+        "o": [
+         {
+          "dung": [
+           "Sai"
+          ],
+          "sai": [
+           "Đúng"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Sơ đồ mạch điện là hình vẽ biểu diễn mạch điện bằng các kí hiệu của các bộ phận trong mạch điện: {0}",
+        "o": [
+         {
+          "dung": [
+           "Đúng"
+          ],
+          "sai": [
+           "Sai"
+          ],
+          "hai": true
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "22.2",
@@ -13565,7 +14960,29 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Mạch kín gồm nguồn điện và các vật tiêu thụ năng lượng điện được nối với nhau bằng dây dẫn và nối liền với hai cực của nguồn điện, không bị hở chỗ nào.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "O",
+      "sao": 1,
+      "hoi": "Một mạch điện như thế nào được gọi là mạch kín?",
+      "dong": [
+       {
+        "chu": "Mạch kín là mạch gồm {0}",
+        "o": [
+         {
+          "dung": [
+           "nguồn điện và các vật tiêu thụ điện nối với nhau bằng dây dẫn, nối liền với hai cực của nguồn điện, không hở chỗ nào"
+          ],
+          "sai": [
+           "các vật tiêu thụ điện nối với nhau bằng dây dẫn thành một vòng, không cần nguồn điện",
+           "nguồn điện và các vật tiêu thụ điện nối bằng dây dẫn, trong đó có một công tắc đang mở",
+           "nguồn điện và các vật tiêu thụ điện nối bằng dây dẫn vào cùng một cực của nguồn điện"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "22.3a",
@@ -13574,7 +14991,28 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Từ cực âm sang cực dương của nguồn điện.",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 1,
+      "hoi": "Một mạch điện kín với dây dẫn bằng đồng. Hỏi: Các electron tự do trong dây dẫn dịch chuyển theo chiều nào?",
+      "dong": [
+       {
+        "chu": "Các electron tự do trong dây đồng dịch chuyển {0}",
+        "o": [
+         {
+          "dung": [
+           "từ cực âm sang cực dương của nguồn điện"
+          ],
+          "sai": [
+           "từ cực dương sang cực âm của nguồn điện",
+           "hỗn loạn, không theo chiều nào"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "22.3b",
@@ -13583,7 +15021,28 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Từ cực dương, qua dây dẫn và các dụng cụ điện, tới cực âm của nguồn điện.",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 1,
+      "hoi": "Một mạch điện kín với dây dẫn bằng đồng. Hỏi: Chiều dòng điện trong mạch là chiều nào?",
+      "dong": [
+       {
+        "chu": "Chiều dòng điện trong mạch là {0}",
+        "o": [
+         {
+          "dung": [
+           "chiều từ cực dương, qua dây dẫn và các dụng cụ điện, tới cực âm của nguồn điện"
+          ],
+          "sai": [
+           "chiều từ cực âm, qua dây dẫn và các dụng cụ điện, tới cực dương của nguồn điện",
+           "chiều dịch chuyển của các electron tự do trong dây đồng"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "22.4",
@@ -13592,7 +15051,56 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Dùng để bật, tắt đèn cầu thang: bật, tắt một đèn từ hai chỗ xa nhau (đầu cầu thang và chân cầu thang). Ví dụ đang tắt (K1 ở a, K2 ở d), chuyển K1 sang c thì đèn sáng; xuống tới chân cầu thang chuyển K2 từ d về b thì đèn tắt; muốn bật lại ở chân cầu thang thì chuyển K2 về d; lên khỏi cầu thang thì chuyển K1 về a để tắt.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "hoi": "Một sơ đồ mạch điện gồm nguồn điện, bóng đèn và hai công tắc chuyển mạch K₁, K₂ mắc nối tiếp. K₁ gạt được vào tiếp điểm a hoặc c, K₂ gạt được vào tiếp điểm b hoặc d; dây dẫn nối a với b và nối c với d. Lúc đầu K₁ đang ở a, K₂ đang ở d. Có thể vận dụng sơ đồ mạch điện này vào vị trí nào trong mạng điện gia đình?",
+      "dong": [
+       {
+        "chu": "Lúc đầu (K₁ ở a, K₂ ở d) đèn {0}",
+        "o": [
+         {
+          "dung": [
+           "tắt"
+          ],
+          "sai": [
+           "sáng"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Từ lúc đầu, chỉ gạt K₁ sang c, hoặc chỉ gạt K₂ sang b, thì đèn {0}",
+        "o": [
+         {
+          "dung": [
+           "sáng"
+          ],
+          "sai": [
+           "vẫn tắt"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Vì vậy có thể dùng sơ đồ này để {0}",
+        "o": [
+         {
+          "dung": [
+           "bật, tắt đèn cầu thang từ cả đầu và chân cầu thang"
+          ],
+          "sai": [
+           "bật đèn ở một chỗ, còn tắt đèn chỉ được ở chỗ kia",
+           "bật, tắt đèn chỉ ở một chỗ, công tắc thứ hai để dự phòng"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "22.5",
@@ -13601,7 +15109,70 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Gồm acquy, công tắc, bóng đèn, chuông điện và dây dẫn. Nguồn điện: acquy. Vật tiêu thụ năng lượng điện: bóng đèn, chuông điện (sách tính cả dây dẫn).",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "hoi": "Một mạch điện gồm một acquy, một công tắc, một bóng đèn lắp trên đế và một chuông điện, mắc nối tiếp với nhau bằng dây dẫn. Chỉ ra đâu là nguồn điện, đâu là vật tiêu thụ năng lượng điện.",
+      "dong": [
+       {
+        "chu": "Acquy: {0}",
+        "o": [
+         {
+          "dung": [
+           "nguồn điện"
+          ],
+          "sai": [
+           "vật tiêu thụ năng lượng điện",
+           "bộ phận đóng ngắt mạch điện"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Bóng đèn: {0}",
+        "o": [
+         {
+          "dung": [
+           "vật tiêu thụ năng lượng điện"
+          ],
+          "sai": [
+           "nguồn điện",
+           "bộ phận đóng ngắt mạch điện"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Chuông điện: {0}",
+        "o": [
+         {
+          "dung": [
+           "vật tiêu thụ năng lượng điện"
+          ],
+          "sai": [
+           "nguồn điện",
+           "bộ phận đóng ngắt mạch điện"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Công tắc: {0}",
+        "o": [
+         {
+          "dung": [
+           "bộ phận đóng ngắt mạch điện"
+          ],
+          "sai": [
+           "nguồn điện",
+           "vật tiêu thụ năng lượng điện"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "22.6",
@@ -13610,7 +15181,74 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "1: nguồn điện (hai pin); 2: bóng đèn; 3: công tắc. Sơ đồ: nguồn điện (pin), công tắc K và bóng đèn mắc nối tiếp bằng dây dẫn thành mạch kín. Pin là nguồn điện; bóng đèn là vật tiêu thụ điện; nút bấm là công tắc; dây dẫn là vỏ (lá kim loại) của đèn pin.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "hoi": "Một chiếc đèn pin ống gồm: hai viên pin xếp nối tiếp trong thân đèn, bóng đèn nằm giữa chóa đèn, một nút bấm trên thân đèn, và một lá kim loại nối từ lò xo ở đáy đèn, qua chỗ nút bấm, tới đui bóng đèn. Trong mạch điện của đèn pin, mỗi bộ phận dưới đây là bộ phận nào của mạch điện?",
+      "dong": [
+       {
+        "chu": "Hai viên pin: {0}",
+        "o": [
+         {
+          "dung": [
+           "nguồn điện"
+          ],
+          "sai": [
+           "vật tiêu thụ điện",
+           "công tắc",
+           "dây dẫn"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Bóng đèn: {0}",
+        "o": [
+         {
+          "dung": [
+           "vật tiêu thụ điện"
+          ],
+          "sai": [
+           "nguồn điện",
+           "công tắc",
+           "dây dẫn"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Nút bấm trên thân đèn: {0}",
+        "o": [
+         {
+          "dung": [
+           "công tắc"
+          ],
+          "sai": [
+           "nguồn điện",
+           "vật tiêu thụ điện",
+           "dây dẫn"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Lá kim loại nối lò xo ở đáy đèn với đui bóng đèn: {0}",
+        "o": [
+         {
+          "dung": [
+           "dây dẫn"
+          ],
+          "sai": [
+           "nguồn điện",
+           "vật tiêu thụ điện",
+           "công tắc"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "22.7",
@@ -13619,7 +15257,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "D",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Chiều dòng điện trong mạch kín quy ước là",
+      "cac": [
+       "chiều quay của kim đồng hồ khi nhìn vào sơ đồ mạch điện kín",
+       "chiều ngược chiều quay của kim đồng hồ khi nhìn vào sơ đồ mạch điện kín",
+       "chiều dịch chuyển có hướng của các điện tích âm trong mạch",
+       "chiều từ cực dương của nguồn điện qua dây dẫn và các dụng cụ điện đến cực âm của nguồn điện"
+      ],
+      "dap": "D"
+     }
     },
     {
      "ma": "22.8",
@@ -13628,7 +15278,42 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Dây nối thứ hai chính là khung xe đạp bằng kim loại. Mạch điện: đinamô (nguồn điện), dây dẫn nối đinamô với bóng đèn, bóng đèn, rồi khung xe đạp nối trở về đinamô, tạo thành mạch kín.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "Ở nhiều xe đạp, người ta lắp một nguồn điện (đinamô) để thắp sáng bóng đèn. Quan sát kĩ ta chỉ thấy có một dây dẫn nối từ đinamô tới bóng đèn. Tại sao đèn vẫn sáng khi đinamô hoạt động? Hãy mô tả sơ đồ của mạch điện từ đinamô tới đèn.",
+      "dong": [
+       {
+        "chu": "Đèn vẫn sáng vì {0}",
+        "o": [
+         {
+          "dung": [
+           "khung xe đạp bằng kim loại là dây dẫn thứ hai, nối bóng đèn trở về đinamô"
+          ],
+          "sai": [
+           "chỉ cần một dây dẫn là đèn sáng được",
+           "dòng điện đi qua không khí từ bóng đèn về đinamô"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Mạch điện: đinamô → dây dẫn → bóng đèn → {0} → đinamô",
+        "o": [
+         {
+          "dung": [
+           "khung xe đạp"
+          ],
+          "sai": [
+           "lốp xe",
+           "mặt đường"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     }
    ]
   },
@@ -13643,7 +15328,98 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "1. Sai; 2. Đúng; 3. Đúng; 4. Sai; 5. Sai; 6. Đúng",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 6,
+      "hoi": "Đánh giá đúng hay sai các câu dưới đây khi nói về tác dụng của dòng điện.",
+      "dong": [
+       {
+        "chu": "Khi dòng điện chạy qua dây dẫn bằng đồng thì làm nó nóng lên và phát sáng: {0}",
+        "o": [
+         {
+          "dung": [
+           "Sai"
+          ],
+          "sai": [
+           "Đúng"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Đèn LED (điốt phát quang) chỉ cho dòng điện chạy qua theo một chiều nhất định: {0}",
+        "o": [
+         {
+          "dung": [
+           "Đúng"
+          ],
+          "sai": [
+           "Sai"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Dòng điện chạy qua bất kì vật dẫn nào cũng gây ra tác dụng nhiệt (làm nóng vật dẫn): {0}",
+        "o": [
+         {
+          "dung": [
+           "Đúng"
+          ],
+          "sai": [
+           "Sai"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Để mạ vàng vỏ đồng hồ người ta ứng dụng tác dụng nhiệt của dòng điện: {0}",
+        "o": [
+         {
+          "dung": [
+           "Sai"
+          ],
+          "sai": [
+           "Đúng"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Nước tẩy sạch quần áo được chế tạo nhờ tác dụng sinh lí của dòng điện: {0}",
+        "o": [
+         {
+          "dung": [
+           "Sai"
+          ],
+          "sai": [
+           "Đúng"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Cho dòng điện thích hợp đi qua cơ thể người có thể chữa được một số bệnh: {0}",
+        "o": [
+         {
+          "dung": [
+           "Đúng"
+          ],
+          "sai": [
+           "Sai"
+          ],
+          "hai": true
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "23.2",
@@ -13652,7 +15428,42 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Quan sát vật dẫn nóng lên khi có dòng điện chạy qua: đun nước bằng ấm điện thấy ruột ấm (dây đun) nóng đỏ; làm thí nghiệm như Hình 23.1 SGK.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "Bằng những cách nào quan sát được tác dụng nhiệt của dòng điện?",
+      "dong": [
+       {
+        "chu": "Quan sát tác dụng nhiệt bằng cách xem {0}",
+        "o": [
+         {
+          "dung": [
+           "vật dẫn có nóng lên khi có dòng điện chạy qua hay không"
+          ],
+          "sai": [
+           "vật dẫn có hút các vụn giấy hay không",
+           "kim nam châm đặt gần dây dẫn có bị lệch hay không"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Ví dụ: {0}",
+        "o": [
+         {
+          "dung": [
+           "đun nước bằng ấm điện, thấy ruột ấm nóng đỏ"
+          ],
+          "sai": [
+           "bật quạt điện, thấy cánh quạt quay",
+           "mạ bạc một chiếc thìa bằng đồng"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "23.3",
@@ -13661,7 +15472,88 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "a) Tác dụng phát sáng; b) Tác dụng nhiệt; c) Tác dụng nhiệt; d) Tác dụng hoá học; e) Tác dụng phát sáng",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 5,
+      "hoi": "Hãy chỉ ra tác dụng của dòng điện trong các trường hợp sau đây.",
+      "dong": [
+       {
+        "chu": "Trong phòng được chiếu sáng bởi bóng đèn điện: {0}",
+        "o": [
+         {
+          "dung": [
+           "tác dụng phát sáng"
+          ],
+          "sai": [
+           "tác dụng hoá học",
+           "tác dụng sinh lí"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Đun nước bằng ấm điện: {0}",
+        "o": [
+         {
+          "dung": [
+           "tác dụng nhiệt"
+          ],
+          "sai": [
+           "tác dụng phát sáng",
+           "tác dụng hoá học",
+           "tác dụng sinh lí"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Là quần áo bằng bàn là điện: {0}",
+        "o": [
+         {
+          "dung": [
+           "tác dụng nhiệt"
+          ],
+          "sai": [
+           "tác dụng phát sáng",
+           "tác dụng hoá học",
+           "tác dụng sinh lí"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Mạ vàng hoặc mạ bạc một vật bằng kim loại: {0}",
+        "o": [
+         {
+          "dung": [
+           "tác dụng hoá học"
+          ],
+          "sai": [
+           "tác dụng nhiệt",
+           "tác dụng phát sáng",
+           "tác dụng sinh lí"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Trang trí cây thông ngày Tết bằng các đèn LED: {0}",
+        "o": [
+         {
+          "dung": [
+           "tác dụng phát sáng"
+          ],
+          "sai": [
+           "tác dụng nhiệt",
+           "tác dụng hoá học",
+           "tác dụng sinh lí"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "23.4",
@@ -13670,7 +15562,78 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "1 - c; 2 - b; 3 - d; 4 - a và c",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "hoi": "Hãy ghép nội dung ở cột bên trái với nội dung phù hợp ở cột bên phải để thành một câu hoàn chỉnh.",
+      "dong": [
+       {
+        "chu": "Bóng đèn bút thử điện phát sáng là do {0} của dòng điện",
+        "o": [
+         {
+          "dung": [
+           "tác dụng phát sáng"
+          ],
+          "sai": [
+           "tác dụng nhiệt",
+           "tác dụng hoá học",
+           "tác dụng sinh lí",
+           "tác dụng nhiệt và tác dụng phát sáng"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Có thể mạ một lớp kim loại cho bề mặt của một số đồ vật là do {0} của dòng điện",
+        "o": [
+         {
+          "dung": [
+           "tác dụng hoá học"
+          ],
+          "sai": [
+           "tác dụng nhiệt",
+           "tác dụng phát sáng",
+           "tác dụng sinh lí",
+           "tác dụng nhiệt và tác dụng phát sáng"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Cơ bị co khi có dòng điện đi qua là do {0} của dòng điện",
+        "o": [
+         {
+          "dung": [
+           "tác dụng sinh lí"
+          ],
+          "sai": [
+           "tác dụng nhiệt",
+           "tác dụng phát sáng",
+           "tác dụng hoá học",
+           "tác dụng nhiệt và tác dụng phát sáng"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Bóng đèn dây tóc phát sáng là do {0} của dòng điện",
+        "o": [
+         {
+          "dung": [
+           "tác dụng nhiệt và tác dụng phát sáng"
+          ],
+          "sai": [
+           "tác dụng nhiệt",
+           "tác dụng phát sáng",
+           "tác dụng hoá học",
+           "tác dụng sinh lí"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "23.5",
@@ -13679,7 +15642,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "A",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Dòng điện chạy qua dụng cụ nào dưới đây khi hoạt động bình thường vừa có tác dụng nhiệt vừa có tác dụng phát sáng?",
+      "cac": [
+       "Bóng đèn điện loại dây tóc",
+       "Radio (máy thu thanh)",
+       "Đèn LED",
+       "Ruột ấm điện"
+      ],
+      "dap": "A"
+     }
     },
     {
      "ma": "23.6",
@@ -13688,7 +15663,70 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "b) và d)",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "hoi": "Tác dụng nhiệt của dòng điện có ích trong các trường hợp nào dưới đây?",
+      "dong": [
+       {
+        "chu": "Quạt điện đang hoạt động: {0}",
+        "o": [
+         {
+          "dung": [
+           "Không"
+          ],
+          "sai": [
+           "Có"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Nồi cơm điện đang nấu cơm: {0}",
+        "o": [
+         {
+          "dung": [
+           "Có"
+          ],
+          "sai": [
+           "Không"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Máy thu hình đang hoạt động: {0}",
+        "o": [
+         {
+          "dung": [
+           "Không"
+          ],
+          "sai": [
+           "Có"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Ấm điện đang đun nước: {0}",
+        "o": [
+         {
+          "dung": [
+           "Có"
+          ],
+          "sai": [
+           "Không"
+          ],
+          "hai": true
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "23.7",
@@ -13697,7 +15735,84 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Tác dụng nhiệt: bếp điện, bàn là điện, ấm điện, nồi cơm điện, bóng đèn sợi đốt,... Tác dụng hoá học: mạ điện (mạ vàng, mạ bạc,...), tinh chế kim loại (nhôm),...",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "O",
+      "sao": 5,
+      "hoi": "Hãy liệt kê các trường hợp ứng dụng tác dụng nhiệt và tác dụng hoá học của dòng điện mà em biết. Mỗi trường hợp dưới đây ứng dụng tác dụng nào?",
+      "dong": [
+       {
+        "chu": "Bếp điện: {0}",
+        "o": [
+         {
+          "dung": [
+           "tác dụng nhiệt"
+          ],
+          "sai": [
+           "tác dụng hoá học",
+           "không ứng dụng hai tác dụng này"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Bàn là điện: {0}",
+        "o": [
+         {
+          "dung": [
+           "tác dụng nhiệt"
+          ],
+          "sai": [
+           "tác dụng hoá học",
+           "không ứng dụng hai tác dụng này"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Mạ vàng, mạ bạc đồ trang sức: {0}",
+        "o": [
+         {
+          "dung": [
+           "tác dụng hoá học"
+          ],
+          "sai": [
+           "tác dụng nhiệt",
+           "không ứng dụng hai tác dụng này"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Tinh chế kim loại (như nhôm) bằng dòng điện: {0}",
+        "o": [
+         {
+          "dung": [
+           "tác dụng hoá học"
+          ],
+          "sai": [
+           "tác dụng nhiệt",
+           "không ứng dụng hai tác dụng này"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Quạt điện: {0}",
+        "o": [
+         {
+          "dung": [
+           "không ứng dụng hai tác dụng này"
+          ],
+          "sai": [
+           "tác dụng nhiệt",
+           "tác dụng hoá học"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "23.8",
@@ -13706,7 +15821,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "D",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Để mạ bạc cho chiếc hộp bằng đồng thì làm theo cách nào dưới đây?",
+      "cac": [
+       "Nối hộp đồng với cực dương của nguồn điện rồi nhúng hộp vào dung dịch muối bạc",
+       "Nối hộp đồng với cực âm của nguồn điện rồi nhúng hộp vào trong dung dịch muối bạc",
+       "Nối một thỏi bạc với cực âm của nguồn điện, nối hộp đồng với cực dương của nguồn điện, nhúng thỏi bạc và hộp đồng trong dung dịch muối bạc để cho dòng điện chạy qua dung dịch",
+       "Nối một thỏi bạc với cực dương của nguồn điện, nối hộp đồng với cực âm của nguồn điện, nhúng thỏi bạc và hộp đồng trong dung dịch muối bạc để cho dòng điện chạy qua dung dịch"
+      ],
+      "dap": "D"
+     }
     },
     {
      "ma": "23.9",
@@ -13715,7 +15842,56 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Dùng đèn LED đã biết cực để thử: mắc nguồn điện nối tiếp với đèn LED (thêm điện trở bảo vệ) bằng dây dẫn. Nếu đèn LED sáng thì cực nguồn nối với cực dương của đèn là cực dương (+); nếu đèn không sáng thì cực đó là cực âm (−).",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "hoi": "Một nguồn điện không đánh dấu cực. Bằng cách nào có thể xác định được cực dương (+) và cực âm (−) của nguồn điện này?",
+      "dong": [
+       {
+        "chu": "Dùng {0} đã biết cực để thử",
+        "o": [
+         {
+          "dung": [
+           "một đèn LED"
+          ],
+          "sai": [
+           "một bóng đèn dây tóc",
+           "một chiếc bàn là điện"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Mắc nguồn điện nối tiếp với đèn đó (thêm điện trở bảo vệ). Nếu đèn sáng thì {0}",
+        "o": [
+         {
+          "dung": [
+           "cực của nguồn nối với cực dương của đèn là cực dương (+)"
+          ],
+          "sai": [
+           "cực của nguồn nối với cực dương của đèn là cực âm (−)",
+           "chưa biết được cực nào của nguồn là cực dương"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Nếu đèn không sáng thì {0}",
+        "o": [
+         {
+          "dung": [
+           "cực của nguồn nối với cực dương của đèn là cực âm (−)"
+          ],
+          "sai": [
+           "cực của nguồn nối với cực dương của đèn là cực dương (+)",
+           "chắc chắn nguồn điện đã hỏng"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "23.10a",
@@ -13724,7 +15900,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "A",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Bóng đèn điện\nỨng dụng tác dụng của dòng điện người ta chế tạo ra các loại bóng điện để chiếu sáng. Hiện nay trên thị trường thường có các loại bóng đèn: đèn sợi đốt, đèn huỳnh quang hay đèn ống (đèn tuýp), đèn compact, đèn LED.\nĐèn sợi đốt: Dây tóc là bộ phận chính của bóng đèn sợi đốt được làm bằng kim loại volfram. Dây tóc của đèn được bảo vệ bên ngoài bằng một lớp thuỷ tinh trong suốt hoặc mờ đã được hút không khí ra và bơm vào các khí trơ. Kích cỡ bóng phải đủ lớn để không bị hơi nóng làm nổ. Hầu hết bóng đèn đều được lắp vào đui đèn, dòng điện sẽ đi qua đui đèn vào đến dây tóc làm nó nóng lên đến mức phát ra ánh sáng. Ngày nay đèn sợi đốt thường ít được dùng hơn vì hiệu suất phát quang rất thấp (chỉ khoảng 5% điện năng được biến thành quang năng, phần còn lại toả nhiệt nên khi sờ vào bóng đèn có cảm giác nóng và có thể bị bỏng).\nĐèn huỳnh quang, đèn compact: Đèn huỳnh quang hay gọi đơn giản là đèn tuýp (hay đèn ống) gồm điện cực làm bằng dây volfram, có dạng lò xo xoắn, nối ra ngoài qua chân điện và vỏ đèn phủ một lớp bột huỳnh quang (hợp chất chủ yếu là phosphorus). Ngoài ra, người ta còn bơm vào đèn một ít hơi thuỷ ngân và khí trơ (neon, argon,...) để làm tăng độ bền của điện cực và tạo ánh sáng màu.\nNguyên lí làm việc: Khi đóng điện, hiện tượng phóng điện giữa hai điện cực làm phát ra tia tử ngoại (tia cực tím). Tia tử ngoại tác dụng vào lớp bột huỳnh quang làm đèn phát sáng. Ngoài ra, để giúp cho hiện tượng phóng điện xảy ra, người ta phải lắp thêm chấn lưu và tắc-te. Do ít toả nhiệt ra môi trường nên đèn huỳnh quang sẽ cho hiệu suất phát sáng cao hơn nhiều so với đèn sợi đốt và có tuổi thọ cao hơn. Bình quân, dùng đèn huỳnh quang tiết kiệm hơn đèn sợi đốt 8 đến 10 lần. Hiện nay, ngoài thị trường xuất hiện đèn huỳnh quang thu nhỏ (còn gọi là đèn compact). Nó cũng rất giống với đèn huỳnh quang nhưng hiệu suất phát quang cao hơn và tiết kiệm điện năng tốt hơn.\nĐèn LED: Cơ chế hoạt động của đèn LED sẽ được học ở môn Vật lí cấp Trung học phổ thông. Đèn LED có hai đầu dây ra ngoài, một đầu là cực dương (+), một đầu là cực âm (−). Cho dòng điện chạy qua đèn LED đúng chiều (cực dương của đèn nối với cực dương của nguồn điện, cực âm của đèn nối với cực âm nguồn điện) thì đèn phát sáng. Ánh sáng phát ra từ đèn LED có màu khác nhau tuỳ thuộc vào tạp chất trong chip bán dẫn của đèn LED. Hiện nay, đèn LED đang dần dần được thay thế cho các loại đèn truyền thống khác như đèn sợi đốt, đèn halogen. Dùng đèn LED vào mục đích chiếu sáng tiết kiệm điện năng so với đèn sợi đốt vì hiệu suất phát quang cao và tuổi thọ của nó rất lớn (có thể đến 100 000 giờ).\nHãy chọn câu đúng.",
+      "cac": [
+       "Khi có dòng điện chạy qua, dây tóc bóng đèn nóng lên tới nhiệt độ cao và phát sáng",
+       "Dây tóc bóng đèn được làm bằng bất cứ kim loại nào",
+       "Bên trong bóng đèn sợi đốt là chân không",
+       "Tuổi thọ của bóng đèn sợi đốt rất cao"
+      ],
+      "dap": "A"
+     }
     },
     {
      "ma": "23.10b",
@@ -13733,7 +15921,70 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "a) Sai; b) Đúng; c) Đúng; d) Đúng",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "hoi": "Bóng đèn điện\nỨng dụng tác dụng của dòng điện người ta chế tạo ra các loại bóng điện để chiếu sáng. Hiện nay trên thị trường thường có các loại bóng đèn: đèn sợi đốt, đèn huỳnh quang hay đèn ống (đèn tuýp), đèn compact, đèn LED.\nĐèn sợi đốt: Dây tóc là bộ phận chính của bóng đèn sợi đốt được làm bằng kim loại volfram. Dây tóc của đèn được bảo vệ bên ngoài bằng một lớp thuỷ tinh trong suốt hoặc mờ đã được hút không khí ra và bơm vào các khí trơ. Kích cỡ bóng phải đủ lớn để không bị hơi nóng làm nổ. Hầu hết bóng đèn đều được lắp vào đui đèn, dòng điện sẽ đi qua đui đèn vào đến dây tóc làm nó nóng lên đến mức phát ra ánh sáng. Ngày nay đèn sợi đốt thường ít được dùng hơn vì hiệu suất phát quang rất thấp (chỉ khoảng 5% điện năng được biến thành quang năng, phần còn lại toả nhiệt nên khi sờ vào bóng đèn có cảm giác nóng và có thể bị bỏng).\nĐèn huỳnh quang, đèn compact: Đèn huỳnh quang hay gọi đơn giản là đèn tuýp (hay đèn ống) gồm điện cực làm bằng dây volfram, có dạng lò xo xoắn, nối ra ngoài qua chân điện và vỏ đèn phủ một lớp bột huỳnh quang (hợp chất chủ yếu là phosphorus). Ngoài ra, người ta còn bơm vào đèn một ít hơi thuỷ ngân và khí trơ (neon, argon,...) để làm tăng độ bền của điện cực và tạo ánh sáng màu.\nNguyên lí làm việc: Khi đóng điện, hiện tượng phóng điện giữa hai điện cực làm phát ra tia tử ngoại (tia cực tím). Tia tử ngoại tác dụng vào lớp bột huỳnh quang làm đèn phát sáng. Ngoài ra, để giúp cho hiện tượng phóng điện xảy ra, người ta phải lắp thêm chấn lưu và tắc-te. Do ít toả nhiệt ra môi trường nên đèn huỳnh quang sẽ cho hiệu suất phát sáng cao hơn nhiều so với đèn sợi đốt và có tuổi thọ cao hơn. Bình quân, dùng đèn huỳnh quang tiết kiệm hơn đèn sợi đốt 8 đến 10 lần. Hiện nay, ngoài thị trường xuất hiện đèn huỳnh quang thu nhỏ (còn gọi là đèn compact). Nó cũng rất giống với đèn huỳnh quang nhưng hiệu suất phát quang cao hơn và tiết kiệm điện năng tốt hơn.\nĐèn LED: Cơ chế hoạt động của đèn LED sẽ được học ở môn Vật lí cấp Trung học phổ thông. Đèn LED có hai đầu dây ra ngoài, một đầu là cực dương (+), một đầu là cực âm (−). Cho dòng điện chạy qua đèn LED đúng chiều (cực dương của đèn nối với cực dương của nguồn điện, cực âm của đèn nối với cực âm nguồn điện) thì đèn phát sáng. Ánh sáng phát ra từ đèn LED có màu khác nhau tuỳ thuộc vào tạp chất trong chip bán dẫn của đèn LED. Hiện nay, đèn LED đang dần dần được thay thế cho các loại đèn truyền thống khác như đèn sợi đốt, đèn halogen. Dùng đèn LED vào mục đích chiếu sáng tiết kiệm điện năng so với đèn sợi đốt vì hiệu suất phát quang cao và tuổi thọ của nó rất lớn (có thể đến 100 000 giờ).\nĐánh giá đúng hay sai mỗi nhận định dưới đây về các loại bóng đèn điện.",
+      "dong": [
+       {
+        "chu": "Bóng đèn sợi đốt, đèn huỳnh quang, đèn compact, đèn LED đều ứng dụng tác dụng nhiệt của dòng điện: {0}",
+        "o": [
+         {
+          "dung": [
+           "Sai"
+          ],
+          "sai": [
+           "Đúng"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Dùng đèn huỳnh quang tiết kiệm điện hơn dùng đèn sợi đốt: {0}",
+        "o": [
+         {
+          "dung": [
+           "Đúng"
+          ],
+          "sai": [
+           "Sai"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Đèn compact cũng là đèn huỳnh quang nhưng được thu nhỏ: {0}",
+        "o": [
+         {
+          "dung": [
+           "Đúng"
+          ],
+          "sai": [
+           "Sai"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Dây tóc bóng đèn sợi đốt được làm bằng kim loại có nhiệt độ nóng chảy cao: {0}",
+        "o": [
+         {
+          "dung": [
+           "Đúng"
+          ],
+          "sai": [
+           "Sai"
+          ],
+          "hai": true
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "23.10c",
@@ -13742,7 +15993,57 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Bộ phận phát sáng là dây tóc làm bằng volfram. Dòng điện chạy qua làm dây tóc nóng lên tới nhiệt độ rất cao (tác dụng nhiệt) và phát sáng; volfram có nhiệt độ nóng chảy rất cao nên dây tóc không bị nóng chảy.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "hoi": "Bóng đèn điện\nỨng dụng tác dụng của dòng điện người ta chế tạo ra các loại bóng điện để chiếu sáng. Hiện nay trên thị trường thường có các loại bóng đèn: đèn sợi đốt, đèn huỳnh quang hay đèn ống (đèn tuýp), đèn compact, đèn LED.\nĐèn sợi đốt: Dây tóc là bộ phận chính của bóng đèn sợi đốt được làm bằng kim loại volfram. Dây tóc của đèn được bảo vệ bên ngoài bằng một lớp thuỷ tinh trong suốt hoặc mờ đã được hút không khí ra và bơm vào các khí trơ. Kích cỡ bóng phải đủ lớn để không bị hơi nóng làm nổ. Hầu hết bóng đèn đều được lắp vào đui đèn, dòng điện sẽ đi qua đui đèn vào đến dây tóc làm nó nóng lên đến mức phát ra ánh sáng. Ngày nay đèn sợi đốt thường ít được dùng hơn vì hiệu suất phát quang rất thấp (chỉ khoảng 5% điện năng được biến thành quang năng, phần còn lại toả nhiệt nên khi sờ vào bóng đèn có cảm giác nóng và có thể bị bỏng).\nĐèn huỳnh quang, đèn compact: Đèn huỳnh quang hay gọi đơn giản là đèn tuýp (hay đèn ống) gồm điện cực làm bằng dây volfram, có dạng lò xo xoắn, nối ra ngoài qua chân điện và vỏ đèn phủ một lớp bột huỳnh quang (hợp chất chủ yếu là phosphorus). Ngoài ra, người ta còn bơm vào đèn một ít hơi thuỷ ngân và khí trơ (neon, argon,...) để làm tăng độ bền của điện cực và tạo ánh sáng màu.\nNguyên lí làm việc: Khi đóng điện, hiện tượng phóng điện giữa hai điện cực làm phát ra tia tử ngoại (tia cực tím). Tia tử ngoại tác dụng vào lớp bột huỳnh quang làm đèn phát sáng. Ngoài ra, để giúp cho hiện tượng phóng điện xảy ra, người ta phải lắp thêm chấn lưu và tắc-te. Do ít toả nhiệt ra môi trường nên đèn huỳnh quang sẽ cho hiệu suất phát sáng cao hơn nhiều so với đèn sợi đốt và có tuổi thọ cao hơn. Bình quân, dùng đèn huỳnh quang tiết kiệm hơn đèn sợi đốt 8 đến 10 lần. Hiện nay, ngoài thị trường xuất hiện đèn huỳnh quang thu nhỏ (còn gọi là đèn compact). Nó cũng rất giống với đèn huỳnh quang nhưng hiệu suất phát quang cao hơn và tiết kiệm điện năng tốt hơn.\nĐèn LED: Cơ chế hoạt động của đèn LED sẽ được học ở môn Vật lí cấp Trung học phổ thông. Đèn LED có hai đầu dây ra ngoài, một đầu là cực dương (+), một đầu là cực âm (−). Cho dòng điện chạy qua đèn LED đúng chiều (cực dương của đèn nối với cực dương của nguồn điện, cực âm của đèn nối với cực âm nguồn điện) thì đèn phát sáng. Ánh sáng phát ra từ đèn LED có màu khác nhau tuỳ thuộc vào tạp chất trong chip bán dẫn của đèn LED. Hiện nay, đèn LED đang dần dần được thay thế cho các loại đèn truyền thống khác như đèn sợi đốt, đèn halogen. Dùng đèn LED vào mục đích chiếu sáng tiết kiệm điện năng so với đèn sợi đốt vì hiệu suất phát quang cao và tuổi thọ của nó rất lớn (có thể đến 100 000 giờ).\nBộ phận phát sáng của bóng đèn sợi đốt là bộ phận nào? Hãy giải thích vì sao bộ phận đó có thể phát sáng.",
+      "dong": [
+       {
+        "chu": "Bộ phận phát sáng của bóng đèn sợi đốt là {0}",
+        "o": [
+         {
+          "dung": [
+           "dây tóc làm bằng volfram"
+          ],
+          "sai": [
+           "lớp thuỷ tinh bao ngoài",
+           "đui đèn",
+           "khí trơ bơm trong bóng"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Dây tóc phát sáng vì {0}",
+        "o": [
+         {
+          "dung": [
+           "dòng điện chạy qua làm dây tóc nóng lên tới nhiệt độ rất cao"
+          ],
+          "sai": [
+           "dây tóc có phủ một lớp bột huỳnh quang",
+           "tia tử ngoại chiếu vào làm dây tóc phát sáng"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Dây tóc không bị nóng chảy vì volfram có {0}",
+        "o": [
+         {
+          "dung": [
+           "nhiệt độ nóng chảy rất cao"
+          ],
+          "sai": [
+           "khối lượng riêng rất nhỏ",
+           "màu trắng bạc"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "23.10d",
@@ -13751,7 +16052,42 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Vì hiệu suất phát quang của đèn sợi đốt rất thấp (chỉ khoảng 5% điện năng biến thành quang năng, phần lớn toả nhiệt), nên dùng đèn sợi đốt chiếu sáng tốn nhiều điện năng và tốn nhiều chi phí.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "Bóng đèn điện\nỨng dụng tác dụng của dòng điện người ta chế tạo ra các loại bóng điện để chiếu sáng. Hiện nay trên thị trường thường có các loại bóng đèn: đèn sợi đốt, đèn huỳnh quang hay đèn ống (đèn tuýp), đèn compact, đèn LED.\nĐèn sợi đốt: Dây tóc là bộ phận chính của bóng đèn sợi đốt được làm bằng kim loại volfram. Dây tóc của đèn được bảo vệ bên ngoài bằng một lớp thuỷ tinh trong suốt hoặc mờ đã được hút không khí ra và bơm vào các khí trơ. Kích cỡ bóng phải đủ lớn để không bị hơi nóng làm nổ. Hầu hết bóng đèn đều được lắp vào đui đèn, dòng điện sẽ đi qua đui đèn vào đến dây tóc làm nó nóng lên đến mức phát ra ánh sáng. Ngày nay đèn sợi đốt thường ít được dùng hơn vì hiệu suất phát quang rất thấp (chỉ khoảng 5% điện năng được biến thành quang năng, phần còn lại toả nhiệt nên khi sờ vào bóng đèn có cảm giác nóng và có thể bị bỏng).\nĐèn huỳnh quang, đèn compact: Đèn huỳnh quang hay gọi đơn giản là đèn tuýp (hay đèn ống) gồm điện cực làm bằng dây volfram, có dạng lò xo xoắn, nối ra ngoài qua chân điện và vỏ đèn phủ một lớp bột huỳnh quang (hợp chất chủ yếu là phosphorus). Ngoài ra, người ta còn bơm vào đèn một ít hơi thuỷ ngân và khí trơ (neon, argon,...) để làm tăng độ bền của điện cực và tạo ánh sáng màu.\nNguyên lí làm việc: Khi đóng điện, hiện tượng phóng điện giữa hai điện cực làm phát ra tia tử ngoại (tia cực tím). Tia tử ngoại tác dụng vào lớp bột huỳnh quang làm đèn phát sáng. Ngoài ra, để giúp cho hiện tượng phóng điện xảy ra, người ta phải lắp thêm chấn lưu và tắc-te. Do ít toả nhiệt ra môi trường nên đèn huỳnh quang sẽ cho hiệu suất phát sáng cao hơn nhiều so với đèn sợi đốt và có tuổi thọ cao hơn. Bình quân, dùng đèn huỳnh quang tiết kiệm hơn đèn sợi đốt 8 đến 10 lần. Hiện nay, ngoài thị trường xuất hiện đèn huỳnh quang thu nhỏ (còn gọi là đèn compact). Nó cũng rất giống với đèn huỳnh quang nhưng hiệu suất phát quang cao hơn và tiết kiệm điện năng tốt hơn.\nĐèn LED: Cơ chế hoạt động của đèn LED sẽ được học ở môn Vật lí cấp Trung học phổ thông. Đèn LED có hai đầu dây ra ngoài, một đầu là cực dương (+), một đầu là cực âm (−). Cho dòng điện chạy qua đèn LED đúng chiều (cực dương của đèn nối với cực dương của nguồn điện, cực âm của đèn nối với cực âm nguồn điện) thì đèn phát sáng. Ánh sáng phát ra từ đèn LED có màu khác nhau tuỳ thuộc vào tạp chất trong chip bán dẫn của đèn LED. Hiện nay, đèn LED đang dần dần được thay thế cho các loại đèn truyền thống khác như đèn sợi đốt, đèn halogen. Dùng đèn LED vào mục đích chiếu sáng tiết kiệm điện năng so với đèn sợi đốt vì hiệu suất phát quang cao và tuổi thọ của nó rất lớn (có thể đến 100 000 giờ).\nNgày nay, người ta ít sử dụng bóng đèn sợi đốt để thắp sáng, hãy giải thích vì sao?",
+      "dong": [
+       {
+        "chu": "Vì hiệu suất phát quang của đèn sợi đốt {0}",
+        "o": [
+         {
+          "dung": [
+           "rất thấp, chỉ khoảng 5% điện năng biến thành quang năng"
+          ],
+          "sai": [
+           "rất cao, khoảng 95% điện năng biến thành quang năng",
+           "bằng hiệu suất phát quang của đèn LED"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Phần lớn điện năng còn lại {0}",
+        "o": [
+         {
+          "dung": [
+           "toả ra thành nhiệt, nên dùng đèn sợi đốt tốn nhiều điện năng và tiền điện"
+          ],
+          "sai": [
+           "biến thành tia tử ngoại",
+           "được tích lại trong dây tóc để dùng dần"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     }
    ]
   },
@@ -13766,7 +16102,74 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "a) 3 A; b) 0,1 A; c) 1,2 A; d) 2,9 A",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "hoi": "Mặt số của một ampe kế ghi chữ A; trên thang chia có các số 0, 1, 2, 3, số 3 ở vạch cuối; giữa hai số liền nhau có 10 khoảng chia. Vị trí (1) của kim là vạch chia thứ hai sau số 1; vị trí (2) là vạch chia thứ chín sau số 2, ngay trước số 3. Hãy cho biết:",
+      "dong": [
+       {
+        "chu": "Giới hạn đo của ampe kế: {0}",
+        "o": [
+         {
+          "dung": [
+           "3 A"
+          ],
+          "sai": [
+           "1 A",
+           "0,1 A",
+           "30 A"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Độ chia nhỏ nhất của ampe kế: {0}",
+        "o": [
+         {
+          "dung": [
+           "0,1 A"
+          ],
+          "sai": [
+           "1 A",
+           "0,01 A",
+           "0,3 A"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Số chỉ của ampe kế khi kim ở vị trí (1): {0}",
+        "o": [
+         {
+          "dung": [
+           "1,2 A"
+          ],
+          "sai": [
+           "1,1 A",
+           "1,02 A",
+           "12 A"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Số chỉ của ampe kế khi kim ở vị trí (2): {0}",
+        "o": [
+         {
+          "dung": [
+           "2,9 A"
+          ],
+          "sai": [
+           "2,8 A",
+           "2,09 A",
+           "3 A"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "24.2",
@@ -13775,7 +16178,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "C",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Sơ đồ mạch điện nào dưới đây được mắc đúng? Mỗi phương án tả một sơ đồ mạch điện bằng lời.",
+      "cac": [
+       "Nguồn điện, bóng đèn, công tắc K và ampe kế mắc nối tiếp; cực dương của nguồn nối với bóng đèn, bóng đèn nối với K, K nối với chốt (−) của ampe kế, chốt (+) của ampe kế nối với cực âm của nguồn",
+       "Nguồn điện nối tiếp với công tắc K; bóng đèn và ampe kế mắc song song với nhau, cùng nối vào cực dương của nguồn và vào K; chốt (+) của ampe kế ở phía cực dương của nguồn",
+       "Nguồn điện, bóng đèn, công tắc K và ampe kế mắc nối tiếp; cực dương của nguồn nối với chốt (+) của ampe kế, chốt (−) của ampe kế nối với K, K nối với bóng đèn, bóng đèn nối với cực âm của nguồn",
+       "Nguồn điện nối tiếp với bóng đèn; công tắc K và ampe kế mắc song song với nhau rồi mắc nối tiếp với nguồn và đèn; chốt (−) của ampe kế nối với cực dương của nguồn, chốt (+) nối với bóng đèn"
+      ],
+      "dap": "C"
+     }
     },
     {
      "ma": "24.3",
@@ -13784,7 +16199,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "A",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Ampe kế trong sơ đồ nào dưới đây được mắc đúng để đo cường độ dòng điện chạy qua bóng đèn? Mỗi phương án tả một sơ đồ mạch điện bằng lời.",
+      "cac": [
+       "Nguồn điện, công tắc K, bóng đèn và ampe kế mắc nối tiếp; cực dương của nguồn nối với chốt (+) của ampe kế, chốt (−) của ampe kế nối với bóng đèn, bóng đèn nối qua K về cực âm của nguồn",
+       "Nguồn điện, công tắc K, bóng đèn và ampe kế mắc nối tiếp; cực dương của nguồn nối với chốt (−) của ampe kế, chốt (+) của ampe kế nối với bóng đèn, bóng đèn nối qua K về cực âm của nguồn",
+       "Ampe kế mắc thẳng vào hai cực của nguồn điện, chốt (+) nối với cực dương; đoạn mạch gồm công tắc K và bóng đèn mắc nối tiếp cũng nối vào hai cực của nguồn",
+       "Nguồn điện nối tiếp với công tắc K; ampe kế và bóng đèn nằm trên hai nhánh riêng mắc song song với nhau, đầu bên trái của hai nhánh đều nối với cực dương của nguồn, chốt (+) của ampe kế ở bên trái"
+      ],
+      "dap": "A"
+     }
     },
     {
      "ma": "24.4",
@@ -13793,7 +16220,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "B",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Khi mắc ampe kế vào mạch điện cần chú ý điều gì sau đây?",
+      "cac": [
+       "Chốt âm của ampe kế mắc vào cực dương của nguồn điện và chốt dương mắc với bóng đèn",
+       "Không được mắc trực tiếp hai chốt của ampe kế trực tiếp vào nguồn điện",
+       "Chốt dương của ampe kế mắc vào cực âm của nguồn điện và chốt âm mắc với bóng đèn",
+       "Mắc trực tiếp hai chốt của ampe kế vào hai cực của nguồn điện"
+      ],
+      "dap": "B"
+     }
     },
     {
      "ma": "24.5",
@@ -13802,7 +16241,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "A",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Trên một cầu chì có ghi 1 A. Con số này có nghĩa là",
+      "cac": [
+       "cường độ dòng điện đi qua cầu chì này từ 1 A trở lên thì dây chì sẽ đứt",
+       "cường độ dòng điện đi qua cầu chì này luôn lớn hơn 1 A",
+       "cường độ dòng điện đi qua cầu chì này luôn bằng 1 A",
+       "cường độ dòng điện đi qua cầu chì này luôn nhỏ hơn 1 A"
+      ],
+      "dap": "A"
+     }
     },
     {
      "ma": "24.6",
@@ -13811,7 +16262,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "B",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Để đo cường độ dòng điện đi qua một bóng đèn mắc trong một mạch điện kín gồm bóng đèn và nguồn điện, người ta có thể thực hiện bằng cách",
+      "cac": [
+       "thay bóng đèn mắc trong mạch bằng một ampe kế mắc vào chính mạch đó",
+       "cắt dây dẫn trong mạch tại điểm nào đó và mắc ampe kế vào vị trí đó",
+       "mắc ampe kế vào hai đầu bóng đèn",
+       "thay nguồn điện bằng ampe kế"
+      ],
+      "dap": "B"
+     }
     },
     {
      "ma": "24.7",
@@ -13820,7 +16283,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "D",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Vôn kế trong sơ đồ nào dưới đây có số chỉ bằng 0? Mỗi phương án tả một sơ đồ mạch điện bằng lời.",
+      "cac": [
+       "Vôn kế mắc thẳng vào hai cực của nguồn điện; công tắc đang mở và bóng đèn mắc nối tiếp, cũng nối vào hai cực của nguồn",
+       "Nguồn điện, bóng đèn, vôn kế và công tắc đang đóng mắc nối tiếp",
+       "Nguồn điện, công tắc đang mở và bóng đèn mắc nối tiếp; hai chốt của vôn kế nối vào hai đầu công tắc",
+       "Nguồn điện, vôn kế, công tắc đang mở và bóng đèn mắc nối tiếp"
+      ],
+      "dap": "D"
+     }
     },
     {
      "ma": "24.8",
@@ -13829,7 +16304,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "C",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Số vôn ghi trên mỗi bóng đèn hoặc trên mỗi dụng cụ điện có ý nghĩa gì?",
+      "cac": [
+       "Là giá trị của hiệu điện thế giữa hai đầu dụng cụ đó khi có dòng điện chạy qua chúng",
+       "Là giá trị của hiệu điện thế nhỏ nhất được phép đặt vào hai đầu dụng cụ đó",
+       "Là giá trị của hiệu điện thế định mức cần phải đặt vào hai đầu dụng cụ đó để nó hoạt động bình thường",
+       "Là giá trị của hiệu điện thế cao nhất không được phép đặt vào hai đầu dụng cụ đó"
+      ],
+      "dap": "C"
+     }
     },
     {
      "ma": "24.9",
@@ -13838,7 +16325,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "A",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Vôn kế trong sơ đồ nào dưới đây đo hiệu điện thế giữa hai cực của nguồn điện khi mạch để hở? Mỗi phương án tả một sơ đồ mạch điện bằng lời.",
+      "cac": [
+       "Vôn kế mắc thẳng vào hai cực của nguồn điện; công tắc K đang mở và bóng đèn mắc nối tiếp, cũng nối vào hai cực của nguồn",
+       "Nguồn điện nối tiếp công tắc K đang đóng; vôn kế và bóng đèn mắc song song với nhau vào hai đầu đoạn mạch đó",
+       "Nguồn điện, công tắc K đang đóng, bóng đèn và vôn kế mắc nối tiếp",
+       "Bóng đèn mắc thẳng vào hai cực của nguồn điện; vôn kế nối tiếp với công tắc K đang mở, đoạn này cũng nối vào hai cực của nguồn"
+      ],
+      "dap": "A"
+     }
     }
    ]
   },
@@ -13853,7 +16352,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "C",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Ampe kế đang để ở thang đo 1,5 A; mặt ampe kế có vạch 0 ở giữa, mỗi bên ghi 1, 2, 3; kim lệch sang phải, chỉ khoảng 0,9, hơi trước vạch 1. Cường độ dòng điện đo được trong ampe kế là",
+      "cac": [
+       "900 mA",
+       "0,9 A",
+       "0,45 A",
+       "45 mA"
+      ],
+      "dap": "C"
+     }
     },
     {
      "ma": "25.2",
@@ -13862,7 +16373,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "B",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Ampe kế đang để ở thang đo 0,3 A; mặt ampe kế có vạch 0 ở giữa, mỗi bên ghi 1, 2, 3; kim lệch sang phải, chỉ khoảng 1,2, hơi quá vạch 1. Cường độ dòng điện đo được trong ampe kế là",
+      "cac": [
+       "1,2 mA",
+       "120 mA",
+       "12 mA",
+       "1,2 A"
+      ],
+      "dap": "B"
+     }
     },
     {
      "ma": "25.3",
@@ -13871,7 +16394,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "C",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Ampe kế đang để ở thang đo 0,6 A. Mặt đồng hồ đo điện có vạch 0 ở giữa và hai thang chia: thang trên mỗi bên ghi 1 đến 6, thang dưới mỗi bên ghi 1 đến 3; kim lệch sang phải, chỉ vạch 3 của thang trên, tức khoảng giữa vạch 1 và vạch 2 của thang dưới. Cường độ dòng điện đo được trong ampe kế là",
+      "cac": [
+       "1,5 A",
+       "0,15 A",
+       "0,3 A",
+       "3,0 A"
+      ],
+      "dap": "C"
+     }
     },
     {
      "ma": "25.4",
@@ -13880,7 +16415,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "D",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Ampe kế đang để ở thang đo 0,003 A. Mặt ampe kế có hai thang chia, thang trên ghi 0, 2, 4, 6, 8, 10, thang dưới ghi 0, 1, 2, 3; kim chỉ vào khoảng giữa vạch 1 và vạch 2 của thang dưới, tức khoảng 1,5. Cường độ dòng điện đo được trong ampe kế là",
+      "cac": [
+       "0,0045 A",
+       "1,5 A",
+       "15 mA",
+       "1,5 mA"
+      ],
+      "dap": "D"
+     }
     },
     {
      "ma": "25.5",
@@ -13889,7 +16436,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "D",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Dùng ampe kế có giới hạn đo 5 A, trên mặt số được chia là 25 khoảng nhỏ nhất. Khi đo cường độ dòng điện trong mạch điện, kim chỉ thị chỉ ở khoảng thứ 16. Cường độ dòng điện đo được là",
+      "cac": [
+       "32 A",
+       "0,32 A",
+       "1,6 A",
+       "3,2 A"
+      ],
+      "dap": "D"
+     }
     },
     {
      "ma": "25.6",
@@ -13898,7 +16457,56 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Mắc ampe kế nối tiếp vào mạch ở một trong bốn vị trí: (1) giữa cực dương của nguồn và công tắc K; (2) giữa K và điện trở R; (3) giữa R và điốt Đ; (4) giữa Đ và cực âm của nguồn. Chốt (+) của ampe kế nối về phía cực dương của nguồn. Mỗi vị trí vẽ một sơ đồ.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "hoi": "Một mạch điện gồm nguồn điện, công tắc K, điện trở R và điốt phát quang Đ mắc nối tiếp thành một vòng: cực dương của nguồn nối với K, K nối với R, R nối với Đ, Đ nối về cực âm của nguồn. Để đo cường độ dòng điện qua điốt phát quang Đ, có thể mắc ampe kế vào những vị trí nào?",
+      "dong": [
+       {
+        "chu": "Ampe kế phải mắc {0} với điốt Đ",
+        "o": [
+         {
+          "dung": [
+           "nối tiếp"
+          ],
+          "sai": [
+           "song song"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Có thể mắc ampe kế vào {0}",
+        "o": [
+         {
+          "dung": [
+           "bất kì chỗ nào trong bốn chỗ nối: giữa nguồn và K, giữa K và R, giữa R và Đ, giữa Đ và nguồn"
+          ],
+          "sai": [
+           "chỉ một chỗ, ngay sát điốt Đ (giữa R và Đ)",
+           "chỉ hai chỗ ở hai bên điốt Đ (giữa R và Đ, giữa Đ và nguồn)"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Chốt (+) của ampe kế nối về phía {0}",
+        "o": [
+         {
+          "dung": [
+           "cực dương của nguồn điện"
+          ],
+          "sai": [
+           "cực âm của nguồn điện"
+          ],
+          "hai": true
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "25.7a",
@@ -13907,7 +16515,59 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Thang 100 mA: 16 mA; thang 3 mA: 0,5 mA; thang 30 mA: 5 mA",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "hoi": "Mặt số của một ampe kế có hai thang chia: thang trên ghi 0, 2, 4, 6, 8, 10; thang dưới ghi 0, 1, 2, 3. Kim chỉ khoảng vạch 1,6 của thang trên (hơi trước số 2), tức khoảng vạch 0,5 của thang dưới. Điền giá trị cường độ dòng điện tương ứng với từng thang đo.",
+      "dong": [
+       {
+        "chu": "Thang đo 100 mA: {0}",
+        "o": [
+         {
+          "dung": [
+           "16 mA"
+          ],
+          "sai": [
+           "1,6 mA",
+           "160 mA",
+           "5 mA"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Thang đo 3 mA: {0}",
+        "o": [
+         {
+          "dung": [
+           "0,5 mA"
+          ],
+          "sai": [
+           "1,6 mA",
+           "5 mA",
+           "0,05 mA"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Thang đo 30 mA: {0}",
+        "o": [
+         {
+          "dung": [
+           "5 mA"
+          ],
+          "sai": [
+           "0,5 mA",
+           "16 mA",
+           "50 mA"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "25.7b",
@@ -13916,7 +16576,59 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Thang 100 mA: 82 mA; thang 3 mA: 2,45 mA; thang 30 mA: 24,5 mA",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "hoi": "Mặt số của một ampe kế có hai thang chia: thang trên ghi 0, 2, 4, 6, 8, 10; thang dưới ghi 0, 1, 2, 3. Kim chỉ khoảng vạch 8,2 của thang trên (hơi quá số 8), tức khoảng vạch 2,45 của thang dưới. Điền giá trị cường độ dòng điện tương ứng với từng thang đo.",
+      "dong": [
+       {
+        "chu": "Thang đo 100 mA: {0}",
+        "o": [
+         {
+          "dung": [
+           "82 mA"
+          ],
+          "sai": [
+           "8,2 mA",
+           "820 mA",
+           "24,5 mA"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Thang đo 3 mA: {0}",
+        "o": [
+         {
+          "dung": [
+           "2,45 mA"
+          ],
+          "sai": [
+           "8,2 mA",
+           "24,5 mA",
+           "0,245 mA"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Thang đo 30 mA: {0}",
+        "o": [
+         {
+          "dung": [
+           "24,5 mA"
+          ],
+          "sai": [
+           "2,45 mA",
+           "82 mA",
+           "245 mA"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "25.7c",
@@ -13925,7 +16637,59 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Thang 100 mA: 50 mA; thang 3 mA: 1,5 mA; thang 30 mA: 15 mA",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "hoi": "Mặt số của một ampe kế có hai thang chia: thang trên ghi 0, 2, 4, 6, 8, 10; thang dưới ghi 0, 1, 2, 3. Kim chỉ vạch 5 của thang trên (giữa số 4 và số 6), tức vạch 1,5 của thang dưới. Điền giá trị cường độ dòng điện tương ứng với từng thang đo.",
+      "dong": [
+       {
+        "chu": "Thang đo 100 mA: {0}",
+        "o": [
+         {
+          "dung": [
+           "50 mA"
+          ],
+          "sai": [
+           "5 mA",
+           "500 mA",
+           "15 mA"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Thang đo 3 mA: {0}",
+        "o": [
+         {
+          "dung": [
+           "1,5 mA"
+          ],
+          "sai": [
+           "5 mA",
+           "15 mA",
+           "0,15 mA"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Thang đo 30 mA: {0}",
+        "o": [
+         {
+          "dung": [
+           "15 mA"
+          ],
+          "sai": [
+           "1,5 mA",
+           "50 mA",
+           "150 mA"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "25.7d",
@@ -13934,7 +16698,59 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Thang 100 mA: 30 mA; thang 3 mA: 0,9 mA; thang 30 mA: 9 mA",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "hoi": "Mặt số của một ampe kế có hai thang chia: thang trên ghi 0, 2, 4, 6, 8, 10; thang dưới ghi 0, 1, 2, 3. Kim chỉ vạch 3 của thang trên (giữa số 2 và số 4), tức khoảng vạch 0,9 của thang dưới (hơi trước số 1). Điền giá trị cường độ dòng điện tương ứng với từng thang đo.",
+      "dong": [
+       {
+        "chu": "Thang đo 100 mA: {0}",
+        "o": [
+         {
+          "dung": [
+           "30 mA"
+          ],
+          "sai": [
+           "3 mA",
+           "300 mA",
+           "9 mA"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Thang đo 3 mA: {0}",
+        "o": [
+         {
+          "dung": [
+           "0,9 mA"
+          ],
+          "sai": [
+           "3 mA",
+           "9 mA",
+           "0,09 mA"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Thang đo 30 mA: {0}",
+        "o": [
+         {
+          "dung": [
+           "9 mA"
+          ],
+          "sai": [
+           "0,9 mA",
+           "30 mA",
+           "90 mA"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "25.8a",
@@ -13943,7 +16759,59 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Thang 100 mV: 16 mV; thang 3 mV: 0,5 mV; thang 30 mV: 5 mV",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "hoi": "Mặt số của một vôn kế có hai thang chia: thang trên ghi 0, 2, 4, 6, 8, 10; thang dưới ghi 0, 1, 2, 3. Kim chỉ khoảng vạch 1,6 của thang trên (hơi trước số 2), tức khoảng vạch 0,5 của thang dưới. Điền giá trị hiệu điện thế tương ứng với từng thang đo.",
+      "dong": [
+       {
+        "chu": "Thang đo 100 mV: {0}",
+        "o": [
+         {
+          "dung": [
+           "16 mV"
+          ],
+          "sai": [
+           "1,6 mV",
+           "160 mV",
+           "5 mV"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Thang đo 3 mV: {0}",
+        "o": [
+         {
+          "dung": [
+           "0,5 mV"
+          ],
+          "sai": [
+           "1,6 mV",
+           "5 mV",
+           "0,05 mV"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Thang đo 30 mV: {0}",
+        "o": [
+         {
+          "dung": [
+           "5 mV"
+          ],
+          "sai": [
+           "0,5 mV",
+           "16 mV",
+           "50 mV"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "25.8b",
@@ -13952,7 +16820,59 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Thang 100 mV: 82 mV; thang 3 mV: 2,45 mV; thang 30 mV: 24,5 mV",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "hoi": "Mặt số của một vôn kế có hai thang chia: thang trên ghi 0, 2, 4, 6, 8, 10; thang dưới ghi 0, 1, 2, 3. Kim chỉ khoảng vạch 8,2 của thang trên (hơi quá số 8), tức khoảng vạch 2,45 của thang dưới. Điền giá trị hiệu điện thế tương ứng với từng thang đo.",
+      "dong": [
+       {
+        "chu": "Thang đo 100 mV: {0}",
+        "o": [
+         {
+          "dung": [
+           "82 mV"
+          ],
+          "sai": [
+           "8,2 mV",
+           "820 mV",
+           "24,5 mV"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Thang đo 3 mV: {0}",
+        "o": [
+         {
+          "dung": [
+           "2,45 mV"
+          ],
+          "sai": [
+           "8,2 mV",
+           "24,5 mV",
+           "0,245 mV"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Thang đo 30 mV: {0}",
+        "o": [
+         {
+          "dung": [
+           "24,5 mV"
+          ],
+          "sai": [
+           "2,45 mV",
+           "82 mV",
+           "245 mV"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "25.8c",
@@ -13961,7 +16881,59 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Thang 100 mV: 50 mV; thang 3 mV: 1,5 mV; thang 30 mV: 15 mV",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "hoi": "Mặt số của một vôn kế có hai thang chia: thang trên ghi 0, 2, 4, 6, 8, 10; thang dưới ghi 0, 1, 2, 3. Kim chỉ vạch 5 của thang trên (giữa số 4 và số 6), tức vạch 1,5 của thang dưới. Điền giá trị hiệu điện thế tương ứng với từng thang đo.",
+      "dong": [
+       {
+        "chu": "Thang đo 100 mV: {0}",
+        "o": [
+         {
+          "dung": [
+           "50 mV"
+          ],
+          "sai": [
+           "5 mV",
+           "500 mV",
+           "15 mV"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Thang đo 3 mV: {0}",
+        "o": [
+         {
+          "dung": [
+           "1,5 mV"
+          ],
+          "sai": [
+           "5 mV",
+           "15 mV",
+           "0,15 mV"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Thang đo 30 mV: {0}",
+        "o": [
+         {
+          "dung": [
+           "15 mV"
+          ],
+          "sai": [
+           "1,5 mV",
+           "50 mV",
+           "150 mV"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "25.8d",
@@ -13970,7 +16942,59 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Thang 100 mV: 30 mV; thang 3 mV: 0,9 mV; thang 30 mV: 9 mV",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "hoi": "Mặt số của một vôn kế có hai thang chia: thang trên ghi 0, 2, 4, 6, 8, 10; thang dưới ghi 0, 1, 2, 3. Kim chỉ vạch 3 của thang trên (giữa số 2 và số 4), tức khoảng vạch 0,9 của thang dưới (hơi trước số 1). Điền giá trị hiệu điện thế tương ứng với từng thang đo.",
+      "dong": [
+       {
+        "chu": "Thang đo 100 mV: {0}",
+        "o": [
+         {
+          "dung": [
+           "30 mV"
+          ],
+          "sai": [
+           "3 mV",
+           "300 mV",
+           "9 mV"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Thang đo 3 mV: {0}",
+        "o": [
+         {
+          "dung": [
+           "0,9 mV"
+          ],
+          "sai": [
+           "3 mV",
+           "9 mV",
+           "0,09 mV"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Thang đo 30 mV: {0}",
+        "o": [
+         {
+          "dung": [
+           "9 mV"
+          ],
+          "sai": [
+           "0,9 mV",
+           "30 mV",
+           "90 mV"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "25.9",
@@ -13979,7 +17003,78 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "1 - d; 2 - a; 3 - e; 4 - c",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "hoi": "Ghép một đoạn câu ở cột trái với một đoạn câu ở cột phải để thành một câu hoàn chỉnh có nội dung đúng.",
+      "dong": [
+       {
+        "chu": "Hai cực của nguồn điện {0}",
+        "o": [
+         {
+          "dung": [
+           "là hai vật dẫn được nhiễm điện khác nhau và giữa chúng có một hiệu điện thế"
+          ],
+          "sai": [
+           "là giá trị của hiệu điện thế định mức để nó hoạt động bình thường",
+           "là giá trị hiệu điện thế nhỏ nhất mà nó có thể cung cấp",
+           "chỉ xuất hiện khi đèn có một hiệu điện thế đặt vào hai đầu của nó",
+           "là giá trị của hiệu điện thế giữa hai cực của nó khi chưa mắc vào mạch"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Số vôn ghi trên dụng cụ điện {0}",
+        "o": [
+         {
+          "dung": [
+           "là giá trị của hiệu điện thế định mức để nó hoạt động bình thường"
+          ],
+          "sai": [
+           "là giá trị hiệu điện thế nhỏ nhất mà nó có thể cung cấp",
+           "chỉ xuất hiện khi đèn có một hiệu điện thế đặt vào hai đầu của nó",
+           "là hai vật dẫn được nhiễm điện khác nhau và giữa chúng có một hiệu điện thế",
+           "là giá trị của hiệu điện thế giữa hai cực của nó khi chưa mắc vào mạch"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Số vôn ghi trên nguồn điện {0}",
+        "o": [
+         {
+          "dung": [
+           "là giá trị của hiệu điện thế giữa hai cực của nó khi chưa mắc vào mạch"
+          ],
+          "sai": [
+           "là giá trị của hiệu điện thế định mức để nó hoạt động bình thường",
+           "là giá trị hiệu điện thế nhỏ nhất mà nó có thể cung cấp",
+           "chỉ xuất hiện khi đèn có một hiệu điện thế đặt vào hai đầu của nó",
+           "là hai vật dẫn được nhiễm điện khác nhau và giữa chúng có một hiệu điện thế"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Dòng điện chạy qua bóng đèn {0}",
+        "o": [
+         {
+          "dung": [
+           "chỉ xuất hiện khi đèn có một hiệu điện thế đặt vào hai đầu của nó"
+          ],
+          "sai": [
+           "là giá trị của hiệu điện thế định mức để nó hoạt động bình thường",
+           "là giá trị hiệu điện thế nhỏ nhất mà nó có thể cung cấp",
+           "là hai vật dẫn được nhiễm điện khác nhau và giữa chúng có một hiệu điện thế",
+           "là giá trị của hiệu điện thế giữa hai cực của nó khi chưa mắc vào mạch"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "25.10",
@@ -13988,7 +17083,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "A",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Chọn cách đo hiệu điện thế giữa hai cực của nguồn điện khi mạch điện hở trong các phương án sau.",
+      "cac": [
+       "Mắc vôn kế song song với hai cực của nguồn điện; cực dương của vôn kế nối với cực dương, cực âm của vôn kế nối với cực âm của nguồn điện",
+       "Mắc vôn kế song song với hai cực của nguồn điện; cực dương của vôn kế nối với cực âm, cực âm của vôn kế nối với cực dương của nguồn điện",
+       "Mắc vôn kế nối tiếp với hai cực của nguồn điện; cực dương của vôn kế nối với cực dương, cực âm của vôn kế nối với cực âm của nguồn điện",
+       "Mắc vôn kế nối tiếp với hai cực của nguồn điện; cực dương của vôn kế nối với cực âm, cực âm của vôn kế nối với cực dương của nguồn điện"
+      ],
+      "dap": "A"
+     }
     },
     {
      "ma": "25.11a",
@@ -13997,7 +17104,42 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "I1 < I2, vì hiệu điện thế đặt vào hai đầu bóng đèn càng lớn thì cường độ dòng điện chạy qua đèn càng lớn (U1 = 2 V < U2 = 5 V).",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "Trên một bóng đèn có ghi 6 V. Khi đặt vào hai đầu bóng đèn này hiệu điện thế U₁ = 2 V thì dòng điện chạy qua đèn có cường độ I₁, khi đặt hiệu điện thế U₂ = 5 V thì dòng điện chạy qua đèn có cường độ I₂. Hãy so sánh I₁ và I₂. Giải thích vì sao có thể so sánh kết quả như vậy.",
+      "dong": [
+       {
+        "chu": "I₁ {0} I₂",
+        "o": [
+         {
+          "dung": [
+           "<"
+          ],
+          "sai": [
+           ">",
+           "="
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Vì {0}",
+        "o": [
+         {
+          "dung": [
+           "hiệu điện thế đặt vào hai đầu bóng đèn càng lớn thì cường độ dòng điện chạy qua đèn càng lớn"
+          ],
+          "sai": [
+           "hiệu điện thế đặt vào hai đầu bóng đèn càng lớn thì cường độ dòng điện chạy qua đèn càng nhỏ",
+           "cường độ dòng điện chạy qua đèn không phụ thuộc vào hiệu điện thế"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "25.11b",
@@ -14006,7 +17148,26 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "U = 6 V",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 1,
+      "hoi": "Trên một bóng đèn có ghi 6 V. Khi đặt vào hai đầu bóng đèn này hiệu điện thế U₁ = 2 V thì dòng điện chạy qua đèn có cường độ I₁, khi đặt hiệu điện thế U₂ = 5 V thì dòng điện chạy qua đèn có cường độ I₂. Phải đặt vào hai đầu bóng đèn một hiệu điện thế là bao nhiêu thì bóng đèn sáng bình thường?",
+      "dap": [
+       "6",
+       "6V"
+      ],
+      "phim": [
+       "V"
+      ],
+      "nhieu": [
+       "A",
+       "mV"
+      ],
+      "loi_giai": [
+       "Đèn sáng bình thường khi hiệu điện thế đặt vào hai đầu đèn bằng số vôn ghi trên đèn: U = 6 V"
+      ]
+     }
     },
     {
      "ma": "25.12",
@@ -14015,7 +17176,23 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Khi có dòng điện chạy qua, dây kim loại HD nóng lên và dãn dài ra; lò xo kéo sợi dây làm ròng rọc R quay, kim gắn với R lệch sang phải. Dòng điện càng mạnh, dây càng nóng, dãn càng nhiều, kim lệch càng nhiều.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 5,
+      "hoi": "Một ampe kế hoạt động dựa trên nguyên tắc dãn nở vì nhiệt: dây kim loại HD (có thể dãn nở khi nóng lên) được căng giữa hai chiếc đinh cố định, mắc nối tiếp với bóng đèn và nguồn điện; một sợi dây nối từ điểm F ở giữa dây HD, vòng qua ròng rọc cố định R rồi nối với một lò xo có đầu kia gắn cố định; kim chỉ gắn với R, quay trên thang chia ghi 0 A, 1 A, 2 A. Em hãy mô tả nguyên tắc hoạt động của ampe kế này.",
+      "buoc": [
+       "Dòng điện chạy qua dây kim loại HD làm dây nóng lên (tác dụng nhiệt của dòng điện)",
+       "Dây HD nóng lên thì dãn dài ra, chùng xuống",
+       "Lò xo kéo sợi dây nối ở điểm F, làm ròng rọc R quay",
+       "Kim chỉ gắn với R quay theo, lệch khỏi vạch 0 A về phía vạch 1 A, 2 A",
+       "Dòng điện càng mạnh, dây càng nóng, dãn càng nhiều, kim lệch càng nhiều"
+      ],
+      "nhieu": [
+       "Dây HD nóng lên thì co ngắn lại, căng hơn",
+       "Dòng điện càng mạnh, dây càng nóng, dãn càng nhiều, kim lệch càng ít"
+      ]
+     }
     }
    ]
   },

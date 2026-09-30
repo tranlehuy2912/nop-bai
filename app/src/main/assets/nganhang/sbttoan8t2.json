@@ -2,7 +2,7 @@
  "nguon": "sbttoan8t2",
  "mon": "Toán",
  "ten": "SBT Toán 8 — tập hai",
- "ban": 2,
+ "ban": 3,
  "cac_bai": [
   {
    "chuong": "Chương VI. Phân thức đại số",
@@ -15,7 +15,56 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "a) (2x − 1)/(x + 1); b) (x^2 − x)/(−2); c) 3/(2x + 5)",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "hoi": "Viết phân thức với tử và mẫu lần lượt là a) 2x − 1 và x + 1; b) x² − x và −2; c) 3 và 2x + 5.",
+      "dong": [
+       {
+        "chu": "a) {0}",
+        "o": [
+         {
+          "dung": [
+           "(2x − 1)/(x + 1)"
+          ],
+          "sai": [
+           "2x − 1/(x + 1)",
+           "(x + 1)/(2x − 1)"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "b) {0}",
+        "o": [
+         {
+          "dung": [
+           "(x² − x)/(−2)"
+          ],
+          "sai": [
+           "x² − x/(−2)",
+           "−2/(x² − x)"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "c) {0}",
+        "o": [
+         {
+          "dung": [
+           "3/(2x + 5)"
+          ],
+          "sai": [
+           "3/2x + 5",
+           "(2x + 5)/3"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "6.2",
@@ -24,7 +73,58 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "a) x^2 − 1 ≠ 0, tức x ≠ 1 và x ≠ −1; b) x^2 − x + 1 ≠ 0, đúng với mọi x; c) 3x − 1 ≠ 0, tức x ≠ 1/3",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "hoi": "Viết điều kiện xác định của các phân thức sau: a) (2x + 1)/(x² − 1); b) (x³ + 1)/(x² − x + 1); c) (2x² + 1)/(3x − 1).",
+      "dong": [
+       {
+        "chu": "a) (2x + 1)/(x² − 1): {0}",
+        "o": [
+         {
+          "dung": [
+           "x ≠ 1 và x ≠ −1"
+          ],
+          "sai": [
+           "x ≠ 1",
+           "x ≠ −1/2",
+           "x ≠ 1 và x ≠ −1/2"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "b) (x³ + 1)/(x² − x + 1): {0}",
+        "o": [
+         {
+          "dung": [
+           "Xác định với mọi x"
+          ],
+          "sai": [
+           "x ≠ −1",
+           "x ≠ 0 và x ≠ 1"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "c) (2x² + 1)/(3x − 1): {0}",
+        "o": [
+         {
+          "dung": [
+           "x ≠ 1/3"
+          ],
+          "sai": [
+           "x ≠ 3",
+           "x ≠ −1/3",
+           "Xác định với mọi x"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "6.3",
@@ -33,7 +133,23 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Phân thức (2x^2 − 1)/(2x + 1); điều kiện xác định 2x + 1 ≠ 0 (x ≠ −1/2); tại x = −3 giá trị là −3,4",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "dap": [
+       "−3,4",
+       "−17/5",
+       "17/(−5)"
+      ],
+      "phim": [],
+      "nhieu": [],
+      "loi_giai": [
+       "Phân thức cần viết là (2x² − 1)/(2x + 1)",
+       "Điều kiện xác định: 2x + 1 ≠ 0, tức là x ≠ −1/2",
+       "Với x = −3 (thoả mãn điều kiện), giá trị của phân thức là (2 · (−3)² − 1)/(2 · (−3) + 1) = 17/(−5) = −3,4"
+      ]
+     }
     },
     {
      "ma": "6.4",
@@ -42,7 +158,29 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Ta có (x^2 − x − 2)(x − 1) = x^3 − 2x^2 − x + 2 và (x + 1)(x^2 − 3x + 2) = x^3 − 2x^2 − x + 2. Suy ra (x^2 − x − 2)(x − 1) = (x + 1)(x^2 − 3x + 2), do đó (x^2 − x − 2)/(x + 1) = (x^2 − 3x + 2)/(x − 1).",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 4,
+      "buoc": [
+       "(x² − x − 2)(x − 1) = x³ − x² − x² + x − 2x + 2 = x³ − 2x² − x + 2",
+       "(x + 1)(x² − 3x + 2) = x³ − 3x² + 2x + x² − 3x + 2 = x³ − 2x² − x + 2",
+       "(x² − x − 2)(x − 1) = (x + 1)(x² − 3x + 2)",
+       "Theo định nghĩa hai phân thức bằng nhau, (x² − x − 2)/(x + 1) = (x² − 3x + 2)/(x − 1)"
+      ],
+      "nhieu": [
+       "(x + 1)(x² − 3x + 2) = x³ − 3x² + 2x + x² + 3x + 2 = x³ − 2x² + 5x + 2",
+       "(x² − x − 2)(x + 1) = (x − 1)(x² − 3x + 2)"
+      ],
+      "thu_tu_khac": [
+       [
+        1,
+        0,
+        2,
+        3
+       ]
+      ]
+     }
     },
     {
      "ma": "6.5",
@@ -51,7 +189,112 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "{0; −2; 1; −3}",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 7,
+      "hoi": "Tìm tập hợp các giá trị nguyên của x sao cho P(x) = 2/(x + 1) có giá trị là số nguyên. Mỗi số sau có thuộc tập hợp đó không?",
+      "dong": [
+       {
+        "chu": "x = −5: {0}",
+        "o": [
+         {
+          "dung": [
+           "Không"
+          ],
+          "sai": [
+           "Có"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "x = −3: {0}",
+        "o": [
+         {
+          "dung": [
+           "Có"
+          ],
+          "sai": [
+           "Không"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "x = −2: {0}",
+        "o": [
+         {
+          "dung": [
+           "Có"
+          ],
+          "sai": [
+           "Không"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "x = −1: {0}",
+        "o": [
+         {
+          "dung": [
+           "Không"
+          ],
+          "sai": [
+           "Có"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "x = 0: {0}",
+        "o": [
+         {
+          "dung": [
+           "Có"
+          ],
+          "sai": [
+           "Không"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "x = 1: {0}",
+        "o": [
+         {
+          "dung": [
+           "Có"
+          ],
+          "sai": [
+           "Không"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "x = 3: {0}",
+        "o": [
+         {
+          "dung": [
+           "Không"
+          ],
+          "sai": [
+           "Có"
+          ],
+          "hai": true
+         }
+        ]
+       }
+      ]
+     }
     }
    ]
   },
@@ -66,7 +309,21 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "x^4 − 1 = (x^2)^2 − 1 = (x^2 − 1)(x^2 + 1) = (x − 1)(x + 1)(x^2 + 1) nên tử và mẫu có nhân tử chung x − 1. Chia cả tử và mẫu cho x − 1 được (x^4 − 1)/(x − 1) = x^3 + x^2 + x + 1.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 4,
+      "buoc": [
+       "x⁴ − 1 = (x²)² − 1 = (x² − 1)(x² + 1) = (x − 1)(x + 1)(x² + 1)",
+       "Tử và mẫu có nhân tử chung x − 1, chia cả tử và mẫu cho x − 1",
+       "(x⁴ − 1)/(x − 1) = (x − 1)(x + 1)(x² + 1)/(x − 1) = (x + 1)(x² + 1)",
+       "= x³ + x² + x + 1"
+      ],
+      "nhieu": [
+       "x⁴ − 1 = (x² − 1)² = (x − 1)²(x + 1)²",
+       "= x³ + 1"
+      ]
+     }
     },
     {
      "ma": "6.7",
@@ -75,7 +332,26 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "24x^2y^2/(3xy^5) = 8x/y^3 = −8x/(−y^3); B = −8x",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "dap": [
+       "−8x"
+      ],
+      "phim": [
+       "x"
+      ],
+      "nhieu": [
+       "y",
+       "³"
+      ],
+      "loi_giai": [
+       "24x²y²/(3xy⁵) = 8x/y³",
+       "= −8x/(−y³)",
+       "Vậy B = −8x"
+      ]
+     }
     },
     {
      "ma": "6.8",
@@ -84,7 +360,29 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "(x − x^2)/(5x^2 − 5) = x/(−5(1 + x)); A = −5(1 + x)",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "dap": [
+       "−5(x+1)",
+       "−5x−5",
+       "−(5x+5)"
+      ],
+      "phim": [
+       "x"
+      ],
+      "nhieu": [
+       "y",
+       "²"
+      ],
+      "loi_giai": [
+       "x − x² = −x(x − 1); 5x² − 5 = 5(x − 1)(x + 1)",
+       "(x − x²)/(5x² − 5) = −x(x − 1)/(5(x − 1)(x + 1)) = −x/(5(x + 1))",
+       "= x/(−5(x + 1))",
+       "Vậy A = −5(x + 1)"
+      ]
+     }
     },
     {
      "ma": "6.9",
@@ -93,7 +391,31 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "(2x + y)/(y + 1)^2",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "dap": [
+       "(2x+y)/(y+1)²",
+       "(2x+y)/(y²+2y+1)",
+       "(2x+y)/((y+1)²)"
+      ],
+      "phim": [
+       "x",
+       "y",
+       "²"
+      ],
+      "nhieu": [
+       "³",
+       "⁴",
+       "z"
+      ],
+      "loi_giai": [
+       "Tử = 2x + 2xy + y + y² = 2x(1 + y) + y(1 + y) = (2x + y)(y + 1)",
+       "Mẫu = y³ + 3y² + 3y + 1 = (y + 1)³",
+       "(2x + 2xy + y + y²)/(y³ + 3y² + 3y + 1) = (2x + y)(y + 1)/(y + 1)³ = (2x + y)/(y + 1)²"
+      ]
+     }
     },
     {
      "ma": "6.10a",
@@ -102,7 +424,23 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "P = 2(x − 2)/(x + 2); tại x = 0,5 thì P = −1,2",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "dap": [
+       "−1,2",
+       "−6/5"
+      ],
+      "phim": [],
+      "nhieu": [],
+      "loi_giai": [
+       "(2x² + 2x)(2 − x)² = 2x(x + 1)(x − 2)²",
+       "(x³ − 4x)(x + 1) = x(x − 2)(x + 2)(x + 1)",
+       "P = 2x(x + 1)(x − 2)²/(x(x − 2)(x + 2)(x + 1)) = 2(x − 2)/(x + 2)",
+       "Với x = 0,5: P = 2 · (0,5 − 2)/(0,5 + 2) = −3/2,5 = −1,2"
+      ]
+     }
     },
     {
      "ma": "6.10b",
@@ -111,7 +449,22 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Q = x/(x + y); tại x = −5, y = 10 thì Q = −1",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "dap": [
+       "−1"
+      ],
+      "phim": [],
+      "nhieu": [],
+      "loi_giai": [
+       "x³ − x²y + xy² = x(x² − xy + y²)",
+       "x³ + y³ = (x + y)(x² − xy + y²)",
+       "Q = x(x² − xy + y²)/((x + y)(x² − xy + y²)) = x/(x + y)",
+       "Với x = −5, y = 10: Q = −5/(−5 + 10) = −1"
+      ]
+     }
     },
     {
      "ma": "6.11a",
@@ -120,7 +473,27 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "MTC = 42x^2y^5; 25/(14x^2y) = 75y^4/(42x^2y^5); 14/(21xy^5) = 28x/(42x^2y^5)",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 3,
+      "buoc": [
+       "MTC = 42x²y⁵",
+       "25/(14x²y) = 25 · 3y⁴/(14x²y · 3y⁴) = 75y⁴/(42x²y⁵)",
+       "14/(21xy⁵) = 14 · 2x/(21xy⁵ · 2x) = 28x/(42x²y⁵)"
+      ],
+      "nhieu": [
+       "25/(14x²y) = 25/(14x²y · 3y⁴) = 25/(42x²y⁵)",
+       "14/(21xy⁵) = 14 · 2x/(21xy⁵ · 2x) = 28x/(42xy⁵)"
+      ],
+      "thu_tu_khac": [
+       [
+        0,
+        2,
+        1
+       ]
+      ]
+     }
     },
     {
      "ma": "6.11b",
@@ -129,7 +502,29 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "MTC = 3x(x + 3)(x + 1); (4x − 4)/(2x(x + 3)) = (6x − 6)(x + 1)/(3x(x + 3)(x + 1)); (x − 3)/(3x(x + 1)) = (x − 3)(x + 3)/(3x(x + 3)(x + 1))",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 4,
+      "buoc": [
+       "(4x − 4)/(2x(x + 3)) = 4(x − 1)/(2x(x + 3)) = 2(x − 1)/(x(x + 3))",
+       "MTC = 3x(x + 3)(x + 1)",
+       "2(x − 1)/(x(x + 3)) = 2(x − 1) · 3(x + 1)/(x(x + 3) · 3(x + 1)) = (6x − 6)(x + 1)/(3x(x + 3)(x + 1))",
+       "(x − 3)/(3x(x + 1)) = (x − 3)(x + 3)/(3x(x + 3)(x + 1))"
+      ],
+      "nhieu": [
+       "(4x − 4)/(2x(x + 3)) = 4(x − 1)/(2x(x + 3)) = 2(x − 1)/(x + 3)",
+       "(x − 3)/(3x(x + 1)) = (x − 3)/(3x(x + 3)(x + 1))"
+      ],
+      "thu_tu_khac": [
+       [
+        0,
+        1,
+        3,
+        2
+       ]
+      ]
+     }
     },
     {
      "ma": "6.12",
@@ -138,7 +533,59 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "MTC = x(x − 1)(x^2 + x + 1) = x(x^3 − 1); 1/(x^2 − x) = (x^2 + x + 1)/(x(x^3 − 1)); x/(1 − x^3) = −x^2/(x(x^3 − 1)); −1/(x^2 + x + 1) = −x(x − 1)/(x(x^3 − 1))",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 5,
+      "buoc": [
+       "x² − x = x(x − 1); 1 − x³ = −(x − 1)(x² + x + 1)",
+       "MTC = x(x − 1)(x² + x + 1) = x(x³ − 1)",
+       "1/(x² − x) = (x² + x + 1)/(x(x − 1)(x² + x + 1)) = (x² + x + 1)/(x(x³ − 1))",
+       "x/(1 − x³) = −x/(x³ − 1) = −x²/(x(x³ − 1))",
+       "−1/(x² + x + 1) = −x(x − 1)/(x(x − 1)(x² + x + 1)) = −x(x − 1)/(x(x³ − 1))"
+      ],
+      "nhieu": [
+       "x/(1 − x³) = x/(x³ − 1) = x²/(x(x³ − 1))",
+       "MTC = x(x − 1)(x² + x + 1) = x(x³ + 1)"
+      ],
+      "thu_tu_khac": [
+       [
+        0,
+        1,
+        2,
+        4,
+        3
+       ],
+       [
+        0,
+        1,
+        3,
+        2,
+        4
+       ],
+       [
+        0,
+        1,
+        3,
+        4,
+        2
+       ],
+       [
+        0,
+        1,
+        4,
+        2,
+        3
+       ],
+       [
+        0,
+        1,
+        4,
+        3,
+        2
+       ]
+      ]
+     }
     },
     {
      "ma": "6.13a",
@@ -147,7 +594,53 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "MTC = x^2y^2z^2; 1/(x^2y) = yz^2/(x^2y^2z^2); 1/(y^2z) = zx^2/(x^2y^2z^2); 1/(z^2x) = xy^2/(x^2y^2z^2)",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 4,
+      "buoc": [
+       "MTC = x²y²z²",
+       "1/(x²y) = yz²/(x²y · yz²) = yz²/(x²y²z²)",
+       "1/(y²z) = x²z/(y²z · x²z) = x²z/(x²y²z²)",
+       "1/(z²x) = xy²/(z²x · xy²) = xy²/(x²y²z²)"
+      ],
+      "nhieu": [
+       "1/(y²z) = x²/(y²z · x²) = x²/(x²y²z²)",
+       "1/(z²x) = xy/(z²x · xy) = xy/(x²y²z²)"
+      ],
+      "thu_tu_khac": [
+       [
+        0,
+        1,
+        3,
+        2
+       ],
+       [
+        0,
+        2,
+        1,
+        3
+       ],
+       [
+        0,
+        2,
+        3,
+        1
+       ],
+       [
+        0,
+        3,
+        1,
+        2
+       ],
+       [
+        0,
+        3,
+        2,
+        1
+       ]
+      ]
+     }
     },
     {
      "ma": "6.13b",
@@ -156,7 +649,53 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "MTC = (1 − x)(1 + x)(x^2 + 1) = 1 − x^4; 1/(1 − x) = (1 + x)(1 + x^2)/(1 − x^4); 1/(x + 1) = (1 − x)(1 + x^2)/(1 − x^4); 1/(x^2 + 1) = (1 − x^2)/(1 − x^4)",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 4,
+      "buoc": [
+       "MTC = (1 − x)(1 + x)(1 + x²) = (1 − x²)(1 + x²) = 1 − x⁴",
+       "1/(1 − x) = (1 + x)(1 + x²)/((1 − x)(1 + x)(1 + x²)) = (1 + x)(1 + x²)/(1 − x⁴)",
+       "1/(x + 1) = (1 − x)(1 + x²)/((1 − x)(1 + x)(1 + x²)) = (1 − x)(1 + x²)/(1 − x⁴)",
+       "1/(x² + 1) = (1 − x)(1 + x)/((1 − x)(1 + x)(1 + x²)) = (1 − x²)/(1 − x⁴)"
+      ],
+      "nhieu": [
+       "MTC = (1 − x)(1 + x)(1 + x²) = (1 − x²)(1 + x²) = 1 + x⁴",
+       "1/(x + 1) = (1 + x)(1 + x²)/((1 − x)(1 + x)(1 + x²)) = (1 + x)(1 + x²)/(1 − x⁴)"
+      ],
+      "thu_tu_khac": [
+       [
+        0,
+        1,
+        3,
+        2
+       ],
+       [
+        0,
+        2,
+        1,
+        3
+       ],
+       [
+        0,
+        2,
+        3,
+        1
+       ],
+       [
+        0,
+        3,
+        1,
+        2
+       ],
+       [
+        0,
+        3,
+        2,
+        1
+       ]
+      ]
+     }
     },
     {
      "ma": "6.14",
@@ -165,7 +704,29 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "x/(y^2 − z^2) = −1/(y − z)",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "dap": [
+       "−1/(y−z)",
+       "1/(z−y)",
+       "(−1)/(y−z)"
+      ],
+      "phim": [
+       "y",
+       "z"
+      ],
+      "nhieu": [
+       "x",
+       "²"
+      ],
+      "loi_giai": [
+       "Vì x + y + z = 0 nên x = −(y + z)",
+       "Do đó x/(y² − z²) = −(y + z)/((y − z)(y + z))",
+       "= −1/(y − z)"
+      ]
+     }
     }
    ]
   },
@@ -180,7 +741,26 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "1/(x − 1)",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "dap": [
+       "1/(x−1)"
+      ],
+      "phim": [
+       "x"
+      ],
+      "nhieu": [
+       "y",
+       "²"
+      ],
+      "loi_giai": [
+       "(x² − 2)/(x(x − 1)²) + (2 − x)/(x(x − 1)²) = (x² − 2 + 2 − x)/(x(x − 1)²)",
+       "= (x² − x)/(x(x − 1)²) = x(x − 1)/(x(x − 1)²)",
+       "= 1/(x − 1)"
+      ]
+     }
     },
     {
      "ma": "6.15b",
@@ -189,7 +769,29 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "1/(3x^2y)",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "dap": [
+       "1/(3x²y)"
+      ],
+      "phim": [
+       "x",
+       "y",
+       "²"
+      ],
+      "nhieu": [
+       "³",
+       "⁴",
+       "z"
+      ],
+      "loi_giai": [
+       "(1 − 2x)/(6x³y) + (3 + 2x)/(6x³y) + (2x − 4)/(6x³y) = (1 − 2x + 3 + 2x + 2x − 4)/(6x³y)",
+       "= 2x/(6x³y)",
+       "= 1/(3x²y)"
+      ]
+     }
     },
     {
      "ma": "6.16a",
@@ -198,7 +800,26 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "x/(x − 3)",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "dap": [
+       "x/(x−3)"
+      ],
+      "phim": [
+       "x"
+      ],
+      "nhieu": [
+       "y",
+       "²"
+      ],
+      "loi_giai": [
+       "(2x² − 1)/(x² − 3x) − ((x − 1)(x + 1))/(x² − 3x) = (2x² − 1 − (x² − 1))/(x² − 3x)",
+       "= x²/(x(x − 3))",
+       "= x/(x − 3)"
+      ]
+     }
     },
     {
      "ma": "6.16b",
@@ -207,7 +828,26 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "2/(4x + 7)",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "dap": [
+       "2/(4x+7)"
+      ],
+      "phim": [
+       "x"
+      ],
+      "nhieu": [
+       "y",
+       "²"
+      ],
+      "loi_giai": [
+       "1/(2x − 3) − 13/((2x − 3)(4x + 7)) = (4x + 7 − 13)/((2x − 3)(4x + 7))",
+       "= (4x − 6)/((2x − 3)(4x + 7)) = 2(2x − 3)/((2x − 3)(4x + 7))",
+       "= 2/(4x + 7)"
+      ]
+     }
     },
     {
      "ma": "6.17a",
@@ -216,7 +856,32 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "(x^3 + y^3)/(x^2y^2)",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "dap": [
+       "(x³+y³)/(x²y²)",
+       "(x+y)(x²−xy+y²)/(x²y²)"
+      ],
+      "phim": [
+       "x",
+       "y",
+       "²",
+       "³"
+      ],
+      "nhieu": [
+       "⁴",
+       "⁵",
+       "z"
+      ],
+      "loi_giai": [
+       "MTC = x²y²",
+       "(5x + y²)/(x²y) − (5y − x²)/(xy²) = (5x + y²)y/(x²y²) − (5y − x²)x/(x²y²)",
+       "= (5xy + y³ − 5xy + x³)/(x²y²)",
+       "= (x³ + y³)/(x²y²)"
+      ]
+     }
     },
     {
      "ma": "6.17b",
@@ -225,7 +890,30 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "−(2x + y)/(xy)",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "dap": [
+       "−(2x+y)/(xy)",
+       "(−2x−y)/(xy)",
+       "(2x+y)/(−xy)"
+      ],
+      "phim": [
+       "x",
+       "y"
+      ],
+      "nhieu": [
+       "²",
+       "z"
+      ],
+      "loi_giai": [
+       "y/(2x² − xy) + 4x/(y² − 2xy) = y/(x(2x − y)) − 4x/(y(2x − y))",
+       "= (y² − 4x²)/(xy(2x − y))",
+       "= −(2x − y)(2x + y)/(xy(2x − y))",
+       "= −(2x + y)/(xy)"
+      ]
+     }
     },
     {
      "ma": "6.18a",
@@ -234,7 +922,29 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "(30y + 21x + 22xy)/(36x^2y^2)",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "dap": [
+       "(30y+21x+22xy)/(36x²y²)"
+      ],
+      "phim": [
+       "x",
+       "y",
+       "²"
+      ],
+      "nhieu": [
+       "³",
+       "⁴",
+       "z"
+      ],
+      "loi_giai": [
+       "MTC = 36x²y²",
+       "5/(6x²y) + 7/(12xy²) + 11/(18xy) = 5 · 6y/(36x²y²) + 7 · 3x/(36x²y²) + 11 · 2xy/(36x²y²)",
+       "= (30y + 21x + 22xy)/(36x²y²)"
+      ]
+     }
     },
     {
      "ma": "6.18b",
@@ -243,7 +953,30 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "(x + 1)^2/(x^2 − x + 1)",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 5,
+      "dap": [
+       "(x+1)²/(x²−x+1)",
+       "(x²+2x+1)/(x²−x+1)"
+      ],
+      "phim": [
+       "x",
+       "²"
+      ],
+      "nhieu": [
+       "³",
+       "y"
+      ],
+      "loi_giai": [
+       "MTC = x³ + 1 = (x + 1)(x² − x + 1)",
+       "(x³ + 2x)/(x³ + 1) + 2x/(x² − x + 1) + 1/(x + 1) = (x³ + 2x + 2x(x + 1) + x² − x + 1)/(x³ + 1)",
+       "= (x³ + 3x² + 3x + 1)/(x³ + 1)",
+       "= (x + 1)³/((x + 1)(x² − x + 1))",
+       "= (x + 1)²/(x² − x + 1)"
+      ]
+     }
     },
     {
      "ma": "6.19a",
@@ -252,7 +985,28 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "P = 1/(1 − x)",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "dap": [
+       "1/(1−x)",
+       "−1/(x−1)",
+       "(−1)/(x−1)"
+      ],
+      "phim": [
+       "x"
+      ],
+      "nhieu": [
+       "⁴",
+       "y"
+      ],
+      "loi_giai": [
+       "P = x⁴/(1 − x) + (x³ + x² + x + 1)(1 − x)/(1 − x)",
+       "= (x⁴ + x³ + x² + x + 1 − x⁴ − x³ − x² − x)/(1 − x)",
+       "= 1/(1 − x)"
+      ]
+     }
     },
     {
      "ma": "6.19b",
@@ -261,7 +1015,21 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "P = 0,01",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "dap": [
+       "0,01",
+       "1/100"
+      ],
+      "phim": [],
+      "nhieu": [],
+      "loi_giai": [
+       "Theo câu a, P = 1/(1 − x)",
+       "Với x = −99: P = 1/(1 − (−99)) = 1/100 = 0,01"
+      ]
+     }
     },
     {
      "ma": "6.20a",
@@ -270,7 +1038,30 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Q = −1/(x − 3)",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 5,
+      "dap": [
+       "−1/(x−3)",
+       "1/(3−x)",
+       "(−1)/(x−3)"
+      ],
+      "phim": [
+       "x"
+      ],
+      "nhieu": [
+       "²",
+       "y"
+      ],
+      "loi_giai": [
+       "x² − 6x + 9 = (x − 3)²; x² − 9 = (x − 3)(x + 3); MTC = (x − 3)(x² − 9) = (x − 3)²(x + 3)",
+       "Q = (18 − 3(x + 3) − x(x − 3))/((x − 3)²(x + 3))",
+       "= (9 − x²)/((x − 3)²(x + 3))",
+       "= −(x − 3)(x + 3)/((x − 3)²(x + 3))",
+       "= −1/(x − 3)"
+      ]
+     }
     },
     {
      "ma": "6.20b",
@@ -279,7 +1070,21 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Q = −0,01",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "dap": [
+       "−0,01",
+       "−1/100"
+      ],
+      "phim": [],
+      "nhieu": [],
+      "loi_giai": [
+       "Theo câu a, Q = −1/(x − 3)",
+       "Với x = 103: Q = −1/(103 − 3) = −1/100 = −0,01"
+      ]
+     }
     },
     {
      "ma": "6.21a",
@@ -288,7 +1093,21 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Quy đồng với mẫu chung abc: 1/(ab) + 1/(bc) + 1/(ca) = (c + a + b)/(abc) = 0/(abc) = 0 vì a + b + c = 0.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 4,
+      "buoc": [
+       "1/(ab) + 1/(bc) + 1/(ca) = c/(abc) + a/(abc) + b/(abc)",
+       "= (a + b + c)/(abc)",
+       "Vì a + b + c = 0 nên (a + b + c)/(abc) = 0/(abc) = 0",
+       "Vậy 1/(ab) + 1/(bc) + 1/(ca) = 0"
+      ],
+      "nhieu": [
+       "1/(ab) + 1/(bc) + 1/(ca) = (1 + 1 + 1)/(abc)",
+       "= (a + b + c)/(a²b²c²)"
+      ]
+     }
     },
     {
      "ma": "6.21b",
@@ -297,7 +1116,20 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Quy đồng với mẫu chung (x − y)(y − z)(z − x): tổng bằng ((z − x) + (x − y) + (y − z))/((x − y)(y − z)(z − x)) = 0/((x − y)(y − z)(z − x)) = 0.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 3,
+      "buoc": [
+       "MTC = (x − y)(y − z)(z − x)",
+       "1/((x − y)(y − z)) + 1/((y − z)(z − x)) + 1/((z − x)(x − y)) = ((z − x) + (x − y) + (y − z))/((x − y)(y − z)(z − x))",
+       "= 0/((x − y)(y − z)(z − x)) = 0"
+      ],
+      "nhieu": [
+       "1/((x − y)(y − z)) + 1/((y − z)(z − x)) + 1/((z − x)(x − y)) = (1 + 1 + 1)/((x − y)(y − z)(z − x))",
+       "1/((x − y)(y − z)) + 1/((y − z)(z − x)) + 1/((z − x)(x − y)) = ((x − z) + (x − y) + (y − z))/((x − y)(y − z)(z − x))"
+      ]
+     }
     },
     {
      "ma": "6.22",
@@ -306,7 +1138,29 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Từ 3y − x = 6 suy ra x = 3y − 6 và 3y = x + 6. Do đó x/(y − 2) = (3y − 6)/(y − 2) = 3 và (2x − 3y)/(x − 6) = (2x − (x + 6))/(x − 6) = 1. Vậy P = 4, không đổi.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 4,
+      "buoc": [
+       "Từ 3y − x = 6 suy ra x = 3y − 6 và 3y = x + 6",
+       "Thay x = 3y − 6 thì x/(y − 2) = (3y − 6)/(y − 2) = 3(y − 2)/(y − 2) = 3",
+       "Thay 3y = x + 6 thì (2x − 3y)/(x − 6) = (2x − (x + 6))/(x − 6) = (x − 6)/(x − 6) = 1",
+       "Vậy P có giá trị không đổi: P = 3 + 1 = 4"
+      ],
+      "nhieu": [
+       "Thay 3y = x + 6 thì (2x − 3y)/(x − 6) = (2x − (x + 6))/(x − 6) = (x + 6)/(x − 6)",
+       "Từ 3y − x = 6 suy ra x = 3y + 6 và 3y = x − 6"
+      ],
+      "thu_tu_khac": [
+       [
+        0,
+        2,
+        1,
+        3
+       ]
+      ]
+     }
     },
     {
      "ma": "6.23a",
@@ -315,7 +1169,28 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "2/(x^2 − 1)",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "dap": [
+       "2/(x²−1)",
+       "2/((x−1)(x+1))"
+      ],
+      "phim": [
+       "x",
+       "²"
+      ],
+      "nhieu": [
+       "³",
+       "y"
+      ],
+      "loi_giai": [
+       "x³ − 3x² − x + 3 = x²(x − 3) − (x − 3) = (x − 3)(x² − 1)",
+       "(2x − 6)/(x³ − 3x² − x + 3) = 2(x − 3)/((x − 3)(x² − 1))",
+       "= 2/(x² − 1)"
+      ]
+     }
     },
     {
      "ma": "6.23b",
@@ -324,7 +1199,30 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Theo câu a: P = 2/(x^2 − 1) + 2x^2/(1 − x^2) − 6/(x − 3) = −2/(1 − x^2) + 2x^2/(1 − x^2) − 6/(x − 3) = (2x^2 − 2)/(1 − x^2) − 6/(x − 3) = −2 + (−6)/(x − 3). Vậy P = a + b/(x − 3) với a = −2, b = −6.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "hoi": "Cho biểu thức P = (2x − 6)/(x³ − 3x² − x + 3) + 2x²/(1 − x²) − 6/(x − 3) (x ≠ 3, x ≠ 1, x ≠ −1). Viết P dưới dạng a + b/(x − 3), trong đó a, b là những hằng số.",
+      "dap": [
+       "−2−6/(x−3)",
+       "−2+(−6)/(x−3)",
+       "−2+6/(3−x)"
+      ],
+      "phim": [
+       "x"
+      ],
+      "nhieu": [
+       "²",
+       "y"
+      ],
+      "loi_giai": [
+       "Theo câu a, (2x − 6)/(x³ − 3x² − x + 3) = 2/(x² − 1) = −2/(1 − x²)",
+       "P = −2/(1 − x²) + 2x²/(1 − x²) − 6/(x − 3) = (2x² − 2)/(1 − x²) − 6/(x − 3)",
+       "= −2(1 − x²)/(1 − x²) − 6/(x − 3)",
+       "= −2 − 6/(x − 3)"
+      ]
+     }
     },
     {
      "ma": "6.23c",
@@ -333,7 +1231,140 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "{4; 5; 6; 9; 2; 0; −3}",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 9,
+      "hoi": "Cho biểu thức P = (2x − 6)/(x³ − 3x² − x + 3) + 2x²/(1 − x²) − 6/(x − 3) (x ≠ 3, x ≠ 1, x ≠ −1). Tìm tập hợp các giá trị nguyên của x để P có giá trị là số nguyên. Mỗi số sau có thuộc tập hợp đó không?",
+      "dong": [
+       {
+        "chu": "x = −3: {0}",
+        "o": [
+         {
+          "dung": [
+           "Có"
+          ],
+          "sai": [
+           "Không"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "x = 0: {0}",
+        "o": [
+         {
+          "dung": [
+           "Có"
+          ],
+          "sai": [
+           "Không"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "x = 1: {0}",
+        "o": [
+         {
+          "dung": [
+           "Không"
+          ],
+          "sai": [
+           "Có"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "x = 2: {0}",
+        "o": [
+         {
+          "dung": [
+           "Có"
+          ],
+          "sai": [
+           "Không"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "x = 3: {0}",
+        "o": [
+         {
+          "dung": [
+           "Không"
+          ],
+          "sai": [
+           "Có"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "x = 4: {0}",
+        "o": [
+         {
+          "dung": [
+           "Có"
+          ],
+          "sai": [
+           "Không"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "x = 5: {0}",
+        "o": [
+         {
+          "dung": [
+           "Có"
+          ],
+          "sai": [
+           "Không"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "x = 6: {0}",
+        "o": [
+         {
+          "dung": [
+           "Có"
+          ],
+          "sai": [
+           "Không"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "x = 9: {0}",
+        "o": [
+         {
+          "dung": [
+           "Có"
+          ],
+          "sai": [
+           "Không"
+          ],
+          "hai": true
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "6.24a",
@@ -342,7 +1373,28 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "P = 1/x",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 5,
+      "dap": [
+       "1/x"
+      ],
+      "phim": [
+       "x"
+      ],
+      "nhieu": [
+       "²",
+       "y"
+      ],
+      "loi_giai": [
+       "x³ − 1 = (x − 1)(x² + x + 1); x² − x = x(x − 1); MTC = x(x − 1)(x² + x + 1)",
+       "P = ((x² + 2x)x − (x² + x + 1) − x(x − 1))/(x(x − 1)(x² + x + 1))",
+       "= (x³ + 2x² − x² − x − 1 − x² + x)/(x(x − 1)(x² + x + 1))",
+       "= (x³ − 1)/(x(x³ − 1))",
+       "= 1/x"
+      ]
+     }
     },
     {
      "ma": "6.24b",
@@ -351,7 +1403,21 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Theo câu a, P = 1/x. Nếu x, P đều nguyên thì x là ước nguyên của 1, do đó x ∈ {1; −1}. Loại x = 1 vì không thoả mãn điều kiện x ≠ 0, x ≠ 1. Vậy chỉ có x = −1 để P nhận giá trị nguyên.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 4,
+      "buoc": [
+       "Theo câu a, P = 1/x với x ≠ 0 và x ≠ 1",
+       "Nếu x và P đều là số nguyên thì x là ước của 1, tức là x = 1 hoặc x = −1",
+       "Loại x = 1 vì không thoả mãn điều kiện x ≠ 1",
+       "Vậy chỉ có x = −1 để P nhận giá trị nguyên"
+      ],
+      "nhieu": [
+       "Nếu x và P đều là số nguyên thì x là ước của 1, tức là x = 1",
+       "Nếu x và P đều là số nguyên thì x là bội của 1"
+      ]
+     }
     },
     {
      "ma": "6.25",
@@ -360,7 +1426,30 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "300/x + 3 + 564/(x + 5) = (3x^2 + 879x + 1 500)/(x(x + 5)) (giờ)",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 5,
+      "dap": [
+       "(3x²+879x+1500)/(x(x+5))",
+       "(3x²+879x+1500)/(x²+5x)"
+      ],
+      "phim": [
+       "x",
+       "²"
+      ],
+      "nhieu": [
+       "³",
+       "y"
+      ],
+      "loi_giai": [
+       "Đi 1/3 quãng đường đầu (300 km) hết 300/x giờ, sau đó tàu chạy 3 giờ với vận tốc 12 km/h trong lúc sửa máy",
+       "Quãng đường còn lại (km) = 900 − 300 − 12 · 3 = 564",
+       "Thời gian đi quãng đường còn lại là 564/(x + 5) giờ",
+       "Thời gian thực tế = 300/x + 3 + 564/(x + 5) = (300(x + 5) + 3x(x + 5) + 564x)/(x(x + 5))",
+       "= (3x² + 879x + 1500)/(x(x + 5))"
+      ]
+     }
     },
     {
      "ma": "6.26",
@@ -369,7 +1458,35 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "AC = 500/(x(x + 2)) + 200/(x(x + 1)) = 100(7x + 9)/(x(x + 1)(x + 2)) (cm); DE = 500/(x(x + 2)) − 200/(x(x + 1)) = 100(3x + 1)/(x(x + 1)(x + 2)) (cm)",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 7,
+      "buoc": [
+       "AB = 500/(x(x + 2)); BC = FE = 200/(x(x + 1))",
+       "AC = AB + BC = 500/(x(x + 2)) + 200/(x(x + 1))",
+       "= (500(x + 1) + 200(x + 2))/(x(x + 1)(x + 2))",
+       "= (700x + 900)/(x(x + 1)(x + 2)) = 100(7x + 9)/(x(x + 1)(x + 2))",
+       "DE = FD − FE = 500/(x(x + 2)) − 200/(x(x + 1))",
+       "= (500(x + 1) − 200(x + 2))/(x(x + 1)(x + 2))",
+       "= (300x + 100)/(x(x + 1)(x + 2)) = 100(3x + 1)/(x(x + 1)(x + 2))"
+      ],
+      "nhieu": [
+       "= (500 + 200)/(x(x + 1)(x + 2))",
+       "= (300x + 900)/(x(x + 1)(x + 2)) = 300(x + 3)/(x(x + 1)(x + 2))"
+      ],
+      "thu_tu_khac": [
+       [
+        0,
+        4,
+        5,
+        6,
+        1,
+        2,
+        3
+       ]
+      ]
+     }
     }
    ]
   },
@@ -384,7 +1501,34 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "25x^2y^3/4",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "dap": [
+       "25x²y³/4",
+       "(25x²y³)/4",
+       "25/4x²y³",
+       "(25/4)x²y³",
+       "6,25x²y³"
+      ],
+      "phim": [
+       "x",
+       "y",
+       "²",
+       "³"
+      ],
+      "nhieu": [
+       "⁴",
+       "⁵",
+       "z"
+      ],
+      "loi_giai": [
+       "2x³/(5y²) · 125y⁵/(8x) = 2x³ · 125y⁵/(5y² · 8x)",
+       "= 250x³y⁵/(40xy²)",
+       "= 25x²y³/4"
+      ]
+     }
     },
     {
      "ma": "6.27b",
@@ -393,7 +1537,31 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "−6y^2/x",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "dap": [
+       "−6y²/x",
+       "(−6y²)/x",
+       "6y²/(−x)"
+      ],
+      "phim": [
+       "x",
+       "y",
+       "²"
+      ],
+      "nhieu": [
+       "³",
+       "⁵",
+       "z"
+      ],
+      "loi_giai": [
+       "24y⁵/(7x²) · (−21x/(12y³)) = −24y⁵ · 21x/(7x² · 12y³)",
+       "= −504xy⁵/(84x²y³)",
+       "= −6y²/x"
+      ]
+     }
     },
     {
      "ma": "6.28a",
@@ -402,7 +1570,30 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "(x^2 − 9)/3",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "dap": [
+       "(x²−9)/3",
+       "(x−3)(x+3)/3",
+       "((x−3)(x+3))/3"
+      ],
+      "phim": [
+       "x",
+       "²"
+      ],
+      "nhieu": [
+       "³",
+       "y"
+      ],
+      "loi_giai": [
+       "x² − 6x + 9 = (x − 3)²; x³ + 27 = (x + 3)(x² − 3x + 9); 3x − 9 = 3(x − 3)",
+       "Tích = (x − 3)²(x + 3)(x² − 3x + 9)/((x² − 3x + 9) · 3(x − 3))",
+       "= (x − 3)(x + 3)/3",
+       "= (x² − 9)/3"
+      ]
+     }
     },
     {
      "ma": "6.28b",
@@ -411,7 +1602,27 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "(x − 1)/(6(x − 5))",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "dap": [
+       "(x−1)/(6(x−5))",
+       "(x−1)/(6x−30)"
+      ],
+      "phim": [
+       "x"
+      ],
+      "nhieu": [
+       "²",
+       "³"
+      ],
+      "loi_giai": [
+       "2x² − 20x + 50 = 2(x − 5)²; 3x + 3 = 3(x + 1); x² − 1 = (x − 1)(x + 1)",
+       "Tích = 2(x − 5)²(x − 1)(x + 1)/(3(x + 1) · 4(x − 5)³)",
+       "= (x − 1)/(6(x − 5))"
+      ]
+     }
     },
     {
      "ma": "6.29a",
@@ -420,7 +1631,27 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "(x − y)/(2x)",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "dap": [
+       "(x−y)/(2x)"
+      ],
+      "phim": [
+       "x",
+       "y"
+      ],
+      "nhieu": [
+       "²",
+       "z"
+      ],
+      "loi_giai": [
+       "(x² − y²)/(6x²y) : ((x + y)/(3xy)) = (x² − y²)/(6x²y) · 3xy/(x + y)",
+       "= (x − y)(x + y) · 3xy/(6x²y(x + y))",
+       "= (x − y)/(2x)"
+      ]
+     }
     },
     {
      "ma": "6.29b",
@@ -429,7 +1660,29 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "−40/(9y^3)",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "dap": [
+       "−40/(9y³)",
+       "(−40)/(9y³)",
+       "40/(−9y³)"
+      ],
+      "phim": [
+       "y",
+       "³"
+      ],
+      "nhieu": [
+       "x",
+       "²"
+      ],
+      "loi_giai": [
+       "16x²y² : (−18x²y⁵/5) = 16x²y² · 5/(−18x²y⁵)",
+       "= 80x²y²/(−18x²y⁵)",
+       "= −40/(9y³)"
+      ]
+     }
     },
     {
      "ma": "6.29c",
@@ -438,7 +1691,29 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "3(1 + 2x)/(2(x + 4))",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "dap": [
+       "3(1+2x)/(2(x+4))",
+       "(3(1+2x))/(2(x+4))",
+       "(6x+3)/(2x+8)",
+       "(6x+3)/(2(x+4))"
+      ],
+      "phim": [
+       "x"
+      ],
+      "nhieu": [
+       "²",
+       "y"
+      ],
+      "loi_giai": [
+       "(1 − 4x²)/(x² + 4x) : ((2 − 4x)/(3x)) = (1 − 4x²)/(x² + 4x) · 3x/(2 − 4x)",
+       "= (1 − 2x)(1 + 2x) · 3x/(x(x + 4) · 2(1 − 2x))",
+       "= 3(1 + 2x)/(2(x + 4))"
+      ]
+     }
     },
     {
      "ma": "6.30a",
@@ -447,7 +1722,27 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "1/(x + 1)",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "dap": [
+       "1/(x+1)"
+      ],
+      "phim": [
+       "x"
+      ],
+      "nhieu": [
+       "²",
+       "y"
+      ],
+      "loi_giai": [
+       "1/(x² + x) − (2 − x)/(x + 1) = (1 − x(2 − x))/(x(x + 1)) = (x − 1)²/(x(x + 1))",
+       "1/x + x − 2 = (1 + x² − 2x)/x = (x − 1)²/x",
+       "Kết quả = (x − 1)²/(x(x + 1)) : ((x − 1)²/x) = (x − 1)²/(x(x + 1)) · x/(x − 1)²",
+       "= 1/(x + 1)"
+      ]
+     }
     },
     {
      "ma": "6.30b",
@@ -456,7 +1751,28 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "(1 − 3x)/(2(1 + 3x))",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "dap": [
+       "(1−3x)/(2(1+3x))",
+       "(1−3x)/(6x+2)"
+      ],
+      "phim": [
+       "x"
+      ],
+      "nhieu": [
+       "²",
+       "y"
+      ],
+      "loi_giai": [
+       "3x/(1 − 3x) + 2x/(3x + 1) = (3x(3x + 1) + 2x(1 − 3x))/((1 − 3x)(1 + 3x)) = x(3x + 5)/((1 − 3x)(1 + 3x))",
+       "6x² + 10x = 2x(3x + 5); 1 − 6x + 9x² = (1 − 3x)²",
+       "Kết quả = x(3x + 5)/((1 − 3x)(1 + 3x)) · (1 − 3x)²/(2x(3x + 5))",
+       "= (1 − 3x)/(2(1 + 3x))"
+      ]
+     }
     },
     {
      "ma": "6.31a",
@@ -465,7 +1781,29 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "−3/(x − 3)",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "dap": [
+       "−3/(x−3)",
+       "3/(3−x)",
+       "(−3)/(x−3)"
+      ],
+      "phim": [
+       "x"
+      ],
+      "nhieu": [
+       "²",
+       "y"
+      ],
+      "loi_giai": [
+       "9/(x³ − 9x) + 1/(x + 3) = (9 + x(x − 3))/(x(x − 3)(x + 3)) = (x² − 3x + 9)/(x(x − 3)(x + 3))",
+       "(x − 3)/(x² + 3x) − x/(3x + 9) = (3(x − 3) − x · x)/(3x(x + 3)) = −(x² − 3x + 9)/(3x(x + 3))",
+       "Kết quả = (x² − 3x + 9)/(x(x − 3)(x + 3)) · 3x(x + 3)/(−(x² − 3x + 9))",
+       "= −3/(x − 3)"
+      ]
+     }
     },
     {
      "ma": "6.31b",
@@ -474,7 +1812,29 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "(x + 1)^2/(x + 3)^2",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "dap": [
+       "(x+1)²/(x+3)²",
+       "((x+1)/(x+3))²",
+       "(x²+2x+1)/(x²+6x+9)"
+      ],
+      "phim": [
+       "x",
+       "²"
+      ],
+      "nhieu": [
+       "³",
+       "y"
+      ],
+      "loi_giai": [
+       "(x + 2)/(x + 3) : ((x + 3)/(x + 1)) = (x + 2)/(x + 3) · (x + 1)/(x + 3) = (x + 2)(x + 1)/(x + 3)²",
+       "Biểu thức = (x + 1)/(x + 2) · (x + 2)(x + 1)/(x + 3)²",
+       "= (x + 1)²/(x + 3)²"
+      ]
+     }
     },
     {
      "ma": "6.32a",
@@ -483,7 +1843,84 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "x − 1 ≠ 0; 1 − x^3 ≠ 0; x + 1 ≠ 0; 2x + 1 ≠ 0 và x^2 + 2x + 1 ≠ 0, tức x ≠ 1; x ≠ −1; x ≠ −1/2",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 5,
+      "hoi": "Cho biểu thức P = (1/(x − 1) − x/(1 − x³) · (x² + x + 1)/(x + 1)) : (2x + 1)/(x² + 2x + 1). Viết điều kiện xác định của P: với mỗi giá trị sau của x, biểu thức P có xác định không?",
+      "dong": [
+       {
+        "chu": "x = 1: {0}",
+        "o": [
+         {
+          "dung": [
+           "Không xác định"
+          ],
+          "sai": [
+           "Xác định"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "x = −1: {0}",
+        "o": [
+         {
+          "dung": [
+           "Không xác định"
+          ],
+          "sai": [
+           "Xác định"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "x = −1/2: {0}",
+        "o": [
+         {
+          "dung": [
+           "Không xác định"
+          ],
+          "sai": [
+           "Xác định"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "x = 1/2: {0}",
+        "o": [
+         {
+          "dung": [
+           "Xác định"
+          ],
+          "sai": [
+           "Không xác định"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "x = 0: {0}",
+        "o": [
+         {
+          "dung": [
+           "Xác định"
+          ],
+          "sai": [
+           "Không xác định"
+          ],
+          "hai": true
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "6.32b",
@@ -492,7 +1929,27 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "P = (x + 1)/(x − 1)",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "dap": [
+       "(x+1)/(x−1)"
+      ],
+      "phim": [
+       "x"
+      ],
+      "nhieu": [
+       "²",
+       "³"
+      ],
+      "loi_giai": [
+       "x/(1 − x³) · (x² + x + 1)/(x + 1) = x/((1 − x)(x + 1)) = −x/((x − 1)(x + 1))",
+       "1/(x − 1) − (−x/((x − 1)(x + 1))) = (x + 1 + x)/((x − 1)(x + 1)) = (2x + 1)/((x − 1)(x + 1))",
+       "P = (2x + 1)/((x − 1)(x + 1)) · (x + 1)²/(2x + 1)",
+       "= (x + 1)/(x − 1)"
+      ]
+     }
     },
     {
      "ma": "6.32c",
@@ -501,7 +1958,20 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "P = −3",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "dap": [
+       "−3"
+      ],
+      "phim": [],
+      "nhieu": [],
+      "loi_giai": [
+       "Theo câu b, P = (x + 1)/(x − 1)",
+       "Với x = 1/2 (thoả mãn điều kiện xác định), P = (1/2 + 1)/(1/2 − 1) = (3/2)/(−1/2) = −3"
+      ]
+     }
     },
     {
      "ma": "6.33a",
@@ -510,7 +1980,57 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Người thứ nhất: 1 000/x (sản phẩm/giờ); người thứ hai: 1 250/(x + 10) (sản phẩm/giờ); tỉ số năng suất người thứ hai so với người thứ nhất: 1,25x/(x + 10)",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "hoi": "Hai công nhân cùng làm một mặt hàng. Người công nhân thứ nhất làm được 1 000 sản phẩm trong x (giờ); người công nhân thứ hai làm được 1 250 sản phẩm trong x + 10 (giờ). Viết các phân thức biểu thị số sản phẩm người công nhân thứ nhất làm được trong 1 giờ; số sản phẩm người công nhân thứ hai làm được trong 1 giờ; tỉ số giữa năng suất của người công nhân thứ hai so với năng suất của người công nhân thứ nhất.",
+      "dong": [
+       {
+        "chu": "Số sản phẩm người thứ nhất làm được trong 1 giờ: {0}",
+        "o": [
+         {
+          "dung": [
+           "1000/x"
+          ],
+          "sai": [
+           "x/1000",
+           "1000x"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Số sản phẩm người thứ hai làm được trong 1 giờ: {0}",
+        "o": [
+         {
+          "dung": [
+           "1250/(x + 10)"
+          ],
+          "sai": [
+           "1250/x + 10",
+           "(x + 10)/1250"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Tỉ số năng suất của người thứ hai so với người thứ nhất: {0}",
+        "o": [
+         {
+          "dung": [
+           "1,25x/(x + 10)"
+          ],
+          "sai": [
+           "(x + 10)/(1,25x)",
+           "1,25",
+           "1,25(x + 10)/x"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "6.33b",
@@ -519,7 +2039,27 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Tỉ số bằng 1,2 (tức 6/5); năng suất người thứ hai tăng 20% so với người thứ nhất",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "hoi": "Hai công nhân cùng làm một mặt hàng. Người công nhân thứ nhất làm được 1 000 sản phẩm trong x (giờ); người công nhân thứ hai làm được 1 250 sản phẩm trong x + 10 (giờ). Trong trường hợp x = 240, hãy tính tỉ số giữa năng suất của người công nhân thứ hai so với năng suất của người công nhân thứ nhất, rồi cho biết năng suất lao động của người công nhân thứ hai tăng bao nhiêu phần trăm so với người công nhân thứ nhất.",
+      "dap": [
+       "20%",
+       "20"
+      ],
+      "phim": [
+       "%"
+      ],
+      "nhieu": [
+       "x"
+      ],
+      "loi_giai": [
+       "Với x = 240, tỉ số năng suất bằng 1,25 · 240/(240 + 10) = 300/250 = 1,2",
+       "Năng suất người thứ hai bằng 1,2 · 100% = 120% năng suất người thứ nhất",
+       "Vậy năng suất người thứ hai tăng 120% − 100% = 20% so với người thứ nhất"
+      ]
+     }
     }
    ]
   },
@@ -534,7 +2074,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "D",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Biểu thức nào sau đây không phải là phân thức đại số?",
+      "cac": [
+       "2x + 1",
+       "√5",
+       "π",
+       "√x"
+      ],
+      "dap": "D"
+     }
     },
     {
      "ma": "Trắc nghiệm 2 (tr.14)",
@@ -543,7 +2095,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "B",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Phân thức nào sau đây bằng phân thức (16x⁴ − 1)/(12x³ − 3x)?",
+      "cac": [
+       "(4x² − 1)/(3x)",
+       "(4x² + 1)/(3x)",
+       "(4x² − 1)/(4x − 3)",
+       "(4x² + 1)/(4 − 3x)"
+      ],
+      "dap": "B"
+     }
     },
     {
      "ma": "Trắc nghiệm 3 (tr.14)",
@@ -552,7 +2116,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "C",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Đa thức nào sau đây không thể chọn làm mẫu thức chung của hai phân thức x/(3(x² − 1)(x + 2)) và (x³ − x + 1)/((x² − 4)(x³ + 1))?",
+      "cac": [
+       "3(x² − 1)(x² − 4)(x² − x + 1)",
+       "3(x² − 1)(x² − 4)(x³ + 1)",
+       "3(x² − 1)(x² − 4)(x² + x + 1)",
+       "3(x⁴ − 1)(x⁶ − 1)(x⁶ − 64)"
+      ],
+      "dap": "C"
+     }
     },
     {
      "ma": "Trắc nghiệm 4 (tr.14)",
@@ -561,7 +2137,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "A",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Giá trị của phân thức (8x − 4)/(8x³ − 1) tại x = −0,5 là",
+      "cac": [
+       "4",
+       "−4",
+       "0,25",
+       "−0,25"
+      ],
+      "dap": "A"
+     }
     },
     {
      "ma": "Trắc nghiệm 5 (tr.14)",
@@ -570,7 +2158,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "B",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Rút gọn biểu thức (x − 1)/(x³ + 1) + (1 − 2x)/(x − 1) − (3x + 2)/(x³ + 1) + (1 − x)/(x³ + 1) + 3x/(x³ + 1) + (1 − 2x)/(1 − x), ta được kết quả là",
+      "cac": [
+       "2/(x − 1)",
+       "−2/(x³ + 1)",
+       "2/(x³ + 1)",
+       "2/(x + 1)"
+      ],
+      "dap": "B"
+     }
     },
     {
      "ma": "6.34a",
@@ -579,7 +2179,44 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Điều kiện xác định: x^2 − 9 ≠ 0 (x ≠ 3 và x ≠ −3); tập hợp các giá trị không thoả mãn: {3; −3}",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "Cho phân thức P = (x² − 4x + 3)/(x² − 9). Viết điều kiện xác định của phân thức. Tìm tập hợp tất cả các giá trị của x không thoả mãn điều kiện xác định.",
+      "dong": [
+       {
+        "chu": "Điều kiện xác định: {0}",
+        "o": [
+         {
+          "dung": [
+           "x ≠ 3 và x ≠ −3"
+          ],
+          "sai": [
+           "x ≠ 3",
+           "x ≠ −3",
+           "x ≠ 1 và x ≠ 3"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Tập hợp các giá trị của x không thoả mãn điều kiện xác định: {0}",
+        "o": [
+         {
+          "dung": [
+           "{3; −3}"
+          ],
+          "sai": [
+           "{3}",
+           "{1; 3}",
+           "{1; 3; −3}"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "6.34b",
@@ -588,7 +2225,26 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "P = (x − 1)/(x + 3)",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "dap": [
+       "(x−1)/(x+3)"
+      ],
+      "phim": [
+       "x"
+      ],
+      "nhieu": [
+       "²",
+       "y"
+      ],
+      "loi_giai": [
+       "x² − 4x + 3 = (x − 1)(x − 3); x² − 9 = (x − 3)(x + 3)",
+       "P = (x − 1)(x − 3)/((x − 3)(x + 3))",
+       "= (x − 1)/(x + 3)"
+      ]
+     }
     },
     {
      "ma": "6.34c",
@@ -597,7 +2253,126 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "{−7; −5; −4; −2; −1; 1}",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 8,
+      "hoi": "Cho phân thức P = (x² − 4x + 3)/(x² − 9). Tìm tập hợp tất cả các giá trị nguyên của x để phân thức P nhận giá trị là số nguyên. Mỗi số sau có thuộc tập hợp đó không?",
+      "dong": [
+       {
+        "chu": "x = −7: {0}",
+        "o": [
+         {
+          "dung": [
+           "Có"
+          ],
+          "sai": [
+           "Không"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "x = −5: {0}",
+        "o": [
+         {
+          "dung": [
+           "Có"
+          ],
+          "sai": [
+           "Không"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "x = −4: {0}",
+        "o": [
+         {
+          "dung": [
+           "Có"
+          ],
+          "sai": [
+           "Không"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "x = −3: {0}",
+        "o": [
+         {
+          "dung": [
+           "Không"
+          ],
+          "sai": [
+           "Có"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "x = −2: {0}",
+        "o": [
+         {
+          "dung": [
+           "Có"
+          ],
+          "sai": [
+           "Không"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "x = −1: {0}",
+        "o": [
+         {
+          "dung": [
+           "Có"
+          ],
+          "sai": [
+           "Không"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "x = 1: {0}",
+        "o": [
+         {
+          "dung": [
+           "Có"
+          ],
+          "sai": [
+           "Không"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "x = 5: {0}",
+        "o": [
+         {
+          "dung": [
+           "Không"
+          ],
+          "sai": [
+           "Có"
+          ],
+          "hai": true
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "6.35",
@@ -606,7 +2381,29 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Có. Chia M cho 2x^2 + 7x − 15 được thương x − 2, dư 0 nên M = (2x^2 + 7x − 15)(x − 2). Chia M cho x^2 + 3x − 10 được thương 2x − 3, dư 0 nên M = (x^2 + 3x − 10)(2x − 3). Vậy P = (x − 2)/M, Q = (2x − 3)/M, quy đồng được với mẫu thức chung M.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 4,
+      "buoc": [
+       "M = 2x³ + 3x² − 29x + 30 = (2x² + 7x − 15)(x − 2)",
+       "M = 2x³ + 3x² − 29x + 30 = (x² + 3x − 10)(2x − 3)",
+       "M chia hết cho cả hai mẫu thức, nên P = (x − 2)/M và Q = (2x − 3)/M",
+       "Vậy có thể quy đồng hai phân thức với mẫu thức chung M"
+      ],
+      "nhieu": [
+       "M = 2x³ + 3x² − 29x + 30 = (2x² + 7x − 15)(x + 2)",
+       "M = 2x³ + 3x² − 29x + 30 = (x² + 3x − 10)(2x + 3)"
+      ],
+      "thu_tu_khac": [
+       [
+        1,
+        0,
+        2,
+        3
+       ]
+      ]
+     }
     },
     {
      "ma": "6.36",
@@ -615,7 +2412,28 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "P = 2xy",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "dap": [
+       "2xy"
+      ],
+      "phim": [
+       "x",
+       "y"
+      ],
+      "nhieu": [
+       "²",
+       "z"
+      ],
+      "loi_giai": [
+       "x − (x² + y²)/(x + y) = (x² + xy − x² − y²)/(x + y) = y(x − y)/(x + y)",
+       "2x/y + 4x/(x − y) = (2x(x − y) + 4xy)/(y(x − y)) = 2x(x + y)/(y(x − y))",
+       "P = y(x − y)/(x + y) · 2x(x + y)/(y(x − y)) : (1/y) = 2x : (1/y)",
+       "= 2xy"
+      ]
+     }
     },
     {
      "ma": "6.37",
@@ -624,7 +2442,21 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "P = (x + y)(x − y)/((x + y)a(y − x)) = −1/a, không phụ thuộc vào x, y.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 4,
+      "buoc": [
+       "x² − y² = (x + y)(x − y); ay − ax = a(y − x) = −a(x − y)",
+       "P = (x + y)(x − y)/((x + y) · (−a)(x − y))",
+       "= −1/a",
+       "Giá trị −1/a không phụ thuộc vào x, y"
+      ],
+      "nhieu": [
+       "x² − y² = (x + y)(x − y); ay − ax = a(y − x) = a(x − y)",
+       "= 1/a"
+      ]
+     }
     },
     {
      "ma": "6.38",
@@ -633,7 +2465,21 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Từ x + y + z = 0 suy ra z = −(x + y) nên x^2 + y^2 − z^2 = x^2 + y^2 − (x + y)^2 = −2xy. Do đó xy/(x^2 + y^2 − z^2) = xy/(−2xy) = −1/2, không đổi.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 4,
+      "buoc": [
+       "Từ x + y + z = 0 suy ra z = −(x + y)",
+       "Do đó x² + y² − z² = x² + y² − (x + y)² = −2xy",
+       "Suy ra xy/(x² + y² − z²) = xy/(−2xy) = −1/2",
+       "Vậy phân thức có giá trị không đổi, bằng −1/2"
+      ],
+      "nhieu": [
+       "Do đó x² + y² − z² = x² + y² − (x + y)² = 2xy",
+       "Do đó x² + y² − z² = x² + y² − (x + y)² = 0"
+      ]
+     }
     },
     {
      "ma": "6.39",
@@ -642,7 +2488,23 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "−3/2",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "dap": [
+       "−3/2",
+       "−1,5"
+      ],
+      "phim": [],
+      "nhieu": [],
+      "loi_giai": [
+       "Vì z = −(x + y) nên x² + y² − z² = x² + y² − (x + y)² = −2xy",
+       "Vì x = −(y + z) nên y² + z² − x² = y² + z² − (y + z)² = −2yz",
+       "Vì y = −(z + x) nên z² + x² − y² = z² + x² − (z + x)² = −2zx",
+       "Biểu thức = xy/(−2xy) + yz/(−2yz) + zx/(−2zx) = −1/2 − 1/2 − 1/2 = −3/2"
+      ]
+     }
     },
     {
      "ma": "6.40a",
@@ -651,7 +2513,42 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Thương 2x, dư 3: 4x^2 + 2x + 3 = (2x + 1)·2x + 3",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "Cho phân thức P = (4x² + 2x + 3)/(2x + 1) (x ≠ −1/2). Tìm thương và dư của phép chia đa thức 4x² + 2x + 3 cho đa thức 2x + 1.",
+      "dong": [
+       {
+        "chu": "Thương: {0}",
+        "o": [
+         {
+          "dung": [
+           "2x"
+          ],
+          "sai": [
+           "2x + 1",
+           "2x²"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Dư: {0}",
+        "o": [
+         {
+          "dung": [
+           "3"
+          ],
+          "sai": [
+           "2",
+           "2x + 3"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "6.40b",
@@ -660,7 +2557,99 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "P = 2x + 3/(2x + 1); x ∈ {0; 1; −1; −2}",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 6,
+      "hoi": "Cho phân thức P = (4x² + 2x + 3)/(2x + 1) (x ≠ −1/2). Sử dụng kết quả của câu a, hãy viết P dưới dạng tổng của một đa thức và một phân thức với tử thức là một hằng số. Dùng kết quả đó để tìm tất cả các giá trị nguyên của x để phân thức đã cho có giá trị cũng là số nguyên. Chọn cách viết đúng của P, rồi cho biết mỗi số sau có thuộc tập hợp các giá trị nguyên đó không.",
+      "dong": [
+       {
+        "chu": "P = {0}",
+        "o": [
+         {
+          "dung": [
+           "2x + 3/(2x + 1)"
+          ],
+          "sai": [
+           "2x + 3",
+           "2x + 1 + 2/(2x + 1)",
+           "x + 3/(2x + 1)"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "x = −2: {0}",
+        "o": [
+         {
+          "dung": [
+           "Có"
+          ],
+          "sai": [
+           "Không"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "x = −1: {0}",
+        "o": [
+         {
+          "dung": [
+           "Có"
+          ],
+          "sai": [
+           "Không"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "x = 0: {0}",
+        "o": [
+         {
+          "dung": [
+           "Có"
+          ],
+          "sai": [
+           "Không"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "x = 1: {0}",
+        "o": [
+         {
+          "dung": [
+           "Có"
+          ],
+          "sai": [
+           "Không"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "x = 4: {0}",
+        "o": [
+         {
+          "dung": [
+           "Không"
+          ],
+          "sai": [
+           "Có"
+          ],
+          "hai": true
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "6.41a",
@@ -669,7 +2658,30 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "P = −x^2 − 2x − 2",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 5,
+      "dap": [
+       "−x²−2x−2",
+       "−(x²+2x+2)"
+      ],
+      "phim": [
+       "x",
+       "²"
+      ],
+      "nhieu": [
+       "³",
+       "y"
+      ],
+      "loi_giai": [
+       "1 − x²/(x + 2) = (x + 2 − x²)/(x + 2)",
+       "(x + 2)²/x · (x + 2 − x²)/(x + 2) = (x + 2)(x + 2 − x²)/x = (−x³ − x² + 4x + 4)/x",
+       "P = (−x³ − x² + 4x + 4 − x² − 6x − 4)/x",
+       "= (−x³ − 2x² − 2x)/x",
+       "= −x² − 2x − 2"
+      ]
+     }
     },
     {
      "ma": "6.41b",
@@ -678,7 +2690,22 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Giá trị lớn nhất của P là −1, đạt tại x = −1",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "dap": [
+       "−1"
+      ],
+      "phim": [],
+      "nhieu": [],
+      "loi_giai": [
+       "Theo câu a, P = −x² − 2x − 2 = −(x + 1)² − 1",
+       "Vì (x + 1)² ≥ 0 nên P ≤ −1",
+       "Dấu bằng xảy ra khi x + 1 = 0, tức là x = −1 (thoả mãn x ≠ 0 và x ≠ −2)",
+       "Vậy giá trị lớn nhất của P là −1"
+      ]
+     }
     },
     {
      "ma": "6.42",
@@ -687,7 +2714,22 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "t = x − 2 suy ra t^2 = x^2 − 4x + 4, nên x^2 − 4x = t^2 − 4. Do đó P = (t^2 − 4 + 12)/(t^2 − 4 + 10) = (t^2 + 8)/(t^2 + 6) > 0 vì tử và mẫu đều dương.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 5,
+      "buoc": [
+       "Đặt t = x − 2 thì t² = x² − 4x + 4, suy ra x² − 4x = t² − 4",
+       "P = (t² − 4 + 12)/(t² − 4 + 10)",
+       "= (t² + 8)/(t² + 6)",
+       "Vì t² ≥ 0 nên t² + 8 > 0 và t² + 6 > 0",
+       "Vậy P > 0 với mọi x"
+      ],
+      "nhieu": [
+       "Đặt t = x − 2 thì t² = x² − 4x + 4, suy ra x² − 4x = t² + 4",
+       "P = (t² + 12)/(t² + 10)"
+      ]
+     }
     },
     {
      "ma": "6.43a",
@@ -696,7 +2738,28 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "xy/(x + y) (giờ)",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "dap": [
+       "xy/(x+y)",
+       "(xy)/(x+y)"
+      ],
+      "phim": [
+       "x",
+       "y"
+      ],
+      "nhieu": [
+       "²",
+       "z"
+      ],
+      "loi_giai": [
+       "Trong 1 giờ, vòi thứ nhất xả được 1/x bể, vòi thứ hai xả được 1/y bể",
+       "Phần bể cả hai vòi xả được trong 1 giờ = 1/x + 1/y = (x + y)/(xy)",
+       "Thời gian xả hết bể (giờ) = 1 : ((x + y)/(xy)) = xy/(x + y)"
+      ]
+     }
     },
     {
      "ma": "6.43b",
@@ -705,7 +2768,22 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "6/5 giờ, tức 1 giờ 12 phút",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "hoi": "Một bể chứa nước có hai vòi thoát. Biết rằng khi bể chứa đầy nước thì thời gian cần thiết để xả hết nước trong bể mà chỉ dùng vòi thứ nhất là x (giờ) và thời gian cần thiết để xả hết nước trong bể mà chỉ dùng vòi thứ hai là y (giờ). Tính thời gian cần thiết để xả hết nước trong bể (khi bể chứa đầy nước) nếu mở cả hai vòi, biết rằng khi chỉ mở một vòi, vòi thứ nhất xả hết nước trong 2 giờ, vòi thứ hai xả hết nước trong 3 giờ. Viết kết quả theo đơn vị giờ.",
+      "dap": [
+       "6/5",
+       "1,2"
+      ],
+      "phim": [],
+      "nhieu": [],
+      "loi_giai": [
+       "Theo câu a, thời gian xả hết bể khi mở cả hai vòi là xy/(x + y) giờ",
+       "Với x = 2, y = 3, thời gian xả hết bể (giờ) = 2 · 3/(2 + 3) = 6/5"
+      ]
+     }
     }
    ]
   },
