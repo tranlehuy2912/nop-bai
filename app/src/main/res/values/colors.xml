@@ -28,10 +28,13 @@
     <!-- Sao da mat vi sai o bai lam tren may (HangSao): xam dac, dam hon `line` mot chut de
          con van dem duoc so o, nhung khong lan voi sao rong con co the duoc. -->
     <color name="sao_mat">#C5CAD3</color>
-    <!-- Khuc "da choi" cua thanh han muc ngay (ThanhNgay): phut da tieu, xam nhu ve da xe.
-         Truoc 1/10/2026 khuc nay xanh la, ma xanh la cua vong dem nguoc ngay tren lai la
-         phan CON LAI: cung mot the, mot mau, hai nghia nguoc nhau. -->
-    <color name="da_choi">#B4BAC4</color>
+    <!-- Hai khuc cua thanh han muc ngay (ThanhNgay). Ba Huy chot ba mau co dinh ngay 1/10/2026:
+         trang (nen) la tong co the co, xam nhat la phut da kiem ma chua choi, xanh duong la
+         phut da choi. Khong doi theo trang thai cong.
+         Truoc do khuc da choi tung la xanh la (trung mau phan CON LAI cua vong dem nguoc),
+         roi xam dam #B4BAC4 kem khuc dang giu doi mau theo trang thai. -->
+    <color name="da_choi">@color/brand</color>
+    <color name="con_giu">#C9CFD8</color>
 
     <!--
       Mau cua tung mon hoc.

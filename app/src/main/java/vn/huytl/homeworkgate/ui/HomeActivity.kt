@@ -466,9 +466,9 @@ class HomeActivity : AppCompatActivity() {
     }
 
     /**
-     * Thanh han muc gio choi trong ngay: xam da choi, khuc mau dang giu, phan trang con
-     * kiem duoc. Cach tinh, cach ve va nhung loi cu nam o [ThanhNgay], dung chung voi man
-     * Cach kiem gio de con chi phai hoc mot kieu thanh.
+     * Thanh han muc gio choi trong ngay, ba mau co dinh: xanh duong da choi, xam nhat da kiem
+     * ma chua choi, trang phan con lai. Cach tinh, cach ve va nhung loi cu nam o [ThanhNgay],
+     * dung chung voi man Cach kiem gio de con chi phai hoc mot kieu thanh.
      */
     private fun veHanNgay() {
         // Tran ngay bang tong tran rieng cua moi phan (29/9/2026).
@@ -477,9 +477,8 @@ class HomeActivity : AppCompatActivity() {
             return
         }
         val so = ThanhNgay.so(gate)
-        val mauCon = ThanhNgay.mauCon(gate)
         binding.khungHanNgay.visibility = View.VISIBLE
-        ThanhNgay.ve(binding.khungThanh, binding.phanDaChoi, binding.phanDangGiu, so, mauCon)
+        ThanhNgay.ve(binding.khungThanh, binding.phanDaChoi, binding.phanDangGiu, so)
 
         binding.chuHanNgay.text = SpannableStringBuilder().apply {
             // "Được chơi" chu khong "kiếm được" tu 1/10/2026: so nay gom ca gio nguoi lon
@@ -494,7 +493,7 @@ class HomeActivity : AppCompatActivity() {
              * chơi 15)", nhung khong cho nao noi so nao la khuc mau nao. Gio moi so co mot
              * cham cung mau khuc cua no, xep trai sang phai nhu tren thanh.
              */
-            val chuThich = ThanhNgay.chuThich(this@HomeActivity, so, mauCon)
+            val chuThich = ThanhNgay.chuThich(this@HomeActivity, so)
             if (chuThich.isNotEmpty()) append('\n').append(chuThich)
         }
     }

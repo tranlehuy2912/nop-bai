@@ -13,18 +13,22 @@ import androidx.annotation.ColorRes
 import androidx.core.content.ContextCompat
 import kotlin.math.roundToInt
 import vn.huytl.homeworkgate.R
-import vn.huytl.homeworkgate.data.GateState
 import vn.huytl.homeworkgate.data.GateStore
 
 /**
  * Thanh han muc gio choi trong ngay, ve chung cho man chinh va man Cach kiem gio.
  *
- * Ba khuc tren mot truc:
- *   - xam: phut da choi that trong ngay, dem bang dong ho ([GateStore.msDaChoiHomNay]);
- *   - mau cua trang thai: phut dang giu, chua choi ([GateStore.msDangGiu]);
- *   - trang: phut hom nay con kiem them duoc bang bai tap ([GateStore.phutConLaiHomNay]).
- * Hai khuc dau nam sat nhau, khong khe ho: Ba Huy chon vay ngay 1/10/2026, sau khi xem ban
- * ve thu co khe trang 2dp giua hai khuc.
+ * Ba mau co dinh, Ba Huy chot ngay 1/10/2026 ("cho 3 màu thôi"):
+ *   - trang (nen cua khung): ca thanh, tong so phut hom nay co the co;
+ *   - xam nhat: phut da kiem duoc ma chua choi ([GateStore.msDangGiu]);
+ *   - xanh duong: phut da choi that trong ngay, dem bang dong ho ([GateStore.msDaChoiHomNay]).
+ * Xanh duong nam ben trai, de len phan da kiem, giong thanh xem video: phan da xem va phan
+ * da tai. Hai khuc sat nhau, khong khe ho (Ba Huy chon sau khi xem ban ve thu co khe 2dp).
+ *
+ * Mau KHONG doi theo trang thai cong. Ban dau tien cua ngay 1/10 cho khuc dang giu mang mau
+ * cua vong dem nguoc (xanh la dang choi, vang tam dung, xanh duong phieu chua bam), de noi no
+ * voi con so o tren; Ba Huy xem roi chon ba mau dung yen: thanh doi mau la thu lam anh khong
+ * doan ra quy luat tu dau.
  *
  * "Duoc choi" la hai khuc dau cong lai, nen gio nguoi lon cho (Ba Huy cho, ba noi cho,
  * thuong viec nha, quy gio choi) tu nam trong do: cho 30 phut thi so duoc choi va ca thanh
@@ -63,25 +67,13 @@ object ThanhNgay {
         return So(daChoi, con, gate.phutConLaiHomNay(nowWall))
     }
 
-    /**
-     * Mau khuc dang giu: dung mau cua vong dem nguoc hay cua so to tren the luc do. Dang
-     * choi xanh la, tam dung vang, phieu chua bam choi xanh duong. Nhin la noi duoc khuc
-     * mau tren thanh voi con so o tren.
-     */
-    @ColorRes
-    fun mauCon(gate: GateStore): Int = when (gate.state) {
-        GateState.ACTIVE -> R.color.ok
-        GateState.PAUSED -> R.color.wait
-        else -> R.color.brand
-    }
-
-    fun ve(khung: LinearLayout, phanDaChoi: View, phanCon: View, so: So, @ColorRes mauCon: Int) {
+    fun ve(khung: LinearLayout, phanDaChoi: View, phanCon: View, so: So) {
         val ct = khung.context
         // Thuoc tinh clipToOutline trong XML chi co tu Android 12 (minSdk o day la 26); dat
         // trong code thi may cu hon cung bo tron hai dau khuc mau theo nen.
         khung.clipToOutline = true
         phanDaChoi.setBackgroundColor(ContextCompat.getColor(ct, R.color.da_choi))
-        phanCon.setBackgroundColor(ContextCompat.getColor(ct, mauCon))
+        phanCon.setBackgroundColor(ContextCompat.getColor(ct, R.color.con_giu))
         // Phan con kiem duoc khong can View nao: no chinh la nen trang cua khung, mien la
         // tong trong so bang ca thanh. Thieu dong nay la loi dau tien trong danh sach tren.
         khung.weightSum = so.tong.coerceAtLeast(1).toFloat()
@@ -97,7 +89,7 @@ object ThanhNgay {
      * xep theo thu tu trai sang phai cua thanh. Khuc nao bang 0 thi khong noi; ca hai bang
      * 0 thi tra chuoi rong, de ben goi khoi xuong dong.
      */
-    fun chuThich(ct: Context, so: So, @ColorRes mauCon: Int): CharSequence {
+    fun chuThich(ct: Context, so: So): CharSequence {
         val sb = SpannableStringBuilder()
         fun muc(@ColorRes mau: Int, chu: String) {
             if (sb.isNotEmpty()) sb.append("     ")
@@ -110,7 +102,7 @@ object ThanhNgay {
             sb.append(chu)
         }
         if (so.daChoi > 0) muc(R.color.da_choi, "đã chơi ${so.daChoi}")
-        if (so.con > 0) muc(mauCon, "còn ${so.con}")
+        if (so.con > 0) muc(R.color.con_giu, "còn ${so.con}")
         return sb
     }
 

@@ -97,15 +97,14 @@ class CachKiemGioActivity : AppCompatActivity() {
      */
     private fun veHomNay() {
         val so = ThanhNgay.so(gate)
-        val mauCon = ThanhNgay.mauCon(gate)
 
         binding.txtHomNay.text = "Hôm nay được chơi ${so.duoc}/${so.tong} phút"
-        ThanhNgay.ve(binding.khungThanh, binding.phanDaChoi, binding.phanDangGiu, so, mauCon)
+        ThanhNgay.ve(binding.khungThanh, binding.phanDaChoi, binding.phanDangGiu, so)
 
         binding.txtHomNayPhu.text = SpannableStringBuilder().apply {
             // Chu thich mau thay cho cau "Đang giữ N phút chưa chơi" truoc 1/10/2026: cung
             // con so do, nhung co cham mau noi no voi khuc nao tren thanh.
-            val chuThich = ThanhNgay.chuThich(this@CachKiemGioActivity, so, mauCon)
+            val chuThich = ThanhNgay.chuThich(this@CachKiemGioActivity, so)
             if (chuThich.isNotEmpty()) append(chuThich).append('\n')
             if (so.conKiem > 0) {
                 append("Làm bài nữa thì hôm nay còn kiếm thêm được tối đa ${so.conKiem} phút.")
