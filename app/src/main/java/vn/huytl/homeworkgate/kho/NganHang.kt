@@ -195,14 +195,42 @@ object NganHang {
         /*
          * De thi Tieng Anh 8 Global Success cua loigiaihay.com (30/9/2026): Ba Huy dua 28 de
          * giua ki, cuoi ki va hai de cuong, muon Le Hoa giai de tren may cho quen dang de
-         * truoc gio kiem tra that. Dot dau chi ba de giua ki 1 so 1, 2, 3; phan nghe bo vi
-         * khong co file am thanh. Cach mo de o [vn.huytl.homeworkgate.data.GiaiDe.taoDeThi].
+         * truoc gio kiem tra that. Dot dau chi ba de giua ki 1 so 1, 2, 3, dot hai (cung ngay)
+         * nang len 13 de hoc ki 1; phan nghe bo vi khong co file am thanh. Cach mo de o
+         * [vn.huytl.homeworkgate.data.GiaiDe.taoDeThi].
          */
         Sach(
             nguon = "dethianh8",
             mon = PhanHoc.TIENG_ANH,
             ten = "Đề thi Tiếng Anh 8",
             file = "nganhang/dethianh8.json",
+            deThi = true
+        ),
+        /*
+         * De thi Toan 8 Ket noi tri thuc cua loigiaihay.com (1/10/2026, buoc 4.4): tam de giua ki
+         * 1 ("ba chuong dau"). Mo theo tung phan Dai so, Hinh hoc: moi cau lam tren may ghi so bai
+         * SGK no kiem ("bai_sgk"). Bai hinh ma to de khong in hinh co hinh an sau nut "Nhờ trợ
+         * giúp". De khong in thoi gian nen dong ho 90 phut. Cach mo de o
+         * [vn.huytl.homeworkgate.data.GiaiDe.taoDeThi].
+         */
+        Sach(
+            nguon = "dethitoan8",
+            mon = "Toán",
+            ten = "Đề thi Toán 8",
+            file = "nganhang/dethitoan8.json",
+            deThi = true
+        ),
+        /*
+         * De thi KHTN 8 Ket noi tri thuc cua loigiaihay.com (1/10/2026, buoc 4.4): muoi de giua ki
+         * 1, gan nhu toan cau Hoa vi loigiaihay soan theo thu tu sach. Mo theo tung phan Hoa, Li,
+         * Sinh: moi cau ghi "bai_sgk", phan de khong co cau thi khong xet. De khong in thoi gian
+         * nen dong ho 60 phut. Cach mo de o [vn.huytl.homeworkgate.data.GiaiDe.taoDeThi].
+         */
+        Sach(
+            nguon = "dethikhtn8",
+            mon = "Khoa học tự nhiên",
+            ten = "Đề thi Khoa học tự nhiên 8",
+            file = "nganhang/dethikhtn8.json",
             deThi = true
         ),
         Sach(
