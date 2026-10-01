@@ -167,7 +167,14 @@ class GateStore(context: Context) {
         get() = sp.getLong(K_PAUSED_LEFT, 0L)
         set(v) = sp.edit().putLong(K_PAUSED_LEFT, v).commit().let {}
 
-    /** So phut ba da duyet, dang cho con bam Bat dau. */
+    /**
+     * So phut ba da duyet, dang cho con bam Bat dau.
+     *
+     * Bam Bat dau roi thi o nay van giu so phut cua phieu luc do, va [extend] khong cong
+     * vao day: dang choi hay tam dung thi no khong phai so phut cua phien. Do dai doan dang
+     * chay la [durationMs], phan giu luc nghi la [pausedRemainingMs]. [pause] tung lay o
+     * nay lam tran, nen phut cong giua phien mat o lan tam dung dau tien (sua ngay 1/10/2026).
+     */
     var grantedMinutes: Int
         get() = sp.getInt(K_GRANTED_MINUTES, 0)
         private set(v) = sp.edit().putInt(K_GRANTED_MINUTES, v).apply()
@@ -646,8 +653,22 @@ class GateStore(context: Context) {
     ): Int? {
         if (state != GateState.ACTIVE) return null
 
-        // Khong bao gio tra lai nhieu hon so da duyet ban dau.
-        val tran = grantedMinutes * 60_000L
+        // Khong bao gio tra lai nhieu hon ca doan dang chay. [durationMs] la do dai doan
+        // nay: so ms luc bam Bat dau hay Choi tiep, cong ca phut [extend] them hay bot giua
+        // chung. Khoang tat man hinh chi duoc tra phan da troi trong doan, nen con lai sau
+        // khi tra toi da bang ca doan, nhu the doan chua tieu phut nao.
+        //
+        // Truoc 1/10/2026 tran la [grantedMinutes], so phut cua phieu luc bam Bat dau, ma
+        // [extend] khong sua o do. Phien da duoc cong them giua chung (Ba Huy cho them, cham
+        // bai xong, viec nha, quy gio choi) thi lan tam dung dau tien cat phan con lai ve
+        // bang phieu cu, mat het phan da cong. Vong dem tu dung phien khi man hinh tat du
+        // lau, va dung roi chay lai luc man hinh sang, nen loi nay gap that: phieu 45 phut,
+        // cham bai cong 60 o phut thu 5, tam dung o phut thu 6 con 45 thay vi 99 (thu tren
+        // may ao ngay 1/10/2026). Sau mot lan nghi thi tran cu lai long: doan choi tiep chi
+        // con phan da giu, ma moc tat man hinh co tu truoc luc choi tiep (Ba Huy bam Choi
+        // tiep tu dien thoai trong luc may van tat man hinh) thi khoang tra lai gom ca luc
+        // nghi, la phut khong ai tieu ma van duoc tra (suy tu code, chua gap tren may that).
+        val tran = durationMs
         val conLai = (remainingMs(now, nowElapsed) + creditMs).coerceIn(0L, tran)
         if (conLai <= 0L) {
             endSession(EndReason.RAN_OUT, now, nowElapsed)

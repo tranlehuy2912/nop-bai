@@ -369,6 +369,106 @@ class GateStoreTest {
     }
 
     @Test
+    fun cong_giua_phien_roi_tam_dung_thi_giu_ca_phan_vua_cong() {
+        // Loi truoc 1/10/2026: [GateStore.pause] lay phieu luc bam Bat dau lam tran, nen phut
+        // cong giua phien mat het o lan tam dung dau tien. Phieu 45 phut, cham bai cong 60
+        // o phut 5, tam dung o phut 6: con 99 chu khong phai 45.
+        val now = at(15, 0)
+        gate.approve(now, wantedMinutes = 45)
+        gate.start(now, nowElapsed = 1_000L)
+        assertEquals(100, gate.extend(60, now + 5 * minute, nowElapsed = 1_000L + 5 * minute, useQuota = true))
+
+        assertEquals(99, gate.pause(now = now + 6 * minute, nowElapsed = 1_000L + 6 * minute))
+        assertEquals(99 * minute, gate.pausedMs())
+        assertEquals(99 * minute, gate.msDangGiu(now + 10 * minute, 1_000L + 10 * minute))
+        assertEquals(6 * minute, gate.msDaChoiHomNay(now + 10 * minute, 1_000L + 10 * minute))
+
+        // Choi tiep thi lay lai du 99 phut.
+        assertEquals(99, gate.resume(now + 30 * minute, nowElapsed = 1_000L + 30 * minute))
+        assertEquals(99 * minute, gate.remainingMs(now + 30 * minute, 1_000L + 30 * minute))
+    }
+
+    @Test
+    fun tat_man_hinh_sau_khi_duoc_cong_thi_van_giu_phan_cong() {
+        // Duong gap loi tren nhieu nhat: GuardAccessibilityService tu dung phien khi man hinh
+        // tat du lau, va dung roi chay lai ngay luc man hinh sang. Phieu 45 phut, Ba Huy cho
+        // them 30 o phut 10 (ca phien 75), man hinh tat tu phut 20.
+        val now = at(15, 0)
+        gate.approve(now, wantedMinutes = 45)
+        gate.start(now, nowElapsed = 1_000L)
+        gate.extend(30, now + 10 * minute, nowElapsed = 1_000L + 10 * minute)
+
+        // Phut 30 man hinh sang ma vong dem chua kip dung: tra 10 phut tat, con 75 - 20.
+        val sang = now + 30 * minute
+        assertEquals(55, gate.pause(creditMs = 10 * minute, now = sang, nowElapsed = 1_000L + 30 * minute))
+        assertEquals(55, gate.resume(sang, nowElapsed = 1_000L + 30 * minute))
+        assertEquals(20 * minute, gate.msDaChoiHomNay(sang, 1_000L + 30 * minute))
+
+        // Choi them 5 phut thi man hinh lai tat. Lan nay vong dem dung kip o phut 45, tra 10
+        // phut tat: con 55 - 15 + 10 = 50, roi man hinh sang thi chay tiep du 50.
+        assertEquals(
+            50,
+            gate.pause(creditMs = 10 * minute, now = now + 45 * minute, nowElapsed = 1_000L + 45 * minute)
+        )
+        assertEquals(50, gate.resume(now + 50 * minute, nowElapsed = 1_000L + 50 * minute))
+        assertEquals(25 * minute, gate.msDaChoiHomNay(now + 50 * minute, 1_000L + 50 * minute))
+    }
+
+    @Test
+    fun tra_lai_vo_ly_sau_khi_cong_thi_toi_da_bang_ca_phien_da_cong() {
+        // Tran van giu: tra lai mot con so vo ly thi chi ve lai ca phien. Chi khac la ca phien
+        // tinh ca phut cong giua chung (45 + 60), khong phai phieu luc bam Bat dau.
+        val now = at(15, 0)
+        gate.approve(now, wantedMinutes = 45)
+        gate.start(now, nowElapsed = 1_000L)
+        gate.extend(60, now + minute, nowElapsed = 1_000L + minute)
+
+        val conLai = gate.pause(
+            creditMs = 10 * 60 * minute,
+            now = now + 2 * minute,
+            nowElapsed = 1_000L + 2 * minute
+        )
+
+        assertEquals(105, conLai)
+    }
+
+    @Test
+    fun bot_giua_phien_thi_tra_lai_khong_lay_lai_phan_bi_bot() {
+        // Tran di theo ca hai chieu cua [GateStore.extend]: Ba Huy bot 20 phut cua phieu 60
+        // thi ca phien con 40, tra lai vo ly cung chi ve 40 chu khong ve 60.
+        val now = at(19, 0)
+        gate.approve(now)
+        gate.start(now, nowElapsed = 1_000L)
+        gate.extend(-20, now + 10 * minute, nowElapsed = 1_000L + 10 * minute)
+
+        assertEquals(
+            40,
+            gate.pause(creditMs = 10 * 60 * minute, now = now + 11 * minute, nowElapsed = 1_000L + 11 * minute)
+        )
+    }
+
+    @Test
+    fun sau_mot_lan_nghi_tra_lai_khong_vuot_qua_doan_choi_tiep() {
+        // Tran la doan dang chay, khong phai phieu luc bam Bat dau. Nghi o phut 20 con giu 40,
+        // choi tiep o phut 30 thi doan moi dai 40 phut. Khoang tra lai dai hon phan da troi
+        // cua doan nay (moc tat man hinh co tu truoc luc choi tiep, vi du Ba Huy bam Choi tiep
+        // tu dien thoai trong luc may van tat man hinh) thi chi ve lai du 40, khong ve 50 nhu
+        // khi con lay phieu 60 phut lam tran.
+        val now = at(19, 0)
+        gate.approve(now)
+        gate.start(now, nowElapsed = 1_000L)
+        gate.pause(now = now + 20 * minute, nowElapsed = 1_000L + 20 * minute)
+        assertEquals(40, gate.resume(now + 30 * minute, nowElapsed = 1_000L + 30 * minute))
+
+        assertEquals(
+            40,
+            gate.pause(creditMs = 15 * minute, now = now + 35 * minute, nowElapsed = 1_000L + 35 * minute)
+        )
+        // Khoang tra lai lon hon phan vua choi thi doan nay tinh la khong choi phut nao.
+        assertEquals(20 * minute, gate.msDaChoiHomNay(now + 36 * minute, 1_000L + 36 * minute))
+    }
+
+    @Test
     fun dang_nghi_ma_qua_gio_chot_thi_bo_phien() {
         val now = at(20, 50)
         gate.approve(now)
