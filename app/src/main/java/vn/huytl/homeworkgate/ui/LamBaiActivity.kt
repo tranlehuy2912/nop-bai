@@ -23,6 +23,7 @@ import vn.huytl.homeworkgate.data.LuotDangLam
 import vn.huytl.homeworkgate.databinding.StActivityLamBaiBinding
 import vn.huytl.homeworkgate.kho.BoTuVung
 import vn.huytl.homeworkgate.kho.CauHoi
+import vn.huytl.homeworkgate.kho.DeThi
 import vn.huytl.homeworkgate.kho.HocToi
 import vn.huytl.homeworkgate.kho.NganHang
 import vn.huytl.homeworkgate.kho.PhanHoc
@@ -46,6 +47,13 @@ import vn.huytl.homeworkgate.kho.PhanHoc
  * dung o do hoai. Nay nut vien "Câu tiếp" nam canh Kiem tra suot luc lam: bam la sang cau sau,
  * cau nay coi nhu chua lam - khong ghi so cai, khong cap phut, luot sau lui ra cuoi ([CauBoQua]).
  * Cau dang do ma bo qua thi sao da mat van mat, nhu thoat man giua chung.
+ *
+ * CAU DE THI CO HINH AN (1/10/2026). Cau cua de Toan, KHTN quay lai day mot minh (lam lai khi
+ * de het han, on lai khi toi hen), khong co the dau bai nhu trong de. Bai hinh ma to de khong in
+ * hinh thi duoi chu cua cau co cung khoi hinh an voi man Giai de ([KhungGhep.veHinhAn]): dong
+ * nhac tu ve, nut "Nhờ trợ giúp" mo hinh goi y roi hinh day du, ghi nhat ky (moi bai moi muc mot
+ * lan trong ngay), khong tru sao. Muc da mo giu theo tung cau trong [nhoHinh] cho toi khi con
+ * roi man.
  */
 class LamBaiActivity : AppCompatActivity() {
 
@@ -61,6 +69,18 @@ class LamBaiActivity : AppCompatActivity() {
     private var dangGhi = false
     private val daGhi = mutableListOf<LamTrenMay.Ghi>()
     private val cauBoQua = mutableListOf<CauHoi>()
+
+    /** Hinh an cua cac cau de thi trong luot nay, theo id cau. Doc mot lan trong [tai]. */
+    private var hinhAn: Map<String, DeThi.HinhAn> = emptyMap()
+
+    /** Nhan cua cac cau de thi ("Bài 3a, Đề giữa kì 1 số 2"), theo id cau. Doc cung luc [hinhAn]. */
+    private var nhanDe: Map<String, String> = emptyMap()
+
+    /**
+     * Muc hinh an cua tung cau, khoa theo id cau (1/10/2026). Cat vao Bundle khi Activity bi dung
+     * lai; con roi man thi hinh an lai. Xem [KhungGhep.NhoHinhAn].
+     */
+    private val nhoHinh = KhungGhep.NhoHinhAn()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -81,7 +101,13 @@ class LamBaiActivity : AppCompatActivity() {
         b.nutBoQua.setOnClickListener { boQuaCau() }
         b.tieuDe.text = tenMan()
         b.phuDe.text = "Đang lấy câu…"
+        nhoHinh.doc(savedInstanceState)
         hoiMocRoiTai()
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        nhoHinh.luu(outState)
     }
 
     private fun tenMan(): String = when (loai) {
@@ -123,8 +149,8 @@ class LamBaiActivity : AppCompatActivity() {
     private fun tai() {
         lifecycleScope.launch {
             val ct = this@LamBaiActivity
-            val ds = withContext(Dispatchers.IO) {
-                runCatching {
+            val (ds, hinh, nhan) = withContext(Dispatchers.IO) {
+                val chon = runCatching {
                     NganHang.napNeuCan(ct)
                     when (loai) {
                         LamTrenMay.Loai.ON -> LamTrenMay.cauOn(ct)
@@ -132,8 +158,19 @@ class LamBaiActivity : AppCompatActivity() {
                         else -> LamTrenMay.cauLamThem(ct, mon)
                     }
                 }.getOrDefault(emptyList())
+                // Hinh an tim o day, ngoai luong giao dien: lan dau goi, DeThi doc ca cac file bo
+                // de tu assets. File de hong thi cau van lam duoc, chi khong co nut tro giup.
+                val cuaCau = runCatching {
+                    chon.mapNotNull { m -> DeThi.hinhAnCua(ct, m.cau.id)?.let { m.cau.id to it } }.toMap()
+                }.getOrDefault(emptyMap())
+                val nhanCau = runCatching {
+                    chon.mapNotNull { m -> DeThi.nhanCau(ct, m.cau.id)?.let { m.cau.id to it } }.toMap()
+                }.getOrDefault(emptyMap())
+                Triple(chon, cuaCau, nhanCau)
             }
             cac = ds
+            hinhAn = hinh
+            nhanDe = nhan
             vt = 0
             if (cac.isEmpty()) {
                 b.phuDe.text = when (loai) {
@@ -153,10 +190,11 @@ class LamBaiActivity : AppCompatActivity() {
         val m = cac[vt]
         luot = LuotDangLam.lay(this, m.cau.id, m.ghep.sao) ?: LuatGhep.Luot(m.ghep.sao)
         b.tieuDe.text = "Câu ${vt + 1}/${cac.size}"
-        b.phuDe.text = listOf(NganHang.sachTheoNguon(m.cau.nguon)?.ten.orEmpty(), m.cau.nhan())
+        b.phuDe.text = listOf(NganHang.sachTheoNguon(m.cau.nguon)?.ten.orEmpty(), nhanDe[m.cau.id] ?: m.cau.nhan())
             .filter { it.isNotBlank() }.joinToString(" · ")
         b.de.removeAllViews()
         KhungGhep.veDe(b.de, m)
+        hinhAn[m.cau.id]?.let { ha -> KhungGhep.veHinhAn(b.de, ha.de, ha.muc, m.cau.id, nhoHinh) }
         khung = KhungGhep(b.khung, m) { b.ket.text = "" }.also { it.ve(luot.botNhieu) }
         b.nutKiem.visibility = View.VISIBLE
         b.nutTiep.visibility = View.GONE

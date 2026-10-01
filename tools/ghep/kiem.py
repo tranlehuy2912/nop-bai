@@ -6,9 +6,15 @@ Chay:
     python3 tools/ghep/kiem.py app/src/main/assets/nganhang/sbtanh8.json
     python3 tools/ghep/kiem.py phan.json --sach app/src/main/assets/nganhang/sbttoan8t1.json
     python3 tools/ghep/kiem.py --tat-ca
+    python3 tools/ghep/kiem.py <thu muc thu>/nganhang/dethitoan8.json --hinh <thu muc thu>/hinh
+
+--hinh la thu muc goc cua anh (mac dinh app/src/main/assets/hinh), cho file nam ngoai app
+nhu de mau de thu: ten anh trong file van tinh tu thu muc nay, nhu "dethitoan8/...webp".
 
 Hai loai file:
-  - file sach day du (co "cac_bai"): kiem moi cau co "ghep".
+  - file sach day du (co "cac_bai"): kiem moi cau co "ghep". Bai co "de_thi" la mot de
+    thi in san: de Tieng Anh mo theo "den_unit", de Toan, KHTN (tu 1/10/2026) mo theo
+    "bai_sgk" cua tung cau, xem kiem_de_thi.
   - file phan (co "ghep" la bang ma -> ghep, cua mot tac tu soan cho sach da co): kiem
     tung ma co that trong sach goc, roi kiem ghep nhu tren.
 
@@ -41,6 +47,15 @@ PHIM_CO_BAN = {
 SAO_CO_DINH = {"CHON": 1, "DUNG_SAI": 1, "CHU": 2, "CAU": 2}
 KIEU = {"CHON", "DUNG_SAI", "CHU", "CAU", "BIEU_THUC", "BUOC", "O"}
 TRAN_SAO = 20
+
+TIENG_ANH = "Tiếng Anh"
+# So bai SGK cuoi cung cua moi mon co de thi mo theo bai (Ba Huy chot 1/10/2026). Phai khop
+# PhanHoc.TAT_CA ben app: Toan Dai so 1-9, 18-32 va Hinh hoc 10-17, 33-39; KHTN Hoa 1-12,
+# Li 13-29, Sinh 30-47. Moi so trong khoang deu thuoc mot phan, nen chi can kiem khoang.
+BAI_SGK_CUOI = {"Toán": 39, "Khoa học tự nhiên": 47}
+# Phan sau "<ma de>." cua ma cau de Toan, KHTN: "C5", "B3a", "B2-1a", "TL2b". Khong co dau
+# cham: ma de cung khong co, nen dau cham duy nhat trong ma cau la cho tach de voi cau.
+KHOA_CAU_DE = re.compile(r"^[A-Za-z0-9-]+$")
 
 # ------------------------------------------------------------------ chuan hoa
 # Chep tu HocThuoc.chuanHoa (app/src/main/java/.../data/HocThuoc.kt).
@@ -615,6 +630,19 @@ def kiem_ghep(so, ma, g, mon):
         kiem_o(so, ma, g)
 
 
+def la_so_nguyen(x):
+    """Python coi True la mot so nguyen; trong JSON thi true khong phai so."""
+    return isinstance(x, int) and not isinstance(x, bool)
+
+
+def kiem_ten_anh(so, ma, cac, hinh_goc):
+    for h in cac:
+        if not re.match(r"^[A-Za-z0-9._/-]+$", h):
+            so.l(ma, f"tên ảnh có ký tự lạ: {h!r}")
+        elif hinh_goc and not os.path.isfile(os.path.join(hinh_goc, h)):
+            so.l(ma, f"không thấy ảnh {h} trong {hinh_goc}")
+
+
 def kiem_cau_hoi(so, c, mon, doan_van, hinh_goc):
     ma = c.get("ma", "?")
     g = c.get("ghep")
@@ -641,18 +669,40 @@ def kiem_cau_hoi(so, c, mon, doan_van, hinh_goc):
             tn = sorted(set(re.findall(r"\b[A-F]\b", c["dap_an"]))) if isinstance(d, list) else c["dap_an"].strip()
             if c.get("loai_dap_an") == "TN" and tn != (sorted(d) if isinstance(d, list) else d):
                 so.l(ma, f"CHON: 'dap' {d!r} khác 'dap_an' {c['dap_an']!r} của câu")
-    for h in c.get("hinh", []) or []:
-        if not re.match(r"^[A-Za-z0-9._/-]+$", h):
-            so.l(ma, f"tên ảnh có ký tự lạ: {h!r}")
-        elif hinh_goc and not os.path.isfile(os.path.join(hinh_goc, h)):
-            so.l(ma, f"không thấy ảnh {h} trong {hinh_goc}")
+    kiem_ten_anh(so, ma, c.get("hinh", []) or [], hinh_goc)
+    # Hinh an cua de thi (Ba Huy chot 1/10/2026): to de khong in hinh, hinh chi co trong loi
+    # giai. Bam "Nho tro giup" lan 1 hien hinh goi y, lan 2 hien hinh day du. Xem DINH_DANG.md.
+    for k in ("hinh_goi_y", "hinh_day_du"):
+        if k not in c:
+            continue
+        cac = c[k]
+        if not isinstance(cac, list) or not cac or not all(isinstance(h, str) for h in cac):
+            so.l(ma, f"'{k}' phải là danh sách tên ảnh, không rỗng")
+            continue
+        kiem_ten_anh(so, ma, cac, hinh_goc)
+    if "hinh_day_du" in c and "hinh_goi_y" not in c:
+        so.l(ma, "có 'hinh_day_du' thì phải có 'hinh_goi_y': lần bấm trợ giúp đầu hiện hình gợi ý")
     d = c.get("doan")
     if d is not None and d not in doan_van:
         so.l(ma, f"đoạn văn {d!r} không có trong 'doan_van'")
 
 
-def kiem_de_thi(so, b, dt, ma_de):
-    """Bai la mot de thi in san (tu 30/9/2026, xem DINH_DANG.md): kiem khung de."""
+def la_trac_nghiem(c, cau_theo_ma):
+    """Cau trac nghiem: dang TRAC_NGHIEM hay ghep CHON. Cau 'trung' xet theo cau goc."""
+    if "trung" in c:
+        c = cau_theo_ma.get(c["trung"], c)
+    g = c.get("ghep") or c.get("ghep_cho_hinh")
+    return c.get("dang") == "TRAC_NGHIEM" or (isinstance(g, dict) and g.get("kieu") == "CHON")
+
+
+def kiem_de_thi(so, b, dt, ma_de, mon, cau_theo_ma):
+    """Bai la mot de thi in san (tu 30/9/2026, xem DINH_DANG.md): kiem khung de.
+
+    Hai kieu de. De Tieng Anh mo theo 'den_unit', ma cau ket bang so cau in, may hien "Cau
+    <so in>". De Toan, KHTN (Ba Huy chot 1/10/2026) mo theo 'bai_sgk' cua tung cau lam tren
+    may, nen khung de khong co 'den_unit'; ma cau la khoa tu dat ("C5", "B3a") vi tu luan
+    danh so theo bai va y, va moi cau mang 'nhan' in o dau the ("Câu 5", "Bài 3a").
+    """
     ma = dt.get("ma") if isinstance(dt, dict) else None
     ten = b.get("bai", "?")
     if not isinstance(ma, str) or not ma.strip():
@@ -661,26 +711,75 @@ def kiem_de_thi(so, b, dt, ma_de):
     if ma in ma_de:
         so.l(ma, "mã đề thi trùng")
     ma_de.add(ma)
-    den = dt.get("den_unit")
-    if not isinstance(den, int) or not 1 <= den <= 12:
-        so.l(ma, f"'den_unit' phải là số Unit 1 tới 12, đang là {den!r}")
-    phut = dt.get("phut")
-    if not isinstance(phut, int) or not 10 <= phut <= 120:
-        so.l(ma, f"'phut' phải là số phút 10 tới 120, đang là {phut!r}")
+    la_anh = mon == TIENG_ANH
+    cuoi = BAI_SGK_CUOI.get(mon)
+    if la_anh:
+        den = dt.get("den_unit")
+        if not isinstance(den, int) or not 1 <= den <= 12:
+            so.l(ma, f"'den_unit' phải là số Unit 1 tới 12, đang là {den!r}")
+        phut = dt.get("phut")
+        if not isinstance(phut, int) or not 10 <= phut <= 120:
+            so.l(ma, f"'phut' phải là số phút 10 tới 120, đang là {phut!r}")
+    else:
+        if "den_unit" in dt:
+            so.l(ma, "'den_unit' chỉ dùng cho đề Tiếng Anh; đề Toán, KHTN mở theo 'bai_sgk' của từng câu")
+        # De khong in thoi gian thi khong ghi: app dung 90 phut voi Toan, 60 voi KHTN.
+        phut = dt.get("phut")
+        if phut is not None and (not la_so_nguyen(phut) or not 10 <= phut <= 150):
+            so.l(ma, f"'phut' phải là số phút 10 tới 150, đang là {phut!r}")
+        if cuoi is None:
+            so.l(ma, f"môn {mon!r} chưa có số bài SGK trong kiem.py (BAI_SGK_CUOI)")
     truoc = 0
+    hinh_cua_nhom = {}
     for c in b.get("cac_cau", []):
         mc = c.get("ma", "?")
         if not str(mc).startswith(ma + "."):
             so.l(mc, f"câu của đề {ma} phải có mã bắt đầu bằng '{ma}.'")
-        so_in = re.match(r"^(\d+)", str(mc).rsplit(".", 1)[-1])
-        if not so_in:
-            so.l(mc, "mã câu đề thi phải kết bằng số câu in trên đề")
-        elif int(so_in.group(1)) <= truoc:
-            so.l(mc, "số câu in phải tăng dần theo thứ tự trong đề")
-        else:
-            truoc = int(so_in.group(1))
-        if not str(c.get("nhom", "")).strip():
+        elif not la_anh and not KHOA_CAU_DE.match(str(mc)[len(ma) + 1:]):
+            so.l(mc, "phần sau mã đề chỉ gồm chữ không dấu, số và gạch ngang, ví dụ 'C5', 'B3a', 'B2-1a'")
+        if la_anh:
+            so_in = re.match(r"^(\d+)", str(mc).rsplit(".", 1)[-1])
+            if not so_in:
+                so.l(mc, "mã câu đề thi phải kết bằng số câu in trên đề")
+            elif int(so_in.group(1)) <= truoc:
+                so.l(mc, "số câu in phải tăng dần theo thứ tự trong đề")
+            else:
+                truoc = int(so_in.group(1))
+        nhan = c.get("nhan")
+        if nhan is None:
+            if not la_anh:
+                so.l(mc, "câu đề Toán, KHTN phải có 'nhan', chữ in ở đầu thẻ câu ('Câu 5', 'Bài 3a')")
+        elif not isinstance(nhan, str) or not nhan.strip():
+            so.l(mc, "'nhan' phải là chữ không rỗng")
+        nhom = str(c.get("nhom", "")).strip()
+        # Trac nghiem Toan, KHTN khong co loi dan chung nen nhom rong la dung.
+        if not nhom and (la_anh or not la_trac_nghiem(c, cau_theo_ma)):
             so.c(mc, "câu đề thi thiếu 'nhom' (lời dẫn của bài), máy không in được đầu phần")
+        if not la_anh and "trung" not in c:
+            # Pham vi cua de o moi phan la bai cao nhat ma cau lam tren may cham toi, nen cau
+            # co ghep ma thieu bai_sgk thi tablet khong biet bao gio mo de.
+            bai = c.get("bai_sgk")
+            if bai is None:
+                if "ghep" in c:
+                    so.l(mc, "câu làm trên máy của đề Toán, KHTN phải có 'bai_sgk' (số bài SGK câu đó kiểm)")
+            elif cuoi is not None and (not la_so_nguyen(bai) or not 1 <= bai <= cuoi):
+                so.l(mc, f"'bai_sgk' phải là số bài SGK 1 tới {cuoi}, đang là {bai!r}")
+            # Trong de, may bo dong dau cua chu cau khi no bang nhom (de bai da in o dau bai),
+            # xem KhungGhep.veDe. Chu khong bat dau bang nhom thi de bai hien hai lan.
+            g = c.get("ghep")
+            if nhom and isinstance(g, dict):
+                hien = g.get("hoi") or c.get("de") or ""
+                if isinstance(hien, str) and hien != nhom and not hien.startswith(nhom + "\n"):
+                    so.c(mc, "'hoi' nên bắt đầu bằng đúng chuỗi 'nhom' rồi xuống dòng, "
+                             "trong đề máy bỏ dòng đó vì đề bài đã in ở đầu bài")
+        # Trong de, hinh an hien mot lan duoi de bai; cau dung mot minh (On lai, lam lai) lay
+        # hinh cua chinh no (DeThi.hinhAnCua). Nen moi y cua mot bai mang du hai danh sach, va
+        # giong het nhau. Nhom rong (trac nghiem) thi moi cau la mot bai rieng.
+        if "trung" not in c and nhom:
+            hai = (c.get("hinh_goi_y"), c.get("hinh_day_du"))
+            dau = hinh_cua_nhom.setdefault(nhom, (mc, hai))
+            if dau[1] != hai:
+                so.l(mc, f"câu cùng bài với {dau[0]} phải mang đúng cùng 'hinh_goi_y' và 'hinh_day_du'")
     if not any("ghep" in c or "trung" in c for c in b.get("cac_cau", [])):
         so.l(ma, "đề thi không có câu nào làm được trên máy")
 
@@ -695,9 +794,10 @@ def kiem_sach(duong, hinh_goc):
     # Cau "trung" (de thi): tro ve cau cua de khac trong cung file, dung chung id cau do.
     ma_co_noi_dung = {c.get("ma") for b in o.get("cac_bai", []) for c in b.get("cac_cau", [])
                       if "trung" not in c and "ghep" in c}
+    cau_theo_ma = {c.get("ma"): c for b in o.get("cac_bai", []) for c in b.get("cac_cau", [])}
     for b in o.get("cac_bai", []):
         if "de_thi" in b:
-            kiem_de_thi(so, b, b["de_thi"], ma_de)
+            kiem_de_thi(so, b, b["de_thi"], ma_de, mon, cau_theo_ma)
         for c in b.get("cac_cau", []):
             ma = c.get("ma", "?")
             if ma in ma_da_gap:
@@ -708,10 +808,16 @@ def kiem_sach(duong, hinh_goc):
                     so.l(ma, "'trung' chỉ dùng cho câu của đề thi")
                 if c["trung"] not in ma_co_noi_dung:
                     so.l(ma, f"'trung' trỏ tới {c['trung']!r}, không phải câu có ghép trong file")
-                for k in ("de", "ghep", "bo_may", "doan", "hinh"):
+                # Bai SGK va hinh an lay cua cau goc; rieng 'nhan' thi cau trung co chu rieng,
+                # vi so in o hai de thuong khac nhau.
+                for k in ("de", "ghep", "bo_may", "doan", "hinh", "bai_sgk", "hinh_goi_y", "hinh_day_du"):
                     if k in c:
                         so.l(ma, f"câu 'trung' lấy nội dung của câu gốc, không được có '{k}'")
                 continue
+            if "de_thi" not in b:
+                for k in ("hinh_goi_y", "hinh_day_du"):
+                    if k in c:
+                        so.l(ma, f"'{k}' chỉ dùng cho câu của đề thi, sách thì ghi 'hinh'")
             kiem_chu_hien(so, ma, "de", c.get("de", ""))
             kiem_cau_hoi(so, c, mon, doan_van, hinh_goc)
     for k, v in doan_van.items():

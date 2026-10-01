@@ -43,7 +43,13 @@ import vn.huytl.homeworkgate.telegram.Notifier
  * Man Giai de: mot de may ra tu sach bai tap, hay mot de thi in san ([DeThi], tu 30/9/2026),
  * lam mot mach co dong ho. Luat ra de va cham de o [GiaiDe]; man nay chi ve va nhan bam. De
  * thi di theo khung cua to de: ten phan, loi dan, doan van in mot lan o dau phan, cau mang
- * so in tren de.
+ * nhan in tren de ("Câu 36", "Bài 3a" - [DeThi.Muc.nhan], tu 1/10/2026).
+ *
+ * HINH AN (1/10/2026, luat 4 Ba Huy chot). Bai hinh cua de Toan, KHTN ma to de khong in hinh
+ * thi the dau bai co dong nhac con tu ve ra giay nhap va nut "Nhờ trợ giúp": lan mot hien hinh
+ * goi y, lan hai (sau hop canh bao) hinh day du. Mot khoi cho ca bai, cac y a, b, c khong lap
+ * lai; cau trac nghiem khong co loi dan chung thi khoi nam ngay trong the cau. Ve o
+ * [KhungGhep.veHinhAn]; muc da mo nam o [nhoHinh] cho toi khi con roi man.
  *
  * BON TRANG THAI, cung mot man:
  *  - chua bat dau: the huong dan va nut Bat dau. Chua hien de: xem truoc de roi moi
@@ -79,6 +85,13 @@ class GiaiDeActivity : AppCompatActivity() {
     /** Ket qua de lam tren may vua nop, de hien "+N" o the cuoi. */
     private var vuaNopMay: GiaiDe.KetQuaNop? = null
 
+    /**
+     * Muc hinh an cua tung bai (1/10/2026), khoa theo ma de va bai ([khoaHinh]). Giu o day thi
+     * hinh da mo con mo qua moi lan ve lai trong onResume, va cat vao Bundle khi Activity bi
+     * dung lai; con roi man (Activity moi) thi hinh an lai. Xem [KhungGhep.NhoHinhAn].
+     */
+    private val nhoHinh = KhungGhep.NhoHinhAn()
+
     private val tay = Handler(Looper.getMainLooper())
     private val nhip = object : Runnable {
         override fun run() {
@@ -97,6 +110,12 @@ class GiaiDeActivity : AppCompatActivity() {
             insets
         }
         b.nutQuayLai.setOnClickListener { finish() }
+        nhoHinh.doc(savedInstanceState)
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        nhoHinh.luu(outState)
     }
 
     /** Doc lai de moi lan vao: vua chup phan tu luan xong, hay may vua cham xong. */
@@ -164,11 +183,11 @@ class GiaiDeActivity : AppCompatActivity() {
         if (!d.daBatDau) {
             val khung = theTrang()
             khung.addView(chu("Làm một mạch, như giờ kiểm tra ở lớp.", 18f, dam = true))
-            val cacDong = if (dt != null) listOfNotNull(
-                "${cacCau.size} câu, làm ngay trên máy, các phần giữ nguyên như đề in.",
-                cauBo(dt.cacMuc)?.let { "Phần nghe không làm trên máy (câu $it)." },
-                "Làm trong khoảng ${d.phutGoiY} phút như giờ thi. Quá giờ vẫn nộp được."
-            ) else listOf(
+            val cacDong = if (dt != null) {
+                listOf("${cacCau.size} câu, làm ngay trên máy, các phần giữ nguyên như đề in.") +
+                    dongBo(dt.cacMuc) +
+                    "Làm trong khoảng ${d.phutGoiY} phút như giờ thi. Quá giờ vẫn nộp được."
+            } else listOf(
                 "${cacCau.size} câu, làm ngay trên máy.",
                 "Gợi ý khoảng ${d.phutGoiY} phút. Quá giờ vẫn nộp được."
             )
@@ -177,7 +196,7 @@ class GiaiDeActivity : AppCompatActivity() {
             b.danhSach.addView(khung)
             return
         }
-        if (dt != null) veDeThi(d, dt) else cacCau.forEachIndexed { i, c -> theCauTrenMay(i + 1, c, d) }
+        if (dt != null) veDeThi(d, dt) else cacCau.forEachIndexed { i, c -> theCauTrenMay("Câu ${i + 1} · ${c.nhan()}", c, d) }
         val khung = theTrang()
         if (!d.daNop) {
             khung.addView(nut("Nộp bài") { hoiNopTrenMay() })
@@ -194,8 +213,14 @@ class GiaiDeActivity : AppCompatActivity() {
 
     /**
      * De thi in san: di theo khung cua de, dau moi phan mot the ghi ten phan, loi dan va doan
-     * van (neu phan co doan), roi tung cau voi so in tren de. Phan bo (nghe) chi con mot the
+     * van (neu phan co doan), roi tung cau voi nhan in tren de. Phan bo (nghe) chi con mot the
      * noi la khong lam, de so cau nhay tu 30 len 36 con khong ngo ngac.
+     *
+     * Hinh an (1/10/2026): bai co loi dan thi khoi hinh an nam o the dau bai, ngay duoi loi dan,
+     * mot khoi cho ca bai vi moi y cung mot hinh. Cau khong co loi dan chung (trac nghiem Toan,
+     * KHTN, [DeThi.Muc.nhom] rong) thi khong co the dau bai nao cua rieng no: khoi nam trong the
+     * cau, duoi chu cua cau. Lay muc cua y dau tien con lam tren may: y bo (vẽ hình) khong ve
+     * the nao, bai bo het thi khong co gi de lam voi hinh do.
      */
     private fun veDeThi(d: DeGiai, dt: DeThi.De) {
         val theoId = cacCau.associateBy { it.id }
@@ -207,7 +232,10 @@ class GiaiDeActivity : AppCompatActivity() {
             if (m.phan != phanTruoc || m.nhom != nhomTruoc) {
                 val cungNhom = dt.cacMuc.drop(i).takeWhile { it.phan == m.phan && it.nhom == m.nhom }
                 val doan = cungNhom.firstNotNullOfOrNull { theoId[it.cauId]?.doan?.takeIf { x -> x.isNotBlank() } }
-                b.danhSach.addView(theDauPhan(if (m.phan != phanTruoc) m.phan else "", m.nhom, doan, cauBo(cungNhom)))
+                val hinhBai = if (m.nhom.isBlank()) null
+                else cungNhom.firstOrNull { it.coHinhAn && it.boMay.isBlank() }
+                theDauPhan(dt, if (m.phan != phanTruoc) m.phan else "", m.nhom, doan, dongBo(cungNhom), hinhBai)
+                    ?.let { b.danhSach.addView(it) }
                 phanTruoc = m.phan
                 nhomTruoc = m.nhom
                 doanTruoc = doan.orEmpty()
@@ -217,26 +245,70 @@ class GiaiDeActivity : AppCompatActivity() {
             if (!daVe.add(c.id)) return@forEachIndexed
             val hienDoan = c.doan.isNotBlank() && c.doan != doanTruoc
             if (c.doan.isNotBlank()) doanTruoc = c.doan
-            theCauTrenMay(m.so, c, d, hienDoan = hienDoan, boDau = c.nhom, deThi = true)
+            theCauTrenMay(
+                m.nhan, c, d, hienDoan = hienDoan, boDau = c.nhom,
+                hinhAn = if (m.nhom.isBlank() && m.coHinhAn) dt to m else null
+            )
         }
     }
 
-    /** "31–35": cac cau bo (phan nghe) trong [cac], null khi khong co cau nao bo. */
-    private fun cauBo(cac: List<DeThi.Muc>): String? {
-        val so = cac.filter { it.boMay.isNotBlank() }.map { it.so }.filter { it > 0 }
-        if (so.isEmpty()) return null
-        return if (so.size == 1) "${so.first()}" else "${so.min()}–${so.max()}"
+    /**
+     * Khoa muc hinh an cua mot bai trong [nhoHinh]: ma de, phan, ten bai ("Bài 3" lay tu loi
+     * dan, cau khong co loi dan thi nhan cua cau). Co phan vi de co the danh so lai tu dau o
+     * phan tu luan, "Câu 1" cua hai phan la hai bai khac nhau.
+     */
+    private fun khoaHinh(dt: DeThi.De, m: DeThi.Muc): String = "${dt.ma}|${m.phan}|${DeThi.tenBai(m)}"
+
+    /**
+     * Cac dong noi cau khong lam tren may trong [cac], rong khi khong co cau nao bo. Phan nghe
+     * giu chu cu theo so in: "Phần nghe không làm trên máy (câu 31–35)." Cau bo vi ly do khac
+     * (de Toan, KHTN tu 1/10/2026: "vẽ hình", "vẽ biểu đồ") ghi theo nhan in tren de, gom cac
+     * cau cung ly do: "Không làm trên máy: Bài 3d, Bài 4c (vẽ hình)." Truoc ngay do moi cau bo
+     * deu bi goi la phan nghe.
+     */
+    private fun dongBo(cac: List<DeThi.Muc>): List<String> {
+        val bo = cac.filter { it.boMay.isNotBlank() }
+        val (nghe, khac) = bo.partition { it.boMay.equals(BO_NGHE, ignoreCase = true) }
+        return buildList {
+            val so = nghe.map { it.so }.filter { it > 0 }
+            if (so.isNotEmpty()) {
+                val cacCau = if (so.size == 1) "${so.first()}" else "${so.min()}–${so.max()}"
+                add("Phần nghe không làm trên máy (câu $cacCau).")
+            }
+            if (khac.isNotEmpty()) {
+                val theoLyDo = khac.groupBy { it.boMay }.entries.joinToString("; ") { (lyDo, cau) ->
+                    cau.joinToString(", ") { it.nhan } + " ($lyDo)"
+                }
+                add("Không làm trên máy: $theoLyDo.")
+            }
+        }
     }
 
-    /** The dau mot phan cua de thi: ten phan (khi doi phan), loi dan, doan van, cau bo. */
-    private fun theDauPhan(phan: String, nhom: String, doan: String?, bo: String?): LinearLayout {
+    /**
+     * The dau mot phan cua de thi: ten phan (khi doi phan), loi dan, khoi hinh an cua bai, cau
+     * bo, doan van. null khi khong co gi de in: de khong ghi ten phan ma cau lai khong co loi dan
+     * chung (trac nghiem Toan, KHTN co the gap tu 1/10/2026; de Anh cau nao cung co loi dan nen
+     * chua gap). Khong co dong kiem nay thi man hien mot the trong.
+     *
+     * @param hinhAn muc mang hinh an cua bai, null khi bai khong co hinh an.
+     */
+    private fun theDauPhan(
+        dt: DeThi.De,
+        phan: String,
+        nhom: String,
+        doan: String?,
+        bo: List<String>,
+        hinhAn: DeThi.Muc?
+    ): LinearLayout? {
+        if (phan.isBlank() && nhom.isBlank() && bo.isEmpty() && doan.isNullOrBlank()) return null
         val khung = theTrang()
         if (phan.isNotBlank()) khung.addView(chu(phan, 15f, dam = true, mauChu = R.color.brand_dark))
         if (nhom.isNotBlank()) {
             khung.addView(chu(KhungGhep.boThe(nhom), 17f, dam = true).apply { if (phan.isNotBlank()) dem(top = 6) })
+            if (hinhAn != null) KhungGhep.veHinhAn(khung, dt, hinhAn, khoaHinh(dt, hinhAn), nhoHinh)
         }
-        if (bo != null) {
-            khung.addView(chu("Phần nghe không làm trên máy (câu $bo).", 15f, mauChu = R.color.ink_soft).apply { dem(top = 6) })
+        bo.forEach { dong ->
+            khung.addView(chu(dong, 15f, mauChu = R.color.ink_soft).apply { dem(top = 6) })
         }
         if (!doan.isNullOrBlank()) {
             khung.addView(TextView(this).apply {
@@ -255,16 +327,19 @@ class GiaiDeActivity : AppCompatActivity() {
     }
 
     /**
+     * @param dauThe dong dau the: de thi ghi dung nhan in tren de ("Câu 36", "Bài 3a"), khong
+     *   kem ma cau trong kho; de may ra tu SBT ghi "Câu 3 · 2.26a" (so trong de, nhan cua sach).
      * @param hienDoan, boDau xem [KhungGhep.veDe]: de thi da in loi dan va doan van o the dau phan.
-     * @param deThi dong dau the chi ghi "Câu 36" nhu de in, khong kem ma cau trong kho.
+     * @param hinhAn khoi hinh an ve ngay trong the, duoi chu cua cau: chi cau de thi khong co
+     *   loi dan chung, xem [veDeThi].
      */
     private fun theCauTrenMay(
-        so: Int,
+        dauThe: String,
         c: CauHoi,
         d: DeGiai,
         hienDoan: Boolean = true,
         boDau: String = "",
-        deThi: Boolean = false
+        hinhAn: Pair<DeThi.De, DeThi.Muc>? = null
     ) {
         val muc = LamTrenMay.muc(this, c) ?: return
         val the = theTrang()
@@ -272,7 +347,7 @@ class GiaiDeActivity : AppCompatActivity() {
             orientation = LinearLayout.HORIZONTAL
             gravity = android.view.Gravity.CENTER_VERTICAL
         }
-        dau.addView(chu(if (deThi) "Câu $so" else "Câu $so · ${c.nhan()}", 14f, mauChu = R.color.ink_soft).apply {
+        dau.addView(chu(dauThe, 14f, mauChu = R.color.ink_soft).apply {
             layoutParams = LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.WRAP_CONTENT, 1f)
         })
         var luot = GiaiDe.luotCua(d, c.id, muc.ghep.sao)
@@ -296,6 +371,7 @@ class GiaiDeActivity : AppCompatActivity() {
             ).apply { topMargin = 8.dp() }
         }
         KhungGhep.veDe(deBai, muc, hienDoan = hienDoan, boDau = boDau)
+        hinhAn?.let { (dt, m) -> KhungGhep.veHinhAn(deBai, dt, m, khoaHinh(dt, m), nhoHinh) }
         the.addView(deBai)
         val o = LinearLayout(this).apply {
             orientation = LinearLayout.VERTICAL
@@ -695,6 +771,9 @@ class GiaiDeActivity : AppCompatActivity() {
         const val EXTRA_DE = "de_giai"
 
         private val CHU = listOf("A", "B", "C", "D")
+
+        /** Ly do bo cua phan nghe trong file de ("bo_may": "nghe"), xem [dongBo]. */
+        private const val BO_NGHE = "nghe"
 
         private val PHUONG_AN = Regex(
             """^(.*)\s+A\.\s+(.*)\s+B\.\s+(.*)\s+C\.\s+(.*)\s+D\.\s+(.*)$""",

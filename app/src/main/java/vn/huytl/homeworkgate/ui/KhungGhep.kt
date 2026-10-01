@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.res.ColorStateList
 import android.graphics.BitmapFactory
 import android.graphics.Typeface
+import android.os.Bundle
 import android.text.Editable
 import android.text.InputType
 import android.text.TextWatcher
@@ -17,9 +18,12 @@ import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.core.text.HtmlCompat
 import com.google.android.material.button.MaterialButton
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import kotlin.random.Random
 import vn.huytl.homeworkgate.R
+import vn.huytl.homeworkgate.data.GiaiDe
 import vn.huytl.homeworkgate.data.LamTrenMay
+import vn.huytl.homeworkgate.kho.DeThi
 import vn.huytl.homeworkgate.kho.Ghep
 
 /**
@@ -45,6 +49,11 @@ import vn.huytl.homeworkgate.kho.Ghep
  * cua phuong an khac ("Cả A và B"), tools/ghep/kiem.py canh bao neu co. Cau Dung/Sai thi khong
  * tron, nut Dung luon dung truoc: doi cho hai nut khong lam con kho nho hon, chi de bam nham.
  * Hang phim co ban cua cau bieu thuc (so, dau) cung giu nguyen nhu mot ban phim.
+ *
+ * HINH AN CUA DE THI (1/10/2026). Bai hinh ma to de khong in hinh thi con tu ve, va co nut
+ * "Nhờ trợ giúp" mo hinh tung buoc ([veHinhAn], muc giu o [NhoHinhAn]). Khoi nay cung nam o day
+ * vi hai man dung no la hai man ve de bai bang [veDe]: the dau bai o man Giai de, va cau de thi
+ * dung mot minh o man lam lai, on lai.
  */
 class KhungGhep(
     private val khung: LinearLayout,
@@ -522,6 +531,63 @@ class KhungGhep(
 
     private fun Int.dp(): Int = (this * ct.resources.displayMetrics.density).toInt()
 
+    /**
+     * Muc hinh an cua tung bai de thi trong mot lan mo man (1/10/2026): [AN] chua mo, [GOI_Y] da
+     * hien hinh goi y, [DAY_DU] da hien hinh day du. Moi man co hinh an giu mot cai.
+     *
+     * GIU TRONG ACTIVITY, KHONG GHI VAO KHO (luat 4 Ba Huy chot 1/10/2026): thoat khoi man roi
+     * vao lai (Activity moi) thi hinh an lai, nut ve lan mot, con muon xem phai bam lai (nhat ky
+     * chi ghi lan dau trong ngay, xem [GiaiDe.ghiXemHinh]). Con trong mot lan mo man thi hinh da
+     * mo phai con mo: man Giai de ve
+     * lai ca danh sach moi lan onResume (tat man hinh roi bat lai, quay ve tu man chup), va
+     * Android van co the dung lai Activity (doi co chu, he thong giet tien trinh luc man nam
+     * nen; xoay man thi khong, hai man nay khai configChanges). Nen ben goi giu mot cai trong
+     * Activity, cat vao Bundle o onSaveInstanceState ([luu]) va doc lai o onCreate ([doc]).
+     */
+    class NhoHinhAn {
+        private val muc = HashMap<String, Int>()
+
+        /**
+         * Ham ve lai khoi dang hien cua tung khoa. Hop canh bao co the mo lau toi luc man da ve
+         * lai (tat man hinh roi bat lai): bam "Vẫn xem" luc do phai doi khoi moi tren man, khong
+         * phai khoi cu da roi khoi danh sach.
+         */
+        private val dangHien = HashMap<String, () -> Unit>()
+
+        fun cua(khoa: String): Int = muc[khoa] ?: AN
+
+        /** Dat muc cua [khoa] roi ve lai khoi dang hien cua khoa do. */
+        fun dat(khoa: String, m: Int) {
+            muc[khoa] = m
+            dangHien[khoa]?.invoke()
+        }
+
+        /** Khoi vua ve thay cho khoi cu cung khoa. */
+        fun dangKy(khoa: String, veLai: () -> Unit) {
+            dangHien[khoa] = veLai
+        }
+
+        fun luu(ra: Bundle) {
+            val cacKhoa = muc.keys.toList()
+            ra.putStringArray(K_KHOA, cacKhoa.toTypedArray())
+            ra.putIntArray(K_MUC, cacKhoa.map { muc.getValue(it) }.toIntArray())
+        }
+
+        fun doc(vao: Bundle?) {
+            val cacKhoa = vao?.getStringArray(K_KHOA) ?: return
+            val cacMuc = vao.getIntArray(K_MUC) ?: return
+            cacKhoa.zip(cacMuc.toList()).forEach { (k, m) -> muc[k] = m }
+        }
+
+        companion object {
+            const val AN = 0
+            const val GOI_Y = 1
+            const val DAY_DU = 2
+            private const val K_KHOA = "hinh_an_khoa"
+            private const val K_MUC = "hinh_an_muc"
+        }
+    }
+
     companion object {
         /**
          * Hat tron cua mot luot o man lam bai tren may: ma cau cong so luot da xong.
@@ -571,6 +637,10 @@ class KhungGhep(
          * Hai tham so sau chi de thi in san dung (man Giai de, [vn.huytl.homeworkgate.kho.DeThi]):
          * ten phan va loi dan da in mot lan o dau phan, doan van in o cau dau cua doan.
          *
+         * Hinh in san ([vn.huytl.homeworkgate.kho.CauHoi.hinh]) hien ngay. Hinh an cua de thi (to
+         * de khong in hinh) khong ve o day: no thuoc ca bai chu khong thuoc mot y, nen ben goi tu
+         * dat [veHinhAn] vao cho can (the dau bai o man Giai de, duoi chu cau o man lam lai).
+         *
          * @param hienDoan false thi khong ve doan van: cau truoc trong de da ve roi.
          * @param boDau dong dau cua chu can bo khi no dung bang chuoi nay. Chu cua cau de thi la
          *   "loi dan\nnoi dung cau", de cau do dung mot minh (On lai, lam lai) van du nghia;
@@ -607,7 +677,21 @@ class KhungGhep(
                 setTextColor(ContextCompat.getColor(ct, R.color.ink))
                 setLineSpacing(3f * mat, 1f)
             })
-            muc.cau.hinh.forEach { duong ->
+            veHinh(khung, muc.cau.hinh)
+        }
+
+        /**
+         * Ve cac anh [cacDuong] (tinh tu assets/hinh/) vao [khung], moi anh mot dong, cao toi da
+         * 300dp. Tach khoi [veDe] ngay 1/10/2026 de hinh an ([veHinhAn]) hien cung kieu voi hinh
+         * in tren de. Anh khong mo duoc (thieu file) thi bo qua, nhu truoc.
+         *
+         * @return so anh ve duoc.
+         */
+        fun veHinh(khung: LinearLayout, cacDuong: List<String>, moTa: String = "Hình của câu"): Int {
+            val ct = khung.context
+            val mat = ct.resources.displayMetrics.density
+            var so = 0
+            cacDuong.forEach { duong ->
                 val bm = runCatching {
                     ct.assets.open("hinh/$duong").use { BitmapFactory.decodeStream(it) }
                 }.getOrNull() ?: return@forEach
@@ -619,9 +703,114 @@ class KhungGhep(
                     layoutParams = LinearLayout.LayoutParams(
                         ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT
                     ).apply { topMargin = (10 * mat).toInt() }
-                    contentDescription = "Hình của câu"
+                    contentDescription = moTa
+                })
+                so++
+            }
+            return so
+        }
+
+        /**
+         * Khoi hinh an cua mot bai de thi ma to de khong in hinh (luat 4, Ba Huy chot 1/10/2026),
+         * them vao cuoi [khung]. Dung chung cho the dau bai o man Giai de va cho cau de thi dung
+         * mot minh o man lam lai, on lai ([LamBaiActivity]).
+         *
+         * Muc [NhoHinhAn.AN]: dong nhac con tu ve ra giay nhap, va nut "Nhờ trợ giúp". Bam lan mot:
+         * hien hinh goi y ([DeThi.Muc.hinhGoiY]: hinh trong loi giai da xoa net, diem lo dap an);
+         * bai co hinh day du thi nut con do, khong thi nut an. Bam lan hai: hop canh bao, dong y
+         * thi hinh day du thay cho hinh goi y va nut an. Dong nhac chi hien khi con nut, vi no bao
+         * con bam nut do.
+         *
+         * KHONG TRU SAO. Mo hinh thi ghi mot dong nhat ky ([GiaiDe.ghiXemHinh], moi bai moi muc mot
+         * lan trong ngay): do la cach duy nhat Ba Huy biet con da nho hinh. Ghi hong thi hinh van
+         * hien, con khong bi ket o day.
+         *
+         * Khoi tu ve lai phan cua minh, khong nho ben goi ve lai ca man: ve lai ca man thi khung
+         * ghep cua moi cau dung lai tu dau, mat cau tra loi con dang ghep do ma chua bam Kiem tra.
+         *
+         * Bai chi co hinh day du ma khong co hinh goi y (kiem.py bat loi nay, day chi la cho phong)
+         * thi lan bam dau hien luon hop canh bao: hinh duy nhat co the lo cach lam.
+         *
+         * @param khoa khoa muc trong [nho]: ma de va bai o man Giai de, id cau o man lam lai.
+         */
+        fun veHinhAn(khung: LinearLayout, de: DeThi.De, muc: DeThi.Muc, khoa: String, nho: NhoHinhAn) {
+            val ct = khung.context
+            val mat = ct.resources.displayMetrics.density
+            val hop = LinearLayout(ct).apply {
+                orientation = LinearLayout.VERTICAL
+                layoutParams = LinearLayout.LayoutParams(
+                    ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT
+                ).apply { topMargin = (12 * mat).toInt() }
+            }
+            khung.addView(hop)
+
+            fun dong(s: String, co: Float, dam: Boolean = false, tren: Int = 0): TextView = TextView(ct).apply {
+                text = s
+                textSize = co
+                setTextColor(ContextCompat.getColor(ct, R.color.ink_soft))
+                if (dam) setTypeface(typeface, Typeface.BOLD)
+                setLineSpacing(2f * mat, 1f)
+                layoutParams = LinearLayout.LayoutParams(
+                    ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT
+                ).apply { topMargin = (tren * mat).toInt() }
+            }
+
+            fun moDayDu() {
+                MaterialAlertDialogBuilder(ct)
+                    .setTitle("Xem hình đầy đủ?")
+                    .setMessage(
+                        "Hình đầy đủ lấy từ lời giải, có thể lộ cách làm. " +
+                            "Con thử vẽ lại một lần nữa, vẫn không ra thì mới xem."
+                    )
+                    .setPositiveButton("Vẫn xem") { _, _ ->
+                        // Hai hop cung mo (bam nhanh hai lan) thi hop sau khong ghi them dong nao.
+                        if (nho.cua(khoa) == NhoHinhAn.DAY_DU) return@setPositiveButton
+                        runCatching { GiaiDe.ghiXemHinh(ct, de, muc, dayDu = true) }
+                        nho.dat(khoa, NhoHinhAn.DAY_DU)
+                    }
+                    .setNegativeButton("Thôi", null)
+                    .show()
+            }
+
+            fun ve() {
+                hop.removeAllViews()
+                val m = nho.cua(khoa)
+                val conNut = m == NhoHinhAn.AN || (m == NhoHinhAn.GOI_Y && muc.hinhDayDu.isNotEmpty())
+                if (conNut) {
+                    hop.addView(dong("Đề không in hình: con tự vẽ ra giấy nháp. Vẽ không được thì bấm Nhờ trợ giúp.", 15f))
+                }
+                if (m != NhoHinhAn.AN) {
+                    val dayDu = m == NhoHinhAn.DAY_DU
+                    val ten = if (dayDu) "Hình đầy đủ" else "Hình gợi ý"
+                    hop.addView(dong(ten, 14f, dam = true, tren = if (conNut) 10 else 0))
+                    if (veHinh(hop, if (dayDu) muc.hinhDayDu else muc.hinhGoiY, ten) == 0) {
+                        hop.addView(dong("Máy chưa có hình này.", 15f, tren = 6))
+                    }
+                }
+                if (!conNut) return
+                hop.addView(MaterialButton(ct, null, com.google.android.material.R.attr.materialButtonOutlinedStyle).apply {
+                    text = "Nhờ trợ giúp"
+                    isAllCaps = false
+                    textSize = 17f
+                    minHeight = (52 * mat).toInt()
+                    layoutParams = LinearLayout.LayoutParams(
+                        ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT
+                    ).apply { topMargin = (10 * mat).toInt() }
+                    // Doc muc luc bam, khong lay muc luc ve: nut nay co the da cu.
+                    setOnClickListener {
+                        when (nho.cua(khoa)) {
+                            NhoHinhAn.AN -> if (muc.hinhGoiY.isEmpty()) moDayDu() else {
+                                runCatching { GiaiDe.ghiXemHinh(ct, de, muc, dayDu = false) }
+                                nho.dat(khoa, NhoHinhAn.GOI_Y)
+                            }
+                            NhoHinhAn.GOI_Y -> moDayDu()
+                        }
+                    }
                 })
             }
+
+            nho.dangKy(khoa) { ve() }
+            ve()
         }
     }
 }

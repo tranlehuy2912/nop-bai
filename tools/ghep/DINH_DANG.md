@@ -199,7 +199,7 @@ Không chạy lại `tao_de.py`: script chỉ dựng 3 đề của đợt 1 vớ
 - `phut`: giờ làm bài, cũng là đồng hồ của đề trên máy.
 - `nguon_goc`: nơi lấy đề và ngày đăng, để người soạn tra lại. App không đọc trường này.
 
-Luật mở đề (`GiaiDe.taoDeThi`, `GiaiDe.moDeThi`): mỗi lúc chỉ một đề đang mở. Tablet tự mở đề có `den_unit` cao nhất trong các đề chưa nộp mà mốc Unit đã tới (cùng phạm vi thì theo thứ tự trong file), và đề sau mở từ hôm sau ngày nộp đề trước. Đề mở ra giữ 30 ngày. Lê Hòa tự mở lại đề đã nộp ở trang Luyện tập từ hôm sau, chỉ với đề đã tới phạm vi; Ba Huy mở được mọi đề bằng lệnh `MODETHI`.
+Luật mở đề (`GiaiDe.taoDeThi`, `GiaiDe.moDeThi`): mỗi môn tối đa một đề đang mở (anh Huy chốt 01/10/2026). Đề sau của môn nào mở từ hôm sau ngày nộp đề trước của chính môn đó. Với Tiếng Anh, tablet tự mở đề có `den_unit` cao nhất trong các đề chưa nộp mà mốc Unit đã tới (cùng phạm vi thì theo thứ tự trong file). Đề Toán, KHTN mở theo bài SGK, xem mục dưới. Đề mở ra giữ 30 ngày, hết hạn mà chưa nộp thì lượt sau mở lại. Lê Hòa tự mở lại đề đã nộp ở trang Luyện tập từ hôm sau, chỉ với đề đã tới phạm vi; Ba Huy mở được mọi đề bằng lệnh `MODETHI`.
 
 Ở mức câu:
 
@@ -214,4 +214,57 @@ Luật mở đề (`GiaiDe.taoDeThi`, `GiaiDe.moDeThi`): mỗi lúc chỉ một 
 - Chỗ không dùng mạo từ ghi `Ø` như sách bài tập, kể cả khi đề in `x` hay `-`.
 - Đề in không có tên phần lớn thì `phan` là chuỗi rỗng, máy chỉ in lời dẫn.
 
-`kiem.py` kiểm thêm: mã đề không trùng, `den_unit` 1 tới 12, `phut` 10 tới 120, mã câu bắt đầu bằng mã đề và số câu in tăng dần, `trung` trỏ tới câu có ghép trong file và không mang nội dung riêng.
+`kiem.py` kiểm thêm ở mọi bộ đề: mã đề không trùng trong file, mã câu bắt đầu bằng mã đề, `trung` trỏ tới câu có ghép trong file và không mang nội dung riêng (`de`, `ghep`, `bo_may`, `doan`, `hinh`, `bai_sgk`, `hinh_goi_y`, `hinh_day_du`), `hinh_goi_y` và `hinh_day_du` theo luật ở mục dưới. Riêng đề Tiếng Anh: `den_unit` 1 tới 12, `phut` 10 tới 120, số câu in tăng dần, câu thiếu `nhom` thì in lưu ý.
+
+## Đề thi Toán, KHTN (`dethitoan8.json`, `dethikhtn8.json`, từ 01/10/2026)
+
+Khung file giống `dethianh8.json` ở mục trên: mỗi `bai` là một đề, giữ đúng thứ tự in, khai trong `NganHang.SACH` với `deThi = true`. Nguồn là `dethitoan8` (`mon` "Toán") và `dethikhtn8` (`mon` "Khoa học tự nhiên"). Đề gốc là PDF của loigiaihay.com ở `~/Downloads/sgk/de thi toan/` và `de thi khtn/`. Ngày 01/10/2026 hai file này chưa có trong `assets/nganhang`. Các luật dưới đây anh Huy chốt ngày 01/10/2026.
+
+Ở mức bài:
+
+```json
+{"chuong": "Giữa học kì 1", "bai": "Đề giữa kì 1 số 2",
+ "de_thi": {"ma": "TGK1-2", "nguon_goc": "loigiaihay.com, đăng 03/09/2024"},
+ "cac_cau": [...]}
+```
+
+- `ma`: không trùng với đề nào của mọi bộ đề, kể cả đề Tiếng Anh. Toán: `TGK1-N` giữa kì 1, `TCK1-N` cuối kì 1, `TGK2-N` và `TCK2-N` ở học kì 2. KHTN: `KGK1-N`, `KCK1-N`, `KGK2-N`, `KCK2-N`. N là số đề của bản in. Chữ `T`, `K` ở đầu để mã không trùng mã đề Anh (`GK1-N`). `kiem.py` chỉ so mã đề trong một file, nên hai file trùng mã thì nó không bắt được. `chuong` và `bai` đặt như đề Anh.
+- Không có `den_unit`. Phạm vi của đề tính từ `bai_sgk` của các câu, xem luật mở đề bên dưới.
+- `phut`: chỉ ghi khi đề in thời gian làm bài, 10 tới 150. Đề không in thì bỏ trường này, đồng hồ trên máy là 90 phút với Toán, 60 phút với KHTN. Hết giờ vẫn nộp được, như đề Anh.
+- `nguon_goc`: như đề Anh. Ngày đăng là dấu thời gian ở cuối tên file PDF (`...-1725329814.pdf` là 03/09/2024), khớp với ngày đã ghi cho các đề Anh.
+
+Ở mức câu, thêm so với đề Anh:
+
+- `ma`: `<mã đề>.<khoá>`. Khoá chỉ gồm chữ không dấu, số và gạch ngang, không có dấu chấm, không trùng trong đề, đặt theo thứ tự in: trắc nghiệm `C5`, tự luận Toán `B3a` (Bài 3 ý a) hay `B2-1a` (Bài 2 ý 1a), tự luận KHTN `TL2b`. Máy không đọc số câu từ mã, nên không đòi số tăng dần như đề Anh.
+- `nhan`: chữ ở đầu thẻ câu, đúng như đề in: "Câu 5", "Bài 3a", "Bài 2.1a", "Câu 2b". Bắt buộc ở mọi câu, kể cả câu `trung`. Đề Anh không có trường này, máy hiện "Câu <số in>".
+- `bai_sgk`: số bài SGK mà câu kiểm, Toán 1 tới 39, KHTN 1 tới 47. Tên bài tra ở `toan8t1.json`, `toan8t2.json`, `khtn8.json`. Bắt buộc ở câu có `ghep`. Câu chạm hai bài thì ghi bài lớn hơn.
+- `phan`: phần lớn in trên đề, như "Phần trắc nghiệm (3 điểm)", "I. Trắc nghiệm (6 điểm)".
+- `nhom`: câu trắc nghiệm không có lời dẫn chung thì `nhom` rỗng và `hoi` chỉ có câu hỏi. Câu tự luận thì `nhom` là đề của cả bài ("Bài 3. (2,5 điểm) Cho hình bình hành ABCD ..."), mỗi ý là một câu, và `hoi` của ý bắt đầu bằng đúng chuỗi `nhom`, xuống dòng, rồi tới ý ("a) Tứ giác AKCI là hình gì? Vì sao?"). Như đề Anh, làm trong đề thì máy bỏ dòng đầu đó.
+- `de`: `nhom` (nếu có), xuống dòng, rồi nội dung câu; câu trắc nghiệm giữ các phương án như đề in. Ký hiệu viết như sách bài tập: trong `de` số mũ là `x^2`, công thức hoá học là số thường (`CaCO3`); trong `hoi`, `cac`, `buoc` là `x²`, `CaCO₃`. Góc viết "góc A", tam giác "ΔABE". Lớp chữ của PDF làm mất số mũ, chỉ số và dấu góc, nên phải đối chiếu với ảnh trang.
+- `trung`: như đề Anh. Câu `trung` không mang `bai_sgk`, `hinh_goi_y`, `hinh_day_du` (lấy của câu gốc), nhưng có `nhan` riêng vì số in ở hai đề thường khác nhau.
+- `bo_may`: lý do không làm trên máy, như "vẽ hình", "vẽ biểu đồ".
+
+Hình in sẵn trên tờ đề thì ghi `hinh` như mọi câu, máy hiện ngay. Bài hình mà tờ đề không in hình, hình chỉ có trong lời giải, thì ghi hai trường, đường dẫn tính từ `assets/hinh/` như `hinh`:
+
+- `hinh_goi_y`: ảnh hiện sau lần bấm "Nhờ trợ giúp" thứ nhất.
+- `hinh_day_du`: ảnh hiện sau lần bấm thứ hai.
+
+Có `hinh_day_du` thì phải có `hinh_goi_y`. Mọi câu của cùng một bài (cùng `nhom` khác rỗng) trong một đề mang đúng cùng hai danh sách, vì câu đứng một mình ở Ôn lại hay làm lại lấy hình của chính nó. Câu trắc nghiệm có `nhom` rỗng thì mỗi câu tự mang hình của mình. Tên ảnh theo mã đề và bài: `dethitoan8/TGK1-2.B3.goi-y.webp`, `dethitoan8/TGK1-2.B3.day-du.webp`.
+
+Trên máy, hình ẩn. Dưới đề bài có dòng nhắc và nút "Nhờ trợ giúp". Bấm lần 1 hiện hình gợi ý. Bấm lần 2 thì máy hiện hộp cảnh báo rằng hình đầy đủ có thể lộ lời giải, con đồng ý mới hiện. Thoát khỏi màn rồi vào lại thì hình ẩn lại, nút về lần 1. Mở hình không trừ sao. Con mở hình thì nhật ký ngày (`DayLog`) ghi một dòng, mỗi bài mỗi mức một lần trong ngày, ví dụ "Lê Hòa xem hình gợi ý Bài 3, Đề thi thử Toán (Đề giữa kì 1 số 2)", "Lê Hòa xem hình đầy đủ Bài 3, Đề thi thử Toán (Đề giữa kì 1 số 2)".
+
+Cách làm hai ảnh:
+
+- Lấy ảnh hình trong phần lời giải của PDF. Ảnh nhúng lấy ra được bằng `pypdf` (`page.images`). Ví dụ đề Toán giữa kì 1 số 2 có hình Bài 3 là `Image6.jpg` (1296 x 569) ở trang 6.
+- `hinh_day_du` là ảnh nguyên vẹn.
+- `hinh_goi_y` là cùng ảnh đó, đã xoá các điểm và nét mà chỉ lời giải mới có: giao điểm do lời giải tự đặt tên, đường kẻ thêm, nhất là thứ trả lời luôn câu hỏi. Mọi điểm và đoạn thẳng đề nhắc tới thì giữ. Ở TGK1-2 Bài 3, lời giải gọi O là giao điểm của AC và KI, chính là điểm ý c bắt chứng minh ba đường thẳng AC, EF, KI cùng đi qua, nên hình gợi ý xoá điểm O và chữ "O", còn các đoạn AC, BD, AI, CK, KI giữ nguyên.
+- Điểm bị xoá nằm trên nét thì vẽ lại khúc nét bị che, để đường không đứt.
+- Hai ảnh cắt cùng một khung cho khỏi lệch khi đổi qua lại, rồi lưu WebP như `cat_hinh.py` (chất lượng 85). Mở cả hai ảnh ra xem trước và sau khi xoá.
+
+Luật mở đề Toán, KHTN (`GiaiDe.taoDeThi`):
+
+- Phạm vi của đề ở mỗi phần học (Toán: Đại số `toan8ds`, Hình học `toan8hh`; KHTN: Hoá `khtn8hoa`, Lí `khtn8li`, Sinh `khtn8sinh`; xem `kho/PhanHoc.kt`) là `bai_sgk` cao nhất trong các câu làm trên máy thuộc phần đó.
+- Đề tự mở khi mọi phần có câu trong đề đều đã học tới bài đó, theo mốc "Lớp đã học tới" của từng phần. Phần không có câu nào trong đề thì không xét, kể cả khi con chưa chọn mốc của phần đó. Ví dụ một đề có câu Bài 6, Bài 9 (Đại số) và Bài 14 (Hình học) mở khi Đại số tới Bài 9 và Hình học tới Bài 14.
+- Mỗi môn tối đa một đề đang mở, như mục trên. Nhiều đề cùng đủ phạm vi thì đề rộng hơn mở trước, cùng độ rộng thì theo thứ tự trong file. Đề mở ra giữ 30 ngày, hết hạn mà chưa nộp thì lượt sau mở lại. Ba Huy mở được mọi đề bằng lệnh `MODETHI`.
+
+Với đề Toán, KHTN, `kiem.py` kiểm thêm: không có `den_unit`; `phut` nếu có thì 10 tới 150; khoá sau mã đề chỉ gồm chữ không dấu, số, gạch ngang; mọi câu có `nhan` không rỗng; câu có `ghep` có `bai_sgk` trong khoảng bài của môn; câu trắc nghiệm để `nhom` rỗng thì không bị lưu ý; `hoi` của câu có `nhom` mà không bắt đầu bằng `nhom` rồi xuống dòng thì in lưu ý. Khoảng bài của từng môn nằm ở `BAI_SGK_CUOI` trong `kiem.py`, phải khớp `PhanHoc.TAT_CA`. Kiểm một file nằm ngoài app, như đề mẫu để thử, thì thêm `--hinh <thư mục hình>`.

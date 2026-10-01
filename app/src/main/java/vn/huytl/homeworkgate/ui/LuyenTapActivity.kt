@@ -47,10 +47,15 @@ import java.util.Calendar
  * nen luat chon va dong nhat ky di sang Bang dieu khien khong doi. Cac hop hoi trong tung
  * man van giu, phong khi con vao thang mot bo chua chon.
  *
- * DE THI IN SAN (30/9/2026, [vn.huytl.homeworkgate.kho.DeThi]). Mot dong "Đề thi thử Tiếng
- * Anh", bam ra danh sach moi de kem tinh trang: mo duoc, dang mo, da lam, hay chua toi pham vi
- * Unit. De dang mo co them dong rieng mang ten de, nhu moi de Giai de. Con doi moc Unit o khoi
- * tren thi [nap] chay lai [GiaiDe.taoNeuCan], nen de toi pham vi tu mo ngay luc do.
+ * DE THI IN SAN (30/9/2026, [vn.huytl.homeworkgate.kho.DeThi]). Moi mon co de thi mot dong
+ * "Đề thi thử <mon>", theo thu tu [GiaiDe.MON] (Toan, KHTN, Tieng Anh); mon chua co de nao thi
+ * khong hien. Truoc 1/10/2026 chi co de Anh nen chi co dong "Đề thi thử Tiếng Anh". Tu ngay do
+ * co ca de Toan, KHTN, moi mon mot dong nhu hang de thi o Bang dieu khien, va dong phu (de nao
+ * dang mo, pham vi cua de khoa) noi rieng cho mot mon. Bam dong la ra danh sach de cua mon kem
+ * tinh trang: mo duoc, dang mo, da lam, hay chua toi pham vi (de Anh theo Unit, de Toan, KHTN
+ * theo bai cua tung phan, xem [GiaiDe.thieuPhamVi]). De dang mo co them dong rieng mang ten de,
+ * nhu moi de Giai de. Con doi moc o khoi tren thi [nap] chay lai [GiaiDe.taoNeuCan], nen de toi
+ * pham vi tu mo ngay luc do.
  *
  * Trang nay khong ve lai moi giay nhu man chinh, nen dem cau on va doc de Giai de ca luc
  * dang choi cung khong sao. Doc kho ngoai luong giao dien, roi moi ve.
@@ -148,8 +153,8 @@ class LuyenTapActivity : AppCompatActivity() {
         // Giai de: de dang mo chua bat dau, de xong hom nay kem diem.
         n.deMo.forEach { de ->
             // De thi mang ten rieng ("Đề giữa kì 1 số 1") len dong tren: ngay duoi con dong
-            // "Đề thi thử Tiếng Anh" cua ca danh sach de, hai dong cung ten thi con khong biet
-            // bam dong nao de lam.
+            // "Đề thi thử <mon>" cua ca danh sach de mon do, hai dong cung ten thi con khong
+            // biet bam dong nao de lam.
             val laDeThi = de.loai == GiaiDe.LOAI_DE_THI
             themDong(
                 b.boxLuyen,
@@ -173,26 +178,31 @@ class LuyenTapActivity : AppCompatActivity() {
             ) { GiaiDeActivity.mo(this, de.id) }
         }
 
-        // De thi in san: mot dong, bam la hien danh sach de. De dang mo da co dong rieng o
-        // tren (nhu moi de Giai de), dong nay de xem de nao con, de nao da lam, va tu mo.
-        if (n.deThi.isNotEmpty()) {
-            val mo = n.deThi.firstOrNull { it.dangMo != null }
-            val san = n.deThi.count { it.trangThai == GiaiDe.TT_SAN }
-            val xong = n.deThi.count { it.trangThai == GiaiDe.TT_XONG }
-            val khoa = n.deThi.filter { it.trangThai == GiaiDe.TT_KHOA }
+        // De thi in san: moi mon mot dong (1/10/2026), bam la hien danh sach de cua mon. De
+        // dang mo da co dong rieng o tren (nhu moi de Giai de), dong nay de xem de nao con, de
+        // nao da lam, va tu mo.
+        GiaiDe.MON.forEach { mon ->
+            val cua = n.deThi.filter { it.de.mon == mon }
+            if (cua.isEmpty()) return@forEach
+            val mo = cua.firstOrNull { it.dangMo != null }
+            val san = cua.count { it.trangThai == GiaiDe.TT_SAN }
+            val xong = cua.count { it.trangThai == GiaiDe.TT_XONG }
+            // Chi con de khoa thi noi pham vi cua de hep nhat: lop hoc toi do la co de dau tien.
+            // De Anh do rong la so Unit, nen van ra "Mở khi lớp học tới Unit 3" nhu truoc.
+            val khoaHep = cua.filter { it.trangThai == GiaiDe.TT_KHOA }.minByOrNull { it.de.doRong }
             themDong(
                 b.boxLuyen,
                 hinh = R.drawable.st_ic_giai_de,
-                mau = MatMon.mau(PhanHoc.TIENG_ANH),
-                ten = "Đề thi thử Tiếng Anh",
+                mau = MatMon.mau(mon),
+                ten = "Đề thi thử ${GiaiDe.tenMon(mon)}",
                 phu = when {
                     mo != null -> "${mo.de.ten} đang mở" + if (san > 0) ", thêm $san đề mở được" else ""
                     san > 0 -> "$san đề mở được" + if (xong > 0) ", đã làm $xong đề" else ""
                     xong > 0 -> "Đã làm $xong đề"
-                    khoa.isNotEmpty() -> "Mở khi lớp học tới Unit ${khoa.minOf { it.de.denUnit }}"
+                    khoaHep != null -> "Mở khi lớp học ${GiaiDe.moTaPhamVi(khoaHep.de)}"
                     else -> ""
                 }
-            ) { hoiDeThi(n.deThi) }
+            ) { hoiDeThi(mon, cua) }
         }
         // Mon chua chon moc thi khong ra de: truoc 30/9/2026 o day co them dong "Giải đề <mon>"
         // de hoi moc, nay khoi Lop da hoc toi o tren da lam viec do (dong do to do).
@@ -255,10 +265,11 @@ class LuyenTapActivity : AppCompatActivity() {
     }
 
     /**
-     * Danh sach de thi: moi de mot dong kem tinh trang. Bam de dang mo thi vao lam, de mo
-     * duoc thi mo, de da lam thi xem lai hay lam lai, de chua toi pham vi thi noi toi Unit nao.
+     * Danh sach de thi cua mot mon: moi de mot dong kem tinh trang. Bam de dang mo thi vao lam,
+     * de mo duoc thi mo, de da lam thi xem lai hay lam lai, de chua toi pham vi thi noi pham vi
+     * ("mở khi học tới Unit 3", "mở khi học Đại số tới Bài 9, Hình học tới Bài 14").
      */
-    private fun hoiDeThi(cac: List<GiaiDe.TinhTrangDeThi>) {
+    private fun hoiDeThi(mon: String, cac: List<GiaiDe.TinhTrangDeThi>) {
         val dong = cac.map { t ->
             val sao = t.lanCuoi?.let { "${it.saoDat.coerceAtLeast(0)}/${it.saoToiDa} ★" }.orEmpty()
             t.de.ten + " · " + when (t.trangThai) {
@@ -266,14 +277,31 @@ class LuyenTapActivity : AppCompatActivity() {
                 GiaiDe.TT_DANG -> "đang làm"
                 GiaiDe.TT_XONG -> "đã làm $sao"
                 GiaiDe.TT_SAN -> "chưa làm"
-                else -> "mở khi học tới Unit ${t.de.denUnit}"
+                else -> "mở khi học ${GiaiDe.moTaPhamVi(t.de)}"
             }
         }.toTypedArray()
         MaterialAlertDialogBuilder(this)
-            .setTitle("Đề thi thử Tiếng Anh")
+            .setTitle("Đề thi thử ${GiaiDe.tenMon(mon)}")
             .setItems(dong) { _, i -> chonDeThi(cac[i]) }
             .setNegativeButton("Đóng", null)
             .show()
+    }
+
+    /**
+     * Cau noi khi con bam mot de chua toi pham vi. De Anh giu cau cu (30/9/2026): de chi mot
+     * phan, them dong "Hiện ..." thi chi nhac lai so Unit vua noi. De Toan, KHTN (1/10/2026) mo
+     * theo nhieu phan, nen noi phan nao con thieu ([GiaiDe.moTaThieu]) va dong nao can doi o khoi
+     * Lop da hoc toi: ten dong o do la [PhanHoc.Phan.ten] ("Toán 8 Hình học", xem [veHocToi]),
+     * tim theo [GiaiDe.Thieu.maPhan].
+     */
+    private fun loiDeKhoa(t: GiaiDe.TinhTrangDeThi): String {
+        val phamVi = "Đề này mở khi lớp học ${GiaiDe.moTaPhamVi(t.de)}."
+        if (t.de.laTiengAnh) return "$phamVi Lớp học tới đó rồi thì đổi dòng Tiếng Anh ở khối Lớp đã học tới."
+        if (t.thieu.isEmpty()) return phamVi
+        val ten = t.thieu.map { th -> PhanHoc.theoMa(th.maPhan)?.ten ?: th.tenPhan }
+        val cacDong = if (ten.size == 1) "dòng ${ten.first()}"
+        else "các dòng ${ten.dropLast(1).joinToString(", ")} và ${ten.last()}"
+        return "$phamVi Hiện ${GiaiDe.moTaThieu(t.thieu)}. Lớp học tới đó rồi thì đổi $cacDong ở khối Lớp đã học tới."
     }
 
     private fun chonDeThi(t: GiaiDe.TinhTrangDeThi) {
@@ -281,7 +309,7 @@ class LuyenTapActivity : AppCompatActivity() {
         when (t.trangThai) {
             GiaiDe.TT_KHOA -> MaterialAlertDialogBuilder(this)
                 .setTitle(t.de.ten)
-                .setMessage("Đề này mở khi lớp học tới Unit ${t.de.denUnit}. Lớp học tới đó rồi thì đổi dòng Tiếng Anh ở khối Lớp đã học tới.")
+                .setMessage(loiDeKhoa(t))
                 .setPositiveButton("Đã hiểu", null)
                 .show()
             GiaiDe.TT_XONG -> {

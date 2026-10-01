@@ -15,8 +15,9 @@ import java.util.Locale
  */
 object DayLog {
 
-    private const val K_DAY = "log_day"
-    private const val K_TEXT = "log_text"
+    /** internal cho test chup roi tra lai nhat ky hom nay, khoi de dong gia tren may ao. */
+    internal const val K_DAY = "log_day"
+    internal const val K_TEXT = "log_text"
     private const val MAX_LINES = 40
 
     private val clock = SimpleDateFormat("HH:mm", Locale("vi", "VN"))

@@ -24,6 +24,7 @@ import vn.huytl.homeworkgate.data.BaiDaCham
 import vn.huytl.homeworkgate.data.DayLog
 import vn.huytl.homeworkgate.data.GateState
 import vn.huytl.homeworkgate.data.GateStore
+import vn.huytl.homeworkgate.data.GiaiDe
 import vn.huytl.homeworkgate.data.GioiHanApp
 import vn.huytl.homeworkgate.data.NhatKyAi
 import vn.huytl.homeworkgate.data.NhatKySuDung
@@ -346,6 +347,8 @@ object DongBo {
         val prefs = Prefs.get(context)
         val bayGio = System.currentTimeMillis()
         val conLai = gate.remainingMs()
+        // Hai truong de thi (ban cu chi de Anh, ban moi moi mon) dung chung mot lan tinh.
+        val deThi = tinhTrangDeThi(context, bayGio)
 
         val noi: Map<String, Any> = mapOf(
             Duong.F_CONG to gate.state.name,
@@ -382,7 +385,8 @@ object DongBo {
             // dien thoai chi thay "dang tam dung" ma khong hieu vi sao, trong khi
             // tablet dang bi che kin man hinh.
             Duong.F_VIEC_NHA to ViecNha.dangTreo(context)?.chuaXong.orEmpty().map { it.ten },
-            Duong.F_DE_THI to banDeThi(context, bayGio),
+            Duong.F_DE_THI to banDeThi(deThi),
+            Duong.F_CAC_DE_THI to banCacDeThi(deThi),
             Duong.F_CHE_DO_BA to mapOf(
                 "bat" to ParentMode.isActive(context),
                 "hetLuc" to if (ParentMode.coHan(context)) {
@@ -427,26 +431,56 @@ object DongBo {
     }
 
     /**
-     * Cac de thi in san va tinh trang tung de, cho hang "Đề thi thử" ben Bang dieu khien. Xem
-     * [Duong.F_DE_THI].
+     * Cac de thi Tieng Anh va tinh trang tung de, cho hang "Đề thi thử Tiếng Anh" cua Bang
+     * dieu khien ban cu. Xem [Duong.F_DE_THI].
      *
      * Nam trong ban trang thai chu khong rieng mot document: danh sach chi doi khi mot de mo ra
      * hay nop, va phep so "co gi doi khong" ben duoi da bo luot ghi khi no dung yen. Mo de
      * khong cham prefs nen khong tu day; ben kia mo man Bang la go PING, luc do ban moi di.
+     *
+     * Tu 1/10/2026 chi con de Anh: ban cu chi hieu moc Unit, va se xep de Toan, KHTN vao hang
+     * Tieng Anh. Ban moi doc [banCacDeThi].
      */
-    private fun banDeThi(context: Context, bayGio: Long): List<Map<String, Any>> =
-        runCatching { vn.huytl.homeworkgate.data.GiaiDe.tinhTrangDeThi(context, bayGio) }
+    private fun banDeThi(cac: List<GiaiDe.TinhTrangDeThi>): List<Map<String, Any>> =
+        cac.filter { it.de.laTiengAnh }.map { t ->
+            mapOf(
+                "ma" to t.de.ma,
+                "ten" to t.de.ten,
+                "den" to t.de.denUnit,
+                "tt" to t.trangThai,
+                "sao" to (t.lanCuoi?.saoDat ?: -1),
+                "toiDa" to (t.lanCuoi?.saoToiDa ?: -1)
+            )
+        }
+
+    /**
+     * Moi de thi cua moi mon (1/10/2026), cho cac hang "Đề thi thử <môn>" cua Bang dieu khien
+     * ban moi. Xem [Duong.F_CAC_DE_THI]. Chu pham vi va chu phan con thieu do tablet viet san
+     * ([GiaiDe.moTaPhamVi], [GiaiDe.moTaThieu]):
+     * dien thoai khong biet bai nao thuoc phan nao, va cung khong biet lop dang hoc toi dau.
+     */
+    private fun banCacDeThi(cac: List<GiaiDe.TinhTrangDeThi>): List<Map<String, Any>> =
+        cac.map { t ->
+            mapOf(
+                "ma" to t.de.ma,
+                "mon" to t.de.mon,
+                "ten" to t.de.ten,
+                "phamVi" to GiaiDe.moTaPhamVi(t.de),
+                "tt" to t.trangThai,
+                "thieu" to if (t.trangThai == GiaiDe.TT_KHOA) {
+                    GiaiDe.moTaThieu(t.thieu)
+                } else "",
+                "sao" to (t.lanCuoi?.saoDat ?: -1),
+                "toiDa" to (t.lanCuoi?.saoToiDa ?: -1),
+                "nopLuc" to (t.lanCuoi?.nopLuc ?: 0L),
+                "phut" to t.de.phut,
+                "doRong" to t.de.doRong
+            )
+        }
+
+    private fun tinhTrangDeThi(context: Context, bayGio: Long) =
+        runCatching { GiaiDe.tinhTrangDeThi(context, bayGio) }
             .getOrDefault(emptyList())
-            .map { t ->
-                mapOf(
-                    "ma" to t.de.ma,
-                    "ten" to t.de.ten,
-                    "den" to t.de.denUnit,
-                    "tt" to t.trangThai,
-                    "sao" to (t.lanCuoi?.saoDat ?: -1),
-                    "toiDa" to (t.lanCuoi?.saoToiDa ?: -1)
-                )
-            }
 
     /**
      * Xoa hop/dando ([Duong.D_DAN_DO]) mot lan moi lan chay.

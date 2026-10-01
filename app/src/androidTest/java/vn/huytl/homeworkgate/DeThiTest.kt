@@ -13,7 +13,9 @@ import org.junit.Assert.assertTrue
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
+import vn.huytl.homeworkgate.data.DayLog
 import vn.huytl.homeworkgate.data.GiaiDe
+import vn.huytl.homeworkgate.data.Prefs
 import vn.huytl.homeworkgate.kho.DeGiai
 import vn.huytl.homeworkgate.kho.DeThi
 import vn.huytl.homeworkgate.kho.HocToi
@@ -29,7 +31,11 @@ import java.time.ZoneId
  *
  * CAN THAN: bo test nay ghi moc Unit Tieng Anh va de vao kho that tren may, roi tra lai moc cu
  * va xoa moi de no tao. Nop de thi gia bang cach ghi thang luc nop vao de, khong di qua
- * [GiaiDe.nop], nen khong ghi so cai, khong cap phut nao.
+ * [GiaiDe.nop], nen khong ghi so cai, khong cap phut nao. Mo de bang tay ghi dong nhat ky
+ * ("Lê Hòa tự mở ..."): test chup nhat ky hom nay truoc va tra lai sau.
+ *
+ * Tu 1/10/2026 co ca bo de Toan, KHTN (buoc 4.4), nen moi phep so o day chi xet de Tieng Anh
+ * ([anh], [tuMo]); luat mo de cua hai mon kia o [DeThiPhanTest].
  */
 @RunWith(AndroidJUnit4::class)
 class DeThiTest {
@@ -38,6 +44,7 @@ class DeThiTest {
     private lateinit var kho: KhoBai
     private var unitCu: Int? = null
     private val deDaTao = mutableListOf<String>()
+    private var nhatKyCu: Pair<Int, String?> = 0 to null
 
     /** Toi thu Ba 20/10/2026, sau khi lop hoc xong Unit 3: gan ngay kiem tra giua ki 1. */
     private val toi = ms(LocalDateTime.of(2026, 10, 20, 19, 0))
@@ -52,6 +59,8 @@ class DeThiTest {
         kho = KhoBai.get(context)
         unitCu = HocToi.unitCua(context, PhanHoc.BO_TIENG_ANH)
         HocToi.xoa(context, PhanHoc.BO_TIENG_ANH)
+        val sp = Prefs.get(context).raw()
+        nhatKyCu = sp.getInt(DayLog.K_DAY, 0) to sp.getString(DayLog.K_TEXT, null)
     }
 
     @After
@@ -59,11 +68,24 @@ class DeThiTest {
         deDaTao.forEach { kho.xoaDe(it) }
         HocToi.xoa(context, PhanHoc.BO_TIENG_ANH)
         unitCu?.let { HocToi.ghiUnit(context, PhanHoc.BO_TIENG_ANH, it) }
+        Prefs.get(context).raw().edit()
+            .putInt(DayLog.K_DAY, nhatKyCu.first)
+            .putString(DayLog.K_TEXT, nhatKyCu.second)
+            .commit()
     }
+
+    /** Cac de Tieng Anh, theo thu tu trong file. */
+    private fun anh(): List<DeThi.De> = DeThi.tatCa(context).filter { it.laTiengAnh }
 
     private fun moc(unit: Int) = HocToi.ghiUnit(context, PhanHoc.BO_TIENG_ANH, unit)
 
-    private fun tuMo(bayGio: Long): DeGiai? = GiaiDe.taoDeThi(context, bayGio)?.also { deDaTao += it.id }
+    /**
+     * Tu 1/10/2026 [GiaiDe.taoDeThi] mo moi mon mot de va tra ca danh sach. O day chi lay de
+     * Tieng Anh; de mon khac mo ra (khi may co moc Toan, KHTN) van vao [deDaTao] de xoa.
+     */
+    private fun tuMo(bayGio: Long): DeGiai? =
+        GiaiDe.taoDeThi(context, bayGio).also { ds -> deDaTao += ds.map { it.id } }
+            .firstOrNull { it.mon == PhanHoc.TIENG_ANH }
 
     private fun moTay(ma: String, choBa: Boolean, bayGio: Long): GiaiDe.MoDeThi =
         GiaiDe.moDeThi(context, ma, choBa, bayGio).also { kq -> kq.de?.let { if (it.id !in deDaTao) deDaTao += it.id } }
@@ -76,7 +98,7 @@ class DeThiTest {
 
     @Test
     fun ba_de_giua_ki_1_du_khung_so_cau_in_va_phan_nghe_bo() {
-        val cac = DeThi.tatCa(context)
+        val cac = anh()
         assertEquals(listOf("GK1-1", "GK1-2", "GK1-3"), cac.map { it.ma }.take(3))
         cac.take(3).forEach { de ->
             assertEquals("${de.ma}: pham vi", 3, de.denUnit)
@@ -96,7 +118,7 @@ class DeThiTest {
      */
     @Test
     fun du_muoi_ba_de_moi_de_du_so_cau_in_va_pham_vi_unit() {
-        val cac = DeThi.tatCa(context)
+        val cac = anh()
         val denUnit = linkedMapOf(
             "GK1-1" to 3, "GK1-2" to 3, "GK1-3" to 3, "GK1-4" to 9, "GK1-5" to 9, "GK1-6" to 9,
             "CK1-1" to 5, "CK1-2" to 6, "CK1-3" to 6, "CK1-4" to 6, "CK1-5" to 6, "CK1-7" to 9, "CK1-8" to 9
@@ -137,7 +159,7 @@ class DeThiTest {
 
     @Test
     fun cau_trung_giua_hai_de_dung_chung_id_cau_goc() {
-        val (d1, d2, d3) = DeThi.tatCa(context).take(3)
+        val (d1, d2, d3) = anh().take(3)
         fun id(de: DeThi.De, so: Int) = de.cacMuc.first { it.so == so }.cauId
         (1..4).forEach { assertEquals("de 2 cau $it", id(d1, it), id(d2, it)) }
         assertEquals(id(d1, 5), id(d3, 5))
@@ -161,7 +183,8 @@ class DeThiTest {
     fun de_thi_khong_hien_o_man_chon_sach_va_khong_vao_lam_them() {
         assertFalse(NganHang.sachCua(PhanHoc.TIENG_ANH).any { it.deThi })
         assertFalse(NganHang.sachBaiTapCua(PhanHoc.TIENG_ANH).any { it.deThi })
-        assertEquals(listOf("dethianh8"), NganHang.boDeThi().map { it.nguon })
+        assertTrue(NganHang.boDeThi().any { it.nguon == "dethianh8" })
+        assertTrue(NganHang.boDeThi().all { it.deThi })
         moc(4)
         val lamThem = NganHang.cauNenLamThemCuaMon(context, PhanHoc.TIENG_ANH, 200)
         assertTrue("lam them rut cau de thi", lamThem.none { it.nguon == "dethianh8" })

@@ -486,8 +486,10 @@ object ThiHanhLenh {
         val kq = vn.huytl.homeworkgate.data.GiaiDe.moDeThi(context, maDe, choBa = true)
         val de = kq.de ?: return kq.loi ?: "Máy chưa mở được đề $maDe."
         val con = context.getString(R.string.child_name)
-        return if (de.daBatDau) "$con đang làm ${de.ten}."
-        else "Đã mở ${de.ten} (${de.cauIds.size} câu, ${de.phutGoiY} phút). $con vào Luyện tập để làm."
+        // Kem ten mon (1/10/2026): Toan va KHTN cung co "Đề giữa kì 1 số 2".
+        val ten = "${de.ten} ${vn.huytl.homeworkgate.data.GiaiDe.tenMon(de.mon)}"
+        return if (de.daBatDau) "$con đang làm $ten."
+        else "Đã mở $ten (${de.cauIds.size} câu, ${de.phutGoiY} phút). $con vào Luyện tập để làm."
     }
 
     /**
