@@ -371,6 +371,10 @@ object DongBo {
             Duong.F_TONG_PHIEN_MS to gate.tongPhienMs(),
             Duong.F_PHUT_DA_DUYET to gate.phutDaDuyetHomNay(),
             Duong.F_PHUT_CON_LAI to gate.phutConLaiHomNay(),
+            // So da choi va moc doan dang chay, cho thanh ngay ben dien thoai (1/10/2026).
+            // Ca hai dung yen suot mot doan, nhu [Duong.F_KET_THUC_LUC].
+            Duong.F_DA_CHOI_MS to gate.msDaChoiDaGom(bayGio),
+            Duong.F_DOAN_CHOI_TU to gate.doanChoiTu(bayGio),
             Duong.F_QUY_GIO to Prefs.get(context).quyGio,
             Duong.F_SO_BAI_CHO to gate.soBaiDangCho(),
             // Viec nha ba noi giao, cac viec CHUA xong. Khong co truong nay thi ben

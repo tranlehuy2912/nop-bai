@@ -77,6 +77,9 @@ object ThanhNgay {
 
     fun ve(khung: LinearLayout, phanDaChoi: View, phanCon: View, so: So, @ColorRes mauCon: Int) {
         val ct = khung.context
+        // Thuoc tinh clipToOutline trong XML chi co tu Android 12 (minSdk o day la 26); dat
+        // trong code thi may cu hon cung bo tron hai dau khuc mau theo nen.
+        khung.clipToOutline = true
         phanDaChoi.setBackgroundColor(ContextCompat.getColor(ct, R.color.da_choi))
         phanCon.setBackgroundColor(ContextCompat.getColor(ct, mauCon))
         // Phan con kiem duoc khong can View nao: no chinh la nen trang cua khung, mien la

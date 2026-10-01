@@ -728,6 +728,26 @@ class GateStoreTest {
     }
 
     @Test
+    fun so_gui_dien_thoai_dung_yen_suot_mot_doan() {
+        // Hai so nay nam trong ban trang thai day len Firestore. Doi moi giay thi DongBo
+        // khong bo duoc luot ghi nao, nen doan dang chay de ben dien thoai tu cong.
+        val now = at(19, 0)
+        gate.approve(now)
+        gate.start(now, nowElapsed = 1_000L)
+        assertEquals(0L, gate.msDaChoiDaGom(now + 10 * minute))
+        assertEquals(now, gate.doanChoiTu(now + 10 * minute))
+        assertEquals(now, gate.doanChoiTu(now + 20 * minute))
+
+        gate.pause(now = now + 20 * minute, nowElapsed = 1_000L + 20 * minute)
+        assertEquals(20 * minute, gate.msDaChoiDaGom(now + 25 * minute))
+        assertEquals(0L, gate.doanChoiTu(now + 25 * minute))
+
+        gate.resume(now + 30 * minute, nowElapsed = 1_000L + 30 * minute)
+        assertEquals(now + 30 * minute, gate.doanChoiTu(now + 35 * minute))
+        assertEquals(20 * minute, gate.msDaChoiDaGom(now + 35 * minute))
+    }
+
+    @Test
     fun kiem_45_ba_cho_30_thi_thanh_ngay_ghi_75_tren_tran_cong_30() {
         // Vi du Ba Huy dua ngay 1/10/2026: kiem 45 phut, ba cho 30 phut, tran 215 + 30.
         val now = at(15, 0)

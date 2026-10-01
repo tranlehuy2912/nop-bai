@@ -240,10 +240,24 @@ class GateStore(context: Context) {
     fun msDaChoiHomNay(
         nowWall: Long = System.currentTimeMillis(),
         nowElapsed: Long = SystemClock.elapsedRealtime()
-    ): Long {
-        val daGom = if (sp.getInt(K_CHOI_NGAY, 0) == dayKeyOf(nowWall)) sp.getLong(K_CHOI_MS, 0L) else 0L
-        return daGom + choiTrongDoan(nowWall, nowElapsed)
-    }
+    ): Long = msDaChoiDaGom(nowWall) + choiTrongDoan(nowWall, nowElapsed)
+
+    /**
+     * Phan da gom cua [msDaChoiHomNay], chua tinh doan dang chay.
+     *
+     * Day len dien thoai so nay chu khong day [msDaChoiHomNay]: so kia doi moi giay luc
+     * dang choi, va ban trang thai co no thi lan nao cung khac ban vua day, DongBo khong bo
+     * duoc luot ghi nao. Ben kia tu cong doan dang chay tu [doanChoiTu].
+     */
+    fun msDaChoiDaGom(nowWall: Long = System.currentTimeMillis()): Long =
+        if (sp.getInt(K_CHOI_NGAY, 0) == dayKeyOf(nowWall)) sp.getLong(K_CHOI_MS, 0L) else 0L
+
+    /**
+     * Luc doan phien dang chay bat dau, theo gio tuong. 0 la khong co doan nao dang chay,
+     * hoac doan do bat dau tu ngay khac - cung luat voi [choiTrongDoan].
+     */
+    fun doanChoiTu(nowWall: Long = System.currentTimeMillis()): Long =
+        if (state == GateState.ACTIVE && dayKeyOf(grantedAtWall) == dayKeyOf(nowWall)) grantedAtWall else 0L
 
     /**
      * So milli giay con dang giu, chua choi: phan con lai cua phien dang chay, phan giu
