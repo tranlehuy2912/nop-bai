@@ -171,7 +171,9 @@ Toán và Khoa học tự nhiên cắt hình sau cùng (anh Huy chốt 29/09/202
 
 ## Bộ đề thi in sẵn (`dethianh8.json`, từ 30/09/2026)
 
-Một file như file sách, nhưng mỗi `bai` là một đề nguyên vẹn, giữ đúng thứ tự in. Khai trong `NganHang.SACH` với `deThi = true`: không hiện ở màn chọn sách khi nộp bài, không vào làm thêm hay đề tuần, chỉ Giải đề dùng (`kho/DeThi.kt`, `GiaiDe.taoDeThi`, `GiaiDe.moDeThi`). Script sinh file nằm ngoài git, ở `ghep-nhap/dethianh/tao_de.py` cạnh ba repo. Đợt hai (giữa kì 1 số 4 tới 6, cuối kì 1 số 1 tới 8 trừ số 6, ngày 30/09/2026) soạn từ PDF bằng tác tử; bản chữ đề, file từng đề, ghi chú soát và script gộp nằm trong gói `de-thi-anh-dot2-2026-09-30.zip`, cũng ngoài git.
+Một file như file sách, nhưng mỗi `bai` là một đề nguyên vẹn, giữ đúng thứ tự in. Khai trong `NganHang.SACH` với `deThi = true`: không hiện ở màn chọn sách khi nộp bài, không vào làm thêm hay đề tuần, chỉ Giải đề dùng (`kho/DeThi.kt`, `GiaiDe.taoDeThi`, `GiaiDe.moDeThi`). Đợt 1 (giữa kì 1 số 1 tới 3) sinh bằng `ghep-nhap/dethianh/tao_de.py`, nằm ngoài git cạnh ba repo. Đợt hai (giữa kì 1 số 4 tới 6, cuối kì 1 số 1 tới 8 trừ số 6, ngày 30/09/2026) soạn từ PDF bằng tác tử; bản chữ đề, file từng đề, ghi chú soát và script gộp nằm trong gói `de-thi-anh-dot2-2026-09-30.zip`, cũng ngoài git, và không có trên máy đang dùng (kiểm ngày 01/10/2026).
+
+Không chạy lại `tao_de.py`: script chỉ dựng 3 đề của đợt 1 với `ban` 1 rồi ghi đè cả file, nên chạy lại là mất 10 đề đợt hai, và máy cũng mất theo vì `NganHang` nạp lại khi số bản khác. Từ 01/10/2026 script tự dừng khi file đích có nhiều đề hơn hay `ban` cao hơn. Đợt sau nối đề mới vào cuối `cac_bai` của `dethianh8.json`, giữ nguyên các đề đã có, tăng `ban`, rồi chạy `kiem.py`, `DeThiTest` và `GhepTest`.
 
 Ở mức bài, thêm `de_thi`:
 
