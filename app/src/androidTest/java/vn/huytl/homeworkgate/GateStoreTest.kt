@@ -14,6 +14,7 @@ import vn.huytl.homeworkgate.data.GateState
 import vn.huytl.homeworkgate.data.GateStore
 import vn.huytl.homeworkgate.data.LuatCongGio
 import vn.huytl.homeworkgate.data.Prefs
+import vn.huytl.homeworkgate.data.SangLai
 import vn.huytl.homeworkgate.ui.ThanhNgay
 import java.util.Calendar
 
@@ -867,5 +868,120 @@ class GateStoreTest {
         assertEquals(45, sau.con)
         assertEquals(75, sau.duoc)
         assertEquals(LuatCongGio.TRAN_NGAY + 30, sau.tong)
+    }
+
+    @Test
+    fun tam_dung_tay_roi_bat_man_hinh_thi_van_giu() {
+        // Loi truoc 1/10/2026, thu tren may ao: con bam Tam dung de giu gio, tat man hinh 5
+        // giay roi bat lai la phien chay tiep. Tat lau hay tat mot chut cung vay: nghi giu
+        // chi chay khi co nguoi bam Choi tiep.
+        val now = at(15, 0)
+        gate.approve(now, wantedMinutes = 45)
+        gate.start(now, nowElapsed = 1_000L)
+        assertEquals(35, gate.pause(now = now + 10 * minute, nowElapsed = 1_000L + 10 * minute))
+        assertFalse(gate.dungViTatManHinh())
+
+        for (tat in listOf(5_000L, 20 * minute)) {
+            assertEquals(
+                SangLai.VAN_GIU,
+                gate.manHinhSangLai(tat, minute, now + 30 * minute, 1_000L + 30 * minute)
+            )
+        }
+        assertEquals(GateState.PAUSED, gate.state)
+        assertEquals(35 * minute, gate.pausedMs())
+    }
+
+    @Test
+    fun vong_dem_tu_dung_vi_tat_man_hinh_thi_bat_len_chay_tiep() {
+        // Truong hop nhanh nay sinh ra de lo: man hinh tat tu phut 10, vong dem thay o phut
+        // 11 thi dung phien va tra lai mot phut tat. Bat man hinh o phut 30 thi chay tiep du 35.
+        val now = at(15, 0)
+        gate.approve(now, wantedMinutes = 45)
+        gate.start(now, nowElapsed = 1_000L)
+        assertEquals(
+            35,
+            gate.pause(minute, now + 11 * minute, 1_000L + 11 * minute, viTatManHinh = true)
+        )
+        assertTrue(gate.dungViTatManHinh())
+
+        val sang = now + 30 * minute
+        assertEquals(SangLai.CHAY_TIEP, gate.manHinhSangLai(19 * minute, minute, sang, 1_000L + 30 * minute))
+        assertEquals(GateState.ACTIVE, gate.state)
+        assertEquals(35 * minute, gate.remainingMs(sang, 1_000L + 30 * minute))
+        assertFalse(gate.dungViTatManHinh())
+    }
+
+    @Test
+    fun dang_tu_dung_ma_co_lenh_tam_dung_thi_thanh_nghi_giu() {
+        // Canh hay gap nhat ngoai doi: ba giao viec nha, toi gio buong may di hoc, hay Ba Huy
+        // go /dung dung luc tablet dang nam tat man hinh. Phien da do vong dem tu dung, nen
+        // truoc 1/10/2026 pause() tra null, khong doi gi, va bat man hinh len la chay lai.
+        val now = at(15, 0)
+        gate.approve(now, wantedMinutes = 45)
+        gate.start(now, nowElapsed = 1_000L)
+        gate.pause(minute, now + 11 * minute, 1_000L + 11 * minute, viTatManHinh = true)
+
+        // Tra so phut dang giu nhu mot lan tam dung moi: lenh DUNG dap "Da tam dung, giu 35
+        // phut", tin "Toi gio di hoc" gui dung mot lan.
+        assertEquals(35, gate.pause(now = now + 15 * minute, nowElapsed = 1_000L + 15 * minute))
+        assertFalse(gate.dungViTatManHinh())
+        assertEquals(35 * minute, gate.pausedMs())
+        // Goi lai thi khong doi gi nua: catGioChoiDangCo goi moi giay ma khong gui them tin.
+        assertNull(gate.pause(now = now + 16 * minute, nowElapsed = 1_000L + 16 * minute))
+
+        assertEquals(
+            SangLai.VAN_GIU,
+            gate.manHinhSangLai(20 * minute, minute, now + 31 * minute, 1_000L + 31 * minute)
+        )
+        assertEquals(GateState.PAUSED, gate.state)
+        assertEquals(35 * minute, gate.pausedMs())
+    }
+
+    @Test
+    fun moi_lan_tam_dung_ghi_lai_loai_nghi() {
+        // Co chi duoc doc khi dang nghi va lan tam dung nao cung ghi lai, nen khong phai xoa
+        // o resume hay endSession. Chieu nay: vong dem gap phien dang nghi giu thi khong doi
+        // no thanh tu dung.
+        val now = at(15, 0)
+        gate.approve(now, wantedMinutes = 45)
+        gate.start(now, nowElapsed = 1_000L)
+        gate.pause(now = now + 5 * minute, nowElapsed = 1_000L + 5 * minute)
+        assertNull(gate.pause(minute, now + 6 * minute, 1_000L + 6 * minute, viTatManHinh = true))
+        assertFalse(gate.dungViTatManHinh())
+
+        // Chieu kia: nghi giu, con bam Choi tiep, roi vong dem tu dung thi bat man hinh len
+        // van chay tiep.
+        assertEquals(40, gate.resume(now + 10 * minute, nowElapsed = 1_000L + 10 * minute))
+        assertEquals(30, gate.pause(minute, now + 21 * minute, 1_000L + 21 * minute, viTatManHinh = true))
+        assertTrue(gate.dungViTatManHinh())
+        assertEquals(
+            SangLai.CHAY_TIEP,
+            gate.manHinhSangLai(4 * minute, minute, now + 25 * minute, 1_000L + 25 * minute)
+        )
+        assertEquals(30 * minute, gate.remainingMs(now + 25 * minute, 1_000L + 25 * minute))
+    }
+
+    @Test
+    fun tien_trinh_bi_dong_bang_thi_bat_man_hinh_tra_lai_khoang_tat() {
+        // Nhanh cu giu nguyen: vong dem khong chay duoc trong luc man hinh tat (HyperOS dong
+        // bang tien trinh) nen phien van ACTIVE. Bat man hinh len thi tra lai khoang tat roi
+        // chay tiep. Tat duoi nguong thi coi nhu van dang choi, khong co phien thi thoi.
+        val now = at(15, 0)
+        assertEquals(SangLai.KHONG_DOI, gate.manHinhSangLai(20 * minute, minute, now, 1_000L))
+
+        gate.approve(now, wantedMinutes = 45)
+        gate.start(now, nowElapsed = 1_000L)
+        assertEquals(
+            SangLai.KHONG_DOI,
+            gate.manHinhSangLai(30_000L, minute, now + 5 * minute, 1_000L + 5 * minute)
+        )
+        assertEquals(40 * minute, gate.remainingMs(now + 5 * minute, 1_000L + 5 * minute))
+
+        // Man hinh tat tu phut 10 den phut 20: con 25, tra lai 10.
+        val sang = now + 20 * minute
+        assertEquals(SangLai.TRA_LAI, gate.manHinhSangLai(10 * minute, minute, sang, 1_000L + 20 * minute))
+        assertEquals(GateState.ACTIVE, gate.state)
+        assertEquals(35 * minute, gate.remainingMs(sang, 1_000L + 20 * minute))
+        assertEquals(10 * minute, gate.msDaChoiHomNay(sang, 1_000L + 20 * minute))
     }
 }

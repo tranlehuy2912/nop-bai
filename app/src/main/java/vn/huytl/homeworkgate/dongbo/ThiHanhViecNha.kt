@@ -74,6 +74,11 @@ object ThiHanhViecNha {
                 DayLog.add(context, "$nguoi giao việc nhà: $ke")
                 // Dang choi thi giu gio lai chu khong cat: so phut do la do lam bai
                 // ma co, khong lien quan gi den viec nha.
+                //
+                // Tablet dang nghi vi tat man hinh (ba giao viec luc may nam do) thi pause()
+                // doi lan nghi do thanh nghi giu. Truoc 1/10/2026, phien dung o day du dang
+                // choi hay dang tu dung, con bat man hinh len la phien chay lai va dong ho dem
+                // lui sau man chan viec nha (thu tren may ao voi phien dang choi).
                 gate.pause()
                 Notifier.send(
                     context,

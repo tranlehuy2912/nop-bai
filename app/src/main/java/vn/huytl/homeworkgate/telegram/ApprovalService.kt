@@ -495,7 +495,13 @@ class ApprovalService : Service() {
      * mat. Dung [GateStore.pause] chu khong cat han vi so phut do la do Ba Huy
      * duyet that - giu lai de choi not sau buoi hoc moi dung.
      *
-     * Goi duoc moi nhip: pause() tu tra null khi khong co phien nao dang chay.
+     * Goi duoc moi nhip: pause() tra null khi khong co phien nao dang chay, hay phien da
+     * nghi giu roi. Phien dang nghi vi tat man hinh (con de may do roi moi toi gio buong
+     * may) thi lan goi dau doi no thanh nghi giu va tra so phut, nen tin bao di dung mot
+     * lan, ngay luc vao gio hoc. Truoc 1/10/2026 lan nghi do van la tu dung nen tin cho toi
+     * luc con bat man hinh (suy tu code). Va trong gio hoc, moi lan con bat man hinh la
+     * phien chay lai roi bi cat, them mot tin nua (thu tren may ao: nhat ky co hai dong
+     * "Toi gio di hoc" cung mot phut, xem [GateStore.dungViTatManHinh]).
      */
     private fun catGioChoiDangCo(nhac: vn.huytl.homeworkgate.data.LoiNhac) {
         val phut = gate.pause() ?: return

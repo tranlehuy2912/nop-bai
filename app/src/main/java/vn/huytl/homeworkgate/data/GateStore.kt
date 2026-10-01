@@ -35,6 +35,10 @@ enum class GateState {
      *
      * Trong luc nay app giai tri van khoa. Do la cai lam cho viec tam dung khong
      * bi lam dung: muon giu gio thi phai chiu mat quyen choi trong luc do.
+     *
+     * Co hai loai nghi, phan biet bang [GateStore.dungViTatManHinh]. Vong dem tu dung vi
+     * man hinh tat lau thi bat man hinh len la chay tiep. Con lai la nghi giu (con tu bam
+     * Tam dung, Ba Huy, viec nha, gio di hoc): chi chay tiep khi co nguoi bam Choi tiep.
      */
     PAUSED
 }
@@ -47,6 +51,27 @@ enum class EndReason {
     CLOCK_TAMPER,   // dong ho he thong bi day lui
     PARENT_REVOKED, // bo tu bam thu hoi
     NEVER_STARTED   // da duyet ma con khong bam Bat dau, het ngay thi bo
+}
+
+/**
+ * Man hinh vua sang lai thi [GateStore.manHinhSangLai] da lam gi, de ben goi ghi log cho
+ * dung. Khong luu xuong dau ca.
+ */
+enum class SangLai {
+    /** Vong dem da tu dung phien vi man hinh tat lau, nay cho chay tiep. */
+    CHAY_TIEP,
+
+    /**
+     * Phien van dang chay ma man hinh da tat du lau: vong dem khong kip chay vi tien
+     * trinh bi dong bang. Tra lai khoang tat roi chay tiep.
+     */
+    TRA_LAI,
+
+    /** Dang nghi giu (con tu bam, Ba Huy, viec nha, gio di hoc): de nguyen. */
+    VAN_GIU,
+
+    /** Khong co gi phai doi: khong co phien nao, hoac man hinh chi tat mot chut. */
+    KHONG_DOI
 }
 
 /**
@@ -157,6 +182,10 @@ class GateStore(context: Context) {
      * Luc man hinh tat, neu no tat giua mot phien dang chay. Bang 0 la man hinh
      * dang bat. Cat vao dia chu khong giu trong bo nho, vi man hinh tat chinh la
      * luc he thong hay dong bang tien trinh nhat.
+     *
+     * KHONG duoc lay moc nay de doan phien dang nghi co phai do tat man hinh khong: man
+     * hinh tat luc dang choi (moc da ghi) roi Ba Huy tam dung tu dien thoai thi moc van
+     * con. Viec do la cua [dungViTatManHinh].
      */
     var screenOffAtWall: Long
         get() = sp.getLong(K_SCREEN_OFF, 0L)
@@ -166,6 +195,27 @@ class GateStore(context: Context) {
     private var pausedRemainingMs: Long
         get() = sp.getLong(K_PAUSED_LEFT, 0L)
         set(v) = sp.edit().putLong(K_PAUSED_LEFT, v).commit().let {}
+
+    /**
+     * Lan nghi hien tai co phai do vong dem cua GuardAccessibilityService tu dung vi man
+     * hinh tat lau khong. Chi lan nghi do moi chay tiep khi man hinh sang lai (xem
+     * [manHinhSangLai]); moi lan nghi khac la nghi giu.
+     *
+     * VI SAO CO CO NAY (1/10/2026). Truoc do dich vu gap PAUSED la chay tiep luc man hinh
+     * sang, voi y la chi vong dem moi de lai PAUSED. Nhung nut Tam dung cua con, lenh DUNG
+     * va /dung cua Ba Huy, viec nha va gio di hoc cung de lai dung trang thai do. Thu tren
+     * may ao, man hinh chi tat 5 giay: con tam dung de giu gio thi bat man hinh len la mat
+     * gio; viec nha vua giao thi dong ho dem lui sau man chan viec nha; trong gio hoc phien
+     * chay lai roi bi dung lai sau 0,27 giay, kem them mot tin "Toi gio di hoc" gui Ba Huy.
+     *
+     * [pause] ghi co nay chung mot lan commit voi trang thai, nen tien trinh bi giet giua
+     * chung cung khong lech. Co chi duoc doc khi dang PAUSED, ma vao PAUSED thi phai qua
+     * [pause], nen khong phai xoa no o [resume], [endSession] hay [approve]. Khoa chua co
+     * (ban app truoc 1/10/2026 de lai mot lan tu dung) thi doc ra false: lan bat man hinh
+     * do khong tu chay, con bam Choi tiep mot lan.
+     */
+    fun dungViTatManHinh(): Boolean =
+        state == GateState.PAUSED && sp.getBoolean(K_DUNG_VI_TAT_MAN, false)
 
     /**
      * So phut ba da duyet, dang cho con bam Bat dau.
@@ -644,13 +694,38 @@ class GateStore(context: Context) {
      * viec tu dung khi tat man hinh: luc phat hien ra thi man hinh da tat mot luc
      * roi, va ca khoang do deu khong phai la choi.
      *
-     * Tra ve so phut con lai sau khi dung, hoac null neu khong co phien nao chay.
+     * [viTatManHinh] chi vong dem cua GuardAccessibilityService dat true, khi no tu dung
+     * phien vi man hinh tat lau: lan nghi do bat man hinh len la chay tiep (xem
+     * [dungViTatManHinh]). Mac dinh la nghi giu, chi chay tiep khi co nguoi bam Choi tiep,
+     * nen duong tam dung nao viet sau nay ma quen tham so nay thi hong ve phia con phai bam
+     * Choi tiep, khong hong ve phia may tu chay gio choi.
+     *
+     * Dang nghi vi tat man hinh ma co ai goi tam dung giu thi lan nghi do doi thanh nghi
+     * giu, va ham tra ve so phut dang giu nhu mot lan tam dung moi. Goi lai lan nua thi tra
+     * null nhu thuong.
+     *
+     * Tra ve so phut con lai sau khi dung, hoac null neu khong co phien nao chay hay khong
+     * doi gi.
      */
     fun pause(
         creditMs: Long = 0L,
         now: Long = System.currentTimeMillis(),
-        nowElapsed: Long = SystemClock.elapsedRealtime()
+        nowElapsed: Long = SystemClock.elapsedRealtime(),
+        viTatManHinh: Boolean = false
     ): Int? {
+        // Doi nghi vi tat man hinh thanh nghi giu (1/10/2026). Day la canh hay gap nhat
+        // ngoai doi: ba giao viec nha luc tablet dang nam tat man hinh, Le Hoa de may do roi
+        // moi toi gio buong may di hoc, hay Ba Huy go /dung luc may dang ngu. Phien da do vong
+        // dem tu dung, nen thieu nhanh nay thi ham tra null, khong doi gi, va bat man hinh
+        // len la phien chay lai du cac duong do da tam dung. Tra so phut chu khong tra null
+        // de lenh DUNG dap "Da tam dung, giu ... phut" (truoc do dap sai la con dang khong
+        // trong gio choi) va tin "Toi gio di hoc" gui dung luc vao gio hoc. Lan goi sau thay
+        // co da tat, roi xuong dong ben duoi tra null: catGioChoiDangCo goi moi giay ma
+        // khong gui them tin nao.
+        if (state == GateState.PAUSED && !viTatManHinh && dungViTatManHinh()) {
+            sp.edit().putBoolean(K_DUNG_VI_TAT_MAN, false).commit()
+            return (pausedRemainingMs / 60_000L).toInt()
+        }
         if (state != GateState.ACTIVE) return null
 
         // Khong bao gio tra lai nhieu hon ca doan dang chay. [durationMs] la do dai doan
@@ -681,6 +756,8 @@ class GateStore(context: Context) {
             .putLong(K_PAUSED_LEFT, conLai)
             .putLong(K_DURATION, 0L)
             .putString(K_STATE, GateState.PAUSED.name)
+            // Chung lan ghi voi trang thai, xem [dungViTatManHinh].
+            .putBoolean(K_DUNG_VI_TAT_MAN, viTatManHinh)
         gomDaChoi(ed, choi, now)
         ed.commit()
 
@@ -714,6 +791,39 @@ class GateStore(context: Context) {
             .commit()
 
         return (actual / 60_000L).toInt()
+    }
+
+    /**
+     * Man hinh vua sang lai sau khoang tat [tatMs] (0 la khong biet luc tat). Luat cua
+     * GuardAccessibilityService, tach ra day de test duoc nhu [vn.huytl.homeworkgate.guard.LuatManHinh]:
+     *
+     *  - vong dem da tu dung phien vi man hinh tat lau: chay tiep;
+     *  - dang nghi giu: de nguyen, cho nguoi bam Choi tiep;
+     *  - phien van chay ma man hinh tat tu [nguongMs] tro len: vong dem khong kip chay vi
+     *    tien trinh bi dong bang, tra lai khoang tat roi chay tiep.
+     *
+     * Truoc 1/10/2026 dich vu gap PAUSED la chay tiep, khong xet ai da dung. Chuyen ke o
+     * [dungViTatManHinh].
+     */
+    fun manHinhSangLai(
+        tatMs: Long,
+        nguongMs: Long,
+        now: Long = System.currentTimeMillis(),
+        nowElapsed: Long = SystemClock.elapsedRealtime()
+    ): SangLai = when {
+        dungViTatManHinh() -> {
+            resume(now, nowElapsed)
+            SangLai.CHAY_TIEP
+        }
+        state == GateState.PAUSED -> SangLai.VAN_GIU
+        state == GateState.ACTIVE && tatMs >= nguongMs -> {
+            // Danh dau tu dung de neu tien trinh chet giua hai lan ghi nay thi lan bat
+            // man hinh sau van chay tiep duoc.
+            pause(creditMs = tatMs, now = now, nowElapsed = nowElapsed, viTatManHinh = true)
+            resume(now, nowElapsed)
+            SangLai.TRA_LAI
+        }
+        else -> SangLai.KHONG_DOI
     }
 
     /**
@@ -885,6 +995,9 @@ class GateStore(context: Context) {
         private const val K_DAY_PHUT = "day_phut"
         private const val K_PAUSED_LEFT = "paused_left"
         private const val K_SCREEN_OFF = "screen_off_wall"
+
+        /** Lan nghi hien tai do vong dem tu dung vi tat man hinh, xem [dungViTatManHinh]. */
+        private const val K_DUNG_VI_TAT_MAN = "dung_vi_tat_man"
         private const val K_GUARD_GONE = "guard_gone_wall"
         private const val K_GRANTED_MINUTES = "granted_minutes"
         private const val K_APPROVED_WALL = "approved_wall"

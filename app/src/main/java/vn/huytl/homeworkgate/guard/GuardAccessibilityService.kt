@@ -40,6 +40,7 @@ import vn.huytl.homeworkgate.data.EndReason
 import vn.huytl.homeworkgate.data.GateState
 import vn.huytl.homeworkgate.data.GateStore
 import vn.huytl.homeworkgate.data.Prefs
+import vn.huytl.homeworkgate.data.SangLai
 import vn.huytl.homeworkgate.data.TinhLoiNhac
 import vn.huytl.homeworkgate.dongbo.DongBo
 import vn.huytl.homeworkgate.telegram.Notifier
@@ -663,27 +664,34 @@ class GuardAccessibilityService : AccessibilityService() {
     }
 
     /**
-     * Man hinh vua sang lai. Tra lai khoang thoi gian tat man hinh neu no du dai,
-     * roi cho phien chay tiep.
+     * Man hinh vua sang lai. Phien do vong dem tu dung vi tat man hinh thi chay tiep, phien
+     * van chay ma man hinh tat du lau thi tra lai khoang tat, con nghi giu thi de nguyen.
+     * Luat nam o [GateStore.manHinhSangLai] de test duoc.
+     *
+     * Truoc 1/10/2026 o day gap PAUSED la chay tiep, voi chu thich "vong dem da kip dung
+     * phien lai trong luc man hinh tat". Nhung PAUSED con den tu nut Tam dung cua con,
+     * lenh DUNG va /dung cua Ba Huy, viec nha va gio di hoc, nen bam nut nguon tat roi bat
+     * la phien chay lai, bat ke ai da dung no. Thu tren may ao ngay 1/10/2026, man hinh chi
+     * tat 5 giay: con tam dung luc 11:55 thi 11:56 phien tu chay; viec nha vua giao thi
+     * dong ho dem lui sau man chan viec nha; trong gio hoc phien chay lai roi bi dung lai
+     * sau 0,27 giay, va nhat ky co hai dong "Toi gio di hoc" (hai tin gui Ba Huy).
      */
     private fun batManHinhLen() {
         val moc = gate.screenOffAtWall
         gate.screenOffAtWall = 0L
         val tatMs = if (moc == 0L) 0L else System.currentTimeMillis() - moc
 
-        when {
-            // Vong dem da kip dung phien lai trong luc man hinh tat.
-            gate.state == GateState.PAUSED -> {
-                val phut = gate.resume()
-                Log.i(TAG, "man hinh sang lai, chay tiep ${phut ?: 0} phut")
+        when (gate.manHinhSangLai(tatMs, PAUSE_AFTER_SCREEN_OFF_MS)) {
+            SangLai.CHAY_TIEP -> {
+                Log.i(TAG, "man hinh sang lai, chay tiep ${gate.remainingMs() / 60_000} phut")
                 overlay.hide()
             }
-            // Vong dem khong kip chay (tien trinh bi dong bang): tra lai o day.
-            gate.state == GateState.ACTIVE && tatMs >= PAUSE_AFTER_SCREEN_OFF_MS -> {
-                gate.pause(creditMs = tatMs)
-                val phut = gate.resume()
-                Log.i(TAG, "tat man hinh ${tatMs / 60_000} phut, tra lai, con ${phut ?: 0} phut")
-            }
+            SangLai.TRA_LAI -> Log.i(
+                TAG,
+                "tat man hinh ${tatMs / 60_000} phut, tra lai, con ${gate.remainingMs() / 60_000} phut"
+            )
+            SangLai.VAN_GIU -> Log.i(TAG, "man hinh sang lai, dang tam dung giu nen khong chay tiep")
+            SangLai.KHONG_DOI -> Unit
         }
         syncTicker()
         capNhatSuDung()
@@ -709,7 +717,9 @@ class GuardAccessibilityService : AccessibilityService() {
         val tatMs = nghiVoiManHinhTat()
         if (tatMs > 0L) chotHetGio()
         if (gate.state == GateState.ACTIVE && tatMs >= PAUSE_AFTER_SCREEN_OFF_MS) {
-            val phut = gate.pause(creditMs = tatMs)
+            // Danh dau la tu dung vi tat man hinh: chi lan nghi nay moi chay tiep khi man
+            // hinh sang lai, xem [GateStore.dungViTatManHinh].
+            val phut = gate.pause(creditMs = tatMs, viTatManHinh = true)
             gate.screenOffAtWall = System.currentTimeMillis()
             Log.i(TAG, "man hinh tat ${tatMs / 60_000} phut, tam dung o ${phut ?: 0} phut")
             syncTicker()
