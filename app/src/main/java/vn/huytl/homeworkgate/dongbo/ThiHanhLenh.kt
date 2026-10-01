@@ -453,12 +453,15 @@ object ThiHanhLenh {
      *
      * Chi cham bai con dang cho duyet. Bai Ba Huy da duyet tay hay tu choi thi thoi:
      * gio da cap roi, cham them la cap lan hai.
+     *
+     * [chupLai] la ma cac cau Ba Huy bam "Chụp lại" o lenh XUCAU, xem [xuCau].
      */
     internal fun chamTheoClaude(
         context: Context,
         gate: GateStore,
         baiId: String?,
-        giaTri: Any?
+        giaTri: Any?,
+        chupLai: List<String> = emptyList()
     ): String {
         val id = baiId?.trim().orEmpty()
         if (id.isEmpty()) return "Lệnh thiếu mã bài, máy không chấm."
@@ -468,7 +471,7 @@ object ThiHanhLenh {
         val pham = KhaiChoCham.lay(context, id)
         val ket = ChamTheoClaude.banCham(context, giaTri, pham)
             ?: return "Lệnh thiếu danh sách câu, máy không chấm."
-        ApprovalService.chamTheoClaude(context, id, ket, pham)
+        ApprovalService.chamTheoClaude(context, id, ket, pham, chupLai)
         return "Đã nhận kết quả Claude, tablet đang chấm. Số phút báo trên Telegram."
     }
 
@@ -516,6 +519,11 @@ object ThiHanhLenh {
      * la true, dung va soDong theo Ba Huy, cau can chup lai thi chupLai la true. Nen o day di
      * dung duong [chamTheoClaude]: mot luat tinh phut, mot cho ghi so. Cau chup lai thi nhan
      * con chup lai, khong tinh la sai.
+     *
+     * Loi nhan "Ba Huy nhờ chụp lại câu ..." do ApprovalService viet, sau cung, khi cham xong.
+     * Truoc 1/10/2026 ham nay tu ghi cau do ngay luc nhan lenh, nhung phan cham chay sau trong
+     * service roi ghi loi nhan cua no de len: con khong thay loi nho chup lai o dau ca, cac cau
+     * khac dung het thi chi thay "Bài tốt!".
      */
     internal fun xuCau(
         context: Context,
@@ -528,14 +536,7 @@ object ThiHanhLenh {
             .filter { it["chupLai"] as? Boolean == true }
             .mapNotNull { (it["ma"] as? String)?.trim()?.takeIf { m -> m.isNotEmpty() } }
         hienCauChupLai(context, gate, baiId, giaTri, chupLai)
-        val tra = chamTheoClaude(context, gate, baiId, giaTri)
-        if (chupLai.isNotEmpty()) {
-            SoCaiBai.datLoiNhan(
-                context,
-                "${context.getString(R.string.parent_name_cap)} nhờ chụp lại câu " +
-                    chupLai.joinToString(", ") + " cho rõ rồi nộp lại."
-            )
-        }
+        val tra = chamTheoClaude(context, gate, baiId, giaTri, chupLai)
         DayLog.add(context, "Ba Huy tự xử câu chưa chắc của bài" +
             if (chupLai.isEmpty()) "" else ", nhờ chụp lại ${chupLai.joinToString(", ")}")
         return tra

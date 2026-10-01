@@ -255,9 +255,12 @@ class ApprovalService : Service() {
             val baiId = intent.getStringExtra(EXTRA_BAI_ID).orEmpty()
             val pham = PhamVi.tuJson(intent.getStringExtra(EXTRA_PHAM))
             val ket = ChamBaiIO.doc(intent.getStringExtra(EXTRA_BAN_CHAM))
+            val chupLai = intent.getStringArrayListExtra(EXTRA_CHUP_LAI).orEmpty()
             if (baiId.isNotEmpty() && ket != null) {
                 scope?.launch {
-                    synchronized(khoaCham) { xuLyBanCham(ket, pham, baiId = baiId, nguoiCham = "Claude") }
+                    synchronized(khoaCham) {
+                        xuLyBanCham(ket, pham, baiId = baiId, nguoiCham = "Claude", chupLai = chupLai)
+                    }
                 }
             }
         }
@@ -1412,7 +1415,9 @@ class ApprovalService : Service() {
         /** Bai duoc chi dinh san, o duong Claude cham. null la bai vua nop, moi nhat. */
         baiId: String? = null,
         /** Ai cham, de ghi dung vao tin Telegram va nhat ky. */
-        nguoiCham: String = "Claude"
+        nguoiCham: String = "Claude",
+        /** Ma cac cau Ba Huy bam "Chụp lại" o lenh XUCAU. Rong o lenh CHAMBAI. */
+        chupLai: List<String> = emptyList()
     ) {
         val chatId = prefs.parentChatId
         val con = getString(R.string.child_name)
@@ -1785,7 +1790,19 @@ class ApprovalService : Service() {
                     "hoá ra đúng hết."
             else -> ""
         }
-        SoCaiBai.datLoiNhan(this, cauNhan + doiChieu, tinVui = tinVui)
+        /*
+         * Ba Huy nho chup lai vai cau (lenh XUCAU): cau nho chup lai dung truoc, kem cau ve gio,
+         * va khong phai tin vui. Viet o day, sau cung, chu khong o ThiHanhLenh.xuCau: truoc
+         * 1/10/2026 ben do ghi cau nay ngay luc nhan lenh, roi doan nay chay sau ghi de len, va
+         * cac cau khac dung het thi con chi thay "Bài tốt!". Cau chup lai khong vao so cai nen
+         * cung khong nam trong dong "Có N câu cần sửa", tru khi lan cham truoc da ghi no la sai.
+         */
+        val loiNhan = if (chupLai.isEmpty()) cauNhan + doiChieu else {
+            tinVui = false
+            ("${getString(R.string.parent_name_cap)} nhờ chụp lại câu ${chupLai.joinToString(", ")} " +
+                "cho rõ rồi nộp lại. $veGio").trim()
+        }
+        SoCaiBai.datLoiNhan(this, loiNhan, tinVui = tinVui)
         Log.i(TAG, "cham bai: cap $phutCap phut, ${sai.size} cau can sua")
 
         // Ban cham sang app Bang dieu khien.
@@ -2260,6 +2277,9 @@ class ApprovalService : Service() {
         /** Ban cham theo ket qua Claude, dang chu cua [ChamBaiIO]. */
         private const val EXTRA_BAN_CHAM = "ban_cham"
 
+        /** Ma cac cau Ba Huy nho chup lai (lenh XUCAU), xem [xuLyBanCham]. */
+        private const val EXTRA_CHUP_LAI = "chup_lai"
+
         /** Duong dan anh, moi buoc chup mot mang: EXTRA_ANH + ten buoc. */
         private const val EXTRA_ANH = "anh"
 
@@ -2324,13 +2344,16 @@ class ApprovalService : Service() {
             context: Context,
             baiId: String,
             ket: KetQuaCham,
-            pham: PhamVi?
+            pham: PhamVi?,
+            /** Ma cac cau Ba Huy nho chup lai, o lenh XUCAU. */
+            chupLai: List<String> = emptyList()
         ) {
             val intent = Intent(context, ApprovalService::class.java)
                 .setAction(ACTION_CHAM_CLAUDE)
                 .putExtra(EXTRA_BAI_ID, baiId)
                 .putExtra(EXTRA_PHAM, pham?.sangJson())
                 .putExtra(EXTRA_BAN_CHAM, ChamBaiIO.viet(ket))
+                .putStringArrayListExtra(EXTRA_CHUP_LAI, ArrayList(chupLai))
             context.startForegroundService(intent)
         }
 
