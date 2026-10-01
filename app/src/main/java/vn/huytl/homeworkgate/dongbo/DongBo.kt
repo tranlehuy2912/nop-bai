@@ -48,8 +48,9 @@ import java.util.Locale
  *
  * VI SAO KHONG PHAI TELEGRAM: mot con bot khong bao gio thay tin nhan cua chinh
  * no trong getUpdates, va moi token chi mot may duoc long-poll. Nghia la app ben
- * dien thoai khong the gia lam Ba Huy go lenh - xem HopThu ben app cua ba noi,
- * no da dam vao dung buc tuong nay.
+ * dien thoai khong the gia lam Ba Huy go lenh. App cua ba noi tung dam vao dung buc
+ * tuong nay: no dat lenh vao mo ta nhom Telegram (HopThu), go ngay 17/9/2026 khi may
+ * ba chuyen sang Firestore.
  *
  * CHO NGHE NAM O DAU: khong mo service moi, khong dung FCM. Vong doi cua lop nay
  * gan vao [vn.huytl.homeworkgate.guard.GuardAccessibilityService] - dich vu do von
