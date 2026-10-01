@@ -1726,6 +1726,10 @@ class ApprovalService : Service() {
             daCap -> "Được thêm $phutCap phút."
             else -> khongCapCho.orEmpty()
         }
+        // Chi hai nhanh khen ben duoi la tin vui, va chi khi khong kem cau "chua cong duoc
+        // gio": man chinh hien tin vui duoi "Bài đã chấm" kem dau tich, khong duoi dau hoi do.
+        // Xem [SoCaiBai.datLoiNhan].
+        var tinVui = false
         val cauNhan = when {
                 nghiChupLai.isNotEmpty() ->
                     "${getString(R.string.parent_name_cap)} đang xem lại bài ôn, chờ chút nhé."
@@ -1734,11 +1738,15 @@ class ApprovalService : Service() {
                 // Cau nay dung truoc cau "Bai tot": no noi ve dung cai kho nhat
                 // con vua lam duoc, nen no phai la cau con doc thay dau tien.
                 bang.phut > 0 && sai.isEmpty() && thieu.isEmpty() && vuaGo.isNotEmpty() -> {
+                    tinVui = khongCapCho == null
                     val ten = vuaGo.take(3).joinToString(", ") { it.first.ma } +
                         if (vuaGo.size > 3) " và ${vuaGo.size - 3} câu nữa" else ""
                     "Câu $ten $con làm sai rồi sửa lại đúng. $veGio".trim()
                 }
-                bang.phut > 0 && sai.isEmpty() && thieu.isEmpty() -> "Bài tốt! $veGio".trim()
+                bang.phut > 0 && sai.isEmpty() && thieu.isEmpty() -> {
+                    tinVui = khongCapCho == null
+                    "Bài tốt! $veGio".trim()
+                }
                 // Con khai mot loat cau roi chi chup duoc vai cau: phai noi ra so cau
                 // con thieu, khong thi no chi thay so phut it hon minh tuong.
                 bang.phut > 0 && sai.isEmpty() ->
@@ -1777,7 +1785,7 @@ class ApprovalService : Service() {
                     "hoá ra đúng hết."
             else -> ""
         }
-        SoCaiBai.datLoiNhan(this, cauNhan + doiChieu)
+        SoCaiBai.datLoiNhan(this, cauNhan + doiChieu, tinVui = tinVui)
         Log.i(TAG, "cham bai: cap $phutCap phut, ${sai.size} cau can sua")
 
         // Ban cham sang app Bang dieu khien.

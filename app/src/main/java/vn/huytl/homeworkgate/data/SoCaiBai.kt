@@ -54,6 +54,7 @@ object SoCaiBai {
     private const val K_SO_CU = "so_cai_bai"
     private const val K_LOI_NHAN = "so_cai_loi_nhan"
     private const val K_LOI_NHAN_LUC = "so_cai_loi_nhan_luc"
+    private const val K_LOI_NHAN_VUI = "so_cai_loi_nhan_vui"
 
     /**
      * Khoa gia cua ban ghi tron goi vo dan do. Bo tron goi tu 30/9/2026 nen khong ghi dong
@@ -330,20 +331,46 @@ object SoCaiBai {
         return sp.getString(K_LOI_NHAN, null)?.takeIf { it.isNotBlank() }
     }
 
-    fun datLoiNhan(context: Context, loi: String, now: Long = System.currentTimeMillis()) {
+    /** Loi nhan dang luu co phai tin vui khong, xem [datLoiNhan]. */
+    fun loiNhanLaTinVui(context: Context): Boolean =
+        Prefs.get(context).raw().getBoolean(K_LOI_NHAN_VUI, false)
+
+    /**
+     * @param tinVui loi nhan chi bao tin vui: bai tot, cau sua lai dung, duoc them phut. Man
+     *   chinh hien no lam dong chu nho duoi "Bài đã chấm" kem dau tich. Loi nhan bat con lam
+     *   gi do (chup lai, chup them de, sua cau sai), cau cho Ba Huy xem lai, hay cau noi chua
+     *   cong duoc gio thi de false: chung van nam duoi "Ba Huy nhắn" voi dau hoi do.
+     *
+     *   Co tu 1/10/2026. Dem 30/9/2026 Claude cham trong gio ngu, va loi nhan "Câu 2, 3b Lê
+     *   Hòa làm sai rồi sửa lại đúng. Hết giờ ngủ lúc 07:30 thì được thêm 18 phút." nam duoi
+     *   dau hoi do, y nhu dong "Có N câu cần sửa". Ba Huy tuong hai cau do van con phai sua.
+     *
+     *   Mac dinh false: nhanh loi nhan moi quen khai thi hien nhu cu, chu khong co chuyen
+     *   mot cau bat con lam viec lai mang dau tich. Moi lan dat loi nhan deu ghi lai co nay,
+     *   nen loi nhan sau khong mang theo co cua loi nhan truoc.
+     */
+    fun datLoiNhan(
+        context: Context,
+        loi: String,
+        now: Long = System.currentTimeMillis(),
+        tinVui: Boolean = false
+    ) {
         Prefs.get(context).raw().edit()
             .putString(K_LOI_NHAN, loi)
             .putLong(K_LOI_NHAN_LUC, now)
+            .putBoolean(K_LOI_NHAN_VUI, tinVui)
             .commit()
     }
 
     fun xoaLoiNhan(context: Context) {
-        Prefs.get(context).raw().edit().remove(K_LOI_NHAN).remove(K_LOI_NHAN_LUC).commit()
+        Prefs.get(context).raw().edit()
+            .remove(K_LOI_NHAN).remove(K_LOI_NHAN_LUC).remove(K_LOI_NHAN_VUI).commit()
     }
 
     fun xoaHet(context: Context) {
         KhoBai.get(context).xoaHetTraLoi()
-        Prefs.get(context).raw().edit().remove(K_LOI_NHAN).remove(K_LOI_NHAN_LUC).commit()
+        Prefs.get(context).raw().edit()
+            .remove(K_LOI_NHAN).remove(K_LOI_NHAN_LUC).remove(K_LOI_NHAN_VUI).commit()
     }
 
     /** Bo cac dong qua cu. Goi luc app khoi dong, khong phai moi lan ghi. */

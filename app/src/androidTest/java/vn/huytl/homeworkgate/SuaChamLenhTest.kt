@@ -99,6 +99,7 @@ class SuaChamLenhTest {
         assertTrue(SoCaiBai.dangChoSua(context).isEmpty())
         assertEquals(1, SoCaiBai.phutDaCongHomNay(context))
         assertTrue(SoCaiBai.loiNhan(context).orEmpty().contains("câu 2.33a Lê Hòa làm đúng rồi"))
+        assertTrue(SoCaiBai.loiNhanLaTinVui(context))
 
         // Gui lai dung lenh do: khong cong them phut nao.
         val lan2 = ThiHanhLenh.suaCham(context, GateStore(context), giaTri)
@@ -142,6 +143,7 @@ class SuaChamLenhTest {
         assertEquals(1, SoCaiBai.phutDaCongHomNay(context))
         assertEquals(listOf(1), CongSang.cacMuc(context).map { it.phut })
         assertTrue(SoCaiBai.loiNhan(context).orEmpty().contains("thì được thêm 1 phút"))
+        assertTrue(SoCaiBai.loiNhanLaTinVui(context))
         assertTrue(ThiHanhLenh.suaCham(context, GateStore(context), giaTri).startsWith("Không còn câu nào"))
         assertEquals(1, CongSang.cacMuc(context).size)
     }

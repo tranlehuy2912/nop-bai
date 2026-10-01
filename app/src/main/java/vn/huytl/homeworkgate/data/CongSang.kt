@@ -132,7 +132,9 @@ object CongSang {
         }
         val ba = context.getString(R.string.parent_name_cap)
         DayLog.add(context, "Hết giờ ngủ, cộng $them phút giữ từ lúc $ba chấm trong giờ ngủ")
-        SoCaiBai.datLoiNhan(context, "Được thêm $them phút của bài $ba chấm trong giờ ngủ.")
+        SoCaiBai.datLoiNhan(
+            context, "Được thêm $them phút của bài $ba chấm trong giờ ngủ.", tinVui = true
+        )
         ApprovalService.ensureRunning(context)
         return "⏰ Hết giờ ngủ: đã cộng $them phút giữ từ lúc chấm trong giờ ngủ" +
             (if (them < xin) " (hôm nay chỉ còn $them phút trong hạn mức)" else "") + "."

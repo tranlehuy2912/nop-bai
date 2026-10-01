@@ -605,6 +605,9 @@ class HomeActivity : AppCompatActivity() {
             if (cho.isEmpty()) ds else ds.filterNot { it.khoa in cho }
         }
         val loiNhan = SoCaiBai.loiNhan(this)
+        // Tin vui (bai tot, cau sua lai dung, duoc them phut) khong nam duoi dau hoi do ma di
+        // xuong dong "Bài đã chấm", xem [SoCaiBai.datLoiNhan].
+        val tinVui = loiNhan != null && SoCaiBai.loiNhanLaTinVui(this)
 
         /*
          * Bai da lam xong ma chua toi tay Ba Huy: dung truoc het, truoc ca dong cau can sua.
@@ -654,9 +657,13 @@ class HomeActivity : AppCompatActivity() {
                 ten = "Có ${canSua.size} câu cần sửa",
                 phu = keCauCanSua(canSua)
             ) { KetQuaActivity.mo(this) }
-        } else if (loiNhan != null) {
+        } else if (loiNhan != null && !tinVui) {
             // Nop lai bai da cham hom truoc ma khong duoc gi: phai noi vi sao, khong
             // thi con bam nop lai lan nua. Bam vao thi xem ket qua cham tung cau.
+            //
+            // Tu 1/10/2026 chi con loi nhan bat con lam gi do, cau cho Ba Huy xem lai, hay cau
+            // noi chua cong duoc gio. Truoc do ca cau khen "sửa lại đúng" cung nam o day, mang
+            // dau hoi do y nhu dong cau can sua ben tren.
             themViec(
                 hinh = R.drawable.st_ic_dau_hoi,
                 mau = R.color.alert,
@@ -667,10 +674,13 @@ class HomeActivity : AppCompatActivity() {
             // Khong co cau nao phai sua thi dung cho do la loi vao man Bai da cham (Ba Huy chon
             // 30/9/2026). Truoc do man nay chi mo duoc tu hai dong tren, nen hom khong co cau
             // can sua thi Le Hoa khong xem duoc bai Ba Huy khong duyet va ly do.
+            //
+            // Loi nhan tin vui nam o dong chu nho cua dong nay (Ba Huy chon 1/10/2026).
             themViec(
                 hinh = R.drawable.st_ic_da_cham,
                 mau = R.color.brand,
-                ten = "Bài đã chấm"
+                ten = "Bài đã chấm",
+                phu = if (tinVui) loiNhan.orEmpty() else ""
             ) { KetQuaActivity.mo(this) }
         }
 

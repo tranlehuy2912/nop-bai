@@ -97,6 +97,8 @@ class CongSangTest {
         assertTrue(CongSang.cacMuc(context).isEmpty())
         assertNull(CongSang.mocBaoThuc(context))
         assertTrue(SoCaiBai.loiNhan(context).orEmpty().contains("Được thêm 12 phút"))
+        // Man chinh hien cau nay duoi "Bài đã chấm" kem dau tich, khong duoi dau hoi do.
+        assertTrue(SoCaiBai.loiNhanLaTinVui(context))
     }
 
     /**

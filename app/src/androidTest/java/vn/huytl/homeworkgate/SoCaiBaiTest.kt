@@ -224,6 +224,26 @@ class SoCaiBaiTest {
         // Sang hom sau thi thoi, khong de loi nhan cua toi qua nam lai tren man hinh.
         assertNull(SoCaiBai.loiNhan(context, now + 13 * 60 * 60_000L))
     }
+
+    /**
+     * Co tin vui (1/10/2026) di theo lan dat loi nhan gan nhat: loi nhan sau khong mang co cua
+     * loi nhan truoc, khong khai thi khong phai tin vui, xoa loi nhan thi mat ca co.
+     */
+    @Test
+    fun co_tin_vui_di_theo_lan_dat_loi_nhan_gan_nhat() {
+        assertFalse(SoCaiBai.loiNhanLaTinVui(context))
+
+        SoCaiBai.datLoiNhan(context, "Bài tốt! Được thêm 7 phút.", now, tinVui = true)
+        assertTrue(SoCaiBai.loiNhanLaTinVui(context))
+
+        SoCaiBai.datLoiNhan(context, "Có 1 câu không thấy đề bài. Lê Hòa chụp thêm trang đề nhé.", now)
+        assertFalse(SoCaiBai.loiNhanLaTinVui(context))
+
+        SoCaiBai.datLoiNhan(context, "Bài tốt! Được thêm 7 phút.", now, tinVui = true)
+        SoCaiBai.xoaLoiNhan(context)
+        assertNull(SoCaiBai.loiNhan(context, now))
+        assertFalse(SoCaiBai.loiNhanLaTinVui(context))
+    }
     /**
      * Ba phan ba tran rieng (29/9/2026): chup anh 45, lam tren may 90, on lai tren may 30.
      * Moi phan dem rieng, khong phan nao an cua phan kia.

@@ -400,7 +400,8 @@ object ThiHanhLenh {
             SoCaiBai.datLoiNhan(
                 context,
                 "Ba Huy chấm lại: câu $ke $con làm đúng rồi, máy chấm nhầm. " +
-                    "Hết giờ ngủ lúc $gio thì được thêm $xin phút."
+                    "Hết giờ ngủ lúc $gio thì được thêm $xin phút.",
+                tinVui = true
             )
             return "Đã sửa câu $ke thành đúng. Đang giờ ngủ nên giữ $xin phút, $gio tablet cộng.$choDong$boQua"
         }
@@ -430,10 +431,12 @@ object ThiHanhLenh {
             context,
             "Ba Huy chấm lại câu $ke: $con làm đúng" + if (phut > 0) ", +$phut phút" else ""
         )
+        // Tin vui ca khi khong co phut nao: cau do da thanh dung, con khong con gi phai lam.
         SoCaiBai.datLoiNhan(
             context,
             "Ba Huy chấm lại: câu $ke $con làm đúng rồi, máy chấm nhầm." +
-                if (phut > 0) " Được thêm $phut phút." else ""
+                if (phut > 0) " Được thêm $phut phút." else "",
+            tinVui = true
         )
         val catBot = if (phut in 1 until xin) " Hôm nay chỉ còn $phut phút trong hạn mức." else ""
         return "Đã sửa câu $ke thành đúng" +
