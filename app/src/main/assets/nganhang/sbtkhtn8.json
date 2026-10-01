@@ -2,7 +2,7 @@
  "nguon": "sbtkhtn8",
  "mon": "Khoa học tự nhiên",
  "ten": "SBT Khoa học tự nhiên 8",
- "ban": 10,
+ "ban": 11,
  "cac_bai": [
   {
    "chuong": "Chương I. Phản ứng hoá học",
@@ -13593,7 +13593,10 @@
      "trang": 53,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "ghep_cho_hinh": {
+     "hinh": [
+      "sbtkhtn8/H.19.2.webp"
+     ],
+     "ghep": {
       "kieu": "O",
       "sao": 3,
       "hoi": "Một tay phanh xe đạp: ở gốc tay phanh có hai điểm tròn nhỏ, một điểm ở trên và một điểm ở dưới (chỗ đầu dây phanh móc vào tay phanh); hai đường nằm ngang kẻ qua hai điểm này cách nhau 3 cm; khoảng cách theo phương ngang từ điểm tròn phía trên tới đầu tay phanh (chỗ tay bóp) là 12 cm. Chỉ rõ đâu là trục quay, đâu là cánh tay đòn.",
@@ -13641,8 +13644,7 @@
         ]
        }
       ]
-     },
-     "bo_may": "chờ hình: Hình 19.2 (tr.53): ảnh chụp tay phanh xe đạp, ở gốc tay phanh có hai điểm tròn nhỏ, hai đường nằm ngang qua hai điểm cách nhau 3 cm, khoảng cách ngang từ điểm trên tới đầu tay phanh 12 cm"
+     }
     },
     {
      "ma": "19.2b",
@@ -13671,7 +13673,10 @@
        "Cánh tay đòn của lực bóp: d₁ = 12 cm; của lực kéo dây phanh: d₂ = 3 cm",
        "Lợi về lực: d₁ : d₂ = 12 cm : 3 cm = 4 (lần)"
       ]
-     }
+     },
+     "hinh": [
+      "sbtkhtn8/H.19.2.webp"
+     ]
     },
     {
      "ma": "19.3a",

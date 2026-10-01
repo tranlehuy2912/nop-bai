@@ -2,7 +2,7 @@
  "nguon": "sbttoan8t1",
  "mon": "Toán",
  "ten": "SBT Toán 8 — tập một",
- "ban": 7,
+ "ban": 8,
  "cac_bai": [
   {
    "chuong": "Chương I. Đa thức",
@@ -6112,7 +6112,10 @@
        "5/3,5 = 4/x",
        "x = 4 · 3,5 : 5 = 2,8"
       ]
-     }
+     },
+     "hinh": [
+      "sbttoan8t1/H.5.4a.tr48.webp"
+     ]
     },
     {
      "ma": "4.2b",
@@ -6136,7 +6139,10 @@
        "x/10,5 = 9/15",
        "x = 10,5 · 9 : 15 = 6,3"
       ]
-     }
+     },
+     "hinh": [
+      "sbttoan8t1/H.5.4b.tr48.webp"
+     ]
     },
     {
      "ma": "4.3a",
@@ -6162,7 +6168,10 @@
        "2/5 = 1,5/x",
        "x = 1,5 · 5 : 2 = 3,75"
       ]
-     }
+     },
+     "hinh": [
+      "sbttoan8t1/H.5.5a.tr48.webp"
+     ]
     },
     {
      "ma": "4.3b",
@@ -6187,7 +6196,10 @@
        "3x = 6 · 4,5 : 3 = 9",
        "x = 3"
       ]
-     }
+     },
+     "hinh": [
+      "sbttoan8t1/H.5.5b.tr48.webp"
+     ]
     },
     {
      "ma": "4.4",
@@ -6218,7 +6230,10 @@
         3
        ]
       ]
-     }
+     },
+     "hinh": [
+      "sbttoan8t1/H.5.6.tr48.webp"
+     ]
     },
     {
      "ma": "4.5a",
@@ -6343,7 +6358,10 @@
        "MN là đường trung bình của tam giác ABC nên MN = BC/2",
        "x = MN = 10 : 2 = 5"
       ]
-     }
+     },
+     "hinh": [
+      "sbttoan8t1/H.5.9a.tr50.webp"
+     ]
     },
     {
      "ma": "4.7b",
@@ -6368,7 +6386,10 @@
        "Tam giác PMN có I là trung điểm của PN và IH // NM nên H là trung điểm của PM",
        "y = HM = PH = 5"
       ]
-     }
+     },
+     "hinh": [
+      "sbttoan8t1/H.5.9b.tr50.webp"
+     ]
     },
     {
      "ma": "4.8",
@@ -6532,7 +6553,10 @@
        "3/x = 5/8,5",
        "x = 3 · 8,5 : 5 = 5,1"
       ]
-     }
+     },
+     "hinh": [
+      "sbttoan8t1/H.5.12.tr52.webp"
+     ]
     },
     {
      "ma": "4.12",
@@ -6727,7 +6751,10 @@
        "30"
       ],
       "dap": "A"
-     }
+     },
+     "hinh": [
+      "sbttoan8t1/H.5.13.tr53.webp"
+     ]
     },
     {
      "ma": "Trắc nghiệm 3 (tr.53)",
@@ -6790,7 +6817,10 @@
        "6,25"
       ],
       "dap": "D"
-     }
+     },
+     "hinh": [
+      "sbttoan8t1/H.5.14.tr53.webp"
+     ]
     },
     {
      "ma": "Trắc nghiệm 6 (tr.54)",
@@ -6832,7 +6862,10 @@
        "4"
       ],
       "dap": "C"
-     }
+     },
+     "hinh": [
+      "sbttoan8t1/H.5.15.tr54.webp"
+     ]
     },
     {
      "ma": "Trắc nghiệm 8 (tr.54)",
@@ -6941,7 +6974,10 @@
        "2/3"
       ],
       "dap": "C"
-     }
+     },
+     "hinh": [
+      "sbttoan8t1/H.5.16.tr54.webp"
+     ]
     },
     {
      "ma": "4.15",
@@ -7766,7 +7802,10 @@
         ]
        }
       ]
-     }
+     },
+     "hinh": [
+      "sbttoan8t1/H.5.1.tr62.webp"
+     ]
     },
     {
      "ma": "5.7b",
@@ -8006,7 +8045,10 @@
         ]
        }
       ]
-     }
+     },
+     "hinh": [
+      "sbttoan8t1/H.5.5.tr68.webp"
+     ]
     },
     {
      "ma": "5.15a",
@@ -8036,7 +8078,10 @@
         ]
        }
       ]
-     }
+     },
+     "hinh": [
+      "sbttoan8t1/H.5.6-5.7.tr68.webp"
+     ]
     },
     {
      "ma": "5.15b",
@@ -8080,7 +8125,10 @@
         ]
        }
       ]
-     }
+     },
+     "hinh": [
+      "sbttoan8t1/H.5.6-5.7.tr68.webp"
+     ]
     },
     {
      "ma": "5.16a",
@@ -8138,7 +8186,10 @@
         ]
        }
       ]
-     }
+     },
+     "hinh": [
+      "sbttoan8t1/H.5.8.tr69.webp"
+     ]
     },
     {
      "ma": "5.16b",
@@ -8160,7 +8211,10 @@
        "Người này đi trung bình 3455 bước mỗi ngày, những người dùng cùng độ tuổi đi trung bình 5285 bước",
        "Số bước ít hơn = 5285 − 3455 = 1830"
       ]
-     }
+     },
+     "hinh": [
+      "sbttoan8t1/H.5.8.tr69.webp"
+     ]
     },
     {
      "ma": "5.17a",
@@ -8190,7 +8244,10 @@
         ]
        }
       ]
-     }
+     },
+     "hinh": [
+      "sbttoan8t1/H.5.9.tr69.webp"
+     ]
     },
     {
      "ma": "5.17b",
@@ -8262,7 +8319,10 @@
         ]
        }
       ]
-     }
+     },
+     "hinh": [
+      "sbttoan8t1/H.5.9.tr69.webp"
+     ]
     },
     {
      "ma": "5.18a",
@@ -8316,7 +8376,10 @@
         ]
        }
       ]
-     }
+     },
+     "hinh": [
+      "sbttoan8t1/H.5.10.tr70.webp"
+     ]
     },
     {
      "ma": "5.18c",
@@ -8374,7 +8437,11 @@
         ]
        }
       ]
-     }
+     },
+     "hinh": [
+      "sbttoan8t1/H.5.10.tr70.webp",
+      "sbttoan8t1/H.5.11.tr70.webp"
+     ]
     },
     {
      "ma": "5.19a",
@@ -8404,7 +8471,10 @@
         ]
        }
       ]
-     }
+     },
+     "hinh": [
+      "sbttoan8t1/H.5.12.tr71.webp"
+     ]
     },
     {
      "ma": "5.19b",
@@ -8426,7 +8496,10 @@
        "Số bàn thắng nhiều nhất trong một mùa giải ở Ngoại hạng Anh là 32, ở La Liga là 40",
        "Vậy nhiều nhất là 40 bàn thắng (La Liga, mùa giải 2015/2016)"
       ]
-     }
+     },
+     "hinh": [
+      "sbttoan8t1/H.5.12.tr71.webp"
+     ]
     }
    ]
   },
@@ -8671,7 +8744,11 @@
        "Không, dữ liệu trên hai biểu đồ khác nhau"
       ],
       "dap": "A"
-     }
+     },
+     "hinh": [
+      "sbttoan8t1/H.5.13.tr74.webp",
+      "sbttoan8t1/H.5.3.tr66.webp"
+     ]
     },
     {
      "ma": "5.21b",
@@ -8690,7 +8767,10 @@
        "Số liệu liên tục"
       ],
       "dap": "A"
-     }
+     },
+     "hinh": [
+      "sbttoan8t1/H.5.13.tr74.webp"
+     ]
     },
     {
      "ma": "5.21c",
@@ -8734,7 +8814,11 @@
         ]
        }
       ]
-     }
+     },
+     "hinh": [
+      "sbttoan8t1/H.5.13.tr74.webp",
+      "sbttoan8t1/H.5.3.tr66.webp"
+     ]
     },
     {
      "ma": "5.22a",
@@ -8768,7 +8852,10 @@
        "Tỉ số: 336490 : 19330 ≈ 17,41",
        "Làm tròn đến hàng phần mười: năm 2019 lượng khí thải CO₂ tăng khoảng 17,4 lần so với năm 1990"
       ]
-     }
+     },
+     "hinh": [
+      "sbttoan8t1/H.5.14.tr75.webp"
+     ]
     },
     {
      "ma": "5.22c",
@@ -8854,7 +8941,11 @@
         ]
        }
       ]
-     }
+     },
+     "hinh": [
+      "sbttoan8t1/H.5.14.tr75.webp",
+      "sbttoan8t1/H.5.15.tr75.webp"
+     ]
     },
     {
      "ma": "5.23a",
@@ -8873,7 +8964,10 @@
        "Số liệu rời rạc"
       ],
       "dap": "A"
-     }
+     },
+     "hinh": [
+      "sbttoan8t1/H.5.16.tr76.webp"
+     ]
     },
     {
      "ma": "5.23b",
@@ -8917,7 +9011,10 @@
         ]
        }
       ]
-     }
+     },
+     "hinh": [
+      "sbttoan8t1/H.5.16.tr76.webp"
+     ]
     },
     {
      "ma": "5.23c",
@@ -8949,7 +9046,10 @@
        "Năm 2020 Mỹ chi 15,95% GDP cho chăm sóc sức khoẻ",
        "Số tiền = 20890 · 15,95 : 100 = 3331,955"
       ]
-     }
+     },
+     "hinh": [
+      "sbttoan8t1/H.5.16.tr76.webp"
+     ]
     },
     {
      "ma": "5.24a",
@@ -8989,7 +9089,10 @@
         ]
        }
       ]
-     }
+     },
+     "hinh": [
+      "sbttoan8t1/Bang.5.24.tr76.webp"
+     ]
     },
     {
      "ma": "5.24c",
@@ -9089,7 +9192,11 @@
         ]
        }
       ]
-     }
+     },
+     "hinh": [
+      "sbttoan8t1/H.5.17.tr77.webp",
+      "sbttoan8t1/Bang.5.24.tr76.webp"
+     ]
     },
     {
      "ma": "5.25",
