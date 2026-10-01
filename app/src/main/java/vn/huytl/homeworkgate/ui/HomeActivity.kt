@@ -31,6 +31,7 @@ import vn.huytl.homeworkgate.R
 import vn.huytl.homeworkgate.data.BaiGuiHong
 import vn.huytl.homeworkgate.data.CauSo
 import vn.huytl.homeworkgate.data.DayLog
+import vn.huytl.homeworkgate.data.DongHoDe
 import vn.huytl.homeworkgate.data.GateState
 import vn.huytl.homeworkgate.data.GateStore
 import vn.huytl.homeworkgate.data.GiaiDe
@@ -793,7 +794,10 @@ class HomeActivity : AppCompatActivity() {
         val mo = runCatching { GiaiDe.dangMo(this, bayGio) }.getOrDefault(emptyList())
         mo.filter { it.daBatDau }.forEach { de ->
             val phu = if (!de.daNop) {
-                val con = de.phutGoiY - ((bayGio - de.batDau) / 60_000L).toInt()
+                // So phut con da ngoi o man de, dung yen khi con o ngoai (Ba Huy chon 1/10/2026).
+                // Truoc do lay gio that tru luc bat dau, va de bo do qua dem ghi "quá 1078 phút".
+                val daLam = DongHoDe.daLamMs(this, de, bayGio)
+                val con = de.phutGoiY - (daLam / 60_000L).toInt()
                 if (con >= 0) "Đang làm, còn $con phút" else "Đang làm, quá ${-con} phút"
             } else {
                 "Còn chụp phần tự luận"

@@ -23,6 +23,7 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import vn.huytl.homeworkgate.R
 import vn.huytl.homeworkgate.data.DayLog
+import vn.huytl.homeworkgate.data.DongHoDe
 import vn.huytl.homeworkgate.data.GateStore
 import vn.huytl.homeworkgate.data.GiaiDe
 import vn.huytl.homeworkgate.data.LamTrenMay
@@ -48,7 +49,9 @@ import vn.huytl.homeworkgate.telegram.Notifier
  *  - chua bat dau: the huong dan va nut Bat dau. Chua hien de: xem truoc de roi moi
  *    bam Bat dau thi dong ho khong con do duoc gi;
  *  - dang lam: dong ho goc tren, tung cau, nut Nop bai cuoi danh sach. Thoat ra van giu
- *    nguyen, dong ho van chay: vao lai lam tiep;
+ *    nguyen, vao lai lam tiep. Dong ho thi dung luc thoat ra (tat man hinh, sang app khac,
+ *    bam quay lai), vao lai chay tiep: Ba Huy chon ngay 1/10/2026, xem [DongHoDe]. Truoc do
+ *    dong ho chay theo gio that, ke ca luc con da di cho khac;
  *  - da nop trac nghiem: ket qua tung cau trac nghiem, va nut chup phan tu luan;
  *  - da co diem: diem ca de, tung cau dung hay chua.
  *
@@ -110,16 +113,21 @@ class GiaiDeActivity : AppCompatActivity() {
             de = nap.first
             cacCau = nap.second
             ketTuLuan = nap.third
+            // Doc xong co the ve sau onPause (con vua bam ra ngoai): luc do dung chay dong
+            // ho, khong thi nhip mot giay tu dat lai mai va giu man da dong trong bo nho. Dong
+            // ho cua de (DongHoDe) cung vay: vao() luc man da khuat thi khong con ai goi roi().
+            val dangHien = lifecycle.currentState.isAtLeast(androidx.lifecycle.Lifecycle.State.RESUMED)
+            if (dangHien) DongHoDe.vao(this@GiaiDeActivity, nap.first)
             ve()
             tay.removeCallbacks(nhip)
-            // Doc xong co the ve sau onPause (con vua bam ra ngoai): luc do dung chay dong
-            // ho, khong thi nhip mot giay tu dat lai mai va giu man da dong trong bo nho.
-            if (lifecycle.currentState.isAtLeast(androidx.lifecycle.Lifecycle.State.RESUMED)) tay.post(nhip)
+            if (dangHien) tay.post(nhip)
         }
     }
 
     override fun onPause() {
         tay.removeCallbacks(nhip)
+        // Man de khuat: tat man hinh, sang app khac, quay ra man chinh. Dong ho dung o day.
+        de?.let { DongHoDe.roi(this, it) }
         super.onPause()
     }
 
@@ -355,7 +363,7 @@ class GiaiDeActivity : AppCompatActivity() {
                         "${kq.saoDat}/${kq.saoToiDa} sao" +
                         (if (phut > 0) ", được $phut phút" else "") +
                         (if (kq.phutQuy > 0) ", vào quỹ ${kq.phutQuy} phút" else "") +
-                        ". Làm ${((kq.de.nopLuc - kq.de.batDau) / 60_000L)} phút, gợi ý ${d.phutGoiY}."
+                        ". Làm ${DongHoDe.daLamMs(this@GiaiDeActivity, kq.de) / 60_000L} phút, gợi ý ${d.phutGoiY}."
                 )
             }
             runCatching { DongBo.dayNgay() }
@@ -533,8 +541,8 @@ class GiaiDeActivity : AppCompatActivity() {
             return
         }
         b.dongHo.visibility = View.VISIBLE
-        val den = if (d.daNop) d.nopLuc else System.currentTimeMillis()
-        val daLam = ((den - d.batDau) / 1000L).coerceAtLeast(0L)
+        // Chi tinh luc con ngoi o man nay, xem DongHoDe. Ham nay chi chay khi man dang hien.
+        val daLam = DongHoDe.daLamMs(this, d, System.currentTimeMillis(), dangOMan = true) / 1000L
         val con = d.phutGoiY * 60L - daLam
         val quaGio = con < 0
         b.dongHo.text = when {
@@ -604,7 +612,7 @@ class GiaiDeActivity : AppCompatActivity() {
                     (if (kq.tong > 0) "trắc nghiệm đúng ${kq.dung}/${kq.tong}" else "không có trắc nghiệm") +
                     (if (kq.phut > 0) ", được ${kq.phut} phút" else "") +
                     (if (coTuLuan) ". Phần tự luận ${ten} chụp gửi sau." else ".") +
-                    " Làm ${((kq.de.nopLuc - kq.de.batDau) / 60_000L)} phút, gợi ý ${d.phutGoiY}."
+                    " Làm ${DongHoDe.daLamMs(this, kq.de) / 60_000L} phút, gợi ý ${d.phutGoiY}."
             )
         }
         runCatching { DongBo.dayNgay() }

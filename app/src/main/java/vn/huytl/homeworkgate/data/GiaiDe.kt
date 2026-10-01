@@ -45,7 +45,9 @@ import vn.huytl.homeworkgate.kho.TraLoi
  * ghep co sao rieng, bam Kiem tra sai thi mat sao ngay trong de - cung luat sao voi bai lam
  * them, xem [LuatGhep]. Bam Nop bai thi moi cau ghi so, cong phut. Het gio van nop duoc,
  * tin cho Ba Huy ghi lam bao lau (Ba Huy chon ngay 27/9/2026). Thoat ra vao lai thi sao
- * tung cau giu nguyen ([luotCua]): khong co cach nao thoat ra de lay lai sao.
+ * tung cau giu nguyen ([luotCua]): khong co cach nao thoat ra de lay lai sao. Con dong ho thi
+ * dung luc thoat ra, vao lai chay tiep (Ba Huy chon ngay 1/10/2026): "lam bao lau" la luc con
+ * ngoi o man de, xem [DongHoDe].
  *
  * GIO CHOI tinh y het bai lam them: moi sao mot phut, chung tran
  * [LuatCongGio.TRAN_TREN_MAY], phan vuot tran vao Quỹ giờ chơi. Diem cua de khong doi ra
@@ -814,6 +816,8 @@ object GiaiDe {
             LamTrenMay.ghi(context, m, xong, traLoiCua(de, c.id), LamTrenMay.Loai.GIAI_DE, deId = de.id, bayGio = bayGio)
         }
         val sao = ghi.sumOf { it.sao }
+        // Chot dong ho truoc khi ghi luc nop: [DongHoDe.roi] bo qua de da nop.
+        DongHoDe.roi(context, de, bayGio)
         val moi = de.copy(nopLuc = bayGio, saoDat = sao)
         KhoBai.get(context).luuDe(moi)
         DayLog.add(context, tomTat(context, moi))
@@ -836,6 +840,7 @@ object GiaiDe {
         if (de.daBatDau) return de
         val moi = de.copy(batDau = bayGio)
         KhoBai.get(context).luuDe(moi)
+        DongHoDe.batDau(context, de.id, bayGio)
         return moi
     }
 
@@ -924,6 +929,7 @@ object GiaiDe {
         }
         runCatching { vn.huytl.homeworkgate.dongbo.DongBo.daySoCai(context, daGhi) }
 
+        DongHoDe.roi(context, de, bayGio)
         val moi = de.copy(nopLuc = bayGio, tnDung = dung.size)
         kho.luuDe(moi)
         return KetQuaTracNghiem(moi, dung.size, tn.size, if (daCap) phut else 0, dung.isNotEmpty() && !daCap)
@@ -979,7 +985,7 @@ object GiaiDe {
      */
     fun tomTat(context: Context, de: DeGiai): String {
         if (de.trenMay) {
-            val lam = if (de.daBatDau && de.daNop) ((de.nopLuc - de.batDau) / 60_000L).toInt() else -1
+            val lam = if (de.daBatDau && de.daNop) (DongHoDe.daLamMs(context, de) / 60_000L).toInt() else -1
             val gio = when {
                 lam < 0 -> ""
                 lam > de.phutGoiY -> ", làm $lam phút (gợi ý ${de.phutGoiY}, quá ${lam - de.phutGoiY} phút)"
@@ -1002,7 +1008,7 @@ object GiaiDe {
             )
         }
         val dung = de.tnDung.coerceAtLeast(0) + de.tlDung.coerceAtLeast(0)
-        val lam = if (de.daBatDau && de.daNop) ((de.nopLuc - de.batDau) / 60_000L).toInt() else -1
+        val lam = if (de.daBatDau && de.daNop) (DongHoDe.daLamMs(context, de) / 60_000L).toInt() else -1
         val gio = when {
             lam < 0 -> ""
             lam > de.phutGoiY -> ", làm $lam phút (gợi ý ${de.phutGoiY}, quá ${lam - de.phutGoiY} phút)"
