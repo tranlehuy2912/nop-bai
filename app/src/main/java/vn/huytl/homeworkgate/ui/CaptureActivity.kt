@@ -110,8 +110,9 @@ class CaptureActivity : AppCompatActivity() {
      *
      * Khong gui di dau ca: chup xong tra duong dan ve cho man goi, ben do moi dua cho
      * may doc. Dung chung man chup vi phan camera - xin quyen, mo CameraX, dai anh nho,
-     * bam mot tam de bo tam do - y het. Tam anh nay se di vao viec tinh gio, nen van
-     * giu khung ngam de con chup thang tu tren xuong.
+     * bam mot tam de bo tam do - y het. Van giu khung ngam de con chup thang tu tren xuong,
+     * cho may doc ro tung dong. Truoc 30/9/2026 tam anh nay con di vao viec tinh gio (tron
+     * goi 45 phut); tu do no chi de doc ra cac dong nhac bai.
      */
     private val chupDanDo: Boolean by lazy { intent.getBooleanExtra(EXTRA_DAN_DO, false) }
 

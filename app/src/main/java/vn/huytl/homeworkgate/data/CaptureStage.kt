@@ -8,8 +8,9 @@ import vn.huytl.homeworkgate.R
  * Chi [BAI_GIAI] la bat buoc: nhieu hom de in san co san o ghi bai ngay duoi,
  * chup mot tam la co ca hai, bat chup du hai nhom chi lam con chup thua.
  *
- * Vo dan do khong con la mot nhom o day: tu 6d4f7d3 no chi chup o man vo dan do. Anh
- * trang vo gan vao bai mang khau [KHAU_DAN_DO], ten Bang dieu khien van doc.
+ * Vo dan do khong con la mot nhom o day: tu 6d4f7d3 (27/9/2026) no chi chup o man vo dan
+ * do. Tu do toi 30/9/2026 anh trang vo con gan vao bai voi khau DAN_DO, de tinh tron goi;
+ * Bang dieu khien van doc ten do o bai cu. Bo tron goi thi bai nop chi con hai nhom duoi day.
  *
  * De o day chu khong nam trong man chup, vi ca phan gui len Telegram lan bai test
  * deu can biet cac nhom nay.

@@ -11,8 +11,9 @@ import android.content.Context
  * vao mot quy: con thay con so tren tablet, con cap bao nhieu tu quy thi Ba Huy quyet,
  * bang nut tren Bang dieu khien hay lenh /quy tren Telegram.
  *
- * CHI PHAN LAM TREN MAY. Duong chup anh (vo dan do, tron goi 45 phut) khong bao gio vao
- * quy: phan do tinh theo bai co giao, khong phai theo cong con lam them.
+ * CHI PHAN LAM TREN MAY. Duong chup anh (bai co giao, mot phut moi dong, tran 45 phut;
+ * tron goi 45 phut cua vo dan do bo tu 30/9/2026) khong bao gio vao quy: phan do tinh
+ * theo bai co giao, khong phai theo cong con lam them.
  *
  * KHONG HET HAN, KHONG TINH VAO TRAN NGAY khi cap: day la Ba Huy chu dong cho, giong
  * lenh CHO. Phut da cap chua choi het toi gio ngu thi van mat nhu moi phieu khac, khong

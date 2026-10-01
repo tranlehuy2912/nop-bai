@@ -49,8 +49,11 @@ object Defaults {
     const val WAKE_MINUTE = 6 * 60
 
     /**
-     * Tran gio choi moi ngay theo duong lam bai: tron goi vo dan do 45 cong het tran
-     * bai lam them 90. Xem [vn.huytl.homeworkgate.data.LuatCongGio].
+     * Tran chung moi ngay cu: 135 phut, tuc tron goi vo dan do 45 cong tran bai lam them 90.
+     * KHONG CON CHAN GI tu 29/9/2026 (Ba Huy bo tran chung, moi phan co tran rieng o
+     * [vn.huytl.homeworkgate.data.LuatCongGio]), va tron goi cung bo ngay 30/9/2026. Giu lai
+     * chi de gieo [Prefs.tranPhutMoiNgay] cho may moi cai: hop/caidat van gui truong do cho
+     * Bang dieu khien ban cu.
      */
     const val TRAN_PHUT_MOI_NGAY = 135
 

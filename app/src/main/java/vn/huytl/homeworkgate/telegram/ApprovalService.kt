@@ -1877,8 +1877,10 @@ class ApprovalService : Service() {
     /**
      * Cap so phut AI da tinh. Dang choi thi cong thang vao phien.
      *
-     * useQuota = true: gio kiem bang bai tap an vao tran phut moi ngay. Cham tran
-     * thi [GateStore] tu cat bot cho vua chu khong tu choi ca lan duyet.
+     * useQuota = true: so phut nay tinh vao so phut doi bang hoc trong ngay (phutDaDuyet),
+     * de man hinh noi "hom nay kiem duoc bao nhieu". Tu 29/9/2026 khong con tran chung nen
+     * [GateStore] khong cat bot gi; tran rieng cua tung phan da ap luc tinh phut
+     * ([vn.huytl.homeworkgate.data.LuatCongGio]).
      */
     private fun capGioTuAi(phut: Int, bai: vn.huytl.homeworkgate.data.BaiCho?): Int? {
         if (gate.state == GateState.ACTIVE) {
@@ -2219,15 +2221,6 @@ class ApprovalService : Service() {
          * lien tuc mot bac, ma cai do thi Firestore da lam nhanh hon nhieu roi.
          */
         private const val NHIP_NGAY_MS = 5 * 60_000L
-
-        /**
-         * Bao lau ghe hop thu cua ba noi mot lan.
-         *
-         * Mot phut la do tre ba phai chiu tu luc bam den luc tablet mo gio. Khong
-         * ai thay do tre do: con con phai cam may len bam Bat dau thi dong ho moi
-         * chay. Ha xuong nua chi ton them request chu khong nhanh hon duoc bao nhieu.
-         */
-        private const val NHIP_NGO_HOP_THU_MS = 60_000L
 
         /**
          * Nhip xet loi nhac soan tap luc binh thuong.

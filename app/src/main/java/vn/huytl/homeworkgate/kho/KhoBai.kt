@@ -33,9 +33,12 @@ import vn.huytl.homeworkgate.data.SoCaiBai
  * vao dung luc service bi giet la mat sach so cai. SQLite ghi tung dong, khong bao
  * gio mat ca quyen so vi mot lan ghi hong.
  *
- * KHONG DAY LEN FIREBASE. Ba Huy chon vay: kho nay chi song trong may cua Le Hoa.
- * Doi lai mat mang van cham va van chan trung duoc - ma mat mang la luc de gian
- * lan nhat neu viec chan trung phai hoi may chu.
+ * CHAM VA CHAN TRUNG CHI HOI KHO TRONG MAY. Ba Huy chon vay: ngan hang chi song trong may
+ * cua Le Hoa, khong day len Firebase. Doi lai mat mang van cham va van chan trung duoc - ma
+ * mat mang la luc de gian lan nhat neu viec chan trung phai hoi may chu. Rieng so cai (bang
+ * tra_loi) co ban sao tren Firestore tu 17/9/2026 (socai/, [vn.huytl.homeworkgate.dongbo.DongBo.daySoCai]),
+ * chi de cai lai app thi keo ve duoc ([vn.huytl.homeworkgate.dongbo.DongBo.keoSoVe]); luc
+ * cham khong ai hoi ban sao do.
  */
 class KhoBai private constructor(context: Context) :
     SQLiteOpenHelper(context.applicationContext, TEN, null, BAN) {

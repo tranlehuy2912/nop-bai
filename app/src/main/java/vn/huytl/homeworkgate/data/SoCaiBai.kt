@@ -160,7 +160,7 @@ object SoCaiBai {
 
     /**
      * Cac cau con phai tu chup lai de sua: danh sach tren man chinh, man Ket qua, va cho
-     * khoa cau o man chon bai. Bot tu [dangChoSua] ba loai (30/9/2026):
+     * khoa cau o man chon bai. Bot tu [dangChoSua] bon loai (30/9/2026):
      *  1. lan sai cu hon [HIEN_SUA_NGAY] ngay;
      *  2. cau lam duoc tren may, da qua 24 gio: tu luc do no nam o duong Lam bai tren may
      *     ([LamTrenMay.cauLamThem]), hien them o day la dem mot cau hai lan;

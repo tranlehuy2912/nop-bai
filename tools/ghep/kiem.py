@@ -31,7 +31,7 @@ GOC = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))
 THU_MUC_SACH = os.path.join(GOC, "app", "src", "main", "assets", "nganhang")
 THU_MUC_HINH = os.path.join(GOC, "app", "src", "main", "assets", "hinh")
 
-# Bo phim co ban luon co, theo mon. Giu dung thu tu ben app (BanPhimGhep.coBan).
+# Bo phim co ban luon co, theo mon. Giu dung thu tu ben app (Ghep.phimCoBan trong kho/Ghep.kt).
 PHIM_CO_BAN = {
     "Toán": list("0123456789") + ["+", "−", "×", ":", "/", "=", "(", ")", ","],
     "Khoa học tự nhiên": list("0123456789") + ["+", "−", "·", ":", "/", "=", "(", ")", ",", "→"],

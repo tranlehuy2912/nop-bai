@@ -76,6 +76,13 @@ object ChamTheoClaude {
              */
             if (pham?.laSua == true && q == null && cn == null) return@mapNotNull null
 
+            /*
+             * Lan NOP THUONG thi khong chan nhu tren: loi nho dan Claude cham them cau thay
+             * trong anh ma con khong khai, va cau do khoa so cai theo de (khoa "tu:"). Mot cau
+             * sach da tra gio ma lot vao anh vi vay co the duoc cong lan nua, trong tran chup
+             * anh 45 phut. Ba Huy chot ngay 1/10/2026 coi nhu mot lan on tap, khong sua.
+             */
+
             // Cau ngoai sach cua lan nop lai lay de chep tu ban cham cu, khong lay de Claude
             // chep lan nay: so cai khoa cau ngoai sach theo de, xem [PhamVi.cauNgoai].
             val de = q?.de ?: cn?.de?.takeIf { it.isNotBlank() } ?: deClaude

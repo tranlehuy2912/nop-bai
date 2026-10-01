@@ -8,14 +8,16 @@ Tài liệu này tả phần dữ liệu thêm vào các file `app/src/main/asse
 - Mỗi lần bấm Kiểm tra mà sai thì mất một sao. Sau lần sai đầu, máy bớt phím nhiễu.
 - Hết sao thì câu đó 0 phút, nhưng con được thử thêm một lần. Vẫn sai thì máy hiện lời giải.
 - Làm lại mở sau 24 giờ, chỉ cộng phần hơn so với lần tốt nhất. Chưa đủ sao thì 24 giờ sau lại mở.
-- Ôn lại theo hẹn 3, 10, 20, 30 ngày; mỗi lần hẹn là một vòng sao mới.
+- Ôn lại theo hẹn 3, 10, 20, 30 ngày; mỗi lần hẹn là một vòng sao mới. Chỉ câu từng sai (kể cả câu làm trên máy mà mất sao) rồi đã làm đúng mới vào lịch ôn; câu đúng ngay từ đầu thì không (`KhoBai.denHen`).
 - Câu nhiều ô: mỗi ô sai trừ một sao.
+- Chỉ giao câu trong phần Lê Hòa đã học (mốc "Lớp đã học tới"). Câu sai ở bài chụp ảnh mà có `ghep` thì sau 24 giờ thành câu làm trên máy.
+- Mỗi ngày phần làm trên máy (làm thêm, luyện chỗ hay vấp, Giải đề) được tối đa 90 phút, ôn lại 30 phút (`LuatCongGio`). Phút vượt trần không mất mà vào quỹ giờ chơi, Ba Huy cấp sau.
 - Thứ tự nút (phương án, phím, thẻ, dòng) trộn lại ở mỗi lượt mới và giữ nguyên trong một lượt (anh Huy chốt 30/09/2026). Trắc nghiệm cũng trộn, chữ A, B, C, D đánh lại theo thứ tự mới. Riêng câu Đúng/Sai giữ nút Đúng đứng trước, và hàng phím số, dấu của câu biểu thức giữ nguyên.
 - Trên app không có chữ nào giải thích luật. Con tự khám phá.
 
 ## Các trường mới
 
-Ở mức file (cạnh `nguon`, `ban`, `cac_bai`):
+Ở mức file đã có sẵn `nguon` (không đổi về sau, vì đi vào id câu), `mon`, `ten`, `ban`, `cac_bai`. `ban` tăng mỗi lần sửa file, vì app chỉ nạp lại khi số này đổi, và phải đứng trước `cac_bai` vì app đọc số bản ở đầu file rồi dừng. `mon` của file là thứ `kiem.py` dùng để chọn bộ phím cơ bản; app thì lấy môn từ khai báo sách ở `NganHang.SACH`. Mỗi bài có `chuong`, `bai`, `cac_cau`. Thêm:
 
 - `doan_van`: bảng mã đoạn văn sang nội dung, cho các câu đọc hiểu dùng chung một đoạn. Xuống dòng bằng `\n`.
 
@@ -30,7 +32,7 @@ Chữ trong mọi trường hiển thị được dùng hai thẻ: `<u>...</u>` 
 
 ## Các kiểu ghép
 
-Mọi kiểu đều có `kieu` và `sao`. Trường `hoi` (không bắt buộc) là chữ hiện trên máy thay cho `de`, dùng khi `de` còn chứa các phương án in liền.
+Mọi kiểu đều có `kieu` và `sao`. Trường `hoi` (không bắt buộc) là chữ hiện trên máy thay cho `de`: dùng khi `de` còn chứa các phương án in liền, khi cần bỏ phần lời dẫn không thuộc câu, hay khi cần tả hình bằng chữ. Không có `hoi` thì máy hiện `de`. Đề thi thì câu nào cũng có `hoi` (xem phần đề thi).
 
 ### CHON: trắc nghiệm chọn một, 1 sao
 
@@ -65,7 +67,7 @@ Mọi kiểu đều có `kieu` và `sao`. Trường `hoi` (không bắt buộc) 
 - `dap`: mọi cách viết đúng, viết đủ cả phần `truoc`. Máy so không phân biệt hoa thường, bỏ khoảng trắng.
 - `truoc`: phần sách cho sẵn (chữ cái đầu), không bắt buộc.
 - Phím = các chữ cái khác nhau trong `dap` (bỏ phần `truoc`) cộng `nhieu`. Đáp án có dấu cách thì máy thêm phím cách.
-- `nhieu`: chữ cái nhiễu, không trùng chữ nào trong `dap`, ít nhất 2 và nhiều cỡ bằng số chữ thật.
+- `nhieu`: chữ cái nhiễu, mỗi phím một ký tự, không trùng chữ nào trong `dap`. Ít nhất 2, dưới 2 là lỗi. Nên nhiều cỡ bằng số chữ thật: `kiem.py` cảnh báo khi ít hơn số chữ thật, đòi tối đa 4.
 - Chỉ hiện ô từng chữ khi mọi đáp án dài bằng nhau.
 
 ### CAU: ghép thẻ từ thành câu, 2 sao
@@ -96,10 +98,10 @@ Mọi kiểu đều có `kieu` và `sao`. Trường `hoi` (không bắt buộc) 
   - Khoa học tự nhiên: `0` tới `9`, `+`, `−`, `·`, `:`, `/`, `=`, `(`, `)`, `,`, `→`
 - `phim`: các phím khác cần để ghép ra đáp án, mỗi phím có thể nhiều ký tự (`Na`, `mol`, `cm²`, `x²`). Không ghi lại phím cơ bản.
 - `nhieu`: phím nhiễu ngoài bộ cơ bản, nhiều cỡ bằng `phim`. Được để trống khi `phim` trống (đáp án chỉ gồm số).
-- `dap`: mọi dạng đúng. Máy so sau khi chuẩn hoá như Kiểm tra bài: bỏ khoảng trắng, `x²` bằng `x^2`, `H₂O` bằng `H2O`, `−` bằng `-`, `×` `·` `*` là một, `:` bằng `/`. Mũi tên phản ứng viết `→`.
+- `dap`: mọi dạng đúng. Máy so sau khi chuẩn hoá: bỏ khoảng trắng, `x²` bằng `x^2`, `H₂O` bằng `H2O`, `−` bằng `-`, `×` `·` `*` là một, `:` bằng `/`. Khác Kiểm tra bài, máy giữ chữ hoa chữ thường, vì phím đã cố định cách viết (`CO` khác `Co`). Mũi tên phản ứng viết `→`.
 - Máy nhận mọi thứ tự hạng tử, nên **không liệt kê các cách xếp khác** của cùng một đa thức hay cùng một vế phản ứng: `x³ + 5x²y − 10xy` và `−10xy + x³ + 5x²y` là một. Môn Toán còn nhận mọi thứ tự thừa số trong đơn thức (`yx²` như `x²y`), môn khác thì không (`H₂O` khác `HO₂`). Máy không gộp gì: `xyx` khác `x²y`, `2x + 3x` khác `5x`, nên câu rút gọn vẫn bắt được bài chưa rút gọn. Thứ tự hai vế giữ nguyên (`x = 2` khác `2 = x`), thứ tự các phần cách bằng `;` cũng giữ nguyên. Chỉ liệt kê dạng khác thật sự (`1/2x` và `x/2`, hai cách viết nghiệm). `kiem.py` báo "lưu ý" cho dạng chỉ khác thứ tự.
 - `thu_tu: true`: chỉ nhận đúng thứ tự trong `dap`. Dùng khi thứ tự là chính điều sách hỏi ("sắp xếp theo luỹ thừa giảm dần của x"). Không bật chỉ để giữ một cách viết đẹp.
-- `loi_giai`: các dòng lời giải mẫu, đúng như một bài làm đủ bước. Hết sao thì máy hiện các dòng này. `sao` bằng số dòng, từ 1 tới 20.
+- `loi_giai`: các dòng lời giải mẫu, đúng như một bài làm đủ bước. Hết sao thì con còn một lượt thử không tính phút; lượt đó vẫn sai thì máy hiện các dòng này. `sao` bằng số dòng, từ 1 tới 20.
 
 ### BUOC: xếp các bước lời giải; sao bằng số bước
 
@@ -154,24 +156,33 @@ Mọi kiểu đều có `kieu` và `sao`. Trường `hoi` (không bắt buộc) 
 
 ## Câu cần hình mà chưa có ảnh
 
-Toán và Khoa học tự nhiên cắt hình sau cùng (anh Huy chốt 29/09/2026), vì chưa đủ bản quét. Câu nào không nhìn hình thì không làm được (đề ghi "Hình 3.5", biểu đồ, bảng số liệu in dạng ảnh) vẫn soạn `ghep` đầy đủ như thường, rồi ghi thêm trong file phần một bảng `can_hinh` từ mã câu sang lời tả hình cần cắt, ví dụ `"can_hinh": {"3.12": "Hình 3.5: hình thang ABCD, hai đường chéo cắt nhau tại O"}`. Lúc gộp vào sách (`tools/ghep/gop.py`), câu có trong `can_hinh` mà chưa có `hinh` thì phần ghép được cất vào trường `ghep_cho_hinh` và câu ghi `bo_may: "chờ hình: <lời tả>"`, để máy không giao câu thiếu hình. Khi đã cắt hình, gộp lại một file phần có bảng `hinh` cho câu đó: `ghep_cho_hinh` tự về lại `ghep` và `bo_may` bị xoá. Câu đề đã tả đủ hình bằng chữ ("Cho tam giác ABC vuông tại A, đường cao AH") thì không cần hình, không ghi vào `can_hinh`.
+Toán và Khoa học tự nhiên cắt hình sau cùng (anh Huy chốt 29/09/2026), vì lúc đó chưa đủ bản quét (bản quét SBT Toán hai tập có từ 30/09/2026). Câu nào không nhìn hình thì không làm được (đề ghi "Hình 3.5", biểu đồ, bảng số liệu in dạng ảnh) vẫn soạn `ghep` đầy đủ như thường, rồi ghi thêm trong file phần một bảng `can_hinh` từ mã câu sang lời tả hình cần cắt, ví dụ `"can_hinh": {"3.12": "Hình 3.5: hình thang ABCD, hai đường chéo cắt nhau tại O"}`. Lúc gộp vào sách (`tools/ghep/gop.py`), câu có trong `can_hinh` mà chưa có `hinh` thì phần ghép được cất vào trường `ghep_cho_hinh` và câu ghi `bo_may: "chờ hình: <lời tả>"`, để máy không giao câu thiếu hình. Khi đã cắt hình, gộp lại một file phần có bảng `hinh` cho câu đó: `ghep_cho_hinh` tự về lại `ghep` và `bo_may` bị xoá. Câu đề đã tả đủ hình bằng chữ ("Cho tam giác ABC vuông tại A, đường cao AH") thì không cần hình, không ghi vào `can_hinh`.
+
+## Gộp, kiểm và cắt hình
+
+- `python3 tools/ghep/kiem.py <file>` kiểm một file sách hay file phần; `--tat-ca` kiểm mọi file trong `assets/nganhang`. Có lỗi thì không gộp được; cảnh báo in thành dòng "lưu ý". Bộ phím cơ bản trong `kiem.py` (`PHIM_CO_BAN`) phải giống `Ghep.phimCoBan` bên app.
+- `python3 tools/ghep/gop.py phan <file phần>...`: gộp các file phần (mỗi file có `nguon` và các bảng `ghep`, `bo_may`, `hinh`, `can_hinh` theo mã câu) vào file sách đã có, như SBT Toán, SGK Toán, SBT KHTN, SGK KHTN.
+- `python3 tools/ghep/gop.py sach <nguon> <file Unit>...` (thêm `--ten`, `--mon` khi cần): dựng cả một sách mới từ các file Unit, như SBT Tiếng Anh, xếp bài theo thứ tự sách.
+- Cả hai cách đều tự tăng `ban`, giữ `ban` đứng trước `cac_bai`, bỏ các dạng `BIEU_THUC` chỉ khác thứ tự hạng tử, chép ảnh bằng `--hinh-tu <thư mục>`, rồi chạy `kiem.py`. `--thu` chỉ kiểm, không ghi. `kiem.py` báo lỗi thì file sách cũ giữ nguyên.
+- `python3 tools/ghep/cat_hinh.py <ảnh trang> <x0> <y0> <x1> <y1> <ra.webp> [--le 6] [--rong 480]`: cắt một hình từ ảnh một trang sách, bỏ nền trắng quanh hình, phóng to rồi lưu WebP cho trường `hinh`.
+- Câu sách in sai số liệu mà không gán được đáp án chắc chắn thì vẫn để làm thêm (máy chấm theo cách làm), nhưng ghi mã câu vào `GiaiDe.KHONG_RA_DE` để câu đó không vào đề.
 
 ## Tiếng Anh: mã câu và cách chia
 
-- Mã câu: `<Unit>.<phần><số bài>.<số câu>`, ví dụ `1.B3.2` là Unit 1, phần B, bài 3, câu 2. Test Yourself: `T1.3.2`.
+- Mã câu: `<Unit>.<phần><số bài>.<số câu>`, ví dụ `1.B3.2` là Unit 1, phần B, bài 3, câu 2. Test Yourself: `T1.3.2`. Bài in thành hai phần a, b thì thêm chữ vào số bài (`1.D3b.1`, `T1.7b.6`); phần chỉ là một câu thì không có số câu (`1.D3a`, `T1.7a`).
 - Bài có hai vế (viết từ dưới hình rồi xếp vào cột): từng hình một câu `1.A1.1`, `1.A1.2`..., phần xếp cột một câu `1.A1.cot`.
 - Bài tìm lỗi sai: câu chọn chỗ sai `T1.4.1a` (`CHON`), câu sửa lại `T1.4.1b` (`CHU` hay `CAU`).
-- Đoạn văn cuối Unit: phần 1 xếp câu thành đoạn `1.E3a` (`BUOC`, đoạn mẫu về một bạn A do mình viết, 6 tới 8 câu, cộng 2 câu lạc đề), phần 2 ghép theo câu gợi ý `1.E3b` (`O`, `gioi: true`, mỗi câu gợi ý một dòng với hai ô: một ô ngữ pháp, một ô nội dung, cộng dòng gõ tên). Nội dung phần 2 không trùng phần 1.
+- Bài viết đoạn văn của Unit (số bài theo sách: `E3` ở Unit 1, 2, 3, 6; `E2` ở Unit 4; Unit 5 có cả `E2` lẫn `E3`): phần a xếp câu thành đoạn, ví dụ `1.E3a` (`BUOC`, đoạn mẫu do mình viết, 6 tới 8 câu, cộng 2 câu lạc đề); phần b ghép theo câu gợi ý, ví dụ `1.E3b` (`O`, mỗi câu gợi ý một dòng với hai ô: một ô ngữ pháp, một ô nội dung). Nội dung phần b không trùng phần a. Tới Unit 6 chỉ `1.E3b` bật `gioi: true` (đề viết về bạn thân, có dòng gõ tên); các phần b khác không bật, và chỉ có dòng gõ khi đề cần (`2.E3b`, `5.E2b`).
 - Bỏ hẳn (không đưa vào file): bài làm theo cặp, theo nhóm, nói to, luyện đọc, phỏng vấn bạn. Ngoại lệ: trò chơi Unit 4 C2 là câu hỏi kiến thức, giữ lại.
 - `bai`: `Unit 1. Leisure time`; Test Yourself thì `Test Yourself 1`.
-- `nhom`: tên phần, ví dụ `A. Pronunciation`.
+- `nhom`: tên phần, ví dụ `A. Pronunciation`. Test Yourself thì `nhom` là tên bài, `Test Yourself 1`.
 - `trang`: số trang in (trang PDF trừ 1).
 - `de`: lời dẫn của bài, xuống dòng, rồi nội dung câu. Câu trắc nghiệm thì `de` giữ cả các phương án như sách in, còn `hoi` bỏ các phương án.
 - `dang`, `dap_an`, `loai_dap_an`: câu `CHON` thì `TRAC_NGHIEM`, chữ cái đúng, `TN`; câu khác thì `CAU_NHO`, đáp án bằng chữ, `DAP_SO`.
 
 ## Bộ đề thi in sẵn (`dethianh8.json`, từ 30/09/2026)
 
-Một file như file sách, nhưng mỗi `bai` là một đề nguyên vẹn, giữ đúng thứ tự in. Khai trong `NganHang.SACH` với `deThi = true`: không hiện ở màn chọn sách khi nộp bài, không vào làm thêm hay đề tuần, chỉ Giải đề dùng (`kho/DeThi.kt`, `GiaiDe.taoDeThi`, `GiaiDe.moDeThi`). Đợt 1 (giữa kì 1 số 1 tới 3) sinh bằng `ghep-nhap/dethianh/tao_de.py`, nằm ngoài git cạnh ba repo. Đợt hai (giữa kì 1 số 4 tới 6, cuối kì 1 số 1 tới 8 trừ số 6, ngày 30/09/2026) soạn từ PDF bằng tác tử; bản chữ đề, file từng đề, ghi chú soát và script gộp nằm trong gói `de-thi-anh-dot2-2026-09-30.zip`, cũng ngoài git, và không có trên máy đang dùng (kiểm ngày 01/10/2026).
+Một file như file sách, nhưng mỗi `bai` là một đề nguyên vẹn, giữ đúng thứ tự in. Khai trong `NganHang.SACH` với `deThi = true`: không hiện ở màn chọn sách khi nộp bài, không vào làm thêm hay đề tuần (`kho/DeThi.kt`, `GiaiDe.taoDeThi`, `GiaiDe.moDeThi`). Câu của đề vẫn quay lại như mọi câu làm trên máy: ở phần làm lại của Luyện tập khi đề đã hết hạn, và ở Ôn lại khi tới hẹn. Đợt 1 (giữa kì 1 số 1 tới 3) sinh bằng `ghep-nhap/dethianh/tao_de.py`, nằm ngoài git cạnh ba repo. Đợt hai (giữa kì 1 số 4 tới 6, cuối kì 1 số 1 tới 8 trừ số 6, ngày 30/09/2026) soạn từ PDF bằng tác tử; bản chữ đề, file từng đề, ghi chú soát và script gộp nằm trong gói `de-thi-anh-dot2-2026-09-30.zip`, cũng ngoài git, và không có trên máy đang dùng (kiểm ngày 01/10/2026).
 
 Không chạy lại `tao_de.py`: script chỉ dựng 3 đề của đợt 1 với `ban` 1 rồi ghi đè cả file, nên chạy lại là mất 10 đề đợt hai, và máy cũng mất theo vì `NganHang` nạp lại khi số bản khác. Từ 01/10/2026 script tự dừng khi file đích có nhiều đề hơn hay `ban` cao hơn. Đợt sau nối đề mới vào cuối `cac_bai` của `dethianh8.json`, giữ nguyên các đề đã có, tăng `ban`, rồi chạy `kiem.py`, `DeThiTest` và `GhepTest`.
 
@@ -186,6 +197,9 @@ Không chạy lại `tao_de.py`: script chỉ dựng 3 đề của đợt 1 vớ
 - `ma`: mã ngắn của đề, đi vào khoá của đề đã mở và lệnh `MODETHI` của Bảng điều khiển. Không đổi về sau. Đề giữa kì 1 là `GK1-N` (`chuong` "Giữa học kì 1", `bai` "Đề giữa kì 1 số N"), đề học kì 1 là `CK1-N` (`chuong` "Cuối học kì 1", `bai` "Đề cuối kì 1 số N"), N là số đề của bản in.
 - `den_unit`: Unit cuối cùng mà các câu làm trên máy chạm tới. Tablet tự mở đề khi Lê Hòa chọn "Lớp đã học tới" Tiếng Anh bằng hoặc vượt số này. Câu phát âm dùng từ của Unit sau (earthquake, nomadic) không tính, vì câu đó hỏi cách đọc chứ không hỏi nghĩa. Tên đề không quyết định số này: các đề giữa kì 1, cuối kì 1 loigiaihay đăng năm 2024 có câu của Unit 7 tới 9 (tornado, earthquake, mệnh đề Whenever), nên ghi 9 và chỉ mở ở học kì 2 (anh Huy chốt 30/09/2026).
 - `phut`: giờ làm bài, cũng là đồng hồ của đề trên máy.
+- `nguon_goc`: nơi lấy đề và ngày đăng, để người soạn tra lại. App không đọc trường này.
+
+Luật mở đề (`GiaiDe.taoDeThi`, `GiaiDe.moDeThi`): mỗi lúc chỉ một đề đang mở. Tablet tự mở đề có `den_unit` cao nhất trong các đề chưa nộp mà mốc Unit đã tới (cùng phạm vi thì theo thứ tự trong file), và đề sau mở từ hôm sau ngày nộp đề trước. Đề mở ra giữ 30 ngày. Lê Hòa tự mở lại đề đã nộp ở trang Luyện tập từ hôm sau, chỉ với đề đã tới phạm vi; Ba Huy mở được mọi đề bằng lệnh `MODETHI`.
 
 Ở mức câu:
 

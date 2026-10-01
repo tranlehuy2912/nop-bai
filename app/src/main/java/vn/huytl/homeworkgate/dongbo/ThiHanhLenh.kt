@@ -444,8 +444,9 @@ object ThiHanhLenh {
     }
 
     /**
-     * Cham mot bai dang cho theo ket qua Claude. Dung khi may chua cham bai do: tablet
-     * tat cham AI, hay AI hong luc con nop.
+     * Cham mot bai dang cho theo ket qua Claude. Tu 28/9/2026 day la duong cham duy nhat:
+     * tablet khong tu cham nua. Truoc do lenh nay chi dung khi may chua cham bai do, vi
+     * tablet tat cham AI hay AI hong luc con nop.
      *
      * O day chi dung ban cham. Cap gio, ghi so va bao Telegram lam trong ApprovalService,
      * bang dung doan xu ly ban cham cua AI - xem [ApprovalService.chamTheoClaude]. Nen
