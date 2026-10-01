@@ -1,5 +1,6 @@
 package vn.huytl.homeworkgate
 
+import android.os.SystemClock
 import android.util.Base64
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
@@ -224,11 +225,14 @@ class ManualBang {
      * web khoi phai goi hai lan.
      *
      *  -e viec duyet -e phut 30      cap phieu
+     *  -e viec cho -e phut 30        nguoi lon cho gio: cong vao phien, khong thi cap phieu
      *  -e viec batdau                bam Bat dau
+     *  -e viec batdau -e truoc 30    bam Bat dau tu 30 phut truoc, de thanh ngay co san
+     *                                khuc da choi ma khong phai ngoi cho
      *  -e viec tamdung / dong
      *  -e viec themcho -e ma bai1    xep mot bai vao hang cho duyet
      *  -e viec xoacho                bo het hang doi cho duyet
-     *  -e viec xoaluot               xoa so phut da duyet trong ngay
+     *  -e viec xoaluot               xoa so phut da duyet va da choi trong ngay
      *  -e viec dathan -e goi com.x -e phut 15
      *  -e viec dunghet -e goi com.x  coi nhu da xem het han hom nay
      *  -e viec xoahan -e goi com.x
@@ -271,7 +275,15 @@ class ManualBang {
 
         when (v) {
             "duyet" -> ketQua = gate.approve(wantedMinutes = phut)
-            "batdau" -> ketQua = gate.start()
+            "cho" -> ketQua = if (gate.state == GateState.ACTIVE) {
+                gate.extend(phut ?: 30)
+            } else {
+                gate.approve(wantedMinutes = phut ?: 30, useQuota = false)
+            }
+            "batdau" -> ketQua = args.getString("truoc")?.toLongOrNull()?.let { truoc ->
+                val lui = truoc * 60_000L
+                gate.start(System.currentTimeMillis() - lui, SystemClock.elapsedRealtime() - lui)
+            } ?: gate.start()
             "tamdung" -> ketQua = gate.pause()
             "dong" -> ketQua = gate.endSession(EndReason.PARENT_REVOKED).name
             "themcho" -> {
@@ -287,9 +299,11 @@ class ManualBang {
                 ketQua = gate.soBaiDangCho()
             }
             "xoaluot" -> {
+                // choi_ms, choi_ngay: so phut da choi trong ngay cua thanh ngay (1/10/2026).
                 prefs.raw().edit()
                     .remove("day_key").remove("day_count")
                     .remove("bonus_day").remove("bonus_count")
+                    .remove("choi_ms").remove("choi_ngay")
                     .commit()
                 ketQua = gate.phutConLaiHomNay()
             }

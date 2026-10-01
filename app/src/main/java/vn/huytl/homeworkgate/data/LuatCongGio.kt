@@ -71,9 +71,11 @@ object LuatCongGio {
     const val TRAN_ON_MOI_NGAY = 30
 
     /**
-     * Tran ngay: tong tran cua moi phan. Chi de hien ra man hinh ("hôm nay kiếm được
-     * 60/215 phút"), khong chan gi, vi tung phan da tu chan. Ba Huy chot 215 phut ngay
-     * 29/9/2026.
+     * Tran ngay: tong tran cua moi phan. Chi de hien ra man hinh, khong chan gi, vi tung
+     * phan da tu chan. Ba Huy chot 215 phut ngay 29/9/2026.
+     *
+     * Tu 1/10/2026 man hinh cong them gio nguoi lon cho vao ca hai so: kiem 60 phut, ba cho
+     * 30 thi ghi "Hôm nay được chơi 90/245 phút". Xem [vn.huytl.homeworkgate.ui.ThanhNgay].
      */
     val TRAN_NGAY: Int
         get() = TRAN_ANH + TRAN_TREN_MAY + TRAN_ON_MOI_NGAY + HocThuoc.TRAN_PHUT_MOI_NGAY +

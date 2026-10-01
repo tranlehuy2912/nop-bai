@@ -1,6 +1,7 @@
 package vn.huytl.homeworkgate.data
 
 import android.content.Context
+import android.content.SharedPreferences
 import android.os.SystemClock
 import org.json.JSONArray
 import org.json.JSONObject
@@ -224,6 +225,85 @@ class GateStore(context: Context) {
         (LuatCongGio.TRAN_NGAY - phutDaDuyetHomNay(now)).coerceAtLeast(0)
 
     /**
+     * So milli giay con DA CHOI that trong ngay, dem bang dong ho chu khong suy ra.
+     *
+     * VI SAO PHAI DEM (1/10/2026). Truoc do thanh han muc ngay suy "da choi" bang phep tru
+     * "phut kiem duoc - phut dang giu", va phep tru do sai moi lan co phut khong di qua
+     * so dem kiem duoc. Ba Huy cho them 30 phut giua phien thi khuc "da choi" tut tu 30 ve
+     * 0; cuoi ngay thanh ghi da choi 45 trong khi con choi 75. Phut bi bot, bi khoa giua
+     * chung hay het han luc di ngu thi nguoc lai: bien mat ma lai bi tinh la da choi.
+     *
+     * Dem that thi ca hai loai tu dung: phut nguoi lon cho vao phien nao thi choi den dau
+     * dem den do, phut bi lay lai thi khong ai choi nen khong dem. Gom lai tung doan phien
+     * luc [pause] va [endSession], cong them doan dang chay.
+     */
+    fun msDaChoiHomNay(
+        nowWall: Long = System.currentTimeMillis(),
+        nowElapsed: Long = SystemClock.elapsedRealtime()
+    ): Long {
+        val daGom = if (sp.getInt(K_CHOI_NGAY, 0) == dayKeyOf(nowWall)) sp.getLong(K_CHOI_MS, 0L) else 0L
+        return daGom + choiTrongDoan(nowWall, nowElapsed)
+    }
+
+    /**
+     * So milli giay con dang giu, chua choi: phan con lai cua phien dang chay, phan giu
+     * luc tam dung, hay phieu da duyet chua bam Bat dau.
+     *
+     * Dang choi thi doc [remainingMs] chu khong doc [grantedMinutes]: o do van giu so
+     * phut cua phieu luc bam Bat dau, phien het gio ma [tick] chua kip cat thi man hinh
+     * se hien lai ca phieu cu.
+     */
+    fun msDangGiu(
+        nowWall: Long = System.currentTimeMillis(),
+        nowElapsed: Long = SystemClock.elapsedRealtime()
+    ): Long = when (state) {
+        GateState.ACTIVE -> remainingMs(nowWall, nowElapsed)
+        GateState.PAUSED -> pausedRemainingMs
+        GateState.GRANTED, GateState.PENDING -> grantedMinutes * 60_000L
+        GateState.LOCKED -> 0L
+    }
+
+    /**
+     * Doan phien dang chay da choi duoc bao lau, 0 neu khong co phien nao chay.
+     *
+     * Dem bang dong ho tuong doi nhu [remainingMs]. Vua reboot thi dong ho do da ve 0,
+     * nen lay dong ho tuong: lech mat may chuc giay khoi dong may, con hon bo ca doan.
+     * Khong dai qua do dai phien, va khong qua gio chot - phien ket o gio chot ma vong
+     * dem 30 giay moi kip cat thi may giay sau do khong phai la choi.
+     *
+     * Doan bat dau tu mot ngay khac thi khong tinh cho ngay [nowWall]. Tablet het pin luc
+     * 21:55 giua phien, sang hom sau mo len moi cat phien vi reboot: khong co dong nay thi
+     * ca doan toi qua vao so da choi cua sang nay. Thay tren may ao ngay 1/10/2026, khi mot
+     * phien gia cua bo test (ngay 11/9) bi dong vao hom nay va thanh ghi "đã chơi 50".
+     */
+    private fun choiTrongDoan(nowWall: Long, nowElapsed: Long): Long {
+        if (state != GateState.ACTIVE) return 0L
+        if (dayKeyOf(grantedAtWall) != dayKeyOf(nowWall)) return 0L
+        val troi = if (nowElapsed >= grantedAtElapsed) {
+            nowElapsed - grantedAtElapsed
+        } else {
+            nowWall - grantedAtWall
+        }
+        val chot = hardStopWall
+        val tran = if (chot > 0L) minOf(durationMs, chot - grantedAtWall) else durationMs
+        return troi.coerceIn(0L, tran.coerceAtLeast(0L))
+    }
+
+    /**
+     * Cong [ms] vao so da choi cua ngay [nowWall], ghi chung lan ghi cua ben goi.
+     *
+     * Chung mot lan ghi voi lan doi trang thai, khong ghi rieng: moi lan ghi prefs keo theo
+     * mot luot DongBo xet day len Firestore, va tien trinh bi giet giua hai lan ghi la so
+     * da choi lech voi trang thai.
+     */
+    private fun gomDaChoi(ed: SharedPreferences.Editor, ms: Long, nowWall: Long) {
+        if (ms <= 0L) return
+        val ngay = dayKeyOf(nowWall)
+        val cu = if (sp.getInt(K_CHOI_NGAY, 0) == ngay) sp.getLong(K_CHOI_MS, 0L) else 0L
+        ed.putInt(K_CHOI_NGAY, ngay).putLong(K_CHOI_MS, cu + ms)
+    }
+
+    /**
      * So milli giay con lai cua phien. Tra 0 neu khong con gio.
      * Ham nay chi doc, khong tu doi trang thai; viec do de [tick] lam.
      */
@@ -260,7 +340,7 @@ class GateStore(context: Context) {
             val quaNgay = dayKeyOf(nowWall) != dayKeyOf(approvedAtWall)
             if (quaNgay || nowWall >= hardStopWallFor(nowWall)) {
                 refundApproval(nowWall)
-                return endSession(EndReason.NEVER_STARTED)
+                return endSession(EndReason.NEVER_STARTED, nowWall, nowElapsed)
             }
             return null
         }
@@ -271,7 +351,7 @@ class GateStore(context: Context) {
         if (state == GateState.PAUSED) {
             val quaNgay = dayKeyOf(nowWall) != dayKeyOf(approvedAtWall)
             if (quaNgay || nowWall >= hardStopWallFor(nowWall)) {
-                return endSession(EndReason.HARD_STOP)
+                return endSession(EndReason.HARD_STOP, nowWall, nowElapsed)
             }
             return null
         }
@@ -279,7 +359,7 @@ class GateStore(context: Context) {
         if (state != GateState.ACTIVE) return null
 
         // Reboot: dong ho tuong doi khong bao gio tu giam.
-        if (nowElapsed < grantedAtElapsed) return endSession(EndReason.REBOOT)
+        if (nowElapsed < grantedAtElapsed) return endSession(EndReason.REBOOT, nowWall, nowElapsed)
 
         /*
          * Day lui dong ho he thong.
@@ -298,13 +378,13 @@ class GateStore(context: Context) {
          * Cho phep lech [CLOCK_SLACK_MS] de tru cho viec dong bo gio qua mang.
          */
         if (nowWall - grantedAtWall < (nowElapsed - grantedAtElapsed) - CLOCK_SLACK_MS) {
-            return endSession(EndReason.CLOCK_TAMPER)
+            return endSession(EndReason.CLOCK_TAMPER, nowWall, nowElapsed)
         }
 
         if (remainingMs(nowWall, nowElapsed) > 0L) return null
 
         val reason = if (nowWall >= hardStopWall) EndReason.HARD_STOP else EndReason.RAN_OUT
-        return endSession(reason)
+        return endSession(reason, nowWall, nowElapsed)
     }
 
     /**
@@ -494,7 +574,7 @@ class GateStore(context: Context) {
         val hardStop = hardStopWallFor(now)
         val actual = minOf(grantedMinutes * 60_000L, hardStop - now)
         if (actual <= 0) {
-            endSession(EndReason.HARD_STOP)
+            endSession(EndReason.HARD_STOP, now, nowElapsed)
             return null
         }
 
@@ -556,15 +636,18 @@ class GateStore(context: Context) {
         val tran = grantedMinutes * 60_000L
         val conLai = (remainingMs(now, nowElapsed) + creditMs).coerceIn(0L, tran)
         if (conLai <= 0L) {
-            endSession(EndReason.RAN_OUT)
+            endSession(EndReason.RAN_OUT, now, nowElapsed)
             return 0
         }
+        // Khoang man hinh tat duoc tra lai thi cung khong phai la choi.
+        val choi = (choiTrongDoan(now, nowElapsed) - creditMs).coerceAtLeast(0L)
 
-        sp.edit()
+        val ed = sp.edit()
             .putLong(K_PAUSED_LEFT, conLai)
             .putLong(K_DURATION, 0L)
             .putString(K_STATE, GateState.PAUSED.name)
-            .commit()
+        gomDaChoi(ed, choi, now)
+        ed.commit()
 
         return (conLai / 60_000L).toInt()
     }
@@ -582,7 +665,7 @@ class GateStore(context: Context) {
         val hardStop = hardStopWallFor(now)
         val actual = minOf(pausedRemainingMs, hardStop - now)
         if (actual <= 0L) {
-            endSession(EndReason.HARD_STOP)
+            endSession(EndReason.HARD_STOP, now, nowElapsed)
             return null
         }
 
@@ -645,7 +728,7 @@ class GateStore(context: Context) {
 
         val newDuration = durationMs + them * 60_000L
         if (newDuration <= nowElapsed - grantedAtElapsed) {
-            endSession(EndReason.PARENT_REVOKED)
+            endSession(EndReason.PARENT_REVOKED, now, nowElapsed)
             return 0
         }
         durationMs = newDuration
@@ -658,11 +741,19 @@ class GateStore(context: Context) {
      * Bai dang cho duyet thi giu nguyen. Con nop bai trong luc dang choi, het gio
      * truoc khi ba kip bam duyet - cat luon bai do la con mat cong chup ma khong ai
      * xem, va ba bam Duyet chi nhan duoc cau "yeu cau nay cu roi".
+     *
+     * Dang choi thi gom doan vua choi vao [msDaChoiHomNay]. Phan chua choi bi bo (khoa,
+     * thu hoi, toi gio ngu) khong gom: khong ai choi phan do.
      */
-    fun endSession(reason: EndReason): EndReason {
+    fun endSession(
+        reason: EndReason,
+        nowWall: Long = System.currentTimeMillis(),
+        nowElapsed: Long = SystemClock.elapsedRealtime()
+    ): EndReason {
         val conCho = baiDangCho()
+        val choi = choiTrongDoan(nowWall, nowElapsed)
         // Cung ly do nhu approve: mot lan ghi, doi ghi xong.
-        sp.edit()
+        val ed = sp.edit()
             .putString(
                 K_STATE,
                 if (conCho.isEmpty()) GateState.LOCKED.name else GateState.PENDING.name
@@ -675,7 +766,8 @@ class GateStore(context: Context) {
             .putInt(K_GRANTED_MINUTES, 0)
             .putLong(K_APPROVED_WALL, 0L)
             .putString(K_END_REASON, reason.name)
-            .commit()
+        gomDaChoi(ed, choi, nowWall)
+        ed.commit()
         return reason
     }
 
@@ -761,5 +853,9 @@ class GateStore(context: Context) {
         private const val K_GUARD_GONE = "guard_gone_wall"
         private const val K_GRANTED_MINUTES = "granted_minutes"
         private const val K_APPROVED_WALL = "approved_wall"
+
+        /** So milli giay da choi trong ngay [K_CHOI_NGAY], xem [msDaChoiHomNay]. */
+        private const val K_CHOI_MS = "choi_ms"
+        private const val K_CHOI_NGAY = "choi_ngay"
     }
 }

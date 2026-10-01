@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Nen cua thanh han muc ngay: phan CHUA kiem duoc. Hai phan kia ve de len tren. -->
+<!-- Nen cua thanh han muc ngay: phan con kiem them duoc. Hai khuc kia ve de len tren.
+
+     Trang dac, khong trong suot. Truoc 1/10/2026 nen nay la den 15%, nen no nga theo mau
+     the ben duoi: nau luc khoa, xanh duong luc da duyet, xanh la luc dang choi. Thanh
+     chua co gi ma cung doi mau theo trang thai, Ba Huy nhin khong ra quy luat. -->
 <shape xmlns:android="http://schemas.android.com/apk/res/android"
     android:shape="rectangle">
-    <solid android:color="#26000000" />
+    <solid android:color="@color/surface" />
+    <stroke
+        android:width="1dp"
+        android:color="@color/line" />
     <corners android:radius="7dp" />
 </shape>

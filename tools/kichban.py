@@ -66,10 +66,11 @@ def danh_sach():
             lam=lambda m: (m.van(RANH), m.dat("dong,xoacho,xoaluot"), m.dat("duyet", phut=30),
                            m.man("HomeActivity")),
             # Khong soat chu tren nut to: no nam cuoi trang va bi day khoi vung
-            # nhin thay khi man hinh dang co nhieu the. Soat phan the trang thai va dong
-            # "Hôm nay kiếm được 30/... phút (chưa chơi 30)" - do moi la cho noi "phieu con
-            # nguyen, chua bam". Cau "Chưa tính giờ đâu" da bo khoi the tu 4110de0 (27/9/2026).
-            cho=["Ba Huy đã duyệt", "30 phút", "chưa chơi 30"],
+            # nhin thay khi man hinh dang co nhieu the. Soat phan the trang thai va chu
+            # thich "còn 30" duoi thanh ngay - do moi la cho noi "phieu con nguyen, chua
+            # bam". Truoc 1/10/2026 dong do ghi "(chưa chơi 30)". Cau "Chưa tính giờ đâu"
+            # da bo khoi the tu 4110de0 (27/9/2026).
+            cho=["Ba Huy đã duyệt", "30 phút", "còn 30"],
         ),
         dict(
             ma="cong-choi", nhom="Cổng & giờ chơi",
@@ -284,7 +285,7 @@ def danh_sach():
             lam=lambda m: (m.van(RANH), m.man("CachKiemGioActivity")),
             # Chi soat phan dau danh sach: may duong con lai nam duoi vung nhin
             # thay, ma uiautomator chi doc duoc phan dang hien.
-            cho=["Cách kiếm giờ chơi", "Hôm nay kiếm được", "LÀM GÌ THÌ ĐƯỢC THÊM GIỜ",
+            cho=["Cách kiếm giờ chơi", "Hôm nay được chơi", "LÀM GÌ THÌ ĐƯỢC THÊM GIỜ",
                  "Chụp bài cô giao", "45 phút"],
         ),
 

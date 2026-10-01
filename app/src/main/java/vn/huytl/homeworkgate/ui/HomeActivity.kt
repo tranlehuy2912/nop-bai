@@ -10,6 +10,7 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.text.InputType
+import android.text.SpannableStringBuilder
 import android.widget.EditText
 import android.view.View
 import androidx.activity.result.contract.ActivityResultContracts
@@ -26,7 +27,6 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import android.widget.Toast
-import android.widget.LinearLayout
 import vn.huytl.homeworkgate.R
 import vn.huytl.homeworkgate.data.BaiGuiHong
 import vn.huytl.homeworkgate.data.CauSo
@@ -465,62 +465,36 @@ class HomeActivity : AppCompatActivity() {
     }
 
     /**
-     * Thanh han muc gio choi trong ngay.
-     *
-     * Ba doan tren cung mot truc, truc la tran cua ngay:
-     *   - da choi: phan da tieu roi, khong lay lai duoc.
-     *   - dang giu: da kiem duoc ma chua bam choi, hoac dang tam dung.
-     *   - con lai: phan hom nay con co the kiem them bang bai tap.
-     *
-     * "Da choi" tinh bang phut da duyet tru phan con dang giu, chu khong dem rieng:
-     * so phut duyet la con so duy nhat duoc ghi xuong, va mot cai so dem thu hai la
-     * mot cho nua de hai ben lech nhau.
+     * Thanh han muc gio choi trong ngay: xam da choi, khuc mau dang giu, phan trang con
+     * kiem duoc. Cach tinh, cach ve va nhung loi cu nam o [ThanhNgay], dung chung voi man
+     * Cach kiem gio de con chi phai hoc mot kieu thanh.
      */
     private fun veHanNgay() {
         // Tran ngay bang tong tran rieng cua moi phan (29/9/2026).
-        val tran = LuatCongGio.TRAN_NGAY
-        if (tran <= 0) {
+        if (LuatCongGio.TRAN_NGAY <= 0) {
             binding.khungHanNgay.visibility = View.GONE
             return
         }
-        val kiem = gate.phutDaDuyetHomNay()
-        val giuMs = when {
-            gate.isOpen() -> gate.remainingMs()
-            gate.state == GateState.PAUSED -> gate.pausedMs()
-            gate.grantedMinutes > 0 -> gate.grantedMinutes * 60_000L
-            else -> 0L
-        }
-        val giu = ((giuMs + 59_999L) / 60_000L).toInt().coerceAtMost(kiem)
-        val daChoi = (kiem - giu).coerceAtLeast(0)
-
+        val so = ThanhNgay.so(gate)
+        val mauCon = ThanhNgay.mauCon(gate)
         binding.khungHanNgay.visibility = View.VISIBLE
-        binding.phanDaChoi.setBackgroundColor(ContextCompat.getColor(this, R.color.ok))
-        binding.phanDangGiu.setBackgroundColor(ContextCompat.getColor(this, R.color.brand))
-        // Trong LinearLayout ngang, weight la ty le. Phan con lai khong can View nao:
-        // no chinh la nen cua khung.
-        (binding.phanDaChoi.layoutParams as LinearLayout.LayoutParams).weight = daChoi.toFloat()
-        (binding.phanDangGiu.layoutParams as LinearLayout.LayoutParams).weight = giu.toFloat()
+        ThanhNgay.ve(binding.khungThanh, binding.phanDaChoi, binding.phanDangGiu, so, mauCon)
 
-        binding.chuHanNgay.text = buildString {
-            append("Hôm nay kiếm được ").append(kiem).append('/').append(tran).append(" phút")
-            /*
-             * Hai con so sau de TRONG NGOAC chu khong ngan bang dau cham giua.
-             *
-             * Chung la PHAN CUA con so dau, cong lai dung bang no. Dau cham giua thi
-             * ngan nhung thu ngang hang, nen dung o day lam ba con so trong nhu ba su
-             * viec bang vai - doc xong khong biet cai nao gom cai nao.
-             *
-             * Thu tu "da choi" truoc "chua choi" de khop voi thanh mau ngay ben duoi:
-             * phan xanh la nam ben trai, phan xanh duong nam ben phai. Ban truoc chu
-             * va thanh nguoc nhau.
-             */
-            val chia = listOfNotNull(
-                "đã chơi $daChoi".takeIf { daChoi > 0 },
-                "chưa chơi $giu".takeIf { giu > 0 },
-            )
-            if (chia.isNotEmpty()) append(" (").append(chia.joinToString(", ")).append(")")
+        binding.chuHanNgay.text = SpannableStringBuilder().apply {
+            // "Được chơi" chu khong "kiếm được" tu 1/10/2026: so nay gom ca gio nguoi lon
+            // cho, khong con chi la phut doi bang bai tap.
+            append("Hôm nay được chơi ${so.duoc}/${so.tong} phút")
             val quy = QuyGio.so(this@HomeActivity)
-            if (quy > 0) append(" · Quỹ giờ chơi ").append(quy).append(" phút")
+            if (quy > 0) append(" · Quỹ giờ chơi $quy phút")
+            /*
+             * Chu thich mau xuong dong rieng, ngay duoi thanh.
+             *
+             * Truoc 1/10/2026 hai so nay nam trong ngoac sau so dau, "(đã chơi 30, chưa
+             * chơi 15)", nhung khong cho nao noi so nao la khuc mau nao. Gio moi so co mot
+             * cham cung mau khuc cua no, xep trai sang phai nhu tren thanh.
+             */
+            val chuThich = ThanhNgay.chuThich(this@HomeActivity, so, mauCon)
+            if (chuThich.isNotEmpty()) append('\n').append(chuThich)
         }
     }
 

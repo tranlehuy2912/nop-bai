@@ -2,6 +2,7 @@ package vn.huytl.homeworkgate.ui
 
 import android.content.res.ColorStateList
 import android.os.Bundle
+import android.text.SpannableStringBuilder
 import android.view.View
 import android.widget.LinearLayout
 import android.widget.TextView
@@ -12,7 +13,6 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.updatePadding
 import java.util.Calendar
 import vn.huytl.homeworkgate.R
-import vn.huytl.homeworkgate.data.GateState
 import vn.huytl.homeworkgate.data.GateStore
 import vn.huytl.homeworkgate.data.GiaiDe
 import vn.huytl.homeworkgate.data.HocThuoc
@@ -91,39 +91,27 @@ class CachKiemGioActivity : AppCompatActivity() {
     /**
      * Hom nay dang o dau tren han muc ngay.
      *
-     * Chep y he thanh ba doan ngoai man chinh - da choi, dang giu, con lai - chu
-     * khong ve mot kieu khac: cung mot con so ma hai man hinh ve hai kieu thi con
-     * phai hoc hai lan, va lan nao cung phai doi chieu xem co khop nhau khong.
+     * Ve bang chinh [ThanhNgay] cua man chinh chu khong ve mot kieu khac: cung mot con so
+     * ma hai man hinh ve hai kieu thi con phai hoc hai lan, va lan nao cung phai doi
+     * chieu xem co khop nhau khong.
      */
     private fun veHomNay() {
-        // Tran ngay bang tong tran rieng cua moi phan (29/9/2026), khong con so Ba Huy chinh.
-        val tran = LuatCongGio.TRAN_NGAY
-        val kiem = gate.phutDaDuyetHomNay()
-        val con = gate.phutConLaiHomNay()
+        val so = ThanhNgay.so(gate)
+        val mauCon = ThanhNgay.mauCon(gate)
 
-        val giuMs = when {
-            gate.isOpen() -> gate.remainingMs()
-            gate.state == GateState.PAUSED -> gate.pausedMs()
-            gate.grantedMinutes > 0 -> gate.grantedMinutes * 60_000L
-            else -> 0L
-        }
-        val giu = ((giuMs + 59_999L) / 60_000L).toInt().coerceAtMost(kiem)
-        val daChoi = (kiem - giu).coerceAtLeast(0)
+        binding.txtHomNay.text = "Hôm nay được chơi ${so.duoc}/${so.tong} phút"
+        ThanhNgay.ve(binding.khungThanh, binding.phanDaChoi, binding.phanDangGiu, so, mauCon)
 
-        binding.txtHomNay.text = "Hôm nay kiếm được $kiem/$tran phút"
-        binding.phanDaChoi.setBackgroundColor(ContextCompat.getColor(this, R.color.ok))
-        binding.phanDangGiu.setBackgroundColor(ContextCompat.getColor(this, R.color.brand))
-        (binding.phanDaChoi.layoutParams as LinearLayout.LayoutParams).weight = daChoi.toFloat()
-        (binding.phanDangGiu.layoutParams as LinearLayout.LayoutParams).weight = giu.toFloat()
-        binding.khungThanh.requestLayout()
-
-        binding.txtHomNayPhu.text = buildString {
-            if (con > 0) {
-                append("Làm bài nữa thì hôm nay còn kiếm thêm được tối đa $con phút.")
+        binding.txtHomNayPhu.text = SpannableStringBuilder().apply {
+            // Chu thich mau thay cho cau "Đang giữ N phút chưa chơi" truoc 1/10/2026: cung
+            // con so do, nhung co cham mau noi no voi khuc nao tren thanh.
+            val chuThich = ThanhNgay.chuThich(this@CachKiemGioActivity, so, mauCon)
+            if (chuThich.isNotEmpty()) append(chuThich).append('\n')
+            if (so.conKiem > 0) {
+                append("Làm bài nữa thì hôm nay còn kiếm thêm được tối đa ${so.conKiem} phút.")
             } else {
                 append("Hôm nay đủ giờ rồi, mai nộp bài tiếp nhé.")
             }
-            if (giu > 0) append(" Đang giữ $giu phút chưa chơi.")
             val quy = QuyGio.so(this@CachKiemGioActivity)
             if (quy > 0) append(" Quỹ giờ chơi: $quy phút.")
         }

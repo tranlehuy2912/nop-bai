@@ -174,10 +174,10 @@
                 style="@style/Text.Body" />
 
             <!-- Han muc gio choi hom nay, ve thanh mot thanh chu khong phai mot cau.
-                 Ba phan tren cung mot truc la tran cua ngay: phan da choi, phan da
-                 kiem duoc ma chua choi, va phan con co the kiem them. Doc mot cau
-                 "da duoc 50 phut, toi da 120" thi phai tinh nham; nhin thanh nay thi
-                 biet ngay hom nay con nhieu hay sap het. -->
+                 Ba phan tren cung mot truc: xam la da choi, khuc mau la dang giu chua
+                 choi, trang la con co the kiem them. Doc mot cau "da duoc 50 phut, toi
+                 da 120" thi phai tinh nham; nhin thanh nay thi biet ngay hom nay con
+                 nhieu hay sap het. Ve o ThanhNgay, chung voi man Cach kiem gio. -->
             <LinearLayout
                 android:id="@+id/khung_han_ngay"
                 android:layout_width="match_parent"
@@ -191,6 +191,7 @@
                 android:visibility="gone">
 
                 <LinearLayout
+                    android:id="@+id/khung_thanh"
                     android:layout_width="match_parent"
                     android:layout_height="14dp"
                     android:background="@drawable/st_nen_thanh_ngay"

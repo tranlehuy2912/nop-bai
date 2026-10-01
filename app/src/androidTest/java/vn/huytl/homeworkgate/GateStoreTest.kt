@@ -14,6 +14,7 @@ import vn.huytl.homeworkgate.data.GateState
 import vn.huytl.homeworkgate.data.GateStore
 import vn.huytl.homeworkgate.data.LuatCongGio
 import vn.huytl.homeworkgate.data.Prefs
+import vn.huytl.homeworkgate.ui.ThanhNgay
 import java.util.Calendar
 
 /**
@@ -602,5 +603,149 @@ class GateStoreTest {
         gate.tick(nowWall = at(8, 0), nowElapsed = 1_000L)
         assertEquals(0, gate.soBaiDangCho())
         assertEquals(GateState.LOCKED, gate.state)
+    }
+
+    // ------------------------------------------- da choi that, cho thanh ngay
+
+    @Test
+    fun dang_choi_thi_so_da_choi_dem_theo_dong_ho() {
+        val now = at(19, 0)
+        gate.approve(now, wantedMinutes = 45)
+        gate.start(now, nowElapsed = 1_000L)
+
+        assertEquals(10 * minute, gate.msDaChoiHomNay(now + 10 * minute, 1_000L + 10 * minute))
+        assertEquals(35 * minute, gate.msDangGiu(now + 10 * minute, 1_000L + 10 * minute))
+    }
+
+    @Test
+    fun dang_giu_gom_phieu_chua_bam_va_phan_tam_dung() {
+        val now = at(19, 0)
+        gate.approve(now, wantedMinutes = 45)
+        assertEquals(45 * minute, gate.msDangGiu(now, 1_000L))
+        assertEquals(0L, gate.msDaChoiHomNay(now, 1_000L))
+
+        gate.start(now, nowElapsed = 1_000L)
+        gate.pause(now = now + 20 * minute, nowElapsed = 1_000L + 20 * minute)
+        assertEquals(25 * minute, gate.msDangGiu(now + 30 * minute, 1_000L + 30 * minute))
+        assertEquals(20 * minute, gate.msDaChoiHomNay(now + 30 * minute, 1_000L + 30 * minute))
+    }
+
+    @Test
+    fun tam_dung_gom_doan_vua_choi_tru_khoang_tat_man_hinh() {
+        val now = at(19, 0)
+        gate.approve(now)
+        gate.start(now, nowElapsed = 1_000L)
+
+        // Choi 10 phut thi man hinh tat, 15 phut sau vong dem moi dung phien: khoang tat
+        // man hinh duoc tra lai gio thi cung khong tinh la da choi.
+        gate.pause(creditMs = 15 * minute, now = now + 25 * minute, nowElapsed = 1_000L + 25 * minute)
+        assertEquals(10 * minute, gate.msDaChoiHomNay(now + 30 * minute, 1_000L + 30 * minute))
+
+        // Choi tiep 5 phut nua thi cong vao doan da gom.
+        gate.resume(now + 40 * minute, nowElapsed = 1_000L + 40 * minute)
+        assertEquals(15 * minute, gate.msDaChoiHomNay(now + 45 * minute, 1_000L + 45 * minute))
+    }
+
+    @Test
+    fun ba_cho_them_giua_phien_khong_lam_tut_so_da_choi() {
+        // Loi cua thanh ngay truoc 1/10/2026: choi 30 phut, ba cho them 30 phut, khuc da
+        // choi tut ve 0 vi no la phut kiem duoc tru phut dang giu.
+        val now = at(15, 0)
+        gate.approve(now, wantedMinutes = 45)
+        gate.start(now, nowElapsed = 1_000L)
+        gate.extend(30, now + 30 * minute, nowElapsed = 1_000L + 30 * minute)
+
+        assertEquals(30 * minute, gate.msDaChoiHomNay(now + 30 * minute, 1_000L + 30 * minute))
+        assertEquals(45 * minute, gate.msDangGiu(now + 30 * minute, 1_000L + 30 * minute))
+
+        // Choi het ca phien: 45 phut kiem duoc cong 30 phut ba cho.
+        assertEquals(EndReason.RAN_OUT, gate.tick(now + 76 * minute, 1_000L + 76 * minute))
+        assertEquals(75 * minute, gate.msDaChoiHomNay(now + 80 * minute, 1_000L + 80 * minute))
+    }
+
+    @Test
+    fun phut_bi_bot_hay_bi_khoa_khong_tinh_la_da_choi() {
+        val now = at(19, 0)
+        gate.approve(now)
+        gate.start(now, nowElapsed = 1_000L)
+
+        // Ba bot 20 phut o phut thu 10, roi khoa may o phut thu 12.
+        gate.extend(-20, now + 10 * minute, nowElapsed = 1_000L + 10 * minute)
+        gate.endSession(EndReason.PARENT_REVOKED, now + 12 * minute, 1_000L + 12 * minute)
+
+        assertEquals(12 * minute, gate.msDaChoiHomNay(now + 13 * minute, 1_000L + 13 * minute))
+        assertEquals(0L, gate.msDangGiu(now + 13 * minute, 1_000L + 13 * minute))
+    }
+
+    @Test
+    fun het_gio_thi_da_choi_bang_ca_phien_va_hom_sau_ve_khong() {
+        val now = at(19, 0)
+        gate.approve(now, wantedMinutes = 30)
+        gate.start(now, nowElapsed = 1_000L)
+
+        // Vong dem 30 giay mot lan nen phat hien het gio tre mot chut. Phan tre do khong
+        // phai la choi: app da khoa tu luc het gio.
+        gate.tick(now + 30 * minute + 25_000L, 1_000L + 30 * minute + 25_000L)
+        assertEquals(30 * minute, gate.msDaChoiHomNay(now + 31 * minute, 1_000L + 31 * minute))
+
+        assertEquals(0L, gate.msDaChoiHomNay(now + 24 * 60 * minute, 1_000L + 24 * 60 * minute))
+    }
+
+    @Test
+    fun toi_gio_chot_thi_khong_dem_qua_gio_chot() {
+        // Bat dau 20:30 thi chi duoc 30 phut. Ba cho them 30 phut, phien van dung o 21:00.
+        val now = at(20, 30)
+        gate.approve(now, wantedMinutes = 60)
+        gate.start(now, nowElapsed = 1_000L)
+        gate.extend(30, now + minute, nowElapsed = 1_000L + minute)
+
+        val reason = gate.tick(at(21, 0) + 20_000L, 1_000L + 30 * minute + 20_000L)
+        assertEquals(EndReason.HARD_STOP, reason)
+        assertEquals(30 * minute, gate.msDaChoiHomNay(at(21, 5), 1_000L + 35 * minute))
+    }
+
+    @Test
+    fun khoi_dong_lai_giua_phien_thi_doan_da_choi_dem_bang_dong_ho_tuong() {
+        val now = at(19, 0)
+        gate.approve(now)
+        gate.start(now, nowElapsed = 10 * minute)
+
+        // May khoi dong lai, dong ho tuong doi chay lai tu dau nen khong dem bang no duoc.
+        assertEquals(EndReason.REBOOT, gate.tick(now + 20 * minute, nowElapsed = minute))
+        assertEquals(20 * minute, gate.msDaChoiHomNay(now + 21 * minute, 2 * minute))
+    }
+
+    @Test
+    fun phien_toi_qua_cat_luc_sang_khong_tinh_vao_hom_nay() {
+        // Choi luc 20:50 thi het pin, sang hom sau 7:00 mo may moi cat phien vi reboot.
+        val now = at(20, 50)
+        gate.approve(now)
+        gate.start(now, nowElapsed = 10 * minute)
+        val sang = at(7, 0) + 24 * 60 * minute
+
+        assertEquals(EndReason.REBOOT, gate.tick(sang, nowElapsed = minute))
+        assertEquals(0L, gate.msDaChoiHomNay(sang + minute, 2 * minute))
+    }
+
+    @Test
+    fun kiem_45_ba_cho_30_thi_thanh_ngay_ghi_75_tren_tran_cong_30() {
+        // Vi du Ba Huy dua ngay 1/10/2026: kiem 45 phut, ba cho 30 phut, tran 215 + 30.
+        val now = at(15, 0)
+        gate.approve(now, wantedMinutes = 45)
+        gate.approve(now, wantedMinutes = 30, useQuota = false)
+
+        val truoc = ThanhNgay.so(gate, now, 1_000L)
+        assertEquals(0, truoc.daChoi)
+        assertEquals(75, truoc.con)
+        assertEquals(75, truoc.duoc)
+        assertEquals(LuatCongGio.TRAN_NGAY + 30, truoc.tong)
+
+        // Choi 30 phut: so duoc choi va ca thanh dung yen, chi doi cho giua hai khuc.
+        gate.start(now, nowElapsed = 1_000L)
+        val sau = ThanhNgay.so(gate, now + 30 * minute, 1_000L + 30 * minute)
+        assertEquals(30, sau.daChoi)
+        assertEquals(45, sau.con)
+        assertEquals(75, sau.duoc)
+        assertEquals(LuatCongGio.TRAN_NGAY + 30, sau.tong)
     }
 }
