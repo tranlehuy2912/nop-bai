@@ -149,8 +149,9 @@ class GhepTest {
     fun moi_dap_an_go_ra_duoc_va_duoc_cham_dung() {
         NganHang.napNeuCan(context)
         val kho = KhoBai.get(context)
-        // Ca bo de thi in san (30/9/2026): cau cua no chi di qua Giai de, nhung cham y het.
-        val cac = (LamTrenMay.MON.flatMap { NganHang.sachBaiTapCua(it) } + NganHang.boDeThi())
+        // Ca bo de thi in san (30/9/2026): cau cua no chi di qua Giai de, nhung cham y het. Tu
+        // 2/10/2026 ca SGK: cau SGK lam tren may o "Làm bài tập trong SGK" va Luyen tap.
+        val cac = (LamTrenMay.MON.flatMap { NganHang.sachLuyenTapCua(it) } + NganHang.boDeThi())
             .flatMap { kho.cacCauCuaNguon(it.nguon) }.filter { it.lamTrenMay }
         val loi = mutableListOf<String>()
         for (c in cac) {

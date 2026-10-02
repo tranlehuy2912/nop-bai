@@ -223,8 +223,9 @@ class ChonBaiActivity : AppCompatActivity() {
     /**
      * Mot dong mon. Toan, KHTN, Tieng Anh tu 2/10/2026 khong con chup bai SGK (Ba Huy chot): bai
      * SGK lam tren may, man nay chi con dong dan sang "Làm bài tập trong SGK" va "Bài khác". Mon
-     * lam tren may ma chua co SGK trong may (Tieng Anh luc viet) thi khong con quyen nao de chon
-     * (sach bai tap thi co khong giao), bam la chup thang nhu mon chua co sach.
+     * lam tren may ma chua co SGK trong may (Tieng Anh truoc khi nap SGK ngay 2/10/2026) thi
+     * khong con quyen nao de chon (sach bai tap thi co khong giao), bam la chup thang nhu mon
+     * chua co sach.
      */
     private fun themMon(ten: String) {
         val coSach = NganHang.coSach(ten)

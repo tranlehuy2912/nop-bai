@@ -161,7 +161,8 @@ Toán và Khoa học tự nhiên cắt hình sau cùng (anh Huy chốt 29/09/202
 ## Gộp, kiểm và cắt hình
 
 - `python3 tools/ghep/kiem.py <file>` kiểm một file sách hay file phần; `--tat-ca` kiểm mọi file trong `assets/nganhang`. Có lỗi thì không gộp được; cảnh báo in thành dòng "lưu ý". Bộ phím cơ bản trong `kiem.py` (`PHIM_CO_BAN`) phải giống `Ghep.phimCoBan` bên app.
-- `python3 tools/ghep/gop.py phan <file phần>...`: gộp các file phần (mỗi file có `nguon` và các bảng `ghep`, `bo_may`, `hinh`, `can_hinh` theo mã câu) vào file sách đã có, như SBT Toán, SGK Toán, SBT KHTN, SGK KHTN.
+- `python3 tools/ghep/gop.py phan <file phần>...`: gộp các file phần (mỗi file có `nguon` và các bảng `ghep`, `bo_may`, `hinh`, `can_hinh`, `sua_de` theo mã câu) vào file sách đã có, như SBT Toán, SGK Toán, SBT KHTN, SGK KHTN.
+- `sua_de` (từ 02/10/2026): mã câu sang cả đề mới, cùng quy ước của file sách (số mũ `^`, KHTN chỉ số số thường). Dùng khi `de` chép lúc nạp sách sai so với bản in, hay không tự đọc được khi đứng một mình trên máy (câu SGK nhắc "tình huống mở đầu", "HĐ2", "hình bên" mà không chép nội dung). Đổi `de` không đổi id câu (id là nguồn và mã).
 - `python3 tools/ghep/gop.py sach <nguon> <file Unit>...` (thêm `--ten`, `--mon` khi cần): dựng cả một sách mới từ các file Unit, như SBT Tiếng Anh, xếp bài theo thứ tự sách.
 - Cả hai cách đều tự tăng `ban`, giữ `ban` đứng trước `cac_bai`, bỏ các dạng `BIEU_THUC` chỉ khác thứ tự hạng tử, chép ảnh bằng `--hinh-tu <thư mục>`, rồi chạy `kiem.py`. `--thu` chỉ kiểm, không ghi. `kiem.py` báo lỗi thì file sách cũ giữ nguyên.
 - `python3 tools/ghep/cat_hinh.py <ảnh trang> <x0> <y0> <x1> <y1> <ra.webp> [--le 6] [--rong 480]`: cắt một hình từ ảnh một trang sách, bỏ nền trắng quanh hình, phóng to rồi lưu WebP cho trường `hinh`.
@@ -179,6 +180,17 @@ Toán và Khoa học tự nhiên cắt hình sau cùng (anh Huy chốt 29/09/202
 - `trang`: số trang in (trang PDF trừ 1).
 - `de`: lời dẫn của bài, xuống dòng, rồi nội dung câu. Câu trắc nghiệm thì `de` giữ cả các phương án như sách in, còn `hoi` bỏ các phương án.
 - `dang`, `dap_an`, `loai_dap_an`: câu `CHON` thì `TRAC_NGHIEM`, chữ cái đúng, `TN`; câu khác thì `CAU_NHO`, đáp án bằng chữ, `DAP_SO`.
+
+## SGK Tiếng Anh (`anh8.json`, từ 02/10/2026)
+
+Chép từ bản quét SGK Tiếng Anh 8 Global Success, đợt đầu Unit 1 tới 3, dựng bằng `gop.py sach anh8 u01.json u02.json u03.json`. Các luật khác SBT Tiếng Anh:
+
+- `bai` và `chuong` đúng như SBT (`Unit 1. Leisure time`), để Luyện tập xếp câu SGK trước câu SBT cùng Unit.
+- Màn chọn câu in nguyên mã làm nhãn, mà cô giao theo số bài và trang, nên mã là nhãn đọc được theo khuôn SGK Toán: `Bài 3.2 (tr.10)` là bài 3 trang 10 câu 2, `Bài 2.a (tr.8)` khi sách đánh chữ, `Bài 2 (tr.8)` khi cả bài là một câu, `Bài 4a (tr.13)` và `Bài 4b.1 (tr.13)` khi bài in hai phần a, b. Trang trong mã là trang in số bài.
+- `nhom` là tên phần như sách: `Getting Started`, `A Closer Look 1`, `A Closer Look 2`, `Communication`, `Skills 1`, `Skills 2`, `Looking Back`.
+- Mã đoạn văn trong `doan_van`: `<Unit>.<phần viết tắt><số bài>`, ví dụ `1.GS1`. Chỉ là khoá nội bộ.
+- Bỏ hẳn: bài nghe (app không có âm thanh), "Listen and repeat", bài nói, làm theo cặp hay nhóm, đóng vai, Project. Giữ hội thoại "Listen and read" của Getting Started làm đoạn văn cho các bài đọc hiểu sau nó, và giữ bài phát âm mà đáp án chỉ dựa vào kiến thức (xếp từ vào cột theo âm).
+- Bài viết đoạn văn ở Skills 2 làm như `E3a`, `E3b` của SBT: phần a xếp đoạn mẫu (`BUOC`), phần b ghép theo câu gợi ý (`O`).
 
 ## Bộ đề thi in sẵn (`dethianh8.json`, từ 30/09/2026)
 

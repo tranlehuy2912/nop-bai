@@ -59,7 +59,7 @@ object NganHang {
     /**
      * Cac quyen da nap.
      *
-     * Toan 8 ca hai tap, Khoa hoc tu nhien 8 va Ngu van 8 ca hai tap, cong them sach
+     * Toan 8 ca hai tap, Khoa hoc tu nhien 8, Tieng Anh 8 va Ngu van 8 ca hai tap, cong them sach
      * bai tap Toan 8 ca hai tap, sach bai tap KHTN 8 va sach bai tap Tieng Anh 8. Cac mon khac van chay duong cu
      * - con chon "Bai khac" luc nop, va so cai lay de bai da chuan hoa lam khoa nhu tu
      * truoc den gio.
@@ -182,10 +182,23 @@ object NganHang {
             baiTap = true
         ),
         /*
+         * SGK Tieng Anh 8 Global Success (2/10/2026): Ba Huy chot bai SGK Tieng Anh cung lam tren
+         * may nhu Toan, KHTN. Chep tu ban quet, dot dau Unit 1 toi 3, soan ghep bang tools/ghep.
+         * Ten bai y het sach bai tap ("Unit 1. Leisure time") de Luyen tap xep cau SGK truoc cau
+         * SBT cung Unit. Ma cau la nhan doc duoc, theo khuon SGK Toan: "Bài 3.2 (tr.10)" la bai 3
+         * trang 10, cau 2 - co giao theo so bai va trang. Bo bai nghe (khong co am thanh), bai
+         * noi, lam theo cap, Project.
+         */
+        Sach(
+            nguon = "anh8",
+            mon = PhanHoc.TIENG_ANH,
+            ten = "SGK Tiếng Anh 8",
+            file = "nganhang/anh8.json"
+        ),
+        /*
          * Sach bai tap Tieng Anh 8 Global Success (29/9/2026): Ba Huy dua ban quet, cac Unit
-         * chep ra va soan ghep bang tools/ghep. Chi co sach bai tap, khong co SGK. Bai la
-         * "Unit N. ..." va "Test Yourself N", moc da hoc la Unit o man Do tu vung, xem
-         * [PhanHoc.baiDaHoc].
+         * chep ra va soan ghep bang tools/ghep. Bai la "Unit N. ..." va "Test Yourself N", moc
+         * da hoc la Unit o man Do tu vung, xem [PhanHoc.baiDaHoc].
          */
         Sach(
             nguon = "sbtanh8",

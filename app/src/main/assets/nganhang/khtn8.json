@@ -2,7 +2,7 @@
  "nguon": "khtn8",
  "mon": "Khoa học tự nhiên",
  "ten": "SGK Khoa học tự nhiên 8",
- "ban": 1,
+ "ban": 2,
  "cac_bai": [
   {
    "chuong": "Mở đầu",
@@ -13,35 +13,495 @@
      "trang": 6,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Hãy cho biết thông tin có trên các nhãn hoá chất ở Hình 1.1 (SGK trang 6): a) nhãn hoá chất rắn sodium hydroxide NaOH; b) nhãn hoá chất lỏng hydrochloric acid 37%; c) nhãn hoá chất khí oxygen."
+     "de": "Hãy cho biết thông tin có trên các nhãn hoá chất ở Hình 1.1 (SGK trang 6): a) nhãn hoá chất rắn sodium hydroxide NaOH; b) nhãn hoá chất lỏng hydrochloric acid 37%; c) nhãn hoá chất khí oxygen.",
+     "hinh": [
+      "khtn8/B1.C1.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 6,
+      "dong": [
+       {
+        "chu": "a) Nhãn sodium hydroxide ghi «MW: 40.00», đó là {0}",
+        "o": [
+         {
+          "dung": [
+           "khối lượng mol của NaOH, 40 g/mol"
+          ],
+          "sai": [
+           "khối lượng NaOH trong lọ, 40 g",
+           "nồng độ của NaOH, 40%"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Khối lượng NaOH trong lọ: {0}",
+        "o": [
+         {
+          "dung": [
+           "500 g"
+          ],
+          "sai": [
+           "40 g",
+           "51 g"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "b) «37%» trên nhãn hydrochloric acid là {0}",
+        "o": [
+         {
+          "dung": [
+           "nồng độ phần trăm của dung dịch HCl"
+          ],
+          "sai": [
+           "khối lượng mol của HCl",
+           "lượng dung dịch còn lại trong chai"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Các hình thoi viền đỏ trên nhãn hydrochloric acid là {0}",
+        "o": [
+         {
+          "dung": [
+           "kí hiệu cảnh báo nguy hiểm của hoá chất"
+          ],
+          "sai": [
+           "biểu tượng của nhà sản xuất",
+           "hướng dẫn cách pha loãng hoá chất"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "c) Kí hiệu «OXIDIZING GAS» trên bình oxygen cảnh báo đây là {0}",
+        "o": [
+         {
+          "dung": [
+           "khí giúp sự cháy, có thể làm đám cháy mạnh hơn"
+          ],
+          "sai": [
+           "khí tự bốc cháy trong không khí",
+           "khí độc, gây ngạt thở"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Khối lượng khí oxygen trong bình: {0}",
+        "o": [
+         {
+          "dung": [
+           "25 kg"
+          ],
+          "sai": [
+           "1 072 kg",
+           "2 kg"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B1.C2",
      "trang": 7,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Đọc tên, công thức của một số hoá chất thông dụng có trong phòng thí nghiệm và cho biết ý nghĩa của các kí hiệu cảnh báo trên các nhãn hoá chất."
+     "de": "Đọc tên, công thức của một số hoá chất thông dụng có trong phòng thí nghiệm và cho biết ý nghĩa của các kí hiệu cảnh báo trên các nhãn hoá chất.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 6,
+      "dong": [
+       {
+        "chu": "Hydrochloric acid: {0}",
+        "o": [
+         {
+          "dung": [
+           "HCl"
+          ],
+          "sai": [
+           "HClO",
+           "NaCl"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Sodium hydroxide: {0}",
+        "o": [
+         {
+          "dung": [
+           "NaOH"
+          ],
+          "sai": [
+           "Na₂O",
+           "NaCl"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Sulfuric acid: {0}",
+        "o": [
+         {
+          "dung": [
+           "H₂SO₄"
+          ],
+          "sai": [
+           "H₂SO₃",
+           "H₂S"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Kí hiệu cảnh báo hình ngọn lửa: {0}",
+        "o": [
+         {
+          "dung": [
+           "chất dễ cháy"
+          ],
+          "sai": [
+           "chất độc",
+           "chất ăn mòn"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Kí hiệu cảnh báo hình đầu lâu và hai xương chéo: {0}",
+        "o": [
+         {
+          "dung": [
+           "chất độc"
+          ],
+          "sai": [
+           "chất dễ cháy",
+           "chất gây nổ"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Kí hiệu cảnh báo hình chất lỏng nhỏ xuống làm thủng bàn tay và mặt bàn: {0}",
+        "o": [
+         {
+          "dung": [
+           "chất ăn mòn"
+          ],
+          "sai": [
+           "chất dễ cháy",
+           "chất độc với môi trường"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B1.C3",
      "trang": 7,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Trình bày cách lấy hoá chất rắn và hoá chất lỏng."
+     "de": "Trình bày cách lấy hoá chất rắn và hoá chất lỏng.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 6,
+      "dong": [
+       {
+        "chu": "Hoá chất rắn dạng hạt nhỏ hay bột: {0}",
+        "o": [
+         {
+          "dung": [
+           "dùng thìa kim loại hoặc thìa thuỷ tinh để xúc"
+          ],
+          "sai": [
+           "dùng tay lấy trực tiếp",
+           "dùng ống hút nhỏ giọt để hút"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Hoá chất rắn dạng hạt to, dây, thanh: {0}",
+        "o": [
+         {
+          "dung": [
+           "dùng panh để gắp"
+          ],
+          "sai": [
+           "dùng tay lấy trực tiếp",
+           "dốc ngược lọ cho hoá chất rơi ra"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Sau khi lấy hoá chất, thìa và panh {0}",
+        "o": [
+         {
+          "dung": [
+           "không được đặt lại vào lọ đựng hoá chất"
+          ],
+          "sai": [
+           "được đặt lại vào lọ để dùng cho lần sau",
+           "được cắm sang lọ hoá chất khác"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Hoá chất lỏng trong chai miệng nhỏ: {0}",
+        "o": [
+         {
+          "dung": [
+           "rót qua phễu, hoặc qua cốc, ống đong có mỏ"
+          ],
+          "sai": [
+           "dùng thìa để xúc",
+           "đổ thẳng từ chai vào ống nghiệm, không cần dụng cụ"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Lấy một lượng nhỏ dung dịch: {0}",
+        "o": [
+         {
+          "dung": [
+           "dùng ống hút nhỏ giọt"
+          ],
+          "sai": [
+           "dùng panh để gắp",
+           "dùng thìa để xúc"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Khi rót hoá chất lỏng từ lọ, nhãn hoá chất {0}",
+        "o": [
+         {
+          "dung": [
+           "hướng lên phía trên để giọt hoá chất không dính vào nhãn"
+          ],
+          "sai": [
+           "hướng xuống phía dưới để dễ nhìn vạch chia",
+           "được bóc ra trước khi rót cho khỏi bẩn"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B1.C4",
      "trang": 9,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Quan sát ampe kế, vôn kế trong Hình 1.6 (SGK trang 9): 1. Chỉ ra các điểm đặc trưng của ampe kế và vôn kế. 2. Chỉ ra sự khác nhau giữa hai dụng cụ này."
+     "de": "Quan sát ampe kế, vôn kế trong Hình 1.6 (SGK trang 9): 1. Chỉ ra các điểm đặc trưng của ampe kế và vôn kế. 2. Chỉ ra sự khác nhau giữa hai dụng cụ này.",
+     "hinh": [
+      "khtn8/B1.C4.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 7,
+      "dong": [
+       {
+        "chu": "Ampe kế và vôn kế đều có {0}",
+        "o": [
+         {
+          "dung": [
+           "kim chỉ thị, bảng chia độ, chốt âm (màu đen) và chốt dương (màu đỏ)"
+          ],
+          "sai": [
+           "màn hình hiển thị số và nút Start",
+           "núm vặn chọn điện áp đầu ra AC hoặc DC"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Ampe kế: trên mặt có kí hiệu {0}, dùng để đo {1}",
+        "o": [
+         {
+          "dung": [
+           "A"
+          ],
+          "sai": [
+           "V"
+          ],
+          "hai": true
+         },
+         {
+          "dung": [
+           "cường độ dòng điện"
+          ],
+          "sai": [
+           "hiệu điện thế",
+           "năng lượng điện"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Vôn kế: trên mặt có kí hiệu {0}, dùng để đo {1}",
+        "o": [
+         {
+          "dung": [
+           "V"
+          ],
+          "sai": [
+           "A"
+          ],
+          "hai": true
+         },
+         {
+          "dung": [
+           "hiệu điện thế"
+          ],
+          "sai": [
+           "cường độ dòng điện",
+           "công suất điện"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Ampe kế trong hình có hai thang đo, giới hạn đo là {0}",
+        "o": [
+         {
+          "dung": [
+           "0,6 A và 3 A"
+          ],
+          "sai": [
+           "3 V và 15 V",
+           "0,2 A và 1 A"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Vôn kế trong hình có hai thang đo, giới hạn đo là {0}",
+        "o": [
+         {
+          "dung": [
+           "3 V và 15 V"
+          ],
+          "sai": [
+           "0,6 A và 3 A",
+           "5 V và 10 V"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B1.C5",
      "trang": 10,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Về cách sử dụng điện an toàn trong phòng thí nghiệm: Khi sử dụng thiết bị đo điện (ampe kế, vôn kế, joulemeter,...) cần lưu ý điều gì để đảm bảo an toàn cho thiết bị và người sử dụng? Khi sử dụng nguồn điện là biến áp nguồn cần lưu ý điều gì? Trình bày cách sử dụng an toàn các thiết bị điện."
+     "de": "Về cách sử dụng điện an toàn trong phòng thí nghiệm: Khi sử dụng thiết bị đo điện (ampe kế, vôn kế, joulemeter,...) cần lưu ý điều gì để đảm bảo an toàn cho thiết bị và người sử dụng? Khi sử dụng nguồn điện là biến áp nguồn cần lưu ý điều gì? Trình bày cách sử dụng an toàn các thiết bị điện.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 6,
+      "dong": [
+       {
+        "chu": "Thiết bị đo điện: ước lượng giá trị cần đo để chọn thang đo {0}",
+        "o": [
+         {
+          "dung": [
+           "có giá trị tối đa lớn hơn giá trị cần đo"
+          ],
+          "sai": [
+           "có giá trị tối đa nhỏ hơn giá trị cần đo",
+           "nhỏ nhất có trên dụng cụ"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Dây nối cắm vào thiết bị đo điện {0}",
+        "o": [
+         {
+          "dung": [
+           "đúng chốt âm và chốt dương ứng với thang đo đã chọn"
+          ],
+          "sai": [
+           "vào hai chốt bất kì",
+           "vào hai chốt dương màu đỏ"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Biến áp nguồn: thí nghiệm KHTN 8 dùng điện một chiều nên cắm dây vào đầu ra {0}",
+        "o": [
+         {
+          "dung": [
+           "DC"
+          ],
+          "sai": [
+           "AC"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Ở đầu ra một chiều của biến áp nguồn, chốt màu đỏ là {0}",
+        "o": [
+         {
+          "dung": [
+           "cực dương"
+          ],
+          "sai": [
+           "cực âm"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Trước khi dùng biến áp nguồn, vặn nút chỉ vào {0}",
+        "o": [
+         {
+          "dung": [
+           "số điện áp phù hợp với thí nghiệm"
+          ],
+          "sai": [
+           "số lớn nhất (24 V) cho chắc",
+           "số bất kì, vì số nào cũng an toàn"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Khi dùng đèn LED: {0}",
+        "o": [
+         {
+          "dung": [
+           "nối cực dương (+) của đèn với cực dương của nguồn, mắc nối tiếp đèn với một điện trở thích hợp"
+          ],
+          "sai": [
+           "nối cực nào của đèn với cực nào của nguồn cũng được",
+           "mắc thẳng đèn vào nguồn, không cần điện trở"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     }
    ]
   },
@@ -54,56 +514,547 @@
      "trang": 11,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Khi đốt nến, một phần nến chảy lỏng, một phần nến bị cháy. Cây nến ngắn dần. Vậy phần nến nào đã bị biến đổi thành chất mới?"
+     "de": "Khi đốt nến, một phần nến chảy lỏng, một phần nến bị cháy. Cây nến ngắn dần. Vậy phần nến nào đã bị biến đổi thành chất mới?",
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "dong": [
+       {
+        "chu": "Phần nến chảy lỏng: {0}",
+        "o": [
+         {
+          "dung": [
+           "biến đổi vật lí"
+          ],
+          "sai": [
+           "biến đổi hoá học"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Phần nến bị cháy: {0}",
+        "o": [
+         {
+          "dung": [
+           "biến đổi hoá học"
+          ],
+          "sai": [
+           "biến đổi vật lí"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Phần nến bị cháy đã biến đổi thành {0}",
+        "o": [
+         {
+          "dung": [
+           "khí carbon dioxide và hơi nước"
+          ],
+          "sai": [
+           "nến lỏng",
+           "khí oxygen"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B2.C2",
      "trang": 11,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Ở quá trình hơi nước ngưng tụ thành nước lỏng, nước lỏng đông đặc thành nước đá: trong quá trình chuyển thể, nước có biến đổi thành chất khác không?"
+     "de": "Ở quá trình hơi nước ngưng tụ thành nước lỏng, nước lỏng đông đặc thành nước đá: trong quá trình chuyển thể, nước có biến đổi thành chất khác không?",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "dong": [
+       {
+        "chu": "Trong quá trình chuyển thể, nước {0}",
+        "o": [
+         {
+          "dung": [
+           "không biến đổi thành chất khác"
+          ],
+          "sai": [
+           "biến đổi thành chất khác"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Vì {0}",
+        "o": [
+         {
+          "dung": [
+           "nước chỉ chuyển từ thể này sang thể khác, chất vẫn là nước"
+          ],
+          "sai": [
+           "nước đá cứng hơn nước lỏng nên là chất khác",
+           "hơi nước không nhìn thấy được nên là chất khác"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B2.C3",
      "trang": 12,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Lấy một số ví dụ trong đời sống về các quá trình xảy ra sự biến đổi vật lí, biến đổi hoá học."
+     "de": "Lấy một số ví dụ trong đời sống về các quá trình xảy ra sự biến đổi vật lí, biến đổi hoá học.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 6,
+      "hoi": "Lấy một số ví dụ trong đời sống về các quá trình xảy ra sự biến đổi vật lí, biến đổi hoá học. Mỗi quá trình sau xảy ra sự biến đổi vật lí hay biến đổi hoá học?",
+      "dong": [
+       {
+        "chu": "Nước đá tan thành nước lỏng: {0}",
+        "o": [
+         {
+          "dung": [
+           "biến đổi vật lí"
+          ],
+          "sai": [
+           "biến đổi hoá học"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Củi cháy thành than và tro: {0}",
+        "o": [
+         {
+          "dung": [
+           "biến đổi hoá học"
+          ],
+          "sai": [
+           "biến đổi vật lí"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Hoà tan đường vào nước: {0}",
+        "o": [
+         {
+          "dung": [
+           "biến đổi vật lí"
+          ],
+          "sai": [
+           "biến đổi hoá học"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Sữa để lâu bị chua: {0}",
+        "o": [
+         {
+          "dung": [
+           "biến đổi hoá học"
+          ],
+          "sai": [
+           "biến đổi vật lí"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Phơi nước biển thu được muối ăn: {0}",
+        "o": [
+         {
+          "dung": [
+           "biến đổi vật lí"
+          ],
+          "sai": [
+           "biến đổi hoá học"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Đinh sắt để lâu trong không khí ẩm bị gỉ: {0}",
+        "o": [
+         {
+          "dung": [
+           "biến đổi hoá học"
+          ],
+          "sai": [
+           "biến đổi vật lí"
+          ],
+          "hai": true
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B2.C4",
      "trang": 13,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Than (thành phần chính là carbon) cháy trong không khí tạo thành khí carbon dioxide. a) Hãy viết phương trình phản ứng dạng chữ của phản ứng này. Chất nào là chất phản ứng? Chất nào là sản phẩm? b) Trong quá trình phản ứng, lượng chất nào giảm dần? Lượng chất nào tăng dần?"
+     "de": "Than (thành phần chính là carbon) cháy trong không khí tạo thành khí carbon dioxide. a) Hãy viết phương trình phản ứng dạng chữ của phản ứng này. Chất nào là chất phản ứng? Chất nào là sản phẩm? b) Trong quá trình phản ứng, lượng chất nào giảm dần? Lượng chất nào tăng dần?",
+     "ghep": {
+      "kieu": "O",
+      "sao": 5,
+      "dong": [
+       {
+        "chu": "a) Phương trình chữ: {0}",
+        "o": [
+         {
+          "dung": [
+           "Carbon + Oxygen → Carbon dioxide"
+          ],
+          "sai": [
+           "Carbon → Carbon dioxide",
+           "Carbon dioxide → Carbon + Oxygen"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Chất phản ứng: {0}; sản phẩm: {1}",
+        "o": [
+         {
+          "dung": [
+           "carbon và oxygen"
+          ],
+          "sai": [
+           "carbon dioxide",
+           "carbon"
+          ]
+         },
+         {
+          "dung": [
+           "carbon dioxide"
+          ],
+          "sai": [
+           "carbon và oxygen",
+           "oxygen"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "b) Lượng chất giảm dần: {0}; lượng chất tăng dần: {1}",
+        "o": [
+         {
+          "dung": [
+           "carbon và oxygen"
+          ],
+          "sai": [
+           "carbon dioxide",
+           "oxygen"
+          ]
+         },
+         {
+          "dung": [
+           "carbon dioxide"
+          ],
+          "sai": [
+           "carbon và oxygen",
+           "carbon"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B2.C5",
      "trang": 13,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Quan sát Hình 2.3 (sơ đồ phản ứng giữa hydrogen và oxygen tạo thành nước, SGK trang 13) và trả lời câu hỏi: 1. Trước và sau phản ứng, những nguyên tử nào liên kết với nhau? 2. Trong quá trình phản ứng, số nguyên tử H và số nguyên tử O có thay đổi không?"
+     "de": "Quan sát Hình 2.3 (sơ đồ phản ứng giữa hydrogen và oxygen tạo thành nước, SGK trang 13) và trả lời câu hỏi: 1. Trước và sau phản ứng, những nguyên tử nào liên kết với nhau? 2. Trong quá trình phản ứng, số nguyên tử H và số nguyên tử O có thay đổi không?",
+     "hinh": [
+      "khtn8/B2.C5.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 5,
+      "dong": [
+       {
+        "chu": "1. Trước phản ứng: {0}",
+        "o": [
+         {
+          "dung": [
+           "2 nguyên tử H liên kết với nhau, 2 nguyên tử O liên kết với nhau"
+          ],
+          "sai": [
+           "mỗi nguyên tử O liên kết với 2 nguyên tử H",
+           "mỗi nguyên tử H liên kết với 1 nguyên tử O"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Sau phản ứng: {0}",
+        "o": [
+         {
+          "dung": [
+           "mỗi nguyên tử O liên kết với 2 nguyên tử H"
+          ],
+          "sai": [
+           "2 nguyên tử H liên kết với nhau, 2 nguyên tử O liên kết với nhau",
+           "mỗi nguyên tử H liên kết với 2 nguyên tử O"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "2. Số nguyên tử H trước và sau phản ứng: {0}",
+        "o": [
+         {
+          "dung": [
+           "đều là 4"
+          ],
+          "sai": [
+           "4 và 2",
+           "2 và 4"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Số nguyên tử O trước và sau phản ứng: {0}",
+        "o": [
+         {
+          "dung": [
+           "đều là 2"
+          ],
+          "sai": [
+           "2 và 1",
+           "1 và 2"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Vậy trong quá trình phản ứng, số nguyên tử H và số nguyên tử O {0}",
+        "o": [
+         {
+          "dung": [
+           "không thay đổi"
+          ],
+          "sai": [
+           "tăng lên",
+           "giảm đi"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B2.C6",
      "trang": 14,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "1. Trong phản ứng giữa oxygen và hydrogen, nếu oxygen hết thì phản ứng có xảy ra nữa không? 2. Nhỏ giấm ăn vào viên đá vôi. Dấu hiệu nào cho biết đã có phản ứng hoá học xảy ra?"
+     "de": "1. Trong phản ứng giữa oxygen và hydrogen, nếu oxygen hết thì phản ứng có xảy ra nữa không? 2. Nhỏ giấm ăn vào viên đá vôi. Dấu hiệu nào cho biết đã có phản ứng hoá học xảy ra?",
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "dong": [
+       {
+        "chu": "1. Nếu oxygen hết thì phản ứng {0}",
+        "o": [
+         {
+          "dung": [
+           "không xảy ra nữa"
+          ],
+          "sai": [
+           "vẫn xảy ra tiếp"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Vì {0}",
+        "o": [
+         {
+          "dung": [
+           "phản ứng chỉ xảy ra khi các chất phản ứng tiếp xúc với nhau"
+          ],
+          "sai": [
+           "hydrogen còn lại tự biến thành nước",
+           "nước tạo thành tiếp tục phản ứng với hydrogen"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "2. Dấu hiệu cho biết có phản ứng hoá học: {0}",
+        "o": [
+         {
+          "dung": [
+           "có bọt khí thoát ra, viên đá vôi tan dần"
+          ],
+          "sai": [
+           "viên đá vôi bị giấm làm ướt",
+           "viên đá vôi chìm xuống đáy"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B2.C7",
      "trang": 14,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "1. Thức ăn được tiêu hoá chuyển thành các chất dinh dưỡng. Phản ứng hoá học giữa chất dinh dưỡng với oxygen cung cấp năng lượng cho cơ thể hoạt động là phản ứng toả nhiệt hay thu nhiệt? Lấy thêm ví dụ về loại phản ứng này. 2. Quá trình nung đá vôi (thành phần chính là CaCO3) thành vôi sống (CaO) và khí carbon dioxide (CO2) cần cung cấp năng lượng (dạng nhiệt). Đây là phản ứng toả nhiệt hay thu nhiệt?"
+     "de": "1. Thức ăn được tiêu hoá chuyển thành các chất dinh dưỡng. Phản ứng hoá học giữa chất dinh dưỡng với oxygen cung cấp năng lượng cho cơ thể hoạt động là phản ứng toả nhiệt hay thu nhiệt? Lấy thêm ví dụ về loại phản ứng này. 2. Quá trình nung đá vôi (thành phần chính là CaCO3) thành vôi sống (CaO) và khí carbon dioxide (CO2) cần cung cấp năng lượng (dạng nhiệt). Đây là phản ứng toả nhiệt hay thu nhiệt?",
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "dong": [
+       {
+        "chu": "1. Phản ứng giữa chất dinh dưỡng với oxygen trong cơ thể là phản ứng {0}",
+        "o": [
+         {
+          "dung": [
+           "toả nhiệt"
+          ],
+          "sai": [
+           "thu nhiệt"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Ví dụ khác về loại phản ứng này: {0}",
+        "o": [
+         {
+          "dung": [
+           "đốt cháy than, củi, gas, cồn"
+          ],
+          "sai": [
+           "nung đá vôi thành vôi sống",
+           "đun nóng copper(II) hydroxide thành copper(II) oxide và hơi nước"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "2. Nung đá vôi thành vôi sống và khí carbon dioxide là phản ứng {0}",
+        "o": [
+         {
+          "dung": [
+           "thu nhiệt"
+          ],
+          "sai": [
+           "toả nhiệt"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Vì {0}",
+        "o": [
+         {
+          "dung": [
+           "phải cung cấp nhiệt trong suốt quá trình, ngừng đun thì phản ứng dừng lại"
+          ],
+          "sai": [
+           "phản ứng giải phóng nhiệt ra môi trường",
+           "đá vôi bị nóng chảy"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B2.C8",
      "trang": 15,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "1. Than, xăng, dầu,... là nhiên liệu hoá thạch, được sử dụng chủ yếu cho các ngành sản xuất và các hoạt động nào của con người? Em hãy sưu tầm hình ảnh và trình bày về ứng dụng của các nhiên liệu này trong đời sống. 2. Các nguồn nhiên liệu hoá thạch có phải là vô tận không? Đốt cháy nhiên liệu hoá thạch ảnh hưởng đến môi trường như thế nào? Hãy nêu ví dụ về việc tăng cường sử dụng các nguồn năng lượng thay thế để giảm việc sử dụng các nhiên liệu hoá thạch."
+     "de": "1. Than, xăng, dầu,... là nhiên liệu hoá thạch, được sử dụng chủ yếu cho các ngành sản xuất và các hoạt động nào của con người? Em hãy sưu tầm hình ảnh và trình bày về ứng dụng của các nhiên liệu này trong đời sống. 2. Các nguồn nhiên liệu hoá thạch có phải là vô tận không? Đốt cháy nhiên liệu hoá thạch ảnh hưởng đến môi trường như thế nào? Hãy nêu ví dụ về việc tăng cường sử dụng các nguồn năng lượng thay thế để giảm việc sử dụng các nhiên liệu hoá thạch.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "hoi": "1. Than, xăng, dầu,... là nhiên liệu hoá thạch, được sử dụng chủ yếu cho các ngành sản xuất và các hoạt động nào của con người?\n2. Các nguồn nhiên liệu hoá thạch có phải là vô tận không? Đốt cháy nhiên liệu hoá thạch ảnh hưởng đến môi trường như thế nào? Hãy nêu ví dụ về việc tăng cường sử dụng các nguồn năng lượng thay thế để giảm việc sử dụng các nhiên liệu hoá thạch.",
+      "dong": [
+       {
+        "chu": "1. Than, xăng, dầu được dùng chủ yếu {0}",
+        "o": [
+         {
+          "dung": [
+           "làm nhiên liệu cho sản xuất (nhà máy điện, lò nung), giao thông vận tải và sinh hoạt (đun nấu, sưởi ấm)"
+          ],
+          "sai": [
+           "làm phân bón cho cây trồng và thức ăn cho vật nuôi",
+           "làm nguyên liệu chế biến thực phẩm và thuốc chữa bệnh"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "2. Các nguồn nhiên liệu hoá thạch {0}",
+        "o": [
+         {
+          "dung": [
+           "không phải là vô tận, sẽ cạn kiệt dần"
+          ],
+          "sai": [
+           "là vô tận"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Đốt cháy nhiên liệu hoá thạch {0}",
+        "o": [
+         {
+          "dung": [
+           "thải ra khí carbon dioxide gây hiệu ứng nhà kính, khí độc (như CO) và bụi gây ô nhiễm không khí"
+          ],
+          "sai": [
+           "chỉ tạo ra hơi nước nên không ảnh hưởng đến môi trường",
+           "làm tăng lượng oxygen, giúp không khí trong lành hơn"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Ví dụ về sử dụng năng lượng thay thế: {0}",
+        "o": [
+         {
+          "dung": [
+           "lắp pin mặt trời, xây nhà máy điện gió, dùng xăng sinh học"
+          ],
+          "sai": [
+           "dùng bếp than tổ ong thay bếp điện",
+           "chạy máy phát điện bằng dầu diesel"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     }
    ]
   },
@@ -116,63 +1067,383 @@
      "trang": 17,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Đọc thông tin Hình 3.1 (SGK trang 16) và so sánh khối lượng của 1 mol nguyên tử carbon, 1 mol phân tử iodine và 1 mol phân tử nước."
+     "de": "Hình 3.1 (SGK trang 16) cho biết: 12 gam carbon có 6,022·10^23 nguyên tử C, tức 1 mol nguyên tử carbon; 254 gam iodine có 6,022·10^23 phân tử I2, tức 1 mol phân tử iodine; 18 gam nước có 6,022·10^23 phân tử H2O, tức 1 mol phân tử nước. Đọc thông tin trên và so sánh khối lượng của 1 mol nguyên tử carbon, 1 mol phân tử iodine và 1 mol phân tử nước.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "dong": [
+       {
+        "chu": "So sánh khối lượng: {0}",
+        "o": [
+         {
+          "dung": [
+           "1 mol nguyên tử carbon < 1 mol phân tử nước < 1 mol phân tử iodine"
+          ],
+          "sai": [
+           "1 mol phân tử nước < 1 mol nguyên tử carbon < 1 mol phân tử iodine",
+           "ba lượng chất nặng bằng nhau vì đều là 1 mol"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Ba lượng chất có cùng số hạt mà khối lượng khác nhau vì {0}",
+        "o": [
+         {
+          "dung": [
+           "khối lượng mỗi nguyên tử, phân tử của từng chất khác nhau"
+          ],
+          "sai": [
+           "chúng ở các thể khác nhau (rắn, lỏng)",
+           "chúng chiếm thể tích khác nhau"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B3.C2",
      "trang": 17,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Tính số nguyên tử, phân tử có trong mỗi lượng chất sau: a) 0,25 mol nguyên tử C; b) 0,002 mol phân tử I2; c) 2 mol phân tử H2O."
+     "de": "Tính số nguyên tử, phân tử có trong mỗi lượng chất sau: a) 0,25 mol nguyên tử C; b) 0,002 mol phân tử I2; c) 2 mol phân tử H2O.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "dong": [
+       {
+        "chu": "a) Số nguyên tử C trong 0,25 mol nguyên tử C: {0}",
+        "o": [
+         {
+          "dung": [
+           "1,5055·10²³ nguyên tử"
+          ],
+          "sai": [
+           "2,4088·10²⁴ nguyên tử",
+           "1,5055·10²² nguyên tử"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "b) Số phân tử I₂ trong 0,002 mol phân tử I₂: {0}",
+        "o": [
+         {
+          "dung": [
+           "1,2044·10²¹ phân tử"
+          ],
+          "sai": [
+           "2,4088·10²¹ phân tử",
+           "1,2044·10²⁰ phân tử"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "c) Số phân tử H₂O trong 2 mol phân tử H₂O: {0}",
+        "o": [
+         {
+          "dung": [
+           "1,2044·10²⁴ phân tử"
+          ],
+          "sai": [
+           "3,6132·10²⁴ phân tử",
+           "3,011·10²³ phân tử"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B3.C3",
      "trang": 17,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Một lượng chất sau đây tương đương bao nhiêu mol nguyên tử hoặc mol phân tử? a) 1,2044·10^22 phân tử Fe2O3; b) 7,5275·10^24 nguyên tử Mg."
+     "de": "Một lượng chất sau đây tương đương bao nhiêu mol nguyên tử hoặc mol phân tử? a) 1,2044·10^22 phân tử Fe2O3; b) 7,5275·10^24 nguyên tử Mg.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "dong": [
+       {
+        "chu": "a) 1,2044·10²² phân tử Fe₂O₃ tương đương {0}",
+        "o": [
+         {
+          "dung": [
+           "0,02 mol phân tử"
+          ],
+          "sai": [
+           "0,2 mol phân tử",
+           "50 mol phân tử"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "b) 7,5275·10²⁴ nguyên tử Mg tương đương {0}",
+        "o": [
+         {
+          "dung": [
+           "12,5 mol nguyên tử"
+          ],
+          "sai": [
+           "1,25 mol nguyên tử",
+           "0,08 mol nguyên tử"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B3.C4",
      "trang": 18,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Tính khối lượng mol của chất X, biết rằng 0,4 mol chất này có khối lượng là 23,4 gam."
+     "de": "Tính khối lượng mol của chất X, biết rằng 0,4 mol chất này có khối lượng là 23,4 gam.",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 1,
+      "dap": [
+       "58,5",
+       "58,5g/mol"
+      ],
+      "phim": [
+       "g/mol"
+      ],
+      "nhieu": [
+       "g",
+       "mol"
+      ],
+      "loi_giai": [
+       "M(X) = m : n = 23,4 : 0,4 = 58,5 (g/mol)"
+      ]
+     }
     },
     {
      "ma": "B3.C5",
      "trang": 18,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Tính số mol phân tử có trong 9 gam nước, biết rằng khối lượng mol của nước là 18 g/mol."
+     "de": "Tính số mol phân tử có trong 9 gam nước, biết rằng khối lượng mol của nước là 18 g/mol.",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 1,
+      "dap": [
+       "0,5",
+       "0,5mol"
+      ],
+      "phim": [
+       "mol"
+      ],
+      "nhieu": [
+       "g",
+       "L"
+      ],
+      "loi_giai": [
+       "n(H₂O) = m : M = 9 : 18 = 0,5 (mol)"
+      ]
+     }
     },
     {
      "ma": "B3.C6",
      "trang": 18,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Calcium carbonate có công thức hoá học là CaCO3. a) Tính khối lượng phân tử của calcium carbonate. b) Tính khối lượng của 0,2 mol calcium carbonate."
+     "de": "Calcium carbonate có công thức hoá học là CaCO3. a) Tính khối lượng phân tử của calcium carbonate. b) Tính khối lượng của 0,2 mol calcium carbonate.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "dong": [
+       {
+        "chu": "a) Khối lượng phân tử CaCO₃: {0}",
+        "o": [
+         {
+          "dung": [
+           "100 amu"
+          ],
+          "sai": [
+           "68 amu",
+           "100 g"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "b) Khối lượng của 0,2 mol CaCO₃: {0}",
+        "o": [
+         {
+          "dung": [
+           "20 g"
+          ],
+          "sai": [
+           "13,6 g",
+           "500 g"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B3.C7",
      "trang": 18,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "1. Ở 25 °C và 1 bar, 1,5 mol khí chiếm thể tích bao nhiêu? 2. Một hỗn hợp gồm 1 mol khí oxygen với 4 mol khí nitrogen. Ở 25 °C và 1 bar, hỗn hợp khí này có thể tích là bao nhiêu? 3. Tính số mol khí chứa trong bình có thể tích 500 mililít ở 25 °C và 1 bar."
+     "de": "1. Ở 25 °C và 1 bar, 1,5 mol khí chiếm thể tích bao nhiêu? 2. Một hỗn hợp gồm 1 mol khí oxygen với 4 mol khí nitrogen. Ở 25 °C và 1 bar, hỗn hợp khí này có thể tích là bao nhiêu? 3. Tính số mol khí chứa trong bình có thể tích 500 mililít ở 25 °C và 1 bar.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "dong": [
+       {
+        "chu": "1. Thể tích của 1,5 mol khí: V = {0}",
+        "o": [
+         {
+          "dung": [
+           "37,185 L"
+          ],
+          "sai": [
+           "16,53 L",
+           "33,6 L"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "2. Thể tích của hỗn hợp 1 mol O₂ và 4 mol N₂: V = {0}",
+        "o": [
+         {
+          "dung": [
+           "123,95 L"
+          ],
+          "sai": [
+           "99,16 L",
+           "24,79 L"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "3. Số mol khí trong bình 500 mL: n ≈ {0}",
+        "o": [
+         {
+          "dung": [
+           "0,02 mol"
+          ],
+          "sai": [
+           "20,17 mol",
+           "12,4 mol"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B3.C8",
      "trang": 19,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "a) Khí carbon dioxide (CO2) nặng hơn hay nhẹ hơn không khí bao nhiêu lần? b) Trong lòng hang sâu thường xảy ra quá trình phân huỷ chất vô cơ hoặc hữu cơ, sinh ra khí carbon dioxide. Hãy cho biết khí carbon dioxide tích tụ ở trên nền hang hay bị không khí đẩy bay lên trên."
+     "de": "a) Khí carbon dioxide (CO2) nặng hơn hay nhẹ hơn không khí bao nhiêu lần? b) Trong lòng hang sâu thường xảy ra quá trình phân huỷ chất vô cơ hoặc hữu cơ, sinh ra khí carbon dioxide. Hãy cho biết khí carbon dioxide tích tụ ở trên nền hang hay bị không khí đẩy bay lên trên.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "dong": [
+       {
+        "chu": "a) Tỉ khối của CO₂ đối với không khí: d ≈ {0}, nên khí CO₂ {1} không khí",
+        "o": [
+         {
+          "dung": [
+           "1,52"
+          ],
+          "sai": [
+           "0,66",
+           "1,38"
+          ]
+         },
+         {
+          "dung": [
+           "nặng hơn"
+          ],
+          "sai": [
+           "nhẹ hơn"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "b) Khí carbon dioxide {0}",
+        "o": [
+         {
+          "dung": [
+           "tích tụ ở trên nền hang"
+          ],
+          "sai": [
+           "bị không khí đẩy bay lên trên"
+          ],
+          "hai": true
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B3.C9",
      "trang": 19,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "a) Khí methane (CH4) nặng hơn hay nhẹ hơn không khí bao nhiêu lần? b) Dưới đáy giếng thường xảy ra quá trình phân huỷ chất hữu cơ, sinh ra khí methane. Hãy cho biết khí methane tích tụ dưới đáy giếng hay bị không khí đẩy bay lên trên."
+     "de": "a) Khí methane (CH4) nặng hơn hay nhẹ hơn không khí bao nhiêu lần? b) Dưới đáy giếng thường xảy ra quá trình phân huỷ chất hữu cơ, sinh ra khí methane. Hãy cho biết khí methane tích tụ dưới đáy giếng hay bị không khí đẩy bay lên trên.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "dong": [
+       {
+        "chu": "a) Tỉ khối của CH₄ đối với không khí: d ≈ {0}, nên khí CH₄ {1} không khí",
+        "o": [
+         {
+          "dung": [
+           "0,55"
+          ],
+          "sai": [
+           "1,81",
+           "0,5"
+          ]
+         },
+         {
+          "dung": [
+           "nhẹ hơn"
+          ],
+          "sai": [
+           "nặng hơn"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "b) Khí methane {0}",
+        "o": [
+         {
+          "dung": [
+           "bị không khí đẩy bay lên trên"
+          ],
+          "sai": [
+           "tích tụ dưới đáy giếng"
+          ],
+          "hai": true
+         }
+        ]
+       }
+      ]
+     }
     }
    ]
   },
@@ -185,42 +1456,224 @@
      "trang": 20,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Hãy nêu cách pha dung dịch bão hoà của sodium carbonate (Na2CO3) trong nước."
+     "de": "Hãy nêu cách pha dung dịch bão hoà của sodium carbonate (Na2CO3) trong nước.",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 4,
+      "buoc": [
+       "Cho một lượng nước cất (khoảng 20 mL) vào cốc thuỷ tinh",
+       "Cho từ từ từng thìa nhỏ Na₂CO₃ vào cốc, khuấy đều cho tan",
+       "Tiếp tục cho Na₂CO₃ và khuấy đến khi Na₂CO₃ không tan thêm được nữa (còn chất rắn lắng ở đáy cốc) thì dừng",
+       "Gạn hoặc lọc lấy phần dung dịch, đó là dung dịch Na₂CO₃ bão hoà"
+      ],
+      "nhieu": [
+       "Cho Na₂CO₃ vào đến khi chất rắn vừa tan hết thì dừng, đó là dung dịch bão hoà",
+       "Đun sôi dung dịch đến khi nước bay hơi hết"
+      ]
+     }
     },
     {
      "ma": "B4.C2",
      "trang": 21,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Ở nhiệt độ 25 °C, khi cho 12 gam muối X vào 20 gam nước, khuấy kĩ thì còn lại 5 gam muối không tan. Tính độ tan của muối X."
+     "de": "Ở nhiệt độ 25 °C, khi cho 12 gam muối X vào 20 gam nước, khuấy kĩ thì còn lại 5 gam muối không tan. Tính độ tan của muối X.",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "dap": [
+       "35",
+       "35g",
+       "35g/100g"
+      ],
+      "phim": [
+       "g"
+      ],
+      "nhieu": [
+       "%",
+       "mol"
+      ],
+      "loi_giai": [
+       "Khối lượng muối X đã tan trong 20 g nước: m(X) = 12 − 5 = 7 (g)",
+       "S = 7 : 20 · 100 = 35 (g/100 g nước)"
+      ]
+     }
     },
     {
      "ma": "B4.C3",
      "trang": 21,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Ở 18 °C, khi hoà tan hết 53 gam Na2CO3 trong 250 gam nước thì được dung dịch bão hoà. Tính độ tan của Na2CO3 trong nước ở nhiệt độ trên."
+     "de": "Ở 18 °C, khi hoà tan hết 53 gam Na2CO3 trong 250 gam nước thì được dung dịch bão hoà. Tính độ tan của Na2CO3 trong nước ở nhiệt độ trên.",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 1,
+      "dap": [
+       "21,2",
+       "21,2g",
+       "21,2g/100g"
+      ],
+      "phim": [
+       "g"
+      ],
+      "nhieu": [
+       "%",
+       "mol"
+      ],
+      "loi_giai": [
+       "S = m(Na₂CO₃) : m(nước) · 100 = 53 : 250 · 100 = 21,2 (g/100 g nước)"
+      ]
+     }
     },
     {
      "ma": "B4.C4",
      "trang": 22,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Tính khối lượng H2SO4 có trong 20 gam dung dịch H2SO4 98%."
+     "de": "Tính khối lượng H2SO4 có trong 20 gam dung dịch H2SO4 98%.",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "dap": [
+       "19,6",
+       "19,6g"
+      ],
+      "phim": [
+       "g"
+      ],
+      "nhieu": [
+       "%",
+       "mol"
+      ],
+      "loi_giai": [
+       "C% = m(ct) : m(dd) · 100% nên m(ct) = m(dd) · C% : 100%",
+       "m(H₂SO₄) = 20 · 98 : 100 = 19,6 (g)"
+      ]
+     }
     },
     {
      "ma": "B4.C5",
      "trang": 22,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Trộn lẫn 2 lít dung dịch urea 0,02 M (dung dịch A) với 3 lít dung dịch urea 0,1 M (dung dịch B), thu được 5 lít dung dịch C. a) Tính số mol urea trong dung dịch A, B và C. b) Tính nồng độ mol của dung dịch C. Nhận xét về giá trị nồng độ mol của dung dịch C so với nồng độ mol của dung dịch A, B."
+     "de": "Trộn lẫn 2 lít dung dịch urea 0,02 M (dung dịch A) với 3 lít dung dịch urea 0,1 M (dung dịch B), thu được 5 lít dung dịch C. a) Tính số mol urea trong dung dịch A, B và C. b) Tính nồng độ mol của dung dịch C. Nhận xét về giá trị nồng độ mol của dung dịch C so với nồng độ mol của dung dịch A, B.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 5,
+      "dong": [
+       {
+        "chu": "a) Số mol urea trong dung dịch A: {0}",
+        "o": [
+         {
+          "dung": [
+           "0,04 mol"
+          ],
+          "sai": [
+           "0,01 mol",
+           "100 mol"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Số mol urea trong dung dịch B: {0}",
+        "o": [
+         {
+          "dung": [
+           "0,3 mol"
+          ],
+          "sai": [
+           "0,1 mol",
+           "30 mol"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Số mol urea trong dung dịch C: {0}",
+        "o": [
+         {
+          "dung": [
+           "0,34 mol"
+          ],
+          "sai": [
+           "0,6 mol",
+           "0,26 mol"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "b) Nồng độ mol của dung dịch C: {0}",
+        "o": [
+         {
+          "dung": [
+           "0,068 M"
+          ],
+          "sai": [
+           "0,06 M",
+           "0,12 M"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "So với dung dịch A (0,02 M) và dung dịch B (0,1 M), nồng độ mol của dung dịch C {0}",
+        "o": [
+         {
+          "dung": [
+           "lớn hơn của A, nhỏ hơn của B"
+          ],
+          "sai": [
+           "bằng tổng nồng độ của A và B",
+           "nhỏ hơn của cả A và B"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B4.C6",
      "trang": 23,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Khi pha 100 gam dung dịch muối ăn nồng độ 0,9%: 1. Tại sao phải dùng muối ăn khan để pha dung dịch? 2. Dung dịch muối ăn nồng độ 0,9% có thể được dùng để làm gì?"
+     "de": "Khi pha 100 gam dung dịch muối ăn nồng độ 0,9%: 1. Tại sao phải dùng muối ăn khan để pha dung dịch? 2. Dung dịch muối ăn nồng độ 0,9% có thể được dùng để làm gì?",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "dong": [
+       {
+        "chu": "1. Phải dùng muối ăn khan vì {0}",
+        "o": [
+         {
+          "dung": [
+           "muối ẩm có lẫn nước nên cân không đúng khối lượng muối, nồng độ pha ra không đúng 0,9%"
+          ],
+          "sai": [
+           "muối khan có vị mặn hơn muối ẩm",
+           "muối ẩm đã phản ứng với nước thành chất khác"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "2. Dung dịch muối ăn 0,9% dùng {0}",
+        "o": [
+         {
+          "dung": [
+           "làm nước muối sinh lí: súc miệng, rửa mũi, rửa vết thương"
+          ],
+          "sai": [
+           "làm nước uống hằng ngày thay nước lọc",
+           "để tẩy gỉ sắt"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     }
    ]
   },
@@ -233,56 +1686,329 @@
      "trang": 24,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Khi các phản ứng hoá học xảy ra, lượng các chất phản ứng giảm dần, lượng các chất sản phẩm tăng dần. Vậy tổng khối lượng các chất trước và sau phản ứng có thay đổi không?"
+     "de": "Khi các phản ứng hoá học xảy ra, lượng các chất phản ứng giảm dần, lượng các chất sản phẩm tăng dần. Vậy tổng khối lượng các chất trước và sau phản ứng có thay đổi không?",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "dong": [
+       {
+        "chu": "Tổng khối lượng các chất trước và sau phản ứng: {0}",
+        "o": [
+         {
+          "dung": [
+           "không thay đổi"
+          ],
+          "sai": [
+           "giảm dần",
+           "tăng dần"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Vì {0}",
+        "o": [
+         {
+          "dung": [
+           "chỉ có liên kết giữa các nguyên tử thay đổi, số nguyên tử của mỗi nguyên tố giữ nguyên"
+          ],
+          "sai": [
+           "các nguyên tử biến đổi thành nguyên tử của nguyên tố khác",
+           "các chất chỉ trộn lẫn với nhau, không bị biến đổi"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B5.C2",
      "trang": 25,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Carbon tác dụng với oxygen theo sơ đồ Hình 5.1 (SGK trang 25). Giải thích tại sao khối lượng carbon dioxide bằng tổng khối lượng carbon và oxygen."
+     "de": "Carbon tác dụng với oxygen theo sơ đồ Hình 5.1 (SGK trang 25). Giải thích tại sao khối lượng carbon dioxide bằng tổng khối lượng carbon và oxygen.",
+     "hinh": [
+      "khtn8/B5.C2.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "dong": [
+       {
+        "chu": "Trước phản ứng có {0}",
+        "o": [
+         {
+          "dung": [
+           "1 nguyên tử C và 2 nguyên tử O"
+          ],
+          "sai": [
+           "1 nguyên tử C và 1 nguyên tử O",
+           "2 nguyên tử C và 2 nguyên tử O"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Phân tử carbon dioxide tạo thành có {0}",
+        "o": [
+         {
+          "dung": [
+           "1 nguyên tử C và 2 nguyên tử O"
+          ],
+          "sai": [
+           "1 nguyên tử C và 1 nguyên tử O",
+           "2 nguyên tử C và 1 nguyên tử O"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Vậy khối lượng carbon dioxide bằng tổng khối lượng carbon và oxygen vì {0}",
+        "o": [
+         {
+          "dung": [
+           "chỉ có liên kết giữa các nguyên tử thay đổi, số nguyên tử C và O giữ nguyên"
+          ],
+          "sai": [
+           "nguyên tử O biến thành nguyên tử C",
+           "có thêm nguyên tử mới sinh ra trong phản ứng"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B5.C3",
      "trang": 25,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Sau khi đốt cháy than tổ ong (thành phần chính là carbon) thì thu được xỉ than. Xỉ than nặng hơn hay nhẹ hơn than tổ ong? Giải thích."
+     "de": "Sau khi đốt cháy than tổ ong (thành phần chính là carbon) thì thu được xỉ than. Xỉ than nặng hơn hay nhẹ hơn than tổ ong? Giải thích.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "dong": [
+       {
+        "chu": "Xỉ than {0} than tổ ong",
+        "o": [
+         {
+          "dung": [
+           "nhẹ hơn"
+          ],
+          "sai": [
+           "nặng hơn",
+           "nặng bằng"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Vì {0}",
+        "o": [
+         {
+          "dung": [
+           "carbon trong than đã tác dụng với oxygen tạo thành khí carbon dioxide bay ra ngoài"
+          ],
+          "sai": [
+           "than cháy làm mất đi một phần khối lượng các chất",
+           "xỉ than hút thêm oxygen của không khí"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B5.C4",
      "trang": 25,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Vôi sống (calcium oxide) phản ứng với một số chất có mặt trong không khí như sau: Calcium oxide + Carbon dioxide → Calcium carbonate; Calcium oxide + Nước → Calcium hydroxide. Khi làm thí nghiệm, một học sinh quên đậy nắp lọ đựng vôi sống (thành phần chính là CaO), sau một thời gian thì khối lượng của lọ sẽ thay đổi như thế nào?"
+     "de": "Vôi sống (calcium oxide) phản ứng với một số chất có mặt trong không khí như sau: Calcium oxide + Carbon dioxide → Calcium carbonate; Calcium oxide + Nước → Calcium hydroxide. Khi làm thí nghiệm, một học sinh quên đậy nắp lọ đựng vôi sống (thành phần chính là CaO), sau một thời gian thì khối lượng của lọ sẽ thay đổi như thế nào?",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "dong": [
+       {
+        "chu": "Khối lượng của lọ {0}",
+        "o": [
+         {
+          "dung": [
+           "tăng lên"
+          ],
+          "sai": [
+           "giảm đi",
+           "không thay đổi"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Vì vôi sống đã kết hợp với {0}",
+        "o": [
+         {
+          "dung": [
+           "khí carbon dioxide và hơi nước trong không khí"
+          ],
+          "sai": [
+           "khí oxygen trong không khí",
+           "khí nitrogen trong không khí"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B5.C5",
      "trang": 26,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Lập phương trình hoá học của các phản ứng sau: a) Fe + O2 ⟶ Fe3O4; b) Al + HCl ⟶ AlCl3 + H2; c) Al2(SO4)3 + NaOH ⟶ Al(OH)3 + Na2SO4; d) CaCO3 + HCl ⟶ CaCl2 + CO2 + H2O."
+     "de": "Lập phương trình hoá học của các phản ứng sau: a) Fe + O2 ⟶ Fe3O4; b) Al + HCl ⟶ AlCl3 + H2; c) Al2(SO4)3 + NaOH ⟶ Al(OH)3 + Na2SO4; d) CaCO3 + HCl ⟶ CaCl2 + CO2 + H2O.",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 8,
+      "hoi": "Lập phương trình hoá học của các phản ứng sau (viết theo thứ tự a, b, c, d, các phương trình cách nhau bằng dấu ;):\na) Fe + O₂ → Fe₃O₄\nb) Al + HCl → AlCl₃ + H₂\nc) Al₂(SO₄)₃ + NaOH → Al(OH)₃ + Na₂SO₄\nd) CaCO₃ + HCl → CaCl₂ + CO₂ + H₂O",
+      "dap": [
+       "3Fe+2O₂→Fe₃O₄;2Al+6HCl→2AlCl₃+3H₂;Al₂(SO₄)₃+6NaOH→2Al(OH)₃+3Na₂SO₄;CaCO₃+2HCl→CaCl₂+CO₂+H₂O"
+      ],
+      "phim": [
+       "Fe",
+       "O₂",
+       "Fe₃O₄",
+       "Al",
+       "HCl",
+       "AlCl₃",
+       "H₂",
+       "Al₂(SO₄)₃",
+       "NaOH",
+       "Al(OH)₃",
+       "Na₂SO₄",
+       "CaCO₃",
+       "CaCl₂",
+       "CO₂",
+       "H₂O",
+       ";"
+      ],
+      "nhieu": [
+       "Fe₂O₃",
+       "AlCl₂",
+       "Al(OH)₂"
+      ],
+      "loi_giai": [
+       "a) Fe₃O₄ có 4 nguyên tử O, O₂ có 2 nguyên tử O nên đặt 2 trước O₂; vế phải có 3 nguyên tử Fe nên đặt 3 trước Fe",
+       "3Fe + 2O₂ → Fe₃O₄",
+       "b) AlCl₃ có 3 nguyên tử Cl, H₂ có 2 nguyên tử H: đặt 2 trước AlCl₃ và 6 trước HCl (6 nguyên tử Cl), khi đó vế trái có 6 nguyên tử H nên đặt 3 trước H₂, rồi đặt 2 trước Al",
+       "2Al + 6HCl → 2AlCl₃ + 3H₂",
+       "c) Coi nhóm SO₄ và nhóm OH như một nguyên tố: vế trái có 3 nhóm SO₄ nên đặt 3 trước Na₂SO₄; khi đó vế phải có 6 nguyên tử Na nên đặt 6 trước NaOH, vế trái có 2 nguyên tử Al nên đặt 2 trước Al(OH)₃",
+       "Al₂(SO₄)₃ + 6NaOH → 2Al(OH)₃ + 3Na₂SO₄",
+       "d) Vế phải có 2 nguyên tử Cl (trong CaCl₂) nên đặt 2 trước HCl; khi đó mỗi vế có 2 nguyên tử H",
+       "CaCO₃ + 2HCl → CaCl₂ + CO₂ + H₂O"
+      ]
+     }
     },
     {
      "ma": "B5.C6",
      "trang": 27,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Sơ đồ của phản ứng hoá học khác với phương trình hoá học ở điểm nào? Nêu ý nghĩa của phương trình hoá học."
+     "de": "Sơ đồ của phản ứng hoá học khác với phương trình hoá học ở điểm nào? Nêu ý nghĩa của phương trình hoá học.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "dong": [
+       {
+        "chu": "1. Sơ đồ phản ứng khác phương trình hoá học ở chỗ {0}",
+        "o": [
+         {
+          "dung": [
+           "sơ đồ chưa cân bằng số nguyên tử của mỗi nguyên tố ở hai vế, phương trình hoá học đã cân bằng"
+          ],
+          "sai": [
+           "sơ đồ viết tên các chất, phương trình hoá học viết công thức hoá học",
+           "sơ đồ không có chất sản phẩm"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "2. Phương trình hoá học cho biết {0}",
+        "o": [
+         {
+          "dung": [
+           "tỉ lệ số nguyên tử, số phân tử (cũng là tỉ lệ số mol) giữa các chất trong phản ứng"
+          ],
+          "sai": [
+           "thời gian để phản ứng xảy ra xong",
+           "màu sắc của các chất sản phẩm"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B5.C7",
      "trang": 27,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Lập phương trình hoá học và xác định tỉ lệ số phân tử của các chất trong sơ đồ phản ứng hoá học sau: Na2CO3 + Ba(OH)2 ⟶ BaCO3 + NaOH."
+     "de": "Lập phương trình hoá học và xác định tỉ lệ số phân tử của các chất trong sơ đồ phản ứng hoá học sau: Na2CO3 + Ba(OH)2 ⟶ BaCO3 + NaOH.",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "hoi": "Lập phương trình hoá học của phản ứng theo sơ đồ sau: Na₂CO₃ + Ba(OH)₂ → BaCO₃ + NaOH.",
+      "dap": [
+       "Na₂CO₃+Ba(OH)₂→BaCO₃+2NaOH"
+      ],
+      "phim": [
+       "Na₂CO₃",
+       "Ba(OH)₂",
+       "BaCO₃",
+       "NaOH"
+      ],
+      "nhieu": [
+       "BaOH",
+       "Na(OH)₂",
+       "Na₂OH"
+      ],
+      "loi_giai": [
+       "Coi nhóm CO₃ và nhóm OH như một nguyên tố: vế trái có 2 nguyên tử Na và 2 nhóm OH nên đặt 2 trước NaOH",
+       "Na₂CO₃ + Ba(OH)₂ → BaCO₃ + 2NaOH",
+       "Tỉ lệ số phân tử Na₂CO₃ : số phân tử Ba(OH)₂ : số phân tử BaCO₃ : số phân tử NaOH = 1 : 1 : 1 : 2"
+      ]
+     }
     },
     {
      "ma": "B5.C8",
      "trang": 27,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Giả thiết trong không khí, sắt tác dụng với oxygen tạo thành gỉ sắt (Fe2O3). Từ 5,6 gam sắt có thể tạo ra tối đa bao nhiêu gam gỉ sắt?"
+     "de": "Giả thiết trong không khí, sắt tác dụng với oxygen tạo thành gỉ sắt (Fe2O3). Từ 5,6 gam sắt có thể tạo ra tối đa bao nhiêu gam gỉ sắt?",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "dap": [
+       "8",
+       "8g"
+      ],
+      "phim": [
+       "g"
+      ],
+      "nhieu": [
+       "mol",
+       "L"
+      ],
+      "loi_giai": [
+       "PTHH: 4Fe + 3O₂ → 2Fe₂O₃",
+       "n(Fe) = 5,6 : 56 = 0,1 (mol)",
+       "Theo PTHH: n(Fe₂O₃) = 2 · 0,1 : 4 = 0,05 (mol)",
+       "M(Fe₂O₃) = 2 · 56 + 3 · 16 = 160 (g/mol); m(Fe₂O₃) = 0,05 · 160 = 8 (g)"
+      ]
+     }
     }
    ]
   },
@@ -295,28 +2021,122 @@
      "trang": 29,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Hoà tan hết 0,65 gam Zn trong dung dịch HCl 1 M, phản ứng xảy ra: Zn + 2HCl ⟶ ZnCl2 + H2. Tính thể tích khí hydrogen thu được ở 25 °C, 1 bar."
+     "de": "Hoà tan hết 0,65 gam Zn trong dung dịch HCl 1 M, phản ứng xảy ra: Zn + 2HCl ⟶ ZnCl2 + H2. Tính thể tích khí hydrogen thu được ở 25 °C, 1 bar.",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "dap": [
+       "0,2479",
+       "0,2479L"
+      ],
+      "phim": [
+       "L"
+      ],
+      "nhieu": [
+       "mL",
+       "mol"
+      ],
+      "loi_giai": [
+       "n(Zn) = 0,65 : 65 = 0,01 (mol)",
+       "Theo PTHH: 1 mol Zn tạo ra 1 mol H₂ nên n(H₂) = 0,01 (mol)",
+       "V(H₂) = 24,79 · 0,01 = 0,2479 (L)"
+      ]
+     }
     },
     {
      "ma": "B6.C2",
      "trang": 29,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Khi cho Mg tác dụng với dung dịch H2SO4 loãng thì xảy ra phản ứng hoá học: Mg + H2SO4 ⟶ MgSO4 + H2. Sau phản ứng thu được 0,02 mol MgSO4. Tính thể tích khí H2 thu được ở 25 °C, 1 bar."
+     "de": "Khi cho Mg tác dụng với dung dịch H2SO4 loãng thì xảy ra phản ứng hoá học: Mg + H2SO4 ⟶ MgSO4 + H2. Sau phản ứng thu được 0,02 mol MgSO4. Tính thể tích khí H2 thu được ở 25 °C, 1 bar.",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "dap": [
+       "0,4958",
+       "0,4958L"
+      ],
+      "phim": [
+       "L"
+      ],
+      "nhieu": [
+       "mL",
+       "mol"
+      ],
+      "loi_giai": [
+       "Theo PTHH: 1 mol MgSO₄ tạo thành cùng 1 mol H₂ nên n(H₂) = 0,02 (mol)",
+       "V(H₂) = 24,79 · 0,02 = 0,4958 (L)"
+      ]
+     }
     },
     {
      "ma": "B6.C3",
      "trang": 29,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Khi nung nóng KClO3 xảy ra phản ứng nhiệt phân: 2KClO3 ⟶ 2KCl + 3O2. Biết rằng hiệu suất phản ứng nhỏ hơn 100%. Hãy chọn các từ/cụm từ (lớn hơn, nhỏ hơn, bằng) phù hợp với nội dung còn thiếu trong các câu sau đây: Khi nhiệt phân 1 mol KClO3 thì thu được số mol O2 ...(1)... 1,5 mol. Để thu được 0,3 mol O2 thì cần số mol KClO3 ...(2)... 0,2 mol."
+     "de": "Khi nung nóng KClO3 xảy ra phản ứng nhiệt phân: 2KClO3 ⟶ 2KCl + 3O2. Biết rằng hiệu suất phản ứng nhỏ hơn 100%. Hãy chọn các từ/cụm từ (lớn hơn, nhỏ hơn, bằng) phù hợp với nội dung còn thiếu trong các câu sau đây: Khi nhiệt phân 1 mol KClO3 thì thu được số mol O2 ...(1)... 1,5 mol. Để thu được 0,3 mol O2 thì cần số mol KClO3 ...(2)... 0,2 mol.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "dong": [
+       {
+        "chu": "Khi nhiệt phân 1 mol KClO₃ thì thu được số mol O₂ {0} 1,5 mol",
+        "o": [
+         {
+          "dung": [
+           "nhỏ hơn"
+          ],
+          "sai": [
+           "lớn hơn",
+           "bằng"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Để thu được 0,3 mol O₂ thì cần số mol KClO₃ {0} 0,2 mol",
+        "o": [
+         {
+          "dung": [
+           "lớn hơn"
+          ],
+          "sai": [
+           "nhỏ hơn",
+           "bằng"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B6.C4",
      "trang": 30,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Nung 10 gam calcium carbonate (thành phần chính của đá vôi), thu được khí carbon dioxide và m gam vôi sống. Giả thiết hiệu suất phản ứng là 80%, xác định m."
+     "de": "Nung 10 gam calcium carbonate (thành phần chính của đá vôi), thu được khí carbon dioxide và m gam vôi sống. Giả thiết hiệu suất phản ứng là 80%, xác định m.",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "dap": [
+       "4,48",
+       "4,48g"
+      ],
+      "phim": [
+       "g"
+      ],
+      "nhieu": [
+       "mol",
+       "L"
+      ],
+      "loi_giai": [
+       "PTHH: CaCO₃ → (t°) CaO + CO₂",
+       "M(CaCO₃) = 40 + 12 + 3 · 16 = 100 (g/mol); n(CaCO₃) = 10 : 100 = 0,1 (mol)",
+       "Theo PTHH: n(CaO) = 0,1 (mol); m(CaO) theo lí thuyết = 0,1 · 56 = 5,6 (g)",
+       "Hiệu suất 80% nên m = 5,6 · 80% = 4,48 (g)"
+      ]
+     }
     }
    ]
   },
@@ -329,35 +2149,219 @@
      "trang": 31,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Quan sát các Hình 7.1 (sắt bị gỉ) và 7.2 (đốt cháy cồn) trong SGK trang 31: Phản ứng sắt bị gỉ xảy ra nhanh hơn hay chậm hơn phản ứng đốt cháy cồn?"
+     "de": "Quan sát các Hình 7.1 (sắt bị gỉ) và 7.2 (đốt cháy cồn) trong SGK trang 31: Phản ứng sắt bị gỉ xảy ra nhanh hơn hay chậm hơn phản ứng đốt cháy cồn?",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "dong": [
+       {
+        "chu": "Phản ứng sắt bị gỉ xảy ra {0} phản ứng đốt cháy cồn",
+        "o": [
+         {
+          "dung": [
+           "chậm hơn"
+          ],
+          "sai": [
+           "nhanh hơn"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Vì {0}",
+        "o": [
+         {
+          "dung": [
+           "cồn cháy ngay lập tức, còn sắt phải sau một thời gian mới xuất hiện lớp gỉ"
+          ],
+          "sai": [
+           "sắt bị gỉ toả nhiều nhiệt hơn cồn cháy",
+           "cồn phải đun nóng lâu mới cháy"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B7.C2",
      "trang": 32,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Một học sinh thực hiện thí nghiệm và ghi lại hiện tượng như sau: cho cùng một lượng hydrochloric acid vào hai ống nghiệm đựng cùng một lượng đá vôi ở dạng bột (ống nghiệm 1) và dạng viên (ống nghiệm 2); quan sát thấy ở ống nghiệm (1) bọt khí xuất hiện nhiều hơn và đá vôi tan hết trước. Phản ứng giữa hydrochloric acid với đá vôi dạng bột xảy ra nhanh hơn hay chậm hơn so với phản ứng giữa hydrochloric acid với đá vôi dạng viên?"
+     "de": "Một học sinh thực hiện thí nghiệm và ghi lại hiện tượng như sau: cho cùng một lượng hydrochloric acid vào hai ống nghiệm đựng cùng một lượng đá vôi ở dạng bột (ống nghiệm 1) và dạng viên (ống nghiệm 2); quan sát thấy ở ống nghiệm (1) bọt khí xuất hiện nhiều hơn và đá vôi tan hết trước. Phản ứng giữa hydrochloric acid với đá vôi dạng bột xảy ra nhanh hơn hay chậm hơn so với phản ứng giữa hydrochloric acid với đá vôi dạng viên?",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "dong": [
+       {
+        "chu": "Phản ứng của hydrochloric acid với đá vôi dạng bột xảy ra {0} với đá vôi dạng viên",
+        "o": [
+         {
+          "dung": [
+           "nhanh hơn"
+          ],
+          "sai": [
+           "chậm hơn"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Vì {0}",
+        "o": [
+         {
+          "dung": [
+           "đá vôi dạng bột có diện tích bề mặt tiếp xúc với acid lớn hơn"
+          ],
+          "sai": [
+           "đá vôi dạng bột có khối lượng lớn hơn",
+           "acid trong ống nghiệm (1) có nồng độ lớn hơn"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B7.C3",
      "trang": 34,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Than cháy trong bình khí oxygen nhanh hơn cháy trong không khí. Yếu tố nào ảnh hưởng đến tốc độ của phản ứng đốt cháy than?"
+     "de": "Than cháy trong bình khí oxygen nhanh hơn cháy trong không khí. Yếu tố nào ảnh hưởng đến tốc độ của phản ứng đốt cháy than?",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "dong": [
+       {
+        "chu": "Không khí chỉ chứa khoảng {0} oxygen về thể tích",
+        "o": [
+         {
+          "dung": [
+           "20%"
+          ],
+          "sai": [
+           "80%",
+           "100%"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Yếu tố ảnh hưởng đến tốc độ phản ứng đốt cháy than: {0}",
+        "o": [
+         {
+          "dung": [
+           "nồng độ (nồng độ khí oxygen)"
+          ],
+          "sai": [
+           "nhiệt độ",
+           "chất xúc tác"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B7.C4",
      "trang": 34,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Khi \"bảo quản thực phẩm trong tủ lạnh để giữ thực phẩm tươi lâu hơn\" là đã tác động vào yếu tố gì để làm chậm tốc độ phản ứng?"
+     "de": "Khi \"bảo quản thực phẩm trong tủ lạnh để giữ thực phẩm tươi lâu hơn\" là đã tác động vào yếu tố gì để làm chậm tốc độ phản ứng?",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "dong": [
+       {
+        "chu": "Bảo quản thực phẩm trong tủ lạnh là tác động vào yếu tố {0}",
+        "o": [
+         {
+          "dung": [
+           "nhiệt độ"
+          ],
+          "sai": [
+           "nồng độ",
+           "diện tích bề mặt tiếp xúc"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Nhiệt độ thấp làm tốc độ các phản ứng làm hỏng thực phẩm {0}",
+        "o": [
+         {
+          "dung": [
+           "giảm"
+          ],
+          "sai": [
+           "tăng",
+           "không thay đổi"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B7.C5",
      "trang": 34,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Trong quá trình sản xuất sulfuric acid có giai đoạn tổng hợp sulfur trioxide (SO3). Phản ứng xảy ra như sau: 2SO2 + O2 ⟶ 2SO3. Khi có mặt vanadium(V) oxide thì phản ứng xảy ra nhanh hơn. a) Vanadium(V) oxide đóng vai trò gì trong phản ứng tổng hợp sulfur trioxide? b) Sau phản ứng, khối lượng của vanadium(V) oxide có thay đổi không? Giải thích."
+     "de": "Trong quá trình sản xuất sulfuric acid có giai đoạn tổng hợp sulfur trioxide (SO3). Phản ứng xảy ra như sau: 2SO2 + O2 ⟶ 2SO3. Khi có mặt vanadium(V) oxide thì phản ứng xảy ra nhanh hơn. a) Vanadium(V) oxide đóng vai trò gì trong phản ứng tổng hợp sulfur trioxide? b) Sau phản ứng, khối lượng của vanadium(V) oxide có thay đổi không? Giải thích.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "dong": [
+       {
+        "chu": "a) Vanadium(V) oxide đóng vai trò {0}",
+        "o": [
+         {
+          "dung": [
+           "chất xúc tác"
+          ],
+          "sai": [
+           "chất phản ứng",
+           "sản phẩm"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "b) Sau phản ứng, khối lượng của vanadium(V) oxide {0}",
+        "o": [
+         {
+          "dung": [
+           "không thay đổi"
+          ],
+          "sai": [
+           "thay đổi"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Vì {0}",
+        "o": [
+         {
+          "dung": [
+           "chất xúc tác sau phản ứng vẫn giữ nguyên khối lượng và tính chất hoá học"
+          ],
+          "sai": [
+           "vanadium(V) oxide đã phản ứng hết với oxygen",
+           "vanadium(V) oxide biến thành sulfur trioxide"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     }
    ]
   },

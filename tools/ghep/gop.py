@@ -7,8 +7,10 @@ Hai viec:
 
 1. File phan -> sach da co (SBT Toan, SGK Toan, SBT KHTN, SGK KHTN):
        python3 tools/ghep/gop.py phan chuong1.json chuong2.json ...
-   Moi file phan co "nguon" va cac bang "ghep", "bo_may", "hinh", "can_hinh" (ma cau ->
-   gia tri). Cau co trong can_hinh ma chua co hinh thi chua giao duoc: ghep cat vao
+   Moi file phan co "nguon" va cac bang "ghep", "bo_may", "hinh", "can_hinh", "sua_de" (ma
+   cau -> gia tri). "sua_de" (2/10/2026, cau SGK) thay ca de cua cau: de chep luc nap sach sai
+   so lieu hay nhac "tinh huong mo dau", "HĐ2" ma khong chep noi dung. Cau co trong
+   can_hinh ma chua co hinh thi chua giao duoc: ghep cat vao
    "ghep_cho_hinh", cau ghi bo_may "chờ hình: <lời tả>". Co hinh roi thi chay lai gop voi
    bang "hinh" cua cau do, ghep_cho_hinh tu ve lai "ghep".
 
@@ -98,8 +100,10 @@ def kiem_file(duong):
     return r.returncode, (r.stdout + r.stderr).strip()
 
 
-def ap_cau(c, ma, ghep, bo, hinh, can_hinh, mon):
+def ap_cau(c, ma, ghep, bo, hinh, can_hinh, mon, sua_de=None):
     """Ap mot ma cau cua file phan vao cau c trong sach. Tra ve ten viec da lam."""
+    if sua_de and ma in sua_de:
+        c["de"] = sua_de[ma]
     if ma in hinh:
         c["hinh"] = hinh[ma]
     if ma in bo:
@@ -144,14 +148,24 @@ def gop_phan(cac_file, hinh_tu, thu):
             bo = p.get("bo_may", {}) or {}
             hinh = p.get("hinh", {}) or {}
             can_hinh = p.get("can_hinh", {}) or {}
+            sua_de = p.get("sua_de", {}) or {}
+            for ma in sorted(set(sua_de) - set(ghep) - set(bo) - set(hinh) - set(can_hinh)):
+                if ma not in cau:
+                    print(f"  LỖI {os.path.basename(f)}: mã {ma!r} không có trong {nguon}")
+                    loi += 1
+                    continue
+                cau[ma]["de"] = sua_de[ma]
+                dem["sua_de"] = dem.get("sua_de", 0) + 1
             for ma in set(ghep) | set(bo) | set(hinh) | set(can_hinh):
                 if ma not in cau:
                     print(f"  LỖI {os.path.basename(f)}: mã {ma!r} không có trong {nguon}")
                     loi += 1
                     continue
-                viec = ap_cau(cau[ma], ma, ghep, bo, hinh, can_hinh, mon)
+                viec = ap_cau(cau[ma], ma, ghep, bo, hinh, can_hinh, mon, sua_de)
                 if viec:
                     dem[viec] = dem.get(viec, 0) + 1
+                if ma in sua_de:
+                    dem["sua_de"] = dem.get("sua_de", 0) + 1
             for ds in hinh.values():
                 cac_hinh += ds
         if loi:

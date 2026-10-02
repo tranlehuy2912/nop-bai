@@ -22,6 +22,7 @@ import vn.huytl.homeworkgate.data.Prefs
 import vn.huytl.homeworkgate.kho.CauHoi
 import vn.huytl.homeworkgate.kho.KhoBai
 import vn.huytl.homeworkgate.kho.NganHang
+import vn.huytl.homeworkgate.kho.PhanHoc
 
 /**
  * Bai tap SGK lam tren may ([GiaiDe.LOAI_SGK], Ba Huy chot 2/10/2026): con chon cau o "Làm bài tập
@@ -86,6 +87,12 @@ class BaiSgkTest {
         val nguon = NganHang.sachLuyenTapCua("Toán").map { it.nguon }
         assertEquals(listOf("toan8t1", "toan8t2", "sbttoan8t1", "sbttoan8t2"), nguon)
         assertEquals(listOf("toan8t1", "toan8t2"), NganHang.sachGiaoKhoaCua("Toán").map { it.nguon })
+    }
+
+    @Test
+    fun tieng_anh_co_sgk_dung_truoc_sach_bai_tap() {
+        assertEquals(listOf("anh8"), NganHang.sachGiaoKhoaCua(PhanHoc.TIENG_ANH).map { it.nguon })
+        assertEquals(listOf("anh8", "sbtanh8"), NganHang.sachLuyenTapCua(PhanHoc.TIENG_ANH).map { it.nguon })
     }
 
     @Test

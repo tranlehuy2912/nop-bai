@@ -297,7 +297,9 @@ def kiem_chu_hien(so, ma, ten, chu):
         return
     if not the_can_bang(chu):
         so.l(ma, f"{ten} có thẻ <u>/<b> không đủ cặp: {chu!r}")
-    if re.search(r"<(?!/?[ub]>)", chu):
+    # Dau < cua bat dang thuc ("AB < CD", "x <= 2") app giu nguyen (KhungGhep.hien thoat het
+    # roi tra lai hai the), nen chi bat cho trong giong mot the khac: "<" dinh lien chu hay "/".
+    if re.search(r"<(?!/?[ub]>)(?=/?[A-Za-z])", chu):
         so.c(ma, f"{ten} có dấu < lạ (chỉ dùng <u>, <b>): {chu!r}")
 
 
@@ -850,7 +852,12 @@ def kiem_phan(duong, duong_sach, hinh_goc):
             so.l(ma, "'can_hinh' phải tả hình cần cắt bằng chữ")
         if ma not in ghep:
             so.l(ma, "có trong 'can_hinh' mà không có trong 'ghep'")
-    for ma in list(ghep) + list(bo) + list(hinh) + list(can_hinh):
+    # De sua lai (cau SGK, 2/10/2026): ma -> ca de moi.
+    sua_de = o.get("sua_de", {}) or {}
+    for ma, de in sua_de.items():
+        if not isinstance(de, str) or not de.strip():
+            so.l(ma, "'sua_de' phải là cả đề mới, không rỗng")
+    for ma in list(ghep) + list(bo) + list(hinh) + list(can_hinh) + list(sua_de):
         if ma not in cau_goc:
             so.l(ma, "mã này không có trong sách gốc")
     for ma in set(ghep) & set(bo):
@@ -859,6 +866,8 @@ def kiem_phan(duong, duong_sach, hinh_goc):
         if ma not in cau_goc:
             continue
         c = dict(cau_goc[ma])
+        if isinstance(sua_de.get(ma), str):
+            c["de"] = sua_de[ma]
         c["ghep"] = g
         if ma in hinh:
             c["hinh"] = hinh[ma]

@@ -50,7 +50,7 @@ import java.util.Calendar
  *
  * LAM BAI TAP TRONG SGK (cung ngay, Ba Huy chot sau): dong ngay duoi Kiem tra, tren Luyen tap
  * tung phan, mo [BaiSgkActivity]. Bai SGK lam tren may thay cho lam vo roi chup; mon chua co SGK
- * trong may (Tieng Anh luc viet) thi khong co dong nay.
+ * trong may thi khong co dong nay (Tieng Anh truoc khi nap SGK ngay 2/10/2026).
  *
  * CAU DA LAM DUNG (cung ngay): moi khu mot dong ngay duoi cac dong Luyen tap, mo [CauDaLamActivity]
  * de xem lai de, cau con da tra loi va loi giai cua moi cau da lam dung tren may.
@@ -116,7 +116,7 @@ class LuyenTapActivity : AppCompatActivity() {
         /** Dong Kiem tra da xong hom nay: het the den luot, hay du phut tu vung. */
         val kiemTraXong: Boolean,
         val luyen: List<Luyen>,
-        /** Dong "Làm bài tập trong SGK"; null khi mon chua co SGK trong may (Tieng Anh luc viet). */
+        /** Dong "Làm bài tập trong SGK"; null khi mon chua co SGK trong may. */
         val sgk: Sgk?,
         /** So cau da lam dung tren may, cho dong "Câu đã làm đúng" ([CauDaLamActivity]). */
         val soDung: Int,
