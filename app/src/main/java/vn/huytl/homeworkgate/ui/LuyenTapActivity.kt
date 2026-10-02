@@ -228,7 +228,7 @@ class LuyenTapActivity : AppCompatActivity() {
                 b.boxLuyen,
                 hinh = R.drawable.st_ic_the_hoc,
                 mau = if (n.tuVungXong) R.color.ok else MatMon.mau(PhanHoc.TIENG_ANH),
-                ten = if (n.tuVungXong) "Dò từ vựng: hôm nay đủ rồi" else getString(R.string.do_tu_nut),
+                ten = if (n.tuVungXong) "Kiểm tra từ vựng: hôm nay đủ rồi" else getString(R.string.do_tu_nut),
                 xong = n.tuVungXong
             ) { startActivity(Intent(this, DoTuVungActivity::class.java)) }
         }

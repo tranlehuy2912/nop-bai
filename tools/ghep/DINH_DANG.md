@@ -123,8 +123,7 @@ Mọi kiểu đều có `kieu` và `sao`. Trường `hoi` (không bắt buộc) 
 ```json
 {"kieu": "O", "sao": 4, "gioi": true,
  "dong": [
-  {"chu": "My best friend's name is {0}.", "o": [{"go": true}]},
-  {"chu": "{He} {0} {1} the most.",
+  {"chu": "My best friend's name is {Ten}.\n{He} {0} {1} the most.",
    "o": [{"dung": ["likes"], "sai": ["like"]},
          {"dung": ["playing badminton", "reading comics", "listening to music"], "sai": ["to playing chess"]}]},
   {"chu": "{He} does it {0} {1}.",
@@ -137,8 +136,8 @@ Mọi kiểu đều có `kieu` và `sao`. Trường `hoi` (không bắt buộc) 
 - Ô chọn: `dung` (ít nhất 1 phương án đúng), `sai` (phương án sai ngữ pháp hay sai nội dung). Máy trộn hai danh sách thành các nút.
 - Mỗi ô chọn có ít nhất 3 nút (`dung` cộng `sai`), vì hai nút là đoán mò trúng một nửa (anh Huy chốt 30/09/2026). Phương án sai thêm vào phải là lỗi hay gặp thật, không phải chữ vô nghĩa.
 - Ngoại lệ: ô vốn chỉ có hai giá trị thì giữ hai nút và ghi `"hai": true` vào ô đó. Ví dụ: `Đúng`/`Sai`, `Có`/`Không`, `Là đơn thức`/`Không phải`, `biến đổi vật lí`/`biến đổi hoá học`, xếp vào một trong hai cột, chọn một trong hai vật đề bài so sánh (ống nghiệm 1 hay 2). `kiem.py` báo lỗi ô dưới 3 nút mà không có `hai`, và ô có `hai` mà không đúng hai nút.
-- Ô gõ: `{"go": true}`, con gõ bằng bàn phím chữ cái (dùng cho tên riêng), không tính sao, không chấm. `goi_y` là chữ mờ trong ô, mặc định "Gõ tên"; ô gõ người thân thì ghi ví dụ `"goi_y": "mum, brother..."`.
-- `gioi: true`: máy hỏi trước "bạn nam hay bạn nữ", rồi thay `{He}` `{he}` `{His}` `{his}` `{Him}` `{him}` thành He/She, he/she, His/Her, his/her, Him/Her, him/her.
+- Không có ô gõ. Ô `{"go": true}` (con gõ tên riêng bằng bàn phím Android, không chấm) bỏ ngày 02/10/2026, vì anh Huy muốn bài làm trên máy chỉ bấm phím ghép. Tên riêng in sẵn vào chữ của dòng: tên bạn thân là `{Ten}`, tên khác viết thẳng (đang dùng: người thân `mum`, tên làng `Tan Lap`, bạn qua thư `Tom`, người viết thư `Hoa`). Dòng chỉ có tên mà không có ô chọn thì gộp vào dòng kề bên bằng `\n`, vì dòng nào cũng phải có ô. `kiem.py` báo lỗi ô có `go`; app gặp ô `go` thì bỏ cả câu.
+- `gioi: true`: máy hỏi trước "bạn nam hay bạn nữ", rồi thay `{He}` `{he}` `{His}` `{his}` `{Him}` `{him}` thành He/She, he/she, His/Her, his/her, Him/Her, him/her, và `{Ten}` thành Minh (bạn nam) hay Lan (bạn nữ).
 - `sao` bằng tổng số ô chọn, không quá 20.
 - Dùng cho: nối cột (mỗi vế trái một dòng, ô chọn là các vế phải), xếp từ vào cột (mỗi từ một dòng, ô chọn là tên cột), điền theo câu gợi ý, câu đúng về bản thân.
 
@@ -172,7 +171,7 @@ Toán và Khoa học tự nhiên cắt hình sau cùng (anh Huy chốt 29/09/202
 - Mã câu: `<Unit>.<phần><số bài>.<số câu>`, ví dụ `1.B3.2` là Unit 1, phần B, bài 3, câu 2. Test Yourself: `T1.3.2`. Bài in thành hai phần a, b thì thêm chữ vào số bài (`1.D3b.1`, `T1.7b.6`); phần chỉ là một câu thì không có số câu (`1.D3a`, `T1.7a`).
 - Bài có hai vế (viết từ dưới hình rồi xếp vào cột): từng hình một câu `1.A1.1`, `1.A1.2`..., phần xếp cột một câu `1.A1.cot`.
 - Bài tìm lỗi sai: câu chọn chỗ sai `T1.4.1a` (`CHON`), câu sửa lại `T1.4.1b` (`CHU` hay `CAU`).
-- Bài viết đoạn văn của Unit (số bài theo sách: `E3` ở Unit 1, 2, 3, 6; `E2` ở Unit 4; Unit 5 có cả `E2` lẫn `E3`): phần a xếp câu thành đoạn, ví dụ `1.E3a` (`BUOC`, đoạn mẫu do mình viết, 6 tới 8 câu, cộng 2 câu lạc đề); phần b ghép theo câu gợi ý, ví dụ `1.E3b` (`O`, mỗi câu gợi ý một dòng với hai ô: một ô ngữ pháp, một ô nội dung). Nội dung phần b không trùng phần a. Tới Unit 6 chỉ `1.E3b` bật `gioi: true` (đề viết về bạn thân, có dòng gõ tên); các phần b khác không bật, và chỉ có dòng gõ khi đề cần (`2.E3b`, `5.E2b`).
+- Bài viết đoạn văn của Unit (số bài theo sách: `E3` ở Unit 1, 2, 3, 6; `E2` ở Unit 4; Unit 5 có cả `E2` lẫn `E3`): phần a xếp câu thành đoạn, ví dụ `1.E3a` (`BUOC`, đoạn mẫu do mình viết, 6 tới 8 câu, cộng 2 câu lạc đề); phần b ghép theo câu gợi ý, ví dụ `1.E3b` (`O`, mỗi câu gợi ý một dòng với hai ô: một ô ngữ pháp, một ô nội dung). Nội dung phần b không trùng phần a. Tới Unit 6 chỉ `1.E3b` bật `gioi: true` (đề viết về bạn thân, tên bạn in sẵn bằng `{Ten}`); các phần b khác không bật. Tên riêng khác in sẵn vào chữ: `2.E2`, `2.E3b` dùng làng Tan Lap, `5.E2b` viết "Dear Tom," và ký tên Hoa.
 - Bỏ hẳn (không đưa vào file): bài làm theo cặp, theo nhóm, nói to, luyện đọc, phỏng vấn bạn. Ngoại lệ: trò chơi Unit 4 C2 là câu hỏi kiến thức, giữ lại.
 - `bai`: `Unit 1. Leisure time`; Test Yourself thì `Test Yourself 1`.
 - `nhom`: tên phần, ví dụ `A. Pronunciation`. Test Yourself thì `nhom` là tên bài, `Test Yourself 1`.

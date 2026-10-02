@@ -89,12 +89,30 @@
                 android:orientation="vertical"
                 android:visibility="gone">
 
-                <TextView
-                    android:id="@+id/txt_tien"
+                <!-- Dong tien do va sao cua cau dang hoi (2/10/2026, Ba Huy chot): moi cau mot sao, 1 sao la
+                     1 phut, ve bang HangSao nhu man lam bai tren may - rong la con duoc, vang la da duoc,
+                     xam la da lo dap an nen khong duoc nua. -->
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/ink_soft"
-                    android:textSize="14sp" />
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/txt_tien"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textColor="@color/ink_soft"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/txt_sao"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/wait"
+                        android:textSize="26sp" />
+                </LinearLayout>
 
                 <com.google.android.material.card.MaterialCardView
                     style="@style/Card"
@@ -126,27 +144,25 @@
                     </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>
 
-                <EditText
-                    android:id="@+id/o_go"
+                <!-- Khung phim ghep, ve trong ma nguon bang KhungGhep (2/10/2026): dap an
+                     chu thi xep the chu, dap an so hay cong thuc thi phim rieng cua the cong
+                     hang so va dau. Truoc ngay do la o go ban phim Android kem mot dai nut ky
+                     hieu cho bo Toan va bo KHTN. -->
+                <LinearLayout
+                    android:id="@+id/khung"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
-                    android:hint="@string/hoc_thuoc_go"
-                    android:importantForAutofill="no"
-                    android:inputType="text"
-                    android:imeOptions="actionDone"
-                    android:textColor="@color/ink"
-                    android:textSize="20sp" />
+                    android:orientation="vertical" />
 
-                <!-- Dai ky tu, dung chung voi man soat bai: moi nhom chuc nang mot
-                     hang, hang nao dai qua thi tu xuong dong chu khong cuon. Chi hien
-                     cho bo Toan va bo KHTN. Nut ve trong BanPhimKyTu. -->
-                <LinearLayout
-                    android:id="@+id/dai_ky_tu"
+                <!-- "Ghép câu trả lời trước đã" khi con bam Tra loi luc chua ghep gi. -->
+                <TextView
+                    android:id="@+id/txt_bao"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:orientation="vertical"
+                    android:textColor="@color/ink_soft"
+                    android:textSize="15sp"
                     android:visibility="gone" />
 
                 <!-- Khung ket qua, chi hien sau khi con bam Tra loi. -->
@@ -158,63 +174,46 @@
                     android:layout_marginTop="16dp"
                     android:visibility="gone">
 
-                    <!-- clipToPadding false: le am cua hang goi y ben duoi chi du cho mot dong
-                         chu co mac dinh. Chu to hon (cai dat co chu cua may) hay goi y dai hai
-                         dong thi dong chu lan vao padding duoi, va phan lan do van phai ve ra.
-                         Thu tren may ao pad5 ngay 29/9/2026: co chu 1,6 lan thi mot dong goi y da
-                         lan 9 px qua mep padding. -->
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:clipToPadding="false"
                         android:orientation="vertical"
                         android:padding="20dp">
 
-                        <TextView
-                            android:id="@+id/txt_ket"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:textSize="18sp"
-                            android:textStyle="bold" />
-
-                        <!-- Dong goi y, dap an khi dung. Nut chep chi hien khi goi y da ho ra
-                             mot phan dap an, xem HocThuocActivity.hienGoiY. Le am dat vao
-                             hang chu khong vao nut, nhu st_the_cau_de: hang cao du 48dp thi
-                             cham vao dau nut cung toi nut.
-
-                             minHeight giu hang cao 48dp KE CA KHI NUT AN, vi ba le am tinh cho
-                             hang 48dp: dong chu nam giua hang thi cach chu "Sai" va mep duoi
-                             khung gan bang man Do tu vung, noi dong nay chi co le tren 6dp. Khac
-                             st_the_cau_de, o day nut an phan lon thoi gian: goi y bac 1, dap an
-                             khi dung, khi chiu. Truoc 29/9/2026 thieu dong nay, nut an thi hang
-                             chi cao mot dong chu, le duoi keo mep duoi khung len giua dong chu,
-                             va khung cat mat nua duoi chu "Gợi ý: 11 chữ cái" (anh Ba Huy chup
-                             tren tablet that; tren may ao pad5 mat 21 trong 38 px). -->
+                        <!-- Chu ket qua, va ben phai la so sao vua duoc ("+1 ★", 2/10/2026) khi cau da xong. -->
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="-6dp"
-                            android:layout_marginEnd="-14dp"
-                            android:layout_marginBottom="-12dp"
                             android:gravity="center_vertical"
-                            android:minHeight="48dp"
                             android:orientation="horizontal">
 
                             <TextView
-                                android:id="@+id/txt_dap"
-                                style="@style/Text.Body"
+                                android:id="@+id/txt_ket"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:textSize="16sp" />
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
 
-                            <include
-                                android:id="@+id/nut_chep_goi_y"
-                                layout="@layout/st_nut_chep"
-                                android:layout_width="48dp"
-                                android:layout_height="48dp"
+                            <TextView
+                                android:id="@+id/txt_cong"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="20sp"
+                                android:textStyle="bold"
                                 android:visibility="gone" />
                         </LinearLayout>
+
+                        <!-- Dap an khi dung, khi chiu, va khi goi y da hien het. Truoc
+                             2/10/2026 dong nay con la goi y bang chu ("Gợi ý: s…") kem nut chep
+                             phan goi y; nay goi y nam tren ban phim (phim mo, chu dien san). -->
+                        <TextView
+                            android:id="@+id/txt_dap"
+                            style="@style/Text.Body"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp"
+                            android:textSize="16sp" />
                     </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>
 

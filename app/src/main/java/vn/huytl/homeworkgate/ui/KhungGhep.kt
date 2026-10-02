@@ -5,13 +5,12 @@ import android.content.res.ColorStateList
 import android.graphics.BitmapFactory
 import android.graphics.Typeface
 import android.os.Bundle
-import android.text.Editable
-import android.text.InputType
-import android.text.TextWatcher
+import android.text.SpannableString
+import android.text.Spanned
+import android.text.style.ForegroundColorSpan
 import android.view.Gravity
 import android.view.View
 import android.view.ViewGroup
-import android.widget.EditText
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
@@ -23,6 +22,7 @@ import kotlin.random.Random
 import vn.huytl.homeworkgate.R
 import vn.huytl.homeworkgate.data.GiaiDe
 import vn.huytl.homeworkgate.data.LamTrenMay
+import vn.huytl.homeworkgate.data.LuatGhep
 import vn.huytl.homeworkgate.kho.DeThi
 import vn.huytl.homeworkgate.kho.Ghep
 
@@ -31,24 +31,38 @@ import vn.huytl.homeworkgate.kho.Ghep
  * loi con dang ghep, va noi cau do dung hay sai khi con bam Kiem tra.
  *
  * DUNG CHUNG cho man lam bai tren may ([LamBaiActivity]) va man Giai de. Sao va luot o ben
- * goi, theo [vn.huytl.homeworkgate.data.LuatGhep]; o day chi ve va cham.
+ * goi, theo [vn.huytl.homeworkgate.data.LuatGhep]; o day chi ve va cham. Tu 2/10/2026 hai man
+ * Kiem tra bai va Kiem tra tu vung cung ve bang khung nay (Ba Huy thay con luc bam phim ghep,
+ * luc go ban phim Android la khong dong nhat): moi the, moi tu mot khoi [Ghep] dung tai cho,
+ * xem [vn.huytl.homeworkgate.data.PhimKiemTra]. Hai man do tu cham bang luat cua minh, chi lay
+ * cau tra loi o [traLoi], va dung them hai thu ma bai sach khong dung: [dienSan] va khuon o,
+ * du 26 phim cua [Ghep.Chu].
  *
  * KHONG CO CHU NAO GIAI THICH LUAT (Ba Huy chot 29/9/2026): con tu kham pha qua sao tat dan.
  * Chu tren man chi la de bai, nhan nut, va loi giai khi da het luot.
  *
+ * PHIM NHIEU MO CHU KHONG BIEN MAT (Ba Huy chot 2/10/2026). Sai lan dau mo mot nua phim (the,
+ * dong) nhieu, sai lan hai mo het, xem [LuatGhep.mucMo]. Phim mo van nam nguyen cho, chi khong
+ * bam duoc. Truoc ngay do sai lan dau la bot het phim nhieu ra khoi ban phim, va cac phim con
+ * lai don cho, con phai tim lai. Cau trac nghiem va cau nhieu o thi mo phuong an con vua chon
+ * sai ([saiDaChon]); cau Dung/Sai giu nguyen, chi co hai nut.
+ *
  * THU TU NUT GIU NGUYEN TRONG MOT LUOT, DOI SANG LUOT SAU (Ba Huy chot 30/9/2026). Tron bang
- * mot hat giong co dinh cho ca luot, nen ve lai (sau lan sai dau, khi bot phim nhieu; hay tat
- * man roi mo lai giua luot) phim khong nhay cho, con khong phai tim lai tu dau. Truoc ngay do
+ * mot hat giong co dinh cho ca luot, nen ve lai (sau lan sai, khi mo phim nhieu; hay tat man
+ * roi mo lai giua luot) phim khong nhay cho, con khong phai tim lai tu dau. Truoc ngay do
  * hat giong chi la ma cau, nen lam lai sau 24 gio va on lai sau 3, 10, 20, 30 ngay deu ra dung
  * thu tu cu: con co the nho vi tri nut thay vi nho dap an. Nay hat giong la ma cau cong so
  * luot da xong ([hatLuot]); o man Giai de la ma de cong ma cau ([hatDe]), de ca luc xem lai de
- * da nop van dung thu tu con da thay.
+ * da nop van dung thu tu con da thay. Phim nhieu nao mo truoc cung theo mot hat co dinh cua
+ * luot, nen lan sai thu hai chi mo them chu khong mo lai tu dau.
  *
  * Trac nghiem cung tron, va chu A, B, C, D danh lai theo thu tu moi: [chon] va [Ghep.Chon.dap]
  * van la chi so trong sach, chi cho hien moi doi. Du lieu khong co phuong an nao nhac chu cai
  * cua phuong an khac ("Cả A và B"), tools/ghep/kiem.py canh bao neu co. Cau Dung/Sai thi khong
  * tron, nut Dung luon dung truoc: doi cho hai nut khong lam con kho nho hon, chi de bam nham.
- * Hang phim co ban cua cau bieu thuc (so, dau) cung giu nguyen nhu mot ban phim.
+ * Hang phim co ban cua cau bieu thuc (so, dau) cung giu nguyen nhu mot ban phim, va khong bao
+ * gio mo. Du 26 phim chu cai cua man Kiem tra tu vung cung khong tron: xep theo hang QWERTY nhu
+ * ban phim tablet ma con da quen tay.
  *
  * HINH AN CUA DE THI (1/10/2026). Bai hinh ma to de khong in hinh thi con tu ve, va co nut
  * "Nhờ trợ giúp" mo hinh tung buoc ([veHinhAn], muc giu o [NhoHinhAn]). Khoi nay cung nam o day
@@ -57,17 +71,51 @@ import vn.huytl.homeworkgate.kho.Ghep
  */
 class KhungGhep(
     private val khung: LinearLayout,
-    val muc: LamTrenMay.Muc,
+    private val g: Ghep,
+    /** Mon cua cau: chon hang phim co ban ([Ghep.phimCoBan]) va cach hien chi so ([hien]). */
+    private val mon: String,
     /** Hat giong tron thu tu nut cua luot nay, xem [hatLuot] va [hatDe]. */
-    hatTron: Int = hatLuot(muc),
+    hatTron: Int,
+    /**
+     * Cac phan dau cua dap an dat san va khoa lai (chu cai, the chu, phim): bac goi y thu ba
+     * cua hai man Kiem tra, xem [vn.huytl.homeworkgate.data.PhimKiemTra.soDienSan]. Bai sach
+     * khong dung.
+     */
+    private val dienSan: List<String> = emptyList(),
+    /** Cac phuong an da chon sai o nhung lan truoc, ve mo. Xem [LuatGhep.Luot.saiDaChon]. */
+    saiDaChon: Collection<String> = emptyList(),
     /** Goi moi lan cau tra loi doi, de ben goi xoa dong bao loi cu. */
     private val khiDoi: () -> Unit = {}
 ) {
+    /**
+     * Khung cho mot cau sach, o man lam bai tren may va man Giai de: khoi ghep, mon va hat lay
+     * tu [muc].
+     */
+    constructor(
+        khung: LinearLayout,
+        muc: LamTrenMay.Muc,
+        hatTron: Int = hatLuot(muc),
+        saiDaChon: Collection<String> = emptyList(),
+        khiDoi: () -> Unit = {}
+    ) : this(khung, muc.ghep, muc.cau.mon, hatTron, saiDaChon = saiDaChon, khiDoi = khiDoi) {
+        mucGoc = muc
+    }
+
+    private var mucGoc: LamTrenMay.Muc? = null
+
+    /** Cau sach cua khung. Khung cua hai man Kiem tra khong co cau sach nao. */
+    val muc: LamTrenMay.Muc get() = mucGoc ?: error("Khung nay khong ve cau sach")
+
     private val ct: Context = khung.context
-    private val g: Ghep = muc.ghep
     private val tron = Random(hatTron)
 
-    private var botNhieu = false
+    /**
+     * Hat rieng cho viec chon phim nhieu nao mo truoc. Khong dung chung [tron]: phim nao mo
+     * phai la mot, du khung da tron nhung danh sach nao, theo thu tu nao.
+     */
+    private val hatMo = hatTron * 31 + 17
+
+    private var mucMo = 0
     private var daXong = false
     private var hienGiai = false
 
@@ -80,15 +128,27 @@ class KhungGhep(
     private val dongDaChon = mutableListOf<Int>()
     private var nu: Boolean? = null
     private val chonO = mutableMapOf<Pair<Int, Int>, String>()
-    private val goO = mutableMapOf<Pair<Int, Int>, String>()
     private var oSai: Set<Pair<Int, Int>> = emptySet()
+    private val saiChon = LinkedHashSet(saiDaChon)
+
+    /**
+     * So phan dau cua cau tra loi la [dienSan], khoa: nut Xoa va bam bo the khong cham toi.
+     * Tinh sau khi dat [dienSan] vao, vi the chu dat san phai tim duoc trong kho the moi tinh.
+     */
+    private var soKhoa = 0
 
     /** Cac phim/the/dong da tron mot lan, kem co nhieu hay khong. */
     private data class Muc2(val chu: String, val nhieu: Boolean)
 
     private val phimChu: List<Muc2> by lazy {
         val c = g as Ghep.Chu
-        (c.phimThat.map { Muc2(it, false) } + c.nhieu.map { Muc2(it.lowercase(), true) }).shuffled(tron)
+        if (c.duPhim) {
+            // Du 26 phim, khong tron: [Ghep.Chu.nhieu] la cac chu khong co trong tu.
+            val nhieu = c.nhieu.map { it.lowercase() }.toSet()
+            HANG_QWERTY.flatMap { h -> h.map { Muc2(it.toString(), it.toString() in nhieu) } }
+        } else {
+            (c.phimThat.map { Muc2(it, false) } + c.nhieu.map { Muc2(it.lowercase(), true) }).shuffled(tron)
+        }
     }
     private val phimBieuThuc: List<Muc2> by lazy {
         val b = g as Ghep.BieuThuc
@@ -116,14 +176,33 @@ class KhungGhep(
         }
     }
 
+    init {
+        when (g) {
+            is Ghep.Chu, is Ghep.BieuThuc -> {
+                phimDaGo += dienSan
+                soKhoa = phimDaGo.size
+            }
+            is Ghep.Cau -> {
+                // The dat san lay trong cac the that, the nao chua dung; khong co thi bo qua
+                // (ben dung khoi ghep da bao dam co du).
+                dienSan.forEach { t ->
+                    cacThe.indices.firstOrNull { cacThe[it].chu == t && !cacThe[it].nhieu && it !in theDaChon }
+                        ?.let { theDaChon += it }
+                }
+                soKhoa = theDaChon.size
+            }
+            else -> Unit
+        }
+    }
+
     // ------------------------------------------------------------------ ve
 
     /**
-     * Ve lai toan bo khung. [botNhieu] true thi bo phim/the/dong nhieu ra khoi ban phim, xem
-     * [vn.huytl.homeworkgate.data.LuatGhep.Luot.botNhieu].
+     * Ve lai toan bo khung. [mucMo] la phim nhieu mo toi dau, xem [LuatGhep.mucMo]: 0 chua mo,
+     * 1 mot nua, [LuatGhep.MO_HET] het.
      */
-    fun ve(botNhieu: Boolean = this.botNhieu) {
-        this.botNhieu = botNhieu
+    fun ve(mucMo: Int = this.mucMo) {
+        this.mucMo = mucMo
         khung.removeAllViews()
         when (g) {
             is Ghep.Chon -> veChon(g)
@@ -141,44 +220,53 @@ class KhungGhep(
     fun khoa(hienLoiGiai: Boolean) {
         daXong = true
         hienGiai = hienLoiGiai
-        ve(botNhieu)
+        ve(mucMo)
     }
 
     /**
      * Cham cau tra loi hien tai. Tra so cho sai (0 la dung), hay null khi con chua ghep xong
-     * (ben goi bao "chưa làm xong", khong tru sao). Sai thi xoa phan sai de con lam lai.
+     * (ben goi bao "chưa làm xong", khong tru sao). Sai thi ghi phuong an vua chon sai vao
+     * [saiDaChon] roi xoa phan sai de con lam lai.
      */
     fun kiem(): Int? {
         val soSai: Int = when (g) {
-            is Ghep.Chon -> if (chon.isEmpty()) return null else if (g.dung(chon)) 0 else 1
+            is Ghep.Chon -> {
+                if (chon.isEmpty()) return null
+                if (g.dung(chon)) 0 else {
+                    // Cau nhieu dap an: chi mo phuong an sai, phuong an dung con chon thieu
+                    // thi khong co gi de mo.
+                    (chon - g.dap).forEach { saiChon += khoaChon(it) }
+                    1
+                }
+            }
             is Ghep.DungSai -> {
                 val c = chonDs ?: return null
                 if (g.dung(c)) 0 else 1
             }
             is Ghep.Chu -> {
-                if (phimDaGo.isEmpty()) return null
-                if (g.soO != null && phimDaGo.joinToString("").length < g.soO) return null
+                if (!ghepXong()) return null
                 if (g.dung(phimDaGo.joinToString(""))) 0 else 1
             }
             is Ghep.Cau -> {
-                if (theDaChon.isEmpty()) return null
+                if (!ghepXong()) return null
                 if (g.dung(theDaChon.map { cacThe[it].chu })) 0 else 1
             }
             is Ghep.BieuThuc -> {
-                if (phimDaGo.isEmpty()) return null
-                if (g.dung(phimDaGo.joinToString(""), muc.cau.mon)) 0 else 1
+                if (!ghepXong()) return null
+                if (g.dung(phimDaGo.joinToString(""), mon)) 0 else 1
             }
             is Ghep.Buoc -> {
-                if (dongDaChon.isEmpty()) return null
+                if (!ghepXong()) return null
                 if (g.dung(dongDaChon.map { cacDong[it].chu })) 0 else 1
             }
             is Ghep.O -> {
-                val n = nu ?: if (g.gioi) return null else false
-                if (g.cacOChon.any { it !in chonO }) return null
+                if (!ghepXong()) return null
+                val n = nu ?: false
                 val sai = g.cacOChon.filter { (i, k) ->
                     val x = chonO[i to k]
                     g.dong[i].o[k].dung.none { Ghep.thayGioi(it, n) == x }
                 }.toSet()
+                sai.forEach { (i, k) -> chonO[i to k]?.let { saiChon += khoaO(i, k, it) } }
                 oSai = sai
                 sai.size
             }
@@ -187,15 +275,36 @@ class KhungGhep(
         return soSai
     }
 
-    /** Sai thi xoa cau tra loi de ghep lai; cau nhieu o chi xoa o sai. */
+    /**
+     * Con da ghep du de cham chua: cau co o thi du o, cau nhieu o thi du o chon, kieu khac thi
+     * co it nhat mot phan. Phan dat san ([dienSan]) cung tinh: dap an mot phan thi bac dat san
+     * da la ca dap an, va con phai bam Tra loi duoc.
+     */
+    fun ghepXong(): Boolean = when (g) {
+        is Ghep.Chon -> chon.isNotEmpty()
+        is Ghep.DungSai -> chonDs != null
+        is Ghep.Chu -> phimDaGo.isNotEmpty() && (g.soO == null || phimDaGo.joinToString("").length >= g.soO)
+        is Ghep.Cau -> theDaChon.isNotEmpty()
+        is Ghep.BieuThuc -> phimDaGo.isNotEmpty()
+        is Ghep.Buoc -> dongDaChon.isNotEmpty()
+        is Ghep.O -> (nu != null || !g.gioi) && g.cacOChon.all { it in chonO }
+    }
+
+    /** Sai thi xoa cau tra loi de ghep lai, tru phan dat san; cau nhieu o chi xoa o sai. */
     private fun xoaSau() {
         chon.clear()
         chonDs = null
-        phimDaGo.clear()
-        theDaChon.clear()
+        while (phimDaGo.size > soKhoa) phimDaGo.removeAt(phimDaGo.lastIndex)
+        while (theDaChon.size > soKhoa) theDaChon.removeAt(theDaChon.lastIndex)
         dongDaChon.clear()
         oSai.forEach { chonO.remove(it) }
     }
+
+    /** Cac phuong an da chon sai tu dau luot, de ben goi luu vao [LuatGhep.Luot.saiDaChon]. */
+    fun saiDaChon(): List<String> = saiChon.toList()
+
+    /** Phuong an trac nghiem dang chon, bang chi so trong sach. Man Kiem tra tu vung doc. */
+    fun daChon(): Set<Int> = chon.toSet()
 
     /** Cau tra loi dang chu, ghi vao so cai de Ba Huy xem lai. */
     fun traLoi(): String = when (g) {
@@ -203,18 +312,36 @@ class KhungGhep(
         is Ghep.Chon -> chon.sortedBy { thuTuChon.indexOf(it) }
             .joinToString("; ") { "${chuCai(it)}. ${boThe(g.cac[it])}" }
         is Ghep.DungSai -> chonDs?.let { if (it) g.nhan[0] else g.nhan[1] }.orEmpty()
-        is Ghep.Chu -> g.truoc + phimDaGo.joinToString("")
+        is Ghep.Chu -> g.dien(phimDaGo.joinToString(""))
         is Ghep.Cau -> theDaChon.joinToString(" ") { cacThe[it].chu }
         is Ghep.BieuThuc -> phimDaGo.joinToString("")
         is Ghep.Buoc -> dongDaChon.joinToString(" | ") { boThe(cacDong[it].chu) }
         is Ghep.O -> g.dong.indices.joinToString(" ") { i -> cauO(g, i) }
     }
 
+    /** Khoa cua phuong an [chu] o o k dong i trong [saiDaChon]. */
+    private fun khoaO(i: Int, k: Int, chu: String) = "o$i.$k=$chu"
+
+    /**
+     * Cac vi tri trong [cac] dang mo theo [mucMo]: mot nua so muc nhieu (lam tron len), roi
+     * het. Nhieu nao mo truoc theo [hatMo], nen mo them chu khong doi muc da mo.
+     */
+    private fun cacMo(cac: List<Muc2>): Set<Int> {
+        val nhieu = cac.indices.filter { cac[it].nhieu }
+        val so = when {
+            mucMo <= 0 -> 0
+            mucMo == 1 -> (nhieu.size + 1) / 2
+            else -> nhieu.size
+        }
+        return nhieu.shuffled(Random(hatMo)).take(so).toSet()
+    }
+
     // ------------------------------------------------------------------ tung kieu
 
     private fun veChon(c: Ghep.Chon) {
         thuTuChon.forEachIndexed { vt, i ->
-            khung.addView(nutRong("${'A' + vt}. ", c.cac[i], i in chon, mauDung(i in c.dap)) {
+            val mo = khoaChon(i) in saiChon && i !in chon
+            khung.addView(nutRong("${'A' + vt}. ", c.cac[i], i in chon, mauDung(i in c.dap), mo = mo) {
                 // Cau nhieu dap an: bam lan nua la bo chon. Cau mot dap an: bam la doi.
                 if (c.nhieuDap) {
                     if (!chon.remove(i)) chon += i
@@ -239,28 +366,98 @@ class KhungGhep(
     }
 
     private fun veChu(c: Ghep.Chu) {
-        // Dong hien chu da go: o tung chu khi biet do dai, khong thi mot dong lien.
         val go = phimDaGo.joinToString("")
-        val hien = LinearLayout(ct).apply {
-            orientation = LinearLayout.HORIZONTAL
-            gravity = Gravity.CENTER_VERTICAL
-        }
-        if (c.truoc.isNotEmpty()) hien.addView(oChu(c.truoc, dam = true, khung = false))
-        val soO = c.soO
-        if (soO != null) {
-            for (i in 0 until soO) hien.addView(oChu(go.getOrNull(i)?.let { if (it == ' ') "␣" else it.toString() } ?: "", khung = true))
+        val khuon = c.khuon
+        if (khuon != null) {
+            khung.addView(veKhuon(khuon, go))
         } else {
-            hien.addView(oChu(go.ifEmpty { " " }, khung = true, rong = true))
+            // Dong hien chu da go: o tung chu khi biet do dai, khong thi mot dong lien.
+            val hien = LinearLayout(ct).apply {
+                orientation = LinearLayout.HORIZONTAL
+                gravity = Gravity.CENTER_VERTICAL
+            }
+            if (c.truoc.isNotEmpty()) hien.addView(oChu(c.truoc, dam = true, khung = false))
+            val soO = c.soO
+            if (soO != null) {
+                for (i in 0 until soO) {
+                    val chu = go.getOrNull(i)?.let { if (it == ' ') "␣" else it.toString() } ?: ""
+                    hien.addView(oChu(chu, khung = true, khoa = i < soKhoa))
+                }
+            } else {
+                hien.addView(oChu(go.ifEmpty { " " }, khung = true, rong = true))
+            }
+            khung.addView(hien)
         }
-        khung.addView(hien)
         if (daXong) return
+        val mo = cacMo(phimChu)
+        if (c.duPhim) {
+            // Ba hang QWERTY canh giua, nut Xoa cuoi hang thu ba nhu ban phim that.
+            var vt = 0
+            HANG_QWERTY.forEachIndexed { h, hang ->
+                val dong = LinearLayout(ct).apply {
+                    orientation = LinearLayout.HORIZONTAL
+                    gravity = Gravity.CENTER_HORIZONTAL
+                    layoutParams = hangLp(if (h == 0) 14 else 6)
+                }
+                hang.forEach { _ ->
+                    val p = phimChu[vt]
+                    dong.addView(nut(p.chu, mo = vt in mo) { themPhim(p.chu, c.soO) }, lpPhim())
+                    vt++
+                }
+                if (h == HANG_QWERTY.lastIndex) dong.addView(nutXoa(), lpPhim())
+                khung.addView(dong)
+            }
+            return
+        }
         val phim = DongNut(ct, 6.dp(), 6.dp()).apply { layoutParams = hangLp(10) }
-        phimChu.filter { !botNhieu || !it.nhieu }.forEach { p ->
-            phim.addView(nut(p.chu) { themPhim(p.chu, c.soO) })
+        phimChu.forEachIndexed { i, p ->
+            phim.addView(nut(p.chu, mo = i in mo) { themPhim(p.chu, c.soO) })
         }
         if (c.coCach) phim.addView(nut("␣") { themPhim(" ", c.soO) })
         phim.addView(nutXoa())
         khung.addView(phim)
+    }
+
+    /**
+     * Dong o cua mot tu co khuon: moi chu cai mot o, chu in san (gach noi, dau phay tren, phan
+     * trong ngoac) hien thang, dau cach tach tu. Moi tu mot cum khong ngat, ca dong xuong
+     * hang giua cac tu: tu dai nhat bo tu vung la 18 chu cai ("translation machine"), mot dong
+     * o tren tablet dung doc vua sat be ngang.
+     */
+    private fun veKhuon(khuon: List<String?>, go: String): View {
+        val dong = DongNut(ct, 18.dp(), 8.dp()).apply { layoutParams = hangLp(0) }
+        var cum = LinearLayout(ct).apply {
+            orientation = LinearLayout.HORIZONTAL
+            gravity = Gravity.CENTER_VERTICAL
+        }
+        var soDaDat = 0
+        fun xongCum() {
+            if (cum.childCount > 0) dong.addView(cum)
+            cum = LinearLayout(ct).apply {
+                orientation = LinearLayout.HORIZONTAL
+                gravity = Gravity.CENTER_VERTICAL
+            }
+        }
+        khuon.forEach { o ->
+            when {
+                o == null -> {
+                    val chu = go.getOrNull(soDaDat)?.toString() ?: ""
+                    cum.addView(oChu(chu, khung = true, khoa = soDaDat < soKhoa))
+                    soDaDat++
+                }
+                o.isBlank() -> xongCum()
+                else -> {
+                    // Chu in san co dau cach ben trong ("(in / out)"): tach theo dau cach de
+                    // dong van ngat duoc giua cac tu.
+                    o.split(' ').forEachIndexed { j, manh ->
+                        if (j > 0) xongCum()
+                        if (manh.isNotEmpty()) cum.addView(oChu(manh, khung = false))
+                    }
+                }
+            }
+        }
+        xongCum()
+        return dong
     }
 
     private fun themPhim(p: String, soO: Int? = null) {
@@ -271,8 +468,16 @@ class KhungGhep(
     }
 
     private fun veBieuThuc(b: Ghep.BieuThuc) {
+        val chu = hienBieuThuc(phimDaGo, mon)
+        val khoa = hienBieuThuc(phimDaGo.take(soKhoa), mon)
         khung.addView(TextView(ct).apply {
-            text = hienBieuThuc(phimDaGo).ifEmpty { " " }
+            text = if (soKhoa > 0 && chu.startsWith(khoa)) {
+                SpannableString(chu).apply {
+                    setSpan(ForegroundColorSpan(mau(R.color.brand_dark)), 0, khoa.length, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+                }
+            } else {
+                chu.ifEmpty { " " }
+            }
             textSize = 24f
             setTextColor(mau(R.color.ink))
             setBackgroundResource(R.drawable.st_nen_o_go)
@@ -283,11 +488,12 @@ class KhungGhep(
         })
         if (daXong) return
         val rieng = DongNut(ct, 6.dp(), 6.dp()).apply { layoutParams = hangLp(10) }
-        phimBieuThuc.filter { !botNhieu || !it.nhieu }.forEach { p -> rieng.addView(nut(p.chu) { themPhim(p.chu) }) }
+        val mo = cacMo(phimBieuThuc)
+        phimBieuThuc.forEachIndexed { i, p -> rieng.addView(nut(p.chu, mo = i in mo) { themPhim(p.chu) }) }
         rieng.addView(nutXoa())
         khung.addView(rieng)
         val coBan = DongNut(ct, 6.dp(), 6.dp()).apply { layoutParams = hangLp(6) }
-        Ghep.phimCoBan(muc.cau.mon).forEach { p -> coBan.addView(nut(p) { themPhim(p) }) }
+        Ghep.phimCoBan(mon).forEach { p -> coBan.addView(nut(p) { themPhim(p) }) }
         khung.addView(coBan)
     }
 
@@ -300,7 +506,8 @@ class KhungGhep(
         }
         theDaChon.forEachIndexed { vt, i ->
             da.addView(nut(cacThe[i].chu, chon = true) {
-                if (daXong) return@nut
+                // The dat san ([dienSan]) khoa lai, bam khong bo ra duoc.
+                if (daXong || vt < soKhoa) return@nut
                 theDaChon.removeAt(vt)
                 doi()
             })
@@ -308,9 +515,10 @@ class KhungGhep(
         khung.addView(da)
         if (daXong) return
         val kho = DongNut(ct, 6.dp(), 6.dp()).apply { layoutParams = hangLp(10) }
+        val mo = cacMo(cacThe)
         cacThe.forEachIndexed { i, t ->
-            if (i in theDaChon || (botNhieu && t.nhieu)) return@forEachIndexed
-            kho.addView(nut(t.chu) {
+            if (i in theDaChon) return@forEachIndexed
+            kho.addView(nut(t.chu, mo = i in mo) {
                 theDaChon += i
                 doi()
             })
@@ -335,9 +543,10 @@ class KhungGhep(
         }
         khung.addView(da)
         if (daXong) return
+        val mo = cacMo(cacDong)
         cacDong.forEachIndexed { i, d ->
-            if (i in dongDaChon || (botNhieu && d.nhieu)) return@forEachIndexed
-            khung.addView(nutRong("", d.chu, false) {
+            if (i in dongDaChon) return@forEachIndexed
+            khung.addView(nutRong("", d.chu, false, mo = i in mo) {
                 dongDaChon += i
                 doi()
             })
@@ -363,30 +572,13 @@ class KhungGhep(
                 setBackgroundResource(if (coSai) R.drawable.st_nen_luu_y else R.drawable.st_nen_the)
             }
             the.addView(chu(cauO(o, i), 17f))
-            d.o.forEachIndexed { k, x ->
-                if (x.go) {
-                    if (daXong) return@forEachIndexed
-                    the.addView(EditText(ct).apply {
-                        setText(goO[i to k].orEmpty())
-                        hint = x.goiY.ifBlank { "Gõ tên" }
-                        inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_FLAG_CAP_WORDS
-                        textSize = 17f
-                        addTextChangedListener(object : TextWatcher {
-                            override fun beforeTextChanged(s: CharSequence?, a: Int, b: Int, c: Int) = Unit
-                            override fun onTextChanged(s: CharSequence?, a: Int, b: Int, c: Int) = Unit
-                            override fun afterTextChanged(s: Editable?) {
-                                goO[i to k] = s?.toString().orEmpty()
-                                khiDoi()
-                            }
-                        })
-                    })
-                    return@forEachIndexed
-                }
-                if (daXong) return@forEachIndexed
+            d.o.indices.forEach { k ->
+                if (daXong) return@forEach
                 val hang = DongNut(ct, 6.dp(), 6.dp()).apply { layoutParams = hangLp(6) }
                 tronO.getValue(i to k).forEach { pa ->
                     val hien = Ghep.thayGioi(pa, n)
-                    hang.addView(nut(hien, chon = chonO[i to k] == hien) {
+                    val dangChon = chonO[i to k] == hien
+                    hang.addView(nut(hien, chon = dangChon, mo = !dangChon && khoaO(i, k, hien) in saiChon) {
                         chonO[i to k] = hien
                         doi()
                     })
@@ -401,10 +593,7 @@ class KhungGhep(
     private fun cauO(o: Ghep.O, i: Int): String {
         val n = nu ?: false
         var s = Ghep.thayGioi(o.dong[i].chu, n)
-        o.dong[i].o.forEachIndexed { k, x ->
-            val dien = if (x.go) goO[i to k]?.takeIf { it.isNotBlank() } else chonO[i to k]
-            s = s.replace("{$k}", dien ?: "___")
-        }
+        o.dong[i].o.indices.forEach { k -> s = s.replace("{$k}", chonO[i to k] ?: "___") }
         return s
     }
 
@@ -428,7 +617,7 @@ class KhungGhep(
             is Ghep.O -> g.dong.indices.map { i ->
                 var s = Ghep.thayGioi(g.dong[i].chu, nu ?: false)
                 g.dong[i].o.forEachIndexed { k, x ->
-                    s = s.replace("{$k}", if (x.go) "…" else Ghep.thayGioi(x.dung.first(), nu ?: false))
+                    s = s.replace("{$k}", Ghep.thayGioi(x.dung.first(), nu ?: false))
                 }
                 s
             }
@@ -442,23 +631,35 @@ class KhungGhep(
     private fun doi() {
         oSai = oSai.filter { it !in chonO }.toSet()
         khiDoi()
-        ve(botNhieu)
+        ve(mucMo)
     }
 
     private fun nutXoa(): MaterialButton = nut("Xoá") {
-        if (daXong || phimDaGo.isEmpty()) return@nut
+        if (daXong || phimDaGo.size <= soKhoa) return@nut
         phimDaGo.removeAt(phimDaGo.lastIndex)
         doi()
     }.apply { setTextColor(mau(R.color.alert)) }
 
-    /** Nut vua chu, cho phim, the tu, phuong an ngan. */
-    private fun nut(chu: String, chon: Boolean = false, to: Boolean = false, bam: () -> Unit): MaterialButton =
+    /**
+     * Nut vua chu, cho phim, the tu, phuong an ngan. [mo] la phim nhieu da mo hay phuong an
+     * da chon sai: nam nguyen cho, khong bam duoc.
+     */
+    private fun nut(
+        chu: String,
+        chon: Boolean = false,
+        to: Boolean = false,
+        mo: Boolean = false,
+        bam: () -> Unit
+    ): MaterialButton =
         MaterialButton(ct, null, com.google.android.material.R.attr.materialButtonOutlinedStyle).apply {
-            text = hien(chu, muc.cau.mon)
+            text = hien(chu, mon)
             isAllCaps = false
+            // Phim mot hai ky tu (chu cai, so mu, "Cl") phong to cho de bam. The tu cua cau ghep
+            // cau thi khong: mot hang the ma "đỏ", "I" to hon cac the con lai thi trong nhu the
+            // do quan trong hon (thay o man Kiem tra bai ngay 2/10/2026).
             textSize = when {
                 to -> 18f
-                chu.length <= 2 -> 22f
+                chu.length <= 2 && g !is Ghep.Cau -> 22f
                 else -> 17f
             }
             minWidth = 52.dp()
@@ -473,14 +674,22 @@ class KhungGhep(
                 backgroundTintList = ColorStateList.valueOf(mau(R.color.brand_soft))
                 setTextColor(mau(R.color.brand_dark))
             }
-            isEnabled = !daXong
+            isEnabled = !daXong && !mo
+            if (mo) alpha = DO_MO
             setOnClickListener { bam() }
         }
 
-    /** Nut rong het be ngang, chu canh trai, cho phuong an dai va dong loi giai. */
-    private fun nutRong(dau: String, chu: String, chon: Boolean, mauChu: Int? = null, bam: () -> Unit): MaterialButton =
+    /** Nut rong het be ngang, chu canh trai, cho phuong an dai va dong loi giai. [mo] nhu [nut]. */
+    private fun nutRong(
+        dau: String,
+        chu: String,
+        chon: Boolean,
+        mauChu: Int? = null,
+        mo: Boolean = false,
+        bam: () -> Unit
+    ): MaterialButton =
         MaterialButton(ct, null, com.google.android.material.R.attr.materialButtonOutlinedStyle).apply {
-            text = hien("$dau$chu", muc.cau.mon)
+            text = hien("$dau$chu", mon)
             isAllCaps = false
             textSize = 17f
             gravity = Gravity.START or Gravity.CENTER_VERTICAL
@@ -493,21 +702,33 @@ class KhungGhep(
                 setTextColor(mau(R.color.brand_dark))
             }
             if (daXong && mauChu != null) setTextColor(mau(mauChu))
-            isEnabled = !daXong
+            isEnabled = !daXong && !mo
+            if (mo) alpha = DO_MO
             setOnClickListener { bam() }
         }
 
     /** Het luot thi to xanh phuong an dung, cho con thay minh da chon gi. */
     private fun mauDung(la: Boolean): Int? = if (daXong && hienGiai && la) R.color.ok else null
 
-    private fun oChu(chu: String, dam: Boolean = false, khung: Boolean, rong: Boolean = false): TextView =
+    /**
+     * Mot o chu. [khoa] la chu dat san ([dienSan]): nen xanh nhat, chu xanh dam, de con thay
+     * phan may da dien khac phan minh go.
+     */
+    private fun oChu(
+        chu: String,
+        dam: Boolean = false,
+        khung: Boolean,
+        rong: Boolean = false,
+        khoa: Boolean = false
+    ): TextView =
         TextView(ct).apply {
             text = chu
             textSize = 26f
-            setTextColor(mau(R.color.ink))
+            setTextColor(mau(if (khoa) R.color.brand_dark else R.color.ink))
             if (dam) setTypeface(typeface, Typeface.BOLD)
             gravity = Gravity.CENTER
             if (khung) setBackgroundResource(R.drawable.st_nen_o_go)
+            if (khung && khoa) backgroundTintList = ColorStateList.valueOf(mau(R.color.brand_soft))
             layoutParams = LinearLayout.LayoutParams(
                 if (rong) ViewGroup.LayoutParams.MATCH_PARENT else if (khung) 44.dp() else ViewGroup.LayoutParams.WRAP_CONTENT,
                 52.dp()
@@ -516,7 +737,7 @@ class KhungGhep(
 
     private fun chu(s: String, co: Float, mau: Int = R.color.ink, dam: Boolean = false): TextView =
         TextView(ct).apply {
-            text = hien(s, muc.cau.mon)
+            text = hien(s, mon)
             textSize = co
             setTextColor(mau(mau))
             if (dam) setTypeface(typeface, Typeface.BOLD)
@@ -526,6 +747,14 @@ class KhungGhep(
     private fun hangLp(tren: Int) = LinearLayout.LayoutParams(
         ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT
     ).apply { topMargin = tren.dp() }
+
+    /** Cho mot phim trong hang QWERTY: cach phim ben canh nhu [DongNut] cach. */
+    private fun lpPhim() = LinearLayout.LayoutParams(
+        ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT
+    ).apply {
+        marginStart = 3.dp()
+        marginEnd = 3.dp()
+    }
 
     private fun mau(id: Int): Int = ContextCompat.getColor(ct, id)
 
@@ -625,10 +854,33 @@ class KhungGhep(
 
         fun boThe(chu: String): String = chu.replace(Regex("</?[ub]>"), "")
 
-        /** Bieu thuc da go, them dau cach quanh dau cong tru bang cho de doc. */
-        fun hienBieuThuc(cac: List<String>): String = cac.joinToString("") {
-            if (it in setOf("+", "−", "=", "→", "×", "·", ":")) " $it " else it
-        }.replace("  ", " ").trim()
+        /**
+         * Khoa cua phuong an trac nghiem [i] trong [saiDaChon]: chi so trong sach, khong doi khi
+         * tron. Man Kiem tra tu vung tu ghi khoa nay, vi man do khong cham bang [kiem].
+         */
+        fun khoaChon(i: Int) = "c$i"
+
+        /**
+         * Bieu thuc da go, them dau cach quanh dau cong tru bang cho de doc.
+         *
+         * Mon Toan thi them ca dau cach quanh mot phim la chu tieng Viet: the Kiem tra bai
+         * "a = a' và b ≠ b'" co phim "và" (xem [vn.huytl.homeworkgate.data.PhimKiemTra]), ghep
+         * lien thanh "a'vàb" thi khong doc duoc. KHTN thi khong: phim "mnước" la mot ki hieu
+         * dai luong, dung lien voi dau chia.
+         */
+        fun hienBieuThuc(cac: List<String>, mon: String = ""): String = cac.joinToString("") {
+            when {
+                it in setOf("+", "−", "=", "→", "×", "·", ":", "≠", "<", ">") -> " $it "
+                mon == "Toán" && it.length >= 2 && it.all(Char::isLetter) && it.any { c -> c.code >= 128 } -> " $it "
+                else -> it
+            }
+        }.replace(Regex(" {2,}"), " ").trim()
+
+        /** Ba hang phim chu cai cua ban phim tablet, cho [Ghep.Chu.duPhim]. */
+        val HANG_QWERTY = listOf("qwertyuiop", "asdfghjkl", "zxcvbnm")
+
+        /** Do mo cua phim nhieu da mo va phuong an da chon sai. */
+        const val DO_MO = 0.3f
 
         /**
          * Ve de bai cua mot cau vao [khung]: chu (hay [Ghep.hoi]), anh, doan van. Dung chung

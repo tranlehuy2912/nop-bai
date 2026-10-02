@@ -33,9 +33,11 @@ import vn.huytl.homeworkgate.kho.PhanHoc
  *
  * MOI LAN MOT CAU. Sao cua cau o goc tren, ba dang ([HangSao], Ba Huy chot 30/9/2026): vao cau
  * la ca hang rong, bam Kiem tra sai thi mot o chuyen xam, lam xong dung thi cac o con lai chuyen
- * vang va sang len mot nhip. Dung thi hien "+N" canh nut - do la phut vua duoc (hay vua vao quy,
- * con khong can biet). Lam lai thi duoi hang sao co dong "Lần trước" la sao tot nhat cua vong
- * ([LamTrenMay.saoLanTruoc]), nen "+N" bang dung so sao vuot dong do. Khong co chu nao giai
+ * vang va sang len mot nhip. Dung thi hien "+N ★" canh nut - do la phut vua duoc (hay vua vao quy,
+ * con khong can biet), 1 sao la 1 phut; dau ★ them ngay 2/10/2026 cho con thay day la sao, va
+ * cung ngay chu doi tu xanh la sang vang nhu sao da duoc ([HangSao.mauCong]). Lam
+ * lai thi duoi hang sao co dong "Lần trước" la sao tot nhat cua vong ([LamTrenMay.saoLanTruoc]),
+ * nen "+N ★" bang dung so sao vuot dong do. Khong co chu nao giai
  * thich luat: Ba Huy chot ngay 29/9/2026 de con tu kham pha.
  * Luat o [LuatGhep], chon cau va cong phut o [LamTrenMay].
  *
@@ -43,10 +45,12 @@ import vn.huytl.homeworkgate.kho.PhanHoc
  * sai) duoc ghi lai ngay ([LuotDangLam]); vao lai cau do la lam tiep dung cho cu. Thoat ra vao
  * lai khong xoa duoc lan sai nao, ma man hinh tu tat luc con dang nghi cung khong bi phat.
  *
- * CAU TIEP KHI CHUA LAM XONG (Ba Huy chot 30/9/2026). Gap cau khong biet lam thi truoc day con
- * dung o do hoai. Nay nut vien "Câu tiếp" nam canh Kiem tra suot luc lam: bam la sang cau sau,
- * cau nay coi nhu chua lam - khong ghi so cai, khong cap phut, luot sau lui ra cuoi ([CauBoQua]).
- * Cau dang do ma bo qua thi sao da mat van mat, nhu thoat man giua chung.
+ * BAI NAY LAM SAU KHI CHUA LAM XONG (Ba Huy chot 30/9/2026). Gap cau khong biet lam thi truoc day
+ * con dung o do hoai. Nay nut vien nam canh Kiem tra suot luc lam: bam la sang cau sau, cau nay
+ * coi nhu chua lam - khong ghi so cai, khong cap phut, luot sau lui ra cuoi ([CauBoQua]). Cau dang
+ * do ma bo qua thi sao da mat van mat, nhu thoat man giua chung. Nut tung ten "Câu tiếp", trung
+ * ten voi nut dac sang cau sau khi da lam xong; Ba Huy doi thanh "Bài này làm sau" ngay 2/10/2026
+ * ([TEN_LAM_SAU]).
  *
  * CAU DE THI CO HINH AN (1/10/2026). Cau cua de Toan, KHTN quay lai day mot minh (lam lai khi
  * de het han, on lai khi toi hen), khong co the dau bai nhu trong de. Bai hinh ma to de khong in
@@ -195,11 +199,13 @@ class LamBaiActivity : AppCompatActivity() {
         b.de.removeAllViews()
         KhungGhep.veDe(b.de, m)
         hinhAn[m.cau.id]?.let { ha -> KhungGhep.veHinhAn(b.de, ha.de, ha.muc, m.cau.id, nhoHinh) }
-        khung = KhungGhep(b.khung, m) { b.ket.text = "" }.also { it.ve(luot.botNhieu) }
+        khung = KhungGhep(b.khung, m, saiDaChon = luot.saiDaChon) { b.ket.text = "" }
+            .also { it.ve(LuatGhep.mucMo(luot)) }
         b.nutKiem.visibility = View.VISIBLE
         b.nutTiep.visibility = View.GONE
         b.nutBoQua.visibility = View.VISIBLE
-        b.nutBoQua.text = if (vt + 1 < cac.size) "Câu tiếp" else "Xong"
+        // Mot ten cho ca cau cuoi: bam la de cau nay lai roi het luot (truoc 2/10/2026 cau cuoi ghi "Xong").
+        b.nutBoQua.text = TEN_LAM_SAU
         b.ket.text = ""
         veSao()
         val truoc = LamTrenMay.saoLanTruoc(this, m, loai)
@@ -222,12 +228,12 @@ class LamBaiActivity : AppCompatActivity() {
             b.ket.text = "Chưa làm xong câu này"
             return
         }
-        luot = LuatGhep.kiem(luot, soSai)
+        luot = LuatGhep.kiem(luot, soSai).copy(saiDaChon = k.saiDaChon())
         veSao()
         if (luot.xong && luot.dung && luot.sao > 0) HangSao.nhip(b.sao)
         if (!luot.xong) {
             LuotDangLam.ghi(this, k.muc.cau.id, luot)
-            k.ve(luot.botNhieu)
+            k.ve(LuatGhep.mucMo(luot))
             b.ket.text = ""
             return
         }
@@ -251,8 +257,11 @@ class LamBaiActivity : AppCompatActivity() {
                 LuotDangLam.xoa(this@LamBaiActivity, m.cau.id)
             }
             val phut = (ghi?.phutCap ?: 0) + (ghi?.phutQuy ?: 0)
-            b.ket.setTextColor(ContextCompat.getColor(this@LamBaiActivity, if (lu.dung) R.color.ok else R.color.ink_soft))
-            b.ket.text = if (lu.dung) "+$phut" else "+0"
+            // Vang nhu sao da duoc khi co sao. Truoc 2/10/2026 cau dung la chu xanh la, ca khi
+            // "+0 ★" (luot thu them, lam lai khong hon lan tot nhat); nay "+0 ★" luon xam.
+            val n = if (lu.dung) phut else 0
+            b.ket.setTextColor(HangSao.mauCong(this@LamBaiActivity, n))
+            b.ket.text = "+$n ★"
             b.nutKiem.visibility = View.GONE
             b.nutTiep.visibility = View.VISIBLE
             b.nutTiep.text = if (vt + 1 < cac.size) "Câu tiếp" else "Xong"
@@ -284,6 +293,9 @@ class LamBaiActivity : AppCompatActivity() {
     }
 
     companion object {
+        /** Ten nut vien bo qua cau chua lam xong, xem chu thich dau lop. */
+        const val TEN_LAM_SAU = "Bài này làm sau"
+
         const val EXTRA_LOAI = "loai"
         const val EXTRA_MON = "mon"
         const val EXTRA_NHAN = "nhan"

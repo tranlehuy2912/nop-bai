@@ -67,7 +67,20 @@ sealed class Ghep {
         /** Phan sach cho san (chu cai dau), hien san, con khong phai go. */
         val truoc: String,
         val dap: List<String>,
-        val nhieu: List<String>
+        val nhieu: List<String>,
+        /**
+         * Khuon o, chi man Kiem tra tu vung dung (2/10/2026), file sach khong co truong nay:
+         * moi phan tu null la mot o con go mot chu cai, khac null la chu in san giua cac o
+         * (dau cach, gach noi, phan trong ngoac nhu "log (on to)"). null la khong co khuon,
+         * so o lay theo do dai dap an nhu cau sach. Xem [vn.huytl.homeworkgate.data.PhimKiemTra].
+         */
+        val khuon: List<String?>? = null,
+        /**
+         * Du 26 phim chu cai xep theo hang ban phim QWERTY, khong tron, thay cho bo phim rieng
+         * cua cau. Khi do [nhieu] la moi chu cai khong co trong tu, de lam mo dan khi con sai.
+         * Chi man Kiem tra tu vung dung, cung ly do voi [khuon].
+         */
+        val duPhim: Boolean = false
     ) : Ghep() {
         /** Phan con phai go cua tung dap an, viet thuong. */
         private val phanGo: List<String> =
@@ -77,15 +90,22 @@ sealed class Ghep {
         val phimThat: List<String> =
             phanGo.flatMap { p -> p.filterNot { it.isWhitespace() }.map { it.toString() } }.distinct()
 
-        /** Dap an co dau cach thi phai co phim cach. */
-        val coCach: Boolean = phanGo.any { p -> p.any { it.isWhitespace() } }
+        /** Dap an co dau cach thi phai co phim cach. Co khuon thi dau cach da in san. */
+        val coCach: Boolean = khuon == null && phanGo.any { p -> p.any { it.isWhitespace() } }
 
         /** So o chu khi moi dap an dai bang nhau, null thi hien mot dong go tu do. */
-        val soO: Int? = phanGo.map { it.length }.distinct().singleOrNull()
+        val soO: Int? = khuon?.count { it == null } ?: phanGo.map { it.length }.distinct().singleOrNull()
 
-        /** [go] la phan con go, khong kem [truoc]. */
+        /** Ca cau tra loi tu phan con go: [truoc] cong [go], hay [go] dien vao cac o cua [khuon]. */
+        fun dien(go: String): String {
+            val k = khuon ?: return truoc + go
+            var i = 0
+            return k.joinToString("") { it ?: go.getOrNull(i++)?.toString().orEmpty() }
+        }
+
+        /** [go] la phan con go, khong kem [truoc] hay chu in san cua [khuon]. */
         fun dung(go: String): Boolean {
-            val cua = HocThuoc.chuanHoa(truoc + go)
+            val cua = HocThuoc.chuanHoa(dien(go))
             return cua.isNotEmpty() && dap.any { HocThuoc.chuanHoa(it) == cua }
         }
     }
@@ -157,21 +177,26 @@ sealed class Ghep {
     data class O(
         override val sao: Int,
         override val hoi: String,
-        /** Hoi truoc ban nam hay ban nu roi thay {He}, {his}... Xem [thayGioi]. */
+        /** Hoi truoc ban nam hay ban nu roi thay {He}, {his}, {Ten}... Xem [thayGioi]. */
         val gioi: Boolean,
         val dong: List<Dong>
     ) : Ghep() {
         data class Dong(val chu: String, val o: List<Ong>)
 
         /**
-         * Mot o: [go] la o go tu do (ten rieng), khong cham, [goiY] la chu mo trong o do; con
-         * lai chon trong [dung] + [sai].
+         * Mot o, chon trong [dung] + [sai].
+         *
+         * O GO TU DO BO NGAY 2/10/2026. Truoc do o ghi "go": true la mot o ban phim Android de
+         * con go ten rieng (ten ban, ten lang, nguoi than), khong cham, khong tinh sao. Ba Huy
+         * thay con lam bai luc bam phim ghep, luc go ban phim he thong la khong dong nhat, va
+         * chon in san ten co dinh vao chu cua dong: "{Ten}" cho ten ban (xem [thayGioi]), ten
+         * lang, ten nguoi viet thu viet thang vao chu. File con o go thi [doc] bo ca cau.
          */
-        data class Ong(val go: Boolean, val dung: List<String>, val sai: List<String>, val goiY: String = "")
+        data class Ong(val dung: List<String>, val sai: List<String>)
 
-        /** Cac o chon (khong ke o go), theo thu tu dong roi thu tu trong dong. */
+        /** Cac o chon, theo thu tu dong roi thu tu trong dong. */
         val cacOChon: List<Pair<Int, Int>> =
-            dong.flatMapIndexed { i, d -> d.o.indices.filter { !d.o[it].go }.map { i to it } }
+            dong.flatMapIndexed { i, d -> d.o.indices.map { i to it } }
 
         /**
          * So o chon sai. [chon] theo dung hinh dang [dong]: chon[i][k] la phuong an con
@@ -248,12 +273,10 @@ sealed class Ghep {
                             d.optString("chu"),
                             (0 until cacO.length()).mapNotNull { k ->
                                 val x = cacO.optJSONObject(k) ?: return@mapNotNull null
-                                O.Ong(
-                                    x.optBoolean("go"),
-                                    chuoi(x.optJSONArray("dung")),
-                                    chuoi(x.optJSONArray("sai")),
-                                    x.optString("goi_y")
-                                )
+                                // O go tu do da bo (xem [O.Ong]): gap lai thi ca cau khong lam
+                                // tren may, chu khong hien mot dong co cho "{0}" trong.
+                                if (x.optBoolean("go")) return null
+                                O.Ong(chuoi(x.optJSONArray("dung")), chuoi(x.optJSONArray("sai")))
                             }
                         )
                     }
@@ -449,7 +472,12 @@ sealed class Ghep {
         /** So giua hang tu: khong nhan phan so, "x/2" khong phai he so. */
         private val SO_GIUA = Regex("\\d+(,\\d+)?(\\^-?\\d+)?")
 
-        /** Thay {He}, {his}... theo ban nam hay nu. Xem [O.gioi]. */
+        /**
+         * Thay {He}, {his}... theo ban nam hay nu. Xem [O.gioi].
+         *
+         * {Ten} la ten ban in san (2/10/2026), thay cho o go ten da bo (xem [O.Ong]): ban nam
+         * la Minh, ban nu la Lan, Ba Huy chon. Giu dung hai ten nay ben tools/ghep/kiem.py.
+         */
         fun thayGioi(chu: String, nu: Boolean): String = GIOI.replace(chu) { m ->
             when (m.groupValues[1]) {
                 "He" -> if (nu) "She" else "He"
@@ -458,11 +486,15 @@ sealed class Ghep {
                 "his" -> if (nu) "her" else "his"
                 "Him" -> if (nu) "Her" else "Him"
                 "him" -> if (nu) "her" else "him"
+                "Ten" -> if (nu) TEN_BAN_NU else TEN_BAN_NAM
                 else -> m.value
             }
         }
 
-        private val GIOI = Regex("""\{(He|he|His|his|Him|him)\}""")
+        const val TEN_BAN_NAM = "Minh"
+        const val TEN_BAN_NU = "Lan"
+
+        private val GIOI = Regex("""\{(He|he|His|his|Him|him|Ten)\}""")
     }
 }
 

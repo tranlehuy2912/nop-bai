@@ -2,7 +2,7 @@
  "nguon": "sbtanh8",
  "mon": "Tiếng Anh",
  "ten": "SBT Tiếng Anh 8",
- "ban": 6,
+ "ban": 7,
  "doan_van": {
   "1.D1": "Dear Nick,\nI'm so happy to receive your email. Now I'm going to (1) ___ you about my leisure activities.\nIt may sound strange, but the leisure activity I like (2) ___ is volunteering. There is a volunteer club in my (3) ___. Last year I took part in one of its programmes. I really enjoyed the activities, so I decided to (4) ___ a member. Our volunteer club mostly helps the (5) ___ in our neighbourhood. We go to their homes and help them with their housework. We also talk and read (6) ___ to them.\nBesides volunteering, I also love drawing and (7) ___ DIY. I can make paper flowers and flower vases from used bottles.\n(8) ___ about you? What do you like doing in your free time? Tell me.\nBest wishes,\nMinh",
   "1.D2": "There are a lot of pastimes that young people like, and one of (1) ___ is mountain climbing. It is an active leisure activity that people can do either indoors or outdoors. If you go climbing outdoors, it is a great way to (2) ___ your strength and enjoy nature at the same time. You can even set up your own climbing wall in your backyard or (3) ___ your home. This way you don't have to go out and still can (4) ___ fit and enjoy the activity.\nSo how can you start mountain climbing? Many people take a class to learn how to climb and use their equipment (5) ___. Others join climbing clubs to make new friends with the same interest and go climbing together. If you are an active person and like outdoor activities, (6) ___ don't you try this activity?",
@@ -2177,16 +2177,7 @@
         ]
        },
        {
-        "chu": "My {0}:",
-        "o": [
-         {
-          "go": true,
-          "goi_y": "mum, brother..."
-         }
-        ]
-       },
-       {
-        "chu": "He / She loves {0} {1}.",
+        "chu": "My mum:\nShe loves {0} {1}.",
         "o": [
          {
           "dung": [
@@ -2211,7 +2202,7 @@
         ]
        },
        {
-        "chu": "He / She is fond of {0} {1}.",
+        "chu": "She is fond of {0} {1}.",
         "o": [
          {
           "dung": [
@@ -2235,7 +2226,7 @@
         ]
        },
        {
-        "chu": "He / She dislikes {0} {1}.",
+        "chu": "She dislikes {0} {1}.",
         "o": [
          {
           "dung": [
@@ -2304,15 +2295,7 @@
       "gioi": true,
       "dong": [
        {
-        "chu": "My best friend's name is {0}.",
-        "o": [
-         {
-          "go": true
-         }
-        ]
-       },
-       {
-        "chu": "{He} {0} {1} the most.",
+        "chu": "My best friend's name is {Ten}.\n{He} {0} {1} the most.",
         "o": [
          {
           "dung": [
@@ -4044,7 +4027,7 @@
       "hoi": "Write the answers to the questions about the rural village / town you live in or have visited.",
       "dong": [
        {
-        "chu": "1. What is the name of the village / town?\n{0} name is {1}.",
+        "chu": "1. What is the name of the village / town?\n{0} name is Tan Lap.",
         "o": [
          {
           "dung": [
@@ -4054,10 +4037,6 @@
            "It's",
            "Their"
           ]
-         },
-         {
-          "go": true,
-          "goi_y": "Gõ tên làng"
          }
         ]
        },
@@ -4277,7 +4256,7 @@
       "hoi": "Write a short paragraph describing the rural village / town you live in or have visited. You may use the ideas in 2.",
       "dong": [
        {
-        "chu": "I {0} {1} several times.",
+        "chu": "I {0} Tan Lap several times.",
         "o": [
          {
           "dung": [
@@ -4287,10 +4266,6 @@
            "has been to",
            "have went to"
           ]
-         },
-         {
-          "go": true,
-          "goi_y": "Gõ tên làng"
          }
         ]
        },
@@ -11423,16 +11398,7 @@
       "hoi": "Write an email to your penfriend about the Thac Con Festival. Use the information:\n<b>Thac Con Festival</b>\n<b>Also called:</b> Coconut Offering Festival\n<b>Where:</b> An Trach Village, Soc Trang Province\n<b>When:</b> Middle of the third lunar month\n<b>Purposes:</b> To wish for good luck and fortune; To remember ancestors\n<b>Activities:</b> Worshipping Buddha; Singing and dancing\n<b>Dos:</b> Bring a pair of coconuts when visiting a family; Buy flower vases made from coconut shells\n<b>Don'ts:</b> Litter the temple grounds; Take flowers without asking",
       "dong": [
        {
-        "chu": "Dear {0},",
-        "o": [
-         {
-          "go": true,
-          "goi_y": "Gõ tên bạn qua thư"
-         }
-        ]
-       },
-       {
-        "chu": "You asked me about the Thac Con Festival, {0} is also known as the {1}.",
+        "chu": "Dear Tom,\nYou asked me about the Thac Con Festival, {0} is also known as the {1}.",
         "o": [
          {
           "dung": [
@@ -11570,7 +11536,7 @@
         ]
        },
        {
-        "chu": "Remember two don'ts: don't {0} the temple grounds, and don't {1} without asking.",
+        "chu": "Remember two don'ts: don't {0} the temple grounds, and don't {1} without asking.\nBest wishes,\nHoa",
         "o": [
          {
           "dung": [
@@ -11589,14 +11555,6 @@
            "bring coconuts",
            "buy vases"
           ]
-         }
-        ]
-       },
-       {
-        "chu": "Best wishes,\n{0}",
-        "o": [
-         {
-          "go": true
          }
         ]
        }

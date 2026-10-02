@@ -11,12 +11,13 @@ import org.junit.Test
 import org.junit.runner.RunWith
 import vn.huytl.homeworkgate.data.HocThuoc
 import vn.huytl.homeworkgate.data.LuatTuVung
+import vn.huytl.homeworkgate.data.PhimKiemTra
 import vn.huytl.homeworkgate.kho.BoThe
+import vn.huytl.homeworkgate.kho.Ghep
 import vn.huytl.homeworkgate.kho.HocToi
 import vn.huytl.homeworkgate.kho.KhoBai
 import vn.huytl.homeworkgate.kho.TheHoc
 import vn.huytl.homeworkgate.kho.TraThe
-import vn.huytl.homeworkgate.ui.BanPhimKyTu
 
 /**
  * Luat cham cua duong hoc thuoc.
@@ -217,157 +218,168 @@ class HocThuocTest {
     // --- cac bo the that trong assets ---
 
     /**
-     * Moi bo that nap du so the trong file, va moi dap an go duoc tren tablet.
+     * Moi bo that nap du so the trong file, va moi dap an ghep duoc bang phim ghep cua the do.
      *
      * SO THE TRONG FILE PHAI BANG SO THE TRONG BANG, cung ly do voi bo tu vung:
      * the thieu ma, thieu hoi hay thieu dap thi [BoThe] bo qua im lang, con hai the
      * trung ma thi the sau de len the truoc. Ca hai deu chi hien ra o day.
      *
-     * GO BANG BAN PHIM THUONG: moi dap an va dap an phu duoc doi sang dang con go
-     * tren tablet - xem [goTrenBanPhim] - roi moi dem cham. Cham thang chuoi in trong
-     * sach thi phep thu vo nghia: no gap lai chinh no trong danh sach dap an. Doi
-     * xong ma con ky tu ma ca ban phim lan dai nut cua mon ([BanPhimKyTu]) deu khong
-     * co, thi the do khong ai tra loi duoc.
-     *
-     * Dai nut duoc tinh tu 25/9/2026, khi bo Toan co dap an "360°" va "a ≠ 0": hai ky
-     * hieu do khong go duoc bang ban phim thuong, chi co nut. Truoc do phep thu chi
-     * nhan chu ban phim, va the nao co "°" thi khong the ghi "360°" vao dap an, trong
-     * khi con bam nut "°" la go ra dung chu do.
+     * GHEP BANG PHIM CUA THE (2/10/2026): man kiem tra bai khong con o go ban phim Android, moi
+     * the mot khoi ghep dung tu chinh dap an ([PhimKiemTra.ghepThe]). Phep thu nay ghep dap an
+     * chinh tu cac phan cua no - the chu thi noi the bang dau cach, bieu thuc thi noi phim - va
+     * doi moi phan phai co tren ban phim (the that, phim rieng hay hang phim co ban), roi cham
+     * bang dung [HocThuoc.dung] cua man. Truoc ngay do phep thu doi dap an sang dang go tren ban
+     * phim thuong va kiem tung ky hieu co nut tren dai ky tu cua mon.
      */
     @Test
-    fun bo_the_that_nap_du_va_tu_cham_dung_chinh_no() {
+    fun bo_the_that_nap_du_va_ghep_duoc_bang_phim_cua_the() {
         val context = InstrumentationRegistry.getInstrumentation().targetContext
         BoThe.napNeuCan(context)
         val kho = KhoBai.get(context)
         BoThe.BO.forEach { bo ->
-            val nut = BanPhimKyTu.cuaMon(bo.mon).orEmpty().flatMap { it.cac }.toSet()
             val o = JSONObject(context.assets.open(bo.file).bufferedReader().use { it.readText() })
             val cacBai = o.getJSONArray("cac_bai")
-            var soThe = 0
-            for (i in 0 until cacBai.length()) {
-                val cacThe = cacBai.getJSONObject(i).getJSONArray("cac_the")
-                for (j in 0 until cacThe.length()) {
-                    soThe++
-                    val t = cacThe.getJSONObject(j)
-                    val khac = t.optJSONArray("dap_khac")
-                    val cacDap = listOf(t.getString("dap")) +
-                        (0 until (khac?.length() ?: 0)).map { khac!!.getString(it) }
-                    val theHoc = the(cacDap.first(), *cacDap.drop(1).toTypedArray())
-                    val ma = "${bo.bo}:${t.getString("ma")}"
-                    cacDap.forEach { dap ->
-                        val go = goTrenBanPhim(dap)
-                        assertTrue(
-                            "$ma: \"$go\" con ky tu ca ban phim lan dai nut deu khong co",
-                            go.all { it.code < 128 || it.isLetter() || it.toString() in nut }
-                        )
-                        assertTrue(
-                            "$ma khong nhan \"$go\" (go cho \"$dap\")",
-                            HocThuoc.dung(go, theHoc, bo.phanBietHoa)
-                        )
-                    }
-                }
-            }
+            val soThe = (0 until cacBai.length()).sumOf { cacBai.getJSONObject(it).getJSONArray("cac_the").length() }
             assertEquals("${bo.bo}: file $soThe the ma bang co", soThe, kho.soTheCua(bo.bo))
+
+            val caBo = kho.cacTheCua(bo.bo)
+            assertEquals(soThe, caBo.size)
+            caBo.forEach { t ->
+                val k = PhimKiemTra.ghepThe(t, caBo, bo.phanBietHoa, hat = t.id.hashCode())
+                val coTrenPhim: Set<String> = when (val g = k.ghep) {
+                    is Ghep.Cau -> g.the.toSet()
+                    is Ghep.BieuThuc -> (g.phim + Ghep.phimCoBan(t.mon)).toSet()
+                    else -> emptySet()
+                }
+                val thieu = k.phan.filter { it !in coTrenPhim }
+                assertTrue("${t.id}: \"${t.dap}\" thieu phim $thieu", thieu.isEmpty())
+                val ghep = if (k.ghep is Ghep.Cau) k.phan.joinToString(" ") else k.phan.joinToString("")
+                assertTrue(
+                    "${t.id} khong nhan \"$ghep\" ghep tu phim cho \"${t.dap}\"",
+                    HocThuoc.dung(ghep, t, bo.phanBietHoa)
+                )
+            }
         }
     }
 
     /**
-     * Cach con go mot dap an in trong sach tren ban phim tablet: chi so duoi bang so
-     * thuong, cum so mu bang dau mu, dau nhan giua bang dau cham, dau tru toan hoc va
-     * dau cua ion bang dau thuong. Chu tieng Viet thi ban phim go duoc nen giu nguyen.
-     */
-    private fun goTrenBanPhim(s: String): String {
-        val duoi = "₀₁₂₃₄₅₆₇₈₉"
-        val mu = "⁰¹²³⁴⁵⁶⁷⁸⁹"
-        return Regex("[⁰¹²³⁴⁵⁶⁷⁸⁹]+")
-            .replace(s) { cum -> "^" + cum.value.map { '0' + mu.indexOf(it) }.joinToString("") }
-            .map { c ->
-                when (c) {
-                    in duoi -> '0' + duoi.indexOf(c)
-                    '·' -> '.'
-                    '−', '⁻' -> '-'
-                    '⁺' -> '+'
-                    else -> c
-                }
-            }
-            .joinToString("")
-    }
-
-    // --- dai nut ky hieu ---
-
-    /**
-     * Moi ky hieu trong dap an that ma ban phim thuong khong go ra duoc deu phai co nut
-     * tren dai cua mon do.
-     *
-     * [bo_the_that_nap_du_va_tu_cham_dung_chinh_no] da chac con go bang ban phim thuong
-     * van duoc tinh dung. Phep thu nay lo chieu con lai: con muon go dung chu in trong
-     * sach, "H₂O" hay "H⁺", thi phai co nut ma bam. Them mot bo the co ky hieu la, hay
-     * bot mot nut khoi [BanPhimKyTu], la phep thu nay bao ngay.
+     * Phim nhieu: du so (6 the chu, 4 phim) khi the co phim rieng, khong trung phan nao cua dap
+     * an, va khong la ban chi khac hoa thuong cua mot phan dap an khi bo khong phan biet hoa. Dap
+     * an toan chu so thi khong co nhieu.
      */
     @Test
-    fun moi_ky_hieu_trong_dap_an_that_deu_co_nut() {
+    fun phim_nhieu_cua_the_that_du_so_va_khong_trung_dap_an() {
         val context = InstrumentationRegistry.getInstrumentation().targetContext
+        BoThe.napNeuCan(context)
+        val kho = KhoBai.get(context)
+        var thieuNhieu = 0
         BoThe.BO.forEach { bo ->
-            val nut = BanPhimKyTu.cuaMon(bo.mon).orEmpty().flatMap { it.cac }.toSet()
-            val o = JSONObject(context.assets.open(bo.file).bufferedReader().use { it.readText() })
-            val cacBai = o.getJSONArray("cac_bai")
-            for (i in 0 until cacBai.length()) {
-                val cacThe = cacBai.getJSONObject(i).getJSONArray("cac_the")
-                for (j in 0 until cacThe.length()) {
-                    val t = cacThe.getJSONObject(j)
-                    val khac = t.optJSONArray("dap_khac")
-                    val cacDap = listOf(t.getString("dap")) +
-                        (0 until (khac?.length() ?: 0)).map { khac!!.getString(it) }
-                    cacDap.forEach { dap ->
-                        dap.filter { it.code >= 128 && !it.isLetter() }.forEach { c ->
-                            assertTrue(
-                                "${bo.bo}:${t.getString("ma")}: \"$c\" trong \"$dap\" khong co nut",
-                                c.toString() in nut
-                            )
-                        }
-                    }
+            val caBo = kho.cacTheCua(bo.bo)
+            caBo.forEach { t ->
+                val k = PhimKiemTra.ghepThe(t, caBo, bo.phanBietHoa, hat = 7)
+                fun khoa(x: String) = if (bo.phanBietHoa) x else x.lowercase()
+                val phan = k.phan.map(::khoa).toSet()
+                val (nhieu, can) = when (val g = k.ghep) {
+                    is Ghep.Cau -> g.nhieu to PhimKiemTra.SO_NHIEU_CHU
+                    is Ghep.BieuThuc -> g.nhieu to (if (g.phim.isEmpty()) 0 else PhimKiemTra.SO_NHIEU_PHIM)
+                    else -> emptyList<String>() to 0
+                }
+                assertTrue("${t.id}: nhieu ${nhieu} trung dap an ${k.phan}", nhieu.none { khoa(it) in phan })
+                assertEquals("${t.id}: nhieu trung nhau", nhieu.size, nhieu.map(::khoa).toSet().size)
+                if (nhieu.size < can) {
+                    thieuNhieu++
+                    println("HOCTHUOC: ${t.id} \"${t.dap}\" chi co ${nhieu.size}/$can nhieu: $nhieu")
                 }
             }
         }
+        assertEquals("co the thieu phim nhieu (xem logcat HOCTHUOC)", 0, thieuNhieu)
     }
 
     @Test
-    fun dai_nut_khong_trung_ky_hieu_va_khong_co_hang_rong() {
-        listOf(BanPhimKyTu.TOAN, BanPhimKyTu.KHTN).forEach { dai ->
-            val cac = dai.flatMap { it.cac }
-            assertEquals("co nut trung: $cac", cac.size, cac.toSet().size)
-            assertTrue(dai.none { it.cac.isEmpty() })
-        }
+    fun phan_loai_dap_an_chu_hay_bieu_thuc() {
+        listOf("số mũ", "cộng", "đỏ", "acid", "chloride", "oxide lưỡng tính", "ampe (A)", "vôn (V)")
+            .forEach { assertEquals(it, PhimKiemTra.Kieu.CHU, PhimKiemTra.kieuCua(it)) }
+        listOf("−6", "x³y", "k", "MTC", "HCl", "CO", "NaOH", "Pa", "I", "M = m/n", "360°", "a ≠ 0")
+            .forEach { assertEquals(it, PhimKiemTra.Kieu.BIEU_THUC, PhimKiemTra.kieuCua(it)) }
+    }
+
+    @Test
+    fun tach_bieu_thuc_theo_mon() {
+        val toan = "Toán"
+        val khtn = "Khoa học tự nhiên"
+        assertEquals(listOf("−", "2", "x", "y", "²"), PhimKiemTra.tach("−2xy²", toan))
+        assertEquals(listOf("A", "C", "'", "/", "A", "C"), PhimKiemTra.tach("AC'/AC", toan))
+        // Tu tieng Viet trong cong thuc Toan giu ca tu.
+        assertEquals(
+            listOf("a", "=", "a", "'", "và", "b", "≠", "b", "'"),
+            PhimKiemTra.tach("a = a' và b ≠ b'", toan)
+        )
+        // KHTN: ky hieu nguyen to, cum chu thuong la mot dai luong.
+        assertEquals(listOf("H", "Cl"), PhimKiemTra.tach("HCl", khtn))
+        assertEquals(listOf("Fe", "(", "O", "H", ")", "₃"), PhimKiemTra.tach("Fe(OH)₃", khtn))
+        assertEquals(listOf("S", "=", "mct", "/", "mnước", "·", "1", "0", "0"), PhimKiemTra.tach("S = mct/mnước·100", khtn))
+        assertEquals(listOf("số", "mũ"), PhimKiemTra.tach("số mũ", toan))
     }
 
     @Test
     fun nut_dien_tich_go_ra_dung_ion() {
-        // Dai cu chi co "^" va "+". Bam hai nut do cho "H⁺" ra "H^+", ma "^+" khong
-        // phai "+": day la ly do co nut "⁺" va "⁻".
+        // "H^+" khong phai "H⁺": "^+" khong quy ve "+". Phim ghep cua the "H⁺" co phim "⁺"
+        // (2/10/2026; truoc do la nut "⁺" cua dai ky tu KHTN).
         assertFalse(HocThuoc.dung("H^+", the("H⁺"), phanBietHoa = true))
         assertTrue(HocThuoc.dung("H⁺", the("H⁺"), phanBietHoa = true))
-        // Bo the nao ghi dap an kieu ban phim thi bam nut van khop.
+        // Bo the nao ghi dap an kieu ban phim thi bam phim ky hieu van khop.
         assertTrue(HocThuoc.dung("SO₄²⁻", the("SO4^2-"), phanBietHoa = true))
     }
 
     @Test
-    fun go_lan_nut_va_ban_phim_van_dung() {
-        // Bam nut cho chi so dau, quen nut o chi so sau: van la mot cong thuc.
+    fun go_lan_ky_hieu_va_chu_thuong_van_dung() {
+        // Chi so dau bang ky hieu, chi so sau bang so thuong: van la mot cong thuc.
         assertTrue(HocThuoc.dung("H₂SO4", the("H₂SO₄"), phanBietHoa = true))
-        // Nut "*" cua bo Toan cham nhu dau nhan in trong sach.
+        // Phim "×" o hang co ban Toan cham nhu dau nhan in trong sach.
+        assertTrue(HocThuoc.dung("2×a×b", the("2·a·b")))
         assertTrue(HocThuoc.dung("2*a*b", the("2·a·b")))
     }
 
     /**
-     * The co dap an phu: goi y "360…" cua dap an "360°" da la dap an duoc cham dung, nen
-     * man kiem tra bai tinh nhu da hien het - chep dan vao khong duoc gio.
+     * Bac goi y cua man kiem tra bai (2/10/2026): dien san nua dau o lan sai thu ba, hien het o
+     * lan thu tu. Phan dien san da la mot dap an phu duoc cham dung thi tinh nhu hien het:
+     * con bam Tra loi ngay la dung, khong duoc gio.
      */
     @Test
-    fun goi_y_trung_dap_an_phu_thi_tinh_nhu_hien_het() {
-        val the = the("360°", "360")
-        assertTrue(HocThuoc.dung("360", the))
-        assertFalse(LuatTuVung.loHet(the.dap, 3) { HocThuoc.dung(it, the) })
-        assertTrue(LuatTuVung.loHet(the.dap, 4) { HocThuoc.dung(it, the) })
+    fun dien_san_trung_dap_an_phu_thi_tinh_nhu_hien_het() {
+        val the = the("ab + 1", "ab")
+        val k = PhimKiemTra.ghepThe(the, listOf(the), phanBietHoa = false, hat = 1)
+        val cham = { go: String -> HocThuoc.dung(go, the) }
+        assertEquals(listOf("a", "b"), k.dienSan(3))
+        assertFalse(k.loHet(2, cham))
+        assertTrue(k.loHet(3, cham))
+
+        // Khong trung dap an phu: dien san van chua lo, sai lan thu tu moi lo.
+        val goc = the("360°", "360")
+        val k2 = PhimKiemTra.ghepThe(goc, listOf(goc), phanBietHoa = false, hat = 1)
+        val cham2 = { go: String -> HocThuoc.dung(go, goc) }
+        assertEquals("36", k2.dienSan(3).joinToString(""))
+        assertFalse(k2.loHet(3, cham2))
+        assertTrue(k2.loHet(PhimKiemTra.BAC_HIEN_HET, cham2))
+    }
+
+    /** Dap an ngan lo som: mot phan thi dien san la ca dap an, mot the chu thi mo het nhieu la lo. */
+    @Test
+    fun dap_an_ngan_lo_som() {
+        val so = the("6")
+        val kSo = PhimKiemTra.ghepThe(so, listOf(so), phanBietHoa = false, hat = 1)
+        assertFalse(kSo.loHet(2) { HocThuoc.dung(it, so) })
+        assertTrue(kSo.loHet(3) { HocThuoc.dung(it, so) })
+
+        val mot = the("cộng")
+        val kMot = PhimKiemTra.ghepThe(mot, listOf(mot, the("chia"), the("số mũ")), phanBietHoa = false, hat = 1)
+        assertFalse(kMot.loHet(1) { HocThuoc.dung(it, mot) })
+        assertTrue(kMot.loHet(2) { HocThuoc.dung(it, mot) })
+
+        val hai = the("số mũ")
+        val kHai = PhimKiemTra.ghepThe(hai, listOf(hai, the("cộng")), phanBietHoa = false, hat = 1)
+        assertFalse(kHai.loHet(2) { HocThuoc.dung(it, hai) })
+        assertFalse(kHai.loHet(3) { HocThuoc.dung(it, hai) })
     }
 
     /**

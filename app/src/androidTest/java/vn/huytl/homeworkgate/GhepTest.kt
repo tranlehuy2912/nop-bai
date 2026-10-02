@@ -4,7 +4,9 @@ import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
 import org.json.JSONArray
 import org.json.JSONObject
+import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
+import org.junit.Assert.assertNull
 import org.junit.Assert.assertTrue
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -106,6 +108,43 @@ class GhepTest {
         assertFalse(chat.dung("OH₂", khtn))
     }
 
+    /**
+     * Nam cau tung co o go ten (bo ngay 2/10/2026): ten in san vao chu cua dong, dong nao cung
+     * chi con cho cua cac o chon, va {Ten} thay theo ban nam hay nu.
+     */
+    @Test
+    fun cau_tung_co_o_go_ten_in_san_ten_co_dinh() {
+        NganHang.napNeuCan(context)
+        val cac = KhoBai.get(context).cacCauCuaNguon("sbtanh8").associateBy { it.ma }
+        val mong = mapOf(
+            "1.E2" to "My mum:", "1.E3b" to "My best friend's name is ",
+            "2.E2" to "Tan Lap", "2.E3b" to "Tan Lap", "5.E2b" to "Dear Tom,"
+        )
+        mong.forEach { (ma, chu) ->
+            val g = Ghep.doc(cac.getValue(ma).ghep) as Ghep.O
+            listOf(false, true).forEach { nu ->
+                val cacDong = g.dong.map { Ghep.thayGioi(it.chu, nu) }
+                assertTrue("$ma thieu '$chu'", cacDong.any { chu in it })
+                cacDong.forEachIndexed { i, d ->
+                    val cho = Regex("""\{(\w+)\}""").findAll(d).map { it.groupValues[1] }.toList()
+                    assertEquals("$ma dong $i: $d", g.dong[i].o.indices.map { it.toString() }, cho)
+                }
+            }
+        }
+        assertTrue(cac.getValue("5.E2b").let { Ghep.doc(it.ghep) as Ghep.O }.dong.last().chu.endsWith("Best wishes,\nHoa"))
+        val e3b = Ghep.doc(cac.getValue("1.E3b").ghep) as Ghep.O
+        assertTrue(Ghep.thayGioi(e3b.dong[0].chu, nu = false).startsWith("My best friend's name is Minh.\nHe "))
+        assertTrue(Ghep.thayGioi(e3b.dong[0].chu, nu = true).startsWith("My best friend's name is Lan.\nShe "))
+    }
+
+    /** Khoi ghep con o go tu do (ban truoc 2/10/2026) thi bo ca cau, khong hien dong co cho trong. */
+    @Test
+    fun khoi_ghep_con_o_go_thi_bo_ca_cau() {
+        val cu = """{"kieu":"O","sao":1,"dong":[{"chu":"Dear {0},","o":[{"go":true}]},""" +
+            """{"chu":"I {0} it.","o":[{"dung":["like"],"sai":["likes","liking"]}]}]}"""
+        assertNull(Ghep.doc(cu))
+    }
+
     @Test
     fun moi_dap_an_go_ra_duoc_va_duoc_cham_dung() {
         NganHang.napNeuCan(context)
@@ -162,7 +201,7 @@ class GhepTest {
                     g.thuTuKhac.forEach { t -> if (!g.dung(t.map { g.buoc[it] })) loi += "$ma: BUOC thu tu $t bi cham sai" }
                 }
                 is Ghep.O -> listOf(false, true).forEach { nu ->
-                    val chon = g.dong.map { d -> d.o.map { x -> if (x.go) "Lê Hòa" else Ghep.thayGioi(x.dung.first(), nu) } }
+                    val chon = g.dong.map { d -> d.o.map { x -> Ghep.thayGioi(x.dung.first(), nu) } }
                     val sai = g.soSai(chon, nu)
                     if (sai != 0) loi += "$ma: O chon het dap an dung ma app bao $sai o sai (nu=$nu)"
                     g.dong.forEach { d ->

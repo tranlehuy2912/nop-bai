@@ -316,7 +316,7 @@ class LamTrenMayTest {
         assertTrue(DayLog.today(context).contains("Luyện tập Toán: 2 câu, $sao/$sao sao, +0 phút"))
     }
 
-    // ------------------------------------------------------------ bo qua (Câu tiếp, 30/9/2026)
+    // ----------------------------- bo qua (nut "Bài này làm sau", truoc 2/10/2026 ten "Câu tiếp")
 
     @Test
     fun cau_bo_qua_coi_nhu_chua_lam_lui_ra_sau_mot_ngay_roi_ve_cho_cu() {

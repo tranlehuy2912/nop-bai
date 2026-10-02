@@ -158,84 +158,11 @@ object LuatTuVung {
 
     // ------------------------------------------------------------------ goi y
 
-    /**
-     * Sau moi lan sai thi ho ra them mot chut, cho toi luc hien het dap an.
-     *
-     * VI SAO KHONG HIEN DAP AN NGAY. Hien ra thi con go bua mot cai, doc dap an, go lai
-     * cho dung, va an tron so giay ma khong nho gi. Bat con tu tim thi con phai mo
-     * sach hay di hoi - va do chinh la viec hoc.
-     *
-     * VI SAO VAN PHAI HO DAN. Buoi do hang ngay boc ca nhung tu cua Unit tu may
-     * thang truoc. Con khong biet tu do nam o dau ma tra, tablet thi dang khoa nen
-     * khong co tu dien, va tam gio toi thi co khi khong ai de hoi. Khong ho gi ca la
-     * con ket cung o mot tu, va mot tuan nhu the la con thoi mo app.
-     *
-     * Bac 0 khong ho gi. Bac 1 cho biet tu dai may chu. Bac 2 hien chu cai dau. Bac 3
-     * hien nua tu. Bac 4 hien hai phan ba. Bac [BAC_HIEN_HET] hien het. Truoc 27/9/2026
-     * dung o nua tu, con thi bam "Chịu rồi" de di tiep; Ba Huy them hai bac cuoi, dung
-     * cho ca man do tu vung lan man kiem tra bai. Hien het roi van phai go lai cho dung
-     * moi qua, nhung tu do khong duoc cong gio - xem [hienHet].
-     *
-     * Bac 1 dem so ky tu con phai GO, khong phai so ky tu sach in: "10²³" tren ban phim
-     * la "10^23", nam ky tu chu khong phai bon. Dem theo dang in thi con go dung so chu
-     * duoc bao ma van thieu.
+    /*
+     * Bac goi y sau moi lan sai (so chu cai, chu dau, nua tu, hai phan ba, ca tu) tung nam o
+     * day, dung chung cho man do tu vung va man kiem tra bai. Tu 2/10/2026 hai man do sang ban
+     * phim ghep, va goi y la mo phim nhieu roi dien san nua dau dap an: xem [PhimKiemTra].
      */
-    fun goiY(tu: String, bac: Int): String {
-        val t = tu.trim()
-        return when {
-            bac <= 0 -> ""
-            bac == 1 -> "${HocThuoc.chuanHoa(t, giuHoa = true).length} chữ cái"
-            hienHet(t, bac) -> t
-            else -> phanBac(t, bac) + "…"
-        }
-    }
-
-    /**
-     * Phan chu cua dap an ma [goiY] bac [bac] ho ra, khong kem dau "…".
-     *
-     * Nut chep o dong goi y man kiem tra bai chep dung phan nay, de con dan vao o go roi
-     * go tiep. null khi goi y chua co chu nao cua dap an: bac 0, va bac 1 chi noi so chu
-     * cai.
-     */
-    fun phanGoiY(tu: String, bac: Int): String? {
-        val t = tu.trim()
-        return if (bac <= 1 || t.isEmpty()) null else phanBac(t, bac)
-    }
-
-    /**
-     * Goi y bac [bac] da lo het dap an chua. Lo het thi con go dung van qua, nhung khong
-     * duoc cong gio: con doc tren man chu khong tu nho ra.
-     *
-     * Toi [BAC_HIEN_HET] la lo het. Dap an ngan thi lo som hon: "0" chi co mot chu, nen
-     * bac 2 (chu dau) da la ca dap an. Tinh nhu hien het tu luc do, khong thi tu mot hai
-     * ky tu duoc gio du con doc dap an ngay tren man.
-     */
-    fun hienHet(tu: String, bac: Int): Boolean {
-        val t = tu.trim()
-        return bac >= BAC_HIEN_HET || (bac >= 2 && t.isNotEmpty() && phanBac(t, bac) == t)
-    }
-
-    /**
-     * Nhu [hienHet], them mot canh: doan goi y tu no da duoc cham dung.
-     *
-     * The co dap an phu thi goi y co the thanh dap an truoc bac hien het: the "360°" nhan
-     * ca "360", ma bac 4 hien "360…". Chep doan do dan vao la dung va duoc gio, nen tinh
-     * nhu da hien het. [chamDung] la cach man do cham: man kiem tra bai co dap an phu va
-     * bo phan biet chu hoa, man do tu so thang voi tu.
-     */
-    fun loHet(dap: String, bac: Int, chamDung: (String) -> Boolean): Boolean =
-        hienHet(dap, bac) || phanGoiY(dap, bac)?.let(chamDung) == true
-
-    /** Phan dap an bac [bac] ho ra theo thang, tu bac 2 tro len. */
-    private fun phanBac(t: String, bac: Int): String = when {
-        bac >= BAC_HIEN_HET -> t
-        bac == 4 -> t.take((2 * t.length + 2) / 3)
-        bac == 3 -> t.take((t.length + 1) / 2)
-        else -> t.take(1)
-    }
-
-    /** Bac goi y hien het dap an, cung la bac cao nhat. Xem [goiY]. */
-    const val BAC_HIEN_HET = 5
 
     // ----------------------------------------------------------- chon tu nao
 

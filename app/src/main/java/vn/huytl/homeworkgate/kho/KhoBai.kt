@@ -820,6 +820,15 @@ class KhoBai private constructor(context: Context) :
         ).use { if (it.moveToFirst()) it.getInt(0) else 0 }
 
     /**
+     * Moi the cua mot bo, theo thu tu trong file. Man Kiem tra bai lay phim nhieu cua tung the
+     * tu dap an cac the khac trong bo, xem [vn.huytl.homeworkgate.data.PhimKiemTra.ghepThe].
+     */
+    fun cacTheCua(bo: String): List<TheHoc> =
+        readableDatabase.rawQuery(
+            "SELECT * FROM the_hoc WHERE bo = ? ORDER BY thu_tu", arrayOf(bo)
+        ).use { c -> buildList { while (c.moveToNext()) add(c.docThe()) } }
+
+    /**
      * Cac bai trong mot bo the, theo thu tu trong file, cung la thu tu trong sach.
      *
      * Chi co nhung bai co the. Bo KHTN phan Hoa di Bai 3, 4, 6, 8... vi Bai 5 va Bai 7

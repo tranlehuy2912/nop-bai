@@ -39,22 +39,34 @@ class LuatGhepTest {
     fun dung_ngay_lan_dau_thi_du_sao() {
         val l = LuatGhep.kiem(LuatGhep.Luot(3), soSai = 0)
         assertTrue(l.xong && l.dung)
-        assertFalse(l.botNhieu)
+        assertEquals(0, LuatGhep.mucMo(l))
         assertEquals(3, LuatGhep.saoKhiXong(l))
     }
 
     @Test
-    fun sai_mot_lan_mat_mot_sao_va_bot_phim_nhieu() {
+    fun sai_mot_lan_mat_mot_sao_va_mo_mot_nua_phim_nhieu() {
         var l = LuatGhep.kiem(LuatGhep.Luot(3), soSai = 1)
         assertFalse(l.xong)
         assertEquals(2, l.sao)
         assertEquals(1, l.lanSai)
-        assertTrue(l.botNhieu)
+        assertEquals(1, LuatGhep.mucMo(l))
         assertFalse(l.thuThem)
 
         l = LuatGhep.kiem(l, soSai = 0)
         assertTrue(l.dung)
         assertEquals(2, LuatGhep.saoKhiXong(l))
+    }
+
+    /** Mo dan hai nac roi dung (Ba Huy chot 2/10/2026), va luot giu phuong an da chon sai. */
+    @Test
+    fun sai_lan_hai_mo_het_phim_nhieu_va_giu_phuong_an_da_chon_sai() {
+        var l = LuatGhep.Luot(5).copy(saiDaChon = listOf("c2"))
+        l = LuatGhep.kiem(l, soSai = 1)
+        l = LuatGhep.kiem(l, soSai = 1)
+        assertEquals(LuatGhep.MO_HET, LuatGhep.mucMo(l))
+        l = LuatGhep.kiem(l, soSai = 1)
+        assertEquals(LuatGhep.MO_HET, LuatGhep.mucMo(l))
+        assertEquals(listOf("c2"), l.saiDaChon)
     }
 
     @Test

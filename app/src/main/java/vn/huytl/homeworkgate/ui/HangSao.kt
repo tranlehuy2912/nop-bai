@@ -63,6 +63,16 @@ object HangSao {
     fun chuLanTruoc(ct: Context, dat: Int, toiDa: Int): CharSequence =
         SpannableStringBuilder("Lần trước ").append(chu(ct, cacOLanTruoc(dat, toiDa)))
 
+    /**
+     * Mau chu "+N ★" hien khi mot cau vua xong (man lam bai, Giai de, hai man Kiem tra): co sao
+     * thi vang, dung mau o sao da duoc ([O.DUOC]); "+0 ★" thi xam. Truoc 2/10/2026 chu nay xanh
+     * la (mau "ok"), lech voi hang sao vua chuyen vang ngay tren do; Ba Huy muon "+N ★" la sao
+     * vang nhu sao luc lam dung. Cac man goi ham nay thay vi tu chon mau, de doi mau sao o [mau]
+     * thi "+N ★" doi theo.
+     */
+    fun mauCong(ct: Context, n: Int): Int =
+        if (n > 0) mau(ct, O.DUOC) else ContextCompat.getColor(ct, R.color.ink_soft)
+
     private fun mau(ct: Context, o: O): Int = ContextCompat.getColor(
         ct,
         when (o) {

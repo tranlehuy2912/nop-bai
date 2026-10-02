@@ -92,12 +92,30 @@
                     android:orientation="vertical"
                     android:visibility="gone">
 
-                    <TextView
-                        android:id="@+id/txt_tien"
+                    <!-- Dong tien do va sao cua cau dang hoi (2/10/2026, Ba Huy chot): moi cau mot sao, 1 sao la
+                         1 phut, ve bang HangSao nhu man lam bai tren may - rong la con duoc, vang la da duoc,
+                         xam la da lo dap an nen khong duoc nua. -->
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:textColor="@color/ink_soft"
-                        android:textSize="14sp" />
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/txt_tien"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:textColor="@color/ink_soft"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/txt_sao"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/wait"
+                            android:textSize="26sp" />
+                    </LinearLayout>
 
                     <com.google.android.material.card.MaterialCardView
                         style="@style/Card"
@@ -141,28 +159,25 @@
                         </LinearLayout>
                     </com.google.android.material.card.MaterialCardView>
 
-                    <!-- Chieu nhin tu chon nghia: cac o dung len trong ma nguon vi
-                         so lua chon thay doi khi bo thieu moi nhu. -->
+                    <!-- Khung phim ghep, ve trong ma nguon bang KhungGhep (2/10/2026):
+                         chieu nhin tu la bon nut nghia A, B, C, D; chieu nhin nghia la moi
+                         chu cai mot o va du 26 phim. Truoc ngay do la mot cot nut nghia va
+                         mot o go ban phim Android. -->
                     <LinearLayout
-                        android:id="@+id/box_chon"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        android:orientation="vertical"
-                        android:visibility="gone" />
-
-                    <!-- Chieu nhin nghia go tu. -->
-                    <EditText
-                        android:id="@+id/o_go"
+                        android:id="@+id/khung"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="16dp"
-                        android:hint="@string/do_tu_go"
-                        android:importantForAutofill="no"
-                        android:inputType="text"
-                        android:imeOptions="actionDone"
-                        android:textColor="@color/ink"
-                        android:textSize="20sp"
+                        android:orientation="vertical" />
+
+                    <!-- "Gõ đủ ô trước đã" khi con bam Tra loi luc o chua day. -->
+                    <TextView
+                        android:id="@+id/txt_bao"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:textColor="@color/ink_soft"
+                        android:textSize="15sp"
                         android:visibility="gone" />
 
                     <com.google.android.material.card.MaterialCardView
@@ -179,12 +194,29 @@
                             android:orientation="vertical"
                             android:padding="20dp">
 
-                            <TextView
-                                android:id="@+id/txt_ket"
+                            <!-- Chu ket qua, va ben phai la so sao vua duoc ("+1 ★", 2/10/2026) khi cau da xong. -->
+                            <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:textSize="18sp"
-                                android:textStyle="bold" />
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/txt_ket"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:textSize="18sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/txt_cong"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="20sp"
+                                    android:textStyle="bold"
+                                    android:visibility="gone" />
+                            </LinearLayout>
 
                             <TextView
                                 android:id="@+id/txt_dap"

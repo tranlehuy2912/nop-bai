@@ -11,9 +11,11 @@ import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
 import vn.huytl.homeworkgate.data.LuatTuVung
+import vn.huytl.homeworkgate.data.PhimKiemTra
 import vn.huytl.homeworkgate.kho.BoTuVung
 import vn.huytl.homeworkgate.kho.BuoiDo
 import vn.huytl.homeworkgate.kho.Chieu
+import vn.huytl.homeworkgate.kho.Ghep
 import vn.huytl.homeworkgate.kho.HocToi
 import vn.huytl.homeworkgate.kho.KhoBai
 import vn.huytl.homeworkgate.kho.TraTu
@@ -221,60 +223,81 @@ class TuVungTest {
         assertFalse(LuatTuVung.dung("", "library"))
     }
 
-    // --- goi y ---
+    // --- phim ghep va goi y (2/10/2026) ---
 
     @Test
-    fun goi_y_ho_dan_toi_hai_phan_ba_roi_moi_hien_het() {
-        assertEquals("", LuatTuVung.goiY("library", 0))
-        assertEquals("7 chữ cái", LuatTuVung.goiY("library", 1))
-        assertEquals("l…", LuatTuVung.goiY("library", 2))
-        assertEquals("libr…", LuatTuVung.goiY("library", 3))
-        assertEquals("libra…", LuatTuVung.goiY("library", 4))
-        // Hai phan ba van chua la ca tu, van duoc cong gio neu go dung.
-        assertFalse(LuatTuVung.hienHet("library", 4))
-        // Bac hien het moi ra ca tu (Ba Huy them hai bac cuoi ngay 27/9/2026).
-        assertTrue(LuatTuVung.hienHet("library", LuatTuVung.BAC_HIEN_HET))
-        assertEquals("library", LuatTuVung.goiY("library", LuatTuVung.BAC_HIEN_HET))
-        assertEquals("library", LuatTuVung.goiY("library", LuatTuVung.BAC_HIEN_HET + 2))
-    }
-
-    /** Dap an phu: the "360°" nhan ca "360", nen goi y "360…" da la dap an, tinh nhu hien het. */
-    @Test
-    fun goi_y_da_la_dap_an_phu_thi_tinh_nhu_hien_het() {
-        val chamDung = { go: String -> go == "360" || go == "360°" }
-        assertFalse(LuatTuVung.hienHet("360°", 4))
-        assertFalse(LuatTuVung.loHet("360°", 3, chamDung))
-        assertTrue(LuatTuVung.loHet("360°", 4, chamDung))
-        assertTrue(LuatTuVung.loHet("360°", LuatTuVung.BAC_HIEN_HET) { false })
-    }
-
-    /** Dap an mot chu thi chu dau da la ca dap an: tinh nhu hien het, khong ghi "0…". */
-    @Test
-    fun dap_an_ngan_lo_het_som_thi_tinh_nhu_hien_het() {
-        assertFalse(LuatTuVung.hienHet("0", 1))
-        assertEquals("1 chữ cái", LuatTuVung.goiY("0", 1))
-        assertTrue(LuatTuVung.hienHet("0", 2))
-        assertEquals("0", LuatTuVung.goiY("0", 2))
-        // Hai chu: chu dau va nua dap an chua lo het, hai phan ba thi lo het.
-        assertFalse(LuatTuVung.hienHet("ab", 3))
-        assertTrue(LuatTuVung.hienHet("ab", 4))
+    fun tu_mot_chu_moi_o_du_26_phim_khong_hien_chu_dau() {
+        val k = PhimKiemTra.ghepTu("bracelet")
+        val g = k.ghep as Ghep.Chu
+        assertTrue(g.duPhim)
+        assertEquals("", g.truoc)
+        assertEquals(8, g.soO)
+        // 7 chu khac nhau (b r a c e l t), 19 phim con lai la nhieu.
+        assertEquals(19, g.nhieu.size)
+        assertTrue(g.nhieu.none { it in "bracelt" })
+        assertEquals("bracelet".map { it.toString() }, k.phan)
     }
 
     @Test
-    fun dem_chu_cai_thi_khong_dem_dau_cach() {
-        assertEquals("5 chữ cái", LuatTuVung.goiY("a book", 1))
+    fun goi_y_mo_phim_roi_dien_san_nua_dau_roi_hien_het() {
+        val k = PhimKiemTra.ghepTu("bracelet")
+        val dung = { go: String -> LuatTuVung.dung(go, "bracelet") }
+        assertEquals(listOf(0, 1, 2, 2, 2), (0..4).map { PhimKiemTra.mucMo(it) })
+        assertTrue(k.dienSan(2).isEmpty())
+        assertEquals("brac", k.dienSan(3).joinToString(""))
+        assertEquals("brac", k.dienSan(4).joinToString(""))
+        // Mo phim va dien san nua dau van chua lo tu: lam dung van duoc phut.
+        (0..3).forEach { assertFalse("sai $it", k.loHet(it, dung)) }
+        // Sai lan thu tu thi hien ca tu, lam dung cung khong duoc phut.
+        assertTrue(k.loHet(PhimKiemTra.BAC_HIEN_HET, dung))
     }
 
     @Test
-    fun phan_chep_duoc_cua_goi_y_la_dung_chu_dang_hien() {
-        // Bac 0 va bac 1 chua lo chu nao cua dap an nen khong co gi de chep.
-        assertNull(LuatTuVung.phanGoiY("library", 0))
-        assertNull(LuatTuVung.phanGoiY("library", 1))
-        assertEquals("l", LuatTuVung.phanGoiY("library", 2))
-        assertEquals("libr", LuatTuVung.phanGoiY("library", 3))
-        assertEquals("libra", LuatTuVung.phanGoiY("library", 4))
-        // Dung chu dang hien tren man, chi bo dau "…".
-        assertEquals(LuatTuVung.goiY("6,022·10²³", 3), LuatTuVung.phanGoiY("6,022·10²³", 3) + "…")
+    fun dau_cach_gach_noi_va_phan_trong_ngoac_in_san() {
+        val log = PhimKiemTra.ghepTu("log (on to)")
+        assertEquals(listOf(null, null, null, " ", "(on to)"), (log.ghep as Ghep.Chu).khuon)
+        assertEquals(3, (log.ghep as Ghep.Chu).soO)
+        assertTrue(LuatTuVung.dung((log.ghep as Ghep.Chu).dien("log"), "log (on to)"))
+
+        val diy = PhimKiemTra.ghepTu("DIY (do-it-yourself)").ghep as Ghep.Chu
+        assertEquals(3, diy.soO)
+        // Phim chu thuong, sach in chu hoa: van cham dung.
+        assertTrue(LuatTuVung.dung(diy.dien("diy"), "DIY (do-it-yourself)"))
+
+        val ghepNoi = PhimKiemTra.ghepTu("well-trained").ghep as Ghep.Chu
+        assertEquals(11, ghepNoi.soO)
+        assertEquals("well-trained", ghepNoi.dien("welltrained"))
+
+        val nhay = PhimKiemTra.ghepTu("farmers' market").ghep as Ghep.Chu
+        assertEquals("farmers' market", nhay.dien("farmersmarket"))
+        assertTrue(LuatTuVung.dung(nhay.dien("farmersmarket"), "farmers' market"))
+
+        val cum = PhimKiemTra.ghepTu("keep in touch").ghep as Ghep.Chu
+        assertEquals(11, cum.soO)
+        assertTrue(LuatTuVung.dung(cum.dien("keepintouch"), "keep in touch"))
+        // Thieu chu thi khong lot: o trong de trong.
+        assertFalse(LuatTuVung.dung(cum.dien("keepintouc"), "keep in touch"))
+    }
+
+    /** Moi tu that trong bo: dien du chu vao o thi ra dung tu, va khong co chu nao ngoai 26 phim. */
+    @Test
+    fun moi_tu_that_go_duoc_bang_26_phim() {
+        val context = InstrumentationRegistry.getInstrumentation().targetContext
+        BoTuVung.napNeuCan(context)
+        val kho = KhoBai.get(context)
+        var dem = 0
+        BoTuVung.BO.forEach { bo ->
+            kho.cacTuCua(bo.bo).forEach { tu ->
+                val k = PhimKiemTra.ghepTu(tu.tu)
+                val g = k.ghep as Ghep.Chu
+                val go = k.phan.joinToString("").lowercase()
+                assertTrue("${tu.tu}: '$go' co chu ngoai 26 phim", go.all { it in 'a'..'z' })
+                assertEquals(tu.tu, g.soO, k.phan.size)
+                assertTrue("${tu.tu}: dien du o ma cham sai", LuatTuVung.dung(g.dien(go), tu.tu))
+                dem++
+            }
+        }
+        assertTrue(dem > 200)
     }
 
     // --- chieu hoi ---

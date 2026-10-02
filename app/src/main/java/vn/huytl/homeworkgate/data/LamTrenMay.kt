@@ -82,7 +82,7 @@ object LamTrenMay {
      *  3. cau moi trong cac bai lop da hoc, bai vua sai truoc, roi bai gan moc.
      *
      * Bo cau cua de Giai de con han, va bo muc "Ôn tập chương", "Test Yourself": de danh
-     * cho Giai de. Cau con vua bam Câu tiếp bo qua ([CauBoQua]) xep sau moi cau khac.
+     * cho Giai de. Cau con vua bam Bài này làm sau ([CauBoQua]) xep sau moi cau khac.
      */
     fun cauLamThem(
         context: Context,
@@ -289,7 +289,7 @@ object LamTrenMay {
 
     /**
      * Dong nhat ky cho ca mot luot lam, ghi mot lan luc thoat man chu khong tung cau. Cau con
-     * bam Câu tiếp bo qua ([boQua]) ke them o cuoi dong, de Ba Huy biet cau nao con chua lam duoc.
+     * bam Bài này làm sau ([boQua]) ke them o cuoi dong, de Ba Huy biet cau nao con chua lam duoc.
      */
     fun ghiNhatKy(context: Context, mon: String, loai: Loai, cac: List<Ghi>, boQua: List<CauHoi> = emptyList()) {
         if (cac.isEmpty() && boQua.isEmpty()) return

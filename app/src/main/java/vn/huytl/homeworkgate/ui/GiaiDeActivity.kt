@@ -204,8 +204,14 @@ class GiaiDeActivity : AppCompatActivity() {
             val (dat, toiDa) = GiaiDe.diem(this, d)
             khung.addView(chu("$dat/$toiDa ★", 26f, dam = true))
             vuaNopMay?.let { kq ->
-                val phut = kq.phutCap + kq.phutQuy + kq.phutGiu
-                if (phut > 0) khung.addView(chu("+$phut", 20f, dam = true, mauChu = R.color.ok).apply { dem(top = 6) })
+                // Phut cap da gom phan giu toi sang (gio ngu), xem [GiaiDe.KetQuaNop]. Truoc 2/10/2026
+                // dong nay cong them phutGiu, nop de luc gio ngu thi so hien ra gap doi.
+                val phut = kq.phutCap + kq.phutQuy
+                // Vang nhu sao da duoc, cung mau "+N ★" cua tung cau ([HangSao.mauCong], 2/10/2026).
+                if (phut > 0) khung.addView(chu("+$phut ★", 20f, dam = true).apply {
+                    setTextColor(HangSao.mauCong(this@GiaiDeActivity, phut))
+                    dem(top = 6)
+                })
             }
         }
         b.danhSach.addView(khung)
@@ -388,8 +394,12 @@ class GiaiDeActivity : AppCompatActivity() {
             b.danhSach.addView(the)
             return
         }
-        val khung = KhungGhep(o, muc, KhungGhep.hatDe(d.id, c.id)).also { it.ve(luot.botNhieu) }
+        val khung = KhungGhep(o, muc, KhungGhep.hatDe(d.id, c.id), luot.saiDaChon)
+            .also { it.ve(LuatGhep.mucMo(luot)) }
         val bao = chu("", 15f, mauChu = R.color.ink_soft)
+        // So sao vua duoc cua cau, hien ngay khi cau xong (Ba Huy chot 2/10/2026, cung luat voi man
+        // lam bai). Phut van cong mot lan luc nop ca de, chi cong phan hon lan tot nhat cua cau.
+        val cong = chu("", 20f, dam = true).apply { visibility = View.GONE }
         the.addView(nut("Kiểm tra") {
             val dd = de ?: return@nut
             if (dd.daNop || luot.xong) return@nut
@@ -399,13 +409,22 @@ class GiaiDeActivity : AppCompatActivity() {
                 return@nut
             }
             bao.text = ""
-            luot = LuatGhep.kiem(luot, soSai)
+            luot = LuatGhep.kiem(luot, soSai).copy(saiDaChon = khung.saiDaChon())
             de = GiaiDe.luuLuot(this, dd, c.id, luot, khung.traLoi())
             veSao()
             if (luot.xong && luot.dung && luot.sao > 0) HangSao.nhip(sao)
-            if (luot.xong) khung.khoa(luot.hienLoiGiai) else khung.ve(luot.botNhieu)
+            if (luot.xong) {
+                khung.khoa(luot.hienLoiGiai)
+                val n = LuatGhep.saoKhiXong(luot)
+                cong.text = "+$n ★"
+                cong.setTextColor(HangSao.mauCong(this, n))
+                cong.visibility = View.VISIBLE
+            } else {
+                khung.ve(LuatGhep.mucMo(luot))
+            }
         }.apply { dem(top = 12) })
         the.addView(bao)
+        the.addView(cong)
         b.danhSach.addView(the)
     }
 
@@ -431,7 +450,8 @@ class GiaiDeActivity : AppCompatActivity() {
             vuaNopMay = kq
             de = kq.de
             val ten = getString(R.string.child_name)
-            val phut = kq.phutCap + kq.phutGiu
+            // Da gom phan giu toi sang, xem [GiaiDe.KetQuaNop]; truoc 2/10/2026 cong them phutGiu.
+            val phut = kq.phutCap
             runCatching {
                 Notifier.send(
                     this@GiaiDeActivity,

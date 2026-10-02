@@ -7,7 +7,8 @@ import vn.huytl.homeworkgate.kho.TraLoi
  *
  *  - Moi cau co V sao, V sao la V phut.
  *  - Moi lan bam Kiem tra ma sai thi mat mot sao; cau nhieu o thi moi o sai mat mot sao.
- *    Sau lan sai dau, may bot phim nhieu.
+ *    Sai thi phim nhieu mo dan, xem [mucMo] (truoc 2/10/2026: sai lan dau la bot het phim
+ *    nhieu ra khoi ban phim).
  *  - Het sao thi cau do 0 phut, nhung con duoc thu them mot lan. Van sai thi may hien loi
  *    giai.
  *  - Lam lai mo sau 24 gio, chi cong phan hon so voi lan tot nhat. Chua du sao thi 24 gio
@@ -31,17 +32,36 @@ object LuatGhep {
      * Mot luot dang lam: tu luc hien cau toi luc xong (dung, hay het ca lan thu them).
      *
      * [thuThem] la luc sao da ve 0 ma con van duoc thu mot lan nua.
+     *
+     * [saiDaChon] la cac phuong an con da bam ma sai o cau trac nghiem va cau nhieu o, de ve
+     * mo chung (2/10/2026). Khoa do khung ghep dat, xem
+     * [vn.huytl.homeworkgate.ui.KhungGhep.saiDaChon]. Nam trong luot chu khong chi trong khung,
+     * vi tat man hinh roi mo lai giua luot thi khung dung lai tu dau.
      */
     data class Luot(
         val saoToiDa: Int,
         val sao: Int = saoToiDa,
         val lanSai: Int = 0,
-        val botNhieu: Boolean = false,
         val thuThem: Boolean = false,
         val xong: Boolean = false,
         val dung: Boolean = false,
-        val hienLoiGiai: Boolean = false
+        val hienLoiGiai: Boolean = false,
+        val saiDaChon: List<String> = emptyList()
     )
+
+    /**
+     * Phim nhieu mo toi dau, theo so lan sai cua luot: 0 chua mo phim nao, 1 mo mot nua, 2
+     * mo het. Ba Huy chot ngay 2/10/2026, cung luc voi hai man Kiem tra.
+     *
+     * MO CHU KHONG BO. Truoc ngay do sai lan dau la bot het phim nhieu ra khoi ban phim, va
+     * cac phim con lai don cho, con phai tim lai tu dau. Phim mo nam nguyen cho, chi khong
+     * bam duoc. Mo dan hai nac de lan thu thu hai van con phai nghi: cau ghep chu hai sao sai
+     * mot lan con mot sao, bot het nhieu ngay thi sao do gan nhu cho khong.
+     */
+    fun mucMo(luot: Luot): Int = luot.lanSai.coerceIn(0, MO_HET)
+
+    /** Muc [mucMo] da mo het phim nhieu. */
+    const val MO_HET = 2
 
     /**
      * Ket qua mot lan bam Kiem tra. [soSai] la so cho sai cua lan do: 0 la dung, 1 cho cau
@@ -57,7 +77,6 @@ object LuatGhep {
         return luot.copy(
             sao = con,
             lanSai = luot.lanSai + 1,
-            botNhieu = true,
             thuThem = con == 0
         )
     }

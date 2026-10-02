@@ -3,11 +3,12 @@ package vn.huytl.homeworkgate.data
 import android.content.Context
 
 /**
- * Cau Le Hoa bam "Câu tiếp" khi chua lam xong, o man Luyen tap ([vn.huytl.homeworkgate.ui.LamBaiActivity]).
+ * Cau Le Hoa bam "Bài này làm sau" khi chua lam xong (truoc 2/10/2026 nut ten "Câu tiếp"), o man
+ * Luyen tap ([vn.huytl.homeworkgate.ui.LamBaiActivity]).
  *
  * VI SAO CO (Ba Huy chot 30/9/2026). Truoc day man lam bai chi co nut Kiem tra: gap cau khong
  * biet lam thi con dung o do hoai, thoat ra vao lai thi may lai dua dung cau do len dau. Nay
- * con bam Câu tiếp la sang cau khac, va cau bo qua coi nhu chua lam: khong ghi so cai, khong
+ * con bam Bài này làm sau la sang cau khac, va cau bo qua coi nhu chua lam: khong ghi so cai, khong
  * cap phut, van nam trong phan chua lam.
  *
  * LUI RA SAU TRONG MOT NGAY. Cau bo qua trong [LUI] vua qua thi luot sau xep ra sau moi cau

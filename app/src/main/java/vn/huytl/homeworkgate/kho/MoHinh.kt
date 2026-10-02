@@ -209,7 +209,11 @@ data class TraTu(
     val lan: Int,
     val go: String,
     val dung: Boolean,
-    /** Da phai mo may bac goi y. 0 la con tu lam duoc. */
+    /**
+     * Da phai mo may bac goi y. 0 la con tu lam duoc. Tu 2/10/2026 thang co bon bac, xem
+     * [vn.huytl.homeworkgate.data.PhimKiemTra.BAC_HIEN_HET]; dong ghi truoc ngay do toi da 5,
+     * theo thang cu bang chu.
+     */
     val goiY: Int,
     /**
      * Con bam "Chịu rồi" chu khong tu ra duoc. Tu 27/9/2026 dong con go dung sau khi goi y

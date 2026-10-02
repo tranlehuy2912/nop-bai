@@ -531,7 +531,9 @@ def kiem_buoc(so, ma, g):
         so.l(ma, f"BUOC: 'sao' phải bằng số bước ({len(buoc)}), đang là {g.get('sao')}")
 
 
-GIOI = re.compile(r"\{(He|he|His|his|Him|him)\}")
+# {Ten} la ten ban in san (2/10/2026, thay cho o go ten): ban nam Minh, ban nu Lan. Giu dung
+# Ghep.thayGioi ben app.
+GIOI = re.compile(r"\{(He|he|His|his|Him|him|Ten)\}")
 
 
 def kiem_o(so, ma, g):
@@ -557,9 +559,11 @@ def kiem_o(so, ma, g):
             if not isinstance(x, dict):
                 so.l(ma, f"O: dòng {i} ô {k} không phải object")
                 continue
-            if x.get("go"):
-                if not isinstance(x.get("goi_y", ""), str):
-                    so.l(ma, f"O: dòng {i} ô {k} 'goi_y' phải là chữ")
+            # O go tu do bo ngay 2/10/2026 (Ba Huy: con khong go ban phim Android trong bai lam
+            # tren may nua). App gap o go thi bo ca cau, xem Ghep.O.Ong.
+            if "go" in x:
+                so.l(ma, f"O: dòng {i} ô {k} là ô gõ, đã bỏ: in sẵn tên vào chữ của dòng "
+                         "({Ten} cho tên bạn, tên làng, tên người viết thư viết thẳng)")
                 continue
             dung = x.get("dung")
             sai = x.get("sai", [])
@@ -590,7 +594,7 @@ def kiem_o(so, ma, g):
                          "hoặc ghi \"hai\": true nếu ô vốn chỉ có hai giá trị (Đúng/Sai, Có/Không, hai cột)")
             so_o += 1
     if co_gioi and not g.get("gioi"):
-        so.l(ma, "O: có {He}/{his}... mà không bật 'gioi'")
+        so.l(ma, "O: có {He}/{his}/{Ten}... mà không bật 'gioi'")
     if so_o == 0:
         so.l(ma, "O: không có ô chọn nào")
     if g.get("sao") != min(so_o, TRAN_SAO):

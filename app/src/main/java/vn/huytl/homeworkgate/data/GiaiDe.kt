@@ -870,8 +870,10 @@ object GiaiDe {
 
     /**
      * Trang thai sao cua mot cau trong de dang lam. Luu trong [DeGiai.chon], moi cau mot khoi
-     * JSON: s sao con, l so lan sai, x xong, d dung, b da bot nhieu, t dang thu them, h hien
-     * loi giai, a cau tra loi. Chua co thi la luot moi du sao.
+     * JSON: s sao con, l so lan sai, x xong, d dung, t dang thu them, h hien loi giai, a cau
+     * tra loi, w cac phuong an da chon sai ([LuatGhep.Luot.saiDaChon]). Chua co thi la luot moi
+     * du sao. Truong b (da bot phim nhieu) cua ban truoc 2/10/2026 khong doc nua: muc mo phim
+     * nhieu tinh tu l, xem [LuatGhep.mucMo].
      */
     fun luotCua(de: DeGiai, cauId: String, saoToiDa: Int): LuatGhep.Luot {
         val o = runCatching { org.json.JSONObject(de.chon[cauId].orEmpty()) }.getOrNull()
@@ -880,11 +882,11 @@ object GiaiDe {
             saoToiDa = saoToiDa,
             sao = o.optInt("s", saoToiDa).coerceIn(0, saoToiDa),
             lanSai = o.optInt("l"),
-            botNhieu = o.optBoolean("b"),
             thuThem = o.optBoolean("t"),
             xong = o.optBoolean("x"),
             dung = o.optBoolean("d"),
-            hienLoiGiai = o.optBoolean("h")
+            hienLoiGiai = o.optBoolean("h"),
+            saiDaChon = LuotDangLam.docDanhSach(o.optJSONArray("w"))
         )
     }
 
@@ -897,13 +899,18 @@ object GiaiDe {
         if (de.daNop) return de
         val o = org.json.JSONObject()
             .put("s", luot.sao).put("l", luot.lanSai).put("x", luot.xong).put("d", luot.dung)
-            .put("b", luot.botNhieu).put("t", luot.thuThem).put("h", luot.hienLoiGiai).put("a", traLoi)
+            .put("t", luot.thuThem).put("h", luot.hienLoiGiai).put("a", traLoi)
+            .put("w", org.json.JSONArray(luot.saiDaChon))
         val moi = de.copy(chon = de.chon + (cauId to o.toString()))
         KhoBai.get(context).luuDe(moi)
         return moi
     }
 
-    /** Ket qua nop mot de lam tren may. */
+    /**
+     * Ket qua nop mot de lam tren may. [phutCap] la phut cua tran ngay, DA GOM [phutGiu] (phan
+     * nop luc gio ngu, giu toi sang), y nhu [LamTrenMay.Ghi]; tong phut con duoc la phutCap cong
+     * [phutQuy].
+     */
     data class KetQuaNop(
         val de: DeGiai,
         val saoDat: Int,

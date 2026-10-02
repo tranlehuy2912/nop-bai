@@ -3,8 +3,9 @@
   Man lam bai tren may: moi lan mot cau, sao o goc tren, khung ghep ngay duoi de bai.
 
   Nut Kiem tra va Cau tiep nam cuoi danh sach cuon, sat khung ghep (cung le voi man Giai
-  de: nut nam sat phan no tac dong). Luc dang lam, canh Kiem tra co nut vien "Câu tiếp" de bo
-  qua cau chua lam duoc (Ba Huy chot 30/9/2026); lam xong thi hai nut do an, hien nut Câu tiếp dac. Khong co chu nao giai thich luat sao - Ba Huy chot
+  de: nut nam sat phan no tac dong). Luc dang lam, canh Kiem tra co nut vien "Bài này làm sau" de bo
+  qua cau chua lam duoc (Ba Huy chot 30/9/2026, ten nut doi tu "Câu tiếp" ngay 2/10/2026); lam xong
+  thi hai nut do an, hien nut Câu tiếp dac. Khong co chu nao giai thich luat sao - Ba Huy chot
   ngay 29/9/2026 de con tu kham pha. Chu duy nhat canh sao la dong "Lần trước" khi lam lai
   (Ba Huy dong y ngay 30/9/2026): do la thong tin, khong phai loi giai thich luat.
 -->
@@ -143,7 +144,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="56dp"
                         android:layout_marginStart="10dp"
-                        android:text="Câu tiếp"
+                        android:text="Bài này làm sau"
                         android:textSize="18sp"
                         android:visibility="gone" />
 

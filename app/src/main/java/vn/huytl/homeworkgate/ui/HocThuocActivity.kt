@@ -2,9 +2,6 @@ package vn.huytl.homeworkgate.ui
 
 import android.os.Bundle
 import android.view.View
-import android.view.inputmethod.InputMethodManager
-import android.widget.EditText
-import android.widget.TextView
 import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
@@ -16,9 +13,11 @@ import vn.huytl.homeworkgate.data.DayLog
 import vn.huytl.homeworkgate.data.GateStore
 import vn.huytl.homeworkgate.data.HocThuoc
 import vn.huytl.homeworkgate.data.LuatTuVung
+import vn.huytl.homeworkgate.data.PhimKiemTra
 import vn.huytl.homeworkgate.databinding.ActivityHocThuocBinding
 import vn.huytl.homeworkgate.dongbo.DongBo
 import vn.huytl.homeworkgate.kho.BoThe
+import vn.huytl.homeworkgate.kho.Ghep
 import vn.huytl.homeworkgate.kho.HocToi
 import vn.huytl.homeworkgate.kho.KhoBai
 import vn.huytl.homeworkgate.kho.PhanHoc
@@ -31,7 +30,13 @@ import vn.huytl.homeworkgate.databinding.StTheBoBinding
 import vn.huytl.homeworkgate.kho.BoDaNap
 
 /**
- * Hoc thuoc: may hoi, con go tra loi ngay tren tablet, may cham bang phep so chuoi.
+ * Hoc thuoc (ten tren man la "Kiểm tra bài"): may hoi, con tra loi ngay tren tablet, may cham
+ * bang phep so chuoi.
+ *
+ * TRA LOI BANG PHIM GHEP tu 2/10/2026, nhu bai lam tren may va man kiem tra tu vung: dap an
+ * chu thi xep the chu, dap an so hay cong thuc thi phim rieng cua the cong hang so va dau. Khoi
+ * ghep cua tung the va bac goi y o [PhimKiemTra], khung ve o [KhungGhep]. Truoc ngay do con go
+ * bang ban phim Android kem mot dai nut ky hieu, goi y la mot dong chu kem nut chep.
  *
  * VI SAO KHONG DI DUONG NOP BAI. Duong kia do cong suc bang so dong viet tren giay,
  * ma hoc thuoc thi khong de ra dong nao - xem [HocThuoc]. Duong nay doi cau hoi
@@ -43,6 +48,12 @@ import vn.huytl.homeworkgate.kho.BoDaNap
  * tra gio hai lan. Do la ban hong an toan nhat trong ba kieu da can nhac - ghi dan
  * tung the thi bi giet la con mat cong ma khong duoc phut nao, con cap gio dan tung
  * phut thi moi lan cap la mot luot day len Firestore.
+ *
+ * MOI CAU MOT SAO (Ba Huy chot 2/10/2026, cho cung luat voi bai lam tren may: 1 sao la 1 phut).
+ * Sao o goc phai dong tien do, ba dang cua [HangSao]: rong khi con duoc phut, vang khi vua lam
+ * dung, xam khi goi y da lo dap an. Sai roi lam dung van duoc sao (luat phut khong doi: chi lo
+ * dap an moi mat). Lam xong mot cau thi canh chu ket qua hien "+1 ★", lo dap an hay chiu thi
+ * "+0 ★". Phut van cong gop luc chot ([chot]), qua tran ngay thi vao quy gio choi.
  *
  * CHOT GOI TU BA CHO: nut Xong, [veLui] khi Back ve man chon bo, va [onPause]. Con bam
  * nut Home giua luot van duoc tra cho phan da lam. Moi lan chot chi ghi va tra phan
@@ -63,11 +74,18 @@ class HocThuocActivity : AppCompatActivity() {
      * Song trong bo nho suot luot chu khong ghi xuong ngay: con so phut chi tinh duoc
      * khi biet cau nao da xong.
      */
-    private class MucHoi(val the: TheHoc, private val phanBietHoa: Boolean) {
-        /** So lan go dung TRONG LUOT NAY. */
+    private class MucHoi(
+        val the: TheHoc,
+        private val phanBietHoa: Boolean,
+        /** Khoi ghep cua the, dung mot lan luc bat dau luot: xem [PhimKiemTra.ghepThe]. */
+        val khoi: PhimKiemTra.Khoi,
+        /** Hat tron cua the trong luot: hoi lai the nay thi phim mo dung cho lan truoc. */
+        val hat: Int
+    ) {
+        /** So lan lam dung TRONG LUOT NAY. */
         var soDung = 0
 
-        /** So lan go sai, dung lam bac goi y - xem [LuatTuVung.goiY]. */
+        /** So lan sai, dung lam bac goi y - xem [PhimKiemTra]. */
         var soSai = 0
 
         /** Con bam "Chịu rồi": bo cau nay khoi luot, khong tinh phut. */
@@ -80,10 +98,10 @@ class HocThuocActivity : AppCompatActivity() {
         val xong get() = soDung >= LuatTuVung.LAN_DUNG_DE_TINH
 
         /**
-         * Goi y da lo het dap an, hay da la mot dap an duoc cham dung - xem [LuatTuVung.loHet].
-         * Van phai go dung moi xong, nhung khong duoc cong gio.
+         * Goi y da lo dap an, hay phan dien san da la mot dap an duoc cham dung - xem
+         * [PhimKiemTra.Khoi.loHet]. Van phai lam dung moi xong, nhung khong duoc cong gio.
          */
-        val loHet get() = LuatTuVung.loHet(the.dap, soSai) { HocThuoc.dung(it, the, phanBietHoa) }
+        val loHet get() = khoi.loHet(soSai) { HocThuoc.dung(it, the, phanBietHoa) }
 
         /** Xong ma khong phai doc dap an tren man: cau duoc tinh gio. */
         val duocGio get() = xong && !loHet
@@ -103,6 +121,12 @@ class HocThuocActivity : AppCompatActivity() {
 
     /** Da cham cau dang hien chua: chua thi nut la "Trả lời", roi thi la "Câu tiếp". */
     private var daTraLoi = false
+
+    /** Khung phim ghep cua the dang hoi, ve lai moi lan hien mot the. */
+    private var khung: KhungGhep? = null
+
+    /** Ma luot, lam hat tron phim cua tung the: luot sau tron khac luot truoc. */
+    private var phien = ""
 
     private val ketQua = mutableListOf<TraThe>()
 
@@ -147,9 +171,6 @@ class HocThuocActivity : AppCompatActivity() {
     private fun veLui() {
         if (b.boxBo.visibility == View.VISIBLE) return finish()
         chot()
-        b.oGo.clearFocus()
-        getSystemService(InputMethodManager::class.java)
-            ?.hideSoftInputFromWindow(b.oGo.windowToken, 0)
         veChonBo()
     }
 
@@ -325,6 +346,9 @@ class HocThuocActivity : AppCompatActivity() {
         if (cac.isEmpty()) return veChonBo()
 
         boDangLam = bo
+        phien = "kt-${System.currentTimeMillis()}"
+        // Phim nhieu cua moi the lay tu dap an cac the khac trong ca bo, xem [PhimKiemTra.ghepThe].
+        val caBo = KhoBai.get(this).cacTheCua(ma)
         viTri = 0
         ketQua.clear()
         daGhi = 0
@@ -336,7 +360,8 @@ class HocThuocActivity : AppCompatActivity() {
         // con nho duoc theo mach - cau nay xong den cau ke - ma do la nho vi tri chu
         // khong phai nho noi dung.
         cac.shuffled().forEach {
-            muc[it.id] = MucHoi(it, bo.phanBietHoa)
+            val hat = "$phien/${it.id}".hashCode()
+            muc[it.id] = MucHoi(it, bo.phanBietHoa, PhimKiemTra.ghepThe(it, caBo, bo.phanBietHoa, hat), hat)
             hang += it.id
         }
         b.txtTieuDe.text = bo.ten
@@ -345,15 +370,6 @@ class HocThuocActivity : AppCompatActivity() {
         b.theXong.visibility = View.GONE
         b.boxHoi.visibility = View.VISIBLE
         b.txtChan.text = ""
-        // Moi mon mot dai ky tu rieng, mon nao khong can thi an han: hien may hang
-        // nut vo dung thi con phai luot qua chung moi toi o go. Xem [BanPhimKyTu].
-        val cacNhom = BanPhimKyTu.cuaMon(bo.mon)
-        if (cacNhom != null) {
-            b.daiKyTu.visibility = View.VISIBLE
-            BanPhimKyTu.ve(b.daiKyTu, cacNhom) { chen(it) }
-        } else {
-            b.daiKyTu.visibility = View.GONE
-        }
         veThe()
     }
 
@@ -371,18 +387,25 @@ class HocThuocActivity : AppCompatActivity() {
 
         b.txtBai.text = m.the.bai
         b.txtHoi.text = m.the.hoi
-        b.oGo.setText("")
-        b.oGo.isEnabled = true
-        b.oGo.requestFocus()
+        b.txtBao.visibility = View.GONE
+        b.txtCong.visibility = View.GONE
+        veSao(m)
+        khung = KhungGhep(b.khung, m.khoi.ghep, m.the.mon, m.hat, dienSan = m.khoi.dienSan(m.soSai)) {
+            b.txtBao.visibility = View.GONE
+        }.also { it.ve(PhimKiemTra.mucMo(m.soSai)) }
         // Hien lai nut: het luot truoc thi [xongLuot] da an no. Tu khi Back ve man chon
         // bo, luot moi chay ngay trong man nay chu khong mo lai man tu dau.
         b.btnChinh.visibility = View.VISIBLE
         b.btnChinh.setText(R.string.hoc_thuoc_tra_loi)
 
-        // Da sai lan nao thi giu goi y tren man hinh, va mo them mot bac moi lan sai.
+        // Da sai lan nao thi giu dong "Lần trước sai"; goi y nam tren ban phim, mo them moi lan sai.
         if (m.soSai > 0) {
             b.theKet.visibility = View.VISIBLE
-            b.txtKet.text = if (m.loHet) "Gõ lại cho đúng đáp án" else "Lần trước sai"
+            b.txtKet.text = when {
+                !m.loHet -> "Lần trước sai"
+                m.khoi.ghep is Ghep.Cau -> "Xếp lại cho đúng đáp án"
+                else -> "Gõ lại cho đúng đáp án"
+            }
             b.txtKet.setTextColor(mau(R.color.alert))
             hienGoiY(m)
             // Dap an da hien het thi bat go cho dung, khong cho bam chiu de bo qua.
@@ -394,22 +417,32 @@ class HocThuocActivity : AppCompatActivity() {
     }
 
     /**
-     * Dong goi y sau lan sai, kem nut chep phan dap an da ho ra.
+     * Dong duoi chu "Sai" hay "Lần trước sai": dap an khi goi y da hien het, khong thi rong.
      *
-     * Chep dung phan chu cua dap an, bo chu "Gợi ý:" va dau "…": con dan thang vao o go
-     * roi go tiep phan con lai, do phai go lai nhung ky tu kho go nhu "·" hay "²³". Goi y
-     * bac 1 chi noi so chu cai nen khong co nut. Ba Huy chon cho chep ngay 27/9/2026.
-     *
-     * Dap an da hien het thi khong co nut chep: Ba Huy muon con tu go lai cho dung, dan
-     * vao thi viec go lai khong con nghia gi.
+     * Tu 2/10/2026 goi y nam tren ban phim (phim mo, phan dien san). Truoc do day la dong
+     * "Gợi ý: s…" kem nut chep phan goi y vao o go (Ba Huy chon ngay 27/9/2026); phim ghep
+     * khong co o go de dan, va phan dien san da lam dung viec do.
      */
     private fun hienGoiY(m: MucHoi) {
-        b.txtDap.text = if (m.loHet) "Đáp án: ${m.the.dap}"
-        else "Gợi ý: ${LuatTuVung.goiY(m.the.dap, m.soSai)}"
-        val phan = if (m.loHet) null else LuatTuVung.phanGoiY(m.the.dap, m.soSai)
-        val nut = b.nutChepGoiY.root
-        nut.visibility = if (phan.isNullOrEmpty()) View.GONE else View.VISIBLE
-        nut.setOnClickListener { if (!phan.isNullOrEmpty()) Chep.vao(this, phan) }
+        datDap(if (m.loHet) "Đáp án: ${m.the.dap}" else "")
+    }
+
+    /** Sao cua cau dang hoi: rong khi con duoc phut, xam khi goi y da lo dap an. Xem [HangSao]. */
+    private fun veSao(m: MucHoi) {
+        b.txtSao.text = HangSao.chu(this, listOf(if (m.loHet) HangSao.O.MAT else HangSao.O.CON))
+    }
+
+    /** "+N ★" canh chu ket qua: vang nhu sao da duoc khi co sao, xam khi "+0 ★" ([HangSao.mauCong]). */
+    private fun hienCong(n: Int) {
+        b.txtCong.text = "+$n ★"
+        b.txtCong.setTextColor(HangSao.mauCong(this, n))
+        b.txtCong.visibility = View.VISIBLE
+    }
+
+    /** Dong duoi chu ket qua; rong thi an ca dong. */
+    private fun datDap(chu: String) {
+        b.txtDap.text = chu
+        b.txtDap.visibility = if (chu.isBlank()) View.GONE else View.VISIBLE
     }
 
     /**
@@ -425,8 +458,13 @@ class HocThuocActivity : AppCompatActivity() {
      */
     private fun traLoi() {
         val m = dangHoi() ?: return
-        val go = b.oGo.text.toString()
-        if (go.isBlank()) return
+        val k = khung ?: return
+        if (!k.ghepXong()) {
+            b.txtBao.text = if (m.khoi.ghep is Ghep.Cau) "Chọn thẻ trước đã" else "Gõ câu trả lời trước đã"
+            b.txtBao.visibility = View.VISIBLE
+            return
+        }
+        val go = k.traLoi()
 
         val dung = HocThuoc.dung(go, m.the, boDangLam?.phanBietHoa == true)
         // Go dung sau khi da doc dap an tren man thi ghi xuong so nhu bam chiu: kho khong
@@ -436,7 +474,8 @@ class HocThuocActivity : AppCompatActivity() {
             theId = m.the.id, go = go.trim(), dung = dung && !docDapAn, phut = 0, chiu = docDapAn
         )
         daTraLoi = true
-        b.oGo.isEnabled = false
+        k.khoa(hienLoiGiai = false)
+        b.txtBao.visibility = View.GONE
         b.theKet.visibility = View.VISIBLE
         b.btnChiu.visibility = View.GONE
 
@@ -445,10 +484,15 @@ class HocThuocActivity : AppCompatActivity() {
             m.soDung++
             b.txtKet.text = "Đúng rồi"
             b.txtKet.setTextColor(mau(R.color.ok))
-            b.txtDap.text = m.the.dap
-            b.nutChepGoiY.root.visibility = View.GONE
+            datDap(m.the.dap)
+            val duoc = !docDapAn
+            b.txtSao.text = HangSao.chu(this, listOf(if (duoc) HangSao.O.DUOC else HangSao.O.MAT))
+            if (duoc) HangSao.nhip(b.txtSao)
+            hienCong(if (duoc) SAO_MOI_THE else 0)
         } else {
             m.soSai++
+            // Sai thi sao con nguyen (lam dung lan sau van duoc), tru khi lan sai nay lam lo dap an.
+            veSao(m)
             // Chi mot chu "Sai", ke ca khi da hien het dap an: Ba Huy bo cau "không được cộng
             // giờ" o day, va doi "Chưa đúng" thanh "Sai" (27/9/2026). Dong tong ket cuoi luot
             // van ke so cau phai xem dap an.
@@ -473,13 +517,15 @@ class HocThuocActivity : AppCompatActivity() {
         for (i in hang.size - 1 downTo viTri + 1) if (hang[i] == m.the.id) hang.removeAt(i)
 
         daTraLoi = true
-        b.oGo.isEnabled = false
+        khung?.khoa(hienLoiGiai = false)
+        b.txtBao.visibility = View.GONE
         b.btnChiu.visibility = View.GONE
         b.theKet.visibility = View.VISIBLE
         b.txtKet.text = "Câu này để mai làm lại"
         b.txtKet.setTextColor(mau(R.color.ink_soft))
-        b.txtDap.text = "Đáp án: ${m.the.dap}"
-        b.nutChepGoiY.root.visibility = View.GONE
+        datDap("Đáp án: ${m.the.dap}")
+        b.txtSao.text = HangSao.chu(this, listOf(HangSao.O.MAT))
+        hienCong(0)
         b.btnChinh.setText(nutTiep())
     }
 
@@ -607,13 +653,6 @@ class HocThuocActivity : AppCompatActivity() {
 
     // ------------------------------------------------------------------- linh tinh
 
-    private fun chen(chu: String) {
-        val o: EditText = b.oGo
-        val dau = o.selectionStart.coerceAtLeast(0)
-        val cuoi = o.selectionEnd.coerceAtLeast(0)
-        o.text.replace(minOf(dau, cuoi), maxOf(dau, cuoi), chu)
-    }
-
     private fun moc0Gio(): Long = Calendar.getInstance().apply {
         set(Calendar.HOUR_OF_DAY, 0)
         set(Calendar.MINUTE, 0)
@@ -622,4 +661,9 @@ class HocThuocActivity : AppCompatActivity() {
     }.timeInMillis
 
     private fun Int.dp(): Int = (this * resources.displayMetrics.density).toInt()
+
+    private companion object {
+        /** Sao cua mot the, cung la so phut cua no: xem [HocThuoc.GIAY_MOI_THE]. */
+        const val SAO_MOI_THE = HocThuoc.GIAY_MOI_THE / 60
+    }
 }

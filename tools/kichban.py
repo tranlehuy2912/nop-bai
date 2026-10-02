@@ -408,9 +408,9 @@ def danh_sach():
         ),
         dict(
             ma="man-dotuvung", nhom="Học thuộc",
-            ten="Màn dò từ vựng — kể bộ từ và số từ đã thuộc",
+            ten="Màn kiểm tra từ vựng — kể bộ từ và số từ đã thuộc",
             lam=lambda m: (m.van(RANH), m.man("DoTuVungActivity")),
-            cho=["Dò từ vựng", "Từ vựng Tiếng Anh 8", "Đã thuộc",
+            cho=["Kiểm tra từ vựng", "Từ vựng Tiếng Anh 8", "Đã thuộc",
                  "Máy chỉ hỏi từ trong các Unit lớp đã học"],
         ),
         dict(
