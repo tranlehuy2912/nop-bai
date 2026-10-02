@@ -184,7 +184,9 @@ class LuyenTapActivity : AppCompatActivity() {
         GiaiDe.MON.forEach { mon ->
             val cua = n.deThi.filter { it.de.mon == mon }
             if (cua.isEmpty()) return@forEach
-            val mo = cua.firstOrNull { it.dangMo != null }
+            // De dang lam truoc de moi mo: con thay ngay de minh dang lam do (2/10/2026, truoc do
+            // dong nay ghi "đang mở" ca khi con da bam Bat dau, lech voi Bang dieu khien).
+            val mo = cua.firstOrNull { it.trangThai == GiaiDe.TT_DANG } ?: cua.firstOrNull { it.dangMo != null }
             val san = cua.count { it.trangThai == GiaiDe.TT_SAN }
             val xong = cua.count { it.trangThai == GiaiDe.TT_XONG }
             // Chi con de khoa thi noi pham vi cua de hep nhat: lop hoc toi do la co de dau tien.
@@ -196,7 +198,8 @@ class LuyenTapActivity : AppCompatActivity() {
                 mau = MatMon.mau(mon),
                 ten = "Đề thi thử ${GiaiDe.tenMon(mon)}",
                 phu = when {
-                    mo != null -> "${mo.de.ten} đang mở" + if (san > 0) ", thêm $san đề mở được" else ""
+                    mo != null -> "${mo.de.ten} " + (if (mo.trangThai == GiaiDe.TT_DANG) "đang làm" else "đang mở") +
+                        if (san > 0) ", thêm $san đề mở được" else ""
                     san > 0 -> "$san đề mở được" + if (xong > 0) ", đã làm $xong đề" else ""
                     xong > 0 -> "Đã làm $xong đề"
                     khoaHep != null -> "Mở khi lớp học ${GiaiDe.moTaPhamVi(khoaHep.de)}"

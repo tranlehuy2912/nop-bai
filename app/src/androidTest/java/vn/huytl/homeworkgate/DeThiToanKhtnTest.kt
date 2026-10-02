@@ -34,10 +34,14 @@ class DeThiToanKhtnTest {
 
     private fun cua(mon: String): List<DeThi.De> = DeThi.tatCa(context).filter { it.mon == mon }
 
+    /**
+     * Giua ki 1 (buoc 4.4, 1/10/2026) roi cuoi ki 1 (buoc 4.5, 2/10/2026). Cuoi ki 1 moi co Toan
+     * so 1-6, KHTN so 1-5: anh Huy chon de dap khac phan con lai vi token co han.
+     */
     @Test
-    fun du_de_giua_ki_1_hai_mon_theo_thu_tu() {
-        assertEquals((1..10).map { "KGK1-$it" }, cua(LichKiemTra.KHTN).map { it.ma })
-        assertEquals((1..8).map { "TGK1-$it" }, cua(LichKiemTra.TOAN).map { it.ma })
+    fun du_de_hoc_ki_1_hai_mon_theo_thu_tu() {
+        assertEquals((1..10).map { "KGK1-$it" } + (1..5).map { "KCK1-$it" }, cua(LichKiemTra.KHTN).map { it.ma })
+        assertEquals((1..8).map { "TGK1-$it" } + (1..6).map { "TCK1-$it" }, cua(LichKiemTra.TOAN).map { it.ma })
         assertTrue(NganHang.boDeThi().map { it.nguon }.containsAll(listOf("dethitoan8", "dethikhtn8")))
         assertTrue("de thi khong hien o man chon sach", NganHang.sachCua(LichKiemTra.TOAN).none { it.deThi })
     }
@@ -68,6 +72,17 @@ class DeThiToanKhtnTest {
     fun de_giua_ki_1_khtn_chi_xet_phan_hoa() {
         cua(LichKiemTra.KHTN).filter { it.ma.startsWith("KGK1-") }.forEach {
             assertEquals(it.ma, setOf("khtn8hoa"), it.denBai.keys)
+        }
+    }
+
+    /** De cuoi ki 1 KHTN co ca phan Hoa lan phan Li (Bai 13-19), de cuoi ki 1 Toan co hai phan. */
+    @Test
+    fun de_cuoi_ki_1_co_du_cac_phan_cua_hoc_ki_1() {
+        cua(LichKiemTra.KHTN).filter { it.ma.startsWith("KCK1-") }.forEach {
+            assertEquals(it.ma, setOf("khtn8hoa", "khtn8li"), it.denBai.keys)
+        }
+        cua(LichKiemTra.TOAN).filter { it.ma.startsWith("TCK1-") }.forEach {
+            assertEquals(it.ma, setOf("toan8ds", "toan8hh"), it.denBai.keys)
         }
     }
 
