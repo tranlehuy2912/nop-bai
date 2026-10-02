@@ -51,6 +51,14 @@ import java.util.Locale
  * co loi giai day du cua sach du cau da dung. Dap an sach cua cau trac nghiem la chu cai theo thu
  * tu in, ma may tron phuong an, nen cau trac nghiem khong ghi dong do.
  *
+ * BO TRUNG (Ba Huy chot 2/10/2026, xem anh man nay sau khi cai ban SGK). Cau da lam dung thi
+ * phan lon cau tra loi cua con chinh la loi giai: xep buoc dung la dung cac buoc do, chon, ghep chu,
+ * ghep cau, o chon dung la dung phuong an do. Hien ca hai khoi thi the nao cung lap mot doan y
+ * het. Nen cau tra loi trung loi giai ([trungLoiGiai]) thi chi con mot khoi, nhan ghi "đúng như
+ * lời giải"; con xep theo thu tu khac cung dung hay go mot dang dung khac thi van hien ca hai de
+ * so. Cau tra loi xep buoc moi buoc mot dong nhu loi giai, khong noi bang dau "|". Dap an sach
+ * van giu: chu cua sach viet thanh cau van, khac loi giai mau.
+ *
  * Moi cau lay luot dung gan nhat ([LamTrenMay.cauDaLamDung]). Chi xem, khong co nut lam lai (Ba
  * Huy chot): cau da dung du sao thi lam lai khong them phut, cau tung sai thi da quay lai o On tap.
  */
@@ -222,27 +230,28 @@ class CauDaLamActivity : AppCompatActivity() {
         if (muc != null) KhungGhep.veDe(hop, muc)
         else hop.addView(chu(KhungGhep.hien(cau.de, cau.mon), 17f))
 
-        hop.addView(nhanNho("${getString(R.string.child_name)} trả lời"))
         // Bieu thuc luu lien phim ("(x−y)(x+y+8)"): them dau cach quanh dau nhu luc con dang go.
         val traLoi = if (g is Ghep.BieuThuc) KhungGhep.hienBieuThuc(l.ketQua.map { it.toString() }, cau.mon)
         else l.ketQua
-        hop.addView(chu(KhungGhep.hien(traLoi.ifBlank { "—" }, cau.mon), 17f, dam = true))
+        val loiGiai = g?.let { KhungGhep.cacDongLoiGiai(it) }.orEmpty()
+        val trung = g != null && trungLoiGiai(g, traLoi, loiGiai, cau.mon)
+        val ten = getString(R.string.child_name)
+        hop.addView(nhanNho(if (trung) "$ten trả lời, đúng như lời giải" else "$ten trả lời"))
+        val dongTraLoi = (if (g is Ghep.Buoc) tachBuoc(traLoi) else emptyList()).ifEmpty { listOf(traLoi) }
+        dongTraLoi.forEach { hop.addView(chu(KhungGhep.hien(it.ifBlank { "—" }, cau.mon), 17f, dam = true)) }
         val ketQua = if (l.lanSai <= 0) "Đúng ngay lần đầu, được ${l.sao.coerceAtLeast(0)}/${l.saoToiDa} sao"
         else "Sai ${l.lanSai} lần rồi làm đúng, được ${l.sao.coerceAtLeast(0)}/${l.saoToiDa} sao"
         hop.addView(chu("$ketQua · ${GIO.format(Date(l.luc))}", 14f, mau = R.color.ink_soft).apply {
             setPadding(0, 4.dp(), 0, 0)
         })
 
-        val loiGiai = g?.let { KhungGhep.cacDongLoiGiai(it) }.orEmpty()
         // Dap an sach trung mot dong loi giai thi khong ghi lai: cau ghep chu "book", hay buoc
-        // cuoi "= (x − y)(x + y + 8)" cua bieu thuc. So sau khi doi so mu, bo dau bang dau dong
-        // va moi dau cach.
-        fun goc(chu: String) = KhungGhep.hien(chu, cau.mon).toString().trim()
-            .removePrefix("=").filterNot { it.isWhitespace() }.lowercase()
+        // cuoi "= (x − y)(x + y + 8)" cua bieu thuc.
         val dapSach = cau.dapAn.trim().takeIf { d ->
-            d.isNotEmpty() && g !is Ghep.Chon && loiGiai.none { goc(it) == goc(d) }
+            d.isNotEmpty() && g !is Ghep.Chon && loiGiai.none { goc(it, cau.mon) == goc(d, cau.mon) }
         }
-        if (loiGiai.isEmpty() && dapSach == null) return
+        val hienLoiGiai = loiGiai.isNotEmpty() && !trung
+        if (!hienLoiGiai && dapSach == null) return
         val giai = LinearLayout(this).apply {
             orientation = LinearLayout.VERTICAL
             setBackgroundResource(R.drawable.bg_ghi_chu)
@@ -251,12 +260,12 @@ class CauDaLamActivity : AppCompatActivity() {
                 LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT
             ).apply { topMargin = 12.dp() }
         }
-        if (loiGiai.isNotEmpty()) {
+        if (hienLoiGiai) {
             giai.addView(nhanNho("Lời giải", tren = 0))
             loiGiai.forEach { giai.addView(chu(KhungGhep.hien(it, cau.mon), 17f)) }
         }
         if (dapSach != null) {
-            giai.addView(nhanNho("Đáp án trong sách", tren = if (loiGiai.isEmpty()) 0 else 10))
+            giai.addView(nhanNho("Đáp án trong sách", tren = if (hienLoiGiai) 10 else 0))
             giai.addView(chu(KhungGhep.hien(dapSach, cau.mon), 16f))
         }
         hop.addView(giai)
@@ -301,6 +310,37 @@ class CauDaLamActivity : AppCompatActivity() {
 
         fun mo(activity: Activity, mon: String) {
             activity.startActivity(Intent(activity, CauDaLamActivity::class.java).putExtra(EXTRA_MON, mon))
+        }
+
+        /** Cac buoc con da xep, theo dung cach [KhungGhep] ghi vao so cai (noi bang " | "). */
+        fun tachBuoc(traLoi: String): List<String> = traLoi.split(" | ").filter { it.isNotBlank() }
+
+        /**
+         * Chu de so: doi so mu va the nhu luc hien, bo dau bang dau dong, bo moi dau cach, chu
+         * thuong. "= (x − y)(x + y + 8)" va "(x−y)(x+y+8)" la mot.
+         */
+        fun goc(chu: String, mon: String): String = KhungGhep.hien(chu, mon).toString().trim()
+            .removePrefix("=").filterNot { it.isWhitespace() }.lowercase()
+
+        /**
+         * Cau tra loi [traLoi] (chu da ghi vao so cai) noi dung y het [loiGiai]: khi do man chi hien
+         * mot khoi. Trac nghiem ghi kem chu cai cua luot ("B. is on high posts"), chu cai doi theo
+         * luot nen bo di truoc khi so. Bieu thuc co cac dong tinh thi khong bao gio trung: con chi
+         * go ket qua cuoi.
+         */
+        fun trungLoiGiai(g: Ghep, traLoi: String, loiGiai: List<String>, mon: String): Boolean {
+            if (traLoi.isBlank() || loiGiai.isEmpty()) return false
+            val cac = when (g) {
+                is Ghep.Buoc -> tachBuoc(traLoi)
+                is Ghep.Chon -> traLoi.split("; ").map { it.replace(Regex("""^[A-F]\.\s*"""), "") }
+                else -> listOf(traLoi)
+            }
+            return when (g) {
+                is Ghep.Buoc -> cac.size == loiGiai.size && cac.indices.all { goc(cac[it], mon) == goc(loiGiai[it], mon) }
+                // Chon nhieu dap an: con bam theo thu tu tren man, loi giai theo thu tu sach.
+                is Ghep.Chon -> cac.map { goc(it, mon) }.sorted() == loiGiai.map { goc(it, mon) }.sorted()
+                else -> goc(cac.joinToString(""), mon) == goc(loiGiai.joinToString(""), mon)
+            }
         }
     }
 }

@@ -21,10 +21,12 @@ import vn.huytl.homeworkgate.data.LuatGhep
 import vn.huytl.homeworkgate.data.Prefs
 import vn.huytl.homeworkgate.data.QuyGio
 import vn.huytl.homeworkgate.data.SoCaiBai
+import vn.huytl.homeworkgate.kho.Ghep
 import vn.huytl.homeworkgate.kho.KhoBai
 import vn.huytl.homeworkgate.kho.NganHang
 import vn.huytl.homeworkgate.kho.PhanHoc
 import vn.huytl.homeworkgate.kho.TraLoi
+import vn.huytl.homeworkgate.ui.CauDaLamActivity
 import java.util.Calendar
 
 /**
@@ -511,5 +513,27 @@ class LamTrenMayTest {
         assertEquals(0, dung.single().luot.lanSai)
         assertEquals(1, LamTrenMay.soCauDaLamDung(context, "Toán"))
         assertTrue("mon khac khong lan vao", LamTrenMay.cauDaLamDung(context, "Khoa học tự nhiên").none { it.cau.id == m.cau.id })
+    }
+
+    @Test
+    fun cau_da_lam_dung_tra_loi_trung_loi_giai_thi_chi_mot_khoi() {
+        fun doc(json: String) = Ghep.doc(json)!!
+        val buoc = doc("""{"kieu":"BUOC","sao":3,"buoc":["AB = CD","AD = BC","Vậy ABCD là hình bình hành"],"nhieu":["AB // AD"]}""")
+        val giaiBuoc = listOf("AB = CD", "AD = BC", "Vậy ABCD là hình bình hành")
+        assertTrue(CauDaLamActivity.trungLoiGiai(buoc, "AB = CD | AD = BC | Vậy ABCD là hình bình hành", giaiBuoc, "Toán"))
+        // Xep thu tu khac cung dung: van hien ca hai khoi de so.
+        assertFalse(CauDaLamActivity.trungLoiGiai(buoc, "AD = BC | AB = CD | Vậy ABCD là hình bình hành", giaiBuoc, "Toán"))
+        assertEquals(giaiBuoc, CauDaLamActivity.tachBuoc("AB = CD | AD = BC | Vậy ABCD là hình bình hành"))
+
+        // Chu cai cua luot khong tinh: may tron phuong an moi luot.
+        val chon = doc("""{"kieu":"CHON","sao":1,"cac":["is a multi-storey home","is on high posts","always faces a field"],"dap":"B"}""")
+        assertTrue(CauDaLamActivity.trungLoiGiai(chon, "A. is on high posts", listOf("is on high posts"), "Tiếng Anh"))
+
+        val chu = doc("""{"kieu":"CHU","sao":2,"dap":["book"],"truoc":"b","nhieu":["u","l","a","e"]}""")
+        assertTrue(CauDaLamActivity.trungLoiGiai(chu, "book", listOf("book"), "Tiếng Anh"))
+
+        // Bieu thuc: con chi go ket qua cuoi, loi giai co du cac dong tinh.
+        val bt = doc("""{"kieu":"BIEU_THUC","sao":2,"dap":["−11x²y³"],"phim":["x","y","²","³"],"nhieu":["⁴","z"],"loi_giai":["2x²y³ − 14x²y³ + x²y³ = (2 − 14 + 1)x²y³","= −11x²y³"]}""")
+        assertFalse(CauDaLamActivity.trungLoiGiai(bt, "−11x²y³", listOf("2x²y³ − 14x²y³ + x²y³ = (2 − 14 + 1)x²y³", "= −11x²y³"), "Toán"))
     }
 }
