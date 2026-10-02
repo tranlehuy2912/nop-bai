@@ -261,6 +261,8 @@ Cách làm hai ảnh:
 - Điểm bị xoá nằm trên nét thì vẽ lại khúc nét bị che, để đường không đứt.
 - Hai ảnh cắt cùng một khung cho khỏi lệch khi đổi qua lại, rồi lưu WebP như `cat_hinh.py` (chất lượng 85). Mở cả hai ảnh ra xem trước và sau khi xoá.
 
+Nguyên tắc anh Huy chốt ngày 02/10/2026: mục tiêu là nâng kiến thức cho Lê Hòa, không phải lấy điểm. Câu sai logic hay sai kiến thức (đề tự mâu thuẫn, đáp án in sai, kiến thức sai hay không xác định được theo SGK) thì sửa cho đúng; không sửa được thì bỏ khỏi máy (`bo_may` ghi rõ lý do). Câu có hai, ba đáp án cùng đúng mà máy chỉ nhận một thì sửa phương án cho chỉ còn một đáp án đúng, đổi thành chọn nhiều đáp án (`dap` là danh sách, `nhieu_dap: true`), hoặc ghi rõ "đúng nhất". Phương án kiểu "Cả A, B, C đều đúng" đổi thành câu chọn nhiều đáp án, thay phương án đó bằng một phương án sai.
+
 Luật mở đề Toán, KHTN (`GiaiDe.taoDeThi`):
 
 - Phạm vi của đề ở mỗi phần học (Toán: Đại số `toan8ds`, Hình học `toan8hh`; KHTN: Hoá `khtn8hoa`, Lí `khtn8li`, Sinh `khtn8sinh`; xem `kho/PhanHoc.kt`) là `bai_sgk` cao nhất trong các câu làm trên máy thuộc phần đó.
