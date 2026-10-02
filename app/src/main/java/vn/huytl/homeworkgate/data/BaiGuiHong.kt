@@ -206,8 +206,7 @@ object BaiGuiHong {
         if (a == null || b == null) return false
         if (a.laSua || b.laSua) return a.suaBai == b.suaBai
         if (a.giaiDe.isNotBlank() || b.giaiDe.isNotBlank()) return a.giaiDe == b.giaiDe
-        return a.cauIds.isNotEmpty() && a.mon == b.mon && a.onTap == b.onTap &&
-            a.cauIds.toSet() == b.cauIds.toSet()
+        return a.cauIds.isNotEmpty() && a.mon == b.mon && a.cauIds.toSet() == b.cauIds.toSet()
     }
 
     /** "đề bài 5, bài giải 4", dung cach ke cua dong "Nộp bài" trong nhat ky. */

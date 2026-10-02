@@ -326,6 +326,10 @@ data class TraLoi(
      * Tach ra vi hai loai tra cong khac nhau (on chiu tran rieng moi ngay, va chi tra
      * theo lich hen; truoc 27/9/2026 con chi duoc nua so phut), va vi bang tien bo phai
      * dem duoc "cau tung sai nay da on lai chua".
+     *
+     * Tu 2/10/2026 chi luot on lai lam tren may dat true (vong 1 tro di, xem
+     * [vn.huytl.homeworkgate.data.LamTrenMay]); duong on chup anh da bo. Dong cu trong so
+     * van co the mang true tu duong do.
      */
     val onTap: Boolean = false,
     val dung: Boolean,
@@ -400,17 +404,9 @@ data class PhamVi(
     val tenNguon: String = "",
     val bai: String = "",
     val cauIds: List<String> = emptyList(),
-    /**
-     * Lan nop nay la ON LAI cau da lam dung roi, khong phai bai moi.
-     *
-     * Doi hai thu: so cai khong duoc bo qua cau "da tra gio" nua (cai chinh no vua
-     * chan), va so phut chiu tran on rieng moi ngay, chi tra khi cau den hen.
-     *
-     * Tu 2/10/2026 khong con cho nao dat true: buoc on chup anh cua
-     * [vn.huytl.homeworkgate.ui.ChonBaiActivity] bo (tu 29/9/2026 khong nut nao mo toi no,
-     * on lai lam tren may). Truong con lai cho bai cu nop truoc do va ban ghi cu tren Firestore.
-     */
-    val onTap: Boolean = false,
+    // Truong onTap (lan nop la on lai bai chup anh) bo ngay 2/10/2026 (Ba Huy chon), cung
+    // buoc on chup anh cua ChonBaiActivity: on lai chi con lam tren may. JSON cu con khoa
+    // "on_tap" thi [tuJson] bo qua, va tablet thoi ghi "onTap" vao khai bai tren Firestore.
     /**
      * Cau con tu bao la chua chac, khai truoc khi chup.
      *
@@ -484,7 +480,6 @@ data class PhamVi(
         .put("ten_nguon", tenNguon)
         .put("bai", bai)
         .put("cau_ids", JSONArray(cauIds))
-        .put("on_tap", onTap)
         .put("chua_chac", JSONArray(chuaChac))
         .put("da_khai_chac", daKhaiChac)
         .put("con_noi", conNoi)
@@ -509,7 +504,6 @@ data class PhamVi(
                 bai = o.optString("bai"),
                 cauIds = (0 until (a?.length() ?: 0)).mapNotNull { a?.optString(it) }
                     .filter { it.isNotBlank() },
-                onTap = o.optBoolean("on_tap", false),
                 chuaChac = o.optJSONArray("chua_chac").let { m ->
                     (0 until (m?.length() ?: 0)).mapNotNull { m?.optString(it) }
                         .filter { it.isNotBlank() }

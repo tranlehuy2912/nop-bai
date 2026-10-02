@@ -179,7 +179,6 @@ class BaiGuiHongTest {
         val toan = PhamVi(mon = "Toán", cauIds = listOf("a", "b"))
         assertTrue(BaiGuiHong.cungBai(toan, toan.copy(cauIds = listOf("b", "a"))))
         assertFalse(BaiGuiHong.cungBai(toan, toan.copy(cauIds = listOf("a"))))
-        assertFalse(BaiGuiHong.cungBai(toan, toan.copy(onTap = true)))
         assertFalse(BaiGuiHong.cungBai(toan, null))
         assertFalse(BaiGuiHong.cungBai(PhamVi(mon = "Toán"), PhamVi(mon = "Toán")))
         assertTrue(BaiGuiHong.cungBai(toan.copy(suaBai = "x"), PhamVi(mon = "Toán", suaBai = "x")))

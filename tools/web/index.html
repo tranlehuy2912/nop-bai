@@ -291,8 +291,6 @@ td small{display:block;color:var(--mo);font-size:10px}
     <div class="hang">
       <label>đã cộng bài chụp ảnh hôm nay
         <input type="number" id="gda" value="0" style="width:70px"> phút</label>
-      <label title="Câu đã làm đúng rồi, nay đến hẹn làm lại để ôn"><input
-        type="checkbox" id="gon"> lần này là ôn lại</label>
       <button class="chinh" id="gtinh">Tính</button>
       <button id="glaytu">Lấy số thật từ máy ảo</button>
     </div>
@@ -880,8 +878,7 @@ $('#gtinh').onclick = async e => {
   try{
     const b = await api('/api/conggio',{method:'POST',body:JSON.stringify({
       cham:{mon:'', cac:MUC},
-      daCongLamThem: +$('#gda').value || 0,
-      onTap: $('#gon').checked })});
+      daCongLamThem: +$('#gda').value || 0 })});
     const le = Object.entries(b.phutCua).filter(([,v])=>v>0);
     $('#gket').innerHTML =
       `<div class="so-to">${b.phut} phút</div>

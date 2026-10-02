@@ -559,7 +559,9 @@ class KhoBai private constructor(context: Context) :
         denHen(tuLuc, bayGio)
 
     /**
-     * Cau nay co dang den hen on khong. Hoi luc cham, de quyet co tra gio hay khong.
+     * Cau nay co dang den hen on khong. Tu 2/10/2026 chi con On lai tren may hoi, de quyet
+     * luot nay co mo vong sao moi khong - xem [vn.huytl.homeworkgate.data.LamTrenMay]. Truoc
+     * do ham nay con quyet bai on chup anh co duoc tra gio khong; duong do da bo.
      *
      * Chay DUNG cau hoi cua [cacCauDenHenOn], chi loc them mot cau. Truoc day day la
      * mot cau SQL rieng, thieu hai dieu kien cua ben kia: cau phai tung sai, va phai
@@ -1374,13 +1376,6 @@ class KhoBai private constructor(context: Context) :
             "SELECT COUNT(*) FROM tra_loi WHERE cau_id = ? AND luc >= ? AND luc < ? AND dung = 0 AND on_tap = 0",
             arrayOf(cauId, tuLuc.toString(), truocLuc.toString())
         ).use { if (it.moveToFirst()) it.getInt(0) else 0 }
-
-    /** Cau nay da duoc tra gio cho mot lan on tap chua. */
-    fun daOnTap(cauId: String, tuLuc: Long): Boolean =
-        readableDatabase.rawQuery(
-            "SELECT 1 FROM tra_loi WHERE cau_id = ? AND on_tap = 1 AND dung = 1 AND luc >= ? LIMIT 1",
-            arrayOf(cauId, tuLuc.toString())
-        ).use { it.moveToFirst() }
 
     /** Dem cau da lam dung trong mot quyen - de hien bang tien bo. */
     fun soCauDaXongCua(nguon: String, tuLuc: Long): Int =

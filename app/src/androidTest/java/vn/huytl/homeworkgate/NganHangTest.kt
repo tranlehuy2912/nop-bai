@@ -337,23 +337,25 @@ class NganHangTest {
         assertTrue(SoCaiBai.cacCauDangOn(context, now).isEmpty())
     }
 
+    /**
+     * On xong mot lan thi hen sau la muoi ngay.
+     *
+     * Truoc 2/10/2026 test nay ghi lan on bang duong on chup anh (SoCaiBai.ghi co onTap) va
+     * thu ca phan tra gio cua duong do; duong do da bo. Nay ghi thang mot dong on, y nhu luot
+     * on lai tren may: luat hen van la luat cua On lai tren may.
+     */
     @Test
-    fun on_tap_tinh_gio_moi_lan_den_hen_chu_khong_phai_moi_lan_on() {
+    fun on_xong_mot_lan_thi_hen_sau_la_muoi_ngay() {
         lamSaiRoiSuaDung("2.26d", luiNgay = 4)
-        val cau = CauCham(ma = "2.26d", de = "", cauId = "thu:2.26d", dung = true, soDong = 4)
-
-        // Lan on dau: da den hen (ba ngay), duoc tinh gio.
-        SoCaiBai.ghi(context, listOf(cau), mapOf("2.26d" to 1), now, onTap = true)
-        assertTrue(SoCaiBai.daOnTap(context, "thu:2.26d", now))
-        assertEquals(1, SoCaiBai.phutDaCongHomNay(context, now))
-
-        // Hom sau on lai chinh cau do: hen ke tiep la muoi ngay, chua toi, khong
-        // duoc gi. Day la cho chan viec chep lai cau cu moi toi de kiem gio.
-        SoCaiBai.ghi(context, listOf(cau), mapOf("2.26d" to 1), now + ngay, onTap = true)
-        assertEquals(0, SoCaiBai.phutDaCongHomNay(context, now + ngay))
+        KhoBai.get(context).ghiTraLoi(
+            TraLoi(
+                cauId = "thu:2.26d", mon = "Toán", ma = "2.26d", de = "", ketQua = "",
+                onTap = true, dung = true, phut = 1, nhanXet = "", luc = now
+            )
+        )
+        // Hom sau: hen ke tiep la muoi ngay, chua toi.
         assertTrue(SoCaiBai.cacCauDangOn(context, now + ngay).isEmpty())
-
-        // Qua muoi ngay thi den hen lan hai, va lai duoc tinh.
+        // Qua muoi ngay thi den hen lan hai.
         assertEquals(listOf("thu:2.26d"), SoCaiBai.cacCauDangOn(context, now + 11 * ngay))
     }
 
@@ -363,31 +365,17 @@ class NganHangTest {
         // hẹn", ma man on chi ve duoc cau trong sach nen bam vao khong thay cau nao.
         lamSaiRoiSuaDung(cauNgoaiSach, luiNgay = 4)
         assertTrue(SoCaiBai.cacCauDangOn(context, now).isEmpty())
-        assertFalse(SoCaiBai.denHenOn(context, cauNgoaiSach, now))
+        assertFalse(denHen(SoCaiBai.khoaCua(cauNgoaiSach)))
     }
 
-    @Test
-    fun cau_ngoai_sach_lot_vao_bai_on_thi_khong_duoc_tinh_gio_on() {
-        // Lan nop bai on, may tach them mot cau ngoai danh sach va chep de trung khoa
-        // cu. Cau do chua bao gio nam tren man on, nen khong duoc ghi la mot lan on
-        // va khong an nua so phut nao.
-        lamSaiRoiSuaDung(cauNgoaiSach, luiNgay = 4)
-        val daGhi = SoCaiBai.ghi(
-            context, listOf(cauNgoaiSach.copy(dung = true)), mapOf(cauNgoaiSach.ma to 1), now,
-            onTap = true
-        )
-        assertTrue(daGhi.isEmpty())
-        assertFalse(SoCaiBai.daOnTap(context, SoCaiBai.khoaCua(cauNgoaiSach), now))
-        // Tu 29/9/2026 phutOnHomNay chi dem luot on tren may, nen o day hoi tong phut hom
-        // nay: hai dong cua lamSaiRoiSuaDung ghi tu bon ngay truoc.
-        assertEquals(0, SoCaiBai.phutDaCongHomNay(context, now))
-    }
+    /** Hoi tung cau, nhu On lai tren may hoi luc mo vong sao moi. Xem [KhoBai.denHenOn]. */
+    private fun denHen(khoa: String) = KhoBai.get(context).denHenOn(khoa, now - 365 * ngay, now)
 
     @Test
-    fun cau_khong_hien_tren_man_on_thi_lan_on_khong_duoc_tinh() {
-        // Hai dieu kien ban nay them cho duong cham tung cau, ngoai khoa "tu:": cau
-        // phai tung sai, va phai con trong ngan hang. Thieu mot trong hai thi cau do
-        // khong nam tren man on, nen lan nop on khong ghi so va khong co phut.
+    fun cau_dung_ngay_tu_dau_hay_bi_bo_khoi_sach_thi_khong_den_hen() {
+        // Hai dieu kien cua luat den hen, ngoai khoa "tu:": cau phai tung sai, va phai con
+        // trong ngan hang. Truoc 2/10/2026 test nay con thu lan nop bai on chup anh cua hai
+        // cau do khong duoc ghi so, khong co phut; duong on chup anh da bo.
         val dungNgay = CauCham(ma = "2.26a", de = "", cauId = "thu:2.26a", dung = true, soDong = 4)
         SoCaiBai.ghi(context, listOf(dungNgay), mapOf("2.26a" to 2), now - 4 * ngay)
         assertTrue(SoCaiBai.daTraGioCua(context, dungNgay, now))
@@ -395,16 +383,7 @@ class NganHangTest {
         val boKhoiSach = CauCham(ma = "2.99z", de = "", cauId = "thu:2.99z", soDong = 4)
         lamSaiRoiSuaDung(boKhoiSach, luiNgay = 4)
 
-        listOf(dungNgay, boKhoiSach).forEach { cau ->
-            assertFalse(cau.ma, SoCaiBai.denHenOn(context, cau, now))
-            val daGhi = SoCaiBai.ghi(
-                context, listOf(cau.copy(dung = true)), mapOf(cau.ma to 1), now, onTap = true
-            )
-            assertTrue(cau.ma, daGhi.isEmpty())
-        }
-        // Xem cau_ngoai_sach_lot_vao_bai_on_thi_khong_duoc_tinh_gio_on: phutOnHomNay chi
-        // con dem luot on tren may.
-        assertEquals(0, SoCaiBai.phutDaCongHomNay(context, now))
+        listOf(dungNgay, boKhoiSach).forEach { assertFalse(it.ma, denHen(SoCaiBai.khoaCua(it))) }
     }
 
     @Test
@@ -420,49 +399,6 @@ class NganHangTest {
         val ve = KhoBai.get(context).cacCauTheoId(dem)
         assertEquals(listOf("thu:2.26d"), dem)
         assertEquals(dem.size, ve.size)
-    }
-
-    // --------------------------------------------- chup lai trang cu
-
-    private fun cauOn(ma: String, dong: List<String>) = CauCham(
-        ma = ma, de = "", cauId = "thu:$ma", dung = true, soDong = dong.size, baiLam = dong
-    )
-
-    @Test
-    fun bai_on_giong_het_lan_truoc_tung_dong_thi_bi_danh_dau() {
-        val dong = listOf("= x(x - 3)", "= x² - 3x")
-        SoCaiBai.ghi(context, listOf(cauOn("2.26d", dong)), mapOf("2.26d" to 2), now - 4 * ngay)
-        // Chup lai dung trang cu: AI doc ra y het tung dong cua lan truoc.
-        assertTrue(SoCaiBai.giongHetLanTruoc(context, cauOn("2.26d", dong)))
-    }
-
-    @Test
-    fun lam_lai_that_thi_khong_bi_danh_dau() {
-        SoCaiBai.ghi(
-            context,
-            listOf(cauOn("2.26d", listOf("= x(x - 3)", "= x² - 3x"))),
-            mapOf("2.26d" to 2), now - 4 * ngay
-        )
-        // Lam lai lan nua thi chu viet khac di, may ngat dong khac di, doc ra khac.
-        assertFalse(
-            SoCaiBai.giongHetLanTruoc(context, cauOn("2.26d", listOf("= x(x-3)", "= x²-3x")))
-        )
-    }
-
-    @Test
-    fun chua_co_lan_dung_nao_thi_khong_co_gi_de_so() {
-        assertFalse(SoCaiBai.giongHetLanTruoc(context, cauOn("2.26d", listOf("= x(x - 3)"))))
-    }
-
-    @Test
-    fun may_khong_doc_duoc_dong_nao_thi_khong_ket_luan_gi() {
-        // Khong co dong nao de so thi khong duoc suy ra la chup lai: im lang o day
-        // nghia la bai van tu duyet nhu thuong.
-        SoCaiBai.ghi(
-            context, listOf(cauOn("2.26d", listOf("= x(x - 3)"))),
-            mapOf("2.26d" to 2), now - 4 * ngay
-        )
-        assertFalse(SoCaiBai.giongHetLanTruoc(context, cauOn("2.26d", emptyList())))
     }
 
     // ------------------------------------------------------ keo so cu ve

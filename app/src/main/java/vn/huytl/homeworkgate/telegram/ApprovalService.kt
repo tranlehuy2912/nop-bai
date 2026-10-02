@@ -1460,22 +1460,11 @@ class ApprovalService : Service() {
         // Hoi bang chinh cau vua cham chu khong bang de bai: cau nao con da khai thi
         // mang san ma sach, va ma sach thi hai lan nop deu nhu nhau. De bai chi con
         // dung cho bai ngoai sach.
-        /*
-         * Lan ON TAP di duong khac: cau von DA tra gio roi - do moi la dieu kien de
-         * duoc on. Loc bang [SoCaiBai.daTraGioCua] o day se vut sach ca xap.
-         *
-         * Cai loc o day la LICH HEN: on cau chua den hen thi khong ghi so, khong tra
-         * phut, con chi nhan mot cau bao chua den hen. Khong co cho nay thi chep lai
-         * hai chuc cau cu moi toi la mot duong kiem gio deu dan. Cau ngoai danh sach
-         * on (bai ngoai sach may tach them ra) cung roi o day, vi no khong bao gio
-         * den hen - xem [vn.huytl.homeworkgate.kho.KhoBai.cacCauDenHenOn].
-         */
-        val onTap = pham?.onTap == true
-        val moi = if (onTap) {
-            ket.cac.filter { SoCaiBai.denHenOn(this, it) }
-        } else {
-            ket.cac.filter { !SoCaiBai.daTraGioCua(this, it) }
-        }
+        //
+        // Truoc 2/10/2026 lan nop ON TAP (co PhamVi.onTap) di duong khac: chi giu cau dang
+        // den hen on, va nghi chup lai trang cu khi bai giong het lan truoc tung dong. Duong
+        // on chup anh bo ngay do (Ba Huy chon); on lai chi con lam tren may.
+        val moi = ket.cac.filter { !SoCaiBai.daTraGioCua(this, it) }
         val trung = ket.cac.size - moi.size
 
         /*
@@ -1536,19 +1525,6 @@ class ApprovalService : Service() {
          *    quay lai xem no nua.
          * Cau bao chac va dung, hay bao chua chac va sai, thi khong co gi de noi.
          */
-        /*
-         * Dau hoi rieng cua lan on tap.
-         *
-         * On tap cham lai mot cau DA lam dung, tuc la no thao mat cai khoa "moi cau
-         * chi tra gio mot lan". Chup lai trang vo cu thi may khong phan biet duoc, vi
-         * tren giay khong co dau thoi gian nao. Cai duoi day khong chan con, no chi
-         * thoi tu duyet va day sang Ba Huy mo anh ra nhin.
-         *
-         * Truoc 27/9/2026 con mot dau hoi nua: bai on phai viet but do. Ba Huy bo luat do.
-         */
-        val nghiChupLai = if (!onTap) emptyList()
-        else coDe.filter { SoCaiBai.giongHetLanTruoc(this, it) }
-
         val coKhai = pham?.daKhaiChac == true
         val chuaChac = pham?.chuaChac.orEmpty().toSet()
         val batNgo = if (!coKhai) emptyList()
@@ -1567,9 +1543,6 @@ class ApprovalService : Service() {
             }
         )
         than.append("\n")
-        if (onTap) {
-            than.append("• Ôn lại ${moi.size} câu từng sai\n")
-        }
         if (pham != null && pham.bai.isNotBlank()) {
             // Bang dieu khien doc dong nay de chep vao loi nho Claude, xem NhoClaude.conKhai
             // ben do. Truoc ngay 26/9/2026 dong nay ghi "Con khai:", ben do doc ca hai kieu.
@@ -1609,7 +1582,7 @@ class ApprovalService : Service() {
         // Ba Huy bam Duyet ben Telegram trong luc tablet dang xu ly ban cham: bai da bien khoi hang
         // cho. Tu duyet them lan nua la cong gio hai lan cho cung mot bai.
         val baDaXuLy = bai != null && gate.baiDangCho().none { it.id == bai.id }
-        val tuDuyet = bang.phut > 0 && !bang.canBaHuyXem && !baDaXuLy && nghiChupLai.isEmpty()
+        val tuDuyet = bang.phut > 0 && !bang.canBaHuyXem && !baDaXuLy
         if (tuDuyet && baiId != null && bai != null && gate.trongGioNgu()) {
             /*
              * Ba Huy dan ket qua Claude trong gio ngu. Ghi so va dong bai ngay bay gio, con
@@ -1650,11 +1623,6 @@ class ApprovalService : Service() {
             }
         } else if (baDaXuLy) {
             than.append("Ba Huy đã xử bài này trước khi $nguoiCham chấm xong nên không cộng thêm.")
-        } else if (nghiChupLai.isNotEmpty()) {
-            than.append("Chưa cấp giờ: bài ôn ")
-                .append(nghiChupLai.joinToString(", ") { it.ma })
-                .append(" giống hệt lần trước từng dòng, có thể là chụp lại trang cũ. ")
-                .append("Ba Huy xem ảnh giúp.")
         } else if (bang.canBaHuyXem) {
             than.append("Chưa cấp giờ: có chỗ $nguoiCham đọc chưa chắc. Ba Huy xem ảnh rồi duyệt giúp.")
         } else {
@@ -1706,7 +1674,7 @@ class ApprovalService : Service() {
         // Tran ngay cat bot thi so ghi so phut da tra that, xem LuatCongGio.chiaPhutDaCap.
         val phutTungCau = LuatCongGio.chiaPhutDaCap(bang, phutCap)
         val daGhi = SoCaiBai.ghi(
-            this, ghiVaoSo, if (daCap) phutTungCau else emptyMap(), onTap = onTap,
+            this, ghiVaoSo, if (daCap) phutTungCau else emptyMap(),
             chuaChac = if (coKhai) chuaChac else null,
             conNoiChung = pham?.conNoi.orEmpty(),
             deId = deId
@@ -1742,8 +1710,6 @@ class ApprovalService : Service() {
         // Xem [SoCaiBai.datLoiNhan].
         var tinVui = false
         val cauNhan = when {
-                nghiChupLai.isNotEmpty() ->
-                    "${getString(R.string.parent_name_cap)} đang xem lại bài ôn, chờ chút nhé."
                 bang.canBaHuyXem ->
                     "${getString(R.string.parent_name_cap)} đang xem lại bài, chờ chút nhé."
                 // Cau nay dung truoc cau "Bai tot": no noi ve dung cai kho nhat
@@ -1763,16 +1729,7 @@ class ApprovalService : Service() {
                 bang.phut > 0 && sai.isEmpty() ->
                     "$veGio Còn ${keTenCau(thieu)} thì chưa thấy bài làm trong ảnh.".trim()
                 bang.phut > 0 -> "$veGio Còn ${sai.size} câu sửa lại nhé.".trim()
-                // Cau bi loc ra o lan on tap la cau CHUA DEN HEN, khong phai cau
-                // "da on roi". Luat cu chi cho on mot lan, cau nay con sot lai tu do.
-                //
-                // Nhung con cau trong danh sach on ma anh khong co thi de nhanh "chua
-                // thay bai lam" ben duoi noi: cau bi loc ra luc do co the chi la cau
-                // ngoai danh sach, khong bao gio den hen, va cau "may nhac khi den luc"
-                // thanh mot loi hua khong ai giu.
-                onTap && moi.isEmpty() && trung > 0 && thieu.isEmpty() ->
-                    "Mấy câu này chưa đến hẹn ôn lại. Máy nhắc $con khi đến lúc nhé."
-                !onTap && moi.isEmpty() && trung > 0 ->
+                moi.isEmpty() && trung > 0 ->
                     "Mấy bài này chấm hôm trước rồi, làm bài mới thì mới được cộng giờ nhé."
                 // Ca xap chi co dap an: noi thang cho con biet phai chup them cai gi,
                 // dung de no ngoi doan vi sao nop ma khong duoc gi.

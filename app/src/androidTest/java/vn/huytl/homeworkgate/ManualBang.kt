@@ -511,8 +511,8 @@ class ManualBang {
      * Tu 29/9/2026 day chi con la luat duong chup anh (bai co giao, tran 45); tu 30/9/2026
      * khong con tron goi nen ban cham khong mang phan vo dan do nua. Tham so
      * "daCongLamThem" giu ten cu vi tools/web.py van gui ten do, nhung nghia moi la so
-     * phut chup anh da cong trong ngay (daCongAnhHomNay). "onTap" van nhan nhung bo qua:
-     * on lai da sang lam tren may, khong con di qua ham nay.
+     * phut chup anh da cong trong ngay (daCongAnhHomNay). Tham so "onTap" (o "lần này là ôn
+     * lại" o trang web) bo ngay 2/10/2026: on lai chi con lam tren may, khong di qua ham nay.
      */
     @Test
     fun conggio() {

@@ -797,7 +797,8 @@ object DongBo {
             put("tenNguon", pham.tenNguon)
             put("bai", pham.bai)
             put("mon", pham.mon)
-            put("onTap", pham.onTap)
+            // "onTap" (bai on chup anh) thoi ghi tu 2/10/2026, xem PhamVi. Bai cu tren Firestore
+            // van con truong do; Bang dieu khien cung thoi doc.
             // Lan nop lai cac cau sai cua bai nao. Bang dieu khien doc de dan Claude chi
             // cham cac cau trong danh sach, va ghi ro day la nop lai cua bai nao.
             if (pham.laSua) put("suaBai", pham.suaBai)

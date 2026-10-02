@@ -24,7 +24,6 @@ class BaiDaChamTest {
         "tenNguon" to "SGK Toán 8 — tập một",
         "bai" to "trang 47",
         "mon" to "Toán",
-        "onTap" to false,
         "cac" to listOf(
             mapOf(
                 "ma" to "2.33a", "cauId" to "toan8t1:2.33a",

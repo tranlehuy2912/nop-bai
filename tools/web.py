@@ -921,8 +921,7 @@ class Tay(BaseHTTPRequestHandler):
                                                    {"loi": "khong co ket qua"})(
                     chay_test(f"{PKG}.ManualBang#conggio",
                               cham=b64(than["cham"]),
-                              daCongLamThem=than.get("daCongLamThem", 0),
-                              onTap="1" if than.get("onTap") else "0"))))
+                              daCongLamThem=than.get("daCongLamThem", 0)))))
 
             if u.path == "/api/test":
                 return self._json(giu_app(lambda: chay_bo_test(than["lop"])))
