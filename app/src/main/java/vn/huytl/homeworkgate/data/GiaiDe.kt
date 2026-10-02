@@ -28,7 +28,7 @@ import vn.huytl.homeworkgate.kho.TraLoi
  * [LamTrenMay.cauLamThem], [LamTrenMay.cauLuyen]) va de kiem tra o day. Ten "Giải đề"
  * la Ba Huy dat, de khong lan voi dong "Kiểm tra bài" cua the hoc thuoc tren man chinh.
  *
- * BA LOAI DE:
+ * BON LOAI DE:
  *  - [LOAI_TUAN]: sang thu Bay, moi mon co SBT mot de, on cac bai lop vua hoc. Lop hoc
  *    xong mot chuong Toan thi de tuan do la muc "Ôn tập chương" cua SBT, von da la mot
  *    de kiem tra chuong. De de do toi thu Bay sau.
@@ -38,6 +38,11 @@ import vn.huytl.homeworkgate.kho.TraLoi
  *    ten cac phan nhu to de. Tu mo khi lop hoc toi pham vi cua de, moi mon mot de (tu
  *    1/10/2026 co ca de Toan, KHTN, pham vi tinh theo tung phan), con mo them duoc bang tay
  *    o trang Luyen tap, va Ba Huy mo tu Bang dieu khien. Xem [taoDeThi], [moDeThi].
+ *  - [LOAI_SGK] (tu 2/10/2026): bai tap SGK con tu chon o dong "Làm bài tập trong SGK" cua
+ *    trang Luyen tap (chon bai, chon cau), lam va nop nhu mot de nhung khong co dong ho, khong
+ *    co tin Telegram (Ba Huy chi doc nhat ky). Thay cho lam vo roi chup: Ba Huy chot bai SGK
+ *    Toan, KHTN, Tieng Anh lam tren may. Cau phai viet (khong co ban phim ghep) nam trong de
+ *    cho chup sau khi nop, xem [taoBaiSgk], [cauPhaiVietChuaGui].
  * Hai loai dau va de thi tu mo thi khong ai phai bam ra.
  *
  * CACH LAM (tu 29/9/2026). Ca de lam tren may bang ban phim ghep, khong chup phan tu luan
@@ -65,6 +70,7 @@ object GiaiDe {
     const val LOAI_TUAN = "TUAN"
     const val LOAI_KIEM_TRA = "KIEM_TRA"
     const val LOAI_DE_THI = "DE_THI"
+    const val LOAI_SGK = "SGK"
 
     /**
      * De thi mo ra ma con chua bat dau thi giu bay nhieu ngay. Het han ma chua nop thi luot
@@ -779,27 +785,119 @@ object GiaiDe {
     /** Tong sao toi da cua cac cau, ghi vao de luc tao. */
     private fun tongSao(cac: List<CauHoi>): Int = cac.sumOf { Ghep.doc(it.ghep)?.sao ?: 0 }
 
+    // ------------------------------------------------------------ bai tap SGK
+
+    /**
+     * Bai tap SGK mo ra giu bay nhieu nam, tuc la toi khi con nop. Ba Huy chon ngay 2/10/2026
+     * cho mo duoc nhieu bai cung luc: bai do xep dau man Chon bai de lam tiep, khong tu dong.
+     * Han that thi phai co, vi de con han moi giu cau cua no khoi Luyen tap va de khac
+     * ([KhoBai.cauTrongDeConHan]).
+     */
+    private const val NAM_GIU_BAI_SGK = 10
+
+    /**
+     * Mo mot bai tap SGK tu cac cau con vua chon ([vn.huytl.homeworkgate.ui.BaiSgkActivity]).
+     *
+     * De bat dau ngay luc tao: khong co the huong dan, khong co dong ho ([DeGiai.phutGoiY] la 0),
+     * con vao la lam. Sao, Kiem tra, Nop bai y nhu de lam tren may; nop thi cong phut theo sao,
+     * chung tran [LuatCongGio.TRAN_TREN_MAY] (Ba Huy chot 2/10/2026).
+     *
+     * @param cacBai ten cac bai con da chon, de dat ten de ("SGK Toán 8 tập một · Bài 2, 3").
+     * @param cauIds moi cau con chon, theo thu tu in. Cau co ban phim ghep lam tren may; cau
+     *   phai viet ([cauPhaiViet]) van nam trong de, de chup sau khi nop. Sao toi da chi tinh
+     *   cau lam tren may, nen [nop] va [GiaiDe.diem] tu bo qua cau phai viet.
+     * @return null khi khong cau nao lam duoc tren may: man chon cau mo thang camera.
+     */
+    fun taoBaiSgk(
+        context: Context,
+        sach: NganHang.Sach,
+        cacBai: List<String>,
+        cauIds: List<String>,
+        bayGio: Long = System.currentTimeMillis()
+    ): DeGiai? {
+        val kho = KhoBai.get(context)
+        val theoId = kho.cacCauTheoId(cauIds).associateBy { it.id }
+        val cac = cauIds.distinct().mapNotNull { theoId[it] }
+        val sao = tongSao(cac.filter { LamTrenMay.muc(context, it) != null })
+        if (sao <= 0) return null
+        val de = DeGiai(
+            id = "de-" + UUID.randomUUID().toString().take(8),
+            mon = sach.mon,
+            nguon = sach.nguon,
+            loai = LOAI_SGK,
+            khoa = "sgk:${sach.nguon}:$bayGio",
+            ten = "${sach.ten} · ${keTenBai(cacBai, sach.mon)}",
+            cauIds = cac.map { it.id },
+            phutGoiY = 0,
+            saoToiDa = sao,
+            taoLuc = bayGio,
+            hetHan = bayGio + NAM_GIU_BAI_SGK * MOT_NAM,
+            batDau = bayGio
+        )
+        return de.takeIf { kho.themDe(it) }
+    }
+
+    /**
+     * Bai tap SGK con dang lam do (chua nop) cua [mon], moi nhat truoc; [nguon] khac null thi chi
+     * cua quyen do. Cho dau man Chon bai va dong "Làm bài tập trong SGK" o trang Luyen tap.
+     */
+    fun baiSgkDangLam(
+        context: Context,
+        mon: String,
+        nguon: String? = null,
+        bayGio: Long = System.currentTimeMillis()
+    ): List<DeGiai> =
+        KhoBai.get(context).cacDeConHan(bayGio).filter {
+            it.loai == LOAI_SGK && !it.daNop && it.mon == mon && (nguon == null || it.nguon == nguon)
+        }.sortedByDescending { it.taoLuc }
+
+    /** Cau phai viet cua bai SGK: cau con chon ma khong lam duoc tren may, chup sau khi nop. */
+    fun cauPhaiViet(context: Context, de: DeGiai): List<CauHoi> =
+        cacCau(context, de).filter { LamTrenMay.muc(context, it) == null }
+
+    /**
+     * Cau phai viet chua gui anh. Da gui la cau nam trong mot bai chup dang cho cham
+     * ([KhaiChoCham.cauChoCham]), hay da co dong so cai tu luc nop de (da cham, dung hay sai: sai
+     * thi con nop lai o man Ket qua nhu moi bai chup). Bai chup gui hong thi cau lai hien, de con
+     * chup lai. Rong la khong con gi phai chup.
+     */
+    fun cauPhaiVietChuaGui(context: Context, de: DeGiai): List<CauHoi> {
+        val viet = cauPhaiViet(context, de)
+        if (viet.isEmpty() || !de.daNop) return viet
+        val cho = KhaiChoCham.cauChoCham(context)
+        val daCham = KhoBai.get(context).cacCauDaNop(de.nopLuc)
+        return viet.filter { it.id !in cho && it.id !in daCham }
+    }
+
     // ------------------------------------------------------------ doc de
 
     /**
      * Cac de con viec cho con: chua nop, hay da nop trac nghiem ma chua gui tu luan. De da
      * bat dau thi het han van cho nop them [GIO_NOP_MUON] gio.
+     *
+     * Khong ke bai tap SGK ([LOAI_SGK]): bai do chi o "Làm bài tập trong SGK" ([baiSgkDangLam]),
+     * khong len man chinh hay cac dong de cua trang Luyen tap.
      */
     fun dangMo(context: Context, bayGio: Long = System.currentTimeMillis()): List<DeGiai> =
         KhoBai.get(context).cacDeConHan(bayGio - GIO_NOP_MUON * 60 * 60_000L).filter { de ->
             val conHan = de.hetHan > bayGio ||
                 (de.daBatDau && de.hetHan + GIO_NOP_MUON * 60 * 60_000L > bayGio)
-            conHan && !xongViecCuaCon(context, de)
+            de.loai != LOAI_SGK && conHan && !xongViecCuaCon(context, de)
         }.sortedBy { it.hetHan }
 
-    /** De da cham xong trong ngay hom nay, de man chinh hien dong da xong kem diem. */
+    /**
+     * De da cham xong trong ngay hom nay, de man chinh hien dong da xong kem diem. Khong ke bai
+     * tap SGK, cung ly do voi [dangMo].
+     */
     fun xongHomNay(context: Context, bayGio: Long = System.currentTimeMillis()): List<DeGiai> {
         val homNay = ngayCua(bayGio)
         val kho = KhoBai.get(context)
         // Xet ngay truoc: daCoDiem doc cau cua de tu kho, ma phan lon de khong xong hom nay.
         return (kho.cacDeTu(bayGio - 30 * MOT_NGAY) + kho.cacDeConHan(bayGio - 2 * MOT_NGAY))
             .distinctBy { it.id }
-            .filter { de -> ngayCua(maxOf(de.nopLuc, de.chamLuc)) == homNay && daCoDiem(context, de) }
+            .filter { de ->
+                de.loai != LOAI_SGK && ngayCua(maxOf(de.nopLuc, de.chamLuc)) == homNay && daCoDiem(context, de)
+            }
     }
 
     fun theoId(context: Context, id: String): DeGiai? = KhoBai.get(context).deTheoId(id)
@@ -941,27 +1039,46 @@ object GiaiDe {
      */
     fun nop(context: Context, de: DeGiai, bayGio: Long = System.currentTimeMillis()): KetQuaNop {
         if (de.daNop) return KetQuaNop(de, de.saoDat.coerceAtLeast(0), de.saoToiDa, 0, 0, 0)
+        val sgk = de.loai == LOAI_SGK
+        val loai = if (sgk) LamTrenMay.Loai.SGK else LamTrenMay.Loai.GIAI_DE
+        // Cau phai viet cua bai SGK khong co khung ghep (muc null) nen bo qua o day: chung di
+        // duong chup anh sau khi nop, xem [cauPhaiVietChuaGui].
         val ghi = cacCau(context, de).mapNotNull { c ->
             val m = LamTrenMay.muc(context, c) ?: return@mapNotNull null
             val l = luotCua(de, c.id, m.ghep.sao)
             val xong = if (l.xong) l else l.copy(xong = true, dung = false)
-            LamTrenMay.ghi(context, m, xong, traLoiCua(de, c.id), LamTrenMay.Loai.GIAI_DE, deId = de.id, bayGio = bayGio)
+            LamTrenMay.ghi(context, m, xong, traLoiCua(de, c.id), loai, deId = de.id, bayGio = bayGio)
         }
         val sao = ghi.sumOf { it.sao }
         // Chot dong ho truoc khi ghi luc nop: [DongHoDe.roi] bo qua de da nop.
         DongHoDe.roi(context, de, bayGio)
-        val moi = de.copy(nopLuc = bayGio, saoDat = sao)
+        // Bai SGK het han ngay luc nop: han muoi nam chi de giu bai dang lam do. De con han thi
+        // cau cua no nam ngoai Luyen tap ([KhoBai.cauTrongDeConHan]), ma cau sai trong bai phai
+        // ra lai o Luyen tap sau 24 gio nhu moi cau khac.
+        val moi = de.copy(nopLuc = bayGio, saoDat = sao, hetHan = if (sgk) bayGio else de.hetHan)
         KhoBai.get(context).luuDe(moi)
-        DayLog.add(context, tomTat(context, moi))
-        return KetQuaNop(moi, sao, de.saoToiDa, ghi.sumOf { it.phutCap }, ghi.sumOf { it.phutQuy }, ghi.sumOf { it.phutGiu })
+        val phut = ghi.sumOf { it.phutCap }
+        val quy = ghi.sumOf { it.phutQuy }
+        // Bai SGK khong nhan tin Telegram (Ba Huy chi doc nhat ky, chot 2/10/2026), nen dong nhat
+        // ky ghi luon so phut va cau con phai chup.
+        val them = if (!sgk) "" else buildString {
+            append(", +$phut phút")
+            if (quy > 0) append(" (vào quỹ $quy phút)")
+            val viet = cauPhaiViet(context, moi).size
+            if (viet > 0) append(", còn $viet câu phải viết chụp ảnh")
+        }
+        DayLog.add(context, tomTat(context, moi) + them)
+        return KetQuaNop(moi, sao, de.saoToiDa, phut, quy, ghi.sumOf { it.phutGiu })
     }
 
-    /** "Giải đề Toán", "Ôn kiểm tra KHTN", "Đề thi thử Tiếng Anh". */
+    /** "Giải đề Toán", "Ôn kiểm tra KHTN", "Đề thi thử Tiếng Anh", "Làm bài tập trong SGK · Toán". */
     fun tenDe(de: DeGiai): String {
         val mon = tenMon(de.mon)
         return when (de.loai) {
             LOAI_KIEM_TRA -> "Ôn kiểm tra $mon"
             LOAI_DE_THI -> "Đề thi thử $mon"
+            // Ba Huy chon ngay 2/10/2026, trung ten dong o trang Luyen tap.
+            LOAI_SGK -> "Làm bài tập trong SGK · $mon"
             else -> "Giải đề $mon"
         }
     }
@@ -1117,7 +1234,10 @@ object GiaiDe {
      */
     fun tomTat(context: Context, de: DeGiai): String {
         if (de.trenMay) {
-            val lam = if (de.daBatDau && de.daNop) (DongHoDe.daLamMs(context, de) / 60_000L).toInt() else -1
+            // Bai tap SGK khong co dong ho: khong ghi "làm bao lâu".
+            val lam = if (de.daBatDau && de.daNop && de.loai != LOAI_SGK) {
+                (DongHoDe.daLamMs(context, de) / 60_000L).toInt()
+            } else -1
             val gio = when {
                 lam < 0 -> ""
                 lam > de.phutGoiY -> ", làm $lam phút (gợi ý ${de.phutGoiY}, quá ${lam - de.phutGoiY} phút)"

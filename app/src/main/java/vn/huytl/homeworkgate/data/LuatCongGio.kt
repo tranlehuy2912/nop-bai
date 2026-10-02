@@ -8,7 +8,7 @@ package vn.huytl.homeworkgate.data
  *
  *  - duong chup anh (bai co giao, ke ca bai co giao le va "Bài khác"): toi da
  *    [TRAN_ANH] phut;
- *  - bai lam tren may (lam them, luyen cho hay vap, Giai de): [TRAN_TREN_MAY];
+ *  - bai lam tren may (luyen tap, luyen cho hay vap, Giai de, bai tap SGK): [TRAN_TREN_MAY];
  *  - on lai theo hen, cung lam tren may: [TRAN_ON_MOI_NGAY];
  *  - Kiem tra bai: [HocThuoc.TRAN_PHUT_MOI_NGAY]; Do tu vung: tran cua [LuatTuVung].
  *
@@ -18,7 +18,9 @@ package vn.huytl.homeworkgate.data
  *
  * DUONG CHUP ANH CHI CON BAI CO GIAO. Bai co giao le, phieu photo, bai mon chua co sach
  * deu la bai co giao (Ba Huy chot 29/9/2026). Moi cau tinh le: mot dong mot phut, trac
- * nghiem mot phut mot cau, khong san khong tran tung cau.
+ * nghiem mot phut mot cau, khong san khong tran tung cau. Tu 2/10/2026 bai SGK Toan, KHTN,
+ * Tieng Anh lam tren may ([GiaiDe.LOAI_SGK]); duong chup anh chi con "Bài khác", mon chua co
+ * sach, Ngu van, va cau SGK phai viet (ve hinh, chung minh dai) khong co ban phim ghep.
  *
  * KHONG CON TRON GOI (Ba Huy bo ngay 30/9/2026). Truoc do lam het bai trong vo dan do thi
  * duoc tron goi 45 phut, va vo dan do song toi trua hom sau de may biet bai nao la bai co
@@ -53,12 +55,15 @@ object LuatCongGio {
     const val PHUT_MOI_CAU_TRAC_NGHIEM = 1
 
     /**
-     * Tran moi ngay cua bai lam tren may: lam them, luyen cho hay vap, Giai de.
+     * Tran moi ngay cua bai lam tren may: luyen tap, luyen cho hay vap, Giai de, bai tap SGK.
      *
      * Khong co tran thi mot quyen bai tap nang cao la ca buoi toi choi game. Phan vuot
      * tran khong mat: vao "Quỹ giờ chơi", Ba Huy cap khi nao thi con choi khi do.
+     *
+     * 120 phut tu 2/10/2026 (Ba Huy chot, truoc do 90): bai SGK co giao chuyen tu chup anh sang
+     * lam tren may va chung tran nay, nen tran nang them 30 phut cho phan bai co giao.
      */
-    const val TRAN_TREN_MAY = 90
+    const val TRAN_TREN_MAY = 120
 
     /**
      * Tran rieng cho duong ON LAI tren may, moi ngay.
@@ -72,10 +77,11 @@ object LuatCongGio {
 
     /**
      * Tran ngay: tong tran cua moi phan. Chi de hien ra man hinh, khong chan gi, vi tung
-     * phan da tu chan. Ba Huy chot 215 phut ngay 29/9/2026.
+     * phan da tu chan. Ba Huy chot 215 phut ngay 29/9/2026; tu 2/10/2026 la 245 vi tran lam
+     * tren may len 120.
      *
      * Tu 1/10/2026 man hinh cong them gio nguoi lon cho vao ca hai so: kiem 60 phut, ba cho
-     * 30 thi ghi "Hôm nay được chơi 90/245 phút". Xem [vn.huytl.homeworkgate.ui.ThanhNgay].
+     * 30 thi ghi "Hôm nay được chơi 90/275 phút". Xem [vn.huytl.homeworkgate.ui.ThanhNgay].
      */
     val TRAN_NGAY: Int
         get() = TRAN_ANH + TRAN_TREN_MAY + TRAN_ON_MOI_NGAY + HocThuoc.TRAN_PHUT_MOI_NGAY +

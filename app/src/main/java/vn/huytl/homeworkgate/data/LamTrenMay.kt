@@ -37,7 +37,8 @@ object LamTrenMay {
     private const val MOT_NGAY = 24L * 60 * 60_000L
     private const val MOT_NAM = 365L * MOT_NGAY
 
-    enum class Loai { LAM_THEM, ON, LUYEN, GIAI_DE }
+    /** SGK: bai tap SGK con chon o "Làm bài tập trong SGK", lam va nop nhu mot de ([GiaiDe.LOAI_SGK]). */
+    enum class Loai { LAM_THEM, ON, LUYEN, GIAI_DE, SGK }
 
     /**
      * Mot cau da doc san cach ghep, kem tinh trang vong hien tai.
@@ -133,7 +134,7 @@ object LamTrenMay {
         // 3. Cau moi trong phan da hoc.
         if (ra.size < gioiHan) {
             val xong = kho.cacCauDaXong(han)
-            val theoBai = NganHang.cauSbtDaHoc(context, mon)
+            val theoBai = NganHang.cauSachDaHoc(context, mon)
                 .filter {
                     it.lamTrenMay && it.id !in luot && it.id !in xong && it.id !in trongDe &&
                         !it.bai.startsWith("Test Yourself") && cuaPhan(it)
@@ -229,13 +230,14 @@ object LamTrenMay {
      * 2/10/2026). Dem tren ca phan, ke ca bai lop chua hoc: tong dung yen, khong nhay khi con
      * danh dau them bai. Khoa la [PhanHoc.Phan.ma]; Tieng Anh khong chia phan nen khoa la "".
      *
-     * Chi cau sach bai tap cua cac bai co so: muc "Ôn tập chương", "Luyện tập chung", "Test
-     * Yourself" danh cho Giai de, khong bao gio ra o dong Luyen tap nen khong dem.
+     * Chi cau cua cac bai co so, trong SGK va sach bai tap ([NganHang.sachLuyenTapCua], tu
+     * 2/10/2026 ca SGK): muc "Ôn tập chương", "Luyện tập chung", "Test Yourself" khong bao gio
+     * ra o dong Luyen tap nen khong dem.
      */
     fun demTheoPhan(context: Context, mon: String): Map<String, Pair<Int, Int>> {
         val kho = KhoBai.get(context)
         val dung = kho.cacCauDaXong(0L)
-        val cac = NganHang.sachBaiTapCua(mon).flatMap { kho.cacCauCuaNguon(it.nguon) }
+        val cac = NganHang.sachLuyenTapCua(mon).flatMap { kho.cacCauCuaNguon(it.nguon) }
             .filter { it.lamTrenMay && !it.bai.startsWith("Test Yourself") }
         val ra = HashMap<String, Pair<Int, Int>>()
         cac.forEach { c ->
@@ -404,6 +406,7 @@ object LamTrenMay {
     private fun nhanCong(loai: Loai, onTap: Boolean): String = when {
         onTap -> "Ôn lại"
         loai == Loai.GIAI_DE -> "Giải đề"
+        loai == Loai.SGK -> "Bài tập SGK"
         else -> "Luyện tập"
     }
 
@@ -417,6 +420,7 @@ object LamTrenMay {
             Loai.ON -> "Ôn lại"
             Loai.LUYEN -> "Luyện chỗ hay vấp"
             Loai.GIAI_DE -> "Giải đề"
+            Loai.SGK -> "Làm bài tập trong SGK"
             Loai.LAM_THEM -> "Luyện tập"
         }
         val tenMon = if (mon.isBlank()) "" else " " + GiaiDe.tenMon(mon)

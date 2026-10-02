@@ -1,11 +1,6 @@
 package vn.huytl.homeworkgate.ui
 
-import android.content.Intent
-import android.graphics.Typeface
 import android.os.Bundle
-import android.text.Spannable
-import android.text.SpannableStringBuilder
-import android.text.style.StyleSpan
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.LinearLayout
@@ -24,6 +19,7 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import vn.huytl.homeworkgate.R
 import vn.huytl.homeworkgate.data.KhaiChoCham
+import vn.huytl.homeworkgate.data.LamTrenMay
 import vn.huytl.homeworkgate.data.SoCaiBai
 import vn.huytl.homeworkgate.data.ThoiKhoaBieu
 import vn.huytl.homeworkgate.databinding.StActivityChonBaiBinding
@@ -224,19 +220,33 @@ class ChonBaiActivity : AppCompatActivity() {
             .show()
     }
 
+    /**
+     * Mot dong mon. Toan, KHTN, Tieng Anh tu 2/10/2026 khong con chup bai SGK (Ba Huy chot): bai
+     * SGK lam tren may, man nay chi con dong dan sang "Làm bài tập trong SGK" va "Bài khác". Mon
+     * lam tren may ma chua co SGK trong may (Tieng Anh luc viet) thi khong con quyen nao de chon
+     * (sach bai tap thi co khong giao), bam la chup thang nhu mon chua co sach.
+     */
     private fun themMon(ten: String) {
         val coSach = NganHang.coSach(ten)
+        val sgkTrenMay = ten in LamTrenMay.MON
+        val coSgk = NganHang.sachGiaoKhoaCua(ten).isNotEmpty()
         themDong(
             ten = ten,
-            phu = if (coSach) "Có sách trong máy — chọn được từng câu" else null,
+            phu = when {
+                !coSach -> null
+                sgkTrenMay && coSgk -> "Bài SGK làm trên máy, bài khác chụp ảnh"
+                sgkTrenMay -> "Chụp bài"
+                else -> "Có sách trong máy — chọn được từng câu"
+            },
             huyHieuMon = ten
         ) {
             mon = ten
-            if (coSach) {
+            if (coSach && (!sgkTrenMay || coSgk)) {
                 buoc = Buoc.SACH
                 veLai()
             } else {
-                // Mon chua nap sach: khong co gi de chon nua, di thang sang chup.
+                // Mon chua nap sach, hay mon lam tren may chua co SGK: khong co gi de chon nua,
+                // di thang sang chup.
                 chupTuDo()
             }
         }
@@ -254,6 +264,8 @@ class ChonBaiActivity : AppCompatActivity() {
     private fun veSach() {
         binding.tieuDe.text = "Bài $mon lấy ở đâu?"
         binding.phuDe.text = "Chọn đúng quyển và trang, máy chấm chắc hơn."
+
+        if (mon in LamTrenMay.MON) return veSachTrenMay()
 
         val quyen = NganHang.sachCua(mon)
         quyen.forEach { s ->
@@ -283,6 +295,28 @@ class ChonBaiActivity : AppCompatActivity() {
 
         // Lam them khong con chup anh (29/9/2026): no la bai lam tren may, dong cua no nam
         // ngoai man chinh. Man nay chi con bai trong vo dan do.
+    }
+
+    /**
+     * Toan, KHTN, Tieng Anh (2/10/2026, Ba Huy chot): dong SGK mo thang "Làm bài tập trong SGK"
+     * ([BaiSgkActivity]), cung mot cho voi dong o trang Luyen tap - hai cua dan ve mot cho. Bo
+     * hai dong sach bai tap vi co khong giao sach bai tap. "Bài khác" van chup, va anh van di
+     * Bang dieu khien nho Claude cham.
+     */
+    private fun veSachTrenMay() {
+        themDong(
+            ten = "Bài trong SGK",
+            phu = "Làm trên máy, mở Luyện tập › Làm bài tập trong SGK"
+        ) {
+            BaiSgkActivity.mo(this, mon)
+            // Dong man khai bai: lam xong bai SGK, bam quay lai thi ve man chinh, khong ve lai
+            // giua chung man nay.
+            finish()
+        }
+        themDong(
+            ten = "Bài khác",
+            phu = "Vở bài tập, phiếu photo, đề cô cho riêng · chụp ảnh"
+        ) { chupTuDo() }
     }
 
     // ---------------------------------------------------------------- buoc trang
@@ -415,31 +449,7 @@ class ChonBaiActivity : AppCompatActivity() {
         }
     }
 
-    /**
-     * Mot dong trong danh sach cau: nhan to dam o tren, de bai o duoi.
-     *
-     * TO DAM CHU KHONG THEM DAU NGAN. Hai phan nay khac loai han nhau - nhan la cho
-     * TIM trong sach, de bai la cai PHAI LAM - nen cho chung khac nhau ve net chu thi
-     * mat nhin ra ngay, khong phai doc mot dau cham giua roi tu hieu. Doi lai, mot ky
-     * tu ngan nam giua hai doan chu dai thi lot thom, va do la ban truoc.
-     *
-     * Dam cua nhan lay do dai tu chinh [CauHoi.nhan] chu khong di tim ky tu xuong
-     * dong: de bai cua vai cau co san dau xuong dong trong do, tim ky tu thi to dam
-     * nham ca doan dau cua de.
-     */
-    private fun dongCau(
-        cau: CauHoi,
-        them: SpannableStringBuilder.() -> Unit = {}
-    ): CharSequence =
-        // So mu doi ngay luc hien, chu trong kho van giu dau "^". Xem [SoMu].
-        SpannableStringBuilder(SoMu.hienDe(cau.dongChon(), cau.mon)).apply {
-            setSpan(
-                StyleSpan(Typeface.BOLD), 0, SoMu.hien(cau.nhan()).length,
-                Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
-            )
-            them()
-        }
-
+    /** Dong cau: nhan to dam o tren, de bai o duoi. Tu 2/10/2026 nam o [MoChup.dongCau]. */
     private fun themCau(cau: CauHoi) {
         val dong = LayoutInflater.from(this)
             .inflate(R.layout.st_dong_cau_chep, binding.danhSach, false)
@@ -448,7 +458,7 @@ class ChonBaiActivity : AppCompatActivity() {
         val sua = cau.id in canSua
         val cho = cau.id in choCham
 
-        o.text = dongCau(cau) {
+        o.text = MoChup.dongCau(cau) {
             when {
                 xong -> append("\n✓ đã tính giờ rồi")
                 cho -> append("\n… đang chờ chấm")
@@ -542,80 +552,10 @@ class ChonBaiActivity : AppCompatActivity() {
     }
 
     /**
-     * Truoc khi chup, hoi mot cau: cau nao con thay chua chac.
-     *
-     * VI SAO HOI. Cham bai cho biet con lam dung hay sai. Cau hoi nay cho biet mot
-     * thu khac va kho hon: con co BIET minh dang biet gi khong. Cau bao chac ma sai
-     * la cho nguy hiem nhat - con se khong quay lai xem no nua. Cau bao chua chac ma
-     * dung thi nguoc lai, do la cho con dang tu danh gia thap minh.
-     *
-     * KHONG DINH GI DEN SO PHUT, va phai giu dung nhu vay. Gan thuong vao "doan
-     * dung" thi lan sau con khai theo cai co loi chu khong theo cai no nghi, va cau
-     * hoi mat sach gia tri.
-     *
-     * Chi hoi khi danh sach con ngan. Mot trang trac nghiem ba muoi cau ma bat tich
-     * tung cau thi cau hoi tot den may cung thanh mot cai cua ai.
+     * Hoi cau chua chac roi mo camera, xem [MoChup.mo]. Tach ra [MoChup] ngay 2/10/2026 de man bai
+     * tap SGK ([BaiSgkActivity], [GiaiDeActivity]) chup cau phai viet cung mot duong voi man nay.
      */
-    private fun moManChup(pham: PhamVi) {
-        if (pham.theoSach && pham.cauIds.size in 1..MAX_HOI_CHAC) {
-            return hoiChuaChac(pham)
-        }
-        moCamera(pham)
-    }
-
-    /**
-     * Tich nhung cau con thay chua chac.
-     *
-     * Danh sach dung chinh o tich cua man ben ngoai chu khong dung
-     * setMultiChoiceItems: dong mac dinh cua hop thoai cat de bai o dong thu hai, ma
-     * de toan thi phan quan trong hay nam o cuoi. Con phai doc duoc ca cau moi biet
-     * minh chac hay khong.
-     *
-     * MOT NUT DI TIEP. Truoc day o day co hai nut - "Chup bai" va "Con chac het" -
-     * ma khong tich gi roi bam cai nao cung ra ket qua y het nhau. Khong tich gi da
-     * co nghia la con tu tin dung het, khong can mot nut rieng de noi dieu do.
-     */
-    private fun hoiChuaChac(pham: PhamVi) {
-        val cac = KhoBai.get(this).cacCauTheoId(pham.cauIds)
-        if (cac.isEmpty()) return moCamera(pham)
-        val tick = BooleanArray(cac.size)
-
-        val cot = LinearLayout(this).apply {
-            orientation = LinearLayout.VERTICAL
-            val p = (12 * resources.displayMetrics.density).toInt()
-            setPadding(p, 0, p, 0)
-        }
-
-        cac.forEachIndexed { i, cau ->
-            val o = LayoutInflater.from(this)
-                .inflate(R.layout.st_dong_cau, cot, false) as MaterialCheckBox
-            o.text = dongCau(cau)
-            o.setOnCheckedChangeListener { _, c -> tick[i] = c }
-            cot.addView(o)
-        }
-
-        MaterialAlertDialogBuilder(this)
-            .setTitle("Trong những câu dưới đây, có câu nào Lê Hòa không tự tin làm đúng không?")
-            .setView(ScrollView(this).apply { addView(cot) })
-            .setPositiveButton("Chụp bài để gửi") { _, _ ->
-                moCamera(
-                    pham.copy(
-                        chuaChac = cac.filterIndexed { i, _ -> tick[i] }.map { it.id },
-                        daKhaiChac = true
-                    )
-                )
-            }
-            .setNegativeButton(R.string.cancel, null)
-            .show()
-    }
-
-    private fun moCamera(pham: PhamVi) {
-        daGui = true
-        startActivity(
-            Intent(this, CaptureActivity::class.java)
-                .putExtra(CaptureActivity.EXTRA_PHAM, pham.sangJson())
-        )
-    }
+    private fun moManChup(pham: PhamVi) = MoChup.mo(this, pham) { daGui = true }
 
     // --------------------------------------------------------------------- ve vat
 
@@ -624,16 +564,6 @@ class ChonBaiActivity : AppCompatActivity() {
             .inflate(R.layout.st_dong_chuong, binding.danhSach, false) as TextView
         t.text = ten
         binding.danhSach.addView(t)
-    }
-
-    companion object {
-        /**
-         * Nhieu hon bay nhieu cau thi khong hoi "chua chac" nua.
-         *
-         * Mot trang trac nghiem ba muoi cau ma bat tich tung cau la mot cai cua ai
-         * dung truoc man chup, va con se bam bua cho xong.
-         */
-        private const val MAX_HOI_CHAC = 12
     }
 
     /** Tra ve chinh dong vua them, de cho nao co so lieu ve sau con dien vao. */

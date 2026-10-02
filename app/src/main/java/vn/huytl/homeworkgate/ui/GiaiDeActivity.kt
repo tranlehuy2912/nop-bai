@@ -63,6 +63,11 @@ import vn.huytl.homeworkgate.telegram.Notifier
  *
  * KHONG HIEN DAP AN, ke ca sau khi nop. Cau sai di vao dong "Sửa N câu" ngoai man chinh
  * nhu moi cau khac, va chu cai dung ma hien ra o day thi viec sua chi con la chep lai.
+ *
+ * BAI TAP SGK ([GiaiDe.LOAI_SGK], 2/10/2026): cung man nay, bo the huong dan, bo dong ho, khong
+ * nhan tin Telegram luc nop (Ba Huy chi doc nhat ky). Cau phai viet hien mot the khong co ban
+ * phim; nop xong thi the cuoi co nut chup cac cau do ([MoChup]), anh di Bang dieu khien nho
+ * Claude cham nhu moi bai chup. Gui roi thi nut thanh dong "đã gửi".
  */
 class GiaiDeActivity : AppCompatActivity() {
 
@@ -84,6 +89,12 @@ class GiaiDeActivity : AppCompatActivity() {
 
     /** Ket qua de lam tren may vua nop, de hien "+N" o the cuoi. */
     private var vuaNopMay: GiaiDe.KetQuaNop? = null
+
+    /** Bai tap SGK: id cac cau phai viet, va cac cau phai viet chua gui anh (doc moi lan vao). */
+    private var phaiViet: Set<String> = emptySet()
+    private var vietChuaGui: List<CauHoi> = emptyList()
+
+    private val laSgk: Boolean get() = de?.loai == GiaiDe.LOAI_SGK
 
     /**
      * Muc hinh an cua tung bai (1/10/2026), khoa theo ma de va bai ([khoaHinh]). Giu o day thi
@@ -123,10 +134,16 @@ class GiaiDeActivity : AppCompatActivity() {
         super.onResume()
         val id = intent.getStringExtra(EXTRA_DE) ?: return finish()
         lifecycleScope.launch {
+            val ct = this@GiaiDeActivity
             val nap = withContext(Dispatchers.IO) {
-                val d = GiaiDe.theoId(this@GiaiDeActivity, id) ?: return@withContext null
-                khungDe = GiaiDe.maDeThi(d)?.let { DeThi.theoMa(this@GiaiDeActivity, it) }
-                Triple(d, GiaiDe.cacCau(this@GiaiDeActivity, d), d.ketTuLuan)
+                val d = GiaiDe.theoId(ct, id) ?: return@withContext null
+                khungDe = GiaiDe.maDeThi(d)?.let { DeThi.theoMa(ct, it) }
+                if (d.loai == GiaiDe.LOAI_SGK) {
+                    // Doc lai moi lan vao: vua chup xong cau phai viet thi nut chup thanh "đã gửi".
+                    phaiViet = GiaiDe.cauPhaiViet(ct, d).map { it.id }.toSet()
+                    vietChuaGui = GiaiDe.cauPhaiVietChuaGui(ct, d)
+                }
+                Triple(d, GiaiDe.cacCau(ct, d), d.ketTuLuan)
             }
             if (nap == null) return@launch finish()
             de = nap.first
@@ -135,8 +152,9 @@ class GiaiDeActivity : AppCompatActivity() {
             // Doc xong co the ve sau onPause (con vua bam ra ngoai): luc do dung chay dong
             // ho, khong thi nhip mot giay tu dat lai mai va giu man da dong trong bo nho. Dong
             // ho cua de (DongHoDe) cung vay: vao() luc man da khuat thi khong con ai goi roi().
+            // Bai tap SGK khong co dong ho.
             val dangHien = lifecycle.currentState.isAtLeast(androidx.lifecycle.Lifecycle.State.RESUMED)
-            if (dangHien) DongHoDe.vao(this@GiaiDeActivity, nap.first)
+            if (dangHien && !laSgk) DongHoDe.vao(ct, nap.first)
             ve()
             tay.removeCallbacks(nhip)
             if (dangHien) tay.post(nhip)
@@ -146,7 +164,7 @@ class GiaiDeActivity : AppCompatActivity() {
     override fun onPause() {
         tay.removeCallbacks(nhip)
         // Man de khuat: tat man hinh, sang app khac, quay ra man chinh. Dong ho dung o day.
-        de?.let { DongHoDe.roi(this, it) }
+        de?.takeIf { it.loai != GiaiDe.LOAI_SGK }?.let { DongHoDe.roi(this, it) }
         super.onPause()
     }
 
@@ -160,8 +178,9 @@ class GiaiDeActivity : AppCompatActivity() {
     private fun ve() {
         val d = de ?: return
         b.tieuDe.text = GiaiDe.tenDe(d)
-        b.phuDe.text = "${d.ten} · ${cacCau.size} câu · khoảng ${d.phutGoiY} phút" +
-            GiaiDe.ngayKiemTra(d)
+        // Bai tap SGK khong co gio goi y: "SGK Toán 8 tập một · Bài 2 · 3 câu".
+        b.phuDe.text = if (laSgk) "${d.ten} · ${cacCau.size} câu"
+        else "${d.ten} · ${cacCau.size} câu · khoảng ${d.phutGoiY} phút" + GiaiDe.ngayKiemTra(d)
         b.danhSach.removeAllViews()
         nutChu.clear()
         if (d.trenMay) return veTrenMay(d)
@@ -196,7 +215,10 @@ class GiaiDeActivity : AppCompatActivity() {
             b.danhSach.addView(khung)
             return
         }
-        if (dt != null) veDeThi(d, dt) else cacCau.forEachIndexed { i, c -> theCauTrenMay("Câu ${i + 1} · ${c.nhan()}", c, d) }
+        if (dt != null) veDeThi(d, dt) else cacCau.forEachIndexed { i, c ->
+            val dau = "Câu ${i + 1} · ${c.nhan()}"
+            if (c.id in phaiViet) theCauPhaiViet(dau, c) else theCauTrenMay(dau, c, d)
+        }
         val khung = theTrang()
         if (!d.daNop) {
             khung.addView(nut("Nộp bài") { hoiNopTrenMay() })
@@ -213,6 +235,7 @@ class GiaiDeActivity : AppCompatActivity() {
                     dem(top = 6)
                 })
             }
+            if (laSgk) veChupPhaiViet(khung, d)
         }
         b.danhSach.addView(khung)
     }
@@ -428,6 +451,49 @@ class GiaiDeActivity : AppCompatActivity() {
         b.danhSach.addView(the)
     }
 
+    /**
+     * The cau phai viet cua bai tap SGK: de bai, khong co ban phim. Con lam ra vo; nop xong thi
+     * chup o the cuoi ([veChupPhaiViet]).
+     */
+    private fun theCauPhaiViet(dauThe: String, c: CauHoi) {
+        val the = theTrang()
+        the.addView(chu(dauThe, 14f, mauChu = R.color.ink_soft))
+        the.addView(chu(SoMu.hienDe(c.de, c.mon), 17f).apply { dem(top = 8) })
+        the.addView(chu("Câu phải viết: làm ra vở, nộp bài xong thì chụp ảnh.", 15f, mauChu = R.color.wait).apply {
+            dem(top = 10)
+        })
+        b.danhSach.addView(the)
+    }
+
+    /**
+     * The cuoi cua bai tap SGK da nop: con cau phai viet chua gui thi co nut chup, gui roi thi mot
+     * dong noi dang cho cham. Anh di dung duong chup cua man khai bai ([MoChup]), Ba Huy nho Claude
+     * cham o Bang dieu khien (Ba Huy chot 2/10/2026).
+     */
+    private fun veChupPhaiViet(khung: LinearLayout, d: DeGiai) {
+        if (phaiViet.isEmpty()) return
+        if (vietChuaGui.isEmpty()) {
+            khung.addView(chu("Đã gửi câu phải viết, chờ Ba Huy nhờ Claude chấm.", 15f, mauChu = R.color.ink_soft).apply {
+                dem(top = 10)
+            })
+            return
+        }
+        khung.addView(chu("Còn ${vietChuaGui.size} câu phải viết", 16f, dam = true).apply { dem(top = 12) })
+        khung.addView(nut("Chụp câu phải viết") {
+            val sach = NganHang.sachTheoNguon(d.nguon)
+            MoChup.mo(
+                this,
+                PhamVi(
+                    mon = sach?.mon ?: d.mon,
+                    nguon = d.nguon,
+                    tenNguon = sach?.ten.orEmpty(),
+                    bai = d.ten.substringAfter(" · ", d.ten),
+                    cauIds = vietChuaGui.map { it.id }
+                )
+            )
+        }.apply { dem(top = 8) })
+    }
+
     private fun hoiNopTrenMay() {
         val d = de ?: return
         val chuaXong = cacCau.count { c ->
@@ -446,20 +512,26 @@ class GiaiDeActivity : AppCompatActivity() {
     private fun nopTrenMay() {
         val d = de ?: return
         lifecycleScope.launch {
-            val kq = withContext(Dispatchers.IO) { GiaiDe.nop(this@GiaiDeActivity, d) }
+            val ct = this@GiaiDeActivity
+            val kq = withContext(Dispatchers.IO) {
+                val kq = GiaiDe.nop(ct, d)
+                if (kq.de.loai == GiaiDe.LOAI_SGK) vietChuaGui = GiaiDe.cauPhaiVietChuaGui(ct, kq.de)
+                kq
+            }
             vuaNopMay = kq
             de = kq.de
             val ten = getString(R.string.child_name)
             // Da gom phan giu toi sang, xem [GiaiDe.KetQuaNop]; truoc 2/10/2026 cong them phutGiu.
             val phut = kq.phutCap
-            runCatching {
+            // Bai tap SGK khong nhan tin: Ba Huy chi doc nhat ky (chot 2/10/2026), [GiaiDe.nop] da ghi.
+            if (!laSgk) runCatching {
                 Notifier.send(
-                    this@GiaiDeActivity,
+                    ct,
                     "$ten nộp ${GiaiDe.tenDe(d)} (${d.ten}" + GiaiDe.ngayKiemTra(d) + "): " +
                         "${kq.saoDat}/${kq.saoToiDa} sao" +
                         (if (phut > 0) ", được $phut phút" else "") +
                         (if (kq.phutQuy > 0) ", vào quỹ ${kq.phutQuy} phút" else "") +
-                        ". Làm ${DongHoDe.daLamMs(this@GiaiDeActivity, kq.de) / 60_000L} phút, gợi ý ${d.phutGoiY}."
+                        ". Làm ${DongHoDe.daLamMs(ct, kq.de) / 60_000L} phút, gợi ý ${d.phutGoiY}."
                 )
             }
             runCatching { DongBo.dayNgay() }
@@ -632,7 +704,8 @@ class GiaiDeActivity : AppCompatActivity() {
     /** Dong ho goc tren: con lai bao nhieu, hay da qua bao nhieu phut. */
     private fun veDongHo() {
         val d = de ?: return
-        if (!d.daBatDau) {
+        // Bai tap SGK khong co dong ho (Ba Huy chon cach B: nhu Giai de nhung khong tinh gio).
+        if (!d.daBatDau || d.loai == GiaiDe.LOAI_SGK) {
             b.dongHo.visibility = View.GONE
             return
         }

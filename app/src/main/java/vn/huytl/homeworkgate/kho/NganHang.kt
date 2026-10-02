@@ -42,8 +42,9 @@ object NganHang {
         /**
          * Quyen nay la sach bai tap. Co giao khong giao cau nao trong do, vi Le Hoa khong
          * co sach bai tap giay (Ba Huy noi ngay 27/9/2026), nen day la kho tu do cho lam
-         * them, luyen cho hay vap va Giai de - xem [cauSbtDaHoc],
-         * [vn.huytl.homeworkgate.data.LamTrenMay.cauLamThem].
+         * them, luyen cho hay vap va Giai de - xem [cauSachDaHoc],
+         * [vn.huytl.homeworkgate.data.LamTrenMay.cauLamThem]. Tu 2/10/2026 Luyen tap rut ca
+         * cau SGK ([sachLuyenTapCua]); de tuan, de on kiem tra van chi rut sach bai tap.
          */
         val baiTap: Boolean = false,
         /**
@@ -254,6 +255,21 @@ object NganHang {
     /** Cac quyen sach bai tap cua mot mon, theo thu tu tap. Xem [Sach.baiTap]. */
     fun sachBaiTapCua(mon: String): List<Sach> = SACH.filter { it.mon == mon && it.baiTap }
 
+    /**
+     * Cac quyen SGK cua mot mon (khong phai sach bai tap, khong phai bo de), theo thu tu tap.
+     * Cho dong "Làm bài tập trong SGK" o trang Luyen tap, xem
+     * [vn.huytl.homeworkgate.ui.BaiSgkActivity].
+     */
+    fun sachGiaoKhoaCua(mon: String): List<Sach> = SACH.filter { it.mon == mon && !it.baiTap && !it.deThi }
+
+    /**
+     * Cac quyen Luyen tap rut cau moi: SGK roi sach bai tap, dung thu tu trong [SACH] (Ba Huy
+     * chot 2/10/2026 cho cau SGK vao ca Luyen tap). Truoc ngay do chi sach bai tap: SGK de danh
+     * cho bai co giao. Nay bai co giao cung lam tren may, cau con lam truoc o Luyen tap thi
+     * luc co giao toi cau do da xong, khong tinh gio lan hai (Ba Huy chap nhan).
+     */
+    fun sachLuyenTapCua(mon: String): List<Sach> = SACH.filter { it.mon == mon && !it.deThi }
+
     /** Cac bo de thi in san, moi mon. Xem [Sach.deThi] va [DeThi]. */
     fun boDeThi(): List<Sach> = SACH.filter { it.deThi }
 
@@ -412,17 +428,20 @@ object NganHang {
     }
 
     /**
-     * Moi cau SBT cua mon nam trong cac bai lop da hoc, theo thu tu in. Moc chua chon
-     * thi rong. Day la kho cau moi cua Luyen tap, xem
-     * [vn.huytl.homeworkgate.data.LamTrenMay.cauLamThem].
+     * Moi cau SGK va SBT cua mon nam trong cac bai lop da hoc, theo thu tu in, quyen theo
+     * [sachLuyenTapCua]. Moc chua chon thi rong. Day la kho cau moi cua Luyen tap, xem
+     * [vn.huytl.homeworkgate.data.LamTrenMay.cauLamThem]. SGK va SBT dat ten bai y het nhau,
+     * nen Luyen tap gom theo ten bai thi cau SGK cua mot bai dung truoc cau SBT cung bai.
+     * Truoc 2/10/2026 ham nay ten cauSbtDaHoc va chi lay SBT.
      *
-     * Bo hai muc "Ôn tập chương" va "Bài tập ôn tập cuối năm": ten muc khong phai mot bai
-     * nen khong thuoc bai da hoc nao, va de danh cho Giai de.
+     * Bo cac muc khong mang so bai: "Ôn tập chương", "Bài tập ôn tập cuối năm" cua SBT (de danh
+     * cho Giai de), "Luyện tập chung", "Bài tập cuối chương" cua SGK. Ten muc khong phai mot
+     * bai nen khong thuoc bai da hoc nao; cau SGK cua cac muc nay lam o "Làm bài tập trong SGK".
      */
-    fun cauSbtDaHoc(context: Context, mon: String): List<CauHoi> {
+    fun cauSachDaHoc(context: Context, mon: String): List<CauHoi> {
         val daHoc = PhanHoc.baiDaHoc(context, mon) ?: return emptyList()
         val kho = KhoBai.get(context)
-        return sachBaiTapCua(mon).flatMap { kho.cacCauCuaNguon(it.nguon) }
+        return sachLuyenTapCua(mon).flatMap { kho.cacCauCuaNguon(it.nguon) }
             .filter { c -> PhanHoc.soBai(c.bai)?.let { it in daHoc } == true }
     }
 

@@ -123,7 +123,7 @@ class LamTrenMayTest {
         // Bai 1 toi Bai 3 cua SBT tap mot co hai muoi lam cau lam tren may: hon mot luot 10 cau cu.
         assertTrue("chi co ${ds.size} cau", ds.size > 10)
         val trongDe = kho.cauTrongDeConHan()
-        val canCo = NganHang.cauSbtDaHoc(context, "Toán")
+        val canCo = NganHang.cauSachDaHoc(context, "Toán")
             .filter { it.lamTrenMay && it.id !in trongDe && LamTrenMay.muc(context, it) != null }
             .sortedBy { PhanHoc.soBai(it.bai) }
             .map { it.id }

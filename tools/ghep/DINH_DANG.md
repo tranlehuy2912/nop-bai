@@ -11,7 +11,8 @@ Tài liệu này tả phần dữ liệu thêm vào các file `app/src/main/asse
 - Ôn lại theo hẹn 3, 10, 20, 30 ngày; mỗi lần hẹn là một vòng sao mới. Chỉ câu từng sai (kể cả câu làm trên máy mà mất sao) rồi đã làm đúng mới vào lịch ôn; câu đúng ngay từ đầu thì không (`KhoBai.denHen`).
 - Câu nhiều ô: mỗi ô sai trừ một sao.
 - Chỉ giao câu trong phần Lê Hòa đã học (mốc "Lớp đã học tới"). Câu sai ở bài chụp ảnh mà có `ghep` thì sau 24 giờ thành câu làm trên máy.
-- Mỗi ngày phần làm trên máy (làm thêm, luyện chỗ hay vấp, Giải đề) được tối đa 90 phút, ôn lại 30 phút (`LuatCongGio`). Phút vượt trần không mất mà vào quỹ giờ chơi, Ba Huy cấp sau.
+- Mỗi ngày phần làm trên máy (luyện tập, luyện chỗ hay vấp, Giải đề, bài tập SGK) được tối đa 120 phút (90 trước ngày 02/10/2026), ôn lại 30 phút (`LuatCongGio`). Phút vượt trần không mất mà vào quỹ giờ chơi, Ba Huy cấp sau.
+- Từ 02/10/2026 câu SGK Toán, KHTN, Tiếng Anh cũng làm trên máy: vào Luyện tập theo phần như câu sách bài tập (câu SGK của một bài đứng trước câu sách bài tập cùng bài), và là bài cô giao ở dòng "Làm bài tập trong SGK" (`BaiSgkActivity`). Câu SGK chưa có `ghep` hay có `bo_may` là câu phải viết: con làm ra vở, nộp bài xong thì chụp, Claude chấm như bài chụp. Mục không mang số bài của SGK ("Luyện tập chung", "Bài tập cuối chương") không vào Luyện tập theo phần, chỉ làm ở dòng bài tập SGK.
 - Thứ tự nút (phương án, phím, thẻ, dòng) trộn lại ở mỗi lượt mới và giữ nguyên trong một lượt (anh Huy chốt 30/09/2026). Trắc nghiệm cũng trộn, chữ A, B, C, D đánh lại theo thứ tự mới. Riêng câu Đúng/Sai giữ nút Đúng đứng trước, và hàng phím số, dấu của câu biểu thức giữ nguyên.
 - Trên app không có chữ nào giải thích luật. Con tự khám phá.
 

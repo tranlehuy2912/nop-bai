@@ -196,17 +196,18 @@ class LuatCongGioTest {
     }
 
     @Test
-    fun tran_ngay_la_tong_tran_rieng_215() {
-        // Chi de hien ra man hinh ("hom nay kiem duoc 60/215 phut"), khong chan gi.
+    fun tran_ngay_la_tong_tran_rieng_245() {
+        // Chi de hien ra man hinh ("hom nay kiem duoc 60/245 phut"), khong chan gi. Tran lam tren
+        // may 120 tu 2/10/2026 (Ba Huy chot khi bai SGK chuyen len may), truoc do 90 va tong 215.
         assertEquals(45, LuatCongGio.TRAN_ANH)
-        assertEquals(90, LuatCongGio.TRAN_TREN_MAY)
+        assertEquals(120, LuatCongGio.TRAN_TREN_MAY)
         assertEquals(30, LuatCongGio.TRAN_ON_MOI_NGAY)
         assertEquals(
             LuatCongGio.TRAN_ANH + LuatCongGio.TRAN_TREN_MAY + LuatCongGio.TRAN_ON_MOI_NGAY +
                 HocThuoc.TRAN_PHUT_MOI_NGAY + LuatTuVung.phutTrongNgay(LuatTuVung.GIAY_TRAN_MOI_NGAY),
             LuatCongGio.TRAN_NGAY
         )
-        assertEquals(215, LuatCongGio.TRAN_NGAY)
+        assertEquals(245, LuatCongGio.TRAN_NGAY)
     }
 
     // --- cho Ba Huy xem ---

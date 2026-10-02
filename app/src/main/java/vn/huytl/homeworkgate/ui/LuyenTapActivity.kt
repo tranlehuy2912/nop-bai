@@ -26,6 +26,7 @@ import vn.huytl.homeworkgate.kho.BoThe
 import vn.huytl.homeworkgate.kho.DeGiai
 import vn.huytl.homeworkgate.kho.HocToi
 import vn.huytl.homeworkgate.kho.KhoBai
+import vn.huytl.homeworkgate.kho.NganHang
 import vn.huytl.homeworkgate.kho.PhanHoc
 import java.util.Calendar
 
@@ -46,6 +47,10 @@ import java.util.Calendar
  * tung phan (Toan Dai so, Hinh hoc; KHTN Hoa hoc, Vat li, Sinh hoc; Tieng Anh mot dong), de on
  * dang mo (de tuan thu Bay, de on truoc kiem tra), roi bon dong De thi thu theo ky. Nhin mot
  * khu la biet mon do con bao nhieu viec.
+ *
+ * LAM BAI TAP TRONG SGK (cung ngay, Ba Huy chot sau): dong ngay duoi Kiem tra, tren Luyen tap
+ * tung phan, mo [BaiSgkActivity]. Bai SGK lam tren may thay cho lam vo roi chup; mon chua co SGK
+ * trong may (Tieng Anh luc viet) thi khong co dong nay.
  *
  * CAU DA LAM DUNG (cung ngay): moi khu mot dong ngay duoi cac dong Luyen tap, mo [CauDaLamActivity]
  * de xem lai de, cau con da tra loi va loi giai cua moi cau da lam dung tren may.
@@ -93,6 +98,12 @@ class LuyenTapActivity : AppCompatActivity() {
     /** Mot dong Luyen tap: phan (null la ca mon), so cau da lam dung, tong so cau. */
     private data class Luyen(val phan: PhanHoc.Phan?, val daLam: Int, val tong: Int)
 
+    /**
+     * Dong "Làm bài tập trong SGK": ten cac quyen SGK, so cau da lam tren tong so cau cua cac quyen
+     * (dem nhu man khai bai, ke ca cau phai viet), so bai dang lam do.
+     */
+    private data class Sgk(val tenSach: String, val daLam: Int, val tong: Int, val dangLam: Int)
+
     /** Nhung gi mot khu mon can, doc mot lan cho mot lan ve. */
     private data class Khu(
         val mon: String,
@@ -105,6 +116,8 @@ class LuyenTapActivity : AppCompatActivity() {
         /** Dong Kiem tra da xong hom nay: het the den luot, hay du phut tu vung. */
         val kiemTraXong: Boolean,
         val luyen: List<Luyen>,
+        /** Dong "Làm bài tập trong SGK"; null khi mon chua co SGK trong may (Tieng Anh luc viet). */
+        val sgk: Sgk?,
         /** So cau da lam dung tren may, cho dong "Câu đã làm đúng" ([CauDaLamActivity]). */
         val soDung: Int,
         /** De tuan, de on kiem tra dang mo ma chua bat dau. De da bat dau nam o man chinh. */
@@ -155,6 +168,17 @@ class LuyenTapActivity : AppCompatActivity() {
             // chua xong, vao la duoc hoi chon bai.
             kiemTraXong = bang.isNotEmpty() && bang.none { it.hocToi == null } && bang.sumOf { it.soDenLuot } == 0
         }
+        val sgk = runCatching {
+            val quyen = NganHang.sachGiaoKhoaCua(mon)
+            if (quyen.isEmpty()) return@runCatching null
+            val tienBo = quyen.map { NganHang.tienBo(ct, it.nguon) }
+            Sgk(
+                tenSach = gonTenSach(quyen.map { it.ten }),
+                daLam = tienBo.sumOf { it.first },
+                tong = tienBo.sumOf { it.second },
+                dangLam = GiaiDe.baiSgkDangLam(ct, mon, bayGio = bayGio).size
+            )
+        }.getOrNull()
         val dem = runCatching { LamTrenMay.demTheoPhan(ct, mon) }.getOrDefault(emptyMap())
         val luyen = if (mon == PhanHoc.TIENG_ANH) listOf(Luyen(null, dem[""]?.first ?: 0, dem[""]?.second ?: 0))
         else PhanHoc.cuaMon(mon).map { p -> Luyen(p, dem[p.ma]?.first ?: 0, dem[p.ma]?.second ?: 0) }
@@ -167,6 +191,7 @@ class LuyenTapActivity : AppCompatActivity() {
             kiemTraXong = kiemTraXong,
             // Phan chua soan cau nao thi khong co gi de bam: an dong.
             luyen = luyen.filter { it.tong > 0 },
+            sgk = sgk,
             soDung = LamTrenMay.soCauDaLamDung(ct, mon),
             deOn = dangMo.filter { it.mon == mon && it.loai != GiaiDe.LOAI_DE_THI && !it.daBatDau },
             deOnXong = xong.filter { it.mon == mon && it.loai != GiaiDe.LOAI_DE_THI }
@@ -228,6 +253,20 @@ class LuyenTapActivity : AppCompatActivity() {
                 if (laAnh) startActivity(Intent(this, DoTuVungActivity::class.java))
                 else HocThuocActivity.mo(this, mon)
             }
+        }
+
+        // Bai tap SGK (Ba Huy chot 2/10/2026): ngay duoi Kiem tra, tren Luyen tap tung phan; cung
+        // bieu tuong voi cac dong khac, khong nhan "mới". Bai SGK lam tren may, khong lam vo roi
+        // chup nua. Bam la chon quyen, chon bai, chon cau ([BaiSgkActivity]).
+        k.sgk?.let { s ->
+            themDong(
+                box,
+                hinh = R.drawable.st_ic_the_hoc,
+                mau = mauMon,
+                ten = "Làm bài tập trong SGK",
+                phu = if (s.dangLam > 0) "Đang làm ${s.dangLam} bài" else s.tenSach,
+                so = "${s.daLam}/${s.tong}"
+            ) { BaiSgkActivity.mo(this, mon) }
         }
 
         // Luyen tap tung phan. Phan chua co bai nao danh dau thi bam la hoi danh dau truoc:
@@ -313,6 +352,22 @@ class LuyenTapActivity : AppCompatActivity() {
                 so = "$daLam/${cua.size} đề"
             ) { hoiDeThi(tenDong, cua) }
         }
+    }
+
+    /**
+     * Ten cac quyen SGK cho dong phu, bo phan dau trung nhau: "SGK Toán 8 tập một, tập hai". Giu
+     * lai chu cuoi cua phan trung ("tập"), cat o dau cach dung truoc no, de khong cat giua mot chu
+     * va khong ra "tập một, hai".
+     */
+    private fun gonTenSach(cac: List<String>): String {
+        if (cac.size < 2) return cac.joinToString(", ")
+        val dau = cac.first()
+        val sau = cac.drop(1).map { ten ->
+            val chung = dau.commonPrefixWith(ten).trimEnd()
+            val cat = chung.lastIndexOf(' ') + 1
+            if (cat > 0) ten.substring(cat) else ten
+        }
+        return (listOf(dau) + sau).joinToString(", ")
     }
 
     /**

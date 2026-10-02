@@ -850,7 +850,8 @@ class GateStoreTest {
 
     @Test
     fun kiem_45_ba_cho_30_thi_thanh_ngay_ghi_75_tren_tran_cong_30() {
-        // Vi du Ba Huy dua ngay 1/10/2026: kiem 45 phut, ba cho 30 phut, tran 215 + 30.
+        // Vi du Ba Huy dua ngay 1/10/2026: kiem 45 phut, ba cho 30 phut, tran ngay + 30
+        // (luc do tran ngay 215, tu 2/10/2026 la 245).
         val now = at(15, 0)
         gate.approve(now, wantedMinutes = 45)
         gate.approve(now, wantedMinutes = 30, useQuota = false)

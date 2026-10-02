@@ -114,6 +114,13 @@
             android:exported="false"
             android:screenOrientation="portrait" />
 
+        <!-- Lam bai tap trong SGK: chon bai, chon cau, roi lam tren may o man Giai de. -->
+        <activity
+            android:name=".ui.BaiSgkActivity"
+            android:configChanges="orientation|screenSize|screenLayout|smallestScreenSize"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+
         <!-- Giai de: de may ra tu sach bai tap, lam mot mach co dong ho. -->
         <activity
             android:name=".ui.GiaiDeActivity"
