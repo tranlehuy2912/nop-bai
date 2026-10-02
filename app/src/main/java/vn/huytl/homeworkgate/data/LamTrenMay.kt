@@ -28,11 +28,14 @@ object LamTrenMay {
     /** Ba mon co cau lam tren may. */
     val MON = listOf("Toán", "Khoa học tự nhiên", PhanHoc.TIENG_ANH)
 
-    /** Mot luot lay bay nhieu cau. Dai hon thi con bo do giua chung. */
+    /**
+     * Mot luot On lai lay bay nhieu cau. Dai hon thi con bo do giua chung.
+     *
+     * Luyen tap bo gioi han nay tu 2/10/2026 ([cauLamThem]): Ba Huy muon con bam vao la thay
+     * het cau lam duoc. Bo do giua chung khong mat gi: cau lam xong da ghi so, cau chua lam van
+     * nam do, lan sau vao lai van gap.
+     */
     const val SO_CAU_MOI_LUOT = 10
-
-    /** Moi bai toi da bay nhieu cau moi trong mot luot, de danh sach trai ra vai bai. */
-    private const val MOI_BAI = 3
 
     private const val MOT_NGAY = 24L * 60 * 60_000L
     private const val MOT_NAM = 365L * MOT_NGAY
@@ -75,11 +78,15 @@ object LamTrenMay {
     // ------------------------------------------------------------------ chon cau
 
     /**
-     * Cau cho mot luot lam them cua mot mon. Thu tu:
+     * Cau cho mot luot Luyen tap cua mot mon: HET cau con lam duoc luc nay (Ba Huy chot 2/10/2026).
+     * Truoc ngay do moi luot toi da [SO_CAU_MOI_LUOT] cau, moi bai toi da ba cau moi; con lam
+     * hai cau roi thoat thi luot sau la tam cau cu noi them hai cau ke tiep, va Ba Huy thay khong
+     * can noi nhu vay. [gioiHan] chi con cho test. Thu tu:
      *  1. cau dang cho lam lai (vong dau chua du sao, da qua 24 gio);
      *  2. cau con lam sai trong bai dan do chup anh, co trong ngan hang, da qua 24 gio:
      *     sua loi cua chinh minh tren may (Ba Huy chot 29/9/2026);
-     *  3. cau moi trong cac bai lop da hoc, bai vua sai truoc, roi bai gan moc.
+     *  3. cau moi trong cac bai lop da hoc: bai vua sai truoc, roi tu bai cu toi bai moi (so bai
+     *     tang dan, Ba Huy chot 2/10/2026).
      *
      * Bo cau cua de Giai de con han, va bo muc "Ôn tập chương", "Test Yourself": de danh
      * cho Giai de. Cau con vua bam Bài này làm sau ([CauBoQua]) xep sau moi cau khac.
@@ -91,7 +98,7 @@ object LamTrenMay {
     fun cauLamThem(
         context: Context,
         mon: String,
-        gioiHan: Int = SO_CAU_MOI_LUOT,
+        gioiHan: Int = Int.MAX_VALUE,
         bayGio: Long = System.currentTimeMillis(),
         phan: PhanHoc.Phan? = null
     ): List<Muc> {
@@ -135,9 +142,16 @@ object LamTrenMay {
                 }
                 .groupBy { it.bai }
             val vuaSai = kho.baiVuaSaiCuaMon(mon, han).filter { it in theoBai }
-            val khoang = NganHang.boDoKhoangCach(context, mon)
-            (vuaSai + theoBai.keys.sortedBy(khoang)).distinct().forEach { bai ->
-                theoBai.getValue(bai).take(MOI_BAI).mapNotNull { muc(context, it) }.forEach(::them)
+            // Bai cu truoc, bai moi sau (Ba Huy chot 2/10/2026): cau da lam xong khong ra lai o
+            // buoc nay, nen con lam het bai cu thi chi con bai moi. Tu 27/9 toi 2/10/2026 thu tu
+            // nguoc lai, bai gan moc truoc (bai so lon nhat da danh dau, lui dan ve bai dau), luot
+            // 10 cau, moi bai 3 cau: moi lan lop hoc them bai thi bai moi chen len dau, bai cu bi
+            // day lui mai. Tinh voi so cau ngay 2/10/2026, Tieng Anh hoc toi Unit 6 thi toi luot
+            // thu 25 con moi gap Unit 1. De thu Bay va de on kiem tra van lay bai gan moc
+            // ([GiaiDe]): hai de do on bai lop vua hoc.
+            val cuTruoc = theoBai.keys.sortedBy { PhanHoc.soBai(it) ?: Int.MAX_VALUE }
+            (vuaSai + cuTruoc).distinct().forEach { bai ->
+                theoBai.getValue(bai).mapNotNull { muc(context, it) }.forEach(::them)
             }
         }
         return ra + sau.take((gioiHan - ra.size).coerceAtLeast(0))

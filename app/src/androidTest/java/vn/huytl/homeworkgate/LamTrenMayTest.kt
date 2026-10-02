@@ -104,20 +104,48 @@ class LamTrenMayTest {
 
     // ------------------------------------------------------------------ chon cau
 
+    /**
+     * Ba Huy chot 2/10/2026: mot luot la HET cau lam duoc cua cac bai da hoc (truoc do toi da 10
+     * cau, moi bai 3 cau), xep tu bai cu toi bai moi (truoc do Bai 3, bai lop vua hoc, len dau).
+     */
     @Test
-    fun cau_moi_chi_trong_bai_da_hoc_bai_gan_moc_truoc_moi_bai_toi_da_ba_cau() {
+    fun cau_moi_la_het_cau_cua_bai_da_hoc_bai_cu_truoc() {
         datMocToan(3)
 
         val ds = LamTrenMay.cauLamThem(context, "Toán")
 
-        assertTrue(ds.isNotEmpty())
-        assertTrue(ds.size <= LamTrenMay.SO_CAU_MOI_LUOT)
         assertTrue("cau khong lam tren may", ds.all { it.cau.lamTrenMay })
         val soBai = ds.map { PhanHoc.soBai(it.cau.bai) }
         assertTrue("bai ngoai moc: $soBai", soBai.all { it != null && it in 1..3 })
-        assertTrue("moi bai qua ba cau", ds.groupBy { it.cau.bai }.values.all { it.size <= 3 })
-        // Bai 3 la bai lop vua hoc, xep truoc.
-        assertEquals(3, soBai.first())
+        val so = soBai.filterNotNull()
+        assertEquals(1, so.first())
+        assertEquals("bai cu truoc: $so", so.sorted(), so)
+        // Bai 1 toi Bai 3 cua SBT tap mot co hai muoi lam cau lam tren may: hon mot luot 10 cau cu.
+        assertTrue("chi co ${ds.size} cau", ds.size > LamTrenMay.SO_CAU_MOI_LUOT)
+        val trongDe = kho.cauTrongDeConHan()
+        val canCo = NganHang.cauSbtDaHoc(context, "Toán")
+            .filter { it.lamTrenMay && it.id !in trongDe && LamTrenMay.muc(context, it) != null }
+            .sortedBy { PhanHoc.soBai(it.bai) }
+            .map { it.id }
+        assertEquals("het cau lam duoc, theo thu tu in trong tung bai", canCo, ds.map { it.cau.id })
+    }
+
+    /**
+     * Ly do Ba Huy chon bai cu truoc (2/10/2026): cau lam xong thi khong ra lai, nen con lam het
+     * bai cu thi luot sau bat dau tu bai ke tiep, roi chi con bai moi.
+     */
+    @Test
+    fun lam_het_bai_cu_thi_luot_sau_bat_dau_tu_bai_ke_tiep() {
+        datMocToan(3)
+        LamTrenMay.cauLamThem(context, "Toán")
+            .filter { PhanHoc.soBai(it.cau.bai) == 1 }
+            .forEach { LamTrenMay.ghi(context, it, luot(it.ghep.sao), "x", LamTrenMay.Loai.LAM_THEM, congNgay = false) }
+
+        val sau = LamTrenMay.cauLamThem(context, "Toán")
+
+        assertTrue(sau.isNotEmpty())
+        assertTrue("con cau Bai 1: ${sau.map { it.cau.ma }}", sau.none { PhanHoc.soBai(it.cau.bai) == 1 })
+        assertEquals(2, PhanHoc.soBai(sau.first().cau.bai))
     }
 
     /** Trang Luyen tap moi phan mot dong tu 2/10/2026: luot cua mot phan chi co cau phan do. */
@@ -161,8 +189,9 @@ class LamTrenMayTest {
 
         MocThu.datUnit(context, 2)
         val unit2 = LamTrenMay.cauLamThem(context, PhanHoc.TIENG_ANH)
-        // Unit vua hoc truoc.
-        assertTrue(unit2.first().cau.bai.startsWith("Unit 2."))
+        // Unit cu truoc (Ba Huy chot 2/10/2026), Unit moi hoc van co trong luot.
+        assertTrue(unit2.first().cau.bai.startsWith("Unit 1."))
+        assertTrue(unit2.any { it.cau.bai.startsWith("Unit 2.") })
         assertTrue(unit2.all { PhanHoc.soBai(it.cau.bai) in 1..2 })
     }
 
