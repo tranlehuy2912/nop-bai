@@ -34,8 +34,9 @@ import java.time.LocalDateTime
 import java.time.ZoneId
 
 /**
- * Giai de va duong sach bai tap: moc hoc toi theo phan, lam them trong bai da hoc, ra de
- * tuan, doc lich kiem tra, cham trac nghiem tren may. Xem [GiaiDe], [PhanHoc], [LichKiemTra].
+ * Giai de va duong sach bai tap: moc hoc toi theo phan, luyen cho hay vap, ra de tuan, doc
+ * lich kiem tra, cham trac nghiem tren may. Xem [GiaiDe], [PhanHoc], [LichKiemTra]. Cau
+ * Luyen tap (lam them tren may) thu o [LamTrenMayTest].
  *
  * CAN THAN: bo test nay ghi moc hoc toi, vo dan do va de vao kho that tren may, roi tra
  * lai moc va vo cu, xoa de va cac lan lam no tao ra. Khong goi mang, khong goi AI.
@@ -144,26 +145,14 @@ class GiaiDeTest {
         assertEquals((1..6).toSet() + setOf(30, 31), PhanHoc.baiDaHoc(context, "Khoa học tự nhiên"))
     }
 
-    // --------------------------------------------------------------- lam them
+    // ------------------------------------------------------ luyen cho hay vap
 
-    @Test
-    fun lam_them_chi_lay_sbt_trong_bai_da_hoc_bai_gan_moc_truoc() {
-        datMoc("toan8ct", 3)
-        val cau = NganHang.cauNenLamThemCuaMon(context, "Toán", gioiHan = 12)
-        assertTrue(cau.isNotEmpty())
-        assertTrue("co cau SGK", cau.all { it.nguon == "sbttoan8t1" })
-        assertTrue("co bai chua hoc", cau.all { (PhanHoc.soBai(it.bai) ?: 99) <= 3 })
-        assertTrue("co muc on tap chuong", cau.none { PhanHoc.soBai(it.bai) == null })
-        // Bai gan moc nhat truoc: Bai 3, roi Bai 2.
-        assertEquals(3, PhanHoc.soBai(cau.first().bai))
-        assertTrue(cau.count { PhanHoc.soBai(it.bai) == 3 } <= NganHang.MOI_BAI_LAM_THEM)
-    }
-
-    @Test
-    fun lam_them_chua_chon_moc_thi_rong() {
-        datMoc("toan8ct", null)
-        assertTrue(NganHang.cauNenLamThemCuaMon(context, "Toán").isEmpty())
-    }
+    /*
+     * Hai test lam them o day (lay SBT trong bai da hoc, chua chon bai thi rong) bo ngay
+     * 2/10/2026 cung buoc lam them chup anh: chung chi thu ham chon cau cu, xep bai gan moc
+     * truoc. Luyen tap bay gio thu o LamTrenMayTest; de tuan van lay bai gan moc, thu o
+     * [sang_thu_bay_ra_de_tuan_moi_mon_mot_lan].
+     */
 
     @Test
     fun luyen_cho_hay_vap_rut_cau_sbt_cung_ten_bai() {

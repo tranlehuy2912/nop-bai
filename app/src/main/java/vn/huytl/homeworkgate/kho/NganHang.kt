@@ -42,7 +42,8 @@ object NganHang {
         /**
          * Quyen nay la sach bai tap. Co giao khong giao cau nao trong do, vi Le Hoa khong
          * co sach bai tap giay (Ba Huy noi ngay 27/9/2026), nen day la kho tu do cho lam
-         * them, luyen cho hay vap va Giai de - xem [cauNenLamThemCuaMon].
+         * them, luyen cho hay vap va Giai de - xem [cauSbtDaHoc],
+         * [vn.huytl.homeworkgate.data.LamTrenMay.cauLamThem].
          */
         val baiTap: Boolean = false,
         /**
@@ -411,53 +412,12 @@ object NganHang {
     }
 
     /**
-     * Cau nen lam them cua mot mon.
-     *
-     * MON CO SACH BAI TAP THI CHI LAY SACH BAI TAP, tu 27/9/2026. Co giao khong giao cau
-     * SBT nao nen do la kho tu do; SGK de danh cho bai ve nha. Truoc day duong nay rut
-     * ca cau SGK chua lam, ma cau do tuan sau co co the giao: luc do no da khoa "da tinh
-     * gio", va lan nop tron goi hom ay roi len.
-     *
-     * CHI TRONG CAC BAI LOP DA HOC, theo moc cua [PhanHoc]. Truoc day moi quyen lay cau
-     * chua lam theo thu tu in, nen giua thang chin da co cau Bai 21 cua tap hai, bai lop
-     * chua hoc. Con chua chon moc thi tra rong: man chon bai hoi con truoc.
-     *
-     * Thu tu bai: bai vua sai truoc (sai o SGK Bai 4 thi lay SBT Bai 4, cung ten bai),
-     * roi bai gan moc nhat lui dan ve bai dau. Moi bai toi da [MOI_BAI_LAM_THEM] cau de
-     * danh sach trai ra vai bai. KHTN co ba phan day song song, nen "gan moc" tinh trong
-     * tung phan: Bai 9 cua Hoa va Bai 15 cua Li deu la bai lop vua hoc.
+     * Moi cau SBT cua mon nam trong cac bai lop da hoc, theo thu tu in. Moc chua chon
+     * thi rong. Day la kho cau moi cua Luyen tap, xem
+     * [vn.huytl.homeworkgate.data.LamTrenMay.cauLamThem].
      *
      * Bo hai muc "Ôn tập chương" va "Bài tập ôn tập cuối năm": ten muc khong phai mot bai
-     * nen khong thuoc moc nao, va de danh cho Giai de. Bo ca cau dang nam trong mot de con
-     * han, de con khong lam truoc cau cua de - xem [vn.huytl.homeworkgate.data.GiaiDe].
-     *
-     * Danh sach co the tron hai tap Toan, nhung MOT LAN NOP chi mang ma cua mot quyen -
-     * [PhamVi] chi co mot [PhamVi.nguon]. Man chon bai gom cac cau cung quyen voi cau
-     * dau tien.
-     */
-    fun cauNenLamThemCuaMon(context: Context, mon: String, gioiHan: Int = 12): List<CauHoi> {
-        val sbt = sachBaiTapCua(mon)
-        if (sbt.isEmpty()) return cauNenLamThemCu(context, mon, gioiHan)
-        if (PhanHoc.baiDaHoc(context, mon) == null) return emptyList()
-        val kho = KhoBai.get(context)
-        val bayGio = System.currentTimeMillis()
-        val han = bayGio - 365L * 24 * 60 * 60_000L
-        val xong = kho.cacCauDaXong(han)
-        val trongDe = kho.cauTrongDeConHan(bayGio)
-        val theoBai = cauSbtDaHoc(context, mon)
-            .filter { it.id !in xong && it.id !in trongDe }
-            .groupBy { it.bai }
-        if (theoBai.isEmpty()) return emptyList()
-        val vuaSai = kho.baiVuaSaiCuaMon(mon, han).filter { it in theoBai }
-        val khoang = boDoKhoangCach(context, mon)
-        val thuTu = (vuaSai + theoBai.keys.sortedBy(khoang))
-            .distinct()
-        return thuTu.flatMap { theoBai.getValue(it).take(MOI_BAI_LAM_THEM) }.take(gioiHan)
-    }
-
-    /**
-     * Moi cau SBT cua mon nam trong cac bai lop da hoc, theo thu tu in. Moc chua chon
-     * thi rong. Bo muc on tap chuong, xem [cauNenLamThemCuaMon].
+     * nen khong thuoc bai da hoc nao, va de danh cho Giai de.
      */
     fun cauSbtDaHoc(context: Context, mon: String): List<CauHoi> {
         val daHoc = PhanHoc.baiDaHoc(context, mon) ?: return emptyList()
@@ -475,6 +435,10 @@ object NganHang {
      * vua hoc. Tieng Anh khong co phan hoc nao, moc la Unit cao nhat da danh dau. Truoc ngay
      * 29/9/2026 toi o day khong xet Tieng Anh, moi Unit deu cach "vo cung", nen lam them va
      * Giai de Tieng Anh luon bat dau tu Unit 1 thay vi Unit lop vua hoc.
+     *
+     * Tu 2/10/2026 chi con Giai de xep theo khoang cach nay (de tuan, de on kiem tra: on bai
+     * lop vua hoc). Luyen tap xep bai cu truoc, xem
+     * [vn.huytl.homeworkgate.data.LamTrenMay.cauLamThem].
      */
     fun khoangCachMoc(context: Context, mon: String, bai: String): Int {
         val so = PhanHoc.soBai(bai) ?: return Int.MAX_VALUE
@@ -494,30 +458,6 @@ object NganHang {
     fun boDoKhoangCach(context: Context, mon: String): (String) -> Int {
         val nho = HashMap<String, Int>()
         return { bai -> nho.getOrPut(bai) { khoangCachMoc(context, mon, bai) } }
-    }
-
-    /** Moi bai lay toi da bay nhieu cau cho danh sach lam them. */
-    const val MOI_BAI_LAM_THEM = 4
-
-    /**
-     * Duong lam them cu, cho mon chua co sach bai tap (Ngu van): lay deu moi quyen roi
-     * tron theo thu tu quyen.
-     */
-    private fun cauNenLamThemCu(context: Context, mon: String, gioiHan: Int): List<CauHoi> {
-        val quyen = sachCua(mon)
-        if (quyen.size <= 1) {
-            val nguon = quyen.firstOrNull()?.nguon ?: return emptyList()
-            return cauNenLamThem(context, nguon, gioiHan)
-        }
-        // Chia deu suat cho tung quyen, lam tron len de khong quyen nao bi bo troi.
-        val moiQuyen = (gioiHan + quyen.size - 1) / quyen.size
-        return quyen.flatMap { cauNenLamThem(context, it.nguon, moiQuyen) }.take(gioiHan)
-    }
-
-    /** Cau nen lam them: chua lam, uu tien bai con vua sai. */
-    fun cauNenLamThem(context: Context, nguon: String, gioiHan: Int = 12): List<CauHoi> {
-        val han = System.currentTimeMillis() - 365L * 24 * 60 * 60_000L
-        return KhoBai.get(context).cacCauNenLamThem(nguon, han, gioiHan)
     }
 
     fun cacTrang(context: Context, nguon: String): List<TrangSach> =

@@ -171,16 +171,6 @@ object PhanHoc {
     /** Mon nay con chua chon bai da hoc lan nao. */
     fun chuaChon(context: Context, mon: String): Boolean = baiDaHoc(context, mon) == null
 
-    /**
-     * Mot dong noi bai da hoc cua mon, cho dong nho duoi tieu de: "Đã học Bài 1–9, 12",
-     * "Đã học Unit 1–3", "Chưa học bài nào", "Chưa chọn bài đã học".
-     */
-    fun moTa(context: Context, mon: String): String {
-        val cac = baiDaHoc(context, mon) ?: return "Chưa chọn bài đã học"
-        return if (cac.isEmpty()) HocToi.moTa(mon, cac).replaceFirstChar { it.uppercase() }
-        else "Đã học " + HocToi.moTa(mon, cac)
-    }
-
     /** "1–4, 6, 10–12": cac so lien nhau gop thanh khoang. */
     fun gon(cac: Collection<Int>): String {
         val s = cac.distinct().sorted()

@@ -428,6 +428,10 @@ object SoCaiBai {
      *
      * Chi cau trong sach. Man on khong ve duoc bai ngoai sach, dem ca no vao thi dong
      * "Ôn lại N câu" dem nhieu hon so cau con thay. Xem [KhoBai.cacCauDenHenOn].
+     *
+     * Tu 2/10/2026 khong man nao goi ham nay nua: man on chup anh trong ChonBaiActivity
+     * bo, on lai lam tren may va [LamTrenMay.cauOn] hoi thang [KhoBai.cacCauDenHenOn].
+     * Giu lai vi NganHangTest soi luat den hen qua day, cung luat [denHenOn] dung luc cham.
      */
     fun cacCauDangOn(context: Context, now: Long = System.currentTimeMillis()): List<String> =
         KhoBai.get(context).cacCauDenHenOn(han(now), now)

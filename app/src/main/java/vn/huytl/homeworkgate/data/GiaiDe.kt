@@ -25,8 +25,8 @@ import vn.huytl.homeworkgate.kho.TraLoi
  * VI SAO CO. Le Hoa khong co sach bai tap giay, nen co giao khong giao cau SBT nao ma
  * hon mot nghin ba tram cau SBT nap ngay 26/9/2026 nam im. Ngay 27/9/2026 Ba Huy chon
  * dung chung de lam hai viec: bai on (lam them, luyen cho hay vap - xem
- * [NganHang.cauNenLamThemCuaMon]) va de kiem tra o day. Ten "Giải đề" la Ba Huy dat, de
- * khong lan voi dong "Kiểm tra bài" cua the hoc thuoc tren man chinh.
+ * [LamTrenMay.cauLamThem], [LamTrenMay.cauLuyen]) va de kiem tra o day. Ten "Giải đề"
+ * la Ba Huy dat, de khong lan voi dong "Kiểm tra bài" cua the hoc thuoc tren man chinh.
  *
  * BA LOAI DE:
  *  - [LOAI_TUAN]: sang thu Bay, moi mon co SBT mot de, on cac bai lop vua hoc. Lop hoc

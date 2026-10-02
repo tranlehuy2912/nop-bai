@@ -551,8 +551,9 @@ class KhoBai private constructor(context: Context) :
      * mot bang thi moi khong lech nhau lan nua. Ma cau bi bo khoi file sach va dong
      * tron goi [CAU_GOI] cung roi ra o day, vi ca hai deu khong co trong cau_hoi.
      *
-     * Khong xep thu tu o day: man on xep lai theo thu tu in trong sach, chia theo
-     * quyen - xem [cacCauTheoId]. Cac cho con lai chi dem.
+     * Khong xep thu tu o day: noi ve danh sach doc de bai qua [cacCauTheoId], va ham do
+     * da xep theo thu tu in trong sach. Cac cho con lai chi dem. (Truoc 2/10/2026 man on
+     * chup anh cua ChonBaiActivity con chia danh sach theo quyen; man do da bo.)
      */
     fun cacCauDenHenOn(tuLuc: Long, bayGio: Long = System.currentTimeMillis()): List<String> =
         denHen(tuLuc, bayGio)
@@ -1316,7 +1317,7 @@ class KhoBai private constructor(context: Context) :
         /*
          * Mon co sach bai tap thi rut cau SBT CUNG TEN BAI, tu 27/9/2026. Cau sai phan
          * lon la bai co giao trong SGK, ma cau SGK chua lam thi tuan sau co co the giao
-         * - xem [NganHang.cauNenLamThemCuaMon]. SBT dat ten bai y het SGK, nen "Bài 4.
+         * - xem [NganHang.Sach.baiTap]. SBT dat ten bai y het SGK, nen "Bài 4.
          * Phép nhân đa thức" o hai quyen la mot bai. Bai SBT khong co (muc "Luyện tập
          * chung" cua SGK, mon Ngu van) thi quay ve cau cung quyen nhu truoc.
          */
@@ -1391,55 +1392,6 @@ class KhoBai private constructor(context: Context) :
             """.trimIndent(),
             arrayOf(nguon, tuLuc.toString())
         ).use { if (it.moveToFirst()) it.getInt(0) else 0 }
-
-    /**
-     * Cau nen lam them: chua lam bao gio, va nam trong chinh nhung BAI con vua sai.
-     *
-     * Sai mot cau thi lam them mot cau giong no moi va duoc cho hong - do la ly do
-     * cua ham nay. Sach da chia san theo bai, ma mot bai la mot dang, nen "cung bai"
-     * chinh la "cung dang" ma khong phai gan nhan gi them.
-     *
-     * Het cau trong nhung bai do thi lay tiep cau chua lam theo thu tu in trong sach:
-     * con van co viec de lam, chi la khong con nham dung cho no vua trat.
-     */
-    fun cacCauNenLamThem(nguon: String, tuLuc: Long, gioiHan: Int): List<CauHoi> {
-        if (gioiHan <= 0) return emptyList()
-        val baiVuaSai = readableDatabase.rawQuery(
-            """
-            SELECT c.bai FROM tra_loi t
-            JOIN cau_hoi c ON c.id = t.cau_id
-            WHERE t.dung = 0 AND t.luc >= ? AND c.nguon = ?
-            GROUP BY c.bai
-            ORDER BY MAX(t.luc) DESC
-            LIMIT 3
-            """.trimIndent(),
-            arrayOf(tuLuc.toString(), nguon)
-        ).use { c -> buildList { while (c.moveToNext()) add(c.getString(0)) } }
-
-        val chuaLam = { loc: String, arg: Array<String> ->
-            readableDatabase.rawQuery(
-                """
-                SELECT * FROM cau_hoi c
-                WHERE c.nguon = ? AND $loc
-                  AND NOT EXISTS (SELECT 1 FROM tra_loi t
-                                  WHERE t.cau_id = c.id AND t.dung = 1 AND t.luc >= ?)
-                ORDER BY c.thu_tu
-                LIMIT ?
-                """.trimIndent(),
-                arrayOf(nguon) + arg + arrayOf(tuLuc.toString(), gioiHan.toString())
-            ).use { c -> buildList { while (c.moveToNext()) add(c.docCauHoi()) } }
-        }
-
-        val trongBaiVuaSai = if (baiVuaSai.isEmpty()) emptyList() else {
-            val cho = baiVuaSai.joinToString(",") { "?" }
-            chuaLam("c.bai IN ($cho)", baiVuaSai.toTypedArray())
-        }
-        if (trongBaiVuaSai.size >= gioiHan) return trongBaiVuaSai
-
-        return (trongBaiVuaSai + chuaLam("1 = 1", emptyArray()))
-            .distinctBy { it.id }
-            .take(gioiHan)
-    }
 
     /** Cau nay da co lan nao lam dung VA duoc tra gio chua. */
     fun daXong(cauId: String, tuLuc: Long): Boolean =

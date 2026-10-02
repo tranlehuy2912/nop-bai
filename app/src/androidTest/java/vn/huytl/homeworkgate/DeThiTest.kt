@@ -15,6 +15,7 @@ import org.junit.Test
 import org.junit.runner.RunWith
 import vn.huytl.homeworkgate.data.DayLog
 import vn.huytl.homeworkgate.data.GiaiDe
+import vn.huytl.homeworkgate.data.LamTrenMay
 import vn.huytl.homeworkgate.data.Prefs
 import vn.huytl.homeworkgate.kho.DeGiai
 import vn.huytl.homeworkgate.kho.DeThi
@@ -188,8 +189,11 @@ class DeThiTest {
         assertTrue(NganHang.boDeThi().any { it.nguon == "dethianh8" })
         assertTrue(NganHang.boDeThi().all { it.deThi })
         moc(4)
-        val lamThem = NganHang.cauNenLamThemCuaMon(context, PhanHoc.TIENG_ANH, 200)
-        assertTrue("lam them rut cau de thi", lamThem.none { it.nguon == "dethianh8" })
+        // Cau moi cua Luyen tap chi rut tu sach bai tap. Cau de thi con da lam trong Giai de
+        // thi dung luat van quay lai o buoc lam lai cua Luyen tap, nen chi xet cau chua lam
+        // luot nao. Truoc 2/10/2026 test nay hoi ham chon cau cua buoc lam them chup anh.
+        val lamThem = LamTrenMay.cauLamThem(context, PhanHoc.TIENG_ANH).filter { it.soLuot == 0 }
+        assertTrue("lam them rut cau de thi", lamThem.none { it.cau.nguon == "dethianh8" })
     }
 
     // ------------------------------------------------------------ tu mo theo moc

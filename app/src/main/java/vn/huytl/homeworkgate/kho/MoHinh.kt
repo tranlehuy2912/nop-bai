@@ -405,6 +405,10 @@ data class PhamVi(
      *
      * Doi hai thu: so cai khong duoc bo qua cau "da tra gio" nua (cai chinh no vua
      * chan), va so phut chiu tran on rieng moi ngay, chi tra khi cau den hen.
+     *
+     * Tu 2/10/2026 khong con cho nao dat true: buoc on chup anh cua
+     * [vn.huytl.homeworkgate.ui.ChonBaiActivity] bo (tu 29/9/2026 khong nut nao mo toi no,
+     * on lai lam tren may). Truong con lai cho bai cu nop truoc do va ban ghi cu tren Firestore.
      */
     val onTap: Boolean = false,
     /**

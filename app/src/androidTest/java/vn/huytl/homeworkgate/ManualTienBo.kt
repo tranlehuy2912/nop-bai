@@ -9,7 +9,6 @@ import vn.huytl.homeworkgate.data.LoaiLoi
 import vn.huytl.homeworkgate.kho.KhoBai
 import vn.huytl.homeworkgate.kho.NganHang
 import vn.huytl.homeworkgate.kho.TraLoi
-import vn.huytl.homeworkgate.ui.ChonBaiActivity
 import vn.huytl.homeworkgate.ui.TienBoActivity
 
 /**
@@ -96,22 +95,6 @@ class ManualTienBo {
             Intent(context, TienBoActivity::class.java).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
         )
         Thread.sleep(2_000)
-    }
-
-    /**
-     * Mo thang man luyen cho hay vap, khoi phai bam nut trong man tien bo.
-     *
-     * Nam o day chu khong o mot file rieng: du lieu cho no do chinh [napThu] gieo
-     * ra, hai cai phai chay lien nhau moi co gi de nhin.
-     */
-    @Test
-    fun moLuyen() {
-        context.startActivity(
-            Intent(context, ChonBaiActivity::class.java)
-                .putExtra(ChonBaiActivity.EXTRA_LUYEN, LoaiLoi.SAI_DAU)
-                .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-        )
-        Thread.sleep(6_000)
     }
 
     @Test

@@ -406,10 +406,11 @@ class ManualBang {
             /*
              * Nap mot cau DA QUA HEN on lai.
              *
-             * Khong dung ManualChonBai#napOnTap: ban do ghi cau lam dung tu HOM QUA,
-             * ma hen dau tien la ba ngay (KhoBai.KHOANG_HEN_NGAY), nen chua toi han
-             * - no nap canh "da sua xong", khong phai canh "den hen". O day lui han
-             * nam ngay de chac chan qua moc dau tien.
+             * Ghi cau lam dung tu HOM QUA thi chua toi han, vi hen dau tien la ba ngay
+             * (KhoBai.KHOANG_HEN_NGAY): do la canh "da sua xong", khong phai canh "den
+             * hen" (ManualChonBai#napOnTap tung vap dung cho nay; ham do bo ngay
+             * 2/10/2026 cung man on chup anh). O day lui han nam ngay de chac chan qua
+             * moc dau tien.
              */
             "napdenhen" -> {
                 // Xoa so truoc: neu cau nay da tung lam dung o mot muc thu khac thi
