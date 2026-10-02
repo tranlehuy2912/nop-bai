@@ -213,6 +213,35 @@ object LamTrenMay {
         return ra
     }
 
+    /** Mot cau da lam dung tren may, kem luot dung gan nhat cua no. */
+    data class CauDung(val cau: CauHoi, val luot: TraLoi)
+
+    /**
+     * Cac cau cua [mon] da lam dung tren may, moi cau mot dong voi luot dung GAN NHAT: cau trong
+     * luyen tap, on tap va cau trong de (de tuan, de on kiem tra, de thi thu), deu lam bang phim
+     * ghep. Cho man xem lai cau da lam ([vn.huytl.homeworkgate.ui.CauDaLamActivity], Ba Huy chot
+     * 2/10/2026). Cau chup anh (bai co giao) khong vao, chung da co man Bai da cham; luot het sao
+     * ma van sai (hien loi giai) khong tinh la dung.
+     *
+     * Luot gan nhat chu khong phai luot nhieu sao nhat: man xem lai ghi gio lam, va con can thay
+     * lan lam moi nhat cua minh.
+     */
+    fun cauDaLamDung(context: Context, mon: String): List<CauDung> {
+        val kho = KhoBai.get(context)
+        val moiCau = kho.moiLuotTrenMay(0L).filter { it.dung && it.mon == mon }
+            .groupBy { it.cauId }
+            .mapValues { (_, cac) -> cac.maxBy { it.luc } }
+        if (moiCau.isEmpty()) return emptyList()
+        val theoId = kho.cacCauTheoId(moiCau.keys.toList()).associateBy { it.id }
+        return moiCau.mapNotNull { (id, luot) -> theoId[id]?.let { CauDung(it, luot) } }
+    }
+
+    /** So cau cua [mon] da lam dung tren may, cho dong "Câu đã làm đúng" o trang Luyen tap. */
+    fun soCauDaLamDung(context: Context, mon: String): Int = runCatching {
+        KhoBai.get(context).moiLuotTrenMay(0L).filter { it.dung && it.mon == mon }
+            .map { it.cauId }.distinct().size
+    }.getOrDefault(0)
+
     private fun nuaDem(bayGio: Long): Long = java.util.Calendar.getInstance().apply {
         timeInMillis = bayGio
         set(java.util.Calendar.HOUR_OF_DAY, 0)

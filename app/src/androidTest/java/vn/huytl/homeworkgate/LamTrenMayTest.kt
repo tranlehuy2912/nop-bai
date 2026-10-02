@@ -392,4 +392,30 @@ class LamTrenMayTest {
         LamTrenMay.ghiNhatKy(context, "Toán", LamTrenMay.Loai.LAM_THEM, emptyList(), listOf(ds[1].cau))
         assertTrue("chi bo qua cung ghi", DayLog.today(context).contains("Luyện tập Toán: bỏ qua 1 câu: ${ds[1].cau.ma}"))
     }
+
+    /**
+     * Man xem lai cau da lam dung (2/10/2026): moi cau mot dong voi luot dung gan nhat, cau het sao
+     * ma van sai thi khong vao.
+     */
+    @Test
+    fun cau_da_lam_dung_moi_cau_mot_dong_luot_gan_nhat() {
+        datMocToan(3)
+        val cac = LamTrenMay.cauLamThem(context, "Toán")
+        val m = cac[0]
+        val sai = cac[1]
+        val t0 = System.currentTimeMillis()
+        LamTrenMay.ghi(context, m, luot(m.ghep.sao, sai = 1), "lần một", LamTrenMay.Loai.LAM_THEM, bayGio = t0, congNgay = false)
+        LamTrenMay.ghi(context, m, luot(m.ghep.sao), "lần hai", LamTrenMay.Loai.LAM_THEM, bayGio = t0 + 25 * gio, congNgay = false)
+        var l = LuatGhep.Luot(sai.ghep.sao)
+        repeat(sai.ghep.sao + 1) { l = LuatGhep.kiem(l, soSai = 1) }
+        assertTrue(l.xong && l.hienLoiGiai)
+        LamTrenMay.ghi(context, sai, l, "sai", LamTrenMay.Loai.LAM_THEM, bayGio = t0, congNgay = false)
+
+        val dung = LamTrenMay.cauDaLamDung(context, "Toán")
+        assertEquals(listOf(m.cau.id), dung.map { it.cau.id })
+        assertEquals("lần hai", dung.single().luot.ketQua)
+        assertEquals(0, dung.single().luot.lanSai)
+        assertEquals(1, LamTrenMay.soCauDaLamDung(context, "Toán"))
+        assertTrue("mon khac khong lan vao", LamTrenMay.cauDaLamDung(context, "Khoa học tự nhiên").none { it.cau.id == m.cau.id })
+    }
 }

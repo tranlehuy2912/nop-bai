@@ -607,20 +607,12 @@ class KhungGhep(
             layoutParams = hangLp(12)
         }
         hop.addView(chu("Lời giải", 14f, mau = R.color.ink_soft, dam = true))
-        val cac: List<String> = when (g) {
-            is Ghep.Chon -> g.dap.sortedBy { thuTuChon.indexOf(it) }.map { "${chuCai(it)}. ${g.cac[it]}" }
-            is Ghep.DungSai -> listOf(if (g.dap) g.nhan[0] else g.nhan[1])
-            is Ghep.Chu -> listOf(g.dap.first())
-            is Ghep.Cau -> listOf(g.dap.first())
-            is Ghep.BieuThuc -> g.loiGiai.ifEmpty { listOf(g.dap.first()) }
-            is Ghep.Buoc -> g.buoc
-            is Ghep.O -> g.dong.indices.map { i ->
-                var s = Ghep.thayGioi(g.dong[i].chu, nu ?: false)
-                g.dong[i].o.forEachIndexed { k, x ->
-                    s = s.replace("{$k}", Ghep.thayGioi(x.dung.first(), nu ?: false))
-                }
-                s
-            }
+        // Trac nghiem ghi kem chu cai theo thu tu da tron cua luot nay; kieu khac dung chung voi
+        // man xem lai cau da lam, xem [cacDongLoiGiai].
+        val cac: List<String> = if (g is Ghep.Chon) {
+            g.dap.sortedBy { thuTuChon.indexOf(it) }.map { "${chuCai(it)}. ${g.cac[it]}" }
+        } else {
+            cacDongLoiGiai(g, nu ?: false)
         }
         cac.forEach { hop.addView(chu(it, 17f)) }
         khung.addView(hop)
@@ -853,6 +845,30 @@ class KhungGhep(
         }
 
         fun boThe(chu: String): String = chu.replace(Regex("</?[ub]>"), "")
+
+        /**
+         * Cac dong loi giai cua mot cau: phuong an dung, chu dung, cac buoc giai, o dien dung.
+         * Dung chung cho khung het luot ([veLoiGiai]) va man xem lai cau da lam dung
+         * ([CauDaLamActivity], 2/10/2026). Trac nghiem chi ghi chu cua phuong an, khong ghi chu
+         * cai: chu cai doi theo moi luot tron, con man xem lai thi khong co luot nao.
+         *
+         * @param nu cau co ten nhan vat doi theo ban nam ban nu ([Ghep.thayGioi]).
+         */
+        fun cacDongLoiGiai(g: Ghep, nu: Boolean = false): List<String> = when (g) {
+            is Ghep.Chon -> g.dap.map { g.cac[it] }
+            is Ghep.DungSai -> listOf(if (g.dap) g.nhan[0] else g.nhan[1])
+            is Ghep.Chu -> listOf(g.dap.first())
+            is Ghep.Cau -> listOf(g.dap.first())
+            is Ghep.BieuThuc -> g.loiGiai.ifEmpty { listOf(g.dap.first()) }
+            is Ghep.Buoc -> g.buoc
+            is Ghep.O -> g.dong.indices.map { i ->
+                var s = Ghep.thayGioi(g.dong[i].chu, nu)
+                g.dong[i].o.forEachIndexed { k, x ->
+                    s = s.replace("{$k}", Ghep.thayGioi(x.dung.first(), nu))
+                }
+                s
+            }
+        }
 
         /**
          * Khoa cua phuong an trac nghiem [i] trong [saiDaChon]: chi so trong sach, khong doi khi

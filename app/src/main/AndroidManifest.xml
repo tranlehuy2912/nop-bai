@@ -176,6 +176,11 @@
             android:configChanges="orientation|screenSize|screenLayout|smallestScreenSize"
             android:exported="false"
             android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.CauDaLamActivity"
+            android:configChanges="orientation|screenSize|screenLayout|smallestScreenSize"
+            android:exported="false"
+            android:screenOrientation="portrait" />
 
         <!-- Bai da cham: tung cau dung hay sai, sai thi may noi gi. Xem KetQuaActivity. -->
         <activity

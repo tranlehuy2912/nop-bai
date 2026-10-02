@@ -258,4 +258,20 @@ class KhungGhepTest {
         assertEquals(truoc.soLuot + 1, sau.soLuot)
         assertNotEquals(KhungGhep.hatLuot(truoc), KhungGhep.hatLuot(sau))
     }
+
+    /**
+     * Loi giai dung chung cho man xem lai cau da lam (2/10/2026): trac nghiem ghi chu phuong an,
+     * khong kem chu cai (chu cai doi theo luot tron); bieu thuc co loi giai thi ra cac buoc.
+     */
+    @Test
+    fun loi_giai_cho_man_xem_lai() {
+        val chon = Ghep.doc("""{"kieu":"CHON","sao":1,"hoi":"","cac":["2","3","4","5"],"dap":"B"}""")!!
+        assertEquals(listOf("3"), KhungGhep.cacDongLoiGiai(chon))
+        val coBuoc = Ghep.doc(
+            """{"kieu":"BIEU_THUC","sao":2,"dap":["−12"],"phim":["1","2"],"nhieu":[],"loi_giai":["M = −2x²y²","M = −12"]}"""
+        )!!
+        assertEquals(listOf("M = −2x²y²", "M = −12"), KhungGhep.cacDongLoiGiai(coBuoc))
+        val gon = Ghep.doc("""{"kieu":"BIEU_THUC","sao":1,"dap":["5x"],"phim":["x"],"nhieu":[]}""")!!
+        assertEquals(listOf("5x"), KhungGhep.cacDongLoiGiai(gon))
+    }
 }

@@ -47,6 +47,9 @@ import java.util.Calendar
  * dang mo (de tuan thu Bay, de on truoc kiem tra), roi bon dong De thi thu theo ky. Nhin mot
  * khu la biet mon do con bao nhieu viec.
  *
+ * CAU DA LAM DUNG (cung ngay): moi khu mot dong ngay duoi cac dong Luyen tap, mo [CauDaLamActivity]
+ * de xem lai de, cau con da tra loi va loi giai cua moi cau da lam dung tren may.
+ *
  * BAI DA HOC LA DONG DAU MOI KHU: bam la hop danh dau nhieu bai ([ChonHocToi.hoiMon]). Moi viec
  * trong khu dung chung tap bai do ([PhanHoc.baiDaHoc]). Doi xong thi [nap] chay lai
  * [GiaiDe.taoNeuCan], nen de du pham vi tu mo ngay luc do.
@@ -102,6 +105,8 @@ class LuyenTapActivity : AppCompatActivity() {
         /** Dong Kiem tra da xong hom nay: het the den luot, hay du phut tu vung. */
         val kiemTraXong: Boolean,
         val luyen: List<Luyen>,
+        /** So cau da lam dung tren may, cho dong "Câu đã làm đúng" ([CauDaLamActivity]). */
+        val soDung: Int,
         /** De tuan, de on kiem tra dang mo ma chua bat dau. De da bat dau nam o man chinh. */
         val deOn: List<DeGiai>,
         /** De on xong hom nay, kem diem. De thi thu xong thi nam trong dong cua ky. */
@@ -162,6 +167,7 @@ class LuyenTapActivity : AppCompatActivity() {
             kiemTraXong = kiemTraXong,
             // Phan chua soan cau nao thi khong co gi de bam: an dong.
             luyen = luyen.filter { it.tong > 0 },
+            soDung = LamTrenMay.soCauDaLamDung(ct, mon),
             deOn = dangMo.filter { it.mon == mon && it.loai != GiaiDe.LOAI_DE_THI && !it.daBatDau },
             deOnXong = xong.filter { it.mon == mon && it.loai != GiaiDe.LOAI_DE_THI }
                 .map { it to runCatching { GiaiDe.diem(ct, it) }.getOrDefault(0 to 0) },
@@ -244,6 +250,16 @@ class LuyenTapActivity : AppCompatActivity() {
                 else ChonHocToi.hoiMon(this, mon) { nap() }
             }
         }
+
+        // Xem lai cau da lam dung tren may: de, cau con tra loi, loi giai (Ba Huy chot 2/10/2026).
+        themDong(
+            box,
+            hinh = R.drawable.st_ic_da_cham,
+            mau = mauMon,
+            ten = "Câu đã làm đúng",
+            phu = if (k.soDung == 0) "Chưa có câu nào" else "Xem lại đề, câu đã trả lời và lời giải",
+            so = "${k.soDung} câu"
+        ) { CauDaLamActivity.mo(this, mon) }
 
         // De on dang mo (de tuan, de on truoc kiem tra), roi de on xong hom nay kem diem.
         k.deOn.forEach { de ->

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Nhan mot muc trong danh sach dung bang code ("ĐẠI SỐ · 6 CÂU"), cung kieu nhan khu cua trang
+     Luyen tap. Dung o man Cau da lam dung (2/10/2026). -->
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/Nhan.Nhom"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="20dp"
+    android:layout_marginBottom="8dp" />
