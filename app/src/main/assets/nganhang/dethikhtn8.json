@@ -2,7 +2,7 @@
  "nguon": "dethikhtn8",
  "mon": "Khoa học tự nhiên",
  "ten": "Đề thi Khoa học tự nhiên 8",
- "ban": 3,
+ "ban": 4,
  "cac_bai": [
   {
    "chuong": "Giữa học kì 1",
@@ -1510,24 +1510,29 @@
      "nhan": "Câu 3",
      "phan": "",
      "nhom": "",
-     "de": "Dấu hiệu nào sau đây chứng tỏ đã có phản ứng hóa học xảy ra?\nA. Thay đổi màu sắc\nB. Thay đổi trạng thái (có chất khí sinh ra, có xuất hiện kết tủa)\nC. Tỏa nhiệt và phát sáng\nD. Cả ba dấu hiệu: thay đổi màu sắc; có chất khí sinh ra hay kết tủa; tỏa nhiệt và phát sáng",
+     "de": "Những dấu hiệu nào sau đây chứng tỏ đã có phản ứng hóa học xảy ra?\nA. Thay đổi màu sắc. B. Có chất khí sinh ra hay xuất hiện kết tủa. C. Tỏa nhiệt và phát sáng. D. Chất rắn chảy thành chất lỏng.",
      "dang": "TRAC_NGHIEM",
-     "dap_an": "D",
+     "dap_an": "A, B, C",
      "loai_dap_an": "TN",
      "bai_sgk": 2,
      "ghep": {
       "kieu": "CHON",
       "sao": 1,
-      "hoi": "Dấu hiệu nào sau đây chứng tỏ đã có phản ứng hóa học xảy ra?",
+      "hoi": "Những dấu hiệu nào sau đây chứng tỏ đã có phản ứng hóa học xảy ra?",
       "cac": [
        "Thay đổi màu sắc",
-       "Thay đổi trạng thái (có chất khí sinh ra, có xuất hiện kết tủa)",
+       "Có chất khí sinh ra hay xuất hiện kết tủa",
        "Tỏa nhiệt và phát sáng",
-       "Cả ba dấu hiệu: thay đổi màu sắc; có chất khí sinh ra hay kết tủa; tỏa nhiệt và phát sáng"
+       "Chất rắn chảy thành chất lỏng"
       ],
-      "dap": "D"
+      "dap": [
+       "A",
+       "B",
+       "C"
+      ],
+      "nhieu_dap": true
      },
-     "ghi_chu": "Đề in phương án D là \"Cả A, B, C\". Máy trộn thứ tự và đánh lại chữ cái, nên phương án này viết rõ ba dấu hiệu thay cho chữ cái."
+     "ghi_chu": "Đề in phương án D là \"Cả A, B, C\". Máy trộn thứ tự và đánh lại chữ cái, nên phương án này viết rõ ba dấu hiệu thay cho chữ cái. Đề in 'Cả A, B, C': đổi thành chọn nhiều đáp án. Bỏ chữ 'thay đổi trạng thái' ở phương án B vì đổi trạng thái có thể chỉ là biến đổi vật lí."
     },
     {
      "ma": "KGK1-4.C4",
@@ -3044,18 +3049,7 @@
      "loai_dap_an": "TN",
      "bai_sgk": 8,
      "ghi_chu": "Đáp án in là 3 (lời giải in kể HCl, H₂SO₄, CH₃COOH). SGK Bài 8 chỉ ghi rõ \"sản xuất chất dẻo\" cho H₂SO₄ (Hình 8.1); HCl ghi \"tổng hợp chất hữu cơ\" (Hình 8.2), CH₃COOH ghi \"sản xuất sợi poly(vinyl acetate)\" (Hình 8.3). Giữ đáp án in; câu còn tranh cãi, xem KGK1-7-ghichu.md.",
-     "ghep": {
-      "kieu": "CHON",
-      "sao": 1,
-      "hoi": "Cho các acid sau: HBr, HCl, HNO₃, H₂SO₄, HCOOH, CH₃COOH. Số acid được sử dụng trong công nghiệp sản xuất chất dẻo là",
-      "cac": [
-       "1",
-       "2",
-       "4",
-       "3"
-      ],
-      "dap": "D"
-     }
+     "bo_may": "đáp án không xác định được theo SGK Bài 8"
     },
     {
      "ma": "KGK1-7.C14",
@@ -4845,23 +4839,28 @@
      "nhan": "Câu 1",
      "phan": "Phần 1. Trắc nghiệm",
      "nhom": "",
-     "de": "Dụng cụ đo thể tích chất lỏng là?\nA. Cốc đong\nB. Ống đong\nC. Bình tam giác\nD. Cả cốc đong, ống đong và bình tam giác",
+     "de": "Những dụng cụ nào sau đây dùng để đo thể tích chất lỏng?\nA. Cốc đong. B. Ống đong. C. Bình tam giác. D. Ống nghiệm.",
      "dang": "TRAC_NGHIEM",
-     "dap_an": "D",
+     "dap_an": "A, B, C",
      "loai_dap_an": "TN",
      "bai_sgk": 1,
-     "ghi_chu": "Bảng đáp án và dòng \"Đáp án A\" của lời giải in ghi A, nhưng chính lời giải in viết \"Dụng cụ đo thể tích chất lỏng có thể là cốc đong, ống đong, bình tam giác\", tức phương án D; Hình 1.2 SGK (Bài 1) cũng vẽ cả ba dụng cụ có vạch chia thể tích. Dùng D. Phương án D in \"Cả 3 đáp án trên\"; viết lại bằng tên ba dụng cụ vì máy trộn thứ tự phương án.",
+     "ghi_chu": "Bảng đáp án và dòng \"Đáp án A\" của lời giải in ghi A, nhưng chính lời giải in viết \"Dụng cụ đo thể tích chất lỏng có thể là cốc đong, ống đong, bình tam giác\", tức phương án D; Hình 1.2 SGK (Bài 1) cũng vẽ cả ba dụng cụ có vạch chia thể tích. Dùng D. Phương án D in \"Cả 3 đáp án trên\"; viết lại bằng tên ba dụng cụ vì máy trộn thứ tự phương án. Đề in 'Cả 3 đáp án trên': đổi thành chọn nhiều đáp án, phương án D là ống nghiệm (không có vạch chia).",
      "ghep": {
       "kieu": "CHON",
       "sao": 1,
-      "hoi": "Dụng cụ đo thể tích chất lỏng là?",
+      "hoi": "Những dụng cụ nào sau đây dùng để đo thể tích chất lỏng?",
       "cac": [
        "Cốc đong",
        "Ống đong",
        "Bình tam giác",
-       "Cả cốc đong, ống đong và bình tam giác"
+       "Ống nghiệm"
       ],
-      "dap": "D"
+      "dap": [
+       "A",
+       "B",
+       "C"
+      ],
+      "nhieu_dap": true
      }
     },
     {
@@ -4869,23 +4868,28 @@
      "nhan": "Câu 2",
      "phan": "Phần 1. Trắc nghiệm",
      "nhom": "",
-     "de": "Tình huống nguy hiểm có thể gặp phải trong phòng thực hành?\nA. Ngửi hóa chất độc hại\nB. Tự tiện đổ các loại hóa chất vào nhau\nC. Làm vỡ ống hóa chất\nD. Cả ba việc: ngửi hóa chất độc hại, tự tiện đổ các loại hóa chất vào nhau, làm vỡ ống hóa chất",
+     "de": "Những việc nào sau đây là tình huống nguy hiểm có thể gặp phải trong phòng thực hành?\nA. Ngửi hóa chất độc hại. B. Tự tiện đổ các loại hóa chất vào nhau. C. Làm vỡ ống hóa chất. D. Đeo kính bảo hộ khi làm thí nghiệm.",
      "dang": "TRAC_NGHIEM",
-     "dap_an": "D",
+     "dap_an": "A, B, C",
      "loai_dap_an": "TN",
      "bai_sgk": 1,
-     "ghi_chu": "Phương án D in \"Cả 3 đáp án trên đều đúng\"; viết lại bằng tên ba tình huống vì máy trộn thứ tự phương án.",
+     "ghi_chu": "Phương án D in \"Cả 3 đáp án trên đều đúng\"; viết lại bằng tên ba tình huống vì máy trộn thứ tự phương án. Đề in 'Cả 3 đáp án trên đều đúng': đổi thành chọn nhiều đáp án, phương án D là việc an toàn.",
      "ghep": {
       "kieu": "CHON",
       "sao": 1,
-      "hoi": "Tình huống nguy hiểm có thể gặp phải trong phòng thực hành?",
+      "hoi": "Những việc nào sau đây là tình huống nguy hiểm có thể gặp phải trong phòng thực hành?",
       "cac": [
        "Ngửi hóa chất độc hại",
        "Tự tiện đổ các loại hóa chất vào nhau",
        "Làm vỡ ống hóa chất",
-       "Cả ba việc: ngửi hóa chất độc hại, tự tiện đổ các loại hóa chất vào nhau, làm vỡ ống hóa chất"
+       "Đeo kính bảo hộ khi làm thí nghiệm"
       ],
-      "dap": "D"
+      "dap": [
+       "A",
+       "B",
+       "C"
+      ],
+      "nhieu_dap": true
      }
     },
     {
@@ -9857,7 +9861,7 @@
      "nhan": "Câu 20",
      "phan": "",
      "nhom": "",
-     "de": "Phân bón NPK là hỗn hợp của:\nA. NH4H2PO4 và KNO3\nB. (NH4)3PO4 và KNO3\nC. (NH4)2HPO4 và NaNO3\nD. (NH4)2HPO4 và KNO3",
+     "de": "Phân bón NPK là hỗn hợp của:\nA. NH₄H₂PO₄ và NaNO₃. B. KCl và NH₄NO₃. C. (NH₄)₂HPO₄ và NaNO₃. D. (NH₄)₂HPO₄ và KNO₃.",
      "dang": "TRAC_NGHIEM",
      "dap_an": "D",
      "loai_dap_an": "TN",
@@ -9867,14 +9871,14 @@
       "sao": 1,
       "hoi": "Phân bón NPK là hỗn hợp của:",
       "cac": [
-       "NH₄H₂PO₄ và KNO₃",
-       "(NH₄)₃PO₄ và KNO₃",
+       "NH₄H₂PO₄ và NaNO₃",
+       "KCl và NH₄NO₃",
        "(NH₄)₂HPO₄ và NaNO₃",
        "(NH₄)₂HPO₄ và KNO₃"
       ],
       "dap": "D"
      },
-     "ghi_chu": "Đề in dấu phẩy giữa hai muối ở A, B, D và chữ \"và\" ở C; viết \"và\" cả bốn cho đều."
+     "ghi_chu": "Đề in dấu phẩy giữa hai muối ở A, B, D và chữ \"và\" ở C; viết \"và\" cả bốn cho đều. Đề in hai phương án khác cũng đủ N, P, K: thay bằng cặp thiếu K, thiếu P cho chỉ còn một đáp án."
     }
    ]
   },

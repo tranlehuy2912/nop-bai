@@ -2,7 +2,7 @@
  "nguon": "dethitoan8",
  "mon": "Toán",
  "ten": "Đề thi Toán 8",
- "ban": 3,
+ "ban": 4,
  "cac_bai": [
   {
    "chuong": "Giữa học kì 1",
@@ -185,24 +185,28 @@
      "nhan": "Câu 8",
      "phan": "Phần trắc nghiệm (4 điểm)",
      "nhom": "",
-     "de": "Chọn câu trả lời đúng. Tứ giác nào có hai đường chéo vuông góc với nhau?\nA. Hình thoi. B. Hình vuông. C. Hình chữ nhật. D. Cả A và B.",
+     "de": "Những tứ giác nào sau đây có hai đường chéo vuông góc với nhau?\nA. Hình thoi. B. Hình vuông. C. Hình chữ nhật. D. Hình bình hành.",
      "dang": "TRAC_NGHIEM",
-     "dap_an": "D",
+     "dap_an": "A, B",
      "loai_dap_an": "TN",
      "bai_sgk": 14,
      "ghep": {
       "kieu": "CHON",
       "sao": 1,
-      "hoi": "Chọn câu trả lời đúng. Tứ giác nào có hai đường chéo vuông góc với nhau?",
+      "hoi": "Những tứ giác nào sau đây có hai đường chéo vuông góc với nhau?",
       "cac": [
        "Hình thoi",
        "Hình vuông",
        "Hình chữ nhật",
-       "Cả hình thoi và hình vuông"
+       "Hình bình hành"
       ],
-      "dap": "D"
+      "dap": [
+       "A",
+       "B"
+      ],
+      "nhieu_dap": true
      },
-     "ghi_chu": "Đề in phương án D là 'Cả A và B'; máy trộn thứ tự phương án nên đổi thành 'Cả hình thoi và hình vuông'."
+     "ghi_chu": "Đề in phương án D là 'Cả A và B'; máy trộn thứ tự phương án nên đổi thành 'Cả hình thoi và hình vuông'. Đề in một đáp án 'Cả A và B', trong khi chọn riêng hình thoi hay hình vuông cũng đúng: đổi thành chọn nhiều đáp án."
     },
     {
      "ma": "TGK1-1.B1a",
@@ -1446,24 +1450,29 @@
      "nhan": "Câu 12",
      "phan": "Phần trắc nghiệm (3 điểm)",
      "nhom": "",
-     "de": "Chọn câu đúng nhất\nA. Hình thang cân là hình thang có hai góc kề một đáy bằng nhau.\nB. Trong hình thang cân, hai cạnh bên bằng nhau.\nC. Trong hình thang cân, hai đường chéo bằng nhau.\nD. Cả A, B, C đều đúng.",
+     "de": "Những câu nào sau đây đúng?\nA. Hình thang cân là hình thang có hai góc kề một đáy bằng nhau. B. Trong hình thang cân, hai cạnh bên bằng nhau. C. Trong hình thang cân, hai đường chéo bằng nhau. D. Hình thang có hai cạnh bên bằng nhau là hình thang cân.",
      "dang": "TRAC_NGHIEM",
-     "dap_an": "D",
+     "dap_an": "A, B, C",
      "loai_dap_an": "TN",
      "bai_sgk": 11,
      "ghep": {
       "kieu": "CHON",
       "sao": 1,
-      "hoi": "Chọn câu đúng nhất.",
+      "hoi": "Những câu nào sau đây đúng?",
       "cac": [
        "Hình thang cân là hình thang có hai góc kề một đáy bằng nhau",
        "Trong hình thang cân, hai cạnh bên bằng nhau",
        "Trong hình thang cân, hai đường chéo bằng nhau",
-       "Cả ba câu kia đều đúng"
+       "Hình thang có hai cạnh bên bằng nhau là hình thang cân"
       ],
-      "dap": "D"
+      "dap": [
+       "A",
+       "B",
+       "C"
+      ],
+      "nhieu_dap": true
      },
-     "ghi_chu": "Đề in phương án D là 'Cả A, B, C đều đúng'; máy trộn thứ tự phương án nên đổi thành 'Cả ba câu kia đều đúng' (không nhắc chữ cái)."
+     "ghi_chu": "Đề in phương án D là 'Cả A, B, C đều đúng'; máy trộn thứ tự phương án nên đổi thành 'Cả ba câu kia đều đúng' (không nhắc chữ cái). Đề in 'Cả A, B, C đều đúng' (câu đúng nhất): đổi thành chọn nhiều đáp án, thay phương án D bằng một câu sai."
     },
     {
      "ma": "TGK1-3.B1a",
@@ -2406,65 +2415,7 @@
      "hinh_goi_y": [
       "dethitoan8/TGK1-4.B4.goi-y.webp"
      ],
-     "ghep": {
-      "kieu": "BUOC",
-      "sao": 6,
-      "hoi": "Bài 4. (2,5 điểm) Cho tam giác ABC vuông tại A có AB nhỏ hơn AC, đường cao AH. Gọi I là trung điểm của AB. Lấy K đối xứng với B qua H. Qua A kẻ đường thẳng song song với BC, cắt HI tại D.\na) Chứng minh AD = BH. Từ đó chứng minh tứ giác AKHD là hình bình hành;",
-      "buoc": [
-       "AD // BC nên góc DAI = góc HBI (hai góc so le trong)",
-       "AI = BI (I là trung điểm của AB)",
-       "góc AID = góc BIH (hai góc đối đỉnh)",
-       "Do đó ΔADI = ΔBHI (g.c.g), suy ra AD = BH",
-       "K đối xứng với B qua H nên HK = BH, do đó AD = HK",
-       "Tứ giác AKHD có AD // HK (vì AD // BC) và AD = HK nên là hình bình hành"
-      ],
-      "nhieu": [
-       "AD // BC nên góc DAI = góc HBI (hai góc đồng vị)",
-       "Do đó ΔADI = ΔBHI (c.g.c), suy ra AD = BH"
-      ],
-      "thu_tu_khac": [
-       [
-        0,
-        2,
-        1,
-        3,
-        4,
-        5
-       ],
-       [
-        1,
-        0,
-        2,
-        3,
-        4,
-        5
-       ],
-       [
-        1,
-        2,
-        0,
-        3,
-        4,
-        5
-       ],
-       [
-        2,
-        0,
-        1,
-        3,
-        4,
-        5
-       ],
-       [
-        2,
-        1,
-        0,
-        3,
-        4,
-        5
-       ]
-      ]
-     }
+     "bo_may": "đề tự mâu thuẫn: giả thiết AB nhỏ hơn AC trái với số liệu ý b và đáp án ý c"
     },
     {
      "ma": "TGK1-4.B4b",
@@ -2479,22 +2430,8 @@
      "hinh_goi_y": [
       "dethitoan8/TGK1-4.B4.goi-y.webp"
      ],
-     "ghep": {
-      "kieu": "BUOC",
-      "sao": 4,
-      "hoi": "Bài 4. (2,5 điểm) Cho tam giác ABC vuông tại A có AB nhỏ hơn AC, đường cao AH. Gọi I là trung điểm của AB. Lấy K đối xứng với B qua H. Qua A kẻ đường thẳng song song với BC, cắt HI tại D.\nb) Chứng minh tứ giác AHBD là hình chữ nhật. Tính diện tích AHBD nếu AH = 6 cm, BH = 8 cm;",
-      "buoc": [
-       "ΔADI = ΔBHI (câu a) nên DI = HI",
-       "Tứ giác AHBD có hai đường chéo AB và DH cắt nhau tại I là trung điểm của mỗi đường nên AHBD là hình bình hành",
-       "Hình bình hành AHBD có góc AHB = 90° (AH là đường cao) nên AHBD là hình chữ nhật",
-       "Diện tích hình chữ nhật AHBD là AH · BH = 6 · 8 = 48 (cm²)"
-      ],
-      "nhieu": [
-       "Diện tích hình chữ nhật AHBD là AH · BH : 2 = 6 · 8 : 2 = 24 (cm²)",
-       "Hình bình hành AHBD có góc AHB = 90° (AH là đường cao) nên AHBD là hình vuông"
-      ]
-     },
-     "ghi_chu": "Đề in 'AB < AC'; trên máy viết 'AB nhỏ hơn AC' vì kiem.py coi dấu < là thẻ lạ. Số liệu AH = 6 cm, BH = 8 cm trái với điều kiện đó (khi đó HC = AH²/BH = 4,5 cm, nhỏ hơn BH, tức AB lớn hơn AC). Diện tích vẫn là 48 cm²; giữ nguyên số liệu đề in."
+     "ghi_chu": "Đề in 'AB < AC'; trên máy viết 'AB nhỏ hơn AC' vì kiem.py coi dấu < là thẻ lạ. Số liệu AH = 6 cm, BH = 8 cm trái với điều kiện đó (khi đó HC = AH²/BH = 4,5 cm, nhỏ hơn BH, tức AB lớn hơn AC). Diện tích vẫn là 48 cm²; giữ nguyên số liệu đề in.",
+     "bo_may": "đề tự mâu thuẫn: giả thiết AB nhỏ hơn AC trái với số liệu ý b và đáp án ý c"
     },
     {
      "ma": "TGK1-4.B4c",
@@ -2509,22 +2446,8 @@
      "hinh_goi_y": [
       "dethitoan8/TGK1-4.B4.goi-y.webp"
      ],
-     "ghep": {
-      "kieu": "BUOC",
-      "sao": 4,
-      "hoi": "Bài 4. (2,5 điểm) Cho tam giác ABC vuông tại A có AB nhỏ hơn AC, đường cao AH. Gọi I là trung điểm của AB. Lấy K đối xứng với B qua H. Qua A kẻ đường thẳng song song với BC, cắt HI tại D.\nc) Tam giác ABC cần có thêm điều kiện gì để tứ giác AHBD là hình vuông?",
-      "buoc": [
-       "Hình chữ nhật AHBD là hình vuông khi AH = BH",
-       "Khi đó tam giác AHB vuông cân tại H nên góc ABH = 45°",
-       "Tam giác ABC vuông tại A có góc ABC = 45° nên góc ACB = 45°",
-       "Vậy để AHBD là hình vuông thì tam giác ABC phải là tam giác vuông cân tại A"
-      ],
-      "nhieu": [
-       "Hình chữ nhật AHBD là hình vuông khi AB = DH",
-       "Vậy để AHBD là hình vuông thì tam giác ABC phải là tam giác đều"
-      ]
-     },
-     "ghi_chu": "Đề in 'đề tứ giác' (lỗi gõ), trên máy sửa thành 'để tứ giác'. Đáp án của lời giải (vuông cân tại A) trái với giả thiết AB nhỏ hơn AC của đề; giữ như lời giải, xem ghi chú."
+     "ghi_chu": "Đề in 'đề tứ giác' (lỗi gõ), trên máy sửa thành 'để tứ giác'. Đáp án của lời giải (vuông cân tại A) trái với giả thiết AB nhỏ hơn AC của đề; giữ như lời giải, xem ghi chú.",
+     "bo_may": "đề tự mâu thuẫn: giả thiết AB nhỏ hơn AC trái với số liệu ý b và đáp án ý c"
     },
     {
      "ma": "TGK1-4.B5",
@@ -5327,7 +5250,7 @@
      "ghep": {
       "kieu": "BIEU_THUC",
       "sao": 5,
-      "hoi": "Bài 5. (1 điểm)\na) Tìm x, y biết: x² − 2xy + 2x + 2y² − 4y + 2 = 0.",
+      "hoi": "Bài 5. (1 điểm)\na) Tìm x, y biết: x² − 2xy + 2x + 2y² − 4y + 2 = 0.\n(Viết kết quả dạng x=…;y=…)",
       "dap": [
        "x=0;y=1",
        "y=1;x=0",
@@ -5351,7 +5274,8 @@
        "Vì (x − y + 1)² ≥ 0 và (y − 1)² ≥ 0 với mọi x, y nên x − y + 1 = 0 và y − 1 = 0",
        "Suy ra y = 1 và x = y − 1 = 0"
       ]
-     }
+     },
+     "ghi_chu": "Thêm dòng dặn cách gõ: máy chỉ nhận dạng x=0;y=1, con gõ 0;1 thì bị tính sai dù đúng."
     },
     {
      "ma": "TGK1-8.B5b",
@@ -6163,7 +6087,7 @@
      "nhan": "Câu 5",
      "phan": "Phần trắc nghiệm (3 điểm)",
      "nhom": "",
-     "de": "Cho tam giác ABC, qua điểm D thuộc cạnh BC, kẻ các đường thẳng song song với AB và AC, cắt AC và AB theo thứ tự ở E và F. Tam giác ABC cần thêm điều kiện gì thì AEDF là chữ nhật?\nA. cân tại A. B. vuông tại A. C. vuông cân tại A. D. A = 60°.",
+     "de": "Cho tam giác ABC, qua điểm D thuộc cạnh BC, kẻ các đường thẳng song song với AB và AC, cắt AC và AB theo thứ tự ở E và F. Tam giác ABC cần thêm điều kiện gì thì AEDF là hình chữ nhật?\nA. cân tại A. B. vuông tại A. C. cân tại B. D. góc A = 60°.",
      "dang": "TRAC_NGHIEM",
      "dap_an": "B",
      "loai_dap_an": "TN",
@@ -6178,19 +6102,19 @@
       "cac": [
        "cân tại A",
        "vuông tại A",
-       "vuông cân tại A",
+       "cân tại B",
        "góc A = 60°"
       ],
       "dap": "B"
      },
-     "ghi_chu": "Đề in 'AEDF là chữ nhật', 'A = 60°' (A có mũ góc); trên máy viết 'hình chữ nhật', 'góc A = 60°'. 'vuông cân tại A' cũng làm AEDF là hình chữ nhật nhưng không cần cân; đáp án in là B, điều kiện vừa đủ. Hình gợi ý là hình lời giải (trang 6), chỉ vẽ lại dữ kiện, góc A trong hình không vuông."
+     "ghi_chu": "Đề in 'AEDF là chữ nhật', 'A = 60°' (A có mũ góc); trên máy viết 'hình chữ nhật', 'góc A = 60°'. 'vuông cân tại A' cũng làm AEDF là hình chữ nhật nhưng không cần cân; đáp án in là B, điều kiện vừa đủ. Hình gợi ý là hình lời giải (trang 6), chỉ vẽ lại dữ kiện, góc A trong hình không vuông. Phương án in 'vuông cân tại A' cũng làm AEDF là hình chữ nhật: thay bằng 'cân tại B' cho chỉ còn một đáp án."
     },
     {
      "ma": "TCK1-2.C6",
      "nhan": "Câu 6",
      "phan": "Phần trắc nghiệm (3 điểm)",
      "nhom": "",
-     "de": "Cho tam giác ABC vuông tại A có AB = (1/2)BC, đường trung tuyến AM. Tam giác ABM là tam giác gì?\nA. vuông tại A. B. cân tại M. C. đều. D. cân tại B.",
+     "de": "Cho tam giác ABC vuông tại A có AB = (1/2)BC, đường trung tuyến AM. Tam giác ABM là tam giác gì?\nA. vuông tại A. B. vuông tại M. C. đều. D. có một góc tù.",
      "dang": "TRAC_NGHIEM",
      "dap_an": "C",
      "loai_dap_an": "TN",
@@ -6201,13 +6125,13 @@
       "hoi": "Cho tam giác ABC vuông tại A có AB = (1/2)BC, đường trung tuyến AM. Tam giác ABM là tam giác gì?",
       "cac": [
        "vuông tại A",
-       "cân tại M",
+       "vuông tại M",
        "đều",
-       "cân tại B"
+       "có một góc tù"
       ],
       "dap": "C"
      },
-     "ghi_chu": "Tam giác đều cũng cân tại M và cân tại B; đáp án in là C (tên đúng nhất), giữ như đề. Không lấy hình lời giải làm hình gợi ý: hình vẽ đúng tỉ lệ thì nhìn là thấy tam giác ABM đều."
+     "ghi_chu": "Tam giác đều cũng cân tại M và cân tại B; đáp án in là C (tên đúng nhất), giữ như đề. Không lấy hình lời giải làm hình gợi ý: hình vẽ đúng tỉ lệ thì nhìn là thấy tam giác ABM đều. Tam giác đều cũng cân tại M và cân tại B: thay hai phương án đó bằng phương án sai cho chỉ còn một đáp án."
     },
     {
      "ma": "TCK1-2.C7",
@@ -6879,7 +6803,7 @@
      "nhan": "Câu 7",
      "phan": "Phần trắc nghiệm (3 điểm)",
      "nhom": "",
-     "de": "Cho tam giác ABC cân tại A. Trên các cạnh bên AB, AC lấy các điểm M, N sao cho BM = CN. Tứ giác BMNC là hình gì?\nA. Hình thang. B. Hình thang cân. C. Hình thang vuông. D. Cả A, B, C đều sai.",
+     "de": "Cho tam giác ABC cân tại A. Trên các cạnh bên AB, AC lấy các điểm M, N sao cho BM = CN. Tứ giác BMNC là hình gì?\nA. Hình bình hành. B. Hình thang cân. C. Hình thang vuông. D. Không phải hình thang.",
      "dang": "TRAC_NGHIEM",
      "dap_an": "B",
      "loai_dap_an": "TN",
@@ -6889,14 +6813,14 @@
       "sao": 1,
       "hoi": "Cho tam giác ABC cân tại A. Trên các cạnh bên AB, AC lấy các điểm M, N sao cho BM = CN. Tứ giác BMNC là hình gì?",
       "cac": [
-       "Hình thang",
+       "Hình bình hành",
        "Hình thang cân",
        "Hình thang vuông",
        "Không phải hình thang"
       ],
       "dap": "B"
      },
-     "ghi_chu": "Phương án D in 'Cả A, B, C đều sai'; máy trộn phương án nên đổi thành 'Không phải hình thang'. Hình thang cân cũng là hình thang, đáp án in là B (tên đúng nhất), giữ như đề."
+     "ghi_chu": "Phương án D in 'Cả A, B, C đều sai'; máy trộn phương án nên đổi thành 'Không phải hình thang'. Hình thang cân cũng là hình thang, đáp án in là B (tên đúng nhất), giữ như đề. Hình thang cân cũng là hình thang: thay phương án 'Hình thang' bằng 'Hình bình hành' cho chỉ còn một đáp án."
     },
     {
      "ma": "TCK1-3.C8",
@@ -7824,19 +7748,8 @@
      "hinh": [
       "dethitoan8/TCK1-4.C11.webp"
      ],
-     "ghep": {
-      "kieu": "CHON",
-      "sao": 1,
-      "hoi": "Câu 11: Biểu đồ tranh ở hình vẽ thống kê số gạo bán được của một cửa hàng trong ba tháng cuối năm 2020.\nb) Lựa chọn biểu đồ nào để biểu diễn các dữ liệu thống kê có trong biểu đồ tranh ở hình vẽ?",
-      "cac": [
-       "Biểu đồ hình quạt tròn",
-       "Biểu đồ cột kép",
-       "Biểu đồ cột",
-       "Cả ba phương án kia đều đúng"
-      ],
-      "dap": "C"
-     },
-     "ghi_chu": "Phương án D in 'A; B; C đều đúng'; máy trộn phương án nên đổi thành 'Cả ba phương án kia đều đúng' (như TGK1-3 Câu 12)."
+     "ghi_chu": "Phương án D in 'A; B; C đều đúng'; máy trộn phương án nên đổi thành 'Cả ba phương án kia đều đúng' (như TGK1-3 Câu 12).",
+     "bo_may": "câu chọn biểu đồ có nhiều đáp án hợp lý"
     },
     {
      "ma": "TCK1-4.C11c",
@@ -10643,9 +10556,9 @@
      "nhan": "Câu 12",
      "phan": "Phần trắc nghiệm (3 điểm)",
      "nhom": "",
-     "de": "Muốn biểu diễn số ngày trời không mưa, mưa nhỏ, mưa vừa, mưa to trong một tháng, ta nên dùng biểu đồ nào?\nA. Biểu đồ đoạn thẳng. B. Biểu đồ cột kép. C. Biểu đồ hình quạt tròn. D. Biểu đồ cột.",
+     "de": "Muốn biểu diễn số ngày trời không mưa, mưa nhỏ, mưa vừa, mưa to trong một tháng, ta nên dùng biểu đồ nào?\nA. Biểu đồ đoạn thẳng. B. Biểu đồ cột kép. C. Biểu đồ cột.",
      "dang": "TRAC_NGHIEM",
-     "dap_an": "D",
+     "dap_an": "C",
      "loai_dap_an": "TN",
      "bai_sgk": 19,
      "ghep": {
@@ -10655,11 +10568,11 @@
       "cac": [
        "Biểu đồ đoạn thẳng",
        "Biểu đồ cột kép",
-       "Biểu đồ hình quạt tròn",
        "Biểu đồ cột"
       ],
-      "dap": "D"
-     }
+      "dap": "C"
+     },
+     "ghi_chu": "Biểu đồ hình quạt tròn cũng hợp lý vì số ngày cộng lại là cả tháng: bỏ phương án đó, giữ đáp án biểu đồ cột như SBT tập một (Trắc nghiệm 4, trang 72)."
     },
     {
      "ma": "TCK1-8.B1a",
