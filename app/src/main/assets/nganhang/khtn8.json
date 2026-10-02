@@ -2,7 +2,7 @@
  "nguon": "khtn8",
  "mon": "Khoa học tự nhiên",
  "ten": "SGK Khoa học tự nhiên 8",
- "ban": 2,
+ "ban": 3,
  "cac_bai": [
   {
    "chuong": "Mở đầu",
@@ -2374,49 +2374,429 @@
      "trang": 35,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Quan sát Bảng 8.1 (tên một số acid thông dụng, công thức hoá học và dạng tồn tại trong dung dịch: HCl, HNO3, H2SO4; SGK trang 35) và thực hiện các yêu cầu: 1. Công thức hoá học của các acid có đặc điểm gì giống nhau? 2. Dạng tồn tại của acid trong dung dịch có đặc điểm gì chung? 3. Đề xuất khái niệm về acid."
+     "de": "Quan sát Bảng 8.1 (SGK trang 35) và thực hiện các yêu cầu. Bảng 8.1. Tên một số acid thông dụng, công thức hoá học và dạng tồn tại của acid trong dung dịch: Hydrochloric acid, HCl: cation H^+, anion gốc acid Cl^-; Nitric acid, HNO3: cation H^+, anion gốc acid NO3^-; Sulfuric acid, H2SO4: cation H^+, anion gốc acid SO4^2-. 1. Công thức hoá học của các acid có đặc điểm gì giống nhau? 2. Dạng tồn tại của acid trong dung dịch có đặc điểm gì chung? 3. Đề xuất khái niệm về acid.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "dong": [
+       {
+        "chu": "1. Công thức hoá học của các acid đều có {0}",
+        "o": [
+         {
+          "dung": [
+           "nguyên tử hydrogen liên kết với gốc acid"
+          ],
+          "sai": [
+           "nguyên tử oxygen liên kết với kim loại",
+           "nguyên tử kim loại liên kết với nhóm OH"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "2. Trong dung dịch, các acid đều tạo ra {0}",
+        "o": [
+         {
+          "dung": [
+           "cation H⁺"
+          ],
+          "sai": [
+           "anion OH⁻",
+           "cation kim loại"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "3. Acid là {0}",
+        "o": [
+         {
+          "dung": [
+           "hợp chất trong phân tử có nguyên tử hydrogen liên kết với gốc acid, khi tan trong nước tạo ra ion H⁺"
+          ],
+          "sai": [
+           "hợp chất trong phân tử có nguyên tử kim loại liên kết với nhóm hydroxide, khi tan trong nước tạo ra ion OH⁻",
+           "hợp chất của hai nguyên tố, trong đó có một nguyên tố là oxygen"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B8.C2",
      "trang": 36,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Hãy cho biết gốc acid trong các acid sau: H2SO4, HCl, HNO3."
+     "de": "Hãy cho biết gốc acid trong các acid sau: H2SO4, HCl, HNO3.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "dong": [
+       {
+        "chu": "H₂SO₄: gốc acid là {0}",
+        "o": [
+         {
+          "dung": [
+           "SO₄"
+          ],
+          "sai": [
+           "H₂",
+           "SO₃"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "HCl: gốc acid là {0}",
+        "o": [
+         {
+          "dung": [
+           "Cl"
+          ],
+          "sai": [
+           "H",
+           "HCl"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "HNO₃: gốc acid là {0}",
+        "o": [
+         {
+          "dung": [
+           "NO₃"
+          ],
+          "sai": [
+           "H",
+           "NO₂"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B8.C3",
      "trang": 36,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Cho dung dịch HCl tác dụng với kim loại Mg. Viết phương trình hoá học của phản ứng xảy ra."
+     "de": "Cho dung dịch HCl tác dụng với kim loại Mg. Viết phương trình hoá học của phản ứng xảy ra.",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "dap": [
+       "Mg+2HCl→MgCl₂+H₂"
+      ],
+      "phim": [
+       "Mg",
+       "HCl",
+       "MgCl₂",
+       "H₂"
+      ],
+      "nhieu": [
+       "MgCl",
+       "H₂O",
+       "Cl₂"
+      ],
+      "loi_giai": [
+       "Mg tác dụng với dung dịch HCl tạo muối magnesium chloride MgCl₂ và khí hydrogen H₂",
+       "Vế phải có 2 nguyên tử Cl và 2 nguyên tử H nên đặt 2 trước HCl",
+       "Mg + 2HCl → MgCl₂ + H₂"
+      ]
+     }
     },
     {
      "ma": "B8.C4",
      "trang": 37,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Sử dụng Hình 8.1 (SGK trang 37) để trình bày về các ứng dụng của sulfuric acid."
+     "de": "Sử dụng Hình 8.1 (SGK trang 37) để trình bày về các ứng dụng của sulfuric acid.",
+     "hinh": [
+      "khtn8/B8.C4.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "hoi": "Sử dụng Hình 8.1 để trình bày về các ứng dụng của sulfuric acid: mỗi việc sau có được nêu trong Hình 8.1 là ứng dụng của sulfuric acid không?",
+      "dong": [
+       {
+        "chu": "Sản xuất phân bón: {0}",
+        "o": [
+         {
+          "dung": [
+           "Có trong Hình 8.1"
+          ],
+          "sai": [
+           "Không có"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Sản xuất chất tẩy rửa: {0}",
+        "o": [
+         {
+          "dung": [
+           "Có trong Hình 8.1"
+          ],
+          "sai": [
+           "Không có"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Xử lí pH nước bể bơi: {0}",
+        "o": [
+         {
+          "dung": [
+           "Không có"
+          ],
+          "sai": [
+           "Có trong Hình 8.1"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Sản xuất giấy, tơ sợi: {0}",
+        "o": [
+         {
+          "dung": [
+           "Có trong Hình 8.1"
+          ],
+          "sai": [
+           "Không có"
+          ],
+          "hai": true
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B8.C5",
      "trang": 37,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Sử dụng Hình 8.2 (SGK trang 37) để trình bày về một số ứng dụng của hydrochloric acid."
+     "de": "Sử dụng Hình 8.2 (SGK trang 37) để trình bày về một số ứng dụng của hydrochloric acid.",
+     "hinh": [
+      "khtn8/B8.C5.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "hoi": "Sử dụng Hình 8.2 để trình bày về một số ứng dụng của hydrochloric acid: mỗi việc sau có được nêu trong Hình 8.2 là ứng dụng của hydrochloric acid không?",
+      "dong": [
+       {
+        "chu": "Tẩy gỉ thép: {0}",
+        "o": [
+         {
+          "dung": [
+           "Có trong Hình 8.2"
+          ],
+          "sai": [
+           "Không có"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Tổng hợp chất hữu cơ: {0}",
+        "o": [
+         {
+          "dung": [
+           "Có trong Hình 8.2"
+          ],
+          "sai": [
+           "Không có"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Sản xuất phân bón: {0}",
+        "o": [
+         {
+          "dung": [
+           "Không có"
+          ],
+          "sai": [
+           "Có trong Hình 8.2"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Xử lí pH nước bể bơi: {0}",
+        "o": [
+         {
+          "dung": [
+           "Có trong Hình 8.2"
+          ],
+          "sai": [
+           "Không có"
+          ],
+          "hai": true
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B8.C6",
      "trang": 38,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Sử dụng Hình 8.3 (SGK trang 38) để trình bày về các ứng dụng của acetic acid."
+     "de": "Sử dụng Hình 8.3 (SGK trang 38) để trình bày về các ứng dụng của acetic acid.",
+     "hinh": [
+      "khtn8/B8.C6.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "hoi": "Sử dụng Hình 8.3 để trình bày về các ứng dụng của acetic acid: mỗi việc sau có được nêu trong Hình 8.3 là ứng dụng của acetic acid không?",
+      "dong": [
+       {
+        "chu": "Chế biến thực phẩm: {0}",
+        "o": [
+         {
+          "dung": [
+           "Có trong Hình 8.3"
+          ],
+          "sai": [
+           "Không có"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Sản xuất dược phẩm: {0}",
+        "o": [
+         {
+          "dung": [
+           "Có trong Hình 8.3"
+          ],
+          "sai": [
+           "Không có"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Tẩy gỉ thép: {0}",
+        "o": [
+         {
+          "dung": [
+           "Không có"
+          ],
+          "sai": [
+           "Có trong Hình 8.3"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Sản xuất sợi poly (vinyl acetate): {0}",
+        "o": [
+         {
+          "dung": [
+           "Có trong Hình 8.3"
+          ],
+          "sai": [
+           "Không có"
+          ],
+          "hai": true
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B8.C7",
      "trang": 38,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "1. Hãy tìm hiểu về nhu cầu sử dụng và ứng dụng của một trong các acid sau: HCl, H2SO4, CH3COOH và trình bày trước lớp. 2. Việc sử dụng acid không đúng cách sẽ gây ô nhiễm môi trường đất, nước, không khí. Em hãy tìm hiểu về các tác hại này và trình bày trước lớp."
+     "de": "1. Hãy tìm hiểu về nhu cầu sử dụng và ứng dụng của một trong các acid sau: HCl, H2SO4, CH3COOH và trình bày trước lớp. 2. Việc sử dụng acid không đúng cách sẽ gây ô nhiễm môi trường đất, nước, không khí. Em hãy tìm hiểu về các tác hại này và trình bày trước lớp.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "hoi": "1. Trong các acid HCl, H₂SO₄, CH₃COOH, acid nào được sử dụng nhiều nhất trên thế giới?\n2. Việc sử dụng acid không đúng cách sẽ gây ô nhiễm môi trường đất, nước, không khí như thế nào?",
+      "dong": [
+       {
+        "chu": "1. Acid được tiêu thụ nhiều nhất trên thế giới: {0}",
+        "o": [
+         {
+          "dung": [
+           "sulfuric acid (H₂SO₄)"
+          ],
+          "sai": [
+           "hydrochloric acid (HCl)",
+           "acetic acid (CH₃COOH)"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "2. Acid dư thừa thải ra đất làm {0}",
+        "o": [
+         {
+          "dung": [
+           "đất bị chua, chất dinh dưỡng bị rửa trôi, cây trồng suy yếu"
+          ],
+          "sai": [
+           "đất tơi xốp và giàu dinh dưỡng hơn",
+           "đất có tính base, cây lớn nhanh hơn"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Acid dư thừa thải ra sông, hồ làm {0}",
+        "o": [
+         {
+          "dung": [
+           "pH của nước giảm, sinh vật dưới nước khó sống"
+          ],
+          "sai": [
+           "pH của nước tăng lên trên 7",
+           "nước trong hơn, cá phát triển tốt hơn"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Hơi acid và khí thải có tính acid bay vào không khí {0}",
+        "o": [
+         {
+          "dung": [
+           "gây ô nhiễm không khí, gây mưa acid, hại sức khoẻ con người"
+          ],
+          "sai": [
+           "làm không khí trong lành hơn",
+           "làm tăng lượng oxygen trong không khí"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     }
    ]
   },
@@ -2429,42 +2809,442 @@
      "trang": 39,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Quan sát Bảng 9.1 (tên một số base thông dụng, công thức hoá học và dạng tồn tại trong dung dịch: NaOH, Ba(OH)2; SGK trang 39) và thực hiện các yêu cầu: 1. Công thức hoá học của các base có đặc điểm gì giống nhau? 2. Các dung dịch base có đặc điểm gì chung? 3. Thảo luận nhóm và đề xuất khái niệm về base. 4. Em hãy nhận xét về cách gọi tên base và đọc tên base Ca(OH)2."
+     "de": "Quan sát Bảng 9.1 (SGK trang 39) và thực hiện các yêu cầu. Bảng 9.1. Tên một số base thông dụng, công thức hoá học và dạng tồn tại của base trong dung dịch: Sodium hydroxide, NaOH: cation kim loại Na^+, anion OH^-; Barium hydroxide, Ba(OH)2: cation kim loại Ba^2+, anion OH^-. 1. Công thức hoá học của các base có đặc điểm gì giống nhau? 2. Các dung dịch base có đặc điểm gì chung? 3. Thảo luận nhóm và đề xuất khái niệm về base. 4. Em hãy nhận xét về cách gọi tên base và đọc tên base Ca(OH)2.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 5,
+      "dong": [
+       {
+        "chu": "1. Công thức hoá học của các base đều có {0}",
+        "o": [
+         {
+          "dung": [
+           "nguyên tử kim loại liên kết với nhóm hydroxide (−OH)"
+          ],
+          "sai": [
+           "nguyên tử hydrogen liên kết với gốc acid",
+           "nguyên tử kim loại liên kết với nguyên tử oxygen, không có H"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "2. Các dung dịch base đều chứa {0}",
+        "o": [
+         {
+          "dung": [
+           "anion OH⁻"
+          ],
+          "sai": [
+           "cation H⁺",
+           "anion Cl⁻"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "3. Base là {0}",
+        "o": [
+         {
+          "dung": [
+           "hợp chất trong phân tử có nguyên tử kim loại liên kết với nhóm hydroxide, khi tan trong nước tạo ra ion OH⁻"
+          ],
+          "sai": [
+           "hợp chất trong phân tử có nguyên tử hydrogen liên kết với gốc acid, khi tan trong nước tạo ra ion H⁺",
+           "hợp chất của hai nguyên tố, trong đó có một nguyên tố là oxygen"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "4. Tên base gồm {0}",
+        "o": [
+         {
+          "dung": [
+           "tên kim loại (kèm hoá trị nếu kim loại có nhiều hoá trị) + hydroxide"
+          ],
+          "sai": [
+           "tên kim loại + oxide",
+           "hydroxide + tên kim loại"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Ca(OH)₂ đọc là {0}",
+        "o": [
+         {
+          "dung": [
+           "calcium hydroxide"
+          ],
+          "sai": [
+           "calcium(II) hydroxide",
+           "calcium oxide"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B9.C2",
      "trang": 40,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Dựa vào bảng tính tan (K, Na, Mg, Ba, Cu, Fe hoá trị II và III với nhóm −OH; SGK trang 40), hãy cho biết những base nào là base không tan và base nào là base kiềm? Viết công thức hoá học và đọc tên các base có trong bảng."
+     "de": "Dựa vào bảng tính tan dưới đây (SGK trang 40), hãy cho biết những base nào là base không tan và base nào là base kiềm? Viết công thức hoá học và đọc tên các base có trong bảng. Bảng: kim loại (hoá trị) và tính tan của hydroxide tương ứng (t: tan; k: không tan): K (I): t; Na (I): t; Mg (II): k; Ba (II): t; Cu (II): k; Fe (II): k; Fe (III): k.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 7,
+      "dong": [
+       {
+        "chu": "Kim loại K, hoá trị I: {0}",
+        "o": [
+         {
+          "dung": [
+           "KOH, potassium hydroxide, base kiềm"
+          ],
+          "sai": [
+           "KOH, potassium hydroxide, base không tan",
+           "K(OH)₂, potassium hydroxide, base kiềm"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Kim loại Na, hoá trị I: {0}",
+        "o": [
+         {
+          "dung": [
+           "NaOH, sodium hydroxide, base kiềm"
+          ],
+          "sai": [
+           "NaOH, sodium hydroxide, base không tan",
+           "Na(OH)₂, sodium hydroxide, base kiềm"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Kim loại Mg, hoá trị II: {0}",
+        "o": [
+         {
+          "dung": [
+           "Mg(OH)₂, magnesium hydroxide, base không tan"
+          ],
+          "sai": [
+           "Mg(OH)₂, magnesium hydroxide, base kiềm",
+           "MgOH, magnesium hydroxide, base không tan"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Kim loại Ba, hoá trị II: {0}",
+        "o": [
+         {
+          "dung": [
+           "Ba(OH)₂, barium hydroxide, base kiềm"
+          ],
+          "sai": [
+           "Ba(OH)₂, barium hydroxide, base không tan",
+           "BaOH, barium hydroxide, base kiềm"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Kim loại Cu, hoá trị II: {0}",
+        "o": [
+         {
+          "dung": [
+           "Cu(OH)₂, copper(II) hydroxide, base không tan"
+          ],
+          "sai": [
+           "Cu(OH)₂, copper(II) hydroxide, base kiềm",
+           "Cu(OH)₂, copper hydroxide, base không tan"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Kim loại Fe, hoá trị II: {0}",
+        "o": [
+         {
+          "dung": [
+           "Fe(OH)₂, iron(II) hydroxide, base không tan"
+          ],
+          "sai": [
+           "Fe(OH)₂, iron(II) hydroxide, base kiềm",
+           "Fe(OH)₃, iron(II) hydroxide, base không tan"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Kim loại Fe, hoá trị III: {0}",
+        "o": [
+         {
+          "dung": [
+           "Fe(OH)₃, iron(III) hydroxide, base không tan"
+          ],
+          "sai": [
+           "Fe(OH)₃, iron(III) hydroxide, base kiềm",
+           "Fe(OH)₂, iron(III) hydroxide, base không tan"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B9.C3",
      "trang": 41,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Có hai ống nghiệm không nhãn đựng dung dịch NaOH và dung dịch HCl. Hãy nêu cách nhận biết hai dung dịch trên."
+     "de": "Có hai ống nghiệm không nhãn đựng dung dịch NaOH và dung dịch HCl. Hãy nêu cách nhận biết hai dung dịch trên.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "dong": [
+       {
+        "chu": "Nhỏ một giọt mỗi dung dịch lên {0}",
+        "o": [
+         {
+          "dung": [
+           "mẩu giấy quỳ tím"
+          ],
+          "sai": [
+           "mẩu giấy lọc trắng",
+           "mẩu kim loại đồng"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Dung dịch làm quỳ tím chuyển sang màu xanh là dung dịch {0}",
+        "o": [
+         {
+          "dung": [
+           "NaOH"
+          ],
+          "sai": [
+           "HCl"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Dung dịch HCl làm quỳ tím chuyển sang màu {0}",
+        "o": [
+         {
+          "dung": [
+           "đỏ"
+          ],
+          "sai": [
+           "xanh",
+           "tím (không đổi màu)"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B9.C4",
      "trang": 41,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Ở nông thôn, người ta thường dùng vôi bột rắc lên ruộng để khử chua cho đất. Biết rằng thành phần chính của vôi bột là CaO. CaO tác dụng với H2O tạo thành Ca(OH)2 theo phương trình hoá học: CaO + H2O ⟶ Ca(OH)2. Hãy giải thích tác dụng của vôi bột."
+     "de": "Ở nông thôn, người ta thường dùng vôi bột rắc lên ruộng để khử chua cho đất. Biết rằng thành phần chính của vôi bột là CaO. CaO tác dụng với H2O tạo thành Ca(OH)2 theo phương trình hoá học: CaO + H2O ⟶ Ca(OH)2. Hãy giải thích tác dụng của vôi bột.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "dong": [
+       {
+        "chu": "CaO tác dụng với nước tạo ra {0}",
+        "o": [
+         {
+          "dung": [
+           "Ca(OH)₂, là một base"
+          ],
+          "sai": [
+           "CaCO₃, là một muối",
+           "khí H₂"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Đất chua là đất có {0}",
+        "o": [
+         {
+          "dung": [
+           "nhiều acid (pH nhỏ hơn 7)"
+          ],
+          "sai": [
+           "nhiều base (pH lớn hơn 7)",
+           "nhiều muối ăn"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Vôi bột khử chua được cho đất vì {0}",
+        "o": [
+         {
+          "dung": [
+           "Ca(OH)₂ trung hoà acid có trong đất, làm đất bớt chua"
+          ],
+          "sai": [
+           "vôi bột hút hết nước có trong đất",
+           "vôi bột làm acid trong đất bay hơi"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B9.C5",
      "trang": 43,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Hãy nêu cách để kiểm tra đất trồng có bị chua hay không."
+     "de": "Hãy nêu cách để kiểm tra đất trồng có bị chua hay không.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "dong": [
+       {
+        "chu": "Lấy mẫu đất hoà vào {0}, rồi lọc lấy phần dung dịch",
+        "o": [
+         {
+          "dung": [
+           "nước cất"
+          ],
+          "sai": [
+           "dung dịch HCl",
+           "dung dịch NaOH"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Thử pH của phần dung dịch bằng {0}",
+        "o": [
+         {
+          "dung": [
+           "giấy pH (hoặc máy đo pH)"
+          ],
+          "sai": [
+           "nhiệt kế",
+           "giấy lọc"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Đất trồng bị chua nếu pH {0}",
+        "o": [
+         {
+          "dung": [
+           "nhỏ hơn 7"
+          ],
+          "sai": [
+           "lớn hơn 7",
+           "bằng 7"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B9.C6",
      "trang": 43,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Hãy tìm hiểu và cho biết giá trị pH chuẩn trong máu, trong dịch dạ dày của người. Nếu giá trị pH của máu và của dịch dạ dày ngoài khoảng chuẩn sẽ gây nguy hiểm cho sức khoẻ của người như thế nào?"
+     "de": "Hãy tìm hiểu và cho biết giá trị pH chuẩn trong máu, trong dịch dạ dày của người. Nếu giá trị pH của máu và của dịch dạ dày ngoài khoảng chuẩn sẽ gây nguy hiểm cho sức khoẻ của người như thế nào?",
+     "ghep": {
+      "kieu": "O",
+      "sao": 5,
+      "dong": [
+       {
+        "chu": "pH chuẩn trong máu người: {0}",
+        "o": [
+         {
+          "dung": [
+           "khoảng 7,35 – 7,45 (môi trường base yếu)"
+          ],
+          "sai": [
+           "khoảng 1,5 – 3,5 (môi trường acid)",
+           "khoảng 9 – 11 (môi trường base mạnh)"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "pH của dịch dạ dày người: {0}",
+        "o": [
+         {
+          "dung": [
+           "nhỏ hơn 7, khoảng 1,5 – 3,5 (môi trường acid)"
+          ],
+          "sai": [
+           "khoảng 7,35 – 7,45 (môi trường base yếu)",
+           "khoảng 9 – 11 (môi trường base mạnh)"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "pH của máu ra ngoài khoảng chuẩn thì {0}",
+        "o": [
+         {
+          "dung": [
+           "rối loạn hoạt động của cơ thể, có thể nguy hiểm đến tính mạng"
+          ],
+          "sai": [
+           "không ảnh hưởng gì, vì cơ thể không cần pH ổn định",
+           "chỉ làm máu đổi màu"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Dịch dạ dày có quá nhiều acid thì {0}",
+        "o": [
+         {
+          "dung": [
+           "dễ bị viêm loét dạ dày, ợ chua"
+          ],
+          "sai": [
+           "tiêu hoá tốt hơn, không có hại",
+           "máu chuyển sang môi trường acid mạnh"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Dịch dạ dày có quá ít acid thì {0}",
+        "o": [
+         {
+          "dung": [
+           "tiêu hoá thức ăn kém, vi khuẩn có hại dễ phát triển"
+          ],
+          "sai": [
+           "dạ dày bị ăn mòn nhanh hơn",
+           "thức ăn được tiêu hoá nhanh hơn"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     }
    ]
   },
@@ -2477,35 +3257,433 @@
      "trang": 44,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Nhận xét thành phần nguyên tố trong công thức phân tử của các oxide trong Bảng 10.1 (BaO, ZnO, Al2O3, CO2, SO3, P2O5; SGK trang 44) và thực hiện các yêu cầu: 1. Đề xuất khái niệm về oxide. 2. Phân loại oxide."
+     "de": "Bảng 10.1 (SGK trang 44) cho tên và công thức hoá học của một số oxide. Cột (1), (2): barium oxide BaO, zinc oxide ZnO, aluminium oxide Al2O3. Cột (3), (4): carbon dioxide CO2, sulfur trioxide SO3, diphosphorus pentoxide P2O5. Nhận xét thành phần nguyên tố trong công thức phân tử của các oxide ở cột (2), (4) và thực hiện các yêu cầu: 1. Đề xuất khái niệm về oxide. 2. Phân loại oxide.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "dong": [
+       {
+        "chu": "1. Các oxide trong bảng đều là hợp chất {0}",
+        "o": [
+         {
+          "dung": [
+           "của hai nguyên tố, trong đó có một nguyên tố là oxygen"
+          ],
+          "sai": [
+           "của ba nguyên tố: kim loại, oxygen và hydrogen",
+           "chỉ gồm một nguyên tố là oxygen"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "2. Theo thành phần nguyên tố, BaO, ZnO, Al₂O₃ ở cột (2) là {0}",
+        "o": [
+         {
+          "dung": [
+           "oxide kim loại"
+          ],
+          "sai": [
+           "oxide phi kim"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "CO₂, SO₃, P₂O₅ ở cột (4) là {0}",
+        "o": [
+         {
+          "dung": [
+           "oxide phi kim"
+          ],
+          "sai": [
+           "oxide kim loại"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Theo tính chất hoá học, oxide được chia thành {0}",
+        "o": [
+         {
+          "dung": [
+           "bốn loại: oxide acid, oxide base, oxide lưỡng tính, oxide trung tính"
+          ],
+          "sai": [
+           "hai loại: oxide acid và oxide base",
+           "ba loại: oxide kim loại, oxide phi kim, oxide trung tính"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B10.C2",
      "trang": 45,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Cho các sơ đồ phản ứng sau: (1) ...? + O2 ⟶ Al2O3; (2) P + ...? ⟶ P2O5; (3) S + ...? ⟶ SO2; (4) Mg + O2 ⟶ ...?. Hoàn thành các phương trình hoá học và đọc tên các sản phẩm tạo thành."
+     "de": "Cho các sơ đồ phản ứng sau: (1) ...? + O2 ⟶ Al2O3; (2) P + ...? ⟶ P2O5; (3) S + ...? ⟶ SO2; (4) Mg + O2 ⟶ ...?. Hoàn thành các phương trình hoá học và đọc tên các sản phẩm tạo thành.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 8,
+      "dong": [
+       {
+        "chu": "(1) ? + O₂ → Al₂O₃: {0}",
+        "o": [
+         {
+          "dung": [
+           "4Al + 3O₂ → 2Al₂O₃"
+          ],
+          "sai": [
+           "2Al + 3O → Al₂O₃",
+           "4Al + 3O₂ → Al₂O₃"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "(2) P + ? → P₂O₅: {0}",
+        "o": [
+         {
+          "dung": [
+           "4P + 5O₂ → 2P₂O₅"
+          ],
+          "sai": [
+           "2P + 5O → P₂O₅",
+           "4P + 5O₂ → P₂O₅"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "(3) S + ? → SO₂: {0}",
+        "o": [
+         {
+          "dung": [
+           "S + O₂ → SO₂"
+          ],
+          "sai": [
+           "S + 2O → SO₂",
+           "S + O₂ → 2SO₂"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "(4) Mg + O₂ → ?: {0}",
+        "o": [
+         {
+          "dung": [
+           "2Mg + O₂ → 2MgO"
+          ],
+          "sai": [
+           "Mg + O → MgO",
+           "Mg + O₂ → MgO"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Tên của Al₂O₃: {0}",
+        "o": [
+         {
+          "dung": [
+           "aluminium oxide"
+          ],
+          "sai": [
+           "aluminium trioxide",
+           "aluminium hydroxide"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Tên của P₂O₅: {0}",
+        "o": [
+         {
+          "dung": [
+           "diphosphorus pentoxide"
+          ],
+          "sai": [
+           "phosphorus oxide",
+           "diphosphorus trioxide"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Tên của SO₂: {0}",
+        "o": [
+         {
+          "dung": [
+           "sulfur dioxide"
+          ],
+          "sai": [
+           "sulfur trioxide",
+           "sulfur oxide"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Tên của MgO: {0}",
+        "o": [
+         {
+          "dung": [
+           "magnesium oxide"
+          ],
+          "sai": [
+           "magnesium(II) oxide",
+           "manganese oxide"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B10.C3",
      "trang": 46,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Viết phương trình hoá học của phản ứng giữa SO2 và dung dịch NaOH minh hoạ cho tính chất hoá học của sulfur dioxide."
+     "de": "Viết phương trình hoá học của phản ứng giữa SO2 và dung dịch NaOH minh hoạ cho tính chất hoá học của sulfur dioxide.",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "hoi": "Viết phương trình hoá học của phản ứng giữa SO₂ và dung dịch NaOH (lấy dư) minh hoạ cho tính chất hoá học của sulfur dioxide.",
+      "dap": [
+       "SO₂+2NaOH→Na₂SO₃+H₂O"
+      ],
+      "phim": [
+       "SO₂",
+       "NaOH",
+       "Na₂SO₃",
+       "H₂O"
+      ],
+      "nhieu": [
+       "Na₂SO₄",
+       "H₂",
+       "SO₃"
+      ],
+      "loi_giai": [
+       "Oxide acid tác dụng với dung dịch base tạo thành muối và nước: SO₂ tác dụng với NaOH tạo muối sodium sulfite Na₂SO₃ và nước",
+       "Na₂SO₃ có 2 nguyên tử Na nên đặt 2 trước NaOH; khi đó hai vế đều có 2 nguyên tử H",
+       "SO₂ + 2NaOH → Na₂SO₃ + H₂O"
+      ]
+     }
     },
     {
      "ma": "B10.C4",
      "trang": 47,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Viết phương trình hoá học minh hoạ cho tính chất hoá học của oxide base và oxide acid. Lấy magnesium oxide và sulfur dioxide làm ví dụ."
+     "de": "Viết phương trình hoá học minh hoạ cho tính chất hoá học của oxide base và oxide acid. Lấy magnesium oxide và sulfur dioxide làm ví dụ.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "dong": [
+       {
+        "chu": "Oxide base (như MgO) tác dụng với {0} tạo thành muối và nước",
+        "o": [
+         {
+          "dung": [
+           "dung dịch acid"
+          ],
+          "sai": [
+           "dung dịch base",
+           "kim loại"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Ví dụ: MgO + 2HCl → {0}",
+        "o": [
+         {
+          "dung": [
+           "MgCl₂ + H₂O"
+          ],
+          "sai": [
+           "MgCl₂ + H₂",
+           "MgCl + H₂O"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Oxide acid (như SO₂) tác dụng với {0} tạo thành muối và nước",
+        "o": [
+         {
+          "dung": [
+           "dung dịch base"
+          ],
+          "sai": [
+           "dung dịch acid",
+           "kim loại"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Ví dụ: SO₂ + Ca(OH)₂ → {0}",
+        "o": [
+         {
+          "dung": [
+           "CaSO₃ + H₂O"
+          ],
+          "sai": [
+           "CaSO₄ + H₂O",
+           "CaSO₃ + H₂"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B10.C5",
      "trang": 47,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Cho các oxide sau: CaO, Fe2O3, SO3, CO2, CO. Oxide nào có thể tác dụng với: a) Dung dịch HCl; b) Dung dịch NaOH. Viết các phương trình hoá học. Hãy cho biết các oxide trên thuộc loại oxide nào?"
+     "de": "Cho các oxide sau: CaO, Fe2O3, SO3, CO2, CO. Oxide nào có thể tác dụng với: a) Dung dịch HCl; b) Dung dịch NaOH. Viết các phương trình hoá học. Hãy cho biết các oxide trên thuộc loại oxide nào?",
+     "ghep": {
+      "kieu": "O",
+      "sao": 9,
+      "dong": [
+       {
+        "chu": "CaO: {0}",
+        "o": [
+         {
+          "dung": [
+           "oxide base, tác dụng được với dung dịch HCl"
+          ],
+          "sai": [
+           "oxide acid, tác dụng được với dung dịch NaOH",
+           "oxide trung tính, không tác dụng với cả hai dung dịch"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Fe₂O₃: {0}",
+        "o": [
+         {
+          "dung": [
+           "oxide base, tác dụng được với dung dịch HCl"
+          ],
+          "sai": [
+           "oxide acid, tác dụng được với dung dịch NaOH",
+           "oxide lưỡng tính, tác dụng được với cả hai dung dịch"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "SO₃: {0}",
+        "o": [
+         {
+          "dung": [
+           "oxide acid, tác dụng được với dung dịch NaOH"
+          ],
+          "sai": [
+           "oxide base, tác dụng được với dung dịch HCl",
+           "oxide trung tính, không tác dụng với cả hai dung dịch"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "CO₂: {0}",
+        "o": [
+         {
+          "dung": [
+           "oxide acid, tác dụng được với dung dịch NaOH"
+          ],
+          "sai": [
+           "oxide base, tác dụng được với dung dịch HCl",
+           "oxide lưỡng tính, tác dụng được với cả hai dung dịch"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "CO: {0}",
+        "o": [
+         {
+          "dung": [
+           "oxide trung tính, không tác dụng với cả hai dung dịch"
+          ],
+          "sai": [
+           "oxide base, tác dụng được với dung dịch HCl",
+           "oxide acid, tác dụng được với dung dịch NaOH"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "a) CaO + 2HCl → {0}",
+        "o": [
+         {
+          "dung": [
+           "CaCl₂ + H₂O"
+          ],
+          "sai": [
+           "CaCl₂ + H₂",
+           "CaCl + H₂O"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "a) Fe₂O₃ + 6HCl → {0}",
+        "o": [
+         {
+          "dung": [
+           "2FeCl₃ + 3H₂O"
+          ],
+          "sai": [
+           "2FeCl₂ + 3H₂O",
+           "FeCl₃ + 3H₂O"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "b) SO₃ + 2NaOH → {0}",
+        "o": [
+         {
+          "dung": [
+           "Na₂SO₄ + H₂O"
+          ],
+          "sai": [
+           "Na₂SO₃ + H₂O",
+           "NaSO₄ + H₂O"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "b) CO₂ + 2NaOH → {0}",
+        "o": [
+         {
+          "dung": [
+           "Na₂CO₃ + H₂O"
+          ],
+          "sai": [
+           "NaCO₃ + H₂O",
+           "Na₂CO₃ + H₂"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     }
    ]
   },
@@ -2518,42 +3696,655 @@
      "trang": 48,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Quan sát Bảng 11.1 (phản ứng tạo thành muối, tên gọi và thành phần phân tử của một số muối; SGK trang 48) và thực hiện các yêu cầu: 1. Nhận xét về sự khác nhau giữa thành phần phân tử của acid (chất phản ứng) và muối (chất sản phẩm). Đặc điểm chung của các phản ứng ở Bảng 11.1 là gì? 2. Nhận xét về cách gọi tên muối."
+     "de": "Quan sát Bảng 11.1 (SGK trang 48) và thực hiện các yêu cầu. Bảng 11.1. Phản ứng tạo thành muối, tên gọi và thành phần phân tử của một số muối: Kim loại + Acid ⟶ Muối + Hydrogen: Zn + 2HCl ⟶ ZnCl2 + H2, muối ZnCl2 (zinc chloride) gồm cation kim loại Zn^2+ và anion gốc acid Cl^-; Acid + Base ⟶ Muối + Nước: H2SO4 + Cu(OH)2 ⟶ CuSO4 + 2H2O, muối CuSO4 (copper(II) sulfate) gồm Cu^2+ và SO4^2-; Acid + Oxide base ⟶ Muối + Nước: H2SO4 + FeO ⟶ FeSO4 + H2O, muối FeSO4 (iron(II) sulfate) gồm Fe^2+ và SO4^2-. 1. Nhận xét về sự khác nhau giữa thành phần phân tử của acid (chất phản ứng) và muối (chất sản phẩm). Đặc điểm chung của các phản ứng ở Bảng 11.1 là gì? 2. Nhận xét về cách gọi tên muối.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "dong": [
+       {
+        "chu": "1. So với acid tham gia phản ứng, trong muối tạo thành {0}",
+        "o": [
+         {
+          "dung": [
+           "nguyên tử hydrogen của acid đã được thay bằng nguyên tử kim loại"
+          ],
+          "sai": [
+           "gốc acid đã được thay bằng nhóm hydroxide",
+           "nguyên tử kim loại đã được thay bằng nguyên tử hydrogen"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Đặc điểm chung của ba phản ứng ở Bảng 11.1: {0}",
+        "o": [
+         {
+          "dung": [
+           "đều có acid tham gia và đều tạo ra muối"
+          ],
+          "sai": [
+           "đều tạo ra khí hydrogen",
+           "đều tạo ra nước"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "2. Tên muối gồm {0}",
+        "o": [
+         {
+          "dung": [
+           "tên kim loại (kèm hoá trị nếu kim loại có nhiều hoá trị) + tên gốc acid"
+          ],
+          "sai": [
+           "tên gốc acid + tên kim loại",
+           "tên kim loại + hydroxide"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B11.C2",
      "trang": 49,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Viết công thức của các muối sau: potassium sulfate, sodium hydrogensulfate, sodium hydrogencarbonate, sodium chloride, sodium nitrate, calcium hydrogenphosphate, magnesium sulfate, copper(II) sulfate."
+     "de": "Viết công thức của các muối sau: potassium sulfate, sodium hydrogensulfate, sodium hydrogencarbonate, sodium chloride, sodium nitrate, calcium hydrogenphosphate, magnesium sulfate, copper(II) sulfate.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 8,
+      "dong": [
+       {
+        "chu": "Potassium sulfate: {0}",
+        "o": [
+         {
+          "dung": [
+           "K₂SO₄"
+          ],
+          "sai": [
+           "KSO₄",
+           "K₂SO₃"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Sodium hydrogensulfate: {0}",
+        "o": [
+         {
+          "dung": [
+           "NaHSO₄"
+          ],
+          "sai": [
+           "Na₂SO₄",
+           "NaHSO₃"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Sodium hydrogencarbonate: {0}",
+        "o": [
+         {
+          "dung": [
+           "NaHCO₃"
+          ],
+          "sai": [
+           "Na₂CO₃",
+           "Na(HCO₃)₂"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Sodium chloride: {0}",
+        "o": [
+         {
+          "dung": [
+           "NaCl"
+          ],
+          "sai": [
+           "NaCl₂",
+           "Na₂Cl"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Sodium nitrate: {0}",
+        "o": [
+         {
+          "dung": [
+           "NaNO₃"
+          ],
+          "sai": [
+           "NaNO₂",
+           "Na(NO₃)₂"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Calcium hydrogenphosphate: {0}",
+        "o": [
+         {
+          "dung": [
+           "CaHPO₄"
+          ],
+          "sai": [
+           "Ca(HPO₄)₂",
+           "Ca₃(PO₄)₂"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Magnesium sulfate: {0}",
+        "o": [
+         {
+          "dung": [
+           "MgSO₄"
+          ],
+          "sai": [
+           "Mg₂SO₄",
+           "MgSO₃"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Copper(II) sulfate: {0}",
+        "o": [
+         {
+          "dung": [
+           "CuSO₄"
+          ],
+          "sai": [
+           "Cu₂SO₄",
+           "CuSO₃"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B11.C3",
      "trang": 49,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Gọi tên các muối sau: AlCl3, KCl, Al2(SO4)3, MgSO4, NH4NO3, NaHCO3."
+     "de": "Gọi tên các muối sau: AlCl3, KCl, Al2(SO4)3, MgSO4, NH4NO3, NaHCO3.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 6,
+      "dong": [
+       {
+        "chu": "AlCl₃: {0}",
+        "o": [
+         {
+          "dung": [
+           "aluminium chloride"
+          ],
+          "sai": [
+           "aluminium chlorine",
+           "aluminium chlorate"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "KCl: {0}",
+        "o": [
+         {
+          "dung": [
+           "potassium chloride"
+          ],
+          "sai": [
+           "potassium chlorine",
+           "calcium chloride"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Al₂(SO₄)₃: {0}",
+        "o": [
+         {
+          "dung": [
+           "aluminium sulfate"
+          ],
+          "sai": [
+           "aluminium sulfite",
+           "aluminium sulfide"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "MgSO₄: {0}",
+        "o": [
+         {
+          "dung": [
+           "magnesium sulfate"
+          ],
+          "sai": [
+           "magnesium sulfite",
+           "manganese sulfate"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "NH₄NO₃: {0}",
+        "o": [
+         {
+          "dung": [
+           "ammonium nitrate"
+          ],
+          "sai": [
+           "ammonium nitrite",
+           "ammonia nitrate"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "NaHCO₃: {0}",
+        "o": [
+         {
+          "dung": [
+           "sodium hydrogencarbonate"
+          ],
+          "sai": [
+           "sodium carbonate",
+           "sodium hydrogensulfate"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B11.C4",
      "trang": 49,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Viết phương trình hoá học của phản ứng tạo thành muối KCl và MgSO4."
+     "de": "Viết phương trình hoá học của phản ứng tạo thành muối KCl và MgSO4.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 5,
+      "dong": [
+       {
+        "chu": "Tạo KCl từ một base và một acid: KOH + HCl → {0}",
+        "o": [
+         {
+          "dung": [
+           "KCl + H₂O"
+          ],
+          "sai": [
+           "KCl + H₂",
+           "KCl₂ + H₂O"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Tạo KCl từ hai muối: K₂SO₄ + BaCl₂ → {0}",
+        "o": [
+         {
+          "dung": [
+           "BaSO₄ + 2KCl"
+          ],
+          "sai": [
+           "BaSO₄ + KCl",
+           "Ba(SO₄)₂ + 2KCl"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Tạo MgSO₄ từ kim loại và acid: Mg + H₂SO₄ → {0}",
+        "o": [
+         {
+          "dung": [
+           "MgSO₄ + H₂"
+          ],
+          "sai": [
+           "MgSO₄ + H₂O",
+           "Mg₂SO₄ + H₂"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Tạo MgSO₄ từ oxide base và acid: MgO + H₂SO₄ → {0}",
+        "o": [
+         {
+          "dung": [
+           "MgSO₄ + H₂O"
+          ],
+          "sai": [
+           "MgSO₄ + H₂",
+           "MgSO₃ + H₂O"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Trộn dung dịch MgCl₂ với dung dịch Na₂SO₄ thì {0}",
+        "o": [
+         {
+          "dung": [
+           "không xảy ra phản ứng, vì không tạo ra chất không tan hay chất khí"
+          ],
+          "sai": [
+           "có phản ứng, tạo ra MgSO₄ và NaCl",
+           "có phản ứng, tạo ra kết tủa MgSO₄"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B11.C5",
      "trang": 51,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Trong dung dịch, giữa các cặp chất nào sau đây có xảy ra phản ứng? Viết phương trình hoá học của các phản ứng đó. Các cặp chất: Ca(NO3)2, BaCl2, HNO3 lần lượt với Na2CO3, KCl, Na2SO4, NaNO3."
+     "de": "Trong dung dịch, giữa các cặp chất nào sau đây có xảy ra phản ứng? Viết phương trình hoá học của các phản ứng đó. Các cặp chất: Ca(NO3)2, BaCl2, HNO3 lần lượt với Na2CO3, KCl, Na2SO4, NaNO3.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 12,
+      "dong": [
+       {
+        "chu": "Ca(NO₃)₂ và Na₂CO₃: {0}",
+        "o": [
+         {
+          "dung": [
+           "Ca(NO₃)₂ + Na₂CO₃ → CaCO₃↓ + 2NaNO₃"
+          ],
+          "sai": [
+           "Ca(NO₃)₂ + Na₂CO₃ → CaCO₃↓ + NaNO₃",
+           "không xảy ra phản ứng"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Ca(NO₃)₂ và KCl: {0}",
+        "o": [
+         {
+          "dung": [
+           "không xảy ra phản ứng"
+          ],
+          "sai": [
+           "Ca(NO₃)₂ + 2KCl → CaCl₂↓ + 2KNO₃",
+           "Ca(NO₃)₂ + KCl → CaCl₂↓ + KNO₃"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Ca(NO₃)₂ và Na₂SO₄: {0}",
+        "o": [
+         {
+          "dung": [
+           "Ca(NO₃)₂ + Na₂SO₄ → CaSO₄↓ + 2NaNO₃"
+          ],
+          "sai": [
+           "Ca(NO₃)₂ + Na₂SO₄ → CaSO₄↓ + NaNO₃",
+           "không xảy ra phản ứng"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Ca(NO₃)₂ và NaNO₃: {0}",
+        "o": [
+         {
+          "dung": [
+           "không xảy ra phản ứng"
+          ],
+          "sai": [
+           "có phản ứng, tạo kết tủa NaNO₃",
+           "có phản ứng, có khí NO₂ thoát ra"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "BaCl₂ và Na₂CO₃: {0}",
+        "o": [
+         {
+          "dung": [
+           "BaCl₂ + Na₂CO₃ → BaCO₃↓ + 2NaCl"
+          ],
+          "sai": [
+           "BaCl₂ + Na₂CO₃ → BaCO₃↓ + NaCl",
+           "không xảy ra phản ứng"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "BaCl₂ và KCl: {0}",
+        "o": [
+         {
+          "dung": [
+           "không xảy ra phản ứng"
+          ],
+          "sai": [
+           "có phản ứng, tạo kết tủa KCl",
+           "có phản ứng, có khí Cl₂ thoát ra"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "BaCl₂ và Na₂SO₄: {0}",
+        "o": [
+         {
+          "dung": [
+           "BaCl₂ + Na₂SO₄ → BaSO₄↓ + 2NaCl"
+          ],
+          "sai": [
+           "BaCl₂ + Na₂SO₄ → BaSO₄↓ + NaCl",
+           "không xảy ra phản ứng"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "BaCl₂ và NaNO₃: {0}",
+        "o": [
+         {
+          "dung": [
+           "không xảy ra phản ứng"
+          ],
+          "sai": [
+           "BaCl₂ + 2NaNO₃ → Ba(NO₃)₂↓ + 2NaCl",
+           "BaCl₂ + NaNO₃ → Ba(NO₃)₂↓ + NaCl"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "HNO₃ và Na₂CO₃: {0}",
+        "o": [
+         {
+          "dung": [
+           "2HNO₃ + Na₂CO₃ → 2NaNO₃ + CO₂↑ + H₂O"
+          ],
+          "sai": [
+           "HNO₃ + Na₂CO₃ → NaNO₃ + CO₂↑ + H₂O",
+           "không xảy ra phản ứng"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "HNO₃ và KCl: {0}",
+        "o": [
+         {
+          "dung": [
+           "không xảy ra phản ứng"
+          ],
+          "sai": [
+           "HNO₃ + KCl → KNO₃↓ + HCl",
+           "có phản ứng, có khí Cl₂ thoát ra"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "HNO₃ và Na₂SO₄: {0}",
+        "o": [
+         {
+          "dung": [
+           "không xảy ra phản ứng"
+          ],
+          "sai": [
+           "2HNO₃ + Na₂SO₄ → 2NaNO₃↓ + H₂SO₄",
+           "HNO₃ + Na₂SO₄ → NaNO₃↓ + H₂SO₄"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "HNO₃ và NaNO₃: {0}",
+        "o": [
+         {
+          "dung": [
+           "không xảy ra phản ứng"
+          ],
+          "sai": [
+           "có phản ứng, tạo kết tủa NaNO₃",
+           "có phản ứng, có khí NO₂ thoát ra"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B11.C6",
      "trang": 52,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Dựa vào sơ đồ Hình 11.2 (sơ đồ biểu diễn mối quan hệ giữa các hợp chất vô cơ; SGK trang 52) và cho biết tính chất của oxide, acid, base. Viết phương trình hoá học minh hoạ."
+     "de": "Dựa vào sơ đồ Hình 11.2 (sơ đồ biểu diễn mối quan hệ giữa các hợp chất vô cơ; SGK trang 52) và cho biết tính chất của oxide, acid, base. Viết phương trình hoá học minh hoạ.",
+     "hinh": [
+      "khtn8/B11.C6.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 7,
+      "dong": [
+       {
+        "chu": "Oxide base tác dụng với {0} tạo thành muối và nước, ví dụ CaO + 2HCl → CaCl₂ + H₂O",
+        "o": [
+         {
+          "dung": [
+           "acid"
+          ],
+          "sai": [
+           "base",
+           "muối"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Oxide acid tác dụng với {0} tạo thành muối và nước, ví dụ SO₂ + 2NaOH → Na₂SO₃ + H₂O",
+        "o": [
+         {
+          "dung": [
+           "base"
+          ],
+          "sai": [
+           "acid",
+           "kim loại"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Acid tác dụng với kim loại: Fe + 2HCl → {0}",
+        "o": [
+         {
+          "dung": [
+           "FeCl₂ + H₂"
+          ],
+          "sai": [
+           "FeCl₂ + H₂O",
+           "FeCl₃ + H₂"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Acid tác dụng với muối: H₂SO₄ + BaCl₂ → {0}",
+        "o": [
+         {
+          "dung": [
+           "BaSO₄ + 2HCl"
+          ],
+          "sai": [
+           "BaSO₄ + HCl",
+           "Ba(SO₄)₂ + 2HCl"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Base tác dụng với acid: Ca(OH)₂ + 2HCl → {0}",
+        "o": [
+         {
+          "dung": [
+           "CaCl₂ + 2H₂O"
+          ],
+          "sai": [
+           "CaCl₂ + H₂O",
+           "CaCl + 2H₂O"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Base tác dụng với oxide acid: Ca(OH)₂ + CO₂ → {0}",
+        "o": [
+         {
+          "dung": [
+           "CaCO₃ + H₂O"
+          ],
+          "sai": [
+           "CaCO₃ + H₂",
+           "Ca(CO₃)₂ + H₂O"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Base tác dụng với muối: 2NaOH + CuSO₄ → {0}",
+        "o": [
+         {
+          "dung": [
+           "Cu(OH)₂ + Na₂SO₄"
+          ],
+          "sai": [
+           "CuOH + Na₂SO₄",
+           "Cu(OH)₂ + NaSO₄"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     }
    ]
   },
@@ -2566,49 +4357,442 @@
      "trang": 53,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Về các nguyên tố dinh dưỡng cần thiết cho cây trồng: 1. Lí do cần phải bổ sung thêm các nguyên tố dinh dưỡng cho cây trồng. 2. Kể tên các nguyên tố hoá học mà cây trồng cần với số lượng nhiều (nhóm nguyên tố đa lượng), trung bình (nhóm nguyên tố trung lượng) và ít (nhóm nguyên tố vi lượng) và nêu vai trò của chúng đối với sự phát triển cây trồng."
+     "de": "Về các nguyên tố dinh dưỡng cần thiết cho cây trồng: 1. Lí do cần phải bổ sung thêm các nguyên tố dinh dưỡng cho cây trồng. 2. Kể tên các nguyên tố hoá học mà cây trồng cần với số lượng nhiều (nhóm nguyên tố đa lượng), trung bình (nhóm nguyên tố trung lượng) và ít (nhóm nguyên tố vi lượng) và nêu vai trò của chúng đối với sự phát triển cây trồng.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 6,
+      "dong": [
+       {
+        "chu": "1. Phải bổ sung nguyên tố dinh dưỡng cho cây trồng vì {0}",
+        "o": [
+         {
+          "dung": [
+           "cây cần chúng để cấu tạo tế bào, điều chỉnh trao đổi chất, chống chịu điều kiện bất lợi, mà đất trồng không cung cấp đủ"
+          ],
+          "sai": [
+           "cây chỉ cần nước, phân bón chỉ giúp đất giữ nước",
+           "phân bón làm đất cứng hơn để cây đứng vững"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "2. Nhóm nguyên tố đa lượng (cây cần nhiều): {0}",
+        "o": [
+         {
+          "dung": [
+           "N, P, K"
+          ],
+          "sai": [
+           "Ca, Mg",
+           "Zn, Mn, Fe, Cu"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Nhóm nguyên tố trung lượng (cây cần trung bình): {0}",
+        "o": [
+         {
+          "dung": [
+           "Ca, Mg"
+          ],
+          "sai": [
+           "N, P, K",
+           "Zn, Mn, Fe, Cu"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Vai trò của nitrogen: {0}",
+        "o": [
+         {
+          "dung": [
+           "giúp cây sinh trưởng, phát triển tốt, tham gia điều tiết trao đổi chất"
+          ],
+          "sai": [
+           "giúp cây ra hoa, đậu quả, phát triển bộ rễ",
+           "giúp chuyển hoá năng lượng khi đồng hoá các chất, cây ra nhiều nhánh, phân cành nhiều"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Vai trò của phosphorus: {0}",
+        "o": [
+         {
+          "dung": [
+           "giúp cây ra hoa, đậu quả, phát triển bộ rễ"
+          ],
+          "sai": [
+           "giúp cây sinh trưởng, phát triển tốt, tham gia điều tiết trao đổi chất",
+           "giúp chuyển hoá năng lượng khi đồng hoá các chất, cây ra nhiều nhánh, phân cành nhiều"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Vai trò của potassium (kali): {0}",
+        "o": [
+         {
+          "dung": [
+           "giúp chuyển hoá năng lượng khi đồng hoá các chất, cây ra nhiều nhánh, phân cành nhiều"
+          ],
+          "sai": [
+           "giúp cây sinh trưởng, phát triển tốt, tham gia điều tiết trao đổi chất",
+           "giúp cây ra hoa, đậu quả, phát triển bộ rễ"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B12.C2",
      "trang": 54,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Tại sao cần phải bổ sung các nguyên tố đa lượng như nitrogen, phosphorus, potassium dưới dạng phân bón cho cây trồng?"
+     "de": "Tại sao cần phải bổ sung các nguyên tố đa lượng như nitrogen, phosphorus, potassium dưới dạng phân bón cho cây trồng?",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "dong": [
+       {
+        "chu": "Đất trồng {0} nitrogen, phosphorus, potassium cho cây",
+        "o": [
+         {
+          "dung": [
+           "không cung cấp đủ"
+          ],
+          "sai": [
+           "luôn cung cấp đủ",
+           "không chứa chút nào"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Cây trồng cần nitrogen, phosphorus, potassium {0}",
+        "o": [
+         {
+          "dung": [
+           "với lượng nhiều để sinh trưởng, phát triển tốt và cho năng suất cao"
+          ],
+          "sai": [
+           "với lượng rất ít, như các nguyên tố vi lượng",
+           "chỉ khi cây đã ra quả"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B12.C3",
      "trang": 54,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Hãy cho biết các nguyên tố dinh dưỡng trong phân đạm, phân lân, phân kali, phân NPK."
+     "de": "Hãy cho biết các nguyên tố dinh dưỡng trong phân đạm, phân lân, phân kali, phân NPK.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "dong": [
+       {
+        "chu": "Phân đạm cung cấp nguyên tố {0}",
+        "o": [
+         {
+          "dung": [
+           "nitrogen (N)"
+          ],
+          "sai": [
+           "phosphorus (P)",
+           "potassium (K)"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Phân lân cung cấp nguyên tố {0}",
+        "o": [
+         {
+          "dung": [
+           "phosphorus (P)"
+          ],
+          "sai": [
+           "nitrogen (N)",
+           "potassium (K)"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Phân kali cung cấp nguyên tố {0}",
+        "o": [
+         {
+          "dung": [
+           "potassium (K)"
+          ],
+          "sai": [
+           "nitrogen (N)",
+           "phosphorus (P)"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Phân NPK cung cấp {0}",
+        "o": [
+         {
+          "dung": [
+           "cả ba nguyên tố N, P, K, có thể thêm nguyên tố trung lượng và vi lượng"
+          ],
+          "sai": [
+           "chỉ nguyên tố nitrogen",
+           "chỉ hai nguyên tố P và K"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B12.C4",
      "trang": 54,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Tại sao đối với từng loại đất cần lựa chọn phân lân thích hợp?"
+     "de": "Tại sao đối với từng loại đất cần lựa chọn phân lân thích hợp?",
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "dong": [
+       {
+        "chu": "Phân lân nung chảy (Ca₃(PO₄)₂ không tan trong nước, tan chậm trong đất chua) thích hợp với {0}",
+        "o": [
+         {
+          "dung": [
+           "đất chua"
+          ],
+          "sai": [
+           "đất không chua",
+           "mọi loại đất như nhau"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Super lân phù hợp với mọi loại đất nhưng hiệu quả nhất trên {0}",
+        "o": [
+         {
+          "dung": [
+           "đất không chua hoặc chua ít (pH = 5,6 – 6,5)"
+          ],
+          "sai": [
+           "đất rất chua",
+           "đất có pH lớn hơn 9"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Phải chọn phân lân theo loại đất vì {0}",
+        "o": [
+         {
+          "dung": [
+           "mỗi loại phân lân tan ra để cây hấp thụ được trong một loại đất khác nhau"
+          ],
+          "sai": [
+           "phân lân nào cũng tan tốt như nhau trong mọi loại đất",
+           "đất chua không cần phosphorus"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B12.C5",
      "trang": 54,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Hãy cho biết vai trò của các nguyên tố vi lượng đối với cây trồng."
+     "de": "Hãy cho biết vai trò của các nguyên tố vi lượng đối với cây trồng.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "dong": [
+       {
+        "chu": "Các nguyên tố vi lượng như {0}",
+        "o": [
+         {
+          "dung": [
+           "Zn, Mn, Fe, Cu"
+          ],
+          "sai": [
+           "N, P, K",
+           "Ca, Mg"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Vai trò của nguyên tố vi lượng: {0}",
+        "o": [
+         {
+          "dung": [
+           "kích thích quá trình sinh trưởng, trao đổi chất; cây cần ít nhưng không thể thiếu"
+          ],
+          "sai": [
+           "tạo nên phần lớn khối lượng của cây",
+           "không cần thiết, có thể bỏ khi bón phân"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B12.C6",
      "trang": 55,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Giải thích tại sao cần phải bón phân theo bốn quy tắc: đúng liều, đúng loại, đúng lúc, đúng nơi."
+     "de": "Giải thích tại sao cần phải bón phân theo bốn quy tắc: đúng liều, đúng loại, đúng lúc, đúng nơi.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 5,
+      "dong": [
+       {
+        "chu": "Đúng liều: {0}",
+        "o": [
+         {
+          "dung": [
+           "không bón thiếu, không bón thừa, điều chỉnh lượng phân theo cây, đất và thời tiết"
+          ],
+          "sai": [
+           "chọn loại phân hợp với nhu cầu của cây trong từng giai đoạn và với từng loại đất",
+           "chia ra nhiều lần bón, bón đúng thời điểm cây đang cần dinh dưỡng"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Đúng loại: {0}",
+        "o": [
+         {
+          "dung": [
+           "chọn loại phân hợp với nhu cầu của cây trong từng giai đoạn và với từng loại đất"
+          ],
+          "sai": [
+           "chia ra nhiều lần bón, bón đúng thời điểm cây đang cần dinh dưỡng",
+           "bón vào chỗ cây hấp thụ được, hạn chế phân bị rửa trôi, phân huỷ hay làm cây bị tổn thương"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Đúng lúc: {0}",
+        "o": [
+         {
+          "dung": [
+           "chia ra nhiều lần bón, bón đúng thời điểm cây đang cần dinh dưỡng"
+          ],
+          "sai": [
+           "bón vào chỗ cây hấp thụ được, hạn chế phân bị rửa trôi, phân huỷ hay làm cây bị tổn thương",
+           "không bón thiếu, không bón thừa, điều chỉnh lượng phân theo cây, đất và thời tiết"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Đúng nơi: {0}",
+        "o": [
+         {
+          "dung": [
+           "bón vào chỗ cây hấp thụ được, hạn chế phân bị rửa trôi, phân huỷ hay làm cây bị tổn thương"
+          ],
+          "sai": [
+           "không bón thiếu, không bón thừa, điều chỉnh lượng phân theo cây, đất và thời tiết",
+           "chọn loại phân hợp với nhu cầu của cây trong từng giai đoạn và với từng loại đất"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Bón phân theo bốn quy tắc trên để {0}",
+        "o": [
+         {
+          "dung": [
+           "cây hấp thụ tốt, tiết kiệm phân, giảm ô nhiễm môi trường và giảm hại cho sức khoẻ con người"
+          ],
+          "sai": [
+           "cây lớn nhanh gấp đôi mà không cần tưới nước",
+           "dùng được càng nhiều phân càng tốt"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B12.C7",
      "trang": 55,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Hãy sưu tầm hình ảnh và trình bày về tác hại của việc bón phân không đúng cách."
+     "de": "Hãy sưu tầm hình ảnh và trình bày về tác hại của việc bón phân không đúng cách.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "hoi": "Trình bày về tác hại của việc bón phân không đúng cách.",
+      "dong": [
+       {
+        "chu": "Phân bón dư thừa bị rửa trôi khỏi đất, {0}",
+        "o": [
+         {
+          "dung": [
+           "ngấm vào mạch nước ngầm, đi vào sông, hồ, gây ô nhiễm đất và nước"
+          ],
+          "sai": [
+           "bay hơi hết nên không gây hại gì",
+           "biến thành phân hữu cơ có lợi cho đất"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Phân bón dư thừa còn bị phân huỷ ra {0}",
+        "o": [
+         {
+          "dung": [
+           "khí ammonia, nitrogen oxide, gây ô nhiễm không khí"
+          ],
+          "sai": [
+           "khí oxygen, làm không khí trong lành hơn",
+           "nước tinh khiết"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Lạm dụng phân bón làm {0}",
+        "o": [
+         {
+          "dung": [
+           "tồn dư hoá chất trong thực phẩm, có hại cho sức khoẻ con người"
+          ],
+          "sai": [
+           "nông sản sạch và an toàn hơn",
+           "cây hấp thụ hết phân, không còn dư thừa"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     }
    ]
   },
@@ -2621,14 +4805,71 @@
      "trang": 58,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Dựa vào đại lượng nào, người ta nói sắt nặng hơn nhôm?"
+     "de": "Dựa vào đại lượng nào, người ta nói sắt nặng hơn nhôm?",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "dong": [
+       {
+        "chu": "Người ta nói sắt nặng hơn nhôm là dựa vào {0}",
+        "o": [
+         {
+          "dung": [
+           "khối lượng riêng"
+          ],
+          "sai": [
+           "khối lượng",
+           "thể tích"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Khối lượng riêng của sắt (7 800 kg/m³) lớn hơn của nhôm (2 700 kg/m³), nghĩa là {0}",
+        "o": [
+         {
+          "dung": [
+           "cùng một thể tích thì sắt có khối lượng lớn hơn nhôm"
+          ],
+          "sai": [
+           "thỏi sắt nào cũng nặng hơn thỏi nhôm nào",
+           "cùng một khối lượng thì sắt có thể tích lớn hơn nhôm"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B13.C2",
      "trang": 58,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Một khối gang hình hộp chữ nhật có chiều dài các cạnh tương ứng là 2 cm, 3 cm, 5 cm và có khối lượng 210 g. Hãy tính khối lượng riêng của gang."
+     "de": "Một khối gang hình hộp chữ nhật có chiều dài các cạnh tương ứng là 2 cm, 3 cm, 5 cm và có khối lượng 210 g. Hãy tính khối lượng riêng của gang.",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "dap": [
+       "7",
+       "7g/cm³",
+       "7000",
+       "7000kg/m³"
+      ],
+      "phim": [
+       "g/cm³",
+       "kg/m³"
+      ],
+      "nhieu": [
+       "g/cm²",
+       "cm³",
+       "g"
+      ],
+      "loi_giai": [
+       "V = 2 · 3 · 5 = 30 (cm³)",
+       "D = m : V = 210 : 30 = 7 (g/cm³)"
+      ]
+     }
     }
    ]
   },
@@ -2641,14 +4882,168 @@
      "trang": 59,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Để xác định khối lượng riêng của một chất tạo nên vật cần phải xác định được những đại lượng nào? Theo em, cách xác định khối lượng riêng của một vật rắn và của một lượng chất lỏng có khác nhau hay không?"
+     "de": "Để xác định khối lượng riêng của một chất tạo nên vật cần phải xác định được những đại lượng nào? Theo em, cách xác định khối lượng riêng của một vật rắn và của một lượng chất lỏng có khác nhau hay không?",
+     "ghep": {
+      "kieu": "O",
+      "sao": 5,
+      "hoi": "Để xác định khối lượng riêng của một chất tạo nên vật cần phải xác định được những đại lượng nào? Với một vật rắn và với một lượng chất lỏng, các đại lượng đó được đo như thế nào?",
+      "dong": [
+       {
+        "chu": "Cần xác định {0} của vật",
+        "o": [
+         {
+          "dung": [
+           "khối lượng m và thể tích V"
+          ],
+          "sai": [
+           "khối lượng m và diện tích bề mặt S",
+           "trọng lượng P và chiều cao h"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Khối lượng riêng tính bằng công thức D = {0}",
+        "o": [
+         {
+          "dung": [
+           "m/V"
+          ],
+          "sai": [
+           "m · V",
+           "V/m"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Thể tích của một khối gỗ hình hộp chữ nhật: {0}",
+        "o": [
+         {
+          "dung": [
+           "đo ba cạnh a, b, c rồi tính V = a · b · c"
+          ],
+          "sai": [
+           "đặt khối gỗ lên cân điện tử rồi đọc số chỉ",
+           "đo một cạnh rồi nhân với 3"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Thể tích của một lượng chất lỏng: {0}",
+        "o": [
+         {
+          "dung": [
+           "rót chất lỏng vào ống đong rồi đọc vạch chia"
+          ],
+          "sai": [
+           "đo chiều dài, chiều rộng, chiều cao của chất lỏng",
+           "cân chất lỏng bằng cân điện tử"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Khối lượng của một lượng chất lỏng: {0}",
+        "o": [
+         {
+          "dung": [
+           "cân ống đong rỗng và cân ống đong có chất lỏng, rồi lấy hiệu hai số chỉ"
+          ],
+          "sai": [
+           "cân ống đong có chất lỏng, lấy luôn số chỉ của cân",
+           "đọc vạch chia trên ống đong"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B14.C2",
      "trang": 63,
      "nhom": "Em có thể",
      "dang": "CAU_NHO",
-     "de": "So sánh giá trị khối lượng riêng của nước xác định trong thí nghiệm ở bài này và khối lượng riêng của nước cho trong Bảng 13.3 (Bài 13). Từ đó, cho biết những yếu tố nào có thể dẫn tới sự chênh lệch giữa hai giá trị này."
+     "de": "So sánh giá trị khối lượng riêng của nước xác định trong thí nghiệm ở bài này và khối lượng riêng của nước cho trong Bảng 13.3 (Bài 13). Từ đó, cho biết những yếu tố nào có thể dẫn tới sự chênh lệch giữa hai giá trị này.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 5,
+      "hoi": "Một bạn làm thí nghiệm ở Bài 14 đo được khối lượng riêng của nước là 980 kg/m³, còn Bảng 13.3 (Bài 13) cho khối lượng riêng của nước là 1 000 kg/m³. So sánh hai giá trị này và cho biết những yếu tố nào có thể dẫn tới sự chênh lệch giữa hai giá trị.",
+      "dong": [
+       {
+        "chu": "Giá trị bạn đó đo được {0} giá trị trong Bảng 13.3",
+        "o": [
+         {
+          "dung": [
+           "nhỏ hơn"
+          ],
+          "sai": [
+           "lớn hơn",
+           "bằng"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Đọc thể tích nước trên vạch chia của ống đong chưa chính xác: {0}",
+        "o": [
+         {
+          "dung": [
+           "Có"
+          ],
+          "sai": [
+           "Không"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Cân điện tử có sai số, hoặc chưa chỉnh về số 0 trước khi cân: {0}",
+        "o": [
+         {
+          "dung": [
+           "Có"
+          ],
+          "sai": [
+           "Không"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Nước dùng để đo chưa sạch, có lẫn chất khác: {0}",
+        "o": [
+         {
+          "dung": [
+           "Có"
+          ],
+          "sai": [
+           "Không"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Lấy nhiều nước thì khối lượng riêng của nước lớn hơn: {0}",
+        "o": [
+         {
+          "dung": [
+           "Không"
+          ],
+          "sai": [
+           "Có"
+          ],
+          "hai": true
+         }
+        ]
+       }
+      ]
+     }
     }
    ]
   },
@@ -2661,35 +5056,395 @@
      "trang": 64,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Quan sát Hình 15.1 (SGK trang 64), hãy chỉ ra lực nào trong số các lực được mô tả dưới đây là áp lực: Lực của người tác dụng lên sợi dây; Lực của sợi dây tác dụng lên thùng hàng; Lực của thùng hàng tác dụng lên mặt sàn; Lực của ngón tay tác dụng lên mũ đinh; Lực của đầu đinh tác dụng lên tấm xốp."
+     "de": "Quan sát Hình 15.1 (SGK trang 64), hãy chỉ ra lực nào trong số các lực được mô tả dưới đây là áp lực: Lực của người tác dụng lên sợi dây; Lực của sợi dây tác dụng lên thùng hàng; Lực của thùng hàng tác dụng lên mặt sàn; Lực của ngón tay tác dụng lên mũ đinh; Lực của đầu đinh tác dụng lên tấm xốp.",
+     "hinh": [
+      "khtn8/B15.C1.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 5,
+      "dong": [
+       {
+        "chu": "Lực của người tác dụng lên sợi dây: {0}",
+        "o": [
+         {
+          "dung": [
+           "Không phải"
+          ],
+          "sai": [
+           "Là áp lực"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Lực của sợi dây tác dụng lên thùng hàng: {0}",
+        "o": [
+         {
+          "dung": [
+           "Không phải"
+          ],
+          "sai": [
+           "Là áp lực"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Lực của thùng hàng tác dụng lên mặt sàn: {0}",
+        "o": [
+         {
+          "dung": [
+           "Là áp lực"
+          ],
+          "sai": [
+           "Không phải"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Lực của ngón tay tác dụng lên mũ đinh: {0}",
+        "o": [
+         {
+          "dung": [
+           "Là áp lực"
+          ],
+          "sai": [
+           "Không phải"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Lực của đầu đinh tác dụng lên tấm xốp: {0}",
+        "o": [
+         {
+          "dung": [
+           "Là áp lực"
+          ],
+          "sai": [
+           "Không phải"
+          ],
+          "hai": true
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B15.C2",
      "trang": 66,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Một xe tăng có trọng lượng 350 000 N. a) Tính áp suất của xe tăng lên mặt đường nằm ngang, biết rằng diện tích tiếp xúc của các bản xích với mặt đường là 1,5 m^2. b) Hãy so sánh áp suất của xe tăng với áp suất của một ô tô có trọng lượng 25 000 N, diện tích các bánh xe tiếp xúc với mặt đường nằm ngang là 250 cm^2. c) Dựa vào kết quả tính ở trên, hãy trả lời câu hỏi đã đặt ra ở phần mở bài (tại sao khi một em bé đứng lên chiếc đệm thì đệm lại bị lún sâu hơn khi người lớn nằm trên nó)."
+     "de": "Một xe tăng có trọng lượng 350 000 N. a) Tính áp suất của xe tăng lên mặt đường nằm ngang, biết rằng diện tích tiếp xúc của các bản xích với mặt đường là 1,5 m^2. b) Hãy so sánh áp suất của xe tăng với áp suất của một ô tô có trọng lượng 25 000 N, diện tích các bánh xe tiếp xúc với mặt đường nằm ngang là 250 cm^2. c) Dựa vào kết quả tính ở trên, hãy trả lời câu hỏi đã đặt ra ở phần mở bài (tại sao khi một em bé đứng lên chiếc đệm thì đệm lại bị lún sâu hơn khi người lớn nằm trên nó).",
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "dong": [
+       {
+        "chu": "a) Áp suất của xe tăng lên mặt đường: p ≈ {0}",
+        "o": [
+         {
+          "dung": [
+           "233 333 Pa"
+          ],
+          "sai": [
+           "525 000 Pa",
+           "23,3 Pa"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "b) Áp suất của ô tô lên mặt đường: p = {0}",
+        "o": [
+         {
+          "dung": [
+           "1 000 000 Pa"
+          ],
+          "sai": [
+           "100 Pa",
+           "100 000 Pa"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "So sánh: áp suất của ô tô {0} áp suất của xe tăng",
+        "o": [
+         {
+          "dung": [
+           "lớn hơn"
+          ],
+          "sai": [
+           "nhỏ hơn",
+           "bằng"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "c) Em bé đứng lên đệm thì đệm lún sâu hơn so với khi người lớn nằm, vì {0}",
+        "o": [
+         {
+          "dung": [
+           "diện tích tiếp xúc của hai bàn chân em bé rất nhỏ, nên áp suất lên đệm lớn hơn dù trọng lượng nhỏ hơn"
+          ],
+          "sai": [
+           "em bé tác dụng lên đệm một áp lực lớn hơn người lớn",
+           "người lớn nằm thì không tạo áp lực lên đệm"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B15.C3",
      "trang": 66,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Từ công thức tính áp suất p = F/S, hãy đưa ra nguyên tắc để làm tăng, giảm áp suất."
+     "de": "Từ công thức tính áp suất p = F/S, hãy đưa ra nguyên tắc để làm tăng, giảm áp suất.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "dong": [
+       {
+        "chu": "Muốn tăng áp suất: {0} áp lực, hoặc {1} diện tích bị ép",
+        "o": [
+         {
+          "dung": [
+           "tăng"
+          ],
+          "sai": [
+           "giảm"
+          ],
+          "hai": true
+         },
+         {
+          "dung": [
+           "giảm"
+          ],
+          "sai": [
+           "tăng"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Muốn giảm áp suất: {0} áp lực, hoặc {1} diện tích bị ép",
+        "o": [
+         {
+          "dung": [
+           "giảm"
+          ],
+          "sai": [
+           "tăng"
+          ],
+          "hai": true
+         },
+         {
+          "dung": [
+           "tăng"
+          ],
+          "sai": [
+           "giảm"
+          ],
+          "hai": true
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B15.C4",
      "trang": 66,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "1. Một người làm vườn cần đóng một chiếc cọc xuống đất. Hãy đề xuất phương án để có thể đóng được chiếc cọc xuống đất một cách dễ dàng. Giải thích. 2. Để xe ô tô có thể vượt qua vùng đất sụt lún người ta thường làm như thế nào? Mô tả cách làm và giải thích. 3. Hãy giải thích tại sao cá sấu có hàm răng rất nhọn."
+     "de": "1. Một người làm vườn cần đóng một chiếc cọc xuống đất. Hãy đề xuất phương án để có thể đóng được chiếc cọc xuống đất một cách dễ dàng. Giải thích. 2. Để xe ô tô có thể vượt qua vùng đất sụt lún người ta thường làm như thế nào? Mô tả cách làm và giải thích. 3. Hãy giải thích tại sao cá sấu có hàm răng rất nhọn.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 5,
+      "dong": [
+       {
+        "chu": "1. Để đóng cọc xuống đất dễ dàng, nên {0}",
+        "o": [
+         {
+          "dung": [
+           "vót nhọn đầu cọc cắm xuống đất"
+          ],
+          "sai": [
+           "làm đầu cọc cắm xuống đất to và bằng",
+           "buộc thêm vải vào đầu cọc"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Đóng cọc nhọn dễ hơn vì {0}",
+        "o": [
+         {
+          "dung": [
+           "diện tích bị ép nhỏ thì áp suất lên đất lớn, cọc dễ lún sâu"
+          ],
+          "sai": [
+           "diện tích bị ép nhỏ thì áp lực lên đất nhỏ, cọc nhẹ hơn",
+           "diện tích bị ép lớn thì áp suất lên đất lớn"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "2. Để ô tô vượt qua vùng đất sụt lún, người ta {0}",
+        "o": [
+         {
+          "dung": [
+           "lót tấm ván rộng (hoặc rơm, cành cây) lên mặt đất cho xe đi qua"
+          ],
+          "sai": [
+           "bơm lốp thật căng cho lốp nhỏ lại",
+           "chất thêm hàng lên xe cho xe nặng hơn"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Lót ván giúp xe không bị lún vì {0}",
+        "o": [
+         {
+          "dung": [
+           "diện tích bị ép tăng nên áp suất lên mặt đất giảm"
+          ],
+          "sai": [
+           "ván làm áp lực của xe lên đất bằng 0",
+           "diện tích bị ép giảm nên áp suất lên mặt đất giảm"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "3. Cá sấu có hàm răng rất nhọn vì {0}",
+        "o": [
+         {
+          "dung": [
+           "răng nhọn có diện tích tiếp xúc nhỏ, tạo áp suất rất lớn, dễ cắn xuyên con mồi"
+          ],
+          "sai": [
+           "răng nhọn có diện tích tiếp xúc lớn nên áp suất lớn",
+           "răng nhọn làm lực cắn của cá sấu nhỏ đi"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B15.C5",
      "trang": 66,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Nêu thêm những ví dụ trong thực tế về công dụng của việc làm tăng, giảm áp suất."
+     "de": "Nêu thêm những ví dụ trong thực tế về công dụng của việc làm tăng, giảm áp suất.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 6,
+      "hoi": "Nêu thêm những ví dụ trong thực tế về công dụng của việc làm tăng, giảm áp suất. Mỗi việc sau làm tăng hay làm giảm áp suất?",
+      "dong": [
+       {
+        "chu": "Lưỡi dao, lưỡi kéo được mài sắc: {0}",
+        "o": [
+         {
+          "dung": [
+           "làm tăng áp suất"
+          ],
+          "sai": [
+           "làm giảm áp suất"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Móng nhà được xây rộng hơn tường nhà: {0}",
+        "o": [
+         {
+          "dung": [
+           "làm giảm áp suất"
+          ],
+          "sai": [
+           "làm tăng áp suất"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Mũi kim, mũi khoan được làm nhọn: {0}",
+        "o": [
+         {
+          "dung": [
+           "làm tăng áp suất"
+          ],
+          "sai": [
+           "làm giảm áp suất"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Xe tăng, máy cày chạy bằng bản xích rộng: {0}",
+        "o": [
+         {
+          "dung": [
+           "làm giảm áp suất"
+          ],
+          "sai": [
+           "làm tăng áp suất"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Đầu ống hút cắm vào hộp sữa được vát nhọn: {0}",
+        "o": [
+         {
+          "dung": [
+           "làm tăng áp suất"
+          ],
+          "sai": [
+           "làm giảm áp suất"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Ba lô có quai đeo to bản: {0}",
+        "o": [
+         {
+          "dung": [
+           "làm giảm áp suất"
+          ],
+          "sai": [
+           "làm tăng áp suất"
+          ],
+          "hai": true
+         }
+        ]
+       }
+      ]
+     }
     }
    ]
   },
@@ -2702,63 +5457,607 @@
      "trang": 68,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Về thí nghiệm khảo sát tác dụng của chất lỏng lên vật đặt trong nó (Hình 16.2, SGK trang 68): 1. Nếu các màng cao su bị biến dạng như Hình 16.2 thì chứng tỏ điều gì? 2. Với những vị trí khác nhau ở cùng một độ sâu thì áp suất chất lỏng tác dụng lên bình có thay đổi không? 3. Khi đặt bình sâu hơn (từ vị trí P đến Q) thì tác dụng của chất lỏng lên bình thay đổi như thế nào? 4. Có phải chất lỏng chỉ tác dụng áp suất lên bình theo một phương như chất rắn không?"
+     "de": "Thí nghiệm 1 (Hình 16.1, Hình 16.2, SGK trang 67, 68): một bình hình trụ có đáy C và các lỗ A, B ở thành bình được bịt bằng màng cao su mỏng. Nhúng bình trụ vào một bình lớn trong suốt chứa nước thì các màng cao su ở A, B, C đều bị biến dạng, lõm vào phía trong bình trụ. Sau đó giữ nguyên độ sâu, di chuyển bình trụ tới các vị trí khác; rồi nhúng bình trụ sâu hơn, từ vị trí P xuống vị trí Q. 1. Nếu các màng cao su bị biến dạng như vậy thì chứng tỏ điều gì? 2. Với những vị trí khác nhau ở cùng một độ sâu thì áp suất chất lỏng tác dụng lên bình có thay đổi không? 3. Khi đặt bình sâu hơn (từ vị trí P đến Q) thì tác dụng của chất lỏng lên bình thay đổi như thế nào? 4. Có phải chất lỏng chỉ tác dụng áp suất lên bình theo một phương như chất rắn không?",
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "dong": [
+       {
+        "chu": "1. Các màng cao su ở thành bình và đáy bình đều bị lõm vào, chứng tỏ {0}",
+        "o": [
+         {
+          "dung": [
+           "chất lỏng gây áp suất lên đáy bình, thành bình và các vật ở trong lòng nó"
+          ],
+          "sai": [
+           "chất lỏng chỉ gây áp suất lên đáy bình",
+           "màng cao su tự co lại khi gặp nước"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "2. Ở cùng một độ sâu, áp suất chất lỏng tác dụng lên bình {0}",
+        "o": [
+         {
+          "dung": [
+           "như nhau, không thay đổi"
+          ],
+          "sai": [
+           "thay đổi theo vị trí đặt bình",
+           "bằng 0"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "3. Đặt bình sâu hơn (từ vị trí P xuống vị trí Q) thì tác dụng của chất lỏng lên bình {0}",
+        "o": [
+         {
+          "dung": [
+           "tăng lên, các màng cao su lõm nhiều hơn"
+          ],
+          "sai": [
+           "giảm đi, các màng cao su lõm ít hơn",
+           "không thay đổi"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "4. Chất lỏng tác dụng áp suất lên bình {0}",
+        "o": [
+         {
+          "dung": [
+           "theo mọi phương, không phải chỉ theo một phương như chất rắn"
+          ],
+          "sai": [
+           "chỉ theo một phương thẳng đứng, như chất rắn",
+           "chỉ theo phương nằm ngang"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B16.C2",
      "trang": 68,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Từ kết quả mô tả ở thí nghiệm về sự truyền áp suất chất lỏng (Hình 16.3, SGK trang 68), hãy rút ra kết luận về sự truyền áp suất tác dụng vào chất lỏng theo mọi hướng."
+     "de": "Thí nghiệm 2 (Hình 16.3, SGK trang 68): hai pit-tông (1) và (2) đậy hai nhánh của một bình thông nhau chứa chất lỏng; pit-tông (1) có tiết diện lớn gấp hai lần tiết diện của pit-tông (2). Các quả nặng giống hệt nhau; đặt quả nặng lên đĩa của một pit-tông sẽ làm tăng áp suất tác dụng lên chất lỏng. Ban đầu hai pit-tông ở vị trí cân bằng. Nếu đặt 4 quả nặng lên pit-tông (1) thì pit-tông (2) dịch chuyển lên trên; để hai pit-tông trở về vị trí ban đầu cần đặt 2 quả nặng lên pit-tông (2). Nếu đặt 2 quả nặng lên pit-tông (1) thì muốn pit-tông trở về vị trí ban đầu cần đặt 1 quả nặng lên pit-tông (2). Từ kết quả trên, hãy rút ra kết luận về sự truyền áp suất tác dụng vào chất lỏng theo mọi hướng.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "dong": [
+       {
+        "chu": "4 quả nặng trên pit-tông (1) gây áp suất lên chất lỏng {0} áp suất do 2 quả nặng trên pit-tông (2) gây ra",
+        "o": [
+         {
+          "dung": [
+           "bằng"
+          ],
+          "sai": [
+           "gấp đôi",
+           "bằng một nửa"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Đặt 6 quả nặng lên pit-tông (1), muốn hai pit-tông trở về vị trí ban đầu thì cần đặt lên pit-tông (2) {0}",
+        "o": [
+         {
+          "dung": [
+           "3 quả nặng"
+          ],
+          "sai": [
+           "6 quả nặng",
+           "12 quả nặng"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Kết luận: áp suất tác dụng vào chất lỏng {0}",
+        "o": [
+         {
+          "dung": [
+           "được chất lỏng truyền đi nguyên vẹn theo mọi hướng"
+          ],
+          "sai": [
+           "chỉ truyền theo phương thẳng đứng xuống đáy bình",
+           "giảm đi một nửa khi truyền sang pit-tông kia"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B16.C3",
      "trang": 68,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Mô tả và giải thích các hiện tượng trong thí nghiệm ở Hình 16.4a và Hình 16.4b (SGK trang 68)."
+     "de": "Mô tả và giải thích các hiện tượng trong thí nghiệm ở Hình 16.4a và Hình 16.4b (SGK trang 68).",
+     "hinh": [
+      "khtn8/B16.C3.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "dong": [
+       {
+        "chu": "a) Khi thổi không khí vào ống (1), mực nước trong các ống (2), (3), (4) {0}",
+        "o": [
+         {
+          "dung": [
+           "cùng dâng lên, cao bằng nhau"
+          ],
+          "sai": [
+           "chỉ dâng lên trong ống (3) có miệng hướng xuống",
+           "hạ xuống thấp hơn mặt nước trong bình"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Miệng các ống (2), (3), (4) quay theo các hướng khác nhau mà nước dâng lên như nhau, vì {0}",
+        "o": [
+         {
+          "dung": [
+           "áp suất của khí thổi vào được nước truyền đi nguyên vẹn theo mọi hướng"
+          ],
+          "sai": [
+           "khí thổi vào ống (1) chạy thẳng sang các ống (2), (3), (4)",
+           "nước bị nóng lên nên nở ra"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "b) Khi ấn pit-tông, nước {0}",
+        "o": [
+         {
+          "dung": [
+           "phun ra ở tất cả các lỗ trên quả cầu, theo mọi hướng"
+          ],
+          "sai": [
+           "chỉ phun ra ở lỗ đối diện pit-tông",
+           "chỉ chảy ra ở các lỗ phía dưới quả cầu"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Nước phun ra như vậy vì {0}",
+        "o": [
+         {
+          "dung": [
+           "áp suất do pit-tông tác dụng vào nước được nước truyền đi nguyên vẹn theo mọi hướng"
+          ],
+          "sai": [
+           "pit-tông chỉ đẩy nước theo phương của pit-tông",
+           "nước có trọng lượng nên chỉ chảy xuống dưới"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B16.C4",
      "trang": 69,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Hình 16.5 vẽ sơ đồ nguyên lí máy nén thuỷ lực (SGK trang 69). Hãy vận dụng tính chất truyền nguyên vẹn áp suất theo mọi hướng của chất lỏng để giải thích tại sao khi người tác dụng một lực nhỏ vào pit-tông nhỏ lại nâng được ô tô đặt trên pit-tông lớn."
+     "de": "Hình 16.5 (SGK trang 69) vẽ sơ đồ nguyên lí máy nén thuỷ lực: hai xi lanh, một nhỏ một lớn, thông nhau ở đáy và chứa đầy chất lỏng; người ấn pit-tông nhỏ, ô tô đặt trên pit-tông lớn. Hãy vận dụng tính chất truyền nguyên vẹn áp suất theo mọi hướng của chất lỏng để giải thích tại sao khi người tác dụng một lực nhỏ vào pit-tông nhỏ lại nâng được ô tô đặt trên pit-tông lớn.",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 4,
+      "buoc": [
+       "Người tác dụng lực nhỏ f lên pit-tông nhỏ có diện tích s, tạo ra áp suất p = f : s lên chất lỏng",
+       "Chất lỏng truyền nguyên vẹn áp suất p tới pit-tông lớn",
+       "Pit-tông lớn có diện tích S chịu lực nâng F = p · S",
+       "S lớn hơn s bao nhiêu lần thì F lớn hơn f bấy nhiêu lần, nên lực nhỏ f nâng được ô tô"
+      ],
+      "nhieu": [
+       "Chất lỏng truyền nguyên vẹn lực f tới pit-tông lớn",
+       "Pit-tông lớn có diện tích S chịu lực nâng F = p : S"
+      ]
+     }
     },
     {
      "ma": "B16.C5",
      "trang": 69,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Hãy tìm thêm ví dụ trong đời sống minh hoạ áp suất tác dụng vào chất lỏng sẽ được chất lỏng truyền đi nguyên vẹn theo mọi hướng."
+     "de": "Hãy tìm thêm ví dụ trong đời sống minh hoạ áp suất tác dụng vào chất lỏng sẽ được chất lỏng truyền đi nguyên vẹn theo mọi hướng.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 5,
+      "hoi": "Hãy tìm thêm ví dụ trong đời sống minh hoạ áp suất tác dụng vào chất lỏng sẽ được chất lỏng truyền đi nguyên vẹn theo mọi hướng. Mỗi trường hợp sau có minh hoạ điều đó không?",
+      "dong": [
+       {
+        "chu": "Phanh dầu của ô tô, xe máy (đạp phanh thì dầu truyền áp suất tới các má phanh): {0}",
+        "o": [
+         {
+          "dung": [
+           "Có"
+          ],
+          "sai": [
+           "Không"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Kích thuỷ lực (con đội) nâng ô tô khi thay lốp: {0}",
+        "o": [
+         {
+          "dung": [
+           "Có"
+          ],
+          "sai": [
+           "Không"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Bóp mạnh một túi nilon kín đựng đầy nước có nhiều lỗ nhỏ, nước phun ra ở mọi lỗ: {0}",
+        "o": [
+         {
+          "dung": [
+           "Có"
+          ],
+          "sai": [
+           "Không"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Dùng ống hút hút nước trong cốc lên miệng: {0}",
+        "o": [
+         {
+          "dung": [
+           "Không"
+          ],
+          "sai": [
+           "Có"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Dao sắc cắt rau dễ hơn dao cùn: {0}",
+        "o": [
+         {
+          "dung": [
+           "Không"
+          ],
+          "sai": [
+           "Có"
+          ],
+          "hai": true
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B16.C6",
      "trang": 70,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "1. Tìm một số ví dụ chứng tỏ sự tồn tại của áp suất khí quyển. 2. Em hãy cho biết áp suất tác dụng lên mặt hồ và áp suất tác dụng lên đáy hồ là áp suất nào."
+     "de": "1. Tìm một số ví dụ chứng tỏ sự tồn tại của áp suất khí quyển. 2. Em hãy cho biết áp suất tác dụng lên mặt hồ và áp suất tác dụng lên đáy hồ là áp suất nào.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 6,
+      "hoi": "1. Những hiện tượng nào sau đây chứng tỏ sự tồn tại của áp suất khí quyển?\n2. Em hãy cho biết áp suất tác dụng lên mặt hồ và áp suất tác dụng lên đáy hồ là áp suất nào.",
+      "dong": [
+       {
+        "chu": "Hút hết sữa trong hộp giấy bằng ống hút, hộp giấy bị bẹp lại: {0}",
+        "o": [
+         {
+          "dung": [
+           "Có"
+          ],
+          "sai": [
+           "Không"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Bịt kín đầu trên của ống thuỷ tinh đang cắm trong nước rồi nhấc ống lên, nước không chảy ra: {0}",
+        "o": [
+         {
+          "dung": [
+           "Có"
+          ],
+          "sai": [
+           "Không"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Quả bóng bàn bị bẹp thả vào nước nóng phồng lên như cũ: {0}",
+        "o": [
+         {
+          "dung": [
+           "Không"
+          ],
+          "sai": [
+           "Có"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Đặt thùng hàng nặng lên đệm, đệm bị lún xuống: {0}",
+        "o": [
+         {
+          "dung": [
+           "Không"
+          ],
+          "sai": [
+           "Có"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "2. Áp suất tác dụng lên mặt hồ: {0}",
+        "o": [
+         {
+          "dung": [
+           "áp suất khí quyển"
+          ],
+          "sai": [
+           "áp suất của nước trong hồ",
+           "không có áp suất nào"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Áp suất tác dụng lên đáy hồ: {0}",
+        "o": [
+         {
+          "dung": [
+           "áp suất chất lỏng do nước gây ra, cùng với áp suất khí quyển được nước truyền xuống"
+          ],
+          "sai": [
+           "chỉ có áp suất khí quyển",
+           "không có áp suất nào, vì nước đứng yên"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B16.C7",
      "trang": 70,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Em hãy tìm ví dụ và mô tả hiện tượng trong thực tế về sự tạo thành tiếng động trong tai khi thay đổi áp suất đột ngột."
+     "de": "Em hãy tìm ví dụ và mô tả hiện tượng trong thực tế về sự tạo thành tiếng động trong tai khi thay đổi áp suất đột ngột.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "dong": [
+       {
+        "chu": "Ví dụ: {0}",
+        "o": [
+         {
+          "dung": [
+           "ngồi trên máy bay lúc cất cánh hay hạ cánh, đi thang máy lên tầng cao, ta thấy ù tai"
+          ],
+          "sai": [
+           "nghe nhạc to bằng tai nghe, tai bị đau",
+           "đứng lâu dưới nắng, tai bị nóng lên"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Khi áp suất bên ngoài thay đổi đột ngột, {0}",
+        "o": [
+         {
+          "dung": [
+           "vòi tai không kịp cân bằng áp suất hai bên màng nhĩ, màng nhĩ bị đẩy về phía có áp suất nhỏ hơn, gây tiếng động trong tai"
+          ],
+          "sai": [
+           "màng nhĩ bị thủng ngay lập tức",
+           "không khí bên ngoài chui hết vào ốc tai"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Muốn hết ù tai, ta {0}",
+        "o": [
+         {
+          "dung": [
+           "nuốt hoặc ngáp để vòi tai mở rộng, cân bằng lại áp suất"
+          ],
+          "sai": [
+           "bịt chặt hai tai lại",
+           "lắc mạnh đầu"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B16.C8",
      "trang": 71,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Tìm thêm ví dụ về giác mút trong thực tế và giải thích hoạt động của nó."
+     "de": "Tìm thêm ví dụ về giác mút trong thực tế và giải thích hoạt động của nó.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "dong": [
+       {
+        "chu": "Ví dụ về giác mút: {0}",
+        "o": [
+         {
+          "dung": [
+           "móc treo dán tường nhà tắm, giá kẹp điện thoại hút vào kính ô tô"
+          ],
+          "sai": [
+           "nam châm dán tủ lạnh",
+           "băng dính hai mặt"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Khi ấn giác mút sát vào mặt kính, {0}",
+        "o": [
+         {
+          "dung": [
+           "không khí bên trong bị đẩy bớt ra ngoài, áp suất không khí bên trong giác mút nhỏ hơn áp suất khí quyển"
+          ],
+          "sai": [
+           "không khí bên trong bị nén lại, áp suất bên trong giác mút lớn hơn áp suất khí quyển",
+           "cao su dính vào kính như keo dán"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Giác mút bám chặt vào kính vì {0}",
+        "o": [
+         {
+          "dung": [
+           "áp suất khí quyển bên ngoài ép giác mút vào mặt kính"
+          ],
+          "sai": [
+           "lực hút của Trái Đất kéo giác mút vào kính",
+           "áp suất không khí bên trong đẩy giác mút ra ngoài"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B16.C9",
      "trang": 72,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Hãy tìm trong thực tế những dụng cụ hoạt động theo nguyên lí của bình xịt. Cho biết chúng được sử dụng vào công việc gì."
+     "de": "Hãy tìm trong thực tế những dụng cụ hoạt động theo nguyên lí của bình xịt. Cho biết chúng được sử dụng vào công việc gì.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 6,
+      "hoi": "Hãy tìm trong thực tế những dụng cụ hoạt động theo nguyên lí của bình xịt (bơm nén không khí vào bình để đẩy chất lỏng ra) và cho biết chúng được sử dụng vào công việc gì.",
+      "dong": [
+       {
+        "chu": "Bình phun thuốc trừ sâu đeo vai, bơm bằng tay, hoạt động theo nguyên lí bình xịt: {0}",
+        "o": [
+         {
+          "dung": [
+           "Có"
+          ],
+          "sai": [
+           "Không"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Bình tưới cây phun sương, bơm bằng tay, hoạt động theo nguyên lí bình xịt: {0}",
+        "o": [
+         {
+          "dung": [
+           "Có"
+          ],
+          "sai": [
+           "Không"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Ống hút để uống nước hoạt động theo nguyên lí bình xịt: {0}",
+        "o": [
+         {
+          "dung": [
+           "Không"
+          ],
+          "sai": [
+           "Có"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Kích thuỷ lực nâng ô tô hoạt động theo nguyên lí bình xịt: {0}",
+        "o": [
+         {
+          "dung": [
+           "Không"
+          ],
+          "sai": [
+           "Có"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Bình phun thuốc trừ sâu dùng để {0}",
+        "o": [
+         {
+          "dung": [
+           "phun thuốc bảo vệ thực vật lên cây trồng"
+          ],
+          "sai": [
+           "bơm hơi vào lốp xe",
+           "hút nước từ giếng lên"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Bình tưới cây phun sương dùng để {0}",
+        "o": [
+         {
+          "dung": [
+           "tưới nước thành những hạt rất nhỏ cho cây, hoa"
+          ],
+          "sai": [
+           "phun sơn lên tường",
+           "hút bụi trong nhà"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     }
    ]
   },
@@ -2771,35 +6070,304 @@
      "trang": 73,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "1. Hãy biểu diễn các lực tác dụng vào viên bi, ốc vít kim loại, miếng xốp khi chúng ở vị trí như trong Hình 17.2 (SGK trang 73). 2. Hãy rút ra điều kiện để một vật chìm xuống hoặc nổi lên khi đặt trong chất lỏng. 3. Mô tả sự thay đổi lực đẩy của nước lên quả bóng trong Hình 17.1 từ khi bắt đầu nhấn quả bóng vào nước, đến khi quả bóng chìm hoàn toàn trong nước."
+     "de": "Trong Hình 17.2 (SGK trang 73), thả viên bi (1), ốc vít kim loại (2) và miếng xốp (3) vào nước: viên bi và ốc vít chìm xuống, miếng xốp nổi lên. Hình 17.1 vẽ một bàn tay đang nhấn quả bóng xuống nước. 1. Hãy biểu diễn các lực tác dụng vào viên bi, ốc vít kim loại, miếng xốp khi chúng ở vị trí như trong Hình 17.2. 2. Hãy rút ra điều kiện để một vật chìm xuống hoặc nổi lên khi đặt trong chất lỏng. 3. Mô tả sự thay đổi lực đẩy của nước lên quả bóng trong Hình 17.1 từ khi bắt đầu nhấn quả bóng vào nước, đến khi quả bóng chìm hoàn toàn trong nước.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 5,
+      "hoi": "Thả viên bi, ốc vít kim loại và miếng xốp vào nước: viên bi và ốc vít chìm xuống, miếng xốp nổi lên (Hình 17.2).\n1. So sánh hai lực tác dụng vào mỗi vật (khi biểu diễn, mũi tên của lực lớn hơn vẽ dài hơn).\n2. Hãy rút ra điều kiện để một vật chìm xuống hoặc nổi lên khi đặt trong chất lỏng.\n3. Dùng tay nhấn một quả bóng xuống nước (Hình 17.1). Mô tả sự thay đổi lực đẩy của nước lên quả bóng từ khi bắt đầu nhấn quả bóng vào nước, đến khi quả bóng chìm hoàn toàn trong nước.",
+      "dong": [
+       {
+        "chu": "1. Viên bi và ốc vít kim loại đều chịu trọng lực P hướng xuống và lực đẩy Archimedes FA hướng lên, với {0}",
+        "o": [
+         {
+          "dung": [
+           "P lớn hơn FA (mũi tên P dài hơn)"
+          ],
+          "sai": [
+           "P nhỏ hơn FA (mũi tên FA dài hơn)",
+           "P bằng FA (hai mũi tên dài bằng nhau)"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Miếng xốp chịu trọng lực P hướng xuống và lực đẩy Archimedes FA hướng lên, với {0}",
+        "o": [
+         {
+          "dung": [
+           "FA lớn hơn P (mũi tên FA dài hơn)"
+          ],
+          "sai": [
+           "FA nhỏ hơn P (mũi tên P dài hơn)",
+           "FA bằng P (hai mũi tên dài bằng nhau)"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "2. Vật chìm xuống khi {0}",
+        "o": [
+         {
+          "dung": [
+           "FA < P"
+          ],
+          "sai": [
+           "FA > P",
+           "FA = P"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Vật nổi lên khi {0}",
+        "o": [
+         {
+          "dung": [
+           "FA > P"
+          ],
+          "sai": [
+           "FA < P",
+           "FA = P"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "3. Từ khi bắt đầu nhấn quả bóng vào nước đến khi quả bóng chìm hoàn toàn, lực đẩy của nước lên quả bóng {0}",
+        "o": [
+         {
+          "dung": [
+           "tăng dần, vì phần thể tích quả bóng chìm trong nước tăng dần"
+          ],
+          "sai": [
+           "giảm dần, vì quả bóng càng xuống sâu",
+           "không thay đổi, vì trọng lượng quả bóng không đổi"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B17.C2",
      "trang": 75,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Thả một viên đất nặn hình tròn nặng khoảng 100 g vào cốc nước, viên đất nặn sẽ chìm xuống đáy. Hãy tạo hình viên đất nặn này thành một vật có thể nổi được trên mặt nước. Vận dụng công thức định luật Archimedes, hãy giải thích vì sao cùng một viên đất nặn với hình dạng khác nhau lại có thể lúc thì chìm, lúc thì nổi."
+     "de": "Thả một viên đất nặn hình tròn nặng khoảng 100 g vào cốc nước, viên đất nặn sẽ chìm xuống đáy. Hãy tạo hình viên đất nặn này thành một vật có thể nổi được trên mặt nước. Vận dụng công thức định luật Archimedes, hãy giải thích vì sao cùng một viên đất nặn với hình dạng khác nhau lại có thể lúc thì chìm, lúc thì nổi.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 5,
+      "dong": [
+       {
+        "chu": "Viên đất nặn nặng khoảng 100 g có trọng lượng khoảng {0}",
+        "o": [
+         {
+          "dung": [
+           "1 N"
+          ],
+          "sai": [
+           "1 000 N",
+           "0,1 N"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Để nổi được trên mặt nước, viên đất nặn được nặn thành {0}",
+        "o": [
+         {
+          "dung": [
+           "hình chiếc thuyền (hay cái bát) có lòng rỗng, thành mỏng"
+          ],
+          "sai": [
+           "một viên tròn nhỏ hơn và đặc hơn",
+           "một thanh dài và đặc"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Khi đổi hình dạng, trọng lượng của viên đất nặn {0}",
+        "o": [
+         {
+          "dung": [
+           "không thay đổi"
+          ],
+          "sai": [
+           "tăng lên",
+           "giảm đi"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Theo công thức FA = d · V, đất nặn hình thuyền chịu lực đẩy Archimedes lớn hơn vì {0}",
+        "o": [
+         {
+          "dung": [
+           "thể tích phần nước bị đất nặn hình thuyền chiếm chỗ lớn hơn nhiều"
+          ],
+          "sai": [
+           "trọng lượng riêng của nước tăng lên",
+           "đất nặn hình thuyền nhẹ hơn viên đất nặn hình tròn"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Viên đất nặn hình tròn chìm vì {0}",
+        "o": [
+         {
+          "dung": [
+           "phần nước bị viên đất nặn chiếm chỗ ít, lực đẩy Archimedes nhỏ hơn trọng lượng của viên đất nặn"
+          ],
+          "sai": [
+           "lực đẩy Archimedes lớn hơn trọng lượng của viên đất nặn",
+           "nước không tác dụng lực đẩy lên vật đặc"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B17.C3",
      "trang": 75,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Giải thích vì sao trong thí nghiệm mở đầu, nắp chai nhựa lại nổi lên còn viên bi, ốc vít kim loại vẫn nằm ở đáy cốc."
+     "de": "Trong thí nghiệm mở đầu (SGK trang 73), đặt viên bi sắt, ốc vít kim loại, nắp chai nhựa vào một cốc thuỷ tinh rồi đổ nước vào cốc. Giải thích vì sao nắp chai nhựa lại nổi lên còn viên bi, ốc vít kim loại vẫn nằm ở đáy cốc.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "dong": [
+       {
+        "chu": "Nắp chai nhựa nổi lên vì {0}",
+        "o": [
+         {
+          "dung": [
+           "lực đẩy Archimedes của nước lớn hơn trọng lượng của nắp chai nhựa"
+          ],
+          "sai": [
+           "nắp chai nhựa không chịu tác dụng của trọng lực",
+           "lực đẩy Archimedes nhỏ hơn trọng lượng của nắp chai nhựa"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Viên bi, ốc vít kim loại nằm ở đáy cốc vì {0}",
+        "o": [
+         {
+          "dung": [
+           "trọng lượng của viên bi, ốc vít lớn hơn lực đẩy Archimedes của nước"
+          ],
+          "sai": [
+           "nước không tác dụng lực đẩy lên vật bằng kim loại",
+           "lực đẩy Archimedes của nước lớn hơn trọng lượng của viên bi, ốc vít"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B17.C4",
      "trang": 75,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Hãy so sánh trọng lượng riêng của vật và trọng lượng riêng của nước khi vật chìm, vật nổi."
+     "de": "Hãy so sánh trọng lượng riêng của vật và trọng lượng riêng của nước khi vật chìm, vật nổi.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "dong": [
+       {
+        "chu": "Vật chìm khi trọng lượng riêng của vật {0} trọng lượng riêng của nước",
+        "o": [
+         {
+          "dung": [
+           "lớn hơn"
+          ],
+          "sai": [
+           "nhỏ hơn",
+           "bằng"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Vật nổi lên khi trọng lượng riêng của vật {0} trọng lượng riêng của nước",
+        "o": [
+         {
+          "dung": [
+           "nhỏ hơn"
+          ],
+          "sai": [
+           "lớn hơn",
+           "bằng"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B17.C5",
      "trang": 75,
      "nhom": "Em có thể",
      "dang": "CAU_NHO",
-     "de": "Giải thích tại sao con tàu rất nặng mà vẫn nổi được trên mặt nước."
+     "de": "Giải thích tại sao con tàu rất nặng mà vẫn nổi được trên mặt nước.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "dong": [
+       {
+        "chu": "Con tàu bằng thép được làm {0}",
+        "o": [
+         {
+          "dung": [
+           "rỗng bên trong, nên phần thể tích tàu chìm trong nước rất lớn"
+          ],
+          "sai": [
+           "đặc toàn bộ để chắc chắn",
+           "bằng một loại thép nhẹ hơn nước"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Con tàu nổi được vì {0}",
+        "o": [
+         {
+          "dung": [
+           "lực đẩy Archimedes của nước lên phần tàu chìm bằng trọng lượng của tàu"
+          ],
+          "sai": [
+           "tàu không chịu tác dụng của trọng lực khi ở trên nước",
+           "lực đẩy Archimedes của nước nhỏ hơn trọng lượng của tàu"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Tính cả không khí trong khoang, trọng lượng riêng trung bình của con tàu {0} trọng lượng riêng của nước",
+        "o": [
+         {
+          "dung": [
+           "nhỏ hơn"
+          ],
+          "sai": [
+           "lớn hơn",
+           "bằng"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     }
    ]
   },

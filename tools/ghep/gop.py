@@ -186,7 +186,8 @@ def khoa_bai(ten):
     m = re.match(r"^Unit (\d+)", ten)
     if m:
         return (int(m.group(1)), 0)
-    m = re.match(r"^Test Yourself (\d+)", ten)
+    # Test Yourself k (SBT) va Review k (SGK, 2/10/2026) on ba Unit truoc no: dung ngay sau Unit 3k.
+    m = re.match(r"^(?:Test Yourself|Review) (\d+)", ten)
     if m:
         return (3 * int(m.group(1)), 1)
     return (99, 0)

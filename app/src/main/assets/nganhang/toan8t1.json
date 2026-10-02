@@ -2,7 +2,7 @@
  "nguon": "toan8t1",
  "mon": "Toán",
  "ten": "SGK Toán 8 — tập một",
- "ban": 2,
+ "ban": 3,
  "cac_bai": [
   {
    "chuong": "Chương I. Đa thức",
@@ -10467,63 +10467,381 @@
      "de": "Tìm tỉ số của các cặp đoạn thẳng có độ dài như sau: a) MN = 3 cm và PQ = 9 cm; b) EF = 25 cm và HK = 10 dm.",
      "trang": 77,
      "nhom": "Luyện tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "hoi": "Tìm tỉ số của các cặp đoạn thẳng có độ dài như sau:\na) MN = 3 cm và PQ = 9 cm;\nb) EF = 25 cm và HK = 10 dm.\n(Gõ kết quả các ý theo thứ tự, cách nhau bằng dấu ;)",
+      "dap": [
+       "1/3;1/4",
+       "1/3;0,25"
+      ],
+      "phim": [
+       ";"
+      ],
+      "nhieu": [
+       "cm",
+       "dm"
+      ],
+      "loi_giai": [
+       "a) MN/PQ = 3/9 = 1/3",
+       "b) Đổi HK = 10 dm = 100 cm, nên EF/HK = 25/100 = 1/4"
+      ]
+     }
     },
     {
      "ma": "Luyện tập 2 (tr.78)",
      "de": "Cho tam giác ABC và một điểm B' nằm trên cạnh AB. Qua điểm B', ta vẽ một đường thẳng song song với BC, cắt AC tại C' (H.4.4). Dựa vào hình vẽ, hãy tính và so sánh các tỉ số sau và viết các tỉ lệ thức: a) AB'/AB và AC'/AC; b) AB'/B'B và AC'/C'C; c) B'B/AB và C'C/AC.",
      "trang": 78,
      "nhom": "Luyện tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "hinh": [
+      "toan8t1/LT2-tr78.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 6,
+      "hoi": "Cho tam giác ABC và một điểm B' nằm trên cạnh AB. Qua điểm B', ta vẽ một đường thẳng song song với BC, cắt AC tại C' (H.4.4). Dựa vào hình vẽ, hãy tính và so sánh các tỉ số sau và viết các tỉ lệ thức:\na) AB'/AB và AC'/AC;\nb) AB'/B'B và AC'/C'C;\nc) B'B/AB và C'C/AC.",
+      "dong": [
+       {
+        "chu": "a) AB'/AB = {0}; AC'/AC = {1}",
+        "o": [
+         {
+          "dung": [
+           "2/3"
+          ],
+          "sai": [
+           "1/3",
+           "3/2",
+           "1/2"
+          ]
+         },
+         {
+          "dung": [
+           "2/3"
+          ],
+          "sai": [
+           "1/3",
+           "3/2",
+           "1/2"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "b) AB'/B'B = {0}; AC'/C'C = {1}",
+        "o": [
+         {
+          "dung": [
+           "2"
+          ],
+          "sai": [
+           "1/2",
+           "2/3",
+           "3"
+          ]
+         },
+         {
+          "dung": [
+           "2"
+          ],
+          "sai": [
+           "1/2",
+           "2/3",
+           "3"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "c) B'B/AB = {0}; C'C/AC = {1}",
+        "o": [
+         {
+          "dung": [
+           "1/3"
+          ],
+          "sai": [
+           "2/3",
+           "1/2",
+           "3"
+          ]
+         },
+         {
+          "dung": [
+           "1/3"
+          ],
+          "sai": [
+           "2/3",
+           "1/2",
+           "3"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "Luyện tập 3 (tr.79)",
      "de": "Tìm các độ dài x, y trong Hình 4.6.",
      "trang": 79,
      "nhom": "Luyện tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "hinh": [
+      "toan8t1/LT3-tr79.webp"
+     ],
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 5,
+      "hoi": "Tìm các độ dài x, y trong Hình 4.6.\n(Gõ x trước, y sau, cách nhau bằng dấu ;)",
+      "dap": [
+       "3,25;6,8",
+       "3,25;34/5",
+       "13/4;6,8",
+       "13/4;34/5"
+      ],
+      "phim": [
+       ";"
+      ],
+      "nhieu": [
+       "cm",
+       "√"
+      ],
+      "loi_giai": [
+       "a) MN // BC nên AM/MB = AN/NC (định lí Thalès), tức là 6,5/x = 4/2",
+       "x = 6,5 · 2 : 4 = 3,25",
+       "b) EF ⊥ PH, QH ⊥ PH nên EF // QH; PQ = PF + FQ = 5 + 3,5 = 8,5",
+       "PE/PH = PF/PQ (định lí Thalès), tức là 4/y = 5/8,5",
+       "y = 4 · 8,5 : 5 = 6,8"
+      ]
+     }
     },
     {
      "ma": "Vận dụng (tr.80)",
-     "de": "Em hãy trả lời câu hỏi trong tình huống mở đầu: cây cầu AB bắc qua một con sông rộng 300 m; để đo khoảng cách giữa hai điểm C và D trên hai bờ con sông, người ta chọn điểm E trên đường thẳng AB sao cho ba điểm E, C, D thẳng hàng; đo được AE = 400 m, EC = 500 m. Người ta tính khoảng cách giữa C và D như thế nào?",
+     "de": "Em hãy trả lời câu hỏi trong tình huống mở đầu (Hình 4.1): Cây cầu AB bắc qua một con sông có chiều rộng 300 m (A và B ở hai bờ sông). Để đo khoảng cách giữa hai điểm C và D trên hai bờ con sông (C cùng bờ với A, D cùng bờ với B), người ta chọn một điểm E trên đường thẳng AB sao cho ba điểm E, C, D thẳng hàng. Trên mặt đất, người ta đo được AE = 400 m, EC = 500 m. Theo em, người ta tính khoảng cách giữa C và D như thế nào? Khoảng cách đó bằng bao nhiêu mét?",
      "trang": 80,
      "nhom": "Vận dụng",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "hinh": [
+      "toan8t1/VD-tr80.webp"
+     ],
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "dap": [
+       "375",
+       "375m"
+      ],
+      "phim": [
+       "m"
+      ],
+      "nhieu": [
+       "cm",
+       "km"
+      ],
+      "loi_giai": [
+       "A, C ở cùng một bờ sông, B, D ở bờ kia, hai bờ sông song song nên AC // BD",
+       "Tam giác EBD có AC // BD nên EA/AB = EC/CD (định lí Thalès), tức là 400/300 = 500/CD",
+       "Tính theo m: CD = 300 · 500 : 400 = 375"
+      ]
+     }
     },
     {
      "ma": "4.1",
      "de": "Tìm độ dài x, y trong Hình 4.9 (làm tròn kết quả đến chữ số thập phân thứ nhất).",
      "trang": 80,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "hinh": [
+      "toan8t1/4.1.webp"
+     ],
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 5,
+      "hoi": "Tìm độ dài x, y trong Hình 4.9 (làm tròn kết quả đến chữ số thập phân thứ nhất).\n(Gõ x trước, y sau, cách nhau bằng dấu ;)",
+      "dap": [
+       "5,3;17,3"
+      ],
+      "phim": [
+       ";"
+      ],
+      "nhieu": [
+       "cm",
+       "√"
+      ],
+      "loi_giai": [
+       "a) HK // QE nên PH/HQ = PK/KE (định lí Thalès), tức là 6/4 = 8/x",
+       "x = 8 · 4 : 6 = 16/3 ≈ 5,3",
+       "b) góc AMN = góc ABC, hai góc này ở vị trí đồng vị nên MN // BC; NC = AC − AN = 11 − 8 = 3",
+       "AM/MB = AN/NC (định lí Thalès), tức là y/6,5 = 8/3",
+       "y = 6,5 · 8 : 3 = 52/3 ≈ 17,3"
+      ]
+     }
     },
     {
      "ma": "4.2",
      "de": "Tìm các cặp đường thẳng song song trong Hình 4.10 và giải thích vì sao chúng song song với nhau.",
      "trang": 80,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "hinh": [
+      "toan8t1/4.2.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 6,
+      "hoi": "Tìm các cặp đường thẳng song song trong Hình 4.10 và giải thích vì sao chúng song song với nhau.",
+      "dong": [
+       {
+        "chu": "Hình a): ME/EN và MF/FP lần lượt bằng {0}, nên {1}",
+        "o": [
+         {
+          "dung": [
+           "2/3 và 2/3"
+          ],
+          "sai": [
+           "2/3 và 3/2",
+           "3/2 và 2/3"
+          ]
+         },
+         {
+          "dung": [
+           "EF // NP"
+          ],
+          "sai": [
+           "EF không song song với NP"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Hình b): HF/FK và HM/MQ lần lượt bằng {0}, nên {1}",
+        "o": [
+         {
+          "dung": [
+           "7/6 và 3/2"
+          ],
+          "sai": [
+           "7/6 và 2/3",
+           "6/7 và 3/2"
+          ]
+         },
+         {
+          "dung": [
+           "FM không song song với KQ"
+          ],
+          "sai": [
+           "FM // KQ"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Hình b): QM/MH và QE/EK lần lượt bằng {0}, nên {1}",
+        "o": [
+         {
+          "dung": [
+           "2/3 và 2/3"
+          ],
+          "sai": [
+           "2/3 và 3/2",
+           "3/2 và 2/3"
+          ]
+         },
+         {
+          "dung": [
+           "ME // HK"
+          ],
+          "sai": [
+           "ME không song song với HK"
+          ],
+          "hai": true
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "4.3",
      "de": "Cho tam giác ABC, từ điểm D trên cạnh BC, kẻ đường thẳng song song với AB cắt AC tại F và kẻ đường thẳng song song với AC cắt AB tại E. Chứng minh rằng AE/AB + AF/AC = 1.",
      "trang": 80,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 4,
+      "buoc": [
+       "DE // AC nên AE/AB = CD/BC (định lí Thalès trong tam giác ABC)",
+       "DF // AB nên AF/AC = BD/BC (định lí Thalès trong tam giác ABC)",
+       "Suy ra AE/AB + AF/AC = CD/BC + BD/BC = (CD + BD)/BC",
+       "D nằm trên cạnh BC nên CD + BD = BC, do đó AE/AB + AF/AC = BC/BC = 1"
+      ],
+      "nhieu": [
+       "DE // AC nên AE/AB = BD/BC (định lí Thalès trong tam giác ABC)",
+       "DF // AB nên AF/FC = BD/BC (định lí Thalès trong tam giác ABC)"
+      ],
+      "thu_tu_khac": [
+       [
+        1,
+        0,
+        2,
+        3
+       ]
+      ]
+     }
     },
     {
      "ma": "4.4",
      "de": "Cho tam giác ABC có trọng tâm G. Vẽ đường thẳng d qua G và song song với AB, d cắt BC tại điểm M. Chứng minh rằng BM = (1/3)BC.",
      "trang": 80,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 4,
+      "buoc": [
+       "Gọi I là trung điểm của AB thì CI là đường trung tuyến của tam giác ABC, trọng tâm G nằm trên CI",
+       "G là trọng tâm nên CG = (2/3)CI",
+       "Tam giác CBI có GM // BI (vì d // AB) nên CM/CB = CG/CI = 2/3 (định lí Thalès)",
+       "Suy ra CM = (2/3)BC, do đó BM = BC − CM = (1/3)BC"
+      ],
+      "nhieu": [
+       "G là trọng tâm nên CG = (1/3)CI",
+       "Tam giác CBI có GM // BI (vì d // AB) nên BM/BC = CG/CI = 2/3 (định lí Thalès)"
+      ]
+     }
     },
     {
      "ma": "4.5",
      "de": "Để đo khoảng cách giữa hai vị trí B và E ở hai bên bờ sông, bác An chọn ba vị trí A, F, C cùng nằm ở một bên bờ sông sao cho ba điểm C, E, B thẳng hàng, ba điểm C, F, A thẳng hàng và AB // EF (H.4.11). Sau đó bác An đo được AF = 40 m, FC = 20 m, EC = 30 m. Hỏi khoảng cách giữa hai vị trí B và E bằng bao nhiêu?",
      "trang": 80,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "hinh": [
+      "toan8t1/4.5.webp"
+     ],
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "dap": [
+       "60",
+       "60m"
+      ],
+      "phim": [
+       "m"
+      ],
+      "nhieu": [
+       "cm",
+       "km"
+      ],
+      "loi_giai": [
+       "Tam giác CAB có EF // AB (E thuộc CB, F thuộc CA) nên CE/EB = CF/FA (định lí Thalès), tức là 30/BE = 20/40",
+       "Tính theo m: BE = 30 · 40 : 20 = 60"
+      ]
+     }
     }
    ]
   },
@@ -10536,56 +10854,249 @@
      "de": "Cho tam giác ABC cân tại A, D và E lần lượt là trung điểm của AB, AC. Tứ giác DECB là hình gì? Tại sao?",
      "trang": 83,
      "nhom": "Luyện tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "hoi": "Cho tam giác ABC cân tại A, D và E lần lượt là trung điểm của AB, AC. Tứ giác DECB là hình gì? Tại sao?",
+      "dong": [
+       {
+        "chu": "D, E là trung điểm của AB, AC nên DE là đường trung bình của tam giác ABC, suy ra {0}",
+        "o": [
+         {
+          "dung": [
+           "DE // BC"
+          ],
+          "sai": [
+           "DE = BC",
+           "DE ⊥ AB"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Tam giác ABC cân tại A nên {0}",
+        "o": [
+         {
+          "dung": [
+           "góc DBC = góc ECB"
+          ],
+          "sai": [
+           "góc BAC = góc ABC",
+           "AB = BC"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Tứ giác DECB là {0}",
+        "o": [
+         {
+          "dung": [
+           "hình thang cân"
+          ],
+          "sai": [
+           "hình bình hành",
+           "hình chữ nhật",
+           "hình thang vuông"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "Vận dụng (tr.83)",
      "de": "Em hãy trả lời câu hỏi trong tình huống mở đầu: cho B và C là hai điểm cách nhau bởi một hồ nước (Hình 4.12) với D, E lần lượt là trung điểm của AB và AC. Biết DE = 500 m, liệu không cần đo trực tiếp, ta có thể tính được khoảng cách giữa hai điểm B và C không?",
      "trang": 83,
      "nhom": "Vận dụng",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "hinh": [
+      "toan8t1/VD-tr83.webp"
+     ],
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "hoi": "Em hãy trả lời câu hỏi trong tình huống mở đầu: cho B và C là hai điểm cách nhau bởi một hồ nước (Hình 4.12) với D, E lần lượt là trung điểm của AB và AC. Biết DE = 500 m, liệu không cần đo trực tiếp, ta có thể tính được khoảng cách giữa hai điểm B và C không? Nếu được, khoảng cách BC bằng bao nhiêu mét?",
+      "dap": [
+       "1000",
+       "1000m"
+      ],
+      "phim": [
+       "m"
+      ],
+      "nhieu": [
+       "cm",
+       "km"
+      ],
+      "loi_giai": [
+       "D, E là trung điểm của AB, AC nên DE là đường trung bình của tam giác ABC, do đó DE = BC/2",
+       "Vậy tính được BC mà không cần đo trực tiếp. Tính theo m: BC = 2 · 500 = 1000"
+      ]
+     }
     },
     {
      "ma": "4.6",
      "de": "Tính các độ dài x, y trong Hình 4.18.",
      "trang": 83,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "hinh": [
+      "toan8t1/4.6.webp"
+     ],
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "hoi": "Tính các độ dài x, y trong Hình 4.18.\n(Gõ x trước, y sau, cách nhau bằng dấu ;)",
+      "dap": [
+       "6;5"
+      ],
+      "phim": [
+       ";"
+      ],
+      "nhieu": [
+       "cm",
+       "√"
+      ],
+      "loi_giai": [
+       "a) H, K là trung điểm của DF, EF nên HK là đường trung bình của tam giác DEF, HK = DE/2",
+       "x = DE = 2 · 3 = 6",
+       "b) MN ⊥ AB, AC ⊥ AB nên MN // AC; AM = MB = 3 nên M là trung điểm của AB",
+       "MN đi qua trung điểm của AB và song song với AC nên N là trung điểm của BC: y = NC = BN = 5"
+      ]
+     }
     },
     {
      "ma": "4.7a",
      "de": "Cho tam giác ABC. Gọi M, N, P lần lượt là trung điểm của các cạnh AB, AC, BC. Chứng minh tứ giác BMNC là hình thang.",
      "trang": 83,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 2,
+      "buoc": [
+       "M, N là trung điểm của AB, AC nên MN là đường trung bình của tam giác ABC, suy ra MN // BC",
+       "Tứ giác BMNC có MN // BC nên là hình thang"
+      ],
+      "nhieu": [
+       "M, N là trung điểm của AB, AC nên MN là đường trung bình của tam giác ABC, suy ra MN = BC",
+       "Tứ giác BMNC có MN // BC nên là hình bình hành"
+      ]
+     }
     },
     {
      "ma": "4.7b",
      "de": "Cho tam giác ABC. Gọi M, N, P lần lượt là trung điểm của các cạnh AB, AC, BC. Tứ giác MNPB là hình gì? Tại sao?",
      "trang": 83,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 3,
+      "buoc": [
+       "M, N là trung điểm của AB, AC nên MN là đường trung bình của tam giác ABC, suy ra MN // BC, tức là MN // BP",
+       "N, P là trung điểm của AC, BC nên NP là đường trung bình của tam giác ABC, suy ra NP // AB, tức là NP // MB",
+       "Tứ giác MNPB có các cặp cạnh đối song song nên là hình bình hành"
+      ],
+      "nhieu": [
+       "N, P là trung điểm của AC, BC nên NP là đường trung bình của tam giác ABC, suy ra NP // AC",
+       "Tứ giác MNPB có MN // BP nên là hình thang cân"
+      ],
+      "thu_tu_khac": [
+       [
+        1,
+        0,
+        2
+       ]
+      ]
+     }
     },
     {
      "ma": "4.8a",
      "de": "Cho tam giác ABC có trung tuyến AM. Lấy hai điểm D và E trên cạnh AB sao cho AD = DE = EB và D nằm giữa hai điểm A, E. Chứng minh DC // EM.",
      "trang": 83,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 3,
+      "buoc": [
+       "AM là đường trung tuyến nên M là trung điểm của BC",
+       "DE = EB và E nằm giữa D, B nên E là trung điểm của BD",
+       "Tam giác BDC có E, M là trung điểm của BD, BC nên EM là đường trung bình, suy ra EM // DC"
+      ],
+      "nhieu": [
+       "AD = DE và D nằm giữa A, E nên E là trung điểm của AB",
+       "Tam giác BDC có E, M là trung điểm của BD, BC nên EM là đường trung bình, suy ra EM = DC"
+      ],
+      "thu_tu_khac": [
+       [
+        1,
+        0,
+        2
+       ]
+      ]
+     }
     },
     {
      "ma": "4.8b",
      "de": "Cho tam giác ABC có trung tuyến AM, hai điểm D và E trên cạnh AB sao cho AD = DE = EB, D nằm giữa A và E. DC cắt AM tại I. Chứng minh I là trung điểm của AM.",
      "trang": 83,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 3,
+      "buoc": [
+       "AD = DE và D nằm giữa A, E nên D là trung điểm của AE",
+       "DC // EM (chứng minh ở câu a) và I thuộc DC nên DI // EM",
+       "Tam giác AEM có DI đi qua trung điểm D của AE và song song với EM nên I là trung điểm của AM"
+      ],
+      "nhieu": [
+       "AD = DE nên D là trung điểm của AB",
+       "Tam giác AEM có DI đi qua trung điểm D của AE và song song với EM nên DI = EM"
+      ],
+      "thu_tu_khac": [
+       [
+        1,
+        0,
+        2
+       ]
+      ]
+     }
     },
     {
      "ma": "4.9",
      "de": "Cho hình chữ nhật ABCD có AC cắt BD tại O. Gọi H, K lần lượt là trung điểm của AB, AD. Chứng minh rằng tứ giác AHOK là hình chữ nhật.",
      "trang": 83,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 5,
+      "buoc": [
+       "ABCD là hình chữ nhật nên O là trung điểm của BD và góc BAD = 90°",
+       "H, O là trung điểm của AB, BD nên HO là đường trung bình của tam giác ABD, suy ra HO // AD, tức là HO // AK",
+       "K, O là trung điểm của AD, BD nên KO là đường trung bình của tam giác ABD, suy ra KO // AB, tức là KO // AH",
+       "Tứ giác AHOK có các cặp cạnh đối song song nên là hình bình hành",
+       "Hình bình hành AHOK có góc HAK = 90° nên là hình chữ nhật"
+      ],
+      "nhieu": [
+       "H, O là trung điểm của AB, BD nên HO là đường trung bình của tam giác ABD, suy ra HO // AB",
+       "Hình bình hành AHOK có hai cạnh kề AH, AK bằng nhau nên là hình chữ nhật"
+      ],
+      "thu_tu_khac": [
+       [
+        0,
+        2,
+        1,
+        3,
+        4
+       ]
+      ]
+     }
     }
    ]
   },
@@ -10598,28 +11109,106 @@
      "de": "Tính độ dài x trong Hình 4.23 (tam giác DEF có EM là đường phân giác, DM = 3,5; DE = 4,5; MF = 5,6; EF = x).",
      "trang": 85,
      "nhom": "Luyện tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "hinh": [
+      "toan8t1/LT-tr85.webp"
+     ],
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "dap": [
+       "7,2"
+      ],
+      "phim": [],
+      "nhieu": [],
+      "loi_giai": [
+       "EM là đường phân giác của góc DEF nên MD/MF = ED/EF, tức là 3,5/5,6 = 4,5/x",
+       "x = 4,5 · 5,6 : 3,5 = 7,2"
+      ]
+     }
     },
     {
      "ma": "4.10",
      "de": "Tính độ dài x trong Hình 4.24.",
      "trang": 86,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "hinh": [
+      "toan8t1/4.10.webp"
+     ],
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "dap": [
+       "8,5"
+      ],
+      "phim": [],
+      "nhieu": [],
+      "loi_giai": [
+       "PH là đường phân giác của góc MPN nên HM/HN = PM/PN, tức là 3/5,1 = 5/x",
+       "x = 5 · 5,1 : 3 = 8,5"
+      ]
+     }
     },
     {
      "ma": "4.11",
      "de": "Cho tam giác ABC. Đường phân giác của góc A cắt BC tại D. Tính độ dài đoạn thẳng DC biết AB = 4,5 m; AC = 7,0 m và CB = 3,5 m (làm tròn kết quả đến hàng phần chục).",
      "trang": 86,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "dap": [
+       "2,1",
+       "2,1m"
+      ],
+      "phim": [
+       "m"
+      ],
+      "nhieu": [
+       "cm",
+       "dm"
+      ],
+      "loi_giai": [
+       "AD là đường phân giác của góc A nên DB/DC = AB/AC = 4,5/7, tức là DB/4,5 = DC/7",
+       "DB/4,5 = DC/7 = (DB + DC)/(4,5 + 7) = 3,5/11,5 = 7/23",
+       "Tính theo m: DC = 7 · 7/23 = 49/23",
+       "Làm tròn đến hàng phần chục: DC ≈ 2,1 (m)"
+      ]
+     }
     },
     {
      "ma": "4.12",
      "de": "Nhà bạn Mai ở vị trí M, nhà bạn Dung ở vị trí D (H.4.25), biết rằng tứ giác ABCD là hình vuông và M là trung điểm của AB. Hai bạn đi bộ với cùng một vận tốc trên con đường MD để đến điểm I. Bạn Mai xuất phát lúc 7h. Hỏi bạn Dung phải xuất phát lúc mấy giờ để gặp bạn Mai lúc 7h30 tại điểm I?",
      "trang": 86,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "hinh": [
+      "toan8t1/4.12.webp"
+     ],
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "dap": [
+       "6h30",
+       "6h30phút"
+      ],
+      "phim": [
+       "h",
+       "phút"
+      ],
+      "nhieu": [
+       "km",
+       "km/h"
+      ],
+      "loi_giai": [
+       "ABCD là hình vuông nên AC là tia phân giác của góc BAD, do đó AI là đường phân giác của tam giác AMD",
+       "Suy ra IM/ID = AM/AD = 1/2 (vì AM = AB/2 = AD/2), tức là ID = 2IM",
+       "Mai đi từ 7h đến 7h30 hết 30 phút; Dung đi quãng đường dài gấp đôi với cùng vận tốc nên hết 2 · 30 = 60 phút",
+       "Dung phải xuất phát lúc 7h30 − 60 phút = 6h30"
+      ]
+     }
     }
    ]
   },
@@ -10632,49 +11221,228 @@
      "de": "Tìm độ dài x trong Hình 4.30.",
      "trang": 88,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "hinh": [
+      "toan8t1/4.13.webp"
+     ],
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "dap": [
+       "4"
+      ],
+      "phim": [],
+      "nhieu": [],
+      "loi_giai": [
+       "góc DEM = góc EMN, hai góc này ở vị trí so le trong nên MN // DE",
+       "Tam giác DEF có MN // DE nên FM/MD = FN/NE (định lí Thalès), tức là 2/3 = x/6",
+       "x = 2 · 6 : 3 = 4"
+      ]
+     }
     },
     {
      "ma": "4.14a",
      "de": "Cho tứ giác ABCD, gọi E, F, K lần lượt là trung điểm của AD, BC, AC. Chứng minh EK // CD, FK // AB.",
      "trang": 88,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 2,
+      "buoc": [
+       "E, K là trung điểm của AD, AC nên EK là đường trung bình của tam giác ACD, suy ra EK // CD",
+       "F, K là trung điểm của BC, AC nên FK là đường trung bình của tam giác ABC, suy ra FK // AB"
+      ],
+      "nhieu": [
+       "E, K là trung điểm của AD, AC nên EK là đường trung bình của tam giác ACD, suy ra EK // AD",
+       "F, K là trung điểm của BC, AC nên FK là đường trung bình của tam giác ABC, suy ra FK // AC"
+      ],
+      "thu_tu_khac": [
+       [
+        1,
+        0
+       ]
+      ]
+     }
     },
     {
      "ma": "4.14b",
      "de": "Cho tứ giác ABCD, gọi E, F, K lần lượt là trung điểm của AD, BC, AC. So sánh EF và (1/2)(AB + CD).",
      "trang": 88,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "hoi": "Cho tứ giác ABCD, gọi E, F, K lần lượt là trung điểm của AD, BC, AC. So sánh EF và (1/2)(AB + CD).",
+      "dong": [
+       {
+        "chu": "EK là đường trung bình của tam giác ACD nên EK = {0}",
+        "o": [
+         {
+          "dung": [
+           "CD/2"
+          ],
+          "sai": [
+           "AB/2",
+           "AD/2"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "FK là đường trung bình của tam giác ABC nên FK = {0}",
+        "o": [
+         {
+          "dung": [
+           "AB/2"
+          ],
+          "sai": [
+           "CD/2",
+           "BC/2"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Xét ba điểm E, K, F: EF {0} EK + KF, mà EK + KF = (AB + CD)/2",
+        "o": [
+         {
+          "dung": [
+           "≤"
+          ],
+          "sai": [
+           "<",
+           "=",
+           "≥"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Dấu bằng xảy ra khi K nằm trên đoạn EF, tức là khi {0}",
+        "o": [
+         {
+          "dung": [
+           "AB // CD"
+          ],
+          "sai": [
+           "AD // BC",
+           "AB = CD"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "4.15",
      "de": "Cho tam giác ABC, phân giác AD (D thuộc BC). Đường thẳng qua D song song với AB cắt AC tại E. Chứng minh rằng AC/AB = EC/EA.",
      "trang": 88,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 3,
+      "buoc": [
+       "AD là đường phân giác của tam giác ABC nên DB/DC = AB/AC, tức là AC/AB = DC/DB",
+       "DE // AB nên EC/EA = DC/DB (định lí Thalès trong tam giác ABC)",
+       "Suy ra AC/AB = EC/EA"
+      ],
+      "nhieu": [
+       "AD là đường phân giác của tam giác ABC nên DB/DC = AC/AB, tức là AC/AB = DB/DC",
+       "DE // AB nên EC/EA = DE/AB (định lí Thalès trong tam giác ABC)"
+      ],
+      "thu_tu_khac": [
+       [
+        1,
+        0,
+        2
+       ]
+      ]
+     }
     },
     {
      "ma": "4.16a",
      "de": "Tam giác ABC có AB = 15 cm, AC = 20 cm, BC = 25 cm. Đường phân giác của góc BAC cắt cạnh BC tại D. Tính độ dài các đoạn thẳng DB và DC.",
      "trang": 88,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "hoi": "Tam giác ABC có AB = 15 cm, AC = 20 cm, BC = 25 cm. Đường phân giác của góc BAC cắt cạnh BC tại D. Tính độ dài các đoạn thẳng DB và DC.\n(Gõ DB trước, DC sau, cách nhau bằng dấu ;)",
+      "dap": [
+       "75/7;100/7"
+      ],
+      "phim": [
+       ";"
+      ],
+      "nhieu": [
+       "√",
+       "m"
+      ],
+      "loi_giai": [
+       "AD là đường phân giác của góc BAC nên DB/DC = AB/AC = 15/20 = 3/4",
+       "Suy ra DB/3 = DC/4 = (DB + DC)/(3 + 4) = 25/7",
+       "Tính theo cm: DB = 3 · 25/7 = 75/7",
+       "DC = 4 · 25/7 = 100/7"
+      ]
+     }
     },
     {
      "ma": "4.16b",
      "de": "Tam giác ABC có AB = 15 cm, AC = 20 cm, BC = 25 cm; đường phân giác của góc BAC cắt BC tại D. Tính tỉ số diện tích của hai tam giác ABD và ACD.",
      "trang": 88,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "dap": [
+       "3/4",
+       "0,75"
+      ],
+      "phim": [],
+      "nhieu": [],
+      "loi_giai": [
+       "Hai tam giác ABD và ACD có chung đường cao AH kẻ từ A xuống BC",
+       "Tỉ số diện tích: (AH · DB : 2) : (AH · DC : 2) = DB/DC",
+       "DB/DC = AB/AC = 15/20 = 3/4"
+      ]
+     }
     },
     {
      "ma": "4.17",
      "de": "Cho hình bình hành ABCD, một đường thẳng đi qua D cắt AC, AB, CB theo thứ tự tại M, N, K. Chứng minh rằng DM^2 = MN·MK.",
      "trang": 88,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 5,
+      "buoc": [
+       "ABCD là hình bình hành nên AN // DC (N thuộc AB) và AD // CK (K thuộc CB)",
+       "AN // DC nên MN/MD = MA/MC (định lí Thalès)",
+       "AD // CK nên MD/MK = MA/MC (định lí Thalès)",
+       "Suy ra MN/MD = MD/MK",
+       "Vậy DM² = MN · MK"
+      ],
+      "nhieu": [
+       "AD // CK nên MK/MD = MA/MC (định lí Thalès)",
+       "Vậy DM² = MN · NK"
+      ],
+      "thu_tu_khac": [
+       [
+        0,
+        2,
+        1,
+        3,
+        4
+       ]
+      ]
+     }
     }
    ]
   },
@@ -10687,77 +11455,266 @@
      "de": "Độ dài x trong Hình 4.31 bằng: A. 2,75. B. 2. C. 2,25. D. 3,75.",
      "trang": 89,
      "nhom": "Trắc nghiệm",
-     "dang": "TRAC_NGHIEM"
+     "dang": "TRAC_NGHIEM",
+     "hinh": [
+      "toan8t1/4.18.webp"
+     ],
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Độ dài x trong Hình 4.31 bằng",
+      "cac": [
+       "2,75",
+       "2",
+       "2,25",
+       "3,75"
+      ],
+      "dap": "C"
+     }
     },
     {
      "ma": "4.19",
      "de": "Cho tam giác ABC. Gọi H, K lần lượt là trung điểm của AC, BC. Biết HK = 3,5 cm. Độ dài AB bằng: A. 3,5 cm. B. 7 cm. C. 10 cm. D. 15 cm.",
      "trang": 89,
      "nhom": "Trắc nghiệm",
-     "dang": "TRAC_NGHIEM"
+     "dang": "TRAC_NGHIEM",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Cho tam giác ABC. Gọi H, K lần lượt là trung điểm của AC, BC. Biết HK = 3,5 cm. Độ dài AB bằng",
+      "cac": [
+       "3,5 cm",
+       "7 cm",
+       "10 cm",
+       "15 cm"
+      ],
+      "dap": "B"
+     }
     },
     {
      "ma": "4.20",
      "de": "Cho tam giác ABC có chu vi là 32 cm. Gọi M, N, P lần lượt là trung điểm của các cạnh AB, AC, BC. Chu vi của tam giác MNP là: A. 8 cm. B. 64 cm. C. 30 cm. D. 16 cm.",
      "trang": 89,
      "nhom": "Trắc nghiệm",
-     "dang": "TRAC_NGHIEM"
+     "dang": "TRAC_NGHIEM",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Cho tam giác ABC có chu vi là 32 cm. Gọi M, N, P lần lượt là trung điểm của các cạnh AB, AC, BC. Chu vi của tam giác MNP là",
+      "cac": [
+       "8 cm",
+       "64 cm",
+       "30 cm",
+       "16 cm"
+      ],
+      "dap": "D"
+     }
     },
     {
      "ma": "4.21",
      "de": "Cho tam giác ABC có AB = 9 cm, D là điểm thuộc cạnh AB sao cho AD = 6 cm. Kẻ DE song song với BC (E thuộc AC), kẻ EF song song với CD (F thuộc AB). Độ dài AF bằng: A. 4 cm. B. 5 cm. C. 6 cm. D. 7 cm.",
      "trang": 89,
      "nhom": "Trắc nghiệm",
-     "dang": "TRAC_NGHIEM"
+     "dang": "TRAC_NGHIEM",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Cho tam giác ABC có AB = 9 cm, D là điểm thuộc cạnh AB sao cho AD = 6 cm. Kẻ DE song song với BC (E thuộc AC), kẻ EF song song với CD (F thuộc AB). Độ dài AF bằng",
+      "cac": [
+       "4 cm",
+       "5 cm",
+       "6 cm",
+       "7 cm"
+      ],
+      "dap": "A"
+     }
     },
     {
      "ma": "4.22",
      "de": "Cho tam giác ABC cân tại A có AB = 15 cm, BC = 10 cm, đường phân giác của góc B cắt AC tại D. Khi đó, đoạn thẳng AD có độ dài là: A. 3 cm. B. 6 cm. C. 9 cm. D. 12 cm.",
      "trang": 89,
      "nhom": "Trắc nghiệm",
-     "dang": "TRAC_NGHIEM"
+     "dang": "TRAC_NGHIEM",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Cho tam giác ABC cân tại A có AB = 15 cm, BC = 10 cm, đường phân giác của góc B cắt AC tại D. Khi đó, đoạn thẳng AD có độ dài là",
+      "cac": [
+       "3 cm",
+       "6 cm",
+       "9 cm",
+       "12 cm"
+      ],
+      "dap": "C"
+     }
     },
     {
      "ma": "4.23",
      "de": "Cho góc xOy. Trên tia Ox, lấy hai điểm A và B sao cho OA = 2 cm, OB = 5 cm. Trên tia Oy, lấy điểm C sao cho OC = 3 cm. Từ điểm B kẻ đường thẳng song song với AC cắt Oy tại D. Tính độ dài đoạn thẳng CD.",
      "trang": 89,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "dap": [
+       "4,5",
+       "4,5cm"
+      ],
+      "phim": [
+       "cm"
+      ],
+      "nhieu": [
+       "cm²",
+       "m"
+      ],
+      "loi_giai": [
+       "AC // BD nên OA/OB = OC/OD (định lí Thalès trong tam giác OBD), tức là 2/5 = 3/OD",
+       "Tính theo cm: OD = 5 · 3 : 2 = 7,5",
+       "CD = OD − OC = 7,5 − 3 = 4,5"
+      ]
+     }
     },
     {
      "ma": "4.24a",
      "de": "Cho tam giác ABC vuông tại A. Gọi D, E, F lần lượt là trung điểm của AB, BC, AC. Chứng minh rằng AE = DF.",
      "trang": 89,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 5,
+      "buoc": [
+       "D, E là trung điểm của AB, BC nên DE là đường trung bình của tam giác ABC, suy ra DE // AC",
+       "E, F là trung điểm của BC, AC nên EF là đường trung bình của tam giác ABC, suy ra EF // AB",
+       "Tứ giác ADEF có AD // EF, AF // DE nên là hình bình hành",
+       "Hình bình hành ADEF có góc DAF = 90° nên là hình chữ nhật",
+       "Hai đường chéo của hình chữ nhật ADEF bằng nhau: AE = DF"
+      ],
+      "nhieu": [
+       "D, E là trung điểm của AB, BC nên DE là đường trung bình của tam giác ABC, suy ra DE // AB",
+       "Hình bình hành ADEF có hai đường chéo AE, DF cắt nhau tại trung điểm của mỗi đường nên AE = DF"
+      ],
+      "thu_tu_khac": [
+       [
+        1,
+        0,
+        2,
+        3,
+        4
+       ]
+      ]
+     }
     },
     {
      "ma": "4.24b",
      "de": "Cho tam giác ABC vuông tại A; D, E, F lần lượt là trung điểm của AB, BC, AC. Gọi I là trung điểm của DE. Chứng minh rằng ba điểm B, I, F thẳng hàng.",
      "trang": 89,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 5,
+      "buoc": [
+       "E, F là trung điểm của BC, AC nên EF là đường trung bình của tam giác ABC: EF // AB và EF = AB/2",
+       "D là trung điểm của AB nên BD = AB/2, suy ra EF // BD và EF = BD",
+       "Tứ giác BDFE có hai cạnh đối EF, BD song song và bằng nhau nên là hình bình hành",
+       "Hai đường chéo BF và DE của hình bình hành BDFE cắt nhau tại trung điểm của mỗi đường",
+       "I là trung điểm của DE nên I cũng là trung điểm của BF, do đó ba điểm B, I, F thẳng hàng"
+      ],
+      "nhieu": [
+       "Tứ giác BDFE có EF // BD nên là hình bình hành",
+       "Hai đường chéo BF và DE của hình bình hành BDFE bằng nhau"
+      ]
+     }
     },
     {
      "ma": "4.25",
      "de": "Cho tam giác ABC, các đường trung tuyến BD và CE cắt nhau tại G. Gọi I, K lần lượt là trung điểm của GB, GC. Chứng minh tứ giác EDKI là hình bình hành.",
      "trang": 89,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 4,
+      "buoc": [
+       "BD, CE là các đường trung tuyến nên D, E là trung điểm của AC, AB; ED là đường trung bình của tam giác ABC: ED // BC, ED = BC/2",
+       "I, K là trung điểm của GB, GC nên IK là đường trung bình của tam giác GBC: IK // BC, IK = BC/2",
+       "Suy ra ED // IK và ED = IK",
+       "Tứ giác EDKI có hai cạnh đối ED, IK song song và bằng nhau nên là hình bình hành"
+      ],
+      "nhieu": [
+       "I, K là trung điểm của GB, GC nên IK là đường trung bình của tam giác ABC: IK // BC, IK = BC/2",
+       "Tứ giác EDKI có ED // IK nên là hình bình hành"
+      ],
+      "thu_tu_khac": [
+       [
+        1,
+        0,
+        2,
+        3
+       ]
+      ]
+     }
     },
     {
      "ma": "4.26",
      "de": "Cho tam giác ABC, điểm I thuộc cạnh AB, điểm K thuộc cạnh AC. Kẻ IM song song với BK (M thuộc AC), kẻ KN song song với CI (N thuộc AB). Chứng minh MN song song với BC.",
      "trang": 89,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 4,
+      "buoc": [
+       "Tam giác ABK có IM // BK nên AI/AB = AM/AK (định lí Thalès)",
+       "Tam giác ACI có KN // CI nên AN/AI = AK/AC (định lí Thalès)",
+       "Nhân vế với vế: (AI/AB) · (AN/AI) = (AM/AK) · (AK/AC), tức là AN/AB = AM/AC",
+       "Tam giác ABC có AN/AB = AM/AC nên MN // BC (định lí Thalès đảo)"
+      ],
+      "nhieu": [
+       "Tam giác ABK có IM // BK nên AI/IB = AM/AK (định lí Thalès)",
+       "Tam giác ACI có KN // CI nên AN/AI = AC/AK (định lí Thalès)"
+      ],
+      "thu_tu_khac": [
+       [
+        1,
+        0,
+        2,
+        3
+       ]
+      ]
+     }
     },
     {
      "ma": "4.27",
      "de": "Bác Mến muốn tính khoảng cách giữa hai vị trí P, Q ở hai bên bờ ao cá. Để làm điều đó, bác Mến chọn ba vị trí A, B, C, thực hiện đo đạc và vẽ mô phỏng như Hình 4.32 (AP = 150 m, PB = 150 m, AQ = 250 m, QC = 250 m, BC = 400 m). Em hãy giúp bác Mến tính khoảng cách giữa hai điểm P và Q.",
      "trang": 89,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "hinh": [
+      "toan8t1/4.27.webp"
+     ],
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "dap": [
+       "200",
+       "200m"
+      ],
+      "phim": [
+       "m"
+      ],
+      "nhieu": [
+       "cm",
+       "km"
+      ],
+      "loi_giai": [
+       "AP = PB = 150 m nên P là trung điểm của AB; AQ = QC = 250 m nên Q là trung điểm của AC",
+       "PQ là đường trung bình của tam giác ABC nên PQ = BC/2",
+       "Tính theo m: PQ = 400 : 2 = 200"
+      ]
+     }
     }
    ]
   },

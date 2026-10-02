@@ -183,7 +183,9 @@ Toán và Khoa học tự nhiên cắt hình sau cùng (anh Huy chốt 29/09/202
 
 ## SGK Tiếng Anh (`anh8.json`, từ 02/10/2026)
 
-Chép từ bản quét SGK Tiếng Anh 8 Global Success, đợt đầu Unit 1 tới 3, dựng bằng `gop.py sach anh8 u01.json u02.json u03.json`. Các luật khác SBT Tiếng Anh:
+Chép từ bản quét SGK Tiếng Anh 8 Global Success, đợt đầu Unit 1 tới 3, đợt hai Review 1 và Unit 4, dựng bằng `gop.py sach anh8 u01.json u02.json u03.json r1.json u04.json`. Các luật khác SBT Tiếng Anh:
+
+- Bài Review: `chuong` và `bai` là `Review 1` (tới 4), `nhom` là tên phần in trên trang (`Language`, `Skills`). Review không mang số Unit nên chỉ hiện ở dòng "Làm bài tập trong SGK", không vào Luyện tập, như "Luyện tập chung" của SGK Toán. `gop.py` xếp Review k ngay sau Unit 3k.
 
 - `bai` và `chuong` đúng như SBT (`Unit 1. Leisure time`), để Luyện tập xếp câu SGK trước câu SBT cùng Unit.
 - Màn chọn câu in nguyên mã làm nhãn, mà cô giao theo số bài và trang, nên mã là nhãn đọc được theo khuôn SGK Toán: `Bài 3.2 (tr.10)` là bài 3 trang 10 câu 2, `Bài 2.a (tr.8)` khi sách đánh chữ, `Bài 2 (tr.8)` khi cả bài là một câu, `Bài 4a (tr.13)` và `Bài 4b.1 (tr.13)` khi bài in hai phần a, b. Trang trong mã là trang in số bài.
