@@ -148,6 +148,30 @@ class LamTrenMayTest {
         assertEquals(2, PhanHoc.soBai(sau.first().cau.bai))
     }
 
+    /**
+     * Bai vua sai (Ba Huy chot 2/10/2026): chi toi da ba cau chua lam cua bai do len dau, cac cau
+     * con lai cua bai nam dung cho theo thu tu bai cu toi bai moi.
+     */
+    @Test
+    fun bai_vua_sai_chi_dua_ba_cau_len_dau() {
+        datMocToan(6)
+        val t0 = System.currentTimeMillis()
+        val sai = LamTrenMay.cauLamThem(context, "Toán", bayGio = t0).first { PhanHoc.soBai(it.cau.bai) == 6 }
+        var l = LuatGhep.Luot(sai.ghep.sao)
+        repeat(sai.ghep.sao + 1) { l = LuatGhep.kiem(l, soSai = 1) }
+        assertTrue(l.xong && !l.dung)
+        LamTrenMay.ghi(context, sai, l, "x", LamTrenMay.Loai.LAM_THEM, bayGio = t0, congNgay = false)
+
+        val so = LamTrenMay.cauLamThem(context, "Toán", bayGio = t0 + gio).map { PhanHoc.soBai(it.cau.bai)!! }
+
+        val ba = LamTrenMay.SO_CAU_BAI_VUA_SAI
+        assertEquals("ba cau Bai 6 len dau: $so", List(ba) { 6 }, so.take(ba))
+        assertEquals("roi toi Bai 1: $so", 1, so[ba])
+        val conLai = so.drop(ba)
+        assertEquals("bai cu truoc: $conLai", conLai.sorted(), conLai)
+        assertTrue("cau Bai 6 con lai nam o cuoi: $conLai", conLai.last() == 6)
+    }
+
     /** Trang Luyen tap moi phan mot dong tu 2/10/2026: luot cua mot phan chi co cau phan do. */
     @Test
     fun luyen_tap_theo_phan_chi_lay_cau_cua_phan_do() {
