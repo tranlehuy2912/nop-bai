@@ -849,36 +849,14 @@ class KhoBai private constructor(context: Context) :
      * toi cuoi file. Nen "moi the co thu tu tu day tro xuong" dung bang "moi bai tu
      * bai dau toi het bai nay".
      *
-     * null khi bo khong con bai nao ten nhu vay, tuc la file JSON da doi ten bai. Ben
-     * goi coi nhu con chua chon va hoi lai, xem [BoThe.denThuTu].
+     * null khi bo khong con bai nao ten nhu vay, tuc la file JSON da doi ten bai. Tu
+     * 2/10/2026 man hinh cat bo the bang ten bai ([BoThe.mocCua]), ham nay con lai cho test
+     * cua tham so denThuTu.
      */
     fun thuTuCuoiCua(bo: String, bai: String): Int? =
         readableDatabase.rawQuery(
             "SELECT MAX(thu_tu) FROM the_hoc WHERE bo = ? AND bai = ?", arrayOf(bo, bai)
         ).use { if (it.moveToFirst() && !it.isNull(0)) it.getInt(0) else null }
-
-    /**
-     * Thu tu cua the cuoi cung thuoc nhung bai co so khong lon hon [soBai].
-     *
-     * Cho bai con chon KHONG co trong bo the. Tu 27/9/2026 hop "lop da hoc toi bai nao"
-     * cua KHTN liet ke du cac bai cua sach, vi cung moc do con cat ca kho cau SBT - xem
-     * [PhanHoc]. Bo Hoa lai khong co the nao cho Bai 5, Bai 7: con chon Bai 7 thi bo
-     * the dung o the cuoi cua Bai 6.
-     *
-     * null khi khong co bai nao trong bo nho hon hay bang [soBai], tuc la lop chua toi
-     * the dau tien cua bo.
-     */
-    fun thuTuCuoiDenBaiSo(bo: String, soBai: Int): Int? =
-        readableDatabase.rawQuery(
-            "SELECT bai, MAX(thu_tu) FROM the_hoc WHERE bo = ? GROUP BY bai", arrayOf(bo)
-        ).use { c ->
-            var cuoi: Int? = null
-            while (c.moveToNext()) {
-                val so = PhanHoc.soBai(c.getString(0).orEmpty()) ?: continue
-                if (so <= soBai) cuoi = maxOf(cuoi ?: Int.MIN_VALUE, c.getInt(1))
-            }
-            cuoi
-        }
 
     /**
      * Cac the DEN LUOT trong mot bo, theo thu tu in trong file.
@@ -891,13 +869,12 @@ class KhoBai private constructor(context: Context) :
      * roi loc mat khong toi mot phan muoi giay, ma [mocHen] la mot ham Kotlin - viet
      * lai no bang SQL la co hai ban luat song song, va den luc sua se chi sua mot.
      *
-     * @param denThuTu chi xet the co [TheHoc.thuTu] tu so nay tro xuong, tuc la cac
-     *   bai lop da hoc toi. Mac dinh la ca bo. Ben man hinh lay so nay tu
-     *   [BoThe.denThuTu]; truoc 25/9/2026 khong co moc nay, va con bi hoi ca cong thuc
-     *   cua nhung bai o truong chua day.
-     * @param chiBai chi xet the cua cac bai nay, null la khong loc. Cho bo Toan tu 30/9/2026:
-     *   Dai so va Hinh hoc hai moc, bai cua hai phan xen nhau trong sach nen khong cat bang
-     *   mot [denThuTu] duoc. Xem [BoThe.mocCua].
+     * @param denThuTu chi xet the co [TheHoc.thuTu] tu so nay tro xuong. Mac dinh la ca bo.
+     *   Tu 25/9 toi 2/10/2026 bo KHTN cat bang so nay ("hoc toi Bai N"); truoc 25/9/2026
+     *   khong co moc nao, va con bi hoi ca cong thuc cua nhung bai o truong chua day.
+     * @param chiBai chi xet the cua cac bai nay, null la khong loc. Tu 2/10/2026 moi bo cat
+     *   theo cac bai con danh dau da hoc ([BoThe.mocCua]); truoc do chi bo Toan, vi bai cua
+     *   Dai so va Hinh hoc xen nhau trong sach nen khong cat bang mot [denThuTu] duoc.
      */
     fun cacTheDenLuot(
         bo: String,

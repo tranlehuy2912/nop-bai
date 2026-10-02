@@ -44,7 +44,7 @@ class CanSuaTest {
 
     /** Mot cau Toan lam duoc tren may, lay dung cach duong Lam bai tren may lay. */
     private fun cauTrenMay(): CauHoi {
-        MocToanThu.dat(context, 3)
+        MocThu.datToan(context, 3)
         return LamTrenMay.cauLamThem(context, "Toán").first().cau
     }
 

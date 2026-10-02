@@ -21,7 +21,6 @@ import vn.huytl.homeworkgate.data.LuatGhep
 import vn.huytl.homeworkgate.data.Prefs
 import vn.huytl.homeworkgate.data.QuyGio
 import vn.huytl.homeworkgate.data.SoCaiBai
-import vn.huytl.homeworkgate.kho.HocToi
 import vn.huytl.homeworkgate.kho.KhoBai
 import vn.huytl.homeworkgate.kho.NganHang
 import vn.huytl.homeworkgate.kho.PhanHoc
@@ -43,8 +42,7 @@ class LamTrenMayTest {
 
     private lateinit var context: Context
     private lateinit var kho: KhoBai
-    private var mocToanCu: Map<String, String?> = emptyMap()
-    private var unitCu: Int? = null
+    private var mocCu: Map<String, Set<Int>?> = emptyMap()
     private var quyCu = 0
     private var nguCu = 0
     private var dayCu = 0
@@ -60,8 +58,7 @@ class LamTrenMayTest {
         SoCaiBai.xoaHet(context)
         CongSang.xoaHet(context)
         CauBoQua.xoaHet(context)
-        mocToanCu = MocToanThu.luu(context)
-        unitCu = HocToi.unitCua(context, PhanHoc.BO_TIENG_ANH)
+        mocCu = MocThu.luu(context)
         val p = Prefs.get(context)
         quyCu = p.quyGio
         nguCu = p.hardStopMinuteOfDay
@@ -75,9 +72,7 @@ class LamTrenMayTest {
         SoCaiBai.xoaHet(context)
         CongSang.xoaHet(context)
         CauBoQua.xoaHet(context)
-        MocToanThu.tra(context, mocToanCu)
-        HocToi.xoa(context, PhanHoc.BO_TIENG_ANH)
-        unitCu?.let { HocToi.ghiUnit(context, PhanHoc.BO_TIENG_ANH, it) }
+        MocThu.tra(context, mocCu)
         GateStore(context).endSession(EndReason.PARENT_REVOKED)
         val p = Prefs.get(context)
         p.quyGio = quyCu
@@ -95,7 +90,7 @@ class LamTrenMayTest {
     }
 
     private fun datMocToan(soBai: Int) {
-        MocToanThu.dat(context, soBai)
+        MocThu.datToan(context, soBai)
     }
 
     private fun muc(id: String): LamTrenMay.Muc = LamTrenMay.muc(context, kho.cauTheoId(id)!!)!!
@@ -125,20 +120,46 @@ class LamTrenMayTest {
         assertEquals(3, soBai.first())
     }
 
+    /** Trang Luyen tap moi phan mot dong tu 2/10/2026: luot cua mot phan chi co cau phan do. */
+    @Test
+    fun luyen_tap_theo_phan_chi_lay_cau_cua_phan_do() {
+        MocThu.datToan(context, 14)
+        val hh = PhanHoc.theoMa("toan8hh")!!
+        val ds = PhanHoc.theoMa("toan8ds")!!
+        val cauHh = LamTrenMay.cauLamThem(context, "Toán", phan = hh)
+        assertTrue(cauHh.isNotEmpty())
+        assertTrue(cauHh.all { PhanHoc.phanCuaCau(it.cau) == hh })
+        val cauDs = LamTrenMay.cauLamThem(context, "Toán", phan = ds)
+        assertTrue(cauDs.isNotEmpty())
+        assertTrue(cauDs.all { PhanHoc.phanCuaCau(it.cau) == ds })
+    }
+
+    /** So "đã làm / tổng" cua dong Luyen tap tinh tren ca phan, khong nhay khi danh dau them bai. */
+    @Test
+    fun dem_theo_phan_tong_dung_yen_khi_danh_dau_them_bai() {
+        MocThu.datToan(context, 3)
+        val truoc = LamTrenMay.demTheoPhan(context, "Toán")
+        MocThu.datToan(context, 20)
+        assertEquals(truoc, LamTrenMay.demTheoPhan(context, "Toán"))
+        assertEquals(setOf("toan8ds", "toan8hh"), truoc.keys)
+        assertTrue(truoc.values.all { (da, tong) -> da in 0..tong && tong > 0 })
+        assertEquals("Tieng Anh khong chia phan", setOf(""), LamTrenMay.demTheoPhan(context, PhanHoc.TIENG_ANH).keys)
+    }
+
     @Test
     fun chua_chon_moc_thi_khong_co_cau_moi() {
-        MocToanThu.dat(context, null)
+        MocThu.datToan(context, null)
         assertTrue(LamTrenMay.cauLamThem(context, "Toán").isEmpty())
     }
 
     @Test
     fun tieng_anh_theo_unit_da_hoc() {
-        HocToi.ghiUnit(context, PhanHoc.BO_TIENG_ANH, 1)
+        MocThu.datUnit(context, 1)
         val unit1 = LamTrenMay.cauLamThem(context, PhanHoc.TIENG_ANH)
         assertTrue(unit1.isNotEmpty())
         assertTrue(unit1.all { it.cau.bai.startsWith("Unit 1.") })
 
-        HocToi.ghiUnit(context, PhanHoc.BO_TIENG_ANH, 2)
+        MocThu.datUnit(context, 2)
         val unit2 = LamTrenMay.cauLamThem(context, PhanHoc.TIENG_ANH)
         // Unit vua hoc truoc.
         assertTrue(unit2.first().cau.bai.startsWith("Unit 2."))

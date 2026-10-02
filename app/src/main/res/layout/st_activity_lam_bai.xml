@@ -95,6 +95,19 @@
             android:textColor="@color/ink_soft"
             android:textSize="15sp" />
 
+        <!-- Dong nho "Đại số: đã làm 12/155 câu" khi luyen tap (Ba Huy chot 2/10/2026): con biet
+             ca phan con bao nhieu cau, ngoai "Câu 3/10" cua luot. Dem tren ca phan, ke ca bai
+             chua hoc, cung so voi dong Luyen tap o trang Luyen tap. -->
+        <TextView
+            android:id="@+id/tong_phan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:paddingHorizontal="@dimen/st_le_ngang"
+            android:textColor="@color/ink_soft"
+            android:textSize="13sp"
+            android:visibility="gone" />
+
         <ScrollView
             android:id="@+id/khung_cuon"
             android:layout_width="match_parent"

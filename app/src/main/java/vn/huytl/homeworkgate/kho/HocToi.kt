@@ -6,8 +6,8 @@ import vn.huytl.homeworkgate.data.DayLog
 import vn.huytl.homeworkgate.data.Prefs
 
 /**
- * Lop da hoc toi dau trong tung bo: toi bai nao voi bo the hoc thuoc, toi Unit nao voi
- * bo tu vung. Le Hoa tu bam chon, may chi hoi trong phan do.
+ * Cac bai lop da hoc cua tung mon: Toan, KHTN theo so bai SGK, Tieng Anh theo so Unit. Le Hoa
+ * tu danh dau, may chi giao va chi hoi trong cac bai do.
  *
  * VI SAO CO. Truoc 25/9/2026 hai duong tu lo lay. Bo the khong loc gi ca: lay the den
  * luot tu dau bo xuong theo thu tu file, nen vai luot la toi cong thuc cua bai o
@@ -16,13 +16,24 @@ import vn.huytl.homeworkgate.data.Prefs
  * deu, va lop day cham hon nhip do mot chut la may hoi tu chua hoc. Ba Huy chon bo han
  * cach doan, de con tu noi minh dang o dau.
  *
- * CHUA CHON THI BAT CHON, khong doan thay. Hai man deu khong cho bat dau mot bo chua
- * chon: bam vao la hien hop chon truoc, xem [vn.huytl.homeworkgate.ui.ChonHocToi].
+ * CHON NHIEU BAI, MOI MON MOT TAP (Ba Huy chot 2/10/2026). Tu 25/9 toi 2/10/2026 moi phan hoc
+ * mot moc "lop da hoc toi Bai N" (Toan hai phan, KHTN ba phan, xem [PhanHoc]), Tieng Anh mot
+ * moc "toi Unit N", va moi bai tu bai dau toi Bai N la da hoc. Lop khong luon hoc dung thu tu
+ * sach, va hai mon co phan thi con phai doi nam moc o nam dong. Nay moi mon mot tap bai con
+ * danh dau ([daHoc]), o hop chon nhieu o ([vn.huytl.homeworkgate.ui.ChonHocToi.hoiMon]), tu
+ * dong dau moi khu mon o trang Luyen tap.
  *
- * CON DOI LUC NAO CUNG DUOC, KHONG CAN PIN. Chon cao hon lop that thi chi gap cau kho
- * hon, chon thap hon thi it cau de kiem phut, va hai duong deu co tran phut rieng moi
- * ngay, nen khong co cho nao de lach. Moi lan doi ghi mot dong nhat ky, dong do di sang
- * Bang dieu khien cung nhat ky trong ngay, de Ba Huy thay con dang o dau.
+ * MOC CU TU CHUYEN. Lan dau doc mot mon ma chua co khoa moi thi lay moc cu cua cac phan (Tieng
+ * Anh: moc Unit cua bo tu) va danh dau san moi bai tu bai dau toi bai cu, roi ghi xuong khoa
+ * moi (Ba Huy chon tu chuyen, khong bat con chon lai). Khoa cu de nguyen, khong ai doc nua.
+ *
+ * CHUA CHON THI BAT CHON, khong doan thay: [daHoc] tra null, va cac man hoi con truoc khi
+ * vao. Tap rong la con noi chua hoc bai nao, khac voi chua chon.
+ *
+ * CON DOI LUC NAO CUNG DUOC, KHONG CAN PIN. Chon nhieu hon lop that thi chi gap cau kho
+ * hon, chon it hon thi it cau de kiem phut, va cac duong deu co tran phut rieng moi ngay,
+ * nen khong co cho nao de lach. Moi lan doi ghi mot dong nhat ky, dong do di sang Bang
+ * dieu khien cung nhat ky trong ngay, de Ba Huy thay con dang o dau.
  *
  * NAM TRONG FILE PREFS CHINH. Mat file (Keystore hong, cai lai app) thi con chi phai chon
  * lai mot lan. Khoa nay vai tuan moi ghi mot lan nen khong can vao KHOA_BO_QUA cua
@@ -32,87 +43,64 @@ import vn.huytl.homeworkgate.data.Prefs
 object HocToi {
 
     /**
-     * Gia tri "chua hoc toi bai nao" cua bo the. Khac voi chua chon, la khi khong co khoa.
-     *
-     * Can lua chon nay vi bo Toan hien chi co phan hang dang thuc: lop chua toi do thi con
-     * phai noi duoc la chua hoc, chu bat chon mot bai la bat hoi dung thu chua hoc.
+     * Gia tri "chua hoc bai nao cua bo nay" o [BoDaNap.hocToi], khac voi chua chon (null).
+     * Con chon cac bai cua phan khac ma chua co bai nao trong bo the.
      */
     const val CHUA_HOC_BAI_NAO = ""
 
-    /** Unit 0 cua bo tu: chua hoc Unit nao. Cung ly do voi [CHUA_HOC_BAI_NAO]. */
-    const val CHUA_HOC_UNIT_NAO = 0
-
-    /** Bai cuoi lop da hoc trong bo the [bo], [CHUA_HOC_BAI_NAO], hoac null khi chua chon. */
-    fun baiCua(context: Context, bo: String): String? {
+    /** Cac bai (Tieng Anh: Unit) lop da hoc cua [mon], null khi con chua chon lan nao. */
+    fun daHoc(context: Context, mon: String): Set<Int>? {
+        val ma = maMon(mon) ?: return null
         val sp = Prefs.get(context).raw()
-        val khoa = khoaThe(bo)
-        return if (sp.contains(khoa)) sp.getString(khoa, CHUA_HOC_BAI_NAO).orEmpty() else null
+        val khoa = khoaDaHoc(ma)
+        if (sp.contains(khoa)) return docTap(sp.getString(khoa, "").orEmpty())
+        val cu = mocCu(context, mon) ?: return null
+        // Ghi luon de lan sau doc thang khoa moi, va de con doi bai thi so voi tap nay.
+        sp.edit().putString(khoa, viet(cu)).commit()
+        return cu
     }
 
     /**
-     * Ghi bai con vua chon. Chon lai dung cai dang co thi khong ghi gi, ke ca nhat ky.
+     * Ghi tap bai con vua danh dau, kem mot dong nhat ky. Chon lai dung tap dang co thi khong
+     * ghi gi, ke ca nhat ky.
      *
      * commit() chu khong apply(): con chon xong la bat dau luot ngay, va tien trinh bi
      * giet truoc khi apply() kip xuong dia thi lan sau may lai hoi.
      */
-    fun datBai(context: Context, bo: BoThe.Bo, bai: String) = datBai(context, bo.bo, bo.ten, bai)
-
-    /**
-     * Ghi moc cua mot phan hoc - xem [PhanHoc]. Phan Sinh KHTN khong co bo the nao, nen
-     * khong di qua [BoThe.Bo] duoc; ma phan trung ma bo the nen dung chung khoa.
-     */
-    fun datBai(context: Context, phan: PhanHoc.Phan, bai: String) =
-        datBai(context, phan.ma, phan.ten, bai)
-
-    private fun datBai(context: Context, ma: String, ten: String, bai: String) {
-        val cu = baiCua(context, ma)
-        if (cu == bai) return
-        ghiBai(context, ma, bai)
-        ghiNhatKy(context, ten, moTaBai(bai), cu?.let(::moTaBai))
-    }
-
-    /** Unit cuoi lop da hoc trong bo tu [bo], [CHUA_HOC_UNIT_NAO], hoac null khi chua chon. */
-    fun unitCua(context: Context, bo: String): Int? {
-        val sp = Prefs.get(context).raw()
-        val khoa = khoaTu(bo)
-        return if (sp.contains(khoa)) sp.getInt(khoa, CHUA_HOC_UNIT_NAO) else null
-    }
-
-    /** Ghi Unit con vua chon, y het [datBai]. */
-    fun datUnit(context: Context, bo: BoTuVung.Bo, unit: Int) {
-        val cu = unitCua(context, bo.bo)
-        if (cu == unit) return
-        ghiUnit(context, bo.bo, unit)
-        ghiNhatKy(context, bo.ten, moTaUnit(unit), cu?.let(::moTaUnit))
+    fun datDaHoc(context: Context, mon: String, cac: Set<Int>) {
+        val cu = daHoc(context, mon)
+        val moi = cac.filter { it > 0 }.toSortedSet()
+        if (cu == moi) return
+        ghiDaHoc(context, mon, moi)
+        ghiNhatKy(context, mon, moi, cu)
     }
 
     /*
-     * Ba ham duoi ghi thang, khong qua nhat ky, va chi test goi. Test ma di qua
-     * [datBai] thi moi lan chay de lai nam dong "Le Hoa chon Bo thu..." trong nhat ky
-     * hom do, va dong do sang Bang dieu khien y nhu con chon that. Lan chay 25/9/2026
-     * tren may ao da de lai dung nam dong nhu vay.
+     * Hai ham duoi ghi thang, khong qua nhat ky, va chi test goi. Test ma di qua
+     * [datDaHoc] thi moi lan chay de lai vai dong "Le Hoa chon..." trong nhat ky hom do,
+     * va dong do sang Bang dieu khien y nhu con chon that. Lan chay 25/9/2026 tren may ao
+     * da de lai dung nam dong nhu vay.
      */
 
-    internal fun ghiBai(context: Context, bo: String, bai: String) {
-        Prefs.get(context).raw().edit().putString(khoaThe(bo), bai).commit()
+    internal fun ghiDaHoc(context: Context, mon: String, cac: Set<Int>) {
+        val ma = maMon(mon) ?: return
+        Prefs.get(context).raw().edit().putString(khoaDaHoc(ma), viet(cac)).commit()
     }
 
-    internal fun ghiUnit(context: Context, bo: String, unit: Int) {
-        Prefs.get(context).raw().edit().putInt(khoaTu(bo), unit).commit()
+    /** Xoa lua chon cua [mon], ca khoa cu, de test bat dau tu "chua chon". */
+    internal fun xoa(context: Context, mon: String) {
+        val ma = maMon(mon) ?: return
+        val ed = Prefs.get(context).raw().edit().remove(khoaDaHoc(ma))
+        khoaCu(mon).forEach { ed.remove(it) }
+        ed.commit()
     }
 
-    /** Xoa lua chon cua [bo] ca hai phia, the va tu, de test bat dau tu "chua chon". */
-    internal fun xoa(context: Context, bo: String) {
-        Prefs.get(context).raw().edit().remove(khoaThe(bo)).remove(khoaTu(bo)).commit()
+    /** "Bài 1–9, 12", "Unit 1–3", hay "chưa học bài nào". */
+    fun moTa(mon: String, cac: Set<Int>): String = when {
+        cac.isEmpty() -> if (mon == PhanHoc.TIENG_ANH) "chưa học Unit nào" else "chưa học bài nào"
+        mon == PhanHoc.TIENG_ANH -> "Unit " + PhanHoc.gon(cac)
+        else -> "Bài " + PhanHoc.gon(cac)
     }
-
-    /** "đã học tới Bài 9. Base. Thang pH", hay "chưa học tới bài nào". */
-    fun moTaBai(bai: String): String =
-        if (bai == CHUA_HOC_BAI_NAO) "chưa học tới bài nào" else "đã học tới $bai"
-
-    /** "đã học tới Unit 3", hay "chưa học Unit nào". */
-    fun moTaUnit(unit: Int): String =
-        if (unit <= CHUA_HOC_UNIT_NAO) "chưa học Unit nào" else "đã học tới Unit $unit"
 
     /**
      * Mot dong nhat ky moi lan doi: con chon gi, va truoc do la gi.
@@ -120,12 +108,58 @@ object HocToi {
      * Ghi ca cai cu vi thu Ba Huy can nhin la buoc nhay. Tu Bai 4 len Bai 9 trong mot
      * toi la chuyen dang hoi con, con tu Bai 4 len Bai 6 sau hai tuan thi khong.
      */
-    private fun ghiNhatKy(context: Context, tenBo: String, moi: String, cu: String?) {
+    private fun ghiNhatKy(context: Context, mon: String, moi: Set<Int>, cu: Set<Int>?) {
         val ten = context.getString(R.string.child_name)
-        val truoc = if (cu == null) "lần đầu chọn" else "trước đó $cu"
-        DayLog.add(context, "$ten chọn $tenBo: $moi ($truoc)")
+        val truoc = if (cu == null) "lần đầu chọn" else "trước đó ${moTa(mon, cu)}"
+        DayLog.add(context, "$ten chọn bài đã học ${PhanHoc.tenNgan(mon)}: ${moTa(mon, moi)} ($truoc)")
     }
 
-    private fun khoaThe(bo: String) = "hoc_toi_the_$bo"
-    private fun khoaTu(bo: String) = "hoc_toi_tu_$bo"
+    /**
+     * Moc cu (truoc 2/10/2026) cua mon, doi ra tap bai: moi phan tung duoc chon gop moi bai
+     * tu bai dau toi bai cu. null khi chua phan nao cua mon tung duoc chon. Bai cu khong doc ra
+     * so (file doi ten bai) thi bo phan do, nhu luc truoc may cung coi la chua chon.
+     */
+    private fun mocCu(context: Context, mon: String): Set<Int>? {
+        val sp = Prefs.get(context).raw()
+        if (mon == PhanHoc.TIENG_ANH) {
+            val khoa = khoaTuCu(PhanHoc.BO_TIENG_ANH)
+            if (!sp.contains(khoa)) return null
+            val unit = sp.getInt(khoa, 0)
+            return if (unit <= 0) emptySet() else (1..unit).toSortedSet()
+        }
+        var coChon = false
+        val ra = sortedSetOf<Int>()
+        PhanHoc.cuaMon(mon).forEach { p ->
+            val khoa = khoaTheCu(p.ma)
+            if (!sp.contains(khoa)) return@forEach
+            val bai = sp.getString(khoa, "").orEmpty()
+            val den = if (bai.isEmpty()) 0 else PhanHoc.soBai(bai) ?: return@forEach
+            coChon = true
+            ra += p.cacSoToi(den)
+        }
+        return if (coChon) ra else null
+    }
+
+    private fun khoaCu(mon: String): List<String> =
+        if (mon == PhanHoc.TIENG_ANH) listOf(khoaTuCu(PhanHoc.BO_TIENG_ANH))
+        else PhanHoc.cuaMon(mon).map { khoaTheCu(it.ma) }
+
+    /** Ma mon trong khoa prefs. Mon khong co bai lam tren may thi null. */
+    private fun maMon(mon: String): String? = when (mon) {
+        PhanHoc.TOAN -> "toan"
+        PhanHoc.KHTN -> "khtn"
+        PhanHoc.TIENG_ANH -> "anh"
+        else -> null
+    }
+
+    private fun docTap(chu: String): Set<Int> =
+        chu.split(',').mapNotNull { it.trim().toIntOrNull() }.filter { it > 0 }.toSortedSet()
+
+    private fun viet(cac: Set<Int>): String = cac.filter { it > 0 }.sorted().joinToString(",")
+
+    private fun khoaDaHoc(ma: String) = "da_hoc_$ma"
+
+    /** Khoa cua moc cu, truoc 2/10/2026: moi phan (ma phan trung ma bo the) va moi bo tu. */
+    private fun khoaTheCu(ma: String) = "hoc_toi_the_$ma"
+    private fun khoaTuCu(bo: String) = "hoc_toi_tu_$bo"
 }

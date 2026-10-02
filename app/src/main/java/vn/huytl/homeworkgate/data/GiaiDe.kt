@@ -14,7 +14,6 @@ import vn.huytl.homeworkgate.kho.CauHoi
 import vn.huytl.homeworkgate.kho.DeGiai
 import vn.huytl.homeworkgate.kho.DeThi
 import vn.huytl.homeworkgate.kho.Ghep
-import vn.huytl.homeworkgate.kho.HocToi
 import vn.huytl.homeworkgate.kho.KhoBai
 import vn.huytl.homeworkgate.kho.NganHang
 import vn.huytl.homeworkgate.kho.PhanHoc
@@ -161,7 +160,7 @@ object GiaiDe {
         val khoa = "tuan:${moc.toLocalDate()}:$mon"
         val kho = KhoBai.get(context)
         if (kho.cacDeTu(moc.epochMs() - MOT_NGAY).any { it.khoa == khoa }) return null
-        if (PhanHoc.baiDaHoc(context, mon, chiPhanDaChon = true).isNullOrEmpty()) return null
+        if (PhanHoc.baiDaHoc(context, mon).isNullOrEmpty()) return null
 
         val chon = chonCauTuan(context, mon, bayGio) ?: return null
         val de = dung(
@@ -213,12 +212,14 @@ object GiaiDe {
     // -------------------------------------------------------------- de thi in san
 
     /**
-     * Tu mo de thi khi lop da hoc toi pham vi cua de. Ba Huy chot ngay 30/9/2026: Le Hoa
-     * chon "Lớp đã học tới" Unit nao thi coi nhu sap kiem tra moi de toi Unit do. De Toan,
-     * KHTN (1/10/2026) xet tung phan: de mo khi moi phan co cau trong de deu da hoc toi bai
-     * cao nhat ma cau cua phan do cham toi, xem [thieuPhamVi]. Phan de khong co cau nao thi
-     * khong xet, ke ca khi con chua chon moc phan do: de giua ki 1 KHTN chi co cau Hoa, nen
-     * khong doi moc Li, Sinh.
+     * Tu mo de thi khi lop da hoc du pham vi cua de. Ba Huy chot ngay 30/9/2026: lop hoc toi
+     * dau thi coi nhu sap kiem tra moi de toi do. Tu 2/10/2026 con danh dau tung bai da hoc
+     * ([PhanHoc.baiDaHoc]), nen de chi mo khi MOI bai ma de hoi toi deu da danh dau: de Toan,
+     * KHTN la cac bai SGK cac cau lam tren may cham toi ([DeThi.De.cacBai]), de Anh la Unit 1
+     * toi Unit cuoi cua de. Xem [thieuPhamVi]. Truoc ngay do (1/10 - 2/10/2026) de mo khi moc
+     * "hoc toi" cua tung phan vuot bai cao nhat de cham toi; con danh dau cach quang (Bai 1-5
+     * va Bai 10) thi luat cu coi ca Bai 6-9 la da hoc. Phan de khong co cau nao thi khong xet:
+     * de giua ki 1 KHTN chi co cau Hoa, nen khong doi con danh dau bai Li, Sinh.
      *
      * MOI MON MOT DE. Ba de giua ki 1 Tieng Anh cung toi Unit 3; mo ca ba mot luc la con thay
      * ba dong 45 phut mot luc. Mon nao dang co de thi mo (chua nop) thi mon do khong mo them,
@@ -259,69 +260,86 @@ object GiaiDe {
     }
 
     /**
-     * Moc "Lớp đã học tới" luc nay: Unit Tieng Anh va bai cua tung phan ([PhanHoc.hocToi]: 0
-     * la chua hoc bai nao, null la chua chon). Doc mot lan cho ca danh sach de, roi dung
-     * [thieuPhamVi] ban khong can Context, de test dung moc gia duoc.
+     * Cac bai lop da hoc luc nay, moi mon mot tap ([PhanHoc.baiDaHoc]: Tieng Anh la so Unit,
+     * null la mon chua chon). Doc mot lan cho ca danh sach de, roi dung [thieuPhamVi] ban
+     * khong can Context, de test dung tap gia duoc.
      */
-    class MocHoc(val unitAnh: Int?, val baiPhan: Map<String, Int?>)
+    class MocHoc(val daHoc: Map<String, Set<Int>?>) {
+        fun cua(mon: String): Set<Int>? = daHoc[mon]
+    }
 
-    fun docMoc(context: Context): MocHoc = MocHoc(
-        unitAnh = HocToi.unitCua(context, PhanHoc.BO_TIENG_ANH),
-        baiPhan = PhanHoc.TAT_CA.associate { it.ma to PhanHoc.hocToi(context, it) }
-    )
+    fun docMoc(context: Context): MocHoc = MocHoc(MON.associateWith { PhanHoc.baiDaHoc(context, it) })
 
     /**
-     * Mot phan lop chua hoc toi pham vi cua de.
+     * Phan pham vi cua de ma lop chua danh dau la da hoc.
      *
-     * @param tenPhan "Hình học", "Hoá"; de Tieng Anh la "Lớp" (moc Unit chung ca mon, va hop danh
-     *   sach da mang ten mon: "Lớp chưa chọn Unit, đề cần Unit 3").
-     * @param dangToi lop dang o bai (hay Unit) nao: 0 chua hoc bai nao, null chua chon.
-     * @param can bai (hay Unit) de can.
-     * @param maPhan [PhanHoc.Phan.ma] cua phan, de man Luyen tap chi dung dong can doi o khoi
-     *   "Lớp đã học tới". Rong voi Tieng Anh (moc Unit khong phai mot phan).
+     * @param cacSo bai (de Anh: Unit) de hoi toi ma chua danh dau, theo thu tu.
+     * @param laUnit de Tieng Anh.
+     * @param chuaChon mon chua chon bai da hoc lan nao; luc do [cacSo] la ca pham vi cua de.
      */
-    data class Thieu(
-        val tenPhan: String,
-        val dangToi: Int?,
-        val can: Int,
-        val laUnit: Boolean,
-        val maPhan: String = ""
-    )
+    data class Thieu(val cacSo: List<Int>, val laUnit: Boolean, val chuaChon: Boolean = false)
 
-    /** Cac phan lop chua hoc toi pham vi cua [de]. Rong la de da toi pham vi, mo duoc. */
+    /**
+     * Cac bai (de Anh: Unit) cua pham vi de, tang dan: de Anh la Unit 1 toi Unit cuoi cua de
+     * ([DeThi.De.denUnit]), de Toan, KHTN la cac bai SGK ma cau cham toi ([DeThi.De.cacBai]).
+     */
+    fun phamViSo(de: DeThi.De): List<Int> =
+        if (de.laTiengAnh) (1..de.denUnit).toList() else de.cacBai.sorted()
+
+    /**
+     * Phan pham vi lop chua danh dau. Rong la de da du pham vi, mo duoc. Danh sach co nhieu nhat
+     * mot phan tu: tu 2/10/2026 bai da hoc tinh theo mon chu khong theo tung phan, nhung kieu
+     * danh sach giu cho cac cho dang hoi [List.isEmpty].
+     */
     fun thieuPhamVi(de: DeThi.De, moc: MocHoc): List<Thieu> {
-        if (de.laTiengAnh) {
-            val u = moc.unitAnh
-            return if (u != null && u >= de.denUnit) emptyList()
-            else listOf(Thieu("Lớp", u?.coerceAtLeast(0), de.denUnit, laUnit = true))
-        }
-        return de.denBai.mapNotNull { (ma, can) ->
-            val phan = PhanHoc.theoMa(ma) ?: return@mapNotNull null
-            val toi = moc.baiPhan[ma]
-            if (toi != null && toi >= can) null else Thieu(phan.tenNgan, toi, can, laUnit = false, maPhan = ma)
-        }
+        val daHoc = moc.cua(de.mon)
+        val can = phamViSo(de)
+        val thieu = if (daHoc == null) can else can.filter { it !in daHoc }
+        if (thieu.isEmpty()) return emptyList()
+        return listOf(Thieu(thieu, de.laTiengAnh, chuaChon = daHoc == null))
     }
 
     fun thieuPhamVi(context: Context, de: DeThi.De): List<Thieu> = thieuPhamVi(de, docMoc(context))
 
     /**
-     * "Hình học mới tới Bài 12, đề cần Bài 14", "Sinh chưa chọn bài, đề cần Bài 30", nhieu
-     * phan noi bang "; ". Cho dong de khoa o trang Luyen tap va hang de thi o Bang dieu khien.
+     * "thiếu Bài 4, 11–12", "thiếu Unit 2–3", hay "chưa chọn bài đã học". Cho dong de khoa o
+     * trang Luyen tap va hang de thi o Bang dieu khien: dien thoai ghep thanh "chưa tới phạm
+     * vi: thiếu Bài 4, 11–12", nen chu nay viet thuong.
      */
     fun moTaThieu(cac: List<Thieu>): String = cac.joinToString("; ") { t ->
-        val don = if (t.laUnit) "Unit" else "Bài"
-        val dang = when (t.dangToi) {
-            null -> if (t.laUnit) "chưa chọn Unit" else "chưa chọn bài"
-            0 -> if (t.laUnit) "chưa học Unit nào" else "chưa học bài nào"
-            else -> "mới tới $don ${t.dangToi}"
-        }
-        "${t.tenPhan} $dang, đề cần $don ${t.can}"
+        if (t.chuaChon) "chưa chọn bài đã học"
+        else "thiếu ${if (t.laUnit) "Unit" else "Bài"} ${PhanHoc.gon(t.cacSo)}"
     }
 
-    /** "Đại số tới Bài 9, Hình học tới Bài 14" (Toan, KHTN), "tới Unit 3" (Tieng Anh). */
+    /**
+     * "Bài 1–4, 6, 10–12" (Toan, KHTN: moi bai cau trong de cham toi), "Unit 1–3" (Tieng Anh).
+     * Dien thoai ghep thanh "Mở khi lớp học Bài 1–4, 6, 10–12". Truoc 2/10/2026 chu nay la
+     * bai cao nhat cua tung phan ("Đại số tới Bài 6, Hình học tới Bài 12").
+     */
     fun moTaPhamVi(de: DeThi.De): String =
-        if (de.laTiengAnh) "tới Unit ${de.denUnit}"
-        else de.denBai.entries.joinToString(", ") { (ma, bai) -> "${PhanHoc.theoMa(ma)?.tenNgan ?: ma} tới Bài $bai" }
+        (if (de.laTiengAnh) "Unit " else "Bài ") + PhanHoc.gon(phamViSo(de))
+
+    /**
+     * Cau noi khi mot de chua du pham vi: "Đề giữa kì 1 số 7 mở khi đã học Bài 1–4, 6, 10–12.
+     * Còn thiếu Bài 3, 10–12." Cho hop o trang Luyen tap va loi cua [moDeThi].
+     */
+    fun cauDeKhoa(de: DeThi.De, thieu: List<Thieu>): String {
+        val phamVi = "${de.ten} mở khi đã học ${moTaPhamVi(de)}."
+        val t = thieu.firstOrNull() ?: return phamVi
+        return if (t.chuaChon) "$phamVi Môn này chưa chọn bài đã học."
+        else "$phamVi Còn ${moTaThieu(thieu)}."
+    }
+
+    /** Bon ky cua de thi thu theo thu tu hien o trang Luyen tap: ma ky, ten ky. */
+    val CAC_KY = listOf("GK1" to "giữa kỳ I", "CK1" to "cuối kỳ I", "GK2" to "giữa kỳ II", "CK2" to "cuối kỳ II")
+
+    /** Ky cua mot de thi theo ma de: "TGK1-2" ra "GK1", "CK1-7" ra "CK1". Khong doc ra thi "". */
+    fun kyCua(de: DeThi.De): String = KY.find(de.ma)?.value.orEmpty()
+
+    /** So cua de trong ky, theo duoi ma de: "KGK1-5" ra "5". */
+    fun soDe(de: DeThi.De): String = de.ma.substringAfterLast('-')
+
+    private val KY = Regex("""(GK|CK)[12]""")
 
     /** Ket qua mo mot de thi bang tay: de da mo, hay cau noi vi sao khong mo. */
     data class MoDeThi(val de: DeGiai?, val loi: String?)
@@ -348,11 +366,7 @@ object GiaiDe {
         dangMo(context, bayGio).firstOrNull { maDeThi(it) == ma }?.let { return MoDeThi(it, null) }
         if (!choBa) {
             val thieu = thieuPhamVi(context, dt)
-            if (thieu.isNotEmpty()) {
-                val loi = "${dt.ten} mở khi lớp học ${moTaPhamVi(dt)}." +
-                    if (dt.laTiengAnh) "" else " Còn thiếu: ${moTaThieu(thieu)}."
-                return MoDeThi(null, loi)
-            }
+            if (thieu.isNotEmpty()) return MoDeThi(null, cauDeKhoa(dt, thieu))
         }
         val nopCuoi = cacDeThiDaNop(context, bayGio).filter { maDeThi(it) == ma }.maxOfOrNull { it.nopLuc }
         if (nopCuoi != null && ngayCua(nopCuoi) == ngayCua(bayGio)) {
@@ -371,8 +385,9 @@ object GiaiDe {
      *   dau, [TT_DANG] dang lam, [TT_XONG] da nop va khong dang mo.
      * @param dangMo de dang mo cua de thi nay, neu co.
      * @param lanCuoi lan nop gan nhat, neu co: diem cua de.
-     * @param thieu cac phan lop chua hoc toi ([thieuPhamVi]), rong khi da toi pham vi. Co ca
-     *   khi de dang mo hay da nop: Ba Huy mo truoc pham vi thi van noi duoc la con thieu gi.
+     * @param thieu phan pham vi lop chua danh dau la da hoc ([thieuPhamVi]), rong khi da du
+     *   pham vi. Co ca khi de dang mo hay da nop: Ba Huy mo truoc pham vi thi van noi duoc la
+     *   con thieu gi.
      */
     data class TinhTrangDeThi(
         val de: DeThi.De,
@@ -575,7 +590,7 @@ object GiaiDe {
      * da hoc xong), lam duoc tren may, chua tung nop, khong nam trong de khac con han.
      */
     private fun cauTuDo(context: Context, mon: String, bayGio: Long): List<CauHoi> {
-        val daHoc = PhanHoc.baiDaHoc(context, mon, chiPhanDaChon = true) ?: return emptyList()
+        val daHoc = PhanHoc.baiDaHoc(context, mon) ?: return emptyList()
         val kho = KhoBai.get(context)
         val daNop = kho.cacCauDaNop(bayGio - MOT_NAM)
         val trongDe = kho.cauTrongDeConHan(bayGio)
@@ -625,7 +640,7 @@ object GiaiDe {
      * tung ra (trong de hay da nop). null la khong co chuong nao nhu vay.
      */
     private fun chuongVuaXong(context: Context, bayGio: Long): String? {
-        val daHoc = PhanHoc.baiDaHoc(context, LichKiemTra.TOAN, chiPhanDaChon = true) ?: return null
+        val daHoc = PhanHoc.baiDaHoc(context, LichKiemTra.TOAN) ?: return null
         val kho = KhoBai.get(context)
         val cacCau = NganHang.sachBaiTapCua(LichKiemTra.TOAN).flatMap { kho.cacCauCuaNguon(it.nguon) }
         val xong = chuongDaXong(cacCau, daHoc)

@@ -1,16 +1,17 @@
 package vn.huytl.homeworkgate.ui
 
 import android.app.Activity
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import android.widget.LinearLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.updatePadding
 import androidx.lifecycle.lifecycleScope
-import android.widget.LinearLayout
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -18,15 +19,13 @@ import kotlinx.coroutines.withContext
 import vn.huytl.homeworkgate.R
 import vn.huytl.homeworkgate.data.GiaiDe
 import vn.huytl.homeworkgate.data.LamTrenMay
+import vn.huytl.homeworkgate.data.LuatTuVung
 import vn.huytl.homeworkgate.databinding.StActivityLuyenTapBinding
 import vn.huytl.homeworkgate.databinding.StDongViecBinding
 import vn.huytl.homeworkgate.kho.BoThe
 import vn.huytl.homeworkgate.kho.DeGiai
-import vn.huytl.homeworkgate.kho.BoTuVung
 import vn.huytl.homeworkgate.kho.HocToi
 import vn.huytl.homeworkgate.kho.KhoBai
-import vn.huytl.homeworkgate.data.LuatTuVung
-import vn.huytl.homeworkgate.kho.NganHang
 import vn.huytl.homeworkgate.kho.PhanHoc
 import java.util.Calendar
 
@@ -40,22 +39,29 @@ import java.util.Calendar
  * de Giai de dang lam do vi no dang chay gio), con viec luyen them - lam luc nao cung duoc
  * - vao day.
  *
- * LOP DA HOC TOI DAU NAM TREN CUNG. Moc [HocToi] dung chung cho moi viec ben duoi (bo the
- * Kiem tra bai, sach bai tap cua Lam bai va Giai de, Unit cua Do tu vung va Tieng Anh), ma
- * truoc day chi hien luc con bam vao mot bo chua chon, doi lai thi phai tim nut "Đổi" tren
- * the bo trong tung man. Nay moi phan mot dong, bam la mo dung hop chon cu ([ChonHocToi]),
- * nen luat chon va dong nhat ky di sang Bang dieu khien khong doi. Cac hop hoi trong tung
- * man van giu, phong khi con vao thang mot bo chua chon.
+ * BA KHU THEO MON (Ba Huy chot 2/10/2026). Truoc ngay do trang co hai khoi: "Lớp đã học tới"
+ * (moi phan hoc mot dong) va "Bài luyện tập" (On lai chung, Luyen tap tung mon, cac de, Kiem
+ * tra bai, Do tu vung). Nay moi mon mot khu Toan, KHTN, Tieng Anh, va trong khu theo dung thu
+ * tu Ba Huy ke: Bai da hoc, On tap, Kiem tra cong thuc (Tieng Anh: Kiem tra tu vung), Luyen tap
+ * tung phan (Toan Dai so, Hinh hoc; KHTN Hoa hoc, Vat li, Sinh hoc; Tieng Anh mot dong), de on
+ * dang mo (de tuan thu Bay, de on truoc kiem tra), roi bon dong De thi thu theo ky. Nhin mot
+ * khu la biet mon do con bao nhieu viec.
  *
- * DE THI IN SAN (30/9/2026, [vn.huytl.homeworkgate.kho.DeThi]). Moi mon co de thi mot dong
- * "Đề thi thử <mon>", theo thu tu [GiaiDe.MON] (Toan, KHTN, Tieng Anh); mon chua co de nao thi
- * khong hien. Truoc 1/10/2026 chi co de Anh nen chi co dong "Đề thi thử Tiếng Anh". Tu ngay do
- * co ca de Toan, KHTN, moi mon mot dong nhu hang de thi o Bang dieu khien, va dong phu (de nao
- * dang mo, pham vi cua de khoa) noi rieng cho mot mon. Bam dong la ra danh sach de cua mon kem
- * tinh trang: mo duoc, dang mo, da lam, hay chua toi pham vi (de Anh theo Unit, de Toan, KHTN
- * theo bai cua tung phan, xem [GiaiDe.thieuPhamVi]). De dang mo co them dong rieng mang ten de,
- * nhu moi de Giai de. Con doi moc o khoi tren thi [nap] chay lai [GiaiDe.taoNeuCan], nen de toi
- * pham vi tu mo ngay luc do.
+ * BAI DA HOC LA DONG DAU MOI KHU: bam la hop danh dau nhieu bai ([ChonHocToi.hoiMon]). Moi viec
+ * trong khu dung chung tap bai do ([PhanHoc.baiDaHoc]). Doi xong thi [nap] chay lai
+ * [GiaiDe.taoNeuCan], nen de du pham vi tu mo ngay luc do.
+ *
+ * SO DA LAM / TONG o cuoi moi dong (cung ngay), dem tu truoc toi nay. Tong la moi cau cua phan
+ * ke ca bai lop chua hoc, nen so dung yen, khong nhay khi con danh dau them bai (Ba Huy chon).
+ * Luyen tap: cau da lam dung it nhat mot lan ([LamTrenMay.demTheoPhan]). On tap: so cau da on
+ * hom nay tren so cau den hen trong ngay; khong co cau nao den hen thi chi dau ✓. Kiem tra:
+ * the da kiem, tu da thuoc, dem nhu trong hai man do. De thi thu: so de da lam tren so de cua ky.
+ *
+ * DE THI THU THEO KY. Moi mon bon dong giua ky I, cuoi ky I, giua ky II, cuoi ky II
+ * ([GiaiDe.CAC_KY]); ky chua co de nao thi dong mo "Chưa có đề". Ky dang co de mo thi tieu de
+ * ghi so de ("Đề thi thử số 5 giữa kỳ I môn KHTN"). Bam dong la ra danh sach de cua ky kem tinh
+ * trang: mo duoc, dang mo, da lam, hay con thieu bai nao ([GiaiDe.thieuPhamVi]). Truoc ngay do
+ * moi mon mot dong "Đề thi thử <môn>" cho ca bo de, va de dang mo co them mot dong rieng.
  *
  * Trang nay khong ve lai moi giay nhu man chinh, nen dem cau on va doc de Giai de ca luc
  * dang choi cung khong sao. Doc kho ngoai luong giao dien, roi moi ve.
@@ -81,198 +87,236 @@ class LuyenTapActivity : AppCompatActivity() {
         nap()
     }
 
-    /** Nhung gi can hoi kho, doc mot lan cho mot lan ve. */
-    private data class Nap(
-        val soOn: Int,
-        val deMo: List<DeGiai>,
-        val deXong: List<Pair<DeGiai, Pair<Int, Int>>>,
-        val deThi: List<GiaiDe.TinhTrangDeThi>,
-        val kiemTra: BoThe.TinhTrang,
-        val coTuVung: Boolean,
-        val tuVungXong: Boolean
+    /** Mot dong Luyen tap: phan (null la ca mon), so cau da lam dung, tong so cau. */
+    private data class Luyen(val phan: PhanHoc.Phan?, val daLam: Int, val tong: Int)
+
+    /** Nhung gi mot khu mon can, doc mot lan cho mot lan ve. */
+    private data class Khu(
+        val mon: String,
+        /** Bai da hoc cua mon, null khi chua chon. */
+        val daHoc: Set<Int>?,
+        val daOn: Int,
+        val conOn: Int,
+        /** Da kiem (Tieng Anh: da thuoc) tren tong; null khi mon khong co bo the, bo tu. */
+        val kiemTra: Pair<Int, Int>?,
+        /** Dong Kiem tra da xong hom nay: het the den luot, hay du phut tu vung. */
+        val kiemTraXong: Boolean,
+        val luyen: List<Luyen>,
+        /** De tuan, de on kiem tra dang mo ma chua bat dau. De da bat dau nam o man chinh. */
+        val deOn: List<DeGiai>,
+        /** De on xong hom nay, kem diem. De thi thu xong thi nam trong dong cua ky. */
+        val deOnXong: List<Pair<DeGiai, Pair<Int, Int>>>,
+        val deThi: List<GiaiDe.TinhTrangDeThi>
     )
 
     private fun nap() {
         lifecycleScope.launch {
             val ct = this@LuyenTapActivity
-            val n = withContext(Dispatchers.IO) {
+            val cac = withContext(Dispatchers.IO) {
                 val bayGio = System.currentTimeMillis()
                 runCatching { GiaiDe.taoNeuCan(ct) }
-                val kho = KhoBai.get(ct)
-                val coTu = runCatching { BoTuVung.BO.any { kho.soTuCua(it.bo) > 0 } }.getOrDefault(false)
-                Nap(
-                    soOn = LamTrenMay.soCauOn(ct, bayGio),
-                    // De da bat dau (dang lam, hay con chup tu luan) nam ngoai man chinh.
-                    deMo = runCatching { GiaiDe.dangMo(ct, bayGio) }.getOrDefault(emptyList())
-                        .filter { !it.daBatDau },
-                    deXong = runCatching { GiaiDe.xongHomNay(ct, bayGio) }.getOrDefault(emptyList())
-                        .map { it to GiaiDe.diem(ct, it) },
-                    deThi = runCatching { GiaiDe.tinhTrangDeThi(ct, bayGio) }.getOrDefault(emptyList()),
-                    kiemTra = runCatching { BoThe.tinhTrangManChinh(ct) }.getOrDefault(BoThe.TinhTrang.KHONG),
-                    coTuVung = coTu,
-                    tuVungXong = coTu && runCatching {
-                        kho.giayTuVungTu(moc0Gio()) >= LuatTuVung.GIAY_TRAN_MOI_NGAY
-                    }.getOrDefault(false)
-                )
+                val dangMo = runCatching { GiaiDe.dangMo(ct, bayGio) }.getOrDefault(emptyList())
+                val xong = runCatching { GiaiDe.xongHomNay(ct, bayGio) }.getOrDefault(emptyList())
+                val deThi = runCatching { GiaiDe.tinhTrangDeThi(ct, bayGio) }.getOrDefault(emptyList())
+                KHU.map { mon -> docKhu(ct, mon, bayGio, dangMo, xong, deThi) }
             }
-            ve(n)
+            listOf(b.boxToan, b.boxKhtn, b.boxAnh).zip(cac).forEach { (box, khu) -> veKhu(box, khu) }
         }
     }
 
-    private fun ve(n: Nap) {
-        b.boxHocToi.removeAllViews()
-        b.boxLuyen.removeAllViews()
-        veHocToi()
+    private fun docKhu(
+        ct: Context,
+        mon: String,
+        bayGio: Long,
+        dangMo: List<DeGiai>,
+        xong: List<DeGiai>,
+        deThi: List<GiaiDe.TinhTrangDeThi>
+    ): Khu {
+        val kho = KhoBai.get(ct)
+        val kiemTra: Pair<Int, Int>?
+        val kiemTraXong: Boolean
+        if (mon == PhanHoc.TIENG_ANH) {
+            val tu = runCatching { kho.tinhTrangTu(PhanHoc.BO_TIENG_ANH, LuatTuVung.LAN_DUNG_DE_TINH) }
+                .getOrDefault(emptyList())
+            kiemTra = if (tu.isEmpty()) null
+            else tu.count { it.second == LuatTuVung.TinhTrang.DA_THUOC } to tu.size
+            kiemTraXong = runCatching {
+                kho.giayTuVungTu(moc0Gio()) >= LuatTuVung.GIAY_TRAN_MOI_NGAY
+            }.getOrDefault(false)
+        } else {
+            val bang = runCatching { BoThe.bang(ct, mon) }.getOrDefault(emptyList())
+            kiemTra = if (bang.isEmpty()) null else bang.sumOf { it.soThuoc } to bang.sumOf { it.tongThe }
+            // Het the hom nay ma bo nao cung da chon: dong o dang da xong. Con bo chua chon thi
+            // chua xong, vao la duoc hoi chon bai.
+            kiemTraXong = bang.isNotEmpty() && bang.none { it.hocToi == null } && bang.sumOf { it.soDenLuot } == 0
+        }
+        val dem = runCatching { LamTrenMay.demTheoPhan(ct, mon) }.getOrDefault(emptyMap())
+        val luyen = if (mon == PhanHoc.TIENG_ANH) listOf(Luyen(null, dem[""]?.first ?: 0, dem[""]?.second ?: 0))
+        else PhanHoc.cuaMon(mon).map { p -> Luyen(p, dem[p.ma]?.first ?: 0, dem[p.ma]?.second ?: 0) }
+        return Khu(
+            mon = mon,
+            daHoc = PhanHoc.baiDaHoc(ct, mon),
+            daOn = LamTrenMay.soDaOnHomNay(ct, mon, bayGio),
+            conOn = LamTrenMay.soCauOn(ct, bayGio, mon),
+            kiemTra = kiemTra,
+            kiemTraXong = kiemTraXong,
+            // Phan chua soan cau nao thi khong co gi de bam: an dong.
+            luyen = luyen.filter { it.tong > 0 },
+            deOn = dangMo.filter { it.mon == mon && it.loai != GiaiDe.LOAI_DE_THI && !it.daBatDau },
+            deOnXong = xong.filter { it.mon == mon && it.loai != GiaiDe.LOAI_DE_THI }
+                .map { it to runCatching { GiaiDe.diem(ct, it) }.getOrDefault(0 to 0) },
+            deThi = deThi.filter { it.de.mon == mon }
+        )
+    }
 
-        // On lai. Khong co cau den hen thi van hien, dang da xong: an di thi con khong biet
-        // duong on nam o day.
+    private fun veKhu(box: LinearLayout, k: Khu) {
+        box.removeAllViews()
+        val mon = k.mon
+        val ten = GiaiDe.tenMon(mon)
+        val mauMon = MatMon.mau(mon)
+
+        // Bai da hoc: dong dau khu (Ba Huy chot 2/10/2026), moi viec ben duoi dung chung.
         themDong(
-            b.boxLuyen,
-            hinh = R.drawable.st_ic_on_lai,
-            mau = if (n.soOn > 0) R.color.wait else R.color.ok,
-            ten = when (n.soOn) {
-                0 -> "Ôn lại: hôm nay chưa có câu đến hẹn"
-                1 -> "Ôn lại 1 câu đến hẹn"
-                else -> "Ôn lại ${n.soOn} câu đến hẹn"
-            },
-            xong = n.soOn == 0
-        ) { if (n.soOn > 0) LamBaiActivity.moOn(this) }
+            box,
+            hinh = R.drawable.st_ic_cap_sach,
+            mau = if (k.daHoc == null) R.color.alert else mauMon,
+            ten = "Bài đã học",
+            phu = k.daHoc?.let { HocToi.moTa(mon, it).replaceFirstChar { c -> c.uppercase() } } ?: "Chưa chọn"
+        ) { ChonHocToi.hoiMon(this, mon) { nap() } }
 
-        // Luyen tap tung mon (truoc 30/9/2026 ten la "Làm bài <mon> trên máy"): moi mon mot
-        // dong, thay cho hop hoi mon cua man chinh cu.
-        LamTrenMay.MON.filter { NganHang.sachBaiTapCua(it).isNotEmpty() }.forEach { mon ->
+        // On tap: van hien khi khong co cau den hen, dang da xong: an di thi con khong biet
+        // duong on nam o day.
+        val denHen = k.daOn + k.conOn
+        themDong(
+            box,
+            hinh = R.drawable.st_ic_on_lai,
+            mau = if (k.conOn > 0) R.color.wait else R.color.ok,
+            ten = "Ôn tập $ten",
+            phu = when {
+                denHen == 0 -> "Hôm nay chưa có câu đến hẹn"
+                k.conOn == 0 -> "Hôm nay ôn xong rồi"
+                else -> "${k.conOn} câu đến hẹn"
+            },
+            so = if (denHen > 0) "${k.daOn}/$denHen" else "",
+            xong = k.conOn == 0
+        ) { if (k.conOn > 0) LamBaiActivity.moOn(this, mon) }
+
+        // Kiem tra cong thuc (Tieng Anh: Kiem tra tu vung). Xong hom nay thi van o, dang da
+        // xong, cung ly do voi On tap.
+        k.kiemTra?.let { (da, tong) ->
+            val laAnh = mon == PhanHoc.TIENG_ANH
             themDong(
-                b.boxLuyen,
+                box,
                 hinh = R.drawable.st_ic_the_hoc,
-                mau = MatMon.mau(mon),
-                ten = "Luyện tập ${GiaiDe.tenMon(mon)}",
-                phu = if (chuaChonMoc(mon)) "Chọn bài lớp đã học trước" else ""
-            ) { LamBaiActivity.moLamThem(this, mon) }
+                mau = if (k.kiemTraXong) R.color.ok else mauMon,
+                ten = if (laAnh) "Kiểm tra từ vựng $ten" else "Kiểm tra công thức $ten",
+                phu = when {
+                    k.daHoc == null -> "Chọn bài lớp đã học trước"
+                    !k.kiemTraXong -> ""
+                    laAnh -> "Hôm nay đủ rồi"
+                    else -> "Hôm nay hết câu"
+                },
+                so = "$da/$tong",
+                xong = k.kiemTraXong
+            ) {
+                if (laAnh) startActivity(Intent(this, DoTuVungActivity::class.java))
+                else HocThuocActivity.mo(this, mon)
+            }
         }
 
-        // Giai de: de dang mo chua bat dau, de xong hom nay kem diem.
-        n.deMo.forEach { de ->
-            // De thi mang ten rieng ("Đề giữa kì 1 số 1") len dong tren: ngay duoi con dong
-            // "Đề thi thử <mon>" cua ca danh sach de mon do, hai dong cung ten thi con khong
-            // biet bam dong nao de lam.
-            val laDeThi = de.loai == GiaiDe.LOAI_DE_THI
+        // Luyen tap tung phan. Phan chua co bai nao danh dau thi bam la hoi danh dau truoc:
+        // vao man lam bai luc do chi gap cau "het cau".
+        k.luyen.forEach { l ->
+            val coBai = l.phan?.let { p -> k.daHoc?.any { p.chua(it) } } ?: !k.daHoc.isNullOrEmpty()
             themDong(
-                b.boxLuyen,
+                box,
+                hinh = R.drawable.st_ic_the_hoc,
+                mau = mauMon,
+                ten = "Luyện tập $ten" + (l.phan?.let { " ${it.tenDai}" } ?: ""),
+                phu = when {
+                    k.daHoc == null -> "Chọn bài lớp đã học trước"
+                    !coBai -> "Chưa đánh dấu bài nào của phần này"
+                    else -> ""
+                },
+                so = "${l.daLam}/${l.tong}"
+            ) {
+                if (coBai) LamBaiActivity.moLamThem(this, mon, l.phan)
+                else ChonHocToi.hoiMon(this, mon) { nap() }
+            }
+        }
+
+        // De on dang mo (de tuan, de on truoc kiem tra), roi de on xong hom nay kem diem.
+        k.deOn.forEach { de ->
+            themDong(
+                box,
                 hinh = R.drawable.st_ic_giai_de,
-                mau = MatMon.mau(de.mon),
-                ten = if (laDeThi) de.ten else GiaiDe.tenDe(de),
-                phu = "${if (laDeThi) GiaiDe.tenDe(de) else de.ten} · ${de.cauIds.size} câu · " +
-                    "khoảng ${de.phutGoiY} phút" + GiaiDe.ngayKiemTra(de)
+                mau = mauMon,
+                ten = GiaiDe.tenDe(de),
+                phu = "${de.ten} · ${de.cauIds.size} câu · khoảng ${de.phutGoiY} phút" + GiaiDe.ngayKiemTra(de)
             ) { GiaiDeActivity.mo(this, de.id) }
         }
-        n.deXong.forEach { (de, diem) ->
+        k.deOnXong.forEach { (de, diem) ->
             // De lam tren may cham bang sao, khong phai so cau dung (xem GiaiDe.diem).
-            val ten = if (de.loai == GiaiDe.LOAI_DE_THI) "${GiaiDe.tenDe(de)} (${de.ten})" else GiaiDe.tenDe(de)
             themDong(
-                b.boxLuyen,
+                box,
                 hinh = R.drawable.st_ic_giai_de,
                 mau = R.color.ok,
-                ten = if (de.trenMay) "$ten: ${diem.first}/${diem.second} ★"
-                else "$ten: đúng ${diem.first}/${diem.second} câu",
+                ten = if (de.trenMay) "${GiaiDe.tenDe(de)}: ${diem.first}/${diem.second} ★"
+                else "${GiaiDe.tenDe(de)}: đúng ${diem.first}/${diem.second} câu",
                 xong = true
             ) { GiaiDeActivity.mo(this, de.id) }
         }
 
-        // De thi in san: moi mon mot dong (1/10/2026), bam la hien danh sach de cua mon. De
-        // dang mo da co dong rieng o tren (nhu moi de Giai de), dong nay de xem de nao con, de
-        // nao da lam, va tu mo.
-        GiaiDe.MON.forEach { mon ->
-            val cua = n.deThi.filter { it.de.mon == mon }
-            if (cua.isEmpty()) return@forEach
-            // De dang lam truoc de moi mo: con thay ngay de minh dang lam do (2/10/2026, truoc do
-            // dong nay ghi "đang mở" ca khi con da bam Bat dau, lech voi Bang dieu khien).
-            val mo = cua.firstOrNull { it.trangThai == GiaiDe.TT_DANG } ?: cua.firstOrNull { it.dangMo != null }
+        // De thi thu: bon dong theo ky.
+        GiaiDe.CAC_KY.forEach { (ky, tenKy) ->
+            val cua = k.deThi.filter { GiaiDe.kyCua(it.de) == ky }
+            val tenDong = "Đề thi thử $tenKy môn $ten"
+            if (cua.isEmpty()) {
+                themDong(box, hinh = R.drawable.st_ic_giai_de, mau = R.color.ink_soft, ten = tenDong, phu = "Chưa có đề", nhat = true)
+                return@forEach
+            }
+            // De dang lam truoc de moi mo: con thay ngay de minh dang lam do.
+            val dang = cua.firstOrNull { it.trangThai == GiaiDe.TT_DANG } ?: cua.firstOrNull { it.dangMo != null }
             val san = cua.count { it.trangThai == GiaiDe.TT_SAN }
-            val xong = cua.count { it.trangThai == GiaiDe.TT_XONG }
-            // Chi con de khoa thi noi pham vi cua de hep nhat: lop hoc toi do la co de dau tien.
-            // De Anh do rong la so Unit, nen van ra "Mở khi lớp học tới Unit 3" nhu truoc.
-            val khoaHep = cua.filter { it.trangThai == GiaiDe.TT_KHOA }.minByOrNull { it.de.doRong }
+            val daLam = cua.count { it.lanCuoi != null }
+            val phu = when {
+                dang != null -> (if (dang.trangThai == GiaiDe.TT_DANG) "Đang làm" else "Đang mở") +
+                    " · ${dang.dangMo?.cauIds?.size ?: dang.de.cauIds.size} câu" +
+                    " · khoảng ${dang.dangMo?.phutGoiY ?: dang.de.phut} phút" +
+                    if (san > 0) " · thêm $san đề mở được" else ""
+                san > 0 -> "$san đề mở được"
+                daLam == cua.size -> "Đã làm hết, bấm để làm lại"
+                else -> moTaDeHepNhat(cua)
+            }
             themDong(
-                b.boxLuyen,
+                box,
                 hinh = R.drawable.st_ic_giai_de,
-                mau = MatMon.mau(mon),
-                ten = "Đề thi thử ${GiaiDe.tenMon(mon)}",
-                phu = when {
-                    mo != null -> "${mo.de.ten} " + (if (mo.trangThai == GiaiDe.TT_DANG) "đang làm" else "đang mở") +
-                        if (san > 0) ", thêm $san đề mở được" else ""
-                    san > 0 -> "$san đề mở được" + if (xong > 0) ", đã làm $xong đề" else ""
-                    xong > 0 -> "Đã làm $xong đề"
-                    khoaHep != null -> "Mở khi lớp học ${GiaiDe.moTaPhamVi(khoaHep.de)}"
-                    else -> ""
-                }
-            ) { hoiDeThi(mon, cua) }
-        }
-        // Mon chua chon moc thi khong ra de: truoc 30/9/2026 o day co them dong "Giải đề <mon>"
-        // de hoi moc, nay khoi Lop da hoc toi o tren da lam viec do (dong do to do).
-
-        // Kiem tra bai. Het the hom nay ma con bai phia sau thi dong van o, dang da xong.
-        if (n.kiemTra != BoThe.TinhTrang.KHONG) {
-            val het = n.kiemTra == BoThe.TinhTrang.HET_HOM_NAY
-            themDong(
-                b.boxLuyen,
-                hinh = R.drawable.st_ic_the_hoc,
-                mau = if (het) R.color.ok else R.color.brand,
-                ten = if (het) "Kiểm tra bài: hôm nay hết câu" else getString(R.string.hoc_thuoc_nut),
-                xong = het
-            ) { startActivity(Intent(this, HocThuocActivity::class.java)) }
-        }
-
-        // Do tu vung. Du phut cua ngay thi van hien, dang da xong, cung ly do voi On lai.
-        if (n.coTuVung) {
-            themDong(
-                b.boxLuyen,
-                hinh = R.drawable.st_ic_the_hoc,
-                mau = if (n.tuVungXong) R.color.ok else MatMon.mau(PhanHoc.TIENG_ANH),
-                ten = if (n.tuVungXong) "Kiểm tra từ vựng: hôm nay đủ rồi" else getString(R.string.do_tu_nut),
-                xong = n.tuVungXong
-            ) { startActivity(Intent(this, DoTuVungActivity::class.java)) }
-        }
-    }
-
-    /** Moi phan hoc mot dong, roi Unit Tieng Anh. */
-    private fun veHocToi() {
-        PhanHoc.TAT_CA.forEach { phan ->
-            if (PhanHoc.cacBai(this, phan).isEmpty()) return@forEach
-            val so = PhanHoc.hocToi(this, phan)
-            themDong(
-                b.boxHocToi,
-                hinh = R.drawable.st_ic_cap_sach,
-                mau = if (so == null) R.color.alert else MatMon.mau(phan.mon),
-                ten = phan.ten,
-                phu = when (so) {
-                    null -> "Chưa chọn"
-                    0 -> "Chưa học bài nào"
-                    else -> "Đã học tới Bài $so"
-                }
-            ) { ChonHocToi.hoiPhan(this, phan) { nap() } }
-        }
-        BoTuVung.BO.forEach { bo ->
-            val unit = HocToi.unitCua(this, bo.bo)
-            themDong(
-                b.boxHocToi,
-                hinh = R.drawable.st_ic_cap_sach,
-                mau = if (unit == null) R.color.alert else MatMon.mau(bo.mon),
-                ten = bo.mon,
-                phu = when {
-                    unit == null -> "Chưa chọn"
-                    unit <= HocToi.CHUA_HOC_UNIT_NAO -> "Chưa học Unit nào"
-                    else -> "Đã học tới Unit $unit"
-                }
-            ) { ChonHocToi.hoiUnit(this, bo) { nap() } }
+                mau = mauMon,
+                ten = dang?.let { "Đề thi thử số ${GiaiDe.soDe(it.de)} $tenKy môn $ten" } ?: tenDong,
+                phu = phu,
+                so = "$daLam/${cua.size} đề"
+            ) { hoiDeThi(tenDong, cua) }
         }
     }
 
     /**
-     * Danh sach de thi cua mot mon: moi de mot dong kem tinh trang. Bam de dang mo thi vao lam,
-     * de mo duoc thi mo, de da lam thi xem lai hay lam lai, de chua toi pham vi thi noi pham vi
-     * ("mở khi học tới Unit 3", "mở khi học Đại số tới Bài 9, Hình học tới Bài 14").
+     * Cac de cua ky deu con khoa: noi de can it bai them nhat se mo khi nao, "Mở khi đã học
+     * thêm Bài 3, 10–12". Mon chua chon bai da hoc thi bao chon truoc.
      */
-    private fun hoiDeThi(mon: String, cac: List<GiaiDe.TinhTrangDeThi>) {
+    private fun moTaDeHepNhat(cua: List<GiaiDe.TinhTrangDeThi>): String {
+        val t = cua.filter { it.trangThai == GiaiDe.TT_KHOA }
+            .minByOrNull { tt -> tt.thieu.sumOf { it.cacSo.size } }
+            ?.thieu?.firstOrNull() ?: return ""
+        if (t.chuaChon) return "Chọn bài lớp đã học trước"
+        return "Mở khi đã học thêm ${if (t.laUnit) "Unit" else "Bài"} ${PhanHoc.gon(t.cacSo)}"
+    }
+
+    /**
+     * Danh sach de thi cua mot ky: moi de mot dong kem tinh trang. Bam de dang mo thi vao lam,
+     * de mo duoc thi mo, de da lam thi xem lai hay lam lai, de chua du pham vi thi noi con
+     * thieu bai nao.
+     */
+    private fun hoiDeThi(tieuDe: String, cac: List<GiaiDe.TinhTrangDeThi>) {
         val dong = cac.map { t ->
             val sao = t.lanCuoi?.let { "${it.saoDat.coerceAtLeast(0)}/${it.saoToiDa} ★" }.orEmpty()
             t.de.ten + " · " + when (t.trangThai) {
@@ -280,32 +324,23 @@ class LuyenTapActivity : AppCompatActivity() {
                 GiaiDe.TT_DANG -> "đang làm"
                 GiaiDe.TT_XONG -> "đã làm $sao"
                 GiaiDe.TT_SAN -> "chưa làm"
-                else -> "mở khi học ${GiaiDe.moTaPhamVi(t.de)}"
+                else -> GiaiDe.moTaThieu(t.thieu)
             }
         }.toTypedArray()
         MaterialAlertDialogBuilder(this)
-            .setTitle("Đề thi thử ${GiaiDe.tenMon(mon)}")
+            .setTitle(tieuDe)
             .setItems(dong) { _, i -> chonDeThi(cac[i]) }
             .setNegativeButton("Đóng", null)
             .show()
     }
 
     /**
-     * Cau noi khi con bam mot de chua toi pham vi. De Anh giu cau cu (30/9/2026): de chi mot
-     * phan, them dong "Hiện ..." thi chi nhac lai so Unit vua noi. De Toan, KHTN (1/10/2026) mo
-     * theo nhieu phan, nen noi phan nao con thieu ([GiaiDe.moTaThieu]) va dong nao can doi o khoi
-     * Lop da hoc toi: ten dong o do la [PhanHoc.Phan.ten] ("Toán 8 Hình học", xem [veHocToi]),
-     * tim theo [GiaiDe.Thieu.maPhan].
+     * Cau noi khi con bam mot de chua du pham vi: de mo khi da hoc nhung bai nao, con thieu bai
+     * nao ([GiaiDe.cauDeKhoa]), va cho doi la dong Bai da hoc o dau khu cua mon.
      */
-    private fun loiDeKhoa(t: GiaiDe.TinhTrangDeThi): String {
-        val phamVi = "Đề này mở khi lớp học ${GiaiDe.moTaPhamVi(t.de)}."
-        if (t.de.laTiengAnh) return "$phamVi Lớp học tới đó rồi thì đổi dòng Tiếng Anh ở khối Lớp đã học tới."
-        if (t.thieu.isEmpty()) return phamVi
-        val ten = t.thieu.map { th -> PhanHoc.theoMa(th.maPhan)?.ten ?: th.tenPhan }
-        val cacDong = if (ten.size == 1) "dòng ${ten.first()}"
-        else "các dòng ${ten.dropLast(1).joinToString(", ")} và ${ten.last()}"
-        return "$phamVi Hiện ${GiaiDe.moTaThieu(t.thieu)}. Lớp học tới đó rồi thì đổi $cacDong ở khối Lớp đã học tới."
-    }
+    private fun loiDeKhoa(t: GiaiDe.TinhTrangDeThi): String =
+        GiaiDe.cauDeKhoa(t.de, t.thieu) +
+            " Lớp học tới đó rồi thì đánh dấu thêm ở dòng Bài đã học, khu ${GiaiDe.tenMon(t.de.mon)}."
 
     private fun chonDeThi(t: GiaiDe.TinhTrangDeThi) {
         t.dangMo?.let { return GiaiDeActivity.mo(this, it.id) }
@@ -345,19 +380,20 @@ class LuyenTapActivity : AppCompatActivity() {
         }
     }
 
-    private fun chuaChonMoc(mon: String): Boolean =
-        if (mon == PhanHoc.TIENG_ANH) HocToi.unitCua(this, PhanHoc.BO_TIENG_ANH) == null
-        else PhanHoc.chuaChon(this, mon).isNotEmpty()
-
-    /** Mot dong, cung khuon voi dong o khoi Viec hom nay cua man chinh. */
+    /**
+     * Mot dong, cung khuon voi dong o khoi Viec hom nay cua man chinh, them so "đã làm / tổng"
+     * o cuoi ([so]). [nhat] la dong chi de nhin (ky chua co de): chu xam, khong bam duoc.
+     */
     private fun themDong(
         box: LinearLayout,
         hinh: Int,
         mau: Int,
         ten: String,
         phu: String = "",
+        so: String = "",
         xong: Boolean = false,
-        bam: () -> Unit
+        nhat: Boolean = false,
+        bam: (() -> Unit)? = null
     ) {
         val v = StDongViecBinding.inflate(layoutInflater, box, false)
         v.hinh.setImageResource(hinh)
@@ -366,11 +402,19 @@ class LuyenTapActivity : AppCompatActivity() {
             this, if (xong) R.color.ok_soft else R.color.canvas
         )
         v.ten.text = ten
+        if (nhat) v.ten.setTextColor(ContextCompat.getColor(this, R.color.ink_soft))
         v.phu.text = phu
         v.phu.visibility = if (phu.isBlank()) View.GONE else View.VISIBLE
-        v.duoi.text = if (xong) "✓" else "›"
+        v.so.text = so
+        v.so.visibility = if (so.isBlank()) View.GONE else View.VISIBLE
+        v.duoi.text = when {
+            xong -> "✓"
+            nhat -> ""
+            else -> "›"
+        }
         v.duoi.setTextColor(ContextCompat.getColor(this, if (xong) R.color.ok else R.color.ink_soft))
-        v.root.setOnClickListener { bam() }
+        if (bam != null && !nhat) v.root.setOnClickListener { bam() }
+        else v.root.isClickable = false
         box.addView(v.root)
     }
 
@@ -382,6 +426,9 @@ class LuyenTapActivity : AppCompatActivity() {
     }.timeInMillis
 
     companion object {
+        /** Ba khu theo thu tu tren trang, khop voi ba hop trong layout. */
+        private val KHU = listOf(PhanHoc.TOAN, PhanHoc.KHTN, PhanHoc.TIENG_ANH)
+
         fun mo(activity: Activity) {
             activity.startActivity(Intent(activity, LuyenTapActivity::class.java))
         }

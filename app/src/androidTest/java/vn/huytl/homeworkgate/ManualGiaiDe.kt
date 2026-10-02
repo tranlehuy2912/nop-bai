@@ -38,15 +38,12 @@ class ManualGiaiDe {
             val so = args.getString(khoa.getValue(ma))?.toIntOrNull() ?: macDinh
             // Toan hai phan tu 30/9/2026: so bai cua ca sach doi ra moc hai phan.
             if (ma == "toan8ct") {
-                MocToanThu.dat(context, so)
-                println("MANUAL_GIAIDE: moc Toan = ${MocToanThu.luu(context)}")
+                MocThu.datToan(context, so)
+                println("MANUAL_GIAIDE: bai da hoc Toan = ${HocToi.daHoc(context, PhanHoc.TOAN)}")
                 return@forEach
             }
-            val phan = PhanHoc.theoMa(ma) ?: return@forEach
-            val ten = if (so == 0) HocToi.CHUA_HOC_BAI_NAO
-            else PhanHoc.cacBai(context, phan).firstOrNull { PhanHoc.soBai(it) == so } ?: return@forEach
-            HocToi.ghiBai(context, ma, ten)
-            println("MANUAL_GIAIDE: moc $ma = ${ten.ifEmpty { "chua hoc" }}")
+            MocThu.datPhan(context, ma, so)
+            println("MANUAL_GIAIDE: bai da hoc KHTN = ${HocToi.daHoc(context, PhanHoc.KHTN)}")
         }
     }
 

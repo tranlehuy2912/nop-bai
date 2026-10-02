@@ -46,11 +46,9 @@ class GiaiDeTest {
     private lateinit var context: Context
     private lateinit var kho: KhoBai
 
-    private val cacPhan = listOf("toan8ds", "toan8hh", "khtn8hoa", "khtn8li", "khtn8sinh")
-    private val mocCu = mutableMapOf<String, String?>()
+    private var mocCu: Map<String, Set<Int>?> = emptyMap()
 
     /** Moc Unit Tieng Anh that tren may, tra lai sau test. Tu 29/9/2026 Tieng Anh cung ra de. */
-    private var unitCu: Int? = null
     private var nhacCu: List<NhacBai.Trang> = emptyList()
     private val deDaTao = mutableListOf<String>()
     private val cauDaGhi = mutableListOf<String>()
@@ -66,11 +64,10 @@ class GiaiDeTest {
         NganHang.napNeuCan(context)
         BoThe.napNeuCan(context)
         kho = KhoBai.get(context)
-        cacPhan.forEach { mocCu[it] = HocToi.baiCua(context, it) }
-        // Moc Unit that ma dang chon thi de tuan Tieng Anh lan vao moi test: bo di, test nao
+        mocCu = MocThu.luu(context)
+        // Unit that ma dang chon thi de tuan Tieng Anh lan vao moi test: bo di, test nao
         // can thi tu dat.
-        unitCu = HocToi.unitCua(context, PhanHoc.BO_TIENG_ANH)
-        HocToi.xoa(context, PhanHoc.BO_TIENG_ANH)
+        HocToi.xoa(context, PhanHoc.TIENG_ANH)
         // Giai de doc lich kiem tra tu moi trang vo dang nhac (tu 30/9/2026). Trang that tren
         // may co the dang bao sap kiem tra: giu lai de tra, roi bo di cho de tuan khong lan.
         nhacCu = NhacBai.docTrang(context)
@@ -81,25 +78,19 @@ class GiaiDeTest {
     fun tearDown() {
         deDaTao.forEach { kho.xoaDe(it) }
         cauDaGhi.forEach { kho.writableDatabase.delete("tra_loi", "cau_id = ?", arrayOf(it)) }
-        cacPhan.forEach { ma ->
-            HocToi.xoa(context, ma)
-            mocCu[ma]?.let { HocToi.ghiBai(context, ma, it) }
-        }
-        HocToi.xoa(context, PhanHoc.BO_TIENG_ANH)
-        unitCu?.let { HocToi.ghiUnit(context, PhanHoc.BO_TIENG_ANH, it) }
+        MocThu.tra(context, mocCu)
         NhacBai.xoaHet(context)
         nhacCu.forEach { NhacBai.ghi(context, it.ngay, it.cacDong) }
     }
 
+    /**
+     * "Lop hoc toi Bai [soBai]" cua mot phan, doi ra tap bai da hoc cua mon ([MocThu.datPhan]).
+     * "toan8ct" la cach viet cu cho ca sach Toan; null voi "toan8ct" la ca mon chua chon. Tu
+     * 2/10/2026 khong con "mot phan chua chon": null voi mot phan la khong bai nao cua phan do.
+     */
     private fun datMoc(ma: String, soBai: Int?) {
-        // "toan8ct" la cach viet cu cho ca sach Toan, doi ra hai phan Dai so, Hinh hoc.
-        if (ma == "toan8ct") return MocToanThu.dat(context, soBai)
-        HocToi.xoa(context, ma)
-        if (soBai == null) return
-        val phan = PhanHoc.theoMa(ma)!!
-        val ten = if (soBai == 0) HocToi.CHUA_HOC_BAI_NAO
-        else PhanHoc.cacBai(context, phan).first { PhanHoc.soBai(it) == soBai }
-        HocToi.ghiBai(context, ma, ten)
+        if (ma == "toan8ct") return MocThu.datToan(context, soBai)
+        MocThu.datPhan(context, ma, soBai ?: 0)
     }
 
     private fun taoDe(bayGio: Long): List<DeGiai> =
@@ -127,25 +118,28 @@ class GiaiDeTest {
     }
 
     @Test
-    fun chon_bai_khong_co_the_thi_bo_the_dung_o_bai_truoc() {
-        // Bo the Hoa khong co Bai 7: chon Bai 7 thi bo the dung o the cuoi cua Bai 6.
+    fun bo_the_chi_lay_bai_da_danh_dau() {
+        // Bo the Hoa khong co Bai 5, Bai 7: danh dau Bai 1-7 thi bo the lay dung cac bai co the.
         datMoc("khtn8hoa", 7)
-        val bai6 = kho.cacBaiTrongBoThe("khtn8hoa").first { PhanHoc.soBai(it) == 6 }
-        assertEquals(kho.thuTuCuoiCua("khtn8hoa", bai6), BoThe.denThuTu(context, "khtn8hoa"))
+        val so = BoThe.mocCua(context, "khtn8hoa")!!.chiBai!!.mapNotNull { PhanHoc.soBai(it) }.toSet()
+        assertTrue("bai ngoai phan da hoc: $so", so.all { it in 1..7 })
+        assertTrue(6 in so)
+        // Danh dau cach quang: bai bo trong khong vao, du bai sau no da danh dau.
+        MocThu.dat(context, "Khoa học tự nhiên", setOf(3, 6))
+        val cach = BoThe.mocCua(context, "khtn8hoa")!!.chiBai!!.mapNotNull { PhanHoc.soBai(it) }.toSet()
+        assertEquals(setOf(3, 6), cach)
         // Lop chua toi the dau tien cua bo (Bai 3) thi khong the nao.
         datMoc("khtn8hoa", 2)
-        assertEquals(-1, BoThe.denThuTu(context, "khtn8hoa"))
+        assertTrue(BoThe.mocCua(context, "khtn8hoa")!!.rong)
     }
 
     @Test
-    fun bai_da_hoc_gop_cac_phan() {
+    fun bai_da_hoc_cua_mon_gop_moi_phan() {
+        HocToi.xoa(context, "Khoa học tự nhiên")
+        assertNull("chua chon thi lam them phai hoi truoc", PhanHoc.baiDaHoc(context, "Khoa học tự nhiên"))
         datMoc("khtn8hoa", 6)
         datMoc("khtn8li", 0)
-        datMoc("khtn8sinh", null)
-        // Con mot phan chua chon thi lam them phai hoi truoc.
-        assertNull(PhanHoc.baiDaHoc(context, "Khoa học tự nhiên"))
-        // De tu mo thi bo qua phan chua chon.
-        assertEquals((1..6).toSet(), PhanHoc.baiDaHoc(context, "Khoa học tự nhiên", chiPhanDaChon = true))
+        assertEquals((1..6).toSet(), PhanHoc.baiDaHoc(context, "Khoa học tự nhiên"))
         datMoc("khtn8sinh", 31)
         assertEquals((1..6).toSet() + setOf(30, 31), PhanHoc.baiDaHoc(context, "Khoa học tự nhiên"))
     }
@@ -205,7 +199,7 @@ class GiaiDeTest {
         datMoc("khtn8hoa", 6)
         datMoc("khtn8li", 0)
         datMoc("khtn8sinh", null)
-        HocToi.ghiUnit(context, PhanHoc.BO_TIENG_ANH, 2)
+        MocThu.datUnit(context, 2)
 
         val moi = taoDe(sangThuBay).filter { it.loai == GiaiDe.LOAI_TUAN }
         assertEquals(setOf("Toán", "Khoa học tự nhiên", PhanHoc.TIENG_ANH), moi.map { it.mon }.toSet())
@@ -249,7 +243,7 @@ class GiaiDeTest {
 
     @Test
     fun chua_chon_moc_thi_khong_co_de() {
-        cacPhan.forEach { datMoc(it, null) }
+        MocThu.xoaHet(context)
         assertTrue(taoDe(sangThuBay).none { it.loai == GiaiDe.LOAI_TUAN })
     }
 

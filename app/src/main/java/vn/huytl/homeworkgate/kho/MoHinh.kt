@@ -279,12 +279,12 @@ data class BoDaNap(
     /** So the da qua het cac moc nho lai. Man chon bo ve thanh tien do tu day. */
     val soThuoc: Int = 0,
     /**
-     * Bai cuoi lop da hoc, [HocToi.CHUA_HOC_BAI_NAO], hoac null khi con chua chon (hay
-     * bai con chon khong con trong file). Xem [BoThe.denThuTu]. Bo nhieu phan (Toan) thi la
-     * bai cuoi da hoc theo thu tu sach, xem [BoThe.mocCua].
+     * null khi mon chua chon bai da hoc, [HocToi.CHUA_HOC_BAI_NAO] khi chua bai nao cua bo duoc
+     * danh dau, con lai la ten cac bai da danh dau noi bang dau phay (chi de biet co hay
+     * khong). Xem [BoThe.mocCua].
      */
     val hocToi: String? = null,
-    /** Dong mo ta moc cho the bo: "Lớp đã học tới Bài 9", hay moc tung phan cua bo Toan. */
+    /** Dong mo ta cho the bo: "Bài đã học: Bài 1–9, 12", null khi mon chua chon. */
     val moTaHocToi: String? = null
 )
 

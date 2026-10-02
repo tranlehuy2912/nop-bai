@@ -83,13 +83,19 @@ object LamTrenMay {
      *
      * Bo cau cua de Giai de con han, va bo muc "Ôn tập chương", "Test Yourself": de danh
      * cho Giai de. Cau con vua bam Bài này làm sau ([CauBoQua]) xep sau moi cau khac.
+     *
+     * [phan] khac null thi chi lay cau cua phan do (Ba Huy chot 2/10/2026: trang Luyen tap moi
+     * phan mot dong, "Luyện tập Toán Đại số", "Luyện tập KHTN Hoá học"...). Ca ba buoc deu loc,
+     * theo [PhanHoc.phanCuaCau]: cau muc on tap chuong lam o de tuan roi lam lai thi theo chuong.
      */
     fun cauLamThem(
         context: Context,
         mon: String,
         gioiHan: Int = SO_CAU_MOI_LUOT,
-        bayGio: Long = System.currentTimeMillis()
+        bayGio: Long = System.currentTimeMillis(),
+        phan: PhanHoc.Phan? = null
     ): List<Muc> {
+        fun cuaPhan(c: CauHoi): Boolean = phan == null || PhanHoc.phanCuaCau(c) == phan
         val kho = KhoBai.get(context)
         val han = bayGio - MOT_NAM
         val trongDe = kho.cauTrongDeConHan(bayGio)
@@ -107,7 +113,7 @@ object LamTrenMay {
         }
 
         // 1. Lam lai trong vong dau.
-        val cauLamLai = kho.cacCauTheoId(luot.keys.toList()).filter { it.mon == mon && it.id !in trongDe }
+        val cauLamLai = kho.cacCauTheoId(luot.keys.toList()).filter { it.mon == mon && it.id !in trongDe && cuaPhan(it) }
         cauLamLai.mapNotNull { c -> muc(context, c) }
             .filter { m -> m.tinhTrang.vong == 0 && LuatGhep.moLamLai(m.tinhTrang, m.ghep.sao, bayGio) }
             .forEach(::them)
@@ -116,7 +122,7 @@ object LamTrenMay {
         val saiAnh = kho.moiNhatMoiCau(han)
             .filter { !it.trenMay && !it.dung && it.cauId !in luot && bayGio >= it.luc + MOT_NGAY }
             .map { it.cauId }
-        kho.cacCauTheoId(saiAnh).filter { it.mon == mon && it.id !in trongDe }
+        kho.cacCauTheoId(saiAnh).filter { it.mon == mon && it.id !in trongDe && cuaPhan(it) }
             .mapNotNull { muc(context, it) }.forEach(::them)
 
         // 3. Cau moi trong phan da hoc.
@@ -125,7 +131,7 @@ object LamTrenMay {
             val theoBai = NganHang.cauSbtDaHoc(context, mon)
                 .filter {
                     it.lamTrenMay && it.id !in luot && it.id !in xong && it.id !in trongDe &&
-                        !it.bai.startsWith("Test Yourself")
+                        !it.bai.startsWith("Test Yourself") && cuaPhan(it)
                 }
                 .groupBy { it.bai }
             val vuaSai = kho.baiVuaSaiCuaMon(mon, han).filter { it in theoBai }
@@ -140,18 +146,22 @@ object LamTrenMay {
     /**
      * Cau den hen on lai: vong moi theo lich 3/10/20/30 ngay, hay lam lai trong mot vong on
      * chua du sao. Chi cau lam duoc tren may; cau Ngu van va cau chua soan ghep thi thoi.
+     *
+     * [mon] khac null thi chi cau cua mon do: tu 2/10/2026 trang Luyen tap moi mon mot dong
+     * "Ôn tập <môn>" (Ba Huy chot), thay cho mot dong On lai chung.
      */
     fun cauOn(
         context: Context,
         gioiHan: Int = SO_CAU_MOI_LUOT,
-        bayGio: Long = System.currentTimeMillis()
+        bayGio: Long = System.currentTimeMillis(),
+        mon: String? = null
     ): List<Muc> {
         val kho = KhoBai.get(context)
         val han = bayGio - MOT_NAM
         val denHen = kho.cacCauDenHenOn(han, bayGio)
         val lamLaiVongOn = kho.moiLuotTrenMay(han).filter { it.vong >= 1 }.map { it.cauId }.distinct()
         val cac = kho.cacCauTheoId((denHen + lamLaiVongOn).distinct())
-            .filter { it.mon in MON }
+            .filter { it.mon in MON && (mon == null || it.mon == mon) }
             .mapNotNull { muc(context, it) }
             .filter { m ->
                 m.cau.id in denHen ||
@@ -160,9 +170,56 @@ object LamTrenMay {
         return CauBoQua.sapSau(cac, CauBoQua.vuaBoQua(context, bayGio)) { it.cau.id }.take(gioiHan)
     }
 
-    /** So cau dang cho on, cho dong On lai o trang Luyen tap va dong "Luyện tập" ngoai man chinh. */
-    fun soCauOn(context: Context, bayGio: Long = System.currentTimeMillis()): Int =
-        runCatching { cauOn(context, Int.MAX_VALUE, bayGio).size }.getOrDefault(0)
+    /**
+     * So cau dang cho on, cho dong "Ôn tập <môn>" o trang Luyen tap ([mon]) va dong "Luyện tập"
+     * ngoai man chinh (ca ba mon).
+     */
+    fun soCauOn(context: Context, bayGio: Long = System.currentTimeMillis(), mon: String? = null): Int =
+        runCatching { cauOn(context, Int.MAX_VALUE, bayGio, mon).size }.getOrDefault(0)
+
+    /**
+     * So cau cua [mon] da on hom nay: luot tren may thuoc mot vong on (vong 1 tro di) tu nua dem.
+     * Cong voi [soCauOn] la so cau den hen trong ngay, cho dong "Ôn tập <môn>" ghi "2/5" (Ba Huy
+     * chot 2/10/2026): cau on xong thi het den hen, nen chi dem cau con lai thi so cu tut dan.
+     */
+    fun soDaOnHomNay(context: Context, mon: String, bayGio: Long = System.currentTimeMillis()): Int =
+        runCatching {
+            KhoBai.get(context).moiLuotTrenMay(nuaDem(bayGio))
+                .filter { it.vong >= 1 && it.mon == mon }
+                .map { it.cauId }.distinct().size
+        }.getOrDefault(0)
+
+    /**
+     * So cau da lam dung it nhat mot lan tren tong so cau lam tren may, cho dong Luyen tap cua
+     * trang Luyen tap va dong nho o man lam bai ("Đại số: đã làm 12/155 câu", Ba Huy chot
+     * 2/10/2026). Dem tren ca phan, ke ca bai lop chua hoc: tong dung yen, khong nhay khi con
+     * danh dau them bai. Khoa la [PhanHoc.Phan.ma]; Tieng Anh khong chia phan nen khoa la "".
+     *
+     * Chi cau sach bai tap cua cac bai co so: muc "Ôn tập chương", "Luyện tập chung", "Test
+     * Yourself" danh cho Giai de, khong bao gio ra o dong Luyen tap nen khong dem.
+     */
+    fun demTheoPhan(context: Context, mon: String): Map<String, Pair<Int, Int>> {
+        val kho = KhoBai.get(context)
+        val dung = kho.cacCauDaXong(0L)
+        val cac = NganHang.sachBaiTapCua(mon).flatMap { kho.cacCauCuaNguon(it.nguon) }
+            .filter { it.lamTrenMay && !it.bai.startsWith("Test Yourself") }
+        val ra = HashMap<String, Pair<Int, Int>>()
+        cac.forEach { c ->
+            val so = PhanHoc.soBai(c.bai) ?: return@forEach
+            val khoa = if (mon == PhanHoc.TIENG_ANH) "" else PhanHoc.cuaBai(mon, so)?.ma ?: return@forEach
+            val (d, t) = ra[khoa] ?: (0 to 0)
+            ra[khoa] = (d + if (c.id in dung) 1 else 0) to (t + 1)
+        }
+        return ra
+    }
+
+    private fun nuaDem(bayGio: Long): Long = java.util.Calendar.getInstance().apply {
+        timeInMillis = bayGio
+        set(java.util.Calendar.HOUR_OF_DAY, 0)
+        set(java.util.Calendar.MINUTE, 0)
+        set(java.util.Calendar.SECOND, 0)
+        set(java.util.Calendar.MILLISECOND, 0)
+    }.timeInMillis
 
     /** Cau luyen cho hay vap theo nhan loi, chi cau lam duoc tren may va chua lam tren may. */
     fun cauLuyen(context: Context, nhan: String, gioiHan: Int = KhoBai.SO_CAU_LUYEN): List<Muc> {

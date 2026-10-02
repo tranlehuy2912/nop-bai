@@ -19,9 +19,10 @@ import vn.huytl.homeworkgate.data.LichKiemTra
  * Hinh hoc; KHTN: Hoa, Li, Sinh - xem [PhanHoc]), con de in cua loigiaihay soan theo thu tu
  * sach: de giua ki 1 KHTN chi co cau Hoa, de giua ki 1 Toan la "ba chuong dau" (Dai so Bai
  * 1-9, Hinh hoc Bai 10-14). Nen pham vi khong ghi tay mot con so nhu den_unit cua de Anh ma
- * tinh tu tung cau: moi cau lam tren may ghi "bai_sgk" (so bai SGK no kiem), va pham vi cua
- * de o moi phan la bai cao nhat ma cac cau do cham toi ([De.denBai]). Dong ho: de in so phut
- * thi dung so do ("phut"), khong in thi Toan 90, KHTN 60 ([phutMacDinh]).
+ * tinh tu tung cau: moi cau lam tren may ghi "bai_sgk" (so bai SGK no kiem). Tu 2/10/2026
+ * pham vi la tap cac bai do ([De.cacBai]), vi con danh dau tung bai da hoc; [De.denBai] (bai
+ * cao nhat cua moi phan) chi con dung de xep de rong truoc ([De.doRong]). Dong ho: de in so
+ * phut thi dung so do ("phut"), khong in thi Toan 90, KHTN 60 ([phutMacDinh]).
  *
  * CAU TRUNG GIUA HAI DE. Cung mot cau in o hai de (cau 1 den 4 cua de giua ki 1 so 1 va so
  * 2 giong het nhau) thi de sau ghi "trung" tro ve cau cua de truoc, va hai de dung chung
@@ -84,7 +85,14 @@ object DeThi {
         val denBai: Map<String, Int>,
         /** Gio lam bai, phut. */
         val phut: Int,
-        val cacMuc: List<Muc>
+        val cacMuc: List<Muc>,
+        /**
+         * De Toan, KHTN: moi bai SGK ma cac cau lam tren may cham toi. De chi tu mo khi moi bai
+         * nay deu da danh dau la da hoc (Ba Huy chot 2/10/2026, xem
+         * [vn.huytl.homeworkgate.data.GiaiDe.thieuPhamVi]). Cau thieu bai_sgk thi coi nhu de thi
+         * ca nam: moi bai cua mon, nhu [denBai]. De Anh rong.
+         */
+        val cacBai: Set<Int> = emptySet()
     ) {
         /** Cac cau lam tren may, theo thu tu in, moi id mot lan. */
         val cauIds: List<String> get() = cacMuc.filter { it.boMay.isBlank() }.map { it.cauId }.distinct()
@@ -227,7 +235,8 @@ object DeThi {
                 denUnit = if (laAnh) meta.optInt("den_unit", DEN_UNIT_CA_NAM) else 0,
                 denBai = if (laAnh) emptyMap() else denBai(sach.mon, ma, cacMuc),
                 phut = meta.optInt("phut", phutMacDinh(sach.mon)),
-                cacMuc = cacMuc
+                cacMuc = cacMuc,
+                cacBai = if (laAnh) emptySet() else cacBai(sach.mon, cacMuc)
             )
         }
     }
@@ -250,6 +259,18 @@ object DeThi {
             .mapValues { (_, cac) -> cac.maxOf { it.baiSgk } }
         // Giu thu tu phan cua PhanHoc (Dai so truoc Hinh hoc, Hoa truoc Li) cho dong chu pham vi.
         return cacPhan.mapNotNull { p -> caoNhat[p.ma]?.let { p.ma to it } }.toMap()
+    }
+
+    /**
+     * Moi bai SGK ma cac cau lam tren may cua de cham toi. Co cau thieu bai_sgk thi khong doan:
+     * coi nhu de thi ca nam, moi bai cua mon, giong [denBai].
+     */
+    private fun cacBai(mon: String, cacMuc: List<Muc>): Set<Int> {
+        val lam = cacMuc.filter { it.boMay.isBlank() }
+        if (lam.any { it.baiSgk <= 0 || PhanHoc.cuaBai(mon, it.baiSgk) == null }) {
+            return PhanHoc.cuaMon(mon).flatMap { it.cacSo }.toSortedSet()
+        }
+        return lam.map { it.baiSgk }.toSortedSet()
     }
 
     private fun chuoi(a: org.json.JSONArray?): List<String> =

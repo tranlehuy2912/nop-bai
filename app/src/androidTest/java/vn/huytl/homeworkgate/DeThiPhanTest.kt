@@ -17,7 +17,6 @@ import vn.huytl.homeworkgate.data.LichKiemTra
 import vn.huytl.homeworkgate.data.Prefs
 import vn.huytl.homeworkgate.kho.DeGiai
 import vn.huytl.homeworkgate.kho.DeThi
-import vn.huytl.homeworkgate.kho.HocToi
 import vn.huytl.homeworkgate.kho.KhoBai
 import vn.huytl.homeworkgate.kho.NganHang
 import vn.huytl.homeworkgate.kho.PhanHoc
@@ -26,16 +25,17 @@ import java.time.LocalDateTime
 import java.time.ZoneId
 
 /**
- * De thi Toan, KHTN (Ba Huy chot 1/10/2026): pham vi tinh theo tung phan tu bai_sgk cua cau,
- * de tu mo khi moi phan co cau trong de da hoc toi, moi mon mot de dang mo, dong ho 90 va 60
- * phut khi de khong in gio. Xem [DeThi], [GiaiDe.taoDeThi], [GiaiDe.thieuPhamVi].
+ * De thi Toan, KHTN (Ba Huy chot 1/10/2026): pham vi tinh tu bai_sgk cua cau, moi mon mot de
+ * dang mo, dong ho 90 va 60 phut khi de khong in gio. Tu 2/10/2026 de tu mo khi MOI bai de hoi
+ * toi deu da danh dau la da hoc, ke ca khi con danh dau cach quang. Xem [DeThi], [GiaiDe.taoDeThi],
+ * [GiaiDe.thieuPhamVi].
  *
  * Luc viet test nay repo chua co file de Toan, KHTN that (buoc 4.4 moi soan), nen phan doc file
  * dung mot chuoi JSON gia ([DeThi.docTuChuoi]), con phan mo de dung de gia lap ([DeThi.thayChoTest])
  * lay cau sach bai tap that trong kho de dung duoc [DeGiai].
  *
- * CAN THAN: bo test nay ghi moc "Lớp đã học tới" cua moi phan, de va dong nhat ky vao may that,
- * roi tra lai moc cu, nhat ky hom nay va xoa moi de no tao. Nop de gia bang cach ghi thang luc nop vao de, khong di
+ * CAN THAN: bo test nay ghi bai da hoc cua moi mon, de va dong nhat ky vao may that, roi tra
+ * lai bai da hoc cu, nhat ky hom nay va xoa moi de no tao. Nop de gia bang cach ghi thang luc nop vao de, khong di
  * qua [GiaiDe.nop], nen khong ghi so cai, khong cap phut nao. Chay tren may ao, khong chay tren
  * tablet that.
  */
@@ -44,8 +44,7 @@ class DeThiPhanTest {
 
     private lateinit var context: Context
     private lateinit var kho: KhoBai
-    private var mocCu: Map<String, String?> = emptyMap()
-    private var unitCu: Int? = null
+    private var mocCu: Map<String, Set<Int>?> = emptyMap()
     private val deDaTao = mutableListOf<String>()
     private var nhatKyCu: Pair<Int, String?> = 0 to null
 
@@ -65,10 +64,8 @@ class DeThiPhanTest {
         context = InstrumentationRegistry.getInstrumentation().targetContext
         NganHang.napNeuCan(context)
         kho = KhoBai.get(context)
-        mocCu = PhanHoc.TAT_CA.associate { it.ma to HocToi.baiCua(context, it.ma) }
-        unitCu = HocToi.unitCua(context, PhanHoc.BO_TIENG_ANH)
-        PhanHoc.TAT_CA.forEach { HocToi.xoa(context, it.ma) }
-        HocToi.xoa(context, PhanHoc.BO_TIENG_ANH)
+        mocCu = MocThu.luu(context)
+        MocThu.xoaHet(context)
         val sp = Prefs.get(context).raw()
         nhatKyCu = sp.getInt(DayLog.K_DAY, 0) to sp.getString(DayLog.K_TEXT, null)
     }
@@ -77,12 +74,7 @@ class DeThiPhanTest {
     fun tearDown() {
         DeThi.thayChoTest = null
         deDaTao.forEach { kho.xoaDe(it) }
-        PhanHoc.TAT_CA.forEach { p ->
-            HocToi.xoa(context, p.ma)
-            mocCu[p.ma]?.let { HocToi.ghiBai(context, p.ma, it) }
-        }
-        HocToi.xoa(context, PhanHoc.BO_TIENG_ANH)
-        unitCu?.let { HocToi.ghiUnit(context, PhanHoc.BO_TIENG_ANH, it) }
+        MocThu.tra(context, mocCu)
         // Mo de bang tay, xem hinh deu ghi nhat ky: tra lai nhat ky hom nay nhu truoc test.
         Prefs.get(context).raw().edit()
             .putInt(DayLog.K_DAY, nhatKyCu.first)
@@ -92,24 +84,24 @@ class DeThiPhanTest {
 
     // ------------------------------------------------------------ cong cu
 
-    /** Dat moc mot phan toi bai so [so] (0 la chua hoc bai nao), ghi thang khong qua nhat ky. */
-    private fun moc(ma: String, so: Int) {
-        val phan = PhanHoc.theoMa(ma)!!
-        val ten = if (so == 0) HocToi.CHUA_HOC_BAI_NAO
-        else PhanHoc.cacBai(context, phan).first { PhanHoc.soBai(it) == so }
-        HocToi.ghiBai(context, ma, ten)
-    }
+    /** Phan [ma] hoc toi bai so [so] (0 la chua hoc bai nao), ghi thang khong qua nhat ky. */
+    private fun moc(ma: String, so: Int) = MocThu.datPhan(context, ma, so)
 
     /** Cau sach bai tap that lam duoc tren may, de de gia dung duoc [DeGiai]. */
     private fun cauSbt(nguon: String, bo: Int, soLuong: Int = 6): List<String> =
         kho.cacCauCuaNguon(nguon).filter { it.lamTrenMay && it.dang != "KHONG_TINH" }
             .drop(bo).take(soLuong).map { it.id }
 
+    /**
+     * De gia: pham vi la moi bai tu bai dau toi [denBai] cua tung phan, dung kieu de giua ki, cuoi
+     * ki that soan theo thu tu sach.
+     */
     private fun deGia(ma: String, mon: String, nguon: String, denBai: Map<String, Int>, cauIds: List<String>) =
         DeThi.De(
             ma = ma, nguon = nguon, mon = mon, ten = "Đề thử $ma", denUnit = 0, denBai = denBai,
             phut = DeThi.phutMacDinh(mon),
-            cacMuc = cauIds.mapIndexed { i, id -> DeThi.Muc(0, id, "Phần trắc nghiệm", "", "", "Câu ${i + 1}") }
+            cacMuc = cauIds.mapIndexed { i, id -> DeThi.Muc(0, id, "Phần trắc nghiệm", "", "", "Câu ${i + 1}") },
+            cacBai = denBai.flatMap { (ma, den) -> PhanHoc.theoMa(ma)!!.cacSoToi(den) }.toSet()
         )
 
     private val toanGk by lazy {
@@ -168,6 +160,7 @@ class DeThiPhanTest {
         val (gk, ck1, ck2) = DeThi.docTuChuoi(FILE_TOAN, SACH_TOAN)
 
         assertEquals("cau ve bo may khong tinh vao pham vi", linkedMapOf("toan8ds" to 6, "toan8hh" to 14), gk.denBai)
+        assertEquals("pham vi la dung cac bai cau cham toi", setOf(3, 6, 10, 12, 14), gk.cacBai)
         assertEquals(listOf("toan8ds", "toan8hh"), gk.denBai.keys.toList())
         assertEquals("de khong in gio thi Toan 90 phut", 90, gk.phut)
         assertEquals(0, gk.denUnit)
@@ -182,10 +175,12 @@ class DeThiPhanTest {
         assertEquals("de in gio thi theo gio in", 45, ck1.phut)
         assertEquals("cau trung dung id cau goc", "dethitoan8:TGK1-2.B3a", ck1.cacMuc[0].cauId)
         assertEquals("cau trung lay bai_sgk cua cau goc", linkedMapOf("toan8ds" to 20, "toan8hh" to 12), ck1.denBai)
+        assertEquals(setOf(12, 20), ck1.cacBai)
         assertEquals("cau trung lay hinh an cua cau goc", b3a.hinhDayDu, ck1.cacMuc[0].hinhDayDu)
         assertEquals("cau trung giu nhan rieng", "Câu 1", ck1.cacMuc[0].nhan)
 
         assertEquals("thieu bai_sgk thi coi nhu thi ca nam", linkedMapOf("toan8ds" to 32, "toan8hh" to 39), ck2.denBai)
+        assertEquals("thieu bai_sgk thi pham vi la ca sach", (1..39).toSet(), ck2.cacBai)
     }
 
     @Test
@@ -200,50 +195,57 @@ class DeThiPhanTest {
         val de = DeThi.docTuChuoi(chu, SACH_KHTN).single()
         assertEquals(60, de.phut)
         assertEquals(mapOf("khtn8hoa" to 8), de.denBai)
-        assertEquals("Hoá tới Bài 8", GiaiDe.moTaPhamVi(de))
-        val moc = GiaiDe.MocHoc(null, mapOf("khtn8hoa" to 9, "khtn8li" to null, "khtn8sinh" to null))
-        assertTrue("Li, Sinh chua chon khong chan de chi co cau Hoa", GiaiDe.thieuPhamVi(de, moc).isEmpty())
+        assertEquals("Bài 2, 8", GiaiDe.moTaPhamVi(de))
+        val moc = GiaiDe.MocHoc(mapOf(LichKiemTra.KHTN to (1..9).toSet()))
+        assertTrue("chua danh dau bai Li, Sinh khong chan de chi co cau Hoa", GiaiDe.thieuPhamVi(de, moc).isEmpty())
     }
 
     // ------------------------------------------------------------ pham vi va chu mo ta
 
+    private fun mocToan(cac: Set<Int>?) = GiaiDe.MocHoc(mapOf(LichKiemTra.TOAN to cac))
+
     @Test
-    fun thieu_pham_vi_noi_dung_phan_con_thieu() {
+    fun thieu_pham_vi_noi_dung_bai_con_thieu() {
         val gk = DeThi.docTuChuoi(FILE_TOAN, SACH_TOAN).first()
-        assertEquals("Đại số tới Bài 6, Hình học tới Bài 14", GiaiDe.moTaPhamVi(gk))
+        assertEquals("Bài 3, 6, 10, 12, 14", GiaiDe.moTaPhamVi(gk))
 
-        val thieu = GiaiDe.thieuPhamVi(gk, GiaiDe.MocHoc(null, mapOf("toan8ds" to 9, "toan8hh" to 12)))
-        assertEquals(listOf(GiaiDe.Thieu("Hình học", 12, 14, laUnit = false, maPhan = "toan8hh")), thieu)
-        assertEquals("Hình học mới tới Bài 12, đề cần Bài 14", GiaiDe.moTaThieu(thieu))
+        val thieu = GiaiDe.thieuPhamVi(gk, mocToan(((1..9) + (10..12)).toSet()))
+        assertEquals(listOf(GiaiDe.Thieu(listOf(14), laUnit = false)), thieu)
+        assertEquals("thiếu Bài 14", GiaiDe.moTaThieu(thieu))
 
-        assertTrue(GiaiDe.thieuPhamVi(gk, GiaiDe.MocHoc(null, mapOf("toan8ds" to 6, "toan8hh" to 14))).isEmpty())
-        assertEquals(
-            "Đại số chưa chọn bài, đề cần Bài 6; Hình học chưa học bài nào, đề cần Bài 14",
-            GiaiDe.moTaThieu(GiaiDe.thieuPhamVi(gk, GiaiDe.MocHoc(null, mapOf("toan8ds" to null, "toan8hh" to 0))))
+        assertTrue(
+            "chi can dung cac bai de hoi, khong can bai dau sach",
+            GiaiDe.thieuPhamVi(gk, mocToan(setOf(3, 6, 10, 12, 14))).isEmpty()
         )
+        // Luat 2/10/2026: danh dau cach quang thi bai bo trong van thieu, du bai cao nhat da qua.
+        assertEquals(
+            "thiếu Bài 6",
+            GiaiDe.moTaThieu(GiaiDe.thieuPhamVi(gk, mocToan((1..14).toSet() - 6)))
+        )
+        assertEquals("chưa chọn bài đã học", GiaiDe.moTaThieu(GiaiDe.thieuPhamVi(gk, mocToan(null))))
+        assertEquals("thiếu Bài 3, 6, 10, 12, 14", GiaiDe.moTaThieu(GiaiDe.thieuPhamVi(gk, mocToan(emptySet()))))
 
-        // Dai so danh so ngat quang (Bai 1-9 roi 18-32): hoc toi Bai 21 la da qua Bai 20.
+        // Dai so danh so ngat quang (Bai 1-9 roi 18-32): Bai 20 nam sau Hinh hoc trong sach.
         val ck = DeThi.docTuChuoi(FILE_TOAN, SACH_TOAN)[1]
-        assertTrue(GiaiDe.thieuPhamVi(ck, GiaiDe.MocHoc(null, mapOf("toan8ds" to 21, "toan8hh" to 12))).isEmpty())
-        assertEquals(1, GiaiDe.thieuPhamVi(ck, GiaiDe.MocHoc(null, mapOf("toan8ds" to 9, "toan8hh" to 12))).size)
+        assertTrue(GiaiDe.thieuPhamVi(ck, mocToan(((1..9) + (18..21) + (10..12)).toSet())).isEmpty())
+        assertEquals(1, GiaiDe.thieuPhamVi(ck, mocToan((1..12).toSet())).size)
 
         val anh = DeThi.tatCa(context).first { it.ma == "GK1-1" }
-        assertEquals("tới Unit 3", GiaiDe.moTaPhamVi(anh))
-        assertEquals(
-            "Lớp mới tới Unit 2, đề cần Unit 3",
-            GiaiDe.moTaThieu(GiaiDe.thieuPhamVi(anh, GiaiDe.MocHoc(2, emptyMap())))
-        )
-        assertTrue(GiaiDe.thieuPhamVi(anh, GiaiDe.MocHoc(3, emptyMap())).isEmpty())
+        fun mocAnh(cac: Set<Int>?) = GiaiDe.MocHoc(mapOf(PhanHoc.TIENG_ANH to cac))
+        assertEquals("Unit 1–3", GiaiDe.moTaPhamVi(anh))
+        assertEquals("thiếu Unit 3", GiaiDe.moTaThieu(GiaiDe.thieuPhamVi(anh, mocAnh(setOf(1, 2)))))
+        assertTrue(GiaiDe.thieuPhamVi(anh, mocAnh(setOf(1, 2, 3))).isEmpty())
+        assertEquals("thiếu Unit 1", GiaiDe.moTaThieu(GiaiDe.thieuPhamVi(anh, mocAnh(setOf(2, 3)))))
     }
 
     // ------------------------------------------------------------ tu mo, moi mon mot de
 
     @Test
-    fun moi_mon_mot_de_mo_khi_moi_phan_co_cau_da_hoc_toi() {
+    fun moi_mon_mot_de_mo_khi_du_moi_bai_de_hoi() {
         assertTrue("cau sbt du dung de gia", toanGk.cauIds.size >= 3 && toanCk.cauIds.size >= 3 && khtnGk.cauIds.size >= 3)
         DeThi.thayChoTest = listOf(toanGk, toanCk, khtnGk)
 
-        assertTrue("chua chon moc thi khong mo", tuMo(toi).isEmpty())
+        assertTrue("chua chon bai da hoc thi khong mo", tuMo(toi).isEmpty())
 
         moc("toan8ds", 9)
         moc("toan8hh", 12)
@@ -284,8 +286,8 @@ class DeThiPhanTest {
         val con = GiaiDe.moDeThi(context, "TTHU-CK", choBa = false, bayGio = toi)
         assertNull(con.de)
         val loi = con.loi.orEmpty()
-        assertTrue(loi, loi.contains("Đại số tới Bài 20, Hình học tới Bài 17"))
-        assertTrue(loi, loi.contains("Đại số mới tới Bài 9, đề cần Bài 20; Hình học mới tới Bài 12, đề cần Bài 17"))
+        assertTrue(loi, loi.contains("mở khi đã học Bài 1–20"))
+        assertTrue(loi, loi.contains("Còn thiếu Bài 13–20"))
 
         val ba = GiaiDe.moDeThi(context, "TTHU-CK", choBa = true, bayGio = toi)
         assertNotNull(ba.de)
@@ -301,12 +303,9 @@ class DeThiPhanTest {
         val tt = GiaiDe.tinhTrangDeThi(context, toi).associateBy { it.de.ma }
         assertEquals(GiaiDe.TT_SAN, tt["TTHU-GK"]?.trangThai)
         assertEquals(GiaiDe.TT_KHOA, tt["TTHU-CK"]?.trangThai)
-        assertEquals(
-            "Đại số mới tới Bài 9, đề cần Bài 20; Hình học mới tới Bài 12, đề cần Bài 17",
-            GiaiDe.moTaThieu(tt["TTHU-CK"]!!.thieu)
-        )
-        assertEquals("KHTN chua chon moc Hoa", GiaiDe.TT_KHOA, tt["KTHU-GK"]?.trangThai)
-        assertEquals("Hoá chưa chọn bài, đề cần Bài 5", GiaiDe.moTaThieu(tt["KTHU-GK"]!!.thieu))
+        assertEquals("thiếu Bài 13–20", GiaiDe.moTaThieu(tt["TTHU-CK"]!!.thieu))
+        assertEquals("KHTN chua chon bai da hoc", GiaiDe.TT_KHOA, tt["KTHU-GK"]?.trangThai)
+        assertEquals("chưa chọn bài đã học", GiaiDe.moTaThieu(tt["KTHU-GK"]!!.thieu))
     }
 
     @Test

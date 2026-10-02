@@ -10,7 +10,6 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.updatePadding
 import androidx.lifecycle.lifecycleScope
-import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -21,10 +20,8 @@ import vn.huytl.homeworkgate.data.LamTrenMay
 import vn.huytl.homeworkgate.data.LuatGhep
 import vn.huytl.homeworkgate.data.LuotDangLam
 import vn.huytl.homeworkgate.databinding.StActivityLamBaiBinding
-import vn.huytl.homeworkgate.kho.BoTuVung
 import vn.huytl.homeworkgate.kho.CauHoi
 import vn.huytl.homeworkgate.kho.DeThi
-import vn.huytl.homeworkgate.kho.HocToi
 import vn.huytl.homeworkgate.kho.NganHang
 import vn.huytl.homeworkgate.kho.PhanHoc
 
@@ -66,6 +63,9 @@ class LamBaiActivity : AppCompatActivity() {
     private var mon = ""
     private var nhan = ""
 
+    /** Phan dang luyen ("Luyện tập Toán Đại số"), null la ca mon. */
+    private var phan: PhanHoc.Phan? = null
+
     private var cac: List<LamTrenMay.Muc> = emptyList()
     private var vt = 0
     private var luot = LuatGhep.Luot(1)
@@ -99,6 +99,7 @@ class LamBaiActivity : AppCompatActivity() {
             .getOrDefault(LamTrenMay.Loai.LAM_THEM)
         mon = intent.getStringExtra(EXTRA_MON).orEmpty()
         nhan = intent.getStringExtra(EXTRA_NHAN).orEmpty()
+        phan = intent.getStringExtra(EXTRA_PHAN)?.let { PhanHoc.theoMa(it) }
         b.nutQuayLai.setOnClickListener { finish() }
         b.nutKiem.setOnClickListener { kiem() }
         b.nutTiep.setOnClickListener { tiep() }
@@ -115,39 +116,23 @@ class LamBaiActivity : AppCompatActivity() {
     }
 
     private fun tenMan(): String = when (loai) {
-        LamTrenMay.Loai.ON -> "Ôn lại câu đến hẹn"
+        LamTrenMay.Loai.ON -> if (mon.isBlank()) "Ôn lại câu đến hẹn" else "Ôn tập ${GiaiDe.tenMon(mon)}"
         LamTrenMay.Loai.LUYEN -> "Luyện chỗ hay vấp"
-        else -> "Luyện tập ${GiaiDe.tenMon(mon)}"
+        else -> "Luyện tập ${GiaiDe.tenMon(mon)}" + (phan?.let { " ${it.tenDai}" } ?: "")
     }
 
     /**
-     * Lam them phai biet lop da hoc toi dau (Ba Huy dan chi lay cau trong phan da hoc). Chua
-     * chon moc thi hoi truoc, roi moi lay cau.
+     * Lam them phai biet lop da hoc nhung bai nao (Ba Huy dan chi lay cau trong phan da hoc).
+     * Mon chua chon lan nao thi hoi truoc (hop chon nhieu bai, [ChonHocToi.hoiMon]), roi moi
+     * lay cau; bam "Để sau" thi lui ra, vi khong co gi de lam.
      */
     private fun hoiMocRoiTai() {
         if (loai != LamTrenMay.Loai.LAM_THEM) return tai()
-        if (mon == PhanHoc.TIENG_ANH) {
-            if (HocToi.unitCua(this, PhanHoc.BO_TIENG_ANH) == null) return hoiUnit()
-            return tai()
-        }
-        if (PhanHoc.chuaChon(this, mon).isNotEmpty()) {
-            ChonHocToi.hoiPhanConThieu(this, mon) { tai() }
+        if (PhanHoc.chuaChon(this, mon)) {
+            ChonHocToi.hoiMon(this, mon, huy = { finish() }) { tai() }
             return
         }
         tai()
-    }
-
-    private fun hoiUnit() {
-        val bo = BoTuVung.BO.firstOrNull { it.bo == PhanHoc.BO_TIENG_ANH } ?: return tai()
-        val nhanUnit = arrayOf("Chưa học Unit nào") + (1..12).map { "Unit $it" }
-        MaterialAlertDialogBuilder(this)
-            .setTitle("Lớp đã học tới Unit nào?")
-            .setItems(nhanUnit) { _, i ->
-                HocToi.datUnit(this, bo, i)
-                tai()
-            }
-            .setOnCancelListener { finish() }
-            .show()
     }
 
     private fun tai() {
@@ -157,9 +142,9 @@ class LamBaiActivity : AppCompatActivity() {
                 val chon = runCatching {
                     NganHang.napNeuCan(ct)
                     when (loai) {
-                        LamTrenMay.Loai.ON -> LamTrenMay.cauOn(ct)
+                        LamTrenMay.Loai.ON -> LamTrenMay.cauOn(ct, mon = mon.ifBlank { null })
                         LamTrenMay.Loai.LUYEN -> LamTrenMay.cauLuyen(ct, nhan)
-                        else -> LamTrenMay.cauLamThem(ct, mon)
+                        else -> LamTrenMay.cauLamThem(ct, mon, phan = phan)
                     }
                 }.getOrDefault(emptyList())
                 // Hinh an tim o day, ngoai luong giao dien: lan dau goi, DeThi doc ca cac file bo
@@ -176,11 +161,12 @@ class LamBaiActivity : AppCompatActivity() {
             hinhAn = hinh
             nhanDe = nhan
             vt = 0
+            capNhatTong()
             if (cac.isEmpty()) {
                 b.phuDe.text = when (loai) {
                     LamTrenMay.Loai.ON -> "Hôm nay chưa có câu nào đến hẹn."
                     LamTrenMay.Loai.LUYEN -> "Chưa có câu nào để luyện."
-                    else -> "Hết câu trong phần lớp đã học. Học bài mới thì chọn lại mốc."
+                    else -> "Hết câu trong các bài đã đánh dấu. Lớp học bài mới thì đánh dấu thêm ở dòng Bài đã học của trang Luyện tập."
                 }
                 b.nutKiem.visibility = View.GONE
                 b.nutBoQua.visibility = View.GONE
@@ -255,6 +241,7 @@ class LamBaiActivity : AppCompatActivity() {
             ghi?.let {
                 daGhi += it
                 LuotDangLam.xoa(this@LamBaiActivity, m.cau.id)
+                capNhatTong()
             }
             val phut = (ghi?.phutCap ?: 0) + (ghi?.phutQuy ?: 0)
             // Vang nhu sao da duoc khi co sao. Truoc 2/10/2026 cau dung la chu xanh la, ca khi
@@ -292,6 +279,30 @@ class LamBaiActivity : AppCompatActivity() {
         if (isFinishing) LamTrenMay.ghiNhatKy(applicationContext, mon, loai, daGhi.toList(), cauBoQua.toList())
     }
 
+    /**
+     * Dong nho "Đại số: đã làm 12/155 câu" khi luyen tap (Ba Huy chot 2/10/2026): ngoai "Câu
+     * 3/10" cua luot, con thay ca phan con bao nhieu cau. Cung so voi dong Luyen tap o trang
+     * Luyen tap ([LamTrenMay.demTheoPhan]); dem lai sau moi cau ghi xong.
+     */
+    private fun capNhatTong() {
+        if (loai != LamTrenMay.Loai.LAM_THEM) return
+        lifecycleScope.launch {
+            val ct = this@LamBaiActivity
+            val dem = withContext(Dispatchers.IO) {
+                runCatching {
+                    val theoPhan = LamTrenMay.demTheoPhan(ct, mon)
+                    val p = phan
+                    if (p != null) theoPhan[p.ma]
+                    else theoPhan.values.fold(0 to 0) { a, x -> (a.first + x.first) to (a.second + x.second) }
+                }.getOrNull()
+            }
+            if (dem == null || dem.second == 0) return@launch
+            val ten = phan?.tenDai ?: GiaiDe.tenMon(mon)
+            b.tongPhan.text = "$ten: đã làm ${dem.first}/${dem.second} câu"
+            b.tongPhan.visibility = View.VISIBLE
+        }
+    }
+
     companion object {
         /** Ten nut vien bo qua cau chua lam xong, xem chu thich dau lop. */
         const val TEN_LAM_SAU = "Bài này làm sau"
@@ -299,15 +310,24 @@ class LamBaiActivity : AppCompatActivity() {
         const val EXTRA_LOAI = "loai"
         const val EXTRA_MON = "mon"
         const val EXTRA_NHAN = "nhan"
+        const val EXTRA_PHAN = "phan"
 
-        fun moLamThem(context: Context, mon: String) = context.startActivity(
+        /**
+         * Luyen tap mot mon; [phan] khac null thi chi cau cua phan do, moi phan mot dong o trang
+         * Luyen tap (2/10/2026).
+         */
+        fun moLamThem(context: Context, mon: String, phan: PhanHoc.Phan? = null) = context.startActivity(
             Intent(context, LamBaiActivity::class.java)
                 .putExtra(EXTRA_LOAI, LamTrenMay.Loai.LAM_THEM.name)
                 .putExtra(EXTRA_MON, mon)
+                .putExtra(EXTRA_PHAN, phan?.ma)
         )
 
-        fun moOn(context: Context) = context.startActivity(
-            Intent(context, LamBaiActivity::class.java).putExtra(EXTRA_LOAI, LamTrenMay.Loai.ON.name)
+        /** On cau den hen; [mon] khac null thi chi cau cua mon do, dong "Ôn tập <môn>" (2/10/2026). */
+        fun moOn(context: Context, mon: String? = null) = context.startActivity(
+            Intent(context, LamBaiActivity::class.java)
+                .putExtra(EXTRA_LOAI, LamTrenMay.Loai.ON.name)
+                .putExtra(EXTRA_MON, mon)
         )
 
         fun moLuyen(context: Context, nhan: String) = context.startActivity(

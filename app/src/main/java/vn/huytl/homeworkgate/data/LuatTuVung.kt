@@ -123,7 +123,9 @@ object LuatTuVung {
     // ------------------------------------------------------ dang hoc unit nao
 
     /**
-     * Mot tu co nam trong phan lop da hoc khong, khi con chon da hoc toi [unitDaHoc].
+     * Mot tu co nam trong phan lop da hoc khong: Unit cua tu nam trong cac Unit con da danh
+     * dau ([unitDaHoc]). Truoc 2/10/2026 con chon "da hoc toi Unit N" va moi Unit tu 1 toi N
+     * la da hoc; nay con danh dau tung Unit (Ba Huy chot), moc cu tu chuyen thanh Unit 1-N.
      *
      * Con tu chon, xem [HocToi]. Truoc 25/9/2026 may doan Unit theo lich: dem tiet Tieng
      * Anh tu ngay khai giang, chia deu muoi hai Unit cho ca nam, lui mot tuan cho chac.
@@ -131,16 +133,16 @@ object LuatTuVung {
      * lop cham hon nhip chia deu mot chut la may hoi tu chua hoc bao gio. Ba Huy chon bo
      * han cach doan.
      *
-     * Van boc tu CA cac Unit tu 1 toi day chu khong chi Unit dang hoc: tu Unit 1 phai
-     * quay lai ca nam. Con so nay chi chan mot viec - hoi tu cua Unit lop chua toi.
+     * Van boc tu CA cac Unit da danh dau chu khong chi Unit dang hoc: tu Unit 1 phai
+     * quay lai ca nam. Tap nay chi chan mot viec - hoi tu cua Unit lop chua hoc.
      *
      * Tu ghi unit 0 la ban chep hong, xem [vn.huytl.homeworkgate.kho.TuVung.unit], va
      * chung KHONG bi loc khi con da hoc it nhat mot Unit: mot cho hong trong file khong
-     * duoc lam mat han mot tu khoi duong hoc. Con chon "chua hoc Unit nao" thi khong tu
-     * nao lot qua, ke ca tu do.
+     * duoc lam mat han mot tu khoi duong hoc. Con chon "chua hoc Unit nao" (tap rong) thi
+     * khong tu nao lot qua, ke ca tu do.
      */
-    fun daHoc(unitTu: Int, unitDaHoc: Int): Boolean =
-        unitDaHoc > HocToi.CHUA_HOC_UNIT_NAO && unitTu <= unitDaHoc
+    fun daHoc(unitTu: Int, unitDaHoc: Set<Int>): Boolean =
+        unitDaHoc.isNotEmpty() && (unitTu <= 0 || unitTu in unitDaHoc)
 
     // ------------------------------------------------------------------ cham
 

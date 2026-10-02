@@ -441,10 +441,10 @@ class ManualBang {
             "napontrenmay" -> {
                 SoCaiBai.xoaHet(context)
                 NganHang.napNeuCan(context)
-                val mocCu = MocToanThu.luu(context)
-                MocToanThu.dat(context, 3)
+                val mocCu = MocThu.luu(context)
+                MocThu.datToan(context, 3)
                 val m = LamTrenMay.cauLamThem(context, "Toán").firstOrNull()
-                MocToanThu.tra(context, mocCu)
+                MocThu.tra(context, mocCu)
                 m ?: error("khong co cau Toan nao lam duoc tren may")
                 val luot = LuatGhep.kiem(LuatGhep.kiem(LuatGhep.Luot(m.ghep.sao), soSai = 1), soSai = 0)
                 val luc = System.currentTimeMillis() - 4L * 24 * 60 * 60 * 1000
@@ -466,20 +466,21 @@ class ManualBang {
             // Le Hoa chon that. HocToi ghi bang commit() nen khong can epGhi.
             "hoctoi" -> {
                 val bo = ma ?: error("Thieu -e ma <bo>")
+                val mon = monCuaBo(bo)
                 if (phut != null) {
-                    HocToi.ghiUnit(context, bo, phut); ketQua = HocToi.unitCua(context, bo)
+                    // Bo tu: "hoc toi Unit N" doi ra Unit 1 toi N (2/10/2026: con danh dau tung Unit).
+                    MocThu.datUnit(context, phut)
                 } else if (vn.huytl.homeworkgate.kho.PhanHoc.cuaBoThe(bo).size > 1) {
-                    // Bo Toan hai phan (30/9/2026): doi ten bai ra so, dat ca hai phan theo so do.
-                    MocToanThu.dat(context, vn.huytl.homeworkgate.kho.PhanHoc.soBai(chu.orEmpty()) ?: 0)
-                    ketQua = MocToanThu.luu(context)
+                    // Bo Toan hai phan: doi ten bai ra so, danh dau moi bai tu 1 toi so do.
+                    MocThu.datToan(context, vn.huytl.homeworkgate.kho.PhanHoc.soBai(chu.orEmpty()) ?: 0)
                 } else {
-                    HocToi.ghiBai(context, bo, chu.orEmpty()); ketQua = HocToi.baiCua(context, bo)
+                    MocThu.datPhan(context, bo, vn.huytl.homeworkgate.kho.PhanHoc.soBai(chu.orEmpty()) ?: 0)
                 }
+                ketQua = HocToi.daHoc(context, mon)
             }
             "xoahoctoi" -> {
                 val bo = ma ?: error("Thieu -e ma <bo>")
-                if (vn.huytl.homeworkgate.kho.PhanHoc.cuaBoThe(bo).size > 1) MocToanThu.dat(context, null)
-                else HocToi.xoa(context, bo)
+                HocToi.xoa(context, monCuaBo(bo))
                 ketQua = 0
             }
             // Xoa lich su tra loi cua MOT bo the, de muc thu go dung luon co the den
@@ -565,4 +566,14 @@ class ManualBang {
             .getOrDefault(s)
 
     private fun ra(o: JSONObject) = println("BANGJSON: $o")
+
+    /**
+     * Mon cua mot ma bo the, ma phan hay bo tu, cho hai lenh "hoctoi", "xoahoctoi": tu 2/10/2026
+     * bai da hoc luu theo mon chu khong theo bo.
+     */
+    private fun monCuaBo(bo: String): String =
+        vn.huytl.homeworkgate.kho.BoThe.theoMa(bo)?.mon
+            ?: vn.huytl.homeworkgate.kho.PhanHoc.theoMa(bo)?.mon
+            ?: if (bo == vn.huytl.homeworkgate.kho.PhanHoc.BO_TIENG_ANH) vn.huytl.homeworkgate.kho.PhanHoc.TIENG_ANH
+            else error("Khong biet mon cua $bo")
 }

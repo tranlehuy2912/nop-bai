@@ -362,13 +362,13 @@ class ChonBaiActivity : AppCompatActivity() {
          * [NganHang.cauNenLamThemCuaMon] - nen phai co moc truoc. Chua chon thi hoi ngay,
          * va de lai mot dong de hoi lai neu con bam "Để sau".
          */
-        if (coSbt && PhanHoc.chuaChon(this, mon).isNotEmpty()) {
+        if (coSbt && PhanHoc.chuaChon(this, mon)) {
             val xong = { if (buoc == Buoc.LAM_THEM) veLai() }
             themDong(
-                ten = "Chọn bài lớp đã học tới",
+                ten = "Chọn bài lớp đã học",
                 phu = "Máy chỉ lấy câu trong các bài lớp đã học"
-            ) { ChonHocToi.hoiPhanConThieu(this, mon, xong) }
-            ChonHocToi.hoiPhanConThieu(this, mon, xong)
+            ) { ChonHocToi.hoiMon(this, mon, xong = xong) }
+            ChonHocToi.hoiMon(this, mon, xong = xong)
             return
         }
 
@@ -417,9 +417,9 @@ class ChonBaiActivity : AppCompatActivity() {
     }
 
     /**
-     * Dong moc "lop da hoc toi bai nao" o dau danh sach lam them. Bam vao de doi: lop hoc
-     * bai moi ma con khong doi thi danh sach cu mai la bai cu. Cung moc voi man Kiem tra
-     * bai, doi o day la doi ca hai - xem [PhanHoc].
+     * Dong "bai da hoc" o dau danh sach lam them. Bam vao de doi: lop hoc bai moi ma con
+     * khong danh dau thi danh sach cu mai la bai cu. Cung tap bai voi trang Luyen tap va man
+     * Kiem tra cong thuc, doi o day la doi ca ba - xem [PhanHoc.baiDaHoc].
      */
     private fun themDongMoc() {
         themDong(
@@ -429,7 +429,7 @@ class ChonBaiActivity : AppCompatActivity() {
     }
 
     private fun doiMoc() {
-        ChonHocToi.hoiDoiPhan(this, PhanHoc.cuaMon(mon)) { if (buoc == Buoc.LAM_THEM) veLai() }
+        ChonHocToi.hoiMon(this, mon) { if (buoc == Buoc.LAM_THEM) veLai() }
     }
 
     // ----------------------------------------------------------------- buoc luyen

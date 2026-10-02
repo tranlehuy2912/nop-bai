@@ -51,6 +51,16 @@
             android:textSize="14sp" />
     </LinearLayout>
 
+    <!-- So "đã làm / tổng" cua dong o trang Luyen tap (2/10/2026). Man chinh khong dung, de an. -->
+    <TextView
+        android:id="@+id/so"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:textColor="@color/ink_soft"
+        android:textSize="15sp"
+        android:visibility="gone" />
+
     <TextView
         android:id="@+id/duoi"
         android:layout_width="wrap_content"

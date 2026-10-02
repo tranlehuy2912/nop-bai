@@ -16,6 +16,7 @@ import vn.huytl.homeworkgate.kho.BoThe
 import vn.huytl.homeworkgate.kho.Ghep
 import vn.huytl.homeworkgate.kho.HocToi
 import vn.huytl.homeworkgate.kho.KhoBai
+import vn.huytl.homeworkgate.kho.PhanHoc
 import vn.huytl.homeworkgate.kho.TheHoc
 import vn.huytl.homeworkgate.kho.TraThe
 
@@ -461,32 +462,38 @@ class HocThuocTest {
     }
 
     /**
-     * Chua chon la khong co moc, chon "chua hoc bai nao" la moc -1: khong the nao lot.
-     * Bai con chon ma file doi ten thi cung khong co moc, de may hoi lai chu khong doan.
+     * Mon chua chon la khong co moc, de man hinh hoi lai chu khong doan; chon ma khong bai nao
+     * cua bo duoc danh dau thi moc rong, khong the nao lot. Tu 2/10/2026 moc la cac bai da danh
+     * dau cua mon ([BoThe.mocCua]), danh dau cach quang thi bo the cung cach quang.
      */
     @Test
-    fun chua_chon_chua_hoc_va_bai_doi_ten_deu_ra_dung_moc() {
+    fun chua_chon_chua_hoc_va_danh_dau_cach_quang_deu_ra_dung_moc() {
         val context = InstrumentationRegistry.getInstrumentation().targetContext
         val kho = KhoBai.get(context)
-        // Ghi bang HocToi.ghiBai chu khong bang datBai: datBai ghi them nhat ky, va
-        // dong "Le Hoa chon Bo thu" se sang Bang dieu khien nhu con chon that.
-        HocToi.xoa(context, "thu")
+        BoThe.napNeuCan(context)
+        // Ghi bang MocThu chu khong bang HocToi.datDaHoc: datDaHoc ghi them nhat ky, va dong
+        // "Le Hoa chon bai da hoc" se sang Bang dieu khien nhu con chon that.
+        val cu = MocThu.luu(context)
         try {
-            kho.napBoThe("thu", boBaBai())
-            assertNull(BoThe.denThuTu(context, "thu"))
+            HocToi.xoa(context, PhanHoc.KHTN)
+            assertNull(BoThe.mocCua(context, "khtn8hoa"))
 
-            HocToi.ghiBai(context, "thu", HocToi.CHUA_HOC_BAI_NAO)
-            assertEquals(-1, BoThe.denThuTu(context, "thu"))
+            MocThu.dat(context, PhanHoc.KHTN, emptySet())
+            val rong = BoThe.mocCua(context, "khtn8hoa")!!
+            assertTrue(rong.rong)
+            assertFalse(kho.conTheDenLuot("khtn8hoa", denThuTu = rong.denThuTu, chiBai = rong.chiBai))
+
+            MocThu.dat(context, PhanHoc.KHTN, setOf(3, 15))
+            fun so(bo: String) = BoThe.mocCua(context, bo)!!.chiBai!!.mapNotNull { PhanHoc.soBai(it) }.toSet()
+            assertEquals(setOf(3), so("khtn8hoa"))
+            assertEquals(setOf(15), so("khtn8li"))
+
+            // Tham so denThuTu cua kho van dung cho ai goi: -1 la khong the nao.
+            kho.napBoThe("thu", boBaBai())
             assertEquals(0, kho.soTheDenLuot("thu", denThuTu = -1))
             assertFalse(kho.conTheDenLuot("thu", denThuTu = -1))
-
-            HocToi.ghiBai(context, "thu", "Bài 2")
-            assertEquals(2, BoThe.denThuTu(context, "thu"))
-
-            HocToi.ghiBai(context, "thu", "Bài 2 cũ, file đã đổi tên")
-            assertNull(BoThe.denThuTu(context, "thu"))
         } finally {
-            HocToi.xoa(context, "thu")
+            MocThu.tra(context, cu)
             kho.napBoThe("thu", emptyList())
         }
     }

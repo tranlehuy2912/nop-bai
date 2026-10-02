@@ -1,5 +1,7 @@
 package vn.huytl.homeworkgate.ui
 
+import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.activity.OnBackPressedCallback
@@ -136,6 +138,9 @@ class HocThuocActivity : AppCompatActivity() {
     /** So cau da xong va da tra gio trong luot nay. */
     private var daTraXong = 0
 
+    /** Chi hien bo the cua mon nay ([mo]), null la moi bo. */
+    private var monLoc: String? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         b = ActivityHocThuocBinding.inflate(layoutInflater)
@@ -148,6 +153,7 @@ class HocThuocActivity : AppCompatActivity() {
             insets
         }
 
+        monLoc = intent.getStringExtra(EXTRA_MON)
         b.btnThoat.setOnClickListener { veLui() }
         b.btnChinh.setOnClickListener { if (daTraLoi) sangTheSau() else traLoi() }
         b.btnChiu.setOnClickListener { chiuThoi() }
@@ -182,12 +188,13 @@ class HocThuocActivity : AppCompatActivity() {
     // ------------------------------------------------------------- chon bo the
 
     private fun veChonBo() {
-        val bang = BoThe.bang(this)
+        val bang = BoThe.bang(this, monLoc)
         b.boxBo.visibility = View.VISIBLE
         b.boxHoi.visibility = View.GONE
         b.theXong.visibility = View.GONE
         b.boxBo.removeAllViews()
-        b.txtTieuDe.setText(R.string.hoc_thuoc_title)
+        b.txtTieuDe.text = monLoc?.let { "Kiểm tra công thức ${PhanHoc.tenNgan(it)}" }
+            ?: getString(R.string.hoc_thuoc_title)
 
         if (bang.isEmpty()) {
             b.txtTrong.visibility = View.VISIBLE
@@ -230,7 +237,7 @@ class HocThuocActivity : AppCompatActivity() {
         v.tenBo.setTextColor(mau(if (sang) R.color.ink else R.color.ink_soft))
 
         v.phuBo.text = when {
-            chuaChon -> "Chọn bài lớp đã học tới"
+            chuaChon -> "Chọn bài lớp đã học"
             conLuot -> "câu đến lượt hôm nay"
             // Dong cuoi da noi lop chua hoc toi bai nao, o day noi he qua cua no.
             chuaHoc -> "Chưa có câu để hỏi"
@@ -266,7 +273,7 @@ class HocThuocActivity : AppCompatActivity() {
         v.thanhThuoc.setIndicatorColor(if (sang) mauMon else mau(R.color.ok))
         v.chuThuoc.text = "Đã kiểm ${bo.soThuoc}/${bo.tongThe} câu"
 
-        v.chuHocToi.text = bo.moTaHocToi ?: "Lớp đã học tới: chưa chọn"
+        v.chuHocToi.text = bo.moTaHocToi ?: "Bài đã học: chưa chọn"
         v.btnHocToi.text = if (chuaChon) "Chọn" else "Đổi"
         v.btnHocToi.setOnClickListener { hoiHocToi(bo.bo, roiBatDau = chuaChon) }
 
@@ -281,43 +288,17 @@ class HocThuocActivity : AppCompatActivity() {
     }
 
     /**
-     * Hoi lop da hoc toi bai nao trong bo [ma], ghi lai, roi ve lai man chon bo.
+     * Hoi cac bai lop da hoc cua mon cua bo [ma] (hop chon nhieu bai, [ChonHocToi.hoiMon]), ghi
+     * lai, roi ve lai man chon bo. Mot hop cho ca mon tu 2/10/2026: bo Toan dung chung voi Luyen
+     * tap Toan, hai bo KHTN dung chung voi nhau va voi Luyen tap KHTN. Truoc do moi phan mot hop
+     * "lop da hoc toi bai nao", bo Toan phai hoi lan luot hai phan.
      *
      * [roiBatDau] khi con bam vao mot bo chua chon: con bam de lam, nen chon xong la
      * vao luot luon neu co the den luot, khong bat bam them lan nua.
      */
     private fun hoiHocToi(ma: String, roiBatDau: Boolean) {
         val bo = BoThe.theoMa(ma) ?: return
-        // Bo cua mot phan hoc (ca ba bo hien nay) thi hoi du cac bai cua phan, dung chung moc
-        // voi kho sach bai tap. Xem [PhanHoc]. Bo Toan hai phan Dai so, Hinh hoc (30/9/2026):
-        // con phan chua chon thi hoi lan luot, chon du roi thi hoi doi phan nao.
-        val cacPhan = PhanHoc.cuaBoThe(ma)
-        if (cacPhan.isNotEmpty()) {
-            val xong = { sauKhiChon(ma, roiBatDau) }
-            if (cacPhan.any { PhanHoc.hocToi(this, it) == null }) ChonHocToi.hoiCacPhanThieu(this, cacPhan, xong)
-            else ChonHocToi.hoiDoiPhan(this, cacPhan, xong)
-            return
-        }
-        val cacBai = KhoBai.get(this).cacBaiTrongBoThe(ma)
-        if (cacBai.isEmpty()) return
-        val cacMuc = listOf("Chưa học tới bài nào") + cacBai
-        val dangChon = when (val bai = HocToi.baiCua(this, ma)) {
-            null -> -1
-            HocToi.CHUA_HOC_BAI_NAO -> 0
-            else -> cacBai.indexOf(bai).let { if (it < 0) -1 else it + 1 }
-        }
-        ChonHocToi.hoi(
-            this,
-            tieuDe = "${bo.ten}: lớp đã học tới bài nào?",
-            goiY = "Tính cả bài đang học. Máy chỉ hỏi từ bài đầu tới hết bài " +
-                "${getString(R.string.child_name)} chọn. " +
-                "Không thấy bài đang học thì chọn bài gần nhất phía trên nó.",
-            cacMuc = cacMuc,
-            dangChon = dangChon
-        ) { i ->
-            HocToi.datBai(this, bo, if (i == 0) HocToi.CHUA_HOC_BAI_NAO else cacBai[i - 1])
-            sauKhiChon(ma, roiBatDau)
-        }
+        ChonHocToi.hoiMon(this, bo.mon) { sauKhiChon(ma, roiBatDau) }
     }
 
     private fun sauKhiChon(ma: String, roiBatDau: Boolean) {
@@ -662,8 +643,18 @@ class HocThuocActivity : AppCompatActivity() {
 
     private fun Int.dp(): Int = (this * resources.displayMetrics.density).toInt()
 
-    private companion object {
+    companion object {
         /** Sao cua mot the, cung la so phut cua no: xem [HocThuoc.GIAY_MOI_THE]. */
-        const val SAO_MOI_THE = HocThuoc.GIAY_MOI_THE / 60
+        private const val SAO_MOI_THE = HocThuoc.GIAY_MOI_THE / 60
+
+        private const val EXTRA_MON = "mon"
+
+        /**
+         * Mo man Kiem tra cong thuc. [mon] khac null thi chi hien bo the cua mon do: dong
+         * "Kiểm tra công thức <môn>" o tung khu cua trang Luyen tap (2/10/2026).
+         */
+        fun mo(activity: Activity, mon: String? = null) {
+            activity.startActivity(Intent(activity, HocThuocActivity::class.java).putExtra(EXTRA_MON, mon))
+        }
     }
 }

@@ -825,7 +825,7 @@ class HomeActivity : AppCompatActivity() {
                 LamTrenMay.soCauOn(this@HomeActivity).takeIf { it > 0 }?.let { add("ôn $it câu") }
                 GiaiDe.dangMo(this@HomeActivity).count { !it.daBatDau }.takeIf { it > 0 }
                     ?.let { add("$it đề đang mở") }
-                if (BoThe.tinhTrangManChinh(this@HomeActivity) == BoThe.TinhTrang.CO_THE) add("kiểm tra bài")
+                if (BoThe.tinhTrangManChinh(this@HomeActivity) == BoThe.TinhTrang.CO_THE) add("kiểm tra công thức")
             }.joinToString(" · ").replaceFirstChar { it.uppercase() }
         }.getOrDefault("")
         themViec(

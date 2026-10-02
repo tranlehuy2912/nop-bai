@@ -17,6 +17,7 @@ import vn.huytl.homeworkgate.kho.BuoiDo
 import vn.huytl.homeworkgate.kho.Chieu
 import vn.huytl.homeworkgate.kho.Ghep
 import vn.huytl.homeworkgate.kho.HocToi
+import vn.huytl.homeworkgate.kho.PhanHoc
 import vn.huytl.homeworkgate.kho.KhoBai
 import vn.huytl.homeworkgate.kho.TraTu
 import vn.huytl.homeworkgate.kho.TuVung
@@ -162,50 +163,55 @@ class TuVungTest {
     // --- dang hoc unit nao ---
 
     /**
-     * Con chon da hoc toi Unit nao thi chi hoi tu Unit 1 toi het Unit do.
+     * Chi hoi tu cua cac Unit con da danh dau.
      *
      * Truoc 25/9/2026 cho nay la may doan Unit theo lich, va test o day kiem nhip doan.
-     * Ba Huy bo han cach doan, cho con tu chon - xem [vn.huytl.homeworkgate.kho.HocToi].
+     * Ba Huy bo han cach doan, cho con tu chon - xem [vn.huytl.homeworkgate.kho.HocToi]. Tu
+     * 2/10/2026 con danh dau tung Unit, nen danh dau cach quang thi Unit bo trong khong hoi.
      */
     @Test
-    fun chi_hoi_tu_unit_mot_toi_het_unit_da_chon() {
-        assertTrue(LuatTuVung.daHoc(1, 3))
-        assertTrue(LuatTuVung.daHoc(3, 3))
-        assertFalse(LuatTuVung.daHoc(4, 3))
-        assertFalse(LuatTuVung.daHoc(12, 3))
+    fun chi_hoi_tu_cua_cac_unit_da_danh_dau() {
+        val toi3 = setOf(1, 2, 3)
+        assertTrue(LuatTuVung.daHoc(1, toi3))
+        assertTrue(LuatTuVung.daHoc(3, toi3))
+        assertFalse(LuatTuVung.daHoc(4, toi3))
+        assertFalse(LuatTuVung.daHoc(12, toi3))
+        assertFalse("Unit bo trong khong hoi", LuatTuVung.daHoc(2, setOf(1, 3)))
+        assertTrue(LuatTuVung.daHoc(3, setOf(1, 3)))
     }
 
     @Test
     fun chon_chua_hoc_unit_nao_thi_khong_tu_nao_lot_qua() {
-        assertFalse(LuatTuVung.daHoc(1, HocToi.CHUA_HOC_UNIT_NAO))
+        assertFalse(LuatTuVung.daHoc(1, emptySet()))
         // Ke ca tu chep hong unit 0: con vua noi la chua hoc gi.
-        assertFalse(LuatTuVung.daHoc(0, HocToi.CHUA_HOC_UNIT_NAO))
+        assertFalse(LuatTuVung.daHoc(0, emptySet()))
     }
 
     @Test
     fun tu_chep_hong_unit_0_van_duoc_hoi_khi_da_hoc() {
         // Mot cho hong trong file khong duoc lam mat han mot tu khoi duong hoc.
-        assertTrue(LuatTuVung.daHoc(0, 1))
+        assertTrue(LuatTuVung.daHoc(0, setOf(1)))
     }
 
     /**
-     * Chua chon la null, khac voi chon "chua hoc Unit nao". Hai cai lan nhau thi hoac
-     * may khong bao gio hoi con chon, hoac con da noi chua hoc ma may van bat chon lai.
+     * Chua chon la null, khac voi chon "chua hoc Unit nao" (tap rong). Hai cai lan nhau thi
+     * hoac may khong bao gio hoi con chon, hoac con da noi chua hoc ma may van bat chon lai.
      */
     @Test
     fun chua_chon_unit_khac_voi_chon_chua_hoc() {
         val context = InstrumentationRegistry.getInstrumentation().targetContext
-        // Ghi bang HocToi.ghiUnit chu khong bang datUnit, cung ly do ben HocThuocTest:
-        // datUnit ghi them nhat ky, va nhat ky sang Bang dieu khien.
-        HocToi.xoa(context, "thu")
+        // Ghi bang HocToi.ghiDaHoc chu khong bang datDaHoc, cung ly do ben HocThuocTest:
+        // datDaHoc ghi them nhat ky, va nhat ky sang Bang dieu khien.
+        val cu = HocToi.daHoc(context, PhanHoc.TIENG_ANH)
         try {
-            assertNull(HocToi.unitCua(context, "thu"))
-            HocToi.ghiUnit(context, "thu", HocToi.CHUA_HOC_UNIT_NAO)
-            assertEquals(HocToi.CHUA_HOC_UNIT_NAO, HocToi.unitCua(context, "thu"))
-            HocToi.ghiUnit(context, "thu", 3)
-            assertEquals(3, HocToi.unitCua(context, "thu"))
+            HocToi.xoa(context, PhanHoc.TIENG_ANH)
+            assertNull(HocToi.daHoc(context, PhanHoc.TIENG_ANH))
+            HocToi.ghiDaHoc(context, PhanHoc.TIENG_ANH, emptySet())
+            assertEquals(emptySet<Int>(), HocToi.daHoc(context, PhanHoc.TIENG_ANH))
+            HocToi.ghiDaHoc(context, PhanHoc.TIENG_ANH, setOf(1, 2, 3))
+            assertEquals(setOf(1, 2, 3), HocToi.daHoc(context, PhanHoc.TIENG_ANH))
         } finally {
-            HocToi.xoa(context, "thu")
+            MocThu.dat(context, PhanHoc.TIENG_ANH, cu)
         }
     }
 

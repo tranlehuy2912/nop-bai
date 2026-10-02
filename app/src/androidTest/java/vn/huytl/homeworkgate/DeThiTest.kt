@@ -42,7 +42,7 @@ class DeThiTest {
 
     private lateinit var context: Context
     private lateinit var kho: KhoBai
-    private var unitCu: Int? = null
+    private var unitCu: Set<Int>? = null
     private val deDaTao = mutableListOf<String>()
     private var nhatKyCu: Pair<Int, String?> = 0 to null
 
@@ -57,8 +57,8 @@ class DeThiTest {
         context = InstrumentationRegistry.getInstrumentation().targetContext
         NganHang.napNeuCan(context)
         kho = KhoBai.get(context)
-        unitCu = HocToi.unitCua(context, PhanHoc.BO_TIENG_ANH)
-        HocToi.xoa(context, PhanHoc.BO_TIENG_ANH)
+        unitCu = HocToi.daHoc(context, PhanHoc.TIENG_ANH)
+        HocToi.xoa(context, PhanHoc.TIENG_ANH)
         val sp = Prefs.get(context).raw()
         nhatKyCu = sp.getInt(DayLog.K_DAY, 0) to sp.getString(DayLog.K_TEXT, null)
     }
@@ -66,8 +66,7 @@ class DeThiTest {
     @After
     fun tearDown() {
         deDaTao.forEach { kho.xoaDe(it) }
-        HocToi.xoa(context, PhanHoc.BO_TIENG_ANH)
-        unitCu?.let { HocToi.ghiUnit(context, PhanHoc.BO_TIENG_ANH, it) }
+        MocThu.dat(context, PhanHoc.TIENG_ANH, unitCu)
         Prefs.get(context).raw().edit()
             .putInt(DayLog.K_DAY, nhatKyCu.first)
             .putString(DayLog.K_TEXT, nhatKyCu.second)
@@ -77,7 +76,8 @@ class DeThiTest {
     /** Cac de Tieng Anh, theo thu tu trong file. */
     private fun anh(): List<DeThi.De> = DeThi.tatCa(context).filter { it.laTiengAnh }
 
-    private fun moc(unit: Int) = HocToi.ghiUnit(context, PhanHoc.BO_TIENG_ANH, unit)
+    /** Lop hoc toi Unit [unit]: danh dau Unit 1 toi [unit]. */
+    private fun moc(unit: Int) = MocThu.datUnit(context, unit)
 
     /**
      * Tu 1/10/2026 [GiaiDe.taoDeThi] mo moi mon mot de va tra ca danh sach. O day chi lay de
@@ -149,7 +149,9 @@ class DeThiTest {
         assertEquals("Unit 6: de pham vi cao nhat, theo thu tu trong file", "CK1-2", tuMo(toi)?.let { GiaiDe.maDeThi(it) })
         val con = moTay("GK1-4", choBa = false, bayGio = toi)
         assertNull("de co cau Unit 9 chua mo cho con o Unit 6", con.de)
-        assertTrue(con.loi.orEmpty(), con.loi.orEmpty().contains("Unit 9"))
+        // Tu 2/10/2026 cau noi ca pham vi va phan con thieu: "mở khi đã học Unit 1–9. Còn thiếu Unit 7–9."
+        assertTrue(con.loi.orEmpty(), con.loi.orEmpty().contains("Unit 1–9"))
+        assertTrue(con.loi.orEmpty(), con.loi.orEmpty().contains("thiếu Unit 7–9"))
         deDaTao.forEach { kho.xoaDe(it) }
         deDaTao.clear()
 
@@ -235,7 +237,8 @@ class DeThiTest {
         moc(1)
         val con = moTay("GK1-2", choBa = false, bayGio = toi)
         assertNull(con.de)
-        assertTrue(con.loi.orEmpty(), con.loi.orEmpty().contains("Unit 3"))
+        assertTrue(con.loi.orEmpty(), con.loi.orEmpty().contains("Unit 1–3"))
+        assertTrue(con.loi.orEmpty(), con.loi.orEmpty().contains("thiếu Unit 2–3"))
 
         val ba = moTay("GK1-2", choBa = true, bayGio = toi)
         assertNotNull(ba.de)
