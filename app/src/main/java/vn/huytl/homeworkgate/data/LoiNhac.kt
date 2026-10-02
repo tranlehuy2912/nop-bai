@@ -118,28 +118,31 @@ object TinhLoiNhac {
             )
         }
 
-        // Chua chuan bi cho buoi ke tiep
-        if (ma !in maBuoiDaSoan) {
-            val soMon = buoi.monCanSoan.size
+        // Chua soan tap cho buoi chieu ke tiep. Buoi sang khong nhac soan, xem [buoiCanSoan]: buoi
+        // ke tiep la sang thu hai (the duc) thi toi chu nhat nhac soan cho chieu thu hai.
+        val (calSoan, buoiSoan) = buoiCanSoan(now) ?: return null
+        val maSoan = maBuoi(calSoan, buoiSoan)
+        if (maSoan !in maBuoiDaSoan) {
+            val soMon = buoiSoan.monCanSoan.size
 
             // Buoi khong co mon nao mang vo va cung khong co the duc thi khong co
             // viec gi de nhac ca. Im lang, dung bay ra mot loi nhac rong.
-            if (soMon == 0 && !buoi.coTheDuc) return null
+            if (soMon == 0 && !buoiSoan.coTheDuc) return null
 
             // Noi dung mon nao ra mon nay. Truoc day buoi chi co the duc van bao
             // "soan tap vo" roi them "khong phai mang vo", doc nhu app hong.
             val tieuDe = if (soMon == 0) {
-                "${moTaBuoi(buoi).replaceFirstChar { it.uppercase() }} có tiết học thể dục"
+                "${moTaBuoi(buoiSoan).replaceFirstChar { it.uppercase() }} có tiết học thể dục"
             } else {
-                "Soạn tập cho ${moTaBuoi(buoi)}"
+                "Soạn tập cho ${moTaBuoi(buoiSoan)}"
             }
-            val soBai = soBaiCho(calBuoi, buoi)
+            val soBai = soBaiCho(calSoan, buoiSoan)
             val chiTiet = when {
                 soMon == 0 -> "Chuẩn bị đồ thể dục"
                 else -> buildString {
                     append("$soMon môn cần mang")
                     if (soBai > 0) append(", $soBai bài phải làm")
-                    if (buoi.coTheDuc) append(", và nhớ đồ thể dục")
+                    if (buoiSoan.coTheDuc) append(", và nhớ đồ thể dục")
                 }
             }
             return LoiNhac(
@@ -147,8 +150,8 @@ object TinhLoiNhac {
                 tieuDe = tieuDe,
                 chiTiet = chiTiet,
                 gap = false,
-                buoi = buoi,
-                maBuoi = ma
+                buoi = buoiSoan,
+                maBuoi = maSoan
             )
         }
 
@@ -218,14 +221,26 @@ object TinhLoiNhac {
      * Bo qua ngay nghi le va chu nhat. Tim toi hai tuan de Le Hoa vuot qua duoc ky
      * nghi Tet dai.
      */
-    fun buoiKeTiep(now: Calendar): Pair<Calendar, BuoiHoc>? {
+    fun buoiKeTiep(now: Calendar): Pair<Calendar, BuoiHoc>? = buoiKeTiep(now) { true }
+
+    /**
+     * Buoi chieu gan nhat chua dien ra: buoi phai soan tap (Ba Huy chot 2/10/2026).
+     *
+     * Buoi sang chi co the duc (thu hai) va Tin hoc (thu sau), khong mon nao can soan vo, nen loi
+     * nhac soan tap, man Soan tap va dong "Soạn tập cho ..." o man chinh deu bo qua buoi sang va
+     * nhac cho buoi chieu ke tiep. Loi nhac chuan bi di hoc va man chan cua buoi sang van theo
+     * [buoiKeTiep]: sang thu hai van phai buong may di hoc the duc.
+     */
+    fun buoiCanSoan(now: Calendar): Pair<Calendar, BuoiHoc>? = buoiKeTiep(now) { it.buoi == Buoi.CHIEU }
+
+    private fun buoiKeTiep(now: Calendar, loc: (BuoiHoc) -> Boolean): Pair<Calendar, BuoiHoc>? {
         val phutHienTai = now.get(Calendar.HOUR_OF_DAY) * 60 + now.get(Calendar.MINUTE)
 
         for (lui in 0 until TIM_TOI_DA_NGAY) {
             val cal = (now.clone() as Calendar).apply { add(Calendar.DAY_OF_MONTH, lui) }
             if (NgayNghi.laNgayNghi(cal)) continue
 
-            val cacBuoi = ThoiKhoaBieu.buoiHocCua(cal.get(Calendar.DAY_OF_WEEK))
+            val cacBuoi = ThoiKhoaBieu.buoiHocCua(cal.get(Calendar.DAY_OF_WEEK)).filter(loc)
             val buoi = if (lui == 0) {
                 cacBuoi.firstOrNull { it.phutVaoHoc > phutHienTai }
             } else {

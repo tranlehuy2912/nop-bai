@@ -37,7 +37,6 @@ import vn.huytl.homeworkgate.data.GateStore
 import vn.huytl.homeworkgate.data.GiaiDe
 import vn.huytl.homeworkgate.data.LuatTuVung
 import vn.huytl.homeworkgate.data.KhoTinCuaCo
-import vn.huytl.homeworkgate.data.NgayNghi
 import vn.huytl.homeworkgate.data.NhacBai
 import vn.huytl.homeworkgate.data.Prefs
 import vn.huytl.homeworkgate.data.Mang
@@ -53,7 +52,6 @@ import vn.huytl.homeworkgate.kho.KhoBai
 import vn.huytl.homeworkgate.kho.NganHang
 import vn.huytl.homeworkgate.kho.PhanHoc
 import vn.huytl.homeworkgate.kho.PhamVi
-import vn.huytl.homeworkgate.data.ThoiKhoaBieu
 import vn.huytl.homeworkgate.data.TinhLoiNhac
 import vn.huytl.homeworkgate.databinding.ActivityHomeBinding
 import vn.huytl.homeworkgate.databinding.StDongViecBinding
@@ -727,7 +725,11 @@ class HomeActivity : AppCompatActivity() {
     }
 
     /**
-     * Dong soan cap cho buoi hoc ke tiep.
+     * Dong soan cap cho buoi chieu ke tiep.
+     *
+     * Dong phu chi ke cac mon can mang (Ba Huy chot 2/10/2026): truoc day con ghi gio vao hoc,
+     * gio buong may, so bai trong vo dan do va ten ky nghi. Gio da co o loi nhac di hoc va tab
+     * Lich, bai da co o dong "Bài dặn dò cho ..." ngay ben duoi.
      *
      * Soan xong roi thi dong VAN o day, chi doi sang dau tich xanh. An di thi man
      * hinh nhay mot cai roi mat mot dong, ma cai can noi - "khong con no gi" - lai
@@ -740,32 +742,16 @@ class HomeActivity : AppCompatActivity() {
      * vao trong man soan, o do co nut rieng va co hoi lai.
      */
     private fun themViecSoan() {
-        val ke = TinhLoiNhac.buoiKeTiep(Calendar.getInstance()) ?: return
+        // Chi buoi chieu, xem [TinhLoiNhac.buoiCanSoan].
+        val ke = TinhLoiNhac.buoiCanSoan(Calendar.getInstance()) ?: return
         val (cal, buoi) = ke
         val ma = TinhLoiNhac.maBuoi(cal, buoi)
         val daSoan = ma in prefs.buoiDaSoan
         val mon = buoi.monCanSoan
         if (mon.isEmpty() && !buoi.coTheDuc) return
 
-        // Bai trong vo dan do han dung buoi nay, xem [NhacBai]. Dong "Bài dặn dò cho ..." ngay
-        // duoi da ke tung bai; o day chi nhac so bai, de soan tap thi nho ca vo bai tap.
-        val soBai = runCatching {
-            NhacBai.choBuoi(this, cal, buoi).count { it.laBaiTap }
-        }.getOrDefault(0)
-        val phu = buildString {
-            append("Vào học ").append(TinhLoiNhac.gioPhut(buoi.phutVaoHoc))
-            append(", không xài máy lúc ")
-            append(TinhLoiNhac.gioPhut(ThoiKhoaBieu.phutBuongMay(buoi))).append('.')
-            if (mon.isEmpty()) {
-                append(" Chỉ cần mang đồ thể dục.")
-            } else {
-                append(" Cần mang: ").append(mon.joinToString(", "))
-                if (buoi.coTheDuc) append(", và đồ thể dục")
-                append('.')
-            }
-            if (soBai > 0) append(" Có $soBai bài phải làm cho buổi này.")
-            NgayNghi.tenKyNghi(cal)?.let { append(" Hôm đó là ").append(it).append('.') }
-        }
+        val phu = (mon + if (buoi.coTheDuc) listOf("đồ thể dục") else emptyList())
+            .joinToString(", ").replaceFirstChar { it.uppercase() }
 
         themViec(
             hinh = R.drawable.st_ic_cap_sach,

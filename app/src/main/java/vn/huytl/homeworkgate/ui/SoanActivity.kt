@@ -99,7 +99,8 @@ class SoanActivity : AppCompatActivity() {
 
     private fun nap() {
         daTich.clear()
-        val ke = TinhLoiNhac.buoiKeTiep(Calendar.getInstance())
+        // Chi buoi chieu, xem [TinhLoiNhac.buoiCanSoan].
+        val ke = TinhLoiNhac.buoiCanSoan(Calendar.getInstance())
         if (ke == null) {
             binding.tieuDe.text = "Không có buổi học nào sắp tới"
             binding.phuDe.text = "Chắc đang nghỉ."

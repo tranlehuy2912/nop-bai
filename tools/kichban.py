@@ -134,8 +134,8 @@ def danh_sach():
         dict(
             ma="chu-nhat", nhom="Màn chắn",
             ten="Chủ nhật — không được chắn, nhưng vẫn nhắc soạn tập",
-            # Khong doi "khong che gi": chu nhat van con the nhac soan cap cho sang
-            # thu hai, dung nhu dai thoi gian o tab Lich. Cai phai khong co la MAN
+            # Khong doi "khong che gi": chu nhat van con the nhac soan cap cho chieu
+            # thu hai (buoi sang khong nhac soan tu 2/10/2026), dung nhu dai thoi gian o tab Lich. Cai phai khong co la MAN
             # CHAN - do moi la cai giam Le Hoa o nha vao ngay nghi.
             lam=lambda m: (m.van(CHU_NHAT), m.nen()),
             luc=CHU_NHAT, loai="SOAN_VO", noi_khong="chan",

@@ -111,19 +111,24 @@ class TinhLoiNhacTest {
     }
 
     @Test
-    fun toi_thu_bay_thi_nhay_qua_chu_nhat_toi_sang_thu_hai() {
-        // 19/9/2026 la thu bay.
+    fun toi_thu_bay_thi_nhay_qua_chu_nhat_toi_thu_hai() {
+        // 19/9/2026 la thu bay. Buoi ke tiep la sang thu hai, con soan tap thi cho chieu thu hai.
+        val ke = TinhLoiNhac.buoiKeTiep(luc(19, 20, 0))!!
+        assertEquals(Calendar.MONDAY, ke.second.thu)
+        assertEquals(Buoi.SANG, ke.second.buoi)
         val nhac = TinhLoiNhac.tinh(luc(19, 20, 0), emptySet())!!
+        assertEquals(LoaiNhac.SOAN_VO, nhac.loai)
         assertEquals(Calendar.MONDAY, nhac.buoi!!.thu)
-        assertEquals(Buoi.SANG, nhac.buoi!!.buoi)
+        assertEquals(Buoi.CHIEU, nhac.buoi!!.buoi)
     }
 
     @Test
     fun sang_thu_hai_khong_co_mon_nao_can_soan_vo() {
         // Sang thu hai chi co the duc, khong mang vo nhung phai mac do.
-        val nhac = TinhLoiNhac.tinh(luc(14, 6, 0), emptySet())!!
-        assertEquals(0, nhac.buoi!!.monCanSoan.size)
-        assertTrue(nhac.buoi!!.coTheDuc)
+        val sang = TinhLoiNhac.buoiKeTiep(luc(14, 6, 0))!!.second
+        assertEquals(Buoi.SANG, sang.buoi)
+        assertEquals(0, sang.monCanSoan.size)
+        assertTrue(sang.coTheDuc)
     }
 
     @Test
@@ -138,12 +143,34 @@ class TinhLoiNhacTest {
     fun sang_thu_sau_chi_con_tin_hoc_tu_tiet_3() {
         // Tu 27/9/2026 sang thu sau khong con hai tiet AVNN o tiet 1 va 2. Toi thu nam
         // 17/9/2026 thi buoi ke tiep la sang thu sau, vao hoc luc 9h15.
-        val nhac = TinhLoiNhac.tinh(luc(17, 20, 0), emptySet())!!
-        assertEquals(LoaiNhac.SOAN_VO, nhac.loai)
-        assertEquals(Calendar.FRIDAY, nhac.buoi!!.thu)
-        assertEquals(Buoi.SANG, nhac.buoi!!.buoi)
-        assertEquals(listOf("Tin học"), nhac.buoi!!.monCanSoan)
-        assertEquals(9 * 60 + 15, nhac.buoi!!.phutVaoHoc)
+        val sang = TinhLoiNhac.buoiKeTiep(luc(17, 20, 0))!!.second
+        assertEquals(Calendar.FRIDAY, sang.thu)
+        assertEquals(Buoi.SANG, sang.buoi)
+        assertEquals(listOf("Tin học"), sang.monCanSoan)
+        assertEquals(9 * 60 + 15, sang.phutVaoHoc)
+    }
+
+    /**
+     * Buoi sang khong nhac soan tap (Ba Huy chot 2/10/2026): sang thu hai chi the duc, sang thu
+     * sau chi Tin hoc. Loi nhac soan, man Soan tap va dong o man chinh deu nham buoi chieu.
+     */
+    @Test
+    fun buoi_sang_khong_nhac_soan_tap_ma_nhac_cho_buoi_chieu() {
+        // Toi thu nam: buoi ke tiep la sang thu sau (Tin hoc), soan tap cho chieu thu sau.
+        val thuSau = TinhLoiNhac.tinh(luc(17, 20, 0), emptySet())!!
+        assertEquals(LoaiNhac.SOAN_VO, thuSau.loai)
+        assertEquals("Soạn tập cho chiều thứ sáu", thuSau.tieuDe)
+        assertEquals(Buoi.CHIEU, thuSau.buoi!!.buoi)
+        assertTrue(thuSau.maBuoi!!.endsWith("-CHIEU"))
+        val ca = TinhLoiNhac.buoiCanSoan(luc(17, 20, 0))!!
+        assertEquals(Calendar.FRIDAY, ca.second.thu)
+        assertEquals(Buoi.CHIEU, ca.second.buoi)
+
+        // Soan roi cho chieu thu sau thi im lang, du sang thu sau chua hoc.
+        assertNull(TinhLoiNhac.tinh(luc(17, 20, 0), setOf(thuSau.maBuoi!!)))
+
+        // Dang hoc chieu thu hai (14h): buoi can soan la chieu thu ba.
+        assertEquals(Calendar.TUESDAY, TinhLoiNhac.buoiCanSoan(luc(14, 14, 0))!!.second.thu)
     }
 
     @Test
@@ -163,14 +190,13 @@ class TinhLoiNhacTest {
     }
 
     @Test
-    fun buoi_chi_co_the_duc_thi_khong_bao_soan_vo() {
-        // Sang thu hai chi co the duc. Bao "soan tap vo" roi them "khong phai
-        // mang vo" thi doc nhu app hong, nen phai noi thang la chuan bi do.
+    fun sang_thu_hai_the_duc_khong_bao_chuan_bi_do_ma_nhac_soan_chieu() {
+        // Truoc 2/10/2026 6h sang thu hai bao "Sáng thứ hai có tiết học thể dục / Chuẩn bị đồ
+        // thể dục". Nay buoi sang khong nhac soan: 6h sang thu hai nhac soan cho chieu thu hai.
         val nhac = TinhLoiNhac.tinh(luc(14, 6, 0), emptySet())!!
         assertEquals(LoaiNhac.SOAN_VO, nhac.loai)
-        assertTrue(nhac.tieuDe.contains("tiết học thể dục"))
-        assertTrue(!nhac.tieuDe.contains("Soạn tập"))
-        assertEquals("Chuẩn bị đồ thể dục", nhac.chiTiet)
+        assertEquals("Soạn tập cho chiều thứ hai", nhac.tieuDe)
+        assertTrue(!nhac.chiTiet.contains("thể dục"))
     }
 
     @Test
