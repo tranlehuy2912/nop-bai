@@ -2,7 +2,7 @@
  "nguon": "dethikhtn8",
  "mon": "Khoa học tự nhiên",
  "ten": "Đề thi Khoa học tự nhiên 8",
- "ban": 2,
+ "ban": 3,
  "cac_bai": [
   {
    "chuong": "Giữa học kì 1",
@@ -9423,6 +9423,3329 @@
           "sai": [
            "1000 kg/l",
            "0,1 kg/l"
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "chuong": "Cuối học kì 1",
+   "bai": "Đề cuối kì 1 số 6",
+   "de_thi": {
+    "ma": "KCK1-6",
+    "nguon_goc": "loigiaihay.com, đăng 08/12/2023"
+   },
+   "cac_cau": [
+    {
+     "ma": "KCK1-6.C1",
+     "nhan": "Câu 1",
+     "phan": "",
+     "nhom": "",
+     "trung": "KCK1-4.C3"
+    },
+    {
+     "ma": "KCK1-6.C2",
+     "nhan": "Câu 2",
+     "phan": "",
+     "nhom": "",
+     "de": "Điền vào chỗ trống: \"Acid là những ___ trong phân tử có nguyên tử ___ liên kết với gốc acid. Khi tan trong nước, acid tạo ra ion ___\"\nA. đơn chất, hydrogen, OH^-\nB. hợp chất, hydroxide, H^+\nC. đơn chất, hydroxide, OH^-\nD. hợp chất, hydrogen, H^+",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "D",
+     "loai_dap_an": "TN",
+     "bai_sgk": 8,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Điền vào chỗ trống: \"Acid là những ___ trong phân tử có nguyên tử ___ liên kết với gốc acid. Khi tan trong nước, acid tạo ra ion ___\"",
+      "cac": [
+       "đơn chất, hydrogen, OH⁻",
+       "hợp chất, hydroxide, H⁺",
+       "đơn chất, hydroxide, OH⁻",
+       "hợp chất, hydrogen, H⁺"
+      ],
+      "dap": "D"
+     }
+    },
+    {
+     "ma": "KCK1-6.C3",
+     "nhan": "Câu 3",
+     "phan": "",
+     "nhom": "",
+     "de": "Acid là những chất làm cho quỳ tím chuyển sang màu nào trong số các màu sau đây?\nA. Xanh\nB. Đỏ\nC. Tím\nD. Vàng",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "bai_sgk": 8,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Acid là những chất làm cho quỳ tím chuyển sang màu nào trong số các màu sau đây?",
+      "cac": [
+       "Xanh",
+       "Đỏ",
+       "Tím",
+       "Vàng"
+      ],
+      "dap": "B"
+     }
+    },
+    {
+     "ma": "KCK1-6.C4",
+     "nhan": "Câu 4",
+     "phan": "",
+     "nhom": "",
+     "trung": "KCK1-3.C1"
+    },
+    {
+     "ma": "KCK1-6.C5",
+     "nhan": "Câu 5",
+     "phan": "",
+     "nhom": "",
+     "de": "Nhóm các dung dịch có pH nhỏ hơn 7 là\nA. NaOH, Ba(OH)2\nB. HCl, HNO3\nC. NaCl, KNO3\nD. nước cất, NaCl",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "bai_sgk": 9,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Nhóm các dung dịch có pH nhỏ hơn 7 là",
+      "cac": [
+       "NaOH, Ba(OH)₂",
+       "HCl, HNO₃",
+       "NaCl, KNO₃",
+       "nước cất, NaCl"
+      ],
+      "dap": "B"
+     },
+     "ghi_chu": "Đề in \"pH < 7\"; viết \"pH nhỏ hơn 7\" vì kiem.py không cho dấu nhỏ hơn trong chữ hiện trên máy."
+    },
+    {
+     "ma": "KCK1-6.C6",
+     "nhan": "Câu 6",
+     "phan": "",
+     "nhom": "",
+     "de": "Theo Arrhenius, base là\nA. chất khi tan trong nước phân li ra cation H^+\nB. chất khi tan trong nước phân li ra anion OH^-\nC. chất khi tan trong nước phân li ra cation kim loại\nD. chất khi tan trong nước phân li ra anion phi kim",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "bai_sgk": 9,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Theo Arrhenius, base là",
+      "cac": [
+       "chất khi tan trong nước phân li ra cation H⁺",
+       "chất khi tan trong nước phân li ra anion OH⁻",
+       "chất khi tan trong nước phân li ra cation kim loại",
+       "chất khi tan trong nước phân li ra anion phi kim"
+      ],
+      "dap": "B"
+     }
+    },
+    {
+     "ma": "KCK1-6.C7",
+     "nhan": "Câu 7",
+     "phan": "",
+     "nhom": "",
+     "de": "Cho các nhận định sau:\n(a) Đọc kĩ nhãn mác, không sử dụng hóa chất nếu không có nhãn mác hoặc nhãn mác bị mờ.\n(b) Ngửi, nếm hóa chất.\n(c) Ăn uống trong phòng thí nghiệm.\n(d) Sau khi lấy hóa chất xong cần phải đậy kín các lọ đựng hóa chất.\n(e) Đổ hóa chất trực tiếp vào cống thoát nước hoặc đổ ra môi trường.\n(f) Sử dụng tay tiếp xúc trực tiếp với hóa chất.\nNhững việc không được làm trong phòng thí nghiệm là\nA. (b), (c), (d)\nB. (b), (e), (f)\nC. (b), (c), (e), (f)\nD. (b), (c), (d), (f)",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "C",
+     "loai_dap_an": "TN",
+     "bai_sgk": 1,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Cho các nhận định sau:\n(a) Đọc kĩ nhãn mác, không sử dụng hóa chất nếu không có nhãn mác hoặc nhãn mác bị mờ.\n(b) Ngửi, nếm hóa chất.\n(c) Ăn uống trong phòng thí nghiệm.\n(d) Sau khi lấy hóa chất xong cần phải đậy kín các lọ đựng hóa chất.\n(e) Đổ hóa chất trực tiếp vào cống thoát nước hoặc đổ ra môi trường.\n(f) Sử dụng tay tiếp xúc trực tiếp với hóa chất.\nNhững việc không được làm trong phòng thí nghiệm là",
+      "cac": [
+       "(b), (c), (d)",
+       "(b), (e), (f)",
+       "(b), (c), (e), (f)",
+       "(b), (c), (d), (f)"
+      ],
+      "dap": "C"
+     }
+    },
+    {
+     "ma": "KCK1-6.C8",
+     "nhan": "Câu 8",
+     "phan": "",
+     "nhom": "",
+     "de": "Công thức nào dưới đây là công thức tính khối lượng riêng?\nA. D = P·V\nB. d = D·V\nC. d = P·V\nD. D = m/V",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "D",
+     "loai_dap_an": "TN",
+     "bai_sgk": 13,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Công thức nào dưới đây là công thức tính khối lượng riêng?",
+      "cac": [
+       "D = P·V",
+       "d = D·V",
+       "d = P·V",
+       "D = m/V"
+      ],
+      "dap": "D"
+     }
+    },
+    {
+     "ma": "KCK1-6.C9",
+     "nhan": "Câu 9",
+     "phan": "",
+     "nhom": "",
+     "de": "Dụng cụ dùng để đo khối lượng của một vật là\nA. bình chia độ\nB. bình tràn\nC. cân\nD. thước mét",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "C",
+     "loai_dap_an": "TN",
+     "bai_sgk": 13,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Dụng cụ dùng để đo khối lượng của một vật là",
+      "cac": [
+       "bình chia độ",
+       "bình tràn",
+       "cân",
+       "thước mét"
+      ],
+      "dap": "C"
+     }
+    },
+    {
+     "ma": "KCK1-6.C10",
+     "nhan": "Câu 10",
+     "phan": "",
+     "nhom": "",
+     "de": "Ba vật làm bằng ba chất khác nhau là đồng, sắt, nhôm có khối lượng bằng nhau. Khi nhúng chúng ngập vào trong nước thì lực đẩy Archimedes tác dụng vào vật nào là nhỏ nhất?\nA. Vật làm bằng đồng\nB. Vật làm bằng nhôm\nC. Vật làm bằng sắt\nD. Cả ba vật như nhau",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN",
+     "bai_sgk": 17,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Ba vật làm bằng ba chất khác nhau là đồng, sắt, nhôm có khối lượng bằng nhau. Khi nhúng chúng ngập vào trong nước thì lực đẩy Archimedes tác dụng vào vật nào là nhỏ nhất?",
+      "cac": [
+       "Vật làm bằng đồng",
+       "Vật làm bằng nhôm",
+       "Vật làm bằng sắt",
+       "Cả ba vật như nhau"
+      ],
+      "dap": "A"
+     }
+    },
+    {
+     "ma": "KCK1-6.C11",
+     "nhan": "Câu 11",
+     "phan": "",
+     "nhom": "",
+     "de": "Một vật móc vào lực kế và để ngoài không khí lực kế chỉ 2,13 N. Khi nhúng chìm vật trong nước lực kế chỉ 1,83 N. Tìm thể tích của vật, biết trọng lượng riêng của nước là 10000 N/m^3.\nA. 183 cm^3\nB. 30 cm^3\nC. 213 cm^3\nD. 396 cm^3",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "bai_sgk": 17,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Một vật móc vào lực kế và để ngoài không khí lực kế chỉ 2,13 N. Khi nhúng chìm vật trong nước lực kế chỉ 1,83 N. Tìm thể tích của vật, biết trọng lượng riêng của nước là 10000 N/m³.",
+      "cac": [
+       "183 cm³",
+       "30 cm³",
+       "213 cm³",
+       "396 cm³"
+      ],
+      "dap": "B"
+     }
+    },
+    {
+     "ma": "KCK1-6.C12",
+     "nhan": "Câu 12",
+     "phan": "",
+     "nhom": "",
+     "de": "Trong các phát biểu sau về lực đẩy Archimedes, phát biểu nào là chính xác nhất?\nA. Lực đẩy Archimedes là lực xuất hiện khi một vật được nhúng vào trong chất lỏng hoặc chất khí\nB. Lực đẩy Archimedes là lực do nhà bác học Archimedes tạo ra\nC. Lực đẩy Archimedes là lực tác dụng lên các vật khi nó va đập vào các vật khác\nD. Lực đẩy Archimedes chỉ xuất hiện khi một vật được đưa vào trong chất khí",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN",
+     "bai_sgk": 17,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Trong các phát biểu sau về lực đẩy Archimedes, phát biểu nào là chính xác nhất?",
+      "cac": [
+       "Lực đẩy Archimedes là lực xuất hiện khi một vật được nhúng vào trong chất lỏng hoặc chất khí",
+       "Lực đẩy Archimedes là lực do nhà bác học Archimedes tạo ra",
+       "Lực đẩy Archimedes là lực tác dụng lên các vật khi nó va đập vào các vật khác",
+       "Lực đẩy Archimedes chỉ xuất hiện khi một vật được đưa vào trong chất khí"
+      ],
+      "dap": "A"
+     }
+    },
+    {
+     "ma": "KCK1-6.C13",
+     "nhan": "Câu 13",
+     "phan": "",
+     "nhom": "",
+     "de": "Áp suất do áp lực 600 N tác dụng lên một diện tích 2 dm^2 là:\nA. 300 N/m^2\nB. 100 N/m^2\nC. 15000 N/m^2\nD. 30000 N/m^2",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "D",
+     "loai_dap_an": "TN",
+     "bai_sgk": 15,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Áp suất do áp lực 600 N tác dụng lên một diện tích 2 dm² là:",
+      "cac": [
+       "300 N/m²",
+       "100 N/m²",
+       "15000 N/m²",
+       "30000 N/m²"
+      ],
+      "dap": "D"
+     }
+    },
+    {
+     "ma": "KCK1-6.C14",
+     "nhan": "Câu 14",
+     "phan": "",
+     "nhom": "",
+     "de": "Điều nào sau đây là đúng khi nói về sự tạo thành áp suất khí quyển?\nA. Áp suất khí quyển có được do không khí tạo thành khí quyển có trọng lượng\nB. Áp suất khí quyển có được do không khí tạo thành khí quyển rất nhẹ\nC. Áp suất khí quyển có được do không khí tạo thành khí quyển có độ cao so với mặt đất\nD. Áp suất khí quyển có được do không khí tạo thành khí quyển có chứa nhiều loại nguyên tố hóa học khác nhau",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN",
+     "bai_sgk": 16,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Điều nào sau đây là đúng khi nói về sự tạo thành áp suất khí quyển?",
+      "cac": [
+       "Áp suất khí quyển có được do không khí tạo thành khí quyển có trọng lượng",
+       "Áp suất khí quyển có được do không khí tạo thành khí quyển rất nhẹ",
+       "Áp suất khí quyển có được do không khí tạo thành khí quyển có độ cao so với mặt đất",
+       "Áp suất khí quyển có được do không khí tạo thành khí quyển có chứa nhiều loại nguyên tố hóa học khác nhau"
+      ],
+      "dap": "A"
+     }
+    },
+    {
+     "ma": "KCK1-6.C15",
+     "nhan": "Câu 15",
+     "phan": "",
+     "nhom": "",
+     "de": "Một bình hình trụ cao 3 m đựng đầy nước, biết trọng lượng riêng của nước là 10000 N/m^3. Áp suất của nước tác dụng lên điểm B cách đáy bình 1,2 m là:\nA. 12000 Pa\nB. 18000 Pa\nC. 30000 Pa\nD. 42000 Pa",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "bai_sgk": 16,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Một bình hình trụ cao 3 m đựng đầy nước, biết trọng lượng riêng của nước là 10000 N/m³. Áp suất của nước tác dụng lên điểm B cách đáy bình 1,2 m là:",
+      "cac": [
+       "12000 Pa",
+       "18000 Pa",
+       "30000 Pa",
+       "42000 Pa"
+      ],
+      "dap": "B"
+     },
+     "ghi_chu": "Đề in \"tác dụng l điểm B\", sửa \"tác dụng lên điểm B\"."
+    },
+    {
+     "ma": "KCK1-6.C16",
+     "nhan": "Câu 16",
+     "phan": "",
+     "nhom": "",
+     "de": "Trường hợp nào dưới đây lực tác dụng làm cho vật rắn quay quanh một trục cố định?\nA. Lực có giá song song với trục quay\nB. Lực có giá cắt trục quay\nC. Lực có giá nằm trong mặt phẳng vuông góc với trục quay và không cắt trục quay\nD. Lực có giá nằm trong mặt phẳng vuông góc với trục quay và cắt trục quay",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "C",
+     "loai_dap_an": "TN",
+     "bai_sgk": 18,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Trường hợp nào dưới đây lực tác dụng làm cho vật rắn quay quanh một trục cố định?",
+      "cac": [
+       "Lực có giá song song với trục quay",
+       "Lực có giá cắt trục quay",
+       "Lực có giá nằm trong mặt phẳng vuông góc với trục quay và không cắt trục quay",
+       "Lực có giá nằm trong mặt phẳng vuông góc với trục quay và cắt trục quay"
+      ],
+      "dap": "C"
+     }
+    },
+    {
+     "ma": "KCK1-6.C17",
+     "nhan": "Câu 17",
+     "phan": "",
+     "nhom": "",
+     "de": "Trong các dụng cụ sau đây, dụng cụ nào không coi là đòn bẩy?\nA. Cái kìm\nB. Máy tời\nC. Cái cân đòn\nD. Cái kéo",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "bai_sgk": 19,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Trong các dụng cụ sau đây, dụng cụ nào không coi là đòn bẩy?",
+      "cac": [
+       "Cái kìm",
+       "Máy tời",
+       "Cái cân đòn",
+       "Cái kéo"
+      ],
+      "dap": "B"
+     }
+    },
+    {
+     "ma": "KCK1-6.C18",
+     "nhan": "Câu 18",
+     "phan": "",
+     "nhom": "",
+     "de": "Lấy tay tác dụng vào cánh cửa các lực khác nhau theo chiều mũi tên biểu diễn như ở hình dưới đây. Trường hợp nào lực làm quay cánh cửa?\n(Trong hình: ở (a) lực nằm trong mặt cánh cửa, hướng về phía bản lề; ở (b) lực hướng thẳng đứng lên trên; ở (c) lực đẩy vuông góc vào mặt cánh cửa.)\nA. (a), (b)\nB. (a), (c)\nC. (c)\nD. (b)",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "C",
+     "loai_dap_an": "TN",
+     "bai_sgk": 18,
+     "hinh": [
+      "dethikhtn8/KCK1-6.C18.webp"
+     ],
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Lấy tay tác dụng vào cánh cửa các lực khác nhau theo chiều mũi tên biểu diễn như ở hình dưới đây. Trường hợp nào lực làm quay cánh cửa?\n(Trong hình: ở (a) lực nằm trong mặt cánh cửa, hướng về phía bản lề; ở (b) lực hướng thẳng đứng lên trên; ở (c) lực đẩy vuông góc vào mặt cánh cửa.)",
+      "cac": [
+       "(a), (b)",
+       "(a), (c)",
+       "(c)",
+       "(b)"
+      ],
+      "dap": "C"
+     },
+     "ghi_chu": "Thêm dòng tả hướng ba lực: trên hình, mũi tên ở (a) và (c) chỉ khác nhau ở độ nghiêng, nhìn trên máy dễ nhầm. Đề số 7 Câu 16 in y hệt câu này (trùng về đây)."
+    },
+    {
+     "ma": "KCK1-6.C19",
+     "nhan": "Câu 19",
+     "phan": "",
+     "nhom": "",
+     "de": "Phân bón dạng đơn gồm:\nA. phân đạm (chứa N), phân lân (chứa P) và phân potassium (chứa K)\nB. phân lân (chứa P)\nC. phân potassium (chứa K)\nD. phân lân và phân potassium",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN",
+     "bai_sgk": 12,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Phân bón dạng đơn gồm:",
+      "cac": [
+       "phân đạm (chứa N), phân lân (chứa P) và phân potassium (chứa K)",
+       "phân lân (chứa P)",
+       "phân potassium (chứa K)",
+       "phân lân và phân potassium"
+      ],
+      "dap": "A"
+     },
+     "ghi_chu": "Đề in phương án A \"phân đạm (chứa N)\", đáp án A. Phân đạm, phân lân, phân potassium đều là phân bón đơn (chỉ chứa một nguyên tố dinh dưỡng N, P hay K), nên in như vậy thì B, C, D cũng là phân bón đơn. Viết A thành đủ ba loại để A là phương án duy nhất trả lời đủ chữ \"gồm\"; đáp án A như đề in."
+    },
+    {
+     "ma": "KCK1-6.C20",
+     "nhan": "Câu 20",
+     "phan": "",
+     "nhom": "",
+     "de": "Phân bón NPK là hỗn hợp của:\nA. NH4H2PO4 và KNO3\nB. (NH4)3PO4 và KNO3\nC. (NH4)2HPO4 và NaNO3\nD. (NH4)2HPO4 và KNO3",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "D",
+     "loai_dap_an": "TN",
+     "bai_sgk": 12,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Phân bón NPK là hỗn hợp của:",
+      "cac": [
+       "NH₄H₂PO₄ và KNO₃",
+       "(NH₄)₃PO₄ và KNO₃",
+       "(NH₄)₂HPO₄ và NaNO₃",
+       "(NH₄)₂HPO₄ và KNO₃"
+      ],
+      "dap": "D"
+     },
+     "ghi_chu": "Đề in dấu phẩy giữa hai muối ở A, B, D và chữ \"và\" ở C; viết \"và\" cả bốn cho đều."
+    }
+   ]
+  },
+  {
+   "chuong": "Cuối học kì 1",
+   "bai": "Đề cuối kì 1 số 7",
+   "de_thi": {
+    "ma": "KCK1-7",
+    "nguon_goc": "loigiaihay.com, đăng 09/12/2023"
+   },
+   "cac_cau": [
+    {
+     "ma": "KCK1-7.C1",
+     "nhan": "Câu 1",
+     "phan": "",
+     "nhom": "",
+     "de": "Cho tỉ khối của khí A đối với khí B là 0,0625 và tỉ khối của khí B đối với không khí là 1,104. Khối lượng mol của khí A là\nA. 2\nB. 32\nC. 29\nD. 16",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN",
+     "bai_sgk": 3,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Cho tỉ khối của khí A đối với khí B là 0,0625 và tỉ khối của khí B đối với không khí là 1,104. Khối lượng mol của khí A là",
+      "cac": [
+       "2",
+       "32",
+       "29",
+       "16"
+      ],
+      "dap": "A"
+     }
+    },
+    {
+     "ma": "KCK1-7.C2",
+     "nhan": "Câu 2",
+     "phan": "",
+     "nhom": "",
+     "de": "Tỉ khối hơi của khí sulfur dioxide (SO2) so với khí oxygen (O2) là\nA. 0,5\nB. 1,5\nC. 2,0\nD. 4,0",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "C",
+     "loai_dap_an": "TN",
+     "bai_sgk": 3,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Tỉ khối hơi của khí sulfur dioxide (SO₂) so với khí oxygen (O₂) là",
+      "cac": [
+       "0,5",
+       "1,5",
+       "2,0",
+       "4,0"
+      ],
+      "dap": "C"
+     }
+    },
+    {
+     "ma": "KCK1-7.C3",
+     "nhan": "Câu 3",
+     "phan": "",
+     "nhom": "",
+     "de": "Sulfuric acid đặc nóng tác dụng với copper sinh ra khí\nA. CO2\nB. SO2\nC. SO3\nD. H2S",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "bai_sgk": 8,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Sulfuric acid đặc nóng tác dụng với copper sinh ra khí",
+      "cac": [
+       "CO₂",
+       "SO₂",
+       "SO₃",
+       "H₂S"
+      ],
+      "dap": "B"
+     }
+    },
+    {
+     "ma": "KCK1-7.C4",
+     "nhan": "Câu 4",
+     "phan": "",
+     "nhom": "",
+     "de": "Ở 25 °C và 1 bar, 0,5 mol khí chiếm thể tích bao nhiêu?\nA. 22,400 lít\nB. 24,790 lít\nC. 1,120 lít\nD. 12,395 lít",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "D",
+     "loai_dap_an": "TN",
+     "bai_sgk": 3,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Ở 25 °C và 1 bar, 0,5 mol khí chiếm thể tích bao nhiêu?",
+      "cac": [
+       "22,400 lít",
+       "24,790 lít",
+       "1,120 lít",
+       "12,395 lít"
+      ],
+      "dap": "D"
+     }
+    },
+    {
+     "ma": "KCK1-7.C5",
+     "nhan": "Câu 5",
+     "phan": "",
+     "nhom": "",
+     "trung": "KCK1-1.C7"
+    },
+    {
+     "ma": "KCK1-7.C6",
+     "nhan": "Câu 6",
+     "phan": "",
+     "nhom": "",
+     "de": "Trộn 10,8 gam aluminium với bột sulfur. Cho hỗn hợp vào ống nghiệm và đun nóng để phản ứng xảy ra thu được 25,5 gam Al2S3. Hiệu suất phản ứng là\nA. 85%\nB. 80%\nC. 90%\nD. 92%",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN",
+     "bai_sgk": 6,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Trộn 10,8 gam aluminium với bột sulfur. Cho hỗn hợp vào ống nghiệm và đun nóng để phản ứng xảy ra thu được 25,5 gam Al₂S₃. Hiệu suất phản ứng là",
+      "cac": [
+       "85%",
+       "80%",
+       "90%",
+       "92%"
+      ],
+      "dap": "A"
+     }
+    },
+    {
+     "ma": "KCK1-7.C7",
+     "nhan": "Câu 7",
+     "phan": "",
+     "nhom": "",
+     "trung": "KGK1-9.C13",
+     "ghi_chu": "Đề in \"Viết phương trình hóa học của iron tác dụng với dung dịch sulfuric acid loãng, biết sản phẩm là iron(II) sulfate và có khí bay lên\", bốn phương án và đáp án A y hệt KGK1-9 Câu 13 (câu gốc ghi rõ \"khí hydrogen\")."
+    },
+    {
+     "ma": "KCK1-7.C8",
+     "nhan": "Câu 8",
+     "phan": "",
+     "nhom": "",
+     "de": "Nói: \"sắt nặng hơn nhôm\" có nghĩa là:\nA. trọng lượng của sắt lớn hơn trọng lượng của nhôm\nB. khối lượng của sắt lớn hơn khối lượng của nhôm\nC. khối lượng riêng của sắt lớn hơn khối lượng riêng của nhôm\nD. khối lượng của sắt nhỏ hơn khối lượng của nhôm",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "C",
+     "loai_dap_an": "TN",
+     "bai_sgk": 13,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Nói: \"sắt nặng hơn nhôm\" có nghĩa là:",
+      "cac": [
+       "trọng lượng của sắt lớn hơn trọng lượng của nhôm",
+       "khối lượng của sắt lớn hơn khối lượng của nhôm",
+       "khối lượng riêng của sắt lớn hơn khối lượng riêng của nhôm",
+       "khối lượng của sắt nhỏ hơn khối lượng của nhôm"
+      ],
+      "dap": "C"
+     }
+    },
+    {
+     "ma": "KCK1-7.C9",
+     "nhan": "Câu 9",
+     "phan": "",
+     "nhom": "",
+     "de": "Cho một viên đá, khối lượng riêng của đá có thể được xác định bằng cách nào sau đây?\nA. Xác định khối lượng và thể tích của viên đá, sau đó lấy khối lượng chia cho thể tích\nB. Xác định khối lượng và thể tích của viên đá, sau đó lấy thể tích chia cho khối lượng\nC. Xác định khối lượng của viên đá, sau đó lấy khối lượng nhân với 10\nD. Xác định khối lượng của viên đá, sau đó lấy khối lượng chia cho 10",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN",
+     "bai_sgk": 13,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Cho một viên đá, khối lượng riêng của đá có thể được xác định bằng cách nào sau đây?",
+      "cac": [
+       "Xác định khối lượng và thể tích của viên đá, sau đó lấy khối lượng chia cho thể tích",
+       "Xác định khối lượng và thể tích của viên đá, sau đó lấy thể tích chia cho khối lượng",
+       "Xác định khối lượng của viên đá, sau đó lấy khối lượng nhân với 10",
+       "Xác định khối lượng của viên đá, sau đó lấy khối lượng chia cho 10"
+      ],
+      "dap": "A"
+     }
+    },
+    {
+     "ma": "KCK1-7.C10",
+     "nhan": "Câu 10",
+     "phan": "",
+     "nhom": "",
+     "de": "Cho một vật có thể tích 0,04 m^3 nhúng ngập hoàn toàn trong dầu hỏa. Trọng lượng riêng của dầu hỏa 8000 N/m^3. Lực đẩy Archimedes tác dụng lên vật có giá trị là:\nA. 220 N\nB. 420 N\nC. 520 N\nD. 320 N",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "D",
+     "loai_dap_an": "TN",
+     "bai_sgk": 17,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Cho một vật có thể tích 0,04 m³ nhúng ngập hoàn toàn trong dầu hỏa. Trọng lượng riêng của dầu hỏa 8000 N/m³. Lực đẩy Archimedes tác dụng lên vật có giá trị là:",
+      "cac": [
+       "220 N",
+       "420 N",
+       "520 N",
+       "320 N"
+      ],
+      "dap": "D"
+     }
+    },
+    {
+     "ma": "KCK1-7.C11",
+     "nhan": "Câu 11",
+     "phan": "",
+     "nhom": "",
+     "de": "Lực đẩy Archimedes không phụ thuộc vào đại lượng nào sau đây?\nA. Trọng lượng riêng của chất lỏng đựng trong chậu\nB. Thể tích phần chất lỏng bị vật chiếm chỗ\nC. Khối lượng riêng của chất lỏng đựng trong chậu\nD. Khối lượng của vật bị nhúng",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "D",
+     "loai_dap_an": "TN",
+     "bai_sgk": 17,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Lực đẩy Archimedes không phụ thuộc vào đại lượng nào sau đây?",
+      "cac": [
+       "Trọng lượng riêng của chất lỏng đựng trong chậu",
+       "Thể tích phần chất lỏng bị vật chiếm chỗ",
+       "Khối lượng riêng của chất lỏng đựng trong chậu",
+       "Khối lượng của vật bị nhúng"
+      ],
+      "dap": "D"
+     },
+     "ghi_chu": "Đáp án in B (\"Thể tích của vật bị nhúng\"), lời giải in lập luận lực đẩy phụ thuộc thể tích phần chìm chứ không phải thể tích vật. Nhưng D (khối lượng của vật) mới là đại lượng lực đẩy chắc chắn không phụ thuộc (F = d · V), còn vật nhúng ngập thì thể tích phần chìm bằng thể tích vật. Dùng D, và viết B thành \"Thể tích phần chất lỏng bị vật chiếm chỗ\" (đại lượng lực đẩy có phụ thuộc) để đề chỉ một đáp án."
+    },
+    {
+     "ma": "KCK1-7.C12",
+     "nhan": "Câu 12",
+     "phan": "",
+     "nhom": "",
+     "de": "Có một khúc gỗ và một khối thép có cùng thể tích được nhúng chìm hoàn toàn trong nước. Hỏi lực đẩy Archimedes tác dụng lên vật nào lớn hơn?\nA. Lực đẩy Archimedes tác dụng lên khối thép lớn hơn lực đẩy Archimedes tác dụng lên khúc gỗ\nB. Lực đẩy Archimedes tác dụng lên khúc gỗ lớn hơn lực đẩy Archimedes tác dụng lên khối thép\nC. Lực đẩy Archimedes tác dụng lên khúc gỗ và lực đẩy Archimedes tác dụng lên khối thép bằng nhau\nD. Không thể so sánh được vì thiếu điều kiện",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "C",
+     "loai_dap_an": "TN",
+     "bai_sgk": 17,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Có một khúc gỗ và một khối thép có cùng thể tích được nhúng chìm hoàn toàn trong nước. Hỏi lực đẩy Archimedes tác dụng lên vật nào lớn hơn?",
+      "cac": [
+       "Lực đẩy Archimedes tác dụng lên khối thép lớn hơn lực đẩy Archimedes tác dụng lên khúc gỗ",
+       "Lực đẩy Archimedes tác dụng lên khúc gỗ lớn hơn lực đẩy Archimedes tác dụng lên khối thép",
+       "Lực đẩy Archimedes tác dụng lên khúc gỗ và lực đẩy Archimedes tác dụng lên khối thép bằng nhau",
+       "Không thể so sánh được vì thiếu điều kiện"
+      ],
+      "dap": "C"
+     }
+    },
+    {
+     "ma": "KCK1-7.C13",
+     "nhan": "Câu 13",
+     "phan": "",
+     "nhom": "",
+     "de": "Khi áp suất tác dụng lên bề mặt của vật giảm đi 3 lần, thông tin nào dưới đây có thể phù hợp?\nA. Diện tích bị ép giảm đi 3 lần\nB. Áp lực giảm 3 lần\nC. Áp lực tăng 3 lần\nD. Áp lực tăng 3 lần đồng thời diện tích bị ép giảm 3 lần",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "bai_sgk": 15,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Khi áp suất tác dụng lên bề mặt của vật giảm đi 3 lần, thông tin nào dưới đây có thể phù hợp?",
+      "cac": [
+       "Diện tích bị ép giảm đi 3 lần",
+       "Áp lực giảm 3 lần",
+       "Áp lực tăng 3 lần",
+       "Áp lực tăng 3 lần đồng thời diện tích bị ép giảm 3 lần"
+      ],
+      "dap": "B"
+     }
+    },
+    {
+     "ma": "KCK1-7.C14",
+     "nhan": "Câu 14",
+     "phan": "",
+     "nhom": "",
+     "de": "Hãy cho biết câu nào dưới đây là không đúng khi nói về áp suất khí quyển?\nA. Áp suất khí quyển được sinh ra do áp lực của các lớp không khí bao bọc xung quanh Trái Đất\nB. Áp suất khí quyển chỉ có ở Trái Đất, các thiên thể khác trong vũ trụ không có\nC. Càng lên cao áp suất khí quyển càng giảm\nD. Trái Đất và mọi vật trên Trái Đất đều chịu tác dụng của áp suất khí quyển theo mọi hướng",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "bai_sgk": 16,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Hãy cho biết câu nào dưới đây là không đúng khi nói về áp suất khí quyển?",
+      "cac": [
+       "Áp suất khí quyển được sinh ra do áp lực của các lớp không khí bao bọc xung quanh Trái Đất",
+       "Áp suất khí quyển chỉ có ở Trái Đất, các thiên thể khác trong vũ trụ không có",
+       "Càng lên cao áp suất khí quyển càng giảm",
+       "Trái Đất và mọi vật trên Trái Đất đều chịu tác dụng của áp suất khí quyển theo mọi hướng"
+      ],
+      "dap": "B"
+     }
+    },
+    {
+     "ma": "KCK1-7.C15",
+     "nhan": "Câu 15",
+     "phan": "",
+     "nhom": "",
+     "de": "Một người thợ lặn, lặn xuống độ sâu 36 m so với mặt nước biển. Cho biết trọng lượng riêng của nước biển là 10300 N/m^3. Cửa chiếu sáng của áo lặn có diện tích 160 cm^2. Tính áp lực của nước biển tác dụng lên cửa chiếu sáng của áo lặn?\nA. 0,56 N\nB. 2317,5 N\nC. 5932,8 N\nD. 45777,8 N",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "C",
+     "loai_dap_an": "TN",
+     "bai_sgk": 16,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Một người thợ lặn, lặn xuống độ sâu 36 m so với mặt nước biển. Cho biết trọng lượng riêng của nước biển là 10300 N/m³. Cửa chiếu sáng của áo lặn có diện tích 160 cm². Tính áp lực của nước biển tác dụng lên cửa chiếu sáng của áo lặn?",
+      "cac": [
+       "0,56 N",
+       "2317,5 N",
+       "5932,8 N",
+       "45777,8 N"
+      ],
+      "dap": "C"
+     }
+    },
+    {
+     "ma": "KCK1-7.C16",
+     "nhan": "Câu 16",
+     "phan": "",
+     "nhom": "",
+     "trung": "KCK1-6.C18"
+    },
+    {
+     "ma": "KCK1-7.C17",
+     "nhan": "Câu 17",
+     "phan": "",
+     "nhom": "",
+     "de": "Câu nào sau đây không đúng?\nA. Mỗi đòn bẩy đều có một điểm tựa\nB. Dùng đòn bẩy luôn được lợi về lực\nC. Điểm tựa của đòn bẩy là vị trí mà đòn bẩy có thể quay quanh nó\nD. Dùng đòn bẩy có thể nâng hoặc làm di chuyển vật được dễ dàng",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "bai_sgk": 19,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Câu nào sau đây không đúng?",
+      "cac": [
+       "Mỗi đòn bẩy đều có một điểm tựa",
+       "Dùng đòn bẩy luôn được lợi về lực",
+       "Điểm tựa của đòn bẩy là vị trí mà đòn bẩy có thể quay quanh nó",
+       "Dùng đòn bẩy có thể nâng hoặc làm di chuyển vật được dễ dàng"
+      ],
+      "dap": "B"
+     }
+    },
+    {
+     "ma": "KCK1-7.C18",
+     "nhan": "Câu 18",
+     "phan": "",
+     "nhom": "",
+     "de": "Hãy so sánh moment của lực F1 và moment của lực F2 trong hình dưới đây\nA. Moment của lực F1 nhỏ hơn moment của lực F2\nB. Moment của lực F1 lớn hơn moment của lực F2\nC. Moment của lực F1 bằng moment của lực F2\nD. Không đủ dữ kiện để so sánh",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN",
+     "bai_sgk": 18,
+     "hinh": [
+      "dethikhtn8/KCK1-7.C18.webp"
+     ],
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Hãy so sánh moment của lực F₁ và moment của lực F₂ trong hình dưới đây",
+      "cac": [
+       "Moment của lực F₁ nhỏ hơn moment của lực F₂",
+       "Moment của lực F₁ lớn hơn moment của lực F₂",
+       "Moment của lực F₁ bằng moment của lực F₂",
+       "Không đủ dữ kiện để so sánh"
+      ],
+      "dap": "A"
+     }
+    },
+    {
+     "ma": "KCK1-7.C19",
+     "nhan": "Câu 19",
+     "phan": "",
+     "nhom": "",
+     "de": "Để phân biệt dung dịch NaOH với dung dịch Ca(OH)2 có thể dùng\nA. CO2\nB. phenolphthalein\nC. HCl\nD. quỳ tím",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN",
+     "bai_sgk": 10,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Để phân biệt dung dịch NaOH với dung dịch Ca(OH)₂ có thể dùng",
+      "cac": [
+       "CO₂",
+       "phenolphthalein",
+       "HCl",
+       "quỳ tím"
+      ],
+      "dap": "A"
+     },
+     "ghi_chu": "Đề in \"Để phân biệt dung dịch NaOH với dung dịch Ca(OH)2 dư có thể dung\" với phương án C là H₂SO₄, đáp án in C; lời giải in lại giải cho Ba(OH)₂ (BaSO₄ kết tủa trắng). Với Ca(OH)₂ thì CO₂ (A) là cách của SGK: Ca(OH)₂ vẩn đục, NaOH không hiện tượng; còn H₂SO₄ tạo CaSO₄ ít tan, có khi không thấy kết tủa. Dùng A, bỏ chữ \"dư\" thừa, và đổi phương án C thành HCl (không phân biệt được) để đề chỉ một đáp án."
+    },
+    {
+     "ma": "KCK1-7.C20",
+     "nhan": "Câu 20",
+     "phan": "",
+     "nhom": "",
+     "de": "Cho các hợp chất sau: NaCl, CaO, BaSO4, NaNO3, CuO, BaO, K2O. Số chất thuộc loại oxide là\nA. 1\nB. 2\nC. 3\nD. 4",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "D",
+     "loai_dap_an": "TN",
+     "bai_sgk": 10,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Cho các hợp chất sau: NaCl, CaO, BaSO₄, NaNO₃, CuO, BaO, K₂O. Số chất thuộc loại oxide là",
+      "cac": [
+       "1",
+       "2",
+       "3",
+       "4"
+      ],
+      "dap": "D"
+     }
+    }
+   ]
+  },
+  {
+   "chuong": "Cuối học kì 1",
+   "bai": "Đề cuối kì 1 số 8",
+   "de_thi": {
+    "ma": "KCK1-8",
+    "nguon_goc": "loigiaihay.com, đăng 13/01/2025"
+   },
+   "cac_cau": [
+    {
+     "ma": "KCK1-8.C1",
+     "nhan": "Câu 1",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "de": "Chất nào sau đây là hydrochloric acid?\nA. H2SO4\nB. HNO3\nC. H3PO4\nD. HCl",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "D",
+     "loai_dap_an": "TN",
+     "bai_sgk": 8,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Chất nào sau đây là hydrochloric acid?",
+      "cac": [
+       "H₂SO₄",
+       "HNO₃",
+       "H₃PO₄",
+       "HCl"
+      ],
+      "dap": "D"
+     },
+     "ghi_chu": "Đề in \"hydrochlric\", sửa \"hydrochloric\"."
+    },
+    {
+     "ma": "KCK1-8.C2",
+     "nhan": "Câu 2",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "de": "Nhóm các dung dịch có pH > 7 là:\nA. HCl, NaOH\nB. Ba(OH)2, NaOH\nC. NaCl, H2SO4\nD. CH3COOH, HNO3",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "bai_sgk": 9,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Nhóm các dung dịch có pH > 7 là:",
+      "cac": [
+       "HCl, NaOH",
+       "Ba(OH)₂, NaOH",
+       "NaCl, H₂SO₄",
+       "CH₃COOH, HNO₃"
+      ],
+      "dap": "B"
+     }
+    },
+    {
+     "ma": "KCK1-8.C3",
+     "nhan": "Câu 3",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "de": "Phản ứng giữa dung dịch acid và dung dịch base được gọi là phản ứng gì?\nA. Phản ứng thế\nB. Phản ứng hóa hợp\nC. Phản ứng trung hòa\nD. Phản ứng phân hủy",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "C",
+     "loai_dap_an": "TN",
+     "bai_sgk": 9,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Phản ứng giữa dung dịch acid và dung dịch base được gọi là phản ứng gì?",
+      "cac": [
+       "Phản ứng thế",
+       "Phản ứng hóa hợp",
+       "Phản ứng trung hòa",
+       "Phản ứng phân hủy"
+      ],
+      "dap": "C"
+     }
+    },
+    {
+     "ma": "KCK1-8.C4",
+     "nhan": "Câu 4",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "de": "Một base được dùng phổ biến để sản xuất các phụ gia cho dầu thô, xử lí nước để sản xuất các loại đồ uống như rượu hay đồ uống không cồn có công thức X(OH)2, trong đó X chiếm 54,054% (khối lượng). Công thức hóa học của base đó là:\nA. Ba(OH)2\nB. Ca(OH)2\nC. Zn(OH)2\nD. Mg(OH)2",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "bai_sgk": 9,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Một base được dùng phổ biến để sản xuất các phụ gia cho dầu thô, xử lí nước để sản xuất các loại đồ uống như rượu hay đồ uống không cồn có công thức X(OH)₂, trong đó X chiếm 54,054% (khối lượng). Công thức hóa học của base đó là:",
+      "cac": [
+       "Ba(OH)₂",
+       "Ca(OH)₂",
+       "Zn(OH)₂",
+       "Mg(OH)₂"
+      ],
+      "dap": "B"
+     },
+     "ghi_chu": "Đề in \"đồ uống không công\", sửa \"không cồn\"."
+    },
+    {
+     "ma": "KCK1-8.C5",
+     "nhan": "Câu 5",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "de": "Tên gọi sulfur trioxide ứng với công thức nào sau đây?\nA. SO3\nB. CO2\nC. CO3\nD. SO2",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN",
+     "bai_sgk": 10,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Tên gọi sulfur trioxide ứng với công thức nào sau đây?",
+      "cac": [
+       "SO₃",
+       "CO₂",
+       "CO₃",
+       "SO₂"
+      ],
+      "dap": "A"
+     }
+    },
+    {
+     "ma": "KCK1-8.C6",
+     "nhan": "Câu 6",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "de": "Một nguyên tố R có hóa trị II. Thành phần oxide của R, oxygen chiếm 20% về khối lượng. Công thức oxide đó là\nA. CuO\nB. SO2\nC. MgO\nD. Al2O3",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN",
+     "bai_sgk": 10,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Một nguyên tố R có hóa trị II. Thành phần oxide của R, oxygen chiếm 20% về khối lượng. Công thức oxide đó là",
+      "cac": [
+       "CuO",
+       "SO₂",
+       "MgO",
+       "Al₂O₃"
+      ],
+      "dap": "A"
+     }
+    },
+    {
+     "ma": "KCK1-8.C7",
+     "nhan": "Câu 7",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "de": "Cho 180 gam dung dịch Ba(OH)2 5,7% vào dung dịch K2CO3 dư, sau phản ứng thu được m gam BaCO3. Giá trị của m là\nA. 4,89 gam\nB. 5,91 gam\nC. 11,82 gam\nD. 10,9 gam",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "C",
+     "loai_dap_an": "TN",
+     "bai_sgk": 11,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Cho 180 gam dung dịch Ba(OH)₂ 5,7% vào dung dịch K₂CO₃ dư, sau phản ứng thu được m gam BaCO₃. Giá trị của m là",
+      "cac": [
+       "4,89 gam",
+       "5,91 gam",
+       "11,82 gam",
+       "10,9 gam"
+      ],
+      "dap": "C"
+     }
+    },
+    {
+     "ma": "KCK1-8.C8",
+     "nhan": "Câu 8",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "de": "Trong số các base sau đây, base nào là base không tan trong nước?\nA. KOH\nB. LiOH\nC. Ca(OH)2\nD. Mg(OH)2",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "D",
+     "loai_dap_an": "TN",
+     "bai_sgk": 9,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Trong số các base sau đây, base nào là base không tan trong nước?",
+      "cac": [
+       "KOH",
+       "LiOH",
+       "Ca(OH)₂",
+       "Mg(OH)₂"
+      ],
+      "dap": "D"
+     }
+    },
+    {
+     "ma": "KCK1-8.C9",
+     "nhan": "Câu 9",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "de": "Cho dung dịch NaOH vào ống nghiệm đựng dung dịch FeCl2, ta quan sát được hiện tượng là:\nA. Có khí thoát ra\nB. Xuất hiện kết tủa màu nâu đỏ rồi chuyển sang màu trắng xanh\nC. Xuất hiện kết tủa trắng xanh rồi chuyển sang nâu đỏ\nD. Xuất hiện kết tủa đỏ nâu",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "C",
+     "loai_dap_an": "TN",
+     "bai_sgk": 11,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Cho dung dịch NaOH vào ống nghiệm đựng dung dịch FeCl₂, ta quan sát được hiện tượng là:",
+      "cac": [
+       "Có khí thoát ra",
+       "Xuất hiện kết tủa màu nâu đỏ rồi chuyển sang màu trắng xanh",
+       "Xuất hiện kết tủa trắng xanh rồi chuyển sang nâu đỏ",
+       "Xuất hiện kết tủa đỏ nâu"
+      ],
+      "dap": "C"
+     }
+    },
+    {
+     "ma": "KCK1-8.C10",
+     "nhan": "Câu 10",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "de": "Hòa tan hết 6 gam một kim loại hóa trị II bằng dung dịch H2SO4 loãng được 3,7185 lít H2 (đkc). Kim loại đó là:\nA. Zn\nB. Mg\nC. Fe\nD. Ca",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "D",
+     "loai_dap_an": "TN",
+     "bai_sgk": 8,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Hòa tan hết 6 gam một kim loại hóa trị II bằng dung dịch H₂SO₄ loãng được 3,7185 lít H₂ (đkc). Kim loại đó là:",
+      "cac": [
+       "Zn",
+       "Mg",
+       "Fe",
+       "Ca"
+      ],
+      "dap": "D"
+     }
+    },
+    {
+     "ma": "KCK1-8.C11",
+     "nhan": "Câu 11",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "de": "Muối nào sau đây không tan trong nước?\nA. K2SO4\nB. Na2SO4\nC. BaSO4\nD. CuSO4",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "C",
+     "loai_dap_an": "TN",
+     "bai_sgk": 11,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Muối nào sau đây không tan trong nước?",
+      "cac": [
+       "K₂SO₄",
+       "Na₂SO₄",
+       "BaSO₄",
+       "CuSO₄"
+      ],
+      "dap": "C"
+     }
+    },
+    {
+     "ma": "KCK1-8.C12",
+     "nhan": "Câu 12",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "de": "Phân bón hóa học được chia thành các loại:\nA. đa lượng, đơn lượng, vi lượng\nB. đa lượng, đơn lượng, trung lượng\nC. đa lượng, trung lượng, vi lượng\nD. trung lượng, vi lượng, đơn lượng",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "C",
+     "loai_dap_an": "TN",
+     "bai_sgk": 12,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Phân bón hóa học được chia thành các loại:",
+      "cac": [
+       "đa lượng, đơn lượng, vi lượng",
+       "đa lượng, đơn lượng, trung lượng",
+       "đa lượng, trung lượng, vi lượng",
+       "trung lượng, vi lượng, đơn lượng"
+      ],
+      "dap": "C"
+     }
+    },
+    {
+     "ma": "KCK1-8.C13",
+     "nhan": "Câu 13",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "de": "Muốn tăng hàm lượng tinh bột, protein, vitamin, đường,… trong quả, củ, thân; tăng khả năng chống chịu của cây trồng đối với hạn hán, rét hại, sâu bệnh thì cần bón phân có chứa nguyên tố dinh dưỡng:\nA. N\nB. P\nC. K\nD. Ca",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "C",
+     "loai_dap_an": "TN",
+     "bai_sgk": 12,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Muốn tăng hàm lượng tinh bột, protein, vitamin, đường,… trong quả, củ, thân; tăng khả năng chống chịu của cây trồng đối với hạn hán, rét hại, sâu bệnh thì cần bón phân có chứa nguyên tố dinh dưỡng:",
+      "cac": [
+       "N",
+       "P",
+       "K",
+       "Ca"
+      ],
+      "dap": "C"
+     },
+     "ghi_chu": "Đề in \"của cây, trồng\", bỏ dấu phẩy thừa."
+    },
+    {
+     "ma": "KCK1-8.C14",
+     "nhan": "Câu 14",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "de": "Cho phương trình phản ứng sau: BaCO3 + 2HCl → BaCl2 + Y + H2O. Khí Y là\nA. CO\nB. H2\nC. Cl2\nD. CO2",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "D",
+     "loai_dap_an": "TN",
+     "bai_sgk": 11,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Cho phương trình phản ứng sau: BaCO₃ + 2HCl → BaCl₂ + Y + H₂O. Khí Y là",
+      "cac": [
+       "CO",
+       "H₂",
+       "Cl₂",
+       "CO₂"
+      ],
+      "dap": "D"
+     }
+    },
+    {
+     "ma": "KCK1-8.C15",
+     "nhan": "Câu 15",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "trung": "KCK1-2.C22"
+    },
+    {
+     "ma": "KCK1-8.C16",
+     "nhan": "Câu 16",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "de": "Cho các hình vẽ sau (các khối trong hình giống hệt nhau), trường hợp nào áp suất tác dụng lên sàn lớn nhất?\nA. Hình 1\nB. Hình 2\nC. Hình 3\nD. Hình 4",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "D",
+     "loai_dap_an": "TN",
+     "bai_sgk": 15,
+     "hinh": [
+      "dethikhtn8/KCK1-8.C16.webp"
+     ],
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Cho các hình vẽ sau (các khối trong hình giống hệt nhau), trường hợp nào áp suất tác dụng lên sàn lớn nhất?",
+      "cac": [
+       "Hình 1",
+       "Hình 2",
+       "Hình 3",
+       "Hình 4"
+      ],
+      "dap": "D"
+     },
+     "ghi_chu": "Đề in \"Cho các hình vẽ sai\", sửa \"sau\"; thêm \"(các khối trong hình giống hệt nhau)\" vì hình chỉ vẽ các khối chữ nhật, không nói chúng cùng khối lượng."
+    },
+    {
+     "ma": "KCK1-8.C17",
+     "nhan": "Câu 17",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "de": "Phát biểu nào sau đây là đúng khi nói về áp suất khí quyển?\nA. Áp suất khí quyển tác dụng theo mọi phương\nB. Áp suất khí quyển bằng áp suất thủy ngân\nC. Áp suất khí quyển chỉ tác dụng theo phương thẳng đứng hướng từ dưới lên trên\nD. Áp suất khí quyển chỉ tác dụng theo phương thẳng đứng hướng từ trên xuống dưới",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN",
+     "bai_sgk": 16,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Phát biểu nào sau đây là đúng khi nói về áp suất khí quyển?",
+      "cac": [
+       "Áp suất khí quyển tác dụng theo mọi phương",
+       "Áp suất khí quyển bằng áp suất thủy ngân",
+       "Áp suất khí quyển chỉ tác dụng theo phương thẳng đứng hướng từ dưới lên trên",
+       "Áp suất khí quyển chỉ tác dụng theo phương thẳng đứng hướng từ trên xuống dưới"
+      ],
+      "dap": "A"
+     }
+    },
+    {
+     "ma": "KCK1-8.C18",
+     "nhan": "Câu 18",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "de": "Hoạt động nào sau đây có xuất hiện moment lực?\nA. Một học sinh chơi trò chơi cầu tuột\nB. Dùng tay để mở ngăn kéo hộp bàn\nC. Dùng tay để đẩy một vật nặng trên sàn\nD. Dùng tua vít để mở ốc được gắn trên mẩu gỗ",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "D",
+     "loai_dap_an": "TN",
+     "bai_sgk": 18,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Hoạt động nào sau đây có xuất hiện moment lực?",
+      "cac": [
+       "Một học sinh chơi trò chơi cầu tuột",
+       "Dùng tay để mở ngăn kéo hộp bàn",
+       "Dùng tay để đẩy một vật nặng trên sàn",
+       "Dùng tua vít để mở ốc được gắn trên mẩu gỗ"
+      ],
+      "dap": "D"
+     }
+    },
+    {
+     "ma": "KCK1-8.C19",
+     "nhan": "Câu 19",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "de": "Trong các dụng cụ sau đây, dụng cụ nào là đòn bẩy?\nA. Cái cầu thang\nB. Mái chèo\nC. Thùng nước\nD. Quyển sách để trên bàn",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "bai_sgk": 19,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Trong các dụng cụ sau đây, dụng cụ nào là đòn bẩy?",
+      "cac": [
+       "Cái cầu thang",
+       "Mái chèo",
+       "Thùng nước",
+       "Quyển sách để trên bàn"
+      ],
+      "dap": "B"
+     }
+    },
+    {
+     "ma": "KCK1-8.C20",
+     "nhan": "Câu 20",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "de": "Đầu người là đòn bẩy loại mấy?\nA. Loại 1\nB. Loại 2\nC. Vừa loại 1, vừa loại 2\nD. Không phải đòn bẩy",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN",
+     "bai_sgk": 19,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Đầu người là đòn bẩy loại mấy?",
+      "cac": [
+       "Loại 1",
+       "Loại 2",
+       "Vừa loại 1, vừa loại 2",
+       "Không phải đòn bẩy"
+      ],
+      "dap": "A"
+     }
+    },
+    {
+     "ma": "KCK1-8.C21",
+     "nhan": "Câu 21",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "de": "Đòn bẩy có thể là một công cụ thay đổi hướng tác dụng của lực và có thể cung cấp lợi thế về?\nA. Khối lượng\nB. Trọng lực\nC. Thể tích\nD. Lực",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "D",
+     "loai_dap_an": "TN",
+     "bai_sgk": 19,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Đòn bẩy có thể là một công cụ thay đổi hướng tác dụng của lực và có thể cung cấp lợi thế về?",
+      "cac": [
+       "Khối lượng",
+       "Trọng lực",
+       "Thể tích",
+       "Lực"
+      ],
+      "dap": "D"
+     }
+    },
+    {
+     "ma": "KCK1-8.C22",
+     "nhan": "Câu 22",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "de": "Đơn vị của khối lượng riêng là\nA. N/m^3\nB. kg/m^3\nC. g/m^2\nD. N·m^3",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "bai_sgk": 13,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Đơn vị của khối lượng riêng là",
+      "cac": [
+       "N/m³",
+       "kg/m³",
+       "g/m²",
+       "N·m³"
+      ],
+      "dap": "B"
+     },
+     "ghi_chu": "Phương án C in \"g/m3\": g/m³ cũng là đơn vị khối lượng riêng (khối lượng chia thể tích; đề số 9 Câu 17 còn xếp g/m³ vào dãy đơn vị khối lượng riêng), nên đề thành hai đáp án. Đổi C thành g/m² (sai). Phương án D in \"Nm3\", viết N·m³; B in \"Kg/m3\", viết kg/m³. Đáp án B như đề in."
+    },
+    {
+     "ma": "KCK1-8.C23",
+     "nhan": "Câu 23",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "de": "Điền vào chỗ trống cụm từ thích hợp: Áp suất tác dụng vào chất lỏng sẽ được chất lỏng truyền đi ___ theo mọi hướng.\nA. một phần\nB. nguyên vẹn\nC. khắp nơi\nD. không đổi",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "bai_sgk": 16,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Điền vào chỗ trống cụm từ thích hợp: Áp suất tác dụng vào chất lỏng sẽ được chất lỏng truyền đi ___ theo mọi hướng.",
+      "cac": [
+       "một phần",
+       "nguyên vẹn",
+       "khắp nơi",
+       "không đổi"
+      ],
+      "dap": "B"
+     }
+    },
+    {
+     "ma": "KCK1-8.C24",
+     "nhan": "Câu 24",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "de": "Đơn vị của áp suất là\nA. Pascal\nB. Newton\nC. Tesla\nD. Ampe",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN",
+     "bai_sgk": 15,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Đơn vị của áp suất là",
+      "cac": [
+       "Pascal",
+       "Newton",
+       "Tesla",
+       "Ampe"
+      ],
+      "dap": "A"
+     }
+    },
+    {
+     "ma": "KCK1-8.C25",
+     "nhan": "Câu 25",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "de": "Trục quay của cái kéo khi dùng để cắt là\nA. mũi kéo\nB. lưỡi kéo\nC. tay cầm\nD. đinh ốc gắn hai lưỡi kéo",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "D",
+     "loai_dap_an": "TN",
+     "bai_sgk": 18,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Trục quay của cái kéo khi dùng để cắt là",
+      "cac": [
+       "mũi kéo",
+       "lưỡi kéo",
+       "tay cầm",
+       "đinh ốc gắn hai lưỡi kéo"
+      ],
+      "dap": "D"
+     }
+    },
+    {
+     "ma": "KCK1-8.C26",
+     "nhan": "Câu 26",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "de": "Điền vào chỗ trống: \"Đòn bẩy loại 1 là loại đòn bẩy có điểm tựa O nằm ___ giữa điểm đặt O1, O2 của các lực F1 và F2\"\nA. xa\nB. chính giữa\nC. trong khoảng\nD. bất kì",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "C",
+     "loai_dap_an": "TN",
+     "bai_sgk": 19,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Điền vào chỗ trống: \"Đòn bẩy loại 1 là loại đòn bẩy có điểm tựa O nằm ___ giữa điểm đặt O₁, O₂ của các lực F₁ và F₂\"",
+      "cac": [
+       "xa",
+       "chính giữa",
+       "trong khoảng",
+       "bất kì"
+      ],
+      "dap": "C"
+     },
+     "ghi_chu": "Đáp án in B (\"chính giữa\"), sai: đòn bẩy loại 1 có điểm tựa nằm trong khoảng giữa hai điểm đặt lực, không cần đúng chính giữa (SGK Bài 19); điền \"chính giữa\" vào câu in còn thành \"nằm chính giữa giữa\". Dùng C. Sửa lỗi in \"O₁, O₁\" thành \"O₁, O₂\", \"đòn bảy\" thành \"đòn bẩy\"."
+    },
+    {
+     "ma": "KCK1-8.C27",
+     "nhan": "Câu 27",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "de": "Một đòn bẩy có điểm tựa O, trọng lượng của vật đặt tại O1, lực tác dụng của người đặt tại O2. Muốn bẩy một vật nặng 2000 N bằng một lực 500 N thì phải dùng đòn bẩy có\nA. O2O = O1O\nB. O2O > 4O1O\nC. O1O > 4O2O\nD. 4O1O > O2O > 2O1O",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "bai_sgk": 19,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Một đòn bẩy có điểm tựa O, trọng lượng của vật đặt tại O₁, lực tác dụng của người đặt tại O₂. Muốn bẩy một vật nặng 2000 N bằng một lực 500 N thì phải dùng đòn bẩy có",
+      "cac": [
+       "O₂O = O₁O",
+       "O₂O > 4O₁O",
+       "O₁O > 4O₂O",
+       "4O₁O > O₂O > 2O₁O"
+      ],
+      "dap": "B"
+     },
+     "ghi_chu": "Đề in không nói O₁, O₂ là điểm gì; thêm câu dẫn theo cách gọi của SGK Bài 19 (vật ở O₁, lực tác dụng ở O₂), cùng cách gọi với lời giải in (O₂O > 4O₁O). Đáp án B như đề in."
+    },
+    {
+     "ma": "KCK1-8.C28",
+     "nhan": "Câu 28",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "trung": "KCK1-2.C21"
+    },
+    {
+     "ma": "KCK1-8.TL1a",
+     "nhan": "Câu 1a",
+     "phan": "Phần II. Tự luận",
+     "nhom": "Câu 1. Cho 11,2 gam bột kim loại X (hóa trị II) vào 200 mL dung dịch acid H₂SO₄ thu được 4,958 lít khí hydrogen (đkc).",
+     "de": "Câu 1. Cho 11,2 gam bột kim loại X (hóa trị II) vào 200 mL dung dịch acid H2SO4 thu được 4,958 lít khí hydrogen (đkc).\na) Xác định kim loại X.",
+     "dang": "CAU_NHO",
+     "dap_an": "X là Fe (iron)",
+     "loai_dap_an": "DAP_SO",
+     "bai_sgk": 8,
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 5,
+      "hoi": "Câu 1. Cho 11,2 gam bột kim loại X (hóa trị II) vào 200 mL dung dịch acid H₂SO₄ thu được 4,958 lít khí hydrogen (đkc).\na) Xác định kim loại X.",
+      "dap": [
+       "Fe"
+      ],
+      "phim": [
+       "Fe"
+      ],
+      "nhieu": [
+       "Mg",
+       "Zn",
+       "Cu",
+       "Ca"
+      ],
+      "loi_giai": [
+       "n(H₂) = 4,958 : 24,79 = 0,2 (mol)",
+       "X + H₂SO₄ → XSO₄ + H₂",
+       "Theo PTHH: n(X) = n(H₂) = 0,2 (mol)",
+       "M(X) = 11,2 : 0,2 = 56 (g/mol)",
+       "Kim loại X là Fe (iron)"
+      ]
+     },
+     "ghi_chu": "Lời giải in không có Câu 1 tự luận (sau dòng \"PHẦN II. TỰ LUẬN\" là Câu 2); em tự giải."
+    },
+    {
+     "ma": "KCK1-8.TL1b",
+     "nhan": "Câu 1b",
+     "phan": "Phần II. Tự luận",
+     "nhom": "Câu 1. Cho 11,2 gam bột kim loại X (hóa trị II) vào 200 mL dung dịch acid H₂SO₄ thu được 4,958 lít khí hydrogen (đkc).",
+     "de": "Câu 1. Cho 11,2 gam bột kim loại X (hóa trị II) vào 200 mL dung dịch acid H2SO4 thu được 4,958 lít khí hydrogen (đkc).\nb) Tính nồng độ mol của các dung dịch muối sau phản ứng.",
+     "dang": "CAU_NHO",
+     "dap_an": "CM(FeSO4) = 1 M",
+     "loai_dap_an": "DAP_SO",
+     "bai_sgk": 8,
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "hoi": "Câu 1. Cho 11,2 gam bột kim loại X (hóa trị II) vào 200 mL dung dịch acid H₂SO₄ thu được 4,958 lít khí hydrogen (đkc).\nb) Tính nồng độ mol của dung dịch muối sau phản ứng (coi thể tích dung dịch không đổi).",
+      "dap": [
+       "1",
+       "1M"
+      ],
+      "phim": [
+       "M"
+      ],
+      "nhieu": [
+       "mol",
+       "%"
+      ],
+      "loi_giai": [
+       "Fe + H₂SO₄ → FeSO₄ + H₂",
+       "Theo PTHH: n(FeSO₄) = n(H₂) = 0,2 (mol)",
+       "200 mL = 0,2 L; CM(FeSO₄) = 0,2 : 0,2 = 1 (M)"
+      ]
+     },
+     "ghi_chu": "Đề in \"các dung dịch muối\" nhưng sau phản ứng chỉ có một muối là FeSO₄; chữ hỏi trên máy viết \"dung dịch muối\" và thêm \"(coi thể tích dung dịch không đổi)\" để tính được."
+    },
+    {
+     "ma": "KCK1-8.TL2",
+     "nhan": "Câu 2",
+     "phan": "Phần II. Tự luận",
+     "nhom": "Câu 2: Hai quả cầu có cùng thể tích, quả cầu 1 làm bằng sắt, quả cầu 2 làm bằng thép. Nhúng chìm cả 2 quả cầu vào trong nước.",
+     "de": "Câu 2: Hai quả cầu có cùng thể tích, quả cầu 1 làm bằng sắt, quả cầu 2 làm bằng thép. Nhúng chìm cả 2 quả cầu vào trong nước.\nLực đẩy Acsimet tác dụng lên quả cầu nào lớn nhất? Vì sao?",
+     "dang": "CAU_NHO",
+     "dap_an": "Bằng nhau, vì hai quả cầu cùng thể tích, cùng chìm trong nước (F = d · V)",
+     "loai_dap_an": "LOI_GIAI",
+     "bai_sgk": 17,
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "Câu 2: Hai quả cầu có cùng thể tích, quả cầu 1 làm bằng sắt, quả cầu 2 làm bằng thép. Nhúng chìm cả 2 quả cầu vào trong nước.\nLực đẩy Archimedes tác dụng lên quả cầu nào lớn hơn? Vì sao?",
+      "dong": [
+       {
+        "chu": "Lực đẩy Archimedes tác dụng lên hai quả cầu {0}",
+        "o": [
+         {
+          "dung": [
+           "bằng nhau"
+          ],
+          "sai": [
+           "lên quả cầu sắt lớn hơn",
+           "lên quả cầu thép lớn hơn"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Vì lực đẩy Archimedes chỉ phụ thuộc {0}",
+        "o": [
+         {
+          "dung": [
+           "trọng lượng riêng của nước và thể tích phần nước bị quả cầu chiếm chỗ"
+          ],
+          "sai": [
+           "chất làm nên quả cầu",
+           "khối lượng của quả cầu"
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     "ghi_chu": "Đề in \"Acsimet\" và \"lớn nhất\" (chỉ có hai quả cầu); viết \"Archimedes\" như SGK, \"lớn hơn\"."
+    }
+   ]
+  },
+  {
+   "chuong": "Cuối học kì 1",
+   "bai": "Đề cuối kì 1 số 9",
+   "de_thi": {
+    "ma": "KCK1-9",
+    "nguon_goc": "loigiaihay.com, đăng 13/01/2025"
+   },
+   "cac_cau": [
+    {
+     "ma": "KCK1-9.C1",
+     "nhan": "Câu 1",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "de": "Trong các dung dịch sau: dung dịch NaCl, dung dịch HCl, dung dịch giấm ăn và dung dịch đường saccharose, các dung dịch làm quỳ tím hóa đỏ là\nA. Dung dịch NaCl và dung dịch HCl\nB. Dung dịch HCl và dung dịch giấm ăn\nC. Dung dịch giấm ăn và dung dịch đường saccharose\nD. Dung dịch NaCl và dung dịch giấm ăn",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "bai_sgk": 8,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Trong các dung dịch sau: dung dịch NaCl, dung dịch HCl, dung dịch giấm ăn và dung dịch đường saccharose, các dung dịch làm quỳ tím hóa đỏ là",
+      "cac": [
+       "Dung dịch NaCl và dung dịch HCl",
+       "Dung dịch HCl và dung dịch giấm ăn",
+       "Dung dịch giấm ăn và dung dịch đường saccharose",
+       "Dung dịch NaCl và dung dịch giấm ăn"
+      ],
+      "dap": "B"
+     }
+    },
+    {
+     "ma": "KCK1-9.C2",
+     "nhan": "Câu 2",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "de": "Chất nào sau đây không phản ứng với sắt?\nA. NaCl\nB. CH3COOH\nC. HNO3\nD. HCl",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN",
+     "bai_sgk": 8,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Chất nào sau đây không phản ứng với sắt?",
+      "cac": [
+       "NaCl",
+       "CH₃COOH",
+       "HNO₃",
+       "HCl"
+      ],
+      "dap": "A"
+     }
+    },
+    {
+     "ma": "KCK1-9.C3",
+     "nhan": "Câu 3",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "de": "Một nguyên tố R có hóa trị II. Trong thành phần oxide của R, oxygen chiếm 40% về khối lượng. Công thức oxide đó là\nA. CuO\nB. SO2\nC. MgO\nD. Al2O3",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "C",
+     "loai_dap_an": "TN",
+     "bai_sgk": 10,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Một nguyên tố R có hóa trị II. Trong thành phần oxide của R, oxygen chiếm 40% về khối lượng. Công thức oxide đó là",
+      "cac": [
+       "CuO",
+       "SO₂",
+       "MgO",
+       "Al₂O₃"
+      ],
+      "dap": "C"
+     }
+    },
+    {
+     "ma": "KCK1-9.C4",
+     "nhan": "Câu 4",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "de": "Trong các oxide: CaO, SO2, Fe2O3, CO2, CO, MgO, Al2O3, ZnO, Na2O, BaO, số lượng oxide base là\nA. 5\nB. 6\nC. 7\nD. 4",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN",
+     "bai_sgk": 10,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Trong các oxide: CaO, SO₂, Fe₂O₃, CO₂, CO, MgO, Al₂O₃, ZnO, Na₂O, BaO, số lượng oxide base là",
+      "cac": [
+       "5",
+       "6",
+       "7",
+       "4"
+      ],
+      "dap": "A"
+     }
+    },
+    {
+     "ma": "KCK1-9.C5",
+     "nhan": "Câu 5",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "de": "Oxide nào sau đây là nguyên nhân gây ra hiệu ứng nhà kính?\nA. CO2\nB. CO\nC. O2\nD. N2",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN",
+     "bai_sgk": 10,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Oxide nào sau đây là nguyên nhân gây ra hiệu ứng nhà kính?",
+      "cac": [
+       "CO₂",
+       "CO",
+       "O₂",
+       "N₂"
+      ],
+      "dap": "A"
+     }
+    },
+    {
+     "ma": "KCK1-9.C6",
+     "nhan": "Câu 6",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "de": "Trộn 2 dung dịch nào sau đây sẽ không xuất hiện kết tủa?\nA. BaCl2, Na2SO4\nB. Na2CO3, Ba(OH)2\nC. BaCl2, AgNO3\nD. NaCl, K2SO4",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "D",
+     "loai_dap_an": "TN",
+     "bai_sgk": 11,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Trộn 2 dung dịch nào sau đây sẽ không xuất hiện kết tủa?",
+      "cac": [
+       "BaCl₂, Na₂SO₄",
+       "Na₂CO₃, Ba(OH)₂",
+       "BaCl₂, AgNO₃",
+       "NaCl, K₂SO₄"
+      ],
+      "dap": "D"
+     },
+     "ghi_chu": "Đề in \"Trộn 2 sung dịch\", sửa \"dung dịch\"."
+    },
+    {
+     "ma": "KCK1-9.C7",
+     "nhan": "Câu 7",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "de": "Để nhận biết 2 lọ mất nhãn đựng CaO và MgO ta dùng\nA. HCl\nB. Nước\nC. HNO3\nD. NaCl",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "bai_sgk": 10,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Để nhận biết 2 lọ mất nhãn đựng CaO và MgO ta dùng",
+      "cac": [
+       "HCl",
+       "Nước",
+       "HNO₃",
+       "NaCl"
+      ],
+      "dap": "B"
+     }
+    },
+    {
+     "ma": "KCK1-9.C8",
+     "nhan": "Câu 8",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "de": "Các loại phân lân đều cung cấp cho cây trồng nguyên tố\nA. Nitrogen\nB. Carbon\nC. Potassium\nD. Phosphorus",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "D",
+     "loai_dap_an": "TN",
+     "bai_sgk": 12,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Các loại phân lân đều cung cấp cho cây trồng nguyên tố",
+      "cac": [
+       "Nitrogen",
+       "Carbon",
+       "Potassium",
+       "Phosphorus"
+      ],
+      "dap": "D"
+     }
+    },
+    {
+     "ma": "KCK1-9.C9",
+     "nhan": "Câu 9",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "de": "Để tăng năng suất cây trồng ta cần phải\nA. Chọn giống tốt\nB. Chọn đất trồng\nC. Chăm sóc (bón phân, làm cỏ)\nD. Chọn giống tốt, chọn đất trồng và chăm sóc (bón phân, làm cỏ)",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "D",
+     "loai_dap_an": "TN",
+     "bai_sgk": 12,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Để tăng năng suất cây trồng ta cần phải",
+      "cac": [
+       "Chọn giống tốt",
+       "Chọn đất trồng",
+       "Chăm sóc (bón phân, làm cỏ)",
+       "Chọn giống tốt, chọn đất trồng và chăm sóc (bón phân, làm cỏ)"
+      ],
+      "dap": "D"
+     },
+     "ghi_chu": "Phương án D in \"Cả 3 đáp án còn lại\"; viết lại bằng ba việc vì máy trộn thứ tự phương án."
+    },
+    {
+     "ma": "KCK1-9.C10",
+     "nhan": "Câu 10",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "de": "Khối lượng của nguyên tố N có trong 100 gam (NH2)2CO là\nA. 46,67 gam\nB. 63,64 gam\nC. 32,33 gam\nD. 31,33 gam",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN",
+     "bai_sgk": 12,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Khối lượng của nguyên tố N có trong 100 gam (NH₂)₂CO là",
+      "cac": [
+       "46,67 gam",
+       "63,64 gam",
+       "32,33 gam",
+       "31,33 gam"
+      ],
+      "dap": "A"
+     },
+     "ghi_chu": "Phương án in chỉ có số (\"46,67\", \"31.33\"); thêm đơn vị gam, sửa dấu chấm thành dấu phẩy."
+    },
+    {
+     "ma": "KCK1-9.C11",
+     "nhan": "Câu 11",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "de": "Sục V lít (đkc) khí CO2 vào 200 mL dung dịch Ca(OH)2 0,2M thu được dung dịch X và m gam kết tủa. Đun nóng dung dịch X đến khối lượng không đổi thu được 2 gam kết tủa. Giá trị m, V lần lượt là\nA. 4 g và 1,4875 lít\nB. 2 g và 1,4874 lít\nC. 6 g và 2,479 lít\nD. 2 g và 0,4958 lít",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "bai_sgk": 10,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Sục V lít (đkc) khí CO₂ vào 200 mL dung dịch Ca(OH)₂ 0,2M thu được dung dịch X và m gam kết tủa. Đun nóng dung dịch X đến khối lượng không đổi thu được 2 gam kết tủa. Giá trị m, V lần lượt là",
+      "cac": [
+       "4 g và 1,4875 lít",
+       "2 g và 1,4874 lít",
+       "6 g và 2,479 lít",
+       "2 g và 0,4958 lít"
+      ],
+      "dap": "B"
+     },
+     "ghi_chu": "Câu cần phản ứng CO₂ dư tạo Ca(HCO₃)₂ và phản ứng phân huỷ Ca(HCO₃)₂ khi đun, không có trong SGK KHTN 8 (Bài 10 chỉ có CO₂ + Ca(OH)₂ → CaCO₃ + H₂O). Giữ như đề in; đề in \"200ml Ca(OH)2\", thêm chữ \"dung dịch\"."
+    },
+    {
+     "ma": "KCK1-9.C12",
+     "nhan": "Câu 12",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "de": "Cho 250 mL dung dịch Ba(OH)2 a M vào dung dịch H2SO4 dư thu được 5,825 g kết tủa. Giá trị của a là\nA. 0,1\nB. 0,15\nC. 0,2\nD. 0,25",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN",
+     "bai_sgk": 9,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Cho 250 mL dung dịch Ba(OH)₂ a M vào dung dịch H₂SO₄ dư thu được 5,825 g kết tủa. Giá trị của a là",
+      "cac": [
+       "0,1",
+       "0,15",
+       "0,2",
+       "0,25"
+      ],
+      "dap": "A"
+     },
+     "ghi_chu": "Đề in không nói H₂SO₄ dư (lời giải in coi Ba(OH)₂ phản ứng hết); thêm \"dư\" để tính được a. \"Giá trị aM là\" sửa \"Giá trị của a là\"."
+    },
+    {
+     "ma": "KCK1-9.C13",
+     "nhan": "Câu 13",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "de": "Nung 100 kg đá vôi (CaCO3) thu được 26,88 kg vôi sống (CaO). Hiệu suất của quá trình nung là\nA. 100%\nB. 48%\nC. 50%\nD. 95%",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "bai_sgk": 6,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Nung 100 kg đá vôi (CaCO₃) thu được 26,88 kg vôi sống (CaO). Hiệu suất của quá trình nung là",
+      "cac": [
+       "100%",
+       "48%",
+       "50%",
+       "95%"
+      ],
+      "dap": "B"
+     },
+     "ghi_chu": "Đề in \"thu được 26,88g vôi sống\", sửa 26,88 kg: lời giải in tính n(CaO) = 26,88 : 56 = 0,48 rồi so với 1 (100 kg đá vôi theo kmol), ra 48%; với 26,88 g thì hiệu suất chỉ 0,048%."
+    },
+    {
+     "ma": "KCK1-9.C14",
+     "nhan": "Câu 14",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "de": "Hòa tan 4,8 gam bột Mg vào 100 g dung dịch H2SO4 vừa đủ thu được muối MgSO4 và khí hydrogen. Nồng độ % muối thu được là:\nA. 24,6%\nB. 21,86%\nC. 23%\nD. 24%",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "C",
+     "loai_dap_an": "TN",
+     "bai_sgk": 8,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Hòa tan 4,8 gam bột Mg vào 100 g dung dịch H₂SO₄ vừa đủ thu được muối MgSO₄ và khí hydrogen. Nồng độ % muối thu được là:",
+      "cac": [
+       "24,6%",
+       "21,86%",
+       "23%",
+       "24%"
+      ],
+      "dap": "C"
+     }
+    },
+    {
+     "ma": "KCK1-9.C15",
+     "nhan": "Câu 15",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "de": "Trường hợp nào sau đây do áp suất khí quyển gây ra?\nA. Quả bóng bàn bị bẹp, khi bỏ vào nước nóng thì phồng lên như cũ\nB. Thổi hơi vào quả bóng bay, quả bóng phồng lên\nC. Cắm một ống hút hở hai đầu ngập vào cốc nước, dùng ngón tay bịt kín đầu trên và kéo ống ra khỏi cốc, thấy nước không chảy ra khỏi ống\nD. Dùng tay ép chặt một đầu lò xo của bút bi, rồi thả tay ra, thấy đầu bút búng lên như cũ",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "C",
+     "loai_dap_an": "TN",
+     "bai_sgk": 16,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Trường hợp nào sau đây do áp suất khí quyển gây ra?",
+      "cac": [
+       "Quả bóng bàn bị bẹp, khi bỏ vào nước nóng thì phồng lên như cũ",
+       "Thổi hơi vào quả bóng bay, quả bóng phồng lên",
+       "Cắm một ống hút hở hai đầu ngập vào cốc nước, dùng ngón tay bịt kín đầu trên và kéo ống ra khỏi cốc, thấy nước không chảy ra khỏi ống",
+       "Dùng tay ép chặt một đầu lò xo của bút bi, rồi thả tay ra, thấy đầu bút búng lên như cũ"
+      ],
+      "dap": "C"
+     }
+    },
+    {
+     "ma": "KCK1-9.C16",
+     "nhan": "Câu 16",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "de": "Khối lượng riêng của một chất là\nA. khối lượng của chất đó\nB. khối lượng của một đơn vị thể tích chất đó\nC. bằng thể tích của vật chia khối lượng của vật\nD. khối lượng của một lít chất đó",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "bai_sgk": 13,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Khối lượng riêng của một chất là",
+      "cac": [
+       "khối lượng của chất đó",
+       "khối lượng của một đơn vị thể tích chất đó",
+       "bằng thể tích của vật chia khối lượng của vật",
+       "khối lượng của một lít chất đó"
+      ],
+      "dap": "B"
+     }
+    },
+    {
+     "ma": "KCK1-9.C17",
+     "nhan": "Câu 17",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "de": "Đâu là dãy gồm các đơn vị khối lượng riêng thường dùng?\nA. kg/m; kg/m^3; m^3/kg\nB. g/m; kg/m^3; cm^3/kg\nC. g/m^3; kg/m^3; m^3/kg\nD. kg/m^3; g/m^3; g/cm^3",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "D",
+     "loai_dap_an": "TN",
+     "bai_sgk": 13,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Đâu là dãy gồm các đơn vị khối lượng riêng thường dùng?",
+      "cac": [
+       "kg/m; kg/m³; m³/kg",
+       "g/m; kg/m³; cm³/kg",
+       "g/m³; kg/m³; m³/kg",
+       "kg/m³; g/m³; g/cm³"
+      ],
+      "dap": "D"
+     }
+    },
+    {
+     "ma": "KCK1-9.C18",
+     "nhan": "Câu 18",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "de": "Áp lực là\nA. lực ép có phương vuông góc với mặt bị ép\nB. lực ép có phương song song với mặt bị ép\nC. lực đẩy hoặc kéo có cùng phương với mặt bị ép\nD. lực tác dụng của vật lên dây treo trên giá",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN",
+     "bai_sgk": 15,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Áp lực là",
+      "cac": [
+       "lực ép có phương vuông góc với mặt bị ép",
+       "lực ép có phương song song với mặt bị ép",
+       "lực đẩy hoặc kéo có cùng phương với mặt bị ép",
+       "lực tác dụng của vật lên dây treo trên giá"
+      ],
+      "dap": "A"
+     },
+     "ghi_chu": "Phương án B in \"song song góc với\", bỏ chữ \"góc\" thừa."
+    },
+    {
+     "ma": "KCK1-9.C19",
+     "nhan": "Câu 19",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "de": "Hiện tượng nào sau đây là do lực đẩy Archimedes gây ra?\nA. Khi ôm một tảng đá ở trong nước ta thấy nhẹ hơn khi ôm nó trong không khí\nB. Khi đá quả bóng, quả bóng bay xa\nC. Lực của vận động viên bơi đang cố hết sức để bơi về đích\nD. Lực của chú thợ dùng vặn ốc vít vào tường",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN",
+     "bai_sgk": 17,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Hiện tượng nào sau đây là do lực đẩy Archimedes gây ra?",
+      "cac": [
+       "Khi ôm một tảng đá ở trong nước ta thấy nhẹ hơn khi ôm nó trong không khí",
+       "Khi đá quả bóng, quả bóng bay xa",
+       "Lực của vận động viên bơi đang cố hết sức để bơi về đích",
+       "Lực của chú thợ dùng vặn ốc vít vào tường"
+      ],
+      "dap": "A"
+     }
+    },
+    {
+     "ma": "KCK1-9.C20",
+     "nhan": "Câu 20",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "de": "Điều kiện để một vật chìm xuống trong chất lỏng là:\nA. khối lượng của vật nhỏ hơn trọng lượng riêng của chất lỏng\nB. trọng lượng riêng của vật lớn hơn trọng lượng riêng của chất lỏng\nC. trọng lượng riêng của vật nhỏ hơn trọng lượng riêng của chất lỏng\nD. trọng lượng của vật nhỏ hơn lực đẩy Archimedes",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "bai_sgk": 17,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Điều kiện để một vật chìm xuống trong chất lỏng là:",
+      "cac": [
+       "khối lượng của vật nhỏ hơn trọng lượng riêng của chất lỏng",
+       "trọng lượng riêng của vật lớn hơn trọng lượng riêng của chất lỏng",
+       "trọng lượng riêng của vật nhỏ hơn trọng lượng riêng của chất lỏng",
+       "trọng lượng của vật nhỏ hơn lực đẩy Archimedes"
+      ],
+      "dap": "B"
+     }
+    },
+    {
+     "ma": "KCK1-9.C21",
+     "nhan": "Câu 21",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "de": "Trong thực tế khi xây nhà người ta xây móng nhà phải xây rộng bản hơn tường nhà với mục đích\nA. để giảm trọng lượng của tường xuống mặt đất\nB. để tăng trọng lượng của tường xuống mặt đất\nC. để tăng áp suất lên mặt đất\nD. để giảm áp suất tác dụng lên mặt đất",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "D",
+     "loai_dap_an": "TN",
+     "bai_sgk": 15,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Trong thực tế khi xây nhà người ta xây móng nhà phải xây rộng bản hơn tường nhà với mục đích",
+      "cac": [
+       "để giảm trọng lượng của tường xuống mặt đất",
+       "để tăng trọng lượng của tường xuống mặt đất",
+       "để tăng áp suất lên mặt đất",
+       "để giảm áp suất tác dụng lên mặt đất"
+      ],
+      "dap": "D"
+     }
+    },
+    {
+     "ma": "KCK1-9.C22",
+     "nhan": "Câu 22",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "de": "Một đòn bẩy có điểm tựa O, trọng lượng của vật đặt tại O1, lực tác dụng của người đặt tại O2. Dùng đòn bẩy được lợi về lực khi\nA. khoảng cách OO1 bằng khoảng cách OO2\nB. khoảng cách OO1 lớn hơn khoảng cách OO2\nC. khoảng cách OO1 nhỏ hơn khoảng cách OO2\nD. điểm O1 trùng với điểm O2",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "C",
+     "loai_dap_an": "TN",
+     "bai_sgk": 19,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Một đòn bẩy có điểm tựa O, trọng lượng của vật đặt tại O₁, lực tác dụng của người đặt tại O₂. Dùng đòn bẩy được lợi về lực khi",
+      "cac": [
+       "khoảng cách OO₁ bằng khoảng cách OO₂",
+       "khoảng cách OO₁ lớn hơn khoảng cách OO₂",
+       "khoảng cách OO₁ nhỏ hơn khoảng cách OO₂",
+       "điểm O₁ trùng với điểm O₂"
+      ],
+      "dap": "C"
+     },
+     "ghi_chu": "Đề in \"Dùng đòn bẩy được lợi về lực khi?\" mà không nói O₁, O₂ là điểm gì; đáp án in B (OO₁ > OO₂) vì lời giải in gọi O₁ là điểm đặt lực tác dụng, O₂ là điểm đặt lực cản, ngược cách gọi của SGK Bài 19 (vật ở O₁, lực tác dụng ở O₂). Thêm câu dẫn theo SGK như KCK1-4 Câu 25, nên đáp án thành C. Phương án in \"Khoảng cách OO1 = OO2\", \"OO1 > OO2\", \"OO1 < OO2\" viết bằng chữ (kiem.py không cho dấu nhỏ hơn)."
+    },
+    {
+     "ma": "KCK1-9.C23",
+     "nhan": "Câu 23",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "de": "Tình huống nào sau đây xuất hiện moment lực?\nA. Vận động viên đang trượt tuyết\nB. Bóng đèn treo trên trần nhà\nC. Cánh cửa quay quanh bản lề\nD. Nước chảy từ trên xuống",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "C",
+     "loai_dap_an": "TN",
+     "bai_sgk": 18,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Tình huống nào sau đây xuất hiện moment lực?",
+      "cac": [
+       "Vận động viên đang trượt tuyết",
+       "Bóng đèn treo trên trần nhà",
+       "Cánh cửa quay quanh bản lề",
+       "Nước chảy từ trên xuống"
+      ],
+      "dap": "C"
+     },
+     "ghi_chu": "Đề in \"mô men lực\", viết \"moment lực\" như SGK."
+    },
+    {
+     "ma": "KCK1-9.C24",
+     "nhan": "Câu 24",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "de": "Hai vật nhiễm điện tích cùng loại, khi đưa chúng lại gần nhau thì chúng sẽ:\nA. Hút nhau\nB. Đẩy nhau\nC. Vừa hút vừa đẩy nhau\nD. Không có hiện tượng gì cả",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "bai_sgk": 20,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Hai vật nhiễm điện tích cùng loại, khi đưa chúng lại gần nhau thì chúng sẽ:",
+      "cac": [
+       "Hút nhau",
+       "Đẩy nhau",
+       "Vừa hút vừa đẩy nhau",
+       "Không có hiện tượng gì cả"
+      ],
+      "dap": "B"
+     },
+     "ghi_chu": "Câu thuộc Bài 20 (Hiện tượng nhiễm điện do cọ xát), ngoài phạm vi học kì 1 (Bài 1 tới 19); vì câu này phạm vi Lí của đề là Bài 20."
+    },
+    {
+     "ma": "KCK1-9.C25",
+     "nhan": "Câu 25",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "trung": "KCK1-1.C21"
+    },
+    {
+     "ma": "KCK1-9.C26",
+     "nhan": "Câu 26",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "de": "Em hãy hoàn thành câu sau đây để được câu có ý nghĩa vật lí: Lực ___, moment lực ___, tác dụng làm quay càng lớn.\nA. càng lớn, càng nhỏ\nB. càng lớn, càng lớn\nC. càng nhỏ, càng nhỏ\nD. càng nhỏ, càng lớn",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "bai_sgk": 18,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Em hãy hoàn thành câu sau đây để được câu có ý nghĩa vật lí: Lực ___, moment lực ___, tác dụng làm quay càng lớn.",
+      "cac": [
+       "càng lớn, càng nhỏ",
+       "càng lớn, càng lớn",
+       "càng nhỏ, càng nhỏ",
+       "càng nhỏ, càng lớn"
+      ],
+      "dap": "B"
+     }
+    },
+    {
+     "ma": "KCK1-9.C27",
+     "nhan": "Câu 27",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "de": "Dụng cụ nào sau đây không phải là ứng dụng của đòn bẩy?\nA. Dụng cụ khui nắp chai\nB. Bấm giấy\nC. Tua vít\nD. Bập bênh",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "C",
+     "loai_dap_an": "TN",
+     "bai_sgk": 19,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Dụng cụ nào sau đây không phải là ứng dụng của đòn bẩy?",
+      "cac": [
+       "Dụng cụ khui nắp chai",
+       "Bấm giấy",
+       "Tua vít",
+       "Bập bênh"
+      ],
+      "dap": "C"
+     }
+    },
+    {
+     "ma": "KCK1-9.C28",
+     "nhan": "Câu 28",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "de": "Muốn đo khối lượng riêng của khối gỗ hình hộp chữ nhật có kích thước 1 cm × 1,5 cm × 2 cm người ta dùng những dụng cụ gì?\nA. Cần dùng một cái cân và thước kẻ\nB. Cần dùng một cái cân và lực kế\nC. Cần dùng một lực kế và bình chia độ\nD. Cần dùng một cái cân và bình chia độ",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN",
+     "bai_sgk": 14,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Muốn đo khối lượng riêng của khối gỗ hình hộp chữ nhật có kích thước 1 cm × 1,5 cm × 2 cm người ta dùng những dụng cụ gì?",
+      "cac": [
+       "Cần dùng một cái cân và thước kẻ",
+       "Cần dùng một cái cân và lực kế",
+       "Cần dùng một lực kế và bình chia độ",
+       "Cần dùng một cái cân và bình chia độ"
+      ],
+      "dap": "A"
+     },
+     "ghi_chu": "Đáp án in D (cân và bình chia độ). Khối gỗ hình hộp chữ nhật thì đo kích thước bằng thước để tính thể tích, như SGK Bài 14 làm với vật có hình dạng xác định; bình chia độ dùng cho vật không có hình dạng xác định và chìm trong nước, còn gỗ nổi. Dùng A."
+    },
+    {
+     "ma": "KCK1-9.TL1a-1",
+     "nhan": "Câu 1a",
+     "phan": "Phần II. Tự luận",
+     "nhom": "Câu 1. Hòa tan 2,81 gam hỗn hợp gồm Fe₂O₃, MgO, ZnO trong 500 mL dung dịch H₂SO₄ 0,1M (vừa đủ). Cô cạn dung dịch sau phản ứng thì lượng muối khan thu được là x gam.",
+     "de": "Câu 1. Hoàn tan 2,81 gam hỗn hợp gồm Fe2O3, MgO, ZnO trong 500ml dung dịch H2SO4 0,1M (vừa đủ). Cô cạn dung dịch sau phản ứng thì lượng muối khan thu được là x gam.\na) Viết phương trình hóa học xảy ra.",
+     "dang": "CAU_NHO",
+     "dap_an": "Fe2O3 + 3H2SO4 → Fe2(SO4)3 + 3H2O",
+     "loai_dap_an": "DAP_SO",
+     "bai_sgk": 10,
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "hoi": "Câu 1. Hòa tan 2,81 gam hỗn hợp gồm Fe₂O₃, MgO, ZnO trong 500 mL dung dịch H₂SO₄ 0,1M (vừa đủ). Cô cạn dung dịch sau phản ứng thì lượng muối khan thu được là x gam.\na) Viết phương trình hóa học xảy ra.\n(1) Phản ứng của Fe₂O₃ với H₂SO₄",
+      "dap": [
+       "Fe₂O₃+3H₂SO₄→Fe₂(SO₄)₃+3H₂O"
+      ],
+      "phim": [
+       "Fe₂O₃",
+       "H₂SO₄",
+       "Fe₂(SO₄)₃",
+       "H₂O"
+      ],
+      "nhieu": [
+       "FeSO₄",
+       "Fe₃(SO₄)₂",
+       "H₂"
+      ],
+      "loi_giai": [
+       "Oxide base tác dụng với acid tạo thành muối và nước; Fe có hoá trị III nên muối là Fe₂(SO₄)₃",
+       "Vế phải có 3 nhóm SO₄ nên đặt 3 trước H₂SO₄, rồi đặt 3 trước H₂O cho đủ 6 nguyên tử H",
+       "Fe₂O₃ + 3H₂SO₄ → Fe₂(SO₄)₃ + 3H₂O"
+      ]
+     },
+     "ghi_chu": "Đề in \"Hoàn tan\", \"500ml\"; sửa \"Hòa tan\", \"500 mL\". Ý a in một dòng (ba phản ứng); trên máy tách ba câu, mỗi oxide một phương trình (TL1a-1, TL1a-2, TL1a-3)."
+    },
+    {
+     "ma": "KCK1-9.TL1a-2",
+     "nhan": "Câu 1a",
+     "phan": "Phần II. Tự luận",
+     "nhom": "Câu 1. Hòa tan 2,81 gam hỗn hợp gồm Fe₂O₃, MgO, ZnO trong 500 mL dung dịch H₂SO₄ 0,1M (vừa đủ). Cô cạn dung dịch sau phản ứng thì lượng muối khan thu được là x gam.",
+     "de": "Câu 1. Hoàn tan 2,81 gam hỗn hợp gồm Fe2O3, MgO, ZnO trong 500ml dung dịch H2SO4 0,1M (vừa đủ). Cô cạn dung dịch sau phản ứng thì lượng muối khan thu được là x gam.\na) Viết phương trình hóa học xảy ra.",
+     "dang": "CAU_NHO",
+     "dap_an": "MgO + H2SO4 → MgSO4 + H2O",
+     "loai_dap_an": "DAP_SO",
+     "bai_sgk": 10,
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "hoi": "Câu 1. Hòa tan 2,81 gam hỗn hợp gồm Fe₂O₃, MgO, ZnO trong 500 mL dung dịch H₂SO₄ 0,1M (vừa đủ). Cô cạn dung dịch sau phản ứng thì lượng muối khan thu được là x gam.\na) Viết phương trình hóa học xảy ra.\n(2) Phản ứng của MgO với H₂SO₄",
+      "dap": [
+       "MgO+H₂SO₄→MgSO₄+H₂O"
+      ],
+      "phim": [
+       "MgO",
+       "H₂SO₄",
+       "MgSO₄",
+       "H₂O"
+      ],
+      "nhieu": [
+       "Mg(SO₄)₂",
+       "MgS",
+       "H₂"
+      ],
+      "loi_giai": [
+       "Oxide base tác dụng với acid tạo thành muối và nước; Mg có hoá trị II nên muối là MgSO₄",
+       "MgO + H₂SO₄ → MgSO₄ + H₂O"
+      ]
+     }
+    },
+    {
+     "ma": "KCK1-9.TL1a-3",
+     "nhan": "Câu 1a",
+     "phan": "Phần II. Tự luận",
+     "nhom": "Câu 1. Hòa tan 2,81 gam hỗn hợp gồm Fe₂O₃, MgO, ZnO trong 500 mL dung dịch H₂SO₄ 0,1M (vừa đủ). Cô cạn dung dịch sau phản ứng thì lượng muối khan thu được là x gam.",
+     "de": "Câu 1. Hoàn tan 2,81 gam hỗn hợp gồm Fe2O3, MgO, ZnO trong 500ml dung dịch H2SO4 0,1M (vừa đủ). Cô cạn dung dịch sau phản ứng thì lượng muối khan thu được là x gam.\na) Viết phương trình hóa học xảy ra.",
+     "dang": "CAU_NHO",
+     "dap_an": "ZnO + H2SO4 → ZnSO4 + H2O",
+     "loai_dap_an": "DAP_SO",
+     "bai_sgk": 10,
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "hoi": "Câu 1. Hòa tan 2,81 gam hỗn hợp gồm Fe₂O₃, MgO, ZnO trong 500 mL dung dịch H₂SO₄ 0,1M (vừa đủ). Cô cạn dung dịch sau phản ứng thì lượng muối khan thu được là x gam.\na) Viết phương trình hóa học xảy ra.\n(3) Phản ứng của ZnO với H₂SO₄",
+      "dap": [
+       "ZnO+H₂SO₄→ZnSO₄+H₂O"
+      ],
+      "phim": [
+       "ZnO",
+       "H₂SO₄",
+       "ZnSO₄",
+       "H₂O"
+      ],
+      "nhieu": [
+       "Zn(SO₄)₂",
+       "ZnS",
+       "H₂"
+      ],
+      "loi_giai": [
+       "Oxide base tác dụng với acid tạo thành muối và nước; Zn có hoá trị II nên muối là ZnSO₄",
+       "ZnO + H₂SO₄ → ZnSO₄ + H₂O"
+      ]
+     }
+    },
+    {
+     "ma": "KCK1-9.TL1b",
+     "nhan": "Câu 1b",
+     "phan": "Phần II. Tự luận",
+     "nhom": "Câu 1. Hòa tan 2,81 gam hỗn hợp gồm Fe₂O₃, MgO, ZnO trong 500 mL dung dịch H₂SO₄ 0,1M (vừa đủ). Cô cạn dung dịch sau phản ứng thì lượng muối khan thu được là x gam.",
+     "de": "Câu 1. Hoàn tan 2,81 gam hỗn hợp gồm Fe2O3, MgO, ZnO trong 500ml dung dịch H2SO4 0,1M (vừa đủ). Cô cạn dung dịch sau phản ứng thì lượng muối khan thu được là x gam.\nb) Tính giá trị của x.",
+     "dang": "CAU_NHO",
+     "dap_an": "x = 6,81",
+     "loai_dap_an": "DAP_SO",
+     "bai_sgk": 10,
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "hoi": "Câu 1. Hòa tan 2,81 gam hỗn hợp gồm Fe₂O₃, MgO, ZnO trong 500 mL dung dịch H₂SO₄ 0,1M (vừa đủ). Cô cạn dung dịch sau phản ứng thì lượng muối khan thu được là x gam.\nb) Tính giá trị của x.",
+      "dap": [
+       "6,81",
+       "6,81g"
+      ],
+      "phim": [
+       "g"
+      ],
+      "nhieu": [
+       "mol",
+       "L"
+      ],
+      "loi_giai": [
+       "500 mL = 0,5 L; n(H₂SO₄) = 0,5 · 0,1 = 0,05 (mol)",
+       "Theo ba PTHH: n(H₂O) = n(H₂SO₄) = 0,05 (mol)",
+       "Bảo toàn khối lượng: m(oxide) + m(H₂SO₄) = m(muối) + m(H₂O)",
+       "x = 2,81 + 0,05 · 98 − 0,05 · 18 = 6,81 (g)"
+      ]
+     }
+    },
+    {
+     "ma": "KCK1-9.TL2a",
+     "nhan": "Câu 2a",
+     "phan": "Phần II. Tự luận",
+     "nhom": "Câu 2:",
+     "de": "Câu 2:\na. Một vật bằng sắt đặc có thể tích 250 cm^3. Tính khối lượng của vật đó? Biết khối lượng riêng của sắt là 7800 kg/m^3?",
+     "dang": "CAU_NHO",
+     "dap_an": "m = 1,95 kg",
+     "loai_dap_an": "DAP_SO",
+     "bai_sgk": 13,
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "hoi": "Câu 2:\na. Một vật bằng sắt đặc có thể tích 250 cm³. Tính khối lượng của vật đó. Biết khối lượng riêng của sắt là 7800 kg/m³.",
+      "dap": [
+       "1,95",
+       "1,95kg",
+       "1950g"
+      ],
+      "phim": [
+       "kg",
+       "g"
+      ],
+      "nhieu": [
+       "m³",
+       "cm³",
+       "kg/m³"
+      ],
+      "loi_giai": [
+       "V = 250 cm³ = 0,00025 m³",
+       "m = D · V = 7800 · 0,00025 = 1,95 kg = 1950 g"
+      ]
+     }
+    },
+    {
+     "ma": "KCK1-9.TL2b",
+     "nhan": "Câu 2b",
+     "phan": "Phần II. Tự luận",
+     "nhom": "Câu 2:",
+     "de": "Câu 2:\nb. Khi sản xuất đinh đóng tường, người ta làm mũi đinh nhọn còn đầu đinh thì có tán tròn to hơn. Vì sao?",
+     "dang": "CAU_NHO",
+     "dap_an": "Mũi đinh nhọn để tăng áp suất, dễ xuyên vào tường; đầu đinh to để giảm áp suất lên chỗ búa đập, dễ đóng đinh",
+     "loai_dap_an": "LOI_GIAI",
+     "bai_sgk": 15,
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "Câu 2:\nb. Khi sản xuất đinh đóng tường, người ta làm mũi đinh nhọn còn đầu đinh thì có tán tròn to hơn. Vì sao?",
+      "dong": [
+       {
+        "chu": "Mũi đinh nhọn để {0}",
+        "o": [
+         {
+          "dung": [
+           "giảm diện tích bị ép, tăng áp suất lên tường, đinh dễ cắm vào tường"
+          ],
+          "sai": [
+           "tăng diện tích bị ép, giảm áp suất lên tường, đinh dễ cắm vào tường",
+           "tăng áp lực của búa lên đinh, đinh dễ cắm vào tường"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Đầu đinh tán tròn to để {0}",
+        "o": [
+         {
+          "dung": [
+           "tăng diện tích tiếp xúc với búa, giảm áp suất lên chỗ búa đập, đóng đinh dễ hơn"
+          ],
+          "sai": [
+           "giảm diện tích tiếp xúc với búa, tăng áp suất lên chỗ búa đập, đóng đinh dễ hơn",
+           "làm đinh nặng hơn để đinh tự cắm vào tường"
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     "ghi_chu": "Đề in kèm ảnh chụp hai chiếc đinh (có in số điện thoại của người bán); không lấy vì câu hỏi không cần nhìn hình."
+    }
+   ]
+  },
+  {
+   "chuong": "Cuối học kì 1",
+   "bai": "Đề cuối kì 1 số 10",
+   "de_thi": {
+    "ma": "KCK1-10",
+    "nguon_goc": "loigiaihay.com, đăng 13/01/2025"
+   },
+   "cac_cau": [
+    {
+     "ma": "KCK1-10.C1",
+     "nhan": "Câu 1",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "de": "Một số kim loại tác dụng với dung dịch acid tạo thành:\nA. Muối và khí hydrogen\nB. Muối và khí oxygen\nC. Base và khí hydrogen\nD. Base và khí oxygen",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN",
+     "bai_sgk": 8,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Một số kim loại tác dụng với dung dịch acid tạo thành:",
+      "cac": [
+       "Muối và khí hydrogen",
+       "Muối và khí oxygen",
+       "Base và khí hydrogen",
+       "Base và khí oxygen"
+      ],
+      "dap": "A"
+     },
+     "ghi_chu": "Phương án A in \"Muối + khí hydrogen\"; viết \"và\" như ba phương án kia."
+    },
+    {
+     "ma": "KCK1-10.C2",
+     "nhan": "Câu 2",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "de": "Trong giấm ăn có chứa acid nào sau đây?\nA. CH3COOH\nB. H2SO4\nC. HNO3\nD. HCl",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN",
+     "bai_sgk": 8,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Trong giấm ăn có chứa acid nào sau đây?",
+      "cac": [
+       "CH₃COOH",
+       "H₂SO₄",
+       "HNO₃",
+       "HCl"
+      ],
+      "dap": "A"
+     }
+    },
+    {
+     "ma": "KCK1-10.C3",
+     "nhan": "Câu 3",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "de": "Chất nào sau đây là oxide lưỡng tính?\nA. Fe2O3\nB. CaO\nC. ZnO\nD. SO3",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "C",
+     "loai_dap_an": "TN",
+     "bai_sgk": 10,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Chất nào sau đây là oxide lưỡng tính?",
+      "cac": [
+       "Fe₂O₃",
+       "CaO",
+       "ZnO",
+       "SO₃"
+      ],
+      "dap": "C"
+     }
+    },
+    {
+     "ma": "KCK1-10.C4",
+     "nhan": "Câu 4",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "de": "Oxide nào sau đây là nguyên nhân chính gây hiện tượng mưa acid?\nA. CO2\nB. SO2\nC. NO\nD. Al2O3",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "bai_sgk": 10,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Oxide nào sau đây là nguyên nhân chính gây hiện tượng mưa acid?",
+      "cac": [
+       "CO₂",
+       "SO₂",
+       "NO",
+       "Al₂O₃"
+      ],
+      "dap": "B"
+     }
+    },
+    {
+     "ma": "KCK1-10.C5",
+     "nhan": "Câu 5",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "de": "Cho vào ống nghiệm 1 thìa nhỏ bột CuO màu đen, thêm khoảng 3 mL dung dịch H2SO4, lắc đều ống nghiệm và quan sát. Hiện tượng xảy ra là\nA. Xuất hiện kết tủa trắng\nB. Thu được dung dịch màu xanh lam\nC. Sủi bọt khí\nD. Xuất hiện kết tủa xanh",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "bai_sgk": 10,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Cho vào ống nghiệm 1 thìa nhỏ bột CuO màu đen, thêm khoảng 3 mL dung dịch H₂SO₄, lắc đều ống nghiệm và quan sát. Hiện tượng xảy ra là",
+      "cac": [
+       "Xuất hiện kết tủa trắng",
+       "Thu được dung dịch màu xanh lam",
+       "Sủi bọt khí",
+       "Xuất hiện kết tủa xanh"
+      ],
+      "dap": "B"
+     }
+    },
+    {
+     "ma": "KCK1-10.C6",
+     "nhan": "Câu 6",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "trung": "KCK1-5.C9",
+     "ghi_chu": "Đề in \"Dung địch\", câu gốc đã viết đúng."
+    },
+    {
+     "ma": "KCK1-10.C7",
+     "nhan": "Câu 7",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "de": "Nếu pH nhỏ hơn 7 thì dung dịch có môi trường\nA. Acid\nB. Base\nC. Muối\nD. Trung tính",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN",
+     "bai_sgk": 9,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Nếu pH nhỏ hơn 7 thì dung dịch có môi trường",
+      "cac": [
+       "Acid",
+       "Base",
+       "Muối",
+       "Trung tính"
+      ],
+      "dap": "A"
+     },
+     "ghi_chu": "Đề in \"pH < 7\"; viết \"pH nhỏ hơn 7\" vì kiem.py không cho dấu nhỏ hơn trong chữ hiện trên máy."
+    },
+    {
+     "ma": "KCK1-10.C8",
+     "nhan": "Câu 8",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "de": "Để nhận biết 2 chất rắn Al2O3 và Fe2O3 ta dùng\nA. NaOH\nB. HNO3\nC. HCl\nD. Quỳ tím ẩm",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN",
+     "bai_sgk": 10,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Để nhận biết 2 chất rắn Al₂O₃ và Fe₂O₃ ta dùng",
+      "cac": [
+       "NaOH",
+       "HNO₃",
+       "HCl",
+       "Quỳ tím ẩm"
+      ],
+      "dap": "A"
+     },
+     "ghi_chu": "Đề in \"Qùy tím ẩm\", sửa \"Quỳ tím ẩm\"."
+    },
+    {
+     "ma": "KCK1-10.C9",
+     "nhan": "Câu 9",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "de": "Cho 200 mL dung dịch Ba(OH)2 0,4M vào 250 mL dung dịch H2SO4 0,3M. Khối lượng kết tủa thu được là\nA. 18,645 g\nB. 17,645 g\nC. 16,475 g\nD. 17,475 g",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "D",
+     "loai_dap_an": "TN",
+     "bai_sgk": 9,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Cho 200 mL dung dịch Ba(OH)₂ 0,4M vào 250 mL dung dịch H₂SO₄ 0,3M. Khối lượng kết tủa thu được là",
+      "cac": [
+       "18,645 g",
+       "17,645 g",
+       "16,475 g",
+       "17,475 g"
+      ],
+      "dap": "D"
+     }
+    },
+    {
+     "ma": "KCK1-10.C10",
+     "nhan": "Câu 10",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "de": "Sục 0,37185 lít khí SO2 (đkc) vào 100 mL dung dịch NaOH 0,2M thu được m gam muối. Giá trị của m là\nA. 1,89 g\nB. 2,52 g\nC. 1,67 g\nD. 1,56 g",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "C",
+     "loai_dap_an": "TN",
+     "bai_sgk": 10,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Sục 0,37185 lít khí SO₂ (đkc) vào 100 mL dung dịch NaOH 0,2M thu được m gam muối. Giá trị của m là",
+      "cac": [
+       "1,89 g",
+       "2,52 g",
+       "1,67 g",
+       "1,56 g"
+      ],
+      "dap": "C"
+     },
+     "ghi_chu": "Câu cần biết SO₂ với NaOH tạo hai muối Na₂SO₃ và NaHSO₃ tuỳ tỉ lệ mol, không có trong SGK KHTN 8. Giữ như đề in; \"0, 37185\" sửa \"0,37185\"."
+    },
+    {
+     "ma": "KCK1-10.C11",
+     "nhan": "Câu 11",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "de": "Độ dinh dưỡng của phân kali được tính bằng phần trăm khối lượng K2O tương ứng với lượng K có trong thành phần phân bón. Một loại phân kali có chứa 85% KCl (còn lại là các tạp chất không chứa kali). Độ dinh dưỡng của loại phân bón này là\nA. 53,6%\nB. 55,6%\nC. 57,8%\nD. 48,3%",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN",
+     "bai_sgk": 12,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Độ dinh dưỡng của phân kali được tính bằng phần trăm khối lượng K₂O tương ứng với lượng K có trong thành phần phân bón. Một loại phân kali có chứa 85% KCl (còn lại là các tạp chất không chứa kali). Độ dinh dưỡng của loại phân bón này là",
+      "cac": [
+       "53,6%",
+       "55,6%",
+       "57,8%",
+       "48,3%"
+      ],
+      "dap": "A"
+     }
+    },
+    {
+     "ma": "KCK1-10.C12",
+     "nhan": "Câu 12",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "de": "Tên gọi của muối NaHSO4 là\nA. sodium sulfate\nB. sodium hydrogensulfate\nC. sodium phosphate\nD. sodium chloride",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "bai_sgk": 11,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Tên gọi của muối NaHSO₄ là",
+      "cac": [
+       "sodium sulfate",
+       "sodium hydrogensulfate",
+       "sodium phosphate",
+       "sodium chloride"
+      ],
+      "dap": "B"
+     },
+     "ghi_chu": "Đề in \"sodium hydrosulfate\"; viết \"sodium hydrogensulfate\" như SGK Bài 11. Đề in hai phương án cùng nhãn B, phương án thứ ba là C. Đáp án B như đề in."
+    },
+    {
+     "ma": "KCK1-10.C13",
+     "nhan": "Câu 13",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "de": "Trong các chất sau: NaCl, HNO3, CaCO3, Ba(OH)2, KHCO3, ZnS. Số chất thuộc hợp chất muối là\nA. 4\nB. 3\nC. 5\nD. 1",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN",
+     "bai_sgk": 11,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Trong các chất sau: NaCl, HNO₃, CaCO₃, Ba(OH)₂, KHCO₃, ZnS. Số chất thuộc hợp chất muối là",
+      "cac": [
+       "4",
+       "3",
+       "5",
+       "1"
+      ],
+      "dap": "A"
+     }
+    },
+    {
+     "ma": "KCK1-10.C14",
+     "nhan": "Câu 14",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "de": "Cho 50 g CaCO3 vào dung dịch HCl dư, thể tích CO2 thu được ở đkc là\nA. 12,395 lít\nB. 18,228 lít\nC. 24,79 lít\nD. 6,1975 lít",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN",
+     "bai_sgk": 11,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Cho 50 g CaCO₃ vào dung dịch HCl dư, thể tích CO₂ thu được ở đkc là",
+      "cac": [
+       "12,395 lít",
+       "18,228 lít",
+       "24,79 lít",
+       "6,1975 lít"
+      ],
+      "dap": "A"
+     }
+    },
+    {
+     "ma": "KCK1-10.C15",
+     "nhan": "Câu 15",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "de": "Công thức nào sau đây là công thức tính áp suất?\nA. p = F/S\nB. p = F·S\nC. p = S/F\nD. p = d·V",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN",
+     "bai_sgk": 15,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Công thức nào sau đây là công thức tính áp suất?",
+      "cac": [
+       "p = F/S",
+       "p = F·S",
+       "p = S/F",
+       "p = d·V"
+      ],
+      "dap": "A"
+     }
+    },
+    {
+     "ma": "KCK1-10.C16",
+     "nhan": "Câu 16",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "de": "Trong các ví dụ sau đây, chuyển động nào <b>không</b> là chuyển động quay của một vật rắn quanh một trục cố định?\nA. Cánh quạt khi quạt đang chạy\nB. Vô lăng khi lái xe ô tô\nC. Viên bi lăn trên đường\nD. Bánh đà khi động cơ hoạt động",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "C",
+     "loai_dap_an": "TN",
+     "bai_sgk": 18,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Trong các ví dụ sau đây, chuyển động nào <b>không</b> là chuyển động quay của một vật rắn quanh một trục cố định?",
+      "cac": [
+       "Cánh quạt khi quạt đang chạy",
+       "Vô lăng khi lái xe ô tô",
+       "Viên bi lăn trên đường",
+       "Bánh đà khi động cơ hoạt động"
+      ],
+      "dap": "C"
+     },
+     "ghi_chu": "Phương án A in \"Bánh xe đạp khi di chuyển\"; chính lời giải in nói bánh xe đạp vừa quay vừa tiến tới, không hoàn toàn quay quanh trục cố định, nên đề có hai đáp án. Đổi A thành \"Cánh quạt khi quạt đang chạy\" (quay quanh trục cố định). Đáp án C như đề in. Sửa \"các các\", \"Vô lăn\", \"Viên bi lăn đường\"."
+    },
+    {
+     "ma": "KCK1-10.C17",
+     "nhan": "Câu 17",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "de": "Đâu là các tật về mắt?\nA. Cận thị, viễn thị, loạn thị\nB. Cận thị, viêm giác mạc, loạn thị\nC. Cận thị, viêm giác mạc, viễn thị\nD. Viêm giác mạc, đau mắt đỏ, lẹo mắt",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN",
+     "bai_sgk": 37,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Đâu là các tật về mắt?",
+      "cac": [
+       "Cận thị, viễn thị, loạn thị",
+       "Cận thị, viêm giác mạc, loạn thị",
+       "Cận thị, viêm giác mạc, viễn thị",
+       "Viêm giác mạc, đau mắt đỏ, lẹo mắt"
+      ],
+      "dap": "A"
+     },
+     "ghi_chu": "Đề in \"Đâu là các bệnh về mắt?\", đáp án A (cận thị, viễn thị, loạn thị). SGK Bài 37 gọi cận thị, viễn thị, loạn thị là tật về mắt, còn viêm giác mạc, đau mắt đỏ, lẹo mắt là bệnh, nên theo SGK thì D mới là \"các bệnh\". Đổi chữ \"bệnh\" thành \"tật\" để giữ đáp án A. Câu thuộc Bài 37 (Sinh), ngoài phạm vi học kì 1 của đề."
+    },
+    {
+     "ma": "KCK1-10.C18",
+     "nhan": "Câu 18",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "de": "Khi thả một vật trong nước, vật sẽ nổi lên khi:\nA. khối lượng riêng của vật nhỏ hơn khối lượng riêng của nước\nB. khối lượng riêng của vật lớn hơn khối lượng riêng của nước\nC. khối lượng riêng của vật bằng khối lượng riêng của nước\nD. khối lượng riêng của vật lớn hơn hoặc bằng khối lượng riêng của nước",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN",
+     "bai_sgk": 17,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Khi thả một vật trong nước, vật sẽ nổi lên khi:",
+      "cac": [
+       "khối lượng riêng của vật nhỏ hơn khối lượng riêng của nước",
+       "khối lượng riêng của vật lớn hơn khối lượng riêng của nước",
+       "khối lượng riêng của vật bằng khối lượng riêng của nước",
+       "khối lượng riêng của vật lớn hơn hoặc bằng khối lượng riêng của nước"
+      ],
+      "dap": "A"
+     },
+     "ghi_chu": "Phương án C in \"bằng hơn\", sửa \"bằng\"."
+    },
+    {
+     "ma": "KCK1-10.C19",
+     "nhan": "Câu 19",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "de": "Cho biết 13,5 kg nhôm có thể tích 5 dm^3. Vậy khối lượng riêng của nhôm bằng bao nhiêu?\nA. 2600 kg/m^3\nB. 2600 kg/dm^3\nC. 2700 kg/dm^3\nD. 2700 kg/m^3",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "D",
+     "loai_dap_an": "TN",
+     "bai_sgk": 13,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Cho biết 13,5 kg nhôm có thể tích 5 dm³. Vậy khối lượng riêng của nhôm bằng bao nhiêu?",
+      "cac": [
+       "2600 kg/m³",
+       "2600 kg/dm³",
+       "2700 kg/dm³",
+       "2700 kg/m³"
+      ],
+      "dap": "D"
+     }
+    },
+    {
+     "ma": "KCK1-10.C20",
+     "nhan": "Câu 20",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "de": "Vị trí tác dụng lực nào trong hình vẽ có thể làm cho tay nắm cửa quay quanh trục của nó dễ dàng nhất?\nA. Điểm A, vì càng gần trục quay thì moment lực càng lớn\nB. Điểm B, vì vị trí không quá xa so với trục quay thì moment lực lớn nhất\nC. Điểm C, vì xa trục quay nhất nên moment lực là lớn nhất\nD. Không có vị trí nào, vì 3 giá lực tác dụng tại 3 vị trí đều song song với trục quay",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "C",
+     "loai_dap_an": "TN",
+     "bai_sgk": 18,
+     "hinh": [
+      "dethikhtn8/KCK1-10.C20.webp"
+     ],
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Vị trí tác dụng lực nào trong hình vẽ có thể làm cho tay nắm cửa quay quanh trục của nó dễ dàng nhất?",
+      "cac": [
+       "Điểm A, vì càng gần trục quay thì moment lực càng lớn",
+       "Điểm B, vì vị trí không quá xa so với trục quay thì moment lực lớn nhất",
+       "Điểm C, vì xa trục quay nhất nên moment lực là lớn nhất",
+       "Không có vị trí nào, vì 3 giá lực tác dụng tại 3 vị trí đều song song với trục quay"
+      ],
+      "dap": "C"
+     },
+     "ghi_chu": "Phương án in mở đầu bằng tên điểm (\"A vì...\", \"B vì...\", \"C vì...\"), trùng chữ cái phương án mà máy đánh lại sau khi trộn; viết \"Điểm A, vì...\". \"mô men\" viết \"moment\" như SGK, \"vói\" sửa \"với\"."
+    },
+    {
+     "ma": "KCK1-10.C21",
+     "nhan": "Câu 21",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "de": "Đơn vị của áp suất có thể được tính bằng\nA. mmHg/m^2\nB. Pa/m^2\nC. m^2/Hg\nD. mmHg",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "D",
+     "loai_dap_an": "TN",
+     "bai_sgk": 16,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Đơn vị của áp suất có thể được tính bằng",
+      "cac": [
+       "mmHg/m²",
+       "Pa/m²",
+       "m²/Hg",
+       "mmHg"
+      ],
+      "dap": "D"
+     }
+    },
+    {
+     "ma": "KCK1-10.C22",
+     "nhan": "Câu 22",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "trung": "KCK1-1.C15",
+     "ghi_chu": "Đề in phương án D \"40 °C\", đáp án D và lời giải in \"4°C\": lỗi in. Sửa thì câu y hệt KCK1-1 Câu 15 (câu gốc in \"Ở thể lỏng dưới áp suất thường\")."
+    },
+    {
+     "ma": "KCK1-10.C23",
+     "nhan": "Câu 23",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "de": "Để xác định khối lượng riêng của một chất tạo nên vật cần xác định những đại lượng nào?\nA. Khối lượng, khối lượng riêng\nB. Khối lượng, thể tích\nC. Thể tích, trọng lượng riêng\nD. Khối lượng, thể tích, khối lượng riêng",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "bai_sgk": 13,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Để xác định khối lượng riêng của một chất tạo nên vật cần xác định những đại lượng nào?",
+      "cac": [
+       "Khối lượng, khối lượng riêng",
+       "Khối lượng, thể tích",
+       "Thể tích, trọng lượng riêng",
+       "Khối lượng, thể tích, khối lượng riêng"
+      ],
+      "dap": "B"
+     },
+     "ghi_chu": "Phương án C in \"Thế tích\", sửa \"Thể tích\"."
+    },
+    {
+     "ma": "KCK1-10.C24",
+     "nhan": "Câu 24",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "de": "Phương án nào trong các phương án sau đây có thể làm giảm áp suất của một vật tác dụng xuống mặt sàn nằm ngang?\nA. Tăng áp lực và giảm diện tích bị ép\nB. Giảm áp lực và giảm diện tích bị ép\nC. Tăng áp lực và tăng diện tích bị ép\nD. Giảm áp lực và tăng diện tích bị ép",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "D",
+     "loai_dap_an": "TN",
+     "bai_sgk": 15,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Phương án nào trong các phương án sau đây có thể làm giảm áp suất của một vật tác dụng xuống mặt sàn nằm ngang?",
+      "cac": [
+       "Tăng áp lực và giảm diện tích bị ép",
+       "Giảm áp lực và giảm diện tích bị ép",
+       "Tăng áp lực và tăng diện tích bị ép",
+       "Giảm áp lực và tăng diện tích bị ép"
+      ],
+      "dap": "D"
+     }
+    },
+    {
+     "ma": "KCK1-10.C25",
+     "nhan": "Câu 25",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "de": "Trái Đất được bao bọc bởi một lớp không khí dày\nA. vài mét\nB. hàng ngàn kilômét\nC. hàng trăm kilômét\nD. vài chục mét",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "bai_sgk": 16,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Trái Đất được bao bọc bởi một lớp không khí dày",
+      "cac": [
+       "vài mét",
+       "hàng ngàn kilômét",
+       "hàng trăm kilômét",
+       "vài chục mét"
+      ],
+      "dap": "B"
+     }
+    },
+    {
+     "ma": "KCK1-10.C26",
+     "nhan": "Câu 26",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "de": "Khi vật nổi trên mặt chất lỏng thì lực đẩy Archimedes có cường độ\nA. lớn hơn trọng lượng của vật\nB. bằng trọng lượng của vật\nC. nhỏ hơn trọng lượng của vật\nD. nhỏ hơn hoặc bằng trọng lượng của vật",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "bai_sgk": 17,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Khi vật nổi trên mặt chất lỏng thì lực đẩy Archimedes có cường độ",
+      "cac": [
+       "lớn hơn trọng lượng của vật",
+       "bằng trọng lượng của vật",
+       "nhỏ hơn trọng lượng của vật",
+       "nhỏ hơn hoặc bằng trọng lượng của vật"
+      ],
+      "dap": "B"
+     },
+     "ghi_chu": "Đề in \"Khi vật đang nổi lên trên chất lỏng\": \"đang nổi lên\" (vật còn đi lên) thì lực đẩy lớn hơn trọng lượng, tức A. Đáp án in B và lời giải in nói vật nổi thì lực đẩy cân bằng trọng lượng, nên viết \"Khi vật nổi trên mặt chất lỏng\". Đáp án B như đề in."
+    },
+    {
+     "ma": "KCK1-10.C27",
+     "nhan": "Câu 27",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "de": "Moment lực đặc trưng cho\nA. tác dụng kéo của lực\nB. tác dụng nén của lực\nC. tác dụng làm quay của lực\nD. tác dụng đẩy của lực",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "C",
+     "loai_dap_an": "TN",
+     "bai_sgk": 18,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Moment lực đặc trưng cho",
+      "cac": [
+       "tác dụng kéo của lực",
+       "tác dụng nén của lực",
+       "tác dụng làm quay của lực",
+       "tác dụng đẩy của lực"
+      ],
+      "dap": "C"
+     }
+    },
+    {
+     "ma": "KCK1-10.C28",
+     "nhan": "Câu 28",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "de": "Các thành phần của đòn bẩy trong hình là\nA. thanh cứng AB\nB. thanh cứng AB và điểm tựa A\nC. thanh cứng AB và điểm tựa O\nD. thanh cứng AB và điểm tựa B",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "C",
+     "loai_dap_an": "TN",
+     "bai_sgk": 19,
+     "hinh": [
+      "dethikhtn8/KCK1-10.C28.webp"
+     ],
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Các thành phần của đòn bẩy trong hình là",
+      "cac": [
+       "thanh cứng AB",
+       "thanh cứng AB và điểm tựa A",
+       "thanh cứng AB và điểm tựa O",
+       "thanh cứng AB và điểm tựa B"
+      ],
+      "dap": "C"
+     }
+    },
+    {
+     "ma": "KCK1-10.TL1a",
+     "nhan": "Câu 1a",
+     "phan": "Phần II. Tự luận",
+     "nhom": "Câu 1. Hòa tan 12,0 gam CuO vào trong 98 gam dung dịch H₂SO₄ 20%.",
+     "de": "Câu 1. Hòa tan 12,0 gam CuO vào trong 98 gam dung dịch H2SO4 20%.\na) Viết phương trình phản ứng xảy ra.",
+     "dang": "CAU_NHO",
+     "dap_an": "CuO + H2SO4 → CuSO4 + H2O",
+     "loai_dap_an": "DAP_SO",
+     "bai_sgk": 10,
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "hoi": "Câu 1. Hòa tan 12,0 gam CuO vào trong 98 gam dung dịch H₂SO₄ 20%.\na) Viết phương trình phản ứng xảy ra.",
+      "dap": [
+       "CuO+H₂SO₄→CuSO₄+H₂O"
+      ],
+      "phim": [
+       "CuO",
+       "H₂SO₄",
+       "CuSO₄",
+       "H₂O"
+      ],
+      "nhieu": [
+       "Cu",
+       "H₂",
+       "CuS"
+      ],
+      "loi_giai": [
+       "Oxide base tác dụng với acid tạo thành muối và nước; Cu có hoá trị II nên muối là CuSO₄",
+       "CuO + H₂SO₄ → CuSO₄ + H₂O"
+      ]
+     }
+    },
+    {
+     "ma": "KCK1-10.TL1b",
+     "nhan": "Câu 1b",
+     "phan": "Phần II. Tự luận",
+     "nhom": "Câu 1. Hòa tan 12,0 gam CuO vào trong 98 gam dung dịch H₂SO₄ 20%.",
+     "de": "Câu 1. Hòa tan 12,0 gam CuO vào trong 98 gam dung dịch H2SO4 20%.\nb) Tính khối lượng acid đã tham gia phản ứng.",
+     "dang": "CAU_NHO",
+     "dap_an": "m(H2SO4 phản ứng) = 14,7 g",
+     "loai_dap_an": "DAP_SO",
+     "bai_sgk": 10,
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "hoi": "Câu 1. Hòa tan 12,0 gam CuO vào trong 98 gam dung dịch H₂SO₄ 20%.\nb) Tính khối lượng acid đã tham gia phản ứng.",
+      "dap": [
+       "14,7",
+       "14,7g"
+      ],
+      "phim": [
+       "g"
+      ],
+      "nhieu": [
+       "mol",
+       "%"
+      ],
+      "loi_giai": [
+       "n(CuO) = 12 : 80 = 0,15 (mol)",
+       "m(H₂SO₄) = 98 · 20% = 19,6 (g); n(H₂SO₄) = 19,6 : 98 = 0,2 (mol)",
+       "Theo PTHH, 0,15 mol CuO phản ứng với 0,15 mol H₂SO₄; 0,15 nhỏ hơn 0,2 nên CuO hết, H₂SO₄ dư",
+       "m(H₂SO₄ phản ứng) = 0,15 · 98 = 14,7 (g)"
+      ]
+     }
+    },
+    {
+     "ma": "KCK1-10.TL1c",
+     "nhan": "Câu 1c",
+     "phan": "Phần II. Tự luận",
+     "nhom": "Câu 1. Hòa tan 12,0 gam CuO vào trong 98 gam dung dịch H₂SO₄ 20%.",
+     "de": "Câu 1. Hòa tan 12,0 gam CuO vào trong 98 gam dung dịch H2SO4 20%.\nc) Tính khối lượng muối copper (Cu) được tạo thành.",
+     "dang": "CAU_NHO",
+     "dap_an": "m(CuSO4) = 24 g",
+     "loai_dap_an": "DAP_SO",
+     "bai_sgk": 10,
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "hoi": "Câu 1. Hòa tan 12,0 gam CuO vào trong 98 gam dung dịch H₂SO₄ 20%.\nc) Tính khối lượng muối copper (Cu) được tạo thành.",
+      "dap": [
+       "24",
+       "24g"
+      ],
+      "phim": [
+       "g"
+      ],
+      "nhieu": [
+       "mol",
+       "%"
+      ],
+      "loi_giai": [
+       "Theo PTHH: n(CuSO₄) = n(CuO) = 0,15 (mol)",
+       "M(CuSO₄) = 64 + 32 + 4 · 16 = 160 (g/mol)",
+       "m(CuSO₄) = 0,15 · 160 = 24 (g)"
+      ]
+     }
+    },
+    {
+     "ma": "KCK1-10.TL2a",
+     "nhan": "Câu 2a",
+     "phan": "Phần II. Tự luận",
+     "nhom": "Câu 2:",
+     "de": "Câu 2:\na) Giải thích vì sao con người chỉ có thể lặn xuống nước ở một độ sâu nhất định?",
+     "dang": "CAU_NHO",
+     "dap_an": "Càng xuống sâu áp suất nước càng lớn (p = d · h), cơ thể chỉ chịu được áp suất tới một giới hạn",
+     "loai_dap_an": "LOI_GIAI",
+     "bai_sgk": 16,
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "Câu 2:\na) Giải thích vì sao con người chỉ có thể lặn xuống nước ở một độ sâu nhất định?",
+      "dong": [
+       {
+        "chu": "Càng lặn xuống sâu thì áp suất của nước tác dụng lên cơ thể {0}",
+        "o": [
+         {
+          "dung": [
+           "càng lớn"
+          ],
+          "sai": [
+           "càng nhỏ",
+           "không đổi"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Cơ thể người {0}, nên chỉ lặn được tới một độ sâu nhất định",
+        "o": [
+         {
+          "dung": [
+           "chỉ chịu được áp suất tới một giới hạn"
+          ],
+          "sai": [
+           "chịu được áp suất lớn bao nhiêu cũng được",
+           "không chịu tác dụng của áp suất nước"
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "ma": "KCK1-10.TL2b",
+     "nhan": "Câu 2b",
+     "phan": "Phần II. Tự luận",
+     "nhom": "Câu 2:",
+     "de": "Câu 2:\nb) Lấy một ví dụ về cách làm tăng áp suất, một ví dụ về cách làm giảm áp suất trong thực tế.",
+     "dang": "CAU_NHO",
+     "dap_an": "Tăng áp suất: dùng dao sắc để cắt; giảm áp suất: đi giày đế rộng trên cát",
+     "loai_dap_an": "LOI_GIAI",
+     "bai_sgk": 15,
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "Câu 2:\nb) Lấy một ví dụ về cách làm tăng áp suất, một ví dụ về cách làm giảm áp suất trong thực tế.",
+      "dong": [
+       {
+        "chu": "Ví dụ làm tăng áp suất: {0}",
+        "o": [
+         {
+          "dung": [
+           "mài dao cho sắc để cắt dễ hơn",
+           "làm mũi đinh nhọn"
+          ],
+          "sai": [
+           "đi giày đế rộng trên cát",
+           "đặt tấm ván rộng để đi trên bùn"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Ví dụ làm giảm áp suất: {0}",
+        "o": [
+         {
+          "dung": [
+           "đi giày đế rộng trên cát",
+           "đặt tấm ván rộng để đi trên bùn"
+          ],
+          "sai": [
+           "mài dao cho sắc để cắt dễ hơn",
+           "làm mũi đinh nhọn"
           ]
          }
         ]
