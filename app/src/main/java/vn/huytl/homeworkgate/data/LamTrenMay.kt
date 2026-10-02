@@ -29,15 +29,6 @@ object LamTrenMay {
     val MON = listOf("Toán", "Khoa học tự nhiên", PhanHoc.TIENG_ANH)
 
     /**
-     * Mot luot On lai lay bay nhieu cau. Dai hon thi con bo do giua chung.
-     *
-     * Luyen tap bo gioi han nay tu 2/10/2026 ([cauLamThem]): Ba Huy muon con bam vao la thay
-     * het cau lam duoc. Bo do giua chung khong mat gi: cau lam xong da ghi so, cau chua lam van
-     * nam do, lan sau vao lai van gap.
-     */
-    const val SO_CAU_MOI_LUOT = 10
-
-    /**
      * Moi bai vua sai dua bay nhieu cau chua lam len dau luot Luyen tap (Ba Huy chot 2/10/2026).
      * Cac cau con lai cua bai do nam dung cho theo thu tu bai cu toi bai moi. Xem [cauLamThem].
      */
@@ -85,9 +76,10 @@ object LamTrenMay {
 
     /**
      * Cau cho mot luot Luyen tap cua mot mon: HET cau con lam duoc luc nay (Ba Huy chot 2/10/2026).
-     * Truoc ngay do moi luot toi da [SO_CAU_MOI_LUOT] cau, moi bai toi da ba cau moi; con lam
-     * hai cau roi thoat thi luot sau la tam cau cu noi them hai cau ke tiep, va Ba Huy thay khong
-     * can noi nhu vay. [gioiHan] chi con cho test. Thu tu:
+     * Truoc ngay do moi luot toi da 10 cau ("dai hon thi con bo do giua chung"), moi bai toi da ba
+     * cau moi; con lam hai cau roi thoat thi luot sau la tam cau cu noi them hai cau ke tiep, va
+     * Ba Huy thay khong can noi nhu vay. Bo do giua chung khong mat gi: cau lam xong da ghi so,
+     * cau chua lam van nam do, lan sau vao lai van gap. [gioiHan] chi con cho test. Thu tu:
      *  1. cau dang cho lam lai (vong dau chua du sao, da qua 24 gio);
      *  2. cau con lam sai trong bai dan do chup anh, co trong ngan hang, da qua 24 gio:
      *     sua loi cua chinh minh tren may (Ba Huy chot 29/9/2026);
@@ -173,21 +165,37 @@ object LamTrenMay {
      * Cau den hen on lai: vong moi theo lich 3/10/20/30 ngay, hay lam lai trong mot vong on
      * chua du sao. Chi cau lam duoc tren may; cau Ngu van va cau chua soan ghep thi thoi.
      *
+     * HET cau dang cho on, khong gioi han (Ba Huy chot 2/10/2026, nhu Luyen tap [cauLamThem]);
+     * truoc do moi luot toi da 10 cau. Cau den hen khong het han: hom nay khong on thi mai van
+     * con, cong them cau moi den hen. [gioiHan] chi con cho test.
+     *
+     * SAI HET THI 24 GIO SAU MOI GAP LAI (Ba Huy chot 2/10/2026). Cau chi het den hen khi con
+     * lam dung, nen luot on sai het (may da hien loi giai) de cau van den hen, ma moi lan lam mot
+     * cau den hen la mot vong sao moi ([ghi]). Truoc ngay do con thoat ra bam On lai lan nua la
+     * gap lai cau do ngay voi du sao, chep loi giai vua xem la duoc tron phut. Nay cau nao luot
+     * tren may gan nhat sai het thi cho [LuatGhep.CHO_LAM_LAI_MS] nhu Luyen tap; qua 24 gio thi
+     * hien lai, van la vong sao moi.
+     *
      * [mon] khac null thi chi cau cua mon do: tu 2/10/2026 trang Luyen tap moi mon mot dong
      * "Ôn tập <môn>" (Ba Huy chot), thay cho mot dong On lai chung.
      */
     fun cauOn(
         context: Context,
-        gioiHan: Int = SO_CAU_MOI_LUOT,
+        gioiHan: Int = Int.MAX_VALUE,
         bayGio: Long = System.currentTimeMillis(),
         mon: String? = null
     ): List<Muc> {
         val kho = KhoBai.get(context)
         val han = bayGio - MOT_NAM
         val denHen = kho.cacCauDenHenOn(han, bayGio)
-        val lamLaiVongOn = kho.moiLuotTrenMay(han).filter { it.vong >= 1 }.map { it.cauId }.distinct()
+        val cacLuot = kho.moiLuotTrenMay(han)
+        val lamLaiVongOn = cacLuot.filter { it.vong >= 1 }.map { it.cauId }.distinct()
+        // moiLuotTrenMay xep theo luc, nen dong cuoi cua moi cau la luot gan nhat.
+        val vuaSaiHet = cacLuot.groupBy { it.cauId }
+            .filterValues { ds -> ds.last().let { !it.dung && bayGio < it.luc + LuatGhep.CHO_LAM_LAI_MS } }
+            .keys
         val cac = kho.cacCauTheoId((denHen + lamLaiVongOn).distinct())
-            .filter { it.mon in MON && (mon == null || it.mon == mon) }
+            .filter { it.mon in MON && (mon == null || it.mon == mon) && it.id !in vuaSaiHet }
             .mapNotNull { muc(context, it) }
             .filter { m ->
                 m.cau.id in denHen ||

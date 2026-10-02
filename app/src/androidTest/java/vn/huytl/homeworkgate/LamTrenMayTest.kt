@@ -121,7 +121,7 @@ class LamTrenMayTest {
         assertEquals(1, so.first())
         assertEquals("bai cu truoc: $so", so.sorted(), so)
         // Bai 1 toi Bai 3 cua SBT tap mot co hai muoi lam cau lam tren may: hon mot luot 10 cau cu.
-        assertTrue("chi co ${ds.size} cau", ds.size > LamTrenMay.SO_CAU_MOI_LUOT)
+        assertTrue("chi co ${ds.size} cau", ds.size > 10)
         val trongDe = kho.cauTrongDeConHan()
         val canCo = NganHang.cauSbtDaHoc(context, "Toán")
             .filter { it.lamTrenMay && it.id !in trongDe && LamTrenMay.muc(context, it) != null }
@@ -317,6 +317,47 @@ class LamTrenMayTest {
         val t0 = System.currentTimeMillis()
         LamTrenMay.ghi(context, m, luot(m.ghep.sao), "x", LamTrenMay.Loai.LAM_THEM, bayGio = t0, congNgay = false)
         assertTrue(LamTrenMay.cauOn(context, bayGio = t0 + 4 * ngay).none { it.cau.id == m.cau.id })
+    }
+
+    /** On lai hien het cau den hen (Ba Huy chot 2/10/2026), truoc do moi luot toi da 10 cau. */
+    @Test
+    fun on_lai_hien_het_cau_den_hen() {
+        datMocToan(3)
+        val cac = LamTrenMay.cauLamThem(context, "Toán").take(12)
+        assertEquals("can du 12 cau de thu", 12, cac.size)
+        val t0 = System.currentTimeMillis()
+        // Moi cau sai mot lan roi dung: tung sai, ba ngay sau den hen.
+        cac.forEach { LamTrenMay.ghi(context, it, luot(it.ghep.sao, sai = 1), "x", LamTrenMay.Loai.LAM_THEM, bayGio = t0, congNgay = false) }
+
+        val on = LamTrenMay.cauOn(context, bayGio = t0 + 3 * ngay + gio)
+
+        assertTrue("thieu cau den hen", on.map { it.cau.id }.containsAll(cac.map { it.cau.id }))
+    }
+
+    /**
+     * Cau on lai lam sai het (Ba Huy chot 2/10/2026): 24 gio sau moi gap lai, nhu Luyen tap. Truoc
+     * do cau van den hen nen bam On lai lan nua la hien ngay voi du sao, con chep loi giai vua xem.
+     */
+    @Test
+    fun on_lai_sai_het_thi_24_gio_sau_moi_gap_lai() {
+        datMocToan(3)
+        val m = LamTrenMay.cauLamThem(context, "Toán").first()
+        val v = m.ghep.sao
+        val t0 = System.currentTimeMillis()
+        LamTrenMay.ghi(context, m, luot(v, sai = 1), "x", LamTrenMay.Loai.LAM_THEM, bayGio = t0, congNgay = false)
+        val hen = t0 + 3 * ngay + gio
+        val on = LamTrenMay.cauOn(context, bayGio = hen).first { it.cau.id == m.cau.id }
+        var l = LuatGhep.Luot(v)
+        repeat(v + 1) { l = LuatGhep.kiem(l, soSai = 1) }
+        assertTrue(l.xong && l.hienLoiGiai)
+        LamTrenMay.ghi(context, on, l, "sai", LamTrenMay.Loai.ON, bayGio = hen, congNgay = false)
+
+        assertTrue("vua sai het da hien lai", LamTrenMay.cauOn(context, bayGio = hen + gio).none { it.cau.id == m.cau.id })
+        assertEquals("dem cau cho on cung bo cau do", 0, LamTrenMay.soCauOn(context, hen + gio, "Toán"))
+        val homSau = LamTrenMay.cauOn(context, bayGio = hen + 25 * gio).firstOrNull { it.cau.id == m.cau.id }
+        assertTrue("qua 24 gio phai gap lai", homSau != null)
+        val lai = LamTrenMay.ghi(context, homSau!!, luot(v), "x", LamTrenMay.Loai.ON, bayGio = hen + 25 * gio, congNgay = false)
+        assertEquals("gap lai la vong sao moi, du sao", v, lai.sao)
     }
 
     // ------------------------------------------------------------------ phut va quy
