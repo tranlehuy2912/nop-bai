@@ -113,7 +113,9 @@ def danh_sach():
             ten="Chiều thứ năm — màn chắn tới 17:00",
             lam=lambda m: (m.van(THU_NAM_CHIEU), m.nen()),
             luc=THU_NAM_CHIEU, loai="CHAN", noi="chan",
-            cho=["Tới giờ đi học rồi", "Chiều thứ năm", "Mở lại lúc 17:00", "Toán"],
+            # Tu 5/10/2026 chieu thu nam la KHTN, Ngu van, Lich su - Dia ly, khong con Toan.
+            cho=["Tới giờ đi học rồi", "Chiều thứ năm", "Mở lại lúc 17:00", "Ngữ văn"],
+            khong=["Toán"],
         ),
         dict(
             ma="sap-di-hoc", nhom="Màn chắn",
@@ -318,29 +320,30 @@ def danh_sach():
             cho=["Chụp vở dặn dò"],
             khong=["Đã chụp vở hôm nay"],
         ),
-        # Vo napdando mang ngay RANH (thu Tu 16/9): Toan, KHTN va dong khong co mon han chieu
-        # thu Nam 17/9 nen toi nay da nhac; Tieng Anh han chieu thu Bay 19/9, chua toi luc
-        # nhac. Soat ca chu tung dong vo: ten dong nhac doi mot lan roi ngay 30/9/2026 ("Bài
-        # cho ..." thanh "Bài dặn dò cho ..."), con chu dong vo la chu cua napdando.
+        # Vo napdando mang ngay RANH (thu Tu 16/9): KHTN va dong khong co mon han chieu thu
+        # Nam 17/9 nen toi nay da nhac; Tieng Anh han chieu thu Bay 19/9, Toan han chieu thu
+        # Hai 21/9 (lich tu 5/10/2026), chua toi luc nhac. Soat ca chu tung dong vo: ten dong
+        # nhac doi mot lan roi ngay 30/9/2026 ("Bài cho ..." thanh "Bài dặn dò cho ..."), con
+        # chu dong vo la chu cua napdando.
         dict(
             ma="dando-da-luu", nhom="Vở dặn dò",
             ten="Lưu vở rồi thì màn chính ghi đã chụp và nhắc bài cho buổi mai",
             lam=lambda m: (m.van(RANH), m.dat("napdando"), m.man("HomeActivity")),
             cho=["Đã chụp vở hôm nay", "Bài dặn dò cho chiều thứ năm",
-                 "Toán: làm bài 2.26 và 2.27 trang 45", "KHTN: tiết sau kiểm tra bài 2, bài 3"],
-            khong=["Tiếng Anh: làm bài tập Unit 2"],
+                 "KHTN: tiết sau kiểm tra bài 2, bài 3"],
+            khong=["Tiếng Anh: làm bài tập Unit 2", "Toán: làm bài 2.26 và 2.27 trang 45"],
             don=lambda m: m.dat("xoadando"),
         ),
         # Bam dong "Bài dặn dò cho ..." o man chinh thi mo man nay (30/9/2026). Vo ngay 16/9
-        # (thu Tu): Toan, KHTN va dong khong co mon han chieu thu Nam 17/9, Tieng Anh han
-        # chieu thu Bay 19/9.
+        # (thu Tu): KHTN va dong khong co mon han chieu thu Nam 17/9, Tieng Anh han chieu thu
+        # Bay 19/9, Toan han chieu thu Hai 21/9 (lich tu 5/10/2026).
         dict(
             ma="man-nhac-bai", nhom="Vở dặn dò",
             ten="Màn bài dặn dò sắp tới kể mọi buổi còn bài",
             lam=lambda m: (m.van(RANH), m.dat("napdando", ngay="2026-09-16"),
                            m.man("NhacBaiActivity")),
             cho=["Bài dặn dò sắp tới", "Chiều thứ năm 17/9", "Chiều thứ bảy 19/9",
-                 "Toán: làm bài 2.26 và 2.27 trang 45 (vở 16/9)"],
+                 "Chiều thứ hai 21/9", "Toán: làm bài 2.26 và 2.27 trang 45 (vở 16/9)"],
             don=lambda m: m.dat("xoadando"),
         ),
         # ---------------- hoc thuoc ----------------

@@ -35,7 +35,11 @@ data class BuoiHoc(
 }
 
 /**
- * Thoi khoa bieu lop 8A15, nam hoc 2026-2027, ap dung tu 07/09/2026.
+ * Thoi khoa bieu lop 8A15, nam hoc 2026-2027, ap dung tu 05/10/2026.
+ *
+ * Ban truoc ap dung tu 07/09/2026. Gio tiet va buoi sang giu nguyen, ca sau buoi chieu xep
+ * lai mon. Code chi giu mot ban: vo dan do cu tinh han theo ban moi, dung voi nhung tiet tu
+ * 05/10/2026 tro di.
  *
  * Nam thang trong code chu khong co man nhap: doi lich thi sua o day roi cai lai
  * app. Doi lai khong co o nhap nao de nhap sai, va go app cung khong mat gi.
@@ -105,7 +109,8 @@ object ThoiKhoaBieu {
             3 to "Giáo dục thể chất",
             4 to "Giáo dục thể chất"
         ),
-        // Tiet 1 va 2 truoc la AVNN, tu 27/9/2026 khong con hoc.
+        // Tiet 1 va 2 la AVNN, Le Hoa khong dang ky hoc tu 27/9/2026. Lich 05/10/2026 van in
+        // AVNN o hai tiet nay.
         Calendar.FRIDAY to mapOf(
             3 to "Tin học",
             4 to "Tin học"
@@ -115,45 +120,45 @@ object ThoiKhoaBieu {
     private val CHIEU: Map<Int, Map<Int, String>> = mapOf(
         Calendar.MONDAY to mapOf(
             1 to "Tiếng Anh",
-            2 to "Khoa học tự nhiên",
-            3 to "Kỹ năng",
+            2 to "Toán",
+            3 to "Toán",
             4 to "Trải nghiệm hướng nghiệp",
             5 to "Chào cờ"
         ),
         Calendar.TUESDAY to mapOf(
             1 to "Trải nghiệm hướng nghiệp",
-            2 to "Ngữ văn",
-            3 to "Giáo dục công dân",
+            2 to "STEM",
+            3 to "Âm nhạc",
             4 to "Công nghệ",
-            5 to "Giáo dục địa phương"
+            5 to "Kỹ năng"
         ),
         Calendar.WEDNESDAY to mapOf(
-            1 to "Mỹ thuật",
-            2 to "STEM",
+            1 to "Trí tuệ nhân tạo",
+            2 to "Mỹ thuật",
             3 to "Toán",
             4 to "Toán",
             5 to "Trải nghiệm hướng nghiệp"
         ),
         Calendar.THURSDAY to mapOf(
-            1 to "Toán",
+            1 to "Khoa học tự nhiên",
             2 to "Khoa học tự nhiên",
-            3 to "Khoa học tự nhiên",
-            4 to "Ngữ văn",
+            3 to "Ngữ văn",
+            4 to "Lịch sử - Địa lý",
             5 to "Lịch sử - Địa lý"
         ),
         Calendar.FRIDAY to mapOf(
             1 to "Ngữ văn",
             2 to "Ngữ văn",
-            3 to "Âm nhạc",
+            3 to "Giáo dục công dân",
             4 to "Khoa học tự nhiên",
-            5 to "Trí tuệ nhân tạo"
+            5 to "Khoa học tự nhiên"
         ),
         Calendar.SATURDAY to mapOf(
             1 to "Tiếng Anh",
             2 to "Tiếng Anh",
             3 to "Lịch sử - Địa lý",
-            4 to "Lịch sử - Địa lý",
-            5 to "Toán"
+            4 to "Giáo dục địa phương",
+            5 to "Ngữ văn"
         )
     )
 

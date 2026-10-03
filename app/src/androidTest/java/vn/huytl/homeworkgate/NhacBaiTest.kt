@@ -93,15 +93,16 @@ class NhacBaiTest {
         assertEquals(LocalDate.of(2026, 10, 1) to Buoi.CHIEU, han(LichKiemTra.KHTN))
         assertEquals(LocalDate.of(2026, 10, 3) to Buoi.CHIEU, han("Tiếng Anh"))
         assertEquals(LocalDate.of(2026, 10, 2) to Buoi.SANG, han("Tin học"))
-        // Mon mot tuan mot tiet: tuan sau.
-        assertEquals(LocalDate.of(2026, 10, 5) to Buoi.CHIEU, han("Kỹ năng"))
+        // Mon mot tuan mot tiet: tuan sau. Tu 5/10/2026 Ky nang hoc chieu thu Ba.
+        assertEquals(LocalDate.of(2026, 10, 6) to Buoi.CHIEU, han("Kỹ năng", LocalDate.of(2026, 9, 29)))
         assertEquals(LocalDate.of(2026, 10, 5) to Buoi.SANG, han(ThoiKhoaBieu.MON_THE_DUC))
         // Khong doc ra mon: buoi hoc ke tiep.
         assertEquals(LocalDate.of(2026, 9, 29) to Buoi.CHIEU, han(null))
         // Vo thu Bay: buoi ke tiep la sang thu Hai, bo chu nhat.
         assertEquals(LocalDate.of(2026, 10, 5) to Buoi.SANG, han(null, LocalDate.of(2026, 10, 3)))
-        // Vo truoc Tet (nghi 1/2 toi 10/2/2027): tiet Toan dau tien sau Tet la thu Nam 11/2.
-        assertEquals(LocalDate.of(2027, 2, 11) to Buoi.CHIEU, han("Toán", LocalDate.of(2027, 1, 30)))
+        // Vo truoc Tet (nghi 1/2 toi 10/2/2027): di hoc lai tu thu Nam 11/2, tiet Toan dau
+        // tien sau Tet la thu Hai 15/2.
+        assertEquals(LocalDate.of(2027, 2, 15) to Buoi.CHIEU, han("Toán", LocalDate.of(2027, 1, 30)))
     }
 
     @Test
@@ -178,6 +179,7 @@ class NhacBaiTest {
     /**
      * Tin vo dan do gui Ba Huy ghi kem buoi se nhac cho tung dong: may doc nham ten mon thi
      * nhac sai buoi, va Ba Huy thay ngay tu tin nay. Trang vo that ngay 16/9/2026 (thu Tu).
+     * Han tinh theo thoi khoa bieu tu 5/10/2026: Toan hoc thu Hai va thu Tu.
      */
     @Test
     fun tin_vo_dan_do_ghi_buoi_se_nhac_cho_tung_dong() {
@@ -192,7 +194,7 @@ class NhacBaiTest {
             )
         )
         assertTrue(chu, chu.contains("• Mỹ thuật: Vẽ ký họa dáng người trên giấy A4 → chiều thứ tư 23/9"))
-        assertTrue(chu, chu.contains("• TOÁN: Làm luyện tập 3 trang 59 → chiều thứ năm 17/9"))
+        assertTrue(chu, chu.contains("• TOÁN: Làm luyện tập 3 trang 59 → chiều thứ hai 21/9"))
         assertTrue(chu, chu.contains("• LS-ĐL: Sinh hoạt ngoài trời → chiều thứ năm 17/9"))
         assertTrue(chu, !chu.contains("trọn gói"))
     }
@@ -284,15 +286,16 @@ class NhacBaiTest {
         ghi("2026-09-28", "Toán: làm bài 2", "Tiếng Anh: Unit 2", bayGio = toiThuHai)
         assertEquals(2, NhacBai.docTrang(context).single().cacDong.size)
 
-        // Vo hom kia va vo hom qua, chup chung mot luc: giu ca hai.
-        ghi("2026-09-27", "Toán: làm bài 2", bayGio = toiThuHai)
+        // Vo hom kia va vo hom qua, chup chung mot luc: giu ca hai. Tu 5/10/2026 chieu thu
+        // Hai co Toan, nen vo cuoi tuan ghi Mi thuat (chi hoc thu Tu) de con han toi nay.
+        ghi("2026-09-27", "Mỹ thuật: vẽ tranh", bayGio = toiThuHai)
         assertEquals(
             listOf(LocalDate.of(2026, 9, 27), LocalDate.of(2026, 9, 28)),
             NhacBai.docTrang(context).map { it.ngay }
         )
 
         // Con mo trang 27/9 ra sua ngay thanh 26/9: trang 27/9 phai di, trang 28/9 o lai.
-        ghi("2026-09-26", "Toán: làm bài 2", boNgay = "2026-09-27", bayGio = toiThuHai)
+        ghi("2026-09-26", "Mỹ thuật: vẽ tranh", boNgay = "2026-09-27", bayGio = toiThuHai)
         assertEquals(
             listOf(LocalDate.of(2026, 9, 26), LocalDate.of(2026, 9, 28)),
             NhacBai.docTrang(context).map { it.ngay }
@@ -303,8 +306,9 @@ class NhacBaiTest {
         ghi("2026-09-29", "KHTN: làm bài 3.2", bayGio = toiThuHai)
         assertEquals(3, NhacBai.docTrang(context).size)
 
-        // Toan cua trang 26/9 va 28/9 han chieu thu Tu 30/9, Tieng Anh cua trang 28/9 han
-        // thu Bay 3/10. Toi thu Tu thi trang 26/9 het dong, trang 28/9 con dong Tieng Anh.
+        // Mi thuat cua trang 26/9 va Toan cua trang 28/9 han chieu thu Tu 30/9, Tieng Anh cua
+        // trang 28/9 han thu Bay 3/10. Toi thu Tu thi trang 26/9 het dong, trang 28/9 con dong
+        // Tieng Anh.
         NhacBai.donDep(context, LocalDateTime.of(2026, 9, 30, 20, 0))
         assertEquals(
             listOf(LocalDate.of(2026, 9, 28), LocalDate.of(2026, 9, 29)),
