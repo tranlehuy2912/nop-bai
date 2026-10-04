@@ -31,8 +31,8 @@ import java.util.Calendar
  * thuong gap lai la "so sanh hai ngay" - kieu do doc khong duoc. Luoi thi ca tuan
  * nam gon mot trang va liec ngang mot hang la thay ca sau ngay.
  *
- * Chi de xem, khong sua duoc. Doi lich thi sua [ThoiKhoaBieu] roi cai lai app: nhu
- * vay khong co o nhap nao de nhap sai, va go app cung khong mat gi.
+ * Chi de xem, khong sua duoc. Tu 4/10/2026 lich lay tu Firestore (xem BanLich): Claude
+ * Code ghi ban moi len do, khong cai lai app.
  */
 class LichActivity : AppCompatActivity() {
 
@@ -66,7 +66,7 @@ class LichActivity : AppCompatActivity() {
         val homNay = Calendar.getInstance().get(Calendar.DAY_OF_WEEK)
 
         binding.phuDeLich.text =
-            "Lớp 8A15 · tuần ${ngayThang(tuan.first())} – ${ngayThang(tuan.last())}"
+            "Lớp ${ThoiKhoaBieu.lop} · tuần ${ngayThang(tuan.first())} – ${ngayThang(tuan.last())}"
 
         val hang = dungHang(tuan)
         veCotLe(hang)

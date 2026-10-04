@@ -14,6 +14,7 @@ import vn.huytl.homeworkgate.data.DayLog
 import vn.huytl.homeworkgate.data.EndReason
 import vn.huytl.homeworkgate.data.GateState
 import vn.huytl.homeworkgate.data.GateStore
+import vn.huytl.homeworkgate.data.LichDangDung
 import vn.huytl.homeworkgate.data.GioiHanApp
 import vn.huytl.homeworkgate.data.LuotBaNoi
 import vn.huytl.homeworkgate.data.KetQuaCham
@@ -398,6 +399,16 @@ class ManualBang {
             // Xoa ca dau "da chup vo hom nay" (khoa KHOA_NGAY_LUU cua VoDanDo). Chi xoa trang
             // o NhacBai thi muc "chua chup" chay sau napdando cung ngay van thay dong "Đã chụp vở
             // hôm nay" o man chinh.
+            // Ban lich dung yen cho ban thu tu dong, xem LichMau. Giu qua cac lan mo app
+            // cho toi khi "lichthat"; may ao co ban nay thi khong nhan lich tu Firestore.
+            "lichmau" -> {
+                LichDangDung.epTam(context, LichMau.JSON)
+                ketQua = "lich mau ban ${LichDangDung.ban.phienBan}: ${LichDangDung.ban.ghiChu}"
+            }
+            "lichthat" -> {
+                LichDangDung.epTam(context, null)
+                ketQua = "lich that ban ${LichDangDung.ban.phienBan}: ${LichDangDung.ban.ghiChu}"
+            }
             "xoadando" -> {
                 NhacBai.xoaHet(context)
                 prefs.raw().edit().remove("vo_dan_do_luu_ngay").commit()

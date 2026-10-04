@@ -26,6 +26,7 @@ import vn.huytl.homeworkgate.data.GateState
 import vn.huytl.homeworkgate.data.GateStore
 import vn.huytl.homeworkgate.data.GiaiDe
 import vn.huytl.homeworkgate.data.GioiHanApp
+import vn.huytl.homeworkgate.data.LichDangDung
 import vn.huytl.homeworkgate.data.NhatKyAi
 import vn.huytl.homeworkgate.data.NhatKySuDung
 import vn.huytl.homeworkgate.kho.KhoBai
@@ -109,6 +110,9 @@ object DongBo {
      */
     private const val NHIP_TIM_MS = 15 * 60_000L
 
+    /** Lang nghe lich hoc chet vi loi thi bao lau sau nghe lai. */
+    private const val NGHE_LAI_LICH_MS = 15 * 60_000L
+
     /** Nhip tim trong khung gio khuya. */
     private const val NHIP_TIM_DEM_MS = 60 * 60_000L
 
@@ -123,6 +127,10 @@ object DongBo {
     private var ngheLenh: ListenerRegistration? = null
     private var ngheGhep: ListenerRegistration? = null
     private var ngheViecNha: ListenerRegistration? = null
+    private var ngheLich: ListenerRegistration? = null
+
+    /** JSON cua lan bao lich hong hay cu vua roi, de khong ghi nhat ky lai moi lan noi mang. */
+    private var lichDaBao: String? = null
 
     /** Cac lenh da lam trong lan chay nay, de khong lam hai lan neu xoa hut. */
     private val daLam = mutableSetOf<String>()
@@ -274,6 +282,7 @@ object DongBo {
                 }
                 batNgheLenh(ung)
                 batNgheViecNha(ung)
+                batNgheLich(ung)
                 batNgheGhep(ung)
                 Prefs.get(ung).raw().registerOnSharedPreferenceChangeListener(ngheDoi)
                 ung.registerReceiver(ngheCaiApp, IntentFilter().apply {
@@ -304,6 +313,8 @@ object DongBo {
         ngheLenh?.remove(); ngheLenh = null
         ngheGhep?.remove(); ngheGhep = null
         ngheViecNha?.remove(); ngheViecNha = null
+        ngheLich?.remove(); ngheLich = null
+        lichDaBao = null
         if (ung != null) {
             runCatching { Prefs.get(ung).raw().unregisterOnSharedPreferenceChangeListener(ngheDoi) }
             // Chua kip dang ky (dung lai truoc khi lap nha xong) thi ham nay nem loi.
@@ -402,6 +413,7 @@ object DongBo {
             Duong.F_PIN_MAY to pinMay(context),
             Duong.F_DANG_SAC to dangSac(context),
             Duong.F_BAN_APP to BuildConfig.VERSION_NAME,
+            Duong.F_LICH to LichDangDung.ban.phienBan,
             Duong.F_CAP_NHAT_LUC to bayGio
         ) + truocMat()
         /*
@@ -1136,6 +1148,54 @@ object DongBo {
                 runCatching { ThiHanhViecNha.lam(context, snap) }
                     .onFailure { Log.w(TAG, "lam viec nha hong", it) }
             }
+    }
+
+    /**
+     * Nghe lich hoc tren Firestore, xem [Duong.LICH_HOC] va [LichDangDung].
+     *
+     * Moi lan nhan ban moi thi ghi nhat ky va day trang thai ngay: truong [Duong.F_LICH]
+     * cho biet tablet da dung ban nao. Ban hong hay cu hon ban dang dung thi giu ban dang
+     * dung va ghi nhat ky mot lan, de Ba Huy thay tren tab Nhat ky.
+     *
+     * Chua co document thi thoi, dung ban luu trong may hay ban mang san trong app.
+     *
+     * Firestore bao loi (luat chua dan, mat quyen) la lang nghe chet han. Nen thu nghe lai
+     * sau [NGHE_LAI_LICH_MS], khong thi tablet dung ban cu toi lan mo app sau.
+     */
+    private fun batNgheLich(context: Context) {
+        ngheLich?.remove()
+        ngheLich = db(context)?.collection(Duong.LICH_HOC)?.document(maNha(context))
+            ?.addSnapshotListener { snap, loi ->
+                if (loi != null) {
+                    Log.w(TAG, "nghe lich hong: ${loi.message}")
+                    tay.removeCallbacks(ngheLaiLich)
+                    tay.postDelayed(ngheLaiLich, NGHE_LAI_LICH_MS)
+                    return@addSnapshotListener
+                }
+                val json = snap?.getString(Duong.F_JSON) ?: return@addSnapshotListener
+                val dang = LichDangDung.ban.phienBan
+                when (val kq = LichDangDung.nhan(context, json)) {
+                    is LichDangDung.KetQua.Doi -> {
+                        lichDaBao = null
+                        DayLog.add(context, "Nhận lịch học mới bản ${kq.ban.phienBan}: ${kq.ban.ghiChu}")
+                        dayNgay()
+                    }
+                    is LichDangDung.KetQua.CuHon -> if (lichDaBao != json) {
+                        lichDaBao = json
+                        DayLog.add(context, "Lịch trên Firebase là bản ${kq.ban.phienBan}, cũ hơn bản $dang đang dùng, không đổi")
+                    }
+                    is LichDangDung.KetQua.Hong -> if (lichDaBao != json) {
+                        lichDaBao = json
+                        DayLog.add(context, "Lịch trên Firebase hỏng, vẫn dùng bản $dang: ${kq.loi}")
+                    }
+                    LichDangDung.KetQua.GiuNguyen -> Unit
+                }
+            }
+    }
+
+    private val ngheLaiLich = Runnable {
+        val c = ct
+        if (dangChay && c != null) batNgheLich(c)
     }
 
     /** Lenh go tu lau qua thi bo. Dung chung cho ca [ThiHanhLenh]. */

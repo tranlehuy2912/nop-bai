@@ -10,6 +10,7 @@ import org.junit.After
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertNull
 import org.junit.Assert.assertTrue
+import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
 import vn.huytl.homeworkgate.data.Buoi
@@ -35,6 +36,10 @@ import java.util.Calendar
  */
 @RunWith(AndroidJUnit4::class)
 class NhacBaiTest {
+
+    /** Tinh theo lich: chay tren ban lich dung yen, xem [LichMau]. */
+    @get:Rule
+    val lich = LichMau.Rule()
 
     private val context = InstrumentationRegistry.getInstrumentation().targetContext
 

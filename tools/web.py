@@ -736,7 +736,9 @@ def chay_tu_dong(cac_ma):
     if man:
         TU_DONG["hienTai"] = "dọn trạng thái còn lại của lần trước"
         try:
-            may.dat("xoaviecnha,badong")
+            # Lich mau dung yen (LichMau): lich that tren Firestore doi thi cac muc soat
+            # chu theo thoi khoa bieu van dung.
+            may.dat("xoaviecnha,badong,lichmau")
             # So cai con cau "den hen on lai" tu lan truoc thi man chinh moc them
             # mot the, va the do day nut to xuong khoi vung nhin thay.
             may.dat("xoasocai")

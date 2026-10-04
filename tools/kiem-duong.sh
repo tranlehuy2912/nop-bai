@@ -6,6 +6,7 @@
 #
 # Tu 29/9/2026 Bang dieu khien chep them ThoiKhoaBieu.kt va NgayNghi.kt de ve tab
 # Lich hoc. Lech thi dien thoai hien mot lich khac lich tablet dang dung de khoa may.
+# Tu 4/10/2026 chep them BanLich.kt (doc lich tu Firestore) va LichMacDinh.kt.
 #
 # Chay: sh tools/kiem-duong.sh
 
@@ -21,7 +22,9 @@ lichBang="$goc/bang-dieu-khien/app/src/main/java/vn/huytl/bangdieukhien/data"
 
 for f in "$a" "$b" "$c" \
     "$lichTablet/ThoiKhoaBieu.kt" "$lichBang/ThoiKhoaBieu.kt" \
-    "$lichTablet/NgayNghi.kt" "$lichBang/NgayNghi.kt"; do
+    "$lichTablet/NgayNghi.kt" "$lichBang/NgayNghi.kt" \
+    "$lichTablet/BanLich.kt" "$lichBang/BanLich.kt" \
+    "$lichTablet/LichMacDinh.kt" "$lichBang/LichMacDinh.kt"; do
     [ -f "$f" ] || { echo "THIEU: $f"; exit 1; }
 done
 
@@ -47,7 +50,7 @@ diff -u "$tam/tablet" "$tam/ba" > "$tam/d2" || {
 [ "$lech" = 0 ] && echo "Ba ban Duong.kt giong nhau."
 
 lechLich=0
-for ten in ThoiKhoaBieu NgayNghi; do
+for ten in ThoiKhoaBieu NgayNghi BanLich LichMacDinh; do
     sed '/^package /d' "$lichTablet/$ten.kt" > "$tam/lt"
     sed '/^package /d' "$lichBang/$ten.kt" > "$tam/lb"
     diff -u "$tam/lt" "$tam/lb" > "$tam/d3" || {
@@ -56,6 +59,6 @@ for ten in ThoiKhoaBieu NgayNghi; do
         lechLich=1
     }
 done
-[ "$lechLich" = 0 ] && echo "Hai ban ThoiKhoaBieu.kt, NgayNghi.kt giong nhau."
+[ "$lechLich" = 0 ] && echo "Hai ban ThoiKhoaBieu.kt, NgayNghi.kt, BanLich.kt, LichMacDinh.kt giong nhau."
 
 [ "$lech" = 0 ] && [ "$lechLich" = 0 ]

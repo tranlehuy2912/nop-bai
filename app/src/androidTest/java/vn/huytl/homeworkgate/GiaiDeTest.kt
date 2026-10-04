@@ -10,6 +10,7 @@ import org.junit.Assert.assertNotNull
 import org.junit.Assert.assertNull
 import org.junit.Assert.assertTrue
 import org.junit.Before
+import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
 import vn.huytl.homeworkgate.data.CauCham
@@ -43,6 +44,10 @@ import java.time.ZoneId
  */
 @RunWith(AndroidJUnit4::class)
 class GiaiDeTest {
+
+    /** Tinh theo lich: chay tren ban lich dung yen, xem [LichMau]. */
+    @get:Rule
+    val lich = LichMau.Rule()
 
     private lateinit var context: Context
     private lateinit var kho: KhoBai
