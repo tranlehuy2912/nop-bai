@@ -2,7 +2,7 @@
  "nguon": "khtn8",
  "mon": "Khoa học tự nhiên",
  "ten": "SGK Khoa học tự nhiên 8",
- "ban": 3,
+ "ban": 4,
  "cac_bai": [
   {
    "chuong": "Mở đầu",
@@ -6380,28 +6380,296 @@
      "trang": 77,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Lấy tay tác dụng vào cánh cửa các lực khác nhau theo chiều mũi tên biểu diễn như ở Hình 18.2 (SGK trang 77): a) lực tác dụng có giá cắt trục quay; b) lực tác dụng có giá song song với trục quay; c) lực tác dụng có giá không song song và không cắt trục quay. Trường hợp nào lực làm quay cánh cửa?"
+     "de": "Lấy tay tác dụng vào cánh cửa các lực khác nhau theo chiều mũi tên biểu diễn như ở Hình 18.2 (SGK trang 77). Đường chứa mũi tên biểu diễn lực còn gọi là giá của lực. Trục quay của cánh cửa là đường thẳng đi qua các bản lề. a) Lực tác dụng có giá cắt trục quay; b) lực tác dụng có giá song song với trục quay; c) lực tác dụng có giá không song song và không cắt trục quay. Trường hợp nào lực làm quay cánh cửa?",
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "dong": [
+       {
+        "chu": "a) Lực có giá cắt trục quay: {0}",
+        "o": [
+         {
+          "dung": [
+           "không làm quay cánh cửa"
+          ],
+          "sai": [
+           "làm quay cánh cửa"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "b) Lực có giá song song với trục quay: {0}",
+        "o": [
+         {
+          "dung": [
+           "không làm quay cánh cửa"
+          ],
+          "sai": [
+           "làm quay cánh cửa"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "c) Lực có giá không song song và không cắt trục quay: {0}",
+        "o": [
+         {
+          "dung": [
+           "làm quay cánh cửa"
+          ],
+          "sai": [
+           "không làm quay cánh cửa"
+          ],
+          "hai": true
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B18.C2",
      "trang": 77,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "1. Vị trí tác dụng lực nào trong Hình 18.3 (tay nắm cửa với các vị trí A, B, C; SGK trang 77) có thể làm cho tay nắm cửa quay quanh trục của nó? Vị trí nào làm tay nắm cửa không quay quanh trục của nó? 2. Lực tác dụng ở vị trí nào có thể làm cho tay nắm cửa quay dễ dàng hơn?"
+     "de": "1. Vị trí tác dụng lực nào trong Hình 18.3 (tay nắm cửa với các vị trí A, B, C; SGK trang 77) có thể làm cho tay nắm cửa quay quanh trục của nó? Vị trí nào làm tay nắm cửa không quay quanh trục của nó? 2. Lực tác dụng ở vị trí nào có thể làm cho tay nắm cửa quay dễ dàng hơn?",
+     "hinh": [
+      "khtn8/B18.C2.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 5,
+      "dong": [
+       {
+        "chu": "1. Lực tác dụng ở vị trí A: {0}",
+        "o": [
+         {
+          "dung": [
+           "không làm tay nắm cửa quay"
+          ],
+          "sai": [
+           "làm tay nắm cửa quay"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Lực tác dụng ở vị trí B: {0}",
+        "o": [
+         {
+          "dung": [
+           "làm tay nắm cửa quay"
+          ],
+          "sai": [
+           "không làm tay nắm cửa quay"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Lực tác dụng ở vị trí C: {0}",
+        "o": [
+         {
+          "dung": [
+           "làm tay nắm cửa quay"
+          ],
+          "sai": [
+           "không làm tay nắm cửa quay"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "2. Lực tác dụng ở vị trí {0} làm tay nắm cửa quay dễ dàng hơn",
+        "o": [
+         {
+          "dung": [
+           "C"
+          ],
+          "sai": [
+           "A",
+           "B"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "vì {0}",
+        "o": [
+         {
+          "dung": [
+           "C ở xa trục quay nhất nên moment lực lớn nhất"
+          ],
+          "sai": [
+           "C ở gần trục quay nhất nên moment lực lớn nhất",
+           "giá của lực ở C đi qua trục quay"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B18.C3",
      "trang": 78,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "So sánh moment của lực F1, moment của lực F2 trong các Hình 18.4a và Hình 18.4b (SGK trang 78)."
+     "de": "Hình 18.4 (SGK trang 78) vẽ các cờ lê đang vặn ốc: trục quay ở đầu cờ lê ngậm ốc, lực F1, F2 tác dụng vào đầu kia của cờ lê; d1, d2 là khoảng cách từ trục quay tới giá của lực F1, F2. So sánh moment của lực F1, moment của lực F2 trong các Hình 18.4a và Hình 18.4b.",
+     "hinh": [
+      "khtn8/B18.C3.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "dong": [
+       {
+        "chu": "Hình 18.4a: moment của lực F₁ {0} moment của lực F₂",
+        "o": [
+         {
+          "dung": [
+           "nhỏ hơn"
+          ],
+          "sai": [
+           "lớn hơn",
+           "bằng"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "vì {0}",
+        "o": [
+         {
+          "dung": [
+           "giá của lực F₂ cách xa trục quay hơn (d₂ lớn hơn d₁)"
+          ],
+          "sai": [
+           "giá của lực F₁ cách xa trục quay hơn (d₁ lớn hơn d₂)",
+           "giá của hai lực cách trục quay như nhau"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Hình 18.4b: moment của lực F₁ {0} moment của lực F₂",
+        "o": [
+         {
+          "dung": [
+           "nhỏ hơn"
+          ],
+          "sai": [
+           "lớn hơn",
+           "bằng"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "vì {0}",
+        "o": [
+         {
+          "dung": [
+           "giá của hai lực cách trục quay như nhau (d₁ = d₂) nhưng F₁ nhỏ hơn F₂"
+          ],
+          "sai": [
+           "giá của lực F₁ cách xa trục quay hơn giá của lực F₂",
+           "giá của hai lực cách trục quay như nhau nhưng F₁ lớn hơn F₂"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B18.C4",
      "trang": 78,
      "nhom": "Em có thể",
      "dang": "CAU_NHO",
-     "de": "Giải thích cách tác dụng lực khi bắt đầu đạp pê-đan để xe đạp có thể chuyển động; giải thích cách sử dụng cờ lê để vặn ốc một cách dễ dàng."
+     "de": "Giải thích cách tác dụng lực khi bắt đầu đạp pê-đan để xe đạp có thể chuyển động; giải thích cách sử dụng cờ lê để vặn ốc một cách dễ dàng.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 5,
+      "dong": [
+       {
+        "chu": "1. Khi bắt đầu đạp, nên để pê-đan ở vị trí mà đùi đĩa (thanh nối pê-đan với trục giữa) {0}",
+        "o": [
+         {
+          "dung": [
+           "gần nằm ngang, ở phía trước trục giữa"
+          ],
+          "sai": [
+           "thẳng đứng, pê-đan ở điểm cao nhất",
+           "thẳng đứng, pê-đan ở điểm thấp nhất"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "rồi đạp chân xuống. Khi đó giá của lực đạp {0}",
+        "o": [
+         {
+          "dung": [
+           "không cắt trục giữa và cách trục giữa xa nhất, nên moment lực lớn nhất"
+          ],
+          "sai": [
+           "đi qua trục giữa, nên moment lực lớn nhất",
+           "song song với mặt đất, nên moment lực lớn nhất"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "2. Dùng cờ lê vặn ốc, nên cầm tay ở {0}",
+        "o": [
+         {
+          "dung": [
+           "đầu cán cờ lê, xa con ốc (trục quay)"
+          ],
+          "sai": [
+           "sát đầu cờ lê ngậm ốc",
+           "chính giữa con ốc"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "và tác dụng lực theo phương {0}",
+        "o": [
+         {
+          "dung": [
+           "vuông góc với cán cờ lê"
+          ],
+          "sai": [
+           "dọc theo cán cờ lê, đẩy vào con ốc",
+           "song song với trục của con ốc"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Vặn như vậy dễ dàng vì {0}",
+        "o": [
+         {
+          "dung": [
+           "giá của lực cách xa trục quay, moment lực lớn"
+          ],
+          "sai": [
+           "lực của tay tự tăng lên gấp đôi",
+           "giá của lực đi qua trục quay"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     }
    ]
   },
@@ -6414,42 +6682,622 @@
      "trang": 80,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "1. Xác định điểm tựa, cánh tay đòn trong các trường hợp ở Hình 19.2 (xe cút kít, dùng xà beng nạy vật, búa nhổ đinh; SGK trang 80). 2. Sử dụng đòn bẩy như Hình 19.2 có thể làm đổi hướng tác dụng lực như thế nào?"
+     "de": "1. Xác định điểm tựa, cánh tay đòn trong các trường hợp ở Hình 19.2 (SGK trang 80): a) người đẩy xe cút kít chở cây; b) người dùng xà beng có hòn kê bên dưới để nạy (bẩy) một chồng thùng hàng; c) dùng búa nhổ đinh trên tường, đầu búa tì vào tường, tay cầm cuối cán búa. 2. Sử dụng đòn bẩy như Hình 19.2 có thể làm đổi hướng tác dụng lực như thế nào?",
+     "hinh": [
+      "khtn8/B19.C1.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 7,
+      "dong": [
+       {
+        "chu": "1. a) Xe cút kít: điểm tựa là {0}",
+        "o": [
+         {
+          "dung": [
+           "trục bánh xe"
+          ],
+          "sai": [
+           "tay cầm của xe",
+           "thùng xe chở cây"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "b) Xà beng: điểm tựa là {0}",
+        "o": [
+         {
+          "dung": [
+           "hòn kê đặt dưới xà beng"
+          ],
+          "sai": [
+           "đầu xà beng chèn dưới chồng thùng",
+           "chỗ tay người cầm xà beng"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "c) Búa nhổ đinh: điểm tựa là {0}",
+        "o": [
+         {
+          "dung": [
+           "chỗ đầu búa tì vào tường"
+          ],
+          "sai": [
+           "mũ đinh",
+           "chỗ tay cầm cán búa"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Trong cả ba trường hợp, cánh tay đòn của lực do tay người tác dụng (khoảng cách từ điểm tựa tới giá của lực tay) {0} cánh tay đòn của lực do vật tác dụng lên đòn bẩy",
+        "o": [
+         {
+          "dung": [
+           "dài hơn"
+          ],
+          "sai": [
+           "ngắn hơn",
+           "bằng"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "2. a) Xe cút kít: {0}",
+        "o": [
+         {
+          "dung": [
+           "không đổi hướng lực: tay nâng lên, vật cũng được nâng lên"
+          ],
+          "sai": [
+           "đổi hướng lực: tay ấn xuống, vật được nâng lên"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "b) Xà beng: {0}",
+        "o": [
+         {
+          "dung": [
+           "đổi hướng lực: tay ấn xuống, chồng thùng được nâng lên"
+          ],
+          "sai": [
+           "không đổi hướng lực: tay nâng lên, chồng thùng cũng được nâng lên"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "c) Búa nhổ đinh: {0}",
+        "o": [
+         {
+          "dung": [
+           "đổi hướng lực: tay kéo cán búa xuống, dọc theo mặt tường; đinh bị kéo ra theo phương vuông góc với tường"
+          ],
+          "sai": [
+           "không đổi hướng lực: tay kéo cán búa ra xa tường; đinh cũng bị kéo ra xa tường theo đúng hướng đó"
+          ],
+          "hai": true
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B19.C2",
      "trang": 81,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "1. Hình 19.6 vẽ các dụng cụ, các vật có cấu tạo và chức năng của đòn bẩy (cần câu cá, bật nắp chai, sử dụng đũa, dùng kẹp làm vỡ vỏ hạt, chèo thuyền, kéo cắt; SGK trang 81). Em hãy chỉ rõ loại đòn bẩy trong từng trường hợp. Sử dụng đòn bẩy như vậy đem lại lợi ích như thế nào? 2. Lấy các ví dụ khác về mỗi loại đòn bẩy trong cuộc sống và phân tích tác dụng của chúng."
+     "de": "1. Hình 19.6 vẽ các dụng cụ, các vật có cấu tạo và chức năng của đòn bẩy (cần câu cá, bật nắp chai, sử dụng đũa, dùng kẹp làm vỡ vỏ hạt, chèo thuyền, kéo cắt; SGK trang 81). Em hãy chỉ rõ loại đòn bẩy trong từng trường hợp. Sử dụng đòn bẩy như vậy đem lại lợi ích như thế nào? 2. Lấy các ví dụ khác về mỗi loại đòn bẩy trong cuộc sống và phân tích tác dụng của chúng.",
+     "hinh": [
+      "khtn8/B19.C2.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 12,
+      "dong": [
+       {
+        "chu": "1. a) Cần câu cá (tay sau giữ cuối cần làm điểm tựa, tay trước nâng cần ở gần đó, con cá ở đầu cần): {0}",
+        "o": [
+         {
+          "dung": [
+           "đòn bẩy loại 2 không cho lợi về lực"
+          ],
+          "sai": [
+           "đòn bẩy loại 1",
+           "đòn bẩy loại 2 cho lợi về lực"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "b) Bật nắp chai (đầu cái mở nắp tì lên mặt nắp chai làm điểm tựa, răng cái mở móc dưới mép nắp, tay nâng cán lên): {0}",
+        "o": [
+         {
+          "dung": [
+           "đòn bẩy loại 2 cho lợi về lực"
+          ],
+          "sai": [
+           "đòn bẩy loại 1",
+           "đòn bẩy loại 2 không cho lợi về lực"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "c) Sử dụng đũa (đầu trên của đũa tựa vào kẽ tay làm điểm tựa, các ngón tay ép ở giữa đũa, thức ăn ở đầu đũa): {0}",
+        "o": [
+         {
+          "dung": [
+           "đòn bẩy loại 2 không cho lợi về lực"
+          ],
+          "sai": [
+           "đòn bẩy loại 1",
+           "đòn bẩy loại 2 cho lợi về lực"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "d) Dùng kẹp làm vỡ vỏ hạt (chốt kẹp ở một đầu, hạt đặt gần chốt, tay bóp ở đầu cán): {0}",
+        "o": [
+         {
+          "dung": [
+           "đòn bẩy loại 2 cho lợi về lực"
+          ],
+          "sai": [
+           "đòn bẩy loại 1",
+           "đòn bẩy loại 2 không cho lợi về lực"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "e) Chèo thuyền (mái chèo tựa vào cọc chèo ở mạn thuyền làm điểm tựa, tay ở một đầu, đầu kia đẩy nước): {0}",
+        "o": [
+         {
+          "dung": [
+           "đòn bẩy loại 1"
+          ],
+          "sai": [
+           "đòn bẩy loại 2 cho lợi về lực",
+           "đòn bẩy loại 2 không cho lợi về lực"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "g) Kéo cắt (chốt kéo nằm giữa tay cầm và chỗ lưỡi kéo cắt vật): {0}",
+        "o": [
+         {
+          "dung": [
+           "đòn bẩy loại 1"
+          ],
+          "sai": [
+           "đòn bẩy loại 2 cho lợi về lực",
+           "đòn bẩy loại 2 không cho lợi về lực"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Bật nắp chai, kẹp làm vỡ vỏ hạt (đòn bẩy loại 2 cho lợi về lực) giúp {0}",
+        "o": [
+         {
+          "dung": [
+           "dùng một lực nhỏ mà thắng được lực cản lớn"
+          ],
+          "sai": [
+           "đầu kia của đòn di chuyển nhanh và xa hơn tay",
+           "tay phải dùng một lực lớn hơn lực cản của vật"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Cần câu cá, đũa (đòn bẩy loại 2 không cho lợi về lực) giúp {0}",
+        "o": [
+         {
+          "dung": [
+           "đầu cần câu, đầu đũa di chuyển nhanh và xa hơn tay, thao tác nhanh và dễ dàng"
+          ],
+          "sai": [
+           "dùng một lực nhỏ hơn trọng lượng con cá, miếng thức ăn mà vẫn nâng được chúng",
+           "giữ cho con cá, miếng thức ăn đứng yên một chỗ"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Mái chèo, kéo cắt (đòn bẩy loại 1) giúp {0}",
+        "o": [
+         {
+          "dung": [
+           "đổi hướng của lực; được lợi về lực khi tay ở xa điểm tựa hơn vật"
+          ],
+          "sai": [
+           "giữ nguyên hướng của lực; luôn được lợi về lực dù tay ở gần hay xa điểm tựa",
+           "không đổi hướng của lực; chỉ giúp đầu kia của đòn di chuyển nhanh hơn tay"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "2. Cái bập bênh: {0}",
+        "o": [
+         {
+          "dung": [
+           "đòn bẩy loại 1"
+          ],
+          "sai": [
+           "đòn bẩy loại 2 cho lợi về lực",
+           "đòn bẩy loại 2 không cho lợi về lực"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Cái nhíp, cái kẹp gắp than (hai thanh nối nhau ở một đầu, tay bóp ở giữa): {0}",
+        "o": [
+         {
+          "dung": [
+           "đòn bẩy loại 2 không cho lợi về lực"
+          ],
+          "sai": [
+           "đòn bẩy loại 1",
+           "đòn bẩy loại 2 cho lợi về lực"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Xe cút kít chở đất: {0}",
+        "o": [
+         {
+          "dung": [
+           "đòn bẩy loại 2 cho lợi về lực"
+          ],
+          "sai": [
+           "đòn bẩy loại 1",
+           "đòn bẩy loại 2 không cho lợi về lực"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B19.C3",
      "trang": 81,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Đòn bẩy trong máy bơm nước bằng tay (Hình 19.7, SGK trang 81) là đòn bẩy loại nào? Sử dụng máy bơm nước này cho ta những lợi ích gì?"
+     "de": "Đòn bẩy trong máy bơm nước bằng tay (Hình 19.7, SGK trang 81: người ấn tay cầm ở đầu dài của cần bơm; cần bơm quay quanh một chốt ở đỉnh thân bơm; đầu ngắn của cần bơm nối với cán pít-tông trong thân bơm) là đòn bẩy loại nào? Sử dụng máy bơm nước này cho ta những lợi ích gì?",
+     "hinh": [
+      "khtn8/B19.C3.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "dong": [
+       {
+        "chu": "Đòn bẩy trong máy bơm nước bằng tay là {0}",
+        "o": [
+         {
+          "dung": [
+           "đòn bẩy loại 1"
+          ],
+          "sai": [
+           "đòn bẩy loại 2 cho lợi về lực",
+           "đòn bẩy loại 2 không cho lợi về lực"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "vì {0}",
+        "o": [
+         {
+          "dung": [
+           "chốt quay (điểm tựa) nằm giữa chỗ tay ấn và chỗ nối với cán pít-tông"
+          ],
+          "sai": [
+           "chỗ tay ấn nằm giữa điểm tựa và chỗ nối với cán pít-tông",
+           "chỗ nối với cán pít-tông nằm giữa điểm tựa và chỗ tay ấn"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Lợi ích thứ nhất: {0}",
+        "o": [
+         {
+          "dung": [
+           "lợi về lực: tay ấn ở xa điểm tựa hơn chỗ nối cán pít-tông nên chỉ cần lực nhỏ"
+          ],
+          "sai": [
+           "lợi về lực: tay ấn ở gần điểm tựa hơn chỗ nối cán pít-tông",
+           "không cho lợi về lực: tay phải dùng lực lớn hơn lực nâng pít-tông"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Lợi ích thứ hai: {0}",
+        "o": [
+         {
+          "dung": [
+           "đổi hướng lực: ấn tay xuống thì pít-tông được kéo lên, kéo nước lên theo"
+          ],
+          "sai": [
+           "không đổi hướng lực: ấn tay xuống thì pít-tông cũng bị đẩy xuống",
+           "đổi hướng lực: kéo tay lên thì pít-tông được kéo lên"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B19.C4",
      "trang": 82,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Dựa trên cấu tạo của cơ thể và tác dụng của đòn bẩy em hãy đưa ra tư thế ngồi để tránh mỏi cổ."
+     "de": "Dựa trên cấu tạo của cơ thể và tác dụng của đòn bẩy em hãy đưa ra tư thế ngồi để tránh mỏi cổ.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "dong": [
+       {
+        "chu": "Đầu là một đòn bẩy: trục quay là đốt sống trên cùng, trọng lượng của đầu đặt ở phía trước trục quay, cơ sau gáy kéo ở phía sau trục quay. Đó là {0}",
+        "o": [
+         {
+          "dung": [
+           "đòn bẩy loại 1"
+          ],
+          "sai": [
+           "đòn bẩy loại 2 cho lợi về lực",
+           "đòn bẩy loại 2 không cho lợi về lực"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Khi cúi gằm đầu về phía trước (nhìn điện thoại, cúi sát vở), cánh tay đòn của trọng lượng đầu {0}",
+        "o": [
+         {
+          "dung": [
+           "tăng lên"
+          ],
+          "sai": [
+           "giảm đi",
+           "không thay đổi"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "nên cơ sau gáy phải {0}",
+        "o": [
+         {
+          "dung": [
+           "kéo mạnh hơn và lâu hơn, cổ nhanh mỏi"
+          ],
+          "sai": [
+           "kéo yếu hơn, cổ đỡ mỏi",
+           "nghỉ hoàn toàn, không cần kéo"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Tư thế ngồi để tránh mỏi cổ: {0}",
+        "o": [
+         {
+          "dung": [
+           "lưng thẳng, giữ đầu và cổ thẳng trục với cột sống, không cúi gằm đầu"
+          ],
+          "sai": [
+           "cúi gằm đầu về phía trước cho mắt thật gần trang vở, màn hình",
+           "ngồi lệch người, nghiêng hẳn đầu sang một bên khi viết"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B19.C5",
      "trang": 82,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Em hãy giải thích vì sao khi cầm vật nặng, ta cần gập sát cánh tay vào bắp tay."
+     "de": "Em hãy giải thích vì sao khi cầm vật nặng, ta cần gập sát cánh tay vào bắp tay.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "dong": [
+       {
+        "chu": "Khi cầm vật nặng, cánh tay là đòn bẩy có trục quay ở {0}",
+        "o": [
+         {
+          "dung": [
+           "khớp khuỷu tay"
+          ],
+          "sai": [
+           "bàn tay",
+           "vai"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Gập sát cẳng tay (cánh tay) vào bắp tay thì khoảng cách từ khuỷu tay tới giá của trọng lực của vật (cánh tay đòn của trọng lực) {0}",
+        "o": [
+         {
+          "dung": [
+           "giảm đi"
+          ],
+          "sai": [
+           "tăng lên",
+           "không thay đổi"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "nên cơ bắp tay chỉ cần {0}",
+        "o": [
+         {
+          "dung": [
+           "một lực nhỏ hơn để giữ vật, tay đỡ mỏi"
+          ],
+          "sai": [
+           "một lực lớn hơn để giữ vật",
+           "một lực bằng đúng trọng lượng của vật như mọi tư thế khác"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B19.C6",
      "trang": 83,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Em hãy xác định các đòn bẩy trên xe đạp khi ta sử dụng xe. Ứng với mỗi trường hợp hãy xác định trục quay, các lực tác dụng và xác định loại đòn bẩy tương ứng. Hãy mô tả sự thay đổi hướng của lực khi dùng chân tác dụng lực lên pê-đan xe đạp để đẩy xe đạp tiến về phía trước. Xét quá trình tác dụng lực với hai trục quay tại trục giữa A và trục bánh sau B (Hình 19.10, SGK trang 83)."
+     "de": "Em hãy xác định các đòn bẩy trên xe đạp khi ta sử dụng xe. Ứng với mỗi trường hợp hãy xác định trục quay, các lực tác dụng và xác định loại đòn bẩy tương ứng. Hãy mô tả sự thay đổi hướng của lực khi dùng chân tác dụng lực lên pê-đan xe đạp để đẩy xe đạp tiến về phía trước. Xét quá trình tác dụng lực với hai trục quay tại trục giữa A và trục bánh sau B (Hình 19.10, SGK trang 83).",
+     "hinh": [
+      "khtn8/B19.C6.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 8,
+      "dong": [
+       {
+        "chu": "1. Bộ phận bàn đạp (pê-đan), đùi đĩa và đĩa xe là một đòn bẩy có trục quay là {0}",
+        "o": [
+         {
+          "dung": [
+           "trục giữa A"
+          ],
+          "sai": [
+           "trục bánh sau B",
+           "trục bánh trước"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Lực tác dụng vào đòn bẩy này là lực của chân đạp lên {0}, và lực của xích kéo ở răng đĩa",
+        "o": [
+         {
+          "dung": [
+           "bàn đạp (pê-đan)"
+          ],
+          "sai": [
+           "yên xe",
+           "ghi đông"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Bộ phận líp và bánh sau là một đòn bẩy có trục quay là {0}",
+        "o": [
+         {
+          "dung": [
+           "trục bánh sau B"
+          ],
+          "sai": [
+           "trục giữa A",
+           "chỗ bánh xe chạm mặt đường"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Tay phanh (chốt quay ở gốc tay phanh, chỗ nối dây phanh ở gần chốt, ngón tay bóp ở đầu xa chốt) là {0}",
+        "o": [
+         {
+          "dung": [
+           "đòn bẩy loại 2 cho lợi về lực"
+          ],
+          "sai": [
+           "đòn bẩy loại 1",
+           "đòn bẩy loại 2 không cho lợi về lực"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "2. Chân đạp lên pê-đan một lực có hướng {0}",
+        "o": [
+         {
+          "dung": [
+           "thẳng đứng, từ trên xuống"
+          ],
+          "sai": [
+           "nằm ngang, về phía trước",
+           "thẳng đứng, từ dưới lên"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Đĩa quay quanh trục A, kéo nhánh trên của xích theo hướng {0}",
+        "o": [
+         {
+          "dung": [
+           "nằm ngang, về phía trước (từ líp về phía đĩa)"
+          ],
+          "sai": [
+           "thẳng đứng, từ trên xuống",
+           "nằm ngang, về phía sau (từ đĩa về phía líp)"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Xích kéo líp làm bánh sau quay quanh trục B; ở chỗ chạm mặt đường, bánh xe đẩy mặt đường về phía {0}",
+        "o": [
+         {
+          "dung": [
+           "sau"
+          ],
+          "sai": [
+           "trước",
+           "trên"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Mặt đường tác dụng lại lên bánh xe một lực hướng về phía {0}, đẩy xe đạp tiến lên",
+        "o": [
+         {
+          "dung": [
+           "trước"
+          ],
+          "sai": [
+           "sau",
+           "dưới"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     }
    ]
   },
@@ -6462,35 +7310,288 @@
      "trang": 85,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Từ các kết quả thí nghiệm với đũa nhựa cọ vào vải len và đũa thuỷ tinh cọ vào vải lụa (Hình 20.2, SGK trang 85), rút ra nhận xét gì? Điện tích trên đũa thuỷ tinh có cùng loại với điện tích trên đũa nhựa không? Các điện tích cùng loại và khác loại tác dụng với nhau như thế nào?"
+     "de": "Thí nghiệm 2 (Hình 20.2, SGK trang 85): lấy một đũa nhựa cọ vào mảnh vải len, sau đó treo lên giá thí nghiệm. a) Lấy chiếc đũa nhựa thứ hai cọ vào mảnh vải len rồi đưa lại gần đầu đũa nhựa đang treo. b) Thay đũa nhựa thứ hai bằng đũa thuỷ tinh đã cọ vào mảnh vải lụa, rồi đưa lại gần đầu đũa nhựa đang treo. Mũi tên trong hình cho biết đầu đũa treo chuyển động ra xa hay lại gần chiếc đũa được đưa tới. 1. Từ các kết quả thí nghiệm, rút ra nhận xét gì? Điện tích trên đũa thuỷ tinh có cùng loại với điện tích trên đũa nhựa không? 2. Các điện tích cùng loại và khác loại tác dụng với nhau như thế nào?",
+     "hinh": [
+      "khtn8/B20.C1.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 5,
+      "dong": [
+       {
+        "chu": "1. a) Hai đũa nhựa cùng cọ vào vải len thì {0}",
+        "o": [
+         {
+          "dung": [
+           "đẩy nhau"
+          ],
+          "sai": [
+           "hút nhau",
+           "không tác dụng lên nhau"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "b) Đũa thuỷ tinh cọ vào vải lụa và đũa nhựa cọ vào vải len thì {0}",
+        "o": [
+         {
+          "dung": [
+           "hút nhau"
+          ],
+          "sai": [
+           "đẩy nhau",
+           "không tác dụng lên nhau"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Vậy điện tích trên đũa thuỷ tinh {0} điện tích trên đũa nhựa",
+        "o": [
+         {
+          "dung": [
+           "khác loại với"
+          ],
+          "sai": [
+           "cùng loại với"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "2. Hai điện tích cùng loại thì {0}",
+        "o": [
+         {
+          "dung": [
+           "đẩy nhau"
+          ],
+          "sai": [
+           "hút nhau"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Hai điện tích khác loại thì {0}",
+        "o": [
+         {
+          "dung": [
+           "hút nhau"
+          ],
+          "sai": [
+           "đẩy nhau"
+          ],
+          "hai": true
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B20.C2",
      "trang": 85,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Trả lời câu hỏi ở phần mở đầu: Vì sao vào những ngày hanh khô, khi chải tóc bằng lược nhựa thì nhiều sợi tóc bị lược nhựa hút kéo thẳng ra?"
+     "de": "Trả lời câu hỏi ở phần mở đầu: Vì sao vào những ngày hanh khô, khi chải tóc bằng lược nhựa thì nhiều sợi tóc bị lược nhựa hút kéo thẳng ra?",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "dong": [
+       {
+        "chu": "Khi chải, lược nhựa cọ xát với tóc nên {0}",
+        "o": [
+         {
+          "dung": [
+           "cả lược và tóc đều bị nhiễm điện, và nhiễm điện khác loại"
+          ],
+          "sai": [
+           "cả lược và tóc đều bị nhiễm điện cùng loại",
+           "lược và tóc đều không bị nhiễm điện"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Vì vậy lược nhựa {0} các sợi tóc, kéo chúng thẳng ra",
+        "o": [
+         {
+          "dung": [
+           "hút"
+          ],
+          "sai": [
+           "đẩy"
+          ],
+          "hai": true
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B20.C3",
      "trang": 86,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Hãy thảo luận để trả lời các câu hỏi: 1. Nguyên tử có cấu tạo như thế nào? Hãy vẽ hình mô tả cấu tạo nguyên tử. 2. Electron trong nguyên tử có thể dịch chuyển như thế nào?"
+     "de": "Hãy thảo luận để trả lời các câu hỏi: 1. Nguyên tử có cấu tạo như thế nào? Hãy vẽ hình mô tả cấu tạo nguyên tử. 2. Electron trong nguyên tử có thể dịch chuyển như thế nào?",
+     "ghep": {
+      "kieu": "O",
+      "sao": 5,
+      "hoi": "Hãy thảo luận để trả lời các câu hỏi:\n1. Nguyên tử có cấu tạo như thế nào? Hình vẽ mô tả cấu tạo nguyên tử trông như thế nào?\n2. Electron trong nguyên tử có thể dịch chuyển như thế nào?",
+      "dong": [
+       {
+        "chu": "1. Nguyên tử gồm hạt nhân mang điện tích {0} và vỏ nguyên tử gồm các electron mang điện tích {1}",
+        "o": [
+         {
+          "dung": [
+           "dương"
+          ],
+          "sai": [
+           "âm",
+           "không mang điện"
+          ]
+         },
+         {
+          "dung": [
+           "âm"
+          ],
+          "sai": [
+           "dương",
+           "không mang điện"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Hình vẽ mô tả cấu tạo nguyên tử: {0}",
+        "o": [
+         {
+          "dung": [
+           "hạt nhân rất nhỏ ở tâm, các electron chuyển động xung quanh hạt nhân"
+          ],
+          "sai": [
+           "các electron ở tâm, hạt nhân chuyển động xung quanh các electron",
+           "hạt nhân và các electron xếp xen kẽ nhau thành một hàng thẳng"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Bình thường, nguyên tử {0}",
+        "o": [
+         {
+          "dung": [
+           "trung hoà về điện"
+          ],
+          "sai": [
+           "mang điện tích dương",
+           "mang điện tích âm"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "2. Electron trong nguyên tử {0}",
+        "o": [
+         {
+          "dung": [
+           "chuyển động xung quanh hạt nhân, và có thể bứt ra khỏi nguyên tử này để dịch chuyển sang nguyên tử khác, vật khác"
+          ],
+          "sai": [
+           "chuyển động xung quanh hạt nhân nhưng không bao giờ bứt ra khỏi nguyên tử để sang vật khác",
+           "đứng yên ở tâm nguyên tử, chỉ hạt nhân mới dịch chuyển được từ vật này sang vật khác"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B20.C4",
      "trang": 86,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Giải thích tại sao bụi lại bám nhiều ở cánh quạt điện sau một thời gian sử dụng."
+     "de": "Giải thích tại sao bụi lại bám nhiều ở cánh quạt điện sau một thời gian sử dụng.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "dong": [
+       {
+        "chu": "Khi quạt quay, cánh quạt {0}",
+        "o": [
+         {
+          "dung": [
+           "cọ xát với không khí nên bị nhiễm điện"
+          ],
+          "sai": [
+           "bị nóng chảy một phần nên dính bụi",
+           "bị nhiễm từ giống như nam châm"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Cánh quạt đã nhiễm điện {0} các hạt bụi nhỏ, nhẹ trong không khí, nên bụi bám nhiều ở cánh quạt",
+        "o": [
+         {
+          "dung": [
+           "hút"
+          ],
+          "sai": [
+           "đẩy"
+          ],
+          "hai": true
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B20.C5",
      "trang": 86,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Vì sao vào những ngày thời tiết khô ráo, khi lau chùi gương soi, kính cửa sổ hay màn hình ti vi bằng khăn bông khô thì vẫn thấy có bụi bông bám vào?"
+     "de": "Vì sao vào những ngày thời tiết khô ráo, khi lau chùi gương soi, kính cửa sổ hay màn hình ti vi bằng khăn bông khô thì vẫn thấy có bụi bông bám vào?",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "dong": [
+       {
+        "chu": "Khi lau bằng khăn bông khô, mặt gương, kính cửa sổ, màn hình ti vi {0}",
+        "o": [
+         {
+          "dung": [
+           "bị cọ xát nên nhiễm điện"
+          ],
+          "sai": [
+           "bị ướt nên dính bụi",
+           "bị nóng lên nên dính bụi"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Vật đã nhiễm điện {0} các sợi bông nhỏ, nhẹ, nên vẫn thấy bụi bông bám vào",
+        "o": [
+         {
+          "dung": [
+           "hút"
+          ],
+          "sai": [
+           "đẩy"
+          ],
+          "hai": true
+         }
+        ]
+       }
+      ]
+     }
     }
    ]
   },
@@ -6503,28 +7604,306 @@
      "trang": 88,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Quan sát thí nghiệm hai điện nghiệm: điện nghiệm A được tích điện nên hai lá kim loại xoè ra; điện nghiệm B không tích điện nên hai lá kim loại cụp lại. Nối hai quả cầu của hai điện nghiệm, hiện tượng xảy ra: hai lá kim loại của điện nghiệm A giảm độ xoè, hai lá kim loại của điện nghiệm B xoè ra. Kết quả thí nghiệm chứng tỏ điều gì?"
+     "de": "Quan sát thí nghiệm hai điện nghiệm: điện nghiệm A được tích điện nên hai lá kim loại xoè ra; điện nghiệm B không tích điện nên hai lá kim loại cụp lại. Nối hai quả cầu của hai điện nghiệm, hiện tượng xảy ra: hai lá kim loại của điện nghiệm A giảm độ xoè, hai lá kim loại của điện nghiệm B xoè ra. Kết quả thí nghiệm chứng tỏ điều gì?",
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "dong": [
+       {
+        "chu": "Hai lá kim loại của điện nghiệm A giảm độ xoè, chứng tỏ {0}",
+        "o": [
+         {
+          "dung": [
+           "điện tích của điện nghiệm A giảm đi"
+          ],
+          "sai": [
+           "điện tích của điện nghiệm A tăng lên",
+           "điện nghiệm A bị nóng lên"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Hai lá kim loại của điện nghiệm B xoè ra, chứng tỏ {0}",
+        "o": [
+         {
+          "dung": [
+           "điện nghiệm B đã nhiễm điện"
+          ],
+          "sai": [
+           "điện nghiệm B bị nóng lên",
+           "điện nghiệm B vẫn không mang điện"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Kết luận: {0}",
+        "o": [
+         {
+          "dung": [
+           "các hạt mang điện đã dịch chuyển từ điện nghiệm A qua thanh kim loại sang điện nghiệm B: đã có dòng điện chạy qua thanh kim loại"
+          ],
+          "sai": [
+           "thanh kim loại đã tự tạo ra điện tích mới cho điện nghiệm B, còn điện tích của điện nghiệm A vẫn giữ nguyên",
+           "các hạt mang điện chỉ chuyển động qua lại trong điện nghiệm A, không có hạt nào đi qua thanh kim loại"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B21.C2",
      "trang": 88,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Hãy kể tên các nguồn điện khác mà em biết."
+     "de": "Hãy kể tên các nguồn điện khác mà em biết.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 5,
+      "hoi": "Hãy kể tên các nguồn điện khác mà em biết. Mỗi vật sau có phải là nguồn điện không?",
+      "dong": [
+       {
+        "chu": "Pin mặt trời (pin quang điện): {0}",
+        "o": [
+         {
+          "dung": [
+           "là nguồn điện"
+          ],
+          "sai": [
+           "không phải nguồn điện"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Đinamô gắn ở bánh xe đạp để thắp sáng đèn xe: {0}",
+        "o": [
+         {
+          "dung": [
+           "là nguồn điện"
+          ],
+          "sai": [
+           "không phải nguồn điện"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Máy phát điện của nhà máy thuỷ điện: {0}",
+        "o": [
+         {
+          "dung": [
+           "là nguồn điện"
+          ],
+          "sai": [
+           "không phải nguồn điện"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Bóng đèn LED: {0}",
+        "o": [
+         {
+          "dung": [
+           "không phải nguồn điện"
+          ],
+          "sai": [
+           "là nguồn điện"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Quạt điện: {0}",
+        "o": [
+         {
+          "dung": [
+           "không phải nguồn điện"
+          ],
+          "sai": [
+           "là nguồn điện"
+          ],
+          "hai": true
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B21.C3",
      "trang": 90,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Trong những vật sau đây: thanh gỗ khô, ruột bút chì, dây nhựa, thanh thuỷ tinh, đoạn dây nhôm. Vật nào là vật dẫn điện, vật nào là vật cách điện?"
+     "de": "Trong những vật sau đây: thanh gỗ khô, ruột bút chì, dây nhựa, thanh thuỷ tinh, đoạn dây nhôm. Vật nào là vật dẫn điện, vật nào là vật cách điện?",
+     "ghep": {
+      "kieu": "O",
+      "sao": 5,
+      "dong": [
+       {
+        "chu": "Thanh gỗ khô: {0}",
+        "o": [
+         {
+          "dung": [
+           "vật cách điện"
+          ],
+          "sai": [
+           "vật dẫn điện"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Ruột bút chì: {0}",
+        "o": [
+         {
+          "dung": [
+           "vật dẫn điện"
+          ],
+          "sai": [
+           "vật cách điện"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Dây nhựa: {0}",
+        "o": [
+         {
+          "dung": [
+           "vật cách điện"
+          ],
+          "sai": [
+           "vật dẫn điện"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Thanh thuỷ tinh: {0}",
+        "o": [
+         {
+          "dung": [
+           "vật cách điện"
+          ],
+          "sai": [
+           "vật dẫn điện"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Đoạn dây nhôm: {0}",
+        "o": [
+         {
+          "dung": [
+           "vật dẫn điện"
+          ],
+          "sai": [
+           "vật cách điện"
+          ],
+          "hai": true
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B21.C4",
      "trang": 90,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Kể tên những vật liệu cách điện trong các dụng cụ và thiết bị điện thường dùng mà em biết."
+     "de": "Kể tên những vật liệu cách điện trong các dụng cụ và thiết bị điện thường dùng mà em biết.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 5,
+      "hoi": "Kể tên những vật liệu cách điện trong các dụng cụ và thiết bị điện thường dùng mà em biết. Mỗi bộ phận sau được làm bằng vật liệu cách điện hay vật liệu dẫn điện?",
+      "dong": [
+       {
+        "chu": "Vỏ bọc dây điện bằng nhựa: {0}",
+        "o": [
+         {
+          "dung": [
+           "làm bằng vật liệu cách điện"
+          ],
+          "sai": [
+           "làm bằng vật liệu dẫn điện"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Giá sứ đỡ dây điện trên cột điện: {0}",
+        "o": [
+         {
+          "dung": [
+           "làm bằng vật liệu cách điện"
+          ],
+          "sai": [
+           "làm bằng vật liệu dẫn điện"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Găng tay, ủng cao su của thợ điện: {0}",
+        "o": [
+         {
+          "dung": [
+           "làm bằng vật liệu cách điện"
+          ],
+          "sai": [
+           "làm bằng vật liệu dẫn điện"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Lõi dây điện bằng đồng: {0}",
+        "o": [
+         {
+          "dung": [
+           "làm bằng vật liệu dẫn điện"
+          ],
+          "sai": [
+           "làm bằng vật liệu cách điện"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Chân cắm của phích cắm điện: {0}",
+        "o": [
+         {
+          "dung": [
+           "làm bằng vật liệu dẫn điện"
+          ],
+          "sai": [
+           "làm bằng vật liệu cách điện"
+          ],
+          "hai": true
+         }
+        ]
+       }
+      ]
+     }
     }
    ]
   },
@@ -6537,35 +7916,321 @@
      "trang": 92,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Vẽ sơ đồ của mạch điện trong Hình 22.1 (mạch điện đơn giản gồm pin, bóng đèn, công tắc, dây nối; SGK trang 91)."
+     "de": "Vẽ sơ đồ của mạch điện trong Hình 22.1 (mạch điện đơn giản gồm pin, bóng đèn, công tắc, dây nối; SGK trang 91).",
+     "bo_may": "vẽ sơ đồ mạch điện"
     },
     {
      "ma": "B22.C2",
      "trang": 92,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Gọi tên các thiết bị được đánh số từ (1) đến (4) ở sơ đồ mạch điện Hình 22.2 (SGK trang 92)."
+     "de": "Gọi tên các thiết bị được đánh số từ (1) đến (4) ở sơ đồ mạch điện Hình 22.2 (SGK trang 92).",
+     "hinh": [
+      "khtn8/B22.C2.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "dong": [
+       {
+        "chu": "(1): {0}",
+        "o": [
+         {
+          "dung": [
+           "nguồn điện (pin)"
+          ],
+          "sai": [
+           "điện trở",
+           "ampe kế"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "(2): {0}",
+        "o": [
+         {
+          "dung": [
+           "công tắc đang mở"
+          ],
+          "sai": [
+           "công tắc đang đóng",
+           "biến trở"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "(3): {0}",
+        "o": [
+         {
+          "dung": [
+           "bóng đèn"
+          ],
+          "sai": [
+           "ampe kế",
+           "chuông điện"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "(4): {0}",
+        "o": [
+         {
+          "dung": [
+           "điện trở"
+          ],
+          "sai": [
+           "biến trở",
+           "điốt"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B22.C3",
      "trang": 93,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Dòng điện cung cấp bởi pin hoặc acquy có chiều không đổi gọi là dòng điện một chiều. Người ta quy ước chiều dòng điện trong mạch điện là chiều từ cực dương của nguồn điện qua dây nối và các dụng cụ tiêu thụ điện tới cực âm của nguồn điện. Vẽ mũi tên chỉ chiều dòng điện trong các sơ đồ mạch điện ở Hình 22.3 (SGK trang 93)."
+     "de": "Dòng điện cung cấp bởi pin hoặc acquy có chiều không đổi gọi là dòng điện một chiều. Người ta quy ước chiều dòng điện trong mạch điện là chiều từ cực dương của nguồn điện qua dây nối và các dụng cụ tiêu thụ điện tới cực âm của nguồn điện. Vẽ mũi tên chỉ chiều dòng điện trong các sơ đồ mạch điện ở Hình 22.3 (SGK trang 93).",
+     "hinh": [
+      "khtn8/B22.C3.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "hoi": "Dòng điện cung cấp bởi pin hoặc acquy có chiều không đổi gọi là dòng điện một chiều. Người ta quy ước chiều dòng điện trong mạch điện là chiều từ cực dương của nguồn điện qua dây nối và các dụng cụ tiêu thụ điện tới cực âm của nguồn điện. Trong mỗi sơ đồ mạch điện ở Hình 22.3, dòng điện chạy qua bóng đèn theo chiều nào?",
+      "dong": [
+       {
+        "chu": "a) Dòng điện chạy qua bóng đèn theo chiều {0}",
+        "o": [
+         {
+          "dung": [
+           "từ phải sang trái"
+          ],
+          "sai": [
+           "từ trái sang phải",
+           "không có dòng điện chạy qua"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "b) Dòng điện chạy qua bóng đèn theo chiều {0}",
+        "o": [
+         {
+          "dung": [
+           "từ trái sang phải"
+          ],
+          "sai": [
+           "từ phải sang trái",
+           "không có dòng điện chạy qua"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "c) Dòng điện chạy qua bóng đèn theo chiều {0}",
+        "o": [
+         {
+          "dung": [
+           "từ trái sang phải"
+          ],
+          "sai": [
+           "từ phải sang trái",
+           "không có dòng điện chạy qua"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B22.C4",
      "trang": 94,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "1. Trong mạng điện của gia đình có sử dụng những thiết bị nào sau đây: cầu chì, cầu dao tự động, rơle, chuông điện? Hãy nêu công dụng của chúng. 2. Nêu sự giống và khác nhau của cầu chì, cầu dao tự động, rơle."
+     "de": "1. Trong mạng điện của gia đình có sử dụng những thiết bị nào sau đây: cầu chì, cầu dao tự động, rơle, chuông điện? Hãy nêu công dụng của chúng. 2. Nêu sự giống và khác nhau của cầu chì, cầu dao tự động, rơle.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 6,
+      "hoi": "Hãy thảo luận và trả lời câu hỏi:\n1. Nêu công dụng của cầu chì, cầu dao tự động, rơle, chuông điện trong mạng điện của gia đình.\n2. Nêu sự giống và khác nhau của cầu chì, cầu dao tự động, rơle.",
+      "dong": [
+       {
+        "chu": "1. Cầu chì: {0}",
+        "o": [
+         {
+          "dung": [
+           "dây chì nóng chảy, ngắt mạch khi dòng điện tăng quá mức, bảo vệ các thiết bị khác"
+          ],
+          "sai": [
+           "điều khiển đóng, ngắt mạch điện theo tín hiệu, không cần người bật tắt",
+           "phát tín hiệu bằng âm thanh khi có dòng điện chạy qua, báo cho người dùng biết"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Cầu dao tự động: {0}",
+        "o": [
+         {
+          "dung": [
+           "tự động ngắt mạch khi dòng điện tăng quá mức; sửa xong thì đóng lại để dùng tiếp"
+          ],
+          "sai": [
+           "tự nóng chảy khi dòng điện tăng quá mức, sau đó phải thay cái mới",
+           "giữ cho dòng điện trong mạch luôn mạnh như nhau, dù dùng nhiều hay ít thiết bị"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Rơle: {0}",
+        "o": [
+         {
+          "dung": [
+           "điều khiển đóng, ngắt mạch điện, thường dùng trong các mạch điều khiển tự động"
+          ],
+          "sai": [
+           "có dây chì nóng chảy, đứt khi dòng điện tăng quá mức để bảo vệ thiết bị",
+           "phát tín hiệu bằng âm thanh mỗi khi có dòng điện chạy qua mạch"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Chuông điện: {0}",
+        "o": [
+         {
+          "dung": [
+           "phát tín hiệu bằng âm thanh khi có dòng điện chạy qua"
+          ],
+          "sai": [
+           "ngắt mạch khi dòng điện tăng quá mức",
+           "cung cấp năng lượng điện cho cả mạng điện"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "2. Giống nhau: cầu chì, cầu dao tự động, rơle đều {0}",
+        "o": [
+         {
+          "dung": [
+           "có thể ngắt mạch điện, bảo vệ mạch điện"
+          ],
+          "sai": [
+           "phát ra âm thanh",
+           "là nguồn điện"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Khác nhau: {0}",
+        "o": [
+         {
+          "dung": [
+           "cầu chì đứt dây chì thì phải thay mới; cầu dao tự động ngắt rồi đóng lại được; rơle đóng, ngắt mạch theo tín hiệu điều khiển"
+          ],
+          "sai": [
+           "cầu chì ngắt rồi đóng lại được; cầu dao tự động ngắt một lần là phải thay mới",
+           "cả ba thiết bị đều có dây chì nóng chảy; chúng chỉ khác nhau về kích thước và tên gọi"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B22.C5",
      "trang": 94,
      "nhom": "Em có thể",
      "dang": "CAU_NHO",
-     "de": "Tìm hiểu cấu tạo và hoạt động của chiếc đèn pin thường dùng, vẽ sơ đồ mạch điện của đèn pin."
+     "de": "Tìm hiểu cấu tạo và hoạt động của chiếc đèn pin thường dùng, vẽ sơ đồ mạch điện của đèn pin.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 5,
+      "hoi": "Tìm hiểu cấu tạo và hoạt động của chiếc đèn pin thường dùng. Sơ đồ mạch điện của đèn pin gồm những gì?",
+      "dong": [
+       {
+        "chu": "Nguồn điện của đèn pin là {0}",
+        "o": [
+         {
+          "dung": [
+           "các viên pin đặt trong thân đèn"
+          ],
+          "sai": [
+           "bóng đèn",
+           "công tắc"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Bộ phận tiêu thụ điện năng để phát ra ánh sáng là {0}",
+        "o": [
+         {
+          "dung": [
+           "bóng đèn (hoặc đèn LED)"
+          ],
+          "sai": [
+           "lò xo đỡ pin",
+           "gương phản xạ quanh bóng đèn"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Lò xo và các lá kim loại trong thân đèn {0}",
+        "o": [
+         {
+          "dung": [
+           "là dây nối, nối pin, công tắc và bóng đèn thành mạch điện"
+          ],
+          "sai": [
+           "là nguồn điện thứ hai, cung cấp thêm điện cho bóng đèn",
+           "là vật cách điện, ngăn dòng điện chạy từ pin sang bóng đèn"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Gạt công tắc sang vị trí bật thì mạch điện {0}, có dòng điện chạy qua bóng đèn, đèn sáng",
+        "o": [
+         {
+          "dung": [
+           "kín"
+          ],
+          "sai": [
+           "hở"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Sơ đồ mạch điện của đèn pin gồm kí hiệu của {0} mắc nối tiếp thành mạch kín",
+        "o": [
+         {
+          "dung": [
+           "nguồn điện (pin), công tắc và bóng đèn"
+          ],
+          "sai": [
+           "nguồn điện, ampe kế và bóng đèn",
+           "pin, chuông điện và điện trở"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     }
    ]
   },
@@ -6578,42 +8243,449 @@
      "trang": 95,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Em có thể kể ra dòng điện có những tác dụng gì?"
+     "de": "Em có thể kể ra dòng điện có những tác dụng gì?",
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "hoi": "Khi có dòng điện trong mạch, ta không nhìn thấy các hạt mang điện dịch chuyển, nhưng ta có thể nhận biết sự tồn tại của dòng điện qua các tác dụng của nó. Em có thể kể ra dòng điện có những tác dụng gì? Mỗi hiện tượng sau là tác dụng nào của dòng điện?",
+      "dong": [
+       {
+        "chu": "Làm dây dẫn nóng lên: {0}",
+        "o": [
+         {
+          "dung": [
+           "tác dụng nhiệt"
+          ],
+          "sai": [
+           "tác dụng phát sáng",
+           "tác dụng hoá học",
+           "tác dụng sinh lí"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Làm bóng đèn bút thử điện, đèn LED phát sáng: {0}",
+        "o": [
+         {
+          "dung": [
+           "tác dụng phát sáng"
+          ],
+          "sai": [
+           "tác dụng nhiệt",
+           "tác dụng hoá học",
+           "tác dụng sinh lí"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Làm kim loại đồng tách ra khỏi dung dịch muối copper(II) sulfate và bám vào thỏi than: {0}",
+        "o": [
+         {
+          "dung": [
+           "tác dụng hoá học"
+          ],
+          "sai": [
+           "tác dụng nhiệt",
+           "tác dụng phát sáng",
+           "tác dụng sinh lí"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Làm cơ co giật, tim ngừng đập khi đi qua cơ thể người và động vật: {0}",
+        "o": [
+         {
+          "dung": [
+           "tác dụng sinh lí"
+          ],
+          "sai": [
+           "tác dụng nhiệt",
+           "tác dụng phát sáng",
+           "tác dụng hoá học"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B23.C2",
      "trang": 95,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Nêu một số ví dụ trong đời sống ứng dụng tác dụng nhiệt của dòng điện."
+     "de": "Nêu một số ví dụ trong đời sống ứng dụng tác dụng nhiệt của dòng điện.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 5,
+      "hoi": "Nêu một số ví dụ trong đời sống ứng dụng tác dụng nhiệt của dòng điện. Mỗi thiết bị, việc làm sau có ứng dụng tác dụng nhiệt của dòng điện không?",
+      "dong": [
+       {
+        "chu": "Bàn là điện: {0}",
+        "o": [
+         {
+          "dung": [
+           "có ứng dụng tác dụng nhiệt"
+          ],
+          "sai": [
+           "không ứng dụng tác dụng nhiệt"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Nồi cơm điện: {0}",
+        "o": [
+         {
+          "dung": [
+           "có ứng dụng tác dụng nhiệt"
+          ],
+          "sai": [
+           "không ứng dụng tác dụng nhiệt"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Ấm đun nước siêu tốc: {0}",
+        "o": [
+         {
+          "dung": [
+           "có ứng dụng tác dụng nhiệt"
+          ],
+          "sai": [
+           "không ứng dụng tác dụng nhiệt"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Đèn LED chiếu sáng: {0}",
+        "o": [
+         {
+          "dung": [
+           "không ứng dụng tác dụng nhiệt"
+          ],
+          "sai": [
+           "có ứng dụng tác dụng nhiệt"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Mạ vàng đồ trang sức bằng dòng điện: {0}",
+        "o": [
+         {
+          "dung": [
+           "không ứng dụng tác dụng nhiệt"
+          ],
+          "sai": [
+           "có ứng dụng tác dụng nhiệt"
+          ],
+          "hai": true
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B23.C3",
      "trang": 96,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Qua thí nghiệm với đèn LED (Hình 23.2, SGK trang 96), rút ra kết luận gì về tác dụng của dòng điện."
+     "de": "Thí nghiệm (Hình 23.2, SGK trang 96): lắp mạch điện gồm nguồn điện 3 V, đèn điốt phát quang Đ (đèn LED), điện trở R (có tác dụng bảo vệ đèn LED không bị hỏng) và công tắc K mắc nối tiếp. Đóng công tắc K, quan sát đèn LED. Đảo ngược hai đầu dây đèn LED, đóng công tắc K, quan sát đèn LED. Qua thí nghiệm, rút ra kết luận gì về tác dụng của dòng điện?",
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "dong": [
+       {
+        "chu": "Đóng công tắc K, đèn LED {0}",
+        "o": [
+         {
+          "dung": [
+           "sáng"
+          ],
+          "sai": [
+           "không sáng"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Đảo ngược hai đầu dây đèn LED rồi đóng công tắc K, đèn LED {0}",
+        "o": [
+         {
+          "dung": [
+           "không sáng"
+          ],
+          "sai": [
+           "sáng"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Kết luận: {0}",
+        "o": [
+         {
+          "dung": [
+           "dòng điện có tác dụng phát sáng; đèn LED chỉ sáng khi dòng điện chạy qua nó theo một chiều nhất định"
+          ],
+          "sai": [
+           "đèn LED tự phát sáng khi đóng công tắc, không cần có dòng điện chạy qua",
+           "dòng điện chạy qua đèn LED theo chiều nào thì đèn cũng sáng như nhau"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B23.C4",
      "trang": 98,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Nêu ví dụ ứng dụng tác dụng phát sáng của dòng điện trong thực tế."
+     "de": "Nêu ví dụ ứng dụng tác dụng phát sáng của dòng điện trong thực tế.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 5,
+      "hoi": "Nêu ví dụ ứng dụng tác dụng phát sáng của dòng điện trong thực tế. Mỗi thiết bị sau có ứng dụng tác dụng phát sáng của dòng điện không?",
+      "dong": [
+       {
+        "chu": "Đèn LED chiếu sáng trong nhà: {0}",
+        "o": [
+         {
+          "dung": [
+           "có ứng dụng tác dụng phát sáng"
+          ],
+          "sai": [
+           "không ứng dụng tác dụng phát sáng"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Đèn ống huỳnh quang: {0}",
+        "o": [
+         {
+          "dung": [
+           "có ứng dụng tác dụng phát sáng"
+          ],
+          "sai": [
+           "không ứng dụng tác dụng phát sáng"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Đèn báo nguồn trên ti vi, máy tính: {0}",
+        "o": [
+         {
+          "dung": [
+           "có ứng dụng tác dụng phát sáng"
+          ],
+          "sai": [
+           "không ứng dụng tác dụng phát sáng"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Ấm điện đun sôi nước: {0}",
+        "o": [
+         {
+          "dung": [
+           "không ứng dụng tác dụng phát sáng"
+          ],
+          "sai": [
+           "có ứng dụng tác dụng phát sáng"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Chuông điện ở cửa nhà: {0}",
+        "o": [
+         {
+          "dung": [
+           "không ứng dụng tác dụng phát sáng"
+          ],
+          "sai": [
+           "có ứng dụng tác dụng phát sáng"
+          ],
+          "hai": true
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B23.C5",
      "trang": 98,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Vì sao khi trời mưa gió, không được lại gần dây điện rơi xuống mặt đường."
+     "de": "Vì sao khi trời mưa gió, không được lại gần dây điện rơi xuống mặt đường.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "dong": [
+       {
+        "chu": "Nước mưa và mặt đường ẩm ướt {0}",
+        "o": [
+         {
+          "dung": [
+           "dẫn điện được"
+          ],
+          "sai": [
+           "cách điện hoàn toàn",
+           "làm dây điện mất hết điện"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Lại gần dây điện rơi trên mặt đường ướt thì {0}",
+        "o": [
+         {
+          "dung": [
+           "dòng điện có thể truyền qua nước, đất ẩm vào cơ thể người"
+          ],
+          "sai": [
+           "dòng điện bị nước mưa làm tắt hẳn",
+           "người chỉ bị ướt, không gặp nguy hiểm gì"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Dòng điện chạy qua cơ thể người {0}",
+        "o": [
+         {
+          "dung": [
+           "có tác dụng sinh lí: làm cơ co giật, tim ngừng đập, ngạt thở, có thể gây chết người"
+          ],
+          "sai": [
+           "chỉ làm cơ thể ấm lên một chút rồi hết, không gây hại gì cho sức khoẻ",
+           "không chạy qua được, vì cơ thể người là vật cách điện giống như nhựa"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B23.C6",
      "trang": 98,
      "nhom": "Em có thể",
      "dang": "CAU_NHO",
-     "de": "Giải thích vì sao nên sử dụng đèn LED thay thế cho các đèn sợi đốt. Đưa ra giải pháp để tránh nguy hiểm cho bản thân khi sử dụng các dụng cụ tiêu thụ điện ở gia đình như: bàn là, bếp điện, quạt điện, ti vi, máy tính, tủ lạnh,..."
+     "de": "Giải thích vì sao nên sử dụng đèn LED thay thế cho các đèn sợi đốt. Đưa ra giải pháp để tránh nguy hiểm cho bản thân khi sử dụng các dụng cụ tiêu thụ điện ở gia đình như: bàn là, bếp điện, quạt điện, ti vi, máy tính, tủ lạnh,...",
+     "ghep": {
+      "kieu": "O",
+      "sao": 6,
+      "dong": [
+       {
+        "chu": "1. Đèn LED tiết kiệm điện năng hơn đèn sợi đốt vì {0}",
+        "o": [
+         {
+          "dung": [
+           "nhiệt toả ra trên đèn LED không đáng kể, phần lớn điện năng chuyển thành ánh sáng"
+          ],
+          "sai": [
+           "đèn LED sáng yếu hơn đèn sợi đốt rất nhiều, nên dùng ít điện năng hơn",
+           "phần lớn điện năng qua đèn LED chuyển thành nhiệt, đèn LED dùng nhiệt để phát sáng"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Tuổi thọ của đèn LED {0}",
+        "o": [
+         {
+          "dung": [
+           "rất lớn (có thể đến 100 000 giờ), dùng được lâu"
+          ],
+          "sai": [
+           "ngắn hơn nhiều so với đèn sợi đốt",
+           "chỉ khoảng vài giờ"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "2. Rút phích cắm bàn là, bếp điện khi không dùng: {0}",
+        "o": [
+         {
+          "dung": [
+           "nên làm"
+          ],
+          "sai": [
+           "không nên làm"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Cầm tay ướt để cắm phích điện, bật công tắc: {0}",
+        "o": [
+         {
+          "dung": [
+           "không nên làm"
+          ],
+          "sai": [
+           "nên làm"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Kiểm tra dây điện, thay ngay dây có vỏ bọc bị hở, bị nứt: {0}",
+        "o": [
+         {
+          "dung": [
+           "nên làm"
+          ],
+          "sai": [
+           "không nên làm"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Cầm vào phần kim loại của phích cắm khi rút điện: {0}",
+        "o": [
+         {
+          "dung": [
+           "không nên làm"
+          ],
+          "sai": [
+           "nên làm"
+          ],
+          "hai": true
+         }
+        ]
+       }
+      ]
+     }
     }
    ]
   },
@@ -6626,21 +8698,174 @@
      "trang": 99,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Ta đã biết ampe kế dùng để đo cường độ dòng điện, vôn kế dùng để đo hiệu điện thế. Vậy, số chỉ của ampe kế và vôn kế cho ta biết điều gì?"
+     "de": "Ta đã biết ampe kế dùng để đo cường độ dòng điện, vôn kế dùng để đo hiệu điện thế. Vậy, số chỉ của ampe kế và vôn kế cho ta biết điều gì?",
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "dong": [
+       {
+        "chu": "Số chỉ của ampe kế cho biết {0}",
+        "o": [
+         {
+          "dung": [
+           "giá trị của cường độ dòng điện, tức là dòng điện mạnh hay yếu"
+          ],
+          "sai": [
+           "hiệu điện thế giữa hai cực của nguồn điện",
+           "số pin có trong mạch điện"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Số chỉ của vôn kế mắc vào hai cực của nguồn điện cho biết {0}",
+        "o": [
+         {
+          "dung": [
+           "hiệu điện thế giữa hai cực của nguồn, tức là khả năng sinh ra dòng điện của nguồn"
+          ],
+          "sai": [
+           "cường độ dòng điện chạy qua nguồn, tức là dòng điện trong mạch mạnh hay yếu",
+           "năng lượng điện mà nguồn đã cung cấp, tức là pin đã được dùng bao lâu"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Đơn vị đo cường độ dòng điện là {0}, đơn vị đo hiệu điện thế là {1}",
+        "o": [
+         {
+          "dung": [
+           "ampe (A)"
+          ],
+          "sai": [
+           "vôn (V)",
+           "jun (J)"
+          ]
+         },
+         {
+          "dung": [
+           "vôn (V)"
+          ],
+          "sai": [
+           "ampe (A)",
+           "oát (W)"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B24.C2",
      "trang": 100,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Quan sát Hình 1.6 (trang 9): Khi sử dụng ampe kế để đo cường độ dòng điện, cần mắc ampe kế vào mạch điện như thế nào?"
+     "de": "Ampe kế (Hình 1.6, SGK trang 9) có một chốt âm (−) và các chốt dương (+). Khi sử dụng ampe kế để đo cường độ dòng điện, cần mắc ampe kế vào mạch điện như thế nào?",
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "dong": [
+       {
+        "chu": "Ampe kế được mắc {0} với dụng cụ cần đo cường độ dòng điện",
+        "o": [
+         {
+          "dung": [
+           "nối tiếp"
+          ],
+          "sai": [
+           "song song",
+           "trực tiếp vào hai cực của nguồn điện, không qua dụng cụ nào"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Chốt dương (+) của ampe kế được nối về phía {0}; chốt âm (−) nối về phía cực còn lại",
+        "o": [
+         {
+          "dung": [
+           "cực dương của nguồn điện"
+          ],
+          "sai": [
+           "cực âm của nguồn điện"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Trước khi đo, cần {0}",
+        "o": [
+         {
+          "dung": [
+           "chọn ampe kế (thang đo) có giới hạn đo lớn hơn cường độ dòng điện cần đo"
+          ],
+          "sai": [
+           "chọn ampe kế có giới hạn đo càng nhỏ càng tốt, để kim lệch thật nhiều",
+           "tháo bóng đèn ra khỏi mạch rồi mới mắc ampe kế vào"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Không được {0}",
+        "o": [
+         {
+          "dung": [
+           "mắc hai chốt của ampe kế trực tiếp vào hai cực của nguồn điện"
+          ],
+          "sai": [
+           "mắc ampe kế nối tiếp với bóng đèn",
+           "đọc số chỉ khi kim ampe kế đã đứng yên"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B24.C3",
      "trang": 100,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Số chỉ trên vôn kế có bằng giá trị ghi trên nguồn điện không? Tại sao?"
+     "de": "Trong thí nghiệm Hình 24.2 (SGK trang 100), vôn kế được mắc vào hai cực của nguồn điện; lần lượt thay các nguồn điện có ghi các giá trị hiệu điện thế khác nhau (1,5 V; 3 V; 4,5 V) và đọc số chỉ của vôn kế. Số chỉ trên vôn kế có bằng giá trị ghi trên nguồn điện không? Tại sao?",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "dong": [
+       {
+        "chu": "Số chỉ của vôn kế {0} giá trị ghi trên nguồn điện",
+        "o": [
+         {
+          "dung": [
+           "bằng (hoặc gần bằng)"
+          ],
+          "sai": [
+           "lớn gấp đôi",
+           "luôn bằng 0"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Vì {0}",
+        "o": [
+         {
+          "dung": [
+           "vôn kế được nối với hai cực của nguồn, đo hiệu điện thế giữa hai cực đó, cũng là giá trị ghi trên nguồn"
+          ],
+          "sai": [
+           "vôn kế đo cường độ dòng điện chạy qua nguồn, mà cường độ này bằng số ghi trên nguồn",
+           "vôn kế mắc nối tiếp với bóng đèn nên chỉ đo được hiệu điện thế của bóng đèn"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     }
    ]
   },
@@ -6653,21 +8878,208 @@
      "trang": 102,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Một học sinh cho rằng: \"Bóng đèn tiêu thụ dòng điện, do đó cường độ dòng điện sẽ giảm sau khi đi qua bóng đèn\". Em có đồng ý với bạn học sinh đó không? Làm thế nào để kiểm tra ý kiến của mình?"
+     "de": "Một học sinh cho rằng: \"Bóng đèn tiêu thụ dòng điện, do đó cường độ dòng điện sẽ giảm sau khi đi qua bóng đèn\". Em có đồng ý với bạn học sinh đó không? Làm thế nào để kiểm tra ý kiến của mình?",
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "dong": [
+       {
+        "chu": "Em {0} với ý kiến của bạn",
+        "o": [
+         {
+          "dung": [
+           "không đồng ý"
+          ],
+          "sai": [
+           "đồng ý"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Vì {0}",
+        "o": [
+         {
+          "dung": [
+           "bóng đèn tiêu thụ năng lượng điện, không giữ lại hạt mang điện nào; trong mạch nối tiếp, cường độ dòng điện ở mọi chỗ như nhau"
+          ],
+          "sai": [
+           "bóng đèn giữ lại một phần các hạt mang điện để phát sáng, nên sau bóng đèn dòng điện yếu đi",
+           "dòng điện mạnh lên sau khi đi qua bóng đèn, vì bóng đèn cung cấp thêm hạt mang điện"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Cách kiểm tra: {0}",
+        "o": [
+         {
+          "dung": [
+           "mắc ampe kế lần lượt ở trước và ở sau bóng đèn, so sánh hai số chỉ"
+          ],
+          "sai": [
+           "mắc vôn kế vào hai đầu bóng đèn rồi đọc số chỉ",
+           "quan sát bóng đèn sáng mạnh hay sáng yếu"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B25.C2",
      "trang": 104,
      "nhom": "Em có thể",
      "dang": "CAU_NHO",
-     "de": "Đo được cường độ dòng điện trong mạch điện bằng ampe kế, từ đó xác định được mạch điện là kín hay hở. Đo được hiệu điện thế bằng vôn kế; sử dụng vôn kế để xác định được pin cũ hay mới."
+     "de": "Đo được cường độ dòng điện trong mạch điện bằng ampe kế, từ đó xác định được mạch điện là kín hay hở. Đo được hiệu điện thế bằng vôn kế; sử dụng vôn kế để xác định được pin cũ hay mới.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 5,
+      "hoi": "Em có thể: đo được cường độ dòng điện trong mạch điện bằng ampe kế, từ đó xác định được mạch điện là kín hay hở; đo được hiệu điện thế bằng vôn kế, sử dụng vôn kế để xác định được pin cũ hay mới. Mỗi kết quả đo sau cho biết điều gì?",
+      "dong": [
+       {
+        "chu": "Ampe kế mắc nối tiếp trong mạch, đóng công tắc mà kim ampe kế vẫn chỉ vạch số 0: mạch điện {0}",
+        "o": [
+         {
+          "dung": [
+           "hở"
+          ],
+          "sai": [
+           "kín"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Đóng công tắc, kim ampe kế lệch khỏi vạch số 0: mạch điện {0}",
+        "o": [
+         {
+          "dung": [
+           "kín"
+          ],
+          "sai": [
+           "hở"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Để đo hiệu điện thế của một chiếc pin, mắc vôn kế {0}",
+        "o": [
+         {
+          "dung": [
+           "vào hai cực của pin: chốt (+) của vôn kế nối với cực dương, chốt (−) nối với cực âm"
+          ],
+          "sai": [
+           "nối tiếp với pin và bóng đèn",
+           "vào hai cực của pin: chốt (+) của vôn kế nối với cực âm, chốt (−) nối với cực dương"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Pin loại 1,5 V, vôn kế chỉ khoảng 1,5 V: pin {0}",
+        "o": [
+         {
+          "dung": [
+           "còn mới"
+          ],
+          "sai": [
+           "đã cũ"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Pin loại 1,5 V, vôn kế chỉ khoảng 1,0 V: pin {0}",
+        "o": [
+         {
+          "dung": [
+           "đã cũ"
+          ],
+          "sai": [
+           "còn mới"
+          ],
+          "hai": true
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B25.C3",
      "trang": 103,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Sau khi thực hành đo cường độ dòng điện và hiệu điện thế, nhận xét: 1. Em có nhận xét gì về giá trị cường độ dòng điện tại các vị trí 1, 2? 2. Em có nhận xét gì về các giá trị của hiệu điện thế hai đầu bóng đèn và giá trị hiệu điện thế của nguồn? 3. So sánh kết quả thí nghiệm giữa các nhóm, lí giải sự khác biệt về kết quả thí nghiệm giữa các nhóm."
+     "de": "Sau khi thực hành đo cường độ dòng điện và hiệu điện thế (SGK trang 102, 103): trong mạch điện gồm pin, công tắc, ampe kế, bóng đèn mắc nối tiếp, đo cường độ dòng điện I1 ở vị trí (1) trước bóng đèn và I2 ở vị trí (2) sau bóng đèn; dùng vôn kế đo hiệu điện thế của nguồn và hiệu điện thế hai đầu bóng đèn; làm với pin 1,5 V, rồi pin 3 V. Nhận xét: 1. Em có nhận xét gì về giá trị cường độ dòng điện tại các vị trí 1, 2? 2. Em có nhận xét gì về các giá trị của hiệu điện thế hai đầu bóng đèn và giá trị hiệu điện thế của nguồn? 3. So sánh kết quả thí nghiệm giữa các nhóm, lí giải sự khác biệt về kết quả thí nghiệm giữa các nhóm.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "dong": [
+       {
+        "chu": "1. Cường độ dòng điện tại vị trí 1 và vị trí 2 {0}",
+        "o": [
+         {
+          "dung": [
+           "bằng nhau"
+          ],
+          "sai": [
+           "ở vị trí 1 lớn hơn ở vị trí 2",
+           "ở vị trí 2 lớn hơn ở vị trí 1"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "2. Hiệu điện thế hai đầu bóng đèn {0} hiệu điện thế của nguồn",
+        "o": [
+         {
+          "dung": [
+           "gần bằng (nhỏ hơn một chút)"
+          ],
+          "sai": [
+           "lớn hơn nhiều",
+           "gấp đôi"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Thay pin 1,5 V bằng pin 3 V thì hiệu điện thế hai đầu bóng đèn {0}",
+        "o": [
+         {
+          "dung": [
+           "lớn hơn"
+          ],
+          "sai": [
+           "nhỏ hơn",
+           "không đổi"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "3. Kết quả của các nhóm có thể khác nhau một chút vì {0}",
+        "o": [
+         {
+          "dung": [
+           "dụng cụ đo có sai số, cách đọc số chỉ khác nhau, pin và bóng đèn của các nhóm không hoàn toàn giống nhau"
+          ],
+          "sai": [
+           "dòng điện trong mạch của mỗi nhóm chạy theo một chiều khác nhau",
+           "nhóm nào dùng nhiều dây nối hơn thì cường độ dòng điện ở vị trí 1 và 2 khác nhau"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     }
    ]
   },
@@ -6680,49 +9092,417 @@
      "trang": 105,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Ngay từ lớp 6, các em đã được làm quen với năng lượng nhiệt. Theo em, năng lượng nhiệt là gì và tại sao mọi vật đều luôn có năng lượng này?"
+     "de": "Ngay từ lớp 6, các em đã được làm quen với năng lượng nhiệt. Theo em, năng lượng nhiệt là gì và tại sao mọi vật đều luôn có năng lượng này?",
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "dong": [
+       {
+        "chu": "Năng lượng nhiệt (nhiệt năng) là {0}",
+        "o": [
+         {
+          "dung": [
+           "năng lượng mà vật có được nhờ chuyển động nhiệt của các phân tử, nguyên tử cấu tạo nên vật"
+          ],
+          "sai": [
+           "năng lượng mà vật có được khi ở trên cao so với mặt đất",
+           "năng lượng mà chỉ những vật đang nóng, có nhiệt độ cao, mới có"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Mọi vật đều luôn có năng lượng nhiệt vì {0}",
+        "o": [
+         {
+          "dung": [
+           "mọi vật đều được cấu tạo từ các phân tử, nguyên tử luôn chuyển động hỗn loạn không ngừng"
+          ],
+          "sai": [
+           "mọi vật đều được Mặt Trời chiếu sáng và sưởi ấm hằng ngày",
+           "các phân tử, nguyên tử cấu tạo nên mọi vật đều đứng yên, xếp sát nhau"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Nhiệt độ của vật càng cao thì {0}",
+        "o": [
+         {
+          "dung": [
+           "các phân tử, nguyên tử chuyển động càng nhanh, nhiệt năng của vật càng lớn"
+          ],
+          "sai": [
+           "các phân tử, nguyên tử chuyển động càng chậm, nhiệt năng của vật càng nhỏ",
+           "các phân tử, nguyên tử chuyển động càng nhanh, nhưng nhiệt năng của vật không đổi"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B26.C2",
      "trang": 106,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Ở nhiệt độ trong phòng, các phân tử trong không khí có thể chuyển động với tốc độ từ hàng trăm tới hàng nghìn m/s. Tại sao khi mở một lọ nước hoa ở đầu lớp thì phải một lúc sau, người ở cuối lớp mới ngửi thấy mùi thơm?"
+     "de": "Ở nhiệt độ trong phòng, các phân tử trong không khí có thể chuyển động với tốc độ từ hàng trăm tới hàng nghìn m/s. Tại sao khi mở một lọ nước hoa ở đầu lớp thì phải một lúc sau, người ở cuối lớp mới ngửi thấy mùi thơm?",
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "dong": [
+       {
+        "chu": "Các phân tử nước hoa và các phân tử không khí {0}",
+        "o": [
+         {
+          "dung": [
+           "đều chuyển động hỗn loạn không ngừng"
+          ],
+          "sai": [
+           "đều đứng yên",
+           "đều chuyển động thẳng một mạch theo cùng một hướng"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Trên đường đi, mỗi phân tử nước hoa {0}",
+        "o": [
+         {
+          "dung": [
+           "va chạm liên tục với rất nhiều phân tử không khí nên bị đổi hướng liên tục"
+          ],
+          "sai": [
+           "không va chạm với phân tử nào nên bay thẳng tới cuối lớp",
+           "bị các phân tử không khí giữ lại hoàn toàn"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Vì vậy {0}",
+        "o": [
+         {
+          "dung": [
+           "phải mất một lúc các phân tử nước hoa mới lan tới cuối lớp"
+          ],
+          "sai": [
+           "người ở cuối lớp ngửi thấy mùi thơm ngay lập tức",
+           "người ở cuối lớp không bao giờ ngửi thấy mùi thơm"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B26.C3",
      "trang": 106,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "1. Mô tả, giải thích và thực hiện hai cách khác nhau để làm tăng năng lượng nhiệt của hai bàn tay mình. 2. Tìm ví dụ thực tế về sự chuyển hoá từ nhiệt năng sang các dạng năng lượng khác và ngược lại."
+     "de": "1. Mô tả, giải thích và thực hiện hai cách khác nhau để làm tăng năng lượng nhiệt của hai bàn tay mình. 2. Tìm ví dụ thực tế về sự chuyển hoá từ nhiệt năng sang các dạng năng lượng khác và ngược lại.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 5,
+      "hoi": "1. Mô tả, giải thích hai cách khác nhau để làm tăng năng lượng nhiệt của hai bàn tay mình.\n2. Tìm ví dụ thực tế về sự chuyển hoá từ nhiệt năng sang các dạng năng lượng khác và ngược lại.",
+      "dong": [
+       {
+        "chu": "1. Cách 1: xoa hai bàn tay vào nhau. Tay nóng lên vì {0}",
+        "o": [
+         {
+          "dung": [
+           "động năng của hai bàn tay chuyển hoá thành nhiệt năng, các phân tử ở da tay chuyển động nhanh hơn"
+          ],
+          "sai": [
+           "hai bàn tay nhận thêm nhiệt năng từ không khí lạnh ở xung quanh",
+           "các phân tử ở da tay chuyển động chậm lại khi hai bàn tay cọ xát vào nhau"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Cách 2: áp hai bàn tay vào cốc nước ấm. Tay nóng lên vì {0}",
+        "o": [
+         {
+          "dung": [
+           "nhiệt năng truyền từ cốc nước ấm sang bàn tay lạnh hơn"
+          ],
+          "sai": [
+           "nhiệt năng truyền từ bàn tay sang cốc nước",
+           "cốc nước tạo ra năng lượng mới cho bàn tay"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "2. Nhà máy nhiệt điện: nhiệt năng (do đốt than) chuyển hoá thành {0}",
+        "o": [
+         {
+          "dung": [
+           "điện năng"
+          ],
+          "sai": [
+           "quang năng",
+           "hoá năng"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Đầu máy xe lửa chạy bằng hơi nước: nhiệt năng chuyển hoá thành {0}",
+        "o": [
+         {
+          "dung": [
+           "cơ năng"
+          ],
+          "sai": [
+           "quang năng",
+           "hoá năng"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Ấm điện đun nước: {0} chuyển hoá thành nhiệt năng",
+        "o": [
+         {
+          "dung": [
+           "điện năng"
+          ],
+          "sai": [
+           "quang năng",
+           "cơ năng"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B26.C4",
      "trang": 107,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "1. So sánh động năng của phân tử nước ở Hình 26.4a với động năng của phân tử nước ở Hình 26.4b (SGK trang 107). 2. So sánh nội năng của nước trong hai cốc ở Hình 26.4."
+     "de": "Hình 26.4 (SGK trang 107): hai cốc giống nhau chứa lượng nước như nhau, mỗi cốc có cắm một nhiệt kế; nhiệt kế ở cốc a chỉ nhiệt độ cao hơn nhiệt kế ở cốc b. 1. So sánh động năng của phân tử nước ở Hình 26.4a với động năng của phân tử nước ở Hình 26.4b. 2. So sánh nội năng của nước trong hai cốc ở Hình 26.4.",
+     "hinh": [
+      "khtn8/B26.C4.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "dong": [
+       {
+        "chu": "1. Động năng của phân tử nước ở cốc a {0} ở cốc b",
+        "o": [
+         {
+          "dung": [
+           "lớn hơn"
+          ],
+          "sai": [
+           "nhỏ hơn",
+           "bằng"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "vì {0}",
+        "o": [
+         {
+          "dung": [
+           "nước ở cốc a có nhiệt độ cao hơn, các phân tử nước chuyển động nhanh hơn"
+          ],
+          "sai": [
+           "nước ở cốc a nhiều hơn nước ở cốc b",
+           "nước ở cốc a có nhiệt độ thấp hơn, các phân tử nước chuyển động chậm hơn"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "2. Nội năng của nước ở cốc a {0} ở cốc b",
+        "o": [
+         {
+          "dung": [
+           "lớn hơn"
+          ],
+          "sai": [
+           "nhỏ hơn",
+           "bằng"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B26.C5",
      "trang": 108,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Thả một quả cầu kim loại ở nhiệt độ trong phòng vào một cốc nước nóng (Hình 26.5, SGK trang 107). Trong quá trình trên, động năng của phân tử nước và nguyên tử kim loại; nội năng của nước và của quả cầu trong bình thay đổi như thế nào?"
+     "de": "Thả một quả cầu kim loại ở nhiệt độ trong phòng vào một cốc nước nóng (Hình 26.5, SGK trang 107) thì nhiệt độ của quả cầu tăng lên, còn nhiệt độ của nước giảm đi. Trong quá trình trên, động năng của phân tử nước và nguyên tử kim loại; nội năng của nước và của quả cầu trong bình thay đổi như thế nào?",
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "dong": [
+       {
+        "chu": "Động năng của các phân tử nước: {0}",
+        "o": [
+         {
+          "dung": [
+           "giảm"
+          ],
+          "sai": [
+           "tăng",
+           "không thay đổi"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Động năng của các nguyên tử kim loại: {0}",
+        "o": [
+         {
+          "dung": [
+           "tăng"
+          ],
+          "sai": [
+           "giảm",
+           "không thay đổi"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Nội năng của nước: {0}",
+        "o": [
+         {
+          "dung": [
+           "giảm"
+          ],
+          "sai": [
+           "tăng",
+           "không thay đổi"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Nội năng của quả cầu: {0}",
+        "o": [
+         {
+          "dung": [
+           "tăng"
+          ],
+          "sai": [
+           "giảm",
+           "không thay đổi"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B26.C6",
      "trang": 108,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Theo dõi thí nghiệm đun nước (Hình 26.6, SGK trang 108), có người khẳng định: từ khi bắt đầu đun nước tới khi nước bắt đầu sôi thì nhiệt độ của nước tăng dần; khi nước đã sôi thì nhiệt độ của nước không tăng dù vẫn tiếp tục đun. Hãy thảo luận để trả lời các câu hỏi sau: 1. Tại sao từ khi bắt đầu đun tới khi nước bắt đầu sôi thì nhiệt độ của nước tăng dần? 2. Khi nước đã sôi, nhiệt độ của nước không tăng dù vẫn tiếp tục đun thì nhiệt năng mà nước nhận được từ đèn cồn đã chuyển hoá thành dạng năng lượng nào?"
+     "de": "Theo dõi thí nghiệm đun nước (Hình 26.6, SGK trang 108), có người khẳng định: từ khi bắt đầu đun nước tới khi nước bắt đầu sôi thì nhiệt độ của nước tăng dần; khi nước đã sôi thì nhiệt độ của nước không tăng dù vẫn tiếp tục đun. Hãy thảo luận để trả lời các câu hỏi sau: 1. Tại sao từ khi bắt đầu đun tới khi nước bắt đầu sôi thì nhiệt độ của nước tăng dần? 2. Khi nước đã sôi, nhiệt độ của nước không tăng dù vẫn tiếp tục đun thì nhiệt năng mà nước nhận được từ đèn cồn đã chuyển hoá thành dạng năng lượng nào?",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "dong": [
+       {
+        "chu": "1. Từ khi bắt đầu đun tới khi nước bắt đầu sôi, nhiệt độ của nước tăng dần vì {0}",
+        "o": [
+         {
+          "dung": [
+           "nước nhận thêm nhiệt năng từ đèn cồn, các phân tử nước chuyển động nhanh lên"
+          ],
+          "sai": [
+           "nước truyền bớt nhiệt năng cho không khí xung quanh",
+           "các phân tử nước chuyển động chậm lại"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "2. Khi nước đã sôi, nhiệt năng nước nhận được từ đèn cồn chuyển hoá thành {0}",
+        "o": [
+         {
+          "dung": [
+           "thế năng của các phân tử nước, giúp nước chuyển từ thể lỏng sang thể hơi"
+          ],
+          "sai": [
+           "động năng của các phân tử nước, làm nhiệt độ của nước tiếp tục tăng",
+           "quang năng, làm nước phát sáng"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B26.C7",
      "trang": 108,
      "nhom": "Em có thể",
      "dang": "CAU_NHO",
-     "de": "Giải thích các hiện tượng đơn giản trong đời sống có liên quan đến nhiệt năng và nội năng. Ví dụ, tại sao xoa hai tay vào nhau thì tay nóng lên."
+     "de": "Giải thích các hiện tượng đơn giản trong đời sống có liên quan đến nhiệt năng và nội năng. Ví dụ, tại sao xoa hai tay vào nhau thì tay nóng lên.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "dong": [
+       {
+        "chu": "Xoa hai tay vào nhau thì tay nóng lên vì {0}",
+        "o": [
+         {
+          "dung": [
+           "động năng của tay chuyển hoá thành nhiệt năng, nội năng của tay tăng"
+          ],
+          "sai": [
+           "tay hút hơi nóng từ không khí xung quanh vào da tay",
+           "nội năng của tay giảm đi, các phân tử ở da tay chuyển động chậm lại"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Thả cục nước đá vào cốc nước, nước trong cốc lạnh dần vì {0}",
+        "o": [
+         {
+          "dung": [
+           "nước truyền nhiệt năng cho nước đá, nội năng của nước giảm"
+          ],
+          "sai": [
+           "nước đá truyền hơi lạnh sang nước",
+           "nước đá làm nội năng của nước tăng lên"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Để một thanh kim loại ngoài nắng, thanh nóng lên vì {0}",
+        "o": [
+         {
+          "dung": [
+           "thanh nhận năng lượng của ánh nắng, các nguyên tử chuyển động nhanh hơn, nội năng tăng"
+          ],
+          "sai": [
+           "thanh kim loại tự sinh ra năng lượng mới khi được đặt ngoài trời",
+           "thanh truyền nhiệt năng cho Mặt Trời nên các nguyên tử chuyển động nhanh hơn"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     }
    ]
   },
@@ -6735,7 +9515,55 @@
      "trang": 109,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Khi muốn đun sôi một lượng nước xác định cần cung cấp bao nhiêu năng lượng nhiệt? Làm thế nào để đo được năng lượng nhiệt đó?"
+     "de": "Khi muốn đun sôi một lượng nước xác định cần cung cấp bao nhiêu năng lượng nhiệt? Làm thế nào để đo được năng lượng nhiệt đó?",
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "dong": [
+       {
+        "chu": "Năng lượng nhiệt cần để đun nóng một lượng nước phụ thuộc vào {0}",
+        "o": [
+         {
+          "dung": [
+           "khối lượng của nước và độ tăng nhiệt độ của nước"
+          ],
+          "sai": [
+           "chỉ phụ thuộc vào màu của bình đựng nước",
+           "chỉ phụ thuộc vào thời gian đun"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Đun sôi 0,5 kg nước từ 20 °C (nhiệt dung riêng của nước c = 4 180 J/kg.K) cần năng lượng nhiệt Q = m · c · (t₂ − t₁) = {0}",
+        "o": [
+         {
+          "dung": [
+           "167 200 J"
+          ],
+          "sai": [
+           "41 800 J",
+           "209 000 J"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Để đo năng lượng nhiệt đó, ta {0}",
+        "o": [
+         {
+          "dung": [
+           "đun nước bằng dây đốt trong bình nhiệt lượng kế, dùng joulemeter đo năng lượng điện cấp cho dây đốt"
+          ],
+          "sai": [
+           "chỉ cần đo nhiệt độ ban đầu của nước bằng nhiệt kế, không cần dụng cụ nào khác",
+           "cân khối lượng của nước trước và sau khi đun, phần nước mất đi chính là năng lượng nhiệt"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     }
    ]
   },
@@ -6748,42 +9576,629 @@
      "trang": 112,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Theo em, năng lượng nhiệt có thể truyền được trong các môi trường nào sau đây: chất rắn, chất lỏng, chất khí, chân không? Hãy tìm hiện tượng trong thực tế để minh hoạ cho ý kiến của mình."
+     "de": "Theo em, năng lượng nhiệt có thể truyền được trong các môi trường nào sau đây: chất rắn, chất lỏng, chất khí, chân không? Hãy tìm hiện tượng trong thực tế để minh hoạ cho ý kiến của mình.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 5,
+      "hoi": "Theo em, năng lượng nhiệt có thể truyền được trong các môi trường nào sau đây: chất rắn, chất lỏng, chất khí, chân không? Mỗi hiện tượng thực tế sau minh hoạ năng lượng nhiệt truyền trong môi trường nào?",
+      "dong": [
+       {
+        "chu": "Nung nóng một đầu thanh sắt, lát sau đầu kia (chỗ tay cầm) cũng nóng lên: năng lượng nhiệt truyền trong {0}",
+        "o": [
+         {
+          "dung": [
+           "chất rắn"
+          ],
+          "sai": [
+           "chất lỏng",
+           "chất khí",
+           "chân không"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Đun nóng đáy nồi nước, lát sau cả nồi nước nóng lên: năng lượng nhiệt truyền trong {0}",
+        "o": [
+         {
+          "dung": [
+           "chất lỏng"
+          ],
+          "sai": [
+           "chất rắn",
+           "chất khí",
+           "chân không"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Không khí nóng bốc lên từ ngọn nến làm bàn tay đặt cao phía trên ngọn nến thấy nóng: năng lượng nhiệt truyền trong {0}",
+        "o": [
+         {
+          "dung": [
+           "chất khí"
+          ],
+          "sai": [
+           "chất rắn",
+           "chất lỏng",
+           "chân không"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Ánh nắng Mặt Trời sưởi ấm Trái Đất, dù khoảng không gian giữa Mặt Trời và Trái Đất gần như không có chất nào: năng lượng nhiệt truyền qua {0}",
+        "o": [
+         {
+          "dung": [
+           "chân không"
+          ],
+          "sai": [
+           "chất rắn",
+           "chất lỏng",
+           "chất khí"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Kết luận: năng lượng nhiệt truyền được trong {0}",
+        "o": [
+         {
+          "dung": [
+           "cả chất rắn, chất lỏng, chất khí và chân không"
+          ],
+          "sai": [
+           "chất rắn, chất lỏng, chất khí, nhưng không truyền được qua chân không",
+           "chỉ trong chất rắn"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B28.C2",
      "trang": 113,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Hãy thảo luận về các câu hỏi dưới đây dựa trên việc phân tích công dụng của vật dẫn nhiệt tốt và vật cách nhiệt tốt: 1. Tại sao chảo được làm bằng kim loại còn cán chảo được làm bằng gỗ hoặc nhựa? 2. Tại sao nhà mái ngói thì mùa hè mát hơn, mùa đông ấm hơn nhà mái tôn? 3. Phân tích công dụng dẫn nhiệt tốt, cách nhiệt tốt của từng bộ phận trong một số dụng cụ thường dùng trong gia đình."
+     "de": "Hãy thảo luận về các câu hỏi dưới đây dựa trên việc phân tích công dụng của vật dẫn nhiệt tốt và vật cách nhiệt tốt: 1. Tại sao chảo được làm bằng kim loại còn cán chảo được làm bằng gỗ hoặc nhựa? 2. Tại sao nhà mái ngói thì mùa hè mát hơn, mùa đông ấm hơn nhà mái tôn? 3. Phân tích công dụng dẫn nhiệt tốt, cách nhiệt tốt của từng bộ phận trong một số dụng cụ thường dùng trong gia đình.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 9,
+      "dong": [
+       {
+        "chu": "1. Chảo được làm bằng kim loại vì {0}",
+        "o": [
+         {
+          "dung": [
+           "kim loại dẫn nhiệt tốt, thức ăn trong chảo nhanh nóng"
+          ],
+          "sai": [
+           "kim loại cách nhiệt tốt, giữ nhiệt lâu",
+           "kim loại nhẹ hơn gỗ, giúp người nấu cầm chảo đỡ mỏi tay"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Cán chảo được làm bằng gỗ hoặc nhựa vì {0}",
+        "o": [
+         {
+          "dung": [
+           "gỗ, nhựa dẫn nhiệt kém (cách nhiệt tốt), cầm không bị bỏng"
+          ],
+          "sai": [
+           "gỗ, nhựa dẫn nhiệt tốt, giúp cán chảo nóng đều như lòng chảo",
+           "gỗ, nhựa nặng hơn kim loại, giữ cho chảo khỏi bị lật"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "2. So với tôn (kim loại), ngói {0}",
+        "o": [
+         {
+          "dung": [
+           "dẫn nhiệt kém hơn nhiều"
+          ],
+          "sai": [
+           "dẫn nhiệt tốt hơn nhiều",
+           "dẫn nhiệt như nhau"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Mùa hè, nhà mái ngói mát hơn vì {0}",
+        "o": [
+         {
+          "dung": [
+           "nhiệt từ ngoài trời truyền qua mái ngói vào nhà chậm và ít hơn qua mái tôn"
+          ],
+          "sai": [
+           "nhiệt từ ngoài trời truyền qua mái ngói vào nhà nhanh hơn qua mái tôn",
+           "mái ngói làm nhiệt độ ngoài trời giảm xuống"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Mùa đông, nhà mái ngói ấm hơn vì {0}",
+        "o": [
+         {
+          "dung": [
+           "nhiệt trong nhà truyền qua mái ngói ra ngoài chậm và ít hơn qua mái tôn"
+          ],
+          "sai": [
+           "nhiệt trong nhà truyền qua mái ngói ra ngoài nhanh hơn qua mái tôn",
+           "mái ngói tự sinh ra nhiệt"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "3. Đáy nồi bằng kim loại: {0}",
+        "o": [
+         {
+          "dung": [
+           "dẫn nhiệt tốt"
+          ],
+          "sai": [
+           "cách nhiệt tốt"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Quai nồi, núm vung bằng nhựa: {0}",
+        "o": [
+         {
+          "dung": [
+           "cách nhiệt tốt"
+          ],
+          "sai": [
+           "dẫn nhiệt tốt"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Đế bàn là bằng kim loại: {0}",
+        "o": [
+         {
+          "dung": [
+           "dẫn nhiệt tốt"
+          ],
+          "sai": [
+           "cách nhiệt tốt"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Tay cầm bàn là bằng nhựa: {0}",
+        "o": [
+         {
+          "dung": [
+           "cách nhiệt tốt"
+          ],
+          "sai": [
+           "dẫn nhiệt tốt"
+          ],
+          "hai": true
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B28.C3",
      "trang": 114,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "1. Tại sao khi đốt nến thì cánh quạt trong Hình 28.4 (SGK trang 114) lại quay. 2. Tìm thêm ví dụ về sự đối lưu trong thực tế."
+     "de": "1. Hình 28.4 (SGK trang 114) vẽ một cánh quạt bằng giấy gắn trên một trục thẳng đứng, bên dưới cánh quạt có hai ngọn nến. Tại sao khi đốt nến thì cánh quạt lại quay? 2. Tìm thêm ví dụ về sự đối lưu trong thực tế.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 7,
+      "dong": [
+       {
+        "chu": "1. Không khí ở gần ngọn nến {0}",
+        "o": [
+         {
+          "dung": [
+           "nóng lên, nở ra, nhẹ đi và bốc lên trên"
+          ],
+          "sai": [
+           "lạnh đi, nặng hơn và chìm xuống",
+           "đứng yên, không chuyển động"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Không khí lạnh hơn ở xung quanh tràn vào thế chỗ, tạo thành {0}",
+        "o": [
+         {
+          "dung": [
+           "dòng đối lưu"
+          ],
+          "sai": [
+           "tia nhiệt",
+           "dòng điện"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Dòng không khí nóng bốc lên {0}",
+        "o": [
+         {
+          "dung": [
+           "đẩy vào các cánh quạt, làm cánh quạt quay"
+          ],
+          "sai": [
+           "hút các cánh quạt xuống phía dưới",
+           "làm cánh quạt nóng chảy"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "2. Đun nước: nước ở đáy nóng lên đi lên, nước lạnh ở trên đi xuống: {0}",
+        "o": [
+         {
+          "dung": [
+           "là sự đối lưu"
+          ],
+          "sai": [
+           "không phải sự đối lưu"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Đèn kéo quân quay được khi thắp nến bên trong: {0}",
+        "o": [
+         {
+          "dung": [
+           "là sự đối lưu"
+          ],
+          "sai": [
+           "không phải sự đối lưu"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Nhúng thìa inox vào cốc nước nóng, cán thìa nóng dần: {0}",
+        "o": [
+         {
+          "dung": [
+           "không phải sự đối lưu"
+          ],
+          "sai": [
+           "là sự đối lưu"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Phơi nắng thấy người ấm lên: {0}",
+        "o": [
+         {
+          "dung": [
+           "không phải sự đối lưu"
+          ],
+          "sai": [
+           "là sự đối lưu"
+          ],
+          "hai": true
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B28.C4",
      "trang": 115,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "1. Đứng gần một bếp lửa, ta cảm thấy nóng. Nhiệt năng mà cơ thể nhận được từ bếp chủ yếu là do dẫn nhiệt, đối lưu hay bức xạ? Tại sao? 2. Tại sao mùa hè người ta thường mặc áo màu trắng, ít mặc áo màu đen? 3. Phích (bình thuỷ) là dụng cụ dùng để giữ nước nóng, có hai lớp thuỷ tinh, giữa hai lớp là chân không, hai mặt đối diện thường được tráng bạc, phích có nút đậy kín. Hãy phân tích tác dụng của các bộ phận sau đây của phích: lớp chân không; hai mặt thuỷ tinh tráng bạc; nút."
+     "de": "1. Đứng gần một bếp lửa, ta cảm thấy nóng. Nhiệt năng mà cơ thể nhận được từ bếp chủ yếu là do dẫn nhiệt, đối lưu hay bức xạ? Tại sao? 2. Tại sao mùa hè người ta thường mặc áo màu trắng, ít mặc áo màu đen? 3. Phích (bình thuỷ) là dụng cụ dùng để giữ nước nóng, có hai lớp thuỷ tinh, giữa hai lớp là chân không, hai mặt đối diện thường được tráng bạc, phích có nút đậy kín. Hãy phân tích tác dụng của các bộ phận sau đây của phích: lớp chân không; hai mặt thuỷ tinh tráng bạc; nút.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 6,
+      "dong": [
+       {
+        "chu": "1. Đứng gần bếp lửa, nhiệt năng cơ thể nhận được chủ yếu do {0}",
+        "o": [
+         {
+          "dung": [
+           "bức xạ nhiệt"
+          ],
+          "sai": [
+           "dẫn nhiệt",
+           "đối lưu"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "vì {0}",
+        "o": [
+         {
+          "dung": [
+           "không khí dẫn nhiệt kém, khí nóng lại bốc lên trên; nhiệt truyền thẳng tới người bằng các tia nhiệt"
+          ],
+          "sai": [
+           "không khí dẫn nhiệt rất tốt nên nhiệt truyền dần qua lớp không khí sang người",
+           "dòng không khí nóng từ bếp chạy ngang sang người, nên người nóng lên"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "2. Mùa hè người ta thường mặc áo màu trắng vì {0}",
+        "o": [
+         {
+          "dung": [
+           "vật màu sáng hấp thụ tia nhiệt kém, phản xạ tia nhiệt mạnh nên người mặc đỡ nóng"
+          ],
+          "sai": [
+           "vật màu sáng hấp thụ tia nhiệt mạnh hơn vật màu sẫm",
+           "áo trắng dẫn nhiệt tốt hơn áo đen, nên nhiệt từ người truyền ra ngoài nhanh hơn"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "3. Lớp chân không giữa hai lớp thuỷ tinh: {0}",
+        "o": [
+         {
+          "dung": [
+           "ngăn cản sự truyền nhiệt bằng dẫn nhiệt và đối lưu"
+          ],
+          "sai": [
+           "ngăn cản các tia nhiệt",
+           "giúp nước trong phích nóng thêm"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Hai mặt thuỷ tinh tráng bạc: {0}",
+        "o": [
+         {
+          "dung": [
+           "phản xạ các tia nhiệt trở lại nước trong phích"
+          ],
+          "sai": [
+           "hấp thụ tia nhiệt để giữ ấm cho phích",
+           "chỉ để trang trí cho phích đẹp hơn"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Nút đậy kín: {0}",
+        "o": [
+         {
+          "dung": [
+           "ngăn không khí nóng và hơi nước thoát ra ngoài, ngăn cản sự truyền nhiệt bằng đối lưu"
+          ],
+          "sai": [
+           "giúp hơi nóng thoát ra ngoài nhanh, để nước trong phích không bị trào ra",
+           "hấp thụ các tia nhiệt từ nước rồi phát trở lại vào trong phích"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B28.C5",
      "trang": 116,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Tại sao trong thí nghiệm Hình 28.8 (SGK trang 116), nhiệt độ của cốc nước đặt trong lồng kính lại cao hơn nhiệt độ của cốc nước đặt ngoài lồng kính?"
+     "de": "Thí nghiệm Hình 28.8 (SGK trang 116): hai cốc nước giống nhau, mỗi cốc có cắm một nhiệt kế, được đặt dưới ánh nắng Mặt Trời; một cốc đặt trong một lồng kính trong suốt, cốc kia đặt ngoài lồng kính. Tại sao nhiệt độ của cốc nước đặt trong lồng kính lại cao hơn nhiệt độ của cốc nước đặt ngoài lồng kính?",
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "dong": [
+       {
+        "chu": "Bức xạ nhiệt của Mặt Trời là bức xạ mạnh nên {0}",
+        "o": [
+         {
+          "dung": [
+           "truyền qua được lồng kính, làm cốc nước trong lồng nóng lên"
+          ],
+          "sai": [
+           "không truyền qua được lồng kính, bị lồng kính phản xạ hết ra ngoài",
+           "bị lồng kính hấp thụ hết, không tới được cốc nước trong lồng"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Bức xạ nhiệt do cốc nước và các vật trong lồng phát ra là bức xạ yếu nên {0}",
+        "o": [
+         {
+          "dung": [
+           "không truyền qua được lồng kính, bị giữ lại bên trong"
+          ],
+          "sai": [
+           "truyền ra ngoài lồng kính dễ dàng",
+           "biến mất ngay khi vừa phát ra"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Vì vậy {0}",
+        "o": [
+         {
+          "dung": [
+           "năng lượng được giữ lại trong lồng kính, cốc nước trong lồng nóng hơn cốc nước ngoài lồng"
+          ],
+          "sai": [
+           "cốc nước ngoài lồng kính nóng hơn cốc nước trong lồng",
+           "hai cốc nước luôn có nhiệt độ bằng nhau, vì cùng được Mặt Trời chiếu sáng"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B28.C6",
      "trang": 117,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Hãy thảo luận về những vấn đề sau đây: 1. Mô tả sự truyền năng lượng trong hiệu ứng nhà kính khí quyển. 2. Những nguyên nhân nào làm tăng nhanh hàm lượng CO2 trong khí quyển và những biện pháp nào có thể làm giảm sự tăng hàm lượng CO2 trong khí quyển? 3. Em và các bạn có thể làm gì để góp phần cụ thể vào việc làm giảm hiệu ứng nhà kính để góp phần ổn định nhiệt độ bề mặt Trái Đất."
+     "de": "Hãy thảo luận về những vấn đề sau đây: 1. Mô tả sự truyền năng lượng trong hiệu ứng nhà kính khí quyển. 2. Những nguyên nhân nào làm tăng nhanh hàm lượng CO2 trong khí quyển và những biện pháp nào có thể làm giảm sự tăng hàm lượng CO2 trong khí quyển? 3. Em và các bạn có thể làm gì để góp phần cụ thể vào việc làm giảm hiệu ứng nhà kính để góp phần ổn định nhiệt độ bề mặt Trái Đất.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 9,
+      "dong": [
+       {
+        "chu": "1. Mặt Trời truyền năng lượng tới Trái Đất bằng {0}",
+        "o": [
+         {
+          "dung": [
+           "bức xạ nhiệt"
+          ],
+          "sai": [
+           "dẫn nhiệt",
+           "đối lưu"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Phần lớn bức xạ nhiệt của Mặt Trời {0}",
+        "o": [
+         {
+          "dung": [
+           "truyền qua khí quyển tới mặt đất; mặt đất hấp thụ một phần nên nóng lên"
+          ],
+          "sai": [
+           "bị khí quyển chặn lại hoàn toàn",
+           "bị mặt đất phản xạ hết, mặt đất không nóng lên"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Bức xạ nhiệt của Trái Đất phát ra {0}",
+        "o": [
+         {
+          "dung": [
+           "bị khí quyển (nhất là khí CO₂) giữ lại một phần, làm bề mặt Trái Đất và không khí nóng lên"
+          ],
+          "sai": [
+           "đi thẳng ra ngoài vũ trụ hết, khí quyển không giữ lại phần nào",
+           "bị khí quyển giữ lại, làm bề mặt Trái Đất và không khí lạnh đi"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "2. Đốt nhiều than, xăng, dầu trong nhà máy và xe cộ: {0}",
+        "o": [
+         {
+          "dung": [
+           "làm tăng lượng CO₂"
+          ],
+          "sai": [
+           "làm giảm lượng CO₂"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Chặt phá rừng: {0}",
+        "o": [
+         {
+          "dung": [
+           "làm tăng lượng CO₂"
+          ],
+          "sai": [
+           "làm giảm lượng CO₂"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Trồng thêm rừng, cây xanh; dùng năng lượng mặt trời, năng lượng gió thay cho than, dầu: {0}",
+        "o": [
+         {
+          "dung": [
+           "làm giảm lượng CO₂"
+          ],
+          "sai": [
+           "làm tăng lượng CO₂"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "3. Tắt đèn, quạt, điều hoà khi ra khỏi phòng: {0}",
+        "o": [
+         {
+          "dung": [
+           "nên làm"
+          ],
+          "sai": [
+           "không nên làm"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Đi xe đạp hoặc đi bộ khi đi quãng đường gần: {0}",
+        "o": [
+         {
+          "dung": [
+           "nên làm"
+          ],
+          "sai": [
+           "không nên làm"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Đốt rác, đốt lá khô ngoài trời: {0}",
+        "o": [
+         {
+          "dung": [
+           "không nên làm"
+          ],
+          "sai": [
+           "nên làm"
+          ],
+          "hai": true
+         }
+        ]
+       }
+      ]
+     }
     }
    ]
   },
@@ -6796,56 +10211,614 @@
      "trang": 118,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Tháp Eiffel bằng thép cao 324 m ở thủ đô Paris nước Pháp là tháp bằng thép nổi tiếng thế giới. Các phép đo chiều cao của tháp vào ngày 01/01/1890 và ngày 01/07/1890 cho thấy trong vòng 6 tháng tháp cao hơn thêm 10 cm. Chẳng lẽ một cái tháp bằng thép lại có thể \"lớn lên\" được? Em có thể giải thích được hiện tượng này không?"
+     "de": "Tháp Eiffel bằng thép cao 324 m ở thủ đô Paris nước Pháp là tháp bằng thép nổi tiếng thế giới. Các phép đo chiều cao của tháp vào ngày 01/01/1890 và ngày 01/07/1890 cho thấy trong vòng 6 tháng tháp cao hơn thêm 10 cm. Chẳng lẽ một cái tháp bằng thép lại có thể \"lớn lên\" được? Em có thể giải thích được hiện tượng này không?",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "dong": [
+       {
+        "chu": "Ngày 01/07/1890 (mùa hè ở Pháp) so với ngày 01/01/1890 (mùa đông) có nhiệt độ {0}",
+        "o": [
+         {
+          "dung": [
+           "cao hơn"
+          ],
+          "sai": [
+           "thấp hơn",
+           "bằng"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Tháp cao thêm 10 cm vì {0}",
+        "o": [
+         {
+          "dung": [
+           "khi nóng lên, thép nở ra, tháp dài thêm"
+          ],
+          "sai": [
+           "khi lạnh đi, thép nở ra, tháp dài thêm",
+           "tháp được xây thêm một đoạn"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B29.C2",
      "trang": 118,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Từ thí nghiệm về sự nở vì nhiệt của chất rắn (Hình 29.1, SGK trang 118) hãy rút ra nhận xét về sự nở vì nhiệt của các chất nhôm, đồng, sắt."
+     "de": "Thí nghiệm (Hình 29.1, SGK trang 118): ba thanh nhôm, đồng, sắt được nung nóng như nhau bằng khay đựng cồn có tấm chắn. Khi đốt cồn trong khay, các kim chỉ thị quay: kim ứng với thanh nhôm quay nhiều nhất, kim ứng với thanh sắt quay ít nhất. Khi tắt đèn cồn, các kim chỉ thị lại dần quay về vị trí cũ. Từ thí nghiệm trên hãy rút ra nhận xét về sự nở vì nhiệt của các chất nhôm, đồng, sắt.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "dong": [
+       {
+        "chu": "Khi nóng lên, các thanh nhôm, đồng, sắt {0}; khi lạnh đi, chúng co lại",
+        "o": [
+         {
+          "dung": [
+           "đều nở dài ra"
+          ],
+          "sai": [
+           "đều co ngắn lại",
+           "không thay đổi độ dài"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "So sánh: {0}",
+        "o": [
+         {
+          "dung": [
+           "nhôm nở vì nhiệt nhiều hơn đồng, đồng nở vì nhiệt nhiều hơn sắt"
+          ],
+          "sai": [
+           "sắt nở vì nhiệt nhiều hơn đồng, đồng nở vì nhiệt nhiều hơn nhôm",
+           "nhôm, đồng, sắt nở vì nhiệt như nhau"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Nhận xét: {0}",
+        "o": [
+         {
+          "dung": [
+           "các chất rắn khác nhau nở vì nhiệt khác nhau"
+          ],
+          "sai": [
+           "các chất rắn khác nhau nở vì nhiệt như nhau",
+           "chất rắn không nở vì nhiệt"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B29.C3",
      "trang": 119,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Hai thanh kim loại đồng, sắt được ghép chặt vào nhau tạo thành một băng kép. Hãy cho biết hình dạng của băng kép sẽ thay đổi như thế nào khi: a) Quay thanh kim loại cho mặt sắt ở dưới và hơ nóng bằng đèn cồn (Hình 29.2a). b) Quay thanh kim loại cho mặt đồng ở dưới và hơ nóng bằng đèn cồn (Hình 29.2b)."
+     "de": "Hai thanh kim loại đồng, sắt được ghép chặt vào nhau tạo thành một băng kép. Hãy cho biết hình dạng của băng kép sẽ thay đổi như thế nào khi: a) Quay thanh kim loại cho mặt sắt ở dưới và hơ nóng bằng đèn cồn (Hình 29.2a). b) Quay thanh kim loại cho mặt đồng ở dưới và hơ nóng bằng đèn cồn (Hình 29.2b).",
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "dong": [
+       {
+        "chu": "a) Mặt sắt ở dưới (đồng ở trên): khi hơ nóng, băng kép {0}",
+        "o": [
+         {
+          "dung": [
+           "cong xuống, về phía thanh sắt"
+          ],
+          "sai": [
+           "cong lên, về phía thanh đồng",
+           "vẫn thẳng"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "b) Mặt đồng ở dưới (sắt ở trên): khi hơ nóng, băng kép {0}",
+        "o": [
+         {
+          "dung": [
+           "cong lên, về phía thanh sắt"
+          ],
+          "sai": [
+           "cong xuống, về phía thanh đồng",
+           "vẫn thẳng"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Vì {0}",
+        "o": [
+         {
+          "dung": [
+           "đồng nở vì nhiệt nhiều hơn sắt, nên băng kép luôn cong về phía thanh sắt"
+          ],
+          "sai": [
+           "sắt nở vì nhiệt nhiều hơn đồng, nên băng kép luôn cong về phía thanh đồng",
+           "thanh nào ở gần ngọn lửa thì luôn nở nhiều hơn"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B29.C4",
      "trang": 119,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "1. Hình 29.4 mô tả thí nghiệm về sự nở vì nhiệt của các chất lỏng khác nhau (rượu, dầu, nước; SGK trang 119). Hãy mô tả thí nghiệm và rút ra nhận xét về sự nở vì nhiệt của các chất lỏng khác nhau. 2. Tìm thêm ví dụ về sự nở vì nhiệt của chất lỏng."
+     "de": "1. Hình 29.4 mô tả thí nghiệm về sự nở vì nhiệt của các chất lỏng khác nhau (rượu, dầu, nước; SGK trang 119). Hãy mô tả thí nghiệm và rút ra nhận xét về sự nở vì nhiệt của các chất lỏng khác nhau. 2. Tìm thêm ví dụ về sự nở vì nhiệt của chất lỏng.",
+     "hinh": [
+      "khtn8/B29.C4.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 6,
+      "dong": [
+       {
+        "chu": "1. Ba bình giống nhau đựng ba chất lỏng, lúc đầu mực chất lỏng trong ba ống ngang nhau. Đặt cả ba bình vào chậu nước nóng thì chất lỏng dâng lên cao nhất trong ống là {0}",
+        "o": [
+         {
+          "dung": [
+           "rượu"
+          ],
+          "sai": [
+           "dầu",
+           "nước"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Chất lỏng dâng lên ít nhất là {0}",
+        "o": [
+         {
+          "dung": [
+           "nước"
+          ],
+          "sai": [
+           "rượu",
+           "dầu"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Nhận xét: {0}",
+        "o": [
+         {
+          "dung": [
+           "các chất lỏng nở ra khi nóng lên; các chất lỏng khác nhau nở vì nhiệt khác nhau"
+          ],
+          "sai": [
+           "các chất lỏng nở ra khi nóng lên; các chất lỏng khác nhau nở vì nhiệt như nhau",
+           "các chất lỏng co lại khi nóng lên; rượu co lại nhiều nhất"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "2. Đun nước không đổ thật đầy ấm, vì khi nóng lên nước nở ra có thể tràn ra ngoài: {0}",
+        "o": [
+         {
+          "dung": [
+           "là ví dụ về sự nở vì nhiệt của chất lỏng"
+          ],
+          "sai": [
+           "không phải"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Rượu (hay thuỷ ngân) trong nhiệt kế dâng lên khi nhiệt độ tăng: {0}",
+        "o": [
+         {
+          "dung": [
+           "là ví dụ về sự nở vì nhiệt của chất lỏng"
+          ],
+          "sai": [
+           "không phải"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Quả bóng bàn bị bẹp nhúng vào nước nóng thì phồng lên: {0}",
+        "o": [
+         {
+          "dung": [
+           "không phải"
+          ],
+          "sai": [
+           "là ví dụ về sự nở vì nhiệt của chất lỏng"
+          ],
+          "hai": true
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B29.C5",
      "trang": 120,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "1. Tại sao từ thí nghiệm về sự nở vì nhiệt của chất khí (Hình 29.6, SGK trang 120) ta có thể nói chất khí nở vì nhiệt nhiều hơn chất lỏng? 2. Tìm ví dụ về sự nở vì nhiệt của chất khí."
+     "de": "Thí nghiệm (Hình 29.6, SGK trang 120): nhúng đầu một ống thuỷ tinh vào cốc nước màu, bịt chặt đầu còn lại rồi rút ống ra để trong ống còn giữ lại một giọt nước màu; lắp ống thuỷ tinh qua nút cao su vào một bình cầu chứa không khí. Xoa hai tay vào nhau rồi áp vào bình cầu. 1. Tại sao từ thí nghiệm trên ta có thể nói chất khí nở vì nhiệt nhiều hơn chất lỏng? 2. Tìm ví dụ về sự nở vì nhiệt của chất khí.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 6,
+      "dong": [
+       {
+        "chu": "1. Khi áp hai bàn tay ấm vào bình cầu, giọt nước màu {0}",
+        "o": [
+         {
+          "dung": [
+           "đi lên"
+          ],
+          "sai": [
+           "đi xuống",
+           "đứng yên"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "vì {0}",
+        "o": [
+         {
+          "dung": [
+           "không khí trong bình nóng lên, nở ra, đẩy giọt nước màu lên"
+          ],
+          "sai": [
+           "giọt nước màu nóng lên và bay hơi",
+           "không khí trong bình lạnh đi và co lại"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Với chất lỏng, phải đặt bình vào chậu nước nóng mới thấy chất lỏng dâng lên trong ống; ở đây chỉ cần hơi ấm của bàn tay là giọt nước màu đã dịch chuyển rõ. Điều đó chứng tỏ {0}",
+        "o": [
+         {
+          "dung": [
+           "chất khí nở vì nhiệt nhiều hơn chất lỏng"
+          ],
+          "sai": [
+           "chất lỏng nở vì nhiệt nhiều hơn chất khí",
+           "chất khí không nở vì nhiệt"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "2. Quả bóng bàn bị bẹp nhúng vào nước nóng thì phồng lên: {0}",
+        "o": [
+         {
+          "dung": [
+           "là ví dụ về sự nở vì nhiệt của chất khí"
+          ],
+          "sai": [
+           "không phải"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Rót nước nóng vào phích rồi đậy nút ngay, nút có thể bị bật ra: {0}",
+        "o": [
+         {
+          "dung": [
+           "là ví dụ về sự nở vì nhiệt của chất khí"
+          ],
+          "sai": [
+           "không phải"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Đun nước không đổ thật đầy ấm: {0}",
+        "o": [
+         {
+          "dung": [
+           "không phải"
+          ],
+          "sai": [
+           "là ví dụ về sự nở vì nhiệt của chất khí"
+          ],
+          "hai": true
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B29.C6",
      "trang": 121,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Dựa vào Bảng 29.1 (độ tăng thể tích của 1 000 cm^3 các chất khác nhau khi nhiệt độ tăng thêm 50 °C; SGK trang 121) rút ra nhận xét về sự nở vì nhiệt của các chất khác nhau: rắn, lỏng và khí."
+     "de": "Bảng 29.1 (SGK trang 121) cho độ tăng thể tích của 1 000 cm^3 các chất khác nhau khi nhiệt độ tăng thêm 50 °C. Chất khí: không khí 183 cm^3; hơi nước 183 cm^3; khí oxygen 183 cm^3. Chất lỏng: rượu 58 cm^3; dầu hoả 55 cm^3; thuỷ ngân 9 cm^3. Chất rắn: nhôm 3,45 cm^3; đồng 2,55 cm^3; sắt 1,80 cm^3. Dựa vào Bảng 29.1 rút ra nhận xét về sự nở vì nhiệt của các chất khác nhau: rắn, lỏng và khí.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "dong": [
+       {
+        "chu": "Các chất khí khác nhau (không khí, hơi nước, oxygen) nở vì nhiệt {0}",
+        "o": [
+         {
+          "dung": [
+           "như nhau"
+          ],
+          "sai": [
+           "khác nhau"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Các chất lỏng khác nhau (rượu, dầu hoả, thuỷ ngân) nở vì nhiệt {0}",
+        "o": [
+         {
+          "dung": [
+           "khác nhau"
+          ],
+          "sai": [
+           "như nhau"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Các chất rắn khác nhau (nhôm, đồng, sắt) nở vì nhiệt {0}",
+        "o": [
+         {
+          "dung": [
+           "khác nhau"
+          ],
+          "sai": [
+           "như nhau"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "So sánh: {0}",
+        "o": [
+         {
+          "dung": [
+           "chất khí nở vì nhiệt nhiều hơn chất lỏng, chất lỏng nở vì nhiệt nhiều hơn chất rắn"
+          ],
+          "sai": [
+           "chất rắn nở vì nhiệt nhiều hơn chất lỏng, chất lỏng nở vì nhiệt nhiều hơn chất khí",
+           "chất lỏng nở vì nhiệt nhiều nhất, chất khí nở vì nhiệt ít nhất"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B29.C7",
      "trang": 121,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "1. Mô tả hoạt động của các loại băng kép trong Hình 29.7 b, c, d (băng kép đóng ngắt mạch điện, băng kép báo cháy, băng kép trong bàn là; SGK trang 121). 2. Tìm thêm ví dụ về công dụng của sự nở vì nhiệt."
+     "de": "1. Mô tả hoạt động của các loại băng kép trong Hình 29.7 b, c, d (băng kép đóng ngắt mạch điện, băng kép báo cháy, băng kép trong bàn là; SGK trang 121). 2. Tìm thêm ví dụ về công dụng của sự nở vì nhiệt.",
+     "hinh": [
+      "khtn8/B29.C7.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 6,
+      "dong": [
+       {
+        "chu": "1. b) Băng kép đóng ngắt mạch điện: khi nhiệt độ thay đổi, băng kép {0}",
+        "o": [
+         {
+          "dung": [
+           "cong đi hay thẳng lại, làm tiếp điểm chạm vào nhau hay tách ra, tự động đóng hay ngắt mạch"
+          ],
+          "sai": [
+           "nóng chảy và đứt như dây chì của cầu chì, phải thay băng kép mới",
+           "phát ra âm thanh khi nhiệt độ thay đổi, báo cho người dùng biết"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "c) Băng kép báo cháy: khi có cháy, nhiệt độ tăng, băng kép {0}",
+        "o": [
+         {
+          "dung": [
+           "cong lên, chạm vào tiếp điểm, đóng mạch điện làm chuông kêu"
+          ],
+          "sai": [
+           "cong xuống, tách xa tiếp điểm, làm chuông ngừng kêu",
+           "nóng chảy, làm đứt mạch điện"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "d) Băng kép trong bàn là: khi bàn là nóng quá mức đã chọn, băng kép {0}",
+        "o": [
+         {
+          "dung": [
+           "cong đi, tách khỏi tiếp điểm, ngắt dòng điện; khi bàn là nguội bớt, băng kép trở lại, đóng mạch điện"
+          ],
+          "sai": [
+           "cong đi, chạm vào tiếp điểm, đóng mạch điện để bàn là tiếp tục nóng thêm",
+           "giữ nguyên hình dạng; người dùng phải tự rút phích cắm khi bàn là quá nóng"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "2. Nung nóng khâu sắt rồi mới tra vào cán dao, khi nguội khâu co lại siết chặt cán: {0}",
+        "o": [
+         {
+          "dung": [
+           "là công dụng của sự nở vì nhiệt"
+          ],
+          "sai": [
+           "không phải"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Hơ nóng cổ lọ thuỷ tinh để mở nút thuỷ tinh bị kẹt: {0}",
+        "o": [
+         {
+          "dung": [
+           "là công dụng của sự nở vì nhiệt"
+          ],
+          "sai": [
+           "không phải"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Phơi quần áo ngoài nắng cho nhanh khô: {0}",
+        "o": [
+         {
+          "dung": [
+           "không phải"
+          ],
+          "sai": [
+           "là công dụng của sự nở vì nhiệt"
+          ],
+          "hai": true
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B29.C8",
      "trang": 122,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "1. Tại sao chỗ nối tiếp hai đầu thanh ray xe lửa, hai đầu ống dẫn khí lại được cấu tạo như Hình 29.8 (SGK trang 122)? 2. Tìm thêm ví dụ về tác hại của sự nở vì nhiệt."
+     "de": "1. Hình 29.8 (SGK trang 122): a) chỗ nối hai đầu thanh ray xe lửa có để một khe hở nhỏ; b) chỗ nối ống dẫn khí có một đoạn ống được uốn cong thành hình vòng. Tại sao chỗ nối tiếp hai đầu thanh ray xe lửa, hai đầu ống dẫn khí lại được cấu tạo như vậy? 2. Tìm thêm ví dụ về tác hại của sự nở vì nhiệt.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 6,
+      "dong": [
+       {
+        "chu": "1. Khe hở ở chỗ nối hai thanh ray để {0}",
+        "o": [
+         {
+          "dung": [
+           "khi trời nóng, thanh ray nở dài ra mà không bị cản trở, không làm cong đường ray"
+          ],
+          "sai": [
+           "nước mưa thoát xuống dưới, không đọng lại làm gỉ thanh ray",
+           "bánh tàu đi qua kêu to, báo cho người đi đường biết tàu sắp tới"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Đoạn uốn cong của ống dẫn khí để {0}",
+        "o": [
+         {
+          "dung": [
+           "khi ống nóng lên nở dài ra, đoạn uốn cong co giãn được, ống không bị cong vênh, nứt vỡ"
+          ],
+          "sai": [
+           "khí chảy trong ống chậm lại, không gây nổ đường ống",
+           "đường ống tránh được các cột điện, nhà cửa trên đường đi"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "2. Mặt đường bê tông không có khe co giãn bị nứt khi trời nắng nóng: {0}",
+        "o": [
+         {
+          "dung": [
+           "là tác hại của sự nở vì nhiệt"
+          ],
+          "sai": [
+           "không phải"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Rót nước sôi vào cốc thuỷ tinh dày, cốc có thể bị nứt vỡ: {0}",
+        "o": [
+         {
+          "dung": [
+           "là tác hại của sự nở vì nhiệt"
+          ],
+          "sai": [
+           "không phải"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Bơm lốp xe thật căng rồi để ngoài nắng gắt, lốp có thể bị nổ: {0}",
+        "o": [
+         {
+          "dung": [
+           "là tác hại của sự nở vì nhiệt"
+          ],
+          "sai": [
+           "không phải"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Dùng nhiệt kế thuỷ ngân để đo nhiệt độ cơ thể: {0}",
+        "o": [
+         {
+          "dung": [
+           "không phải"
+          ],
+          "sai": [
+           "là tác hại của sự nở vì nhiệt"
+          ],
+          "hai": true
+         }
+        ]
+       }
+      ]
+     }
     }
    ]
   },
