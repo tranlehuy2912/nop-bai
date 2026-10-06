@@ -2,7 +2,7 @@
  "nguon": "sbttoan8t2",
  "mon": "Toán",
  "ten": "SBT Toán 8 — tập hai",
- "ban": 4,
+ "ban": 5,
  "cac_bai": [
   {
    "chuong": "Chương VI. Phân thức đại số",
@@ -2798,7 +2798,28 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "x = −5/2",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "dap": [
+       "x=−5/2",
+       "−5/2",
+       "x=−2,5",
+       "−2,5"
+      ],
+      "phim": [
+       "x"
+      ],
+      "nhieu": [
+       "y",
+       "²"
+      ],
+      "loi_giai": [
+       "2x + 5 = 0 ⇔ 2x = −5",
+       "x = −5 : 2 = −5/2"
+      ]
+     }
     },
     {
      "ma": "7.1b",
@@ -2807,7 +2828,26 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "x = 2",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "dap": [
+       "x=2",
+       "2"
+      ],
+      "phim": [
+       "x"
+      ],
+      "nhieu": [
+       "y",
+       "²"
+      ],
+      "loi_giai": [
+       "8 − 4x = 0 ⇔ 4x = 8",
+       "x = 8 : 4 = 2"
+      ]
+     }
     },
     {
      "ma": "7.1c",
@@ -2816,7 +2856,28 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "x = −3/2",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "dap": [
+       "x=−3/2",
+       "−3/2",
+       "x=−1,5",
+       "−1,5"
+      ],
+      "phim": [
+       "x"
+      ],
+      "nhieu": [
+       "y",
+       "²"
+      ],
+      "loi_giai": [
+       "(3/2)x + 9/4 = 0 ⇔ (3/2)x = −9/4",
+       "x = (−9/4) : (3/2) = −3/2"
+      ]
+     }
     },
     {
      "ma": "7.1d",
@@ -2825,7 +2886,28 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "x = 0,08",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "dap": [
+       "x=0,08",
+       "0,08",
+       "x=2/25",
+       "2/25"
+      ],
+      "phim": [
+       "x"
+      ],
+      "nhieu": [
+       "y",
+       "²"
+      ],
+      "loi_giai": [
+       "0,2 − 2,5x = 0 ⇔ 2,5x = 0,2",
+       "x = 0,2 : 2,5 = 0,08"
+      ]
+     }
     },
     {
      "ma": "7.2a",
@@ -2834,7 +2916,26 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "x = 7/3",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "dap": [
+       "x=7/3",
+       "7/3"
+      ],
+      "phim": [
+       "x"
+      ],
+      "nhieu": [
+       "y",
+       "²"
+      ],
+      "loi_giai": [
+       "4x − 2 = x + 5 ⇔ 4x − x = 5 + 2",
+       "3x = 7 ⇔ x = 7/3"
+      ]
+     }
     },
     {
      "ma": "7.2b",
@@ -2843,7 +2944,26 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "x = 2/7",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "dap": [
+       "x=2/7",
+       "2/7"
+      ],
+      "phim": [
+       "x"
+      ],
+      "nhieu": [
+       "y",
+       "²"
+      ],
+      "loi_giai": [
+       "−2x − 5 = 5x − 7 ⇔ −2x − 5x = −7 + 5",
+       "−7x = −2 ⇔ x = 2/7"
+      ]
+     }
     },
     {
      "ma": "7.2c",
@@ -2852,7 +2972,26 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "x = 3",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "dap": [
+       "x=3",
+       "3"
+      ],
+      "phim": [
+       "x"
+      ],
+      "nhieu": [
+       "y",
+       "²"
+      ],
+      "loi_giai": [
+       "2(2x − 1) = 5(x − 1) ⇔ 4x − 2 = 5x − 5",
+       "4x − 5x = −5 + 2 ⇔ −x = −3 ⇔ x = 3"
+      ]
+     }
     },
     {
      "ma": "7.2d",
@@ -2861,7 +3000,26 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "x = 15/7",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "dap": [
+       "x=15/7",
+       "15/7"
+      ],
+      "phim": [
+       "x"
+      ],
+      "nhieu": [
+       "y",
+       "²"
+      ],
+      "loi_giai": [
+       "5(1 − 3x) = −2(4x + 5) ⇔ 5 − 15x = −8x − 10",
+       "−15x + 8x = −10 − 5 ⇔ −7x = −15 ⇔ x = 15/7"
+      ]
+     }
     },
     {
      "ma": "7.3a",
@@ -2870,7 +3028,29 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "x = 66/25",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "dap": [
+       "x=66/25",
+       "66/25",
+       "x=2,64",
+       "2,64"
+      ],
+      "phim": [
+       "x"
+      ],
+      "nhieu": [
+       "y",
+       "²"
+      ],
+      "loi_giai": [
+       "Mẫu chung là 30; nhân hai vế với 30 để khử mẫu",
+       "x/2 − 1/5 = 2 − x/3 ⇔ 15x − 6 = 60 − 10x",
+       "15x + 10x = 60 + 6 ⇔ 25x = 66 ⇔ x = 66/25"
+      ]
+     }
     },
     {
      "ma": "7.3b",
@@ -2879,7 +3059,27 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "x = 1/13",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "dap": [
+       "x=1/13",
+       "1/13"
+      ],
+      "phim": [
+       "x"
+      ],
+      "nhieu": [
+       "y",
+       "²"
+      ],
+      "loi_giai": [
+       "Mẫu chung là 12; nhân hai vế với 12 để khử mẫu",
+       "12 − 4(x + 5) = 9(x − 1) ⇔ 12 − 4x − 20 = 9x − 9",
+       "−4x − 9x = −9 − 12 + 20 ⇔ −13x = −1 ⇔ x = 1/13"
+      ]
+     }
     },
     {
      "ma": "7.3c",
@@ -2888,7 +3088,29 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "x = 95/2",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "dap": [
+       "x=95/2",
+       "95/2",
+       "x=47,5",
+       "47,5"
+      ],
+      "phim": [
+       "x"
+      ],
+      "nhieu": [
+       "y",
+       "²"
+      ],
+      "loi_giai": [
+       "Mẫu chung là 21; nhân hai vế với 21 để khử mẫu",
+       "18(x − 2) − 252 = 14(x − 7) ⇔ 18x − 36 − 252 = 14x − 98",
+       "18x − 14x = −98 + 36 + 252 ⇔ 4x = 190 ⇔ x = 95/2"
+      ]
+     }
     },
     {
      "ma": "7.3d",
@@ -2897,7 +3119,27 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "x = 29/12",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "dap": [
+       "x=29/12",
+       "29/12"
+      ],
+      "phim": [
+       "x"
+      ],
+      "nhieu": [
+       "y",
+       "²"
+      ],
+      "loi_giai": [
+       "Đổi hỗn số 1 1/4 thành phân số 5/4; mẫu chung là 20, nhân hai vế với 20 để khử mẫu",
+       "10(7 − 2x) − 8(2 − x) = 25 ⇔ 70 − 20x − 16 + 8x = 25",
+       "−20x + 8x = 25 − 70 + 16 ⇔ −12x = −29 ⇔ x = 29/12"
+      ]
+     }
     },
     {
      "ma": "7.4a",
@@ -2906,7 +3148,27 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "a = 3",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "dap": [
+       "a=3",
+       "3"
+      ],
+      "phim": [
+       "a"
+      ],
+      "nhieu": [
+       "x",
+       "m"
+      ],
+      "loi_giai": [
+       "Thay x bằng 4 vào phương trình đã cho, ta được một phương trình ẩn a",
+       "4 + 2a = 16 + 4a − 6a ⇔ 4 + 2a = 16 − 2a",
+       "2a + 2a = 16 − 4 ⇔ 4a = 12 ⇔ a = 3"
+      ]
+     }
     },
     {
      "ma": "7.4b",
@@ -2915,7 +3177,27 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "a = −2/3",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "dap": [
+       "a=−2/3",
+       "−2/3"
+      ],
+      "phim": [
+       "a"
+      ],
+      "nhieu": [
+       "x",
+       "m"
+      ],
+      "loi_giai": [
+       "Thay x bằng −2 vào phương trình đã cho, ta được một phương trình ẩn a",
+       "−2 + 2a = −2 − 4 + 2a · (−2) ⇔ −2 + 2a = −6 − 4a",
+       "2a + 4a = −6 + 2 ⇔ 6a = −4 ⇔ a = −2/3"
+      ]
+     }
     },
     {
      "ma": "7.5",
@@ -2924,7 +3206,75 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "m = 1: vô số nghiệm (S = ℝ); m = −1: vô nghiệm; m ≠ 1 và m ≠ −1: nghiệm duy nhất x = 1/(m + 1)",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 5,
+      "hoi": "Tuỳ theo các giá trị của m, hãy giải phương trình ẩn x sau: (m² − 1)x + 1 − m = 0.",
+      "dong": [
+       {
+        "chu": "Khi m = 1, phương trình trở thành {0}, nên phương trình {1}",
+        "o": [
+         {
+          "dung": [
+           "0x + 0 = 0"
+          ],
+          "sai": [
+           "0x + 2 = 0",
+           "2x + 0 = 0"
+          ]
+         },
+         {
+          "dung": [
+           "nghiệm đúng với mọi x"
+          ],
+          "sai": [
+           "vô nghiệm",
+           "có nghiệm duy nhất x = 1/2"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Khi m = −1, phương trình trở thành {0}, nên phương trình {1}",
+        "o": [
+         {
+          "dung": [
+           "0x + 2 = 0"
+          ],
+          "sai": [
+           "0x + 0 = 0",
+           "−2x + 2 = 0"
+          ]
+         },
+         {
+          "dung": [
+           "vô nghiệm"
+          ],
+          "sai": [
+           "nghiệm đúng với mọi x",
+           "có nghiệm x = 0"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Khi m ≠ 1 và m ≠ −1, phương trình có nghiệm duy nhất x = {0}",
+        "o": [
+         {
+          "dung": [
+           "1/(m + 1)"
+          ],
+          "sai": [
+           "1/(m − 1)",
+           "(m − 1)/(m + 1)",
+           "−1/(m + 1)"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "7.6a",
@@ -2933,7 +3283,31 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "r = 0,08, tức lãi suất năm 8%",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "dap": [
+       "8%",
+       "0,08",
+       "r=0,08",
+       "r=8%"
+      ],
+      "phim": [
+       "%",
+       "r"
+      ],
+      "nhieu": [
+       "t",
+       "x"
+      ],
+      "loi_giai": [
+       "Với t = 2 thì A = 100(1 + 2r) = 116",
+       "1 + 2r = 116 : 100 = 1,16",
+       "2r = 0,16 ⇔ r = 0,08",
+       "Vậy lãi suất năm là 8%"
+      ]
+     }
     },
     {
      "ma": "7.6b",
@@ -2942,7 +3316,28 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Sau 4 năm (t = 4)",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "dap": [
+       "4",
+       "t=4"
+      ],
+      "phim": [
+       "t"
+      ],
+      "nhieu": [
+       "r",
+       "x"
+      ],
+      "loi_giai": [
+       "Lãi suất 8,5% viết dưới dạng số thập phân là 0,085",
+       "A = 100(1 + 0,085t) = 134",
+       "1 + 0,085t = 134 : 100 = 1,34 ⇔ 0,085t = 0,34",
+       "t = 0,34 : 0,085 = 4"
+      ]
+     }
     },
     {
      "ma": "7.7a",
@@ -2951,7 +3346,30 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "C = 170/3 ≈ 56,67 °C",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "hoi": "Ở Mỹ, một đơn vị thường được sử dụng để đo nhiệt độ là độ F (°F). Công thức chuyển đổi từ độ F sang độ C là C = (5/9)(F − 32). Nhiệt độ cao nhất ở Mỹ được ghi lại ở Thung lũng Chết ở bang California là 134 °F. Nhiệt độ này tính bằng độ C là bao nhiêu?\n(Viết kết quả dạng phân số tối giản, hoặc dạng số thập phân làm tròn đến hàng phần trăm, không ghi đơn vị.)",
+      "dap": [
+       "170/3",
+       "56,67",
+       "C=170/3",
+       "C=56,67"
+      ],
+      "phim": [
+       "C"
+      ],
+      "nhieu": [
+       "F",
+       "°"
+      ],
+      "loi_giai": [
+       "C = (5/9)(134 − 32) = (5/9) · 102",
+       "= 510/9 = 170/3",
+       "Làm tròn đến hàng phần trăm, 170/3 ≈ 56,67"
+      ]
+     }
     },
     {
      "ma": "7.7b",
@@ -2960,7 +3378,58 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Không nhất thiết. Từ C = (5/9)(F − 32) thấy C < 0 khi F < 32. Vậy khi nhiệt độ dưới 0 °C thì nhiệt độ chỉ dưới 32 °F, có thể chưa giảm xuống dưới 0 °F.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "hoi": "Ở Mỹ, một đơn vị thường được sử dụng để đo nhiệt độ là độ F (°F). Công thức chuyển đổi từ độ F sang độ C là C = (5/9)(F − 32). Vào mùa đông ở Mỹ, nhiệt độ thường xuống dưới 0 °C. Có phải khi đó nhiệt độ cũng giảm xuống dưới 0 °F không?",
+      "dong": [
+       {
+        "chu": "Từ C = (5/9)(F − 32) ta có C < 0 khi {0}",
+        "o": [
+         {
+          "dung": [
+           "F < 32"
+          ],
+          "sai": [
+           "F < 0",
+           "F > 32",
+           "F < −32"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Ví dụ, với F = 23 thì C = (5/9)(23 − 32) = {0}",
+        "o": [
+         {
+          "dung": [
+           "−5"
+          ],
+          "sai": [
+           "5",
+           "−9",
+           "−16,2"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Vậy khi nhiệt độ dưới 0 °C thì nhiệt độ {0} xuống dưới 0 °F",
+        "o": [
+         {
+          "dung": [
+           "chưa chắc đã giảm"
+          ],
+          "sai": [
+           "chắc chắn cũng giảm",
+           "không bao giờ giảm"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "7.7c",
@@ -2969,7 +3438,28 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "F = −79,78 °F",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "hoi": "Ở Mỹ, một đơn vị thường được sử dụng để đo nhiệt độ là độ F (°F). Công thức chuyển đổi từ độ F sang độ C là C = (5/9)(F − 32). Nhiệt độ thấp nhất ở Mỹ được ghi lại ở khe núi Triển Vọng (Prospect Creek) bang ở Alaska là −62,1 °C. Nhiệt độ này tính bằng độ F là bao nhiêu?\n(Gõ số, không ghi đơn vị.)",
+      "dap": [
+       "−79,78",
+       "F=−79,78"
+      ],
+      "phim": [
+       "F"
+      ],
+      "nhieu": [
+       "C",
+       "°"
+      ],
+      "loi_giai": [
+       "−62,1 = (5/9)(F − 32)",
+       "F − 32 = −62,1 : (5/9) = −111,78",
+       "F = −111,78 + 32 = −79,78"
+      ]
+     }
     },
     {
      "ma": "7.8a",
@@ -2978,16 +3468,56 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "S = 0,00055",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "dap": [
+       "0,00055",
+       "S=0,00055"
+      ],
+      "phim": [
+       "S"
+      ],
+      "nhieu": [
+       "w",
+       "x"
+      ],
+      "loi_giai": [
+       "S = (0,032 · 250 − 2,5)/10000 = (8 − 2,5)/10000",
+       "= 5,5/10000 = 0,00055"
+      ]
+     }
     },
     {
      "ma": "7.8b",
-     "de": "Khi bê tông khô đi, nó sẽ co lại. Hàm lượng nước trong bê tông càng cao thì độ co càng lớn. Giả sử một dầm bê tông có hàm lượng nước là w (kg/m^3) sẽ co lại theo hệ số: S = (0,032w − 2,5)/10 000, trong đó S là phần nhỏ của chiều dài dầm ban đầu biến mất do co lại. Một thanh dầm dài 10,014 m khi bị ướt. Nếu muốn nó co lại đến 10,0135 m thì hệ số co phải là S = 0,0005. Hàm lượng nước nào sẽ cung cấp lượng co ngót này?",
+     "de": "Khi bê tông khô đi, nó sẽ co lại. Hàm lượng nước trong bê tông càng cao thì độ co càng lớn. Giả sử một dầm bê tông có hàm lượng nước là w (kg/m^3) sẽ co lại theo hệ số: S = (0,032w − 2,5)/10 000, trong đó S là phần nhỏ của chiều dài dầm ban đầu biến mất do co lại. Một thanh dầm dài 10,014 m khi bị ướt. Nếu muốn nó co lại đến 10,009 m thì hệ số co phải là S = 0,0005. Hàm lượng nước nào sẽ cung cấp lượng co ngót này?",
      "trang": 19,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "w = 234,375 kg/m^3",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "hoi": "Khi bê tông khô đi, nó sẽ co lại. Hàm lượng nước trong bê tông càng cao thì độ co càng lớn. Giả sử một dầm bê tông có hàm lượng nước là w (kg/m³) sẽ co lại theo hệ số: S = (0,032w − 2,5)/10 000, trong đó S là phần nhỏ của chiều dài dầm ban đầu biến mất do co lại. Một thanh dầm dài 10,014 m khi bị ướt. Nếu muốn nó co lại đến 10,009 m thì hệ số co phải là S = 0,0005. Hàm lượng nước nào sẽ cung cấp lượng co ngót này?\n(Gõ số, tính bằng kg/m³.)",
+      "dap": [
+       "234,375",
+       "w=234,375"
+      ],
+      "phim": [
+       "w"
+      ],
+      "nhieu": [
+       "S",
+       "x"
+      ],
+      "loi_giai": [
+       "(0,032w − 2,5)/10000 = 0,0005",
+       "0,032w − 2,5 = 0,0005 · 10000 = 5 ⇔ 0,032w = 7,5",
+       "w = 7,5 : 0,032 = 234,375"
+      ]
+     }
     }
    ]
   },
@@ -3002,7 +3532,30 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Gọi x (giờ) là thời gian nhiệt độ tăng thêm, x > 0. Phương trình: 1,5x + 18 = 26. x = 16/3 = 5 1/3. Sau 5 giờ 20 phút nhiệt độ là 26 °C",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "hoi": "Giả sử nhiệt độ tại thời điểm hiện tại là 18 °C. Dự kiến là trong những giờ tới nhiệt độ sẽ tăng thêm 1,5 °C mỗi giờ. Hỏi sau bao lâu thì nhiệt độ sẽ là 26 °C?\n(Gõ thời gian theo giờ và phút.)",
+      "dap": [
+       "5 giờ 20 phút",
+       "5 giờ 20"
+      ],
+      "phim": [
+       "giờ",
+       "phút"
+      ],
+      "nhieu": [
+       "giây",
+       "x"
+      ],
+      "loi_giai": [
+       "Gọi x (giờ) là thời gian cần tìm (x > 0); sau x giờ nhiệt độ tăng thêm 1,5x (°C)",
+       "18 + 1,5x = 26 ⇔ 1,5x = 8",
+       "x = 8 : 1,5 = 16/3",
+       "16/3 giờ là 5 giờ và 1/3 giờ, tức là 5 giờ 20 phút"
+      ]
+     }
     },
     {
      "ma": "7.10",
@@ -3011,7 +3564,27 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Gọi x (chiếc áo/ngày) là năng suất tổ thứ nhất, x ∈ ℕ, x > 8. Phương trình: 5x + 7(x − 8) = 1 000. x = 88. Tổ thứ nhất 88 chiếc áo/ngày, tổ thứ hai 80 chiếc áo/ngày",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "hoi": "Hai tổ sản xuất cùng may một loại áo. Nếu tổ thứ nhất may trong 5 ngày, tổ thứ hai may trong 7 ngày thì cả hai tổ may được 1 000 chiếc áo. Biết rằng năng suất lao động của tổ thứ nhất hơn tổ thứ hai là 8 chiếc áo/ngày. Tính năng suất lao động của mỗi tổ.\n(Gõ năng suất của tổ thứ nhất rồi của tổ thứ hai, tính bằng chiếc áo mỗi ngày, cách nhau bằng dấu ;)",
+      "dap": [
+       "88;80"
+      ],
+      "phim": [
+       ";"
+      ],
+      "nhieu": [
+       "x"
+      ],
+      "loi_giai": [
+       "Gọi x (chiếc áo/ngày) là năng suất của tổ thứ nhất (x > 8) thì năng suất của tổ thứ hai là x − 8",
+       "5x + 7(x − 8) = 1000",
+       "12x − 56 = 1000 ⇔ 12x = 1056 ⇔ x = 88",
+       "Năng suất của tổ thứ hai = 88 − 8 = 80"
+      ]
+     }
     },
     {
      "ma": "7.11",
@@ -3020,7 +3593,23 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Gọi x (ml) là lượng nước cam nguyên chất thêm vào, x > 0. Phương trình: (900·5% + x)/(900 + x) = 10%, hay 45 + x = 90 + 0,1x. x = 50. Phải thêm ít nhất 50 ml",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "hoi": "Một công ty nước giải khát quảng cáo soda cam của họ là \"có hương vị tự nhiên\", mặc dù nó chỉ chứa 5% nước cam. Theo quy định, một nước uống được gọi là \"có hương vị tự nhiên\" phải chứa ít nhất 10% nước trái cây. Nhà sản xuất này phải thêm ít nhất bao nhiêu mililít nước cam nguyên chất vào 900 ml soda cam để đảm bảo yêu cầu này?\n(Gõ số mililít.)",
+      "dap": [
+       "50"
+      ],
+      "phim": [],
+      "nhieu": [],
+      "loi_giai": [
+       "Gọi x (ml) là lượng nước cam nguyên chất cần thêm vào (x > 0)",
+       "Lượng nước cam có sẵn trong soda (ml) = 900 · 0,05 = 45",
+       "(45 + x)/(900 + x) = 0,1 ⇔ 45 + x = 90 + 0,1x",
+       "0,9x = 45 ⇔ x = 50"
+      ]
+     }
     },
     {
      "ma": "7.12",
@@ -3029,7 +3618,27 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Gọi x (cm) là chiều dài, x > 8. Phương trình: 2x + 2(x − 8) = 40. x = 14. Chiều dài 14 cm, chiều rộng 6 cm",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "hoi": "Chu vi của một hình chữ nhật là 40 cm. Chiều rộng ngắn hơn chiều dài 8 cm. Hãy tìm các kích thước của hình chữ nhật đó.\n(Gõ chiều dài rồi chiều rộng, tính bằng cm, cách nhau bằng dấu ;)",
+      "dap": [
+       "14;6"
+      ],
+      "phim": [
+       ";"
+      ],
+      "nhieu": [
+       "x"
+      ],
+      "loi_giai": [
+       "Gọi x (cm) là chiều dài của hình chữ nhật (x > 8) thì chiều rộng là x − 8 (cm)",
+       "2x + 2(x − 8) = 40",
+       "4x − 16 = 40 ⇔ 4x = 56 ⇔ x = 14",
+       "Chiều rộng (cm) = 14 − 8 = 6"
+      ]
+     }
     },
     {
      "ma": "7.13",
@@ -3038,7 +3647,27 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Gọi x là số chẵn thứ nhất. Phương trình: x + (x + 2) + (x + 4) = 54. x = 16. Ba số: 16; 18; 20",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "hoi": "Tìm ba số chẵn liên tiếp có tổng bằng 54.\n(Gõ ba số từ nhỏ đến lớn, cách nhau bằng dấu ;)",
+      "dap": [
+       "16;18;20"
+      ],
+      "phim": [
+       ";"
+      ],
+      "nhieu": [
+       "x"
+      ],
+      "loi_giai": [
+       "Gọi x là số chẵn nhỏ nhất thì hai số chẵn tiếp theo là x + 2 và x + 4",
+       "x + (x + 2) + (x + 4) = 54",
+       "3x + 6 = 54 ⇔ 3x = 48 ⇔ x = 16",
+       "Ba số cần tìm là 16; 18; 20"
+      ]
+     }
     },
     {
      "ma": "7.14",
@@ -3047,7 +3676,22 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Gọi x là số kilômét đi trong ngày, x > 0. Phương trình (nghìn đồng): 15x + 3 000 = 20x + 2 500. x = 100. Đi 100 km thì chi phí hai công ty như nhau",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "hoi": "Hai công ty cho thuê ô tô du lịch tính phí như sau: Công ty A tính phí 3 triệu đồng một ngày và 15 nghìn đồng cho mỗi kilômét di chuyển. Công ty B tính phí 2,5 triệu đồng một ngày và 20 nghìn đồng cho mỗi kilômét di chuyển. Hỏi trong một ngày, số kilômét di chuyển bằng bao nhiêu thì chi phí thuê xe của hai công ty là như nhau?\n(Gõ số kilômét.)",
+      "dap": [
+       "100"
+      ],
+      "phim": [],
+      "nhieu": [],
+      "loi_giai": [
+       "Gọi x là số kilômét di chuyển trong ngày (x > 0); chi phí (nghìn đồng) của công ty A là 3000 + 15x, của công ty B là 2500 + 20x",
+       "3000 + 15x = 2500 + 20x",
+       "20x − 15x = 3000 − 2500 ⇔ 5x = 500 ⇔ x = 100"
+      ]
+     }
     },
     {
      "ma": "7.15",
@@ -3056,7 +3700,22 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Gọi x là số ngày kể từ hiện tại, x > 0. Phương trình: 345 + 115x = 255 + 130x. x = 6. Sau 6 ngày",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "hoi": "Trong đợt phát động làm kế hoạch nhỏ của một trường trung học cơ sở, các học sinh khối 7 đã thu nhặt được 345 vỏ lon và dự định sẽ thu nhặt 115 lon trong mỗi ngày sắp tới. Các học sinh khối 8 đã thu nhặt được 255 vỏ lon và dự định sẽ thu nhặt 130 vỏ lon trong mỗi ngày sắp tới. Nếu cả hai khối lớp này tiếp tục thu nhặt được số vỏ lon đúng như dự định thì sau bao nhiêu ngày, kể từ thời điểm hiện tại, số vỏ lon mà hai khối lớp thu được sẽ bằng nhau?\n(Gõ số ngày.)",
+      "dap": [
+       "6"
+      ],
+      "phim": [],
+      "nhieu": [],
+      "loi_giai": [
+       "Gọi x là số ngày kể từ thời điểm hiện tại (x > 0); khi đó khối 7 thu được 345 + 115x vỏ lon, khối 8 thu được 255 + 130x vỏ lon",
+       "345 + 115x = 255 + 130x",
+       "130x − 115x = 345 − 255 ⇔ 15x = 90 ⇔ x = 6"
+      ]
+     }
     },
     {
      "ma": "7.16",
@@ -3065,7 +3724,23 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Gọi x (km/h) là vận tốc riêng của tàu, x > 2. Phương trình: 2(x + 2) = 2,5(x − 2). x = 18. Khoảng cách AB = 2·(18 + 2) = 40 km",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "hoi": "Một tàu thuỷ du lịch xuôi dòng từ bến A đến bến B mất 2 giờ và ngược dòng từ bến B về bến A hết 2,5 giờ. Tính khoảng cách giữa hai bến A và B, biết rằng vận tốc của dòng nước là 2 km/h và vận tốc riêng của tàu thuỷ là không đổi.\n(Gõ số kilômét.)",
+      "dap": [
+       "40"
+      ],
+      "phim": [],
+      "nhieu": [],
+      "loi_giai": [
+       "Gọi x (km/h) là vận tốc riêng của tàu (x > 2); vận tốc xuôi dòng là x + 2, vận tốc ngược dòng là x − 2 (km/h)",
+       "2(x + 2) = 2,5(x − 2)",
+       "2x + 4 = 2,5x − 5 ⇔ 0,5x = 9 ⇔ x = 18",
+       "Khoảng cách AB (km) = 2 · (18 + 2) = 40"
+      ]
+     }
     }
    ]
   },
@@ -3080,7 +3755,57 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "a) Có, y là hàm số của x; b) Không, y không là hàm số của x",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "hoi": "Các giá trị tương ứng của hai đại lượng x và y cho bởi các bảng dưới đây. Đại lượng y có phải là một hàm số của x không?\na) x lần lượt là −3; −1; 0; 2; 4 và y tương ứng là 1; 1; 1; 1; 1.\nb) x lần lượt là −2; 1; 0; 1; 2 và y tương ứng là −2; 1; 0; 2; 2.",
+      "dong": [
+       {
+        "chu": "a) y {0} hàm số của x",
+        "o": [
+         {
+          "dung": [
+           "là"
+          ],
+          "sai": [
+           "không phải là"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "b) y {0} hàm số của x",
+        "o": [
+         {
+          "dung": [
+           "không phải là"
+          ],
+          "sai": [
+           "là"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Ở bảng b), giá trị x = {0} ứng với hai giá trị khác nhau của y",
+        "o": [
+         {
+          "dung": [
+           "1"
+          ],
+          "sai": [
+           "−2",
+           "0",
+           "2"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "7.18",
@@ -3089,7 +3814,57 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Có, y là hàm số của x; lúc 4 tháng tuổi em bé nặng 6,2 kg",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "hoi": "Mối quan hệ giữa số tháng tuổi x (tháng) và cân nặng y (kg) của một em bé trong 6 tháng đầu đời được cho bởi bảng sau: tháng tuổi x lần lượt là 1; 2; 3; 4; 5; 6 thì cân nặng y (kg) tương ứng là 3,6; 4,5; 5,3; 6,2; 7; 7,5.\nHỏi cân nặng y của em bé đó có phải là hàm số của số tháng tuổi x không? Hãy xác định cân nặng của em bé đó lúc 4 tháng tuổi.",
+      "dong": [
+       {
+        "chu": "Cân nặng y {0} hàm số của số tháng tuổi x",
+        "o": [
+         {
+          "dung": [
+           "là"
+          ],
+          "sai": [
+           "không phải là"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Vì {0}",
+        "o": [
+         {
+          "dung": [
+           "mỗi giá trị của x chỉ ứng với đúng một giá trị của y"
+          ],
+          "sai": [
+           "các giá trị của y tăng dần theo x",
+           "các giá trị của y đều khác nhau"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Lúc 4 tháng tuổi, em bé nặng {0} kg",
+        "o": [
+         {
+          "dung": [
+           "6,2"
+          ],
+          "sai": [
+           "5,3",
+           "7",
+           "4,5"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "7.19a",
@@ -3098,7 +3873,25 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "f(0) = −1; f(−1) = 1",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "hoi": "Cho hàm số y = f(x) = 2x² − 1. Tính f(0); f(−1).\n(Gõ f(0) rồi f(−1), cách nhau bằng dấu ;)",
+      "dap": [
+       "−1;1"
+      ],
+      "phim": [
+       ";"
+      ],
+      "nhieu": [
+       "x"
+      ],
+      "loi_giai": [
+       "f(0) = 2 · 0² − 1 = −1",
+       "f(−1) = 2 · (−1)² − 1 = 2 − 1 = 1"
+      ]
+     }
     },
     {
      "ma": "7.19b",
@@ -3107,7 +3900,26 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "x = −2; −1; 0; 1; 2 thì y = 7; 1; −1; 1; 7",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "hoi": "Cho hàm số y = f(x) = 2x² − 1. Hoàn thành bảng giá trị của y = f(x) với x lần lượt bằng −2; −1; 0; 1; 2.\n(Gõ các giá trị của y theo thứ tự đó, cách nhau bằng dấu ;)",
+      "dap": [
+       "7;1;−1;1;7"
+      ],
+      "phim": [
+       ";"
+      ],
+      "nhieu": [
+       "x"
+      ],
+      "loi_giai": [
+       "f(−2) = 2 · (−2)² − 1 = 7; f(−1) = 2 · (−1)² − 1 = 1",
+       "f(0) = 2 · 0² − 1 = −1",
+       "f(1) = 2 · 1² − 1 = 1; f(2) = 2 · 2² − 1 = 7"
+      ]
+     }
     },
     {
      "ma": "7.19c",
@@ -3116,23 +3928,131 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "x = 3 hoặc x = −3",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "hoi": "Cho hàm số y = f(x) = 2x² − 1. Tìm tất cả các giá trị x sao cho y = 17.\n(Gõ các giá trị của x, cách nhau bằng dấu ;)",
+      "dap": [
+       "x=3;x=−3",
+       "x=−3;x=3",
+       "3;−3",
+       "−3;3"
+      ],
+      "phim": [
+       "x",
+       ";"
+      ],
+      "nhieu": [
+       "y",
+       "²"
+      ],
+      "loi_giai": [
+       "2x² − 1 = 17 ⇔ 2x² = 18 ⇔ x² = 9",
+       "Hai số có bình phương bằng 9 là 3 và −3; vậy x = 3 hoặc x = −3"
+      ]
+     }
     },
     {
      "ma": "7.20a",
-     "de": "Xác định toạ độ của các điểm A; B; C; D trong hình bên (Hình bên: mặt phẳng toạ độ Oxy trên lưới ô vuông, mỗi ô 1 đơn vị; A(−3; 4), B(−2; −2), C(1; −3), D(3; 0)).",
+     "de": "Xác định toạ độ của các điểm A; B; C; D trong hình bên.",
      "trang": 26,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "A(−3; 4); B(−2; −2); C(1; −3); D(3; 0)",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "hinh": [
+      "sbttoan8t2/7.20.tr26.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "hoi": "Xác định toạ độ của các điểm A, B, C, D trong hình dưới đây (mỗi ô vuông có cạnh 1 đơn vị).",
+      "dong": [
+       {
+        "chu": "Điểm A: {0}",
+        "o": [
+         {
+          "dung": [
+           "(−3; 4)"
+          ],
+          "sai": [
+           "(4; −3)",
+           "(3; 4)",
+           "(−3; 3)"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Điểm B: {0}",
+        "o": [
+         {
+          "dung": [
+           "(−2; −2)"
+          ],
+          "sai": [
+           "(2; −2)",
+           "(−2; 2)",
+           "(−1; −2)"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Điểm C: {0}",
+        "o": [
+         {
+          "dung": [
+           "(1; −3)"
+          ],
+          "sai": [
+           "(−3; 1)",
+           "(1; 3)",
+           "(−1; −3)"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Điểm D: {0}",
+        "o": [
+         {
+          "dung": [
+           "(3; 0)"
+          ],
+          "sai": [
+           "(0; 3)",
+           "(3; 3)"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "7.20b",
      "de": "Xác định các điểm E(0; −1) và F(−2; 3) trong hình bên.",
      "trang": 26,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "hinh": [
+      "sbttoan8t2/7.20b-chon-1.webp",
+      "sbttoan8t2/7.20b-chon-2.webp"
+     ],
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Xác định các điểm E(0; −1) và F(−2; 3) trong mặt phẳng toạ độ Oxy.\nHình nào dưới đây biểu diễn đúng hai điểm E và F?",
+      "cac": [
+       "Hình 1",
+       "Hình 2",
+       "Hình 3",
+       "Hình 4"
+      ],
+      "dap": "B"
+     }
     },
     {
      "ma": "7.21",
@@ -3141,7 +4061,23 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Đồ thị gồm 5 điểm A(−2; 6), B(−1; 3), O(0; 0), C(1; −3) và D(2; −6) biểu diễn trên mặt phẳng toạ độ Oxy.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "hinh": [
+      "sbttoan8t2/7.21-chon-1.webp",
+      "sbttoan8t2/7.21-chon-2.webp"
+     ],
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Hàm số y = f(x) được cho bởi bảng sau: x nhận các giá trị −2; −1; 0; 1; 2 với y = f(x) tương ứng là 6; 3; 0; −3; −6. Vẽ đồ thị của hàm số y = f(x).\nHình nào dưới đây là đồ thị của hàm số y = f(x)?",
+      "cac": [
+       "Hình 1",
+       "Hình 2",
+       "Hình 3",
+       "Hình 4"
+      ],
+      "dap": "C"
+     }
     },
     {
      "ma": "7.22",
@@ -3150,7 +4086,42 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Không. Với x = 0 có hai giá trị tương ứng của y là y = −1 và y = 1, nên hệ thức y^2 + x^2 = 1 không xác định một hàm số y = f(x).",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "Hệ thức y² + x² = 1 có xác định một hàm số y = f(x) không? Vì sao?",
+      "dong": [
+       {
+        "chu": "Hệ thức y² + x² = 1 {0} một hàm số y = f(x)",
+        "o": [
+         {
+          "dung": [
+           "không xác định"
+          ],
+          "sai": [
+           "xác định"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Vì với x = 0 thì y² = 1, {0}",
+        "o": [
+         {
+          "dung": [
+           "ta có hai giá trị tương ứng là y = 1 và y = −1"
+          ],
+          "sai": [
+           "ta chỉ có một giá trị tương ứng là y = 1",
+           "không có giá trị nào của y"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "7.23",
@@ -3159,7 +4130,33 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "S = (1/2)x^2",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "dap": [
+       "S=(1/2)x²",
+       "(1/2)x²",
+       "S=x²/2",
+       "x²/2",
+       "S=0,5x²",
+       "0,5x²"
+      ],
+      "phim": [
+       "S",
+       "x",
+       "²"
+      ],
+      "nhieu": [
+       "y",
+       "³",
+       "√"
+      ],
+      "loi_giai": [
+       "Chiều rộng = x : 2 = x/2",
+       "S = x · (x/2) = (1/2)x²"
+      ]
+     }
     },
     {
      "ma": "7.24",
@@ -3168,7 +4165,77 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "a) Từ 7 phút đến 7,4 phút; b) Từ 4,2 phút đến 6 phút; c) 30 km/h; d) Từ 7,6 phút đến 8 phút",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "hinh": [
+      "sbttoan8t2/7.24.tr27.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "hoi": "Đồ thị dưới đây biểu diễn vận tốc xe máy v (tính bằng km/h) của anh Nam dưới dạng một hàm số của thời gian t (tính bằng phút). Dựa vào đồ thị, hãy trả lời các câu hỏi sau:\na) Anh Nam đi nhanh nhất trong khoảng thời gian nào?\nb) Vận tốc của anh Nam bằng 0 trong khoảng thời gian nào?\nc) Vận tốc của anh Nam trong khoảng thời gian từ 2 phút đến 4 phút là bao nhiêu?\nd) Trong khoảng thời gian nào anh Nam đi với vận tốc 38 km/h?",
+      "dong": [
+       {
+        "chu": "a) Anh Nam đi nhanh nhất từ {0}",
+        "o": [
+         {
+          "dung": [
+           "7 phút đến 7,4 phút"
+          ],
+          "sai": [
+           "2 phút đến 4 phút",
+           "6 phút đến 7 phút",
+           "7,6 phút đến 8 phút"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "b) Vận tốc của anh Nam bằng 0 từ {0}",
+        "o": [
+         {
+          "dung": [
+           "4,2 phút đến 6 phút"
+          ],
+          "sai": [
+           "4 phút đến 4,2 phút",
+           "0 phút đến 2 phút",
+           "8 phút đến 9,1 phút"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "c) Vận tốc từ 2 phút đến 4 phút là {0}",
+        "o": [
+         {
+          "dung": [
+           "30 km/h"
+          ],
+          "sai": [
+           "2 km/h",
+           "15 km/h",
+           "50 km/h"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "d) Anh Nam đi với vận tốc 38 km/h từ {0}",
+        "o": [
+         {
+          "dung": [
+           "7,6 phút đến 8 phút"
+          ],
+          "sai": [
+           "7,4 phút đến 7,6 phút",
+           "8 phút đến 9,1 phút",
+           "7 phút đến 7,4 phút"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     }
    ]
   },
@@ -3183,7 +4250,28 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "m ≠ 1/2",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "dap": [
+       "m≠1/2",
+       "m≠0,5"
+      ],
+      "phim": [
+       "m",
+       "≠"
+      ],
+      "nhieu": [
+       "x",
+       ">",
+       "<"
+      ],
+      "loi_giai": [
+       "Hàm số đã cho là hàm số bậc nhất khi hệ số của x khác 0",
+       "1 − 2m ≠ 0 ⇔ 2m ≠ 1 ⇔ m ≠ 1/2"
+      ]
+     }
     },
     {
      "ma": "7.25b",
@@ -3192,7 +4280,27 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "m = 1",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "dap": [
+       "m=1",
+       "1"
+      ],
+      "phim": [
+       "m"
+      ],
+      "nhieu": [
+       "x",
+       "≠"
+      ],
+      "loi_giai": [
+       "Đồ thị đi qua điểm (−1; 4) nên thay x bằng −1, y bằng 4 vào công thức của hàm số",
+       "4 = (1 − 2m) · (−1) + 3 ⇔ 4 = 2m + 2",
+       "2m = 2 ⇔ m = 1; giá trị này thoả mãn m ≠ 1/2"
+      ]
+     }
     },
     {
      "ma": "7.25c",
@@ -3201,7 +4309,26 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Với m = 1: y = −x + 3; x = −2; −1; 0; 1; 2 thì y = 5; 4; 3; 2; 1",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "hoi": "Cho hàm số y = (1 − 2m)x + 3, với m là giá trị để đồ thị hàm số đi qua điểm (−1; 4) (câu b). Hãy hoàn thành bảng giá trị của y với x lần lượt bằng −2; −1; 0; 1; 2.\n(Gõ các giá trị của y theo thứ tự đó, cách nhau bằng dấu ;)",
+      "dap": [
+       "5;4;3;2;1"
+      ],
+      "phim": [
+       ";"
+      ],
+      "nhieu": [
+       "x"
+      ],
+      "loi_giai": [
+       "Theo câu b, m = 1 nên y = (1 − 2 · 1)x + 3 = −x + 3",
+       "Với x = −2 thì y = −(−2) + 3 = 5; với x = −1 thì y = −(−1) + 3 = 4",
+       "Với x = 0 thì y = 3; với x = 1 thì y = −1 + 3 = 2; với x = 2 thì y = −2 + 3 = 1"
+      ]
+     }
     },
     {
      "ma": "7.26a",
@@ -3210,7 +4337,23 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Đồ thị của y = 2x + 3 là đường thẳng đi qua hai điểm (0; 3) và (−3/2; 0).",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "hinh": [
+      "sbttoan8t2/7.26a-chon-1.webp",
+      "sbttoan8t2/7.26a-chon-2.webp"
+     ],
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Vẽ đồ thị của hàm số y = 2x + 3.\nHình nào dưới đây là đồ thị của hàm số y = 2x + 3?",
+      "cac": [
+       "Hình 1",
+       "Hình 2",
+       "Hình 3",
+       "Hình 4"
+      ],
+      "dap": "A"
+     }
     },
     {
      "ma": "7.26b",
@@ -3219,7 +4362,23 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Đồ thị của y = −3x + 5 là đường thẳng đi qua hai điểm (0; 5) và (5/3; 0).",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "hinh": [
+      "sbttoan8t2/7.26b-chon-1.webp",
+      "sbttoan8t2/7.26b-chon-2.webp"
+     ],
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Vẽ đồ thị của hàm số y = −3x + 5.\nHình nào dưới đây là đồ thị của hàm số y = −3x + 5?",
+      "cac": [
+       "Hình 1",
+       "Hình 2",
+       "Hình 3",
+       "Hình 4"
+      ],
+      "dap": "D"
+     }
     },
     {
      "ma": "7.26c",
@@ -3228,7 +4387,21 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Đồ thị của y = (1/2)x là đường thẳng đi qua gốc toạ độ O(0; 0) và điểm (2; 1).",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "hinh": [
+      "sbttoan8t2/7.26c-chon-1.webp"
+     ],
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Vẽ đồ thị của hàm số y = (1/2)x.\nHình nào dưới đây là đồ thị của hàm số y = (1/2)x?",
+      "cac": [
+       "Hình 1",
+       "Hình 2",
+       "Hình 3"
+      ],
+      "dap": "B"
+     }
     },
     {
      "ma": "7.26d",
@@ -3237,7 +4410,21 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Đồ thị của y = −(3/2)x là đường thẳng đi qua gốc toạ độ O(0; 0) và điểm (−2; 3).",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "hinh": [
+      "sbttoan8t2/7.26d-chon-1.webp"
+     ],
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Vẽ đồ thị của hàm số y = −(3/2)x.\nHình nào dưới đây là đồ thị của hàm số y = −(3/2)x?",
+      "cac": [
+       "Hình 1",
+       "Hình 2",
+       "Hình 3"
+      ],
+      "dap": "C"
+     }
     },
     {
      "ma": "7.27a",
@@ -3246,7 +4433,25 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "I(−1; 3)",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "hoi": "Cho ba đường thẳng: (d₁): y = −2x + 1; (d₂): y = x + 4 và (d₃): y = 2mx − 3 (m ≠ 0). Tìm giao điểm của hai đường thẳng (d₁) và (d₂).\n(Gõ toạ độ giao điểm dạng (hoành độ; tung độ).)",
+      "dap": [
+       "(−1;3)"
+      ],
+      "phim": [
+       ";"
+      ],
+      "nhieu": [
+       "x"
+      ],
+      "loi_giai": [
+       "−2x + 1 = x + 4 ⇔ −3x = 3 ⇔ x = −1; đó là hoành độ giao điểm của (d₁) và (d₂)",
+       "Với x = −1 thì y = −1 + 4 = 3; vậy giao điểm là (−1; 3)"
+      ]
+     }
     },
     {
      "ma": "7.27b",
@@ -3255,7 +4460,26 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "m = −3",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "dap": [
+       "m=−3",
+       "−3"
+      ],
+      "phim": [
+       "m"
+      ],
+      "nhieu": [
+       "x",
+       "≠"
+      ],
+      "loi_giai": [
+       "Ba đường thẳng đồng quy khi (d₃) đi qua giao điểm (−1; 3) của (d₁) và (d₂)",
+       "3 = 2m · (−1) − 3 ⇔ −2m = 6 ⇔ m = −3; giá trị này thoả mãn m ≠ 0"
+      ]
+     }
     },
     {
      "ma": "7.28",
@@ -3264,7 +4488,30 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "C = 80x + 50 (nghìn đồng); với 3 giờ lao động: C = 290 nghìn đồng",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "hoi": "Một cửa hàng sửa chữa máy điều hoà không khí tính phí bao gồm 50 nghìn đồng cho một cuộc gọi dịch vụ và 80 nghìn đồng cho mỗi giờ nhân công. Viết hàm số biểu thị phí C (tính theo nghìn đồng) cho một cuộc gọi dịch vụ với x (giờ) lao động. Phí dịch vụ sẽ là bao nhiêu nếu có 3 giờ lao động?\n(Gõ công thức của C, rồi phí dịch vụ khi có 3 giờ lao động (nghìn đồng), cách nhau bằng dấu ;)",
+      "dap": [
+       "C=80x+50;290",
+       "80x+50;290"
+      ],
+      "phim": [
+       "C",
+       "x",
+       ";"
+      ],
+      "nhieu": [
+       "y",
+       "x²",
+       "%"
+      ],
+      "loi_giai": [
+       "Phí gồm 50 nghìn đồng cho cuộc gọi dịch vụ và 80x nghìn đồng cho x giờ nhân công, nên C = 80x + 50",
+       "Với x = 3 thì C = 80 · 3 + 50 = 290"
+      ]
+     }
     },
     {
      "ma": "7.29a",
@@ -3273,7 +4520,27 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "y = 0,3x + 4,5 (triệu đồng)",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "dap": [
+       "y=0,3x+4,5",
+       "0,3x+4,5"
+      ],
+      "phim": [
+       "x",
+       "y"
+      ],
+      "nhieu": [
+       "x²",
+       "z"
+      ],
+      "loi_giai": [
+       "300 nghìn đồng là 0,3 triệu đồng",
+       "Sau x tuần, anh Nam tiết kiệm thêm được 0,3x triệu đồng, nên y = 0,3x + 4,5"
+      ]
+     }
     },
     {
      "ma": "7.29b",
@@ -3282,7 +4549,48 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "35 tuần. Đồ thị là đường thẳng y = 0,3x + 4,5 đi qua (0; 4,5) và (35; 15)",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "hinh": [
+      "sbttoan8t2/7.29b-chon-1.webp",
+      "sbttoan8t2/7.29b-chon-2.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "Anh Nam đang tiết kiệm tiền để mua một chiếc máy tính mới với giá 15 triệu đồng. Anh Nam đã có 4,5 triệu đồng và dự định sẽ tiết kiệm 300 nghìn đồng mỗi tuần. Gọi y (triệu đồng) là số tiền anh Nam tiết kiệm được sau x (tuần). Vẽ đồ thị của hàm số y = f(x). Từ đó xác định số tuần anh Nam sẽ tiết kiệm đủ tiền để mua chiếc máy tính đó.",
+      "dong": [
+       {
+        "chu": "Đồ thị của hàm số y = f(x): {0}",
+        "o": [
+         {
+          "dung": [
+           "Hình 4"
+          ],
+          "sai": [
+           "Hình 1",
+           "Hình 2",
+           "Hình 3"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Số tuần anh Nam cần tiết kiệm để đủ tiền mua máy tính: {0}",
+        "o": [
+         {
+          "dung": [
+           "35"
+          ],
+          "sai": [
+           "50",
+           "65",
+           "3,5"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "7.30a",
@@ -3291,7 +4599,43 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "y = 1,852x; giá trị âm của x không có ý nghĩa vì chiều dài là đại lượng không âm",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "Hải lí (còn gọi là dặm biển) là một đơn vị chiều dài hàng hải và 1 hải lí bằng 1,852 km. Viết công thức biểu thị y (km) theo x (hải lí). Giá trị âm của x có ý nghĩa gì trong tình huống này không? Giải thích.",
+      "dong": [
+       {
+        "chu": "Công thức: y = {0}",
+        "o": [
+         {
+          "dung": [
+           "1,852x"
+          ],
+          "sai": [
+           "x/1,852",
+           "x + 1,852",
+           "1852x"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Giá trị âm của x {0}",
+        "o": [
+         {
+          "dung": [
+           "không có ý nghĩa, vì độ dài là đại lượng không âm"
+          ],
+          "sai": [
+           "có ý nghĩa, vì khi x âm thì y cũng âm",
+           "có ý nghĩa, vì hàm số y = 1,852x xác định với mọi x"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "7.30b",
@@ -3300,7 +4644,23 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Đồ thị của y = 1,852x (với x không âm) là một phần đường thẳng xuất phát từ gốc toạ độ O, đi qua điểm (5; 9,26).",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "hinh": [
+      "sbttoan8t2/7.30b-chon-1.webp",
+      "sbttoan8t2/7.30b-chon-2.webp"
+     ],
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Hải lí (còn gọi là dặm biển) là một đơn vị chiều dài hàng hải và 1 hải lí bằng 1,852 km. Gọi y (km) là độ dài của x hải lí. Vẽ đồ thị của hàm số y = f(x) biểu thị y theo x.\nHình nào dưới đây là đồ thị của hàm số đó?",
+      "cac": [
+       "Hình 1",
+       "Hình 2",
+       "Hình 3",
+       "Hình 4"
+      ],
+      "dap": "A"
+     }
     },
     {
      "ma": "7.30c",
@@ -3309,7 +4669,21 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "648,2 km",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "hoi": "Hải lí (còn gọi là dặm biển) là một đơn vị chiều dài hàng hải và 1 hải lí bằng 1,852 km. Một hành trình đi biển dài 350 hải lí. Hỏi hành trình đó dài bao nhiêu kilômét?\n(Gõ số kilômét.)",
+      "dap": [
+       "648,2"
+      ],
+      "phim": [],
+      "nhieu": [],
+      "loi_giai": [
+       "1 hải lí bằng 1,852 km nên x hải lí dài 1,852x km",
+       "Với x = 350 thì y = 1,852 · 350 = 648,2"
+      ]
+     }
     },
     {
      "ma": "7.31a",
@@ -3318,7 +4692,27 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "C = 10x + 1 500 (nghìn đồng)",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "dap": [
+       "C=10x+1500",
+       "10x+1500"
+      ],
+      "phim": [
+       "C",
+       "x"
+      ],
+      "nhieu": [
+       "y",
+       "x²"
+      ],
+      "loi_giai": [
+       "1,5 triệu đồng là 1500 nghìn đồng",
+       "Đi x km thì phí di chuyển là 10x nghìn đồng, nên C = 10x + 1500"
+      ]
+     }
     },
     {
      "ma": "7.31b",
@@ -3327,7 +4721,21 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "C = 3 300 nghìn đồng, tức 3,3 triệu đồng",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "hoi": "Một công ty cho thuê ô tô tính phí bao gồm 1,5 triệu đồng/ngày và 10 nghìn đồng cho mỗi kilômét di chuyển. Chi phí thuê xe trong ngày là bao nhiêu nếu trong ngày đó xe di chuyển quãng đường tổng cộng dài 180 km?\n(Gõ số, tính bằng nghìn đồng.)",
+      "dap": [
+       "3300"
+      ],
+      "phim": [],
+      "nhieu": [],
+      "loi_giai": [
+       "Chi phí mỗi ngày gồm 1500 nghìn đồng tiền thuê và 10 nghìn đồng cho mỗi kilômét",
+       "Với x = 180 thì C = 10 · 180 + 1500 = 3300"
+      ]
+     }
     },
     {
      "ma": "7.32a",
@@ -3336,14 +4744,50 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "V = −80x + 640 (triệu đồng)",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "dap": [
+       "V=640−80x",
+       "640−80x"
+      ],
+      "phim": [
+       "V",
+       "x"
+      ],
+      "nhieu": [
+       "y",
+       "x²"
+      ],
+      "loi_giai": [
+       "Mỗi năm giá trị của mỗi chiếc xe giảm 80 triệu đồng, nên sau x năm giảm 80x triệu đồng",
+       "V = 640 − 80x"
+      ]
+     }
     },
     {
      "ma": "7.32b",
      "de": "Giá trị sổ sách là giá trị của tài sản mà một công ty sử dụng để tạo ra bảng cân đối kế toán của mình. Một số công ty khấu hao tài sản của họ bằng cách sử dụng phương pháp khấu hao đường thẳng để giá trị của tài sản giảm đi một lượng cố định mỗi năm. Mức suy giảm phụ thuộc vào thời gian sử dụng hữu ích mà công ty đặt vào tài sản. Giả sử rằng một công ty vận tải vừa mua một số ô tô mới với giá là 640 triệu đồng một chiếc. Công ty lựa chọn khấu hao từng chiếc xe theo phương pháp khấu hao đường thẳng trong vòng 8 năm. Điều này có nghĩa là sau mỗi năm, mỗi chiếc xe sẽ giảm giá 640 : 8 = 80 triệu đồng. Vẽ đồ thị của hàm số bậc nhất tìm được ở câu a.",
      "trang": 31,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "hinh": [
+      "sbttoan8t2/7.32b-chon-1.webp",
+      "sbttoan8t2/7.32b-chon-2.webp"
+     ],
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Một công ty vận tải vừa mua một số ô tô mới với giá là 640 triệu đồng một chiếc và khấu hao từng chiếc xe theo phương pháp khấu hao đường thẳng trong vòng 8 năm, tức là sau mỗi năm, mỗi chiếc xe giảm giá 640 : 8 = 80 triệu đồng. Vẽ đồ thị của hàm số bậc nhất biểu thị giá trị sổ sách V (triệu đồng) của mỗi chiếc ô tô theo tuổi x (năm) của nó (trục tung là V).\nHình nào dưới đây là đồ thị của hàm số đó?",
+      "cac": [
+       "Hình 1",
+       "Hình 2",
+       "Hình 3",
+       "Hình 4"
+      ],
+      "dap": "C"
+     }
     },
     {
      "ma": "7.32c",
@@ -3352,7 +4796,21 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "V = 400 triệu đồng",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "hoi": "Giá trị sổ sách là giá trị của tài sản mà một công ty sử dụng để tạo ra bảng cân đối kế toán của mình. Một số công ty khấu hao tài sản của họ bằng cách sử dụng phương pháp khấu hao đường thẳng để giá trị của tài sản giảm đi một lượng cố định mỗi năm. Mức suy giảm phụ thuộc vào thời gian sử dụng hữu ích mà công ty đặt vào tài sản. Giả sử rằng một công ty vận tải vừa mua một số ô tô mới với giá là 640 triệu đồng một chiếc. Công ty lựa chọn khấu hao từng chiếc xe theo phương pháp khấu hao đường thẳng trong vòng 8 năm. Điều này có nghĩa là sau mỗi năm, mỗi chiếc xe sẽ giảm giá 640 : 8 = 80 triệu đồng. Giá trị sổ sách của mỗi chiếc xe sau 3 năm là bao nhiêu?\n(Gõ số, tính bằng triệu đồng.)",
+      "dap": [
+       "400"
+      ],
+      "phim": [],
+      "nhieu": [],
+      "loi_giai": [
+       "Sau 3 năm, mức giảm (triệu đồng) = 3 · 80 = 240",
+       "V = 640 − 240 = 400"
+      ]
+     }
     },
     {
      "ma": "7.32d",
@@ -3361,7 +4819,21 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Sau 6 năm (x = 6)",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "hoi": "Giá trị sổ sách là giá trị của tài sản mà một công ty sử dụng để tạo ra bảng cân đối kế toán của mình. Một số công ty khấu hao tài sản của họ bằng cách sử dụng phương pháp khấu hao đường thẳng để giá trị của tài sản giảm đi một lượng cố định mỗi năm. Mức suy giảm phụ thuộc vào thời gian sử dụng hữu ích mà công ty đặt vào tài sản. Giả sử rằng một công ty vận tải vừa mua một số ô tô mới với giá là 640 triệu đồng một chiếc. Công ty lựa chọn khấu hao từng chiếc xe theo phương pháp khấu hao đường thẳng trong vòng 8 năm. Điều này có nghĩa là sau mỗi năm, mỗi chiếc xe sẽ giảm giá 640 : 8 = 80 triệu đồng. Khi nào giá trị sổ sách của mỗi chiếc xe là 160 triệu đồng?\n(Gõ số năm.)",
+      "dap": [
+       "6"
+      ],
+      "phim": [],
+      "nhieu": [],
+      "loi_giai": [
+       "640 − 80x = 160",
+       "80x = 640 − 160 = 480 ⇔ x = 6"
+      ]
+     }
     }
    ]
   },
@@ -3376,7 +4848,28 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "y = −3x + 5",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "dap": [
+       "y=−3x+5",
+       "−3x+5"
+      ],
+      "phim": [
+       "x",
+       "y"
+      ],
+      "nhieu": [
+       "x²",
+       "z"
+      ],
+      "loi_giai": [
+       "Hệ số góc là −3 nên hàm số có dạng y = −3x + b",
+       "Đồ thị đi qua điểm (1; 2) nên 2 = −3 · 1 + b ⇔ b = 5",
+       "Hàm số cần tìm là y = −3x + 5"
+      ]
+     }
     },
     {
      "ma": "7.34",
@@ -3385,7 +4878,28 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "y = 2x + 6",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "dap": [
+       "y=2x+6",
+       "2x+6"
+      ],
+      "phim": [
+       "x",
+       "y"
+      ],
+      "nhieu": [
+       "x²",
+       "z"
+      ],
+      "loi_giai": [
+       "Hệ số góc là 2 nên hàm số có dạng y = 2x + b",
+       "Đồ thị cắt trục hoành tại điểm có hoành độ −3, tức là đi qua điểm (−3; 0), nên 0 = 2 · (−3) + b ⇔ b = 6",
+       "Hàm số cần tìm là y = 2x + 6"
+      ]
+     }
     },
     {
      "ma": "7.35",
@@ -3394,7 +4908,98 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Song song: y = 2x + 1 và y = 2x + 2; y = −3x + 1 và y = −3x + 2. Cắt nhau: y = 2x + 1 và y = −3x + 1; y = 2x + 1 và y = −3x + 2; y = 2x + 2 và y = −3x + 1; y = 2x + 2 và y = −3x + 2",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 6,
+      "hoi": "Hãy chỉ ra các cặp đường thẳng song song và các cặp đường thẳng cắt nhau trong các đường thẳng sau:\na) y = 2x + 1; b) y = −3x + 1; c) y = −3x + 2; d) y = 2x + 2.\nHai đường thẳng trong mỗi cặp sau song song, cắt nhau hay trùng nhau?",
+      "dong": [
+       {
+        "chu": "a) và b): {0}",
+        "o": [
+         {
+          "dung": [
+           "cắt nhau"
+          ],
+          "sai": [
+           "song song",
+           "trùng nhau"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "a) và c): {0}",
+        "o": [
+         {
+          "dung": [
+           "cắt nhau"
+          ],
+          "sai": [
+           "song song",
+           "trùng nhau"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "a) và d): {0}",
+        "o": [
+         {
+          "dung": [
+           "song song"
+          ],
+          "sai": [
+           "cắt nhau",
+           "trùng nhau"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "b) và c): {0}",
+        "o": [
+         {
+          "dung": [
+           "song song"
+          ],
+          "sai": [
+           "cắt nhau",
+           "trùng nhau"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "b) và d): {0}",
+        "o": [
+         {
+          "dung": [
+           "cắt nhau"
+          ],
+          "sai": [
+           "song song",
+           "trùng nhau"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "c) và d): {0}",
+        "o": [
+         {
+          "dung": [
+           "cắt nhau"
+          ],
+          "sai": [
+           "song song",
+           "trùng nhau"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "7.36a",
@@ -3403,7 +5008,28 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "m = 1/2",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "dap": [
+       "m=1/2",
+       "1/2",
+       "m=0,5",
+       "0,5"
+      ],
+      "phim": [
+       "m"
+      ],
+      "nhieu": [
+       "x",
+       "≠"
+      ],
+      "loi_giai": [
+       "2m + 1 = 2 ⇔ 2m = 1 ⇔ m = 1/2; đó là điều kiện để hai đường thẳng có cùng hệ số góc",
+       "3m = 3 · (1/2) = 3/2 khác −5, nên hai đường thẳng không trùng nhau; vậy m = 1/2"
+      ]
+     }
     },
     {
      "ma": "7.36b",
@@ -3412,7 +5038,28 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "m ≠ 1/2",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "dap": [
+       "m≠1/2",
+       "m≠0,5"
+      ],
+      "phim": [
+       "m",
+       "≠"
+      ],
+      "nhieu": [
+       "x",
+       ">",
+       "<"
+      ],
+      "loi_giai": [
+       "Hai đường thẳng cắt nhau khi hai hệ số góc khác nhau: 2m + 1 ≠ 2",
+       "2m + 1 ≠ 2 ⇔ 2m ≠ 1 ⇔ m ≠ 1/2"
+      ]
+     }
     },
     {
      "ma": "7.37",
@@ -3421,7 +5068,28 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "y = −2x + 2",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "dap": [
+       "y=−2x+2",
+       "−2x+2"
+      ],
+      "phim": [
+       "x",
+       "y"
+      ],
+      "nhieu": [
+       "x²",
+       "z"
+      ],
+      "loi_giai": [
+       "Đường thẳng cần tìm song song với đường thẳng y = −2x + 1 nên có dạng y = −2x + b với b ≠ 1",
+       "Đồ thị đi qua điểm (−1; 4) nên 4 = −2 · (−1) + b ⇔ b = 2",
+       "Giá trị b = 2 khác 1 (thoả mãn); hàm số cần tìm là y = −2x + 2"
+      ]
+     }
     },
     {
      "ma": "7.38",
@@ -3430,7 +5098,27 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "m = 3",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "dap": [
+       "m=3",
+       "3"
+      ],
+      "phim": [
+       "m"
+      ],
+      "nhieu": [
+       "x",
+       "≠"
+      ],
+      "loi_giai": [
+       "Hai đường thẳng vuông góc khi tích hai hệ số góc bằng −1",
+       "(2m − 4) · (−1/2) = −1 ⇔ 2m − 4 = 2",
+       "2m = 6 ⇔ m = 3; giá trị này thoả mãn m ≠ 2"
+      ]
+     }
     },
     {
      "ma": "7.39",
@@ -3439,7 +5127,58 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "m = 0: hai đường thẳng song song; m ≠ 0: hai đường thẳng cắt nhau",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "hoi": "Trên cùng mặt phẳng toạ độ Oxy, cho hai đường thẳng: (dₘ): y = (1 − m)x + 2 và (d'ₘ): y = (m + 1)x − 3. Tuỳ theo giá trị của m, xét vị trí tương đối giữa hai đường thẳng đã cho.",
+      "dong": [
+       {
+        "chu": "Hai đường thẳng song song khi {0}",
+        "o": [
+         {
+          "dung": [
+           "m = 0"
+          ],
+          "sai": [
+           "m = 1",
+           "m = −1",
+           "không có giá trị nào của m"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Hai đường thẳng cắt nhau khi {0}",
+        "o": [
+         {
+          "dung": [
+           "m ≠ 0"
+          ],
+          "sai": [
+           "m = 0",
+           "m ≠ 1 và m ≠ −1",
+           "với mọi m"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Hai đường thẳng trùng nhau khi {0}",
+        "o": [
+         {
+          "dung": [
+           "không có giá trị nào của m"
+          ],
+          "sai": [
+           "m = 0",
+           "m ≠ 0"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "7.40a",
@@ -3448,7 +5187,25 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Hệ số góc 2,54 (= 127/50)",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "hinh": [
+      "sbttoan8t2/7.40.tr34.webp"
+     ],
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "hoi": "Inch (viết tắt là in) là một đơn vị chiều dài trong hệ đo lường Mỹ. Phần đường thẳng trong hình dưới đây (xuất phát từ gốc toạ độ O và đi qua điểm (50; 127)) mô tả sự quy đổi từ x (in) sang y (cm).\nTính hệ số góc của đường thẳng này.",
+      "dap": [
+       "2,54",
+       "127/50"
+      ],
+      "phim": [],
+      "nhieu": [],
+      "loi_giai": [
+       "Đường thẳng đi qua gốc toạ độ O nên là đồ thị của hàm số dạng y = ax",
+       "Điểm (50; 127) thuộc đồ thị nên 127 = a · 50 ⇔ a = 127 : 50 = 2,54"
+      ]
+     }
     },
     {
      "ma": "7.40b",
@@ -3457,7 +5214,46 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Có, y = 2,54x; hệ số tỉ lệ 2,54",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "hinh": [
+      "sbttoan8t2/7.40.tr34.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "Inch (viết tắt là in) là một đơn vị chiều dài trong hệ đo lường Mỹ. Phần đường thẳng trong hình dưới đây (xuất phát từ gốc toạ độ O và đi qua điểm (50; 127)) mô tả sự quy đổi từ x (in) sang y (cm).\nĐại lượng y có tỉ lệ thuận với đại lượng x không? Nếu có thì hệ số tỉ lệ bằng bao nhiêu?",
+      "dong": [
+       {
+        "chu": "Đại lượng y {0} với đại lượng x",
+        "o": [
+         {
+          "dung": [
+           "tỉ lệ thuận"
+          ],
+          "sai": [
+           "tỉ lệ nghịch",
+           "không tỉ lệ thuận cũng không tỉ lệ nghịch"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Hệ số tỉ lệ bằng {0}",
+        "o": [
+         {
+          "dung": [
+           "2,54"
+          ],
+          "sai": [
+           "50/127",
+           "127",
+           "50"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "7.40c",
@@ -3466,7 +5262,46 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Có, x = (50/127)y; hệ số tỉ lệ 50/127",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "hinh": [
+      "sbttoan8t2/7.40.tr34.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "Inch (viết tắt là in) là một đơn vị chiều dài trong hệ đo lường Mỹ. Phần đường thẳng trong hình dưới đây (xuất phát từ gốc toạ độ O và đi qua điểm (50; 127)) mô tả sự quy đổi từ x (in) sang y (cm).\nĐại lượng x có tỉ lệ thuận với đại lượng y không? Nếu có thì hệ số tỉ lệ bằng bao nhiêu?",
+      "dong": [
+       {
+        "chu": "Đại lượng x {0} với đại lượng y",
+        "o": [
+         {
+          "dung": [
+           "tỉ lệ thuận"
+          ],
+          "sai": [
+           "tỉ lệ nghịch",
+           "không tỉ lệ thuận cũng không tỉ lệ nghịch"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Hệ số tỉ lệ bằng {0}",
+        "o": [
+         {
+          "dung": [
+           "50/127"
+          ],
+          "sai": [
+           "2,54",
+           "127",
+           "50"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     }
    ]
   },
@@ -3481,7 +5316,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "D",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Phương trình nào sau đây là phương trình bậc nhất một ẩn?",
+      "cac": [
+       "0x + 1 = 0",
+       "x − 1 = x + 2",
+       "3x² + 2 = 0",
+       "−3x = 2"
+      ],
+      "dap": "D"
+     }
     },
     {
      "ma": "Trắc nghiệm 2 (tr.35)",
@@ -3490,7 +5337,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "B",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Tập nghiệm S của phương trình 3(x + 1) − (x − 2) = 7 − 2x là",
+      "cac": [
+       "S = {0}",
+       "S = {1/2}",
+       "S = ∅",
+       "S = ℝ"
+      ],
+      "dap": "B"
+     }
     },
     {
      "ma": "Trắc nghiệm 3 (tr.35)",
@@ -3499,7 +5358,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "C",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Hàm số nào sau đây là hàm số bậc nhất?",
+      "cac": [
+       "y = 0x + 3",
+       "y = 2x² + 5",
+       "y = −x",
+       "y = 0"
+      ],
+      "dap": "C"
+     }
     },
     {
      "ma": "Trắc nghiệm 4 (tr.35)",
@@ -3508,7 +5379,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "D",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Phương trình đường thẳng có hệ số góc −2 và đi qua điểm (1; 3) là",
+      "cac": [
+       "y = −2x + 3",
+       "y = −2x + 1",
+       "y = −2x + 4",
+       "y = −2x + 5"
+      ],
+      "dap": "D"
+     }
     },
     {
      "ma": "Trắc nghiệm 5 (tr.35)",
@@ -3517,7 +5400,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "D",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Hệ số góc của đường thẳng y = (1 − 4x)/2 là",
+      "cac": [
+       "−4",
+       "1",
+       "1/2",
+       "−2"
+      ],
+      "dap": "D"
+     }
     },
     {
      "ma": "Trắc nghiệm 6 (tr.35)",
@@ -3526,7 +5421,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "A",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Giá trị m để đường thẳng y = (m − 1)x + 3 (m ≠ 1) song song với đường thẳng y = x là",
+      "cac": [
+       "m = 2",
+       "m = 1",
+       "m = 0",
+       "Không có giá trị của m"
+      ],
+      "dap": "A"
+     }
     },
     {
      "ma": "Trắc nghiệm 7 (tr.35)",
@@ -3535,7 +5442,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "B",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Hàm số bậc nhất có đồ thị là đường thẳng song song với đường thẳng y = −x + 2 và cắt trục tung tại điểm có tung độ bằng 1 là",
+      "cac": [
+       "y = x + 1",
+       "y = −x + 1",
+       "y = 1",
+       "Không có hàm số nào"
+      ],
+      "dap": "B"
+     }
     },
     {
      "ma": "Trắc nghiệm 8 (tr.35)",
@@ -3544,7 +5463,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "B",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Hàm số bậc nhất có đồ thị là đường thẳng song song với đường thẳng y = −2x và đi qua điểm A(1; −1) là",
+      "cac": [
+       "y = 2x + 1",
+       "y = −2x + 1",
+       "y = 1",
+       "Không có hàm số nào"
+      ],
+      "dap": "B"
+     }
     },
     {
      "ma": "Trắc nghiệm 9 (tr.35)",
@@ -3553,7 +5484,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "D",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Giá trị m để phương trình (m − 2)x + 4 − m² = 0 có vô số nghiệm là",
+      "cac": [
+       "m ≠ 2",
+       "m = −2",
+       "m = 0",
+       "m = 2"
+      ],
+      "dap": "D"
+     }
     },
     {
      "ma": "Trắc nghiệm 10 (tr.35)",
@@ -3562,7 +5505,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "C",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Giá trị m để phương trình (m² − 9)x + 3 − m = 0 vô nghiệm là",
+      "cac": [
+       "m ≠ ±3",
+       "m = 3",
+       "m = −3",
+       "m = 0"
+      ],
+      "dap": "C"
+     }
     },
     {
      "ma": "7.41a",
@@ -3571,7 +5526,26 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "x = −8",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "dap": [
+       "x=−8",
+       "−8"
+      ],
+      "phim": [
+       "x"
+      ],
+      "nhieu": [
+       "y",
+       "²"
+      ],
+      "loi_giai": [
+       "5(x − 1) − (6 − 2x) = 8x − 3 ⇔ 5x − 5 − 6 + 2x = 8x − 3",
+       "7x − 8x = −3 + 11 ⇔ −x = 8 ⇔ x = −8"
+      ]
+     }
     },
     {
      "ma": "7.41b",
@@ -3580,7 +5554,27 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "x = 55/23",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "dap": [
+       "x=55/23",
+       "55/23"
+      ],
+      "phim": [
+       "x"
+      ],
+      "nhieu": [
+       "y",
+       "²"
+      ],
+      "loi_giai": [
+       "Mẫu chung là 12; nhân hai vế với 12 để khử mẫu",
+       "4(2x − 1) − 6(5 − 3x) = 3(x + 7) ⇔ 8x − 4 − 30 + 18x = 3x + 21",
+       "8x + 18x − 3x = 21 + 4 + 30 ⇔ 23x = 55 ⇔ x = 55/23"
+      ]
+     }
     },
     {
      "ma": "7.42a",
@@ -3589,7 +5583,21 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "T = 190 nghìn đồng",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "hoi": "Với hãng taxi A, số tiền khách phải trả khi di chuyển trên quãng đường không quá 30 km được cho bởi công thức sau: T(x) = 12x + 10 (nghìn đồng), trong đó 0 ≤ x ≤ 30 là số kilômét mà khách hàng đã di chuyển. Tính số tiền khách phải trả khi di chuyển 15 km.\n(Gõ số, tính bằng nghìn đồng.)",
+      "dap": [
+       "190"
+      ],
+      "phim": [],
+      "nhieu": [],
+      "loi_giai": [
+       "Thay x bằng 15 vào công thức của T(x)",
+       "T(15) = 12 · 15 + 10 = 190"
+      ]
+     }
     },
     {
      "ma": "7.42b",
@@ -3598,7 +5606,21 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "20 km",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "hoi": "Với hãng taxi A, số tiền khách phải trả khi di chuyển trên quãng đường không quá 30 km được cho bởi công thức sau: T(x) = 12x + 10 (nghìn đồng), trong đó 0 ≤ x ≤ 30 là số kilômét mà khách hàng đã di chuyển. Nếu một người khách phải trả số tiền là 250 nghìn đồng thì người đó đã di chuyển bao nhiêu kilômét?\n(Gõ số kilômét.)",
+      "dap": [
+       "20"
+      ],
+      "phim": [],
+      "nhieu": [],
+      "loi_giai": [
+       "12x + 10 = 250 ⇔ 12x = 240 ⇔ x = 20",
+       "Giá trị này thoả mãn 0 ≤ x ≤ 30; người đó đã di chuyển 20 km"
+      ]
+     }
     },
     {
      "ma": "7.43",
@@ -3607,7 +5629,27 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Gọi x là số sản phẩm tổ I làm theo kế hoạch, 0 < x < 900. Phương trình: 0,15x + 0,1(900 − x) = 110. x = 400. Tổ I sản xuất được 460 sản phẩm, tổ II sản xuất được 550 sản phẩm",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "hoi": "Theo kế hoạch, hai tổ sản xuất phải làm 900 sản phẩm. Do cải tiến kĩ thuật nên tổ I vượt mức 15% và tổ II vượt mức 10% so với kế hoạch. Vì vậy hai tổ vượt mức được 110 sản phẩm. Hỏi mỗi tổ đã sản xuất được bao nhiêu sản phẩm?\n(Gõ số sản phẩm tổ I rồi tổ II đã sản xuất được, cách nhau bằng dấu ;)",
+      "dap": [
+       "460;550"
+      ],
+      "phim": [
+       ";"
+      ],
+      "nhieu": [
+       "x"
+      ],
+      "loi_giai": [
+       "Gọi x là số sản phẩm tổ I phải làm theo kế hoạch (0 < x < 900) thì tổ II phải làm 900 − x sản phẩm",
+       "0,15x + 0,1(900 − x) = 110",
+       "0,05x + 90 = 110 ⇔ 0,05x = 20 ⇔ x = 400",
+       "Tổ I sản xuất được (sản phẩm) = 400 + 0,15 · 400 = 460; tổ II sản xuất được (sản phẩm) = 500 + 0,1 · 500 = 550"
+      ]
+     }
     },
     {
      "ma": "7.44",
@@ -3616,7 +5658,31 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Gọi x (%) là nồng độ dung dịch loại I, 0 ≤ x ≤ 100; loại II là x + 5. Phương trình: (10x + 30)/1 000 = 27/100. x = 24. Loại I 24%, loại II 29%",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 5,
+      "hoi": "Hoà 400 gam dung dịch NaCl loại I với 600 gam dung dịch NaCl loại II được một dung dịch NaCl có nồng độ phần trăm là 27%. Tính nồng độ phần trăm của mỗi dung dịch NaCl loại I và loại II, biết rằng nồng độ phần trăm dung dịch NaCl loại I ít hơn nồng độ phần trăm dung dịch NaCl loại II là 5%.\n(Gõ nồng độ của dung dịch loại I rồi loại II, cách nhau bằng dấu ;)",
+      "dap": [
+       "24%;29%",
+       "24;29"
+      ],
+      "phim": [
+       ";",
+       "%"
+      ],
+      "nhieu": [
+       "x",
+       "g"
+      ],
+      "loi_giai": [
+       "Gọi nồng độ phần trăm của dung dịch loại I là x% (0 < x ≤ 95) thì của dung dịch loại II là (x + 5)%",
+       "Khối lượng NaCl (gam) = 400 · x/100 + 600 · (x + 5)/100 = 10x + 30",
+       "10x + 30 = 1000 · 27/100 = 270",
+       "10x = 240 ⇔ x = 24",
+       "Nồng độ dung dịch loại II (%) = 24 + 5 = 29"
+      ]
+     }
     },
     {
      "ma": "7.45",
@@ -3625,7 +5691,22 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Gọi x là điểm thi cuối kì, 0 ≤ x ≤ 10. Phương trình: ((8 + 9 + 10 + 10)·1 + 8,5·2 + 3·x)/9 = 9,0. x = 9. An được 9 điểm thi cuối học kì",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "dap": [
+       "9"
+      ],
+      "phim": [],
+      "nhieu": [],
+      "loi_giai": [
+       "Gọi x là điểm thi cuối học kì của bạn An (0 ≤ x ≤ 10)",
+       "Tổng các hệ số = 4 · 1 + 2 + 3 = 9",
+       "((8 + 9 + 10 + 10) · 1 + 8,5 · 2 + 3x)/9 = 9",
+       "54 + 3x = 81 ⇔ 3x = 27 ⇔ x = 9"
+      ]
+     }
     },
     {
      "ma": "7.46a",
@@ -3634,7 +5715,26 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "m = −1",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "dap": [
+       "m=−1",
+       "−1"
+      ],
+      "phim": [
+       "m"
+      ],
+      "nhieu": [
+       "x",
+       "≠"
+      ],
+      "loi_giai": [
+       "2m − 1 = −3 ⇔ 2m = −2 ⇔ m = −1; khi đó hai đường thẳng có cùng hệ số góc −3 và tung độ gốc 5 khác 0",
+       "Giá trị này thoả mãn m ≠ 1/2"
+      ]
+     }
     },
     {
      "ma": "7.46b",
@@ -3643,7 +5743,23 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Với m = −1 ta có y = −3x + 5. Đồ thị là đường thẳng đi qua hai điểm (0; 5) và (5/3; 0).",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "hinh": [
+      "sbttoan8t2/7.46b-chon-1.webp",
+      "sbttoan8t2/7.46b-chon-2.webp"
+     ],
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Cho hàm số y = (2m − 1)x + 5 (m ≠ 1/2). Vẽ đồ thị hàm số với giá trị m để đồ thị hàm số song song với đường thẳng y = −3x.\nHình nào dưới đây là đồ thị đó?",
+      "cac": [
+       "Hình 1",
+       "Hình 2",
+       "Hình 3",
+       "Hình 4"
+      ],
+      "dap": "B"
+     }
     },
     {
      "ma": "7.46c",
@@ -3652,7 +5768,32 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "A(0; 5); B(−5; 0); diện tích tam giác OAB bằng 25/2",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "hoi": "Cho hàm số y = (2m − 1)x + 5 (m ≠ 1/2), với m là giá trị để đồ thị hàm số song song với đường thẳng y = −3x (câu a). Tìm giao điểm A của đồ thị hàm số đó và đồ thị của hàm số y = x + 5. Tính diện tích của tam giác OAB, trong đó B là giao điểm của đồ thị hàm số y = x + 5 với trục Ox.\n(Gõ toạ độ điểm A dạng (hoành độ; tung độ), rồi diện tích tam giác OAB, cách nhau bằng dấu ;)",
+      "dap": [
+       "(0;5);25/2",
+       "(0;5);12,5",
+       "A(0;5);25/2",
+       "A(0;5);12,5"
+      ],
+      "phim": [
+       ";",
+       "A"
+      ],
+      "nhieu": [
+       "x",
+       "B"
+      ],
+      "loi_giai": [
+       "Với m = −1 (câu a), y = (2 · (−1) − 1)x + 5 = −3x + 5",
+       "−3x + 5 = x + 5 ⇔ −4x = 0 ⇔ x = 0; y = 0 + 5 = 5; vậy A(0; 5)",
+       "x + 5 = 0 ⇔ x = −5; vậy B(−5; 0)",
+       "Tam giác OAB vuông tại O, OA = 5, OB = 5; diện tích tam giác OAB = (1/2) · 5 · 5 = 25/2"
+      ]
+     }
     },
     {
      "ma": "7.47a",
@@ -3661,7 +5802,28 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "m = 1/2",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "dap": [
+       "m=1/2",
+       "1/2",
+       "m=0,5",
+       "0,5"
+      ],
+      "phim": [
+       "m"
+      ],
+      "nhieu": [
+       "x",
+       "≠"
+      ],
+      "loi_giai": [
+       "Với x = 2 thì y = −2 · 2 + 1 = −3; giao điểm là (2; −3)",
+       "−3 = m · 2 − 4 ⇔ 2m = 1 ⇔ m = 1/2; giá trị này khác 0 (thoả mãn)"
+      ]
+     }
     },
     {
      "ma": "7.47b",
@@ -3670,7 +5832,26 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "m = 4",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "dap": [
+       "m=4",
+       "4"
+      ],
+      "phim": [
+       "m"
+      ],
+      "nhieu": [
+       "x",
+       "≠"
+      ],
+      "loi_giai": [
+       "3x − 2 = 4 ⇔ 3x = 6 ⇔ x = 2; giao điểm là (2; 4)",
+       "4 = m · 2 − 4 ⇔ 2m = 8 ⇔ m = 4; giá trị này khác 0 (thoả mãn)"
+      ]
+     }
     },
     {
      "ma": "7.48a",
@@ -3679,7 +5860,27 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "y = 500x + 1 000 (nghìn đồng)",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "dap": [
+       "y=500x+1000",
+       "500x+1000"
+      ],
+      "phim": [
+       "x",
+       "y"
+      ],
+      "nhieu": [
+       "x²",
+       "z"
+      ],
+      "loi_giai": [
+       "1 triệu đồng là 1000 nghìn đồng",
+       "Thuê x giờ thì phí sử dụng là 500x nghìn đồng, nên y = 500x + 1000"
+      ]
+     }
     },
     {
      "ma": "7.48b",
@@ -3688,7 +5889,48 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Thuê 3 giờ: y = 2 500 nghìn đồng, tức 2,5 triệu đồng",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "hinh": [
+      "sbttoan8t2/7.48b-chon-1.webp",
+      "sbttoan8t2/7.48b-chon-2.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "Một công ty cho thuê thuyền du lịch tính phí thuê thuyền là 1 triệu đồng, ngoài ra tính phí sử dụng 500 nghìn đồng một giờ. Gọi y (nghìn đồng) là tổng chi phí để thuê một chiếc thuyền du lịch trong x (giờ). Vẽ đồ thị của hàm số y = f(x) để tìm tổng chi phí cho một lần thuê trong 3 giờ.",
+      "dong": [
+       {
+        "chu": "Đồ thị của hàm số y = f(x): {0}",
+        "o": [
+         {
+          "dung": [
+           "Hình 1"
+          ],
+          "sai": [
+           "Hình 2",
+           "Hình 3",
+           "Hình 4"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Tổng chi phí cho một lần thuê trong 3 giờ: {0} nghìn đồng",
+        "o": [
+         {
+          "dung": [
+           "2500"
+          ],
+          "sai": [
+           "1500",
+           "3500",
+           "4500"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "7.48c",
@@ -3697,7 +5939,43 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Giao điểm của đồ thị với trục tung là (0; 1 000). Nó biểu thị chi phí cố định 1 000 nghìn đồng khi thuê thuyền: dù không sử dụng giờ nào (x = 0) vẫn phải trả phí này nếu đã đặt thuê.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "Một công ty cho thuê thuyền du lịch tính phí thuê thuyền là 1 triệu đồng, ngoài ra tính phí sử dụng 500 nghìn đồng một giờ. Gọi y (nghìn đồng) là tổng chi phí để thuê một chiếc thuyền du lịch trong x (giờ). Giao điểm của đồ thị hàm số y = f(x) với trục tung biểu thị điều gì?",
+      "dong": [
+       {
+        "chu": "Giao điểm của đồ thị với trục tung là {0}",
+        "o": [
+         {
+          "dung": [
+           "(0; 1000)"
+          ],
+          "sai": [
+           "(1000; 0)",
+           "(0; 500)",
+           "(−2; 0)"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Giao điểm đó biểu thị {0}",
+        "o": [
+         {
+          "dung": [
+           "phí thuê thuyền 1000 nghìn đồng, phải trả kể cả khi không dùng giờ nào (x = 0)"
+          ],
+          "sai": [
+           "phí sử dụng thuyền cho mỗi giờ",
+           "tổng chi phí khi thuê thuyền trong 1 giờ"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "7.49a",
@@ -3706,7 +5984,27 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "y = 900 − 100x (nghìn đồng)",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "dap": [
+       "y=900−100x",
+       "900−100x"
+      ],
+      "phim": [
+       "x",
+       "y"
+      ],
+      "nhieu": [
+       "x²",
+       "z"
+      ],
+      "loi_giai": [
+       "Sau x tuần, chị Lan đã trả mẹ 100x nghìn đồng",
+       "Số tiền còn nợ là y = 900 − 100x"
+      ]
+     }
     },
     {
      "ma": "7.49b",
@@ -3715,7 +6013,48 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Sau 4 tuần chị Lan còn nợ 500 nghìn đồng",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "hinh": [
+      "sbttoan8t2/7.49b-chon-1.webp",
+      "sbttoan8t2/7.49b-chon-2.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "Chị Lan vay mẹ 900 nghìn đồng và dự định trả cho mẹ 100 nghìn đồng mỗi tuần. Gọi y (nghìn đồng) là số tiền chị Lan còn nợ mẹ sau x (tuần) vay. Vẽ đồ thị của hàm số y = f(x). Từ đó, tìm số tiền mà chị Lan nợ mẹ sau 4 tuần.",
+      "dong": [
+       {
+        "chu": "Đồ thị của hàm số y = f(x): {0}",
+        "o": [
+         {
+          "dung": [
+           "Hình 3"
+          ],
+          "sai": [
+           "Hình 1",
+           "Hình 2",
+           "Hình 4"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Sau 4 tuần, chị Lan còn nợ mẹ {0} nghìn đồng",
+        "o": [
+         {
+          "dung": [
+           "500"
+          ],
+          "sai": [
+           "400",
+           "1300",
+           "896"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "7.49c",
@@ -3724,7 +6063,43 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Giao điểm của đồ thị với trục Ox là (9; 0). Nó biểu thị số tuần cần thiết để chị Lan trả hết nợ cho mẹ (số tiền còn nợ y = 0): sau 9 tuần.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "Chị Lan vay mẹ 900 nghìn đồng và dự định trả cho mẹ 100 nghìn đồng mỗi tuần. Gọi y (nghìn đồng) là số tiền chị Lan còn nợ mẹ sau x (tuần) vay. Giao điểm của đồ thị hàm số y = f(x) với trục hoành biểu thị điều gì?",
+      "dong": [
+       {
+        "chu": "Giao điểm của đồ thị với trục hoành là {0}",
+        "o": [
+         {
+          "dung": [
+           "(9; 0)"
+          ],
+          "sai": [
+           "(0; 9)",
+           "(0; 900)",
+           "(−9; 0)"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Giao điểm đó biểu thị {0}",
+        "o": [
+         {
+          "dung": [
+           "sau 9 tuần thì chị Lan trả hết nợ cho mẹ"
+          ],
+          "sai": [
+           "số tiền chị Lan vay mẹ ban đầu",
+           "số tiền chị Lan trả mẹ mỗi tuần"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "7.50a",
@@ -3733,7 +6108,27 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "p = 60 (nghìn đồng)",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "hoi": "Giả sử rằng lượng cung S và lượng cầu D về áo phông tại một buổi biểu diễn được cho bởi các hàm số sau: S(p) = −600 + 10p, D(p) = 1 200 − 20p, trong đó p (nghìn đồng) là giá của một chiếc áo phông. Tìm mức giá cân bằng (tức là mức giá mà lượng cung bằng lượng cầu) của áo phông tại buổi biểu diễn này.\n(Gõ số, tính bằng nghìn đồng.)",
+      "dap": [
+       "60",
+       "p=60"
+      ],
+      "phim": [
+       "p"
+      ],
+      "nhieu": [
+       "x",
+       "S"
+      ],
+      "loi_giai": [
+       "−600 + 10p = 1200 − 20p; đó là điều kiện để lượng cung bằng lượng cầu",
+       "10p + 20p = 1200 + 600 ⇔ 30p = 1800 ⇔ p = 60"
+      ]
+     }
     },
     {
      "ma": "7.50b",
@@ -3742,7 +6137,23 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Vẽ hai đường thẳng S(p) = −600 + 10p và D(p) = 1 200 − 20p trên cùng hệ trục; hai đường thẳng cắt nhau tại điểm (60; 0).",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "hinh": [
+      "sbttoan8t2/7.50b-chon-1.webp",
+      "sbttoan8t2/7.50b-chon-2.webp"
+     ],
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Giả sử rằng lượng cung S và lượng cầu D về áo phông tại một buổi biểu diễn được cho bởi các hàm số sau: S(p) = −600 + 10p, D(p) = 1200 − 20p, trong đó p (nghìn đồng) là giá của một chiếc áo phông. Vẽ đồ thị của hai hàm số S(p) và D(p) trên cùng một hệ trục toạ độ.\nHình nào dưới đây vẽ đúng đồ thị của hai hàm số đó?",
+      "cac": [
+       "Hình 1",
+       "Hình 2",
+       "Hình 3",
+       "Hình 4"
+      ],
+      "dap": "D"
+     }
     },
     {
      "ma": "7.50c",
@@ -3751,7 +6162,43 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Khi giá áo lớn hơn 60 nghìn đồng (p > 60) thì lượng cung lớn hơn lượng cầu; khi đó sẽ có một lượng áo phông bị tồn kho (không bán được)",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "Giả sử rằng lượng cung S và lượng cầu D về áo phông tại một buổi biểu diễn được cho bởi các hàm số sau: S(p) = −600 + 10p, D(p) = 1 200 − 20p, trong đó p (nghìn đồng) là giá của một chiếc áo phông. Từ kết quả của câu b, xác định mức giá của áo phông mà lượng cung lớn hơn lượng cầu. Khi đó, điều gì sẽ xảy ra?",
+      "dong": [
+       {
+        "chu": "Lượng cung lớn hơn lượng cầu khi {0}",
+        "o": [
+         {
+          "dung": [
+           "p > 60"
+          ],
+          "sai": [
+           "p < 60",
+           "p = 60",
+           "p > 1800"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Khi đó {0}",
+        "o": [
+         {
+          "dung": [
+           "sẽ có một lượng áo phông bị tồn kho, không bán được"
+          ],
+          "sai": [
+           "áo phông bị thiếu, không đủ để bán",
+           "lượng áo bán ra bằng lượng áo sản xuất"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     }
    ]
   },
