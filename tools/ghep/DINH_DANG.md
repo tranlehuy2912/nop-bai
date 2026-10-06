@@ -159,7 +159,7 @@ Mọi kiểu đều có `kieu` và `sao`. Trường `hoi` (không bắt buộc) 
 
 ## Câu vẽ: chọn hình (từ 06/10/2026)
 
-Anh Huy chốt ngày 06/10/2026: tránh viết tay nhiều nhất có thể. Câu SGK không có `ghep` hay có `bo_may` là câu con phải viết vở rồi chụp, nên câu vẽ đổi thành câu chọn hình:
+Anh Huy chốt ngày 06/10/2026: tránh viết tay nhiều nhất có thể. Câu SGK không có `ghep` hay có `bo_may` là câu con phải viết vở rồi chụp, nên câu vẽ đổi thành câu chọn hình. Anh chốt áp cùng cách cho sách bài tập và đề thi:
 
 - Vẽ sẵn 3 hay 4 hình bằng `ghep-nhap/ghep/cong_cu/ve.py` (ngoài git; đồ thị, biểu đồ cột, cột kép, đoạn thẳng, hình quạt tròn, hình hình học, và hàm `ghep`): một hình đúng, các hình sai là lỗi học sinh hay mắc (sai dấu hệ số góc, nhầm tung độ gốc, đổi chỗ hai trục, sai chiều cao một cột, chọn sai loại biểu đồ, thiếu chú thích, sai một độ dài). Hình sai phải sai rõ khi đối chiếu với đề, không sai vì nét vẽ.
 - Ghép các hình thành từng hàng hai hình, nhãn "Hình 1" tới "Hình N" chạy tiếp qua các hàng (`ve.ghep_hang`), mỗi hàng một ảnh, lưu bằng `ve.luu` vào thư mục hình của sách, gắn cả danh sách ảnh vào trường `hinh` theo thứ tự. Không dùng một tấm 2 x 2: app vẽ mỗi ảnh cao tối đa 300dp (`KhungGhep.veHinh`), tấm 2 x 2 bị thu còn một nửa, chữ trên trục không đọc được.
@@ -271,7 +271,7 @@ Khung file giống `dethianh8.json` ở mục trên: mỗi `bai` là một đề
 - `nhom`: câu trắc nghiệm không có lời dẫn chung thì `nhom` rỗng và `hoi` chỉ có câu hỏi. Câu tự luận thì `nhom` là đề của cả bài ("Bài 3. (2,5 điểm) Cho hình bình hành ABCD ..."), mỗi ý là một câu, và `hoi` của ý bắt đầu bằng đúng chuỗi `nhom`, xuống dòng, rồi tới ý ("a) Tứ giác AKCI là hình gì? Vì sao?"). Như đề Anh, làm trong đề thì máy bỏ dòng đầu đó.
 - `de`: `nhom` (nếu có), xuống dòng, rồi nội dung câu; câu trắc nghiệm giữ các phương án như đề in. Ký hiệu viết như sách bài tập: trong `de` số mũ là `x^2`, công thức hoá học là số thường (`CaCO3`); trong `hoi`, `cac`, `buoc` là `x²`, `CaCO₃`. Góc viết "góc A", tam giác "ΔABE". Lớp chữ của PDF làm mất số mũ, chỉ số và dấu góc, nên phải đối chiếu với ảnh trang.
 - `trung`: như đề Anh. Câu `trung` không mang `bai_sgk`, `hinh_goi_y`, `hinh_day_du` (lấy của câu gốc), nhưng có `nhan` riêng vì số in ở hai đề thường khác nhau.
-- `bo_may`: lý do không làm trên máy, như "vẽ hình", "vẽ biểu đồ".
+- `bo_may`: lý do không làm trên máy. Từ 06/10/2026 câu vẽ hình, vẽ biểu đồ không ghi `bo_may` nữa mà thành câu chọn hình (mục "Câu vẽ: chọn hình"); `bo_may` chỉ còn cho câu nghe, đề in sai mà không sửa được, và câu lập bảng chỉ chép lại số in sẵn trên đề.
 
 Hình in sẵn trên tờ đề thì ghi `hinh` như mọi câu, máy hiện ngay. Bài hình mà tờ đề không in hình, hình chỉ có trong lời giải, thì ghi hai trường, đường dẫn tính từ `assets/hinh/` như `hinh`:
 
