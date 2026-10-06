@@ -2,7 +2,7 @@
  "nguon": "anh8",
  "mon": "Tiếng Anh",
  "ten": "SGK Tiếng Anh 8",
- "ban": 8,
+ "ban": 9,
  "doan_van": {
   "1.GS1": "<b>I'm keen on doing DIY (do-it-yourself).</b>\nTom: Hi, Trang. Surprised to see you. What brings you here?\nTrang: Oh, hello Tom. I'm looking for a knitting kit.\nTom: A knitting kit? I didn't know you like knitting.\nTrang: Actually, I'm keen on many DIY activities. In my leisure time, I love knitting, building dollhouses, and making paper flowers.\nTom: I see. So, you like spending time on your own.\nTrang: Yeah. What do you do in your free time?\nTom: I'm a bit different. I usually hang out with my friends. We go to the cinema, go cycling, or play sport in the park.\nTrang: You love spending free time with other people, don't you?\nTom: That's right. By the way, would you like to go to the cinema with me and Mark this Sunday? There's a new comedy at New World Cinema.\nTrang: Yes, I'd love to. Can I ask Mai to join us?\nTom: Sure. Let's meet outside the cinema at 9 a.m.",
   "1.C4": "Sakura (Kyoto, Japan): Origami is the art of paper folding. I love doing it on my own in my free time. With just some sheets of paper, I can create almost anything: flowers, birds, or fans. Doing origami helps me to relax.\nEric (St. Gallen, Switzerland): My home town has some famous ski resorts. I'm into snowboarding and usually go to a nearby ski resort with my parents at weekends. Snowboarding improves my overall health and balance.\nLan (Quang Binh, Viet Nam): I'm keen on playing sport, especially badminton. My best friend lives next door, so we play badminton almost every afternoon. It's an easy sport, and it also improves my muscle strength and helps reduce stress.",
@@ -38,7 +38,8 @@
   "8.GS1": "<b>My favourite shopping place</b>\nMai: How was your trip to Bac Ha, Alice?\nAlice: It's awesome. I like Bac Ha Fair most. It's an open-air market in Lao Cai.\nMai: What do you like about it?\nAlice: Many things. The people at the market were wearing really colourful costumes.\nMai: Yeah ... They came from different minority groups.\nAlice: I think so, and most of the products sold at the market were home-grown and home-made. I love it.\nMai: Do you have similar markets in New Zealand?\nAlice: Yes, we do. Back in my city, Auckland, we have a farmers' market every Saturday where farmers sell their products. My mother loves shopping there, and she rarely misses one.\nMai: I prefer shopping at the supermarket. I can find almost everything I need there, and I don't have to bargain. All the items have fixed prices on their price tags.\nAlice: Right. It's more convenient.\nMai: Yeah ... Oh, I've got to go. My art lesson starts at one o'clock, and I want to go to a convenience store on the way. See you later.\nAlice: See you.",
   "8.CL2-5": "<b>Community Fair</b>\n<b>1 April</b>\n<b>1 March:</b> Preparing for the fair\n<b>3 March:</b> Calling for volunteers\n<b>1 April:</b>\n– 8:30: Opening\n– 11:00: Holding food competition\n<b>2 April:</b> Cleaning up by volunteers",
   "8.S1": "<b>Why We Go to Shopping Centres</b>\nShopping centres attract a lot of customers, especially at the weekend, on holidays, or during sales. People go there to shop. Shopping centres offer a wide range of products to choose from. Customers can touch the products and try on clothes and shoes. This makes them feel more comfortable when they decide to buy something.\nHowever, people also go to shopping centres for many other reasons. Some people go there for entertainment. These centres often offer <b>year-round</b> free entertainment for customers of all ages such as live music and special performances. During holidays, shoppers can see decorations and join in the holiday excitement. It's a good way to relax. Some people go there just to hang out with friends. They go browsing and chat while wandering through the shopping malls. Others visit shopping centres to get exercise. They enjoy walking for one or two hours in clean and well-lit areas. Some people even go there to avoid the heat or cold outside. Shopping centres offer free air conditioning and heating.",
-  "8.S1-4": "<b>CARD A</b>\n<b>Northwood Shopping Centre</b>\n1. Where / it?\n2. How many / shops?\n3. What / kind of entertainment?\n4. What / opening hours?\n5. What date / open?\n<b>CARD B</b>\n<b>Northwood Shopping Centre</b>\nOpens next month: 24 March\nIn Northwood, 8 kilometres from city centre\nMore than 60 shops, 4 restaurants, 2 cafes, a cinema, a playground for children\nOpening hours: 9:00 – 21:00"
+  "8.S1-4": "<b>CARD A</b>\n<b>Northwood Shopping Centre</b>\n1. Where / it?\n2. How many / shops?\n3. What / kind of entertainment?\n4. What / opening hours?\n5. What date / open?\n<b>CARD B</b>\n<b>Northwood Shopping Centre</b>\nOpens next month: 24 March\nIn Northwood, 8 kilometres from city centre\nMore than 60 shops, 4 restaurants, 2 cafes, a cinema, a playground for children\nOpening hours: 9:00 – 21:00",
+  "R3.S1": "Landslides are the mass movement of rocks or earth down a slope. Landslides occur more frequently in some mountainous areas. They may come suddenly after a storm or heavy rain. When you hear a warning about a landslide in your area, you should do the following:\n– Follow the instructions about emergency information given by authorities.\n– Go to a public shelter if you feel it is unsafe to remain in your home.\n– Listen to unusual sounds, such as trees cracking, or rocks knocking together.\n– Stay away from the slide area. There may be a danger of additional slides.\n– Watch for flooding, which may occur after a landslide.\n– Stay cautious after the storm. Don't do the clean-up until the storm is over."
  },
  "cac_bai": [
   {
@@ -22043,6 +22044,887 @@
        "l",
        "p",
        "y"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "chuong": "Review 3",
+   "bai": "Review 3",
+   "cac_cau": [
+    {
+     "ma": "Bài 1b.1 (tr.102)",
+     "de": "Choose A, B, C, or D to show the word in each group with a different stress pattern.\nA. humorous B. tremendous\nC. numerous D. generous",
+     "trang": 102,
+     "nhom": "Language Focus",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Choose A, B, C, or D to show the word in each group with a different stress pattern.",
+      "cac": [
+       "humorous",
+       "tremendous",
+       "numerous",
+       "generous"
+      ],
+      "dap": "B"
+     }
+    },
+    {
+     "ma": "Bài 1b.2 (tr.102)",
+     "de": "Choose A, B, C, or D to show the word in each group with a different stress pattern.\nA. national B. animal\nC. arrival D. typical",
+     "trang": 102,
+     "nhom": "Language Focus",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "C",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Choose A, B, C, or D to show the word in each group with a different stress pattern.",
+      "cac": [
+       "national",
+       "animal",
+       "arrival",
+       "typical"
+      ],
+      "dap": "C"
+     }
+    },
+    {
+     "ma": "Bài 1b.3 (tr.102)",
+     "de": "Choose A, B, C, or D to show the word in each group with a different stress pattern.\nA. festival B. cultural\nC. poisonous D. ambitious",
+     "trang": 102,
+     "nhom": "Language Focus",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "D",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Choose A, B, C, or D to show the word in each group with a different stress pattern.",
+      "cac": [
+       "festival",
+       "cultural",
+       "poisonous",
+       "ambitious"
+      ],
+      "dap": "D"
+     }
+    },
+    {
+     "ma": "Bài 2 (tr.102)",
+     "de": "Complete the sentences with the words and phrase from the box.\ncustomers | bargain\nsingle-use | habitats\nnatural disasters\n1. We should recycle various ___ products instead of throwing them away.\n2. Shopping centres attract a lot of ___ during the sales season.\n3. Population growth is causing destruction of wildlife ___ throughout the world.\n4. Luckily, my home town rarely suffers from ___, such as floods or storms.\n5. Generally, you can't ___ over prices of goods in supermarkets.",
+     "trang": 102,
+     "nhom": "Language Focus",
+     "dang": "CAU_NHO",
+     "dap_an": "1. single-use; 2. customers; 3. habitats; 4. natural disasters; 5. bargain",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 5,
+      "hoi": "Complete the sentences with the words and phrase from the box.",
+      "dong": [
+       {
+        "chu": "1. We should recycle various {0} products instead of throwing them away.",
+        "o": [
+         {
+          "dung": [
+           "single-use"
+          ],
+          "sai": [
+           "customers",
+           "bargain",
+           "habitats",
+           "natural disasters"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "2. Shopping centres attract a lot of {0} during the sales season.",
+        "o": [
+         {
+          "dung": [
+           "customers"
+          ],
+          "sai": [
+           "bargain",
+           "single-use",
+           "habitats",
+           "natural disasters"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "3. Population growth is causing destruction of wildlife {0} throughout the world.",
+        "o": [
+         {
+          "dung": [
+           "habitats"
+          ],
+          "sai": [
+           "customers",
+           "bargain",
+           "single-use",
+           "natural disasters"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "4. Luckily, my home town rarely suffers from {0}, such as floods or storms.",
+        "o": [
+         {
+          "dung": [
+           "natural disasters"
+          ],
+          "sai": [
+           "customers",
+           "bargain",
+           "single-use",
+           "habitats"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "5. Generally, you can't {0} over prices of goods in supermarkets.",
+        "o": [
+         {
+          "dung": [
+           "bargain"
+          ],
+          "sai": [
+           "customers",
+           "single-use",
+           "habitats",
+           "natural disasters"
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "ma": "Bài 3.1 (tr.102)",
+     "de": "Use the correct forms of the words in brackets to complete the sentences.\nThe tsunami in Tonga was very (destroy) ___; hundreds of houses were swept away.",
+     "trang": 102,
+     "nhom": "Language Focus",
+     "dang": "CAU_NHO",
+     "dap_an": "destructive",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "CHU",
+      "sao": 2,
+      "dap": [
+       "destructive"
+      ],
+      "nhieu": [
+       "o",
+       "n",
+       "a",
+       "l",
+       "y",
+       "b",
+       "h",
+       "m"
+      ]
+     }
+    },
+    {
+     "ma": "Bài 3.2 (tr.102)",
+     "de": "Use the correct forms of the words in brackets to complete the sentences.\nOne (advantage) ___ of shopping online is that you do not know exactly what you will get.",
+     "trang": 102,
+     "nhom": "Language Focus",
+     "dang": "CAU_NHO",
+     "dap_an": "disadvantage",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "CHU",
+      "sao": 2,
+      "dap": [
+       "disadvantage"
+      ],
+      "nhieu": [
+       "o",
+       "u",
+       "r",
+       "l",
+       "c",
+       "b",
+       "h",
+       "m"
+      ]
+     }
+    },
+    {
+     "ma": "Bài 3.3 (tr.102)",
+     "de": "Use the correct forms of the words in brackets to complete the sentences.\nEndangered species are animals in the wild that face a high risk of (extinct) ___.",
+     "trang": 102,
+     "nhom": "Language Focus",
+     "dang": "CAU_NHO",
+     "dap_an": "extinction",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "CHU",
+      "sao": 2,
+      "dap": [
+       "extinction"
+      ],
+      "nhieu": [
+       "a",
+       "s",
+       "v",
+       "u",
+       "r",
+       "l",
+       "d"
+      ]
+     }
+    },
+    {
+     "ma": "Bài 3.4 (tr.102)",
+     "de": "Use the correct forms of the words in brackets to complete the sentences.\n(Addict) ___ shopping is a form of behaviour that makes shoppers buy many items they don't need.",
+     "trang": 102,
+     "nhom": "Language Focus",
+     "dang": "CAU_NHO",
+     "dap_an": "Addictive",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "CHU",
+      "sao": 2,
+      "dap": [
+       "Addictive"
+      ],
+      "nhieu": [
+       "o",
+       "n",
+       "s",
+       "l",
+       "u",
+       "r",
+       "y"
+      ]
+     }
+    },
+    {
+     "ma": "Bài 3.5 (tr.102)",
+     "de": "Use the correct forms of the words in brackets to complete the sentences.\nWhen a natural disaster happens, we must listen to (instruct) ___ from local authorities.",
+     "trang": 102,
+     "nhom": "Language Focus",
+     "dang": "CAU_NHO",
+     "dap_an": "instructions",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "CHU",
+      "sao": 2,
+      "dap": [
+       "instructions"
+      ],
+      "nhieu": [
+       "e",
+       "a",
+       "l",
+       "v",
+       "d",
+       "g",
+       "p",
+       "m"
+      ]
+     }
+    },
+    {
+     "ma": "Bài 4.1 (tr.102)",
+     "de": "Use the correct tense of the verbs in brackets to complete the sentences.\nWhile I (clean) ___ out my cupboards, I found these photos.",
+     "trang": 102,
+     "nhom": "Language Focus",
+     "dang": "CAU_NHO",
+     "dap_an": "was cleaning",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "CHU",
+      "sao": 2,
+      "dap": [
+       "was cleaning"
+      ],
+      "nhieu": [
+       "r",
+       "d",
+       "h",
+       "t",
+       "o",
+       "u",
+       "b",
+       "y"
+      ]
+     }
+    },
+    {
+     "ma": "Bài 4.2 (tr.102)",
+     "de": "Use the correct tense of the verbs in brackets to complete the sentences.\nSam is studying hard. He (have) ___ his exam this Friday.",
+     "trang": 102,
+     "nhom": "Language Focus",
+     "dang": "CAU_NHO",
+     "dap_an": "has",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "CHU",
+      "sao": 2,
+      "dap": [
+       "has"
+      ],
+      "nhieu": [
+       "d",
+       "v",
+       "e",
+       "i"
+      ]
+     }
+    },
+    {
+     "ma": "Bài 4.3 (tr.102)",
+     "de": "Use the correct tense of the verbs in brackets to complete the sentences.\nThis brochure says that the big sale (start) ___ next Friday.",
+     "trang": 102,
+     "nhom": "Language Focus",
+     "dang": "CAU_NHO",
+     "dap_an": "starts",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "CHU",
+      "sao": 2,
+      "dap": [
+       "starts"
+      ],
+      "nhieu": [
+       "e",
+       "d",
+       "i",
+       "n"
+      ]
+     }
+    },
+    {
+     "ma": "Bài 4.4 (tr.102)",
+     "de": "Use the correct tense of the verbs in brackets to complete the sentences.\n___ the flood victims still (wait) ___ when the rescuers came?",
+     "trang": 102,
+     "nhom": "Language Focus",
+     "dang": "CAU_NHO",
+     "dap_an": "Were ... waiting (Were the flood victims still waiting when the rescuers came?)",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "CHU",
+      "sao": 2,
+      "hoi": "Use the correct tense of the verbs in brackets to complete the sentences.\n___ the flood victims still (wait) ___ when the rescuers came?\n(Type the two missing words, in order.)",
+      "dap": [
+       "Were waiting"
+      ],
+      "nhieu": [
+       "s",
+       "d",
+       "h",
+       "o",
+       "u",
+       "l",
+       "c",
+       "k"
+      ]
+     }
+    },
+    {
+     "ma": "Bài 4.5 (tr.102)",
+     "de": "Use the correct tense of the verbs in brackets to complete the sentences.\nI just (fall) ___ asleep last night when I (hear) ___ a knock at the door.",
+     "trang": 102,
+     "nhom": "Language Focus",
+     "dang": "CAU_NHO",
+     "dap_an": "was just falling; heard (I was just falling asleep last night when I heard a knock at the door.)",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "Use the correct tense of the verbs in brackets to complete the sentence.",
+      "dong": [
+       {
+        "chu": "I (just fall) {0} asleep last night when I (hear) {1} a knock at the door.",
+        "o": [
+         {
+          "dung": [
+           "was just falling"
+          ],
+          "sai": [
+           "am just falling",
+           "was just fall",
+           "just falling"
+          ]
+         },
+         {
+          "dung": [
+           "heard"
+          ],
+          "sai": [
+           "was hearing",
+           "hear",
+           "have heard"
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "ma": "Bài 5.1 (tr.102)",
+     "de": "Complete the sentences so that they are true for you.\nWhen I finished my lessons yesterday, ___.",
+     "trang": 102,
+     "nhom": "Language Focus",
+     "dang": "CAU_NHO",
+     "dap_an": "Tuỳ HS. Ví dụ: When I finished my lessons yesterday, I watched a film on TV.",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 1,
+      "hoi": "Complete the sentence so that it is true for you.",
+      "dong": [
+       {
+        "chu": "When I finished my lessons yesterday, {0}.",
+        "o": [
+         {
+          "dung": [
+           "I watched a film on TV",
+           "I went out to play football",
+           "I helped my mum cook dinner"
+          ],
+          "sai": [
+           "I watch a film on TV",
+           "I will watch a film on TV"
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "ma": "Bài 5.2 (tr.102)",
+     "de": "Complete the sentences so that they are true for you.\nBefore I go to bed at night, ___.",
+     "trang": 102,
+     "nhom": "Language Focus",
+     "dang": "CAU_NHO",
+     "dap_an": "Tuỳ HS. Ví dụ: Before I go to bed at night, I brush my teeth.",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 1,
+      "hoi": "Complete the sentence so that it is true for you.",
+      "dong": [
+       {
+        "chu": "Before I go to bed at night, {0}.",
+        "o": [
+         {
+          "dung": [
+           "I brush my teeth",
+           "I read a book for half an hour",
+           "I pack my school bag"
+          ],
+          "sai": [
+           "I brushed my teeth",
+           "I brushing my teeth"
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "ma": "Bài 5.3 (tr.102)",
+     "de": "Complete the sentences so that they are true for you.\nI will wait until the teacher ___.",
+     "trang": 102,
+     "nhom": "Language Focus",
+     "dang": "CAU_NHO",
+     "dap_an": "Tuỳ HS. Ví dụ: I will wait until the teacher comes back.",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 1,
+      "hoi": "Complete the sentence so that it is true for you.",
+      "dong": [
+       {
+        "chu": "I will wait until the teacher {0}.",
+        "o": [
+         {
+          "dung": [
+           "comes back",
+           "arrives",
+           "finishes the lesson"
+          ],
+          "sai": [
+           "will come back",
+           "came back"
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "ma": "Bài 5.4 (tr.102)",
+     "de": "Complete the sentences so that they are true for you.\nAs soon as we have our summer holiday, ___.",
+     "trang": 102,
+     "nhom": "Language Focus",
+     "dang": "CAU_NHO",
+     "dap_an": "Tuỳ HS. Ví dụ: As soon as we have our summer holiday, we will go to the beach.",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 1,
+      "hoi": "Complete the sentence so that it is true for you.",
+      "dong": [
+       {
+        "chu": "As soon as we have our summer holiday, {0}.",
+        "o": [
+         {
+          "dung": [
+           "we will go to the beach",
+           "we will visit our grandparents",
+           "we are going to travel to Da Lat"
+          ],
+          "sai": [
+           "we went to the beach",
+           "we will visiting our grandparents"
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "ma": "Bài 5.5 (tr.102)",
+     "de": "Complete the sentences so that they are true for you.\nI usually listen to music while ___.",
+     "trang": 102,
+     "nhom": "Language Focus",
+     "dang": "CAU_NHO",
+     "dap_an": "Tuỳ HS. Ví dụ: I usually listen to music while I do my homework.",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 1,
+      "hoi": "Complete the sentence so that it is true for you.",
+      "dong": [
+       {
+        "chu": "I usually listen to music while {0}.",
+        "o": [
+         {
+          "dung": [
+           "I do my homework",
+           "I am cleaning my room",
+           "I am cooking"
+          ],
+          "sai": [
+           "I will do my homework",
+           "I did my homework"
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "ma": "Bài 1.1 (tr.103)",
+     "de": "Read the passage and tick (✓) T (True) or F (False) for each sentence.\nLandslides hardly ever occur in mountainous areas.",
+     "trang": 103,
+     "nhom": "Skills",
+     "dang": "CAU_NHO",
+     "dap_an": "F",
+     "loai_dap_an": "DAP_SO",
+     "doan": "R3.S1",
+     "ghep": {
+      "kieu": "DUNG_SAI",
+      "sao": 1,
+      "hoi": "Landslides hardly ever occur in mountainous areas.",
+      "dap": false,
+      "nhan": [
+       "True",
+       "False"
+      ]
+     }
+    },
+    {
+     "ma": "Bài 1.2 (tr.103)",
+     "de": "Read the passage and tick (✓) T (True) or F (False) for each sentence.\nYou should follow the instructions about landslide emergencies.",
+     "trang": 103,
+     "nhom": "Skills",
+     "dang": "CAU_NHO",
+     "dap_an": "T",
+     "loai_dap_an": "DAP_SO",
+     "doan": "R3.S1",
+     "ghep": {
+      "kieu": "DUNG_SAI",
+      "sao": 1,
+      "hoi": "You should follow the instructions about landslide emergencies.",
+      "dap": true,
+      "nhan": [
+       "True",
+       "False"
+      ]
+     }
+    },
+    {
+     "ma": "Bài 1.3 (tr.103)",
+     "de": "Read the passage and tick (✓) T (True) or F (False) for each sentence.\nAvoid going to public shelters as they are unsafe.",
+     "trang": 103,
+     "nhom": "Skills",
+     "dang": "CAU_NHO",
+     "dap_an": "F",
+     "loai_dap_an": "DAP_SO",
+     "doan": "R3.S1",
+     "ghep": {
+      "kieu": "DUNG_SAI",
+      "sao": 1,
+      "hoi": "Avoid going to public shelters as they are unsafe.",
+      "dap": false,
+      "nhan": [
+       "True",
+       "False"
+      ]
+     }
+    },
+    {
+     "ma": "Bài 1.4 (tr.103)",
+     "de": "Read the passage and tick (✓) T (True) or F (False) for each sentence.\nLandslides may occur one after another.",
+     "trang": 103,
+     "nhom": "Skills",
+     "dang": "CAU_NHO",
+     "dap_an": "T",
+     "loai_dap_an": "DAP_SO",
+     "doan": "R3.S1",
+     "ghep": {
+      "kieu": "DUNG_SAI",
+      "sao": 1,
+      "hoi": "Landslides may occur one after another.",
+      "dap": true,
+      "nhan": [
+       "True",
+       "False"
+      ]
+     }
+    },
+    {
+     "ma": "Bài 1.5 (tr.103)",
+     "de": "Read the passage and tick (✓) T (True) or F (False) for each sentence.\nYou should stay cautious until the storm is over.",
+     "trang": 103,
+     "nhom": "Skills",
+     "dang": "CAU_NHO",
+     "dap_an": "F",
+     "loai_dap_an": "DAP_SO",
+     "doan": "R3.S1",
+     "ghep": {
+      "kieu": "DUNG_SAI",
+      "sao": 1,
+      "hoi": "You should stay cautious only until the storm is over.",
+      "dap": false,
+      "nhan": [
+       "True",
+       "False"
+      ]
+     }
+    },
+    {
+     "ma": "Bài 4a (tr.103)",
+     "de": "Write a paragraph (80 - 100 words) about where your family shops and give reasons for your choice.\nYou can refer to its convenience, prices, freshness of food, etc. You may begin with:\nMy family usually shops ___",
+     "trang": 103,
+     "nhom": "Skills",
+     "dang": "CAU_NHO",
+     "dap_an": "My family usually shops at the local market at the end of our street. First, it takes my mum only five minutes to walk there, so she goes shopping almost every day. Second, the prices there are quite low. They get even lower when we bargain, and my mum is very good at it. Third, the vegetables, meat and fish there are always fresh. That is because farmers from nearby villages bring them to the market early every morning. For these reasons, my family hardly ever shops anywhere else.",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 7,
+      "hoi": "Put the sentences in the correct order to make a paragraph about where my family shops and why. Give the reasons in the order of the cues: convenience, prices, freshness of food. The paragraph starts with \"My family usually shops ...\" and ends with a conclusion.",
+      "buoc": [
+       "My family usually shops at the local market at the end of our street.",
+       "First, it takes my mum only five minutes to walk there, so she goes shopping almost every day.",
+       "Second, the prices there are quite low.",
+       "They get even lower when we bargain, and my mum is very good at it.",
+       "Third, the vegetables, meat and fish there are always fresh.",
+       "That is because farmers from nearby villages bring them to the market early every morning.",
+       "For these reasons, my family hardly ever shops anywhere else."
+      ],
+      "nhieu": [
+       "However, the market is often crowded and noisy, so shopping there is tiring.",
+       "My best friend's family usually orders food online because they are very busy."
+      ],
+      "thu_tu_khac": []
+     }
+    },
+    {
+     "ma": "Bài 4b (tr.103)",
+     "de": "Write a paragraph (80 - 100 words) about where your family shops and give reasons for your choice.\nYou can refer to its convenience, prices, freshness of food, etc. You may begin with:\nMy family usually shops ___",
+     "trang": 103,
+     "nhom": "Skills",
+     "dang": "CAU_NHO",
+     "dap_an": "Tuỳ HS. Ví dụ: My family usually shops at the supermarket near our flat. We go there twice a week. First, it is convenient because it stays open until 10 p.m. My parents can shop there after work. Second, it often has special offers, so we can save some money. Third, fruit and vegetables are kept in fridges, so they stay fresher than at many small shops. That is why we enjoy shopping there.",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 12,
+      "hoi": "Write a paragraph about why your family shops at the supermarket. Complete each sentence of the paragraph.",
+      "dong": [
+       {
+        "chu": "My family usually shops at the supermarket {0} our flat. We go there {1}.",
+        "o": [
+         {
+          "dung": [
+           "near",
+           "not far from"
+          ],
+          "sai": [
+           "next",
+           "far"
+          ]
+         },
+         {
+          "dung": [
+           "twice a week",
+           "once a week",
+           "every Sunday"
+          ],
+          "sai": [
+           "two times in week",
+           "every Sundays"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "First, it is {0} because it {1} open until 10 p.m.",
+        "o": [
+         {
+          "dung": [
+           "convenient"
+          ],
+          "sai": [
+           "convenience",
+           "inconvenient"
+          ]
+         },
+         {
+          "dung": [
+           "stays",
+           "is"
+          ],
+          "sai": [
+           "stay",
+           "staying"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "My parents can {0} there {1}.",
+        "o": [
+         {
+          "dung": [
+           "shop",
+           "go"
+          ],
+          "sai": [
+           "shops",
+           "shopping"
+          ]
+         },
+         {
+          "dung": [
+           "after work",
+           "in the evening"
+          ],
+          "sai": [
+           "in night",
+           "at the evening"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Second, it often {0} special offers, so we can {1} some money.",
+        "o": [
+         {
+          "dung": [
+           "has"
+          ],
+          "sai": [
+           "have",
+           "having"
+          ]
+         },
+         {
+          "dung": [
+           "save"
+          ],
+          "sai": [
+           "spend",
+           "saving"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Third, fruit and vegetables are kept {0} fridges, so they stay {1} than at many small shops.",
+        "o": [
+         {
+          "dung": [
+           "in"
+          ],
+          "sai": [
+           "on",
+           "under"
+          ]
+         },
+         {
+          "dung": [
+           "fresher"
+          ],
+          "sai": [
+           "more fresher",
+           "freshest"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "That is why we {0} shopping {1}.",
+        "o": [
+         {
+          "dung": [
+           "enjoy",
+           "like",
+           "love"
+          ],
+          "sai": [
+           "enjoys",
+           "enjoying"
+          ]
+         },
+         {
+          "dung": [
+           "there",
+           "at the supermarket"
+          ],
+          "sai": [
+           "at there"
+          ]
+         }
+        ]
+       }
       ]
      }
     }
