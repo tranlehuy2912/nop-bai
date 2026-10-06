@@ -2,7 +2,7 @@
  "nguon": "khtn8",
  "mon": "Khoa học tự nhiên",
  "ten": "SGK Khoa học tự nhiên 8",
- "ban": 9,
+ "ban": 10,
  "cac_bai": [
   {
    "chuong": "Mở đầu",
@@ -7919,7 +7919,8 @@
      "de": "Vẽ sơ đồ của mạch điện trong Hình 22.1 (mạch điện đơn giản gồm pin, bóng đèn, công tắc, dây nối; SGK trang 91).",
      "hinh": [
       "khtn8/B22.C1.webp",
-      "khtn8/B22.C1-chon.webp"
+      "khtn8/B22.C1-chon-1.webp",
+      "khtn8/B22.C1-chon-2.webp"
      ],
      "ghep": {
       "kieu": "CHON",
@@ -18412,7 +18413,8 @@
      "dang": "CAU_NHO",
      "de": "Lấy ví dụ và vẽ sơ đồ về lưới thức ăn.",
      "hinh": [
-      "khtn8/B44.C6-chon.webp"
+      "khtn8/B44.C6-chon-1.webp",
+      "khtn8/B44.C6-chon-2.webp"
      ],
      "ghep": {
       "kieu": "O",

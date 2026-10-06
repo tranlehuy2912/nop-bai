@@ -2,7 +2,7 @@
  "nguon": "sbtkhtn8",
  "mon": "Khoa học tự nhiên",
  "ten": "SBT Khoa học tự nhiên 8",
- "ban": 12,
+ "ban": 13,
  "cac_bai": [
   {
    "chuong": "Chương I. Phản ứng hoá học",
@@ -3232,7 +3232,8 @@
      "dap_an": "Vẽ hệ trục: trục hoành là nhiệt độ (°C), trục tung là độ tan S (g/100 g nước). Chấm các điểm (10; 31,2), (20; 37,2), (30; 40,1), (40; 42,6), (50; 45,8) rồi nối lại, được đường đi lên từ trái sang phải.",
      "loai_dap_an": "LOI_GIAI",
      "hinh": [
-      "sbtkhtn8/4.21a-chon.webp"
+      "sbtkhtn8/4.21a-chon-1.webp",
+      "sbtkhtn8/4.21a-chon-2.webp"
      ],
      "ghep": {
       "kieu": "CHON",
@@ -13475,7 +13476,8 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "hinh": [
-      "sbtkhtn8/18.4b-chon.webp"
+      "sbtkhtn8/18.4b-chon-1.webp",
+      "sbtkhtn8/18.4b-chon-2.webp"
      ],
      "ghep": {
       "kieu": "CHON",
