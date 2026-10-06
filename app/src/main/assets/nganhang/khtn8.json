@@ -2,7 +2,7 @@
  "nguon": "khtn8",
  "mon": "Khoa học tự nhiên",
  "ten": "SGK Khoa học tự nhiên 8",
- "ban": 5,
+ "ban": 6,
  "cac_bai": [
   {
    "chuong": "Mở đầu",
@@ -10831,21 +10831,240 @@
      "trang": 123,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Mỗi người đều có những đặc điểm riêng để phân biệt với người khác như màu da, chiều cao, nhóm máu,... Ngoài sự khác nhau đó, cấu tạo cơ thể người có những đặc điểm chung nào?"
+     "de": "Mỗi người đều có những đặc điểm riêng để phân biệt với người khác như màu da, chiều cao, nhóm máu,... Ngoài sự khác nhau đó, cấu tạo cơ thể người có những đặc điểm chung nào?",
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "dong": [
+       {
+        "chu": "Cơ thể người gồm các phần: {0}",
+        "o": [
+         {
+          "dung": [
+           "đầu, cổ, thân, hai tay và hai chân"
+          ],
+          "sai": [
+           "đầu, cổ, ngực và bụng",
+           "đầu, thân và hai chân"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Toàn bộ cơ thể được bao bọc bên ngoài bởi {0}",
+        "o": [
+         {
+          "dung": [
+           "lớp da, dưới da là lớp mỡ, dưới lớp mỡ là cơ và xương"
+          ],
+          "sai": [
+           "lớp mỡ, dưới lớp mỡ là lớp da, dưới da là cơ và xương",
+           "lớp da, dưới da là cơ và xương, dưới cơ và xương là lớp mỡ"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Bên trong cơ thể, các cơ quan {0}",
+        "o": [
+         {
+          "dung": [
+           "hợp thành các hệ cơ quan giống nhau ở mọi người, các hệ liên quan chặt chẽ với nhau"
+          ],
+          "sai": [
+           "hợp thành các hệ cơ quan khác nhau tuỳ theo màu da, chiều cao của mỗi người",
+           "hoạt động riêng rẽ, hệ cơ quan này không ảnh hưởng đến hệ cơ quan khác"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B30.C2",
      "trang": 124,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Đọc thông tin trong Bảng 30.1 (vai trò chính của các cơ quan và hệ cơ quan trong cơ thể người; SGK trang 124) và thảo luận để trả lời câu hỏi ở phần khởi động."
+     "de": "Đọc thông tin trong Bảng 30.1 (vai trò chính của các cơ quan và hệ cơ quan trong cơ thể người, SGK trang 124) và thảo luận để trả lời câu hỏi ở phần khởi động: Mỗi người đều có những đặc điểm riêng để phân biệt với người khác như màu da, chiều cao, nhóm máu,... Ngoài sự khác nhau đó, cấu tạo cơ thể người có những đặc điểm chung nào?",
+     "hinh": [
+      "khtn8/B30.C2.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 5,
+      "hoi": "Đọc thông tin trong Bảng 30.1 và trả lời câu hỏi ở phần khởi động: ngoài những đặc điểm riêng như màu da, chiều cao, nhóm máu,..., cấu tạo cơ thể người có những đặc điểm chung nào?",
+      "dong": [
+       {
+        "chu": "Theo Bảng 30.1, cơ thể mọi người đều có {0}",
+        "o": [
+         {
+          "dung": [
+           "cùng các hệ cơ quan như nhau, mỗi hệ gồm những cơ quan nhất định và có vai trò nhất định"
+          ],
+          "sai": [
+           "các hệ cơ quan khác nhau, số hệ nhiều hay ít tuỳ theo chiều cao, cân nặng của mỗi người",
+           "các hệ cơ quan giống nhau, nhưng cơ quan trong mỗi hệ thay đổi tuỳ theo nhóm máu"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Tim và mạch máu thuộc {0}",
+        "o": [
+         {
+          "dung": [
+           "hệ tuần hoàn"
+          ],
+          "sai": [
+           "hệ hô hấp",
+           "hệ bài tiết"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Phổi, thận, da thuộc {0}",
+        "o": [
+         {
+          "dung": [
+           "hệ bài tiết"
+          ],
+          "sai": [
+           "hệ hô hấp",
+           "hệ tuần hoàn"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Não, tuỷ sống, dây thần kinh, hạch thần kinh thuộc {0}",
+        "o": [
+         {
+          "dung": [
+           "hệ thần kinh"
+          ],
+          "sai": [
+           "hệ nội tiết",
+           "hệ vận động"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Tuyến yên, tuyến giáp, tuyến tuỵ, tuyến trên thận, tuyến sinh dục thuộc {0}",
+        "o": [
+         {
+          "dung": [
+           "hệ nội tiết"
+          ],
+          "sai": [
+           "hệ thần kinh",
+           "hệ sinh dục"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B30.C3",
      "trang": 124,
      "nhom": "Em có thể",
      "dang": "CAU_NHO",
-     "de": "Kể tên và nêu vai trò chính của các cơ quan và hệ cơ quan trong cơ thể mình."
+     "de": "Kể tên và nêu vai trò chính của các cơ quan và hệ cơ quan trong cơ thể mình.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 6,
+      "hoi": "Kể tên và nêu vai trò chính của các cơ quan và hệ cơ quan trong cơ thể mình: mỗi hệ cơ quan sau có vai trò chính nào?",
+      "dong": [
+       {
+        "chu": "Hệ vận động (cơ, xương, khớp): {0}",
+        "o": [
+         {
+          "dung": [
+           "định hình cơ thể, bảo vệ nội quan, giúp cơ thể cử động và di chuyển"
+          ],
+          "sai": [
+           "thu nhận kích thích từ môi trường, điều khiển, điều hoà hoạt động của các cơ quan",
+           "vận chuyển chất dinh dưỡng, oxygen, hormone đến các tế bào và chất thải đến các cơ quan bài tiết"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Hệ tuần hoàn (tim và mạch máu): {0}",
+        "o": [
+         {
+          "dung": [
+           "vận chuyển chất dinh dưỡng, oxygen, hormone đến các tế bào và chất thải đến các cơ quan bài tiết"
+          ],
+          "sai": [
+           "giúp cơ thể lấy khí oxygen từ môi trường và thải khí carbon dioxide ra khỏi cơ thể",
+           "lọc các chất thải có hại cho cơ thể từ máu và thải chúng ra môi trường bên ngoài"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Hệ hô hấp (đường dẫn khí và hai lá phổi): {0}",
+        "o": [
+         {
+          "dung": [
+           "giúp cơ thể lấy khí oxygen từ môi trường và thải khí carbon dioxide ra khỏi cơ thể"
+          ],
+          "sai": [
+           "vận chuyển chất dinh dưỡng, oxygen, hormone đến các tế bào và chất thải đến các cơ quan bài tiết",
+           "lọc các chất thải có hại cho cơ thể từ máu và thải chúng ra môi trường bên ngoài"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Hệ bài tiết (phổi, thận, da): {0}",
+        "o": [
+         {
+          "dung": [
+           "lọc các chất thải có hại cho cơ thể từ máu và thải chúng ra môi trường bên ngoài"
+          ],
+          "sai": [
+           "biến đổi thức ăn thành các chất dinh dưỡng cơ thể hấp thụ được và thải chất bã ra ngoài",
+           "giúp cơ thể lấy khí oxygen từ môi trường và thải khí carbon dioxide ra khỏi cơ thể"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Hệ thần kinh (não, tuỷ sống, dây thần kinh, hạch thần kinh): {0}",
+        "o": [
+         {
+          "dung": [
+           "thu nhận kích thích từ môi trường, điều khiển, điều hoà hoạt động của các cơ quan"
+          ],
+          "sai": [
+           "điều hoà hoạt động của các cơ quan thông qua việc tiết hormone vào máu",
+           "định hình cơ thể, bảo vệ nội quan, giúp cơ thể cử động và di chuyển"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Hệ nội tiết (tuyến yên, tuyến giáp, tuyến tuỵ, tuyến trên thận,...): {0}",
+        "o": [
+         {
+          "dung": [
+           "điều hoà hoạt động của các cơ quan thông qua việc tiết hormone vào máu"
+          ],
+          "sai": [
+           "thu nhận kích thích từ môi trường, điều khiển, điều hoà hoạt động của các cơ quan",
+           "giúp cơ thể sinh sản, duy trì nòi giống"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     }
    ]
   },
@@ -10858,14 +11077,141 @@
      "trang": 125,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Tại sao mỗi người lại có vóc dáng và kích thước khác nhau? Nhờ đâu mà cơ thể người có thể di chuyển, vận động?"
+     "de": "Tại sao mỗi người lại có vóc dáng và kích thước khác nhau? Nhờ đâu mà cơ thể người có thể di chuyển, vận động?",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "dong": [
+       {
+        "chu": "Mỗi người có vóc dáng và kích thước khác nhau vì {0}",
+        "o": [
+         {
+          "dung": [
+           "bộ xương tạo nên khung cơ thể, cùng với hệ cơ, ở mỗi người có kích thước khác nhau"
+          ],
+          "sai": [
+           "mỗi người có số lượng xương và số lượng cơ khác nhau, người cao thì nhiều xương hơn",
+           "nhóm máu của mỗi người khác nhau nên tốc độ lớn lên của cơ thể khác nhau"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Cơ thể di chuyển, vận động được là nhờ {0}",
+        "o": [
+         {
+          "dung": [
+           "cơ bám vào xương, khi cơ co hay dãn sẽ làm xương cử động quanh các khớp"
+          ],
+          "sai": [
+           "xương tự co ngắn lại và duỗi dài ra được, kéo theo các cơ bám quanh nó cử động",
+           "lớp da và lớp mỡ co giãn, kéo các xương ở bên trong chuyển động theo"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B31.C2",
      "trang": 126,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "1. Quan sát Hình 31.1 (một số xương và cơ của hệ vận động; SGK trang 125), phân loại các xương vào ba phần của bộ xương. 2. Quan sát Hình 31.2 (tư thế co, duỗi tay), so sánh tư thế của tay khi cơ co và dãn. Liên hệ kiến thức về đòn bẩy đã học ở bài 19, cho biết tay ở tư thế nào có khả năng chịu tải tốt hơn."
+     "de": "1. Quan sát Hình 31.1 (một số xương và cơ của hệ vận động; SGK trang 125), phân loại các xương vào ba phần của bộ xương. 2. Quan sát Hình 31.2 (tư thế co, duỗi tay), so sánh tư thế của tay khi cơ co và dãn. Liên hệ kiến thức về đòn bẩy đã học ở bài 19, cho biết tay ở tư thế nào có khả năng chịu tải tốt hơn.",
+     "hinh": [
+      "khtn8/B31.C2.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 6,
+      "dong": [
+       {
+        "chu": "1. Xương sọ mặt: {0}",
+        "o": [
+         {
+          "dung": [
+           "xương đầu"
+          ],
+          "sai": [
+           "xương thân",
+           "xương chi"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Xương sườn: {0}",
+        "o": [
+         {
+          "dung": [
+           "xương thân"
+          ],
+          "sai": [
+           "xương đầu",
+           "xương chi"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Xương tay: {0}",
+        "o": [
+         {
+          "dung": [
+           "xương chi"
+          ],
+          "sai": [
+           "xương đầu",
+           "xương thân"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "2. Khi cơ co (Hình 31.2 bên trái), {0}",
+        "o": [
+         {
+          "dung": [
+           "cẳng tay gập lên sát cánh tay, bắp cơ ngắn lại và phình to"
+          ],
+          "sai": [
+           "cẳng tay duỗi thẳng ra, bắp cơ dài ra và nhỏ lại",
+           "cẳng tay gập lên sát cánh tay, bắp cơ dài ra và nhỏ lại"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Khi cơ dãn (Hình 31.2 bên phải), {0}",
+        "o": [
+         {
+          "dung": [
+           "tay duỗi thẳng, bắp cơ dài ra và nhỏ lại"
+          ],
+          "sai": [
+           "tay gập lại, bắp cơ ngắn lại và phình to",
+           "tay duỗi thẳng, bắp cơ ngắn lại và phình to"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Theo nguyên lí đòn bẩy (điểm tựa là khớp khuỷu tay), tay chịu tải tốt hơn khi ở tư thế {0}",
+        "o": [
+         {
+          "dung": [
+           "co (gập tay)"
+          ],
+          "sai": [
+           "duỗi thẳng"
+          ],
+          "hai": true
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B31.C3",
@@ -10879,14 +11225,182 @@
      "trang": 126,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "1. Nêu ý nghĩa của luyện tập thể dục, thể thao. 2. Lựa chọn phương pháp luyện tập thể dục, thể thao phù hợp với lứa tuổi."
+     "de": "1. Nêu ý nghĩa của luyện tập thể dục, thể thao. 2. Lựa chọn phương pháp luyện tập thể dục, thể thao phù hợp với lứa tuổi.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 5,
+      "hoi": "1. Nêu ý nghĩa của luyện tập thể dục, thể thao.\n2. Lựa chọn phương pháp luyện tập thể dục, thể thao phù hợp với lứa tuổi: mỗi cách luyện tập sau có phù hợp với học sinh lớp 8 không?",
+      "dong": [
+       {
+        "chu": "1. Luyện tập thể dục, thể thao {0}",
+        "o": [
+         {
+          "dung": [
+           "kích thích tăng chiều dài và chu vi của xương, giúp cơ bắp nở nang, rắn chắc, cơ thể dẻo dai"
+          ],
+          "sai": [
+           "làm xương ngừng dài ra để dồn chất dinh dưỡng cho cơ bắp nở nang, rắn chắc hơn",
+           "chỉ giúp đốt cháy chất béo để giảm cân, hầu như không ảnh hưởng đến xương và cơ"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "2. Chọn môn vừa sức như chạy bộ, bơi, cầu lông, đá cầu, nhảy dây: {0}",
+        "o": [
+         {
+          "dung": [
+           "Phù hợp"
+          ],
+          "sai": [
+           "Không phù hợp"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Khởi động kĩ trước khi tập, tập đều đặn và tăng dần mức độ: {0}",
+        "o": [
+         {
+          "dung": [
+           "Phù hợp"
+          ],
+          "sai": [
+           "Không phù hợp"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Tập tạ, mang vác vật quá nặng so với sức để cơ nhanh to: {0}",
+        "o": [
+         {
+          "dung": [
+           "Không phù hợp"
+          ],
+          "sai": [
+           "Phù hợp"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Tập liên tục nhiều giờ không nghỉ, kể cả khi đã rất mệt: {0}",
+        "o": [
+         {
+          "dung": [
+           "Không phù hợp"
+          ],
+          "sai": [
+           "Phù hợp"
+          ],
+          "hai": true
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B31.C5",
      "trang": 127,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Về thực hành sơ cứu và băng bó khi người khác bị gãy xương: 1. Khi thực hiện buộc cố định nẹp cần lưu ý những điều gì? 2. Có thể sử dụng những dụng cụ nào tương tự nẹp và dây vải rộng bản trong điều kiện thực tế khi sơ cứu và băng bó người khác bị gãy xương?"
+     "de": "Về thực hành sơ cứu và băng bó khi người khác bị gãy xương: 1. Khi thực hiện buộc cố định nẹp cần lưu ý những điều gì? 2. Có thể sử dụng những dụng cụ nào tương tự nẹp và dây vải rộng bản trong điều kiện thực tế khi sơ cứu và băng bó người khác bị gãy xương?",
+     "ghep": {
+      "kieu": "O",
+      "sao": 6,
+      "hoi": "Trả lời các câu hỏi sau về sơ cứu và băng bó khi người khác bị gãy xương:\n1. Khi thực hiện buộc cố định nẹp cần lưu ý những điều gì?\n2. Có thể sử dụng những dụng cụ nào tương tự nẹp và dây vải rộng bản trong điều kiện thực tế khi sơ cứu và băng bó người khác bị gãy xương?",
+      "dong": [
+       {
+        "chu": "1. Nẹp phải {0}",
+        "o": [
+         {
+          "dung": [
+           "đủ dài để giữ cố định cả khớp ở phía trên và khớp ở phía dưới chỗ xương gãy"
+          ],
+          "sai": [
+           "chỉ cần dài vừa bằng chỗ xương bị gãy để không vướng vào các khớp ở hai đầu",
+           "được đặt đè lên chỗ xương gãy rồi ấn mạnh để xương gãy khớp lại với nhau"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Trước khi buộc, {0}",
+        "o": [
+         {
+          "dung": [
+           "lót bông, gạc y tế hoặc vải sạch vào phía trong nẹp"
+          ],
+          "sai": [
+           "đặt nẹp sát trực tiếp vào da cho chắc",
+           "nắn cho xương gãy trở về đúng chỗ"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Dây buộc cố định nẹp ở {0}",
+        "o": [
+         {
+          "dung": [
+           "phía trên và phía dưới chỗ gãy"
+          ],
+          "sai": [
+           "ngay trên chỗ gãy, buộc thật chặt",
+           "một chỗ duy nhất ở giữa nẹp"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Độ chặt khi buộc: {0}",
+        "o": [
+         {
+          "dung": [
+           "đủ chặt để nẹp không xê dịch nhưng không quá chặt làm cản trở máu lưu thông"
+          ],
+          "sai": [
+           "càng chặt càng tốt để chỗ gãy không cử động được chút nào",
+           "thật lỏng để người bị thương đỡ đau"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "2. Có thể dùng thay cho nẹp: {0}",
+        "o": [
+         {
+          "dung": [
+           "thước kẻ dài, thanh gỗ, thanh tre có chiều dài phù hợp"
+          ],
+          "sai": [
+           "sợi dây thép, dây điện hoặc dây phơi quần áo có chiều dài phù hợp",
+           "khăn mặt mềm, túi ni lông hoặc găng tay vải"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Có thể dùng thay cho dây vải rộng bản: {0}",
+        "o": [
+         {
+          "dung": [
+           "khăn quàng, quần áo, mảnh vải sạch xé thành dải"
+          ],
+          "sai": [
+           "sợi dây thép mảnh, dây điện hoặc dây cước câu cá",
+           "sợi chỉ khâu, dây chun nhỏ buộc thật chặt nhiều vòng"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B31.C6",
@@ -10906,42 +11420,506 @@
      "trang": 128,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Cơ thể cần thường xuyên lấy các chất dinh dưỡng từ nguồn thức ăn để duy trì sự sống và phát triển. Tuy nhiên, thức ăn hầu hết có kích thước lớn nên các tế bào của cơ thể không thể hấp thụ được. Quá trình nào đã giúp cơ thể giải quyết vấn đề này và quá trình đó diễn ra như thế nào?"
+     "de": "Cơ thể cần thường xuyên lấy các chất dinh dưỡng từ nguồn thức ăn để duy trì sự sống và phát triển. Tuy nhiên, thức ăn hầu hết có kích thước lớn nên các tế bào của cơ thể không thể hấp thụ được. Quá trình nào đã giúp cơ thể giải quyết vấn đề này và quá trình đó diễn ra như thế nào?",
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "dong": [
+       {
+        "chu": "Quá trình giúp cơ thể giải quyết vấn đề này là {0}",
+        "o": [
+         {
+          "dung": [
+           "quá trình tiêu hoá"
+          ],
+          "sai": [
+           "quá trình hô hấp",
+           "quá trình bài tiết"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Trong ống tiêu hoá, thức ăn được {0}",
+        "o": [
+         {
+          "dung": [
+           "nghiền nhỏ, đảo trộn (tiêu hoá cơ học) và được các enzyme biến đổi (tiêu hoá hoá học)"
+          ],
+          "sai": [
+           "nghiền nhỏ, đảo trộn (tiêu hoá cơ học), không có enzyme nào tham gia",
+           "các enzyme biến đổi (tiêu hoá hoá học), không cần nghiền nhỏ, đảo trộn"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Thức ăn được biến đổi thành {0}, các chất này được hấp thụ chủ yếu ở {1} rồi theo máu đến các tế bào.",
+        "o": [
+         {
+          "dung": [
+           "các chất dinh dưỡng đơn giản"
+          ],
+          "sai": [
+           "các mẩu thức ăn to hơn",
+           "các chất bã khó tan"
+          ]
+         },
+         {
+          "dung": [
+           "ruột non"
+          ],
+          "sai": [
+           "dạ dày",
+           "ruột già"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B32.C2",
      "trang": 128,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Nêu khái niệm chất dinh dưỡng và dinh dưỡng."
+     "de": "Nêu khái niệm chất dinh dưỡng và dinh dưỡng.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "dong": [
+       {
+        "chu": "Chất dinh dưỡng là {0}",
+        "o": [
+         {
+          "dung": [
+           "các chất có trong thức ăn mà cơ thể dùng làm nguyên liệu cấu tạo cơ thể và cung cấp năng lượng cho hoạt động sống"
+          ],
+          "sai": [
+           "quá trình cơ thể thu nhận, biến đổi và sử dụng thức ăn để duy trì sự sống và giúp cơ thể lớn lên",
+           "các enzyme do tuyến tiêu hoá tiết ra để biến đổi thức ăn thành những chất đơn giản mà cơ thể hấp thụ được"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Dinh dưỡng là {0}",
+        "o": [
+         {
+          "dung": [
+           "quá trình thu nhận, biến đổi và sử dụng chất dinh dưỡng để duy trì sự sống của cơ thể"
+          ],
+          "sai": [
+           "các chất có trong thức ăn mà cơ thể sử dụng làm nguyên liệu cấu tạo cơ thể",
+           "quá trình thải chất bã và chất độc ra khỏi cơ thể qua hậu môn và thận"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Các nhóm chất dinh dưỡng cần thiết cho cơ thể gồm {0}",
+        "o": [
+         {
+          "dung": [
+           "carbohydrate, protein, chất béo, vitamin và chất khoáng"
+          ],
+          "sai": [
+           "carbohydrate, protein, chất béo, enzyme và hormone",
+           "chỉ có carbohydrate và protein"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B32.C3",
      "trang": 129,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Quan sát Hình 32.1 (cấu tạo hệ tiêu hoá ở người; SGK trang 129) và dựa vào kiến thức đã học để thực hiện các yêu cầu sau: 1. Nêu tên các cơ quan của hệ tiêu hoá tương ứng với những vị trí được đánh số trong hình. 2. Xác định tên ba cơ quan mà thức ăn không đi qua."
+     "de": "Quan sát Hình 32.1 (cấu tạo hệ tiêu hoá ở người; SGK trang 129) và dựa vào kiến thức đã học để thực hiện các yêu cầu sau: 1. Nêu tên các cơ quan của hệ tiêu hoá tương ứng với những vị trí được đánh số trong hình. 2. Xác định tên ba cơ quan mà thức ăn không đi qua.",
+     "hinh": [
+      "khtn8/B32.C3.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 6,
+      "hoi": "Quan sát Hình 32.1 và dựa vào kiến thức đã học để thực hiện các yêu cầu sau:\n1. Nêu tên các cơ quan của hệ tiêu hoá tương ứng với những vị trí được đánh số trong hình.\n2. Xác định tên các cơ quan trong hình mà thức ăn không đi qua.",
+      "dong": [
+       {
+        "chu": "1. Vị trí 1: {0}",
+        "o": [
+         {
+          "dung": [
+           "tuyến nước bọt"
+          ],
+          "sai": [
+           "khoang miệng",
+           "hầu"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Vị trí 2: {0}",
+        "o": [
+         {
+          "dung": [
+           "hầu"
+          ],
+          "sai": [
+           "thực quản",
+           "khoang miệng"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Vị trí 5: {0}",
+        "o": [
+         {
+          "dung": [
+           "tuyến tuỵ"
+          ],
+          "sai": [
+           "túi mật",
+           "gan"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Vị trí 9: {0}",
+        "o": [
+         {
+          "dung": [
+           "túi mật"
+          ],
+          "sai": [
+           "gan",
+           "tuyến tuỵ"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Vị trí 10: {0}",
+        "o": [
+         {
+          "dung": [
+           "gan"
+          ],
+          "sai": [
+           "dạ dày",
+           "túi mật"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "2. Các cơ quan trong hình mà thức ăn không đi qua: {0}",
+        "o": [
+         {
+          "dung": [
+           "tuyến nước bọt, tuyến tuỵ, túi mật và gan"
+          ],
+          "sai": [
+           "gan, túi mật, ruột già và hậu môn",
+           "tuyến nước bọt, dạ dày, tuyến tuỵ và ruột non"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B32.C4",
      "trang": 130,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "1. Thảo luận về sự phối hợp các cơ quan thể hiện chức năng của cả hệ tiêu hoá. 2. Nêu mối quan hệ giữa tiêu hoá và dinh dưỡng."
+     "de": "1. Thảo luận về sự phối hợp các cơ quan thể hiện chức năng của cả hệ tiêu hoá. 2. Nêu mối quan hệ giữa tiêu hoá và dinh dưỡng.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 5,
+      "dong": [
+       {
+        "chu": "1. Ở khoang miệng: {0}",
+        "o": [
+         {
+          "dung": [
+           "răng nhai, nghiền; lưỡi đảo trộn; enzyme amylase trong nước bọt biến đổi một phần tinh bột chín thành đường maltose"
+          ],
+          "sai": [
+           "co bóp làm thức ăn nhuyễn và thấm đều dịch vị; enzyme pepsin biến đổi một phần protein",
+           "hấp thụ thêm một số chất, chủ yếu hấp thụ lại nước, cô đặc chất bã thành phân để thải ra ngoài"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Ở dạ dày: {0}",
+        "o": [
+         {
+          "dung": [
+           "co bóp làm thức ăn nhuyễn và thấm đều dịch vị; enzyme pepsin biến đổi một phần protein"
+          ],
+          "sai": [
+           "răng nhai, nghiền; lưỡi đảo trộn; enzyme amylase trong nước bọt biến đổi một phần tinh bột chín thành đường maltose",
+           "dịch tuỵ, dịch mật, dịch ruột biến đổi thức ăn thành các chất đơn giản; chất dinh dưỡng được hấp thụ qua lông ruột"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Ở ruột non: {0}",
+        "o": [
+         {
+          "dung": [
+           "dịch tuỵ, dịch mật, dịch ruột biến đổi thức ăn thành các chất đơn giản; chất dinh dưỡng được hấp thụ qua lông ruột"
+          ],
+          "sai": [
+           "co bóp làm thức ăn nhuyễn và thấm đều dịch vị; enzyme pepsin biến đổi một phần protein",
+           "hấp thụ thêm một số chất, chủ yếu hấp thụ lại nước, cô đặc chất bã thành phân để thải ra ngoài"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Ở ruột già: {0}",
+        "o": [
+         {
+          "dung": [
+           "hấp thụ thêm một số chất, chủ yếu hấp thụ lại nước, cô đặc chất bã thành phân để thải ra ngoài"
+          ],
+          "sai": [
+           "dịch tuỵ, dịch mật, dịch ruột biến đổi thức ăn thành các chất đơn giản; chất dinh dưỡng được hấp thụ qua lông ruột",
+           "răng nhai, nghiền; lưỡi đảo trộn; enzyme amylase trong nước bọt biến đổi một phần tinh bột chín thành đường maltose"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "2. Tiêu hoá và dinh dưỡng có quan hệ: {0}",
+        "o": [
+         {
+          "dung": [
+           "tiêu hoá biến đổi thức ăn thành chất dinh dưỡng đơn giản để cơ thể hấp thụ và sử dụng; không có tiêu hoá thì không có dinh dưỡng"
+          ],
+          "sai": [
+           "dinh dưỡng biến đổi thức ăn thành chất đơn giản trước, sau đó tiêu hoá mới đưa các chất này đến từng tế bào để sử dụng",
+           "tiêu hoá và dinh dưỡng là hai quá trình độc lập: tiêu hoá chỉ diễn ra ở dạ dày, dinh dưỡng chỉ diễn ra ở ruột"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B32.C5",
      "trang": 130,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "1. Quan sát Hình 32.2 (các giai đoạn sâu răng; SGK trang 130), thảo luận về các giai đoạn hình thành lỗ sâu răng. 2. Đề xuất một số biện pháp giúp phòng, chống sâu răng và các việc nên làm để hạn chế những ảnh hưởng tới sức khoẻ khi đã bị sâu răng."
+     "de": "1. Quan sát Hình 32.2 (các giai đoạn sâu răng; SGK trang 130), thảo luận về các giai đoạn hình thành lỗ sâu răng. 2. Đề xuất một số biện pháp giúp phòng, chống sâu răng và các việc nên làm để hạn chế những ảnh hưởng tới sức khoẻ khi đã bị sâu răng.",
+     "hinh": [
+      "khtn8/B32.C5.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 6,
+      "hoi": "1. Quan sát Hình 32.2, mô tả các giai đoạn hình thành lỗ sâu răng.\n2. Đề xuất một số biện pháp giúp phòng, chống sâu răng và các việc nên làm để hạn chế những ảnh hưởng tới sức khoẻ khi đã bị sâu răng.",
+      "dong": [
+       {
+        "chu": "1. Răng 1: {0}",
+        "o": [
+         {
+          "dung": [
+           "răng bình thường, chưa bị sâu"
+          ],
+          "sai": [
+           "lỗ sâu mới ở men răng",
+           "lỗ sâu lan vào ngà răng",
+           "lỗ sâu lan tới tuỷ răng, tuỷ bị viêm"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Răng 2: {0}",
+        "o": [
+         {
+          "dung": [
+           "lỗ sâu mới ở men răng"
+          ],
+          "sai": [
+           "răng bình thường, chưa bị sâu",
+           "lỗ sâu lan vào ngà răng",
+           "lỗ sâu lan tới tuỷ răng, tuỷ bị viêm"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Răng 3: {0}",
+        "o": [
+         {
+          "dung": [
+           "lỗ sâu lan vào ngà răng"
+          ],
+          "sai": [
+           "răng bình thường, chưa bị sâu",
+           "lỗ sâu mới ở men răng",
+           "lỗ sâu lan tới tuỷ răng, tuỷ bị viêm"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Răng 4: {0}",
+        "o": [
+         {
+          "dung": [
+           "lỗ sâu lan tới tuỷ răng, tuỷ bị viêm"
+          ],
+          "sai": [
+           "răng bình thường, chưa bị sâu",
+           "lỗ sâu mới ở men răng",
+           "lỗ sâu lan vào ngà răng"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "2. Đánh răng đúng cách ít nhất hai lần mỗi ngày (sáng sau khi ngủ dậy, tối trước khi đi ngủ), hạn chế ăn đồ ngọt: {0}",
+        "o": [
+         {
+          "dung": [
+           "Nên làm"
+          ],
+          "sai": [
+           "Không nên"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Khi đã bị sâu răng, cần {0}",
+        "o": [
+         {
+          "dung": [
+           "đi khám nha sĩ sớm để hàn (trám) lỗ sâu hoặc chữa tuỷ"
+          ],
+          "sai": [
+           "chờ lỗ sâu tự lành lại vì men răng sẽ tự mọc kín lỗ",
+           "ngậm đá lạnh hoặc uống thuốc giảm đau mỗi khi đau là đủ"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B32.C6",
      "trang": 130,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "1. Người bị viêm loét dạ dày – tá tràng nên và không nên sử dụng các loại thức ăn, đồ uống nào? Em hãy kể tên và giải thích. 2. Dựa vào thông tin trên, em hãy nêu các biện pháp bảo vệ hệ tiêu hoá và cơ sở khoa học của các biện pháp đó."
+     "de": "1. Người bị viêm loét dạ dày – tá tràng nên và không nên sử dụng các loại thức ăn, đồ uống nào? Em hãy kể tên và giải thích. 2. Dựa vào thông tin trên, em hãy nêu các biện pháp bảo vệ hệ tiêu hoá và cơ sở khoa học của các biện pháp đó.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 6,
+      "hoi": "1. Người bị viêm loét dạ dày – tá tràng nên và không nên sử dụng các loại thức ăn, đồ uống nào? Giải thích.\n2. Nêu các biện pháp bảo vệ hệ tiêu hoá và cơ sở khoa học của các biện pháp đó.",
+      "dong": [
+       {
+        "chu": "1. Thức ăn mềm, dễ tiêu (cháo, cơm mềm), chia thành nhiều bữa nhỏ: {0}",
+        "o": [
+         {
+          "dung": [
+           "Nên làm"
+          ],
+          "sai": [
+           "Không nên"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Rượu, bia, cà phê, đồ ăn cay nóng (ớt, tiêu), đồ chua, đồ chiên rán nhiều dầu mỡ: {0}",
+        "o": [
+         {
+          "dung": [
+           "Không nên"
+          ],
+          "sai": [
+           "Nên làm"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Không nên dùng đồ cay, chua, rượu bia vì {0}",
+        "o": [
+         {
+          "dung": [
+           "chúng kích thích dạ dày tiết nhiều acid và làm tổn thương niêm mạc, khiến vết loét nặng hơn"
+          ],
+          "sai": [
+           "chúng làm thức ăn đi xuống ruột quá nhanh nên dạ dày không kịp tiêu hoá, gây đói",
+           "chúng làm giảm lượng acid trong dạ dày khiến thức ăn khó tiêu, gây đầy bụng"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "2. Ăn chậm, nhai kĩ vì {0}",
+        "o": [
+         {
+          "dung": [
+           "thức ăn được nghiền nhỏ, thấm dịch tiêu hoá tốt hơn, dạ dày đỡ phải làm việc quá sức"
+          ],
+          "sai": [
+           "thức ăn ở lâu trong miệng sẽ được hấp thụ hết ngay ở khoang miệng, ruột đỡ làm việc",
+           "nhai kĩ làm răng mọc nhanh và chắc hơn, nhờ đó răng không bao giờ bị sâu"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Ăn uống hợp vệ sinh vì {0}",
+        "o": [
+         {
+          "dung": [
+           "tránh được vi khuẩn, giun sán, chất độc gây hại cho các cơ quan tiêu hoá"
+          ],
+          "sai": [
+           "thức ăn sạch được tiêu hoá xong hoàn toàn ngay ở khoang miệng và dạ dày",
+           "thức ăn sạch không cần đến các enzyme và dịch tiêu hoá để biến đổi"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Ăn đúng giờ, đúng bữa, tinh thần thoải mái khi ăn vì {0}",
+        "o": [
+         {
+          "dung": [
+           "sự tiết dịch tiêu hoá thuận lợi, tiêu hoá đạt hiệu quả"
+          ],
+          "sai": [
+           "cơ thể không cần tiết dịch tiêu hoá nữa",
+           "dạ dày sẽ không bao giờ bị bệnh"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B32.C7",
@@ -10955,14 +11933,105 @@
      "trang": 133,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Vận dụng hiểu biết về an toàn vệ sinh thực phẩm, em hãy thực hiện các yêu cầu sau: 1. Cho biết ý nghĩa của thông tin trên bao bì (hạn sử dụng, giá trị dinh dưỡng,...) thực phẩm đóng gói. 2. Trình bày một số bệnh do mất vệ sinh an toàn thực phẩm. Đề xuất các biện pháp lựa chọn, bảo quản và chế biến thực phẩm giúp phòng chống các bệnh vừa nêu."
+     "de": "Vận dụng hiểu biết về an toàn vệ sinh thực phẩm, em hãy thực hiện các yêu cầu sau: 1. Cho biết ý nghĩa của thông tin trên bao bì (hạn sử dụng, giá trị dinh dưỡng,...) thực phẩm đóng gói. 2. Trình bày một số bệnh do mất vệ sinh an toàn thực phẩm. Đề xuất các biện pháp lựa chọn, bảo quản và chế biến thực phẩm giúp phòng chống các bệnh vừa nêu.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 6,
+      "dong": [
+       {
+        "chu": "1. Hạn sử dụng trên bao bì cho biết {0}",
+        "o": [
+         {
+          "dung": [
+           "thời hạn thực phẩm còn giữ được chất lượng, an toàn khi bảo quản đúng cách; quá hạn thì không dùng"
+          ],
+          "sai": [
+           "ngày thực phẩm được sản xuất tại nhà máy; thực phẩm càng gần ngày này càng kém an toàn",
+           "ngày cuối cùng cửa hàng được bày bán; quá ngày này người mua vẫn dùng được thêm vài tháng"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Bảng giá trị dinh dưỡng trên bao bì cho biết {0}",
+        "o": [
+         {
+          "dung": [
+           "năng lượng và lượng các chất dinh dưỡng có trong sản phẩm, giúp chọn thực phẩm phù hợp"
+          ],
+          "sai": [
+           "giá tiền của sản phẩm và tên các cửa hàng được phép bán sản phẩm đó",
+           "cách chế biến sản phẩm thành món ăn và thời gian cần nấu cho chín"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "2. Ăn phải thực phẩm mất vệ sinh, nhiễm độc có thể bị {0}",
+        "o": [
+         {
+          "dung": [
+           "ngộ độc thực phẩm: đau bụng, tiêu chảy; đau đầu, chóng mặt, nặng thì hôn mê"
+          ],
+          "sai": [
+           "cận thị, viễn thị và loạn thị do chất độc làm hỏng thể thuỷ tinh",
+           "loãng xương và cong vẹo cột sống do chất độc làm xương mềm ra"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Để lẫn thịt, cá sống với thức ăn đã nấu chín: {0}",
+        "o": [
+         {
+          "dung": [
+           "Không nên"
+          ],
+          "sai": [
+           "Nên làm"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Bảo quản lạnh rau, quả, thịt, cá tươi; che đậy thức ăn sau khi nấu: {0}",
+        "o": [
+         {
+          "dung": [
+           "Nên làm"
+          ],
+          "sai": [
+           "Không nên"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Ăn khoai tây đã mọc mầm: {0}",
+        "o": [
+         {
+          "dung": [
+           "Không nên"
+          ],
+          "sai": [
+           "Nên làm"
+          ],
+          "hai": true
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B32.C9",
      "trang": 134,
      "nhom": "Em có thể",
      "dang": "CAU_NHO",
-     "de": "Xây dựng chế độ dinh dưỡng cho bản thân và những người trong gia đình; thực hiện các biện pháp bảo quản, chế biến thực phẩm an toàn."
+     "de": "Xây dựng chế độ dinh dưỡng cho bản thân và những người trong gia đình; thực hiện các biện pháp bảo quản, chế biến thực phẩm an toàn.",
+     "bo_may": "lập chế độ dinh dưỡng cho bản thân và gia đình, thực hành ở nhà"
     }
    ]
   },
@@ -10975,56 +12044,765 @@
      "trang": 135,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Một người bị mất máu liên tục sẽ yếu dần và nguy hiểm đến tính mạng. Máu có vai trò gì đối với cơ thể? Máu lưu thông trong cơ thể như thế nào và tim có vai trò gì trong quá trình đó?"
+     "de": "Một người bị mất máu liên tục sẽ yếu dần và nguy hiểm đến tính mạng. Máu có vai trò gì đối với cơ thể? Máu lưu thông trong cơ thể như thế nào và tim có vai trò gì trong quá trình đó?",
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "dong": [
+       {
+        "chu": "Máu có vai trò {0}",
+        "o": [
+         {
+          "dung": [
+           "vận chuyển chất dinh dưỡng, oxygen tới tế bào, mang chất thải, carbon dioxide đi thải ra ngoài; bảo vệ cơ thể"
+          ],
+          "sai": [
+           "tiêu hoá thức ăn thành chất đơn giản ở ruột non, rồi mang chất bã đến thận để tạo thành nước tiểu",
+           "giữ ấm cho cơ thể và tạo ra oxygen để cung cấp cho các tế bào hoạt động"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Mất máu liên tục thì {0}",
+        "o": [
+         {
+          "dung": [
+           "các tế bào thiếu oxygen và chất dinh dưỡng, cơ thể yếu dần, có thể tử vong"
+          ],
+          "sai": [
+           "cơ thể nhẹ đi, tim đỡ phải bơm máu nên cơ thể hoạt động khoẻ hơn",
+           "chỉ làm da tái đi một lúc, cơ thể sẽ tạo lại ngay lượng máu đã mất"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Máu lưu thông trong {0}",
+        "o": [
+         {
+          "dung": [
+           "hệ mạch kín (động mạch, mao mạch, tĩnh mạch) theo hai vòng tuần hoàn"
+          ],
+          "sai": [
+           "các khoảng trống giữa các cơ quan, không theo đường nào",
+           "các động mạch, đi một lần rồi không quay về tim"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Tim có vai trò {0}",
+        "o": [
+         {
+          "dung": [
+           "như một chiếc bơm, vừa hút vừa đẩy máu lưu thông trong hệ mạch"
+          ],
+          "sai": [
+           "sản xuất ra máu mới và các tế bào máu cho cơ thể",
+           "lọc chất thải ra khỏi máu rồi đưa chất thải tới thận"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B33.C2",
      "trang": 135,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "1. Xác định tên và chức năng các thành phần của máu được đánh số trong Hình 33.1 (SGK trang 135). 2. Điều gì sẽ xảy ra với cơ thể chúng ta nếu thiếu một trong các thành phần của máu?"
+     "de": "1. Xác định tên và chức năng các thành phần của máu được đánh số trong Hình 33.1 (SGK trang 135). 2. Điều gì sẽ xảy ra với cơ thể chúng ta nếu thiếu một trong các thành phần của máu?",
+     "hinh": [
+      "khtn8/B33.C2.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 9,
+      "dong": [
+       {
+        "chu": "1. Số 1 là {0}, có chức năng {1}",
+        "o": [
+         {
+          "dung": [
+           "tiểu cầu"
+          ],
+          "sai": [
+           "hồng cầu",
+           "bạch cầu"
+          ]
+         },
+         {
+          "dung": [
+           "tham gia bảo vệ cơ thể nhờ cơ chế làm đông máu khi bị thương"
+          ],
+          "sai": [
+           "vận chuyển khí oxygen và carbon dioxide giữa phổi và các tế bào",
+           "bảo vệ cơ thể, chống lại các tác nhân gây bệnh xâm nhập"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Số 2 là {0}, có chức năng {1}",
+        "o": [
+         {
+          "dung": [
+           "hồng cầu"
+          ],
+          "sai": [
+           "tiểu cầu",
+           "huyết tương"
+          ]
+         },
+         {
+          "dung": [
+           "vận chuyển khí oxygen và carbon dioxide giữa phổi và các tế bào"
+          ],
+          "sai": [
+           "giữ máu ở trạng thái lỏng; vận chuyển chất dinh dưỡng, chất cần thiết và chất thải",
+           "tham gia bảo vệ cơ thể nhờ cơ chế làm đông máu khi bị thương"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Số 3 là {0}, có chức năng {1}",
+        "o": [
+         {
+          "dung": [
+           "bạch cầu"
+          ],
+          "sai": [
+           "hồng cầu",
+           "tiểu cầu"
+          ]
+         },
+         {
+          "dung": [
+           "bảo vệ cơ thể, chống lại các tác nhân gây bệnh xâm nhập"
+          ],
+          "sai": [
+           "tham gia bảo vệ cơ thể nhờ cơ chế làm đông máu khi bị thương",
+           "vận chuyển khí oxygen và carbon dioxide giữa phổi và các tế bào"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Số 4 là {0}, có chức năng {1}",
+        "o": [
+         {
+          "dung": [
+           "huyết tương"
+          ],
+          "sai": [
+           "bạch cầu",
+           "hồng cầu"
+          ]
+         },
+         {
+          "dung": [
+           "giữ máu ở trạng thái lỏng; vận chuyển chất dinh dưỡng, chất cần thiết và chất thải"
+          ],
+          "sai": [
+           "vận chuyển khí oxygen và carbon dioxide giữa phổi và các tế bào",
+           "bảo vệ cơ thể, chống lại các tác nhân gây bệnh xâm nhập"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "2. Nếu thiếu một trong các thành phần của máu thì {0}",
+        "o": [
+         {
+          "dung": [
+           "cơ thể mắc bệnh về máu, ví dụ thiếu hồng cầu gây thiếu máu, thiếu tiểu cầu làm máu khó đông"
+          ],
+          "sai": [
+           "cơ thể vẫn bình thường vì các thành phần còn lại sẽ làm thay nhiệm vụ của thành phần bị thiếu",
+           "chỉ màu của máu nhạt đi, các cơ quan trong cơ thể vẫn hoạt động như bình thường"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B33.C3",
      "trang": 136,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "1. Giải thích vì sao con người sống trong môi trường chứa nhiều vi khuẩn có hại nhưng vẫn có thể sống khoẻ mạnh. 2. Tiêm vaccine có vai trò gì trong việc phòng bệnh?"
+     "de": "1. Giải thích vì sao con người sống trong môi trường chứa nhiều vi khuẩn có hại nhưng vẫn có thể sống khoẻ mạnh. 2. Tiêm vaccine có vai trò gì trong việc phòng bệnh?",
+     "ghep": {
+      "kieu": "O",
+      "sao": 6,
+      "dong": [
+       {
+        "chu": "1. Con người sống khoẻ mạnh trong môi trường nhiều vi khuẩn là nhờ {0}",
+        "o": [
+         {
+          "dung": [
+           "khả năng miễn dịch: các bạch cầu nhận diện và tiêu diệt mầm bệnh xâm nhập"
+          ],
+          "sai": [
+           "vi khuẩn có hại không thể xâm nhập qua da và niêm mạc vào cơ thể người",
+           "cơ thể thải hết vi khuẩn ra ngoài qua mồ hôi và nước tiểu mỗi ngày"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Khi vi sinh vật xâm nhập, tế bào lympho B nhận diện {0} của chúng",
+        "o": [
+         {
+          "dung": [
+           "kháng nguyên"
+          ],
+          "sai": [
+           "kháng thể",
+           "hồng cầu"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Tế bào lympho B được hoạt hoá, biệt hoá thành tương bào; tương bào tạo ra {0}",
+        "o": [
+         {
+          "dung": [
+           "kháng thể tiêu diệt vi sinh vật hoặc làm bất hoạt độc tố của chúng"
+          ],
+          "sai": [
+           "kháng nguyên để đánh dấu các vi sinh vật cho hồng cầu tiêu diệt",
+           "enzyme tiêu hoá để phân giải vi sinh vật thành chất dinh dưỡng"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Một số tế bào lympho B trở thành tế bào lympho B nhớ, giúp {0}",
+        "o": [
+         {
+          "dung": [
+           "cơ thể đáp ứng nhanh và mạnh khi vi sinh vật cùng loại xâm nhập lần sau"
+          ],
+          "sai": [
+           "cơ thể không bao giờ mắc thêm bất kì bệnh nào khác trong suốt cuộc đời",
+           "cơ thể tạo ra nhiều hồng cầu hơn để mang oxygen tới chỗ bị nhiễm khuẩn"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "2. Vaccine chứa {0}",
+        "o": [
+         {
+          "dung": [
+           "mầm bệnh đã chết hoặc suy yếu"
+          ],
+          "sai": [
+           "thuốc kháng sinh diệt vi khuẩn",
+           "kháng thể lấy sẵn từ người khác"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Tiêm vaccine giúp phòng bệnh vì {0}",
+        "o": [
+         {
+          "dung": [
+           "vaccine kích thích bạch cầu tạo kháng thể; kháng thể tồn tại trong máu giúp cơ thể miễn dịch với bệnh đó"
+          ],
+          "sai": [
+           "vaccine diệt ngay mầm bệnh đang có trong cơ thể, nên chữa khỏi ngay bệnh đang mắc",
+           "vaccine chứa sẵn kháng thể của mọi loại bệnh, nên một mũi tiêm phòng được tất cả các bệnh"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B33.C4",
      "trang": 137,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "1. Vẽ Hình 33.4 (nhóm máu và truyền máu; SGK trang 137) vào vở rồi hoàn thành sơ đồ truyền máu bằng cách đánh dấu chiều mũi tên để thể hiện mối quan hệ cho, nhận giữa các nhóm máu. 2. Giả sử một người có nhóm máu A cần được truyền máu, người này có thể nhận những nhóm máu nào? Nếu truyền nhóm máu không phù hợp sẽ dẫn đến hậu quả gì?"
+     "de": "1. Vẽ Hình 33.4 (nhóm máu và truyền máu; SGK trang 137) vào vở rồi hoàn thành sơ đồ truyền máu bằng cách đánh dấu chiều mũi tên để thể hiện mối quan hệ cho, nhận giữa các nhóm máu. 2. Giả sử một người có nhóm máu A cần được truyền máu, người này có thể nhận những nhóm máu nào? Nếu truyền nhóm máu không phù hợp sẽ dẫn đến hậu quả gì?",
+     "hinh": [
+      "khtn8/B33.C4.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 7,
+      "hoi": "Quan sát Hình 33.4 (sơ đồ truyền máu chưa có mũi tên).\n1. Hoàn thành sơ đồ truyền máu: mỗi đường nối giữa hai nhóm máu khác nhau, mũi tên đi theo chiều nào (máu nhóm nào truyền được cho nhóm nào)?\n2. Giả sử một người có nhóm máu A cần được truyền máu, người này có thể nhận những nhóm máu nào? Nếu truyền nhóm máu không phù hợp sẽ dẫn đến hậu quả gì?",
+      "dong": [
+       {
+        "chu": "1. Đường nối A và O: mũi tên {0}",
+        "o": [
+         {
+          "dung": [
+           "từ O sang A"
+          ],
+          "sai": [
+           "từ A sang O",
+           "cả hai chiều"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Đường nối O và B: mũi tên {0}",
+        "o": [
+         {
+          "dung": [
+           "từ O sang B"
+          ],
+          "sai": [
+           "từ B sang O",
+           "cả hai chiều"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Đường nối AB và O: mũi tên {0}",
+        "o": [
+         {
+          "dung": [
+           "từ O sang AB"
+          ],
+          "sai": [
+           "từ AB sang O",
+           "cả hai chiều"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Đường nối A và AB: mũi tên {0}",
+        "o": [
+         {
+          "dung": [
+           "từ A sang AB"
+          ],
+          "sai": [
+           "từ AB sang A",
+           "cả hai chiều"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Đường nối AB và B: mũi tên {0}",
+        "o": [
+         {
+          "dung": [
+           "từ B sang AB"
+          ],
+          "sai": [
+           "từ AB sang B",
+           "cả hai chiều"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "2. Người nhóm máu A có thể nhận máu nhóm {0}",
+        "o": [
+         {
+          "dung": [
+           "A và O"
+          ],
+          "sai": [
+           "A và AB",
+           "A, B, AB và O"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Truyền nhóm máu không phù hợp thì {0}",
+        "o": [
+         {
+          "dung": [
+           "kháng thể trong huyết tương người nhận làm kết dính hồng cầu được truyền vào, gây tắc mạch, nguy hiểm tính mạng"
+          ],
+          "sai": [
+           "hồng cầu được truyền vào tự đổi sang cùng nhóm máu với người nhận sau vài giờ",
+           "kháng thể của máu truyền vào bị trung hoà ngay, người nhận chỉ hơi mệt, không nguy hiểm"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B33.C5",
      "trang": 138,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Nêu cấu tạo của hệ tuần hoàn và trình bày sự phối hợp các cơ quan thể hiện chức năng của cả hệ tuần hoàn."
+     "de": "Nêu cấu tạo của hệ tuần hoàn và trình bày sự phối hợp các cơ quan thể hiện chức năng của cả hệ tuần hoàn.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 5,
+      "dong": [
+       {
+        "chu": "Hệ tuần hoàn gồm {0}",
+        "o": [
+         {
+          "dung": [
+           "tim và hệ mạch (động mạch, mao mạch, tĩnh mạch) hợp thành một hệ thống kín"
+          ],
+          "sai": [
+           "tim và hai lá phổi; máu đi từ tim vào phổi rồi tự thấm ra khắp cơ thể",
+           "tim và các động mạch; máu ra khỏi tim không quay trở lại tim"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Tim {0}",
+        "o": [
+         {
+          "dung": [
+           "hoạt động như một chiếc bơm, vừa hút vừa đẩy máu lưu thông trong hệ mạch"
+          ],
+          "sai": [
+           "là nơi trao đổi khí giữa máu và không khí, giống như phế nang ở phổi",
+           "lọc chất thải ra khỏi máu rồi đẩy chất thải xuống thận để tạo nước tiểu"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Động mạch {0}",
+        "o": [
+         {
+          "dung": [
+           "vận chuyển máu từ tim đến mao mạch"
+          ],
+          "sai": [
+           "đưa máu từ mao mạch trở về tim",
+           "là nơi trao đổi chất giữa máu và tế bào"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Mao mạch là nơi {0}",
+        "o": [
+         {
+          "dung": [
+           "trao đổi nước, chất khí, các chất giữa máu và tế bào"
+          ],
+          "sai": [
+           "máu được tạo ra rồi bơm đi khắp các cơ quan trong cơ thể",
+           "máu được lọc sạch chất thải để tạo thành nước tiểu"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Tĩnh mạch {0}",
+        "o": [
+         {
+          "dung": [
+           "đưa máu từ mao mạch trở về tim"
+          ],
+          "sai": [
+           "vận chuyển máu từ tim đến mao mạch",
+           "là nơi trao đổi khí với môi trường"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B33.C6",
      "trang": 139,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "1. Tìm hiểu nguyên nhân, triệu chứng, hậu quả của một số bệnh về máu, tim mạch. 2. Vận dụng hiểu biết về các bệnh đã tìm hiểu, đề xuất biện pháp phòng bệnh, bảo vệ hệ tuần hoàn và cơ thể, giải thích cơ sở của các biện pháp đó."
+     "de": "1. Tìm hiểu nguyên nhân, triệu chứng, hậu quả của một số bệnh về máu, tim mạch. 2. Vận dụng hiểu biết về các bệnh đã tìm hiểu, đề xuất biện pháp phòng bệnh, bảo vệ hệ tuần hoàn và cơ thể, giải thích cơ sở của các biện pháp đó.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 6,
+      "dong": [
+       {
+        "chu": "1. Thiếu máu có thể do {0}, gây mệt mỏi, da xanh, tim đập nhanh",
+        "o": [
+         {
+          "dung": [
+           "chế độ ăn thiếu sắt hoặc mất nhiều máu"
+          ],
+          "sai": [
+           "ăn quá nhiều muối và đường",
+           "uống quá nhiều nước"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Huyết áp cao có thể do {0}",
+        "o": [
+         {
+          "dung": [
+           "ăn nhiều đường, muối, chất béo; huyết áp tăng kéo dài làm tổn thương thành động mạch"
+          ],
+          "sai": [
+           "ăn nhiều rau xanh, trái cây tươi và uống đủ nước mỗi ngày làm máu loãng ra",
+           "ngủ đủ giấc, tinh thần thoải mái, tập thể dục vừa sức đều đặn hằng ngày"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Xơ vữa động mạch gây hậu quả: {0}",
+        "o": [
+         {
+          "dung": [
+           "lòng mạch hẹp, tăng huyết áp, tạo cục máu đông gây tắc mạch: đau tim, đột quỵ"
+          ],
+          "sai": [
+           "lòng mạch rộng ra, máu loãng và chảy nhanh hơn nên tim đỡ phải làm việc",
+           "thành mạch mỏng đi, hồng cầu tăng lên nên cơ thể được cung cấp nhiều oxygen hơn"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "2. Ăn nhạt, hạn chế đường và mỡ vì {0}",
+        "o": [
+         {
+          "dung": [
+           "giảm nguy cơ huyết áp cao và xơ vữa động mạch"
+          ],
+          "sai": [
+           "giúp cơ thể tạo thêm nhiều hồng cầu",
+           "giúp máu đông nhanh hơn khi bị thương"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Ăn đủ thực phẩm giàu sắt (thịt, trứng, rau xanh đậm) vì {0}",
+        "o": [
+         {
+          "dung": [
+           "sắt cần để tạo hemoglobin, phòng thiếu máu"
+          ],
+          "sai": [
+           "sắt làm thành mạch dày và cứng hơn",
+           "sắt giúp hạ huyết áp ngay lập tức"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Tập thể dục vừa sức, đều đặn vì {0}",
+        "o": [
+         {
+          "dung": [
+           "giúp tim và mạch máu khoẻ hơn, máu lưu thông tốt"
+          ],
+          "sai": [
+           "làm tim đập chậm dần rồi nghỉ hẳn",
+           "làm huyết áp tăng mãi không giảm"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B33.C7",
      "trang": 140,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Sau khi thực hành sơ cứu cầm máu và đo huyết áp, em hãy trả lời các câu hỏi sau: 1. Khi thực hiện biện pháp buộc dây garô cần lưu ý những điều gì? 2. Vì sao chỉ dùng biện pháp buộc dây garô để sơ cứu những vết thương chảy máu động mạch ở tay hoặc chân? Những vết thương chảy máu động mạch không phải ở tay, chân cần được xử lí như thế nào?"
+     "de": "Sau khi thực hành sơ cứu cầm máu và đo huyết áp, em hãy trả lời các câu hỏi sau: 1. Khi thực hiện biện pháp buộc dây garô cần lưu ý những điều gì? 2. Vì sao chỉ dùng biện pháp buộc dây garô để sơ cứu những vết thương chảy máu động mạch ở tay hoặc chân? Những vết thương chảy máu động mạch không phải ở tay, chân cần được xử lí như thế nào?",
+     "ghep": {
+      "kieu": "O",
+      "sao": 5,
+      "hoi": "Trả lời các câu hỏi sau về sơ cứu cầm máu:\n1. Khi thực hiện biện pháp buộc dây garô cần lưu ý những điều gì?\n2. Vì sao chỉ dùng biện pháp buộc dây garô để sơ cứu những vết thương chảy máu động mạch ở tay hoặc chân? Những vết thương chảy máu động mạch không phải ở tay, chân cần được xử lí như thế nào?",
+      "dong": [
+       {
+        "chu": "1. Buộc dây garô ở {0}",
+        "o": [
+         {
+          "dung": [
+           "vị trí gần sát vết thương, cao hơn vết thương (về phía tim)"
+          ],
+          "sai": [
+           "đè ngay lên miệng vết thương để ép chặt chỗ máu chảy ra",
+           "phía dưới vết thương (xa tim hơn), cách vết thương khoảng một gang tay"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Lực buộc: {0}",
+        "o": [
+         {
+          "dung": [
+           "ép đủ chặt để máu ngừng chảy"
+          ],
+          "sai": [
+           "buộc thật lỏng cho người bị thương đỡ đau",
+           "chỉ quấn hờ một vòng, không cần thắt"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Sau khi buộc, {0}",
+        "o": [
+         {
+          "dung": [
+           "sát trùng, che kín vết thương, ghi lại thời điểm buộc và nhanh chóng đưa người bị thương đến cơ sở y tế"
+          ],
+          "sai": [
+           "để nguyên dây garô ở nhà nhiều ngày cho tới khi vết thương lành hẳn, không cần đi viện",
+           "tháo dây garô ra ngay khi máu vừa ngừng chảy để máu lưu thông trở lại bình thường"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "2. Chỉ dùng garô cho vết thương ở tay, chân vì {0}",
+        "o": [
+         {
+          "dung": [
+           "chỉ quanh tay, chân mới buộc dây ép chặt được động mạch; buộc ở cổ, ngực, bụng không cầm được máu mà còn nguy hiểm"
+          ],
+          "sai": [
+           "máu ở tay, chân chảy chậm hơn ở các chỗ khác, nên buộc dây ở đó là máu ngừng chảy ngay, không cần làm gì thêm",
+           "tay, chân chỉ có động mạch, không có tĩnh mạch, nên buộc dây ở đó không làm ứ máu ở phần dưới chỗ buộc"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Vết thương chảy máu động mạch không ở tay, chân: {0}",
+        "o": [
+         {
+          "dung": [
+           "ấn chặt ngón tay vào động mạch phía trên vết thương (về phía tim), băng ép chặt vết thương, đưa ngay đến cơ sở y tế"
+          ],
+          "sai": [
+           "buộc dây garô thật chặt quanh cổ hoặc quanh bụng ở phía trên vết thương, như cách làm ở tay, chân",
+           "rửa vết thương bằng nước lạnh rồi để máu tự cầm, không cần đưa đến cơ sở y tế"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B33.C8",
      "trang": 141,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Sau khi điều tra một số bệnh về máu, tim mạch và phong trào hiến máu nhân đạo tại địa phương, hãy trả lời các câu hỏi sau: 1. Hiến máu có hại cho sức khoẻ không? Vì sao? 2. Những ai có thể hiến máu được và những ai không thể hiến máu?"
+     "de": "Sau khi điều tra một số bệnh về máu, tim mạch và phong trào hiến máu nhân đạo tại địa phương, hãy trả lời các câu hỏi sau: 1. Hiến máu có hại cho sức khoẻ không? Vì sao? 2. Những ai có thể hiến máu được và những ai không thể hiến máu?",
+     "ghep": {
+      "kieu": "O",
+      "sao": 6,
+      "hoi": "Trả lời các câu hỏi sau về hiến máu nhân đạo:\n1. Hiến máu có hại cho sức khoẻ không? Vì sao?\n2. Những ai có thể hiến máu được và những ai không thể hiến máu?",
+      "dong": [
+       {
+        "chu": "1. Hiến máu đúng quy định {0}",
+        "o": [
+         {
+          "dung": [
+           "không có hại cho sức khoẻ"
+          ],
+          "sai": [
+           "có hại cho sức khoẻ"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Vì {0}",
+        "o": [
+         {
+          "dung": [
+           "mỗi lần chỉ hiến một lượng máu nhỏ so với lượng máu trong cơ thể, và cơ thể sẽ sinh máu mới bù lại"
+          ],
+          "sai": [
+           "máu đã hiến được cất giữ rồi truyền trả lại cho chính người hiến ngay sau khi hiến xong",
+           "người hiến được truyền ngay máu của người khác vào để bù lại lượng máu vừa mất"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "2. Người khoẻ mạnh từ đủ 18 tuổi đến 60 tuổi, đủ cân nặng theo quy định: {0}",
+        "o": [
+         {
+          "dung": [
+           "Được hiến máu"
+          ],
+          "sai": [
+           "Không được hiến máu"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Học sinh lớp 8 (13 – 14 tuổi) khoẻ mạnh: {0}",
+        "o": [
+         {
+          "dung": [
+           "Không được hiến máu"
+          ],
+          "sai": [
+           "Được hiến máu"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Người đang mắc bệnh lây qua đường máu như viêm gan B, HIV: {0}",
+        "o": [
+         {
+          "dung": [
+           "Không được hiến máu"
+          ],
+          "sai": [
+           "Được hiến máu"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Phụ nữ đang mang thai: {0}",
+        "o": [
+         {
+          "dung": [
+           "Không được hiến máu"
+          ],
+          "sai": [
+           "Được hiến máu"
+          ],
+          "hai": true
+         }
+        ]
+       }
+      ]
+     }
     }
    ]
   },
@@ -11037,28 +12815,297 @@
      "trang": 142,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Con người tồn tại và hoạt động được là nhờ có nguồn năng lượng sinh ra từ quá trình hô hấp tế bào. Quá trình đó cần sử dụng khí O2 và thải ra khí CO2. Việc lấy khí O2 từ môi trường và thải khí CO2 ra khỏi cơ thể được thực hiện như thế nào?"
+     "de": "Con người tồn tại và hoạt động được là nhờ có nguồn năng lượng sinh ra từ quá trình hô hấp tế bào. Quá trình đó cần sử dụng khí O2 và thải ra khí CO2. Việc lấy khí O2 từ môi trường và thải khí CO2 ra khỏi cơ thể được thực hiện như thế nào?",
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "dong": [
+       {
+        "chu": "Việc lấy khí O₂ từ môi trường và thải khí CO₂ ra khỏi cơ thể do {0} thực hiện",
+        "o": [
+         {
+          "dung": [
+           "hệ hô hấp"
+          ],
+          "sai": [
+           "hệ tuần hoàn",
+           "hệ bài tiết"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Khi hít vào, không khí đi qua {0} vào phổi",
+        "o": [
+         {
+          "dung": [
+           "mũi, họng, thanh quản, khí quản, phế quản"
+          ],
+          "sai": [
+           "miệng, họng, thực quản, dạ dày, phế quản",
+           "mũi, họng, thực quản, khí quản, phế quản"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Ở phổi, {0}",
+        "o": [
+         {
+          "dung": [
+           "O₂ từ phế nang khuếch tán vào máu, CO₂ từ máu khuếch tán ra phế nang rồi theo khí thở ra ngoài"
+          ],
+          "sai": [
+           "CO₂ từ phế nang khuếch tán vào máu, O₂ từ máu khuếch tán ra phế nang rồi theo khí thở ra ngoài",
+           "cả O₂ và CO₂ đều từ phế nang khuếch tán vào máu, không có khí nào đi ra"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B34.C2",
      "trang": 142,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Đọc thông tin kết hợp quan sát Hình 34.1 (hệ hô hấp ở người; SGK trang 142), nêu tên các cơ quan của hệ hô hấp, đặc điểm và chức năng của mỗi cơ quan."
+     "de": "Đọc thông tin kết hợp quan sát Hình 34.1 (hệ hô hấp ở người; SGK trang 142), nêu tên các cơ quan của hệ hô hấp, đặc điểm và chức năng của mỗi cơ quan.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 6,
+      "hoi": "Nêu tên các cơ quan của hệ hô hấp, đặc điểm và chức năng của mỗi cơ quan.",
+      "dong": [
+       {
+        "chu": "Hệ hô hấp gồm {0}",
+        "o": [
+         {
+          "dung": [
+           "đường dẫn khí (mũi, họng, thanh quản, khí quản, phế quản) và hai lá phổi"
+          ],
+          "sai": [
+           "đường dẫn khí (mũi, họng, thực quản, dạ dày) và hai lá phổi",
+           "đường dẫn khí (mũi, họng, thanh quản, khí quản), tim và hai lá phổi"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Mũi: {0}",
+        "o": [
+         {
+          "dung": [
+           "có lông mũi, lớp niêm mạc tiết chất nhầy và lớp mao mạch dày đặc: ngăn bụi, làm ẩm, làm ấm không khí"
+          ],
+          "sai": [
+           "có lớp niêm mạc tiết chất nhầy với nhiều lông rung chuyển động liên tục: dẫn khí từ ngoài vào",
+           "gồm nhiều phế nang được bao bọc bởi mạng mao mạch dày đặc: nơi diễn ra trao đổi khí"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Thanh quản: {0}",
+        "o": [
+         {
+          "dung": [
+           "có nắp thanh quản cử động được, đậy kín đường hô hấp khi nuốt thức ăn"
+          ],
+          "sai": [
+           "có lông mũi, lớp niêm mạc tiết chất nhầy và lớp mao mạch dày đặc: ngăn bụi, làm ẩm, làm ấm không khí",
+           "phân nhánh nhỏ dần thành tiểu phế quản: dẫn khí vào phổi tới các phế nang"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Khí quản: {0}",
+        "o": [
+         {
+          "dung": [
+           "có lớp niêm mạc tiết chất nhầy với nhiều lông rung chuyển động liên tục: dẫn khí từ ngoài vào"
+          ],
+          "sai": [
+           "có nắp thanh quản cử động được, đậy kín đường hô hấp khi nuốt thức ăn",
+           "gồm nhiều phế nang được bao bọc bởi mạng mao mạch dày đặc: nơi diễn ra trao đổi khí"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Phế quản: {0}",
+        "o": [
+         {
+          "dung": [
+           "phân nhánh nhỏ dần thành tiểu phế quản: dẫn khí vào phổi tới các phế nang"
+          ],
+          "sai": [
+           "có nắp thanh quản cử động được, đậy kín đường hô hấp khi nuốt thức ăn",
+           "gồm nhiều phế nang được bao bọc bởi mạng mao mạch dày đặc: nơi diễn ra trao đổi khí"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Phổi: {0}",
+        "o": [
+         {
+          "dung": [
+           "gồm nhiều phế nang được bao bọc bởi mạng mao mạch dày đặc: nơi diễn ra trao đổi khí"
+          ],
+          "sai": [
+           "phân nhánh nhỏ dần thành tiểu phế quản: dẫn khí vào phổi tới các phế nang",
+           "có lông mũi, lớp niêm mạc tiết chất nhầy và lớp mao mạch dày đặc: ngăn bụi, làm ẩm, làm ấm không khí"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B34.C3",
      "trang": 143,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Quan sát Hình 34.2 (sự thông khí ở phổi; SGK trang 143), mô tả hoạt động của cơ, xương và sự thay đổi thể tích lồng ngực khi cử động hô hấp."
+     "de": "Quan sát Hình 34.2 (sự thông khí ở phổi; SGK trang 143), mô tả hoạt động của cơ, xương và sự thay đổi thể tích lồng ngực khi cử động hô hấp.",
+     "hinh": [
+      "khtn8/B34.C3.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "dong": [
+       {
+        "chu": "Khi hít vào: {0}",
+        "o": [
+         {
+          "dung": [
+           "cơ hoành co, xương ức và xương sườn nâng lên, thể tích lồng ngực tăng"
+          ],
+          "sai": [
+           "cơ hoành dãn, xương ức và xương sườn hạ xuống, thể tích lồng ngực giảm",
+           "cơ hoành co, xương ức và xương sườn hạ xuống, thể tích lồng ngực giảm"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Khi thở ra: {0}",
+        "o": [
+         {
+          "dung": [
+           "cơ hoành dãn, xương ức và xương sườn hạ xuống, thể tích lồng ngực giảm"
+          ],
+          "sai": [
+           "cơ hoành co, xương ức và xương sườn nâng lên, thể tích lồng ngực tăng",
+           "cơ hoành dãn, xương ức và xương sườn nâng lên, thể tích lồng ngực tăng"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Không khí đi vào phổi khi thể tích lồng ngực {0}",
+        "o": [
+         {
+          "dung": [
+           "tăng"
+          ],
+          "sai": [
+           "giảm"
+          ],
+          "hai": true
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B34.C4",
      "trang": 143,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "1. Quan sát Hình 34.3 (trao đổi khí ở phổi và các tế bào trong cơ thể; SGK trang 143), mô tả sự trao đổi khí ở phổi và ở tế bào. 2. Trình bày sự phối hợp chức năng của mỗi cơ quan thể hiện chức năng của cả hệ hô hấp."
+     "de": "1. Quan sát Hình 34.3 (trao đổi khí ở phổi và các tế bào trong cơ thể; SGK trang 143), mô tả sự trao đổi khí ở phổi và ở tế bào. 2. Trình bày sự phối hợp chức năng của mỗi cơ quan thể hiện chức năng của cả hệ hô hấp.",
+     "hinh": [
+      "khtn8/B34.C4.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 5,
+      "dong": [
+       {
+        "chu": "1. Trao đổi khí ở phổi và ở tế bào đều theo cơ chế {0}",
+        "o": [
+         {
+          "dung": [
+           "khuếch tán"
+          ],
+          "sai": [
+           "thẩm thấu",
+           "lọc"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Ở phổi (hình a): {0}",
+        "o": [
+         {
+          "dung": [
+           "O₂ đi từ phế nang vào máu, CO₂ đi từ máu vào phế nang"
+          ],
+          "sai": [
+           "CO₂ đi từ phế nang vào máu, O₂ đi từ máu vào phế nang",
+           "cả O₂ và CO₂ đều đi từ máu vào phế nang"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Ở tế bào (hình b): {0}",
+        "o": [
+         {
+          "dung": [
+           "O₂ đi từ máu vào tế bào, CO₂ đi từ tế bào vào máu"
+          ],
+          "sai": [
+           "CO₂ đi từ máu vào tế bào, O₂ đi từ tế bào vào máu",
+           "cả O₂ và CO₂ đều đi từ tế bào vào máu"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "2. Đường dẫn khí {0}",
+        "o": [
+         {
+          "dung": [
+           "dẫn khí ra vào phổi, ngăn bụi, làm ẩm, làm ấm không khí, bảo vệ phổi"
+          ],
+          "sai": [
+           "là nơi trao đổi khí giữa máu và không khí, giống như các phế nang",
+           "dẫn khí vào phổi và trao đổi khí với máu trong mao mạch phổi"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Phổi {0}",
+        "o": [
+         {
+          "dung": [
+           "trao đổi khí giữa không khí trong phế nang và máu trong mao mạch phổi"
+          ],
+          "sai": [
+           "chỉ dẫn khí vào và ra, việc trao đổi khí diễn ra ở khí quản",
+           "làm ẩm, làm ấm không khí và tiết chất nhầy để ngăn bụi"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B34.C5",
@@ -11079,7 +13126,56 @@
      "trang": 145,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Sau khi thực hành hô hấp nhân tạo, em hãy trả lời các câu hỏi sau: 1. Nêu ý nghĩa của việc bịt mũi nạn nhân trong phương pháp hà hơi thổi ngạt. 2. Tại sao phải dùng tay ấn vào lồng ngực trong phương pháp ấn lồng ngực?"
+     "de": "Sau khi thực hành hô hấp nhân tạo, em hãy trả lời các câu hỏi sau: 1. Nêu ý nghĩa của việc bịt mũi nạn nhân trong phương pháp hà hơi thổi ngạt. 2. Tại sao phải dùng tay ấn vào lồng ngực trong phương pháp ấn lồng ngực?",
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "hoi": "Trả lời các câu hỏi sau về hô hấp nhân tạo cấp cứu người đuối nước:\n1. Nêu ý nghĩa của việc bịt mũi nạn nhân trong phương pháp hà hơi thổi ngạt.\n2. Tại sao phải dùng tay ấn vào lồng ngực trong phương pháp ấn lồng ngực?",
+      "dong": [
+       {
+        "chu": "1. Bịt mũi nạn nhân để {0}",
+        "o": [
+         {
+          "dung": [
+           "không khí thổi vào không thoát ra ngoài qua đường mũi mà đi vào phổi"
+          ],
+          "sai": [
+           "nước trong phổi nạn nhân không bị đẩy ngược ra ngoài qua đường mũi",
+           "giữ cho mũi nạn nhân ấm lên, giúp nạn nhân nhanh tỉnh lại"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "2. Ấn mạnh vào lồng ngực làm {0}",
+        "o": [
+         {
+          "dung": [
+           "thể tích lồng ngực giảm, đẩy không khí ra khỏi phổi; thôi ấn thì lồng ngực nở ra, không khí lại đi vào phổi"
+          ],
+          "sai": [
+           "thể tích lồng ngực tăng, hút không khí vào phổi; thôi ấn thì không khí vẫn được giữ lại trong phổi",
+           "nạn nhân thấy đau nên tỉnh lại và tự thở được, không cần ấn tiếp"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Phải làm như vậy vì nạn nhân {0}",
+        "o": [
+         {
+          "dung": [
+           "đã ngừng thở, không tự thực hiện được cử động hô hấp"
+          ],
+          "sai": [
+           "đang thở quá nhanh, cần ấn để làm chậm nhịp thở lại",
+           "bị lạnh nên cần xoa bóp lồng ngực cho cơ thể ấm lên"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     }
    ]
   },
@@ -11092,21 +13188,230 @@
      "trang": 146,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Để kéo dài sự sống cho những người bị bệnh suy thận, người ta thường phải chạy thận nhân tạo hoặc ghép thận. Em hãy giải thích tại sao."
+     "de": "Để kéo dài sự sống cho những người bị bệnh suy thận, người ta thường phải chạy thận nhân tạo hoặc ghép thận. Em hãy giải thích tại sao.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "dong": [
+       {
+        "chu": "Ở người bị suy thận, thận {0} nên {1}.",
+        "o": [
+         {
+          "dung": [
+           "suy giảm chức năng, không lọc được máu"
+          ],
+          "sai": [
+           "hoạt động mạnh hơn bình thường",
+           "tiết ra quá nhiều hormone"
+          ]
+         },
+         {
+          "dung": [
+           "chất độc, chất thải tích tụ trong cơ thể, đe doạ tính mạng"
+          ],
+          "sai": [
+           "cơ thể bị mất quá nhiều nước và muối qua nước tiểu",
+           "máu bị đông lại trong các mạch máu đi qua thận"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Chạy thận nhân tạo là {0}",
+        "o": [
+         {
+          "dung": [
+           "dùng máy lọc máu thay cho thận, thải chất độc, chất thải ra khỏi cơ thể"
+          ],
+          "sai": [
+           "truyền thêm máu mới cho người bệnh để thay lượng máu đã bị nhiễm độc",
+           "cắt bỏ quả thận bị hỏng để quả thận còn lại làm việc khoẻ hơn"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Ghép thận là {0}",
+        "o": [
+         {
+          "dung": [
+           "ghép vào cơ thể người bệnh quả thận hoạt động bình thường để thay thế cho thận đã suy"
+          ],
+          "sai": [
+           "lấy thận của người bệnh ra lọc rửa sạch chất độc rồi đặt lại vào chỗ cũ",
+           "dùng thuốc kích thích để một quả thận mới tự mọc ra thay cho quả thận hỏng"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B35.C2",
      "trang": 146,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Đọc đoạn thông tin về hệ bài tiết kết hợp quan sát Hình 35.1 (cấu tạo hệ bài tiết nước tiểu ở người; SGK trang 147), kể tên các cơ quan của hệ bài tiết nước tiểu và các bộ phận chủ yếu của thận."
+     "de": "Đọc đoạn thông tin về hệ bài tiết kết hợp quan sát Hình 35.1 (cấu tạo hệ bài tiết nước tiểu ở người; SGK trang 147), kể tên các cơ quan của hệ bài tiết nước tiểu và các bộ phận chủ yếu của thận.",
+     "hinh": [
+      "khtn8/B35.C2.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 5,
+      "hoi": "Quan sát Hình 35.1, kể tên các cơ quan của hệ bài tiết nước tiểu và các bộ phận chủ yếu của thận.",
+      "dong": [
+       {
+        "chu": "Hệ bài tiết nước tiểu gồm {0}",
+        "o": [
+         {
+          "dung": [
+           "hai quả thận, ống dẫn nước tiểu, bóng đái, ống đái"
+          ],
+          "sai": [
+           "hai quả thận, gan, bóng đái, ống đái",
+           "hai quả thận, ống dẫn nước tiểu, ruột già, hậu môn"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Trong đó, quan trọng nhất là {0}",
+        "o": [
+         {
+          "dung": [
+           "thận"
+          ],
+          "sai": [
+           "bóng đái",
+           "ống đái"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Lát cắt dọc thận cho thấy thận có {0}",
+        "o": [
+         {
+          "dung": [
+           "phần vỏ, phần tuỷ và bể thận"
+          ],
+          "sai": [
+           "phần vỏ, phế nang và bể thận",
+           "tầng sừng, tầng tế bào sống và lớp mỡ"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Mỗi quả thận có khoảng 1 triệu {0}; mỗi đơn vị gồm {1}.",
+        "o": [
+         {
+          "dung": [
+           "đơn vị chức năng"
+          ],
+          "sai": [
+           "phế nang",
+           "bể thận"
+          ]
+         },
+         {
+          "dung": [
+           "cầu thận và ống thận"
+          ],
+          "sai": [
+           "bể thận và bóng đái",
+           "động mạch và tĩnh mạch thận"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B35.C3",
      "trang": 147,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Đề xuất biện pháp bảo vệ hệ bài tiết: đọc thông tin trong Bảng 35.1 (các thói quen ăn quá mặn quá chua nhiều đường, không uống đủ nước, nhịn đi tiểu khi buồn tiểu, không giữ vệ sinh hệ bài tiết nước tiểu, ăn thức ăn ôi thiu và nguy cơ tương ứng; SGK trang 148) và đề xuất biện pháp phù hợp để bảo vệ hệ bài tiết rồi hoàn thành theo mẫu Bảng 35.1."
+     "de": "Đề xuất biện pháp bảo vệ hệ bài tiết: đọc thông tin trong Bảng 35.1 (các thói quen ăn quá mặn quá chua nhiều đường, không uống đủ nước, nhịn đi tiểu khi buồn tiểu, không giữ vệ sinh hệ bài tiết nước tiểu, ăn thức ăn ôi thiu và nguy cơ tương ứng; SGK trang 148) và đề xuất biện pháp phù hợp để bảo vệ hệ bài tiết rồi hoàn thành theo mẫu Bảng 35.1.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 5,
+      "hoi": "Đề xuất biện pháp phù hợp để bảo vệ hệ bài tiết ứng với mỗi thói quen và nguy cơ trong Bảng 35.1.",
+      "dong": [
+       {
+        "chu": "Ăn quá mặn, quá chua, nhiều đường (hệ bài tiết làm việc quá tải): {0}",
+        "o": [
+         {
+          "dung": [
+           "ăn uống hợp lí, không ăn quá mặn, quá chua, nhiều đường"
+          ],
+          "sai": [
+           "đi tiểu khi buồn tiểu, không nhịn tiểu lâu",
+           "giữ vệ sinh cơ thể và hệ bài tiết nước tiểu hằng ngày"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Không uống đủ nước (giảm khả năng bài tiết nước tiểu): {0}",
+        "o": [
+         {
+          "dung": [
+           "uống đủ nước mỗi ngày"
+          ],
+          "sai": [
+           "đi tiểu khi buồn tiểu, không nhịn tiểu lâu",
+           "giữ vệ sinh cơ thể và hệ bài tiết nước tiểu hằng ngày"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Nhịn đi tiểu khi buồn tiểu (tăng nguy cơ lắng sỏi trong hệ bài tiết nước tiểu): {0}",
+        "o": [
+         {
+          "dung": [
+           "đi tiểu khi buồn tiểu, không nhịn tiểu lâu"
+          ],
+          "sai": [
+           "giữ vệ sinh cơ thể và hệ bài tiết nước tiểu hằng ngày",
+           "không ăn thức ăn ôi thiu, chọn thực phẩm sạch, an toàn"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Không giữ vệ sinh hệ bài tiết nước tiểu (tăng nguy cơ viêm nhiễm): {0}",
+        "o": [
+         {
+          "dung": [
+           "giữ vệ sinh cơ thể và hệ bài tiết nước tiểu hằng ngày"
+          ],
+          "sai": [
+           "ăn uống hợp lí, không ăn quá mặn, quá chua, nhiều đường",
+           "đi tiểu khi buồn tiểu, không nhịn tiểu lâu"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Ăn thức ăn ôi thiu (gây độc hại cho hệ bài tiết nước tiểu): {0}",
+        "o": [
+         {
+          "dung": [
+           "không ăn thức ăn ôi thiu, chọn thực phẩm sạch, an toàn"
+          ],
+          "sai": [
+           "giữ vệ sinh cơ thể và hệ bài tiết nước tiểu hằng ngày",
+           "uống đủ nước mỗi ngày"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B35.C4",
@@ -11120,7 +13425,84 @@
      "trang": 149,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Kể tên một số loại thực phẩm phù hợp với người bị bệnh sỏi thận, suy thận và viêm cầu thận."
+     "de": "Kể tên một số loại thực phẩm phù hợp với người bị bệnh sỏi thận, suy thận và viêm cầu thận.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 5,
+      "hoi": "Kể tên một số loại thực phẩm, cách ăn uống phù hợp với người bị bệnh sỏi thận, suy thận và viêm cầu thận. Mỗi cách ăn uống sau có phù hợp với người bệnh không?",
+      "dong": [
+       {
+        "chu": "Người bị sỏi thận: uống đủ nước, ăn nhạt, ăn uống hợp lí: {0}",
+        "o": [
+         {
+          "dung": [
+           "Phù hợp"
+          ],
+          "sai": [
+           "Không phù hợp"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Người bị sỏi thận: uống ít nước, ăn mặn: {0}",
+        "o": [
+         {
+          "dung": [
+           "Không phù hợp"
+          ],
+          "sai": [
+           "Phù hợp"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Người bị suy thận: ăn nhạt, hạn chế thực phẩm giàu đạm như thịt, cá, trứng: {0}",
+        "o": [
+         {
+          "dung": [
+           "Phù hợp"
+          ],
+          "sai": [
+           "Không phù hợp"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Người bị suy thận: ăn thật nhiều thịt, cá, trứng để bồi bổ: {0}",
+        "o": [
+         {
+          "dung": [
+           "Không phù hợp"
+          ],
+          "sai": [
+           "Phù hợp"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Người bị viêm cầu thận (phù nề, tăng huyết áp): ăn nhạt, hạn chế muối: {0}",
+        "o": [
+         {
+          "dung": [
+           "Phù hợp"
+          ],
+          "sai": [
+           "Không phù hợp"
+          ],
+          "hai": true
+         }
+        ]
+       }
+      ]
+     }
     }
    ]
   },
@@ -11133,28 +13515,265 @@
      "trang": 150,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Hình ở SGK trang 150 mô tả một số triệu chứng của một người bị bệnh gout. Một trong những nguyên nhân gây bệnh trên là do rối loạn môi trường trong của cơ thể (tăng nồng độ uric acid trong máu). Môi trường trong của cơ thể là gì? Rối loạn môi trường trong gây ra những nguy cơ nào cho cơ thể?"
+     "de": "Hình ở SGK trang 150 mô tả một số triệu chứng của một người bị bệnh gout. Một trong những nguyên nhân gây bệnh trên là do rối loạn môi trường trong của cơ thể (tăng nồng độ uric acid trong máu). Môi trường trong của cơ thể là gì? Rối loạn môi trường trong gây ra những nguy cơ nào cho cơ thể?",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "dong": [
+       {
+        "chu": "Môi trường trong của cơ thể gồm {0}",
+        "o": [
+         {
+          "dung": [
+           "máu, nước mô và bạch huyết"
+          ],
+          "sai": [
+           "máu, dịch tiêu hoá và nước tiểu",
+           "hồng cầu, bạch cầu và tiểu cầu"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Rối loạn môi trường trong (như tăng nồng độ uric acid trong máu) {0}",
+        "o": [
+         {
+          "dung": [
+           "gây rối loạn hoạt động của tế bào, cơ quan, cơ thể, dẫn đến các bệnh như gout, tiểu đường"
+          ],
+          "sai": [
+           "không ảnh hưởng gì vì các tế bào sẽ tự thích nghi với môi trường trong mới",
+           "chỉ làm thay đổi màu da và mùi mồ hôi, không gây bệnh cho các cơ quan"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B36.C2",
      "trang": 150,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Quan sát Hình 36.1 (môi trường trong của cơ thể; SGK trang 150), mô tả các thành phần môi trường trong của cơ thể."
+     "de": "Quan sát Hình 36.1 (môi trường trong của cơ thể; SGK trang 150), mô tả các thành phần môi trường trong của cơ thể.",
+     "hinh": [
+      "khtn8/B36.C2.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "dong": [
+       {
+        "chu": "Dịch chảy trong mao mạch máu: {0}",
+        "o": [
+         {
+          "dung": [
+           "máu"
+          ],
+          "sai": [
+           "nước mô",
+           "bạch huyết"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Dịch nằm trong khoảng trống giữa các tế bào mô: {0}",
+        "o": [
+         {
+          "dung": [
+           "nước mô"
+          ],
+          "sai": [
+           "máu",
+           "bạch huyết"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Dịch chảy trong mạch bạch huyết: {0}",
+        "o": [
+         {
+          "dung": [
+           "bạch huyết"
+          ],
+          "sai": [
+           "máu",
+           "nước mô"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Môi trường trong thường xuyên liên hệ với môi trường ngoài thông qua {0}",
+        "o": [
+         {
+          "dung": [
+           "các hệ cơ quan như hệ tiêu hoá, hệ tuần hoàn, hệ hô hấp và da"
+          ],
+          "sai": [
+           "riêng hệ thần kinh, không qua cơ quan nào khác",
+           "riêng lớp da, không qua cơ quan nào khác"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B36.C3",
      "trang": 151,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "1. Cân bằng môi trường trong cơ thể là gì và có vai trò như thế nào đối với cơ thể? 2. Sau khi ăn quá mặn, chúng ta thường có cảm giác khát. Việc uống nhiều nước sau khi ăn quá mặn có ý nghĩa gì đối với cơ thể?"
+     "de": "1. Cân bằng môi trường trong cơ thể là gì và có vai trò như thế nào đối với cơ thể? 2. Sau khi ăn quá mặn, chúng ta thường có cảm giác khát. Việc uống nhiều nước sau khi ăn quá mặn có ý nghĩa gì đối với cơ thể?",
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "dong": [
+       {
+        "chu": "1. Cân bằng môi trường trong là {0}",
+        "o": [
+         {
+          "dung": [
+           "duy trì sự ổn định của môi trường trong cơ thể"
+          ],
+          "sai": [
+           "làm môi trường trong thay đổi liên tục theo môi trường ngoài",
+           "giữ cho lượng máu trong cơ thể luôn tăng lên"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Vai trò: {0}",
+        "o": [
+         {
+          "dung": [
+           "đảm bảo các hoạt động sống diễn ra bình thường; mất cân bằng thì tế bào, cơ quan hoạt động rối loạn"
+          ],
+          "sai": [
+           "chỉ giúp da luôn mịn màng, không liên quan đến hoạt động của các cơ quan bên trong",
+           "giúp cơ thể tự tạo ra chất dinh dưỡng nên không cần ăn uống hằng ngày"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "2. Ăn quá mặn làm {0}, nên ta thấy khát",
+        "o": [
+         {
+          "dung": [
+           "nồng độ muối (sodium chloride) trong máu tăng cao"
+          ],
+          "sai": [
+           "nồng độ glucose trong máu giảm xuống",
+           "lượng nước trong máu tăng lên"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Uống nhiều nước sau khi ăn mặn giúp {0}",
+        "o": [
+         {
+          "dung": [
+           "hạ nồng độ muối trong máu về mức bình thường, thải bớt muối thừa qua nước tiểu"
+          ],
+          "sai": [
+           "tăng thêm nồng độ muối trong máu để cơ thể giữ nước tốt hơn",
+           "biến muối trong máu thành đường để cung cấp thêm năng lượng"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B36.C4",
      "trang": 151,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Đọc kết quả xét nghiệm nồng độ glucose và uric acid trong máu ở Bảng 36.1 (định lượng glucose máu 9,8 mmol/L với chỉ số bình thường 3,9 – 6,4; định lượng uric acid máu 171 μmol/L với chỉ số bình thường nam 210 – 420, nữ 150 – 350; SGK trang 151). Giả sử Bảng 36.1 là kết quả xét nghiệm của một bệnh nhân nam. Thảo luận nhóm, nhận xét về kết quả xét nghiệm, dự đoán các nguy cơ về sức khoẻ của bệnh (nếu có) và đưa ra lời khuyên phù hợp."
+     "de": "Đọc kết quả xét nghiệm nồng độ glucose và uric acid trong máu ở Bảng 36.1 (định lượng glucose máu 9,8 mmol/L với chỉ số bình thường 3,9 – 6,4; định lượng uric acid máu 171 μmol/L với chỉ số bình thường nam 210 – 420, nữ 150 – 350; SGK trang 151). Giả sử Bảng 36.1 là kết quả xét nghiệm của một bệnh nhân nam. Thảo luận nhóm, nhận xét về kết quả xét nghiệm, dự đoán các nguy cơ về sức khoẻ của bệnh (nếu có) và đưa ra lời khuyên phù hợp.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 5,
+      "dong": [
+       {
+        "chu": "Glucose 9,8 mmol/L (bình thường 3,9 – 6,4): {0}",
+        "o": [
+         {
+          "dung": [
+           "cao hơn bình thường"
+          ],
+          "sai": [
+           "thấp hơn bình thường",
+           "bình thường"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Uric acid 171 μmol/L của bệnh nhân nam (bình thường ở nam 210 – 420): {0}",
+        "o": [
+         {
+          "dung": [
+           "thấp hơn bình thường"
+          ],
+          "sai": [
+           "cao hơn bình thường",
+           "bình thường"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Nếu là bệnh nhân nữ (bình thường ở nữ 150 – 350), uric acid 171 μmol/L: {0}",
+        "o": [
+         {
+          "dung": [
+           "bình thường"
+          ],
+          "sai": [
+           "cao hơn bình thường",
+           "thấp hơn bình thường"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Nguy cơ về sức khoẻ của bệnh nhân nam này: {0}",
+        "o": [
+         {
+          "dung": [
+           "có nguy cơ mắc bệnh tiểu đường; uric acid thấp kéo dài có nguy cơ rối loạn chức năng gan, thận"
+          ],
+          "sai": [
+           "có nguy cơ mắc bệnh gout vì uric acid cao hơn bình thường; đường huyết vẫn ổn",
+           "hoàn toàn khoẻ mạnh vì hai chỉ số chỉ lệch khỏi mức bình thường một chút"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Lời khuyên: {0}",
+        "o": [
+         {
+          "dung": [
+           "hạn chế đồ ngọt, tinh bột, ăn uống hợp lí, tập thể dục; đi khám bác sĩ, xét nghiệm lại để điều trị kịp thời"
+          ],
+          "sai": [
+           "ăn thêm nhiều đồ ngọt và thịt đỏ để uric acid và đường huyết trở về mức bình thường",
+           "không cần khám hay thay đổi gì vì người bệnh chưa thấy đau hay mệt mỏi"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     }
    ]
   },
@@ -11167,63 +13786,674 @@
      "trang": 152,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Tại sao chúng ta có thể nghe được âm thanh và nhìn được hình dạng, màu sắc của các sự vật, hiện tượng xung quanh?"
+     "de": "Tại sao chúng ta có thể nghe được âm thanh và nhìn được hình dạng, màu sắc của các sự vật, hiện tượng xung quanh?",
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "dong": [
+       {
+        "chu": "Chúng ta nghe được âm thanh nhờ {0}",
+        "o": [
+         {
+          "dung": [
+           "thính giác: tai thu nhận âm thanh, dây thần kinh thính giác truyền tín hiệu về vùng thính giác ở não"
+          ],
+          "sai": [
+           "thị giác: mắt thu nhận âm thanh rồi truyền tín hiệu về vùng thị giác ở não",
+           "thính giác: tai thu nhận âm thanh và tự nhận biết âm thanh mà không cần đến não"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Chúng ta nhìn được hình dạng, màu sắc của sự vật nhờ {0}",
+        "o": [
+         {
+          "dung": [
+           "thị giác: ánh sáng từ vật vào mắt tới màng lưới, dây thần kinh thị giác truyền tín hiệu về não"
+          ],
+          "sai": [
+           "thính giác: tai thu nhận ánh sáng rồi truyền tín hiệu về vùng thính giác ở não",
+           "thị giác: ánh sáng từ vật vào mắt tới màng lưới, mắt tự nhận biết hình ảnh mà không cần đến não"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Cả hai quá trình đều cần {0}",
+        "o": [
+         {
+          "dung": [
+           "hệ thần kinh tiếp nhận và xử lí thông tin"
+          ],
+          "sai": [
+           "hệ nội tiết tiết hormone thay cho não",
+           "riêng các giác quan, không cần hệ thần kinh"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B37.C2",
      "trang": 152,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Đọc thông tin kết hợp quan sát Hình 37.1 (cấu tạo hệ thần kinh ở người; SGK trang 152), trình bày cấu tạo và chức năng của hệ thần kinh; nêu vị trí của mỗi bộ phận."
+     "de": "Đọc thông tin kết hợp quan sát Hình 37.1 (cấu tạo hệ thần kinh ở người; SGK trang 152), trình bày cấu tạo và chức năng của hệ thần kinh; nêu vị trí của mỗi bộ phận.",
+     "hinh": [
+      "khtn8/B37.C2.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 6,
+      "dong": [
+       {
+        "chu": "Hệ thần kinh có chức năng {0}",
+        "o": [
+         {
+          "dung": [
+           "điều khiển, điều hoà và phối hợp hoạt động của các cơ quan, hệ cơ quan thành một thể thống nhất"
+          ],
+          "sai": [
+           "vận chuyển chất dinh dưỡng và oxygen đến các tế bào, mang chất thải đi thải ra ngoài",
+           "tiết hormone vào máu để điều hoà đường huyết và sự lớn lên của cơ thể"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Hệ thần kinh gồm bộ phận trung ương là {0} và bộ phận ngoại biên là {1}.",
+        "o": [
+         {
+          "dung": [
+           "não và tuỷ sống"
+          ],
+          "sai": [
+           "dây thần kinh và hạch thần kinh",
+           "não và dây thần kinh"
+          ]
+         },
+         {
+          "dung": [
+           "dây thần kinh và hạch thần kinh"
+          ],
+          "sai": [
+           "não và tuỷ sống",
+           "tuỷ sống và hạch thần kinh"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Não nằm trong {0}",
+        "o": [
+         {
+          "dung": [
+           "hộp sọ"
+          ],
+          "sai": [
+           "cột sống",
+           "khoang ngực"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Tuỷ sống nằm trong {0}",
+        "o": [
+         {
+          "dung": [
+           "ống xương sống (cột sống)"
+          ],
+          "sai": [
+           "hộp sọ",
+           "khoang bụng"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Dây thần kinh {0}",
+        "o": [
+         {
+          "dung": [
+           "phân bố đi khắp cơ thể"
+          ],
+          "sai": [
+           "chỉ có ở trong não",
+           "chỉ có ở hai tay"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B37.C3",
      "trang": 153,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Thảo luận nhóm để trả lời các câu hỏi và thực hiện các yêu cầu sau: 1. Nghiện ma tuý gây ra những tệ nạn gì cho xã hội? 2. Từ những hiểu biết về chất gây nghiện, em sẽ tuyên truyền điều gì đến người thân và mọi người xung quanh?"
+     "de": "Thảo luận nhóm để trả lời các câu hỏi và thực hiện các yêu cầu sau: 1. Nghiện ma tuý gây ra những tệ nạn gì cho xã hội? 2. Từ những hiểu biết về chất gây nghiện, em sẽ tuyên truyền điều gì đến người thân và mọi người xung quanh?",
+     "ghep": {
+      "kieu": "O",
+      "sao": 5,
+      "hoi": "1. Nghiện ma tuý gây ra những tệ nạn gì cho xã hội?\n2. Từ những hiểu biết về chất gây nghiện, em sẽ tuyên truyền điều gì đến người thân và mọi người xung quanh? Mỗi ý sau đúng hay sai?",
+      "dong": [
+       {
+        "chu": "1. Nghiện ma tuý gây ra cho xã hội {0}",
+        "o": [
+         {
+          "dung": [
+           "các tệ nạn như trộm cắp, lừa đảo, cướp của, mại dâm; làm mất trật tự an toàn xã hội"
+          ],
+          "sai": [
+           "thêm nhiều việc làm từ buôn bán ma tuý, giúp kinh tế gia đình và xã hội phát triển",
+           "không ảnh hưởng gì đến người khác nếu người nghiện chỉ dùng ma tuý ở trong nhà"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "2. Ma tuý gây nghiện sau thời gian ngắn sử dụng, rất khó cai và dễ tái nghiện: {0}",
+        "o": [
+         {
+          "dung": [
+           "Đúng"
+          ],
+          "sai": [
+           "Sai"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Thử dùng ma tuý một lần cho biết thì không thể nghiện: {0}",
+        "o": [
+         {
+          "dung": [
+           "Sai"
+          ],
+          "sai": [
+           "Đúng"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Nicotine trong thuốc lá, ethanol trong rượu cũng là chất gây nghiện: {0}",
+        "o": [
+         {
+          "dung": [
+           "Đúng"
+          ],
+          "sai": [
+           "Sai"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Khi bị rủ rê sử dụng chất gây nghiện thì kiên quyết từ chối và báo cho người lớn: {0}",
+        "o": [
+         {
+          "dung": [
+           "Đúng"
+          ],
+          "sai": [
+           "Sai"
+          ],
+          "hai": true
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B37.C4",
      "trang": 154,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Đọc thông tin và quan sát Hình 37.3 (cấu tạo của cầu mắt; SGK trang 154), kể tên các bộ phận của mắt."
+     "de": "Đọc thông tin và quan sát Hình 37.3 (cấu tạo của cầu mắt; SGK trang 154), kể tên các bộ phận của mắt.",
+     "hinh": [
+      "khtn8/B37.C4.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 5,
+      "hoi": "Đọc thông tin và quan sát Hình 37.3, kể tên các bộ phận của mắt: mỗi bộ phận sau nằm ở đâu? (Phía ngoài của mắt có mí mắt, lông mi và cầu mắt nằm trong hốc mắt.)",
+      "dong": [
+       {
+        "chu": "Mí mắt: {0}",
+        "o": [
+         {
+          "dung": [
+           "bộ phận phía ngoài của mắt"
+          ],
+          "sai": [
+           "bộ phận trong cầu mắt",
+           "không phải bộ phận của mắt"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Giác mạc: {0}",
+        "o": [
+         {
+          "dung": [
+           "bộ phận trong cầu mắt"
+          ],
+          "sai": [
+           "bộ phận phía ngoài của mắt",
+           "không phải bộ phận của mắt"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Thể thuỷ tinh: {0}",
+        "o": [
+         {
+          "dung": [
+           "bộ phận trong cầu mắt"
+          ],
+          "sai": [
+           "bộ phận phía ngoài của mắt",
+           "không phải bộ phận của mắt"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Võng mạc (màng lưới): {0}",
+        "o": [
+         {
+          "dung": [
+           "bộ phận trong cầu mắt"
+          ],
+          "sai": [
+           "bộ phận phía ngoài của mắt",
+           "không phải bộ phận của mắt"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Màng nhĩ: {0}",
+        "o": [
+         {
+          "dung": [
+           "không phải bộ phận của mắt"
+          ],
+          "sai": [
+           "bộ phận phía ngoài của mắt",
+           "bộ phận trong cầu mắt"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B37.C5",
      "trang": 154,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Liên hệ kiến thức truyền ánh sáng, giải thích quá trình thu nhận ánh sáng ở mắt trong Hình 37.4 (SGK trang 154)."
+     "de": "Liên hệ kiến thức truyền ánh sáng, giải thích quá trình thu nhận ánh sáng ở mắt trong Hình 37.4 (SGK trang 154).",
+     "hinh": [
+      "khtn8/B37.C5.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 5,
+      "dong": [
+       {
+        "chu": "Ánh sáng phản chiếu từ vật đi vào mắt, bị khúc xạ (đổi hướng) khi qua {0}",
+        "o": [
+         {
+          "dung": [
+           "giác mạc và thể thuỷ tinh"
+          ],
+          "sai": [
+           "màng cứng và màng mạch",
+           "lông mi và mí mắt"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "rồi tới {0}, tạo nên ảnh của vật",
+        "o": [
+         {
+          "dung": [
+           "màng lưới (võng mạc)"
+          ],
+          "sai": [
+           "giác mạc",
+           "mống mắt (lòng đen)"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Ánh sáng tác động lên {0}, gây hưng phấn các tế bào này",
+        "o": [
+         {
+          "dung": [
+           "tế bào thụ cảm thị giác ở màng lưới"
+          ],
+          "sai": [
+           "tế bào thụ cảm thính giác ở ốc tai",
+           "các tế bào mỡ quanh cầu mắt"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Tín hiệu truyền theo {0} tới não, cho ta cảm nhận về hình ảnh của vật",
+        "o": [
+         {
+          "dung": [
+           "dây thần kinh thị giác"
+          ],
+          "sai": [
+           "dây thần kinh thính giác",
+           "các mạch máu ở mắt"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Theo Hình 37.4, ảnh của cây trên màng lưới {0}",
+        "o": [
+         {
+          "dung": [
+           "nhỏ hơn vật và lộn ngược"
+          ],
+          "sai": [
+           "to hơn vật và cùng chiều",
+           "bằng vật và cùng chiều"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B37.C6",
      "trang": 155,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Quan sát Hình 37.5 (mắt bình thường và các tật về mắt; SGK trang 155), xác định mắt bình thường và mắt mắc các tật trong hình."
+     "de": "Quan sát Hình 37.5 (mắt bình thường và các tật về mắt; SGK trang 155), xác định mắt bình thường và mắt mắc các tật trong hình.",
+     "hinh": [
+      "khtn8/B37.C6.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "dong": [
+       {
+        "chu": "Hình a: {0}",
+        "o": [
+         {
+          "dung": [
+           "mắt bình thường: ảnh hiện đúng trên màng lưới"
+          ],
+          "sai": [
+           "mắt cận thị: ảnh ở phía trước màng lưới",
+           "mắt viễn thị: ảnh ở phía sau màng lưới",
+           "mắt loạn thị: tia sáng hội tụ ở nhiều điểm, ảnh mờ, nhoè"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Hình b: {0}",
+        "o": [
+         {
+          "dung": [
+           "mắt cận thị: ảnh ở phía trước màng lưới"
+          ],
+          "sai": [
+           "mắt bình thường: ảnh hiện đúng trên màng lưới",
+           "mắt viễn thị: ảnh ở phía sau màng lưới",
+           "mắt loạn thị: tia sáng hội tụ ở nhiều điểm, ảnh mờ, nhoè"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Hình c: {0}",
+        "o": [
+         {
+          "dung": [
+           "mắt viễn thị: ảnh ở phía sau màng lưới"
+          ],
+          "sai": [
+           "mắt bình thường: ảnh hiện đúng trên màng lưới",
+           "mắt cận thị: ảnh ở phía trước màng lưới",
+           "mắt loạn thị: tia sáng hội tụ ở nhiều điểm, ảnh mờ, nhoè"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Hình d: {0}",
+        "o": [
+         {
+          "dung": [
+           "mắt loạn thị: tia sáng hội tụ ở nhiều điểm, ảnh mờ, nhoè"
+          ],
+          "sai": [
+           "mắt bình thường: ảnh hiện đúng trên màng lưới",
+           "mắt cận thị: ảnh ở phía trước màng lưới",
+           "mắt viễn thị: ảnh ở phía sau màng lưới"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B37.C7",
      "trang": 155,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Tìm hiểu các bệnh và tật về mắt trong trường học: 1. Tìm hiểu các bệnh và tật về mắt trong trường học rồi hoàn thành thông tin theo mẫu Bảng 37.1 (tên bệnh tật, số lượng người mắc, nguyên nhân, biện pháp phòng chống; SGK trang 155). 2. Thiết kế poster tuyên truyền cho mọi người cách chăm sóc, bảo vệ đôi mắt."
+     "de": "Tìm hiểu các bệnh và tật về mắt trong trường học: 1. Tìm hiểu các bệnh và tật về mắt trong trường học rồi hoàn thành thông tin theo mẫu Bảng 37.1 (tên bệnh tật, số lượng người mắc, nguyên nhân, biện pháp phòng chống; SGK trang 155). 2. Thiết kế poster tuyên truyền cho mọi người cách chăm sóc, bảo vệ đôi mắt.",
+     "bo_may": "điều tra thực tế trong trường học, thiết kế poster"
     },
     {
      "ma": "B37.C8",
      "trang": 156,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Đọc thông tin và quan sát Hình 16.7 (cấu tạo của tai), thực hiện các yêu cầu sau: 1. Sơ đồ hoá quá trình thu nhận âm thanh của tai. 2. Giải thích vai trò của vòi tai trong cân bằng áp suất không khí giữa tai và khoang miệng."
+     "de": "Đọc thông tin và quan sát Hình 16.9 (cấu tạo tai và quá trình thu nhận âm thanh của tai, SGK trang 71), thực hiện các yêu cầu sau: 1. Sơ đồ hoá quá trình thu nhận âm thanh của tai. 2. Giải thích vai trò của vòi tai trong cân bằng áp suất không khí giữa tai và khoang miệng.",
+     "hinh": [
+      "khtn8/B37.C8.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 7,
+      "dong": [
+       {
+        "chu": "1. Âm thanh được vành tai hứng → truyền qua {0} → làm rung {1} → tác động vào {2}",
+        "o": [
+         {
+          "dung": [
+           "ống tai"
+          ],
+          "sai": [
+           "vòi tai",
+           "ốc tai"
+          ]
+         },
+         {
+          "dung": [
+           "màng nhĩ"
+          ],
+          "sai": [
+           "vành tai",
+           "ốc tai"
+          ]
+         },
+         {
+          "dung": [
+           "chuỗi xương tai"
+          ],
+          "sai": [
+           "dây thần kinh thính giác",
+           "vòi tai"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "→ làm rung các màng và dịch trong {0} → cơ quan thụ cảm âm thanh hưng phấn, xuất hiện xung thần kinh → theo {1} → về vùng thính giác ở não.",
+        "o": [
+         {
+          "dung": [
+           "ốc tai"
+          ],
+          "sai": [
+           "ống tai",
+           "màng nhĩ"
+          ]
+         },
+         {
+          "dung": [
+           "dây thần kinh thính giác"
+          ],
+          "sai": [
+           "dây thần kinh thị giác",
+           "vòi tai"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "2. Vòi tai là ống nối {0}",
+        "o": [
+         {
+          "dung": [
+           "tai giữa với vòm mũi, họng"
+          ],
+          "sai": [
+           "tai ngoài với tai trong",
+           "ốc tai với não"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Khi áp suất bên ngoài thay đổi đột ngột (máy bay cất, hạ cánh), nuốt hoặc ngáp làm vòi tai mở ra, không khí đi vào hay ra khỏi tai giữa, nhờ đó {0}",
+        "o": [
+         {
+          "dung": [
+           "áp suất không khí ở hai bên màng nhĩ cân bằng, tai không bị ù"
+          ],
+          "sai": [
+           "màng nhĩ bị đẩy lệch hẳn về phía có áp suất nhỏ hơn, tai nghe rõ hơn",
+           "âm thanh truyền qua vòi tai vào ốc tai nhanh hơn, tai nghe rõ hơn"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B37.C9",
      "trang": 156,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Dựa vào thông tin về bệnh viêm tai giữa và ù tai, em hãy nêu cách phòng chống bệnh viêm tai giữa, ù tai để bảo vệ bản thân và gia đình."
+     "de": "Dựa vào thông tin về bệnh viêm tai giữa và ù tai, em hãy nêu cách phòng chống bệnh viêm tai giữa, ù tai để bảo vệ bản thân và gia đình.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 5,
+      "hoi": "Dựa vào thông tin về bệnh viêm tai giữa và ù tai, em hãy nêu cách phòng chống bệnh viêm tai giữa, ù tai để bảo vệ bản thân và gia đình: mỗi việc sau nên làm hay không nên?",
+      "dong": [
+       {
+        "chu": "Giữ tai sạch, tránh để nước bẩn lọt vào tai khi tắm, gội, bơi: {0}",
+        "o": [
+         {
+          "dung": [
+           "Nên làm"
+          ],
+          "sai": [
+           "Không nên"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Dùng vật nhọn, cứng để ngoáy tai, lấy ráy tai: {0}",
+        "o": [
+         {
+          "dung": [
+           "Không nên"
+          ],
+          "sai": [
+           "Nên làm"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Điều trị sớm các bệnh viêm mũi, họng: {0}",
+        "o": [
+         {
+          "dung": [
+           "Nên làm"
+          ],
+          "sai": [
+           "Không nên"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Nghe nhạc bằng tai nghe với âm lượng lớn trong nhiều giờ: {0}",
+        "o": [
+         {
+          "dung": [
+           "Không nên"
+          ],
+          "sai": [
+           "Nên làm"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Đeo nút bịt tai khi phải ở nơi có tiếng ồn lớn: {0}",
+        "o": [
+         {
+          "dung": [
+           "Nên làm"
+          ],
+          "sai": [
+           "Không nên"
+          ],
+          "hai": true
+         }
+        ]
+       }
+      ]
+     }
     }
    ]
   },
@@ -11236,14 +14466,76 @@
      "trang": 157,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Với chiều cao 2,51 m, anh Kosen người Thổ Nhĩ Kì được sách Kỉ lục Guinness ghi nhận là người đàn ông cao nhất thế giới vào ngày 9/5/2011. Ngược lại, với chiều cao 0,51 m, anh Dangi người Nepal được ghi nhận là người đàn ông trưởng thành thấp nhất thế giới vào ngày 26/2/2012. Điều gì khiến họ cao lớn hoặc thấp bé bất thường so với chúng ta?"
+     "de": "Với chiều cao 2,51 m, anh Kosen người Thổ Nhĩ Kì được sách Kỉ lục Guinness ghi nhận là người đàn ông cao nhất thế giới vào ngày 9/5/2011. Ngược lại, với chiều cao 0,51 m, anh Dangi người Nepal được ghi nhận là người đàn ông trưởng thành thấp nhất thế giới vào ngày 26/2/2012. Điều gì khiến họ cao lớn hoặc thấp bé bất thường so với chúng ta?",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "dong": [
+       {
+        "chu": "Họ cao lớn hoặc thấp bé bất thường chủ yếu do {0}",
+        "o": [
+         {
+          "dung": [
+           "tuyến yên tiết hormone tăng trưởng (GH) nhiều hơn hoặc ít hơn bình thường"
+          ],
+          "sai": [
+           "tuyến tuỵ tiết hormone insulin nhiều hơn hoặc ít hơn bình thường",
+           "mỗi bữa họ ăn quá nhiều hoặc quá ít so với những người khác"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Ở tuổi đang lớn, {0}",
+        "o": [
+         {
+          "dung": [
+           "tiết quá nhiều GH thì cao lớn bất thường, tiết quá ít GH thì thấp bé bất thường"
+          ],
+          "sai": [
+           "tiết quá nhiều GH thì thấp bé bất thường, tiết quá ít GH thì cao lớn bất thường",
+           "tiết quá nhiều hay quá ít GH đều làm cơ thể cao lớn bất thường"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B38.C2",
      "trang": 158,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Em hãy giải thích vì sao hoạt động của các hormone tuyến tuỵ giúp ổn định lượng đường trong máu. Quá trình tiết hormone điều hoà đường huyết bị rối loạn có thể dẫn đến hậu quả gì?"
+     "de": "Em hãy giải thích vì sao hoạt động của các hormone tuyến tuỵ giúp ổn định lượng đường trong máu. Quá trình tiết hormone điều hoà đường huyết bị rối loạn có thể dẫn đến hậu quả gì?",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 7,
+      "buoc": [
+       "Sau bữa ăn, lượng đường (glucose) trong máu tăng",
+       "Tuyến tuỵ tiết hormone insulin",
+       "Insulin chuyển glucose trong máu thành glycogen dự trữ ở gan, đường huyết giảm về mức bình thường",
+       "Lúc đói (xa bữa ăn), lượng đường trong máu giảm",
+       "Tuyến tuỵ tiết hormone glucagon",
+       "Glucagon chuyển glycogen ở gan thành glucose đưa vào máu, đường huyết tăng về mức bình thường",
+       "Vì vậy, nếu quá trình tiết các hormone này bị rối loạn (ví dụ thiếu insulin hoặc insulin giảm tác dụng) thì đường huyết tăng cao, gây bệnh đái tháo đường"
+      ],
+      "nhieu": [
+       "Insulin chuyển glycogen ở gan thành glucose đưa vào máu, đường huyết tăng",
+       "Lúc đói, tuyến tuỵ tiết thêm insulin để đường huyết tăng lên"
+      ],
+      "thu_tu_khac": [
+       [
+        3,
+        4,
+        5,
+        0,
+        1,
+        2,
+        6
+       ]
+      ]
+     }
     },
     {
      "ma": "B38.C3",
@@ -11257,7 +14549,70 @@
      "trang": 159,
      "nhom": "Em có thể",
      "dang": "CAU_NHO",
-     "de": "Lựa chọn được khẩu phần ăn phù hợp để phòng chống các bệnh về hệ nội tiết."
+     "de": "Lựa chọn được khẩu phần ăn phù hợp để phòng chống các bệnh về hệ nội tiết.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "hoi": "Lựa chọn khẩu phần ăn phù hợp để phòng chống các bệnh về hệ nội tiết: mỗi lựa chọn sau nên làm hay không nên?",
+      "dong": [
+       {
+        "chu": "Dùng muối iodine khi nấu ăn; ăn cá biển, rong biển: {0}",
+        "o": [
+         {
+          "dung": [
+           "Nên làm"
+          ],
+          "sai": [
+           "Không nên"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Uống nhiều nước ngọt có ga, ăn nhiều bánh kẹo: {0}",
+        "o": [
+         {
+          "dung": [
+           "Không nên"
+          ],
+          "sai": [
+           "Nên làm"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Ăn nhiều rau xanh; hạn chế đồ chiên rán, nhiều mỡ: {0}",
+        "o": [
+         {
+          "dung": [
+           "Nên làm"
+          ],
+          "sai": [
+           "Không nên"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Ăn tối muộn với nhiều đồ ngọt, tinh bột: {0}",
+        "o": [
+         {
+          "dung": [
+           "Không nên"
+          ],
+          "sai": [
+           "Nên làm"
+          ],
+          "hai": true
+         }
+        ]
+       }
+      ]
+     }
     }
    ]
   },
@@ -11270,35 +14625,303 @@
      "trang": 160,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Nhiệt độ cơ thể tăng cao hoặc hạ thấp quá mức đều là bất thường. Nhiệt độ cơ thể ổn định có vai trò gì và yếu tố nào tham gia duy trì sự ổn định đó?"
+     "de": "Nhiệt độ cơ thể tăng cao hoặc hạ thấp quá mức đều là bất thường. Nhiệt độ cơ thể ổn định có vai trò gì và yếu tố nào tham gia duy trì sự ổn định đó?",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "dong": [
+       {
+        "chu": "Nhiệt độ cơ thể ổn định giúp {0}",
+        "o": [
+         {
+          "dung": [
+           "các quá trình sống trong cơ thể diễn ra bình thường"
+          ],
+          "sai": [
+           "cơ thể không cần ăn uống, vì nhiệt độ ổn định tự tạo ra năng lượng",
+           "da không bao giờ phải tiết mồ hôi, kể cả khi trời nóng"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Tham gia duy trì sự ổn định đó là {0}",
+        "o": [
+         {
+          "dung": [
+           "da (tiết mồ hôi, co dãn mạch máu dưới da, co dãn cơ chân lông) dưới sự điều khiển của hệ thần kinh"
+          ],
+          "sai": [
+           "hệ tiêu hoá (tăng, giảm lượng thức ăn) dưới sự điều khiển của tuyến tuỵ",
+           "phổi (thở nhanh, thở chậm) và tim (đập nhanh, đập chậm), không cần đến da"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B39.C2",
      "trang": 161,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "1. Quan sát Hình 39.1 (cấu tạo của da; SGK trang 160), em hãy xác định các thành phần của lớp biểu bì, lớp bì và lớp mỡ dưới da. 2. Nêu chức năng các thành phần của da."
+     "de": "1. Quan sát Hình 39.1 (cấu tạo của da; SGK trang 160), em hãy xác định các thành phần của lớp biểu bì, lớp bì và lớp mỡ dưới da. 2. Nêu chức năng các thành phần của da.",
+     "hinh": [
+      "khtn8/B39.C2.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 6,
+      "dong": [
+       {
+        "chu": "1. Tầng sừng và tầng tế bào sống thuộc {0}",
+        "o": [
+         {
+          "dung": [
+           "lớp biểu bì"
+          ],
+          "sai": [
+           "lớp bì",
+           "lớp mỡ dưới da"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Tuyến mồ hôi, tuyến nhờn, thụ quan, bao lông, cơ co chân lông thuộc {0}",
+        "o": [
+         {
+          "dung": [
+           "lớp bì"
+          ],
+          "sai": [
+           "lớp biểu bì",
+           "lớp mỡ dưới da"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Các tế bào mỡ ở trong cùng thuộc {0}",
+        "o": [
+         {
+          "dung": [
+           "lớp mỡ dưới da"
+          ],
+          "sai": [
+           "lớp biểu bì",
+           "lớp bì"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "2. Lớp biểu bì: {0}",
+        "o": [
+         {
+          "dung": [
+           "bảo vệ cơ thể, chống sự xâm nhập của vi khuẩn, chống thấm nước và mất nước"
+          ],
+          "sai": [
+           "chứa thụ quan, tuyến mồ hôi, mạch máu: nhận biết kích thích, bài tiết, điều hoà thân nhiệt",
+           "giữ nhiệt (cách nhiệt), làm lớp đệm chống va đập và dự trữ năng lượng"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Lớp bì: {0}",
+        "o": [
+         {
+          "dung": [
+           "chứa thụ quan, tuyến mồ hôi, mạch máu: nhận biết kích thích, bài tiết, điều hoà thân nhiệt"
+          ],
+          "sai": [
+           "bảo vệ cơ thể, chống sự xâm nhập của vi khuẩn, chống thấm nước và mất nước",
+           "giữ nhiệt (cách nhiệt), làm lớp đệm chống va đập và dự trữ năng lượng"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Lớp mỡ dưới da: {0}",
+        "o": [
+         {
+          "dung": [
+           "giữ nhiệt (cách nhiệt), làm lớp đệm chống va đập và dự trữ năng lượng"
+          ],
+          "sai": [
+           "bảo vệ cơ thể, chống sự xâm nhập của vi khuẩn, chống thấm nước và mất nước",
+           "chứa thụ quan, tuyến mồ hôi, mạch máu: nhận biết kích thích, bài tiết, điều hoà thân nhiệt"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B39.C3",
      "trang": 161,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "1. Vì sao nói giữ gìn vệ sinh môi trường cũng là một biện pháp bảo vệ da? 2. Vận dụng những hiểu biết về da, nêu các biện pháp chăm sóc, bảo vệ và trang điểm da an toàn."
+     "de": "1. Vì sao nói giữ gìn vệ sinh môi trường cũng là một biện pháp bảo vệ da? 2. Vận dụng những hiểu biết về da, nêu các biện pháp chăm sóc, bảo vệ và trang điểm da an toàn.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 5,
+      "hoi": "1. Vì sao nói giữ gìn vệ sinh môi trường cũng là một biện pháp bảo vệ da?\n2. Vận dụng những hiểu biết về da, nêu các biện pháp chăm sóc, bảo vệ và trang điểm da an toàn: mỗi việc sau nên làm hay không nên?",
+      "dong": [
+       {
+        "chu": "1. Giữ gìn vệ sinh môi trường giúp bảo vệ da vì {0}",
+        "o": [
+         {
+          "dung": [
+           "môi trường sạch thì ít bụi bẩn, vi khuẩn, nấm bám vào da, da ít bị bệnh"
+          ],
+          "sai": [
+           "môi trường sạch làm lớp da dày lên, chống va đập tốt hơn",
+           "da chỉ bị bệnh do ăn uống không hợp lí, không liên quan đến môi trường"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "2. Tắm rửa, giữ da sạch sẽ hằng ngày: {0}",
+        "o": [
+         {
+          "dung": [
+           "Nên làm"
+          ],
+          "sai": [
+           "Không nên"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Để da tiếp xúc lâu với ánh nắng gay gắt: {0}",
+        "o": [
+         {
+          "dung": [
+           "Không nên"
+          ],
+          "sai": [
+           "Nên làm"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Lạm dụng mĩ phẩm, để lớp trang điểm trên da qua đêm: {0}",
+        "o": [
+         {
+          "dung": [
+           "Không nên"
+          ],
+          "sai": [
+           "Nên làm"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Tránh làm da bị xây xát; bị xước thì rửa sạch, sát trùng: {0}",
+        "o": [
+         {
+          "dung": [
+           "Nên làm"
+          ],
+          "sai": [
+           "Không nên"
+          ],
+          "hai": true
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B39.C4",
      "trang": 162,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Tìm hiểu một số bệnh về da trong trường học hoặc khu dân cư rồi hoàn thành thông tin theo mẫu Bảng 39.1 (tên bệnh, số người mắc, biện pháp phòng chống; SGK trang 162)."
+     "de": "Tìm hiểu một số bệnh về da trong trường học hoặc khu dân cư rồi hoàn thành thông tin theo mẫu Bảng 39.1 (tên bệnh, số người mắc, biện pháp phòng chống; SGK trang 162).",
+     "bo_may": "điều tra thực tế trong trường học hoặc khu dân cư"
     },
     {
      "ma": "B39.C5",
      "trang": 162,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Em hãy tìm hiểu và nêu một số thành tựu ghép da trong y học."
+     "de": "Em hãy tìm hiểu và nêu một số thành tựu ghép da trong y học.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "hoi": "Em hãy tìm hiểu và nêu một số thành tựu ghép da trong y học (đọc thêm mục Em có biết, SGK trang 164).",
+      "dong": [
+       {
+        "chu": "Ghép da là {0}",
+        "o": [
+         {
+          "dung": [
+           "lấy một phần da trên cơ thể di chuyển hoặc cấy ghép đến vùng khác cần da"
+          ],
+          "sai": [
+           "bôi thuốc lên vết thương để lớp da mới tự mọc lại thật nhanh",
+           "thay toàn bộ da của cơ thể bằng một lớp da nhân tạo bằng nhựa"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Ghép da thành công giúp {0}",
+        "o": [
+         {
+          "dung": [
+           "cứu chữa những người có da bị tổn thương nặng do bỏng, nhiễm trùng da"
+          ],
+          "sai": [
+           "làm da trắng hơn, mịn hơn cho người khoẻ mạnh muốn làm đẹp",
+           "chữa khỏi các tật về mắt như cận thị, viễn thị"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Bệnh viện Bỏng Quốc gia đã dùng {0} để ghép da, điều trị vết bỏng",
+        "o": [
+         {
+          "dung": [
+           "da ếch, da lợn đã được xử lí, tiệt trùng"
+          ],
+          "sai": [
+           "lá cây tươi đắp trực tiếp lên vết bỏng",
+           "giấy ăn sạch"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Peter Medawar (giải Nobel năm 1960) chứng minh {0}",
+        "o": [
+         {
+          "dung": [
+           "cơ thể thải mảnh da ghép lạ là hiện tượng miễn dịch, đặt nền móng cho ngành ghép tạng"
+          ],
+          "sai": [
+           "da ghép từ người khác luôn sống được mãi vì da của mọi người đều giống nhau",
+           "ghép da không liên quan gì đến hệ miễn dịch, chỉ phụ thuộc vào tay nghề bác sĩ"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B39.C6",
@@ -11312,21 +14935,265 @@
      "trang": 163,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "1. Duy trì ổn định thân nhiệt ở người có vai trò gì? Nêu các cơ chế duy trì thân nhiệt. 2. Trình bày vai trò của da và hệ thần kinh trong điều hoà thân nhiệt."
+     "de": "1. Duy trì ổn định thân nhiệt ở người có vai trò gì? Nêu các cơ chế duy trì thân nhiệt. 2. Trình bày vai trò của da và hệ thần kinh trong điều hoà thân nhiệt.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 5,
+      "dong": [
+       {
+        "chu": "1. Duy trì ổn định thân nhiệt giúp {0}",
+        "o": [
+         {
+          "dung": [
+           "các quá trình sống diễn ra bình thường; dưới 35 °C hay trên 38 °C thì tim, hệ thần kinh dễ bị rối loạn"
+          ],
+          "sai": [
+           "cơ thể không cần ngủ nghỉ, vì nhiệt độ ổn định tự tạo ra năng lượng cho mọi hoạt động",
+           "cơ thể không cần uống nước, vì nhiệt độ ổn định giữ được nước trong máu"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Cơ thể duy trì thân nhiệt bằng cách điều tiết {0}",
+        "o": [
+         {
+          "dung": [
+           "sự toả nhiệt (chủ yếu qua da) và sự sinh nhiệt (run, tăng phân giải các chất ở tế bào)"
+          ],
+          "sai": [
+           "riêng lượng thức ăn ăn vào mỗi ngày: ăn nhiều thì nóng lên, ăn ít thì lạnh đi",
+           "riêng lượng nước uống vào mỗi ngày: uống nhiều thì mát lên, uống ít thì nóng lên"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "2. Khi trời nóng, để tăng toả nhiệt: {0}",
+        "o": [
+         {
+          "dung": [
+           "mao mạch dưới da dãn, tuyến mồ hôi tăng tiết mồ hôi"
+          ],
+          "sai": [
+           "mao mạch dưới da co, tuyến mồ hôi ngừng tiết mồ hôi",
+           "mao mạch dưới da co, tuyến mồ hôi tăng tiết mồ hôi"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Khi trời lạnh, để giảm toả nhiệt: {0}",
+        "o": [
+         {
+          "dung": [
+           "mao mạch dưới da co, cơ chân lông co; quá lạnh thì cơ co dãn liên tục gây run để sinh nhiệt"
+          ],
+          "sai": [
+           "mao mạch dưới da dãn, cơ chân lông dãn; quá lạnh thì tuyến mồ hôi tăng tiết để giữ ấm",
+           "mao mạch dưới da dãn, cơ chân lông co; quá lạnh thì cơ thể ngừng phân giải các chất"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Các phản ứng trên đều là phản xạ, chứng tỏ {0}",
+        "o": [
+         {
+          "dung": [
+           "hệ thần kinh giữ vai trò chủ đạo trong điều hoà thân nhiệt"
+          ],
+          "sai": [
+           "hệ tiêu hoá giữ vai trò chủ đạo trong điều hoà thân nhiệt",
+           "da tự hoạt động, không cần hệ thần kinh"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B39.C8",
      "trang": 163,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Cho những hoạt động sau: trồng cây xanh, chống nóng cho nhà ở, sử dụng quạt, mặc áo ấm, luyện tập thể dục, thể thao, sử dụng điều hoà hai chiều. Hoạt động nào có vai trò chống nóng, hoạt động nào có vai trò chống lạnh cho cơ thể?"
+     "de": "Cho những hoạt động sau: trồng cây xanh, chống nóng cho nhà ở, sử dụng quạt, mặc áo ấm, luyện tập thể dục, thể thao, sử dụng điều hoà hai chiều. Hoạt động nào có vai trò chống nóng, hoạt động nào có vai trò chống lạnh cho cơ thể?",
+     "ghep": {
+      "kieu": "O",
+      "sao": 6,
+      "hoi": "Cho những hoạt động sau: trồng cây xanh, chống nóng cho nhà ở, sử dụng quạt, mặc áo ấm, luyện tập thể dục, thể thao, sử dụng điều hoà hai chiều. Mỗi hoạt động có vai trò chống nóng, chống lạnh hay cả hai?",
+      "dong": [
+       {
+        "chu": "Trồng cây xanh: {0}",
+        "o": [
+         {
+          "dung": [
+           "chống nóng"
+          ],
+          "sai": [
+           "chống lạnh",
+           "cả chống nóng và chống lạnh"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Chống nóng cho nhà ở: {0}",
+        "o": [
+         {
+          "dung": [
+           "chống nóng"
+          ],
+          "sai": [
+           "chống lạnh",
+           "cả chống nóng và chống lạnh"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Sử dụng quạt: {0}",
+        "o": [
+         {
+          "dung": [
+           "chống nóng"
+          ],
+          "sai": [
+           "chống lạnh",
+           "cả chống nóng và chống lạnh"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Mặc áo ấm: {0}",
+        "o": [
+         {
+          "dung": [
+           "chống lạnh"
+          ],
+          "sai": [
+           "chống nóng",
+           "cả chống nóng và chống lạnh"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Luyện tập thể dục, thể thao: {0}",
+        "o": [
+         {
+          "dung": [
+           "cả chống nóng và chống lạnh"
+          ],
+          "sai": [
+           "chống nóng",
+           "chống lạnh"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Sử dụng điều hoà hai chiều: {0}",
+        "o": [
+         {
+          "dung": [
+           "cả chống nóng và chống lạnh"
+          ],
+          "sai": [
+           "chống nóng",
+           "chống lạnh"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B39.C9",
      "trang": 164,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Thảo luận theo nhóm về cách xử lí tình huống khi gặp một người bị say nắng (cảm nóng) và một người bị cảm lạnh."
+     "de": "Thảo luận theo nhóm về cách xử lí tình huống khi gặp một người bị say nắng (cảm nóng) và một người bị cảm lạnh.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 5,
+      "hoi": "Nêu cách xử lí tình huống khi gặp một người bị say nắng (cảm nóng) và một người bị cảm lạnh.",
+      "dong": [
+       {
+        "chu": "Người bị say nắng: trước hết {0}",
+        "o": [
+         {
+          "dung": [
+           "đưa vào chỗ râm mát, thoáng gió, nới rộng quần áo"
+          ],
+          "sai": [
+           "để tiếp tục ngồi ngoài nắng cho cơ thể quen dần",
+           "đưa vào phòng kín, đắp chăn dày cho ra mồ hôi"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Sau đó {0}",
+        "o": [
+         {
+          "dung": [
+           "chườm mát bằng khăn ướt, cho uống nước mát (có thể pha chút muối) nếu người đó còn tỉnh"
+          ],
+          "sai": [
+           "cho uống rượu, bia hoặc cà phê đặc cho tỉnh táo rồi để tự nghỉ",
+           "cho ăn đồ cay nóng và uống nước nóng để ra nhiều mồ hôi cho mát"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Nếu người say nắng lơ mơ, nôn nhiều, sốt cao: {0}",
+        "o": [
+         {
+          "dung": [
+           "gọi cấp cứu 115 hoặc đưa nhanh đến cơ sở y tế"
+          ],
+          "sai": [
+           "để nằm yên một chỗ, chờ tự khỏi",
+           "xoa dầu nóng khắp người rồi để đó"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Người bị cảm lạnh: {0}",
+        "o": [
+         {
+          "dung": [
+           "đưa vào chỗ khô ráo, ấm áp; thay quần áo ướt và giữ ấm cơ thể"
+          ],
+          "sai": [
+           "cho ngồi trước quạt hay điều hoà lạnh để người khô ráo nhanh",
+           "cho tắm ngay bằng nước lạnh để cơ thể tự sinh nhiệt"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Cho người bị cảm lạnh {0}",
+        "o": [
+         {
+          "dung": [
+           "uống nước ấm, ăn cháo ấm, súc họng bằng nước muối sinh lí, nghỉ ngơi"
+          ],
+          "sai": [
+           "uống nước đá lạnh, ăn kem cho mát họng rồi tiếp tục đi chơi ngoài trời",
+           "uống một chén rượu cho ấm người, không cần giữ ấm hay nghỉ ngơi"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     }
    ]
   },
@@ -11339,49 +15206,586 @@
      "trang": 165,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Để duy trì nòi giống, mọi sinh vật đều trải qua quá trình sinh sản. Ở người, cơ quan và hệ cơ quan nào đảm nhận vai trò sinh sản?"
+     "de": "Để duy trì nòi giống, mọi sinh vật đều trải qua quá trình sinh sản. Ở người, cơ quan và hệ cơ quan nào đảm nhận vai trò sinh sản?",
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "dong": [
+       {
+        "chu": "Ở người, vai trò sinh sản do {0} đảm nhận",
+        "o": [
+         {
+          "dung": [
+           "hệ sinh dục"
+          ],
+          "sai": [
+           "hệ nội tiết",
+           "hệ bài tiết"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Cơ quan sinh dục nam gồm {0}",
+        "o": [
+         {
+          "dung": [
+           "tinh hoàn, mào tinh, ống dẫn tinh, túi tinh, ống đái, dương vật"
+          ],
+          "sai": [
+           "tinh hoàn, mào tinh, ống dẫn tinh, buồng trứng, ống đái, dương vật",
+           "buồng trứng, ống dẫn trứng, tử cung, âm đạo"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Cơ quan sinh dục nữ gồm {0}",
+        "o": [
+         {
+          "dung": [
+           "buồng trứng, ống dẫn trứng, tử cung, âm đạo"
+          ],
+          "sai": [
+           "buồng trứng, ống dẫn trứng, tử cung, bóng đái",
+           "tinh hoàn, mào tinh, ống dẫn tinh, túi tinh"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B40.C2",
      "trang": 166,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Đọc thông tin kết hợp quan sát Hình 40.1 và 40.2 (cơ quan sinh dục nam và nữ; SGK trang 165-166) để thực hiện yêu cầu và trả lời câu hỏi sau: 1. Trình bày chức năng của các cơ quan sinh dục nam và nữ. 2. Tinh hoàn nằm trong bìu có thuận lợi gì cho việc sản sinh tinh trùng?"
+     "de": "Đọc thông tin kết hợp quan sát Hình 40.1 và 40.2 (cơ quan sinh dục nam và nữ; SGK trang 165-166) để thực hiện yêu cầu và trả lời câu hỏi sau: 1. Trình bày chức năng của các cơ quan sinh dục nam và nữ. 2. Tinh hoàn nằm trong bìu có thuận lợi gì cho việc sản sinh tinh trùng?",
+     "ghep": {
+      "kieu": "O",
+      "sao": 6,
+      "hoi": "1. Trình bày chức năng của các cơ quan sinh dục nam và nữ.\n2. Tinh hoàn nằm trong bìu có thuận lợi gì cho việc sản sinh tinh trùng?",
+      "dong": [
+       {
+        "chu": "1. Tinh hoàn: {0}",
+        "o": [
+         {
+          "dung": [
+           "nơi sản sinh ra tinh trùng"
+          ],
+          "sai": [
+           "nơi chứa và nuôi dưỡng tinh trùng",
+           "nơi sản sinh ra trứng"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Mào tinh: {0}",
+        "o": [
+         {
+          "dung": [
+           "nơi tinh trùng hoàn thiện cấu tạo"
+          ],
+          "sai": [
+           "nơi chứa và nuôi dưỡng tinh trùng",
+           "nơi sản sinh ra tinh trùng"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Buồng trứng: {0}",
+        "o": [
+         {
+          "dung": [
+           "nơi sản sinh ra trứng"
+          ],
+          "sai": [
+           "nơi nuôi dưỡng thai nhi phát triển",
+           "nơi tinh trùng hoàn thiện cấu tạo"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Ống dẫn trứng: {0}",
+        "o": [
+         {
+          "dung": [
+           "đưa trứng về tử cung, là nơi xảy ra thụ tinh"
+          ],
+          "sai": [
+           "nơi sản sinh ra trứng",
+           "nơi nuôi dưỡng thai nhi phát triển"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Tử cung: {0}",
+        "o": [
+         {
+          "dung": [
+           "nơi nuôi dưỡng thai nhi phát triển"
+          ],
+          "sai": [
+           "nơi sản sinh ra trứng",
+           "đưa trứng về tử cung, là nơi xảy ra thụ tinh"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "2. Tinh hoàn nằm trong bìu, ngoài khoang bụng, giúp {0}",
+        "o": [
+         {
+          "dung": [
+           "nhiệt độ ở tinh hoàn thấp hơn thân nhiệt (khoảng 35 °C), thích hợp cho việc sản sinh tinh trùng"
+          ],
+          "sai": [
+           "nhiệt độ ở tinh hoàn cao hơn thân nhiệt (khoảng 40 °C), giúp tinh trùng sinh ra nhanh hơn",
+           "tinh hoàn nhận được nhiều máu hơn nên sản sinh tinh trùng nhanh hơn"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B40.C3",
      "trang": 166,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Em hãy phân biệt thụ tinh và thụ thai."
+     "de": "Em hãy phân biệt thụ tinh và thụ thai.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "dong": [
+       {
+        "chu": "Thụ tinh là {0}",
+        "o": [
+         {
+          "dung": [
+           "quá trình tinh trùng kết hợp với trứng tạo thành hợp tử"
+          ],
+          "sai": [
+           "quá trình phôi di chuyển đến tử cung, bám vào niêm mạc tử cung để làm tổ",
+           "quá trình trứng chín và rụng khỏi buồng trứng"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Thụ tinh xảy ra ở {0}",
+        "o": [
+         {
+          "dung": [
+           "ống dẫn trứng"
+          ],
+          "sai": [
+           "tử cung",
+           "buồng trứng"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Thụ thai là {0}",
+        "o": [
+         {
+          "dung": [
+           "quá trình phôi di chuyển đến tử cung, bám vào niêm mạc tử cung để làm tổ"
+          ],
+          "sai": [
+           "quá trình tinh trùng kết hợp với trứng tạo thành hợp tử",
+           "quá trình trứng chín và rụng khỏi buồng trứng"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Thụ thai xảy ra ở {0}",
+        "o": [
+         {
+          "dung": [
+           "tử cung"
+          ],
+          "sai": [
+           "ống dẫn trứng",
+           "buồng trứng"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B40.C4",
      "trang": 167,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Dựa vào thông tin trong Hình 40.4 (chu kì kinh nguyệt; SGK trang 167), em hãy mô tả sự thay đổi độ dày niêm mạc tử cung trong chu kì kinh nguyệt. Theo em, sự thay đổi này có ý nghĩa gì?"
+     "de": "Dựa vào thông tin trong Hình 40.4 (chu kì kinh nguyệt; SGK trang 167), em hãy mô tả sự thay đổi độ dày niêm mạc tử cung trong chu kì kinh nguyệt. Theo em, sự thay đổi này có ý nghĩa gì?",
+     "hinh": [
+      "khtn8/B40.C4.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 5,
+      "dong": [
+       {
+        "chu": "Ngày 1 đến ngày 5: {0}",
+        "o": [
+         {
+          "dung": [
+           "lớp niêm mạc tử cung bong ra (giai đoạn kinh nguyệt), niêm mạc mỏng đi"
+          ],
+          "sai": [
+           "lớp niêm mạc tử cung bắt đầu dày lên, trứng chín dần trong buồng trứng",
+           "trứng chín và rụng, niêm mạc tử cung dày nhất trong chu kì"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Từ ngày 6 đến cuối chu kì (ngày 28): {0}",
+        "o": [
+         {
+          "dung": [
+           "lớp niêm mạc tử cung dày lên dần, dày nhất vào cuối chu kì"
+          ],
+          "sai": [
+           "lớp niêm mạc tử cung bong ra liên tục, mỏng nhất vào cuối chu kì",
+           "lớp niêm mạc tử cung giữ nguyên độ dày suốt chu kì"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Trứng thường rụng vào khoảng ngày thứ {0} của chu kì",
+        "o": [
+         {
+          "dung": [
+           "14"
+          ],
+          "sai": [
+           "1",
+           "28"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Ý nghĩa của việc niêm mạc dày lên: {0}",
+        "o": [
+         {
+          "dung": [
+           "niêm mạc dày, xốp, nhiều mạch máu để chuẩn bị đón phôi xuống làm tổ"
+          ],
+          "sai": [
+           "để tử cung có đủ chỗ sản sinh ra trứng cho chu kì sau",
+           "để ngăn tinh trùng đi vào tử cung và gặp trứng"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Nếu trứng không được thụ tinh, {0}",
+        "o": [
+         {
+          "dung": [
+           "lớp niêm mạc bong ra, gây đứt mạch máu và chảy máu: đó là kinh nguyệt"
+          ],
+          "sai": [
+           "lớp niêm mạc vẫn được giữ lại và tiếp tục dày lên ở chu kì sau",
+           "trứng tự phát triển thành phôi rồi làm tổ ở tử cung"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B40.C5",
      "trang": 167,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Tìm hiểu vai trò và các biện pháp tránh thai: 1. Cần sử dụng các biện pháp tránh thai trong những trường hợp nào? Tại sao? 2. Nêu các biện pháp tránh thai và tác dụng của mỗi biện pháp đó theo mẫu Bảng 40.1 (SGK trang 167)."
+     "de": "Tìm hiểu vai trò và các biện pháp tránh thai. Đọc thông tin trong SGK kết hợp tìm hiểu thông tin trên các phương tiện khác, thảo luận để trả lời các câu hỏi và yêu cầu sau: 1. Cần sử dụng các biện pháp tránh thai trong những trường hợp nào? Tại sao? 2. Nêu các biện pháp tránh thai và tác dụng của mỗi biện pháp đó theo mẫu Bảng 40.1 (SGK trang 167). Bảng 40.1. Biện pháp tránh thai và tác dụng của mỗi biện pháp: Sử dụng thuốc tránh thai hằng ngày: Ngăn không cho trứng chín và rụng; Sử dụng thuốc tránh thai khẩn cấp: ?; Sử dụng bao cao su: ?; (biện pháp khác): ?.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 6,
+      "dong": [
+       {
+        "chu": "1. Cần sử dụng biện pháp tránh thai khi {0}",
+        "o": [
+         {
+          "dung": [
+           "chưa muốn có con, muốn giãn khoảng cách sinh con, hay sức khoẻ người mẹ chưa đảm bảo"
+          ],
+          "sai": [
+           "đã lập gia đình và muốn có con ngay trong năm đó",
+           "đã mang thai được vài tháng, để thai nhi trong bụng mẹ phát triển khoẻ mạnh hơn"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Vì {0}",
+        "o": [
+         {
+          "dung": [
+           "tránh mang thai ngoài ý muốn; ở tuổi vị thành niên mang thai dễ sinh non, sẩy thai, nguy hiểm cho mẹ và con"
+          ],
+          "sai": [
+           "các biện pháp tránh thai giúp cơ thể người mẹ lớn nhanh hơn, khoẻ mạnh hơn",
+           "mọi biện pháp tránh thai đều phòng được tất cả các bệnh lây qua đường sinh dục"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "2. Sử dụng thuốc tránh thai khẩn cấp: {0}",
+        "o": [
+         {
+          "dung": [
+           "ngăn không cho trứng chín và rụng"
+          ],
+          "sai": [
+           "ngăn không cho tinh trùng gặp trứng",
+           "chống sự làm tổ của trứng đã thụ tinh"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Sử dụng bao cao su: {0}",
+        "o": [
+         {
+          "dung": [
+           "ngăn không cho tinh trùng gặp trứng"
+          ],
+          "sai": [
+           "ngăn không cho trứng chín và rụng",
+           "chống sự làm tổ của trứng đã thụ tinh"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Đặt vòng tránh thai: {0}",
+        "o": [
+         {
+          "dung": [
+           "chống sự làm tổ của trứng đã thụ tinh"
+          ],
+          "sai": [
+           "ngăn không cho trứng chín và rụng",
+           "ngăn không cho tinh trùng gặp trứng"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Thắt ống dẫn tinh hoặc thắt ống dẫn trứng: {0}",
+        "o": [
+         {
+          "dung": [
+           "ngăn không cho tinh trùng gặp trứng"
+          ],
+          "sai": [
+           "ngăn không cho trứng chín và rụng",
+           "chống sự làm tổ của trứng đã thụ tinh"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B40.C6",
      "trang": 168,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Tìm hiểu tác hại và biện pháp phòng chống các bệnh lây truyền qua đường sinh dục: 1. Các bệnh lây truyền qua đường sinh dục có thể gây ra những hậu quả gì? 2. Từ những hiểu biết về các bệnh lây truyền qua đường sinh dục, em hãy đề xuất biện pháp phòng chống các bệnh đó."
+     "de": "Tìm hiểu tác hại và biện pháp phòng chống các bệnh lây truyền qua đường sinh dục: 1. Các bệnh lây truyền qua đường sinh dục có thể gây ra những hậu quả gì? 2. Từ những hiểu biết về các bệnh lây truyền qua đường sinh dục, em hãy đề xuất biện pháp phòng chống các bệnh đó.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 6,
+      "dong": [
+       {
+        "chu": "1. Các bệnh lây truyền qua đường sinh dục có thể gây {0}",
+        "o": [
+         {
+          "dung": [
+           "tổn thương cơ quan sinh dục, vô sinh; tổn thương tim, gan, thần kinh; suy giảm miễn dịch; lây sang con"
+          ],
+          "sai": [
+           "chỉ gây ngứa, nổi mẩn ngoài da vài ngày rồi tự khỏi, không cần chữa trị",
+           "chỉ làm người bệnh mệt mỏi, không lây sang bất kì ai khác, kể cả con của họ"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Bệnh giang mai do {0} gây ra",
+        "o": [
+         {
+          "dung": [
+           "xoắn khuẩn Treponema pallidum"
+          ],
+          "sai": [
+           "song cầu khuẩn Neisseria gonorrhoeae",
+           "virus HIV"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "AIDS do virus HIV gây ra, lây truyền qua {0}",
+        "o": [
+         {
+          "dung": [
+           "quan hệ tình dục không an toàn, đường máu và từ mẹ sang con"
+          ],
+          "sai": [
+           "bắt tay, ôm, ngồi cạnh, dùng chung bát đũa với người nhiễm HIV",
+           "muỗi đốt, ho, hắt hơi và dùng chung nhà vệ sinh"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "2. Không dùng chung bơm kim tiêm, dao cạo, bàn chải đánh răng: {0}",
+        "o": [
+         {
+          "dung": [
+           "Nên làm"
+          ],
+          "sai": [
+           "Không nên"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Giữ vệ sinh cơ quan sinh dục; đi khám ngay khi có dấu hiệu bất thường: {0}",
+        "o": [
+         {
+          "dung": [
+           "Nên làm"
+          ],
+          "sai": [
+           "Không nên"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Dùng chung bơm kim tiêm nếu đã rửa qua bằng nước: {0}",
+        "o": [
+         {
+          "dung": [
+           "Không nên"
+          ],
+          "sai": [
+           "Nên làm"
+          ],
+          "hai": true
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B40.C7",
      "trang": 168,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "1. Bảo vệ sức khoẻ sinh sản vị thành niên có ý nghĩa gì? 2. Em có thể vận dụng những kiến thức về sinh sản để bảo vệ sức khoẻ bản thân như thế nào?"
+     "de": "1. Bảo vệ sức khoẻ sinh sản vị thành niên có ý nghĩa gì? 2. Em có thể vận dụng những kiến thức về sinh sản để bảo vệ sức khoẻ bản thân như thế nào?",
+     "ghep": {
+      "kieu": "O",
+      "sao": 5,
+      "hoi": "1. Bảo vệ sức khoẻ sinh sản vị thành niên có ý nghĩa gì?\n2. Em có thể vận dụng những kiến thức về sinh sản để bảo vệ sức khoẻ bản thân như thế nào? Mỗi việc sau nên làm hay không nên?",
+      "dong": [
+       {
+        "chu": "1. Bảo vệ sức khoẻ sinh sản vị thành niên giúp {0}",
+        "o": [
+         {
+          "dung": [
+           "cơ quan sinh dục phát triển khoẻ mạnh, tránh mang thai ngoài ý muốn và các bệnh lây qua đường sinh dục"
+          ],
+          "sai": [
+           "làm cơ thể ngừng phát triển ở tuổi dậy thì để tránh các bệnh về sinh sản",
+           "vị thành niên không cần tìm hiểu về sức khoẻ sinh sản cho tới khi trưởng thành"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "2. Vệ sinh cơ thể và cơ quan sinh dục hằng ngày: {0}",
+        "o": [
+         {
+          "dung": [
+           "Nên làm"
+          ],
+          "sai": [
+           "Không nên"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Tìm hiểu kiến thức về sinh sản từ nguồn tin cậy: sách giáo khoa, thầy cô, cha mẹ, bác sĩ: {0}",
+        "o": [
+         {
+          "dung": [
+           "Nên làm"
+          ],
+          "sai": [
+           "Không nên"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Xem phim ảnh, trang mạng không phù hợp với lứa tuổi: {0}",
+        "o": [
+         {
+          "dung": [
+           "Không nên"
+          ],
+          "sai": [
+           "Nên làm"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Sử dụng rượu, bia, thuốc lá, chất kích thích: {0}",
+        "o": [
+         {
+          "dung": [
+           "Không nên"
+          ],
+          "sai": [
+           "Nên làm"
+          ],
+          "hai": true
+         }
+        ]
+       }
+      ]
+     }
     }
    ]
   },
