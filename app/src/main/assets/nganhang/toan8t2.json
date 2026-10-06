@@ -2,7 +2,7 @@
  "nguon": "toan8t2",
  "mon": "Toán",
  "ten": "SGK Toán 8 — tập hai",
- "ban": 2,
+ "ban": 3,
  "cac_bai": [
   {
    "chuong": "Chương VI. Phân thức đại số",
@@ -3797,56 +3797,378 @@
      "trang": 28,
      "nhom": "Luyện tập",
      "dang": "CAU_NHO",
-     "de": "Hãy cho ví dụ về một phương trình với ẩn x và kiểm tra xem x = 2 có là một nghiệm của phương trình đó không."
+     "de": "Hãy cho ví dụ về một phương trình với ẩn x và kiểm tra xem x = 2 có là một nghiệm của phương trình đó không.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 5,
+      "hoi": "Hãy cho ví dụ về một phương trình với ẩn x và kiểm tra xem x = 2 có là một nghiệm của phương trình đó không.\nVới mỗi phương trình ẩn x sau, x = 2 có là nghiệm không?",
+      "dong": [
+       {
+        "chu": "2x + 1 = 3x − 1: {0}",
+        "o": [
+         {
+          "dung": [
+           "Là nghiệm"
+          ],
+          "sai": [
+           "Không là nghiệm"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "2x − 3 = 4x + 1: {0}",
+        "o": [
+         {
+          "dung": [
+           "Không là nghiệm"
+          ],
+          "sai": [
+           "Là nghiệm"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "x + 5 = 9 − x: {0}",
+        "o": [
+         {
+          "dung": [
+           "Là nghiệm"
+          ],
+          "sai": [
+           "Không là nghiệm"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "3(x − 1) = x + 2: {0}",
+        "o": [
+         {
+          "dung": [
+           "Không là nghiệm"
+          ],
+          "sai": [
+           "Là nghiệm"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "x − 2 = 2 − x: {0}",
+        "o": [
+         {
+          "dung": [
+           "Là nghiệm"
+          ],
+          "sai": [
+           "Không là nghiệm"
+          ],
+          "hai": true
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "Câu hỏi (tr.29)",
      "trang": 29,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Những phương trình nào sau đây là phương trình bậc nhất một ẩn? a) 2x + 1 = 0; b) −x + 1 = 0; c) 0 · x + 2 = 0; d) (−2) · x = 0."
+     "de": "Những phương trình nào sau đây là phương trình bậc nhất một ẩn? a) 2x + 1 = 0; b) −x + 1 = 0; c) 0 · x + 2 = 0; d) (−2) · x = 0.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "hoi": "Những phương trình nào sau đây là phương trình bậc nhất một ẩn?",
+      "dong": [
+       {
+        "chu": "a) 2x + 1 = 0: {0}",
+        "o": [
+         {
+          "dung": [
+           "Là phương trình bậc nhất một ẩn"
+          ],
+          "sai": [
+           "Không phải"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "b) −x + 1 = 0: {0}",
+        "o": [
+         {
+          "dung": [
+           "Là phương trình bậc nhất một ẩn"
+          ],
+          "sai": [
+           "Không phải"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "c) 0 · x + 2 = 0: {0}",
+        "o": [
+         {
+          "dung": [
+           "Không phải"
+          ],
+          "sai": [
+           "Là phương trình bậc nhất một ẩn"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "d) (−2) · x = 0: {0}",
+        "o": [
+         {
+          "dung": [
+           "Là phương trình bậc nhất một ẩn"
+          ],
+          "sai": [
+           "Không phải"
+          ],
+          "hai": true
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "Luyện tập 2 (tr.30)",
      "trang": 30,
      "nhom": "Luyện tập",
      "dang": "CAU_NHO",
-     "de": "Giải các phương trình sau: a) 2x − 5 = 0; b) 4 − (2/5)x = 0."
+     "de": "Giải các phương trình sau: a) 2x − 5 = 0; b) 4 − (2/5)x = 0.",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "hoi": "Giải các phương trình sau:\na) 2x − 5 = 0;\nb) 4 − (2/5)x = 0.\n(Gõ nghiệm của từng phương trình theo thứ tự a, b, cách nhau bằng dấu ;)",
+      "dap": [
+       "5/2;10",
+       "x=5/2;x=10",
+       "2,5;10",
+       "x=2,5;x=10"
+      ],
+      "phim": [
+       "x",
+       ";"
+      ],
+      "nhieu": [
+       "y",
+       "²"
+      ],
+      "loi_giai": [
+       "a) 2x − 5 = 0 ⇔ 2x = 5 ⇔ x = 5/2",
+       "b) 4 − (2/5)x = 0 ⇔ (2/5)x = 4",
+       "x = 4 : (2/5) = 10"
+      ]
+     }
     },
     {
      "ma": "Vận dụng 1 (tr.30)",
      "trang": 30,
      "nhom": "Vận dụng",
      "dang": "CAU_NHO",
-     "de": "Hãy giải bài toán trong tình huống mở đầu: bác An gửi tiết kiệm 150 triệu đồng với kì hạn 12 tháng; đến cuối kì (sau 1 năm), bác An thu được số tiền cả vốn lẫn lãi là 159 triệu đồng. Tính lãi suất gửi tiết kiệm của bác An."
+     "de": "Hãy giải bài toán trong tình huống mở đầu: bác An gửi tiết kiệm 150 triệu đồng với kì hạn 12 tháng; đến cuối kì (sau 1 năm), bác An thu được số tiền cả vốn lẫn lãi là 159 triệu đồng. Tính lãi suất gửi tiết kiệm của bác An.",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "dap": [
+       "6%",
+       "0,06",
+       "x=0,06",
+       "x=6%"
+      ],
+      "phim": [
+       "%",
+       "x"
+      ],
+      "nhieu": [
+       "y",
+       "²"
+      ],
+      "loi_giai": [
+       "Gọi x là lãi suất gửi tiết kiệm của bác An (viết dưới dạng số thập phân), tiền lãi sau 1 năm là 150x (triệu đồng)",
+       "Tiền cả vốn lẫn lãi = 150 + 150x = 159",
+       "150x = 159 − 150 = 9",
+       "x = 9 : 150 = 0,06; vậy lãi suất là 6%"
+      ]
+     }
     },
     {
      "ma": "Luyện tập 3 (tr.31)",
      "trang": 31,
      "nhom": "Luyện tập",
      "dang": "CAU_NHO",
-     "de": "Giải các phương trình sau: a) 5x − (2 − 4x) = 6 + 3(x − 1); b) (x − 1)/4 + 2x = 3 − (2x − 3)/3."
+     "de": "Giải các phương trình sau: a) 5x − (2 − 4x) = 6 + 3(x − 1); b) (x − 1)/4 + 2x = 3 − (2x − 3)/3.",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 5,
+      "hoi": "Giải các phương trình sau:\na) 5x − (2 − 4x) = 6 + 3(x − 1);\nb) (x − 1)/4 + 2x = 3 − (2x − 3)/3.\n(Gõ nghiệm của từng phương trình theo thứ tự a, b, cách nhau bằng dấu ;)",
+      "dap": [
+       "5/6;51/35",
+       "x=5/6;x=51/35"
+      ],
+      "phim": [
+       "x",
+       ";"
+      ],
+      "nhieu": [
+       "y",
+       "²"
+      ],
+      "loi_giai": [
+       "a) 5x − (2 − 4x) = 6 + 3(x − 1) ⇔ 5x − 2 + 4x = 6 + 3x − 3",
+       "⇔ 5x + 4x − 3x = 6 − 3 + 2 ⇔ 6x = 5 ⇔ x = 5/6",
+       "b) (x − 1)/4 + 2x = 3 − (2x − 3)/3 ⇔ 3(x − 1) + 24x = 36 − 4(2x − 3)",
+       "⇔ 3x − 3 + 24x = 36 − 8x + 12",
+       "⇔ 3x + 24x + 8x = 36 + 12 + 3 ⇔ 35x = 51 ⇔ x = 51/35"
+      ]
+     }
     },
     {
      "ma": "Vận dụng 2 (tr.32)",
      "trang": 32,
      "nhom": "Vận dụng",
      "dang": "CAU_NHO",
-     "de": "Hai bạn Lan và Hương cùng vào hiệu sách. Lan mua 5 quyển vở cùng loại và 1 quyển sách giá 50 nghìn đồng. Hương mua 3 quyển vở cùng loại với loại vở của Lan và 1 quyển sách giá 74 nghìn đồng. Số tiền phải trả của Lan và Hương là bằng nhau. a) Gọi x (nghìn đồng) là giá tiền của mỗi quyển vở. Viết phương trình biểu thị tổng số tiền mua sách và vở của hai bạn Lan và Hương là bằng nhau. b) Giải phương trình nhận được ở câu a để tìm giá tiền của mỗi quyển vở."
+     "de": "Hai bạn Lan và Hương cùng vào hiệu sách. Lan mua 5 quyển vở cùng loại và 1 quyển sách giá 50 nghìn đồng. Hương mua 3 quyển vở cùng loại với loại vở của Lan và 1 quyển sách giá 74 nghìn đồng. Số tiền phải trả của Lan và Hương là bằng nhau. a) Gọi x (nghìn đồng) là giá tiền của mỗi quyển vở. Viết phương trình biểu thị tổng số tiền mua sách và vở của hai bạn Lan và Hương là bằng nhau. b) Giải phương trình nhận được ở câu a để tìm giá tiền của mỗi quyển vở.",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "hoi": "Hai bạn Lan và Hương cùng vào hiệu sách. Lan mua 5 quyển vở cùng loại và 1 quyển sách giá 50 nghìn đồng. Hương mua 3 quyển vở cùng loại với loại vở của Lan và 1 quyển sách giá 74 nghìn đồng. Số tiền phải trả của Lan và Hương là bằng nhau.\na) Gọi x (nghìn đồng) là giá tiền của mỗi quyển vở. Viết phương trình biểu thị tổng số tiền mua sách và vở của hai bạn Lan và Hương là bằng nhau.\nb) Giải phương trình nhận được ở câu a để tìm giá tiền của mỗi quyển vở.\n(Gõ giá tiền của mỗi quyển vở, tính bằng nghìn đồng.)",
+      "dap": [
+       "12",
+       "x=12"
+      ],
+      "phim": [
+       "x"
+      ],
+      "nhieu": [
+       "y"
+      ],
+      "loi_giai": [
+       "a) Gọi x (nghìn đồng) là giá tiền của mỗi quyển vở. Số tiền Lan trả bằng số tiền Hương trả nên ta có phương trình:",
+       "5x + 50 = 3x + 74",
+       "b) 5x + 50 = 3x + 74 ⇔ 5x − 3x = 74 − 50",
+       "⇔ 2x = 24 ⇔ x = 12; mỗi quyển vở giá 12 nghìn đồng"
+      ]
+     }
     },
     {
      "ma": "7.1",
      "trang": 32,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Hãy chỉ ra các phương trình bậc nhất một ẩn trong các phương trình sau: a) x + 1 = 0; b) 0x − 2 = 0; c) 2 − x = 0; d) 3x = 0."
+     "de": "Hãy chỉ ra các phương trình bậc nhất một ẩn trong các phương trình sau: a) x + 1 = 0; b) 0x − 2 = 0; c) 2 − x = 0; d) 3x = 0.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "hoi": "Hãy chỉ ra các phương trình bậc nhất một ẩn trong các phương trình sau:",
+      "dong": [
+       {
+        "chu": "a) x + 1 = 0: {0}",
+        "o": [
+         {
+          "dung": [
+           "Là phương trình bậc nhất một ẩn"
+          ],
+          "sai": [
+           "Không phải"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "b) 0x − 2 = 0: {0}",
+        "o": [
+         {
+          "dung": [
+           "Không phải"
+          ],
+          "sai": [
+           "Là phương trình bậc nhất một ẩn"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "c) 2 − x = 0: {0}",
+        "o": [
+         {
+          "dung": [
+           "Là phương trình bậc nhất một ẩn"
+          ],
+          "sai": [
+           "Không phải"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "d) 3x = 0: {0}",
+        "o": [
+         {
+          "dung": [
+           "Là phương trình bậc nhất một ẩn"
+          ],
+          "sai": [
+           "Không phải"
+          ],
+          "hai": true
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "7.2",
      "trang": 32,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Giải các phương trình sau: a) 5x − 4 = 0; b) 3 + 2x = 0; c) 7 − 5x = 0; d) 3/2 + (5/3)x = 0."
+     "de": "Giải các phương trình sau: a) 5x − 4 = 0; b) 3 + 2x = 0; c) 7 − 5x = 0; d) 3/2 + (5/3)x = 0.",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 5,
+      "hoi": "Giải các phương trình sau:\na) 5x − 4 = 0;\nb) 3 + 2x = 0;\nc) 7 − 5x = 0;\nd) 3/2 + (5/3)x = 0.\n(Gõ nghiệm của từng phương trình theo thứ tự a, b, c, d, cách nhau bằng dấu ;)",
+      "dap": [
+       "4/5;−3/2;7/5;−9/10",
+       "x=4/5;x=−3/2;x=7/5;x=−9/10",
+       "0,8;−1,5;1,4;−0,9",
+       "x=0,8;x=−1,5;x=1,4;x=−0,9"
+      ],
+      "phim": [
+       "x",
+       ";"
+      ],
+      "nhieu": [
+       "y",
+       "²"
+      ],
+      "loi_giai": [
+       "a) 5x − 4 = 0 ⇔ 5x = 4 ⇔ x = 4/5",
+       "b) 3 + 2x = 0 ⇔ 2x = −3 ⇔ x = −3/2",
+       "c) 7 − 5x = 0 ⇔ −5x = −7 ⇔ x = 7/5",
+       "d) 3/2 + (5/3)x = 0 ⇔ (5/3)x = −3/2",
+       "x = (−3/2) : (5/3) = −9/10"
+      ]
+     }
     },
     {
      "ma": "7.3",
@@ -3860,21 +4182,82 @@
      "trang": 32,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Ở một số quốc gia, người ta dùng cả hai đơn vị đo nhiệt độ là độ Fahrenheit (°F) và độ Celcius (°C), liên hệ với nhau bởi công thức C = (5/9)(F − 32). Hãy tính độ Fahrenheit tương ứng với 10 °C."
+     "de": "Ở một số quốc gia, người ta dùng cả hai đơn vị đo nhiệt độ là độ Fahrenheit (°F) và độ Celsius (°C), liên hệ với nhau bởi công thức C = (5/9)(F − 32). Hãy tính độ Fahrenheit tương ứng với 10 °C.",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "dap": [
+       "50",
+       "F=50"
+      ],
+      "phim": [
+       "F"
+      ],
+      "nhieu": [
+       "C",
+       "°"
+      ],
+      "loi_giai": [
+       "Thay C bằng 10 vào công thức, ta có phương trình 10 = (5/9)(F − 32)",
+       "F − 32 = 10 : (5/9) = 18",
+       "F = 18 + 32 = 50"
+      ]
+     }
     },
     {
      "ma": "7.5",
      "trang": 32,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Hiện nay tuổi của bố bạn Nam gấp 3 lần tuổi của Nam. Sau 10 năm nữa thì tổng số tuổi của Nam và bố là 76 tuổi. Gọi x là số tuổi hiện nay của Nam. a) Biểu thị tuổi hiện nay của bố bạn Nam theo tuổi hiện tại của Nam. b) Viết phương trình biểu thị sự kiện sau 10 năm nữa thì tổng số tuổi của Nam và bố là 76 tuổi. c) Giải phương trình nhận được ở câu b để tính tuổi của Nam và bố hiện nay."
+     "de": "Hiện nay tuổi của bố bạn Nam gấp 3 lần tuổi của Nam. Sau 10 năm nữa thì tổng số tuổi của Nam và bố là 76 tuổi. Gọi x là số tuổi hiện nay của Nam. a) Biểu thị tuổi hiện nay của bố bạn Nam theo tuổi hiện tại của Nam. b) Viết phương trình biểu thị sự kiện sau 10 năm nữa thì tổng số tuổi của Nam và bố là 76 tuổi. c) Giải phương trình nhận được ở câu b để tính tuổi của Nam và bố hiện nay.",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 5,
+      "hoi": "Hiện nay tuổi của bố bạn Nam gấp 3 lần tuổi của Nam. Sau 10 năm nữa thì tổng số tuổi của Nam và bố là 76 tuổi. Gọi x là số tuổi hiện nay của Nam.\na) Biểu thị tuổi hiện nay của bố bạn Nam theo tuổi hiện tại của Nam.\nb) Viết phương trình biểu thị sự kiện sau 10 năm nữa thì tổng số tuổi của Nam và bố là 76 tuổi.\nc) Giải phương trình nhận được ở câu b để tính tuổi của Nam và bố hiện nay.\n(Gõ tuổi của Nam rồi tuổi của bố hiện nay, cách nhau bằng dấu ;)",
+      "dap": [
+       "14;42"
+      ],
+      "phim": [
+       ";"
+      ],
+      "nhieu": [
+       "x"
+      ],
+      "loi_giai": [
+       "a) Tuổi hiện nay của bố là 3x. b) Sau 10 năm nữa, tuổi của Nam là x + 10 và tuổi của bố là 3x + 10, nên ta có phương trình:",
+       "(x + 10) + (3x + 10) = 76",
+       "c) (x + 10) + (3x + 10) = 76 ⇔ 4x + 20 = 76 ⇔ 4x = 56",
+       "x = 56 : 4 = 14",
+       "Tuổi của bố hiện nay = 3 · 14 = 42"
+      ]
+     }
     },
     {
      "ma": "7.6",
      "trang": 32,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Bạn Mai mua cả sách và vở hết 500 nghìn đồng. Biết rằng số tiền mua sách nhiều gấp rưỡi số tiền mua vở, hãy tính số tiền bạn Mai dùng để mua mỗi loại."
+     "de": "Bạn Mai mua cả sách và vở hết 500 nghìn đồng. Biết rằng số tiền mua sách nhiều gấp rưỡi số tiền mua vở, hãy tính số tiền bạn Mai dùng để mua mỗi loại.",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "hoi": "Bạn Mai mua cả sách và vở hết 500 nghìn đồng. Biết rằng số tiền mua sách nhiều gấp rưỡi số tiền mua vở, hãy tính số tiền bạn Mai dùng để mua mỗi loại.\n(Gõ số tiền mua vở rồi số tiền mua sách, tính bằng nghìn đồng, cách nhau bằng dấu ;)",
+      "dap": [
+       "200;300"
+      ],
+      "phim": [
+       ";"
+      ],
+      "nhieu": [
+       "x"
+      ],
+      "loi_giai": [
+       "Gọi x (nghìn đồng) là số tiền mua vở thì số tiền mua sách là 1,5x (nghìn đồng), ta có phương trình:",
+       "x + 1,5x = 500",
+       "2,5x = 500 ⇔ x = 500 : 2,5 = 200",
+       "Số tiền mua sách = 1,5 · 200 = 300"
+      ]
+     }
     }
    ]
   },
@@ -3887,42 +4270,150 @@
      "trang": 35,
      "nhom": "Luyện tập",
      "dang": "CAU_NHO",
-     "de": "Bác Mai đi siêu thị mua một mặt hàng đang có chương trình khuyến mại giảm giá 20%. Vì có thẻ khách hàng thân thiết của siêu thị nên bác được giảm thêm 5% trên giá đã giảm, do đó bác Mai chỉ phải trả 380 nghìn đồng cho mặt hàng đó. Hỏi giá ban đầu của mặt hàng đó nếu không khuyến mại là bao nhiêu?"
+     "de": "Bác Mai đi siêu thị mua một mặt hàng đang có chương trình khuyến mại giảm giá 20%. Vì có thẻ khách hàng thân thiết của siêu thị nên bác được giảm thêm 5% trên giá đã giảm, do đó bác Mai chỉ phải trả 380 nghìn đồng cho mặt hàng đó. Hỏi giá ban đầu của mặt hàng đó nếu không khuyến mại là bao nhiêu?",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "hoi": "Bác Mai đi siêu thị mua một mặt hàng đang có chương trình khuyến mại giảm giá 20%. Vì có thẻ khách hàng thân thiết của siêu thị nên bác được giảm thêm 5% trên giá đã giảm, do đó bác Mai chỉ phải trả 380 nghìn đồng cho mặt hàng đó. Hỏi giá ban đầu của mặt hàng đó nếu không khuyến mại là bao nhiêu?\n(Gõ số, tính bằng nghìn đồng.)",
+      "dap": [
+       "500"
+      ],
+      "phim": [],
+      "nhieu": [],
+      "loi_giai": [
+       "Gọi x (nghìn đồng) là giá ban đầu của mặt hàng",
+       "Giá sau khi giảm 20% = x − 0,2x = 0,8x",
+       "Giá sau khi giảm thêm 5% = 0,8x − 0,05 · 0,8x = 0,76x",
+       "0,76x = 380 ⇔ x = 380 : 0,76 = 500"
+      ]
+     }
     },
     {
      "ma": "7.7",
      "trang": 35,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Chị Linh làm việc trong một ngân hàng và được thưởng Tết bằng 2,5 tháng lương. Tổng thu nhập một năm của chị Linh bao gồm lương 12 tháng và thưởng Tết là 290 triệu đồng. Hỏi lương hằng tháng của chị Linh là bao nhiêu?"
+     "de": "Chị Linh làm việc trong một ngân hàng và được thưởng Tết bằng 2,5 tháng lương. Tổng thu nhập một năm của chị Linh bao gồm lương 12 tháng và thưởng Tết là 290 triệu đồng. Hỏi lương hằng tháng của chị Linh là bao nhiêu?",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "hoi": "Chị Linh làm việc trong một ngân hàng và được thưởng Tết bằng 2,5 tháng lương. Tổng thu nhập một năm của chị Linh bao gồm lương 12 tháng và thưởng Tết là 290 triệu đồng. Hỏi lương hằng tháng của chị Linh là bao nhiêu?\n(Gõ số, tính bằng triệu đồng.)",
+      "dap": [
+       "20"
+      ],
+      "phim": [],
+      "nhieu": [],
+      "loi_giai": [
+       "Gọi x (triệu đồng) là lương hằng tháng của chị Linh thì thưởng Tết là 2,5x (triệu đồng)",
+       "12x + 2,5x = 290 ⇔ 14,5x = 290",
+       "x = 290 : 14,5 = 20"
+      ]
+     }
     },
     {
      "ma": "7.8",
      "trang": 35,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Bác Hưng đầu tư 300 triệu đồng vào hai khoản: mua trái phiếu doanh nghiệp với lãi suất 8% một năm và gửi tiết kiệm ngân hàng với lãi suất 6% một năm. Cuối năm bác Hưng nhận được 22 triệu đồng tiền lãi. Hỏi bác Hưng đã đầu tư vào mỗi khoản bao nhiêu tiền?"
+     "de": "Bác Hưng đầu tư 300 triệu đồng vào hai khoản: mua trái phiếu doanh nghiệp với lãi suất 8% một năm và gửi tiết kiệm ngân hàng với lãi suất 6% một năm. Cuối năm bác Hưng nhận được 22 triệu đồng tiền lãi. Hỏi bác Hưng đã đầu tư vào mỗi khoản bao nhiêu tiền?",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "hoi": "Bác Hưng đầu tư 300 triệu đồng vào hai khoản: mua trái phiếu doanh nghiệp với lãi suất 8% một năm và gửi tiết kiệm ngân hàng với lãi suất 6% một năm. Cuối năm bác Hưng nhận được 22 triệu đồng tiền lãi. Hỏi bác Hưng đã đầu tư vào mỗi khoản bao nhiêu tiền?\n(Gõ số tiền mua trái phiếu rồi số tiền gửi tiết kiệm, tính bằng triệu đồng, cách nhau bằng dấu ;)",
+      "dap": [
+       "200;100"
+      ],
+      "phim": [
+       ";"
+      ],
+      "nhieu": [
+       "x"
+      ],
+      "loi_giai": [
+       "Gọi x (triệu đồng) là số tiền mua trái phiếu thì số tiền gửi tiết kiệm là 300 − x (triệu đồng)",
+       "0,08x + 0,06(300 − x) = 22",
+       "0,08x + 18 − 0,06x = 22 ⇔ 0,02x = 4 ⇔ x = 200",
+       "Số tiền gửi tiết kiệm = 300 − 200 = 100"
+      ]
+     }
     },
     {
      "ma": "7.9",
      "trang": 36,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Nhân dịp khai trương, một siêu thị điện máy đã giảm giá nhiều mặt hàng để thu hút khách hàng. Tổng giá niêm yết của một chiếc ti vi loại A và một chiếc tủ lạnh loại B là 36,8 triệu đồng. Trong dịp này, ti vi loại A được giảm giá 30% và tủ lạnh loại B được giảm giá 25% nên bác Cường đã mua một chiếc ti vi và một chiếc tủ lạnh nói trên với tổng số tiền là 26,805 triệu đồng. Hỏi giá niêm yết của mỗi chiếc ti vi loại A và mỗi chiếc tủ lạnh loại B là bao nhiêu?"
+     "de": "Nhân dịp khai trương, một siêu thị điện máy đã giảm giá nhiều mặt hàng để thu hút khách hàng. Tổng giá niêm yết của một chiếc ti vi loại A và một chiếc tủ lạnh loại B là 36,8 triệu đồng. Trong dịp này, ti vi loại A được giảm giá 30% và tủ lạnh loại B được giảm giá 25% nên bác Cường đã mua một chiếc ti vi và một chiếc tủ lạnh nói trên với tổng số tiền là 26,805 triệu đồng. Hỏi giá niêm yết của mỗi chiếc ti vi loại A và mỗi chiếc tủ lạnh loại B là bao nhiêu?",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "hoi": "Nhân dịp khai trương, một siêu thị điện máy đã giảm giá nhiều mặt hàng để thu hút khách hàng. Tổng giá niêm yết của một chiếc ti vi loại A và một chiếc tủ lạnh loại B là 36,8 triệu đồng. Trong dịp này, ti vi loại A được giảm giá 30% và tủ lạnh loại B được giảm giá 25% nên bác Cường đã mua một chiếc ti vi và một chiếc tủ lạnh nói trên với tổng số tiền là 26,805 triệu đồng. Hỏi giá niêm yết của mỗi chiếc ti vi loại A và mỗi chiếc tủ lạnh loại B là bao nhiêu?\n(Gõ giá niêm yết của ti vi rồi của tủ lạnh, tính bằng triệu đồng, cách nhau bằng dấu ;)",
+      "dap": [
+       "15,9;20,9"
+      ],
+      "phim": [
+       ";"
+      ],
+      "nhieu": [
+       "x"
+      ],
+      "loi_giai": [
+       "Gọi x (triệu đồng) là giá niêm yết của ti vi loại A thì giá niêm yết của tủ lạnh loại B là 36,8 − x",
+       "0,7x + 0,75(36,8 − x) = 26,805",
+       "0,7x + 27,6 − 0,75x = 26,805 ⇔ −0,05x = −0,795 ⇔ x = 15,9",
+       "Giá niêm yết của tủ lạnh = 36,8 − 15,9 = 20,9"
+      ]
+     }
     },
     {
      "ma": "7.10",
      "trang": 36,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Bạn Nam đi xe đạp rời nhà lúc 14 giờ với vận tốc 12 km/h. Khi Hùng đến nhà Nam vào lúc 14 giờ 10 phút thì mẹ Nam chỉ hướng đường đi của Nam cho Hùng và Hùng đi xe đạp đuổi theo với vận tốc 18 km/h. Hỏi đến lúc mấy giờ thì Hùng đuổi kịp Nam?"
+     "de": "Bạn Nam đi xe đạp rời nhà lúc 14 giờ với vận tốc 12 km/h. Khi Hùng đến nhà Nam vào lúc 14 giờ 10 phút thì mẹ Nam chỉ hướng đường đi của Nam cho Hùng và Hùng đi xe đạp đuổi theo với vận tốc 18 km/h. Hỏi đến lúc mấy giờ thì Hùng đuổi kịp Nam?",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "hoi": "Bạn Nam đi xe đạp rời nhà lúc 14 giờ với vận tốc 12 km/h. Khi Hùng đến nhà Nam vào lúc 14 giờ 10 phút thì mẹ Nam chỉ hướng đường đi của Nam cho Hùng và Hùng đi xe đạp đuổi theo với vận tốc 18 km/h. Hỏi đến lúc mấy giờ thì Hùng đuổi kịp Nam?\n(Gõ thời điểm Hùng đuổi kịp Nam.)",
+      "dap": [
+       "14 giờ 30 phút",
+       "14 giờ 30"
+      ],
+      "phim": [
+       "giờ",
+       "phút"
+      ],
+      "nhieu": [
+       "giây",
+       "x"
+      ],
+      "loi_giai": [
+       "Gọi x (giờ) là thời gian Nam đi tới lúc bị đuổi kịp; Hùng đi sau Nam 10 phút, tức là 1/6 giờ, nên thời gian Hùng đi là x − 1/6 (giờ)",
+       "12x = 18(x − 1/6) ⇔ 12x = 18x − 3 ⇔ 6x = 3 ⇔ x = 1/2",
+       "Nửa giờ là 30 phút, nên Hùng đuổi kịp Nam lúc 14 giờ 30 phút"
+      ]
+     }
     },
     {
      "ma": "7.11",
      "trang": 36,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Hai công ty viễn thông đưa ra hai gói cước cho điện thoại cố định như sau: công ty A có cước thuê bao hằng tháng 32 000 đồng và giá cước mỗi phút gọi 900 đồng; công ty B có cước thuê bao hằng tháng 38 000 đồng và giá cước mỗi phút gọi 700 đồng. a) Gọi x là số phút gọi trong tháng. Hãy biểu thị theo x, số tiền phải trả trong tháng (tính theo nghìn đồng) khi sử dụng mỗi gói cước nói trên. b) Hỏi với bao nhiêu phút gọi thì số tiền phải trả trong tháng khi sử dụng dịch vụ của hai công ty viễn thông này là như nhau?"
+     "de": "Hai công ty viễn thông đưa ra hai gói cước cho điện thoại cố định như sau: công ty A có cước thuê bao hằng tháng 32 000 đồng và giá cước mỗi phút gọi 900 đồng; công ty B có cước thuê bao hằng tháng 38 000 đồng và giá cước mỗi phút gọi 700 đồng. a) Gọi x là số phút gọi trong tháng. Hãy biểu thị theo x, số tiền phải trả trong tháng (tính theo nghìn đồng) khi sử dụng mỗi gói cước nói trên. b) Hỏi với bao nhiêu phút gọi thì số tiền phải trả trong tháng khi sử dụng dịch vụ của hai công ty viễn thông này là như nhau?",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "hoi": "Hai công ty viễn thông đưa ra hai gói cước cho điện thoại cố định như sau: công ty A có cước thuê bao hằng tháng 32 000 đồng và giá cước mỗi phút gọi 900 đồng; công ty B có cước thuê bao hằng tháng 38 000 đồng và giá cước mỗi phút gọi 700 đồng.\na) Gọi x là số phút gọi trong tháng. Hãy biểu thị theo x, số tiền phải trả trong tháng (tính theo nghìn đồng) khi sử dụng mỗi gói cước nói trên.\nb) Hỏi với bao nhiêu phút gọi thì số tiền phải trả trong tháng khi sử dụng dịch vụ của hai công ty viễn thông này là như nhau?\n(Gõ số phút gọi ở câu b.)",
+      "dap": [
+       "30"
+      ],
+      "phim": [],
+      "nhieu": [],
+      "loi_giai": [
+       "a) Số tiền phải trả trong tháng (nghìn đồng): công ty A là 32 + 0,9x, công ty B là 38 + 0,7x. b) Số tiền như nhau khi",
+       "32 + 0,9x = 38 + 0,7x ⇔ 0,9x − 0,7x = 38 − 32",
+       "⇔ 0,2x = 6 ⇔ x = 30"
+      ]
+     }
     }
    ]
   },
@@ -3942,35 +4433,169 @@
      "trang": 38,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Bạn Nam giải phương trình x(x + 1) = x(x + 2) như sau: x(x + 1) = x(x + 2); x + 1 = x + 2; x − x = 2 − 1; 0x = 1 (vô nghiệm). Em có đồng ý với cách giải của bạn Nam không? Nếu không đồng ý, hãy trình bày cách giải của em."
+     "de": "Bạn Nam giải phương trình x(x + 1) = x(x + 2) như sau: x(x + 1) = x(x + 2); x + 1 = x + 2; x − x = 2 − 1; 0x = 1 (vô nghiệm). Em có đồng ý với cách giải của bạn Nam không? Nếu không đồng ý, hãy trình bày cách giải của em.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "hoi": "Bạn Nam giải phương trình x(x + 1) = x(x + 2) như sau:\nx(x + 1) = x(x + 2)\nx + 1 = x + 2\nx − x = 2 − 1\n0x = 1 (vô nghiệm).\nEm có đồng ý với cách giải của bạn Nam không? Nếu không đồng ý, hãy trình bày cách giải của em.",
+      "dong": [
+       {
+        "chu": "Em {0} với cách giải của bạn Nam",
+        "o": [
+         {
+          "dung": [
+           "không đồng ý"
+          ],
+          "sai": [
+           "đồng ý"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Vì {0}",
+        "o": [
+         {
+          "dung": [
+           "bạn Nam đã chia hai vế cho x, mà x có thể bằng 0"
+          ],
+          "sai": [
+           "bạn Nam chuyển vế mà không đổi dấu",
+           "phương trình 0x = 1 thì có nghiệm x = 1"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Cách giải đúng: x(x + 1) = x(x + 2) ⇔ x² + x = x² + 2x ⇔ {0}",
+        "o": [
+         {
+          "dung": [
+           "−x = 0"
+          ],
+          "sai": [
+           "0x = 1",
+           "2x = 1",
+           "3x = 1"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Kết luận: {0}",
+        "o": [
+         {
+          "dung": [
+           "phương trình có nghiệm x = 0"
+          ],
+          "sai": [
+           "phương trình vô nghiệm",
+           "phương trình có nghiệm x = 1",
+           "phương trình nghiệm đúng với mọi x"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "7.14",
      "trang": 39,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Chu vi của một mảnh vườn hình chữ nhật là 42 m. Tìm chiều dài và chiều rộng của mảnh vườn, biết chiều rộng ngắn hơn chiều dài là 3 m."
+     "de": "Chu vi của một mảnh vườn hình chữ nhật là 42 m. Tìm chiều dài và chiều rộng của mảnh vườn, biết chiều rộng ngắn hơn chiều dài là 3 m.",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "hoi": "Chu vi của một mảnh vườn hình chữ nhật là 42 m. Tìm chiều dài và chiều rộng của mảnh vườn, biết chiều rộng ngắn hơn chiều dài là 3 m.\n(Gõ chiều dài rồi chiều rộng, tính bằng mét, cách nhau bằng dấu ;)",
+      "dap": [
+       "12;9"
+      ],
+      "phim": [
+       ";"
+      ],
+      "nhieu": [
+       "x"
+      ],
+      "loi_giai": [
+       "Gọi x (m) là chiều rộng của mảnh vườn (x > 0) thì chiều dài là x + 3 (m)",
+       "Nửa chu vi = 42 : 2 = 21",
+       "x + (x + 3) = 21 ⇔ 2x = 18 ⇔ x = 9",
+       "Chiều dài = 9 + 3 = 12"
+      ]
+     }
     },
     {
      "ma": "7.15",
      "trang": 39,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Một chiếc áo len sau khi giảm giá 30% được bán với giá 399 nghìn đồng. Hỏi giá ban đầu của chiếc áo len đó là bao nhiêu?"
+     "de": "Một chiếc áo len sau khi giảm giá 30% được bán với giá 399 nghìn đồng. Hỏi giá ban đầu của chiếc áo len đó là bao nhiêu?",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "hoi": "Một chiếc áo len sau khi giảm giá 30% được bán với giá 399 nghìn đồng. Hỏi giá ban đầu của chiếc áo len đó là bao nhiêu?\n(Gõ số, tính bằng nghìn đồng.)",
+      "dap": [
+       "570"
+      ],
+      "phim": [],
+      "nhieu": [],
+      "loi_giai": [
+       "Gọi x (nghìn đồng) là giá ban đầu của chiếc áo len",
+       "Giá sau khi giảm 30% = x − 0,3x = 0,7x",
+       "0,7x = 399 ⇔ x = 399 : 0,7 = 570"
+      ]
+     }
     },
     {
      "ma": "7.16",
      "trang": 39,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Một xưởng may áo sơ mi dự định hoàn thành kế hoạch trong 25 ngày. Nhưng mỗi ngày xưởng may đã vượt năng suất so với dự định là 2 áo nên đã hoàn thành sớm hơn 1 ngày và vượt kế hoạch được giao là 8 áo. Hỏi số áo sơ mi mà xưởng may được giao là bao nhiêu?"
+     "de": "Một xưởng may áo sơ mi dự định hoàn thành kế hoạch trong 25 ngày. Nhưng mỗi ngày xưởng may đã vượt năng suất so với dự định là 2 áo nên đã hoàn thành sớm hơn 1 ngày và vượt kế hoạch được giao là 8 áo. Hỏi số áo sơ mi mà xưởng may được giao là bao nhiêu?",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 5,
+      "dap": [
+       "1000"
+      ],
+      "phim": [],
+      "nhieu": [],
+      "loi_giai": [
+       "Gọi x là số áo xưởng phải may mỗi ngày theo kế hoạch, số áo được giao là 25x",
+       "Thực tế mỗi ngày may được x + 2 áo trong 24 ngày, vượt kế hoạch 8 áo, nên",
+       "24(x + 2) = 25x + 8",
+       "24x + 48 = 25x + 8 ⇔ x = 40",
+       "Số áo được giao = 25 · 40 = 1000"
+      ]
+     }
     },
     {
      "ma": "7.17",
      "trang": 39,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Để khuyến khích tiết kiệm điện, giá điện sinh hoạt được tính theo kiểu luỹ tiến, nghĩa là nếu người sử dụng càng dùng nhiều điện thì giá mỗi số điện (1 kWh) càng tăng theo các mức như sau: Mức 1 tính cho số điện từ 0 đến 50; Mức 2 tính cho số điện từ 51 đến 100, mỗi số điện đắt hơn 56 đồng so với mức 1; Mức 3 tính cho số điện từ 101 đến 200, mỗi số điện đắt hơn 280 đồng so với mức 2;... Ngoài ra, người sử dụng còn phải trả thêm 10% thuế giá trị gia tăng (thuế VAT). Tháng vừa qua, gia đình bạn Tuấn dùng hết 95 số điện và phải trả 178 123 đồng. Hỏi giá của mỗi số điện ở mức 1 là bao nhiêu?"
+     "de": "Để khuyến khích tiết kiệm điện, giá điện sinh hoạt được tính theo kiểu luỹ tiến, nghĩa là nếu người sử dụng càng dùng nhiều điện thì giá mỗi số điện (1 kWh) càng tăng theo các mức như sau: Mức 1 tính cho số điện từ 0 đến 50; Mức 2 tính cho số điện từ 51 đến 100, mỗi số điện đắt hơn 56 đồng so với mức 1; Mức 3 tính cho số điện từ 101 đến 200, mỗi số điện đắt hơn 280 đồng so với mức 2;... Ngoài ra, người sử dụng còn phải trả thêm 10% thuế giá trị gia tăng (thuế VAT). Tháng vừa qua, gia đình bạn Tuấn dùng hết 95 số điện và phải trả 178 123 đồng. Hỏi giá của mỗi số điện ở mức 1 là bao nhiêu?",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 6,
+      "hoi": "Để khuyến khích tiết kiệm điện, giá điện sinh hoạt được tính theo kiểu luỹ tiến, nghĩa là nếu người sử dụng càng dùng nhiều điện thì giá mỗi số điện (1 kWh) càng tăng theo các mức như sau: Mức 1 tính cho số điện từ 0 đến 50; Mức 2 tính cho số điện từ 51 đến 100, mỗi số điện đắt hơn 56 đồng so với mức 1; Mức 3 tính cho số điện từ 101 đến 200, mỗi số điện đắt hơn 280 đồng so với mức 2;... Ngoài ra, người sử dụng còn phải trả thêm 10% thuế giá trị gia tăng (thuế VAT). Tháng vừa qua, gia đình bạn Tuấn dùng hết 95 số điện và phải trả 178 123 đồng. Hỏi giá của mỗi số điện ở mức 1 là bao nhiêu?\n(Gõ số, tính bằng đồng.)",
+      "dap": [
+       "1678"
+      ],
+      "phim": [],
+      "nhieu": [],
+      "loi_giai": [
+       "Gọi x (đồng) là giá mỗi số điện ở mức 1 thì giá mỗi số điện ở mức 2 là x + 56 (đồng)",
+       "95 số điện gồm 50 số ở mức 1 và 45 số ở mức 2; tiền điện chưa có thuế là",
+       "50x + 45(x + 56) = 95x + 2520",
+       "(95x + 2520) · 1,1 = 178123; đó là số tiền đã cộng 10% thuế VAT",
+       "95x + 2520 = 178123 : 1,1 = 161930",
+       "95x = 161930 − 2520 = 159410 ⇔ x = 159410 : 95 = 1678"
+      ]
+     }
     }
    ]
   },
@@ -3983,21 +4608,161 @@
      "trang": 41,
      "nhom": "Luyện tập",
      "dang": "CAU_NHO",
-     "de": "Viết công thức tính thời gian di chuyển t (giờ) của một ô tô chuyển động trên quãng đường dài 150 km với vận tốc không đổi v (km/h). Thời gian di chuyển t có phải là một hàm số của vận tốc v không? Tính giá trị của t khi v = 60 (km/h)."
+     "de": "Viết công thức tính thời gian di chuyển t (giờ) của một ô tô chuyển động trên quãng đường dài 150 km với vận tốc không đổi v (km/h). Thời gian di chuyển t có phải là một hàm số của vận tốc v không? Tính giá trị của t khi v = 60 (km/h).",
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "hoi": "Viết công thức tính thời gian di chuyển t (giờ) của một ô tô chuyển động trên quãng đường dài 150 km với vận tốc không đổi v (km/h). Thời gian di chuyển t có phải là một hàm số của vận tốc v không? Tính giá trị của t khi v = 60 (km/h).",
+      "dong": [
+       {
+        "chu": "Công thức: t = {0}",
+        "o": [
+         {
+          "dung": [
+           "150/v"
+          ],
+          "sai": [
+           "150v",
+           "v/150",
+           "150 − v"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Thời gian di chuyển t {0} một hàm số của vận tốc v",
+        "o": [
+         {
+          "dung": [
+           "là"
+          ],
+          "sai": [
+           "không phải là"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Khi v = 60 (km/h) thì t = {0} (giờ)",
+        "o": [
+         {
+          "dung": [
+           "2,5"
+          ],
+          "sai": [
+           "9000",
+           "0,4",
+           "90"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "Vận dụng (tr.41)",
      "trang": 41,
      "nhom": "Vận dụng",
      "dang": "CAU_NHO",
-     "de": "Trở lại tình huống mở đầu (biểu đồ đoạn thẳng Hình 7.1 trang 40 mô tả sản lượng tiêu thụ ô tô của thị trường Việt Nam trong 5 tháng đầu năm 2020), em hãy cho biết: a) Tháng nào thì số lượng ô tô tiêu thụ là ít nhất và số lượng ô tô tiêu thụ trong tháng đó là bao nhiêu? b) Nếu gọi y là số lượng ô tô tiêu thụ trong tháng x (x thuộc {1; 2; 3; 4; 5}) thì y có phải là một hàm số của x không? Tính giá trị của y khi x = 5."
+     "de": "Trở lại tình huống mở đầu (biểu đồ đoạn thẳng Hình 7.1 trang 40 mô tả sản lượng tiêu thụ ô tô của thị trường Việt Nam trong 5 tháng đầu năm 2020), em hãy cho biết: a) Tháng nào thì số lượng ô tô tiêu thụ là ít nhất và số lượng ô tô tiêu thụ trong tháng đó là bao nhiêu? b) Nếu gọi y là số lượng ô tô tiêu thụ trong tháng x (x thuộc {1; 2; 3; 4; 5}) thì y có phải là một hàm số của x không? Tính giá trị của y khi x = 5.",
+     "hinh": [
+      "toan8t2/VD-tr41.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "hoi": "Hình 7.1 là biểu đồ đoạn thẳng mô tả sản lượng tiêu thụ ô tô của thị trường Việt Nam trong 5 tháng đầu năm 2020. Em hãy cho biết:\na) Tháng nào thì số lượng ô tô tiêu thụ là ít nhất và số lượng ô tô tiêu thụ trong tháng đó là bao nhiêu?\nb) Nếu gọi y là số lượng ô tô tiêu thụ trong tháng x (x ∈ {1; 2; 3; 4; 5}) thì y có phải là một hàm số của x không? Tính giá trị của y khi x = 5.",
+      "dong": [
+       {
+        "chu": "a) Tháng có số lượng ô tô tiêu thụ ít nhất: {0}",
+        "o": [
+         {
+          "dung": [
+           "tháng 4"
+          ],
+          "sai": [
+           "tháng 1",
+           "tháng 3",
+           "tháng 5"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Số lượng ô tô tiêu thụ trong tháng đó: {0} chiếc",
+        "o": [
+         {
+          "dung": [
+           "11 761"
+          ],
+          "sai": [
+           "15 787",
+           "19 154",
+           "19 081"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "b) y {0} một hàm số của x",
+        "o": [
+         {
+          "dung": [
+           "là"
+          ],
+          "sai": [
+           "không phải là"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Khi x = 5 thì y = {0}",
+        "o": [
+         {
+          "dung": [
+           "19 081"
+          ],
+          "sai": [
+           "11 761",
+           "19 154",
+           "17 616"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "Câu hỏi (tr.42)",
      "trang": 42,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Hãy cho biết toạ độ của gốc toạ độ O."
+     "de": "Hãy cho biết toạ độ của gốc toạ độ O.",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 1,
+      "hoi": "Hãy cho biết toạ độ của gốc toạ độ O.\n(Gõ toạ độ dạng (hoành độ; tung độ).)",
+      "dap": [
+       "(0;0)",
+       "O(0;0)"
+      ],
+      "phim": [
+       ";",
+       "O"
+      ],
+      "nhieu": [
+       "x",
+       "y"
+      ],
+      "loi_giai": [
+       "Gốc toạ độ O là giao điểm của trục hoành và trục tung, nên hoành độ và tung độ của O đều bằng 0. Vậy O(0; 0)"
+      ]
+     }
     },
     {
      "ma": "Luyện tập 2 (tr.43)",
@@ -4011,21 +4776,184 @@
      "trang": 44,
      "nhom": "Luyện tập",
      "dang": "CAU_NHO",
-     "de": "Vẽ đồ thị của hàm số y = f(x) cho bởi bảng sau: x nhận các giá trị −3; −1; 1; 2,5 với y tương ứng là 4; 3,5; 1; 0."
+     "de": "Vẽ đồ thị của hàm số y = f(x) cho bởi bảng sau: x nhận các giá trị −3; −1; 1; 2,5 với y tương ứng là 4; 3,5; 1; 0.",
+     "bo_may": "vẽ đồ thị"
     },
     {
      "ma": "7.18",
      "trang": 44,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Các giá trị tương ứng của hai đại lượng x và y cho bởi các bảng sau. Đại lượng y có phải là một hàm số của x không? a) x nhận các giá trị −3; −1; 0; 2; 4 với y tương ứng đều bằng 1. b) x nhận các giá trị −2; 1; 0; 1; 2 với y tương ứng là −2; 1; 0; 2; 2."
+     "de": "Các giá trị tương ứng của hai đại lượng x và y cho bởi các bảng sau. Đại lượng y có phải là một hàm số của x không? a) x nhận các giá trị −3; −1; 0; 2; 4 với y tương ứng đều bằng 1. b) x nhận các giá trị −2; 1; 0; 1; 2 với y tương ứng là −2; 1; 0; 2; 2.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "hoi": "Các giá trị tương ứng của hai đại lượng x và y cho bởi các bảng sau. Đại lượng y có phải là một hàm số của x không?\na) x lần lượt là −3; −1; 0; 2; 4 và y tương ứng là 1; 1; 1; 1; 1.\nb) x lần lượt là −2; 1; 0; 1; 2 và y tương ứng là −2; 1; 0; 2; 2.",
+      "dong": [
+       {
+        "chu": "a) y {0} hàm số của x",
+        "o": [
+         {
+          "dung": [
+           "là"
+          ],
+          "sai": [
+           "không phải là"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "b) y {0} hàm số của x",
+        "o": [
+         {
+          "dung": [
+           "không phải là"
+          ],
+          "sai": [
+           "là"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Ở bảng b), giá trị x = {0} ứng với hai giá trị khác nhau của y",
+        "o": [
+         {
+          "dung": [
+           "1"
+          ],
+          "sai": [
+           "−2",
+           "0",
+           "2"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "7.19",
      "trang": 45,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Cho hàm số y = f(x) = 4/x. a) Tính f(−4); f(8). b) Hoàn thành bảng sau vào vở: với x lần lượt là −2; ?; 2; 3; ? thì y = f(x) lần lượt là ?; −4; ?; ?; 8."
+     "de": "Cho hàm số y = f(x) = 4/x. a) Tính f(−4); f(8). b) Hoàn thành bảng sau vào vở: với x lần lượt là −2; ?; 2; 3; ? thì y = f(x) lần lượt là ?; −4; ?; ?; 8.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 7,
+      "hoi": "Cho hàm số y = f(x) = 4/x.\na) Tính f(−4); f(8).\nb) Hoàn thành bảng: với x lần lượt là −2; ?; 2; 3; ? thì y = f(x) lần lượt là ?; −4; ?; ?; 8.",
+      "dong": [
+       {
+        "chu": "a) f(−4) = {0}",
+        "o": [
+         {
+          "dung": [
+           "−1"
+          ],
+          "sai": [
+           "1",
+           "−16",
+           "−1/4"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "f(8) = {0}",
+        "o": [
+         {
+          "dung": [
+           "1/2"
+          ],
+          "sai": [
+           "2",
+           "32",
+           "1/8"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "b) Với x = −2 thì y = {0}",
+        "o": [
+         {
+          "dung": [
+           "−2"
+          ],
+          "sai": [
+           "2",
+           "−8",
+           "−1/2"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Với y = −4 thì x = {0}",
+        "o": [
+         {
+          "dung": [
+           "−1"
+          ],
+          "sai": [
+           "1",
+           "−16",
+           "−1/4"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Với x = 2 thì y = {0}",
+        "o": [
+         {
+          "dung": [
+           "2"
+          ],
+          "sai": [
+           "8",
+           "1/2",
+           "−2"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Với x = 3 thì y = {0}",
+        "o": [
+         {
+          "dung": [
+           "4/3"
+          ],
+          "sai": [
+           "3/4",
+           "12",
+           "1"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Với y = 8 thì x = {0}",
+        "o": [
+         {
+          "dung": [
+           "1/2"
+          ],
+          "sai": [
+           "2",
+           "32",
+           "1/8"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "7.20",
@@ -4039,21 +4967,251 @@
      "trang": 45,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Hàm số y = f(x) được cho bởi bảng sau: x nhận các giá trị −2; −1; 0; 1; 2 với y = f(x) tương ứng là −5; −2,5; 0; 2,5; 5. Vẽ đồ thị của hàm số y = f(x)."
+     "de": "Hàm số y = f(x) được cho bởi bảng sau: x nhận các giá trị −2; −1; 0; 1; 2 với y = f(x) tương ứng là −5; −2,5; 0; 2,5; 5. Vẽ đồ thị của hàm số y = f(x).",
+     "bo_may": "vẽ đồ thị"
     },
     {
      "ma": "7.22",
      "trang": 45,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Cân nặng và tuổi của bốn bạn An, Bình, Hưng, Việt được biểu diễn trên mặt phẳng toạ độ như Hình 7.9 (SGK trang 45; do số liệu về tuổi và cân nặng rất chênh lệch nên một đơn vị dài trên trục hoành bằng 5 lần một đơn vị dài trên trục tung). Hãy cho biết: a) Ai là người nặng nhất và nặng bao nhiêu? b) Ai là người ít tuổi nhất và bao nhiêu tuổi? c) Bình và Việt ai nặng hơn và ai nhiều tuổi hơn? d) Thay dấu \"?\" bằng số thích hợp để hoàn thành bảng tuổi và cân nặng của bốn bạn vào vở. Theo bảng đã hoàn thành, cân nặng có phải là hàm số của tuổi không? Vì sao?"
+     "de": "Cân nặng và tuổi của bốn bạn An, Bình, Hưng, Việt được biểu diễn trên mặt phẳng toạ độ như Hình 7.9 (SGK trang 45; do số liệu về tuổi và cân nặng rất chênh lệch nên một đơn vị dài trên trục hoành bằng 5 lần một đơn vị dài trên trục tung). Hãy cho biết: a) Ai là người nặng nhất và nặng bao nhiêu? b) Ai là người ít tuổi nhất và bao nhiêu tuổi? c) Bình và Việt ai nặng hơn và ai nhiều tuổi hơn? d) Thay dấu \"?\" bằng số thích hợp để hoàn thành bảng tuổi và cân nặng của bốn bạn vào vở. Theo bảng đã hoàn thành, cân nặng có phải là hàm số của tuổi không? Vì sao?",
+     "hinh": [
+      "toan8t2/7.22.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 8,
+      "hoi": "Cân nặng và tuổi của bốn bạn An, Bình, Hưng, Việt được biểu diễn trên mặt phẳng toạ độ như Hình 7.9 (trục hoành là tuổi, trục tung là cân nặng tính bằng kg; do số liệu về tuổi và cân nặng rất chênh lệch nên một đơn vị dài trên trục hoành bằng 5 lần một đơn vị dài trên trục tung). Hãy cho biết:\na) Ai là người nặng nhất và nặng bao nhiêu?\nb) Ai là người ít tuổi nhất và bao nhiêu tuổi?\nc) Bình và Việt ai nặng hơn và ai nhiều tuổi hơn?\nd) Hoàn thành bảng tuổi và cân nặng của bốn bạn. Theo bảng đã hoàn thành, cân nặng có phải là hàm số của tuổi không? Vì sao?",
+      "dong": [
+       {
+        "chu": "a) {0}",
+        "o": [
+         {
+          "dung": [
+           "Hưng nặng nhất, nặng 50 kg"
+          ],
+          "sai": [
+           "Bình nặng nhất, nặng 45 kg",
+           "Hưng nặng nhất, nặng 14 kg",
+           "Việt nặng nhất, nặng 50 kg"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "b) {0}",
+        "o": [
+         {
+          "dung": [
+           "An ít tuổi nhất, 11 tuổi"
+          ],
+          "sai": [
+           "An ít tuổi nhất, 35 tuổi",
+           "Bình ít tuổi nhất, 13 tuổi",
+           "An ít tuổi nhất, 10 tuổi"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "c) {0}",
+        "o": [
+         {
+          "dung": [
+           "Bình nặng hơn, Việt nhiều tuổi hơn"
+          ],
+          "sai": [
+           "Việt nặng hơn, Bình nhiều tuổi hơn",
+           "Bình nặng hơn và nhiều tuổi hơn",
+           "Việt nặng hơn và nhiều tuổi hơn"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "d) An: {0}",
+        "o": [
+         {
+          "dung": [
+           "11 tuổi, 35 kg"
+          ],
+          "sai": [
+           "35 tuổi, 11 kg",
+           "12 tuổi, 35 kg",
+           "11 tuổi, 30 kg"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Bình: {0}",
+        "o": [
+         {
+          "dung": [
+           "13 tuổi, 45 kg"
+          ],
+          "sai": [
+           "45 tuổi, 13 kg",
+           "14 tuổi, 45 kg",
+           "13 tuổi, 40 kg"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Hưng: {0}",
+        "o": [
+         {
+          "dung": [
+           "14 tuổi, 50 kg"
+          ],
+          "sai": [
+           "50 tuổi, 14 kg",
+           "15 tuổi, 50 kg",
+           "14 tuổi, 45 kg"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Việt: {0}",
+        "o": [
+         {
+          "dung": [
+           "14 tuổi, 40 kg"
+          ],
+          "sai": [
+           "40 tuổi, 14 kg",
+           "13 tuổi, 40 kg",
+           "14 tuổi, 45 kg"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Cân nặng {0}",
+        "o": [
+         {
+          "dung": [
+           "không phải là hàm số của tuổi, vì Hưng và Việt cùng 14 tuổi mà cân nặng khác nhau"
+          ],
+          "sai": [
+           "là hàm số của tuổi, vì mỗi bạn chỉ có một cân nặng",
+           "không phải là hàm số của tuổi, vì bốn bạn có cân nặng khác nhau"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "7.23",
      "trang": 46,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Hình 7.10 (SGK trang 46) là đồ thị của hàm số mô tả nhiệt độ T (°C) tại các thời điểm t (giờ) của một thành phố ở châu Âu từ giữa trưa đến 6 giờ tối. a) Tìm T(1), T(2), T(5) và giải thích ý nghĩa của các số này. b) Trong hai giá trị T(1) và T(4), giá trị nào lớn hơn? c) Tìm t sao cho T(t) = 5. d) Trong khoảng thời gian nào thì nhiệt độ cao hơn 5 °C?"
+     "de": "Hình 7.10 (SGK trang 46) là đồ thị của hàm số mô tả nhiệt độ T (°C) tại các thời điểm t (giờ) của một thành phố ở châu Âu từ giữa trưa đến 6 giờ tối. a) Tìm T(1), T(2), T(5) và giải thích ý nghĩa của các số này. b) Trong hai giá trị T(1) và T(4), giá trị nào lớn hơn? c) Tìm t sao cho T(t) = 5. d) Trong khoảng thời gian nào thì nhiệt độ cao hơn 5 °C?",
+     "hinh": [
+      "toan8t2/7.23.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 7,
+      "hoi": "Hình 7.10 là đồ thị của hàm số mô tả nhiệt độ T (°C) tại các thời điểm t (giờ) của một thành phố ở châu Âu từ giữa trưa đến 6 giờ tối (t tính từ 12 giờ trưa).\na) Tìm T(1), T(2), T(5) và giải thích ý nghĩa của các số này.\nb) Trong hai giá trị T(1) và T(4), giá trị nào lớn hơn?\nc) Tìm t sao cho T(t) = 5.\nd) Trong khoảng thời gian nào thì nhiệt độ cao hơn 5 °C?",
+      "dong": [
+       {
+        "chu": "a) T(1) = {0}; T(2) = {1}; T(5) = {2}",
+        "o": [
+         {
+          "dung": [
+           "6"
+          ],
+          "sai": [
+           "5",
+           "7"
+          ]
+         },
+         {
+          "dung": [
+           "8"
+          ],
+          "sai": [
+           "7",
+           "6"
+          ]
+         },
+         {
+          "dung": [
+           "4"
+          ],
+          "sai": [
+           "3",
+           "5"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "T(1) = 6 nghĩa là {0}",
+        "o": [
+         {
+          "dung": [
+           "lúc 1 giờ chiều, nhiệt độ của thành phố là 6 °C"
+          ],
+          "sai": [
+           "lúc 6 giờ chiều, nhiệt độ của thành phố là 1 °C",
+           "sau 1 giờ, nhiệt độ tăng thêm 6 °C"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "b) Giá trị lớn hơn là {0}",
+        "o": [
+         {
+          "dung": [
+           "T(1)"
+          ],
+          "sai": [
+           "T(4)",
+           "không có, hai giá trị bằng nhau"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "c) T(t) = 5 khi {0}",
+        "o": [
+         {
+          "dung": [
+           "t = 0 hoặc t = 4"
+          ],
+          "sai": [
+           "t = 4",
+           "t = 0",
+           "t = 5"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "d) Nhiệt độ cao hơn 5 °C {0}",
+        "o": [
+         {
+          "dung": [
+           "từ sau 12 giờ trưa đến trước 4 giờ chiều (0 < t < 4)"
+          ],
+          "sai": [
+           "từ 1 giờ chiều đến 3 giờ chiều (1 ≤ t ≤ 3)",
+           "từ sau 4 giờ chiều đến 6 giờ tối (4 < t ≤ 6)",
+           "từ 12 giờ trưa đến 2 giờ chiều (0 ≤ t ≤ 2)"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     }
    ]
   },
@@ -4066,56 +5224,350 @@
      "trang": 48,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Trong các hàm số sau, những hàm số nào là hàm số bậc nhất? a) y = 3x − 2; b) y = −2x; c) y = 2x^2 + 3; d) y = 3(x − 1); e) y = 0x + 1."
+     "de": "Trong các hàm số sau, những hàm số nào là hàm số bậc nhất? a) y = 3x − 2; b) y = −2x; c) y = 2x^2 + 3; d) y = 3(x − 1); e) y = 0x + 1.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 5,
+      "hoi": "Trong các hàm số sau, những hàm số nào là hàm số bậc nhất?",
+      "dong": [
+       {
+        "chu": "a) y = 3x − 2: {0}",
+        "o": [
+         {
+          "dung": [
+           "Là hàm số bậc nhất"
+          ],
+          "sai": [
+           "Không phải"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "b) y = −2x: {0}",
+        "o": [
+         {
+          "dung": [
+           "Là hàm số bậc nhất"
+          ],
+          "sai": [
+           "Không phải"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "c) y = 2x² + 3: {0}",
+        "o": [
+         {
+          "dung": [
+           "Không phải"
+          ],
+          "sai": [
+           "Là hàm số bậc nhất"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "d) y = 3(x − 1): {0}",
+        "o": [
+         {
+          "dung": [
+           "Là hàm số bậc nhất"
+          ],
+          "sai": [
+           "Không phải"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "e) y = 0x + 1: {0}",
+        "o": [
+         {
+          "dung": [
+           "Không phải"
+          ],
+          "sai": [
+           "Là hàm số bậc nhất"
+          ],
+          "hai": true
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "Vận dụng (tr.48)",
      "trang": 48,
      "nhom": "Vận dụng",
      "dang": "CAU_NHO",
-     "de": "Trong hệ đo lường Mỹ, quãng đường thường được đo bằng dặm (mile) và 1 dặm bằng khoảng 1,609 km. a) Viết công thức để chuyển đổi x (dặm) sang y (km). Công thức tính y theo x này có phải là một hàm số bậc nhất của x không? b) Một ô tô chạy với vận tốc 55 dặm/giờ trên một quãng đường có quy định vận tốc tối đa là 80 km/h. Hỏi ô tô đó có vi phạm luật giao thông không?"
+     "de": "Trong hệ đo lường Mỹ, quãng đường thường được đo bằng dặm (mile) và 1 dặm bằng khoảng 1,609 km. a) Viết công thức để chuyển đổi x (dặm) sang y (km). Công thức tính y theo x này có phải là một hàm số bậc nhất của x không? b) Một ô tô chạy với vận tốc 55 dặm/giờ trên một quãng đường có quy định vận tốc tối đa là 80 km/h. Hỏi ô tô đó có vi phạm luật giao thông không?",
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "hoi": "Trong hệ đo lường Mỹ, quãng đường thường được đo bằng dặm (mile) và 1 dặm bằng khoảng 1,609 km.\na) Viết công thức để chuyển đổi x (dặm) sang y (km). Công thức tính y theo x này có phải là một hàm số bậc nhất của x không?\nb) Một ô tô chạy với vận tốc 55 dặm/giờ trên một quãng đường có quy định vận tốc tối đa là 80 km/h. Hỏi ô tô đó có vi phạm luật giao thông không?",
+      "dong": [
+       {
+        "chu": "a) Công thức: y = {0}",
+        "o": [
+         {
+          "dung": [
+           "1,609x"
+          ],
+          "sai": [
+           "x/1,609",
+           "x + 1,609",
+           "1609x"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "y {0} hàm số bậc nhất của x",
+        "o": [
+         {
+          "dung": [
+           "là"
+          ],
+          "sai": [
+           "không phải là"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "b) 55 dặm/giờ bằng khoảng {0} km/h",
+        "o": [
+         {
+          "dung": [
+           "88,495"
+          ],
+          "sai": [
+           "34,18",
+           "56,609",
+           "53,391"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Ô tô đó {0} luật giao thông",
+        "o": [
+         {
+          "dung": [
+           "có vi phạm"
+          ],
+          "sai": [
+           "không vi phạm"
+          ],
+          "hai": true
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "Luyện tập (tr.49)",
      "trang": 49,
      "nhom": "Luyện tập",
      "dang": "CAU_NHO",
-     "de": "Vẽ đồ thị của các hàm số bậc nhất y = −2x + 3 và y = (1/2)x."
+     "de": "Vẽ đồ thị của các hàm số bậc nhất y = −2x + 3 và y = (1/2)x.",
+     "bo_may": "vẽ đồ thị"
     },
     {
      "ma": "7.24",
      "trang": 50,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Trong các hàm số sau, những hàm số nào là hàm số bậc nhất? Hãy xác định các hệ số a, b của chúng. a) y = 0 · x − 5; b) y = 1 − 3x; c) y = −0,6x; d) y = √2(x − 1) + 3; e) y = 2x^2 + 1."
+     "de": "Trong các hàm số sau, những hàm số nào là hàm số bậc nhất? Hãy xác định các hệ số a, b của chúng. a) y = 0 · x − 5; b) y = 1 − 3x; c) y = −0,6x; d) y = √2(x − 1) + 3; e) y = 2x^2 + 1.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 5,
+      "hoi": "Trong các hàm số sau, những hàm số nào là hàm số bậc nhất? Hãy xác định các hệ số a, b của chúng.",
+      "dong": [
+       {
+        "chu": "a) y = 0 · x − 5: {0}",
+        "o": [
+         {
+          "dung": [
+           "không phải hàm số bậc nhất"
+          ],
+          "sai": [
+           "hàm số bậc nhất, a = 0, b = −5",
+           "hàm số bậc nhất, a = −5, b = 0"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "b) y = 1 − 3x: {0}",
+        "o": [
+         {
+          "dung": [
+           "hàm số bậc nhất, a = −3, b = 1"
+          ],
+          "sai": [
+           "hàm số bậc nhất, a = 1, b = −3",
+           "hàm số bậc nhất, a = 3, b = 1",
+           "không phải hàm số bậc nhất"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "c) y = −0,6x: {0}",
+        "o": [
+         {
+          "dung": [
+           "hàm số bậc nhất, a = −0,6, b = 0"
+          ],
+          "sai": [
+           "không phải hàm số bậc nhất",
+           "hàm số bậc nhất, a = 0, b = −0,6",
+           "hàm số bậc nhất, a = 0,6, b = 0"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "d) y = √2(x − 1) + 3: {0}",
+        "o": [
+         {
+          "dung": [
+           "hàm số bậc nhất, a = √2, b = 3 − √2"
+          ],
+          "sai": [
+           "hàm số bậc nhất, a = √2, b = 3",
+           "hàm số bậc nhất, a = √2, b = 2",
+           "không phải hàm số bậc nhất"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "e) y = 2x² + 1: {0}",
+        "o": [
+         {
+          "dung": [
+           "không phải hàm số bậc nhất"
+          ],
+          "sai": [
+           "hàm số bậc nhất, a = 2, b = 1",
+           "hàm số bậc nhất, a = 1, b = 2"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "7.25",
      "trang": 50,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Cho hàm số bậc nhất y = ax + 3. a) Tìm hệ số a, biết rằng khi x = 1 thì y = 5. b) Với giá trị a tìm được, hãy hoàn thành bảng giá trị của y ứng với x lần lượt bằng −2; −1; 0; 1; 2 vào vở."
+     "de": "Cho hàm số bậc nhất y = ax + 3. a) Tìm hệ số a, biết rằng khi x = 1 thì y = 5. b) Với giá trị a tìm được, hãy hoàn thành bảng giá trị của y ứng với x lần lượt bằng −2; −1; 0; 1; 2 vào vở.",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "hoi": "Cho hàm số bậc nhất y = ax + 3.\na) Tìm hệ số a, biết rằng khi x = 1 thì y = 5.\nb) Với giá trị a tìm được, hãy hoàn thành bảng giá trị của y ứng với x lần lượt bằng −2; −1; 0; 1; 2.\n(Gõ hệ số a, rồi các giá trị của y theo thứ tự x = −2; −1; 0; 1; 2, cách nhau bằng dấu ;)",
+      "dap": [
+       "2;−1;1;3;5;7",
+       "a=2;−1;1;3;5;7"
+      ],
+      "phim": [
+       ";",
+       "a"
+      ],
+      "nhieu": [
+       "x",
+       "y"
+      ],
+      "loi_giai": [
+       "a) Khi x bằng 1 thì y bằng 5: 5 = a · 1 + 3 ⇔ a = 5 − 3 = 2; vậy y = 2x + 3",
+       "b) Với x = −2 thì y = 2 · (−2) + 3 = −1; với x = −1 thì y = 2 · (−1) + 3 = 1",
+       "Với x = 0 thì y = 3; với x = 1 thì y = 2 · 1 + 3 = 5; với x = 2 thì y = 2 · 2 + 3 = 7"
+      ]
+     }
     },
     {
      "ma": "7.26",
      "trang": 50,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Vẽ đồ thị của các hàm số sau: a) y = 2x − 6; b) y = −3x + 5; c) y = (3/2)x."
+     "de": "Vẽ đồ thị của các hàm số sau: a) y = 2x − 6; b) y = −3x + 5; c) y = (3/2)x.",
+     "bo_may": "vẽ đồ thị"
     },
     {
      "ma": "7.27",
      "trang": 50,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Đồng euro (EUR) là đơn vị tiền tệ chính thức ở một số quốc gia thành viên của Liên minh châu Âu. Vào một ngày, tỉ giá hối đoái giữa đồng euro và đồng đô la Mỹ (USD) là: 1 EUR = 1,1052 USD. a) Viết công thức để chuyển đổi x euro sang y đô la Mỹ. Công thức tính y theo x này có phải là một hàm số bậc nhất của x không? b) Vào ngày đó, 200 euro có giá trị bằng khoảng bao nhiêu đô la Mỹ? c) Vào ngày đó, 500 đô la Mỹ có giá trị bằng khoảng bao nhiêu euro? (Làm tròn kết quả ở câu b và câu c đến hàng đơn vị)."
+     "de": "Đồng euro (EUR) là đơn vị tiền tệ chính thức ở một số quốc gia thành viên của Liên minh châu Âu. Vào một ngày, tỉ giá hối đoái giữa đồng euro và đồng đô la Mỹ (USD) là: 1 EUR = 1,1052 USD. a) Viết công thức để chuyển đổi x euro sang y đô la Mỹ. Công thức tính y theo x này có phải là một hàm số bậc nhất của x không? b) Vào ngày đó, 200 euro có giá trị bằng khoảng bao nhiêu đô la Mỹ? c) Vào ngày đó, 500 đô la Mỹ có giá trị bằng khoảng bao nhiêu euro? (Làm tròn kết quả ở câu b và câu c đến hàng đơn vị).",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "hoi": "Đồng euro (EUR) là đơn vị tiền tệ chính thức ở một số quốc gia thành viên của Liên minh châu Âu. Vào một ngày, tỉ giá hối đoái giữa đồng euro và đồng đô la Mỹ (USD) là: 1 EUR = 1,1052 USD.\na) Viết công thức để chuyển đổi x euro sang y đô la Mỹ.\nb) Vào ngày đó, 200 euro có giá trị bằng khoảng bao nhiêu đô la Mỹ?\nc) Vào ngày đó, 500 đô la Mỹ có giá trị bằng khoảng bao nhiêu euro?\n(Làm tròn kết quả ở câu b và câu c đến hàng đơn vị.)\n(Gõ kết quả các ý theo thứ tự, cách nhau bằng dấu ;)",
+      "dap": [
+       "y=1,1052x;221;452",
+       "1,1052x;221;452"
+      ],
+      "phim": [
+       "x",
+       "y",
+       ";"
+      ],
+      "nhieu": [
+       "x²",
+       "%",
+       "≈"
+      ],
+      "loi_giai": [
+       "a) Mỗi euro bằng 1,1052 đô la Mỹ nên y = 1,1052x",
+       "b) Với x = 200 thì y = 1,1052 · 200 = 221,04; làm tròn được 221",
+       "c) 1,1052x = 500 ⇔ x = 500 : 1,1052 ≈ 452,4; làm tròn được 452"
+      ]
+     }
     },
     {
      "ma": "7.28",
      "trang": 50,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Giá cước điện thoại cố định của một hãng viễn thông bao gồm cước thuê bao là 22 000 đồng/tháng và cước gọi là 800 đồng/phút. a) Lập công thức tính số tiền cước điện thoại y (đồng) phải trả trong tháng khi gọi x phút. b) Tính số tiền cước điện thoại phải trả khi gọi 75 phút. c) Nếu số tiền cước điện thoại phải trả là 94 000 đồng thì trong tháng đó thuê bao đã gọi bao nhiêu phút?"
+     "de": "Giá cước điện thoại cố định của một hãng viễn thông bao gồm cước thuê bao là 22 000 đồng/tháng và cước gọi là 800 đồng/phút. a) Lập công thức tính số tiền cước điện thoại y (đồng) phải trả trong tháng khi gọi x phút. b) Tính số tiền cước điện thoại phải trả khi gọi 75 phút. c) Nếu số tiền cước điện thoại phải trả là 94 000 đồng thì trong tháng đó thuê bao đã gọi bao nhiêu phút?",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "hoi": "Giá cước điện thoại cố định của một hãng viễn thông bao gồm cước thuê bao là 22 000 đồng/tháng và cước gọi là 800 đồng/phút.\na) Lập công thức tính số tiền cước điện thoại y (đồng) phải trả trong tháng khi gọi x phút.\nb) Tính số tiền cước điện thoại phải trả khi gọi 75 phút.\nc) Nếu số tiền cước điện thoại phải trả là 94 000 đồng thì trong tháng đó thuê bao đã gọi bao nhiêu phút?\n(Gõ công thức ở câu a, số tiền ở câu b (đồng), số phút ở câu c, cách nhau bằng dấu ;)",
+      "dap": [
+       "y=800x+22000;82000;90",
+       "800x+22000;82000;90"
+      ],
+      "phim": [
+       "x",
+       "y",
+       ";"
+      ],
+      "nhieu": [
+       "x²",
+       "%",
+       "z"
+      ],
+      "loi_giai": [
+       "a) Mỗi phút gọi 800 đồng, cộng cước thuê bao 22000 đồng, nên y = 800x + 22000",
+       "b) Với x = 75 thì y = 800 · 75 + 22000 = 82000",
+       "c) 800x + 22000 = 94000 ⇔ 800x = 72000 ⇔ x = 90"
+      ]
+     }
     },
     {
      "ma": "7.29",
@@ -4135,84 +5587,663 @@
      "trang": 52,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Xác định hệ số góc của mỗi đường thẳng sau: y = 3x − 1; y = 2 − x; y = (1/2)(x − 1)."
+     "de": "Xác định hệ số góc của mỗi đường thẳng sau: y = 3x − 1; y = 2 − x; y = (1/2)(x − 1).",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "hoi": "Xác định hệ số góc của mỗi đường thẳng sau: y = 3x − 1; y = 2 − x; y = (1/2)(x − 1).\n(Gõ ba hệ số góc theo thứ tự, cách nhau bằng dấu ;)",
+      "dap": [
+       "3;−1;1/2",
+       "3;−1;0,5"
+      ],
+      "phim": [
+       ";"
+      ],
+      "nhieu": [
+       "x"
+      ],
+      "loi_giai": [
+       "Hệ số của x trong 3x − 1 là 3, nên đường thẳng thứ nhất có hệ số góc là 3",
+       "2 − x = −x + 2; đường thẳng thứ hai có hệ số góc là −1",
+       "(1/2)(x − 1) = (1/2)x − 1/2; đường thẳng thứ ba có hệ số góc là 1/2"
+      ]
+     }
     },
     {
      "ma": "Luyện tập 1 (tr.52)",
      "trang": 52,
      "nhom": "Luyện tập",
      "dang": "CAU_NHO",
-     "de": "Tìm hàm số bậc nhất có đồ thị là đường thẳng có hệ số góc là 3 và cắt trục tung tại điểm có tung độ bằng −1."
+     "de": "Tìm hàm số bậc nhất có đồ thị là đường thẳng có hệ số góc là 3 và cắt trục tung tại điểm có tung độ bằng −1.",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "dap": [
+       "y=3x−1",
+       "3x−1"
+      ],
+      "phim": [
+       "x",
+       "y"
+      ],
+      "nhieu": [
+       "x²",
+       "z"
+      ],
+      "loi_giai": [
+       "Hệ số góc là 3 nên hàm số có dạng y = 3x + b",
+       "Đồ thị cắt trục tung tại điểm (0; −1) nên −1 = 3 · 0 + b ⇔ b = −1",
+       "Hàm số cần tìm là y = 3x − 1"
+      ]
+     }
     },
     {
      "ma": "Câu hỏi 2 (tr.53)",
      "trang": 53,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Tìm các cặp đường thẳng song song với nhau trong các đường thẳng sau: a) y = 2x + 1; b) y = −1 − 2x; c) y = 2 + 2x; d) y = −1 + 2x."
+     "de": "Tìm các cặp đường thẳng song song với nhau trong các đường thẳng sau: a) y = 2x + 1; b) y = −1 − 2x; c) y = 2 + 2x; d) y = −1 + 2x.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 6,
+      "hoi": "Tìm các cặp đường thẳng song song với nhau trong các đường thẳng sau:\na) y = 2x + 1; b) y = −1 − 2x; c) y = 2 + 2x; d) y = −1 + 2x.\nHai đường thẳng trong mỗi cặp sau song song, cắt nhau hay trùng nhau?",
+      "dong": [
+       {
+        "chu": "a) và b): {0}",
+        "o": [
+         {
+          "dung": [
+           "cắt nhau"
+          ],
+          "sai": [
+           "song song",
+           "trùng nhau"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "a) và c): {0}",
+        "o": [
+         {
+          "dung": [
+           "song song"
+          ],
+          "sai": [
+           "cắt nhau",
+           "trùng nhau"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "a) và d): {0}",
+        "o": [
+         {
+          "dung": [
+           "song song"
+          ],
+          "sai": [
+           "cắt nhau",
+           "trùng nhau"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "b) và c): {0}",
+        "o": [
+         {
+          "dung": [
+           "cắt nhau"
+          ],
+          "sai": [
+           "song song",
+           "trùng nhau"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "b) và d): {0}",
+        "o": [
+         {
+          "dung": [
+           "cắt nhau"
+          ],
+          "sai": [
+           "song song",
+           "trùng nhau"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "c) và d): {0}",
+        "o": [
+         {
+          "dung": [
+           "song song"
+          ],
+          "sai": [
+           "cắt nhau",
+           "trùng nhau"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "Câu hỏi 3 (tr.53)",
      "trang": 53,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Tìm các cặp đường thẳng cắt nhau trong các đường thẳng sau: a) y = 2x + 1; b) y = 2x; c) y = 2 + 2x; d) y = 1 − 2x."
+     "de": "Tìm các cặp đường thẳng cắt nhau trong các đường thẳng sau: a) y = 2x + 1; b) y = 2x; c) y = 2 + 2x; d) y = 1 − 2x.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 6,
+      "hoi": "Tìm các cặp đường thẳng cắt nhau trong các đường thẳng sau:\na) y = 2x + 1; b) y = 2x; c) y = 2 + 2x; d) y = 1 − 2x.\nHai đường thẳng trong mỗi cặp sau song song, cắt nhau hay trùng nhau?",
+      "dong": [
+       {
+        "chu": "a) và b): {0}",
+        "o": [
+         {
+          "dung": [
+           "song song"
+          ],
+          "sai": [
+           "cắt nhau",
+           "trùng nhau"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "a) và c): {0}",
+        "o": [
+         {
+          "dung": [
+           "song song"
+          ],
+          "sai": [
+           "cắt nhau",
+           "trùng nhau"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "a) và d): {0}",
+        "o": [
+         {
+          "dung": [
+           "cắt nhau"
+          ],
+          "sai": [
+           "song song",
+           "trùng nhau"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "b) và c): {0}",
+        "o": [
+         {
+          "dung": [
+           "song song"
+          ],
+          "sai": [
+           "cắt nhau",
+           "trùng nhau"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "b) và d): {0}",
+        "o": [
+         {
+          "dung": [
+           "cắt nhau"
+          ],
+          "sai": [
+           "song song",
+           "trùng nhau"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "c) và d): {0}",
+        "o": [
+         {
+          "dung": [
+           "cắt nhau"
+          ],
+          "sai": [
+           "song song",
+           "trùng nhau"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "Luyện tập 2 (tr.54)",
      "trang": 54,
      "nhom": "Luyện tập",
      "dang": "CAU_NHO",
-     "de": "Cho hai hàm số bậc nhất y = 2mx + 1 và y = (m − 1)x + 2. Tìm các giá trị của m để đồ thị của hai hàm số đã cho là: a) Hai đường thẳng song song với nhau. b) Hai đường thẳng cắt nhau."
+     "de": "Cho hai hàm số bậc nhất y = 2mx + 1 và y = (m − 1)x + 2. Tìm các giá trị của m để đồ thị của hai hàm số đã cho là: a) Hai đường thẳng song song với nhau. b) Hai đường thẳng cắt nhau.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "hoi": "Cho hai hàm số bậc nhất y = 2mx + 1 và y = (m − 1)x + 2. Tìm các giá trị của m để đồ thị của hai hàm số đã cho là:\na) Hai đường thẳng song song với nhau.\nb) Hai đường thẳng cắt nhau.",
+      "dong": [
+       {
+        "chu": "Hai hàm số đã cho là hàm số bậc nhất khi {0}",
+        "o": [
+         {
+          "dung": [
+           "m ≠ 0 và m ≠ 1"
+          ],
+          "sai": [
+           "m ≠ 0",
+           "m ≠ 1",
+           "m ≠ −1"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "a) Hai đường thẳng song song khi m = {0}",
+        "o": [
+         {
+          "dung": [
+           "−1"
+          ],
+          "sai": [
+           "1",
+           "1/3",
+           "−1/3"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "b) Hai đường thẳng cắt nhau khi {0}",
+        "o": [
+         {
+          "dung": [
+           "m ≠ −1, m ≠ 0 và m ≠ 1"
+          ],
+          "sai": [
+           "m ≠ −1",
+           "m ≠ 0 và m ≠ 1",
+           "m = −1"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "Thử thách nhỏ (tr.54)",
      "trang": 54,
      "nhom": "Thử thách nhỏ",
      "dang": "CAU_NHO",
-     "de": "Liệu hai đường thẳng phân biệt với cùng hệ số góc, có thể có: a) Cùng giao điểm với trục Ox không? b) Cùng giao điểm với trục Oy không?"
+     "de": "Liệu hai đường thẳng phân biệt với cùng hệ số góc, có thể có: a) Cùng giao điểm với trục Ox không? b) Cùng giao điểm với trục Oy không?",
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "hoi": "Liệu hai đường thẳng phân biệt với cùng hệ số góc, có thể có:\na) Cùng giao điểm với trục Ox không?\nb) Cùng giao điểm với trục Oy không?",
+      "dong": [
+       {
+        "chu": "a) Cùng giao điểm với trục Ox: {0}",
+        "o": [
+         {
+          "dung": [
+           "không thể"
+          ],
+          "sai": [
+           "có thể"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "b) Cùng giao điểm với trục Oy: {0}",
+        "o": [
+         {
+          "dung": [
+           "không thể"
+          ],
+          "sai": [
+           "có thể"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Vì hai đường thẳng phân biệt có cùng hệ số góc thì {0}",
+        "o": [
+         {
+          "dung": [
+           "song song với nhau, không có điểm chung nào"
+          ],
+          "sai": [
+           "cắt nhau tại một điểm trên trục Oy",
+           "cắt nhau tại một điểm trên trục Ox"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "Vận dụng (tr.54)",
      "trang": 54,
      "nhom": "Vận dụng",
      "dang": "CAU_NHO",
-     "de": "Em hãy trình bày cách làm của anh Pi để trả lời câu hỏi của bạn Vuông trong tình huống mở đầu: làm thế nào để biết hai đường thẳng y = ax + b và y = a'x + b' song song hay cắt nhau mà không cần vẽ hình."
+     "de": "Em hãy trình bày cách làm của anh Pi để trả lời câu hỏi của bạn Vuông trong tình huống mở đầu: làm thế nào để biết hai đường thẳng y = ax + b và y = a'x + b' song song hay cắt nhau mà không cần vẽ hình.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "hoi": "Làm thế nào để biết hai đường thẳng y = ax + b (a ≠ 0) và y = a'x + b' (a' ≠ 0) song song hay cắt nhau mà không cần vẽ hình? Em hãy trình bày cách làm của anh Pi.",
+      "dong": [
+       {
+        "chu": "Nếu a ≠ a' thì hai đường thẳng {0}",
+        "o": [
+         {
+          "dung": [
+           "cắt nhau"
+          ],
+          "sai": [
+           "song song",
+           "trùng nhau"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Nếu a = a' và b ≠ b' thì hai đường thẳng {0}",
+        "o": [
+         {
+          "dung": [
+           "song song"
+          ],
+          "sai": [
+           "cắt nhau",
+           "trùng nhau"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Nếu a = a' và b = b' thì hai đường thẳng {0}",
+        "o": [
+         {
+          "dung": [
+           "trùng nhau"
+          ],
+          "sai": [
+           "song song",
+           "cắt nhau"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "7.30",
      "trang": 54,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Tìm hàm số bậc nhất có đồ thị là đường thẳng đi qua điểm (1; −2) và có hệ số góc là 3."
+     "de": "Tìm hàm số bậc nhất có đồ thị là đường thẳng đi qua điểm (1; −2) và có hệ số góc là 3.",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "dap": [
+       "y=3x−5",
+       "3x−5"
+      ],
+      "phim": [
+       "x",
+       "y"
+      ],
+      "nhieu": [
+       "x²",
+       "z"
+      ],
+      "loi_giai": [
+       "Hệ số góc là 3 nên hàm số có dạng y = 3x + b",
+       "Đồ thị đi qua điểm (1; −2) nên −2 = 3 · 1 + b ⇔ b = −2 − 3 = −5",
+       "Hàm số cần tìm là y = 3x − 5"
+      ]
+     }
     },
     {
      "ma": "7.31",
      "trang": 54,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Tìm hàm số bậc nhất có đồ thị là đường thẳng có hệ số góc là −2 và cắt trục hoành tại điểm có hoành độ bằng 3."
+     "de": "Tìm hàm số bậc nhất có đồ thị là đường thẳng có hệ số góc là −2 và cắt trục hoành tại điểm có hoành độ bằng 3.",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "dap": [
+       "y=−2x+6",
+       "−2x+6"
+      ],
+      "phim": [
+       "x",
+       "y"
+      ],
+      "nhieu": [
+       "x²",
+       "z"
+      ],
+      "loi_giai": [
+       "Hệ số góc là −2 nên hàm số có dạng y = −2x + b",
+       "Đồ thị cắt trục hoành tại điểm có hoành độ 3, tức là đi qua điểm (3; 0), nên 0 = −2 · 3 + b ⇔ b = 6",
+       "Hàm số cần tìm là y = −2x + 6"
+      ]
+     }
     },
     {
      "ma": "7.32",
      "trang": 54,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Hãy chỉ ra các cặp đường thẳng song song với nhau và các cặp đường thẳng cắt nhau trong các đường thẳng sau: a) y = −x + 1; b) y = −2x + 1; c) y = −2x + 2; d) y = −x."
+     "de": "Hãy chỉ ra các cặp đường thẳng song song với nhau và các cặp đường thẳng cắt nhau trong các đường thẳng sau: a) y = −x + 1; b) y = −2x + 1; c) y = −2x + 2; d) y = −x.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 6,
+      "hoi": "Hãy chỉ ra các cặp đường thẳng song song với nhau và các cặp đường thẳng cắt nhau trong các đường thẳng sau:\na) y = −x + 1; b) y = −2x + 1; c) y = −2x + 2; d) y = −x.\nHai đường thẳng trong mỗi cặp sau song song, cắt nhau hay trùng nhau?",
+      "dong": [
+       {
+        "chu": "a) và b): {0}",
+        "o": [
+         {
+          "dung": [
+           "cắt nhau"
+          ],
+          "sai": [
+           "song song",
+           "trùng nhau"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "a) và c): {0}",
+        "o": [
+         {
+          "dung": [
+           "cắt nhau"
+          ],
+          "sai": [
+           "song song",
+           "trùng nhau"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "a) và d): {0}",
+        "o": [
+         {
+          "dung": [
+           "song song"
+          ],
+          "sai": [
+           "cắt nhau",
+           "trùng nhau"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "b) và c): {0}",
+        "o": [
+         {
+          "dung": [
+           "song song"
+          ],
+          "sai": [
+           "cắt nhau",
+           "trùng nhau"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "b) và d): {0}",
+        "o": [
+         {
+          "dung": [
+           "cắt nhau"
+          ],
+          "sai": [
+           "song song",
+           "trùng nhau"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "c) và d): {0}",
+        "o": [
+         {
+          "dung": [
+           "cắt nhau"
+          ],
+          "sai": [
+           "song song",
+           "trùng nhau"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "7.33",
      "trang": 54,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Cho hai hàm số bậc nhất y = mx − 5 và y = (2m + 1)x + 3. Tìm các giá trị của m để đồ thị của hai hàm số là: a) Hai đường thẳng song song với nhau. b) Hai đường thẳng cắt nhau."
+     "de": "Cho hai hàm số bậc nhất y = mx − 5 và y = (2m + 1)x + 3. Tìm các giá trị của m để đồ thị của hai hàm số là: a) Hai đường thẳng song song với nhau. b) Hai đường thẳng cắt nhau.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "hoi": "Cho hai hàm số bậc nhất y = mx − 5 và y = (2m + 1)x + 3. Tìm các giá trị của m để đồ thị của hai hàm số là:\na) Hai đường thẳng song song với nhau.\nb) Hai đường thẳng cắt nhau.",
+      "dong": [
+       {
+        "chu": "Hai hàm số đã cho là hàm số bậc nhất khi {0}",
+        "o": [
+         {
+          "dung": [
+           "m ≠ 0 và m ≠ −1/2"
+          ],
+          "sai": [
+           "m ≠ 0",
+           "m ≠ −1/2",
+           "m ≠ −1"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "a) Hai đường thẳng song song khi m = {0}",
+        "o": [
+         {
+          "dung": [
+           "−1"
+          ],
+          "sai": [
+           "1",
+           "−1/3",
+           "1/3"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "b) Hai đường thẳng cắt nhau khi {0}",
+        "o": [
+         {
+          "dung": [
+           "m ≠ −1, m ≠ 0 và m ≠ −1/2"
+          ],
+          "sai": [
+           "m ≠ −1",
+           "m ≠ 0 và m ≠ −1/2",
+           "m = −1"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "7.34",
      "trang": 54,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Tìm hàm số bậc nhất có đồ thị là đường thẳng song song với đường thẳng y = −3x + 1 và đi qua điểm (2; 6)."
+     "de": "Tìm hàm số bậc nhất có đồ thị là đường thẳng song song với đường thẳng y = −3x + 1 và đi qua điểm (2; 6).",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "dap": [
+       "y=−3x+12",
+       "−3x+12"
+      ],
+      "phim": [
+       "x",
+       "y"
+      ],
+      "nhieu": [
+       "x²",
+       "z"
+      ],
+      "loi_giai": [
+       "Đường thẳng cần tìm song song với đường thẳng y = −3x + 1 nên có dạng y = −3x + b với b ≠ 1",
+       "Đồ thị đi qua điểm (2; 6) nên 6 = −3 · 2 + b ⇔ b = 6 + 6 = 12",
+       "Giá trị này khác 1 (thoả mãn); vậy y = −3x + 12"
+      ]
+     }
     },
     {
      "ma": "7.35",
@@ -4239,28 +6270,91 @@
      "trang": 56,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Cho hàm số bậc nhất y = (3 − m)x + 2m + 1. Tìm các giá trị của m để đồ thị của hàm số đã cho là: a) Đường thẳng đi qua điểm (1; 2); b) Đường thẳng cắt đường thẳng y = x + 1 tại một điểm nằm trên trục tung."
+     "de": "Cho hàm số bậc nhất y = (3 − m)x + 2m + 1. Tìm các giá trị của m để đồ thị của hàm số đã cho là: a) Đường thẳng đi qua điểm (1; 2); b) Đường thẳng cắt đường thẳng y = x + 1 tại một điểm nằm trên trục tung.",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "hoi": "Cho hàm số bậc nhất y = (3 − m)x + 2m + 1. Tìm các giá trị của m để đồ thị của hàm số đã cho là:\na) Đường thẳng đi qua điểm (1; 2);\nb) Đường thẳng cắt đường thẳng y = x + 1 tại một điểm nằm trên trục tung.\n(Gõ kết quả các ý theo thứ tự, cách nhau bằng dấu ;)",
+      "dap": [
+       "m=−2;m=0",
+       "−2;0"
+      ],
+      "phim": [
+       "m",
+       ";"
+      ],
+      "nhieu": [
+       "x",
+       "≠"
+      ],
+      "loi_giai": [
+       "a) Đồ thị đi qua điểm (1; 2) nên 2 = (3 − m) · 1 + 2m + 1 ⇔ 2 = m + 4 ⇔ m = −2; giá trị này khác 3 (thoả mãn)",
+       "b) Đường thẳng y = x + 1 cắt trục tung tại điểm (0; 1), nên đồ thị đã cho cũng phải đi qua điểm (0; 1)",
+       "1 = (3 − m) · 0 + 2m + 1 ⇔ 2m = 0 ⇔ m = 0; khi đó hệ số góc 3 − m = 3 khác 1 nên hai đường thẳng cắt nhau"
+      ]
+     }
     },
     {
      "ma": "7.38",
      "trang": 56,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Cho đồ thị của một hàm số bậc nhất y = f(x) như Hình 7.18 (SGK trang 56; đồ thị đi qua các điểm (−40; 0), (30; 70) và (55; 95)). Hãy giải các phương trình sau: a) f(x) = 70; b) f(x) = 95; c) f(x) = 0."
+     "de": "Cho đồ thị của một hàm số bậc nhất y = f(x) như Hình 7.18 (SGK trang 56; đồ thị đi qua các điểm (−40; 0), (30; 70) và (55; 95)). Hãy giải các phương trình sau: a) f(x) = 70; b) f(x) = 95; c) f(x) = 0.",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "hoi": "Cho đồ thị của một hàm số bậc nhất y = f(x) như Hình 7.18 (SGK trang 56; đồ thị đi qua các điểm (−40; 0), (30; 70) và (55; 95)). Hãy giải các phương trình sau:\na) f(x) = 70;\nb) f(x) = 95;\nc) f(x) = 0.\n(Gõ nghiệm của từng phương trình theo thứ tự a, b, c, cách nhau bằng dấu ;)",
+      "dap": [
+       "x=30;x=55;x=−40",
+       "30;55;−40"
+      ],
+      "phim": [
+       "x",
+       ";"
+      ],
+      "nhieu": [
+       "y",
+       "≠"
+      ],
+      "loi_giai": [
+       "a) Đồ thị đi qua điểm (30; 70) nên f(x) = 70 khi x = 30",
+       "b) Đồ thị đi qua điểm (55; 95) nên f(x) = 95 khi x = 55",
+       "c) Đồ thị đi qua điểm (−40; 0) nên f(x) = 0 khi x = −40"
+      ]
+     }
     },
     {
      "ma": "7.39",
      "trang": 56,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Giá cước taxi của một hãng xe taxi khi quãng đường di chuyển x (km) trong khoảng từ trên 1 km đến 30 km được cho bởi công thức T(x) = 10 000 + 13 600 · (x − 1) (đồng). a) Tính số tiền phải trả khi xe di chuyển 20 km. b) Nếu một hành khách phải trả 200 400 đồng thì hành khách đó đã di chuyển bao nhiêu kilômét?"
+     "de": "Giá cước taxi của một hãng xe taxi khi quãng đường di chuyển x (km) trong khoảng từ trên 1 km đến 30 km được cho bởi công thức T(x) = 10 000 + 13 600 · (x − 1) (đồng). a) Tính số tiền phải trả khi xe di chuyển 20 km. b) Nếu một hành khách phải trả 200 400 đồng thì hành khách đó đã di chuyển bao nhiêu kilômét?",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "hoi": "Giá cước taxi của một hãng xe taxi khi quãng đường di chuyển x (km) trong khoảng từ trên 1 km đến 30 km được cho bởi công thức T(x) = 10 000 + 13 600 · (x − 1) (đồng).\na) Tính số tiền phải trả khi xe di chuyển 20 km.\nb) Nếu một hành khách phải trả 200 400 đồng thì hành khách đó đã di chuyển bao nhiêu kilômét?\n(Gõ số tiền ở câu a (đồng) rồi quãng đường ở câu b (km), cách nhau bằng dấu ;)",
+      "dap": [
+       "268400;15"
+      ],
+      "phim": [
+       ";"
+      ],
+      "nhieu": [
+       "x"
+      ],
+      "loi_giai": [
+       "a) T(20) = 10000 + 13600 · (20 − 1) = 268400",
+       "b) 10000 + 13600(x − 1) = 200400 ⇔ 13600(x − 1) = 190400",
+       "⇔ x − 1 = 190400 : 13600 = 14 ⇔ x = 15; giá trị này thoả mãn 1 < x ≤ 30"
+      ]
+     }
     },
     {
      "ma": "7.40",
      "trang": 56,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Trong lí thuyết tài chính, giá trị sổ sách là giá trị của một tài sản mà công ty sử dụng để xây dựng bảng cân đối kế toán của mình. Một số công ty khấu hao tài sản của họ bằng cách sử dụng phương pháp khấu hao đường thẳng để giá trị của tài sản giảm một lượng cố định mỗi năm. Giả sử một công ty vừa mua một chiếc máy photocopy mới với giá 18 triệu đồng và tính khấu hao theo phương pháp khấu hao đường thẳng trong thời gian 3 năm, tức là mỗi năm giá trị của chiếc máy photocopy sẽ giảm 18 : 3 = 6 triệu đồng. a) Viết hàm số bậc nhất biểu thị giá trị sổ sách V(x) của máy photocopy dưới dạng một hàm số theo thời gian sử dụng x (năm) của nó. b) Vẽ đồ thị của hàm số bậc nhất y = V(x). c) Giá trị sổ sách của máy photocopy sau 2 năm sử dụng là bao nhiêu? d) Sau thời gian sử dụng là bao lâu thì máy photocopy có giá trị sổ sách là 9 triệu đồng?"
+     "de": "Trong lí thuyết tài chính, giá trị sổ sách là giá trị của một tài sản mà công ty sử dụng để xây dựng bảng cân đối kế toán của mình. Một số công ty khấu hao tài sản của họ bằng cách sử dụng phương pháp khấu hao đường thẳng để giá trị của tài sản giảm một lượng cố định mỗi năm. Mức suy giảm phụ thuộc vào thời gian sử dụng hữu ích mà công ty đặt vào tài sản đó. Giả sử một công ty vừa mua một chiếc máy photocopy mới với giá 18 triệu đồng. Công ty lựa chọn cách tính khấu hao chiếc máy photocopy này theo phương pháp khấu hao đường thẳng trong thời gian 3 năm, tức là mỗi năm giá trị của chiếc máy photocopy sẽ giảm 18 : 3 = 6 triệu đồng. a) Viết hàm số bậc nhất biểu thị giá trị sổ sách V(x) của máy photocopy dưới dạng một hàm số theo thời gian sử dụng x (năm) của nó. b) Vẽ đồ thị của hàm số bậc nhất y = V(x). c) Giá trị sổ sách của máy photocopy sau 2 năm sử dụng là bao nhiêu? d) Sau thời gian sử dụng là bao lâu thì máy photocopy có giá trị sổ sách là 9 triệu đồng?"
     }
    ]
   },
@@ -4273,63 +6367,201 @@
      "trang": 57,
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
-     "de": "Phương trình nào sau đây là phương trình bậc nhất một ẩn? A. 0x + 2 = 0. B. 2x + 1 = 2x + 2. C. 2x^2 + 1 = 0. D. 3x − 1 = 0."
+     "de": "Phương trình nào sau đây là phương trình bậc nhất một ẩn? A. 0x + 2 = 0. B. 2x + 1 = 2x + 2. C. 2x^2 + 1 = 0. D. 3x − 1 = 0.",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Phương trình nào sau đây là phương trình bậc nhất một ẩn?",
+      "cac": [
+       "0x + 2 = 0",
+       "2x + 1 = 2x + 2",
+       "2x² + 1 = 0",
+       "3x − 1 = 0"
+      ],
+      "dap": "D"
+     }
     },
     {
      "ma": "7.42",
      "trang": 57,
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
-     "de": "Tập nghiệm S của phương trình 3(x + 1) − (x − 2) = 7 − 2x là A. S = {0}. B. S = {1/2}. C. S = ∅. D. S = ℝ."
+     "de": "Tập nghiệm S của phương trình 3(x + 1) − (x − 2) = 7 − 2x là A. S = {0}. B. S = {1/2}. C. S = ∅. D. S = ℝ.",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Tập nghiệm S của phương trình 3(x + 1) − (x − 2) = 7 − 2x là",
+      "cac": [
+       "S = {0}",
+       "S = {1/2}",
+       "S = ∅",
+       "S = ℝ"
+      ],
+      "dap": "B"
+     }
     },
     {
      "ma": "7.43",
      "trang": 57,
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
-     "de": "Hàm số nào sau đây là hàm số bậc nhất? A. y = 0x + 3. B. y = 3x^2 + 2. C. y = 2x. D. y = 0."
+     "de": "Hàm số nào sau đây là hàm số bậc nhất? A. y = 0x + 3. B. y = 3x^2 + 2. C. y = 2x. D. y = 0.",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Hàm số nào sau đây là hàm số bậc nhất?",
+      "cac": [
+       "y = 0x + 3",
+       "y = 3x² + 2",
+       "y = 2x",
+       "y = 0"
+      ],
+      "dap": "C"
+     }
     },
     {
      "ma": "7.44",
      "trang": 57,
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
-     "de": "Đường thẳng có hệ số góc bằng 2 và đi qua điểm (−1; 2) là A. y = 2x + 2. B. y = 2x − 1. C. y = −x + 2. D. y = 2x + 4."
+     "de": "Đường thẳng có hệ số góc bằng 2 và đi qua điểm (−1; 2) là A. y = 2x + 2. B. y = 2x − 1. C. y = −x + 2. D. y = 2x + 4.",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Đường thẳng có hệ số góc bằng 2 và đi qua điểm (−1; 2) là",
+      "cac": [
+       "y = 2x + 2",
+       "y = 2x − 1",
+       "y = −x + 2",
+       "y = 2x + 4"
+      ],
+      "dap": "D"
+     }
     },
     {
      "ma": "7.45",
      "trang": 57,
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
-     "de": "Giá trị m để đường thẳng y = (m + 1)x + 2 song song với đường thẳng y = −2x là A. m = −3. B. m = −2. C. m = 2. D. m = 1."
+     "de": "Giá trị m để đường thẳng y = (m + 1)x + 2 song song với đường thẳng y = −2x là A. m = −3. B. m = −2. C. m = 2. D. m = 1.",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Giá trị m để đường thẳng y = (m + 1)x + 2 song song với đường thẳng y = −2x là",
+      "cac": [
+       "m = −3",
+       "m = −2",
+       "m = 2",
+       "m = 1"
+      ],
+      "dap": "A"
+     }
     },
     {
      "ma": "7.46",
      "trang": 57,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Giải các phương trình sau: a) 5(x − 1) − (6 − 2x) = 8x − 3; b) (2x − 1)/3 − (5 − 3x)/2 = (x + 7)/4."
+     "de": "Giải các phương trình sau: a) 5(x − 1) − (6 − 2x) = 8x − 3; b) (2x − 1)/3 − (5 − 3x)/2 = (x + 7)/4.",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 5,
+      "hoi": "Giải các phương trình sau:\na) 5(x − 1) − (6 − 2x) = 8x − 3;\nb) (2x − 1)/3 − (5 − 3x)/2 = (x + 7)/4.\n(Gõ nghiệm của từng phương trình theo thứ tự a, b, cách nhau bằng dấu ;)",
+      "dap": [
+       "−8;55/23",
+       "x=−8;x=55/23"
+      ],
+      "phim": [
+       "x",
+       ";"
+      ],
+      "nhieu": [
+       "y",
+       "²"
+      ],
+      "loi_giai": [
+       "a) 5(x − 1) − (6 − 2x) = 8x − 3 ⇔ 5x − 5 − 6 + 2x = 8x − 3",
+       "⇔ 5x + 2x − 8x = −3 + 5 + 6 ⇔ −x = 8 ⇔ x = −8",
+       "b) (2x − 1)/3 − (5 − 3x)/2 = (x + 7)/4 ⇔ 4(2x − 1) − 6(5 − 3x) = 3(x + 7)",
+       "⇔ 8x − 4 − 30 + 18x = 3x + 21",
+       "⇔ 8x + 18x − 3x = 21 + 4 + 30 ⇔ 23x = 55 ⇔ x = 55/23"
+      ]
+     }
     },
     {
      "ma": "7.47",
      "trang": 57,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Số tiền thuế thu nhập cá nhân khi mức thu nhập chịu thuế trong năm trong khoảng từ trên 60 triệu đồng đến 120 triệu đồng được cho bởi công thức T(x) = 0,1x − 3 (triệu đồng), trong đó 60 < x ≤ 120 (triệu đồng) là mức thu nhập chịu thuế của người đó trong năm. a) Tính số thuế thu nhập phải đóng khi mức thu nhập chịu thuế trong năm là 100 triệu đồng. b) Nếu một người phải đóng 8 triệu đồng tiền thuế thu nhập cá nhân thì mức thu nhập chịu thuế của người đó trong năm là bao nhiêu, biết rằng người đó có thu nhập chịu thuế trong khoảng từ trên 60 triệu đồng đến 120 triệu đồng?"
+     "de": "Số tiền thuế thu nhập cá nhân khi mức thu nhập chịu thuế trong năm trong khoảng từ trên 60 triệu đồng đến 120 triệu đồng được cho bởi công thức T(x) = 0,1x − 3 (triệu đồng), trong đó 60 < x ≤ 120 (triệu đồng) là mức thu nhập chịu thuế của người đó trong năm. a) Tính số thuế thu nhập phải đóng khi mức thu nhập chịu thuế trong năm là 100 triệu đồng. b) Nếu một người phải đóng 8 triệu đồng tiền thuế thu nhập cá nhân thì mức thu nhập chịu thuế của người đó trong năm là bao nhiêu, biết rằng người đó có thu nhập chịu thuế trong khoảng từ trên 60 triệu đồng đến 120 triệu đồng?",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "hoi": "Số tiền thuế thu nhập cá nhân khi mức thu nhập chịu thuế trong năm trong khoảng từ trên 60 triệu đồng đến 120 triệu đồng được cho bởi công thức T(x) = 0,1x − 3 (triệu đồng), trong đó 60 < x ≤ 120 (triệu đồng) là mức thu nhập chịu thuế của người đó trong năm.\na) Tính số thuế thu nhập phải đóng khi mức thu nhập chịu thuế trong năm là 100 triệu đồng.\nb) Nếu một người phải đóng 8 triệu đồng tiền thuế thu nhập cá nhân thì mức thu nhập chịu thuế của người đó trong năm là bao nhiêu, biết rằng người đó có thu nhập chịu thuế trong khoảng từ trên 60 triệu đồng đến 120 triệu đồng?\n(Gõ số thuế ở câu a rồi mức thu nhập ở câu b, tính bằng triệu đồng, cách nhau bằng dấu ;)",
+      "dap": [
+       "7;110"
+      ],
+      "phim": [
+       ";"
+      ],
+      "nhieu": [
+       "x"
+      ],
+      "loi_giai": [
+       "a) T(100) = 0,1 · 100 − 3 = 7",
+       "b) 0,1x − 3 = 8 ⇔ 0,1x = 11 ⇔ x = 110; giá trị này thoả mãn 60 < x ≤ 120"
+      ]
+     }
     },
     {
      "ma": "7.48",
      "trang": 58,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Một cửa hàng sách giảm giá 20% cho một cuốn sách. Vì là khách quen của cửa hàng nên bạn An được giảm thêm 10% trên giá đã giảm, do đó bạn An chỉ phải trả 36 000 đồng cho cuốn sách đó. Hỏi giá ban đầu của cuốn sách đó nếu không giảm giá là bao nhiêu?"
+     "de": "Một cửa hàng sách giảm giá 20% cho một cuốn sách. Vì là khách quen của cửa hàng nên bạn An được giảm thêm 10% trên giá đã giảm, do đó bạn An chỉ phải trả 36 000 đồng cho cuốn sách đó. Hỏi giá ban đầu của cuốn sách đó nếu không giảm giá là bao nhiêu?",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "hoi": "Một cửa hàng sách giảm giá 20% cho một cuốn sách. Vì là khách quen của cửa hàng nên bạn An được giảm thêm 10% trên giá đã giảm, do đó bạn An chỉ phải trả 36 000 đồng cho cuốn sách đó. Hỏi giá ban đầu của cuốn sách đó nếu không giảm giá là bao nhiêu?\n(Gõ số, tính bằng đồng.)",
+      "dap": [
+       "50000"
+      ],
+      "phim": [],
+      "nhieu": [],
+      "loi_giai": [
+       "Gọi x (đồng) là giá ban đầu của cuốn sách",
+       "Giá sau khi giảm 20% = x − 0,2x = 0,8x",
+       "Giá sau khi giảm thêm 10% = 0,8x − 0,1 · 0,8x = 0,72x",
+       "0,72x = 36000 ⇔ x = 36000 : 0,72 = 50000"
+      ]
+     }
     },
     {
      "ma": "7.49",
      "trang": 58,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Hai ô tô cùng xuất phát từ Hà Nội đi Hạ Long lúc 8 giờ sáng, trên cùng một tuyến đường. Vận tốc của một ô tô lớn hơn 5 km/h so với ô tô kia. Xe đi nhanh hơn đến Hạ Long lúc 10 giờ 45 phút sáng, trước xe kia 15 phút. Hỏi vận tốc của mỗi ô tô là bao nhiêu? Tính độ dài quãng đường từ Hà Nội đến Hạ Long."
+     "de": "Hai ô tô cùng xuất phát từ Hà Nội đi Hạ Long lúc 8 giờ sáng, trên cùng một tuyến đường. Vận tốc của một ô tô lớn hơn 5 km/h so với ô tô kia. Xe đi nhanh hơn đến Hạ Long lúc 10 giờ 45 phút sáng, trước xe kia 15 phút. Hỏi vận tốc của mỗi ô tô là bao nhiêu? Tính độ dài quãng đường từ Hà Nội đến Hạ Long.",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "hoi": "Hai ô tô cùng xuất phát từ Hà Nội đi Hạ Long lúc 8 giờ sáng, trên cùng một tuyến đường. Vận tốc của một ô tô lớn hơn 5 km/h so với ô tô kia. Xe đi nhanh hơn đến Hạ Long lúc 10 giờ 45 phút sáng, trước xe kia 15 phút. Hỏi vận tốc của mỗi ô tô là bao nhiêu? Tính độ dài quãng đường từ Hà Nội đến Hạ Long.\n(Gõ vận tốc của ô tô đi chậm, vận tốc của ô tô đi nhanh (km/h), rồi độ dài quãng đường (km), cách nhau bằng dấu ;)",
+      "dap": [
+       "55;60;165"
+      ],
+      "phim": [
+       ";"
+      ],
+      "nhieu": [
+       "x"
+      ],
+      "loi_giai": [
+       "Thời gian xe nhanh đi (giờ) = 10,75 − 8 = 2,75; thời gian xe chậm đi (giờ) = 2,75 + 0,25 = 3",
+       "Gọi x (km/h) là vận tốc của xe đi chậm thì vận tốc của xe đi nhanh là x + 5 (km/h)",
+       "2,75(x + 5) = 3x ⇔ 2,75x + 13,75 = 3x ⇔ 0,25x = 13,75 ⇔ x = 55",
+       "Vận tốc xe đi nhanh = 55 + 5 = 60; quãng đường = 3 · 55 = 165"
+      ]
+     }
     },
     {
      "ma": "7.50",
@@ -5218,7 +7450,31 @@
      "trang": 114,
      "nhom": "Luyện tập",
      "dang": "CAU_NHO",
-     "de": "Tính diện tích xung quanh của hình chóp tam giác đều S.MNP trong Hình 10.8 (SGK trang 114), biết IP = 3 cm và cạnh bên SP = 5 cm."
+     "de": "Tính diện tích xung quanh của hình chóp tam giác đều S.MNP trong Hình 10.8 (SGK trang 114), biết IP = 3 cm và cạnh bên SP = 5 cm.",
+     "hinh": [
+      "toan8t2/LT-tr114.webp"
+     ],
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "dap": [
+       "36",
+       "36cm²"
+      ],
+      "phim": [
+       "cm²"
+      ],
+      "nhieu": [
+       "cm",
+       "cm³"
+      ],
+      "loi_giai": [
+       "Tam giác SIP vuông tại I nên SI² = SP² − IP² = 5² − 3² = 16; SI = 4",
+       "Tam giác SMP cân tại S nên đường cao SI cũng là trung tuyến: MP = 2 · IP = 2 · 3 = 6",
+       "Nửa chu vi đáy: p = (6 + 6 + 6) : 2 = 9",
+       "Sxq = p · d = 9 · 4 = 36"
+      ]
+     }
     },
     {
      "ma": "Vận dụng (tr.116)",
@@ -5232,28 +7488,170 @@
      "trang": 116,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Gọi tên đỉnh, cạnh bên, mặt bên, mặt đáy, đường cao và một trung đoạn của hình chóp tam giác đều trong Hình 10.12 (SGK trang 116)."
+     "de": "Gọi tên đỉnh, cạnh bên, mặt bên, mặt đáy, đường cao và một trung đoạn của hình chóp tam giác đều trong Hình 10.12 (SGK trang 116).",
+     "hinh": [
+      "toan8t2/10.1.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 6,
+      "hoi": "Gọi tên đỉnh, cạnh bên, mặt bên, mặt đáy, đường cao và một trung đoạn của hình chóp tam giác đều S.DEF trong Hình 10.12.",
+      "dong": [
+       {
+        "chu": "Đỉnh: {0}",
+        "o": [
+         {
+          "dung": [
+           "S"
+          ],
+          "sai": [
+           "O",
+           "I",
+           "D"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Các cạnh bên: {0}",
+        "o": [
+         {
+          "dung": [
+           "SD, SE, SF"
+          ],
+          "sai": [
+           "DE, EF, FD",
+           "SO, SI, SE"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Các mặt bên: {0}",
+        "o": [
+         {
+          "dung": [
+           "SDE, SEF, SFD"
+          ],
+          "sai": [
+           "DEF, SDE, SEF",
+           "SDO, SEO, SFO"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Mặt đáy: {0}",
+        "o": [
+         {
+          "dung": [
+           "DEF"
+          ],
+          "sai": [
+           "SDE",
+           "SEF"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Đường cao: {0}",
+        "o": [
+         {
+          "dung": [
+           "SO"
+          ],
+          "sai": [
+           "SI",
+           "SD",
+           "OI"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Một trung đoạn: {0}",
+        "o": [
+         {
+          "dung": [
+           "SI"
+          ],
+          "sai": [
+           "SO",
+           "SD",
+           "OI"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "10.2",
      "trang": 116,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Vẽ và cắt một tam giác đều có cạnh 10 cm (Hình 10.13) rồi gấp theo đường màu cam để được hình chóp tam giác đều (Hình 10.14, SGK trang 116)."
+     "de": "Vẽ và cắt một tam giác đều có cạnh 10 cm (Hình 10.13) rồi gấp theo đường màu cam để được hình chóp tam giác đều (Hình 10.14, SGK trang 116).",
+     "bo_may": "thực hành cắt, gấp hình"
     },
     {
      "ma": "10.3",
      "trang": 116,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Cho hình chóp tam giác đều S.MNP có độ dài cạnh đáy bằng 6 cm, chiều cao bằng 5 cm (Hình 10.15, SGK trang 116). a) Tính diện tích tam giác MNP. b) Tính thể tích hình chóp S.MNP, biết √27 ≈ 5,2."
+     "de": "Cho hình chóp tam giác đều S.MNP có độ dài cạnh đáy bằng 6 cm, chiều cao bằng 5 cm (Hình 10.15, SGK trang 116). a) Tính diện tích tam giác MNP. b) Tính thể tích hình chóp S.MNP, biết √27 ≈ 5,2.",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "hoi": "Cho hình chóp tam giác đều S.MNP có độ dài cạnh đáy bằng 6 cm, chiều cao bằng 5 cm.\na) Tính diện tích tam giác MNP.\nb) Tính thể tích hình chóp S.MNP, biết √27 ≈ 5,2.\n(Gõ diện tích (cm²) rồi thể tích (cm³), cách nhau bằng dấu ;)",
+      "dap": [
+       "15,6;26",
+       "3√27;26"
+      ],
+      "phim": [
+       ";",
+       "√"
+      ],
+      "nhieu": [
+       "²",
+       "³"
+      ],
+      "loi_giai": [
+       "Gọi I là trung điểm của NP thì MI ⊥ NP, NI = 6 : 2 = 3",
+       "MI² = MN² − NI² = 6² − 3² = 27; MI = √27 ≈ 5,2",
+       "a) Diện tích tam giác MNP = (1/2) · 6 · √27 = 3√27; 3 · 5,2 = 15,6",
+       "b) Thể tích hình chóp = (1/3) · 15,6 · 5 = 26"
+      ]
+     }
     },
     {
      "ma": "10.4",
      "trang": 116,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Nhà bạn Thu có một đèn trang trí có dạng hình chóp tam giác đều như Hình 10.16 (SGK trang 116). Các cạnh của hình chóp đều bằng nhau và bằng 20 cm. Bạn Thu dự định sẽ dán các mặt bên của đèn bằng những tấm giấy màu. Tính diện tích giấy bạn Thu sử dụng (coi như mép dán không đáng kể). Cho biết √300 ≈ 17,32."
+     "de": "Nhà bạn Thu có một đèn trang trí có dạng hình chóp tam giác đều như Hình 10.16 (SGK trang 116). Các cạnh của hình chóp đều bằng nhau và bằng 20 cm. Bạn Thu dự định sẽ dán các mặt bên của đèn bằng những tấm giấy màu. Tính diện tích giấy bạn Thu sử dụng (coi như mép dán không đáng kể). Cho biết √300 ≈ 17,32.",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "dap": [
+       "519,6",
+       "519,6cm²"
+      ],
+      "phim": [
+       "cm²"
+      ],
+      "nhieu": [
+       "cm",
+       "cm³"
+      ],
+      "loi_giai": [
+       "Mỗi mặt bên là tam giác đều cạnh 20 cm. Gọi đèn là hình chóp S.ABC, H là trung điểm của AB thì SH là trung đoạn, AH = 20 : 2 = 10",
+       "SH² = SA² − AH² = 20² − 10² = 300; SH = √300 ≈ 17,32",
+       "Nửa chu vi đáy: p = 20 · 3 : 2 = 30",
+       "Diện tích giấy = Sxq = p · d = 30 · 17,32 = 519,6"
+      ]
+     }
     }
    ]
   },
@@ -5266,63 +7664,330 @@
      "trang": 119,
      "nhom": "Luyện tập",
      "dang": "CAU_NHO",
-     "de": "Bác Khôi làm một chiếc hộp gỗ có dạng hình chóp tứ giác đều với độ dài cạnh đáy của hình chóp là 2 m, trung đoạn của hình chóp là 3 m. Bác Khôi muốn sơn bốn mặt xung quanh của hộp gỗ. Cứ mỗi mét vuông sơn cần trả 30 000 đồng (tiền sơn và tiền công). Hỏi bác Khôi phải trả chi phí là bao nhiêu?"
+     "de": "Bác Khôi làm một chiếc hộp gỗ có dạng hình chóp tứ giác đều với độ dài cạnh đáy của hình chóp là 2 m, trung đoạn của hình chóp là 3 m. Bác Khôi muốn sơn bốn mặt xung quanh của hộp gỗ. Cứ mỗi mét vuông sơn cần trả 30 000 đồng (tiền sơn và tiền công). Hỏi bác Khôi phải trả chi phí là bao nhiêu?",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "hoi": "Bác Khôi làm một chiếc hộp gỗ có dạng hình chóp tứ giác đều với độ dài cạnh đáy của hình chóp là 2 m, trung đoạn của hình chóp là 3 m. Bác Khôi muốn sơn bốn mặt xung quanh của hộp gỗ. Cứ mỗi mét vuông sơn cần trả 30 000 đồng (tiền sơn và tiền công). Hỏi bác Khôi phải trả chi phí là bao nhiêu?\n(Gõ số, tính bằng đồng.)",
+      "dap": [
+       "360000"
+      ],
+      "phim": [],
+      "nhieu": [],
+      "loi_giai": [
+       "Nửa chu vi đáy: p = 2 · 4 : 2 = 4",
+       "Diện tích bốn mặt xung quanh: Sxq = p · d = 4 · 3 = 12",
+       "Chi phí = 12 · 30000 = 360000"
+      ]
+     }
     },
     {
      "ma": "Luyện tập 2 (tr.119)",
      "trang": 119,
      "nhom": "Luyện tập",
      "dang": "CAU_NHO",
-     "de": "Một chiếc lều có dạng hình chóp tứ giác đều, cạnh đáy bằng 2 m, chiều cao bằng 2 m (Hình 10.23, SGK trang 119). a) Thể tích không khí trong lều là bao nhiêu? b) Chiếc lều được phủ vải bốn phía và cả mặt tiếp đất. Tính diện tích vải bạt cần dùng (coi mép nối không đáng kể), biết rằng người ta đo được chiều cao của mỗi mặt bên xuất phát từ đỉnh của chiếc lều là 2,24 m."
+     "de": "Một chiếc lều có dạng hình chóp tứ giác đều, cạnh đáy bằng 2 m, chiều cao bằng 2 m (Hình 10.23, SGK trang 119). a) Thể tích không khí trong lều là bao nhiêu? b) Chiếc lều được phủ vải bốn phía và cả mặt tiếp đất. Tính diện tích vải bạt cần dùng (coi mép nối không đáng kể), biết rằng người ta đo được chiều cao của mỗi mặt bên xuất phát từ đỉnh của chiếc lều là 2,24 m.",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "hoi": "Một chiếc lều có dạng hình chóp tứ giác đều, cạnh đáy bằng 2 m, chiều cao bằng 2 m.\na) Thể tích không khí trong lều là bao nhiêu?\nb) Chiếc lều được phủ vải bốn phía và cả mặt tiếp đất. Tính diện tích vải bạt cần dùng (coi mép nối không đáng kể), biết rằng người ta đo được chiều cao của mỗi mặt bên xuất phát từ đỉnh của chiếc lều là 2,24 m.\n(Gõ thể tích (m³) rồi diện tích vải (m²), cách nhau bằng dấu ;)",
+      "dap": [
+       "8/3;12,96",
+       "2,67;12,96"
+      ],
+      "phim": [
+       ";"
+      ],
+      "nhieu": [
+       "√"
+      ],
+      "loi_giai": [
+       "a) Diện tích đáy = 2² = 4; thể tích = (1/3) · 4 · 2 = 8/3",
+       "b) Nửa chu vi đáy: p = 2 · 4 : 2 = 4; Sxq = p · d = 4 · 2,24 = 8,96",
+       "Diện tích vải = Sxq + Sđáy = 8,96 + 4 = 12,96"
+      ]
+     }
     },
     {
      "ma": "Vận dụng (tr.119)",
      "trang": 119,
      "nhom": "Vận dụng",
      "dang": "CAU_NHO",
-     "de": "Em hãy giải bài toán mở đầu: kim tự tháp Kheops ở Ai Cập có dạng hình chóp tứ giác đều cao 147 m, cạnh đáy dài 230 m. Kim tự tháp Kheops có thể tích bằng bao nhiêu?"
+     "de": "Em hãy giải bài toán mở đầu: kim tự tháp Kheops ở Ai Cập có dạng hình chóp tứ giác đều cao 147 m, cạnh đáy dài 230 m. Kim tự tháp Kheops có thể tích bằng bao nhiêu?",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "dap": [
+       "2592100",
+       "2592100m³"
+      ],
+      "phim": [
+       "m³"
+      ],
+      "nhieu": [
+       "m²",
+       "m"
+      ],
+      "loi_giai": [
+       "Diện tích đáy = 230² = 52900",
+       "V = (1/3) · S · h = (1/3) · 52900 · 147 = 2592100"
+      ]
+     }
     },
     {
      "ma": "10.5",
      "trang": 120,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Hãy cho biết đỉnh, cạnh bên, mặt bên, mặt đáy, đường cao và một trung đoạn của hình chóp tứ giác đều S.EFGH trong Hình 10.24 (SGK trang 120)."
+     "de": "Hãy cho biết đỉnh, cạnh bên, mặt bên, mặt đáy, đường cao và một trung đoạn của hình chóp tứ giác đều S.EFGH trong Hình 10.24 (SGK trang 120).",
+     "hinh": [
+      "toan8t2/10.5.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 6,
+      "hoi": "Hãy cho biết đỉnh, cạnh bên, mặt bên, mặt đáy, đường cao và một trung đoạn của hình chóp tứ giác đều S.EFGH trong Hình 10.24.",
+      "dong": [
+       {
+        "chu": "Đỉnh: {0}",
+        "o": [
+         {
+          "dung": [
+           "S"
+          ],
+          "sai": [
+           "I",
+           "K",
+           "E"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Các cạnh bên: {0}",
+        "o": [
+         {
+          "dung": [
+           "SE, SF, SG, SH"
+          ],
+          "sai": [
+           "EF, FG, GH, HE",
+           "SI, SK, SE, SF"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Các mặt bên: {0}",
+        "o": [
+         {
+          "dung": [
+           "SEF, SFG, SGH, SHE"
+          ],
+          "sai": [
+           "EFGH, SEF, SFG, SGH",
+           "SEI, SFI, SGI, SHI"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Mặt đáy: {0}",
+        "o": [
+         {
+          "dung": [
+           "EFGH"
+          ],
+          "sai": [
+           "SEF",
+           "SGH"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Đường cao: {0}",
+        "o": [
+         {
+          "dung": [
+           "SI"
+          ],
+          "sai": [
+           "SK",
+           "SE",
+           "IK"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Một trung đoạn: {0}",
+        "o": [
+         {
+          "dung": [
+           "SK"
+          ],
+          "sai": [
+           "SI",
+           "SH",
+           "SG"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "10.6",
      "trang": 120,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Trong các miếng bìa ở Hình 10.25 (SGK trang 120), hình nào gấp lại cho ta một hình chóp tứ giác đều?"
+     "de": "Trong các miếng bìa ở Hình 10.25 (SGK trang 120), hình nào gấp lại cho ta một hình chóp tứ giác đều?",
+     "hinh": [
+      "toan8t2/10.6.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "hoi": "Trong các miếng bìa ở Hình 10.25, hình nào gấp lại cho ta một hình chóp tứ giác đều?",
+      "dong": [
+       {
+        "chu": "Miếng bìa a): {0}",
+        "o": [
+         {
+          "dung": [
+           "không gấp được"
+          ],
+          "sai": [
+           "gấp được hình chóp tứ giác đều"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Miếng bìa b): {0}",
+        "o": [
+         {
+          "dung": [
+           "gấp được hình chóp tứ giác đều"
+          ],
+          "sai": [
+           "không gấp được"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Miếng bìa c): {0}",
+        "o": [
+         {
+          "dung": [
+           "không gấp được"
+          ],
+          "sai": [
+           "gấp được hình chóp tứ giác đều"
+          ],
+          "hai": true
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "10.7",
      "trang": 120,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Từ tờ giấy cắt ra một hình vuông rồi thực hiện các thao tác như Hình 10.26 (SGK trang 120) để có thể ghép được các mặt bên của hình chóp tứ giác đều."
+     "de": "Từ tờ giấy cắt ra một hình vuông rồi thực hiện các thao tác như Hình 10.26 (SGK trang 120) để có thể ghép được các mặt bên của hình chóp tứ giác đều.",
+     "bo_may": "thực hành cắt, gấp giấy"
     },
     {
      "ma": "10.8",
      "trang": 120,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Cho hình chóp tứ giác đều S.ABCD có độ dài cạnh đáy bằng 10 cm, trung đoạn bằng 13 cm (Hình 10.27, SGK trang 120). a) Tính diện tích xung quanh của hình chóp. b) Tính diện tích toàn phần của hình chóp."
+     "de": "Cho hình chóp tứ giác đều S.ABCD có độ dài cạnh đáy bằng 10 cm, trung đoạn bằng 13 cm (Hình 10.27, SGK trang 120). a) Tính diện tích xung quanh của hình chóp. b) Tính diện tích toàn phần của hình chóp.",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "hoi": "Cho hình chóp tứ giác đều S.ABCD có độ dài cạnh đáy bằng 10 cm, trung đoạn bằng 13 cm.\na) Tính diện tích xung quanh của hình chóp.\nb) Tính diện tích toàn phần của hình chóp.\n(Gõ diện tích xung quanh rồi diện tích toàn phần (cm²), cách nhau bằng dấu ;)",
+      "dap": [
+       "260;360"
+      ],
+      "phim": [
+       ";"
+      ],
+      "nhieu": [
+       "√"
+      ],
+      "loi_giai": [
+       "a) Nửa chu vi đáy: p = 10 · 4 : 2 = 20; Sxq = p · d = 20 · 13 = 260",
+       "b) Diện tích đáy = 10² = 100; Stp = Sxq + Sđáy = 260 + 100 = 360"
+      ]
+     }
     },
     {
      "ma": "10.9",
      "trang": 120,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Bánh ít trong Hình 10.28 (SGK trang 120) có dạng hình chóp tứ giác đều với độ dài cạnh đáy bằng 3 cm, chiều cao bằng 3 cm. Tính thể tích của một chiếc bánh ít."
+     "de": "Bánh ít trong Hình 10.28 (SGK trang 120) có dạng hình chóp tứ giác đều với độ dài cạnh đáy bằng 3 cm, chiều cao bằng 3 cm. Tính thể tích của một chiếc bánh ít.",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "dap": [
+       "9",
+       "9cm³"
+      ],
+      "phim": [
+       "cm³"
+      ],
+      "nhieu": [
+       "cm²",
+       "cm"
+      ],
+      "loi_giai": [
+       "Diện tích đáy = 3² = 9",
+       "V = (1/3) · 9 · 3 = 9"
+      ]
+     }
     },
     {
      "ma": "10.10",
      "trang": 120,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Một khối bê tông có dạng như Hình 10.29 (SGK trang 120). Phần dưới của khối bê tông có dạng hình hộp chữ nhật, đáy là hình vuông có cạnh 40 cm, chiều cao 25 cm. Phần trên của khối bê tông có dạng hình chóp tứ giác đều, chiều cao 100 cm. Tính thể tích của khối bê tông đó."
+     "de": "Một khối bê tông có dạng như Hình 10.29 (SGK trang 120). Phần dưới của khối bê tông có dạng hình hộp chữ nhật, đáy là hình vuông có cạnh 40 cm, chiều cao 25 cm. Phần trên của khối bê tông có dạng hình chóp tứ giác đều, chiều cao 100 cm. Tính thể tích của khối bê tông đó.",
+     "hinh": [
+      "toan8t2/10.10.webp"
+     ],
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "hoi": "Một khối bê tông có dạng như Hình 10.29. Phần dưới của khối bê tông có dạng hình hộp chữ nhật, đáy là hình vuông có cạnh 40 cm, chiều cao 25 cm. Phần trên của khối bê tông có dạng hình chóp tứ giác đều, chiều cao 100 cm. Tính thể tích của khối bê tông đó.\n(Kết quả không phải số nguyên thì viết dưới dạng phân số, hoặc số thập phân làm tròn đến hàng phần mười.)",
+      "dap": [
+       "280000/3",
+       "93333,3",
+       "280000/3cm³",
+       "93333,3cm³"
+      ],
+      "phim": [
+       "cm³"
+      ],
+      "nhieu": [
+       "cm²",
+       "cm"
+      ],
+      "loi_giai": [
+       "Thể tích phần hình hộp chữ nhật = 40 · 40 · 25 = 40000",
+       "Thể tích phần hình chóp = (1/3) · 40² · 100 = 160000/3",
+       "Thể tích khối bê tông = 40000 + 160000/3 = 280000/3; làm tròn được 93333,3"
+      ]
+     }
     }
    ]
   },
@@ -5335,21 +8000,126 @@
      "trang": 121,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Tính thể tích của hình chóp tam giác đều S.ABC, biết diện tích đáy của nó bằng 15,6 cm^2, chiều cao bằng 10 cm."
+     "de": "Tính thể tích của hình chóp tam giác đều S.ABC, biết diện tích đáy của nó bằng 15,6 cm^2, chiều cao bằng 10 cm.",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 1,
+      "dap": [
+       "52",
+       "52cm³"
+      ],
+      "phim": [
+       "cm³"
+      ],
+      "nhieu": [
+       "cm²",
+       "cm"
+      ],
+      "loi_giai": [
+       "V = (1/3) · S · h = (1/3) · 15,6 · 10 = 52"
+      ]
+     }
     },
     {
      "ma": "10.12",
      "trang": 122,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Trong các miếng bìa ở Hình 10.32 (SGK trang 122), miếng bìa nào khi gấp và dán lại thì được một hình chóp tam giác đều, miếng nào thì được một hình chóp tứ giác đều?"
+     "de": "Trong các miếng bìa ở Hình 10.32 (SGK trang 122), miếng bìa nào khi gấp và dán lại thì được một hình chóp tam giác đều, miếng nào thì được một hình chóp tứ giác đều?",
+     "hinh": [
+      "toan8t2/10.12.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "hoi": "Trong các miếng bìa ở Hình 10.32, miếng bìa nào khi gấp và dán lại thì được một hình chóp tam giác đều, miếng nào thì được một hình chóp tứ giác đều?",
+      "dong": [
+       {
+        "chu": "Miếng bìa ①: {0}",
+        "o": [
+         {
+          "dung": [
+           "không gấp được hình chóp đều nào"
+          ],
+          "sai": [
+           "gấp được hình chóp tam giác đều",
+           "gấp được hình chóp tứ giác đều"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Miếng bìa ②: {0}",
+        "o": [
+         {
+          "dung": [
+           "gấp được hình chóp tứ giác đều"
+          ],
+          "sai": [
+           "gấp được hình chóp tam giác đều",
+           "không gấp được hình chóp đều nào"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Miếng bìa ③: {0}",
+        "o": [
+         {
+          "dung": [
+           "không gấp được hình chóp đều nào"
+          ],
+          "sai": [
+           "gấp được hình chóp tam giác đều",
+           "gấp được hình chóp tứ giác đều"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Miếng bìa ④: {0}",
+        "o": [
+         {
+          "dung": [
+           "gấp được hình chóp tam giác đều"
+          ],
+          "sai": [
+           "gấp được hình chóp tứ giác đều",
+           "không gấp được hình chóp đều nào"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "10.13",
      "trang": 122,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Tính thể tích hình chóp tam giác đều A.BCD có độ dài cạnh đáy bằng 10 cm, chiều cao bằng 12 cm (Hình 10.33, SGK trang 122), biết √75 ≈ 8,66."
+     "de": "Tính thể tích hình chóp tam giác đều A.BCD có độ dài cạnh đáy bằng 10 cm, chiều cao bằng 12 cm (Hình 10.33, SGK trang 122), biết √75 ≈ 8,66.",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "dap": [
+       "173,2",
+       "173,2cm³"
+      ],
+      "phim": [
+       "cm³"
+      ],
+      "nhieu": [
+       "cm²",
+       "cm"
+      ],
+      "loi_giai": [
+       "Gọi I là trung điểm của BC thì DI ⊥ BC, BI = 10 : 2 = 5",
+       "DI² = BD² − BI² = 10² − 5² = 75; DI = √75 ≈ 8,66",
+       "Diện tích đáy = (1/2) · 10 · 8,66 = 43,3",
+       "V = (1/3) · 43,3 · 12 = 173,2"
+      ]
+     }
     },
     {
      "ma": "10.14",
@@ -5369,70 +8139,390 @@
      "trang": 123,
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
-     "de": "Trung đoạn của hình chóp tam giác đều trong Hình 10.34 (SGK trang 123) là: A. SB. B. SH. C. SI. D. HI."
+     "de": "Trung đoạn của hình chóp tam giác đều trong Hình 10.34 (SGK trang 123) là: A. SB. B. SH. C. SI. D. HI.",
+     "hinh": [
+      "toan8t2/10.15.webp"
+     ],
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Trung đoạn của hình chóp tam giác đều trong Hình 10.34 là",
+      "cac": [
+       "SB",
+       "SH",
+       "SI",
+       "HI"
+      ],
+      "dap": "C"
+     }
     },
     {
      "ma": "10.16",
      "trang": 123,
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
-     "de": "Đáy của hình chóp tứ giác đều là: A. Hình vuông. B. Hình bình hành. C. Hình thoi. D. Hình chữ nhật."
+     "de": "Đáy của hình chóp tứ giác đều là: A. Hình vuông. B. Hình bình hành. C. Hình thoi. D. Hình chữ nhật.",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Đáy của hình chóp tứ giác đều là hình nào? Chọn câu trả lời đúng nhất.",
+      "cac": [
+       "Hình vuông",
+       "Hình bình hành",
+       "Hình thoi",
+       "Hình chữ nhật"
+      ],
+      "dap": "A"
+     }
     },
     {
      "ma": "10.17",
      "trang": 123,
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
-     "de": "Diện tích xung quanh của hình chóp tam giác đều bằng: A. Tích của nửa chu vi đáy và chiều cao của hình chóp. B. Tích của nửa chu vi đáy và trung đoạn. C. Tích của chu vi đáy và trung đoạn. D. Tổng của chu vi đáy và trung đoạn."
+     "de": "Diện tích xung quanh của hình chóp tam giác đều bằng: A. Tích của nửa chu vi đáy và chiều cao của hình chóp. B. Tích của nửa chu vi đáy và trung đoạn. C. Tích của chu vi đáy và trung đoạn. D. Tổng của chu vi đáy và trung đoạn.",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Diện tích xung quanh của hình chóp tam giác đều bằng",
+      "cac": [
+       "Tích của nửa chu vi đáy và chiều cao của hình chóp",
+       "Tích của nửa chu vi đáy và trung đoạn",
+       "Tích của chu vi đáy và trung đoạn",
+       "Tổng của chu vi đáy và trung đoạn"
+      ],
+      "dap": "B"
+     }
     },
     {
      "ma": "10.18",
      "trang": 123,
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
-     "de": "Một hình chóp tam giác đều có chiều cao h, thể tích V. Diện tích đáy S là: A. S = h/V. B. S = V/h. C. S = 3V/h. D. S = 3h/V."
+     "de": "Một hình chóp tam giác đều có chiều cao h, thể tích V. Diện tích đáy S là: A. S = h/V. B. S = V/h. C. S = 3V/h. D. S = 3h/V.",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Một hình chóp tam giác đều có chiều cao h, thể tích V. Diện tích đáy S là",
+      "cac": [
+       "S = h/V",
+       "S = V/h",
+       "S = 3V/h",
+       "S = 3h/V"
+      ],
+      "dap": "C"
+     }
     },
     {
      "ma": "10.19",
      "trang": 123,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Gọi tên đỉnh, cạnh bên, cạnh đáy, đường cao và một trung đoạn của hình chóp tam giác đều, hình chóp tứ giác đều trong Hình 10.35 (SGK trang 123)."
+     "de": "Gọi tên đỉnh, cạnh bên, cạnh đáy, đường cao và một trung đoạn của hình chóp tam giác đều, hình chóp tứ giác đều trong Hình 10.35 (SGK trang 123).",
+     "hinh": [
+      "toan8t2/10.19.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 10,
+      "hoi": "Gọi tên đỉnh, cạnh bên, cạnh đáy, đường cao và một trung đoạn của hình chóp tam giác đều S.DEF (Hình 10.35a), hình chóp tứ giác đều S.ABCD (Hình 10.35b).",
+      "dong": [
+       {
+        "chu": "a) Đỉnh: {0}",
+        "o": [
+         {
+          "dung": [
+           "S"
+          ],
+          "sai": [
+           "O",
+           "H",
+           "D"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Các cạnh bên: {0}",
+        "o": [
+         {
+          "dung": [
+           "SD, SE, SF"
+          ],
+          "sai": [
+           "DE, EF, FD",
+           "SO, SH, SD"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Các cạnh đáy: {0}",
+        "o": [
+         {
+          "dung": [
+           "DE, EF, FD"
+          ],
+          "sai": [
+           "SD, SE, SF",
+           "SO, SH, SE"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Đường cao: {0}",
+        "o": [
+         {
+          "dung": [
+           "SO"
+          ],
+          "sai": [
+           "SH",
+           "SD",
+           "OH"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Một trung đoạn: {0}",
+        "o": [
+         {
+          "dung": [
+           "SH"
+          ],
+          "sai": [
+           "SO",
+           "SD",
+           "SE"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "b) Đỉnh: {0}",
+        "o": [
+         {
+          "dung": [
+           "S"
+          ],
+          "sai": [
+           "I",
+           "H",
+           "A"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Các cạnh bên: {0}",
+        "o": [
+         {
+          "dung": [
+           "SA, SB, SC, SD"
+          ],
+          "sai": [
+           "AB, BC, CD, DA",
+           "SI, SH, SA, SB"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Các cạnh đáy: {0}",
+        "o": [
+         {
+          "dung": [
+           "AB, BC, CD, DA"
+          ],
+          "sai": [
+           "SA, SB, SC, SD",
+           "AC, BD, SI, SH"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Đường cao: {0}",
+        "o": [
+         {
+          "dung": [
+           "SI"
+          ],
+          "sai": [
+           "SH",
+           "SA",
+           "IH"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Một trung đoạn: {0}",
+        "o": [
+         {
+          "dung": [
+           "SH"
+          ],
+          "sai": [
+           "SI",
+           "SD",
+           "SC"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "10.20",
      "trang": 123,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Tính diện tích xung quanh của hình chóp tam giác đều, hình chóp tứ giác đều trong Hình 10.36 (SGK trang 123)."
+     "de": "Tính diện tích xung quanh của hình chóp tam giác đều, hình chóp tứ giác đều trong Hình 10.36 (SGK trang 123).",
+     "hinh": [
+      "toan8t2/10.20.webp"
+     ],
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 6,
+      "hoi": "Tính diện tích xung quanh của hình chóp tam giác đều D.ABC (Hình 10.36a) và hình chóp tứ giác đều S.ABCD (Hình 10.36b).\n(Gõ hai kết quả theo thứ tự a, b, cách nhau bằng dấu ;. Kết quả có căn thì giữ dấu căn.)",
+      "dap": [
+       "18√28;20√119",
+       "36√7;20√119"
+      ],
+      "phim": [
+       "√",
+       ";"
+      ],
+      "nhieu": [
+       "²",
+       "π"
+      ],
+      "loi_giai": [
+       "a) H là trung điểm của AB nên BH = 12 : 2 = 6",
+       "DH² = DB² − BH² = 8² − 6² = 28; DH = √28",
+       "Nửa chu vi đáy: p = 12 · 3 : 2 = 18; Sxq = p · d = 18√28",
+       "b) H là trung điểm của CD nên HD = 10 : 2 = 5",
+       "SH² = SD² − HD² = 12² − 5² = 119; SH = √119",
+       "Nửa chu vi đáy: p = 10 · 4 : 2 = 20; Sxq = p · d = 20√119"
+      ]
+     }
     },
     {
      "ma": "10.21",
      "trang": 124,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Tính thể tích của hình chóp tứ giác đều, biết chiều cao bằng 9 cm và chu vi đáy bằng 12 cm."
+     "de": "Tính thể tích của hình chóp tứ giác đều, biết chiều cao bằng 9 cm và chu vi đáy bằng 12 cm.",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "dap": [
+       "27",
+       "27cm³"
+      ],
+      "phim": [
+       "cm³"
+      ],
+      "nhieu": [
+       "cm²",
+       "cm"
+      ],
+      "loi_giai": [
+       "Cạnh đáy = 12 : 4 = 3; diện tích đáy = 3² = 9",
+       "V = (1/3) · 9 · 9 = 27"
+      ]
+     }
     },
     {
      "ma": "10.22",
      "trang": 124,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Từ một khúc gỗ hình lập phương cạnh 30 cm (Hình 10.37, SGK trang 124), người ta cắt đi một phần gỗ để được phần còn lại là một hình chóp tứ giác đều có đáy là hình vuông cạnh 30 cm và chiều cao của hình chóp cũng bằng 30 cm. Tính thể tích của phần gỗ bị cắt đi."
+     "de": "Từ một khúc gỗ hình lập phương cạnh 30 cm (Hình 10.37, SGK trang 124), người ta cắt đi một phần gỗ để được phần còn lại là một hình chóp tứ giác đều có đáy là hình vuông cạnh 30 cm và chiều cao của hình chóp cũng bằng 30 cm. Tính thể tích của phần gỗ bị cắt đi.",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "dap": [
+       "18000",
+       "18000cm³"
+      ],
+      "phim": [
+       "cm³"
+      ],
+      "nhieu": [
+       "cm²",
+       "cm"
+      ],
+      "loi_giai": [
+       "Thể tích khối lập phương = 30³ = 27000",
+       "Thể tích hình chóp = (1/3) · 30² · 30 = 9000",
+       "Thể tích phần gỗ bị cắt đi = 27000 − 9000 = 18000"
+      ]
+     }
     },
     {
      "ma": "10.23",
      "trang": 124,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Một khối gỗ gồm đế là hình lập phương cạnh 9 cm và phần trên là một hình chóp tứ giác đều, tổng chiều cao 19 cm (Hình 10.38, SGK trang 124). Tính thể tích khối gỗ."
+     "de": "Một khối gỗ gồm đế là hình lập phương cạnh 9 cm và phần trên là một hình chóp tứ giác đều, tổng chiều cao 19 cm (Hình 10.38, SGK trang 124). Tính thể tích khối gỗ.",
+     "hinh": [
+      "toan8t2/10.23.webp"
+     ],
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "dap": [
+       "999",
+       "999cm³"
+      ],
+      "phim": [
+       "cm³"
+      ],
+      "nhieu": [
+       "cm²",
+       "cm"
+      ],
+      "loi_giai": [
+       "Chiều cao hình chóp = 19 − 9 = 10",
+       "Thể tích hình chóp = (1/3) · 9² · 10 = 270",
+       "Thể tích khối lập phương = 9³ = 729; thể tích khối gỗ = 270 + 729 = 999"
+      ]
+     }
     },
     {
      "ma": "10.24",
      "trang": 124,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Bạn Trang cắt miếng bìa hình tam giác đều cạnh dài 20 cm (Hình 10.39, SGK trang 124) và gấp lại theo các dòng kẻ (nét đứt) để được hình chóp tam giác đều. Tính diện tích xung quanh của hình chóp tam giác đều tạo thành. Cho biết √75 ≈ 8,66."
+     "de": "Bạn Trang cắt miếng bìa hình tam giác đều cạnh dài 20 cm (Hình 10.39, SGK trang 124) và gấp lại theo các dòng kẻ (nét đứt) để được hình chóp tam giác đều. Tính diện tích xung quanh của hình chóp tam giác đều tạo thành. Cho biết √75 ≈ 8,66.",
+     "hinh": [
+      "toan8t2/10.24.webp"
+     ],
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "dap": [
+       "129,9",
+       "129,9cm²"
+      ],
+      "phim": [
+       "cm²"
+      ],
+      "nhieu": [
+       "cm",
+       "cm³"
+      ],
+      "loi_giai": [
+       "Các nét đứt nối trung điểm các cạnh; cạnh của mỗi mặt = 20 : 2 = 10",
+       "d² = 10² − 5² = 75; d = √75 ≈ 8,66",
+       "Nửa chu vi đáy: p = 10 · 3 : 2 = 15; Sxq = p · d = 15 · 8,66 = 129,9"
+      ]
+     }
     }
    ]
   },
