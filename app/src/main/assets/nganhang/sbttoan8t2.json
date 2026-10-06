@@ -2,7 +2,7 @@
  "nguon": "sbttoan8t2",
  "mon": "Toán",
  "ten": "SBT Toán 8 — tập hai",
- "ban": 6,
+ "ban": 7,
  "cac_bai": [
   {
    "chuong": "Chương VI. Phân thức đại số",
@@ -7746,7 +7746,56 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Góc CBA của ΔABC ứng với góc PNM. Các cặp góc bằng nhau: góc BAC = góc NMP, góc ABC = góc MNP, góc ACB = góc MPN. Các cặp cạnh tỉ lệ: AB/MN = AC/MP = BC/NP",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "hoi": "Khi viết ΔABC ᔕ ΔMNP thì góc nào của tam giác ABC tương ứng với góc PNM của tam giác MNP? Hãy viết các cặp góc bằng nhau và các cặp cạnh tương ứng tỉ lệ của hai tam giác đã cho.",
+      "dong": [
+       {
+        "chu": "Góc PNM của tam giác MNP tương ứng với {0} của tam giác ABC",
+        "o": [
+         {
+          "dung": [
+           "góc CBA"
+          ],
+          "sai": [
+           "góc ACB",
+           "góc BAC"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Các cặp góc bằng nhau: {0}",
+        "o": [
+         {
+          "dung": [
+           "góc BAC = góc NMP, góc ABC = góc MNP, góc ACB = góc MPN"
+          ],
+          "sai": [
+           "góc BAC = góc NMP, góc ABC = góc MPN, góc ACB = góc MNP",
+           "góc BAC = góc MNP, góc ABC = góc NMP, góc ACB = góc MPN"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Các cặp cạnh tương ứng tỉ lệ: {0}",
+        "o": [
+         {
+          "dung": [
+           "AB/MN = AC/MP = BC/NP"
+          ],
+          "sai": [
+           "AB/MN = AC/NP = BC/MP",
+           "AB/MP = AC/MN = BC/NP"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "9.2",
@@ -7755,7 +7804,70 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "(3) và (4) đúng; (1) và (2) sai",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "hoi": "Cho ΔABC ᔕ ΔDEF. Những cách viết nào dưới đây đúng?",
+      "dong": [
+       {
+        "chu": "(1) ΔBCA ᔕ ΔFED: {0}",
+        "o": [
+         {
+          "dung": [
+           "Sai"
+          ],
+          "sai": [
+           "Đúng"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "(2) ΔCAB ᔕ ΔEDF: {0}",
+        "o": [
+         {
+          "dung": [
+           "Sai"
+          ],
+          "sai": [
+           "Đúng"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "(3) ΔBAC ᔕ ΔEDF: {0}",
+        "o": [
+         {
+          "dung": [
+           "Đúng"
+          ],
+          "sai": [
+           "Sai"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "(4) ΔCBA ᔕ ΔFED: {0}",
+        "o": [
+         {
+          "dung": [
+           "Đúng"
+          ],
+          "sai": [
+           "Sai"
+          ],
+          "hai": true
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "9.3",
@@ -7764,7 +7876,70 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "(2) và (3) đúng; (1) và (4) sai",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "hoi": "Với hai tam giác ABC và MNP bất kì sao cho ΔABC ᔕ ΔMNP. Những câu nào dưới đây đúng?",
+      "dong": [
+       {
+        "chu": "(1) AB = MN, AC = MP, BC = NP: {0}",
+        "o": [
+         {
+          "dung": [
+           "Sai"
+          ],
+          "sai": [
+           "Đúng"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "(2) góc A = góc M, góc B = góc N, góc C = góc P: {0}",
+        "o": [
+         {
+          "dung": [
+           "Đúng"
+          ],
+          "sai": [
+           "Sai"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "(3) AB/MN = AC/MP = BC/NP: {0}",
+        "o": [
+         {
+          "dung": [
+           "Đúng"
+          ],
+          "sai": [
+           "Sai"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "(4) góc B = góc P, góc C = góc M, góc A = góc N: {0}",
+        "o": [
+         {
+          "dung": [
+           "Sai"
+          ],
+          "sai": [
+           "Đúng"
+          ],
+          "hai": true
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "9.4",
@@ -7773,7 +7948,27 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Góc A' = 60°, góc B = 50°, góc C = góc C' = 70°",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "hoi": "Cho ΔABC ᔕ ΔA'B'C', biết góc A = 60°, góc B' = 50°. Hãy tính số đo các góc còn lại của tam giác ABC và tam giác A'B'C'.\n(Gõ số đo góc B, góc C, góc A', góc C' theo thứ tự, tính bằng độ, cách nhau bằng dấu ;)",
+      "dap": [
+       "50;70;60;70"
+      ],
+      "phim": [
+       ";"
+      ],
+      "nhieu": [
+       "√",
+       "²"
+      ],
+      "loi_giai": [
+       "ΔABC ᔕ ΔA'B'C' nên góc B = góc B' = 50° và góc A' = góc A = 60°",
+       "góc C = 180° − góc A − góc B = 180° − 60° − 50° = 70°",
+       "góc C' = góc C = 70°"
+      ]
+     }
     },
     {
      "ma": "9.5",
@@ -7782,7 +7977,28 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Tỉ số đồng dạng 5/8; chu vi ΔMNP = 32 cm",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "hoi": "Cho ΔABC ᔕ ΔMNP. Biết AB = 5 cm, MN = 8 cm và chu vi tam giác ABC bằng 20 cm. Hỏi ΔABC ᔕ ΔMNP với tỉ số đồng dạng bằng bao nhiêu và chu vi tam giác MNP bằng bao nhiêu?\n(Gõ tỉ số đồng dạng rồi chu vi tam giác MNP tính bằng cm, cách nhau bằng dấu ;)",
+      "dap": [
+       "5/8;32",
+       "0,625;32"
+      ],
+      "phim": [
+       ";"
+      ],
+      "nhieu": [
+       "√",
+       "²"
+      ],
+      "loi_giai": [
+       "ΔABC ᔕ ΔMNP nên AB/MN = BC/NP = CA/PM = 5/8; tỉ số đồng dạng là 5/8",
+       "Suy ra (AB + BC + CA)/(MN + NP + PM) = 5/8, tức là chu vi ΔABC : chu vi ΔMNP = 5/8",
+       "Chu vi ΔMNP (cm) = 20 : (5/8) = 32"
+      ]
+     }
     },
     {
      "ma": "9.6",
@@ -7791,7 +8007,57 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Góc A = góc F, góc B = góc D, góc C = góc E; ΔABC ᔕ ΔFDE",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "hoi": "Cho tam giác ABC đồng dạng với một tam giác có ba đỉnh là D, E, F. Biết rằng góc A > góc B = 60° = góc D > góc E, hãy chỉ ra các đỉnh tương ứng và viết đúng kí hiệu đồng dạng của hai tam giác đó.",
+      "dong": [
+       {
+        "chu": "Đỉnh A tương ứng với đỉnh {0}",
+        "o": [
+         {
+          "dung": [
+           "F"
+          ],
+          "sai": [
+           "D",
+           "E"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Đỉnh C tương ứng với đỉnh {0}",
+        "o": [
+         {
+          "dung": [
+           "E"
+          ],
+          "sai": [
+           "D",
+           "F"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Kí hiệu đồng dạng: ΔABC ᔕ {0}",
+        "o": [
+         {
+          "dung": [
+           "ΔFDE"
+          ],
+          "sai": [
+           "ΔDEF",
+           "ΔDFE",
+           "ΔFED"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "9.7",
@@ -7800,7 +8066,57 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Đỉnh tương ứng: A với P, B với N, C với M; ΔABC ᔕ ΔPNM",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "hoi": "Cho tam giác không cân ABC đồng dạng với một tam giác có ba đỉnh là M, N, P. Biết rằng AB/NP = AC/PM = BC/MN, hãy chỉ ra các đỉnh tương ứng và viết đúng kí hiệu đồng dạng của hai tam giác đó.",
+      "dong": [
+       {
+        "chu": "Đỉnh A tương ứng với đỉnh {0}",
+        "o": [
+         {
+          "dung": [
+           "P"
+          ],
+          "sai": [
+           "M",
+           "N"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Đỉnh B tương ứng với đỉnh {0}",
+        "o": [
+         {
+          "dung": [
+           "N"
+          ],
+          "sai": [
+           "M",
+           "P"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Kí hiệu đồng dạng: ΔABC ᔕ {0}",
+        "o": [
+         {
+          "dung": [
+           "ΔPNM"
+          ],
+          "sai": [
+           "ΔNPM",
+           "ΔMNP",
+           "ΔPMN"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "9.8",
@@ -7809,7 +8125,59 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "ΔCPQ ᔕ ΔCAB; ΔCMN ᔕ ΔCAB; ΔCPQ ᔕ ΔCMN",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "hinh": [
+      "sbttoan8t2/H.9.3.tr52.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "hoi": "Trong Hình 9.3 (hai đoạn thẳng AM và BN cắt nhau tại C; P nằm trên đoạn CM, Q nằm trên đoạn CN), cho PQ và MN cùng song song với AB. Hãy liệt kê ba cặp tam giác phân biệt đồng dạng với nhau.",
+      "dong": [
+       {
+        "chu": "Vì PQ // AB nên ΔCPQ ᔕ {0}",
+        "o": [
+         {
+          "dung": [
+           "ΔCAB"
+          ],
+          "sai": [
+           "ΔCBA",
+           "ΔACB"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Vì MN // AB nên ΔCMN ᔕ {0}",
+        "o": [
+         {
+          "dung": [
+           "ΔCAB"
+          ],
+          "sai": [
+           "ΔCBA",
+           "ΔBAC"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Vì PQ // MN nên ΔCPQ ᔕ {0}",
+        "o": [
+         {
+          "dung": [
+           "ΔCMN"
+          ],
+          "sai": [
+           "ΔCNM",
+           "ΔMCN"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "9.9",
@@ -7818,7 +8186,59 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "EF là đường trung bình của ΔABC nên EF // BC, suy ra ΔAEF ᔕ ΔABC với tỉ số AE/AB = 1/2. ABCD là hình bình hành nên ΔABC = ΔCDA (c.c.c), tức ΔABC ᔕ ΔCDA tỉ số 1. Do đó ΔAEF ᔕ ΔCDA (tỉ số 1/2).",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 5,
+      "buoc": [
+       "E, F lần lượt là trung điểm của AB, AC nên EF là đường trung bình của ΔABC, suy ra EF // BC",
+       "EF // BC nên ΔAEF ᔕ ΔABC",
+       "ABCD là hình bình hành nên AB = CD, BC = DA; lại có cạnh AC chung nên ΔABC = ΔCDA (c.c.c)",
+       "Suy ra ΔABC ᔕ ΔCDA (tỉ số đồng dạng bằng 1)",
+       "Từ ΔAEF ᔕ ΔABC và ΔABC ᔕ ΔCDA suy ra ΔAEF ᔕ ΔCDA"
+      ],
+      "nhieu": [
+       "ABCD là hình bình hành nên AB = CD, BC = DA; lại có cạnh AC chung nên ΔABC = ΔACD (c.c.c)",
+       "EF // BC nên ΔAEF ᔕ ΔACB"
+      ],
+      "thu_tu_khac": [
+       [
+        0,
+        2,
+        1,
+        3,
+        4
+       ],
+       [
+        0,
+        2,
+        3,
+        1,
+        4
+       ],
+       [
+        2,
+        0,
+        1,
+        3,
+        4
+       ],
+       [
+        2,
+        0,
+        3,
+        1,
+        4
+       ],
+       [
+        2,
+        3,
+        0,
+        1,
+        4
+       ]
+      ]
+     }
     },
     {
      "ma": "9.10",
@@ -7827,7 +8247,38 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Lấy E, F là trung điểm của AB, AC; ΔABC ᔕ ΔAEF tỉ số 2. Xét ΔAEF và ΔMNP: góc AEF = góc ABC = góc MNP, EF = BC/2 = NP, góc AFE = góc ACB = góc ABC = góc MNP = góc MPN, nên ΔAEF = ΔMNP (g.c.g). Vậy ΔABC ᔕ ΔMNP với tỉ số đồng dạng 2.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 5,
+      "buoc": [
+       "Gọi E, F lần lượt là trung điểm của AB, AC thì EF là đường trung bình của ΔABC: EF // BC và EF = BC : 2",
+       "EF // BC nên ΔAEF ᔕ ΔABC, góc AEF = góc ABC và góc AFE = góc ACB",
+       "ΔABC cân tại A, ΔMNP cân tại M nên góc ACB = góc ABC = góc MNP = góc MPN",
+       "ΔAEF và ΔMNP có góc AEF = góc MNP, EF = BC : 2 = NP, góc AFE = góc MPN nên ΔAEF = ΔMNP (g.c.g)",
+       "Do đó ΔABC ᔕ ΔMNP với tỉ số đồng dạng BC/NP = 2"
+      ],
+      "nhieu": [
+       "ΔABC cân tại A, ΔMNP cân tại M nên góc BAC = góc ABC = góc MNP = góc NMP",
+       "Do đó ΔABC ᔕ ΔMNP với tỉ số đồng dạng NP/BC = 1/2"
+      ],
+      "thu_tu_khac": [
+       [
+        0,
+        2,
+        1,
+        3,
+        4
+       ],
+       [
+        2,
+        0,
+        1,
+        3,
+        4
+       ]
+      ]
+     }
     },
     {
      "ma": "9.11a",
@@ -7836,7 +8287,21 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "AM/AB = AN/AC = 2/3 nên theo định lí Thalès đảo MN // BC, suy ra ΔAMN ᔕ ΔABC với tỉ số đồng dạng 2/3.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 4,
+      "buoc": [
+       "AM/AB = 4/6 = 2/3; AN/AC = 6/9 = 2/3",
+       "Suy ra AM/AB = AN/AC, nên MN // BC (định lí Thalès đảo)",
+       "MN // BC nên ΔAMN ᔕ ΔABC",
+       "Tỉ số đồng dạng của ΔAMN với ΔABC là AM/AB = 2/3"
+      ],
+      "nhieu": [
+       "AM/AB = 4/6 = 2/3; AN/AC = 6/9 = 3/2",
+       "Tỉ số đồng dạng của ΔAMN với ΔABC là AB/AM = 3/2"
+      ]
+     }
     },
     {
      "ma": "9.11b",
@@ -7845,7 +8310,21 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Lấy M, N như câu a (AM = 4 cm, AN = 6 cm). ΔAPB và ΔAMN có AP = AM = 4 cm, góc A chung, AB = AN = 6 cm nên ΔAPB = ΔAMN (c.g.c). Mà ΔAMN ᔕ ΔABC nên ΔAPB ᔕ ΔABC. (Cách khác: AP/AB = AB/AC = 2/3, góc A chung, trường hợp c.g.c.)",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 4,
+      "buoc": [
+       "Lấy M trên cạnh AB, N trên cạnh AC sao cho AM = 4 cm, AN = 6 cm thì AM/AB = AN/AC = 2/3, nên MN // BC và ΔAMN ᔕ ΔABC",
+       "ΔAPB và ΔAMN có AP = AM = 4 cm, góc PAB = góc MAN (góc chung), AB = AN = 6 cm",
+       "Nên ΔAPB = ΔAMN (c.g.c)",
+       "Vậy ΔAPB ᔕ ΔABC"
+      ],
+      "nhieu": [
+       "Nên ΔAPB = ΔANM (c.g.c)",
+       "Vậy ΔAPB ᔕ ΔACB"
+      ]
+     }
     }
    ]
   },
@@ -7860,7 +8339,70 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "(1) đồng dạng (c.c.c) vì 2/6 = 3/9 = 4/12; (2) không đồng dạng vì 3/6 = 5/10 ≠ 6/11; (3) không đồng dạng vì 2/2 ≠ 3/2; (4) đồng dạng (c.c.c) vì 4/3 = 4/3 = 4/3",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "hoi": "Hai tam giác có độ dài ba cạnh như sau có đồng dạng không? Vì sao?",
+      "dong": [
+       {
+        "chu": "(1) 2 cm, 3 cm, 4 cm và 6 cm, 9 cm, 12 cm: {0}",
+        "o": [
+         {
+          "dung": [
+           "Đồng dạng (c.c.c) vì 2/6 = 3/9 = 4/12"
+          ],
+          "sai": [
+           "Không đồng dạng vì 2/12 ≠ 4/6",
+           "Không đồng dạng vì 6 − 2 ≠ 9 − 3"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "(2) 3 cm, 5 cm, 6 cm và 6 cm, 10 cm, 11 cm: {0}",
+        "o": [
+         {
+          "dung": [
+           "Không đồng dạng vì 3/6 = 5/10 ≠ 6/11"
+          ],
+          "sai": [
+           "Đồng dạng (c.c.c) vì 3/6 = 5/10",
+           "Đồng dạng (c.c.c) vì 3/6 = 5/10 = 6/11"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "(3) 2 cm, 3 cm, 3 cm và 2 cm, 2 cm, 3 cm: {0}",
+        "o": [
+         {
+          "dung": [
+           "Không đồng dạng vì 2/2 ≠ 3/2"
+          ],
+          "sai": [
+           "Đồng dạng vì hai tam giác đều là tam giác cân",
+           "Không đồng dạng vì chu vi hai tam giác khác nhau"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "(4) 4 cm, 4 cm, 4 cm và 3 cm, 3 cm, 3 cm: {0}",
+        "o": [
+         {
+          "dung": [
+           "Đồng dạng (c.c.c) vì 4/3 = 4/3 = 4/3"
+          ],
+          "sai": [
+           "Không đồng dạng vì 4 ≠ 3",
+           "Đồng dạng vì 4 − 3 = 4 − 3 = 4 − 3"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "9.13",
@@ -7869,16 +8411,45 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Từ AB/DE = AC/DF = 3/4 suy ra 3/4 = (AB + AC)/(DE + DF) = (15 − BC)/(20 − EF), nên 60 − 3EF = 60 − 4BC, hay BC/EF = 3/4. Vậy AB/DE = AC/DF = BC/EF, do đó ΔABC ᔕ ΔDEF (c.c.c).",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 5,
+      "buoc": [
+       "Từ AB/DE = AC/DF = 3/4 suy ra (AB + AC)/(DE + DF) = 3/4 (tính chất của dãy tỉ số bằng nhau)",
+       "AB + AC = 15 − BC và DE + DF = 20 − EF, nên (15 − BC)/(20 − EF) = 3/4",
+       "Suy ra 4(15 − BC) = 3(20 − EF), tức là 60 − 4BC = 60 − 3EF, hay 4BC = 3EF",
+       "Do đó BC/EF = 3/4",
+       "Vậy AB/DE = AC/DF = BC/EF nên ΔABC ᔕ ΔDEF (c.c.c)"
+      ],
+      "nhieu": [
+       "Từ AB/DE = AC/DF = 3/4 suy ra (AB + AC)/(DE + DF) = 3/4 + 3/4 = 3/2",
+       "Do đó BC/EF = 4/3"
+      ]
+     }
     },
     {
      "ma": "9.14",
-     "de": "Cho hai tam giác ABC và MNP thoả mãn 2AB = 3AC = 4BC và DE = 6 cm, DF = 4 cm, EF = 3 cm. Chứng minh rằng ΔABC ᔕ ΔMNP. (Sách in lẫn tên: DE, DF, EF là cạnh của tam giác DEF, lời giải cuối sách chứng minh ΔABC ᔕ ΔDEF.)",
+     "de": "Cho hai tam giác ABC và DEF thoả mãn 2AB = 3AC = 4BC và DE = 6 cm, DF = 4 cm, EF = 3 cm. Chứng minh rằng ΔABC ᔕ ΔDEF.",
      "trang": 55,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Từ DE = 6 cm, DF = 4 cm, EF = 3 cm suy ra 2DE = 3DF = 4EF (= 12). Kết hợp 2AB = 3AC = 4BC được AB/DE = AC/DF = BC/EF. Vậy ΔABC ᔕ ΔDEF (c.c.c).",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 4,
+      "buoc": [
+       "2DE = 2 · 6 = 12; 3DF = 3 · 4 = 12; 4EF = 4 · 3 = 12",
+       "Chia các vế của 2AB = 3AC = 4BC lần lượt cho 2DE = 3DF = 4EF (cùng bằng 12) được 2AB/(2DE) = 3AC/(3DF) = 4BC/(4EF)",
+       "Suy ra AB/DE = AC/DF = BC/EF",
+       "Vậy ΔABC ᔕ ΔDEF (c.c.c)"
+      ],
+      "nhieu": [
+       "Suy ra AB/EF = AC/DF = BC/DE",
+       "Vậy ΔABC ᔕ ΔEDF (c.c.c)"
+      ]
+     }
     },
     {
      "ma": "9.15",
@@ -7887,7 +8458,31 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "OM/OA = ON/OB = 1/3 nên MN // AB (Thalès đảo), ΔOMN ᔕ ΔOAB, suy ra MN/AB = 1/3. Tương tự MP/AC = 1/3, NP/BC = 1/3. Vậy AB/MN = AC/MP = BC/NP = 3, ΔABC ᔕ ΔMNP (c.c.c) với tỉ số đồng dạng 3.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 5,
+      "buoc": [
+       "OM/OA = ON/OB = 1/3 nên MN // AB (định lí Thalès đảo trong ΔOAB), do đó ΔOMN ᔕ ΔOAB và MN/AB = OM/OA = 1/3",
+       "Tương tự, OM/OA = OP/OC = 1/3 nên MP // AC và MP/AC = 1/3",
+       "Tương tự, ON/OB = OP/OC = 1/3 nên NP // BC và NP/BC = 1/3",
+       "Suy ra AB/MN = AC/MP = BC/NP = 3",
+       "Vậy ΔABC ᔕ ΔMNP (c.c.c) với tỉ số đồng dạng 3"
+      ],
+      "nhieu": [
+       "OM/OA = ON/OB = 1/3 nên MN // AB (định lí Thalès đảo trong ΔOAB), do đó ΔOMN ᔕ ΔOAB và MN/AB = OM/MA = 1/2",
+       "Vậy ΔABC ᔕ ΔMNP (c.c.c) với tỉ số đồng dạng 1/3"
+      ],
+      "thu_tu_khac": [
+       [
+        0,
+        2,
+        1,
+        3,
+        4
+       ]
+      ]
+     }
     },
     {
      "ma": "9.16",
@@ -7896,7 +8491,21 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "NP, PM, MN là các đường trung bình của ΔABC nên NP/BC = PM/CA = MN/AB = 1/2. Do đó ΔMNP ᔕ ΔABC (c.c.c) tỉ số 1/2, tức ΔABC ᔕ ΔMNP với tỉ số đồng dạng 2.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 4,
+      "buoc": [
+       "N, P lần lượt là trung điểm của CA, AB nên NP là đường trung bình của ΔABC, NP = BC : 2",
+       "Tương tự, PM = CA : 2 và MN = AB : 2",
+       "Suy ra AB/MN = BC/NP = CA/PM = 2",
+       "Vậy ΔABC ᔕ ΔMNP (c.c.c) với tỉ số đồng dạng 2"
+      ],
+      "nhieu": [
+       "Suy ra AB/NP = BC/PM = CA/MN = 2",
+       "Vậy ΔABC ᔕ ΔMNP (c.c.c) với tỉ số đồng dạng 1/2"
+      ]
+     }
     },
     {
      "ma": "9.17",
@@ -7905,7 +8514,21 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "AB/BD = AD/BC = BD/DC = 1/2 (2/4 = 3/6 = 4/8) nên ΔABD ᔕ ΔBDC (c.c.c). Suy ra góc ABD = góc BDC, hai góc so le trong bằng nhau nên AB // CD.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 4,
+      "buoc": [
+       "AB/BD = 2/4 = 1/2; AD/BC = 3/6 = 1/2; BD/DC = 4/8 = 1/2",
+       "Suy ra AB/BD = AD/BC = BD/DC nên ΔABD ᔕ ΔBDC (c.c.c)",
+       "Do đó góc ABD = góc BDC",
+       "Hai góc ABD và BDC ở vị trí so le trong và bằng nhau nên AB // CD"
+      ],
+      "nhieu": [
+       "Do đó góc ABD = góc DBC",
+       "Suy ra AB/BD = AD/BC = BD/DC nên ΔABD ᔕ ΔBCD (c.c.c)"
+      ]
+     }
     },
     {
      "ma": "9.18",
@@ -7914,7 +8537,27 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "MN = 6 cm, NP = 7,5 cm, MP = 9 cm (tỉ số đồng dạng 3/2)",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "hoi": "Cho tam giác ABC có độ dài các cạnh là AB = 4 cm, BC = 5 cm, CA = 6 cm. Tam giác MNP đồng dạng với tam giác ABC và có độ dài cạnh lớn nhất bằng 9 cm. Hãy cho biết độ dài các cạnh MN, MP, NP của tam giác MNP.\n(Gõ MN, MP, NP theo thứ tự, tính bằng cm, cách nhau bằng dấu ;)",
+      "dap": [
+       "6;9;7,5"
+      ],
+      "phim": [
+       ";"
+      ],
+      "nhieu": [
+       "√",
+       "²"
+      ],
+      "loi_giai": [
+       "ΔMNP ᔕ ΔABC nên MN/AB = NP/BC = PM/CA = k",
+       "Cạnh lớn nhất của ΔABC là CA = 6 cm nên cạnh lớn nhất của ΔMNP là MP = 9 cm; k = 9/6 = 3/2",
+       "MN = 4 · 3/2 = 6; NP = 5 · 3/2 = 7,5"
+      ]
+     }
     },
     {
      "ma": "9.19",
@@ -7923,7 +8566,98 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "ΔABC ᔕ ΔEFD (c.g.c); (2), (3), (6) đúng; (1), (4), (5) sai",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 6,
+      "hoi": "Với hai tam giác bất kì ABC và DEF thoả mãn AB/EF = BC/DF, góc ABC = góc DFE. Những khẳng định nào sau đây là đúng?",
+      "dong": [
+       {
+        "chu": "(1) ΔABC ᔕ ΔDEF: {0}",
+        "o": [
+         {
+          "dung": [
+           "Sai"
+          ],
+          "sai": [
+           "Đúng"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "(2) ΔCAB ᔕ ΔDEF: {0}",
+        "o": [
+         {
+          "dung": [
+           "Đúng"
+          ],
+          "sai": [
+           "Sai"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "(3) ΔABC ᔕ ΔEFD: {0}",
+        "o": [
+         {
+          "dung": [
+           "Đúng"
+          ],
+          "sai": [
+           "Sai"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "(4) ΔBCA ᔕ ΔEFD: {0}",
+        "o": [
+         {
+          "dung": [
+           "Sai"
+          ],
+          "sai": [
+           "Đúng"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "(5) ΔABC ᔕ ΔFDE: {0}",
+        "o": [
+         {
+          "dung": [
+           "Sai"
+          ],
+          "sai": [
+           "Đúng"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "(6) ΔBAC ᔕ ΔFED: {0}",
+        "o": [
+         {
+          "dung": [
+           "Đúng"
+          ],
+          "sai": [
+           "Sai"
+          ],
+          "hai": true
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "9.20",
@@ -7932,7 +8666,98 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "ΔABC ᔕ ΔPMN (g.g); (2), (4), (5) đúng; (1), (3), (6) sai",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 6,
+      "hoi": "Với hai tam giác bất kì ABC và MNP thoả mãn góc ABC = góc NMP, góc ACB = góc MNP. Những khẳng định nào sau đây là đúng?",
+      "dong": [
+       {
+        "chu": "(1) ΔABC ᔕ ΔMNP: {0}",
+        "o": [
+         {
+          "dung": [
+           "Sai"
+          ],
+          "sai": [
+           "Đúng"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "(2) ΔBCA ᔕ ΔMNP: {0}",
+        "o": [
+         {
+          "dung": [
+           "Đúng"
+          ],
+          "sai": [
+           "Sai"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "(3) ΔABC ᔕ ΔNPM: {0}",
+        "o": [
+         {
+          "dung": [
+           "Sai"
+          ],
+          "sai": [
+           "Đúng"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "(4) ΔCAB ᔕ ΔNPM: {0}",
+        "o": [
+         {
+          "dung": [
+           "Đúng"
+          ],
+          "sai": [
+           "Sai"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "(5) ΔABC ᔕ ΔPMN: {0}",
+        "o": [
+         {
+          "dung": [
+           "Đúng"
+          ],
+          "sai": [
+           "Sai"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "(6) ΔBAC ᔕ ΔMNP: {0}",
+        "o": [
+         {
+          "dung": [
+           "Sai"
+          ],
+          "sai": [
+           "Đúng"
+          ],
+          "hai": true
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "9.21a",
@@ -7941,7 +8766,20 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Từ AM · AB = AN · AC suy ra AM/AC = AN/AB. ΔAMN và ΔACB có AM/AC = AN/AB, góc MAN = góc BAC (chung) nên ΔAMN ᔕ ΔACB (c.g.c).",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 3,
+      "buoc": [
+       "Từ AM · AB = AN · AC suy ra AM/AC = AN/AB",
+       "ΔAMN và ΔACB có góc MAN = góc CAB (góc chung) và AM/AC = AN/AB",
+       "Nên ΔAMN ᔕ ΔACB (c.g.c)"
+      ],
+      "nhieu": [
+       "Từ AM · AB = AN · AC suy ra AM/AN = AB/AC",
+       "Nên ΔAMN ᔕ ΔABC (c.g.c)"
+      ]
+     }
     },
     {
      "ma": "9.21b",
@@ -7950,7 +8788,22 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Từ ΔAMN ᔕ ΔACB: góc AMN = góc ACB và AM/AC = MN/CB. Vì ME = MN/2, CF = CB/2 nên AM/AC = ME/CF. ΔAME và ΔACF có AM/AC = ME/CF, góc AME = góc AMN = góc ACB = góc ACF nên ΔAME ᔕ ΔACF (c.g.c). Suy ra góc EAM = góc FAC, tức góc EAB = góc FAC.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 5,
+      "buoc": [
+       "Từ AM · AB = AN · AC suy ra AM/AC = AN/AB; lại có góc MAN = góc CAB nên ΔAMN ᔕ ΔACB (c.g.c)",
+       "Suy ra góc AMN = góc ACB và AM/AC = MN/CB",
+       "E, F lần lượt là trung điểm của MN, BC nên ME = MN : 2, CF = CB : 2, suy ra ME/CF = MN/CB = AM/AC",
+       "ΔAME và ΔACF có góc AME = góc ACF (vì góc AMN = góc ACB) và AM/AC = ME/CF nên ΔAME ᔕ ΔACF (c.g.c)",
+       "Suy ra góc MAE = góc CAF, tức là góc EAB = góc FAC"
+      ],
+      "nhieu": [
+       "ΔAME và ΔACF có góc AME = góc ACF (vì góc AMN = góc ACB) và AM/AC = ME/CF nên ΔAME ᔕ ΔAFC (c.g.c)",
+       "Suy ra góc AMN = góc ABC và AM/AC = MN/CB"
+      ]
+     }
     },
     {
      "ma": "9.22a",
@@ -7959,7 +8812,21 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "ΔACB và ΔAPQ có góc BAC = góc QAP (đối đỉnh), góc ACB = góc APQ (giả thiết) nên ΔACB ᔕ ΔAPQ (g.g). Suy ra AB/AQ = AC/AP, hay AP · AB = AQ · AC.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 4,
+      "buoc": [
+       "ΔAPQ và ΔACB có góc PAQ = góc CAB (hai góc đối đỉnh) và góc APQ = góc ACB (giả thiết)",
+       "Nên ΔAPQ ᔕ ΔACB (g.g)",
+       "Suy ra AP/AC = AQ/AB",
+       "Do đó AP · AB = AQ · AC"
+      ],
+      "nhieu": [
+       "Nên ΔAPQ ᔕ ΔABC (g.g)",
+       "Suy ra AP/AB = AQ/AC"
+      ]
+     }
     },
     {
      "ma": "9.22b",
@@ -7968,7 +8835,21 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Từ AP · AB = AQ · AC suy ra AP/AQ = AC/AB. ΔAPC và ΔAQB có góc PAC = góc QAB (đối đỉnh), AP/AQ = AC/AB nên ΔAPC ᔕ ΔAQB (c.g.c).",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 4,
+      "buoc": [
+       "ΔAPQ và ΔACB có góc PAQ = góc CAB (hai góc đối đỉnh) và góc APQ = góc ACB nên ΔAPQ ᔕ ΔACB (g.g)",
+       "Suy ra AP/AC = AQ/AB, hay AP/AQ = AC/AB",
+       "ΔAPC và ΔAQB có góc PAC = góc QAB (hai góc đối đỉnh) và AP/AQ = AC/AB",
+       "Nên ΔAPC ᔕ ΔAQB (c.g.c)"
+      ],
+      "nhieu": [
+       "Suy ra AP/AC = AQ/AB, hay AP/AQ = AB/AC",
+       "Nên ΔAPC ᔕ ΔABQ (c.g.c)"
+      ]
+     }
     },
     {
      "ma": "9.23a",
@@ -7977,7 +8858,21 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "ME, BF là phân giác nên góc NME = góc AMN/2, góc CBF = góc ABC/2. MN // BC nên góc AMN = góc ABC (đồng vị), suy ra góc NME = góc CBF. ΔMEN và ΔBFC có góc MNE = góc BCF (đồng vị), góc NME = góc CBF nên ΔMEN ᔕ ΔBFC (g.g).",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 4,
+      "buoc": [
+       "MN // BC nên góc AMN = góc ABC và góc MNA = góc BCA (các cặp góc đồng vị)",
+       "ME, BF là phân giác nên góc NME = góc AMN : 2 và góc CBF = góc ABC : 2, suy ra góc NME = góc CBF",
+       "ΔMEN và ΔBFC có góc NME = góc CBF và góc MNE = góc BCF",
+       "Nên ΔMEN ᔕ ΔBFC (g.g)"
+      ],
+      "nhieu": [
+       "Nên ΔMEN ᔕ ΔBCF (g.g)",
+       "ME, BF là phân giác nên góc NME = góc AMN : 2 và góc CBF = góc ABC : 2, suy ra góc NME = góc BCF"
+      ]
+     }
     },
     {
      "ma": "9.23b",
@@ -7986,7 +8881,45 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Góc AME = góc AMN/2 = góc ABC/2 = góc ABF nên ME // BF (đồng vị). Theo định lí Thalès: AE/AF = AM/AB. Mặt khác MN // BC nên ΔAMN ᔕ ΔABC, AM/AB = MN/BC. Vậy AE/AF = MN/BC.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 5,
+      "buoc": [
+       "ME, BF là phân giác và góc AMN = góc ABC (đồng vị, MN // BC) nên góc AME = góc AMN : 2 = góc ABC : 2 = góc ABF",
+       "Hai góc AME và ABF ở vị trí đồng vị và bằng nhau nên ME // BF",
+       "Trong ΔABF có ME // BF nên AE/AF = AM/AB (định lí Thalès)",
+       "MN // BC nên ΔAMN ᔕ ΔABC, suy ra AM/AB = MN/BC",
+       "Vậy AE/AF = MN/BC"
+      ],
+      "nhieu": [
+       "Trong ΔABF có ME // BF nên AE/AF = AM/MB (định lí Thalès)",
+       "Hai góc AME và ABF ở vị trí so le trong và bằng nhau nên ME // BF"
+      ],
+      "thu_tu_khac": [
+       [
+        0,
+        1,
+        3,
+        2,
+        4
+       ],
+       [
+        0,
+        3,
+        1,
+        2,
+        4
+       ],
+       [
+        3,
+        0,
+        1,
+        2,
+        4
+       ]
+      ]
+     }
     },
     {
      "ma": "9.24",
@@ -7995,7 +8928,29 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "ΔABD và ΔBDC có AB/BD = BD/DC = 1/2 (2/4 = 4/8), góc ABD = góc BDC (so le trong, AB // CD) nên ΔABD ᔕ ΔBDC (c.g.c). Suy ra AD/BC = AB/BD = 1/2, vậy BC = 2AD.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 4,
+      "buoc": [
+       "AB // CD nên góc ABD = góc BDC (so le trong)",
+       "AB/BD = 2/4 = 1/2; BD/DC = 4/8 = 1/2; suy ra AB/BD = BD/DC",
+       "ΔABD và ΔBDC có góc ABD = góc BDC và AB/BD = BD/DC nên ΔABD ᔕ ΔBDC (c.g.c)",
+       "Suy ra AD/BC = AB/BD = 1/2, vậy BC = 2AD"
+      ],
+      "nhieu": [
+       "ΔABD và ΔBDC có góc ABD = góc BDC và AB/BD = BD/DC nên ΔABD ᔕ ΔDBC (c.g.c)",
+       "Suy ra AD/BC = AB/DC = 1/4, vậy BC = 4AD"
+      ],
+      "thu_tu_khac": [
+       [
+        1,
+        0,
+        2,
+        3
+       ]
+      ]
+     }
     },
     {
      "ma": "9.25a",
@@ -8004,7 +8959,27 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "AB song song với cạnh DC của ΔEDC nên ΔEAB ᔕ ΔEDC. Tương tự, AB song song với cạnh CD của ΔFCD nên ΔFAB ᔕ ΔFCD.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 3,
+      "buoc": [
+       "AB song song với cạnh DC của ΔEDC (A thuộc ED, B thuộc EC) nên ΔEAB ᔕ ΔEDC",
+       "AB // CD nên góc FAB = góc FCD và góc FBA = góc FDC (các cặp góc so le trong)",
+       "Nên ΔFAB ᔕ ΔFCD (g.g)"
+      ],
+      "nhieu": [
+       "AB song song với cạnh DC của ΔEDC (A thuộc ED, B thuộc EC) nên ΔEAB ᔕ ΔECD",
+       "Nên ΔFAB ᔕ ΔFDC (g.g)"
+      ],
+      "thu_tu_khac": [
+       [
+        1,
+        2,
+        0
+       ]
+      ]
+     }
     },
     {
      "ma": "9.25b",
@@ -8013,7 +8988,35 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Từ ΔEAB ᔕ ΔEDC: EA/ED = AB/DC = AM/DN; lại có góc EAM = góc EDN (đồng vị) nên ΔEAM ᔕ ΔEDN (c.g.c), góc AEM = góc DEN, suy ra E, M, N thẳng hàng. Từ ΔFAB ᔕ ΔFCD: FA/FC = AB/CD = AM/CN; góc FAM = góc FCN (so le trong) nên ΔFAM ᔕ ΔFCN, góc AFM = góc CFN, suy ra F, M, N thẳng hàng. Vậy M, N, E, F thẳng hàng.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 7,
+      "buoc": [
+       "AB // DC nên ΔEAB ᔕ ΔEDC, suy ra EA/ED = AB/DC = (AB : 2)/(DC : 2) = AM/DN",
+       "ΔEAM và ΔEDN có góc EAM = góc EDN (đồng vị, AB // DC) và EA/ED = AM/DN nên ΔEAM ᔕ ΔEDN (c.g.c)",
+       "Suy ra góc AEM = góc DEN, nên hai tia EM, EN trùng nhau, tức là E, M, N thẳng hàng",
+       "AB // CD nên ΔFAB ᔕ ΔFCD, suy ra FA/FC = AB/CD = (AB : 2)/(CD : 2) = AM/CN",
+       "ΔFAM và ΔFCN có góc FAM = góc FCN (so le trong, AB // CD) và FA/FC = AM/CN nên ΔFAM ᔕ ΔFCN (c.g.c)",
+       "Suy ra góc AFM = góc CFN; mà A, F, C thẳng hàng nên hai góc này đối đỉnh, tức là M, F, N thẳng hàng",
+       "Vậy bốn điểm M, N, E, F thẳng hàng"
+      ],
+      "nhieu": [
+       "ΔEAM và ΔEDN có góc EAM = góc EDN (đồng vị, AB // DC) và EA/ED = AM/DN nên ΔEAM ᔕ ΔEND (c.g.c)",
+       "Suy ra góc AFM = góc CFN, nên hai tia FM, FN trùng nhau"
+      ],
+      "thu_tu_khac": [
+       [
+        3,
+        4,
+        5,
+        0,
+        1,
+        2,
+        6
+       ]
+      ]
+     }
     },
     {
      "ma": "9.26",
@@ -8022,7 +9025,21 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "ΔABD và ΔACB có AB/AC = AD/AB = 2/3 (6/9 = 4/6), góc BAD = góc CAB (chung) nên ΔABD ᔕ ΔACB (c.g.c). Suy ra BD/BC = AB/AC = 2/3, do đó BC = (3/2)BD.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 4,
+      "buoc": [
+       "AB/AC = 6/9 = 2/3; AD/AB = 4/6 = 2/3; suy ra AB/AC = AD/AB",
+       "ΔABD và ΔACB có góc BAD = góc CAB (góc chung) và AB/AC = AD/AB nên ΔABD ᔕ ΔACB (c.g.c)",
+       "Suy ra BD/CB = AB/AC = 2/3",
+       "Vậy BC = (3/2)BD"
+      ],
+      "nhieu": [
+       "ΔABD và ΔACB có góc BAD = góc CAB (góc chung) và AB/AC = AD/AB nên ΔABD ᔕ ΔABC (c.g.c)",
+       "Suy ra BD/CB = AD/AC = 4/9"
+      ]
+     }
     },
     {
      "ma": "9.27",
@@ -8031,7 +9048,32 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "ΔACD và ΔABC có AC/AB = AD/AC = 2 (4/2 = 8/4), góc DAC = góc CAB (AC là phân giác) nên ΔACD ᔕ ΔABC (c.g.c). Suy ra CD/BC = AC/AB = 2, vậy CD = 2BC.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "hinh": [
+      "sbttoan8t2/H.9.6.tr57.webp"
+     ],
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 4,
+      "buoc": [
+       "AC/AB = 4/2 = 2; AD/AC = 8/4 = 2; suy ra AC/AB = AD/AC",
+       "AC là phân giác của góc BAD nên góc CAD = góc BAC",
+       "ΔACD và ΔABC có góc CAD = góc BAC và AC/AB = AD/AC nên ΔACD ᔕ ΔABC (c.g.c)",
+       "Suy ra CD/BC = AC/AB = 2, vậy CD = 2BC"
+      ],
+      "nhieu": [
+       "ΔACD và ΔABC có góc CAD = góc BAC và AC/AB = AD/AC nên ΔACD ᔕ ΔACB (c.g.c)",
+       "Suy ra CD/BC = AD/AB = 4, vậy CD = 4BC"
+      ],
+      "thu_tu_khac": [
+       [
+        1,
+        0,
+        2,
+        3
+       ]
+      ]
+     }
     },
     {
      "ma": "9.28",
@@ -8040,7 +9082,21 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "ΔABD và ΔACB có góc A chung, góc ABD = góc ACB (giả thiết) nên ΔABD ᔕ ΔACB (g.g). Suy ra AB/AC = AD/AB, hay AB^2 = AD · AC.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 4,
+      "buoc": [
+       "ΔABD và ΔACB có góc BAD = góc CAB (góc chung) và góc ABD = góc ACB (giả thiết)",
+       "Nên ΔABD ᔕ ΔACB (g.g)",
+       "Suy ra AB/AC = AD/AB",
+       "Do đó AB · AB = AD · AC, hay AB² = AD · AC"
+      ],
+      "nhieu": [
+       "Nên ΔABD ᔕ ΔABC (g.g)",
+       "Suy ra AB/AC = BD/AB"
+      ]
+     }
     },
     {
      "ma": "9.29a",
@@ -8049,7 +9105,21 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "ΔABN và ΔACM có góc A chung, góc ABN = góc ACM (giả thiết) nên ΔABN ᔕ ΔACM (g.g). Suy ra AB/AC = AN/AM, hay AM · AB = AN · AC.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 4,
+      "buoc": [
+       "ΔABN và ΔACM có góc BAN = góc CAM (góc chung) và góc ABN = góc ACM (giả thiết)",
+       "Nên ΔABN ᔕ ΔACM (g.g)",
+       "Suy ra AB/AC = AN/AM",
+       "Do đó AM · AB = AN · AC"
+      ],
+      "nhieu": [
+       "Nên ΔABN ᔕ ΔAMC (g.g)",
+       "Suy ra AB/AC = AM/AN"
+      ]
+     }
     },
     {
      "ma": "9.29b",
@@ -8058,7 +9128,31 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "ΔOBM và ΔOCN có góc MOB = góc NOC (đối đỉnh), góc MBO = góc ABN = góc ACM = góc NCO nên ΔOBM ᔕ ΔOCN (g.g). Suy ra OM/ON = OB/OC, hay OM · OC = ON · OB.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 5,
+      "buoc": [
+       "ΔOBM và ΔOCN có góc BOM = góc CON (hai góc đối đỉnh)",
+       "Góc OBM = góc ABN = góc ACM = góc OCN",
+       "Nên ΔOBM ᔕ ΔOCN (g.g)",
+       "Suy ra OB/OC = OM/ON",
+       "Do đó OM · OC = ON · OB"
+      ],
+      "nhieu": [
+       "Nên ΔOBM ᔕ ΔONC (g.g)",
+       "Suy ra OB/OC = ON/OM"
+      ],
+      "thu_tu_khac": [
+       [
+        1,
+        0,
+        2,
+        3,
+        4
+       ]
+      ]
+     }
     },
     {
      "ma": "9.30a",
@@ -8067,7 +9161,20 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "AD = AC + CD = AC + BC = 9 cm. ΔABC và ΔADB có AB/AD = 6/9 = 2/3 = AC/AB (4/6), góc A chung nên ΔABC ᔕ ΔADB (c.g.c).",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 3,
+      "buoc": [
+       "D nằm trên tia đối của tia CA nên C nằm giữa A và D: AD = AC + CD = AC + CB = 4 + 5 = 9",
+       "AB/AD = 6/9 = 2/3; AC/AB = 4/6 = 2/3; suy ra AB/AD = AC/AB",
+       "ΔABC và ΔADB có góc BAC = góc DAB (góc chung) và AB/AD = AC/AB nên ΔABC ᔕ ΔADB (c.g.c)"
+      ],
+      "nhieu": [
+       "D nằm trên tia đối của tia CA nên A nằm giữa C và D: AD = CD − AC = 5 − 4 = 1",
+       "ΔABC và ΔADB có góc BAC = góc DAB (góc chung) và AB/AD = AC/AB nên ΔABC ᔕ ΔABD (c.g.c)"
+      ]
+     }
     },
     {
      "ma": "9.30b",
@@ -8076,7 +9183,35 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "ΔCBD cân tại C (CD = CB) nên góc ngoài ACB = 2 góc CDB = 2 góc ADB. Mà góc ADB = góc ABC (vì ΔABC ᔕ ΔADB). Suy ra góc ACB = 2 góc ABC.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 4,
+      "buoc": [
+       "CD = CB nên ΔCBD cân tại C, suy ra góc CBD = góc CDB",
+       "Góc ACB là góc ngoài tại đỉnh C của ΔCBD nên góc ACB = góc CBD + góc CDB = 2 · góc CDB",
+       "AB/AD = AC/AB = 2/3 và góc A chung nên ΔABC ᔕ ΔADB (c.g.c), suy ra góc ABC = góc ADB = góc CDB",
+       "Vậy góc ACB = 2 · góc ABC"
+      ],
+      "nhieu": [
+       "ΔABC ᔕ ΔADB nên góc ABC = góc ABD",
+       "Góc ACB là góc ngoài tại đỉnh C của ΔCBD nên góc ACB = 180° − 2 · góc CDB"
+      ],
+      "thu_tu_khac": [
+       [
+        0,
+        2,
+        1,
+        3
+       ],
+       [
+        2,
+        0,
+        1,
+        3
+       ]
+      ]
+     }
     }
    ]
   },
@@ -8091,7 +9226,21 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Chỉ (3) đúng (BC^2 = AB^2 + AC^2); các câu còn lại sai",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Cho tam giác ABC vuông tại A. Khẳng định nào sau đây là đúng?",
+      "cac": [
+       "AB² + BC² = AC²",
+       "AB + BC = AC",
+       "AB² + AC² = BC²",
+       "AB + AC = BC",
+       "AC² + BC² = AB²",
+       "AC + BC = AB"
+      ],
+      "dap": "C"
+     }
     },
     {
      "ma": "9.32",
@@ -8100,7 +9249,98 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "(2), (4), (5)",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 6,
+      "hoi": "Những bộ ba số đo nào dưới đây là độ dài ba cạnh của một tam giác vuông?",
+      "dong": [
+       {
+        "chu": "(1) 1 cm, 1 cm, 2 cm: {0}",
+        "o": [
+         {
+          "dung": [
+           "Không phải"
+          ],
+          "sai": [
+           "Là ba cạnh của tam giác vuông"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "(2) 1 cm, 1 cm, √2 cm: {0}",
+        "o": [
+         {
+          "dung": [
+           "Là ba cạnh của tam giác vuông"
+          ],
+          "sai": [
+           "Không phải"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "(3) 2 cm, 4 cm, 20 cm: {0}",
+        "o": [
+         {
+          "dung": [
+           "Không phải"
+          ],
+          "sai": [
+           "Là ba cạnh của tam giác vuông"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "(4) 2 cm, 4 cm, √20 cm: {0}",
+        "o": [
+         {
+          "dung": [
+           "Là ba cạnh của tam giác vuông"
+          ],
+          "sai": [
+           "Không phải"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "(5) 3 cm, 4 cm, 5 cm: {0}",
+        "o": [
+         {
+          "dung": [
+           "Là ba cạnh của tam giác vuông"
+          ],
+          "sai": [
+           "Không phải"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "(6) 9 cm, 16 cm, 25 cm: {0}",
+        "o": [
+         {
+          "dung": [
+           "Không phải"
+          ],
+          "sai": [
+           "Là ba cạnh của tam giác vuông"
+          ],
+          "hai": true
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "9.33",
@@ -8109,7 +9349,32 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "x = √13; y = 4; z = √10; t = 2",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "hinh": [
+      "sbttoan8t2/H.9.8.tr59.webp"
+     ],
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "hoi": "Tính các độ dài x, y, z, t trong Hình 9.8.\n(Gõ x, y, z, t theo thứ tự, cách nhau bằng dấu ;)",
+      "dap": [
+       "√13;4;√10;2"
+      ],
+      "phim": [
+       "√",
+       ";"
+      ],
+      "nhieu": [
+       "²",
+       "³"
+      ],
+      "loi_giai": [
+       "x² = 3² + 2² = 13; x = √13",
+       "y² = (2√5)² − 2² = 20 − 4 = 16; y = 4",
+       "z² = 3² + 1² = 10; z = √10",
+       "t² = (√29)² − 5² = 29 − 25 = 4; t = 2"
+      ]
+     }
     },
     {
      "ma": "9.34",
@@ -8118,7 +9383,31 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "BC = 4√2 cm; AH = 2√2 cm",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "hoi": "Cho tam giác ABC vuông cân tại đỉnh A có đường cao AH. Biết rằng AB = 4 cm, hãy tính độ dài cạnh đáy BC và chiều cao AH.\n(Gõ BC rồi AH, tính bằng cm, cách nhau bằng dấu ;)",
+      "dap": [
+       "4√2;2√2",
+       "√32;√8",
+       "4√2;√8",
+       "√32;2√2"
+      ],
+      "phim": [
+       "√",
+       ";"
+      ],
+      "nhieu": [
+       "²",
+       "³"
+      ],
+      "loi_giai": [
+       "ΔABC vuông cân tại A nên AC = AB = 4; BC² = AB² + AC² = 4² + 4² = 32; BC = √32 = 4√2",
+       "ΔABC cân tại A nên đường cao AH cũng là đường trung tuyến: BH = BC : 2 = 4√2 : 2 = 2√2",
+       "AH² = AB² − BH² = 4² − (2√2)² = 16 − 8 = 8; AH = √8 = 2√2"
+      ]
+     }
     },
     {
      "ma": "9.35",
@@ -8127,7 +9416,26 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Mỗi cạnh hình thoi dài 5 cm",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "dap": [
+       "5",
+       "5cm"
+      ],
+      "phim": [
+       "cm"
+      ],
+      "nhieu": [
+       "m",
+       "cm²"
+      ],
+      "loi_giai": [
+       "Hai đường chéo của hình thoi vuông góc với nhau tại trung điểm của mỗi đường, nên mỗi cạnh là cạnh huyền của một tam giác vuông có hai cạnh góc vuông bằng nửa hai đường chéo: 6 : 2 = 3; 8 : 2 = 4",
+       "Cạnh hình thoi a: a² = 3² + 4² = 25; a = 5"
+      ]
+     }
     },
     {
      "ma": "9.36",
@@ -8136,7 +9444,28 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "AB = 10 cm; AC = 24 cm",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "hoi": "Cho tam giác ABC vuông tại đỉnh A, có BC = 26 cm và AB/AC = 5/12. Tính độ dài các cạnh AB, AC.\n(Gõ AB rồi AC, tính bằng cm, cách nhau bằng dấu ;)",
+      "dap": [
+       "10;24"
+      ],
+      "phim": [
+       ";"
+      ],
+      "nhieu": [
+       "√",
+       "²"
+      ],
+      "loi_giai": [
+       "AB/AC = 5/12 nên đặt AB = 5k, AC = 12k (k > 0)",
+       "Theo định lí Pythagore: BC² = AB² + AC² = (5k)² + (12k)² = 169k²",
+       "Mà BC² = 26² = 676; do đó 169k² = 676, k² = 4, k = 2",
+       "AB = 5 · 2 = 10; AC = 12 · 2 = 24"
+      ]
+     }
     },
     {
      "ma": "9.37",
@@ -8145,7 +9474,32 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "AB = 2√5 cm; AC = 4√5 cm; AD = 4 cm",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "hoi": "Cho tam giác ABC vuông tại đỉnh A. Gọi AD là đường cao của tam giác. Biết rằng BD = 2 cm, CD = 8 cm. Hãy tính độ dài các cạnh AB, AC và chiều cao AD của tam giác ABC.\n(Gõ AB, AC, AD theo thứ tự, tính bằng cm, cách nhau bằng dấu ;)",
+      "dap": [
+       "2√5;4√5;4",
+       "√20;√80;4",
+       "2√5;√80;4",
+       "√20;4√5;4"
+      ],
+      "phim": [
+       "√",
+       ";"
+      ],
+      "nhieu": [
+       "²",
+       "³"
+      ],
+      "loi_giai": [
+       "BC = BD + DC = 2 + 8 = 10",
+       "Hai tam giác vuông DBA và ABC có chung góc nhọn B nên ΔDBA ᔕ ΔABC, suy ra BD/BA = BA/BC, AB² = BD · BC = 2 · 10 = 20; AB = √20 = 2√5",
+       "Tương tự, ΔDCA ᔕ ΔACB nên AC² = CD · CB = 8 · 10 = 80; AC = √80 = 4√5",
+       "ΔABD vuông tại D nên AD² = AB² − BD² = 20 − 2² = 16; AD = 4"
+      ]
+     }
     },
     {
      "ma": "9.38",
@@ -8154,7 +9508,27 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Cạnh huyền dài 20 cm (hai cạnh góc vuông 12 cm và 16 cm)",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "dap": [
+       "20",
+       "20cm"
+      ],
+      "phim": [
+       "cm"
+      ],
+      "nhieu": [
+       "m",
+       "cm²"
+      ],
+      "loi_giai": [
+       "Gọi độ dài hai cạnh góc vuông là 3k và 4k (k > 0) thì bình phương cạnh huyền là (3k)² + (4k)² = 25k², nên cạnh huyền dài 5k",
+       "Chu vi: 3k + 4k + 5k = 12k = 48, suy ra k = 4",
+       "Cạnh huyền (cm) = 5 · 4 = 20"
+      ]
+     }
     },
     {
      "ma": "9.39",
@@ -8163,7 +9537,33 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Diện tích 4√15 cm^2 (ba cạnh là 8 cm, 8 cm, 4 cm; đường cao ứng với đáy 4 cm là 2√15 cm)",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "dap": [
+       "4√15",
+       "2√60",
+       "√240",
+       "4√15cm²",
+       "2√60cm²",
+       "√240cm²"
+      ],
+      "phim": [
+       "√",
+       "cm²"
+      ],
+      "nhieu": [
+       "cm",
+       "m²",
+       "³"
+      ],
+      "loi_giai": [
+       "Nếu hai cạnh bên dài 4 cm thì ba cạnh là 4 cm, 4 cm, 8 cm, mà 4 + 4 = 8 nên không tạo thành tam giác; vậy hai cạnh bên dài 8 cm, cạnh đáy dài 4 cm",
+       "Đường cao h ứng với cạnh đáy cũng là đường trung tuyến: h² = 8² − 2² = 60; h = √60 = 2√15",
+       "Diện tích (cm²) = 4 · 2√15 : 2 = 4√15"
+      ]
+     }
     },
     {
      "ma": "9.40",
@@ -8172,7 +9572,33 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Chiều cao 2√3 cm; diện tích 4√3 cm^2",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "hoi": "Tính chiều cao và diện tích của một tam giác đều có cạnh bằng 4 cm.\n(Gõ chiều cao tính bằng cm rồi diện tích tính bằng cm², cách nhau bằng dấu ;)",
+      "dap": [
+       "2√3;4√3",
+       "√12;√48",
+       "2√3;√48",
+       "√12;4√3",
+       "2√3;2√12",
+       "√12;2√12"
+      ],
+      "phim": [
+       "√",
+       ";"
+      ],
+      "nhieu": [
+       "²",
+       "³"
+      ],
+      "loi_giai": [
+       "Gọi AH là đường cao của tam giác đều ABC cạnh 4 cm thì H là trung điểm của BC: HC = 4 : 2 = 2",
+       "AH² = AC² − HC² = 4² − 2² = 12; AH = √12 = 2√3",
+       "Diện tích (cm²) = 4 · 2√3 : 2 = 4√3"
+      ]
+     }
     },
     {
      "ma": "9.41",
@@ -8181,7 +9607,28 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Chiều cao màn hình h ≈ 37,72 cm (đường chéo 81,28 cm)",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "hoi": "Một chiếc ti vi màn hình phẳng 32 inch với chiều ngang màn hình là 72 cm (1 inch = 2,54 cm). Tính chiều cao của màn hình ti vi đó (tính bằng cm, làm tròn đến hàng phần trăm).",
+      "dap": [
+       "37,72",
+       "37,72cm"
+      ],
+      "phim": [
+       "cm"
+      ],
+      "nhieu": [
+       "m",
+       "cm²"
+      ],
+      "loi_giai": [
+       "Đường chéo màn hình (cm) = 32 · 2,54 = 81,28",
+       "Màn hình là hình chữ nhật nên chiều cao h, chiều ngang 72 cm và đường chéo là ba cạnh của một tam giác vuông: h² = 81,28² − 72² = 1422,4384",
+       "h = √1422,4384 ≈ 37,72"
+      ]
+     }
     }
    ]
   },
@@ -8196,7 +9643,98 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "(1), (3), (4), (6)",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 6,
+      "hoi": "Những điều kiện nào dưới đây kéo theo hai tam giác vuông đồng dạng?",
+      "dong": [
+       {
+        "chu": "(1) Một góc nhọn của tam giác này bằng một góc nhọn của tam giác kia: {0}",
+        "o": [
+         {
+          "dung": [
+           "Kéo theo đồng dạng"
+          ],
+          "sai": [
+           "Không kéo theo"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "(2) Một cạnh góc vuông của tam giác này bằng một cạnh góc vuông của tam giác kia: {0}",
+        "o": [
+         {
+          "dung": [
+           "Không kéo theo"
+          ],
+          "sai": [
+           "Kéo theo đồng dạng"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "(3) Hai cạnh góc vuông của tam giác này tỉ lệ với hai cạnh góc vuông của tam giác kia: {0}",
+        "o": [
+         {
+          "dung": [
+           "Kéo theo đồng dạng"
+          ],
+          "sai": [
+           "Không kéo theo"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "(4) Một góc nhọn của tam giác này phụ với một góc nhọn của tam giác kia: {0}",
+        "o": [
+         {
+          "dung": [
+           "Kéo theo đồng dạng"
+          ],
+          "sai": [
+           "Không kéo theo"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "(5) Cạnh huyền của tam giác này bằng cạnh huyền của tam giác kia: {0}",
+        "o": [
+         {
+          "dung": [
+           "Không kéo theo"
+          ],
+          "sai": [
+           "Kéo theo đồng dạng"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "(6) Một cạnh góc vuông và cạnh huyền của tam giác này tỉ lệ với một cạnh góc vuông và cạnh huyền của tam giác kia: {0}",
+        "o": [
+         {
+          "dung": [
+           "Kéo theo đồng dạng"
+          ],
+          "sai": [
+           "Không kéo theo"
+          ],
+          "hai": true
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "9.43",
@@ -8205,7 +9743,21 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "MN^2 + MP^2 = 16 + 16 = 32 = NP^2 nên ΔMNP vuông tại M (Pythagore đảo); lại có MN = MP nên ΔMNP vuông cân tại M. Hai tam giác vuông cân ABC (vuông tại A) và MNP (vuông tại M) có AB/MN = AC/MP nên ΔABC ᔕ ΔMNP (hai cạnh góc vuông tỉ lệ).",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 4,
+      "buoc": [
+       "MN² + MP² = 4² + 4² = 32; NP² = (4√2)² = 32",
+       "Suy ra MN² + MP² = NP² nên ΔMNP vuông tại M (định lí Pythagore đảo)",
+       "Lại có MN = MP nên ΔMNP vuông cân tại M",
+       "Hai tam giác vuông ABC (vuông tại A) và MNP (vuông tại M) có AB/MN = AC/MP (vì AB = AC, MN = MP) nên ΔABC ᔕ ΔMNP (hai cạnh góc vuông tỉ lệ)"
+      ],
+      "nhieu": [
+       "MN² + MP² = 4² + 4² = 32; NP² = (4√2)² = 16",
+       "Suy ra MN² + MP² = NP² nên ΔMNP vuông tại N (định lí Pythagore đảo)"
+      ]
+     }
     },
     {
      "ma": "9.44",
@@ -8214,7 +9766,86 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "ΔABC ᔕ ΔMPN (hai cạnh góc vuông tỉ lệ); ΔMNP ᔕ ΔEDF (một cặp góc nhọn bằng nhau); ΔABC ᔕ ΔGHK (cạnh huyền và cạnh góc vuông tỉ lệ)",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "hinh": [
+      "sbttoan8t2/H.9.10.tr63.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 6,
+      "hoi": "Hãy liệt kê ba cặp tam giác vuông trong Hình 9.10 đồng dạng và giải thích chúng đồng dạng dựa theo trường hợp nào của hai tam giác vuông đồng dạng.",
+      "dong": [
+       {
+        "chu": "ΔABC ᔕ {0}, vì {1}",
+        "o": [
+         {
+          "dung": [
+           "ΔMPN"
+          ],
+          "sai": [
+           "ΔMNP",
+           "ΔPMN"
+          ]
+         },
+         {
+          "dung": [
+           "AB/MP = AC/MN = 2/3 (hai cạnh góc vuông tỉ lệ)"
+          ],
+          "sai": [
+           "AB/MN = AC/MP (hai cạnh góc vuông tỉ lệ)",
+           "góc ABC = góc MNP (một cặp góc nhọn bằng nhau)"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "ΔMNP ᔕ {0}, vì {1}",
+        "o": [
+         {
+          "dung": [
+           "ΔEDF"
+          ],
+          "sai": [
+           "ΔDEF",
+           "ΔEFD"
+          ]
+         },
+         {
+          "dung": [
+           "góc MPN = góc EFD (một cặp góc nhọn bằng nhau)"
+          ],
+          "sai": [
+           "góc MNP = góc EFD (một cặp góc nhọn bằng nhau)",
+           "góc MPN = góc EDF (một cặp góc nhọn bằng nhau)"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "ΔABC ᔕ {0}, vì {1}",
+        "o": [
+         {
+          "dung": [
+           "ΔGHK"
+          ],
+          "sai": [
+           "ΔGKH",
+           "ΔHGK"
+          ]
+         },
+         {
+          "dung": [
+           "AB/GH = BC/HK = 2 (cạnh huyền và cạnh góc vuông tỉ lệ)"
+          ],
+          "sai": [
+           "AC/GH = BC/HK (cạnh huyền và cạnh góc vuông tỉ lệ)",
+           "AB/GH = AC/HK (hai cạnh góc vuông tỉ lệ)"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "9.45a",
@@ -8223,7 +9854,21 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Hai tam giác vuông ABC (vuông tại A) và HAC (vuông tại H) có góc C chung nên ΔABC ᔕ ΔHAC. Suy ra CA/CH = CB/CA, hay CA^2 = CH · CB.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 4,
+      "buoc": [
+       "Hai tam giác vuông ABC (vuông tại A) và HAC (vuông tại H) có chung góc nhọn C",
+       "Nên ΔABC ᔕ ΔHAC",
+       "Suy ra CA/CH = CB/CA",
+       "Do đó CA² = CH · CB"
+      ],
+      "nhieu": [
+       "Nên ΔABC ᔕ ΔAHC",
+       "Suy ra CA/CH = AB/CA"
+      ]
+     }
     },
     {
      "ma": "9.45b",
@@ -8232,7 +9877,21 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Hai tam giác vuông ABC (vuông tại A) và EHA (vuông tại E) có góc ACB = 90° − góc ABC = góc HAB = góc HAE nên ΔABC ᔕ ΔEHA. Do đó AB/EH = BC/HA, hay AH/BC = HE/AB.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 4,
+      "buoc": [
+       "Trong ΔAHB vuông tại H: góc HAB = 90° − góc ABC; trong ΔABC vuông tại A: góc ACB = 90° − góc ABC; suy ra góc HAE = góc ACB",
+       "Hai tam giác vuông EHA (vuông tại E) và ABC (vuông tại A) có góc HAE = góc BCA",
+       "Nên ΔEHA ᔕ ΔABC",
+       "Suy ra HE/AB = HA/BC, tức là AH/BC = HE/AB"
+      ],
+      "nhieu": [
+       "Nên ΔEHA ᔕ ΔACB",
+       "Suy ra HE/AC = HA/BC, tức là AH/BC = HE/AC"
+      ]
+     }
     },
     {
      "ma": "9.46",
@@ -8241,7 +9900,28 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "BC = 10 cm; AH = 4,8 cm; BH = 3,6 cm; CH = 6,4 cm",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "hoi": "Cho tam giác ABC vuông tại A có đường cao AH. Biết rằng AB = 6 cm và AC = 8 cm, hãy tính độ dài các đoạn thẳng BC, AH, BH, CH.\n(Gõ BC, AH, BH, CH theo thứ tự, tính bằng cm, cách nhau bằng dấu ;)",
+      "dap": [
+       "10;4,8;3,6;6,4"
+      ],
+      "phim": [
+       ";"
+      ],
+      "nhieu": [
+       "√",
+       "²"
+      ],
+      "loi_giai": [
+       "BC² = AB² + AC² = 6² + 8² = 100; BC = 10",
+       "AH · BC = AB · AC (cùng bằng hai lần diện tích ΔABC) nên AH = 6 · 8 : 10 = 4,8",
+       "Hai tam giác vuông HBA và ABC có chung góc nhọn B nên ΔHBA ᔕ ΔABC, suy ra BH/BA = BA/BC, BH = 6² : 10 = 3,6",
+       "CH = BC − BH = 10 − 3,6 = 6,4"
+      ]
+     }
     },
     {
      "ma": "9.47a",
@@ -8250,7 +9930,31 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Hai tam giác vuông HAE (vuông tại E) và HBD (vuông tại D) có góc AHE = góc DHB (đối đỉnh) nên ΔHAE ᔕ ΔHBD. Suy ra HA/HB = HE/HD, hay HA · HD = HB · HE. Tương tự HA · HD = HC · HF.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 5,
+      "buoc": [
+       "Hai tam giác vuông HAE (vuông tại E) và HBD (vuông tại D) có góc AHE = góc BHD (hai góc đối đỉnh) nên ΔHAE ᔕ ΔHBD",
+       "Suy ra HA/HB = HE/HD, hay HA · HD = HB · HE",
+       "Hai tam giác vuông HAF (vuông tại F) và HCD (vuông tại D) có góc AHF = góc CHD (hai góc đối đỉnh) nên ΔHAF ᔕ ΔHCD",
+       "Suy ra HA/HC = HF/HD, hay HA · HD = HC · HF",
+       "Vậy HA · HD = HB · HE = HC · HF"
+      ],
+      "nhieu": [
+       "Suy ra HA/HB = HD/HE, hay HA · HE = HB · HD",
+       "Hai tam giác vuông HAF (vuông tại F) và HCD (vuông tại D) có góc AHF = góc CHD (hai góc đối đỉnh) nên ΔHAF ᔕ ΔHDC"
+      ],
+      "thu_tu_khac": [
+       [
+        2,
+        3,
+        0,
+        1,
+        4
+       ]
+      ]
+     }
     },
     {
      "ma": "9.47b",
@@ -8259,7 +9963,21 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Hai tam giác vuông AFC (vuông tại F) và AEB (vuông tại E) có góc A chung nên ΔAFC ᔕ ΔAEB. Suy ra AF/AE = AC/AB, hay AF · AB = AE · AC.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 4,
+      "buoc": [
+       "Hai tam giác vuông AFC (vuông tại F) và AEB (vuông tại E) có chung góc nhọn A",
+       "Nên ΔAFC ᔕ ΔAEB",
+       "Suy ra AF/AE = AC/AB",
+       "Do đó AF · AB = AE · AC"
+      ],
+      "nhieu": [
+       "Nên ΔAFC ᔕ ΔABE",
+       "Suy ra AF/AB = AE/AC"
+      ]
+     }
     },
     {
      "ma": "9.47c",
@@ -8268,7 +9986,24 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Từ HA · HD = HB · HE: HA/HE = HB/HD, lại có góc AHB = góc EHD nên ΔAHB ᔕ ΔEHD (c.g.c), góc HAB = góc HED. Do đó góc CED = 90° − góc HED = 90° − góc HAB = góc FBD; tương tự góc BFD = góc ECD. Vậy ΔBDF ᔕ ΔEDC (g.g), suy ra góc FDB = góc CDE, nên góc FDA = 90° − góc FDB = 90° − góc CDE = góc EDA: DA là phân giác góc EDF.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 7,
+      "buoc": [
+       "Theo câu a, HA · HD = HB · HE, suy ra HA/HE = HB/HD",
+       "ΔAHB và ΔEHD có góc AHB = góc EHD (hai góc đối đỉnh) và HA/HE = HB/HD nên ΔAHB ᔕ ΔEHD (c.g.c), suy ra góc HAB = góc HED",
+       "Do đó góc CED = 90° − góc HED = 90° − góc HAB = góc FBD",
+       "Chứng minh tương tự, góc BFD = góc ECD",
+       "ΔBDF và ΔEDC có góc FBD = góc CED và góc BFD = góc ECD nên ΔBDF ᔕ ΔEDC (g.g)",
+       "Suy ra góc FDB = góc CDE",
+       "AD ⊥ BC nên góc FDA = 90° − góc FDB = 90° − góc CDE = góc EDA, tức là DA là tia phân giác của góc EDF"
+      ],
+      "nhieu": [
+       "ΔBDF và ΔEDC có góc FBD = góc CED và góc BFD = góc ECD nên ΔBDF ᔕ ΔECD (g.g)",
+       "Suy ra góc FDB = góc DEC"
+      ]
+     }
     },
     {
      "ma": "9.48a",
@@ -8277,7 +10012,31 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Hai tam giác vuông BDA (vuông tại D) và BFC (vuông tại F) có góc B chung nên ΔBDA ᔕ ΔBFC, suy ra BF/BC = BD/BA. ΔBDF và ΔBAC có BF/BC = BD/BA, góc B chung nên ΔBDF ᔕ ΔBAC (c.g.c). Chứng minh tương tự được ΔCDE ᔕ ΔCAB.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 5,
+      "buoc": [
+       "Hai tam giác vuông BDA (vuông tại D) và BFC (vuông tại F) có chung góc nhọn B nên ΔBDA ᔕ ΔBFC",
+       "Suy ra BD/BF = BA/BC, hay BD/BA = BF/BC",
+       "ΔBDF và ΔBAC có góc DBF = góc ABC (góc chung) và BD/BA = BF/BC nên ΔBDF ᔕ ΔBAC (c.g.c)",
+       "Hai tam giác vuông CDA (vuông tại D) và CEB (vuông tại E) có chung góc nhọn C nên ΔCDA ᔕ ΔCEB, suy ra CD/CA = CE/CB",
+       "ΔCDE và ΔCAB có góc DCE = góc ACB (góc chung) và CD/CA = CE/CB nên ΔCDE ᔕ ΔCAB (c.g.c)"
+      ],
+      "nhieu": [
+       "ΔBDF và ΔBAC có góc DBF = góc ABC (góc chung) và BD/BA = BF/BC nên ΔBDF ᔕ ΔBCA (c.g.c)",
+       "Suy ra BD/BF = BC/BA, hay BD/BC = BF/BA"
+      ],
+      "thu_tu_khac": [
+       [
+        3,
+        4,
+        0,
+        1,
+        2
+       ]
+      ]
+     }
     },
     {
      "ma": "9.48b",
@@ -8286,7 +10045,28 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Từ ΔBDF ᔕ ΔBAC: BF/BC = BD/BA, hay BF · BA = BD · BC. Từ ΔCDE ᔕ ΔCAB: CE/CB = CD/CA, hay CE · CA = CD · BC. Cộng lại: BF · BA + CE · CA = BD · BC + DC · BC = BC^2.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 4,
+      "buoc": [
+       "ΔBDF ᔕ ΔBAC (câu a) nên BF/BC = BD/BA, hay BF · BA = BD · BC",
+       "ΔCDE ᔕ ΔCAB (câu a) nên CE/CB = CD/CA, hay CE · CA = CD · BC",
+       "Cộng theo vế: BF · BA + CE · CA = BD · BC + CD · BC = (BD + CD) · BC",
+       "D nằm giữa B và C nên BD + CD = BC; vậy BF · BA + CE · CA = BC²"
+      ],
+      "nhieu": [
+       "ΔBDF ᔕ ΔBAC (câu a) nên BF/BA = BD/BC, hay BF · BC = BD · BA"
+      ],
+      "thu_tu_khac": [
+       [
+        1,
+        0,
+        2,
+        3
+       ]
+      ]
+     }
     },
     {
      "ma": "9.49a",
@@ -8295,7 +10075,29 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Hai tam giác vuông ANP (vuông tại A) và HBA (vuông tại H) có góc ANP = góc MNC = 90° − góc ACB = góc CBA = góc HBA nên ΔANP ᔕ ΔHBA. Hai tam giác vuông MCN và MPB (cùng vuông tại M) có góc MNC = 90° − góc BCA = góc CBA = góc MBP nên ΔMCN ᔕ ΔMPB.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 4,
+      "buoc": [
+       "Trong ΔMCN vuông tại M: góc MNC = 90° − góc MCN = 90° − góc ACB = góc ABC",
+       "Góc ANP = góc MNC (hai góc đối đỉnh) nên góc ANP = góc ABC = góc HBA",
+       "Hai tam giác vuông ANP (vuông tại A) và HBA (vuông tại H) có góc ANP = góc HBA nên ΔANP ᔕ ΔHBA",
+       "Hai tam giác vuông MCN và MPB (cùng vuông tại M) có góc MNC = góc ABC = góc MBP nên ΔMCN ᔕ ΔMPB"
+      ],
+      "nhieu": [
+       "Hai tam giác vuông ANP (vuông tại A) và HBA (vuông tại H) có góc ANP = góc HBA nên ΔANP ᔕ ΔHAB",
+       "Hai tam giác vuông MCN và MPB (cùng vuông tại M) có góc MNC = góc ABC = góc MBP nên ΔMCN ᔕ ΔMBP"
+      ],
+      "thu_tu_khac": [
+       [
+        0,
+        3,
+        1,
+        2
+       ]
+      ]
+     }
     },
     {
      "ma": "9.49b",
@@ -8304,7 +10106,29 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Áp dụng định lí Thalès với MN // AH và AH // MP: MB/PB = MH/PA, NC/NA = MC/MH. Do đó (MB/MC) · (NC/NA) · (PA/PB) = (MB/PB) · (NC/NA) · (PA/MC) = (MH/PA) · (MC/MH) · (PA/MC) = 1.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 4,
+      "buoc": [
+       "MP ⊥ BC và AH ⊥ BC nên MP // AH",
+       "Trong ΔBMP có HA // MP nên BH/BM = BA/BP (định lí Thalès), suy ra HM/BM = AP/BP, hay MB/PB = MH/PA",
+       "Trong ΔCAH có NM // AH nên CN/NA = CM/MH (định lí Thalès), tức là NC/NA = MC/MH",
+       "Do đó (MB/MC) · (NC/NA) · (PA/PB) = (MB/PB) · (NC/NA) · (PA/MC) = (MH/PA) · (MC/MH) · (PA/MC) = 1"
+      ],
+      "nhieu": [
+       "Trong ΔCAH có NM // AH nên CN/NA = MH/CM (định lí Thalès), tức là NC/NA = MH/MC",
+       "MP ⊥ BC và AH ⊥ BC nên MP ⊥ AH"
+      ],
+      "thu_tu_khac": [
+       [
+        0,
+        2,
+        1,
+        3
+       ]
+      ]
+     }
     },
     {
      "ma": "9.50",
@@ -8313,7 +10137,24 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Hai tam giác vuông ABD (vuông tại A) và DCB (vuông tại D) có AD/DB = DB/BC = 2/3 (4/6 = 6/9) nên ΔABD ᔕ ΔDCB (cạnh huyền và cạnh góc vuông tỉ lệ). Suy ra góc ADB = góc DBC, hai góc so le trong bằng nhau nên AD // BC.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "hinh": [
+      "sbttoan8t2/H.9.11.tr64.webp"
+     ],
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 4,
+      "buoc": [
+       "AD/DB = 4/6 = 2/3; DB/BC = 6/9 = 2/3; suy ra AD/DB = DB/BC",
+       "Hai tam giác vuông ABD (vuông tại A) và DCB (vuông tại D) có AD/DB = DB/BC (cạnh góc vuông và cạnh huyền tỉ lệ) nên ΔABD ᔕ ΔDCB",
+       "Suy ra góc ADB = góc DBC",
+       "Hai góc ADB và DBC ở vị trí so le trong và bằng nhau nên BC // AD"
+      ],
+      "nhieu": [
+       "Suy ra góc ADB = góc BCD",
+       "Hai góc ADB và DBC ở vị trí đồng vị và bằng nhau nên BC // AD"
+      ]
+     }
     },
     {
      "ma": "9.51a",
@@ -8322,7 +10163,31 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Hai tam giác vuông AHM (vuông tại M) và ABH (vuông tại H) có góc HAM = góc BAH (chung) nên ΔAHM ᔕ ΔABH, suy ra AM/AH = AH/AB, hay AM · AB = AH^2. Tương tự AN · AC = AH^2. Do đó AM · AB = AN · AC.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 5,
+      "buoc": [
+       "Hai tam giác vuông AMH (vuông tại M) và AHB (vuông tại H) có chung góc nhọn HAB nên ΔAMH ᔕ ΔAHB",
+       "Suy ra AM/AH = AH/AB, hay AM · AB = AH²",
+       "Hai tam giác vuông ANH (vuông tại N) và AHC (vuông tại H) có chung góc nhọn HAC nên ΔANH ᔕ ΔAHC",
+       "Suy ra AN/AH = AH/AC, hay AN · AC = AH²",
+       "Vậy AM · AB = AN · AC"
+      ],
+      "nhieu": [
+       "Hai tam giác vuông AMH (vuông tại M) và AHB (vuông tại H) có chung góc nhọn HAB nên ΔAMH ᔕ ΔABH",
+       "Suy ra AN/AH = AH/AC, hay AN · AH = AH · AC"
+      ],
+      "thu_tu_khac": [
+       [
+        2,
+        3,
+        0,
+        1,
+        4
+       ]
+      ]
+     }
     },
     {
      "ma": "9.51b",
@@ -8331,7 +10196,20 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Từ AM · AB = AN · AC suy ra AM/AC = AN/AB. ΔAMN và ΔACB có AM/AC = AN/AB, góc MAN = góc CAB (chung) nên ΔAMN ᔕ ΔACB (c.g.c).",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 3,
+      "buoc": [
+       "Theo câu a, AM · AB = AN · AC, suy ra AM/AC = AN/AB",
+       "ΔAMN và ΔACB có góc MAN = góc CAB (góc chung) và AM/AC = AN/AB",
+       "Nên ΔAMN ᔕ ΔACB (c.g.c)"
+      ],
+      "nhieu": [
+       "Theo câu a, AM · AB = AN · AC, suy ra AM/AN = AB/AC",
+       "Nên ΔAMN ᔕ ΔABC (c.g.c)"
+      ]
+     }
     },
     {
      "ma": "9.52a",
@@ -8340,7 +10218,38 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Áp dụng định lí Pythagore cho ΔABM vuông tại A, với AC = 2AM: 4BM^2 = 4(BA^2 + AM^2) = 4BA^2 + AC^2 = 3BA^2 + BC^2 (vì BA^2 + AC^2 = BC^2). Tương tự 4B'M'^2 = 4B'A'^2 + A'C'^2 = 3B'A'^2 + B'C'^2.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 5,
+      "buoc": [
+       "ΔABM vuông tại A nên BM² = BA² + AM² (định lí Pythagore)",
+       "M là trung điểm của AC nên AC = 2AM, AC² = 4AM²; do đó 4BM² = 4BA² + 4AM² = 4BA² + AC²",
+       "ΔABC vuông tại A nên AC² = BC² − BA²",
+       "Suy ra 4BM² = 4BA² + BC² − BA² = BC² + 3BA²",
+       "Chứng minh tương tự với tam giác vuông A'B'C': B'C'² + 3B'A'² = 4B'M'²"
+      ],
+      "nhieu": [
+       "M là trung điểm của AC nên AC = 2AM, AC² = 2AM²; do đó 4BM² = 4BA² + 4AM² = 4BA² + 2AC²",
+       "ΔABC vuông tại A nên AC² = BC² + BA²"
+      ],
+      "thu_tu_khac": [
+       [
+        0,
+        2,
+        1,
+        3,
+        4
+       ],
+       [
+        2,
+        0,
+        1,
+        3,
+        4
+       ]
+      ]
+     }
     },
     {
      "ma": "9.52b",
@@ -8349,7 +10258,21 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Giả sử BC/BM = B'C'/B'M'. Theo câu a: BC^2/BM^2 + 3BA^2/BM^2 = 4 = B'C'^2/B'M'^2 + 3B'A'^2/B'M'^2, suy ra BA/BM = B'A'/B'M'. Vậy BC/B'C' = BM/B'M' = BA/B'A'. Hai tam giác vuông ABC và A'B'C' có BC/B'C' = BA/B'A' nên ΔABC ᔕ ΔA'B'C' (cạnh huyền và cạnh góc vuông tỉ lệ).",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 4,
+      "buoc": [
+       "Chia hai vế của các đẳng thức ở câu a cho BM² và B'M'²: BC²/BM² + 3BA²/BM² = 4 và B'C'²/B'M'² + 3B'A'²/B'M'² = 4",
+       "Vì BC/BM = B'C'/B'M' nên BC²/BM² = B'C'²/B'M'², suy ra BA²/BM² = B'A'²/B'M'², hay BA/BM = B'A'/B'M'",
+       "Do đó BC/B'C' = BM/B'M' = BA/B'A'",
+       "Hai tam giác vuông ABC và A'B'C' có BC/B'C' = BA/B'A' (cạnh huyền và cạnh góc vuông tỉ lệ) nên ΔABC ᔕ ΔA'B'C'"
+      ],
+      "nhieu": [
+       "Vì BC/BM = B'C'/B'M' nên BC = B'C' và BM = B'M'",
+       "Hai tam giác vuông ABC và A'B'C' có BC/B'C' = BA/B'A' (hai cạnh góc vuông tỉ lệ) nên ΔABC ᔕ ΔA'B'C'"
+      ]
+     }
     },
     {
      "ma": "9.53a",
@@ -8358,7 +10281,21 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "ΔCBM = ΔDCN (hai tam giác vuông có CB = DC, BM = CN). Do đó góc CNO + góc NCO = góc CND + góc BCM = góc BMC + góc BCM = 90°. Trong ΔCNO: góc NOC = 180° − góc CNO − góc NCO = 90°, suy ra CM ⊥ DN.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 4,
+      "buoc": [
+       "Hai tam giác vuông CBM (vuông tại B) và DCN (vuông tại C) có CB = DC, BM = CN (cùng bằng nửa cạnh hình vuông) nên ΔCBM = ΔDCN",
+       "Suy ra góc BMC = góc CND",
+       "Trong ΔCNO: góc ONC + góc OCN = góc CND + góc BCM = góc BMC + góc BCM = 90°",
+       "Suy ra góc NOC = 180° − 90° = 90°, tức là CM ⊥ DN"
+      ],
+      "nhieu": [
+       "Suy ra góc BMC = góc CDN",
+       "Hai tam giác vuông CBM (vuông tại B) và DCN (vuông tại C) có CB = DC, BM = CN (cùng bằng nửa cạnh hình vuông) nên ΔCBM = ΔCDN"
+      ]
+     }
     },
     {
      "ma": "9.53b",
@@ -8367,7 +10304,30 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Diện tích ΔONC = 0,8 cm^2 (ON = 2/√5 cm, OC = 4/√5 cm)",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "dap": [
+       "0,8",
+       "4/5",
+       "0,8cm²",
+       "4/5cm²"
+      ],
+      "phim": [
+       "cm²"
+      ],
+      "nhieu": [
+       "cm",
+       "m²"
+      ],
+      "loi_giai": [
+       "NC = 4 : 2 = 2; ND² = NC² + CD² = 2² + 4² = 20; ND = √20",
+       "Hai tam giác vuông ONC (vuông tại O, theo câu a) và CND (vuông tại C) có góc ONC = góc CND nên ΔONC ᔕ ΔCND",
+       "Suy ra ON/CN = OC/CD = NC/ND, nên ON = 2 · 2 : √20 = 4/√20; OC = 4 · 2 : √20 = 8/√20",
+       "Diện tích ΔONC (cm²) = (1/2) · ON · OC = (1/2) · (4/√20) · (8/√20) = 0,8"
+      ]
+     }
     }
    ]
   },
@@ -8382,7 +10342,23 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Trên tia AB lấy điểm M sao cho AM = 3AB. Đoạn thẳng AM là hình đồng dạng phối cảnh của đoạn thẳng AB với tâm phối cảnh A và tỉ số đồng dạng 3.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "hinh": [
+      "sbttoan8t2/9.54-chon-1.webp",
+      "sbttoan8t2/9.54-chon-2.webp"
+     ],
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Hãy vẽ hình đồng dạng phối cảnh của đoạn thẳng AB với tâm phối cảnh là điểm A và tỉ số đồng dạng bằng 3. Hình nào dưới đây vẽ đúng? (Đoạn thẳng màu đỏ là hình vừa vẽ.)",
+      "cac": [
+       "Hình 1",
+       "Hình 2",
+       "Hình 3",
+       "Hình 4"
+      ],
+      "dap": "C"
+     }
     },
     {
      "ma": "9.55",
@@ -8391,7 +10367,23 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Trên các tia OA, OB lấy M, N sao cho OM = 2OA, ON = 2OB. Nối M với N, đoạn thẳng MN là hình đồng dạng phối cảnh của đoạn thẳng AB với tâm phối cảnh O và tỉ số đồng dạng 2.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "hinh": [
+      "sbttoan8t2/9.55-chon-1.webp",
+      "sbttoan8t2/9.55-chon-2.webp"
+     ],
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Lấy một điểm O nằm ngoài một đoạn thẳng AB. Hãy vẽ hình đồng dạng phối cảnh của đoạn thẳng AB với tâm phối cảnh là điểm O và tỉ số đồng dạng bằng 2. Hình nào dưới đây vẽ đúng đoạn thẳng MN cần vẽ (màu đỏ)?",
+      "cac": [
+       "Hình 1",
+       "Hình 2",
+       "Hình 3",
+       "Hình 4"
+      ],
+      "dap": "B"
+     }
     },
     {
      "ma": "9.56",
@@ -8400,7 +10392,23 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Trên các tia OA, OB, OC lấy M, N, P sao cho OM = 2OA, ON = 2OB, OP = 2OC. Nối M, N, P được tam giác MNP là hình đồng dạng phối cảnh của ΔABC với tâm phối cảnh O và tỉ số đồng dạng 2.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "hinh": [
+      "sbttoan8t2/9.56-chon-1.webp",
+      "sbttoan8t2/9.56-chon-2.webp"
+     ],
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Lấy một điểm O nằm trong tam giác ABC. Hãy vẽ hình đồng dạng phối cảnh của tam giác ABC với tâm phối cảnh là điểm O và tỉ số đồng dạng bằng 2. Hình nào dưới đây vẽ đúng tam giác MNP cần vẽ (màu đỏ)?",
+      "cac": [
+       "Hình 1",
+       "Hình 2",
+       "Hình 3",
+       "Hình 4"
+      ],
+      "dap": "D"
+     }
     },
     {
      "ma": "9.57",
@@ -8409,7 +10417,59 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Cặp hình 2 và cặp hình 3",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "hinh": [
+      "sbttoan8t2/H.9.16.tr66.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "hoi": "Những cặp hình vuông nào dưới đây (Hình 9.16) là hình đồng dạng phối cảnh?",
+      "dong": [
+       {
+        "chu": "Cặp hình 1: {0}",
+        "o": [
+         {
+          "dung": [
+           "Không đồng dạng phối cảnh"
+          ],
+          "sai": [
+           "Đồng dạng phối cảnh"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Cặp hình 2: {0}",
+        "o": [
+         {
+          "dung": [
+           "Đồng dạng phối cảnh"
+          ],
+          "sai": [
+           "Không đồng dạng phối cảnh"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Cặp hình 3: {0}",
+        "o": [
+         {
+          "dung": [
+           "Đồng dạng phối cảnh"
+          ],
+          "sai": [
+           "Không đồng dạng phối cảnh"
+          ],
+          "hai": true
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "9.58",
@@ -8418,7 +10478,73 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Cặp hai lục giác đều và cặp hai tam giác vuông cân",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "hinh": [
+      "sbttoan8t2/H.9.17.tr67.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "hoi": "Những cặp hình nào dưới đây (Hình 9.17) là hình đồng dạng?",
+      "dong": [
+       {
+        "chu": "Hai lục giác đều: {0}",
+        "o": [
+         {
+          "dung": [
+           "Đồng dạng"
+          ],
+          "sai": [
+           "Không đồng dạng"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Hai mũi tên: {0}",
+        "o": [
+         {
+          "dung": [
+           "Không đồng dạng"
+          ],
+          "sai": [
+           "Đồng dạng"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Hai tam giác vuông cân: {0}",
+        "o": [
+         {
+          "dung": [
+           "Đồng dạng"
+          ],
+          "sai": [
+           "Không đồng dạng"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Hình bầu dục và hình tròn: {0}",
+        "o": [
+         {
+          "dung": [
+           "Không đồng dạng"
+          ],
+          "sai": [
+           "Đồng dạng"
+          ],
+          "hai": true
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "9.59",
@@ -8427,7 +10553,98 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "(2), (5) đúng; (1), (3), (4), (6) sai",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 6,
+      "hoi": "Những câu nào sau đây là đúng?",
+      "dong": [
+       {
+        "chu": "(1) Hai tam giác cân có một cặp góc bằng nhau thì đồng dạng: {0}",
+        "o": [
+         {
+          "dung": [
+           "Sai"
+          ],
+          "sai": [
+           "Đúng"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "(2) Hai tam giác đều bất kì luôn đồng dạng: {0}",
+        "o": [
+         {
+          "dung": [
+           "Đúng"
+          ],
+          "sai": [
+           "Sai"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "(3) Hai tam giác đều bất kì luôn đồng dạng phối cảnh: {0}",
+        "o": [
+         {
+          "dung": [
+           "Sai"
+          ],
+          "sai": [
+           "Đúng"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "(4) Hai lục giác đều bất kì luôn đồng dạng phối cảnh: {0}",
+        "o": [
+         {
+          "dung": [
+           "Sai"
+          ],
+          "sai": [
+           "Đúng"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "(5) Hai hình vuông bất kì luôn đồng dạng: {0}",
+        "o": [
+         {
+          "dung": [
+           "Đúng"
+          ],
+          "sai": [
+           "Sai"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "(6) Hai hình bình hành bất kì luôn đồng dạng: {0}",
+        "o": [
+         {
+          "dung": [
+           "Sai"
+          ],
+          "sai": [
+           "Đúng"
+          ],
+          "hai": true
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "9.60",
@@ -8436,7 +10653,98 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "(2), (3), (4), (6) đúng; (1), (5) sai",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 6,
+      "hoi": "Những câu nào sau đây là đúng?",
+      "dong": [
+       {
+        "chu": "(1) Hai hình bằng nhau thì đồng dạng phối cảnh với nhau: {0}",
+        "o": [
+         {
+          "dung": [
+           "Sai"
+          ],
+          "sai": [
+           "Đúng"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "(2) Hai hình đồng dạng phối cảnh với nhau thì đồng dạng với nhau: {0}",
+        "o": [
+         {
+          "dung": [
+           "Đúng"
+          ],
+          "sai": [
+           "Sai"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "(3) Hai hình bằng nhau thì đồng dạng với nhau: {0}",
+        "o": [
+         {
+          "dung": [
+           "Đúng"
+          ],
+          "sai": [
+           "Sai"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "(4) Hai hình cùng đồng dạng với một hình khác thì đồng dạng với nhau: {0}",
+        "o": [
+         {
+          "dung": [
+           "Đúng"
+          ],
+          "sai": [
+           "Sai"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "(5) Hai hình cùng là phóng to của một hình thì bằng nhau: {0}",
+        "o": [
+         {
+          "dung": [
+           "Sai"
+          ],
+          "sai": [
+           "Đúng"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "(6) Hai hình cùng là thu nhỏ của một hình thì đồng dạng với nhau: {0}",
+        "o": [
+         {
+          "dung": [
+           "Đúng"
+          ],
+          "sai": [
+           "Sai"
+          ],
+          "hai": true
+         }
+        ]
+       }
+      ]
+     }
     }
    ]
   },
@@ -8451,7 +10759,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "C",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Câu nào sau đây là <b>sai</b>?",
+      "cac": [
+       "Hai tam giác có các cặp cạnh tương ứng tỉ lệ thì có các cặp góc tương ứng bằng nhau.",
+       "Hai tam giác có hai cặp góc tương ứng bằng nhau thì có cặp các cạnh tương ứng tỉ lệ.",
+       "Hai tam giác có một cặp góc tương ứng bằng nhau và hai cặp cạnh tương ứng tỉ lệ thì đồng dạng với nhau.",
+       "Hai tam giác cùng đồng dạng với một tam giác theo cùng một tỉ số đồng dạng thì bằng nhau."
+      ],
+      "dap": "C"
+     }
     },
     {
      "ma": "Trắc nghiệm 2 (tr.68)",
@@ -8460,7 +10780,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "B",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Bộ ba số đo nào dưới đây <b>không</b> là độ dài ba cạnh của một tam giác vuông?",
+      "cac": [
+       "√2 cm, √2 cm, 2 cm",
+       "1 cm, 1 cm, 1/√2 cm",
+       "2 cm, 4 cm, √20 cm",
+       "3 cm, 4 cm, 5 cm"
+      ],
+      "dap": "B"
+     }
     },
     {
      "ma": "9.61",
@@ -8469,7 +10801,27 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Góc M = 60°, góc B = 40°, góc C = góc P = 80°",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "hoi": "Cho ΔABC ᔕ ΔMNP với góc A = 60°, góc N = 40°. Hãy tính số đo các góc còn lại của hai tam giác ABC và MNP.\n(Gõ số đo góc B, góc C, góc M, góc P theo thứ tự, tính bằng độ, cách nhau bằng dấu ;)",
+      "dap": [
+       "40;80;60;80"
+      ],
+      "phim": [
+       ";"
+      ],
+      "nhieu": [
+       "√",
+       "²"
+      ],
+      "loi_giai": [
+       "ΔABC ᔕ ΔMNP nên góc M = góc A = 60° và góc B = góc N = 40°",
+       "góc C = 180° − góc A − góc B = 180° − 60° − 40° = 80°",
+       "góc P = góc C = 80°"
+      ]
+     }
     },
     {
      "ma": "9.62",
@@ -8478,7 +10830,28 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Tỉ số đồng dạng 1/2; MN = 10 cm, MP = 12 cm, NP = 14 cm",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "hoi": "Cho ΔABC ᔕ ΔMNP với AB = 5 cm, AC = 6 cm, BC = 7 cm. Biết rằng tam giác MNP có chu vi bằng 36 cm, hãy tính độ dài các cạnh của tam giác MNP và tỉ số đồng dạng của tam giác ABC với tam giác MNP.\n(Gõ MN, MP, NP tính bằng cm rồi tỉ số đồng dạng, theo thứ tự đó, cách nhau bằng dấu ;)",
+      "dap": [
+       "10;12;14;1/2",
+       "10;12;14;0,5"
+      ],
+      "phim": [
+       ";"
+      ],
+      "nhieu": [
+       "√",
+       "²"
+      ],
+      "loi_giai": [
+       "ΔABC ᔕ ΔMNP nên AB/MN = AC/MP = BC/NP = (AB + AC + BC)/(MN + MP + NP)",
+       "Tỉ số đồng dạng = (5 + 6 + 7)/36 = 18/36 = 1/2",
+       "MN = 2 · 5 = 10; MP = 2 · 6 = 12; NP = 2 · 7 = 14"
+      ]
+     }
     },
     {
      "ma": "9.63",
@@ -8487,25 +10860,113 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Vuông tại B: BC = √5 cm, AC = 2√5 cm; hoặc vuông tại C: BC = √3 cm, AC = 2√3 cm (BC không thể là cạnh huyền vì AC = 2BC > BC)",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "hoi": "Cho tam giác ABC có AB = √15 cm và AC = 2BC. Tìm độ dài hai cạnh AC, BC sao cho ABC là một tam giác vuông. Xét lần lượt từng trường hợp đỉnh góc vuông:",
+      "dong": [
+       {
+        "chu": "Tam giác ABC vuông tại A: {0}",
+        "o": [
+         {
+          "dung": [
+           "Không xảy ra"
+          ],
+          "sai": [
+           "BC = √5 cm, AC = 2√5 cm",
+           "BC = √3 cm, AC = 2√3 cm",
+           "BC = √15 cm, AC = 2√15 cm"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Tam giác ABC vuông tại B: {0}",
+        "o": [
+         {
+          "dung": [
+           "BC = √5 cm, AC = 2√5 cm"
+          ],
+          "sai": [
+           "BC = √3 cm, AC = 2√3 cm",
+           "BC = √15 cm, AC = 2√15 cm",
+           "Không xảy ra"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Tam giác ABC vuông tại C: {0}",
+        "o": [
+         {
+          "dung": [
+           "BC = √3 cm, AC = 2√3 cm"
+          ],
+          "sai": [
+           "BC = √5 cm, AC = 2√5 cm",
+           "BC = √15 cm, AC = 2√15 cm",
+           "Không xảy ra"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "9.64a",
-     "de": "Cho tam giác ABC với AB > AC. Lấy điểm D trên cạnh BC (sách in nhầm, đúng là cạnh AB) sao cho AC = AD. Qua D kẻ đường thẳng song song với BC và cắt AC tại E. Qua E kẻ đường thẳng song song với CD và cắt AB tại F. Chứng minh rằng AD^2 = AF · AB.",
+     "de": "Cho tam giác ABC với AB > AC. Lấy điểm D trên cạnh AB sao cho AC = AD. Qua D kẻ đường thẳng song song với BC và cắt AC tại E. Qua E kẻ đường thẳng song song với CD và cắt AB tại F. Chứng minh rằng AD^2 = AF · AB.",
      "trang": 68,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "DE // BC nên ΔADE ᔕ ΔABC, AD/AB = AE/AC, hay AD = AB · AE/AC (1). EF // CD nên ΔAEF ᔕ ΔACD, AF/AD = AE/AC, hay AD = AF · AC/AE (2). Nhân (1) với (2) được AD^2 = AF · AB.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 4,
+      "buoc": [
+       "DE // BC nên ΔADE ᔕ ΔABC, suy ra AD/AB = AE/AC",
+       "EF // CD nên ΔAFE ᔕ ΔADC, suy ra AF/AD = AE/AC",
+       "Do đó AD/AB = AF/AD",
+       "Vậy AD · AD = AF · AB, tức là AD² = AF · AB"
+      ],
+      "nhieu": [
+       "DE // BC nên ΔADE ᔕ ΔABC, suy ra AD/AB = AE/EC",
+       "EF // CD nên ΔAFE ᔕ ΔADC, suy ra AF/FD = AE/AC"
+      ],
+      "thu_tu_khac": [
+       [
+        1,
+        0,
+        2,
+        3
+       ]
+      ]
+     }
     },
     {
      "ma": "9.64b",
-     "de": "Cho tam giác ABC với AB > AC. Lấy điểm D trên cạnh BC (sách in nhầm, đúng là cạnh AB) sao cho AC = AD. Qua D kẻ đường thẳng song song với BC và cắt AC tại E. Qua E kẻ đường thẳng song song với CD và cắt AB tại F. Chứng minh rằng ΔACF ᔕ ΔABC.",
+     "de": "Cho tam giác ABC với AB > AC. Lấy điểm D trên cạnh AB sao cho AC = AD. Qua D kẻ đường thẳng song song với BC và cắt AC tại E. Qua E kẻ đường thẳng song song với CD và cắt AB tại F. Chứng minh rằng ΔACF ᔕ ΔABC.",
      "trang": 68,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Từ câu a: AE/AD = AC/AB và AF/AD = AE/AC; vì AD = AC nên AE = AF. ΔACF và ΔABC có góc A chung, AC/AB = AE/AD = AE/AC = AF/AC nên ΔACF ᔕ ΔABC (c.g.c).",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 4,
+      "buoc": [
+       "Theo câu a, AD² = AF · AB; mà AD = AC nên AC² = AF · AB",
+       "Suy ra AF/AC = AC/AB",
+       "ΔACF và ΔABC có góc CAF = góc BAC (góc chung) và AF/AC = AC/AB",
+       "Nên ΔACF ᔕ ΔABC (c.g.c)"
+      ],
+      "nhieu": [
+       "Suy ra AF/AC = AB/AC",
+       "Nên ΔACF ᔕ ΔACB (c.g.c)"
+      ]
+     }
     },
     {
      "ma": "9.65a",
@@ -8514,7 +10975,20 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "ΔBDF (vuông tại D) và ΔEDC (vuông tại D) có góc FBD = 90° − góc DCE = góc CED nên ΔBDF ᔕ ΔEDC (một cặp góc nhọn bằng nhau).",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 3,
+      "buoc": [
+       "ΔEDC vuông tại D nên góc CED = 90° − góc DCE = 90° − góc ACB",
+       "ΔABC vuông tại A nên góc ABC = 90° − góc ACB; suy ra góc FBD = góc ABC = góc CED",
+       "Hai tam giác vuông BDF (vuông tại D) và EDC (vuông tại D) có góc FBD = góc CED nên ΔBDF ᔕ ΔEDC"
+      ],
+      "nhieu": [
+       "Hai tam giác vuông BDF (vuông tại D) và EDC (vuông tại D) có góc FBD = góc CED nên ΔBDF ᔕ ΔCDE",
+       "ΔABC vuông tại A nên góc ABC = 90° − góc ACB; suy ra góc FBD = góc ABC = góc DCE"
+      ]
+     }
     },
     {
      "ma": "9.65b",
@@ -8523,7 +10997,35 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "ΔABC (vuông tại A) và ΔDEC (vuông tại D) có góc C chung nên ΔABC ᔕ ΔDEC, suy ra AB/DE = AC/DC. AD là phân giác góc BAC nên AC/DC = AB/BD. Do đó AB/DE = AB/BD, suy ra DB = DE.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 4,
+      "buoc": [
+       "Hai tam giác vuông ABC (vuông tại A) và DEC (vuông tại D) có chung góc nhọn C nên ΔABC ᔕ ΔDEC",
+       "Suy ra AB/DE = AC/DC",
+       "AD là phân giác của góc BAC nên DB/DC = AB/AC, hay AC/DC = AB/DB",
+       "Do đó AB/DE = AB/DB, suy ra DB = DE"
+      ],
+      "nhieu": [
+       "AD là phân giác của góc BAC nên DB/DC = AC/AB",
+       "Suy ra AB/DE = DC/AC"
+      ],
+      "thu_tu_khac": [
+       [
+        0,
+        2,
+        1,
+        3
+       ],
+       [
+        2,
+        0,
+        1,
+        3
+       ]
+      ]
+     }
     },
     {
      "ma": "9.66a",
@@ -8532,7 +11034,28 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "AH = 2,4 cm; BH = 1,8 cm; CH = 3,2 cm (BC = 5 cm)",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "hoi": "Cho tam giác ABC vuông tại A có đường cao AH. Biết AB = 3 cm, AC = 4 cm, hãy tính độ dài các đoạn thẳng AH, BH, CH.\n(Gõ AH, BH, CH theo thứ tự, tính bằng cm, cách nhau bằng dấu ;)",
+      "dap": [
+       "2,4;1,8;3,2"
+      ],
+      "phim": [
+       ";"
+      ],
+      "nhieu": [
+       "√",
+       "²"
+      ],
+      "loi_giai": [
+       "BC² = AB² + AC² = 3² + 4² = 25; BC = 5",
+       "AH · BC = AB · AC (cùng bằng hai lần diện tích ΔABC) nên AH = 3 · 4 : 5 = 2,4",
+       "Hai tam giác vuông HBA và ABC có chung góc nhọn B nên ΔHBA ᔕ ΔABC, suy ra BH/BA = BA/BC, BH = 3² : 5 = 1,8",
+       "CH = BC − BH = 5 − 1,8 = 3,2"
+      ]
+     }
     },
     {
      "ma": "9.66b",
@@ -8541,7 +11064,35 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "AMHN là hình chữ nhật nên góc MHN = 90°. HM // AC nên theo Thalès HM/AC = BH/BC = AB^2/BC^2, suy ra HM/AB = AB · AC/BC^2; tương tự HN/AC = AB · AC/BC^2. Hai tam giác vuông HMN (vuông tại H) và ABC (vuông tại A) có HM/AB = HN/AC nên ΔHMN ᔕ ΔABC (hai cạnh góc vuông tỉ lệ).",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 4,
+      "buoc": [
+       "Tứ giác AMHN có góc MAN = góc AMH = góc ANH = 90° nên là hình chữ nhật, suy ra góc MHN = 90°",
+       "Gọi O là giao điểm của hai đường chéo AH và MN của hình chữ nhật AMHN thì OM = OH, nên góc OMH = góc OHM, tức là góc NMH = góc AHM",
+       "Trong ΔAMH vuông tại M: góc AHM = 90° − góc MAH; trong ΔABH vuông tại H: góc ABH = 90° − góc BAH; suy ra góc AHM = góc ABH = góc ABC",
+       "Hai tam giác vuông HMN (vuông tại H) và ABC (vuông tại A) có góc HMN = góc ABC nên ΔHMN ᔕ ΔABC"
+      ],
+      "nhieu": [
+       "Hai tam giác vuông HMN (vuông tại H) và ABC (vuông tại A) có góc HMN = góc ABC nên ΔHMN ᔕ ΔACB",
+       "Trong ΔAMH vuông tại M: góc AHM = 90° − góc MAH; trong ΔABH vuông tại H: góc ABH = 90° − góc BAH; suy ra góc AHM = góc ACB"
+      ],
+      "thu_tu_khac": [
+       [
+        0,
+        2,
+        1,
+        3
+       ],
+       [
+        2,
+        0,
+        1,
+        3
+       ]
+      ]
+     }
     },
     {
      "ma": "9.67a",
@@ -8550,7 +11101,59 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "MN, MP là đường trung bình của ΔHAB, ΔHAC nên MN/AB = MP/AC = 1/2; NP/BC = (HN + HP)/(HB + HC) = 1/2. Vậy ΔMNP ᔕ ΔABC (c.c.c) với tỉ số đồng dạng 1/2.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 5,
+      "buoc": [
+       "M, N lần lượt là trung điểm của HA, HB nên MN là đường trung bình của ΔHAB, MN = AB : 2",
+       "M, P lần lượt là trung điểm của HA, HC nên MP là đường trung bình của ΔHAC, MP = AC : 2",
+       "H nằm giữa B và C nên NP = NH + HP = HB : 2 + HC : 2 = BC : 2",
+       "Suy ra MN/AB = MP/AC = NP/BC = 1/2",
+       "Vậy ΔMNP ᔕ ΔABC (c.c.c) với tỉ số đồng dạng 1/2"
+      ],
+      "nhieu": [
+       "Suy ra MN/AB = MP/AC = NP/BC = 2",
+       "Vậy ΔMNP ᔕ ΔACB (c.c.c) với tỉ số đồng dạng 1/2"
+      ],
+      "thu_tu_khac": [
+       [
+        0,
+        2,
+        1,
+        3,
+        4
+       ],
+       [
+        1,
+        0,
+        2,
+        3,
+        4
+       ],
+       [
+        1,
+        2,
+        0,
+        3,
+        4
+       ],
+       [
+        2,
+        0,
+        1,
+        3,
+        4
+       ],
+       [
+        2,
+        1,
+        0,
+        3,
+        4
+       ]
+      ]
+     }
     },
     {
      "ma": "9.67b",
@@ -8559,7 +11162,31 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Hai tam giác vuông ABH và CAH có góc ABH = 90° − góc ACH = góc CAH nên ΔABH ᔕ ΔCAH, suy ra AB/AC = BH/AH = BN/AM. ΔABN và ΔCAM có góc ABN = góc ABH = góc CAH = góc CAM, AB/CA = BN/AM nên ΔABN ᔕ ΔCAM (c.g.c). Chứng minh tương tự được ΔACP ᔕ ΔBAM.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 5,
+      "buoc": [
+       "Hai tam giác vuông ABH (vuông tại H) và CAH (vuông tại H) có góc ABH = 90° − góc ACH = góc CAH nên ΔABH ᔕ ΔCAH",
+       "Suy ra AB/CA = BH/AH = (BH : 2)/(AH : 2) = BN/AM",
+       "ΔABN và ΔCAM có góc ABN = góc ABH = góc CAH = góc CAM và AB/CA = BN/AM nên ΔABN ᔕ ΔCAM (c.g.c)",
+       "Từ ΔABH ᔕ ΔCAH cũng có AC/BA = CH/AH = (CH : 2)/(AH : 2) = CP/AM",
+       "ΔACP và ΔBAM có góc ACP = góc ACH = góc BAH = góc BAM và AC/BA = CP/AM nên ΔACP ᔕ ΔBAM (c.g.c)"
+      ],
+      "nhieu": [
+       "ΔABN và ΔCAM có góc ABN = góc ABH = góc CAH = góc CAM và AB/CA = BN/AM nên ΔABN ᔕ ΔACM (c.g.c)",
+       "Hai tam giác vuông ABH (vuông tại H) và CAH (vuông tại H) có góc ABH = 90° − góc ACH = góc ACH nên ΔABH ᔕ ΔCAH"
+      ],
+      "thu_tu_khac": [
+       [
+        0,
+        3,
+        4,
+        1,
+        2
+       ]
+      ]
+     }
     },
     {
      "ma": "9.67c",
@@ -8568,7 +11195,21 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Xét ΔANC: AM ⊥ CN (vì AH ⊥ BC), NM ⊥ AC (vì MN // AB mà AB ⊥ AC). Ba đường cao của ΔANC đồng quy tại M, suy ra CM ⊥ AN. Tương tự, M là trực tâm của ΔABP nên BM ⊥ AP.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 4,
+      "buoc": [
+       "MN là đường trung bình của ΔHAB nên MN // AB; mà AB ⊥ AC nên NM ⊥ AC",
+       "Trong ΔANC có AH ⊥ NC và NM ⊥ AC, hai đường cao này cắt nhau tại M nên M là trực tâm của ΔANC",
+       "Suy ra CM ⊥ AN",
+       "Tương tự, MP // AC nên PM ⊥ AB; trong ΔABP, M là giao điểm của hai đường cao AH và PM nên M là trực tâm, do đó BM ⊥ AP"
+      ],
+      "nhieu": [
+       "MN là đường trung bình của ΔHAB nên MN // AB; mà AB ⊥ AC nên NM // AC",
+       "Trong ΔANC có AH ⊥ NC và NM ⊥ AC, hai đường cao này cắt nhau tại M nên M là trọng tâm của ΔANC"
+      ]
+     }
     },
     {
      "ma": "9.68",
@@ -8577,7 +11218,31 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Hai tam giác vuông CAH và CBA có góc C chung nên ΔCAH ᔕ ΔCBA, suy ra CA/CB = AH/BA = AM/BN và góc CAH = góc CBA. ΔCAM và ΔCBN có CA/CB = AM/BN, góc CAM = góc CBN nên ΔCAM ᔕ ΔCBN (c.g.c). Hai tam giác vuông CHM và CAN có HC/AC = HA/AB = HM/AN nên ΔCHM ᔕ ΔCAN (hai cạnh góc vuông tỉ lệ).",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 5,
+      "buoc": [
+       "Hai tam giác vuông CAH (vuông tại H) và CBA (vuông tại A) có chung góc nhọn C nên ΔCAH ᔕ ΔCBA",
+       "Suy ra CA/CB = AH/BA = (AH : 2)/(BA : 2) = AM/BN và góc CAH = góc CBA",
+       "ΔCAM và ΔCBN có góc CAM = góc CBN và CA/CB = AM/BN nên ΔCAM ᔕ ΔCBN (c.g.c)",
+       "Từ ΔCAH ᔕ ΔCBA cũng có CH/CA = HA/AB = (HA : 2)/(AB : 2) = HM/AN",
+       "Hai tam giác vuông CHM (vuông tại H) và CAN (vuông tại A) có CH/CA = HM/AN nên ΔCHM ᔕ ΔCAN (hai cạnh góc vuông tỉ lệ)"
+      ],
+      "nhieu": [
+       "ΔCAM và ΔCBN có góc CAM = góc CBN và CA/CB = AM/BN nên ΔCAM ᔕ ΔCNB (c.g.c)",
+       "Từ ΔCAH ᔕ ΔCBA cũng có CH/CB = HA/AB = HM/AN"
+      ],
+      "thu_tu_khac": [
+       [
+        0,
+        3,
+        4,
+        1,
+        2
+       ]
+      ]
+     }
     },
     {
      "ma": "9.69",
@@ -8586,7 +11251,23 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Trên các tia OA, OB, OC, OD lấy A', B', C', D' sao cho OA' = (3/2)OA, OB' = (3/2)OB, OC' = (3/2)OC, OD' = (3/2)OD; nối lại được tứ giác A'B'C'D'. Toạ độ: A'(6; 6), B'(6; 0), C'(9; −3), D'(13,5; 3).",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "hinh": [
+      "sbttoan8t2/9.69-chon-1.webp",
+      "sbttoan8t2/9.69-chon-2.webp"
+     ],
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Trên lưới ô vuông cho điểm O và tứ giác ABCD (màu đen, vẽ lại Hình 9.18 của sách): lấy O làm gốc toạ độ, cạnh một ô là một đơn vị, A(4; 4), B(4; 0), C(6; −2), D(9; 2). Hình nào dưới đây vẽ đúng tứ giác A'B'C'D' (màu đỏ) là hình đồng dạng phối cảnh của tứ giác ABCD theo tỉ số đồng dạng 3/2 và tâm phối cảnh là điểm O?",
+      "cac": [
+       "Hình 1",
+       "Hình 2",
+       "Hình 3",
+       "Hình 4"
+      ],
+      "dap": "A"
+     }
     }
    ]
   },
