@@ -2,7 +2,7 @@
  "nguon": "toan8t1",
  "mon": "Toán",
  "ten": "SGK Toán 8 — tập một",
- "ban": 3,
+ "ban": 4,
  "cac_bai": [
   {
    "chuong": "Chương I. Đa thức",
@@ -11727,14 +11727,116 @@
      "de": "Em hãy cho biết phương pháp thu thập dữ liệu trong mỗi trường hợp sau là trực tiếp hay gián tiếp. a) Nam vào website của Cục Thống kê và ghi lại số xã/phường của các tỉnh/thành phố thuộc đồng bằng Bắc Bộ. b) Thầy giáo dạy Giáo dục thể chất đã đo và ghi lại thời gian chạy cự li 1 000 mét của các bạn học sinh khối 8.",
      "trang": 91,
      "nhom": "Luyện tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "Em hãy cho biết phương pháp thu thập dữ liệu trong mỗi trường hợp sau là trực tiếp hay gián tiếp.",
+      "dong": [
+       {
+        "chu": "a) Nam vào website của Cục Thống kê và ghi lại số xã/phường của các tỉnh/thành phố thuộc đồng bằng Bắc Bộ: {0}",
+        "o": [
+         {
+          "dung": [
+           "gián tiếp"
+          ],
+          "sai": [
+           "trực tiếp"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "b) Thầy giáo dạy Giáo dục thể chất đã đo và ghi lại thời gian chạy cự li 1 000 mét của các bạn học sinh khối 8: {0}",
+        "o": [
+         {
+          "dung": [
+           "trực tiếp"
+          ],
+          "sai": [
+           "gián tiếp"
+          ],
+          "hai": true
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "Luyện tập 2 (tr.92)",
      "de": "Với mỗi câu hỏi sau, An đã hỏi 5 bạn và ghi lại câu trả lời. a) Bạn nặng bao nhiêu kilôgam? Kết quả: 48; 51; 46; 145; 48. b) Tên bạn có bao nhiêu chữ cái? Kết quả: 4; 5; 6; 3; 5. Mỗi dãy dữ liệu trên thuộc loại nào? Chỉ ra giá trị không hợp lí nếu có.",
      "trang": 92,
      "nhom": "Luyện tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "hoi": "Với mỗi câu hỏi sau, An đã hỏi 5 bạn và ghi lại câu trả lời. Mỗi dãy dữ liệu thuộc loại nào? Chỉ ra giá trị không hợp lí nếu có.",
+      "dong": [
+       {
+        "chu": "a) Bạn nặng bao nhiêu kilôgam? Kết quả: 48; 51; 46; 145; 48.\nLoại dữ liệu: {0}",
+        "o": [
+         {
+          "dung": [
+           "số liệu liên tục"
+          ],
+          "sai": [
+           "số liệu rời rạc",
+           "dữ liệu không là số, có thể sắp thứ tự",
+           "dữ liệu không là số, không thể sắp thứ tự"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Giá trị không hợp lí của dãy a): {0}",
+        "o": [
+         {
+          "dung": [
+           "145"
+          ],
+          "sai": [
+           "46",
+           "51",
+           "không có giá trị nào"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "b) Tên bạn có bao nhiêu chữ cái? Kết quả: 4; 5; 6; 3; 5.\nLoại dữ liệu: {0}",
+        "o": [
+         {
+          "dung": [
+           "số liệu rời rạc"
+          ],
+          "sai": [
+           "số liệu liên tục",
+           "dữ liệu không là số, có thể sắp thứ tự",
+           "dữ liệu không là số, không thể sắp thứ tự"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Giá trị không hợp lí của dãy b): {0}",
+        "o": [
+         {
+          "dung": [
+           "không có giá trị nào"
+          ],
+          "sai": [
+           "3",
+           "6",
+           "4"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "Vận dụng (tr.92)",
@@ -11748,21 +11850,189 @@
      "de": "Dữ liệu thu được trong mỗi câu hỏi sau thuộc loại nào? a) Bạn cao bao nhiêu? b) Mạng điện thoại bạn đang dùng là gì? c) Gia đình bạn có bao nhiêu người dưới 18 tuổi?",
      "trang": 92,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "hoi": "Dữ liệu thu được trong mỗi câu hỏi sau thuộc loại nào?",
+      "dong": [
+       {
+        "chu": "a) Bạn cao bao nhiêu? Loại: {0}",
+        "o": [
+         {
+          "dung": [
+           "số liệu liên tục"
+          ],
+          "sai": [
+           "số liệu rời rạc",
+           "dữ liệu không là số, có thể sắp thứ tự",
+           "dữ liệu không là số, không thể sắp thứ tự"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "b) Mạng điện thoại bạn đang dùng là gì? Loại: {0}",
+        "o": [
+         {
+          "dung": [
+           "dữ liệu không là số, không thể sắp thứ tự"
+          ],
+          "sai": [
+           "số liệu rời rạc",
+           "số liệu liên tục",
+           "dữ liệu không là số, có thể sắp thứ tự"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "c) Gia đình bạn có bao nhiêu người dưới 18 tuổi? Loại: {0}",
+        "o": [
+         {
+          "dung": [
+           "số liệu rời rạc"
+          ],
+          "sai": [
+           "số liệu liên tục",
+           "dữ liệu không là số, có thể sắp thứ tự",
+           "dữ liệu không là số, không thể sắp thứ tự"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "5.2",
      "de": "Ghép cặp cho phù hợp và ghi kết quả vào vở: a. Số liệu rời rạc; b. Số liệu liên tục; c. Dữ liệu không là số, không thể sắp thứ tự; d. Dữ liệu không là số, có thể sắp thứ tự — với A. Kết quả đánh giá của 5 bạn về đề kiểm tra học kì I môn Toán: Khó, Rất khó, Trung bình, Dễ, Khó; B. Nhiệt độ (°C) tại Nha Trang trong 5 ngày đầu tháng 6 là: 23,2; 25,7; 31,4; 27,3; 28,6; C. Số hoạt động hè mà các bạn trong tổ tham gia: 2; 1; 3; 0; 4; D. Tên các môn thể thao mà các bạn yêu thích nhất: Bóng đá, Cầu lông, Cờ vua, Võ thuật, Bóng bàn.",
      "trang": 92,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "hoi": "Ghép cặp cho phù hợp: mỗi dãy dữ liệu A, B, C, D dưới đây thuộc loại nào trong bốn loại a, b, c, d?",
+      "dong": [
+       {
+        "chu": "A. Kết quả đánh giá của 5 bạn về đề kiểm tra học kì I môn Toán: Khó, Rất khó, Trung bình, Dễ, Khó → {0}",
+        "o": [
+         {
+          "dung": [
+           "d. Dữ liệu không là số, có thể sắp thứ tự"
+          ],
+          "sai": [
+           "a. Số liệu rời rạc",
+           "b. Số liệu liên tục",
+           "c. Dữ liệu không là số, không thể sắp thứ tự"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "B. Nhiệt độ (°C) tại Nha Trang trong 5 ngày đầu tháng 6: 23,2; 25,7; 31,4; 27,3; 28,6 → {0}",
+        "o": [
+         {
+          "dung": [
+           "b. Số liệu liên tục"
+          ],
+          "sai": [
+           "a. Số liệu rời rạc",
+           "c. Dữ liệu không là số, không thể sắp thứ tự",
+           "d. Dữ liệu không là số, có thể sắp thứ tự"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "C. Số hoạt động hè mà các bạn trong tổ tham gia: 2; 1; 3; 0; 4 → {0}",
+        "o": [
+         {
+          "dung": [
+           "a. Số liệu rời rạc"
+          ],
+          "sai": [
+           "b. Số liệu liên tục",
+           "c. Dữ liệu không là số, không thể sắp thứ tự",
+           "d. Dữ liệu không là số, có thể sắp thứ tự"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "D. Tên các môn thể thao mà các bạn yêu thích nhất: Bóng đá, Cầu lông, Cờ vua, Võ thuật, Bóng bàn → {0}",
+        "o": [
+         {
+          "dung": [
+           "c. Dữ liệu không là số, không thể sắp thứ tự"
+          ],
+          "sai": [
+           "a. Số liệu rời rạc",
+           "b. Số liệu liên tục",
+           "d. Dữ liệu không là số, có thể sắp thứ tự"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "5.3",
      "de": "Nên sử dụng phương pháp thu thập nào để thu được mỗi dữ liệu sau? a) Tên của 10 quốc gia có diện tích lớn nhất. b) Ý kiến của các bạn về địa điểm đi tham quan tuần tới. c) Chiều cao của các cây cau giống sau 6 tháng trồng.",
      "trang": 92,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "hoi": "Nên sử dụng phương pháp thu thập nào để thu được mỗi dữ liệu sau?",
+      "dong": [
+       {
+        "chu": "a) Tên của 10 quốc gia có diện tích lớn nhất: {0}",
+        "o": [
+         {
+          "dung": [
+           "gián tiếp: tra cứu từ nguồn có sẵn (sách, báo, Internet)"
+          ],
+          "sai": [
+           "trực tiếp: lập bảng hỏi hoặc phỏng vấn",
+           "trực tiếp: làm thí nghiệm (trồng cây rồi đo)"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "b) Ý kiến của các bạn về địa điểm đi tham quan tuần tới: {0}",
+        "o": [
+         {
+          "dung": [
+           "trực tiếp: lập bảng hỏi hoặc phỏng vấn"
+          ],
+          "sai": [
+           "gián tiếp: tra cứu từ nguồn có sẵn (sách, báo, Internet)",
+           "trực tiếp: làm thí nghiệm (trồng cây rồi đo)"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "c) Chiều cao của các cây cau giống sau 6 tháng trồng: {0}",
+        "o": [
+         {
+          "dung": [
+           "trực tiếp: làm thí nghiệm (trồng cây rồi đo)"
+          ],
+          "sai": [
+           "gián tiếp: tra cứu từ nguồn có sẵn (sách, báo, Internet)",
+           "trực tiếp: lập bảng hỏi hoặc phỏng vấn"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     }
    ]
   },
@@ -11775,91 +12045,201 @@
      "de": "Nên chọn biểu đồ tranh hay biểu đồ cột để biểu diễn dữ liệu Bảng 5.1 (số lượng các loài động vật tại Thảo Cầm Viên ngày 14-7-1869: Thú 120 con, Chim 344 con, Bò sát 45 con)? Vẽ biểu đồ đó.",
      "trang": 94,
      "nhom": "Luyện tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "bo_may": "vẽ biểu đồ"
     },
     {
      "ma": "Luyện tập 2 (tr.95)",
      "de": "Cho biểu đồ Hình 5.3 (số cơn bão trên toàn cầu các năm 2014-2018: 99; 121; 86; 130; 94). a) Lập bảng thống kê cho dữ liệu trong biểu đồ. b) Vẽ biểu đồ cột biểu diễn dữ liệu này. Nếu ta có dữ liệu về số cơn bão hằng năm trên toàn cầu từ năm 1970 đến nay thì có nên dùng biểu đồ cột để biểu diễn không?",
      "trang": 95,
      "nhom": "Luyện tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "bo_may": "vẽ biểu đồ"
     },
     {
      "ma": "Luyện tập 3 (tr.96)",
      "de": "Bảng thống kê cho biết mật độ dân số (người/km^2) tại ba vùng kinh tế xã hội trong hai năm 2009 và 2019 (Đồng bằng sông Hồng: 930 và 1 060; Bắc Trung bộ và Duyên hải miền Trung: 196 và 211; Đồng bằng sông Cửu Long: 424 và 423). Muốn biết sau 10 năm mật độ dân số thay đổi thế nào ở mỗi vùng, ta nên sử dụng biểu đồ nào?",
      "trang": 96,
      "nhom": "Luyện tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Bảng thống kê cho biết mật độ dân số (người/km²) tại ba vùng kinh tế xã hội trong hai năm 2009 và 2019: Đồng bằng sông Hồng 930 và 1 060; Bắc Trung bộ và Duyên hải miền Trung 196 và 211; Đồng bằng sông Cửu Long 424 và 423. Muốn biết sau 10 năm mật độ dân số thay đổi thế nào ở mỗi vùng, ta nên sử dụng biểu đồ nào?",
+      "cac": [
+       "Biểu đồ cột kép",
+       "Biểu đồ hình quạt tròn",
+       "Biểu đồ tranh"
+      ],
+      "dap": "A"
+     }
     },
     {
      "ma": "Thử thách nhỏ (tr.97)",
-     "de": "Trở lại bài toán mở đầu, với dữ liệu trong Bảng 5.1. Vuông sẽ dùng biểu đồ cột, Tròn sẽ dùng biểu đồ hình quạt tròn. Em ủng hộ Vuông hay Tròn?",
+     "de": "Trở lại bài toán mở đầu, với dữ liệu trong Bảng 5.1 (số lượng các loài động vật tại Thảo Cầm Viên ngày 14-7-1869: Thú 120 con, Chim 344 con, Bò sát 45 con). Tròn nói: Tớ sẽ dùng biểu đồ cột để biểu diễn dữ liệu trong Bảng 5.1. Vuông nói: Tớ sẽ dùng biểu đồ hình quạt tròn để biểu diễn. Pi nhắc: Việc lựa chọn biểu đồ nào để biểu diễn không chỉ phụ thuộc vào dữ liệu mà còn phụ thuộc vào mục đích của người dùng! Em ủng hộ Vuông hay Tròn?",
      "trang": 97,
      "nhom": "Vận dụng",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "Bảng 5.1 cho biết số lượng các loài động vật tại Thảo Cầm Viên ngày 14-7-1869: Thú 120 con, Chim 344 con, Bò sát 45 con.\nTròn nói: Tớ sẽ dùng biểu đồ cột để biểu diễn dữ liệu trong Bảng 5.1.\nVuông nói: Tớ sẽ dùng biểu đồ hình quạt tròn để biểu diễn.\nPi nhắc: Việc lựa chọn biểu đồ nào để biểu diễn không chỉ phụ thuộc vào dữ liệu mà còn phụ thuộc vào mục đích của người dùng!\nEm ủng hộ Vuông hay Tròn?",
+      "dong": [
+       {
+        "chu": "Nếu muốn so sánh số lượng thú, chim, bò sát, nên dùng {0}",
+        "o": [
+         {
+          "dung": [
+           "biểu đồ cột (ủng hộ Tròn)"
+          ],
+          "sai": [
+           "biểu đồ hình quạt tròn (ủng hộ Vuông)",
+           "biểu đồ đoạn thẳng"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Nếu muốn biết mỗi loài chiếm bao nhiêu phần trong tổng số con vật, nên dùng {0}",
+        "o": [
+         {
+          "dung": [
+           "biểu đồ hình quạt tròn (ủng hộ Vuông)"
+          ],
+          "sai": [
+           "biểu đồ cột (ủng hộ Tròn)",
+           "biểu đồ đoạn thẳng"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "5.4a",
      "de": "Biểu đồ Hình 5.6 biểu diễn số lượng các bạn lớp 8A tham gia các câu lạc bộ (Tiếng Anh, Võ thuật, Nghệ thuật; mỗi biểu tượng ứng với 3 bạn). Cho biết đây là biểu đồ gì? Mỗi biểu tượng ứng với bao nhiêu học sinh?",
      "trang": 97,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "hinh": [
+      "toan8t1/5.4.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "Biểu đồ Hình 5.6 biểu diễn số lượng các bạn lớp 8A tham gia các câu lạc bộ.\nCho biết đây là biểu đồ gì? Mỗi biểu tượng ứng với bao nhiêu học sinh?",
+      "dong": [
+       {
+        "chu": "Loại biểu đồ: {0}",
+        "o": [
+         {
+          "dung": [
+           "biểu đồ tranh"
+          ],
+          "sai": [
+           "biểu đồ cột",
+           "biểu đồ hình quạt tròn",
+           "biểu đồ đoạn thẳng"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Mỗi biểu tượng ứng với: {0}",
+        "o": [
+         {
+          "dung": [
+           "3 học sinh"
+          ],
+          "sai": [
+           "1 học sinh",
+           "2 học sinh",
+           "9 học sinh"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "5.4b",
-     "de": "Biểu đồ Hình 5.6 biểu diễn số lượng các bạn lớp 8A tham gia các câu lạc bộ. Lập bảng thống kê và vẽ biểu đồ cột biểu diễn dữ liệu này.",
+     "de": "Biểu đồ tranh Hình 5.6 biểu diễn số lượng các bạn lớp 8A tham gia các câu lạc bộ: Tiếng Anh 2 biểu tượng, Võ thuật 3 biểu tượng, Nghệ thuật 2 biểu tượng (mỗi biểu tượng ứng với 3 bạn). Lập bảng thống kê và vẽ biểu đồ cột biểu diễn dữ liệu này.",
      "trang": 97,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "hinh": [
+      "toan8t1/5.4.webp"
+     ],
+     "bo_may": "vẽ biểu đồ"
     },
     {
      "ma": "5.5a",
      "de": "Bảng thống kê cho biết số lượng khách đánh giá chất lượng dịch vụ của một khách sạn (Rất tốt: 5; Tốt: 20; Trung bình: 10; Kém: 5). Vẽ biểu đồ tranh, biểu đồ cột biểu diễn bảng thống kê trên.",
      "trang": 97,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "bo_may": "vẽ biểu đồ"
     },
     {
      "ma": "5.5b",
-     "de": "Bảng thống kê cho biết số lượng khách đánh giá chất lượng dịch vụ của một khách sạn. Nếu muốn biểu diễn tỉ lệ khách hàng đánh giá theo các mức đánh giá trên, ta cần dùng biểu đồ nào để biểu diễn?",
+     "de": "Bảng thống kê cho biết số lượng khách đánh giá chất lượng dịch vụ của một khách sạn (Rất tốt: 5; Tốt: 20; Trung bình: 10; Kém: 5). Nếu muốn biểu diễn tỉ lệ khách hàng đánh giá theo các mức đánh giá trên, ta cần dùng biểu đồ nào để biểu diễn?",
      "trang": 97,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Bảng thống kê cho biết số lượng khách đánh giá chất lượng dịch vụ của một khách sạn: Rất tốt 5; Tốt 20; Trung bình 10; Kém 5. Nếu muốn biểu diễn tỉ lệ khách hàng đánh giá theo các mức đánh giá trên, ta cần dùng biểu đồ nào để biểu diễn?",
+      "cac": [
+       "Biểu đồ hình quạt tròn",
+       "Biểu đồ cột",
+       "Biểu đồ tranh",
+       "Biểu đồ đoạn thẳng"
+      ],
+      "dap": "A"
+     }
     },
     {
      "ma": "5.6",
-     "de": "Cho biểu đồ Hình 5.7 (số lượng huy chương của đoàn thể thao Mỹ và Nhật Bản tại Olympic Tokyo 2020). Hãy lập bảng thống kê biểu diễn số lượng huy chương các loại của đoàn thể thao Mỹ và vẽ biểu đồ cột biểu diễn bảng thống kê này.",
+     "de": "Cho biểu đồ cột kép Hình 5.7 về số lượng huy chương của đoàn thể thao Mỹ và Nhật Bản tại Olympic Tokyo 2020: Mỹ 39 huy chương vàng, 41 huy chương bạc, 33 huy chương đồng; Nhật Bản 27 huy chương vàng, 14 huy chương bạc, 17 huy chương đồng. Hãy lập bảng thống kê biểu diễn số lượng huy chương các loại của đoàn thể thao Mỹ và vẽ biểu đồ cột biểu diễn bảng thống kê này.",
      "trang": 97,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "bo_may": "vẽ biểu đồ"
     },
     {
      "ma": "5.7",
      "de": "Bảng sau cho biết khối lượng giấy vụn các lớp khối 8 đã thu gom được (8A: 12,7 kg; 8B: 16,8 kg; 8C: 15,5 kg; 8D: 14,3 kg). Lựa chọn biểu đồ phù hợp biểu diễn bảng thống kê này. Vẽ biểu đồ đó.",
      "trang": 98,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "bo_may": "vẽ biểu đồ"
     },
     {
      "ma": "5.8a",
      "de": "Bảng thống kê biểu diễn số huy chương vàng trong hai kì SEA Games năm 2017 và 2019 của các đoàn thể thao Việt Nam (2019: 98, 2017: 58), Thái Lan (2019: 92, 2017: 72). Vẽ biểu đồ để so sánh số huy chương vàng của mỗi quốc gia đạt được qua hai kì SEA Games.",
      "trang": 98,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "bo_may": "vẽ biểu đồ"
     },
     {
      "ma": "5.8b",
-     "de": "Bảng thống kê biểu diễn số huy chương vàng trong hai kì SEA Games năm 2017 và 2019 của Việt Nam và Thái Lan. Vẽ biểu đồ so sánh số huy chương vàng của Việt Nam và Thái Lan trong mỗi kì SEA Games.",
+     "de": "Bảng thống kê biểu diễn số huy chương vàng trong hai kì SEA Games năm 2017 và 2019 của các đoàn thể thao Việt Nam (2019: 98, 2017: 58), Thái Lan (2019: 92, 2017: 72). Vẽ biểu đồ so sánh số huy chương vàng của Việt Nam và Thái Lan trong mỗi kì SEA Games.",
      "trang": 98,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "bo_may": "vẽ biểu đồ"
     },
     {
      "ma": "5.9",
      "de": "Biểu đồ Hình 5.8 cho biết tỉ lệ mỗi loại quả bán được của một cửa hàng (Lê 20%, Táo 30%, Nhãn 40%, Nho 10%). Giả sử cửa hàng bán được 200 kg quả các loại. Lập bảng thống kê cho biết số lượng mỗi loại quả cửa hàng bán được. Vẽ biểu đồ cột biểu diễn bảng thống kê này.",
      "trang": 98,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "bo_may": "vẽ biểu đồ"
     }
    ]
   },
@@ -11879,21 +12259,221 @@
      "de": "Cho hai biểu đồ (Hình 5.12) biểu diễn số lượng người thất nghiệp tại một thành phố trong giai đoạn từ 12/2007 đến 6/2010 (7; 9; 11; 13 nghìn người). Hãy giải thích tại sao xu thế của hai biểu đồ lại khác nhau. Để thấy được xu thế của số lượng người thất nghiệp, ta nên dùng biểu đồ nào?",
      "trang": 101,
      "nhom": "Luyện tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "hinh": [
+      "toan8t1/LT2-tr101.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "hoi": "Hai biểu đồ ở Hình 5.12 biểu diễn số lượng người thất nghiệp tại một thành phố trong giai đoạn từ 12/2007 đến 6/2010. Hãy giải thích tại sao xu thế của hai biểu đồ lại khác nhau. Để thấy được xu thế của số lượng người thất nghiệp, ta nên dùng biểu đồ nào?",
+      "dong": [
+       {
+        "chu": "Biểu đồ a) cho thấy số người thất nghiệp {0}",
+        "o": [
+         {
+          "dung": [
+           "tăng, nhưng tăng chậm dần"
+          ],
+          "sai": [
+           "tăng đều",
+           "tăng ngày càng nhanh"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Biểu đồ b) cho thấy số người thất nghiệp {0}",
+        "o": [
+         {
+          "dung": [
+           "tăng đều"
+          ],
+          "sai": [
+           "tăng, nhưng tăng chậm dần",
+           "tăng ngày càng nhanh"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Hai xu thế khác nhau vì: {0}",
+        "o": [
+         {
+          "dung": [
+           "Biểu đồ b) đặt bốn mốc thời gian cách đều nhau, dù khoảng cách thật là 3 tháng, 8 tháng, 19 tháng"
+          ],
+          "sai": [
+           "hai biểu đồ biểu diễn hai bộ số liệu khác nhau về số người thất nghiệp",
+           "trục đứng của Biểu đồ b) được chia theo tỉ lệ khác với trục đứng của Biểu đồ a)"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Để thấy được xu thế của số lượng người thất nghiệp, nên dùng: {0}",
+        "o": [
+         {
+          "dung": [
+           "Biểu đồ a)"
+          ],
+          "sai": [
+           "Biểu đồ b)"
+          ],
+          "hai": true
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "Luyện tập 3 (tr.102)",
-     "de": "Các biểu đồ Hình 5.14 cho biết cơ cấu năng lượng được khai thác, sản xuất trong nước các năm 2018 và 2019. a) Lập bảng thống kê cho biết cơ cấu năng lượng được khai thác, sản xuất trong nước (theo tỉ lệ %) năm 2019. b) Nhận xét về sự thay đổi cơ cấu năng lượng được khai thác, sản xuất trong nước năm 2019 so với năm 2018.",
+     "de": "Các biểu đồ Hình 5.14 cho biết cơ cấu năng lượng được khai thác, sản xuất trong nước các năm 2018 và 2019. Năm 2018 (theo tỉ lệ): Than 45,02%; Dầu thô 23,19%; Khí thiên nhiên 17,09%; Nhiên liệu sinh học 14,70%. Năm 2019 (đơn vị: KTOE, 1 KTOE tương đương 1 000 tấn dầu): Than 26 408,48; Dầu thô 11 263,8; Khí thiên nhiên 9 180; Nhiên liệu sinh học 7 840. a) Lập bảng thống kê cho biết cơ cấu năng lượng được khai thác, sản xuất trong nước (theo tỉ lệ %) năm 2019. b) Nhận xét về sự thay đổi cơ cấu năng lượng được khai thác, sản xuất trong nước năm 2019 so với năm 2018.",
      "trang": 102,
      "nhom": "Luyện tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 5,
+      "hoi": "Cơ cấu năng lượng được khai thác, sản xuất trong nước (Hình 5.14):\n– Năm 2018 (theo tỉ lệ): than 45,02%; dầu thô 23,19%; khí thiên nhiên 17,09%; nhiên liệu sinh học 14,70%.\n– Năm 2019 (đơn vị: KTOE, 1 KTOE tương đương 1 000 tấn dầu): than 26 408,48; dầu thô 11 263,8; khí thiên nhiên 9 180; nhiên liệu sinh học 7 840.\na) Lập bảng thống kê cho biết cơ cấu năng lượng được khai thác, sản xuất trong nước (theo tỉ lệ %) năm 2019, làm tròn đến hàng phần trăm.\nb) Nhận xét về sự thay đổi cơ cấu năng lượng được khai thác, sản xuất trong nước năm 2019 so với năm 2018.",
+      "dong": [
+       {
+        "chu": "a) Than năm 2019: {0}",
+        "o": [
+         {
+          "dung": [
+           "48,29%"
+          ],
+          "sai": [
+           "45,02%",
+           "56,37%",
+           "48,28%"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "a) Dầu thô năm 2019: {0}",
+        "o": [
+         {
+          "dung": [
+           "20,59%"
+          ],
+          "sai": [
+           "23,19%",
+           "24,04%",
+           "42,65%"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "a) Khí thiên nhiên năm 2019: {0}",
+        "o": [
+         {
+          "dung": [
+           "16,78%"
+          ],
+          "sai": [
+           "17,09%",
+           "19,59%",
+           "34,76%"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "a) Nhiên liệu sinh học năm 2019: {0}",
+        "o": [
+         {
+          "dung": [
+           "14,33%",
+           "14,34%"
+          ],
+          "sai": [
+           "14,70%",
+           "29,69%"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "b) So với năm 2018, năm 2019: {0}",
+        "o": [
+         {
+          "dung": [
+           "tỉ lệ than tăng; tỉ lệ dầu thô, khí thiên nhiên và nhiên liệu sinh học đều giảm"
+          ],
+          "sai": [
+           "tỉ lệ than giảm; tỉ lệ dầu thô, khí thiên nhiên và nhiên liệu sinh học đều tăng",
+           "tỉ lệ than và dầu thô tăng; tỉ lệ khí thiên nhiên và nhiên liệu sinh học giảm"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "Luyện tập 4 (tr.103)",
      "de": "Cho biểu đồ Hình 5.16 (tốc độ gió theo tháng tại Nha Trang và Hà Nội). a) So sánh tốc độ gió trong các tháng tại hai thành phố này. Giải thích sự khác nhau đó. b) Ở Nha Trang, 6 tháng gió thổi mạnh nhất là những tháng nào?",
      "trang": 103,
      "nhom": "Luyện tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "hinh": [
+      "toan8t1/LT4-tr103.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "hoi": "Biểu đồ Hình 5.16 cho biết tốc độ gió (m/s) theo tháng tại Nha Trang và Hà Nội.\na) So sánh tốc độ gió trong các tháng tại hai thành phố này. Giải thích sự khác nhau đó.\nb) Ở Nha Trang, 6 tháng gió thổi mạnh nhất là những tháng nào?",
+      "dong": [
+       {
+        "chu": "a) So sánh: {0}",
+        "o": [
+         {
+          "dung": [
+           "tháng nào tốc độ gió ở Nha Trang cũng lớn hơn ở Hà Nội"
+          ],
+          "sai": [
+           "tháng nào tốc độ gió ở Hà Nội cũng lớn hơn ở Nha Trang",
+           "tốc độ gió ở Nha Trang chỉ lớn hơn ở Hà Nội từ tháng 10 đến tháng 3"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Giải thích: {0}",
+        "o": [
+         {
+          "dung": [
+           "Nha Trang giáp biển nên gió thổi mạnh hơn, còn Hà Nội không giáp biển"
+          ],
+          "sai": [
+           "Hà Nội giáp biển, còn Nha Trang nằm sâu trong đất liền",
+           "Nha Trang ở gần xích đạo hơn Hà Nội nên gió mạnh hơn"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "b) 6 tháng gió thổi mạnh nhất ở Nha Trang: {0}",
+        "o": [
+         {
+          "dung": [
+           "tháng 10, 11, 12, 1, 2, 3"
+          ],
+          "sai": [
+           "tháng 1, 2, 3, 4, 11, 12",
+           "tháng 1, 2, 3, 4, 5, 6",
+           "tháng 7, 8, 9, 10, 11, 12"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "5.10a",
@@ -11935,28 +12515,119 @@
      "de": "Cho biểu đồ (H.5.19) về tỉ lệ đất rừng trên tổng diện tích đất của Việt Nam và Indonesia các năm 2013-2017. So sánh tỉ lệ diện tích đất rừng trên tổng diện tích đất của hai nước.",
      "trang": 105,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "hinh": [
+      "toan8t1/5.12.webp"
+     ],
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Cho biểu đồ Hình 5.19 về tỉ lệ đất rừng trên tổng diện tích đất của Việt Nam và Indonesia các năm 2013 đến 2017. So sánh tỉ lệ diện tích đất rừng trên tổng diện tích đất của hai nước.",
+      "cac": [
+       "Năm nào tỉ lệ của Indonesia cũng cao hơn tỉ lệ của Việt Nam",
+       "Năm nào tỉ lệ của Việt Nam cũng cao hơn tỉ lệ của Indonesia",
+       "Tỉ lệ của hai nước bằng nhau vào năm 2017",
+       "Tỉ lệ của Việt Nam cao hơn tỉ lệ của Indonesia từ năm 2016"
+      ],
+      "dap": "A"
+     }
     },
     {
      "ma": "5.12b",
      "de": "Cho biểu đồ (H.5.19) về tỉ lệ đất rừng trên tổng diện tích đất của Việt Nam và Indonesia. Cho biết xu thế tăng, giảm của tỉ lệ diện tích đất rừng trên tổng diện tích đất của mỗi nước.",
      "trang": 105,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "hinh": [
+      "toan8t1/5.12.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "Cho biểu đồ Hình 5.19 về tỉ lệ đất rừng trên tổng diện tích đất của Việt Nam và Indonesia các năm 2013 đến 2017. Cho biết xu thế tăng, giảm của tỉ lệ diện tích đất rừng trên tổng diện tích đất của mỗi nước.",
+      "dong": [
+       {
+        "chu": "Việt Nam: {0}",
+        "o": [
+         {
+          "dung": [
+           "tăng"
+          ],
+          "sai": [
+           "giảm",
+           "không thay đổi"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Indonesia: {0}",
+        "o": [
+         {
+          "dung": [
+           "giảm"
+          ],
+          "sai": [
+           "tăng",
+           "không thay đổi"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "5.12c",
      "de": "Cho biểu đồ (H.5.19) về tỉ lệ đất rừng trên tổng diện tích đất. Lập bảng thống kê về tỉ lệ diện tích đất rừng của Việt Nam trên tổng diện tích đất qua các năm.",
      "trang": 105,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "hinh": [
+      "toan8t1/5.12.webp"
+     ],
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Cho biểu đồ Hình 5.19 về tỉ lệ đất rừng trên tổng diện tích đất. Lập bảng thống kê về tỉ lệ diện tích đất rừng của Việt Nam trên tổng diện tích đất qua các năm. Bảng nào đúng?",
+      "cac": [
+       "2013: 44,5%; 2014: 44,9%; 2015: 45,4%; 2016: 46,4%; 2017: 46,5%",
+       "2013: 53,5%; 2014: 53%; 2015: 52,5%; 2016: 50,7%; 2017: 50%",
+       "2013: 44,5%; 2014: 45,4%; 2015: 44,9%; 2016: 46,5%; 2017: 46,4%",
+       "2013: 44%; 2014: 45%; 2015: 45%; 2016: 46%; 2017: 46%"
+      ],
+      "dap": "A"
+     }
     },
     {
      "ma": "5.12d",
      "de": "Cho biểu đồ (H.5.19) về tỉ lệ đất rừng. Tổng diện tích đất của Việt Nam, Indonesia tương ứng là 331 690 km^2; 1 826 440 km^2. Tính diện tích đất rừng của Việt Nam, Indonesia năm 2017.",
      "trang": 105,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "hinh": [
+      "toan8t1/5.12.webp"
+     ],
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "hoi": "Cho biểu đồ Hình 5.19 về tỉ lệ đất rừng trên tổng diện tích đất. Tổng diện tích đất của Việt Nam, Indonesia tương ứng là 331 690 km²; 1 826 440 km². Tính diện tích đất rừng của Việt Nam, Indonesia năm 2017.\n(Gõ hai kết quả theo thứ tự Việt Nam; Indonesia, cách nhau bằng dấu ;, không ghi đơn vị)",
+      "dap": [
+       "154235,85;913220"
+      ],
+      "phim": [
+       ";"
+      ],
+      "nhieu": [
+       "%",
+       "km²"
+      ],
+      "loi_giai": [
+       "Năm 2017, tỉ lệ đất rừng của Việt Nam là 46,5%, của Indonesia là 50%",
+       "Việt Nam: S = 331690 · 46,5 : 100 = 154235,85",
+       "Indonesia: S = 1826440 · 50 : 100 = 913220"
+      ]
+     }
     },
     {
      "ma": "5.13a",
@@ -11977,14 +12648,44 @@
      "de": "Cho biểu đồ (H.5.21) về thị phần xuất khẩu gạo của Việt Nam và Thái Lan các năm 2017-2020. Nhận xét về xu thế của thị phần xuất khẩu gạo của Thái Lan trong các năm từ 2017 đến 2020.",
      "trang": 105,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "hinh": [
+      "toan8t1/5.14.webp"
+     ],
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Cho biểu đồ Hình 5.21 về thị phần xuất khẩu gạo của Việt Nam và Thái Lan các năm 2017 đến 2020. Nhận xét về xu thế của thị phần xuất khẩu gạo của Thái Lan trong các năm từ 2017 đến 2020.",
+      "cac": [
+       "Giảm dần",
+       "Tăng dần",
+       "Không thay đổi",
+       "Tăng rồi giảm"
+      ],
+      "dap": "A"
+     }
     },
     {
      "ma": "5.14b",
      "de": "Cho biểu đồ (H.5.21) về thị phần xuất khẩu gạo. Lập bảng thống kê thị phần xuất khẩu gạo của Việt Nam trong giai đoạn này.",
      "trang": 105,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "hinh": [
+      "toan8t1/5.14.webp"
+     ],
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Cho biểu đồ Hình 5.21 về thị phần xuất khẩu gạo của Việt Nam và Thái Lan các năm 2017 đến 2020. Lập bảng thống kê thị phần xuất khẩu gạo của Việt Nam trong giai đoạn này. Bảng nào đúng?",
+      "cac": [
+       "2017: 12%; 2018: 13%; 2019: 15%; 2020: 14%",
+       "2017: 24%; 2018: 23%; 2019: 17%; 2020: 12%",
+       "2017: 12%; 2018: 13%; 2019: 14%; 2020: 15%",
+       "2017: 13%; 2018: 12%; 2019: 15%; 2020: 14%"
+      ],
+      "dap": "A"
+     }
     }
    ]
   },
@@ -11997,35 +12698,161 @@
      "de": "Mỗi dữ liệu sau đây thuộc loại nào? Nên dùng biểu đồ nào để biểu diễn dữ liệu đó? a) Tuổi thọ trung bình của người Việt Nam trong 30 năm từ năm 1989 đến năm 2019. b) Số bàn thắng mà mỗi đội bóng châu Á ghi được tại World Cup 2022.",
      "trang": 108,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "hoi": "Mỗi dữ liệu sau đây thuộc loại nào? Nên dùng biểu đồ nào để biểu diễn dữ liệu đó?",
+      "dong": [
+       {
+        "chu": "a) Tuổi thọ trung bình của người Việt Nam trong 30 năm từ năm 1989 đến năm 2019. Loại dữ liệu: {0}",
+        "o": [
+         {
+          "dung": [
+           "số liệu liên tục"
+          ],
+          "sai": [
+           "số liệu rời rạc",
+           "dữ liệu không là số, có thể sắp thứ tự",
+           "dữ liệu không là số, không thể sắp thứ tự"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Biểu đồ nên dùng cho dữ liệu a): {0}",
+        "o": [
+         {
+          "dung": [
+           "biểu đồ đoạn thẳng"
+          ],
+          "sai": [
+           "biểu đồ cột",
+           "biểu đồ hình quạt tròn",
+           "biểu đồ tranh"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "b) Số bàn thắng mà mỗi đội bóng châu Á ghi được tại World Cup 2022. Loại dữ liệu: {0}",
+        "o": [
+         {
+          "dung": [
+           "số liệu rời rạc"
+          ],
+          "sai": [
+           "số liệu liên tục",
+           "dữ liệu không là số, có thể sắp thứ tự",
+           "dữ liệu không là số, không thể sắp thứ tự"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Biểu đồ nên dùng cho dữ liệu b): {0}",
+        "o": [
+         {
+          "dung": [
+           "biểu đồ cột"
+          ],
+          "sai": [
+           "biểu đồ đoạn thẳng",
+           "biểu đồ cột kép"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "5.16a",
      "de": "Bảng thống kê cho biết tỉ lệ đóng góp vào GDP toàn cầu của Việt Nam trong một số năm (2011: 0,16%; 2012: 0,18%; 2013: 0,19%; 2014: 0,20%; 2015: 0,23%; 2016: 0,24%; 2017: 0,24%; 2018: 0,25%). Chọn biểu đồ phù hợp để biểu diễn bảng thống kê này.",
      "trang": 108,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Bảng thống kê cho biết tỉ lệ đóng góp vào GDP toàn cầu của Việt Nam trong một số năm: 2011: 0,16%; 2012: 0,18%; 2013: 0,19%; 2014: 0,20%; 2015: 0,23%; 2016: 0,24%; 2017: 0,24%; 2018: 0,25%. Chọn biểu đồ phù hợp để biểu diễn bảng thống kê này.",
+      "cac": [
+       "Biểu đồ đoạn thẳng",
+       "Biểu đồ hình quạt tròn",
+       "Biểu đồ tranh",
+       "Biểu đồ cột kép"
+      ],
+      "dap": "A"
+     }
     },
     {
      "ma": "5.16b",
-     "de": "Bảng thống kê cho biết tỉ lệ đóng góp vào GDP toàn cầu của Việt Nam trong một số năm 2011-2018. Cho biết xu thế về tỉ lệ đóng góp của Việt Nam vào GDP toàn cầu.",
+     "de": "Bảng thống kê cho biết tỉ lệ đóng góp vào GDP toàn cầu của Việt Nam trong một số năm (2011: 0,16%; 2012: 0,18%; 2013: 0,19%; 2014: 0,20%; 2015: 0,23%; 2016: 0,24%; 2017: 0,24%; 2018: 0,25%). Cho biết xu thế về tỉ lệ đóng góp của Việt Nam vào GDP toàn cầu.",
      "trang": 108,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Bảng thống kê cho biết tỉ lệ đóng góp vào GDP toàn cầu của Việt Nam trong một số năm: 2011: 0,16%; 2012: 0,18%; 2013: 0,19%; 2014: 0,20%; 2015: 0,23%; 2016: 0,24%; 2017: 0,24%; 2018: 0,25%. Cho biết xu thế về tỉ lệ đóng góp của Việt Nam vào GDP toàn cầu.",
+      "cac": [
+       "Có xu thế tăng",
+       "Có xu thế giảm",
+       "Không thay đổi",
+       "Tăng rồi giảm"
+      ],
+      "dap": "A"
+     }
     },
     {
      "ma": "5.17",
      "de": "Số học sinh của ba trường Trung học cơ sở trên địa bàn đăng kí tham dự giải chạy việt dã do quận tổ chức được cho trong bảng (Đoàn Kết: 13; Bình Minh: 47; Hoà Bình: 183). Theo em nên sử dụng biểu đồ tranh hay biểu đồ cột để biểu diễn dữ liệu này? Tại sao?",
      "trang": 108,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "Số học sinh của ba trường Trung học cơ sở trên địa bàn đăng kí tham dự giải chạy việt dã do quận tổ chức: Đoàn Kết 13; Bình Minh 47; Hoà Bình 183. Theo em nên sử dụng biểu đồ tranh hay biểu đồ cột để biểu diễn dữ liệu này? Tại sao?",
+      "dong": [
+       {
+        "chu": "Nên sử dụng: {0}",
+        "o": [
+         {
+          "dung": [
+           "biểu đồ cột"
+          ],
+          "sai": [
+           "biểu đồ tranh"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Vì: {0}",
+        "o": [
+         {
+          "dung": [
+           "ƯCLN(13, 47, 183) = 1, nên nếu dùng biểu đồ tranh thì mỗi biểu tượng chỉ ứng với 1 học sinh và phải vẽ tới 243 biểu tượng"
+          ],
+          "sai": [
+           "biểu đồ tranh không dùng được cho số liệu rời rạc như số học sinh đăng kí",
+           "số học sinh đăng kí của cả ba trường đều là số lẻ nên không chia đều được cho các biểu tượng"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "5.18",
      "de": "Doanh thu (đơn vị: tỉ đồng) của hai chi nhánh một công ty trong năm 2021 và 2022 được cho trong bảng (Hà Nội: 6 và 8; Thành phố Hồ Chí Minh: 10 và 12). Lựa chọn và vẽ biểu đồ để so sánh doanh thu của hai chi nhánh này trong hai năm 2021 và 2022.",
      "trang": 108,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "bo_may": "vẽ biểu đồ"
     }
    ]
   },
@@ -12038,49 +12865,213 @@
      "de": "Dữ liệu nào sau đây là số liệu liên tục? A. Dữ liệu về tên các vận động viên Việt Nam tham dự SEA Games 31. B. Dữ liệu về kết quả đánh giá hiệu quả của chương trình dạy học trên truyền hình. C. Dữ liệu về cân nặng của 200 con cá chép sau 6 tháng nuôi. D. Dữ liệu về số người bị mắc Covid-19 trong gia đình của các bạn trong lớp.",
      "trang": 109,
      "nhom": "Trắc nghiệm",
-     "dang": "TRAC_NGHIEM"
+     "dang": "TRAC_NGHIEM",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Dữ liệu nào sau đây là số liệu liên tục?",
+      "cac": [
+       "Dữ liệu về tên các vận động viên Việt Nam tham dự SEA Games 31.",
+       "Dữ liệu về kết quả đánh giá hiệu quả của chương trình dạy học trên truyền hình.",
+       "Dữ liệu về cân nặng của 200 con cá chép sau 6 tháng nuôi.",
+       "Dữ liệu về số người bị mắc Covid-19 trong gia đình của các bạn trong lớp."
+      ],
+      "dap": "C"
+     }
     },
     {
      "ma": "5.20",
      "de": "An đứng từ xa và ghi lại xem bạn nào đi sang đường sử dụng cầu vượt khi tan trường. Phương pháp An thu thập dữ liệu là: A. Từ nguồn có sẵn. B. Quan sát. C. Lập bảng hỏi. D. Phỏng vấn.",
      "trang": 109,
      "nhom": "Trắc nghiệm",
-     "dang": "TRAC_NGHIEM"
+     "dang": "TRAC_NGHIEM",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "An đứng từ xa và ghi lại xem bạn nào đi sang đường sử dụng cầu vượt khi tan trường. Phương pháp An thu thập dữ liệu là",
+      "cac": [
+       "Từ nguồn có sẵn.",
+       "Quan sát.",
+       "Lập bảng hỏi.",
+       "Phỏng vấn."
+      ],
+      "dap": "B"
+     }
     },
     {
      "ma": "5.21",
      "de": "Trong biểu đồ cột với gốc trục đứng không bắt đầu từ 0, khẳng định nào sau đây không đúng? A. Cột cao hơn biểu diễn số liệu lớn hơn. B. Hai cột cao bằng nhau biểu diễn số liệu bằng nhau. C. Cột thấp hơn biểu diễn số liệu bé hơn. D. Tỉ lệ chiều cao của hai cột bằng tỉ lệ hai số liệu được biểu diễn.",
      "trang": 109,
      "nhom": "Trắc nghiệm",
-     "dang": "TRAC_NGHIEM"
+     "dang": "TRAC_NGHIEM",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Trong biểu đồ cột với gốc trục đứng không bắt đầu từ 0, khẳng định nào sau đây <b>không</b> đúng?",
+      "cac": [
+       "Cột cao hơn biểu diễn số liệu lớn hơn.",
+       "Hai cột cao bằng nhau biểu diễn số liệu bằng nhau.",
+       "Cột thấp hơn biểu diễn số liệu bé hơn.",
+       "Tỉ lệ chiều cao của hai cột bằng tỉ lệ hai số liệu được biểu diễn."
+      ],
+      "dap": "D"
+     }
     },
     {
      "ma": "5.22",
      "de": "Để biểu diễn tỉ lệ của các phần trong tổng thể ta dùng biểu đồ nào sau đây? A. Biểu đồ tranh. B. Biểu đồ cột. C. Biểu đồ đoạn thẳng. D. Biểu đồ hình quạt tròn.",
      "trang": 109,
      "nhom": "Trắc nghiệm",
-     "dang": "TRAC_NGHIEM"
+     "dang": "TRAC_NGHIEM",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Để biểu diễn tỉ lệ của các phần trong tổng thể ta dùng biểu đồ nào sau đây?",
+      "cac": [
+       "Biểu đồ tranh.",
+       "Biểu đồ cột.",
+       "Biểu đồ đoạn thẳng.",
+       "Biểu đồ hình quạt tròn."
+      ],
+      "dap": "D"
+     }
     },
     {
      "ma": "5.23",
      "de": "Để biểu diễn sự thay đổi của một đại lượng theo thời gian ta dùng biểu đồ nào sau đây? A. Biểu đồ cột kép. B. Biểu đồ tranh. C. Biểu đồ đoạn thẳng. D. Biểu đồ hình quạt tròn.",
      "trang": 109,
      "nhom": "Trắc nghiệm",
-     "dang": "TRAC_NGHIEM"
+     "dang": "TRAC_NGHIEM",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Để biểu diễn sự thay đổi của một đại lượng theo thời gian ta dùng biểu đồ nào sau đây?",
+      "cac": [
+       "Biểu đồ cột kép.",
+       "Biểu đồ tranh.",
+       "Biểu đồ đoạn thẳng.",
+       "Biểu đồ hình quạt tròn."
+      ],
+      "dap": "C"
+     }
     },
     {
      "ma": "5.24a",
      "de": "Cho hai biểu đồ Hình 5.25 (số sản phẩm bán được theo tháng). Lập bảng thống kê cho dữ liệu được biểu diễn trong mỗi biểu đồ.",
      "trang": 110,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "hinh": [
+      "toan8t1/5.24.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "hoi": "Cho hai biểu đồ Hình 5.25 về số sản phẩm bán được theo tháng (đơn vị: nghìn). Lập bảng thống kê cho dữ liệu được biểu diễn trong mỗi biểu đồ.",
+      "dong": [
+       {
+        "chu": "Biểu đồ a), tháng 1 đến tháng 6: {0}",
+        "o": [
+         {
+          "dung": [
+           "3; 2; 3; 4; 5; 4"
+          ],
+          "sai": [
+           "2; 2; 2; 4; 4; 4",
+           "4; 2; 4; 4; 6; 4"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Biểu đồ a), tháng 7 đến tháng 12: {0}",
+        "o": [
+         {
+          "dung": [
+           "6; 7; 8; 7; 6; 8"
+          ],
+          "sai": [
+           "6; 6; 8; 6; 6; 8",
+           "6; 8; 8; 8; 6; 8"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Biểu đồ b), tháng 1 đến tháng 6: {0}",
+        "o": [
+         {
+          "dung": [
+           "3; 2; 3; 4; 5; 4"
+          ],
+          "sai": [
+           "1; 0; 1; 2; 3; 2",
+           "2; 2; 2; 4; 4; 4"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Biểu đồ b), tháng 7 đến tháng 12: {0}",
+        "o": [
+         {
+          "dung": [
+           "6; 7; 8; 7; 6; 8"
+          ],
+          "sai": [
+           "4; 5; 6; 5; 4; 6",
+           "6; 6; 8; 6; 6; 8"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "5.24b",
      "de": "Cho hai biểu đồ Hình 5.25 (số sản phẩm bán được theo tháng). Dữ liệu biểu diễn trên hai biểu đồ có như nhau không? Giải thích tại sao hình dạng hai đường gấp khúc trên hai biểu đồ lại khác nhau.",
      "trang": 110,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "hinh": [
+      "toan8t1/5.24.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "Cho hai biểu đồ Hình 5.25 về số sản phẩm bán được theo tháng. Dữ liệu biểu diễn trên hai biểu đồ có như nhau không? Giải thích tại sao hình dạng hai đường gấp khúc trên hai biểu đồ lại khác nhau.",
+      "dong": [
+       {
+        "chu": "Dữ liệu biểu diễn trên hai biểu đồ: {0}",
+        "o": [
+         {
+          "dung": [
+           "như nhau"
+          ],
+          "sai": [
+           "khác nhau"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Hình dạng hai đường gấp khúc khác nhau vì: {0}",
+        "o": [
+         {
+          "dung": [
+           "trục đứng của hai biểu đồ chia theo tỉ lệ khác nhau (Biểu đồ a) từ 0 đến 8, Biểu đồ b) từ 2 đến 18)"
+          ],
+          "sai": [
+           "số sản phẩm bán được trong hai biểu đồ khác nhau ở nhiều tháng",
+           "trục ngang của hai biểu đồ có số tháng khác nhau (Biểu đồ b) có nhiều tháng hơn)"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "5.25a",
@@ -12094,35 +13085,160 @@
      "de": "Khối 8 tổ chức giải bóng đá với 5 đội tham dự; Bình khảo sát dự đoán của các bạn về đội bóng vô địch. Dữ liệu Bình thu được thuộc loại nào?",
      "trang": 110,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Khối 8 tổ chức giải bóng đá với 5 đội tham dự là các đội bóng của các lớp A, B, C, D, E. Bình khảo sát dự đoán của các bạn về đội bóng vô địch giải đấu. Dữ liệu Bình thu được thuộc loại nào?",
+      "cac": [
+       "Dữ liệu không là số, không thể sắp thứ tự",
+       "Dữ liệu không là số, có thể sắp thứ tự",
+       "Số liệu rời rạc",
+       "Số liệu liên tục"
+      ],
+      "dap": "A"
+     }
     },
     {
      "ma": "5.26a",
      "de": "Bạn Bình tiến hành khảo sát dự đoán như trong Bài 5.25. Giả sử Bình thu được kết quả như sau: A, B, A, A, A, A, A, B, D, B, A, A, B, D, D, A, A, B, D. Lập bảng thống kê về số lượng dự đoán vô địch cho mỗi đội. Có thể dùng biểu đồ nào để biểu diễn dữ liệu trong bảng thống kê thu được?",
      "trang": 110,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 6,
+      "hoi": "Bạn Bình tiến hành khảo sát dự đoán đội vô địch giải bóng đá khối 8 (5 đội A, B, C, D, E). Giả sử Bình thu được kết quả như sau: A, B, A, A, A, A, A, B, D, B, A, A, B, D, D, A, A, B, D. Lập bảng thống kê về số lượng dự đoán vô địch cho mỗi đội. Có thể dùng biểu đồ nào để biểu diễn dữ liệu trong bảng thống kê thu được?",
+      "dong": [
+       {
+        "chu": "Đội A: {0} dự đoán",
+        "o": [
+         {
+          "dung": [
+           "10"
+          ],
+          "sai": [
+           "9",
+           "11",
+           "19"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Đội B: {0} dự đoán",
+        "o": [
+         {
+          "dung": [
+           "5"
+          ],
+          "sai": [
+           "4",
+           "6"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Đội C: {0} dự đoán; đội E: {1} dự đoán",
+        "o": [
+         {
+          "dung": [
+           "0"
+          ],
+          "sai": [
+           "1",
+           "5"
+          ]
+         },
+         {
+          "dung": [
+           "0"
+          ],
+          "sai": [
+           "1",
+           "5"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Đội D: {0} dự đoán",
+        "o": [
+         {
+          "dung": [
+           "4"
+          ],
+          "sai": [
+           "3",
+           "5"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Có thể dùng: {0}",
+        "o": [
+         {
+          "dung": [
+           "biểu đồ cột",
+           "biểu đồ tranh"
+          ],
+          "sai": [
+           "biểu đồ đoạn thẳng",
+           "biểu đồ cột kép"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "5.26b",
      "de": "Bạn Bình khảo sát dự đoán đội vô địch và thu được kết quả A, B, A, A, A, A, A, B, D, B, A, A, B, D, D, A, A, B, D. Nếu muốn biểu diễn tỉ lệ các bạn được hỏi dự đoán mỗi đội vô địch thì nên dùng biểu đồ nào?",
      "trang": 110,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Bạn Bình khảo sát dự đoán đội vô địch giải bóng đá khối 8 và thu được kết quả: A, B, A, A, A, A, A, B, D, B, A, A, B, D, D, A, A, B, D. Nếu muốn biểu diễn tỉ lệ các bạn được hỏi dự đoán mỗi đội vô địch thì nên dùng biểu đồ nào?",
+      "cac": [
+       "Biểu đồ hình quạt tròn",
+       "Biểu đồ cột",
+       "Biểu đồ đoạn thẳng",
+       "Biểu đồ tranh"
+      ],
+      "dap": "A"
+     }
     },
     {
      "ma": "5.27a",
      "de": "Bảng thống kê cho biết số lượng học sinh của các lớp khối 8 tham gia các câu lạc bộ Thể thao và Nghệ thuật của trường (Thể thao: 8A 8, 8B 12, 8C 10, 8D 5; Nghệ thuật: 8A 16, 8B 4, 8C 8, 8D 8). Lựa chọn và vẽ biểu đồ để so sánh số lượng học sinh tham gia hai câu lạc bộ này ở từng lớp.",
      "trang": 110,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "bo_may": "vẽ biểu đồ"
     },
     {
      "ma": "5.27b",
-     "de": "Bảng thống kê cho biết số lượng học sinh của các lớp khối 8 tham gia các câu lạc bộ Thể thao và Nghệ thuật. Lựa chọn biểu đồ biểu diễn tỉ lệ học sinh các lớp tham gia hai câu lạc bộ trong số các học sinh khối 8 tham gia hai câu lạc bộ này.",
+     "de": "Bảng thống kê cho biết số lượng học sinh của các lớp khối 8 tham gia các câu lạc bộ Thể thao và Nghệ thuật của trường (Thể thao: 8A 8, 8B 12, 8C 10, 8D 5; Nghệ thuật: 8A 16, 8B 4, 8C 8, 8D 8). Lựa chọn biểu đồ biểu diễn tỉ lệ học sinh các lớp tham gia hai câu lạc bộ trong số các học sinh khối 8 tham gia hai câu lạc bộ này.",
      "trang": 110,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Số lượng học sinh của các lớp khối 8 tham gia các câu lạc bộ của trường: Thể thao: 8A 8, 8B 12, 8C 10, 8D 5; Nghệ thuật: 8A 16, 8B 4, 8C 8, 8D 8. Lựa chọn biểu đồ biểu diễn tỉ lệ học sinh các lớp tham gia hai câu lạc bộ trong số các học sinh khối 8 tham gia hai câu lạc bộ này.",
+      "cac": [
+       "Biểu đồ hình quạt tròn",
+       "Biểu đồ cột kép",
+       "Biểu đồ đoạn thẳng",
+       "Biểu đồ tranh"
+      ],
+      "dap": "A"
+     }
     }
    ]
   },
@@ -12132,7 +13248,7 @@
    "cac_cau": [
     {
      "ma": "Lãi kép - HĐ (tr.112)",
-     "de": "Bài toán gửi tiết kiệm có kì hạn: một người gửi vào ngân hàng P đồng, với lãi suất hằng tháng là r (dưới dạng số thập phân). a) Tính số tiền người đó nhận được sau 1 tháng. b) Sau 2 tháng. c) Sau 3 tháng. d) Đưa ra công thức tính số tiền người đó nhận được sau n tháng.",
+     "de": "Bài toán gửi tiết kiệm có kì hạn: Ngân hàng thường tính lãi suất cho khách hàng theo thể thức lãi kép theo định kì, tức là nếu đến kì hạn người gửi không rút lãi ra thì tiền lãi được tính vào vốn của kì kế tiếp. Một người gửi vào ngân hàng P đồng, với lãi suất hằng tháng là r (ở đây r được biểu thị dưới dạng số thập phân). a) Tính số tiền người đó nhận được sau 1 tháng. b) Tính số tiền người đó nhận được sau 2 tháng. c) Tính số tiền người đó nhận được sau 3 tháng. d) Đưa ra công thức tính số tiền người đó nhận được sau n tháng.",
      "trang": 112,
      "nhom": "Luyện tập",
      "dang": "CAU_NHO"
@@ -12142,14 +13258,16 @@
      "de": "Bác Hưng muốn gửi tiết kiệm 300 triệu đồng kì hạn 12 tháng. Dựa vào bảng lãi suất mà các ngân hàng công bố tại thời điểm hiện tại, hãy tính số tiền lãi mà bác Hưng nhận được khi gửi cho mỗi ngân hàng. Từ đó tư vấn ngân hàng gửi tiết kiệm cho bác Hưng (giả sử uy tín và chất lượng dịch vụ của các ngân hàng là như nhau).",
      "trang": 112,
      "nhom": "Vận dụng",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "bo_may": "thu thập dữ liệu thực tế"
     },
     {
      "ma": "Lãi kép - Dự án 2 (tr.112)",
      "de": "Bác Hương có 250 triệu đồng muốn gửi tiết kiệm ở một ngân hàng và hai năm sau mới có nhu cầu sử dụng số tiền này. Dựa vào bảng lãi suất mà ngân hàng công bố tại thời điểm hiện tại, hãy tư vấn cho bác Hương phương án gửi tiết kiệm để số tiền lãi thu được sau hai năm gửi tiết kiệm là lớn nhất.",
      "trang": 112,
      "nhom": "Vận dụng",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "bo_may": "thu thập dữ liệu thực tế"
     },
     {
      "ma": "GeoGebra đa thức - Thực hành 1 (tr.114)",
@@ -12181,45 +13299,51 @@
     },
     {
      "ma": "GeoGebra vẽ hình - Luyện tập 2 (tr.117)",
-     "de": "a) Dùng công cụ Trung điểm hoặc tâm để kiểm tra trung điểm AC và BD có trùng nhau không. b) Lưu hình vẽ ở HĐ2 thành tệp ảnh hbh.png. c) Tương tự, hãy vẽ một hình thoi ABCD có cạnh 4 cm.",
+     "de": "Sau khi vẽ hình bình hành ABCD có AB = 4 cm, BC = 3 cm, góc ABC = 120° bằng phần mềm GeoGebra (HĐ2): a) Dùng công cụ Trung điểm hoặc tâm để kiểm tra trung điểm AC và BD có trùng nhau không. b) Lưu hình vẽ ở HĐ2 thành tệp ảnh hbh.png. c) Tương tự, hãy vẽ một hình thoi ABCD có cạnh 4 cm.",
      "trang": 117,
      "nhom": "Luyện tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "bo_may": "thực hành GeoGebra"
     },
     {
      "ma": "GeoGebra vẽ hình - Luyện tập 3 (tr.119)",
-     "de": "a) Dùng công cụ Khoảng cách để kiểm tra DE có bằng 4 cm không. b) Lưu hình vẽ ở HĐ3 thành tệp ảnh hth.png. c) Tương tự, hãy vẽ hình thang cân ADEC có AD // EC, AD = 6 cm, CE = 4 cm, AC = DE = 3 cm.",
+     "de": "Sau khi vẽ hình thang ADEC có đáy lớn AD = 6 cm, đáy nhỏ EC = 3 cm, các cạnh bên AC = 2 cm, DE = 4 cm bằng phần mềm GeoGebra (HĐ3): a) Dùng công cụ Khoảng cách để kiểm tra DE có bằng 4 cm không. b) Lưu hình vẽ ở HĐ3 thành tệp ảnh hth.png. c) Tương tự, hãy vẽ hình thang cân ADEC có AD // EC, AD = 6 cm, CE = 4 cm, AC = DE = 3 cm.",
      "trang": 119,
      "nhom": "Luyện tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "bo_may": "thực hành GeoGebra"
     },
     {
      "ma": "GeoGebra vẽ hình - Thực hành 1 (tr.119)",
      "de": "a) Em hãy trình bày các bước dùng phần mềm GeoGebra để vẽ hình chữ nhật ABCD có AB = 6 cm, AC = 9 cm. b) Vẽ hình chữ nhật trên trong phần mềm GeoGebra và lưu thành một tệp có đuôi png.",
      "trang": 119,
      "nhom": "Luyện tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "bo_may": "thực hành GeoGebra"
     },
     {
      "ma": "GeoGebra vẽ hình - Thực hành 2 (tr.119)",
      "de": "a) Em hãy trình bày các bước dùng phần mềm GeoGebra để vẽ hình bình hành ABCD có AB = 4 cm, AC = 5 cm, BC = 6 cm. b) Vẽ hình bình hành trên trong phần mềm GeoGebra và lưu thành một tệp có đuôi png.",
      "trang": 119,
      "nhom": "Luyện tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "bo_may": "thực hành GeoGebra"
     },
     {
      "ma": "Khí hậu - Dự án 1 (tr.120)",
      "de": "Minh hoạ các đặc điểm khí hậu chung: thu thập dữ liệu về nhiệt độ, lượng mưa, độ ẩm trung bình các tháng của Việt Nam và điền vào bảng thống kê; lựa chọn biểu đồ và vẽ các biểu đồ biểu diễn các dãy số liệu; phân tích dữ liệu và thảo luận trong nhóm xem dữ liệu thu được minh hoạ cho những đặc điểm nào của khí hậu Việt Nam.",
      "trang": 120,
      "nhom": "Vận dụng",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "bo_may": "thu thập dữ liệu thực tế"
     },
     {
      "ma": "Khí hậu - Dự án 2 (tr.121)",
      "de": "Minh hoạ sự khác biệt về khí hậu giữa miền Bắc và miền Nam: chọn hai địa điểm ở hai miền Bắc và Nam, thu thập dữ liệu về nhiệt độ, lượng mưa, độ ẩm trung bình các tháng, ghi thành 3 bảng thống kê; lựa chọn loại biểu đồ và biểu diễn trên cùng một biểu đồ hai dãy số liệu; phân tích và thảo luận xem có những khác biệt gì.",
      "trang": 121,
      "nhom": "Vận dụng",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "bo_may": "thu thập dữ liệu thực tế"
     }
    ]
   }
