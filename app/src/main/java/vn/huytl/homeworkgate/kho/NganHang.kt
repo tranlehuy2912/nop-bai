@@ -89,9 +89,14 @@ object NganHang {
      * khong co cach nao lam, va AI khong co gi de cham.
      *
      * Vai cau SBT in nham (9.14, trac nghiem 2 trang 47 va On cuoi nam 5b cua tap hai).
-     * De giu nguyen chu in, them mot ngoac ghi cach hieu dung, khong ghi dap an. Thieu
-     * ngoac do thi AI tu giai theo chu in, ra ket qua khong khop phuong an nao va cham
-     * sai bai dung cua con.
+     * Luc nap, de giu nguyen chu in, them mot ngoac ghi cach hieu dung, khong ghi dap an.
+     * Thieu ngoac do thi AI tu giai theo chu in, ra ket qua khong khop phuong an nao va
+     * cham sai bai dung cua con. Tu 6/10/2026, cau nao da soan ghep (lam tren may) thi
+     * file phan thay ca de bang ban da sua (bang sua_de cua tools/ghep/gop.py), bo ngoac:
+     * con doc de ngay tren tablet va khong co sach giay de so, nen de dung de doc hon de
+     * in sai kem loi giai thich. Trac nghiem 2 trang 47 doi phuong an B 3/5 thanh 6/19
+     * (dap so khi chon mot hoc sinh trong ca lop, nhu SGK 8.18), On cuoi nam 5b, 7 chep
+     * so dung.
      *
      * DAP AN SBT, nap ngay 27/9/2026. Moi cau SBT mang them "dap_an" va "loai_dap_an":
      * TN la mot chu A-D, DAP_SO la ket qua cuoi so duoc, LOI_GIAI la y chinh cua mot
@@ -99,7 +104,8 @@ object NganHang {
      * sach: SBT Toan tu ban quet, SBT KHTN tu ban Word nhan dang chu, doi chieu VietJack
      * cho nao chu hong. Sach in nham dap an thi ghi dap an dung (6.34c, 7.4a, 7.16, 8.8b
      * tap hai; 6.15, 45.5 KHTN...). Hai de in nham them ngoac nhu tren: Trac nghiem 8
-     * trang 54 tap mot (khong phuong an nao dung) va On cuoi nam 7 (dao hai van toc). Cau
+     * trang 54 tap mot (khong phuong an nao dung) va On cuoi nam 7 (dao hai van toc; tu
+     * 6/10/2026 de chep so dung, xem tren). Cau
      * sach khong giai ("HS tự làm", "tuỳ HS") thi khong co hai truong nay. Tu 2/10/2026 Le
      * Hoa doc duoc dap an o man Cau da lam dung; ai doc no va sua o dau, xem [CauHoi.dapAn].
      *

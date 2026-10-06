@@ -158,17 +158,22 @@ class NganHangSbtTest {
         assertTrue(kho.cauTheoId("sbtkhtn8:38.6")?.de.orEmpty().contains("C. Insulin và Glucagon."))
     }
 
-    /** Cau sach in nham mang ngoac ghi cach hieu dung, xem [NganHang.SACH]. */
+    /**
+     * Cau sach in nham ghi cach hieu dung, xem [NganHang.SACH]: luc nap la mot ngoac ngay
+     * trong de; tu 6/10/2026 cau da soan ghep thi de chep thang ban da sua (sua_de).
+     */
     @Test
     fun cau_in_nham_co_ghi_chu_cho_AI() {
         assertTrue(kho.cauTheoId("sbttoan8t2:9.14")?.de.orEmpty().contains("ΔABC ᔕ ΔDEF"))
+        // Sach in B. 3/5: chon mot hoc sinh trong ca lop thi khong phuong an nao dung. Tu
+        // 6/10/2026 phuong an B la dap so dung 6/19, nhu SGK 8.18 cung so lieu.
         assertTrue(kho.cauTheoId("sbttoan8t2:Trắc nghiệm 2 (tr.47)")?.de.orEmpty()
-            .contains("trong số học sinh nữ"))
+            .contains("B. 6/19."))
         assertTrue(kho.cauTheoId("sbttoan8t2:Ôn cuối năm 5b")?.de.orEmpty()
             .contains("x^2 − 3x − 4"))
         // Hai cho in nham tim ra luc chep dap an ngay 27/9/2026.
         assertTrue(kho.cauTheoId("sbttoan8t2:Ôn cuối năm 7")?.de.orEmpty()
-            .contains("đoạn AB đi 60 km/h"))
+            .contains("từ A đến B với vận tốc 60 km/h"))
         assertTrue(kho.cauTheoId("sbttoan8t1:Trắc nghiệm 8 (tr.54)")?.de.orEmpty()
             .contains("không phương án nào đúng"))
     }

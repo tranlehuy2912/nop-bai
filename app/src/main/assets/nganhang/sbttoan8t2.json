@@ -2,7 +2,7 @@
  "nguon": "sbttoan8t2",
  "mon": "Toán",
  "ten": "SBT Toán 8 — tập hai",
- "ban": 5,
+ "ban": 6,
  "cac_bai": [
   {
    "chuong": "Chương VI. Phân thức đại số",
@@ -6213,7 +6213,42 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "38 kết quả có thể, mỗi kết quả là một học sinh: 13 nam thuận tay phải (A1,..., A13), 3 nam thuận tay trái (B1, B2, B3), 20 nữ thuận tay phải (C1,..., C20), 2 nữ thuận tay trái (D1, D2)",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "Lớp 8C có 16 học sinh nam và 22 học sinh nữ, trong đó có 3 bạn nam thuận tay trái, 2 bạn nữ thuận tay trái. Chọn ngẫu nhiên một học sinh trong lớp và kèm theo ghi chú: nam hay nữ và thuận tay trái hay tay phải.\nKí hiệu các học sinh nam thuận tay phải là A1, A2, ...; các học sinh nam thuận tay trái là B1, B2, ...; các học sinh nữ thuận tay phải là C1, C2, ...; các học sinh nữ thuận tay trái là D1, D2, ...\nLiệt kê các kết quả có thể của hành động trên.",
+      "dong": [
+       {
+        "chu": "Tập hợp các kết quả có thể: {0}",
+        "o": [
+         {
+          "dung": [
+           "{A1, A2, ..., A13, B1, B2, B3, C1, C2, ..., C20, D1, D2}"
+          ],
+          "sai": [
+           "{nam thuận tay phải, nam thuận tay trái, nữ thuận tay phải, nữ thuận tay trái}",
+           "{A1, A2, ..., A16, B1, B2, B3, C1, C2, ..., C22, D1, D2}"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Số kết quả có thể: {0}",
+        "o": [
+         {
+          "dung": [
+           "38"
+          ],
+          "sai": [
+           "4",
+           "43"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "8.1b",
@@ -6222,7 +6257,29 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "E = {A1,..., A13}: 13 kết quả, là 13 học sinh nam thuận tay phải",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 1,
+      "hoi": "Lớp 8C có 16 học sinh nam và 22 học sinh nữ, trong đó có 3 bạn nam thuận tay trái, 2 bạn nữ thuận tay trái. Chọn ngẫu nhiên một học sinh trong lớp và kèm theo ghi chú: nam hay nữ và thuận tay trái hay tay phải.\nKí hiệu các học sinh nam thuận tay phải là A1, A2, ...; các học sinh nam thuận tay trái là B1, B2, ...; các học sinh nữ thuận tay phải là C1, C2, ...; các học sinh nữ thuận tay trái là D1, D2, ...\nLiệt kê các kết quả thuận lợi cho biến cố E: \"Chọn được học sinh nam thuận tay phải\".",
+      "dong": [
+       {
+        "chu": "E = {0}",
+        "o": [
+         {
+          "dung": [
+           "{A1, A2, ..., A13}"
+          ],
+          "sai": [
+           "{A1, A2, ..., A16}",
+           "{A1, A2, ..., A13, C1, C2, ..., C20}",
+           "{B1, B2, B3}"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "8.1c",
@@ -6231,7 +6288,28 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "F = {D1, D2}: 2 kết quả, là 2 học sinh nữ thuận tay trái",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 1,
+      "hoi": "Lớp 8C có 16 học sinh nam và 22 học sinh nữ, trong đó có 3 bạn nam thuận tay trái, 2 bạn nữ thuận tay trái. Chọn ngẫu nhiên một học sinh trong lớp và kèm theo ghi chú: nam hay nữ và thuận tay trái hay tay phải.\nKí hiệu các học sinh nam thuận tay phải là A1, A2, ...; các học sinh nam thuận tay trái là B1, B2, ...; các học sinh nữ thuận tay phải là C1, C2, ...; các học sinh nữ thuận tay trái là D1, D2, ...\nLiệt kê các kết quả thuận lợi cho biến cố F: \"Chọn được học sinh nữ thuận tay trái\".",
+      "dong": [
+       {
+        "chu": "F = {0}",
+        "o": [
+         {
+          "dung": [
+           "{D1, D2}"
+          ],
+          "sai": [
+           "{B1, B2, B3, D1, D2}",
+           "{C1, C2, ..., C20}"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "8.1d",
@@ -6240,7 +6318,29 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "G = {B1, B2, B3, D1, D2}: 5 kết quả, là 3 nam và 2 nữ thuận tay trái",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 1,
+      "hoi": "Lớp 8C có 16 học sinh nam và 22 học sinh nữ, trong đó có 3 bạn nam thuận tay trái, 2 bạn nữ thuận tay trái. Chọn ngẫu nhiên một học sinh trong lớp và kèm theo ghi chú: nam hay nữ và thuận tay trái hay tay phải.\nKí hiệu các học sinh nam thuận tay phải là A1, A2, ...; các học sinh nam thuận tay trái là B1, B2, ...; các học sinh nữ thuận tay phải là C1, C2, ...; các học sinh nữ thuận tay trái là D1, D2, ...\nLiệt kê các kết quả thuận lợi cho biến cố G: \"Chọn được học sinh thuận tay trái\".",
+      "dong": [
+       {
+        "chu": "G = {0}",
+        "o": [
+         {
+          "dung": [
+           "{B1, B2, B3, D1, D2}"
+          ],
+          "sai": [
+           "{D1, D2}",
+           "{B1, B2, B3}",
+           "{A1, A2, ..., A13, C1, C2, ..., C20}"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "8.2a",
@@ -6249,7 +6349,28 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "20 kết quả có thể: rút được tấm thẻ ghi số 1, 2,..., 20",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 1,
+      "hoi": "Một hộp đựng 20 tấm thẻ được ghi số 1, 2, ..., 20. Bạn Mai rút ngẫu nhiên một tấm thẻ từ trong hộp.\nLiệt kê các kết quả có thể của hành động trên.",
+      "dong": [
+       {
+        "chu": "Các kết quả có thể: {0}",
+        "o": [
+         {
+          "dung": [
+           "rút được tấm thẻ ghi số 1, 2, ..., 20 (20 kết quả)"
+          ],
+          "sai": [
+           "rút được tấm thẻ ghi số 0, 1, 2, ..., 20 (21 kết quả)",
+           "rút được tấm thẻ ghi số chẵn, rút được tấm thẻ ghi số lẻ (2 kết quả)"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "8.2b",
@@ -6258,7 +6379,58 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "E: 1, 3, 5, 7, 9, 11, 13, 15, 17, 19; F: 5, 10, 15, 20; G: 2, 3, 5, 7, 11, 13, 17, 19",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "hoi": "Một hộp đựng 20 tấm thẻ được ghi số 1, 2, ..., 20. Bạn Mai rút ngẫu nhiên một tấm thẻ từ trong hộp.\nLiệt kê các kết quả thuận lợi (số ghi trên tấm thẻ rút được) cho các biến cố sau:\nE: \"Rút được tấm thẻ ghi số lẻ\";\nF: \"Rút được tấm thẻ ghi số chia hết cho 5\";\nG: \"Rút được tấm thẻ ghi số nguyên tố\".",
+      "dong": [
+       {
+        "chu": "E: {0}",
+        "o": [
+         {
+          "dung": [
+           "1, 3, 5, 7, 9, 11, 13, 15, 17, 19"
+          ],
+          "sai": [
+           "3, 5, 7, 11, 13, 17, 19",
+           "1, 3, 5, 7, 9, 11, 13, 17, 19"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "F: {0}",
+        "o": [
+         {
+          "dung": [
+           "5, 10, 15, 20"
+          ],
+          "sai": [
+           "5, 15",
+           "10, 20",
+           "0, 5, 10, 15, 20"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "G: {0}",
+        "o": [
+         {
+          "dung": [
+           "2, 3, 5, 7, 11, 13, 17, 19"
+          ],
+          "sai": [
+           "1, 2, 3, 5, 7, 11, 13, 17, 19",
+           "3, 5, 7, 11, 13, 17, 19",
+           "2, 3, 5, 7, 9, 11, 13, 15, 17, 19"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "8.3a",
@@ -6267,7 +6439,43 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "10 kết quả có thể: {1, 2}, {1, 3}, {1, 4}, {1, 5}, {2, 3}, {2, 4}, {2, 5}, {3, 4}, {3, 5}, {4, 5}",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "Một túi đựng 5 viên bi được ghi số 1, 2, 3, 4, 5. Bạn Bình lấy ngẫu nhiên hai viên bi từ trong túi. Mỗi kết quả có thể là một cặp hai số ghi trên hai viên bi lấy được, viết như {1, 2}.\nLiệt kê các kết quả có thể của hành động trên.",
+      "dong": [
+       {
+        "chu": "Các kết quả có thể: {0}",
+        "o": [
+         {
+          "dung": [
+           "{1, 2}, {1, 3}, {1, 4}, {1, 5}, {2, 3}, {2, 4}, {2, 5}, {3, 4}, {3, 5}, {4, 5}"
+          ],
+          "sai": [
+           "{1, 2}, {1, 3}, {1, 4}, {1, 5}, {2, 3}, {2, 4}, {3, 4}, {3, 5}, {4, 5}",
+           "{1, 2}, {1, 3}, {1, 4}, {1, 5}"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Số kết quả có thể: {0}",
+        "o": [
+         {
+          "dung": [
+           "10"
+          ],
+          "sai": [
+           "20",
+           "25",
+           "5"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "8.3b",
@@ -6276,7 +6484,43 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "M: {1, 3}, {1, 5}, {2, 4}, {3, 5}; N: {1, 3}, {1, 5}, {3, 5}",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "Một túi đựng 5 viên bi được ghi số 1, 2, 3, 4, 5. Bạn Bình lấy ngẫu nhiên hai viên bi từ trong túi. Mỗi kết quả có thể là một cặp hai số ghi trên hai viên bi lấy được, viết như {1, 2}.\nLiệt kê các kết quả thuận lợi cho các biến cố sau:\nM: \"Tổng hai số ghi trên hai viên bi là một số chẵn\";\nN: \"Tích hai số ghi trên hai viên bi là một số lẻ\".",
+      "dong": [
+       {
+        "chu": "M: {0}",
+        "o": [
+         {
+          "dung": [
+           "{1, 3}, {1, 5}, {2, 4}, {3, 5}"
+          ],
+          "sai": [
+           "{1, 3}, {1, 5}, {3, 5}",
+           "{1, 2}, {1, 4}, {2, 3}, {2, 5}, {3, 4}, {4, 5}",
+           "{2, 4}"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "N: {0}",
+        "o": [
+         {
+          "dung": [
+           "{1, 3}, {1, 5}, {3, 5}"
+          ],
+          "sai": [
+           "{1, 3}, {1, 5}, {2, 4}, {3, 5}",
+           "{1, 2}, {1, 4}, {2, 3}, {2, 4}, {2, 5}, {3, 4}, {4, 5}"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     }
    ]
   },
@@ -6291,7 +6535,21 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "P = 17/45",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "hoi": "Một túi đựng 15 viên bi màu xanh, 13 viên bi màu đỏ, 17 viên bi màu trắng, có cùng khối lượng và kích thước. Bạn Việt lấy ngẫu nhiên một viên bi từ trong túi. Tính xác suất để bạn Việt lấy được viên bi trắng.\n(Gõ xác suất dưới dạng phân số tối giản.)",
+      "dap": [
+       "17/45"
+      ],
+      "phim": [],
+      "nhieu": [],
+      "loi_giai": [
+       "Số kết quả có thể (số viên bi trong túi) = 15 + 13 + 17 = 45; các kết quả này đồng khả năng",
+       "Có 17 viên bi trắng nên có 17 kết quả thuận lợi; xác suất để Việt lấy được viên bi trắng = 17/45"
+      ]
+     }
     },
     {
      "ma": "8.5a",
@@ -6300,7 +6558,21 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "4 kết quả thuận lợi (11, 13, 17, 19); P = 4/11",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "hoi": "Một hộp đựng các tấm thẻ được ghi số 10, 11, 12,..., 20. Rút ngẫu nhiên một tấm thẻ từ hộp. Tính xác suất để rút được tấm thẻ ghi số là: Số nguyên tố.\n(Gõ xác suất dưới dạng phân số tối giản.)",
+      "dap": [
+       "4/11"
+      ],
+      "phim": [],
+      "nhieu": [],
+      "loi_giai": [
+       "Các tấm thẻ ghi số 10, 11, ..., 20; số kết quả có thể = 20 − 10 + 1 = 11",
+       "Các số nguyên tố từ 10 đến 20 là 11, 13, 17, 19, có 4 kết quả thuận lợi; xác suất = 4/11"
+      ]
+     }
     },
     {
      "ma": "8.5b",
@@ -6309,7 +6581,21 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "5 kết quả thuận lợi (11, 13, 15, 17, 19); P = 5/11",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "hoi": "Một hộp đựng các tấm thẻ được ghi số 10, 11, 12,..., 20. Rút ngẫu nhiên một tấm thẻ từ hộp. Tính xác suất để rút được tấm thẻ ghi số là: Số lẻ.\n(Gõ xác suất dưới dạng phân số tối giản.)",
+      "dap": [
+       "5/11"
+      ],
+      "phim": [],
+      "nhieu": [],
+      "loi_giai": [
+       "Các tấm thẻ ghi số 10, 11, ..., 20; số kết quả có thể = 20 − 10 + 1 = 11",
+       "Các số lẻ từ 10 đến 20 là 11, 13, 15, 17, 19, có 5 kết quả thuận lợi; xác suất = 5/11"
+      ]
+     }
     },
     {
      "ma": "8.5c",
@@ -6318,7 +6604,21 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "3 kết quả thuận lợi (12, 16, 20); P = 3/11",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "hoi": "Một hộp đựng các tấm thẻ được ghi số 10, 11, 12,..., 20. Rút ngẫu nhiên một tấm thẻ từ hộp. Tính xác suất để rút được tấm thẻ ghi số là: Số chia hết cho 4.\n(Gõ xác suất dưới dạng phân số tối giản.)",
+      "dap": [
+       "3/11"
+      ],
+      "phim": [],
+      "nhieu": [],
+      "loi_giai": [
+       "Các tấm thẻ ghi số 10, 11, ..., 20; số kết quả có thể = 20 − 10 + 1 = 11",
+       "Các số chia hết cho 4 từ 10 đến 20 là 12, 16, 20, có 3 kết quả thuận lợi; xác suất = 3/11"
+      ]
+     }
     },
     {
      "ma": "8.6a",
@@ -6327,7 +6627,22 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "P = 2/10 = 0,2",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "hoi": "Bạn An có 10 tấm thẻ, mỗi tấm thẻ ghi một chữ cái trong từ \"TELEVISION\". Bạn An rút ngẫu nhiên một tấm thẻ. Tính xác suất để rút được tấm thẻ ghi: Chữ E.\n(Gõ xác suất dưới dạng phân số tối giản hoặc số thập phân.)",
+      "dap": [
+       "1/5",
+       "0,2"
+      ],
+      "phim": [],
+      "nhieu": [],
+      "loi_giai": [
+       "Từ \"TELEVISION\" có 10 chữ cái nên có 10 kết quả có thể, đồng khả năng",
+       "Có 2 tấm thẻ ghi chữ E; xác suất = 2/10 = 1/5 = 0,2"
+      ]
+     }
     },
     {
      "ma": "8.6b",
@@ -6336,7 +6651,22 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "P = 3/10 = 0,3",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "hoi": "Bạn An có 10 tấm thẻ, mỗi tấm thẻ ghi một chữ cái trong từ \"TELEVISION\". Bạn An rút ngẫu nhiên một tấm thẻ. Tính xác suất để rút được tấm thẻ ghi: Chữ I hoặc chữ V.\n(Gõ xác suất dưới dạng phân số tối giản hoặc số thập phân.)",
+      "dap": [
+       "3/10",
+       "0,3"
+      ],
+      "phim": [],
+      "nhieu": [],
+      "loi_giai": [
+       "Từ \"TELEVISION\" có 10 chữ cái nên có 10 kết quả có thể, đồng khả năng",
+       "Có 2 tấm thẻ ghi chữ I và 1 tấm thẻ ghi chữ V, tức là 3 kết quả thuận lợi; xác suất = 3/10 = 0,3"
+      ]
+     }
     },
     {
      "ma": "8.7a",
@@ -6345,7 +6675,23 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "P = 21/30 = 7/10 = 0,7",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "hoi": "Một nhóm 30 người gồm 9 ông, 6 bà, 12 em trai và 3 em gái. Chọn ngẫu nhiên một người trong nhóm. Tính xác suất để chọn được: Một người có giới tính nam.\n(Gõ xác suất dưới dạng phân số tối giản hoặc số thập phân.)",
+      "dap": [
+       "7/10",
+       "0,7"
+      ],
+      "phim": [],
+      "nhieu": [],
+      "loi_giai": [
+       "Có 30 kết quả có thể, đồng khả năng",
+       "Số người có giới tính nam (ông và em trai) = 9 + 12 = 21",
+       "Xác suất = 21/30 = 7/10 = 0,7"
+      ]
+     }
     },
     {
      "ma": "8.7b",
@@ -6354,7 +6700,23 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "P = 18/30 = 3/5 = 0,6",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "hoi": "Một nhóm 30 người gồm 9 ông, 6 bà, 12 em trai và 3 em gái. Chọn ngẫu nhiên một người trong nhóm. Tính xác suất để chọn được: Một bà hoặc một em trai.\n(Gõ xác suất dưới dạng phân số tối giản hoặc số thập phân.)",
+      "dap": [
+       "3/5",
+       "0,6"
+      ],
+      "phim": [],
+      "nhieu": [],
+      "loi_giai": [
+       "Có 30 kết quả có thể, đồng khả năng",
+       "Số người là bà hoặc em trai = 6 + 12 = 18",
+       "Xác suất = 18/30 = 3/5 = 0,6"
+      ]
+     }
     },
     {
      "ma": "8.8a",
@@ -6363,7 +6725,22 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "E gồm các số 12, 24, 36; P(E) = 3/36 = 1/12",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "hoi": "Một chiếc hộp chứa 36 quả cầu được ghi số từ 1 đến 36. Lấy ngẫu nhiên một quả cầu trong hộp. Tính xác suất của biến cố E: \"Lấy được quả cầu ghi số là bội của 4 và 6\".\n(Gõ xác suất dưới dạng phân số tối giản.)",
+      "dap": [
+       "1/12"
+      ],
+      "phim": [],
+      "nhieu": [],
+      "loi_giai": [
+       "Có 36 kết quả có thể, đồng khả năng",
+       "Số vừa là bội của 4 vừa là bội của 6 là bội của 12: 12, 24, 36, có 3 kết quả thuận lợi",
+       "P(E) = 3/36 = 1/12"
+      ]
+     }
     },
     {
      "ma": "8.8b",
@@ -6372,7 +6749,22 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "F gồm 4, 6, 8, 12, 16, 18, 20, 24, 28, 30, 32, 36 (12 kết quả); P(F) = 12/36 = 1/3",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "hoi": "Một chiếc hộp chứa 36 quả cầu được ghi số từ 1 đến 36. Lấy ngẫu nhiên một quả cầu trong hộp. Tính xác suất của biến cố F: \"Lấy được quả cầu ghi số là bội của 4 hoặc là bội của 6\".\n(Gõ xác suất dưới dạng phân số tối giản.)",
+      "dap": [
+       "1/3"
+      ],
+      "phim": [],
+      "nhieu": [],
+      "loi_giai": [
+       "Từ 1 đến 36 có 9 bội của 4 (4, 8, ..., 36) và 6 bội của 6 (6, 12, ..., 36)",
+       "Có 3 số vừa là bội của 4 vừa là bội của 6 (12, 24, 36), nên số kết quả thuận lợi = 9 + 6 − 3 = 12",
+       "P(F) = 12/36 = 1/3"
+      ]
+     }
     },
     {
      "ma": "8.9a",
@@ -6381,7 +6773,22 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "P(E) = 13/24",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "hoi": "Một túi đựng các viên kẹo có cùng khối lượng và kích thước với 9 viên kẹo màu đỏ, 6 viên kẹo màu xanh, 4 viên kẹo màu vàng và 5 viên kẹo màu đen. Lấy ngẫu nhiên một viên kẹo từ trong túi. Tính xác suất của biến cố E: \"Lấy được viên kẹo màu đỏ hoặc màu vàng\".\n(Gõ xác suất dưới dạng phân số tối giản.)",
+      "dap": [
+       "13/24"
+      ],
+      "phim": [],
+      "nhieu": [],
+      "loi_giai": [
+       "Số viên kẹo trong túi = 9 + 6 + 4 + 5 = 24; có 24 kết quả có thể, đồng khả năng",
+       "Số viên kẹo màu đỏ hoặc màu vàng = 9 + 4 = 13",
+       "P(E) = 13/24"
+      ]
+     }
     },
     {
      "ma": "8.9b",
@@ -6390,7 +6797,22 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "P(F) = 11/24",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "hoi": "Một túi đựng các viên kẹo có cùng khối lượng và kích thước với 9 viên kẹo màu đỏ, 6 viên kẹo màu xanh, 4 viên kẹo màu vàng và 5 viên kẹo màu đen. Lấy ngẫu nhiên một viên kẹo từ trong túi. Tính xác suất của biến cố F: \"Lấy được viên kẹo màu đen hoặc màu xanh\".\n(Gõ xác suất dưới dạng phân số tối giản.)",
+      "dap": [
+       "11/24"
+      ],
+      "phim": [],
+      "nhieu": [],
+      "loi_giai": [
+       "Số viên kẹo trong túi = 9 + 6 + 4 + 5 = 24; có 24 kết quả có thể, đồng khả năng",
+       "Số viên kẹo màu đen hoặc màu xanh = 5 + 6 = 11",
+       "P(F) = 11/24"
+      ]
+     }
     },
     {
      "ma": "8.9c",
@@ -6399,7 +6821,22 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "P(G) = 19/24",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "hoi": "Một túi đựng các viên kẹo có cùng khối lượng và kích thước với 9 viên kẹo màu đỏ, 6 viên kẹo màu xanh, 4 viên kẹo màu vàng và 5 viên kẹo màu đen. Lấy ngẫu nhiên một viên kẹo từ trong túi. Tính xác suất của biến cố G: \"Lấy được viên kẹo không có màu đen\".\n(Gõ xác suất dưới dạng phân số tối giản.)",
+      "dap": [
+       "19/24"
+      ],
+      "phim": [],
+      "nhieu": [],
+      "loi_giai": [
+       "Số viên kẹo trong túi = 9 + 6 + 4 + 5 = 24; có 24 kết quả có thể, đồng khả năng",
+       "Số viên kẹo không có màu đen = 24 − 5 = 19",
+       "P(G) = 19/24"
+      ]
+     }
     },
     {
      "ma": "8.10",
@@ -6408,7 +6845,21 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "12 viên bi màu đen (có 8 viên đỏ, 4 viên xanh)",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "dap": [
+       "12"
+      ],
+      "phim": [],
+      "nhieu": [],
+      "loi_giai": [
+       "Số viên bi màu đỏ = 24 · 1/3 = 8",
+       "Số viên bi màu xanh = 24 · 1/6 = 4",
+       "Số viên bi màu đen = 24 − 8 − 4 = 12"
+      ]
+     }
     },
     {
      "ma": "8.11",
@@ -6417,7 +6868,23 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "P = 8/15 (số tấm thẻ ghi 1, 2, 3, 4 lần lượt là x, 6x, 2x, 6x)",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "hoi": "Một túi đựng một số tấm thẻ được đánh số 1, 2, 3, 4. Rút ngẫu nhiên một tấm thẻ trong túi. Biết rằng xác suất rút được tấm thẻ ghi số 3 gấp đôi xác suất rút được tấm thẻ ghi số 1; xác suất rút được tấm thẻ ghi số 2 gấp ba lần xác suất rút được tấm thẻ ghi số 3 và xác suất rút được tấm thẻ ghi số 2 bằng xác suất rút được tấm thẻ ghi số 4. Tính xác suất để rút được tấm thẻ ghi số nguyên tố.\n(Gõ xác suất dưới dạng phân số tối giản.)",
+      "dap": [
+       "8/15"
+      ],
+      "phim": [],
+      "nhieu": [],
+      "loi_giai": [
+       "Gọi x là số tấm thẻ ghi số 1; xác suất tỉ lệ với số tấm thẻ, nên số tấm thẻ ghi số 3 là 2x",
+       "Số tấm thẻ ghi số 2 = 3 · 2x = 6x; số tấm thẻ ghi số 4 cũng là 6x",
+       "Tổng số tấm thẻ = x + 6x + 2x + 6x = 15x",
+       "Trong các số 1, 2, 3, 4 chỉ có 2 và 3 là số nguyên tố; xác suất = (6x + 2x)/(15x) = 8/15"
+      ]
+     }
     }
    ]
   },
@@ -6432,7 +6899,23 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "P(A) = 35/100 = 0,35 (35 ván thắng)",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "hoi": "Một trò chơi có nội dung như sau: Ở mỗi ván chơi, người chơi gieo đồng thời hai con xúc xắc. Người chơi thắng nếu tổng số chấm xuất hiện trên hai con xúc xắc là bội của 3. Một người chơi 100 ván và kết quả trong 100 ván chơi được ghi trong bảng sau:\nTổng số chấm xuất hiện trên hai con xúc xắc: 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12\nSố ván tương ứng: 2, 6, 9, 10, 14, 16, 13, 11, 8, 7, 4\nTính xác suất thực nghiệm của biến cố A: \"Người chơi thắng trong một ván chơi\".\n(Gõ xác suất dưới dạng phân số tối giản hoặc số thập phân.)",
+      "dap": [
+       "7/20",
+       "0,35"
+      ],
+      "phim": [],
+      "nhieu": [],
+      "loi_giai": [
+       "Người chơi thắng khi tổng số chấm là 3, 6, 9 hoặc 12",
+       "Số ván thắng = 6 + 14 + 11 + 4 = 35",
+       "Xác suất thực nghiệm của A = 35/100 = 7/20 = 0,35"
+      ]
+     }
     },
     {
      "ma": "8.13a",
@@ -6441,7 +6924,56 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Tổng 6 823 chiếc. Ti vi 2545/6823; tủ lạnh 3136/6823; điện thoại 719/6823; máy tính 311/6823; quạt 55/6823; điều hoà 57/6823",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "hoi": "Một cửa hàng điện máy thống kê lại số lượng các mặt hàng bán trong năm qua như sau: ti vi 2 545 chiếc; tủ lạnh 3 136 chiếc; điện thoại 719 chiếc; máy tính 311 chiếc; quạt 55 chiếc; điều hoà 57 chiếc.\nTính xác suất thực nghiệm tiêu thụ mỗi mặt hàng của cửa hàng.",
+      "dong": [
+       {
+        "chu": "Tổng số chiếc đã bán trong năm qua: {0}",
+        "o": [
+         {
+          "dung": [
+           "6 823"
+          ],
+          "sai": [
+           "6 813",
+           "7 500"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Xác suất thực nghiệm tiêu thụ ti vi, tủ lạnh, điện thoại lần lượt là: {0}",
+        "o": [
+         {
+          "dung": [
+           "2545/6823; 3136/6823; 719/6823"
+          ],
+          "sai": [
+           "2545/7500; 3136/7500; 719/7500",
+           "3136/6823; 2545/6823; 719/6823"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Xác suất thực nghiệm tiêu thụ máy tính, quạt, điều hoà lần lượt là: {0}",
+        "o": [
+         {
+          "dung": [
+           "311/6823; 55/6823; 57/6823"
+          ],
+          "sai": [
+           "311/6823; 57/6823; 55/6823",
+           "311/7500; 55/7500; 57/7500"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "8.13b",
@@ -6450,7 +6982,27 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Khoảng 2 798 chiếc ti vi; khoảng 3 570 chiếc tủ lạnh, quạt hoặc điều hoà",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "hoi": "Một cửa hàng điện máy thống kê lại số lượng các mặt hàng bán trong năm qua như sau: ti vi 2 545 chiếc; tủ lạnh 3 136 chiếc; điện thoại 719 chiếc; máy tính 311 chiếc; quạt 55 chiếc; điều hoà 57 chiếc.\nGiả sử năm sau cửa hàng bán được tổng số 7 500 chiếc các loại. Hãy dự đoán xem trong đó có:\n- Bao nhiêu chiếc ti vi.\n- Bao nhiêu chiếc tủ lạnh, quạt hoặc điều hoà.\n(Gõ hai số chiếc theo thứ tự, cách nhau bằng dấu ;. Nhân 7 500 với xác suất thực nghiệm viết dưới dạng phân số, không làm tròn xác suất trước khi nhân, rồi làm tròn kết quả đến hàng đơn vị.)",
+      "dap": [
+       "2798;3570"
+      ],
+      "phim": [
+       ";"
+      ],
+      "nhieu": [
+       "x"
+      ],
+      "loi_giai": [
+       "Tổng số chiếc đã bán trong năm qua = 2545 + 3136 + 719 + 311 + 55 + 57 = 6823",
+       "Số chiếc ti vi năm sau khoảng 7500 · 2545/6823 ≈ 2797,52, tức là khoảng 2798 chiếc",
+       "Số chiếc tủ lạnh, quạt hoặc điều hoà đã bán năm qua = 3136 + 55 + 57 = 3248",
+       "Số chiếc tủ lạnh, quạt hoặc điều hoà năm sau khoảng 7500 · 3248/6823 ≈ 3570,28, tức là khoảng 3570 chiếc"
+      ]
+     }
     },
     {
      "ma": "8.14a",
@@ -6459,7 +7011,21 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "P(E) = 380/1830 = 38/183",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "hoi": "Số liệu thống kê về 1 830 vụ tai nạn giao thông ở một thành phố như sau: đi ô tô 380 vụ; đi xe máy 1 354 vụ; đi xe đạp 55 vụ; đi phương tiện khác hoặc đi bộ 41 vụ.\nTính xác suất thực nghiệm của biến cố E: \"Gặp tai nạn khi đi ô tô\".\n(Gõ xác suất dưới dạng phân số tối giản.)",
+      "dap": [
+       "38/183"
+      ],
+      "phim": [],
+      "nhieu": [],
+      "loi_giai": [
+       "Trong 1830 vụ tai nạn có 380 vụ khi đi ô tô",
+       "Xác suất thực nghiệm của E = 380/1830 = 38/183"
+      ]
+     }
     },
     {
      "ma": "8.14b",
@@ -6468,7 +7034,21 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "P(F) = 1409/1830",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "hoi": "Số liệu thống kê về 1 830 vụ tai nạn giao thông ở một thành phố như sau: đi ô tô 380 vụ; đi xe máy 1 354 vụ; đi xe đạp 55 vụ; đi phương tiện khác hoặc đi bộ 41 vụ.\nTính xác suất thực nghiệm của biến cố F: \"Gặp tai nạn khi đi xe máy hoặc xe đạp\".\n(Gõ xác suất dưới dạng phân số tối giản.)",
+      "dap": [
+       "1409/1830"
+      ],
+      "phim": [],
+      "nhieu": [],
+      "loi_giai": [
+       "Số vụ tai nạn khi đi xe máy hoặc xe đạp = 1354 + 55 = 1409",
+       "Xác suất thực nghiệm của F = 1409/1830"
+      ]
+     }
     },
     {
      "ma": "8.14c",
@@ -6477,7 +7057,21 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "P(G) = 96/1830 = 16/305",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "hoi": "Số liệu thống kê về 1 830 vụ tai nạn giao thông ở một thành phố như sau: đi ô tô 380 vụ; đi xe máy 1 354 vụ; đi xe đạp 55 vụ; đi phương tiện khác hoặc đi bộ 41 vụ.\nTính xác suất thực nghiệm của biến cố G: \"Gặp tai nạn khi đi xe đạp, phương tiện khác hoặc đi bộ\".\n(Gõ xác suất dưới dạng phân số tối giản.)",
+      "dap": [
+       "16/305"
+      ],
+      "phim": [],
+      "nhieu": [],
+      "loi_giai": [
+       "Số vụ tai nạn khi đi xe đạp, phương tiện khác hoặc đi bộ = 55 + 41 = 96",
+       "Xác suất thực nghiệm của G = 96/1830 = 16/305"
+      ]
+     }
     },
     {
      "ma": "8.15a",
@@ -6486,7 +7080,30 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Kinh doanh 320/3084 ≈ 10,38%; du lịch 1565/3084 ≈ 50,75%; làm việc hoặc đi học 180/3084 ≈ 5,84%; kinh doanh hoặc dự hội nghị 408/3084 ≈ 13,23%",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "hoi": "Trong tháng vừa qua có 3 084 người nhập cảnh ngắn hạn vào nước X. Cơ quan hải quan thống kê mục đích nhập cảnh của họ như sau: dự hội nghị 88 người; kinh doanh 320 người; thăm thân nhân 599 người; du lịch 1 565 người; làm việc 55 người; đi học 125 người; lí do khác 332 người; tổng số 3 084 người.\nTính xác suất thực nghiệm để người nhập cảnh ngắn hạn vào nước X tháng qua (biểu diễn bằng phần trăm) với mục đích: kinh doanh; du lịch; làm việc hoặc đi học; kinh doanh hoặc dự hội nghị.\n(Gõ bốn tỉ số phần trăm theo thứ tự trên, cách nhau bằng dấu ;, mỗi tỉ số làm tròn đến hàng phần trăm, ví dụ 12,34%.)",
+      "dap": [
+       "10,38%;50,75%;5,84%;13,23%",
+       "10,38;50,75;5,84;13,23"
+      ],
+      "phim": [
+       ";",
+       "%"
+      ],
+      "nhieu": [
+       "x",
+       "°"
+      ],
+      "loi_giai": [
+       "Kinh doanh: xác suất thực nghiệm là 320/3084 ≈ 0,1038, tức là khoảng 10,38%",
+       "Du lịch: xác suất thực nghiệm là 1565/3084 ≈ 0,5075, tức là khoảng 50,75%",
+       "Làm việc hoặc đi học: số người = 55 + 125 = 180; xác suất thực nghiệm là 180/3084 ≈ 0,0584, tức là khoảng 5,84%",
+       "Kinh doanh hoặc dự hội nghị: số người = 320 + 88 = 408; xác suất thực nghiệm là 408/3084 ≈ 0,1323, tức là khoảng 13,23%"
+      ]
+     }
     },
     {
      "ma": "8.15b",
@@ -6495,7 +7112,26 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Khoảng 1 094 người du lịch; khoảng 350 người kinh doanh, làm việc hoặc đi học",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "hoi": "Trong tháng vừa qua có 3 084 người nhập cảnh ngắn hạn vào nước X. Cơ quan hải quan thống kê mục đích nhập cảnh của họ như sau: dự hội nghị 88 người; kinh doanh 320 người; thăm thân nhân 599 người; du lịch 1 565 người; làm việc 55 người; đi học 125 người; lí do khác 332 người; tổng số 3 084 người.\nBiết rằng tháng tới có 2 156 người nhập cảnh ngắn hạn vào nước X. Hãy dự đoán xem trong đó có:\n- Bao nhiêu người với mục đích du lịch.\n- Bao nhiêu người với mục đích kinh doanh, làm việc hoặc đi học.\n(Gõ hai số người theo thứ tự, cách nhau bằng dấu ;. Nhân 2 156 với xác suất thực nghiệm viết dưới dạng phân số, không làm tròn xác suất trước khi nhân, rồi làm tròn kết quả đến hàng đơn vị.)",
+      "dap": [
+       "1094;350"
+      ],
+      "phim": [
+       ";"
+      ],
+      "nhieu": [
+       "x"
+      ],
+      "loi_giai": [
+       "Số người du lịch tháng tới khoảng 2156 · 1565/3084 ≈ 1094,08, tức là khoảng 1094 người",
+       "Số người kinh doanh, làm việc hoặc đi học tháng qua = 320 + 55 + 125 = 500",
+       "Số người kinh doanh, làm việc hoặc đi học tháng tới khoảng 2156 · 500/3084 ≈ 349,55, tức là khoảng 350 người"
+      ]
+     }
     },
     {
      "ma": "8.16",
@@ -6504,7 +7140,20 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Khoảng 59 ngày",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "dap": [
+       "59"
+      ],
+      "phim": [],
+      "nhieu": [],
+      "loi_giai": [
+       "Trong 365 ngày có 217 ngày tắc đường; xác suất thực nghiệm của biến cố tắc đường là 217/365",
+       "Trong 100 ngày tới, số ngày tắc đường khoảng 100 · 217/365 ≈ 59,45, tức là khoảng 59 ngày"
+      ]
+     }
     }
    ]
   },
@@ -6519,16 +7168,40 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "A",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Chọn ngẫu nhiên một số có hai chữ số. Xác suất để chọn được số chính phương là",
+      "cac": [
+       "1/15",
+       "1/16",
+       "1/14",
+       "2/31"
+      ],
+      "dap": "A"
+     }
     },
     {
      "ma": "Trắc nghiệm 2 (tr.47)",
-     "de": "Lớp 12A gồm 38 học sinh, trong đó có 18 học sinh nam, tổ chức đi du lịch bằng máy bay. Khi làm thủ tục có 6 học sinh nam gửi hành lí và 8 học sinh nữ không gửi hành lí. Chọn ngẫu nhiên một học sinh trong lớp. Xác suất để chọn được một học sinh nữ có gửi hành lí là (sách in thiếu ý: phải hiểu là chọn ngẫu nhiên một học sinh trong số học sinh nữ thì mới có phương án đúng) A. 7/20. B. 3/5. C. 8/21. D. 9/23.",
+     "de": "Lớp 12A gồm 38 học sinh, trong đó có 18 học sinh nam, tổ chức đi du lịch bằng máy bay. Khi làm thủ tục có 6 học sinh nam gửi hành lí và 8 học sinh nữ không gửi hành lí. Chọn ngẫu nhiên một học sinh trong lớp. Xác suất để chọn được một học sinh nữ có gửi hành lí là A. 7/20. B. 6/19. C. 8/21. D. 9/23.",
      "trang": 47,
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "B",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Lớp 12A gồm 38 học sinh, trong đó có 18 học sinh nam, tổ chức đi du lịch bằng máy bay. Khi làm thủ tục có 6 học sinh nam gửi hành lí và 8 học sinh nữ không gửi hành lí. Chọn ngẫu nhiên một học sinh trong lớp. Xác suất để chọn được một học sinh nữ có gửi hành lí là",
+      "cac": [
+       "7/20",
+       "6/19",
+       "8/21",
+       "9/23"
+      ],
+      "dap": "B"
+     }
     },
     {
      "ma": "Trắc nghiệm 3 (tr.47)",
@@ -6537,7 +7210,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "D",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Lớp 12A gồm 38 học sinh, trong đó có 18 học sinh nam, tổ chức đi du lịch bằng máy bay. Khi làm thủ tục có 6 học sinh nam gửi hành lí và 8 học sinh nữ không gửi hành lí. Chọn ngẫu nhiên một học sinh trong lớp. Xác suất để chọn được một học sinh không gửi hành lí là",
+      "cac": [
+       "11/20",
+       "12/19",
+       "13/21",
+       "10/19"
+      ],
+      "dap": "D"
+     }
     },
     {
      "ma": "Trắc nghiệm 4 (tr.47)",
@@ -6546,7 +7231,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "A",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Một túi đựng các viên bi có cùng khối lượng và kích thước với 26 viên bi màu đỏ, 62 viên bi màu tím, 8 viên bi màu vàng, 9 viên bi màu trắng và 12 viên bi màu đen. Lấy ngẫu nhiên một viên bi trong túi. Xác suất để lấy được viên bi có màu tím là",
+      "cac": [
+       "62/117",
+       "20/39",
+       "63/118",
+       "65/118"
+      ],
+      "dap": "A"
+     }
     },
     {
      "ma": "Trắc nghiệm 5 (tr.47)",
@@ -6555,7 +7252,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "B",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Một túi đựng các viên bi có cùng khối lượng và kích thước với 26 viên bi màu đỏ, 62 viên bi màu tím, 8 viên bi màu vàng, 9 viên bi màu trắng và 12 viên bi màu đen. Lấy ngẫu nhiên một viên bi trong túi. Xác suất để lấy được viên bi có màu trắng là",
+      "cac": [
+       "11/117",
+       "1/13",
+       "13/118",
+       "15/118"
+      ],
+      "dap": "B"
+     }
     },
     {
      "ma": "Trắc nghiệm 6 (tr.47)",
@@ -6564,7 +7273,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "C",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Một túi đựng các viên bi có cùng khối lượng và kích thước với 26 viên bi màu đỏ, 62 viên bi màu tím, 8 viên bi màu vàng, 9 viên bi màu trắng và 12 viên bi màu đen. Lấy ngẫu nhiên một viên bi trong túi. Xác suất để lấy được viên bi có màu trắng hoặc màu đen là",
+      "cac": [
+       "20/117",
+       "19/119",
+       "7/39",
+       "20/119"
+      ],
+      "dap": "C"
+     }
     },
     {
      "ma": "Trắc nghiệm 7 (tr.47)",
@@ -6573,7 +7294,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "D",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Một túi đựng các viên bi có cùng khối lượng và kích thước với 26 viên bi màu đỏ, 62 viên bi màu tím, 8 viên bi màu vàng, 9 viên bi màu trắng và 12 viên bi màu đen. Lấy 2 viên bi màu đỏ và 1 viên bi màu trắng ra khỏi túi. Chọn ngẫu nhiên một viên bi trong túi. Xác suất để chọn được viên bi không phải màu vàng là",
+      "cac": [
+       "107/114",
+       "109/115",
+       "103/115",
+       "53/57"
+      ],
+      "dap": "D"
+     }
     },
     {
      "ma": "Trắc nghiệm 8 (tr.47)",
@@ -6582,7 +7315,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "A",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Một túi đựng các viên bi có cùng khối lượng và kích thước với 26 viên bi màu đỏ, 62 viên bi màu tím, 8 viên bi màu vàng, 9 viên bi màu trắng và 12 viên bi màu đen. Bỏ thêm 2 viên bi màu đỏ và 1 viên bi màu trắng vào túi. Chọn ngẫu nhiên một viên bi trong túi. Xác suất để chọn được viên bi không phải màu đỏ là",
+      "cac": [
+       "23/30",
+       "91/120",
+       "93/121",
+       "92/121"
+      ],
+      "dap": "A"
+     }
     },
     {
      "ma": "8.17a",
@@ -6591,7 +7336,23 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "P(A) = 26/52 = 1/2",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "hoi": "Một bộ bài tú lơ khơ gồm 52 lá bài chia thành bốn chất: rô (hình thoi, màu đỏ), cơ (hình trái tim, màu đỏ), bích (hình mâu, màu đen) và nhép (hình cây, màu đen). Mỗi chất có 13 lá bài là: 2, 3, 4, 5, 6, 7, 8, 9, 10, J, Q, K, A. Rút ngẫu nhiên một lá bài. Tính xác suất của biến cố A: \"Rút được lá bài có màu đen\".\n(Gõ xác suất dưới dạng phân số tối giản hoặc số thập phân.)",
+      "dap": [
+       "1/2",
+       "0,5"
+      ],
+      "phim": [],
+      "nhieu": [],
+      "loi_giai": [
+       "Có 52 kết quả có thể (52 lá bài), đồng khả năng",
+       "Số lá bài màu đen (chất bích và chất nhép) = 13 + 13 = 26",
+       "P(A) = 26/52 = 1/2"
+      ]
+     }
     },
     {
      "ma": "8.17b",
@@ -6600,7 +7361,22 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "P(B) = 2/52 = 1/26",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "hoi": "Một bộ bài tú lơ khơ gồm 52 lá bài chia thành bốn chất: rô (hình thoi, màu đỏ), cơ (hình trái tim, màu đỏ), bích (hình mâu, màu đen) và nhép (hình cây, màu đen). Mỗi chất có 13 lá bài là: 2, 3, 4, 5, 6, 7, 8, 9, 10, J, Q, K, A. Rút ngẫu nhiên một lá bài. Tính xác suất của biến cố B: \"Rút được lá bài A màu đỏ\".\n(Gõ xác suất dưới dạng phân số tối giản.)",
+      "dap": [
+       "1/26"
+      ],
+      "phim": [],
+      "nhieu": [],
+      "loi_giai": [
+       "Có 52 kết quả có thể (52 lá bài), đồng khả năng",
+       "Lá bài A màu đỏ có 2 lá là A rô và A cơ",
+       "P(B) = 2/52 = 1/26"
+      ]
+     }
     },
     {
      "ma": "8.17c",
@@ -6609,7 +7385,22 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "P(C) = 4/52 = 1/13",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "hoi": "Một bộ bài tú lơ khơ gồm 52 lá bài chia thành bốn chất: rô (hình thoi, màu đỏ), cơ (hình trái tim, màu đỏ), bích (hình mâu, màu đen) và nhép (hình cây, màu đen). Mỗi chất có 13 lá bài là: 2, 3, 4, 5, 6, 7, 8, 9, 10, J, Q, K, A. Rút ngẫu nhiên một lá bài. Tính xác suất của biến cố C: \"Rút được lá bài mang số 3\".\n(Gõ xác suất dưới dạng phân số tối giản.)",
+      "dap": [
+       "1/13"
+      ],
+      "phim": [],
+      "nhieu": [],
+      "loi_giai": [
+       "Có 52 kết quả có thể (52 lá bài), đồng khả năng",
+       "Mỗi chất có một lá mang số 3, nên số lá bài mang số 3 = 1 · 4 = 4",
+       "P(C) = 4/52 = 1/13"
+      ]
+     }
     },
     {
      "ma": "8.17d",
@@ -6618,7 +7409,23 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "P(D) = 13/52 = 1/4",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "hoi": "Một bộ bài tú lơ khơ gồm 52 lá bài chia thành bốn chất: rô (hình thoi, màu đỏ), cơ (hình trái tim, màu đỏ), bích (hình mâu, màu đen) và nhép (hình cây, màu đen). Mỗi chất có 13 lá bài là: 2, 3, 4, 5, 6, 7, 8, 9, 10, J, Q, K, A. Rút ngẫu nhiên một lá bài. Tính xác suất của biến cố D: \"Rút được lá bài chất rô\".\n(Gõ xác suất dưới dạng phân số tối giản hoặc số thập phân.)",
+      "dap": [
+       "1/4",
+       "0,25"
+      ],
+      "phim": [],
+      "nhieu": [],
+      "loi_giai": [
+       "Có 52 kết quả có thể (52 lá bài), đồng khả năng",
+       "Có 13 lá bài chất rô",
+       "P(D) = 13/52 = 1/4"
+      ]
+     }
     },
     {
      "ma": "8.17e",
@@ -6627,7 +7434,23 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "P(E) = 39/52 = 3/4",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "hoi": "Một bộ bài tú lơ khơ gồm 52 lá bài chia thành bốn chất: rô (hình thoi, màu đỏ), cơ (hình trái tim, màu đỏ), bích (hình mâu, màu đen) và nhép (hình cây, màu đen). Mỗi chất có 13 lá bài là: 2, 3, 4, 5, 6, 7, 8, 9, 10, J, Q, K, A. Rút ngẫu nhiên một lá bài. Tính xác suất của biến cố E: \"Rút được lá bài không phải chất bích\".\n(Gõ xác suất dưới dạng phân số tối giản hoặc số thập phân.)",
+      "dap": [
+       "3/4",
+       "0,75"
+      ],
+      "phim": [],
+      "nhieu": [],
+      "loi_giai": [
+       "Có 52 kết quả có thể (52 lá bài), đồng khả năng",
+       "Số lá bài không phải chất bích = 52 − 13 = 39",
+       "P(E) = 39/52 = 3/4"
+      ]
+     }
     },
     {
      "ma": "8.17f",
@@ -6636,7 +7459,22 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "P(F) = 12/52 = 3/13",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "hoi": "Một bộ bài tú lơ khơ gồm 52 lá bài chia thành bốn chất: rô (hình thoi, màu đỏ), cơ (hình trái tim, màu đỏ), bích (hình mâu, màu đen) và nhép (hình cây, màu đen). Mỗi chất có 13 lá bài là: 2, 3, 4, 5, 6, 7, 8, 9, 10, J, Q, K, A. Rút ngẫu nhiên một lá bài. Tính xác suất của biến cố F: \"Rút được lá bài tranh\" (Các lá bài J, Q, K gọi là lá bài tranh).\n(Gõ xác suất dưới dạng phân số tối giản.)",
+      "dap": [
+       "3/13"
+      ],
+      "phim": [],
+      "nhieu": [],
+      "loi_giai": [
+       "Có 52 kết quả có thể (52 lá bài), đồng khả năng",
+       "Mỗi chất có 3 lá bài tranh (J, Q, K), nên số lá bài tranh = 3 · 4 = 12",
+       "P(F) = 12/52 = 3/13"
+      ]
+     }
     },
     {
      "ma": "8.18",
@@ -6645,7 +7483,23 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "P = 16/40 = 2/5 (cuối năm còn 16 nam, 24 nữ)",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "hoi": "Lớp 8A có 23 học sinh nam và 35 học sinh nữ. Giả sử cuối năm lớp có 7 học sinh nam và 11 học sinh nữ chuyển lớp. Chọn ngẫu nhiên một học sinh trong lớp 8A (sau khi các bạn đó đã chuyển lớp). Tính xác suất để chọn được học sinh nam.\n(Gõ xác suất dưới dạng phân số tối giản hoặc số thập phân.)",
+      "dap": [
+       "2/5",
+       "0,4"
+      ],
+      "phim": [],
+      "nhieu": [],
+      "loi_giai": [
+       "Cuối năm, số học sinh nam = 23 − 7 = 16; số học sinh nữ = 35 − 11 = 24",
+       "Tổng số học sinh cuối năm = 16 + 24 = 40",
+       "Xác suất chọn được học sinh nam = 16/40 = 2/5"
+      ]
+     }
     },
     {
      "ma": "8.19",
@@ -6654,7 +7508,24 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "P = 30/70 = 3/7 (lúc sau có 35 bi đỏ, 30 bi vàng, 5 bi đen)",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 5,
+      "hoi": "Một hộp có 40 viên bi có cùng khối lượng và kích thước, gồm ba màu: đỏ, vàng, đen. Biết rằng nếu lấy ngẫu nhiên một viên bi trong hộp thì xác suất lấy được viên bi màu đỏ, viên bi màu vàng tương ứng là 1/4 và 2/5. Bạn Minh bỏ thêm 25 viên bi màu đỏ, 14 viên bi vàng vào hộp và lấy ra 9 viên bi màu đen. Bạn Minh lấy ngẫu nhiên một viên bi trong hộp. Tính xác suất để Minh lấy được viên bi màu vàng.\n(Gõ xác suất dưới dạng phân số tối giản.)",
+      "dap": [
+       "3/7"
+      ],
+      "phim": [],
+      "nhieu": [],
+      "loi_giai": [
+       "Lúc đầu: số bi đỏ = 40 · 1/4 = 10; số bi vàng = 40 · 2/5 = 16",
+       "Số bi đen lúc đầu = 40 − 10 − 16 = 14",
+       "Lúc sau: số bi đỏ = 10 + 25 = 35; số bi vàng = 16 + 14 = 30; số bi đen = 14 − 9 = 5",
+       "Tổng số bi lúc sau = 35 + 30 + 5 = 70",
+       "Xác suất Minh lấy được viên bi màu vàng = 30/70 = 3/7"
+      ]
+     }
     },
     {
      "ma": "8.20",
@@ -6663,7 +7534,23 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "P = 45/65 = 9/13 (còn 20 khách nam, 45 khách nữ)",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "hoi": "Tại một quán ăn, lúc đầu có 50 khách hàng, trong đó có 32 khách hàng nam. Sau một giờ, quán ăn có 12 khách hàng nam ra về và 27 khách hàng mới đến là nữ. Chọn ngẫu nhiên một người khách hàng trong quán ăn. Tính xác suất để chọn được một khách hàng nữ.\n(Gõ xác suất dưới dạng phân số tối giản.)",
+      "dap": [
+       "9/13"
+      ],
+      "phim": [],
+      "nhieu": [],
+      "loi_giai": [
+       "Lúc đầu số khách nữ = 50 − 32 = 18",
+       "Sau một giờ: số khách nam = 32 − 12 = 20; số khách nữ = 18 + 27 = 45",
+       "Tổng số khách sau một giờ = 20 + 45 = 65",
+       "Xác suất chọn được một khách hàng nữ = 45/65 = 9/13"
+      ]
+     }
     },
     {
      "ma": "8.21a",
@@ -6672,7 +7559,22 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "P(A) = 3/44 ≈ 0,068",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "hoi": "Bạn Bình thống kê số điểm trong 44 bài kiểm tra tiếng Anh của mình như sau (điểm tối đa là 100): nhỏ hơn 83 điểm có 3 bài; từ 84 đến 87 điểm có 5 bài; từ 88 đến 91 điểm có 7 bài; từ 92 đến 95 điểm có 20 bài; từ 96 đến 100 điểm có 9 bài. Bạn Bình sẽ làm bài kiểm tra trong tuần tới. Tính xác suất thực nghiệm của biến cố A: \"Bạn Bình được ít hơn 84 điểm\".\n(Gõ phân số tối giản, hoặc số thập phân làm tròn đến hàng phần nghìn.)",
+      "dap": [
+       "3/44",
+       "0,068"
+      ],
+      "phim": [],
+      "nhieu": [],
+      "loi_giai": [
+       "Trong 44 bài kiểm tra, có 3 bài được ít hơn 84 điểm (nhỏ hơn 83 điểm)",
+       "Xác suất thực nghiệm của A là 3/44 ≈ 0,068"
+      ]
+     }
     },
     {
      "ma": "8.21b",
@@ -6681,7 +7583,22 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "P(B) = 32/44 = 8/11 ≈ 0,727",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "hoi": "Bạn Bình thống kê số điểm trong 44 bài kiểm tra tiếng Anh của mình như sau (điểm tối đa là 100): nhỏ hơn 83 điểm có 3 bài; từ 84 đến 87 điểm có 5 bài; từ 88 đến 91 điểm có 7 bài; từ 92 đến 95 điểm có 20 bài; từ 96 đến 100 điểm có 9 bài. Bạn Bình sẽ làm bài kiểm tra trong tuần tới. Tính xác suất thực nghiệm của biến cố B: \"Bạn Bình được số điểm từ 84 đến 95 điểm\".\n(Gõ phân số tối giản, hoặc số thập phân làm tròn đến hàng phần nghìn.)",
+      "dap": [
+       "8/11",
+       "0,727"
+      ],
+      "phim": [],
+      "nhieu": [],
+      "loi_giai": [
+       "Số bài được từ 84 đến 95 điểm = 5 + 7 + 20 = 32",
+       "Xác suất thực nghiệm của B = 32/44 = 8/11"
+      ]
+     }
     },
     {
      "ma": "8.22a",
@@ -6690,7 +7607,22 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "P(A) = 38/61",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "hoi": "Thống kê số vụ tai nạn giao thông trong tháng 8 và 9 vừa qua của thành phố X, ta có bảng sau:\nSố vụ tai nạn giao thông xảy ra trong một ngày: 0, 1, 2, 3, 4, 5, 6, 7, > 7\nSố ngày tương ứng: 4, 9, 15, 10, 8, 6, 4, 3, 2\nTính xác suất thực nghiệm của biến cố A: \"Ở thành phố X, trong một ngày có nhiều nhất 3 vụ tai nạn giao thông\".\n(Gõ xác suất dưới dạng phân số tối giản.)",
+      "dap": [
+       "38/61"
+      ],
+      "phim": [],
+      "nhieu": [],
+      "loi_giai": [
+       "Số ngày quan sát = 4 + 9 + 15 + 10 + 8 + 6 + 4 + 3 + 2 = 61",
+       "Số ngày có nhiều nhất 3 vụ tai nạn = 4 + 9 + 15 + 10 = 38",
+       "Xác suất thực nghiệm của A = 38/61"
+      ]
+     }
     },
     {
      "ma": "8.22b",
@@ -6699,7 +7631,22 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "P(B) = 15/61",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "hoi": "Thống kê số vụ tai nạn giao thông trong tháng 8 và 9 vừa qua của thành phố X, ta có bảng sau:\nSố vụ tai nạn giao thông xảy ra trong một ngày: 0, 1, 2, 3, 4, 5, 6, 7, > 7\nSố ngày tương ứng: 4, 9, 15, 10, 8, 6, 4, 3, 2\nTính xác suất thực nghiệm của biến cố B: \"Ở thành phố X, trong một ngày có từ 5 vụ tai nạn giao thông trở lên\".\n(Gõ xác suất dưới dạng phân số tối giản.)",
+      "dap": [
+       "15/61"
+      ],
+      "phim": [],
+      "nhieu": [],
+      "loi_giai": [
+       "Số ngày quan sát = 4 + 9 + 15 + 10 + 8 + 6 + 4 + 3 + 2 = 61",
+       "Số ngày có từ 5 vụ tai nạn trở lên = 6 + 4 + 3 + 2 = 15",
+       "Xác suất thực nghiệm của B = 15/61"
+      ]
+     }
     },
     {
      "ma": "8.22c",
@@ -6708,7 +7655,26 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Khoảng 62 ngày có nhiều nhất 3 vụ; khoảng 25 ngày có từ 5 vụ trở lên",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "hoi": "Thống kê số vụ tai nạn giao thông trong tháng 8 và 9 vừa qua của thành phố X, ta có bảng sau:\nSố vụ tai nạn giao thông xảy ra trong một ngày: 0, 1, 2, 3, 4, 5, 6, 7, > 7\nSố ngày tương ứng: 4, 9, 15, 10, 8, 6, 4, 3, 2\nTừ số liệu thống kê trên, hãy dự đoán xem trong 100 ngày tới ở thành phố X:\n- Có bao nhiêu ngày có nhiều nhất 3 vụ tai nạn giao thông.\n- Có bao nhiêu ngày có từ 5 vụ tai nạn giao thông trở lên.\n(Gõ hai số ngày theo thứ tự, cách nhau bằng dấu ;. Nhân 100 với xác suất thực nghiệm viết dưới dạng phân số, không làm tròn xác suất trước khi nhân, rồi làm tròn kết quả đến hàng đơn vị.)",
+      "dap": [
+       "62;25"
+      ],
+      "phim": [
+       ";"
+      ],
+      "nhieu": [
+       "x"
+      ],
+      "loi_giai": [
+       "Trong 61 ngày quan sát, có 38 ngày có nhiều nhất 3 vụ và 15 ngày có từ 5 vụ trở lên",
+       "Số ngày có nhiều nhất 3 vụ trong 100 ngày tới khoảng 100 · 38/61 ≈ 62,3, tức là khoảng 62 ngày",
+       "Số ngày có từ 5 vụ trở lên trong 100 ngày tới khoảng 100 · 15/61 ≈ 24,6, tức là khoảng 25 ngày"
+      ]
+     }
     },
     {
      "ma": "8.23a",
@@ -6717,7 +7683,28 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "P(A) = 76/100 = 0,76; P(B) = 16/100 = 0,16",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "hoi": "Khảo sát vị trí công việc của 100 cán bộ công tác trong ngành giáo dục tại quận X, thu được kết quả như sau: cán bộ hành chính 16 người; giáo viên 76 người; công việc khác 8 người.\nChọn ngẫu nhiên một cán bộ công tác trong ngành giáo dục được khảo sát tại quận X. Tính xác suất thực nghiệm của các biến cố sau:\nA: \"Người đó là giáo viên\".\nB: \"Người đó là cán bộ hành chính\".\n(Gõ P(A), P(B) theo thứ tự, cách nhau bằng dấu ;, mỗi xác suất là số thập phân hoặc phân số tối giản.)",
+      "dap": [
+       "0,76;0,16",
+       "0,76;4/25",
+       "19/25;0,16",
+       "19/25;4/25"
+      ],
+      "phim": [
+       ";"
+      ],
+      "nhieu": [
+       "x"
+      ],
+      "loi_giai": [
+       "Có 76 giáo viên trong 100 cán bộ được khảo sát: P(A) = 76/100 = 0,76",
+       "Có 16 cán bộ hành chính trong 100 cán bộ được khảo sát: P(B) = 16/100 = 0,16"
+      ]
+     }
     },
     {
      "ma": "8.23b",
@@ -6726,7 +7713,25 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Khoảng 700 giáo viên; khoảng 147 cán bộ hành chính",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "hoi": "Khảo sát vị trí công việc của 100 cán bộ công tác trong ngành giáo dục tại quận X, thu được kết quả như sau: cán bộ hành chính 16 người; giáo viên 76 người; công việc khác 8 người.\nGiả sử quận X có 921 cán bộ công tác ngành giáo dục. Hãy dự đoán xem trong đó:\n- Có bao nhiêu người là giáo viên.\n- Có bao nhiêu người là cán bộ hành chính.\n(Gõ hai số người theo thứ tự, cách nhau bằng dấu ;, làm tròn đến hàng đơn vị.)",
+      "dap": [
+       "700;147"
+      ],
+      "phim": [
+       ";"
+      ],
+      "nhieu": [
+       "x"
+      ],
+      "loi_giai": [
+       "Số giáo viên khoảng 921 · 0,76 = 699,96; làm tròn được khoảng 700 người",
+       "Số cán bộ hành chính khoảng 921 · 0,16 = 147,36; làm tròn được khoảng 147 người"
+      ]
+     }
     }
    ]
   },
@@ -8832,7 +9837,33 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "A = 12y^2 − 2xy − 6 + 4x^2, bậc 2; B = −3y^2 + 2xy, bậc 2",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 5,
+      "hoi": "Biết rằng hai đa thức A và B thoả mãn các điều kiện sau:\nA · (−0,5x²y) = −6x²y³ + x³y² + 3x²y − 2x⁴y;\nA + B = 9y² + 4x² − 6.\nTìm các đa thức A và B, xác định bậc của mỗi đa thức đó.\n(Gõ đa thức A, đa thức B, bậc của A, bậc của B theo thứ tự, cách nhau bằng dấu ;)",
+      "dap": [
+       "12y²−2xy−6+4x²;−3y²+2xy;2;2"
+      ],
+      "phim": [
+       "x",
+       "y",
+       "²",
+       ";"
+      ],
+      "nhieu": [
+       "³",
+       "⁴",
+       "z"
+      ],
+      "loi_giai": [
+       "A = (−6x²y³ + x³y² + 3x²y − 2x⁴y) : (−0,5x²y)",
+       "= 12y² − 2xy − 6 + 4x²",
+       "B = (9y² + 4x² − 6) − A = (9y² + 4x² − 6) − (12y² − 2xy − 6 + 4x²)",
+       "= −3y² + 2xy",
+       "Các hạng tử 12y², −2xy, 4x² của A và −3y², 2xy của B đều có bậc 2, nên A và B đều có bậc 2"
+      ]
+     }
     },
     {
      "ma": "Ôn cuối năm 1b",
@@ -8841,7 +9872,20 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "B = −3 · 2^2 + 2 · 3 · 2 = 0",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "dap": [
+       "0"
+      ],
+      "phim": [],
+      "nhieu": [],
+      "loi_giai": [
+       "Theo câu a, B = −3y² + 2xy",
+       "Tại x = 3, y = 2: B = −3 · 2² + 2 · 3 · 2 = −12 + 12 = 0"
+      ]
+     }
     },
     {
      "ma": "Ôn cuối năm 2",
@@ -8850,7 +9894,22 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "A : B = C tương đương A = B · C. Nhân: B · C = (9x^2y^4 + (3/2)xy^3 + (1/4)y^2)(3xy^2 − (1/2)y) = 27x^3y^6 − (9/2)x^2y^5 + (9/2)x^2y^5 − (3/4)xy^4 + (3/4)xy^4 − (1/8)y^3 = 27x^3y^6 − (1/8)y^3 = A. Vậy A : B = C.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 5,
+      "buoc": [
+       "Ta có A : B = C khi và chỉ khi A = B · C, nên ta tính tích B · C",
+       "B · C = 9x²y⁴(3xy² − (1/2)y) + (3/2)xy³(3xy² − (1/2)y) + (1/4)y²(3xy² − (1/2)y)",
+       "= 27x³y⁶ − (9/2)x²y⁵ + (9/2)x²y⁵ − (3/4)xy⁴ + (3/4)xy⁴ − (1/8)y³",
+       "= 27x³y⁶ − (1/8)y³ = A",
+       "Vậy A : B = C"
+      ],
+      "nhieu": [
+       "= 27x³y⁶ − (9/2)x²y⁵ + (9/2)x²y⁵ − (3/4)xy⁴ + (3/4)xy⁴ + (1/8)y³",
+       "Ta có A : B = C khi và chỉ khi A = C : B, nên ta tính thương C : B"
+      ]
+     }
     },
     {
      "ma": "Ôn cuối năm 3",
@@ -8859,7 +9918,31 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Khai triển: M = (9x^2 − 12x + 4) − (9x^2 + 12x + 4) + (x^3 + 6x^2 + 12x + 8) + (x^3 − 6x^2 + 12x − 8) − 2x^3 = 0. Vậy M = 0 với mọi x, giá trị của M không phụ thuộc vào x.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "hoi": "Chứng minh rằng giá trị của biểu thức sau không phụ thuộc vào giá trị của biến x:\nM = (3x − 2)² − (3x + 2)² + (x + 2)³ + (x − 2)³ − 2x³.\n(Gõ theo thứ tự, cách nhau bằng dấu ;: kết quả thu gọn của (3x − 2)² − (3x + 2)², kết quả thu gọn của (x + 2)³ + (x − 2)³, rồi giá trị của M.)",
+      "dap": [
+       "−24x;2x³+24x;0"
+      ],
+      "phim": [
+       "x",
+       "³",
+       ";"
+      ],
+      "nhieu": [
+       "²",
+       "y",
+       "⁴"
+      ],
+      "loi_giai": [
+       "(3x − 2)² − (3x + 2)² = (9x² − 12x + 4) − (9x² + 12x + 4) = −24x",
+       "(x + 2)³ + (x − 2)³ = (x³ + 6x² + 12x + 8) + (x³ − 6x² + 12x − 8) = 2x³ + 24x",
+       "M = −24x + 2x³ + 24x − 2x³ = 0",
+       "Vậy M luôn bằng 0, giá trị của M không phụ thuộc vào giá trị của biến x"
+      ]
+     }
     },
     {
      "ma": "Ôn cuối năm 4a",
@@ -8868,7 +9951,28 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "(x + y)(x^2 − xy + y^2 + 5)",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "dap": [
+       "(x+y)(x²−xy+y²+5)"
+      ],
+      "phim": [
+       "x",
+       "y",
+       "²"
+      ],
+      "nhieu": [
+       "³",
+       "⁴",
+       "z"
+      ],
+      "loi_giai": [
+       "x³ + y³ + 5x + 5y = (x + y)(x² − xy + y²) + 5(x + y)",
+       "= (x + y)(x² − xy + y² + 5)"
+      ]
+     }
     },
     {
      "ma": "Ôn cuối năm 4b",
@@ -8877,7 +9981,27 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "(2x + y)(6x + y)",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "dap": [
+       "(2x+y)(6x+y)"
+      ],
+      "phim": [
+       "x",
+       "y"
+      ],
+      "nhieu": [
+       "²",
+       "z"
+      ],
+      "loi_giai": [
+       "16x² + 8xy + y² − 4x² = (4x + y)² − (2x)²",
+       "= (4x + y − 2x)(4x + y + 2x)",
+       "= (2x + y)(6x + y)"
+      ]
+     }
     },
     {
      "ma": "Ôn cuối năm 5a",
@@ -8886,16 +10010,56 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "(2x + 1)/x",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 5,
+      "dap": [
+       "(2x+1)/x"
+      ],
+      "phim": [
+       "x"
+      ],
+      "nhieu": [
+       "²",
+       "y"
+      ],
+      "loi_giai": [
+       "x² + 3x = x(x + 3); MTC = x(x + 3)",
+       "(2x + 4)/(x + 3) + 3/x − 6/(x² + 3x) = ((2x + 4)x + 3(x + 3) − 6)/(x(x + 3))",
+       "= (2x² + 7x + 3)/(x(x + 3))",
+       "= (x + 3)(2x + 1)/(x(x + 3))",
+       "= (2x + 1)/x"
+      ]
+     }
     },
     {
      "ma": "Ôn cuối năm 5b",
-     "de": "Thực hiện phép tính: (x^2 − 3x + 4)/(x^2 + x) : (x^2 − x − 12)/(x^2 − x). (Sách in tử thức x^2 − 3x + 4; lời giải cuối sách tính với x^2 − 3x − 4.)",
+     "de": "Thực hiện phép tính: (x^2 − 3x − 4)/(x^2 + x) : (x^2 − x − 12)/(x^2 − x).",
      "trang": 81,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "(x − 1)/(x + 3)",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "dap": [
+       "(x−1)/(x+3)"
+      ],
+      "phim": [
+       "x"
+      ],
+      "nhieu": [
+       "²",
+       "y"
+      ],
+      "loi_giai": [
+       "(x² − 3x − 4)/(x² + x) : ((x² − x − 12)/(x² − x)) = (x² − 3x − 4)/(x² + x) · (x² − x)/(x² − x − 12)",
+       "= (x − 4)(x + 1)/(x(x + 1)) · x(x − 1)/((x + 3)(x − 4))",
+       "= (x − 1)/(x + 3)"
+      ]
+     }
     },
     {
      "ma": "Ôn cuối năm 6a",
@@ -8904,7 +10068,29 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "x ≠ 2 và x ≠ −2",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 1,
+      "hoi": "Cho phân thức đại số P = (x³ + 8)/(x² − 4). Tìm điều kiện xác định của phân thức.",
+      "dong": [
+       {
+        "chu": "Điều kiện xác định của phân thức: {0}",
+        "o": [
+         {
+          "dung": [
+           "x ≠ 2 và x ≠ −2"
+          ],
+          "sai": [
+           "x ≠ 2",
+           "x ≠ −2",
+           "x ≠ 4"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "Ôn cuối năm 6b",
@@ -8913,7 +10099,28 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "P = (x^2 − 2x + 4)/(x − 2) = x + 4/(x − 2)",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "dap": [
+       "(x²−2x+4)/(x−2)",
+       "x+4/(x−2)"
+      ],
+      "phim": [
+       "x",
+       "²"
+      ],
+      "nhieu": [
+       "³",
+       "y"
+      ],
+      "loi_giai": [
+       "x³ + 8 = (x + 2)(x² − 2x + 4); x² − 4 = (x − 2)(x + 2)",
+       "P = (x + 2)(x² − 2x + 4)/((x − 2)(x + 2))",
+       "= (x² − 2x + 4)/(x − 2)"
+      ]
+     }
     },
     {
      "ma": "Ôn cuối năm 6c",
@@ -8922,16 +10129,157 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "x ∈ {0; 1; 3; 4; 6} (x − 2 là ước của 4; loại x = −2 vì không thoả điều kiện xác định)",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 8,
+      "hoi": "Cho phân thức đại số P = (x³ + 8)/(x² − 4). Sử dụng kết quả câu b) (rút gọn phân thức P), tìm tất cả các số nguyên x sao cho giá trị của phân thức P đã cho là số nguyên.\nVới mỗi số nguyên x sau, giá trị của P có là số nguyên không?",
+      "dong": [
+       {
+        "chu": "x = −2: {0}",
+        "o": [
+         {
+          "dung": [
+           "Không"
+          ],
+          "sai": [
+           "Có"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "x = 0: {0}",
+        "o": [
+         {
+          "dung": [
+           "Có"
+          ],
+          "sai": [
+           "Không"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "x = 1: {0}",
+        "o": [
+         {
+          "dung": [
+           "Có"
+          ],
+          "sai": [
+           "Không"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "x = 2: {0}",
+        "o": [
+         {
+          "dung": [
+           "Không"
+          ],
+          "sai": [
+           "Có"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "x = 3: {0}",
+        "o": [
+         {
+          "dung": [
+           "Có"
+          ],
+          "sai": [
+           "Không"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "x = 4: {0}",
+        "o": [
+         {
+          "dung": [
+           "Có"
+          ],
+          "sai": [
+           "Không"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "x = 6: {0}",
+        "o": [
+         {
+          "dung": [
+           "Có"
+          ],
+          "sai": [
+           "Không"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "x = 10: {0}",
+        "o": [
+         {
+          "dung": [
+           "Không"
+          ],
+          "sai": [
+           "Có"
+          ],
+          "hai": true
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "Ôn cuối năm 7",
-     "de": "Quãng đường AC gồm hai đoạn AB và BC. Đoạn BC dài hơn đoạn AB là 60 km. Một ô tô đi từ A đến B với vận tốc 50 km/h, rồi tiếp tục đi từ B đến C với vận tốc 60 km/h. Tính quãng đường AC biết thời gian đi trên đoạn đường AB ít hơn thời gian đi trên đoạn đường BC là 1 giờ 30 phút. (Sách in đảo hai vận tốc: lời giải cuối sách tính với đoạn AB đi 60 km/h, đoạn BC đi 50 km/h.)",
+     "de": "Quãng đường AC gồm hai đoạn AB và BC. Đoạn BC dài hơn đoạn AB là 60 km. Một ô tô đi từ A đến B với vận tốc 60 km/h, rồi tiếp tục đi từ B đến C với vận tốc 50 km/h. Tính quãng đường AC biết thời gian đi trên đoạn đường AB ít hơn thời gian đi trên đoạn đường BC là 1 giờ 30 phút.",
      "trang": 81,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "AC = 240 km (AB = 90 km, BC = 150 km)",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 5,
+      "dap": [
+       "240",
+       "240km"
+      ],
+      "phim": [
+       "km"
+      ],
+      "nhieu": [
+       "km/h",
+       "giờ"
+      ],
+      "loi_giai": [
+       "Gọi x (km) là độ dài đoạn AB, x > 0; khi đó đoạn BC dài x + 60 (km)",
+       "Thời gian đi đoạn AB là x/60 giờ, đi đoạn BC là (x + 60)/50 giờ; đổi 1 giờ 30 phút ra 1,5 giờ",
+       "Thời gian đi đoạn BC nhiều hơn đi đoạn AB 1,5 giờ; (x + 60)/50 − x/60 = 1,5",
+       "6(x + 60) − 5x = 450 ⇔ x + 360 = 450 ⇔ x = 90",
+       "Giá trị này thoả mãn x > 0; độ dài đoạn BC (km) = 90 + 60 = 150; quãng đường AC (km) = 90 + 150 = 240"
+      ]
+     }
     },
     {
      "ma": "Ôn cuối năm 8a",
@@ -8940,7 +10288,28 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "m ≠ −1/3",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "hoi": "Cho hàm số y = (3m + 1)x − 2m. Tìm điều kiện của m để hàm số đã cho là hàm số bậc nhất.\n(Gõ điều kiện của m.)",
+      "dap": [
+       "m≠−1/3",
+       "3m+1≠0"
+      ],
+      "phim": [
+       "m",
+       "≠"
+      ],
+      "nhieu": [
+       "x",
+       ">"
+      ],
+      "loi_giai": [
+       "Hàm số đã cho là hàm số bậc nhất khi hệ số của x khác 0",
+       "Hệ số của x là 3m + 1; 3m + 1 ≠ 0 khi m ≠ −1/3"
+      ]
+     }
     },
     {
      "ma": "Ôn cuối năm 8b",
@@ -8949,7 +10318,27 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "m = −1 (3m + 1 = −2 và −2m ≠ 5)",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "dap": [
+       "m=−1",
+       "−1"
+      ],
+      "phim": [
+       "m"
+      ],
+      "nhieu": [
+       "x",
+       "≠"
+      ],
+      "loi_giai": [
+       "Hai đường thẳng song song khi có cùng hệ số góc và khác tung độ gốc",
+       "3m + 1 = −2 ⇔ 3m = −3 ⇔ m = −1",
+       "Với m = −1, tung độ gốc −2m = 2; 2 khác 5 nên hai đường thẳng song song"
+      ]
+     }
     },
     {
      "ma": "Ôn cuối năm 8c",
@@ -8958,7 +10347,23 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Với m = −1: y = −2x + 2. Đồ thị là đường thẳng đi qua hai điểm (0; 2) và (1; 0).",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "hinh": [
+      "sbttoan8t2/OT8c-chon-1.webp",
+      "sbttoan8t2/OT8c-chon-2.webp"
+     ],
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Cho hàm số y = (3m + 1)x − 2m. Với m tìm được ở câu b) (đồ thị hàm số đã cho song song với đường thẳng y = −2x + 5), hình nào dưới đây là đồ thị của hàm số đã cho?",
+      "cac": [
+       "Hình 1",
+       "Hình 2",
+       "Hình 3",
+       "Hình 4"
+      ],
+      "dap": "B"
+     }
     },
     {
      "ma": "Ôn cuối năm 9a",
@@ -8967,7 +10372,42 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Hình chữ nhật (MN // AC, NP // AB nên AMNP là hình bình hành, lại có góc MAP = 90°)",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "Cho tam giác ABC vuông tại A. Gọi M, N, P lần lượt là trung điểm của các cạnh AB, BC, CA. Từ M kẻ đường thẳng song song với BP, đường thẳng này cắt NP tại K. Tứ giác AMNP là hình gì?",
+      "dong": [
+       {
+        "chu": "Tứ giác AMNP là {0}",
+        "o": [
+         {
+          "dung": [
+           "hình chữ nhật"
+          ],
+          "sai": [
+           "hình thoi",
+           "hình vuông"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "vì {0}",
+        "o": [
+         {
+          "dung": [
+           "MN // AC, NP // AB (đường trung bình) nên AMNP là hình bình hành, lại có góc MAP = 90°"
+          ],
+          "sai": [
+           "AM = AP và góc MAP = 90°",
+           "hai đường chéo AN và MP vuông góc với nhau"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "Ôn cuối năm 9b",
@@ -8976,7 +10416,35 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "NP // AB nên PK // BM; MK // BP (giả thiết). Tứ giác BMKP có hai cặp cạnh đối song song nên là hình bình hành.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 4,
+      "buoc": [
+       "N, P lần lượt là trung điểm của BC, CA nên NP là đường trung bình của tam giác ABC, suy ra NP // AB",
+       "K nằm trên đường thẳng NP, M nằm trên cạnh AB, nên PK // BM",
+       "Theo cách dựng, MK // BP",
+       "Tứ giác BMKP có hai cặp cạnh đối song song nên là hình bình hành"
+      ],
+      "nhieu": [
+       "N, P lần lượt là trung điểm của BC, CA nên NP là đường trung bình của tam giác ABC, suy ra NP // AC",
+       "Tứ giác BMKP có hai cạnh đối BM và PK bằng nhau nên là hình bình hành"
+      ],
+      "thu_tu_khac": [
+       [
+        0,
+        2,
+        1,
+        3
+       ],
+       [
+        2,
+        0,
+        1,
+        3
+       ]
+      ]
+     }
     },
     {
      "ma": "Ôn cuối năm 9c",
@@ -8985,7 +10453,97 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "NP là đường trung bình của ΔABC nên NP = (1/2)AB = BM; BMKP là hình bình hành nên PK = BM. Suy ra NP = PK: P là trung điểm của NK và của AC, nên ANCK là hình bình hành. Lại có NP // AB, AB ⊥ AC nên NK ⊥ AC tại P. Hình bình hành có hai đường chéo vuông góc nên ANCK là hình thoi.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 6,
+      "buoc": [
+       "NP là đường trung bình của tam giác ABC nên NP = AB/2 = BM",
+       "BMKP là hình bình hành (câu b) nên PK = BM",
+       "Suy ra NP = PK, mà N, P, K thẳng hàng, nên P là trung điểm của NK",
+       "P cũng là trung điểm của AC, nên tứ giác ANCK có hai đường chéo cắt nhau tại trung điểm của mỗi đường, do đó ANCK là hình bình hành",
+       "NP // AB và AB ⊥ AC nên NK ⊥ AC",
+       "Hình bình hành ANCK có hai đường chéo vuông góc nên là hình thoi"
+      ],
+      "nhieu": [
+       "Hình bình hành ANCK có hai đường chéo bằng nhau nên là hình thoi",
+       "NP là đường trung bình của tam giác ABC nên NP = AC/2 = BM"
+      ],
+      "thu_tu_khac": [
+       [
+        0,
+        1,
+        2,
+        4,
+        3,
+        5
+       ],
+       [
+        0,
+        1,
+        4,
+        2,
+        3,
+        5
+       ],
+       [
+        0,
+        4,
+        1,
+        2,
+        3,
+        5
+       ],
+       [
+        1,
+        0,
+        2,
+        3,
+        4,
+        5
+       ],
+       [
+        1,
+        0,
+        2,
+        4,
+        3,
+        5
+       ],
+       [
+        1,
+        0,
+        4,
+        2,
+        3,
+        5
+       ],
+       [
+        1,
+        4,
+        0,
+        2,
+        3,
+        5
+       ],
+       [
+        4,
+        0,
+        1,
+        2,
+        3,
+        5
+       ],
+       [
+        4,
+        1,
+        0,
+        2,
+        3,
+        5
+       ]
+      ]
+     }
     },
     {
      "ma": "Ôn cuối năm 9d",
@@ -8994,7 +10552,56 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Tam giác ABC vuông cân tại A (AB = AC), vì cần AC = NK mà NK = 2NP = 2BM = AB",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "hoi": "Cho tam giác ABC vuông tại A. Gọi M, N, P lần lượt là trung điểm của các cạnh AB, BC, CA. Từ M kẻ đường thẳng song song với BP, đường thẳng này cắt NP tại K. Tìm điều kiện của tam giác ABC để tứ giác ANCK là hình vuông.",
+      "dong": [
+       {
+        "chu": "Hình thoi ANCK là hình vuông khi và chỉ khi {0}",
+        "o": [
+         {
+          "dung": [
+           "AC = NK"
+          ],
+          "sai": [
+           "AC ⊥ NK",
+           "AN = NC"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Mà NK = 2NP = {0}",
+        "o": [
+         {
+          "dung": [
+           "AB"
+          ],
+          "sai": [
+           "AC",
+           "BC/2"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Vậy ANCK là hình vuông khi và chỉ khi tam giác ABC {0}",
+        "o": [
+         {
+          "dung": [
+           "vuông cân tại A (AB = AC)"
+          ],
+          "sai": [
+           "có BC = 2AB",
+           "có AC = 2AB"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "Ôn cuối năm 10a",
@@ -9003,7 +10610,29 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Tứ giác AEHF có ba góc vuông (tại A, E, F) nên là hình chữ nhật. Do đó hai đường chéo bằng nhau: EF = AH.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 4,
+      "buoc": [
+       "Tam giác ABC vuông tại A nên góc EAF = 90°",
+       "HE ⊥ AB, HF ⊥ AC nên góc AEH = 90° và góc AFH = 90°",
+       "Tứ giác AEHF có ba góc vuông nên là hình chữ nhật",
+       "Hai đường chéo của hình chữ nhật bằng nhau, nên EF = AH"
+      ],
+      "nhieu": [
+       "Tứ giác AEHF có ba góc vuông nên là hình vuông",
+       "Hai đường chéo của hình chữ nhật vuông góc với nhau, nên EF ⊥ AH"
+      ],
+      "thu_tu_khac": [
+       [
+        1,
+        0,
+        2,
+        3
+       ]
+      ]
+     }
     },
     {
      "ma": "Ôn cuối năm 10b",
@@ -9012,7 +10641,65 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Gọi O là giao điểm của EF và AH, K là giao điểm của AM và EF. OA = OE nên góc AEO = góc EAO (1). AM là trung tuyến ứng với cạnh huyền nên MA = MC, góc CAM = góc ACM (2). Góc EAO = góc ACB (cùng phụ góc B) (3). Từ (1), (2), (3): góc AEF = góc CAM. Mà góc AFE + góc AEF = 90° nên góc AFE + góc CAM = 90°, suy ra góc AKF = 90°, hay AM ⊥ EF.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 6,
+      "buoc": [
+       "Gọi O là giao điểm của hai đường chéo EF và AH của hình chữ nhật AEHF (câu a); ta có OA = OE nên góc OEA = góc OAE, tức là góc AEF = góc BAH",
+       "Góc BAH = góc ACB vì cùng phụ với góc ABC",
+       "AM là đường trung tuyến ứng với cạnh huyền của tam giác ABC vuông tại A nên MA = MC, suy ra góc MAC = góc ACB",
+       "Do đó góc AEF = góc MAC",
+       "Gọi K là giao điểm của AM và EF; tam giác AEF vuông tại A nên góc AEF + góc AFE = 90°, suy ra góc KAF + góc AFK = 90°",
+       "Vậy góc AKF = 90°, hay AM ⊥ EF"
+      ],
+      "nhieu": [
+       "Góc BAH = góc ABC vì cùng phụ với góc ACB",
+       "AM là đường trung tuyến ứng với cạnh huyền của tam giác ABC vuông tại A nên AM = BC, suy ra góc MAC = góc ACB"
+      ],
+      "thu_tu_khac": [
+       [
+        0,
+        2,
+        1,
+        3,
+        4,
+        5
+       ],
+       [
+        1,
+        0,
+        2,
+        3,
+        4,
+        5
+       ],
+       [
+        1,
+        2,
+        0,
+        3,
+        4,
+        5
+       ],
+       [
+        2,
+        0,
+        1,
+        3,
+        4,
+        5
+       ],
+       [
+        2,
+        1,
+        0,
+        3,
+        4,
+        5
+       ]
+      ]
+     }
     },
     {
      "ma": "Ôn cuối năm 11a",
@@ -9021,7 +10708,35 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "MB/MA = NB/NC = 1/3 nên MN // AC (Thalès đảo). Do đó MN/AC = MB/AB = 1/4, vậy MN = (1/4)AC.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 4,
+      "buoc": [
+       "Trong tam giác BAC có MB/MA = NB/NC = 1/3 nên MN // AC (định lí Thalès đảo)",
+       "MB/MA = 1/3 nên MB/AB = 1/(1 + 3) = 1/4",
+       "Vì MN // AC nên MN/AC = MB/AB (hệ quả của định lí Thalès)",
+       "Vậy MN/AC = 1/4, tức là MN = (1/4)AC"
+      ],
+      "nhieu": [
+       "MB/MA = 1/3 nên MB/AB = 1/3",
+       "Vì MN // AC nên MN/AC = MB/MA (hệ quả của định lí Thalès)"
+      ],
+      "thu_tu_khac": [
+       [
+        0,
+        2,
+        1,
+        3
+       ],
+       [
+        1,
+        0,
+        2,
+        3
+       ]
+      ]
+     }
     },
     {
      "ma": "Ôn cuối năm 11b",
@@ -9030,7 +10745,21 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Vì MN // AC nên (hệ quả định lí Thalès) KN/KA = KM/KC = MN/AC = 1/4.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 4,
+      "buoc": [
+       "Theo câu a, MN // AC và MN/AC = 1/4",
+       "Vì MN // AC nên ΔKMN ᔕ ΔKCA (hệ quả của định lí Thalès)",
+       "Suy ra KN/KA = KM/KC = MN/CA",
+       "Vậy KN/KA = KM/KC = 1/4"
+      ],
+      "nhieu": [
+       "Vì MN // AC nên ΔKMN ᔕ ΔKAC (hệ quả của định lí Thalès)",
+       "Suy ra KN/KC = KM/KA = MN/CA"
+      ]
+     }
     },
     {
      "ma": "Ôn cuối năm 11c",
@@ -9039,7 +10768,71 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Tam giác ABC cân tại B (AB = BC): MN // AC khi NB/NC = MB/MA; theo tính chất phân giác NB/NC = AB/AC, MB/MA = BC/AC nên AB = BC; đảo lại cũng đúng",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "hoi": "Cho tam giác ABC. Giả sử M là điểm trên cạnh AB sao cho MB/MA = 1/3, N là điểm trên cạnh BC sao cho NB/NC = 1/3. Nếu thay điều kiện MB/MA = 1/3 và NB/NC = 1/3 bằng điều kiện CM là phân giác của góc C, AN là phân giác của góc A thì tam giác ABC phải thoả mãn điều kiện gì để MN // AC?",
+      "dong": [
+       {
+        "chu": "MN // AC khi và chỉ khi NB/NC = {0}",
+        "o": [
+         {
+          "dung": [
+           "MB/MA"
+          ],
+          "sai": [
+           "MA/MB",
+           "MB/AB"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "AN là phân giác của góc A nên NB/NC = {0}",
+        "o": [
+         {
+          "dung": [
+           "AB/AC"
+          ],
+          "sai": [
+           "AC/AB",
+           "BC/AC"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "CM là phân giác của góc C nên MB/MA = {0}",
+        "o": [
+         {
+          "dung": [
+           "CB/CA"
+          ],
+          "sai": [
+           "CA/CB",
+           "AB/AC"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Vậy MN // AC khi và chỉ khi tam giác ABC {0}",
+        "o": [
+         {
+          "dung": [
+           "cân tại B (AB = BC)"
+          ],
+          "sai": [
+           "cân tại A (AB = AC)",
+           "cân tại C (CA = CB)",
+           "vuông tại B"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "Ôn cuối năm 12a",
@@ -9048,16 +10841,55 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Hai tam giác vuông AHE (vuông tại E) và ABH (vuông tại H) có góc HAE = góc BAH (chung) nên ΔAHE ᔕ ΔABH, suy ra AH/AE = AB/AH, hay AE · AB = AH^2. Tương tự ΔAHF ᔕ ΔACH nên AF · AC = AH^2. Vậy AE · AB = AF · AC.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 5,
+      "buoc": [
+       "Hai tam giác vuông AEH (vuông tại E) và AHB (vuông tại H) có chung góc BAH, nên ΔAEH ᔕ ΔAHB",
+       "Suy ra AE/AH = AH/AB, hay AE · AB = AH²",
+       "Hai tam giác vuông AFH (vuông tại F) và AHC (vuông tại H) có chung góc CAH, nên ΔAFH ᔕ ΔAHC",
+       "Suy ra AF/AH = AH/AC, hay AF · AC = AH²",
+       "Vậy AE · AB = AF · AC"
+      ],
+      "nhieu": [
+       "Hai tam giác vuông AEH (vuông tại E) và AHB (vuông tại H) có chung góc BAH, nên ΔAEH ᔕ ΔABH",
+       "Suy ra AE/AB = AH/AE, hay AE² = AB · AH"
+      ],
+      "thu_tu_khac": [
+       [
+        2,
+        3,
+        0,
+        1,
+        4
+       ]
+      ]
+     }
     },
     {
      "ma": "Ôn cuối năm 12b",
-     "de": "Cho tam giác ABC có đường cao AH. Lấy các điểm E, F lần lượt trên AB, AC sao cho HE, HF lần lượt vuông góc với AB, AC. Lấy điểm D trên EF sao cho AD vuông góc EF. Đường thẳng AD cắt BC tại M. Chứng minh rằng ΔADE ᔕ ΔAHC và ΔANF ᔕ ΔAMB (đề không nói N là điểm nào; theo hình vẽ ở phần lời giải, N là giao điểm của AH và EF).",
+     "de": "Cho tam giác ABC có đường cao AH. Lấy các điểm E, F lần lượt trên AB, AC sao cho HE, HF lần lượt vuông góc với AB, AC. Lấy điểm D trên EF sao cho AD vuông góc EF. Đường thẳng AD cắt BC tại M. Gọi N là giao điểm của AH và EF. Chứng minh rằng ΔADE ᔕ ΔAHC và ΔANF ᔕ ΔAMB.",
      "trang": 82,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Từ câu a: AE/AC = AF/AB, góc EAF chung nên ΔAEF ᔕ ΔACB (c.g.c), góc AEF = góc ACB, góc AFE = góc ABC. Hai tam giác vuông ADE và AHC có góc AED = góc AEF = góc ACH nên ΔADE ᔕ ΔAHC, suy ra góc EAD = góc CAH, tức góc NAF = góc MAB. ΔANF và ΔAMB có góc NAF = góc MAB, góc AFN = góc AFE = góc ABM nên ΔANF ᔕ ΔAMB (g.g).",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 5,
+      "buoc": [
+       "Từ AE · AB = AF · AC (câu a) suy ra AE/AC = AF/AB",
+       "ΔAEF và ΔACB có chung góc A và AE/AC = AF/AB, nên ΔAEF ᔕ ΔACB (c.g.c), suy ra góc AEF = góc ACB và góc AFE = góc ABC",
+       "Hai tam giác vuông ADE (vuông tại D) và AHC (vuông tại H) có góc AED = góc AEF = góc ACH, nên ΔADE ᔕ ΔAHC",
+       "Từ ΔADE ᔕ ΔAHC suy ra góc EAD = góc CAH, tức là góc MAB = góc NAF",
+       "ΔANF và ΔAMB có góc NAF = góc MAB và góc AFN = góc AFE = góc ABC = góc ABM, nên ΔANF ᔕ ΔAMB (g.g)"
+      ],
+      "nhieu": [
+       "ΔAEF và ΔACB có chung góc A và AE/AB = AF/AC, nên ΔAEF ᔕ ΔACB (c.g.c), suy ra góc AEF = góc ACB và góc AFE = góc ABC",
+       "Hai tam giác vuông ADE (vuông tại D) và AHC (vuông tại H) có góc AED = góc AEF = góc ACH, nên ΔADE ᔕ ΔACH"
+      ]
+     }
     },
     {
      "ma": "Ôn cuối năm 13a",
@@ -9066,7 +10898,22 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "BC^2 = 25 = AB^2 + AC^2 nên ΔABC vuông tại A (Pythagore đảo). Hai tam giác vuông BDE (vuông tại E) và DCF (vuông tại F) có góc EBD = góc CBA = 90° − góc ACB = 90° − góc FCD = góc FDC nên ΔBDE ᔕ ΔDCF (một cặp góc nhọn bằng nhau).",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 5,
+      "buoc": [
+       "AB² + AC² = 3² + 4² = 25 = 5² = BC²",
+       "Theo định lí Pythagore đảo, tam giác ABC vuông tại A",
+       "DF ⊥ AC và AB ⊥ AC nên DF // AB, suy ra góc FDC = góc ABC (đồng vị)",
+       "Hai tam giác vuông BED (vuông tại E) và DFC (vuông tại F) có góc EBD = góc FDC",
+       "Vậy ΔBDE ᔕ ΔDCF"
+      ],
+      "nhieu": [
+       "Theo định lí Pythagore đảo, tam giác ABC vuông tại B",
+       "Hai tam giác vuông BED (vuông tại E) và DFC (vuông tại F) có góc EBD = góc DCF"
+      ]
+     }
     },
     {
      "ma": "Ôn cuối năm 13b",
@@ -9075,7 +10922,37 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "AD = √(29/5) cm ≈ 2,41 cm (DE = 8/5 cm, BE = 6/5 cm, AE = 9/5 cm)",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 6,
+      "hoi": "Cho tam giác ABC có AB = 3 cm, AC = 4 cm, BC = 5 cm. Lấy điểm D trên cạnh BC sao cho BD = 2 cm. Lấy các điểm E, F trên các cạnh AB, AC sao cho DE, DF lần lượt vuông góc với AB, AC. Tính độ dài đoạn thẳng AD.\n(Viết kết quả đúng, dùng dấu căn.)",
+      "dap": [
+       "√(29/5)",
+       "√145/5",
+       "(√145)/5",
+       "√(29/5)cm",
+       "√145/5cm",
+       "(√145)/5cm"
+      ],
+      "phim": [
+       "√",
+       "cm"
+      ],
+      "nhieu": [
+       "²",
+       "cm²",
+       "π"
+      ],
+      "loi_giai": [
+       "DE // AC (cùng vuông góc với AB) nên ΔBDE ᔕ ΔBCA, suy ra DE/CA = BD/BC = 2/5",
+       "DE (cm) = (2/5) · 4 = 8/5",
+       "BE² = BD² − DE² = 2² − (8/5)² = 36/25; BE (cm) = 6/5",
+       "AE (cm) = AB − BE = 3 − 6/5 = 9/5",
+       "AD² = DE² + AE² = (8/5)² + (9/5)² = 145/25 = 29/5",
+       "AD (cm) = √(29/5) = √145/5"
+      ]
+     }
     },
     {
      "ma": "Ôn cuối năm 14a",
@@ -9084,7 +10961,22 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Các mặt bên là tam giác cân bằng nhau nên SM = SN; ΔSMN cân tại S, O là trung điểm của MN nên SO ⊥ MN. OA = (1/2)AC = (1/2)√(10^2 + 10^2) = 5√2 cm. Áp dụng Pythagore cho ΔSOA vuông tại O: SO = √(15^2 − (5√2)^2) = √175 = 5√7 cm.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 5,
+      "buoc": [
+       "Các mặt bên của hình chóp tứ giác đều là các tam giác cân bằng nhau, nên các đường trung tuyến SM, SN bằng nhau: SM = SN",
+       "Tam giác SMN cân tại S có O là trung điểm của MN (O là tâm của hình vuông ABCD), nên SO ⊥ MN",
+       "AC (cm) = √(10² + 10²) = √200 = 10√2; OA (cm) = AC/2 = 5√2",
+       "Tam giác SOA vuông tại O nên SO² = SA² − OA² = 15² − (5√2)² = 175",
+       "SO (cm) = √175 = 5√7"
+      ],
+      "nhieu": [
+       "Tam giác SOA vuông tại O nên SO² = SA² + OA² = 15² + (5√2)² = 275",
+       "AC (cm) = √(10² + 10²) = √200 = 10√2; OA (cm) = AC = 10√2"
+      ]
+     }
     },
     {
      "ma": "Ôn cuối năm 14b",
@@ -9093,7 +10985,32 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "V = (1/3) · 5√7 · 10^2 = (500√7)/3 cm^3 ≈ 440,96 cm^3",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "dap": [
+       "500√7/3",
+       "(500√7)/3",
+       "(500/3)√7",
+       "500√7/3cm³",
+       "(500√7)/3cm³",
+       "(500/3)√7cm³"
+      ],
+      "phim": [
+       "√",
+       "cm³"
+      ],
+      "nhieu": [
+       "cm²",
+       "π",
+       "²"
+      ],
+      "loi_giai": [
+       "Theo câu a, đường cao SO dài 5√7 cm; diện tích đáy ABCD (cm²) = 10² = 100",
+       "V (cm³) = (1/3) · 5√7 · 100 = 500√7/3"
+      ]
+     }
     },
     {
      "ma": "Ôn cuối năm 14c",
@@ -9102,7 +11019,34 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Diện tích toàn phần 200√2 + 100 = 100(2√2 + 1) cm^2 (trung đoạn SM = 10√2 cm, xung quanh 200√2 cm^2, đáy 100 cm^2)",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 5,
+      "dap": [
+       "200√2+100",
+       "100(2√2+1)",
+       "200√2+100cm²",
+       "(200√2+100)cm²",
+       "100(2√2+1)cm²"
+      ],
+      "phim": [
+       "√",
+       "cm²"
+      ],
+      "nhieu": [
+       "cm³",
+       "π",
+       "²"
+      ],
+      "loi_giai": [
+       "Tam giác SAB cân tại S nên trung tuyến SM ⊥ AB; SM² = SA² − AM² = 15² − 5² = 200",
+       "Trung đoạn SM (cm) = √200 = 10√2",
+       "Diện tích xung quanh (cm²) = 4 · (1/2) · 10 · 10√2 = 200√2",
+       "Diện tích đáy (cm²) = 10² = 100",
+       "Diện tích toàn phần (cm²) = 200√2 + 100 = 100(2√2 + 1)"
+      ]
+     }
     },
     {
      "ma": "Ôn cuối năm 15a",
@@ -9111,7 +11055,19 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Dữ liệu không là số, không thể sắp thứ tự",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Khảo sát trên 1 200 người trẻ tuổi ở Việt Nam với câu hỏi \"Bạn sử dụng nguồn thông tin nào cho các vấn đề hiện tại?\" với các lựa chọn Mạng xã hội, Internet, Ti vi, Bạn bè, Báo chí, Gia đình, Đài phát thanh, Giáo viên, Thành viên cộng đồng cho kết quả như sau (tỉ lệ người lựa chọn mỗi nguồn): Mạng xã hội 73%; Internet 69%; Ti vi 59%; Bạn bè 50%; Báo chí 43%; Gia đình 39%; Đài phát thanh 25%; Giáo viên 16%; Thành viên cộng đồng 16%.\nDữ liệu thu được từ câu hỏi trên (câu trả lời của mỗi người) thuộc loại nào?",
+      "cac": [
+       "Dữ liệu không là số, không thể sắp thứ tự",
+       "Dữ liệu không là số, có thể sắp thứ tự",
+       "Số liệu rời rạc",
+       "Số liệu liên tục"
+      ],
+      "dap": "A"
+     }
     },
     {
      "ma": "Ôn cuối năm 15b",
@@ -9120,7 +11076,61 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Chọn biểu đồ cột: mỗi cột ứng với một nguồn thông tin, chiều cao cột là tỉ lệ người chọn: Mạng xã hội 73%, Internet 69%, Ti vi 59%, Bạn bè 50%, Báo chí 43%, Gia đình 39%, Đài phát thanh 25%, Giáo viên 16%, Thành viên cộng đồng 16%.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "hinh": [
+      "sbttoan8t2/OT15b-chon-1.webp",
+      "sbttoan8t2/OT15b-chon-2.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "hoi": "Khảo sát trên 1 200 người trẻ tuổi ở Việt Nam với câu hỏi \"Bạn sử dụng nguồn thông tin nào cho các vấn đề hiện tại?\" với các lựa chọn Mạng xã hội, Internet, Ti vi, Bạn bè, Báo chí, Gia đình, Đài phát thanh, Giáo viên, Thành viên cộng đồng cho kết quả như sau (tỉ lệ người lựa chọn mỗi nguồn): Mạng xã hội 73%; Internet 69%; Ti vi 59%; Bạn bè 50%; Báo chí 43%; Gia đình 39%; Đài phát thanh 25%; Giáo viên 16%; Thành viên cộng đồng 16%.\nLựa chọn và vẽ biểu đồ biểu diễn dữ liệu trên.",
+      "dong": [
+       {
+        "chu": "Nên dùng {0}",
+        "o": [
+         {
+          "dung": [
+           "biểu đồ cột"
+          ],
+          "sai": [
+           "biểu đồ hình quạt tròn",
+           "biểu đồ đoạn thẳng"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Không dùng biểu đồ hình quạt tròn vì {0}",
+        "o": [
+         {
+          "dung": [
+           "tổng các tỉ lệ là 390%, lớn hơn 100% (mỗi người chọn được nhiều nguồn)"
+          ],
+          "sai": [
+           "có quá nhiều nguồn thông tin, không vẽ được 9 hình quạt",
+           "các tỉ lệ đều nhỏ hơn 100%"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Biểu đồ vẽ đúng: {0}",
+        "o": [
+         {
+          "dung": [
+           "Hình 3"
+          ],
+          "sai": [
+           "Hình 1",
+           "Hình 2",
+           "Hình 4"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "Ôn cuối năm 15c",
@@ -9129,7 +11139,56 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "T = 876 + 828 + 708 + 600 + 516 + 468 + 300 + 192 + 192 = 4 680; T > 1 200 vì mỗi người có thể chọn nhiều nguồn thông tin",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "hoi": "Khảo sát trên 1 200 người trẻ tuổi ở Việt Nam với câu hỏi \"Bạn sử dụng nguồn thông tin nào cho các vấn đề hiện tại?\" với các lựa chọn Mạng xã hội, Internet, Ti vi, Bạn bè, Báo chí, Gia đình, Đài phát thanh, Giáo viên, Thành viên cộng đồng cho kết quả như sau (tỉ lệ người lựa chọn mỗi nguồn): Mạng xã hội 73%; Internet 69%; Ti vi 59%; Bạn bè 50%; Báo chí 43%; Gia đình 39%; Đài phát thanh 25%; Giáo viên 16%; Thành viên cộng đồng 16%.\nTính tổng số lượng lựa chọn T cho các loại nguồn thông tin. Giải thích tại sao T > 1 200.",
+      "dong": [
+       {
+        "chu": "Số người chọn Mạng xã hội: {0}",
+        "o": [
+         {
+          "dung": [
+           "876"
+          ],
+          "sai": [
+           "73",
+           "1 644"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "T = {0}",
+        "o": [
+         {
+          "dung": [
+           "4 680"
+          ],
+          "sai": [
+           "390",
+           "1 200"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "T > 1 200 vì {0}",
+        "o": [
+         {
+          "dung": [
+           "mỗi người có thể chọn nhiều nguồn thông tin"
+          ],
+          "sai": [
+           "các tỉ lệ đã được làm tròn",
+           "có 9 nguồn thông tin để chọn"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "Ôn cuối năm 16a",
@@ -9138,7 +11197,28 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "4 kết quả có thể: rút được viên bi màu đỏ, màu xanh, màu vàng, màu đen",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 1,
+      "hoi": "Một túi đựng 24 viên bi giống hệt nhau chỉ khác màu, với 9 viên bi màu đỏ, 6 viên bi màu xanh, 4 viên bi màu vàng và 5 viên bi màu đen. Bạn Mai rút ngẫu nhiên một viên bi từ túi và xem viên bi đó có màu gì. Có bao nhiêu kết quả có thể?",
+      "dong": [
+       {
+        "chu": "Số kết quả có thể: {0}",
+        "o": [
+         {
+          "dung": [
+           "4 (rút được viên bi màu đỏ, màu xanh, màu vàng, màu đen)"
+          ],
+          "sai": [
+           "24 (mỗi viên bi là một kết quả)",
+           "1 (chỉ rút một viên bi)"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "Ôn cuối năm 16b",
@@ -9147,7 +11227,27 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "P(đỏ) = 9/24 = 3/8; P(xanh) = 6/24 = 1/4; P(vàng) = 4/24 = 1/6; P(đen) = 5/24; các xác suất khác nhau nên các kết quả không đồng khả năng",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "hoi": "Một túi đựng 24 viên bi giống hệt nhau chỉ khác màu, với 9 viên bi màu đỏ, 6 viên bi màu xanh, 4 viên bi màu vàng và 5 viên bi màu đen. Bạn Mai rút ngẫu nhiên một viên bi từ túi và xem viên bi đó có màu gì; có 4 kết quả có thể là màu đỏ, màu xanh, màu vàng, màu đen. Chứng tỏ rằng các kết quả có thể không đồng khả năng. Tính xác suất để xảy ra mỗi kết quả có thể đó.\n(Gõ xác suất rút được viên bi màu đỏ, màu xanh, màu vàng, màu đen theo thứ tự, mỗi xác suất là một phân số tối giản, cách nhau bằng dấu ;)",
+      "dap": [
+       "3/8;1/4;1/6;5/24"
+      ],
+      "phim": [
+       ";"
+      ],
+      "nhieu": [
+       "%"
+      ],
+      "loi_giai": [
+       "Có 24 viên bi giống hệt nhau nên 24 cách rút (mỗi viên một cách) là đồng khả năng",
+       "P(đỏ) = 9/24 = 3/8; P(xanh) = 6/24 = 1/4",
+       "P(vàng) = 4/24 = 1/6; P(đen) = 5/24",
+       "Bốn xác suất này khác nhau nên các kết quả có thể (bốn màu) không đồng khả năng"
+      ]
+     }
     },
     {
      "ma": "Ôn cuối năm 16c",
@@ -9156,7 +11256,21 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "P = 13/24",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "hoi": "Một túi đựng 24 viên bi giống hệt nhau chỉ khác màu, với 9 viên bi màu đỏ, 6 viên bi màu xanh, 4 viên bi màu vàng và 5 viên bi màu đen. Bạn Mai rút ngẫu nhiên một viên bi từ túi. Tính xác suất để rút được viên bi màu đỏ hoặc màu vàng.\n(Gõ xác suất dưới dạng phân số tối giản.)",
+      "dap": [
+       "13/24"
+      ],
+      "phim": [],
+      "nhieu": [],
+      "loi_giai": [
+       "Có 24 kết quả có thể, đồng khả năng; số viên bi màu đỏ hoặc màu vàng = 9 + 4 = 13",
+       "Xác suất rút được viên bi màu đỏ hoặc màu vàng = 13/24"
+      ]
+     }
     },
     {
      "ma": "Ôn cuối năm 16d",
@@ -9165,7 +11279,21 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "P = 19/24",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "hoi": "Một túi đựng 24 viên bi giống hệt nhau chỉ khác màu, với 9 viên bi màu đỏ, 6 viên bi màu xanh, 4 viên bi màu vàng và 5 viên bi màu đen. Bạn Mai rút ngẫu nhiên một viên bi từ túi. Tính xác suất để rút được viên bi không có màu đen.\n(Gõ xác suất dưới dạng phân số tối giản.)",
+      "dap": [
+       "19/24"
+      ],
+      "phim": [],
+      "nhieu": [],
+      "loi_giai": [
+       "Có 24 kết quả có thể, đồng khả năng; số viên bi không có màu đen = 24 − 5 = 19",
+       "Xác suất rút được viên bi không có màu đen = 19/24"
+      ]
+     }
     }
    ]
   }
