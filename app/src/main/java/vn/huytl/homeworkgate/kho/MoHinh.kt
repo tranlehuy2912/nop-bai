@@ -26,11 +26,31 @@ data class CauHoi(
     val dang: String,
     val thuTu: Int,
     /**
-     * Dap an in cuoi sach bai tap, chi co o cau SBT. Rong la sach khong co loi giai.
+     * Dap an cua cau, ghi trong file sach: loi giai cuoi SBT (nap 27/9/2026), dap an cua de thi
+     * in san, va SGK Tieng Anh (anh8: sach khong in dap an, tac tu tu giai roi doi chieu loi giai
+     * tren mang). Rong la sach khong co dap an (SGK Toan, KHTN, Ngu van) hay cau sach khong giai.
      *
-     * KHONG BAO GIO HIEN CHO LE HOA. Tu 28/9/2026 chi man Giai de doc no, de cham ngay
-     * tren tablet cau trac nghiem con bam. Truoc do may cham tu luan tren tablet con doc
-     * no qua mot doan dap so dan them vao cau lenh; phan may cham da bo.
+     * HAI MAN DOC NO:
+     *  - man Giai de, chi voi de tao truoc 29/9/2026 ([DeGiai.trenMay] = false): cau [bamTrenMay]
+     *    cham bang cach so chu con bam voi chu nay
+     *    ([vn.huytl.homeworkgate.data.GiaiDe.nopTracNghiem]), nop xong chi to xanh hay do chu con
+     *    da chon, khong lo chu dung;
+     *  - man Cau da lam dung ([vn.huytl.homeworkgate.ui.CauDaLamActivity], tu 2/10/2026) HIEN NO
+     *    CHO LE HOA duoi nhan "Đáp án trong sách", o moi cau co kieu ghep khac CHON, tru khi no
+     *    trung mot dong loi giai. Cau CHON thi khong hien: chu cai theo thu tu in, ma may tron
+     *    phuong an.
+     *
+     * Vi con doc no, dap an sach sai kien thuc, hay khong con khop voi cau da soan lai tren may,
+     * thi phai sua ngay trong file sach (va tang ban). tools/ghep/gop.py phan khong va truong
+     * nay: gop ghep xong, dap an cu van nguyen do. Vi du ngay 6/10/2026, SBT KHTN 28.10 tren may
+     * hoi tung y Co/Khong ma sach dap "D" (phuong an "Ca ba"), 28.4 va 29.11c sach giai sai kien
+     * thuc; da sua bang ghep-nhap/ghep/sbtkhtn8/chuong6_sua_dap_an.py (ngoai git). Doi mot chu TN
+     * thanh cau tra loi day du thi doi ca [loaiDapAn], vi [bamTrenMay] doc no. Phan nao duoc dung
+     * lai tu file nguon (gop.py sach dung lai ca sach Tieng Anh tu file Unit, gop_de.py thay ca de
+     * thi Toan, KHTN tu file tung de) thi sua ca o file nguon, khong thi lan gop sau mat.
+     *
+     * Truoc 2/10/2026 cho nay ghi "khong bao gio hien cho Le Hoa". Truoc 28/9/2026 may cham tu
+     * luan tren tablet con doc no qua mot doan dap so dan vao cau lenh; phan may cham da bo.
      */
     val dapAn: String = "",
     /**
