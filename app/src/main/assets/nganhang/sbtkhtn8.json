@@ -2,7 +2,7 @@
  "nguon": "sbtkhtn8",
  "mon": "Khoa học tự nhiên",
  "ten": "SBT Khoa học tự nhiên 8",
- "ban": 14,
+ "ban": 15,
  "cac_bai": [
   {
    "chuong": "Chương I. Phản ứng hoá học",
@@ -24187,7 +24187,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "B",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Môi trường sống bao gồm các yếu tố ___.",
+      "cac": [
+       "tác động riêng rẽ đến sinh vật (có lợi hoặc có hại cho sinh vật)",
+       "bao quanh sinh vật, có quan hệ mật thiết với nhau; có ảnh hưởng đến sự tồn tại, phát triển của sinh vật",
+       "cần thiết, không thể thiếu cho sự tồn tại của sinh vật",
+       "không sống bao quanh sinh vật, có quan hệ mật thiết đến sự tồn tại, phát triển của sinh vật"
+      ],
+      "dap": "B"
+     }
     },
     {
      "ma": "41.2",
@@ -24196,7 +24208,70 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Cột A (nhiệt độ, CO2): nhân tố sinh thái vô sinh, thêm ví dụ: ánh sáng, độ ẩm,...; Cột B (con trâu, cây chuối): nhân tố sinh thái hữu sinh, thêm ví dụ: con người, châu chấu,...",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "hoi": "Bảng gồm hai cột. Cột A: nhiệt độ, CO₂. Cột B: con trâu, cây chuối.\nHãy cho biết các nhân tố sinh thái ở Cột A và Cột B thuộc nhóm nhân tố sinh thái nào? Hãy lấy thêm ví dụ các nhân tố sinh thái ở hai cột.",
+      "dong": [
+       {
+        "chu": "Cột A (nhiệt độ, CO₂) là các nhân tố sinh thái {0}",
+        "o": [
+         {
+          "dung": [
+           "vô sinh"
+          ],
+          "sai": [
+           "hữu sinh"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Cột B (con trâu, cây chuối) là các nhân tố sinh thái {0}",
+        "o": [
+         {
+          "dung": [
+           "hữu sinh"
+          ],
+          "sai": [
+           "vô sinh"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Có thể ghi thêm vào Cột A: {0}",
+        "o": [
+         {
+          "dung": [
+           "ánh sáng, độ ẩm, gió"
+          ],
+          "sai": [
+           "con người, châu chấu, vi khuẩn",
+           "ánh sáng, cây lúa, gió"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Có thể ghi thêm vào Cột B: {0}",
+        "o": [
+         {
+          "dung": [
+           "con người, châu chấu, vi khuẩn"
+          ],
+          "sai": [
+           "ánh sáng, độ ẩm, gió",
+           "châu chấu, nước, con người"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "41.3",
@@ -24205,7 +24280,70 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Tác động trực tiếp: ánh sáng, nhiệt độ tác động thẳng lên sự sinh trưởng, phát triển, hoạt động sống của con trâu. Tác động gián tiếp: ánh sáng ⟶ nhiệt độ tăng, độ ẩm giảm ⟶ sinh vật; nhiệt độ ⟶ độ ẩm giảm ⟶ sinh vật. Cần tìm hiểu vì tác động của các nhân tố sinh thái rất phức tạp (cả trực tiếp và gián tiếp); hiểu rõ mới có biện pháp phù hợp trong chăm sóc sức khoẻ, sản xuất nông nghiệp,...",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "hoi": "Hình 41.1 là sơ đồ tác động trực tiếp và tác động gián tiếp của nhân tố sinh thái lên con trâu. Tác động trực tiếp: ánh sáng, nhiệt độ có mũi tên chỉ thẳng vào con trâu. Tác động gián tiếp: ánh sáng → làm thay đổi nhiệt độ và độ ẩm → con trâu; nhiệt độ → làm thay đổi độ ẩm → con trâu.\nHãy nêu tác động trực tiếp và tác động gián tiếp của một số nhân tố sinh thái đến đời sống của một loài động vật. Tại sao cần tìm hiểu về tác động trực tiếp và gián tiếp của các nhân tố sinh thái?",
+      "dong": [
+       {
+        "chu": "Tác động trực tiếp: ánh sáng, nhiệt độ {0}",
+        "o": [
+         {
+          "dung": [
+           "tác động thẳng lên sự sinh trưởng, phát triển, hoạt động sống của con trâu"
+          ],
+          "sai": [
+           "chỉ ảnh hưởng tới con trâu thông qua sự thay đổi của độ ẩm không khí",
+           "không ảnh hưởng gì tới sự sinh trưởng, phát triển của con trâu"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Tác động gián tiếp của ánh sáng: ánh sáng mạnh làm {0}, từ đó ảnh hưởng tới con trâu",
+        "o": [
+         {
+          "dung": [
+           "nhiệt độ tăng, độ ẩm giảm"
+          ],
+          "sai": [
+           "nhiệt độ giảm, độ ẩm tăng",
+           "nhiệt độ và độ ẩm đều giảm"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Tác động gián tiếp của nhiệt độ: nhiệt độ tăng làm {0}, từ đó ảnh hưởng tới con trâu",
+        "o": [
+         {
+          "dung": [
+           "độ ẩm giảm"
+          ],
+          "sai": [
+           "độ ẩm tăng",
+           "ánh sáng mạnh lên"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Cần tìm hiểu cả tác động trực tiếp và gián tiếp vì {0}",
+        "o": [
+         {
+          "dung": [
+           "tác động của các nhân tố rất phức tạp (cả trực tiếp và gián tiếp), hiểu rõ mới có biện pháp phù hợp trong chăm sóc sức khoẻ, sản xuất nông nghiệp"
+          ],
+          "sai": [
+           "mỗi nhân tố chỉ có một kiểu tác động, nên chỉ cần biết tác động trực tiếp là đủ để chăm sóc vật nuôi, cây trồng",
+           "tác động gián tiếp luôn mạnh hơn tác động trực tiếp, nên chỉ cần tìm hiểu tác động gián tiếp là đủ"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "41.4",
@@ -24214,7 +24352,98 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Ví dụ với cây trồng: yếu tố cần thiết: O2, CO2, H2O, chất khoáng, ánh sáng,...; yếu tố tác động: gió, nhiệt độ, độ ẩm, cây sống bên cạnh, sâu bọ,... Yếu tố tác động có lợi khi nằm trong giới hạn xác định, quá cao hoặc quá thấp sẽ cản trở, gây hại cho cây.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "O",
+      "sao": 6,
+      "hoi": "Hình 41.2 chia các yếu tố trong môi trường thành hai nhóm: các yếu tố cần thiết (sinh vật không thể tồn tại nếu thiếu các yếu tố này) và các yếu tố tác động (có thể không cần thiết, nhưng có thể có lợi hoặc gây bất lợi).\nVới cây lúa trồng ngoài đồng, mỗi yếu tố sau thuộc nhóm nào?",
+      "dong": [
+       {
+        "chu": "Ánh sáng: {0}",
+        "o": [
+         {
+          "dung": [
+           "yếu tố cần thiết"
+          ],
+          "sai": [
+           "yếu tố tác động"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Nước: {0}",
+        "o": [
+         {
+          "dung": [
+           "yếu tố cần thiết"
+          ],
+          "sai": [
+           "yếu tố tác động"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Khí CO₂: {0}",
+        "o": [
+         {
+          "dung": [
+           "yếu tố cần thiết"
+          ],
+          "sai": [
+           "yếu tố tác động"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Sâu ăn lá: {0}",
+        "o": [
+         {
+          "dung": [
+           "yếu tố tác động"
+          ],
+          "sai": [
+           "yếu tố cần thiết"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Cỏ dại mọc xen trong ruộng: {0}",
+        "o": [
+         {
+          "dung": [
+           "yếu tố tác động"
+          ],
+          "sai": [
+           "yếu tố cần thiết"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Gió là yếu tố tác động: gió {0}",
+        "o": [
+         {
+          "dung": [
+           "có lợi khi vừa phải (gió nhẹ), quá mạnh thì gây hại (gió bão làm đổ cây)"
+          ],
+          "sai": [
+           "lúc nào cũng có lợi cho cây lúa, gió càng mạnh thì cây càng khoẻ",
+           "lúc nào cũng gây hại cho cây lúa, kể cả khi chỉ là gió rất nhẹ"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "41.5",
@@ -24223,7 +24452,118 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Loài A: điểm gây chết dưới: độ ẩm 35%, điểm gây chết trên: độ ẩm 80%, khoảng chống chịu: độ ẩm 35 – 50% và 65 – 80%; Loài B: giới hạn sinh thái: nhiệt độ 0 – 38 °C, khoảng thuận lợi: nhiệt độ 15 – 25 °C",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "hinh": [
+      "sbtkhtn8/41.5-chon-1.webp",
+      "sbtkhtn8/41.5-chon-2.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 7,
+      "hoi": "Bảng 41.3. Giới hạn sinh thái của một số loài sinh vật:\n- Loài A: giới hạn sinh thái về độ ẩm 35 – 80%; khoảng thuận lợi về độ ẩm 50 – 65%; điểm gây chết dưới, điểm gây chết trên, khoảng chống chịu: còn thiếu.\n- Loài B: điểm gây chết dưới 0 °C; điểm gây chết trên 38 °C; khoảng chống chịu 0 – 15 °C và 25 – 38 °C; giới hạn sinh thái, khoảng thuận lợi: còn thiếu.\nXác định các thông tin còn thiếu trong Bảng 41.3. Từ đó vẽ sơ đồ mô tả giới hạn sinh thái của các loài sinh vật đó.",
+      "dong": [
+       {
+        "chu": "Loài A, điểm gây chết dưới: {0}",
+        "o": [
+         {
+          "dung": [
+           "độ ẩm 35%"
+          ],
+          "sai": [
+           "độ ẩm 50%",
+           "độ ẩm 80%"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Loài A, điểm gây chết trên: {0}",
+        "o": [
+         {
+          "dung": [
+           "độ ẩm 80%"
+          ],
+          "sai": [
+           "độ ẩm 65%",
+           "độ ẩm 35%"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Loài A, khoảng chống chịu: {0}",
+        "o": [
+         {
+          "dung": [
+           "độ ẩm 35 – 50% và 65 – 80%"
+          ],
+          "sai": [
+           "độ ẩm 50 – 65%",
+           "độ ẩm 35 – 80%"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Loài B, giới hạn sinh thái: {0}",
+        "o": [
+         {
+          "dung": [
+           "nhiệt độ 0 – 38 °C"
+          ],
+          "sai": [
+           "nhiệt độ 15 – 25 °C",
+           "nhiệt độ 0 – 15 °C"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Loài B, khoảng thuận lợi: {0}",
+        "o": [
+         {
+          "dung": [
+           "nhiệt độ 15 – 25 °C"
+          ],
+          "sai": [
+           "nhiệt độ 0 – 15 °C và 25 – 38 °C",
+           "nhiệt độ 0 – 38 °C"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Sơ đồ giới hạn sinh thái về độ ẩm của loài A: {0}",
+        "o": [
+         {
+          "dung": [
+           "Hình 2"
+          ],
+          "sai": [
+           "Hình 1",
+           "Hình 3",
+           "Hình 4"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Sơ đồ giới hạn sinh thái về nhiệt độ của loài B: {0}",
+        "o": [
+         {
+          "dung": [
+           "Hình 3"
+          ],
+          "sai": [
+           "Hình 1",
+           "Hình 2",
+           "Hình 4"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     }
    ]
   },
@@ -24238,7 +24578,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "B",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Quần thể sinh vật là ___.",
+      "cac": [
+       "tập hợp các cá thể thuộc các loài khác nhau, sống trong khoảng không gian xác định, vào một thời điểm nhất định",
+       "tập hợp các cá thể thuộc một loài, sống trong khoảng không gian xác định, vào một thời điểm nhất định và có khả năng sinh sản để tạo thành những thế hệ mới",
+       "tập hợp các loài sinh vật, sống trong khoảng không gian xác định, vào một thời điểm nhất định",
+       "tập hợp các cá thể thuộc một loài được con người tập trung lại trong khoảng không gian xác định, vào một thời điểm nhất định"
+      ],
+      "dap": "B"
+     }
     },
     {
      "ma": "42.2",
@@ -24246,8 +24598,99 @@
      "trang": 102,
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
-     "dap_an": "A, C (tổ ong, rừng thông)",
-     "loai_dap_an": "DAP_SO"
+     "dap_an": "Tổ ong, rừng thông là quần thể; lồng gà, chợ, đàn chim nhiều loài, một cây xanh thì không.",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 6,
+      "hoi": "Sách cho sáu hình ảnh: tổ ong, lồng gà, rừng thông, chợ, đàn chim, cây xanh. Những hình ảnh nào thể hiện được một quần thể sinh vật?\nMỗi tập hợp sau có phải là một quần thể sinh vật không?",
+      "dong": [
+       {
+        "chu": "Một tổ ong mật (ong chúa, ong thợ, ong đực cùng sống trong một tổ): {0}",
+        "o": [
+         {
+          "dung": [
+           "là một quần thể"
+          ],
+          "sai": [
+           "không phải quần thể"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Một lồng gà bày bán ở chợ: {0}",
+        "o": [
+         {
+          "dung": [
+           "không phải quần thể"
+          ],
+          "sai": [
+           "là một quần thể"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Các cây thông trong một rừng thông: {0}",
+        "o": [
+         {
+          "dung": [
+           "là một quần thể"
+          ],
+          "sai": [
+           "không phải quần thể"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Một khu chợ (người mua bán, rau, cá, gà, vịt,...): {0}",
+        "o": [
+         {
+          "dung": [
+           "không phải quần thể"
+          ],
+          "sai": [
+           "là một quần thể"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Một đàn chim gồm nhiều loài (cò, vạc, sáo) cùng kiếm ăn trên cánh đồng: {0}",
+        "o": [
+         {
+          "dung": [
+           "không phải quần thể"
+          ],
+          "sai": [
+           "là một quần thể"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Một cây xanh bên đường: {0}",
+        "o": [
+         {
+          "dung": [
+           "không phải quần thể"
+          ],
+          "sai": [
+           "là một quần thể"
+          ],
+          "hai": true
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "42.3",
@@ -24256,7 +24699,59 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "(1) A < B; (2) A > B; (3) A > B",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "hinh": [
+      "sbtkhtn8/H.42.1.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "hoi": "Hai quần thể chuột A và B sống ở hai ruộng lúa có diện tích khác nhau (Hình 42.1: mỗi hình chữ nhật là một ruộng lúa, mỗi chấm là một con chuột). Hãy so sánh một số đặc trưng giữa quần thể A và B bằng cách chọn dấu thích hợp.",
+      "dong": [
+       {
+        "chu": "Không gian phân bố: A {0} B",
+        "o": [
+         {
+          "dung": [
+           "<"
+          ],
+          "sai": [
+           ">",
+           "="
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Kích thước quần thể: A {0} B",
+        "o": [
+         {
+          "dung": [
+           ">"
+          ],
+          "sai": [
+           "<",
+           "="
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Mật độ cá thể: A {0} B",
+        "o": [
+         {
+          "dung": [
+           ">"
+          ],
+          "sai": [
+           "<",
+           "="
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "42.4",
@@ -24265,7 +24760,56 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Người: nam 50,6%, nữ 49,4% (nam/nữ ≈ 1,02, gần 1 : 1); Hươu: đực 26,8%, cái 73,2% (đực/cái ≈ 0,37, cái gấp khoảng 2,7 lần đực); Nhận xét: tỉ lệ giới tính hai quần thể khác nhau, đặc trưng cho từng loài",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "hoi": "Hãy xác định tỉ lệ giới tính ở quần thể người (1 658 nam, 1 618 nữ) và quần thể hươu (71 cá thể đực, 194 cá thể cái). Từ đó, nhận xét về tỉ lệ giới tính ở hai quần thể này.\n(Tỉ lệ giới tính là tỉ lệ giữa số lượng cá thể đực và số lượng cá thể cái, làm tròn tới hai chữ số sau dấu phẩy.)",
+      "dong": [
+       {
+        "chu": "Quần thể người: số nam : số nữ ≈ {0}",
+        "o": [
+         {
+          "dung": [
+           "1,02"
+          ],
+          "sai": [
+           "0,98",
+           "0,51"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Quần thể hươu: số con đực : số con cái ≈ {0}",
+        "o": [
+         {
+          "dung": [
+           "0,37"
+          ],
+          "sai": [
+           "2,73",
+           "0,27"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Nhận xét: {0}",
+        "o": [
+         {
+          "dung": [
+           "người: số nam xấp xỉ số nữ (gần 1 : 1); hươu: số con cái gấp khoảng 2,7 lần số con đực"
+          ],
+          "sai": [
+           "ở cả hai quần thể, số cá thể đực đều xấp xỉ số cá thể cái, tỉ lệ gần 1 : 1",
+           "ở cả hai quần thể, số cá thể đực đều nhiều hơn hẳn số cá thể cái"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "42.5",
@@ -24274,7 +24818,86 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "1) theo nhóm (cụm): cá thể tụ thành từng đám, do nguồn sống không đều, loài sống thành cụm, đàn; 2) đều: cá thể cách đều nhau, do nguồn sống đều, cạnh tranh gay gắt; 3) ngẫu nhiên: cá thể rải rác, do nguồn sống khá đồng đều, không cạnh tranh gay gắt",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "hinh": [
+      "sbtkhtn8/B.42.1.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 6,
+      "hoi": "Bảng 42.1 có ba sơ đồ các kiểu phân bố cá thể trong quần thể (hình dưới, mỗi chấm là một cá thể). Hãy xác định các thông tin còn thiếu trong Bảng 42.1: kiểu phân bố, đặc điểm và nguyên nhân của mỗi sơ đồ.",
+      "dong": [
+       {
+        "chu": "Sơ đồ 1: kiểu phân bố {0}\nNguyên nhân: {1}",
+        "o": [
+         {
+          "dung": [
+           "theo nhóm (các cá thể tập trung thành từng đám)"
+          ],
+          "sai": [
+           "đều (các cá thể cách đều nhau)",
+           "ngẫu nhiên (các cá thể phân bố rải rác)"
+          ]
+         },
+         {
+          "dung": [
+           "nguồn sống phân bố không đều, các cá thể có tập tính sống theo nhóm (thành cụm, theo đàn)"
+          ],
+          "sai": [
+           "nguồn sống phân bố đều, các cá thể cạnh tranh gay gắt",
+           "nguồn sống phân bố tương đối đồng đều, các cá thể không cạnh tranh gay gắt"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Sơ đồ 2: kiểu phân bố {0}\nNguyên nhân: {1}",
+        "o": [
+         {
+          "dung": [
+           "đều (các cá thể cách đều nhau)"
+          ],
+          "sai": [
+           "theo nhóm (các cá thể tập trung thành từng đám)",
+           "ngẫu nhiên (các cá thể phân bố rải rác)"
+          ]
+         },
+         {
+          "dung": [
+           "nguồn sống phân bố đều, các cá thể cạnh tranh gay gắt"
+          ],
+          "sai": [
+           "nguồn sống phân bố không đều, các cá thể có tập tính sống theo nhóm (thành cụm, theo đàn)",
+           "nguồn sống phân bố tương đối đồng đều, các cá thể không cạnh tranh gay gắt"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Sơ đồ 3: kiểu phân bố {0}\nNguyên nhân: {1}",
+        "o": [
+         {
+          "dung": [
+           "ngẫu nhiên (các cá thể phân bố rải rác)"
+          ],
+          "sai": [
+           "theo nhóm (các cá thể tập trung thành từng đám)",
+           "đều (các cá thể cách đều nhau)"
+          ]
+         },
+         {
+          "dung": [
+           "nguồn sống phân bố tương đối đồng đều, các cá thể không cạnh tranh gay gắt"
+          ],
+          "sai": [
+           "nguồn sống phân bố không đều, các cá thể có tập tính sống theo nhóm (thành cụm, theo đàn)",
+           "nguồn sống phân bố đều, các cá thể cạnh tranh gay gắt"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "42.6",
@@ -24283,14 +24906,173 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "A: hình tháp ổn định; B: hình tháp phát triển; C: hình tháp suy thoái",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "hinh": [
+      "sbtkhtn8/42.6-chon-1.webp",
+      "sbtkhtn8/42.6-chon-2.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "hoi": "Bảng 42.2. Số lượng cá thể trong các nhóm tuổi của ba quần thể côn trùng:\n- Quần thể A: tuổi trước sinh sản 7 345; tuổi sinh sản 6 855; tuổi sau sinh sản 3 714.\n- Quần thể B: tuổi trước sinh sản 8 372; tuổi sinh sản 5 481; tuổi sau sinh sản 2 267.\n- Quần thể C: tuổi trước sinh sản 3 456; tuổi sinh sản 7 541; tuổi sau sinh sản 6 743.\nCăn cứ vào các số liệu trong Bảng 42.2, hãy xác định tên các kiểu hình tháp tuổi của ba quần thể côn trùng. Vẽ sơ đồ cấu trúc thành phần nhóm tuổi của các quần thể đó.",
+      "dong": [
+       {
+        "chu": "Quần thể A: {0}",
+        "o": [
+         {
+          "dung": [
+           "tháp ổn định"
+          ],
+          "sai": [
+           "tháp phát triển",
+           "tháp suy thoái"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Quần thể B: {0}",
+        "o": [
+         {
+          "dung": [
+           "tháp phát triển"
+          ],
+          "sai": [
+           "tháp ổn định",
+           "tháp suy thoái"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Quần thể C: {0}",
+        "o": [
+         {
+          "dung": [
+           "tháp suy thoái"
+          ],
+          "sai": [
+           "tháp phát triển",
+           "tháp ổn định"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Sơ đồ cấu trúc nhóm tuổi của ba quần thể (mỗi thanh dài theo số cá thể của nhóm tuổi): {0}",
+        "o": [
+         {
+          "dung": [
+           "Hình 2"
+          ],
+          "sai": [
+           "Hình 1",
+           "Hình 3",
+           "Hình 4"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "42.7",
      "de": "Tìm thông tin từ các nguồn khác nhau (báo cáo khoa học, sách, báo, internet,...), nêu tên một số loài có động vật và thực vật đang có nguy cơ tuyệt chủng ở nước ta. Các loài này đang được bảo tồn theo hình thức nào?",
      "trang": 104,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 6,
+      "hoi": "Tìm thông tin từ các nguồn khác nhau (báo cáo khoa học, sách, báo, internet,...), nêu tên một số loài động vật và thực vật đang có nguy cơ tuyệt chủng ở nước ta. Các loài này đang được bảo tồn theo hình thức nào?\nChọn thông tin đúng cho mỗi loài, mỗi việc làm sau.",
+      "dong": [
+       {
+        "chu": "Sao la: {0}",
+        "o": [
+         {
+          "dung": [
+           "đang có nguy cơ tuyệt chủng"
+          ],
+          "sai": [
+           "không có nguy cơ tuyệt chủng"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Voọc Cát Bà: {0}",
+        "o": [
+         {
+          "dung": [
+           "đang có nguy cơ tuyệt chủng"
+          ],
+          "sai": [
+           "không có nguy cơ tuyệt chủng"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Chuột đồng: {0}",
+        "o": [
+         {
+          "dung": [
+           "không có nguy cơ tuyệt chủng"
+          ],
+          "sai": [
+           "đang có nguy cơ tuyệt chủng"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Lập Vườn quốc gia Cát Bà để bảo vệ voọc Cát Bà ngay trên đảo nơi chúng sinh sống: {0}",
+        "o": [
+         {
+          "dung": [
+           "bảo vệ ngay tại nơi sống tự nhiên"
+          ],
+          "sai": [
+           "chuyển đến nơi sống mới"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Lập khu bảo tồn sao la ở vùng núi rừng Trường Sơn: {0}",
+        "o": [
+         {
+          "dung": [
+           "bảo vệ ngay tại nơi sống tự nhiên"
+          ],
+          "sai": [
+           "chuyển đến nơi sống mới"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Đưa những con gấu ngựa bị nuôi nhốt lấy mật về chăm sóc ở trung tâm cứu hộ: {0}",
+        "o": [
+         {
+          "dung": [
+           "chuyển đến nơi sống mới"
+          ],
+          "sai": [
+           "bảo vệ ngay tại nơi sống tự nhiên"
+          ],
+          "hai": true
+         }
+        ]
+       }
+      ]
+     }
     }
    ]
   },
@@ -24305,7 +25087,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "C",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Chọn nhận định đúng.",
+      "cac": [
+       "Quần xã sinh vật là tập hợp các cá thể sinh vật thuộc một loài, cùng sống trong khoảng không gian và thời gian xác định.",
+       "Quần xã sinh vật là tập hợp nhiều quần thể khác nhau của một loài sinh vật. Mỗi quần thể này sống trong khoảng không gian và thời gian xác định.",
+       "Quần xã sinh vật là tập hợp các quần thể sinh vật thuộc nhiều loài khác nhau, cùng sống trong khoảng không gian và thời gian xác định.",
+       "Quần xã sinh vật là tập hợp các quần thể thực vật và động vật thuộc nhiều loài khác nhau, cùng sống trong khoảng không gian và thời gian xác định."
+      ],
+      "dap": "C"
+     }
     },
     {
      "ma": "43.2",
@@ -24314,7 +25108,18 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "C",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Hình 43.1 (cá thể, quần thể và quần xã sinh vật) gồm ba ảnh. Ảnh nào biểu đạt được một quần xã sinh vật?",
+      "cac": [
+       "Ảnh một nhóm hươu (hươu đực, hươu cái và hươu con)",
+       "Ảnh một con ngựa vằn",
+       "Ảnh một khu rừng rậm"
+      ],
+      "dap": "C"
+     }
     },
     {
      "ma": "43.3",
@@ -24323,7 +25128,86 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "1) giữa quần thể với các nhân tố vô sinh; 2) giữa các quần thể trong quần xã; 3) giữa các cá thể trong quần thể",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "hinh": [
+      "sbtkhtn8/H.43.2.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 6,
+      "hoi": "Trong quần xã sinh vật, luôn có các mối quan hệ qua lại giữa các cá thể trong quần thể, giữa các quần thể với nhau và giữa các quần thể với các nhân tố sinh thái vô sinh (Hình 43.2: mỗi vòng tròn là một quần thể gồm các cá thể cùng một kí hiệu ●, ■ hay ▲). Hãy cho biết các mũi tên trong hình thể hiện mối quan hệ nào. Lấy ví dụ minh hoạ.",
+      "dong": [
+       {
+        "chu": "1) Cặp mũi tên to đậm (nối mỗi vòng tròn với các nhân tố sinh thái vô sinh): quan hệ qua lại giữa {0}\nVí dụ: {1}",
+        "o": [
+         {
+          "dung": [
+           "quần thể với các nhân tố vô sinh"
+          ],
+          "sai": [
+           "các quần thể trong quần xã",
+           "các cá thể trong quần thể"
+          ]
+         },
+         {
+          "dung": [
+           "ánh sáng, nước ảnh hưởng tới quần thể cây lúa; ruộng lúa làm không khí bên dưới ẩm và mát hơn"
+          ],
+          "sai": [
+           "lúa và cỏ dại trong một ruộng cạnh tranh nhau ánh sáng, chất dinh dưỡng",
+           "các con hổ trong một đàn cùng hỗ trợ nhau săn mồi"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "2) Cặp mũi tên cỡ vừa (nối các vòng tròn với nhau): quan hệ qua lại giữa {0}\nVí dụ: {1}",
+        "o": [
+         {
+          "dung": [
+           "các quần thể trong quần xã"
+          ],
+          "sai": [
+           "quần thể với các nhân tố vô sinh",
+           "các cá thể trong quần thể"
+          ]
+         },
+         {
+          "dung": [
+           "lúa và cỏ dại trong một ruộng cạnh tranh nhau ánh sáng, chất dinh dưỡng"
+          ],
+          "sai": [
+           "ánh sáng, nước ảnh hưởng tới quần thể cây lúa; ruộng lúa làm không khí bên dưới ẩm và mát hơn",
+           "các con hổ trong một đàn cùng hỗ trợ nhau săn mồi"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "3) Cặp mũi tên mảnh (nối các cá thể trong cùng một vòng tròn): quan hệ qua lại giữa {0}\nVí dụ: {1}",
+        "o": [
+         {
+          "dung": [
+           "các cá thể trong quần thể"
+          ],
+          "sai": [
+           "quần thể với các nhân tố vô sinh",
+           "các quần thể trong quần xã"
+          ]
+         },
+         {
+          "dung": [
+           "các con hổ trong một đàn cùng hỗ trợ nhau săn mồi"
+          ],
+          "sai": [
+           "ánh sáng, nước ảnh hưởng tới quần thể cây lúa; ruộng lúa làm không khí bên dưới ẩm và mát hơn",
+           "lúa và cỏ dại trong một ruộng cạnh tranh nhau ánh sáng, chất dinh dưỡng"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "43.4",
@@ -24332,7 +25216,56 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Chuyển rừng tự nhiên sang mục đích khác làm độ đa dạng của quần xã giảm: rừng tự nhiên có 889 loài thực vật, trang trại nông lâm kết hợp 299, rừng trồng keo 157, nương rẫy 89.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "hoi": "Ở một xã miền núi, người ta chuyển một phần diện tích rừng tự nhiên sang mục đích sử dụng khác. Bảng 43.1 (số loài thực vật trong một số quần xã): rừng trồng keo 157 loài; nương rẫy 89 loài; rừng tự nhiên 889 loài; trang trại nông lâm kết hợp 299 loài.\nPhân tích Bảng 43.1, hãy nhận xét về sự thay đổi độ đa dạng của quần xã khi có sự chuyển đổi này.",
+      "dong": [
+       {
+        "chu": "Xếp theo số loài thực vật từ nhiều đến ít: {0}",
+        "o": [
+         {
+          "dung": [
+           "rừng tự nhiên, trang trại nông lâm kết hợp, rừng trồng keo, nương rẫy"
+          ],
+          "sai": [
+           "nương rẫy, rừng trồng keo, trang trại nông lâm kết hợp, rừng tự nhiên",
+           "rừng tự nhiên, rừng trồng keo, trang trại nông lâm kết hợp, nương rẫy"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Khi chuyển rừng tự nhiên sang rừng trồng keo, nương rẫy hay trang trại, độ đa dạng của quần xã {0}",
+        "o": [
+         {
+          "dung": [
+           "giảm mạnh"
+          ],
+          "sai": [
+           "tăng lên",
+           "không thay đổi"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Vì {0}",
+        "o": [
+         {
+          "dung": [
+           "môi trường sống bị thay đổi, nhiều loài mất nơi sống; con người chỉ trồng, giữ lại một số ít loài"
+          ],
+          "sai": [
+           "cây trồng có số cá thể nhiều hơn cây rừng nên quần xã sau khi chuyển đổi đa dạng hơn",
+           "số loài trong quần xã không phụ thuộc vào việc con người thay đổi môi trường sống"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "43.5",
@@ -24341,7 +25274,87 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Quần xã B, vì có nhiều loài nhất (3 loài; A và C chỉ có 2 loài)",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "hinh": [
+      "sbtkhtn8/H.43.3.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 5,
+      "hoi": "Các kí hiệu trong Hình 43.3 biểu thị các loài sinh vật khác nhau: chấm tròn xanh nhạt, chấm tròn xanh đậm và ô vuông xám là ba loài; mỗi kí hiệu là một cá thể. Trong sơ đồ thành phần loài của ba quần xã sinh vật (A, B, C), quần xã nào có độ đa dạng cao nhất? Tại sao?",
+      "dong": [
+       {
+        "chu": "Quần xã A có {0} loài",
+        "o": [
+         {
+          "dung": [
+           "2"
+          ],
+          "sai": [
+           "21",
+           "1"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Quần xã B có {0} loài",
+        "o": [
+         {
+          "dung": [
+           "3"
+          ],
+          "sai": [
+           "11",
+           "2"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Quần xã C có {0} loài",
+        "o": [
+         {
+          "dung": [
+           "2"
+          ],
+          "sai": [
+           "11",
+           "3"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Quần xã có độ đa dạng cao nhất: {0}",
+        "o": [
+         {
+          "dung": [
+           "quần xã B"
+          ],
+          "sai": [
+           "quần xã A",
+           "quần xã C"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Vì quần xã đó {0}",
+        "o": [
+         {
+          "dung": [
+           "có nhiều loài nhất, số cá thể của mỗi loài lại khá đồng đều (4, 3, 4)"
+          ],
+          "sai": [
+           "có nhiều cá thể nhất, các cá thể chen chúc nhau rất đông",
+           "có các cá thể nằm cách đều nhau nhất"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "43.6",
@@ -24350,7 +25363,74 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Sa mạc: lạc đà, xương rồng,...; Rừng lá kim: thông, pơ mu,...; Rừng ngập mặn: sú, vẹt, đước,...; Bắc cực: gấu trắng, hải mã,...",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "hoi": "Hãy kể tên một số loài đặc trưng trong các quần xã dưới đây (Bảng 43.2): sa mạc, rừng lá kim, rừng ngập mặn, Bắc cực.",
+      "dong": [
+       {
+        "chu": "Sa mạc: {0}",
+        "o": [
+         {
+          "dung": [
+           "lạc đà, xương rồng"
+          ],
+          "sai": [
+           "thông, pơ mu",
+           "sú, vẹt, đước",
+           "gấu trắng, hải mã"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Rừng lá kim: {0}",
+        "o": [
+         {
+          "dung": [
+           "thông, pơ mu"
+          ],
+          "sai": [
+           "lạc đà, xương rồng",
+           "sú, vẹt, đước",
+           "gấu trắng, hải mã"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Rừng ngập mặn: {0}",
+        "o": [
+         {
+          "dung": [
+           "sú, vẹt, đước"
+          ],
+          "sai": [
+           "lạc đà, xương rồng",
+           "thông, pơ mu",
+           "gấu trắng, hải mã"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Bắc cực: {0}",
+        "o": [
+         {
+          "dung": [
+           "gấu trắng, hải mã"
+          ],
+          "sai": [
+           "lạc đà, xương rồng",
+           "thông, pơ mu",
+           "sú, vẹt, đước"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "43.7",
@@ -24359,7 +25439,70 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Các biện pháp: tuyên truyền về giá trị của đa dạng sinh học; xây dựng luật và chiến lược quốc gia về bảo tồn đa dạng sinh học; thành lập vườn quốc gia, khu bảo tồn thiên nhiên; tăng cường bảo vệ nguồn tài nguyên sinh vật; nghiêm cấm săn bắt, mua bán trái pháp luật các loài có nguy cơ tuyệt chủng.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "hoi": "Hãy nêu các nhóm biện pháp bảo vệ đa dạng sinh học. Xác định các hình ảnh trong Hình 43.4 tương ứng với từng nhóm biện pháp nói trên.\nHình 43.4 có các ảnh: bìa cuốn sách Luật Đa dạng sinh học; cổng vào một vườn quốc gia ở giữa rừng; tấm biển \"Bảo vệ rừng là nghĩa vụ của mọi người\"; ảnh động vật hoang dã bị nhốt trong lồng, có dấu gạch chéo. Mỗi nhóm biện pháp sau ứng với ảnh nào?",
+      "dong": [
+       {
+        "chu": "Tuyên truyền về giá trị của đa dạng sinh học: {0}",
+        "o": [
+         {
+          "dung": [
+           "tấm biển \"Bảo vệ rừng là nghĩa vụ của mọi người\""
+          ],
+          "sai": [
+           "bìa cuốn sách Luật Đa dạng sinh học",
+           "cổng vào một vườn quốc gia ở giữa rừng"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Xây dựng luật và chiến lược quốc gia về bảo tồn đa dạng sinh học: {0}",
+        "o": [
+         {
+          "dung": [
+           "bìa cuốn sách Luật Đa dạng sinh học"
+          ],
+          "sai": [
+           "cổng vào một vườn quốc gia ở giữa rừng",
+           "ảnh động vật hoang dã bị nhốt trong lồng, có dấu gạch chéo"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Thành lập các vườn quốc gia, khu bảo tồn thiên nhiên: {0}",
+        "o": [
+         {
+          "dung": [
+           "cổng vào một vườn quốc gia ở giữa rừng"
+          ],
+          "sai": [
+           "tấm biển \"Bảo vệ rừng là nghĩa vụ của mọi người\"",
+           "ảnh động vật hoang dã bị nhốt trong lồng, có dấu gạch chéo"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Nghiêm cấm săn bắt, mua bán trái pháp luật những loài có nguy cơ tuyệt chủng: {0}",
+        "o": [
+         {
+          "dung": [
+           "ảnh động vật hoang dã bị nhốt trong lồng, có dấu gạch chéo"
+          ],
+          "sai": [
+           "cổng vào một vườn quốc gia ở giữa rừng",
+           "tấm biển \"Bảo vệ rừng là nghĩa vụ của mọi người\""
+          ]
+         }
+        ]
+       }
+      ]
+     }
     }
    ]
   },
@@ -24374,7 +25517,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "B",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Hệ sinh thái là một hệ thống bao gồm ___.",
+      "cac": [
+       "quần xã sinh vật và các quần thể",
+       "quần xã sinh vật và môi trường sống của chúng",
+       "quần thể sinh vật và môi trường sống của chúng",
+       "quần xã sinh vật và các cá thể"
+      ],
+      "dap": "B"
+     }
     },
     {
      "ma": "44.2",
@@ -24383,7 +25538,65 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "(1) vô sinh; (2) hữu sinh; (3) vô sinh; (4) hữu sinh; (5) quần xã",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "hoi": "Điền từ còn thiếu vào chỗ trống để được nội dung đúng.",
+      "dong": [
+       {
+        "chu": "Cấu trúc của một hệ sinh thái gồm {0}.",
+        "o": [
+         {
+          "dung": [
+           "thành phần vô sinh và thành phần hữu sinh"
+          ],
+          "sai": [
+           "quần thể sinh vật và quần xã sinh vật",
+           "sinh vật sản xuất và sinh vật tiêu thụ"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Thành phần {0} bao gồm các nhân tố vô sinh,",
+        "o": [
+         {
+          "dung": [
+           "vô sinh"
+          ],
+          "sai": [
+           "hữu sinh"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "thành phần {0} bao gồm nhiều loài sinh vật trong {1}.",
+        "o": [
+         {
+          "dung": [
+           "hữu sinh"
+          ],
+          "sai": [
+           "vô sinh"
+          ],
+          "hai": true
+         },
+         {
+          "dung": [
+           "quần xã"
+          ],
+          "sai": [
+           "quần thể",
+           "sinh quyển"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "44.3",
@@ -24392,7 +25605,19 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Sinh vật sản xuất tự tổng hợp được chất hữu cơ, sinh vật tiêu thụ không tự tổng hợp được chất hữu cơ.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Đặc điểm khác biệt nhất giữa nhóm \"sinh vật sản xuất\" và nhóm \"sinh vật tiêu thụ\" là gì?",
+      "cac": [
+       "Sinh vật sản xuất tự tổng hợp được chất hữu cơ, sinh vật tiêu thụ không tự tổng hợp được chất hữu cơ",
+       "Sinh vật tiêu thụ tự tổng hợp được chất hữu cơ, sinh vật sản xuất không tự tổng hợp được chất hữu cơ",
+       "Sinh vật sản xuất có kích thước cơ thể lớn hơn sinh vật tiêu thụ",
+       "Sinh vật sản xuất sống trên cạn, sinh vật tiêu thụ sống dưới nước"
+      ],
+      "dap": "A"
+     }
     },
     {
      "ma": "44.4",
@@ -24401,7 +25626,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "C",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Trong hệ sinh thái, nhóm sinh vật nào giữ vai trò trả lại chất vô cơ cho môi trường sống của sinh vật?",
+      "cac": [
+       "Sinh vật tiêu thụ",
+       "Sinh vật sản xuất",
+       "Sinh vật phân giải",
+       "Sinh vật ăn tạp"
+      ],
+      "dap": "C"
+     }
     },
     {
      "ma": "44.5",
@@ -24410,7 +25647,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "A",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Sơ đồ nào dưới đây thể hiện đúng một chuỗi thức ăn trong hệ sinh thái?",
+      "cac": [
+       "Cây lúa → Sâu → Ếch đồng → Rắn → Đại bàng",
+       "Cây lúa → Rắn → Ếch đồng → Sâu → Đại bàng",
+       "Cây lúa → Sâu → Rắn → Ếch đồng → Đại bàng",
+       "Cây lúa → Đại bàng → Ếch đồng → Rắn → Sâu"
+      ],
+      "dap": "A"
+     }
     },
     {
      "ma": "44.6",
@@ -24419,7 +25668,70 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Dẫn đến mất cân bằng sinh thái.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "hoi": "Điều gì sẽ xảy ra với hệ sinh thái khi một mắt xích trong chuỗi thức ăn bị biến mất?\nVí dụ, trong chuỗi thức ăn: cỏ → châu chấu → ếch → rắn → đại bàng, giả sử ếch bị biến mất.",
+      "dong": [
+       {
+        "chu": "Rắn: {0}",
+        "o": [
+         {
+          "dung": [
+           "thiếu thức ăn nên số lượng giảm"
+          ],
+          "sai": [
+           "có thêm thức ăn nên số lượng tăng",
+           "không bị ảnh hưởng gì"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Châu chấu: {0}",
+        "o": [
+         {
+          "dung": [
+           "ít bị ăn thịt nên số lượng tăng mạnh"
+          ],
+          "sai": [
+           "cũng biến mất theo ếch",
+           "thiếu thức ăn nên số lượng giảm"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Cỏ: {0}",
+        "o": [
+         {
+          "dung": [
+           "bị châu chấu ăn nhiều hơn nên giảm mạnh"
+          ],
+          "sai": [
+           "phát triển mạnh hơn vì không còn ếch",
+           "không bị ảnh hưởng vì ếch không ăn cỏ"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Vậy khi một mắt xích bị biến mất thì {0}",
+        "o": [
+         {
+          "dung": [
+           "nhiều loài khác trong chuỗi, lưới thức ăn bị ảnh hưởng, hệ sinh thái mất cân bằng sinh thái"
+          ],
+          "sai": [
+           "chỉ loài ăn trực tiếp mắt xích đó bị ảnh hưởng, hệ sinh thái vẫn cân bằng",
+           "hệ sinh thái không thay đổi vì các loài khác vẫn còn đủ"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "44.7",
@@ -24428,7 +25740,45 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "Tháp năng lượng",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "hinh": [
+      "sbtkhtn8/44.7.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "Có 3 loại tháp sinh thái: tháp số lượng, tháp sinh khối và tháp năng lượng. Hình dưới là mô hình về một loại tháp sinh thái (từ đáy lên đỉnh: thực vật 2,5 · 10⁶ kcal; châu chấu 1,4 · 10⁴ kcal; ếch 9 · 10³ kcal; rắn 0,5 · 10³ kcal; đại bàng 0,1 · 10³ kcal). Em hãy cho biết đây là loại tháp sinh thái nào.",
+      "dong": [
+       {
+        "chu": "Đây là {0}",
+        "o": [
+         {
+          "dung": [
+           "tháp năng lượng"
+          ],
+          "sai": [
+           "tháp số lượng",
+           "tháp sinh khối"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Vì {0}",
+        "o": [
+         {
+          "dung": [
+           "mỗi bậc ghi năng lượng tích luỹ được ở bậc dinh dưỡng đó (đơn vị kcal)"
+          ],
+          "sai": [
+           "mỗi bậc ghi số lượng cá thể trên một đơn vị diện tích (con/ha, cây/ha)",
+           "mỗi bậc ghi khối lượng chất sống trên một đơn vị diện tích (kg/ha)"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "44.8",
@@ -24437,7 +25787,42 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "Giảm xuống",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "Trong hệ sinh thái, khi năng lượng truyền qua các bậc dinh dưỡng sẽ tăng lên hay giảm xuống?",
+      "dong": [
+       {
+        "chu": "Năng lượng truyền qua các bậc dinh dưỡng sẽ {0}",
+        "o": [
+         {
+          "dung": [
+           "giảm xuống"
+          ],
+          "sai": [
+           "tăng lên",
+           "giữ nguyên"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Vì {0}",
+        "o": [
+         {
+          "dung": [
+           "ở mỗi bậc, sinh vật dùng một phần năng lượng cho hoạt động sống và trả lại môi trường dưới dạng nhiệt"
+          ],
+          "sai": [
+           "sinh vật ở bậc sau thường to lớn hơn nên tích luỹ được nhiều năng lượng hơn bậc trước",
+           "năng lượng quay vòng khép kín, không mất đi chút nào khi đi qua mỗi bậc"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     }
    ]
   },
@@ -24452,7 +25837,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "C",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Sinh quyển là toàn bộ sinh vật sống trên Trái Đất cùng với ___.",
+      "cac": [
+       "các nhân tố hữu sinh của môi trường",
+       "các loài sinh vật sản xuất",
+       "các nhân tố vô sinh của môi trường",
+       "các loài sinh vật tiêu thụ"
+      ],
+      "dap": "C"
+     }
     },
     {
      "ma": "45.2",
@@ -24461,7 +25858,56 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "(1) thuộc thạch quyển; (2) thuộc khí quyển; (3) thuộc thuỷ quyển",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "hoi": "Điền từ còn thiếu vào chỗ trống để được nội dung đúng.",
+      "dong": [
+       {
+        "chu": "Sinh quyển là một hệ sinh thái khổng lồ, bao gồm lớp đất (thuộc {0}),",
+        "o": [
+         {
+          "dung": [
+           "thạch quyển"
+          ],
+          "sai": [
+           "khí quyển",
+           "thuỷ quyển"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "lớp không khí (thuộc {0})",
+        "o": [
+         {
+          "dung": [
+           "khí quyển"
+          ],
+          "sai": [
+           "thạch quyển",
+           "thuỷ quyển"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "và lớp nước đại dương (thuộc {0}).",
+        "o": [
+         {
+          "dung": [
+           "thuỷ quyển"
+          ],
+          "sai": [
+           "thạch quyển",
+           "khí quyển"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "45.3",
@@ -24470,7 +25916,42 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Do điều kiện khí hậu không đồng nhất ở các vùng địa lí khác nhau.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "Nguyên nhân nào dẫn đến việc hình thành các khu sinh học khác nhau trên Trái Đất?",
+      "dong": [
+       {
+        "chu": "Các khu sinh học khác nhau hình thành do {0}",
+        "o": [
+         {
+          "dung": [
+           "điều kiện khí hậu không đồng nhất ở các vùng địa lí khác nhau"
+          ],
+          "sai": [
+           "con người trồng các loại cây khác nhau ở mỗi vùng",
+           "mỗi vùng có số loài động vật ăn thịt khác nhau"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Trên cạn, hai yếu tố khí hậu quyết định khu sinh học là {0}",
+        "o": [
+         {
+          "dung": [
+           "nhiệt độ và độ ẩm"
+          ],
+          "sai": [
+           "lượng khí oxygen và khí nitrogen trong không khí",
+           "số loài động vật ăn cỏ và động vật ăn thịt"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "45.4",
@@ -24479,7 +25960,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "A",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Thứ tự của các khu sinh học trên cạn từ vùng cực đến vùng nhiệt đới là:",
+      "cac": [
+       "đồng rêu hàn đới, rừng lá kim phương bắc, rừng ôn đới, rừng mưa nhiệt đới",
+       "đồng rêu hàn đới, rừng ôn đới, rừng mưa nhiệt đới, rừng lá kim phương bắc",
+       "rừng mưa nhiệt đới, rừng lá kim phương bắc, đồng rêu hàn đới, rừng ôn đới",
+       "rừng mưa nhiệt đới, rừng lá kim phương bắc, rừng ôn đới, đồng rêu hàn đới"
+      ],
+      "dap": "A"
+     }
     },
     {
      "ma": "45.5",
@@ -24488,7 +25981,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "C",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Sông và suối thuộc khu sinh học nào dưới đây?",
+      "cac": [
+       "Khu sinh học biển",
+       "Khu sinh học trên cạn",
+       "Khu sinh học nước ngọt",
+       "Khu sinh học nước mặn"
+      ],
+      "dap": "C"
+     }
     },
     {
      "ma": "45.6",
@@ -24497,7 +26002,42 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "Vùng ven bờ",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "Khu sinh học biển được chia thành vùng ven bờ và vùng khơi. Vùng nào có thành phần sinh vật phong phú hơn?",
+      "dong": [
+       {
+        "chu": "Vùng có thành phần sinh vật phong phú hơn: {0}",
+        "o": [
+         {
+          "dung": [
+           "vùng ven bờ"
+          ],
+          "sai": [
+           "vùng khơi"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Vì vùng ven bờ {0}",
+        "o": [
+         {
+          "dung": [
+           "nước nông, nhiều ánh sáng và chất dinh dưỡng từ đất liền đổ ra, nhiều rong, tảo làm thức ăn"
+          ],
+          "sai": [
+           "nước sâu hơn vùng khơi, ánh sáng yếu nên sinh vật dễ ẩn nấp khỏi kẻ thù",
+           "không có sóng gió, nước lúc nào cũng lặng nên trứng cá không bị cuốn trôi"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     }
    ]
   },
@@ -24512,7 +26052,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "A",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Cân bằng tự nhiên là ___ (chọn câu đúng và đầy đủ nhất).",
+      "cac": [
+       "trạng thái ổn định tự nhiên của các cấp độ tổ chức sống, hướng tới sự thích nghi cao nhất với điều kiện sống",
+       "trạng thái cân bằng tự nhiên ở cấp độ tổ chức sống trên cơ thể, hướng tới sự thích nghi cao nhất với điều kiện sống",
+       "trạng thái ổn định tự nhiên của quần thể, hướng tới sự ổn định số lượng cá thể của quần thể",
+       "trạng thái số lượng cá thể của mọi quần thể luôn giữ nguyên, không bao giờ thay đổi theo thời gian"
+      ],
+      "dap": "A"
+     }
     },
     {
      "ma": "46.2a",
@@ -24521,7 +26073,70 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Mức tử vong, mức sinh sản, xuất cư, nhập cư",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "hoi": "Hình 46.1 (sự điều chỉnh số lượng cá thể của quần thể): từ ô Kích thước quần thể có hai nhánh. Nhánh ①: số lượng cá thể cao → mức tử vong tăng, mức sinh sản giảm và xuất cư tăng → giảm số cá thể. Nhánh ②: số lượng cá thể thấp → mức tử vong giảm, mức sinh sản tăng và nhập cư tăng → tăng số cá thể. Cả hai nhánh cùng dẫn về ô Kích thước quần thể.\nQuan sát Hình 46.1, cho biết những yếu tố nào có thể làm tăng và giảm kích thước quần thể?",
+      "dong": [
+       {
+        "chu": "Mức sinh sản tăng: {0}",
+        "o": [
+         {
+          "dung": [
+           "làm tăng kích thước quần thể"
+          ],
+          "sai": [
+           "làm giảm kích thước quần thể",
+           "không làm thay đổi kích thước quần thể"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Mức tử vong tăng: {0}",
+        "o": [
+         {
+          "dung": [
+           "làm giảm kích thước quần thể"
+          ],
+          "sai": [
+           "làm tăng kích thước quần thể",
+           "không làm thay đổi kích thước quần thể"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Xuất cư (cá thể rời khỏi quần thể) tăng: {0}",
+        "o": [
+         {
+          "dung": [
+           "làm giảm kích thước quần thể"
+          ],
+          "sai": [
+           "làm tăng kích thước quần thể",
+           "không làm thay đổi kích thước quần thể"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Nhập cư (cá thể từ nơi khác đến) tăng: {0}",
+        "o": [
+         {
+          "dung": [
+           "làm tăng kích thước quần thể"
+          ],
+          "sai": [
+           "làm giảm kích thước quần thể",
+           "không làm thay đổi kích thước quần thể"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "46.2b",
@@ -24530,7 +26145,42 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Bằng nhau (kích thước sau điều chỉnh tương đương ban đầu)",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "Hình 46.1 (sự điều chỉnh số lượng cá thể của quần thể): từ ô Kích thước quần thể có hai nhánh. Nhánh ①: số lượng cá thể cao → mức tử vong tăng, mức sinh sản giảm và xuất cư tăng → giảm số cá thể. Nhánh ②: số lượng cá thể thấp → mức tử vong giảm, mức sinh sản tăng và nhập cư tăng → tăng số cá thể. Cả hai nhánh cùng dẫn về ô Kích thước quần thể.\nSo sánh kích thước quần thể sau khi được điều chỉnh với ban đầu?",
+      "dong": [
+       {
+        "chu": "Kích thước quần thể sau khi được điều chỉnh {0} kích thước ban đầu",
+        "o": [
+         {
+          "dung": [
+           "xấp xỉ bằng"
+          ],
+          "sai": [
+           "lớn hơn nhiều so với",
+           "nhỏ hơn nhiều so với"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Vì {0}",
+        "o": [
+         {
+          "dung": [
+           "quần thể tự điều chỉnh về mức phù hợp với khả năng cung cấp nguồn sống của môi trường"
+          ],
+          "sai": [
+           "mỗi lần điều chỉnh, quần thể lại tăng thêm một ít cá thể so với lần trước",
+           "mỗi lần điều chỉnh, quần thể lại giảm bớt một ít cá thể so với lần trước"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "46.2c",
@@ -24539,7 +26189,42 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "① thể hiện trường hợp B; ② thể hiện trường hợp A",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "Hình 46.1 (sự điều chỉnh số lượng cá thể của quần thể): từ ô Kích thước quần thể có hai nhánh. Nhánh ①: số lượng cá thể cao → mức tử vong tăng, mức sinh sản giảm và xuất cư tăng → giảm số cá thể. Nhánh ②: số lượng cá thể thấp → mức tử vong giảm, mức sinh sản tăng và nhập cư tăng → tăng số cá thể. Cả hai nhánh cùng dẫn về ô Kích thước quần thể.\nHình 46.2 (trạng thái cân bằng của quần thể voi) là đồ thị số lượng cá thể theo thời gian, lên xuống quanh một đường nét đứt nằm ngang. Mũi tên A chỉ vào đoạn đồ thị đang đi lên tới một đỉnh, mũi tên B chỉ vào đoạn đồ thị đang đi xuống ngay sau đỉnh đó.\nCác kí hiệu ①, ② trong Hình 46.1 thể hiện cho trường hợp nào (A hay B) trong biểu đồ ở Hình 46.2?",
+      "dong": [
+       {
+        "chu": "Nhánh ① (số lượng cá thể cao → giảm số cá thể): {0}",
+        "o": [
+         {
+          "dung": [
+           "trường hợp B"
+          ],
+          "sai": [
+           "trường hợp A"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Nhánh ② (số lượng cá thể thấp → tăng số cá thể): {0}",
+        "o": [
+         {
+          "dung": [
+           "trường hợp A"
+          ],
+          "sai": [
+           "trường hợp B"
+          ],
+          "hai": true
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "46.3",
@@ -24548,7 +26233,70 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Các quần thể phụ thuộc nhau qua quan hệ cạnh tranh (châu chấu và trâu cùng ăn cỏ), sinh vật ăn thịt – con mồi (mèo và chuột), động vật ăn thực vật – thực vật (thỏ và cỏ): số lượng cá thể của quần thể này bị khống chế ở mức nhất định bởi quần thể kia và ngược lại. Sự phụ thuộc này dẫn đến hiện tượng khống chế sinh học.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "hoi": "Quan sát Hình 46.3 (sự phụ thuộc giữa các loài trong quần xã): A. hai loài cạnh tranh: châu chấu và trâu cùng ăn cỏ; B. sinh vật ăn thịt – con mồi: mèo và chuột; C. động vật ăn thực vật – thực vật: thỏ và cỏ. Giữa mỗi cặp có mũi tên hai chiều.\nHãy giải thích sự phụ thuộc lẫn nhau giữa các quần thể trong quần xã. Sự phụ thuộc này dẫn đến hiện tượng gì trong cân bằng tự nhiên?",
+      "dong": [
+       {
+        "chu": "Châu chấu và trâu: khi số lượng trâu tăng quá cao thì {0}",
+        "o": [
+         {
+          "dung": [
+           "cỏ bị ăn nhiều, nguồn thức ăn giảm nên số lượng châu chấu giảm"
+          ],
+          "sai": [
+           "châu chấu có thêm thức ăn nên số lượng tăng",
+           "châu chấu không bị ảnh hưởng vì châu chấu không ăn trâu"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Mèo và chuột: khi số lượng chuột tăng thì {0}",
+        "o": [
+         {
+          "dung": [
+           "mèo có nhiều thức ăn nên tăng theo, rồi mèo ăn nhiều chuột làm số chuột giảm"
+          ],
+          "sai": [
+           "mèo thiếu thức ăn nên số lượng mèo giảm dần, chuột càng ngày càng đông",
+           "số lượng mèo không phụ thuộc vào số lượng chuột, mèo vẫn giữ nguyên"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Thỏ và cỏ: khi số lượng thỏ tăng quá cao thì {0}",
+        "o": [
+         {
+          "dung": [
+           "cỏ bị ăn nhiều nên giảm, thỏ thiếu thức ăn nên số lượng giảm theo"
+          ],
+          "sai": [
+           "cỏ mọc nhiều hơn vì được thỏ ăn bớt, thỏ lại càng có nhiều thức ăn",
+           "số thỏ cứ tăng mãi vì cỏ không bao giờ bị ăn hết"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Sự phụ thuộc này dẫn đến hiện tượng {0}",
+        "o": [
+         {
+          "dung": [
+           "khống chế sinh học: số lượng của quần thể này bị quần thể kia giữ ở mức nhất định và ngược lại"
+          ],
+          "sai": [
+           "cạnh tranh cùng loài: các cá thể trong một quần thể tranh giành thức ăn, nơi ở",
+           "phân tầng: các quần thể sống ở những tầng khác nhau trong khu rừng"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "46.4",
@@ -24557,7 +26305,27 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Ếch nhiều hơn rắn, rắn ăn ếch. Ếch tăng thì rắn có nhiều thức ăn nên tăng theo; rắn tăng làm ếch bị ăn nhiều nên giảm; ếch giảm thì rắn thiếu thức ăn nên giảm; rắn giảm tạo điều kiện cho ếch tăng lại. Hiện tượng lặp lại theo chu kì: số lượng rắn bị khống chế bởi số lượng ếch và ngược lại.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "hinh": [
+      "sbtkhtn8/H.46.4.webp"
+     ],
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 6,
+      "hoi": "Quan sát Hình 46.4 (đồ thị số lượng cá thể theo thời gian của quần thể ếch và quần thể rắn; rắn ăn ếch), diễn đạt bằng lời về sự tự điều chỉnh kích thước quần thể ăn thịt (rắn) và kích thước quần thể con mồi (ếch).",
+      "buoc": [
+       "Số lượng ếch tăng, rắn có nhiều thức ăn",
+       "Số lượng rắn tăng theo",
+       "Rắn ăn nhiều ếch nên số lượng ếch giảm dần",
+       "Rắn thiếu thức ăn nên số lượng rắn cũng giảm theo",
+       "Ếch ít bị ăn thịt nên số lượng ếch lại tăng, hiện tượng lặp lại theo chu kì",
+       "Số lượng rắn bị khống chế bởi số lượng ếch và ngược lại (khống chế sinh học)"
+      ],
+      "nhieu": [
+       "Số lượng rắn tăng nên số lượng ếch cũng tăng theo",
+       "Số lượng ếch giảm nên rắn có nhiều thức ăn hơn và tăng lên"
+      ]
+     }
     },
     {
      "ma": "46.5a",
@@ -24565,15 +26333,127 @@
      "trang": 111,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "dap_an": "Ban ngày: voi, hổ, bướm, ong mật,...; Ban đêm: ếch mắt đỏ, sói xám, cú,...",
-     "loai_dap_an": "LOI_GIAI"
+     "dap_an": "Ban ngày: chim sâu, ong mật, bướm,...; Ban đêm: dơi, cú mèo, đom đóm, ếch mắt đỏ, sói xám,...",
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "hoi": "Bảng 46.1 (một số loài hoạt động theo chu kì ngày đêm): chim sâu hoạt động chủ yếu vào ban ngày, dơi hoạt động chủ yếu vào ban đêm. Dựa vào Bảng 46.1, liệt kê thêm một số loài động vật hoạt động chủ yếu vào ban ngày và vào ban đêm.\nMỗi loài sau hoạt động chủ yếu vào ban ngày hay ban đêm?",
+      "dong": [
+       {
+        "chu": "Ong mật: {0}",
+        "o": [
+         {
+          "dung": [
+           "ban ngày"
+          ],
+          "sai": [
+           "ban đêm",
+           "cả ngày lẫn đêm như nhau"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Bướm: {0}",
+        "o": [
+         {
+          "dung": [
+           "ban ngày"
+          ],
+          "sai": [
+           "ban đêm",
+           "cả ngày lẫn đêm như nhau"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Cú mèo: {0}",
+        "o": [
+         {
+          "dung": [
+           "ban đêm"
+          ],
+          "sai": [
+           "ban ngày",
+           "cả ngày lẫn đêm như nhau"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Đom đóm: {0}",
+        "o": [
+         {
+          "dung": [
+           "ban đêm"
+          ],
+          "sai": [
+           "ban ngày",
+           "cả ngày lẫn đêm như nhau"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "46.5b",
      "de": "Hãy nêu một số sự khác biệt về quần xã sinh vật giữa các mùa trong năm trong các hệ sinh thái ở vùng em sinh sống.",
      "trang": 111,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "hoi": "Hãy nêu một số sự khác biệt về quần xã sinh vật giữa các mùa trong năm trong các hệ sinh thái ở vùng em sinh sống.\nGiả sử em sống ở miền Bắc nước ta, nơi có mùa hè nóng ẩm, mưa nhiều và mùa đông lạnh, ít mưa. Em hãy chọn điều thường thấy ở quần xã sinh vật vào mỗi mùa.",
+      "dong": [
+       {
+        "chu": "Mùa hè, ếch nhái và côn trùng (ve sầu, châu chấu): {0}",
+        "o": [
+         {
+          "dung": [
+           "hoạt động mạnh, sinh sản nhiều, kêu râm ran"
+          ],
+          "sai": [
+           "trú ẩn, ngủ đông, gần như không thấy",
+           "bay về phương nam để tránh nóng"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Mùa đông, ếch nhái: {0}",
+        "o": [
+         {
+          "dung": [
+           "trú ẩn trong hang, ngủ đông, ít khi thấy"
+          ],
+          "sai": [
+           "hoạt động mạnh nhất trong năm",
+           "sinh sản nhiều nhất trong năm"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Mùa đông, cây bàng: {0}",
+        "o": [
+         {
+          "dung": [
+           "lá chuyển đỏ rồi rụng"
+          ],
+          "sai": [
+           "ra lá non xanh mơn mởn",
+           "ra hoa, kết quả rộ nhất"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "46.5c",
@@ -24582,7 +26462,42 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Chu kì ngày đêm, chu kì mùa làm thay đổi các nhân tố sinh thái vô sinh và hữu sinh, nên hoạt động của sinh vật cũng mang tính chu kì, quần xã khác biệt theo chu kì ngày đêm và chu kì mùa. Vì vậy cân bằng tự nhiên không phải là trạng thái tĩnh.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "Tại sao quần xã có sự khác biệt theo chu kì ngày đêm và chu kì mùa? Từ đó cho biết, cân bằng tự nhiên có phải là trạng thái tĩnh (không thay đổi) không?",
+      "dong": [
+       {
+        "chu": "Quần xã khác biệt theo chu kì ngày đêm, chu kì mùa vì {0}",
+        "o": [
+         {
+          "dung": [
+           "ánh sáng, nhiệt độ, độ ẩm, thức ăn thay đổi theo chu kì nên hoạt động của sinh vật cũng theo chu kì"
+          ],
+          "sai": [
+           "các loài tự thay đổi hoạt động theo ý muốn, hoàn toàn không phụ thuộc vào môi trường",
+           "con người điều khiển giờ hoạt động của các loài sinh vật trong quần xã"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Cân bằng tự nhiên {0}",
+        "o": [
+         {
+          "dung": [
+           "không phải trạng thái tĩnh mà là trạng thái động, thay đổi theo môi trường"
+          ],
+          "sai": [
+           "là trạng thái tĩnh, các quần thể không bao giờ thay đổi"
+          ],
+          "hai": true
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "46.6a",
@@ -24591,14 +26506,182 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Đưa vào hệ sinh thái một loài sinh vật mới; thiên tai (động đất, núi lửa phun trào, sóng thần, lũ lụt, hạn hán, bão lớn,...); một hoặc vài loài động/thực vật bị tận diệt; phá vỡ nơi cư trú của sinh vật; ô nhiễm môi trường; số lượng một loài tăng đột ngột; thời tiết bất thường; khai thác quá mức tài nguyên sinh vật.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "O",
+      "sao": 6,
+      "hoi": "Nêu một số nguyên nhân chính gây mất cân bằng tự nhiên.\nMỗi việc sau có phải là nguyên nhân gây mất cân bằng tự nhiên không?",
+      "dong": [
+       {
+        "chu": "Đưa vào hệ sinh thái một loài sinh vật mới (loài ngoại lai): {0}",
+        "o": [
+         {
+          "dung": [
+           "Có"
+          ],
+          "sai": [
+           "Không"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Thiên tai như động đất, sóng thần, lũ lụt, hạn hán: {0}",
+        "o": [
+         {
+          "dung": [
+           "Có"
+          ],
+          "sai": [
+           "Không"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Khai thác quá mức tài nguyên sinh vật, phá rừng: {0}",
+        "o": [
+         {
+          "dung": [
+           "Có"
+          ],
+          "sai": [
+           "Không"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Số lượng của một loài tăng lên đột ngột: {0}",
+        "o": [
+         {
+          "dung": [
+           "Có"
+          ],
+          "sai": [
+           "Không"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Trồng lại rừng bằng các loài cây bản địa: {0}",
+        "o": [
+         {
+          "dung": [
+           "Không"
+          ],
+          "sai": [
+           "Có"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Xử lí nước thải trước khi đổ ra sông: {0}",
+        "o": [
+         {
+          "dung": [
+           "Không"
+          ],
+          "sai": [
+           "Có"
+          ],
+          "hai": true
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "46.6b",
      "de": "Ở địa phương nơi em sinh sống, có những biện pháp nào để hạn chế sự mất cân bằng tự nhiên?",
      "trang": 111,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 5,
+      "hoi": "Ở địa phương nơi em sinh sống, có những biện pháp nào để hạn chế sự mất cân bằng tự nhiên?\nMỗi việc sau có nên làm ở địa phương để hạn chế sự mất cân bằng tự nhiên không?",
+      "dong": [
+       {
+        "chu": "Trồng rừng, phủ xanh đất trống đồi trọc: {0}",
+        "o": [
+         {
+          "dung": [
+           "Nên làm"
+          ],
+          "sai": [
+           "Không nên"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Dùng thiên địch (như ong mắt đỏ) diệt sâu hại thay cho thuốc trừ sâu hoá học: {0}",
+        "o": [
+         {
+          "dung": [
+           "Nên làm"
+          ],
+          "sai": [
+           "Không nên"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Thả ốc bươu vàng, tôm hùm đất mua về ra ao hồ, đồng ruộng: {0}",
+        "o": [
+         {
+          "dung": [
+           "Không nên"
+          ],
+          "sai": [
+           "Nên làm"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Săn bắt chim, thú rừng để bán: {0}",
+        "o": [
+         {
+          "dung": [
+           "Không nên"
+          ],
+          "sai": [
+           "Nên làm"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Phun thật nhiều thuốc trừ sâu để diệt sạch mọi loài sâu bọ trên đồng ruộng: {0}",
+        "o": [
+         {
+          "dung": [
+           "Không nên"
+          ],
+          "sai": [
+           "Nên làm"
+          ],
+          "hai": true
+         }
+        ]
+       }
+      ]
+     }
     }
    ]
   },
@@ -24611,21 +26694,140 @@
      "de": "Lấy ví dụ minh hoạ cho các nhận định dưới đây: Môi trường bao gồm nhiều nhân tố sinh thái có tác động qua lại, sự biến đổi các nhân tố này có thể dẫn đến sự thay đổi của các nhân tố khác.",
      "trang": 112,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "Lấy ví dụ minh hoạ cho nhận định: Môi trường bao gồm nhiều nhân tố sinh thái có tác động qua lại, sự biến đổi các nhân tố này có thể dẫn đến sự thay đổi của các nhân tố khác.",
+      "dong": [
+       {
+        "chu": "Ví dụ: khi ánh sáng mặt trời chiếu mạnh, {0}",
+        "o": [
+         {
+          "dung": [
+           "nhiệt độ không khí tăng lên, độ ẩm không khí giảm xuống"
+          ],
+          "sai": [
+           "nhiệt độ không khí giảm xuống, độ ẩm không khí tăng lên",
+           "nhiệt độ và độ ẩm không khí đều không thay đổi"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Ví dụ khác: khi số lượng chuột đồng tăng, {0}",
+        "o": [
+         {
+          "dung": [
+           "rắn có nhiều thức ăn nên số lượng rắn tăng theo"
+          ],
+          "sai": [
+           "rắn bị chuột tranh hết thức ăn nên số lượng rắn giảm",
+           "số lượng rắn không liên quan gì tới số lượng chuột"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "47.1b",
      "de": "Lấy ví dụ minh hoạ cho các nhận định dưới đây: Sinh vật và môi trường có sự tác động qua lại (Các nhân tố sinh thái tác động đến sinh vật. Ngược lại, sinh vật cũng có ảnh hưởng đến các nhân tố sinh thái của môi trường).",
      "trang": 112,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "Lấy ví dụ minh hoạ cho nhận định: Sinh vật và môi trường có sự tác động qua lại (các nhân tố sinh thái tác động đến sinh vật; ngược lại, sinh vật cũng có ảnh hưởng đến các nhân tố sinh thái của môi trường).\nVí dụ về giun đất và đất:",
+      "dong": [
+       {
+        "chu": "Đất kém tơi xốp, thiếu không khí thì giun đất {0}",
+        "o": [
+         {
+          "dung": [
+           "khó hô hấp, có thể bị chết"
+          ],
+          "sai": [
+           "sống khoẻ và sinh sản nhanh hơn",
+           "không bị ảnh hưởng gì"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Ngược lại, giun đất đào hang, ăn mùn và thải phân làm đất {0}",
+        "o": [
+         {
+          "dung": [
+           "tơi xốp, thoáng khí và màu mỡ hơn"
+          ],
+          "sai": [
+           "chai cứng và bạc màu hơn",
+           "không thay đổi gì"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "47.1c",
      "de": "Lấy ví dụ minh hoạ cho các nhận định dưới đây: Cùng với sự phát triển cách mạng công nghiệp, sự tác động của con người vào thế giới tự nhiên ngày càng mạnh mẽ.",
      "trang": 112,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "hoi": "Lấy ví dụ minh hoạ cho nhận định: Cùng với sự phát triển cách mạng công nghiệp, sự tác động của con người vào thế giới tự nhiên ngày càng mạnh mẽ.",
+      "dong": [
+       {
+        "chu": "Thời kì nguyên thuỷ, con người {0}",
+        "o": [
+         {
+          "dung": [
+           "chủ yếu hái lượm, săn bắt; dùng lửa nấu ăn, sưởi ấm và đốt rừng săn thú"
+          ],
+          "sai": [
+           "dùng máy móc hiện đại để khai thác khoáng sản trên quy mô rất lớn",
+           "xây nhiều nhà máy nhiệt điện thải khói bụi ra không khí"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Thời kì công nghiệp, con người {0}",
+        "o": [
+         {
+          "dung": [
+           "dùng máy móc khai thác khoáng sản, chặt rừng, xây đô thị quy mô lớn, khí thải tăng nhanh"
+          ],
+          "sai": [
+           "chỉ hái lượm và săn bắt, chưa biết trồng trọt, chăn nuôi, chưa có máy móc",
+           "chỉ cày xới đất bằng sức người, sức trâu bò, chưa khai thác khoáng sản"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Ví dụ: đô thị, khu công nghiệp mở rộng làm {0}",
+        "o": [
+         {
+          "dung": [
+           "diện tích rừng giảm, nhiều loài như khỉ, vượn mất nơi ở"
+          ],
+          "sai": [
+           "diện tích rừng tăng, khỉ, vượn có thêm nhiều nơi ở",
+           "các loài hoang dã không bị ảnh hưởng gì"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "47.2",
@@ -24634,7 +26836,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "D",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Lựa chọn nhận định đúng trong các nhận định dưới đây.",
+      "cac": [
+       "Ô nhiễm môi trường là sự tồn tại các chất hoá học trong thành phần môi trường, gây ảnh hưởng xấu đến sức khoẻ con người, sinh vật và tự nhiên.",
+       "Ô nhiễm môi trường là sự biến đổi tính chất vật lí, hoá học trong thành phần không khí, gây ảnh hưởng xấu đến sức khoẻ con người, sinh vật và tự nhiên.",
+       "Ô nhiễm môi trường là sự biến đổi tính chất vật lí, hoá học, sinh học của thành phần môi trường, gây bệnh nguy hiểm cho con người và sinh vật.",
+       "Ô nhiễm môi trường là sự biến đổi tính chất vật lí, hoá học, sinh học của thành phần môi trường, gây ảnh hưởng xấu đến sức khoẻ con người, sinh vật và tự nhiên."
+      ],
+      "dap": "D"
+     }
     },
     {
      "ma": "47.3a",
@@ -24642,15 +26856,155 @@
      "trang": 112,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "dap_an": "Phân loại theo nguyên nhân; theo bản chất của ô nhiễm; theo thành phần của môi trường; theo tác nhân gây ô nhiễm.",
-     "loai_dap_an": "LOI_GIAI"
+     "dap_an": "Theo thành phần môi trường: ô nhiễm không khí, nước, đất. Theo nguyên nhân: ô nhiễm do thiên tai và do con người. Theo bản chất của tác nhân: ô nhiễm hoá học, vật lí, sinh học.",
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "O",
+      "sao": 5,
+      "hoi": "Nêu các cách phân loại ô nhiễm môi trường. Cho ví dụ.\nMỗi cách phân loại sau chia ô nhiễm môi trường thành những loại nào?",
+      "dong": [
+       {
+        "chu": "Theo thành phần của môi trường bị ô nhiễm: {0}",
+        "o": [
+         {
+          "dung": [
+           "ô nhiễm không khí, ô nhiễm nước, ô nhiễm đất"
+          ],
+          "sai": [
+           "ô nhiễm do thiên tai (tự nhiên) và ô nhiễm do hoạt động của con người",
+           "ô nhiễm hoá học, ô nhiễm vật lí (tiếng ồn, phóng xạ), ô nhiễm sinh học (vi sinh vật)"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Theo nguyên nhân (nguồn gốc) gây ô nhiễm: {0}",
+        "o": [
+         {
+          "dung": [
+           "ô nhiễm do thiên tai (tự nhiên) và ô nhiễm do hoạt động của con người"
+          ],
+          "sai": [
+           "ô nhiễm không khí, ô nhiễm nước, ô nhiễm đất",
+           "ô nhiễm hoá học, ô nhiễm vật lí (tiếng ồn, phóng xạ), ô nhiễm sinh học (vi sinh vật)"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Theo bản chất của tác nhân gây ô nhiễm: {0}",
+        "o": [
+         {
+          "dung": [
+           "ô nhiễm hoá học, ô nhiễm vật lí (tiếng ồn, phóng xạ), ô nhiễm sinh học (vi sinh vật)"
+          ],
+          "sai": [
+           "ô nhiễm không khí, ô nhiễm nước, ô nhiễm đất",
+           "ô nhiễm do thiên tai (tự nhiên) và ô nhiễm do hoạt động của con người"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Ví dụ: tiếng ồn lớn kéo dài từ công trường xây dựng là ô nhiễm {0}",
+        "o": [
+         {
+          "dung": [
+           "vật lí"
+          ],
+          "sai": [
+           "hoá học",
+           "sinh học"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Ví dụ: khói thải từ ống xả xe máy là ô nhiễm {0}",
+        "o": [
+         {
+          "dung": [
+           "không khí"
+          ],
+          "sai": [
+           "nước",
+           "đất"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "47.3b",
      "de": "Ở nơi em sinh sống, có những loại ô nhiễm môi trường nào có tính chất nghiêm trọng, cần được khắc phục ngay?",
      "trang": 112,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "hoi": "Ở nơi em sinh sống, có những loại ô nhiễm môi trường nào có tính chất nghiêm trọng, cần được khắc phục ngay?\nGiả sử ở nơi em sống có những hiện tượng sau. Mỗi hiện tượng thuộc loại ô nhiễm nào, và cần khắc phục thế nào?",
+      "dong": [
+       {
+        "chu": "Con kênh gần nhà có nước đen, cá chết nổi lên vì nước thải sinh hoạt, chăn nuôi đổ thẳng xuống: {0}",
+        "o": [
+         {
+          "dung": [
+           "ô nhiễm môi trường nước"
+          ],
+          "sai": [
+           "ô nhiễm môi trường không khí",
+           "ô nhiễm môi trường đất"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Giờ cao điểm, đường phố đông xe, nhiều khói bụi: {0}",
+        "o": [
+         {
+          "dung": [
+           "ô nhiễm môi trường không khí"
+          ],
+          "sai": [
+           "ô nhiễm môi trường nước",
+           "ô nhiễm môi trường đất"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Túi ni lông, vỏ chai nhựa bị chôn lẫn trong đất ruộng, lâu năm không phân huỷ: {0}",
+        "o": [
+         {
+          "dung": [
+           "ô nhiễm môi trường đất"
+          ],
+          "sai": [
+           "ô nhiễm môi trường nước",
+           "ô nhiễm môi trường không khí"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Cách khắc phục ô nhiễm ở con kênh: {0}",
+        "o": [
+         {
+          "dung": [
+           "thu gom, xử lí nước thải trước khi đổ ra kênh, nạo vét bùn thải"
+          ],
+          "sai": [
+           "đổ thêm đất, rác lấp bớt con kênh cho đỡ ô nhiễm",
+           "thả thêm thật nhiều cá vào kênh để cá làm sạch nước"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "47.4",
@@ -24659,7 +27013,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "C",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Phát biểu nào không đúng trong các phát biểu dưới đây?",
+      "cac": [
+       "Biến đổi khí hậu là sự khác nhau giữa các giá trị trung bình dài hạn (từ vài thập kỉ cho đến hàng thế kỉ) của các yếu tố khí hậu (nhiệt độ, độ ẩm, lượng mưa,...).",
+       "Biến đổi khí hậu là sự thay đổi các yếu tố của khí hậu giữa các giai đoạn (mỗi giai đoạn thường là vài thập kỉ đến vài thế kỉ).",
+       "Biến đổi khí hậu là sự biến đổi của thời tiết (nhiệt độ, độ ẩm, lượng mưa,...) trong khoảng thời gian dài (từ vài thập kỉ cho đến hàng thế kỉ).",
+       "Biến đổi khí hậu hiện nay có cả nguyên nhân tự nhiên và nguyên nhân từ những hoạt động phát triển kinh tế – xã hội của con người."
+      ],
+      "dap": "C"
+     }
     },
     {
      "ma": "47.5",
@@ -24668,7 +27034,70 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Ảnh hưởng đến sức khoẻ, đời sống con người và cả hệ sinh thái: không khí chứa khí độc (CO, CO2, SO2, NO2,...) gây hại hệ hô hấp, gây hiệu ứng nhà kính, biến đổi khí hậu; hoá chất bảo vệ thực vật dùng sai cách gây hại sức khoẻ và hệ sinh thái; chất phóng xạ gây biến đổi vật chất di truyền, phát sinh bệnh, tật di truyền; vi sinh vật gây bệnh phát triển mạnh trong chất thải không được xử lí.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "hoi": "Trình bày tác hại của ô nhiễm môi trường đối với sự sống.\nMỗi tác nhân gây ô nhiễm sau có tác hại chủ yếu nào?",
+      "dong": [
+       {
+        "chu": "Khí thải từ hoạt động công nghiệp và sinh hoạt (CO, SO₂, CO₂, NO₂,...): {0}",
+        "o": [
+         {
+          "dung": [
+           "gây hại hệ hô hấp, góp phần gây hiệu ứng nhà kính, biến đổi khí hậu"
+          ],
+          "sai": [
+           "gây biến đổi vật chất di truyền, làm phát sinh một số bệnh, tật di truyền",
+           "là nơi vi sinh vật gây bệnh cho người và động vật phát triển nhanh, mạnh"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Hoá chất bảo vệ thực vật dùng không đúng cách: {0}",
+        "o": [
+         {
+          "dung": [
+           "ngấm vào đất, nước, đọng lại trong nông sản, gây hại sức khoẻ người và cả hệ sinh thái"
+          ],
+          "sai": [
+           "gây hại hệ hô hấp, góp phần gây hiệu ứng nhà kính, biến đổi khí hậu",
+           "là nơi vi sinh vật gây bệnh cho người và động vật phát triển nhanh, mạnh"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Chất phóng xạ: {0}",
+        "o": [
+         {
+          "dung": [
+           "gây biến đổi vật chất di truyền, làm phát sinh một số bệnh, tật di truyền"
+          ],
+          "sai": [
+           "gây hại hệ hô hấp, góp phần gây hiệu ứng nhà kính, biến đổi khí hậu",
+           "là nơi vi sinh vật gây bệnh cho người và động vật phát triển nhanh, mạnh"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Rác, phân động vật, nước thải không được thu gom, xử lí: {0}",
+        "o": [
+         {
+          "dung": [
+           "là nơi vi sinh vật gây bệnh cho người và động vật phát triển nhanh, mạnh"
+          ],
+          "sai": [
+           "gây biến đổi vật chất di truyền, làm phát sinh một số bệnh, tật di truyền",
+           "không gây hại gì vì rác sẽ tự phân huỷ hết chỉ sau vài ngày"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "47.6",
@@ -24676,15 +27105,155 @@
      "trang": 113,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "dap_an": "Khai mạc ngày 5/6/1972 tại Stockholm (Thuỵ Điển), 113 quốc gia tham gia. Hội nghị thể hiện sự thức tỉnh của nhân loại về vấn đề môi trường toàn cầu, nhấn mạnh trách nhiệm của con người với biến đổi môi trường. Khái niệm \"phát triển bền vững\" hình thành: kinh tế, phát triển xã hội và bảo vệ môi trường gắn bó, hỗ trợ nhau. Ngày 5/6 được lấy làm Ngày Môi trường thế giới.",
-     "loai_dap_an": "LOI_GIAI"
+     "dap_an": "Khai mạc ngày 5/6/1972 tại Stockholm (Thuỵ Điển), 113 quốc gia tham gia. Hội nghị đánh dấu sự thức tỉnh của nhân loại về vấn đề môi trường toàn cầu, nhấn mạnh trách nhiệm của con người, đặt nền móng cho ý tưởng phát triển kinh tế, xã hội đi đôi với bảo vệ môi trường (sau này gọi là phát triển bền vững). Ngày 5/6 được lấy làm Ngày Môi trường thế giới.",
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "O",
+      "sao": 5,
+      "hoi": "Tra cứu tài liệu (sách, báo, website,...) để trình bày ngắn gọn (không quá 5 dòng) những thông tin quan trọng về Hội nghị Liên hợp quốc về Môi trường con người (Stockholm, 1972).\nChọn thông tin đúng về hội nghị này.",
+      "dong": [
+       {
+        "chu": "Thời gian, địa điểm: {0}",
+        "o": [
+         {
+          "dung": [
+           "khai mạc ngày 5/6/1972 tại Stockholm (Thuỵ Điển)"
+          ],
+          "sai": [
+           "khai mạc ngày 16/9/1972 tại Stockholm (Thuỵ Điển)",
+           "khai mạc ngày 5/6/1992 tại Rio de Janeiro (Brazil)"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Số quốc gia tham gia: {0}",
+        "o": [
+         {
+          "dung": [
+           "113"
+          ],
+          "sai": [
+           "13",
+           "193"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Ý nghĩa: {0}",
+        "o": [
+         {
+          "dung": [
+           "đánh dấu sự thức tỉnh của nhân loại về vấn đề môi trường toàn cầu và trách nhiệm của con người"
+          ],
+          "sai": [
+           "là hội nghị đầu tiên bàn về việc đưa con người lên thám hiểm Mặt Trăng",
+           "quyết định cấm hoàn toàn việc khai thác và sử dụng than đá trên toàn thế giới"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Hội nghị đặt nền móng cho ý tưởng {0}",
+        "o": [
+         {
+          "dung": [
+           "phát triển kinh tế, xã hội phải đi đôi với bảo vệ môi trường (phát triển bền vững)"
+          ],
+          "sai": [
+           "phát triển kinh tế bằng mọi giá, không cần quan tâm tới môi trường",
+           "ngừng hẳn mọi hoạt động sản xuất công nghiệp để bảo vệ môi trường"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Ngày 5/6 hằng năm được lấy làm {0}",
+        "o": [
+         {
+          "dung": [
+           "Ngày Môi trường thế giới"
+          ],
+          "sai": [
+           "Ngày Quốc tế bảo tồn tầng ozone",
+           "Ngày Nước thế giới"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "47.7a",
      "de": "Từ các biểu hiện chủ yếu của biến đổi khí hậu, hãy nêu tác động của nó đối với một số ngành và lĩnh vực chính (Hình 47.1). (Hình 47.1. Biểu hiện và tác động của biến đổi khí hậu: ô giữa ghi Biểu hiện của biến đổi khí hậu: Nhiệt độ khí quyển tăng lên; Lượng mưa thay đổi; Mực nước biển dâng; Thiên tai và hiện tượng thời tiết cực đoan (nắng nóng, giá rét, bão, lũ lụt, hạn hán,...) xảy ra càng nhiều, với độ bất thường tăng lên; mũi tên từ ô giữa chỉ tới các ngành, lĩnh vực: Tài nguyên nước, Giáo dục, Nông nghiệp, Y tế và sức khoẻ, Môi trường, Lâm nghiệp, Năng lượng, Du lịch, Giao thông, Công nghiệp.)",
      "trang": 114,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "hoi": "Từ các biểu hiện chủ yếu của biến đổi khí hậu (nhiệt độ khí quyển tăng lên; lượng mưa thay đổi; mực nước biển dâng; thiên tai và hiện tượng thời tiết cực đoan như nắng nóng, giá rét, bão, lũ lụt, hạn hán xảy ra càng nhiều, càng bất thường), hãy nêu tác động của nó đối với một số ngành và lĩnh vực chính (Hình 47.1: tài nguyên nước, giáo dục, nông nghiệp, y tế và sức khoẻ, môi trường, lâm nghiệp, năng lượng, du lịch, giao thông, công nghiệp).\nMỗi ngành, lĩnh vực sau chịu tác động nào của biến đổi khí hậu?",
+      "dong": [
+       {
+        "chu": "Nông nghiệp: {0}",
+        "o": [
+         {
+          "dung": [
+           "mùa vụ thay đổi, sâu bệnh phát triển, năng suất cây trồng giảm"
+          ],
+          "sai": [
+           "nắng nóng kéo dài, dịch bệnh như sốt xuất huyết dễ bùng phát",
+           "bão, lũ, sạt lở làm hư hỏng đường sá, cầu cống"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Y tế và sức khoẻ: {0}",
+        "o": [
+         {
+          "dung": [
+           "nắng nóng kéo dài, dịch bệnh như sốt xuất huyết dễ bùng phát"
+          ],
+          "sai": [
+           "bão, lũ, sạt lở làm hư hỏng đường sá, cầu cống",
+           "mùa vụ thay đổi, sâu bệnh phát triển, năng suất cây trồng giảm"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Giao thông: {0}",
+        "o": [
+         {
+          "dung": [
+           "bão, lũ, sạt lở làm hư hỏng đường sá, cầu cống"
+          ],
+          "sai": [
+           "nắng nóng kéo dài, dịch bệnh như sốt xuất huyết dễ bùng phát",
+           "mùa khô thiếu nước ngọt, nước biển dâng làm nước sông, giếng bị nhiễm mặn"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Tài nguyên nước: {0}",
+        "o": [
+         {
+          "dung": [
+           "mùa khô thiếu nước ngọt, nước biển dâng làm nước sông, giếng bị nhiễm mặn"
+          ],
+          "sai": [
+           "nắng nóng kéo dài, dịch bệnh như sốt xuất huyết dễ bùng phát",
+           "bão, lũ, sạt lở làm hư hỏng đường sá, cầu cống"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "47.7b",
@@ -24693,28 +27262,280 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Việt Nam có bờ biển dài, diện tích đồng bằng và đồng bằng ngập lụt rộng lớn; nằm trên đường đi của bão; hệ thống đê điều, thoát nước, thuỷ lợi chưa phát triển kịp; nhiều địa phương có rừng suy giảm về diện tích và chất lượng.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "O",
+      "sao": 6,
+      "hoi": "Tại sao Việt Nam được coi là một trong những nước chịu ảnh hưởng nặng nề của biến đổi khí hậu?\nMỗi ý sau có phải là lí do không?",
+      "dong": [
+       {
+        "chu": "Việt Nam có bờ biển dài, nhiều đồng bằng thấp, rộng, dễ bị ngập lụt: {0}",
+        "o": [
+         {
+          "dung": [
+           "Có"
+          ],
+          "sai": [
+           "Không"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Việt Nam nằm trên đường đi của bão: {0}",
+        "o": [
+         {
+          "dung": [
+           "Có"
+          ],
+          "sai": [
+           "Không"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Hệ thống đê điều, thoát nước, thuỷ lợi chưa phát triển kịp: {0}",
+        "o": [
+         {
+          "dung": [
+           "Có"
+          ],
+          "sai": [
+           "Không"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Rừng ở nhiều địa phương bị suy giảm về diện tích và chất lượng: {0}",
+        "o": [
+         {
+          "dung": [
+           "Có"
+          ],
+          "sai": [
+           "Không"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Việt Nam nằm sâu trong lục địa, cách xa biển: {0}",
+        "o": [
+         {
+          "dung": [
+           "Không"
+          ],
+          "sai": [
+           "Có"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Việt Nam nằm ở vùng cực, quanh năm băng giá: {0}",
+        "o": [
+         {
+          "dung": [
+           "Không"
+          ],
+          "sai": [
+           "Có"
+          ],
+          "hai": true
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "47.8a",
      "de": "Thu thập thông tin từ các nguồn khác nhau để trình bày về một số đặc điểm trên địa bàn tỉnh em đang sinh sống. Các biểu hiện của biến đổi khí hậu.",
      "trang": 114,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "hoi": "Thu thập thông tin từ các nguồn khác nhau để trình bày về các biểu hiện của biến đổi khí hậu trên địa bàn tỉnh em đang sinh sống.\nGiả sử em thu thập được: nhiệt độ trung bình năm của tỉnh em giai đoạn 1961 – 1990 là 23,2 °C, giai đoạn 1991 – 2020 là 24,0 °C; số ngày nắng nóng trên 35 °C mỗi năm tăng từ khoảng 15 ngày lên khoảng 30 ngày; có năm mưa lớn gây lũ, có năm hạn hán kéo dài.",
+      "dong": [
+       {
+        "chu": "Nhiệt độ trung bình năm giữa hai giai đoạn đã tăng {0}",
+        "o": [
+         {
+          "dung": [
+           "0,8 °C"
+          ],
+          "sai": [
+           "47,2 °C",
+           "8 °C"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Nhiệt độ trung bình tăng như vậy {0}",
+        "o": [
+         {
+          "dung": [
+           "là biểu hiện của biến đổi khí hậu, vì đó là giá trị trung bình của hai giai đoạn dài ba mươi năm"
+          ],
+          "sai": [
+           "không phải biến đổi khí hậu, vì đó chỉ là thời tiết nóng của một vài ngày hè",
+           "không đáng kể, vì nhiệt độ chỉ tăng chưa tới 1 °C nên không ảnh hưởng gì"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Một biểu hiện khác của biến đổi khí hậu trong số liệu trên: {0}",
+        "o": [
+         {
+          "dung": [
+           "nắng nóng nhiều ngày hơn, mưa lũ và hạn hán xảy ra bất thường hơn"
+          ],
+          "sai": [
+           "trời có mưa rào vào một buổi chiều mùa hè năm ngoái",
+           "buổi trưa nóng hơn buổi sáng sớm và buổi tối"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "47.8b",
      "de": "Thu thập thông tin từ các nguồn khác nhau để trình bày về một số đặc điểm trên địa bàn tỉnh em đang sinh sống. Tác động của biến đổi khí hậu đến một ngành (hoặc một lĩnh vực).",
      "trang": 114,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "Thu thập thông tin từ các nguồn khác nhau để trình bày về tác động của biến đổi khí hậu đến một ngành (hoặc một lĩnh vực) ở tỉnh em.\nGiả sử tỉnh em có nhiều ruộng lúa ven biển. Những năm gần đây mùa khô kéo dài hơn và nước biển dâng làm nước mặn lấn sâu vào các cánh đồng.",
+      "dong": [
+       {
+        "chu": "Tác động tới ngành trồng lúa: {0}",
+        "o": [
+         {
+          "dung": [
+           "đất nhiễm mặn, thiếu nước ngọt nên lúa chậm lớn, năng suất giảm, có nơi mất mùa"
+          ],
+          "sai": [
+           "lúa được tưới thêm nước mặn nên lớn nhanh hơn, năng suất tăng lên rõ rệt",
+           "không có tác động gì vì cây lúa sống tốt cả trong nước biển"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Nhiệt độ tăng cao kéo dài còn làm sâu bệnh hại lúa {0}",
+        "o": [
+         {
+          "dung": [
+           "phát triển mạnh hơn, nhiều lứa hơn trong năm"
+          ],
+          "sai": [
+           "biến mất hoàn toàn khỏi các cánh đồng",
+           "giảm hẳn vì sâu bệnh chỉ sống được khi trời lạnh"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "47.8c",
      "de": "Thu thập thông tin từ các nguồn khác nhau để trình bày về một số đặc điểm trên địa bàn tỉnh em đang sinh sống. Các giải pháp ứng phó với biến đổi khí hậu ở địa phương.",
      "trang": 114,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 5,
+      "hoi": "Thu thập thông tin từ các nguồn khác nhau để trình bày về các giải pháp ứng phó với biến đổi khí hậu ở địa phương em.\nMỗi việc sau có nên làm để ứng phó với biến đổi khí hậu ở địa phương không?",
+      "dong": [
+       {
+        "chu": "Xây dựng đê kiên cố, trồng rừng phòng hộ ven biển, ven sông: {0}",
+        "o": [
+         {
+          "dung": [
+           "Nên làm"
+          ],
+          "sai": [
+           "Không nên"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Chuyển sang giống cây trồng, vật nuôi phù hợp (lúa chịu mặn, tôm nước lợ): {0}",
+        "o": [
+         {
+          "dung": [
+           "Nên làm"
+          ],
+          "sai": [
+           "Không nên"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Dùng năng lượng mặt trời, tiết kiệm điện, hạn chế đốt than: {0}",
+        "o": [
+         {
+          "dung": [
+           "Nên làm"
+          ],
+          "sai": [
+           "Không nên"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Chặt rừng ngập mặn ven biển để mở rộng đầm nuôi tôm: {0}",
+        "o": [
+         {
+          "dung": [
+           "Không nên"
+          ],
+          "sai": [
+           "Nên làm"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Đốt rơm rạ ngoài đồng sau mỗi vụ gặt: {0}",
+        "o": [
+         {
+          "dung": [
+           "Không nên"
+          ],
+          "sai": [
+           "Nên làm"
+          ],
+          "hai": true
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "47.9a",
@@ -24723,7 +27544,84 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Hạn chế sử dụng năng lượng hoá thạch; cải tiến công nghệ; trồng rừng,...",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "O",
+      "sao": 5,
+      "hoi": "Ứng phó với biến đổi khí hậu gồm 2 nội dung: giảm nhẹ biến đổi khí hậu (can thiệp vào các hoạt động của con người, hạn chế sự tăng nhiệt độ khí quyển) và thích ứng với biến đổi khí hậu (hạn chế tác động của biến đổi khí hậu; tận dụng mặt tốt và hạn chế tác động tiêu cực của biến đổi khí hậu). Hình 47.2 (sơ đồ ứng phó với biến đổi khí hậu): các hoạt động của con người → biến đổi khí hậu → tác động của biến đổi khí hậu → hậu quả của biến đổi khí hậu; giảm nhẹ hướng vào các hoạt động của con người, thích ứng hướng vào tác động và hậu quả.\nQuan sát Hình 47.2, hãy nêu các biện pháp giảm nhẹ biến đổi khí hậu. Mỗi việc sau thuộc loại biện pháp nào?",
+      "dong": [
+       {
+        "chu": "Hạn chế dùng than đá, dầu mỏ; dùng năng lượng mặt trời, năng lượng gió: {0}",
+        "o": [
+         {
+          "dung": [
+           "biện pháp giảm nhẹ"
+          ],
+          "sai": [
+           "biện pháp thích ứng",
+           "không phải biện pháp ứng phó"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Cải tiến công nghệ sản xuất để giảm lượng khí thải: {0}",
+        "o": [
+         {
+          "dung": [
+           "biện pháp giảm nhẹ"
+          ],
+          "sai": [
+           "biện pháp thích ứng",
+           "không phải biện pháp ứng phó"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Trồng và bảo vệ rừng để cây hấp thụ bớt khí CO₂: {0}",
+        "o": [
+         {
+          "dung": [
+           "biện pháp giảm nhẹ"
+          ],
+          "sai": [
+           "biện pháp thích ứng",
+           "không phải biện pháp ứng phó"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Xây nhà tránh bão kiên cố: {0}",
+        "o": [
+         {
+          "dung": [
+           "biện pháp thích ứng"
+          ],
+          "sai": [
+           "biện pháp giảm nhẹ",
+           "không phải biện pháp ứng phó"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Đánh bắt thuỷ sản trong mùa nước lũ: {0}",
+        "o": [
+         {
+          "dung": [
+           "biện pháp thích ứng"
+          ],
+          "sai": [
+           "biện pháp giảm nhẹ",
+           "không phải biện pháp ứng phó"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "47.9b",
@@ -24732,7 +27630,84 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Xây dựng đê điều kiên cố; trồng rừng phòng hộ chắn sóng, chống xói lở bờ biển; nuôi tôm nước lợ; đánh bắt thuỷ sản trong mùa nước lũ; gia cố đường giao thông; xây nhà tránh bão kiên cố; làm nhà nổi,...",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "O",
+      "sao": 5,
+      "hoi": "Ứng phó với biến đổi khí hậu gồm 2 nội dung: giảm nhẹ biến đổi khí hậu (can thiệp vào các hoạt động của con người, hạn chế sự tăng nhiệt độ khí quyển) và thích ứng với biến đổi khí hậu (hạn chế tác động của biến đổi khí hậu; tận dụng mặt tốt và hạn chế tác động tiêu cực của biến đổi khí hậu). Hình 47.2 (sơ đồ ứng phó với biến đổi khí hậu): các hoạt động của con người → biến đổi khí hậu → tác động của biến đổi khí hậu → hậu quả của biến đổi khí hậu; giảm nhẹ hướng vào các hoạt động của con người, thích ứng hướng vào tác động và hậu quả.\nQuan sát Hình 47.2, hãy nêu các biện pháp thích ứng với biến đổi khí hậu. Mỗi việc sau thuộc loại biện pháp nào?",
+      "dong": [
+       {
+        "chu": "Xây dựng đê điều kiên cố: {0}",
+        "o": [
+         {
+          "dung": [
+           "biện pháp thích ứng"
+          ],
+          "sai": [
+           "biện pháp giảm nhẹ",
+           "không phải biện pháp ứng phó"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Trồng rừng phòng hộ chắn sóng, chống xói lở bờ biển: {0}",
+        "o": [
+         {
+          "dung": [
+           "biện pháp thích ứng"
+          ],
+          "sai": [
+           "biện pháp giảm nhẹ",
+           "không phải biện pháp ứng phó"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Nuôi tôm nước lợ ở vùng bị nước mặn lấn vào: {0}",
+        "o": [
+         {
+          "dung": [
+           "biện pháp thích ứng"
+          ],
+          "sai": [
+           "biện pháp giảm nhẹ",
+           "không phải biện pháp ứng phó"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Làm nhà nổi, gia cố đường giao thông ở vùng hay ngập lũ: {0}",
+        "o": [
+         {
+          "dung": [
+           "biện pháp thích ứng"
+          ],
+          "sai": [
+           "biện pháp giảm nhẹ",
+           "không phải biện pháp ứng phó"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Đi xe đạp, xe điện thay cho xe máy chạy xăng: {0}",
+        "o": [
+         {
+          "dung": [
+           "biện pháp giảm nhẹ"
+          ],
+          "sai": [
+           "biện pháp thích ứng",
+           "không phải biện pháp ứng phó"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "47.10a",
@@ -24741,14 +27716,196 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Tuyên truyền, giáo dục ý thức bảo vệ tài nguyên sinh vật trong cộng đồng; bảo vệ môi trường sống của sinh vật, thành lập khu bảo tồn thiên nhiên và vườn quốc gia; ngăn chặn săn bắn, mua bán các loài có nguy cơ tuyệt chủng; khai thác hợp lí tài nguyên sinh vật; nghiên cứu đặc điểm và sự phân bố của các loài sinh vật.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "O",
+      "sao": 6,
+      "hoi": "Trình bày các biện pháp chủ yếu bảo vệ động/thực vật hoang dã có nguy cơ tuyệt chủng ở nước ta.\nMỗi việc sau có nên làm để bảo vệ các loài động, thực vật hoang dã có nguy cơ tuyệt chủng không?",
+      "dong": [
+       {
+        "chu": "Tuyên truyền, giáo dục ý thức bảo vệ tài nguyên sinh vật trong cộng đồng: {0}",
+        "o": [
+         {
+          "dung": [
+           "Nên làm"
+          ],
+          "sai": [
+           "Không nên"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Bảo vệ môi trường sống của sinh vật, thành lập khu bảo tồn thiên nhiên, vườn quốc gia: {0}",
+        "o": [
+         {
+          "dung": [
+           "Nên làm"
+          ],
+          "sai": [
+           "Không nên"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Ngăn chặn việc săn bắn, mua bán các loài có nguy cơ tuyệt chủng: {0}",
+        "o": [
+         {
+          "dung": [
+           "Nên làm"
+          ],
+          "sai": [
+           "Không nên"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Nghiên cứu đặc điểm và sự phân bố của các loài sinh vật: {0}",
+        "o": [
+         {
+          "dung": [
+           "Nên làm"
+          ],
+          "sai": [
+           "Không nên"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Mua đồ trang sức làm từ ngà voi, sừng tê giác: {0}",
+        "o": [
+         {
+          "dung": [
+           "Không nên"
+          ],
+          "sai": [
+           "Nên làm"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Bắt chim, thú quý hiếm về nhà nuôi làm cảnh: {0}",
+        "o": [
+         {
+          "dung": [
+           "Không nên"
+          ],
+          "sai": [
+           "Nên làm"
+          ],
+          "hai": true
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "47.10b",
      "de": "Kể tên một số loài động vật, thực vật ở nước ta có nguy cơ tuyệt chủng.",
      "trang": 114,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 6,
+      "hoi": "Kể tên một số loài động vật, thực vật ở nước ta có nguy cơ tuyệt chủng.\nMỗi loài sau có đang có nguy cơ tuyệt chủng ở nước ta không?",
+      "dong": [
+       {
+        "chu": "Hổ Đông Dương: {0}",
+        "o": [
+         {
+          "dung": [
+           "đang có nguy cơ tuyệt chủng"
+          ],
+          "sai": [
+           "không có nguy cơ tuyệt chủng"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Voọc mũi hếch: {0}",
+        "o": [
+         {
+          "dung": [
+           "đang có nguy cơ tuyệt chủng"
+          ],
+          "sai": [
+           "không có nguy cơ tuyệt chủng"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Cây dó bầu (cây cho trầm hương): {0}",
+        "o": [
+         {
+          "dung": [
+           "đang có nguy cơ tuyệt chủng"
+          ],
+          "sai": [
+           "không có nguy cơ tuyệt chủng"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Chim sẻ nhà: {0}",
+        "o": [
+         {
+          "dung": [
+           "không có nguy cơ tuyệt chủng"
+          ],
+          "sai": [
+           "đang có nguy cơ tuyệt chủng"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Cây bạch đàn trồng lấy gỗ: {0}",
+        "o": [
+         {
+          "dung": [
+           "không có nguy cơ tuyệt chủng"
+          ],
+          "sai": [
+           "đang có nguy cơ tuyệt chủng"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Nhiều loài có nguy cơ tuyệt chủng chủ yếu do {0}",
+        "o": [
+         {
+          "dung": [
+           "bị săn bắt, khai thác quá mức và mất nơi sống vì rừng bị phá"
+          ],
+          "sai": [
+           "chúng sinh sản quá nhanh nên thiếu thức ăn",
+           "khí hậu nước ta quá lạnh, chúng không sống được"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     }
    ]
   }
