@@ -1,5 +1,6 @@
 package vn.huytl.homeworkgate
 
+import android.content.ContentValues
 import android.content.Context
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
@@ -30,7 +31,9 @@ import vn.huytl.homeworkgate.kho.PhanHoc
  *
  * Luc viet test SGK chua co cau nao soan ban phim ghep, nen phan lam tren may muon cau SBT (co
  * ghep) dat vao de mang nguon SGK; cach dung de khong xet cau thuoc quyen nao. Cau phai viet la
- * cau SGK that (chua co ghep).
+ * cau SGK that (chua co ghep). Tu 6/10/2026 moi cau SGK Toan tap mot deu co ghep (anh Huy chot
+ * tranh viet tay nhieu nhat co the, cau ve thanh cau chon hinh), nen het cau phai viet that thi
+ * test tu tam xoa ghep cua mot cau trong kho, tearDown tra lai (xem [cauPhaiViet]).
  *
  * Don dep nhu [GiaiDeTest]: xoa de da tao va dong so cai cua cac cau da ghi, khong xoa ca so cai.
  * Tra lai moc bai da hoc, quy gio; dong phieu gio va bo phut giu toi sang ([CongSang]) vi nop de
@@ -45,6 +48,8 @@ class BaiSgkTest {
     private var quyCu = 0
     private val deDaTao = mutableListOf<String>()
     private val cauDaGhi = mutableListOf<String>()
+    /** Cau ma test tam xoa ghep de lam cau phai viet: id -> ghep cu, tearDown ghi lai. */
+    private val ghepCu = mutableMapOf<String, String>()
 
     private val gio = 60 * 60_000L
 
@@ -63,6 +68,7 @@ class BaiSgkTest {
     @After
     fun tearDown() {
         deDaTao.forEach { kho.xoaDe(it) }
+        ghepCu.forEach { (id, g) -> datGhep(id, g) }
         cauDaGhi.forEach { kho.writableDatabase.delete("tra_loi", "cau_id = ?", arrayOf(it)) }
         MocThu.tra(context, mocCu)
         Prefs.get(context).quyGio = quyCu
@@ -75,9 +81,23 @@ class BaiSgkTest {
     /** Hai cau lam duoc tren may, chua lam lan nao (cau moi cua Luyen tap). */
     private fun haiCauTrenMay(): List<LamTrenMay.Muc> = LamTrenMay.cauLamThem(context, "Toán").take(2)
 
-    /** Mot cau SGK chua co ban phim ghep: cau phai viet. */
-    private fun cauPhaiViet(): CauHoi =
-        kho.cacCauCuaNguon(sgk.nguon).first { LamTrenMay.muc(context, it) == null }
+    /**
+     * Mot cau SGK chua co ban phim ghep: cau phai viet. Con cau that thi dung cau that; het roi
+     * (tu 6/10/2026 SGK Toan tap mot khong con cau nao) thi tam xoa ghep cua cau cuoi quyen, xa
+     * cac bai dau ma [haiCauTrenMay] lay.
+     */
+    private fun cauPhaiViet(): CauHoi {
+        val cac = kho.cacCauCuaNguon(sgk.nguon)
+        cac.firstOrNull { LamTrenMay.muc(context, it) == null }?.let { return it }
+        val c = cac.last()
+        ghepCu[c.id] = c.ghep
+        datGhep(c.id, "")
+        return kho.cauTheoId(c.id) ?: error("khong doc lai duoc cau ${c.id}")
+    }
+
+    private fun datGhep(id: String, ghep: String) {
+        kho.writableDatabase.update("cau_hoi", ContentValues().apply { put("ghep", ghep) }, "id = ?", arrayOf(id))
+    }
 
     private fun tao(ids: List<String>) =
         GiaiDe.taoBaiSgk(context, sgk, listOf("Bài 1. Đơn thức"), ids)?.also { deDaTao += it.id }
