@@ -2,7 +2,7 @@
  "nguon": "toan8t2",
  "mon": "Toán",
  "ten": "SGK Toán 8 — tập hai",
- "ban": 5,
+ "ban": 6,
  "cac_bai": [
   {
    "chuong": "Chương VI. Phân thức đại số",
@@ -7385,35 +7385,306 @@
      "trang": 60,
      "nhom": "Luyện tập",
      "dang": "CAU_NHO",
-     "de": "Chọn ngẫu nhiên một chữ cái trong cụm từ \"TOÁN HỌC VÀ TUỔI TRẺ\". Liệt kê tất cả các kết quả có thể của hành động này."
+     "de": "Chọn ngẫu nhiên một chữ cái trong cụm từ \"TOÁN HỌC VÀ TUỔI TRẺ\". Liệt kê tất cả các kết quả có thể của hành động này.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "Chọn ngẫu nhiên một chữ cái trong cụm từ \"TOÁN HỌC VÀ TUỔI TRẺ\". Liệt kê tất cả các kết quả có thể của hành động này.",
+      "dong": [
+       {
+        "chu": "Các kết quả có thể: {0}",
+        "o": [
+         {
+          "dung": [
+           "T, O, A, N, H, C, V, U, Ô, I, R, E"
+          ],
+          "sai": [
+           "T, O, Á, N, H, Ọ, C, V, À, U, Ổ, I, R, Ẻ",
+           "T, O, A, N, H, C, V, U, I, R, E",
+           "T, O, A, N, H, O, C, V, A, T, U, Ô, I, T, R, E"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Số kết quả có thể: {0}",
+        "o": [
+         {
+          "dung": [
+           "12"
+          ],
+          "sai": [
+           "14",
+           "11",
+           "16"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "Luyện tập 2 (tr.62)",
      "trang": 62,
      "nhom": "Luyện tập",
      "dang": "CAU_NHO",
-     "de": "Trở lại Ví dụ 2 (đội văn nghệ khối 8 có 4 bạn nam lớp 8A là A1, A2, A3, A4; 5 bạn nữ lớp 8B là B1,..., B5; 3 bạn nam lớp 8C là C1, C2, C3; 2 bạn nữ lớp 8D là D1, D2; chọn ngẫu nhiên một bạn), hãy liệt kê các kết quả thuận lợi cho các biến cố sau: G: \"Chọn được một bạn nam\"; H: \"Chọn được một bạn lớp 8C hoặc 8D\"."
+     "de": "Trở lại Ví dụ 2 (đội văn nghệ khối 8 có 4 bạn nam lớp 8A là A1, A2, A3, A4; 5 bạn nữ lớp 8B là B1,..., B5; 3 bạn nam lớp 8C là C1, C2, C3; 2 bạn nữ lớp 8D là D1, D2; chọn ngẫu nhiên một bạn), hãy liệt kê các kết quả thuận lợi cho các biến cố sau: G: \"Chọn được một bạn nam\"; H: \"Chọn được một bạn lớp 8C hoặc 8D\".",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "Đội văn nghệ khối 8 của một trường Trung học cơ sở có 14 bạn, trong đó có 4 bạn nam lớp 8A, 5 bạn nữ lớp 8B, 3 bạn nam lớp 8C và 2 bạn nữ lớp 8D. Chọn ngẫu nhiên một bạn trong đội văn nghệ. Kí hiệu 4 bạn nam lớp 8A là A1, A2, A3, A4; 5 bạn nữ lớp 8B là B1, B2, B3, B4, B5; 3 bạn nam lớp 8C là C1, C2, C3; 2 bạn nữ lớp 8D là D1, D2.\nHãy liệt kê các kết quả thuận lợi cho các biến cố sau:\nG: \"Chọn được một bạn nam\";\nH: \"Chọn được một bạn lớp 8C hoặc 8D\".",
+      "dong": [
+       {
+        "chu": "G: {0}",
+        "o": [
+         {
+          "dung": [
+           "A1, A2, A3, A4, C1, C2, C3"
+          ],
+          "sai": [
+           "A1, A2, A3, A4",
+           "B1, B2, B3, B4, B5, D1, D2",
+           "C1, C2, C3"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "H: {0}",
+        "o": [
+         {
+          "dung": [
+           "C1, C2, C3, D1, D2"
+          ],
+          "sai": [
+           "C1, C2, C3",
+           "D1, D2",
+           "Không có kết quả thuận lợi nào"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "8.1",
      "trang": 62,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Vuông thực nghiệm gieo một con xúc xắc. a) Liệt kê các kết quả có thể của thực nghiệm trên. b) Liệt kê các kết quả thuận lợi cho các biến cố sau: A: \"Số chấm xuất hiện trên con xúc xắc là hợp số\"; B: \"Số chấm xuất hiện trên con xúc xắc nhỏ hơn 5\"; C: \"Số chấm xuất hiện trên con xúc xắc là số lẻ\"."
+     "de": "Vuông thực nghiệm gieo một con xúc xắc. a) Liệt kê các kết quả có thể của thực nghiệm trên. b) Liệt kê các kết quả thuận lợi cho các biến cố sau: A: \"Số chấm xuất hiện trên con xúc xắc là hợp số\"; B: \"Số chấm xuất hiện trên con xúc xắc nhỏ hơn 5\"; C: \"Số chấm xuất hiện trên con xúc xắc là số lẻ\".",
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "hoi": "Vuông thực nghiệm gieo một con xúc xắc.\na) Liệt kê các kết quả có thể của thực nghiệm trên.\nb) Liệt kê các kết quả thuận lợi cho các biến cố sau:\nA: \"Số chấm xuất hiện trên con xúc xắc là hợp số\";\nB: \"Số chấm xuất hiện trên con xúc xắc nhỏ hơn 5\";\nC: \"Số chấm xuất hiện trên con xúc xắc là số lẻ\".",
+      "dong": [
+       {
+        "chu": "a) Các kết quả có thể: {0}",
+        "o": [
+         {
+          "dung": [
+           "1; 2; 3; 4; 5; 6"
+          ],
+          "sai": [
+           "0; 1; 2; 3; 4; 5; 6",
+           "1; 3; 5"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "b) A: {0}",
+        "o": [
+         {
+          "dung": [
+           "4; 6"
+          ],
+          "sai": [
+           "2; 4; 6",
+           "1; 4; 6",
+           "2; 3; 5"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "B: {0}",
+        "o": [
+         {
+          "dung": [
+           "1; 2; 3; 4"
+          ],
+          "sai": [
+           "1; 2; 3; 4; 5",
+           "2; 3; 4",
+           "5; 6"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "C: {0}",
+        "o": [
+         {
+          "dung": [
+           "1; 3; 5"
+          ],
+          "sai": [
+           "3; 5",
+           "2; 4; 6",
+           "1; 3; 5; 6"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "8.2",
      "trang": 62,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Một hộp đựng 12 tấm thẻ, được ghi số 1; 2;...; 12. Bạn Nam rút ngẫu nhiên một tấm thẻ từ trong hộp. a) Liệt kê các kết quả có thể của hành động trên. b) Liệt kê các kết quả thuận lợi cho các biến cố sau: A: \"Rút được tấm thẻ ghi số chẵn\"; B: \"Rút được tấm thẻ ghi số nguyên tố\"; C: \"Rút được tấm thẻ ghi số chính phương\"."
+     "de": "Một hộp đựng 12 tấm thẻ, được ghi số 1; 2;...; 12. Bạn Nam rút ngẫu nhiên một tấm thẻ từ trong hộp. a) Liệt kê các kết quả có thể của hành động trên. b) Liệt kê các kết quả thuận lợi cho các biến cố sau: A: \"Rút được tấm thẻ ghi số chẵn\"; B: \"Rút được tấm thẻ ghi số nguyên tố\"; C: \"Rút được tấm thẻ ghi số chính phương\".",
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "hoi": "Một hộp đựng 12 tấm thẻ, được ghi số 1; 2; ...; 12. Bạn Nam rút ngẫu nhiên một tấm thẻ từ trong hộp.\na) Liệt kê các kết quả có thể của hành động trên.\nb) Liệt kê các kết quả thuận lợi cho các biến cố sau:\nA: \"Rút được tấm thẻ ghi số chẵn\";\nB: \"Rút được tấm thẻ ghi số nguyên tố\";\nC: \"Rút được tấm thẻ ghi số chính phương\".",
+      "dong": [
+       {
+        "chu": "a) Các kết quả có thể: {0}",
+        "o": [
+         {
+          "dung": [
+           "1; 2; 3; 4; 5; 6; 7; 8; 9; 10; 11; 12"
+          ],
+          "sai": [
+           "0; 1; 2; 3; 4; 5; 6; 7; 8; 9; 10; 11; 12",
+           "2; 4; 6; 8; 10; 12"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "b) A: {0}",
+        "o": [
+         {
+          "dung": [
+           "2; 4; 6; 8; 10; 12"
+          ],
+          "sai": [
+           "2; 4; 6; 8; 10",
+           "1; 3; 5; 7; 9; 11",
+           "4; 6; 8; 10; 12"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "B: {0}",
+        "o": [
+         {
+          "dung": [
+           "2; 3; 5; 7; 11"
+          ],
+          "sai": [
+           "1; 2; 3; 5; 7; 11",
+           "3; 5; 7; 11",
+           "2; 3; 5; 7; 9; 11"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "C: {0}",
+        "o": [
+         {
+          "dung": [
+           "1; 4; 9"
+          ],
+          "sai": [
+           "4; 9",
+           "1; 4; 8; 9",
+           "1; 4; 9; 16"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "8.3",
      "trang": 62,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Bạn An có 16 cuốn sách khác nhau, trong đó có 4 cuốn sách tiểu thuyết, 5 cuốn sách Lịch sử, 3 cuốn sách Khoa học tự nhiên và 4 cuốn sách Toán. Các cuốn sách này được xếp tuỳ ý trong tủ sách. Bạn Bình đến chơi và lấy ngẫu nhiên một cuốn sách trong tủ sách của An. a) Liệt kê các kết quả có thể của hành động trên. b) Liệt kê các kết quả thuận lợi cho các biến cố sau: E: \"Bình lấy được một cuốn sách tiểu thuyết\"; F: \"Bình lấy được một cuốn sách Khoa học tự nhiên hoặc cuốn sách Toán\"; G: \"Bình lấy được một cuốn sách không phải là sách Lịch sử\"."
+     "de": "Bạn An có 16 cuốn sách khác nhau, trong đó có 4 cuốn sách tiểu thuyết, 5 cuốn sách Lịch sử, 3 cuốn sách Khoa học tự nhiên và 4 cuốn sách Toán. Các cuốn sách này được xếp tuỳ ý trong tủ sách. Bạn Bình đến chơi và lấy ngẫu nhiên một cuốn sách trong tủ sách của An. a) Liệt kê các kết quả có thể của hành động trên. b) Liệt kê các kết quả thuận lợi cho các biến cố sau: E: \"Bình lấy được một cuốn sách tiểu thuyết\"; F: \"Bình lấy được một cuốn sách Khoa học tự nhiên hoặc cuốn sách Toán\"; G: \"Bình lấy được một cuốn sách không phải là sách Lịch sử\".",
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "hoi": "Bạn An có 16 cuốn sách khác nhau, trong đó có 4 cuốn sách tiểu thuyết, 5 cuốn sách Lịch sử, 3 cuốn sách Khoa học tự nhiên và 4 cuốn sách Toán. Các cuốn sách này được xếp tuỳ ý trong tủ sách. Bạn Bình đến chơi và lấy ngẫu nhiên một cuốn sách trong tủ sách của An. Kí hiệu 4 cuốn sách tiểu thuyết là A1, A2, A3, A4; 5 cuốn sách Lịch sử là B1, B2, B3, B4, B5; 3 cuốn sách Khoa học tự nhiên là C1, C2, C3; 4 cuốn sách Toán là D1, D2, D3, D4.\na) Liệt kê các kết quả có thể của hành động trên.\nb) Liệt kê các kết quả thuận lợi cho các biến cố sau:\nE: \"Bình lấy được một cuốn sách tiểu thuyết\";\nF: \"Bình lấy được một cuốn sách Khoa học tự nhiên hoặc cuốn sách Toán\";\nG: \"Bình lấy được một cuốn sách không phải là sách Lịch sử\".",
+      "dong": [
+       {
+        "chu": "a) Các kết quả có thể: {0}",
+        "o": [
+         {
+          "dung": [
+           "A1, A2, A3, A4, B1, B2, B3, B4, B5, C1, C2, C3, D1, D2, D3, D4"
+          ],
+          "sai": [
+           "tiểu thuyết, Lịch sử, Khoa học tự nhiên, Toán",
+           "A1, A2, A3, A4, C1, C2, C3, D1, D2, D3, D4"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "b) E: {0}",
+        "o": [
+         {
+          "dung": [
+           "A1, A2, A3, A4"
+          ],
+          "sai": [
+           "A1",
+           "B1, B2, B3, B4, B5"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "F: {0}",
+        "o": [
+         {
+          "dung": [
+           "C1, C2, C3, D1, D2, D3, D4"
+          ],
+          "sai": [
+           "C1, C2, C3",
+           "D1, D2, D3, D4",
+           "Không có kết quả thuận lợi nào"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "G: {0}",
+        "o": [
+         {
+          "dung": [
+           "A1, A2, A3, A4, C1, C2, C3, D1, D2, D3, D4"
+          ],
+          "sai": [
+           "B1, B2, B3, B4, B5",
+           "A1, A2, A3, A4",
+           "C1, C2, C3, D1, D2, D3, D4"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     }
    ]
   },
@@ -7426,42 +7697,166 @@
      "trang": 64,
      "nhom": "Luyện tập",
      "dang": "CAU_NHO",
-     "de": "Trở lại tình huống mở đầu (túi đựng 20 viên kẹo giống hệt nhau nhưng khác loại, gồm 7 viên kẹo sữa, 4 viên kẹo chanh, 6 viên kẹo dừa và 3 viên kẹo bạc hà; Lan lấy ngẫu nhiên một viên kẹo từ túi). Tính xác suất để Lan lấy được: a) Viên kẹo sữa; b) Viên kẹo chanh."
+     "de": "Trở lại tình huống mở đầu (túi đựng 20 viên kẹo giống hệt nhau nhưng khác loại, gồm 7 viên kẹo sữa, 4 viên kẹo chanh, 6 viên kẹo dừa và 3 viên kẹo bạc hà; Lan lấy ngẫu nhiên một viên kẹo từ túi). Tính xác suất để Lan lấy được: a) Viên kẹo sữa; b) Viên kẹo chanh.",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "hoi": "Một túi đựng 20 viên kẹo giống hệt nhau nhưng khác loại, trong đó có 7 viên kẹo sữa, 4 viên kẹo chanh, 6 viên kẹo dừa và 3 viên kẹo bạc hà. Bạn Lan lấy ngẫu nhiên một viên kẹo từ túi. Tính xác suất để Lan lấy được:\na) Viên kẹo sữa;\nb) Viên kẹo chanh.\n(Gõ xác suất của các ý theo thứ tự a, b, mỗi xác suất là một phân số tối giản, cách nhau bằng dấu ;)",
+      "dap": [
+       "7/20;1/5",
+       "7/20;0,2",
+       "0,35;1/5",
+       "0,35;0,2"
+      ],
+      "phim": [
+       ";"
+      ],
+      "nhieu": [
+       "x"
+      ],
+      "loi_giai": [
+       "Số kết quả có thể (đồng khả năng) = 7 + 4 + 6 + 3 = 20",
+       "a) Có 7 kết quả thuận lợi; xác suất để Lan lấy được viên kẹo sữa = 7/20",
+       "b) Có 4 kết quả thuận lợi; xác suất để Lan lấy được viên kẹo chanh = 4/20 = 1/5"
+      ]
+     }
     },
     {
      "ma": "Luyện tập 2 (tr.65)",
      "trang": 65,
      "nhom": "Luyện tập",
      "dang": "CAU_NHO",
-     "de": "Trên giá sách của thư viện có 15 cuốn sách, trong đó có một số cuốn tiểu thuyết. Người thủ thư đặt thêm 5 cuốn tiểu thuyết thư viện mới mua vào giá sách. Bạn Nam đến mượn sách, chọn ngẫu nhiên một cuốn sách trên giá. Biết rằng xác suất để chọn được cuốn tiểu thuyết là 3/4. Hỏi lúc đầu trên giá sách có bao nhiêu cuốn tiểu thuyết?"
+     "de": "Trên giá sách của thư viện có 15 cuốn sách, trong đó có một số cuốn tiểu thuyết. Người thủ thư đặt thêm 5 cuốn tiểu thuyết thư viện mới mua vào giá sách. Bạn Nam đến mượn sách, chọn ngẫu nhiên một cuốn sách trên giá. Biết rằng xác suất để chọn được cuốn tiểu thuyết là 3/4. Hỏi lúc đầu trên giá sách có bao nhiêu cuốn tiểu thuyết?",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "dap": [
+       "10",
+       "x=10"
+      ],
+      "phim": [
+       "x"
+      ],
+      "nhieu": [
+       "y"
+      ],
+      "loi_giai": [
+       "Gọi x là số cuốn tiểu thuyết lúc đầu. Số cuốn sách trên giá lúc sau = 15 + 5 = 20",
+       "Có x + 5 cuốn tiểu thuyết trong 20 cuốn sách; (x + 5)/20 = 3/4",
+       "4(x + 5) = 20 · 3 ⇔ 4x + 20 = 60 ⇔ 4x = 40",
+       "x = 10"
+      ]
+     }
     },
     {
      "ma": "8.4",
      "trang": 66,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Một tấm bìa cứng hình tròn được chia thành 20 hình quạt như nhau, đánh số 1; 2;...; 20 và được gắn vào trục quay có mũi tên cố định ở tâm (Hình 8.2). Quay tấm bìa và quan sát xem mũi tên chỉ vào hình quạt nào khi tấm bìa dừng lại. Tính xác suất để mũi tên: a) Chỉ vào hình quạt ghi số chia hết cho 4. b) Chỉ vào hình quạt ghi số không phải là số nguyên tố."
+     "de": "Một tấm bìa cứng hình tròn được chia thành 20 hình quạt như nhau, đánh số 1; 2;...; 20 và được gắn vào trục quay có mũi tên cố định ở tâm (Hình 8.2). Quay tấm bìa và quan sát xem mũi tên chỉ vào hình quạt nào khi tấm bìa dừng lại. Tính xác suất để mũi tên: a) Chỉ vào hình quạt ghi số chia hết cho 4. b) Chỉ vào hình quạt ghi số không phải là số nguyên tố.",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "hoi": "Một tấm bìa cứng hình tròn được chia thành 20 hình quạt như nhau, đánh số 1; 2; ...; 20 và được gắn vào trục quay có mũi tên cố định ở tâm. Quay tấm bìa và quan sát xem mũi tên chỉ vào hình quạt nào khi tấm bìa dừng lại. Tính xác suất để mũi tên:\na) Chỉ vào hình quạt ghi số chia hết cho 4.\nb) Chỉ vào hình quạt ghi số không phải là số nguyên tố.\n(Gõ xác suất của các ý theo thứ tự a, b, mỗi xác suất là một phân số tối giản, cách nhau bằng dấu ;)",
+      "dap": [
+       "1/4;3/5",
+       "1/4;0,6",
+       "0,25;3/5",
+       "0,25;0,6"
+      ],
+      "phim": [
+       ";"
+      ],
+      "nhieu": [
+       "x"
+      ],
+      "loi_giai": [
+       "Có 20 kết quả có thể, đồng khả năng vì 20 hình quạt như nhau",
+       "a) Các số chia hết cho 4: 4; 8; 12; 16; 20, có 5 kết quả thuận lợi; xác suất = 5/20 = 1/4",
+       "b) Từ 1 đến 20 có 8 số nguyên tố là 2; 3; 5; 7; 11; 13; 17; 19, nên số kết quả thuận lợi = 20 − 8 = 12; xác suất = 12/20 = 3/5"
+      ]
+     }
     },
     {
      "ma": "8.5",
      "trang": 66,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Một túi đựng các viên kẹo giống hệt nhau, chỉ khác màu, trong đó có 5 viên kẹo màu đen, 3 viên kẹo màu đỏ, 7 viên kẹo màu trắng. Lấy ngẫu nhiên một viên kẹo trong túi. Tính xác suất của các biến cố sau: a) E: \"Lấy được viên kẹo màu đen\"; b) F: \"Lấy được viên kẹo màu đen hoặc màu đỏ\"; c) G: \"Lấy được viên kẹo màu trắng\"; d) H: \"Không lấy được viên kẹo màu đỏ\"."
+     "de": "Một túi đựng các viên kẹo giống hệt nhau, chỉ khác màu, trong đó có 5 viên kẹo màu đen, 3 viên kẹo màu đỏ, 7 viên kẹo màu trắng. Lấy ngẫu nhiên một viên kẹo trong túi. Tính xác suất của các biến cố sau: a) E: \"Lấy được viên kẹo màu đen\"; b) F: \"Lấy được viên kẹo màu đen hoặc màu đỏ\"; c) G: \"Lấy được viên kẹo màu trắng\"; d) H: \"Không lấy được viên kẹo màu đỏ\".",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 5,
+      "hoi": "Một túi đựng các viên kẹo giống hệt nhau, chỉ khác màu, trong đó có 5 viên kẹo màu đen, 3 viên kẹo màu đỏ, 7 viên kẹo màu trắng. Lấy ngẫu nhiên một viên kẹo trong túi. Tính xác suất của các biến cố sau:\na) E: \"Lấy được viên kẹo màu đen\";\nb) F: \"Lấy được viên kẹo màu đen hoặc màu đỏ\";\nc) G: \"Lấy được viên kẹo màu trắng\";\nd) H: \"Không lấy được viên kẹo màu đỏ\".\n(Gõ xác suất của các ý theo thứ tự a, b, c, d, mỗi xác suất là một phân số tối giản, cách nhau bằng dấu ;)",
+      "dap": [
+       "1/3;8/15;7/15;4/5",
+       "1/3;8/15;7/15;0,8"
+      ],
+      "phim": [
+       ";"
+      ],
+      "nhieu": [
+       "x"
+      ],
+      "loi_giai": [
+       "Số kết quả có thể = 5 + 3 + 7 = 15",
+       "a) P(E) = 5/15 = 1/3",
+       "b) Số kết quả thuận lợi cho F = 5 + 3 = 8; P(F) = 8/15",
+       "c) Có 7 viên kẹo màu trắng; P(G) = 7/15",
+       "d) Số kết quả thuận lợi cho H = 5 + 7 = 12; P(H) = 12/15 = 4/5"
+      ]
+     }
     },
     {
      "ma": "8.6",
      "trang": 66,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Trong một chiếc hộp có 15 tấm thẻ giống nhau được đánh số 10; 11;...; 24. Rút ngẫu nhiên một tấm thẻ từ trong hộp. Tính xác suất của các biến cố sau: a) A: \"Rút được tấm thẻ ghi số lẻ\"; b) B: \"Rút được tấm thẻ ghi số nguyên tố\"."
+     "de": "Trong một chiếc hộp có 15 tấm thẻ giống nhau được đánh số 10; 11;...; 24. Rút ngẫu nhiên một tấm thẻ từ trong hộp. Tính xác suất của các biến cố sau: a) A: \"Rút được tấm thẻ ghi số lẻ\"; b) B: \"Rút được tấm thẻ ghi số nguyên tố\".",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "hoi": "Trong một chiếc hộp có 15 tấm thẻ giống nhau được đánh số 10; 11; ...; 24. Rút ngẫu nhiên một tấm thẻ từ trong hộp. Tính xác suất của các biến cố sau:\na) A: \"Rút được tấm thẻ ghi số lẻ\";\nb) B: \"Rút được tấm thẻ ghi số nguyên tố\".\n(Gõ xác suất của các ý theo thứ tự a, b, mỗi xác suất là một phân số tối giản, cách nhau bằng dấu ;)",
+      "dap": [
+       "7/15;1/3"
+      ],
+      "phim": [
+       ";"
+      ],
+      "nhieu": [
+       "x"
+      ],
+      "loi_giai": [
+       "Có 15 kết quả có thể (các số từ 10 đến 24), đồng khả năng",
+       "a) Các số lẻ: 11; 13; 15; 17; 19; 21; 23, có 7 kết quả thuận lợi; P(A) = 7/15",
+       "b) Các số nguyên tố: 11; 13; 17; 19; 23, có 5 kết quả thuận lợi; P(B) = 5/15 = 1/3"
+      ]
+     }
     },
     {
      "ma": "8.7",
      "trang": 66,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Trò chơi vòng quay may mắn. Một bánh xe hình tròn được chia thành 12 hình quạt như nhau, trong đó có 2 hình quạt ghi 100 điểm, 2 hình quạt ghi 200 điểm, 2 hình quạt ghi 300 điểm, 2 hình quạt ghi 400 điểm, 1 hình quạt ghi 500 điểm, 2 hình quạt ghi 1 000 điểm, 1 hình quạt ghi 2 000 điểm (Hình 8.3). Ở mỗi lượt, người chơi quay bánh xe. Mũi tên cố định gắn trên vành bánh xe dừng ở hình quạt nào thì người chơi nhận được số điểm ghi trên hình quạt đó. Bạn Lan chơi trò chơi này. Tính xác suất của các biến cố sau: a) A: \"Trong một lượt quay, Lan được 400 điểm\"; b) B: \"Trong một lượt quay, Lan được ít nhất 500 điểm\"."
+     "de": "Trò chơi vòng quay may mắn. Một bánh xe hình tròn được chia thành 12 hình quạt như nhau, trong đó có 2 hình quạt ghi 100 điểm, 2 hình quạt ghi 200 điểm, 2 hình quạt ghi 300 điểm, 2 hình quạt ghi 400 điểm, 1 hình quạt ghi 500 điểm, 2 hình quạt ghi 1 000 điểm, 1 hình quạt ghi 2 000 điểm (Hình 8.3). Ở mỗi lượt, người chơi quay bánh xe. Mũi tên cố định gắn trên vành bánh xe dừng ở hình quạt nào thì người chơi nhận được số điểm ghi trên hình quạt đó. Bạn Lan chơi trò chơi này. Tính xác suất của các biến cố sau: a) A: \"Trong một lượt quay, Lan được 400 điểm\"; b) B: \"Trong một lượt quay, Lan được ít nhất 500 điểm\".",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "hoi": "Trò chơi vòng quay may mắn. Một bánh xe hình tròn được chia thành 12 hình quạt như nhau, trong đó có 2 hình quạt ghi 100 điểm, 2 hình quạt ghi 200 điểm, 2 hình quạt ghi 300 điểm, 2 hình quạt ghi 400 điểm, 1 hình quạt ghi 500 điểm, 2 hình quạt ghi 1 000 điểm, 1 hình quạt ghi 2 000 điểm. Ở mỗi lượt, người chơi quay bánh xe. Mũi tên cố định gắn trên vành bánh xe dừng ở hình quạt nào thì người chơi nhận được số điểm ghi trên hình quạt đó. Bạn Lan chơi trò chơi này. Tính xác suất của các biến cố sau:\na) A: \"Trong một lượt quay, Lan được 400 điểm\";\nb) B: \"Trong một lượt quay, Lan được ít nhất 500 điểm\".\n(Gõ xác suất của các ý theo thứ tự a, b, mỗi xác suất là một phân số tối giản, cách nhau bằng dấu ;)",
+      "dap": [
+       "1/6;1/3"
+      ],
+      "phim": [
+       ";"
+      ],
+      "nhieu": [
+       "x"
+      ],
+      "loi_giai": [
+       "Có 12 kết quả có thể, đồng khả năng vì 12 hình quạt như nhau",
+       "a) Có 2 hình quạt ghi 400 điểm; P(A) = 2/12 = 1/6",
+       "b) Số hình quạt ghi ít nhất 500 điểm = 1 + 2 + 1 = 4; P(B) = 4/12 = 1/3"
+      ]
+     }
     }
    ]
   },
@@ -7474,70 +7869,287 @@
      "trang": 68,
      "nhom": "Luyện tập",
      "dang": "CAU_NHO",
-     "de": "Một cửa hàng thống kê số lượng các loại điện thoại bán được trong một năm vừa qua như sau: loại A bán được 712 chiếc, loại B bán được 1 035 chiếc, loại C bán được 1 085 chiếc. Tính xác suất thực nghiệm của biến cố E: \"Chiếc điện thoại loại A được bán ra trong năm đó của cửa hàng\"."
+     "de": "Một cửa hàng thống kê số lượng các loại điện thoại bán được trong một năm vừa qua như sau: loại A bán được 712 chiếc, loại B bán được 1 035 chiếc, loại C bán được 1 085 chiếc. Tính xác suất thực nghiệm của biến cố E: \"Chiếc điện thoại loại A được bán ra trong năm đó của cửa hàng\".",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "hoi": "Một cửa hàng thống kê số lượng các loại điện thoại bán được trong một năm vừa qua như sau: loại A bán được 712 chiếc, loại B bán được 1 035 chiếc, loại C bán được 1 085 chiếc. Tính xác suất thực nghiệm của biến cố E: \"Chiếc điện thoại loại A được bán ra trong năm đó của cửa hàng\".\n(Gõ phân số tối giản, hoặc số thập phân làm tròn đến hàng phần trăm.)",
+      "dap": [
+       "89/354",
+       "0,25",
+       "0,251",
+       "25%"
+      ],
+      "phim": [
+       "%"
+      ],
+      "nhieu": [
+       "x"
+      ],
+      "loi_giai": [
+       "Tổng số điện thoại bán được = 712 + 1035 + 1085 = 2832",
+       "Xác suất thực nghiệm của E = 712/2832 = 89/354",
+       "89/354 ≈ 0,25"
+      ]
+     }
     },
     {
      "ma": "Luyện tập 2 (tr.69)",
      "trang": 69,
      "nhom": "Luyện tập",
      "dang": "CAU_NHO",
-     "de": "Trở lại tình huống mở đầu. Giả sử camera quan sát đường Nguyễn Trãi trong 365 ngày ghi nhận được 217 ngày tắc đường vào giờ cao điểm buổi chiều. Từ số liệu thống kê đó, hãy ước lượng xác suất của biến cố E: \"Tắc đường vào giờ cao điểm buổi chiều ở đường Nguyễn Trãi\"."
+     "de": "Trở lại tình huống mở đầu. Giả sử camera quan sát đường Nguyễn Trãi trong 365 ngày ghi nhận được 217 ngày tắc đường vào giờ cao điểm buổi chiều. Từ số liệu thống kê đó, hãy ước lượng xác suất của biến cố E: \"Tắc đường vào giờ cao điểm buổi chiều ở đường Nguyễn Trãi\".",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "hoi": "Camera quan sát đường Nguyễn Trãi (Hà Nội) trong 365 ngày ghi nhận được 217 ngày tắc đường vào giờ cao điểm buổi chiều. Từ số liệu thống kê đó, hãy ước lượng xác suất của biến cố E: \"Tắc đường vào giờ cao điểm buổi chiều ở đường Nguyễn Trãi\".\n(Gõ phân số tối giản, hoặc số thập phân làm tròn đến hàng phần trăm.)",
+      "dap": [
+       "217/365",
+       "0,59",
+       "0,595",
+       "59%",
+       "59,5%"
+      ],
+      "phim": [
+       "%"
+      ],
+      "nhieu": [
+       "x"
+      ],
+      "loi_giai": [
+       "Trong 365 ngày quan sát, biến cố E xảy ra 217 lần",
+       "P(E) ≈ 217/365 ≈ 0,59, tức là khoảng 59%"
+      ]
+     }
     },
     {
      "ma": "Luyện tập 3 (tr.69)",
      "trang": 69,
      "nhom": "Luyện tập",
      "dang": "CAU_NHO",
-     "de": "Trong 240 000 trẻ sơ sinh chào đời người ta thấy có 123 120 bé trai. Hãy ước lượng xác suất của biến cố \"Trẻ sơ sinh là bé gái\"."
+     "de": "Trong 240 000 trẻ sơ sinh chào đời người ta thấy có 123 120 bé trai. Hãy ước lượng xác suất của biến cố \"Trẻ sơ sinh là bé gái\".",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "hoi": "Trong 240 000 trẻ sơ sinh chào đời người ta thấy có 123 120 bé trai. Hãy ước lượng xác suất của biến cố \"Trẻ sơ sinh là bé gái\".\n(Gõ số thập phân, phân số tối giản hoặc tỉ số phần trăm.)",
+      "dap": [
+       "0,487",
+       "487/1000",
+       "48,7%"
+      ],
+      "phim": [
+       "%"
+      ],
+      "nhieu": [
+       "x"
+      ],
+      "loi_giai": [
+       "Số bé gái = 240000 − 123120 = 116880",
+       "Xác suất thực nghiệm của biến cố \"Trẻ sơ sinh là bé gái\" = 116880/240000 = 0,487",
+       "Vậy xác suất trẻ sơ sinh là bé gái được ước lượng là 0,487, tức là 48,7%"
+      ]
+     }
     },
     {
      "ma": "Luyện tập 4 (tr.71)",
      "trang": 71,
      "nhom": "Luyện tập",
      "dang": "CAU_NHO",
-     "de": "Thống kê điểm kiểm tra cuối năm môn Toán của một nhóm 100 học sinh lớp 8 được chọn ngẫu nhiên tại ba lớp của trường Trung học cơ sở X, thu được kết quả: điểm 1 có 7 học sinh, điểm 2 có 9, điểm 3 có 11, điểm 4 có 11, điểm 5 có 12, điểm 6 có 12, điểm 7 có 13, điểm 8 có 9, điểm 9 có 8, điểm 10 có 8. a) Chọn ngẫu nhiên một học sinh lớp 8 của trường X. Hãy ước lượng xác suất của các biến cố sau: A: \"Học sinh đó có điểm nhỏ hơn hoặc bằng 5\"; B: \"Học sinh đó có điểm từ 4 đến 9\". b) Hãy dự đoán xem trong nhóm 80 học sinh lớp 8 chọn ngẫu nhiên từ ba lớp khác của trường X: có bao nhiêu học sinh có số điểm không vượt quá 5 điểm; có bao nhiêu học sinh có số điểm từ 4 đến 9 điểm."
+     "de": "Thống kê điểm kiểm tra cuối năm môn Toán của một nhóm 100 học sinh lớp 8 được chọn ngẫu nhiên tại ba lớp của trường Trung học cơ sở X, thu được kết quả: điểm 1 có 7 học sinh, điểm 2 có 9, điểm 3 có 11, điểm 4 có 11, điểm 5 có 12, điểm 6 có 12, điểm 7 có 13, điểm 8 có 9, điểm 9 có 8, điểm 10 có 8. a) Chọn ngẫu nhiên một học sinh lớp 8 của trường X. Hãy ước lượng xác suất của các biến cố sau: A: \"Học sinh đó có điểm nhỏ hơn hoặc bằng 5\"; B: \"Học sinh đó có điểm từ 4 đến 9\". b) Hãy dự đoán xem trong nhóm 80 học sinh lớp 8 chọn ngẫu nhiên từ ba lớp khác của trường X: có bao nhiêu học sinh có số điểm không vượt quá 5 điểm; có bao nhiêu học sinh có số điểm từ 4 đến 9 điểm.",
+     "hinh": [
+      "toan8t2/LT4-tr71.webp"
+     ],
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "hoi": "Thống kê điểm kiểm tra cuối năm môn Toán của một nhóm 100 học sinh lớp 8 được chọn ngẫu nhiên tại ba lớp của trường Trung học cơ sở X, thu được kết quả như bảng dưới đây.\na) Chọn ngẫu nhiên một học sinh lớp 8 của trường X. Hãy ước lượng xác suất của các biến cố sau:\nA: \"Học sinh đó có điểm nhỏ hơn hoặc bằng 5\";\nB: \"Học sinh đó có điểm từ 4 đến 9\".\nb) Hãy dự đoán xem trong nhóm 80 học sinh lớp 8 chọn ngẫu nhiên từ ba lớp khác của trường X:\n- Có bao nhiêu học sinh có số điểm không vượt quá 5 điểm.\n- Có bao nhiêu học sinh có số điểm từ 4 đến 9 điểm.\n(Gõ P(A), P(B) dưới dạng số thập phân, rồi hai số học sinh ở câu b, theo thứ tự, cách nhau bằng dấu ;)",
+      "dap": [
+       "0,5;0,65;40;52",
+       "0,5;13/20;40;52",
+       "1/2;0,65;40;52",
+       "1/2;13/20;40;52"
+      ],
+      "phim": [
+       ";"
+      ],
+      "nhieu": [
+       "x"
+      ],
+      "loi_giai": [
+       "a) Số học sinh có điểm nhỏ hơn hoặc bằng 5 = 7 + 9 + 11 + 11 + 12 = 50; P(A) ≈ 50/100 = 0,5",
+       "Số học sinh có điểm từ 4 đến 9 = 11 + 12 + 12 + 13 + 9 + 8 = 65; P(B) ≈ 65/100 = 0,65",
+       "b) Trong 80 học sinh, số học sinh có số điểm không vượt quá 5 điểm ≈ 80 · 0,5 = 40",
+       "Trong 80 học sinh, số học sinh có số điểm từ 4 đến 9 điểm ≈ 80 · 0,65 = 52"
+      ]
+     }
     },
     {
      "ma": "8.8",
      "trang": 71,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Tung một chiếc kẹp giấy 145 lần xuống sàn nhà lát gạch đá hoa hình vuông. Quan sát thấy có 113 lần chiếc kẹp nằm hoàn toàn bên trong hình vuông và 32 lần chiếc kẹp nằm trên cạnh hình vuông. Tính xác suất thực nghiệm của các biến cố sau: a) E: \"Chiếc kẹp giấy nằm hoàn toàn trong hình vuông\"; b) F: \"Chiếc kẹp giấy nằm trên cạnh của hình vuông\"."
+     "de": "Tung một chiếc kẹp giấy 145 lần xuống sàn nhà lát gạch đá hoa hình vuông. Quan sát thấy có 113 lần chiếc kẹp nằm hoàn toàn bên trong hình vuông và 32 lần chiếc kẹp nằm trên cạnh hình vuông. Tính xác suất thực nghiệm của các biến cố sau: a) E: \"Chiếc kẹp giấy nằm hoàn toàn trong hình vuông\"; b) F: \"Chiếc kẹp giấy nằm trên cạnh của hình vuông\".",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "hoi": "Tung một chiếc kẹp giấy 145 lần xuống sàn nhà lát gạch đá hoa hình vuông. Quan sát thấy có 113 lần chiếc kẹp nằm hoàn toàn bên trong hình vuông và 32 lần chiếc kẹp nằm trên cạnh hình vuông. Tính xác suất thực nghiệm của các biến cố sau:\na) E: \"Chiếc kẹp giấy nằm hoàn toàn trong hình vuông\";\nb) F: \"Chiếc kẹp giấy nằm trên cạnh của hình vuông\".\n(Gõ xác suất của các ý theo thứ tự a, b, cách nhau bằng dấu ;, mỗi xác suất là một phân số tối giản hoặc số thập phân làm tròn đến hàng phần trăm.)",
+      "dap": [
+       "113/145;32/145",
+       "113/145;0,22",
+       "0,78;32/145",
+       "0,78;0,22"
+      ],
+      "phim": [
+       ";"
+      ],
+      "nhieu": [
+       "x"
+      ],
+      "loi_giai": [
+       "a) Trong 145 lần tung có 113 lần kẹp nằm hoàn toàn trong hình vuông: xác suất thực nghiệm của E là 113/145 ≈ 0,78",
+       "b) Trong 145 lần tung có 32 lần kẹp nằm trên cạnh hình vuông: xác suất thực nghiệm của F là 32/145 ≈ 0,22"
+      ]
+     }
     },
     {
      "ma": "8.9",
      "trang": 71,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Một nhân viên kiểm tra chất lượng sản phẩm tại một nhà máy trong 20 ngày đã ghi lại số phế phẩm của nhà máy mỗi ngày và thu được kết quả: 0 phế phẩm có 14 ngày, 1 phế phẩm có 3 ngày, 2 phế phẩm có 1 ngày, 3 phế phẩm có 1 ngày, từ 4 phế phẩm trở lên có 1 ngày. Tính xác suất thực nghiệm của các biến cố sau: a) M: \"Trong một ngày nhà máy đó không có phế phẩm\"; b) N: \"Trong một ngày nhà máy đó chỉ có 1 phế phẩm\"; c) K: \"Trong một ngày nhà máy đó có ít nhất 2 phế phẩm\"."
+     "de": "Một nhân viên kiểm tra chất lượng sản phẩm tại một nhà máy trong 20 ngày đã ghi lại số phế phẩm của nhà máy mỗi ngày và thu được kết quả: 0 phế phẩm có 14 ngày, 1 phế phẩm có 3 ngày, 2 phế phẩm có 1 ngày, 3 phế phẩm có 1 ngày, từ 4 phế phẩm trở lên có 1 ngày. Tính xác suất thực nghiệm của các biến cố sau: a) M: \"Trong một ngày nhà máy đó không có phế phẩm\"; b) N: \"Trong một ngày nhà máy đó chỉ có 1 phế phẩm\"; c) K: \"Trong một ngày nhà máy đó có ít nhất 2 phế phẩm\".",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "hoi": "Một nhân viên kiểm tra chất lượng sản phẩm tại một nhà máy trong 20 ngày đã ghi lại số phế phẩm của nhà máy mỗi ngày và thu được kết quả: 0 phế phẩm có 14 ngày; 1 phế phẩm có 3 ngày; 2 phế phẩm có 1 ngày; 3 phế phẩm có 1 ngày; từ 4 phế phẩm trở lên có 1 ngày. Tính xác suất thực nghiệm của các biến cố sau:\na) M: \"Trong một ngày nhà máy đó không có phế phẩm\";\nb) N: \"Trong một ngày nhà máy đó chỉ có 1 phế phẩm\";\nc) K: \"Trong một ngày nhà máy đó có ít nhất 2 phế phẩm\".\n(Gõ xác suất của các ý theo thứ tự a, b, c, mỗi xác suất là một phân số tối giản, cách nhau bằng dấu ;)",
+      "dap": [
+       "7/10;3/20;3/20",
+       "0,7;0,15;0,15"
+      ],
+      "phim": [
+       ";"
+      ],
+      "nhieu": [
+       "x"
+      ],
+      "loi_giai": [
+       "a) Có 14 ngày không có phế phẩm; xác suất thực nghiệm của M = 14/20 = 7/10",
+       "b) Có 3 ngày chỉ có 1 phế phẩm; xác suất thực nghiệm của N = 3/20 = 0,15",
+       "c) Số ngày có ít nhất 2 phế phẩm = 1 + 1 + 1 = 3; xác suất thực nghiệm của K = 3/20 = 0,15"
+      ]
+     }
     },
     {
      "ma": "8.10",
      "trang": 72,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Thống kê thời gian của 78 chương trình quảng cáo trên Đài truyền hình tỉnh X cho kết quả: từ 0 đến 19 giây có 17 chương trình, từ 20 đến 39 giây có 38 chương trình, từ 40 đến 59 giây có 19 chương trình, trên 60 giây có 4 chương trình. Tính xác suất thực nghiệm của các biến cố sau: a) E: \"Chương trình quảng cáo của Đài truyền hình tỉnh X kéo dài từ 20 đến 39 giây\"; b) F: \"Chương trình quảng cáo của Đài truyền hình tỉnh X kéo dài trên 1 phút\"; c) G: \"Chương trình quảng cáo của Đài truyền hình tỉnh X kéo dài trong khoảng từ 20 đến 59 giây\"."
+     "de": "Thống kê thời gian của 78 chương trình quảng cáo trên Đài truyền hình tỉnh X cho kết quả: từ 0 đến 19 giây có 17 chương trình, từ 20 đến 39 giây có 38 chương trình, từ 40 đến 59 giây có 19 chương trình, trên 60 giây có 4 chương trình. Tính xác suất thực nghiệm của các biến cố sau: a) E: \"Chương trình quảng cáo của Đài truyền hình tỉnh X kéo dài từ 20 đến 39 giây\"; b) F: \"Chương trình quảng cáo của Đài truyền hình tỉnh X kéo dài trên 1 phút\"; c) G: \"Chương trình quảng cáo của Đài truyền hình tỉnh X kéo dài trong khoảng từ 20 đến 59 giây\".",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "hoi": "Thống kê thời gian của 78 chương trình quảng cáo trên Đài truyền hình tỉnh X cho kết quả: từ 0 đến 19 giây có 17 chương trình; từ 20 đến 39 giây có 38 chương trình; từ 40 đến 59 giây có 19 chương trình; trên 60 giây có 4 chương trình. Tính xác suất thực nghiệm của các biến cố sau:\na) E: \"Chương trình quảng cáo của Đài truyền hình tỉnh X kéo dài từ 20 đến 39 giây\";\nb) F: \"Chương trình quảng cáo của Đài truyền hình tỉnh X kéo dài trên 1 phút\";\nc) G: \"Chương trình quảng cáo của Đài truyền hình tỉnh X kéo dài trong khoảng từ 20 đến 59 giây\".\n(Gõ xác suất của các ý theo thứ tự a, b, c, mỗi xác suất là một phân số tối giản, cách nhau bằng dấu ;)",
+      "dap": [
+       "19/39;2/39;19/26",
+       "0,49;0,05;0,73"
+      ],
+      "phim": [
+       ";"
+      ],
+      "nhieu": [
+       "x"
+      ],
+      "loi_giai": [
+       "a) Có 38 chương trình kéo dài từ 20 đến 39 giây; xác suất thực nghiệm của E = 38/78 = 19/39",
+       "b) Có 4 chương trình kéo dài trên 60 giây, tức là trên 1 phút; xác suất thực nghiệm của F = 4/78 = 2/39",
+       "c) Số chương trình kéo dài từ 20 đến 59 giây = 38 + 19 = 57; xác suất thực nghiệm của G = 57/78 = 19/26"
+      ]
+     }
     },
     {
      "ma": "8.11",
      "trang": 72,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Thống kê về số ca nhiễm bệnh và số ca tử vong của bệnh SARS (11-2002 đến 7-2003) là 8 437 người nhiễm và 813 người tử vong; của bệnh EBOLA (2014-2016) là 34 453 người nhiễm và 15 158 người tử vong. Căn cứ vào bảng thống kê trên, hãy ước lượng xác suất một người tử vong khi nhiễm bệnh SARS, bệnh EBOLA."
+     "de": "Thống kê về số ca nhiễm bệnh và số ca tử vong của bệnh SARS (11-2002 đến 7-2003) là 8 437 người nhiễm và 813 người tử vong; của bệnh EBOLA (2014-2016) là 34 453 người nhiễm và 15 158 người tử vong. Căn cứ vào bảng thống kê trên, hãy ước lượng xác suất một người tử vong khi nhiễm bệnh SARS, bệnh EBOLA.",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "hoi": "Thống kê về số ca nhiễm bệnh và số ca tử vong: bệnh SARS (11 - 2002 đến 7 - 2003) có 8 437 người nhiễm, 813 người tử vong; bệnh EBOLA (2014 - 2016) có 34 453 người nhiễm, 15 158 người tử vong (theo www.worldometers.info). Căn cứ vào số liệu thống kê trên, hãy ước lượng xác suất một người tử vong khi nhiễm bệnh SARS, bệnh EBOLA.\n(Gõ hai xác suất theo thứ tự SARS, EBOLA, cách nhau bằng dấu ;, dưới dạng tỉ số phần trăm làm tròn đến hàng phần mười.)",
+      "dap": [
+       "9,6%;44,0%",
+       "9,6%;44%",
+       "0,096;0,440",
+       "0,096;0,44",
+       "813/8437;15158/34453"
+      ],
+      "phim": [
+       ";",
+       "%"
+      ],
+      "nhieu": [
+       "x",
+       "°"
+      ],
+      "loi_giai": [
+       "SARS: xác suất một người tử vong khi nhiễm bệnh được ước lượng bằng 813/8437 ≈ 0,096, tức là khoảng 9,6%",
+       "EBOLA: xác suất một người tử vong khi nhiễm bệnh được ước lượng bằng 15158/34453 ≈ 0,440, tức là khoảng 44,0%"
+      ]
+     }
     },
     {
      "ma": "8.12",
      "trang": 72,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Một nhà máy sản xuất máy điều hoà tiến hành kiểm tra chất lượng của 600 chiếc điều hoà được sản xuất và thấy có 5 chiếc bị lỗi. Trong một lô hàng có 1 500 chiếc điều hoà, hãy dự đoán xem có khoảng bao nhiêu chiếc điều hoà không bị lỗi."
+     "de": "Một nhà máy sản xuất máy điều hoà tiến hành kiểm tra chất lượng của 600 chiếc điều hoà được sản xuất và thấy có 5 chiếc bị lỗi. Trong một lô hàng có 1 500 chiếc điều hoà, hãy dự đoán xem có khoảng bao nhiêu chiếc điều hoà không bị lỗi.",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "hoi": "Một nhà máy sản xuất máy điều hoà tiến hành kiểm tra chất lượng của 600 chiếc điều hoà được sản xuất và thấy có 5 chiếc bị lỗi. Trong một lô hàng có 1 500 chiếc điều hoà, hãy dự đoán xem có khoảng bao nhiêu chiếc điều hoà không bị lỗi.\n(Gõ số chiếc, làm tròn đến hàng đơn vị.)",
+      "dap": [
+       "1488",
+       "1487"
+      ],
+      "phim": [],
+      "nhieu": [],
+      "loi_giai": [
+       "Số điều hoà không bị lỗi trong 600 chiếc = 600 − 5 = 595",
+       "Xác suất để một chiếc điều hoà không bị lỗi ≈ 595/600 = 119/120",
+       "1500 · 119/120 = 1487,5 nên dự đoán có khoảng 1488 chiếc điều hoà không bị lỗi"
+      ]
+     }
     },
     {
      "ma": "8.13",
      "trang": 72,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Hai bạn Mai và Việt lần lượt thực hiện việc gieo đồng thời hai con xúc xắc và ở mỗi lần gieo sẽ nhận được số điểm bằng tổng số chấm xuất hiện trên hai con xúc xắc. Mai được gieo 100 lần và Việt được gieo 120 lần. Mai gieo trước và ghi lại kết quả của mình: số điểm 2 có 3 lần, 3 có 5 lần, 4 có 9 lần, 5 có 10 lần, 6 có 14 lần, 7 có 16 lần, 8 có 13 lần, 9 có 11 lần, 10 có 8 lần, 11 có 7 lần, 12 có 4 lần. Trước khi Việt gieo, hãy dự đoán xem có bao nhiêu lần số điểm của Việt nhận được là: a) Một số chẵn. b) Một số nguyên tố. c) Một số lớn hơn 7."
+     "de": "Hai bạn Mai và Việt lần lượt thực hiện việc gieo đồng thời hai con xúc xắc và ở mỗi lần gieo sẽ nhận được số điểm bằng tổng số chấm xuất hiện trên hai con xúc xắc. Mai được gieo 100 lần và Việt được gieo 120 lần. Mai gieo trước và ghi lại kết quả của mình: số điểm 2 có 3 lần, 3 có 5 lần, 4 có 9 lần, 5 có 10 lần, 6 có 14 lần, 7 có 16 lần, 8 có 13 lần, 9 có 11 lần, 10 có 8 lần, 11 có 7 lần, 12 có 4 lần. Trước khi Việt gieo, hãy dự đoán xem có bao nhiêu lần số điểm của Việt nhận được là: a) Một số chẵn. b) Một số nguyên tố. c) Một số lớn hơn 7.",
+     "hinh": [
+      "toan8t2/8.13.webp"
+     ],
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 6,
+      "hoi": "Hai bạn Mai và Việt lần lượt thực hiện việc gieo đồng thời hai con xúc xắc và ở mỗi lần gieo sẽ nhận được số điểm bằng tổng số chấm xuất hiện trên hai con xúc xắc. Mai được gieo 100 lần và Việt được gieo 120 lần. Mai gieo trước và ghi lại kết quả của mình như bảng dưới đây.\nTrước khi Việt gieo, hãy dự đoán xem có bao nhiêu lần số điểm của Việt nhận được là:\na) Một số chẵn.\nb) Một số nguyên tố.\nc) Một số lớn hơn 7.\n(Gõ ba số lần theo thứ tự a, b, c, cách nhau bằng dấu ;)",
+      "dap": [
+       "61;49;52"
+      ],
+      "phim": [
+       ";"
+      ],
+      "nhieu": [
+       "x"
+      ],
+      "loi_giai": [
+       "a) Số lần Mai được số chẵn (2, 4, 6, 8, 10, 12) = 3 + 9 + 14 + 13 + 8 + 4 = 51",
+       "120 · 51/100 = 61,2 nên dự đoán Việt được số chẵn khoảng 61 lần",
+       "b) Số lần Mai được số nguyên tố (2, 3, 5, 7, 11) = 3 + 5 + 10 + 16 + 7 = 41",
+       "120 · 41/100 = 49,2 nên dự đoán Việt được số nguyên tố khoảng 49 lần",
+       "c) Số lần Mai được số lớn hơn 7 (8, 9, 10, 11, 12) = 13 + 11 + 8 + 7 + 4 = 43",
+       "120 · 43/100 = 51,6 nên dự đoán Việt được số lớn hơn 7 khoảng 52 lần"
+      ]
+     }
     }
    ]
   },
@@ -7550,28 +8162,120 @@
      "trang": 75,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Gieo một con xúc xắc cân đối. Tính xác suất của các biến cố sau: a) A: \"Số chấm xuất hiện trên con xúc xắc khác 6\"; b) B: \"Số chấm xuất hiện trên con xúc xắc bé hơn 3\"; c) C: \"Số chấm xuất hiện trên con xúc xắc lớn hơn 2\"; d) D: \"Số chấm xuất hiện trên con xúc xắc là số nguyên tố\"."
+     "de": "Gieo một con xúc xắc cân đối. Tính xác suất của các biến cố sau: a) A: \"Số chấm xuất hiện trên con xúc xắc khác 6\"; b) B: \"Số chấm xuất hiện trên con xúc xắc bé hơn 3\"; c) C: \"Số chấm xuất hiện trên con xúc xắc lớn hơn 2\"; d) D: \"Số chấm xuất hiện trên con xúc xắc là số nguyên tố\".",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 5,
+      "hoi": "Gieo một con xúc xắc cân đối. Tính xác suất của các biến cố sau:\na) A: \"Số chấm xuất hiện trên con xúc xắc khác 6\";\nb) B: \"Số chấm xuất hiện trên con xúc xắc bé hơn 3\";\nc) C: \"Số chấm xuất hiện trên con xúc xắc lớn hơn 2\";\nd) D: \"Số chấm xuất hiện trên con xúc xắc là số nguyên tố\".\n(Gõ xác suất của các ý theo thứ tự a, b, c, d, mỗi xác suất là một phân số tối giản, cách nhau bằng dấu ;)",
+      "dap": [
+       "5/6;1/3;2/3;1/2",
+       "5/6;1/3;2/3;0,5"
+      ],
+      "phim": [
+       ";"
+      ],
+      "nhieu": [
+       "x"
+      ],
+      "loi_giai": [
+       "Có 6 kết quả có thể 1; 2; 3; 4; 5; 6, đồng khả năng vì xúc xắc cân đối",
+       "a) Kết quả thuận lợi cho A: 1; 2; 3; 4; 5; P(A) = 5/6",
+       "b) Kết quả thuận lợi cho B: 1; 2; P(B) = 2/6 = 1/3",
+       "c) Kết quả thuận lợi cho C: 3; 4; 5; 6; P(C) = 4/6 = 2/3",
+       "d) Kết quả thuận lợi cho D: 2; 3; 5; P(D) = 3/6 = 1/2"
+      ]
+     }
     },
     {
      "ma": "8.15",
      "trang": 75,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Một túi đựng các quả bóng giống hệt nhau, chỉ khác màu, trong đó có 15 quả bóng màu xanh, 13 quả bóng màu đỏ và 17 quả bóng màu trắng. Lấy ngẫu nhiên một quả bóng từ trong túi. Tính xác suất của các biến cố sau: a) C: \"Lấy được quả bóng màu xanh\"; b) D: \"Lấy được quả bóng màu đỏ\"; c) E: \"Không lấy được quả bóng màu trắng\"."
+     "de": "Một túi đựng các quả bóng giống hệt nhau, chỉ khác màu, trong đó có 15 quả bóng màu xanh, 13 quả bóng màu đỏ và 17 quả bóng màu trắng. Lấy ngẫu nhiên một quả bóng từ trong túi. Tính xác suất của các biến cố sau: a) C: \"Lấy được quả bóng màu xanh\"; b) D: \"Lấy được quả bóng màu đỏ\"; c) E: \"Không lấy được quả bóng màu trắng\".",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "hoi": "Một túi đựng các quả bóng giống hệt nhau, chỉ khác màu, trong đó có 15 quả bóng màu xanh, 13 quả bóng màu đỏ và 17 quả bóng màu trắng. Lấy ngẫu nhiên một quả bóng từ trong túi. Tính xác suất của các biến cố sau:\na) C: \"Lấy được quả bóng màu xanh\";\nb) D: \"Lấy được quả bóng màu đỏ\";\nc) E: \"Không lấy được quả bóng màu trắng\".\n(Gõ xác suất của các ý theo thứ tự a, b, c, mỗi xác suất là một phân số tối giản, cách nhau bằng dấu ;)",
+      "dap": [
+       "1/3;13/45;28/45"
+      ],
+      "phim": [
+       ";"
+      ],
+      "nhieu": [
+       "x"
+      ],
+      "loi_giai": [
+       "Số kết quả có thể = 15 + 13 + 17 = 45",
+       "a) P(C) = 15/45 = 1/3",
+       "b) Có 13 quả bóng màu đỏ; P(D) = 13/45",
+       "c) Số quả bóng không phải màu trắng = 15 + 13 = 28; P(E) = 28/45"
+      ]
+     }
     },
     {
      "ma": "8.16",
      "trang": 75,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Trong trò chơi \"Xúc xắc may mắn\", ở mỗi ván chơi, người chơi gieo đồng thời hai con xúc xắc và ghi lại tổng số chấm xuất hiện trên hai con xúc xắc. Một người chơi 80 ván và ghi lại kết quả: tổng 2 có 2 ván, 3 có 5 ván, 4 có 6 ván, 5 có 8 ván, 6 có 11 ván, 7 có 14 ván, 8 có 12 ván, 9 có 9 ván, 10 có 6 ván, 11 có 4 ván, 12 có 3 ván. a) Giả sử người chơi thắng nếu tổng số chấm xuất hiện trên hai con xúc xắc là 5 hoặc 7. Tính xác suất thực nghiệm của biến cố E: \"Người chơi thắng trong một ván chơi\". b) Giả sử người chơi thắng nếu tổng số chấm xuất hiện trên hai con xúc xắc từ 10 trở lên. Tính xác suất thực nghiệm của biến cố F: \"Người chơi thắng trong một ván chơi\"."
+     "de": "Trong trò chơi \"Xúc xắc may mắn\", ở mỗi ván chơi, người chơi gieo đồng thời hai con xúc xắc và ghi lại tổng số chấm xuất hiện trên hai con xúc xắc. Một người chơi 80 ván và ghi lại kết quả: tổng 2 có 2 ván, 3 có 5 ván, 4 có 6 ván, 5 có 8 ván, 6 có 11 ván, 7 có 14 ván, 8 có 12 ván, 9 có 9 ván, 10 có 6 ván, 11 có 4 ván, 12 có 3 ván. a) Giả sử người chơi thắng nếu tổng số chấm xuất hiện trên hai con xúc xắc là 5 hoặc 7. Tính xác suất thực nghiệm của biến cố E: \"Người chơi thắng trong một ván chơi\". b) Giả sử người chơi thắng nếu tổng số chấm xuất hiện trên hai con xúc xắc từ 10 trở lên. Tính xác suất thực nghiệm của biến cố F: \"Người chơi thắng trong một ván chơi\".",
+     "hinh": [
+      "toan8t2/8.16.webp"
+     ],
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "hoi": "Trong trò chơi \"Xúc xắc may mắn\", ở mỗi ván chơi, người chơi gieo đồng thời hai con xúc xắc và ghi lại tổng số chấm xuất hiện trên hai con xúc xắc. Một người chơi 80 ván và ghi lại kết quả như bảng dưới đây.\na) Giả sử người chơi thắng nếu tổng số chấm xuất hiện trên hai con xúc xắc là 5 hoặc 7. Tính xác suất thực nghiệm của biến cố E: \"Người chơi thắng trong một ván chơi\".\nb) Giả sử người chơi thắng nếu tổng số chấm xuất hiện trên hai con xúc xắc từ 10 trở lên. Tính xác suất thực nghiệm của biến cố F: \"Người chơi thắng trong một ván chơi\".\n(Gõ xác suất của các ý theo thứ tự a, b, cách nhau bằng dấu ;, mỗi xác suất là một phân số tối giản hoặc số thập phân.)",
+      "dap": [
+       "11/40;13/80",
+       "11/40;0,1625",
+       "0,275;13/80",
+       "0,275;0,1625"
+      ],
+      "phim": [
+       ";"
+      ],
+      "nhieu": [
+       "x"
+      ],
+      "loi_giai": [
+       "a) Số ván có tổng số chấm là 5 hoặc 7 = 8 + 14 = 22",
+       "Xác suất thực nghiệm của E = 22/80 = 11/40 = 0,275",
+       "b) Số ván có tổng số chấm từ 10 trở lên = 6 + 4 + 3 = 13",
+       "Xác suất thực nghiệm của F = 13/80 = 0,1625"
+      ]
+     }
     },
     {
      "ma": "8.17",
      "trang": 75,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Thống kê số vụ tai nạn giao thông trong hai tháng 8 và 9 của thành phố X: 0 vụ có 4 ngày, 1 vụ có 9 ngày, 2 vụ có 15 ngày, 3 vụ có 10 ngày, 4 vụ có 8 ngày, 5 vụ có 6 ngày, 6 vụ có 4 ngày, 7 vụ có 3 ngày, từ 8 vụ trở lên có 2 ngày. Từ bảng thống kê trên, hãy dự đoán xem trong ba tháng 10; 11; 12 tới tại thành phố X: a) Có bao nhiêu ngày có nhiều nhất 3 vụ tai nạn giao thông. b) Có bao nhiêu ngày có ít nhất 5 vụ tai nạn giao thông."
+     "de": "Thống kê số vụ tai nạn giao thông trong hai tháng 8 và 9 của thành phố X: 0 vụ có 4 ngày, 1 vụ có 9 ngày, 2 vụ có 15 ngày, 3 vụ có 10 ngày, 4 vụ có 8 ngày, 5 vụ có 6 ngày, 6 vụ có 4 ngày, 7 vụ có 3 ngày, từ 8 vụ trở lên có 2 ngày. Từ bảng thống kê trên, hãy dự đoán xem trong ba tháng 10; 11; 12 tới tại thành phố X: a) Có bao nhiêu ngày có nhiều nhất 3 vụ tai nạn giao thông. b) Có bao nhiêu ngày có ít nhất 5 vụ tai nạn giao thông.",
+     "hinh": [
+      "toan8t2/8.17.webp"
+     ],
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 5,
+      "hoi": "Thống kê số vụ tai nạn giao thông trong hai tháng 8 và 9 của thành phố X được kết quả như bảng dưới đây. Từ bảng thống kê trên, hãy dự đoán xem trong ba tháng 10; 11; 12 tới tại thành phố X:\na) Có bao nhiêu ngày có nhiều nhất 3 vụ tai nạn giao thông.\nb) Có bao nhiêu ngày có ít nhất 5 vụ tai nạn giao thông.\n(Gõ hai số ngày theo thứ tự a, b, cách nhau bằng dấu ;. Nhân số ngày với xác suất thực nghiệm viết dưới dạng phân số, không làm tròn xác suất trước khi nhân, rồi làm tròn kết quả đến hàng đơn vị.)",
+      "dap": [
+       "57;23"
+      ],
+      "phim": [
+       ";"
+      ],
+      "nhieu": [
+       "x"
+      ],
+      "loi_giai": [
+       "Số ngày của hai tháng 8 và 9 = 31 + 30 = 61; số ngày của ba tháng 10, 11, 12 = 31 + 30 + 31 = 92",
+       "a) Số ngày có nhiều nhất 3 vụ tai nạn = 4 + 9 + 15 + 10 = 38; xác suất thực nghiệm = 38/61",
+       "Số ngày có nhiều nhất 3 vụ tai nạn trong ba tháng tới khoảng 92 · 38/61 ≈ 57,3, tức là khoảng 57 ngày",
+       "b) Số ngày có ít nhất 5 vụ tai nạn = 6 + 4 + 3 + 2 = 15; xác suất thực nghiệm = 15/61",
+       "Số ngày có ít nhất 5 vụ tai nạn trong ba tháng tới khoảng 92 · 15/61 ≈ 22,6, tức là khoảng 23 ngày"
+      ]
+     }
     }
    ]
   },
@@ -7584,63 +8288,252 @@
      "trang": 76,
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
-     "de": "Lớp 8A gồm 38 học sinh, trong đó có 18 bạn nữ. Có 6 bạn nữ tham gia câu lạc bộ thể thao và 8 bạn nam không tham gia câu lạc bộ thể thao. Chọn ngẫu nhiên một học sinh trong lớp. Xác suất để học sinh đó là một bạn nam có tham gia câu lạc bộ thể thao là A. 7/20. B. 6/19. C. 8/21. D. 9/23."
+     "de": "Lớp 8A gồm 38 học sinh, trong đó có 18 bạn nữ. Có 6 bạn nữ tham gia câu lạc bộ thể thao và 8 bạn nam không tham gia câu lạc bộ thể thao. Chọn ngẫu nhiên một học sinh trong lớp. Xác suất để học sinh đó là một bạn nam có tham gia câu lạc bộ thể thao là A. 7/20. B. 6/19. C. 8/21. D. 9/23.",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Lớp 8A gồm 38 học sinh, trong đó có 18 bạn nữ. Có 6 bạn nữ tham gia câu lạc bộ thể thao và 8 bạn nam không tham gia câu lạc bộ thể thao. Chọn ngẫu nhiên một học sinh trong lớp. Xác suất để học sinh đó là một bạn nam có tham gia câu lạc bộ thể thao là",
+      "cac": [
+       "7/20",
+       "6/19",
+       "8/21",
+       "9/23"
+      ],
+      "dap": "B"
+     }
     },
     {
      "ma": "8.19",
      "trang": 76,
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
-     "de": "Lớp 8A gồm 38 học sinh, trong đó có 18 bạn nữ. Có 6 bạn nữ tham gia câu lạc bộ thể thao và 8 bạn nam không tham gia câu lạc bộ thể thao. Chọn ngẫu nhiên một học sinh trong lớp. Xác suất để học sinh đó là một bạn không tham gia câu lạc bộ thể thao là A. 11/20. B. 12/19. C. 13/21. D. 10/19."
+     "de": "Lớp 8A gồm 38 học sinh, trong đó có 18 bạn nữ. Có 6 bạn nữ tham gia câu lạc bộ thể thao và 8 bạn nam không tham gia câu lạc bộ thể thao. Chọn ngẫu nhiên một học sinh trong lớp. Xác suất để học sinh đó là một bạn không tham gia câu lạc bộ thể thao là A. 11/20. B. 12/19. C. 13/21. D. 10/19.",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Lớp 8A gồm 38 học sinh, trong đó có 18 bạn nữ. Có 6 bạn nữ tham gia câu lạc bộ thể thao và 8 bạn nam không tham gia câu lạc bộ thể thao. Chọn ngẫu nhiên một học sinh trong lớp. Xác suất để học sinh đó là một bạn <b>không</b> tham gia câu lạc bộ thể thao là",
+      "cac": [
+       "11/20",
+       "12/19",
+       "13/21",
+       "10/19"
+      ],
+      "dap": "D"
+     }
     },
     {
      "ma": "8.20",
      "trang": 76,
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
-     "de": "Một túi đựng các quả cầu giống hệt nhau, chỉ khác màu, trong đó có 26 quả màu đỏ, 62 quả màu tím, 8 quả màu vàng, 9 quả màu trắng và 12 quả màu đen. Lấy ngẫu nhiên một quả cầu trong túi. Xác suất để lấy được quả cầu màu tím là A. 62/117. B. 60/117. C. 63/118. D. 65/118."
+     "de": "Một túi đựng các quả cầu giống hệt nhau, chỉ khác màu, trong đó có 26 quả màu đỏ, 62 quả màu tím, 8 quả màu vàng, 9 quả màu trắng và 12 quả màu đen. Lấy ngẫu nhiên một quả cầu trong túi. Xác suất để lấy được quả cầu màu tím là A. 62/117. B. 60/117. C. 63/118. D. 65/118.",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Một túi đựng các quả cầu giống hệt nhau, chỉ khác màu, trong đó có 26 quả màu đỏ, 62 quả màu tím, 8 quả màu vàng, 9 quả màu trắng và 12 quả màu đen. Lấy ngẫu nhiên một quả cầu trong túi. Xác suất để lấy được quả cầu màu tím là",
+      "cac": [
+       "62/117",
+       "60/117",
+       "63/118",
+       "65/118"
+      ],
+      "dap": "A"
+     }
     },
     {
      "ma": "8.21",
      "trang": 76,
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
-     "de": "Một túi đựng các quả cầu giống hệt nhau, chỉ khác màu, trong đó có 26 quả màu đỏ, 62 quả màu tím, 8 quả màu vàng, 9 quả màu trắng và 12 quả màu đen. Lấy ngẫu nhiên một quả cầu trong túi. Xác suất để lấy được quả cầu màu trắng là A. 11/117. B. 9/117. C. 13/118. D. 15/118."
+     "de": "Một túi đựng các quả cầu giống hệt nhau, chỉ khác màu, trong đó có 26 quả màu đỏ, 62 quả màu tím, 8 quả màu vàng, 9 quả màu trắng và 12 quả màu đen. Lấy ngẫu nhiên một quả cầu trong túi. Xác suất để lấy được quả cầu màu trắng là A. 11/117. B. 9/117. C. 13/118. D. 15/118.",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Một túi đựng các quả cầu giống hệt nhau, chỉ khác màu, trong đó có 26 quả màu đỏ, 62 quả màu tím, 8 quả màu vàng, 9 quả màu trắng và 12 quả màu đen. Lấy ngẫu nhiên một quả cầu trong túi. Xác suất để lấy được quả cầu màu trắng là",
+      "cac": [
+       "11/117",
+       "9/117",
+       "13/118",
+       "15/118"
+      ],
+      "dap": "B"
+     }
     },
     {
      "ma": "8.22",
      "trang": 76,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Trong một hộp có 10 tấm thẻ giống nhau được đánh số 11; 12;...; 20. Rút ngẫu nhiên một tấm thẻ từ trong hộp. a) Liệt kê các kết quả có thể của hành động trên. b) Liệt kê các kết quả thuận lợi cho các biến cố sau: E: \"Rút được tấm thẻ ghi số là bội của 3\"; F: \"Rút được tấm thẻ ghi số nguyên tố\"."
+     "de": "Trong một hộp có 10 tấm thẻ giống nhau được đánh số 11; 12;...; 20. Rút ngẫu nhiên một tấm thẻ từ trong hộp. a) Liệt kê các kết quả có thể của hành động trên. b) Liệt kê các kết quả thuận lợi cho các biến cố sau: E: \"Rút được tấm thẻ ghi số là bội của 3\"; F: \"Rút được tấm thẻ ghi số nguyên tố\".",
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "hoi": "Trong một hộp có 10 tấm thẻ giống nhau được đánh số 11; 12; ...; 20. Rút ngẫu nhiên một tấm thẻ từ trong hộp.\na) Liệt kê các kết quả có thể của hành động trên.\nb) Liệt kê các kết quả thuận lợi cho các biến cố sau:\nE: \"Rút được tấm thẻ ghi số là bội của 3\";\nF: \"Rút được tấm thẻ ghi số nguyên tố\".",
+      "dong": [
+       {
+        "chu": "a) Các kết quả có thể: {0}",
+        "o": [
+         {
+          "dung": [
+           "11; 12; 13; 14; 15; 16; 17; 18; 19; 20"
+          ],
+          "sai": [
+           "10; 11; 12; 13; 14; 15; 16; 17; 18; 19; 20",
+           "11; 12; 13; 14; 15; 16; 17; 18; 19"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "b) E: {0}",
+        "o": [
+         {
+          "dung": [
+           "12; 15; 18"
+          ],
+          "sai": [
+           "3; 6; 9; 12; 15; 18",
+           "12; 14; 16; 18; 20",
+           "15; 18"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "F: {0}",
+        "o": [
+         {
+          "dung": [
+           "11; 13; 17; 19"
+          ],
+          "sai": [
+           "11; 13; 15; 17; 19",
+           "13; 17; 19",
+           "11; 13; 17; 19; 21"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "8.23",
      "trang": 76,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Một túi đựng các viên bi giống hệt nhau, chỉ khác màu, trong đó có 5 viên bi màu xanh, 3 viên bi màu đỏ và 7 viên bi màu trắng. Bạn Việt lấy ngẫu nhiên một viên bi trong túi. Tính xác suất của các biến cố sau: a) E: \"Việt lấy được viên bi màu xanh\"; b) F: \"Việt lấy được viên bi màu đỏ\"; c) G: \"Việt lấy được viên bi màu trắng\"; d) H: \"Việt lấy được viên bi màu xanh hoặc màu đỏ\"; e) K: \"Việt không lấy được viên bi màu đỏ\"."
+     "de": "Một túi đựng các viên bi giống hệt nhau, chỉ khác màu, trong đó có 5 viên bi màu xanh, 3 viên bi màu đỏ và 7 viên bi màu trắng. Bạn Việt lấy ngẫu nhiên một viên bi trong túi. Tính xác suất của các biến cố sau: a) E: \"Việt lấy được viên bi màu xanh\"; b) F: \"Việt lấy được viên bi màu đỏ\"; c) G: \"Việt lấy được viên bi màu trắng\"; d) H: \"Việt lấy được viên bi màu xanh hoặc màu đỏ\"; e) K: \"Việt không lấy được viên bi màu đỏ\".",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 6,
+      "hoi": "Một túi đựng các viên bi giống hệt nhau, chỉ khác màu, trong đó có 5 viên bi màu xanh, 3 viên bi màu đỏ và 7 viên bi màu trắng. Bạn Việt lấy ngẫu nhiên một viên bi trong túi. Tính xác suất của các biến cố sau:\na) E: \"Việt lấy được viên bi màu xanh\";\nb) F: \"Việt lấy được viên bi màu đỏ\";\nc) G: \"Việt lấy được viên bi màu trắng\";\nd) H: \"Việt lấy được viên bi màu xanh hoặc màu đỏ\";\ne) K: \"Việt không lấy được viên bi màu đỏ\".\n(Gõ xác suất của các ý theo thứ tự a, b, c, d, e, mỗi xác suất là một phân số tối giản, cách nhau bằng dấu ;)",
+      "dap": [
+       "1/3;1/5;7/15;8/15;4/5",
+       "1/3;1/5;7/15;8/15;0,8",
+       "1/3;0,2;7/15;8/15;4/5",
+       "1/3;0,2;7/15;8/15;0,8"
+      ],
+      "phim": [
+       ";"
+      ],
+      "nhieu": [
+       "x"
+      ],
+      "loi_giai": [
+       "Số kết quả có thể = 5 + 3 + 7 = 15",
+       "a) P(E) = 5/15 = 1/3",
+       "b) P(F) = 3/15 = 1/5",
+       "c) Có 7 viên bi màu trắng; P(G) = 7/15",
+       "d) Số viên bi màu xanh hoặc màu đỏ = 5 + 3 = 8; P(H) = 8/15",
+       "e) Số viên bi không phải màu đỏ = 5 + 7 = 12; P(K) = 12/15 = 4/5"
+      ]
+     }
     },
     {
      "ma": "8.24",
      "trang": 77,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Chọn ngẫu nhiên một số có hai chữ số. Tính xác suất của các biến cố sau: a) A: \"Số được chọn nhỏ hơn 20\"; b) B: \"Số được chọn là số chính phương\"."
+     "de": "Chọn ngẫu nhiên một số có hai chữ số. Tính xác suất của các biến cố sau: a) A: \"Số được chọn nhỏ hơn 20\"; b) B: \"Số được chọn là số chính phương\".",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "hoi": "Chọn ngẫu nhiên một số có hai chữ số. Tính xác suất của các biến cố sau:\na) A: \"Số được chọn nhỏ hơn 20\";\nb) B: \"Số được chọn là số chính phương\".\n(Gõ xác suất của các ý theo thứ tự a, b, mỗi xác suất là một phân số tối giản, cách nhau bằng dấu ;)",
+      "dap": [
+       "1/9;1/15"
+      ],
+      "phim": [
+       ";"
+      ],
+      "nhieu": [
+       "x"
+      ],
+      "loi_giai": [
+       "Số các số có hai chữ số (từ 10 đến 99) = 99 − 10 + 1 = 90",
+       "a) Số kết quả thuận lợi cho A (các số từ 10 đến 19) = 19 − 10 + 1 = 10; P(A) = 10/90 = 1/9",
+       "b) Các số chính phương có hai chữ số: 16; 25; 36; 49; 64; 81, có 6 số; P(B) = 6/90 = 1/15"
+      ]
+     }
     },
     {
      "ma": "8.25",
      "trang": 77,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Trong một phòng có 15 học sinh lớp 8A gồm 9 bạn nam, 6 bạn nữ và 15 học sinh lớp 8B gồm 12 bạn nam, 3 bạn nữ. Chọn ngẫu nhiên một học sinh trong phòng. Tính xác suất của các biến cố sau: a) E: \"Chọn được một học sinh nam\"; b) F: \"Chọn được một học sinh nam lớp 8B\"; c) G: \"Chọn được một học sinh nữ lớp 8A\"."
+     "de": "Trong một phòng có 15 học sinh lớp 8A gồm 9 bạn nam, 6 bạn nữ và 15 học sinh lớp 8B gồm 12 bạn nam, 3 bạn nữ. Chọn ngẫu nhiên một học sinh trong phòng. Tính xác suất của các biến cố sau: a) E: \"Chọn được một học sinh nam\"; b) F: \"Chọn được một học sinh nam lớp 8B\"; c) G: \"Chọn được một học sinh nữ lớp 8A\".",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "hoi": "Trong một phòng có 15 học sinh lớp 8A gồm 9 bạn nam, 6 bạn nữ và 15 học sinh lớp 8B gồm 12 bạn nam, 3 bạn nữ. Chọn ngẫu nhiên một học sinh trong phòng. Tính xác suất của các biến cố sau:\na) E: \"Chọn được một học sinh nam\";\nb) F: \"Chọn được một học sinh nam lớp 8B\";\nc) G: \"Chọn được một học sinh nữ lớp 8A\".\n(Gõ xác suất của các ý theo thứ tự a, b, c, mỗi xác suất là một phân số tối giản, cách nhau bằng dấu ;)",
+      "dap": [
+       "7/10;2/5;1/5",
+       "0,7;0,4;0,2"
+      ],
+      "phim": [
+       ";"
+      ],
+      "nhieu": [
+       "x"
+      ],
+      "loi_giai": [
+       "Số kết quả có thể = 15 + 15 = 30",
+       "a) Số học sinh nam = 9 + 12 = 21; P(E) = 21/30 = 7/10",
+       "b) Lớp 8B có 12 bạn nam; P(F) = 12/30 = 2/5",
+       "c) Lớp 8A có 6 bạn nữ; P(G) = 6/30 = 1/5"
+      ]
+     }
     },
     {
      "ma": "8.26",
      "trang": 77,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Bảng thống kê kết quả khảo sát số người thích một bộ phim mới tại 5 phường A, B, C, D, E của thành phố X (số người khảo sát nam/nữ và số người thích bộ phim mới nam/nữ): phường A 45/51 khảo sát, 10/11 thích; phường B 36/42 khảo sát, 9/6 thích; phường C 52/49 khảo sát, 13/13 thích; phường D 28/33 khảo sát, 9/10 thích; phường E 40/39 khảo sát, 7/4 thích; tổng số 201/214 khảo sát, 48/44 thích. a) Chọn ngẫu nhiên một người ở phường C. Ước lượng xác suất của biến cố A: \"Người được chọn thích bộ phim đó\". b) Chọn ngẫu nhiên một người ở phường E. Ước lượng xác suất của biến cố B: \"Người được chọn không thích bộ phim đó\". c) Chọn ngẫu nhiên 600 người ở thành phố X. Ước lượng trong đó có bao nhiêu người thích bộ phim đó. d) Chọn ngẫu nhiên 500 người nữ ở thành phố X. Ước lượng trong đó có bao nhiêu người thích bộ phim đó."
+     "de": "Bảng sau đây thống kê kết quả khảo sát số người thích một bộ phim mới tại 5 phường A, B, C, D, E của thành phố X. Phường A: khảo sát 45 nam, 51 nữ; số người thích bộ phim mới có 10 nam, 11 nữ. Phường B: khảo sát 36 nam, 42 nữ; số người thích có 9 nam, 6 nữ. Phường C: khảo sát 52 nam, 49 nữ; số người thích có 13 nam, 13 nữ. Phường D: khảo sát 28 nam, 33 nữ; số người thích có 9 nam, 10 nữ. Phường E: khảo sát 40 nam, 39 nữ; số người thích có 7 nam, 4 nữ. Tổng số: khảo sát 201 nam, 214 nữ; số người thích có 48 nam, 44 nữ. a) Chọn ngẫu nhiên một người ở phường C. Ước lượng xác suất của biến cố A: \"Người được chọn thích bộ phim đó\". b) Chọn ngẫu nhiên một người ở phường E. Ước lượng xác suất của biến cố B: \"Người được chọn không thích bộ phim đó\". c) Chọn ngẫu nhiên 600 người ở thành phố X. Ước lượng trong đó có bao nhiêu người thích bộ phim đó. d) Chọn ngẫu nhiên 500 người nữ ở thành phố X. Ước lượng trong đó có bao nhiêu người thích bộ phim đó.",
+     "hinh": [
+      "toan8t2/8.26.webp"
+     ],
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 6,
+      "hoi": "Bảng dưới đây thống kê kết quả khảo sát số người thích một bộ phim mới tại 5 phường A, B, C, D, E của thành phố X.\na) Chọn ngẫu nhiên một người ở phường C. Ước lượng xác suất của biến cố A: \"Người được chọn thích bộ phim đó\".\nb) Chọn ngẫu nhiên một người ở phường E. Ước lượng xác suất của biến cố B: \"Người được chọn không thích bộ phim đó\".\nc) Chọn ngẫu nhiên 600 người ở thành phố X. Ước lượng trong đó có bao nhiêu người thích bộ phim đó.\nd) Chọn ngẫu nhiên 500 người nữ ở thành phố X. Ước lượng trong đó có bao nhiêu người thích bộ phim đó.\n(Gõ hai xác suất ở câu a, b dưới dạng phân số tối giản, rồi hai số người ở câu c, d, theo thứ tự, cách nhau bằng dấu ;. Ở câu c, d nhân số người với xác suất thực nghiệm viết dưới dạng phân số, không làm tròn xác suất trước khi nhân, rồi làm tròn kết quả đến hàng đơn vị.)",
+      "dap": [
+       "26/101;68/79;133;103"
+      ],
+      "phim": [
+       ";"
+      ],
+      "nhieu": [
+       "x"
+      ],
+      "loi_giai": [
+       "a) Phường C: số người được khảo sát = 52 + 49 = 101; số người thích bộ phim = 13 + 13 = 26; P(A) ≈ 26/101",
+       "b) Phường E: số người được khảo sát = 40 + 39 = 79; số người không thích bộ phim = 79 − (7 + 4) = 68; P(B) ≈ 68/79",
+       "c) Cả 5 phường: số người được khảo sát = 201 + 214 = 415; số người thích bộ phim = 48 + 44 = 92",
+       "Trong 600 người, số người thích bộ phim khoảng 600 · 92/415 ≈ 133,01, tức là khoảng 133 người",
+       "d) Người nữ: có 44 trong 214 người được khảo sát thích bộ phim; xác suất thực nghiệm = 44/214 = 22/107",
+       "Trong 500 người nữ, số người thích bộ phim khoảng 500 · 22/107 ≈ 102,80, tức là khoảng 103 người"
+      ]
+     }
     }
    ]
   },
@@ -9508,56 +10401,560 @@
      "trang": 126,
      "nhom": "Luyện tập",
      "dang": "CAU_NHO",
-     "de": "Chi phí sử dụng truyền hình cáp của hai công ty A và B: công ty A có chi phí lắp đặt ban đầu 150 000 đồng và cước hằng tháng 110 000 đồng; công ty B miễn phí lắp đặt và cước hằng tháng 120 000 đồng. a) Viết công thức tính chi phí sử dụng truyền hình cáp y (nghìn đồng) của mỗi công ty A và B theo số tháng sử dụng là x (tháng). b) Tính chi phí sử dụng truyền hình cáp trong 18 tháng của mỗi công ty A và B. c) Với bao nhiêu tháng sử dụng thì chi phí sử dụng truyền hình cáp của hai công ty này là như nhau? d) Vẽ đồ thị của hai hàm số nhận được ở câu a trên cùng một hệ trục toạ độ. Từ đó hãy cho biết nếu một gia đình dự định dùng dịch vụ truyền hình cáp trong 3 năm thì nên chọn dịch vụ của công ty A hay công ty B để tiết kiệm chi phí hơn."
+     "de": "Chi phí sử dụng truyền hình cáp của hai công ty A và B: công ty A có chi phí lắp đặt ban đầu 150 000 đồng và cước hằng tháng 110 000 đồng; công ty B miễn phí lắp đặt và cước hằng tháng 120 000 đồng. a) Viết công thức tính chi phí sử dụng truyền hình cáp y (nghìn đồng) của mỗi công ty A và B theo số tháng sử dụng là x (tháng). b) Tính chi phí sử dụng truyền hình cáp trong 18 tháng của mỗi công ty A và B. c) Với bao nhiêu tháng sử dụng thì chi phí sử dụng truyền hình cáp của hai công ty này là như nhau? d) Vẽ đồ thị của hai hàm số nhận được ở câu a trên cùng một hệ trục toạ độ. Từ đó hãy cho biết nếu một gia đình dự định dùng dịch vụ truyền hình cáp trong 3 năm thì nên chọn dịch vụ của công ty A hay công ty B để tiết kiệm chi phí hơn (Giả sử chất lượng dịch vụ truyền hình cáp của hai công ty này là như nhau).",
+     "hinh": [
+      "toan8t2/HDTN-HD1-tr126-chon-1.webp",
+      "toan8t2/HDTN-HD1-tr126-chon-2.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 7,
+      "hoi": "Chi phí sử dụng truyền hình cáp của hai công ty dịch vụ truyền hình A và B như sau: công ty A có chi phí lắp đặt ban đầu 150 000 đồng, cước hằng tháng 110 000 đồng; công ty B miễn phí lắp đặt, cước hằng tháng 120 000 đồng.\na) Viết công thức tính chi phí sử dụng truyền hình cáp y (nghìn đồng) của mỗi công ty A và B theo số tháng sử dụng là x (tháng).\nb) Tính chi phí sử dụng truyền hình cáp trong 18 tháng của mỗi công ty A và B.\nc) Với bao nhiêu tháng sử dụng thì chi phí sử dụng truyền hình cáp của hai công ty này là như nhau?\nd) Vẽ đồ thị của hai hàm số nhận được ở câu a trên cùng một hệ trục toạ độ (trục hoành là số tháng x, trục tung là chi phí y tính bằng nghìn đồng). Từ đó hãy cho biết nếu một gia đình dự định dùng dịch vụ truyền hình cáp trong 3 năm thì nên chọn dịch vụ của công ty A hay công ty B để tiết kiệm chi phí hơn (Giả sử chất lượng dịch vụ truyền hình cáp của hai công ty này là như nhau).",
+      "dong": [
+       {
+        "chu": "a) Công ty A: y = {0}",
+        "o": [
+         {
+          "dung": [
+           "110x + 150"
+          ],
+          "sai": [
+           "150x + 110",
+           "110x",
+           "110x + 150 000"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Công ty B: y = {0}",
+        "o": [
+         {
+          "dung": [
+           "120x"
+          ],
+          "sai": [
+           "120x + 150",
+           "120 000x",
+           "110x"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "b) Chi phí sử dụng trong 18 tháng của công ty A: {0} nghìn đồng",
+        "o": [
+         {
+          "dung": [
+           "2 130"
+          ],
+          "sai": [
+           "1 980",
+           "2 810",
+           "2 160"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Chi phí sử dụng trong 18 tháng của công ty B: {0} nghìn đồng",
+        "o": [
+         {
+          "dung": [
+           "2 160"
+          ],
+          "sai": [
+           "2 310",
+           "2 130",
+           "1 980"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "c) Số tháng sử dụng để chi phí của hai công ty như nhau: {0}",
+        "o": [
+         {
+          "dung": [
+           "15"
+          ],
+          "sai": [
+           "150",
+           "18",
+           "12"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "d) Hình vẽ đúng đồ thị của hai hàm số: {0}",
+        "o": [
+         {
+          "dung": [
+           "Hình 3"
+          ],
+          "sai": [
+           "Hình 1",
+           "Hình 2",
+           "Hình 4"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Dùng dịch vụ trong 3 năm thì nên chọn: {0}",
+        "o": [
+         {
+          "dung": [
+           "công ty A"
+          ],
+          "sai": [
+           "công ty B",
+           "công ty nào cũng như nhau"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "Hàm số tài chính - HĐ2 (tr.126)",
      "trang": 126,
      "nhom": "Luyện tập",
      "dang": "CAU_NHO",
-     "de": "Một hãng taxi vừa mua một số ô tô để chạy dịch vụ với chi phí là 480 triệu đồng một chiếc. Công ty chọn khấu hao từng chiếc xe theo phương pháp khấu hao đường thẳng trong vòng 8 năm, tức là mỗi chiếc xe sẽ giảm giá 480 : 8 = 60 triệu đồng mỗi năm. a) Tính giá trị sổ sách y (triệu đồng) của mỗi chiếc ô tô dưới dạng một hàm số bậc nhất của thời gian sử dụng x (năm) của nó. b) Vẽ đồ thị của hàm số bậc nhất này. c) Giá trị sổ sách của mỗi chiếc ô tô sau 3 năm sử dụng là bao nhiêu? d) Sau bao lâu thì giá trị sổ sách của mỗi chiếc ô tô còn lại là 150 triệu đồng?"
+     "de": "Trong lí thuyết tài chính, giá trị sổ sách là giá trị của một tài sản mà công ty sử dụng để tạo ra bảng cân đối kế toán của mình. Một số công ty khấu hao tài sản của họ bằng cách sử dụng khấu hao đường thẳng để giá trị của tài sản giảm một lượng cố định mỗi năm. Mức suy giảm phụ thuộc vào thời gian sử dụng hữu ích mà công ty đặt vào tài sản. Giả sử rằng một hãng taxi vừa mua một số ô tô để chạy dịch vụ với chi phí là 480 triệu đồng một chiếc. Công ty chọn khấu hao từng chiếc xe theo phương pháp khấu hao đường thẳng trong vòng 8 năm. Điều này có nghĩa là mỗi chiếc xe sẽ giảm giá 480 : 8 = 60 triệu đồng mỗi năm. a) Tính giá trị sổ sách y (triệu đồng) của mỗi chiếc ô tô dưới dạng một hàm số bậc nhất của thời gian sử dụng x (năm) của nó. b) Vẽ đồ thị của hàm số bậc nhất này. c) Giá trị sổ sách của mỗi chiếc ô tô sau 3 năm sử dụng là bao nhiêu? d) Sau bao lâu thì giá trị sổ sách của mỗi chiếc ô tô còn lại là 150 triệu đồng?",
+     "hinh": [
+      "toan8t2/HDTN-HD2-tr126-chon-1.webp",
+      "toan8t2/HDTN-HD2-tr126-chon-2.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "hoi": "Trong lí thuyết tài chính, giá trị sổ sách là giá trị của một tài sản mà công ty sử dụng để tạo ra bảng cân đối kế toán của mình. Một số công ty khấu hao tài sản của họ bằng cách sử dụng khấu hao đường thẳng để giá trị của tài sản giảm một lượng cố định mỗi năm. Mức suy giảm phụ thuộc vào thời gian sử dụng hữu ích mà công ty đặt vào tài sản.\nGiả sử rằng một hãng taxi vừa mua một số ô tô để chạy dịch vụ với chi phí là 480 triệu đồng một chiếc. Công ty chọn khấu hao từng chiếc xe theo phương pháp khấu hao đường thẳng trong vòng 8 năm. Điều này có nghĩa là mỗi chiếc xe sẽ giảm giá 480 : 8 = 60 triệu đồng mỗi năm.\na) Tính giá trị sổ sách y (triệu đồng) của mỗi chiếc ô tô dưới dạng một hàm số bậc nhất của thời gian sử dụng x (năm) của nó.\nb) Vẽ đồ thị của hàm số bậc nhất này (trục hoành là thời gian sử dụng x tính bằng năm, trục tung là giá trị sổ sách y tính bằng triệu đồng).\nc) Giá trị sổ sách của mỗi chiếc ô tô sau 3 năm sử dụng là bao nhiêu?\nd) Sau bao lâu thì giá trị sổ sách của mỗi chiếc ô tô còn lại là 150 triệu đồng?",
+      "dong": [
+       {
+        "chu": "a) y = {0}",
+        "o": [
+         {
+          "dung": [
+           "480 − 60x"
+          ],
+          "sai": [
+           "480 + 60x",
+           "60x",
+           "480x − 60"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "b) Đồ thị của hàm số: {0}",
+        "o": [
+         {
+          "dung": [
+           "Hình 2"
+          ],
+          "sai": [
+           "Hình 1",
+           "Hình 3",
+           "Hình 4"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "c) Giá trị sổ sách sau 3 năm sử dụng: {0} triệu đồng",
+        "o": [
+         {
+          "dung": [
+           "300"
+          ],
+          "sai": [
+           "180",
+           "660",
+           "420"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "d) Giá trị sổ sách còn lại 150 triệu đồng sau: {0} năm",
+        "o": [
+         {
+          "dung": [
+           "5,5"
+          ],
+          "sai": [
+           "2,5",
+           "10,5",
+           "8"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "Hàm số tài chính - Vận dụng (tr.127)",
      "trang": 127,
      "nhom": "Vận dụng",
      "dang": "CAU_NHO",
-     "de": "Bác An dự định mua một chiếc tủ lạnh loại 150 lít của hãng A, có công suất 1 kWh/ngày với giá 5 000 000 đồng và dự định sẽ sử dụng nó trong vòng 10 năm. a) Giả sử trung bình một tháng có 30 ngày và giá điện là 2 000 đồng/1 kWh. Hãy tính số tiền điện phải trả hằng tháng cho chiếc tủ lạnh này. b) Giả sử trong quá trình sử dụng, tủ lạnh không bị hỏng hóc gì cần sửa chữa. Khi đó chi phí sử dụng tủ lạnh bao gồm chi phí mua ban đầu và chi phí trả tiền điện hằng tháng. Lập công thức tính chi phí sử dụng chiếc tủ lạnh này sau x (tháng). c) Sử dụng công thức đã lập ở câu b, hãy tính chi phí sử dụng chiếc tủ lạnh này sau 5 năm. d) Bác An dùng phương pháp khấu hao đường thẳng để tính giá trị còn lại của chiếc tủ lạnh sau mỗi năm sử dụng. Hỏi sau 7 năm giá trị còn lại của chiếc tủ lạnh này là bao nhiêu? e) Hãng B cũng có một loại tủ lạnh 150 lít, công suất 1,25 kWh/ngày với giá bán là 4 460 000 đồng. Lập công thức tính chi phí sử dụng chiếc tủ lạnh của hãng B sau x (tháng); sau bao nhiêu tháng sử dụng thì chi phí sử dụng của hai loại tủ lạnh này là bằng nhau; vẽ đồ thị của hai hàm số chi phí sử dụng của hai loại tủ lạnh trên cùng một hệ trục toạ độ và cho biết bác An nên mua tủ lạnh của hãng nào để tiết kiệm chi phí sử dụng hơn."
+     "de": "Bác An dự định mua một chiếc tủ lạnh loại 150 lít của hãng A, có công suất 1 kWh/ngày với giá 5 000 000 đồng và dự định sẽ sử dụng nó trong vòng 10 năm. a) Giả sử trung bình một tháng có 30 ngày và giá điện là 2 000 đồng/1 kWh. Hãy tính số tiền điện phải trả hằng tháng cho chiếc tủ lạnh này. b) Giả sử trong quá trình sử dụng, tủ lạnh không bị hỏng hóc gì cần sửa chữa. Khi đó chi phí sử dụng tủ lạnh bao gồm chi phí mua ban đầu và chi phí trả tiền điện hằng tháng. Lập công thức tính chi phí sử dụng chiếc tủ lạnh này sau x (tháng). c) Sử dụng công thức đã lập ở câu b, hãy tính chi phí sử dụng chiếc tủ lạnh này sau 5 năm. d) Bác An dùng phương pháp khấu hao đường thẳng để tính giá trị còn lại của chiếc tủ lạnh sau mỗi năm sử dụng. Hỏi sau 7 năm giá trị còn lại của chiếc tủ lạnh này là bao nhiêu? e) Hãng B cũng có một loại tủ lạnh 150 lít, công suất 1,25 kWh/ngày với giá bán là 4 460 000 đồng. – Lập công thức tính chi phí sử dụng chiếc tủ lạnh của hãng B sau x (tháng). – Sau bao nhiêu tháng sử dụng thì chi phí sử dụng của hai loại tủ lạnh này là bằng nhau? – Vẽ đồ thị của hai hàm số chi phí sử dụng của hai loại tủ lạnh trên cùng một hệ trục toạ độ. Từ đồ thị đã vẽ, theo em bác An nên mua tủ lạnh của hãng A hay hãng B để tiết kiệm chi phí sử dụng hơn? (Giả sử bác An sẽ sử dụng trong vòng 10 năm và chất lượng của hai loại tủ lạnh là tương đương).",
+     "hinh": [
+      "toan8t2/HDTN-VD-tr127-chon-1.webp",
+      "toan8t2/HDTN-VD-tr127-chon-2.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 8,
+      "hoi": "Bác An dự định mua một chiếc tủ lạnh loại 150 lít của hãng A, có công suất 1 kWh/ngày với giá 5 000 000 đồng và dự định sẽ sử dụng nó trong vòng 10 năm.\na) Giả sử trung bình một tháng có 30 ngày và giá điện là 2 000 đồng/1 kWh. Hãy tính số tiền điện phải trả hằng tháng cho chiếc tủ lạnh này.\nb) Giả sử trong quá trình sử dụng, tủ lạnh không bị hỏng hóc gì cần sửa chữa. Khi đó chi phí sử dụng tủ lạnh bao gồm chi phí mua ban đầu và chi phí trả tiền điện hằng tháng. Lập công thức tính chi phí sử dụng y (đồng) của chiếc tủ lạnh này sau x (tháng).\nc) Sử dụng công thức đã lập ở câu b, hãy tính chi phí sử dụng chiếc tủ lạnh này sau 5 năm.\nd) Bác An dùng phương pháp khấu hao đường thẳng để tính giá trị còn lại của chiếc tủ lạnh sau mỗi năm sử dụng. Hỏi sau 7 năm giá trị còn lại của chiếc tủ lạnh này là bao nhiêu?\ne) Hãng B cũng có một loại tủ lạnh 150 lít, công suất 1,25 kWh/ngày với giá bán là 4 460 000 đồng.\n- Lập công thức tính chi phí sử dụng y (đồng) của chiếc tủ lạnh của hãng B sau x (tháng).\n- Sau bao nhiêu tháng sử dụng thì chi phí sử dụng của hai loại tủ lạnh này là bằng nhau?\n- Vẽ đồ thị của hai hàm số chi phí sử dụng của hai loại tủ lạnh trên cùng một hệ trục toạ độ (trục hoành là số tháng x, trục tung là chi phí tính bằng triệu đồng). Từ đồ thị đã vẽ, theo em bác An nên mua tủ lạnh của hãng A hay hãng B để tiết kiệm chi phí sử dụng hơn? (Giả sử bác An sẽ sử dụng trong vòng 10 năm và chất lượng của hai loại tủ lạnh là tương đương.)",
+      "dong": [
+       {
+        "chu": "a) Tiền điện phải trả hằng tháng: {0}",
+        "o": [
+         {
+          "dung": [
+           "60 000 đồng"
+          ],
+          "sai": [
+           "2 000 đồng",
+           "720 000 đồng",
+           "75 000 đồng"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "b) Chi phí sử dụng sau x tháng (đồng): y = {0}",
+        "o": [
+         {
+          "dung": [
+           "5 000 000 + 60 000x"
+          ],
+          "sai": [
+           "60 000 + 5 000 000x",
+           "5 000 000 + 2 000x",
+           "60 000x"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "c) Chi phí sử dụng sau 5 năm: {0} đồng",
+        "o": [
+         {
+          "dung": [
+           "8 600 000"
+          ],
+          "sai": [
+           "5 300 000",
+           "3 600 000",
+           "5 720 000"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "d) Giá trị còn lại của tủ lạnh sau 7 năm: {0} đồng",
+        "o": [
+         {
+          "dung": [
+           "1 500 000"
+          ],
+          "sai": [
+           "3 500 000",
+           "4 500 000",
+           "1 000 000"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "e) Chi phí sử dụng tủ lạnh hãng B sau x tháng (đồng): y = {0}",
+        "o": [
+         {
+          "dung": [
+           "4 460 000 + 75 000x"
+          ],
+          "sai": [
+           "4 460 000 + 60 000x",
+           "4 460 000 + 2 500x",
+           "75 000 + 4 460 000x"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Chi phí sử dụng của hai loại tủ lạnh bằng nhau sau: {0} tháng",
+        "o": [
+         {
+          "dung": [
+           "36"
+          ],
+          "sai": [
+           "9",
+           "4",
+           "3"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Đồ thị chi phí sử dụng của hai loại tủ lạnh: {0}",
+        "o": [
+         {
+          "dung": [
+           "Hình 4"
+          ],
+          "sai": [
+           "Hình 1",
+           "Hình 2",
+           "Hình 3"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Dùng trong 10 năm, bác An nên mua tủ lạnh của: {0}",
+        "o": [
+         {
+          "dung": [
+           "hãng A"
+          ],
+          "sai": [
+           "hãng B",
+           "hãng nào cũng như nhau"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "Đo khoảng cách - Luyện tập (tr.129)",
      "trang": 129,
      "nhom": "Luyện tập",
      "dang": "CAU_NHO",
-     "de": "Trong Phương pháp 1 của HĐ2 (đo khoảng cách AB đến điểm không tới được: dùng giác kế chọn điểm C sao cho AC vuông góc AB, chọn điểm D trên đường thẳng BC sao cho AD vuông góc BC), chúng ta đã dùng định lí Pythagore để tính độ dài đoạn thẳng AB. Em hãy tính độ dài đoạn thẳng AB bằng một cách khác thông qua độ dài các đoạn thẳng AC, AD, CD."
+     "de": "Trong Phương pháp 1 của HĐ2 (đo khoảng cách AB đến điểm không tới được: dùng giác kế chọn điểm C sao cho AC vuông góc AB, chọn điểm D trên đường thẳng BC sao cho AD vuông góc BC), chúng ta đã dùng định lí Pythagore để tính độ dài đoạn thẳng AB. Em hãy tính độ dài đoạn thẳng AB bằng một cách khác thông qua độ dài các đoạn thẳng AC, AD, CD.",
+     "hinh": [
+      "toan8t2/HDTN-T2-tr129.webp"
+     ],
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 6,
+      "hoi": "Để đo khoảng cách từ vị trí đang đứng (điểm A) đến vị trí khó đi đến được (điểm B), dùng giác kế chọn một điểm C sao cho AC vuông góc với AB, chọn điểm D trên đường thẳng BC sao cho AD vuông góc với BC (hình dưới đây). Trong Phương pháp 1, ta đã dùng định lí Pythagore để tính độ dài đoạn thẳng AB. Em hãy tính độ dài đoạn thẳng AB bằng một cách khác thông qua độ dài các đoạn thẳng AC, AD, CD.\nGiả sử đo được AC = 30 m, AD = 24 m, CD = 18 m. Sắp xếp các bước giải dưới đây.",
+      "buoc": [
+       "Xét tam giác ABC vuông tại A và tam giác DAC vuông tại D: góc BAC = góc ADC = 90°",
+       "Góc C chung",
+       "Do đó △ABC ∽ △DAC (g.g)",
+       "Suy ra AB/DA = AC/DC",
+       "Vậy AB = AC · AD : CD",
+       "Với AC = 30 m, AD = 24 m, CD = 18 m thì độ dài AB (mét) = 30 · 24 : 18 = 40"
+      ],
+      "nhieu": [
+       "Do đó △ABC ∽ △ADC (g.g)",
+       "Suy ra AB/DC = AC/DA",
+       "Vậy AB = AD · CD : AC"
+      ],
+      "thu_tu_khac": [
+       [
+        1,
+        0,
+        2,
+        3,
+        4,
+        5
+       ]
+      ]
+     }
     },
     {
      "ma": "GeoGebra - Thực hành 1 (tr.132)",
      "trang": 132,
      "nhom": "Luyện tập",
      "dang": "CAU_NHO",
-     "de": "Sử dụng phần mềm GeoGebra, hãy tính: (x^4 − xy^3)/(2xy + y^2) : (x^3 + x^2y + xy^2)/(2x + y) + (y + x)/x."
+     "de": "Sử dụng phần mềm GeoGebra, hãy tính: (x^4 − xy^3)/(2xy + y^2) : (x^3 + x^2y + xy^2)/(2x + y) + (y + x)/x.",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 5,
+      "hoi": "Sử dụng phần mềm GeoGebra (hoặc tự tính), hãy tính:\n(x⁴ − xy³)/(2xy + y²) : (x³ + x²y + xy²)/(2x + y) + (y + x)/x.",
+      "dap": [
+       "(x²+y²)/(xy)"
+      ],
+      "phim": [
+       "x",
+       "y",
+       "²"
+      ],
+      "nhieu": [
+       "³",
+       "⁴",
+       "z"
+      ],
+      "loi_giai": [
+       "x⁴ − xy³ = x(x − y)(x² + xy + y²); 2xy + y² = y(2x + y); x³ + x²y + xy² = x(x² + xy + y²)",
+       "[(x⁴ − xy³)/(2xy + y²)] : [(x³ + x²y + xy²)/(2x + y)] = [x(x − y)(x² + xy + y²)/(y(2x + y))] · [(2x + y)/(x(x² + xy + y²))]",
+       "= (x − y)/y",
+       "(x − y)/y + (y + x)/x = (x(x − y) + y(y + x))/(xy)",
+       "= (x² − xy + xy + y²)/(xy) = (x² + y²)/(xy)"
+      ]
+     }
     },
     {
      "ma": "GeoGebra - Thực hành 2 (tr.132)",
      "trang": 132,
      "nhom": "Luyện tập",
      "dang": "CAU_NHO",
-     "de": "Sử dụng phần mềm GeoGebra, hãy giải các phương trình sau: a) 4,8 − 2,5(x + 3) = x + 0,5(2 − 6x); b) 2(x + 4/5) = 3 − (7/5 − 2x)."
+     "de": "Sử dụng phần mềm GeoGebra, hãy giải các phương trình sau: a) 4,8 − 2,5(x + 3) = x + 0,5(2 − 6x); b) 2(x + 4/5) = 3 − (7/5 − 2x).",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "hoi": "Sử dụng phần mềm GeoGebra (hoặc tự giải), hãy giải các phương trình sau:\na) 4,8 − 2,5(x + 3) = x + 0,5(2 − 6x);\nb) 2(x + 4/5) = 3 − (7/5 − 2x).\n(Gõ kết quả của từng phương trình theo thứ tự a, b, cách nhau bằng dấu ;)",
+      "dap": [
+       "−37/5;mọi x",
+       "x=−37/5;mọi x",
+       "−7,4;mọi x",
+       "x=−7,4;mọi x"
+      ],
+      "phim": [
+       "x",
+       ";",
+       "mọi x"
+      ],
+      "nhieu": [
+       "vô nghiệm",
+       "y",
+       "²"
+      ],
+      "loi_giai": [
+       "a) 4,8 − 2,5(x + 3) = x + 0,5(2 − 6x) ⇔ 4,8 − 2,5x − 7,5 = x + 1 − 3x",
+       "⇔ −2,5x − x + 3x = 1 − 4,8 + 7,5 ⇔ −0,5x = 3,7 ⇔ x = −7,4 = −37/5",
+       "b) 2(x + 4/5) = 3 − (7/5 − 2x) ⇔ 2x + 8/5 = 3 − 7/5 + 2x",
+       "⇔ 2x − 2x = 3 − 7/5 − 8/5 ⇔ 0x = 0; mọi x đều là nghiệm, phương trình nghiệm đúng với mọi x"
+      ]
+     }
     },
     {
      "ma": "GeoGebra - Thực hành 3 (tr.132)",
      "trang": 132,
      "nhom": "Luyện tập",
      "dang": "CAU_NHO",
-     "de": "Sử dụng phần mềm GeoGebra, hãy vẽ đồ thị của các hàm số bậc nhất sau: a) y = −3x + 3; b) y = (1/2)x − 4."
+     "de": "Sử dụng phần mềm GeoGebra, hãy vẽ đồ thị của các hàm số bậc nhất sau: a) y = −3x + 3; b) y = (1/2)x − 4.",
+     "hinh": [
+      "toan8t2/HDTN-TH3-tr132-a-chon-1.webp",
+      "toan8t2/HDTN-TH3-tr132-a-chon-2.webp",
+      "toan8t2/HDTN-TH3-tr132-b-chon-1.webp",
+      "toan8t2/HDTN-TH3-tr132-b-chon-2.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "hoi": "Sử dụng phần mềm GeoGebra, hãy vẽ đồ thị của các hàm số bậc nhất sau:\na) y = −3x + 3;\nb) y = (1/2)x − 4.\nVẽ theo Cách 1: lấy hai giao điểm của đồ thị với hai trục toạ độ, lần lượt nhập toạ độ hai điểm đó vào ô lệnh (với hàm số y = 2x + 4 thì nhập (0, 4) và (−2, 0)), rồi chọn công cụ đường thẳng đi qua hai điểm. Với mỗi hàm số, chọn hai điểm cần nhập và hình là đồ thị của hàm số đó.",
+      "dong": [
+       {
+        "chu": "a) Hai điểm nhập vào ô lệnh: {0}",
+        "o": [
+         {
+          "dung": [
+           "(0, 3) và (1, 0)"
+          ],
+          "sai": [
+           "(0, 3) và (−1, 0)",
+           "(3, 0) và (0, 1)",
+           "(0, −3) và (1, 0)"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Đồ thị của hàm số y = −3x + 3: {0}",
+        "o": [
+         {
+          "dung": [
+           "Hình 2"
+          ],
+          "sai": [
+           "Hình 1",
+           "Hình 3",
+           "Hình 4"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "b) Hai điểm nhập vào ô lệnh: {0}",
+        "o": [
+         {
+          "dung": [
+           "(0, −4) và (8, 0)"
+          ],
+          "sai": [
+           "(0, −4) và (2, 0)",
+           "(0, 4) và (−8, 0)",
+           "(−4, 0) và (0, 8)"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Đồ thị của hàm số y = (1/2)x − 4: {0}",
+        "o": [
+         {
+          "dung": [
+           "Hình 7"
+          ],
+          "sai": [
+           "Hình 5",
+           "Hình 6",
+           "Hình 8"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "Excel xác suất - Vận dụng (tr.134)",
      "trang": 134,
      "nhom": "Vận dụng",
      "dang": "CAU_NHO",
-     "de": "Một túi kín đựng 8 quả bóng có cùng kích thước, trong đó có 1 quả màu xanh, 2 quả màu vàng, 2 quả màu đỏ và 3 quả màu đen. Lấy ngẫu nhiên một quả bóng trong túi 200 lần (có hoàn lại). Tính xác suất thực nghiệm của biến cố \"Lấy được quả bóng không phải màu đen\"."
+     "de": "Em hãy luyện tập tương tự bài toán mẫu (mô tả thí nghiệm ngẫu nhiên với phần mềm Excel, dùng các hàm RANDBETWEEN, VLOOKUP, COUNTIF; bài toán mẫu: túi kín đựng 6 quả bóng gồm 3 quả xanh, 2 quả đỏ, 1 quả vàng, lấy ngẫu nhiên một quả 100 lần có hoàn lại) với thí nghiệm sau: Một túi kín đựng 8 quả bóng có cùng kích thước, trong đó có 1 quả màu xanh, 2 quả màu vàng, 2 quả màu đỏ và 3 quả màu đen. Lấy ngẫu nhiên một quả bóng trong túi 200 lần (có hoàn lại). Tính xác suất thực nghiệm của biến cố \"Lấy được quả bóng không phải màu đen\".",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 8,
+      "hoi": "Bài toán mẫu dùng phần mềm Excel để mô tả thí nghiệm: túi kín đựng 6 quả bóng (3 quả xanh, 2 quả đỏ, 1 quả vàng), lấy ngẫu nhiên một quả bóng 100 lần (có hoàn lại), dùng các hàm RANDBETWEEN, VLOOKUP, COUNTIF.\nEm hãy làm tương tự với thí nghiệm sau: Một túi kín đựng 8 quả bóng có cùng kích thước, trong đó có 1 quả màu xanh, 2 quả màu vàng, 2 quả màu đỏ và 3 quả màu đen. Lấy ngẫu nhiên một quả bóng trong túi 200 lần (có hoàn lại). Tính xác suất thực nghiệm của biến cố \"Lấy được quả bóng không phải màu đen\".\nGiả sử sau 200 lần lấy, có 74 lần lấy được quả bóng màu đen. Sắp xếp các bước làm trên Excel dưới đây.",
+      "buoc": [
+       "Nhập các số 1; 2; 3; 4; 5; 6; 7; 8 vào các ô từ A1 đến A8",
+       "Nhập \"Xanh\" vào ô B1; \"Vàng\" vào B2, B3; \"Đỏ\" vào B4, B5; \"Đen\" vào B6, B7, B8",
+       "Trong ô C1 gõ hàm =RANDBETWEEN(1;8)",
+       "Trong ô D1 gõ hàm =VLOOKUP(C1; $A$1:$B$8; 2)",
+       "Kéo công thức của hai ô C1, D1 từ dòng 1 đến dòng 200 (kết quả 200 lần lấy bóng nằm ở cột D)",
+       "Trong ô E2 nhập hàm =(200-COUNTIF(D1:D200,\"Đen\"))/200",
+       "Với 74 lần lấy được quả bóng màu đen, xác suất thực nghiệm = (200 − 74) : 200 = 0,63",
+       "Tăng số lần lấy bóng lên 300, 400, 500 thì xác suất thực nghiệm càng gần xác suất của biến cố = 5/8 = 0,625"
+      ],
+      "nhieu": [
+       "Trong ô C1 gõ hàm =RANDBETWEEN(1;6)",
+       "Trong ô D1 gõ hàm =VLOOKUP(C1; $A$1:$B$6; 2)",
+       "Trong ô E2 nhập hàm =COUNTIF(D1:D200,\"Đen\")/200"
+      ],
+      "thu_tu_khac": [
+       [
+        1,
+        0,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+       ]
+      ]
+     }
     }
    ]
   },
