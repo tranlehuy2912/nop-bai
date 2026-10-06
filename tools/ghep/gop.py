@@ -124,8 +124,12 @@ def ap_cau(c, ma, ghep, bo, hinh, can_hinh, mon, sua_de=None):
         c["bo_may"] = f"{CHO_HINH}: {can_hinh[ma].strip()}"
         return "cho_hinh"
     c.pop("ghep_cho_hinh", None)
-    if str(c.get("bo_may", "")).startswith(CHO_HINH):
-        c.pop("bo_may", None)
+    # Co ghep moi thi bo moi bo_may cu, khong chi bo_may "chờ hình". Tu 6/10/2026 anh Huy chot
+    # tranh viet tay nhieu nhat co the: cau ve (do thi, bieu do, hinh) doi thanh cau chon hinh,
+    # cau dieu tra giu phan kien thuc, nen nhieu cau dang bo_may duoc soan lai thanh ghep. Truoc
+    # ngay nay gop.py giu bo_may cu, cau vua co ghep vua co bo_may (kiem.py bao loi, app coi la
+    # cau phai viet).
+    c.pop("bo_may", None)
     c["ghep"] = g
     return "ghep"
 

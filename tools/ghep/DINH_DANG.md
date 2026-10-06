@@ -152,7 +152,20 @@ Mọi kiểu đều có `kieu` và `sao`. Trường `hoi` (không bắt buộc) 
 - Đáp số, rút gọn, phân tích nhân tử, giải phương trình, tính toán có kết quả, phương trình hoá học: `BIEU_THUC`.
 - Chứng minh, giải thích, bài tính nhiều bước mà con phải trình bày: `BUOC`.
 - Câu có nhiều kết quả rời nhau (ví dụ "biểu thức nào là đơn thức"): `O`, mỗi biểu thức một dòng với ô `Có`/`Không` và `"hai": true`.
-- Vẽ hình, vẽ đồ thị, lập bảng tự vẽ, làm miệng: không có `ghep`, ghi `bo_may`.
+- Vẽ đồ thị, vẽ biểu đồ, vẽ hình, vẽ sơ đồ (mạch điện, lưới thức ăn), cắt gấp hình: từ 06/10/2026 không còn `bo_may` mà thành câu chọn hình (mục "Câu vẽ: chọn hình" dưới đây).
+- Lập bảng thống kê: `O`, mỗi ô cần điền của bảng một dòng (hay một ô chọn trong dòng của hàng đó).
+- Điều tra thực tế, dự án, poster, tự đo, việc ở nhà: làm trên máy phần kiến thức (nguyên nhân, biện pháp, nên hay không nên), bỏ phần điều tra; cần số liệu thực tế (lãi suất ngân hàng, nhiệt độ, thân nhiệt, khẩu phần) thì cho số liệu giả định và ghi rõ "Giả sử ..." trong `hoi`.
+- `bo_may` chỉ còn cho câu không có phần nào làm được bằng phím ghép, kể cả sau khi đổi như trên (làm miệng thuần, thao tác phần mềm thuần). Ghi lý do ngắn.
+
+## Câu vẽ: chọn hình (từ 06/10/2026)
+
+Anh Huy chốt ngày 06/10/2026: tránh viết tay nhiều nhất có thể. Câu SGK không có `ghep` hay có `bo_may` là câu con phải viết vở rồi chụp, nên câu vẽ đổi thành câu chọn hình:
+
+- Vẽ sẵn 3 hay 4 hình bằng `ghep-nhap/ghep/cong_cu/ve.py` (ngoài git; đồ thị, biểu đồ cột, cột kép, đoạn thẳng, hình quạt tròn, hình hình học, và hàm `ghep`): một hình đúng, các hình sai là lỗi học sinh hay mắc (sai dấu hệ số góc, nhầm tung độ gốc, đổi chỗ hai trục, sai chiều cao một cột, chọn sai loại biểu đồ, thiếu chú thích, sai một độ dài). Hình sai phải sai rõ khi đối chiếu với đề, không sai vì nét vẽ.
+- Ghép các hình thành một ảnh có nhãn "Hình 1" tới "Hình N" (`ve.ghep`), lưu bằng `ve.luu` vào thư mục hình của sách, gắn vào trường `hinh` của câu.
+- Câu chỉ có việc vẽ: `CHON`, `cac` là `["Hình 1", "Hình 2", ...]`. Máy trộn thứ tự nút nhưng chữ trên nút vẫn trỏ đúng ô trong ảnh. 1 sao.
+- Câu có cả phần vẽ lẫn phần tính: `O`, mỗi ý một dòng (`"a) Công thức: {0}"`, `"b) Đồ thị: {0}"`, `"c) Chi phí 15 xe: {0}"`), dòng phần vẽ có ô chọn `Hình 1` tới `Hình N`, dòng phần tính có ô chọn kết quả đúng và kết quả sai do lỗi hay gặp.
+- Không vẽ lại hình của sách để làm đáp án nếu hình sách lộ đáp án; hình đề bài (hình cho sẵn để con đọc) vẫn cắt từ ảnh trang như cũ.
 
 ## Câu cần hình mà chưa có ảnh
 
@@ -191,7 +204,9 @@ Chép từ bản quét SGK Tiếng Anh 8 Global Success, đợt đầu Unit 1 t�
 - Màn chọn câu in nguyên mã làm nhãn, mà cô giao theo số bài và trang, nên mã là nhãn đọc được theo khuôn SGK Toán: `Bài 3.2 (tr.10)` là bài 3 trang 10 câu 2, `Bài 2.a (tr.8)` khi sách đánh chữ, `Bài 2 (tr.8)` khi cả bài là một câu, `Bài 4a (tr.13)` và `Bài 4b.1 (tr.13)` khi bài in hai phần a, b. Trang trong mã là trang in số bài.
 - `nhom` là tên phần như sách: `Getting Started`, `A Closer Look 1`, `A Closer Look 2`, `Communication`, `Skills 1`, `Skills 2`, `Looking Back`.
 - Mã đoạn văn trong `doan_van`: `<Unit>.<phần viết tắt><số bài>`, ví dụ `1.GS1`. Chỉ là khoá nội bộ.
-- Bỏ hẳn: bài nghe (app không có âm thanh), "Listen and repeat", bài nói, làm theo cặp hay nhóm, đóng vai, Project. Giữ hội thoại "Listen and read" của Getting Started làm đoạn văn cho các bài đọc hiểu sau nó, và giữ bài phát âm mà đáp án chỉ dựa vào kiến thức (xếp từ vào cột theo âm).
+- Bỏ hẳn: bài nghe (app không có âm thanh), "Listen and repeat", làm theo cặp hay nhóm, đóng vai, Project. Giữ hội thoại "Listen and read" của Getting Started làm đoạn văn cho các bài đọc hiểu sau nó, và giữ bài phát âm mà đáp án chỉ dựa vào kiến thức (xếp từ vào cột theo âm).
+- Bài nói (anh Huy chốt 06/10/2026): gợi ý in sẵn hay bài đọc trong sách cho ra đúng một đáp án thì giữ (ghép thẻ hay ô chọn, ví dụ Unit 6 Skills 1 bài 4); bài đoán, hỏi ý kiến riêng thì bỏ.
+- Một trang có hai bài cùng số ở hai phần khác nhau (Unit 6 trang 64: Bài 3 của A Closer Look 2 và Bài 3 của Communication): mã của bài thuộc phần sau thêm tên phần, `Bài 3.1 (tr.64, Communication)` (anh Huy chốt 06/10/2026).
 - Bài viết đoạn văn ở Skills 2 làm như `E3a`, `E3b` của SBT: phần a xếp đoạn mẫu (`BUOC`), phần b ghép theo câu gợi ý (`O`).
 
 ## Bộ đề thi in sẵn (`dethianh8.json`, từ 30/09/2026)
