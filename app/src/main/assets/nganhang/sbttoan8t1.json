@@ -2,7 +2,7 @@
  "nguon": "sbttoan8t1",
  "mon": "Toán",
  "ten": "SBT Toán 8 — tập một",
- "ban": 8,
+ "ban": 9,
  "cac_bai": [
   {
    "chuong": "Chương I. Đa thức",
@@ -5874,7 +5874,22 @@
      "dang": "CAU_NHO",
      "dap_an": "5 đường chéo: AC, AD, BD, BE, CE",
      "loai_dap_an": "DAP_SO",
-     "bo_may": "vẽ hình"
+     "hinh": [
+      "sbttoan8t1/3.30b-chon-1.webp",
+      "sbttoan8t1/3.30b-chon-2.webp"
+     ],
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Đoạn thẳng nối hai đỉnh không kề nhau của n-giác gọi là một đường chéo của n-giác. Hãy vẽ tất cả các đường chéo của ngũ giác ABCDE (n = 5). Hình nào vẽ đúng và đủ các đường chéo (vẽ màu đỏ)?",
+      "cac": [
+       "Hình 1",
+       "Hình 2",
+       "Hình 3",
+       "Hình 4"
+      ],
+      "dap": "B"
+     }
     },
     {
      "ma": "3.31a",
@@ -7430,7 +7445,25 @@
      "dang": "CAU_NHO",
      "dap_an": "Câu mở. Sách gợi ý đặt câu hỏi về: loại sách ưa thích; thời gian dành cho đọc sách mỗi ngày; số cuốn sách đọc trong 1 năm; địa điểm đọc sách. Ví dụ: 'Bạn thích đọc loại sách nào?', 'Mỗi ngày bạn đọc sách bao nhiêu phút?', 'Một năm bạn đọc bao nhiêu cuốn sách?'.",
      "loai_dap_an": "LOI_GIAI",
-     "bo_may": "câu mở: tự đặt câu hỏi khảo sát"
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Minh muốn tìm hiểu về thói quen đọc sách của các bạn trong lớp. Hãy giúp Minh chọn 3 câu hỏi phù hợp để thực hiện thu thập dữ liệu.",
+      "cac": [
+       "Bạn thích đọc loại sách nào?",
+       "Mỗi ngày bạn dành bao nhiêu phút để đọc sách?",
+       "Một năm bạn đọc bao nhiêu cuốn sách?",
+       "Cặp sách của bạn nặng bao nhiêu ki-lô-gam?",
+       "Mỗi ngày bạn xem ti vi bao nhiêu phút?",
+       "Bạn thích môn học nào nhất?"
+      ],
+      "dap": [
+       "A",
+       "B",
+       "C"
+      ],
+      "nhieu_dap": true
+     }
     },
     {
      "ma": "5.2b",
@@ -7720,7 +7753,31 @@
      "dang": "CAU_NHO",
      "dap_an": "Bảng thống kê: Học sinh: An, Bình, Nam; Số trận đã xem: 5, 8, 3.",
      "loai_dap_an": "LOI_GIAI",
-     "bo_may": "lập bảng"
+     "hinh": [
+      "sbttoan8t1/5.6-tranh.tr62.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 1,
+      "hoi": "Biểu đồ tranh ngay dưới đây cho biết số trận bóng đá trong giải bóng đá chuyên nghiệp Việt Nam mùa giải 2021 – 2022 mà 3 bạn An, Bình, Nam đã xem (mỗi biểu tượng quả bóng biểu diễn 1 trận đấu). Lập bảng thống kê biểu diễn số trận đấu An, Bình, Nam đã xem.",
+      "dong": [
+       {
+        "chu": "Bảng thống kê: {0}",
+        "o": [
+         {
+          "dung": [
+           "An: 5 trận; Bình: 8 trận; Nam: 3 trận"
+          ],
+          "sai": [
+           "An: 5 trận; Bình: 9 trận; Nam: 3 trận",
+           "An: 5 trận; Bình: 7 trận; Nam: 3 trận",
+           "An: 3 trận; Bình: 8 trận; Nam: 5 trận"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "5.6b",
@@ -7730,7 +7787,23 @@
      "dang": "CAU_NHO",
      "dap_an": "Biểu đồ cột: trục ngang là Học sinh (An, Bình, Nam), trục đứng là Số trận; ba cột cao 5, 8, 3. Tiêu đề trong sách: 'Bạn đã xem bao nhiêu trận bóng của giải vô địch quốc gia mùa giải 2021 – 2022?'.",
      "loai_dap_an": "LOI_GIAI",
-     "bo_may": "vẽ biểu đồ"
+     "hinh": [
+      "sbttoan8t1/5.6-tranh.tr62.webp",
+      "sbttoan8t1/5.6b-chon-1.webp",
+      "sbttoan8t1/5.6b-chon-2.webp"
+     ],
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Biểu đồ tranh ngay dưới đây cho biết số trận bóng đá trong giải bóng đá chuyên nghiệp Việt Nam mùa giải 2021 – 2022 mà 3 bạn An, Bình, Nam đã xem (mỗi biểu tượng quả bóng biểu diễn 1 trận đấu). Trong các Hình 1, Hình 2, Hình 3, Hình 4, biểu đồ cột nào biểu diễn đúng dữ liệu này?",
+      "cac": [
+       "Hình 1",
+       "Hình 2",
+       "Hình 3",
+       "Hình 4"
+      ],
+      "dap": "C"
+     }
     },
     {
      "ma": "5.7a",
@@ -7815,7 +7888,23 @@
      "dang": "CAU_NHO",
      "dap_an": "Biểu đồ cột 'Kết quả thăm dò về phương án thiết kế cầu Trần Hưng Đạo, Hà Nội': trục ngang là Lựa chọn, trục đứng là Số lượng; bốn cột cao 543 (phương án 1), 1 008 (phương án 2), 3 412 (phương án 3), 2 791 (không ủng hộ).",
      "loai_dap_an": "LOI_GIAI",
-     "bo_may": "vẽ biểu đồ"
+     "hinh": [
+      "sbttoan8t1/H.5.1.tr62.webp",
+      "sbttoan8t1/5.7b-chon-1.webp",
+      "sbttoan8t1/5.7b-chon-2.webp"
+     ],
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Biểu đồ Hình 5.1 cho biết tỉ lệ độc giả của báo điện tử Vnexpress ủng hộ các phương án thiết kế cầu Trần Hưng Đạo, Hà Nội: ủng hộ phương án 1: 7%; ủng hộ phương án 2: 13%; ủng hộ phương án 3: 44%; không ủng hộ phương án nào: 36%. Biết rằng có 7 754 lượt độc giả tham gia bình chọn. Trong các Hình 1, Hình 2, Hình 3, Hình 4, biểu đồ cột nào biểu diễn đúng số lượng bình chọn cho mỗi loại (làm tròn đến hàng đơn vị)?",
+      "cac": [
+       "Hình 1",
+       "Hình 2",
+       "Hình 3",
+       "Hình 4"
+      ],
+      "dap": "A"
+     }
     },
     {
      "ma": "5.8",
@@ -7825,7 +7914,22 @@
      "dang": "CAU_NHO",
      "dap_an": "Biểu đồ cột kép 'Tỉ lệ đi học đúng tuổi ở các cấp': trục ngang là Cấp học (Tiểu học, THCS, THPT), trục đứng là Tỉ lệ (%); mỗi cấp hai cột: Đồng bằng sông Hồng 99; 98,7; 92,9 và Đồng bằng sông Cửu Long 98,5; 87,2; 63,9; có chú thích màu cho hai vùng.",
      "loai_dap_an": "LOI_GIAI",
-     "bo_may": "vẽ biểu đồ"
+     "hinh": [
+      "sbttoan8t1/5.8-chon-1.webp",
+      "sbttoan8t1/5.8-chon-2.webp"
+     ],
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Bảng thống kê cho biết tỉ lệ đi học đúng tuổi ở các cấp học tại đồng bằng sông Hồng và đồng bằng sông Cửu Long (đơn vị %): Đồng bằng sông Hồng: Tiểu học 99; THCS 98,7; THPT 92,9. Đồng bằng sông Cửu Long: Tiểu học 98,5; THCS 87,2; THPT 63,9. Biểu đồ cột kép nào dưới đây biểu diễn đúng dữ liệu trong bảng thống kê?",
+      "cac": [
+       "Hình 1",
+       "Hình 2",
+       "Hình 3",
+       "Hình 4"
+      ],
+      "dap": "B"
+     }
     },
     {
      "ma": "5.9a",
@@ -7835,7 +7939,31 @@
      "dang": "CAU_NHO",
      "dap_an": "Bảng thống kê: Năm 2015, 2016, 2017, 2018, 2019, 2020, 2021; Tỉ lệ (%): 14,1; 13,9; 13,4; 13,2; 12,2; 11,5; 11,2.",
      "loai_dap_an": "LOI_GIAI",
-     "bo_may": "lập bảng"
+     "hinh": [
+      "sbttoan8t1/H.5.2.tr63.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 1,
+      "hoi": "Cho biểu đồ đoạn thẳng Hình 5.2 về tỉ lệ trẻ dưới 5 tuổi suy dinh dưỡng ở Việt Nam. Lập bảng thống kê biểu diễn dữ liệu cho trong biểu đồ.",
+      "dong": [
+       {
+        "chu": "Tỉ lệ (%) theo năm: {0}",
+        "o": [
+         {
+          "dung": [
+           "2015: 14,1; 2016: 13,9; 2017: 13,4; 2018: 13,2; 2019: 12,2; 2020: 11,5; 2021: 11,2"
+          ],
+          "sai": [
+           "2015: 14; 2016: 14; 2017: 13,5; 2018: 13; 2019: 12; 2020: 11,5; 2021: 11",
+           "2015: 11,2; 2016: 11,5; 2017: 12,2; 2018: 13,2; 2019: 13,4; 2020: 13,9; 2021: 14,1",
+           "2015: 14,1; 2016: 13,9; 2017: 13,4; 2018: 12,2; 2019: 13,2; 2020: 11,5; 2021: 11,2"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "5.9b",
@@ -7845,7 +7973,23 @@
      "dang": "CAU_NHO",
      "dap_an": "Biểu đồ cột: trục ngang là Năm (2015 đến 2021), trục đứng là Tỉ lệ (%); bảy cột cao 14,1; 13,9; 13,4; 13,2; 12,2; 11,5; 11,2.",
      "loai_dap_an": "LOI_GIAI",
-     "bo_may": "vẽ biểu đồ"
+     "hinh": [
+      "sbttoan8t1/H.5.2.tr63.webp",
+      "sbttoan8t1/5.9b-chon-1.webp",
+      "sbttoan8t1/5.9b-chon-2.webp"
+     ],
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Cho biểu đồ đoạn thẳng Hình 5.2 về tỉ lệ trẻ dưới 5 tuổi suy dinh dưỡng ở Việt Nam. Trong các Hình 1, Hình 2, Hình 3, Hình 4, biểu đồ cột nào biểu diễn đúng dữ liệu của Hình 5.2?",
+      "cac": [
+       "Hình 1",
+       "Hình 2",
+       "Hình 3",
+       "Hình 4"
+      ],
+      "dap": "D"
+     }
     },
     {
      "ma": "5.10a",
@@ -7855,7 +7999,46 @@
      "dang": "CAU_NHO",
      "dap_an": "Dùng biểu đồ cột kép: 3 nhóm cột cho 3 câu lạc bộ, mỗi nhóm 2 cột cho 2 mùa giải 2020 – 2021 và 2021 – 2022: Arsenal 18 và 22; Chelsea 19 và 21; Tottenham Hotspur 18 và 22.",
      "loai_dap_an": "LOI_GIAI",
-     "bo_may": "vẽ biểu đồ"
+     "hinh": [
+      "sbttoan8t1/5.10a-chon-1.webp",
+      "sbttoan8t1/5.10a-chon-2.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "Thống kê số trận thắng của ba câu lạc bộ thành London là Arsenal, Chelsea, Tottenham Hotspur trong hai mùa giải: mùa giải 2020 – 2021: Arsenal 18, Chelsea 19, Tottenham Hotspur 18; mùa giải 2021 – 2022: Arsenal 22, Chelsea 21, Tottenham Hotspur 22. Để so sánh số trận thắng của mỗi câu lạc bộ trong 2 mùa giải ta nên sử dụng biểu đồ nào? Chọn biểu đồ vẽ đúng.",
+      "dong": [
+       {
+        "chu": "Nên sử dụng: {0}",
+        "o": [
+         {
+          "dung": [
+           "biểu đồ cột kép, mỗi câu lạc bộ một nhóm 2 cột (hai mùa giải)"
+          ],
+          "sai": [
+           "biểu đồ cột, mỗi mùa giải một nhóm 3 cột (ba câu lạc bộ)",
+           "biểu đồ hình quạt tròn"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Biểu đồ vẽ đúng: {0}",
+        "o": [
+         {
+          "dung": [
+           "Hình 4"
+          ],
+          "sai": [
+           "Hình 1",
+           "Hình 2",
+           "Hình 3"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "5.10b",
@@ -7865,7 +8048,46 @@
      "dang": "CAU_NHO",
      "dap_an": "Dùng biểu đồ cột bội (mỗi nhóm 3 cột): 2 nhóm cột cho 2 mùa giải, mỗi nhóm 3 cột cho 3 câu lạc bộ: 2020 – 2021: Arsenal 18, Chelsea 19, Tottenham Hotspur 18; 2021 – 2022: Arsenal 22, Chelsea 21, Tottenham Hotspur 22.",
      "loai_dap_an": "LOI_GIAI",
-     "bo_may": "vẽ biểu đồ"
+     "hinh": [
+      "sbttoan8t1/5.10b-chon-1.webp",
+      "sbttoan8t1/5.10b-chon-2.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "Thống kê số trận thắng của ba câu lạc bộ thành London là Arsenal, Chelsea, Tottenham Hotspur trong hai mùa giải: mùa giải 2020 – 2021: Arsenal 18, Chelsea 19, Tottenham Hotspur 18; mùa giải 2021 – 2022: Arsenal 22, Chelsea 21, Tottenham Hotspur 22. Để so sánh số trận thắng của ba câu lạc bộ trong mỗi mùa giải ta nên sử dụng biểu đồ nào? Chọn biểu đồ vẽ đúng.",
+      "dong": [
+       {
+        "chu": "Nên sử dụng: {0}",
+        "o": [
+         {
+          "dung": [
+           "biểu đồ cột, mỗi mùa giải một nhóm 3 cột (ba câu lạc bộ)"
+          ],
+          "sai": [
+           "biểu đồ cột kép, mỗi câu lạc bộ một nhóm 2 cột (hai mùa giải)",
+           "biểu đồ hình quạt tròn"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Biểu đồ vẽ đúng: {0}",
+        "o": [
+         {
+          "dung": [
+           "Hình 1"
+          ],
+          "sai": [
+           "Hình 2",
+           "Hình 3",
+           "Hình 4"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "5.11",
@@ -7920,7 +8142,22 @@
      "dang": "CAU_NHO",
      "dap_an": "Biểu đồ cột: trục ngang là Trình độ, trục đứng là Số học sinh; bốn cột cao 40 (Bắt đầu), 70 (Sơ cấp), 80 (Trung cấp), 10 (Trên trung cấp).",
      "loai_dap_an": "LOI_GIAI",
-     "bo_may": "vẽ biểu đồ"
+     "hinh": [
+      "sbttoan8t1/5.12a-chon-1.webp",
+      "sbttoan8t1/5.12a-chon-2.webp"
+     ],
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Kết quả khảo sát tiếng Anh tại khối 8 của một trường THCS: trình độ Bắt đầu (Beginner) có 40 học sinh; Sơ cấp (Elementary) 70 học sinh; Trung cấp (Intermediate) 80 học sinh; Trên trung cấp (Upper Intermediate) 10 học sinh. Biểu đồ cột nào dưới đây biểu diễn đúng bảng thống kê trên?",
+      "cac": [
+       "Hình 1",
+       "Hình 2",
+       "Hình 3",
+       "Hình 4"
+      ],
+      "dap": "B"
+     }
     },
     {
      "ma": "5.12b",
@@ -7995,7 +8232,46 @@
      "dang": "CAU_NHO",
      "dap_an": "Dùng biểu đồ cột: trục ngang là Quốc gia, trục đứng là Số di sản thế giới; năm cột cao 58 (Ý), 56 (Trung Quốc), 51 (Đức), 49 (Tây Ban Nha), 49 (Pháp).",
      "loai_dap_an": "LOI_GIAI",
-     "bo_may": "vẽ biểu đồ"
+     "hinh": [
+      "sbttoan8t1/5.13b-chon-1.webp",
+      "sbttoan8t1/5.13b-chon-2.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "Bảng thống kê cho biết số lượng di sản thế giới của 5 quốc gia đứng đầu tính đến tháng 8 năm 2021: Ý 58; Trung Quốc 56; Đức 51; Tây Ban Nha 49; Pháp 49. Nên sử dụng biểu đồ nào để biểu diễn? Chọn biểu đồ vẽ đúng.",
+      "dong": [
+       {
+        "chu": "Nên sử dụng: {0}",
+        "o": [
+         {
+          "dung": [
+           "biểu đồ cột"
+          ],
+          "sai": [
+           "biểu đồ tranh",
+           "biểu đồ đoạn thẳng"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Biểu đồ vẽ đúng: {0}",
+        "o": [
+         {
+          "dung": [
+           "Hình 3"
+          ],
+          "sai": [
+           "Hình 1",
+           "Hình 2",
+           "Hình 4"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     }
    ]
   },
@@ -8332,7 +8608,31 @@
      "dang": "CAU_NHO",
      "dap_an": "Bảng thống kê: Năm 2016, 2017, 2018, 2019, 2020, 2021, 2022; Doanh thu (tỉ đô la): 1,478; 1,535; 1,579; 1,59; 1,378; 1,45; 1,484.",
      "loai_dap_an": "LOI_GIAI",
-     "bo_may": "lập bảng"
+     "hinh": [
+      "sbttoan8t1/H.5.10.tr70.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 1,
+      "hoi": "Cho biểu đồ đoạn thẳng Hình 5.10 về doanh thu từ đồ uống có cồn toàn cầu. Lập bảng thống kê biểu diễn số liệu được biểu diễn trên biểu đồ.",
+      "dong": [
+       {
+        "chu": "Doanh thu (tỉ đô la) theo năm: {0}",
+        "o": [
+         {
+          "dung": [
+           "2016: 1,478; 2017: 1,535; 2018: 1,579; 2019: 1,59; 2020: 1,378; 2021: 1,45; 2022: 1,484"
+          ],
+          "sai": [
+           "2016: 1,5; 2017: 1,55; 2018: 1,6; 2019: 1,6; 2020: 1,4; 2021: 1,45; 2022: 1,5",
+           "2016: 1,478; 2017: 1,535; 2018: 1,579; 2019: 1,59; 2020: 1,45; 2021: 1,378; 2022: 1,484",
+           "2016: 1,478; 2017: 1,535; 2018: 1,59; 2019: 1,579; 2020: 1,378; 2021: 1,45; 2022: 1,484"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "5.18b",
@@ -8704,7 +9004,46 @@
      "dang": "CAU_NHO",
      "dap_an": "Dùng biểu đồ cột 'Theo bạn, đội nào vô địch World Cup 2022?': trục ngang là Lựa chọn, trục đứng là Số lượng; bốn cột cao 800 (Argentina), 350 (Croatia), 115 (Ma rốc), 500 (Pháp).",
      "loai_dap_an": "LOI_GIAI",
-     "bo_may": "vẽ biểu đồ"
+     "hinh": [
+      "sbttoan8t1/5.20b-chon-1.webp",
+      "sbttoan8t1/5.20b-chon-2.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "Ngay sau vòng tứ kết World Cup 2022, một website điện tử đã khảo sát dự đoán đội vô địch của độc giả với câu hỏi \"Theo bạn, đội bóng nào sẽ vô địch World Cup 2022?\" với 4 phương án trả lời: Argentina, Croatia, Ma rốc, Pháp. Trước khi vòng bán kết bắt đầu, ban quản trị website đã thu được 1 765 phản hồi gồm 800 lựa chọn Argentina, 350 lựa chọn Croatia, 115 lựa chọn Ma rốc và 500 lựa chọn Pháp. Lựa chọn biểu đồ để biểu diễn dữ liệu thu được và chọn biểu đồ vẽ đúng.",
+      "dong": [
+       {
+        "chu": "Nên dùng: {0}",
+        "o": [
+         {
+          "dung": [
+           "biểu đồ cột"
+          ],
+          "sai": [
+           "biểu đồ đoạn thẳng",
+           "biểu đồ tranh"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Biểu đồ vẽ đúng: {0}",
+        "o": [
+         {
+          "dung": [
+           "Hình 1"
+          ],
+          "sai": [
+           "Hình 2",
+           "Hình 3",
+           "Hình 4"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "5.20c",
@@ -8828,7 +9167,31 @@
      "dang": "CAU_NHO",
      "dap_an": "Bảng thống kê: Năm 1990, 1995, 2000, 2005, 2010, 2015, 2019; Lượng CO2 (nghìn tấn): 19 330; 31 400; 51 210; 92 370; 151 410; 220 650; 336 490.",
      "loai_dap_an": "LOI_GIAI",
-     "bo_may": "lập bảng"
+     "hinh": [
+      "sbttoan8t1/H.5.14.tr75.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 1,
+      "hoi": "Cho biểu đồ cột Hình 5.14 về lượng khí thải CO₂ của Việt Nam. Lập bảng thống kê cho dữ liệu biểu diễn trên biểu đồ.",
+      "dong": [
+       {
+        "chu": "Lượng khí thải CO₂ theo năm: {0}",
+        "o": [
+         {
+          "dung": [
+           "1990: 19 330; 1995: 31 400; 2000: 51 210; 2005: 92 370; 2010: 151 410; 2015: 220 650; 2019: 336 490 (nghìn tấn)"
+          ],
+          "sai": [
+           "1990: 19 330; 1995: 31 400; 2000: 51 210; 2005: 92 370; 2010: 151 410; 2015: 220 650; 2020: 336 490 (nghìn tấn)",
+           "1990: 19 330; 1995: 31 400; 2000: 51 210; 2005: 92 370; 2010: 151 410; 2015: 220 650; 2019: 336 490 (tấn)",
+           "1990: 19 330; 1995: 51 210; 2000: 31 400; 2005: 92 370; 2010: 151 410; 2015: 220 650; 2019: 336 490 (nghìn tấn)"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "5.22b",
@@ -9024,7 +9387,44 @@
      "dang": "CAU_NHO",
      "dap_an": "Bảng 3 dòng: Năm 1960, 1970, 1980, 1990, 2000, 2010, 2020; Anh (%): 2,92; 3,43; 4,53; 4,29; 5,48; 8,01; 9,92; Mỹ (%): 1,09; 2,32; 3,46; 4,54; 5,54; 7,89; 15,95.",
      "loai_dap_an": "LOI_GIAI",
-     "bo_may": "lập bảng"
+     "hinh": [
+      "sbttoan8t1/H.5.16.tr76.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "Biểu đồ Hình 5.16 cho biết kinh phí chính phủ Mỹ, Anh chi cho chăm sóc sức khoẻ (tính theo % GDP) từ năm 1960 đến 2020. Lập bảng thống kê cho dữ liệu được biểu diễn trên biểu đồ: mỗi nước một dòng, lần lượt các năm 1960, 1970, 1980, 1990, 2000, 2010, 2020.",
+      "dong": [
+       {
+        "chu": "Anh (%): {0}",
+        "o": [
+         {
+          "dung": [
+           "2,92; 3,43; 4,53; 4,29; 5,48; 8,01; 9,92"
+          ],
+          "sai": [
+           "1,09; 2,32; 3,46; 4,54; 5,54; 7,89; 15,95",
+           "2,92; 3,43; 4,53; 4,29; 5,48; 8,01; 15,95"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Mỹ (%): {0}",
+        "o": [
+         {
+          "dung": [
+           "1,09; 2,32; 3,46; 4,54; 5,54; 7,89; 15,95"
+          ],
+          "sai": [
+           "2,92; 3,43; 4,53; 4,29; 5,48; 8,01; 9,92",
+           "1,09; 2,32; 3,46; 4,54; 5,54; 7,89; 9,92"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "5.23d",
@@ -9059,7 +9459,47 @@
      "dang": "CAU_NHO",
      "dap_an": "Dùng biểu đồ đoạn thẳng: trục ngang là Năm (2002 đến 2021), trục đứng là X (số bé trai trên 100 bé gái); đánh dấu các điểm 107,6; 108,2; 108,8; 109,5; 110,4; 111,1; 111,5; 111,8; 112; 112,2; 112,3; 112,3; 112,3; 112,3; 112,2; 112,1; 112; 111,8; 111,6; 111,4 rồi nối thành đường gấp khúc.",
      "loai_dap_an": "LOI_GIAI",
-     "bo_may": "vẽ biểu đồ"
+     "hinh": [
+      "sbttoan8t1/Bang.5.24.tr76.webp",
+      "sbttoan8t1/5.24a-chon-1.webp",
+      "sbttoan8t1/5.24a-chon-2.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "Tỉ số giới tính khi sinh được xác định bằng tỉ số bé trai trên 100 bé gái sinh ra trong một thời kì nhất định, thường là 1 năm. Bảng dưới đây cho biết số bé trai trên 100 bé gái (kí hiệu là X) sinh ra ở Việt Nam từ năm 2002 đến năm 2021. Lựa chọn biểu đồ để biểu diễn bảng số liệu này và chọn biểu đồ vẽ đúng.",
+      "dong": [
+       {
+        "chu": "Nên dùng: {0}",
+        "o": [
+         {
+          "dung": [
+           "biểu đồ đoạn thẳng"
+          ],
+          "sai": [
+           "biểu đồ hình quạt tròn",
+           "biểu đồ tranh"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Biểu đồ vẽ đúng: {0}",
+        "o": [
+         {
+          "dung": [
+           "Hình 3"
+          ],
+          "sai": [
+           "Hình 1",
+           "Hình 2",
+           "Hình 4"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "5.24b",
@@ -9206,7 +9646,44 @@
      "dang": "CAU_NHO",
      "dap_an": "Dùng biểu đồ cột: trục ngang là Quốc gia, trục đứng là Khối lượng (tấn); năm cột cao 193 386 (Indonesia), 165 827 (Malaysia), 56 385 (Singapore), 196 839 (Thái Lan), 302 159 (Việt Nam).",
      "loai_dap_an": "LOI_GIAI",
-     "bo_may": "vẽ biểu đồ"
+     "hinh": [
+      "sbttoan8t1/5.25-chon-1.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "Bảng sau đây cho biết lượng nhựa phế thải xuất khẩu của một số quốc gia Đông Nam Á năm 2017 (đơn vị: tấn): Indonesia 193 386; Malaysia 165 827; Singapore 56 385; Thái Lan 196 839; Việt Nam 302 159. Lựa chọn biểu đồ để biểu diễn bảng số liệu này và chọn biểu đồ vẽ đúng.",
+      "dong": [
+       {
+        "chu": "Nên dùng: {0}",
+        "o": [
+         {
+          "dung": [
+           "biểu đồ cột"
+          ],
+          "sai": [
+           "biểu đồ đoạn thẳng",
+           "biểu đồ tranh"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Biểu đồ vẽ đúng: {0}",
+        "o": [
+         {
+          "dung": [
+           "Hình 2"
+          ],
+          "sai": [
+           "Hình 1",
+           "Hình 3"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     }
    ]
   }

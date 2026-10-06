@@ -2,7 +2,7 @@
  "nguon": "toan8t1",
  "mon": "Toán",
  "ten": "SGK Toán 8 — tập một",
- "ban": 6,
+ "ban": 7,
  "cac_bai": [
   {
    "chuong": "Chương I. Đa thức",
@@ -7255,7 +7255,22 @@
      "trang": 55,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "bo_may": "vẽ hình"
+     "hinh": [
+      "toan8t1/3.6-chon-1.webp",
+      "toan8t1/3.6-chon-2.webp"
+     ],
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Vẽ hình thang cân ABCD (AB // CD) biết đáy lớn CD dài 4 cm, cạnh bên dài 2 cm và đường chéo dài 3 cm.\nHình nào dưới đây vẽ đúng? (Độ dài ghi trên hình là độ dài đo được của các đoạn thẳng.)",
+      "cac": [
+       "Hình 1",
+       "Hình 2",
+       "Hình 3",
+       "Hình 4"
+      ],
+      "dap": "C"
+     }
     },
     {
      "ma": "3.7",
@@ -12082,15 +12097,108 @@
      "trang": 94,
      "nhom": "Luyện tập",
      "dang": "CAU_NHO",
-     "bo_may": "vẽ biểu đồ"
+     "hinh": [
+      "toan8t1/LT1-tr94-chon-1.webp",
+      "toan8t1/LT1-tr94-chon-2.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "Bảng 5.1 cho biết số lượng các loài động vật tại Thảo Cầm Viên, Thành phố Hồ Chí Minh vào ngày 14-7-1869: Thú 120 con, Chim 344 con, Bò sát 45 con. Nên chọn biểu đồ tranh hay biểu đồ cột để biểu diễn dữ liệu Bảng 5.1? Chọn biểu đồ đó trong các hình dưới đây.",
+      "dong": [
+       {
+        "chu": "Nên chọn: {0}",
+        "o": [
+         {
+          "dung": [
+           "biểu đồ cột"
+          ],
+          "sai": [
+           "biểu đồ tranh"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Biểu đồ vẽ đúng: {0}",
+        "o": [
+         {
+          "dung": [
+           "Hình 2"
+          ],
+          "sai": [
+           "Hình 1",
+           "Hình 3",
+           "Hình 4"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "Luyện tập 2 (tr.95)",
-     "de": "Cho biểu đồ Hình 5.3 (số cơn bão trên toàn cầu các năm 2014-2018: 99; 121; 86; 130; 94). a) Lập bảng thống kê cho dữ liệu trong biểu đồ. b) Vẽ biểu đồ cột biểu diễn dữ liệu này. Nếu ta có dữ liệu về số cơn bão hằng năm trên toàn cầu từ năm 1970 đến nay thì có nên dùng biểu đồ cột để biểu diễn không?",
+     "de": "Cho biểu đồ đoạn thẳng Hình 5.3 về số cơn bão trên toàn cầu các năm từ 2014 đến 2018. a) Lập bảng thống kê cho dữ liệu trong biểu đồ. b) Vẽ biểu đồ cột biểu diễn dữ liệu này. Nếu ta có dữ liệu về số cơn bão hằng năm trên toàn cầu từ năm 1970 đến nay thì có nên dùng biểu đồ cột để biểu diễn không?",
      "trang": 95,
      "nhom": "Luyện tập",
      "dang": "CAU_NHO",
-     "bo_may": "vẽ biểu đồ"
+     "hinh": [
+      "toan8t1/LT2-tr95.webp",
+      "toan8t1/LT2-tr95-chon-1.webp",
+      "toan8t1/LT2-tr95-chon-2.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "hoi": "Cho biểu đồ Hình 5.3 về số cơn bão trên toàn cầu các năm từ 2014 đến 2018.\na) Lập bảng thống kê cho dữ liệu trong biểu đồ.\nb) Chọn biểu đồ cột biểu diễn đúng dữ liệu này. Nếu ta có dữ liệu về số cơn bão hằng năm trên toàn cầu từ năm 1970 đến nay thì có nên dùng biểu đồ cột để biểu diễn không?",
+      "dong": [
+       {
+        "chu": "a) Bảng thống kê số cơn bão: {0}",
+        "o": [
+         {
+          "dung": [
+           "2014: 99; 2015: 121; 2016: 86; 2017: 130; 2018: 94"
+          ],
+          "sai": [
+           "2014: 99; 2015: 121; 2016: 130; 2017: 86; 2018: 94",
+           "2014: 94; 2015: 130; 2016: 86; 2017: 121; 2018: 99"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "b) Biểu đồ cột vẽ đúng: {0}",
+        "o": [
+         {
+          "dung": [
+           "Hình 4"
+          ],
+          "sai": [
+           "Hình 1",
+           "Hình 2",
+           "Hình 3"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Với dữ liệu từ năm 1970 đến nay: {0}",
+        "o": [
+         {
+          "dung": [
+           "không nên dùng biểu đồ cột vì có quá nhiều năm cần biểu diễn"
+          ],
+          "sai": [
+           "nên dùng biểu đồ cột vì số cơn bão là số liệu rời rạc",
+           "không nên dùng biểu đồ cột mà nên dùng biểu đồ hình quạt tròn"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "Luyện tập 3 (tr.96)",
@@ -12206,9 +12314,74 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "hinh": [
-      "toan8t1/5.4.webp"
+      "toan8t1/5.4.webp",
+      "toan8t1/5.4b-chon-1.webp",
+      "toan8t1/5.4b-chon-2.webp"
      ],
-     "bo_may": "vẽ biểu đồ"
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "hoi": "Biểu đồ tranh Hình 5.6 biểu diễn số lượng các bạn lớp 8A tham gia các câu lạc bộ. Lập bảng thống kê và chọn biểu đồ cột biểu diễn đúng dữ liệu này.",
+      "dong": [
+       {
+        "chu": "Tiếng Anh: {0} bạn",
+        "o": [
+         {
+          "dung": [
+           "6"
+          ],
+          "sai": [
+           "2",
+           "5"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Võ thuật: {0} bạn",
+        "o": [
+         {
+          "dung": [
+           "9"
+          ],
+          "sai": [
+           "3",
+           "6"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Nghệ thuật: {0} bạn",
+        "o": [
+         {
+          "dung": [
+           "6"
+          ],
+          "sai": [
+           "2",
+           "5"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Biểu đồ cột vẽ đúng: {0}",
+        "o": [
+         {
+          "dung": [
+           "Hình 1"
+          ],
+          "sai": [
+           "Hình 2",
+           "Hình 3",
+           "Hình 4"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "5.5a",
@@ -12216,7 +12389,45 @@
      "trang": 97,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "bo_may": "vẽ biểu đồ"
+     "hinh": [
+      "toan8t1/5.5a-tranh-chon-1.webp",
+      "toan8t1/5.5a-cot-chon-1.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "Bảng thống kê cho biết số lượng khách đánh giá chất lượng dịch vụ của một khách sạn: Rất tốt 5; Tốt 20; Trung bình 10; Kém 5. Chọn biểu đồ tranh và biểu đồ cột biểu diễn đúng bảng thống kê trên.",
+      "dong": [
+       {
+        "chu": "Biểu đồ tranh vẽ đúng: {0}",
+        "o": [
+         {
+          "dung": [
+           "Hình 3"
+          ],
+          "sai": [
+           "Hình 1",
+           "Hình 2"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Biểu đồ cột vẽ đúng: {0}",
+        "o": [
+         {
+          "dung": [
+           "Hình 4"
+          ],
+          "sai": [
+           "Hình 5",
+           "Hình 6"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "5.5b",
@@ -12239,11 +12450,52 @@
     },
     {
      "ma": "5.6",
-     "de": "Cho biểu đồ cột kép Hình 5.7 về số lượng huy chương của đoàn thể thao Mỹ và Nhật Bản tại Olympic Tokyo 2020: Mỹ 39 huy chương vàng, 41 huy chương bạc, 33 huy chương đồng; Nhật Bản 27 huy chương vàng, 14 huy chương bạc, 17 huy chương đồng. Hãy lập bảng thống kê biểu diễn số lượng huy chương các loại của đoàn thể thao Mỹ và vẽ biểu đồ cột biểu diễn bảng thống kê này.",
+     "de": "Cho biểu đồ cột kép Hình 5.7 về số lượng huy chương của đoàn thể thao Mỹ và Nhật Bản tại Olympic Tokyo 2020. Hãy lập bảng thống kê biểu diễn số lượng huy chương các loại của đoàn thể thao Mỹ và vẽ biểu đồ cột biểu diễn bảng thống kê này.",
      "trang": 97,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "bo_may": "vẽ biểu đồ"
+     "hinh": [
+      "toan8t1/5.6.webp",
+      "toan8t1/5.6-chon-1.webp",
+      "toan8t1/5.6-chon-2.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "Cho biểu đồ cột kép Hình 5.7 về số lượng huy chương của đoàn thể thao Mỹ và Nhật Bản tại Olympic Tokyo 2020. Hãy lập bảng thống kê biểu diễn số lượng huy chương các loại của đoàn thể thao Mỹ và chọn biểu đồ cột biểu diễn đúng bảng thống kê này.",
+      "dong": [
+       {
+        "chu": "Bảng thống kê của đoàn Mỹ: {0}",
+        "o": [
+         {
+          "dung": [
+           "Vàng 39; Bạc 41; Đồng 33"
+          ],
+          "sai": [
+           "Vàng 27; Bạc 14; Đồng 17",
+           "Vàng 39; Bạc 33; Đồng 41",
+           "Vàng 66; Bạc 55; Đồng 50"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Biểu đồ cột vẽ đúng: {0}",
+        "o": [
+         {
+          "dung": [
+           "Hình 2"
+          ],
+          "sai": [
+           "Hình 1",
+           "Hình 3",
+           "Hình 4"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "5.7",
@@ -12251,7 +12503,46 @@
      "trang": 98,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "bo_may": "vẽ biểu đồ"
+     "hinh": [
+      "toan8t1/5.7-chon-1.webp",
+      "toan8t1/5.7-chon-2.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "Bảng sau cho biết khối lượng giấy vụn các lớp khối 8 đã thu gom được: 8A 12,7 kg; 8B 16,8 kg; 8C 15,5 kg; 8D 14,3 kg. Lựa chọn biểu đồ phù hợp biểu diễn bảng thống kê này và chọn biểu đồ vẽ đúng.",
+      "dong": [
+       {
+        "chu": "Biểu đồ phù hợp: {0}",
+        "o": [
+         {
+          "dung": [
+           "biểu đồ cột"
+          ],
+          "sai": [
+           "biểu đồ tranh",
+           "biểu đồ đoạn thẳng"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Biểu đồ vẽ đúng: {0}",
+        "o": [
+         {
+          "dung": [
+           "Hình 4"
+          ],
+          "sai": [
+           "Hình 1",
+           "Hình 2",
+           "Hình 3"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "5.8a",
@@ -12259,7 +12550,22 @@
      "trang": 98,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "bo_may": "vẽ biểu đồ"
+     "hinh": [
+      "toan8t1/5.8a-chon-1.webp",
+      "toan8t1/5.8a-chon-2.webp"
+     ],
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Bảng thống kê biểu diễn số huy chương vàng trong hai kì SEA Games năm 2017 và 2019 của các đoàn thể thao: Việt Nam được 98 huy chương vàng ở SEA Games 2019 và 58 huy chương vàng ở SEA Games 2017; Thái Lan được 92 huy chương vàng ở SEA Games 2019 và 72 huy chương vàng ở SEA Games 2017.\nBiểu đồ nào dưới đây được vẽ đúng để so sánh số huy chương vàng của mỗi quốc gia đạt được qua hai kì SEA Games?",
+      "cac": [
+       "Hình 1",
+       "Hình 2",
+       "Hình 3",
+       "Hình 4"
+      ],
+      "dap": "A"
+     }
     },
     {
      "ma": "5.8b",
@@ -12267,7 +12573,22 @@
      "trang": 98,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "bo_may": "vẽ biểu đồ"
+     "hinh": [
+      "toan8t1/5.8b-chon-1.webp",
+      "toan8t1/5.8b-chon-2.webp"
+     ],
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Bảng thống kê biểu diễn số huy chương vàng trong hai kì SEA Games năm 2017 và 2019 của các đoàn thể thao: Việt Nam được 98 huy chương vàng ở SEA Games 2019 và 58 huy chương vàng ở SEA Games 2017; Thái Lan được 92 huy chương vàng ở SEA Games 2019 và 72 huy chương vàng ở SEA Games 2017.\nBiểu đồ nào dưới đây được vẽ đúng để so sánh số huy chương vàng của Việt Nam và Thái Lan trong mỗi kì SEA Games?",
+      "cac": [
+       "Hình 1",
+       "Hình 2",
+       "Hình 3",
+       "Hình 4"
+      ],
+      "dap": "C"
+     }
     },
     {
      "ma": "5.9",
@@ -12275,7 +12596,88 @@
      "trang": 98,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "bo_may": "vẽ biểu đồ"
+     "hinh": [
+      "toan8t1/5.9-chon-1.webp",
+      "toan8t1/5.9-chon-2.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 5,
+      "hoi": "Biểu đồ hình quạt tròn Hình 5.8 trong sách cho biết tỉ lệ mỗi loại quả bán được của một cửa hàng: Lê 20%, Táo 30%, Nhãn 40%, Nho 10%. Giả sử cửa hàng bán được 200 kg quả các loại. Lập bảng thống kê cho biết số lượng mỗi loại quả cửa hàng bán được và chọn biểu đồ cột biểu diễn đúng bảng thống kê này.",
+      "dong": [
+       {
+        "chu": "Lê: {0}",
+        "o": [
+         {
+          "dung": [
+           "40 kg"
+          ],
+          "sai": [
+           "20 kg",
+           "4 000 kg"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Táo: {0}",
+        "o": [
+         {
+          "dung": [
+           "60 kg"
+          ],
+          "sai": [
+           "30 kg",
+           "6 000 kg"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Nhãn: {0}",
+        "o": [
+         {
+          "dung": [
+           "80 kg"
+          ],
+          "sai": [
+           "40 kg",
+           "8 000 kg"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Nho: {0}",
+        "o": [
+         {
+          "dung": [
+           "20 kg"
+          ],
+          "sai": [
+           "10 kg",
+           "2 000 kg"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Biểu đồ cột vẽ đúng: {0}",
+        "o": [
+         {
+          "dung": [
+           "Hình 2"
+          ],
+          "sai": [
+           "Hình 1",
+           "Hình 3",
+           "Hình 4"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     }
    ]
   },
@@ -13265,7 +13667,46 @@
      "trang": 108,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "bo_may": "vẽ biểu đồ"
+     "hinh": [
+      "toan8t1/5.18-chon-1.webp",
+      "toan8t1/5.18-chon-2.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "Doanh thu (đơn vị: tỉ đồng) của hai chi nhánh một công ty trong năm 2021 và 2022: chi nhánh Hà Nội năm 2021 là 6, năm 2022 là 8; chi nhánh Thành phố Hồ Chí Minh năm 2021 là 10, năm 2022 là 12. Lựa chọn biểu đồ để so sánh doanh thu của hai chi nhánh này trong hai năm 2021 và 2022 và chọn biểu đồ vẽ đúng.",
+      "dong": [
+       {
+        "chu": "Biểu đồ nên dùng: {0}",
+        "o": [
+         {
+          "dung": [
+           "biểu đồ cột kép"
+          ],
+          "sai": [
+           "biểu đồ hình quạt tròn",
+           "biểu đồ tranh"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Biểu đồ vẽ đúng: {0}",
+        "o": [
+         {
+          "dung": [
+           "Hình 4"
+          ],
+          "sai": [
+           "Hình 1",
+           "Hình 2",
+           "Hình 3"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     }
    ]
   },
@@ -13695,7 +14136,46 @@
      "trang": 110,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "bo_may": "vẽ biểu đồ"
+     "hinh": [
+      "toan8t1/5.27a-chon-1.webp",
+      "toan8t1/5.27a-chon-2.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "Bảng thống kê cho biết số lượng học sinh của các lớp khối 8 tham gia các câu lạc bộ Thể thao và Nghệ thuật của trường: câu lạc bộ Thể thao có 8 bạn lớp 8A, 12 bạn lớp 8B, 10 bạn lớp 8C, 5 bạn lớp 8D; câu lạc bộ Nghệ thuật có 16 bạn lớp 8A, 4 bạn lớp 8B, 8 bạn lớp 8C, 8 bạn lớp 8D. Lựa chọn biểu đồ để so sánh số lượng học sinh tham gia hai câu lạc bộ này ở từng lớp và chọn biểu đồ vẽ đúng.",
+      "dong": [
+       {
+        "chu": "Biểu đồ nên dùng: {0}",
+        "o": [
+         {
+          "dung": [
+           "biểu đồ cột kép"
+          ],
+          "sai": [
+           "biểu đồ hình quạt tròn",
+           "biểu đồ đoạn thẳng"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Biểu đồ vẽ đúng: {0}",
+        "o": [
+         {
+          "dung": [
+           "Hình 3"
+          ],
+          "sai": [
+           "Hình 1",
+           "Hình 2",
+           "Hình 4"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "5.27b",
@@ -13802,7 +14282,69 @@
      "trang": 112,
      "nhom": "Vận dụng",
      "dang": "CAU_NHO",
-     "bo_may": "thu thập dữ liệu thực tế"
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "hoi": "Bác Hưng muốn gửi tiết kiệm 300 triệu đồng kì hạn 12 tháng. Giả sử lãi suất kì hạn 12 tháng (tính theo năm, nhận lãi một lần khi hết kì hạn) mà ba ngân hàng công bố là: ngân hàng A 4,8%; ngân hàng B 5,3%; ngân hàng C 5,0%. Hãy tính số tiền lãi mà bác Hưng nhận được khi gửi cho mỗi ngân hàng. Từ đó tư vấn ngân hàng gửi tiết kiệm cho bác Hưng (giả sử uy tín và chất lượng dịch vụ của các ngân hàng là như nhau).",
+      "dong": [
+       {
+        "chu": "Gửi ngân hàng A: tiền lãi {0}",
+        "o": [
+         {
+          "dung": [
+           "14,4 triệu đồng"
+          ],
+          "sai": [
+           "314,4 triệu đồng",
+           "1,2 triệu đồng"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Gửi ngân hàng B: tiền lãi {0}",
+        "o": [
+         {
+          "dung": [
+           "15,9 triệu đồng"
+          ],
+          "sai": [
+           "315,9 triệu đồng",
+           "1,325 triệu đồng"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Gửi ngân hàng C: tiền lãi {0}",
+        "o": [
+         {
+          "dung": [
+           "15 triệu đồng"
+          ],
+          "sai": [
+           "315 triệu đồng",
+           "1,25 triệu đồng"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Nên gửi tiết kiệm ở: {0}",
+        "o": [
+         {
+          "dung": [
+           "ngân hàng B"
+          ],
+          "sai": [
+           "ngân hàng A",
+           "ngân hàng C"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "Lãi kép - Dự án 2 (tr.112)",
@@ -13810,7 +14352,72 @@
      "trang": 112,
      "nhom": "Vận dụng",
      "dang": "CAU_NHO",
-     "bo_may": "thu thập dữ liệu thực tế"
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "hoi": "Bác Hương có 250 triệu đồng muốn gửi tiết kiệm ở một ngân hàng và hai năm sau mới có nhu cầu sử dụng số tiền này. Giả sử ngân hàng công bố lãi suất năm theo kì hạn như sau và các lãi suất này không thay đổi trong hai năm: kì hạn 1 tháng 4,8%; kì hạn 6 tháng 6,0%; kì hạn 12 tháng 6,4%. Đến mỗi kì hạn bác Hương không rút lãi, tiền lãi được tính vào vốn của kì kế tiếp (lãi kép). Tính số tiền lãi bác Hương nhận được sau hai năm với mỗi kì hạn (làm tròn đến hàng phần trăm của triệu đồng), từ đó tư vấn kì hạn gửi để số tiền lãi là lớn nhất.",
+      "dong": [
+       {
+        "chu": "Kì hạn 1 tháng: tiền lãi sau hai năm {0}",
+        "o": [
+         {
+          "dung": [
+           "25,14 triệu đồng"
+          ],
+          "sai": [
+           "24 triệu đồng",
+           "12,27 triệu đồng",
+           "275,14 triệu đồng"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Kì hạn 6 tháng: tiền lãi sau hai năm {0}",
+        "o": [
+         {
+          "dung": [
+           "31,38 triệu đồng"
+          ],
+          "sai": [
+           "30 triệu đồng",
+           "15,23 triệu đồng",
+           "281,38 triệu đồng"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Kì hạn 12 tháng: tiền lãi sau hai năm {0}",
+        "o": [
+         {
+          "dung": [
+           "33,02 triệu đồng"
+          ],
+          "sai": [
+           "32 triệu đồng",
+           "16 triệu đồng",
+           "283,02 triệu đồng"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Nên gửi kì hạn: {0}",
+        "o": [
+         {
+          "dung": [
+           "12 tháng"
+          ],
+          "sai": [
+           "1 tháng",
+           "6 tháng"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "GeoGebra đa thức - Thực hành 1 (tr.114)",
@@ -13953,7 +14560,72 @@
      "trang": 117,
      "nhom": "Luyện tập",
      "dang": "CAU_NHO",
-     "bo_may": "thực hành GeoGebra"
+     "hinh": [
+      "toan8t1/GG-LT2-tr117-chon-1.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "hoi": "Sau khi vẽ hình bình hành ABCD có AB = 4 cm, BC = 3 cm, góc ABC = 120° bằng phần mềm GeoGebra theo HĐ2 (Bước 1: vẽ đoạn thẳng AB dài 4 cm; Bước 2: vẽ điểm C sao cho góc ABC = 120° và BC = 3 cm, dùng đường tròn tâm B bán kính 3; Bước 3: vẽ điểm D là giao của đường thẳng qua A song song với BC và đường thẳng qua C song song với AB).\na) Dùng công cụ Trung điểm hoặc tâm để kiểm tra trung điểm của AC và BD có trùng nhau không.\nc) Tương tự, hãy vẽ một hình thoi ABCD có cạnh 4 cm.",
+      "dong": [
+       {
+        "chu": "a) Trung điểm của AC và trung điểm của BD: {0}",
+        "o": [
+         {
+          "dung": [
+           "trùng nhau"
+          ],
+          "sai": [
+           "không trùng nhau"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Vì: {0}",
+        "o": [
+         {
+          "dung": [
+           "trong hình bình hành, hai đường chéo cắt nhau tại trung điểm của mỗi đường"
+          ],
+          "sai": [
+           "trong hình bình hành, hai đường chéo bằng nhau",
+           "trong hình bình hành, hai đường chéo vuông góc với nhau"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "c) So với các bước của HĐ2, cần thay đổi: {0}",
+        "o": [
+         {
+          "dung": [
+           "bán kính đường tròn tâm B ở Bước 2 là 4 thay cho 3"
+          ],
+          "sai": [
+           "số đo góc ABC ở Bước 2 là 90° thay cho 120°",
+           "bán kính đường tròn tâm A ở Bước 1 là 3 thay cho 4"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Hình thoi ABCD vẽ được: {0}",
+        "o": [
+         {
+          "dung": [
+           "Hình 1"
+          ],
+          "sai": [
+           "Hình 2",
+           "Hình 3"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "GeoGebra vẽ hình - Luyện tập 3 (tr.119)",
@@ -13961,7 +14633,86 @@
      "trang": 119,
      "nhom": "Luyện tập",
      "dang": "CAU_NHO",
-     "bo_may": "thực hành GeoGebra"
+     "hinh": [
+      "toan8t1/GG-LT3-tr119-chon-1.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 5,
+      "hoi": "Sau khi vẽ hình thang ADEC có đáy lớn AD = 6 cm, đáy nhỏ EC = 3 cm, các cạnh bên AC = 2 cm, DE = 4 cm bằng phần mềm GeoGebra theo HĐ3 (Bước 1: vẽ đoạn thẳng AB dài AD − EC = 3 cm; Bước 2: vẽ tam giác ABC có BC = 4 cm (độ dài của DE), AC = 2 cm; Bước 3: vẽ điểm D trên tia AB sao cho AD = 6 cm; Bước 4: vẽ điểm E sao cho DE // BC và CE // AB).\na) Dùng công cụ Khoảng cách để kiểm tra DE có bằng 4 cm không.\nc) Tương tự, hãy vẽ hình thang cân ADEC có AD // EC, AD = 6 cm, CE = 4 cm, AC = DE = 3 cm.",
+      "dong": [
+       {
+        "chu": "a) Công cụ Khoảng cách cho: {0}",
+        "o": [
+         {
+          "dung": [
+           "DE = 4 cm"
+          ],
+          "sai": [
+           "DE = 3 cm",
+           "DE = 2 cm"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Vì: {0}",
+        "o": [
+         {
+          "dung": [
+           "tứ giác BCED có DE // BC, CE // BD nên là hình bình hành, do đó DE = BC = 4 cm"
+          ],
+          "sai": [
+           "ADEC là hình thang cân nên DE = AC",
+           "DE // BC nên DE = AB = 3 cm"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "c) Ở Bước 1, đoạn thẳng AB dài: {0}",
+        "o": [
+         {
+          "dung": [
+           "2 cm"
+          ],
+          "sai": [
+           "3 cm",
+           "10 cm"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Ở Bước 2, tam giác ABC có: {0}",
+        "o": [
+         {
+          "dung": [
+           "AC = 3 cm, BC = 3 cm"
+          ],
+          "sai": [
+           "AC = 2 cm, BC = 4 cm",
+           "AC = 3 cm, BC = 4 cm"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Hình thang cân ADEC vẽ được: {0}",
+        "o": [
+         {
+          "dung": [
+           "Hình 2"
+          ],
+          "sai": [
+           "Hình 1",
+           "Hình 3"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "GeoGebra vẽ hình - Thực hành 1 (tr.119)",
@@ -13969,7 +14720,33 @@
      "trang": 119,
      "nhom": "Luyện tập",
      "dang": "CAU_NHO",
-     "bo_may": "thực hành GeoGebra"
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 6,
+      "hoi": "Em hãy sắp xếp các bước dùng phần mềm GeoGebra để vẽ hình chữ nhật ABCD có AB = 6 cm, AC = 9 cm.",
+      "buoc": [
+       "Vẽ đoạn thẳng AB dài 6 cm: vẽ đường tròn tâm A bán kính 6, lấy điểm B trên đường tròn, nối A với B",
+       "Vẽ đường thẳng vuông góc với AB tại B (công cụ Đường vuông góc)",
+       "Vẽ đường tròn tâm A bán kính 9 (công cụ Đường tròn khi biết tâm và bán kính)",
+       "Lấy C là giao điểm của đường thẳng vuông góc tại B và đường tròn tâm A bán kính 9",
+       "Vẽ đường thẳng vuông góc với AB tại A và đường thẳng vuông góc với BC tại C, lấy D là giao điểm của hai đường thẳng này",
+       "Ẩn các đường tròn, đường thẳng; dùng công cụ Đoạn thẳng nối B với C, C với D, D với A"
+      ],
+      "nhieu": [
+       "Vẽ đường tròn tâm B bán kính 9 (công cụ Đường tròn khi biết tâm và bán kính)",
+       "Lấy C là giao điểm của đường thẳng vuông góc với AB tại A và đường tròn tâm A bán kính 9"
+      ],
+      "thu_tu_khac": [
+       [
+        0,
+        2,
+        1,
+        3,
+        4,
+        5
+       ]
+      ]
+     }
     },
     {
      "ma": "GeoGebra vẽ hình - Thực hành 2 (tr.119)",
@@ -13977,7 +14754,33 @@
      "trang": 119,
      "nhom": "Luyện tập",
      "dang": "CAU_NHO",
-     "bo_may": "thực hành GeoGebra"
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 6,
+      "hoi": "Em hãy sắp xếp các bước dùng phần mềm GeoGebra để vẽ hình bình hành ABCD có AB = 4 cm, AC = 5 cm, BC = 6 cm.",
+      "buoc": [
+       "Vẽ đoạn thẳng AB dài 4 cm: vẽ đường tròn tâm A bán kính 4, lấy điểm B trên đường tròn, nối A với B",
+       "Vẽ đường tròn tâm A bán kính 5",
+       "Vẽ đường tròn tâm B bán kính 6",
+       "Lấy C là một giao điểm của hai đường tròn vừa vẽ, nối A với C, B với C",
+       "Vẽ đường thẳng qua C song song với AB và đường thẳng qua A song song với BC (công cụ Đường song song), lấy D là giao điểm của hai đường thẳng này",
+       "Ẩn các đường tròn, đường thẳng; dùng công cụ Đoạn thẳng nối C với D, D với A"
+      ],
+      "nhieu": [
+       "Vẽ đường tròn tâm A bán kính 6",
+       "Vẽ đường thẳng qua B song song với AC và đường thẳng qua A song song với BC (công cụ Đường song song), lấy D là giao điểm của hai đường thẳng này"
+      ],
+      "thu_tu_khac": [
+       [
+        0,
+        2,
+        1,
+        3,
+        4,
+        5
+       ]
+      ]
+     }
     },
     {
      "ma": "Khí hậu - Dự án 1 (tr.120)",
@@ -13985,7 +14788,115 @@
      "trang": 120,
      "nhom": "Vận dụng",
      "dang": "CAU_NHO",
-     "bo_may": "thu thập dữ liệu thực tế"
+     "hinh": [
+      "toan8t1/KH-DA1-tr120-bang.webp",
+      "toan8t1/KH-DA1-tr120-chon-1.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 7,
+      "hoi": "Minh hoạ các đặc điểm khí hậu chung của Việt Nam. Giả sử dữ liệu thu thập được về nhiệt độ, lượng mưa, độ ẩm trung bình các tháng của Việt Nam như trong bảng (số liệu đã làm tròn). Lựa chọn biểu đồ, rồi phân tích dữ liệu xem dữ liệu minh hoạ cho những đặc điểm nào của khí hậu Việt Nam.",
+      "dong": [
+       {
+        "chu": "Biểu đồ nên dùng để biểu diễn sự thay đổi nhiệt độ qua các tháng: {0}",
+        "o": [
+         {
+          "dung": [
+           "biểu đồ đoạn thẳng"
+          ],
+          "sai": [
+           "biểu đồ hình quạt tròn",
+           "biểu đồ tranh"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Biểu đồ nhiệt độ vẽ đúng theo bảng: {0}",
+        "o": [
+         {
+          "dung": [
+           "Hình 1"
+          ],
+          "sai": [
+           "Hình 2",
+           "Hình 3"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Nhiệt độ: {0}",
+        "o": [
+         {
+          "dung": [
+           "tháng nào cũng trên 20 °C"
+          ],
+          "sai": [
+           "có ba tháng mùa đông dưới 10 °C",
+           "tháng nóng nhất là tháng 1"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Tổng lượng mưa cả năm: {0}",
+        "o": [
+         {
+          "dung": [
+           "1 794 mm"
+          ],
+          "sai": [
+           "149,5 mm",
+           "276 mm"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Các tháng mưa trên 100 mm: {0}",
+        "o": [
+         {
+          "dung": [
+           "từ tháng 5 đến tháng 11"
+          ],
+          "sai": [
+           "từ tháng 12 đến tháng 4",
+           "tháng nào cũng trên 100 mm"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Độ ẩm: {0}",
+        "o": [
+         {
+          "dung": [
+           "tháng nào cũng từ 77% trở lên"
+          ],
+          "sai": [
+           "có những tháng dưới 50%",
+           "giảm dần từ tháng 1 đến tháng 12"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Dữ liệu minh hoạ cho đặc điểm: {0}",
+        "o": [
+         {
+          "dung": [
+           "khí hậu nhiệt đới ẩm gió mùa: nóng, mưa nhiều theo mùa, độ ẩm cao"
+          ],
+          "sai": [
+           "khí hậu ôn đới: có mùa đông lạnh dưới 0 °C",
+           "khí hậu khô hạn: ít mưa, độ ẩm thấp"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "Khí hậu - Dự án 2 (tr.121)",
@@ -13993,14 +14904,161 @@
      "trang": 121,
      "nhom": "Vận dụng",
      "dang": "CAU_NHO",
-     "bo_may": "thu thập dữ liệu thực tế"
+     "hinh": [
+      "toan8t1/KH-DA2-tr121-bang.webp",
+      "toan8t1/KH-DA2-tr121-chon-1.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 6,
+      "hoi": "Minh hoạ sự khác biệt về khí hậu giữa miền Bắc và miền Nam. Giả sử dữ liệu thu thập được về nhiệt độ và lượng mưa trung bình các tháng tại Thành phố Hà Nội và Thành phố Hồ Chí Minh như trong bảng (số liệu đã làm tròn). Lựa chọn loại biểu đồ để biểu diễn trên cùng một biểu đồ hai dãy số liệu tại hai địa điểm, rồi phân tích xem khí hậu hai nơi khác biệt thế nào.",
+      "dong": [
+       {
+        "chu": "Biểu đồ nên dùng để biểu diễn trên cùng một biểu đồ nhiệt độ của hai thành phố: {0}",
+        "o": [
+         {
+          "dung": [
+           "biểu đồ đoạn thẳng có hai đường",
+           "biểu đồ cột kép"
+          ],
+          "sai": [
+           "biểu đồ hình quạt tròn",
+           "biểu đồ tranh"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Biểu đồ nhiệt độ vẽ đúng theo bảng: {0}",
+        "o": [
+         {
+          "dung": [
+           "Hình 2"
+          ],
+          "sai": [
+           "Hình 1",
+           "Hình 3"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Nhiệt độ tháng nóng nhất trừ tháng lạnh nhất ở Hà Nội: {0}",
+        "o": [
+         {
+          "dung": [
+           "13 °C"
+          ],
+          "sai": [
+           "3 °C",
+           "45 °C"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Ở Thành phố Hồ Chí Minh: {0}",
+        "o": [
+         {
+          "dung": [
+           "3 °C"
+          ],
+          "sai": [
+           "13 °C",
+           "55 °C"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Các tháng mưa trên 100 mm: {0}",
+        "o": [
+         {
+          "dung": [
+           "Hà Nội từ tháng 5 đến tháng 10; Thành phố Hồ Chí Minh từ tháng 5 đến tháng 11"
+          ],
+          "sai": [
+           "Hà Nội từ tháng 11 đến tháng 4; Thành phố Hồ Chí Minh từ tháng 5 đến tháng 11",
+           "cả hai nơi tháng nào cũng trên 100 mm"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Dữ liệu phù hợp với đặc điểm: {0}",
+        "o": [
+         {
+          "dung": [
+           "miền Bắc có mùa đông lạnh; miền Nam nóng quanh năm, có mùa mưa và mùa khô rõ rệt"
+          ],
+          "sai": [
+           "miền Bắc nóng quanh năm; miền Nam có mùa đông lạnh",
+           "khí hậu hai miền giống hệt nhau"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "GeoGebra vẽ hình - Luyện tập 1 (tr.116)",
      "de": "Sau khi vẽ hình chữ nhật ABCE bằng phần mềm GeoGebra (HĐ1: dùng các công cụ Đoạn thẳng, Đường vuông góc, Giao điểm của 2 đối tượng rồi nối B với C, C với E, E với A): a) Dùng công cụ Góc để kiểm tra các góc của tứ giác ABCE có vuông không. b) Lưu hình vẽ ở HĐ1 thành tệp ảnh hcn.png. c) Tương tự, hãy vẽ hình vuông ABCE có cạnh 4 cm.",
      "trang": 116,
      "nhom": "Luyện tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "hinh": [
+      "toan8t1/GG-LT1-tr116-chon-1.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "hoi": "Sau khi vẽ hình chữ nhật ABCE có AB = 4 cm, BC = 3 cm bằng phần mềm GeoGebra theo HĐ1 (Bước 1: vẽ đoạn thẳng AB dài 4 cm; Bước 2: vẽ điểm C trên đường thẳng vuông góc với AB tại B sao cho BC = 3 cm, dùng đường tròn tâm B bán kính 3; Bước 3: vẽ điểm E là giao của đường thẳng vuông góc với AB tại A và đường thẳng vuông góc với BC tại C).\na) Dùng công cụ Góc để kiểm tra các góc của tứ giác ABCE có vuông không.\nc) Tương tự, hãy vẽ hình vuông ABCE có cạnh 4 cm.",
+      "dong": [
+       {
+        "chu": "a) Kết quả kiểm tra bằng công cụ Góc: {0}",
+        "o": [
+         {
+          "dung": [
+           "cả bốn góc đều vuông"
+          ],
+          "sai": [
+           "chỉ có góc A và góc B vuông",
+           "chỉ có ba góc A, B, C vuông"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "c) So với các bước của HĐ1, cần thay đổi: {0}",
+        "o": [
+         {
+          "dung": [
+           "bán kính đường tròn tâm B ở Bước 2 là 4 thay cho 3"
+          ],
+          "sai": [
+           "bán kính đường tròn tâm A ở Bước 1 là 3 thay cho 4",
+           "đường vuông góc ở Bước 2 vẽ tại A thay cho tại B"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Hình vuông ABCE vẽ được: {0}",
+        "o": [
+         {
+          "dung": [
+           "Hình 3"
+          ],
+          "sai": [
+           "Hình 1",
+           "Hình 2"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     }
    ]
   }
