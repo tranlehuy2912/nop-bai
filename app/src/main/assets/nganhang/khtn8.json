@@ -2,7 +2,7 @@
  "nguon": "khtn8",
  "mon": "Khoa học tự nhiên",
  "ten": "SGK Khoa học tự nhiên 8",
- "ban": 8,
+ "ban": 9,
  "cac_bai": [
   {
    "chuong": "Mở đầu",
@@ -7917,7 +7917,22 @@
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
      "de": "Vẽ sơ đồ của mạch điện trong Hình 22.1 (mạch điện đơn giản gồm pin, bóng đèn, công tắc, dây nối; SGK trang 91).",
-     "bo_may": "vẽ sơ đồ mạch điện"
+     "hinh": [
+      "khtn8/B22.C1.webp",
+      "khtn8/B22.C1-chon.webp"
+     ],
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Vẽ sơ đồ của mạch điện trong Hình 22.1: một pin, một bóng đèn, một công tắc được nối với nhau bằng các dây nối thành mạch kín, đèn đang sáng. Dùng kí hiệu các bộ phận của mạch điện ở Bảng 22.1 (SGK trang 91 – 92), sơ đồ nào dưới đây vẽ đúng mạch điện đó?",
+      "cac": [
+       "Hình 1",
+       "Hình 2",
+       "Hình 3",
+       "Hình 4"
+      ],
+      "dap": "B"
+     }
     },
     {
      "ma": "B22.C2",
@@ -10205,7 +10220,87 @@
      "trang": 114,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Thí nghiệm (Hình 28.2, SGK trang 113): hai ống nghiệm đựng nước, ống (1) có gắn viên sáp ở đáy, ống (2) có gắn viên sáp ở miệng ống. Đun nóng nước ở gần miệng ống nghiệm (1), quan sát xem miếng sáp có bị nóng chảy hay không (Hình 28.2a). Đun nóng đáy ống nghiệm (2) một thời gian dài gần bằng thời gian đun nóng ống nghiệm (1), quan sát xem viên sáp có bị nóng chảy hay không (Hình 28.2b). Hãy giải thích hiện tượng xảy ra trong hai thí nghiệm trên."
+     "de": "Thí nghiệm (Hình 28.2, SGK trang 113): hai ống nghiệm đựng nước, ống (1) có gắn viên sáp ở đáy, ống (2) có gắn viên sáp ở miệng ống. Đun nóng nước ở gần miệng ống nghiệm (1), quan sát xem miếng sáp có bị nóng chảy hay không (Hình 28.2a). Đun nóng đáy ống nghiệm (2) một thời gian dài gần bằng thời gian đun nóng ống nghiệm (1), quan sát xem viên sáp có bị nóng chảy hay không (Hình 28.2b). Hãy giải thích hiện tượng xảy ra trong hai thí nghiệm trên.",
+     "hinh": [
+      "khtn8/B28.C7.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 5,
+      "hoi": "Thí nghiệm Hình 28.2 (SGK trang 113): ống nghiệm (1) có viên sáp gắn ở đáy, đun nóng nước ở gần miệng ống; ống nghiệm (2) có viên sáp gắn ở miệng ống, đun nóng đáy ống trong thời gian gần bằng thời gian đun ống (1). Hãy giải thích hiện tượng xảy ra trong hai thí nghiệm trên.",
+      "dong": [
+       {
+        "chu": "a) Sau thời gian đun, viên sáp ở đáy ống nghiệm (1) {0}",
+        "o": [
+         {
+          "dung": [
+           "không bị nóng chảy"
+          ],
+          "sai": [
+           "bị nóng chảy"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Vì {0}",
+        "o": [
+         {
+          "dung": [
+           "nước dẫn nhiệt kém; nước nóng nhẹ hơn nên ở yên phía trên, không đi xuống đáy"
+          ],
+          "sai": [
+           "nước dẫn nhiệt rất tốt, nhiệt truyền nhanh xuống tới đáy ống",
+           "nước nóng nặng hơn nên chìm xuống, làm đáy ống nóng lên"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "b) Sau thời gian đun, viên sáp ở miệng ống nghiệm (2) {0}",
+        "o": [
+         {
+          "dung": [
+           "bị nóng chảy"
+          ],
+          "sai": [
+           "không bị nóng chảy"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Nhiệt truyền từ đáy lên miệng ống (2) chủ yếu bằng {0}",
+        "o": [
+         {
+          "dung": [
+           "đối lưu"
+          ],
+          "sai": [
+           "dẫn nhiệt",
+           "bức xạ nhiệt"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Dòng đối lưu hình thành vì {0}",
+        "o": [
+         {
+          "dung": [
+           "nước ở đáy nóng lên, nở ra, nhẹ đi nên đi lên; nước lạnh ở trên đi xuống"
+          ],
+          "sai": [
+           "nước ở đáy nóng lên, co lại, nặng hơn nên nằm yên ở đáy ống",
+           "nước ở đáy nóng lên, nặng hơn nên chìm, nước lạnh nổi lên trên"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     }
    ]
   },
@@ -12314,7 +12409,111 @@
      "nhom": "Em có thể",
      "dang": "CAU_NHO",
      "de": "Xây dựng chế độ dinh dưỡng cho bản thân và những người trong gia đình; thực hiện các biện pháp bảo quản, chế biến thực phẩm an toàn.",
-     "bo_may": "lập chế độ dinh dưỡng cho bản thân và gia đình, thực hành ở nhà"
+     "ghep": {
+      "kieu": "O",
+      "sao": 7,
+      "hoi": "Xây dựng chế độ dinh dưỡng cho bản thân và những người trong gia đình; thực hiện các biện pháp bảo quản, chế biến thực phẩm an toàn.\n1. Giả sử em (nam, 13 tuổi) cộng giá trị dinh dưỡng các món ăn trong một ngày của mình theo Bảng 32.3 (SGK trang 132), được 2 000 kcal và 70 g protein. Theo Bảng 32.1 (SGK trang 131), nam 12 – 14 tuổi cần mỗi ngày 2 500 kcal và 65 g protein.\n2. Theo Bảng 32.1, ông của em (nam, 72 tuổi) cần mỗi ngày 2 190 kcal.\n3. Mỗi việc sau nên làm hay không nên khi bảo quản, chế biến thực phẩm?",
+      "dong": [
+       {
+        "chu": "1. So với nhu cầu, khẩu phần một ngày của em {0}",
+        "o": [
+         {
+          "dung": [
+           "thiếu khoảng 500 kcal năng lượng, protein đã đủ"
+          ],
+          "sai": [
+           "thừa khoảng 500 kcal năng lượng, protein còn thiếu",
+           "đủ năng lượng, nhưng thiếu khoảng 5 g protein"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Em nên điều chỉnh khẩu phần bằng cách {0}",
+        "o": [
+         {
+          "dung": [
+           "ăn thêm cơm, khoai, bánh mì (giàu carbohydrate) cho đủ năng lượng"
+          ],
+          "sai": [
+           "bỏ bớt bữa sáng để khẩu phần nhẹ hơn, đỡ thừa năng lượng",
+           "uống thêm thật nhiều nước lọc cho no bụng thay cho ăn thêm"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "2. Ông cần ít năng lượng hơn em vì {0}",
+        "o": [
+         {
+          "dung": [
+           "ông không còn lớn nữa, không cần thêm nguyên liệu để xây dựng cơ thể như em"
+          ],
+          "sai": [
+           "người cao tuổi không cần ăn đủ các nhóm chất dinh dưỡng như trẻ em",
+           "người cao tuổi tiêu hoá, hấp thụ thức ăn tốt hơn trẻ em nhiều lần"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Bữa ăn chung của cả nhà nên {0}",
+        "o": [
+         {
+          "dung": [
+           "có đủ protein, carbohydrate, lipid, vitamin, chất khoáng; mỗi người ăn vừa nhu cầu"
+          ],
+          "sai": [
+           "có thật nhiều thịt, cá cho mọi người, không cần ăn rau và quả chín",
+           "chia cho mọi người lượng thức ăn như nhau, không kể tuổi tác, công việc"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "3. Chọn rau, quả sạch; rửa và sơ chế thật kĩ trước khi ăn sống: {0}",
+        "o": [
+         {
+          "dung": [
+           "Nên làm"
+          ],
+          "sai": [
+           "Không nên"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Dùng chung một thớt để thái thịt sống rồi thái luôn thức ăn đã nấu chín: {0}",
+        "o": [
+         {
+          "dung": [
+           "Không nên"
+          ],
+          "sai": [
+           "Nên làm"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Để thức ăn đã nấu chín qua đêm ở nhiệt độ phòng, không che đậy, rồi ăn tiếp: {0}",
+        "o": [
+         {
+          "dung": [
+           "Không nên"
+          ],
+          "sai": [
+           "Nên làm"
+          ],
+          "hai": true
+         }
+        ]
+       }
+      ]
+     }
     }
    ]
   },
@@ -14779,7 +14978,111 @@
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
      "de": "Tìm hiểu các bệnh và tật về mắt trong trường học: 1. Tìm hiểu các bệnh và tật về mắt trong trường học rồi hoàn thành thông tin theo mẫu Bảng 37.1 (tên bệnh tật, số lượng người mắc, nguyên nhân, biện pháp phòng chống; SGK trang 155). 2. Thiết kế poster tuyên truyền cho mọi người cách chăm sóc, bảo vệ đôi mắt.",
-     "bo_may": "điều tra thực tế trong trường học, thiết kế poster"
+     "ghep": {
+      "kieu": "O",
+      "sao": 7,
+      "hoi": "Tìm hiểu các bệnh và tật về mắt trong trường học.\nGiả sử nhóm em tìm hiểu ở trường và thấy hay gặp nhất là tật cận thị và bệnh đau mắt đỏ.\n1. Hoàn thành thông tin về nguyên nhân và biện pháp phòng chống hai bệnh, tật này (theo mẫu Bảng 37.1).\n2. Để thiết kế poster tuyên truyền cách chăm sóc, bảo vệ đôi mắt, em chọn những lời khuyên nào? Mỗi việc sau nên làm hay không nên?",
+      "dong": [
+       {
+        "chu": "1. Tật cận thị: nguyên nhân là {0}",
+        "o": [
+         {
+          "dung": [
+           "bẩm sinh cầu mắt dài, hoặc nhìn gần khi đọc sách, làm việc trong ánh sáng yếu lâu ngày"
+          ],
+          "sai": [
+           "virus Adeno, vi khuẩn Staphylococcus,... gây nên, dễ lây khi tiếp xúc với người bệnh",
+           "cầu mắt quá ngắn, hoặc thể thuỷ tinh bị lão hoá, xẹp xuống khó phồng lên"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Tật cận thị: khắc phục bằng cách {0}",
+        "o": [
+         {
+          "dung": [
+           "đeo kính cận (kính phân kì) phù hợp, khám mắt định kì"
+          ],
+          "sai": [
+           "đeo kính lão (kính hội tụ) để kéo ảnh về màng lưới",
+           "nhỏ thuốc kháng sinh vào mắt hằng ngày"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Bệnh đau mắt đỏ: nguyên nhân là {0}",
+        "o": [
+         {
+          "dung": [
+           "virus Adeno, vi khuẩn Staphylococcus,... gây nên, dễ lây khi tiếp xúc với người bệnh"
+          ],
+          "sai": [
+           "bẩm sinh cầu mắt dài, hoặc nhìn gần khi đọc sách, làm việc trong ánh sáng yếu lâu ngày",
+           "cầu mắt quá ngắn, hoặc thể thuỷ tinh bị lão hoá, xẹp xuống khó phồng lên"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "2. Rửa tay thường xuyên, hạn chế dụi mắt: {0}",
+        "o": [
+         {
+          "dung": [
+           "Nên làm"
+          ],
+          "sai": [
+           "Không nên"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Dùng chung khăn mặt với bạn đang bị đau mắt đỏ: {0}",
+        "o": [
+         {
+          "dung": [
+           "Không nên"
+          ],
+          "sai": [
+           "Nên làm"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Đọc sách, viết bài ở nơi đủ ánh sáng, không để sách quá sát mắt: {0}",
+        "o": [
+         {
+          "dung": [
+           "Nên làm"
+          ],
+          "sai": [
+           "Không nên"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Nằm đọc truyện, xem điện thoại trong bóng tối nhiều giờ liền: {0}",
+        "o": [
+         {
+          "dung": [
+           "Không nên"
+          ],
+          "sai": [
+           "Nên làm"
+          ],
+          "hai": true
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B37.C8",
@@ -15437,7 +15740,125 @@
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
      "de": "Tìm hiểu một số bệnh về da trong trường học hoặc khu dân cư rồi hoàn thành thông tin theo mẫu Bảng 39.1 (tên bệnh, số người mắc, biện pháp phòng chống; SGK trang 162).",
-     "bo_may": "điều tra thực tế trong trường học hoặc khu dân cư"
+     "ghep": {
+      "kieu": "O",
+      "sao": 8,
+      "hoi": "Tìm hiểu một số bệnh về da trong trường học hoặc khu dân cư (theo mẫu Bảng 39.1: tên bệnh, biện pháp phòng chống).\nGiả sử nhóm em ghi được ba bệnh về da hay gặp: hắc lào, lang ben và mụn trứng cá.\n1. Nhận ra tên bệnh theo biểu hiện, và nguyên nhân gây bệnh.\n2. Mỗi việc sau nên làm hay không nên để phòng chống các bệnh này?",
+      "dong": [
+       {
+        "chu": "1. Vùng da tổn thương dạng tròn, đóng vảy, ngứa ở mông, bẹn, nách: {0}",
+        "o": [
+         {
+          "dung": [
+           "hắc lào"
+          ],
+          "sai": [
+           "lang ben",
+           "mụn trứng cá"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Vùng da lốm đốm trắng hơn bình thường: {0}",
+        "o": [
+         {
+          "dung": [
+           "lang ben"
+          ],
+          "sai": [
+           "hắc lào",
+           "mụn trứng cá"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Hắc lào và lang ben do {0}",
+        "o": [
+         {
+          "dung": [
+           "nấm gây ra, nấm phát triển mạnh khi môi trường nóng, ẩm"
+          ],
+          "sai": [
+           "nang lông bị bít tắc bởi chất nhờn, vi khuẩn gây viêm",
+           "virus gây ra, lây truyền qua đường hô hấp"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Mụn trứng cá có thể do {0}",
+        "o": [
+         {
+          "dung": [
+           "nang lông bị bít tắc bởi tế bào chết, chất nhờn, rồi vi khuẩn gây viêm"
+          ],
+          "sai": [
+           "virus gây ra, lây truyền qua đường hô hấp như bệnh cúm",
+           "lây từ người bị mụn trứng cá khi bắt tay, chạm vào"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "2. Mặc quần áo ẩm ướt, để mồ hôi thấm lâu trên người: {0}",
+        "o": [
+         {
+          "dung": [
+           "Không nên"
+          ],
+          "sai": [
+           "Nên làm"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Dùng chung khăn tắm, quần áo với người đang bị hắc lào: {0}",
+        "o": [
+         {
+          "dung": [
+           "Không nên"
+          ],
+          "sai": [
+           "Nên làm"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Tắm rửa, thay quần áo sạch sau khi ra nhiều mồ hôi; giữ da khô thoáng: {0}",
+        "o": [
+         {
+          "dung": [
+           "Nên làm"
+          ],
+          "sai": [
+           "Không nên"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Dùng tay bẩn nặn mụn trứng cá: {0}",
+        "o": [
+         {
+          "dung": [
+           "Không nên"
+          ],
+          "sai": [
+           "Nên làm"
+          ],
+          "hai": true
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B39.C5",
@@ -17990,7 +18411,45 @@
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
      "de": "Lấy ví dụ và vẽ sơ đồ về lưới thức ăn.",
-     "bo_may": "vẽ sơ đồ lưới thức ăn"
+     "hinh": [
+      "khtn8/B44.C6-chon.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "Lấy ví dụ và vẽ sơ đồ về lưới thức ăn.\nVí dụ: quần xã sinh vật ở một cánh đồng lúa gồm lúa, sâu cuốn lá, châu chấu, chuột đồng, ếch, rắn và cú mèo. Trong đó sâu cuốn lá, châu chấu và chuột đồng ăn lúa; ếch ăn sâu cuốn lá và châu chấu; rắn ăn ếch và chuột đồng; cú mèo ăn chuột đồng. Sơ đồ vẽ theo cách của chuỗi thức ăn ở Hình 44.3 (cỏ → châu chấu → ếch → rắn → đại bàng).",
+      "dong": [
+       {
+        "chu": "Sơ đồ đúng của lưới thức ăn này: {0}",
+        "o": [
+         {
+          "dung": [
+           "Hình 3"
+          ],
+          "sai": [
+           "Hình 1",
+           "Hình 2",
+           "Hình 4"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Đây là một lưới thức ăn vì {0}",
+        "o": [
+         {
+          "dung": [
+           "nó gồm nhiều chuỗi thức ăn có chung các mắt xích như lúa, ếch, chuột đồng"
+          ],
+          "sai": [
+           "nó chỉ gồm một chuỗi thức ăn, mỗi loài ăn đúng một loài khác",
+           "nó gồm các loài cùng sống một nơi nhưng không ăn lẫn nhau"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B44.C7",
@@ -18039,7 +18498,83 @@
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
      "de": "Sau khi điều tra thành phần quần xã sinh vật trong một hệ sinh thái và hoàn thành Bảng 44.1 (SGK trang 184: ghi tên các sinh vật quan sát được vào ba nhóm sinh vật sản xuất, sinh vật tiêu thụ, sinh vật phân giải), hãy phân tích mối quan hệ giữa các sinh vật quan sát được trong hệ sinh thái.",
-     "bo_may": "thực hành điều tra thực tế"
+     "ghep": {
+      "kieu": "O",
+      "sao": 5,
+      "hoi": "Sau khi điều tra thành phần quần xã sinh vật trong một hệ sinh thái và hoàn thành Bảng 44.1, hãy phân tích mối quan hệ giữa các sinh vật quan sát được trong hệ sinh thái.\nGiả sử nhóm em điều tra một hệ sinh thái ao và ghi được Bảng 44.1 như sau:\n- Sinh vật sản xuất: tảo, rong đuôi chó, bèo tấm.\n- Sinh vật tiêu thụ: ốc, tôm, cá mè, cá rô, cá quả, cò.\n- Sinh vật phân giải: vi khuẩn, nấm trong lớp bùn đáy ao.\nNhóm em còn thấy: ốc ăn rong; tôm và cá mè ăn tảo; cá rô ăn tôm; cá quả ăn cá rô; cò bắt tôm và cá rô.",
+      "dong": [
+       {
+        "chu": "Một chuỗi thức ăn trong ao: {0}",
+        "o": [
+         {
+          "dung": [
+           "tảo → tôm → cá rô → cá quả"
+          ],
+          "sai": [
+           "cá quả → cá rô → tôm → tảo",
+           "tảo → cá quả → cá rô → tôm"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Cá rô vừa là thức ăn của cá quả, cò, vừa {0}",
+        "o": [
+         {
+          "dung": [
+           "ăn tôm, nên là mắt xích chung nối nhiều chuỗi thức ăn"
+          ],
+          "sai": [
+           "tự tổng hợp chất hữu cơ, nên là sinh vật sản xuất",
+           "phân giải xác tôm, nên là sinh vật phân giải"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Vi khuẩn, nấm trong lớp bùn đáy ao {0}",
+        "o": [
+         {
+          "dung": [
+           "phân giải xác, chất thải sinh vật thành chất vô cơ cho tảo, rong, bèo dùng lại"
+          ],
+          "sai": [
+           "tổng hợp chất hữu cơ từ ánh sáng mặt trời để làm thức ăn cho cá",
+           "không có quan hệ gì với các sinh vật khác sống trong ao"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Năng lượng trong hệ sinh thái ao {0}",
+        "o": [
+         {
+          "dung": [
+           "lấy từ ánh sáng mặt trời qua tảo, rong, bèo; truyền một chiều và giảm dần qua các bậc"
+          ],
+          "sai": [
+           "do cá quả ở bậc cao nhất tạo ra rồi truyền ngược xuống cá rô, tôm và tảo",
+           "đi qua các bậc dinh dưỡng mà vẫn giữ nguyên, không bị hao hụt chút nào"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Nếu tôm trong ao chết hết vì một bệnh chỉ gặp ở tôm thì {0}",
+        "o": [
+         {
+          "dung": [
+           "cá rô thiếu thức ăn nên giảm, cá quả cũng có thể giảm theo"
+          ],
+          "sai": [
+           "cá rô có thêm thức ăn nên tăng lên rất nhanh",
+           "các sinh vật khác trong ao không bị ảnh hưởng gì"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     }
    ]
   },
@@ -19036,7 +19571,126 @@
      "trang": 193,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Đọc thông tin, thảo luận và làm việc theo nhóm để thực hiện các yêu cầu sau: 1. Điều tra về tình trạng ô nhiễm môi trường ở địa phương, nêu các biểu hiện và tìm hiểu nguyên nhân gây ra tình trạng đó rồi hoàn thành thông tin theo mẫu Bảng 47.1 (SGK trang 193: bảng ba cột Môi trường ô nhiễm, Biểu hiện, Nguyên nhân; ba hàng môi trường nước, môi trường đất, môi trường không khí). 2. Dựa vào kết quả điều tra và những kiến thức đã học, em hãy đề xuất các biện pháp hạn chế ô nhiễm môi trường ở địa phương và cho biết việc phân loại rác thải từ gia đình giúp ích gì trong việc hạn chế ô nhiễm môi trường."
+     "de": "Đọc thông tin, thảo luận và làm việc theo nhóm để thực hiện các yêu cầu sau: 1. Điều tra về tình trạng ô nhiễm môi trường ở địa phương, nêu các biểu hiện và tìm hiểu nguyên nhân gây ra tình trạng đó rồi hoàn thành thông tin theo mẫu Bảng 47.1 (SGK trang 193: bảng ba cột Môi trường ô nhiễm, Biểu hiện, Nguyên nhân; ba hàng môi trường nước, môi trường đất, môi trường không khí). 2. Dựa vào kết quả điều tra và những kiến thức đã học, em hãy đề xuất các biện pháp hạn chế ô nhiễm môi trường ở địa phương và cho biết việc phân loại rác thải từ gia đình giúp ích gì trong việc hạn chế ô nhiễm môi trường.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 8,
+      "hoi": "Dựa vào kết quả điều tra và những kiến thức đã học, em hãy đề xuất các biện pháp hạn chế ô nhiễm môi trường ở địa phương và cho biết việc phân loại rác thải từ gia đình giúp ích gì trong việc hạn chế ô nhiễm môi trường.\nGiả sử kết quả điều tra (Bảng 47.1) ở địa phương em như sau:\n- Môi trường nước: nước mương màu đen, mùi hôi; nguyên nhân là nước thải sinh hoạt, nước thải chuồng trại chăn nuôi đổ thẳng ra mương.\n- Môi trường đất: đất ruộng lẫn nhiều vỏ chai thuốc trừ sâu, túi nilon; nguyên nhân là phun thuốc trừ sâu quá nhiều, vứt rác bừa bãi.\n- Môi trường không khí: khói bụi mù mịt vào mùa gặt; nguyên nhân là đốt rơm rạ ngoài đồng.\n1. Mỗi việc sau nên làm hay không nên để hạn chế ô nhiễm môi trường ở địa phương?\n2. Phân loại rác thải từ gia đình giúp ích gì?",
+      "dong": [
+       {
+        "chu": "1. Xây hầm biogas xử lí chất thải chăn nuôi, không đổ nước thải chưa xử lí ra mương: {0}",
+        "o": [
+         {
+          "dung": [
+           "Nên làm"
+          ],
+          "sai": [
+           "Không nên"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Đổ thêm đất, đá, rác xuống mương cho lấp đi mùi hôi: {0}",
+        "o": [
+         {
+          "dung": [
+           "Không nên"
+          ],
+          "sai": [
+           "Nên làm"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Phun thuốc trừ sâu đúng liều, đúng lúc; thu gom vỏ chai thuốc vào nơi quy định: {0}",
+        "o": [
+         {
+          "dung": [
+           "Nên làm"
+          ],
+          "sai": [
+           "Không nên"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Đốt rơm rạ ngay trên ruộng cho nhanh sau mỗi mùa gặt: {0}",
+        "o": [
+         {
+          "dung": [
+           "Không nên"
+          ],
+          "sai": [
+           "Nên làm"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Ủ rơm rạ làm phân bón hoặc làm thức ăn cho trâu, bò: {0}",
+        "o": [
+         {
+          "dung": [
+           "Nên làm"
+          ],
+          "sai": [
+           "Không nên"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Trồng nhiều cây xanh ven đường, quanh nhà và trường học: {0}",
+        "o": [
+         {
+          "dung": [
+           "Nên làm"
+          ],
+          "sai": [
+           "Không nên"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "2. Phân loại rác thải từ gia đình giúp {0}",
+        "o": [
+         {
+          "dung": [
+           "tái chế, xử lí rác hiệu quả hơn, giảm lượng rác phải chôn lấp, tiết kiệm tài nguyên"
+          ],
+          "sai": [
+           "mọi loại rác tự phân huỷ hết ngay trong thùng, không cần thu gom, xử lí",
+           "được đổ rác thẳng ra sông, mương vì rác đã được chia ra từng loại"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Rác hữu cơ (vỏ rau, củ, quả) sau khi phân loại có thể {0}",
+        "o": [
+         {
+          "dung": [
+           "ủ làm phân bón cho cây trồng"
+          ],
+          "sai": [
+           "đốt chung với túi nilon cho nhanh",
+           "đổ xuống mương làm thức ăn cho cá"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B47.C6",

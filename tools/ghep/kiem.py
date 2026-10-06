@@ -869,6 +869,9 @@ def kiem_phan(duong, duong_sach, hinh_goc):
         if isinstance(sua_de.get(ma), str):
             c["de"] = sua_de[ma]
         c["ghep"] = g
+        # Nhu gop.ap_cau tu 6/10/2026: ghep moi thay bo_may cu cua cau (cau ve doi thanh cau
+        # chon hinh, cau dieu tra giu phan kien thuc). Khong bo thi cau vua co ghep vua co bo_may.
+        c.pop("bo_may", None)
         if ma in hinh:
             c["hinh"] = hinh[ma]
         kiem_cau_hoi(so, c, mon, sach.get("doan_van", {}) or {}, hinh_goc)

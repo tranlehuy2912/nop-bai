@@ -2,7 +2,7 @@
  "nguon": "sbtkhtn8",
  "mon": "Khoa học tự nhiên",
  "ten": "SBT Khoa học tự nhiên 8",
- "ban": 11,
+ "ban": 12,
  "cac_bai": [
   {
    "chuong": "Chương I. Phản ứng hoá học",
@@ -3231,7 +3231,21 @@
      "dang": "CAU_NHO",
      "dap_an": "Vẽ hệ trục: trục hoành là nhiệt độ (°C), trục tung là độ tan S (g/100 g nước). Chấm các điểm (10; 31,2), (20; 37,2), (30; 40,1), (40; 42,6), (50; 45,8) rồi nối lại, được đường đi lên từ trái sang phải.",
      "loai_dap_an": "LOI_GIAI",
-     "bo_may": "vẽ đồ thị"
+     "hinh": [
+      "sbtkhtn8/4.21a-chon.webp"
+     ],
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Cho biết độ tan của KCl tại các nhiệt độ như sau:\nNhiệt độ (°C): 10; 20; 30; 40; 50\nĐộ tan (g/100 g nước): 31,2; 37,2; 40,1; 42,6; 45,8\nVẽ đồ thị mô tả mối quan hệ giữa độ tan của KCl và nhiệt độ (trục tung là độ tan, trục hoành là nhiệt độ). Đồ thị nào dưới đây vẽ đúng?",
+      "cac": [
+       "Hình 1",
+       "Hình 2",
+       "Hình 3",
+       "Hình 4"
+      ],
+      "dap": "D"
+     }
     },
     {
      "ma": "4.21b",
@@ -6747,7 +6761,55 @@
      "dang": "CAU_NHO",
      "dap_an": "Cả ba đều có phản ứng, thấy sủi bọt khí: đá vôi tạo bọt khí CO2, sắt và nhôm tạo bọt khí H2.",
      "loai_dap_an": "LOI_GIAI",
-     "bo_may": "làm thí nghiệm"
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "hoi": "Em hãy làm thí nghiệm: vắt chanh vào các mảnh vật liệu đá vôi, sắt, nhôm. Quan sát và mô tả hiện tượng xảy ra.\nNước chanh có chứa acid (citric acid). Khi vắt chanh vào từng mảnh vật liệu, em thấy hiện tượng gì?",
+      "dong": [
+       {
+        "chu": "Đá vôi (thành phần chính là CaCO₃): {0}",
+        "o": [
+         {
+          "dung": [
+           "có bọt khí carbon dioxide (CO₂) thoát ra"
+          ],
+          "sai": [
+           "có bọt khí hydrogen (H₂) thoát ra",
+           "có bọt khí oxygen (O₂) thoát ra"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Sắt: {0}",
+        "o": [
+         {
+          "dung": [
+           "có bọt khí hydrogen (H₂) thoát ra"
+          ],
+          "sai": [
+           "có bọt khí carbon dioxide (CO₂) thoát ra",
+           "có bọt khí oxygen (O₂) thoát ra"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Nhôm: {0}",
+        "o": [
+         {
+          "dung": [
+           "có bọt khí hydrogen (H₂) thoát ra"
+          ],
+          "sai": [
+           "có bọt khí carbon dioxide (CO₂) thoát ra",
+           "có bọt khí oxygen (O₂) thoát ra"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "8.17b",
@@ -13412,7 +13474,21 @@
      "trang": 52,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "bo_may": "vẽ hình"
+     "hinh": [
+      "sbtkhtn8/18.4b-chon.webp"
+     ],
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Một cân đòn trong phòng thí nghiệm có trục quay M ở giữa đòn cân; hai đĩa cân A (bên trái) và B (bên phải) cách đều trục quay. Đòn cân đang nghiêng: đĩa A thấp hơn đĩa B; vật đặt trên đĩa A nhỏ hơn vật đặt trên đĩa B. Hãy vẽ hình biểu diễn các lực do các vật đặt ở hai bên đĩa cân tác dụng lên đĩa cân: F₁ là lực do vật trên đĩa A tác dụng lên đĩa A, F₂ là lực do vật trên đĩa B tác dụng lên đĩa B. Hình nào dưới đây biểu diễn đúng?",
+      "cac": [
+       "Hình 1",
+       "Hình 2",
+       "Hình 3",
+       "Hình 4"
+      ],
+      "dap": "B"
+     }
     },
     {
      "ma": "18.5",
@@ -13550,7 +13626,69 @@
      "trang": 52,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "bo_may": "làm thí nghiệm"
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "hoi": "Em hãy tự làm một cái cân đơn giản bằng một thanh gỗ cân bằng trên một trục quay (Hình 18.5: thanh gỗ có ba lỗ, lỗ ở giữa làm trục quay, hai cốc treo ở hai lỗ gần hai đầu thanh, cách đều trục quay). Dùng quả nặng có trọng lượng 1 N để tìm xem vật nào nặng hơn 1 N, vật nào nhẹ hơn 1 N.\nGiả sử em cho quả nặng 1 N vào cốc bên trái, lần lượt cho từng vật vào cốc bên phải và thấy:\n- quyển sách giáo khoa: thanh gỗ nghiêng về phía cốc bên phải;\n- chiếc bút chì: thanh gỗ nghiêng về phía cốc bên trái;\n- chai nước khoáng 500 mL đầy nước: thanh gỗ nghiêng về phía cốc bên phải.",
+      "dong": [
+       {
+        "chu": "Quyển sách giáo khoa: {0}",
+        "o": [
+         {
+          "dung": [
+           "nặng hơn 1 N"
+          ],
+          "sai": [
+           "nhẹ hơn 1 N",
+           "nặng bằng 1 N"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Chiếc bút chì: {0}",
+        "o": [
+         {
+          "dung": [
+           "nhẹ hơn 1 N"
+          ],
+          "sai": [
+           "nặng hơn 1 N",
+           "nặng bằng 1 N"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Chai nước khoáng 500 mL đầy nước: {0}",
+        "o": [
+         {
+          "dung": [
+           "nặng hơn 1 N"
+          ],
+          "sai": [
+           "nhẹ hơn 1 N",
+           "nặng bằng 1 N"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Hai cốc phải treo cách đều trục quay vì {0}",
+        "o": [
+         {
+          "dung": [
+           "khi đó cốc nào nặng hơn sẽ có moment lực lớn hơn, kéo thanh gỗ nghiêng về phía nó"
+          ],
+          "sai": [
+           "để thanh gỗ không bị gãy khi cho những vật nặng vào hai cốc treo ở hai đầu",
+           "để hai cốc không va chạm vào nhau mỗi khi thanh gỗ quay quanh trục"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "18.7b",
@@ -13558,7 +13696,56 @@
      "trang": 52,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "bo_may": "làm thí nghiệm"
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "hoi": "Em hãy đề xuất cách dùng cái cân của em (thanh gỗ có trục quay ở giữa, hai cốc giống nhau treo cách đều trục quay) để xác định trọng lượng của các vật em có ở trên.",
+      "dong": [
+       {
+        "chu": "Cho vật vào một cốc, cho các quả nặng đã biết trọng lượng (1 N, 0,5 N, 0,2 N, 0,1 N) vào cốc kia đến khi thanh gỗ nằm thăng bằng. Khi đó trọng lượng của vật {0}",
+        "o": [
+         {
+          "dung": [
+           "bằng tổng trọng lượng các quả nặng trong cốc kia"
+          ],
+          "sai": [
+           "bằng trọng lượng của quả nặng lớn nhất trong cốc kia",
+           "bằng một nửa tổng trọng lượng các quả nặng trong cốc kia"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Vì hai cốc cách đều trục quay nên thanh gỗ nằm thăng bằng khi {0}",
+        "o": [
+         {
+          "dung": [
+           "hai cốc nặng bằng nhau, moment lực ở hai bên bằng nhau"
+          ],
+          "sai": [
+           "cốc chứa vật nhẹ hơn cốc chứa các quả nặng một chút",
+           "số đồ vật trong hai cốc bằng nhau, dù nặng nhẹ khác nhau"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Giả sử để thanh gỗ thăng bằng với hộp bút, em cần một quả 1 N, hai quả 0,2 N và một quả 0,1 N. Trọng lượng của hộp bút là {0}",
+        "o": [
+         {
+          "dung": [
+           "1,5 N"
+          ],
+          "sai": [
+           "1,3 N",
+           "1 N",
+           "4 N"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     }
    ]
   },
@@ -14775,7 +14962,111 @@
      "dang": "CAU_NHO",
      "dap_an": "Acquy được dùng để: khởi động động cơ xe máy, ô tô; làm nguồn điện dự trữ khi mất điện lưới; cung cấp năng lượng cho động cơ điện của xe đạp điện, ô tô điện; thắp sáng ở nơi không có điện lưới,... Khi mô tả cần nêu loại acquy, hiệu điện thế, cách hoạt động.",
      "loai_dap_an": "LOI_GIAI",
-     "bo_may": "tìm hiểu thực tế"
+     "ghep": {
+      "kieu": "O",
+      "sao": 7,
+      "hoi": "Hãy tìm hiểu và mô tả các ứng dụng của acquy trong thực tế. Trong mỗi trường hợp sau, acquy có được dùng làm nguồn điện không?",
+      "dong": [
+       {
+        "chu": "Khởi động (đề) động cơ xe máy, ô tô: {0}",
+        "o": [
+         {
+          "dung": [
+           "Có"
+          ],
+          "sai": [
+           "Không"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Bộ lưu điện cấp điện cho máy tính, đèn khi mất điện lưới: {0}",
+        "o": [
+         {
+          "dung": [
+           "Có"
+          ],
+          "sai": [
+           "Không"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Chạy động cơ điện của xe đạp điện: {0}",
+        "o": [
+         {
+          "dung": [
+           "Có"
+          ],
+          "sai": [
+           "Không"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Bàn là điện cắm vào ổ điện trong nhà: {0}",
+        "o": [
+         {
+          "dung": [
+           "Không"
+          ],
+          "sai": [
+           "Có"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Đồng hồ treo tường chạy bằng một viên pin tiểu: {0}",
+        "o": [
+         {
+          "dung": [
+           "Không"
+          ],
+          "sai": [
+           "Có"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Acquy là nguồn điện vì {0}",
+        "o": [
+         {
+          "dung": [
+           "nó có hai cực (+), (−) và cung cấp năng lượng điện cho dụng cụ điện"
+          ],
+          "sai": [
+           "nó tiêu thụ năng lượng điện để phát sáng giống bóng đèn",
+           "nó chỉ cho dòng điện chạy qua như dây nối"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Acquy dùng hết điện thì {0}",
+        "o": [
+         {
+          "dung": [
+           "nạp lại điện được để dùng nhiều lần"
+          ],
+          "sai": [
+           "phải vứt bỏ ngay, không dùng lại được",
+           "tự đầy điện trở lại khi để yên một lúc"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "21.8",
@@ -20335,7 +20626,111 @@
      "trang": 93,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "bo_may": "dự án điều tra thực tế"
+     "ghep": {
+      "kieu": "O",
+      "sao": 7,
+      "hoi": "Từ kết quả dự án: Điều tra một số bệnh về thận trong trường học hoặc địa phương, hãy đề xuất các biện pháp phòng tránh các bệnh về thận.\nGiả sử kết quả dự án cho thấy ở địa phương em có người mắc ba bệnh: sỏi thận, viêm cầu thận và suy thận.\n1. Tìm hiểu nguyên nhân của bệnh sỏi thận và bệnh viêm cầu thận.\n2. Mỗi việc sau nên làm hay không nên để phòng tránh các bệnh về thận?",
+      "dong": [
+       {
+        "chu": "1. Bệnh sỏi thận hình thành khi {0}",
+        "o": [
+         {
+          "dung": [
+           "calcium oxalate, muối phosphate, muối urate,... tích tụ trong thận với nồng độ cao"
+          ],
+          "sai": [
+           "liên cầu khuẩn xâm nhập vào thận, gây viêm ở các cầu thận của người bệnh",
+           "người bệnh uống quá nhiều nước mỗi ngày, làm muối khoáng đọng lại"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Bệnh viêm cầu thận do {0}",
+        "o": [
+         {
+          "dung": [
+           "liên cầu khuẩn gây nên"
+          ],
+          "sai": [
+           "các muối khoáng tích tụ thành sỏi",
+           "uống quá nhiều nước mỗi ngày"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "2. Uống đủ nước, không nhịn tiểu lâu: {0}",
+        "o": [
+         {
+          "dung": [
+           "Nên làm"
+          ],
+          "sai": [
+           "Không nên"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Ăn quá mặn, uống nhiều nước ngọt có đường: {0}",
+        "o": [
+         {
+          "dung": [
+           "Không nên"
+          ],
+          "sai": [
+           "Nên làm"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Giữ vệ sinh răng miệng, chữa dứt điểm viêm họng, viêm amidan, sâu răng: {0}",
+        "o": [
+         {
+          "dung": [
+           "Nên làm"
+          ],
+          "sai": [
+           "Không nên"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Theo dõi, giữ huyết áp ổn định; điều trị tốt bệnh đái tháo đường: {0}",
+        "o": [
+         {
+          "dung": [
+           "Nên làm"
+          ],
+          "sai": [
+           "Không nên"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Ăn thức ăn đã ôi thiu cho đỡ phí: {0}",
+        "o": [
+         {
+          "dung": [
+           "Không nên"
+          ],
+          "sai": [
+           "Nên làm"
+          ],
+          "hai": true
+         }
+        ]
+       }
+      ]
+     }
     }
    ]
   },
