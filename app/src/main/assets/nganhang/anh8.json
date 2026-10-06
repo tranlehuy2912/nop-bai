@@ -2,7 +2,7 @@
  "nguon": "anh8",
  "mon": "Tiếng Anh",
  "ten": "SGK Tiếng Anh 8",
- "ban": 3,
+ "ban": 4,
  "doan_van": {
   "1.GS1": "<b>I'm keen on doing DIY (do-it-yourself).</b>\nTom: Hi, Trang. Surprised to see you. What brings you here?\nTrang: Oh, hello Tom. I'm looking for a knitting kit.\nTom: A knitting kit? I didn't know you like knitting.\nTrang: Actually, I'm keen on many DIY activities. In my leisure time, I love knitting, building dollhouses, and making paper flowers.\nTom: I see. So, you like spending time on your own.\nTrang: Yeah. What do you do in your free time?\nTom: I'm a bit different. I usually hang out with my friends. We go to the cinema, go cycling, or play sport in the park.\nTrang: You love spending free time with other people, don't you?\nTom: That's right. By the way, would you like to go to the cinema with me and Mark this Sunday? There's a new comedy at New World Cinema.\nTrang: Yes, I'd love to. Can I ask Mai to join us?\nTom: Sure. Let's meet outside the cinema at 9 a.m.",
   "1.C4": "Sakura (Kyoto, Japan): Origami is the art of paper folding. I love doing it on my own in my free time. With just some sheets of paper, I can create almost anything: flowers, birds, or fans. Doing origami helps me to relax.\nEric (St. Gallen, Switzerland): My home town has some famous ski resorts. I'm into snowboarding and usually go to a nearby ski resort with my parents at weekends. Snowboarding improves my overall health and balance.\nLan (Quang Binh, Viet Nam): I'm keen on playing sport, especially badminton. My best friend lives next door, so we play badminton almost every afternoon. It's an easy sport, and it also improves my muscle strength and helps reduce stress.",
@@ -20,7 +20,14 @@
   "4.GS1": "Tom: Hi, I'm Tom. You look new here.\nLai: I am. I'm Lai from Ha Giang.\nTom: Oh, I've heard about beautiful Ha Giang. Do you live in the mountains?\nLai: Yes, I do. I'm from the Tay ethnic group. We are the second largest ethnic group in Viet Nam, only after the Kinh.\nTom: Oh ... I once saw a bamboo house on high posts in a travel brochure. Do you live in a home like that?\nLai: Yes, we call it a \"stilt house\". Our house overlooks terraced fields.\nTom: Awesome. What is life in your village like?\nLai: It's peaceful. There are 16 houses in my village. We live very close to nature.\nTom: I love it. Can you tell me something about your culture?\nLai: Certainly. We have our own culture. You can see it in our folk dances, musical instruments like the dan tinh, and our special five-colour sticky rice.\nTom: It sounds interesting. I hope to visit Ha Giang one day.",
   "4.CL2-3": "Some minority (1) <u>groups</u> are farmers. They do not have much (2) <u>land</u> and they use simple farming techniques. After finding an (3) <u>area</u> for a garden, the men cut the (4) <u>trees</u> down and burn them. The (5) <u>ash</u> they collect helps enrich the soil. They then grow a few (6) <u>crops</u> like rice and corn.",
   "4.C4": "<b>THE JRAI</b>\n<b>Population:</b> 513,930 (2019), the largest minority group in the Central Highlands\n<b>Living place:</b> mainly in Gia Lai\n<b>Houses:</b> stilt houses\n<b>Economy:</b> growing crops, weaving, planting industrial trees (coffee, cacao, rubber, ...), raising buffaloes and elephants\n<b>Traditional culture:</b>\n- Rich folk dances, songs, games, and musical instruments\n- Dominant role in the family: women",
-  "4.S1-2": "<b>Stilt houses</b>\nStilt houses are popular among different ethnic minority groups, from the Thai in the Northern Highlands to the Khmer in the Mekong Delta. The houses come in different sizes and styles, and show the traditional culture of their owners.\nStilt houses are made from natural materials like wood, bamboo, and leaves. They stand on strong posts, about two or three metres above the ground. This allows them to keep people safe from wild animals. People climb a seven- or nine-step staircase to enter the house. The most important place in the house is the kitchen. It has an open fire in the middle of the house. It is the place for family gatherings and receiving guests.\nThe stilt houses of the Tay and Nung usually overlook a field. The stilt houses of the Thai, however, face mountains or a forest. The Bahnar and Ede have a communal house (called a Rong house) as the heart of their village. These communal houses are the largest and tallest ones in the village."
+  "4.S1-2": "<b>Stilt houses</b>\nStilt houses are popular among different ethnic minority groups, from the Thai in the Northern Highlands to the Khmer in the Mekong Delta. The houses come in different sizes and styles, and show the traditional culture of their owners.\nStilt houses are made from natural materials like wood, bamboo, and leaves. They stand on strong posts, about two or three metres above the ground. This allows them to keep people safe from wild animals. People climb a seven- or nine-step staircase to enter the house. The most important place in the house is the kitchen. It has an open fire in the middle of the house. It is the place for family gatherings and receiving guests.\nThe stilt houses of the Tay and Nung usually overlook a field. The stilt houses of the Thai, however, face mountains or a forest. The Bahnar and Ede have a communal house (called a Rong house) as the heart of their village. These communal houses are the largest and tallest ones in the village.",
+  "5.GS1": "<b>Tet is coming!</b>\nElena: Wow, this girl looks so cute.\nTrang: Yeah ... She's my cousin. She's at Sa Dec Flower Village. Tet is coming soon, so many people visit flower villages to take pictures with the blooming flowers.\nElena: Oh, I'm fond of admiring the flowers. Does your family visit places like this too?\nTrang: Yes, we do. We usually visit Nhat Tan Village to buy kumquat trees and peach blossoms.\nElena: I see flowers and ornamental trees everywhere these days. What are they for?\nTrang: We, Vietnamese, use plants and flowers for decorations and for offerings. They are an important part of our Tet tradition.\nElena: And what's that tall tree in the photo?\nTrang: Well, it's actually a bamboo pole. People place it in the yard of the communal house. They hang decorative items like small bells and lanterns on it. They want to chase away bad luck and pray for a lucky new year.\nElena: Interesting! I didn't know that.",
+  "5.CL2-4": "A recent study in (1) ___ UK shows that family time traditions are good for (2) ___ teens. These traditions include family members playing card games, watching their favourite TV programmes, or performing (3) ___ karaoke shows at weekends with one another. These activities often lead to lots of laughter and (4) ___ fun conversations. By taking part in such activities, teens strengthen (5) ___ bonds with their family.",
+  "5.S1-2": "<b>A Village Festival Day</b>\nI live in a small village in northern Viet Nam. Every year, people in my village look forward to the third day of Tet. It is one of our most important festival days.\nIn the morning, we gather along the riverside to watch some competitions. First, there is a special boat race. Some team members cook rice on the boat while others row the boat as fast as they can. The fastest team with well-cooked rice wins the race. Then, the referee <b>releases a duck</b> into the middle of the river. Contestants jump into the river to catch it. The atmosphere becomes loud with the sound of drums and cheers of festival goers.\nAt noon, there is a village party at the communal house for the elders. Each family also holds a home party. We cook traditional dishes like sticky rice and steamed chicken. Sometimes, we include food that children love, such as bun cha or even pizzas!\nThe village festival helps us maintain our traditions, connect with other people, and strengthen our family bonds.",
+  "5.LB4": "Here are two easy ways to raise children's awareness of (1) ___ customs and traditions. First, it is (2) ___ good idea for parents to teach children to cook. By doing this, children can learn and preserve their family recipes. Second, parents can take children to (3) ___ local festivals. This helps them discover (4) ___ culture of their community and develop (5) ___ understanding of local traditions.",
+  "6.GS1": "<b>Lifestyle differences</b>\nNam: Hello, Tom. How're things?\nTom: Oh good. I like it here. The lifestyle is interesting and different from that in my country.\nNam: Really?\nTom: Sure. Students here call their teachers by their title \"teacher\", not by their names.\nNam: Right. How do you greet your teachers?\nTom: We usually say \"Hello\" or \"Good morning\" then Mr, Mrs, or Miss and their surnames, for example \"Good morning, Mr Smith.\"\nNam: Are there other differences?\nTom: People buy and sell a lot of street food here. In my country, people usually buy food in a store or a restaurant.\nNam: Yeah. Buying street food is a common practice in my city.\nTom: And I've noticed that many people have breakfast on the street too! In my country, we typically have a light breakfast at home.\nNam: I see. But here many adults are in the habit of having breakfast outside of their homes. If they're not in a hurry, they'll even have a leisurely coffee there.\nTom: That's fascinating!",
+  "6.S1": "If you go to the American state of Alaska, you might find the traditional lifestyle there interesting. Although Alaska is quite large, with nearly 1.7 million square kilometres, it has a small population of about 730,000.\nThe native peoples in Alaska still <b>maintain</b> many of their traditions. They keep their old ways of making arts and crafts alive. Various native groups have their own special <b>styles</b> of carving or weaving as well as their unique tribal dances and drumming. Therefore, visitors to Alaska may <b>experience</b> some of their culture in their villages. They may see performances of traditional music and native art in galleries and museums.\nAlaska is also known for its unusual method of transport – the dogsled. Today, dog sledding (= mushing) is more of a sport than a true means of transport. The best-known race is the Iditarod Trail Sled Dog Race, a 1,510 km race from Anchorage to Nome. <b>Mushers</b> from all over the world come to Anchorage each March to compete for cash and prizes.",
+  "R2.S1": "<b>SPRING FAIR (16 - 25 January)</b>\n<b>Location:</b> Viet Nam National Village for Ethnic Culture and Tourism\nThe fair offers opportunities for tourists to learn about the life of ethnic people in Viet Nam.\n<b>Ethnic Markets</b>\n16 - 25 January\nExhibition of specialities of many ethnic groups featuring vegetables, flowers, crafts, and more.\n<b>Photo Exhibition</b>\n16 - 25 January\nPhotos showing the daily activities of ethnic people in their villages.\n<b>Performances</b>\n17 and 24 January\nMore than 20 performances demonstrating various traditional songs and dances.\n<b>Childhood Fun</b>\n17 - 18 and 24 - 25 January\nA great day out for the family. Children can have fun taking part in traditional folk games and make handicrafts with the help of local artisans.\n<b>A Pottery Village</b>\n17 - 18 and 24 - 25 January\nAn introduction to pottery making by artisans from Bau Truc Pottery Village."
  },
  "cac_bai": [
   {
@@ -11207,6 +11214,5692 @@
          }
         ]
        }
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "chuong": "Unit 5. Our customs and traditions",
+   "bai": "Unit 5. Our customs and traditions",
+   "cac_cau": [
+    {
+     "ma": "Bài 2.1 (tr.51)",
+     "de": "Read the conversation again and tick (✓) T (True) or F (False).\nElena and Trang are at Sa Dec Flower Village.",
+     "trang": 51,
+     "nhom": "Getting Started",
+     "dang": "CAU_NHO",
+     "dap_an": "F",
+     "loai_dap_an": "DAP_SO",
+     "doan": "5.GS1",
+     "ghep": {
+      "kieu": "DUNG_SAI",
+      "sao": 1,
+      "hoi": "Elena and Trang are at Sa Dec Flower Village.",
+      "dap": false,
+      "nhan": [
+       "True",
+       "False"
+      ]
+     }
+    },
+    {
+     "ma": "Bài 2.2 (tr.51)",
+     "de": "Read the conversation again and tick (✓) T (True) or F (False).\nMany people visit flower villages to take photos.",
+     "trang": 51,
+     "nhom": "Getting Started",
+     "dang": "CAU_NHO",
+     "dap_an": "T",
+     "loai_dap_an": "DAP_SO",
+     "doan": "5.GS1",
+     "ghep": {
+      "kieu": "DUNG_SAI",
+      "sao": 1,
+      "hoi": "Many people visit flower villages to take photos.",
+      "dap": true,
+      "nhan": [
+       "True",
+       "False"
+      ]
+     }
+    },
+    {
+     "ma": "Bài 2.3 (tr.51)",
+     "de": "Read the conversation again and tick (✓) T (True) or F (False).\nTrang's family usually buys kumquat trees and peach blossoms at Nhat Tan Village.",
+     "trang": 51,
+     "nhom": "Getting Started",
+     "dang": "CAU_NHO",
+     "dap_an": "T",
+     "loai_dap_an": "DAP_SO",
+     "doan": "5.GS1",
+     "ghep": {
+      "kieu": "DUNG_SAI",
+      "sao": 1,
+      "hoi": "Trang's family usually buys kumquat trees and peach blossoms at Nhat Tan Village.",
+      "dap": true,
+      "nhan": [
+       "True",
+       "False"
+      ]
+     }
+    },
+    {
+     "ma": "Bài 2.4 (tr.51)",
+     "de": "Read the conversation again and tick (✓) T (True) or F (False).\nFlowers are not part of any Vietnamese traditions.",
+     "trang": 51,
+     "nhom": "Getting Started",
+     "dang": "CAU_NHO",
+     "dap_an": "F",
+     "loai_dap_an": "DAP_SO",
+     "doan": "5.GS1",
+     "ghep": {
+      "kieu": "DUNG_SAI",
+      "sao": 1,
+      "hoi": "Flowers are not part of any Vietnamese traditions.",
+      "dap": false,
+      "nhan": [
+       "True",
+       "False"
+      ]
+     }
+    },
+    {
+     "ma": "Bài 2.5 (tr.51)",
+     "de": "Read the conversation again and tick (✓) T (True) or F (False).\nPeople decorate bamboo poles with small bells and lanterns for New Years.",
+     "trang": 51,
+     "nhom": "Getting Started",
+     "dang": "CAU_NHO",
+     "dap_an": "T",
+     "loai_dap_an": "DAP_SO",
+     "doan": "5.GS1",
+     "ghep": {
+      "kieu": "DUNG_SAI",
+      "sao": 1,
+      "hoi": "People decorate bamboo poles with small bells and lanterns for New Years.",
+      "dap": true,
+      "nhan": [
+       "True",
+       "False"
+      ]
+     }
+    },
+    {
+     "ma": "Bài 3 (tr.51)",
+     "de": "Match the phrases with the correct pictures.\n1. an ornamental tree\n2. a bamboo pole\n3. decorative items\n4. blooming flowers\n5. a communal house",
+     "trang": 51,
+     "nhom": "Getting Started",
+     "dang": "CAU_NHO",
+     "dap_an": "1-d, 2-a, 3-e, 4-b, 5-c",
+     "loai_dap_an": "DAP_SO",
+     "hinh": [
+      "anh8/5.B3-tr51.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 5,
+      "hoi": "Match the phrases with the correct pictures (a - e).",
+      "dong": [
+       {
+        "chu": "1. an ornamental tree: {0}",
+        "o": [
+         {
+          "dung": [
+           "d"
+          ],
+          "sai": [
+           "a",
+           "b",
+           "c",
+           "e"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "2. a bamboo pole: {0}",
+        "o": [
+         {
+          "dung": [
+           "a"
+          ],
+          "sai": [
+           "b",
+           "c",
+           "d",
+           "e"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "3. decorative items: {0}",
+        "o": [
+         {
+          "dung": [
+           "e"
+          ],
+          "sai": [
+           "a",
+           "b",
+           "c",
+           "d"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "4. blooming flowers: {0}",
+        "o": [
+         {
+          "dung": [
+           "b"
+          ],
+          "sai": [
+           "a",
+           "c",
+           "d",
+           "e"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "5. a communal house: {0}",
+        "o": [
+         {
+          "dung": [
+           "c"
+          ],
+          "sai": [
+           "a",
+           "b",
+           "d",
+           "e"
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "ma": "Bài 4 (tr.51)",
+     "de": "Complete the sentences with the verbs from the box.\nadmire | chase | pray | place\n1. The British decorate their Christmas trees and ___ presents under them.\n2. Tom likes to ___ the view from the hill.\n3. In many cultures, knocking on wood is a way to ___ away bad spirits.\n4. Many Asians go to Buddhist temples to ___ for good luck.",
+     "trang": 51,
+     "nhom": "Getting Started",
+     "dang": "CAU_NHO",
+     "dap_an": "1. place; 2. admire; 3. chase; 4. pray",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "hoi": "Complete the sentences with the verbs from the box.",
+      "dong": [
+       {
+        "chu": "1. The British decorate their Christmas trees and {0} presents under them.",
+        "o": [
+         {
+          "dung": [
+           "place"
+          ],
+          "sai": [
+           "admire",
+           "chase",
+           "pray"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "2. Tom likes to {0} the view from the hill.",
+        "o": [
+         {
+          "dung": [
+           "admire"
+          ],
+          "sai": [
+           "chase",
+           "pray",
+           "place"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "3. In many cultures, knocking on wood is a way to {0} away bad spirits.",
+        "o": [
+         {
+          "dung": [
+           "chase"
+          ],
+          "sai": [
+           "admire",
+           "pray",
+           "place"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "4. Many Asians go to Buddhist temples to {0} for good luck.",
+        "o": [
+         {
+          "dung": [
+           "pray"
+          ],
+          "sai": [
+           "admire",
+           "chase",
+           "place"
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "ma": "Bài 5.1 (tr.51)",
+     "de": "QUIZ New Years around the world\nPeople around the world celebrate New Years differently. Choose the country with each tradition below.\nVisiting pagodas\nA. The US B. Viet Nam",
+     "trang": 51,
+     "nhom": "Getting Started",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "People around the world celebrate New Years differently. Choose the country best known for each tradition below.\nVisiting pagodas",
+      "cac": [
+       "The US",
+       "Viet Nam"
+      ],
+      "dap": "B"
+     }
+    },
+    {
+     "ma": "Bài 5.2 (tr.51)",
+     "de": "QUIZ New Years around the world\nPeople around the world celebrate New Years differently. Choose the country with each tradition below.\nThrowing water at each other\nA. Thailand B. Japan",
+     "trang": 51,
+     "nhom": "Getting Started",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "People around the world celebrate New Years differently. Choose the country best known for each tradition below.\nThrowing water at each other",
+      "cac": [
+       "Thailand",
+       "Japan"
+      ],
+      "dap": "A"
+     }
+    },
+    {
+     "ma": "Bài 5.3 (tr.51)",
+     "de": "QUIZ New Years around the world\nPeople around the world celebrate New Years differently. Choose the country with each tradition below.\nRinging a bell 108 times\nA. Japan B. Viet Nam",
+     "trang": 51,
+     "nhom": "Getting Started",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "People around the world celebrate New Years differently. Choose the country best known for each tradition below.\nRinging a bell 108 times",
+      "cac": [
+       "Japan",
+       "Viet Nam"
+      ],
+      "dap": "A"
+     }
+    },
+    {
+     "ma": "Bài 5.4 (tr.51)",
+     "de": "QUIZ New Years around the world\nPeople around the world celebrate New Years differently. Choose the country with each tradition below.\nGiving and receiving lucky money\nA. The US B. Viet Nam",
+     "trang": 51,
+     "nhom": "Getting Started",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "People around the world celebrate New Years differently. Choose the country best known for each tradition below.\nGiving and receiving lucky money",
+      "cac": [
+       "The US",
+       "Viet Nam"
+      ],
+      "dap": "B"
+     }
+    },
+    {
+     "ma": "Bài 5.5 (tr.51)",
+     "de": "QUIZ New Years around the world\nPeople around the world celebrate New Years differently. Choose the country with each tradition below.\nWatching a ball drop at midnight in Times Square\nA. Thailand B. The US",
+     "trang": 51,
+     "nhom": "Getting Started",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "People around the world celebrate New Years differently. Choose the country best known for each tradition below.\nWatching a ball drop at midnight in Times Square",
+      "cac": [
+       "Thailand",
+       "The US"
+      ],
+      "dap": "B"
+     }
+    },
+    {
+     "ma": "Bài 1 (tr.52)",
+     "de": "Write a phrase from the box under each picture.\nwedding ceremony | whale worship\nfood offerings | family reunion\nmartial arts | festival goers\n1. ___\n2. ___\n3. ___\n4. ___\n5. ___\n6. ___",
+     "trang": 52,
+     "nhom": "A Closer Look 1",
+     "dang": "CAU_NHO",
+     "dap_an": "1. family reunion; 2. wedding ceremony; 3. food offerings; 4. whale worship; 5. martial arts; 6. festival goers",
+     "loai_dap_an": "DAP_SO",
+     "hinh": [
+      "anh8/5.B1-tr52.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 6,
+      "hoi": "Write a phrase from the box under each picture.",
+      "dong": [
+       {
+        "chu": "1. {0}",
+        "o": [
+         {
+          "dung": [
+           "family reunion"
+          ],
+          "sai": [
+           "wedding ceremony",
+           "whale worship",
+           "food offerings",
+           "martial arts",
+           "festival goers"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "2. {0}",
+        "o": [
+         {
+          "dung": [
+           "wedding ceremony"
+          ],
+          "sai": [
+           "whale worship",
+           "food offerings",
+           "family reunion",
+           "martial arts",
+           "festival goers"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "3. {0}",
+        "o": [
+         {
+          "dung": [
+           "food offerings"
+          ],
+          "sai": [
+           "wedding ceremony",
+           "whale worship",
+           "family reunion",
+           "martial arts",
+           "festival goers"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "4. {0}",
+        "o": [
+         {
+          "dung": [
+           "whale worship"
+          ],
+          "sai": [
+           "wedding ceremony",
+           "food offerings",
+           "family reunion",
+           "martial arts",
+           "festival goers"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "5. {0}",
+        "o": [
+         {
+          "dung": [
+           "martial arts"
+          ],
+          "sai": [
+           "wedding ceremony",
+           "whale worship",
+           "food offerings",
+           "family reunion",
+           "festival goers"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "6. {0}",
+        "o": [
+         {
+          "dung": [
+           "festival goers"
+          ],
+          "sai": [
+           "wedding ceremony",
+           "whale worship",
+           "food offerings",
+           "family reunion",
+           "martial arts"
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "ma": "Bài 2.1 (tr.52)",
+     "de": "Complete each sentence with the correct option A, B, or C.\nWe have a tradition of holding a family ___ on the first day of Tet.\nA. reunion B. work\nC. meal",
+     "trang": 52,
+     "nhom": "A Closer Look 1",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Complete each sentence with the best option.\nWe have a tradition of holding a family ___ on the first day of Tet.",
+      "cac": [
+       "reunion",
+       "work",
+       "meal"
+      ],
+      "dap": "A"
+     }
+    },
+    {
+     "ma": "Bài 2.2 (tr.52)",
+     "de": "Complete each sentence with the correct option A, B, or C.\nIt's a tradition for shops to have a lion dance performance at their opening ___.\nA. worship B. celebration\nC. ceremony",
+     "trang": 52,
+     "nhom": "A Closer Look 1",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "C",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Complete each sentence with the best option.\nIt's a tradition for shops to have a lion dance performance at their opening ___.",
+      "cac": [
+       "worship",
+       "celebration",
+       "ceremony"
+      ],
+      "dap": "C"
+     }
+    },
+    {
+     "ma": "Bài 2.3 (tr.52)",
+     "de": "Complete each sentence with the correct option A, B, or C.\nThe tradition of ___ whales is popular in Vietnamese coastal villages.\nA. admiring B. worshipping\nC. praying",
+     "trang": 52,
+     "nhom": "A Closer Look 1",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Complete each sentence with the best option.\nThe tradition of ___ whales is popular in Vietnamese coastal villages.",
+      "cac": [
+       "admiring",
+       "worshipping",
+       "praying"
+      ],
+      "dap": "B"
+     }
+    },
+    {
+     "ma": "Bài 2.4 (tr.52)",
+     "de": "Complete each sentence with the correct option A, B, or C.\nShe broke with family tradition by not practising ___.\nA. acrobat B. martial arts\nC. offering",
+     "trang": 52,
+     "nhom": "A Closer Look 1",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Complete each sentence with the best option.\nShe broke with family tradition by not practising ___.",
+      "cac": [
+       "acrobat",
+       "martial arts",
+       "offering"
+      ],
+      "dap": "B"
+     }
+    },
+    {
+     "ma": "Bài 2.5 (tr.52)",
+     "de": "Complete each sentence with the correct option A, B, or C.\nTraditionally, the Vietnamese prepare ___ to worship their ancestors during Tet.\nA. offerings B. decoration\nC. worshipping",
+     "trang": 52,
+     "nhom": "A Closer Look 1",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Complete each sentence with the best option.\nTraditionally, the Vietnamese prepare ___ to worship their ancestors during Tet.",
+      "cac": [
+       "offerings",
+       "decoration",
+       "worshipping"
+      ],
+      "dap": "A"
+     }
+    },
+    {
+     "ma": "Bài 3 (tr.52)",
+     "de": "Complete the sentences with the words from the box.\ncustom | practise\nkeep | break\ntraditionally\n1. This year, we will ___ with tradition and go on holiday instead of staying at home during Tet.\n2. ___, children in the US go from house to house to ask for sweets on Halloween.\n3. Holding a party to wish our grandparents longevity is one of the customs we ___ at Tet.\n4. Organising a folk song club is one way for us to ___ our traditions alive.\n5. It's becoming a ___ for young people to celebrate New Years in addition to Tet.",
+     "trang": 52,
+     "nhom": "A Closer Look 1",
+     "dang": "CAU_NHO",
+     "dap_an": "1. break; 2. Traditionally; 3. practise (keep cũng đúng); 4. keep; 5. custom",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 5,
+      "hoi": "Complete the sentences with the words from the box.",
+      "dong": [
+       {
+        "chu": "1. This year, we will {0} with tradition and go on holiday instead of staying at home during Tet.",
+        "o": [
+         {
+          "dung": [
+           "break"
+          ],
+          "sai": [
+           "custom",
+           "practise",
+           "keep",
+           "traditionally"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "2. {0}, children in the US go from house to house to ask for sweets on Halloween.",
+        "o": [
+         {
+          "dung": [
+           "Traditionally"
+          ],
+          "sai": [
+           "Custom",
+           "Practise",
+           "Keep",
+           "Break"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "3. Holding a party to wish our grandparents longevity is one of the customs we {0} at Tet.",
+        "o": [
+         {
+          "dung": [
+           "practise",
+           "keep"
+          ],
+          "sai": [
+           "custom",
+           "break",
+           "traditionally"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "4. Organising a folk song club is one way for us to {0} our traditions alive.",
+        "o": [
+         {
+          "dung": [
+           "keep"
+          ],
+          "sai": [
+           "custom",
+           "practise",
+           "break",
+           "traditionally"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "5. It's becoming a {0} for young people to celebrate New Years in addition to Tet.",
+        "o": [
+         {
+          "dung": [
+           "custom"
+          ],
+          "sai": [
+           "practise",
+           "keep",
+           "break",
+           "traditionally"
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "ma": "Bài 5.1 (tr.53)",
+     "de": "Listen and practise the sentences. Underline the words with the sound /n/ and circle the words with the sound /ŋ/.\nMary wore a pink dress last night.",
+     "trang": 53,
+     "nhom": "A Closer Look 1",
+     "dang": "CAU_NHO",
+     "dap_an": "/n/: night; /ŋ/: pink",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "Find the word with /n/ and the word with /ŋ/ in the sentence.\nMary wore a pink dress last night.",
+      "dong": [
+       {
+        "chu": "Word with /n/: {0}",
+        "o": [
+         {
+          "dung": [
+           "night"
+          ],
+          "sai": [
+           "pink",
+           "Mary"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Word with /ŋ/: {0}",
+        "o": [
+         {
+          "dung": [
+           "pink"
+          ],
+          "sai": [
+           "night",
+           "Mary"
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "ma": "Bài 5.2 (tr.53)",
+     "de": "Listen and practise the sentences. Underline the words with the sound /n/ and circle the words with the sound /ŋ/.\nI think we should buy this ornamental tree.",
+     "trang": 53,
+     "nhom": "A Closer Look 1",
+     "dang": "CAU_NHO",
+     "dap_an": "/n/: ornamental; /ŋ/: think",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "Find the word with /n/ and the word with /ŋ/ in the sentence.\nI think we should buy this ornamental tree.",
+      "dong": [
+       {
+        "chu": "Word with /n/: {0}",
+        "o": [
+         {
+          "dung": [
+           "ornamental"
+          ],
+          "sai": [
+           "think",
+           "should"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Word with /ŋ/: {0}",
+        "o": [
+         {
+          "dung": [
+           "think"
+          ],
+          "sai": [
+           "ornamental",
+           "should"
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "ma": "Bài 5.3 (tr.53)",
+     "de": "Listen and practise the sentences. Underline the words with the sound /n/ and circle the words with the sound /ŋ/.\nHe thanked the host for the enjoyable party.",
+     "trang": 53,
+     "nhom": "A Closer Look 1",
+     "dang": "CAU_NHO",
+     "dap_an": "/n/: enjoyable; /ŋ/: thanked",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "Find the word with /n/ and the word with /ŋ/ in the sentence.\nHe thanked the host for the enjoyable party.",
+      "dong": [
+       {
+        "chu": "Word with /n/: {0}",
+        "o": [
+         {
+          "dung": [
+           "enjoyable"
+          ],
+          "sai": [
+           "thanked",
+           "host"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Word with /ŋ/: {0}",
+        "o": [
+         {
+          "dung": [
+           "thanked"
+          ],
+          "sai": [
+           "enjoyable",
+           "host"
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "ma": "Bài 5.4 (tr.53)",
+     "de": "Listen and practise the sentences. Underline the words with the sound /n/ and circle the words with the sound /ŋ/.\nMy mum made the spring rolls for the longevity party.",
+     "trang": 53,
+     "nhom": "A Closer Look 1",
+     "dang": "CAU_NHO",
+     "dap_an": "/n/: longevity; /ŋ/: spring",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "Find the word with /n/ and the word with /ŋ/ in the sentence.\nMy mum made the spring rolls for the longevity party.",
+      "dong": [
+       {
+        "chu": "Word with /n/: {0}",
+        "o": [
+         {
+          "dung": [
+           "longevity"
+          ],
+          "sai": [
+           "spring",
+           "mum"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Word with /ŋ/: {0}",
+        "o": [
+         {
+          "dung": [
+           "spring"
+          ],
+          "sai": [
+           "longevity",
+           "mum"
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "ma": "Bài 5.5 (tr.53)",
+     "de": "Listen and practise the sentences. Underline the words with the sound /n/ and circle the words with the sound /ŋ/.\nI will bring some food to the party on Saturday.",
+     "trang": 53,
+     "nhom": "A Closer Look 1",
+     "dang": "CAU_NHO",
+     "dap_an": "/n/: on; /ŋ/: bring",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "Find the word with /n/ and the word with /ŋ/ in the sentence.\nI will bring some food to the party on Saturday.",
+      "dong": [
+       {
+        "chu": "Word with /n/: {0}",
+        "o": [
+         {
+          "dung": [
+           "on"
+          ],
+          "sai": [
+           "bring",
+           "some"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Word with /ŋ/: {0}",
+        "o": [
+         {
+          "dung": [
+           "bring"
+          ],
+          "sai": [
+           "on",
+           "some"
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "ma": "Bài 1.1 (tr.53)",
+     "de": "Choose the correct option in each sentence below.\nIt takes more than a / an hour to drive to Can Tho.",
+     "trang": 53,
+     "nhom": "A Closer Look 2",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Choose the best option in each sentence below.\nIt takes more than ___ hour to drive to Can Tho.",
+      "cac": [
+       "a",
+       "an"
+      ],
+      "dap": "B"
+     }
+    },
+    {
+     "ma": "Bài 1.2 (tr.53)",
+     "de": "Choose the correct option in each sentence below.\nIt's a / Ø tradition for children to wake up early on Christmas Day.",
+     "trang": 53,
+     "nhom": "A Closer Look 2",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Choose the best option in each sentence below.\nIt's ___ tradition for children to wake up early on Christmas Day.",
+      "cac": [
+       "a",
+       "Ø"
+      ],
+      "dap": "A"
+     }
+    },
+    {
+     "ma": "Bài 1.3 (tr.53)",
+     "de": "Choose the correct option in each sentence below.\nThe Ok Om Bok Festival takes place in the / Ø October.",
+     "trang": 53,
+     "nhom": "A Closer Look 2",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Choose the best option in each sentence below.\nThe Ok Om Bok Festival takes place in ___ October.",
+      "cac": [
+       "the",
+       "Ø"
+      ],
+      "dap": "B"
+     }
+    },
+    {
+     "ma": "Bài 1.4 (tr.53)",
+     "de": "Choose the correct option in each sentence below.\nWe went to Can Tho by an / Ø air.",
+     "trang": 53,
+     "nhom": "A Closer Look 2",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Choose the best option in each sentence below.\nWe went to Can Tho by ___ air.",
+      "cac": [
+       "an",
+       "Ø"
+      ],
+      "dap": "B"
+     }
+    },
+    {
+     "ma": "Bài 1.5 (tr.53)",
+     "de": "Choose the correct option in each sentence below.\nA: Where's a / the book?\nB: I thought you left it next to the TV.",
+     "trang": 53,
+     "nhom": "A Closer Look 2",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Choose the best option in each sentence below.\nA: Where's ___ book?\nB: I thought you left it next to the TV.",
+      "cac": [
+       "a",
+       "the"
+      ],
+      "dap": "B"
+     }
+    },
+    {
+     "ma": "Bài 2.1 (tr.53)",
+     "de": "Which of the underlined parts in each question is incorrect? Find and correct it.\n<u>The</u> (A) worshipping Kitchen Gods is <u>a</u> (B) long-time tradition of <u>the</u> (C) Vietnamese.",
+     "trang": 53,
+     "nhom": "A Closer Look 2",
+     "dang": "CAU_NHO",
+     "dap_an": "A: The → Ø",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "Which of the underlined parts is incorrect? Choose it, then choose the correction.",
+      "dong": [
+       {
+        "chu": "<u>The</u> worshipping Kitchen Gods is <u>a</u> long-time tradition of <u>the</u> Vietnamese.\nIncorrect part: {0}\nCorrection: {1}",
+        "o": [
+         {
+          "dung": [
+           "<u>The</u> worshipping"
+          ],
+          "sai": [
+           "<u>a</u> long-time tradition",
+           "<u>the</u> Vietnamese"
+          ]
+         },
+         {
+          "dung": [
+           "Ø"
+          ],
+          "sai": [
+           "A",
+           "An"
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "ma": "Bài 2.2 (tr.53)",
+     "de": "Which of the underlined parts in each question is incorrect? Find and correct it.\nPeople organise <u>the</u> (A) worshipping ceremony at <u>noon</u> (B) so that <u>a</u> (C) Kitchen Gods can leave for Heaven at 12 o'clock.",
+     "trang": 53,
+     "nhom": "A Closer Look 2",
+     "dang": "CAU_NHO",
+     "dap_an": "C: a → Ø (the cũng đúng)",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "Which of the underlined parts is incorrect? Choose it, then choose the correction.",
+      "dong": [
+       {
+        "chu": "People organise <u>the</u> worshipping ceremony at <u>noon</u> so that <u>a</u> Kitchen Gods can leave for Heaven at 12 o'clock.\nIncorrect part: {0}\nCorrection: {1}",
+        "o": [
+         {
+          "dung": [
+           "<u>a</u> Kitchen Gods"
+          ],
+          "sai": [
+           "<u>the</u> worshipping ceremony",
+           "at <u>noon</u>"
+          ]
+         },
+         {
+          "dung": [
+           "Ø",
+           "the"
+          ],
+          "sai": [
+           "an",
+           "this"
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "ma": "Bài 2.3 (tr.53)",
+     "de": "Which of the underlined parts in each question is incorrect? Find and correct it.\n<u>Most</u> (A) families in <u>the</u> (B) Viet Nam prepare <u>offerings</u> (C) for the Kitchen Gods.",
+     "trang": 53,
+     "nhom": "A Closer Look 2",
+     "dang": "CAU_NHO",
+     "dap_an": "B: the → Ø",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "Which of the underlined parts is incorrect? Choose it, then choose the correction.",
+      "dong": [
+       {
+        "chu": "<u>Most</u> families in <u>the</u> Viet Nam prepare <u>offerings</u> for the Kitchen Gods.\nIncorrect part: {0}\nCorrection: {1}",
+        "o": [
+         {
+          "dung": [
+           "in <u>the</u> Viet Nam"
+          ],
+          "sai": [
+           "<u>Most</u> families",
+           "<u>offerings</u>"
+          ]
+         },
+         {
+          "dung": [
+           "Ø"
+          ],
+          "sai": [
+           "a",
+           "an"
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "ma": "Bài 2.4 (tr.53)",
+     "de": "Which of the underlined parts in each question is incorrect? Find and correct it.\n<u>The</u> (A) offerings include <u>a</u> (B) set of flowers and fruits, <u>a</u> (C) paper clothes, and three carps.",
+     "trang": 53,
+     "nhom": "A Closer Look 2",
+     "dang": "CAU_NHO",
+     "dap_an": "C: a → Ø",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "Which of the underlined parts is incorrect? Choose it, then choose the correction.",
+      "dong": [
+       {
+        "chu": "<u>The</u> offerings include <u>a</u> set of flowers and fruits, <u>a</u> paper clothes, and three carps.\nIncorrect part: {0}\nCorrection: {1}",
+        "o": [
+         {
+          "dung": [
+           "<u>a</u> paper clothes"
+          ],
+          "sai": [
+           "<u>The</u> offerings",
+           "<u>a</u> set of flowers"
+          ]
+         },
+         {
+          "dung": [
+           "Ø"
+          ],
+          "sai": [
+           "an",
+           "the"
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "ma": "Bài 2.5 (tr.53)",
+     "de": "Which of the underlined parts in each question is incorrect? Find and correct it.\n<u>The</u> (A) Vietnamese people believe that <u>the</u> (B) Kitchen Gods go to Heaven on <u>carps</u> (C).",
+     "trang": 53,
+     "nhom": "A Closer Look 2",
+     "dang": "CAU_NHO",
+     "dap_an": "A: The → Ø (máy in families thay cho people, xem ghi chú)",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "Which of the underlined parts is incorrect? Choose it, then choose the correction.",
+      "dong": [
+       {
+        "chu": "<u>The</u> Vietnamese families believe that <u>the</u> Kitchen Gods go to Heaven on <u>carps</u>.\nIncorrect part: {0}\nCorrection: {1}",
+        "o": [
+         {
+          "dung": [
+           "<u>The</u> Vietnamese families"
+          ],
+          "sai": [
+           "<u>the</u> Kitchen Gods",
+           "on <u>carps</u>"
+          ]
+         },
+         {
+          "dung": [
+           "Ø"
+          ],
+          "sai": [
+           "A",
+           "An"
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "ma": "Bài 3.1 (tr.54)",
+     "de": "Complete the sentences with a, an, the, or Ø (zero article).\nIt is a custom in my family to have ___ breakfast at home on Sundays.",
+     "trang": 54,
+     "nhom": "A Closer Look 2",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "D",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Complete the sentences with a, an, the, or Ø (zero article).\nIt is a custom in my family to have ___ breakfast at home on Sundays.",
+      "cac": [
+       "a",
+       "an",
+       "the",
+       "Ø"
+      ],
+      "dap": "D"
+     }
+    },
+    {
+     "ma": "Bài 3.2 (tr.54)",
+     "de": "Complete the sentences with a, an, the, or Ø (zero article).\nWhen visiting a family home in some countries, you should bring ___ small gift with you.",
+     "trang": 54,
+     "nhom": "A Closer Look 2",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Complete the sentences with a, an, the, or Ø (zero article).\nWhen visiting a family home in some countries, you should bring ___ small gift with you.",
+      "cac": [
+       "a",
+       "an",
+       "the",
+       "Ø"
+      ],
+      "dap": "A"
+     }
+    },
+    {
+     "ma": "Bài 3.3 (tr.54)",
+     "de": "Complete the sentences with a, an, the, or Ø (zero article).\nOur village festival is held on the 10th of ___ January.",
+     "trang": 54,
+     "nhom": "A Closer Look 2",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "D",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Complete the sentences with a, an, the, or Ø (zero article).\nOur village festival is held on the 10th of ___ January.",
+      "cac": [
+       "a",
+       "an",
+       "the",
+       "Ø"
+      ],
+      "dap": "D"
+     }
+    },
+    {
+     "ma": "Bài 3.4 (tr.54)",
+     "de": "Complete the sentences with a, an, the, or Ø (zero article).\nAncient Egyptians worshipped ___ Sun.",
+     "trang": 54,
+     "nhom": "A Closer Look 2",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "C",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Complete the sentences with a, an, the, or Ø (zero article).\nAncient Egyptians worshipped ___ Sun.",
+      "cac": [
+       "a",
+       "an",
+       "the",
+       "Ø"
+      ],
+      "dap": "C"
+     }
+    },
+    {
+     "ma": "Bài 3.5 (tr.54)",
+     "de": "Complete the sentences with a, an, the, or Ø (zero article).\nMany people think that hard work is ___ important Vietnamese value.",
+     "trang": 54,
+     "nhom": "A Closer Look 2",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Complete the sentences with a, an, the, or Ø (zero article).\nMany people think that hard work is ___ important Vietnamese value.",
+      "cac": [
+       "a",
+       "an",
+       "the",
+       "Ø"
+      ],
+      "dap": "B"
+     }
+    },
+    {
+     "ma": "Bài 4.1 (tr.54)",
+     "de": "Complete the text with the or Ø (zero article).\nA recent study in (1) ___ UK shows that family time traditions are good for (2) ___ teens.",
+     "trang": 54,
+     "nhom": "A Closer Look 2",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN",
+     "doan": "5.CL2-4",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Complete the text with the or Ø (zero article).\nA recent study in (1) ___ UK shows that family time traditions are good for (2) ... teens.",
+      "cac": [
+       "the",
+       "Ø"
+      ],
+      "dap": "A"
+     }
+    },
+    {
+     "ma": "Bài 4.2 (tr.54)",
+     "de": "Complete the text with the or Ø (zero article).\nA recent study in (1) ___ UK shows that family time traditions are good for (2) ___ teens.",
+     "trang": 54,
+     "nhom": "A Closer Look 2",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "doan": "5.CL2-4",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Complete the text with the or Ø (zero article).\nA recent study in (1) ... UK shows that family time traditions are good for (2) ___ teens.",
+      "cac": [
+       "the",
+       "Ø"
+      ],
+      "dap": "B"
+     }
+    },
+    {
+     "ma": "Bài 4.3 (tr.54)",
+     "de": "Complete the text with the or Ø (zero article).\nThese traditions include family members playing card games, watching their favourite TV programmes, or performing (3) ___ karaoke shows at weekends with one another.",
+     "trang": 54,
+     "nhom": "A Closer Look 2",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "doan": "5.CL2-4",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Complete the text with the or Ø (zero article).\nThese traditions include family members playing card games, watching their favourite TV programmes, or performing (3) ___ karaoke shows at weekends with one another.",
+      "cac": [
+       "the",
+       "Ø"
+      ],
+      "dap": "B"
+     }
+    },
+    {
+     "ma": "Bài 4.4 (tr.54)",
+     "de": "Complete the text with the or Ø (zero article).\nThese activities often lead to lots of laughter and (4) ___ fun conversations.",
+     "trang": 54,
+     "nhom": "A Closer Look 2",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "doan": "5.CL2-4",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Complete the text with the or Ø (zero article).\nThese activities often lead to lots of laughter and (4) ___ fun conversations.",
+      "cac": [
+       "the",
+       "Ø"
+      ],
+      "dap": "B"
+     }
+    },
+    {
+     "ma": "Bài 4.5 (tr.54)",
+     "de": "Complete the text with the or Ø (zero article).\nBy taking part in such activities, teens strengthen (5) ___ bonds with their family.",
+     "trang": 54,
+     "nhom": "A Closer Look 2",
+     "dang": "CAU_NHO",
+     "dap_an": "the hoặc Ø đều đúng (cả ba nguồn lời giải ghi the)",
+     "loai_dap_an": "DAP_SO",
+     "doan": "5.CL2-4",
+     "bo_may": "hai đáp án đều đúng: strengthen the bonds with their family và strengthen bonds with their family"
+    },
+    {
+     "ma": "Bài 2.1 (tr.55)",
+     "de": "Read the text. Choose the correct answer A, B, or C.\nWhat is the text mainly about?\nA. A local tradition.\nB. A family tradition.\nC. A cooking contest.",
+     "trang": 55,
+     "nhom": "Skills 1",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN",
+     "doan": "5.S1-2",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Read the text. Choose the correct answer A, B, or C.\nWhat is the text mainly about?",
+      "cac": [
+       "A local tradition.",
+       "A family tradition.",
+       "A cooking contest."
+      ],
+      "dap": "A"
+     }
+    },
+    {
+     "ma": "Bài 2.2 (tr.55)",
+     "de": "Read the text. Choose the correct answer A, B, or C.\nTo win the boat race, a team must ___.\nA. row the boat more quickly than the other teams\nB. row the boat the fastest and properly cook the rice\nC. cook rice properly and catch the duck",
+     "trang": 55,
+     "nhom": "Skills 1",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "doan": "5.S1-2",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Read the text. Choose the correct answer A, B, or C.\nTo win the boat race, a team must ___.",
+      "cac": [
+       "row the boat more quickly than the other teams",
+       "row the boat the fastest and properly cook the rice",
+       "cook rice properly and catch the duck"
+      ],
+      "dap": "B"
+     }
+    },
+    {
+     "ma": "Bài 2.3 (tr.55)",
+     "de": "Read the text. Choose the correct answer A, B, or C.\nThe phrase \"<b>releases a duck</b>\" in the text means ___.\nA. gives it freedom\nB. catches it\nC. takes it home",
+     "trang": 55,
+     "nhom": "Skills 1",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN",
+     "doan": "5.S1-2",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Read the text. Choose the correct answer A, B, or C.\nThe phrase \"<b>releases a duck</b>\" in the text means ___.",
+      "cac": [
+       "gives it freedom",
+       "catches it",
+       "takes it home"
+      ],
+      "dap": "A"
+     }
+    },
+    {
+     "ma": "Bài 2.4 (tr.55)",
+     "de": "Read the text. Choose the correct answer A, B, or C.\nWhy is the festival important?\nA. Because it is exciting.\nB. Because people win valuable prizes.\nC. Because it keeps some village traditions alive.",
+     "trang": 55,
+     "nhom": "Skills 1",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "C",
+     "loai_dap_an": "TN",
+     "doan": "5.S1-2",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Read the text. Choose the correct answer A, B, or C.\nWhy is the festival important?",
+      "cac": [
+       "Because it is exciting.",
+       "Because people win valuable prizes.",
+       "Because it keeps some village traditions alive."
+      ],
+      "dap": "C"
+     }
+    },
+    {
+     "ma": "Bài 3.1 (tr.56)",
+     "de": "Read the text again. Complete the mind map about a family party.\nFamily party\nWhen: on the (1) ___ of Tet",
+     "trang": 56,
+     "nhom": "Skills 1",
+     "dang": "CAU_NHO",
+     "dap_an": "third day",
+     "loai_dap_an": "DAP_SO",
+     "doan": "5.S1-2",
+     "ghep": {
+      "kieu": "CHU",
+      "sao": 2,
+      "hoi": "Read the text again. Complete the mind map about a family party.\nFamily party\nWhen: on the (1) ___ of Tet",
+      "dap": [
+       "third day"
+      ],
+      "nhieu": [
+       "f",
+       "s",
+       "x",
+       "o",
+       "u",
+       "e",
+       "n"
+      ]
+     }
+    },
+    {
+     "ma": "Bài 3.2 (tr.56)",
+     "de": "Read the text again. Complete the mind map about a family party.\nFamily party\nWhere: at (2) ___",
+     "trang": 56,
+     "nhom": "Skills 1",
+     "dang": "CAU_NHO",
+     "dap_an": "home",
+     "loai_dap_an": "DAP_SO",
+     "doan": "5.S1-2",
+     "ghep": {
+      "kieu": "CHU",
+      "sao": 2,
+      "hoi": "Read the text again. Complete the mind map about a family party.\nFamily party\nWhere: at (2) ___",
+      "dap": [
+       "home"
+      ],
+      "nhieu": [
+       "u",
+       "s",
+       "t",
+       "a"
+      ]
+     }
+    },
+    {
+     "ma": "Bài 3.3 (tr.56)",
+     "de": "Read the text again. Complete the mind map about a family party.\nFamily party\nWhat to eat: traditional (3) ___",
+     "trang": 56,
+     "nhom": "Skills 1",
+     "dang": "CAU_NHO",
+     "dap_an": "dishes",
+     "loai_dap_an": "DAP_SO",
+     "doan": "5.S1-2",
+     "ghep": {
+      "kieu": "CHU",
+      "sao": 2,
+      "hoi": "Read the text again. Complete the mind map about a family party.\nFamily party\nWhat to eat: traditional (3) ___",
+      "dap": [
+       "dishes"
+      ],
+      "nhieu": [
+       "o",
+       "f",
+       "c",
+       "a",
+       "k"
+      ]
+     }
+    },
+    {
+     "ma": "Bài 3.4 (tr.56)",
+     "de": "Read the text again. Complete the mind map about a family party.\nFamily party\nWhat to eat: kids' favourite (4) ___",
+     "trang": 56,
+     "nhom": "Skills 1",
+     "dang": "CAU_NHO",
+     "dap_an": "food",
+     "loai_dap_an": "DAP_SO",
+     "doan": "5.S1-2",
+     "ghep": {
+      "kieu": "CHU",
+      "sao": 2,
+      "hoi": "Read the text again. Complete the mind map about a family party.\nFamily party\nWhat to eat: kids' favourite (4) ___",
+      "dap": [
+       "food"
+      ],
+      "nhieu": [
+       "t",
+       "u",
+       "r",
+       "w"
+      ]
+     }
+    },
+    {
+     "ma": "Bài 4 (tr.56)",
+     "de": "Work in pairs. Put the questions (A - E) in the correct blanks (1 - 5) to make a complete dialogue. Then role-play it.\nA. And what do you do at parties?\nB. Lan, what family event do you often take part in?\nC. Do you like these parties?\nD. Where do you hold these parties?\nE. Who joins you at these parties?\nNick: (1) ___\nLan: Well, I join birthday parties of all my family members.\nNick: (2) ___\nLan: In a Vietnamese restaurant. But sometimes we break with tradition by going to a Western one.\nNick: (3) ___\nLan: Everyone in my family.\nNick: (4) ___\nLan: Well, the birthday person opens the gifts. And everyone has some good food.\nNick: (5) ___\nLan: Yes, I always look forward to them. They are a great time for family bonding.",
+     "trang": 56,
+     "nhom": "Skills 1",
+     "dang": "CAU_NHO",
+     "dap_an": "1-B, 2-D, 3-E, 4-A, 5-C",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 5,
+      "hoi": "Put the questions in the correct blanks to make a complete dialogue.",
+      "dong": [
+       {
+        "chu": "Nick: (1) {0}\nLan: Well, I join birthday parties of all my family members.",
+        "o": [
+         {
+          "dung": [
+           "Lan, what family event do you often take part in?"
+          ],
+          "sai": [
+           "And what do you do at parties?",
+           "Do you like these parties?",
+           "Where do you hold these parties?",
+           "Who joins you at these parties?"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Nick: (2) {0}\nLan: In a Vietnamese restaurant. But sometimes we break with tradition by going to a Western one.",
+        "o": [
+         {
+          "dung": [
+           "Where do you hold these parties?"
+          ],
+          "sai": [
+           "And what do you do at parties?",
+           "Lan, what family event do you often take part in?",
+           "Do you like these parties?",
+           "Who joins you at these parties?"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Nick: (3) {0}\nLan: Everyone in my family.",
+        "o": [
+         {
+          "dung": [
+           "Who joins you at these parties?"
+          ],
+          "sai": [
+           "And what do you do at parties?",
+           "Lan, what family event do you often take part in?",
+           "Do you like these parties?",
+           "Where do you hold these parties?"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Nick: (4) {0}\nLan: Well, the birthday person opens the gifts. And everyone has some good food.",
+        "o": [
+         {
+          "dung": [
+           "And what do you do at parties?"
+          ],
+          "sai": [
+           "Lan, what family event do you often take part in?",
+           "Do you like these parties?",
+           "Where do you hold these parties?",
+           "Who joins you at these parties?"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Nick: (5) {0}\nLan: Yes, I always look forward to them. They are a great time for family bonding.",
+        "o": [
+         {
+          "dung": [
+           "Do you like these parties?"
+          ],
+          "sai": [
+           "And what do you do at parties?",
+           "Lan, what family event do you often take part in?",
+           "Where do you hold these parties?",
+           "Who joins you at these parties?"
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "ma": "Bài 4 (tr.57)",
+     "de": "Work in groups. Read the following pieces of advice for tourists at the Ok Om Bok Festival. Put them in the correct column.\na. dress up for the Moon God offering ceremony\nb. keep quiet when the monks and the elders are talking\nc. climb on the animal statues in the temple ground\nd. show respect to the monks and the elders\ne. refuse young rice when the elders offer it to you\nf. litter the temple ground\nDos: - dress up for the Moon God offering ceremony ...\nDon'ts: - litter the temple ground ...",
+     "trang": 57,
+     "nhom": "Skills 2",
+     "dang": "CAU_NHO",
+     "dap_an": "Dos: a, b, d; Don'ts: c, e, f",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "hoi": "Read the following pieces of advice for tourists at the Ok Om Bok Festival. Put each of them in the correct column: Dos or Don'ts.\nExamples: dress up for the Moon God offering ceremony → Dos; litter the temple ground → Don'ts.",
+      "dong": [
+       {
+        "chu": "keep quiet when the monks and the elders are talking: {0}",
+        "o": [
+         {
+          "dung": [
+           "Dos"
+          ],
+          "sai": [
+           "Don'ts"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "climb on the animal statues in the temple ground: {0}",
+        "o": [
+         {
+          "dung": [
+           "Don'ts"
+          ],
+          "sai": [
+           "Dos"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "show respect to the monks and the elders: {0}",
+        "o": [
+         {
+          "dung": [
+           "Dos"
+          ],
+          "sai": [
+           "Don'ts"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "refuse young rice when the elders offer it to you: {0}",
+        "o": [
+         {
+          "dung": [
+           "Don'ts"
+          ],
+          "sai": [
+           "Dos"
+          ],
+          "hai": true
+         }
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "ma": "Bài 5a (tr.57)",
+     "de": "Tom sent you an email. Read part of his email below.\n\"... Guess what! My dad is taking me with him to Soc Trang Province. We will be there during the Ok Om Bok Festival. What are some dos and don'ts at this festival? ...\"\nWrite an email (80 - 100 words) to advise Tom about participating in the Ok Om Bok Festival.\nTo: handsometom@mymail.com\nSubject: Re: Ok Om Bok Festival\nDear Tom,\n...\nCheers,",
+     "trang": 57,
+     "nhom": "Skills 2",
+     "dang": "CAU_NHO",
+     "dap_an": "Dear Tom,\nIt's great that you will be in Soc Trang during the Ok Om Bok Festival. This festival of the Khmer people is also called the Moon Worshipping Festival. Here are some dos and don'ts for you. First, perhaps you should dress up for the Moon God offering ceremony. It's also a good idea to keep quiet when the monks and elders are talking. However, don't climb on the animal statues in the temple ground. Finally, don't miss the Ngo Boat Race because it is very exciting. I hope you have a wonderful time there!\nCheers,\nMai",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 8,
+      "hoi": "Put the sentences in the correct order to make Mai's email to Tom about the Ok Om Bok Festival. The email starts with \"Dear Tom,\" and ends with \"Cheers, Mai\". Follow this order: what the festival is, the dos, the don'ts, and a festival activity Tom should not miss.",
+      "buoc": [
+       "It's great that you will be in Soc Trang during the Ok Om Bok Festival.",
+       "This festival of the Khmer people is also called the Moon Worshipping Festival.",
+       "Here are some dos and don'ts for you.",
+       "First, perhaps you should dress up for the Moon God offering ceremony.",
+       "It's also a good idea to keep quiet when the monks and elders are talking.",
+       "However, don't climb on the animal statues in the temple ground.",
+       "Finally, don't miss the Ngo Boat Race because it is very exciting.",
+       "I hope you have a wonderful time there!"
+      ],
+      "nhieu": [
+       "I went to Ha Long Bay with my parents last summer.",
+       "My favourite festival is the Mid-Autumn Festival because I love mooncakes."
+      ],
+      "thu_tu_khac": []
+     }
+    },
+    {
+     "ma": "Bài 5b (tr.57)",
+     "de": "Tom sent you an email. Read part of his email below.\n\"... Guess what! My dad is taking me with him to Soc Trang Province. We will be there during the Ok Om Bok Festival. What are some dos and don'ts at this festival? ...\"\nWrite an email (80 - 100 words) to advise Tom about participating in the Ok Om Bok Festival.\nTo: handsometom@mymail.com\nSubject: Re: Ok Om Bok Festival\nDear Tom,\n...\nCheers,",
+     "trang": 57,
+     "nhom": "Skills 2",
+     "dang": "CAU_NHO",
+     "dap_an": "Tuỳ HS. Ví dụ: Dear Tom, I'm happy to hear that you are going to Soc Trang with your dad for the Ok Om Bok Festival. The festival takes place in mid-October of the lunar calendar. Here is my advice. It is important to show respect to the monks and the elders. When the elders offer you young rice, don't refuse it. Refusing it is impolite. Also, please don't litter the temple ground. Keep it clean. At night, you can watch the lanterns on the water. They look beautiful! I hope you have a great time there! Cheers, Hoa",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 11,
+      "hoi": "Write your email to Tom about the dos and don'ts at the Ok Om Bok Festival. Complete each sentence of the email.",
+      "dong": [
+       {
+        "chu": "Dear Tom,\nI'm happy to hear that you {0} to Soc Trang with your dad for the Ok Om Bok Festival.",
+        "o": [
+         {
+          "dung": [
+           "are going",
+           "will go"
+          ],
+          "sai": [
+           "go",
+           "going"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "The festival {0} in {1} of the lunar calendar.",
+        "o": [
+         {
+          "dung": [
+           "takes place"
+          ],
+          "sai": [
+           "take place",
+           "taking place"
+          ]
+         },
+         {
+          "dung": [
+           "mid-October"
+          ],
+          "sai": [
+           "early January",
+           "mid-August"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Here is my advice. It is important {0} respect to the monks and the elders.",
+        "o": [
+         {
+          "dung": [
+           "to show"
+          ],
+          "sai": [
+           "show",
+           "showing"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "When the elders offer you young rice, {0} it. Refusing it is {1}.",
+        "o": [
+         {
+          "dung": [
+           "don't refuse"
+          ],
+          "sai": [
+           "refuse",
+           "not refuse"
+          ]
+         },
+         {
+          "dung": [
+           "impolite",
+           "rude"
+          ],
+          "sai": [
+           "polite",
+           "kind"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Also, please {0} the temple ground. Keep it {1}.",
+        "o": [
+         {
+          "dung": [
+           "don't litter"
+          ],
+          "sai": [
+           "litter",
+           "not litter"
+          ]
+         },
+         {
+          "dung": [
+           "clean"
+          ],
+          "sai": [
+           "dirty",
+           "cleanly"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "At night, you can {0} the lanterns on the water. They look {1}!",
+        "o": [
+         {
+          "dung": [
+           "watch",
+           "see"
+          ],
+          "sai": [
+           "watching",
+           "to watch"
+          ]
+         },
+         {
+          "dung": [
+           "beautiful",
+           "amazing"
+          ],
+          "sai": [
+           "beautifully",
+           "beauty"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "I hope you {0} a great time there!\nCheers,\nHoa",
+        "o": [
+         {
+          "dung": [
+           "have",
+           "will have"
+          ],
+          "sai": [
+           "having",
+           "to have"
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "ma": "Bài 1.1 (tr.58)",
+     "de": "Choose the correct option to complete each sentence below.\nIt is becoming a ___ for many families in Viet Nam to celebrate Women's Day and Family Day.\nA. habit B. custom",
+     "trang": 58,
+     "nhom": "Looking Back",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Choose the correct option to complete each sentence below.\nIt is becoming a ___ for many families in Viet Nam to celebrate Women's Day and Family Day.",
+      "cac": [
+       "habit",
+       "custom"
+      ],
+      "dap": "B"
+     }
+    },
+    {
+     "ma": "Bài 1.2 (tr.58)",
+     "de": "Choose the correct option to complete each sentence below.\n___, we hold the Spring Festival on the 15th of January in lunar calendar.\nA. Traditionally B. In the past",
+     "trang": 58,
+     "nhom": "Looking Back",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Choose the correct option to complete each sentence below.\n___, we hold the Spring Festival on the 15th of January in lunar calendar.",
+      "cac": [
+       "Traditionally",
+       "In the past"
+      ],
+      "dap": "A"
+     }
+    },
+    {
+     "ma": "Bài 1.3 (tr.58)",
+     "de": "Choose the correct option to complete each sentence below.\nJanet is from a family of doctors, but she broke with ___ when she went to an art college.\nA. tradition B. habit",
+     "trang": 58,
+     "nhom": "Looking Back",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Choose the correct option to complete each sentence below.\nJanet is from a family of doctors, but she broke with ___ when she went to an art college.",
+      "cac": [
+       "tradition",
+       "habit"
+      ],
+      "dap": "A"
+     }
+    },
+    {
+     "ma": "Bài 1.4 (tr.58)",
+     "de": "Choose the correct option to complete each sentence below.\nHaving dinner at my grandparents' house on Saturdays is one of the customs our family ___.\nA. does B. practises",
+     "trang": 58,
+     "nhom": "Looking Back",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Choose the correct option to complete each sentence below.\nHaving dinner at my grandparents' house on Saturdays is one of the customs our family ___.",
+      "cac": [
+       "does",
+       "practises"
+      ],
+      "dap": "B"
+     }
+    },
+    {
+     "ma": "Bài 1.5 (tr.58)",
+     "de": "Choose the correct option to complete each sentence below.\nStory telling is a great way to ___ the local tradition alive.\nA. maintain B. keep",
+     "trang": 58,
+     "nhom": "Looking Back",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Choose the correct option to complete each sentence below.\nStory telling is a great way to ___ the local tradition alive.",
+      "cac": [
+       "maintain",
+       "keep"
+      ],
+      "dap": "B"
+     }
+    },
+    {
+     "ma": "Bài 2.1 (tr.58)",
+     "de": "Fill in each blank with the suitable form of the word given.\nKien was so tall that no one recognised him at the family ___ last summer. (union)",
+     "trang": 58,
+     "nhom": "Looking Back",
+     "dang": "CAU_NHO",
+     "dap_an": "reunion",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "CHU",
+      "sao": 2,
+      "hoi": "Fill in each blank with the suitable form of the word given.\nKien was so tall that no one recognised him at the family ___ last summer. (union)",
+      "dap": [
+       "reunion"
+      ],
+      "nhieu": [
+       "t",
+       "s",
+       "a",
+       "d",
+       "l",
+       "c"
+      ]
+     }
+    },
+    {
+     "ma": "Bài 2.2 (tr.58)",
+     "de": "Fill in each blank with the suitable form of the word given.\nMy mum puts in a lot of effort to prepare ___ to worship our ancestors. (offer)",
+     "trang": 58,
+     "nhom": "Looking Back",
+     "dang": "CAU_NHO",
+     "dap_an": "offerings",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "CHU",
+      "sao": 2,
+      "hoi": "Fill in each blank with the suitable form of the word given.\nMy mum puts in a lot of effort to prepare ___ to worship our ancestors. (offer)",
+      "dap": [
+       "offerings"
+      ],
+      "nhieu": [
+       "t",
+       "d",
+       "a",
+       "u",
+       "c",
+       "l",
+       "m",
+       "p"
+      ]
+     }
+    },
+    {
+     "ma": "Bài 2.3 (tr.58)",
+     "de": "Fill in each blank with the suitable form of the word given.\nThe festival ___ gathered on the riverside to cheer the boat racers. (go)",
+     "trang": 58,
+     "nhom": "Looking Back",
+     "dang": "CAU_NHO",
+     "dap_an": "goers",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "CHU",
+      "sao": 2,
+      "hoi": "Fill in each blank with the suitable form of the word given.\nThe festival ___ gathered on the riverside to cheer the boat racers. (go)",
+      "dap": [
+       "goers"
+      ],
+      "nhieu": [
+       "i",
+       "n",
+       "a",
+       "t",
+       "w"
+      ]
+     }
+    },
+    {
+     "ma": "Bài 2.4 (tr.58)",
+     "de": "Fill in each blank with the suitable form of the word given.\nDragon-snake (Rong ran len may) is a ___ Vietnamese game for children. It is very enjoyable. (tradition)",
+     "trang": 58,
+     "nhom": "Looking Back",
+     "dang": "CAU_NHO",
+     "dap_an": "traditional",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "CHU",
+      "sao": 2,
+      "hoi": "Fill in each blank with the suitable form of the word given.\nDragon-snake (Rong ran len may) is a ___ Vietnamese game for children. It is very enjoyable. (tradition)",
+      "dap": [
+       "traditional"
+      ],
+      "nhieu": [
+       "s",
+       "y",
+       "e",
+       "u",
+       "c",
+       "h",
+       "m",
+       "p"
+      ]
+     }
+    },
+    {
+     "ma": "Bài 2.5 (tr.58)",
+     "de": "Fill in each blank with the suitable form of the word given.\nWe happened to see some locals ___ animals in their village temples. (worship)",
+     "trang": 58,
+     "nhom": "Looking Back",
+     "dang": "CAU_NHO",
+     "dap_an": "worshipping (worship, worshiping cũng đúng)",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "CHU",
+      "sao": 2,
+      "hoi": "Fill in each blank with the suitable form of the word given.\nWe happened to see some locals ___ animals in their village temples. (worship)",
+      "dap": [
+       "worshipping",
+       "worship",
+       "worshiping"
+      ],
+      "nhieu": [
+       "e",
+       "d",
+       "t",
+       "a",
+       "u",
+       "c",
+       "l",
+       "m"
+      ]
+     }
+    },
+    {
+     "ma": "Bài 3.1 (tr.58)",
+     "de": "Complete the sentences with a, an, the, or Ø (zero article).\nThese days, many teenagers write ___ emails instead of letters.",
+     "trang": 58,
+     "nhom": "Looking Back",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "D",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Complete the sentences with a, an, the, or Ø (zero article).\nThese days, many teenagers write ___ emails instead of letters.",
+      "cac": [
+       "a",
+       "an",
+       "the",
+       "Ø"
+      ],
+      "dap": "D"
+     }
+    },
+    {
+     "ma": "Bài 3.2 (tr.58)",
+     "de": "Complete the sentences with a, an, the, or Ø (zero article).\nMy dad bought ___ ornamental kumquat tree for Tet.",
+     "trang": 58,
+     "nhom": "Looking Back",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Complete the sentences with a, an, the, or Ø (zero article).\nMy dad bought ___ ornamental kumquat tree for Tet.",
+      "cac": [
+       "a",
+       "an",
+       "the",
+       "Ø"
+      ],
+      "dap": "B"
+     }
+    },
+    {
+     "ma": "Bài 3.3 (tr.58)",
+     "de": "Complete the sentences with a, an, the, or Ø (zero article).\nI don't like that restaurant. ___ food there isn't very good.",
+     "trang": 58,
+     "nhom": "Looking Back",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "C",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Complete the sentences with a, an, the, or Ø (zero article).\nI don't like that restaurant. ___ food there isn't very good.",
+      "cac": [
+       "A",
+       "An",
+       "The",
+       "Ø"
+      ],
+      "dap": "C"
+     }
+    },
+    {
+     "ma": "Bài 3.4 (tr.58)",
+     "de": "Complete the sentences with a, an, the, or Ø (zero article).\nDon't wear ___ hat when you go into a temple or a pagoda.",
+     "trang": 58,
+     "nhom": "Looking Back",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Complete the sentences with a, an, the, or Ø (zero article).\nDon't wear ___ hat when you go into a temple or a pagoda.",
+      "cac": [
+       "a",
+       "an",
+       "the",
+       "Ø"
+      ],
+      "dap": "A"
+     }
+    },
+    {
+     "ma": "Bài 3.5 (tr.58)",
+     "de": "Complete the sentences with a, an, the, or Ø (zero article).\nIt's becoming a custom for us to stay out very late on ___ New Year's Eve.",
+     "trang": 58,
+     "nhom": "Looking Back",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "D",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Complete the sentences with a, an, the, or Ø (zero article).\nIt's becoming a custom for us to stay out very late on ___ New Year's Eve.",
+      "cac": [
+       "a",
+       "an",
+       "the",
+       "Ø"
+      ],
+      "dap": "D"
+     }
+    },
+    {
+     "ma": "Bài 4.1 (tr.58)",
+     "de": "Complete the text with a, an, the, or Ø (zero article).\nHere are two easy ways to raise children's awareness of (1) ___ customs and traditions.",
+     "trang": 58,
+     "nhom": "Looking Back",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "D",
+     "loai_dap_an": "TN",
+     "doan": "5.LB4",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Complete the text with a, an, the, or Ø (zero article).\nHere are two easy ways to raise children's awareness of (1) ___ customs and traditions.",
+      "cac": [
+       "a",
+       "an",
+       "the",
+       "Ø"
+      ],
+      "dap": "D"
+     }
+    },
+    {
+     "ma": "Bài 4.2 (tr.58)",
+     "de": "Complete the text with a, an, the, or Ø (zero article).\nFirst, it is (2) ___ good idea for parents to teach children to cook.",
+     "trang": 58,
+     "nhom": "Looking Back",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN",
+     "doan": "5.LB4",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Complete the text with a, an, the, or Ø (zero article).\nFirst, it is (2) ___ good idea for parents to teach children to cook.",
+      "cac": [
+       "a",
+       "an",
+       "the",
+       "Ø"
+      ],
+      "dap": "A"
+     }
+    },
+    {
+     "ma": "Bài 4.3 (tr.58)",
+     "de": "Complete the text with a, an, the, or Ø (zero article).\nSecond, parents can take children to (3) ___ local festivals.",
+     "trang": 58,
+     "nhom": "Looking Back",
+     "dang": "CAU_NHO",
+     "dap_an": "the / Ø (cả hai đều đúng)",
+     "loai_dap_an": "DAP_SO",
+     "doan": "5.LB4",
+     "ghep": {
+      "kieu": "O",
+      "sao": 1,
+      "hoi": "Complete the text with a, an, the, or Ø (zero article).",
+      "dong": [
+       {
+        "chu": "Second, parents can take children to (3) {0} local festivals.",
+        "o": [
+         {
+          "dung": [
+           "the",
+           "Ø"
+          ],
+          "sai": [
+           "a",
+           "an"
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "ma": "Bài 4.4 (tr.58)",
+     "de": "Complete the text with a, an, the, or Ø (zero article).\nThis helps them discover (4) ___ culture of their community and develop (5) ___ understanding of local traditions.",
+     "trang": 58,
+     "nhom": "Looking Back",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "C",
+     "loai_dap_an": "TN",
+     "doan": "5.LB4",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Complete the text with a, an, the, or Ø (zero article).\nThis helps them discover (4) ___ culture of their community and develop (5) ... understanding of local traditions.",
+      "cac": [
+       "a",
+       "an",
+       "the",
+       "Ø"
+      ],
+      "dap": "C"
+     }
+    },
+    {
+     "ma": "Bài 4.5 (tr.58)",
+     "de": "Complete the text with a, an, the, or Ø (zero article).\nThis helps them discover (4) ___ culture of their community and develop (5) ___ understanding of local traditions.",
+     "trang": 58,
+     "nhom": "Looking Back",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "doan": "5.LB4",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Complete the text with a, an, the, or Ø (zero article). Choose the best option.\nThis helps them discover (4) ... culture of their community and develop (5) ___ understanding of local traditions.",
+      "cac": [
+       "a",
+       "an",
+       "the",
+       "Ø"
+      ],
+      "dap": "B"
+     }
+    }
+   ]
+  },
+  {
+   "chuong": "Unit 6. Lifestyles",
+   "bai": "Unit 6. Lifestyles",
+   "cac_cau": [
+    {
+     "ma": "Bài 2.1 (tr.61)",
+     "de": "Read the conversation again and complete the table.\nIn Nam's country: Students greet teachers by their title.\nIn Tom's country: Students refer to their teachers as Mr, Mrs, or Miss and their teachers' (1) ___.",
+     "trang": 61,
+     "nhom": "Getting Started",
+     "dang": "CAU_NHO",
+     "dap_an": "surnames",
+     "loai_dap_an": "DAP_SO",
+     "doan": "6.GS1",
+     "ghep": {
+      "kieu": "CHU",
+      "sao": 2,
+      "dap": [
+       "surnames"
+      ],
+      "nhieu": [
+       "t",
+       "i",
+       "l",
+       "o",
+       "c",
+       "h",
+       "f"
+      ]
+     }
+    },
+    {
+     "ma": "Bài 2.2 (tr.61)",
+     "de": "Read the conversation again and complete the table.\nIn Nam's country: People eat breakfast (2) ___.\nIn Tom's country: People eat breakfast at home.",
+     "trang": 61,
+     "nhom": "Getting Started",
+     "dang": "CAU_NHO",
+     "dap_an": "on the street (in the street cũng đúng)",
+     "loai_dap_an": "DAP_SO",
+     "doan": "6.GS1",
+     "ghep": {
+      "kieu": "CHU",
+      "sao": 2,
+      "dap": [
+       "on the street",
+       "in the street"
+      ],
+      "nhieu": [
+       "a",
+       "c",
+       "l",
+       "p",
+       "w",
+       "k",
+       "y",
+       "g"
+      ]
+     }
+    },
+    {
+     "ma": "Bài 2.3 (tr.61)",
+     "de": "Read the conversation again and complete the table.\nIn Nam's country: People buy and sell food on the roadside.\nIn Tom's country: People often buy food in a (3) ___.",
+     "trang": 61,
+     "nhom": "Getting Started",
+     "dang": "CAU_NHO",
+     "dap_an": "store or restaurant",
+     "loai_dap_an": "DAP_SO",
+     "doan": "6.GS1",
+     "ghep": {
+      "kieu": "CHU",
+      "sao": 2,
+      "hoi": "Read the conversation again and complete the table.\nIn Nam's country: People buy and sell food on the roadside.\nIn Tom's country: People often buy food in a (3) ___.\n(Type both words with \"or\" between them.)",
+      "dap": [
+       "store or restaurant",
+       "restaurant or store"
+      ],
+      "nhieu": [
+       "i",
+       "l",
+       "c",
+       "m",
+       "k",
+       "d",
+       "g",
+       "b"
+      ]
+     }
+    },
+    {
+     "ma": "Bài 3 (tr.61)",
+     "de": "Complete each sentence with a word or phrase from the box.\ngreet | practice | lifestyle\nserve | in the habit of\n1. A balanced diet and exercise are important for a healthy ___.\n2. Handshaking, bowing, and hugging are some of the ways in which people ___ one another.\n3. Waiters and waitresses ___ food in restaurants.\n4. Going out for breakfast has become a common ___ in this city.\n5. My mum is ___ keeping everything in the kitchen bright and clean.",
+     "trang": 61,
+     "nhom": "Getting Started",
+     "dang": "CAU_NHO",
+     "dap_an": "1. lifestyle; 2. greet; 3. serve; 4. practice; 5. in the habit of",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 5,
+      "hoi": "Complete each sentence with a word or phrase from the box.",
+      "dong": [
+       {
+        "chu": "1. A balanced diet and exercise are important for a healthy {0}.",
+        "o": [
+         {
+          "dung": [
+           "lifestyle"
+          ],
+          "sai": [
+           "greet",
+           "practice",
+           "serve",
+           "in the habit of"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "2. Handshaking, bowing, and hugging are some of the ways in which people {0} one another.",
+        "o": [
+         {
+          "dung": [
+           "greet"
+          ],
+          "sai": [
+           "practice",
+           "lifestyle",
+           "serve",
+           "in the habit of"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "3. Waiters and waitresses {0} food in restaurants.",
+        "o": [
+         {
+          "dung": [
+           "serve"
+          ],
+          "sai": [
+           "greet",
+           "practice",
+           "lifestyle",
+           "in the habit of"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "4. Going out for breakfast has become a common {0} in this city.",
+        "o": [
+         {
+          "dung": [
+           "practice"
+          ],
+          "sai": [
+           "greet",
+           "lifestyle",
+           "serve",
+           "in the habit of"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "5. My mum is {0} keeping everything in the kitchen bright and clean.",
+        "o": [
+         {
+          "dung": [
+           "in the habit of"
+          ],
+          "sai": [
+           "greet",
+           "practice",
+           "lifestyle",
+           "serve"
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "ma": "Bài 4 (tr.61)",
+     "de": "Label each picture with a word or phrase from the box.\ngreeting | online learning | pizza\nstreet food | food in restaurants\n1. ___\n2. ___\n3. ___\n4. ___\n5. ___",
+     "trang": 61,
+     "nhom": "Getting Started",
+     "dang": "CAU_NHO",
+     "dap_an": "1. street food; 2. food in restaurants; 3. pizza; 4. online learning; 5. greeting",
+     "loai_dap_an": "DAP_SO",
+     "hinh": [
+      "anh8/6.B4-tr61.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 5,
+      "hoi": "Label each picture with a word or phrase from the box.",
+      "dong": [
+       {
+        "chu": "1. {0}",
+        "o": [
+         {
+          "dung": [
+           "street food"
+          ],
+          "sai": [
+           "greeting",
+           "online learning",
+           "pizza",
+           "food in restaurants"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "2. {0}",
+        "o": [
+         {
+          "dung": [
+           "food in restaurants"
+          ],
+          "sai": [
+           "greeting",
+           "online learning",
+           "pizza",
+           "street food"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "3. {0}",
+        "o": [
+         {
+          "dung": [
+           "pizza"
+          ],
+          "sai": [
+           "greeting",
+           "online learning",
+           "street food",
+           "food in restaurants"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "4. {0}",
+        "o": [
+         {
+          "dung": [
+           "online learning"
+          ],
+          "sai": [
+           "greeting",
+           "pizza",
+           "street food",
+           "food in restaurants"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "5. {0}",
+        "o": [
+         {
+          "dung": [
+           "greeting"
+          ],
+          "sai": [
+           "online learning",
+           "pizza",
+           "street food",
+           "food in restaurants"
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "ma": "Bài 5.1 (tr.61)",
+     "de": "QUIZ Greetings around the world\nTake the quiz.\nWhich is probably the most common way of greeting around the world?\nA. Shaking hands.\nB. Sticking out one's tongue.",
+     "trang": 61,
+     "nhom": "Getting Started",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "QUIZ Greetings around the world\nWhich is probably the most common way of greeting around the world?",
+      "cac": [
+       "Shaking hands.",
+       "Sticking out one's tongue."
+      ],
+      "dap": "A"
+     }
+    },
+    {
+     "ma": "Bài 5.2 (tr.61)",
+     "de": "QUIZ Greetings around the world\nTake the quiz.\nIn the USA, people greet each other by ___.\nA. shaking heads\nB. saying \"Hello\"",
+     "trang": 61,
+     "nhom": "Getting Started",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "QUIZ Greetings around the world\nIn the USA, people greet each other by ___.",
+      "cac": [
+       "shaking heads",
+       "saying \"Hello\""
+      ],
+      "dap": "B"
+     }
+    },
+    {
+     "ma": "Bài 5.3 (tr.61)",
+     "de": "QUIZ Greetings around the world\nTake the quiz.\nThais greet their elders by saying \"sawadee\" and ___.\nA. saying their surname\nB. slightly bowing to them",
+     "trang": 61,
+     "nhom": "Getting Started",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "QUIZ Greetings around the world\nThais greet their elders by saying \"sawadee\" and ___.",
+      "cac": [
+       "saying their surname",
+       "slightly bowing to them"
+      ],
+      "dap": "B"
+     }
+    },
+    {
+     "ma": "Bài 5.4 (tr.61)",
+     "de": "QUIZ Greetings around the world\nTake the quiz.\nThe Maori of New Zealand greet each other by ___.\nA. kissing each other's cheek\nB. pressing their noses together",
+     "trang": 61,
+     "nhom": "Getting Started",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "QUIZ Greetings around the world\nThe Maori of New Zealand greet each other by ___.",
+      "cac": [
+       "kissing each other's cheek",
+       "pressing their noses together"
+      ],
+      "dap": "B"
+     }
+    },
+    {
+     "ma": "Bài 5.5 (tr.61)",
+     "de": "QUIZ Greetings around the world\nTake the quiz.\nHow do people in Japan normally greet each other?\nA. They bow to each other.\nB. They hug each other.",
+     "trang": 61,
+     "nhom": "Getting Started",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "QUIZ Greetings around the world\nHow do people in Japan normally greet each other?",
+      "cac": [
+       "They bow to each other.",
+       "They hug each other."
+      ],
+      "dap": "A"
+     }
+    },
+    {
+     "ma": "Bài 1 (tr.62)",
+     "de": "Match the words and phrases with the pictures.\n1. dogsled\n2. making crafts\n3. native art\n4. weaving\n5. tribal dance",
+     "trang": 62,
+     "nhom": "A Closer Look 1",
+     "dang": "CAU_NHO",
+     "dap_an": "1-e, 2-d, 3-c, 4-a, 5-b",
+     "loai_dap_an": "DAP_SO",
+     "hinh": [
+      "anh8/6.B1-tr62.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 5,
+      "hoi": "Match the words and phrases with the pictures (a - e).",
+      "dong": [
+       {
+        "chu": "1. dogsled: {0}",
+        "o": [
+         {
+          "dung": [
+           "e"
+          ],
+          "sai": [
+           "a",
+           "b",
+           "c",
+           "d"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "2. making crafts: {0}",
+        "o": [
+         {
+          "dung": [
+           "d"
+          ],
+          "sai": [
+           "a",
+           "b",
+           "c",
+           "e"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "3. native art: {0}",
+        "o": [
+         {
+          "dung": [
+           "c"
+          ],
+          "sai": [
+           "a",
+           "b",
+           "d",
+           "e"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "4. weaving: {0}",
+        "o": [
+         {
+          "dung": [
+           "a"
+          ],
+          "sai": [
+           "b",
+           "c",
+           "d",
+           "e"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "5. tribal dance: {0}",
+        "o": [
+         {
+          "dung": [
+           "b"
+          ],
+          "sai": [
+           "a",
+           "c",
+           "d",
+           "e"
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "ma": "Bài 2 (tr.62)",
+     "de": "Complete the sentences with the words and phrases from the box.\ntribal dances | weaving | dogsled\nmaking crafts | native art\n1. The traditional craft of the villagers is ___ bamboo baskets.\n2. We all joined in the ___ when we attended the local festival.\n3. The gallery in the city centre has an excellent collection of ___.\n4. Hoa is very keen on ___. She loves to knit gloves after school.\n5. The ___ is still used as a means of transport in Alaska today.",
+     "trang": 62,
+     "nhom": "A Closer Look 1",
+     "dang": "CAU_NHO",
+     "dap_an": "1. weaving; 2. tribal dances; 3. native art; 4. making crafts; 5. dogsled",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 5,
+      "hoi": "Complete the sentences with the words and phrases from the box.",
+      "dong": [
+       {
+        "chu": "1. The traditional craft of the villagers is {0} bamboo baskets.",
+        "o": [
+         {
+          "dung": [
+           "weaving"
+          ],
+          "sai": [
+           "tribal dances",
+           "dogsled",
+           "making crafts",
+           "native art"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "2. We all joined in the {0} when we attended the local festival.",
+        "o": [
+         {
+          "dung": [
+           "tribal dances"
+          ],
+          "sai": [
+           "weaving",
+           "dogsled",
+           "making crafts",
+           "native art"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "3. The gallery in the city centre has an excellent collection of {0}.",
+        "o": [
+         {
+          "dung": [
+           "native art"
+          ],
+          "sai": [
+           "tribal dances",
+           "weaving",
+           "dogsled",
+           "making crafts"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "4. Hoa is very keen on {0}. She loves to knit gloves after school.",
+        "o": [
+         {
+          "dung": [
+           "making crafts"
+          ],
+          "sai": [
+           "tribal dances",
+           "weaving",
+           "dogsled",
+           "native art"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "5. The {0} is still used as a means of transport in Alaska today.",
+        "o": [
+         {
+          "dung": [
+           "dogsled"
+          ],
+          "sai": [
+           "tribal dances",
+           "weaving",
+           "making crafts",
+           "native art"
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "ma": "Bài 3.1 (tr.62)",
+     "de": "Choose the correct answer A, B, or C to complete each sentence.\nThe tribal women know how to ___ these threads into beautiful clothes.\nA. weave B. make\nC. cut",
+     "trang": 62,
+     "nhom": "A Closer Look 1",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Choose the best answer A, B, or C to complete the sentence.\nThe tribal women know how to ___ these threads into beautiful clothes.",
+      "cac": [
+       "weave",
+       "make",
+       "cut"
+      ],
+      "dap": "A"
+     }
+    },
+    {
+     "ma": "Bài 3.2 (tr.62)",
+     "de": "Choose the correct answer A, B, or C to complete each sentence.\nShe comes from Korea, so her ___ language is Korean.\nA. modern B. native\nC. practical",
+     "trang": 62,
+     "nhom": "A Closer Look 1",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Choose the correct answer A, B, or C to complete each sentence.\nShe comes from Korea, so her ___ language is Korean.",
+      "cac": [
+       "modern",
+       "native",
+       "practical"
+      ],
+      "dap": "B"
+     }
+    },
+    {
+     "ma": "Bài 3.3 (tr.62)",
+     "de": "Choose the correct answer A, B, or C to complete each sentence.\nSticking out one's tongue was a way of greeting in ___ Tibetan culture.\nA. traditional B. leisurely\nC. simple",
+     "trang": 62,
+     "nhom": "A Closer Look 1",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Choose the correct answer A, B, or C to complete each sentence.\nSticking out one's tongue was a way of greeting in ___ Tibetan culture.",
+      "cac": [
+       "traditional",
+       "leisurely",
+       "simple"
+      ],
+      "dap": "A"
+     }
+    },
+    {
+     "ma": "Bài 3.4 (tr.62)",
+     "de": "Choose the correct answer A, B, or C to complete each sentence.\nHow do people ___ New Years in your country, Jack?\nA. practise B. keep\nC. celebrate",
+     "trang": 62,
+     "nhom": "A Closer Look 1",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "C",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Choose the correct answer A, B, or C to complete each sentence.\nHow do people ___ New Years in your country, Jack?",
+      "cac": [
+       "practise",
+       "keep",
+       "celebrate"
+      ],
+      "dap": "C"
+     }
+    },
+    {
+     "ma": "Bài 3.5 (tr.62)",
+     "de": "Choose the correct answer A, B, or C to complete each sentence.\nWe like that restaurant: it ___ very delicious food.\nA. practises B. serves\nC. buys",
+     "trang": 62,
+     "nhom": "A Closer Look 1",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Choose the correct answer A, B, or C to complete each sentence.\nWe like that restaurant: it ___ very delicious food.",
+      "cac": [
+       "practises",
+       "serves",
+       "buys"
+      ],
+      "dap": "B"
+     }
+    },
+    {
+     "ma": "Bài 5.1 (tr.63)",
+     "de": "Listen and practise the sentences. Underline the words with the sound /br/ and circle the words with the sound /pr/.\nMy brother says online learning improves our IT skills.",
+     "trang": 63,
+     "nhom": "A Closer Look 1",
+     "dang": "CAU_NHO",
+     "dap_an": "/br/: brother; /pr/: improves",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "Find the word with /br/ and the word with /pr/ in the sentence.\nMy brother says online learning improves our IT skills.",
+      "dong": [
+       {
+        "chu": "Word with /br/: {0}",
+        "o": [
+         {
+          "dung": [
+           "brother"
+          ],
+          "sai": [
+           "improves",
+           "learning"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Word with /pr/: {0}",
+        "o": [
+         {
+          "dung": [
+           "improves"
+          ],
+          "sai": [
+           "brother",
+           "learning"
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "ma": "Bài 5.2 (tr.63)",
+     "de": "Listen and practise the sentences. Underline the words with the sound /br/ and circle the words with the sound /pr/.\nSanta Claus brings a lot of presents to children.",
+     "trang": 63,
+     "nhom": "A Closer Look 1",
+     "dang": "CAU_NHO",
+     "dap_an": "/br/: brings; /pr/: presents",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "Find the word with /br/ and the word with /pr/ in the sentence.\nSanta Claus brings a lot of presents to children.",
+      "dong": [
+       {
+        "chu": "Word with /br/: {0}",
+        "o": [
+         {
+          "dung": [
+           "brings"
+          ],
+          "sai": [
+           "presents",
+           "children"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Word with /pr/: {0}",
+        "o": [
+         {
+          "dung": [
+           "presents"
+          ],
+          "sai": [
+           "brings",
+           "children"
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "ma": "Bài 5.3 (tr.63)",
+     "de": "Listen and practise the sentences. Underline the words with the sound /br/ and circle the words with the sound /pr/.\nShe briefly introduced the new programme.",
+     "trang": 63,
+     "nhom": "A Closer Look 1",
+     "dang": "CAU_NHO",
+     "dap_an": "/br/: briefly; /pr/: programme",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "Find the word with /br/ and the word with /pr/ in the sentence.\nShe briefly introduced the new programme.",
+      "dong": [
+       {
+        "chu": "Word with /br/: {0}",
+        "o": [
+         {
+          "dung": [
+           "briefly"
+          ],
+          "sai": [
+           "programme",
+           "introduced"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Word with /pr/: {0}",
+        "o": [
+         {
+          "dung": [
+           "programme"
+          ],
+          "sai": [
+           "briefly",
+           "introduced"
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "ma": "Bài 5.4 (tr.63)",
+     "de": "Listen and practise the sentences. Underline the words with the sound /br/ and circle the words with the sound /pr/.\nHe spent a lot of time preparing for his algebra test.",
+     "trang": 63,
+     "nhom": "A Closer Look 1",
+     "dang": "CAU_NHO",
+     "dap_an": "/br/: algebra; /pr/: preparing",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "Find the word with /br/ and the word with /pr/ in the sentence.\nHe spent a lot of time preparing for his algebra test.",
+      "dong": [
+       {
+        "chu": "Word with /br/: {0}",
+        "o": [
+         {
+          "dung": [
+           "algebra"
+          ],
+          "sai": [
+           "preparing",
+           "spent"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Word with /pr/: {0}",
+        "o": [
+         {
+          "dung": [
+           "preparing"
+          ],
+          "sai": [
+           "algebra",
+           "spent"
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "ma": "Bài 5.5 (tr.63)",
+     "de": "Listen and practise the sentences. Underline the words with the sound /br/ and circle the words with the sound /pr/.\nMy mum prays at the temple before breakfast on Sundays.",
+     "trang": 63,
+     "nhom": "A Closer Look 1",
+     "dang": "CAU_NHO",
+     "dap_an": "/br/: breakfast; /pr/: prays",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "Find the word with /br/ and the word with /pr/ in the sentence.\nMy mum prays at the temple before breakfast on Sundays.",
+      "dong": [
+       {
+        "chu": "Word with /br/: {0}",
+        "o": [
+         {
+          "dung": [
+           "breakfast"
+          ],
+          "sai": [
+           "prays",
+           "before"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Word with /pr/: {0}",
+        "o": [
+         {
+          "dung": [
+           "prays"
+          ],
+          "sai": [
+           "breakfast",
+           "temple"
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "ma": "Bài 1.1 (tr.63)",
+     "de": "Use the verbs from the box with will or won't to complete these dialogues.\ntake | have | tell\njoin | attend | do\nExample:\nA: What are you doing this weekend?\nB: I don't know yet. I think my dad ___ us to the Ethnology Museum.\n→ will take\nAlice: Are you taking exams next week, Phong?\nPhong: I'm not sure. The teacher ___ us tomorrow.",
+     "trang": 63,
+     "nhom": "A Closer Look 2",
+     "dang": "CAU_NHO",
+     "dap_an": "will tell",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 1,
+      "hoi": "Use the verbs from the box with will or won't to complete the dialogue.\nExample: A: What are you doing this weekend? B: I don't know yet. I think my dad will take us to the Ethnology Museum.",
+      "dong": [
+       {
+        "chu": "Alice: Are you taking exams next week, Phong?\nPhong: I'm not sure. The teacher {0} us tomorrow.",
+        "o": [
+         {
+          "dung": [
+           "will tell"
+          ],
+          "sai": [
+           "won't tell",
+           "will attend",
+           "will telling"
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "ma": "Bài 1.2 (tr.63)",
+     "de": "Use the verbs from the box with will or won't to complete these dialogues.\ntake | have | tell\njoin | attend | do\nExample:\nA: What are you doing this weekend?\nB: I don't know yet. I think my dad ___ us to the Ethnology Museum.\n→ will take\nLinh: Where are you going on the holiday, Chris?\nChris: We're planning to visit Ta Ho Village. We ___ the local festival, but we ___ the tribal dance as it is late in the evening.",
+     "trang": 63,
+     "nhom": "A Closer Look 2",
+     "dang": "CAU_NHO",
+     "dap_an": "will attend, won't join",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "Use the verbs from the box with will or won't to complete the dialogue.\nExample: A: What are you doing this weekend? B: I don't know yet. I think my dad will take us to the Ethnology Museum.",
+      "dong": [
+       {
+        "chu": "Linh: Where are you going on the holiday, Chris?\nChris: We're planning to visit Ta Ho Village. We {0} the local festival, but we {1} the tribal dance as it is late in the evening.",
+        "o": [
+         {
+          "dung": [
+           "will attend"
+          ],
+          "sai": [
+           "won't attend",
+           "will tell",
+           "will attending"
+          ]
+         },
+         {
+          "dung": [
+           "won't join"
+          ],
+          "sai": [
+           "will join",
+           "won't tell",
+           "won't joining"
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "ma": "Bài 1.3 (tr.63)",
+     "de": "Use the verbs from the box with will or won't to complete these dialogues.\ntake | have | tell\njoin | attend | do\nExample:\nA: What are you doing this weekend?\nB: I don't know yet. I think my dad ___ us to the Ethnology Museum.\n→ will take\nDad: Are you having online lessons tomorrow?\nDaughter: No. We ___ lessons, but we ___ experiments in the lab.",
+     "trang": 63,
+     "nhom": "A Closer Look 2",
+     "dang": "CAU_NHO",
+     "dap_an": "won't have, will do",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "Use the verbs from the box with will or won't to complete the dialogue.\nExample: A: What are you doing this weekend? B: I don't know yet. I think my dad will take us to the Ethnology Museum.",
+      "dong": [
+       {
+        "chu": "Dad: Are you having online lessons tomorrow?\nDaughter: No. We {0} lessons, but we {1} experiments in the lab.",
+        "o": [
+         {
+          "dung": [
+           "won't have"
+          ],
+          "sai": [
+           "will have",
+           "won't tell",
+           "won't having"
+          ]
+         },
+         {
+          "dung": [
+           "will do"
+          ],
+          "sai": [
+           "won't do",
+           "will tell",
+           "will doing"
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "ma": "Bài 2.1 (tr.63)",
+     "de": "Arrange these words and phrases in the correct order to form meaningful sentences.\nWe / first-term exams / our / will take / very soon /.",
+     "trang": 63,
+     "nhom": "A Closer Look 2",
+     "dang": "CAU_NHO",
+     "dap_an": "We will take our first-term exams very soon.",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "CAU",
+      "sao": 2,
+      "the": [
+       "We",
+       "first-term exams",
+       "our",
+       "will take",
+       "very soon."
+      ],
+      "nhieu": [
+       "will takes",
+       "us"
+      ],
+      "dap": [
+       "We will take our first-term exams very soon.",
+       "We will take first-term exams very soon."
+      ]
+     }
+    },
+    {
+     "ma": "Bài 2.2 (tr.63)",
+     "de": "Arrange these words and phrases in the correct order to form meaningful sentences.\nAlaska / they / in an igloo / stay / when / visit / Will they /?",
+     "trang": 63,
+     "nhom": "A Closer Look 2",
+     "dang": "CAU_NHO",
+     "dap_an": "Will they stay in an igloo when they visit Alaska?",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "CAU",
+      "sao": 2,
+      "the": [
+       "Will they",
+       "stay",
+       "in an igloo",
+       "when",
+       "they",
+       "visit",
+       "Alaska?"
+      ],
+      "nhieu": [
+       "stays",
+       "visits"
+      ],
+      "dap": [
+       "Will they stay in an igloo when they visit Alaska?"
+      ]
+     }
+    },
+    {
+     "ma": "Bài 2.3 (tr.63)",
+     "de": "Arrange these words and phrases in the correct order to form meaningful sentences.\nShe / the tribal groups / to help them / will work with / revive their culture /.",
+     "trang": 63,
+     "nhom": "A Closer Look 2",
+     "dang": "CAU_NHO",
+     "dap_an": "She will work with the tribal groups to help them revive their culture.",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "CAU",
+      "sao": 2,
+      "the": [
+       "She",
+       "will work with",
+       "the tribal groups",
+       "to help them",
+       "revive their culture."
+      ],
+      "nhieu": [
+       "will works with",
+       "revives their culture."
+      ],
+      "dap": [
+       "She will work with the tribal groups to help them revive their culture."
+      ]
+     }
+    },
+    {
+     "ma": "Bài 2.4 (tr.63)",
+     "de": "Arrange these words and phrases in the correct order to form meaningful sentences.\nonline learning / in / I won't choose / the second semester /.",
+     "trang": 63,
+     "nhom": "A Closer Look 2",
+     "dang": "CAU_NHO",
+     "dap_an": "I won't choose online learning in the second semester.",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "CAU",
+      "sao": 2,
+      "the": [
+       "I won't choose",
+       "online learning",
+       "in",
+       "the second semester."
+      ],
+      "nhieu": [
+       "at",
+       "I won't to choose"
+      ],
+      "dap": [
+       "I won't choose online learning in the second semester."
+      ]
+     }
+    },
+    {
+     "ma": "Bài 2.5 (tr.63)",
+     "de": "Arrange these words and phrases in the correct order to form meaningful sentences.\nI'll come / to / I go / to London / if / this summer / see you /.",
+     "trang": 63,
+     "nhom": "A Closer Look 2",
+     "dang": "CAU_NHO",
+     "dap_an": "I'll come to see you if I go to London this summer.",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "CAU",
+      "sao": 2,
+      "the": [
+       "I'll come",
+       "to",
+       "see you",
+       "if",
+       "I go",
+       "to London",
+       "this summer."
+      ],
+      "nhieu": [
+       "I'll go",
+       "seeing you"
+      ],
+      "dap": [
+       "I'll come to see you if I go to London this summer."
+      ]
+     }
+    },
+    {
+     "ma": "Bài 3.1 (tr.64)",
+     "de": "Give the correct tense of the verbs in brackets, using the first conditional.\nIf you (eat) ___ an apple every day, you will stay healthy.",
+     "trang": 64,
+     "nhom": "A Closer Look 2",
+     "dang": "CAU_NHO",
+     "dap_an": "eat",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "CHU",
+      "sao": 2,
+      "dap": [
+       "eat"
+      ],
+      "nhieu": [
+       "s",
+       "o",
+       "i",
+       "n"
+      ]
+     }
+    },
+    {
+     "ma": "Bài 3.2 (tr.64)",
+     "de": "Give the correct tense of the verbs in brackets, using the first conditional.\nWill Dan wear a kilt if he (go) ___ to Scotland?",
+     "trang": 64,
+     "nhom": "A Closer Look 2",
+     "dang": "CAU_NHO",
+     "dap_an": "goes",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "CHU",
+      "sao": 2,
+      "dap": [
+       "goes"
+      ],
+      "nhieu": [
+       "w",
+       "n",
+       "t",
+       "i"
+      ]
+     }
+    },
+    {
+     "ma": "Bài 3.3 (tr.64)",
+     "de": "Give the correct tense of the verbs in brackets, using the first conditional.\nHe (have) ___ sore eyes if he spends too much time on the computer.",
+     "trang": 64,
+     "nhom": "A Closer Look 2",
+     "dang": "CAU_NHO",
+     "dap_an": "will have",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "CHU",
+      "sao": 2,
+      "dap": [
+       "will have"
+      ],
+      "nhieu": [
+       "s",
+       "o",
+       "n",
+       "t",
+       "d",
+       "g",
+       "u"
+      ]
+     }
+    },
+    {
+     "ma": "Bài 3.4 (tr.64)",
+     "de": "Give the correct tense of the verbs in brackets, using the first conditional.\nIf you (not do) ___ anything bad, you won't get into trouble.",
+     "trang": 64,
+     "nhom": "A Closer Look 2",
+     "dang": "CAU_NHO",
+     "dap_an": "don't do (do not do cũng đúng)",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "CHU",
+      "sao": 2,
+      "dap": [
+       "don't do",
+       "do not do"
+      ],
+      "nhieu": [
+       "w",
+       "i",
+       "e",
+       "s",
+       "l"
+      ]
+     }
+    },
+    {
+     "ma": "Bài 3.5 (tr.64)",
+     "de": "Give the correct tense of the verbs in brackets, using the first conditional.\n___ she (be) ___ able to eat the soup if I put some chillies in it?",
+     "trang": 64,
+     "nhom": "A Closer Look 2",
+     "dang": "CAU_NHO",
+     "dap_an": "Will ... be (Will she be able to eat the soup if I put some chillies in it?)",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "CHU",
+      "sao": 2,
+      "hoi": "Give the correct tense of the verbs in brackets, using the first conditional.\n___ she (be) ___ able to eat the soup if I put some chillies in it?\n(Type the two missing words, in order.)",
+      "dap": [
+       "Will be"
+      ],
+      "nhieu": [
+       "s",
+       "o",
+       "u",
+       "d",
+       "a"
+      ]
+     }
+    },
+    {
+     "ma": "Bài 4.1 (tr.64)",
+     "de": "Fill in each blank with IF or UNLESS.\n___ we eat lunch now, we won't arrive at the cinema on time.",
+     "trang": 64,
+     "nhom": "A Closer Look 2",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Fill in each blank with IF or UNLESS.\nWe need to have lunch before the film.\n___ we eat lunch now, we won't arrive at the cinema on time.",
+      "cac": [
+       "If",
+       "Unless"
+      ],
+      "dap": "B"
+     }
+    },
+    {
+     "ma": "Bài 4.2 (tr.64)",
+     "de": "Fill in each blank with IF or UNLESS.\nThe teacher will be furious ___ you don't do the homework.",
+     "trang": 64,
+     "nhom": "A Closer Look 2",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Fill in each blank with IF or UNLESS.\nThe teacher will be furious ___ you don't do the homework.",
+      "cac": [
+       "if",
+       "unless"
+      ],
+      "dap": "A"
+     }
+    },
+    {
+     "ma": "Bài 4.3 (tr.64)",
+     "de": "Fill in each blank with IF or UNLESS.\nI won't eat kimchi when I go to Korea ___ I have to.",
+     "trang": 64,
+     "nhom": "A Closer Look 2",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Fill in each blank with IF or UNLESS.\nI won't eat kimchi when I go to Korea ___ I have to.",
+      "cac": [
+       "if",
+       "unless"
+      ],
+      "dap": "B"
+     }
+    },
+    {
+     "ma": "Bài 4.4 (tr.64)",
+     "de": "Fill in each blank with IF or UNLESS.\n___ you turn on the light, you will be able to see better.",
+     "trang": 64,
+     "nhom": "A Closer Look 2",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Fill in each blank with IF or UNLESS.\n___ you turn on the light, you will be able to see better.",
+      "cac": [
+       "If",
+       "Unless"
+      ],
+      "dap": "A"
+     }
+    },
+    {
+     "ma": "Bài 4.5 (tr.64)",
+     "de": "Fill in each blank with IF or UNLESS.\nYou won't be able to find the house ___ you use your GPS. There's no one around.",
+     "trang": 64,
+     "nhom": "A Closer Look 2",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Fill in each blank with IF or UNLESS.\nYou won't be able to find the house ___ you use your GPS. There's no one around.",
+      "cac": [
+       "if",
+       "unless"
+      ],
+      "dap": "B"
+     }
+    },
+    {
+     "ma": "Bài 5.1 (tr.64)",
+     "de": "Complete the following sentences to make them true for you. Then share your answers with a partner.\nIf it rains tomorrow, ___.",
+     "trang": 64,
+     "nhom": "A Closer Look 2",
+     "dang": "CAU_NHO",
+     "dap_an": "Tuỳ HS. Ví dụ: If it rains tomorrow, I will stay at home.",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 1,
+      "hoi": "Complete the sentence to make it true for you.",
+      "dong": [
+       {
+        "chu": "If it rains tomorrow, {0}.",
+        "o": [
+         {
+          "dung": [
+           "I will stay at home",
+           "I won't go to the park",
+           "I will go to school by bus"
+          ],
+          "sai": [
+           "I will to stay at home",
+           "I stayed at home"
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "ma": "Bài 5.2 (tr.64)",
+     "de": "Complete the following sentences to make them true for you. Then share your answers with a partner.\nUnless I get good marks, ___.",
+     "trang": 64,
+     "nhom": "A Closer Look 2",
+     "dang": "CAU_NHO",
+     "dap_an": "Tuỳ HS. Ví dụ: Unless I get good marks, my parents will be sad.",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 1,
+      "hoi": "Complete the sentence to make it true for you.",
+      "dong": [
+       {
+        "chu": "Unless I get good marks, {0}.",
+        "o": [
+         {
+          "dung": [
+           "my parents will be sad",
+           "I won't get a new bike",
+           "I will study harder next term"
+          ],
+          "sai": [
+           "my parents will be proud of me",
+           "my parents will sad"
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "ma": "Bài 5.3 (tr.64)",
+     "de": "Complete the following sentences to make them true for you. Then share your answers with a partner.\nIf I have free time this weekend, ___.",
+     "trang": 64,
+     "nhom": "A Closer Look 2",
+     "dang": "CAU_NHO",
+     "dap_an": "Tuỳ HS. Ví dụ: If I have free time this weekend, I will visit my grandparents.",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 1,
+      "hoi": "Complete the sentence to make it true for you.",
+      "dong": [
+       {
+        "chu": "If I have free time this weekend, {0}.",
+        "o": [
+         {
+          "dung": [
+           "I will visit my grandparents",
+           "I will play badminton with my friends",
+           "I'll go to the cinema"
+          ],
+          "sai": [
+           "I will visiting my grandparents",
+           "I visited my grandparents"
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "ma": "Bài 5.4 (tr.64)",
+     "de": "Complete the following sentences to make them true for you. Then share your answers with a partner.\nIf I study harder, ___.",
+     "trang": 64,
+     "nhom": "A Closer Look 2",
+     "dang": "CAU_NHO",
+     "dap_an": "Tuỳ HS. Ví dụ: If I study harder, I will get better marks.",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 1,
+      "hoi": "Complete the sentence to make it true for you.",
+      "dong": [
+       {
+        "chu": "If I study harder, {0}.",
+        "o": [
+         {
+          "dung": [
+           "I will get better marks",
+           "I will pass the exam",
+           "my parents will be happy"
+          ],
+          "sai": [
+           "I will get worse marks",
+           "I will gets better marks"
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "ma": "Bài 5.5 (tr.64)",
+     "de": "Complete the following sentences to make them true for you. Then share your answers with a partner.\nUnless I go to bed early, ___.",
+     "trang": 64,
+     "nhom": "A Closer Look 2",
+     "dang": "CAU_NHO",
+     "dap_an": "Tuỳ HS. Ví dụ: Unless I go to bed early, I will be tired tomorrow.",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 1,
+      "hoi": "Complete the sentence to make it true for you.",
+      "dong": [
+       {
+        "chu": "Unless I go to bed early, {0}.",
+        "o": [
+         {
+          "dung": [
+           "I will be tired tomorrow",
+           "I won't get up early",
+           "I will feel sleepy in class"
+          ],
+          "sai": [
+           "I will feel fresh in the morning",
+           "I won't to get up early"
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "ma": "Bài 2 (tr.66)",
+     "de": "Match the highlighted words in the text with their meanings.\n1. maintain\n2. styles\n3. experience\n4. mushers\na. particular ways of doing something\nb. people who drive dogsleds\nc. to do or feel something\nd. to keep, make something continue",
+     "trang": 66,
+     "nhom": "Skills 1",
+     "dang": "CAU_NHO",
+     "dap_an": "1-d, 2-a, 3-c, 4-b",
+     "loai_dap_an": "DAP_SO",
+     "doan": "6.S1",
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "hoi": "Match the highlighted words in the text with their meanings.",
+      "dong": [
+       {
+        "chu": "1. maintain: {0}",
+        "o": [
+         {
+          "dung": [
+           "to keep, make something continue"
+          ],
+          "sai": [
+           "particular ways of doing something",
+           "people who drive dogsleds",
+           "to do or feel something"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "2. styles: {0}",
+        "o": [
+         {
+          "dung": [
+           "particular ways of doing something"
+          ],
+          "sai": [
+           "people who drive dogsleds",
+           "to do or feel something",
+           "to keep, make something continue"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "3. experience: {0}",
+        "o": [
+         {
+          "dung": [
+           "to do or feel something"
+          ],
+          "sai": [
+           "particular ways of doing something",
+           "people who drive dogsleds",
+           "to keep, make something continue"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "4. mushers: {0}",
+        "o": [
+         {
+          "dung": [
+           "people who drive dogsleds"
+          ],
+          "sai": [
+           "particular ways of doing something",
+           "to do or feel something",
+           "to keep, make something continue"
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "ma": "Bài 3.1 (tr.66)",
+     "de": "Read the text again and answer the questions.\nWhat is the population of Alaska?",
+     "trang": 66,
+     "nhom": "Skills 1",
+     "dang": "CAU_NHO",
+     "dap_an": "It is about 730,000. (About 730,000.)",
+     "loai_dap_an": "DAP_SO",
+     "doan": "6.S1",
+     "ghep": {
+      "kieu": "CAU",
+      "sao": 2,
+      "the": [
+       "It",
+       "is",
+       "about",
+       "730,000."
+      ],
+      "nhieu": [
+       "are",
+       "1.7 million."
+      ],
+      "dap": [
+       "It is about 730,000.",
+       "It is 730,000."
+      ]
+     }
+    },
+    {
+     "ma": "Bài 3.2 (tr.66)",
+     "de": "Read the text again and answer the questions.\nWho have special styles of carving or weaving?",
+     "trang": 66,
+     "nhom": "Skills 1",
+     "dang": "CAU_NHO",
+     "dap_an": "Various native groups (in Alaska) have their own special styles of carving or weaving.",
+     "loai_dap_an": "DAP_SO",
+     "doan": "6.S1",
+     "ghep": {
+      "kieu": "CAU",
+      "sao": 2,
+      "the": [
+       "Various native groups",
+       "have",
+       "their own",
+       "special styles",
+       "of carving or weaving."
+      ],
+      "nhieu": [
+       "has",
+       "Visitors"
+      ],
+      "dap": [
+       "Various native groups have their own special styles of carving or weaving.",
+       "Various native groups have special styles of carving or weaving."
+      ]
+     }
+    },
+    {
+     "ma": "Bài 3.3 (tr.66)",
+     "de": "Read the text again and answer the questions.\nWhere can we find the culture of the native peoples in Alaska?",
+     "trang": 66,
+     "nhom": "Skills 1",
+     "dang": "CAU_NHO",
+     "dap_an": "We can find it in their villages and in galleries and museums.",
+     "loai_dap_an": "DAP_SO",
+     "doan": "6.S1",
+     "ghep": {
+      "kieu": "CAU",
+      "sao": 2,
+      "the": [
+       "We",
+       "can",
+       "find",
+       "it",
+       "in their villages",
+       "and",
+       "in galleries and museums."
+      ],
+      "nhieu": [
+       "finds",
+       "in big cities."
+      ],
+      "dap": [
+       "We can find it in their villages and in galleries and museums.",
+       "We can find it in galleries and museums."
+      ]
+     }
+    },
+    {
+     "ma": "Bài 3.4 (tr.66)",
+     "de": "Read the text again and answer the questions.\nHow long is the Iditarod Trail Sled Dog Race?",
+     "trang": 66,
+     "nhom": "Skills 1",
+     "dang": "CAU_NHO",
+     "dap_an": "It is 1,510 km long.",
+     "loai_dap_an": "DAP_SO",
+     "doan": "6.S1",
+     "ghep": {
+      "kieu": "CAU",
+      "sao": 2,
+      "the": [
+       "It",
+       "is",
+       "1,510 km",
+       "long."
+      ],
+      "nhieu": [
+       "are",
+       "1,150 km"
+      ],
+      "dap": [
+       "It is 1,510 km long."
+      ]
+     }
+    },
+    {
+     "ma": "Bài 3.5 (tr.66)",
+     "de": "Read the text again and answer the questions.\nIs the Iditarod Trail Sled Dog Race an international competition?",
+     "trang": 66,
+     "nhom": "Skills 1",
+     "dang": "CAU_NHO",
+     "dap_an": "Yes, it is. (Mushers from all over the world come to Anchorage to compete.)",
+     "loai_dap_an": "DAP_SO",
+     "doan": "6.S1",
+     "ghep": {
+      "kieu": "CAU",
+      "sao": 2,
+      "the": [
+       "Yes,",
+       "it",
+       "is."
+      ],
+      "nhieu": [
+       "No,",
+       "isn't."
+      ],
+      "dap": [
+       "Yes, it is."
+      ]
+     }
+    },
+    {
+     "ma": "Bài 4 (tr.67)",
+     "de": "Look at the list below. Put the ideas about online learning in the correct column.\n- convenient\n- comfortable\n- difficult to concentrate\n- more freedom\n- no real interaction\n- independent\n- harmful to our eyes\n- expensive equipment\nAdvantages | Disadvantages",
+     "trang": 67,
+     "nhom": "Skills 2",
+     "dang": "CAU_NHO",
+     "dap_an": "Advantages: convenient, comfortable, more freedom, independent; Disadvantages: difficult to concentrate, no real interaction, harmful to our eyes, expensive equipment",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 8,
+      "hoi": "Put the ideas about online learning in the correct column: Advantages or Disadvantages.",
+      "dong": [
+       {
+        "chu": "convenient: {0}",
+        "o": [
+         {
+          "dung": [
+           "Advantages"
+          ],
+          "sai": [
+           "Disadvantages"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "comfortable: {0}",
+        "o": [
+         {
+          "dung": [
+           "Advantages"
+          ],
+          "sai": [
+           "Disadvantages"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "difficult to concentrate: {0}",
+        "o": [
+         {
+          "dung": [
+           "Disadvantages"
+          ],
+          "sai": [
+           "Advantages"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "more freedom: {0}",
+        "o": [
+         {
+          "dung": [
+           "Advantages"
+          ],
+          "sai": [
+           "Disadvantages"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "no real interaction: {0}",
+        "o": [
+         {
+          "dung": [
+           "Disadvantages"
+          ],
+          "sai": [
+           "Advantages"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "independent: {0}",
+        "o": [
+         {
+          "dung": [
+           "Advantages"
+          ],
+          "sai": [
+           "Disadvantages"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "harmful to our eyes: {0}",
+        "o": [
+         {
+          "dung": [
+           "Disadvantages"
+          ],
+          "sai": [
+           "Advantages"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "expensive equipment: {0}",
+        "o": [
+         {
+          "dung": [
+           "Disadvantages"
+          ],
+          "sai": [
+           "Advantages"
+          ],
+          "hai": true
+         }
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "ma": "Bài 5a (tr.67)",
+     "de": "Write a paragraph (80 - 100 words) about the advantages OR disadvantages of online learning. You can refer to the listening and the ideas in 4.\n(4. Look at the list below. Put the ideas about online learning in the correct column.\n- convenient\n- comfortable\n- difficult to concentrate\n- more freedom\n- no real interaction\n- independent\n- harmful to our eyes\n- expensive equipment)",
+     "trang": 67,
+     "nhom": "Skills 2",
+     "dang": "CAU_NHO",
+     "dap_an": "In my opinion, online learning has several advantages. First, it is very convenient because we can study at home and do not have to travel to school. Second, we feel comfortable because we can learn in our own room. Third, it gives us more freedom, so we can choose when and where to study. Finally, we become more independent because we have to plan our own work. For these reasons, I think online learning is a good choice for many students.",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 6,
+      "hoi": "Put the sentences in the correct order to make a paragraph about the advantages of online learning. The paragraph starts with the writer's opinion, then gives the advantages one by one, and ends with a conclusion.",
+      "buoc": [
+       "In my opinion, online learning has several advantages.",
+       "First, it is very convenient because we can study at home and do not have to travel to school.",
+       "Second, we feel comfortable because we can learn in our own room.",
+       "Third, it gives us more freedom, so we can choose when and where to study.",
+       "Finally, we become more independent because we have to plan our own work.",
+       "For these reasons, I think online learning is a good choice for many students."
+      ],
+      "nhieu": [
+       "However, students may sit in front of the computer all day and get no exercise.",
+       "My best friend and I usually go to school by bike."
+      ],
+      "thu_tu_khac": []
+     }
+    },
+    {
+     "ma": "Bài 5b (tr.67)",
+     "de": "Write a paragraph (80 - 100 words) about the advantages OR disadvantages of online learning. You can refer to the listening and the ideas in 4.\n(4. Look at the list below. Put the ideas about online learning in the correct column.\n- convenient\n- comfortable\n- difficult to concentrate\n- more freedom\n- no real interaction\n- independent\n- harmful to our eyes\n- expensive equipment)",
+     "trang": 67,
+     "nhom": "Skills 2",
+     "dang": "CAU_NHO",
+     "dap_an": "Tuỳ HS. Ví dụ: In my view, online learning brings some disadvantages. First, it is difficult to concentrate on the lesson when we are at home. Second, there is no real interaction between teachers and students, so lessons are less interesting. Third, looking at a screen for too long is harmful to our eyes and can cause headaches. Finally, students need expensive equipment like a computer and a good Internet connection. In conclusion, I believe that face-to-face lessons are better for students.",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 12,
+      "hoi": "Write a paragraph about the disadvantages of online learning. Complete each sentence of the paragraph.",
+      "dong": [
+       {
+        "chu": "In my view, online learning {0} some {1}.",
+        "o": [
+         {
+          "dung": [
+           "brings"
+          ],
+          "sai": [
+           "bring",
+           "bringing"
+          ]
+         },
+         {
+          "dung": [
+           "disadvantages",
+           "problems"
+          ],
+          "sai": [
+           "advantages"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "First, it is {0} to concentrate on the lesson {1} we are at home.",
+        "o": [
+         {
+          "dung": [
+           "difficult",
+           "hard"
+          ],
+          "sai": [
+           "easy",
+           "difficultly"
+          ]
+         },
+         {
+          "dung": [
+           "when",
+           "because"
+          ],
+          "sai": [
+           "but",
+           "so"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Second, there is no real {0} between teachers and students, so lessons are {1} interesting.",
+        "o": [
+         {
+          "dung": [
+           "interaction"
+          ],
+          "sai": [
+           "interactive",
+           "interact"
+          ]
+         },
+         {
+          "dung": [
+           "less"
+          ],
+          "sai": [
+           "more",
+           "fewer"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Third, looking at a screen for too long is {0} to our eyes and {1} headaches.",
+        "o": [
+         {
+          "dung": [
+           "harmful"
+          ],
+          "sai": [
+           "harmless",
+           "harm"
+          ]
+         },
+         {
+          "dung": [
+           "can cause",
+           "may cause"
+          ],
+          "sai": [
+           "can causes",
+           "can prevent"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Finally, students {0} expensive equipment like a computer and a good Internet {1}.",
+        "o": [
+         {
+          "dung": [
+           "need"
+          ],
+          "sai": [
+           "needs",
+           "needing"
+          ]
+         },
+         {
+          "dung": [
+           "connection"
+          ],
+          "sai": [
+           "connect",
+           "connected"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "In conclusion, I {0} that face-to-face lessons are {1} for students.",
+        "o": [
+         {
+          "dung": [
+           "believe",
+           "am sure"
+          ],
+          "sai": [
+           "believes",
+           "am believing"
+          ]
+         },
+         {
+          "dung": [
+           "better"
+          ],
+          "sai": [
+           "worse",
+           "more better"
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "ma": "Bài 1 (tr.68)",
+     "de": "Match each word or phrase with its meaning.\n1. lifestyle\n2. common practice\n3. street food\n4. making crafts\n5. dogsled\na. making things with one's hands, using skills\nb. a vehicle pulled by dogs (usually over snow)\nc. the way in which individuals or groups of people live and work\nd. the usual way of doing something\ne. ready-to-eat food or drink sold in a street or other public places",
+     "trang": 68,
+     "nhom": "Looking Back",
+     "dang": "CAU_NHO",
+     "dap_an": "1-c, 2-d, 3-e, 4-a, 5-b",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 5,
+      "hoi": "Match each word or phrase with its meaning.",
+      "dong": [
+       {
+        "chu": "1. lifestyle: {0}",
+        "o": [
+         {
+          "dung": [
+           "the way in which individuals or groups of people live and work"
+          ],
+          "sai": [
+           "making things with one's hands, using skills",
+           "a vehicle pulled by dogs (usually over snow)",
+           "the usual way of doing something",
+           "ready-to-eat food or drink sold in a street or other public places"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "2. common practice: {0}",
+        "o": [
+         {
+          "dung": [
+           "the usual way of doing something"
+          ],
+          "sai": [
+           "making things with one's hands, using skills",
+           "a vehicle pulled by dogs (usually over snow)",
+           "the way in which individuals or groups of people live and work",
+           "ready-to-eat food or drink sold in a street or other public places"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "3. street food: {0}",
+        "o": [
+         {
+          "dung": [
+           "ready-to-eat food or drink sold in a street or other public places"
+          ],
+          "sai": [
+           "making things with one's hands, using skills",
+           "a vehicle pulled by dogs (usually over snow)",
+           "the way in which individuals or groups of people live and work",
+           "the usual way of doing something"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "4. making crafts: {0}",
+        "o": [
+         {
+          "dung": [
+           "making things with one's hands, using skills"
+          ],
+          "sai": [
+           "a vehicle pulled by dogs (usually over snow)",
+           "the way in which individuals or groups of people live and work",
+           "the usual way of doing something",
+           "ready-to-eat food or drink sold in a street or other public places"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "5. dogsled: {0}",
+        "o": [
+         {
+          "dung": [
+           "a vehicle pulled by dogs (usually over snow)"
+          ],
+          "sai": [
+           "making things with one's hands, using skills",
+           "the way in which individuals or groups of people live and work",
+           "the usual way of doing something",
+           "ready-to-eat food or drink sold in a street or other public places"
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "ma": "Bài 2 (tr.68)",
+     "de": "Complete each sentence with a word or phrase from the box.\nmaintain | in the habit of | greeted\nlifestyle | online lessons\n1. My younger sister is ___ listening to music while studying.\n2. The native people there ___ us warmly when we arrived.\n3. Many people are trying to adopt a healthy ___ these days.\n4. I believe that ___ are not as interesting as offline lessons.\n5. It is difficult for some villages to ___ their traditional lifestyle.",
+     "trang": 68,
+     "nhom": "Looking Back",
+     "dang": "CAU_NHO",
+     "dap_an": "1. in the habit of; 2. greeted; 3. lifestyle; 4. online lessons; 5. maintain",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 5,
+      "hoi": "Complete each sentence with a word or phrase from the box.",
+      "dong": [
+       {
+        "chu": "1. My younger sister is {0} listening to music while studying.",
+        "o": [
+         {
+          "dung": [
+           "in the habit of"
+          ],
+          "sai": [
+           "maintain",
+           "greeted",
+           "lifestyle",
+           "online lessons"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "2. The native people there {0} us warmly when we arrived.",
+        "o": [
+         {
+          "dung": [
+           "greeted"
+          ],
+          "sai": [
+           "maintain",
+           "in the habit of",
+           "lifestyle",
+           "online lessons"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "3. Many people are trying to adopt a healthy {0} these days.",
+        "o": [
+         {
+          "dung": [
+           "lifestyle"
+          ],
+          "sai": [
+           "maintain",
+           "in the habit of",
+           "greeted",
+           "online lessons"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "4. I believe that {0} are not as interesting as offline lessons.",
+        "o": [
+         {
+          "dung": [
+           "online lessons"
+          ],
+          "sai": [
+           "maintain",
+           "in the habit of",
+           "greeted",
+           "lifestyle"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "5. It is difficult for some villages to {0} their traditional lifestyle.",
+        "o": [
+         {
+          "dung": [
+           "maintain"
+          ],
+          "sai": [
+           "in the habit of",
+           "greeted",
+           "lifestyle",
+           "online lessons"
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "ma": "Bài 3.1 (tr.68)",
+     "de": "Complete the sentences, using the correct tense of the verbs in brackets.\nNo worries. The organisers (send) ___ us an invitation soon.",
+     "trang": 68,
+     "nhom": "Looking Back",
+     "dang": "CAU_NHO",
+     "dap_an": "will send",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "CHU",
+      "sao": 2,
+      "dap": [
+       "will send"
+      ],
+      "nhieu": [
+       "t",
+       "o",
+       "a",
+       "r",
+       "g",
+       "h",
+       "u"
+      ]
+     }
+    },
+    {
+     "ma": "Bài 3.2 (tr.68)",
+     "de": "Complete the sentences, using the correct tense of the verbs in brackets.\nUnless they behave, those children (not be) ___ welcome here.",
+     "trang": 68,
+     "nhom": "Looking Back",
+     "dang": "CAU_NHO",
+     "dap_an": "won't be (will not be cũng đúng)",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "CHU",
+      "sao": 2,
+      "dap": [
+       "won't be",
+       "will not be"
+      ],
+      "nhieu": [
+       "u",
+       "d",
+       "h",
+       "c",
+       "m",
+       "y",
+       "g",
+       "k"
+      ]
+     }
+    },
+    {
+     "ma": "Bài 3.3 (tr.68)",
+     "de": "Complete the sentences, using the correct tense of the verbs in brackets.\nDo you think online learning (become) ___ the new mode of education?",
+     "trang": 68,
+     "nhom": "Looking Back",
+     "dang": "CAU_NHO",
+     "dap_an": "will become",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "CHU",
+      "sao": 2,
+      "dap": [
+       "will become"
+      ],
+      "nhieu": [
+       "a",
+       "t",
+       "u",
+       "d",
+       "r",
+       "h",
+       "y",
+       "k"
+      ]
+     }
+    },
+    {
+     "ma": "Bài 3.4 (tr.68)",
+     "de": "Complete the sentences, using the correct tense of the verbs in brackets.\nIf I (win) ___ the competition, I will donate half of the prize money to charity.",
+     "trang": 68,
+     "nhom": "Looking Back",
+     "dang": "CAU_NHO",
+     "dap_an": "win",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "CHU",
+      "sao": 2,
+      "dap": [
+       "win"
+      ],
+      "nhieu": [
+       "s",
+       "o",
+       "a",
+       "e"
+      ]
+     }
+    },
+    {
+     "ma": "Bài 3.5 (tr.68)",
+     "de": "Complete the sentences, using the correct tense of the verbs in brackets.\n___ we (have to) ___ keep to the left when we drive in Singapore next week?",
+     "trang": 68,
+     "nhom": "Looking Back",
+     "dang": "CAU_NHO",
+     "dap_an": "Will ... have to (Will we have to keep to the left when we drive in Singapore next week?)",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "CHU",
+      "sao": 2,
+      "hoi": "Complete the sentences, using the correct tense of the verbs in brackets.\n___ we (have to) ___ keep to the left when we drive in Singapore next week?\n(Type the two missing words, in order.)",
+      "dap": [
+       "Will have to"
+      ],
+      "nhieu": [
+       "s",
+       "d",
+       "n",
+       "u",
+       "g",
+       "r",
+       "m",
+       "b"
+      ]
+     }
+    },
+    {
+     "ma": "Bài 4.1 (tr.68)",
+     "de": "Rewrite the following sentences so that their meaning stays the same.\nDon't play computer games for too long. You will harm your eyes.\nIf you play ___.",
+     "trang": 68,
+     "nhom": "Looking Back",
+     "dang": "CAU_NHO",
+     "dap_an": "If you play computer games for too long, you will harm your eyes.",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "CAU",
+      "sao": 2,
+      "the": [
+       "computer games",
+       "for too long,",
+       "you will",
+       "harm",
+       "your eyes."
+      ],
+      "nhieu": [
+       "harms",
+       "you would"
+      ],
+      "dap": [
+       "computer games for too long, you will harm your eyes."
+      ]
+     }
+    },
+    {
+     "ma": "Bài 4.2 (tr.68)",
+     "de": "Rewrite the following sentences so that their meaning stays the same.\nBe careful with what you eat, or you will get overweight.\nYou will ___.",
+     "trang": 68,
+     "nhom": "Looking Back",
+     "dang": "CAU_NHO",
+     "dap_an": "You will get overweight if you aren't careful with what you eat. / You will get overweight if you are not careful with what you eat. / You will get overweight unless you are careful with what you eat.",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "CAU",
+      "sao": 2,
+      "the": [
+       "get overweight",
+       "if",
+       "unless",
+       "you",
+       "aren't",
+       "are",
+       "not",
+       "careful",
+       "with what you eat."
+      ],
+      "nhieu": [
+       "don't",
+       "carefully"
+      ],
+      "dap": [
+       "get overweight if you aren't careful with what you eat.",
+       "get overweight if you are not careful with what you eat.",
+       "get overweight unless you are careful with what you eat."
+      ]
+     }
+    },
+    {
+     "ma": "Bài 4.3 (tr.68)",
+     "de": "Rewrite the following sentences so that their meaning stays the same.\nWe'll go to the beach unless it rains.\nIf ___.",
+     "trang": 68,
+     "nhom": "Looking Back",
+     "dang": "CAU_NHO",
+     "dap_an": "If it doesn't rain, we'll go to the beach.",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "CAU",
+      "sao": 2,
+      "the": [
+       "it",
+       "doesn't",
+       "rain,",
+       "we'll",
+       "go",
+       "to the beach."
+      ],
+      "nhieu": [
+       "don't",
+       "rains,"
+      ],
+      "dap": [
+       "it doesn't rain, we'll go to the beach."
+      ]
+     }
+    },
+    {
+     "ma": "Bài 4.4 (tr.68)",
+     "de": "Rewrite the following sentences so that their meaning stays the same.\nIf you don't hurry up, you will be late.\nUnless ___.",
+     "trang": 68,
+     "nhom": "Looking Back",
+     "dang": "CAU_NHO",
+     "dap_an": "Unless you hurry up, you will be late.",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "CAU",
+      "sao": 2,
+      "the": [
+       "you",
+       "hurry up,",
+       "you will",
+       "be late."
+      ],
+      "nhieu": [
+       "don't",
+       "won't"
+      ],
+      "dap": [
+       "you hurry up, you will be late."
+      ]
+     }
+    },
+    {
+     "ma": "Bài 4.5 (tr.68)",
+     "de": "Rewrite the following sentences so that their meaning stays the same.\nUnless the teacher explains the lesson again, we won't understand it very well.\nIf ___.",
+     "trang": 68,
+     "nhom": "Looking Back",
+     "dang": "CAU_NHO",
+     "dap_an": "If the teacher doesn't explain the lesson again, we won't understand it very well.",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "CAU",
+      "sao": 2,
+      "the": [
+       "the teacher",
+       "doesn't",
+       "explain",
+       "the lesson",
+       "again,",
+       "we",
+       "won't",
+       "understand",
+       "it very well."
+      ],
+      "nhieu": [
+       "explains",
+       "isn't"
+      ],
+      "dap": [
+       "the teacher doesn't explain the lesson again, we won't understand it very well."
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "chuong": "Review 2",
+   "bai": "Review 2",
+   "cac_cau": [
+    {
+     "ma": "Bài 1.1 (tr.70)",
+     "de": "Circle the word which has the underlined part pronounced differently in each group. Then listen and repeat.\nA. <u>c</u>ulture B. <u>c</u>ommunity\nC. <u>c</u>ircle D. <u>c</u>ustom",
+     "trang": 70,
+     "nhom": "Language",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "C",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Circle the word which has the underlined part pronounced differently in each group.",
+      "cac": [
+       "<u>c</u>ulture",
+       "<u>c</u>ommunity",
+       "<u>c</u>ircle",
+       "<u>c</u>ustom"
+      ],
+      "dap": "C"
+     }
+    },
+    {
+     "ma": "Bài 1.2 (tr.70)",
+     "de": "Circle the word which has the underlined part pronounced differently in each group. Then listen and repeat.\nA. ide<u>n</u>tify B. tha<u>n</u>k\nC. da<u>n</u>ce D. pla<u>n</u>",
+     "trang": 70,
+     "nhom": "Language",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Circle the word which has the underlined part pronounced differently in each group.",
+      "cac": [
+       "ide<u>n</u>tify",
+       "tha<u>n</u>k",
+       "da<u>n</u>ce",
+       "pla<u>n</u>"
+      ],
+      "dap": "B"
+     }
+    },
+    {
+     "ma": "Bài 1.3 (tr.70)",
+     "de": "Circle the word which has the underlined part pronounced differently in each group. Then listen and repeat.\nA. bri<u>ng</u> B. si<u>ng</u>\nC. spri<u>ng</u> D. lo<u>ng</u>evity",
+     "trang": 70,
+     "nhom": "Language",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "D",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Circle the word which has the underlined part pronounced differently in each group.",
+      "cac": [
+       "bri<u>ng</u>",
+       "si<u>ng</u>",
+       "spri<u>ng</u>",
+       "lo<u>ng</u>evity"
+      ],
+      "dap": "D"
+     }
+    },
+    {
+     "ma": "Bài 1.4 (tr.70)",
+     "de": "Circle the word which has the underlined part pronounced differently in each group. Then listen and repeat.\nA. fi<u>g</u>ure B. dan<u>g</u>er\nC. en<u>g</u>ine D. chan<u>g</u>e",
+     "trang": 70,
+     "nhom": "Language",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Circle the word which has the underlined part pronounced differently in each group.",
+      "cac": [
+       "fi<u>g</u>ure",
+       "dan<u>g</u>er",
+       "en<u>g</u>ine",
+       "chan<u>g</u>e"
+      ],
+      "dap": "A"
+     }
+    },
+    {
+     "ma": "Bài 1.5 (tr.70)",
+     "de": "Circle the word which has the underlined part pronounced differently in each group. Then listen and repeat.\nA. <u>g</u>rowth B. <u>g</u>lobe\nC. <u>g</u>round D. <u>g</u>ender",
+     "trang": 70,
+     "nhom": "Language",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "D",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Circle the word which has the underlined part pronounced differently in each group.",
+      "cac": [
+       "<u>g</u>rowth",
+       "<u>g</u>lobe",
+       "<u>g</u>round",
+       "<u>g</u>ender"
+      ],
+      "dap": "D"
+     }
+    },
+    {
+     "ma": "Bài 2 (tr.70)",
+     "de": "Match a verb or verb phrase in A with a noun or noun phrase in B.\nA\n1. weave\n2. chase away\n3. harvest\n4. overlook\n5. make\nB\na. terraced fields\nb. crops\nc. crafts\nd. clothing\ne. bad spirits",
+     "trang": 70,
+     "nhom": "Language",
+     "dang": "CAU_NHO",
+     "dap_an": "1-d, 2-e, 3-b, 4-a, 5-c",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 5,
+      "hoi": "Match a verb or verb phrase in A with a noun or noun phrase in B. Use each noun or noun phrase in B only once.",
+      "dong": [
+       {
+        "chu": "1. weave {0}",
+        "o": [
+         {
+          "dung": [
+           "clothing"
+          ],
+          "sai": [
+           "terraced fields",
+           "crops",
+           "crafts",
+           "bad spirits"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "2. chase away {0}",
+        "o": [
+         {
+          "dung": [
+           "bad spirits"
+          ],
+          "sai": [
+           "terraced fields",
+           "crops",
+           "crafts",
+           "clothing"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "3. harvest {0}",
+        "o": [
+         {
+          "dung": [
+           "crops"
+          ],
+          "sai": [
+           "terraced fields",
+           "crafts",
+           "clothing",
+           "bad spirits"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "4. overlook {0}",
+        "o": [
+         {
+          "dung": [
+           "terraced fields"
+          ],
+          "sai": [
+           "crops",
+           "crafts",
+           "clothing",
+           "bad spirits"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "5. make {0}",
+        "o": [
+         {
+          "dung": [
+           "crafts"
+          ],
+          "sai": [
+           "terraced fields",
+           "crops",
+           "clothing",
+           "bad spirits"
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "ma": "Bài 3 (tr.70)",
+     "de": "Complete the sentences with the words and phrases from the box.\nhabit | lifestyle | minority group\nfestivals | decorative items\n1. Ethnic minority girls wear a lot of beautiful ___ on special occasions.\n2. I love attending local ___ in my area because they are unique.\n3. It was a big change in ___ when my family moved from the city to the countryside.\n4. I'd prefer you not to make a ___ of going to bed late.\n5. The Bahnar is a large ethnic ___ in the Central Highlands.",
+     "trang": 70,
+     "nhom": "Language",
+     "dang": "CAU_NHO",
+     "dap_an": "1. decorative items; 2. festivals; 3. lifestyle; 4. habit; 5. minority group",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 5,
+      "hoi": "Complete the sentences with the words and phrases from the box.",
+      "dong": [
+       {
+        "chu": "1. Ethnic minority girls wear a lot of beautiful {0} on special occasions.",
+        "o": [
+         {
+          "dung": [
+           "decorative items"
+          ],
+          "sai": [
+           "habit",
+           "lifestyle",
+           "minority group",
+           "festivals"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "2. I love attending local {0} in my area because they are unique.",
+        "o": [
+         {
+          "dung": [
+           "festivals"
+          ],
+          "sai": [
+           "habit",
+           "lifestyle",
+           "minority group",
+           "decorative items"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "3. It was a big change in {0} when my family moved from the city to the countryside.",
+        "o": [
+         {
+          "dung": [
+           "lifestyle"
+          ],
+          "sai": [
+           "habit",
+           "minority group",
+           "festivals",
+           "decorative items"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "4. I'd prefer you not to make a {0} of going to bed late.",
+        "o": [
+         {
+          "dung": [
+           "habit"
+          ],
+          "sai": [
+           "lifestyle",
+           "minority group",
+           "festivals",
+           "decorative items"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "5. The Bahnar is a large ethnic {0} in the Central Highlands.",
+        "o": [
+         {
+          "dung": [
+           "minority group"
+          ],
+          "sai": [
+           "habit",
+           "lifestyle",
+           "festivals",
+           "decorative items"
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "ma": "Bài 4.1 (tr.70)",
+     "de": "Choose the correct answer A, B, or C to complete each sentence.\nTet is coming. I see ___ flowers and ornamental trees everywhere.\nA. a B. the C. Ø",
+     "trang": 70,
+     "nhom": "Language",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "C",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Choose the correct answer A, B, or C to complete each sentence.\nTet is coming. I see ___ flowers and ornamental trees everywhere.",
+      "cac": [
+       "a",
+       "the",
+       "Ø"
+      ],
+      "dap": "C"
+     }
+    },
+    {
+     "ma": "Bài 4.2 (tr.70)",
+     "de": "Choose the correct answer A, B, or C to complete each sentence.\nBat Trang Village is famous for ___ traditional craft of pottery making.\nA. a B. the C. Ø",
+     "trang": 70,
+     "nhom": "Language",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Choose the correct answer A, B, or C to complete each sentence.\nBat Trang Village is famous for ___ traditional craft of pottery making.",
+      "cac": [
+       "a",
+       "the",
+       "Ø"
+      ],
+      "dap": "B"
+     }
+    },
+    {
+     "ma": "Bài 4.3 (tr.70)",
+     "de": "Choose the correct answer A, B, or C to complete each sentence.\n– Hi, Trang. ___ are things in Hue?\n– Everything's great. The weather's fantastic, and the food's delicious.\nA. How B. What C. Where",
+     "trang": 70,
+     "nhom": "Language",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Choose the correct answer A, B, or C to complete each sentence.\n– Hi, Trang. ___ are things in Hue?\n– Everything's great. The weather's fantastic, and the food's delicious.",
+      "cac": [
+       "How",
+       "What",
+       "Where"
+      ],
+      "dap": "A"
+     }
+    },
+    {
+     "ma": "Bài 4.4 (tr.70)",
+     "de": "Choose the correct answer A, B, or C to complete each sentence.\n___ street food in Viet Nam is most popular among foreign visitors?\nA. How B. What C. Why",
+     "trang": 70,
+     "nhom": "Language",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Choose the correct answer A, B, or C to complete each sentence.\n___ street food in Viet Nam is most popular among foreign visitors?",
+      "cac": [
+       "How",
+       "What",
+       "Why"
+      ],
+      "dap": "B"
+     }
+    },
+    {
+     "ma": "Bài 4.5 (tr.70)",
+     "de": "Choose the correct answer A, B, or C to complete each sentence.\nI'm searching for ___ information about the lifestyle of the Van Kieu in central Viet Nam.\nA. some B. many C. an",
+     "trang": 70,
+     "nhom": "Language",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Choose the correct answer A, B, or C to complete each sentence.\nI'm searching for ___ information about the lifestyle of the Van Kieu in central Viet Nam.",
+      "cac": [
+       "some",
+       "many",
+       "an"
+      ],
+      "dap": "A"
+     }
+    },
+    {
+     "ma": "Bài 5.1 (tr.70)",
+     "de": "Use the correct forms of the verbs in brackets to complete the sentences.\nNext year we (build) ___ a house overlooking the lake.",
+     "trang": 70,
+     "nhom": "Language",
+     "dang": "CAU_NHO",
+     "dap_an": "will build",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "CHU",
+      "sao": 2,
+      "dap": [
+       "will build"
+      ],
+      "nhieu": [
+       "t",
+       "s",
+       "n",
+       "g",
+       "e",
+       "a"
+      ]
+     }
+    },
+    {
+     "ma": "Bài 5.2 (tr.70)",
+     "de": "Use the correct forms of the verbs in brackets to complete the sentences.\nSpring is coming, so we (celebrate) ___ the Ban Flower Festival soon.",
+     "trang": 70,
+     "nhom": "Language",
+     "dang": "CAU_NHO",
+     "dap_an": "will celebrate",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "CHU",
+      "sao": 2,
+      "dap": [
+       "will celebrate"
+      ],
+      "nhieu": [
+       "s",
+       "d",
+       "n",
+       "g",
+       "o",
+       "u",
+       "h",
+       "k"
+      ]
+     }
+    },
+    {
+     "ma": "Bài 5.3 (tr.70)",
+     "de": "Use the correct forms of the verbs in brackets to complete the sentences.\nIf you have a chance to travel on a dogsled, you (never forget) ___ it.",
+     "trang": 70,
+     "nhom": "Language",
+     "dang": "CAU_NHO",
+     "dap_an": "will never forget (never will forget cũng nhận)",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "CHU",
+      "sao": 2,
+      "dap": [
+       "will never forget",
+       "never will forget"
+      ],
+      "nhieu": [
+       "s",
+       "h",
+       "a",
+       "d",
+       "b",
+       "c",
+       "k",
+       "y"
+      ]
+     }
+    },
+    {
+     "ma": "Bài 5.4 (tr.70)",
+     "de": "Use the correct forms of the verbs in brackets to complete the sentences.\nIf I (be) ___ free to choose a topic, I will give a presentation on Alaska.",
+     "trang": 70,
+     "nhom": "Language",
+     "dang": "CAU_NHO",
+     "dap_an": "am",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "CHU",
+      "sao": 2,
+      "dap": [
+       "am"
+      ],
+      "nhieu": [
+       "b",
+       "e",
+       "i",
+       "s"
+      ]
+     }
+    },
+    {
+     "ma": "Bài 5.5 (tr.70)",
+     "de": "Use the correct forms of the verbs in brackets to complete the sentences.\nUnless you try, you (never know) ___ if you can play football.",
+     "trang": 70,
+     "nhom": "Language",
+     "dang": "CAU_NHO",
+     "dap_an": "will never know (never will know cũng nhận)",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "CHU",
+      "sao": 2,
+      "dap": [
+       "will never know",
+       "never will know"
+      ],
+      "nhieu": [
+       "s",
+       "h",
+       "a",
+       "d",
+       "t",
+       "g",
+       "b",
+       "c"
+      ]
+     }
+    },
+    {
+     "ma": "Bài 1 (tr.71)",
+     "de": "Read the schedule of the Spring Fair and select the event that each person wants to attend. Write the event names in the table.\nPeople | Events\n1. Ann wants to take her children out to play folk games. | ___\n2. Tom wants to learn about making pottery. | ___\n3. Alice wants to see ethnic dance performances. | ___\n4. Mai wants to learn more about farm products. | ___\n5. Mark wants to see a collection of ethnic people's daily activities. | ___",
+     "trang": 71,
+     "nhom": "Skills",
+     "dang": "CAU_NHO",
+     "dap_an": "1. Childhood Fun; 2. A Pottery Village; 3. Performances; 4. Ethnic Markets; 5. Photo Exhibition",
+     "loai_dap_an": "DAP_SO",
+     "doan": "R2.S1",
+     "ghep": {
+      "kieu": "O",
+      "sao": 5,
+      "hoi": "Read the schedule of the Spring Fair and select the event that each person wants to attend.",
+      "dong": [
+       {
+        "chu": "1. Ann wants to take her children out to play folk games.\nEvent: {0}",
+        "o": [
+         {
+          "dung": [
+           "Childhood Fun"
+          ],
+          "sai": [
+           "Ethnic Markets",
+           "Photo Exhibition",
+           "Performances",
+           "A Pottery Village"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "2. Tom wants to learn about making pottery.\nEvent: {0}",
+        "o": [
+         {
+          "dung": [
+           "A Pottery Village"
+          ],
+          "sai": [
+           "Ethnic Markets",
+           "Photo Exhibition",
+           "Performances",
+           "Childhood Fun"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "3. Alice wants to see ethnic dance performances.\nEvent: {0}",
+        "o": [
+         {
+          "dung": [
+           "Performances"
+          ],
+          "sai": [
+           "Ethnic Markets",
+           "Photo Exhibition",
+           "Childhood Fun",
+           "A Pottery Village"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "4. Mai wants to learn more about farm products.\nEvent: {0}",
+        "o": [
+         {
+          "dung": [
+           "Ethnic Markets"
+          ],
+          "sai": [
+           "Photo Exhibition",
+           "Performances",
+           "Childhood Fun",
+           "A Pottery Village"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "5. Mark wants to see a collection of ethnic people's daily activities.\nEvent: {0}",
+        "o": [
+         {
+          "dung": [
+           "Photo Exhibition"
+          ],
+          "sai": [
+           "Ethnic Markets",
+           "Performances",
+           "Childhood Fun",
+           "A Pottery Village"
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "ma": "Bài 4.1 (tr.71)",
+     "de": "Write complete sentences from the clues below. You may have to make some changes.\n<b>Respect for the elders</b>\nMany / Vietnamese families / teach / children / respect / elders.",
+     "trang": 71,
+     "nhom": "Skills",
+     "dang": "CAU_NHO",
+     "dap_an": "Many Vietnamese families teach their children to respect the elders. / Many Vietnamese families teach children to respect the elders.",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "CAU",
+      "sao": 2,
+      "hoi": "Write complete sentences from the clues below. You may have to make some changes.\n<b>Respect for the elders</b>\nMany / Vietnamese families / teach / children / respect / elders.",
+      "the": [
+       "Many",
+       "Vietnamese families",
+       "teach",
+       "their",
+       "children",
+       "to",
+       "respect",
+       "the elders."
+      ],
+      "nhieu": [
+       "teaches",
+       "respecting"
+      ],
+      "dap": [
+       "Many Vietnamese families teach their children to respect the elders.",
+       "Many Vietnamese families teach children to respect the elders."
+      ]
+     }
+    },
+    {
+     "ma": "Bài 4.2 (tr.71)",
+     "de": "Write complete sentences from the clues below. You may have to make some changes.\n<b>Respect for the elders</b>\nThere / many ways / show / respect.",
+     "trang": 71,
+     "nhom": "Skills",
+     "dang": "CAU_NHO",
+     "dap_an": "There are many ways to show respect.",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "CAU",
+      "sao": 2,
+      "hoi": "Write complete sentences from the clues below. You may have to make some changes.\n<b>Respect for the elders</b>\nThere / many ways / show / respect.",
+      "the": [
+       "There",
+       "are",
+       "many ways",
+       "to",
+       "show",
+       "respect."
+      ],
+      "nhieu": [
+       "is",
+       "shows"
+      ],
+      "dap": [
+       "There are many ways to show respect."
+      ]
+     }
+    },
+    {
+     "ma": "Bài 4.3 (tr.71)",
+     "de": "Write complete sentences from the clues below. You may have to make some changes.\n<b>Respect for the elders</b>\nYou / give up / seat / or offer / carry / something heavy / elders.",
+     "trang": 71,
+     "nhom": "Skills",
+     "dang": "CAU_NHO",
+     "dap_an": "You can give up your seat or offer to carry something heavy for the elders. / You give up your seat or offer to carry something heavy for the elders.",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "CAU",
+      "sao": 2,
+      "hoi": "Write complete sentences from the clues below. You may have to make some changes.\n<b>Respect for the elders</b>\nYou / give up / seat / or offer / carry / something heavy / elders.",
+      "the": [
+       "You",
+       "can",
+       "give up",
+       "your",
+       "seat",
+       "or offer",
+       "to",
+       "carry",
+       "something heavy",
+       "for",
+       "the elders."
+      ],
+      "nhieu": [
+       "carrying",
+       "gives up"
+      ],
+      "dap": [
+       "You can give up your seat or offer to carry something heavy for the elders.",
+       "You give up your seat or offer to carry something heavy for the elders."
+      ]
+     }
+    },
+    {
+     "ma": "Bài 4.4 (tr.71)",
+     "de": "Write complete sentences from the clues below. You may have to make some changes.\n<b>Respect for the elders</b>\nYou / listen / not talk back / elders / speak.",
+     "trang": 71,
+     "nhom": "Skills",
+     "dang": "CAU_NHO",
+     "dap_an": "You should listen and not talk back when the elders speak. / You should not talk back and listen when the elders speak.",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "CAU",
+      "sao": 2,
+      "hoi": "Write complete sentences from the clues below. You may have to make some changes.\n<b>Respect for the elders</b>\nYou / listen / not talk back / elders / speak.",
+      "the": [
+       "You",
+       "should",
+       "listen",
+       "and",
+       "not talk back",
+       "when",
+       "the elders",
+       "speak."
+      ],
+      "nhieu": [
+       "speaks.",
+       "listening"
+      ],
+      "dap": [
+       "You should listen and not talk back when the elders speak.",
+       "You should not talk back and listen when the elders speak."
+      ]
+     }
+    },
+    {
+     "ma": "Bài 4.5 (tr.71)",
+     "de": "Write complete sentences from the clues below. You may have to make some changes.\n<b>Respect for the elders</b>\nAt mealtimes / children should not / start / eat / before / elders do.",
+     "trang": 71,
+     "nhom": "Skills",
+     "dang": "CAU_NHO",
+     "dap_an": "At mealtimes, children should not start eating before the elders do. / At mealtimes, children should not start to eat before the elders do.",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "CAU",
+      "sao": 2,
+      "hoi": "Write complete sentences from the clues below. You may have to make some changes.\n<b>Respect for the elders</b>\nAt mealtimes / children should not / start / eat / before / elders do.",
+      "the": [
+       "At mealtimes,",
+       "children should not start",
+       "eating",
+       "to eat",
+       "before",
+       "the elders",
+       "do."
+      ],
+      "nhieu": [
+       "eat",
+       "does."
+      ],
+      "dap": [
+       "At mealtimes, children should not start eating before the elders do.",
+       "At mealtimes, children should not start to eat before the elders do."
       ]
      }
     }
