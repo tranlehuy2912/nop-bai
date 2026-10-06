@@ -2,7 +2,7 @@
  "nguon": "toan8t2",
  "mon": "Toán",
  "ten": "SGK Toán 8 — tập hai",
- "ban": 6,
+ "ban": 7,
  "cac_bai": [
   {
    "chuong": "Chương VI. Phân thức đại số",
@@ -8546,56 +8546,371 @@
      "trang": 80,
      "nhom": "Luyện tập",
      "dang": "CAU_NHO",
-     "de": "Trong các tam giác được vẽ trên lưới ô vuông (Hình 9.3, SGK trang 80), có một cặp tam giác đồng dạng. Hãy chỉ ra cặp tam giác đó, viết đúng kí hiệu đồng dạng và tìm tỉ số đồng dạng của chúng."
+     "de": "Trong các tam giác được vẽ trên lưới ô vuông (Hình 9.3, SGK trang 80), có một cặp tam giác đồng dạng. Hãy chỉ ra cặp tam giác đó, viết đúng kí hiệu đồng dạng và tìm tỉ số đồng dạng của chúng.",
+     "hinh": [
+      "toan8t2/LT1-tr80.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "hoi": "Trong các tam giác được vẽ trên lưới ô vuông (Hình 9.3), có một cặp tam giác đồng dạng. Hãy chỉ ra cặp tam giác đó, viết đúng kí hiệu đồng dạng và tìm tỉ số đồng dạng của chúng.",
+      "dong": [
+       {
+        "chu": "Cặp tam giác đồng dạng: {0}",
+        "o": [
+         {
+          "dung": [
+           "ΔABC ᔕ ΔDEF"
+          ],
+          "sai": [
+           "ΔABC ᔕ ΔFED",
+           "ΔABC ᔕ ΔEFD",
+           "ΔABC ᔕ ΔGHK"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Tỉ số đồng dạng của ΔABC với ΔDEF: {0}",
+        "o": [
+         {
+          "dung": [
+           "2"
+          ],
+          "sai": [
+           "1/2",
+           "6"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "ΔGHK không đồng dạng với hai tam giác kia vì {0}",
+        "o": [
+         {
+          "dung": [
+           "ΔGHK có góc G vuông, còn ΔABC và ΔDEF không có góc vuông"
+          ],
+          "sai": [
+           "ΔGHK nhỏ hơn ΔABC",
+           "ΔGHK có một cạnh nằm trên đường kẻ dọc của lưới"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "Thử thách nhỏ (tr.80)",
      "trang": 80,
      "nhom": "Thử thách nhỏ",
      "dang": "CAU_NHO",
-     "de": "Cho ΔABC ᔕ ΔMNP. Chứng minh rằng: a) Nếu tam giác ABC cân tại đỉnh A thì tam giác MNP cân tại đỉnh M; b) Nếu tam giác ABC đều thì tam giác MNP đều; c) Nếu AB ≥ AC ≥ BC thì MN ≥ MP ≥ NP."
+     "de": "Cho ΔABC ᔕ ΔMNP. Chứng minh rằng: a) Nếu tam giác ABC cân tại đỉnh A thì tam giác MNP cân tại đỉnh M; b) Nếu tam giác ABC đều thì tam giác MNP đều; c) Nếu AB ≥ AC ≥ BC thì MN ≥ MP ≥ NP.",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 4,
+      "hoi": "Cho ΔABC ᔕ ΔMNP. Chứng minh rằng:\na) Nếu tam giác ABC cân tại đỉnh A thì tam giác MNP cân tại đỉnh M;\nb) Nếu tam giác ABC đều thì tam giác MNP đều;\nc) Nếu AB ≥ AC ≥ BC thì MN ≥ MP ≥ NP.",
+      "buoc": [
+       "ΔABC ᔕ ΔMNP nên MN/AB = MP/AC = NP/BC; gọi tỉ số chung này là k (k > 0) thì MN = k · AB, MP = k · AC, NP = k · BC",
+       "a) ΔABC cân tại A nên AB = AC, suy ra MN = MP; vậy ΔMNP cân tại M",
+       "b) ΔABC đều nên AB = AC = BC, suy ra MN = MP = NP; vậy ΔMNP đều",
+       "c) AB ≥ AC ≥ BC và k > 0 nên k · AB ≥ k · AC ≥ k · BC, tức là MN ≥ MP ≥ NP"
+      ],
+      "nhieu": [
+       "a) ΔABC cân tại A nên AB = AC, suy ra MN = NP; vậy ΔMNP cân tại N",
+       "c) AB ≥ AC ≥ BC và k > 0 nên MN ≥ NP ≥ MP"
+      ]
+     }
     },
     {
      "ma": "Luyện tập 2 (tr.82)",
      "trang": 82,
      "nhom": "Luyện tập",
      "dang": "CAU_NHO",
-     "de": "Trong Hình 9.8 (SGK trang 82), các đường thẳng AB, CD, EF song song với nhau. Hãy liệt kê ba cặp tam giác (phân biệt) đồng dạng."
+     "de": "Trong Hình 9.8 (SGK trang 82), các đường thẳng AB, CD, EF song song với nhau. Hãy liệt kê ba cặp tam giác (phân biệt) đồng dạng.",
+     "hinh": [
+      "toan8t2/LT2-tr82.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "hoi": "Trong Hình 9.8, các đường thẳng AB, CD, EF song song với nhau. Hãy liệt kê ba cặp tam giác (phân biệt) đồng dạng.",
+      "dong": [
+       {
+        "chu": "Vì CD // AB nên ΔOCD ᔕ {0}",
+        "o": [
+         {
+          "dung": [
+           "ΔOAB"
+          ],
+          "sai": [
+           "ΔOBA",
+           "ΔAOB"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Vì EF // AB nên ΔOEF ᔕ {0}",
+        "o": [
+         {
+          "dung": [
+           "ΔOBA"
+          ],
+          "sai": [
+           "ΔOAB",
+           "ΔBOA"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Vì EF // CD nên ΔOEF ᔕ {0}",
+        "o": [
+         {
+          "dung": [
+           "ΔODC"
+          ],
+          "sai": [
+           "ΔOCD",
+           "ΔDOC"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "Vận dụng (tr.82)",
      "trang": 82,
      "nhom": "Vận dụng",
      "dang": "CAU_NHO",
-     "de": "Trở lại tình huống mở đầu (bác Dương tính chiều cao AB của cột đèn nhờ cọc gỗ CD và bóng của nó), hãy giải thích bác Dương đã tính được chiều cao cột đèn như thế nào, biết cọc gỗ cao 1 m, EC = 80 cm và EB = 4 m."
+     "de": "Có một chiếc bóng điện được mắc trên đỉnh A của cột đèn AB thẳng đứng (B là chân cột). Bác Dương cắm một chiếc cọc gỗ CD thẳng đứng trên mặt đất (C là chân cọc); tia sáng từ bóng điện đi qua đỉnh D của cọc gỗ và chạm mặt đất tại E, EC là bóng của cọc gỗ (Hình 9.1). Hãy giải thích bác Dương đã tính được chiều cao AB của cột đèn như thế nào, biết cọc gỗ cao 1 m, EC = 80 cm và EB = 4 m.",
+     "hinh": [
+      "toan8t2/VD-tr82.webp"
+     ],
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 4,
+      "hoi": "Có một chiếc bóng điện được mắc trên đỉnh A của cột đèn AB thẳng đứng (B là chân cột). Bác Dương cắm một chiếc cọc gỗ CD thẳng đứng trên mặt đất (C là chân cọc); tia sáng từ bóng điện đi qua đỉnh D của cọc gỗ và chạm mặt đất tại E, EC là bóng của cọc gỗ (Hình 9.1). Hãy giải thích bác Dương đã tính được chiều cao AB của cột đèn như thế nào, biết cọc gỗ cao 1 m, EC = 80 cm và EB = 4 m.",
+      "buoc": [
+       "Cọc gỗ CD và cột đèn AB cùng thẳng đứng nên CD // AB",
+       "Tam giác EAB có D thuộc EA, C thuộc EB và CD // AB nên ΔEDC ᔕ ΔEAB",
+       "Đổi EB = 4 m = 400 cm; suy ra DC/AB = EC/EB = 80/400 = 1/5",
+       "Vậy AB = 5 · DC = 5 · 1 = 5 (m)"
+      ],
+      "nhieu": [
+       "Đổi EB = 4 m = 400 cm; suy ra DC/AB = EB/EC = 400/80 = 5",
+       "Suy ra DC/AB = EC/EB = 80/4 = 20"
+      ]
+     }
     },
     {
      "ma": "9.1",
      "trang": 82,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Cho ΔABC ᔕ ΔMNP, khẳng định nào sau đây không đúng? a) ΔMNP ᔕ ΔABC. b) ΔBCA ᔕ ΔNPM. c) ΔCAB ᔕ ΔPMN. d) ΔACB ᔕ ΔMNP."
+     "de": "Cho ΔABC ᔕ ΔMNP, khẳng định nào sau đây không đúng? a) ΔMNP ᔕ ΔABC. b) ΔBCA ᔕ ΔNPM. c) ΔCAB ᔕ ΔPMN. d) ΔACB ᔕ ΔMNP.",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Cho ΔABC ᔕ ΔMNP, khẳng định nào sau đây <b>không</b> đúng?",
+      "cac": [
+       "ΔMNP ᔕ ΔABC",
+       "ΔBCA ᔕ ΔNPM",
+       "ΔCAB ᔕ ΔPMN",
+       "ΔACB ᔕ ΔMNP"
+      ],
+      "dap": "D"
+     }
     },
     {
      "ma": "9.2",
      "trang": 82,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Những khẳng định nào sau đây là đúng? a) Hai tam giác bằng nhau thì đồng dạng với nhau. b) Hai tam giác bất kì đồng dạng với nhau. c) Hai tam giác đều bất kì đồng dạng với nhau. d) Hai tam giác vuông bất kì đồng dạng với nhau. e) Hai tam giác đồng dạng thì bằng nhau."
+     "de": "Những khẳng định nào sau đây là đúng? a) Hai tam giác bằng nhau thì đồng dạng với nhau. b) Hai tam giác bất kì đồng dạng với nhau. c) Hai tam giác đều bất kì đồng dạng với nhau. d) Hai tam giác vuông bất kì đồng dạng với nhau. e) Hai tam giác đồng dạng thì bằng nhau.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 5,
+      "hoi": "Những khẳng định nào sau đây là đúng?",
+      "dong": [
+       {
+        "chu": "a) Hai tam giác bằng nhau thì đồng dạng với nhau: {0}",
+        "o": [
+         {
+          "dung": [
+           "Đúng"
+          ],
+          "sai": [
+           "Sai"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "b) Hai tam giác bất kì đồng dạng với nhau: {0}",
+        "o": [
+         {
+          "dung": [
+           "Sai"
+          ],
+          "sai": [
+           "Đúng"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "c) Hai tam giác đều bất kì đồng dạng với nhau: {0}",
+        "o": [
+         {
+          "dung": [
+           "Đúng"
+          ],
+          "sai": [
+           "Sai"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "d) Hai tam giác vuông bất kì đồng dạng với nhau: {0}",
+        "o": [
+         {
+          "dung": [
+           "Sai"
+          ],
+          "sai": [
+           "Đúng"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "e) Hai tam giác đồng dạng thì bằng nhau: {0}",
+        "o": [
+         {
+          "dung": [
+           "Sai"
+          ],
+          "sai": [
+           "Đúng"
+          ],
+          "hai": true
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "9.3",
      "trang": 82,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Trong Hình 9.9 (SGK trang 82), ABC là tam giác không cân; M, N, P lần lượt là trung điểm của BC, CA, AB. Hãy tìm trong hình năm tam giác khác nhau mà chúng đôi một đồng dạng với nhau. Giải thích vì sao chúng đồng dạng."
+     "de": "Trong Hình 9.9 (SGK trang 82), ABC là tam giác không cân; M, N, P lần lượt là trung điểm của BC, CA, AB. Hãy tìm trong hình năm tam giác khác nhau mà chúng đôi một đồng dạng với nhau. Giải thích vì sao chúng đồng dạng.",
+     "hinh": [
+      "toan8t2/9.3.webp"
+     ],
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 5,
+      "hoi": "Trong Hình 9.9, ABC là tam giác không cân; M, N, P lần lượt là trung điểm của BC, CA, AB. Hãy tìm trong hình năm tam giác khác nhau mà chúng đôi một đồng dạng với nhau. Giải thích vì sao chúng đồng dạng.",
+      "buoc": [
+       "N, P là trung điểm của CA, AB nên PN là đường trung bình của ΔABC, PN // BC, suy ra ΔAPN ᔕ ΔABC",
+       "M, P là trung điểm của BC, AB nên PM là đường trung bình của ΔABC, PM // AC, suy ra ΔPBM ᔕ ΔABC",
+       "M, N là trung điểm của BC, CA nên MN là đường trung bình của ΔABC, MN // AB, suy ra ΔNMC ᔕ ΔABC",
+       "ΔMNP và ΔAPN có PN chung, góc MNP = góc APN, góc MPN = góc ANP (các cặp góc so le trong) nên ΔMNP = ΔAPN (g.c.g), do đó ΔMNP ᔕ ΔABC",
+       "Năm tam giác ABC, APN, PBM, NMC, MNP cùng đồng dạng với ΔABC nên chúng đôi một đồng dạng với nhau"
+      ],
+      "nhieu": [
+       "N, P là trung điểm của CA, AB nên PN là đường trung bình của ΔABC, PN // BC, suy ra ΔANP ᔕ ΔABC",
+       "M, P là trung điểm của BC, AB nên PM là đường trung bình của ΔABC, PM = AC, suy ra ΔPBM ᔕ ΔABC"
+      ],
+      "thu_tu_khac": [
+       [
+        0,
+        2,
+        1,
+        3,
+        4
+       ],
+       [
+        1,
+        0,
+        2,
+        3,
+        4
+       ],
+       [
+        1,
+        2,
+        0,
+        3,
+        4
+       ],
+       [
+        2,
+        0,
+        1,
+        3,
+        4
+       ],
+       [
+        2,
+        1,
+        0,
+        3,
+        4
+       ]
+      ]
+     }
     },
     {
      "ma": "9.4",
      "trang": 82,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Cho tam giác ABC cân tại đỉnh A và tam giác MNP cân tại đỉnh M. Biết rằng góc BAC = góc PMN, AB = 2MN. Chứng minh ΔMNP ᔕ ΔABC và tìm tỉ số đồng dạng."
+     "de": "Cho tam giác ABC cân tại đỉnh A và tam giác MNP cân tại đỉnh M. Biết rằng góc BAC = góc PMN, AB = 2MN. Chứng minh ΔMNP ᔕ ΔABC và tìm tỉ số đồng dạng.",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 5,
+      "hoi": "Cho tam giác ABC cân tại đỉnh A và tam giác MNP cân tại đỉnh M. Biết rằng góc BAC = góc PMN, AB = 2MN. Chứng minh ΔMNP ᔕ ΔABC và tìm tỉ số đồng dạng.",
+      "buoc": [
+       "ΔABC cân tại A nên góc ABC = (180° − góc BAC) : 2; ΔMNP cân tại M nên góc MNP = (180° − góc PMN) : 2",
+       "Vì góc BAC = góc PMN nên góc ABC = góc MNP",
+       "Gọi B', C' lần lượt là trung điểm của AB, AC thì B'C' // BC, nên ΔAB'C' ᔕ ΔABC và góc AB'C' = góc ABC",
+       "ΔMNP và ΔAB'C' có góc NMP = góc B'AC', MN = AB : 2 = AB', góc MNP = góc AB'C' (cùng bằng góc ABC) nên ΔMNP = ΔAB'C' (g.c.g)",
+       "Do đó ΔMNP ᔕ ΔABC với tỉ số đồng dạng MN/AB = 1/2"
+      ],
+      "nhieu": [
+       "ΔABC cân tại A nên góc ABC = 180° − góc BAC; ΔMNP cân tại M nên góc MNP = 180° − góc PMN",
+       "Do đó ΔMNP ᔕ ΔABC với tỉ số đồng dạng AB/MN = 2"
+      ],
+      "thu_tu_khac": [
+       [
+        0,
+        2,
+        1,
+        3,
+        4
+       ],
+       [
+        2,
+        0,
+        1,
+        3,
+        4
+       ]
+      ]
+     }
     }
    ]
   },
@@ -8608,105 +8923,662 @@
      "trang": 84,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Những cặp tam giác nào dưới đây (Hình 9.13, SGK trang 84) là đồng dạng? (Các kích thước được tính theo đơn vị centimét). Viết đúng kí hiệu đồng dạng."
+     "de": "Những cặp tam giác nào dưới đây (Hình 9.13, SGK trang 84) là đồng dạng? (Các kích thước được tính theo đơn vị centimét). Viết đúng kí hiệu đồng dạng.",
+     "hinh": [
+      "toan8t2/CH1-tr84.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "Những cặp tam giác nào trong Hình 9.13 là đồng dạng? (Các kích thước được tính theo đơn vị centimét). Viết đúng kí hiệu đồng dạng.",
+      "dong": [
+       {
+        "chu": "ΔABC ᔕ {0}",
+        "o": [
+         {
+          "dung": [
+           "ΔHGK"
+          ],
+          "sai": [
+           "ΔHKG",
+           "ΔGHK",
+           "ΔMNP"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "ΔDEF ᔕ {0}",
+        "o": [
+         {
+          "dung": [
+           "ΔMNP"
+          ],
+          "sai": [
+           "ΔNMP",
+           "ΔMPN",
+           "ΔHGK"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "Luyện tập 1 (tr.85)",
      "trang": 85,
      "nhom": "Luyện tập",
      "dang": "CAU_NHO",
-     "de": "Cho tam giác ABC có chu vi bằng 18 cm và tam giác DEF có chu vi bằng 27 cm. Biết rằng AB = 4 cm, BC = 6 cm, DE = 6 cm, FD = 12 cm. Chứng minh ΔABC ᔕ ΔDEF."
+     "de": "Cho tam giác ABC có chu vi bằng 18 cm và tam giác DEF có chu vi bằng 27 cm. Biết rằng AB = 4 cm, BC = 6 cm, DE = 6 cm, FD = 12 cm. Chứng minh ΔABC ᔕ ΔDEF.",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 4,
+      "buoc": [
+       "AC = 18 − (AB + BC) = 18 − (4 + 6) = 8",
+       "EF = 27 − (DE + FD) = 27 − (6 + 12) = 9",
+       "AB/DE = 4/6 = 2/3; BC/EF = 6/9 = 2/3; AC/DF = 8/12 = 2/3",
+       "Vậy AB/DE = BC/EF = AC/DF nên ΔABC ᔕ ΔDEF (c.c.c)"
+      ],
+      "nhieu": [
+       "AC = 18 − (4 + 6) = 10",
+       "Vậy AB/DE = BC/EF = AC/DF nên ΔABC ᔕ ΔDFE (c.c.c)"
+      ],
+      "thu_tu_khac": [
+       [
+        1,
+        0,
+        2,
+        3
+       ]
+      ]
+     }
     },
     {
      "ma": "Vận dụng (tr.85)",
      "trang": 85,
      "nhom": "Vận dụng",
      "dang": "CAU_NHO",
-     "de": "Trở lại tình huống mở đầu (độ rộng khung thành là 7,32 m, trái bóng cách hai cột gôn lần lượt là 10,98 m và 14,64 m). Em hãy vẽ một tam giác có ba cạnh tỉ lệ với ba cạnh của tam giác tạo bởi ba đỉnh là trái bóng và hai chân cột gôn. Từ đó tính góc sút bằng góc tương ứng của tam giác vừa vẽ được."
+     "de": "Trở lại tình huống mở đầu (độ rộng khung thành là 7,32 m, trái bóng cách hai cột gôn lần lượt là 10,98 m và 14,64 m). Em hãy vẽ một tam giác có ba cạnh tỉ lệ với ba cạnh của tam giác tạo bởi ba đỉnh là trái bóng và hai chân cột gôn. Từ đó tính góc sút bằng góc tương ứng của tam giác vừa vẽ được.",
+     "hinh": [
+      "toan8t2/VD-tr85-chon1.webp",
+      "toan8t2/VD-tr85-chon2.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "hoi": "Trở lại tình huống mở đầu: khung thành rộng 7,32 m, trái bóng cách hai cột gôn lần lượt là 10,98 m và 14,64 m. Em hãy vẽ một tam giác có ba cạnh tỉ lệ với ba cạnh của tam giác tạo bởi ba đỉnh là trái bóng và hai chân cột gôn. Từ đó tính góc sút (góc có đỉnh ở trái bóng) bằng góc tương ứng của tam giác vừa vẽ được.",
+      "dong": [
+       {
+        "chu": "7,32 : 10,98 : 14,64 = {0}",
+        "o": [
+         {
+          "dung": [
+           "2 : 3 : 4",
+           "1 : 1,5 : 2"
+          ],
+          "sai": [
+           "3 : 4 : 5",
+           "1 : 2 : 3"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Tam giác vẽ đúng, đánh dấu đúng góc sút: {0}",
+        "o": [
+         {
+          "dung": [
+           "Hình 3"
+          ],
+          "sai": [
+           "Hình 1",
+           "Hình 2",
+           "Hình 4"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Giả sử đo ba góc của tam giác vừa vẽ được khoảng 29°, 47° và 104°. Góc sút khoảng {0}",
+        "o": [
+         {
+          "dung": [
+           "29°"
+          ],
+          "sai": [
+           "47°",
+           "104°"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "Câu hỏi 2 (tr.86)",
      "trang": 86,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Những cặp tam giác nào trong Hình 9.17 (SGK trang 86) là đồng dạng? (Các kích thước được tính theo đơn vị centimét). Viết đúng kí hiệu đồng dạng."
+     "de": "Những cặp tam giác nào trong Hình 9.17 (SGK trang 86) là đồng dạng? (Các kích thước được tính theo đơn vị centimét). Viết đúng kí hiệu đồng dạng.",
+     "hinh": [
+      "toan8t2/CH2-tr86.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "hoi": "Những cặp tam giác nào trong Hình 9.17 là đồng dạng? (Các kích thước được tính theo đơn vị centimét). Viết đúng kí hiệu đồng dạng.",
+      "dong": [
+       {
+        "chu": "Cặp tam giác đồng dạng: ΔABC ᔕ {0}",
+        "o": [
+         {
+          "dung": [
+           "ΔMNP"
+          ],
+          "sai": [
+           "ΔMPN",
+           "ΔDEF",
+           "ΔDFE"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Vì góc A = góc M = 70° và {0}",
+        "o": [
+         {
+          "dung": [
+           "AB/MN = AC/MP = 1/2"
+          ],
+          "sai": [
+           "AB/MP = AC/MN = 1/2",
+           "AB/DE = AC/DF"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Tam giác DEF: {0}",
+        "o": [
+         {
+          "dung": [
+           "không đồng dạng với hai tam giác còn lại"
+          ],
+          "sai": [
+           "đồng dạng với ΔABC",
+           "đồng dạng với ΔMNP"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "Luyện tập 2 (tr.87)",
      "trang": 87,
      "nhom": "Luyện tập",
      "dang": "CAU_NHO",
-     "de": "Cho ΔA'B'C' ᔕ ΔABC. Trên tia đối của các tia CB, C'B' lần lượt lấy các điểm M, M' sao cho MC/MB = M'C'/M'B'. Chứng minh rằng ΔA'B'M' ᔕ ΔABM."
+     "de": "Cho ΔA'B'C' ᔕ ΔABC. Trên tia đối của các tia CB, C'B' lần lượt lấy các điểm M, M' sao cho MC/MB = M'C'/M'B'. Chứng minh rằng ΔA'B'M' ᔕ ΔABM.",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 5,
+      "hoi": "Cho ΔA'B'C' ᔕ ΔABC. Trên tia đối của các tia CB, C'B' lần lượt lấy các điểm M, M' sao cho MC/MB = M'C'/M'B'. Chứng minh rằng ΔA'B'M' ᔕ ΔABM.",
+      "buoc": [
+       "M nằm trên tia đối của tia CB nên C nằm giữa B và M, MC = MB − BC; tương tự M'C' = M'B' − B'C'",
+       "Từ MC/MB = M'C'/M'B' suy ra 1 − BC/MB = 1 − B'C'/M'B', nên BC/MB = B'C'/M'B', hay B'M'/BM = B'C'/BC",
+       "ΔA'B'C' ᔕ ΔABC nên góc A'B'C' = góc ABC và A'B'/AB = B'C'/BC",
+       "Suy ra A'B'/AB = B'M'/BM",
+       "ΔA'B'M' và ΔABM có góc A'B'M' = góc ABM (vì góc A'B'M' = góc A'B'C', góc ABM = góc ABC) và A'B'/AB = B'M'/BM nên ΔA'B'M' ᔕ ΔABM (c.g.c)"
+      ],
+      "nhieu": [
+       "M nằm trên tia đối của tia CB nên M nằm giữa B và C, MC = BC − MB",
+       "Suy ra A'B'/AB = BM/B'M'"
+      ],
+      "thu_tu_khac": [
+       [
+        0,
+        2,
+        1,
+        3,
+        4
+       ],
+       [
+        2,
+        0,
+        1,
+        3,
+        4
+       ]
+      ]
+     }
     },
     {
      "ma": "Tranh luận (tr.87)",
      "trang": 87,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Bạn Lan nhận xét rằng nếu tam giác ABC và tam giác A'B'C' có A'B'/AB = A'C'/AC và góc B' = góc B thì chúng đồng dạng. Theo em, bạn Lan nhận xét có đúng không? Vì sao? (Gợi ý: khi góc ACB tù, lấy điểm M trên tia BC sao cho ΔAMC cân rồi xét xem trong hai tam giác ABC và ABM, tam giác nào đồng dạng với tam giác A'B'C')."
+     "de": "Bạn Lan nhận xét rằng nếu tam giác ABC và tam giác A'B'C' có A'B'/AB = A'C'/AC và góc B' = góc B thì chúng đồng dạng. Theo em, bạn Lan nhận xét có đúng không? Vì sao? (Gợi ý: khi góc ACB tù, lấy điểm M trên tia BC sao cho ΔAMC cân (Hình 9.19) rồi xét xem trong hai tam giác ABC và ABM, tam giác nào đồng dạng với tam giác A'B'C').",
+     "hinh": [
+      "toan8t2/TL-tr87.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "hoi": "Bạn Lan nhận xét rằng nếu tam giác ABC và tam giác A'B'C' có A'B'/AB = A'C'/AC và góc B' = góc B thì chúng đồng dạng. Theo em, bạn Lan nhận xét có đúng không? Vì sao?\nGợi ý: Khi góc ACB tù, lấy điểm M trên tia BC sao cho ΔAMC cân tại A (Hình 9.19) rồi xét xem trong hai tam giác ABC và ABM, tam giác nào đồng dạng với tam giác A'B'C'.",
+      "dong": [
+       {
+        "chu": "Nhận xét của bạn Lan: {0}",
+        "o": [
+         {
+          "dung": [
+           "Sai"
+          ],
+          "sai": [
+           "Đúng"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Trong Hình 9.19, tam giác A'B'C' đồng dạng với tam giác {0}",
+        "o": [
+         {
+          "dung": [
+           "ABM"
+          ],
+          "sai": [
+           "ABC"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Trong tam giác ABC, góc xen giữa hai cạnh AB và AC là {0}",
+        "o": [
+         {
+          "dung": [
+           "góc A"
+          ],
+          "sai": [
+           "góc B",
+           "góc C"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Vậy muốn kết luận hai tam giác đồng dạng theo trường hợp cạnh – góc – cạnh thì góc bằng nhau phải là {0}",
+        "o": [
+         {
+          "dung": [
+           "góc xen giữa hai cặp cạnh tỉ lệ"
+          ],
+          "sai": [
+           "một góc bất kì của hai tam giác",
+           "góc đối diện với một trong hai cạnh đó"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "Câu hỏi 3 (tr.89)",
      "trang": 89,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Những cặp tam giác nào trong Hình 9.22 (SGK trang 89) là đồng dạng? Viết đúng kí hiệu đồng dạng."
+     "de": "Những cặp tam giác nào trong Hình 9.22 (SGK trang 89) là đồng dạng? Viết đúng kí hiệu đồng dạng.",
+     "hinh": [
+      "toan8t2/CH3-tr89.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "hoi": "Những cặp tam giác nào trong Hình 9.22 là đồng dạng? Viết đúng kí hiệu đồng dạng.",
+      "dong": [
+       {
+        "chu": "Góc P của ΔMNP bằng {0}",
+        "o": [
+         {
+          "dung": [
+           "50°"
+          ],
+          "sai": [
+           "60°",
+           "70°",
+           "130°"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "ΔABC và ΔDEF: ΔABC ᔕ {0}",
+        "o": [
+         {
+          "dung": [
+           "ΔDEF"
+          ],
+          "sai": [
+           "ΔEDF",
+           "ΔDFE"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "ΔABC và ΔMNP: ΔABC ᔕ {0}",
+        "o": [
+         {
+          "dung": [
+           "ΔMPN"
+          ],
+          "sai": [
+           "ΔMNP",
+           "ΔNMP"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "ΔDEF và ΔMNP: ΔDEF ᔕ {0}",
+        "o": [
+         {
+          "dung": [
+           "ΔMPN"
+          ],
+          "sai": [
+           "ΔMNP",
+           "ΔPMN"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "Luyện tập 3 (tr.89)",
      "trang": 89,
      "nhom": "Luyện tập",
      "dang": "CAU_NHO",
-     "de": "Cho các điểm A, B, C, D như Hình 9.24 (SGK trang 89). Biết rằng góc ABC = góc ADB. Hãy chứng minh ΔABC ᔕ ΔADB và AB^2 = AD · AC."
+     "de": "Cho các điểm A, B, C, D như Hình 9.24 (SGK trang 89). Biết rằng góc ABC = góc ADB. Hãy chứng minh ΔABC ᔕ ΔADB và AB^2 = AD · AC.",
+     "hinh": [
+      "toan8t2/LT3-tr89.webp"
+     ],
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 4,
+      "hoi": "Cho các điểm A, B, C, D như Hình 9.24 (C nằm trên đoạn thẳng AD). Biết rằng góc ABC = góc ADB. Hãy chứng minh ΔABC ᔕ ΔADB và AB² = AD · AC.",
+      "buoc": [
+       "ΔABC và ΔADB có góc BAC = góc DAB (góc chung) và góc ABC = góc ADB (giả thiết)",
+       "Nên ΔABC ᔕ ΔADB (g.g)",
+       "Suy ra AB/AD = AC/AB",
+       "Do đó AB · AB = AD · AC, hay AB² = AD · AC"
+      ],
+      "nhieu": [
+       "Nên ΔABC ᔕ ΔABD (g.g)",
+       "Suy ra AB/AD = BC/AB"
+      ]
+     }
     },
     {
      "ma": "Thử thách nhỏ (tr.90)",
      "trang": 90,
      "nhom": "Thử thách nhỏ",
      "dang": "CAU_NHO",
-     "de": "1. Biết rằng ba đường phân giác của tam giác ABC đồng quy tại I, ba đường phân giác của tam giác A'B'C' đồng quy tại I'. Hãy chứng tỏ rằng nếu góc A'I'B' = góc AIB và góc A'I'C' = góc AIC thì ΔA'B'C' ᔕ ΔABC. 2. Với hai tam giác ABC và A'B'C' trong phần Tranh luận, nếu thêm giả thiết các góc C và C' nhọn thì hai tam giác đó có đồng dạng không?"
+     "de": "1. Biết rằng ba đường phân giác của tam giác ABC đồng quy tại I, ba đường phân giác của tam giác A'B'C' đồng quy tại I'. Hãy chứng tỏ rằng nếu góc A'I'B' = góc AIB và góc A'I'C' = góc AIC thì ΔA'B'C' ᔕ ΔABC. 2. Với hai tam giác ABC và A'B'C' trong phần Tranh luận (A'B'/AB = A'C'/AC và góc B' = góc B), nếu thêm giả thiết các góc C và C' nhọn thì hai tam giác đó có đồng dạng không?",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 8,
+      "hoi": "1. Biết rằng ba đường phân giác của tam giác ABC đồng quy tại I, ba đường phân giác của tam giác A'B'C' đồng quy tại I'. Hãy chứng tỏ rằng nếu góc A'I'B' = góc AIB và góc A'I'C' = góc AIC thì ΔA'B'C' ᔕ ΔABC.\n2. Với hai tam giác ABC và A'B'C' trong phần Tranh luận (A'B'/AB = A'C'/AC và góc B' = góc B), nếu thêm giả thiết các góc C và C' nhọn thì hai tam giác đó có đồng dạng không?",
+      "buoc": [
+       "1. Trong ΔAIB: góc AIB = 180° − (góc A + góc B) : 2; trong ΔA'I'B': góc A'I'B' = 180° − (góc A' + góc B') : 2",
+       "Vì góc A'I'B' = góc AIB nên góc A' + góc B' = góc A + góc B, suy ra góc C' = góc C",
+       "Tương tự, từ góc A'I'C' = góc AIC suy ra góc A' + góc C' = góc A + góc C, nên góc B' = góc B",
+       "Vậy ΔA'B'C' ᔕ ΔABC (g.g)",
+       "2. Có. Lấy điểm M trên tia BC sao cho góc BAM = góc B'A'C' thì ΔABM ᔕ ΔA'B'C' (g.g), suy ra AM/A'C' = AB/A'B'",
+       "Kết hợp với A'B'/AB = A'C'/AC suy ra AM = AC",
+       "Nếu M khác C thì ΔAMC cân tại A nên góc AMC = góc ACM < 90°; khi đó góc AMB (nếu M nằm giữa B và C) hoặc góc ACB (nếu C nằm giữa B và M) là góc tù",
+       "Nhưng góc AMB = góc C' và góc ACB = góc C đều là góc nhọn, vô lí; vậy M trùng C, tức là ΔA'B'C' ᔕ ΔABC"
+      ],
+      "nhieu": [
+       "1. Trong ΔAIB: góc AIB = 180° − (góc A + góc B); trong ΔA'I'B': góc A'I'B' = 180° − (góc A' + góc B')",
+       "Tương tự, từ góc A'I'C' = góc AIC suy ra góc A' = góc A",
+       "2. Không. Hai tam giác có hai cặp cạnh tỉ lệ và một cặp góc không xen giữa bằng nhau thì không bao giờ đồng dạng"
+      ]
+     }
     },
     {
      "ma": "9.5",
      "trang": 90,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Giả thiết nào dưới đây chứng tỏ rằng hai tam giác đồng dạng? a) Ba cạnh của tam giác này tỉ lệ với ba cạnh của tam giác kia. b) Hai cạnh của tam giác này tỉ lệ với hai cạnh của tam giác kia và có một cặp góc bằng nhau. c) Hai góc của tam giác này bằng hai góc của tam giác kia. d) Hai cạnh của tam giác này bằng hai cạnh của tam giác kia."
+     "de": "Giả thiết nào dưới đây chứng tỏ rằng hai tam giác đồng dạng? a) Ba cạnh của tam giác này tỉ lệ với ba cạnh của tam giác kia. b) Hai cạnh của tam giác này tỉ lệ với hai cạnh của tam giác kia và có một cặp góc bằng nhau. c) Hai góc của tam giác này bằng hai góc của tam giác kia. d) Hai cạnh của tam giác này bằng hai cạnh của tam giác kia.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "hoi": "Giả thiết nào dưới đây chứng tỏ rằng hai tam giác đồng dạng?",
+      "dong": [
+       {
+        "chu": "a) Ba cạnh của tam giác này tỉ lệ với ba cạnh của tam giác kia: {0}",
+        "o": [
+         {
+          "dung": [
+           "Chứng tỏ được"
+          ],
+          "sai": [
+           "Chưa chứng tỏ được"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "b) Hai cạnh của tam giác này tỉ lệ với hai cạnh của tam giác kia và có một cặp góc bằng nhau: {0}",
+        "o": [
+         {
+          "dung": [
+           "Chưa chứng tỏ được"
+          ],
+          "sai": [
+           "Chứng tỏ được"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "c) Hai góc của tam giác này bằng hai góc của tam giác kia: {0}",
+        "o": [
+         {
+          "dung": [
+           "Chứng tỏ được"
+          ],
+          "sai": [
+           "Chưa chứng tỏ được"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "d) Hai cạnh của tam giác này bằng hai cạnh của tam giác kia: {0}",
+        "o": [
+         {
+          "dung": [
+           "Chưa chứng tỏ được"
+          ],
+          "sai": [
+           "Chứng tỏ được"
+          ],
+          "hai": true
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "9.6",
      "trang": 90,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Cho hai tam giác đồng dạng. Tam giác thứ nhất có độ dài ba cạnh là 4 cm, 8 cm và 10 cm. Tam giác thứ hai có chu vi là 33 cm. Độ dài ba cạnh của tam giác thứ hai là bộ ba nào sau đây? a) 6 cm, 12 cm, 15 cm. b) 8 cm, 16 cm, 20 cm. c) 6 cm, 9 cm, 18 cm. d) 8 cm, 10 cm, 15 cm."
+     "de": "Cho hai tam giác đồng dạng. Tam giác thứ nhất có độ dài ba cạnh là 4 cm, 8 cm và 10 cm. Tam giác thứ hai có chu vi là 33 cm. Độ dài ba cạnh của tam giác thứ hai là bộ ba nào sau đây? a) 6 cm, 12 cm, 15 cm. b) 8 cm, 16 cm, 20 cm. c) 6 cm, 9 cm, 18 cm. d) 8 cm, 10 cm, 15 cm.",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Cho hai tam giác đồng dạng. Tam giác thứ nhất có độ dài ba cạnh là 4 cm, 8 cm và 10 cm. Tam giác thứ hai có chu vi là 33 cm. Độ dài ba cạnh của tam giác thứ hai là bộ ba nào sau đây?",
+      "cac": [
+       "6 cm, 12 cm, 15 cm",
+       "8 cm, 16 cm, 20 cm",
+       "6 cm, 9 cm, 18 cm",
+       "8 cm, 10 cm, 15 cm"
+      ],
+      "dap": "A"
+     }
     },
     {
      "ma": "9.7",
      "trang": 90,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Cho AM, BN, CP là các đường trung tuyến của tam giác ABC. Cho A'M', B'N', C'P' là các đường trung tuyến của tam giác A'B'C'. Biết rằng ΔA'B'C' ᔕ ΔABC. Chứng minh rằng A'M'/AM = B'N'/BN = C'P'/CP."
+     "de": "Cho AM, BN, CP là các đường trung tuyến của tam giác ABC. Cho A'M', B'N', C'P' là các đường trung tuyến của tam giác A'B'C'. Biết rằng ΔA'B'C' ᔕ ΔABC. Chứng minh rằng A'M'/AM = B'N'/BN = C'P'/CP.",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 5,
+      "hoi": "Cho AM, BN, CP là các đường trung tuyến của tam giác ABC. Cho A'M', B'N', C'P' là các đường trung tuyến của tam giác A'B'C'. Biết rằng ΔA'B'C' ᔕ ΔABC. Chứng minh rằng A'M'/AM = B'N'/BN = C'P'/CP.",
+      "buoc": [
+       "ΔA'B'C' ᔕ ΔABC nên A'B'/AB = B'C'/BC = C'A'/CA (= k) và góc A' = góc A, góc B' = góc B, góc C' = góc C",
+       "M, M' là trung điểm của BC, B'C' nên B'M'/BM = B'C'/BC = A'B'/AB; lại có góc B' = góc B nên ΔA'B'M' ᔕ ΔABM (c.g.c), suy ra A'M'/AM = A'B'/AB = k",
+       "N, N' là trung điểm của CA, C'A' nên C'N'/CN = C'A'/CA = B'C'/BC; lại có góc C' = góc C nên ΔB'C'N' ᔕ ΔBCN (c.g.c), suy ra B'N'/BN = B'C'/BC = k",
+       "P, P' là trung điểm của AB, A'B' nên A'P'/AP = A'B'/AB = C'A'/CA; lại có góc A' = góc A nên ΔC'A'P' ᔕ ΔCAP (c.g.c), suy ra C'P'/CP = C'A'/CA = k",
+       "Vậy A'M'/AM = B'N'/BN = C'P'/CP"
+      ],
+      "nhieu": [
+       "M, M' là trung điểm của BC, B'C' nên B'M'/BM = 1/2",
+       "N, N' là trung điểm của CA, C'A' nên C'N'/CN = C'A'/CA = B'C'/BC; lại có góc C' = góc C nên ΔB'C'N' ᔕ ΔBNC (c.g.c), suy ra B'N'/BN = B'C'/BC = k"
+      ],
+      "thu_tu_khac": [
+       [
+        0,
+        1,
+        3,
+        2,
+        4
+       ],
+       [
+        0,
+        2,
+        1,
+        3,
+        4
+       ],
+       [
+        0,
+        2,
+        3,
+        1,
+        4
+       ],
+       [
+        0,
+        3,
+        1,
+        2,
+        4
+       ],
+       [
+        0,
+        3,
+        2,
+        1,
+        4
+       ]
+      ]
+     }
     },
     {
      "ma": "9.8",
      "trang": 90,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Cho tam giác ABC có AB = 12 cm, AC = 15 cm. Trên các tia AB, AC lần lượt lấy các điểm M, N sao cho AM = 10 cm, AN = 8 cm. Chứng minh rằng ΔABC ᔕ ΔANM."
+     "de": "Cho tam giác ABC có AB = 12 cm, AC = 15 cm. Trên các tia AB, AC lần lượt lấy các điểm M, N sao cho AM = 10 cm, AN = 8 cm. Chứng minh rằng ΔABC ᔕ ΔANM.",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 3,
+      "buoc": [
+       "AN/AB = 8/12 = 2/3; AM/AC = 10/15 = 2/3; suy ra AN/AB = AM/AC",
+       "ΔANM và ΔABC có góc NAM = góc BAC (góc chung) và AN/AB = AM/AC",
+       "Nên ΔANM ᔕ ΔABC (c.g.c), tức là ΔABC ᔕ ΔANM"
+      ],
+      "nhieu": [
+       "AM/AB = 10/12 = 5/6; AN/AC = 8/15; hai tỉ số không bằng nhau nên hai tam giác không đồng dạng",
+       "Nên ΔANM ᔕ ΔACB (c.g.c)"
+      ]
+     }
     },
     {
      "ma": "9.9",
      "trang": 90,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Cho góc BAC và các điểm M, N lần lượt trên các đoạn thẳng AB, AC sao cho góc ABN = góc ACM. a) Chứng minh rằng ΔABN ᔕ ΔACM. b) Gọi I là giao điểm của BN và CM. Chứng minh rằng IB · IN = IC · IM."
+     "de": "Cho góc BAC và các điểm M, N lần lượt trên các đoạn thẳng AB, AC sao cho góc ABN = góc ACM. a) Chứng minh rằng ΔABN ᔕ ΔACM. b) Gọi I là giao điểm của BN và CM. Chứng minh rằng IB · IN = IC · IM.",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 5,
+      "hoi": "Cho góc BAC và các điểm M, N lần lượt trên các đoạn thẳng AB, AC sao cho góc ABN = góc ACM.\na) Chứng minh rằng ΔABN ᔕ ΔACM.\nb) Gọi I là giao điểm của BN và CM. Chứng minh rằng IB · IN = IC · IM.",
+      "buoc": [
+       "a) ΔABN và ΔACM có góc A chung và góc ABN = góc ACM (giả thiết)",
+       "Nên ΔABN ᔕ ΔACM (g.g)",
+       "b) ΔIBM và ΔICN có góc IBM = góc ICN (vì góc ABN = góc ACM) và góc BIM = góc CIN (hai góc đối đỉnh)",
+       "Nên ΔIBM ᔕ ΔICN (g.g)",
+       "Suy ra IB/IC = IM/IN, do đó IB · IN = IC · IM"
+      ],
+      "nhieu": [
+       "Nên ΔABN ᔕ ΔAMC (g.g)",
+       "Suy ra IB/IC = IN/IM, do đó IB · IM = IC · IN"
+      ]
+     }
     },
     {
      "ma": "9.10",
      "trang": 90,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Có hai chiếc cột dựng thẳng đứng trên mặt đất với chiều cao lần lượt là 3 m và 2 m. Người ta nối hai sợi dây từ đỉnh cột này đến chân cột kia và hai sợi dây cắt nhau tại một điểm (Hình 9.25, SGK trang 90). Hãy tính độ cao h của điểm đó so với mặt đất."
+     "de": "Có hai chiếc cột dựng thẳng đứng trên mặt đất với chiều cao lần lượt là 3 m và 2 m. Người ta nối hai sợi dây từ đỉnh cột này đến chân cột kia và hai sợi dây cắt nhau tại một điểm (Hình 9.25, SGK trang 90). Hãy tính độ cao h của điểm đó so với mặt đất.",
+     "hinh": [
+      "toan8t2/9.10.webp"
+     ],
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 5,
+      "hoi": "Có hai chiếc cột dựng thẳng đứng trên mặt đất với chiều cao lần lượt là 3 m và 2 m. Người ta nối hai sợi dây từ đỉnh cột này đến chân cột kia và hai sợi dây cắt nhau tại một điểm (Hình 9.25). Hãy tính độ cao h của điểm đó so với mặt đất (tính bằng mét).",
+      "dap": [
+       "1,2",
+       "6/5",
+       "1,2m"
+      ],
+      "phim": [
+       "m"
+      ],
+      "nhieu": [
+       "cm",
+       "m²"
+      ],
+      "loi_giai": [
+       "Gọi AB là cột cao 3 m, CD là cột cao 2 m (B, D là chân cột), E là giao điểm của hai sợi dây AD và CB, F là chân đường vuông góc hạ từ E xuống BD; khi đó EF = h",
+       "EF // AB nên ΔDFE ᔕ ΔDBA, suy ra h/3 = DF/DB",
+       "EF // CD nên ΔBFE ᔕ ΔBDC, suy ra h/2 = BF/BD",
+       "Cộng lại: h/3 + h/2 = (DF + BF)/BD = 1, tức là h · 5/6 = 1",
+       "h = 6/5 = 1,2"
+      ]
+     }
     }
    ]
   },
@@ -8719,42 +9591,252 @@
      "trang": 92,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Cho ΔABC ᔕ ΔDEF. Biết góc A = 60°, góc E = 80°, hãy tính số đo các góc B, C, D, F."
+     "de": "Cho ΔABC ᔕ ΔDEF. Biết góc A = 60°, góc E = 80°, hãy tính số đo các góc B, C, D, F.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "hoi": "Cho ΔABC ᔕ ΔDEF. Biết góc A = 60°, góc E = 80°, hãy tính số đo các góc B, C, D, F.",
+      "dong": [
+       {
+        "chu": "góc B = {0}",
+        "o": [
+         {
+          "dung": [
+           "80°"
+          ],
+          "sai": [
+           "60°",
+           "40°"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "góc C = {0}",
+        "o": [
+         {
+          "dung": [
+           "40°"
+          ],
+          "sai": [
+           "80°",
+           "100°"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "góc D = {0}",
+        "o": [
+         {
+          "dung": [
+           "60°"
+          ],
+          "sai": [
+           "80°",
+           "40°"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "góc F = {0}",
+        "o": [
+         {
+          "dung": [
+           "40°"
+          ],
+          "sai": [
+           "60°",
+           "120°"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "9.12",
      "trang": 92,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Cho ΔABC ᔕ ΔA'B'C'. Biết AB = 3 cm, A'B' = 6 cm và tam giác ABC có chu vi bằng 10 cm. Hãy tính chu vi tam giác A'B'C'."
+     "de": "Cho ΔABC ᔕ ΔA'B'C'. Biết AB = 3 cm, A'B' = 6 cm và tam giác ABC có chu vi bằng 10 cm. Hãy tính chu vi tam giác A'B'C'.",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "dap": [
+       "20",
+       "20cm"
+      ],
+      "phim": [
+       "cm"
+      ],
+      "nhieu": [
+       "m",
+       "cm²"
+      ],
+      "loi_giai": [
+       "ΔABC ᔕ ΔA'B'C' nên A'B'/AB = B'C'/BC = C'A'/CA = 6/3 = 2",
+       "Suy ra A'B' + B'C' + C'A' = 2 · (AB + BC + CA)",
+       "Chu vi tam giác A'B'C' = 2 · 10 = 20"
+      ]
+     }
     },
     {
      "ma": "9.13",
      "trang": 92,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Cho hình thang ABCD (AB // CD) có góc DAB = góc DBC (Hình 9.28, SGK trang 92). a) Chứng minh rằng ΔABD ᔕ ΔBDC. b) Giả sử AB = 2 cm, AD = 3 cm, BD = 4 cm. Tính độ dài các cạnh BC và DC."
+     "de": "Cho hình thang ABCD (AB // CD) có góc DAB = góc DBC (Hình 9.28, SGK trang 92). a) Chứng minh rằng ΔABD ᔕ ΔBDC. b) Giả sử AB = 2 cm, AD = 3 cm, BD = 4 cm. Tính độ dài các cạnh BC và DC.",
+     "hinh": [
+      "toan8t2/9.13.webp"
+     ],
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 4,
+      "hoi": "Cho hình thang ABCD (AB // CD) có góc DAB = góc DBC (Hình 9.28).\na) Chứng minh rằng ΔABD ᔕ ΔBDC.\nb) Giả sử AB = 2 cm, AD = 3 cm, BD = 4 cm. Tính độ dài các cạnh BC và DC.",
+      "buoc": [
+       "a) AB // CD nên góc ABD = góc BDC (so le trong)",
+       "ΔABD và ΔBDC có góc DAB = góc DBC (giả thiết) và góc ABD = góc BDC nên ΔABD ᔕ ΔBDC (g.g)",
+       "b) Suy ra AB/BD = AD/BC = BD/DC, tức là 2/4 = 3/BC = 4/DC",
+       "Tính theo cm: BC = 3 · 4 : 2 = 6; DC = 4 · 4 : 2 = 8"
+      ],
+      "nhieu": [
+       "b) Suy ra AB/BD = AD/DC = BD/BC, tức là 2/4 = 3/DC = 4/BC",
+       "Tính theo cm: BC = 3 · 2 : 4 = 1,5; DC = 4 · 2 : 4 = 2"
+      ]
+     }
     },
     {
      "ma": "9.14",
      "trang": 92,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Cho các điểm A, B, C, D, E, F như Hình 9.29 (SGK trang 92). Biết rằng DE // AB, EF // BC, DE = 4 cm, AB = 6 cm. Chứng minh rằng ΔAEF ᔕ ΔECD và tính tỉ số đồng dạng."
+     "de": "Cho các điểm A, B, C, D, E, F như Hình 9.29 (SGK trang 92). Biết rằng DE // AB, EF // BC, DE = 4 cm, AB = 6 cm. Chứng minh rằng ΔAEF ᔕ ΔECD và tính tỉ số đồng dạng.",
+     "hinh": [
+      "toan8t2/9.14.webp"
+     ],
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 5,
+      "hoi": "Cho các điểm A, B, C, D, E, F như Hình 9.29 (F thuộc cạnh AB, E thuộc cạnh AC, D thuộc cạnh BC). Biết rằng DE // AB, EF // BC, DE = 4 cm, AB = 6 cm. Chứng minh rằng ΔAEF ᔕ ΔECD và tính tỉ số đồng dạng.",
+      "buoc": [
+       "DE // AB nên góc DEC = góc BAC (đồng vị), tức là góc FAE = góc DEC",
+       "EF // BC nên góc AEF = góc ACB (đồng vị), tức là góc AEF = góc ECD",
+       "Nên ΔAEF ᔕ ΔECD (g.g)",
+       "Tứ giác BDEF có DE // BF và EF // BD nên là hình bình hành, suy ra BF = DE = 4, AF = AB − BF = 6 − 4 = 2",
+       "Tỉ số đồng dạng của ΔAEF với ΔECD là AF/ED = 2/4 = 1/2"
+      ],
+      "nhieu": [
+       "Nên ΔAEF ᔕ ΔEDC (g.g)",
+       "Tỉ số đồng dạng của ΔAEF với ΔECD là ED/AF = 4/2 = 2"
+      ],
+      "thu_tu_khac": [
+       [
+        0,
+        1,
+        3,
+        2,
+        4
+       ],
+       [
+        0,
+        3,
+        1,
+        2,
+        4
+       ],
+       [
+        1,
+        0,
+        2,
+        3,
+        4
+       ],
+       [
+        1,
+        0,
+        3,
+        2,
+        4
+       ],
+       [
+        1,
+        3,
+        0,
+        2,
+        4
+       ],
+       [
+        3,
+        0,
+        1,
+        2,
+        4
+       ],
+       [
+        3,
+        1,
+        0,
+        2,
+        4
+       ]
+      ]
+     }
     },
     {
      "ma": "9.15",
      "trang": 92,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Cho các điểm A, B, C, D, E như Hình 9.30 (SGK trang 92). Biết rằng góc BAC = góc CDB, hãy chứng minh rằng ΔAED ᔕ ΔBEC."
+     "de": "Cho các điểm A, B, C, D, E như Hình 9.30 (SGK trang 92). Biết rằng góc BAC = góc CDB, hãy chứng minh rằng ΔAED ᔕ ΔBEC.",
+     "hinh": [
+      "toan8t2/9.15.webp"
+     ],
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 4,
+      "hoi": "Cho các điểm A, B, C, D, E như Hình 9.30 (E là giao điểm của AC và BD). Biết rằng góc BAC = góc CDB, hãy chứng minh rằng ΔAED ᔕ ΔBEC.",
+      "buoc": [
+       "ΔAEB và ΔDEC có góc BAE = góc CDE (vì góc BAC = góc CDB) và góc AEB = góc DEC (hai góc đối đỉnh)",
+       "Nên ΔAEB ᔕ ΔDEC (g.g), suy ra AE/DE = BE/CE, hay AE/BE = DE/CE",
+       "ΔAED và ΔBEC có góc AED = góc BEC (hai góc đối đỉnh) và AE/BE = DE/CE",
+       "Nên ΔAED ᔕ ΔBEC (c.g.c)"
+      ],
+      "nhieu": [
+       "Nên ΔAEB ᔕ ΔCED (g.g), suy ra AE/CE = BE/DE",
+       "Nên ΔAED ᔕ ΔBEC (g.g)"
+      ]
+     }
     },
     {
      "ma": "9.16",
      "trang": 92,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Cho hình thang ABCD (AB // CD) và các điểm M, N lần lượt trên cạnh AD và BC sao cho 2AM = MD, 2BN = NC. Biết rằng AB = 5 cm, CD = 6 cm, hãy tính độ dài đoạn thẳng MN."
+     "de": "Cho hình thang ABCD (AB // CD) và các điểm M, N lần lượt trên cạnh AD và BC sao cho 2AM = MD, 2BN = NC. Biết rằng AB = 5 cm, CD = 6 cm, hãy tính độ dài đoạn thẳng MN.",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "dap": [
+       "16/3",
+       "16/3cm"
+      ],
+      "phim": [
+       "cm"
+      ],
+      "nhieu": [
+       "m",
+       "cm²"
+      ],
+      "loi_giai": [
+       "Kẻ ME // CD (E thuộc AC) thì AE/EC = AM/MD = 1/2 = BN/NC, nên NE // AB // CD; suy ra M, E, N thẳng hàng",
+       "ΔAME ᔕ ΔADC (ME // DC) nên ME/DC = AM/AD = 1/3, ME = 6 : 3 = 2",
+       "ΔCNE ᔕ ΔCBA (NE // AB) nên NE/AB = CN/CB = 2/3, NE = 5 · 2 : 3 = 10/3",
+       "MN = ME + EN = 2 + 10/3 = 16/3"
+      ]
+     }
     }
    ]
   },
@@ -8767,98 +9849,594 @@
      "trang": 94,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Tìm độ dài x và y trong Hình 9.34 (SGK trang 94): tam giác vuông thứ nhất có hai cạnh góc vuông đều bằng 1 và cạnh huyền là x; tam giác vuông thứ hai có một cạnh góc vuông bằng 1, cạnh huyền bằng √5 và cạnh góc vuông còn lại là y."
+     "de": "Tìm độ dài x và y trong Hình 9.34 (SGK trang 94): tam giác vuông thứ nhất có hai cạnh góc vuông đều bằng 1 và cạnh huyền là x; tam giác vuông thứ hai có một cạnh góc vuông bằng 1, cạnh huyền bằng √5 và cạnh góc vuông còn lại là y.",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "hoi": "Tìm độ dài x và y: tam giác vuông thứ nhất có hai cạnh góc vuông đều bằng 1 và cạnh huyền là x; tam giác vuông thứ hai có một cạnh góc vuông bằng 1, cạnh huyền bằng √5 và cạnh góc vuông còn lại là y.\n(Gõ x rồi y, cách nhau bằng dấu ;)",
+      "dap": [
+       "√2;2"
+      ],
+      "phim": [
+       "√",
+       ";"
+      ],
+      "nhieu": [
+       "²",
+       "³"
+      ],
+      "loi_giai": [
+       "x² = 1² + 1² = 2; x = √2",
+       "y² = (√5)² − 1² = 5 − 1 = 4; y = 2"
+      ]
+     }
     },
     {
      "ma": "Luyện tập 1 (tr.95)",
      "trang": 95,
      "nhom": "Luyện tập",
      "dang": "CAU_NHO",
-     "de": "Trên giấy kẻ ô vuông (cạnh ô vuông bằng 1 cm), cho các điểm A, B, C như Hình 9.35 (SGK trang 95). Tính độ dài các cạnh của tam giác ABC."
+     "de": "Trên giấy kẻ ô vuông (cạnh ô vuông bằng 1 cm), cho các điểm A, B, C như Hình 9.35 (SGK trang 95). Tính độ dài các cạnh của tam giác ABC.",
+     "hinh": [
+      "toan8t2/LT1-tr95.webp"
+     ],
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "hoi": "Trên giấy kẻ ô vuông (cạnh ô vuông bằng 1 cm), cho các điểm A, B, C như Hình 9.35. Tính độ dài các cạnh của tam giác ABC.\n(Gõ AB, BC, CA theo thứ tự, tính bằng cm, cách nhau bằng dấu ;)",
+      "dap": [
+       "√13;√10;√5"
+      ],
+      "phim": [
+       "√",
+       ";"
+      ],
+      "nhieu": [
+       "²",
+       "cm"
+      ],
+      "loi_giai": [
+       "AB là cạnh huyền của tam giác vuông có hai cạnh góc vuông dài 3 ô và 2 ô: AB² = 3² + 2² = 13; AB = √13",
+       "BC là cạnh huyền của tam giác vuông có hai cạnh góc vuông dài 1 ô và 3 ô: BC² = 1² + 3² = 10; BC = √10",
+       "CA là cạnh huyền của tam giác vuông có hai cạnh góc vuông dài 2 ô và 1 ô: CA² = 2² + 1² = 5; CA = √5"
+      ]
+     }
     },
     {
      "ma": "Vận dụng 1 (tr.95)",
      "trang": 95,
      "nhom": "Vận dụng",
      "dang": "CAU_NHO",
-     "de": "Em hãy giải bài toán mở đầu: bạn Lan vẽ một hình chữ nhật với chiều rộng và chiều dài lần lượt là 1; 3 (đơn vị độ dài), sau đó đặt lên trục số đoạn OM có độ dài bằng độ dài đường chéo hình chữ nhật vừa vẽ (trục số nằm ngang và M nằm bên phải gốc O). Hỏi điểm M biểu diễn số thực nào?"
+     "de": "Em hãy giải bài toán mở đầu: bạn Lan vẽ một hình chữ nhật với chiều rộng và chiều dài lần lượt là 1; 3 (đơn vị độ dài), sau đó đặt lên trục số đoạn OM có độ dài bằng độ dài đường chéo hình chữ nhật vừa vẽ (trục số nằm ngang và M nằm bên phải gốc O). Hỏi điểm M biểu diễn số thực nào? Biết rằng đơn vị độ dài trên trục số và đơn vị độ dài đo kích thước hình chữ nhật là như nhau.",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "hoi": "Em hãy giải bài toán mở đầu: bạn Lan vẽ một hình chữ nhật với chiều rộng và chiều dài lần lượt là 1; 3 (đơn vị độ dài), sau đó đặt lên trục số đoạn OM có độ dài bằng độ dài đường chéo hình chữ nhật vừa vẽ (trục số nằm ngang và M nằm bên phải gốc O). Hỏi điểm M biểu diễn số thực nào? Biết rằng đơn vị độ dài trên trục số và đơn vị độ dài đo kích thước hình chữ nhật là như nhau.",
+      "dap": [
+       "√10"
+      ],
+      "phim": [
+       "√"
+      ],
+      "nhieu": [
+       "²",
+       "π"
+      ],
+      "loi_giai": [
+       "OM² = 1² + 3² = 10; OM = √10",
+       "M nằm bên phải gốc O nên M biểu diễn số thực √10"
+      ]
+     }
     },
     {
      "ma": "Luyện tập 2 (tr.95)",
      "trang": 95,
      "nhom": "Luyện tập",
      "dang": "CAU_NHO",
-     "de": "Cho các tam giác vuông với kích thước như Hình 9.37 (SGK trang 95). Hãy tính độ dài x và cho biết những tam giác nào đồng dạng, viết đúng kí hiệu đồng dạng."
+     "de": "Cho các tam giác vuông với kích thước như Hình 9.37 (SGK trang 95). Hãy tính độ dài x và cho biết những tam giác nào đồng dạng, viết đúng kí hiệu đồng dạng.",
+     "hinh": [
+      "toan8t2/LT2-tr95.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "hoi": "Cho các tam giác vuông với kích thước như Hình 9.37. Hãy tính độ dài x và cho biết những tam giác nào đồng dạng, viết đúng kí hiệu đồng dạng.",
+      "dong": [
+       {
+        "chu": "x = {0}",
+        "o": [
+         {
+          "dung": [
+           "5"
+          ],
+          "sai": [
+           "√313",
+           "1",
+           "25"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "ΔABC và ΔDEF: ΔABC ᔕ {0}",
+        "o": [
+         {
+          "dung": [
+           "ΔEDF"
+          ],
+          "sai": [
+           "ΔDEF",
+           "ΔEFD"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "ΔABC và ΔMNP: ΔABC ᔕ {0}",
+        "o": [
+         {
+          "dung": [
+           "ΔMPN"
+          ],
+          "sai": [
+           "ΔMNP",
+           "ΔPMN"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "ΔDEF và ΔMNP: ΔEDF ᔕ {0}",
+        "o": [
+         {
+          "dung": [
+           "ΔMPN"
+          ],
+          "sai": [
+           "ΔMNP",
+           "ΔNMP"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "Vận dụng 2 (tr.96)",
      "trang": 96,
      "nhom": "Vận dụng",
      "dang": "CAU_NHO",
-     "de": "Để đón được một người khách, một xe taxi xuất phát từ vị trí điểm A, chạy dọc một con phố dài 3 km đến điểm B thì rẽ vuông góc sang trái, chạy được 3 km đến điểm C thì tài xế cho xe rẽ vuông góc sang phải, chạy 1 km nữa thì gặp người khách tại điểm D (Hình 9.38, SGK trang 96). Hỏi lúc đầu, khoảng cách từ chỗ người lái xe đến người khách là bao nhiêu kilômét?"
+     "de": "Để đón được một người khách, một xe taxi xuất phát từ vị trí điểm A, chạy dọc một con phố dài 3 km đến điểm B thì rẽ vuông góc sang trái, chạy được 3 km đến điểm C thì tài xế cho xe rẽ vuông góc sang phải, chạy 1 km nữa thì gặp người khách tại điểm D (Hình 9.38, SGK trang 96). Hỏi lúc đầu, khoảng cách từ chỗ người lái xe đến người khách là bao nhiêu kilômét?",
+     "hinh": [
+      "toan8t2/VD2-tr96.webp"
+     ],
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "hoi": "Để đón được một người khách, một xe taxi xuất phát từ vị trí điểm A, chạy dọc một con phố dài 3 km đến điểm B thì rẽ vuông góc sang trái, chạy được 3 km đến điểm C thì tài xế cho xe rẽ vuông góc sang phải, chạy 1 km nữa thì gặp người khách tại điểm D (Hình 9.38). Hỏi lúc đầu, khoảng cách từ chỗ người lái xe đến người khách là bao nhiêu kilômét?",
+      "dap": [
+       "5",
+       "5km"
+      ],
+      "phim": [
+       "km"
+      ],
+      "nhieu": [
+       "m",
+       "km²"
+      ],
+      "loi_giai": [
+       "Gọi M là chân đường vuông góc hạ từ A xuống đường thẳng DC (Hình 9.38) thì ABCM là hình vuông: AM = BC = 3, CM = AB = 3",
+       "MD = MC + CD = 3 + 1 = 4",
+       "AD² = AM² + MD² = 3² + 4² = 25; AD = 5"
+      ]
+     }
     },
     {
      "ma": "Câu hỏi 2 (tr.96)",
      "trang": 96,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Cho Hình 9.40 (SGK trang 96), trong các đoạn thẳng AC, AD, AE, đoạn nào có độ dài lớn nhất, đoạn nào có độ dài nhỏ nhất?"
+     "de": "Cho Hình 9.40 (SGK trang 96), trong các đoạn thẳng AC, AD, AE, đoạn nào có độ dài lớn nhất, đoạn nào có độ dài nhỏ nhất?",
+     "hinh": [
+      "toan8t2/CH2-tr96.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "hoi": "Cho Hình 9.40, trong các đoạn thẳng AC, AD, AE, đoạn nào có độ dài lớn nhất, đoạn nào có độ dài nhỏ nhất?",
+      "dong": [
+       {
+        "chu": "Đoạn dài nhất: {0}",
+        "o": [
+         {
+          "dung": [
+           "AE"
+          ],
+          "sai": [
+           "AC",
+           "AD"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Đoạn ngắn nhất: {0}",
+        "o": [
+         {
+          "dung": [
+           "AD"
+          ],
+          "sai": [
+           "AC",
+           "AE"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Vì AD² = AH² + HD², AC² = AH² + HC², AE² = AH² + HE² và {0}",
+        "o": [
+         {
+          "dung": [
+           "HD < HC < HE"
+          ],
+          "sai": [
+           "HD > HC > HE",
+           "HD = HC = HE"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "Luyện tập 3 (tr.96)",
      "trang": 96,
      "nhom": "Luyện tập",
      "dang": "CAU_NHO",
-     "de": "Trước đây chúng ta thừa nhận định lí về trường hợp bằng nhau đặc biệt của hai tam giác vuông: \"Nếu một cạnh góc vuông và cạnh huyền của tam giác vuông này bằng một cạnh góc vuông và cạnh huyền của tam giác vuông kia thì hai tam giác vuông đó bằng nhau\". Áp dụng định lí Pythagore, em hãy chứng minh định lí trên."
+     "de": "Trước đây chúng ta thừa nhận định lí về trường hợp bằng nhau đặc biệt của hai tam giác vuông: \"Nếu một cạnh góc vuông và cạnh huyền của tam giác vuông này bằng một cạnh góc vuông và cạnh huyền của tam giác vuông kia thì hai tam giác vuông đó bằng nhau\". Áp dụng định lí Pythagore, em hãy chứng minh định lí trên.",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 4,
+      "hoi": "Trước đây chúng ta thừa nhận định lí về trường hợp bằng nhau đặc biệt của hai tam giác vuông: \"Nếu một cạnh góc vuông và cạnh huyền của tam giác vuông này bằng một cạnh góc vuông và cạnh huyền của tam giác vuông kia thì hai tam giác vuông đó bằng nhau\". Áp dụng định lí Pythagore, em hãy chứng minh định lí trên.\nGiả thiết: ΔABC, ΔA'B'C', góc A = góc A' = 90°, AB = A'B', BC = B'C'. Kết luận: ΔABC = ΔA'B'C'.",
+      "buoc": [
+       "ΔABC vuông tại A nên AC² = BC² − AB² (định lí Pythagore)",
+       "ΔA'B'C' vuông tại A' nên A'C'² = B'C'² − A'B'² (định lí Pythagore)",
+       "Vì AB = A'B', BC = B'C' nên AC² = A'C'², suy ra AC = A'C'",
+       "ΔABC và ΔA'B'C' có AB = A'B', BC = B'C', AC = A'C' nên ΔABC = ΔA'B'C' (c.c.c)"
+      ],
+      "nhieu": [
+       "ΔABC vuông tại A nên AC² = BC² + AB² (định lí Pythagore)",
+       "ΔABC và ΔA'B'C' có AB = A'B', góc A = góc A' = 90° nên ΔABC = ΔA'B'C'"
+      ],
+      "thu_tu_khac": [
+       [
+        1,
+        0,
+        2,
+        3
+       ]
+      ]
+     }
     },
     {
      "ma": "Thử thách nhỏ (tr.97)",
      "trang": 97,
      "nhom": "Thử thách nhỏ",
      "dang": "CAU_NHO",
-     "de": "Hãy tính chiều cao theo đơn vị centimét của một tam giác đều cạnh 2 cm (làm tròn kết quả đến chữ số thập phân thứ hai)."
+     "de": "Hãy tính chiều cao theo đơn vị centimét của một tam giác đều cạnh 2 cm (làm tròn kết quả đến chữ số thập phân thứ hai).",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "dap": [
+       "1,73",
+       "1,73cm"
+      ],
+      "phim": [
+       "cm"
+      ],
+      "nhieu": [
+       "m",
+       "cm²",
+       "√"
+      ],
+      "loi_giai": [
+       "Gọi AH là đường cao của tam giác đều ABC cạnh 2 thì H là trung điểm của BC: HC = 2 : 2 = 1",
+       "AH² = AC² − HC² = 2² − 1² = 3",
+       "AH = √3 ≈ 1,73"
+      ]
+     }
     },
     {
      "ma": "9.17",
      "trang": 97,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Cho tam giác ABC vuông tại A. Trong các khẳng định sau đây, khẳng định nào đúng, khẳng định nào sai? a) AB^2 + BC^2 = AC^2. b) BC^2 − AC^2 = AB^2. c) AC^2 + BC^2 = AB^2. d) BC^2 − AB^2 = AC^2."
+     "de": "Cho tam giác ABC vuông tại A. Trong các khẳng định sau đây, khẳng định nào đúng, khẳng định nào sai? a) AB^2 + BC^2 = AC^2. b) BC^2 − AC^2 = AB^2. c) AC^2 + BC^2 = AB^2. d) BC^2 − AB^2 = AC^2.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "hoi": "Cho tam giác ABC vuông tại A. Trong các khẳng định sau đây, khẳng định nào đúng, khẳng định nào sai?",
+      "dong": [
+       {
+        "chu": "a) AB² + BC² = AC²: {0}",
+        "o": [
+         {
+          "dung": [
+           "Sai"
+          ],
+          "sai": [
+           "Đúng"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "b) BC² − AC² = AB²: {0}",
+        "o": [
+         {
+          "dung": [
+           "Đúng"
+          ],
+          "sai": [
+           "Sai"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "c) AC² + BC² = AB²: {0}",
+        "o": [
+         {
+          "dung": [
+           "Sai"
+          ],
+          "sai": [
+           "Đúng"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "d) BC² − AB² = AC²: {0}",
+        "o": [
+         {
+          "dung": [
+           "Đúng"
+          ],
+          "sai": [
+           "Sai"
+          ],
+          "hai": true
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "9.18",
      "trang": 97,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Những bộ ba số đo nào dưới đây là độ dài ba cạnh của một tam giác vuông? a) 1 cm, 1 cm, 2 cm. b) 2 cm, 4 cm, 20 cm. c) 5 cm, 4 cm, 3 cm. d) 2 cm, 2 cm, 2√2 cm."
+     "de": "Những bộ ba số đo nào dưới đây là độ dài ba cạnh của một tam giác vuông? a) 1 cm, 1 cm, 2 cm. b) 2 cm, 4 cm, 20 cm. c) 5 cm, 4 cm, 3 cm. d) 2 cm, 2 cm, 2√2 cm.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "hoi": "Những bộ ba số đo nào dưới đây là độ dài ba cạnh của một tam giác vuông?",
+      "dong": [
+       {
+        "chu": "a) 1 cm, 1 cm, 2 cm: {0}",
+        "o": [
+         {
+          "dung": [
+           "Không phải"
+          ],
+          "sai": [
+           "Là ba cạnh của tam giác vuông"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "b) 2 cm, 4 cm, 20 cm: {0}",
+        "o": [
+         {
+          "dung": [
+           "Không phải"
+          ],
+          "sai": [
+           "Là ba cạnh của tam giác vuông"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "c) 5 cm, 4 cm, 3 cm: {0}",
+        "o": [
+         {
+          "dung": [
+           "Là ba cạnh của tam giác vuông"
+          ],
+          "sai": [
+           "Không phải"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "d) 2 cm, 2 cm, 2√2 cm: {0}",
+        "o": [
+         {
+          "dung": [
+           "Là ba cạnh của tam giác vuông"
+          ],
+          "sai": [
+           "Không phải"
+          ],
+          "hai": true
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "9.19",
      "trang": 97,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Tính các độ dài x, y, z, t trong Hình 9.43 (SGK trang 97)."
+     "de": "Tính các độ dài x, y, z, t trong Hình 9.43 (SGK trang 97).",
+     "hinh": [
+      "toan8t2/9.19.webp"
+     ],
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "hoi": "Tính các độ dài x, y, z, t trong Hình 9.43.\n(Gõ x, y, z, t theo thứ tự, cách nhau bằng dấu ;)",
+      "dap": [
+       "2√5;3;5;√5",
+       "√20;3;5;√5"
+      ],
+      "phim": [
+       "√",
+       ";"
+      ],
+      "nhieu": [
+       "²",
+       "cm"
+      ],
+      "loi_giai": [
+       "x² = 2² + 4² = 20; x = √20 = 2√5",
+       "y² = 5² − 4² = 9; y = 3",
+       "z² = (√5)² + (2√5)² = 5 + 20 = 25; z = 5",
+       "t² = 1² + 2² = 5; t = √5"
+      ]
+     }
     },
     {
      "ma": "9.20",
      "trang": 97,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Cho tam giác ABC cân tại đỉnh A, chiều cao AH = 3 cm và cạnh đáy BC = 10 cm. Hãy tính độ dài các cạnh bên AB, AC."
+     "de": "Cho tam giác ABC cân tại đỉnh A, chiều cao AH = 3 cm và cạnh đáy BC = 10 cm. Hãy tính độ dài các cạnh bên AB, AC.",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "hoi": "Cho tam giác ABC cân tại đỉnh A, chiều cao AH = 3 cm và cạnh đáy BC = 10 cm. Hãy tính độ dài các cạnh bên AB, AC.\n(Hai cạnh bên bằng nhau, gõ độ dài AB, tính bằng cm.)",
+      "dap": [
+       "√34",
+       "√34cm"
+      ],
+      "phim": [
+       "√",
+       "cm"
+      ],
+      "nhieu": [
+       "m",
+       "cm²",
+       "²"
+      ],
+      "loi_giai": [
+       "ΔABC cân tại A nên đường cao AH cũng là đường trung tuyến: HB = 10 : 2 = 5",
+       "AB² = AH² + HB² = 3² + 5² = 34; AB = √34",
+       "AC = AB = √34"
+      ]
+     }
     },
     {
      "ma": "9.21",
      "trang": 97,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Hãy tính diện tích của một hình chữ nhật có chiều rộng 8 cm và đường chéo dài 17 cm."
+     "de": "Hãy tính diện tích của một hình chữ nhật có chiều rộng 8 cm và đường chéo dài 17 cm.",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "dap": [
+       "120",
+       "120cm²"
+      ],
+      "phim": [
+       "cm²"
+      ],
+      "nhieu": [
+       "cm",
+       "m²"
+      ],
+      "loi_giai": [
+       "Chiều dài a của hình chữ nhật thoả mãn a² = 17² − 8² = 225; a = 15",
+       "Diện tích = 8 · 15 = 120"
+      ]
+     }
     },
     {
      "ma": "9.22",
      "trang": 97,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Chú cún bị xích bởi một sợi dây dài 6 m để canh một mảnh vườn giới hạn bởi các điểm A, B, E, F, D trong hình vuông ABCD có cạnh 5 m như Hình 9.44 (SGK trang 97). Đầu xích buộc cố định tại điểm A của mảnh vườn. Hỏi chú cún có thể chạy đến tất cả các điểm của mảnh vườn mình phải canh không?"
+     "de": "Chú cún bị xích bởi một sợi dây dài 6 m để canh một mảnh vườn giới hạn bởi các điểm A, B, E, F, D trong hình vuông ABCD có cạnh 5 m như Hình 9.44 (SGK trang 97). Đầu xích buộc cố định tại điểm A của mảnh vườn. Hỏi chú cún có thể chạy đến tất cả các điểm của mảnh vườn mình phải canh không?",
+     "hinh": [
+      "toan8t2/9.22.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "hoi": "Chú cún bị xích bởi một sợi dây dài 6 m để canh một mảnh vườn giới hạn bởi các điểm A, B, E, F, D trong hình vuông ABCD có cạnh 5 m như Hình 9.44. Đầu xích buộc cố định tại điểm A của mảnh vườn. Hỏi chú cún có thể chạy đến tất cả các điểm của mảnh vườn mình phải canh không?",
+      "dong": [
+       {
+        "chu": "AE = {0}",
+        "o": [
+         {
+          "dung": [
+           "√34 m, ngắn hơn 6 m"
+          ],
+          "sai": [
+           "√34 m, dài hơn 6 m",
+           "8 m, dài hơn 6 m"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "AF = {0}",
+        "o": [
+         {
+          "dung": [
+           "√41 m, dài hơn 6 m"
+          ],
+          "sai": [
+           "√41 m, ngắn hơn 6 m",
+           "9 m, dài hơn 6 m"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Chú cún chạy được đến mọi điểm của mảnh vườn không? {0}",
+        "o": [
+         {
+          "dung": [
+           "Không, vì không tới được điểm F"
+          ],
+          "sai": [
+           "Có",
+           "Không, vì không tới được điểm E"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     }
    ]
   },
@@ -8871,84 +10449,510 @@
      "trang": 98,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Hãy chỉ ra hai cặp tam giác vuông đồng dạng trong Hình 9.46 (SGK trang 98)."
+     "de": "Hãy chỉ ra hai cặp tam giác vuông đồng dạng trong Hình 9.46 (SGK trang 98).",
+     "hinh": [
+      "toan8t2/CH1-tr98.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "Hãy chỉ ra hai cặp tam giác vuông đồng dạng trong Hình 9.46.",
+      "dong": [
+       {
+        "chu": "ΔABC ᔕ {0}",
+        "o": [
+         {
+          "dung": [
+           "ΔXZY"
+          ],
+          "sai": [
+           "ΔXYZ",
+           "ΔZXY",
+           "ΔMNP"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "ΔDEF ᔕ {0}",
+        "o": [
+         {
+          "dung": [
+           "ΔGKH"
+          ],
+          "sai": [
+           "ΔGHK",
+           "ΔKGH",
+           "ΔMPN"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "Luyện tập 1 (tr.99)",
      "trang": 99,
      "nhom": "Luyện tập",
      "dang": "CAU_NHO",
-     "de": "Trở lại tình huống mở đầu (bóng cột cờ dài 6 m, bóng của Việt dài 70 cm, Việt cao 1,4 m), ta thấy chiếc cột cùng với bóng của nó tạo thành hai cạnh góc vuông của tam giác ABC vuông tại đỉnh A, bạn Việt và bóng của mình cũng được xem là hai cạnh góc vuông của tam giác A'B'C' vuông tại đỉnh A' (Hình 9.48). Vì các tia sáng Mặt Trời tạo với hai cái bóng các góc bằng nhau nên góc B = góc B'. a) Hai tam giác vuông ABC và A'B'C' có đồng dạng với nhau không? b) Bạn Nam đã tính chiều cao cột cờ, tức là độ dài đoạn thẳng AC như thế nào và kết quả là bao nhiêu?"
+     "de": "Trở lại tình huống mở đầu (bóng cột cờ dài 6 m, bóng của Việt dài 70 cm, Việt cao 1,4 m), ta thấy chiếc cột cùng với bóng của nó tạo thành hai cạnh góc vuông của tam giác ABC vuông tại đỉnh A, bạn Việt và bóng của mình cũng được xem là hai cạnh góc vuông của tam giác A'B'C' vuông tại đỉnh A' (Hình 9.48). Vì các tia sáng Mặt Trời tạo với hai cái bóng các góc bằng nhau nên góc B = góc B'. a) Hai tam giác vuông ABC và A'B'C' có đồng dạng với nhau không? b) Bạn Nam đã tính chiều cao cột cờ, tức là độ dài đoạn thẳng AC như thế nào và kết quả là bao nhiêu?",
+     "hinh": [
+      "toan8t2/LT1-tr99.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "Trở lại tình huống mở đầu: bóng của cột cờ dài 6 m, bóng của bạn Việt dài 70 cm, Việt cao 1,4 m. Chiếc cột cùng với bóng của nó tạo thành hai cạnh góc vuông của tam giác ABC vuông tại đỉnh A, bạn Việt và bóng của mình cũng được xem là hai cạnh góc vuông của tam giác A'B'C' vuông tại đỉnh A' (Hình 9.48). Vì các tia sáng Mặt Trời tạo với hai cái bóng các góc bằng nhau nên góc B = góc B'.\na) Hai tam giác vuông ABC và A'B'C' có đồng dạng với nhau không?\nb) Bạn Nam đã tính chiều cao cột cờ, tức là độ dài đoạn thẳng AC như thế nào và kết quả là bao nhiêu?",
+      "dong": [
+       {
+        "chu": "a) {0}",
+        "o": [
+         {
+          "dung": [
+           "Có, vì hai tam giác vuông có góc nhọn B = góc B'"
+          ],
+          "sai": [
+           "Không, vì chưa biết cặp cạnh nào tỉ lệ",
+           "Có, vì AB/A'B' = AC/A'C'"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "b) AC/A'C' = AB/A'B' nên AC = {0}",
+        "o": [
+         {
+          "dung": [
+           "6 · 1,4 : 0,7 = 12 (m)"
+          ],
+          "sai": [
+           "6 · 0,7 : 1,4 = 3 (m)",
+           "6 · 1,4 : 70 = 0,12 (m)"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "Thử thách nhỏ (tr.100)",
      "trang": 100,
      "nhom": "Thử thách nhỏ",
      "dang": "CAU_NHO",
-     "de": "Một người đo chiều cao của một cái cây bằng cách cắm một chiếc cọc xuống đất, cọc cao 2,4 m và cách vị trí gốc cây 19 m. Người đó đứng cách xa chiếc cọc 1 m và nhìn thấy đỉnh cọc thẳng với đỉnh của cây. Hãy tính chiều cao của cây, biết rằng khoảng cách từ chân đến mắt người ấy là 1,6 m (Hình 9.49, SGK trang 100)."
+     "de": "Một người đo chiều cao của một cái cây bằng cách cắm một chiếc cọc xuống đất, cọc cao 2,4 m và cách vị trí gốc cây 19 m. Người đó đứng cách xa chiếc cọc 1 m và nhìn thấy đỉnh cọc thẳng với đỉnh của cây. Hãy tính chiều cao của cây, biết rằng khoảng cách từ chân đến mắt người ấy là 1,6 m (Hình 9.49, SGK trang 100).",
+     "hinh": [
+      "toan8t2/TTN-tr100.webp"
+     ],
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "hoi": "Một người đo chiều cao của một cái cây bằng cách cắm một chiếc cọc xuống đất, cọc cao 2,4 m và cách vị trí gốc cây 19 m. Người đó đứng cách xa chiếc cọc 1 m và nhìn thấy đỉnh cọc thẳng với đỉnh của cây. Hãy tính chiều cao của cây (tính bằng mét), biết rằng khoảng cách từ chân đến mắt người ấy là 1,6 m (Hình 9.49).",
+      "dap": [
+       "17,6",
+       "17,6m"
+      ],
+      "phim": [
+       "m"
+      ],
+      "nhieu": [
+       "cm",
+       "m²"
+      ],
+      "loi_giai": [
+       "CX = 2,4 − 1,6 = 0,8; MX = 1; MY = 1 + 19 = 20",
+       "CX // AY nên ΔMXC ᔕ ΔMYA, suy ra AY/CX = MY/MX",
+       "AY = 0,8 · 20 : 1 = 16",
+       "AB = AY + YB = 16 + 1,6 = 17,6"
+      ]
+     }
     },
     {
      "ma": "Câu hỏi 2 (tr.101)",
      "trang": 101,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Hãy chỉ ra các cặp tam giác vuông đồng dạng với nhau trong Hình 9.52 (SGK trang 101), viết đúng kí hiệu đồng dạng."
+     "de": "Hãy chỉ ra các cặp tam giác vuông đồng dạng với nhau trong Hình 9.52 (SGK trang 101), viết đúng kí hiệu đồng dạng.",
+     "hinh": [
+      "toan8t2/CH2-tr101.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "hoi": "Hãy chỉ ra các cặp tam giác vuông đồng dạng với nhau trong Hình 9.52, viết đúng kí hiệu đồng dạng.",
+      "dong": [
+       {
+        "chu": "Cặp tam giác vuông đồng dạng: ΔABC ᔕ {0}",
+        "o": [
+         {
+          "dung": [
+           "ΔDFE"
+          ],
+          "sai": [
+           "ΔDEF",
+           "ΔMNP",
+           "ΔMPN"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Vì {0}",
+        "o": [
+         {
+          "dung": [
+           "AC/DE = BC/FE = 3/2"
+          ],
+          "sai": [
+           "AC/DF = BC/FE",
+           "AC/DE = BC/DF"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Tam giác MNP: {0}",
+        "o": [
+         {
+          "dung": [
+           "không đồng dạng với ΔABC và ΔDEF"
+          ],
+          "sai": [
+           "đồng dạng với ΔABC",
+           "đồng dạng với ΔDEF"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "Luyện tập 2 (tr.102)",
      "trang": 102,
      "nhom": "Luyện tập",
      "dang": "CAU_NHO",
-     "de": "Một ngôi nhà với hai mái lệch AB, CD được thiết kế như Hình 9.54 (SGK trang 102) sao cho CD = 6 m, AB = 4 m, HA = 2 m, AC = 1 m. Chứng tỏ rằng góc ABD = góc CDB."
+     "de": "Một ngôi nhà với hai mái lệch AB, CD được thiết kế như Hình 9.54 (SGK trang 102) sao cho CD = 6 m, AB = 4 m, HA = 2 m, AC = 1 m. Chứng tỏ rằng góc ABD = góc CDB.",
+     "hinh": [
+      "toan8t2/LT2-tr102.webp"
+     ],
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 4,
+      "hoi": "Một ngôi nhà với hai mái lệch AB, CD được thiết kế như Hình 9.54 sao cho CD = 6 m, AB = 4 m, HA = 2 m, AC = 1 m (C, A, H thẳng hàng và CH ⊥ BD tại H). Chứng tỏ rằng góc ABD = góc CDB.",
+      "buoc": [
+       "CH = CA + AH = 1 + 2 = 3",
+       "AB/CD = 4/6 = 2/3; AH/CH = 2/3; suy ra AB/CD = AH/CH",
+       "Hai tam giác ABH và CDH vuông tại H có cạnh huyền và một cạnh góc vuông tỉ lệ (AB/CD = AH/CH) nên ΔABH ᔕ ΔCDH",
+       "Suy ra góc ABH = góc CDH, tức là góc ABD = góc CDB"
+      ],
+      "nhieu": [
+       "CH = AH − CA = 2 − 1 = 1",
+       "Hai tam giác ABH và CDH vuông tại H có AB/CD = AH/CH nên ΔABH ᔕ ΔDCH"
+      ]
+     }
     },
     {
      "ma": "Vận dụng (tr.102)",
      "trang": 102,
      "nhom": "Vận dụng",
      "dang": "CAU_NHO",
-     "de": "Bác Minh muốn thay chiếc ti vi có chiều ngang của màn hình là 72 cm (loại 32 inch) bằng chiếc ti vi mới loại 55 inch có cùng tỉ lệ khung hình (tỉ lệ giữa hai kích thước màn hình). Hỏi nếu khoảng trống đặt ti vi là một hình vuông cạnh 1 m thì có thể đặt chiếc ti vi mới vào đó không?"
+     "de": "Bác Minh muốn thay chiếc ti vi có chiều ngang của màn hình là 72 cm (loại 32 inch) bằng chiếc ti vi mới loại 55 inch có cùng tỉ lệ khung hình (tỉ lệ giữa hai kích thước màn hình). Hỏi nếu khoảng trống đặt ti vi là một hình vuông cạnh 1 m thì có thể đặt chiếc ti vi mới vào đó không?",
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "hoi": "Bác Minh muốn thay chiếc ti vi có chiều ngang của màn hình là 72 cm (loại 32 inch) bằng chiếc ti vi mới loại 55 inch có cùng tỉ lệ khung hình (tỉ lệ giữa hai kích thước màn hình). Hỏi nếu khoảng trống đặt ti vi là một hình vuông cạnh 1 m thì có thể đặt chiếc ti vi mới vào đó không?\n(Loại 32 inch, 55 inch là nói độ dài đường chéo màn hình.)",
+      "dong": [
+       {
+        "chu": "Tam giác vuông tạo bởi hai cạnh và đường chéo màn hình mới đồng dạng với tam giác của màn hình cũ theo tỉ số {0}",
+        "o": [
+         {
+          "dung": [
+           "55/32"
+          ],
+          "sai": [
+           "32/55",
+           "55 − 32"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Chiều ngang màn hình mới: {0}",
+        "o": [
+         {
+          "dung": [
+           "72 · 55 : 32 = 123,75 (cm)"
+          ],
+          "sai": [
+           "72 · 32 : 55 ≈ 41,9 (cm)",
+           "72 + (55 − 32) = 95 (cm)"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Đặt được ti vi mới vào khoảng trống hình vuông cạnh 1 m không? {0}",
+        "o": [
+         {
+          "dung": [
+           "Không được"
+          ],
+          "sai": [
+           "Được"
+          ],
+          "hai": true
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "9.23",
      "trang": 102,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Điều kiện nào dưới đây chứng tỏ rằng hai tam giác vuông đồng dạng? a) Một góc nhọn của tam giác này bằng một góc nhọn của tam giác kia. b) Cạnh góc vuông và cạnh huyền của tam giác này tỉ lệ với cạnh góc vuông và cạnh huyền của tam giác kia. c) Một cạnh góc vuông của tam giác này bằng một cạnh góc vuông của tam giác kia. d) Hai cạnh góc vuông của tam giác này tỉ lệ với hai cạnh góc vuông của tam giác kia."
+     "de": "Điều kiện nào dưới đây chứng tỏ rằng hai tam giác vuông đồng dạng? a) Một góc nhọn của tam giác này bằng một góc nhọn của tam giác kia. b) Cạnh góc vuông và cạnh huyền của tam giác này tỉ lệ với cạnh góc vuông và cạnh huyền của tam giác kia. c) Một cạnh góc vuông của tam giác này bằng một cạnh góc vuông của tam giác kia. d) Hai cạnh góc vuông của tam giác này tỉ lệ với hai cạnh góc vuông của tam giác kia.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "hoi": "Điều kiện nào dưới đây chứng tỏ rằng hai tam giác vuông đồng dạng?",
+      "dong": [
+       {
+        "chu": "a) Một góc nhọn của tam giác này bằng một góc nhọn của tam giác kia: {0}",
+        "o": [
+         {
+          "dung": [
+           "Chứng tỏ được"
+          ],
+          "sai": [
+           "Chưa chứng tỏ được"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "b) Cạnh góc vuông và cạnh huyền của tam giác này tỉ lệ với cạnh góc vuông và cạnh huyền của tam giác kia: {0}",
+        "o": [
+         {
+          "dung": [
+           "Chứng tỏ được"
+          ],
+          "sai": [
+           "Chưa chứng tỏ được"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "c) Một cạnh góc vuông của tam giác này bằng một cạnh góc vuông của tam giác kia: {0}",
+        "o": [
+         {
+          "dung": [
+           "Chưa chứng tỏ được"
+          ],
+          "sai": [
+           "Chứng tỏ được"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "d) Hai cạnh góc vuông của tam giác này tỉ lệ với hai cạnh góc vuông của tam giác kia: {0}",
+        "o": [
+         {
+          "dung": [
+           "Chứng tỏ được"
+          ],
+          "sai": [
+           "Chưa chứng tỏ được"
+          ],
+          "hai": true
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "9.24",
      "trang": 103,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Cặp tam giác vuông nào đồng dạng với nhau trong Hình 9.55 (SGK trang 103)?"
+     "de": "Cặp tam giác vuông nào đồng dạng với nhau trong Hình 9.55 (SGK trang 103)?",
+     "hinh": [
+      "toan8t2/9.24.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "hoi": "Cặp tam giác vuông nào đồng dạng với nhau trong Hình 9.55?",
+      "dong": [
+       {
+        "chu": "Cặp a): {0}",
+        "o": [
+         {
+          "dung": [
+           "Không đồng dạng"
+          ],
+          "sai": [
+           "Đồng dạng"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Cặp b): {0}",
+        "o": [
+         {
+          "dung": [
+           "Không đồng dạng"
+          ],
+          "sai": [
+           "Đồng dạng"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Cặp c): {0}",
+        "o": [
+         {
+          "dung": [
+           "Không đồng dạng"
+          ],
+          "sai": [
+           "Đồng dạng"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Cặp d): {0}",
+        "o": [
+         {
+          "dung": [
+           "Đồng dạng"
+          ],
+          "sai": [
+           "Không đồng dạng"
+          ],
+          "hai": true
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "9.25",
      "trang": 103,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Cho góc nhọn xOy, các điểm A, N nằm trên tia Ox, các điểm B, M nằm trên tia Oy sao cho AM, BN lần lượt vuông góc với Oy, Ox. Chứng minh rằng ΔOAM ᔕ ΔOBN."
+     "de": "Cho góc nhọn xOy, các điểm A, N nằm trên tia Ox, các điểm B, M nằm trên tia Oy sao cho AM, BN lần lượt vuông góc với Oy, Ox. Chứng minh rằng ΔOAM ᔕ ΔOBN.",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 3,
+      "buoc": [
+       "AM ⊥ Oy nên ΔOAM vuông tại M",
+       "BN ⊥ Ox nên ΔOBN vuông tại N",
+       "Hai tam giác vuông OAM và OBN có chung góc nhọn O nên ΔOAM ᔕ ΔOBN"
+      ],
+      "nhieu": [
+       "AM ⊥ Oy nên ΔOAM vuông tại A",
+       "Hai tam giác vuông OAM và OBN có chung góc nhọn O nên ΔOAM ᔕ ΔONB"
+      ],
+      "thu_tu_khac": [
+       [
+        1,
+        0,
+        2
+       ]
+      ]
+     }
     },
     {
      "ma": "9.26",
      "trang": 103,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Cho hai hình chữ nhật ABCD và A'B'C'D' thoả mãn AC = 3AB, B'D' = 3A'B'. a) Chứng minh rằng ΔABC ᔕ ΔA'B'C'. b) Nếu A'B' = 2AB và diện tích hình chữ nhật ABCD là 2 m^2 thì diện tích hình chữ nhật A'B'C'D' là bao nhiêu?"
+     "de": "Cho hai hình chữ nhật ABCD và A'B'C'D' thoả mãn AC = 3AB, B'D' = 3A'B'. a) Chứng minh rằng ΔABC ᔕ ΔA'B'C'. b) Nếu A'B' = 2AB và diện tích hình chữ nhật ABCD là 2 m^2 thì diện tích hình chữ nhật A'B'C'D' là bao nhiêu?",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 5,
+      "hoi": "Cho hai hình chữ nhật ABCD và A'B'C'D' thoả mãn AC = 3AB, B'D' = 3A'B'.\na) Chứng minh rằng ΔABC ᔕ ΔA'B'C'.\nb) Nếu A'B' = 2AB và diện tích hình chữ nhật ABCD là 2 m² thì diện tích hình chữ nhật A'B'C'D' là bao nhiêu?",
+      "buoc": [
+       "a) Hai đường chéo của hình chữ nhật bằng nhau nên A'C' = B'D' = 3A'B'",
+       "Suy ra AB/AC = 1/3 = A'B'/A'C', hay AB/A'B' = AC/A'C'",
+       "Hai tam giác ABC (vuông tại B) và A'B'C' (vuông tại B') có cạnh huyền và một cạnh góc vuông tỉ lệ nên ΔABC ᔕ ΔA'B'C'",
+       "b) A'B' = 2AB nên tỉ số đồng dạng của ΔA'B'C' với ΔABC là 2, suy ra B'C' = 2BC",
+       "Diện tích A'B'C'D' = A'B' · B'C' = 2AB · 2BC = 4 · diện tích ABCD = 4 · 2 = 8 (m²)"
+      ],
+      "nhieu": [
+       "Suy ra AB/AC = 1/3 = A'B'/B'C', hay AB/A'B' = AC/B'C'",
+       "Diện tích A'B'C'D' = 2 · diện tích ABCD = 2 · 2 = 4 (m²)"
+      ]
+     }
     },
     {
      "ma": "9.27",
      "trang": 103,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Cho ΔA'B'C' ᔕ ΔABC theo tỉ số k. Gọi A'H' và AH lần lượt là các đường cao đỉnh A' và A của tam giác A'B'C' và tam giác ABC. Chứng minh rằng: a) A'H'/AH = k; b) Diện tích tam giác A'B'C' bằng k^2 lần diện tích tam giác ABC."
+     "de": "Cho ΔA'B'C' ᔕ ΔABC theo tỉ số k. Gọi A'H' và AH lần lượt là các đường cao đỉnh A' và A của tam giác A'B'C' và tam giác ABC. Chứng minh rằng: a) A'H'/AH = k; b) Diện tích tam giác A'B'C' bằng k^2 lần diện tích tam giác ABC.",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 5,
+      "hoi": "Cho ΔA'B'C' ᔕ ΔABC theo tỉ số k. Gọi A'H' và AH lần lượt là các đường cao đỉnh A' và A của tam giác A'B'C' và tam giác ABC. Chứng minh rằng:\na) A'H'/AH = k;\nb) Diện tích tam giác A'B'C' bằng k² lần diện tích tam giác ABC.",
+      "buoc": [
+       "a) ΔA'B'C' ᔕ ΔABC theo tỉ số k nên góc B' = góc B và A'B'/AB = B'C'/BC = k",
+       "Hai tam giác A'H'B' (vuông tại H') và AHB (vuông tại H) có góc B' = góc B nên ΔA'H'B' ᔕ ΔAHB",
+       "Suy ra A'H'/AH = A'B'/AB = k",
+       "b) Diện tích A'B'C' : diện tích ABC = ((1/2) · A'H' · B'C') : ((1/2) · AH · BC) = (A'H'/AH) · (B'C'/BC)",
+       "= k · k = k², tức là diện tích tam giác A'B'C' bằng k² lần diện tích tam giác ABC"
+      ],
+      "nhieu": [
+       "b) Diện tích A'B'C' : diện tích ABC = B'C'/BC = k",
+       "Suy ra A'H'/AH = A'B'/AB = k²"
+      ]
+     }
     },
     {
      "ma": "9.28",
      "trang": 103,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Một người ở vị trí điểm A muốn đo khoảng cách đến điểm B ở bên kia sông mà không thể qua sông được. Sử dụng giác kế, người đó xác định được một điểm M trên bờ sông sao cho AM = 2 m, AM vuông góc với AB và đo được số đo góc AMB. Tiếp theo, người đó vẽ trên giấy tam giác A'M'B' vuông tại A', có A'M' = 1 cm, góc A'M'B' = góc AMB và đo được A'B' = 5 cm (Hình 9.56, SGK trang 103). Hỏi khoảng cách từ A đến B là bao nhiêu mét?"
+     "de": "Một người ở vị trí điểm A muốn đo khoảng cách đến điểm B ở bên kia sông mà không thể qua sông được. Sử dụng giác kế, người đó xác định được một điểm M trên bờ sông sao cho AM = 2 m, AM vuông góc với AB và đo được số đo góc AMB. Tiếp theo, người đó vẽ trên giấy tam giác A'M'B' vuông tại A', có A'M' = 1 cm, góc A'M'B' = góc AMB và đo được A'B' = 5 cm (Hình 9.56, SGK trang 103). Hỏi khoảng cách từ A đến B là bao nhiêu mét?",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "hoi": "Một người ở vị trí điểm A muốn đo khoảng cách đến điểm B ở bên kia sông mà không thể qua sông được. Sử dụng giác kế, người đó xác định được một điểm M trên bờ sông sao cho AM = 2 m, AM vuông góc với AB và đo được số đo góc AMB. Tiếp theo, người đó vẽ trên giấy tam giác A'M'B' vuông tại A', có A'M' = 1 cm, góc A'M'B' = góc AMB và đo được A'B' = 5 cm. Hỏi khoảng cách từ A đến B là bao nhiêu mét?",
+      "dap": [
+       "10",
+       "10m"
+      ],
+      "phim": [
+       "m"
+      ],
+      "nhieu": [
+       "cm",
+       "m²"
+      ],
+      "loi_giai": [
+       "Hai tam giác A'M'B' và AMB vuông tại A' và A có góc A'M'B' = góc AMB nên ΔA'M'B' ᔕ ΔAMB",
+       "Đổi A'M' = 1 cm = 0,01 m; A'B' = 5 cm = 0,05 m",
+       "AB/A'B' = AM/A'M' = 2 : 0,01 = 200",
+       "AB = 200 · 0,05 = 10"
+      ]
+     }
     }
    ]
   },
@@ -8961,42 +10965,287 @@
      "trang": 105,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Theo em, hai hình tam giác bằng nhau bất kì có phải là hai hình đồng dạng phối cảnh không?"
+     "de": "Theo em, hai hình tam giác bằng nhau bất kì có phải là hai hình đồng dạng phối cảnh không?",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "Theo em, hai hình tam giác bằng nhau bất kì có phải là hai hình đồng dạng phối cảnh không?",
+      "dong": [
+       {
+        "chu": "Trả lời: {0}",
+        "o": [
+         {
+          "dung": [
+           "Không phải"
+          ],
+          "sai": [
+           "Phải"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Vì {0}",
+        "o": [
+         {
+          "dung": [
+           "hai tam giác bằng nhau thì đồng dạng, nhưng các đường thẳng nối các đỉnh tương ứng không phải lúc nào cũng đi qua một điểm"
+          ],
+          "sai": [
+           "hai tam giác bằng nhau thì không đồng dạng với nhau",
+           "hai tam giác bằng nhau luôn có các cạnh tương ứng song song"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "Luyện tập (tr.107)",
      "trang": 107,
      "nhom": "Luyện tập",
      "dang": "CAU_NHO",
-     "de": "Trong những cặp hình dưới đây (Hình 9.67, SGK trang 107), cặp hình nào là hai hình đồng dạng? Hãy chỉ ra một cặp hình đồng dạng phối cảnh và vẽ cặp hình đó cùng tâm phối cảnh vào vở."
+     "de": "Trong những cặp hình dưới đây (Hình 9.67, SGK trang 107), cặp hình nào là hai hình đồng dạng? Hãy chỉ ra một cặp hình đồng dạng phối cảnh và vẽ cặp hình đó cùng tâm phối cảnh vào vở.",
+     "hinh": [
+      "toan8t2/LT-tr107.webp",
+      "toan8t2/LT-tr107-chon1.webp",
+      "toan8t2/LT-tr107-chon2.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "hoi": "Trong những cặp hình ở Hình 9.67, cặp hình nào là hai hình đồng dạng? Hãy chỉ ra một cặp hình đồng dạng phối cảnh và vẽ cặp hình đó cùng tâm phối cảnh vào vở.",
+      "dong": [
+       {
+        "chu": "Các cặp hình đồng dạng: {0}",
+        "o": [
+         {
+          "dung": [
+           "Cặp hình 1 và cặp hình 2"
+          ],
+          "sai": [
+           "Chỉ cặp hình 2",
+           "Cả ba cặp hình",
+           "Cặp hình 2 và cặp hình 3"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Cặp hình đồng dạng phối cảnh mà hai hình nằm cùng một phía của tâm phối cảnh (như Hình 9.58): {0}",
+        "o": [
+         {
+          "dung": [
+           "Cặp hình 2"
+          ],
+          "sai": [
+           "Cặp hình 1",
+           "Cặp hình 3"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Vẽ cặp hình 2 cùng tâm phối cảnh O: {0}",
+        "o": [
+         {
+          "dung": [
+           "Cách vẽ 2"
+          ],
+          "sai": [
+           "Cách vẽ 1",
+           "Cách vẽ 3"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "Tranh luận (tr.107)",
      "trang": 107,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Vuông nghĩ là hai hình vuông bất kì đều đồng dạng với nhau. Tròn nghĩ hai hình tam giác đều bất kì đều đồng dạng phối cảnh với nhau. Theo em, bạn nào đúng, bạn nào sai? Cho biết ý kiến của em."
+     "de": "Vuông nghĩ là hai hình vuông bất kì đều đồng dạng với nhau. Tròn nghĩ hai hình tam giác đều bất kì đều đồng dạng phối cảnh với nhau. Theo em, bạn nào đúng, bạn nào sai? Cho biết ý kiến của em.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "hoi": "Vuông: \"Tớ nghĩ là hai hình vuông bất kì đều đồng dạng với nhau.\"\nTròn: \"Tớ nghĩ hai hình tam giác đều bất kì đều đồng dạng phối cảnh với nhau.\"\nTheo em, bạn nào đúng, bạn nào sai? Cho biết ý kiến của em.",
+      "dong": [
+       {
+        "chu": "Bạn Vuông: {0}",
+        "o": [
+         {
+          "dung": [
+           "Đúng"
+          ],
+          "sai": [
+           "Sai"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Bạn Tròn: {0}",
+        "o": [
+         {
+          "dung": [
+           "Sai"
+          ],
+          "sai": [
+           "Đúng"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Hai tam giác đều bất kì {0}",
+        "o": [
+         {
+          "dung": [
+           "luôn đồng dạng nhưng chưa chắc đồng dạng phối cảnh"
+          ],
+          "sai": [
+           "luôn đồng dạng phối cảnh",
+           "chưa chắc đồng dạng"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "9.29",
      "trang": 107,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Lấy một điểm O nằm ngoài một đoạn thẳng AB. Hãy vẽ hình đồng dạng phối cảnh tâm O của đoạn thẳng AB theo tỉ số đồng dạng 1/2."
+     "de": "Lấy một điểm O nằm ngoài một đoạn thẳng AB. Hãy vẽ hình đồng dạng phối cảnh tâm O của đoạn thẳng AB theo tỉ số đồng dạng 1/2.",
+     "hinh": [
+      "toan8t2/9.29-chon1.webp",
+      "toan8t2/9.29-chon2.webp"
+     ],
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Lấy một điểm O nằm ngoài một đoạn thẳng AB. Hãy vẽ hình đồng dạng phối cảnh tâm O của đoạn thẳng AB theo tỉ số đồng dạng 1/2. Hình nào vẽ đúng đoạn thẳng A'B' cần vẽ?",
+      "cac": [
+       "Hình 1",
+       "Hình 2",
+       "Hình 3",
+       "Hình 4"
+      ],
+      "dap": "D"
+     }
     },
     {
      "ma": "9.30",
      "trang": 107,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Biết rằng mỗi hình dưới đây (Hình 9.68, SGK trang 107) đồng dạng với một hình khác, hãy tìm các cặp hình đồng dạng đó."
+     "de": "Biết rằng mỗi hình dưới đây (Hình 9.68, SGK trang 107) đồng dạng với một hình khác, hãy tìm các cặp hình đồng dạng đó.",
+     "hinh": [
+      "toan8t2/9.30.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "Biết rằng mỗi hình trong Hình 9.68 đồng dạng với một hình khác, hãy tìm các cặp hình đồng dạng đó.",
+      "dong": [
+       {
+        "chu": "Hình a) đồng dạng với hình {0}",
+        "o": [
+         {
+          "dung": [
+           "c)"
+          ],
+          "sai": [
+           "b)",
+           "d)"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Hình b) đồng dạng với hình {0}",
+        "o": [
+         {
+          "dung": [
+           "d)"
+          ],
+          "sai": [
+           "a)",
+           "c)"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "9.31",
      "trang": 107,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Trong các cặp hình đồng dạng dưới đây (Hình 9.69, SGK trang 107: cặp hình lục giác đều, cặp hình tam giác đều, cặp hình vuông), cặp hình nào là đồng dạng phối cảnh?"
+     "de": "Trong các cặp hình đồng dạng dưới đây (Hình 9.69, SGK trang 107: cặp hình lục giác đều, cặp hình tam giác đều, cặp hình vuông), cặp hình nào là đồng dạng phối cảnh?",
+     "hinh": [
+      "toan8t2/9.31.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "hoi": "Trong các cặp hình đồng dạng ở Hình 9.69, cặp hình nào là đồng dạng phối cảnh?",
+      "dong": [
+       {
+        "chu": "Cặp hình lục giác đều: {0}",
+        "o": [
+         {
+          "dung": [
+           "Đồng dạng phối cảnh"
+          ],
+          "sai": [
+           "Không đồng dạng phối cảnh"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Cặp hình tam giác đều: {0}",
+        "o": [
+         {
+          "dung": [
+           "Không đồng dạng phối cảnh"
+          ],
+          "sai": [
+           "Đồng dạng phối cảnh"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Cặp hình vuông: {0}",
+        "o": [
+         {
+          "dung": [
+           "Đồng dạng phối cảnh"
+          ],
+          "sai": [
+           "Không đồng dạng phối cảnh"
+          ],
+          "hai": true
+         }
+        ]
+       }
+      ]
+     }
     }
    ]
   },
@@ -9009,35 +11258,125 @@
      "trang": 109,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Cho tam giác ABC vuông tại A và có đường cao AH. Biết rằng BH = 16 cm, CH = 9 cm. a) Tính độ dài đoạn thẳng AH. b) Tính độ dài các đoạn thẳng AB và AC."
+     "de": "Cho tam giác ABC vuông tại A và có đường cao AH. Biết rằng BH = 16 cm, CH = 9 cm. a) Tính độ dài đoạn thẳng AH. b) Tính độ dài các đoạn thẳng AB và AC.",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "hoi": "Cho tam giác ABC vuông tại A và có đường cao AH. Biết rằng BH = 16 cm, CH = 9 cm.\na) Tính độ dài đoạn thẳng AH.\nb) Tính độ dài các đoạn thẳng AB và AC.\n(Gõ AH, AB, AC theo thứ tự, tính bằng cm, cách nhau bằng dấu ;)",
+      "dap": [
+       "12;20;15"
+      ],
+      "phim": [
+       ";"
+      ],
+      "nhieu": [
+       "√",
+       "cm"
+      ],
+      "loi_giai": [
+       "Hai tam giác vuông HBA và HAC có góc HBA = góc HAC (cùng phụ với góc HAB) nên ΔHBA ᔕ ΔHAC, suy ra HB/HA = HA/HC",
+       "AH² = BH · CH = 16 · 9 = 144; AH = 12",
+       "AB² = AH² + BH² = 12² + 16² = 400; AB = 20",
+       "AC² = AH² + CH² = 12² + 9² = 225; AC = 15"
+      ]
+     }
     },
     {
      "ma": "9.33",
      "trang": 109,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Cho tam giác ABC có AB = 6 cm, AC = 8 cm, BC = 10 cm. Cho điểm M nằm trên cạnh BC sao cho BM = 4 cm. Vẽ đường thẳng MN vuông góc với AC tại N và đường thẳng MP vuông góc với AB tại P. a) Chứng minh rằng ΔBMP ᔕ ΔMCN. b) Tính độ dài đoạn thẳng AM."
+     "de": "Cho tam giác ABC có AB = 6 cm, AC = 8 cm, BC = 10 cm. Cho điểm M nằm trên cạnh BC sao cho BM = 4 cm. Vẽ đường thẳng MN vuông góc với AC tại N và đường thẳng MP vuông góc với AB tại P. a) Chứng minh rằng ΔBMP ᔕ ΔMCN. b) Tính độ dài đoạn thẳng AM.",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 7,
+      "hoi": "Cho tam giác ABC có AB = 6 cm, AC = 8 cm, BC = 10 cm. Cho điểm M nằm trên cạnh BC sao cho BM = 4 cm. Vẽ đường thẳng MN vuông góc với AC tại N và đường thẳng MP vuông góc với AB tại P.\na) Chứng minh rằng ΔBMP ᔕ ΔMCN.\nb) Tính độ dài đoạn thẳng AM.",
+      "buoc": [
+       "a) AB² + AC² = 6² + 8² = 100 = BC² nên ΔABC vuông tại A (định lí Pythagore đảo)",
+       "MP ⊥ AB và AC ⊥ AB nên MP // AC, suy ra góc BMP = góc MCN (đồng vị)",
+       "Hai tam giác BMP (vuông tại P) và MCN (vuông tại N) có góc BMP = góc MCN nên ΔBMP ᔕ ΔMCN",
+       "b) MP // AC nên ΔBMP ᔕ ΔBCA, suy ra BP/BA = MP/CA = BM/BC = 4/10",
+       "BP = 6 · 4 : 10 = 2,4; MP = 8 · 4 : 10 = 3,2",
+       "AP = AB − BP = 6 − 2,4 = 3,6",
+       "ΔAPM vuông tại P nên AM² = AP² + PM² = 3,6² + 3,2² = 23,2; AM = √23,2 ≈ 4,82 (cm)"
+      ],
+      "nhieu": [
+       "b) MP // AC nên ΔBMP ᔕ ΔBCA, suy ra BP/BA = MP/CA = BM/MC = 4/6",
+       "ΔAPM vuông tại P nên AM = AP + PM = 3,6 + 3,2 = 6,8 (cm)"
+      ]
+     }
     },
     {
      "ma": "9.34",
      "trang": 109,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Trong Hình 9.72 (SGK trang 109), cho AH, HE, HF lần lượt là các đường cao của các tam giác ABC, AHB, AHC. Chứng minh rằng: a) ΔAEH ᔕ ΔAHB; b) ΔAFH ᔕ ΔAHC; c) ΔAFE ᔕ ΔABC."
+     "de": "Trong Hình 9.72 (SGK trang 109), cho AH, HE, HF lần lượt là các đường cao của các tam giác ABC, AHB, AHC. Chứng minh rằng: a) ΔAEH ᔕ ΔAHB; b) ΔAFH ᔕ ΔAHC; c) ΔAFE ᔕ ΔABC.",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 6,
+      "hoi": "Cho tam giác ABC có đường cao AH; HE, HF lần lượt là các đường cao của các tam giác AHB, AHC (E thuộc AB, F thuộc AC). Chứng minh rằng:\na) ΔAEH ᔕ ΔAHB;\nb) ΔAFH ᔕ ΔAHC;\nc) ΔAFE ᔕ ΔABC.",
+      "buoc": [
+       "a) Hai tam giác AEH (vuông tại E) và AHB (vuông tại H) có chung góc nhọn HAB nên ΔAEH ᔕ ΔAHB",
+       "b) Hai tam giác AFH (vuông tại F) và AHC (vuông tại H) có chung góc nhọn HAC nên ΔAFH ᔕ ΔAHC",
+       "c) Từ ΔAEH ᔕ ΔAHB suy ra AE/AH = AH/AB, hay AE · AB = AH²",
+       "Từ ΔAFH ᔕ ΔAHC suy ra AF/AH = AH/AC, hay AF · AC = AH²",
+       "Suy ra AE · AB = AF · AC, hay AF/AB = AE/AC",
+       "ΔAFE và ΔABC có chung góc BAC và AF/AB = AE/AC nên ΔAFE ᔕ ΔABC (c.g.c)"
+      ],
+      "nhieu": [
+       "Suy ra AE · AB = AF · AC, hay AE/AB = AF/AC",
+       "ΔAFE và ΔABC có chung góc BAC và AF/AB = AE/AC nên ΔAFE ᔕ ΔACB (c.g.c)"
+      ]
+     }
     },
     {
      "ma": "9.35",
      "trang": 109,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Cho tam giác ABC vuông tại A có đường cao AH. Cho M và N lần lượt là trung điểm của AB và AC. Chứng minh ΔHBM ᔕ ΔHAN."
+     "de": "Cho tam giác ABC vuông tại A có đường cao AH. Cho M và N lần lượt là trung điểm của AB và AC. Chứng minh ΔHBM ᔕ ΔHAN.",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 4,
+      "buoc": [
+       "Góc HBA = góc HAC (cùng phụ với góc HAB) nên hai tam giác vuông HBA và HAC đồng dạng: ΔHBA ᔕ ΔHAC",
+       "Suy ra HB/HA = BA/AC",
+       "M, N là trung điểm của AB, AC nên BA/AC = 2BM/(2AN) = BM/AN, do đó HB/HA = BM/AN",
+       "ΔHBM và ΔHAN có góc HBM = góc HAN (vì góc HBA = góc HAC) và HB/HA = BM/AN nên ΔHBM ᔕ ΔHAN (c.g.c)"
+      ],
+      "nhieu": [
+       "Suy ra HB/HA = AC/BA",
+       "ΔHBM và ΔHAN có góc HBM = góc HAN và HB/HA = BM/AN nên ΔHBM ᔕ ΔHNA (c.g.c)"
+      ]
+     }
     },
     {
      "ma": "9.36",
      "trang": 109,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Vào gần buổi trưa, khi bóng bạn An dài 60 cm thì bóng cột cờ dài 3 m. a) Biết rằng bạn An cao 1,4 m. Hỏi cột cờ cao bao nhiêu mét? b) Vào buổi chiều khi bóng bạn An dài 3 m, hỏi bóng cột cờ dài bao nhiêu mét?"
+     "de": "Vào gần buổi trưa, khi bóng bạn An dài 60 cm thì bóng cột cờ dài 3 m. a) Biết rằng bạn An cao 1,4 m. Hỏi cột cờ cao bao nhiêu mét? b) Vào buổi chiều khi bóng bạn An dài 3 m, hỏi bóng cột cờ dài bao nhiêu mét?",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "hoi": "Vào gần buổi trưa, khi bóng bạn An dài 60 cm thì bóng cột cờ dài 3 m.\na) Biết rằng bạn An cao 1,4 m. Hỏi cột cờ cao bao nhiêu mét?\nb) Vào buổi chiều khi bóng bạn An dài 3 m, hỏi bóng cột cờ dài bao nhiêu mét?\n(Gõ kết quả hai ý theo thứ tự, tính bằng mét, cách nhau bằng dấu ;)",
+      "dap": [
+       "7;15"
+      ],
+      "phim": [
+       ";"
+      ],
+      "nhieu": [
+       "m",
+       "cm"
+      ],
+      "loi_giai": [
+       "Cùng một lúc, tia nắng tạo với mặt đất các góc bằng nhau nên tam giác vuông (cột cờ, bóng cột cờ) đồng dạng với tam giác vuông (bạn An, bóng của An)",
+       "a) Đổi 60 cm = 0,6 m. Chiều cao cột cờ = 1,4 · 3 : 0,6 = 7",
+       "b) Bóng cột cờ buổi chiều = 3 · 7 : 1,4 = 15"
+      ]
+     }
     }
    ]
   },
@@ -9050,84 +11389,311 @@
      "trang": 110,
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
-     "de": "Cho ABC là tam giác không cân. Biết ΔA'B'C' ᔕ ΔABC. Khẳng định nào sau đây là đúng? A. ΔA'C'B' ᔕ ΔACB. B. ΔB'C'A' ᔕ ΔBAC. C. ΔB'A'C' ᔕ ΔBCA. D. ΔA'C'B' ᔕ ΔABC."
+     "de": "Cho ABC là tam giác không cân. Biết ΔA'B'C' ᔕ ΔABC. Khẳng định nào sau đây là đúng? A. ΔA'C'B' ᔕ ΔACB. B. ΔB'C'A' ᔕ ΔBAC. C. ΔB'A'C' ᔕ ΔBCA. D. ΔA'C'B' ᔕ ΔABC.",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Cho ABC là tam giác không cân. Biết ΔA'B'C' ᔕ ΔABC. Khẳng định nào sau đây là đúng?",
+      "cac": [
+       "ΔA'C'B' ᔕ ΔACB",
+       "ΔB'C'A' ᔕ ΔBAC",
+       "ΔB'A'C' ᔕ ΔBCA",
+       "ΔA'C'B' ᔕ ΔABC"
+      ],
+      "dap": "A"
+     }
     },
     {
      "ma": "9.38",
      "trang": 110,
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
-     "de": "Cho ΔA'B'C' ᔕ ΔABC với tỉ số đồng dạng bằng 2. Khẳng định nào sau đây là đúng? A. AB/A'B' = 2. B. AB/A'C' = 2. C. A'B'/AB = 2. D. A'B'/AC = 2."
+     "de": "Cho ΔA'B'C' ᔕ ΔABC với tỉ số đồng dạng bằng 2. Khẳng định nào sau đây là đúng? A. AB/A'B' = 2. B. AB/A'C' = 2. C. A'B'/AB = 2. D. A'B'/AC = 2.",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Cho ΔA'B'C' ᔕ ΔABC với tỉ số đồng dạng bằng 2. Khẳng định nào sau đây là đúng?",
+      "cac": [
+       "AB/A'B' = 2",
+       "AB/A'C' = 2",
+       "A'B'/AB = 2",
+       "A'B'/AC = 2"
+      ],
+      "dap": "C"
+     }
     },
     {
      "ma": "9.39",
      "trang": 110,
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
-     "de": "Trong các bộ ba số đo dưới đây, đâu là số đo ba cạnh của một tam giác vuông? A. 3 m; 5 m; 6 m. B. 6 m; 8 m; 10 m. C. 1 m; 0,5 m; 1,25 m. D. 9 m; 16 m; 25 m."
+     "de": "Trong các bộ ba số đo dưới đây, đâu là số đo ba cạnh của một tam giác vuông? A. 3 m; 5 m; 6 m. B. 6 m; 8 m; 10 m. C. 1 m; 0,5 m; 1,25 m. D. 9 m; 16 m; 25 m.",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Trong các bộ ba số đo dưới đây, đâu là số đo ba cạnh của một tam giác vuông?",
+      "cac": [
+       "3 m; 5 m; 6 m",
+       "6 m; 8 m; 10 m",
+       "1 m; 0,5 m; 1,25 m",
+       "9 m; 16 m; 25 m"
+      ],
+      "dap": "B"
+     }
     },
     {
      "ma": "9.40",
      "trang": 110,
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
-     "de": "Cho tam giác ABC vuông tại A (AB ≠ AC) và tam giác DEF vuông tại D (DE ≠ DF). Điều nào dưới đây không suy ra ΔABC ᔕ ΔDEF? A. góc B = góc E. B. góc C = góc F. C. góc B + góc C = góc E + góc F. D. góc B − góc C = góc E − góc F."
+     "de": "Cho tam giác ABC vuông tại A (AB ≠ AC) và tam giác DEF vuông tại D (DE ≠ DF). Điều nào dưới đây không suy ra ΔABC ᔕ ΔDEF? A. góc B = góc E. B. góc C = góc F. C. góc B + góc C = góc E + góc F. D. góc B − góc C = góc E − góc F.",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Cho tam giác ABC vuông tại A (AB ≠ AC) và tam giác DEF vuông tại D (DE ≠ DF). Điều nào dưới đây <b>không</b> suy ra ΔABC ᔕ ΔDEF?",
+      "cac": [
+       "góc B = góc E",
+       "góc C = góc F",
+       "góc B + góc C = góc E + góc F",
+       "góc B − góc C = góc E − góc F"
+      ],
+      "dap": "C"
+     }
     },
     {
      "ma": "9.41",
      "trang": 110,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Cho Hình 9.73 (SGK trang 110), biết rằng MN // AB, MP // AC. Hãy liệt kê ba cặp tam giác (phân biệt) đồng dạng có trong hình."
+     "de": "Cho Hình 9.73 (SGK trang 110), biết rằng MN // AB, MP // AC. Hãy liệt kê ba cặp tam giác (phân biệt) đồng dạng có trong hình.",
+     "hinh": [
+      "toan8t2/9.41.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "hoi": "Cho Hình 9.73, biết rằng MN // AB, MP // AC. Hãy liệt kê ba cặp tam giác (phân biệt) đồng dạng có trong hình.",
+      "dong": [
+       {
+        "chu": "Vì MN // AB nên ΔCNM ᔕ {0}",
+        "o": [
+         {
+          "dung": [
+           "ΔCAB"
+          ],
+          "sai": [
+           "ΔCBA",
+           "ΔACB"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Vì MP // AC nên ΔMPB ᔕ {0}",
+        "o": [
+         {
+          "dung": [
+           "ΔCAB"
+          ],
+          "sai": [
+           "ΔBAC",
+           "ΔACB"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Từ hai cặp trên suy ra ΔCNM ᔕ {0}",
+        "o": [
+         {
+          "dung": [
+           "ΔMPB"
+          ],
+          "sai": [
+           "ΔPMB",
+           "ΔBPM"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "9.42",
      "trang": 110,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Cho Hình 9.74 (SGK trang 110), biết rằng góc ABD = góc ACE. Chứng minh rằng ΔABD ᔕ ΔACE và ΔBOE ᔕ ΔCOD."
+     "de": "Cho Hình 9.74 (SGK trang 110), biết rằng góc ABD = góc ACE. Chứng minh rằng ΔABD ᔕ ΔACE và ΔBOE ᔕ ΔCOD.",
+     "hinh": [
+      "toan8t2/9.42.webp"
+     ],
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 3,
+      "hoi": "Cho Hình 9.74, biết rằng góc ABD = góc ACE. Chứng minh rằng ΔABD ᔕ ΔACE và ΔBOE ᔕ ΔCOD.",
+      "buoc": [
+       "ΔABD và ΔACE có góc A chung và góc ABD = góc ACE (giả thiết) nên ΔABD ᔕ ΔACE (g.g)",
+       "Suy ra góc ADB = góc AEC, tức là góc ODC = góc OEB",
+       "ΔBOE và ΔCOD có góc BOE = góc COD (hai góc đối đỉnh) và góc OEB = góc ODC nên ΔBOE ᔕ ΔCOD (g.g)"
+      ],
+      "nhieu": [
+       "ΔABD và ΔACE có góc A chung và góc ABD = góc ACE (giả thiết) nên ΔABD ᔕ ΔAEC (g.g)",
+       "ΔBOE và ΔCOD có góc BOE = góc COD (hai góc đối đỉnh) và góc OEB = góc ODC nên ΔBOE ᔕ ΔDOC (g.g)"
+      ]
+     }
     },
     {
      "ma": "9.43",
      "trang": 110,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Hai đường trung tuyến BM, CN của tam giác ABC cắt nhau tại điểm G (Hình 9.75, SGK trang 110). Chứng minh rằng tam giác GMN đồng dạng với tam giác GBC và tìm tỉ số đồng dạng."
+     "de": "Hai đường trung tuyến BM, CN của tam giác ABC cắt nhau tại điểm G (Hình 9.75, SGK trang 110). Chứng minh rằng tam giác GMN đồng dạng với tam giác GBC và tìm tỉ số đồng dạng.",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 4,
+      "hoi": "Hai đường trung tuyến BM, CN của tam giác ABC cắt nhau tại điểm G. Chứng minh rằng tam giác GMN đồng dạng với tam giác GBC và tìm tỉ số đồng dạng.",
+      "buoc": [
+       "BM, CN là các đường trung tuyến nên M, N lần lượt là trung điểm của AC, AB",
+       "Suy ra MN là đường trung bình của ΔABC: MN // BC và MN = BC/2",
+       "MN // BC nên góc GMN = góc GBC và góc GNM = góc GCB (so le trong), do đó ΔGMN ᔕ ΔGBC (g.g)",
+       "Tỉ số đồng dạng của ΔGMN với ΔGBC là MN/BC = 1/2"
+      ],
+      "nhieu": [
+       "Tỉ số đồng dạng của ΔGMN với ΔGBC là GM/GB = 1/3",
+       "MN // BC nên góc GMN = góc GCB và góc GNM = góc GBC (so le trong), do đó ΔGMN ᔕ ΔGCB (g.g)"
+      ]
+     }
     },
     {
      "ma": "9.44",
      "trang": 111,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Cho tam giác ABC vuông tại A có AB = 5 cm, AC = 4 cm. Gọi AH, HD lần lượt là các đường cao kẻ từ đỉnh A của tam giác ABC và đỉnh H của tam giác HAB. a) Chứng minh rằng ΔHDA ᔕ ΔAHC. b) Tính độ dài các đoạn thẳng HA, HB, HC, HD."
+     "de": "Cho tam giác ABC vuông tại A có AB = 5 cm, AC = 4 cm. Gọi AH, HD lần lượt là các đường cao kẻ từ đỉnh A của tam giác ABC và đỉnh H của tam giác HAB. a) Chứng minh rằng ΔHDA ᔕ ΔAHC. b) Tính độ dài các đoạn thẳng HA, HB, HC, HD.",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 6,
+      "hoi": "Cho tam giác ABC vuông tại A có AB = 5 cm, AC = 4 cm. Gọi AH, HD lần lượt là các đường cao kẻ từ đỉnh A của tam giác ABC và đỉnh H của tam giác HAB.\na) Chứng minh rằng ΔHDA ᔕ ΔAHC.\nb) Tính độ dài các đoạn thẳng HA, HB, HC, HD.",
+      "buoc": [
+       "a) HD ⊥ AB và AC ⊥ AB nên HD // AC, suy ra góc DHA = góc HAC (so le trong)",
+       "Hai tam giác HDA (vuông tại D) và AHC (vuông tại H) có góc DHA = góc HAC nên ΔHDA ᔕ ΔAHC",
+       "b) BC² = AB² + AC² = 5² + 4² = 41; BC = √41",
+       "AH · BC = AB · AC (cùng bằng hai lần diện tích ΔABC) nên HA = 5 · 4 : √41 = 20/√41",
+       "HB² = AB² − HA² = 25 − 400/41 = 625/41; HB = 25/√41; HC = BC − HB = √41 − 25/√41 = 16/√41",
+       "ΔHDA ᔕ ΔAHC nên HD/AH = HA/AC, suy ra HD = HA² : AC = (400/41) : 4 = 100/41"
+      ],
+      "nhieu": [
+       "Hai tam giác HDA (vuông tại D) và AHC (vuông tại H) có góc DHA = góc HAC nên ΔHDA ᔕ ΔHAC",
+       "ΔHDA ᔕ ΔAHC nên HD/AH = AC/HA, suy ra HD = AC = 4"
+      ]
+     }
     },
     {
      "ma": "9.45",
      "trang": 111,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Cho tam giác ABC có đường cao AH. Biết AH = 12 cm, CH = 9 cm, BH = 16 cm. Lấy M, N lần lượt là trung điểm của AH, BH (Hình 9.76, SGK trang 111). a) Chứng minh rằng ABC là tam giác vuông tại A. b) Chứng minh rằng MN ⊥ AC và CM ⊥ AN. c) Tính diện tích tam giác AMN."
+     "de": "Cho tam giác ABC có đường cao AH. Biết AH = 12 cm, CH = 9 cm, BH = 16 cm. Lấy M, N lần lượt là trung điểm của AH, BH (Hình 9.76, SGK trang 111). a) Chứng minh rằng ABC là tam giác vuông tại A. b) Chứng minh rằng MN ⊥ AC và CM ⊥ AN. c) Tính diện tích tam giác AMN.",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 6,
+      "hoi": "Cho tam giác ABC có đường cao AH. Biết AH = 12 cm, CH = 9 cm, BH = 16 cm (H nằm giữa B và C). Lấy M, N lần lượt là trung điểm của AH, BH.\na) Chứng minh rằng ABC là tam giác vuông tại A.\nb) Chứng minh rằng MN ⊥ AC và CM ⊥ AN.\nc) Tính diện tích tam giác AMN.",
+      "buoc": [
+       "a) AB² = AH² + BH² = 12² + 16² = 400; AC² = AH² + CH² = 12² + 9² = 225",
+       "BC = BH + HC = 16 + 9 = 25; AB² + AC² = 400 + 225 = 625 = 25² = BC²; vậy ΔABC vuông tại A (định lí Pythagore đảo)",
+       "b) M, N là trung điểm của HA, HB nên MN là đường trung bình của ΔHAB, suy ra MN // AB",
+       "AB ⊥ AC nên MN ⊥ AC",
+       "Trong ΔACN, hai đường cao AH và NM cắt nhau tại M nên M là trực tâm, suy ra CM ⊥ AN",
+       "c) Diện tích ΔAMN (cm²) = (1/2) · AM · HN = (1/2) · 6 · 8 = 24"
+      ],
+      "nhieu": [
+       "AB ⊥ AC nên MN // AC",
+       "c) Diện tích ΔAMN (cm²) = AM · HN = 6 · 8 = 48"
+      ]
+     }
     },
     {
      "ma": "9.46",
      "trang": 111,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Cho tam giác ABC vuông tại A và các điểm D, E, F như Hình 9.77 (SGK trang 111) sao cho AD là phân giác của góc BAC, DE và DF lần lượt vuông góc với AC và BC. Chứng minh rằng: a) BD/BC = AB/(AB + AC), từ đó suy ra AE = (AB · AC)/(AB + AC); b) ΔDFC ᔕ ΔABC; c) DF = DB."
+     "de": "Cho tam giác ABC vuông tại A và các điểm D, E, F như Hình 9.77 (SGK trang 111) sao cho AD là phân giác của góc BAC, DE và DF lần lượt vuông góc với AC và BC. Chứng minh rằng: a) BD/BC = AB/(AB + AC), từ đó suy ra AE = (AB · AC)/(AB + AC); b) ΔDFC ᔕ ΔABC; c) DF = DB.",
+     "hinh": [
+      "toan8t2/9.46.webp"
+     ],
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 6,
+      "hoi": "Cho tam giác ABC vuông tại A và các điểm D, E, F như Hình 9.77 (D thuộc BC; E, F thuộc AC) sao cho AD là phân giác của góc BAC, DE và DF lần lượt vuông góc với AC và BC. Chứng minh rằng:\na) BD/BC = AB/(AB + AC), từ đó suy ra AE = (AB · AC)/(AB + AC);\nb) ΔDFC ᔕ ΔABC;\nc) DF = DB.",
+      "buoc": [
+       "a) AD là phân giác của góc BAC nên BD/DC = AB/AC, suy ra BD/(BD + DC) = AB/(AB + AC), tức là BD/BC = AB/(AB + AC)",
+       "DE ⊥ AC và AB ⊥ AC nên DE // AB; theo định lí Thalès trong ΔCAB: AE/AC = BD/BC",
+       "Suy ra AE/AC = AB/(AB + AC), do đó AE = (AB · AC)/(AB + AC)",
+       "b) Hai tam giác DFC (vuông tại D) và ABC (vuông tại A) có chung góc nhọn C nên ΔDFC ᔕ ΔABC",
+       "c) Suy ra DF/AB = DC/AC, nên DF = AB · DC/AC",
+       "Từ BD/DC = AB/AC suy ra DB = AB · DC/AC; vậy DF = DB"
+      ],
+      "nhieu": [
+       "a) AD là phân giác của góc BAC nên BD/DC = AC/AB",
+       "b) Hai tam giác DFC (vuông tại D) và ABC (vuông tại A) có chung góc nhọn C nên ΔDFC ᔕ ΔBAC"
+      ]
+     }
     },
     {
      "ma": "9.47",
      "trang": 111,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Để tính được chiều cao gần đúng của kim tự tháp Ai Cập, người ta cắm một cây cọc cao 1 m vuông góc với mặt đất và đo được bóng cây cọc trên mặt đất là 1,5 m. Khi đó chiều dài bóng của kim tự tháp trên mặt đất là 208,2 m. Hỏi kim tự tháp cao bao nhiêu mét?"
+     "de": "Để tính được chiều cao gần đúng của kim tự tháp Ai Cập, người ta cắm một cây cọc cao 1 m vuông góc với mặt đất và đo được bóng cây cọc trên mặt đất là 1,5 m. Khi đó chiều dài bóng của kim tự tháp trên mặt đất là 208,2 m. Hỏi kim tự tháp cao bao nhiêu mét?",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "dap": [
+       "138,8",
+       "138,8m"
+      ],
+      "phim": [
+       "m"
+      ],
+      "nhieu": [
+       "cm",
+       "m²"
+      ],
+      "loi_giai": [
+       "Cùng một lúc, tia nắng tạo với mặt đất các góc bằng nhau nên tam giác vuông (cọc, bóng cọc) đồng dạng với tam giác vuông (chiều cao kim tự tháp, bóng kim tự tháp)",
+       "Chiều cao kim tự tháp = 1 · 208,2 : 1,5 = 138,8"
+      ]
+     }
     },
     {
      "ma": "9.48",
      "trang": 111,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Từ căn hộ chung cư nhà mình, bạn Lan đứng cách cửa sổ 1 m nhìn sang toà nhà đối diện thì vừa nhìn thấy đúng tất cả 6 tầng của toà nhà đó. Biết rằng cửa sổ nhà Lan cao 80 cm và mỗi tầng của toà nhà đối diện cao 4 m. Hỏi khoảng cách từ căn hộ nhà Lan đến toà nhà đối diện là bao nhiêu?"
+     "de": "Từ căn hộ chung cư nhà mình, bạn Lan đứng cách cửa sổ 1 m nhìn sang toà nhà đối diện thì vừa nhìn thấy đúng tất cả 6 tầng của toà nhà đó. Biết rằng cửa sổ nhà Lan cao 80 cm và mỗi tầng của toà nhà đối diện cao 4 m. Hỏi khoảng cách từ căn hộ nhà Lan đến toà nhà đối diện là bao nhiêu?",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "hoi": "Từ căn hộ chung cư nhà mình, bạn Lan đứng cách cửa sổ 1 m nhìn sang toà nhà đối diện thì vừa nhìn thấy đúng tất cả 6 tầng của toà nhà đó. Biết rằng cửa sổ nhà Lan cao 80 cm và mỗi tầng của toà nhà đối diện cao 4 m. Hỏi khoảng cách từ căn hộ nhà Lan đến toà nhà đối diện là bao nhiêu mét?",
+      "dap": [
+       "29",
+       "29m"
+      ],
+      "phim": [
+       "m"
+      ],
+      "nhieu": [
+       "cm",
+       "m²"
+      ],
+      "loi_giai": [
+       "Chiều cao 6 tầng = 6 · 4 = 24; cửa sổ cao 80 cm = 0,8 m",
+       "Mắt Lan, hai mép cửa sổ và hai mép trên, dưới của 6 tầng nhà tạo thành hai tam giác đồng dạng (cửa sổ song song với tường toà nhà đối diện)",
+       "Khoảng cách từ mắt Lan đến toà nhà = 1 · 24 : 0,8 = 30",
+       "Khoảng cách từ căn hộ (cửa sổ) đến toà nhà = 30 − 1 = 29"
+      ]
+     }
     }
    ]
   },
