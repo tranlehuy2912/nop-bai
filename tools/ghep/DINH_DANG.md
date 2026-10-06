@@ -162,7 +162,7 @@ Mọi kiểu đều có `kieu` và `sao`. Trường `hoi` (không bắt buộc) 
 Anh Huy chốt ngày 06/10/2026: tránh viết tay nhiều nhất có thể. Câu SGK không có `ghep` hay có `bo_may` là câu con phải viết vở rồi chụp, nên câu vẽ đổi thành câu chọn hình:
 
 - Vẽ sẵn 3 hay 4 hình bằng `ghep-nhap/ghep/cong_cu/ve.py` (ngoài git; đồ thị, biểu đồ cột, cột kép, đoạn thẳng, hình quạt tròn, hình hình học, và hàm `ghep`): một hình đúng, các hình sai là lỗi học sinh hay mắc (sai dấu hệ số góc, nhầm tung độ gốc, đổi chỗ hai trục, sai chiều cao một cột, chọn sai loại biểu đồ, thiếu chú thích, sai một độ dài). Hình sai phải sai rõ khi đối chiếu với đề, không sai vì nét vẽ.
-- Ghép các hình thành một ảnh có nhãn "Hình 1" tới "Hình N" (`ve.ghep`), lưu bằng `ve.luu` vào thư mục hình của sách, gắn vào trường `hinh` của câu.
+- Ghép các hình thành từng hàng hai hình, nhãn "Hình 1" tới "Hình N" chạy tiếp qua các hàng (`ve.ghep_hang`), mỗi hàng một ảnh, lưu bằng `ve.luu` vào thư mục hình của sách, gắn cả danh sách ảnh vào trường `hinh` theo thứ tự. Không dùng một tấm 2 x 2: app vẽ mỗi ảnh cao tối đa 300dp (`KhungGhep.veHinh`), tấm 2 x 2 bị thu còn một nửa, chữ trên trục không đọc được.
 - Câu chỉ có việc vẽ: `CHON`, `cac` là `["Hình 1", "Hình 2", ...]`. Máy trộn thứ tự nút nhưng chữ trên nút vẫn trỏ đúng ô trong ảnh. 1 sao.
 - Câu có cả phần vẽ lẫn phần tính: `O`, mỗi ý một dòng (`"a) Công thức: {0}"`, `"b) Đồ thị: {0}"`, `"c) Chi phí 15 xe: {0}"`), dòng phần vẽ có ô chọn `Hình 1` tới `Hình N`, dòng phần tính có ô chọn kết quả đúng và kết quả sai do lỗi hay gặp.
 - Không vẽ lại hình của sách để làm đáp án nếu hình sách lộ đáp án; hình đề bài (hình cho sẵn để con đọc) vẫn cắt từ ảnh trang như cũ.

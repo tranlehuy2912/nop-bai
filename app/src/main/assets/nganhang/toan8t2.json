@@ -2,7 +2,7 @@
  "nguon": "toan8t2",
  "mon": "Toán",
  "ten": "SGK Toán 8 — tập hai",
- "ban": 4,
+ "ban": 5,
  "cac_bai": [
   {
    "chuong": "Chương VI. Phân thức đại số",
@@ -4901,7 +4901,92 @@
      "trang": 43,
      "nhom": "Luyện tập",
      "dang": "CAU_NHO",
-     "de": "a) Xác định toạ độ của các điểm M, N, P, Q trong Hình 7.5 (SGK trang 43). b) Xác định các điểm R(2; −2) và S(−1; 2) trong Hình 7.5."
+     "de": "a) Xác định toạ độ của các điểm M, N, P, Q trong Hình 7.5 (SGK trang 43). b) Xác định các điểm R(2; −2) và S(−1; 2) trong Hình 7.5.",
+     "hinh": [
+      "toan8t2/LT2-tr43.webp",
+      "toan8t2/LT2-tr43-chon1.webp",
+      "toan8t2/LT2-tr43-chon2.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 5,
+      "hoi": "a) Xác định toạ độ của các điểm M, N, P, Q trong Hình 7.5 (hình đầu tiên dưới đây).\nb) Xác định các điểm R(2; −2) và S(−1; 2) trong Hình 7.5: hình nào trong Hình 1 tới Hình 4 biểu diễn đúng hai điểm đó?",
+      "dong": [
+       {
+        "chu": "a) Điểm M: {0}",
+        "o": [
+         {
+          "dung": [
+           "(−2; 4)"
+          ],
+          "sai": [
+           "(4; −2)",
+           "(2; 4)",
+           "(−2; 3)"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Điểm N: {0}",
+        "o": [
+         {
+          "dung": [
+           "(1; −2)"
+          ],
+          "sai": [
+           "(−2; 1)",
+           "(1; 2)",
+           "(−1; −2)"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Điểm P: {0}",
+        "o": [
+         {
+          "dung": [
+           "(2; 0)"
+          ],
+          "sai": [
+           "(0; 2)",
+           "(2; 2)"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Điểm Q: {0}",
+        "o": [
+         {
+          "dung": [
+           "(0; −3)"
+          ],
+          "sai": [
+           "(−3; 0)",
+           "(0; 3)"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "b) Hình biểu diễn đúng hai điểm R(2; −2) và S(−1; 2): {0}",
+        "o": [
+         {
+          "dung": [
+           "Hình 4"
+          ],
+          "sai": [
+           "Hình 1",
+           "Hình 2",
+           "Hình 3"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "Luyện tập 3 (tr.44)",
@@ -4909,7 +4994,22 @@
      "nhom": "Luyện tập",
      "dang": "CAU_NHO",
      "de": "Vẽ đồ thị của hàm số y = f(x) cho bởi bảng sau: x nhận các giá trị −3; −1; 1; 2,5 với y tương ứng là 4; 3,5; 1; 0.",
-     "bo_may": "vẽ đồ thị"
+     "hinh": [
+      "toan8t2/LT3-tr44-chon1.webp",
+      "toan8t2/LT3-tr44-chon2.webp"
+     ],
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Vẽ đồ thị của hàm số y = f(x) cho bởi bảng sau: x nhận các giá trị −3; −1; 1; 2,5 với y tương ứng là 4; 3,5; 1; 0.\nHình nào dưới đây là đồ thị của hàm số y = f(x)?",
+      "cac": [
+       "Hình 1",
+       "Hình 2",
+       "Hình 3",
+       "Hình 4"
+      ],
+      "dap": "C"
+     }
     },
     {
      "ma": "7.18",
@@ -5092,7 +5192,93 @@
      "trang": 45,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "a) Xác định toạ độ của các điểm A, B, C, D trong Hình 7.8 (SGK trang 45). b) Xác định các điểm E(0; −2) và F(2; −1) trong Hình 7.8."
+     "de": "a) Xác định toạ độ của các điểm A, B, C, D trong Hình 7.8 (SGK trang 45). b) Xác định các điểm E(0; −2) và F(2; −1) trong Hình 7.8.",
+     "hinh": [
+      "toan8t2/7.20.webp",
+      "toan8t2/7.20-chon1.webp",
+      "toan8t2/7.20-chon2.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 5,
+      "hoi": "a) Xác định toạ độ của các điểm A, B, C, D trong Hình 7.8 (hình đầu tiên dưới đây).\nb) Xác định các điểm E(0; −2) và F(2; −1) trong Hình 7.8: hình nào trong Hình 1 tới Hình 4 biểu diễn đúng hai điểm đó?",
+      "dong": [
+       {
+        "chu": "a) Điểm A: {0}",
+        "o": [
+         {
+          "dung": [
+           "(−3; 4)"
+          ],
+          "sai": [
+           "(4; −3)",
+           "(3; 4)",
+           "(−3; 3)"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Điểm B: {0}",
+        "o": [
+         {
+          "dung": [
+           "(−2; −2)"
+          ],
+          "sai": [
+           "(2; −2)",
+           "(−2; 2)",
+           "(−1; −2)"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Điểm C: {0}",
+        "o": [
+         {
+          "dung": [
+           "(1; −3)"
+          ],
+          "sai": [
+           "(−3; 1)",
+           "(1; 3)",
+           "(−1; −3)"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Điểm D: {0}",
+        "o": [
+         {
+          "dung": [
+           "(3; 0)"
+          ],
+          "sai": [
+           "(0; 3)",
+           "(3; 3)"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "b) Hình biểu diễn đúng hai điểm E(0; −2) và F(2; −1): {0}",
+        "o": [
+         {
+          "dung": [
+           "Hình 1"
+          ],
+          "sai": [
+           "Hình 2",
+           "Hình 3",
+           "Hình 4"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "7.21",
@@ -5100,7 +5286,22 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "de": "Hàm số y = f(x) được cho bởi bảng sau: x nhận các giá trị −2; −1; 0; 1; 2 với y = f(x) tương ứng là −5; −2,5; 0; 2,5; 5. Vẽ đồ thị của hàm số y = f(x).",
-     "bo_may": "vẽ đồ thị"
+     "hinh": [
+      "toan8t2/7.21-chon1.webp",
+      "toan8t2/7.21-chon2.webp"
+     ],
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Hàm số y = f(x) được cho bởi bảng sau: x nhận các giá trị −2; −1; 0; 1; 2 với y = f(x) tương ứng là −5; −2,5; 0; 2,5; 5. Vẽ đồ thị của hàm số y = f(x).\nHình nào dưới đây là đồ thị của hàm số y = f(x)?",
+      "cac": [
+       "Hình 1",
+       "Hình 2",
+       "Hình 3",
+       "Hình 4"
+      ],
+      "dap": "B"
+     }
     },
     {
      "ma": "7.22",
@@ -5513,7 +5714,45 @@
      "nhom": "Luyện tập",
      "dang": "CAU_NHO",
      "de": "Vẽ đồ thị của các hàm số bậc nhất y = −2x + 3 và y = (1/2)x.",
-     "bo_may": "vẽ đồ thị"
+     "hinh": [
+      "toan8t2/LT-tr49-chon1.webp",
+      "toan8t2/LT-tr49-chon2.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "Vẽ đồ thị của các hàm số bậc nhất y = −2x + 3 và y = (1/2)x.\nVới mỗi hàm số, chọn hình là đồ thị của hàm số đó.",
+      "dong": [
+       {
+        "chu": "Đồ thị của hàm số y = −2x + 3: {0}",
+        "o": [
+         {
+          "dung": [
+           "Hình 2"
+          ],
+          "sai": [
+           "Hình 1",
+           "Hình 3"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Đồ thị của hàm số y = (1/2)x: {0}",
+        "o": [
+         {
+          "dung": [
+           "Hình 6"
+          ],
+          "sai": [
+           "Hình 4",
+           "Hình 5"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "7.24",
@@ -5637,7 +5876,60 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "de": "Vẽ đồ thị của các hàm số sau: a) y = 2x − 6; b) y = −3x + 5; c) y = (3/2)x.",
-     "bo_may": "vẽ đồ thị"
+     "hinh": [
+      "toan8t2/7.26-chon1.webp",
+      "toan8t2/7.26-chon2.webp",
+      "toan8t2/7.26-chon3.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "hoi": "Vẽ đồ thị của các hàm số sau:\na) y = 2x − 6;\nb) y = −3x + 5;\nc) y = (3/2)x.\nVới mỗi hàm số, chọn hình là đồ thị của hàm số đó.",
+      "dong": [
+       {
+        "chu": "a) Đồ thị của hàm số y = 2x − 6: {0}",
+        "o": [
+         {
+          "dung": [
+           "Hình 3"
+          ],
+          "sai": [
+           "Hình 1",
+           "Hình 2"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "b) Đồ thị của hàm số y = −3x + 5: {0}",
+        "o": [
+         {
+          "dung": [
+           "Hình 4"
+          ],
+          "sai": [
+           "Hình 5",
+           "Hình 6"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "c) Đồ thị của hàm số y = (3/2)x: {0}",
+        "o": [
+         {
+          "dung": [
+           "Hình 8"
+          ],
+          "sai": [
+           "Hình 7",
+           "Hình 9"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "7.27",
@@ -5706,7 +5998,78 @@
      "trang": 50,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Hàm chi phí đơn giản nhất là hàm chi phí bậc nhất y = ax + b, trong đó b biểu thị chi phí cố định của hoạt động kinh doanh và hệ số a biểu thị chi phí của mỗi mặt hàng được sản xuất. Giả sử rằng một xưởng sản xuất xe đạp có chi phí cố định hằng ngày là 36 triệu đồng và mỗi chiếc xe đạp có chi phí sản xuất là 1,8 triệu đồng. a) Viết công thức của hàm số bậc nhất biểu thị chi phí y (triệu đồng) để sản xuất x (xe đạp) trong một ngày. b) Vẽ đồ thị của hàm số thu được ở câu a. c) Chi phí để sản xuất 15 chiếc xe đạp trong một ngày là bao nhiêu? d) Có thể sản xuất bao nhiêu chiếc xe đạp trong ngày, nếu chi phí trong ngày đó là 72 triệu đồng?"
+     "de": "Hàm chi phí đơn giản nhất là hàm chi phí bậc nhất y = ax + b, trong đó b biểu thị chi phí cố định của hoạt động kinh doanh và hệ số a biểu thị chi phí của mỗi mặt hàng được sản xuất. Giả sử rằng một xưởng sản xuất xe đạp có chi phí cố định hằng ngày là 36 triệu đồng và mỗi chiếc xe đạp có chi phí sản xuất là 1,8 triệu đồng. a) Viết công thức của hàm số bậc nhất biểu thị chi phí y (triệu đồng) để sản xuất x (xe đạp) trong một ngày. b) Vẽ đồ thị của hàm số thu được ở câu a. c) Chi phí để sản xuất 15 chiếc xe đạp trong một ngày là bao nhiêu? d) Có thể sản xuất bao nhiêu chiếc xe đạp trong ngày, nếu chi phí trong ngày đó là 72 triệu đồng?",
+     "hinh": [
+      "toan8t2/7.29-chon1.webp",
+      "toan8t2/7.29-chon2.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "hoi": "Hàm chi phí đơn giản nhất là hàm chi phí bậc nhất y = ax + b, trong đó b biểu thị chi phí cố định của hoạt động kinh doanh và hệ số a biểu thị chi phí của mỗi mặt hàng được sản xuất. Giả sử rằng một xưởng sản xuất xe đạp có chi phí cố định hằng ngày là 36 triệu đồng và mỗi chiếc xe đạp có chi phí sản xuất là 1,8 triệu đồng.\na) Viết công thức của hàm số bậc nhất biểu thị chi phí y (triệu đồng) để sản xuất x (xe đạp) trong một ngày.\nb) Vẽ đồ thị của hàm số thu được ở câu a.\nc) Chi phí để sản xuất 15 chiếc xe đạp trong một ngày là bao nhiêu?\nd) Có thể sản xuất bao nhiêu chiếc xe đạp trong ngày, nếu chi phí trong ngày đó là 72 triệu đồng?",
+      "dong": [
+       {
+        "chu": "a) y = {0}",
+        "o": [
+         {
+          "dung": [
+           "1,8x + 36"
+          ],
+          "sai": [
+           "36x + 1,8",
+           "1,8x",
+           "1,8x − 36"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "b) Đồ thị của hàm số ở câu a: {0}",
+        "o": [
+         {
+          "dung": [
+           "Hình 3"
+          ],
+          "sai": [
+           "Hình 1",
+           "Hình 2",
+           "Hình 4"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "c) Chi phí sản xuất 15 chiếc xe đạp: {0} triệu đồng",
+        "o": [
+         {
+          "dung": [
+           "63"
+          ],
+          "sai": [
+           "27",
+           "91,8",
+           "540"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "d) Số xe đạp sản xuất được: {0} chiếc",
+        "o": [
+         {
+          "dung": [
+           "20"
+          ],
+          "sai": [
+           "40",
+           "60",
+           "64,8"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     }
    ]
   },
@@ -6382,7 +6745,133 @@
      "trang": 54,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Trong mặt phẳng toạ độ Oxy, cho hai đường thẳng y = x và y = −x + 2. a) Vẽ hai đường thẳng đã cho trên cùng mặt phẳng toạ độ. b) Tìm giao điểm A của hai đường thẳng đã cho. c) Gọi B là giao điểm của đường thẳng y = −x + 2 và trục Ox. Chứng minh rằng tam giác OAB vuông tại A, tức là hai đường thẳng y = x và y = −x + 2 vuông góc với nhau. d) Có nhận xét gì về tích hai hệ số góc của hai đường thẳng đã cho?"
+     "de": "Trong mặt phẳng toạ độ Oxy, cho hai đường thẳng y = x và y = −x + 2. a) Vẽ hai đường thẳng đã cho trên cùng mặt phẳng toạ độ. b) Tìm giao điểm A của hai đường thẳng đã cho. c) Gọi B là giao điểm của đường thẳng y = −x + 2 và trục Ox. Chứng minh rằng tam giác OAB vuông tại A, tức là hai đường thẳng y = x và y = −x + 2 vuông góc với nhau. d) Có nhận xét gì về tích hai hệ số góc của hai đường thẳng đã cho?",
+     "hinh": [
+      "toan8t2/7.35-chon1.webp",
+      "toan8t2/7.35-chon2.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 8,
+      "hoi": "Trong mặt phẳng toạ độ Oxy, cho hai đường thẳng y = x và y = −x + 2.\na) Vẽ hai đường thẳng đã cho trên cùng mặt phẳng toạ độ.\nb) Tìm giao điểm A của hai đường thẳng đã cho.\nc) Gọi B là giao điểm của đường thẳng y = −x + 2 và trục Ox. Chứng minh rằng tam giác OAB vuông tại A, tức là hai đường thẳng y = x và y = −x + 2 vuông góc với nhau.\nd) Có nhận xét gì về tích hai hệ số góc của hai đường thẳng đã cho?",
+      "dong": [
+       {
+        "chu": "a) Hình vẽ đúng hai đường thẳng: {0}",
+        "o": [
+         {
+          "dung": [
+           "Hình 2"
+          ],
+          "sai": [
+           "Hình 1",
+           "Hình 3",
+           "Hình 4"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "b) Giao điểm A = {0}",
+        "o": [
+         {
+          "dung": [
+           "(1; 1)"
+          ],
+          "sai": [
+           "(2; 2)",
+           "(1; −1)",
+           "(0; 2)"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "c) Giao điểm của đường thẳng y = −x + 2 và trục Ox là B = {0}",
+        "o": [
+         {
+          "dung": [
+           "(2; 0)"
+          ],
+          "sai": [
+           "(0; 2)",
+           "(−2; 0)"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Gọi H là chân đường vuông góc kẻ từ A xuống trục Ox. Khi đó AH = OH = HB = {0}",
+        "o": [
+         {
+          "dung": [
+           "1"
+          ],
+          "sai": [
+           "2",
+           "√2"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Tam giác AHO vuông cân tại H nên góc AOB = {0}",
+        "o": [
+         {
+          "dung": [
+           "45°"
+          ],
+          "sai": [
+           "90°",
+           "60°"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Tam giác AHB vuông cân tại H nên góc ABO = {0}",
+        "o": [
+         {
+          "dung": [
+           "45°"
+          ],
+          "sai": [
+           "90°",
+           "30°"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Do đó góc OAB = 180° − góc AOB − góc ABO = {0}, tức là tam giác OAB vuông tại A",
+        "o": [
+         {
+          "dung": [
+           "90°"
+          ],
+          "sai": [
+           "45°",
+           "60°"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "d) Tích hai hệ số góc của hai đường thẳng đã cho bằng {0}",
+        "o": [
+         {
+          "dung": [
+           "−1"
+          ],
+          "sai": [
+           "1",
+           "2",
+           "−2"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     }
    ]
   },
@@ -6395,7 +6884,48 @@
      "trang": 56,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Cho hai hàm số y = 2x − 1 và y = −x + 2. a) Trong cùng mặt phẳng toạ độ Oxy, vẽ đồ thị của hai hàm số đã cho. b) Tìm toạ độ giao điểm của hai đồ thị trên."
+     "de": "Cho hai hàm số y = 2x − 1 và y = −x + 2. a) Trong cùng mặt phẳng toạ độ Oxy, vẽ đồ thị của hai hàm số đã cho. b) Tìm toạ độ giao điểm của hai đồ thị trên.",
+     "hinh": [
+      "toan8t2/7.36-chon1.webp",
+      "toan8t2/7.36-chon2.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "Cho hai hàm số y = 2x − 1 và y = −x + 2.\na) Trong cùng mặt phẳng toạ độ Oxy, vẽ đồ thị của hai hàm số đã cho.\nb) Tìm toạ độ giao điểm của hai đồ thị trên.",
+      "dong": [
+       {
+        "chu": "a) Hình vẽ đúng đồ thị của hai hàm số: {0}",
+        "o": [
+         {
+          "dung": [
+           "Hình 4"
+          ],
+          "sai": [
+           "Hình 1",
+           "Hình 2",
+           "Hình 3"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "b) Toạ độ giao điểm của hai đồ thị: {0}",
+        "o": [
+         {
+          "dung": [
+           "(1; 1)"
+          ],
+          "sai": [
+           "(3; 5)",
+           "(1/3; −1/3)",
+           "(1; −1)"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "7.37",
@@ -6486,7 +7016,78 @@
      "trang": 56,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Trong lí thuyết tài chính, giá trị sổ sách là giá trị của một tài sản mà công ty sử dụng để xây dựng bảng cân đối kế toán của mình. Một số công ty khấu hao tài sản của họ bằng cách sử dụng phương pháp khấu hao đường thẳng để giá trị của tài sản giảm một lượng cố định mỗi năm. Mức suy giảm phụ thuộc vào thời gian sử dụng hữu ích mà công ty đặt vào tài sản đó. Giả sử một công ty vừa mua một chiếc máy photocopy mới với giá 18 triệu đồng. Công ty lựa chọn cách tính khấu hao chiếc máy photocopy này theo phương pháp khấu hao đường thẳng trong thời gian 3 năm, tức là mỗi năm giá trị của chiếc máy photocopy sẽ giảm 18 : 3 = 6 triệu đồng. a) Viết hàm số bậc nhất biểu thị giá trị sổ sách V(x) của máy photocopy dưới dạng một hàm số theo thời gian sử dụng x (năm) của nó. b) Vẽ đồ thị của hàm số bậc nhất y = V(x). c) Giá trị sổ sách của máy photocopy sau 2 năm sử dụng là bao nhiêu? d) Sau thời gian sử dụng là bao lâu thì máy photocopy có giá trị sổ sách là 9 triệu đồng?"
+     "de": "Trong lí thuyết tài chính, giá trị sổ sách là giá trị của một tài sản mà công ty sử dụng để xây dựng bảng cân đối kế toán của mình. Một số công ty khấu hao tài sản của họ bằng cách sử dụng phương pháp khấu hao đường thẳng để giá trị của tài sản giảm một lượng cố định mỗi năm. Mức suy giảm phụ thuộc vào thời gian sử dụng hữu ích mà công ty đặt vào tài sản đó. Giả sử một công ty vừa mua một chiếc máy photocopy mới với giá 18 triệu đồng. Công ty lựa chọn cách tính khấu hao chiếc máy photocopy này theo phương pháp khấu hao đường thẳng trong thời gian 3 năm, tức là mỗi năm giá trị của chiếc máy photocopy sẽ giảm 18 : 3 = 6 triệu đồng. a) Viết hàm số bậc nhất biểu thị giá trị sổ sách V(x) của máy photocopy dưới dạng một hàm số theo thời gian sử dụng x (năm) của nó. b) Vẽ đồ thị của hàm số bậc nhất y = V(x). c) Giá trị sổ sách của máy photocopy sau 2 năm sử dụng là bao nhiêu? d) Sau thời gian sử dụng là bao lâu thì máy photocopy có giá trị sổ sách là 9 triệu đồng?",
+     "hinh": [
+      "toan8t2/7.40-chon1.webp",
+      "toan8t2/7.40-chon2.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "hoi": "Trong lí thuyết tài chính, giá trị sổ sách là giá trị của một tài sản mà công ty sử dụng để xây dựng bảng cân đối kế toán của mình. Một số công ty khấu hao tài sản của họ bằng cách sử dụng phương pháp khấu hao đường thẳng để giá trị của tài sản giảm một lượng cố định mỗi năm. Mức suy giảm phụ thuộc vào thời gian sử dụng hữu ích mà công ty đặt vào tài sản đó.\nGiả sử một công ty vừa mua một chiếc máy photocopy mới với giá 18 triệu đồng. Công ty lựa chọn cách tính khấu hao chiếc máy photocopy này theo phương pháp khấu hao đường thẳng trong thời gian 3 năm, tức là mỗi năm giá trị của chiếc máy photocopy sẽ giảm 18 : 3 = 6 triệu đồng.\na) Viết hàm số bậc nhất biểu thị giá trị sổ sách V(x) của máy photocopy dưới dạng một hàm số theo thời gian sử dụng x (năm) của nó.\nb) Vẽ đồ thị của hàm số bậc nhất y = V(x).\nc) Giá trị sổ sách của máy photocopy sau 2 năm sử dụng là bao nhiêu?\nd) Sau thời gian sử dụng là bao lâu thì máy photocopy có giá trị sổ sách là 9 triệu đồng?",
+      "dong": [
+       {
+        "chu": "a) V(x) = {0}",
+        "o": [
+         {
+          "dung": [
+           "18 − 6x"
+          ],
+          "sai": [
+           "18 + 6x",
+           "18x − 6",
+           "6x − 18"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "b) Đồ thị của hàm số y = V(x): {0}",
+        "o": [
+         {
+          "dung": [
+           "Hình 1"
+          ],
+          "sai": [
+           "Hình 2",
+           "Hình 3",
+           "Hình 4"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "c) Giá trị sổ sách sau 2 năm sử dụng: {0} triệu đồng",
+        "o": [
+         {
+          "dung": [
+           "6"
+          ],
+          "sai": [
+           "12",
+           "30",
+           "16"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "d) Máy có giá trị sổ sách 9 triệu đồng sau {0} năm sử dụng",
+        "o": [
+         {
+          "dung": [
+           "1,5"
+          ],
+          "sai": [
+           "4,5",
+           "3",
+           "2"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     }
    ]
   },
@@ -6700,7 +7301,78 @@
      "trang": 58,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Cho hàm số bậc nhất y = (m + 2)x + 3. a) Tìm m để đồ thị hàm số song song với đường thẳng y = −x. b) Vẽ đồ thị hàm số với giá trị m tìm được ở câu a. c) Tìm giao điểm A của đồ thị hàm số tìm được ở câu a và đồ thị của hàm số y = x + 1. Tính diện tích của tam giác OAB, trong đó B là giao điểm của đồ thị hàm số y = x + 1 với trục Ox."
+     "de": "Cho hàm số bậc nhất y = (m + 2)x + 3. a) Tìm m để đồ thị hàm số song song với đường thẳng y = −x. b) Vẽ đồ thị hàm số với giá trị m tìm được ở câu a. c) Tìm giao điểm A của đồ thị hàm số tìm được ở câu a và đồ thị của hàm số y = x + 1. Tính diện tích của tam giác OAB, trong đó B là giao điểm của đồ thị hàm số y = x + 1 với trục Ox.",
+     "hinh": [
+      "toan8t2/7.50-chon1.webp",
+      "toan8t2/7.50-chon2.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "hoi": "Cho hàm số bậc nhất y = (m + 2)x + 3.\na) Tìm m để đồ thị hàm số song song với đường thẳng y = −x.\nb) Vẽ đồ thị hàm số với giá trị m tìm được ở câu a.\nc) Tìm giao điểm A của đồ thị hàm số tìm được ở câu a và đồ thị của hàm số y = x + 1. Tính diện tích của tam giác OAB, trong đó B là giao điểm của đồ thị hàm số y = x + 1 với trục Ox.",
+      "dong": [
+       {
+        "chu": "a) m = {0}",
+        "o": [
+         {
+          "dung": [
+           "−3"
+          ],
+          "sai": [
+           "−1",
+           "1",
+           "−2"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "b) Đồ thị hàm số với m tìm được ở câu a: {0}",
+        "o": [
+         {
+          "dung": [
+           "Hình 3"
+          ],
+          "sai": [
+           "Hình 1",
+           "Hình 2",
+           "Hình 4"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "c) Giao điểm A = {0}",
+        "o": [
+         {
+          "dung": [
+           "(1; 2)"
+          ],
+          "sai": [
+           "(2; 1)",
+           "(−1; 0)",
+           "(0; 3)"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Diện tích tam giác OAB = {0}",
+        "o": [
+         {
+          "dung": [
+           "1"
+          ],
+          "sai": [
+           "2",
+           "1/2",
+           "3"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     }
    ]
   },
@@ -7844,7 +8516,22 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "de": "Vẽ và cắt một tam giác đều có cạnh 10 cm (Hình 10.13) rồi gấp theo đường màu cam để được hình chóp tam giác đều (Hình 10.14, SGK trang 116).",
-     "bo_may": "thực hành cắt, gấp hình"
+     "hinh": [
+      "toan8t2/10.2-chon1.webp",
+      "toan8t2/10.2-chon2.webp"
+     ],
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Vẽ và cắt một tam giác đều có cạnh 10 cm rồi gấp theo các nét đứt để được hình chóp tam giác đều.\nHình nào dưới đây có các nét gấp (nét đứt) đúng?",
+      "cac": [
+       "Hình 1",
+       "Hình 2",
+       "Hình 3",
+       "Hình 4"
+      ],
+      "dap": "C"
+     }
     },
     {
      "ma": "10.3",
@@ -8154,7 +8841,22 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "de": "Từ tờ giấy cắt ra một hình vuông rồi thực hiện các thao tác như Hình 10.26 (SGK trang 120) để có thể ghép được các mặt bên của hình chóp tứ giác đều.",
-     "bo_may": "thực hành cắt, gấp giấy"
+     "hinh": [
+      "toan8t2/10.7-chon1.webp",
+      "toan8t2/10.7-chon2.webp"
+     ],
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Từ tờ giấy cắt ra một hình vuông rồi thực hiện các thao tác như Hình 10.26 (SGK trang 120) để có thể ghép được các mặt bên của hình chóp tứ giác đều.\nMở miếng giấy đã cắt ra, ta được một miếng giấy có các nếp gấp (nét đứt). Hình nào dưới đây gấp lại được thành các mặt bên của một hình chóp tứ giác đều?",
+      "cac": [
+       "Hình 1",
+       "Hình 2",
+       "Hình 3",
+       "Hình 4"
+      ],
+      "dap": "A"
+     }
     },
     {
      "ma": "10.8",
@@ -9194,7 +9896,78 @@
      "trang": 136,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Với giá trị nào của m, đường thẳng y = mx + 1 (m ≠ 0): a) song song với đường thẳng y = 3x? b) cắt trục hoành tại điểm có hoành độ bằng −2? c) đồng quy với các đường thẳng y = 5x − 2 và y = −x + 4 (tức là ba đường thẳng này cắt nhau tại một điểm)? Với giá trị m tìm được, hãy vẽ ba đường thẳng này trên cùng một hệ trục toạ độ để kiểm nghiệm lại kết quả."
+     "de": "Với giá trị nào của m, đường thẳng y = mx + 1 (m ≠ 0): a) song song với đường thẳng y = 3x? b) cắt trục hoành tại điểm có hoành độ bằng −2? c) đồng quy với các đường thẳng y = 5x − 2 và y = −x + 4 (tức là ba đường thẳng này cắt nhau tại một điểm)? Với giá trị m tìm được, hãy vẽ ba đường thẳng này trên cùng một hệ trục toạ độ để kiểm nghiệm lại kết quả.",
+     "hinh": [
+      "toan8t2/OT7-tr136-chon1.webp",
+      "toan8t2/OT7-tr136-chon2.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "hoi": "Với giá trị nào của m, đường thẳng y = mx + 1 (m ≠ 0):\na) song song với đường thẳng y = 3x?\nb) cắt trục hoành tại điểm có hoành độ bằng −2?\nc) đồng quy với các đường thẳng y = 5x − 2 và y = −x + 4 (tức là ba đường thẳng này cắt nhau tại một điểm)? Với giá trị m tìm được, hãy vẽ ba đường thẳng này trên cùng một hệ trục toạ độ để kiểm nghiệm lại kết quả.",
+      "dong": [
+       {
+        "chu": "a) m = {0}",
+        "o": [
+         {
+          "dung": [
+           "3"
+          ],
+          "sai": [
+           "−3",
+           "1/3",
+           "1"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "b) m = {0}",
+        "o": [
+         {
+          "dung": [
+           "1/2"
+          ],
+          "sai": [
+           "−1/2",
+           "2",
+           "−2"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "c) m = {0}",
+        "o": [
+         {
+          "dung": [
+           "2"
+          ],
+          "sai": [
+           "3",
+           "4",
+           "−2"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Ba đường thẳng (với m tìm được ở câu c) vẽ đúng trên cùng một hệ trục toạ độ: {0}",
+        "o": [
+         {
+          "dung": [
+           "Hình 2"
+          ],
+          "sai": [
+           "Hình 1",
+           "Hình 3",
+           "Hình 4"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "Ôn cuối năm 8",
@@ -9703,7 +10476,47 @@
      "trang": 137,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Cho bảng thống kê xếp loại của hai lớp: lớp Vuông có Tốt 7, Khá 10, Đạt 15, Không đạt 10; lớp Tròn có Tốt 10, Khá 15, Đạt 8, Không đạt 9. Để so sánh số lượng học sinh ở mỗi mức xếp loại của hai lớp ta nên dùng biểu đồ nào? Hãy vẽ biểu đồ đó."
+     "de": "Cho bảng thống kê xếp loại của hai lớp: lớp Vuông có Tốt 7, Khá 10, Đạt 15, Không đạt 10; lớp Tròn có Tốt 10, Khá 15, Đạt 8, Không đạt 9. Để so sánh số lượng học sinh ở mỗi mức xếp loại của hai lớp ta nên dùng biểu đồ nào? Hãy vẽ biểu đồ đó.",
+     "hinh": [
+      "toan8t2/OT13-tr137-chon1.webp",
+      "toan8t2/OT13-tr137-chon2.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "Cho bảng thống kê xếp loại của hai lớp: lớp Vuông có Tốt 7, Khá 10, Đạt 15, Không đạt 10; lớp Tròn có Tốt 10, Khá 15, Đạt 8, Không đạt 9.\nĐể so sánh số lượng học sinh ở mỗi mức xếp loại của hai lớp ta nên dùng biểu đồ nào? Hãy vẽ biểu đồ đó.",
+      "dong": [
+       {
+        "chu": "Nên dùng {0}",
+        "o": [
+         {
+          "dung": [
+           "biểu đồ cột kép"
+          ],
+          "sai": [
+           "biểu đồ hình quạt tròn",
+           "biểu đồ đoạn thẳng"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Biểu đồ đó vẽ đúng là {0}",
+        "o": [
+         {
+          "dung": [
+           "Hình 4"
+          ],
+          "sai": [
+           "Hình 1",
+           "Hình 2",
+           "Hình 3"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "Ôn cuối năm 14",

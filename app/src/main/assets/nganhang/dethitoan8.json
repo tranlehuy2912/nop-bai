@@ -2,7 +2,7 @@
  "nguon": "dethitoan8",
  "mon": "Toán",
  "ten": "Đề thi Toán 8",
- "ban": 4,
+ "ban": 5,
  "cac_bai": [
   {
    "chuong": "Giữa học kì 1",
@@ -5782,9 +5782,26 @@
      "nhom": "Bài 3. (1 điểm) Thống kê số lượt hành khách vận chuyển bằng đường bộ ở Hải Phòng trong các năm 2018; 2019; 2020; 2021; 2022 lần lượt là 55,02; 62,00; 64,20; 57,14; 67,71 (đơn vị: triệu lượt người). (Nguồn: Niên giám thống kê 2023)",
      "de": "Bài 3. (1 điểm) Thống kê số lượt hành khách vận chuyển bằng đường bộ ở Hải Phòng trong các năm 2018; 2019; 2020; 2021; 2022 lần lượt là 55,02; 62,00; 64,20; 57,14; 67,71 (đơn vị: triệu lượt người). (Nguồn: Niên giám thống kê 2023)\nb) Hãy hoàn thiện biểu đồ ở hình bên để nhận được biểu đồ cột biểu diễn các dữ liệu thống kê số lượt hành khách vận chuyển bằng đường bộ ở Hải Phòng trong các năm trên.\n(Hình: biểu đồ cột đã vẽ sẵn năm cột 2018 tới 2022, trên mỗi cột một ô '?')",
      "dang": "CAU_NHO",
-     "bo_may": "vẽ biểu đồ",
-     "dap_an": "Ghi 55,02; 62,00; 64,20; 57,14; 67,71 vào các ô trên cột 2018 tới 2022.",
-     "loai_dap_an": "LOI_GIAI"
+     "dap_an": "Ghi 55,02; 62,00; 64,20; 57,14; 67,71 trên các cột 2018 tới 2022 (Hình 2).",
+     "loai_dap_an": "DAP_SO",
+     "bai_sgk": 19,
+     "hinh": [
+      "dethitoan8/TCK1-1.B3b.chon1.webp",
+      "dethitoan8/TCK1-1.B3b.chon2.webp"
+     ],
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Bài 3. (1 điểm) Thống kê số lượt hành khách vận chuyển bằng đường bộ ở Hải Phòng trong các năm 2018; 2019; 2020; 2021; 2022 lần lượt là 55,02; 62,00; 64,20; 57,14; 67,71 (đơn vị: triệu lượt người). (Nguồn: Niên giám thống kê 2023)\nb) Hãy hoàn thiện biểu đồ cột biểu diễn các dữ liệu thống kê số lượt hành khách vận chuyển bằng đường bộ ở Hải Phòng trong các năm trên (ghi số liệu lên đầu mỗi cột). Biểu đồ nào dưới đây đã hoàn thiện đúng?",
+      "cac": [
+       "Hình 1",
+       "Hình 2",
+       "Hình 3",
+       "Hình 4"
+      ],
+      "dap": "B"
+     },
+     "ghi_chu": "Đề in biểu đồ cột vẽ sẵn năm cột, trên mỗi cột một ô '?'. Từ 06/10/2026 (anh Huy chốt tránh viết tay) làm trên máy: chọn biểu đồ đã điền đúng; các cột cao đúng số liệu, ba hình sai ghi nhầm số lên cột. Lời giải in ghi 55.2 và 60 cho năm 2018, 2019; trên máy dùng đúng số liệu của đề."
     },
     {
      "ma": "TCK1-1.B4a",
@@ -8887,10 +8904,27 @@
      "nhom": "Bài 3. (1 điểm) Biểu đồ tranh ở hình vẽ thống kê số gạo bán được của một cửa hàng trong ba tháng cuối năm 2022.",
      "de": "Bài 3. (1 điểm) Biểu đồ tranh ở hình vẽ thống kê số gạo bán được của một cửa hàng trong ba tháng cuối năm 2022.\nb) Hãy hoàn thiện biểu đồ ở hình bên dưới để nhận biểu đồ cột biểu diễn các dữ liệu có trong biểu đồ tranh.",
      "dang": "CAU_NHO",
-     "dap_an": "Ghi Tháng 10, Tháng 11, Tháng 12 dưới ba cột và 200, 250, 225 trên đầu ba cột.",
-     "loai_dap_an": "LOI_GIAI",
-     "bo_may": "vẽ biểu đồ",
-     "ghi_chu": "Tờ đề in bị cắt ('để nhận biểu đồ'); câu đủ chép từ phần lời giải. Câu này là ghi chữ, số lên hình vẽ sẵn, số liệu trùng ý a, nên để làm ra giấy."
+     "dap_an": "Ghi Tháng 10, Tháng 11, Tháng 12 dưới ba cột và 200, 250, 225 trên đầu ba cột (Hình 4).",
+     "loai_dap_an": "DAP_SO",
+     "bai_sgk": 19,
+     "hinh": [
+      "dethitoan8/TCK1-5.B3.webp",
+      "dethitoan8/TCK1-5.B3b.chon1.webp",
+      "dethitoan8/TCK1-5.B3b.chon2.webp"
+     ],
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Bài 3. (1 điểm) Biểu đồ tranh ở hình vẽ thống kê số gạo bán được của một cửa hàng trong ba tháng cuối năm 2022.\nb) Hãy hoàn thiện biểu đồ cột biểu diễn các dữ liệu có trong biểu đồ tranh (ghi tên tháng dưới mỗi cột và số ki-lô-gam gạo trên đầu mỗi cột). Biểu đồ nào dưới đây đã hoàn thiện đúng?",
+      "cac": [
+       "Hình 1",
+       "Hình 2",
+       "Hình 3",
+       "Hình 4"
+      ],
+      "dap": "D"
+     },
+     "ghi_chu": "Tờ đề in bị cắt ('để nhận biểu đồ'); câu đủ chép từ phần lời giải. Đề in biểu đồ cột vẽ sẵn ba cột, dấu '?' dưới và trên mỗi cột. Từ 06/10/2026 (anh Huy chốt tránh viết tay) làm trên máy: chọn biểu đồ đã điền đúng; ba hình sai là lỗi của ý a (số bao, nửa bao thành cả bao) và ghi ngược thứ tự tháng."
     },
     {
      "ma": "TCK1-5.B4-1",
@@ -10129,10 +10163,26 @@
      "nhom": "Bài 3. (1 điểm) Cho bảng thống kê dữ liệu về số cơn bão từ năm 2014 – 2018 như sau:\nNăm: 2014; 2015; 2016; 2017; 2018\nSố lượng cơn bão: 99; 121; 86; 130; 94",
      "de": "Bài 3. (1 điểm) Cho bảng thống kê dữ liệu về số cơn bão từ năm 2014 – 2018 như sau:\nNăm: 2014; 2015; 2016; 2017; 2018\nSố lượng cơn bão: 99; 121; 86; 130; 94\nLựa chọn và vẽ biểu đồ biểu diễn dữ liệu này.",
      "dang": "CAU_NHO",
-     "dap_an": "Biểu đồ cột: các năm 2014, 2015, 2016, 2017, 2018 ứng với các cột cao 99, 121, 86, 130, 94.",
-     "loai_dap_an": "LOI_GIAI",
-     "bo_may": "vẽ biểu đồ",
-     "ghi_chu": "Đề in Bài 3 không chia ý; phần chọn và vẽ biểu đồ không làm trên máy (lời giải chọn biểu đồ cột, nhưng 5 năm liên tiếp vẽ biểu đồ đoạn thẳng cũng hợp lí nên không hỏi riêng phần chọn)."
+     "dap_an": "Biểu đồ cột: các năm 2014, 2015, 2016, 2017, 2018 ứng với các cột cao 99, 121, 86, 130, 94 (Hình 3).",
+     "loai_dap_an": "DAP_SO",
+     "bai_sgk": 19,
+     "hinh": [
+      "dethitoan8/TCK1-7.B3-1.chon1.webp",
+      "dethitoan8/TCK1-7.B3-1.chon2.webp"
+     ],
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Bài 3. (1 điểm) Cho bảng thống kê dữ liệu về số cơn bão từ năm 2014 – 2018 như sau:\nNăm: 2014; 2015; 2016; 2017; 2018\nSố lượng cơn bão: 99; 121; 86; 130; 94\nLựa chọn và vẽ biểu đồ biểu diễn dữ liệu này. Hình nào dưới đây là biểu đồ phù hợp, vẽ đúng số liệu?",
+      "cac": [
+       "Hình 1",
+       "Hình 2",
+       "Hình 3",
+       "Hình 4"
+      ],
+      "dap": "C"
+     },
+     "ghi_chu": "Đề in Bài 3 không chia ý. Từ 06/10/2026 (anh Huy chốt tránh viết tay) phần chọn và vẽ biểu đồ làm trên máy: chọn biểu đồ cột đúng số liệu như lời giải in. Không có hình biểu đồ đoạn thẳng (5 năm liên tiếp vẽ biểu đồ đoạn thẳng cũng hợp lí); hình sai là hai biểu đồ cột sai số liệu và một biểu đồ hình quạt tròn."
     },
     {
      "ma": "TCK1-7.B3-2",
@@ -10758,11 +10808,29 @@
      "nhan": "Bài 3a",
      "phan": "Phần tự luận (7 điểm)",
      "nhom": "Bài 3. (1 điểm) Doanh thu (đơn vị: tỉ đồng) của hai chi nhánh một công ty trong năm 2022 và 2023 được cho trong bảng sau:",
-     "de": "Bài 3. (1 điểm) Doanh thu (đơn vị: tỉ đồng) của hai chi nhánh một công ty trong năm 2022 và 2023 được cho trong bảng sau:\na) Em hãy lựa chọn dạng biểu đồ thích hợp rồi vẽ biểu đồ đã chọn để so sánh doanh thu của hai chi nhánh này trong hai năm 2022 và 2023.",
+     "de": "Bài 3. (1 điểm) Doanh thu (đơn vị: tỉ đồng) của hai chi nhánh một công ty trong năm 2022 và 2023 được cho trong bảng sau:\n(Bảng: Hà Nội: năm 2022 là 6, năm 2023 là 8; Thành phố Hồ Chí Minh: năm 2022 là 10, năm 2023 là 12)\na) Em hãy lựa chọn dạng biểu đồ thích hợp rồi vẽ biểu đồ đã chọn để so sánh doanh thu của hai chi nhánh này trong hai năm 2022 và 2023.",
      "dang": "CAU_NHO",
-     "dap_an": "Biểu đồ cột kép: mỗi năm 2022, 2023 hai cột Hà Nội (6; 8) và Thành phố Hồ Chí Minh (10; 12).",
-     "loai_dap_an": "LOI_GIAI",
-     "bo_may": "vẽ biểu đồ"
+     "dap_an": "Biểu đồ cột kép: mỗi năm 2022, 2023 hai cột Hà Nội (6; 8) và Thành phố Hồ Chí Minh (10; 12) (Hình 1).",
+     "loai_dap_an": "DAP_SO",
+     "bai_sgk": 19,
+     "hinh": [
+      "dethitoan8/TCK1-8.B3.webp",
+      "dethitoan8/TCK1-8.B3a.chon1.webp",
+      "dethitoan8/TCK1-8.B3a.chon2.webp"
+     ],
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Bài 3. (1 điểm) Doanh thu (đơn vị: tỉ đồng) của hai chi nhánh một công ty trong năm 2022 và 2023 được cho trong bảng sau:\na) Em hãy lựa chọn dạng biểu đồ thích hợp rồi vẽ biểu đồ đã chọn để so sánh doanh thu của hai chi nhánh này trong hai năm 2022 và 2023. Hình nào dưới đây là biểu đồ thích hợp, vẽ đúng số liệu?",
+      "cac": [
+       "Hình 1",
+       "Hình 2",
+       "Hình 3",
+       "Hình 4"
+      ],
+      "dap": "A"
+     },
+     "ghi_chu": "Từ 06/10/2026 (anh Huy chốt tránh viết tay) làm trên máy: chọn biểu đồ cột kép đúng số liệu như lời giải in. Không có hình cột kép nhóm theo chi nhánh (cũng hợp lí); hình sai là hai biểu đồ cột kép sai số liệu và một biểu đồ cột tổng doanh thu (không so sánh được hai chi nhánh). Bảng in trên đề lấy vào 'hinh'."
     },
     {
      "ma": "TCK1-8.B3b",
@@ -10791,7 +10859,7 @@
        "6 + 10 + 8 + 12 = 36 (tỉ đồng)"
       ]
      },
-     "ghi_chu": "Bảng in trên đề lấy vào 'hinh' của ý b (ý a không làm trên máy)."
+     "ghi_chu": "Bảng in trên đề lấy vào 'hinh' của ý b (và của ý a từ 06/10/2026, khi ý a thành câu chọn biểu đồ)."
     },
     {
      "ma": "TCK1-8.B4a",
