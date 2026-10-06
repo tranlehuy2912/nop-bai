@@ -2,7 +2,7 @@
  "nguon": "sbttoan8t2",
  "mon": "Toán",
  "ten": "SBT Toán 8 — tập hai",
- "ban": 3,
+ "ban": 4,
  "cac_bai": [
   {
    "chuong": "Chương VI. Phân thức đại số",
@@ -5149,7 +5149,104 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Đỉnh D; cạnh bên DH, DK, DQ; mặt bên DHK, DHQ, DKQ; mặt đáy HKQ; đường cao DI; một trung đoạn DE",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "hinh": [
+      "sbttoan8t2/H.10.5.tr72.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 6,
+      "hoi": "Gọi tên đỉnh, cạnh bên, mặt bên, mặt đáy, đường cao, một trung đoạn của hình chóp tam giác đều trong Hình 10.5.",
+      "dong": [
+       {
+        "chu": "Đỉnh: {0}",
+        "o": [
+         {
+          "dung": [
+           "D"
+          ],
+          "sai": [
+           "I",
+           "E",
+           "H"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Các cạnh bên: {0}",
+        "o": [
+         {
+          "dung": [
+           "DH, DK, DQ"
+          ],
+          "sai": [
+           "HK, KQ, QH",
+           "DI, DE, DK"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Các mặt bên: {0}",
+        "o": [
+         {
+          "dung": [
+           "DHK, DHQ, DKQ"
+          ],
+          "sai": [
+           "HKQ, DHK, DHQ",
+           "DHI, DKI, DQI"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Mặt đáy: {0}",
+        "o": [
+         {
+          "dung": [
+           "HKQ"
+          ],
+          "sai": [
+           "DHK",
+           "DKQ"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Đường cao: {0}",
+        "o": [
+         {
+          "dung": [
+           "DI"
+          ],
+          "sai": [
+           "DE",
+           "DK",
+           "IE"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Một trung đoạn: {0}",
+        "o": [
+         {
+          "dung": [
+           "DE"
+          ],
+          "sai": [
+           "DI",
+           "DQ",
+           "IE"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "10.2",
@@ -5158,7 +5255,70 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "a) Mặt bên SMN, SME, SNE; mặt đáy MNE; b) SN = SE = 10 cm; ME = NE = 5 cm",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "hoi": "Cho hình chóp tam giác đều S.MNE có cạnh bên SM = 10 cm và cạnh đáy MN = 5 cm. Hãy cho biết:\na) Mặt bên và mặt đáy của hình chóp tam giác đều đó.\nb) Độ dài cạnh bên và cạnh đáy còn lại của hình chóp tam giác đều đó.",
+      "dong": [
+       {
+        "chu": "a) Các mặt bên: {0}",
+        "o": [
+         {
+          "dung": [
+           "SMN, SME, SNE"
+          ],
+          "sai": [
+           "SMN, SME, SNE, MNE",
+           "MNE, SMN, SME"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Mặt đáy: {0}",
+        "o": [
+         {
+          "dung": [
+           "MNE"
+          ],
+          "sai": [
+           "SMN",
+           "SNE"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "b) Các cạnh bên còn lại: {0}",
+        "o": [
+         {
+          "dung": [
+           "SN = SE = 10 cm"
+          ],
+          "sai": [
+           "SN = SE = 5 cm",
+           "ME = NE = 10 cm"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Các cạnh đáy còn lại: {0}",
+        "o": [
+         {
+          "dung": [
+           "ME = NE = 5 cm"
+          ],
+          "sai": [
+           "ME = NE = 10 cm",
+           "SN = SE = 5 cm"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "10.3",
@@ -5167,7 +5327,27 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "0,18 m^2 (diện tích xung quanh (1/2) · 90 · 40 = 1 800 cm^2)",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "dap": [
+       "0,18",
+       "0,18m²"
+      ],
+      "phim": [
+       "m²"
+      ],
+      "nhieu": [
+       "cm²",
+       "m³"
+      ],
+      "loi_giai": [
+       "Nửa chu vi đáy: p = 30 · 3 : 2 = 45",
+       "Diện tích các mặt bên: Sxq = p · d = 45 · 40 = 1800",
+       "Đổi đơn vị (1 m² = 10000 cm²): S = 1800 : 10000 = 0,18"
+      ]
+     }
     },
     {
      "ma": "10.4",
@@ -5176,7 +5356,29 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "V = (1/3) · 43 · 8 ≈ 114,67 cm^3",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "hoi": "Một khối gỗ trang trí có dạng hình chóp tam giác đều. Diện tích đáy của khối gỗ bằng 43 cm², chiều cao của khối gỗ bằng 8 cm. Hỏi thể tích của khối gỗ bằng bao nhiêu?\n(Kết quả không phải số nguyên thì viết dưới dạng phân số, hoặc số thập phân làm tròn đến hàng phần trăm.)",
+      "dap": [
+       "114,67",
+       "344/3",
+       "114,67cm³",
+       "344/3cm³"
+      ],
+      "phim": [
+       "cm³"
+      ],
+      "nhieu": [
+       "cm²",
+       "cm"
+      ],
+      "loi_giai": [
+       "V = (1/3) · S · h = (1/3) · 43 · 8 = 344/3",
+       "Làm tròn đến hàng phần trăm: V ≈ 114,67"
+      ]
+     }
     },
     {
      "ma": "10.5",
@@ -5185,7 +5387,31 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Diện tích xung quanh 12√3 cm^2 (cạnh đáy 4 cm, trung đoạn 2√3 cm)",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "hinh": [
+      "sbttoan8t2/H.10.6.tr72.webp"
+     ],
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "dap": [
+       "12√3",
+       "12√3cm²"
+      ],
+      "phim": [
+       "cm²",
+       "√"
+      ],
+      "nhieu": [
+       "cm",
+       "cm³"
+      ],
+      "loi_giai": [
+       "Gấp theo các nét đứt thì ba đỉnh A, B, C chụm lại, được hình chóp có bốn mặt là tam giác đều cạnh a = 8 : 2 = 4",
+       "Nửa chu vi đáy: p = (4 + 4 + 4) : 2 = 6",
+       "Trung đoạn d = AH = 2√3 nên Sxq = p · d = 6 · 2√3 = 12√3"
+      ]
+     }
     },
     {
      "ma": "10.6",
@@ -5194,7 +5420,29 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "28 cm^2 (xung quanh 21 cm^2, đáy 7 cm^2)",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "hoi": "Một đồ chơi có dạng hình chóp tam giác đều. Tất cả các cạnh của hình chóp bằng 4 cm. Đường cao kẻ từ đỉnh tới cạnh đáy của các mặt bằng 3,5 cm. Tính diện tích giấy để làm vỏ bọc bốn mặt của đồ chơi này (coi mép dán không đáng kể).",
+      "dap": [
+       "28",
+       "28cm²"
+      ],
+      "phim": [
+       "cm²"
+      ],
+      "nhieu": [
+       "cm",
+       "cm³"
+      ],
+      "loi_giai": [
+       "Nửa chu vi đáy: p = (4 + 4 + 4) : 2 = 6",
+       "Diện tích xung quanh: Sxq = p · d = 6 · 3,5 = 21",
+       "Đáy là tam giác đều cạnh 4 cm, đường cao 3,5 cm: Sđáy = (1/2) · 4 · 3,5 = 7",
+       "Diện tích giấy = Sxq + Sđáy = 21 + 7 = 28"
+      ]
+     }
     },
     {
      "ma": "10.7",
@@ -5203,7 +5451,34 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "V ≈ 55,2 cm^3 (NE = √48 ≈ 6,9 cm, diện tích đáy ≈ 27,6 cm^2)",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "hinh": [
+      "sbttoan8t2/H.10.8.tr73.webp"
+     ],
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "dap": [
+       "55,2",
+       "8√48",
+       "55,2cm³",
+       "8√48cm³"
+      ],
+      "phim": [
+       "cm³",
+       "√"
+      ],
+      "nhieu": [
+       "cm²",
+       "cm"
+      ],
+      "loi_giai": [
+       "Tam giác MNP đều, E là trung điểm của MP nên NE ⊥ MP và ME = 8 : 2 = 4",
+       "Tam giác MNE vuông tại E: NE² = MN² − ME² = 8² − 4² = 48; NE = √48 ≈ 6,9",
+       "Diện tích đáy: S = (1/2) · MP · NE ≈ (1/2) · 8 · 6,9 = 27,6",
+       "Thể tích: V = (1/3) · S · h ≈ (1/3) · 27,6 · 6 = 55,2"
+      ]
+     }
     }
    ]
   },
@@ -5218,7 +5493,104 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Đỉnh S; cạnh bên SP, SQ, SE, SF; mặt bên SPQ, SQE, SEF, SPF; mặt đáy PQEF; đường cao SH; một trung đoạn SA",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "hinh": [
+      "sbttoan8t2/H.10.12.tr76.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 6,
+      "hoi": "Hãy cho biết đỉnh, cạnh bên, mặt bên, mặt đáy, đường cao, một trung đoạn của hình chóp tứ giác đều S.PQEF trong Hình 10.12.",
+      "dong": [
+       {
+        "chu": "Đỉnh: {0}",
+        "o": [
+         {
+          "dung": [
+           "S"
+          ],
+          "sai": [
+           "H",
+           "A",
+           "P"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Các cạnh bên: {0}",
+        "o": [
+         {
+          "dung": [
+           "SP, SQ, SE, SF"
+          ],
+          "sai": [
+           "PQ, QE, EF, FP",
+           "SH, SA, SP, SQ"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Các mặt bên: {0}",
+        "o": [
+         {
+          "dung": [
+           "SPQ, SQE, SEF, SPF"
+          ],
+          "sai": [
+           "PQEF, SPQ, SQE, SEF",
+           "SPH, SQH, SEH, SFH"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Mặt đáy: {0}",
+        "o": [
+         {
+          "dung": [
+           "PQEF"
+          ],
+          "sai": [
+           "SPQ",
+           "SEF"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Đường cao: {0}",
+        "o": [
+         {
+          "dung": [
+           "SH"
+          ],
+          "sai": [
+           "SA",
+           "SP",
+           "AH"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Một trung đoạn: {0}",
+        "o": [
+         {
+          "dung": [
+           "SA"
+          ],
+          "sai": [
+           "SH",
+           "SQ",
+           "AH"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "10.9",
@@ -5227,7 +5599,126 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Hình chóp tam giác đều: đáy tam giác đều, mặt bên tam giác cân, 3 cạnh đáy, 3 cạnh bên, 4 mặt; hình chóp tứ giác đều: đáy hình vuông, mặt bên tam giác cân, 4 cạnh đáy, 4 cạnh bên, 5 mặt",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 8,
+      "hoi": "Điền vào các ô còn trống của bảng về hai loại hình chóp đều. Bảng có các cột: đáy, mặt bên, số cạnh đáy, số cạnh bên, số mặt.",
+      "dong": [
+       {
+        "chu": "Hình chóp tam giác đều, đáy là tam giác đều; mặt bên: {0}",
+        "o": [
+         {
+          "dung": [
+           "tam giác cân"
+          ],
+          "sai": [
+           "tam giác đều",
+           "tam giác vuông"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Hình chóp tam giác đều, số cạnh đáy: {0}",
+        "o": [
+         {
+          "dung": [
+           "3"
+          ],
+          "sai": [
+           "4",
+           "6"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Hình chóp tam giác đều, số cạnh bên: {0}",
+        "o": [
+         {
+          "dung": [
+           "3"
+          ],
+          "sai": [
+           "4",
+           "6"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Hình chóp tam giác đều, số mặt: {0}",
+        "o": [
+         {
+          "dung": [
+           "4"
+          ],
+          "sai": [
+           "3",
+           "6"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Hình chóp tứ giác đều, mặt bên là tam giác cân; đáy: {0}",
+        "o": [
+         {
+          "dung": [
+           "hình vuông"
+          ],
+          "sai": [
+           "tam giác đều",
+           "tam giác cân"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Hình chóp tứ giác đều, số cạnh đáy: {0}",
+        "o": [
+         {
+          "dung": [
+           "4"
+          ],
+          "sai": [
+           "5",
+           "8"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Hình chóp tứ giác đều, số cạnh bên: {0}",
+        "o": [
+         {
+          "dung": [
+           "4"
+          ],
+          "sai": [
+           "5",
+           "8"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Hình chóp tứ giác đều, số mặt: {0}",
+        "o": [
+         {
+          "dung": [
+           "5"
+          ],
+          "sai": [
+           "4",
+           "8"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "10.10",
@@ -5236,7 +5727,70 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "a) Mặt bên SHK, SKI, SIJ, SJH; mặt đáy HKIJ; b) SH = SK = SJ = 10 cm; KI = IJ = JH = 8 cm",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "hoi": "Cho hình chóp tứ giác đều S.HKIJ có cạnh bên SI = 10 cm, cạnh đáy HK = 8 cm. Hãy cho biết:\na) Mặt bên và mặt đáy của hình chóp.\nb) Độ dài các cạnh bên và các cạnh đáy còn lại của hình chóp.",
+      "dong": [
+       {
+        "chu": "a) Các mặt bên: {0}",
+        "o": [
+         {
+          "dung": [
+           "SHK, SKI, SIJ, SJH"
+          ],
+          "sai": [
+           "SHK, SKI, SIJ, SHI",
+           "HKIJ, SHK, SKI, SIJ"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Mặt đáy: {0}",
+        "o": [
+         {
+          "dung": [
+           "HKIJ"
+          ],
+          "sai": [
+           "SHK",
+           "SIJ"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "b) Các cạnh bên còn lại: {0}",
+        "o": [
+         {
+          "dung": [
+           "SH = SK = SJ = 10 cm"
+          ],
+          "sai": [
+           "SH = SK = SJ = 8 cm",
+           "KI = IJ = JH = 10 cm"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Các cạnh đáy còn lại: {0}",
+        "o": [
+         {
+          "dung": [
+           "KI = IJ = JH = 8 cm"
+          ],
+          "sai": [
+           "KI = IJ = HI = 8 cm",
+           "KI = IJ = JH = 10 cm"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "10.11a",
@@ -5245,7 +5799,29 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Diện tích xung quanh 48 cm^2",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "hinh": [
+      "sbttoan8t2/H.10.13.tr76.webp"
+     ],
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "dap": [
+       "48",
+       "48cm²"
+      ],
+      "phim": [
+       "cm²"
+      ],
+      "nhieu": [
+       "cm",
+       "cm³"
+      ],
+      "loi_giai": [
+       "Nửa chu vi đáy: p = 6 · 4 : 2 = 12",
+       "Sxq = p · d = 12 · 4 = 48"
+      ]
+     }
     },
     {
      "ma": "10.11b",
@@ -5254,7 +5830,30 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Diện tích toàn phần 84 cm^2 (đáy 36 cm^2)",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "hinh": [
+      "sbttoan8t2/H.10.13.tr76.webp"
+     ],
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "dap": [
+       "84",
+       "84cm²"
+      ],
+      "phim": [
+       "cm²"
+      ],
+      "nhieu": [
+       "cm",
+       "cm³"
+      ],
+      "loi_giai": [
+       "Sxq = p · d = (6 · 4 : 2) · 4 = 48",
+       "Diện tích đáy: Sđáy = 6² = 36",
+       "Stp = Sxq + Sđáy = 48 + 36 = 84"
+      ]
+     }
     },
     {
      "ma": "10.12",
@@ -5263,7 +5862,31 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Diện tích toàn phần 208 cm^2 (xung quanh 144 cm^2, đáy 64 cm^2)",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "hinh": [
+      "sbttoan8t2/H.10.14.tr77.webp"
+     ],
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "dap": [
+       "208",
+       "208cm²"
+      ],
+      "phim": [
+       "cm²"
+      ],
+      "nhieu": [
+       "cm",
+       "cm³"
+      ],
+      "loi_giai": [
+       "Nửa chu vi đáy: p = 8 · 4 : 2 = 16",
+       "Trung đoạn là đường cao 9 cm của mỗi tam giác: Sxq = p · d = 16 · 9 = 144",
+       "Diện tích đáy: Sđáy = 8² = 64",
+       "Stp = Sxq + Sđáy = 144 + 64 = 208"
+      ]
+     }
     },
     {
      "ma": "10.13",
@@ -5272,7 +5895,26 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "V = 4 000 cm^3",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "dap": [
+       "4000",
+       "4000cm³"
+      ],
+      "phim": [
+       "cm³"
+      ],
+      "nhieu": [
+       "cm²",
+       "cm"
+      ],
+      "loi_giai": [
+       "Diện tích đáy: S = 20² = 400",
+       "V = (1/3) · S · h = (1/3) · 400 · 30 = 4000"
+      ]
+     }
     },
     {
      "ma": "10.14",
@@ -5281,7 +5923,27 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "V = 256 cm^3 (cạnh đáy 8 cm)",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "dap": [
+       "256",
+       "256cm³"
+      ],
+      "phim": [
+       "cm³"
+      ],
+      "nhieu": [
+       "cm²",
+       "cm"
+      ],
+      "loi_giai": [
+       "Cạnh đáy: a = 32 : 4 = 8",
+       "Diện tích đáy: S = 8² = 64",
+       "V = (1/3) · S · h = (1/3) · 64 · 12 = 256"
+      ]
+     }
     },
     {
      "ma": "10.15",
@@ -5290,7 +5952,34 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Diện tích xung quanh ≈ 43 cm^2 (trung đoạn SI ≈ 4,3 cm)",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "hinh": [
+      "sbttoan8t2/H.10.15.tr77.webp"
+     ],
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "dap": [
+       "43",
+       "10√18,75",
+       "43cm²",
+       "10√18,75cm²"
+      ],
+      "phim": [
+       "cm²",
+       "√"
+      ],
+      "nhieu": [
+       "cm",
+       "cm³"
+      ],
+      "loi_giai": [
+       "Đáy là hình vuông nên BC = CD = 5. Tam giác SBC cân tại S, SI ⊥ BC nên I là trung điểm của BC: IC = 5 : 2 = 2,5",
+       "Tam giác SIC vuông tại I có SC = SD = 5 (các cạnh bên bằng nhau): SI² = SC² − IC² = 5² − 2,5² = 18,75; SI = √18,75 ≈ 4,3",
+       "Nửa chu vi đáy: p = 5 · 4 : 2 = 10",
+       "Sxq = p · d ≈ 10 · 4,3 = 43"
+      ]
+     }
     }
    ]
   },
@@ -5305,7 +5994,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "B",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Diện tích xung quanh của hình chóp tam giác đều, tứ giác đều bằng",
+      "cac": [
+       "Tích nửa chu vi đáy và đường cao của hình chóp",
+       "Tích nửa chu vi đáy và trung đoạn",
+       "Tích chu vi đáy và trung đoạn",
+       "Tổng chu vi đáy và trung đoạn"
+      ],
+      "dap": "B"
+     }
     },
     {
      "ma": "Trắc nghiệm 2 (tr.78)",
@@ -5314,7 +6015,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "C",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Hình chóp tam giác đều có chiều cao h, thể tích V. Diện tích đáy S bằng",
+      "cac": [
+       "S = h/V",
+       "S = V/h",
+       "S = 3V/h",
+       "S = 3h/V"
+      ],
+      "dap": "C"
+     }
     },
     {
      "ma": "Trắc nghiệm 3 (tr.78)",
@@ -5323,7 +6036,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "C",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Tổng số cạnh bên và cạnh đáy của một hình chóp tứ giác đều là",
+      "cac": [
+       "4",
+       "6",
+       "8",
+       "10"
+      ],
+      "dap": "C"
+     }
     },
     {
      "ma": "Trắc nghiệm 4 (tr.78)",
@@ -5332,7 +6057,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "D",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Mặt đáy của hình chóp tứ giác đều là hình nào? Chọn câu trả lời đúng nhất.",
+      "cac": [
+       "Tam giác đều",
+       "Hình bình hành",
+       "Tam giác cân",
+       "Hình vuông"
+      ],
+      "dap": "D"
+     }
     },
     {
      "ma": "Trắc nghiệm 5 (tr.78)",
@@ -5341,7 +6078,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "D",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Một hình chóp tam giác đều có diện tích đáy bằng 4 cm², thể tích bằng 8 cm³. Chiều cao của khối chóp bằng",
+      "cac": [
+       "8 cm",
+       "9 cm",
+       "4 cm",
+       "6 cm"
+      ],
+      "dap": "D"
+     }
     },
     {
      "ma": "Trắc nghiệm 6 (tr.78)",
@@ -5350,7 +6099,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "B",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Một đèn lồng có dạng hình chóp tứ giác đều có cạnh đáy bằng 15 cm, độ dài trung đoạn bằng 10 cm. Diện tích giấy dán kín bốn mặt bên của đèn lồng (coi như mép dán không đáng kể) là",
+      "cac": [
+       "200 cm²",
+       "300 cm²",
+       "400 cm²",
+       "500 cm²"
+      ],
+      "dap": "B"
+     }
     },
     {
      "ma": "Trắc nghiệm 7 (tr.78)",
@@ -5359,7 +6120,22 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "C",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "hinh": [
+      "sbttoan8t2/H.10.16.tr78.webp"
+     ],
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Thể tích của hình chóp tứ giác đều S.MNPQ trong Hình 10.16 là",
+      "cac": [
+       "288 cm³",
+       "14 cm³",
+       "96 cm³",
+       "48 cm³"
+      ],
+      "dap": "C"
+     }
     },
     {
      "ma": "Trắc nghiệm 8 (tr.79)",
@@ -5368,7 +6144,22 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "B",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "hinh": [
+      "sbttoan8t2/H.10.17.tr79.webp"
+     ],
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Từ một mảnh bìa hình tam giác đều có cạnh 6 cm, gấp theo các nét đứt ta được một hình chóp tam giác đều (Hình 10.17). Hình chóp tam giác đều này có cạnh bên bằng",
+      "cac": [
+       "6 cm",
+       "3 cm",
+       "9 cm",
+       "(3√3)/2 cm"
+      ],
+      "dap": "B"
+     }
     },
     {
      "ma": "Trắc nghiệm 9 (tr.79)",
@@ -5377,7 +6168,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "C",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Một hình chóp tứ giác đều có thể tích bằng 64 cm³, chiều cao bằng 12 cm. Độ dài cạnh đáy là",
+      "cac": [
+       "16 cm",
+       "8 cm",
+       "4 cm",
+       "10 cm"
+      ],
+      "dap": "C"
+     }
     },
     {
      "ma": "Trắc nghiệm 10 (tr.79)",
@@ -5386,7 +6189,22 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "B",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "hinh": [
+      "sbttoan8t2/H.10.18.tr79.webp"
+     ],
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Một khối gỗ (Hình 10.18) gồm đế là hình lập phương cạnh 9 cm và phần trên là một hình chóp tứ giác đều. Thể tích khối gỗ bằng",
+      "cac": [
+       "1 539 cm³",
+       "945 cm³",
+       "270 cm³",
+       "513 cm³"
+      ],
+      "dap": "B"
+     }
     },
     {
      "ma": "10.16",
@@ -5395,7 +6213,34 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "V ≈ 41,6 cm^3 (CI ≈ 5,2 cm, diện tích đáy ≈ 15,6 cm^2)",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "hinh": [
+      "sbttoan8t2/H.10.19.tr79.webp"
+     ],
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "dap": [
+       "41,6",
+       "8√27",
+       "41,6cm³",
+       "8√27cm³"
+      ],
+      "phim": [
+       "cm³",
+       "√"
+      ],
+      "nhieu": [
+       "cm²",
+       "cm"
+      ],
+      "loi_giai": [
+       "Tam giác ABC đều, I là trung điểm của AB nên CI ⊥ AB và IA = 6 : 2 = 3",
+       "Tam giác ACI vuông tại I: CI² = AC² − IA² = 6² − 3² = 27; CI = √27 ≈ 5,2",
+       "Diện tích đáy: S = (1/2) · AB · CI ≈ (1/2) · 6 · 5,2 = 15,6",
+       "V = (1/3) · S · h ≈ (1/3) · 15,6 · 8 = 41,6"
+      ]
+     }
     },
     {
      "ma": "10.17",
@@ -5404,7 +6249,31 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Diện tích xung quanh 144 cm^2 (trung đoạn AH = 8 cm)",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "hinh": [
+      "sbttoan8t2/H.10.20.tr80.webp"
+     ],
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "dap": [
+       "144",
+       "144cm²"
+      ],
+      "phim": [
+       "cm²"
+      ],
+      "nhieu": [
+       "cm",
+       "cm³"
+      ],
+      "loi_giai": [
+       "Tam giác ABC cân tại A, H là trung điểm của BC nên AH ⊥ BC và CH = 12 : 2 = 6",
+       "Tam giác ACH vuông tại H: AH² = AC² − CH² = 10² − 6² = 64; AH = √64 = 8",
+       "Nửa chu vi đáy: p = 12 · 3 : 2 = 18",
+       "Sxq = p · d = 18 · 8 = 144"
+      ]
+     }
     },
     {
      "ma": "10.18",
@@ -5413,7 +6282,30 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Thể tích hình chóp S.MNPQ bằng 72 cm^3",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "hinh": [
+      "sbttoan8t2/H.10.21.tr80.webp"
+     ],
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "dap": [
+       "72",
+       "72cm³"
+      ],
+      "phim": [
+       "cm³"
+      ],
+      "nhieu": [
+       "cm²",
+       "cm"
+      ],
+      "loi_giai": [
+       "Gọi cạnh đáy là a. Tam giác AMQ vuông tại A có AM = AQ = a : 2 nên S(AMQ) = (1/2) · (a/2) · (a/2) = a²/8",
+       "Bốn tam giác ở bốn góc bằng nhau nên S(MNPQ) = a² − 4 · a²/8 = a²/2 = (1/2) · S(ABCD)",
+       "Hai hình chóp có cùng chiều cao SO nên V(S.MNPQ) = (1/2) · V(S.ABCD) = (1/2) · 144 = 72"
+      ]
+     }
     },
     {
      "ma": "10.19",
@@ -5422,7 +6314,31 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "7,68 m^2 (các mặt bên 5,76 m^2, nóc 1,92 m^2)",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "hinh": [
+      "sbttoan8t2/H.10.22.tr80.webp"
+     ],
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "dap": [
+       "7,68",
+       "7,68m²"
+      ],
+      "phim": [
+       "m²"
+      ],
+      "nhieu": [
+       "cm²",
+       "m³"
+      ],
+      "loi_giai": [
+       "Bốn mặt bên của phần hình lập phương: S₁ = 4 · 1,2² = 5,76",
+       "Nửa chu vi đáy của nóc: p = 1,2 · 4 : 2 = 2,4",
+       "Nóc lều: S₂ = p · d = 2,4 · 0,8 = 1,92",
+       "Diện tích vải: S = S₁ + S₂ = 5,76 + 1,92 = 7,68"
+      ]
+     }
     },
     {
      "ma": "10.20",
@@ -5431,7 +6347,30 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "96 cm^2",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "hinh": [
+      "sbttoan8t2/H.10.23.tr80.webp"
+     ],
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "dap": [
+       "96",
+       "96cm²"
+      ],
+      "phim": [
+       "cm²"
+      ],
+      "nhieu": [
+       "cm",
+       "cm³"
+      ],
+      "loi_giai": [
+       "Nửa chu vi đáy: p = 6 · 4 : 2 = 12",
+       "Diện tích xung quanh mỗi hình chóp: Sxq = p · d = 12 · 4 = 48",
+       "Hai hình chóp chung đáy nên mặt ngoài gồm hai phần xung quanh: S = 2 · 48 = 96"
+      ]
+     }
     }
    ]
   },
