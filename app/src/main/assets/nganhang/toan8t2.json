@@ -2,7 +2,7 @@
  "nguon": "toan8t2",
  "mon": "Toán",
  "ten": "SGK Toán 8 — tập hai",
- "ban": 3,
+ "ban": 4,
  "cac_bai": [
   {
    "chuong": "Chương VI. Phân thức đại số",
@@ -111,7 +111,30 @@
      "trang": 7,
      "nhom": "Luyện tập",
      "dang": "CAU_NHO",
-     "de": "Viết điều kiện xác định của phân thức (x + 1)/(x − 1) và tính giá trị của phân thức tại x = 2."
+     "de": "Viết điều kiện xác định của phân thức (x + 1)/(x − 1) và tính giá trị của phân thức tại x = 2.",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "hoi": "Viết điều kiện xác định của phân thức (x + 1)/(x − 1) và tính giá trị của phân thức tại x = 2.\n(Gõ điều kiện xác định, dấu ;, rồi giá trị của phân thức tại x = 2.)",
+      "dap": [
+       "x≠1;3",
+       "x−1≠0;3"
+      ],
+      "phim": [
+       "x",
+       "≠",
+       ";"
+      ],
+      "nhieu": [
+       "y",
+       ">",
+       "²"
+      ],
+      "loi_giai": [
+       "Điều kiện xác định: x − 1 ≠ 0, tức là x ≠ 1",
+       "Tại x = 2 (thoả mãn điều kiện), giá trị của phân thức là (2 + 1)/(2 − 1) = 3"
+      ]
+     }
     },
     {
      "ma": "Vận dụng (tr.7)",
@@ -329,7 +352,32 @@
      "trang": 7,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Viết điều kiện xác định của phân thức (x^2 + x − 2)/(x + 2). Tính giá trị của phân thức đó lần lượt tại x = 0; x = 1; x = 2."
+     "de": "Viết điều kiện xác định của phân thức (x^2 + x − 2)/(x + 2). Tính giá trị của phân thức đó lần lượt tại x = 0; x = 1; x = 2.",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "hoi": "Viết điều kiện xác định của phân thức (x² + x − 2)/(x + 2). Tính giá trị của phân thức đó lần lượt tại x = 0; x = 1; x = 2.\n(Gõ điều kiện xác định, rồi giá trị của phân thức tại x = 0, x = 1, x = 2, theo thứ tự, cách nhau bằng dấu ;)",
+      "dap": [
+       "x≠−2;−1;0;1",
+       "x+2≠0;−1;0;1"
+      ],
+      "phim": [
+       "x",
+       "≠",
+       ";"
+      ],
+      "nhieu": [
+       "y",
+       ">",
+       "²"
+      ],
+      "loi_giai": [
+       "Điều kiện xác định: x + 2 ≠ 0, tức là x ≠ −2",
+       "Với x = 0, giá trị của phân thức là (0² + 0 − 2)/(0 + 2) = −1",
+       "Với x = 1, giá trị của phân thức là (1² + 1 − 2)/(1 + 2) = 0",
+       "Với x = 2, giá trị của phân thức là (2² + 2 − 2)/(2 + 2) = 1"
+      ]
+     }
     },
     {
      "ma": "6.5",
@@ -1889,7 +1937,35 @@
      "trang": 14,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Cho phân thức P = (x^3 − 4x)/(x + 2)^2. a) Viết điều kiện xác định của phân thức. b) Rút gọn phân thức P. c) Tính giá trị của phân thức đã cho tại x = 98."
+     "de": "Cho phân thức P = (x^3 − 4x)/(x + 2)^2. a) Viết điều kiện xác định của phân thức. b) Rút gọn phân thức P. c) Tính giá trị của phân thức đã cho tại x = 98.",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "hoi": "Cho phân thức P = (x³ − 4x)/(x + 2)².\na) Viết điều kiện xác định của phân thức.\nb) Rút gọn phân thức P.\nc) Tính giá trị của phân thức đã cho tại x = 98.\n(Gõ điều kiện xác định, phân thức rút gọn của P, rồi giá trị ở câu c, theo thứ tự, cách nhau bằng dấu ;)",
+      "dap": [
+       "x≠−2;x(x−2)/(x+2);94,08",
+       "x≠−2;(x²−2x)/(x+2);94,08",
+       "x+2≠0;x(x−2)/(x+2);94,08",
+       "x+2≠0;(x²−2x)/(x+2);94,08"
+      ],
+      "phim": [
+       "x",
+       "≠",
+       "²",
+       ";"
+      ],
+      "nhieu": [
+       "y",
+       "³",
+       ">"
+      ],
+      "loi_giai": [
+       "a) Điều kiện xác định: (x + 2)² ≠ 0, tức là x ≠ −2",
+       "b) P = (x³ − 4x)/(x + 2)² = x(x − 2)(x + 2)/(x + 2)²",
+       "= x(x − 2)/(x + 2)",
+       "c) Tại x = 98 (thoả mãn điều kiện), P = 98 · (98 − 2)/(98 + 2) = 9408/100 = 94,08"
+      ]
+     }
     },
     {
      "ma": "6.17",
@@ -4175,7 +4251,33 @@
      "trang": 32,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Giải các phương trình sau: a) 7x − (2x + 3) = 5(x − 2); b) x + (2x − 1)/5 = 3 + (3 − x)/4."
+     "de": "Giải các phương trình sau: a) 7x − (2x + 3) = 5(x − 2); b) x + (2x − 1)/5 = 3 + (3 − x)/4.",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 5,
+      "hoi": "Giải các phương trình sau:\na) 7x − (2x + 3) = 5(x − 2);\nb) x + (2x − 1)/5 = 3 + (3 − x)/4.\n(Gõ kết quả của từng phương trình theo thứ tự a, b, cách nhau bằng dấu ;)",
+      "dap": [
+       "vô nghiệm;79/33",
+       "vô nghiệm;x=79/33"
+      ],
+      "phim": [
+       "x",
+       ";",
+       "vô nghiệm"
+      ],
+      "nhieu": [
+       "mọi x",
+       "y",
+       "²"
+      ],
+      "loi_giai": [
+       "a) 7x − (2x + 3) = 5(x − 2) ⇔ 7x − 2x − 3 = 5x − 10",
+       "⇔ 7x − 2x − 5x = −10 + 3 ⇔ 0x = −7; không có giá trị nào của x thoả mãn, nên phương trình vô nghiệm",
+       "b) x + (2x − 1)/5 = 3 + (3 − x)/4 ⇔ 20x + 4(2x − 1) = 60 + 5(3 − x)",
+       "⇔ 20x + 8x − 4 = 60 + 15 − 5x",
+       "⇔ 20x + 8x + 5x = 60 + 15 + 4 ⇔ 33x = 79 ⇔ x = 79/33"
+      ]
+     }
     },
     {
      "ma": "7.4",
@@ -4426,7 +4528,37 @@
      "trang": 38,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Giải các phương trình sau: a) x − 3(2 − x) = 2x − 4; b) (1/2)(x + 5) − 4 = (1/3)(x − 1); c) 3(x − 2) − (x + 1) = 2x − 4; d) 3x − 4 = 2(x − 1) − (2 − x)."
+     "de": "Giải các phương trình sau: a) x − 3(2 − x) = 2x − 4; b) (1/2)(x + 5) − 4 = (1/3)(x − 1); c) 3(x − 2) − (x + 1) = 2x − 4; d) 3x − 4 = 2(x − 1) − (2 − x).",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 8,
+      "hoi": "Giải các phương trình sau:\na) x − 3(2 − x) = 2x − 4;\nb) (1/2)(x + 5) − 4 = (1/3)(x − 1);\nc) 3(x − 2) − (x + 1) = 2x − 4;\nd) 3x − 4 = 2(x − 1) − (2 − x).\n(Gõ kết quả của từng phương trình theo thứ tự a, b, c, d, cách nhau bằng dấu ;)",
+      "dap": [
+       "1;7;vô nghiệm;mọi x",
+       "x=1;x=7;vô nghiệm;mọi x"
+      ],
+      "phim": [
+       "x",
+       ";",
+       "vô nghiệm",
+       "mọi x"
+      ],
+      "nhieu": [
+       "y",
+       "²",
+       "≠"
+      ],
+      "loi_giai": [
+       "a) x − 3(2 − x) = 2x − 4 ⇔ x − 6 + 3x = 2x − 4",
+       "⇔ 4x − 2x = −4 + 6 ⇔ 2x = 2 ⇔ x = 1",
+       "b) (1/2)(x + 5) − 4 = (1/3)(x − 1) ⇔ 3(x + 5) − 24 = 2(x − 1)",
+       "⇔ 3x + 15 − 24 = 2x − 2 ⇔ 3x − 2x = −2 − 15 + 24 ⇔ x = 7",
+       "c) 3(x − 2) − (x + 1) = 2x − 4 ⇔ 3x − 6 − x − 1 = 2x − 4",
+       "⇔ 0x = 3; không có giá trị nào của x thoả mãn, nên phương trình vô nghiệm",
+       "d) 3x − 4 = 2(x − 1) − (2 − x) ⇔ 3x − 4 = 2x − 2 − 2 + x",
+       "⇔ 0x = 0; mọi x đều là nghiệm, phương trình nghiệm đúng với mọi x"
+      ]
+     }
     },
     {
      "ma": "7.13",
@@ -7443,7 +7575,104 @@
      "trang": 113,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Hãy gọi tên đỉnh, cạnh bên, mặt bên, mặt đáy, đường cao, một trung đoạn của hình chóp tam giác đều S.ABC trong Hình 10.2 (SGK trang 113)."
+     "de": "Hãy gọi tên đỉnh, cạnh bên, mặt bên, mặt đáy, đường cao, một trung đoạn của hình chóp tam giác đều S.ABC trong Hình 10.2 (SGK trang 113).",
+     "hinh": [
+      "toan8t2/CH-tr113.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 6,
+      "hoi": "Hãy gọi tên đỉnh, cạnh bên, mặt bên, mặt đáy, đường cao, một trung đoạn của hình chóp tam giác đều S.ABC trong Hình 10.2.",
+      "dong": [
+       {
+        "chu": "Đỉnh: {0}",
+        "o": [
+         {
+          "dung": [
+           "S"
+          ],
+          "sai": [
+           "O",
+           "H",
+           "A"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Các cạnh bên: {0}",
+        "o": [
+         {
+          "dung": [
+           "SA, SB, SC"
+          ],
+          "sai": [
+           "AB, BC, CA",
+           "SO, SH, SC"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Các mặt bên: {0}",
+        "o": [
+         {
+          "dung": [
+           "SAB, SBC, SCA"
+          ],
+          "sai": [
+           "ABC, SAB, SBC",
+           "SAO, SBO, SCO"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Mặt đáy: {0}",
+        "o": [
+         {
+          "dung": [
+           "ABC"
+          ],
+          "sai": [
+           "SAB",
+           "SBC"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Đường cao: {0}",
+        "o": [
+         {
+          "dung": [
+           "SO"
+          ],
+          "sai": [
+           "SH",
+           "SA",
+           "OH"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Một trung đoạn: {0}",
+        "o": [
+         {
+          "dung": [
+           "SH"
+          ],
+          "sai": [
+           "SO",
+           "SA",
+           "OH"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "Luyện tập (tr.114)",
@@ -7481,7 +7710,29 @@
      "trang": 116,
      "nhom": "Vận dụng",
      "dang": "CAU_NHO",
-     "de": "Hình 10.11 mô tả hình chóp trong tình huống mở đầu (chóp inox trên đỉnh Fansipan có dạng hình chóp tam giác đều cạnh đáy dài 60 cm, cạnh bên dài khoảng 96,4 cm). Dựa vào đó, em hãy trả lời câu hỏi của bài toán: tổng diện tích các mặt bên của hình chóp bằng bao nhiêu?"
+     "de": "Hình 10.11 mô tả hình chóp trong tình huống mở đầu (chóp inox trên đỉnh Fansipan có dạng hình chóp tam giác đều cạnh đáy dài 60 cm, cạnh bên dài khoảng 96,4 cm). Dựa vào đó, em hãy trả lời câu hỏi của bài toán: tổng diện tích các mặt bên của hình chóp bằng bao nhiêu?",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "hoi": "Chóp inox trên đỉnh Fansipan có dạng hình chóp tam giác đều S.ABC với cạnh đáy dài 60 cm, cạnh bên dài khoảng 96,4 cm. Hỏi tổng diện tích các mặt bên của hình chóp bằng bao nhiêu?\n(Làm tròn trung đoạn đến hàng phần trăm rồi mới tính diện tích.)",
+      "dap": [
+       "8244,9",
+       "8244,9cm²"
+      ],
+      "phim": [
+       "cm²"
+      ],
+      "nhieu": [
+       "cm",
+       "cm³"
+      ],
+      "loi_giai": [
+       "Gọi H là trung điểm của BC thì SH là trung đoạn, HC = 60 : 2 = 30",
+       "SH² = SC² − HC² = 96,4² − 30² = 8392,96; SH ≈ 91,61 (làm tròn đến hàng phần trăm)",
+       "Nửa chu vi đáy: p = 60 · 3 : 2 = 90",
+       "Tổng diện tích các mặt bên: Sxq = p · d ≈ 90 · 91,61 = 8244,9"
+      ]
+     }
     },
     {
      "ma": "10.1",
@@ -8126,7 +8377,27 @@
      "trang": 122,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Người ta làm mô hình một kim tự tháp ở cổng vào của bảo tàng Louvre. Mô hình có dạng hình chóp tứ giác đều, chiều cao 21 m, độ dài cạnh đáy là 34 m. a) Tính thể tích hình chóp. b) Tính tổng diện tích các tấm kính để phủ kín bốn mặt bên hình chóp này, biết rằng người ta đo được độ dài cạnh bên của hình chóp là 31,92 m."
+     "de": "Người ta làm mô hình một kim tự tháp ở cổng vào của bảo tàng Louvre. Mô hình có dạng hình chóp tứ giác đều, chiều cao 21 m, độ dài cạnh đáy là 34 m. a) Tính thể tích hình chóp. b) Tính tổng diện tích các tấm kính để phủ kín bốn mặt bên hình chóp này, biết rằng người ta đo được độ dài cạnh bên của hình chóp là 31,92 m.",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "hoi": "Người ta làm mô hình một kim tự tháp ở cổng vào của bảo tàng Louvre. Mô hình có dạng hình chóp tứ giác đều, chiều cao 21 m, độ dài cạnh đáy là 34 m.\na) Tính thể tích hình chóp.\nb) Tính tổng diện tích các tấm kính để phủ kín bốn mặt bên hình chóp này, biết rằng người ta đo được độ dài cạnh bên của hình chóp là 31,92 m.\n(Làm tròn trung đoạn đến hàng phần trăm rồi mới tính diện tích. Gõ thể tích (m³) rồi tổng diện tích các tấm kính (m²), cách nhau bằng dấu ;)",
+      "dap": [
+       "8092;1837,36"
+      ],
+      "phim": [
+       ";"
+      ],
+      "nhieu": [
+       "√"
+      ],
+      "loi_giai": [
+       "a) V = (1/3) · 34² · 21 = 8092",
+       "b) Gọi K là trung điểm của một cạnh đáy thì SK là trung đoạn; nửa cạnh đáy = 34 : 2 = 17",
+       "SK² = 31,92² − 17² = 729,8864; SK ≈ 27,02",
+       "Nửa chu vi đáy: p = 34 · 4 : 2 = 68; Sxq = p · d = 68 · 27,02 = 1837,36"
+      ]
+     }
     }
    ]
   },

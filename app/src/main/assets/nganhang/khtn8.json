@@ -2,7 +2,7 @@
  "nguon": "khtn8",
  "mon": "Khoa học tự nhiên",
  "ten": "SGK Khoa học tự nhiên 8",
- "ban": 6,
+ "ban": 7,
  "cac_bai": [
   {
    "chuong": "Mở đầu",
@@ -11218,7 +11218,101 @@
      "trang": 126,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "1. Quan sát Hình 31.4 (xương của người bình thường và của người mắc bệnh loãng xương; SGK trang 126) và dự đoán xương nào bị giòn, dễ gãy. Từ đó nêu tác hại của bệnh loãng xương. 2. Tìm hiểu các bệnh về hệ vận động (nguyên nhân, số lượng người mắc) trong trường học và khu dân cư; đề xuất và tuyên truyền biện pháp phòng bệnh, bảo vệ hệ vận động."
+     "de": "1. Quan sát Hình 31.4 (xương của người bình thường và của người mắc bệnh loãng xương; SGK trang 126) và dự đoán xương nào bị giòn, dễ gãy. Từ đó nêu tác hại của bệnh loãng xương. 2. Tìm hiểu các bệnh về hệ vận động (nguyên nhân, số lượng người mắc) trong trường học và khu dân cư; đề xuất và tuyên truyền biện pháp phòng bệnh, bảo vệ hệ vận động.",
+     "hinh": [
+      "khtn8/B31.C3.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 6,
+      "hoi": "1. Quan sát Hình 31.4 (xương a và xương b) và dự đoán xương nào bị giòn, dễ gãy. Từ đó nêu tác hại của bệnh loãng xương.\n2. Đề xuất biện pháp phòng bệnh, bảo vệ hệ vận động: mỗi việc sau nên làm hay không nên?",
+      "dong": [
+       {
+        "chu": "1. Xương bị giòn, dễ gãy là {0}",
+        "o": [
+         {
+          "dung": [
+           "xương b"
+          ],
+          "sai": [
+           "xương a"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Vì {0}",
+        "o": [
+         {
+          "dung": [
+           "xương b có nhiều lỗ hổng, mật độ chất khoáng trong xương thưa"
+          ],
+          "sai": [
+           "xương b chứa nhiều chất hữu cơ hơn nên mềm dẻo hơn",
+           "xương b dày và đặc hơn xương a nên nặng hơn"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Tác hại của bệnh loãng xương: {0}",
+        "o": [
+         {
+          "dung": [
+           "xương giòn, dễ gãy dù chỉ bị chấn thương nhẹ"
+          ],
+          "sai": [
+           "xương mềm, uốn cong được nên không bao giờ gãy",
+           "chỉ làm đau cơ, không ảnh hưởng đến xương"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "2. Ăn đủ thực phẩm giàu calcium (tôm, cua, cá nhỏ, sữa), tắm nắng buổi sáng: {0}",
+        "o": [
+         {
+          "dung": [
+           "Nên làm"
+          ],
+          "sai": [
+           "Không nên"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Ngồi, đứng sai tư thế trong thời gian dài; mang vác vật quá nặng: {0}",
+        "o": [
+         {
+          "dung": [
+           "Không nên"
+          ],
+          "sai": [
+           "Nên làm"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Thường xuyên tập thể dục, thể thao vừa sức: {0}",
+        "o": [
+         {
+          "dung": [
+           "Nên làm"
+          ],
+          "sai": [
+           "Không nên"
+          ],
+          "hai": true
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B31.C4",
@@ -11407,7 +11501,84 @@
      "trang": 127,
      "nhom": "Em có thể",
      "dang": "CAU_NHO",
-     "de": "Đề xuất và thực hiện một số biện pháp phòng chống các bệnh, tật liên quan đến hệ vận động ở lứa tuổi học đường."
+     "de": "Đề xuất và thực hiện một số biện pháp phòng chống các bệnh, tật liên quan đến hệ vận động ở lứa tuổi học đường.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 5,
+      "hoi": "Đề xuất một số biện pháp phòng chống các bệnh, tật liên quan đến hệ vận động ở lứa tuổi học đường: mỗi việc sau nên làm hay không nên?",
+      "dong": [
+       {
+        "chu": "Ngồi học đúng tư thế, lưng thẳng: {0}",
+        "o": [
+         {
+          "dung": [
+           "Nên làm"
+          ],
+          "sai": [
+           "Không nên"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Dùng bàn ghế vừa với chiều cao cơ thể: {0}",
+        "o": [
+         {
+          "dung": [
+           "Nên làm"
+          ],
+          "sai": [
+           "Không nên"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Đeo cặp nặng lệch một bên vai trong thời gian dài: {0}",
+        "o": [
+         {
+          "dung": [
+           "Không nên"
+          ],
+          "sai": [
+           "Nên làm"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Cúi gằm đầu xem điện thoại hằng giờ liền: {0}",
+        "o": [
+         {
+          "dung": [
+           "Không nên"
+          ],
+          "sai": [
+           "Nên làm"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Ăn uống đủ chất, nhất là thực phẩm giàu calcium: {0}",
+        "o": [
+         {
+          "dung": [
+           "Nên làm"
+          ],
+          "sai": [
+           "Không nên"
+          ],
+          "hai": true
+         }
+        ]
+       }
+      ]
+     }
     }
    ]
   },
@@ -11926,7 +12097,112 @@
      "trang": 131,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Dựa vào Bảng 32.1 (nhu cầu dinh dưỡng khuyến nghị cho người Việt Nam/ngày; SGK trang 131), thảo luận nhóm để thực hiện yêu cầu và trả lời các câu hỏi sau: 1. Chế độ dinh dưỡng của cơ thể người phụ thuộc vào những yếu tố nào? Cho ví dụ. 2. Thực hành xây dựng khẩu phần ăn cho bản thân theo các bước hướng dẫn trong SGK trang 131-132."
+     "de": "Dựa vào Bảng 32.1 (nhu cầu dinh dưỡng khuyến nghị cho người Việt Nam/ngày; SGK trang 131), thảo luận nhóm để thực hiện yêu cầu và trả lời các câu hỏi sau: 1. Chế độ dinh dưỡng của cơ thể người phụ thuộc vào những yếu tố nào? Cho ví dụ. 2. Thực hành xây dựng khẩu phần ăn cho bản thân theo các bước hướng dẫn trong SGK trang 131-132.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 7,
+      "hoi": "Bảng 32.1 (SGK trang 131) cho biết nhu cầu năng lượng khuyến nghị mỗi ngày: nam 12 – 14 tuổi 2 500 kcal; nữ 12 – 14 tuổi 2 310 kcal; nam từ 70 tuổi trở lên 2 190 kcal.\n1. Chế độ dinh dưỡng của cơ thể người phụ thuộc vào những yếu tố nào? Cho ví dụ.\n2. Làm theo các bước xây dựng khẩu phần (SGK trang 131 – 132) với một thực phẩm: một bạn ăn 200 g cá chép (khối lượng cung cấp X = 200 g). Theo Bảng 32.3, tỉ lệ thải bỏ của cá chép là 40%, cứ 100 g cá chép ăn được có 16,0 g protein. Tính lượng thải bỏ Y, lượng ăn được Z và lượng protein bạn nhận được.",
+      "dong": [
+       {
+        "chu": "1. Nam 12 – 14 tuổi cần nhiều năng lượng hơn nữ cùng tuổi: chế độ dinh dưỡng phụ thuộc {0}",
+        "o": [
+         {
+          "dung": [
+           "giới tính"
+          ],
+          "sai": [
+           "độ tuổi",
+           "nhóm máu"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Nam 12 – 14 tuổi cần nhiều năng lượng hơn nam từ 70 tuổi trở lên: chế độ dinh dưỡng phụ thuộc {0}",
+        "o": [
+         {
+          "dung": [
+           "độ tuổi"
+          ],
+          "sai": [
+           "giới tính",
+           "nhóm máu"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Người lao động nặng (thợ xây, công nhân bốc vác) {0}",
+        "o": [
+         {
+          "dung": [
+           "cần nhiều năng lượng hơn người làm việc nhẹ, vì phải vận động nhiều"
+          ],
+          "sai": [
+           "cần ít năng lượng hơn người làm việc nhẹ, vì đã quen vận động",
+           "cần năng lượng bằng người làm việc nhẹ cùng tuổi, vì cùng một độ tuổi"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Người mới khỏi bệnh {0}",
+        "o": [
+         {
+          "dung": [
+           "cần được cung cấp nhiều chất dinh dưỡng hơn để phục hồi sức khoẻ"
+          ],
+          "sai": [
+           "nên ăn ít đi để cơ thể được nghỉ ngơi, không phải tiêu hoá nhiều",
+           "chỉ cần uống thật nhiều nước, không cần thêm chất dinh dưỡng nào"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "2. Lượng thải bỏ: Y = X × 40% = {0}",
+        "o": [
+         {
+          "dung": [
+           "80 g"
+          ],
+          "sai": [
+           "120 g",
+           "8 g"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Lượng ăn được: Z = X − Y = {0}",
+        "o": [
+         {
+          "dung": [
+           "120 g"
+          ],
+          "sai": [
+           "200 g",
+           "80 g"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Lượng protein nhận được: 16,0 × Z : 100 = {0}",
+        "o": [
+         {
+          "dung": [
+           "19,2 g"
+          ],
+          "sai": [
+           "32 g",
+           "12,8 g"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B32.C8",
@@ -13112,14 +13388,177 @@
      "trang": 144,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "1. Đọc thông tin và thảo luận, nêu nguyên nhân gây bệnh về phổi và đường hô hấp; vận dụng những hiểu biết về các bệnh, nêu biện pháp phòng chống bệnh để bảo vệ sức khoẻ bản thân và gia đình. 2. Điều tra một số bệnh về đường hô hấp trong trường học hoặc địa phương, số lượng người mắc và đề xuất biện pháp phòng chống bệnh rồi hoàn thành thông tin điều tra theo mẫu Bảng 34.1 (SGK trang 144)."
+     "de": "1. Đọc thông tin và thảo luận, nêu nguyên nhân gây bệnh về phổi và đường hô hấp; vận dụng những hiểu biết về các bệnh, nêu biện pháp phòng chống bệnh để bảo vệ sức khoẻ bản thân và gia đình. 2. Điều tra một số bệnh về đường hô hấp trong trường học hoặc địa phương, số lượng người mắc và đề xuất biện pháp phòng chống bệnh rồi hoàn thành thông tin điều tra theo mẫu Bảng 34.1 (SGK trang 144).",
+     "ghep": {
+      "kieu": "O",
+      "sao": 6,
+      "hoi": "Đọc thông tin về một số bệnh về phổi và đường hô hấp (viêm đường hô hấp, viêm phổi, lao phổi; SGK trang 143 – 144), nêu nguyên nhân gây bệnh về phổi và đường hô hấp; vận dụng những hiểu biết về các bệnh, nêu biện pháp phòng chống bệnh để bảo vệ sức khoẻ bản thân và gia đình.",
+      "dong": [
+       {
+        "chu": "Nguyên nhân chính gây bệnh về phổi và đường hô hấp: {0}",
+        "o": [
+         {
+          "dung": [
+           "không khí ô nhiễm, chứa vi sinh vật (virus, vi khuẩn, nấm) hay chất có hại vào đường dẫn khí và phổi"
+          ],
+          "sai": [
+           "cơ thể thiếu calcium và phosphorus nên phổi và khí quản giòn, dễ tổn thương",
+           "ăn phải thức ăn ôi thiu, nhiễm khuẩn; vi khuẩn từ dạ dày đi thẳng lên phổi"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Bệnh lao phổi do {0} gây ra, lây lan qua {1} khi tiếp xúc gần với người bệnh.",
+        "o": [
+         {
+          "dung": [
+           "vi khuẩn Mycobacterium tuberculosis"
+          ],
+          "sai": [
+           "virus HIV",
+           "vi khuẩn Helicobacter pylori"
+          ]
+         },
+         {
+          "dung": [
+           "đường hô hấp"
+          ],
+          "sai": [
+           "đường tiêu hoá",
+           "vết muỗi đốt"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Đeo khẩu trang khi ra đường và ở nơi nhiều khói, bụi: {0}",
+        "o": [
+         {
+          "dung": [
+           "Nên làm"
+          ],
+          "sai": [
+           "Không nên"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Hút thuốc lá hoặc thường xuyên ở gần người hút thuốc: {0}",
+        "o": [
+         {
+          "dung": [
+           "Không nên"
+          ],
+          "sai": [
+           "Nên làm"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Giữ nơi ở thông thoáng, sạch sẽ; giữ ấm cơ thể khi trời lạnh: {0}",
+        "o": [
+         {
+          "dung": [
+           "Nên làm"
+          ],
+          "sai": [
+           "Không nên"
+          ],
+          "hai": true
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B34.C6",
      "trang": 144,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "1. Làm việc nhóm, đưa ra quan điểm của bản thân về việc nên hay không nên hút thuốc lá và kinh doanh thuốc lá. 2. Thiết kế một áp phích (poster) tuyên truyền không hút thuốc lá."
+     "de": "1. Làm việc nhóm, đưa ra quan điểm của bản thân về việc nên hay không nên hút thuốc lá và kinh doanh thuốc lá. 2. Thiết kế một áp phích (poster) tuyên truyền không hút thuốc lá.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 5,
+      "hoi": "Đưa ra quan điểm của em về việc nên hay không nên hút thuốc lá và kinh doanh thuốc lá. Giải thích dựa vào tác hại của các chất trong khói thuốc lá.",
+      "dong": [
+       {
+        "chu": "Quan điểm đúng: {0}",
+        "o": [
+         {
+          "dung": [
+           "không nên hút thuốc lá và không nên kinh doanh thuốc lá"
+          ],
+          "sai": [
+           "hút ít thì không sao, chỉ không nên kinh doanh thuốc lá",
+           "không nên hút, còn kinh doanh thuốc lá thì không hại ai"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Khí CO trong khói thuốc lá {0}",
+        "o": [
+         {
+          "dung": [
+           "chiếm chỗ của O₂ trong hồng cầu, làm cơ thể luôn ở trạng thái thiếu O₂"
+          ],
+          "sai": [
+           "gây viêm, sưng lớp niêm mạc đường hô hấp, cản trở trao đổi khí",
+           "làm tê liệt lớp lông rung trong phế quản, giảm lọc sạch không khí, tăng nguy cơ ung thư phổi"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Khí NOx trong khói thuốc lá {0}",
+        "o": [
+         {
+          "dung": [
+           "gây viêm, sưng lớp niêm mạc đường hô hấp, cản trở trao đổi khí"
+          ],
+          "sai": [
+           "chiếm chỗ của O₂ trong hồng cầu, làm cơ thể luôn ở trạng thái thiếu O₂",
+           "làm tê liệt lớp lông rung trong phế quản, giảm lọc sạch không khí, tăng nguy cơ ung thư phổi"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Nicotine {0}",
+        "o": [
+         {
+          "dung": [
+           "làm tê liệt lớp lông rung trong phế quản, giảm lọc sạch không khí, tăng nguy cơ ung thư phổi"
+          ],
+          "sai": [
+           "chiếm chỗ của O₂ trong hồng cầu, làm cơ thể luôn ở trạng thái thiếu O₂",
+           "kích thích lớp lông rung hoạt động mạnh hơn, giúp phổi lọc sạch không khí tốt hơn"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Khói thuốc lá gây hại {0}",
+        "o": [
+         {
+          "dung": [
+           "cho cả người hút và những người xung quanh hít phải khói thuốc"
+          ],
+          "sai": [
+           "chỉ cho người trực tiếp hút thuốc, người đứng gần không bị ảnh hưởng",
+           "chỉ khi hút trên 20 điếu mỗi ngày, hút ít thì không gây hại gì"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B34.C7",
@@ -13418,7 +13857,70 @@
      "trang": 149,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Tìm hiểu một số thành tựu ghép thận, chạy thận nhân tạo. Thảo luận nhóm để thực hiện các yêu cầu sau: 1. Tìm hiểu một số thành tựu ghép thận và chạy thận nhân tạo ở Việt Nam và trên thế giới. 2. Nêu quan điểm của em về tính nhân văn của việc hiến thận."
+     "de": "Tìm hiểu một số thành tựu ghép thận, chạy thận nhân tạo. Thảo luận nhóm để thực hiện các yêu cầu sau: 1. Tìm hiểu một số thành tựu ghép thận và chạy thận nhân tạo ở Việt Nam và trên thế giới. 2. Nêu quan điểm của em về tính nhân văn của việc hiến thận.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "hoi": "Tìm hiểu một số thành tựu ghép thận, chạy thận nhân tạo ở Việt Nam (đọc mục Em có biết, SGK trang 149) và nêu quan điểm của em về tính nhân văn của việc hiến thận.",
+      "dong": [
+       {
+        "chu": "Ở Việt Nam, ca ghép thận đầu tiên được thực hiện ngày 4/6/1992 tại {0}",
+        "o": [
+         {
+          "dung": [
+           "Bệnh viện Quân y 103"
+          ],
+          "sai": [
+           "Bệnh viện Chợ Rẫy",
+           "Bệnh viện Bạch Mai"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Ngày 11/1/2017, Bệnh viện Chợ Rẫy lần đầu thực hiện thành công {0}",
+        "o": [
+         {
+          "dung": [
+           "ca ghép thận trao đổi chéo, cứu sống hai cô gái được bố mẹ cho thận"
+          ],
+          "sai": [
+           "ca chạy thận nhân tạo đầu tiên trên thế giới",
+           "ca ghép thận cho người bệnh mà không cần người hiến"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Hiến thận là việc làm nhân văn vì {0}",
+        "o": [
+         {
+          "dung": [
+           "người hiến tự nguyện cho đi một phần cơ thể để cứu sống, kéo dài sự sống cho người suy thận"
+          ],
+          "sai": [
+           "người hiến sẽ khoẻ mạnh hơn trước vì cơ thể bớt phải nuôi một quả thận",
+           "thận được hiến có thể đem bán để lấy tiền cho người hiến"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Người còn sống hiến một quả thận {0}",
+        "o": [
+         {
+          "dung": [
+           "vẫn có thể sống khoẻ mạnh bình thường với quả thận còn lại, nếu được bác sĩ kiểm tra kĩ trước khi hiến"
+          ],
+          "sai": [
+           "sẽ phải chạy thận nhân tạo suốt đời vì một quả thận không đủ để lọc máu",
+           "sẽ yếu dần vì thiếu một quả thận, không thể đi học, làm việc bình thường được nữa"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B35.C5",
@@ -14542,7 +15044,84 @@
      "trang": 159,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Thảo luận nhóm để trả lời các câu hỏi và thực hiện các yêu cầu sau: 1. Bệnh đái tháo đường và bướu cổ có những biểu hiện nào trên cơ thể? Em hãy đề xuất biện pháp phòng chống các bệnh này. 2. Vận dụng hiểu biết về các tuyến nội tiết, em hãy đề xuất các biện pháp bảo vệ sức khoẻ bản thân và gia đình, nêu tác dụng của các biện pháp đó. 3. Tìm hiểu một số bệnh nội tiết thường gặp ở địa phương theo gợi ý trong Bảng 38.1 (SGK trang 159)."
+     "de": "Thảo luận nhóm để trả lời các câu hỏi và thực hiện các yêu cầu sau: 1. Bệnh đái tháo đường và bướu cổ có những biểu hiện nào trên cơ thể? Em hãy đề xuất biện pháp phòng chống các bệnh này. 2. Vận dụng hiểu biết về các tuyến nội tiết, em hãy đề xuất các biện pháp bảo vệ sức khoẻ bản thân và gia đình, nêu tác dụng của các biện pháp đó. 3. Tìm hiểu một số bệnh nội tiết thường gặp ở địa phương theo gợi ý trong Bảng 38.1 (SGK trang 159).",
+     "ghep": {
+      "kieu": "O",
+      "sao": 5,
+      "hoi": "1. Bệnh đái tháo đường và bướu cổ có những biểu hiện nào trên cơ thể? Em hãy đề xuất biện pháp phòng chống các bệnh này.\n2. Vận dụng hiểu biết về các tuyến nội tiết, em hãy đề xuất các biện pháp bảo vệ sức khoẻ bản thân và gia đình, nêu tác dụng của các biện pháp đó.",
+      "dong": [
+       {
+        "chu": "1. Biểu hiện của bệnh đái tháo đường: {0}",
+        "o": [
+         {
+          "dung": [
+           "ăn nhiều, uống nhiều, đi tiểu nhiều, sụt cân"
+          ],
+          "sai": [
+           "cổ to ra do tuyến giáp phì đại",
+           "run tay, mất thăng bằng, khó di chuyển"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Biểu hiện của bệnh bướu cổ do thiếu iodine: {0}",
+        "o": [
+         {
+          "dung": [
+           "tuyến giáp phì đại làm cổ to ra; trẻ chậm lớn, trí tuệ chậm phát triển"
+          ],
+          "sai": [
+           "ăn nhiều, uống nhiều, đi tiểu nhiều, sụt cân dù ăn nhiều",
+           "da xuất hiện các vùng lốm đốm trắng, ngứa nhiều khi ra mồ hôi"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Phòng bệnh bướu cổ: {0}",
+        "o": [
+         {
+          "dung": [
+           "dùng muối iodine, ăn thực phẩm giàu iodine như cá biển, rong biển"
+          ],
+          "sai": [
+           "ăn thật nhiều đồ ngọt, tinh bột để tuyến giáp có thêm nguyên liệu",
+           "hạn chế ăn muối iodine và hải sản vì iodine làm tuyến giáp to ra"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Phòng bệnh đái tháo đường: {0}",
+        "o": [
+         {
+          "dung": [
+           "hạn chế đồ ngọt, tinh bột và chất béo; tập thể dục, giữ cân nặng hợp lí"
+          ],
+          "sai": [
+           "ăn nhiều bánh kẹo, uống nước ngọt có ga để luôn đủ đường trong máu",
+           "ít vận động, ngủ thật nhiều để cơ thể không đốt bớt đường trong máu"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "2. Ăn uống đủ chất, sống lành mạnh, ngủ đủ, giảm căng thẳng và khám sức khoẻ định kì có tác dụng {0}",
+        "o": [
+         {
+          "dung": [
+           "giúp các tuyến nội tiết hoạt động bình thường và phát hiện sớm bệnh để chữa kịp thời"
+          ],
+          "sai": [
+           "làm các tuyến nội tiết ngừng tiết hormone để cơ thể được nghỉ ngơi",
+           "chỉ giúp da đẹp hơn, không liên quan đến hoạt động của các tuyến nội tiết"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B38.C4",
@@ -14928,7 +15507,70 @@
      "trang": 162,
      "nhom": "Câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Về đo thân nhiệt bằng nhiệt kế điện tử: 1. Đọc giá trị đo thân nhiệt của bản thân và nhận xét về giá trị đo. 2. Cho biết ý nghĩa của việc đo thân nhiệt."
+     "de": "Về đo thân nhiệt bằng nhiệt kế điện tử: 1. Đọc giá trị đo thân nhiệt của bản thân và nhận xét về giá trị đo. 2. Cho biết ý nghĩa của việc đo thân nhiệt.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "hoi": "Đo thân nhiệt bằng nhiệt kế điện tử. Giả sử một bạn đo được 36,8 °C, một bạn khác đo được 38,5 °C.\n1. Nhận xét về giá trị đo của mỗi bạn.\n2. Cho biết ý nghĩa của việc đo thân nhiệt.",
+      "dong": [
+       {
+        "chu": "1. Bạn đo được 36,8 °C: {0}",
+        "o": [
+         {
+          "dung": [
+           "bình thường, nằm trong khoảng dao động cho phép"
+          ],
+          "sai": [
+           "cao hơn bình thường, có thể đang sốt",
+           "thấp hơn bình thường, có thể bị hạ thân nhiệt"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Bạn đo được 38,5 °C: {0}",
+        "o": [
+         {
+          "dung": [
+           "cao hơn bình thường, có thể đang sốt"
+          ],
+          "sai": [
+           "bình thường, nằm trong khoảng dao động cho phép",
+           "thấp hơn bình thường, có thể bị hạ thân nhiệt"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Vì thân nhiệt ở người bình thường {0}",
+        "o": [
+         {
+          "dung": [
+           "khoảng 37 °C và dao động không quá 0,5 °C"
+          ],
+          "sai": [
+           "khoảng 35 °C và dao động không quá 2 °C",
+           "khoảng 40 °C và không bao giờ thay đổi"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "2. Đo thân nhiệt giúp {0}",
+        "o": [
+         {
+          "dung": [
+           "theo dõi sức khoẻ, phát hiện sớm sốt hay hạ thân nhiệt để xử lí kịp thời"
+          ],
+          "sai": [
+           "biết nhiệt độ của căn phòng để chọn quần áo cho phù hợp",
+           "biết lượng máu trong cơ thể và cơ thể có bị mất nước hay không"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B39.C7",

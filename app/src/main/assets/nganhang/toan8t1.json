@@ -2,7 +2,7 @@
  "nguon": "toan8t1",
  "mon": "Toán",
  "ten": "SGK Toán 8 — tập một",
- "ban": 4,
+ "ban": 5,
  "cac_bai": [
   {
    "chuong": "Chương I. Đa thức",
@@ -11843,7 +11843,43 @@
      "de": "Em muốn ước lượng thời gian tự học ở nhà (đơn vị: giờ) của các bạn trong lớp. Hãy đưa ra cách thu thập dữ liệu và xác định xem dữ liệu thu được thuộc loại nào.",
      "trang": 92,
      "nhom": "Vận dụng",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "Em muốn ước lượng thời gian tự học ở nhà (đơn vị: giờ) của các bạn trong lớp. Hãy chọn cách thu thập dữ liệu và xác định xem dữ liệu thu được thuộc loại nào.",
+      "dong": [
+       {
+        "chu": "Cách thu thập dữ liệu: {0}",
+        "o": [
+         {
+          "dung": [
+           "hỏi từng bạn trong lớp (phỏng vấn hoặc phát phiếu hỏi) rồi ghi lại"
+          ],
+          "sai": [
+           "tra cứu số liệu có sẵn trên website của Cục Thống kê",
+           "đứng quan sát các bạn trong giờ ra chơi ở trường"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Dữ liệu thu được thuộc loại: {0}",
+        "o": [
+         {
+          "dung": [
+           "số liệu liên tục"
+          ],
+          "sai": [
+           "số liệu rời rạc",
+           "dữ liệu không là số, có thể sắp thứ tự",
+           "dữ liệu không là số, không thể sắp thứ tự"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "5.1",
@@ -12249,10 +12285,90 @@
    "cac_cau": [
     {
      "ma": "Luyện tập 1 (tr.100)",
-     "de": "Dựa trên dữ liệu khảo sát về món ăn Việt Nam được ưa thích, một công ty du lịch đã vẽ hai biểu đồ (Hình 5.10; Phở 972, Nem 987, Bánh mì 955 lượt bình chọn). a) Hai biểu đồ này biểu diễn cùng một dữ liệu không? Lập bảng thống kê về dữ liệu đó. b) Trong Biểu đồ a), tỉ lệ chiều cao giữa cột màu xanh và cột màu vàng có bằng tỉ lệ hai số mà chúng biểu diễn không? Giải thích tại sao.",
+     "de": "Dựa trên dữ liệu khảo sát về món ăn Việt Nam được ưa thích, một công ty du lịch đã vẽ hai biểu đồ cột ở Hình 5.10 (Biểu đồ a) và Biểu đồ b)); trong cả hai biểu đồ, cột Phở màu đỏ, cột Nem màu xanh, cột Bánh mì màu vàng. a) Hai biểu đồ này biểu diễn cùng một dữ liệu không? Lập bảng thống kê về dữ liệu đó. b) Trong Biểu đồ a), tỉ lệ chiều cao giữa cột màu xanh và cột màu vàng có bằng tỉ lệ hai số mà chúng biểu diễn không? Giải thích tại sao.",
      "trang": 100,
      "nhom": "Luyện tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "hinh": [
+      "toan8t1/LT1-tr100.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 5,
+      "hoi": "Dựa trên dữ liệu khảo sát về món ăn Việt Nam được ưa thích, một công ty du lịch đã vẽ hai biểu đồ ở Hình 5.10.\na) Hai biểu đồ này biểu diễn cùng một dữ liệu không? Lập bảng thống kê về dữ liệu đó.\nb) Trong Biểu đồ a), tỉ lệ chiều cao giữa cột màu xanh và cột màu vàng có bằng tỉ lệ hai số mà chúng biểu diễn không? Giải thích tại sao.",
+      "dong": [
+       {
+        "chu": "a) Hai biểu đồ biểu diễn cùng một dữ liệu: {0}",
+        "o": [
+         {
+          "dung": [
+           "Có"
+          ],
+          "sai": [
+           "Không"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Bảng thống kê số lượt bình chọn: {0}",
+        "o": [
+         {
+          "dung": [
+           "Phở 972; Nem 987; Bánh mì 955"
+          ],
+          "sai": [
+           "Phở 22; Nem 37; Bánh mì 5",
+           "Phở 972; Nem 955; Bánh mì 987"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "b) Trong Biểu đồ a), cột màu xanh cao gấp khoảng {0} lần cột màu vàng",
+        "o": [
+         {
+          "dung": [
+           "7,4"
+          ],
+          "sai": [
+           "1,03",
+           "3,7"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Tỉ lệ chiều cao đó so với tỉ lệ hai số liệu mà hai cột biểu diễn: {0}",
+        "o": [
+         {
+          "dung": [
+           "không bằng"
+          ],
+          "sai": [
+           "bằng"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Vì: {0}",
+        "o": [
+         {
+          "dung": [
+           "gốc của trục đứng trong Biểu đồ a) là 950, không phải 0"
+          ],
+          "sai": [
+           "cột màu xanh và cột màu vàng được vẽ bằng hai màu khác nhau",
+           "Biểu đồ a) ghi sai số lượt bình chọn của Nem và Bánh mì"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "Luyện tập 2 (tr.101)",
@@ -12477,38 +12593,304 @@
     },
     {
      "ma": "5.10a",
-     "de": "Biểu đồ cột (H.5.17) biểu diễn số tiền mỗi người trong nhóm học sinh có được nhờ bán phế liệu (An 230, Bình 250, Tuyết 280, Khánh 240, Hải 350 nghìn đồng). Số tiền của Tuyết có gấp đôi số tiền của Khánh không? Giải thích tại sao.",
+     "de": "Biểu đồ cột (H.5.17) biểu diễn số tiền mỗi người trong nhóm học sinh (An, Bình, Tuyết, Khánh, Hải) có được nhờ bán phế liệu. Số tiền của Tuyết có gấp đôi số tiền của Khánh không? Giải thích tại sao.",
      "trang": 104,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "hinh": [
+      "toan8t1/5.10.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "hoi": "Biểu đồ cột Hình 5.17 biểu diễn số tiền mỗi người trong nhóm học sinh có được nhờ bán phế liệu. Số tiền của Tuyết có gấp đôi số tiền của Khánh không? Giải thích tại sao.",
+      "dong": [
+       {
+        "chu": "Số tiền của Tuyết: {0} nghìn đồng",
+        "o": [
+         {
+          "dung": [
+           "280"
+          ],
+          "sai": [
+           "80",
+           "260",
+           "300"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Số tiền của Khánh: {0} nghìn đồng",
+        "o": [
+         {
+          "dung": [
+           "240"
+          ],
+          "sai": [
+           "40",
+           "220",
+           "260"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Số tiền của Tuyết có gấp đôi số tiền của Khánh không? {0}",
+        "o": [
+         {
+          "dung": [
+           "Không, chỉ gấp khoảng 1,2 lần"
+          ],
+          "sai": [
+           "Có, gấp đúng 2 lần",
+           "Không, gấp khoảng 1,5 lần"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Cột của Tuyết trông cao gấp đôi cột của Khánh vì: {0}",
+        "o": [
+         {
+          "dung": [
+           "trục đứng bắt đầu từ 200 chứ không phải từ 0"
+          ],
+          "sai": [
+           "biểu đồ vẽ sai số tiền của Khánh",
+           "các vạch trên trục đứng không cách đều nhau"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "5.10b",
      "de": "Biểu đồ cột (H.5.17) biểu diễn số tiền mỗi người trong nhóm học sinh có được nhờ bán phế liệu. Lập bảng thống kê cho số tiền mỗi bạn có được nhờ bán phế liệu.",
      "trang": 104,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "hinh": [
+      "toan8t1/5.10.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 5,
+      "hoi": "Biểu đồ cột Hình 5.17 biểu diễn số tiền mỗi người trong nhóm học sinh có được nhờ bán phế liệu. Lập bảng thống kê cho số tiền mỗi bạn có được nhờ bán phế liệu (đơn vị: nghìn đồng).",
+      "dong": [
+       {
+        "chu": "An: {0}",
+        "o": [
+         {
+          "dung": [
+           "230"
+          ],
+          "sai": [
+           "220",
+           "240",
+           "30"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Bình: {0}",
+        "o": [
+         {
+          "dung": [
+           "250"
+          ],
+          "sai": [
+           "240",
+           "260",
+           "50"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Tuyết: {0}",
+        "o": [
+         {
+          "dung": [
+           "280"
+          ],
+          "sai": [
+           "270",
+           "290",
+           "80"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Khánh: {0}",
+        "o": [
+         {
+          "dung": [
+           "240"
+          ],
+          "sai": [
+           "230",
+           "250",
+           "40"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Hải: {0}",
+        "o": [
+         {
+          "dung": [
+           "350"
+          ],
+          "sai": [
+           "340",
+           "360",
+           "150"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "5.11a",
-     "de": "Cho hai biểu đồ (H.5.18) về doanh thu của nhà máy các năm 2017-2021 (30; 33; 34; 35; 38 tỉ đồng). Doanh thu của nhà máy trong Biểu đồ a) có tăng nhanh hơn doanh thu của nhà máy trong Biểu đồ b) hay không?",
+     "de": "Cho hai biểu đồ đoạn thẳng (H.5.18) về doanh thu (tỉ đồng) của nhà máy các năm 2017 đến 2021. Doanh thu của nhà máy trong Biểu đồ a) có tăng nhanh hơn doanh thu của nhà máy trong Biểu đồ b) hay không?",
      "trang": 104,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "hinh": [
+      "toan8t1/5.11.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "hoi": "Cho hai biểu đồ Hình 5.18 về doanh thu của nhà máy. Doanh thu của nhà máy trong Biểu đồ a) có tăng nhanh hơn doanh thu của nhà máy trong Biểu đồ b) hay không?",
+      "dong": [
+       {
+        "chu": "Từ năm 2017 đến năm 2021, doanh thu trong Biểu đồ a) tăng thêm {0} tỉ đồng",
+        "o": [
+         {
+          "dung": [
+           "8"
+          ],
+          "sai": [
+           "4",
+           "38"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Từ năm 2017 đến năm 2021, doanh thu trong Biểu đồ b) tăng thêm {0} tỉ đồng",
+        "o": [
+         {
+          "dung": [
+           "8"
+          ],
+          "sai": [
+           "10",
+           "38"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Doanh thu trong Biểu đồ a) có tăng nhanh hơn trong Biểu đồ b) không? {0}",
+        "o": [
+         {
+          "dung": [
+           "Không, doanh thu tăng như nhau"
+          ],
+          "sai": [
+           "Có, vì đường gấp khúc ở Biểu đồ a) dốc hơn",
+           "Không, doanh thu trong Biểu đồ b) tăng nhanh hơn"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "5.11b",
      "de": "Cho hai biểu đồ (H.5.18) về doanh thu của nhà máy. Hai biểu đồ này có cùng biểu diễn một dãy số liệu không?",
      "trang": 104,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "hinh": [
+      "toan8t1/5.11.webp"
+     ],
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Cho hai biểu đồ Hình 5.18 về doanh thu của nhà máy. Hai biểu đồ này có cùng biểu diễn một dãy số liệu không?",
+      "cac": [
+       "Có, hai biểu đồ cùng biểu diễn dãy 30; 33; 34; 35; 38 (tỉ đồng)",
+       "Không, vì đường gấp khúc ở Biểu đồ a) dốc hơn",
+       "Không, vì trục đứng của hai biểu đồ được chia khác nhau"
+      ],
+      "dap": "A"
+     }
     },
     {
      "ma": "5.11c",
      "de": "Cho hai biểu đồ (H.5.18) về doanh thu của nhà máy. Giải thích tại sao hai đường gấp khúc trên hai biểu đồ có độ dốc khác nhau.",
      "trang": 104,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "hinh": [
+      "toan8t1/5.11.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "hoi": "Cho hai biểu đồ Hình 5.18 về doanh thu của nhà máy. Giải thích tại sao hai đường gấp khúc trên hai biểu đồ có độ dốc khác nhau.",
+      "dong": [
+       {
+        "chu": "Trục đứng của Biểu đồ a) ghi các giá trị từ {0}; trục đứng của Biểu đồ b) ghi từ {1}",
+        "o": [
+         {
+          "dung": [
+           "30 đến 38"
+          ],
+          "sai": [
+           "0 đến 38",
+           "30 đến 40"
+          ]
+         },
+         {
+          "dung": [
+           "0 đến 40"
+          ],
+          "sai": [
+           "30 đến 38",
+           "0 đến 38"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Vì vậy: {0}",
+        "o": [
+         {
+          "dung": [
+           "cùng một mức tăng doanh thu, nhưng Biểu đồ a) bỏ khoảng từ 0 đến 30 và giãn trục đứng ra nên đường dốc hơn"
+          ],
+          "sai": [
+           "doanh thu trong Biểu đồ a) tăng nhanh hơn doanh thu trong Biểu đồ b) nên đường dốc hơn",
+           "hai biểu đồ biểu diễn hai dãy số liệu doanh thu khác nhau của nhà máy"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "5.12a",
@@ -12634,14 +13016,45 @@
      "de": "Biểu đồ (H.5.20) cho biết cơ cấu GDP của Việt Nam năm 2021. Lĩnh vực nào đóng góp nhiều nhất vào GDP, với bao nhiêu phần trăm?",
      "trang": 105,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "hinh": [
+      "toan8t1/5.13.webp"
+     ],
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Biểu đồ Hình 5.20 cho biết cơ cấu GDP của Việt Nam năm 2021. Lĩnh vực nào đóng góp nhiều nhất vào GDP, với bao nhiêu phần trăm?",
+      "cac": [
+       "Dịch vụ, với 40,95%",
+       "Công nghiệp và xây dựng, với 37,86%",
+       "Dịch vụ, với 37,86%",
+       "Nông, lâm nghiệp và thuỷ sản, với 12,36%"
+      ],
+      "dap": "A"
+     }
     },
     {
      "ma": "5.13b",
-     "de": "Biểu đồ (H.5.20) cho biết cơ cấu GDP của Việt Nam năm 2021 (Dịch vụ 40,95%). GDP Việt Nam năm 2021 là 0,4 nghìn tỉ đô la Mỹ. Lĩnh vực dịch vụ đóng góp bao nhiêu tỉ đô la Mỹ?",
+     "de": "Biểu đồ (H.5.20) cho biết cơ cấu GDP của Việt Nam năm 2021. GDP Việt Nam năm 2021 là 0,4 nghìn tỉ đô la Mỹ. Lĩnh vực dịch vụ đóng góp bao nhiêu tỉ đô la Mỹ?",
      "trang": 105,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "hinh": [
+      "toan8t1/5.13.webp"
+     ],
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "dap": [
+       "163,8"
+      ],
+      "phim": [],
+      "nhieu": [],
+      "loi_giai": [
+       "Đổi đơn vị (tỉ đô la Mỹ): G = 0,4 · 1000 = 400",
+       "Dịch vụ đóng góp: D = 400 · 40,95 : 100 = 163,8"
+      ]
+     }
     },
     {
      "ma": "5.14a",
@@ -13078,7 +13491,70 @@
      "de": "Khối 8 tổ chức giải bóng đá với 5 đội tham dự là các đội bóng của các lớp A, B, C, D, E. Trước khi giải đấu diễn ra, Bình muốn thực hiện khảo sát dự đoán của các bạn về đội bóng vô địch giải đấu. Theo em Bình có thể thực hiện khảo sát theo những cách nào?",
      "trang": 110,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "hoi": "Khối 8 tổ chức giải bóng đá với 5 đội tham dự là các đội bóng của các lớp A, B, C, D, E. Trước khi giải đấu diễn ra, Bình muốn thực hiện khảo sát dự đoán của các bạn về đội bóng vô địch giải đấu. Theo em Bình có thể thực hiện khảo sát theo những cách nào? Mỗi cách sau có dùng được không?",
+      "dong": [
+       {
+        "chu": "Phỏng vấn trực tiếp các bạn: {0}",
+        "o": [
+         {
+          "dung": [
+           "dùng được"
+          ],
+          "sai": [
+           "không dùng được"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Phát phiếu hỏi (lập bảng hỏi) cho các bạn: {0}",
+        "o": [
+         {
+          "dung": [
+           "dùng được"
+          ],
+          "sai": [
+           "không dùng được"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Tìm số liệu có sẵn trên sách, báo, Internet: {0}",
+        "o": [
+         {
+          "dung": [
+           "không dùng được"
+          ],
+          "sai": [
+           "dùng được"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Làm thí nghiệm: {0}",
+        "o": [
+         {
+          "dung": [
+           "không dùng được"
+          ],
+          "sai": [
+           "dùng được"
+          ],
+          "hai": true
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "5.25b",
@@ -13251,7 +13727,74 @@
      "de": "Bài toán gửi tiết kiệm có kì hạn: Ngân hàng thường tính lãi suất cho khách hàng theo thể thức lãi kép theo định kì, tức là nếu đến kì hạn người gửi không rút lãi ra thì tiền lãi được tính vào vốn của kì kế tiếp. Một người gửi vào ngân hàng P đồng, với lãi suất hằng tháng là r (ở đây r được biểu thị dưới dạng số thập phân). a) Tính số tiền người đó nhận được sau 1 tháng. b) Tính số tiền người đó nhận được sau 2 tháng. c) Tính số tiền người đó nhận được sau 3 tháng. d) Đưa ra công thức tính số tiền người đó nhận được sau n tháng.",
      "trang": 112,
      "nhom": "Luyện tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "hoi": "Ngân hàng thường tính lãi suất cho khách hàng theo thể thức lãi kép theo định kì, tức là nếu đến kì hạn người gửi không rút lãi ra thì tiền lãi được tính vào vốn của kì kế tiếp. Một người gửi vào ngân hàng P đồng, với lãi suất hằng tháng là r (r viết dưới dạng số thập phân). Tính số tiền người đó nhận được sau 1 tháng, 2 tháng, 3 tháng, rồi đưa ra công thức tính số tiền người đó nhận được sau n tháng.",
+      "dong": [
+       {
+        "chu": "a) Sau 1 tháng: {0}",
+        "o": [
+         {
+          "dung": [
+           "P(1 + r)",
+           "P + Pr"
+          ],
+          "sai": [
+           "P + r",
+           "Pr"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "b) Sau 2 tháng: {0}",
+        "o": [
+         {
+          "dung": [
+           "P(1 + r)²"
+          ],
+          "sai": [
+           "P(1 + 2r)",
+           "2P(1 + r)",
+           "P(1 + r²)"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "c) Sau 3 tháng: {0}",
+        "o": [
+         {
+          "dung": [
+           "P(1 + r)³"
+          ],
+          "sai": [
+           "P(1 + 3r)",
+           "3P(1 + r)",
+           "P(1 + r³)"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "d) Sau n tháng: {0}",
+        "o": [
+         {
+          "dung": [
+           "P(1 + r)ⁿ"
+          ],
+          "sai": [
+           "P(1 + nr)",
+           "nP(1 + r)",
+           "P(1 + rⁿ)"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "Lãi kép - Dự án 1 (tr.112)",
@@ -13274,28 +13817,135 @@
      "de": "Sử dụng phần mềm GeoGebra, hãy tính: (3x^2y + 5xy − 2)(4x + 3y) − 6x^2(2xy + (3/2)y^2 + (10/3)y).",
      "trang": 114,
      "nhom": "Luyện tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "hoi": "Sử dụng phần mềm GeoGebra (hoặc tự tính), hãy tính:\n(3x²y + 5xy − 2)(4x + 3y) − 6x²(2xy + (3/2)y² + (10/3)y).",
+      "dap": [
+       "15xy²−8x−6y"
+      ],
+      "phim": [
+       "x",
+       "y",
+       "²"
+      ],
+      "nhieu": [
+       "³",
+       "z",
+       "⁴"
+      ],
+      "loi_giai": [
+       "(3x²y + 5xy − 2)(4x + 3y) = 12x³y + 9x²y² + 20x²y + 15xy² − 8x − 6y",
+       "6x²(2xy + (3/2)y² + (10/3)y) = 12x³y + 9x²y² + 20x²y",
+       "Hiệu = 12x³y + 9x²y² + 20x²y + 15xy² − 8x − 6y − (12x³y + 9x²y² + 20x²y)",
+       "= 15xy² − 8x − 6y"
+      ]
+     }
     },
     {
      "ma": "GeoGebra đa thức - Thực hành 2 (tr.114)",
      "de": "Sử dụng phần mềm GeoGebra, hãy khai triển các biểu thức sau: a) (5x − y)^2; b) ((1/3)x + 2y)^3.",
      "trang": 114,
      "nhom": "Luyện tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "hoi": "Sử dụng phần mềm GeoGebra (hoặc tự tính), hãy khai triển các biểu thức sau:\na) (5x − y)²;\nb) ((1/3)x + 2y)³.\n(Gõ kết quả các ý theo thứ tự, cách nhau bằng dấu ;)",
+      "dap": [
+       "25x²−10xy+y²;(1/27)x³+(2/3)x²y+4xy²+8y³",
+       "25x²−10xy+y²;1/27x³+2/3x²y+4xy²+8y³",
+       "25x²−10xy+y²;x³/27+2x²y/3+4xy²+8y³"
+      ],
+      "phim": [
+       "x",
+       "y",
+       "²",
+       "³",
+       ";"
+      ],
+      "nhieu": [
+       "z",
+       "⁴",
+       "√"
+      ],
+      "loi_giai": [
+       "a) (5x − y)² = (5x)² − 2 · 5x · y + y²",
+       "= 25x² − 10xy + y²",
+       "b) ((1/3)x + 2y)³ = ((1/3)x)³ + 3 · ((1/3)x)² · 2y + 3 · (1/3)x · (2y)² + (2y)³",
+       "= (1/27)x³ + (2/3)x²y + 4xy² + 8y³"
+      ]
+     }
     },
     {
      "ma": "GeoGebra đa thức - Thực hành 3 (tr.114)",
      "de": "Sử dụng phần mềm GeoGebra, hãy phân tích các đa thức sau thành nhân tử: a) x^4 − 4x^3 − 7x^2 + 8x + 10; b) (x + y + z)^3 − x^3 − y^3 − z^3.",
      "trang": 114,
      "nhom": "Luyện tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 6,
+      "hoi": "Sử dụng phần mềm GeoGebra (hoặc tự tính), hãy phân tích các đa thức sau thành nhân tử:\na) x⁴ − 4x³ − 7x² + 8x + 10;\nb) (x + y + z)³ − x³ − y³ − z³.\n(Gõ kết quả các ý theo thứ tự, cách nhau bằng dấu ;)",
+      "dap": [
+       "(x+1)(x−5)(x²−2);3(x+y)(y+z)(z+x)",
+       "(x+1)(x−5)(x−√2)(x+√2);3(x+y)(y+z)(z+x)"
+      ],
+      "phim": [
+       "x",
+       "y",
+       "z",
+       "²",
+       "√",
+       ";"
+      ],
+      "nhieu": [
+       "³",
+       "⁴",
+       "t"
+      ],
+      "loi_giai": [
+       "a) x⁴ − 4x³ − 7x² + 8x + 10 = x³(x + 1) − 5x²(x + 1) − 2x(x + 1) + 10(x + 1)",
+       "= (x + 1)(x³ − 5x² − 2x + 10) = (x + 1)[x²(x − 5) − 2(x − 5)]",
+       "= (x + 1)(x − 5)(x² − 2)",
+       "b) (x + y + z)³ − x³ − y³ − z³ = (y + z)[(x + y + z)² + (x + y + z)x + x²] − (y + z)(y² − yz + z²)",
+       "= (y + z)(3x² + 3xy + 3xz + 3yz) = 3(y + z)[x(x + y) + z(x + y)]",
+       "= 3(x + y)(y + z)(z + x)"
+      ]
+     }
     },
     {
      "ma": "GeoGebra đa thức - Thực hành 4 (tr.114)",
      "de": "Sử dụng phần mềm GeoGebra, hãy tìm thương và dư (nếu có) trong các phép chia sau: a) (3x^4y − 9x^3y^2 − 21x^2y^2) : (3x^2y); b) (2x^3 + 5x^2 − 2x + 12) : (2x^2 − x + 1).",
      "trang": 114,
      "nhom": "Luyện tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "hoi": "Sử dụng phần mềm GeoGebra (hoặc tự tính), hãy tìm thương và dư (nếu có) trong các phép chia sau:\na) (3x⁴y − 9x³y² − 21x²y²) : (3x²y);\nb) (2x³ + 5x² − 2x + 12) : (2x² − x + 1).\n(Gõ theo thứ tự: thương và dư của phép chia a), rồi thương và dư của phép chia b), cách nhau bằng dấu ;)",
+      "dap": [
+       "x²−3xy−7y;0;x+3;9"
+      ],
+      "phim": [
+       "x",
+       "y",
+       "²",
+       ";"
+      ],
+      "nhieu": [
+       "³",
+       "z",
+       "⁴"
+      ],
+      "loi_giai": [
+       "a) (3x⁴y − 9x³y² − 21x²y²) : (3x²y) = 3x⁴y : 3x²y − 9x³y² : 3x²y − 21x²y² : 3x²y = x² − 3xy − 7y; dư 0",
+       "b) Bước 1: 2x³ : 2x² = x; 2x³ + 5x² − 2x + 12 − x(2x² − x + 1) = 6x² − 3x + 12",
+       "Bước 2: 6x² : 2x² = 3; 6x² − 3x + 12 − 3(2x² − x + 1) = 9",
+       "2x³ + 5x² − 2x + 12 = (2x² − x + 1)(x + 3) + 9; thương x + 3, dư 9"
+      ]
+     }
     },
     {
      "ma": "GeoGebra vẽ hình - Luyện tập 2 (tr.117)",

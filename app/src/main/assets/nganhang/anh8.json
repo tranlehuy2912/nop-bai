@@ -2,7 +2,7 @@
  "nguon": "anh8",
  "mon": "Tiếng Anh",
  "ten": "SGK Tiếng Anh 8",
- "ban": 4,
+ "ban": 5,
  "doan_van": {
   "1.GS1": "<b>I'm keen on doing DIY (do-it-yourself).</b>\nTom: Hi, Trang. Surprised to see you. What brings you here?\nTrang: Oh, hello Tom. I'm looking for a knitting kit.\nTom: A knitting kit? I didn't know you like knitting.\nTrang: Actually, I'm keen on many DIY activities. In my leisure time, I love knitting, building dollhouses, and making paper flowers.\nTom: I see. So, you like spending time on your own.\nTrang: Yeah. What do you do in your free time?\nTom: I'm a bit different. I usually hang out with my friends. We go to the cinema, go cycling, or play sport in the park.\nTrang: You love spending free time with other people, don't you?\nTom: That's right. By the way, would you like to go to the cinema with me and Mark this Sunday? There's a new comedy at New World Cinema.\nTrang: Yes, I'd love to. Can I ask Mai to join us?\nTom: Sure. Let's meet outside the cinema at 9 a.m.",
   "1.C4": "Sakura (Kyoto, Japan): Origami is the art of paper folding. I love doing it on my own in my free time. With just some sheets of paper, I can create almost anything: flowers, birds, or fans. Doing origami helps me to relax.\nEric (St. Gallen, Switzerland): My home town has some famous ski resorts. I'm into snowboarding and usually go to a nearby ski resort with my parents at weekends. Snowboarding improves my overall health and balance.\nLan (Quang Binh, Viet Nam): I'm keen on playing sport, especially badminton. My best friend lives next door, so we play badminton almost every afternoon. It's an easy sport, and it also improves my muscle strength and helps reduce stress.",
@@ -23,6 +23,7 @@
   "4.S1-2": "<b>Stilt houses</b>\nStilt houses are popular among different ethnic minority groups, from the Thai in the Northern Highlands to the Khmer in the Mekong Delta. The houses come in different sizes and styles, and show the traditional culture of their owners.\nStilt houses are made from natural materials like wood, bamboo, and leaves. They stand on strong posts, about two or three metres above the ground. This allows them to keep people safe from wild animals. People climb a seven- or nine-step staircase to enter the house. The most important place in the house is the kitchen. It has an open fire in the middle of the house. It is the place for family gatherings and receiving guests.\nThe stilt houses of the Tay and Nung usually overlook a field. The stilt houses of the Thai, however, face mountains or a forest. The Bahnar and Ede have a communal house (called a Rong house) as the heart of their village. These communal houses are the largest and tallest ones in the village.",
   "5.GS1": "<b>Tet is coming!</b>\nElena: Wow, this girl looks so cute.\nTrang: Yeah ... She's my cousin. She's at Sa Dec Flower Village. Tet is coming soon, so many people visit flower villages to take pictures with the blooming flowers.\nElena: Oh, I'm fond of admiring the flowers. Does your family visit places like this too?\nTrang: Yes, we do. We usually visit Nhat Tan Village to buy kumquat trees and peach blossoms.\nElena: I see flowers and ornamental trees everywhere these days. What are they for?\nTrang: We, Vietnamese, use plants and flowers for decorations and for offerings. They are an important part of our Tet tradition.\nElena: And what's that tall tree in the photo?\nTrang: Well, it's actually a bamboo pole. People place it in the yard of the communal house. They hang decorative items like small bells and lanterns on it. They want to chase away bad luck and pray for a lucky new year.\nElena: Interesting! I didn't know that.",
   "5.CL2-4": "A recent study in (1) ___ UK shows that family time traditions are good for (2) ___ teens. These traditions include family members playing card games, watching their favourite TV programmes, or performing (3) ___ karaoke shows at weekends with one another. These activities often lead to lots of laughter and (4) ___ fun conversations. By taking part in such activities, teens strengthen (5) ___ bonds with their family.",
+  "5.C3": "The lion dance is called shishi-mai in Japanese. People perform it during New Year celebrations. Shishi-mai groups also perform at other important occasions such as business openings and weddings.\nMost forms of shishi-mai have one or more people performing the dance. The performers are excellent at acrobatics. One person controls the lion's head and the other moves the lion's body. The lion dances to the sounds of flutes and drums. The drummers and flute players often follow the lion around, but they do not dance with it.\nThe Japanese perform shishi-mai to chase away bad spirits and to bring good luck.",
   "5.S1-2": "<b>A Village Festival Day</b>\nI live in a small village in northern Viet Nam. Every year, people in my village look forward to the third day of Tet. It is one of our most important festival days.\nIn the morning, we gather along the riverside to watch some competitions. First, there is a special boat race. Some team members cook rice on the boat while others row the boat as fast as they can. The fastest team with well-cooked rice wins the race. Then, the referee <b>releases a duck</b> into the middle of the river. Contestants jump into the river to catch it. The atmosphere becomes loud with the sound of drums and cheers of festival goers.\nAt noon, there is a village party at the communal house for the elders. Each family also holds a home party. We cook traditional dishes like sticky rice and steamed chicken. Sometimes, we include food that children love, such as bun cha or even pizzas!\nThe village festival helps us maintain our traditions, connect with other people, and strengthen our family bonds.",
   "5.LB4": "Here are two easy ways to raise children's awareness of (1) ___ customs and traditions. First, it is (2) ___ good idea for parents to teach children to cook. By doing this, children can learn and preserve their family recipes. Second, parents can take children to (3) ___ local festivals. This helps them discover (4) ___ culture of their community and develop (5) ___ understanding of local traditions.",
   "6.GS1": "<b>Lifestyle differences</b>\nNam: Hello, Tom. How're things?\nTom: Oh good. I like it here. The lifestyle is interesting and different from that in my country.\nNam: Really?\nTom: Sure. Students here call their teachers by their title \"teacher\", not by their names.\nNam: Right. How do you greet your teachers?\nTom: We usually say \"Hello\" or \"Good morning\" then Mr, Mrs, or Miss and their surnames, for example \"Good morning, Mr Smith.\"\nNam: Are there other differences?\nTom: People buy and sell a lot of street food here. In my country, people usually buy food in a store or a restaurant.\nNam: Yeah. Buying street food is a common practice in my city.\nTom: And I've noticed that many people have breakfast on the street too! In my country, we typically have a light breakfast at home.\nNam: I see. But here many adults are in the habit of having breakfast outside of their homes. If they're not in a hurry, they'll even have a leisurely coffee there.\nTom: That's fascinating!",
@@ -12618,6 +12619,93 @@
      "bo_may": "hai đáp án đều đúng: strengthen the bonds with their family và strengthen bonds with their family"
     },
     {
+     "ma": "Bài 3 (tr.54)",
+     "de": "Read the text about the lion dance in Japan and complete the table with the information from the text.\nJapanese lion dance\nJapanese name: (1) ___\nOccasions: - (2) ___ - other important occasions\nNumber of performers: one or more\nSkills: (3) ___\nDance partner: no dance partner\nMusical instruments: (4) ___ and drums\nPurposes: - to chase away (5) ___ - to bring good luck",
+     "trang": 54,
+     "nhom": "Communication",
+     "dang": "CAU_NHO",
+     "dap_an": "1. shishi-mai; 2. New Year celebrations; 3. acrobatics; 4. flutes; 5. bad spirits",
+     "loai_dap_an": "DAP_SO",
+     "doan": "5.C3",
+     "ghep": {
+      "kieu": "O",
+      "sao": 5,
+      "hoi": "Read the text about the lion dance in Japan and complete the table with the information from the text.",
+      "dong": [
+       {
+        "chu": "Japanese lion dance\nJapanese name: (1) {0}",
+        "o": [
+         {
+          "dung": [
+           "shishi-mai"
+          ],
+          "sai": [
+           "mua lan",
+           "lion dance"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Occasions: (2) {0}, other important occasions\nNumber of performers: one or more",
+        "o": [
+         {
+          "dung": [
+           "New Year celebrations"
+          ],
+          "sai": [
+           "the Mid-Autumn Festival",
+           "Halloween"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Skills: (3) {0}\nDance partner: no dance partner",
+        "o": [
+         {
+          "dung": [
+           "acrobatics"
+          ],
+          "sai": [
+           "martial arts",
+           "singing"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Musical instruments: (4) {0} and drums",
+        "o": [
+         {
+          "dung": [
+           "flutes"
+          ],
+          "sai": [
+           "gongs",
+           "bells"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Purposes: to chase away (5) {0}, to bring good luck",
+        "o": [
+         {
+          "dung": [
+           "bad spirits"
+          ],
+          "sai": [
+           "good luck",
+           "wild animals"
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    },
+    {
      "ma": "Bài 2.1 (tr.55)",
      "de": "Read the text. Choose the correct answer A, B, or C.\nWhat is the text mainly about?\nA. A local tradition.\nB. A family tradition.\nC. A cooking contest.",
      "trang": 55,
@@ -15124,6 +15212,106 @@
      }
     },
     {
+     "ma": "Bài 3.1 (tr.64, Communication)",
+     "de": "QUIZ How much do you know about the cuisines of different countries?\nDo the quiz to find out.\nWhich country is famous for pasta and pizza?\nA. Thailand. B. Italy. C. Brazil.",
+     "trang": 64,
+     "nhom": "Communication",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "QUIZ How much do you know about the cuisines of different countries?\nWhich country is famous for pasta and pizza?",
+      "cac": [
+       "Thailand.",
+       "Italy.",
+       "Brazil."
+      ],
+      "dap": "B"
+     }
+    },
+    {
+     "ma": "Bài 3.2 (tr.64, Communication)",
+     "de": "QUIZ How much do you know about the cuisines of different countries?\nDo the quiz to find out.\nWhich country is famous for kimchi?\nA. Korea. B. Portugal. C. Australia.",
+     "trang": 64,
+     "nhom": "Communication",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "QUIZ How much do you know about the cuisines of different countries?\nWhich country is famous for kimchi?",
+      "cac": [
+       "Korea.",
+       "Portugal.",
+       "Australia."
+      ],
+      "dap": "A"
+     }
+    },
+    {
+     "ma": "Bài 3.3 (tr.64, Communication)",
+     "de": "QUIZ How much do you know about the cuisines of different countries?\nDo the quiz to find out.\nEngland is well-known for ___.\nA. dim sum B. spaghetti C. fish and chips",
+     "trang": 64,
+     "nhom": "Communication",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "C",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "QUIZ How much do you know about the cuisines of different countries?\nEngland is well-known for ___.",
+      "cac": [
+       "dim sum",
+       "spaghetti",
+       "fish and chips"
+      ],
+      "dap": "C"
+     }
+    },
+    {
+     "ma": "Bài 3.4 (tr.64, Communication)",
+     "de": "QUIZ How much do you know about the cuisines of different countries?\nDo the quiz to find out.\nSushi comes from ___.\nA. Japan B. Korea C. Taiwan",
+     "trang": 64,
+     "nhom": "Communication",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "QUIZ How much do you know about the cuisines of different countries?\nSushi comes from ___.",
+      "cac": [
+       "Japan",
+       "Korea",
+       "Taiwan"
+      ],
+      "dap": "A"
+     }
+    },
+    {
+     "ma": "Bài 3.5 (tr.64, Communication)",
+     "de": "QUIZ How much do you know about the cuisines of different countries?\nDo the quiz to find out.\nIn which country do you think kangaroo steak is common?\nA. China. B. Australia. C. The USA.",
+     "trang": 64,
+     "nhom": "Communication",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "QUIZ How much do you know about the cuisines of different countries?\nIn which country do you think kangaroo steak is common?",
+      "cac": [
+       "China.",
+       "Australia.",
+       "The USA."
+      ],
+      "dap": "B"
+     }
+    },
+    {
      "ma": "Bài 2 (tr.66)",
      "de": "Match the highlighted words in the text with their meanings.\n1. maintain\n2. styles\n3. experience\n4. mushers\na. particular ways of doing something\nb. people who drive dogsleds\nc. to do or feel something\nd. to keep, make something continue",
      "trang": 66,
@@ -15338,6 +15526,96 @@
       ],
       "dap": [
        "Yes, it is."
+      ]
+     }
+    },
+    {
+     "ma": "Bài 4.1 (tr.66)",
+     "de": "Work in pairs. Look at the pictures and use the cues to talk about what people in some places do to maintain their traditional lifestyle.\nChau An Village:\n- performing traditional dances\n- holding festivals\nExample:\nA: What do people in Chau An Village do to maintain their traditional lifestyle?\nB: They perform traditional dances. They also ...",
+     "trang": 66,
+     "nhom": "Skills 1",
+     "dang": "CAU_NHO",
+     "dap_an": "They perform traditional dances. They also hold festivals.",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "CAU",
+      "sao": 2,
+      "hoi": "Use the cues to answer the question with two sentences: They ... They also ...\nChau An Village: performing traditional dances; holding festivals\nA: What do people in Chau An Village do to maintain their traditional lifestyle?\nB: ___",
+      "the": [
+       "They",
+       "perform",
+       "traditional dances.",
+       "They also",
+       "hold",
+       "festivals."
+      ],
+      "nhieu": [
+       "performing",
+       "holds"
+      ],
+      "dap": [
+       "They perform traditional dances. They also hold festivals.",
+       "They hold festivals. They also perform traditional dances."
+      ]
+     }
+    },
+    {
+     "ma": "Bài 4.2 (tr.66)",
+     "de": "Work in pairs. Look at the pictures and use the cues to talk about what people in some places do to maintain their traditional lifestyle.\nDam Ri Village:\n- cooking and selling traditional food\n- making crafts\nExample:\nA: What do people in Chau An Village do to maintain their traditional lifestyle?\nB: They perform traditional dances. They also ...",
+     "trang": 66,
+     "nhom": "Skills 1",
+     "dang": "CAU_NHO",
+     "dap_an": "They cook and sell traditional food. They also make crafts.",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "CAU",
+      "sao": 2,
+      "hoi": "Use the cues to answer the question with two sentences: They ... They also ...\nDam Ri Village: cooking and selling traditional food; making crafts\nA: What do people in Dam Ri Village do to maintain their traditional lifestyle?\nB: ___",
+      "the": [
+       "They",
+       "cook and sell",
+       "traditional food.",
+       "They also",
+       "make",
+       "crafts."
+      ],
+      "nhieu": [
+       "cooking and selling",
+       "makes"
+      ],
+      "dap": [
+       "They cook and sell traditional food. They also make crafts.",
+       "They make crafts. They also cook and sell traditional food."
+      ]
+     }
+    },
+    {
+     "ma": "Bài 4.3 (tr.66)",
+     "de": "Work in pairs. Look at the pictures and use the cues to talk about what people in some places do to maintain their traditional lifestyle.\nSon Ca Village:\n- weaving clothing\n- singing folk songs\nExample:\nA: What do people in Chau An Village do to maintain their traditional lifestyle?\nB: They perform traditional dances. They also ...",
+     "trang": 66,
+     "nhom": "Skills 1",
+     "dang": "CAU_NHO",
+     "dap_an": "They weave clothing. They also sing folk songs.",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "CAU",
+      "sao": 2,
+      "hoi": "Use the cues to answer the question with two sentences: They ... They also ...\nSon Ca Village: weaving clothing; singing folk songs\nA: What do people in Son Ca Village do to maintain their traditional lifestyle?\nB: ___",
+      "the": [
+       "They",
+       "weave",
+       "clothing.",
+       "They also",
+       "sing",
+       "folk songs."
+      ],
+      "nhieu": [
+       "weaving",
+       "sings"
+      ],
+      "dap": [
+       "They weave clothing. They also sing folk songs.",
+       "They sing folk songs. They also weave clothing."
       ]
      }
     },
