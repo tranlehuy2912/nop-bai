@@ -2,7 +2,7 @@
  "nguon": "anh8",
  "mon": "Tiếng Anh",
  "ten": "SGK Tiếng Anh 8",
- "ban": 5,
+ "ban": 6,
  "doan_van": {
   "1.GS1": "<b>I'm keen on doing DIY (do-it-yourself).</b>\nTom: Hi, Trang. Surprised to see you. What brings you here?\nTrang: Oh, hello Tom. I'm looking for a knitting kit.\nTom: A knitting kit? I didn't know you like knitting.\nTrang: Actually, I'm keen on many DIY activities. In my leisure time, I love knitting, building dollhouses, and making paper flowers.\nTom: I see. So, you like spending time on your own.\nTrang: Yeah. What do you do in your free time?\nTom: I'm a bit different. I usually hang out with my friends. We go to the cinema, go cycling, or play sport in the park.\nTrang: You love spending free time with other people, don't you?\nTom: That's right. By the way, would you like to go to the cinema with me and Mark this Sunday? There's a new comedy at New World Cinema.\nTrang: Yes, I'd love to. Can I ask Mai to join us?\nTom: Sure. Let's meet outside the cinema at 9 a.m.",
   "1.C4": "Sakura (Kyoto, Japan): Origami is the art of paper folding. I love doing it on my own in my free time. With just some sheets of paper, I can create almost anything: flowers, birds, or fans. Doing origami helps me to relax.\nEric (St. Gallen, Switzerland): My home town has some famous ski resorts. I'm into snowboarding and usually go to a nearby ski resort with my parents at weekends. Snowboarding improves my overall health and balance.\nLan (Quang Binh, Viet Nam): I'm keen on playing sport, especially badminton. My best friend lives next door, so we play badminton almost every afternoon. It's an easy sport, and it also improves my muscle strength and helps reduce stress.",
@@ -24,6 +24,7 @@
   "5.GS1": "<b>Tet is coming!</b>\nElena: Wow, this girl looks so cute.\nTrang: Yeah ... She's my cousin. She's at Sa Dec Flower Village. Tet is coming soon, so many people visit flower villages to take pictures with the blooming flowers.\nElena: Oh, I'm fond of admiring the flowers. Does your family visit places like this too?\nTrang: Yes, we do. We usually visit Nhat Tan Village to buy kumquat trees and peach blossoms.\nElena: I see flowers and ornamental trees everywhere these days. What are they for?\nTrang: We, Vietnamese, use plants and flowers for decorations and for offerings. They are an important part of our Tet tradition.\nElena: And what's that tall tree in the photo?\nTrang: Well, it's actually a bamboo pole. People place it in the yard of the communal house. They hang decorative items like small bells and lanterns on it. They want to chase away bad luck and pray for a lucky new year.\nElena: Interesting! I didn't know that.",
   "5.CL2-4": "A recent study in (1) ___ UK shows that family time traditions are good for (2) ___ teens. These traditions include family members playing card games, watching their favourite TV programmes, or performing (3) ___ karaoke shows at weekends with one another. These activities often lead to lots of laughter and (4) ___ fun conversations. By taking part in such activities, teens strengthen (5) ___ bonds with their family.",
   "5.C3": "The lion dance is called shishi-mai in Japanese. People perform it during New Year celebrations. Shishi-mai groups also perform at other important occasions such as business openings and weddings.\nMost forms of shishi-mai have one or more people performing the dance. The performers are excellent at acrobatics. One person controls the lion's head and the other moves the lion's body. The lion dances to the sounds of flutes and drums. The drummers and flute players often follow the lion around, but they do not dance with it.\nThe Japanese perform shishi-mai to chase away bad spirits and to bring good luck.",
+  "5.C4": "<b>Japanese lion dance</b>\nThe lion dance is called shishi-mai in Japanese. People perform it during New Year celebrations. Shishi-mai groups also perform at other important occasions such as business openings and weddings.\nMost forms of shishi-mai have one or more people performing the dance. The performers are excellent at acrobatics. One person controls the lion's head and the other moves the lion's body. The lion dances to the sounds of flutes and drums. The drummers and flute players often follow the lion around, but they do not dance with it.\nThe Japanese perform shishi-mai to chase away bad spirits and to bring good luck.\n<b>Vietnamese unicorn dance</b>\n<b>Vietnamese name:</b> mua lan\n<b>Occasions:</b> Mid-Autumn and New Year Festivals; business openings and weddings\n<b>Number of performers:</b> one or more\n<b>Skills:</b> martial arts and acrobatics\n<b>Dance partner:</b> ong Dia\n<b>Musical instrument:</b> drum\n<b>Purpose:</b> to wish for luck and success",
   "5.S1-2": "<b>A Village Festival Day</b>\nI live in a small village in northern Viet Nam. Every year, people in my village look forward to the third day of Tet. It is one of our most important festival days.\nIn the morning, we gather along the riverside to watch some competitions. First, there is a special boat race. Some team members cook rice on the boat while others row the boat as fast as they can. The fastest team with well-cooked rice wins the race. Then, the referee <b>releases a duck</b> into the middle of the river. Contestants jump into the river to catch it. The atmosphere becomes loud with the sound of drums and cheers of festival goers.\nAt noon, there is a village party at the communal house for the elders. Each family also holds a home party. We cook traditional dishes like sticky rice and steamed chicken. Sometimes, we include food that children love, such as bun cha or even pizzas!\nThe village festival helps us maintain our traditions, connect with other people, and strengthen our family bonds.",
   "5.LB4": "Here are two easy ways to raise children's awareness of (1) ___ customs and traditions. First, it is (2) ___ good idea for parents to teach children to cook. By doing this, children can learn and preserve their family recipes. Second, parents can take children to (3) ___ local festivals. This helps them discover (4) ___ culture of their community and develop (5) ___ understanding of local traditions.",
   "6.GS1": "<b>Lifestyle differences</b>\nNam: Hello, Tom. How're things?\nTom: Oh good. I like it here. The lifestyle is interesting and different from that in my country.\nNam: Really?\nTom: Sure. Students here call their teachers by their title \"teacher\", not by their names.\nNam: Right. How do you greet your teachers?\nTom: We usually say \"Hello\" or \"Good morning\" then Mr, Mrs, or Miss and their surnames, for example \"Good morning, Mr Smith.\"\nNam: Are there other differences?\nTom: People buy and sell a lot of street food here. In my country, people usually buy food in a store or a restaurant.\nNam: Yeah. Buying street food is a common practice in my city.\nTom: And I've noticed that many people have breakfast on the street too! In my country, we typically have a light breakfast at home.\nNam: I see. But here many adults are in the habit of having breakfast outside of their homes. If they're not in a hurry, they'll even have a leisurely coffee there.\nTom: That's fascinating!",
@@ -12613,13 +12614,33 @@
      "trang": 54,
      "nhom": "A Closer Look 2",
      "dang": "CAU_NHO",
-     "dap_an": "the hoặc Ø đều đúng (cả ba nguồn lời giải ghi the)",
+     "dap_an": "the / Ø (cả hai đều đúng; cả ba nguồn lời giải ghi the)",
      "loai_dap_an": "DAP_SO",
      "doan": "5.CL2-4",
-     "bo_may": "hai đáp án đều đúng: strengthen the bonds with their family và strengthen bonds with their family"
+     "ghep": {
+      "kieu": "O",
+      "sao": 1,
+      "hoi": "Complete the text with the or Ø (zero article).",
+      "dong": [
+       {
+        "chu": "By taking part in such activities, teens strengthen (5) {0} bonds with their family.",
+        "o": [
+         {
+          "dung": [
+           "the",
+           "Ø"
+          ],
+          "sai": [
+           "a"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
-     "ma": "Bài 3 (tr.54)",
+     "ma": "Bài 3 (tr.54, Communication)",
      "de": "Read the text about the lion dance in Japan and complete the table with the information from the text.\nJapanese lion dance\nJapanese name: (1) ___\nOccasions: - (2) ___ - other important occasions\nNumber of performers: one or more\nSkills: (3) ___\nDance partner: no dance partner\nMusical instruments: (4) ___ and drums\nPurposes: - to chase away (5) ___ - to bring good luck",
      "trang": 54,
      "nhom": "Communication",
@@ -12698,6 +12719,135 @@
           "sai": [
            "good luck",
            "wild animals"
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "ma": "Bài 4 (tr.55)",
+     "de": "Work in groups. Read Mai's notes on the Vietnamese unicorn dance. Compare the Vietnamese unicorn dance with the Japanese lion dance.\nVietnamese unicorn dance\nVietnamese name: mua lan\nOccasions: - Mid-Autumn and New Year Festivals - business openings and weddings\nNumber of performers: one or more\nSkills: martial arts and acrobatics\nDance partner: ong Dia\nMusical instrument: drum\nPurpose: to wish for luck and success\nExample:\nThe Vietnamese unicorn dance and the Japanese lion dance are both popular on New Year Festivals.",
+     "trang": 55,
+     "nhom": "Communication",
+     "dang": "CAU_NHO",
+     "dap_an": "1. Both dances; 2. Only the Vietnamese unicorn dance; 3. Both dances; 4. Only the Vietnamese unicorn dance; 5. Only the Vietnamese unicorn dance; 6. Both dances; 7. Only the Japanese lion dance; 8. Both dances",
+     "loai_dap_an": "DAP_SO",
+     "doan": "5.C4",
+     "ghep": {
+      "kieu": "O",
+      "sao": 8,
+      "hoi": "Compare the Vietnamese unicorn dance with the Japanese lion dance. Which dance does each sentence describe? Choose \"Both dances\" when the sentence describes both of them.",
+      "dong": [
+       {
+        "chu": "1. People perform it at business openings and weddings. {0}",
+        "o": [
+         {
+          "dung": [
+           "Both dances"
+          ],
+          "sai": [
+           "Only the Vietnamese unicorn dance",
+           "Only the Japanese lion dance"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "2. People also perform it at the Mid-Autumn Festival. {0}",
+        "o": [
+         {
+          "dung": [
+           "Only the Vietnamese unicorn dance"
+          ],
+          "sai": [
+           "Both dances",
+           "Only the Japanese lion dance"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "3. The performers are good at acrobatics. {0}",
+        "o": [
+         {
+          "dung": [
+           "Both dances"
+          ],
+          "sai": [
+           "Only the Vietnamese unicorn dance",
+           "Only the Japanese lion dance"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "4. The performers are good at martial arts. {0}",
+        "o": [
+         {
+          "dung": [
+           "Only the Vietnamese unicorn dance"
+          ],
+          "sai": [
+           "Both dances",
+           "Only the Japanese lion dance"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "5. It has a dance partner. {0}",
+        "o": [
+         {
+          "dung": [
+           "Only the Vietnamese unicorn dance"
+          ],
+          "sai": [
+           "Both dances",
+           "Only the Japanese lion dance"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "6. Drums are played for the dance. {0}",
+        "o": [
+         {
+          "dung": [
+           "Both dances"
+          ],
+          "sai": [
+           "Only the Vietnamese unicorn dance",
+           "Only the Japanese lion dance"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "7. Flutes are played for the dance. {0}",
+        "o": [
+         {
+          "dung": [
+           "Only the Japanese lion dance"
+          ],
+          "sai": [
+           "Both dances",
+           "Only the Vietnamese unicorn dance"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "8. People perform it for good luck. {0}",
+        "o": [
+         {
+          "dung": [
+           "Both dances"
+          ],
+          "sai": [
+           "Only the Vietnamese unicorn dance",
+           "Only the Japanese lion dance"
           ]
          }
         ]
