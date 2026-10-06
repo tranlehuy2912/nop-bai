@@ -2,7 +2,7 @@
  "nguon": "toan8t2",
  "mon": "Toán",
  "ten": "SGK Toán 8 — tập hai",
- "ban": 1,
+ "ban": 2,
  "cac_bai": [
   {
    "chuong": "Chương VI. Phân thức đại số",
@@ -13,14 +13,98 @@
      "trang": 5,
      "nhom": "Luyện tập",
      "dang": "CAU_NHO",
-     "de": "Trong các cặp phân thức sau, cặp phân thức nào có cùng mẫu thức? a) −20x/(3y^2) và 4x^3/(5y^2); b) (5x − 10)/(x^2 + 1) và (5x − 10)/(x^2 − 1); c) (5x + 10)/(4x − 8) và (4 − 2x)/(4(x − 2))."
+     "de": "Trong các cặp phân thức sau, cặp phân thức nào có cùng mẫu thức? a) −20x/(3y^2) và 4x^3/(5y^2); b) (5x − 10)/(x^2 + 1) và (5x − 10)/(x^2 − 1); c) (5x + 10)/(4x − 8) và (4 − 2x)/(4(x − 2)).",
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "hoi": "Trong các cặp phân thức sau, cặp phân thức nào có cùng mẫu thức?",
+      "dong": [
+       {
+        "chu": "a) −20x/(3y²) và 4x³/(5y²): {0}",
+        "o": [
+         {
+          "dung": [
+           "Khác mẫu"
+          ],
+          "sai": [
+           "Cùng mẫu"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "b) (5x − 10)/(x² + 1) và (5x − 10)/(x² − 1): {0}",
+        "o": [
+         {
+          "dung": [
+           "Khác mẫu"
+          ],
+          "sai": [
+           "Cùng mẫu"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "c) (5x + 10)/(4x − 8) và (4 − 2x)/(4(x − 2)): {0}",
+        "o": [
+         {
+          "dung": [
+           "Cùng mẫu"
+          ],
+          "sai": [
+           "Khác mẫu"
+          ],
+          "hai": true
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "Luyện tập 2 (tr.6)",
      "trang": 6,
      "nhom": "Luyện tập",
      "dang": "CAU_NHO",
-     "de": "Khẳng định sau đúng hay sai? Vì sao? 1/(x^2 + x + 1) = (1 − x)/(1 − x^3)."
+     "de": "Khẳng định sau đúng hay sai? Vì sao? 1/(x^2 + x + 1) = (1 − x)/(1 − x^3).",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "Khẳng định sau đúng hay sai? Vì sao? 1/(x² + x + 1) = (1 − x)/(1 − x³).",
+      "dong": [
+       {
+        "chu": "Tích chéo (x² + x + 1)(1 − x) = {0}",
+        "o": [
+         {
+          "dung": [
+           "1 − x³"
+          ],
+          "sai": [
+           "1 + x³",
+           "x³ − 1"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "So với 1 · (1 − x³), khẳng định 1/(x² + x + 1) = (1 − x)/(1 − x³) {0}",
+        "o": [
+         {
+          "dung": [
+           "đúng"
+          ],
+          "sai": [
+           "sai"
+          ],
+          "hai": true
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "Luyện tập 3 (tr.7)",
@@ -34,28 +118,211 @@
      "trang": 7,
      "nhom": "Vận dụng",
      "dang": "CAU_NHO",
-     "de": "Trở lại tình huống mở đầu (cuộc đua xe đạp gồm 9 km leo dốc, 5 km xuống dốc và 36 km đường bằng phẳng; vận tốc trên đường bằng phẳng hơn vận tốc leo dốc 5 km/h và kém vận tốc xuống dốc 10 km/h). Nếu biết vận tốc của vận động viên trên chặng đường bằng phẳng là 30 km/h, hãy tính thời gian vận động viên đó hoàn thành mỗi chặng đua và tính tổng thời gian để hoàn thành cuộc đua."
+     "de": "Trở lại tình huống mở đầu (cuộc đua xe đạp gồm 9 km leo dốc, 5 km xuống dốc và 36 km đường bằng phẳng; vận tốc trên đường bằng phẳng hơn vận tốc leo dốc 5 km/h và kém vận tốc xuống dốc 10 km/h). Nếu biết vận tốc của vận động viên trên chặng đường bằng phẳng là 30 km/h, hãy tính thời gian vận động viên đó hoàn thành mỗi chặng đua và tính tổng thời gian để hoàn thành cuộc đua.",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 5,
+      "hoi": "Trở lại tình huống mở đầu (cuộc đua xe đạp gồm 9 km leo dốc, 5 km xuống dốc và 36 km đường bằng phẳng; vận tốc trên đường bằng phẳng hơn vận tốc leo dốc 5 km/h và kém vận tốc xuống dốc 10 km/h). Nếu biết vận tốc của vận động viên trên chặng đường bằng phẳng là 30 km/h, hãy tính thời gian vận động viên đó hoàn thành mỗi chặng đua và tính tổng thời gian để hoàn thành cuộc đua.\n(Gõ thời gian chặng leo dốc, chặng xuống dốc, chặng đường bằng phẳng và tổng thời gian, tính theo giờ, viết dưới dạng số thập phân, theo thứ tự, cách nhau bằng dấu ;)",
+      "dap": [
+       "0,36;0,125;1,2;1,685"
+      ],
+      "phim": [
+       ";"
+      ],
+      "nhieu": [
+       "x",
+       "km",
+       "%"
+      ],
+      "loi_giai": [
+       "Vận tốc leo dốc (km/h) = 30 − 5 = 25; vận tốc xuống dốc (km/h) = 30 + 10 = 40",
+       "Thời gian chặng leo dốc (giờ) = 9/25 = 0,36",
+       "Thời gian chặng xuống dốc (giờ) = 5/40 = 0,125",
+       "Thời gian chặng đường bằng phẳng (giờ) = 36/30 = 1,2",
+       "Tổng thời gian (giờ) = 0,36 + 0,125 + 1,2 = 1,685"
+      ]
+     }
     },
     {
      "ma": "6.1",
      "trang": 7,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Viết tử thức và mẫu thức của phân thức (5x − 2)/3."
+     "de": "Viết tử thức và mẫu thức của phân thức (5x − 2)/3.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "Viết tử thức và mẫu thức của phân thức (5x − 2)/3.",
+      "dong": [
+       {
+        "chu": "Tử thức: {0}",
+        "o": [
+         {
+          "dung": [
+           "5x − 2"
+          ],
+          "sai": [
+           "3",
+           "5x"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Mẫu thức: {0}",
+        "o": [
+         {
+          "dung": [
+           "3"
+          ],
+          "sai": [
+           "5x − 2",
+           "1"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "6.2",
      "trang": 7,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Trong các cặp phân thức sau, cặp phân thức nào có mẫu giống nhau? a) −20x/(3y^2) và 4x/(5y^2); b) (3x − 1)/(x^2 + 1) và (3x − 1)/(x + 1); c) (x − 1)/(3x + 6) và (x + 1)/(3(x + 2))."
+     "de": "Trong các cặp phân thức sau, cặp phân thức nào có mẫu giống nhau? a) −20x/(3y^2) và 4x/(5y^2); b) (3x − 1)/(x^2 + 1) và (3x − 1)/(x + 1); c) (x − 1)/(3x + 6) và (x + 1)/(3(x + 2)).",
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "hoi": "Trong các cặp phân thức sau, cặp phân thức nào có mẫu giống nhau?",
+      "dong": [
+       {
+        "chu": "a) −20x/(3y²) và 4x/(5y²): {0}",
+        "o": [
+         {
+          "dung": [
+           "Mẫu khác nhau"
+          ],
+          "sai": [
+           "Mẫu giống nhau"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "b) (3x − 1)/(x² + 1) và (3x − 1)/(x + 1): {0}",
+        "o": [
+         {
+          "dung": [
+           "Mẫu khác nhau"
+          ],
+          "sai": [
+           "Mẫu giống nhau"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "c) (x − 1)/(3x + 6) và (x + 1)/(3(x + 2)): {0}",
+        "o": [
+         {
+          "dung": [
+           "Mẫu giống nhau"
+          ],
+          "sai": [
+           "Mẫu khác nhau"
+          ],
+          "hai": true
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "6.3",
      "trang": 7,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Các kết luận sau đây đúng hay sai? Vì sao? a) −6/(−4y) = 3y/(2y^2); b) (x + 3)/5 = (x^2 + 3x)/(5x); c) 3x(4x + 1)/(16x^2 − 1) = −3x/(1 − 4x)."
+     "de": "Các kết luận sau đây đúng hay sai? Vì sao? a) −6/(−4y) = 3y/(2y^2); b) (x + 3)/5 = (x^2 + 3x)/(5x); c) 3x(4x + 1)/(16x^2 − 1) = −3x/(1 − 4x).",
+     "ghep": {
+      "kieu": "O",
+      "sao": 6,
+      "hoi": "Các kết luận sau đây đúng hay sai? Vì sao?\na) −6/(−4y) = 3y/(2y²);\nb) (x + 3)/5 = (x² + 3x)/(5x);\nc) 3x(4x + 1)/(16x² − 1) = −3x/(1 − 4x).",
+      "dong": [
+       {
+        "chu": "a) Tích chéo (−6) · 2y² và (−4y) · 3y {0}, nên kết luận a) {1}",
+        "o": [
+         {
+          "dung": [
+           "cùng bằng −12y²"
+          ],
+          "sai": [
+           "cùng bằng 12y²",
+           "là −12y² và 12y²"
+          ]
+         },
+         {
+          "dung": [
+           "đúng"
+          ],
+          "sai": [
+           "sai"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "b) Tích chéo (x + 3) · 5x và 5 · (x² + 3x) {0}, nên kết luận b) {1}",
+        "o": [
+         {
+          "dung": [
+           "cùng bằng 5x² + 15x"
+          ],
+          "sai": [
+           "cùng bằng 5x² + 3x",
+           "là 5x² + 15x và 5x² + 3x"
+          ]
+         },
+         {
+          "dung": [
+           "đúng"
+          ],
+          "sai": [
+           "sai"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "c) Tích chéo 3x(4x + 1) · (1 − 4x) và (16x² − 1) · (−3x) {0}, nên kết luận c) {1}",
+        "o": [
+         {
+          "dung": [
+           "cùng bằng 3x − 48x³"
+          ],
+          "sai": [
+           "cùng bằng 48x³ − 3x",
+           "là 3x − 48x³ và 48x³ − 3x"
+          ]
+         },
+         {
+          "dung": [
+           "đúng"
+          ],
+          "sai": [
+           "sai"
+          ],
+          "hai": true
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "6.4",
@@ -69,14 +336,55 @@
      "trang": 7,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Cho A là một đa thức khác 0 tuỳ ý. Hãy giải thích vì sao 0/A = 0 và A/A = 1."
+     "de": "Cho A là một đa thức khác 0 tuỳ ý. Hãy giải thích vì sao 0/A = 0 và A/A = 1.",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 3,
+      "buoc": [
+       "Mỗi đa thức được coi là một phân thức có mẫu thức bằng 1, nên 0 = 0/1 và 1 = 1/1",
+       "Vì 0 · 1 = A · 0 (cùng bằng 0) nên 0/A = 0/1, tức là 0/A = 0",
+       "Vì A · 1 = 1 · A nên A/A = 1/1, tức là A/A = 1"
+      ],
+      "nhieu": [
+       "Mỗi đa thức được coi là một phân thức có mẫu thức bằng 0, nên 0 = 0/0 và 1 = 1/0",
+       "Vì 0 · 0 = A · 1 nên 0/A = 0/1, tức là 0/A = 0"
+      ],
+      "thu_tu_khac": [
+       [
+        0,
+        2,
+        1
+       ]
+      ]
+     }
     },
     {
      "ma": "6.6",
      "trang": 7,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Một ô tô chạy với vận tốc là x (km/h). a) Viết biểu thức biểu thị thời gian ô tô (tính bằng giờ) chạy hết quãng đường 120 km. b) Tính thời gian ô tô đi được 120 km trong trường hợp vận tốc của ô tô là 60 km/h."
+     "de": "Một ô tô chạy với vận tốc là x (km/h). a) Viết biểu thức biểu thị thời gian ô tô (tính bằng giờ) chạy hết quãng đường 120 km. b) Tính thời gian ô tô đi được 120 km trong trường hợp vận tốc của ô tô là 60 km/h.",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "hoi": "Một ô tô chạy với vận tốc là x (km/h).\na) Viết biểu thức biểu thị thời gian ô tô (tính bằng giờ) chạy hết quãng đường 120 km.\nb) Tính thời gian ô tô đi được 120 km trong trường hợp vận tốc của ô tô là 60 km/h.\n(Gõ biểu thức câu a, dấu ;, rồi kết quả câu b tính theo giờ.)",
+      "dap": [
+       "120/x;2"
+      ],
+      "phim": [
+       "x",
+       ";"
+      ],
+      "nhieu": [
+       "y",
+       "²",
+       "³"
+      ],
+      "loi_giai": [
+       "a) Thời gian ô tô chạy hết 120 km (giờ) = 120/x",
+       "b) Với x = 60, thời gian (giờ) = 120/60 = 2"
+      ]
+     }
     }
    ]
   },
@@ -89,91 +397,1396 @@
      "trang": 9,
      "nhom": "Luyện tập",
      "dang": "CAU_NHO",
-     "de": "Khẳng định sau đúng hay sai? Vì sao? 30xy^2(x − y)/(45xy(x − y)^2) = 2y/(3(x − y))."
+     "de": "Khẳng định sau đúng hay sai? Vì sao? 30xy^2(x − y)/(45xy(x − y)^2) = 2y/(3(x − y)).",
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "hoi": "Khẳng định sau đúng hay sai? Vì sao? 30xy²(x − y)/(45xy(x − y)²) = 2y/(3(x − y)).",
+      "dong": [
+       {
+        "chu": "Chia cả tử và mẫu của vế trái cho 15xy(x − y): tử thức thành {0}",
+        "o": [
+         {
+          "dung": [
+           "2y"
+          ],
+          "sai": [
+           "2xy",
+           "2y(x − y)"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "và mẫu thức thành {0}",
+        "o": [
+         {
+          "dung": [
+           "3(x − y)"
+          ],
+          "sai": [
+           "3(x − y)²",
+           "3x(x − y)"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Vậy khẳng định trên {0}",
+        "o": [
+         {
+          "dung": [
+           "đúng"
+          ],
+          "sai": [
+           "sai"
+          ],
+          "hai": true
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "Luyện tập 2 (tr.9)",
      "trang": 9,
      "nhom": "Luyện tập",
      "dang": "CAU_NHO",
-     "de": "Giải thích vì sao −x/(1 − x) = x/(x − 1)."
+     "de": "Giải thích vì sao −x/(1 − x) = x/(x − 1).",
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "hoi": "Giải thích vì sao −x/(1 − x) = x/(x − 1).",
+      "dong": [
+       {
+        "chu": "Nhân cả tử và mẫu của −x/(1 − x) với {0} thì được x/(x − 1)",
+        "o": [
+         {
+          "dung": [
+           "−1"
+          ],
+          "sai": [
+           "x",
+           "1 − x",
+           "x − 1"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Khi đó tử thức −x thành {0}",
+        "o": [
+         {
+          "dung": [
+           "x"
+          ],
+          "sai": [
+           "−x",
+           "1"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "và mẫu thức 1 − x thành {0}",
+        "o": [
+         {
+          "dung": [
+           "x − 1"
+          ],
+          "sai": [
+           "1 + x",
+           "−1 − x"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "Luyện tập 3 (tr.10)",
      "trang": 10,
      "nhom": "Luyện tập",
      "dang": "CAU_NHO",
-     "de": "Em hãy trả lời câu hỏi trong tình huống mở đầu: liệu có phân thức nào đơn giản hơn nhưng bằng phân thức (x − y)/(x^3 − y^3) không?"
+     "de": "Em hãy trả lời câu hỏi trong tình huống mở đầu: liệu có phân thức nào đơn giản hơn nhưng bằng phân thức (x − y)/(x^3 − y^3) không?",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "hoi": "Liệu có phân thức nào đơn giản hơn nhưng bằng phân thức (x − y)/(x³ − y³) không? Hãy rút gọn phân thức (x − y)/(x³ − y³).",
+      "dap": [
+       "1/(x²+xy+y²)"
+      ],
+      "phim": [
+       "x",
+       "y",
+       "²"
+      ],
+      "nhieu": [
+       "³",
+       "z",
+       "⁴"
+      ],
+      "loi_giai": [
+       "x³ − y³ = (x − y)(x² + xy + y²)",
+       "(x − y)/(x³ − y³) = (x − y)/((x − y)(x² + xy + y²))",
+       "= 1/(x² + xy + y²)"
+      ]
+     }
     },
     {
      "ma": "Thử thách nhỏ (tr.10)",
      "trang": 10,
      "nhom": "Thử thách nhỏ",
      "dang": "CAU_NHO",
-     "de": "Tìm a sao cho hai phân thức sau bằng nhau: (−ax^2 − ax)/(x^2 − 1) và 3x/(x − 1)."
+     "de": "Tìm a sao cho hai phân thức sau bằng nhau: (−ax^2 − ax)/(x^2 − 1) và 3x/(x − 1).",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "dap": [
+       "a=−3",
+       "−3"
+      ],
+      "phim": [
+       "a"
+      ],
+      "nhieu": [
+       "x",
+       "²",
+       "³"
+      ],
+      "loi_giai": [
+       "(−ax² − ax)/(x² − 1) = −ax(x + 1)/((x − 1)(x + 1)) = −ax/(x − 1)",
+       "Hai phân thức bằng nhau khi −ax/(x − 1) = 3x/(x − 1) với mọi x ≠ ±1, tức là −a = 3",
+       "Vậy a = −3"
+      ]
+     }
     },
     {
      "ma": "Luyện tập 4 (tr.11)",
      "trang": 11,
      "nhom": "Luyện tập",
      "dang": "CAU_NHO",
-     "de": "Quy đồng mẫu thức hai phân thức 1/(3x^2 − 3) và 1/(x^3 − 1)."
+     "de": "Quy đồng mẫu thức hai phân thức 1/(3x^2 − 3) và 1/(x^3 − 1).",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 4,
+      "buoc": [
+       "3x² − 3 = 3(x − 1)(x + 1); x³ − 1 = (x − 1)(x² + x + 1)",
+       "MTC = 3(x − 1)(x + 1)(x² + x + 1)",
+       "1/(3x² − 3) = (x² + x + 1)/(3(x − 1)(x + 1)(x² + x + 1))",
+       "1/(x³ − 1) = 3(x + 1)/(3(x − 1)(x + 1)(x² + x + 1))"
+      ],
+      "nhieu": [
+       "3x² − 3 = 3(x − 1)(x + 1); x³ − 1 = (x − 1)(x² − x + 1)",
+       "1/(x³ − 1) = (x + 1)/(3(x − 1)(x + 1)(x² + x + 1))"
+      ],
+      "thu_tu_khac": [
+       [
+        0,
+        1,
+        3,
+        2
+       ]
+      ]
+     }
     },
     {
      "ma": "6.7",
      "trang": 11,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Dùng tính chất cơ bản của phân thức, giải thích vì sao các kết luận sau đúng. a) (x − 2)^3/(x^2 − 2x) = (x − 2)^2/x; b) (1 − x)/(−5x + 1) = (x − 1)/(5x − 1)."
+     "de": "Dùng tính chất cơ bản của phân thức, giải thích vì sao các kết luận sau đúng. a) (x − 2)^3/(x^2 − 2x) = (x − 2)^2/x; b) (1 − x)/(−5x + 1) = (x − 1)/(5x − 1).",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 4,
+      "buoc": [
+       "a) x² − 2x = x(x − 2), nên tử và mẫu có nhân tử chung x − 2",
+       "(x − 2)³/(x² − 2x) = (x − 2)²(x − 2)/(x(x − 2)) = (x − 2)²/x",
+       "b) Nhân cả tử và mẫu của (1 − x)/(−5x + 1) với −1 (quy tắc đổi dấu)",
+       "(1 − x)/(−5x + 1) = −(1 − x)/(−(−5x + 1)) = (x − 1)/(5x − 1)"
+      ],
+      "nhieu": [
+       "(x − 2)³/(x² − 2x) = (x − 2)²(x − 2)/(x(x − 2)) = (x − 2)/x",
+       "(1 − x)/(−5x + 1) = −(1 − x)/(−(−5x + 1)) = (x − 1)/(5x + 1)"
+      ],
+      "thu_tu_khac": [
+       [
+        2,
+        3,
+        0,
+        1
+       ]
+      ]
+     }
     },
     {
      "ma": "6.8",
      "trang": 12,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Tìm đa thức thích hợp thay cho dấu \"?\": (y − x)/(4 − x) = ?/(x − 4)."
+     "de": "Tìm đa thức thích hợp thay cho dấu \"?\": (y − x)/(4 − x) = ?/(x − 4).",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "dap": [
+       "x−y"
+      ],
+      "phim": [
+       "x",
+       "y"
+      ],
+      "nhieu": [
+       "z",
+       "²",
+       "³"
+      ],
+      "loi_giai": [
+       "(y − x)/(4 − x) = −(y − x)/(−(4 − x)) = (x − y)/(x − 4)",
+       "Vậy đa thức cần tìm là x − y"
+      ]
+     }
     },
     {
      "ma": "6.9",
      "trang": 12,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Rút gọn các phân thức sau: a) (5x + 10)/(25x^2 + 50); b) 45x(3 − x)/(15x(x − 3)^3); c) (x^2 − 1)^2/((x + 1)(x^3 + 1))."
+     "de": "Rút gọn các phân thức sau: a) (5x + 10)/(25x^2 + 50); b) 45x(3 − x)/(15x(x − 3)^3); c) (x^2 − 1)^2/((x + 1)(x^3 + 1)).",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "hoi": "Rút gọn các phân thức sau:\na) (5x + 10)/(25x² + 50);\nb) 45x(3 − x)/(15x(x − 3)³);\nc) (x² − 1)²/((x + 1)(x³ + 1)).\n(Gõ kết quả các ý theo thứ tự, cách nhau bằng dấu ;)",
+      "dap": [
+       "(x+2)/(5(x²+2));−3/(x−3)²;(x−1)²/(x²−x+1)",
+       "(x+2)/(5x²+10);−3/(x−3)²;(x−1)²/(x²−x+1)",
+       "(x+2)/(5(x²+2));−3/(x−3)²;(x²−2x+1)/(x²−x+1)",
+       "(x+2)/(5x²+10);−3/(x−3)²;(x²−2x+1)/(x²−x+1)"
+      ],
+      "phim": [
+       "x",
+       "²",
+       ";"
+      ],
+      "nhieu": [
+       "y",
+       "³",
+       "⁴"
+      ],
+      "loi_giai": [
+       "a) (5x + 10)/(25x² + 50) = 5(x + 2)/(25(x² + 2)) = (x + 2)/(5(x² + 2))",
+       "b) 45x(3 − x)/(15x(x − 3)³) = −45x(x − 3)/(15x(x − 3)³) = −3/(x − 3)²",
+       "c) (x² − 1)² = (x − 1)²(x + 1)²; (x + 1)(x³ + 1) = (x + 1)²(x² − x + 1)",
+       "(x² − 1)²/((x + 1)(x³ + 1)) = (x − 1)²(x + 1)²/((x + 1)²(x² − x + 1)) = (x − 1)²/(x² − x + 1)"
+      ]
+     }
     },
     {
      "ma": "6.10",
      "trang": 12,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Cho phân thức P = (x + 1)/(x^2 − 1). a) Rút gọn phân thức đã cho, kí hiệu Q là phân thức nhận được. b) Tính giá trị của P và Q tại x = 11. So sánh hai kết quả đó."
+     "de": "Cho phân thức P = (x + 1)/(x^2 − 1). a) Rút gọn phân thức đã cho, kí hiệu Q là phân thức nhận được. b) Tính giá trị của P và Q tại x = 11. So sánh hai kết quả đó.",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "hoi": "Cho phân thức P = (x + 1)/(x² − 1).\na) Rút gọn phân thức đã cho, kí hiệu Q là phân thức nhận được.\nb) Tính giá trị của P và Q tại x = 11. So sánh hai kết quả đó.\n(Gõ Q, giá trị của P tại x = 11, rồi giá trị của Q tại x = 11, theo thứ tự, cách nhau bằng dấu ;)",
+      "dap": [
+       "1/(x−1);1/10;1/10",
+       "1/(x−1);0,1;0,1",
+       "1/(x−1);1/10;0,1",
+       "1/(x−1);0,1;1/10"
+      ],
+      "phim": [
+       "x",
+       ";"
+      ],
+      "nhieu": [
+       "y",
+       "²",
+       "³"
+      ],
+      "loi_giai": [
+       "a) P = (x + 1)/((x − 1)(x + 1)) = 1/(x − 1), vậy Q = 1/(x − 1)",
+       "b) Tại x = 11, P = (11 + 1)/(11² − 1) = 12/120 = 1/10",
+       "Q = 1/(11 − 1) = 1/10",
+       "Vậy P và Q có giá trị bằng nhau tại x = 11"
+      ]
+     }
     },
     {
      "ma": "6.11",
      "trang": 12,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Tìm a sao cho hai phân thức sau bằng nhau: 5x/(x + 1) và ax(x − 1)/((1 − x)(x + 1))."
+     "de": "Tìm a sao cho hai phân thức sau bằng nhau: 5x/(x + 1) và ax(x − 1)/((1 − x)(x + 1)).",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "dap": [
+       "a=−5",
+       "−5"
+      ],
+      "phim": [
+       "a"
+      ],
+      "nhieu": [
+       "x",
+       "²",
+       "³"
+      ],
+      "loi_giai": [
+       "ax(x − 1)/((1 − x)(x + 1)) = −ax(1 − x)/((1 − x)(x + 1)) = −ax/(x + 1)",
+       "Hai phân thức bằng nhau khi 5x/(x + 1) = −ax/(x + 1) với mọi x ≠ ±1, tức là 5 = −a",
+       "Vậy a = −5"
+      ]
+     }
     },
     {
      "ma": "6.12",
      "trang": 12,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Quy đồng mẫu thức các phân thức sau: a) 1/(x^3 − 8) và 3/(4 − 2x); b) x/(x^2 − 1) và 1/(x^2 + 2x + 1)."
+     "de": "Quy đồng mẫu thức các phân thức sau: a) 1/(x^3 − 8) và 3/(4 − 2x); b) x/(x^2 − 1) và 1/(x^2 + 2x + 1).",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 8,
+      "buoc": [
+       "x³ − 8 = (x − 2)(x² + 2x + 4); 4 − 2x = −2(x − 2)",
+       "MTC = 2(x − 2)(x² + 2x + 4)",
+       "1/(x³ − 8) = 2/(2(x − 2)(x² + 2x + 4))",
+       "3/(4 − 2x) = −3/(2(x − 2)) = −3(x² + 2x + 4)/(2(x − 2)(x² + 2x + 4))",
+       "x² − 1 = (x − 1)(x + 1); x² + 2x + 1 = (x + 1)²",
+       "MTC = (x − 1)(x + 1)²",
+       "x/(x² − 1) = x(x + 1)/((x − 1)(x + 1)²)",
+       "1/(x² + 2x + 1) = (x − 1)/((x − 1)(x + 1)²)"
+      ],
+      "nhieu": [
+       "x³ − 8 = (x − 2)(x² − 2x + 4); 4 − 2x = −2(x − 2)",
+       "3/(4 − 2x) = 3/(2(x − 2)) = 3(x² + 2x + 4)/(2(x − 2)(x² + 2x + 4))",
+       "1/(x² + 2x + 1) = (x + 1)/((x − 1)(x + 1)²)"
+      ],
+      "thu_tu_khac": [
+       [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        7,
+        6
+       ],
+       [
+        0,
+        1,
+        3,
+        2,
+        4,
+        5,
+        6,
+        7
+       ],
+       [
+        0,
+        1,
+        3,
+        2,
+        4,
+        5,
+        7,
+        6
+       ],
+       [
+        4,
+        5,
+        6,
+        7,
+        0,
+        1,
+        2,
+        3
+       ],
+       [
+        4,
+        5,
+        6,
+        7,
+        0,
+        1,
+        3,
+        2
+       ],
+       [
+        4,
+        5,
+        7,
+        6,
+        0,
+        1,
+        2,
+        3
+       ],
+       [
+        4,
+        5,
+        7,
+        6,
+        0,
+        1,
+        3,
+        2
+       ]
+      ]
+     }
     },
     {
      "ma": "6.13",
      "trang": 12,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Quy đồng mẫu thức các phân thức sau: a) 1/(x + 2); (x + 1)/(x^2 − 4x + 4) và 5/(2 − x); b) 1/(3x + 3y); 2x/(x^2 − y^2) và (x^2 − xy + y^2)/(x^2 − 2xy + y^2)."
+     "de": "Quy đồng mẫu thức các phân thức sau: a) 1/(x + 2); (x + 1)/(x^2 − 4x + 4) và 5/(2 − x); b) 1/(3x + 3y); 2x/(x^2 − y^2) và (x^2 − xy + y^2)/(x^2 − 2xy + y^2).",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 10,
+      "buoc": [
+       "x² − 4x + 4 = (x − 2)²; 2 − x = −(x − 2)",
+       "MTC = (x + 2)(x − 2)²",
+       "1/(x + 2) = (x − 2)²/((x + 2)(x − 2)²)",
+       "(x + 1)/(x² − 4x + 4) = (x + 1)(x + 2)/((x + 2)(x − 2)²)",
+       "5/(2 − x) = −5/(x − 2) = −5(x + 2)(x − 2)/((x + 2)(x − 2)²)",
+       "3x + 3y = 3(x + y); x² − y² = (x − y)(x + y); x² − 2xy + y² = (x − y)²",
+       "MTC = 3(x + y)(x − y)²",
+       "1/(3x + 3y) = (x − y)²/(3(x + y)(x − y)²)",
+       "2x/(x² − y²) = 6x(x − y)/(3(x + y)(x − y)²)",
+       "(x² − xy + y²)/(x² − 2xy + y²) = 3(x + y)(x² − xy + y²)/(3(x + y)(x − y)²)"
+      ],
+      "nhieu": [
+       "5/(2 − x) = 5/(x − 2) = 5(x + 2)(x − 2)/((x + 2)(x − 2)²)",
+       "2x/(x² − y²) = 2x(x − y)/(3(x + y)(x − y)²)",
+       "MTC = 3(x + y)(x − y)"
+      ],
+      "thu_tu_khac": [
+       [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        9,
+        8
+       ],
+       [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        8,
+        7,
+        9
+       ],
+       [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        8,
+        9,
+        7
+       ],
+       [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        9,
+        7,
+        8
+       ],
+       [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        9,
+        8,
+        7
+       ],
+       [
+        0,
+        1,
+        2,
+        4,
+        3,
+        5,
+        6,
+        7,
+        8,
+        9
+       ],
+       [
+        0,
+        1,
+        2,
+        4,
+        3,
+        5,
+        6,
+        7,
+        9,
+        8
+       ],
+       [
+        0,
+        1,
+        2,
+        4,
+        3,
+        5,
+        6,
+        8,
+        7,
+        9
+       ],
+       [
+        0,
+        1,
+        2,
+        4,
+        3,
+        5,
+        6,
+        8,
+        9,
+        7
+       ],
+       [
+        0,
+        1,
+        2,
+        4,
+        3,
+        5,
+        6,
+        9,
+        7,
+        8
+       ],
+       [
+        0,
+        1,
+        2,
+        4,
+        3,
+        5,
+        6,
+        9,
+        8,
+        7
+       ],
+       [
+        0,
+        1,
+        3,
+        2,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+       ],
+       [
+        0,
+        1,
+        3,
+        2,
+        4,
+        5,
+        6,
+        7,
+        9,
+        8
+       ],
+       [
+        0,
+        1,
+        3,
+        2,
+        4,
+        5,
+        6,
+        8,
+        7,
+        9
+       ],
+       [
+        0,
+        1,
+        3,
+        2,
+        4,
+        5,
+        6,
+        8,
+        9,
+        7
+       ],
+       [
+        0,
+        1,
+        3,
+        2,
+        4,
+        5,
+        6,
+        9,
+        7,
+        8
+       ],
+       [
+        0,
+        1,
+        3,
+        2,
+        4,
+        5,
+        6,
+        9,
+        8,
+        7
+       ],
+       [
+        0,
+        1,
+        3,
+        4,
+        2,
+        5,
+        6,
+        7,
+        8,
+        9
+       ],
+       [
+        0,
+        1,
+        3,
+        4,
+        2,
+        5,
+        6,
+        7,
+        9,
+        8
+       ],
+       [
+        0,
+        1,
+        3,
+        4,
+        2,
+        5,
+        6,
+        8,
+        7,
+        9
+       ],
+       [
+        0,
+        1,
+        3,
+        4,
+        2,
+        5,
+        6,
+        8,
+        9,
+        7
+       ],
+       [
+        0,
+        1,
+        3,
+        4,
+        2,
+        5,
+        6,
+        9,
+        7,
+        8
+       ],
+       [
+        0,
+        1,
+        3,
+        4,
+        2,
+        5,
+        6,
+        9,
+        8,
+        7
+       ],
+       [
+        0,
+        1,
+        4,
+        2,
+        3,
+        5,
+        6,
+        7,
+        8,
+        9
+       ],
+       [
+        0,
+        1,
+        4,
+        2,
+        3,
+        5,
+        6,
+        7,
+        9,
+        8
+       ],
+       [
+        0,
+        1,
+        4,
+        2,
+        3,
+        5,
+        6,
+        8,
+        7,
+        9
+       ],
+       [
+        0,
+        1,
+        4,
+        2,
+        3,
+        5,
+        6,
+        8,
+        9,
+        7
+       ],
+       [
+        0,
+        1,
+        4,
+        2,
+        3,
+        5,
+        6,
+        9,
+        7,
+        8
+       ],
+       [
+        0,
+        1,
+        4,
+        2,
+        3,
+        5,
+        6,
+        9,
+        8,
+        7
+       ],
+       [
+        0,
+        1,
+        4,
+        3,
+        2,
+        5,
+        6,
+        7,
+        8,
+        9
+       ],
+       [
+        0,
+        1,
+        4,
+        3,
+        2,
+        5,
+        6,
+        7,
+        9,
+        8
+       ],
+       [
+        0,
+        1,
+        4,
+        3,
+        2,
+        5,
+        6,
+        8,
+        7,
+        9
+       ],
+       [
+        0,
+        1,
+        4,
+        3,
+        2,
+        5,
+        6,
+        8,
+        9,
+        7
+       ],
+       [
+        0,
+        1,
+        4,
+        3,
+        2,
+        5,
+        6,
+        9,
+        7,
+        8
+       ],
+       [
+        0,
+        1,
+        4,
+        3,
+        2,
+        5,
+        6,
+        9,
+        8,
+        7
+       ],
+       [
+        5,
+        6,
+        7,
+        8,
+        9,
+        0,
+        1,
+        2,
+        3,
+        4
+       ],
+       [
+        5,
+        6,
+        7,
+        8,
+        9,
+        0,
+        1,
+        2,
+        4,
+        3
+       ],
+       [
+        5,
+        6,
+        7,
+        8,
+        9,
+        0,
+        1,
+        3,
+        2,
+        4
+       ],
+       [
+        5,
+        6,
+        7,
+        8,
+        9,
+        0,
+        1,
+        3,
+        4,
+        2
+       ],
+       [
+        5,
+        6,
+        7,
+        8,
+        9,
+        0,
+        1,
+        4,
+        2,
+        3
+       ],
+       [
+        5,
+        6,
+        7,
+        8,
+        9,
+        0,
+        1,
+        4,
+        3,
+        2
+       ],
+       [
+        5,
+        6,
+        7,
+        9,
+        8,
+        0,
+        1,
+        2,
+        3,
+        4
+       ],
+       [
+        5,
+        6,
+        7,
+        9,
+        8,
+        0,
+        1,
+        2,
+        4,
+        3
+       ],
+       [
+        5,
+        6,
+        7,
+        9,
+        8,
+        0,
+        1,
+        3,
+        2,
+        4
+       ],
+       [
+        5,
+        6,
+        7,
+        9,
+        8,
+        0,
+        1,
+        3,
+        4,
+        2
+       ],
+       [
+        5,
+        6,
+        7,
+        9,
+        8,
+        0,
+        1,
+        4,
+        2,
+        3
+       ],
+       [
+        5,
+        6,
+        7,
+        9,
+        8,
+        0,
+        1,
+        4,
+        3,
+        2
+       ],
+       [
+        5,
+        6,
+        8,
+        7,
+        9,
+        0,
+        1,
+        2,
+        3,
+        4
+       ],
+       [
+        5,
+        6,
+        8,
+        7,
+        9,
+        0,
+        1,
+        2,
+        4,
+        3
+       ],
+       [
+        5,
+        6,
+        8,
+        7,
+        9,
+        0,
+        1,
+        3,
+        2,
+        4
+       ],
+       [
+        5,
+        6,
+        8,
+        7,
+        9,
+        0,
+        1,
+        3,
+        4,
+        2
+       ],
+       [
+        5,
+        6,
+        8,
+        7,
+        9,
+        0,
+        1,
+        4,
+        2,
+        3
+       ],
+       [
+        5,
+        6,
+        8,
+        7,
+        9,
+        0,
+        1,
+        4,
+        3,
+        2
+       ],
+       [
+        5,
+        6,
+        8,
+        9,
+        7,
+        0,
+        1,
+        2,
+        3,
+        4
+       ],
+       [
+        5,
+        6,
+        8,
+        9,
+        7,
+        0,
+        1,
+        2,
+        4,
+        3
+       ],
+       [
+        5,
+        6,
+        8,
+        9,
+        7,
+        0,
+        1,
+        3,
+        2,
+        4
+       ],
+       [
+        5,
+        6,
+        8,
+        9,
+        7,
+        0,
+        1,
+        3,
+        4,
+        2
+       ],
+       [
+        5,
+        6,
+        8,
+        9,
+        7,
+        0,
+        1,
+        4,
+        2,
+        3
+       ],
+       [
+        5,
+        6,
+        8,
+        9,
+        7,
+        0,
+        1,
+        4,
+        3,
+        2
+       ],
+       [
+        5,
+        6,
+        9,
+        7,
+        8,
+        0,
+        1,
+        2,
+        3,
+        4
+       ],
+       [
+        5,
+        6,
+        9,
+        7,
+        8,
+        0,
+        1,
+        2,
+        4,
+        3
+       ],
+       [
+        5,
+        6,
+        9,
+        7,
+        8,
+        0,
+        1,
+        3,
+        2,
+        4
+       ],
+       [
+        5,
+        6,
+        9,
+        7,
+        8,
+        0,
+        1,
+        3,
+        4,
+        2
+       ],
+       [
+        5,
+        6,
+        9,
+        7,
+        8,
+        0,
+        1,
+        4,
+        2,
+        3
+       ],
+       [
+        5,
+        6,
+        9,
+        7,
+        8,
+        0,
+        1,
+        4,
+        3,
+        2
+       ],
+       [
+        5,
+        6,
+        9,
+        8,
+        7,
+        0,
+        1,
+        2,
+        3,
+        4
+       ],
+       [
+        5,
+        6,
+        9,
+        8,
+        7,
+        0,
+        1,
+        2,
+        4,
+        3
+       ],
+       [
+        5,
+        6,
+        9,
+        8,
+        7,
+        0,
+        1,
+        3,
+        2,
+        4
+       ],
+       [
+        5,
+        6,
+        9,
+        8,
+        7,
+        0,
+        1,
+        3,
+        4,
+        2
+       ],
+       [
+        5,
+        6,
+        9,
+        8,
+        7,
+        0,
+        1,
+        4,
+        2,
+        3
+       ],
+       [
+        5,
+        6,
+        9,
+        8,
+        7,
+        0,
+        1,
+        4,
+        3,
+        2
+       ]
+      ]
+     }
     },
     {
      "ma": "6.14",
      "trang": 12,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Cho hai phân thức (9x^2 + 3x + 1)/(27x^3 − 1) và (x^2 − 4x)/(16 − x^2). a) Rút gọn hai phân thức đã cho. b) Quy đồng mẫu thức hai phân thức nhận được ở câu a."
+     "de": "Cho hai phân thức (9x^2 + 3x + 1)/(27x^3 − 1) và (x^2 − 4x)/(16 − x^2). a) Rút gọn hai phân thức đã cho. b) Quy đồng mẫu thức hai phân thức nhận được ở câu a.",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 6,
+      "buoc": [
+       "27x³ − 1 = (3x − 1)(9x² + 3x + 1)",
+       "(9x² + 3x + 1)/(27x³ − 1) = 1/(3x − 1)",
+       "(x² − 4x)/(16 − x²) = x(x − 4)/((4 − x)(4 + x)) = −x/(x + 4)",
+       "MTC = (3x − 1)(x + 4)",
+       "1/(3x − 1) = (x + 4)/((3x − 1)(x + 4))",
+       "−x/(x + 4) = −x(3x − 1)/((3x − 1)(x + 4))"
+      ],
+      "nhieu": [
+       "(x² − 4x)/(16 − x²) = x(x − 4)/((4 − x)(4 + x)) = x/(x + 4)",
+       "−x/(x + 4) = −x/((3x − 1)(x + 4))"
+      ],
+      "thu_tu_khac": [
+       [
+        0,
+        1,
+        2,
+        3,
+        5,
+        4
+       ],
+       [
+        0,
+        2,
+        1,
+        3,
+        4,
+        5
+       ],
+       [
+        0,
+        2,
+        1,
+        3,
+        5,
+        4
+       ],
+       [
+        2,
+        0,
+        1,
+        3,
+        4,
+        5
+       ],
+       [
+        2,
+        0,
+        1,
+        3,
+        5,
+        4
+       ]
+      ]
+     }
     }
    ]
   },
@@ -186,7 +1799,90 @@
      "trang": 14,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Quy đồng mẫu thức các phân thức sau: a) 1/(4xy^2) và 5/(6x^2y); b) 9/(4x^2 − 36) và 1/(x^2 + 6x + 9)."
+     "de": "Quy đồng mẫu thức các phân thức sau: a) 1/(4xy^2) và 5/(6x^2y); b) 9/(4x^2 − 36) và 1/(x^2 + 6x + 9).",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 7,
+      "buoc": [
+       "MTC = 12x²y²",
+       "1/(4xy²) = 3x/(12x²y²)",
+       "5/(6x²y) = 10y/(12x²y²)",
+       "4x² − 36 = 4(x − 3)(x + 3); x² + 6x + 9 = (x + 3)²",
+       "MTC = 4(x − 3)(x + 3)²",
+       "9/(4x² − 36) = 9(x + 3)/(4(x − 3)(x + 3)²)",
+       "1/(x² + 6x + 9) = 4(x − 3)/(4(x − 3)(x + 3)²)"
+      ],
+      "nhieu": [
+       "5/(6x²y) = 5y/(12x²y²)",
+       "4x² − 36 = 4(x − 3)²; x² + 6x + 9 = (x + 3)²",
+       "1/(x² + 6x + 9) = (x − 3)/(4(x − 3)(x + 3)²)"
+      ],
+      "thu_tu_khac": [
+       [
+        0,
+        1,
+        2,
+        3,
+        4,
+        6,
+        5
+       ],
+       [
+        0,
+        2,
+        1,
+        3,
+        4,
+        5,
+        6
+       ],
+       [
+        0,
+        2,
+        1,
+        3,
+        4,
+        6,
+        5
+       ],
+       [
+        3,
+        4,
+        5,
+        6,
+        0,
+        1,
+        2
+       ],
+       [
+        3,
+        4,
+        5,
+        6,
+        0,
+        2,
+        1
+       ],
+       [
+        3,
+        4,
+        6,
+        5,
+        0,
+        1,
+        2
+       ],
+       [
+        3,
+        4,
+        6,
+        5,
+        0,
+        2,
+        1
+       ]
+      ]
+     }
     },
     {
      "ma": "6.16",
@@ -200,21 +1896,137 @@
      "trang": 14,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Cho hai phân thức (x^2 + 5x)/((x − 10)(x^2 + 10x + 25)) và (x^2 + 10x)/(x^4 − 100x^2). a) Rút gọn hai phân thức đã cho. Kí hiệu P và Q là hai phân thức nhận được. b) Quy đồng mẫu thức hai phân thức P và Q."
+     "de": "Cho hai phân thức (x^2 + 5x)/((x − 10)(x^2 + 10x + 25)) và (x^2 + 10x)/(x^4 − 100x^2). a) Rút gọn hai phân thức đã cho. Kí hiệu P và Q là hai phân thức nhận được. b) Quy đồng mẫu thức hai phân thức P và Q.",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 5,
+      "buoc": [
+       "P = (x² + 5x)/((x − 10)(x² + 10x + 25)) = x(x + 5)/((x − 10)(x + 5)²) = x/((x − 10)(x + 5))",
+       "Q = (x² + 10x)/(x⁴ − 100x²) = x(x + 10)/(x²(x − 10)(x + 10)) = 1/(x(x − 10))",
+       "MTC = x(x − 10)(x + 5)",
+       "P = x · x/(x(x − 10)(x + 5)) = x²/(x(x − 10)(x + 5))",
+       "Q = (x + 5)/(x(x − 10)(x + 5))"
+      ],
+      "nhieu": [
+       "Q = (x² + 10x)/(x⁴ − 100x²) = x(x + 10)/(x²(x − 10)(x + 10)) = 1/(x − 10)",
+       "P = x · x/(x(x − 10)(x + 5)) = x/(x(x − 10)(x + 5))"
+      ],
+      "thu_tu_khac": [
+       [
+        0,
+        1,
+        2,
+        4,
+        3
+       ],
+       [
+        1,
+        0,
+        2,
+        3,
+        4
+       ],
+       [
+        1,
+        0,
+        2,
+        4,
+        3
+       ]
+      ]
+     }
     },
     {
      "ma": "6.18",
      "trang": 14,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Lúc 6 giờ sáng, bác Vinh lái ô tô xuất phát từ Hà Nội đi Tĩnh Gia (Thanh Hoá). Khi đến Phủ Lý (Ninh Bình), cách Hà Nội khoảng 60 km, bác Vinh dừng lại ăn sáng trong 20 phút. Sau đó, bác Vinh tiếp tục đi về Tĩnh Gia và phải tăng vận tốc thêm 10 km/h để đến nơi đúng giờ dự định. a) Gọi x (km/h) là vận tốc ô tô đi trên quãng đường Hà Nội – Phủ Lý. Hãy viết các phân thức biểu thị thời gian bác Vinh chạy xe trên các quãng đường Hà Nội – Phủ Lý và Phủ Lý – Tĩnh Gia, biết rằng quãng đường Hà Nội – Tĩnh Gia có chiều dài khoảng 200 km. b) Nếu vận tốc ô tô đi trên quãng đường Hà Nội – Phủ Lý là 60 km/h thì bác Vinh đến Tĩnh Gia lúc mấy giờ?"
+     "de": "Lúc 6 giờ sáng, bác Vinh lái ô tô xuất phát từ Hà Nội đi Tĩnh Gia (Thanh Hoá). Khi đến Phủ Lý (Ninh Bình), cách Hà Nội khoảng 60 km, bác Vinh dừng lại ăn sáng trong 20 phút. Sau đó, bác Vinh tiếp tục đi về Tĩnh Gia và phải tăng vận tốc thêm 10 km/h để đến nơi đúng giờ dự định. a) Gọi x (km/h) là vận tốc ô tô đi trên quãng đường Hà Nội – Phủ Lý. Hãy viết các phân thức biểu thị thời gian bác Vinh chạy xe trên các quãng đường Hà Nội – Phủ Lý và Phủ Lý – Tĩnh Gia, biết rằng quãng đường Hà Nội – Tĩnh Gia có chiều dài khoảng 200 km. b) Nếu vận tốc ô tô đi trên quãng đường Hà Nội – Phủ Lý là 60 km/h thì bác Vinh đến Tĩnh Gia lúc mấy giờ?",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 5,
+      "hoi": "Lúc 6 giờ sáng, bác Vinh lái ô tô xuất phát từ Hà Nội đi Tĩnh Gia (Thanh Hoá). Khi đến Phủ Lý (Ninh Bình), cách Hà Nội khoảng 60 km, bác Vinh dừng lại ăn sáng trong 20 phút. Sau đó, bác Vinh tiếp tục đi về Tĩnh Gia và phải tăng vận tốc thêm 10 km/h để đến nơi đúng giờ dự định.\na) Gọi x (km/h) là vận tốc ô tô đi trên quãng đường Hà Nội – Phủ Lý. Hãy viết các phân thức biểu thị thời gian bác Vinh chạy xe trên các quãng đường Hà Nội – Phủ Lý và Phủ Lý – Tĩnh Gia, biết rằng quãng đường Hà Nội – Tĩnh Gia có chiều dài khoảng 200 km.\nb) Nếu vận tốc ô tô đi trên quãng đường Hà Nội – Phủ Lý là 60 km/h thì bác Vinh đến Tĩnh Gia lúc mấy giờ?\n(Gõ hai phân thức ở câu a theo thứ tự, rồi giờ bác Vinh đến Tĩnh Gia ở câu b, cách nhau bằng dấu ;)",
+      "dap": [
+       "60/x;140/(x+10);9giờ20phút",
+       "60/x;140/(x+10);9giờ20"
+      ],
+      "phim": [
+       "x",
+       ";",
+       "giờ",
+       "phút"
+      ],
+      "nhieu": [
+       "y",
+       "km",
+       "²"
+      ],
+      "loi_giai": [
+       "a) Thời gian chạy xe trên quãng đường Hà Nội – Phủ Lý (giờ) = 60/x",
+       "Quãng đường Phủ Lý – Tĩnh Gia (km) = 200 − 60 = 140",
+       "Vận tốc trên quãng đường Phủ Lý – Tĩnh Gia là x + 10 (km/h), thời gian chạy xe (giờ) = 140/(x + 10)",
+       "b) Với x = 60, thời gian chạy xe (giờ) = 60/60 + 140/(60 + 10) = 1 + 2 = 3",
+       "Cộng 20 phút ăn sáng, bác Vinh đi hết 3 giờ 20 phút, nên đến Tĩnh Gia lúc 9 giờ 20 phút"
+      ]
+     }
     },
     {
      "ma": "6.19",
      "trang": 14,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Để loại bỏ x% chất gây ô nhiễm không khí từ khí thải của một nhà máy, ước tính cần chi phí là 1,7x/(100 − x) (tỉ đồng). a) Nếu muốn loại bỏ 90% chất gây ô nhiễm từ khí thải nhà máy thì cần chi phí là bao nhiêu? b) Viết điều kiện xác định của phân thức 1,7x/(100 − x). Hỏi có thể loại bỏ được 100% chất gây ô nhiễm từ khí thải nhà máy hay không?"
+     "de": "Để loại bỏ x% chất gây ô nhiễm không khí từ khí thải của một nhà máy, ước tính cần chi phí là 1,7x/(100 − x) (tỉ đồng). a) Nếu muốn loại bỏ 90% chất gây ô nhiễm từ khí thải nhà máy thì cần chi phí là bao nhiêu? b) Viết điều kiện xác định của phân thức 1,7x/(100 − x). Hỏi có thể loại bỏ được 100% chất gây ô nhiễm từ khí thải nhà máy hay không?",
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "hoi": "Để loại bỏ x% chất gây ô nhiễm không khí từ khí thải của một nhà máy, ước tính cần chi phí là 1,7x/(100 − x) (tỉ đồng).\na) Nếu muốn loại bỏ 90% chất gây ô nhiễm từ khí thải nhà máy thì cần chi phí là bao nhiêu?\nb) Viết điều kiện xác định của phân thức 1,7x/(100 − x). Hỏi có thể loại bỏ được 100% chất gây ô nhiễm từ khí thải nhà máy hay không?",
+      "dong": [
+       {
+        "chu": "a) Chi phí để loại bỏ 90% chất gây ô nhiễm: {0}",
+        "o": [
+         {
+          "dung": [
+           "15,3 tỉ đồng"
+          ],
+          "sai": [
+           "1,53 tỉ đồng",
+           "153 tỉ đồng",
+           "17 tỉ đồng"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "b) Điều kiện xác định của phân thức 1,7x/(100 − x): {0}",
+        "o": [
+         {
+          "dung": [
+           "x ≠ 100"
+          ],
+          "sai": [
+           "x ≠ 0",
+           "x ≠ −100",
+           "x ≠ 1,7"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Có thể loại bỏ được 100% chất gây ô nhiễm không? {0}",
+        "o": [
+         {
+          "dung": [
+           "Không, vì x = 100 làm mẫu thức 100 − x bằng 0"
+          ],
+          "sai": [
+           "Có, chi phí là 1,7 tỉ đồng",
+           "Có, chi phí là 170 tỉ đồng"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     }
    ]
   },
@@ -227,133 +2039,556 @@
      "trang": 16,
      "nhom": "Luyện tập",
      "dang": "CAU_NHO",
-     "de": "Tính các tổng sau: a) (3x + 1)/(xy) + (2x − 1)/(xy); b) 3x/(x^2 + 1) + (−3x + 1)/(x^2 + 1)."
+     "de": "Tính các tổng sau: a) (3x + 1)/(xy) + (2x − 1)/(xy); b) 3x/(x^2 + 1) + (−3x + 1)/(x^2 + 1).",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "hoi": "Tính các tổng sau:\na) (3x + 1)/(xy) + (2x − 1)/(xy);\nb) 3x/(x² + 1) + (−3x + 1)/(x² + 1).\n(Gõ kết quả các ý theo thứ tự, cách nhau bằng dấu ;)",
+      "dap": [
+       "5/y;1/(x²+1)"
+      ],
+      "phim": [
+       "x",
+       "y",
+       "²",
+       ";"
+      ],
+      "nhieu": [
+       "³",
+       "z",
+       "⁴"
+      ],
+      "loi_giai": [
+       "a) (3x + 1)/(xy) + (2x − 1)/(xy) = (3x + 1 + 2x − 1)/(xy)",
+       "= 5x/(xy) = 5/y",
+       "b) 3x/(x² + 1) + (−3x + 1)/(x² + 1) = (3x − 3x + 1)/(x² + 1) = 1/(x² + 1)"
+      ]
+     }
     },
     {
      "ma": "Luyện tập 2 (tr.16)",
      "trang": 16,
      "nhom": "Luyện tập",
      "dang": "CAU_NHO",
-     "de": "Tính tổng 5/(2x^2(6x + y)) + 3/(5xy(6x + y))."
+     "de": "Tính tổng 5/(2x^2(6x + y)) + 3/(5xy(6x + y)).",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "dap": [
+       "(25y+6x)/(10x²y(6x+y))"
+      ],
+      "phim": [
+       "x",
+       "y",
+       "²"
+      ],
+      "nhieu": [
+       "³",
+       "z",
+       "⁴"
+      ],
+      "loi_giai": [
+       "MTC = 10x²y(6x + y)",
+       "5/(2x²(6x + y)) + 3/(5xy(6x + y)) = 5 · 5y/(10x²y(6x + y)) + 3 · 2x/(10x²y(6x + y))",
+       "= (25y + 6x)/(10x²y(6x + y))"
+      ]
+     }
     },
     {
      "ma": "Luyện tập 3 (tr.17)",
      "trang": 17,
      "nhom": "Luyện tập",
      "dang": "CAU_NHO",
-     "de": "Thực hiện các phép tính sau: a) (3 − 2x)/(x − 1) − (2 + 5x)/(x − 1); b) 1/(4x^2y) − 1/(6xy^2)."
+     "de": "Thực hiện các phép tính sau: a) (3 − 2x)/(x − 1) − (2 + 5x)/(x − 1); b) 1/(4x^2y) − 1/(6xy^2).",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "hoi": "Thực hiện các phép tính sau:\na) (3 − 2x)/(x − 1) − (2 + 5x)/(x − 1);\nb) 1/(4x²y) − 1/(6xy²).\n(Gõ kết quả các ý theo thứ tự, cách nhau bằng dấu ;)",
+      "dap": [
+       "(1−7x)/(x−1);(3y−2x)/(12x²y²)",
+       "(7x−1)/(1−x);(3y−2x)/(12x²y²)"
+      ],
+      "phim": [
+       "x",
+       "y",
+       "²",
+       ";"
+      ],
+      "nhieu": [
+       "³",
+       "z",
+       "⁴"
+      ],
+      "loi_giai": [
+       "a) (3 − 2x)/(x − 1) − (2 + 5x)/(x − 1) = (3 − 2x − 2 − 5x)/(x − 1)",
+       "= (1 − 7x)/(x − 1)",
+       "b) MTC = 12x²y²",
+       "1/(4x²y) − 1/(6xy²) = 3y/(12x²y²) − 2x/(12x²y²) = (3y − 2x)/(12x²y²)"
+      ]
+     }
     },
     {
      "ma": "Luyện tập 4 (tr.18)",
      "trang": 18,
      "nhom": "Luyện tập",
      "dang": "CAU_NHO",
-     "de": "Rút gọn biểu thức P = 1/x + 1/y + 1/z − 1/x − 1/y."
+     "de": "Rút gọn biểu thức P = 1/x + 1/y + 1/z − 1/x − 1/y.",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "dap": [
+       "1/z"
+      ],
+      "phim": [
+       "z"
+      ],
+      "nhieu": [
+       "x",
+       "y",
+       "²"
+      ],
+      "loi_giai": [
+       "P = (1/x − 1/x) + (1/y − 1/y) + 1/z",
+       "= 0 + 0 + 1/z = 1/z"
+      ]
+     }
     },
     {
      "ma": "Luyện tập 5 (tr.18)",
      "trang": 18,
      "nhom": "Luyện tập",
      "dang": "CAU_NHO",
-     "de": "Em hãy giải thích cách làm của Vuông trong tình huống mở đầu: rút gọn biểu thức P = x/(x + 1) − [(1/(x − 1) + x/(x + 1)) − 1/(x − 1)] và thấy ngay kết quả là P = 0."
+     "de": "Em hãy giải thích cách làm của Vuông trong tình huống mở đầu: rút gọn biểu thức P = x/(x + 1) − [(1/(x − 1) + x/(x + 1)) − 1/(x − 1)] và thấy ngay kết quả là P = 0.",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 4,
+      "hoi": "Hãy rút gọn biểu thức P = x/(x + 1) − [(1/(x − 1) + x/(x + 1)) − 1/(x − 1)] và giải thích vì sao không cần tính toán, bạn Vuông thấy ngay kết quả là P = 0.",
+      "buoc": [
+       "Bỏ ngoặc tròn (trước ngoặc là dấu +): P = x/(x + 1) − [1/(x − 1) + x/(x + 1) − 1/(x − 1)]",
+       "Bỏ ngoặc vuông (trước ngoặc là dấu −, đổi dấu các số hạng): P = x/(x + 1) − 1/(x − 1) − x/(x + 1) + 1/(x − 1)",
+       "Đổi chỗ và nhóm các số hạng: P = (x/(x + 1) − x/(x + 1)) + (1/(x − 1) − 1/(x − 1))",
+       "= 0 + 0 = 0"
+      ],
+      "nhieu": [
+       "Bỏ ngoặc vuông (trước ngoặc là dấu −, đổi dấu các số hạng): P = x/(x + 1) − 1/(x − 1) − x/(x + 1) − 1/(x − 1)",
+       "Bỏ ngoặc tròn (trước ngoặc là dấu +): P = x/(x + 1) − [1/(x − 1) + x/(x + 1) + 1/(x − 1)]"
+      ]
+     }
     },
     {
      "ma": "Vận dụng (tr.19)",
      "trang": 19,
      "nhom": "Vận dụng",
      "dang": "CAU_NHO",
-     "de": "Chú Đức lái ô tô từ Hà Nội về quê. Từ nhà chú đến đường cao tốc dài khoảng 20 km, xe chạy trong thành phố với vận tốc x (km/h) (x > 0). Trên 50 km đường cao tốc, xe tăng vận tốc thêm 55 km/h. Ra khỏi cao tốc, xe còn phải chạy thêm 15 phút thì về đến quê. a) Viết các phân thức biểu thị thời gian xe chạy trong thành phố và thời gian xe chạy trên đường cao tốc. b) Viết phân thức biểu thị tổng thời gian chú Đức đi từ Hà Nội về quê."
+     "de": "Chú Đức lái ô tô từ Hà Nội về quê. Từ nhà chú đến đường cao tốc dài khoảng 20 km, xe chạy trong thành phố với vận tốc x (km/h) (x > 0). Trên 50 km đường cao tốc, xe tăng vận tốc thêm 55 km/h. Ra khỏi cao tốc, xe còn phải chạy thêm 15 phút thì về đến quê. a) Viết các phân thức biểu thị thời gian xe chạy trong thành phố và thời gian xe chạy trên đường cao tốc. b) Viết phân thức biểu thị tổng thời gian chú Đức đi từ Hà Nội về quê.",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 5,
+      "hoi": "Chú Đức lái ô tô từ Hà Nội về quê. Từ nhà chú đến đường cao tốc dài khoảng 20 km, xe chạy trong thành phố với vận tốc x (km/h) (x > 0). Trên 50 km đường cao tốc, xe tăng vận tốc thêm 55 km/h. Ra khỏi cao tốc, xe còn phải chạy thêm 15 phút thì về đến quê.\na) Viết các phân thức biểu thị thời gian xe chạy trong thành phố và thời gian xe chạy trên đường cao tốc.\nb) Viết phân thức biểu thị tổng thời gian chú Đức đi từ Hà Nội về quê.\n(Gõ hai phân thức của câu a theo thứ tự, rồi phân thức của câu b, cách nhau bằng dấu ;)",
+      "dap": [
+       "20/x;50/(x+55);(x²+335x+4400)/(4x(x+55))",
+       "20/x;50/(x+55);(x²+335x+4400)/(4x²+220x)"
+      ],
+      "phim": [
+       "x",
+       "²",
+       ";"
+      ],
+      "nhieu": [
+       "y",
+       "³",
+       "⁴"
+      ],
+      "loi_giai": [
+       "a) Thời gian xe chạy trong thành phố (giờ) = 20/x",
+       "Vận tốc trên đường cao tốc là x + 55 (km/h), thời gian xe chạy trên cao tốc (giờ) = 50/(x + 55)",
+       "b) 15 phút = 1/4 giờ, nên tổng thời gian (giờ) = 20/x + 50/(x + 55) + 1/4",
+       "= (80(x + 55) + 200x + x(x + 55))/(4x(x + 55))",
+       "= (x² + 335x + 4400)/(4x(x + 55))"
+      ]
+     }
     },
     {
      "ma": "6.20a",
      "trang": 19,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Thực hiện phép tính: (x^2 − 3x + 1)/(2x^2) + (5x − 1 − x^2)/(2x^2)."
+     "de": "Thực hiện phép tính: (x^2 − 3x + 1)/(2x^2) + (5x − 1 − x^2)/(2x^2).",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "dap": [
+       "1/x"
+      ],
+      "phim": [
+       "x"
+      ],
+      "nhieu": [
+       "y",
+       "²",
+       "³"
+      ],
+      "loi_giai": [
+       "(x² − 3x + 1)/(2x²) + (5x − 1 − x²)/(2x²) = (x² − 3x + 1 + 5x − 1 − x²)/(2x²)",
+       "= 2x/(2x²)",
+       "= 1/x"
+      ]
+     }
     },
     {
      "ma": "6.20b",
      "trang": 19,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Thực hiện phép tính: y/(x − y) + x/(x + y)."
+     "de": "Thực hiện phép tính: y/(x − y) + x/(x + y).",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "dap": [
+       "(x²+y²)/((x−y)(x+y))",
+       "(x²+y²)/(x²−y²)"
+      ],
+      "phim": [
+       "x",
+       "y",
+       "²"
+      ],
+      "nhieu": [
+       "³",
+       "z",
+       "⁴"
+      ],
+      "loi_giai": [
+       "MTC = (x − y)(x + y)",
+       "y/(x − y) + x/(x + y) = (y(x + y) + x(x − y))/((x − y)(x + y))",
+       "= (xy + y² + x² − xy)/((x − y)(x + y))",
+       "= (x² + y²)/((x − y)(x + y))"
+      ]
+     }
     },
     {
      "ma": "6.20c",
      "trang": 19,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Thực hiện phép tính: x/(2x − 6) + 9/(2x(3 − x))."
+     "de": "Thực hiện phép tính: x/(2x − 6) + 9/(2x(3 − x)).",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "dap": [
+       "(x+3)/(2x)"
+      ],
+      "phim": [
+       "x"
+      ],
+      "nhieu": [
+       "y",
+       "²",
+       "³"
+      ],
+      "loi_giai": [
+       "x/(2x − 6) + 9/(2x(3 − x)) = x/(2(x − 3)) − 9/(2x(x − 3))",
+       "= (x² − 9)/(2x(x − 3))",
+       "= (x − 3)(x + 3)/(2x(x − 3))",
+       "= (x + 3)/(2x)"
+      ]
+     }
     },
     {
      "ma": "6.21a",
      "trang": 19,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Thực hiện phép tính: (5 − 3x)/(x + 1) − (−2 + 5x)/(x + 1)."
+     "de": "Thực hiện phép tính: (5 − 3x)/(x + 1) − (−2 + 5x)/(x + 1).",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "dap": [
+       "(7−8x)/(x+1)"
+      ],
+      "phim": [
+       "x"
+      ],
+      "nhieu": [
+       "y",
+       "²",
+       "³"
+      ],
+      "loi_giai": [
+       "(5 − 3x)/(x + 1) − (−2 + 5x)/(x + 1) = (5 − 3x − (−2 + 5x))/(x + 1)",
+       "= (5 − 3x + 2 − 5x)/(x + 1)",
+       "= (7 − 8x)/(x + 1)"
+      ]
+     }
     },
     {
      "ma": "6.21b",
      "trang": 19,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Thực hiện phép tính: x/(x − y) − y/(x + y)."
+     "de": "Thực hiện phép tính: x/(x − y) − y/(x + y).",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "dap": [
+       "(x²+y²)/((x−y)(x+y))",
+       "(x²+y²)/(x²−y²)"
+      ],
+      "phim": [
+       "x",
+       "y",
+       "²"
+      ],
+      "nhieu": [
+       "³",
+       "z",
+       "⁴"
+      ],
+      "loi_giai": [
+       "MTC = (x − y)(x + y)",
+       "x/(x − y) − y/(x + y) = (x(x + y) − y(x − y))/((x − y)(x + y))",
+       "= (x² + xy − xy + y²)/((x − y)(x + y))",
+       "= (x² + y²)/((x − y)(x + y))"
+      ]
+     }
     },
     {
      "ma": "6.21c",
      "trang": 19,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Thực hiện phép tính: 3/(x + 1) − (2 + 3x)/(x^3 + 1)."
+     "de": "Thực hiện phép tính: 3/(x + 1) − (2 + 3x)/(x^3 + 1).",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "dap": [
+       "(3x²−6x+1)/(x³+1)",
+       "(3x²−6x+1)/((x+1)(x²−x+1))"
+      ],
+      "phim": [
+       "x",
+       "²",
+       "³"
+      ],
+      "nhieu": [
+       "y",
+       "⁴",
+       "⁵"
+      ],
+      "loi_giai": [
+       "x³ + 1 = (x + 1)(x² − x + 1); MTC = x³ + 1",
+       "3/(x + 1) − (2 + 3x)/(x³ + 1) = (3(x² − x + 1) − (2 + 3x))/(x³ + 1)",
+       "= (3x² − 3x + 3 − 2 − 3x)/(x³ + 1)",
+       "= (3x² − 6x + 1)/(x³ + 1)"
+      ]
+     }
     },
     {
      "ma": "6.22a",
      "trang": 19,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Thực hiện phép tính: 1/x + 2/(x + 1) + 3/(x + 2) − 1/x − 2/(x − 1) − 3/(x + 2)."
+     "de": "Thực hiện phép tính: 1/x + 2/(x + 1) + 3/(x + 2) − 1/x − 2/(x − 1) − 3/(x + 2).",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "dap": [
+       "−4/(x²−1)",
+       "4/(1−x²)",
+       "−4/((x−1)(x+1))"
+      ],
+      "phim": [
+       "x",
+       "²"
+      ],
+      "nhieu": [
+       "y",
+       "³",
+       "⁴"
+      ],
+      "loi_giai": [
+       "Biểu thức = (1/x − 1/x) + (3/(x + 2) − 3/(x + 2)) + 2/(x + 1) − 2/(x − 1)",
+       "= 2/(x + 1) − 2/(x − 1)",
+       "= (2(x − 1) − 2(x + 1))/((x + 1)(x − 1))",
+       "= −4/(x² − 1)"
+      ]
+     }
     },
     {
      "ma": "6.22b",
      "trang": 19,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Thực hiện phép tính: (2x − 1)/x + (1 − x)/(2x + 1) + 3/(x^2 − 9) + (1 − 2x)/x + (x − 1)/(2x + 1) − 3/(x + 3)."
+     "de": "Thực hiện phép tính: (2x − 1)/x + (1 − x)/(2x + 1) + 3/(x^2 − 9) + (1 − 2x)/x + (x − 1)/(2x + 1) − 3/(x + 3).",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "dap": [
+       "(12−3x)/(x²−9)",
+       "3(4−x)/(x²−9)",
+       "−3(x−4)/(x²−9)",
+       "(12−3x)/((x−3)(x+3))"
+      ],
+      "phim": [
+       "x",
+       "²"
+      ],
+      "nhieu": [
+       "y",
+       "³",
+       "⁴"
+      ],
+      "loi_giai": [
+       "Biểu thức = ((2x − 1)/x + (1 − 2x)/x) + ((1 − x)/(2x + 1) + (x − 1)/(2x + 1)) + 3/(x² − 9) − 3/(x + 3)",
+       "= 0 + 0 + 3/(x² − 9) − 3/(x + 3)",
+       "= (3 − 3(x − 3))/(x² − 9)",
+       "= (12 − 3x)/(x² − 9)"
+      ]
+     }
     },
     {
      "ma": "6.23a",
      "trang": 19,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Thực hiện phép tính: (x^2 + 4x + 4)/(x^2 − 4) + x/(2 − x) + (4 − x)/(5x − 10)."
+     "de": "Thực hiện phép tính: (x^2 + 4x + 4)/(x^2 − 4) + x/(2 − x) + (4 − x)/(5x − 10).",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 5,
+      "dap": [
+       "(14−x)/(5(x−2))",
+       "(14−x)/(5x−10)"
+      ],
+      "phim": [
+       "x"
+      ],
+      "nhieu": [
+       "y",
+       "²",
+       "³"
+      ],
+      "loi_giai": [
+       "(x² + 4x + 4)/(x² − 4) = (x + 2)²/((x − 2)(x + 2)) = (x + 2)/(x − 2)",
+       "Biểu thức = (x + 2)/(x − 2) − x/(x − 2) + (4 − x)/(5(x − 2))",
+       "= 2/(x − 2) + (4 − x)/(5(x − 2))",
+       "= (10 + 4 − x)/(5(x − 2))",
+       "= (14 − x)/(5(x − 2))"
+      ]
+     }
     },
     {
      "ma": "6.23b",
      "trang": 19,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Thực hiện phép tính: x/(x^2 + 1) − (3/(x + 6) + (x − 2)/(x + 4)) + [3/(x + 6) − (1/(x^2 + 1) − (x − 2)/(x + 4))]."
+     "de": "Thực hiện phép tính: x/(x^2 + 1) − (3/(x + 6) + (x − 2)/(x + 4)) + [3/(x + 6) − (1/(x^2 + 1) − (x − 2)/(x + 4))].",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "dap": [
+       "(x−1)/(x²+1)"
+      ],
+      "phim": [
+       "x",
+       "²"
+      ],
+      "nhieu": [
+       "y",
+       "³",
+       "⁴"
+      ],
+      "loi_giai": [
+       "Bỏ ngoặc: biểu thức = x/(x² + 1) − 3/(x + 6) − (x − 2)/(x + 4) + 3/(x + 6) − 1/(x² + 1) + (x − 2)/(x + 4)",
+       "= (x/(x² + 1) − 1/(x² + 1)) + (3/(x + 6) − 3/(x + 6)) + ((x − 2)/(x + 4) − (x − 2)/(x + 4))",
+       "= (x − 1)/(x² + 1)"
+      ]
+     }
     },
     {
      "ma": "6.24a",
      "trang": 19,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Thực hiện phép tính: (x − y)/(xy) + (y − z)/(yz) + (z − x)/(zx)."
+     "de": "Thực hiện phép tính: (x − y)/(xy) + (y − z)/(yz) + (z − x)/(zx).",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "dap": [
+       "0"
+      ],
+      "phim": [],
+      "nhieu": [],
+      "loi_giai": [
+       "MTC = xyz",
+       "(x − y)/(xy) + (y − z)/(yz) + (z − x)/(zx) = (z(x − y) + x(y − z) + y(z − x))/(xyz)",
+       "= (xz − yz + xy − xz + yz − xy)/(xyz)",
+       "= 0"
+      ]
+     }
     },
     {
      "ma": "6.24b",
      "trang": 19,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Thực hiện phép tính: x/(x − y)^2 + y/(y^2 − x^2)."
+     "de": "Thực hiện phép tính: x/(x − y)^2 + y/(y^2 − x^2).",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "dap": [
+       "(x²+y²)/((x−y)²(x+y))"
+      ],
+      "phim": [
+       "x",
+       "y",
+       "²"
+      ],
+      "nhieu": [
+       "³",
+       "z",
+       "⁴"
+      ],
+      "loi_giai": [
+       "y/(y² − x²) = −y/((x − y)(x + y)); MTC = (x − y)²(x + y)",
+       "x/(x − y)² + y/(y² − x²) = (x(x + y) − y(x − y))/((x − y)²(x + y))",
+       "= (x² + xy − xy + y²)/((x − y)²(x + y))",
+       "= (x² + y²)/((x − y)²(x + y))"
+      ]
+     }
     },
     {
      "ma": "6.25",
      "trang": 19,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Một tàu du lịch chạy xuôi dòng 15 km, sau đó quay ngược lại để trở về điểm xuất phát và kết thúc chuyến du lịch. Biết rằng vận tốc của tàu khi nước yên lặng là 10 km/h và vận tốc của dòng nước là x (km/h). a) Hãy viết các phân thức biểu thị theo x thời gian xuôi dòng, thời gian ngược dòng và tổng thời gian tàu chạy. b) Tính tổng thời gian tàu chạy khi vận tốc dòng nước là 2 km/h."
+     "de": "Một tàu du lịch chạy xuôi dòng 15 km, sau đó quay ngược lại để trở về điểm xuất phát và kết thúc chuyến du lịch. Biết rằng vận tốc của tàu khi nước yên lặng là 10 km/h và vận tốc của dòng nước là x (km/h). a) Hãy viết các phân thức biểu thị theo x thời gian xuôi dòng, thời gian ngược dòng và tổng thời gian tàu chạy. b) Tính tổng thời gian tàu chạy khi vận tốc dòng nước là 2 km/h.",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "hoi": "Một tàu du lịch chạy xuôi dòng 15 km, sau đó quay ngược lại để trở về điểm xuất phát và kết thúc chuyến du lịch. Biết rằng vận tốc của tàu khi nước yên lặng là 10 km/h và vận tốc của dòng nước là x (km/h).\na) Hãy viết các phân thức biểu thị theo x thời gian xuôi dòng, thời gian ngược dòng và tổng thời gian tàu chạy.\nb) Tính tổng thời gian tàu chạy khi vận tốc dòng nước là 2 km/h.\n(Gõ thời gian xuôi dòng, thời gian ngược dòng, tổng thời gian, rồi kết quả câu b tính theo giờ, cách nhau bằng dấu ;)",
+      "dap": [
+       "15/(10+x);15/(10−x);300/(100−x²);25/8",
+       "15/(10+x);15/(10−x);300/((10−x)(10+x));25/8",
+       "15/(10+x);15/(10−x);300/(100−x²);3,125",
+       "15/(10+x);15/(10−x);300/((10−x)(10+x));3,125"
+      ],
+      "phim": [
+       "x",
+       "²",
+       ";"
+      ],
+      "nhieu": [
+       "y",
+       "³",
+       "⁴"
+      ],
+      "loi_giai": [
+       "a) Vận tốc xuôi dòng là 10 + x (km/h), vận tốc ngược dòng là 10 − x (km/h)",
+       "Thời gian xuôi dòng (giờ) = 15/(10 + x); thời gian ngược dòng (giờ) = 15/(10 − x)",
+       "Tổng thời gian (giờ) = 15/(10 + x) + 15/(10 − x) = (15(10 − x) + 15(10 + x))/((10 + x)(10 − x)) = 300/(100 − x²)",
+       "b) Với x = 2, tổng thời gian (giờ) = 300/(100 − 2²) = 300/96 = 25/8"
+      ]
+     }
     }
    ]
   },
@@ -366,77 +2601,420 @@
      "trang": 20,
      "nhom": "Luyện tập",
      "dang": "CAU_NHO",
-     "de": "Làm tính nhân: a) x/(x + y) · (2x + 2y)/(3xy); b) 3x/(4x^2 − 1) · (−2x + 1)/(2x^2)."
+     "de": "Làm tính nhân: a) x/(x + y) · (2x + 2y)/(3xy); b) 3x/(4x^2 − 1) · (−2x + 1)/(2x^2).",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "hoi": "Làm tính nhân:\na) x/(x + y) · (2x + 2y)/(3xy);\nb) 3x/(4x² − 1) · (−2x + 1)/(2x²).\n(Gõ kết quả các ý theo thứ tự, cách nhau bằng dấu ;)",
+      "dap": [
+       "2/(3y);−3/(2x(2x+1))",
+       "2/(3y);−3/(4x²+2x)"
+      ],
+      "phim": [
+       "x",
+       "y",
+       "²",
+       ";"
+      ],
+      "nhieu": [
+       "³",
+       "z",
+       "⁴"
+      ],
+      "loi_giai": [
+       "a) x/(x + y) · (2x + 2y)/(3xy) = x · 2(x + y)/((x + y) · 3xy) = 2/(3y)",
+       "b) 3x/(4x² − 1) · (−2x + 1)/(2x²) = 3x · (−(2x − 1))/((2x − 1)(2x + 1) · 2x²)",
+       "= −3/(2x(2x + 1))"
+      ]
+     }
     },
     {
      "ma": "Luyện tập 2 (tr.21)",
      "trang": 21,
      "nhom": "Luyện tập",
      "dang": "CAU_NHO",
-     "de": "Làm tính chia: 3x/(2y^2) : (−5x^2/(12y^3))."
+     "de": "Làm tính chia: 3x/(2y^2) : (−5x^2/(12y^3)).",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "dap": [
+       "−18y/(5x)",
+       "18y/(−5x)"
+      ],
+      "phim": [
+       "x",
+       "y"
+      ],
+      "nhieu": [
+       "²",
+       "³",
+       "z"
+      ],
+      "loi_giai": [
+       "3x/(2y²) : (−5x²/(12y³)) = 3x/(2y²) · (−12y³/(5x²))",
+       "= −36xy³/(10x²y²)",
+       "= −18y/(5x)"
+      ]
+     }
     },
     {
      "ma": "Thử thách nhỏ (tr.21)",
      "trang": 21,
      "nhom": "Thử thách nhỏ",
      "dang": "CAU_NHO",
-     "de": "Kết luận sau đúng hay sai? (1/x : 1/x) : 1/x = 1/x : (1/x : 1/x)."
+     "de": "Kết luận sau đúng hay sai? (1/x : 1/x) : 1/x = 1/x : (1/x : 1/x).",
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "hoi": "Kết luận sau đúng hay sai? (1/x : 1/x) : 1/x = 1/x : (1/x : 1/x).",
+      "dong": [
+       {
+        "chu": "Vế trái: (1/x : 1/x) : 1/x = {0}",
+        "o": [
+         {
+          "dung": [
+           "x"
+          ],
+          "sai": [
+           "1/x",
+           "1",
+           "1/x²"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Vế phải: 1/x : (1/x : 1/x) = {0}",
+        "o": [
+         {
+          "dung": [
+           "1/x"
+          ],
+          "sai": [
+           "x",
+           "1",
+           "x²"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Vậy kết luận đã cho {0}",
+        "o": [
+         {
+          "dung": [
+           "sai"
+          ],
+          "sai": [
+           "đúng"
+          ],
+          "hai": true
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "Vận dụng (tr.22)",
      "trang": 22,
      "nhom": "Vận dụng",
      "dang": "CAU_NHO",
-     "de": "Bác Châu vay ngân hàng 1,2 tỉ đồng để mua nhà theo hình thức trả góp. Số tiền bác Châu phải trả mỗi tháng bao gồm số tiền gốc phải trả hằng tháng (bằng số tiền gốc chia đều cho số tháng vay) và số tiền lãi phải trả hằng tháng (bằng số tiền gốc nhân với lãi suất tháng). a) Gọi r là lãi suất năm (r viết dưới dạng số thập phân) của khoản vay trả góp này. Tính số tiền x (triệu đồng) mà bác Châu phải trả mỗi tháng theo số tháng vay y (tháng) và lãi suất năm r. Từ đó suy ra công thức tính lãi suất năm r theo x và y. b) Tính giá trị của r tại x = 30, y = 48 rồi cho biết, nếu trả góp mỗi tháng 30 triệu đồng trong vòng 4 năm thì lãi suất năm (tính theo %) của khoản vay này là bao nhiêu?"
+     "de": "Bác Châu vay ngân hàng 1,2 tỉ đồng để mua nhà theo hình thức trả góp. Số tiền bác Châu phải trả mỗi tháng bao gồm số tiền gốc phải trả hằng tháng (bằng số tiền gốc chia đều cho số tháng vay) và số tiền lãi phải trả hằng tháng (bằng số tiền gốc nhân với lãi suất tháng). a) Gọi r là lãi suất năm (r viết dưới dạng số thập phân) của khoản vay trả góp này. Tính số tiền x (triệu đồng) mà bác Châu phải trả mỗi tháng theo số tháng vay y (tháng) và lãi suất năm r. Từ đó suy ra công thức tính lãi suất năm r theo x và y. b) Tính giá trị của r tại x = 30, y = 48 rồi cho biết, nếu trả góp mỗi tháng 30 triệu đồng trong vòng 4 năm thì lãi suất năm (tính theo %) của khoản vay này là bao nhiêu?",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 6,
+      "hoi": "Bác Châu vay ngân hàng 1,2 tỉ đồng để mua nhà theo hình thức trả góp. Số tiền bác Châu phải trả mỗi tháng bao gồm số tiền gốc phải trả hằng tháng (bằng số tiền gốc chia đều cho số tháng vay) và số tiền lãi phải trả hằng tháng (bằng số tiền gốc nhân với lãi suất tháng).\na) Gọi r là lãi suất năm (r viết dưới dạng số thập phân) của khoản vay trả góp này. Tính số tiền x (triệu đồng) mà bác Châu phải trả mỗi tháng theo số tháng vay y (tháng) và lãi suất năm r. Từ đó suy ra công thức tính lãi suất năm r theo x và y.\nb) Tính giá trị của r tại x = 30, y = 48 rồi cho biết, nếu trả góp mỗi tháng 30 triệu đồng trong vòng 4 năm thì lãi suất năm (tính theo %) của khoản vay này là bao nhiêu?\n(Gõ công thức tính x, công thức tính r viết dưới dạng một phân thức, giá trị của r ở câu b, rồi lãi suất năm tính theo %, cách nhau bằng dấu ;)",
+      "dap": [
+       "x=1200/y+100r;r=(xy−1200)/(100y);0,05;5%",
+       "x=1200/y+100r;r=(xy−1200)/(100y);0,05;5"
+      ],
+      "phim": [
+       "x",
+       "y",
+       "r",
+       "%",
+       ";"
+      ],
+      "nhieu": [
+       "z",
+       "²",
+       "³"
+      ],
+      "loi_giai": [
+       "1,2 tỉ đồng = 1200 triệu đồng; lãi suất tháng là r/12",
+       "Tiền gốc mỗi tháng là 1200/y triệu đồng, tiền lãi mỗi tháng là 1200 · r/12 = 100r triệu đồng",
+       "Vậy x = 1200/y + 100r",
+       "Suy ra 100r = x − 1200/y, do đó r = (x − 1200/y)/100 = (xy − 1200)/(100y)",
+       "b) Với x = 30 và y = 48 thì r = (30 · 48 − 1200)/(100 · 48) = 240/4800 = 0,05",
+       "Vậy lãi suất năm của khoản vay là 5%"
+      ]
+     }
     },
     {
      "ma": "6.26a",
      "trang": 22,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Làm tính nhân phân thức: (−3x/(5xy^2)) · (−5y^2/(12xy))."
+     "de": "Làm tính nhân phân thức: (−3x/(5xy^2)) · (−5y^2/(12xy)).",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "dap": [
+       "1/(4xy)"
+      ],
+      "phim": [
+       "x",
+       "y"
+      ],
+      "nhieu": [
+       "²",
+       "³",
+       "z"
+      ],
+      "loi_giai": [
+       "(−3x/(5xy²)) · (−5y²/(12xy)) = 3x · 5y²/(5xy² · 12xy)",
+       "= 15xy²/(60x²y³)",
+       "= 1/(4xy)"
+      ]
+     }
     },
     {
      "ma": "6.26b",
      "trang": 22,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Làm tính nhân phân thức: (x^2 − x)/(2x + 1) · (4x^2 − 1)/(x^3 − 1)."
+     "de": "Làm tính nhân phân thức: (x^2 − x)/(2x + 1) · (4x^2 − 1)/(x^3 − 1).",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "dap": [
+       "x(2x−1)/(x²+x+1)",
+       "(2x²−x)/(x²+x+1)"
+      ],
+      "phim": [
+       "x",
+       "²"
+      ],
+      "nhieu": [
+       "y",
+       "³",
+       "⁴"
+      ],
+      "loi_giai": [
+       "x² − x = x(x − 1); 4x² − 1 = (2x − 1)(2x + 1); x³ − 1 = (x − 1)(x² + x + 1)",
+       "Tích = x(x − 1)(2x − 1)(2x + 1)/((2x + 1)(x − 1)(x² + x + 1))",
+       "= x(2x − 1)/(x² + x + 1)"
+      ]
+     }
     },
     {
      "ma": "6.27a",
      "trang": 22,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Làm tính chia phân thức: (−3x/(5xy^2)) : (−5y^2/(12xy))."
+     "de": "Làm tính chia phân thức: (−3x/(5xy^2)) : (−5y^2/(12xy)).",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "dap": [
+       "36x/(25y³)"
+      ],
+      "phim": [
+       "x",
+       "y",
+       "³"
+      ],
+      "nhieu": [
+       "²",
+       "⁴",
+       "z"
+      ],
+      "loi_giai": [
+       "(−3x/(5xy²)) : (−5y²/(12xy)) = (−3x/(5xy²)) · (−12xy/(5y²))",
+       "= 36x²y/(25xy⁴)",
+       "= 36x/(25y³)"
+      ]
+     }
     },
     {
      "ma": "6.27b",
      "trang": 22,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Làm tính chia phân thức: (4x^2 − 1)/(8x^3 − 1) : (4x^2 + 4x + 1)/(4x^2 + 2x + 1)."
+     "de": "Làm tính chia phân thức: (4x^2 − 1)/(8x^3 − 1) : (4x^2 + 4x + 1)/(4x^2 + 2x + 1).",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "dap": [
+       "1/(2x+1)"
+      ],
+      "phim": [
+       "x"
+      ],
+      "nhieu": [
+       "y",
+       "²",
+       "³"
+      ],
+      "loi_giai": [
+       "4x² − 1 = (2x − 1)(2x + 1); 8x³ − 1 = (2x − 1)(4x² + 2x + 1); 4x² + 4x + 1 = (2x + 1)²",
+       "Thương = (2x − 1)(2x + 1)/((2x − 1)(4x² + 2x + 1)) · (4x² + 2x + 1)/(2x + 1)²",
+       "= 1/(2x + 1)"
+      ]
+     }
     },
     {
      "ma": "6.28",
      "trang": 22,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Tìm hai phân thức P và Q thoả mãn: a) P · (x + 1)/(2x + 1) = (x^2 + x)/(4x^2 − 1); b) Q : x^2/(x^2 + 4x + 4) = ((x + 1)(x + 2))/(x^2 − 2x)."
+     "de": "Tìm hai phân thức P và Q thoả mãn: a) P · (x + 1)/(2x + 1) = (x^2 + x)/(4x^2 − 1); b) Q : x^2/(x^2 + 4x + 4) = ((x + 1)(x + 2))/(x^2 − 2x).",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "hoi": "Tìm hai phân thức P và Q thoả mãn:\na) P · (x + 1)/(2x + 1) = (x² + x)/(4x² − 1);\nb) Q : x²/(x² + 4x + 4) = ((x + 1)(x + 2))/(x² − 2x).\n(Gõ kết quả các ý theo thứ tự, cách nhau bằng dấu ;)",
+      "dap": [
+       "x/(2x−1);x(x+1)/((x+2)(x−2))",
+       "x/(2x−1);(x²+x)/(x²−4)",
+       "x/(2x−1);x(x+1)/(x²−4)"
+      ],
+      "phim": [
+       "x",
+       "²",
+       ";"
+      ],
+      "nhieu": [
+       "y",
+       "³",
+       "⁴"
+      ],
+      "loi_giai": [
+       "a) P = (x² + x)/(4x² − 1) : ((x + 1)/(2x + 1)) = x(x + 1)/((2x − 1)(2x + 1)) · (2x + 1)/(x + 1)",
+       "= x/(2x − 1)",
+       "b) Q = (x + 1)(x + 2)/(x² − 2x) · x²/(x² + 4x + 4) = (x + 1)(x + 2)/(x(x − 2)) · x²/(x + 2)²",
+       "= x(x + 1)/((x − 2)(x + 2))"
+      ]
+     }
     },
     {
      "ma": "6.29",
      "trang": 22,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Cho hai phân thức P = (x^2 + 6x + 9)/(x^2 + 3x) và Q = (x^2 + 3x)/(x^2 − 9). a) Rút gọn P và Q. b) Sử dụng kết quả của câu a, tính P · Q và P : Q."
+     "de": "Cho hai phân thức P = (x^2 + 6x + 9)/(x^2 + 3x) và Q = (x^2 + 3x)/(x^2 − 9). a) Rút gọn P và Q. b) Sử dụng kết quả của câu a, tính P · Q và P : Q.",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "hoi": "Cho hai phân thức P = (x² + 6x + 9)/(x² + 3x) và Q = (x² + 3x)/(x² − 9).\na) Rút gọn P và Q.\nb) Sử dụng kết quả của câu a, tính P · Q và P : Q.\n(Gõ P và Q đã rút gọn, rồi P · Q và P : Q, theo thứ tự, cách nhau bằng dấu ;)",
+      "dap": [
+       "(x+3)/x;x/(x−3);(x+3)/(x−3);(x²−9)/x²",
+       "(x+3)/x;x/(x−3);(x+3)/(x−3);(x−3)(x+3)/x²"
+      ],
+      "phim": [
+       "x",
+       "²",
+       ";"
+      ],
+      "nhieu": [
+       "y",
+       "³",
+       "⁴"
+      ],
+      "loi_giai": [
+       "a) P = (x + 3)²/(x(x + 3)) = (x + 3)/x",
+       "Q = x(x + 3)/((x − 3)(x + 3)) = x/(x − 3)",
+       "b) P · Q = (x + 3)/x · x/(x − 3) = (x + 3)/(x − 3)",
+       "P : Q = (x + 3)/x · (x − 3)/x = (x² − 9)/x²"
+      ]
+     }
     },
     {
      "ma": "6.30",
      "trang": 22,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Trở lại tình huống trong Vận dụng (bác Châu vay 1,2 tỉ đồng mua nhà trả góp). a) Nếu mỗi tháng bác Châu trả 15 triệu đồng trong 10 năm thì lãi suất năm (tính theo %) là bao nhiêu? Hãy cho biết tổng số tiền thực tế bác Châu phải trả chênh lệch bao nhiêu so với khoản vay 1,2 tỉ đồng. b) Trong công thức tính lãi suất năm đã thiết lập ở phần Vận dụng, hai biến x, y phải thoả mãn các điều kiện nào? Em hãy giải thích ý nghĩa thực tiễn của các điều kiện đó."
+     "de": "Trở lại tình huống trong Vận dụng: bác Châu vay ngân hàng 1,2 tỉ đồng để mua nhà theo hình thức trả góp. Số tiền bác Châu phải trả mỗi tháng bao gồm số tiền gốc phải trả hằng tháng (bằng số tiền gốc chia đều cho số tháng vay) và số tiền lãi phải trả hằng tháng (bằng số tiền gốc nhân với lãi suất tháng). Gọi x (triệu đồng) là số tiền bác Châu phải trả mỗi tháng, y là số tháng vay và r là lãi suất năm (r viết dưới dạng số thập phân); ở phần Vận dụng ta đã lập được công thức tính lãi suất năm r = (xy − 1200)/(100y). a) Nếu mỗi tháng bác Châu trả 15 triệu đồng trong 10 năm thì lãi suất năm (tính theo %) là bao nhiêu? Hãy cho biết tổng số tiền thực tế bác Châu phải trả chênh lệch bao nhiêu so với khoản vay 1,2 tỉ đồng. b) Trong công thức tính lãi suất năm nói trên, hai biến x, y phải thoả mãn các điều kiện nào? Em hãy giải thích ý nghĩa thực tiễn của các điều kiện đó.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 5,
+      "hoi": "Trở lại tình huống trong Vận dụng: bác Châu vay ngân hàng 1,2 tỉ đồng để mua nhà theo hình thức trả góp. Số tiền bác Châu phải trả mỗi tháng bao gồm số tiền gốc phải trả hằng tháng (bằng số tiền gốc chia đều cho số tháng vay) và số tiền lãi phải trả hằng tháng (bằng số tiền gốc nhân với lãi suất tháng). Gọi x (triệu đồng) là số tiền bác Châu phải trả mỗi tháng, y là số tháng vay và r là lãi suất năm (r viết dưới dạng số thập phân); ở phần Vận dụng ta đã lập được công thức tính lãi suất năm r = (xy − 1200)/(100y).\na) Nếu mỗi tháng bác Châu trả 15 triệu đồng trong 10 năm thì lãi suất năm (tính theo %) là bao nhiêu? Hãy cho biết tổng số tiền thực tế bác Châu phải trả chênh lệch bao nhiêu so với khoản vay 1,2 tỉ đồng.\nb) Trong công thức tính lãi suất năm nói trên, hai biến x, y phải thoả mãn các điều kiện nào? Em hãy giải thích ý nghĩa thực tiễn của các điều kiện đó.",
+      "dong": [
+       {
+        "chu": "a) Lãi suất năm: {0}",
+        "o": [
+         {
+          "dung": [
+           "5%"
+          ],
+          "sai": [
+           "0,05%",
+           "50%",
+           "500%"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Tổng số tiền bác Châu thực tế phải trả: {0}",
+        "o": [
+         {
+          "dung": [
+           "1,8 tỉ đồng"
+          ],
+          "sai": [
+           "150 triệu đồng",
+           "180 triệu đồng"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Số tiền đó chênh lệch so với khoản vay 1,2 tỉ đồng: {0}",
+        "o": [
+         {
+          "dung": [
+           "600 triệu đồng"
+          ],
+          "sai": [
+           "60 triệu đồng",
+           "300 triệu đồng",
+           "6 tỉ đồng"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "b) Điều kiện của x và y: {0}",
+        "o": [
+         {
+          "dung": [
+           "x > 0, y > 0 và xy > 1200"
+          ],
+          "sai": [
+           "x > 0 và y > 0",
+           "x > 0, y > 0 và xy < 1200",
+           "x ≠ 0 và y ≠ 0"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Ý nghĩa của điều kiện xy > 1200: {0}",
+        "o": [
+         {
+          "dung": [
+           "tổng số tiền trả trong y tháng phải nhiều hơn khoản vay 1 200 triệu đồng thì ngân hàng mới có lãi"
+          ],
+          "sai": [
+           "số tiền trả mỗi tháng phải nhiều hơn 1 200 triệu đồng",
+           "số tháng vay phải nhiều hơn 1 200 tháng"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     }
    ]
   },
@@ -449,56 +3027,352 @@
      "trang": 24,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Thực hiện phép tính: 1/(xy) + 1/(yz) + 1/(zx)."
+     "de": "Thực hiện phép tính: 1/(xy) + 1/(yz) + 1/(zx).",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "dap": [
+       "(x+y+z)/(xyz)"
+      ],
+      "phim": [
+       "x",
+       "y",
+       "z"
+      ],
+      "nhieu": [
+       "²",
+       "³",
+       "t"
+      ],
+      "loi_giai": [
+       "MTC = xyz",
+       "1/(xy) + 1/(yz) + 1/(zx) = z/(xyz) + x/(xyz) + y/(xyz)",
+       "= (x + y + z)/(xyz)"
+      ]
+     }
     },
     {
      "ma": "6.31b",
      "trang": 24,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Thực hiện phép tính: x/(2x − y) + y/(2x + y) + 3xy/(y^2 − 4x^2)."
+     "de": "Thực hiện phép tính: x/(2x − y) + y/(2x + y) + 3xy/(y^2 − 4x^2).",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "dap": [
+       "(2x²−y²)/(4x²−y²)",
+       "(2x²−y²)/((2x−y)(2x+y))"
+      ],
+      "phim": [
+       "x",
+       "y",
+       "²"
+      ],
+      "nhieu": [
+       "³",
+       "z",
+       "⁴"
+      ],
+      "loi_giai": [
+       "3xy/(y² − 4x²) = −3xy/((2x − y)(2x + y)); MTC = (2x − y)(2x + y)",
+       "Biểu thức = (x(2x + y) + y(2x − y) − 3xy)/((2x − y)(2x + y))",
+       "= (2x² + xy + 2xy − y² − 3xy)/((2x − y)(2x + y))",
+       "= (2x² − y²)/((2x − y)(2x + y))"
+      ]
+     }
     },
     {
      "ma": "6.32a",
      "trang": 24,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Thực hiện phép tính: (4x − 6)/(5x^2 − x) · (25x^2 − 10x + 1)/(27 − 8x^3)."
+     "de": "Thực hiện phép tính: (4x − 6)/(5x^2 − x) · (25x^2 − 10x + 1)/(27 − 8x^3).",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "dap": [
+       "−2(5x−1)/(x(4x²+6x+9))",
+       "2(1−5x)/(x(4x²+6x+9))",
+       "(2−10x)/(x(4x²+6x+9))",
+       "(2−10x)/(4x³+6x²+9x)"
+      ],
+      "phim": [
+       "x",
+       "²",
+       "³"
+      ],
+      "nhieu": [
+       "y",
+       "⁴",
+       "z"
+      ],
+      "loi_giai": [
+       "4x − 6 = 2(2x − 3); 5x² − x = x(5x − 1); 25x² − 10x + 1 = (5x − 1)²; 27 − 8x³ = (3 − 2x)(9 + 6x + 4x²)",
+       "Tích = 2(2x − 3)(5x − 1)²/(x(5x − 1)(3 − 2x)(9 + 6x + 4x²))",
+       "= −2(5x − 1)/(x(4x² + 6x + 9))"
+      ]
+     }
     },
     {
      "ma": "6.32b",
      "trang": 24,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Thực hiện phép tính: (2x + 10)/(x − 3)^2 : (x + 5)^3/(x^2 − 9)."
+     "de": "Thực hiện phép tính: (2x + 10)/(x − 3)^2 : (x + 5)^3/(x^2 − 9).",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "dap": [
+       "2(x+3)/((x−3)(x+5)²)",
+       "(2x+6)/((x−3)(x+5)²)"
+      ],
+      "phim": [
+       "x",
+       "²"
+      ],
+      "nhieu": [
+       "y",
+       "³",
+       "⁴"
+      ],
+      "loi_giai": [
+       "2x + 10 = 2(x + 5); x² − 9 = (x − 3)(x + 3)",
+       "Thương = 2(x + 5)/(x − 3)² · (x − 3)(x + 3)/(x + 5)³",
+       "= 2(x + 3)/((x − 3)(x + 5)²)"
+      ]
+     }
     },
     {
      "ma": "6.33a",
      "trang": 24,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Thực hiện phép tính: (4x^2 − 1)/(16x^2 − 1) · (1/(2x + 1) + 1/(2x − 1) + 1/(1 − 4x^2))."
+     "de": "Thực hiện phép tính: (4x^2 − 1)/(16x^2 − 1) · (1/(2x + 1) + 1/(2x − 1) + 1/(1 − 4x^2)).",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "dap": [
+       "1/(4x+1)"
+      ],
+      "phim": [
+       "x"
+      ],
+      "nhieu": [
+       "y",
+       "²",
+       "³"
+      ],
+      "loi_giai": [
+       "1/(2x + 1) + 1/(2x − 1) + 1/(1 − 4x²) = (2x − 1 + 2x + 1 − 1)/(4x² − 1) = (4x − 1)/(4x² − 1)",
+       "Biểu thức = (4x² − 1)/(16x² − 1) · (4x − 1)/(4x² − 1) = (4x − 1)/(16x² − 1)",
+       "= (4x − 1)/((4x − 1)(4x + 1)) = 1/(4x + 1)"
+      ]
+     }
     },
     {
      "ma": "6.33b",
      "trang": 24,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Thực hiện phép tính: ((x + y)/(xy) − 2/x) · x^3y^3/(x^3 − y^3)."
+     "de": "Thực hiện phép tính: ((x + y)/(xy) − 2/x) · x^3y^3/(x^3 − y^3).",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "dap": [
+       "x²y²/(x²+xy+y²)"
+      ],
+      "phim": [
+       "x",
+       "y",
+       "²"
+      ],
+      "nhieu": [
+       "³",
+       "z",
+       "⁴"
+      ],
+      "loi_giai": [
+       "(x + y)/(xy) − 2/x = (x + y − 2y)/(xy) = (x − y)/(xy)",
+       "Biểu thức = (x − y)/(xy) · x³y³/((x − y)(x² + xy + y²))",
+       "= x²y²/(x² + xy + y²)"
+      ]
+     }
     },
     {
      "ma": "6.34",
      "trang": 24,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Cho biểu thức P = (x^2 − 6x + 9)/(9 − x^2) + (4x + 8)/(x + 3). a) Rút gọn P. b) Tính giá trị của P tại x = 7. c) Chứng tỏ P = 3 + 2/(x + 3). Từ đó tìm tất cả các giá trị nguyên của x sao cho biểu thức đã cho nhận giá trị nguyên."
+     "de": "Cho biểu thức P = (x^2 − 6x + 9)/(9 − x^2) + (4x + 8)/(x + 3). a) Rút gọn P. b) Tính giá trị của P tại x = 7. c) Chứng tỏ P = 3 + 2/(x + 3). Từ đó tìm tất cả các giá trị nguyên của x sao cho biểu thức đã cho nhận giá trị nguyên.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 9,
+      "hoi": "Cho biểu thức P = (x² − 6x + 9)/(9 − x²) + (4x + 8)/(x + 3).\na) Rút gọn P.\nb) Tính giá trị của P tại x = 7.\nc) Chứng tỏ P = 3 + 2/(x + 3). Từ đó tìm tất cả các giá trị nguyên của x sao cho biểu thức đã cho nhận giá trị nguyên.\n(Câu c: với mỗi số nguyên x sau, biểu thức đã cho có nhận giá trị nguyên không?)",
+      "dong": [
+       {
+        "chu": "a) P = {0}",
+        "o": [
+         {
+          "dung": [
+           "(3x + 11)/(x + 3)"
+          ],
+          "sai": [
+           "(5x + 5)/(x + 3)",
+           "(3x + 5)/(x + 3)",
+           "(3x + 11)/(x − 3)"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "b) Giá trị của P tại x = 7: {0}",
+        "o": [
+         {
+          "dung": [
+           "3,2"
+          ],
+          "sai": [
+           "4",
+           "2,6",
+           "32"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "x = −7: {0}",
+        "o": [
+         {
+          "dung": [
+           "Không"
+          ],
+          "sai": [
+           "Có"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "x = −5: {0}",
+        "o": [
+         {
+          "dung": [
+           "Có"
+          ],
+          "sai": [
+           "Không"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "x = −4: {0}",
+        "o": [
+         {
+          "dung": [
+           "Có"
+          ],
+          "sai": [
+           "Không"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "x = −3: {0}",
+        "o": [
+         {
+          "dung": [
+           "Không"
+          ],
+          "sai": [
+           "Có"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "x = −2: {0}",
+        "o": [
+         {
+          "dung": [
+           "Có"
+          ],
+          "sai": [
+           "Không"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "x = −1: {0}",
+        "o": [
+         {
+          "dung": [
+           "Có"
+          ],
+          "sai": [
+           "Không"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "x = 1: {0}",
+        "o": [
+         {
+          "dung": [
+           "Không"
+          ],
+          "sai": [
+           "Có"
+          ],
+          "hai": true
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "6.35",
      "trang": 24,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Một xưởng may lập kế hoạch may 80 000 bộ quần áo trong x (ngày). Nhờ cải tiến kĩ thuật, xưởng đã hoàn thành kế hoạch sớm 11 ngày và may vượt kế hoạch 100 bộ quần áo. a) Hãy viết phân thức theo biến x biểu thị số bộ quần áo mỗi ngày xưởng may được theo kế hoạch. b) Viết phân thức biểu thị số bộ quần áo thực tế xưởng may được mỗi ngày. c) Viết biểu thức biểu thị số bộ quần áo mỗi ngày xưởng may được nhiều hơn so với kế hoạch. d) Nếu theo kế hoạch, mỗi ngày xí nghiệp may 800 bộ quần áo thì nhờ cải tiến kĩ thuật, mỗi ngày xưởng may được nhiều hơn so với kế hoạch bao nhiêu bộ quần áo?"
+     "de": "Một xưởng may lập kế hoạch may 80 000 bộ quần áo trong x (ngày). Nhờ cải tiến kĩ thuật, xưởng đã hoàn thành kế hoạch sớm 11 ngày và may vượt kế hoạch 100 bộ quần áo. a) Hãy viết phân thức theo biến x biểu thị số bộ quần áo mỗi ngày xưởng may được theo kế hoạch. b) Viết phân thức biểu thị số bộ quần áo thực tế xưởng may được mỗi ngày. c) Viết biểu thức biểu thị số bộ quần áo mỗi ngày xưởng may được nhiều hơn so với kế hoạch. d) Nếu theo kế hoạch, mỗi ngày xí nghiệp may 800 bộ quần áo thì nhờ cải tiến kĩ thuật, mỗi ngày xưởng may được nhiều hơn so với kế hoạch bao nhiêu bộ quần áo?",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 6,
+      "hoi": "Một xưởng may lập kế hoạch may 80 000 bộ quần áo trong x (ngày). Nhờ cải tiến kĩ thuật, xưởng đã hoàn thành kế hoạch sớm 11 ngày và may vượt kế hoạch 100 bộ quần áo.\na) Hãy viết phân thức theo biến x biểu thị số bộ quần áo mỗi ngày xưởng may được theo kế hoạch.\nb) Viết phân thức biểu thị số bộ quần áo thực tế xưởng may được mỗi ngày.\nc) Viết biểu thức biểu thị số bộ quần áo mỗi ngày xưởng may được nhiều hơn so với kế hoạch.\nd) Nếu theo kế hoạch, mỗi ngày xí nghiệp may 800 bộ quần áo thì nhờ cải tiến kĩ thuật, mỗi ngày xưởng may được nhiều hơn so với kế hoạch bao nhiêu bộ quần áo?\n(Gõ kết quả các ý theo thứ tự, cách nhau bằng dấu ;)",
+      "dap": [
+       "80000/x;80100/(x−11);80100/(x−11)−80000/x;100",
+       "80000/x;80100/(x−11);(100x+880000)/(x(x−11));100"
+      ],
+      "phim": [
+       "x",
+       ";"
+      ],
+      "nhieu": [
+       "y",
+       "²",
+       "³"
+      ],
+      "loi_giai": [
+       "a) Số bộ quần áo mỗi ngày theo kế hoạch = 80000/x",
+       "b) Thực tế xưởng may được 80000 + 100 = 80100 bộ quần áo trong x − 11 ngày",
+       "Số bộ quần áo thực tế may được mỗi ngày = 80100/(x − 11)",
+       "c) Số bộ may được nhiều hơn mỗi ngày = 80100/(x − 11) − 80000/x",
+       "d) Theo kế hoạch mỗi ngày may 800 bộ nên x = 80000 : 800 = 100",
+       "Số bộ may được nhiều hơn mỗi ngày = 80100/(100 − 11) − 80000/100 = 900 − 800 = 100"
+      ]
+     }
     }
    ]
   },
@@ -511,84 +3385,406 @@
      "trang": 25,
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
-     "de": "Khẳng định nào sau đây là đúng? A. (x − 1)^2/(x − 2) = (1 − x)^2/(2 − x). B. 3x/(x + 2)^2 = 3x/(x − 2)^2. C. 3x/(x + 2)^2 = −3x/(x − 2)^2. D. 3x/(x + 2)^2 = 3x/(−x − 2)^2."
+     "de": "Khẳng định nào sau đây là đúng? A. (x − 1)^2/(x − 2) = (1 − x)^2/(2 − x). B. 3x/(x + 2)^2 = 3x/(x − 2)^2. C. 3x/(x + 2)^2 = −3x/(x − 2)^2. D. 3x/(x + 2)^2 = 3x/(−x − 2)^2.",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Khẳng định nào sau đây là đúng?",
+      "cac": [
+       "(x − 1)²/(x − 2) = (1 − x)²/(2 − x)",
+       "3x/(x + 2)² = 3x/(x − 2)²",
+       "3x/(x + 2)² = −3x/(x − 2)²",
+       "3x/(x + 2)² = 3x/(−x − 2)²"
+      ],
+      "dap": "D"
+     }
     },
     {
      "ma": "6.37",
      "trang": 25,
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
-     "de": "Khẳng định nào sau đây là sai? A. −6x/(−4x^2(x + 2)^2) = 3/(2x(x + 2)^2). B. −5/(−2) = 10x/(4x). C. (x + 1)/(x − 1) = (x^2 + x + 1)/(x^2 − x + 1). D. −6x/(−4(−x)^2(x − 2)^2) = 3/(2x(−x + 2)^2)."
+     "de": "Khẳng định nào sau đây là sai? A. −6x/(−4x^2(x + 2)^2) = 3/(2x(x + 2)^2). B. −5/(−2) = 10x/(4x). C. (x + 1)/(x − 1) = (x^2 + x + 1)/(x^2 − x + 1). D. −6x/(−4(−x)^2(x − 2)^2) = 3/(2x(−x + 2)^2).",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Khẳng định nào sau đây là sai?",
+      "cac": [
+       "−6x/(−4x²(x + 2)²) = 3/(2x(x + 2)²)",
+       "−5/(−2) = 10x/(4x)",
+       "(x + 1)/(x − 1) = (x² + x + 1)/(x² − x + 1)",
+       "−6x/(−4(−x)²(x − 2)²) = 3/(2x(−x + 2)²)"
+      ],
+      "dap": "C"
+     }
     },
     {
      "ma": "6.38",
      "trang": 25,
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
-     "de": "Trong đẳng thức (2x^2 + 1)/(4x − 1) = (8x^3 + 4x)/Q, Q là đa thức A. 4x. B. 4x^2. C. 16x − 4. D. 16x^2 − 4x."
+     "de": "Trong đẳng thức (2x^2 + 1)/(4x − 1) = (8x^3 + 4x)/Q, Q là đa thức A. 4x. B. 4x^2. C. 16x − 4. D. 16x^2 − 4x.",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Trong đẳng thức (2x² + 1)/(4x − 1) = (8x³ + 4x)/Q, Q là đa thức",
+      "cac": [
+       "4x",
+       "4x²",
+       "16x − 4",
+       "16x² − 4x"
+      ],
+      "dap": "D"
+     }
     },
     {
      "ma": "6.39",
      "trang": 25,
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
-     "de": "Nếu (−5x + 5)/(2xy) − (−9x − 7)/(2xy) = (bx + c)/(xy) thì b + c bằng A. −4. B. 8. C. 4. D. −10."
+     "de": "Nếu (−5x + 5)/(2xy) − (−9x − 7)/(2xy) = (bx + c)/(xy) thì b + c bằng A. −4. B. 8. C. 4. D. −10.",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Nếu (−5x + 5)/(2xy) − (−9x − 7)/(2xy) = (bx + c)/(xy) thì b + c bằng",
+      "cac": [
+       "−4",
+       "8",
+       "4",
+       "−10"
+      ],
+      "dap": "B"
+     }
     },
     {
      "ma": "6.40",
      "trang": 25,
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
-     "de": "Một ngân hàng huy động vốn với mức lãi suất một năm là x%. Để sau một năm, người gửi được lãi a đồng thì người đó phải gửi vào ngân hàng số tiền là A. 100a/x (đồng). B. a/(x + 100) (đồng). C. a/(x + 1) (đồng). D. 100a/(x + 100) (đồng)."
+     "de": "Một ngân hàng huy động vốn với mức lãi suất một năm là x%. Để sau một năm, người gửi được lãi a đồng thì người đó phải gửi vào ngân hàng số tiền là A. 100a/x (đồng). B. a/(x + 100) (đồng). C. a/(x + 1) (đồng). D. 100a/(x + 100) (đồng).",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Một ngân hàng huy động vốn với mức lãi suất một năm là x%. Để sau một năm, người gửi được lãi a đồng thì người đó phải gửi vào ngân hàng số tiền là",
+      "cac": [
+       "100a/x (đồng)",
+       "a/(x + 100) (đồng)",
+       "a/(x + 1) (đồng)",
+       "100a/(x + 100) (đồng)"
+      ],
+      "dap": "A"
+     }
     },
     {
      "ma": "6.41",
      "trang": 26,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Tìm đa thức P trong các đẳng thức sau: a) P + 1/(x + 2) = x/(x^2 − 2x + 4); b) P − 4(x − 2)/(x + 2) = 16/(x − 2); c) P · (x − 2)/(x + 3) = (x^2 − 4x + 4)/(x^2 − 9); d) P : (x^2 − 9)/(2x + 4) = (x^2 − 4)/(x^2 + 3x)."
+     "de": "Tìm phân thức P trong các đẳng thức sau: a) P + 1/(x + 2) = x/(x^2 − 2x + 4); b) P − 4(x − 2)/(x + 2) = 16/(x − 2); c) P · (x − 2)/(x + 3) = (x^2 − 4x + 4)/(x^2 − 9); d) P : (x^2 − 9)/(2x + 4) = (x^2 − 4)/(x^2 + 3x).",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 8,
+      "hoi": "Tìm phân thức P trong các đẳng thức sau:\na) P + 1/(x + 2) = x/(x² − 2x + 4);\nb) P − 4(x − 2)/(x + 2) = 16/(x − 2);\nc) P · (x − 2)/(x + 3) = (x² − 4x + 4)/(x² − 9);\nd) P : (x² − 9)/(2x + 4) = (x² − 4)/(x² + 3x).\n(Gõ kết quả các ý theo thứ tự, cách nhau bằng dấu ;)",
+      "dap": [
+       "(4x−4)/(x³+8);(4x²+48)/(x²−4);(x−2)/(x−3);(x−2)(x−3)/(2x)",
+       "4(x−1)/(x³+8);(4x²+48)/(x²−4);(x−2)/(x−3);(x−2)(x−3)/(2x)",
+       "(4x−4)/(x³+8);(4x²+48)/(x²−4);(x−2)/(x−3);(x²−5x+6)/(2x)",
+       "4(x−1)/(x³+8);(4x²+48)/(x²−4);(x−2)/(x−3);(x²−5x+6)/(2x)"
+      ],
+      "phim": [
+       "x",
+       "²",
+       "³",
+       ";"
+      ],
+      "nhieu": [
+       "y",
+       "⁴",
+       "⁵"
+      ],
+      "loi_giai": [
+       "a) P = x/(x² − 2x + 4) − 1/(x + 2) = (x(x + 2) − (x² − 2x + 4))/(x³ + 8)",
+       "= (4x − 4)/(x³ + 8)",
+       "b) P = 16/(x − 2) + 4(x − 2)/(x + 2) = (16(x + 2) + 4(x − 2)²)/((x − 2)(x + 2))",
+       "= (4x² + 48)/(x² − 4)",
+       "c) P = (x² − 4x + 4)/(x² − 9) : ((x − 2)/(x + 3)) = (x − 2)²/((x − 3)(x + 3)) · (x + 3)/(x − 2)",
+       "= (x − 2)/(x − 3)",
+       "d) P = (x² − 4)/(x² + 3x) · (x² − 9)/(2x + 4) = (x − 2)(x + 2)(x − 3)(x + 3)/(x(x + 3) · 2(x + 2))",
+       "= (x − 2)(x − 3)/(2x)"
+      ]
+     }
     },
     {
      "ma": "6.42a",
      "trang": 26,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Rút gọn biểu thức: 2/(3x) + x/(x − 1) + (6x^2 − 4)/(2x(1 − x))."
+     "de": "Rút gọn biểu thức: 2/(3x) + x/(x − 1) + (6x^2 − 4)/(2x(1 − x)).",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 5,
+      "dap": [
+       "−2(3x+2)/(3x)",
+       "(−6x−4)/(3x)",
+       "−(6x+4)/(3x)"
+      ],
+      "phim": [
+       "x"
+      ],
+      "nhieu": [
+       "y",
+       "²",
+       "³"
+      ],
+      "loi_giai": [
+       "(6x² − 4)/(2x(1 − x)) = −(3x² − 2)/(x(x − 1)); MTC = 3x(x − 1)",
+       "Biểu thức = (2(x − 1) + 3x · x − 3(3x² − 2))/(3x(x − 1))",
+       "= (−6x² + 2x + 4)/(3x(x − 1))",
+       "= −2(3x + 2)(x − 1)/(3x(x − 1))",
+       "= −2(3x + 2)/(3x)"
+      ]
+     }
     },
     {
      "ma": "6.42b",
      "trang": 26,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Rút gọn biểu thức: (x^3 + 1)/(1 − x^3) + x/(x − 1) − (x + 1)/(x^2 + x + 1)."
+     "de": "Rút gọn biểu thức: (x^3 + 1)/(1 − x^3) + x/(x − 1) − (x + 1)/(x^2 + x + 1).",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "dap": [
+       "x/(x³−1)",
+       "−x/(1−x³)",
+       "x/((x−1)(x²+x+1))"
+      ],
+      "phim": [
+       "x",
+       "²",
+       "³"
+      ],
+      "nhieu": [
+       "y",
+       "⁴",
+       "z"
+      ],
+      "loi_giai": [
+       "(x³ + 1)/(1 − x³) = −(x³ + 1)/(x³ − 1); MTC = x³ − 1 = (x − 1)(x² + x + 1)",
+       "Biểu thức = (−(x³ + 1) + x(x² + x + 1) − (x + 1)(x − 1))/(x³ − 1)",
+       "= (−x³ − 1 + x³ + x² + x − x² + 1)/(x³ − 1)",
+       "= x/(x³ − 1)"
+      ]
+     }
     },
     {
      "ma": "6.42c",
      "trang": 26,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Rút gọn biểu thức: (2/(x + 2) − 2/(1 − x)) · (x^2 − 4)/(4x^2 − 1)."
+     "de": "Rút gọn biểu thức: (2/(x + 2) − 2/(1 − x)) · (x^2 − 4)/(4x^2 − 1).",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 5,
+      "dap": [
+       "2(x−2)/((x−1)(2x−1))",
+       "(2x−4)/((x−1)(2x−1))",
+       "(2x−4)/(2x²−3x+1)"
+      ],
+      "phim": [
+       "x",
+       "²"
+      ],
+      "nhieu": [
+       "y",
+       "³",
+       "⁴"
+      ],
+      "loi_giai": [
+       "2/(x + 2) − 2/(1 − x) = (2(1 − x) − 2(x + 2))/((x + 2)(1 − x)) = −2(2x + 1)/((x + 2)(1 − x))",
+       "(x² − 4)/(4x² − 1) = (x − 2)(x + 2)/((2x − 1)(2x + 1))",
+       "Biểu thức = −2(2x + 1)/((x + 2)(1 − x)) · (x − 2)(x + 2)/((2x − 1)(2x + 1))",
+       "= −2(x − 2)/((1 − x)(2x − 1))",
+       "= 2(x − 2)/((x − 1)(2x − 1))"
+      ]
+     }
     },
     {
      "ma": "6.42d",
      "trang": 26,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Rút gọn biểu thức: 1 + (x^3 − x)/(x^2 + 1) · (1/(1 − x) − 1/(1 − x^2))."
+     "de": "Rút gọn biểu thức: 1 + (x^3 − x)/(x^2 + 1) · (1/(1 − x) − 1/(1 − x^2)).",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "dap": [
+       "1/(x²+1)"
+      ],
+      "phim": [
+       "x",
+       "²"
+      ],
+      "nhieu": [
+       "y",
+       "³",
+       "⁴"
+      ],
+      "loi_giai": [
+       "1/(1 − x) − 1/(1 − x²) = (1 + x − 1)/(1 − x²) = x/(1 − x²)",
+       "(x³ − x)/(x² + 1) · x/(1 − x²) = −x(1 − x²)/(x² + 1) · x/(1 − x²) = −x²/(x² + 1)",
+       "Biểu thức = 1 − x²/(x² + 1) = (x² + 1 − x²)/(x² + 1)",
+       "= 1/(x² + 1)"
+      ]
+     }
     },
     {
      "ma": "6.43",
      "trang": 26,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Cho phân thức P = (2x + 1)/(x + 1). a) Viết điều kiện xác định của P. b) Hãy viết P dưới dạng P = a − b/(x + 1), trong đó a, b là hai số nguyên dương. c) Với giá trị nguyên nào của x thì P có giá trị là số nguyên?"
+     "de": "Cho phân thức P = (2x + 1)/(x + 1). a) Viết điều kiện xác định của P. b) Hãy viết P dưới dạng P = a − b/(x + 1), trong đó a, b là hai số nguyên dương. c) Với giá trị nguyên nào của x thì P có giá trị là số nguyên?",
+     "ghep": {
+      "kieu": "O",
+      "sao": 7,
+      "hoi": "Cho phân thức P = (2x + 1)/(x + 1).\na) Viết điều kiện xác định của P.\nb) Hãy viết P dưới dạng P = a − b/(x + 1), trong đó a, b là hai số nguyên dương.\nc) Với giá trị nguyên nào của x thì P có giá trị là số nguyên?\n(Câu c: với mỗi số nguyên x sau, P có giá trị là số nguyên không?)",
+      "dong": [
+       {
+        "chu": "a) Điều kiện xác định: {0}",
+        "o": [
+         {
+          "dung": [
+           "x ≠ −1"
+          ],
+          "sai": [
+           "x ≠ 1",
+           "x ≠ −1/2",
+           "x ≠ 0"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "b) P = {0}",
+        "o": [
+         {
+          "dung": [
+           "2 − 1/(x + 1)"
+          ],
+          "sai": [
+           "2 − 3/(x + 1)",
+           "1 − 1/(x + 1)",
+           "2 + 1/(x + 1)"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "x = −3: {0}",
+        "o": [
+         {
+          "dung": [
+           "Không"
+          ],
+          "sai": [
+           "Có"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "x = −2: {0}",
+        "o": [
+         {
+          "dung": [
+           "Có"
+          ],
+          "sai": [
+           "Không"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "x = −1: {0}",
+        "o": [
+         {
+          "dung": [
+           "Không"
+          ],
+          "sai": [
+           "Có"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "x = 0: {0}",
+        "o": [
+         {
+          "dung": [
+           "Có"
+          ],
+          "sai": [
+           "Không"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "x = 1: {0}",
+        "o": [
+         {
+          "dung": [
+           "Không"
+          ],
+          "sai": [
+           "Có"
+          ],
+          "hai": true
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "6.44",
      "trang": 26,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Một xe ô tô đi từ Hà Nội đến Cửa Lò với vận tốc 60 km/h và dự kiến sẽ đến Cửa Lò sau 5 giờ xe chạy. Tuy nhiên, sau 2 2/3 giờ chạy với vận tốc 60 km/h, xe dừng nghỉ 20 phút. Sau khi dừng nghỉ, để đến Cửa Lò đúng thời gian dự kiến, xe phải tăng vận tốc so với chặng đầu. a) Tính độ dài quãng đường Hà Nội – Cửa Lò. b) Tính độ dài quãng đường còn lại sau khi dừng nghỉ. c) Cho biết ở chặng thứ hai xe tăng vận tốc thêm x (km/h). Hãy viết biểu thức P biểu thị thời gian (tính bằng giờ) thực tế xe chạy hết chặng đường Hà Nội – Cửa Lò. d) Tính giá trị của P lần lượt tại x = 5; x = 10; x = 15, từ đó cho biết ở chặng thứ hai (sau khi xe dừng nghỉ): nếu tăng vận tốc thêm 5 km/h thì xe đến Cửa Lò muộn hơn dự kiến bao nhiêu giờ? nếu tăng vận tốc thêm 10 km/h thì xe đến Cửa Lò có đúng thời gian dự kiến không? nếu tăng vận tốc thêm 15 km/h thì xe đến Cửa Lò sớm hơn dự kiến bao nhiêu giờ?"
+     "de": "Một xe ô tô đi từ Hà Nội đến Cửa Lò với vận tốc 60 km/h và dự kiến sẽ đến Cửa Lò sau 5 giờ xe chạy. Tuy nhiên, sau 2 2/3 giờ chạy với vận tốc 60 km/h, xe dừng nghỉ 20 phút. Sau khi dừng nghỉ, để đến Cửa Lò đúng thời gian dự kiến, xe phải tăng vận tốc so với chặng đầu. a) Tính độ dài quãng đường Hà Nội – Cửa Lò. b) Tính độ dài quãng đường còn lại sau khi dừng nghỉ. c) Cho biết ở chặng thứ hai xe tăng vận tốc thêm x (km/h). Hãy viết biểu thức P biểu thị thời gian (tính bằng giờ) thực tế xe chạy hết chặng đường Hà Nội – Cửa Lò. d) Tính giá trị của P lần lượt tại x = 5; x = 10; x = 15, từ đó cho biết ở chặng thứ hai (sau khi xe dừng nghỉ): nếu tăng vận tốc thêm 5 km/h thì xe đến Cửa Lò muộn hơn dự kiến bao nhiêu giờ? nếu tăng vận tốc thêm 10 km/h thì xe đến Cửa Lò có đúng thời gian dự kiến không? nếu tăng vận tốc thêm 15 km/h thì xe đến Cửa Lò sớm hơn dự kiến bao nhiêu giờ?",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 7,
+      "hoi": "Một xe ô tô đi từ Hà Nội đến Cửa Lò với vận tốc 60 km/h và dự kiến sẽ đến Cửa Lò sau 5 giờ xe chạy. Tuy nhiên, sau 2 2/3 giờ chạy với vận tốc 60 km/h, xe dừng nghỉ 20 phút. Sau khi dừng nghỉ, để đến Cửa Lò đúng thời gian dự kiến, xe phải tăng vận tốc so với chặng đầu.\na) Tính độ dài quãng đường Hà Nội – Cửa Lò.\nb) Tính độ dài quãng đường còn lại sau khi dừng nghỉ.\nc) Cho biết ở chặng thứ hai xe tăng vận tốc thêm x (km/h). Hãy viết biểu thức P biểu thị thời gian (tính bằng giờ) thực tế xe chạy hết chặng đường Hà Nội – Cửa Lò.\nd) Tính giá trị của P lần lượt tại x = 5; x = 10; x = 15, từ đó cho biết ở chặng thứ hai (sau khi xe dừng nghỉ):\n– Nếu tăng vận tốc thêm 5 km/h thì xe đến Cửa Lò muộn hơn dự kiến bao nhiêu giờ?\n– Nếu tăng vận tốc thêm 10 km/h thì xe đến Cửa Lò có đúng thời gian dự kiến không?\n– Nếu tăng vận tốc thêm 15 km/h thì xe đến Cửa Lò sớm hơn dự kiến bao nhiêu giờ?\n(Gõ theo thứ tự, cách nhau bằng dấu ;: độ dài quãng đường ở câu a và câu b (km), biểu thức P, số giờ xe đến muộn khi tăng thêm 5 km/h, giá trị của P khi tăng thêm 10 km/h, số giờ xe đến sớm khi tăng thêm 15 km/h.)",
+      "dap": [
+       "300;140;3+140/(60+x);2/13;5;2/15",
+       "300;140;(3x+320)/(x+60);2/13;5;2/15"
+      ],
+      "phim": [
+       "x",
+       ";"
+      ],
+      "nhieu": [
+       "y",
+       "²",
+       "³"
+      ],
+      "loi_giai": [
+       "a) Quãng đường Hà Nội – Cửa Lò (km) = 60 · 5 = 300",
+       "b) 2 2/3 giờ = 8/3 giờ; quãng đường đã đi (km) = 60 · 8/3 = 160",
+       "Quãng đường còn lại (km) = 300 − 160 = 140",
+       "c) 20 phút = 1/3 giờ; P = 8/3 + 1/3 + 140/(60 + x) = 3 + 140/(60 + x)",
+       "d) Tại x = 5, P = 3 + 140/65 = 67/13; xe đến muộn (giờ) = 67/13 − 5 = 2/13",
+       "Tại x = 10, P = 3 + 140/70 = 5, xe đến đúng thời gian dự kiến",
+       "Tại x = 15, P = 3 + 140/75 = 73/15; xe đến sớm (giờ) = 5 − 73/15 = 2/15"
+      ]
+     }
     }
    ]
   },
@@ -2311,42 +5507,326 @@
      "trang": 135,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Rút gọn các biểu thức sau: a) (2x + y)^2 + (5x − y)^2 + 2(2x + y)(5x − y); b) (2x − y^3)(2x + y^3) − (2x − y^2)(4x^2 + 2xy^2 + y^4)."
+     "de": "Rút gọn các biểu thức sau: a) (2x + y)^2 + (5x − y)^2 + 2(2x + y)(5x − y); b) (2x − y^3)(2x + y^3) − (2x − y^2)(4x^2 + 2xy^2 + y^4).",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "hoi": "Rút gọn các biểu thức sau:\na) (2x + y)² + (5x − y)² + 2(2x + y)(5x − y);\nb) (2x − y³)(2x + y³) − (2x − y²)(4x² + 2xy² + y⁴).\n(Gõ kết quả các ý theo thứ tự, cách nhau bằng dấu ;)",
+      "dap": [
+       "49x²;−8x³+4x²",
+       "49x²;4x²(1−2x)",
+       "49x²;−4x²(2x−1)"
+      ],
+      "phim": [
+       "x",
+       "²",
+       "³",
+       ";"
+      ],
+      "nhieu": [
+       "y",
+       "⁴",
+       "⁶"
+      ],
+      "loi_giai": [
+       "a) (2x + y)² + 2(2x + y)(5x − y) + (5x − y)² = (2x + y + 5x − y)²",
+       "= (7x)² = 49x²",
+       "b) (2x − y³)(2x + y³) = 4x² − y⁶; (2x − y²)(4x² + 2xy² + y⁴) = 8x³ − y⁶",
+       "Biểu thức = 4x² − y⁶ − (8x³ − y⁶) = −8x³ + 4x²"
+      ]
+     }
     },
     {
      "ma": "Ôn cuối năm 2",
      "trang": 135,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Cho đa thức P = x^2 − y^2 + 6x + 9. a) Phân tích đa thức P thành nhân tử. b) Sử dụng kết quả của câu a để tìm thương của phép chia đa thức P cho x + y + 3."
+     "de": "Cho đa thức P = x^2 − y^2 + 6x + 9. a) Phân tích đa thức P thành nhân tử. b) Sử dụng kết quả của câu a để tìm thương của phép chia đa thức P cho x + y + 3.",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "hoi": "Cho đa thức P = x² − y² + 6x + 9.\na) Phân tích đa thức P thành nhân tử.\nb) Sử dụng kết quả của câu a để tìm thương của phép chia đa thức P cho x + y + 3.\n(Gõ kết quả các ý theo thứ tự, cách nhau bằng dấu ;)",
+      "dap": [
+       "(x+3−y)(x+3+y);x+3−y"
+      ],
+      "phim": [
+       "x",
+       "y",
+       ";"
+      ],
+      "nhieu": [
+       "²",
+       "z",
+       "³"
+      ],
+      "loi_giai": [
+       "a) P = (x² + 6x + 9) − y² = (x + 3)² − y²",
+       "= (x + 3 − y)(x + 3 + y)",
+       "b) Thương = (x + 3 − y)(x + 3 + y) : (x + y + 3) = x + 3 − y"
+      ]
+     }
     },
     {
      "ma": "Ôn cuối năm 3",
      "trang": 135,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Cho đa thức f(x) = x^2 − 15x + 56. a) Phân tích đa thức f(x) thành nhân tử. b) Tìm x sao cho f(x) = 0."
+     "de": "Cho đa thức f(x) = x^2 − 15x + 56. a) Phân tích đa thức f(x) thành nhân tử. b) Tìm x sao cho f(x) = 0.",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "hoi": "Cho đa thức f(x) = x² − 15x + 56.\na) Phân tích đa thức f(x) thành nhân tử.\nb) Tìm x sao cho f(x) = 0.\n(Gõ kết quả câu a, rồi các giá trị của x theo thứ tự từ nhỏ đến lớn, cách nhau bằng dấu ;)",
+      "dap": [
+       "(x−7)(x−8);x=7;x=8",
+       "(x−7)(x−8);7;8"
+      ],
+      "phim": [
+       "x",
+       ";"
+      ],
+      "nhieu": [
+       "y",
+       "²",
+       "³"
+      ],
+      "loi_giai": [
+       "a) f(x) = x² − 7x − 8x + 56 = x(x − 7) − 8(x − 7)",
+       "= (x − 7)(x − 8)",
+       "b) f(x) = 0 khi (x − 7)(x − 8) = 0, tức là x − 7 = 0 hoặc x − 8 = 0",
+       "Vậy x = 7 hoặc x = 8"
+      ]
+     }
     },
     {
      "ma": "Ôn cuối năm 4",
      "trang": 135,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Cho phân thức P = (2x^3 + 6x^2)/(2x^3 − 18x). a) Viết điều kiện xác định và rút gọn phân thức P. b) Có thể tính giá trị của P tại x = −3 được không? Vì sao? c) Tính giá trị của phân thức P tại x = 4. d) Với các giá trị nguyên nào của x thì P nhận giá trị nguyên?"
+     "de": "Cho phân thức P = (2x^3 + 6x^2)/(2x^3 − 18x). a) Viết điều kiện xác định và rút gọn phân thức P. b) Có thể tính giá trị của P tại x = −3 được không? Vì sao? c) Tính giá trị của phân thức P tại x = 4. d) Với các giá trị nguyên nào của x thì P nhận giá trị nguyên?",
+     "ghep": {
+      "kieu": "O",
+      "sao": 10,
+      "hoi": "Cho phân thức P = (2x³ + 6x²)/(2x³ − 18x).\na) Viết điều kiện xác định và rút gọn phân thức P.\nb) Có thể tính giá trị của P tại x = −3 được không? Vì sao?\nc) Tính giá trị của phân thức P tại x = 4.\nd) Với các giá trị nguyên nào của x thì P nhận giá trị nguyên?\n(Câu d: với mỗi số nguyên x sau, P có nhận giá trị nguyên không?)",
+      "dong": [
+       {
+        "chu": "a) Điều kiện xác định: {0}",
+        "o": [
+         {
+          "dung": [
+           "x ≠ 0, x ≠ 3 và x ≠ −3"
+          ],
+          "sai": [
+           "x ≠ 3 và x ≠ −3",
+           "x ≠ 0 và x ≠ 3",
+           "x ≠ 0"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Rút gọn: P = {0}",
+        "o": [
+         {
+          "dung": [
+           "x/(x − 3)"
+          ],
+          "sai": [
+           "x/(x + 3)",
+           "1/(x − 3)",
+           "x²/(x − 3)"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "b) Có thể tính giá trị của P tại x = −3 không? {0}",
+        "o": [
+         {
+          "dung": [
+           "Không, vì x = −3 không thoả mãn điều kiện xác định"
+          ],
+          "sai": [
+           "Có, P = 1/2 (thay vào phân thức đã rút gọn)",
+           "Có, P = 0"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "c) Giá trị của P tại x = 4: {0}",
+        "o": [
+         {
+          "dung": [
+           "4"
+          ],
+          "sai": [
+           "4/7",
+           "−4",
+           "2"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "x = 0: {0}",
+        "o": [
+         {
+          "dung": [
+           "Không"
+          ],
+          "sai": [
+           "Có"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "x = 1: {0}",
+        "o": [
+         {
+          "dung": [
+           "Không"
+          ],
+          "sai": [
+           "Có"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "x = 2: {0}",
+        "o": [
+         {
+          "dung": [
+           "Có"
+          ],
+          "sai": [
+           "Không"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "x = 4: {0}",
+        "o": [
+         {
+          "dung": [
+           "Có"
+          ],
+          "sai": [
+           "Không"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "x = 6: {0}",
+        "o": [
+         {
+          "dung": [
+           "Có"
+          ],
+          "sai": [
+           "Không"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "x = 9: {0}",
+        "o": [
+         {
+          "dung": [
+           "Không"
+          ],
+          "sai": [
+           "Có"
+          ],
+          "hai": true
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "Ôn cuối năm 5",
      "trang": 135,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Cho biểu thức P = ((x + y)/(1 − xy) + (x − y)/(1 + xy)) : (1 + (x^2 + y^2 + 2x^2y^2)/(1 − x^2y^2)), trong đó x và y là hai biến thoả mãn điều kiện x^2y^2 − 1 ≠ 0. a) Tính mỗi tổng A = (x + y)/(1 − xy) + (x − y)/(1 + xy) và B = 1 + (x^2 + y^2 + 2x^2y^2)/(1 − x^2y^2). b) Từ kết quả câu a, hãy thu gọn P và giải thích tại sao giá trị của P không phụ thuộc vào giá trị của biến y. c) Chứng minh đẳng thức P = 1 − (1 − x)^2/(1 + x^2). d) Sử dụng câu c, hãy tìm các giá trị của x và y sao cho P = 1."
+     "de": "Cho biểu thức P = ((x + y)/(1 − xy) + (x − y)/(1 + xy)) : (1 + (x^2 + y^2 + 2x^2y^2)/(1 − x^2y^2)), trong đó x và y là hai biến thoả mãn điều kiện x^2y^2 − 1 ≠ 0. a) Tính mỗi tổng A = (x + y)/(1 − xy) + (x − y)/(1 + xy) và B = 1 + (x^2 + y^2 + 2x^2y^2)/(1 − x^2y^2). b) Từ kết quả câu a, hãy thu gọn P và giải thích tại sao giá trị của P không phụ thuộc vào giá trị của biến y. c) Chứng minh đẳng thức P = 1 − (1 − x)^2/(1 + x^2). d) Sử dụng câu c, hãy tìm các giá trị của x và y sao cho P = 1.",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 8,
+      "hoi": "Cho biểu thức P = ((x + y)/(1 − xy) + (x − y)/(1 + xy)) : (1 + (x² + y² + 2x²y²)/(1 − x²y²)), trong đó x và y là hai biến thoả mãn điều kiện x²y² − 1 ≠ 0.\na) Tính mỗi tổng A = (x + y)/(1 − xy) + (x − y)/(1 + xy) và B = 1 + (x² + y² + 2x²y²)/(1 − x²y²).\nb) Từ kết quả câu a, hãy thu gọn P và giải thích tại sao giá trị của P không phụ thuộc vào giá trị của biến y.\nc) Chứng minh đẳng thức P = 1 − (1 − x)²/(1 + x²).\nd) Sử dụng câu c, hãy tìm các giá trị của x và y sao cho P = 1.",
+      "buoc": [
+       "A = ((x + y)(1 + xy) + (x − y)(1 − xy))/(1 − x²y²) = (2x + 2xy²)/(1 − x²y²) = 2x(1 + y²)/(1 − x²y²)",
+       "B = (1 − x²y² + x² + y² + 2x²y²)/(1 − x²y²) = (1 + x² + y² + x²y²)/(1 − x²y²) = (1 + x²)(1 + y²)/(1 − x²y²)",
+       "P = A : B = 2x(1 + y²)/(1 − x²y²) · (1 − x²y²)/((1 + x²)(1 + y²)) = 2x/(1 + x²)",
+       "Biểu thức 2x/(1 + x²) không chứa y, nên giá trị của P không phụ thuộc vào giá trị của y",
+       "1 − (1 − x)²/(1 + x²) = (1 + x² − 1 + 2x − x²)/(1 + x²) = 2x/(1 + x²) = P",
+       "P = 1 khi (1 − x)²/(1 + x²) = 0, tức là (1 − x)² = 0, hay x = 1",
+       "Với x = 1, điều kiện x²y² − 1 ≠ 0 trở thành y² ≠ 1, tức là y ≠ 1 và y ≠ −1",
+       "Vậy P = 1 khi x = 1, y ≠ 1 và y ≠ −1"
+      ],
+      "nhieu": [
+       "A = ((x + y)(1 + xy) + (x − y)(1 − xy))/(1 − x²y²) = (2x + 2xy²)/(1 − x²y²) = 2x(1 − y²)/(1 − x²y²)",
+       "B = (1 − x²y² + x² + y² + 2x²y²)/(1 − x²y²) = (1 + x² + y² + x²y²)/(1 − x²y²) = (1 + x²)(1 − y²)/(1 − x²y²)",
+       "Vậy P = 1 khi x = 1, với mọi giá trị của y"
+      ],
+      "thu_tu_khac": [
+       [
+        1,
+        0,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+       ]
+      ]
+     }
     },
     {
      "ma": "Ôn cuối năm 6",
      "trang": 135,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Bảng giá cước của một hãng taxi: giá mở cửa (từ 0 đến 1 km) là 10 000 đồng; giá cước các kilômét tiếp theo (từ trên 1 km đến 30 km) là 13 600 đồng; giá cước từ kilômét thứ 31 là 11 000 đồng. a) Tính số tiền taxi phải trả khi di chuyển 35 km. b) Lập công thức tính số tiền taxi y (đồng) phải trả khi di chuyển x kilômét, với 1 < x ≤ 30. Từ đó tính số tiền taxi phải trả khi di chuyển 30 km. c) Nếu một người phải trả số tiền taxi là 268 400 đồng, hãy tính quãng đường người đó đã di chuyển bằng taxi."
+     "de": "Bảng giá cước của một hãng taxi: giá mở cửa (từ 0 đến 1 km) là 10 000 đồng; giá cước các kilômét tiếp theo (từ trên 1 km đến 30 km) là 13 600 đồng; giá cước từ kilômét thứ 31 là 11 000 đồng. a) Tính số tiền taxi phải trả khi di chuyển 35 km. b) Lập công thức tính số tiền taxi y (đồng) phải trả khi di chuyển x kilômét, với 1 < x ≤ 30. Từ đó tính số tiền taxi phải trả khi di chuyển 30 km. c) Nếu một người phải trả số tiền taxi là 268 400 đồng, hãy tính quãng đường người đó đã di chuyển bằng taxi.",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 5,
+      "hoi": "Bảng giá cước của một hãng taxi: giá mở cửa (từ 0 đến 1 km) là 10 000 đồng; giá cước các kilômét tiếp theo (từ trên 1 km đến 30 km) là 13 600 đồng; giá cước từ kilômét thứ 31 là 11 000 đồng.\na) Tính số tiền taxi phải trả khi di chuyển 35 km.\nb) Lập công thức tính số tiền taxi y (đồng) phải trả khi di chuyển x kilômét, với 1 < x ≤ 30. Từ đó tính số tiền taxi phải trả khi di chuyển 30 km.\nc) Nếu một người phải trả số tiền taxi là 268 400 đồng, hãy tính quãng đường người đó đã di chuyển bằng taxi.\n(Gõ theo thứ tự, cách nhau bằng dấu ;: số tiền ở câu a (đồng), công thức tính y theo x, số tiền đi 30 km (đồng), rồi quãng đường ở câu c (km).)",
+      "dap": [
+       "459400;y=13600x−3600;404400;20",
+       "459400;y=10000+13600(x−1);404400;20",
+       "459400;13600x−3600;404400;20",
+       "459400;10000+13600(x−1);404400;20"
+      ],
+      "phim": [
+       "x",
+       "y",
+       ";"
+      ],
+      "nhieu": [
+       "z",
+       "²",
+       "³"
+      ],
+      "loi_giai": [
+       "a) Số tiền đi 35 km (đồng) = 10000 + 29 · 13600 + 5 · 11000 = 10000 + 394400 + 55000 = 459400",
+       "b) Với 1 < x ≤ 30, số tiền phải trả y = 10000 + 13600(x − 1) = 13600x − 3600",
+       "Đi 30 km thì số tiền phải trả (đồng) = 13600 · 30 − 3600 = 404400",
+       "c) Vì 268400 < 404400 nên quãng đường người đó đi không quá 30 km",
+       "Từ 13600x − 3600 = 268400 suy ra x = (268400 + 3600) : 13600 = 20"
+      ]
+     }
     },
     {
      "ma": "Ôn cuối năm 7",
@@ -2360,35 +5840,502 @@
      "trang": 136,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Cho hình bình hành ABCD, O là giao điểm của hai đường chéo AC và BD. Gọi H là trung điểm của OB, K là trung điểm của OD. a) Hỏi tứ giác AHCK là hình gì? b) Hình bình hành ABCD phải thoả mãn điều kiện gì để tứ giác AHCK là: một hình thoi? một hình chữ nhật? một hình vuông?"
+     "de": "Cho hình bình hành ABCD, O là giao điểm của hai đường chéo AC và BD. Gọi H là trung điểm của OB, K là trung điểm của OD. a) Hỏi tứ giác AHCK là hình gì? b) Hình bình hành ABCD phải thoả mãn điều kiện gì để tứ giác AHCK là: một hình thoi? một hình chữ nhật? một hình vuông?",
+     "ghep": {
+      "kieu": "O",
+      "sao": 5,
+      "hoi": "Cho hình bình hành ABCD, O là giao điểm của hai đường chéo AC và BD. Gọi H là trung điểm của OB, K là trung điểm của OD.\na) Hỏi tứ giác AHCK là hình gì?\nb) Hình bình hành ABCD phải thoả mãn điều kiện gì để tứ giác AHCK là: một hình thoi? một hình chữ nhật? một hình vuông?",
+      "dong": [
+       {
+        "chu": "a) Tứ giác AHCK là {0}",
+        "o": [
+         {
+          "dung": [
+           "hình bình hành"
+          ],
+          "sai": [
+           "hình thang cân",
+           "hình chữ nhật",
+           "hình thoi"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "vì hai đường chéo AC và HK {0}",
+        "o": [
+         {
+          "dung": [
+           "cắt nhau tại trung điểm O của mỗi đường"
+          ],
+          "sai": [
+           "bằng nhau",
+           "vuông góc với nhau"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "b) AHCK là hình thoi khi và chỉ khi hình bình hành ABCD có {0}",
+        "o": [
+         {
+          "dung": [
+           "AC ⊥ BD (ABCD là hình thoi)"
+          ],
+          "sai": [
+           "AC = BD (ABCD là hình chữ nhật)",
+           "BD = 2AC",
+           "AC = 2BD"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "AHCK là hình chữ nhật khi và chỉ khi hình bình hành ABCD có {0}",
+        "o": [
+         {
+          "dung": [
+           "BD = 2AC"
+          ],
+          "sai": [
+           "AC = BD (ABCD là hình chữ nhật)",
+           "AC = 2BD",
+           "AC ⊥ BD (ABCD là hình thoi)"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "AHCK là hình vuông khi và chỉ khi hình bình hành ABCD có {0}",
+        "o": [
+         {
+          "dung": [
+           "AC ⊥ BD và BD = 2AC"
+          ],
+          "sai": [
+           "AC ⊥ BD và AC = BD (ABCD là hình vuông)",
+           "BD = 2AC",
+           "AC ⊥ BD"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "Ôn cuối năm 9",
      "trang": 136,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Cho tam giác ABC. Các đường trung tuyến AF, BE và CD cắt nhau tại G. Gọi I, K theo thứ tự là trung điểm của BG và CG. a) Chứng minh rằng tứ giác DEKI là hình bình hành. b) Biết AF = 6 cm. Tính độ dài các đoạn thẳng DI và EK."
+     "de": "Cho tam giác ABC. Các đường trung tuyến AF, BE và CD cắt nhau tại G. Gọi I, K theo thứ tự là trung điểm của BG và CG. a) Chứng minh rằng tứ giác DEKI là hình bình hành. b) Biết AF = 6 cm. Tính độ dài các đoạn thẳng DI và EK.",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 6,
+      "hoi": "Cho tam giác ABC. Các đường trung tuyến AF, BE và CD cắt nhau tại G. Gọi I, K theo thứ tự là trung điểm của BG và CG.\na) Chứng minh rằng tứ giác DEKI là hình bình hành.\nb) Biết AF = 6 cm. Tính độ dài các đoạn thẳng DI và EK.",
+      "buoc": [
+       "D, E lần lượt là trung điểm của AB, AC nên DE là đường trung bình của tam giác ABC, suy ra DE // BC và DE = BC/2",
+       "I, K lần lượt là trung điểm của GB, GC nên IK là đường trung bình của tam giác GBC, suy ra IK // BC và IK = BC/2",
+       "Do đó DE // IK và DE = IK, nên tứ giác DEKI là hình bình hành",
+       "G là trọng tâm của tam giác ABC nên AG = (2/3)AF = (2/3) · 6 = 4 (cm)",
+       "E, K lần lượt là trung điểm của CA, CG nên EK là đường trung bình của tam giác ACG, suy ra EK = AG/2 = 2 (cm)",
+       "DEKI là hình bình hành nên DI = EK = 2 (cm)"
+      ],
+      "nhieu": [
+       "G là trọng tâm của tam giác ABC nên AG = (1/3)AF = (1/3) · 6 = 2 (cm)",
+       "E, K lần lượt là trung điểm của CA, CG nên EK là đường trung bình của tam giác ACG, suy ra EK = AF/2 = 3 (cm)"
+      ],
+      "thu_tu_khac": [
+       [
+        1,
+        0,
+        2,
+        3,
+        4,
+        5
+       ],
+       [
+        3,
+        4,
+        0,
+        1,
+        2,
+        5
+       ],
+       [
+        3,
+        4,
+        1,
+        0,
+        2,
+        5
+       ]
+      ]
+     }
     },
     {
      "ma": "Ôn cuối năm 10",
      "trang": 136,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Hình vẽ ở SGK trang 136 mô tả một dụng cụ đo bề dày (nhỏ hơn 1 cm) của một số sản phẩm. Dụng cụ này gồm một thước AC = 10 cm, có vạch chia đến 1 mm, gắn với một bản kim loại có cạnh thẳng AB sao cho khoảng cách BC = 1 cm. Muốn đo bề dày của vật, ta kẹp vật vào giữa bản kim loại và thước (đáy của vật áp vào bề mặt của thước AC). Khi đó trên thước ta đọc được \"bề dày\" d của vật (trên hình vẽ ta có d = 5,5 mm). Hãy giải thích tại sao với dụng cụ đó, ta có thể đo được bề dày d của các vật (với d < 10 mm)."
+     "de": "Hình sau mô tả một dụng cụ đo bề dày (nhỏ hơn 1 cm) của một số sản phẩm. Dụng cụ này gồm một thước AC = 10 cm, có vạch chia đến 1 mm, gắn với một bản kim loại có cạnh thẳng AB sao cho khoảng cách BC = 1 cm. Muốn đo bề dày của vật, ta kẹp vật vào giữa bản kim loại và thước (đáy của vật áp vào bề mặt của thước AC). Khi đó trên thước ta đọc được \"bề dày\" d của vật (trên hình vẽ ta có d = 5,5 mm). Hãy giải thích tại sao với dụng cụ đó, ta có thể đo được bề dày d của các vật (với d < 10 mm).",
+     "hinh": [
+      "toan8t2/OT10-tr136.webp"
+     ],
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 6,
+      "buoc": [
+       "Gọi B′ là điểm vật chạm cạnh AB và C′ là điểm trên thước ngay dưới B′; khi đó bề dày của vật là d = B′C′, còn số đọc trên thước là độ dài AC′",
+       "B′C′ // BC vì cùng vuông góc với AC",
+       "Suy ra ΔAB′C′ ᔕ ΔABC, nên B′C′/BC = AC′/AC",
+       "Vì BC = 1 cm và AC = 10 cm nên B′C′ = AC′/10",
+       "Vậy số đọc AC′ tính theo xentimét bằng bề dày d tính theo milimét; chẳng hạn AC′ = 5,5 cm thì d = 0,55 cm = 5,5 mm",
+       "Với d < 10 mm thì AC′ < 10 cm, nên điểm C′ vẫn nằm trên thước AC và đọc được d"
+      ],
+      "nhieu": [
+       "Suy ra ΔAB′C′ ᔕ ΔABC, nên B′C′/BC = AC/AC′",
+       "Vì BC = 1 cm và AC = 10 cm nên B′C′ = 10 · AC′"
+      ]
+     }
     },
     {
      "ma": "Ôn cuối năm 11",
      "trang": 136,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Cho tam giác ABC cân tại đỉnh A. Hai đường phân giác BE và CF của tam giác ABC cắt nhau tại điểm I. a) Chứng minh ΔBIC ᔕ ΔEIF. b) Chứng minh FB^2 = FI · FC. c) Cho biết AB = 6 cm, BC = 3 cm. Tính EF."
+     "de": "Cho tam giác ABC cân tại đỉnh A. Hai đường phân giác BE và CF của tam giác ABC cắt nhau tại điểm I. a) Chứng minh ΔBIC ᔕ ΔEIF. b) Chứng minh FB^2 = FI · FC. c) Cho biết AB = 6 cm, BC = 3 cm. Tính EF.",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 8,
+      "hoi": "Cho tam giác ABC cân tại đỉnh A. Hai đường phân giác BE và CF của tam giác ABC cắt nhau tại điểm I.\na) Chứng minh ΔBIC ᔕ ΔEIF.\nb) Chứng minh FB² = FI · FC.\nc) Cho biết AB = 6 cm, BC = 3 cm. Tính EF.",
+      "buoc": [
+       "ΔABE và ΔACF có góc A chung, AB = AC, góc ABE = góc ACF (bằng nửa hai góc ở đáy bằng nhau), nên ΔABE = ΔACF (g.c.g), suy ra AE = AF",
+       "Từ AE = AF và AC = AB suy ra AE/AC = AF/AB, nên EF // BC (định lí Thalès đảo)",
+       "Vì EF // BC nên góc IEF = góc IBC và góc IFE = góc ICB (so le trong), do đó ΔBIC ᔕ ΔEIF (g.g)",
+       "Góc FBI = (1/2) · góc ABC, góc FCB = (1/2) · góc ACB, mà góc ABC = góc ACB nên góc FBI = góc FCB",
+       "ΔFBI và ΔFCB có góc F chung, góc FBI = góc FCB, nên ΔFBI ᔕ ΔFCB (g.g)",
+       "Suy ra FB/FC = FI/FB, tức là FB² = FI · FC",
+       "BE là đường phân giác của tam giác ABC nên AE/EC = AB/BC = 6/3 = 2, suy ra AE = (2/3) · AC = 4 (cm)",
+       "Vì EF // BC nên EF/BC = AE/AC = 4/6, suy ra EF = 3 · 4/6 = 2 (cm)"
+      ],
+      "nhieu": [
+       "Vì tam giác ABC cân nên hai đường phân giác BE, CF cũng là đường trung tuyến, suy ra EF là đường trung bình và EF // BC",
+       "ΔFBI và ΔFCB có góc F chung, góc FBI = góc FCB, nên ΔFBI ᔕ ΔFBC (g.g)",
+       "BE là đường phân giác của tam giác ABC nên AE/EC = BC/AB = 3/6 = 1/2, suy ra AE = (1/3) · AC = 2 (cm)"
+      ],
+      "thu_tu_khac": [
+       [
+        0,
+        1,
+        2,
+        6,
+        7,
+        3,
+        4,
+        5
+       ],
+       [
+        3,
+        4,
+        5,
+        0,
+        1,
+        2,
+        6,
+        7
+       ]
+      ]
+     }
     },
     {
      "ma": "Ôn cuối năm 12",
      "trang": 137,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Cho tam giác ABC không phải là tam giác vuông, có các đường cao BE, CF cắt nhau tại điểm H. a) Giả sử ABC là tam giác nhọn. Chứng minh rằng ΔABE ᔕ ΔACF; từ đó suy ra ΔAEF ᔕ ΔABC. Kết quả đó còn đúng không, nếu ABC là tam giác tù (chỉ cần xét 2 trường hợp: góc A tù và góc B tù)? b) Cho biết AB = 10 cm, BC = 15 cm và BE = 8 cm. Tính EF."
+     "de": "Cho tam giác ABC không phải là tam giác vuông, có các đường cao BE, CF cắt nhau tại điểm H. a) Giả sử ABC là tam giác nhọn. Chứng minh rằng ΔABE ᔕ ΔACF; từ đó suy ra ΔAEF ᔕ ΔABC. Kết quả đó còn đúng không, nếu ABC là tam giác tù (chỉ cần xét 2 trường hợp: góc A tù và góc B tù)? b) Cho biết AB = 10 cm, BC = 15 cm và BE = 8 cm. Tính EF.",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 7,
+      "hoi": "Cho tam giác ABC không phải là tam giác vuông, có các đường cao BE, CF cắt nhau tại điểm H.\na) Giả sử ABC là tam giác nhọn. Chứng minh rằng ΔABE ᔕ ΔACF; từ đó suy ra ΔAEF ᔕ ΔABC. Kết quả đó còn đúng không, nếu ABC là tam giác tù (chỉ cần xét 2 trường hợp: góc A tù và góc B tù)?\nb) Cho biết AB = 10 cm, BC = 15 cm và BE = 8 cm. Tính EF.",
+      "buoc": [
+       "ΔABE vuông tại E và ΔACF vuông tại F có chung góc A, nên ΔABE ᔕ ΔACF (g.g)",
+       "Suy ra AB/AC = AE/AF, hay AE/AB = AF/AC",
+       "ΔAEF và ΔABC có chung góc A và AE/AB = AF/AC, nên ΔAEF ᔕ ΔABC (c.g.c)",
+       "Nếu góc A tù thì E, F nằm trên tia đối của tia AC, AB; góc BAE = góc CAF (cùng bù với góc BAC) và góc EAF = góc BAC (đối đỉnh), nên hai kết quả trên vẫn đúng",
+       "Nếu góc B tù thì E nằm trên cạnh AC, F nằm trên tia đối của tia BA; góc BAE và góc CAF đều là góc BAC, nên hai kết quả trên vẫn đúng",
+       "Tam giác ABE vuông tại E nên AE² = AB² − BE² = 10² − 8² = 36, suy ra AE = 6 (cm)",
+       "Từ ΔAEF ᔕ ΔABC suy ra EF/BC = AE/AB, nên EF = 15 · 6/10 = 9 (cm)"
+      ],
+      "nhieu": [
+       "ΔAEF và ΔABC có chung góc A và AE/AC = AF/AB, nên ΔAEF ᔕ ΔABC (c.g.c)",
+       "Tam giác ABE vuông tại E nên AE² = AB² + BE² = 10² + 8² = 164",
+       "Nếu góc A tù hay góc B tù thì kết quả trên không còn đúng"
+      ],
+      "thu_tu_khac": [
+       [
+        0,
+        1,
+        2,
+        3,
+        5,
+        4,
+        6
+       ],
+       [
+        0,
+        1,
+        2,
+        3,
+        5,
+        6,
+        4
+       ],
+       [
+        0,
+        1,
+        2,
+        4,
+        3,
+        5,
+        6
+       ],
+       [
+        0,
+        1,
+        2,
+        4,
+        5,
+        3,
+        6
+       ],
+       [
+        0,
+        1,
+        2,
+        4,
+        5,
+        6,
+        3
+       ],
+       [
+        0,
+        1,
+        2,
+        5,
+        3,
+        4,
+        6
+       ],
+       [
+        0,
+        1,
+        2,
+        5,
+        3,
+        6,
+        4
+       ],
+       [
+        0,
+        1,
+        2,
+        5,
+        4,
+        3,
+        6
+       ],
+       [
+        0,
+        1,
+        2,
+        5,
+        4,
+        6,
+        3
+       ],
+       [
+        0,
+        1,
+        2,
+        5,
+        6,
+        3,
+        4
+       ],
+       [
+        0,
+        1,
+        2,
+        5,
+        6,
+        4,
+        3
+       ],
+       [
+        0,
+        1,
+        5,
+        2,
+        3,
+        4,
+        6
+       ],
+       [
+        0,
+        1,
+        5,
+        2,
+        3,
+        6,
+        4
+       ],
+       [
+        0,
+        1,
+        5,
+        2,
+        4,
+        3,
+        6
+       ],
+       [
+        0,
+        1,
+        5,
+        2,
+        4,
+        6,
+        3
+       ],
+       [
+        0,
+        1,
+        5,
+        2,
+        6,
+        3,
+        4
+       ],
+       [
+        0,
+        1,
+        5,
+        2,
+        6,
+        4,
+        3
+       ],
+       [
+        0,
+        5,
+        1,
+        2,
+        3,
+        4,
+        6
+       ],
+       [
+        0,
+        5,
+        1,
+        2,
+        3,
+        6,
+        4
+       ],
+       [
+        0,
+        5,
+        1,
+        2,
+        4,
+        3,
+        6
+       ],
+       [
+        0,
+        5,
+        1,
+        2,
+        4,
+        6,
+        3
+       ],
+       [
+        0,
+        5,
+        1,
+        2,
+        6,
+        3,
+        4
+       ],
+       [
+        0,
+        5,
+        1,
+        2,
+        6,
+        4,
+        3
+       ],
+       [
+        5,
+        0,
+        1,
+        2,
+        3,
+        4,
+        6
+       ],
+       [
+        5,
+        0,
+        1,
+        2,
+        3,
+        6,
+        4
+       ],
+       [
+        5,
+        0,
+        1,
+        2,
+        4,
+        3,
+        6
+       ],
+       [
+        5,
+        0,
+        1,
+        2,
+        4,
+        6,
+        3
+       ],
+       [
+        5,
+        0,
+        1,
+        2,
+        6,
+        3,
+        4
+       ],
+       [
+        5,
+        0,
+        1,
+        2,
+        6,
+        4,
+        3
+       ]
+      ]
+     }
     },
     {
      "ma": "Ôn cuối năm 13",
@@ -2402,14 +6349,197 @@
      "trang": 137,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Báo điện tử VnExpress đã khảo sát ý kiến của bạn đọc về phương án xử lí cầu Long Biên với câu hỏi \"Bạn ủng hộ phương án xử lí nào với cầu Long Biên?\". Người trả lời chỉ được chọn một trong ba phương án: \"Bảo tồn\", \"Vừa bảo tồn vừa sử dụng\", \"Di dời, xây cầu mới\". a) Dữ liệu thu được thuộc loại nào? b) Tỉ lệ lựa chọn các phương án được cho trong biểu đồ hình quạt tròn (SGK trang 137): Bảo tồn 34%, Vừa bảo tồn vừa sử dụng 54%, Di dời xây cầu mới 12%. Biết tổng số lượt bạn đọc tham gia trả lời câu hỏi là 1 819. Tính số lượt bạn đọc lựa chọn mỗi phương án."
+     "de": "Báo điện tử VnExpress đã khảo sát ý kiến của bạn đọc về phương án xử lí cầu Long Biên với câu hỏi \"Bạn ủng hộ phương án xử lí nào với cầu Long Biên?\". Người trả lời chỉ được chọn một trong ba phương án: \"Bảo tồn\", \"Vừa bảo tồn vừa sử dụng\", \"Di dời, xây cầu mới\". a) Dữ liệu thu được thuộc loại nào? b) Tỉ lệ lựa chọn các phương án được cho trong biểu đồ hình quạt tròn: Bảo tồn 34%, Vừa bảo tồn vừa sử dụng 54%, Di dời xây cầu mới 12%. Biết tổng số lượt bạn đọc tham gia trả lời câu hỏi là 1 819. Tính số lượt bạn đọc lựa chọn mỗi phương án.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "hoi": "Báo điện tử VnExpress đã khảo sát ý kiến của bạn đọc về phương án xử lí cầu Long Biên với câu hỏi \"Bạn ủng hộ phương án xử lí nào với cầu Long Biên?\". Người trả lời chỉ được chọn một trong ba phương án: \"Bảo tồn\", \"Vừa bảo tồn vừa sử dụng\", \"Di dời, xây cầu mới\".\na) Dữ liệu thu được thuộc loại nào?\nb) Tỉ lệ lựa chọn các phương án được cho trong biểu đồ hình quạt tròn: Bảo tồn 34%, Vừa bảo tồn vừa sử dụng 54%, Di dời xây cầu mới 12%. Biết tổng số lượt bạn đọc tham gia trả lời câu hỏi là 1 819. Tính số lượt bạn đọc lựa chọn mỗi phương án.\n(Số lượt làm tròn đến hàng đơn vị.)",
+      "dong": [
+       {
+        "chu": "a) Dữ liệu thu được là {0}",
+        "o": [
+         {
+          "dung": [
+           "dữ liệu không là số, không thể sắp thứ tự"
+          ],
+          "sai": [
+           "dữ liệu không là số, có thể sắp thứ tự",
+           "số liệu rời rạc",
+           "số liệu liên tục"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "b) Số lượt chọn \"Bảo tồn\": {0}",
+        "o": [
+         {
+          "dung": [
+           "khoảng 618 lượt"
+          ],
+          "sai": [
+           "khoảng 612 lượt",
+           "khoảng 535 lượt"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Số lượt chọn \"Vừa bảo tồn vừa sử dụng\": {0}",
+        "o": [
+         {
+          "dung": [
+           "khoảng 982 lượt"
+          ],
+          "sai": [
+           "khoảng 972 lượt",
+           "khoảng 337 lượt"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Số lượt chọn \"Di dời, xây cầu mới\": {0}",
+        "o": [
+         {
+          "dung": [
+           "khoảng 218 lượt"
+          ],
+          "sai": [
+           "khoảng 216 lượt",
+           "khoảng 1516 lượt"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "Ôn cuối năm 15",
      "trang": 137,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "de": "Một túi đựng 24 viên bi giống hệt nhau chỉ khác màu, trong đó có 9 viên bi màu đỏ, 6 viên bi màu xanh, 4 viên bi màu vàng và 5 viên bi màu đen. Bạn An lấy ngẫu nhiên một viên bi từ trong túi. a) Có bao nhiêu kết quả có thể? Các kết quả có thể này có đồng khả năng không? Tại sao? b) Tính khả năng để xảy ra mỗi kết quả có thể đó. c) Tính xác suất để An lấy được: viên bi màu đỏ hoặc màu vàng; viên bi màu đen hoặc màu xanh; viên bi không có màu đen."
+     "de": "Một túi đựng 24 viên bi giống hệt nhau chỉ khác màu, trong đó có 9 viên bi màu đỏ, 6 viên bi màu xanh, 4 viên bi màu vàng và 5 viên bi màu đen. Bạn An lấy ngẫu nhiên một viên bi từ trong túi. a) Có bao nhiêu kết quả có thể? Các kết quả có thể này có đồng khả năng không? Tại sao? b) Tính khả năng để xảy ra mỗi kết quả có thể đó. c) Tính xác suất để An lấy được: viên bi màu đỏ hoặc màu vàng; viên bi màu đen hoặc màu xanh; viên bi không có màu đen.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 8,
+      "hoi": "Một túi đựng 24 viên bi giống hệt nhau chỉ khác màu, trong đó có 9 viên bi màu đỏ, 6 viên bi màu xanh, 4 viên bi màu vàng và 5 viên bi màu đen. Bạn An lấy ngẫu nhiên một viên bi từ trong túi.\na) Có bao nhiêu kết quả có thể? Các kết quả có thể này có đồng khả năng không? Tại sao?\nb) Tính khả năng để xảy ra mỗi kết quả có thể đó.\nc) Tính xác suất để An lấy được: viên bi màu đỏ hoặc màu vàng; viên bi màu đen hoặc màu xanh; viên bi không có màu đen.",
+      "dong": [
+       {
+        "chu": "a) Coi mỗi viên bi là một kết quả có thể. Số kết quả có thể là {0}",
+        "o": [
+         {
+          "dung": [
+           "24"
+          ],
+          "sai": [
+           "4",
+           "9"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Các kết quả có thể đó {0}",
+        "o": [
+         {
+          "dung": [
+           "đồng khả năng, vì các viên bi giống hệt nhau, chỉ khác màu"
+          ],
+          "sai": [
+           "không đồng khả năng, vì số viên bi mỗi màu khác nhau"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Nếu chỉ xét màu thì có 4 kết quả (đỏ, xanh, vàng, đen); bốn kết quả này {0}",
+        "o": [
+         {
+          "dung": [
+           "không đồng khả năng, vì số viên bi mỗi màu khác nhau"
+          ],
+          "sai": [
+           "đồng khả năng, vì các viên bi giống hệt nhau, chỉ khác màu"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "b) Khả năng lấy được mỗi viên bi là {0}",
+        "o": [
+         {
+          "dung": [
+           "1/24"
+          ],
+          "sai": [
+           "1/4",
+           "1/9"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Nếu chỉ xét màu, khả năng lấy được viên bi đỏ, xanh, vàng, đen lần lượt là {0}",
+        "o": [
+         {
+          "dung": [
+           "3/8; 1/4; 1/6; 5/24"
+          ],
+          "sai": [
+           "1/4; 1/4; 1/4; 1/4",
+           "1/9; 1/6; 1/4; 1/5"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "c) Xác suất lấy được viên bi màu đỏ hoặc màu vàng: {0}",
+        "o": [
+         {
+          "dung": [
+           "13/24"
+          ],
+          "sai": [
+           "1/2",
+           "9/24"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Xác suất lấy được viên bi màu đen hoặc màu xanh: {0}",
+        "o": [
+         {
+          "dung": [
+           "11/24"
+          ],
+          "sai": [
+           "1/2",
+           "5/24"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Xác suất lấy được viên bi không có màu đen: {0}",
+        "o": [
+         {
+          "dung": [
+           "19/24"
+          ],
+          "sai": [
+           "3/4",
+           "5/24"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     }
    ]
   }
