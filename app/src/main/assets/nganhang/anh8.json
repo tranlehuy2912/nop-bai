@@ -2,7 +2,7 @@
  "nguon": "anh8",
  "mon": "Tiếng Anh",
  "ten": "SGK Tiếng Anh 8",
- "ban": 12,
+ "ban": 13,
  "doan_van": {
   "1.GS1": "<b>I'm keen on doing DIY (do-it-yourself).</b>\nTom: Hi, Trang. Surprised to see you. What brings you here?\nTrang: Oh, hello Tom. I'm looking for a knitting kit.\nTom: A knitting kit? I didn't know you like knitting.\nTrang: Actually, I'm keen on many DIY activities. In my leisure time, I love knitting, building dollhouses, and making paper flowers.\nTom: I see. So, you like spending time on your own.\nTrang: Yeah. What do you do in your free time?\nTom: I'm a bit different. I usually hang out with my friends. We go to the cinema, go cycling, or play sport in the park.\nTrang: You love spending free time with other people, don't you?\nTom: That's right. By the way, would you like to go to the cinema with me and Mark this Sunday? There's a new comedy at New World Cinema.\nTrang: Yes, I'd love to. Can I ask Mai to join us?\nTom: Sure. Let's meet outside the cinema at 9 a.m.",
   "1.C4": "Sakura (Kyoto, Japan): Origami is the art of paper folding. I love doing it on my own in my free time. With just some sheets of paper, I can create almost anything: flowers, birds, or fans. Doing origami helps me to relax.\nEric (St. Gallen, Switzerland): My home town has some famous ski resorts. I'm into snowboarding and usually go to a nearby ski resort with my parents at weekends. Snowboarding improves my overall health and balance.\nLan (Quang Binh, Viet Nam): I'm keen on playing sport, especially badminton. My best friend lives next door, so we play badminton almost every afternoon. It's an easy sport, and it also improves my muscle strength and helps reduce stress.",
@@ -12418,7 +12418,7 @@
      "trang": 53,
      "nhom": "A Closer Look 2",
      "dang": "CAU_NHO",
-     "dap_an": "A: The → Ø (máy in families thay cho people, xem ghi chú)",
+     "dap_an": "A: The → Ø (câu nói chung về các gia đình Việt Nam nên không dùng the. Sách in \"The Vietnamese people\": câu đó vẫn đúng, vì the Vietnamese people là cả dân tộc Việt Nam, nên trên máy đổi thành families)",
      "loai_dap_an": "DAP_SO",
      "ghep": {
       "kieu": "O",
@@ -12642,7 +12642,7 @@
      "trang": 54,
      "nhom": "A Closer Look 2",
      "dang": "CAU_NHO",
-     "dap_an": "the / Ø (cả hai đều đúng; cả ba nguồn lời giải ghi the)",
+     "dap_an": "the (Ø cũng đúng)",
      "loai_dap_an": "DAP_SO",
      "doan": "5.CL2-4",
      "ghep": {
