@@ -2,7 +2,7 @@
  "nguon": "toan8t1",
  "mon": "Toán",
  "ten": "SGK Toán 8 — tập một",
- "ban": 5,
+ "ban": 6,
  "cac_bai": [
   {
    "chuong": "Chương I. Đa thức",
@@ -13994,6 +13994,13 @@
      "nhom": "Vận dụng",
      "dang": "CAU_NHO",
      "bo_may": "thu thập dữ liệu thực tế"
+    },
+    {
+     "ma": "GeoGebra vẽ hình - Luyện tập 1 (tr.116)",
+     "de": "Sau khi vẽ hình chữ nhật ABCE bằng phần mềm GeoGebra (HĐ1: dùng các công cụ Đoạn thẳng, Đường vuông góc, Giao điểm của 2 đối tượng rồi nối B với C, C với E, E với A): a) Dùng công cụ Góc để kiểm tra các góc của tứ giác ABCE có vuông không. b) Lưu hình vẽ ở HĐ1 thành tệp ảnh hcn.png. c) Tương tự, hãy vẽ hình vuông ABCE có cạnh 4 cm.",
+     "trang": 116,
+     "nhom": "Luyện tập",
+     "dang": "CAU_NHO"
     }
    ]
   }

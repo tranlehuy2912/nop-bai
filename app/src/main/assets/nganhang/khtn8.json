@@ -2,7 +2,7 @@
  "nguon": "khtn8",
  "mon": "Khoa học tự nhiên",
  "ten": "SGK Khoa học tự nhiên 8",
- "ban": 7,
+ "ban": 8,
  "cac_bai": [
   {
    "chuong": "Mở đầu",
@@ -10199,6 +10199,13 @@
        }
       ]
      }
+    },
+    {
+     "ma": "B28.C7",
+     "trang": 114,
+     "nhom": "Câu hỏi",
+     "dang": "CAU_NHO",
+     "de": "Thí nghiệm (Hình 28.2, SGK trang 113): hai ống nghiệm đựng nước, ống (1) có gắn viên sáp ở đáy, ống (2) có gắn viên sáp ở miệng ống. Đun nóng nước ở gần miệng ống nghiệm (1), quan sát xem miếng sáp có bị nóng chảy hay không (Hình 28.2a). Đun nóng đáy ống nghiệm (2) một thời gian dài gần bằng thời gian đun nóng ống nghiệm (1), quan sát xem viên sáp có bị nóng chảy hay không (Hình 28.2b). Hãy giải thích hiện tượng xảy ra trong hai thí nghiệm trên."
     }
    ]
   },
