@@ -100,8 +100,8 @@ object NganHang {
      * cho nao chu hong. Sach in nham dap an thi ghi dap an dung (6.34c, 7.4a, 7.16, 8.8b
      * tap hai; 6.15, 45.5 KHTN...). Hai de in nham them ngoac nhu tren: Trac nghiem 8
      * trang 54 tap mot (khong phuong an nao dung) va On cuoi nam 7 (dao hai van toc). Cau
-     * sach khong giai ("HS tự làm", "tuỳ HS") thi khong co hai truong nay. Dap an khong
-     * bao gio hien cho Le Hoa.
+     * sach khong giai ("HS tự làm", "tuỳ HS") thi khong co hai truong nay. Tu 2/10/2026 Le
+     * Hoa doc duoc dap an o man Cau da lam dung; ai doc no va sua o dau, xem [CauHoi.dapAn].
      *
      * SBT KHTN KHAC SGK KHTN O MA CAU. SGK khong in so cau nen phai tu dat ma ("B12.C3",
      * xem duoi), con SBT in so tung cau ("11.17"), nen ma la so in va tach y theo cung
