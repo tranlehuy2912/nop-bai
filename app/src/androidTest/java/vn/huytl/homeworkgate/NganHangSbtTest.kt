@@ -179,10 +179,14 @@ class NganHangSbtTest {
      * Dap an in cuoi sach, nap ngay 27/9/2026. Cau trac nghiem bam tren may phai co dung
      * mot chu, va chu do phai la mot phuong an co trong de: sai o day la man Giai de cham
      * sai bai dung cua con, im lang.
+     *
+     * sbtkhtn8 tu 209 xuong 207 ngay 6/10/2026: 28.10 va 28.15a (sach dap "D", phuong an "Ca
+     * ba") gio lam tren may bang tung dong Co/Khong, nen dap an sach doi thanh chu tra loi day
+     * du, loai LOI_GIAI (ghep-nhap/ghep/sbtkhtn8/chuong6_sua_dap_an.py).
      */
     @Test
     fun trac_nghiem_bam_duoc_co_mot_chu_nam_trong_de() {
-        val soBam = mapOf("sbttoan8t1" to 38, "sbttoan8t2" to 35, "sbtkhtn8" to 209)
+        val soBam = mapOf("sbttoan8t1" to 38, "sbttoan8t2" to 35, "sbtkhtn8" to 207)
         for ((nguon, so) in soBam) {
             val tn = tatCaCau(nguon).filter { it.bamTrenMay }
             assertEquals("$nguon: so cau trac nghiem bam duoc", so, tn.size)

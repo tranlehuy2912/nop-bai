@@ -2,7 +2,7 @@
  "nguon": "sbtkhtn8",
  "mon": "Khoa học tự nhiên",
  "ten": "SBT Khoa học tự nhiên 8",
- "ban": 13,
+ "ban": 14,
  "cac_bai": [
   {
    "chuong": "Chương I. Phản ứng hoá học",
@@ -17505,7 +17505,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "D",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Tính chất nào sau đây không phải của phân tử?",
+      "cac": [
+       "Chuyển động không ngừng",
+       "Chuyển động càng chậm thì nhiệt độ của vật càng thấp",
+       "Giữa các phân tử có lực tương tác",
+       "Giữa các phân tử cấu tạo nên vật không có khoảng cách"
+      ],
+      "dap": "D"
+     }
     },
     {
      "ma": "26.2",
@@ -17514,7 +17526,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "B",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Trong các hiện tượng sau đây, hiện tượng nào không phải do chuyển động hỗn loạn của các phân tử gây ra?",
+      "cac": [
+       "Đường tan vào nước",
+       "Sự tạo thành gió",
+       "Quả bóng bay dù được buộc thật chặt vẫn xẹp dần theo thời gian",
+       "Sự khuếch tán của dung dịch copper sulfate vào nước"
+      ],
+      "dap": "B"
+     }
     },
     {
      "ma": "26.3",
@@ -17523,7 +17547,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "D",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Câu nào sau đây nói về nhiệt năng của một vật là đúng?",
+      "cac": [
+       "Chỉ những vật có nhiệt độ cao mới có nhiệt năng",
+       "Chỉ những vật chuyển động mới có nhiệt năng",
+       "Chỉ những vật có khối lượng lớn mới có nhiệt năng",
+       "Mọi vật đều có nhiệt năng"
+      ],
+      "dap": "D"
+     }
     },
     {
      "ma": "26.4",
@@ -17532,7 +17568,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "D",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Một viên bi đang lăn trên mặt bàn nằm nghiêng có những dạng năng lượng nào mà em đã học?",
+      "cac": [
+       "Chỉ có thế năng",
+       "Chỉ có động năng",
+       "Chỉ có nội năng",
+       "Có cả động năng, thế năng và nội năng"
+      ],
+      "dap": "D"
+     }
     },
     {
      "ma": "26.5",
@@ -17541,7 +17589,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "C",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Khi thả một thỏi kim loại đã được nung nóng vào một chậu nước lạnh thì nội năng của thỏi kim loại và của nước thay đổi như thế nào?",
+      "cac": [
+       "Nội năng của thỏi kim loại và của nước đều tăng",
+       "Nội năng của thỏi kim loại và của nước đều giảm",
+       "Nội năng của thỏi kim loại giảm, nội năng của nước tăng",
+       "Nội năng của thỏi kim loại tăng, nội năng của nước giảm"
+      ],
+      "dap": "C"
+     }
     },
     {
      "ma": "26.6a",
@@ -17550,7 +17610,42 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Nhiệt độ của nước tăng dần nên nhiệt năng của nước tăng dần.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "Hãy giải thích sự thay đổi nhiệt năng của nước trong trường hợp sau: khi đun nước, nhiệt độ của nước tăng dần.",
+      "dong": [
+       {
+        "chu": "Nhiệt năng của nước {0}",
+        "o": [
+         {
+          "dung": [
+           "tăng dần"
+          ],
+          "sai": [
+           "giảm dần",
+           "không thay đổi"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Vì nhiệt độ của nước càng cao thì các phân tử nước chuyển động {0}",
+        "o": [
+         {
+          "dung": [
+           "càng nhanh"
+          ],
+          "sai": [
+           "càng chậm",
+           "như cũ"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "26.6b",
@@ -17559,7 +17654,56 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Khi nước đang sôi, nhiệt độ của nước không thay đổi nên nhiệt năng của nước cũng không thay đổi.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "hoi": "Hãy giải thích sự thay đổi nhiệt năng của nước trong trường hợp sau: khi nước sôi, mặc dù vẫn tiếp tục đun nhưng nhiệt độ của nước không thay đổi.",
+      "dong": [
+       {
+        "chu": "Trong lúc nước sôi, nhiệt năng của nước {0}",
+        "o": [
+         {
+          "dung": [
+           "không thay đổi"
+          ],
+          "sai": [
+           "tăng dần",
+           "giảm dần"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Vì {0}",
+        "o": [
+         {
+          "dung": [
+           "nhiệt độ của nước không đổi nên các phân tử nước chuyển động nhanh như cũ"
+          ],
+          "sai": [
+           "nước vẫn được đun nên các phân tử nước chuyển động ngày càng nhanh",
+           "khi nước sôi thì các phân tử nước ngừng chuyển động hỗn loạn"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Nhiệt năng mà nước nhận thêm từ bếp trong lúc sôi được dùng để {0}",
+        "o": [
+         {
+          "dung": [
+           "biến nước thành hơi nước"
+          ],
+          "sai": [
+           "làm các phân tử nước chuyển động nhanh hơn",
+           "mất đi, không chuyển thành năng lượng nào"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "26.7",
@@ -17568,7 +17712,26 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Nước nóng lên thêm 20 °C",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "dap": [
+       "20",
+       "20°C"
+      ],
+      "phim": [
+       "°C"
+      ],
+      "nhieu": [
+       "J",
+       "kg"
+      ],
+      "loi_giai": [
+       "Nhiệt năng để 1,5 kg nước nóng lên thêm 1 °C: Q₁ = 1,5 · 4 200 = 6 300 J",
+       "Nước nóng lên thêm: Δt = 126 000 : 6 300 = 20 °C"
+      ]
+     }
     },
     {
      "ma": "26.8a",
@@ -17577,7 +17740,65 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Nước lạnh (10 °C) thu thêm nhiệt năng, nước nóng (t2) mất bớt nhiệt năng. Nhiệt năng nước nóng mất bớt đúng bằng nhiệt năng nước lạnh thu thêm, cho tới khi hai lượng nước có cùng nhiệt độ (cân bằng nhiệt).",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "hoi": "Người ta đổ 1 kg nước ở nhiệt độ t₁ = 10 °C vào một bình cách nhiệt chứa 1 kg nước nóng ở nhiệt độ t₂. Hãy mô tả quá trình trao đổi nhiệt năng xảy ra trong bình cách nhiệt.",
+      "dong": [
+       {
+        "chu": "Nước lạnh (10 °C) {0} nhiệt năng; nước nóng {1} nhiệt năng",
+        "o": [
+         {
+          "dung": [
+           "thu thêm"
+          ],
+          "sai": [
+           "mất bớt",
+           "không trao đổi"
+          ]
+         },
+         {
+          "dung": [
+           "mất bớt"
+          ],
+          "sai": [
+           "thu thêm",
+           "không trao đổi"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Phần nhiệt năng mà lượng nước này mất bớt {0} phần nhiệt năng mà lượng nước kia thu thêm",
+        "o": [
+         {
+          "dung": [
+           "bằng"
+          ],
+          "sai": [
+           "lớn hơn",
+           "nhỏ hơn"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Sự trao đổi nhiệt năng dừng lại khi {0}",
+        "o": [
+         {
+          "dung": [
+           "hai lượng nước có cùng nhiệt độ"
+          ],
+          "sai": [
+           "nước nóng nguội xuống còn 10 °C",
+           "nước lạnh nóng lên bằng nhiệt độ t₂ ban đầu"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "26.8b",
@@ -17586,7 +17807,29 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "t2 = 50 °C",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "hoi": "Người ta đổ 1 kg nước ở nhiệt độ t₁ = 10 °C vào một bình cách nhiệt chứa 1 kg nước nóng ở nhiệt độ t₂. Khi có cân bằng nhiệt trong bình thì nhiệt độ trong bình là t = 30 °C. Hãy xác định nhiệt độ t₂. Biết 1 kg nước nhận thêm nhiệt năng (hoặc mất bớt nhiệt năng) 4 200 J thì nóng lên thêm 1 °C (hoặc giảm đi 1 °C). Bỏ qua sự trao đổi nhiệt năng giữa nước với bình cách nhiệt và môi trường.",
+      "dap": [
+       "50",
+       "50°C"
+      ],
+      "phim": [
+       "°C"
+      ],
+      "nhieu": [
+       "J",
+       "kg"
+      ],
+      "loi_giai": [
+       "Nước lạnh nóng lên thêm: Δt₁ = 30 − 10 = 20 °C",
+       "Nhiệt năng nước lạnh thu thêm: Q = 4 200 · 20 = 84 000 J",
+       "Nước nóng mất bớt đúng 84 000 J nên nguội đi: Δt₂ = 84 000 : 4 200 = 20 °C",
+       "Nhiệt độ ban đầu của nước nóng: t₂ = 30 + 20 = 50 °C"
+      ]
+     }
     },
     {
      "ma": "26.8c",
@@ -17595,16 +17838,62 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "t = (t1 + t2)/2",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "hoi": "Người ta đổ 1 kg nước lạnh ở nhiệt độ t₁ vào một bình cách nhiệt chứa 1 kg nước nóng ở nhiệt độ t₂. Khi có cân bằng nhiệt, nhiệt độ trong bình là t. Biết 1 kg nước nhận thêm nhiệt năng (hoặc mất bớt nhiệt năng) 4 200 J thì nóng lên thêm 1 °C (hoặc giảm đi 1 °C). Bỏ qua sự trao đổi nhiệt năng giữa nước với bình cách nhiệt và môi trường. Hãy lập hệ thức liên hệ giữa nhiệt độ t với các nhiệt độ t₁ và t₂.",
+      "dap": [
+       "t=(t₁+t₂)/2",
+       "2t=t₁+t₂",
+       "(t₁+t₂)/2"
+      ],
+      "phim": [
+       "t",
+       "t₁",
+       "t₂"
+      ],
+      "nhieu": [
+       "m",
+       "°C",
+       "J"
+      ],
+      "loi_giai": [
+       "Nhiệt năng nước nóng mất bớt bằng nhiệt năng nước lạnh thu thêm: 4 200 · (t₂ − t) = 4 200 · (t − t₁)",
+       "⇒ t₂ − t = t − t₁ ⇒ 2t = t₁ + t₂",
+       "⇒ t = (t₁ + t₂)/2"
+      ]
+     }
     },
     {
      "ma": "26.9",
-     "de": "Hãy dựa vào kết quả của Bài 26.8 để giải bài tập sau: Nếu đổ cùng một lúc 10 g nước ở nhiệt độ 40 °C, 20 g nước ở nhiệt độ 50 °C và 50 g nước ở nhiệt độ 60 °C vào một bình cách nhiệt thì nhiệt độ của nước trong bình cách nhiệt khi có cân bằng nhiệt là bao nhiêu? Bỏ qua sự trao đổi nhiệt năng giữa nước với bình cách nhiệt và môi trường.",
+     "de": "Biết rằng: khi đổ hai lượng nước có khối lượng bằng nhau, ở nhiệt độ t1 và t2, vào một bình cách nhiệt thì khi có cân bằng nhiệt, nhiệt độ của nước trong bình là t = (t1 + t2)/2 (kết quả của Bài 26.8). Hãy dựa vào kết quả này để giải bài tập sau: Nếu đổ cùng một lúc 10 g nước ở nhiệt độ 40 °C, 20 g nước ở nhiệt độ 50 °C và 50 g nước ở nhiệt độ 60 °C vào một bình cách nhiệt thì nhiệt độ của nước trong bình cách nhiệt khi có cân bằng nhiệt là bao nhiêu? Bỏ qua sự trao đổi nhiệt năng giữa nước với bình cách nhiệt và môi trường.",
      "trang": 74,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "55 °C",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "hoi": "Biết rằng: khi đổ hai lượng nước có khối lượng bằng nhau, ở nhiệt độ t₁ và t₂, vào một bình cách nhiệt thì khi có cân bằng nhiệt, nhiệt độ của nước trong bình là t = (t₁ + t₂)/2 (kết quả của Bài 26.8). Hãy dựa vào kết quả này để giải bài tập sau: Nếu đổ cùng một lúc 10 g nước ở nhiệt độ 40 °C, 20 g nước ở nhiệt độ 50 °C và 50 g nước ở nhiệt độ 60 °C vào một bình cách nhiệt thì nhiệt độ của nước trong bình cách nhiệt khi có cân bằng nhiệt là bao nhiêu? Bỏ qua sự trao đổi nhiệt năng giữa nước với bình cách nhiệt và môi trường.",
+      "dap": [
+       "55",
+       "55°C"
+      ],
+      "phim": [
+       "°C"
+      ],
+      "nhieu": [
+       "g",
+       "J"
+      ],
+      "loi_giai": [
+       "Trộn 10 g nước ở 40 °C với 10 g (lấy trong 50 g) nước ở 60 °C: t = (40 + 60)/2 = 50 °C",
+       "Lượng nước ở 50 °C: m₁ = 10 g + 10 g + 20 g = 40 g; lượng nước ở 60 °C còn lại: m₂ = 50 g − 10 g = 40 g",
+       "Trộn 40 g nước ở 50 °C với 40 g nước ở 60 °C: t = (50 + 60)/2 = 55 °C"
+      ]
+     }
     },
     {
      "ma": "26.10",
@@ -17613,7 +17902,134 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "T1 > T2; Eđ1 > Eđ2; Et1 = Et2; ΣEđ1 > ΣEđ2; ΣEt1 > ΣEt2; U1 > U2. Vì cốc 1 nóng hơn và nhiều nước hơn; bỏ qua thay đổi khoảng cách phân tử nên Et như nhau; nội năng là tổng động năng và thế năng các phân tử.",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 10,
+      "hoi": "Hai cốc (1) và (2) đựng nước, mỗi cốc cắm một nhiệt kế. Cốc 1 đựng nhiều nước hơn cốc 2 (m₁ > m₂); cột chất lỏng trong nhiệt kế ở cốc 1 dâng cao hơn ở cốc 2. Bỏ qua sự thay đổi khoảng cách giữa các phân tử nước theo nhiệt độ. Hãy so sánh các đại lượng của hai lượng nước ở hai cốc và giải thích.",
+      "dong": [
+       {
+        "chu": "Nhiệt độ: T₁ {0} T₂",
+        "o": [
+         {
+          "dung": [
+           ">"
+          ],
+          "sai": [
+           "<",
+           "="
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Động năng của mỗi phân tử: Eđ₁ {0} Eđ₂, vì {1}",
+        "o": [
+         {
+          "dung": [
+           ">"
+          ],
+          "sai": [
+           "<",
+           "="
+          ]
+         },
+         {
+          "dung": [
+           "nước ở cốc 1 có nhiệt độ cao hơn ở cốc 2"
+          ],
+          "sai": [
+           "lượng nước ở cốc 1 nhiều hơn ở cốc 2",
+           "các phân tử nước ở cốc 1 ở gần nhau hơn"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Thế năng của mỗi phân tử: Et₁ {0} Et₂, vì {1}",
+        "o": [
+         {
+          "dung": [
+           "="
+          ],
+          "sai": [
+           ">",
+           "<"
+          ]
+         },
+         {
+          "dung": [
+           "bỏ qua sự thay đổi khoảng cách giữa các phân tử"
+          ],
+          "sai": [
+           "nước ở cốc 1 có nhiệt độ cao hơn ở cốc 2",
+           "lượng nước ở cốc 1 nhiều hơn ở cốc 2"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Tổng động năng các phân tử: ΣEđ₁ {0} ΣEđ₂",
+        "o": [
+         {
+          "dung": [
+           ">"
+          ],
+          "sai": [
+           "<",
+           "="
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Tổng thế năng các phân tử: ΣEt₁ {0} ΣEt₂, vì {1}",
+        "o": [
+         {
+          "dung": [
+           ">"
+          ],
+          "sai": [
+           "<",
+           "="
+          ]
+         },
+         {
+          "dung": [
+           "cốc 1 có nhiều phân tử nước hơn cốc 2"
+          ],
+          "sai": [
+           "nước ở cốc 1 có nhiệt độ cao hơn ở cốc 2",
+           "thế năng của mỗi phân tử ở cốc 1 lớn hơn"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Nội năng: U₁ {0} U₂, vì {1}",
+        "o": [
+         {
+          "dung": [
+           ">"
+          ],
+          "sai": [
+           "<",
+           "="
+          ]
+         },
+         {
+          "dung": [
+           "nội năng là tổng động năng và thế năng các phân tử, mà cả hai tổng ở cốc 1 đều lớn hơn"
+          ],
+          "sai": [
+           "nội năng chỉ phụ thuộc vào nhiệt độ của nước, mà nước ở cốc 1 nóng hơn",
+           "nội năng chỉ phụ thuộc vào lượng nước, mà cốc 1 có nhiều nước hơn"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     }
    ]
   },
@@ -17623,12 +18039,64 @@
    "cac_cau": [
     {
      "ma": "27.1",
-     "de": "Dưới đây là bảng số liệu đo năng lượng nhiệt theo cách bố trí thí nghiệm Hình 27.2 SGK của một bạn học sinh. (Bảng, các cột: Lần đo | t (°C) | Năng lượng nhiệt (J); các dòng: Bắt đầu đo | 20 | 0; Tăng 2 °C | 22 | 1 200; Tăng 4 °C | 24 | 3 500; Tăng 6 °C | 26 | 3 634; Tăng 8 °C | 28 | 4 839) Số liệu nào về năng lượng nhiệt trong bảng là không hợp lí? Giải thích.",
+     "de": "Dưới đây là bảng số liệu đo năng lượng nhiệt theo cách bố trí thí nghiệm Hình 27.2 SGK (đun nước bằng dây đốt đặt trong bình nhiệt lượng kế, năng lượng điện cung cấp cho dây đốt được đo bằng joulemeter) của một bạn học sinh. (Bảng, các cột: Lần đo | t (°C) | Năng lượng nhiệt (J); các dòng: Bắt đầu đo | 20 | 0; Tăng 2 °C | 22 | 1 200; Tăng 4 °C | 24 | 3 500; Tăng 6 °C | 26 | 3 634; Tăng 8 °C | 28 | 4 839) Số liệu nào về năng lượng nhiệt trong bảng là không hợp lí? Giải thích.",
      "trang": 75,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Số liệu 3 500 J (lúc tăng 4 °C, t = 24 °C) không hợp lí. Năng lượng nhiệt tăng gần đều theo nhiệt độ (khoảng 600 J cho mỗi 1 °C) nên ở 24 °C phải xấp xỉ 2 400 J.",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "hoi": "Một bạn học sinh đo năng lượng nhiệt cung cấp cho nước bằng joulemeter (đun nước bằng dây đốt đặt trong bình nhiệt lượng kế, như Hình 27.2 SGK) và ghi được bảng số liệu sau:\nBắt đầu đo: t = 20 °C, năng lượng nhiệt 0 J\nTăng 2 °C: t = 22 °C, năng lượng nhiệt 1 200 J\nTăng 4 °C: t = 24 °C, năng lượng nhiệt 3 500 J\nTăng 6 °C: t = 26 °C, năng lượng nhiệt 3 634 J\nTăng 8 °C: t = 28 °C, năng lượng nhiệt 4 839 J\nSố liệu nào về năng lượng nhiệt trong bảng là không hợp lí? Giải thích.",
+      "dong": [
+       {
+        "chu": "Số liệu không hợp lí: {0}",
+        "o": [
+         {
+          "dung": [
+           "3 500 J (lúc tăng 4 °C)"
+          ],
+          "sai": [
+           "1 200 J (lúc tăng 2 °C)",
+           "3 634 J (lúc tăng 6 °C)",
+           "4 839 J (lúc tăng 8 °C)"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Năng lượng nhiệt tăng gần đều theo nhiệt độ, mỗi 1 °C cần khoảng {0}",
+        "o": [
+         {
+          "dung": [
+           "600 J"
+          ],
+          "sai": [
+           "1 200 J",
+           "875 J",
+           "300 J"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Vì vậy số liệu không hợp lí đó lẽ ra phải xấp xỉ {0}",
+        "o": [
+         {
+          "dung": [
+           "2 400 J"
+          ],
+          "sai": [
+           "4 800 J",
+           "3 600 J",
+           "1 800 J"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "27.2",
@@ -17637,7 +18105,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "C",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Khi đun sôi một lượng nước ở nhiệt độ phòng, cần cung cấp một năng lượng nhiệt là 30 040 J. Để đun sôi một lượng nước cũng ở nhiệt độ phòng nhưng có khối lượng gấp đôi thì cần một lượng nhiệt có giá trị gần đúng nào sau đây?",
+      "cac": [
+       "15 000 J",
+       "30 000 J",
+       "60 000 J",
+       "120 000 J"
+      ],
+      "dap": "C"
+     }
     },
     {
      "ma": "27.3",
@@ -17645,8 +18125,73 @@
      "trang": 75,
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
-     "dap_an": "a) D (23); b) D (23)",
-     "loai_dap_an": "DAP_SO"
+     "dap_an": "a) 23 °C; b) 23 °C",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "hoi": "Bạn A làm thí nghiệm đo năng lượng nhiệt của ánh sáng từ Mặt Trời bằng cách đặt một hộp kim loại được sơn trắng chứa nước trên một tấm xốp dưới ánh nắng. Số liệu thu được:\nPhơi nắng 0 phút: 20 °C\nPhơi nắng 5 phút: 21 °C\nPhơi nắng 7 phút: 22 °C\nPhơi nắng 15 phút: 23 °C",
+      "dong": [
+       {
+        "chu": "a) Làm lại trong cùng điều kiện nhưng giảm lượng nước trong hộp đi một nửa. Sau 7 phút, nhiệt độ của nước gần đúng là {0}",
+        "o": [
+         {
+          "dung": [
+           "23 °C"
+          ],
+          "sai": [
+           "20 °C",
+           "21 °C",
+           "22 °C"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "vì {0}",
+        "o": [
+         {
+          "dung": [
+           "lượng nước ít đi mà nhận năng lượng nhiệt như cũ nên nóng lên nhanh hơn"
+          ],
+          "sai": [
+           "lượng nước ít đi nên nhận được ít năng lượng nhiệt hơn, nóng lên chậm hơn",
+           "nhiệt độ của nước sau 7 phút không phụ thuộc vào lượng nước trong hộp"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "b) Làm lại trong cùng điều kiện, chỉ khác là dùng hộp sơn đen thay cho hộp sơn trắng. Sau 7 phút, nhiệt độ của nước gần đúng là {0}",
+        "o": [
+         {
+          "dung": [
+           "23 °C"
+          ],
+          "sai": [
+           "20 °C",
+           "21 °C",
+           "22 °C"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "vì {0}",
+        "o": [
+         {
+          "dung": [
+           "hộp sơn đen hấp thụ tia nhiệt của Mặt Trời mạnh hơn hộp sơn trắng"
+          ],
+          "sai": [
+           "hộp sơn đen phản xạ tia nhiệt của Mặt Trời mạnh hơn hộp sơn trắng",
+           "màu sơn không ảnh hưởng tới năng lượng nhiệt mà nước nhận được"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     }
    ]
   },
@@ -17661,7 +18206,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "D",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Cơ chế của sự dẫn nhiệt là",
+      "cac": [
+       "sự truyền nhiệt độ từ vật này sang vật khác",
+       "sự truyền nhiệt năng từ vật này sang vật khác",
+       "sự truyền nội năng từ vật này sang vật khác",
+       "sự truyền động năng của các phân tử này sang các phân tử khác"
+      ],
+      "dap": "D"
+     }
     },
     {
      "ma": "28.2",
@@ -17670,7 +18227,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "D",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Bếp lửa truyền nhiệt năng ra môi trường xung quanh",
+      "cac": [
+       "chỉ bằng dẫn nhiệt",
+       "chỉ bằng đối lưu",
+       "chỉ bằng bức xạ nhiệt",
+       "bằng cả dẫn nhiệt, đối lưu và bức xạ nhiệt"
+      ],
+      "dap": "D"
+     }
     },
     {
      "ma": "28.3",
@@ -17679,7 +18248,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "C",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Bức xạ nhiệt không phải là hình thức truyền nhiệt năng từ",
+      "cac": [
+       "Mặt Trời đến Trái Đất",
+       "bếp lửa đến người đứng gần bếp",
+       "đầu một thanh đồng được hơ nóng sang đầu kia",
+       "dây tóc bóng đèn đến vỏ bóng đèn"
+      ],
+      "dap": "C"
+     }
     },
     {
      "ma": "28.4",
@@ -17687,8 +18268,57 @@
      "trang": 76,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "dap_an": "Tóc quấn quanh que đồng không cháy, tóc quấn quanh que thuỷ tinh thì cháy. Đồng dẫn nhiệt tốt hơn tóc rất nhiều, nhận gần hết nhiệt của que diêm nên tóc không đủ nóng để cháy. Thuỷ tinh dẫn nhiệt kém hơn tóc nên tóc nhận được nhiều nhiệt, đủ nóng để cháy.",
-     "loai_dap_an": "LOI_GIAI"
+     "dap_an": "Tóc quấn quanh que đồng không cháy, tóc quấn quanh que thuỷ tinh thì cháy. Đồng dẫn nhiệt tốt hơn thuỷ tinh rất nhiều: nhiệt của que diêm truyền nhanh vào que đồng rồi lan ra khắp que nên tóc không đủ nóng để cháy; thuỷ tinh dẫn nhiệt kém nên nhiệt dồn lại ở lớp tóc, tóc nóng tới mức cháy.",
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "hoi": "Lấy tóc quấn chặt quanh một que bằng đồng và quanh một que bằng thuỷ tinh rồi dùng diêm đốt. Quan sát hiện tượng xảy ra và giải thích.",
+      "dong": [
+       {
+        "chu": "Hiện tượng: {0}",
+        "o": [
+         {
+          "dung": [
+           "tóc quấn quanh que thuỷ tinh bị cháy, tóc quấn quanh que đồng không cháy"
+          ],
+          "sai": [
+           "tóc quấn quanh que đồng bị cháy, tóc quấn quanh que thuỷ tinh không cháy",
+           "tóc quấn quanh cả hai que đều bị cháy như nhau"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Đồng dẫn nhiệt {0} thuỷ tinh",
+        "o": [
+         {
+          "dung": [
+           "tốt hơn rất nhiều so với"
+          ],
+          "sai": [
+           "kém hơn rất nhiều so với",
+           "tốt như"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Ở que đồng, nhiệt của ngọn lửa {0}",
+        "o": [
+         {
+          "dung": [
+           "phần lớn truyền nhanh vào que đồng rồi lan ra khắp que"
+          ],
+          "sai": [
+           "phần lớn dồn lại ở lớp tóc vì đồng hầu như không nhận nhiệt",
+           "phần lớn bị que đồng phản xạ ngược trở lại lớp tóc"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "28.5",
@@ -17697,7 +18327,56 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Bông, trấu, mùn cưa có nhiều khoảng trống chứa không khí nên dẫn nhiệt kém, nhiệt từ ấm truyền ra ngoài chậm, giữ nước chè nóng lâu.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "hoi": "Tại sao muốn giữ cho nước chè xanh nóng lâu, người ta thường để ấm nước vào giỏ có chèn bông, trấu hoặc mùn cưa?",
+      "dong": [
+       {
+        "chu": "Bông, trấu, mùn cưa có nhiều khoảng trống chứa {0}",
+        "o": [
+         {
+          "dung": [
+           "không khí"
+          ],
+          "sai": [
+           "nước",
+           "chân không"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "nên chúng dẫn nhiệt {0}",
+        "o": [
+         {
+          "dung": [
+           "kém"
+          ],
+          "sai": [
+           "tốt"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Vì vậy nhiệt từ ấm nước chè {0}, nước chè giữ được nóng lâu",
+        "o": [
+         {
+          "dung": [
+           "truyền ra ngoài chậm"
+          ],
+          "sai": [
+           "truyền ra ngoài nhanh hơn",
+           "hoàn toàn không truyền ra ngoài"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "28.6",
@@ -17706,7 +18385,70 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Giữa các lớp rạ hoặc lá cọ có nhiều khoảng trống chứa không khí nên dẫn nhiệt kém, còn tôn dẫn nhiệt tốt. Mùa đông, mái rạ, lá cọ làm nhiệt trong nhà truyền ra ngoài chậm nên nhà ấm hơn; mùa hè làm nhiệt từ không khí nóng bên ngoài truyền vào chậm nên nhà mát hơn.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "hoi": "Tại sao nhà lợp rạ hoặc lá cọ về mùa đông ấm hơn, về mùa hè mát hơn nhà lợp tôn?",
+      "dong": [
+       {
+        "chu": "So với mái tôn, mái lợp rạ hoặc lá cọ dẫn nhiệt {0}",
+        "o": [
+         {
+          "dung": [
+           "kém hơn nhiều"
+          ],
+          "sai": [
+           "tốt hơn nhiều",
+           "như nhau"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "vì {0}",
+        "o": [
+         {
+          "dung": [
+           "giữa các lớp rạ, lá cọ có nhiều khoảng trống chứa không khí"
+          ],
+          "sai": [
+           "rạ, lá cọ chứa nhiều nước, mà nước dẫn nhiệt kém hơn không khí",
+           "các lớp rạ, lá cọ xếp khít nhau, không có khoảng trống nào"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Mùa đông, mái rạ, lá cọ làm nhiệt {0} chậm lại, nên nhà ấm hơn",
+        "o": [
+         {
+          "dung": [
+           "từ trong nhà truyền ra ngoài"
+          ],
+          "sai": [
+           "từ ngoài trời truyền vào trong nhà"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Mùa hè, mái rạ, lá cọ làm nhiệt {0} chậm lại, nên nhà mát hơn",
+        "o": [
+         {
+          "dung": [
+           "từ không khí nóng bên ngoài truyền vào trong nhà"
+          ],
+          "sai": [
+           "từ trong nhà truyền ra ngoài"
+          ],
+          "hai": true
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "28.7",
@@ -17715,7 +18457,70 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Dây đun đặt ở dưới gần đáy để khi đun, nhiệt truyền chủ yếu bằng đối lưu: nước ở dưới nóng lên đi lên, nước lạnh ở trên đi xuống, làm cả ấm nước nóng đều và nhanh sôi.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "hoi": "Tại sao trong các ấm điện, dây đun đều được đặt ở phía dưới, gần sát đáy ấm, không đặt ở phía trên sát miệng ấm?",
+      "dong": [
+       {
+        "chu": "Nước ở dưới đáy, gần dây đun, nóng lên trước rồi {0}",
+        "o": [
+         {
+          "dung": [
+           "nở ra, nhẹ hơn nên đi lên trên"
+          ],
+          "sai": [
+           "co lại, nặng hơn nên nằm yên ở đáy",
+           "nở ra, nặng hơn nên nằm yên ở đáy"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Nước lạnh ở trên {0}",
+        "o": [
+         {
+          "dung": [
+           "nặng hơn nên đi xuống dưới đáy"
+          ],
+          "sai": [
+           "nhẹ hơn nên nằm yên ở trên",
+           "nặng hơn nên nằm yên ở trên"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Cách truyền nhiệt chủ yếu làm cả ấm nước nóng lên đều và nhanh là {0}",
+        "o": [
+         {
+          "dung": [
+           "đối lưu"
+          ],
+          "sai": [
+           "dẫn nhiệt",
+           "bức xạ nhiệt"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Nếu đặt dây đun sát miệng ấm thì {0}",
+        "o": [
+         {
+          "dung": [
+           "nước nóng nằm luôn ở trên, nước ở dưới đáy rất lâu mới nóng"
+          ],
+          "sai": [
+           "cả ấm nước vẫn nóng nhanh như khi đặt dây đun ở đáy",
+           "nước ở dưới đáy nóng lên trước nước ở trên"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "28.8",
@@ -17724,7 +18529,65 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Cửa kính cho tia nhiệt (bức xạ nhiệt từ Mặt Trời) truyền qua vào phòng, còn cửa gỗ ngăn không cho tia nhiệt truyền qua, nên đóng cửa kính thì trong phòng nóng hơn.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "hoi": "Khi trời nắng, nếu đóng kín các cửa ra vào và cửa sổ bằng kính thì trong phòng nóng hơn là đóng kín các cửa ra vào và cửa sổ bằng gỗ. Tại sao?",
+      "dong": [
+       {
+        "chu": "Khi trời nắng, nhiệt từ Mặt Trời truyền vào phòng chủ yếu bằng {0}",
+        "o": [
+         {
+          "dung": [
+           "bức xạ nhiệt"
+          ],
+          "sai": [
+           "dẫn nhiệt",
+           "đối lưu"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Cửa kính {0} năng lượng của ánh nắng truyền qua vào phòng; cửa gỗ {1}",
+        "o": [
+         {
+          "dung": [
+           "cho"
+          ],
+          "sai": [
+           "không cho"
+          ],
+          "hai": true
+         },
+         {
+          "dung": [
+           "không cho"
+          ],
+          "sai": [
+           "cho"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Đồ vật trong phòng nóng lên rồi cũng phát ra tia nhiệt nhưng rất yếu, các tia này {0} qua cửa kính ra ngoài",
+        "o": [
+         {
+          "dung": [
+           "khó truyền"
+          ],
+          "sai": [
+           "dễ dàng truyền"
+          ],
+          "hai": true
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "28.9a",
@@ -17733,7 +18596,56 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Nhờ có sự đối lưu: không khí gần ngọn lửa nóng lên bay lên, không khí ở trên lạnh hơn, nặng hơn chuyển động xuống dưới, tới chỗ ngọn lửa, tiếp tục cung cấp oxygen cho ngọn lửa.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "hoi": "Sự cháy cần oxygen. Khi thắp một ngọn đèn dầu thì chỉ trong một thời gian ngắn, oxygen của không khí ở quanh ngọn lửa đã bị tiêu thụ hết. Tại sao ngọn đèn vẫn tiếp tục cháy?",
+      "dong": [
+       {
+        "chu": "Không khí ở gần ngọn lửa nóng lên, {0}",
+        "o": [
+         {
+          "dung": [
+           "nhẹ hơn nên bay lên"
+          ],
+          "sai": [
+           "nặng hơn nên chìm xuống",
+           "nặng hơn nên đứng yên quanh ngọn lửa"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Không khí lạnh hơn, nặng hơn ở xung quanh {0}",
+        "o": [
+         {
+          "dung": [
+           "tràn tới chỗ ngọn lửa, mang theo oxygen"
+          ],
+          "sai": [
+           "bay lên cao, rời xa ngọn lửa",
+           "đứng yên, không tới gần ngọn lửa"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Sự truyền nhiệt nhờ các dòng không khí nóng, lạnh di chuyển như vậy gọi là {0}, nhờ nó ngọn đèn vẫn cháy được",
+        "o": [
+         {
+          "dung": [
+           "sự đối lưu"
+          ],
+          "sai": [
+           "sự dẫn nhiệt",
+           "sự bức xạ nhiệt"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "28.9b",
@@ -17742,7 +18654,73 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Thông phong ngăn nhiệt của ngọn lửa truyền ra môi trường xung quanh, làm không khí gần ngọn lửa nóng lên nhiều hơn nên đối lưu mạnh hơn. Thông phong còn giữ cho các dòng đối lưu không phân tán ra ngoài mà tập trung vào ngọn lửa. Nhờ đó ngọn lửa được cung cấp nhiều oxygen hơn và sáng hơn.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "hinh": [
+      "sbtkhtn8/H.28.1.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "hoi": "Sự cháy cần oxygen. Khi thắp một ngọn đèn dầu thì chỉ trong một thời gian ngắn, oxygen của không khí ở quanh ngọn lửa đã bị tiêu thụ hết. Tại sao khi lắp thông phong vào đèn dầu thì đèn sẽ sáng hơn (Hình 28.1: thông phong là ống thuỷ tinh chụp bao quanh ngọn lửa; ở chân thông phong, ngay dưới ngọn lửa, có các khe hở)?",
+      "dong": [
+       {
+        "chu": "Thông phong ngăn nhiệt của ngọn lửa {0}",
+        "o": [
+         {
+          "dung": [
+           "truyền ra không gian rộng xung quanh"
+          ],
+          "sai": [
+           "truyền xuống bầu đựng dầu",
+           "truyền vào bấc đèn"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "nên không khí trong thông phong nóng lên nhiều hơn, sự đối lưu {0}",
+        "o": [
+         {
+          "dung": [
+           "mạnh hơn"
+          ],
+          "sai": [
+           "yếu hơn",
+           "không xảy ra nữa"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Không khí lạnh mang oxygen đi vào qua {0}",
+        "o": [
+         {
+          "dung": [
+           "các khe hở ở chân thông phong, ngay dưới ngọn lửa"
+          ],
+          "sai": [
+           "miệng trên của thông phong, rồi đi xuống",
+           "thành thuỷ tinh của thông phong"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Thông phong giữ cho dòng đối lưu không phân tán ra ngoài mà đi thẳng qua ngọn lửa, nên ngọn lửa được cung cấp {0} và sáng hơn",
+        "o": [
+         {
+          "dung": [
+           "nhiều oxygen hơn"
+          ],
+          "sai": [
+           "ít oxygen hơn",
+           "nhiều dầu hơn"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "28.10",
@@ -17750,8 +18728,71 @@
      "trang": 77,
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
-     "dap_an": "D",
-     "loai_dap_an": "TN"
+     "dap_an": "Cả ba hiện tượng đều làm tăng hiệu ứng nhà kính: đốt rừng để lấy đất canh tác; nhà máy nhiệt điện đốt than đá; các đống rác phân huỷ ở ngoài trời.",
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "hoi": "Trong các hiện tượng sau đây, hiện tượng nào làm tăng hiệu ứng nhà kính? Với mỗi hiện tượng, chọn Có hoặc Không.",
+      "dong": [
+       {
+        "chu": "Đốt rừng để lấy đất canh tác: {0}",
+        "o": [
+         {
+          "dung": [
+           "Có"
+          ],
+          "sai": [
+           "Không"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Trồng rừng trên đồi trọc: {0}",
+        "o": [
+         {
+          "dung": [
+           "Không"
+          ],
+          "sai": [
+           "Có"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Hoạt động của nhà máy nhiệt điện chạy bằng lò hơi đốt bằng than đá: {0}",
+        "o": [
+         {
+          "dung": [
+           "Có"
+          ],
+          "sai": [
+           "Không"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Sự phân huỷ của các đống rác ở ngoài trời: {0}",
+        "o": [
+         {
+          "dung": [
+           "Có"
+          ],
+          "sai": [
+           "Không"
+          ],
+          "hai": true
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "28.11",
@@ -17760,7 +18801,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "C",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Trong không khí, khí hay hơi nào sau đây đóng vai trò quan trọng nhất trong việc làm tăng hiệu ứng nhà kính hiện nay?",
+      "cac": [
+       "Khí nitrogen oxide (NO)",
+       "Khí methane (CH₄)",
+       "Khí carbon dioxide (CO₂)",
+       "Hơi nước (H₂O)"
+      ],
+      "dap": "C"
+     }
     },
     {
      "ma": "28.12",
@@ -17769,7 +18822,56 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Tiết kiệm điện làm giảm việc sản xuất điện ở các nhà máy nhiệt điện, giảm lượng khí carbon dioxide (CO2) thải ra không khí. CO2 là khí gây hiệu ứng nhà kính mạnh nhất nên tiết kiệm điện góp phần làm giảm hiệu ứng nhà kính.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "hoi": "Tại sao tiết kiệm điện lại góp phần làm giảm hiệu ứng nhà kính?",
+      "dong": [
+       {
+        "chu": "Nhà máy nhiệt điện đốt than đá, dầu, khí đốt nên thải ra nhiều khí {0}",
+        "o": [
+         {
+          "dung": [
+           "carbon dioxide (CO₂)"
+          ],
+          "sai": [
+           "oxygen (O₂)",
+           "hydrogen (H₂)"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Tiết kiệm điện thì các nhà máy nhiệt điện sản xuất ít điện hơn, lượng khí này thải vào không khí {0}",
+        "o": [
+         {
+          "dung": [
+           "giảm đi"
+          ],
+          "sai": [
+           "tăng lên",
+           "không thay đổi"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Khí này {0}, nên hiệu ứng nhà kính giảm đi",
+        "o": [
+         {
+          "dung": [
+           "đóng vai trò quan trọng nhất trong việc làm tăng hiệu ứng nhà kính"
+          ],
+          "sai": [
+           "không hấp thụ bức xạ nhiệt nên không ảnh hưởng tới hiệu ứng nhà kính",
+           "làm cho bức xạ nhiệt của Trái Đất thoát ra ngoài dễ hơn"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "28.13",
@@ -17778,7 +18880,70 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Bão, lũ lụt, cháy rừng; băng tan làm nước biển dâng, có thể làm một phần lục địa biến mất,...",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "hoi": "Sự tăng nhiệt độ toàn cầu do hiệu ứng nhà kính có thể gây ra những nguy cơ nào đối với đời sống của con người? Mỗi điều dưới đây có phải là một nguy cơ như vậy không?",
+      "dong": [
+       {
+        "chu": "Bão, lũ lụt xảy ra nhiều hơn và mạnh hơn: {0}",
+        "o": [
+         {
+          "dung": [
+           "Có"
+          ],
+          "sai": [
+           "Không"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Băng ở hai cực dày thêm, mực nước biển hạ xuống: {0}",
+        "o": [
+         {
+          "dung": [
+           "Không"
+          ],
+          "sai": [
+           "Có"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Cháy rừng xảy ra nhiều hơn: {0}",
+        "o": [
+         {
+          "dung": [
+           "Có"
+          ],
+          "sai": [
+           "Không"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Băng tan làm nước biển dâng, một phần đất liền ven biển có thể bị nhấn chìm: {0}",
+        "o": [
+         {
+          "dung": [
+           "Có"
+          ],
+          "sai": [
+           "Không"
+          ],
+          "hai": true
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "28.14",
@@ -17787,7 +18952,32 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Cho số cục nước đá bằng nhau vào hai bát sứ. Úp bát to bằng thuỷ tinh lên một trong hai bát nước đá. Dùng đèn bàn chiếu trực tiếp vào cả hai bát. Quan sát hai bát nước đá và rút ra kết luận.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 5,
+      "hoi": "Với các dụng cụ sau đây, hãy lập một phương án thí nghiệm để minh hoạ cho hiệu ứng nhà kính:\n- Một đèn bàn dùng bóng đèn dây tóc (1).\n- Một bát to bằng thuỷ tinh (2).\n- Hai bát sứ nhỏ (3).\n- Một số cục nước đá (4).",
+      "buoc": [
+       "Cho số cục nước đá bằng nhau vào hai bát sứ nhỏ",
+       "Úp bát to bằng thuỷ tinh lên một trong hai bát nước đá",
+       "Dùng đèn bàn chiếu trực tiếp vào cả hai bát nước đá",
+       "Sau một thời gian, thấy nước đá trong bát được úp bát thuỷ tinh tan nhanh hơn",
+       "Kết luận: bát thuỷ tinh giữ lại năng lượng nhiệt, giống lớp khí quyển bao quanh Trái Đất (hiệu ứng nhà kính)"
+      ],
+      "nhieu": [
+       "Cho vào một bát nhiều nước đá hơn hẳn bát kia",
+       "Sau một thời gian, thấy nước đá trong bát không được úp tan nhanh hơn"
+      ],
+      "thu_tu_khac": [
+       [
+        0,
+        2,
+        1,
+        3,
+        4
+       ]
+      ]
+     }
     },
     {
      "ma": "28.15a",
@@ -17795,8 +18985,71 @@
      "trang": 77,
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
-     "dap_an": "D",
-     "loai_dap_an": "TN"
+     "dap_an": "Cả ba: Trái Đất có bầu khí quyển bao quanh; bức xạ nhiệt của Mặt Trời là bức xạ mạnh, dễ dàng truyền qua khí quyển; bức xạ nhiệt của Trái Đất là bức xạ yếu, không vượt qua được khí quyển.",
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "hoi": "Hiệu ứng nhà kính\n(Hình vẽ: Trái Đất có khí quyển bao quanh. Phần lớn bức xạ nhiệt Mặt Trời truyền qua khí quyển; một phần bức xạ nhiệt Mặt Trời được khí quyển phản xạ lại; bức xạ nhiệt của Trái Đất được khí quyển phản xạ về Trái Đất.)\nHằng ngày, Mặt Trời truyền về Trái Đất dưới hình thức bức xạ nhiệt một lượng năng lượng khổng lồ, lớn gấp khoảng 20 000 lần tổng năng lượng mà con người sử dụng. Trái Đất hấp thụ một phần năng lượng này, đồng thời phản xạ lại một phần dưới hình thức bức xạ nhiệt của Trái Đất.\nBầu khí quyển bao quanh Trái Đất có tác dụng giống như một nhà lợp kính, giữ lại bức xạ nhiệt của Trái Đất làm cho bề mặt của Trái Đất và không khí bao quanh Trái Đất nóng lên. Do sự tương tự đó mà hiệu ứng này của bầu khí quyển được gọi là hiệu ứng nhà kính khí quyển, gọi tắt là hiệu ứng nhà kính. Trong khí quyển thì khí carbon dioxide (CO₂) đóng vai trò quan trọng nhất trong việc gây ra hiệu ứng nhà kính.\nHiệu ứng nhà kính vừa có thể có ích vừa có thể có hại. Hiện nay người ta đang cố gắng làm giảm hiệu ứng nhà kính để ngăn không cho nhiệt độ trên Trái Đất tăng lên quá nhanh đe doạ cuộc sống của con người và các sinh vật khác trên hành tinh này.\nHiệu ứng nhà kính khí quyển là do những điều nào dưới đây? Với mỗi điều, chọn Có hoặc Không.",
+      "dong": [
+       {
+        "chu": "Trái Đất có bầu khí quyển bao quanh: {0}",
+        "o": [
+         {
+          "dung": [
+           "Có"
+          ],
+          "sai": [
+           "Không"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Trái Đất tự quay quanh trục của nó: {0}",
+        "o": [
+         {
+          "dung": [
+           "Không"
+          ],
+          "sai": [
+           "Có"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Bức xạ nhiệt của Mặt Trời là bức xạ mạnh, dễ dàng truyền qua khí quyển: {0}",
+        "o": [
+         {
+          "dung": [
+           "Có"
+          ],
+          "sai": [
+           "Không"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Bức xạ nhiệt của Trái Đất là bức xạ yếu, không vượt qua được khí quyển: {0}",
+        "o": [
+         {
+          "dung": [
+           "Có"
+          ],
+          "sai": [
+           "Không"
+          ],
+          "hai": true
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "28.15b",
@@ -17805,7 +19058,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "D",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Hiệu ứng nhà kính\n(Hình vẽ: Trái Đất có khí quyển bao quanh. Phần lớn bức xạ nhiệt Mặt Trời truyền qua khí quyển; một phần bức xạ nhiệt Mặt Trời được khí quyển phản xạ lại; bức xạ nhiệt của Trái Đất được khí quyển phản xạ về Trái Đất.)\nHằng ngày, Mặt Trời truyền về Trái Đất dưới hình thức bức xạ nhiệt một lượng năng lượng khổng lồ, lớn gấp khoảng 20 000 lần tổng năng lượng mà con người sử dụng. Trái Đất hấp thụ một phần năng lượng này, đồng thời phản xạ lại một phần dưới hình thức bức xạ nhiệt của Trái Đất.\nBầu khí quyển bao quanh Trái Đất có tác dụng giống như một nhà lợp kính, giữ lại bức xạ nhiệt của Trái Đất làm cho bề mặt của Trái Đất và không khí bao quanh Trái Đất nóng lên. Do sự tương tự đó mà hiệu ứng này của bầu khí quyển được gọi là hiệu ứng nhà kính khí quyển, gọi tắt là hiệu ứng nhà kính. Trong khí quyển thì khí carbon dioxide (CO₂) đóng vai trò quan trọng nhất trong việc gây ra hiệu ứng nhà kính.\nHiệu ứng nhà kính vừa có thể có ích vừa có thể có hại. Hiện nay người ta đang cố gắng làm giảm hiệu ứng nhà kính để ngăn không cho nhiệt độ trên Trái Đất tăng lên quá nhanh đe doạ cuộc sống của con người và các sinh vật khác trên hành tinh này.\nBiện pháp nào sau đây không làm giảm hiệu ứng nhà kính?",
+      "cac": [
+       "Giảm nhà máy nhiệt điện",
+       "Tăng nhà máy thuỷ điện",
+       "Giảm sử dụng động cơ đốt trong",
+       "Tăng đất trồng trọt bằng cách đốt rừng"
+      ],
+      "dap": "D"
+     }
     },
     {
      "ma": "28.15c",
@@ -17814,14 +19079,154 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "a) Đúng; b) Sai; c) Sai; d) Đúng",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "hoi": "Hiệu ứng nhà kính\n(Hình vẽ: Trái Đất có khí quyển bao quanh. Phần lớn bức xạ nhiệt Mặt Trời truyền qua khí quyển; một phần bức xạ nhiệt Mặt Trời được khí quyển phản xạ lại; bức xạ nhiệt của Trái Đất được khí quyển phản xạ về Trái Đất.)\nHằng ngày, Mặt Trời truyền về Trái Đất dưới hình thức bức xạ nhiệt một lượng năng lượng khổng lồ, lớn gấp khoảng 20 000 lần tổng năng lượng mà con người sử dụng. Trái Đất hấp thụ một phần năng lượng này, đồng thời phản xạ lại một phần dưới hình thức bức xạ nhiệt của Trái Đất.\nBầu khí quyển bao quanh Trái Đất có tác dụng giống như một nhà lợp kính, giữ lại bức xạ nhiệt của Trái Đất làm cho bề mặt của Trái Đất và không khí bao quanh Trái Đất nóng lên. Do sự tương tự đó mà hiệu ứng này của bầu khí quyển được gọi là hiệu ứng nhà kính khí quyển, gọi tắt là hiệu ứng nhà kính. Trong khí quyển thì khí carbon dioxide (CO₂) đóng vai trò quan trọng nhất trong việc gây ra hiệu ứng nhà kính.\nHiệu ứng nhà kính vừa có thể có ích vừa có thể có hại. Hiện nay người ta đang cố gắng làm giảm hiệu ứng nhà kính để ngăn không cho nhiệt độ trên Trái Đất tăng lên quá nhanh đe doạ cuộc sống của con người và các sinh vật khác trên hành tinh này.\nĐánh giá đúng hay sai mỗi nhận định dưới đây về hiệu ứng nhà kính.",
+      "dong": [
+       {
+        "chu": "Hiệu ứng nhà kính tạo điều kiện nhiệt độ thích hợp cho sự phát triển của các sinh vật trên Trái Đất: {0}",
+        "o": [
+         {
+          "dung": [
+           "Đúng"
+          ],
+          "sai": [
+           "Sai"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Tăng sử dụng động cơ đốt trong có thể làm giảm hiệu ứng nhà kính: {0}",
+        "o": [
+         {
+          "dung": [
+           "Sai"
+          ],
+          "sai": [
+           "Đúng"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Hiệu ứng nhà kính giúp điều hoà nhiệt độ trên Trái Đất, giúp giảm hạn hán và lũ lụt, giảm băng tan trên địa cực và nước biển dâng cao: {0}",
+        "o": [
+         {
+          "dung": [
+           "Sai"
+          ],
+          "sai": [
+           "Đúng"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Hạn chế dùng điện hiện nay là một biện pháp có thể làm giảm hiệu ứng nhà kính: {0}",
+        "o": [
+         {
+          "dung": [
+           "Đúng"
+          ],
+          "sai": [
+           "Sai"
+          ],
+          "hai": true
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "28.15d",
      "de": "Hiệu ứng nhà kính. (Hình vẽ Trái Đất có khí quyển bao quanh, kèm các nhãn: Phần lớn bức xạ nhiệt Mặt Trời truyền qua khí quyển; Một phần bức xạ nhiệt Mặt Trời được khí quyển phản xạ lại; Bức xạ nhiệt của Trái Đất được khí quyển phản xạ về Trái Đất) Hằng ngày, Mặt Trời truyền về Trái Đất dưới hình thức bức xạ nhiệt một lượng năng lượng khổng lồ, lớn gấp khoảng 20 000 lần tổng năng lượng mà con người sử dụng. Trái Đất hấp thụ một phần năng lượng này, đồng thời phản xạ lại một phần dưới hình thức bức xạ nhiệt của Trái Đất. Bầu khí quyển bao quanh Trái Đất có tác dụng giống như một nhà lợp kính, giữ lại bức xạ nhiệt của Trái Đất làm cho bề mặt của Trái Đất và không khí bao quanh Trái Đất nóng lên. Do sự tương tự đó mà hiệu ứng này của bầu khí quyển được gọi là hiệu ứng nhà kính khí quyển, gọi tắt là hiệu ứng nhà kính. Trong khí quyển thì khí carbon dioxide (CO2) đóng vai trò quan trọng nhất trong việc gây ra hiệu ứng nhà kính. Hiệu ứng nhà kính vừa có thể có ích vừa có thể có hại. Hiện nay người ta đang cố gắng làm giảm hiệu ứng nhà kính để ngăn không cho nhiệt độ trên Trái Đất tăng lên quá nhanh đe doạ cuộc sống của con người và các sinh vật khác trên hành tinh này. Hãy kể tên và giải thích các hành động mà em và các thành viên khác trong gia đình có thể làm để góp phần làm giảm hiệu ứng nhà kính.",
      "trang": 77,
      "nhom": "Bài tập",
-     "dang": "CAU_NHO"
+     "dang": "CAU_NHO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 5,
+      "hoi": "Hiệu ứng nhà kính\n(Hình vẽ: Trái Đất có khí quyển bao quanh. Phần lớn bức xạ nhiệt Mặt Trời truyền qua khí quyển; một phần bức xạ nhiệt Mặt Trời được khí quyển phản xạ lại; bức xạ nhiệt của Trái Đất được khí quyển phản xạ về Trái Đất.)\nHằng ngày, Mặt Trời truyền về Trái Đất dưới hình thức bức xạ nhiệt một lượng năng lượng khổng lồ, lớn gấp khoảng 20 000 lần tổng năng lượng mà con người sử dụng. Trái Đất hấp thụ một phần năng lượng này, đồng thời phản xạ lại một phần dưới hình thức bức xạ nhiệt của Trái Đất.\nBầu khí quyển bao quanh Trái Đất có tác dụng giống như một nhà lợp kính, giữ lại bức xạ nhiệt của Trái Đất làm cho bề mặt của Trái Đất và không khí bao quanh Trái Đất nóng lên. Do sự tương tự đó mà hiệu ứng này của bầu khí quyển được gọi là hiệu ứng nhà kính khí quyển, gọi tắt là hiệu ứng nhà kính. Trong khí quyển thì khí carbon dioxide (CO₂) đóng vai trò quan trọng nhất trong việc gây ra hiệu ứng nhà kính.\nHiệu ứng nhà kính vừa có thể có ích vừa có thể có hại. Hiện nay người ta đang cố gắng làm giảm hiệu ứng nhà kính để ngăn không cho nhiệt độ trên Trái Đất tăng lên quá nhanh đe doạ cuộc sống của con người và các sinh vật khác trên hành tinh này.\nHãy kể tên và giải thích các hành động mà em và các thành viên khác trong gia đình có thể làm để góp phần làm giảm hiệu ứng nhà kính. Mỗi việc dưới đây có góp phần làm giảm hiệu ứng nhà kính không?",
+      "dong": [
+       {
+        "chu": "Tắt đèn, quạt, ti vi khi ra khỏi phòng: {0}",
+        "o": [
+         {
+          "dung": [
+           "Có"
+          ],
+          "sai": [
+           "Không"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Bật điều hoà suốt cả ngày, kể cả khi không có ai ở nhà: {0}",
+        "o": [
+         {
+          "dung": [
+           "Không"
+          ],
+          "sai": [
+           "Có"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Đi bộ hoặc đi xe đạp tới trường khi trường ở gần nhà: {0}",
+        "o": [
+         {
+          "dung": [
+           "Có"
+          ],
+          "sai": [
+           "Không"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Đun nấu xong không tắt bếp ga ngay mà để lửa cháy thêm cho tiện: {0}",
+        "o": [
+         {
+          "dung": [
+           "Không"
+          ],
+          "sai": [
+           "Có"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Trồng cây xanh góp phần làm giảm hiệu ứng nhà kính vì {0}",
+        "o": [
+         {
+          "dung": [
+           "cây xanh hấp thụ khí CO₂ trong không khí khi quang hợp"
+          ],
+          "sai": [
+           "cây xanh thải khí CO₂ vào không khí khi quang hợp",
+           "cây xanh che hết bức xạ nhiệt của Mặt Trời"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     }
    ]
   },
@@ -17836,7 +19241,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "C",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Hai cốc thuỷ tinh chồng lên nhau bị khít lại. Muốn tách rời hai cốc ta làm cách nào trong các cách sau?",
+      "cac": [
+       "Ngâm cả cốc trên lẫn cốc dưới vào nước nóng",
+       "Ngâm cả cốc trên lẫn cốc dưới vào nước lạnh",
+       "Ngâm cốc dưới vào nước nóng, cốc trên thả nước đá vào",
+       "Ngâm cốc dưới vào nước lạnh, cốc trên đổ nước nóng"
+      ],
+      "dap": "C"
+     }
     },
     {
      "ma": "29.2",
@@ -17845,7 +19262,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "D",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Vì sao cốt của các trụ bê tông lại làm bằng thép mà không phải bằng các kim loại khác?",
+      "cac": [
+       "Vì thép nở vì nhiệt nhiều hơn bê tông rất nhiều",
+       "Vì thép không bị gỉ",
+       "Vì thép có tính đàn hồi lớn",
+       "Vì thép và bê tông nở vì nhiệt như nhau"
+      ],
+      "dap": "D"
+     }
     },
     {
      "ma": "29.3",
@@ -17854,7 +19283,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "D",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Khi đóng đồ uống vào chai hoặc lon, người ta phải để mặt thoáng của đồ uống thấp hơn miệng chai hoặc miệng lon vì",
+      "cac": [
+       "để khi mở nút chai hoặc bật nắp lon, chất lỏng không bị tràn ra ngoài",
+       "để chất lỏng không chạm nút chai hoặc nắp lon",
+       "để khi vận chuyển, chất lỏng không bị sóng sánh rớt ra ngoài",
+       "để khi nhiệt độ tăng, chất lỏng nở ra không làm bật nút chai hoặc nắp lon"
+      ],
+      "dap": "D"
+     }
     },
     {
      "ma": "29.4",
@@ -17863,7 +19304,19 @@
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "C",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Trong các hiện tượng sau đây, hiện tượng nào do sự nở vì nhiệt của chất khí gây ra?",
+      "cac": [
+       "Ngọn nến đang cháy, úp chiếc cốc vào thì tắt",
+       "Quả bóng bay đang bay lên",
+       "Săm xe đạp được bơm căng, để ngoài nắng bị nổ",
+       "Bơm căng lốp xe đạp"
+      ],
+      "dap": "C"
+     }
     },
     {
      "ma": "29.5",
@@ -17872,7 +19325,56 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Đồng nở vì nhiệt nhiều hơn sắt. Đinh vít sắt, ốc đồng: khi nung nóng, ốc đồng nở ra nhiều hơn đinh vít sắt nên lỏng ra, vặn được. Đinh vít đồng, ốc sắt: khi nung nóng, đinh vít đồng nở nhiều hơn ốc sắt nên càng bị kẹt chặt hơn.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "hoi": "Tại sao đinh vít sắt có ốc bằng đồng bị kẹt có thể mở được bằng cách nung nóng, còn đinh vít đồng có ốc bằng sắt khi bị kẹt lại không mở được bằng cách nung nóng?",
+      "dong": [
+       {
+        "chu": "Khi nóng lên như nhau, đồng nở vì nhiệt {0} sắt",
+        "o": [
+         {
+          "dung": [
+           "nhiều hơn"
+          ],
+          "sai": [
+           "ít hơn",
+           "bằng"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Đinh vít sắt, ốc đồng: khi nung nóng, {0}",
+        "o": [
+         {
+          "dung": [
+           "ốc đồng nở nhiều hơn đinh vít sắt, ốc lỏng ra nên vặn ra được"
+          ],
+          "sai": [
+           "đinh vít sắt nở nhiều hơn ốc đồng, ốc lỏng ra nên vặn ra được",
+           "ốc đồng nở nhiều hơn đinh vít sắt, ốc càng kẹt chặt hơn"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Đinh vít đồng, ốc sắt: khi nung nóng, {0}",
+        "o": [
+         {
+          "dung": [
+           "đinh vít đồng nở nhiều hơn ốc sắt, càng bị kẹt chặt hơn"
+          ],
+          "sai": [
+           "ốc sắt nở nhiều hơn đinh vít đồng, ốc lỏng ra nên vặn ra được",
+           "đinh vít đồng nở nhiều hơn ốc sắt, ốc lỏng ra nên vặn ra được"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "29.6",
@@ -17881,7 +19383,70 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Vì đồng nở vì nhiệt nhiều hơn sắt nên băng kép đồng – sắt cong về phía sắt, mặt đồng ở ngoài; còn nhôm nở vì nhiệt nhiều hơn đồng nên băng kép đồng – nhôm cong về phía đồng, mặt nhôm ở ngoài.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "hoi": "Tại sao khi hơ nóng một băng kép \"đồng – sắt\" thì băng kép bị cong, mặt ngoài là mặt đồng; còn khi hơ nóng một băng kép \"đồng – nhôm\" thì băng kép bị cong nhưng mặt ngoài là mặt nhôm?",
+      "dong": [
+       {
+        "chu": "Khi bị hơ nóng, mặt ngoài (mặt lồi) của băng kép là thanh kim loại {0}",
+        "o": [
+         {
+          "dung": [
+           "nở vì nhiệt nhiều hơn"
+          ],
+          "sai": [
+           "nở vì nhiệt ít hơn"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Băng kép đồng – sắt có mặt ngoài là mặt đồng, chứng tỏ {0}",
+        "o": [
+         {
+          "dung": [
+           "đồng nở vì nhiệt nhiều hơn sắt"
+          ],
+          "sai": [
+           "sắt nở vì nhiệt nhiều hơn đồng",
+           "đồng và sắt nở vì nhiệt như nhau"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Băng kép đồng – nhôm có mặt ngoài là mặt nhôm, chứng tỏ {0}",
+        "o": [
+         {
+          "dung": [
+           "nhôm nở vì nhiệt nhiều hơn đồng"
+          ],
+          "sai": [
+           "đồng nở vì nhiệt nhiều hơn nhôm",
+           "nhôm và đồng nở vì nhiệt như nhau"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Xếp ba kim loại theo sự nở vì nhiệt từ nhiều tới ít: {0}",
+        "o": [
+         {
+          "dung": [
+           "nhôm, đồng, sắt"
+          ],
+          "sai": [
+           "sắt, đồng, nhôm",
+           "đồng, nhôm, sắt"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "29.7",
@@ -17890,7 +19455,25 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Lúc đầu bình cầu tiếp xúc với nước nóng, nóng lên và nở ra trước, nước trong bình chưa kịp nóng nên mực nước trong ống hạ xuống một chút. Sau đó nước trong bình cũng nóng lên và nở ra; nước nở vì nhiệt nhiều hơn thuỷ tinh nên mực nước dâng lên cao hơn mức ban đầu.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "hinh": [
+      "sbtkhtn8/H.29.1.webp"
+     ],
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 4,
+      "hoi": "Khi đặt bình cầu chứa nước ở nhiệt độ phòng vào nước nóng thì mới đầu cột nước trong ống thuỷ tinh hạ xuống một chút, sau đó mới dâng cao hơn mức ban đầu. Tại sao? (Hình 29.1: bình cầu chứa đầy nước, đậy nút có cắm một ống thuỷ tinh, nước dâng lên một đoạn trong ống.)",
+      "buoc": [
+       "Lúc đầu, bình cầu tiếp xúc với nước nóng nên nóng lên và nở ra trước, nước trong bình chưa kịp nóng",
+       "Bình nở ra làm dung tích của bình tăng, nên mực nước trong ống hạ xuống một chút",
+       "Sau đó, nước trong bình cũng nóng lên và nở ra",
+       "Nước nở vì nhiệt nhiều hơn thuỷ tinh, nên mực nước trong ống dâng lên cao hơn mức ban đầu"
+      ],
+      "nhieu": [
+       "Lúc đầu, nước trong bình nóng lên và nở ra trước, bình cầu chưa kịp nóng",
+       "Nước nở vì nhiệt ít hơn thuỷ tinh, nên mực nước trong ống dâng lên cao hơn mức ban đầu"
+      ]
+     }
     },
     {
      "ma": "29.8",
@@ -17899,7 +19482,42 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Vì chất khí nở vì nhiệt nhiều hơn chất lỏng rất nhiều (gấp nhiều lần): chỉ cần làm nóng một chút bằng tay đã thấy khí nở; chất lỏng nở ít nên phải nhúng bình vào nước nóng mới quan sát được.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "Tại sao trong thí nghiệm về sự nở vì nhiệt của chất khí, người ta chỉ cần xoa hai tay vào nhau rồi áp vào bình cầu là đã quan sát được hiện tượng nở vì nhiệt, còn trong thí nghiệm về sự nở vì nhiệt của chất lỏng, người ta phải nhúng bình cầu vào nước nóng mới quan sát được hiện tượng nở vì nhiệt?",
+      "dong": [
+       {
+        "chu": "Khi nóng lên như nhau, chất khí nở vì nhiệt {0} chất lỏng",
+        "o": [
+         {
+          "dung": [
+           "nhiều hơn rất nhiều"
+          ],
+          "sai": [
+           "ít hơn rất nhiều",
+           "như"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Bình chỉ nóng lên một chút (áp hai bàn tay đã xoa nóng) thì {0}",
+        "o": [
+         {
+          "dung": [
+           "chất khí đã nở ra đủ nhiều để thấy rõ, còn chất lỏng nở ra quá ít, khó thấy"
+          ],
+          "sai": [
+           "chất lỏng đã nở ra đủ nhiều để thấy rõ, còn chất khí nở ra quá ít, khó thấy",
+           "cả chất khí và chất lỏng đều chưa nở ra một chút nào, không thể thấy"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "29.9",
@@ -17908,7 +19526,42 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Quả không bị nứt: không khí bên trong nóng lên, nở ra, đẩy vỏ bóng phồng lên như cũ. Quả bị nứt: không khí bên trong cũng nóng lên và nở ra nhưng thoát ra ngoài qua vết nứt, nên quả bóng không phồng lên được.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "Hai quả bóng bàn đều bị bẹp (trong đó một quả bị nứt và một quả không bị nứt), được thả vào một cốc nước nóng thì quả bóng bàn không bị nứt phồng lên như cũ, còn quả bóng bàn bị nứt thì lại không phồng lên. Hãy giải thích hiện tượng này.",
+      "dong": [
+       {
+        "chu": "Quả bóng không bị nứt phồng lên vì {0}",
+        "o": [
+         {
+          "dung": [
+           "không khí bên trong bóng nóng lên, nở ra, đẩy vỏ bóng phồng lên"
+          ],
+          "sai": [
+           "nước nóng thấm qua vỏ vào trong bóng, đẩy vỏ bóng phồng lên",
+           "không khí bên trong bóng gặp nóng thì co lại, kéo vỏ bóng ra"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Quả bóng bị nứt không phồng lên vì {0}",
+        "o": [
+         {
+          "dung": [
+           "không khí bên trong cũng nóng lên, nở ra nhưng thoát ra ngoài qua vết nứt"
+          ],
+          "sai": [
+           "không khí bên trong không nóng lên được vì có vết nứt",
+           "không khí bên trong gặp nóng thì co lại, làm bóng bẹp thêm"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "29.10",
@@ -17917,34 +19570,196 @@
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
      "dap_an": "Khi rót nước ra, một lượng không khí bên ngoài tràn vào phích; đậy nút ngay thì lượng không khí này bị nước nóng làm nóng lên, nở ra, đẩy nút bật ra. Cách tránh: rót xong để nút mở một lúc cho không khí vào phích nóng lên, nở ra và thoát bớt ra ngoài rồi mới đậy nút.",
-     "loai_dap_an": "LOI_GIAI"
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "Tại sao khi rót nước ra khỏi phích (bình thuỷ) nếu đậy nút lại ngay thì nút hay bị bật ra? Làm cách nào để tránh hiện tượng trên?",
+      "dong": [
+       {
+        "chu": "Đậy nút ngay thì nút hay bị bật ra vì {0}",
+        "o": [
+         {
+          "dung": [
+           "không khí bên ngoài tràn vào phích lúc rót nước, bị nước nóng làm nóng lên và nở ra"
+          ],
+          "sai": [
+           "không khí bên ngoài tràn vào phích lúc rót nước, bị nước nóng làm co lại",
+           "nước lạnh bên ngoài tràn vào phích lúc rót nước, gặp nước nóng thì nở ra",
+           "chỗ nước vừa rót ra trở thành chân không, đẩy nút bật ra"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Để tránh nút bật ra, rót nước xong nên {0}",
+        "o": [
+         {
+          "dung": [
+           "để mở nút một lát cho không khí nóng lên, nở ra, thoát bớt ra ngoài rồi mới đậy nút"
+          ],
+          "sai": [
+           "đậy nút ngay rồi đặt phích ở chỗ có nắng để nước trong phích giữ nóng được lâu hơn",
+           "đậy nút ngay rồi lắc mạnh phích cho không khí bên trong nhanh chóng nóng đều lên"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "29.11a",
-     "de": "Điều kì lạ về tháp Eiffel. Tháp Eiffel là một công trình kiến trúc bằng thép được xây dựng tại công viên Champ de Mars, trên bờ sông Seine ở thủ đô Paris của nước Pháp. Tháp được xây dựng để làm biểu tượng cho Triển lãm thế giới tổ chức vào năm 1889 nhân dịp kỉ niệm 100 năm Cách mạng Pháp. Chiều cao của tháp hiện nay là 330 m, khối lượng của tháp là 109 859 kg, gồm 18 038 tấm thép được hàn nối chặt chẽ với nhau. Do được làm bằng thép nên chiều cao của tháp thay đổi rõ ràng theo nhiệt độ. Trong ngày nắng nóng kỉ lục vào năm 1976 độ tăng chiều cao của tháp lên tới 18 cm. Ngược lại, do có cấu trúc rất thoáng và chắc chắn nên chiều cao của tháp rất ít bị ảnh hưởng bởi gió. Vào những ngày mùa hè nắng nóng, bầu trời quang đãng, các thiết bị ghi tự động gắn trên tháp cho thấy đỉnh tháp chuyển động theo một cung tròn có bán kính khoảng 15 cm. Sự thay đổi chiều cao của tháp Eiffel là do: A. Gió thổi vào tháp. B. Sự rung động của nền đất xây dựng tháp. C. Sự nở vì nhiệt của chất rắn. D. Số người lên tháp tham quan quá lớn.",
+     "de": "Điều kì lạ về tháp Eiffel. Tháp Eiffel là một công trình kiến trúc bằng thép được xây dựng tại công viên Champ de Mars, trên bờ sông Seine ở thủ đô Paris của nước Pháp. Tháp được xây dựng để làm biểu tượng cho Triển lãm thế giới tổ chức vào năm 1889 nhân dịp kỉ niệm 100 năm Cách mạng Pháp. Chiều cao của tháp hiện nay là 330 m, khối lượng của tháp khoảng 10 100 tấn, gồm 18 038 tấm thép được ghép nối chặt chẽ với nhau. Do được làm bằng thép nên chiều cao của tháp thay đổi rõ ràng theo nhiệt độ. Trong ngày nắng nóng kỉ lục vào năm 1976 độ tăng chiều cao của tháp lên tới 18 cm. Ngược lại, do có cấu trúc rất thoáng và chắc chắn nên chiều cao của tháp rất ít bị ảnh hưởng bởi gió. Vào những ngày mùa hè nắng nóng, bầu trời quang đãng, các thiết bị ghi tự động gắn trên tháp cho thấy đỉnh tháp chuyển động theo một cung tròn có bán kính khoảng 15 cm. Sự thay đổi chiều cao của tháp Eiffel là do: A. Gió thổi vào tháp. B. Sự rung động của nền đất xây dựng tháp. C. Sự nở vì nhiệt của chất rắn. D. Số người lên tháp tham quan quá lớn.",
      "trang": 81,
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "C",
-     "loai_dap_an": "TN"
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Điều kì lạ về tháp Eiffel\nTháp Eiffel là một công trình kiến trúc bằng thép được xây dựng tại công viên Champ de Mars, trên bờ sông Seine ở thủ đô Paris của nước Pháp. Tháp được xây dựng để làm biểu tượng cho Triển lãm thế giới tổ chức vào năm 1889 nhân dịp kỉ niệm 100 năm Cách mạng Pháp.\nChiều cao của tháp hiện nay là 330 m, khối lượng của tháp khoảng 10 100 tấn, gồm 18 038 tấm thép được ghép nối chặt chẽ với nhau.\nDo được làm bằng thép nên chiều cao của tháp thay đổi rõ ràng theo nhiệt độ. Trong ngày nắng nóng kỉ lục vào năm 1976 độ tăng chiều cao của tháp lên tới 18 cm. Ngược lại, do có cấu trúc rất thoáng và chắc chắn nên chiều cao của tháp rất ít bị ảnh hưởng bởi gió.\nVào những ngày mùa hè nắng nóng, bầu trời quang đãng, các thiết bị ghi tự động gắn trên tháp cho thấy đỉnh tháp chuyển động theo một cung tròn có bán kính khoảng 15 cm.\nSự thay đổi chiều cao của tháp Eiffel là do",
+      "cac": [
+       "Gió thổi vào tháp",
+       "Sự rung động của nền đất xây dựng tháp",
+       "Sự nở vì nhiệt của chất rắn",
+       "Số người lên tháp tham quan quá lớn"
+      ],
+      "dap": "C"
+     }
     },
     {
      "ma": "29.11b",
-     "de": "Điều kì lạ về tháp Eiffel. Tháp Eiffel là một công trình kiến trúc bằng thép được xây dựng tại công viên Champ de Mars, trên bờ sông Seine ở thủ đô Paris của nước Pháp. Tháp được xây dựng để làm biểu tượng cho Triển lãm thế giới tổ chức vào năm 1889 nhân dịp kỉ niệm 100 năm Cách mạng Pháp. Chiều cao của tháp hiện nay là 330 m, khối lượng của tháp là 109 859 kg, gồm 18 038 tấm thép được hàn nối chặt chẽ với nhau. Do được làm bằng thép nên chiều cao của tháp thay đổi rõ ràng theo nhiệt độ. Trong ngày nắng nóng kỉ lục vào năm 1976 độ tăng chiều cao của tháp lên tới 18 cm. Ngược lại, do có cấu trúc rất thoáng và chắc chắn nên chiều cao của tháp rất ít bị ảnh hưởng bởi gió. Vào những ngày mùa hè nắng nóng, bầu trời quang đãng, các thiết bị ghi tự động gắn trên tháp cho thấy đỉnh tháp chuyển động theo một cung tròn có bán kính khoảng 15 cm. Đánh giá các câu giải thích sau đây về nguyên nhân làm đỉnh tháp Eiffel di chuyển theo một cung tròn được nêu trong phần đọc hiểu (bảng có cột Nội dung và cột Đánh giá gồm hai ô Đúng, Sai): a) Do sự dao động của đỉnh tháp dưới tác dụng của gió; b) Do chỉ có một mặt của tháp nhận được ánh nắng mặt trời, các mặt còn lại không nhận được ánh nắng mặt trời nên tháp bị cong lên giống như băng kép khi bị hơ nóng một mặt; c) Do khi Mặt Trời mọc thì tháp nóng lên, khi Mặt Trời lặn thì tháp nguội đi; d) Do tác động của khách tham quan.",
+     "de": "Điều kì lạ về tháp Eiffel. Tháp Eiffel là một công trình kiến trúc bằng thép được xây dựng tại công viên Champ de Mars, trên bờ sông Seine ở thủ đô Paris của nước Pháp. Tháp được xây dựng để làm biểu tượng cho Triển lãm thế giới tổ chức vào năm 1889 nhân dịp kỉ niệm 100 năm Cách mạng Pháp. Chiều cao của tháp hiện nay là 330 m, khối lượng của tháp khoảng 10 100 tấn, gồm 18 038 tấm thép được ghép nối chặt chẽ với nhau. Do được làm bằng thép nên chiều cao của tháp thay đổi rõ ràng theo nhiệt độ. Trong ngày nắng nóng kỉ lục vào năm 1976 độ tăng chiều cao của tháp lên tới 18 cm. Ngược lại, do có cấu trúc rất thoáng và chắc chắn nên chiều cao của tháp rất ít bị ảnh hưởng bởi gió. Vào những ngày mùa hè nắng nóng, bầu trời quang đãng, các thiết bị ghi tự động gắn trên tháp cho thấy đỉnh tháp chuyển động theo một cung tròn có bán kính khoảng 15 cm. Đánh giá các câu giải thích sau đây về nguyên nhân làm đỉnh tháp Eiffel di chuyển theo một cung tròn được nêu trong phần đọc hiểu (bảng có cột Nội dung và cột Đánh giá gồm hai ô Đúng, Sai): a) Do sự dao động của đỉnh tháp dưới tác dụng của gió; b) Do chỉ có một mặt của tháp nhận được ánh nắng mặt trời, các mặt còn lại không nhận được ánh nắng mặt trời nên tháp bị cong lên giống như băng kép khi bị hơ nóng một mặt; c) Do khi Mặt Trời mọc thì tháp nóng lên, khi Mặt Trời lặn thì tháp nguội đi; d) Do tác động của khách tham quan.",
      "trang": 81,
      "nhom": "Trắc nghiệm",
      "dang": "TRAC_NGHIEM",
      "dap_an": "a) Sai; b) Đúng; c) Không hoàn toàn sai; d) Sai",
-     "loai_dap_an": "DAP_SO"
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "hoi": "Điều kì lạ về tháp Eiffel\nTháp Eiffel là một công trình kiến trúc bằng thép được xây dựng tại công viên Champ de Mars, trên bờ sông Seine ở thủ đô Paris của nước Pháp. Tháp được xây dựng để làm biểu tượng cho Triển lãm thế giới tổ chức vào năm 1889 nhân dịp kỉ niệm 100 năm Cách mạng Pháp.\nChiều cao của tháp hiện nay là 330 m, khối lượng của tháp khoảng 10 100 tấn, gồm 18 038 tấm thép được ghép nối chặt chẽ với nhau.\nDo được làm bằng thép nên chiều cao của tháp thay đổi rõ ràng theo nhiệt độ. Trong ngày nắng nóng kỉ lục vào năm 1976 độ tăng chiều cao của tháp lên tới 18 cm. Ngược lại, do có cấu trúc rất thoáng và chắc chắn nên chiều cao của tháp rất ít bị ảnh hưởng bởi gió.\nVào những ngày mùa hè nắng nóng, bầu trời quang đãng, các thiết bị ghi tự động gắn trên tháp cho thấy đỉnh tháp chuyển động theo một cung tròn có bán kính khoảng 15 cm.\nĐánh giá các câu giải thích sau đây về nguyên nhân làm đỉnh tháp Eiffel di chuyển theo một cung tròn: mỗi câu đúng, sai, hay chỉ đúng một phần?",
+      "dong": [
+       {
+        "chu": "Do sự dao động của đỉnh tháp dưới tác dụng của gió: {0}",
+        "o": [
+         {
+          "dung": [
+           "Sai"
+          ],
+          "sai": [
+           "Đúng",
+           "Đúng một phần"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Do chỉ có một mặt của tháp nhận được ánh nắng mặt trời, các mặt còn lại không nhận được ánh nắng mặt trời nên tháp bị cong lên giống như băng kép khi bị hơ nóng một mặt: {0}",
+        "o": [
+         {
+          "dung": [
+           "Đúng"
+          ],
+          "sai": [
+           "Sai",
+           "Đúng một phần"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Do khi Mặt Trời mọc thì tháp nóng lên, khi Mặt Trời lặn thì tháp nguội đi: {0}",
+        "o": [
+         {
+          "dung": [
+           "Đúng một phần"
+          ],
+          "sai": [
+           "Đúng",
+           "Sai"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Do tác động của khách tham quan: {0}",
+        "o": [
+         {
+          "dung": [
+           "Sai"
+          ],
+          "sai": [
+           "Đúng",
+           "Đúng một phần"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "29.11c",
-     "de": "Điều kì lạ về tháp Eiffel. Tháp Eiffel là một công trình kiến trúc bằng thép được xây dựng tại công viên Champ de Mars, trên bờ sông Seine ở thủ đô Paris của nước Pháp. Tháp được xây dựng để làm biểu tượng cho Triển lãm thế giới tổ chức vào năm 1889 nhân dịp kỉ niệm 100 năm Cách mạng Pháp. Chiều cao của tháp hiện nay là 330 m, khối lượng của tháp là 109 859 kg, gồm 18 038 tấm thép được hàn nối chặt chẽ với nhau. Do được làm bằng thép nên chiều cao của tháp thay đổi rõ ràng theo nhiệt độ. Trong ngày nắng nóng kỉ lục vào năm 1976 độ tăng chiều cao của tháp lên tới 18 cm. Ngược lại, do có cấu trúc rất thoáng và chắc chắn nên chiều cao của tháp rất ít bị ảnh hưởng bởi gió. Vào những ngày mùa hè nắng nóng, bầu trời quang đãng, các thiết bị ghi tự động gắn trên tháp cho thấy đỉnh tháp chuyển động theo một cung tròn có bán kính khoảng 15 cm. Biết trong ngày nắng nóng kỉ lục năm 1976, độ tăng chiều cao của tháp Eiffel lên tới 18 cm. Hãy tìm cách dựa vào số liệu trên để xác định gần đúng độ tăng nhiệt độ của thành phố Paris trong ngày nói trên. Giải thích tại sao kết quả tìm được chỉ là gần đúng.",
+     "de": "Điều kì lạ về tháp Eiffel. Tháp Eiffel là một công trình kiến trúc bằng thép được xây dựng tại công viên Champ de Mars, trên bờ sông Seine ở thủ đô Paris của nước Pháp. Tháp được xây dựng để làm biểu tượng cho Triển lãm thế giới tổ chức vào năm 1889 nhân dịp kỉ niệm 100 năm Cách mạng Pháp. Chiều cao của tháp hiện nay là 330 m, khối lượng của tháp khoảng 10 100 tấn, gồm 18 038 tấm thép được ghép nối chặt chẽ với nhau. Do được làm bằng thép nên chiều cao của tháp thay đổi rõ ràng theo nhiệt độ. Trong ngày nắng nóng kỉ lục vào năm 1976 độ tăng chiều cao của tháp lên tới 18 cm. Ngược lại, do có cấu trúc rất thoáng và chắc chắn nên chiều cao của tháp rất ít bị ảnh hưởng bởi gió. Vào những ngày mùa hè nắng nóng, bầu trời quang đãng, các thiết bị ghi tự động gắn trên tháp cho thấy đỉnh tháp chuyển động theo một cung tròn có bán kính khoảng 15 cm. Biết trong ngày nắng nóng kỉ lục năm 1976, độ tăng chiều cao của tháp Eiffel lên tới 18 cm. Hãy tìm cách dựa vào số liệu trên để xác định gần đúng độ tăng nhiệt độ của thành phố Paris trong ngày nói trên. Giải thích tại sao kết quả tìm được chỉ là gần đúng.",
      "trang": 81,
      "nhom": "Bài tập",
      "dang": "CAU_NHO",
-     "dap_an": "Tra hệ số nở dài α của sắt (thép), dùng Δl = α·l·Δt với Δl = 18 cm, l ≈ 330 m để tính Δt; sách ghi kết quả khoảng 30 °C. Kết quả chỉ gần đúng vì α là độ nở dài tỉ đối của một thanh đặc hình trụ, không phải của một kết cấu tháp rỗng như tháp Eiffel; nên chỉ nói độ tăng nhiệt độ ngày đó vào khoảng 20 °C đến 30 °C.",
-     "loai_dap_an": "LOI_GIAI"
+     "dap_an": "Mỗi mét thép dài thêm khoảng 0,012 mm khi nóng thêm 1 °C, nên tháp cao 330 m cao thêm khoảng 4 mm mỗi khi nóng thêm 1 °C. Tháp cao thêm 18 cm = 180 mm thì nhiệt độ của tháp đã tăng khoảng 180 : 4 ≈ 45 °C. Kết quả chỉ gần đúng vì các phần của tháp nóng lên không đều (mặt có nắng nóng hơn mặt khuất nắng) và số 0,012 mm cũng chỉ gần đúng.",
+     "loai_dap_an": "LOI_GIAI",
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "hoi": "Điều kì lạ về tháp Eiffel\nTháp Eiffel là một công trình kiến trúc bằng thép được xây dựng tại công viên Champ de Mars, trên bờ sông Seine ở thủ đô Paris của nước Pháp. Tháp được xây dựng để làm biểu tượng cho Triển lãm thế giới tổ chức vào năm 1889 nhân dịp kỉ niệm 100 năm Cách mạng Pháp.\nChiều cao của tháp hiện nay là 330 m, khối lượng của tháp khoảng 10 100 tấn, gồm 18 038 tấm thép được ghép nối chặt chẽ với nhau.\nDo được làm bằng thép nên chiều cao của tháp thay đổi rõ ràng theo nhiệt độ. Trong ngày nắng nóng kỉ lục vào năm 1976 độ tăng chiều cao của tháp lên tới 18 cm. Ngược lại, do có cấu trúc rất thoáng và chắc chắn nên chiều cao của tháp rất ít bị ảnh hưởng bởi gió.\nVào những ngày mùa hè nắng nóng, bầu trời quang đãng, các thiết bị ghi tự động gắn trên tháp cho thấy đỉnh tháp chuyển động theo một cung tròn có bán kính khoảng 15 cm.\nBiết trong ngày nắng nóng kỉ lục năm 1976, độ tăng chiều cao của tháp Eiffel lên tới 18 cm. Hãy dựa vào số liệu trên để xác định gần đúng độ tăng nhiệt độ của tháp ứng với độ tăng chiều cao này, và giải thích tại sao kết quả tìm được chỉ là gần đúng.\nGiả sử khi nóng thêm 1 °C, mỗi mét thép dài thêm 0,012 mm, và coi tháp như một thanh thép thẳng đứng cao 330 m.",
+      "dong": [
+       {
+        "chu": "Khi nóng thêm 1 °C, tháp cao thêm khoảng {0}",
+        "o": [
+         {
+          "dung": [
+           "4 mm"
+          ],
+          "sai": [
+           "0,4 mm",
+           "40 mm",
+           "0,012 mm"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Tháp cao thêm 18 cm, tức 180 mm, nên nhiệt độ của tháp đã tăng khoảng {0}",
+        "o": [
+         {
+          "dung": [
+           "45 °C"
+          ],
+          "sai": [
+           "4,5 °C",
+           "720 °C",
+           "450 °C"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Kết quả chỉ là gần đúng vì {0}",
+        "o": [
+         {
+          "dung": [
+           "các phần của tháp nóng lên không đều (mặt có nắng nóng hơn mặt khuất nắng), số 0,012 mm cũng chỉ gần đúng"
+          ],
+          "sai": [
+           "chiều cao của tháp thay đổi chủ yếu do gió thổi, nhiệt độ chỉ ảnh hưởng rất ít tới chiều cao",
+           "thép chỉ nở vì nhiệt khi bị nung tới hàng trăm độ, nên không thể dùng cách tính này"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     }
    ]
   },
