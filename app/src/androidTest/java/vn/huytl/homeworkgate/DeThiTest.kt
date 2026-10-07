@@ -119,7 +119,7 @@ class DeThiTest {
      */
     @Test
     fun du_muoi_ba_de_moi_de_du_so_cau_in_va_pham_vi_unit() {
-        val cac = anh()
+        val cac = anh().filter { it.ma.startsWith("GK1-") || it.ma.startsWith("CK1-") }
         val denUnit = linkedMapOf(
             "GK1-1" to 3, "GK1-2" to 3, "GK1-3" to 3, "GK1-4" to 9, "GK1-5" to 9, "GK1-6" to 9,
             "CK1-1" to 5, "CK1-2" to 6, "CK1-3" to 6, "CK1-4" to 6, "CK1-5" to 6, "CK1-7" to 9, "CK1-8" to 9
@@ -137,6 +137,34 @@ class DeThiTest {
         }
         assertEquals("Đề cuối kì 1 số 1", cac.first { it.ma == "CK1-1" }.ten)
         assertEquals((1..10).toList(), cac.first { it.ma == "CK1-1" }.cacMuc.filter { it.boMay == "nghe" }.map { it.so })
+    }
+
+    /**
+     * Hoc ki 2 (buoc 4.9, tu 7/10/2026): giua ki 2 so 1-7, cuoi ki 2 so 1-7, gop dan tung lo nen
+     * bang duoi lon dan theo tung lo. Moi de 40 cau in, cau 1-10 la phan nghe (bo), con lai lam
+     * tren may, ke ca cau "trung" (tro ve cau goc o de khac, xem gop_de.py TRUNG_TAY). De sau cua
+     * mot ky dung sau de truoc trong file (gop_de.py xep GK1, CK1, GK2, CK2).
+     */
+    @Test
+    fun de_hoc_ki_2_du_so_cau_in_va_pham_vi_unit() {
+        val cac = anh().filter { it.ma.startsWith("GK2-") || it.ma.startsWith("CK2-") }
+        // ma de -> (den_unit, phut)
+        val khung = linkedMapOf(
+            "GK2-1" to (9 to 45), "GK2-2" to (9 to 45), "GK2-3" to (9 to 45), "GK2-4" to (9 to 45)
+        )
+        assertEquals(khung.keys.toList(), cac.map { it.ma })
+        cac.forEach { de ->
+            assertEquals("${de.ma}: pham vi", khung.getValue(de.ma).first, de.denUnit)
+            assertEquals("${de.ma}: gio lam", khung.getValue(de.ma).second, de.phut)
+            assertEquals("${de.ma}: so cau in", (1..40).toList(), de.cacMuc.map { it.so })
+            assertEquals("${de.ma}: cau nghe", (1..10).toList(), de.cacMuc.filter { it.boMay == "nghe" }.map { it.so })
+            assertTrue("${de.ma}: chi bo phan nghe", de.cacMuc.all { it.boMay.isBlank() || it.boMay == "nghe" })
+            assertEquals("${de.ma}: cau lam tren may", 30, de.cauIds.size)
+            assertTrue("${de.ma}: moi cau co loi dan", de.cacMuc.all { it.nhom.isNotBlank() })
+        }
+        assertEquals("Đề giữa kì 2 số 1", cac.first().ten)
+        // Cau gan trung khac loi dan dung chung id cau goc, ke ca cau goc o de hoc ki 1.
+        assertTrue(cac.first { it.ma == "GK2-2" }.cauIds.contains("dethianh8:GK1-4.9"))
     }
 
     @Test
