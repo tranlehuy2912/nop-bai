@@ -154,7 +154,8 @@ class DeThiTest {
         val khung = linkedMapOf(
             "GK2-1" to Triple(9, 45, 10), "GK2-2" to Triple(9, 45, 10), "GK2-3" to Triple(9, 45, 10),
             "GK2-4" to Triple(9, 45, 10), "GK2-5" to Triple(12, 45, 10), "GK2-6" to Triple(9, 45, 8),
-            "GK2-7" to Triple(9, 45, 8)
+            "GK2-7" to Triple(9, 45, 8), "CK2-1" to Triple(12, 45, 10), "CK2-2" to Triple(12, 45, 10),
+            "CK2-3" to Triple(12, 45, 10), "CK2-4" to Triple(12, 45, 10)
         )
         assertEquals(khung.keys.toList(), cac.map { it.ma })
         cac.forEach { de ->
