@@ -55,7 +55,7 @@ Claude Code không được gõ mật khẩu, nên anh Huy làm phần cần m�
 - Timekpr-nExt bản 0.5.10, lấy từ PPA `ppa:mjasnik/ppa` (kho của Mint chỉ có 0.5.4). Tài khoản `lehoa`: giới hạn mỗi ngày 0 phút, đăng xuất khi hết giờ (`terminate`). Phút chỉ có khi được cộng bằng `timekpra --settimeleft lehoa + <giây>`; đã thử, giới hạn 0 vẫn cộng vượt được.
 - Dịch vụ `netflix-gio` (systemd), chạy `/usr/local/lib/netflix-gio/netflix_gio.py chay` bằng quyền root. Cấu hình `/etc/netflix-gio/cauhinh.json` (khoá API, dự án, mã nhà), trạng thái `/var/lib/netflix-gio/trangthai.json` (refresh token của tài khoản ẩn danh, các phiếu đã cộng trong ngày). Việc của nó ghi ở đầu file `netflix_gio.py`. Xem nhật ký: `journalctl -u netflix-gio | grep -v timekpra-su`. Mỗi lần gọi `timekpra` để lại bốn dòng `timekpra-su`, đó là chuyện bình thường.
 - Luật chặn web `/etc/firefox/policies/policies.json` do dịch vụ trên đặt hay gỡ, áp cho mọi tài khoản.
-- Phiên của Lê Hòa: `/etc/X11/Xsession.d/98netflix-lehoa` thay mọi phiên của `lehoa` bằng `/usr/local/bin/netflix-phien`. Script này chờ luật chặn web có mặt, chạy `marco` và `timekprc`, rồi mở `firefox --kiosk https://www.netflix.com/`. Đóng Firefox là đăng xuất.
+- Phiên của Lê Hòa: `/etc/X11/Xsession.d/98netflix-lehoa` thay mọi phiên của `lehoa` bằng `/usr/local/bin/netflix-phien`. Script này chờ luật chặn web có mặt, chạy `marco` (không chạy `timekprc`), rồi mở `firefox --kiosk https://www.netflix.com/`. Đóng Firefox là đăng xuất.
 - Gói `xdotool`, cài lúc thử.
 
 Cài lại hay chuyển sang dự án khác bằng `tools/laptop/cai.sh` (đọc đầu file): chép thư mục `tools/laptop` lên laptop, chạy `sudo sh cai.sh <google-services.json> <mã nhà>`. Script in uid ẩn danh của laptop. uid đó phải được ghi vào trường `uidLaptop` của document `laptop/<mã nhà>` qua console Firebase, rồi `systemctl enable --now netflix-gio`.
@@ -83,7 +83,7 @@ Commit được làm trong các worktree `.worktrees/netflix-<repo>` ở gốc w
 - Laptop đang nối dự án THỬ `homework-gate-thu`, nhà `tp9vjs55v5zpp3zjaybx` (nhà của máy ảo `pad5`). Luật mới đã dán lên dự án thử, document `laptop/tp9vjs55v5zpp3zjaybx` đã tạo.
 - Đã thử trọn vòng với `pad5` và `dt_bahuy`: đổi 4 phút chơi ra 8 phút, laptop cộng sau khoảng 30 giây; Bảng điều khiển cấp thêm 15 phút; đổi tỉ lệ; mở web, khoá web.
 - Web đang khoá cho cả máy. Laptop đang ở màn đăng nhập.
-- Đã thử từ xa phiên của Lê Hòa (13 giờ 07/10/2026): chọn "Lê Hòa" là có nút Đăng nhập, không hỏi mật khẩu; Firefox tự mở Netflix toàn màn hình trên màn laptop; Timekpr-nExt báo "5 minutes left", chương trình báo "Còn N phút xem Netflix" (hiện 30 giây); hết giờ thì đăng xuất về màn đăng nhập; đăng nhập lúc 0 phút thì khoảng 20 giây sau bị đuổi ra.
+- Đã thử từ xa phiên của Lê Hòa (13 giờ 07/10/2026): chọn "Lê Hòa" là có nút Đăng nhập, không hỏi mật khẩu; Firefox tự mở Netflix toàn màn hình trên màn laptop; chương trình báo "Còn N phút xem Netflix" (hiện 30 giây). Thông báo tiếng Anh của Timekpr-nExt đã tắt theo ý anh Huy: phiên không chạy `timekprc`, và `HIDE_TRAY_ICON = True`; hết giờ thì đăng xuất về màn đăng nhập; đăng nhập lúc 0 phút thì khoảng 20 giây sau bị đuổi ra.
 - `lehoa` đã dùng hết phút thử, còn 0 phút.
 - Firefox kiosk chỉ hiện trên màn laptop (eDP-1, 1366x768), tivi nối HDMI (HDMI-1, 1920x1080, đặt bên phải) để đen.
 

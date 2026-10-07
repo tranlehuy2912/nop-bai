@@ -26,6 +26,11 @@ install -m 755 "$day/netflix-phien" /usr/local/bin/netflix-phien
 install -m 644 "$day/98netflix-lehoa" /etc/X11/Xsession.d/98netflix-lehoa
 id lehoa >/dev/null 2>&1 || useradd -m -c "Lê Hòa" -s /bin/bash lehoa
 usermod -aG nopasswdlogin lehoa
+# Timekpr-nExt: 0 phut moi ngay, het gio thi dang xuat, khong tu bao (chi bao tieng Viet tu
+# netflix_gio.py, anh Huy chon 7/10/2026).
+timekpra --settimelimits lehoa "0;0;0;0;0;0;0" >/dev/null
+timekpra --setlockouttype lehoa terminate >/dev/null
+timekpra --sethidetrayicon lehoa true >/dev/null
 systemctl daemon-reload
 echo "uid laptop: $(python3 /usr/local/lib/netflix-gio/netflix_gio.py dangky)"
 # Chay lai dich vu neu dang chay; lan dau thi bat sau khi da ghi uid len console.

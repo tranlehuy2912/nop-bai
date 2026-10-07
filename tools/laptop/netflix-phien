@@ -18,8 +18,11 @@ while ! grep -q WebsiteFilter "$LUAT" 2>/dev/null; do
     sleep 1
 done
 
-# Trinh quan ly cua so cho ban phim va thong bao chay dung; Timekpr-nExt bao gio con lai.
+# Trinh quan ly cua so cho ban phim va thong bao chay dung.
+#
+# Khong chay timekprc (phan bao gio cua Timekpr-nExt): no bao bang tieng Anh, anh Huy chi muon
+# mot thong bao tieng Viet, do netflix_gio.py gui luc con 5 phut (7/10/2026). Dem gio va dang
+# xuat la viec cua phan chay ngam timekprd, khong can timekprc.
 marco &
-timekprc &
 
 firefox --kiosk https://www.netflix.com/
