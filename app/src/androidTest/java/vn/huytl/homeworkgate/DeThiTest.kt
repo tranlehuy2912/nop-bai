@@ -141,25 +141,30 @@ class DeThiTest {
 
     /**
      * Hoc ki 2 (buoc 4.9, tu 7/10/2026): giua ki 2 so 1-7, cuoi ki 2 so 1-7, gop dan tung lo nen
-     * bang duoi lon dan theo tung lo. Moi de 40 cau in, cau 1-10 la phan nghe (bo), con lai lam
-     * tren may, ke ca cau "trung" (tro ve cau goc o de khac, xem gop_de.py TRUNG_TAY). De sau cua
-     * mot ky dung sau de truoc trong file (gop_de.py xep GK1, CK1, GK2, CK2).
+     * bang duoi lon dan theo tung lo. Moi de 40 cau in, phan nghe o dau de (bo), con lai lam tren
+     * may, ke ca cau "trung" (tro ve cau goc o de khac, xem gop_de.py TRUNG_TAY). De sau cua mot
+     * ky dung sau de truoc trong file (gop_de.py xep GK1, CK1, GK2, CK2). GK2-5 co cau 17 ve nha
+     * thien van, khong gian (Unit 12) nen den_unit 12. GK2-6, GK2-7 dang 2025 theo khung moi: 8
+     * cau nghe.
      */
     @Test
     fun de_hoc_ki_2_du_so_cau_in_va_pham_vi_unit() {
         val cac = anh().filter { it.ma.startsWith("GK2-") || it.ma.startsWith("CK2-") }
-        // ma de -> (den_unit, phut)
+        // ma de -> (den_unit, phut, so cau nghe o dau de)
         val khung = linkedMapOf(
-            "GK2-1" to (9 to 45), "GK2-2" to (9 to 45), "GK2-3" to (9 to 45), "GK2-4" to (9 to 45)
+            "GK2-1" to Triple(9, 45, 10), "GK2-2" to Triple(9, 45, 10), "GK2-3" to Triple(9, 45, 10),
+            "GK2-4" to Triple(9, 45, 10), "GK2-5" to Triple(12, 45, 10), "GK2-6" to Triple(9, 45, 8),
+            "GK2-7" to Triple(9, 45, 8)
         )
         assertEquals(khung.keys.toList(), cac.map { it.ma })
         cac.forEach { de ->
-            assertEquals("${de.ma}: pham vi", khung.getValue(de.ma).first, de.denUnit)
-            assertEquals("${de.ma}: gio lam", khung.getValue(de.ma).second, de.phut)
+            val (denUnit, phut, soNghe) = khung.getValue(de.ma)
+            assertEquals("${de.ma}: pham vi", denUnit, de.denUnit)
+            assertEquals("${de.ma}: gio lam", phut, de.phut)
             assertEquals("${de.ma}: so cau in", (1..40).toList(), de.cacMuc.map { it.so })
-            assertEquals("${de.ma}: cau nghe", (1..10).toList(), de.cacMuc.filter { it.boMay == "nghe" }.map { it.so })
+            assertEquals("${de.ma}: cau nghe", (1..soNghe).toList(), de.cacMuc.filter { it.boMay == "nghe" }.map { it.so })
             assertTrue("${de.ma}: chi bo phan nghe", de.cacMuc.all { it.boMay.isBlank() || it.boMay == "nghe" })
-            assertEquals("${de.ma}: cau lam tren may", 30, de.cauIds.size)
+            assertEquals("${de.ma}: cau lam tren may", 40 - soNghe, de.cauIds.size)
             assertTrue("${de.ma}: moi cau co loi dan", de.cacMuc.all { it.nhom.isNotBlank() })
         }
         assertEquals("Đề giữa kì 2 số 1", cac.first().ten)
