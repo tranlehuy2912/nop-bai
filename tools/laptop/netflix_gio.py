@@ -319,6 +319,23 @@ def dang_dung(nguoi):
     return False
 
 
+def dong_ho_da_dong_bo():
+    """Dong ho may da lay gio qua mang chua.
+
+    Laptop mat gio moi lan tat han may (thay 7/10/2026: luc khoi dong dong ho la 26/11/2025,
+    systemd-timesyncd dat lai thanh gio luu lan truoc roi moi lay gio mang). Tat tu toi qua thi trong
+    khoang do may tuong van la hom qua, xu_ly_phieu coi phieu sang nay la phieu cu va xoa mat.
+    """
+    if os.path.exists("/run/systemd/timesync/synchronized"):
+        return True
+    try:
+        r = subprocess.run(["timedatectl", "show", "-p", "NTPSynchronized", "--value"],
+                           capture_output=True, text=True, timeout=10)
+    except (OSError, subprocess.TimeoutExpired):
+        return False
+    return r.stdout.strip() == "yes"
+
+
 def bao(nguoi, tieu_de, noi_dung):
     """Hien thong bao trong phien cua [nguoi]. Hong thi bo qua, Timekpr-nExt van bao luc cuoi."""
     try:
@@ -353,6 +370,8 @@ class May:
         # Ba Huy co bam "Mở web" khong. Mac dinh khoa: chua doc duoc Firestore thi khoa.
         self.mo_web = False
         self.web_dang_mo = None
+        # Da lay gio mang lan nao trong lan chay nay chua; roi thi thoi hoi.
+        self.gio_dung = False
 
     def xu_ly_phieu(self):
         hom_nay = time.strftime("%Y-%m-%d")
@@ -412,11 +431,16 @@ class May:
         if dung and dat_luat_firefox(True):
             ghi_log("Le Hoa dang nhap, khoa web")
         loi_mang = None
+        if not self.gio_dung:
+            self.gio_dung = dong_ho_da_dong_bo()
         if time.time() - self.lan_hoi >= HOI_PHIEU_GIAY:
             self.lan_hoi = time.time()
             try:
                 self.mo_web = self.fb.doc_laptop().get("moWeb", {}).get("booleanValue", False)
-                self.xu_ly_phieu()
+                if self.gio_dung:
+                    self.xu_ly_phieu()
+                else:
+                    ghi_log("dong ho chua lay gio mang, chua nhan phieu")
             except Exception as e:
                 # Van di tiep de dat luat Firefox theo lan doc truoc; bao loi sau cung.
                 loi_mang = e
@@ -429,7 +453,9 @@ class May:
         con_lai = timekpr_con_lai(self.nguoi, dung)
         if con_lai is None:
             ghi_log("khong doc duoc Timekpr-nExt")
-            return dung
+            # Vua khoi dong may thi Timekpr-nExt thuong chua chay. Chua co FILE_CON_LAI thi
+            # netflix-phien coi la het phut, nen thu lai sau NHIP_DANG_DUNG chu khong cho mot phut.
+            return True
         ghi_con_lai(con_lai, dung)
         if dung and 60 < con_lai <= BAO_TRUOC_GIAY and not self.da_bao:
             self.da_bao = True
@@ -437,7 +463,9 @@ class May:
                 "Hết giờ laptop tự đăng xuất. Muốn xem thêm thì đổi phút chơi trên tablet.")
         if con_lai > BAO_TRUOC_GIAY + 30:
             self.da_bao = False
-        self.day_trang_thai(con_lai, dung)
+        # Gio sai thi moc het gio va capNhatLuc ghi len dien thoai cung sai.
+        if self.gio_dung:
+            self.day_trang_thai(con_lai, dung)
         # Web dang mo thi xem day, de Le Hoa dang nhap la khoa ngay.
         return dung or mo
 

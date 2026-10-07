@@ -27,8 +27,8 @@ Mọi lựa chọn trên do anh Huy chốt ngày 07/10/2026.
 | | Giá trị |
 |---|---|
 | Laptop | HP Pavilion 14, Linux Mint 22.3 bản MATE (không phải XFCE), Ubuntu noble, Firefox 146 bản deb |
-| Tailscale | tài khoản `tranlehuy2912@gmail.com`; laptop `huy-hp-pavilion-14-notebook-pc` 100.93.227.126, Mac mini `mac-mini-ca-huy` 100.95.83.54 |
-| Mạng nhà | laptop ở 192.168.0.107; Mac mini ở chỗ khác nên đi qua Tailscale |
+| Tailscale | tài khoản `tranlehuy2912@gmail.com`; laptop `huy-hp-pavilion-14-notebook-pc` 100.93.227.126, Mac mini `mac-mini-ca-huy` 100.95.83.54, MacBook Pro `trns-macbook-pro` 100.107.197.55 |
+| Mạng nhà | laptop ở 192.168.0.107; Mac mini và MacBook Pro ở mạng khác nên đi qua Tailscale |
 | Vân tay khoá SSH ED25519 của laptop | `SHA256:ACKS/1gSt3nqz2oJ76SkiDeQzYRkNjTJKAATPnJP9Uo` |
 | Màn đăng nhập | LightDM với slick-greeter |
 
@@ -38,15 +38,15 @@ Tài khoản trên laptop:
 - `harley`: dành cho Claude Code. Không có mật khẩu, ẩn khỏi màn đăng nhập (`/var/lib/AccountsService/users/harley`), chỉ vào bằng khoá SSH, `sudo` không cần mật khẩu (`/etc/sudoers.d/90-harley`). Mọi việc cài đặt chạy bằng tài khoản này.
 - `lehoa`: của Lê Hòa, không có quyền quản trị, không có mật khẩu, thuộc nhóm `nopasswdlogin` nên chọn tên là vào.
 
-SSH chỉ nhận khoá, chỉ cho `huy` và `harley` (`/etc/ssh/sshd_config.d/10-harley.conf`). Khoá đang được nhận là khoá `harley@mac-mini-ca-huy` của Mac mini.
+SSH chỉ nhận khoá, chỉ cho `huy` và `harley` (`/etc/ssh/sshd_config.d/10-harley.conf`). Khoá đang được nhận: `harley@mac-mini-ca-huy` của Mac mini, và `huytl@cnv.vn` của MacBook Pro (thêm tối 07/10/2026). Đăng nhập SSH bằng mật khẩu đã tắt (`PasswordAuthentication no`).
 
 ### Cho máy Mac khác vào
 
 Claude Code không được gõ mật khẩu, nên anh Huy làm phần cần mật khẩu:
 
-1. Mac mới cài Tailscale, đăng nhập cùng tài khoản trên. Phần mở rộng mạng của Tailscale phải bật trong Cài đặt hệ thống, mục Login Items & Extensions. Trên Mac mini, lần đầu báo lỗi "permission denied" khi lưu cấu hình VPN; thoát hẳn Tailscale rồi mở lại, bấm Cho phép là được.
-2. Trên Mac mới tạo khoá: `ssh-keygen -t ed25519 -N "" -C "harley@<tên máy>" -f ~/.ssh/id_ed25519`.
-3. Chép khoá vào cả hai tài khoản. Tài khoản `harley` không có mật khẩu nên không dùng được `ssh-copy-id` trực tiếp. Cách đơn giản là để phiên Claude Code trên Mac mini (đã vào được) thêm dòng khoá công khai của Mac mới vào `/home/harley/.ssh/authorized_keys` và `/home/huy/.ssh/authorized_keys`. Cách khác: anh Huy chạy `ssh-copy-id huy@100.93.227.126` (gõ mật khẩu `huy`), rồi `ssh -t huy@100.93.227.126 'sudo tee -a /home/harley/.ssh/authorized_keys < ~/.ssh/authorized_keys'` và gõ mật khẩu cho `sudo`.
+1. Mac mới cài Tailscale, đăng nhập cùng tài khoản trên. Phần mở rộng mạng của Tailscale phải bật trong Cài đặt hệ thống, mục Login Items & Extensions. Trên Mac mini, lần đầu báo lỗi "permission denied" khi lưu cấu hình VPN; thoát hẳn Tailscale rồi mở lại, bấm Cho phép là được. MacBook Pro cài bằng `brew install --cask tailscale-app`; bật phần mở rộng xong mà cửa sổ Tailscale vẫn báo đỏ thì cũng thoát hẳn rồi mở lại.
+2. Trên Mac mới tạo khoá: `ssh-keygen -t ed25519 -N "" -C "harley@<tên máy>" -f ~/.ssh/id_ed25519`. Mac đã có sẵn `~/.ssh/id_ed25519` thì dùng luôn, đừng ghi đè (MacBook Pro dùng khoá có sẵn).
+3. Chép khoá vào cả hai tài khoản. Laptop không nhận đăng nhập SSH bằng mật khẩu, nên `ssh-copy-id` không chạy. Có hai cách. Một là phiên Claude Code trên Mac mini (đã vào được) thêm dòng khoá công khai của Mac mới vào `/home/harley/.ssh/authorized_keys` và `/home/huy/.ssh/authorized_keys`. Hai là anh Huy ngồi ở laptop, đăng nhập `huy`: trên Mac mới chạy tạm `python3 -m http.server 8765 --bind <IP Tailscale của Mac mới>` trong một thư mục chỉ có file khoá công khai tên `k`, anh Huy gõ trên laptop `(echo; curl -s <IP>:8765/k) | tee -a ~/.ssh/authorized_keys | sudo tee -a /home/harley/.ssh/authorized_keys` và gõ mật khẩu `huy` cho `sudo`, xong thì tắt chỗ tạm. MacBook Pro vào bằng cách hai. Anh Huy gõ tay theo ảnh chụp và dễ sót dấu cách, nên lệnh đưa anh gõ càng ngắn càng tốt.
 4. Thử: `ssh harley@100.93.227.126 'sudo -n true && echo ok'`. Lần đầu so vân tay với bảng trên.
 
 ## Các phần đã có
@@ -54,7 +54,7 @@ Claude Code không được gõ mật khẩu, nên anh Huy làm phần cần m�
 ### Trên laptop
 
 - Timekpr-nExt bản 0.5.10, lấy từ PPA `ppa:mjasnik/ppa` (kho của Mint chỉ có 0.5.4). Tài khoản `lehoa`: giới hạn mỗi ngày 0 phút, đăng xuất khi hết giờ (`terminate`). Phút chỉ có khi được cộng bằng `timekpra --settimeleft lehoa + <giây>`; đã thử, giới hạn 0 vẫn cộng vượt được.
-- Dịch vụ `netflix-gio` (systemd), chạy `/usr/local/lib/netflix-gio/netflix_gio.py chay` bằng quyền root. Cấu hình `/etc/netflix-gio/cauhinh.json` (khoá API, dự án, mã nhà), trạng thái `/var/lib/netflix-gio/trangthai.json` (refresh token của tài khoản ẩn danh, các phiếu đã cộng trong ngày). Việc của nó ghi ở đầu file `netflix_gio.py`. Xem nhật ký: `journalctl -u netflix-gio | grep -v timekpra-su`. Mỗi lần gọi `timekpra` để lại bốn dòng `timekpra-su`, đó là chuyện bình thường.
+- Dịch vụ `netflix-gio` (systemd), chạy `/usr/local/lib/netflix-gio/netflix_gio.py chay` bằng quyền root. Cấu hình `/etc/netflix-gio/cauhinh.json` (khoá API, dự án, mã nhà), trạng thái `/var/lib/netflix-gio/trangthai.json` (refresh token của tài khoản ẩn danh, các phiếu đã cộng trong ngày). Việc của nó ghi ở đầu file `netflix_gio.py`. Xem nhật ký: `journalctl -u netflix-gio | grep -v timekpra-su`. Mỗi lần gọi `timekpra` để lại bốn dòng `timekpra-su`, đó là chuyện bình thường. Unit không được ghi `After=timekpr.service`: `timekpr.service` tự ghi `After=multi-user.target`, thành vòng, và lúc khởi động systemd bỏ việc bật `netflix-gio` để gỡ vòng (bản trước tối 07/10/2026 bị vậy, dịch vụ chỉ chạy khi có người bật tay). Dịch vụ chỉ nhận phiếu và đẩy trạng thái lên Firestore khi đồng hồ đã lấy giờ mạng, xem mục đồng hồ ở "Những chỗ dễ vấp".
 - Luật chặn web `/etc/firefox/policies/policies.json` do dịch vụ trên đặt hay gỡ, áp cho mọi tài khoản.
 - Phiên của Lê Hòa: `/etc/X11/Xsession.d/98netflix-lehoa` thay mọi phiên của `lehoa` bằng `/usr/local/bin/netflix-phien`. Script này chờ luật chặn web có mặt, chạy `marco` (không chạy `timekprc`) và `/usr/local/bin/netflix-thoat` (nút "✕" màu đỏ, chỉ hiện khi rê chuột vào góc phải trên, bấm thì gửi SIGTERM cho Firefox, phiên kết thúc; anh Huy chọn vì con hay dùng chuột), rồi mở `firefox --kiosk https://www.netflix.com/`. Đóng Firefox là đăng xuất. Trước khi mở Firefox, script xoá ba dòng `extensions.installedDistroAddon.langpack-*` trong `prefs.js` của hồ sơ (lý do ở mục 2 của "Việc còn lại") và đặt `browser.startup.couldRestoreSession.count` bằng 2 để Firefox không hiện thanh "Open previous tabs?".
 - Gói `xdotool`, cài lúc thử.
@@ -79,13 +79,14 @@ Làm ở nhánh `laptop-netflix` của ba repo, đã gộp `main` và đẩy Git
 
 Commit được làm trong các worktree `.worktrees/netflix-<repo>` ở gốc workspace trên Mac mini, vì có nhiều phiên khác cùng làm trong cây chính.
 
-## Tình trạng (cập nhật 07/10/2026, 16 giờ 30)
+## Tình trạng (cập nhật 07/10/2026, 20 giờ 30)
 
 - Đã đưa lên bản thật: ba repo gộp vào `main` và đẩy GitHub; luật Firestore mới đã đăng lên cả dự án thử lẫn dự án thật `nop-bai-4934d` (14 giờ 52); laptop nối dự án thật, nhà `czfy4pdxn6gz5u8t3hap`, uid ẩn danh của laptop ghi ở trường `uidLaptop` của `laptop/czfy4pdxn6gz5u8t3hap`. Document `laptop/tp9vjs55v5zpp3zjaybx` bên dự án thử vẫn để đó cho máy ảo.
 - Web đang khoá cho cả máy. `lehoa` có 0 phút.
 - Đã thử từ xa phiên của Lê Hòa: chọn "Lê Hòa" là có nút Đăng nhập, không hỏi mật khẩu; Netflix toàn màn hình trên tivi; nút ✕ ở góc phải trên; thông báo "Còn N phút xem Netflix" (30 giây) lúc còn 5 phút; hết giờ đăng xuất; 0 phút thì chỉ hiện hộp "Hết phút xem Netflix..." rồi đăng xuất.
 - Hồ sơ Firefox của Lê Hòa đã có Widevine bản 4.10.3050.0, mở lại không tải nữa.
 - Từ khoảng 16 giờ, mở Netflix là dừng ở màn chọn hồ sơ "Who's watching?" (mọi hồ sơ đều có khoá PIN), trong khi lúc 15 giờ 20 thì vào thẳng "Home - Netflix". Chưa rõ vì sao. Có vẻ không do `prefs.js`: lần thử đầu tiên lúc 16 giờ 10, với `prefs.js` chỉ có 10 dòng, cũng dừng ở màn đó.
+- Tối 07/10/2026 (phiên trên MacBook Pro): `netflix-gio` đã tắt từ một lần khởi động lại chiều tối, vì vòng thứ tự nói ở mục "Trên laptop". Đã sửa unit, thêm bước chờ đồng hồ lấy giờ mạng, và khi chưa đọc được Timekpr-nExt thì thử lại sau 15 giây thay vì một phút. Khởi động lại thử lúc 20 giờ 26: dịch vụ tự chạy ở giây 89, chờ đồng hồ (lấy giờ mạng ở giây 96), Timekpr-nExt lên ở giây 99, vòng sau ghi được số phút. Lúc bật lại dịch vụ, ba phiếu Ba Huy cấp trong ngày còn nằm chờ (20, 20, 30 phút) được cộng một lượt, `lehoa` có 70 phút.
 
 ## Việc còn lại
 
@@ -105,3 +106,4 @@ Commit được làm trong các worktree `.worktrees/netflix-<repo>` ở gốc w
 - `pkill -f "<chuỗi>"` qua SSH khớp luôn chính câu lệnh của phiên SSH và tự giết nó. Viết chuỗi có ngoặc vuông, ví dụ `pkill -f "[f]f-thu"`. Tiến trình chính của Firefox tên là `firefox-bin`, nên `pkill -x firefox` không bắt được gì.
 - Đầu ra của `curl` trên Mac mini đi qua bộ lọc `rtk` và bị cắt. Muốn đọc JSON thô thì dùng `rtk proxy curl`.
 - Laptop xuất hình ra tivi qua HDMI. Một phiên khác ngày 07/10/2026 có hỏi về việc phát tiếng và hiện hộp thoại ra tivi.
+- Laptop mất giờ mỗi lần tắt hẳn (thấy tối 07/10/2026): lúc khởi động đồng hồ là 26/11/2025 (mốc của systemd), `systemd-timesyncd` đặt lại thành giờ đã lưu lần trước, rồi mới lấy giờ mạng. Có thể pin đồng hồ trong máy đã hết, chưa kiểm. Tắt từ tối qua thì trong khoảng đó máy tưởng vẫn là hôm qua, nên `netflix_gio.py` chờ có `/run/systemd/timesync/synchronized` (hoặc `timedatectl` báo `NTPSynchronized=yes`) rồi mới nhận phiếu, không thì phiếu sáng nay bị coi là phiếu cũ và bị xoá. Timekpr-nExt xử lý cú nhảy giờ này ra sao thì chưa thử.

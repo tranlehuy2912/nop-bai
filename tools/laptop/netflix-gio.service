@@ -1,7 +1,10 @@
 # Dich vu chay ngam cap gio Netflix cho tai khoan Le Hoa, xem netflix_gio.py.
 [Unit]
 Description=Cap gio Netflix tu tablet qua Firestore
-After=network-online.target timekpr.service
+# Khong ghi After=timekpr.service: timekpr.service tu ghi After=multi-user.target, ma dich vu
+# nay WantedBy=multi-user.target, thanh vong. Luc khoi dong systemd bo viec bat dich vu nay de
+# go vong (thay 7/10/2026). Timekpr-nExt chua chay thi netflix_gio.py ghi log roi thu vong sau.
+After=network-online.target
 Wants=network-online.target
 
 [Service]
