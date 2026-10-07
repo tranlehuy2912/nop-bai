@@ -2,7 +2,7 @@
  "nguon": "dethikhtn8",
  "mon": "Khoa học tự nhiên",
  "ten": "Đề thi Khoa học tự nhiên 8",
- "ban": 6,
+ "ban": 7,
  "cac_bai": [
   {
    "chuong": "Giữa học kì 1",
@@ -16997,6 +16997,1371 @@
       ]
      },
      "ghi_chu": "In y hệt SBT 20.7. Hai dòng ô chọn theo lời giải in. Lời giải in nói bụi có thể mang điện tích trái dấu; không cần vậy, vật nhiễm điện hút được cả vật nhỏ không nhiễm điện (SGK Bài 20), nên dòng 2 viết \"hút các vật nhỏ, nhẹ\"."
+    }
+   ]
+  },
+  {
+   "chuong": "Cuối học kì 2",
+   "bai": "Đề cuối kì 2 số 1",
+   "de_thi": {
+    "ma": "KCK2-1",
+    "nguon_goc": "loigiaihay.com, đăng 28/03/2024"
+   },
+   "cac_cau": [
+    {
+     "ma": "KCK2-1.C1",
+     "nhan": "Câu 1",
+     "phan": "Phần 1. Trắc nghiệm",
+     "nhom": "",
+     "trung": "KGK2-1.C7",
+     "ghi_chu": "Bảng đáp án in B. B sai: vật nhiễm điện hút được cả vật không nhiễm điện, nên thấy hai vật hút nhau chưa kết luận được; câu gốc đã đổi đáp án thành A và thay phương án \"Cả A và C đều đúng\". In y hệt đề giữa kì 2 số 1 Câu 7. Câu gốc đã sửa hay ghi thêm so với bản in, xem ghi chú của câu gốc."
+    },
+    {
+     "ma": "KCK2-1.C2",
+     "nhan": "Câu 2",
+     "phan": "Phần 1. Trắc nghiệm",
+     "nhom": "",
+     "trung": "KGK2-1.C8",
+     "ghi_chu": "In y hệt đề giữa kì 2 số 1 Câu 8."
+    },
+    {
+     "ma": "KCK2-1.C3",
+     "nhan": "Câu 3",
+     "phan": "Phần 1. Trắc nghiệm",
+     "nhom": "",
+     "trung": "KGK2-1.C9",
+     "ghi_chu": "Đề in \"Một đèn pin đang sáng nếu ta tháo pin ra và đảo chiều một cục pin\". In y hệt đề giữa kì 2 số 1 Câu 9. Câu gốc đã sửa hay ghi thêm so với bản in, xem ghi chú của câu gốc."
+    },
+    {
+     "ma": "KCK2-1.C4",
+     "nhan": "Câu 4",
+     "phan": "Phần 1. Trắc nghiệm",
+     "nhom": "",
+     "trung": "KGK2-1.C10",
+     "ghi_chu": "In y hệt đề giữa kì 2 số 1 Câu 10."
+    },
+    {
+     "ma": "KCK2-1.C5",
+     "nhan": "Câu 5",
+     "phan": "Phần 1. Trắc nghiệm",
+     "nhom": "",
+     "trung": "KGK2-1.C11",
+     "ghi_chu": "Đề in \"Các dụng cụ nào sau đây không phải là nguồn điện:\", \"Ắc – qui\", \"Đi – na – mô\". In y hệt đề giữa kì 2 số 1 Câu 11. Câu gốc đã sửa hay ghi thêm so với bản in, xem ghi chú của câu gốc."
+    },
+    {
+     "ma": "KCK2-1.C6",
+     "nhan": "Câu 6",
+     "phan": "Phần 1. Trắc nghiệm",
+     "nhom": "",
+     "trung": "KGK2-1.C12",
+     "ghi_chu": "Đề in phương án D \"Nguồn điện càng lớn thì thiết bị càng mạnh\", đáp án D; câu gốc đã thay D vì không chắc là câu sai. In y hệt đề giữa kì 2 số 1 Câu 12. Câu gốc đã sửa hay ghi thêm so với bản in, xem ghi chú của câu gốc."
+    },
+    {
+     "ma": "KCK2-1.C7",
+     "nhan": "Câu 7",
+     "phan": "Phần 1. Trắc nghiệm",
+     "nhom": "",
+     "trung": "KGK2-1.C13",
+     "ghi_chu": "Đề in \"Vật trong xe máy\", bốn phương án Pin, Đi- na- mô, Ắc – qui, \"Cả ba đều sai\", đáp án C. In y hệt đề giữa kì 2 số 1 Câu 13. Câu gốc đã sửa hay ghi thêm so với bản in, xem ghi chú của câu gốc."
+    },
+    {
+     "ma": "KCK2-1.C8",
+     "nhan": "Câu 8",
+     "phan": "Phần 1. Trắc nghiệm",
+     "nhom": "",
+     "trung": "KGK2-1.C14",
+     "ghi_chu": "Hình in đánh chữ A, B, C, D dưới bốn kí hiệu, phương án \"Hình A\"... In y hệt đề giữa kì 2 số 1 Câu 14. Câu gốc đã sửa hay ghi thêm so với bản in, xem ghi chú của câu gốc."
+    },
+    {
+     "ma": "KCK2-1.C9",
+     "nhan": "Câu 9",
+     "phan": "Phần 1. Trắc nghiệm",
+     "nhom": "",
+     "trung": "KGK2-1.C15",
+     "ghi_chu": "Đề in thêm chữ \"trắc nghiệm mạch điện đơn giản\" sau dấu hai chấm. In y hệt đề giữa kì 2 số 1 Câu 15. Câu gốc đã sửa hay ghi thêm so với bản in, xem ghi chú của câu gốc."
+    },
+    {
+     "ma": "KCK2-1.C10",
+     "nhan": "Câu 10",
+     "phan": "Phần 1. Trắc nghiệm",
+     "nhom": "",
+     "trung": "KGK2-1.C16",
+     "ghi_chu": "In y hệt đề giữa kì 2 số 1 Câu 16. Câu gốc đã sửa hay ghi thêm so với bản in, xem ghi chú của câu gốc."
+    },
+    {
+     "ma": "KCK2-1.C11",
+     "nhan": "Câu 11",
+     "phan": "Phần 1. Trắc nghiệm",
+     "nhom": "",
+     "de": "Những phương pháp nào sau đây giúp ngăn ngừa rối loạn nội tiết?\nA. Giữ cân nặng hợp lí\nB. Không hút thuốc lá\nC. Giảm stress, căng thẳng\nD. Ăn nhiều đồ ngọt, ít vận động",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A, B, C",
+     "loai_dap_an": "TN",
+     "bai_sgk": 38,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Những phương pháp nào sau đây giúp ngăn ngừa rối loạn nội tiết?",
+      "cac": [
+       "Giữ cân nặng hợp lí",
+       "Không hút thuốc lá",
+       "Giảm stress, căng thẳng",
+       "Ăn nhiều đồ ngọt, ít vận động"
+      ],
+      "dap": [
+       "A",
+       "B",
+       "C"
+      ],
+      "nhieu_dap": true
+     },
+     "ghi_chu": "Đề in \"Phương pháp ngăn ngừa rối loạn nội tiết\", phương án D \"Tất cả các phương pháp trên\", đáp án D. Máy trộn thứ tự phương án nên D mất nghĩa: đổi thành chọn nhiều đáp án (A, B, C), thay D bằng một việc làm sai (ăn nhiều đồ ngọt, ít vận động dễ gây thừa cân, đái tháo đường; SGK Bài 38). Đề in \"Giảm stress căng thẳng\", thêm dấu phẩy."
+    },
+    {
+     "ma": "KCK2-1.C12",
+     "nhan": "Câu 12",
+     "phan": "Phần 1. Trắc nghiệm",
+     "nhom": "",
+     "de": "Ở nam giới, chức năng của tinh hoàn là\nA. Sản sinh ra tinh trùng\nB. Sản sinh ra nước tiểu\nC. Sản sinh ra trứng\nD. Sản sinh ra tinh dịch",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN",
+     "bai_sgk": 40,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Ở nam giới, chức năng của tinh hoàn là",
+      "cac": [
+       "Sản sinh ra tinh trùng",
+       "Sản sinh ra nước tiểu",
+       "Sản sinh ra trứng",
+       "Sản sinh ra tinh dịch"
+      ],
+      "dap": "A"
+     },
+     "ghi_chu": "SGK Bài 40: tinh hoàn là nơi sản sinh ra tinh trùng; tinh dịch là tinh trùng hòa với dịch do tuyến tiền liệt tiết ra khi phóng tinh. Đáp án A như đề in."
+    },
+    {
+     "ma": "KCK2-1.C13",
+     "nhan": "Câu 13",
+     "phan": "Phần 1. Trắc nghiệm",
+     "nhom": "",
+     "de": "Quần thể sinh vật là\nA. tập hợp các cá thể thuộc các loài khác nhau, sống trong khoảng không gian xác định, vào một thời điểm nhất định.\nB. tập hợp các cá thể thuộc một loài, sống trong khoảng không gian xác định, vào một thời điểm nhất định và có khả năng sinh sản để tạo thành những thế hệ mới.\nC. tập hợp các loài sinh vật, sống trong khoảng không gian xác định, vào một thời điểm nhất định.\nD. tập hợp các cá thể thuộc một loài được con người tập trung lại trong khoảng không gian xác định, vào một thời điểm nhất định.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "bai_sgk": 42,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Quần thể sinh vật là",
+      "cac": [
+       "tập hợp các cá thể thuộc các loài khác nhau, sống trong khoảng không gian xác định, vào một thời điểm nhất định.",
+       "tập hợp các cá thể thuộc một loài, sống trong khoảng không gian xác định, vào một thời điểm nhất định và có khả năng sinh sản để tạo thành những thế hệ mới.",
+       "tập hợp các loài sinh vật, sống trong khoảng không gian xác định, vào một thời điểm nhất định.",
+       "tập hợp các cá thể thuộc một loài được con người tập trung lại trong khoảng không gian xác định, vào một thời điểm nhất định."
+      ],
+      "dap": "B"
+     },
+     "ghi_chu": "In y hệt SBT 42.1; B là khái niệm quần thể của SGK Bài 42."
+    },
+    {
+     "ma": "KCK2-1.C14",
+     "nhan": "Câu 14",
+     "phan": "Phần 1. Trắc nghiệm",
+     "nhom": "",
+     "de": "Hệ sinh thái là một hệ thống bao gồm\nA. quần xã sinh vật và các quần thể.\nB. quần xã sinh vật và môi trường sống của chúng.\nC. quần thể sinh vật và môi trường sống của chúng.\nD. quần xã sinh vật và các cá thể.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "bai_sgk": 44,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Hệ sinh thái là một hệ thống bao gồm",
+      "cac": [
+       "quần xã sinh vật và các quần thể.",
+       "quần xã sinh vật và môi trường sống của chúng.",
+       "quần thể sinh vật và môi trường sống của chúng.",
+       "quần xã sinh vật và các cá thể."
+      ],
+      "dap": "B"
+     },
+     "ghi_chu": "In y hệt SBT 44.1; B đúng nguyên văn khái niệm hệ sinh thái của SGK Bài 44."
+    },
+    {
+     "ma": "KCK2-1.C15",
+     "nhan": "Câu 15",
+     "phan": "Phần 1. Trắc nghiệm",
+     "nhom": "",
+     "de": "Sinh quyển là toàn bộ sinh vật sống trên Trái Đất cùng với\nA. các nhân tố hữu sinh của môi trường.\nB. các loài sinh vật sản xuất.\nC. các nhân tố vô sinh của môi trường.\nD. các loài sinh vật tiêu thụ.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "C",
+     "loai_dap_an": "TN",
+     "bai_sgk": 45,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Sinh quyển là toàn bộ sinh vật sống trên Trái Đất cùng với",
+      "cac": [
+       "các nhân tố hữu sinh của môi trường.",
+       "các loài sinh vật sản xuất.",
+       "các nhân tố vô sinh của môi trường.",
+       "các loài sinh vật tiêu thụ."
+      ],
+      "dap": "C"
+     },
+     "ghi_chu": "In như SBT 45.1; phương án C đề in \"nhân tố vô sinh của môi trường\", viết \"các nhân tố vô sinh\" như khái niệm sinh quyển của SGK Bài 45. Đáp án C như đề in."
+    },
+    {
+     "ma": "KCK2-1.C16",
+     "nhan": "Câu 16",
+     "phan": "Phần 1. Trắc nghiệm",
+     "nhom": "",
+     "de": "Lựa chọn nhận định đúng trong các nhận định dưới đây.\nA. Ô nhiễm môi trường là sự tồn tại các chất hóa học trong thành phần môi trường, gây ảnh hưởng xấu đến sức khỏe con người, sinh vật và tự nhiên.\nB. Ô nhiễm môi trường là sự biến đổi tính chất vật lí, hóa học trong thành phần không khí, gây ảnh hưởng xấu đến sức khỏe con người, sinh vật và tự nhiên.\nC. Ô nhiễm môi trường là sự biến đổi tính chất vật lí, hóa học, sinh học của thành phần môi trường, gây bệnh nguy hiểm cho con người và sinh vật.\nD. Ô nhiễm môi trường là sự biến đổi tính chất vật lí, hóa học, sinh học của thành phần môi trường, gây ảnh hưởng xấu đến sức khỏe con người, sinh vật và tự nhiên.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "D",
+     "loai_dap_an": "TN",
+     "bai_sgk": 47,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Lựa chọn nhận định đúng trong các nhận định dưới đây.",
+      "cac": [
+       "Ô nhiễm môi trường là sự tồn tại các chất hóa học trong thành phần môi trường, gây ảnh hưởng xấu đến sức khỏe con người, sinh vật và tự nhiên.",
+       "Ô nhiễm môi trường là sự biến đổi tính chất vật lí, hóa học trong thành phần không khí, gây ảnh hưởng xấu đến sức khỏe con người, sinh vật và tự nhiên.",
+       "Ô nhiễm môi trường là sự biến đổi tính chất vật lí, hóa học, sinh học của thành phần môi trường, gây bệnh nguy hiểm cho con người và sinh vật.",
+       "Ô nhiễm môi trường là sự biến đổi tính chất vật lí, hóa học, sinh học của thành phần môi trường, gây ảnh hưởng xấu đến sức khỏe con người, sinh vật và tự nhiên."
+      ],
+      "dap": "D"
+     },
+     "ghi_chu": "In y hệt SBT 47.2. D gần nguyên văn khái niệm ô nhiễm môi trường của SGK Bài 47; C chỉ nói gây bệnh cho con người và sinh vật, bỏ mất ảnh hưởng xấu tới tự nhiên. Đáp án D như đề in."
+    },
+    {
+     "ma": "KCK2-1.C17",
+     "nhan": "Câu 17",
+     "phan": "Phần 1. Trắc nghiệm",
+     "nhom": "",
+     "de": "Để phòng bệnh sỏi thận cần\nA. uống đủ nước và có chế độ ăn hợp lí.\nB. uống nhiều nước hơn bình thường.\nC. hạn chế ăn các loại thức ăn có nguồn gốc thực vật.\nD. tăng cường ăn các loại thức ăn có nguồn gốc động vật.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN",
+     "bai_sgk": 35,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Để phòng bệnh sỏi thận cần",
+      "cac": [
+       "uống đủ nước và có chế độ ăn hợp lí.",
+       "uống nhiều nước hơn bình thường.",
+       "hạn chế ăn các loại thức ăn có nguồn gốc thực vật.",
+       "tăng cường ăn các loại thức ăn có nguồn gốc động vật."
+      ],
+      "dap": "A"
+     },
+     "ghi_chu": "In y hệt SBT 35.3; A đúng nguyên văn SGK Bài 35 (bệnh sỏi thận)."
+    },
+    {
+     "ma": "KCK2-1.C18",
+     "nhan": "Câu 18",
+     "phan": "Phần 1. Trắc nghiệm",
+     "nhom": "",
+     "de": "Khi mắc các tật về mắt, ảnh của vật sẽ\nA. hiện lên trên màng lưới.\nB. không hiện lên trên thể thủy tinh.\nC. hiện lên trên thể thủy tinh.\nD. không hiện lên trên màng lưới.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "D",
+     "loai_dap_an": "TN",
+     "bai_sgk": 37,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Khi mắc các tật về mắt, ảnh của vật sẽ",
+      "cac": [
+       "hiện lên trên màng lưới.",
+       "không hiện lên trên thể thủy tinh.",
+       "hiện lên trên thể thủy tinh.",
+       "không hiện lên trên màng lưới."
+      ],
+      "dap": "D"
+     },
+     "ghi_chu": "SGK Bài 37: khi bị mắc các tật cận thị, viễn thị, loạn thị, ảnh của vật sẽ không hiện trên màng lưới. Đáp án D như đề in."
+    },
+    {
+     "ma": "KCK2-1.C19",
+     "nhan": "Câu 19",
+     "phan": "Phần 1. Trắc nghiệm",
+     "nhom": "",
+     "de": "Đâu là nhóm nhân tố sinh thái hữu sinh?\nA. con người, cây bàng, con trâu, cái bút.\nB. con gà, cây rêu tường, cá heo, con giun đất.\nC. cá chép, rắn hổ mang, cái bàn, con voi.\nD. hòn đá, con mèo, cá rô phi, cây mít.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "bai_sgk": 41,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Đâu là nhóm nhân tố sinh thái hữu sinh?",
+      "cac": [
+       "con người, cây bàng, con trâu, cái bút.",
+       "con gà, cây rêu tường, cá heo, con giun đất.",
+       "cá chép, rắn hổ mang, cái bàn, con voi.",
+       "hòn đá, con mèo, cá rô phi, cây mít."
+      ],
+      "dap": "B"
+     },
+     "ghi_chu": "SGK Bài 41: nhân tố hữu sinh là các yếu tố sống của môi trường (con người và các sinh vật khác). A, C, D mỗi nhóm lẫn một vật không sống (cái bút, cái bàn, hòn đá). Đáp án B như đề in."
+    },
+    {
+     "ma": "KCK2-1.C20",
+     "nhan": "Câu 20",
+     "phan": "Phần 1. Trắc nghiệm",
+     "nhom": "",
+     "de": "Ví dụ nào sau đây không phải là quần thể sinh vật?\nA. Rừng tre phân bố tại Vườn Quốc gia Cúc Phương, Ninh Bình.\nB. Tập hợp cá rô phi sống trong một cái ao.\nC. Các cá thể chuột đồng sống trên một đồng lúa. Các cá thể chuột đực và cái có khả năng giao phối với nhau sinh ra chuột con.\nD. Cá chép, cá mè cùng sống chung trong một bể cá.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "D",
+     "loai_dap_an": "TN",
+     "bai_sgk": 42,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Ví dụ nào sau đây không phải là quần thể sinh vật?",
+      "cac": [
+       "Rừng tre phân bố tại Vườn Quốc gia Cúc Phương, Ninh Bình.",
+       "Tập hợp cá rô phi sống trong một cái ao.",
+       "Các cá thể chuột đồng sống trên một đồng lúa. Các cá thể chuột đực và cái có khả năng giao phối với nhau sinh ra chuột con.",
+       "Cá chép, cá mè cùng sống chung trong một bể cá."
+      ],
+      "dap": "D"
+     },
+     "ghi_chu": "Quần thể là tập hợp các cá thể cùng loài (SGK Bài 42); cá chép và cá mè là hai loài. Đáp án D như đề in."
+    },
+    {
+     "ma": "KCK2-1.TL1",
+     "nhan": "Câu 1",
+     "phan": "Phần 2. Tự luận",
+     "nhom": "Câu 1:",
+     "de": "Câu 1:\nTại sao khi đun nước bằng ấm nhôm và bằng ấm đất trên cùng một bếp lửa thì nước trong ấm nhôm chóng sôi hơn?",
+     "dang": "CAU_NHO",
+     "dap_an": "Nhôm dẫn nhiệt tốt hơn đất rất nhiều, nên nhiệt từ ngọn lửa truyền qua thành ấm nhôm vào nước nhanh hơn qua thành ấm đất; nước trong ấm nhôm chóng sôi hơn.",
+     "loai_dap_an": "LOI_GIAI",
+     "bai_sgk": 28,
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "Câu 1:\nTại sao khi đun nước bằng ấm nhôm và bằng ấm đất trên cùng một bếp lửa thì nước trong ấm nhôm chóng sôi hơn?",
+      "dong": [
+       {
+        "chu": "Nhôm {0}.",
+        "o": [
+         {
+          "dung": [
+           "dẫn nhiệt tốt hơn đất rất nhiều"
+          ],
+          "sai": [
+           "dẫn nhiệt kém hơn đất",
+           "cách nhiệt tốt hơn đất"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Vì vậy nhiệt từ ngọn lửa {0}, nước trong ấm nhôm chóng sôi hơn.",
+        "o": [
+         {
+          "dung": [
+           "truyền qua thành ấm nhôm vào nước nhanh hơn"
+          ],
+          "sai": [
+           "truyền qua thành ấm đất vào nước nhanh hơn",
+           "truyền thẳng vào nước mà không qua thành ấm"
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     "ghi_chu": "Tự luận giải thích; làm trên máy bằng hai dòng ô chọn theo lời giải in (nhôm dẫn nhiệt tốt hơn). Bảng khả năng dẫn nhiệt của SGK Bài 28 (trang 113): đất 65, nhôm 8 770 lần không khí. Phương án sai là nhầm vật dẫn nhiệt với vật cách nhiệt, và nhầm chiều so sánh. Không dùng \"nhôm nhẹ hơn, thành ấm mỏng hơn\" làm phương án sai vì hai điều đó cũng góp một phần (đề giữa kì 2 số 6 Câu 28 vì vậy phải ghi \"đúng nhất\"). Cùng ý câu trắc nghiệm đó, ở đây con tự ghép lời giải thích."
+    },
+    {
+     "ma": "KCK2-1.TL2",
+     "nhan": "Câu 2",
+     "phan": "Phần 2. Tự luận",
+     "nhom": "Câu 2:",
+     "de": "Câu 2:\nTế bào máu gồm những thành phần nào? Chức năng của các thành phần đó là gì?",
+     "dang": "CAU_NHO",
+     "dap_an": "Tế bào máu gồm hồng cầu, bạch cầu và tiểu cầu. Hồng cầu vận chuyển oxygen và carbon dioxide; bạch cầu bảo vệ cơ thể (chống lại vi khuẩn, virus xâm nhập); tiểu cầu tham gia bảo vệ cơ thể nhờ làm đông máu, chống mất máu.",
+     "loai_dap_an": "LOI_GIAI",
+     "bai_sgk": 33,
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "hoi": "Câu 2:\nTế bào máu gồm những thành phần nào? Chức năng của các thành phần đó là gì?",
+      "dong": [
+       {
+        "chu": "Tế bào máu gồm {0}.",
+        "o": [
+         {
+          "dung": [
+           "hồng cầu, bạch cầu và tiểu cầu"
+          ],
+          "sai": [
+           "huyết tương, hồng cầu và bạch cầu",
+           "hồng cầu, bạch cầu và kháng thể"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Hồng cầu: {0}.",
+        "o": [
+         {
+          "dung": [
+           "vận chuyển oxygen và carbon dioxide"
+          ],
+          "sai": [
+           "bảo vệ cơ thể, chống lại vi khuẩn, virus xâm nhập",
+           "làm đông máu khi bị thương"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Bạch cầu: {0}.",
+        "o": [
+         {
+          "dung": [
+           "bảo vệ cơ thể, chống lại vi khuẩn, virus xâm nhập"
+          ],
+          "sai": [
+           "vận chuyển oxygen và carbon dioxide",
+           "làm đông máu khi bị thương"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Tiểu cầu: {0}.",
+        "o": [
+         {
+          "dung": [
+           "tham gia bảo vệ cơ thể nhờ làm đông máu khi bị thương"
+          ],
+          "sai": [
+           "vận chuyển oxygen và carbon dioxide",
+           "bảo vệ cơ thể, chống lại vi khuẩn, virus xâm nhập"
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     "ghi_chu": "Làm trên máy bằng bốn dòng ô chọn theo SGK Bài 33 (trang 135): hồng cầu, bạch cầu, tiểu cầu chiếm khoảng 45% máu; hồng cầu vận chuyển oxygen và carbon dioxide, bạch cầu bảo vệ cơ thể, tiểu cầu tham gia bảo vệ cơ thể nhờ cơ chế làm đông máu. Phương án sai: huyết tương (thành phần của máu nhưng không phải tế bào), kháng thể (phân tử protein do tế bào lympho B tạo ra), và chức năng của hai loại tế bào kia."
+    }
+   ]
+  },
+  {
+   "chuong": "Cuối học kì 2",
+   "bai": "Đề cuối kì 2 số 2",
+   "de_thi": {
+    "ma": "KCK2-2",
+    "nguon_goc": "loigiaihay.com, đăng 29/03/2024"
+   },
+   "cac_cau": [
+    {
+     "ma": "KCK2-2.C1",
+     "nhan": "Câu 1",
+     "phan": "Phần 1. Trắc nghiệm",
+     "nhom": "",
+     "trung": "KGK2-1.C16",
+     "ghi_chu": "In y hệt đề giữa kì 2 số 2 Câu 11 (câu đó lúc gộp thành \"trung\" của đề giữa kì 2 số 1 Câu 16). Câu gốc đã sửa hay ghi thêm so với bản in, xem ghi chú của câu gốc."
+    },
+    {
+     "ma": "KCK2-2.C2",
+     "nhan": "Câu 2",
+     "phan": "Phần 1. Trắc nghiệm",
+     "nhom": "",
+     "trung": "KGK2-1.C17",
+     "ghi_chu": "Đề in \"Kí hiệu các bộ phận trong mạch điện mang ý nghĩa:\", phương án B \"Đơn giản sơ đồ của các vật dẫn, các linh kiện\" (cùng ý D; câu gốc đã thay B). In y hệt đề giữa kì 2 số 2 Câu 12 (câu đó lúc gộp thành \"trung\" của đề giữa kì 2 số 1 Câu 17). Câu gốc đã sửa hay ghi thêm so với bản in, xem ghi chú của câu gốc."
+    },
+    {
+     "ma": "KCK2-2.C3",
+     "nhan": "Câu 3",
+     "phan": "Phần 1. Trắc nghiệm",
+     "nhom": "",
+     "trung": "KGK2-2.C13",
+     "ghi_chu": "In y hệt đề giữa kì 2 số 2 Câu 13."
+    },
+    {
+     "ma": "KCK2-2.C4",
+     "nhan": "Câu 4",
+     "phan": "Phần 1. Trắc nghiệm",
+     "nhom": "",
+     "trung": "KGK2-2.C14",
+     "ghi_chu": "In y hệt đề giữa kì 2 số 2 Câu 14."
+    },
+    {
+     "ma": "KCK2-2.C5",
+     "nhan": "Câu 5",
+     "phan": "Phần 1. Trắc nghiệm",
+     "nhom": "",
+     "trung": "KGK2-2.C15",
+     "ghi_chu": "In y hệt đề giữa kì 2 số 2 Câu 15."
+    },
+    {
+     "ma": "KCK2-2.C6",
+     "nhan": "Câu 6",
+     "phan": "Phần 1. Trắc nghiệm",
+     "nhom": "",
+     "trung": "KGK2-2.C16",
+     "ghi_chu": "Đề in B \"Đèn điot phát quang\", đáp án B, sai: đèn LED sáng nhờ chất bán dẫn chứ không nhờ chất khí; câu gốc đã đổi B thành bóng đèn của bút thử điện. In y hệt đề giữa kì 2 số 2 Câu 16. Câu gốc đã sửa hay ghi thêm so với bản in, xem ghi chú của câu gốc."
+    },
+    {
+     "ma": "KCK2-2.C7",
+     "nhan": "Câu 7",
+     "phan": "Phần 1. Trắc nghiệm",
+     "nhom": "",
+     "trung": "KGK2-2.C17",
+     "ghi_chu": "Đề in bốn phương án chỉ một chữ cái V, A, U, I. In y hệt đề giữa kì 2 số 2 Câu 17. Câu gốc đã sửa hay ghi thêm so với bản in, xem ghi chú của câu gốc."
+    },
+    {
+     "ma": "KCK2-2.C8",
+     "nhan": "Câu 8",
+     "phan": "Phần 1. Trắc nghiệm",
+     "nhom": "",
+     "trung": "KGK2-2.C18",
+     "ghi_chu": "In y hệt đề giữa kì 2 số 2 Câu 18."
+    },
+    {
+     "ma": "KCK2-2.C9",
+     "nhan": "Câu 9",
+     "phan": "Phần 1. Trắc nghiệm",
+     "nhom": "",
+     "trung": "KGK2-2.C19",
+     "ghi_chu": "In y hệt đề giữa kì 2 số 2 Câu 19."
+    },
+    {
+     "ma": "KCK2-2.C10",
+     "nhan": "Câu 10",
+     "phan": "Phần 1. Trắc nghiệm",
+     "nhom": "",
+     "trung": "KGK2-2.C20",
+     "ghi_chu": "Đề in \"2 cực\". In y hệt đề giữa kì 2 số 2 Câu 20. Câu gốc đã sửa hay ghi thêm so với bản in, xem ghi chú của câu gốc."
+    },
+    {
+     "ma": "KCK2-2.C11",
+     "nhan": "Câu 11",
+     "phan": "Phần 1. Trắc nghiệm",
+     "nhom": "",
+     "de": "Bạch cầu được phân chia thành mấy loại chính?\nA. 4 loại.\nB. 5 loại.\nC. 3 loại.\nD. 6 loại.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "bai_sgk": 33,
+     "bo_may": "kiến thức ngoài SGK KHTN 8",
+     "ghi_chu": "Bảng đáp án in D (6 loại), lời giải chi tiết in B (5 loại). Bạch cầu có 5 loại chính (trung tính, ưa acid, ưa base, lympho, mono; Sinh học 8 chương trình cũ), nên đáp án là B. SGK KHTN 8 Bài 33 chỉ nói bạch cầu có chức năng bảo vệ cơ thể và nhắc một loại bạch cầu (tế bào lympho B), không nói bạch cầu chia mấy loại: con không xác định được theo SGK, không sửa được mà không lộ đáp án, nên bỏ khỏi máy."
+    },
+    {
+     "ma": "KCK2-2.C12",
+     "nhan": "Câu 12",
+     "phan": "Phần 1. Trắc nghiệm",
+     "nhom": "",
+     "de": "Viễn thị có thể phát sinh do những nguyên nhân nào dưới đây?\n1. Do cầu mắt quá dài\n2. Do cầu mắt ngắn\n3. Do thể thủy tinh bị lão hóa\n4. Do thường xuyên nhìn vật với khoảng cách quá gần\nA. 1, 2, 3, 4\nB. 2, 4\nC. 1, 3\nD. 2, 3",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "D",
+     "loai_dap_an": "TN",
+     "bai_sgk": 37,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Viễn thị có thể phát sinh do những nguyên nhân nào dưới đây?\n1. Do cầu mắt quá dài\n2. Do cầu mắt ngắn\n3. Do thể thủy tinh bị lão hóa\n4. Do thường xuyên nhìn vật với khoảng cách quá gần",
+      "cac": [
+       "1, 2, 3, 4",
+       "2, 4",
+       "1, 3",
+       "2, 3"
+      ],
+      "dap": "D"
+     },
+     "ghi_chu": "Bảng đáp án in C (1, 3), sai; lời giải chi tiết in D. SGK Bài 37: viễn thị có thể do cầu mắt quá ngắn hoặc thể thủy tinh bị lão hóa xẹp xuống khó phồng lên; cầu mắt dài và nhìn gần khi đọc sách là nguyên nhân của cận thị. Dùng D. Đề in phương án A \"1, 2, 3 4\", thêm dấu phẩy; câu hỏi in \"nguyên nhân nào\", viết \"những nguyên nhân nào\" vì đáp án có hai nguyên nhân."
+    },
+    {
+     "ma": "KCK2-2.C13",
+     "nhan": "Câu 13",
+     "phan": "Phần 1. Trắc nghiệm",
+     "nhom": "",
+     "de": "Khi đo thân nhiệt, ta nên đo ở đâu để có kết quả chính xác nhất?\nA. Tai.\nB. Miệng.\nC. Hậu môn.\nD. Nách.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "C",
+     "loai_dap_an": "TN",
+     "bai_sgk": 39,
+     "bo_may": "kiến thức ngoài SGK KHTN 8",
+     "ghi_chu": "Bảng đáp án in D (nách), lời giải chi tiết in C (hậu môn). Đo ở hậu môn cho kết quả sát nhiệt độ bên trong cơ thể nhất, nách kém chính xác nhất, nên đáp án đúng là C. SGK KHTN 8 Bài 39 chỉ cho đo thân nhiệt bằng nhiệt kế điện tử ở trán, tai, không so nơi đo nào chính xác hơn: con không xác định được theo SGK, nên bỏ khỏi máy."
+    },
+    {
+     "ma": "KCK2-2.C14",
+     "nhan": "Câu 14",
+     "phan": "Phần 1. Trắc nghiệm",
+     "nhom": "",
+     "de": "Loại khí nào dưới đây thường gây viêm, sưng lớp niêm mạc, cản trở trao đổi khí và có thể gây chết người khi nồng độ trong không khí quá cao?\nA. N2\nB. O2\nC. H2\nD. NO2",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "D",
+     "loai_dap_an": "TN",
+     "bai_sgk": 34,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Loại khí nào dưới đây thường gây viêm, sưng lớp niêm mạc, cản trở trao đổi khí và có thể gây chết người khi nồng độ trong không khí quá cao?",
+      "cac": [
+       "N₂",
+       "O₂",
+       "H₂",
+       "NO₂"
+      ],
+      "dap": "D"
+     },
+     "ghi_chu": "Bảng đáp án in C (H₂), sai; lời giải chi tiết in D. SGK Bài 34 (trang 144): khí NOₓ trong khói thuốc lá gây viêm, sưng lớp niêm mạc, cản trở trao đổi khí; nồng độ CO và NOₓ vượt quá giới hạn cho phép có thể dẫn đến tử vong. NO₂ là một khí NOₓ. Dùng D. Đề in \"có thể gây chết người khi dùng với liều cao\", viết \"khi nồng độ trong không khí quá cao\" theo SGK."
+    },
+    {
+     "ma": "KCK2-2.C15",
+     "nhan": "Câu 15",
+     "phan": "Phần 1. Trắc nghiệm",
+     "nhom": "",
+     "de": "Hormone ADH do tuyến yên tiết ra tác động trực tiếp đến cơ quan nào dưới đây?\nA. Gan.\nB. Tim.\nC. Thận.\nD. Phổi.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "C",
+     "loai_dap_an": "TN",
+     "bai_sgk": 38,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Hormone ADH do tuyến yên tiết ra tác động trực tiếp đến cơ quan nào dưới đây?",
+      "cac": [
+       "Gan.",
+       "Tim.",
+       "Thận.",
+       "Phổi."
+      ],
+      "dap": "C"
+     },
+     "ghi_chu": "Đề in \"ADH sẽ tác động trực tiếp đến cơ quan nào dưới đây?\". Thêm \"Hormone ... do tuyến yên tiết ra\" để con nhận ra ADH: SGK Bài 38 (trang 158, Hình 38.2) vẽ ADH của tuyến yên tác động lên thận (sự trao đổi nước ở thận). Đáp án C như đề in và lời giải chi tiết."
+    },
+    {
+     "ma": "KCK2-2.C16",
+     "nhan": "Câu 16",
+     "phan": "Phần 1. Trắc nghiệm",
+     "nhom": "",
+     "de": "Môi trường sống là nơi sinh sống của sinh vật, bao gồm tất cả các nhân tố sinh thái\nA. Vô sinh và hữu sinh ảnh hưởng trực tiếp đến đời sống của sinh vật\nB. Hữu sinh ảnh hưởng trực tiếp đến đời sống của sinh vật\nC. Vô sinh và hữu sinh ảnh hưởng trực tiếp hoặc gián tiếp đến đời sống của sinh vật\nD. Hữu sinh ảnh hưởng trực tiếp hoặc gián tiếp đến đời sống của sinh vật",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "C",
+     "loai_dap_an": "TN",
+     "bai_sgk": 41,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Môi trường sống là nơi sinh sống của sinh vật, bao gồm tất cả các nhân tố sinh thái",
+      "cac": [
+       "Vô sinh và hữu sinh ảnh hưởng trực tiếp đến đời sống của sinh vật",
+       "Hữu sinh ảnh hưởng trực tiếp đến đời sống của sinh vật",
+       "Vô sinh và hữu sinh ảnh hưởng trực tiếp hoặc gián tiếp đến đời sống của sinh vật",
+       "Hữu sinh ảnh hưởng trực tiếp hoặc gián tiếp đến đời sống của sinh vật"
+      ],
+      "dap": "C"
+     },
+     "ghi_chu": "Bảng đáp án in B, sai; lời giải chi tiết in C. SGK Bài 41: môi trường sống bao gồm các nhân tố xung quanh sinh vật, có ảnh hưởng trực tiếp hoặc gián tiếp; các nhân tố sinh thái gồm nhóm vô sinh và nhóm hữu sinh. Dùng C."
+    },
+    {
+     "ma": "KCK2-2.C17",
+     "nhan": "Câu 17",
+     "phan": "Phần 1. Trắc nghiệm",
+     "nhom": "",
+     "de": "Thành phần chiếm khoảng 45% thể tích của máu là\nA. Huyết tương.\nB. Các tế bào máu.\nC. Tiểu cầu.\nD. Bạch cầu.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "bai_sgk": 33,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Thành phần chiếm khoảng 45% thể tích của máu là",
+      "cac": [
+       "Huyết tương.",
+       "Các tế bào máu.",
+       "Tiểu cầu.",
+       "Bạch cầu."
+      ],
+      "dap": "B"
+     },
+     "ghi_chu": "SGK Bài 33 (trang 135): huyết tương chiếm khoảng 55% máu, hồng cầu, bạch cầu và tiểu cầu chiếm khoảng 45%. Đề in phương án C \"Hồng cầu\": hồng cầu chiếm gần hết phần 45% đó (y học gọi tỉ lệ thể tích hồng cầu trong máu là khoảng 40 tới 45%), nên C cũng có thể coi là đúng. Thay C bằng \"Tiểu cầu\" cho chỉ còn một đáp án. Thêm \"khoảng\" như SGK. Đáp án B như đề in."
+    },
+    {
+     "ma": "KCK2-2.C18",
+     "nhan": "Câu 18",
+     "phan": "Phần 1. Trắc nghiệm",
+     "nhom": "",
+     "de": "Tuyến nội tiết nào có khối lượng lớn nhất trong cơ thể người?\nA. Tuyến giáp.\nB. Tuyến tùng.\nC. Tuyến yên.\nD. Tuyến trên thận.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN",
+     "bai_sgk": 38,
+     "bo_may": "kiến thức ngoài SGK KHTN 8",
+     "ghi_chu": "Đáp án in A (tuyến giáp, Sinh học 8 chương trình cũ: tuyến giáp là tuyến nội tiết lớn nhất). SGK KHTN 8 Bài 38 không nói khối lượng các tuyến, cũng không có tuyến tùng: con không xác định được theo SGK, nên bỏ khỏi máy."
+    },
+    {
+     "ma": "KCK2-2.C19",
+     "nhan": "Câu 19",
+     "phan": "Phần 1. Trắc nghiệm",
+     "nhom": "",
+     "de": "Chọn câu trả lời đúng nhất. Quần thể là\nA. tập hợp những cá thể cùng loài, giống nhau về hình thái, cấu tạo; có thể giao phối tự do với nhau.\nB. tập hợp những cá thể khác loài nhưng có cùng khu phân bố.\nC. tập hợp những cá thể cùng loài, có mật độ, thành phần kiểu gen đặc trưng.\nD. tập hợp những cá thể cùng loài, sống trong một khoảng không gian xác định, tại một thời điểm nhất định và có khả năng sinh sản tạo thành những thế hệ mới.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "D",
+     "loai_dap_an": "TN",
+     "bai_sgk": 42,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Chọn câu trả lời đúng nhất. Quần thể là",
+      "cac": [
+       "tập hợp những cá thể cùng loài, giống nhau về hình thái, cấu tạo; có thể giao phối tự do với nhau.",
+       "tập hợp những cá thể khác loài nhưng có cùng khu phân bố.",
+       "tập hợp những cá thể cùng loài, có mật độ, thành phần kiểu gen đặc trưng.",
+       "tập hợp những cá thể cùng loài, sống trong một khoảng không gian xác định, tại một thời điểm nhất định và có khả năng sinh sản tạo thành những thế hệ mới."
+      ],
+      "dap": "D"
+     },
+     "ghi_chu": "Đề in D \"tập hợp những cá thể cùng loài, sống trong một ổ sinh thái, tại một thời điểm nhất định\", đáp án D. \"Ổ sinh thái\" không có trong SGK KHTN 8 (là kiến thức Sinh học 12) nên con không nhận ra D; viết lại D đúng khái niệm quần thể của SGK Bài 42 (khoảng không gian xác định, thời điểm nhất định, có khả năng sinh sản tạo thành thế hệ mới). A, C chỉ nêu vài đặc điểm, thiếu điều kiện cùng sống trong một khoảng không gian, ở một thời điểm, nên thêm \"Chọn câu trả lời đúng nhất\". Đáp án D như đề in."
+    },
+    {
+     "ma": "KCK2-2.C20",
+     "nhan": "Câu 20",
+     "phan": "Phần 1. Trắc nghiệm",
+     "nhom": "",
+     "de": "Lượng khí cặn nằm trong phổi người bình thường có thể tích khoảng bao nhiêu?\nA. 500 – 700 ml.\nB. 1200 – 1500 ml.\nC. 800 – 1000 ml.\nD. 1000 – 1200 ml.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "D",
+     "loai_dap_an": "TN",
+     "bai_sgk": 34,
+     "bo_may": "kiến thức ngoài SGK KHTN 8",
+     "ghi_chu": "Đáp án in D (Sinh học 8 chương trình cũ: khí cặn 1000 – 1200 ml). SGK KHTN 8 Bài 34 không nói tới khí cặn, dung tích phổi: con không xác định được theo SGK, nên bỏ khỏi máy."
+    },
+    {
+     "ma": "KCK2-2.TL1",
+     "nhan": "Câu 1",
+     "phan": "Phần 2. Tự luận",
+     "nhom": "Câu 1:",
+     "de": "Câu 1:\nMột bàn gỗ và một bàn nhôm có cùng nhiệt độ. Khi sờ tay vào mặt bàn ta cảm thấy mặt bàn nhôm lạnh hơn mặt bàn gỗ. Tại sao?",
+     "dang": "CAU_NHO",
+     "dap_an": "Mặt bàn có nhiệt độ thấp hơn tay nên khi sờ vào, nhiệt truyền từ tay sang mặt bàn. Nhôm dẫn nhiệt tốt hơn gỗ rất nhiều, nên sờ vào bàn nhôm thì tay mất nhiệt nhanh hơn, ta thấy lạnh hơn.",
+     "loai_dap_an": "LOI_GIAI",
+     "bai_sgk": 28,
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "Câu 1:\nMột bàn gỗ và một bàn nhôm có cùng nhiệt độ. Khi sờ tay vào mặt bàn ta cảm thấy mặt bàn nhôm lạnh hơn mặt bàn gỗ. Tại sao?",
+      "dong": [
+       {
+        "chu": "Hai mặt bàn có nhiệt độ thấp hơn bàn tay, nên khi sờ vào, nhiệt truyền {0}.",
+        "o": [
+         {
+          "dung": [
+           "từ tay sang mặt bàn"
+          ],
+          "sai": [
+           "từ mặt bàn sang tay",
+           "không truyền, vì hai bàn có cùng nhiệt độ"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Nhôm {0}, nên khi sờ vào bàn nhôm, tay mất nhiệt nhanh hơn và ta thấy lạnh hơn.",
+        "o": [
+         {
+          "dung": [
+           "dẫn nhiệt tốt hơn gỗ rất nhiều"
+          ],
+          "sai": [
+           "dẫn nhiệt kém hơn gỗ",
+           "có nhiệt độ thấp hơn gỗ"
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     "ghi_chu": "Tự luận giải thích; làm trên máy bằng hai dòng ô chọn theo lời giải in (nhôm dẫn nhiệt tốt hơn gỗ nên tay mất nhiệt nhiều hơn). Bảng khả năng dẫn nhiệt của SGK Bài 28 (trang 113): gỗ 7, nhôm 8 770 lần không khí. Phương án sai là hai hiểu lầm hay gặp: \"cái lạnh\" truyền từ bàn sang tay, và kim loại lạnh hơn gỗ dù cùng nhiệt độ (trái với đề). Cùng ý đề giữa kì 2 số 6 Câu 25 (trắc nghiệm), ở đây con tự ghép lời giải thích."
+    },
+    {
+     "ma": "KCK2-2.TL2",
+     "nhan": "Câu 2",
+     "phan": "Phần 2. Tự luận",
+     "nhom": "Câu 2:",
+     "de": "Câu 2:\nHãy đề xuất sáu cách phòng chống bệnh viêm tai giữa, ù tai để bảo vệ bản thân và gia đình.",
+     "dang": "CAU_NHO",
+     "dap_an": "Sáu cách: không tắm, bơi ở nguồn nước bị ô nhiễm; không dùng vật nhọn lấy ráy tai; không ngoáy tai khi ngứa; khám và chữa sớm các bệnh về tai, mũi, họng; giữ ấm, tránh bị nhiễm lạnh; tránh tiếng ồn lớn (đeo nút bịt tai khi phải ở nơi ồn).",
+     "loai_dap_an": "LOI_GIAI",
+     "bai_sgk": 37,
+     "ghep": {
+      "kieu": "O",
+      "sao": 6,
+      "hoi": "Câu 2:\nMỗi việc sau nên làm hay không nên làm để phòng chống bệnh viêm tai giữa, ù tai, bảo vệ bản thân và gia đình?",
+      "dong": [
+       {
+        "chu": "Tắm, bơi ở nguồn nước bị ô nhiễm: {0}",
+        "o": [
+         {
+          "dung": [
+           "Không nên"
+          ],
+          "sai": [
+           "Nên làm"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Dùng vật nhọn để lấy ráy tai: {0}",
+        "o": [
+         {
+          "dung": [
+           "Không nên"
+          ],
+          "sai": [
+           "Nên làm"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Ngoáy tai mỗi khi thấy ngứa: {0}",
+        "o": [
+         {
+          "dung": [
+           "Không nên"
+          ],
+          "sai": [
+           "Nên làm"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Khám và chữa sớm các bệnh về tai, mũi, họng: {0}",
+        "o": [
+         {
+          "dung": [
+           "Nên làm"
+          ],
+          "sai": [
+           "Không nên"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Giữ ấm cơ thể, tránh bị nhiễm lạnh: {0}",
+        "o": [
+         {
+          "dung": [
+           "Nên làm"
+          ],
+          "sai": [
+           "Không nên"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Đeo nút bịt tai khi phải ở nơi có tiếng ồn lớn: {0}",
+        "o": [
+         {
+          "dung": [
+           "Nên làm"
+          ],
+          "sai": [
+           "Không nên"
+          ],
+          "hai": true
+         }
+        ]
+       }
+      ]
+     },
+     "ghi_chu": "Đề in \"Hãy đề xuất sáu cách phòng chống bệnh viêm tai giữa, ù tai để bảo vệ bản thân và gia đình\". Theo luật tránh viết tay, làm trên máy phần kiến thức: sáu việc, con chọn nên làm hay không nên, mỗi việc là một cách phòng chống. Ba việc không nên lấy từ lời giải in (tắm ở nguồn nước ô nhiễm, dùng vật nhọn lấy ráy tai, ngoáy tai khi ngứa); ba việc nên làm lấy từ nguyên nhân bệnh trong SGK Bài 37 (trang 156): biến chứng từ bệnh vùng mũi, họng; nhiễm lạnh; làm việc trong môi trường tiếng ồn lớn."
+    }
+   ]
+  },
+  {
+   "chuong": "Cuối học kì 2",
+   "bai": "Đề cuối kì 2 số 3",
+   "de_thi": {
+    "ma": "KCK2-3",
+    "nguon_goc": "loigiaihay.com, đăng 02/04/2024"
+   },
+   "cac_cau": [
+    {
+     "ma": "KCK2-3.C1",
+     "nhan": "Câu 1",
+     "phan": "Phần 1. Trắc nghiệm",
+     "nhom": "",
+     "trung": "KGK2-3.C21",
+     "ghi_chu": "Đề in chỗ trống bằng dấu chấm, \"dấu (-)\". In y hệt đề giữa kì 2 số 3 Câu 21. Câu gốc đã sửa hay ghi thêm so với bản in, xem ghi chú của câu gốc."
+    },
+    {
+     "ma": "KCK2-3.C2",
+     "nhan": "Câu 2",
+     "phan": "Phần 1. Trắc nghiệm",
+     "nhom": "",
+     "trung": "KGK2-3.C22",
+     "ghi_chu": "In y hệt đề giữa kì 2 số 3 Câu 22."
+    },
+    {
+     "ma": "KCK2-3.C3",
+     "nhan": "Câu 3",
+     "phan": "Phần 1. Trắc nghiệm",
+     "nhom": "",
+     "trung": "KGK2-3.C23",
+     "ghi_chu": "Đề in lẫn chữ y như đề giữa kì 2 số 3: câu hỏi bắt đầu \"Nhiệt năng của thỏi kim loại tăng và của Khi bỏ...\", phương án A \"Nhiệt năng của thỏi kim loại nước giảm.\"; câu gốc đã ghép lại. In y hệt đề giữa kì 2 số 3 Câu 23. Câu gốc đã sửa hay ghi thêm so với bản in, xem ghi chú của câu gốc."
+    },
+    {
+     "ma": "KCK2-3.C4",
+     "nhan": "Câu 4",
+     "phan": "Phần 1. Trắc nghiệm",
+     "nhom": "",
+     "trung": "KGK2-3.C24",
+     "ghi_chu": "Đề in \"Trường hợp làm biến đổi nội năng không do thực hiện công là?\"; câu gốc thêm câu giải thích thực hiện công (SGK KHTN 8 không dạy). In y hệt đề giữa kì 2 số 3 Câu 24. Câu gốc đã sửa hay ghi thêm so với bản in, xem ghi chú của câu gốc."
+    },
+    {
+     "ma": "KCK2-3.C5",
+     "nhan": "Câu 5",
+     "phan": "Phần 1. Trắc nghiệm",
+     "nhom": "",
+     "trung": "KGK2-3.C25",
+     "ghi_chu": "Câu gốc thêm câu trong ngoặc: dẫn nhiệt, đối lưu, bức xạ nhiệt tính chung là một cách. In y hệt đề giữa kì 2 số 3 Câu 25. Câu gốc đã sửa hay ghi thêm so với bản in, xem ghi chú của câu gốc."
+    },
+    {
+     "ma": "KCK2-3.C6",
+     "nhan": "Câu 6",
+     "phan": "Phần 1. Trắc nghiệm",
+     "nhom": "",
+     "trung": "KGK2-3.C26",
+     "ghi_chu": "In y hệt đề giữa kì 2 số 3 Câu 26."
+    },
+    {
+     "ma": "KCK2-3.C7",
+     "nhan": "Câu 7",
+     "phan": "Phần 1. Trắc nghiệm",
+     "nhom": "",
+     "trung": "KGK2-3.C27",
+     "ghi_chu": "Đề in phương án A \"Chất khí đậm đặc dẫn nhiệt tốt hơn chất khí loãng\"; câu gốc đã thay A. In y hệt đề giữa kì 2 số 3 Câu 27. Câu gốc đã sửa hay ghi thêm so với bản in, xem ghi chú của câu gốc."
+    },
+    {
+     "ma": "KCK2-3.C8",
+     "nhan": "Câu 8",
+     "phan": "Phần 1. Trắc nghiệm",
+     "nhom": "",
+     "trung": "KGK2-3.C28",
+     "ghi_chu": "In y hệt đề giữa kì 2 số 3 Câu 28."
+    },
+    {
+     "ma": "KCK2-3.C9",
+     "nhan": "Câu 9",
+     "phan": "Phần 1. Trắc nghiệm",
+     "nhom": "",
+     "trung": "KGK2-3.C29",
+     "ghi_chu": "Đề in phương án D \"cả ba kết luận trên đều sai\"; câu gốc đã thay D. In y hệt đề giữa kì 2 số 3 Câu 29. Câu gốc đã sửa hay ghi thêm so với bản in, xem ghi chú của câu gốc."
+    },
+    {
+     "ma": "KCK2-3.C10",
+     "nhan": "Câu 10",
+     "phan": "Phần 1. Trắc nghiệm",
+     "nhom": "",
+     "trung": "KGK2-3.C30",
+     "ghi_chu": "In y hệt đề giữa kì 2 số 3 Câu 30."
+    },
+    {
+     "ma": "KCK2-3.C11",
+     "nhan": "Câu 11",
+     "phan": "Phần 1. Trắc nghiệm",
+     "nhom": "",
+     "de": "Chọn câu trả lời đúng nhất. Trong quần xã ao nuôi cá, người ta thường thả nhiều loài cá trong ao nhằm\nA. tận dụng diện tích ao hồ và tận dụng triệt để nguồn thức ăn trong ao.\nB. để dễ quan sát và tiện việc chăm sóc.\nC. để tránh sự cạnh tranh về thức ăn trong ao.\nD. để chúng cùng hỗ trợ nhau trong cuộc sống chung.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN",
+     "bai_sgk": 43,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Chọn câu trả lời đúng nhất. Trong quần xã ao nuôi cá, người ta thường thả nhiều loài cá trong ao nhằm",
+      "cac": [
+       "tận dụng diện tích ao hồ và tận dụng triệt để nguồn thức ăn trong ao.",
+       "để dễ quan sát và tiện việc chăm sóc.",
+       "để tránh sự cạnh tranh về thức ăn trong ao.",
+       "để chúng cùng hỗ trợ nhau trong cuộc sống chung."
+      ],
+      "dap": "A"
+     },
+     "ghi_chu": "Các loài cá nuôi chung sống ở các tầng nước khác nhau và ăn các loại thức ăn khác nhau, nên thả nhiều loài thì tận dụng được cả diện tích (các tầng nước) lẫn nguồn thức ăn trong ao (A). Nhờ vậy các loài cũng ít tranh giành thức ăn của nhau, nên C đúng một phần (nhưng thả nhiều cá thì không tránh được cạnh tranh); thêm \"Chọn câu trả lời đúng nhất\". Đáp án A như đề in."
+    },
+    {
+     "ma": "KCK2-3.C12",
+     "nhan": "Câu 12",
+     "phan": "Phần 1. Trắc nghiệm",
+     "nhom": "",
+     "de": "Điền từ phù hợp vào chỗ trống: ___ là nơi vận chuyển, đồng thời là môi trường chuyển hóa của các quá trình trao đổi chất.\nA. Huyết tương.\nB. Hồng cầu.\nC. Bạch cầu.\nD. Tiểu cầu.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN",
+     "bai_sgk": 33,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Điền từ phù hợp vào chỗ trống: ___ là nơi vận chuyển, đồng thời là môi trường chuyển hóa của các quá trình trao đổi chất.",
+      "cac": [
+       "Huyết tương.",
+       "Hồng cầu.",
+       "Bạch cầu.",
+       "Tiểu cầu."
+      ],
+      "dap": "A"
+     },
+     "ghi_chu": "SGK Bài 33 (trang 135): huyết tương gồm chủ yếu là nước và các chất tan, duy trì máu ở trạng thái lỏng, vận chuyển chất dinh dưỡng, các chất cần thiết khác và chất thải. Hồng cầu chỉ vận chuyển khí. Đáp án A như đề in."
+    },
+    {
+     "ma": "KCK2-3.C13",
+     "nhan": "Câu 13",
+     "phan": "Phần 1. Trắc nghiệm",
+     "nhom": "",
+     "de": "Ở người, trụ não có chức năng chủ yếu là gì?\nA. Điều khiển các hoạt động có ý thức của con người.\nB. Điều khiển, điều hòa hoạt động của các nội quan, đặc biệt là hoạt động tuần hoàn, hô hấp, tiêu hóa.\nC. Điều hòa, phối hợp các cử động phức tạp và giúp giữ thăng bằng cơ thể.\nD. Là trung ương điều khiển các quá trình trao đổi chất và điều hòa thân nhiệt.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "bai_sgk": 37,
+     "bo_may": "kiến thức ngoài SGK KHTN 8",
+     "ghi_chu": "Đáp án in B (Sinh học 8 chương trình cũ; A là đại não, C là tiểu não, D là não trung gian). SGK KHTN 8 Bài 37 chỉ nói hệ thần kinh gồm bộ phận trung ương (não, tủy sống) và bộ phận ngoại biên, không chia não thành trụ não, tiểu não, não trung gian, đại não: con không xác định được theo SGK, nên bỏ khỏi máy."
+    },
+    {
+     "ma": "KCK2-3.C14",
+     "nhan": "Câu 14",
+     "phan": "Phần 1. Trắc nghiệm",
+     "nhom": "",
+     "de": "Hệ sinh thái bao gồm các thành phần là\nA. thành phần vô sinh và hữu sinh.\nB. sinh vật sản xuất, sinh vật tiêu thụ.\nC. thành phần vô cơ và hữu cơ.\nD. sinh vật sản xuất, sinh vật phân giải.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN",
+     "bai_sgk": 44,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Hệ sinh thái bao gồm các thành phần là",
+      "cac": [
+       "thành phần vô sinh và hữu sinh.",
+       "sinh vật sản xuất, sinh vật tiêu thụ.",
+       "thành phần vô cơ và hữu cơ.",
+       "sinh vật sản xuất, sinh vật phân giải."
+      ],
+      "dap": "A"
+     },
+     "ghi_chu": "SGK Bài 44: cấu trúc của một hệ sinh thái gồm thành phần vô sinh và thành phần hữu sinh; sinh vật sản xuất, tiêu thụ, phân giải là ba nhóm của thành phần hữu sinh. Đáp án A như đề in."
+    },
+    {
+     "ma": "KCK2-3.C15",
+     "nhan": "Câu 15",
+     "phan": "Phần 1. Trắc nghiệm",
+     "nhom": "",
+     "de": "Bộ phận nào có vai trò dẫn nước tiểu từ bể thận xuống bóng đái?\nA. Ống dẫn nước tiểu.\nB. Ống thận.\nC. Ống đái.\nD. Ống góp.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN",
+     "bai_sgk": 35,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Bộ phận nào có vai trò dẫn nước tiểu từ bể thận xuống bóng đái?",
+      "cac": [
+       "Ống dẫn nước tiểu.",
+       "Ống thận.",
+       "Ống đái.",
+       "Ống góp."
+      ],
+      "dap": "A"
+     },
+     "ghi_chu": "SGK Bài 35 (Hình 35.1): hệ bài tiết nước tiểu gồm hai quả thận, ống dẫn nước tiểu, bóng đái, ống đái; ống dẫn nước tiểu nối bể thận với bóng đái. Đáp án A như đề in."
+    },
+    {
+     "ma": "KCK2-3.C16",
+     "nhan": "Câu 16",
+     "phan": "Phần 1. Trắc nghiệm",
+     "nhom": "",
+     "de": "Hãy chọn câu có nội dung đúng trong các câu sau đây.\nA. Sinh vật sản xuất luôn sử dụng sinh vật tiêu thụ làm thức ăn.\nB. Sinh vật phân giải luôn là nguồn thức ăn của sinh vật tiêu thụ.\nC. Chất hữu cơ do sinh vật sản xuất tổng hợp được là nguồn thức ăn cho các dạng sinh vật trong hệ sinh thái.\nD. Vi khuẩn và nấm không phải là sinh vật phân giải.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "C",
+     "loai_dap_an": "TN",
+     "bai_sgk": 44,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Hãy chọn câu có nội dung đúng trong các câu sau đây.",
+      "cac": [
+       "Sinh vật sản xuất luôn sử dụng sinh vật tiêu thụ làm thức ăn.",
+       "Sinh vật phân giải luôn là nguồn thức ăn của sinh vật tiêu thụ.",
+       "Chất hữu cơ do sinh vật sản xuất tổng hợp được là nguồn thức ăn cho các dạng sinh vật trong hệ sinh thái.",
+       "Vi khuẩn và nấm không phải là sinh vật phân giải."
+      ],
+      "dap": "C"
+     },
+     "ghi_chu": "Đề in phương án A \"sử dụng sinh tiêu thụ\", sửa \"sinh vật tiêu thụ\". SGK Bài 44: sinh vật sản xuất dùng quang năng tổng hợp chất hữu cơ, sinh vật tiêu thụ lấy chất hữu cơ từ thức ăn; nấm, hầu hết vi khuẩn là sinh vật phân giải. Đáp án C như đề in."
+    },
+    {
+     "ma": "KCK2-3.C17",
+     "nhan": "Câu 17",
+     "phan": "Phần 1. Trắc nghiệm",
+     "nhom": "",
+     "de": "Dựa vào đâu mà hệ thần kinh người được phân biệt thành hệ thần kinh vận động và hệ thần kinh sinh dưỡng?\nA. Cấu tạo.\nB. Chức năng.\nC. Tần suất hoạt động.\nD. Thời gian hoạt động.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "bai_sgk": 37,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Dựa vào đâu mà hệ thần kinh người được phân biệt thành hệ thần kinh vận động và hệ thần kinh sinh dưỡng?",
+      "cac": [
+       "Cấu tạo.",
+       "Chức năng.",
+       "Tần suất hoạt động.",
+       "Thời gian hoạt động."
+      ],
+      "dap": "B"
+     },
+     "ghi_chu": "SGK KHTN 8 Bài 37 chỉ chia hệ thần kinh thành bộ phận trung ương và bộ phận ngoại biên (theo cấu tạo), không nói tới hệ thần kinh vận động, sinh dưỡng. Em vẫn giữ: hai tên gọi nói việc mỗi phần làm (điều khiển vận động; điều khiển các cơ quan sinh dưỡng như tiêu hóa, tuần hoàn, hô hấp), nên con suy ra được B (chức năng). Đáp án B như đề in."
+    },
+    {
+     "ma": "KCK2-3.C18",
+     "nhan": "Câu 18",
+     "phan": "Phần 1. Trắc nghiệm",
+     "nhom": "",
+     "de": "Khi nói về hệ sinh thái, nhận định nào sau đây sai?\nA. Hệ sinh thái là một hệ thống hoàn chỉnh và tương đối ổn định.\nB. Một giọt nước ao cũng được coi là một hệ sinh thái.\nC. Ở hệ sinh thái nhân tạo, con người không phải thường xuyên bổ sung thêm cho hệ sinh thái nguồn vật chất và năng lượng để nâng cao năng suất của hệ.\nD. Một hệ sinh thái gồm hai thành phần cấu trúc là thành phần vô sinh và quần xã sinh vật.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "C",
+     "loai_dap_an": "TN",
+     "bai_sgk": 44,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Khi nói về hệ sinh thái, nhận định nào sau đây sai?",
+      "cac": [
+       "Hệ sinh thái là một hệ thống hoàn chỉnh và tương đối ổn định.",
+       "Một giọt nước ao cũng được coi là một hệ sinh thái.",
+       "Ở hệ sinh thái nhân tạo, con người không phải thường xuyên bổ sung thêm cho hệ sinh thái nguồn vật chất và năng lượng để nâng cao năng suất của hệ.",
+       "Một hệ sinh thái gồm hai thành phần cấu trúc là thành phần vô sinh và quần xã sinh vật."
+      ],
+      "dap": "C"
+     },
+     "ghi_chu": "Đề in \"1 hệ thống\", \"1 hệ sinh thái\", \"quần xả sinh vật\"; viết \"một\", sửa \"quần xã\". SGK Bài 44: dù ở mức độ đơn giản nhất, sự tương tác giữa sinh vật với môi trường tạo thành chu trình sinh học cũng được xem là một hệ sinh thái (B đúng); hệ sinh thái gồm thành phần vô sinh và thành phần hữu sinh là các loài trong quần xã (D đúng). Hệ sinh thái nhân tạo (đồng ruộng, ao nuôi cá) thì con người phải thường xuyên bón phân, cho ăn..., nên C sai. Đáp án C như đề in."
+    },
+    {
+     "ma": "KCK2-3.C19",
+     "nhan": "Câu 19",
+     "phan": "Phần 1. Trắc nghiệm",
+     "nhom": "",
+     "de": "Đơn vị chức năng của thận không bao gồm thành phần nào sau đây?\nA. Ống góp.\nB. Ống thận.\nC. Cầu thận.\nD. Nang cầu thận.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN",
+     "bai_sgk": 35,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Đơn vị chức năng của thận không bao gồm thành phần nào sau đây?",
+      "cac": [
+       "Ống góp.",
+       "Ống thận.",
+       "Cầu thận.",
+       "Nang cầu thận."
+      ],
+      "dap": "A"
+     },
+     "ghi_chu": "SGK Bài 35 (trang 146): mỗi đơn vị chức năng được cấu tạo từ ống thận và cầu thận; bao ngoài cầu thận là một túi gọi là nang cầu thận. Ống góp là ống chung nhận nước tiểu của nhiều đơn vị chức năng (Hình 35.1c vẽ ống góp nối vào đơn vị thận), không thuộc đơn vị chức năng. Đáp án A như đề in."
+    },
+    {
+     "ma": "KCK2-3.C20",
+     "nhan": "Câu 20",
+     "phan": "Phần 1. Trắc nghiệm",
+     "nhom": "",
+     "de": "Vỏ tuyến trên thận được phân chia làm mấy lớp?\nA. 2 lớp.\nB. 3 lớp.\nC. 4 lớp.\nD. 5 lớp.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "bai_sgk": 38,
+     "bo_may": "kiến thức ngoài SGK KHTN 8",
+     "ghi_chu": "Đáp án in B (Sinh học 8 chương trình cũ: vỏ tuyến trên thận chia ba lớp). SGK KHTN 8 Bài 38 chỉ nói các hormone của tuyến trên thận, không nói cấu tạo vỏ, tủy: con không xác định được theo SGK, nên bỏ khỏi máy."
+    },
+    {
+     "ma": "KCK2-3.TL1",
+     "nhan": "Câu 1",
+     "phan": "Phần 2. Tự luận",
+     "nhom": "Câu 1:",
+     "de": "Câu 1:\nĐể mạ kẽm cho một cuộn dây thép thì phải làm như thế nào?",
+     "dang": "CAU_NHO",
+     "dap_an": "Nối cuộn dây thép với cực âm, một thanh kẽm với cực dương của nguồn điện, nhúng cả hai vào dung dịch muối kẽm rồi đóng mạch cho dòng điện chạy qua dung dịch một thời gian; kẽm bám thành lớp mỏng phủ lên cuộn dây thép.",
+     "loai_dap_an": "LOI_GIAI",
+     "bai_sgk": 23,
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "hoi": "Câu 1:\nĐể mạ kẽm cho một cuộn dây thép thì phải làm như thế nào?",
+      "dong": [
+       {
+        "chu": "Nối {0}.",
+        "o": [
+         {
+          "dung": [
+           "cuộn dây thép với cực âm, một thanh kẽm với cực dương của nguồn điện"
+          ],
+          "sai": [
+           "cuộn dây thép với cực dương, một thanh kẽm với cực âm của nguồn điện",
+           "cả cuộn dây thép và thanh kẽm với cực âm của nguồn điện"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Nhúng cuộn dây thép và thanh kẽm vào {0}.",
+        "o": [
+         {
+          "dung": [
+           "dung dịch muối kẽm"
+          ],
+          "sai": [
+           "nước cất",
+           "dung dịch muối đồng"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Đóng mạch cho dòng điện chạy qua dung dịch một thời gian thì {0}.",
+        "o": [
+         {
+          "dung": [
+           "kẽm bám thành một lớp mỏng phủ lên cuộn dây thép"
+          ],
+          "sai": [
+           "thép bám thành một lớp mỏng phủ lên thanh kẽm",
+           "cuộn dây thép tan dần vào dung dịch"
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     "ghi_chu": "Làm trên máy bằng ba dòng ô chọn. Lời giải in: nối cuộn dây thép với cực âm, nhúng vào dung dịch muối kẽm, đóng mạch một thời gian. SGK Bài 23 (trang 98, mạ điện): vật cần mạ gắn với cực âm, kim loại mạ gắn với cực dương của nguồn điện, tất cả nhúng trong dung dịch điện phân; nên em thêm thanh kẽm nối cực dương. Phương án sai: đảo hai cực (thép ở cực dương thì thép tan dần), nước cất (không có muối kẽm), dung dịch muối đồng (đồng bám lên thép, như thí nghiệm Hình 23.4). Cùng ý đề giữa kì 2 số 5 Câu 23 (trắc nghiệm), ở đây con tự ghép các bước."
+    },
+    {
+     "ma": "KCK2-3.TL2",
+     "nhan": "Câu 2",
+     "phan": "Phần 2. Tự luận",
+     "nhom": "Câu 2:",
+     "de": "Câu 2:\nTrình bày một số phương pháp phòng, chống nóng cho cơ thể?",
+     "dang": "CAU_NHO",
+     "dap_an": "Khi trời nắng nóng cần giữ cơ thể mát mẻ, đội mũ, nón khi làm việc ngoài trời, uống đủ nước, hạn chế ra ngoài trời nắng; không chơi thể thao dưới ánh nắng trực tiếp; sau khi vận động mạnh, mồ hôi ra nhiều thì không tắm ngay hay ngồi trước quạt, nơi có gió mạnh; thường xuyên luyện tập thể dục, thể thao để nâng cao khả năng chống nóng của cơ thể.",
+     "loai_dap_an": "LOI_GIAI",
+     "bai_sgk": 39,
+     "ghep": {
+      "kieu": "O",
+      "sao": 6,
+      "hoi": "Câu 2:\nMỗi việc sau nên làm hay không nên làm để phòng, chống nóng cho cơ thể?",
+      "dong": [
+       {
+        "chu": "Khi trời nắng nóng, giữ cho cơ thể mát mẻ: {0}",
+        "o": [
+         {
+          "dung": [
+           "Nên làm"
+          ],
+          "sai": [
+           "Không nên"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Đội mũ, nón khi làm việc ngoài trời: {0}",
+        "o": [
+         {
+          "dung": [
+           "Nên làm"
+          ],
+          "sai": [
+           "Không nên"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Chơi thể thao dưới ánh nắng trực tiếp: {0}",
+        "o": [
+         {
+          "dung": [
+           "Không nên"
+          ],
+          "sai": [
+           "Nên làm"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Vừa vận động mạnh, mồ hôi ra nhiều thì tắm ngay hoặc ngồi trước quạt: {0}",
+        "o": [
+         {
+          "dung": [
+           "Không nên"
+          ],
+          "sai": [
+           "Nên làm"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Uống đủ nước, hạn chế ra ngoài trời khi nắng nóng: {0}",
+        "o": [
+         {
+          "dung": [
+           "Nên làm"
+          ],
+          "sai": [
+           "Không nên"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Thường xuyên luyện tập thể dục, thể thao: {0}",
+        "o": [
+         {
+          "dung": [
+           "Nên làm"
+          ],
+          "sai": [
+           "Không nên"
+          ],
+          "hai": true
+         }
+        ]
+       }
+      ]
+     },
+     "ghi_chu": "Đề in \"Trình bày một số phương pháp phòng, chống nóng cho cơ thể?\". Theo luật tránh viết tay, làm trên máy phần kiến thức: sáu việc, con chọn nên làm hay không nên. Cả sáu việc lấy từ SGK Bài 39 (trang 163, 164): bốn việc đầu là đoạn \"Phòng chống nóng, lạnh cho cơ thể\" mà lời giải in chép lại; uống đủ nước, hạn chế ra ngoài trời khi nắng nóng ở đoạn phòng chống cảm nóng; luyện tập thể dục, thể thao (nâng cao khả năng chống nóng, lạnh) để con phân biệt với việc chơi thể thao dưới nắng."
     }
    ]
   }
