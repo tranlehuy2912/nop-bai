@@ -1,0 +1,104 @@
+# Laptop xem Netflix của Lê Hòa
+
+Viết ngày 07/10/2026 để một phiên Claude Code trên máy khác của anh Huy nắm được ngữ cảnh mà không
+cần đọc lại cuộc trò chuyện. Tình trạng ghi ở đây là tình trạng lúc viết; trước khi làm tiếp thì
+kiểm lại trên laptop và trên Firestore.
+
+## Mục đích
+
+Laptop cài Linux Mint, Lê Hòa dùng để xem Netflix. Anh Huy muốn:
+
+- Tài khoản của Lê Hòa chỉ mở được Netflix, không làm được gì khác.
+- Phút xem Netflix đổi từ phút chơi của tablet: Lê Hòa bấm nút "Netflix" trên tablet, chọn số phút
+  chơi, tablet trừ phút trong phiếu hôm nay và cấp gấp đôi số đó thành phút Netflix (tỉ lệ đổi được
+  trong Cài đặt của Bảng điều khiển, mặc định 2). Ba Huy cũng cấp thêm được trên Bảng điều khiển, và
+  phần này không trừ phút chơi.
+- Báo trước 5 phút, hết giờ thì đăng xuất. Không áp giờ ngủ. Phút Netflix chỉ dùng trong ngày,
+  nửa đêm là hết, giống phiếu giờ chơi của tablet.
+- Firefox của cả máy, kể cả tài khoản của anh Huy, chỉ vào được Netflix. Bảng điều khiển có nút
+  "Mở web" / "Khoá web", không có hạn. Firefox chỉ đọc luật lúc khởi động, nên đổi xong phải mở
+  lại Firefox. Anh Huy chấp nhận điều này.
+
+Mọi lựa chọn trên do anh Huy chốt ngày 07/10/2026.
+
+## Máy và cách vào
+
+| | Giá trị |
+|---|---|
+| Laptop | HP Pavilion 14, Linux Mint 22.3 bản MATE (không phải XFCE), Ubuntu noble, Firefox 146 bản deb |
+| Tailscale | tài khoản `tranlehuy2912@gmail.com`; laptop `huy-hp-pavilion-14-notebook-pc` 100.93.227.126, Mac mini `mac-mini-ca-huy` 100.95.83.54 |
+| Mạng nhà | laptop ở 192.168.0.107; Mac mini ở chỗ khác nên đi qua Tailscale |
+| Vân tay khoá SSH ED25519 của laptop | `SHA256:ACKS/1gSt3nqz2oJ76SkiDeQzYRkNjTJKAATPnJP9Uo` |
+| Màn đăng nhập | LightDM với slick-greeter |
+
+Tài khoản trên laptop:
+
+- `huy`: của anh Huy, quản trị, có mật khẩu (anh Huy đổi ngày 07/10/2026 vì Lê Hòa biết mật khẩu cũ). `sudo` phải gõ mật khẩu. SSH vào được bằng khoá.
+- `harley`: dành cho Claude Code. Không có mật khẩu, ẩn khỏi màn đăng nhập (`/var/lib/AccountsService/users/harley`), chỉ vào bằng khoá SSH, `sudo` không cần mật khẩu (`/etc/sudoers.d/90-harley`). Mọi việc cài đặt chạy bằng tài khoản này.
+- `lehoa`: của Lê Hòa, không có quyền quản trị, không có mật khẩu, thuộc nhóm `nopasswdlogin` nên chọn tên là vào.
+
+SSH chỉ nhận khoá, chỉ cho `huy` và `harley` (`/etc/ssh/sshd_config.d/10-harley.conf`). Khoá đang được nhận là khoá `harley@mac-mini-ca-huy` của Mac mini.
+
+### Cho máy Mac khác vào
+
+Claude Code không được gõ mật khẩu, nên anh Huy làm phần cần mật khẩu:
+
+1. Mac mới cài Tailscale, đăng nhập cùng tài khoản trên. Phần mở rộng mạng của Tailscale phải bật trong Cài đặt hệ thống, mục Login Items & Extensions. Trên Mac mini, lần đầu báo lỗi "permission denied" khi lưu cấu hình VPN; thoát hẳn Tailscale rồi mở lại, bấm Cho phép là được.
+2. Trên Mac mới tạo khoá: `ssh-keygen -t ed25519 -N "" -C "harley@<tên máy>" -f ~/.ssh/id_ed25519`.
+3. Chép khoá vào cả hai tài khoản. Tài khoản `harley` không có mật khẩu nên không dùng được `ssh-copy-id` trực tiếp. Cách đơn giản là để phiên Claude Code trên Mac mini (đã vào được) thêm dòng khoá công khai của Mac mới vào `/home/harley/.ssh/authorized_keys` và `/home/huy/.ssh/authorized_keys`. Cách khác: anh Huy chạy `ssh-copy-id huy@100.93.227.126` (gõ mật khẩu `huy`), rồi `ssh -t huy@100.93.227.126 'sudo tee -a /home/harley/.ssh/authorized_keys < ~/.ssh/authorized_keys'` và gõ mật khẩu cho `sudo`.
+4. Thử: `ssh harley@100.93.227.126 'sudo -n true && echo ok'`. Lần đầu so vân tay với bảng trên.
+
+## Các phần đã có
+
+### Trên laptop
+
+- Timekpr-nExt bản 0.5.10, lấy từ PPA `ppa:mjasnik/ppa` (kho của Mint chỉ có 0.5.4). Tài khoản `lehoa`: giới hạn mỗi ngày 0 phút, đăng xuất khi hết giờ (`terminate`). Phút chỉ có khi được cộng bằng `timekpra --settimeleft lehoa + <giây>`; đã thử, giới hạn 0 vẫn cộng vượt được.
+- Dịch vụ `netflix-gio` (systemd), chạy `/usr/local/lib/netflix-gio/netflix_gio.py chay` bằng quyền root. Cấu hình `/etc/netflix-gio/cauhinh.json` (khoá API, dự án, mã nhà), trạng thái `/var/lib/netflix-gio/trangthai.json` (refresh token của tài khoản ẩn danh, các phiếu đã cộng trong ngày). Việc của nó ghi ở đầu file `netflix_gio.py`. Xem nhật ký: `journalctl -u netflix-gio | grep -v timekpra-su`. Mỗi lần gọi `timekpra` để lại bốn dòng `timekpra-su`, đó là chuyện bình thường.
+- Luật chặn web `/etc/firefox/policies/policies.json` do dịch vụ trên đặt hay gỡ, áp cho mọi tài khoản.
+- Phiên của Lê Hòa: `/etc/X11/Xsession.d/98netflix-lehoa` thay mọi phiên của `lehoa` bằng `/usr/local/bin/netflix-phien`. Script này chờ luật chặn web có mặt, chạy `marco` và `timekprc`, rồi mở `firefox --kiosk https://www.netflix.com/`. Đóng Firefox là đăng xuất.
+- Gói `xdotool`, cài lúc thử.
+
+Cài lại hay chuyển sang dự án khác bằng `tools/laptop/cai.sh` (đọc đầu file): chép thư mục `tools/laptop` lên laptop, chạy `sudo sh cai.sh <google-services.json> <mã nhà>`. Script in uid ẩn danh của laptop. uid đó phải được ghi vào trường `uidLaptop` của document `laptop/<mã nhà>` qua console Firebase, rồi `systemctl enable --now netflix-gio`.
+
+### Trên Firestore
+
+Chi tiết ở `Duong.kt` (mục `LAPTOP`, `CAP`) và `bang-dieu-khien/firestore.rules` (mục `laptop/{nhaId}`).
+
+- `laptop/{maNha}` nằm ngoài `nha/`, vì laptop không phải người nhà. Claude Code tạo document này qua console, với `uidLaptop`. Laptop ghi `ketThucLuc`, `conLaiMs`, `dangDung`, `webDangMo`, `capCuoi`, `capNhatLuc`, và chỉ ghi khi có gì đổi. Người nhà chỉ ghi được `moWeb` (kiểu bool).
+- `laptop/{maNha}/cap/{id}`: phiếu cấp giờ `{ phut, phutChoi, ai, taoLuc }`. Người nhà tạo, laptop đọc mỗi phút, cộng giờ rồi xoá. Phiếu tạo từ hôm trước thì laptop bỏ.
+- Laptop đăng nhập ẩn danh qua REST (`identitytoolkit`, `securetoken`) bằng khoá API trong `google-services.json`. Khoá đó không bị giới hạn chỉ cho Android; đã thử được.
+
+### Trong ba app
+
+Nhánh `laptop-netflix` của ba repo, chưa gộp `main`, chưa đẩy GitHub lúc viết file này:
+
+- `nop-bai`: nút "Netflix" ở hàng dưới màn chính, chỉ hiện khi laptop đã nối (`ui/DoiNetflix`, `dongbo/Laptop`), `GateStore.doiPhut`, tỉ lệ `Prefs.tiLeNetflix` qua lệnh `CAIDAT tiLeNetflix`, `tools/laptop/`. Test: 6 test `doi_*` trong `GateStoreTest`.
+- `bang-dieu-khien`: thẻ Giờ chơi có dòng "Netflix trên laptop" (còn bao nhiêu phút, nút "Cấp thêm" 15, 30, 60 phút) và dòng trạng thái web với nút "Mở web" / "Khoá web". Cài đặt có mục "Đổi sang Netflix" (1 đến 5). Luật Firestore mới.
+- `cho-gio-choi`: chỉ chép `Duong.kt`.
+
+Commit được làm trong các worktree `.worktrees/netflix-<repo>` ở gốc workspace trên Mac mini, vì có nhiều phiên khác cùng làm trong cây chính.
+
+## Tình trạng lúc viết (07/10/2026, khoảng 12 giờ trưa)
+
+- Laptop đang nối dự án THỬ `homework-gate-thu`, nhà `tp9vjs55v5zpp3zjaybx` (nhà của máy ảo `pad5`). Luật mới đã dán lên dự án thử, document `laptop/tp9vjs55v5zpp3zjaybx` đã tạo.
+- Đã thử trọn vòng với `pad5` và `dt_bahuy`: đổi 4 phút chơi ra 8 phút, laptop cộng sau khoảng 30 giây; Bảng điều khiển cấp thêm 15 phút; đổi tỉ lệ; mở web, khoá web.
+- Web đang khoá cho cả máy. Phiên `huy` trên màn hình đã được đăng xuất, laptop đang ở màn đăng nhập.
+- `lehoa` còn 23 phút từ lúc thử (hết lúc nửa đêm).
+
+## Việc còn lại
+
+1. Một lần có người ngồi trước laptop: chọn "Lê Hòa" ở màn đăng nhập, xem Firefox có tự mở Netflix toàn màn hình không, thông báo 5 phút và lúc hết giờ có hiện không. Anh Huy đăng nhập tài khoản Netflix một lần trong phiên đó; Claude Code không đăng nhập thay.
+2. Đưa lên bản thật một lượt (anh Huy chọn làm khi xong hết):
+   - Gộp nhánh `laptop-netflix` vào `main` và đẩy GitHub cả ba repo, chạy `kiem-duong.sh` trước.
+   - Dán `firestore.rules` mới lên dự án thật `nop-bai-4934d` (trang luật ở `/firestore/databases/-default-/security/rules`, tài khoản Google thứ ba trong Chrome, `/u/2/`).
+   - Chạy lại `cai.sh` trên laptop với `google-services.json` của dự án thật và mã nhà thật (nhà của tablet thật, xem `CLAUDE.md` ở gốc workspace). Ghi `uidLaptop` mới vào `laptop/<mã nhà thật>` trên console dự án thật.
+   - Anh Huy tự cài bản mới lên tablet thật và điện thoại thật.
+3. Xoá document `laptop/tp9vjs55v5zpp3zjaybx` của dự án thử nếu không cần thử nữa.
+
+## Những chỗ dễ vấp
+
+- Không gõ mật khẩu, không đăng nhập Netflix hay Google thay anh Huy.
+- Laptop có lúc có người đang dùng (07/10/2026 đang mở YouTube trên tài khoản `huy`). Đừng gõ phím hay bấm chuột lên màn hình laptop bằng `xdotool`: hôm đó vài phím đã lọt vào cửa sổ của người đang dùng. Muốn thử Firefox thì dùng hồ sơ riêng (`firefox --new-instance --profile /tmp/...`) và chỉ chụp màn hình.
+- `pkill -f "<chuỗi>"` qua SSH khớp luôn chính câu lệnh của phiên SSH và tự giết nó. Viết chuỗi có ngoặc vuông, ví dụ `pkill -f "[f]f-thu"`. Tiến trình chính của Firefox tên là `firefox-bin`, nên `pkill -x firefox` không bắt được gì.
+- Đầu ra của `curl` trên Mac mini đi qua bộ lọc `rtk` và bị cắt. Muốn đọc JSON thô thì dùng `rtk proxy curl`.
+- Laptop xuất hình ra tivi qua HDMI. Một phiên khác ngày 07/10/2026 có hỏi về việc phát tiếng và hiện hộp thoại ra tivi.
