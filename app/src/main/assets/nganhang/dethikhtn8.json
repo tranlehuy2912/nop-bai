@@ -2,7 +2,7 @@
  "nguon": "dethikhtn8",
  "mon": "Khoa học tự nhiên",
  "ten": "Đề thi Khoa học tự nhiên 8",
- "ban": 5,
+ "ban": 6,
  "cac_bai": [
   {
    "chuong": "Giữa học kì 1",
@@ -15343,6 +15343,1660 @@
      "phan": "",
      "nhom": "",
      "trung": "KGK2-1.C2"
+    }
+   ]
+  },
+  {
+   "chuong": "Giữa học kì 2",
+   "bai": "Đề giữa kì 2 số 5",
+   "de_thi": {
+    "ma": "KGK2-5",
+    "nguon_goc": "loigiaihay.com, đăng 20/01/2024"
+   },
+   "cac_cau": [
+    {
+     "ma": "KGK2-5.C1",
+     "nhan": "Câu 1",
+     "phan": "",
+     "nhom": "",
+     "trung": "KGK2-2.C13"
+    },
+    {
+     "ma": "KGK2-5.C2",
+     "nhan": "Câu 2",
+     "phan": "",
+     "nhom": "",
+     "trung": "KGK2-2.C14"
+    },
+    {
+     "ma": "KGK2-5.C3",
+     "nhan": "Câu 3",
+     "phan": "",
+     "nhom": "",
+     "trung": "KGK2-2.C15"
+    },
+    {
+     "ma": "KGK2-5.C4",
+     "nhan": "Câu 4",
+     "phan": "",
+     "nhom": "",
+     "trung": "KGK2-2.C16"
+    },
+    {
+     "ma": "KGK2-5.C5",
+     "nhan": "Câu 5",
+     "phan": "",
+     "nhom": "",
+     "trung": "KGK2-3.C12"
+    },
+    {
+     "ma": "KGK2-5.C6",
+     "nhan": "Câu 6",
+     "phan": "",
+     "nhom": "",
+     "trung": "KGK2-3.C19"
+    },
+    {
+     "ma": "KGK2-5.C7",
+     "nhan": "Câu 7",
+     "phan": "",
+     "nhom": "",
+     "trung": "KGK2-4.C8"
+    },
+    {
+     "ma": "KGK2-5.C8",
+     "nhan": "Câu 8",
+     "phan": "",
+     "nhom": "",
+     "trung": "KGK2-4.C9"
+    },
+    {
+     "ma": "KGK2-5.C9",
+     "nhan": "Câu 9",
+     "phan": "",
+     "nhom": "",
+     "trung": "KGK2-4.C10"
+    },
+    {
+     "ma": "KGK2-5.C10",
+     "nhan": "Câu 10",
+     "phan": "",
+     "nhom": "",
+     "trung": "KGK2-4.C11"
+    },
+    {
+     "ma": "KGK2-5.C11",
+     "nhan": "Câu 11",
+     "phan": "",
+     "nhom": "",
+     "de": "Nung nóng một cục sắt rồi thả vào chậu nước lạnh, nước nóng lên, cục sắt nguội đi. Trong quá trình này có sự truyền năng lượng\nA. Từ cơ năng sang nhiệt năng.\nB. Từ nhiệt năng sang nhiệt năng.\nC. Từ cơ năng sang cơ năng.\nD. Từ nhiệt năng sang cơ năng.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "bai_sgk": 26,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Nung nóng một cục sắt rồi thả vào chậu nước lạnh, nước nóng lên, cục sắt nguội đi. Trong quá trình này có sự truyền năng lượng",
+      "cac": [
+       "Từ cơ năng sang nhiệt năng.",
+       "Từ nhiệt năng sang nhiệt năng.",
+       "Từ cơ năng sang cơ năng.",
+       "Từ nhiệt năng sang cơ năng."
+      ],
+      "dap": "B"
+     },
+     "ghi_chu": "Đề in \"Trong quá trình này có sự chuyển hóa năng lượng:\". Chuyển hoá là năng lượng đổi từ dạng này sang dạng khác (SGK Bài 26: sự chuyển hoá từ nhiệt năng sang các dạng năng lượng khác); ở đây nhiệt năng của cục sắt truyền sang nước, vẫn là nhiệt năng (SGK Bài 26: quả cầu nhận thêm nhiệt năng từ nước nóng). Viết \"có sự truyền năng lượng\". Đáp án B như đề in."
+    },
+    {
+     "ma": "KGK2-5.C12",
+     "nhan": "Câu 12",
+     "phan": "",
+     "nhom": "",
+     "de": "Năng lượng mà một vật có được do chuyển động được gọi là\nA. Thế năng.\nB. Động năng.\nC. Nhiệt năng.\nD. Cơ năng.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "bai_sgk": 26,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Năng lượng mà một vật có được do chuyển động được gọi là",
+      "cac": [
+       "Thế năng.",
+       "Động năng.",
+       "Nhiệt năng.",
+       "Cơ năng."
+      ],
+      "dap": "B"
+     },
+     "ghi_chu": "Đề in dấu \"…\" ở cuối câu hỏi, bỏ đi."
+    },
+    {
+     "ma": "KGK2-5.C13",
+     "nhan": "Câu 13",
+     "phan": "",
+     "nhom": "",
+     "de": "Năng lượng mà một vật có được nhờ ở trên cao so với mặt đất được gọi là\nA. Nhiệt năng.\nB. Thế năng đàn hồi.\nC. Thế năng hấp dẫn.\nD. Động năng.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "C",
+     "loai_dap_an": "TN",
+     "bai_sgk": 26,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Năng lượng mà một vật có được nhờ ở trên cao so với mặt đất được gọi là",
+      "cac": [
+       "Nhiệt năng.",
+       "Thế năng đàn hồi.",
+       "Thế năng hấp dẫn.",
+       "Động năng."
+      ],
+      "dap": "C"
+     },
+     "ghi_chu": "Đề in \"Vật ở trên cao so với mặt đất có năng lượng gọi là …\". Mọi vật đều có nhiệt năng (SGK Bài 26), nên hỏi như đề in thì \"Nhiệt năng\" cũng đúng. Viết lại \"Năng lượng mà một vật có được nhờ ở trên cao\" (SGK Bài 26: thế năng hấp dẫn phụ thuộc khoảng cách giữa vật và Trái Đất). Đáp án C như đề in."
+    },
+    {
+     "ma": "KGK2-5.C14",
+     "nhan": "Câu 14",
+     "phan": "",
+     "nhom": "",
+     "de": "Nhiệt năng của một vật là\nA. Tổng thế năng của các phân tử cấu tạo nên vật.\nB. Tổng động năng của các phân tử cấu tạo nên vật.\nC. Hiệu thế năng của các phân tử cấu tạo nên vật.\nD. Hiệu động năng của các phân tử cấu tạo nên vật.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "bai_sgk": 26,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Nhiệt năng của một vật là",
+      "cac": [
+       "Tổng thế năng của các phân tử cấu tạo nên vật.",
+       "Tổng động năng của các phân tử cấu tạo nên vật.",
+       "Hiệu thế năng của các phân tử cấu tạo nên vật.",
+       "Hiệu động năng của các phân tử cấu tạo nên vật."
+      ],
+      "dap": "B"
+     }
+    },
+    {
+     "ma": "KGK2-5.C15",
+     "nhan": "Câu 15",
+     "phan": "",
+     "nhom": "",
+     "de": "Nhiệt dung riêng của một chất có giá trị âm trong trường hợp nào sau đây?\nA. Chất nhận nhiệt và tăng nhiệt độ.\nB. Chất nhận nhiệt và giảm nhiệt độ.\nC. Chất tỏa nhiệt và giảm nhiệt độ.\nD. Chất tỏa nhiệt và giữ nguyên nhiệt độ.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "bai_sgk": 27,
+     "bo_may": "đề sai kiến thức: nhiệt dung riêng của một chất không có giá trị âm",
+     "ghi_chu": "Đáp án in B. Nhiệt dung riêng là đại lượng riêng của mỗi chất và luôn dương (SGK Bài 27 chỉ nêu nhiệt dung riêng của nước là 4180 J/kg.K); không chất nào có nhiệt dung riêng âm, nên câu hỏi không có nghĩa. Muốn sửa phải đặt câu hỏi khác hẳn, nên bỏ khỏi máy."
+    },
+    {
+     "ma": "KGK2-5.C16",
+     "nhan": "Câu 16",
+     "phan": "",
+     "nhom": "",
+     "trung": "KGK2-2.C25"
+    },
+    {
+     "ma": "KGK2-5.C17",
+     "nhan": "Câu 17",
+     "phan": "",
+     "nhom": "",
+     "trung": "KGK2-2.C26"
+    },
+    {
+     "ma": "KGK2-5.C18",
+     "nhan": "Câu 18",
+     "phan": "",
+     "nhom": "",
+     "trung": "KGK2-2.C27"
+    },
+    {
+     "ma": "KGK2-5.C19",
+     "nhan": "Câu 19",
+     "phan": "",
+     "nhom": "",
+     "trung": "KGK2-3.C26"
+    },
+    {
+     "ma": "KGK2-5.C20",
+     "nhan": "Câu 20",
+     "phan": "",
+     "nhom": "",
+     "trung": "KGK2-3.C27"
+    },
+    {
+     "ma": "KGK2-5.C21",
+     "nhan": "Câu 21",
+     "phan": "",
+     "nhom": "",
+     "de": "Khi cho dòng điện đi qua máy sấy tóc, dòng điện đã gây ra các tác dụng nào?\nA. Từ và hóa học\nB. Phát sáng và hóa học\nC. Từ và nhiệt\nD. Từ và phát sáng",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "C",
+     "loai_dap_an": "TN",
+     "bai_sgk": 23,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Khi cho dòng điện đi qua máy sấy tóc, dòng điện đã gây ra các tác dụng nào?",
+      "cac": [
+       "Từ và hóa học",
+       "Phát sáng và hóa học",
+       "Từ và nhiệt",
+       "Từ và phát sáng"
+      ],
+      "dap": "C"
+     },
+     "ghi_chu": "Đề in \"Quang và hóa học\", \"Từ và quang\"; viết \"phát sáng\" như SGK Bài 23. SGK KHTN 8 Bài 23 không học tác dụng từ (chỉ có nhiệt, phát sáng, hoá học, sinh lí); con đã gặp ở KHTN 7 (nam châm điện: cuộn dây có dòng điện chạy qua thì hút được sắt). Máy sấy tóc có quạt chạy bằng động cơ điện (tác dụng từ) và dây nung làm nóng gió (tác dụng nhiệt). Chỉ phương án C có tác dụng nhiệt nên con vẫn chọn được. Đáp án C như đề in."
+    },
+    {
+     "ma": "KGK2-5.C22",
+     "nhan": "Câu 22",
+     "phan": "",
+     "nhom": "",
+     "de": "Vật nào dưới đây gây ra tác dụng từ?\nA. Một cục pin còn mới đặt riêng trên bàn.\nB. Một mảnh nilông đã được cọ xát mạnh.\nC. Một cuộn dây dẫn đang có dòng điện chạy qua.\nD. Một đoạn băng dính.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "C",
+     "loai_dap_an": "TN",
+     "bai_sgk": 23,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Vật nào dưới đây gây ra tác dụng từ?",
+      "cac": [
+       "Một cục pin còn mới đặt riêng trên bàn.",
+       "Một mảnh nilông đã được cọ xát mạnh.",
+       "Một cuộn dây dẫn đang có dòng điện chạy qua.",
+       "Một đoạn băng dính."
+      ],
+      "dap": "C"
+     },
+     "ghi_chu": "Đề in \"nilong\", viết \"nilông\". Tác dụng từ là kiến thức KHTN 7 (nam châm điện), xem Câu 21. Đáp án C như đề in."
+    },
+    {
+     "ma": "KGK2-5.C23",
+     "nhan": "Câu 23",
+     "phan": "",
+     "nhom": "",
+     "de": "Để mạ kẽm cho một cuộn dây thép thì phải làm thế nào?\nA. Ngâm cuộn dây thép trong dung dịch muối kẽm rồi đun nóng dung dịch.\nB. Nối cuộn dây thép với cực âm của nguồn điện rồi nhúng vào dung dịch muối kẽm và đóng mạch cho dòng điện chạy qua dung dịch một thời gian.\nC. Ngâm cuộn dây thép trong dung dịch muối kẽm rồi cho dòng điện chạy qua dung dịch này.\nD. Nối cuộn dây thép với cực dương của nguồn điện rồi nhúng vào dung dịch muối kẽm và cho dòng điện chạy qua dung dịch.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "bai_sgk": 23,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Để mạ kẽm cho một cuộn dây thép thì phải làm thế nào?",
+      "cac": [
+       "Ngâm cuộn dây thép trong dung dịch muối kẽm rồi đun nóng dung dịch.",
+       "Nối cuộn dây thép với cực âm của nguồn điện rồi nhúng vào dung dịch muối kẽm và đóng mạch cho dòng điện chạy qua dung dịch một thời gian.",
+       "Ngâm cuộn dây thép trong dung dịch muối kẽm rồi cho dòng điện chạy qua dung dịch này.",
+       "Nối cuộn dây thép với cực dương của nguồn điện rồi nhúng vào dung dịch muối kẽm và cho dòng điện chạy qua dung dịch."
+      ],
+      "dap": "B"
+     },
+     "ghi_chu": "SGK Bài 23 (mạ điện): vật cần mạ gắn với cực âm, kim loại mạ gắn với cực dương của nguồn điện. Phương án C không nối cuộn dây với cực nào nên không mạ được. Đề in \"Ngâm cuộn dây trong\", thêm \"thép\" cho giống ba phương án kia. Đáp án B như đề in."
+    },
+    {
+     "ma": "KGK2-5.C24",
+     "nhan": "Câu 24",
+     "phan": "",
+     "nhom": "",
+     "de": "Khi tiến hành thí nghiệm cho dòng điện chạy qua đùi ếch thì đùi ếch co lại, đó là tác dụng nào của dòng điện?\nA. Tác dụng hóa học\nB. Tác dụng từ\nC. Tác dụng sinh lí\nD. Tác dụng nhiệt",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "C",
+     "loai_dap_an": "TN",
+     "bai_sgk": 23,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Khi tiến hành thí nghiệm cho dòng điện chạy qua đùi ếch thì đùi ếch co lại, đó là tác dụng nào của dòng điện?",
+      "cac": [
+       "Tác dụng hóa học",
+       "Tác dụng từ",
+       "Tác dụng sinh lí",
+       "Tác dụng nhiệt"
+      ],
+      "dap": "C"
+     }
+    },
+    {
+     "ma": "KGK2-5.C25",
+     "nhan": "Câu 25",
+     "phan": "",
+     "nhom": "",
+     "de": "Trong y học, tác dụng sinh lí của dòng điện được sử dụng trong\nA. Chạy điện khi châm cứu.\nB. Chụp X-quang.\nC. Đo điện não đồ.\nD. Đo huyết áp.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN",
+     "bai_sgk": 23,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Trong y học, tác dụng sinh lí của dòng điện được sử dụng trong",
+      "cac": [
+       "Chạy điện khi châm cứu.",
+       "Chụp X-quang.",
+       "Đo điện não đồ.",
+       "Đo huyết áp."
+      ],
+      "dap": "A"
+     },
+     "ghi_chu": "Đề in \"sinh lý\", \"Chụp X – quang\"; viết \"sinh lí\" như SGK Bài 23, \"X-quang\". Đo điện não đồ là ghi lại tín hiệu điện rất yếu do não tạo ra, không cho dòng điện chạy qua cơ thể để chữa bệnh. Đáp án A như đề in."
+    },
+    {
+     "ma": "KGK2-5.C26",
+     "nhan": "Câu 26",
+     "phan": "",
+     "nhom": "",
+     "de": "Dòng điện là dòng chuyển dời có hướng của các hạt mang điện. Trong dung dịch muối copper (II) sulfate (CuSO4), hạt nào dưới đây chuyển dời có hướng tạo ra dòng điện? Chọn suy đoán có lí nhất.\nA. Các electron của nguyên tử đồng.\nB. Các nguyên tử đồng có thừa electron.\nC. Các nguyên tử đồng đã mất bớt electron.\nD. Các nguyên tử đồng trung hòa về điện.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "C",
+     "loai_dap_an": "TN",
+     "bai_sgk": 23,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Dòng điện là dòng chuyển dời có hướng của các hạt mang điện. Trong dung dịch muối copper (II) sulfate (CuSO₄), hạt nào dưới đây chuyển dời có hướng tạo ra dòng điện? Chọn suy đoán có lí nhất.",
+      "cac": [
+       "Các electron của nguyên tử đồng.",
+       "Các nguyên tử đồng có thừa electron.",
+       "Các nguyên tử đồng đã mất bớt electron.",
+       "Các nguyên tử đồng trung hòa về điện."
+      ],
+      "dap": "C"
+     },
+     "ghi_chu": "Đề in \"Ta đã biết dòng điện là dòng điện tích dịch chuyển rời có hướng. Vậy điện tích chuyển rời có hướng tạo ra dòng điện trong dung dịch muối đồng sunfat là: Suy đoán nào sau đây là có lí nhất?\". Viết \"chuyển dời có hướng của các hạt mang điện\" như SGK Bài 21, \"copper (II) sulfate (CuSO₄)\" như SGK Bài 23. Trong dung dịch còn có gốc sulfate mang điện âm cũng chuyển dời, nên giữ chữ \"có lí nhất\": trong bốn phương án chỉ nguyên tử đồng mất bớt electron (mang điện dương, chuyển về thỏi than nối cực âm và bám vào đó, SGK Bài 23) là hạt mang điện. Đáp án C như đề in."
+    },
+    {
+     "ma": "KGK2-5.C27",
+     "nhan": "Câu 27",
+     "phan": "",
+     "nhom": "",
+     "trung": "KGK2-4.C12"
+    },
+    {
+     "ma": "KGK2-5.C28",
+     "nhan": "Câu 28",
+     "phan": "",
+     "nhom": "",
+     "trung": "KGK2-4.C13"
+    },
+    {
+     "ma": "KGK2-5.C29",
+     "nhan": "Câu 29",
+     "phan": "",
+     "nhom": "",
+     "de": "Nhiệt độ của vật không phụ thuộc vào yếu tố nào sau đây?\nA. Khối lượng của vật.\nB. Tốc độ chuyển động của các phân tử cấu tạo nên vật.\nC. Động năng của các phân tử cấu tạo nên vật.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN",
+     "bai_sgk": 26,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Nhiệt độ của vật không phụ thuộc vào yếu tố nào sau đây?",
+      "cac": [
+       "Khối lượng của vật.",
+       "Tốc độ chuyển động của các phân tử cấu tạo nên vật.",
+       "Động năng của các phân tử cấu tạo nên vật."
+      ],
+      "dap": "A"
+     },
+     "ghi_chu": "Đề in bốn phương án: A \"Khối lượng của vật\", B \"Vận tốc của các phân tử cấu tạo nên vật\", C \"Khối lượng của từng phân tử cấu tạo nên vật\", D \"Khoảng cách giữa các phân tử cấu tạo nên vật\", đáp án A. Theo SGK Bài 26, nhiệt độ gắn với chuyển động nhanh hay chậm của phân tử (nhiệt độ càng cao, phân tử chuyển động càng nhanh, động năng càng lớn), còn khoảng cách giữa các phân tử gắn với thế năng phân tử chứ không gắn với nhiệt độ, nên D cũng là đáp án. C thì SGK không nói tới, con không xác định được. Bỏ D, thay C bằng \"Động năng của các phân tử cấu tạo nên vật\" (nhiệt độ có phụ thuộc), viết \"Tốc độ chuyển động\" thay \"Vận tốc\". Câu còn ba phương án. Đáp án A như đề in."
+    },
+    {
+     "ma": "KGK2-5.C30",
+     "nhan": "Câu 30",
+     "phan": "",
+     "nhom": "",
+     "de": "Phát biểu nào sau đây là đúng khi nói về nhiệt năng của vật?\nA. Chỉ những vật có khối lượng lớn mới có nhiệt năng.\nB. Bất kì vật nào dù nóng hay lạnh thì cũng đều có nhiệt năng.\nC. Chỉ những vật có nhiệt độ cao mới có nhiệt năng.\nD. Chỉ những vật có trọng lượng riêng lớn mới có nhiệt năng.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "bai_sgk": 26,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Phát biểu nào sau đây là đúng khi nói về nhiệt năng của vật?",
+      "cac": [
+       "Chỉ những vật có khối lượng lớn mới có nhiệt năng.",
+       "Bất kì vật nào dù nóng hay lạnh thì cũng đều có nhiệt năng.",
+       "Chỉ những vật có nhiệt độ cao mới có nhiệt năng.",
+       "Chỉ những vật có trọng lượng riêng lớn mới có nhiệt năng."
+      ],
+      "dap": "B"
+     },
+     "ghi_chu": "Đề in D \"Chỉ những vật trọng lượng riêng lớn\", thêm chữ \"có\"."
+    }
+   ]
+  },
+  {
+   "chuong": "Giữa học kì 2",
+   "bai": "Đề giữa kì 2 số 6",
+   "de_thi": {
+    "ma": "KGK2-6",
+    "nguon_goc": "loigiaihay.com, đăng 14/03/2025"
+   },
+   "cac_cau": [
+    {
+     "ma": "KGK2-6.C1",
+     "nhan": "Câu 1",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "trung": "KGK2-4.C23"
+    },
+    {
+     "ma": "KGK2-6.C2",
+     "nhan": "Câu 2",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "de": "Một ống nghiệm đựng đầy nước, cần đốt nóng ống ở vị trí nào của ống thì tất cả nước trong ống sôi nhanh hơn?\nA. Đốt ở giữa ống.\nB. Đốt ở miệng ống.\nC. Đốt ở đáy ống.\nD. Đốt ở vị trí nào cũng được.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "C",
+     "loai_dap_an": "TN",
+     "bai_sgk": 28,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Một ống nghiệm đựng đầy nước, cần đốt nóng ống ở vị trí nào của ống thì tất cả nước trong ống sôi nhanh hơn?",
+      "cac": [
+       "Đốt ở giữa ống.",
+       "Đốt ở miệng ống.",
+       "Đốt ở đáy ống.",
+       "Đốt ở vị trí nào cũng được."
+      ],
+      "dap": "C"
+     }
+    },
+    {
+     "ma": "KGK2-6.C3",
+     "nhan": "Câu 3",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "trung": "KGK2-3.C26"
+    },
+    {
+     "ma": "KGK2-6.C4",
+     "nhan": "Câu 4",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "trung": "KGK2-5.C12"
+    },
+    {
+     "ma": "KGK2-6.C5",
+     "nhan": "Câu 5",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "de": "Câu nào sau đây nói về nhiệt năng của một vật là đúng?\nA. Chỉ những vật có nhiệt độ cao mới có nhiệt năng.\nB. Chỉ những vật chuyển động mới có nhiệt năng.\nC. Chỉ những vật có khối lượng lớn mới có nhiệt năng.\nD. Mọi vật đều có nhiệt năng.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "D",
+     "loai_dap_an": "TN",
+     "bai_sgk": 26,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Câu nào sau đây nói về nhiệt năng của một vật là đúng?",
+      "cac": [
+       "Chỉ những vật có nhiệt độ cao mới có nhiệt năng.",
+       "Chỉ những vật chuyển động mới có nhiệt năng.",
+       "Chỉ những vật có khối lượng lớn mới có nhiệt năng.",
+       "Mọi vật đều có nhiệt năng."
+      ],
+      "dap": "D"
+     },
+     "ghi_chu": "In y hệt SBT 26.3."
+    },
+    {
+     "ma": "KGK2-6.C6",
+     "nhan": "Câu 6",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "de": "Khi thả một thỏi kim loại đã được nung nóng vào một chậu nước lạnh thì nội năng của thỏi kim loại và của nước thay đổi như thế nào?\nA. Nội năng của thỏi kim loại và của nước đều tăng.\nB. Nội năng của thỏi kim loại và của nước đều giảm.\nC. Nội năng của thỏi kim loại giảm, nội năng của nước tăng.\nD. Nội năng của thỏi kim loại tăng, nội năng của nước giảm.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "C",
+     "loai_dap_an": "TN",
+     "bai_sgk": 26,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Khi thả một thỏi kim loại đã được nung nóng vào một chậu nước lạnh thì nội năng của thỏi kim loại và của nước thay đổi như thế nào?",
+      "cac": [
+       "Nội năng của thỏi kim loại và của nước đều tăng.",
+       "Nội năng của thỏi kim loại và của nước đều giảm.",
+       "Nội năng của thỏi kim loại giảm, nội năng của nước tăng.",
+       "Nội năng của thỏi kim loại tăng, nội năng của nước giảm."
+      ],
+      "dap": "C"
+     },
+     "ghi_chu": "In y hệt SBT 26.5; đề 7 in lại ở Câu 7 và Câu 16."
+    },
+    {
+     "ma": "KGK2-6.C7",
+     "nhan": "Câu 7",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "de": "Cơ chế của sự dẫn nhiệt là gì? Chọn câu trả lời đúng nhất.\nA. Sự truyền nhiệt độ từ vật này sang vật khác.\nB. Sự truyền động năng của các phân tử này sang các phân tử khác.\nC. Sự truyền nội năng từ vật này sang vật khác.\nD. Sự truyền nhiệt năng từ vật này sang vật khác.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "bai_sgk": 28,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Cơ chế của sự dẫn nhiệt là gì? Chọn câu trả lời đúng nhất.",
+      "cac": [
+       "Sự truyền nhiệt độ từ vật này sang vật khác.",
+       "Sự truyền động năng của các phân tử này sang các phân tử khác.",
+       "Sự truyền nội năng từ vật này sang vật khác.",
+       "Sự truyền nhiệt năng từ vật này sang vật khác."
+      ],
+      "dap": "B"
+     },
+     "ghi_chu": "Đáp án in C (sự truyền nội năng). SGK Bài 28: dẫn nhiệt là sự truyền năng lượng trực tiếp từ các nguyên tử, phân tử có động năng lớn hơn sang các nguyên tử, phân tử có động năng nhỏ hơn thông qua va chạm; SBT 28.1 (cùng bốn phương án, khác thứ tự) đáp án là truyền động năng của các phân tử. C, D chỉ nói kết quả (nội năng, nhiệt năng truyền từ vật này sang vật khác) chứ không nói cơ chế, mà dẫn nhiệt còn xảy ra ngay trong một vật (thanh đồng Hình 28.1). Dùng B, thêm \"Chọn câu trả lời đúng nhất\" vì C, D không sai hẳn."
+    },
+    {
+     "ma": "KGK2-6.C8",
+     "nhan": "Câu 8",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "trung": "KGK2-3.C28"
+    },
+    {
+     "ma": "KGK2-6.C9",
+     "nhan": "Câu 9",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "de": "Trong các hiện tượng sau đây, hiện tượng nào do sự nở vì nhiệt của chất khí gây ra?\nA. Ngọn nến đang cháy, úp chiếc cốc vào thì tắt.\nB. Quả bóng bay đang bay lên.\nC. Săm xe đạp được bơm căng để ngoài nắng bị nổ.\nD. Bơm căng lốp xe đạp.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "C",
+     "loai_dap_an": "TN",
+     "bai_sgk": 29,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Trong các hiện tượng sau đây, hiện tượng nào do sự nở vì nhiệt của chất khí gây ra?",
+      "cac": [
+       "Ngọn nến đang cháy, úp chiếc cốc vào thì tắt.",
+       "Quả bóng bay đang bay lên.",
+       "Săm xe đạp được bơm căng để ngoài nắng bị nổ.",
+       "Bơm căng lốp xe đạp."
+      ],
+      "dap": "C"
+     },
+     "ghi_chu": "In y hệt SBT 29.4. Quả bóng bay bơm khí nhẹ hơn không khí nên bay lên, khác khí cầu (SGK Hình 29.7a) bay nhờ không khí nóng nở ra."
+    },
+    {
+     "ma": "KGK2-6.C10",
+     "nhan": "Câu 10",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "de": "Các chất lỏng khác nhau nở vì nhiệt\nA. Giống nhau\nB. Không giống nhau\nC. Tăng dần lên\nD. Giảm dần đi",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "bai_sgk": 29,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Các chất lỏng khác nhau nở vì nhiệt",
+      "cac": [
+       "Giống nhau",
+       "Không giống nhau",
+       "Tăng dần lên",
+       "Giảm dần đi"
+      ],
+      "dap": "B"
+     }
+    },
+    {
+     "ma": "KGK2-6.C11",
+     "nhan": "Câu 11",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "de": "Chọn câu phát biểu sai.\nA. Chất rắn khi nóng lên thì nở ra.\nB. Các chất rắn khác nhau nở vì nhiệt khác nhau.\nC. Chất rắn khi lạnh đi thì co lại.\nD. Các chất rắn khác nhau nở vì nhiệt như nhau.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "D",
+     "loai_dap_an": "TN",
+     "bai_sgk": 29,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Chọn câu phát biểu sai.",
+      "cac": [
+       "Chất rắn khi nóng lên thì nở ra.",
+       "Các chất rắn khác nhau nở vì nhiệt khác nhau.",
+       "Chất rắn khi lạnh đi thì co lại.",
+       "Các chất rắn khác nhau nở vì nhiệt như nhau."
+      ],
+      "dap": "D"
+     }
+    },
+    {
+     "ma": "KGK2-6.C12",
+     "nhan": "Câu 12",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "de": "Đơn vị cường độ dòng điện là\nA. Vôn (V)\nB. Ampe (A)\nC. Niutơn (N)\nD. Kilôgam (kg)",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "bai_sgk": 24,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Đơn vị cường độ dòng điện là",
+      "cac": [
+       "Vôn (V)",
+       "Ampe (A)",
+       "Niutơn (N)",
+       "Kilôgam (kg)"
+      ],
+      "dap": "B"
+     },
+     "ghi_chu": "Đề in \"Niu tơn\", \"Kg.\"; viết \"Niutơn (N)\", \"Kilôgam (kg)\"."
+    },
+    {
+     "ma": "KGK2-6.C13",
+     "nhan": "Câu 13",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "de": "Bức xạ nhiệt có thể xảy ra trong môi trường nào sau đây, mà dẫn nhiệt và đối lưu đều không xảy ra được?\nA. Chất rắn.\nB. Chất lỏng.\nC. Chân không.\nD. Chất khí.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "C",
+     "loai_dap_an": "TN",
+     "bai_sgk": 28,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Bức xạ nhiệt có thể xảy ra trong môi trường nào sau đây, mà dẫn nhiệt và đối lưu đều không xảy ra được?",
+      "cac": [
+       "Chất rắn.",
+       "Chất lỏng.",
+       "Chân không.",
+       "Chất khí."
+      ],
+      "dap": "C"
+     },
+     "ghi_chu": "Đề in \"Bức xạ nhiệt có thể xảy ra trong các môi trường nào sau đây:\", phương án A \"Chất rắn và chất lỏng\", B \"Chất rắn và chất khí\", C \"Chất khí và chân không\", D \"Chất lỏng và chất khí\", đáp án C. SGK Bài 28 (trang 115, 116): tia nhiệt truyền qua được lớp khí quyển, các chất rắn trong suốt như kính, và cả trong chân không. Vậy bức xạ nhiệt xảy ra được cả trong chất rắn, chất khí, nên A, B, D cũng có thể coi là đúng. Câu muốn hỏi điểm riêng của bức xạ nhiệt: xảy ra được trong chân không, nơi không có phân tử để dẫn nhiệt hay đối lưu. Viết lại câu hỏi, bốn phương án là bốn môi trường, đáp án chân không."
+    },
+    {
+     "ma": "KGK2-6.C14",
+     "nhan": "Câu 14",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "de": "Nội năng của một vật là\nA. động năng của các nguyên tử, phân tử cấu tạo nên vật.\nB. thế năng của các nguyên tử, phân tử cấu tạo nên vật.\nC. tổng động năng và thế năng của các nguyên tử, phân tử cấu tạo nên vật.\nD. tổng động năng của các nguyên tử, phân tử cấu tạo nên vật.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "C",
+     "loai_dap_an": "TN",
+     "bai_sgk": 26,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Nội năng của một vật là",
+      "cac": [
+       "động năng của các nguyên tử, phân tử cấu tạo nên vật.",
+       "thế năng của các nguyên tử, phân tử cấu tạo nên vật.",
+       "tổng động năng và thế năng của các nguyên tử, phân tử cấu tạo nên vật.",
+       "tổng động năng của các nguyên tử, phân tử cấu tạo nên vật."
+      ],
+      "dap": "C"
+     }
+    },
+    {
+     "ma": "KGK2-6.C15",
+     "nhan": "Câu 15",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "de": "Hình thức truyền nhiệt chủ yếu của chất lỏng là\nA. Dẫn nhiệt.\nB. Đối lưu.\nC. Bức xạ nhiệt.\nD. Đối lưu và bức xạ nhiệt.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "bai_sgk": 28,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Hình thức truyền nhiệt chủ yếu của chất lỏng là",
+      "cac": [
+       "Dẫn nhiệt.",
+       "Đối lưu.",
+       "Bức xạ nhiệt.",
+       "Đối lưu và bức xạ nhiệt."
+      ],
+      "dap": "B"
+     }
+    },
+    {
+     "ma": "KGK2-6.C16",
+     "nhan": "Câu 16",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "de": "Nhóm vật nào sau đây đều dẫn nhiệt tốt? Chọn câu trả lời đúng nhất.\nA. Xoong nồi, thìa múc thức ăn.\nB. Ấm trà làm bằng sành sứ, miếng xốp dán tường.\nC. Xoong nồi, thìa inox, ấm trà làm bằng sứ.\nD. Xoong nồi làm bằng inox, thìa kim loại.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "D",
+     "loai_dap_an": "TN",
+     "bai_sgk": 28,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Nhóm vật nào sau đây đều dẫn nhiệt tốt? Chọn câu trả lời đúng nhất.",
+      "cac": [
+       "Xoong nồi, thìa múc thức ăn.",
+       "Ấm trà làm bằng sành sứ, miếng xốp dán tường.",
+       "Xoong nồi, thìa inox, ấm trà làm bằng sứ.",
+       "Xoong nồi làm bằng inox, thìa kim loại."
+      ],
+      "dap": "D"
+     },
+     "ghi_chu": "Đề in \"Các vật sau đều dẫn nhiệt tốt:\", \"inoox\". Phương án A không nói xoong nồi, thìa làm bằng gì (nồi đất, thìa gỗ, thìa nhựa dẫn nhiệt kém), D nói rõ inox, kim loại; thêm \"Chọn câu trả lời đúng nhất\". Đáp án D như đề in."
+    },
+    {
+     "ma": "KGK2-6.C17",
+     "nhan": "Câu 17",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "de": "Chất nào sau đây dẫn nhiệt tốt nhất?\nA. Kim loại.\nB. Nhựa.\nC. Gỗ.\nD. Nước.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN",
+     "bai_sgk": 28,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Chất nào sau đây dẫn nhiệt tốt nhất?",
+      "cac": [
+       "Kim loại.",
+       "Nhựa.",
+       "Gỗ.",
+       "Nước."
+      ],
+      "dap": "A"
+     }
+    },
+    {
+     "ma": "KGK2-6.C18",
+     "nhan": "Câu 18",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "de": "Hai cốc thủy tinh chồng lên nhau bị khít lại. Muốn tách rời hai cốc ta làm cách nào trong các cách sau?\nA. Ngâm cả cốc trên và cốc dưới vào nước nóng.\nB. Ngâm cả cốc trên và cốc dưới vào nước lạnh.\nC. Ngâm cốc dưới vào nước nóng, cốc trên thả nước đá vào.\nD. Ngâm cốc dưới vào nước lạnh, cốc trên đổ nước nóng.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "C",
+     "loai_dap_an": "TN",
+     "bai_sgk": 29,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Hai cốc thủy tinh chồng lên nhau bị khít lại. Muốn tách rời hai cốc ta làm cách nào trong các cách sau?",
+      "cac": [
+       "Ngâm cả cốc trên và cốc dưới vào nước nóng.",
+       "Ngâm cả cốc trên và cốc dưới vào nước lạnh.",
+       "Ngâm cốc dưới vào nước nóng, cốc trên thả nước đá vào.",
+       "Ngâm cốc dưới vào nước lạnh, cốc trên đổ nước nóng."
+      ],
+      "dap": "C"
+     },
+     "ghi_chu": "In y hệt SBT 29.1. Phương án A, B in \"Ngâm cả hai cốc\"; kiem.py hiểu chữ \"cả hai\" là phương án nhắc phương án khác, nên viết \"cả cốc trên và cốc dưới\". Cốc dưới (ở ngoài) nóng lên nở ra, cốc trên (ở trong) lạnh đi co lại thì tách được. Đáp án C như đề in."
+    },
+    {
+     "ma": "KGK2-6.C19",
+     "nhan": "Câu 19",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "de": "Khi đóng đồ uống vào chai hoặc lon, người ta phải để mặt thoáng của đồ uống thấp hơn miệng chai hoặc miệng lon vì\nA. để khi mở nút chai hoặc bật nắp lon, chất lỏng không bị tràn ra ngoài.\nB. để chất lỏng không chạm nút chai hoặc nắp lon.\nC. để khi vận chuyển, chất lỏng không bị sóng sánh rớt ra ngoài.\nD. để khi nhiệt độ tăng, chất lỏng nở ra không làm bật nút chai hoặc nắp lon.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "D",
+     "loai_dap_an": "TN",
+     "bai_sgk": 29,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Khi đóng đồ uống vào chai hoặc lon, người ta phải để mặt thoáng của đồ uống thấp hơn miệng chai hoặc miệng lon vì",
+      "cac": [
+       "để khi mở nút chai hoặc bật nắp lon, chất lỏng không bị tràn ra ngoài.",
+       "để chất lỏng không chạm nút chai hoặc nắp lon.",
+       "để khi vận chuyển, chất lỏng không bị sóng sánh rớt ra ngoài.",
+       "để khi nhiệt độ tăng, chất lỏng nở ra không làm bật nút chai hoặc nắp lon."
+      ],
+      "dap": "D"
+     },
+     "ghi_chu": "In y hệt SBT 29.3."
+    },
+    {
+     "ma": "KGK2-6.C20",
+     "nhan": "Câu 20",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "trung": "KGK2-2.C22"
+    },
+    {
+     "ma": "KGK2-6.C21",
+     "nhan": "Câu 21",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "de": "Chất nào sau đây cách nhiệt kém nhất?\nA. Bạc.\nB. Nước.\nC. Không khí.\nD. Thủy tinh.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN",
+     "bai_sgk": 28,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Chất nào sau đây cách nhiệt kém nhất?",
+      "cac": [
+       "Bạc.",
+       "Nước.",
+       "Không khí.",
+       "Thủy tinh."
+      ],
+      "dap": "A"
+     },
+     "ghi_chu": "Đề in D \"Kẽm\". Bảng khả năng dẫn nhiệt trong SGK Bài 28 (trang 113) không có bạc, kẽm; hai kim loại đều dẫn nhiệt tốt, con không so được bạc với kẽm. Thay \"Kẽm\" bằng \"Thủy tinh\" (bảng SGK: thủy tinh 44, kém xa kim loại). Cách nhiệt kém nhất tức là dẫn nhiệt tốt nhất: bạc, kim loại duy nhất. Đáp án A như bảng đáp án in (lời giải chi tiết của câu này in \"Đáp án: C\" kèm lời giải của một câu khác)."
+    },
+    {
+     "ma": "KGK2-6.C22",
+     "nhan": "Câu 22",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "de": "Đứng gần một bếp lửa, ta cảm thấy nóng. Nhiệt lượng truyền từ ngọn lửa đến người bằng cách nào? Chọn câu trả lời đúng nhất.\nA. Sự đối lưu.\nB. Sự dẫn nhiệt của không khí.\nC. Sự bức xạ nhiệt.\nD. Chủ yếu là bức xạ nhiệt, một phần do dẫn nhiệt.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "D",
+     "loai_dap_an": "TN",
+     "bai_sgk": 28,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Đứng gần một bếp lửa, ta cảm thấy nóng. Nhiệt lượng truyền từ ngọn lửa đến người bằng cách nào? Chọn câu trả lời đúng nhất.",
+      "cac": [
+       "Sự đối lưu.",
+       "Sự dẫn nhiệt của không khí.",
+       "Sự bức xạ nhiệt.",
+       "Chủ yếu là bức xạ nhiệt, một phần do dẫn nhiệt."
+      ],
+      "dap": "D"
+     },
+     "ghi_chu": "Thêm \"Chọn câu trả lời đúng nhất\". SGK Bài 28 (trang 115) hỏi đúng tình huống này: nhiệt người nhận từ bếp chủ yếu là bức xạ nhiệt, nên C đúng một phần; SBT 28.2 cho biết bếp lửa truyền nhiệt ra xung quanh bằng cả dẫn nhiệt, đối lưu và bức xạ nhiệt, nên D đầy đủ hơn. Đề in C \"Sự bức xạ\", viết \"Sự bức xạ nhiệt\". Đáp án D như bảng đáp án in (lời giải chi tiết của câu này in \"Đáp án: C\" kèm lời giải của một câu khác)."
+    },
+    {
+     "ma": "KGK2-6.C23",
+     "nhan": "Câu 23",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "de": "Chọn nhận xét sai.\nA. Trong hiện tượng đối lưu có hiện tượng cơ học: lớp nước nóng nổi lên, lớp nước lạnh chìm xuống.\nB. Trong hiện tượng đối lưu có sự truyền nhiệt lượng từ vật có nhiệt độ cao sang vật có nhiệt độ thấp hơn.\nC. Trong hiện tượng đối lưu có hiện tượng nở vì nhiệt.\nD. Sự đối lưu xảy ra khi hai vật rắn có nhiệt độ khác nhau tiếp xúc nhau.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "D",
+     "loai_dap_an": "TN",
+     "bai_sgk": 29,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Chọn nhận xét sai.",
+      "cac": [
+       "Trong hiện tượng đối lưu có hiện tượng cơ học: lớp nước nóng nổi lên, lớp nước lạnh chìm xuống.",
+       "Trong hiện tượng đối lưu có sự truyền nhiệt lượng từ vật có nhiệt độ cao sang vật có nhiệt độ thấp hơn.",
+       "Trong hiện tượng đối lưu có hiện tượng nở vì nhiệt.",
+       "Sự đối lưu xảy ra khi hai vật rắn có nhiệt độ khác nhau tiếp xúc nhau."
+      ],
+      "dap": "D"
+     },
+     "ghi_chu": "Đối lưu chỉ xảy ra trong chất lỏng, chất khí (SGK Bài 28). Phương án C nhắc sự nở vì nhiệt (SGK Bài 29) nên bai_sgk 29. Đáp án D như bảng đáp án in (lời giải chi tiết của câu này in \"Đáp án: C\" kèm lời giải của một câu khác)."
+    },
+    {
+     "ma": "KGK2-6.C24",
+     "nhan": "Câu 24",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "trung": "KGK2-2.C24"
+    },
+    {
+     "ma": "KGK2-6.C25",
+     "nhan": "Câu 25",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "de": "Một bàn gỗ và một bàn nhôm có cùng nhiệt độ. Khi sờ tay vào mặt bàn ta cảm thấy mặt bàn nhôm lạnh hơn mặt bàn gỗ vì\nA. Nhôm dẫn nhiệt tốt hơn gỗ nên khi sờ vào bàn nhôm ta mất nhiệt lượng nhiều hơn khi ta sờ tay vào bàn gỗ.\nB. Tay ta làm tăng nhiệt độ của hai bàn nhưng nhiệt độ của bàn nhôm tăng ít hơn.\nC. Ta nhận nhiệt lượng từ bàn nhôm ít hơn từ bàn gỗ.\nD. Tay ta làm nhiệt độ bàn nhôm giảm xuống và làm nhiệt độ bàn gỗ tăng thêm.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN",
+     "bai_sgk": 28,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Một bàn gỗ và một bàn nhôm có cùng nhiệt độ. Khi sờ tay vào mặt bàn ta cảm thấy mặt bàn nhôm lạnh hơn mặt bàn gỗ vì",
+      "cac": [
+       "Nhôm dẫn nhiệt tốt hơn gỗ nên khi sờ vào bàn nhôm ta mất nhiệt lượng nhiều hơn khi ta sờ tay vào bàn gỗ.",
+       "Tay ta làm tăng nhiệt độ của hai bàn nhưng nhiệt độ của bàn nhôm tăng ít hơn.",
+       "Ta nhận nhiệt lượng từ bàn nhôm ít hơn từ bàn gỗ.",
+       "Tay ta làm nhiệt độ bàn nhôm giảm xuống và làm nhiệt độ bàn gỗ tăng thêm."
+      ],
+      "dap": "A"
+     },
+     "ghi_chu": "Đáp án A như bảng đáp án in (lời giải chi tiết của câu này in \"Đáp án: C\" kèm lời giải của một câu khác)."
+    },
+    {
+     "ma": "KGK2-6.C26",
+     "nhan": "Câu 26",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "de": "Ngăn đá của tủ lạnh thường đặt ở phía trên ngăn đựng thức ăn để tận dụng sự truyền nhiệt bằng\nA. bức xạ nhiệt.\nB. đối lưu.\nC. dẫn nhiệt.\nD. bức xạ nhiệt và dẫn nhiệt.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "bai_sgk": 28,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Ngăn đá của tủ lạnh thường đặt ở phía trên ngăn đựng thức ăn để tận dụng sự truyền nhiệt bằng",
+      "cac": [
+       "bức xạ nhiệt.",
+       "đối lưu.",
+       "dẫn nhiệt.",
+       "bức xạ nhiệt và dẫn nhiệt."
+      ],
+      "dap": "B"
+     }
+    },
+    {
+     "ma": "KGK2-6.C27",
+     "nhan": "Câu 27",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "de": "Nút thủy tinh của một lọ thủy tinh bị kẹt. Phải mở nút bằng cách nào?\nA. Làm nóng nút.\nB. Làm nóng cổ lọ.\nC. Làm lạnh cổ lọ.\nD. Làm lạnh đáy lọ.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "bai_sgk": 29,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Nút thủy tinh của một lọ thủy tinh bị kẹt. Phải mở nút bằng cách nào?",
+      "cac": [
+       "Làm nóng nút.",
+       "Làm nóng cổ lọ.",
+       "Làm lạnh cổ lọ.",
+       "Làm lạnh đáy lọ."
+      ],
+      "dap": "B"
+     },
+     "ghi_chu": "Đề in \"Khi nút thủy tinh của một lọ thủy tinh bị kẹt. Phải mở nút bằng cách :\", viết lại cho gọn."
+    },
+    {
+     "ma": "KGK2-6.C28",
+     "nhan": "Câu 28",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "de": "Tại sao khi đun nước bằng ấm nhôm và bằng ấm đất trên cùng một bếp lửa thì nước trong ấm nhôm chóng sôi hơn? Chọn câu trả lời đúng nhất.\nA. Vì nhôm mỏng hơn.\nB. Vì nhôm có tính dẫn nhiệt tốt hơn.\nC. Vì nhôm có khối lượng nhỏ hơn.\nD. Vì nhôm có khối lượng riêng nhỏ hơn.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "bai_sgk": 28,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Tại sao khi đun nước bằng ấm nhôm và bằng ấm đất trên cùng một bếp lửa thì nước trong ấm nhôm chóng sôi hơn? Chọn câu trả lời đúng nhất.",
+      "cac": [
+       "Vì nhôm mỏng hơn.",
+       "Vì nhôm có tính dẫn nhiệt tốt hơn.",
+       "Vì nhôm có khối lượng nhỏ hơn.",
+       "Vì nhôm có khối lượng riêng nhỏ hơn."
+      ],
+      "dap": "B"
+     },
+     "ghi_chu": "Thêm \"Chọn câu trả lời đúng nhất\": ấm nhôm thường có thành mỏng hơn ấm đất, nên A cũng góp một phần; lí do chính là nhôm dẫn nhiệt tốt hơn đất rất nhiều (bảng SGK Bài 28: đất 65, nhôm 8 770). Đáp án B như đề in."
+    },
+    {
+     "ma": "KGK2-6.TL1",
+     "nhan": "Câu 1",
+     "phan": "Phần II. Tự luận",
+     "nhom": "Câu 1:",
+     "de": "Câu 1:\nGiải thích vì sao mùa đông áo bông giữ ấm được cơ thể?",
+     "dang": "CAU_NHO",
+     "dap_an": "Bông xốp chứa nhiều không khí, không khí dẫn nhiệt kém nên hạn chế nhiệt truyền từ cơ thể ra môi trường lạnh bên ngoài; cơ thể ít mất nhiệt nên được giữ ấm.",
+     "loai_dap_an": "LOI_GIAI",
+     "bai_sgk": 28,
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "Câu 1:\nGiải thích vì sao mùa đông áo bông giữ ấm được cơ thể?",
+      "dong": [
+       {
+        "chu": "Giữa các sợi bông xốp trong áo bông có nhiều không khí, mà không khí {0}.",
+        "o": [
+         {
+          "dung": [
+           "dẫn nhiệt kém"
+          ],
+          "sai": [
+           "dẫn nhiệt tốt",
+           "tự sinh ra nhiệt"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Vì vậy áo bông hạn chế sự truyền nhiệt {0}.",
+        "o": [
+         {
+          "dung": [
+           "từ cơ thể ra môi trường lạnh bên ngoài"
+          ],
+          "sai": [
+           "từ không khí lạnh bên ngoài vào cơ thể",
+           "từ áo bông vào cơ thể"
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     "ghi_chu": "Tự luận giải thích. Làm trên máy bằng hai dòng ô chọn theo lời giải in: bông xốp chứa không khí, không khí dẫn nhiệt kém, nên hạn chế nhiệt truyền từ cơ thể ra ngoài. Phương án sai là hai ý sai của Câu 1 phần trắc nghiệm (khí lạnh truyền vào cơ thể, áo bông truyền nhiệt cho cơ thể). Cùng ý Câu 1 phần trắc nghiệm, nhưng ở đây con tự ghép lời giải thích."
+    },
+    {
+     "ma": "KGK2-6.TL2",
+     "nhan": "Câu 2",
+     "phan": "Phần II. Tự luận",
+     "nhom": "Câu 2: Hai quả bóng bàn đều bị bẹp (trong đó một quả bị nứt và một quả không bị nứt), được thả vào một cốc nước nóng thì quả bóng bàn không bị nứt phồng lên như cũ, còn quả bóng bàn bị nứt thì lại không phồng lên.",
+     "de": "Câu 2: Hai quả bóng bàn đều bị bẹp (trong đó một quả bị nứt và một quả không bị nứt), được thả vào một cốc nước nóng thì quả bóng bàn không bị nứt phồng lên như cũ, còn quả bóng bàn bị nứt thì lại không phồng lên.\nHãy giải thích hiện tượng này.",
+     "dang": "CAU_NHO",
+     "dap_an": "Quả không nứt: không khí bên trong nóng lên, nở ra, đẩy vỏ bóng phồng lên như cũ. Quả bị nứt: không khí cũng nóng lên, nở ra nhưng thoát ra ngoài qua vết nứt nên không đẩy được vỏ bóng.",
+     "loai_dap_an": "LOI_GIAI",
+     "bai_sgk": 29,
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "Câu 2: Hai quả bóng bàn đều bị bẹp (trong đó một quả bị nứt và một quả không bị nứt), được thả vào một cốc nước nóng thì quả bóng bàn không bị nứt phồng lên như cũ, còn quả bóng bàn bị nứt thì lại không phồng lên.\nHãy giải thích hiện tượng này.",
+      "dong": [
+       {
+        "chu": "Quả bóng không bị nứt phồng lên như cũ vì {0}.",
+        "o": [
+         {
+          "dung": [
+           "không khí bên trong quả bóng nóng lên, nở ra, đẩy vỏ bóng phồng lên"
+          ],
+          "sai": [
+           "vỏ nhựa của quả bóng nóng lên, nở ra",
+           "nước nóng thấm vào làm quả bóng căng lên"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Quả bóng bị nứt không phồng lên vì {0}.",
+        "o": [
+         {
+          "dung": [
+           "không khí bên trong cũng nóng lên, nở ra nhưng thoát ra ngoài qua vết nứt"
+          ],
+          "sai": [
+           "không khí bên trong quả bóng nứt không nóng lên",
+           "vỏ bóng bị nứt nên không nở vì nhiệt được"
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     "ghi_chu": "Đề in \"phổng lên\", sửa \"phồng lên\". In y hệt SBT 29.9. Hai dòng ô chọn theo lời giải in. Phương án sai \"vỏ nhựa nóng lên, nở ra\" là lỗi hay gặp: vỏ quả bóng nứt cũng nóng lên mà không phồng, nên không giải thích được."
+    }
+   ]
+  },
+  {
+   "chuong": "Giữa học kì 2",
+   "bai": "Đề giữa kì 2 số 7",
+   "de_thi": {
+    "ma": "KGK2-7",
+    "nguon_goc": "loigiaihay.com, đăng 14/03/2025"
+   },
+   "cac_cau": [
+    {
+     "ma": "KGK2-7.C1",
+     "nhan": "Câu 1",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "trung": "KGK2-2.C14"
+    },
+    {
+     "ma": "KGK2-7.C2",
+     "nhan": "Câu 2",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "trung": "KGK2-2.C29"
+    },
+    {
+     "ma": "KGK2-7.C3",
+     "nhan": "Câu 3",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "trung": "KGK2-2.C24"
+    },
+    {
+     "ma": "KGK2-7.C4",
+     "nhan": "Câu 4",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "de": "Đơn vị đo hiệu điện thế là\nA. Niutơn (N)\nB. Oát (W)\nC. Ampe (A)\nD. Vôn (V)",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "D",
+     "loai_dap_an": "TN",
+     "bai_sgk": 24,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Đơn vị đo hiệu điện thế là",
+      "cac": [
+       "Niutơn (N)",
+       "Oát (W)",
+       "Ampe (A)",
+       "Vôn (V)"
+      ],
+      "dap": "D"
+     },
+     "ghi_chu": "Đề in \"Niuton\", \"Oat\"; viết \"Niutơn\", \"Oát\"."
+    },
+    {
+     "ma": "KGK2-7.C5",
+     "nhan": "Câu 5",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "de": "Để mạ bạc cho chiếc hộp bằng đồng thì làm theo cách nào dưới đây?\nA. Nối hộp đồng với cực dương của nguồn điện rồi nhúng hộp vào dung dịch muối bạc.\nB. Nối hộp đồng với cực âm của nguồn điện rồi nhúng hộp vào trong dung dịch muối bạc.\nC. Nối một thỏi bạc với cực âm của nguồn điện, nối hộp đồng với cực dương của nguồn điện, rồi nhúng thỏi bạc và hộp đồng vào dung dịch muối bạc để cho dòng điện chạy qua dung dịch.\nD. Nối một thỏi bạc với cực dương của nguồn điện, nối hộp đồng với cực âm của nguồn điện, rồi nhúng thỏi bạc và hộp đồng vào dung dịch muối bạc để cho dòng điện chạy qua dung dịch.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "D",
+     "loai_dap_an": "TN",
+     "bai_sgk": 23,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Để mạ bạc cho chiếc hộp bằng đồng thì làm theo cách nào dưới đây?",
+      "cac": [
+       "Nối hộp đồng với cực dương của nguồn điện rồi nhúng hộp vào dung dịch muối bạc.",
+       "Nối hộp đồng với cực âm của nguồn điện rồi nhúng hộp vào trong dung dịch muối bạc.",
+       "Nối một thỏi bạc với cực âm của nguồn điện, nối hộp đồng với cực dương của nguồn điện, rồi nhúng thỏi bạc và hộp đồng vào dung dịch muối bạc để cho dòng điện chạy qua dung dịch.",
+       "Nối một thỏi bạc với cực dương của nguồn điện, nối hộp đồng với cực âm của nguồn điện, rồi nhúng thỏi bạc và hộp đồng vào dung dịch muối bạc để cho dòng điện chạy qua dung dịch."
+      ],
+      "dap": "D"
+     },
+     "ghi_chu": "Bảng đáp án và lời giải in C, nhưng lời giải chi tiết viết \"nối hộp đồng với cực âm, thỏi bạc với cực dương\", tức phương án D. SGK Bài 23 (mạ điện): vật cần mạ gắn với cực âm, kim loại mạ gắn với cực dương; SBT 23.8 (câu y hệt) đáp án D. Phương án B chỉ nối hộp với cực âm, không có thỏi bạc nối cực dương nên mạch hở. Dùng D. Đề in \"hộp đổng\", sửa \"hộp đồng\"; C, D in \"tất cả nhúng trong dung dịch\", viết \"nhúng thỏi bạc và hộp đồng vào dung dịch\" vì kiem.py hiểu chữ \"tất cả\" là phương án nhắc phương án khác."
+    },
+    {
+     "ma": "KGK2-7.C6",
+     "nhan": "Câu 6",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "de": "Để đo cường độ dòng điện đi qua một bóng đèn mắc trong một mạch điện kín gồm bóng đèn và nguồn điện, người ta có thể thực hiện bằng cách\nA. thay bóng đèn mắc trong mạch bằng một ampe kế mắc vào chính mạch đó.\nB. cắt dây dẫn trong mạch tại điểm nào đó và mắc ampe kế vào vị trí đó.\nC. mắc ampe kế vào hai đầu bóng đèn.\nD. thay nguồn điện bằng ampe kế.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "bai_sgk": 24,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Để đo cường độ dòng điện đi qua một bóng đèn mắc trong một mạch điện kín gồm bóng đèn và nguồn điện, người ta có thể thực hiện bằng cách",
+      "cac": [
+       "thay bóng đèn mắc trong mạch bằng một ampe kế mắc vào chính mạch đó.",
+       "cắt dây dẫn trong mạch tại điểm nào đó và mắc ampe kế vào vị trí đó.",
+       "mắc ampe kế vào hai đầu bóng đèn.",
+       "thay nguồn điện bằng ampe kế."
+      ],
+      "dap": "B"
+     },
+     "ghi_chu": "In y hệt SBT 24.6."
+    },
+    {
+     "ma": "KGK2-7.C7",
+     "nhan": "Câu 7",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "trung": "KGK2-6.C6"
+    },
+    {
+     "ma": "KGK2-7.C8",
+     "nhan": "Câu 8",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "de": "Có thể làm nhiễm điện cho một vật bằng cách\nA. Cọ xát vật\nB. Nhúng vật vào nước đá\nC. Cho chạm vào nam châm\nD. Nung nóng vật",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN",
+     "bai_sgk": 20,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Có thể làm nhiễm điện cho một vật bằng cách",
+      "cac": [
+       "Cọ xát vật",
+       "Nhúng vật vào nước đá",
+       "Cho chạm vào nam châm",
+       "Nung nóng vật"
+      ],
+      "dap": "A"
+     }
+    },
+    {
+     "ma": "KGK2-7.C9",
+     "nhan": "Câu 9",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "trung": "KGK2-1.C30"
+    },
+    {
+     "ma": "KGK2-7.C10",
+     "nhan": "Câu 10",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "de": "Dòng điện là\nA. Dòng các điện tích dương chuyển động hỗn loạn\nB. Dòng các điện tích âm chuyển động hỗn loạn\nC. Dòng các điện tích chuyển động có hướng\nD. Dòng các nguyên tử chuyển động có hướng",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "C",
+     "loai_dap_an": "TN",
+     "bai_sgk": 21,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Dòng điện là",
+      "cac": [
+       "Dòng các điện tích dương chuyển động hỗn loạn",
+       "Dòng các điện tích âm chuyển động hỗn loạn",
+       "Dòng các điện tích chuyển động có hướng",
+       "Dòng các nguyên tử chuyển động có hướng"
+      ],
+      "dap": "C"
+     },
+     "ghi_chu": "Đề in phương án A và B y hệt nhau (\"Dòng các điện tích dương chuyển động hỗn loạn\"); sửa B thành \"điện tích âm\" cho bốn phương án khác nhau. SGK Bài 21: dòng điện là dòng chuyển dời có hướng của các hạt mang điện. Đáp án C như đề in."
+    },
+    {
+     "ma": "KGK2-7.C11",
+     "nhan": "Câu 11",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "trung": "KGK2-3.C22"
+    },
+    {
+     "ma": "KGK2-7.C12",
+     "nhan": "Câu 12",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "de": "Chọn những câu <b>đúng</b>.\nA. Nguồn điện là dụng cụ dùng để tạo ra dòng điện.\nB. Nguồn điện có khả năng duy trì hoạt động của các dụng cụ điện.\nC. Mỗi nguồn điện đều có hai cực.\nD. Bóng đèn, quạt điện cũng là nguồn điện.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A, B, C",
+     "loai_dap_an": "TN",
+     "bai_sgk": 21,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Chọn những câu <b>đúng</b>.",
+      "cac": [
+       "Nguồn điện là dụng cụ dùng để tạo ra dòng điện.",
+       "Nguồn điện có khả năng duy trì hoạt động của các dụng cụ điện.",
+       "Mỗi nguồn điện đều có hai cực.",
+       "Bóng đèn, quạt điện cũng là nguồn điện."
+      ],
+      "dap": [
+       "A",
+       "B",
+       "C"
+      ],
+      "nhieu_dap": true
+     },
+     "ghi_chu": "Đề in \"Chọn câu đúng\" (chữ \"đúng\" in đậm), A \"Nguồn điện là dụng cụ dùng để tạo ra nguồn điện\", D \"Cả ba câu đều đúng\", đáp án D. Máy trộn thứ tự nên D mất nghĩa: đổi thành chọn nhiều đáp án (A, B, C), thay D bằng một câu sai (\"Bóng đèn, quạt điện cũng là nguồn điện\"). A in \"tạo ra nguồn điện\" là lỗi gõ (đề coi A là câu đúng), sửa \"tạo ra dòng điện\" như SBT 21.1 (pin có thể tạo ra dòng điện) và đề 1 Câu 12."
+    },
+    {
+     "ma": "KGK2-7.C13",
+     "nhan": "Câu 13",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "de": "Nếu ta chạm vào dây điện trần (không có lớp cách điện), dòng điện sẽ truyền qua cơ thể gây co giật, bỏng, thậm chí có thể gây chết người. Đó là do những tác dụng nào của dòng điện?\nA. Tác dụng nhiệt của dòng điện\nB. Tác dụng sinh lí của dòng điện\nC. Tác dụng từ của dòng điện\nD. Tác dụng hóa học của dòng điện",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A, B",
+     "loai_dap_an": "TN",
+     "bai_sgk": 23,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Nếu ta chạm vào dây điện trần (không có lớp cách điện), dòng điện sẽ truyền qua cơ thể gây co giật, bỏng, thậm chí có thể gây chết người. Đó là do những tác dụng nào của dòng điện?",
+      "cac": [
+       "Tác dụng nhiệt của dòng điện",
+       "Tác dụng sinh lí của dòng điện",
+       "Tác dụng từ của dòng điện",
+       "Tác dụng hóa học của dòng điện"
+      ],
+      "dap": [
+       "A",
+       "B"
+      ],
+      "nhieu_dap": true
+     },
+     "ghi_chu": "Đáp án in B (sinh lí). Co giật, tim ngừng đập là tác dụng sinh lí (SGK Bài 23), còn bỏng là do dòng điện làm nóng cơ thể, tức tác dụng nhiệt (SGK Bài 23: vật dẫn nóng lên khi có dòng điện chạy qua). Câu có hai đáp án: đổi thành chọn nhiều đáp án (A, B)."
+    },
+    {
+     "ma": "KGK2-7.C14",
+     "nhan": "Câu 14",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "de": "Dùng một mảnh vải len cọ xát nhiều lần vào mảnh phim nhựa thì mảnh phim nhựa này có thể hút được các vụn giấy vì\nA. mảnh phim nhựa được làm sạch bề mặt.\nB. mảnh phim nhựa bị nhiễm điện.\nC. mảnh phim nhựa có tính chất từ như nam châm.\nD. mảnh phim nhựa bị nóng lên.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "bai_sgk": 20,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Dùng một mảnh vải len cọ xát nhiều lần vào mảnh phim nhựa thì mảnh phim nhựa này có thể hút được các vụn giấy vì",
+      "cac": [
+       "mảnh phim nhựa được làm sạch bề mặt.",
+       "mảnh phim nhựa bị nhiễm điện.",
+       "mảnh phim nhựa có tính chất từ như nam châm.",
+       "mảnh phim nhựa bị nóng lên."
+      ],
+      "dap": "B"
+     },
+     "ghi_chu": "In y hệt SBT 20.5."
+    },
+    {
+     "ma": "KGK2-7.C15",
+     "nhan": "Câu 15",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "de": "Sơ đồ mạch điện nào dưới đây được mắc đúng?\nA. Hình 1\nB. Hình 2\nC. Hình 3\nD. Hình 4",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "C",
+     "loai_dap_an": "TN",
+     "bai_sgk": 24,
+     "hinh": [
+      "dethikhtn8/KGK2-7.C15-1.webp",
+      "dethikhtn8/KGK2-7.C15-2.webp"
+     ],
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Sơ đồ mạch điện nào dưới đây được mắc đúng?",
+      "cac": [
+       "Hình 1",
+       "Hình 2",
+       "Hình 3",
+       "Hình 4"
+      ],
+      "dap": "C"
+     },
+     "ghi_chu": "Hình in bốn sơ đồ nhãn A., B., C., D. (máy trộn phương án rồi đánh lại chữ cái nên chữ trên hình sẽ lệch nút); cắt bốn sơ đồ, ghép hai hàng với nhãn Hình 1 tới Hình 4. Bảng đáp án in A, sai. Sơ đồ A: dòng điện đi từ cực dương qua đèn, công tắc rồi vào chốt (−) của ampe kế, tức ampe kế mắc ngược. Sơ đồ B, D: ampe kế mắc song song với đèn (B) hay với công tắc (D). Sơ đồ C: đèn, công tắc, ampe kế mắc nối tiếp, chốt (+) của ampe kế nối về phía cực dương của nguồn (SGK Bài 24, Hình 24.1). SBT 24.2 (cùng bốn sơ đồ) đáp án C. Dùng C, tức Hình 3."
+    },
+    {
+     "ma": "KGK2-7.C16",
+     "nhan": "Câu 16",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "de": "Khi thả một thỏi kim loại đã được nung nóng vào một chậu nước lạnh thì nội năng của thỏi kim loại và của nước thay đổi như thế nào?\nA. Nội năng của thỏi kim loại và của nước đều tăng.\nB. Nội năng của thỏi kim loại và của nước đều giảm.\nC. Nội năng của thỏi kim loại giảm, nội năng của nước tăng.\nD. Nội năng của thỏi kim loại tăng, nội năng của nước giảm.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "C",
+     "loai_dap_an": "TN",
+     "bai_sgk": 26,
+     "bo_may": "đề in lặp Câu 7",
+     "ghi_chu": "Đề in lại nguyên Câu 7 (thỏi kim loại nung nóng thả vào chậu nước lạnh), thêm lỗi gõ (\"dầu tăng\", \"Nội nắng\", \"thôi kim loại\"). Hai câu y hệt trong một đề thì con làm một câu hai lần, sổ cái tính hai câu. Bỏ câu sau, giữ Câu 7."
+    },
+    {
+     "ma": "KGK2-7.C17",
+     "nhan": "Câu 17",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "de": "Sau một thời gian hoạt động, cánh quạt dính nhiều bụi vì\nA. Cánh quạt cọ xát với không khí, bị nhiễm điện nên hút nhiều bụi.\nB. Cánh quạt bị ẩm nên hút nhiều bụi.\nC. Một số chất nhờn trong không khí đọng lại ở cánh quạt và hút nhiều bụi.\nD. Bụi có chất keo nên bám vào cánh quạt.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN",
+     "bai_sgk": 20,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Sau một thời gian hoạt động, cánh quạt dính nhiều bụi vì",
+      "cac": [
+       "Cánh quạt cọ xát với không khí, bị nhiễm điện nên hút nhiều bụi.",
+       "Cánh quạt bị ẩm nên hút nhiều bụi.",
+       "Một số chất nhờn trong không khí đọng lại ở cánh quạt và hút nhiều bụi.",
+       "Bụi có chất keo nên bám vào cánh quạt."
+      ],
+      "dap": "A"
+     }
+    },
+    {
+     "ma": "KGK2-7.C18",
+     "nhan": "Câu 18",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "de": "Trong các vật sau đây, vật nào không phải là nguồn điện?\nA. Pin con thỏ\nB. Pin cúc áo\nC. Phích cắm\nD. Acquy",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "C",
+     "loai_dap_an": "TN",
+     "bai_sgk": 21,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Trong các vật sau đây, vật nào không phải là nguồn điện?",
+      "cac": [
+       "Pin con thỏ",
+       "Pin cúc áo",
+       "Phích cắm",
+       "Acquy"
+      ],
+      "dap": "C"
+     },
+     "ghi_chu": "Đề in \"Ắc quy\", viết \"Acquy\" như SGK. Pin con thỏ (tên quen gọi một loại pin) và pin cúc áo (pin tròn dẹt) đều là pin; phích cắm chỉ nối dây với ổ điện. Đáp án C như đề in."
+    },
+    {
+     "ma": "KGK2-7.C19",
+     "nhan": "Câu 19",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "trung": "KGK2-3.C14"
+    },
+    {
+     "ma": "KGK2-7.C20",
+     "nhan": "Câu 20",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "de": "Kim loại dẫn điện vì\nA. trong kim loại có nhiều ion dương.\nB. trong kim loại có các electron tự do chuyển động không ngừng.\nC. kim loại cấu tạo từ các nguyên tử.\nD. các nguyên tử cấu tạo nên kim loại luôn chuyển động hỗn loạn.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "bai_sgk": 21,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Kim loại dẫn điện vì",
+      "cac": [
+       "trong kim loại có nhiều ion dương.",
+       "trong kim loại có các electron tự do chuyển động không ngừng.",
+       "kim loại cấu tạo từ các nguyên tử.",
+       "các nguyên tử cấu tạo nên kim loại luôn chuyển động hỗn loạn."
+      ],
+      "dap": "B"
+     },
+     "ghi_chu": "In y hệt SBT 21.2. Đề in \"câu tạo\", sửa \"cấu tạo\"."
+    },
+    {
+     "ma": "KGK2-7.C21",
+     "nhan": "Câu 21",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "trung": "KGK2-1.C11"
+    },
+    {
+     "ma": "KGK2-7.C22",
+     "nhan": "Câu 22",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "trung": "KGK2-3.C15"
+    },
+    {
+     "ma": "KGK2-7.C23",
+     "nhan": "Câu 23",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "de": "Cọ xát hai vật cách điện vào nhau, cả hai vật đều bị nhiễm điện. Khi đó hai vật này có khả năng gì đối với nhau?\nA. Đẩy nhau\nB. Hút nhau\nC. Vừa hút vừa đẩy\nD. Không có hiện tượng gì",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "bai_sgk": 20,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Cọ xát hai vật cách điện vào nhau, cả hai vật đều bị nhiễm điện. Khi đó hai vật này có khả năng gì đối với nhau?",
+      "cac": [
+       "Đẩy nhau",
+       "Hút nhau",
+       "Vừa hút vừa đẩy",
+       "Không có hiện tượng gì"
+      ],
+      "dap": "B"
+     },
+     "ghi_chu": "Đề in \"Nhiều vật khi cọ xát với nhau thì có khả năng gì?\", đáp án C \"Vừa hút vừa đẩy\". Câu hỏi không rõ hỏi khả năng của hai vật đối với nhau hay đối với vật khác, và \"vừa hút vừa đẩy\" sai: một vật nhiễm điện hút hay đẩy vật nhiễm điện khác tùy loại điện tích, không cùng lúc vừa hút vừa đẩy. Hai vật cọ xát vào nhau thì electron dịch chuyển từ vật này sang vật kia, một vật nhiễm điện dương, một vật nhiễm điện âm (SGK Bài 20, trang 86), nên chúng hút nhau. Viết lại câu hỏi cho rõ, đáp án B."
+    },
+    {
+     "ma": "KGK2-7.C24",
+     "nhan": "Câu 24",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "de": "Những loại hạt nào dưới đây khi chuyển động có hướng thì tạo thành dòng điện?\nA. Các hạt mang điện tích dương.\nB. Các neutron.\nC. Các nguyên tử.\nD. Các hạt mang điện tích âm.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A, D",
+     "loai_dap_an": "TN",
+     "bai_sgk": 21,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Những loại hạt nào dưới đây khi chuyển động có hướng thì tạo thành dòng điện?",
+      "cac": [
+       "Các hạt mang điện tích dương.",
+       "Các neutron.",
+       "Các nguyên tử.",
+       "Các hạt mang điện tích âm."
+      ],
+      "dap": [
+       "A",
+       "D"
+      ],
+      "nhieu_dap": true
+     },
+     "ghi_chu": "Đề in B \"Các các notron\", D \"Tất cả đều đúng\", đáp án A (lời giải chi tiết bỏ trống đáp án). Máy trộn thứ tự nên D mất nghĩa; thay D bằng \"Các hạt mang điện tích âm\" và cho chọn nhiều đáp án (A, D): dòng điện là dòng chuyển dời có hướng của các hạt mang điện (SGK Bài 21), hạt mang điện dương hay âm đều được (SBT 21.1: dòng điện không chỉ là dòng electron). Viết \"neutron\" như KHTN 7."
+    },
+    {
+     "ma": "KGK2-7.C25",
+     "nhan": "Câu 25",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "de": "Thiết bị số (1) trong sơ đồ mạch điện ở hình là\nA. Nguồn điện.\nB. Bóng đèn.\nC. Công tắc.\nD. Biến trở.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN",
+     "bai_sgk": 22,
+     "hinh": [
+      "dethikhtn8/KGK2-7.C25.webp"
+     ],
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Thiết bị số (1) trong sơ đồ mạch điện ở hình là",
+      "cac": [
+       "Nguồn điện.",
+       "Bóng đèn.",
+       "Công tắc.",
+       "Biến trở."
+      ],
+      "dap": "A"
+     },
+     "ghi_chu": "Hình in là Hình 22.2 của SGK (trang 92): (1) nguồn điện, (2) công tắc, (3) bóng đèn, (4) điện trở. Đề in \"Thiết bị số (1) trong hình là\"."
+    },
+    {
+     "ma": "KGK2-7.C26",
+     "nhan": "Câu 26",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "trung": "KGK2-2.C18"
+    },
+    {
+     "ma": "KGK2-7.C27",
+     "nhan": "Câu 27",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "trung": "KGK2-2.C17"
+    },
+    {
+     "ma": "KGK2-7.C28",
+     "nhan": "Câu 28",
+     "phan": "Phần I. Trắc nghiệm",
+     "nhom": "",
+     "trung": "KGK2-5.C24"
+    },
+    {
+     "ma": "KGK2-7.TL1",
+     "nhan": "Câu 1",
+     "phan": "Phần II. Tự luận",
+     "nhom": "Câu 1:",
+     "de": "Câu 1:\nVẽ sơ đồ mạch điện đơn giản gồm 1 nguồn điện (pin), 1 bóng đèn, 1 công tắc và vẽ chiều dòng điện trong mạch khi công tắc đóng.",
+     "dang": "CAU_NHO",
+     "dap_an": "Pin, bóng đèn và công tắc đóng mắc nối tiếp thành mạch kín; mũi tên chỉ chiều dòng điện đi từ cực dương của pin qua công tắc, bóng đèn tới cực âm của pin (Hình 2).",
+     "loai_dap_an": "DAP_SO",
+     "bai_sgk": 22,
+     "hinh": [
+      "dethikhtn8/KGK2-7.TL1.chon1.webp",
+      "dethikhtn8/KGK2-7.TL1.chon2.webp"
+     ],
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Câu 1:\nSơ đồ nào sau đây vẽ đúng mạch điện đơn giản gồm một nguồn điện (pin), một bóng đèn, một công tắc, và vẽ đúng chiều dòng điện trong mạch khi công tắc đóng?",
+      "cac": [
+       "Hình 1",
+       "Hình 2",
+       "Hình 3",
+       "Hình 4"
+      ],
+      "dap": "B"
+     },
+     "ghi_chu": "Đề in \"Vẽ sơ đồ mạch điện đơn giản gồm 1 nguồn điện (pin), 1 bóng đèn, 1 công tắc và vẽ chiều dòng điện trong mạch khi công tắc đóng\". Từ 06/10/2026 (anh Huy chốt tránh viết tay) làm trên máy: chọn sơ đồ đúng trong bốn sơ đồ em vẽ, kí hiệu như Bảng 22.1 SGK, chiều dòng điện như SGK trang 93 (từ cực dương qua dây nối và các dụng cụ tới cực âm). Hình 1: mũi tên ngược chiều (đi từ cực âm); Hình 2: đúng; Hình 3: công tắc mở mà vẫn vẽ dòng điện; Hình 4: bóng đèn vẽ bằng kí hiệu điện trở."
+    },
+    {
+     "ma": "KGK2-7.TL2",
+     "nhan": "Câu 2",
+     "phan": "Phần II. Tự luận",
+     "nhom": "Câu 2:",
+     "de": "Câu 2:\nGiải thích vì sao lông tơ, bụi bặm vẫn bám vào quần áo khi quần áo đã được chải sạch bằng bàn chải lông?",
+     "dang": "CAU_NHO",
+     "dap_an": "Khi chải, bàn chải lông cọ xát với quần áo làm quần áo bị nhiễm điện; vật nhiễm điện hút các vật nhỏ, nhẹ nên lông tơ, bụi bặm bám vào.",
+     "loai_dap_an": "LOI_GIAI",
+     "bai_sgk": 20,
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "Câu 2:\nGiải thích vì sao lông tơ, bụi bặm vẫn bám vào quần áo khi quần áo đã được chải sạch bằng bàn chải lông?",
+      "dong": [
+       {
+        "chu": "Khi chải, lông của bàn chải {0}.",
+        "o": [
+         {
+          "dung": [
+           "cọ xát với quần áo làm quần áo bị nhiễm điện"
+          ],
+          "sai": [
+           "làm quần áo bị ẩm nên dính bụi",
+           "làm quần áo nóng lên nên dính bụi"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Vì vậy quần áo {0}.",
+        "o": [
+         {
+          "dung": [
+           "hút các vật nhỏ, nhẹ như lông tơ, bụi bặm"
+          ],
+          "sai": [
+           "đẩy lông tơ, bụi bặm ra xa",
+           "hút bụi giống như nam châm hút sắt"
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     "ghi_chu": "In y hệt SBT 20.7. Hai dòng ô chọn theo lời giải in. Lời giải in nói bụi có thể mang điện tích trái dấu; không cần vậy, vật nhiễm điện hút được cả vật nhỏ không nhiễm điện (SGK Bài 20), nên dòng 2 viết \"hút các vật nhỏ, nhẹ\"."
     }
    ]
   }
