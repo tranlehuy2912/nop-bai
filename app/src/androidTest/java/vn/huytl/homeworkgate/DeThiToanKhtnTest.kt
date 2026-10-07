@@ -47,7 +47,7 @@ class DeThiToanKhtnTest {
         )
         assertEquals(
             (1..8).map { "TGK1-$it" } + (1..8).map { "TCK1-$it" } + (1..10).map { "TGK2-$it" } +
-                (1..4).map { "TCK2-$it" },
+                (1..7).map { "TCK2-$it" },
             cua(LichKiemTra.TOAN).map { it.ma }
         )
         assertTrue(NganHang.boDeThi().map { it.nguon }.containsAll(listOf("dethitoan8", "dethikhtn8")))
