@@ -18,6 +18,27 @@ while ! grep -q WebsiteFilter "$LUAT" 2>/dev/null; do
     sleep 1
 done
 
+# Het phut thi khong mo Netflix, chi hien mot hop chu roi dang xuat (7/10/2026). Khong co doan
+# nay thi dang nhap luc 0 phut van xem duoc khoang 20 giay truoc khi Timekpr-nExt day ra, va bam
+# dang nhap lien tuc la xem duoc tung doan. So giay lay tu file netflix_gio.py ghi, xem
+# FILE_CON_LAI ben do. Thieu file hay doc khong ra so thi coi la het phut.
+con=0
+if read giay dung luc < /run/netflix-gio/conlai 2>/dev/null; then
+    case "$giay$dung$luc" in
+        *[!0-9]*|"") con=0 ;;
+        *)
+            con=$giay
+            [ "$dung" = 1 ] && con=$((giay - ($(date +%s) - luc)))
+            ;;
+    esac
+fi
+if [ "$con" -le 30 ]; then
+    zenity --info --title "Netflix" --width=460 --timeout=10 \
+        --text "Hết phút xem Netflix.\n\nĐổi phút chơi trên tablet rồi đăng nhập lại. Nếu vừa đổi thì chờ một phút." \
+        2>/dev/null
+    exit 0
+fi
+
 # Trinh quan ly cua so cho ban phim va thong bao chay dung.
 #
 # Khong chay timekprc (phan bao gio cua Timekpr-nExt): no bao bang tieng Anh, anh Huy chi muon

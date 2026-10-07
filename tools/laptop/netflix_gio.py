@@ -61,6 +61,22 @@ LECH_GHI_MS = 90_000
 
 LUAT_FIREFOX = "/etc/firefox/policies/policies.json"
 
+# So giay Le Hoa con lai, cho netflix-phien doc luc dang nhap: con 0 thi khong mo Netflix. Truoc
+# day dang nhap luc 0 phut van vao duoc khoang 20 giay roi Timekpr-nExt moi day ra, va bam dang
+# nhap lien tuc la xem duoc tung doan (anh Huy hoi 7/10/2026). Thu muc trong /run cua root, lehoa
+# doc duoc ma khong sua duoc. Dong: "<giay con> <1 neu dang dung> <luc ghi, giay>": dang dung thi
+# so giay dang tut, ben doc tu tru di khoang tu luc ghi, nen file cu vai chuc giay van dung.
+FILE_CON_LAI = "/run/netflix-gio/conlai"
+
+
+def ghi_con_lai(giay, dung):
+    os.makedirs(os.path.dirname(FILE_CON_LAI), mode=0o755, exist_ok=True)
+    tam = FILE_CON_LAI + ".tam"
+    with open(tam, "w") as f:
+        f.write("%d %d %d\n" % (giay, 1 if dung else 0, int(time.time())))
+    os.chmod(tam, 0o644)
+    os.replace(tam, FILE_CON_LAI)
+
 # Chan moi trang tru Netflix va cac ten mien chua phim, anh cua no. Kiosk thi khong co thanh
 # dia chi, nhung con bam link trong Netflix (Trung tam tro giup, trang ngoai) thi van ra web,
 # nen phai chan o day. file:// cung chan: khong thi mo duoc thu muc may bang Ctrl+O.
@@ -406,6 +422,7 @@ class May:
         if con_lai is None:
             ghi_log("khong doc duoc Timekpr-nExt")
             return dung
+        ghi_con_lai(con_lai, dung)
         if dung and 60 < con_lai <= BAO_TRUOC_GIAY and not self.da_bao:
             self.da_bao = True
             bao(self.nguoi, "Còn %d phút xem Netflix" % ((con_lai + 59) // 60),
