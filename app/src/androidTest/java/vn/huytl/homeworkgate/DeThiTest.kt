@@ -144,8 +144,8 @@ class DeThiTest {
      * bang duoi lon dan theo tung lo. Moi de 40 cau in, phan nghe o dau de (bo), con lai lam tren
      * may, ke ca cau "trung" (tro ve cau goc o de khac, xem gop_de.py TRUNG_TAY). De sau cua mot
      * ky dung sau de truoc trong file (gop_de.py xep GK1, CK1, GK2, CK2). GK2-5 co cau 17 ve nha
-     * thien van, khong gian (Unit 12) nen den_unit 12. GK2-6, GK2-7 dang 2025 theo khung moi: 8
-     * cau nghe.
+     * thien van, khong gian (Unit 12) nen den_unit 12. GK2-6, GK2-7, CK2-6, CK2-7 dang 2025 theo
+     * khung moi: 8 cau nghe.
      */
     @Test
     fun de_hoc_ki_2_du_so_cau_in_va_pham_vi_unit() {
@@ -155,7 +155,8 @@ class DeThiTest {
             "GK2-1" to Triple(9, 45, 10), "GK2-2" to Triple(9, 45, 10), "GK2-3" to Triple(9, 45, 10),
             "GK2-4" to Triple(9, 45, 10), "GK2-5" to Triple(12, 45, 10), "GK2-6" to Triple(9, 45, 8),
             "GK2-7" to Triple(9, 45, 8), "CK2-1" to Triple(12, 45, 10), "CK2-2" to Triple(12, 45, 10),
-            "CK2-3" to Triple(12, 45, 10), "CK2-4" to Triple(12, 45, 10)
+            "CK2-3" to Triple(12, 45, 10), "CK2-4" to Triple(12, 45, 10), "CK2-5" to Triple(12, 45, 10),
+            "CK2-6" to Triple(12, 45, 8), "CK2-7" to Triple(12, 45, 8)
         )
         assertEquals(khung.keys.toList(), cac.map { it.ma })
         cac.forEach { de ->
