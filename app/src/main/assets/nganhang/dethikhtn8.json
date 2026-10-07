@@ -2,7 +2,7 @@
  "nguon": "dethikhtn8",
  "mon": "Khoa học tự nhiên",
  "ten": "Đề thi Khoa học tự nhiên 8",
- "ban": 8,
+ "ban": 9,
  "cac_bai": [
   {
    "chuong": "Giữa học kì 1",
@@ -6725,19 +6725,8 @@
      "dap_an": "A",
      "loai_dap_an": "TN",
      "bai_sgk": 18,
-     "ghep": {
-      "kieu": "CHON",
-      "sao": 1,
-      "hoi": "Moment của ngẫu lực phụ thuộc vào",
-      "cac": [
-       "khoảng cách giữa giá của hai lực",
-       "điểm đặt của mỗi lực tác dụng",
-       "vị trí trục quay của vật",
-       "trục quay"
-      ],
-      "dap": "A"
-     },
-     "ghi_chu": "Đáp án in là C (vị trí trục quay), sai: moment của ngẫu lực M = F · d với d là khoảng cách giữa giá của hai lực, không phụ thuộc vị trí trục quay. Dùng A. Ngẫu lực không có trong SGK KHTN 8 (kiến thức Vật lí 10)."
+     "ghi_chu": "Đáp án in là C (vị trí trục quay), sai: moment của ngẫu lực M = F · d với d là khoảng cách giữa giá của hai lực, không phụ thuộc vị trí trục quay. Dùng A. Ngẫu lực không có trong SGK KHTN 8 (kiến thức Vật lí 10).",
+     "bo_may": "kiến thức ngoài SGK KHTN 8 (ngẫu lực, Vật lí 10)"
     },
     {
      "ma": "KCK1-2.C22",
@@ -7517,19 +7506,8 @@
      "dap_an": "C",
      "loai_dap_an": "TN",
      "bai_sgk": 19,
-     "ghep": {
-      "kieu": "CHON",
-      "sao": 1,
-      "hoi": "Máy cơ đơn giản nào sau đây không cho lợi về lực?",
-      "cac": [
-       "Đòn bẩy",
-       "Mặt phẳng nghiêng",
-       "Ròng rọc cố định",
-       "Ròng rọc động"
-      ],
-      "dap": "C"
-     },
-     "ghi_chu": "Ròng rọc không có trong SGK KHTN 8 Kết nối tri thức (Bài 19 chỉ học đòn bẩy), mà SGK lại ghi \"có một số đòn bẩy không cho ta lợi về lực\". Giữ đáp án in C (ròng rọc cố định chỉ đổi hướng lực, không bao giờ cho lợi về lực). Xem ghi chú đề."
+     "ghi_chu": "Ròng rọc không có trong SGK KHTN 8 Kết nối tri thức (Bài 19 chỉ học đòn bẩy), mà SGK lại ghi \"có một số đòn bẩy không cho ta lợi về lực\". Giữ đáp án in C (ròng rọc cố định chỉ đổi hướng lực, không bao giờ cho lợi về lực). Xem ghi chú đề.",
+     "bo_may": "kiến thức ngoài SGK KHTN 8 (ròng rọc)"
     },
     {
      "ma": "KCK1-3.C27",
@@ -10938,7 +10916,13 @@
      "nhan": "Câu 28",
      "phan": "Phần I. Trắc nghiệm",
      "nhom": "",
-     "trung": "KCK1-2.C21"
+     "de": "Moment của ngẫu lực phụ thuộc vào\nA. khoảng cách giữa giá của hai lực\nB. điểm đặt của mỗi lực tác dụng\nC. vị trí trục quay của vật\nD. trục quay",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN",
+     "bai_sgk": 18,
+     "bo_may": "kiến thức ngoài SGK KHTN 8 (ngẫu lực, Vật lí 10)",
+     "ghi_chu": "In y hệt KCK1-2 Câu 21, đáp án in A. Ngẫu lực không có trong SGK KHTN 8; anh Huy chốt 07/10/2026 bỏ khỏi máy cùng câu đó."
     },
     {
      "ma": "KCK1-8.TL1a",
@@ -11309,19 +11293,8 @@
      "dap_an": "B",
      "loai_dap_an": "TN",
      "bai_sgk": 10,
-     "ghep": {
-      "kieu": "CHON",
-      "sao": 1,
-      "hoi": "Sục V lít (đkc) khí CO₂ vào 200 mL dung dịch Ca(OH)₂ 0,2M thu được dung dịch X và m gam kết tủa. Đun nóng dung dịch X đến khối lượng không đổi thu được 2 gam kết tủa. Giá trị m, V lần lượt là",
-      "cac": [
-       "4 g và 1,4875 lít",
-       "2 g và 1,4874 lít",
-       "6 g và 2,479 lít",
-       "2 g và 0,4958 lít"
-      ],
-      "dap": "B"
-     },
-     "ghi_chu": "Câu cần phản ứng CO₂ dư tạo Ca(HCO₃)₂ và phản ứng phân huỷ Ca(HCO₃)₂ khi đun, không có trong SGK KHTN 8 (Bài 10 chỉ có CO₂ + Ca(OH)₂ → CaCO₃ + H₂O). Giữ như đề in; đề in \"200ml Ca(OH)2\", thêm chữ \"dung dịch\"."
+     "ghi_chu": "Câu cần phản ứng CO₂ dư tạo Ca(HCO₃)₂ và phản ứng phân huỷ Ca(HCO₃)₂ khi đun, không có trong SGK KHTN 8 (Bài 10 chỉ có CO₂ + Ca(OH)₂ → CaCO₃ + H₂O). Giữ như đề in; đề in \"200ml Ca(OH)2\", thêm chữ \"dung dịch\".",
+     "bo_may": "kiến thức ngoài SGK KHTN 8 (CO₂ dư tạo Ca(HCO₃)₂)"
     },
     {
      "ma": "KCK1-9.C12",
@@ -12138,19 +12111,8 @@
      "dap_an": "C",
      "loai_dap_an": "TN",
      "bai_sgk": 10,
-     "ghep": {
-      "kieu": "CHON",
-      "sao": 1,
-      "hoi": "Sục 0,37185 lít khí SO₂ (đkc) vào 100 mL dung dịch NaOH 0,2M thu được m gam muối. Giá trị của m là",
-      "cac": [
-       "1,89 g",
-       "2,52 g",
-       "1,67 g",
-       "1,56 g"
-      ],
-      "dap": "C"
-     },
-     "ghi_chu": "Câu cần biết SO₂ với NaOH tạo hai muối Na₂SO₃ và NaHSO₃ tuỳ tỉ lệ mol, không có trong SGK KHTN 8. Giữ như đề in; \"0, 37185\" sửa \"0,37185\"."
+     "ghi_chu": "Câu cần biết SO₂ với NaOH tạo hai muối Na₂SO₃ và NaHSO₃ tuỳ tỉ lệ mol, không có trong SGK KHTN 8. Giữ như đề in; \"0, 37185\" sửa \"0,37185\".",
+     "bo_may": "kiến thức ngoài SGK KHTN 8 (SO₂ với NaOH tạo hai muối)"
     },
     {
      "ma": "KCK1-10.C11",
