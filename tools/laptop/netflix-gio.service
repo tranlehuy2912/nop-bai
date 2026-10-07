@@ -1,0 +1,13 @@
+# Dich vu chay ngam cap gio Netflix cho tai khoan Le Hoa, xem netflix_gio.py.
+[Unit]
+Description=Cap gio Netflix tu tablet qua Firestore
+After=network-online.target timekpr.service
+Wants=network-online.target
+
+[Service]
+ExecStart=/usr/bin/python3 /usr/local/lib/netflix-gio/netflix_gio.py chay
+Restart=always
+RestartSec=30
+
+[Install]
+WantedBy=multi-user.target

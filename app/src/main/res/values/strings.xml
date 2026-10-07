@@ -93,6 +93,7 @@
          HocThuoc, nen tach chu ra khoi so chi lam kho doc ma khong duoc gi. -->
     <string name="kiem_gio_title">Cách kiếm giờ chơi</string>
     <string name="kiem_gio_nut">Cách kiếm giờ</string>
+    <string name="netflix_nut">Netflix</string>
     <string name="kiem_gio_nhan_duoc">LÀM GÌ THÌ ĐƯỢC THÊM GIỜ</string>
     <string name="kiem_gio_nhan_khong">CÁI KHÔNG TÍNH GIỜ</string>
     <string name="kiem_gio_viec_nha">Việc nhà bà nội hay Ba Huy giao</string>

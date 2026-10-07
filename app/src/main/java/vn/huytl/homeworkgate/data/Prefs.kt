@@ -75,6 +75,18 @@ class Prefs private constructor(private val sp: SharedPreferences) {
         set(v) = sp.edit().putInt(KEY_TRAN_PHUT, v.coerceIn(15, 600)).commit().let {}
 
     /**
+     * Mot phut choi doi duoc bao nhieu phut xem Netflix tren laptop (7/10/2026, xem
+     * [vn.huytl.homeworkgate.dongbo.Laptop]). Mac dinh 2, anh Huy chon. Ba Huy doi o man Cai
+     * dat cua Bang dieu khien, qua lenh CAIDAT "tiLeNetflix", nhu moi muc cau hinh khac.
+     *
+     * So nguyen tu 1 den 10: doi phut choi lay it phut Netflix hon thi khong ai doi, va tren
+     * 10 thi go nham mot so la con co ca buoi toi xem phim.
+     */
+    var tiLeNetflix: Int
+        get() = sp.getInt(KEY_TI_LE_NETFLIX, Defaults.TI_LE_NETFLIX)
+        set(v) = sp.edit().putInt(KEY_TI_LE_NETFLIX, v.coerceIn(1, 10)).commit().let {}
+
+    /**
      * "Quỹ giờ chơi": so phut con lam ra tren may ma bi tran rieng cua phan do cat (Ba Huy
      * chon ngay 29/9/2026). Chi Ba Huy cap duoc tu quy, xem [QuyGio].
      *
@@ -380,6 +392,7 @@ class Prefs private constructor(private val sp: SharedPreferences) {
         private const val KEY_HARD_STOP = "hard_stop_minute"
         private const val KEY_GIO_DAY = "gio_day_minute"
         private const val KEY_TRAN_PHUT = "tran_phut_moi_ngay"
+        private const val KEY_TI_LE_NETFLIX = "ti_le_netflix"
         private const val KEY_QUY_GIO = "quy_gio"
         private const val KEY_ALLOWED = "allowed_packages"
         private const val KEY_MOI_LUC = "moi_luc_packages"

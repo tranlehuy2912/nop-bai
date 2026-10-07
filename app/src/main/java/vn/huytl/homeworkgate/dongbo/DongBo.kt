@@ -128,6 +128,7 @@ object DongBo {
     private var ngheGhep: ListenerRegistration? = null
     private var ngheViecNha: ListenerRegistration? = null
     private var ngheLich: ListenerRegistration? = null
+    private var ngheLaptop: ListenerRegistration? = null
 
     /** JSON cua lan bao lich hong hay cu vua roi, de khong ghi nhat ky lai moi lan noi mang. */
     private var lichDaBao: String? = null
@@ -283,6 +284,7 @@ object DongBo {
                 batNgheLenh(ung)
                 batNgheViecNha(ung)
                 batNgheLich(ung)
+                batNgheLaptop(ung)
                 batNgheGhep(ung)
                 Prefs.get(ung).raw().registerOnSharedPreferenceChangeListener(ngheDoi)
                 ung.registerReceiver(ngheCaiApp, IntentFilter().apply {
@@ -314,6 +316,7 @@ object DongBo {
         ngheGhep?.remove(); ngheGhep = null
         ngheViecNha?.remove(); ngheViecNha = null
         ngheLich?.remove(); ngheLich = null
+        ngheLaptop?.remove(); ngheLaptop = null
         lichDaBao = null
         if (ung != null) {
             runCatching { Prefs.get(ung).raw().unregisterOnSharedPreferenceChangeListener(ngheDoi) }
@@ -659,7 +662,8 @@ object DongBo {
             "appNhac" to prefs.nhacPackages.sorted(),
             "appCatMang" to prefs.catMangPackages.sorted(),
             "appAi" to prefs.aiPackages.sorted(),
-            "gioiHanApp" to GioiHanApp.tatCa(context)
+            "gioiHanApp" to GioiHanApp.tatCa(context),
+            "tiLeNetflix" to prefs.tiLeNetflix
         )
     }
 
@@ -1198,6 +1202,32 @@ object DongBo {
         if (dangChay && c != null) batNgheLich(c)
     }
 
+    /**
+     * Nghe document laptop/{maNha} (7/10/2026): laptop co duoc noi vao nha chua, va con bao
+     * nhieu phut Netflix. Ghi vao file rieng cua [Laptop], de nut "Netflix" tren man chinh
+     * chi hien khi da co laptop.
+     *
+     * Laptop chi ghi document nay khi co gi doi (cong gio, con mo hay dong phien), nen
+     * listener nay ton vai luot doc mot ngay. Nghe loi thi 15 phut sau nghe lai, nhu lich.
+     */
+    private fun batNgheLaptop(context: Context) {
+        ngheLaptop?.remove()
+        ngheLaptop = laptop(context)?.addSnapshotListener { snap, loi ->
+            if (loi != null) {
+                Log.w(TAG, "nghe laptop hong: ${loi.message}")
+                tay.removeCallbacks(ngheLaiLaptop)
+                tay.postDelayed(ngheLaiLaptop, NGHE_LAI_LICH_MS)
+                return@addSnapshotListener
+            }
+            Laptop.nhan(context, snap)
+        }
+    }
+
+    private val ngheLaiLaptop = Runnable {
+        val c = ct
+        if (dangChay && c != null) batNgheLaptop(c)
+    }
+
     /** Lenh go tu lau qua thi bo. Dung chung cho ca [ThiHanhLenh]. */
     fun quaCu(taoLuc: Long): Boolean =
         taoLuc > 0L && System.currentTimeMillis() - taoLuc > Duong.QUA_CU_MS
@@ -1431,6 +1461,10 @@ object DongBo {
 
     internal fun nha(context: Context): DocumentReference? =
         db(context)?.collection(Duong.NHA)?.document(maNha(context))
+
+    /** Document cua laptop xem Netflix, nam ngoai nha/ (xem [Duong.LAPTOP]). */
+    internal fun laptop(context: Context): DocumentReference? =
+        db(context)?.collection(Duong.LAPTOP)?.document(maNha(context))
 
     private fun hop(context: Context, ten: String): DocumentReference? =
         nha(context)?.collection(Duong.HOP)?.document(ten)

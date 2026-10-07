@@ -57,6 +57,9 @@ object Defaults {
      */
     const val TRAN_PHUT_MOI_NGAY = 135
 
+    /** Mot phut choi doi duoc may phut Netflix tren laptop, xem [Prefs.tiLeNetflix]. */
+    const val TI_LE_NETFLIX = 2
+
     /**
      * Ma PIN gieo san cho may vua cai xong, dien o local.properties.
      *

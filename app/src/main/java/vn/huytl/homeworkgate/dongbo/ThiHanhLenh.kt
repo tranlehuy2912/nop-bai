@@ -681,6 +681,12 @@ object ThiHanhLenh {
                 prefs.aiPackages = danhSach(giaTri)
                 "Danh sách app AI ghi câu hỏi: ${prefs.aiPackages.size} app."
             }
+            // Mot phut choi doi duoc may phut Netflix tren laptop (7/10/2026), xem Laptop.
+            "tiLeNetflix" -> {
+                val v = so?.takeIf { it in 1..10 } ?: return "Tỉ lệ phải là số từ 1 đến 10."
+                prefs.tiLeNetflix = v
+                "1 phút chơi giờ đổi được $v phút Netflix."
+            }
             "gioiHanApp" -> {
                 @Suppress("UNCHECKED_CAST")
                 val m = giaTri as? Map<String, Number> ?: return "Giá trị không đúng dạng."

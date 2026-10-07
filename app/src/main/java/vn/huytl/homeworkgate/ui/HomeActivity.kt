@@ -56,6 +56,7 @@ import vn.huytl.homeworkgate.data.TinhLoiNhac
 import vn.huytl.homeworkgate.databinding.ActivityHomeBinding
 import vn.huytl.homeworkgate.databinding.StDongViecBinding
 import vn.huytl.homeworkgate.dongbo.DongBo
+import vn.huytl.homeworkgate.dongbo.Laptop
 import vn.huytl.homeworkgate.guard.CountdownOverlay
 import vn.huytl.homeworkgate.guard.ParentMode
 import vn.huytl.homeworkgate.guard.PhienQuanLy
@@ -157,6 +158,7 @@ class HomeActivity : AppCompatActivity() {
             startActivity(Intent(this, CachKiemGioActivity::class.java))
         }
         binding.btnKiemGio.setOnClickListener(moBangGia)
+        binding.btnNetflix.setOnClickListener { DoiNetflix.hoi(this) { render() } }
         binding.khungHanNgay.setOnClickListener(moBangGia)
 
         askNotificationPermission()
@@ -392,6 +394,7 @@ class HomeActivity : AppCompatActivity() {
         veHanNgay()
         veViecHomNay(baDangDung)
         veTinCuaCo()
+        veNetflix()
 
         // So tin Telegram cua ba ma con chua doc, dem theo thong bao cua Telegram. Mat
         // quyen doc thong bao thi so trong prefs dung yen o lan dem cuoi, nen khong hien.
@@ -502,6 +505,13 @@ class HomeActivity : AppCompatActivity() {
      * Chi hien khi co tin that. Ba noi cam tablet len doc duoc o day, khong phai
      * mo Zalo.
      */
+    /** Nut doi phut sang Netflix: chi hien khi laptop da noi vao nha, xem [Laptop]. */
+    private fun veNetflix() {
+        val co = Laptop.daNoi(this)
+        binding.btnNetflix.visibility = if (co) View.VISIBLE else View.GONE
+        binding.vachNetflix.visibility = if (co) View.VISIBLE else View.GONE
+    }
+
     private fun veTinCuaCo() {
         val kho = KhoTinCuaCo(this)
         val soTin = kho.danhSach().size

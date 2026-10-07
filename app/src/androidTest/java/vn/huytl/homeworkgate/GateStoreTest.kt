@@ -985,4 +985,70 @@ class GateStoreTest {
         assertEquals(35 * minute, gate.remainingMs(sang, 1_000L + 20 * minute))
         assertEquals(10 * minute, gate.msDaChoiHomNay(sang, 1_000L + 20 * minute))
     }
+
+    // --- doi phut sang Netflix tren laptop (7/10/2026), xem GateStore.doiPhut ---
+
+    @Test
+    fun doi_phut_tu_phieu_chua_bat_dau_thi_phieu_con_lai_phan_du() {
+        val now = at(19, 0)
+        gate.approve(now, wantedMinutes = 60)
+        assertEquals(60, gate.phutDoiDuoc(now, 1_000L))
+
+        assertEquals(10, gate.doiPhut(10, now = now, nowElapsed = 1_000L))
+        assertEquals(GateState.GRANTED, gate.state)
+        assertEquals(50, gate.grantedMinutes)
+    }
+
+    @Test
+    fun doi_het_phieu_chua_bat_dau_thi_khoa_lai() {
+        val now = at(19, 0)
+        gate.approve(now, wantedMinutes = 45)
+
+        assertEquals(45, gate.doiPhut(45, het = true, now = now, nowElapsed = 1_000L))
+        assertEquals(GateState.LOCKED, gate.state)
+        assertEquals(0, gate.phutDoiDuoc(now, 1_000L))
+    }
+
+    @Test
+    fun doi_nhieu_hon_dang_giu_thi_chi_lay_phan_dang_giu() {
+        val now = at(19, 0)
+        gate.approve(now, wantedMinutes = 20)
+
+        assertEquals(20, gate.doiPhut(30, now = now, nowElapsed = 1_000L))
+        assertEquals(GateState.LOCKED, gate.state)
+    }
+
+    @Test
+    fun doi_phut_luc_dang_choi_thi_dong_ho_rut_ngan() {
+        val now = at(19, 0)
+        gate.approve(now, wantedMinutes = 30)
+        gate.start(now, 1_000L)
+        val sau = now + 5 * minute
+        val sauE = 1_000L + 5 * minute
+        assertEquals(25, gate.phutDoiDuoc(sau, sauE))
+
+        assertEquals(10, gate.doiPhut(10, now = sau, nowElapsed = sauE))
+        assertEquals(GateState.ACTIVE, gate.state)
+        assertEquals(15 * minute, gate.remainingMs(sau, sauE))
+    }
+
+    @Test
+    fun doi_phut_luc_tam_dung_thi_tru_vao_phan_dang_giu() {
+        val now = at(19, 0)
+        gate.approve(now, wantedMinutes = 30)
+        gate.start(now, 1_000L)
+        gate.pause(now = now, nowElapsed = 1_000L)
+        assertEquals(GateState.PAUSED, gate.state)
+
+        assertEquals(15, gate.doiPhut(15, now = now, nowElapsed = 1_000L))
+        assertEquals(GateState.PAUSED, gate.state)
+        assertEquals(15, gate.pausedMinutes())
+    }
+
+    @Test
+    fun khong_co_phieu_thi_khong_doi_duoc_gi() {
+        val now = at(19, 0)
+        assertEquals(0, gate.doiPhut(10, now = now, nowElapsed = 1_000L))
+        assertEquals(GateState.LOCKED, gate.state)
+    }
 }

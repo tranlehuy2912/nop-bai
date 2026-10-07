@@ -881,6 +881,72 @@ class GateStore(context: Context) {
     }
 
     /**
+     * So phut tron con dang giu trong phieu hom nay, de doi sang Netflix tren laptop
+     * (7/10/2026). Phieu chua bam Bat dau, dang tam dung hay dang chay deu doi duoc; phan
+     * le giay khong tinh.
+     */
+    fun phutDoiDuoc(
+        now: Long = System.currentTimeMillis(),
+        nowElapsed: Long = SystemClock.elapsedRealtime()
+    ): Int = when (state) {
+        GateState.GRANTED, GateState.PENDING -> grantedMinutes
+        GateState.PAUSED -> (pausedRemainingMs / 60_000L).toInt()
+        GateState.ACTIVE -> (remainingMs(now, nowElapsed) / 60_000L).toInt()
+        else -> 0
+    }.coerceAtLeast(0)
+
+    /**
+     * Lay [phut] phut ra khoi phieu hom nay de doi sang Netflix tren laptop (7/10/2026).
+     * Tra ve so phut da lay that, 0 la khong lay duoc gi.
+     *
+     * Lay nhieu hon dang giu thi chi lay phan dang giu. [het] la con bam "Đổi hết": lay
+     * xong thi cat phien luon, ke ca vai chuc giay le con lai. Khong cat thi tablet con
+     * mot phieu 30 giay, con bam Bat dau la het ngay, va the tren man hinh ghi "0 phút".
+     *
+     * Phut lay ra KHONG tra vao [phutDaDuyetHomNay]: so do la phut con kiem duoc trong
+     * ngay, doi sang laptop van la phut con da kiem. Thanh ngay tu dung vi no dem phut da
+     * choi that cong phut dang giu, va phan doi di khong con nam o dau ca.
+     */
+    fun doiPhut(
+        phut: Int,
+        het: Boolean = false,
+        now: Long = System.currentTimeMillis(),
+        nowElapsed: Long = SystemClock.elapsedRealtime()
+    ): Int {
+        val co = phutDoiDuoc(now, nowElapsed)
+        val lay = minOf(phut, co)
+        if (lay <= 0) return 0
+        val conMs: Long
+        when (state) {
+            GateState.GRANTED, GateState.PENDING -> {
+                val con = grantedMinutes - lay
+                if (con > 0 && !het) {
+                    sp.edit().putInt(K_GRANTED_MINUTES, con).commit()
+                } else if (state == GateState.GRANTED) {
+                    endSession(EndReason.RAN_OUT, now, nowElapsed)
+                } else {
+                    // PENDING ma het phieu: van cho duyet bai, chi la khong con phut giu san.
+                    sp.edit().putInt(K_GRANTED_MINUTES, 0).commit()
+                }
+                return lay
+            }
+            GateState.PAUSED -> conMs = pausedRemainingMs - lay * 60_000L
+            GateState.ACTIVE -> conMs = remainingMs(now, nowElapsed) - lay * 60_000L
+            else -> return 0
+        }
+        if (het || conMs < 60_000L) {
+            // Duoi mot phut cung cat: mot phieu chua toi mot phut chi lam con bam Bat dau
+            // roi bi khoa ngay.
+            endSession(EndReason.RAN_OUT, now, nowElapsed)
+        } else if (state == GateState.PAUSED) {
+            pausedRemainingMs = conMs
+        } else {
+            durationMs -= lay * 60_000L
+        }
+        return lay
+    }
+
+    /**
      * Cat phien va ghi lai ly do.
      *
      * Bai dang cho duyet thi giu nguyen. Con nop bai trong luc dang choi, het gio

@@ -407,6 +407,30 @@
                 app:iconGravity="top"
                 app:iconPadding="6dp"
                 app:iconSize="24dp" />
+
+            <!-- Doi phut choi sang Netflix tren laptop (7/10/2026). An/hien cung vach truoc
+                 no: chi hien khi laptop da noi vao nha, xem dongbo/Laptop. -->
+            <View
+                android:id="@+id/vach_netflix"
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/line"
+                android:visibility="gone" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_netflix"
+                style="@style/Widget.Material3.Button.TextButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingVertical="18dp"
+                android:text="@string/netflix_nut"
+                android:textSize="15sp"
+                android:visibility="gone"
+                app:icon="@drawable/st_ic_laptop"
+                app:iconGravity="top"
+                app:iconPadding="6dp"
+                app:iconSize="24dp" />
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>
 
