@@ -35,12 +35,16 @@ class DeThiToanKhtnTest {
     private fun cua(mon: String): List<DeThi.De> = DeThi.tatCa(context).filter { it.mon == mon }
 
     /**
-     * Giua ki 1 (buoc 4.4, 1/10/2026) roi cuoi ki 1 (buoc 4.5, 2/10/2026), du ca hai luot.
+     * Giua ki 1 (buoc 4.4, 1/10/2026) roi cuoi ki 1 (buoc 4.5, 2/10/2026), du ca hai luot. Hoc ki 2
+     * (buoc 4.9, tu 7/10/2026) gop dan tung lo, xep sau hoc ki 1: danh sach lon dan theo tung lo.
      */
     @Test
     fun du_de_hoc_ki_1_hai_mon_theo_thu_tu() {
         assertEquals((1..10).map { "KGK1-$it" } + (1..10).map { "KCK1-$it" }, cua(LichKiemTra.KHTN).map { it.ma })
-        assertEquals((1..8).map { "TGK1-$it" } + (1..8).map { "TCK1-$it" }, cua(LichKiemTra.TOAN).map { it.ma })
+        assertEquals(
+            (1..8).map { "TGK1-$it" } + (1..8).map { "TCK1-$it" } + (1..4).map { "TGK2-$it" },
+            cua(LichKiemTra.TOAN).map { it.ma }
+        )
         assertTrue(NganHang.boDeThi().map { it.nguon }.containsAll(listOf("dethitoan8", "dethikhtn8")))
         assertTrue("de thi khong hien o man chon sach", NganHang.sachCua(LichKiemTra.TOAN).none { it.deThi })
     }

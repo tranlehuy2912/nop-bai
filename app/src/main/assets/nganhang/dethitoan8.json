@@ -2,7 +2,7 @@
  "nguon": "dethitoan8",
  "mon": "Toán",
  "ten": "Đề thi Toán 8",
- "ban": 5,
+ "ban": 6,
  "cac_bai": [
   {
    "chuong": "Giữa học kì 1",
@@ -11023,6 +11023,2436 @@
        "Tam giác BCA có DN // CA nên BD/DC = BN/NA (định lí Thalès)",
        "Hay 3/25 = 6/NA, suy ra NA = 25 · 6 : 3 = 50 (m)",
        "Vậy BA = BN + NA = 6 + 50 = 56 (m)"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "chuong": "Giữa học kì 2",
+   "bai": "Đề giữa kì 2 số 1",
+   "de_thi": {
+    "ma": "TGK2-1",
+    "nguon_goc": "loigiaihay.com, đăng 22/01/2024"
+   },
+   "cac_cau": [
+    {
+     "ma": "TGK2-1.C1",
+     "nhan": "Câu 1",
+     "phan": "Phần trắc nghiệm (2 điểm)",
+     "nhom": "",
+     "de": "Biểu thức nào sau đây không phải là phân thức đại số?\nA. 2y^2 − 3. B. x + 1. C. (5 − x)/(x + 1) (với x ≠ −1). D. (x − 3)/0.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "D",
+     "loai_dap_an": "TN",
+     "bai_sgk": 21,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Biểu thức nào sau đây <b>không phải</b> là phân thức đại số?",
+      "cac": [
+       "2y² − 3",
+       "x + 1",
+       "(5 − x)/(x + 1) (với x ≠ −1)",
+       "(x − 3)/0"
+      ],
+      "dap": "D"
+     }
+    },
+    {
+     "ma": "TGK2-1.C2",
+     "nhan": "Câu 2",
+     "phan": "Phần trắc nghiệm (2 điểm)",
+     "nhom": "",
+     "de": "Với điều kiện nào của x thì phân thức (x + 2)/(3 − x) xác định\nA. x ≤ 2. B. x ≠ 3. C. x ≥ −2. D. x = 3.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "bai_sgk": 21,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Với điều kiện nào của x thì phân thức (x + 2)/(3 − x) xác định?",
+      "cac": [
+       "x ≤ 2",
+       "x ≠ 3",
+       "x ≥ −2",
+       "x = 3"
+      ],
+      "dap": "B"
+     }
+    },
+    {
+     "ma": "TGK2-1.C3",
+     "nhan": "Câu 3",
+     "phan": "Phần trắc nghiệm (2 điểm)",
+     "nhom": "",
+     "de": "Rút gọn phân thức (x^2 − y^2)/(x + y)^2 được kết quả bằng\nA. (x − y)/(x + y). B. (x + y)/(x − y). C. x + y. D. x − y.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN",
+     "bai_sgk": 22,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Rút gọn phân thức (x² − y²)/(x + y)² được kết quả bằng",
+      "cac": [
+       "(x − y)/(x + y)",
+       "(x + y)/(x − y)",
+       "x + y",
+       "x − y"
+      ],
+      "dap": "A"
+     }
+    },
+    {
+     "ma": "TGK2-1.C4",
+     "nhan": "Câu 4",
+     "phan": "Phần trắc nghiệm (2 điểm)",
+     "nhom": "",
+     "de": "Thực hiện phép tính (x − 1)/(x − y) + (1 − y)/(y − x) ta được kết quả là\nA. 0. B. (x − y + 2)/(x − y). C. (x + y − 2)/(x − y). D. 1.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "C",
+     "loai_dap_an": "TN",
+     "bai_sgk": 23,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Thực hiện phép tính (x − 1)/(x − y) + (1 − y)/(y − x) ta được kết quả là",
+      "cac": [
+       "0",
+       "(x − y + 2)/(x − y)",
+       "(x + y − 2)/(x − y)",
+       "1"
+      ],
+      "dap": "C"
+     }
+    },
+    {
+     "ma": "TGK2-1.C5",
+     "nhan": "Câu 5",
+     "phan": "Phần trắc nghiệm (2 điểm)",
+     "nhom": "",
+     "de": "Kết quả phép tính (5x + 2)/(3xy^2) : (10x + 4)/(x^2y) là\nA. 6y/x^2. B. x^2/(6y). C. 6y/x. D. x/(6y).",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "D",
+     "loai_dap_an": "TN",
+     "bai_sgk": 24,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Kết quả phép tính (5x + 2)/(3xy²) : ((10x + 4)/(x²y)) là",
+      "cac": [
+       "6y/x²",
+       "x²/(6y)",
+       "6y/x",
+       "x/(6y)"
+      ],
+      "dap": "D"
+     },
+     "ghi_chu": "Trên máy đặt phân thức chia trong ngoặc: (5x + 2)/(3xy²) : ((10x + 4)/(x²y)), vì viết liền một dòng thì dấu : chỉ chia cho tử 10x + 4."
+    },
+    {
+     "ma": "TGK2-1.C6",
+     "nhan": "Câu 6",
+     "phan": "Phần trắc nghiệm (2 điểm)",
+     "nhom": "",
+     "de": "Cho ΔABC có góc A = 60°, AB = 4cm, AC = 6cm; ΔMNP có góc N = 60°, MN = 3cm, NP = 2cm. Cách viết nào sau đây đúng?\nA. ΔABC ᔕ ΔMNP. B. ΔABC ᔕ ΔNMP. C. ΔBAC ᔕ ΔPNM. D. ΔBAC ᔕ ΔMNP.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "C",
+     "loai_dap_an": "TN",
+     "bai_sgk": 34,
+     "hinh_goi_y": [
+      "dethitoan8/TGK2-1.C6.goi-y.webp"
+     ],
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Cho ΔABC có góc A = 60°, AB = 4 cm, AC = 6 cm; ΔMNP có góc N = 60°, MN = 3 cm, NP = 2 cm. Cách viết nào sau đây <b>đúng</b>?",
+      "cac": [
+       "ΔABC ᔕ ΔMNP",
+       "ΔABC ᔕ ΔNMP",
+       "ΔBAC ᔕ ΔPNM",
+       "ΔBAC ᔕ ΔMNP"
+      ],
+      "dap": "C"
+     }
+    },
+    {
+     "ma": "TGK2-1.C7",
+     "nhan": "Câu 7",
+     "phan": "Phần trắc nghiệm (2 điểm)",
+     "nhom": "",
+     "de": "Trong hình bên, biết MB = 20m, MF = 2m, EF = 1,65m. Tính chiều cao AB của ngọn hải đăng.\nA. 16,5 m. B. 165 m. C. 16,5 cm. D. 0,65 m.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN",
+     "bai_sgk": 33,
+     "hinh": [
+      "dethitoan8/TGK2-1.C7.webp"
+     ],
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Trong hình vẽ dưới đây, biết MB = 20 m, MF = 2 m, EF = 1,65 m. Tính chiều cao AB của ngọn hải đăng.",
+      "cac": [
+       "16,5 m",
+       "165 m",
+       "16,5 cm",
+       "0,65 m"
+      ],
+      "dap": "A"
+     },
+     "ghi_chu": "Bảng đáp án in 'Câu 7: C' và phần lời giải in Câu 7 là của một câu khác (hình thang ABCD, AB = 16 cm, CD = 40 cm, tỉ số 2/5). Tự giải: EF // AB (cùng vuông góc với BM) nên ΔMFE ᔕ ΔMBA, AB = EF · MB : MF = 1,65 · 20 : 2 = 16,5 m, đáp án A. 'Trong hình bên' đổi thành 'dưới đây' vì trên máy hình nằm dưới chữ."
+    },
+    {
+     "ma": "TGK2-1.C8",
+     "nhan": "Câu 8",
+     "phan": "Phần trắc nghiệm (2 điểm)",
+     "nhom": "",
+     "de": "Tính chiểu cao của bức tường hình bên biết chiều cao của thang là 4m và chân thang cách tường là 1m.\nA. 3m. B. √15 m. C. √17 m. D. 15m.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "bai_sgk": 35,
+     "hinh": [
+      "dethitoan8/TGK2-1.C8.webp"
+     ],
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Một chiếc thang dài 4 m dựng vào bức tường như hình vẽ dưới đây, chân thang cách tường 1 m, đầu thang chạm đỉnh tường. Tính chiều cao của bức tường.",
+      "cac": [
+       "3 m",
+       "√15 m",
+       "√17 m",
+       "15 m"
+      ],
+      "dap": "B"
+     },
+     "ghi_chu": "Đề in 'chiều cao của thang là 4m' (ý là thang dài 4 m) và 'chiểu cao' (lỗi gõ). Trên máy viết lại: 'Một chiếc thang dài 4 m dựng vào bức tường ..., đầu thang chạm đỉnh tường'. Chiều cao tường = √(4² − 1²) = √15 m."
+    },
+    {
+     "ma": "TGK2-1.B1a",
+     "nhan": "Bài 1a",
+     "phan": "Phần tự luận (8 điểm)",
+     "nhom": "Bài 1. (3 điểm) Cho biểu thức A = (1/(x − 2) − 2x/(4 − x²) + 1/(2 + x)) · (2/x − 1).",
+     "de": "Bài 1. (3 điểm) Cho biểu thức A = (1/(x − 2) − 2x/(4 − x^2) + 1/(2 + x)) · (2/x − 1).\na) Rút gọn A.",
+     "dang": "CAU_NHO",
+     "dap_an": "A = −4/(x + 2) (với x ≠ 0, x ≠ 2, x ≠ −2)",
+     "loai_dap_an": "DAP_SO",
+     "bai_sgk": 24,
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 5,
+      "hoi": "Bài 1. (3 điểm) Cho biểu thức A = (1/(x − 2) − 2x/(4 − x²) + 1/(2 + x)) · (2/x − 1).\na) Rút gọn A.",
+      "dap": [
+       "−4/(x+2)"
+      ],
+      "phim": [
+       "x"
+      ],
+      "nhieu": [
+       "y",
+       "²",
+       "³"
+      ],
+      "loi_giai": [
+       "Điều kiện xác định: x ≠ 0, x ≠ 2, x ≠ −2",
+       "A = (1/(x − 2) + 2x/((x − 2)(x + 2)) + 1/(x + 2)) · (2 − x)/x",
+       "= (x + 2 + 2x + x − 2)/((x − 2)(x + 2)) · (2 − x)/x",
+       "= 4x(2 − x)/(x(x − 2)(x + 2))",
+       "= −4/(x + 2)"
+      ]
+     }
+    },
+    {
+     "ma": "TGK2-1.B1b",
+     "nhan": "Bài 1b",
+     "phan": "Phần tự luận (8 điểm)",
+     "nhom": "Bài 1. (3 điểm) Cho biểu thức A = (1/(x − 2) − 2x/(4 − x²) + 1/(2 + x)) · (2/x − 1).",
+     "de": "Bài 1. (3 điểm) Cho biểu thức A = (1/(x − 2) − 2x/(4 − x^2) + 1/(2 + x)) · (2/x − 1).\nb) Tính giá trị của biểu thức A tại x thỏa mãn: x^2 + 3x = 0.",
+     "dang": "CAU_NHO",
+     "dap_an": "A = 4 (từ x² + 3x = 0 được x = 0 hoặc x = −3; x = 0 bị loại vì không thoả mãn điều kiện xác định)",
+     "loai_dap_an": "DAP_SO",
+     "bai_sgk": 24,
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "hoi": "Bài 1. (3 điểm) Cho biểu thức A = (1/(x − 2) − 2x/(4 − x²) + 1/(2 + x)) · (2/x − 1).\nb) Tính giá trị của biểu thức A tại x thoả mãn x² + 3x = 0.",
+      "dap": [
+       "4"
+      ],
+      "phim": [],
+      "nhieu": [],
+      "loi_giai": [
+       "x² + 3x = 0 ⇔ x(x + 3) = 0 ⇔ x = 0 hoặc x = −3",
+       "x = 0 không thoả mãn điều kiện xác định, nên x = −3",
+       "Khi đó A = −4/(−3 + 2) = 4"
+      ]
+     }
+    },
+    {
+     "ma": "TGK2-1.B1c",
+     "nhan": "Bài 1c",
+     "phan": "Phần tự luận (8 điểm)",
+     "nhom": "Bài 1. (3 điểm) Cho biểu thức A = (1/(x − 2) − 2x/(4 − x²) + 1/(2 + x)) · (2/x − 1).",
+     "de": "Bài 1. (3 điểm) Cho biểu thức A = (1/(x − 2) − 2x/(4 − x^2) + 1/(2 + x)) · (2/x − 1).\nc) Tìm x để A = 1/2.",
+     "dang": "CAU_NHO",
+     "dap_an": "x = −10",
+     "loai_dap_an": "DAP_SO",
+     "bai_sgk": 24,
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "hoi": "Bài 1. (3 điểm) Cho biểu thức A = (1/(x − 2) − 2x/(4 − x²) + 1/(2 + x)) · (2/x − 1).\nc) Tìm x để A = 1/2.\n(Nếu có nhiều giá trị của x thì viết theo thứ tự từ nhỏ đến lớn, cách nhau bằng dấu ;)",
+      "dap": [
+       "x=−10",
+       "−10"
+      ],
+      "phim": [
+       "x"
+      ],
+      "nhieu": [
+       ";",
+       "y",
+       "²"
+      ],
+      "loi_giai": [
+       "A = 1/2 ⇔ −4/(x + 2) = 1/2",
+       "⇔ x + 2 = −8",
+       "⇔ x = −10 (thoả mãn điều kiện xác định)"
+      ]
+     }
+    },
+    {
+     "ma": "TGK2-1.B1d",
+     "nhan": "Bài 1d",
+     "phan": "Phần tự luận (8 điểm)",
+     "nhom": "Bài 1. (3 điểm) Cho biểu thức A = (1/(x − 2) − 2x/(4 − x²) + 1/(2 + x)) · (2/x − 1).",
+     "de": "Bài 1. (3 điểm) Cho biểu thức A = (1/(x − 2) − 2x/(4 − x^2) + 1/(2 + x)) · (2/x − 1).\nd) Tìm x nguyên để A nguyên dương.",
+     "dang": "CAU_NHO",
+     "dap_an": "x ∈ {−6; −4; −3}",
+     "loai_dap_an": "DAP_SO",
+     "bai_sgk": 24,
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "hoi": "Bài 1. (3 điểm) Cho biểu thức A = (1/(x − 2) − 2x/(4 − x²) + 1/(2 + x)) · (2/x − 1).\nd) Tìm x nguyên để A nguyên dương.\n(Nếu có nhiều giá trị của x thì viết theo thứ tự từ nhỏ đến lớn, cách nhau bằng dấu ;)",
+      "dap": [
+       "−6;−4;−3",
+       "x=−6;x=−4;x=−3"
+      ],
+      "phim": [
+       "x",
+       ";"
+      ],
+      "nhieu": [
+       "y",
+       "²",
+       "≠"
+      ],
+      "loi_giai": [
+       "A = −4/(x + 2) là số nguyên dương khi x + 2 là số nguyên âm và là ước của 4",
+       "x + 2 ∈ {−1; −2; −4}",
+       "x ∈ {−3; −4; −6}, các giá trị này đều thoả mãn điều kiện xác định"
+      ]
+     }
+    },
+    {
+     "ma": "TGK2-1.B2a",
+     "nhan": "Bài 2a",
+     "phan": "Phần tự luận (8 điểm)",
+     "nhom": "Bài 2. (1 điểm) Một tổ sản xuất phải làm 600 sản phẩm trong một thời gian quy định. Do tăng năng suất lao động, mỗi ngày tổ sản xuất đó làm được nhiều hơn kế hoạch 10 sản phẩm. Gọi x (sản phẩm) là số sản phẩm mà tổ sản xuất phải làm trong mỗi ngày theo kế hoạch (x ∈ ℕ*; x < 600).",
+     "de": "Bài 2. (1 điểm) Một tổ sản xuất phải làm 600 sản phẩm trong một thời gian quy định. Do tăng năng suất lao động, mỗi ngày tổ sản xuất đó làm được nhiều hơn kế hoạch 10 sản phẩm. Gọi x (sản phẩm) là số sản phẩm mà tổ sản xuất phải làm trong mỗi ngày theo kế hoạch (x ∈ ℕ*; x < 600).\na) Viết biểu thức biểu thị theo x thời gian tổ sản xuất hoàn thành công việc trước kế hoạch.",
+     "dang": "CAU_NHO",
+     "dap_an": "600/x − 600/(x + 10) (ngày), rút gọn được 6000/(x(x + 10))",
+     "loai_dap_an": "DAP_SO",
+     "bai_sgk": 23,
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "hoi": "Bài 2. (1 điểm) Một tổ sản xuất phải làm 600 sản phẩm trong một thời gian quy định. Do tăng năng suất lao động, mỗi ngày tổ sản xuất đó làm được nhiều hơn kế hoạch 10 sản phẩm. Gọi x (sản phẩm) là số sản phẩm mà tổ sản xuất phải làm trong mỗi ngày theo kế hoạch (x ∈ ℕ*; x < 600).\na) Viết biểu thức biểu thị theo x thời gian tổ sản xuất hoàn thành công việc trước kế hoạch.",
+      "dap": [
+       "600/x−600/(x+10)",
+       "6000/(x(x+10))",
+       "6000/(x²+10x)"
+      ],
+      "phim": [
+       "x",
+       "²"
+      ],
+      "nhieu": [
+       "y",
+       "³",
+       "⁴"
+      ],
+      "loi_giai": [
+       "Thời gian làm theo kế hoạch: 600/x (ngày)",
+       "Thời gian làm thực tế: 600/(x + 10) (ngày)",
+       "Thời gian hoàn thành trước kế hoạch: 600/x − 600/(x + 10) (ngày)"
+      ]
+     }
+    },
+    {
+     "ma": "TGK2-1.B2b",
+     "nhan": "Bài 2b",
+     "phan": "Phần tự luận (8 điểm)",
+     "nhom": "Bài 2. (1 điểm) Một tổ sản xuất phải làm 600 sản phẩm trong một thời gian quy định. Do tăng năng suất lao động, mỗi ngày tổ sản xuất đó làm được nhiều hơn kế hoạch 10 sản phẩm. Gọi x (sản phẩm) là số sản phẩm mà tổ sản xuất phải làm trong mỗi ngày theo kế hoạch (x ∈ ℕ*; x < 600).",
+     "de": "Bài 2. (1 điểm) Một tổ sản xuất phải làm 600 sản phẩm trong một thời gian quy định. Do tăng năng suất lao động, mỗi ngày tổ sản xuất đó làm được nhiều hơn kế hoạch 10 sản phẩm. Gọi x (sản phẩm) là số sản phẩm mà tổ sản xuất phải làm trong mỗi ngày theo kế hoạch (x ∈ ℕ*; x < 600).\nb) Giả sử mỗi ngày họ dự định làm 40 sản phẩm. Hãy tính thời gian tổ hoàn thành công việc trước kế hoạch.",
+     "dang": "CAU_NHO",
+     "dap_an": "3 ngày",
+     "loai_dap_an": "DAP_SO",
+     "bai_sgk": 23,
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "hoi": "Bài 2. (1 điểm) Một tổ sản xuất phải làm 600 sản phẩm trong một thời gian quy định. Do tăng năng suất lao động, mỗi ngày tổ sản xuất đó làm được nhiều hơn kế hoạch 10 sản phẩm. Gọi x (sản phẩm) là số sản phẩm mà tổ sản xuất phải làm trong mỗi ngày theo kế hoạch (x ∈ ℕ*; x < 600).\nb) Giả sử mỗi ngày họ dự định làm 40 sản phẩm. Hãy tính thời gian tổ hoàn thành công việc trước kế hoạch.",
+      "dap": [
+       "3",
+       "3ngày"
+      ],
+      "phim": [
+       "ngày"
+      ],
+      "nhieu": [
+       "giờ"
+      ],
+      "loi_giai": [
+       "Thay x = 40 vào biểu thức ở câu a",
+       "600/40 − 600/(40 + 10) = 15 − 12 = 3 (ngày)"
+      ]
+     }
+    },
+    {
+     "ma": "TGK2-1.B3",
+     "nhan": "Bài 3",
+     "phan": "Phần tự luận (8 điểm)",
+     "nhom": "Bài 3. (1 điểm) Người ta tiến hành đo đạc các yếu tố cần thiết để tính chiều rộng của một khúc sông mà không cần phải sang bờ bên kia sông (hình vẽ dưới đây). Biết BB' = 20 m, BC = 30 m và B'C' = 40 m.",
+     "de": "Bài 3. (1 điểm) Người ta tiến hành đo đạc các yếu tố cần thiết để tính chiều rộng của một khúc sông mà không cần phải sang bờ bên kia sông (hình vẽ bên). Biết BB' = 20 m, BC = 30 m và B'C' = 40 m.\nTính độ rộng x của khúc sông.",
+     "dang": "CAU_NHO",
+     "dap_an": "x = 60 m",
+     "loai_dap_an": "DAP_SO",
+     "bai_sgk": 33,
+     "hinh": [
+      "dethitoan8/TGK2-1.B3.webp"
+     ],
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "hoi": "Bài 3. (1 điểm) Người ta tiến hành đo đạc các yếu tố cần thiết để tính chiều rộng của một khúc sông mà không cần phải sang bờ bên kia sông (hình vẽ dưới đây). Biết BB' = 20 m, BC = 30 m và B'C' = 40 m.\nTính độ rộng x của khúc sông.",
+      "dap": [
+       "60",
+       "60m"
+      ],
+      "phim": [
+       "m"
+      ],
+      "nhieu": [
+       "cm",
+       "km"
+      ],
+      "loi_giai": [
+       "BC ⊥ AB' và B'C' ⊥ AB' nên BC // B'C'",
+       "Do đó ΔABC ᔕ ΔAB'C', suy ra AB/AB' = BC/B'C'",
+       "x/(x + 20) = 30/40",
+       "4x = 3(x + 20) ⇔ x = 60 (m)"
+      ]
+     },
+     "ghi_chu": "'hình vẽ bên' đổi thành 'hình vẽ dưới đây' vì trên máy hình nằm dưới chữ. Đề tách thành lời dẫn (nhom) và câu hỏi 'Tính độ rộng x của khúc sông.'"
+    },
+    {
+     "ma": "TGK2-1.B4a",
+     "nhan": "Bài 4a",
+     "phan": "Phần tự luận (8 điểm)",
+     "nhom": "Bài 4. (3 điểm) Cho ΔABC có AB = 18 cm, AC = 24 cm, BC = 30 cm. Gọi M là trung điểm của BC. Qua M kẻ đường thẳng vuông góc với BC, cắt AC tại D và cắt đường thẳng AB tại E.",
+     "de": "Bài 4. (3 điểm) Cho ΔABC có AB = 18cm, AC = 24cm, BC = 30cm. Gọi M là trung điểm của BC. Qua M kẻ đường thẳng vuông góc với BC cắt AC, AB lần lượt tại D, E.\na) Chứng minh rằng ΔABC ᔕ ΔMDC.",
+     "dang": "CAU_NHO",
+     "dap_an": "AB² + AC² = 18² + 24² = 900 = BC² nên ΔABC vuông tại A. ΔABC và ΔMDC có góc A = góc M = 90°, góc C chung nên ΔABC ᔕ ΔMDC (g.g).",
+     "loai_dap_an": "LOI_GIAI",
+     "bai_sgk": 35,
+     "hinh_goi_y": [
+      "dethitoan8/TGK2-1.B4.goi-y.webp"
+     ],
+     "hinh_day_du": [
+      "dethitoan8/TGK2-1.B4.day-du.webp"
+     ],
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 4,
+      "hoi": "Bài 4. (3 điểm) Cho ΔABC có AB = 18 cm, AC = 24 cm, BC = 30 cm. Gọi M là trung điểm của BC. Qua M kẻ đường thẳng vuông góc với BC, cắt AC tại D và cắt đường thẳng AB tại E.\na) Chứng minh rằng ΔABC ᔕ ΔMDC.",
+      "buoc": [
+       "AB² + AC² = 18² + 24² = 900 = 30² = BC²",
+       "Nên ΔABC vuông tại A (định lí Pythagore đảo)",
+       "Xét ΔABC và ΔMDC có: góc BAC = góc DMC = 90°, góc C chung",
+       "Vậy ΔABC ᔕ ΔMDC (g.g)"
+      ],
+      "nhieu": [
+       "Nên ΔABC vuông tại B (định lí Pythagore đảo)",
+       "Vậy ΔABC ᔕ ΔMCD (g.g)"
+      ]
+     },
+     "ghi_chu": "Đề in 'cắt AC, AB lần lượt tại D, E'; với số liệu của đề, E nằm trên tia đối của tia AB (AE = 7 cm, như hình lời giải), nên trên máy viết 'cắt AC tại D và cắt đường thẳng AB tại E'."
+    },
+    {
+     "ma": "TGK2-1.B4b",
+     "nhan": "Bài 4b",
+     "phan": "Phần tự luận (8 điểm)",
+     "nhom": "Bài 4. (3 điểm) Cho ΔABC có AB = 18 cm, AC = 24 cm, BC = 30 cm. Gọi M là trung điểm của BC. Qua M kẻ đường thẳng vuông góc với BC, cắt AC tại D và cắt đường thẳng AB tại E.",
+     "de": "Bài 4. (3 điểm) Cho ΔABC có AB = 18cm, AC = 24cm, BC = 30cm. Gọi M là trung điểm của BC. Qua M kẻ đường thẳng vuông góc với BC cắt AC, AB lần lượt tại D, E.\nb) Tính độ dài các cạnh của ΔMDC.",
+     "dang": "CAU_NHO",
+     "dap_an": "MC = 15 cm, MD = 11,25 cm, DC = 18,75 cm",
+     "loai_dap_an": "DAP_SO",
+     "bai_sgk": 34,
+     "hinh_goi_y": [
+      "dethitoan8/TGK2-1.B4.goi-y.webp"
+     ],
+     "hinh_day_du": [
+      "dethitoan8/TGK2-1.B4.day-du.webp"
+     ],
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "hoi": "Bài 4. (3 điểm) Cho ΔABC có AB = 18 cm, AC = 24 cm, BC = 30 cm. Gọi M là trung điểm của BC. Qua M kẻ đường thẳng vuông góc với BC, cắt AC tại D và cắt đường thẳng AB tại E.\nb) Tính độ dài các cạnh của ΔMDC.\n(Gõ MC, MD, DC theo thứ tự, tính bằng cm, cách nhau bằng dấu ;)",
+      "dap": [
+       "15;11,25;18,75"
+      ],
+      "phim": [
+       ";"
+      ],
+      "nhieu": [
+       "√",
+       "²"
+      ],
+      "loi_giai": [
+       "M là trung điểm của BC nên MC = BC/2 = 30/2 = 15 (cm)",
+       "ΔABC ᔕ ΔMDC nên AB/MD = BC/DC = AC/MC = 24/15 = 8/5",
+       "MD = AB : (8/5) = 18 · 5/8 = 11,25 (cm)",
+       "DC = BC : (8/5) = 30 · 5/8 = 18,75 (cm)"
+      ]
+     }
+    },
+    {
+     "ma": "TGK2-1.B4c",
+     "nhan": "Bài 4c",
+     "phan": "Phần tự luận (8 điểm)",
+     "nhom": "Bài 4. (3 điểm) Cho ΔABC có AB = 18 cm, AC = 24 cm, BC = 30 cm. Gọi M là trung điểm của BC. Qua M kẻ đường thẳng vuông góc với BC, cắt AC tại D và cắt đường thẳng AB tại E.",
+     "de": "Bài 4. (3 điểm) Cho ΔABC có AB = 18cm, AC = 24cm, BC = 30cm. Gọi M là trung điểm của BC. Qua M kẻ đường thẳng vuông góc với BC cắt AC, AB lần lượt tại D, E.\nc) Tính độ dài BE, EC.",
+     "dang": "CAU_NHO",
+     "dap_an": "BE = 25 cm, EC = 25 cm",
+     "loai_dap_an": "DAP_SO",
+     "bai_sgk": 34,
+     "hinh_goi_y": [
+      "dethitoan8/TGK2-1.B4.goi-y.webp"
+     ],
+     "hinh_day_du": [
+      "dethitoan8/TGK2-1.B4.day-du.webp"
+     ],
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "hoi": "Bài 4. (3 điểm) Cho ΔABC có AB = 18 cm, AC = 24 cm, BC = 30 cm. Gọi M là trung điểm của BC. Qua M kẻ đường thẳng vuông góc với BC, cắt AC tại D và cắt đường thẳng AB tại E.\nc) Tính độ dài BE, EC.\n(Gõ BE rồi EC, tính bằng cm, cách nhau bằng dấu ;)",
+      "dap": [
+       "25;25"
+      ],
+      "phim": [
+       ";"
+      ],
+      "nhieu": [
+       "√",
+       "²"
+      ],
+      "loi_giai": [
+       "Xét ΔBME và ΔBAC có: góc BME = góc BAC = 90°, góc B chung, nên ΔBME ᔕ ΔBAC (g.g)",
+       "Suy ra BE/BC = BM/BA, tức là BE/30 = 15/18",
+       "BE = 30 · 15/18 = 25 (cm)",
+       "ME vuông góc với BC tại trung điểm M nên EC = EB = 25 (cm)"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "chuong": "Giữa học kì 2",
+   "bai": "Đề giữa kì 2 số 2",
+   "de_thi": {
+    "ma": "TGK2-2",
+    "nguon_goc": "loigiaihay.com, đăng 22/01/2024"
+   },
+   "cac_cau": [
+    {
+     "ma": "TGK2-2.C1",
+     "nhan": "Câu 1",
+     "phan": "Phần trắc nghiệm (2 điểm)",
+     "nhom": "",
+     "de": "Biểu thức nào sau đây không phải là phân thức đại số?\nA. (5x − 6)/(3x) (với x ≠ 0).\nB. (1/(2x))/(x + 1) (với x ≠ 0; x ≠ −1).\nC. (2x − 3y)/(xyz) (với xyz ≠ 0).\nD. 6x^2 − 5x + 7.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "bai_sgk": 21,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Biểu thức nào sau đây <b>không phải</b> là phân thức đại số?",
+      "cac": [
+       "(5x − 6)/(3x) (với x ≠ 0)",
+       "(1/(2x))/(x + 1) (với x ≠ 0; x ≠ −1)",
+       "(2x − 3y)/(xyz) (với xyz ≠ 0)",
+       "6x² − 5x + 7"
+      ],
+      "dap": "B"
+     }
+    },
+    {
+     "ma": "TGK2-2.C2",
+     "nhan": "Câu 2",
+     "phan": "Phần trắc nghiệm (2 điểm)",
+     "nhom": "",
+     "de": "Điều kiện xác định của phân thức (3x − 5)/(2x + 1) là:\nA. x ≠ −1/2. B. x ≠ 1/2. C. x ≠ 0. D. x ≠ 5/3.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN",
+     "bai_sgk": 21,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Điều kiện xác định của phân thức (3x − 5)/(2x + 1) là:",
+      "cac": [
+       "x ≠ −1/2",
+       "x ≠ 1/2",
+       "x ≠ 0",
+       "x ≠ 5/3"
+      ],
+      "dap": "A"
+     }
+    },
+    {
+     "ma": "TGK2-2.C3",
+     "nhan": "Câu 3",
+     "phan": "Phần trắc nghiệm (2 điểm)",
+     "nhom": "",
+     "de": "Tính giá trị của phân thức A(x) = 3/(x − 1) với x ≠ 1 tại x = 2\nA. 1/3. B. −3. C. −1/3. D. 3.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "D",
+     "loai_dap_an": "TN",
+     "bai_sgk": 21,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Giá trị của phân thức A(x) = 3/(x − 1) (với x ≠ 1) tại x = 2 là:",
+      "cac": [
+       "1/3",
+       "−3",
+       "−1/3",
+       "3"
+      ],
+      "dap": "D"
+     }
+    },
+    {
+     "ma": "TGK2-2.C4",
+     "nhan": "Câu 4",
+     "phan": "Phần trắc nghiệm (2 điểm)",
+     "nhom": "",
+     "de": "Thực hiện phép tính sau: (2x − 3)/7 + (5x + 3)/7, ta được kết quả là:\nA. x. B. −3x/7. C. x/7. D. 3x/7.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN",
+     "bai_sgk": 23,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Thực hiện phép tính sau: (2x − 3)/7 + (5x + 3)/7, ta được kết quả là:",
+      "cac": [
+       "x",
+       "−3x/7",
+       "x/7",
+       "3x/7"
+      ],
+      "dap": "A"
+     }
+    },
+    {
+     "ma": "TGK2-2.C5",
+     "nhan": "Câu 5",
+     "phan": "Phần trắc nghiệm (2 điểm)",
+     "nhom": "",
+     "de": "Kết quả phép tính 8x/(15y^3) : (−4x^2/(3y^2)) là\nA. −1/(10xy). B. −2/(5xy^2). C. −2/(5xy). D. 2/(5xy).",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "C",
+     "loai_dap_an": "TN",
+     "bai_sgk": 24,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Kết quả phép tính 8x/(15y³) : (−4x²/(3y²)) là",
+      "cac": [
+       "−1/(10xy)",
+       "−2/(5xy²)",
+       "−2/(5xy)",
+       "2/(5xy)"
+      ],
+      "dap": "C"
+     }
+    },
+    {
+     "ma": "TGK2-2.C6",
+     "nhan": "Câu 6",
+     "phan": "Phần trắc nghiệm (2 điểm)",
+     "nhom": "",
+     "de": "Cho hình vẽ sau, biết DE // BC, số đo góc AED là:\nA. 80°. B. 60°. C. 50°. D. 40°.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "D",
+     "loai_dap_an": "TN",
+     "bai_sgk": 33,
+     "hinh": [
+      "dethitoan8/TGK2-2.C6.webp"
+     ],
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Cho hình vẽ dưới đây, biết DE // BC. Số đo góc AED là:",
+      "cac": [
+       "80°",
+       "60°",
+       "50°",
+       "40°"
+      ],
+      "dap": "D"
+     }
+    },
+    {
+     "ma": "TGK2-2.C7",
+     "nhan": "Câu 7",
+     "phan": "Phần trắc nghiệm (2 điểm)",
+     "nhom": "",
+     "de": "Đâu là độ dài 3 cạnh của một tam giác vuông:\nA. 4cm, 7cm, 6cm. B. 6cm, 10cm, 8cm. C. 20cm, 12cm, 25cm. D. 6cm, 11cm, 9cm.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "bai_sgk": 35,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Bộ ba độ dài nào sau đây là độ dài ba cạnh của một tam giác vuông?",
+      "cac": [
+       "4 cm, 7 cm, 6 cm",
+       "6 cm, 10 cm, 8 cm",
+       "20 cm, 12 cm, 25 cm",
+       "6 cm, 11 cm, 9 cm"
+      ],
+      "dap": "B"
+     }
+    },
+    {
+     "ma": "TGK2-2.C8",
+     "nhan": "Câu 8",
+     "phan": "Phần trắc nghiệm (2 điểm)",
+     "nhom": "",
+     "de": "Một người cao 1,5 mét có bóng trên mặt đất dài 2,1 mét. Cùng lúc ấy, một cái cây gần đó có bóng trên mặt đất dài 4,2 mét. Tính chiều cao của cây.\nA. AB = 3m. B. AB = 0,75m. C. AB = 2,4m. D. AB = 2,25m.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN",
+     "bai_sgk": 34,
+     "hinh": [
+      "dethitoan8/TGK2-2.C8.webp"
+     ],
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Một người cao 1,5 mét có bóng trên mặt đất dài 2,1 mét. Cùng lúc ấy, một cái cây gần đó có bóng trên mặt đất dài 4,2 mét. Tính chiều cao AB của cây (hình vẽ dưới đây).",
+      "cac": [
+       "AB = 3 m",
+       "AB = 0,75 m",
+       "AB = 2,4 m",
+       "AB = 2,25 m"
+      ],
+      "dap": "A"
+     }
+    },
+    {
+     "ma": "TGK2-2.B1a",
+     "nhan": "Bài 1a",
+     "phan": "Phần tự luận (8 điểm)",
+     "nhom": "Bài 1. (2 điểm) Cho A = (1/(x − 1) − 1/(x + 1)) · (3x − 3)/2 với x ≠ ±1.",
+     "de": "Bài 1. (2 điểm) Cho A = (1/(x − 1) − 1/(x + 1)) · (3x − 3)/2 với x ≠ ±1.\na) Rút gọn biểu thức A.",
+     "dang": "CAU_NHO",
+     "dap_an": "A = 3/(x + 1)",
+     "loai_dap_an": "DAP_SO",
+     "bai_sgk": 24,
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "hoi": "Bài 1. (2 điểm) Cho A = (1/(x − 1) − 1/(x + 1)) · (3x − 3)/2 với x ≠ ±1.\na) Rút gọn biểu thức A.",
+      "dap": [
+       "3/(x+1)"
+      ],
+      "phim": [
+       "x"
+      ],
+      "nhieu": [
+       "y",
+       "²",
+       "³"
+      ],
+      "loi_giai": [
+       "A = (x + 1 − (x − 1))/((x − 1)(x + 1)) · 3(x − 1)/2",
+       "= 2/((x − 1)(x + 1)) · 3(x − 1)/2",
+       "= 3/(x + 1)"
+      ]
+     }
+    },
+    {
+     "ma": "TGK2-2.B1b",
+     "nhan": "Bài 1b",
+     "phan": "Phần tự luận (8 điểm)",
+     "nhom": "Bài 1. (2 điểm) Cho A = (1/(x − 1) − 1/(x + 1)) · (3x − 3)/2 với x ≠ ±1.",
+     "de": "Bài 1. (2 điểm) Cho A = (1/(x − 1) − 1/(x + 1)) · (3x − 3)/2 với x ≠ ±1.\nb) Tính giá trị của biểu thức A tại x = 2.",
+     "dang": "CAU_NHO",
+     "dap_an": "A = 1",
+     "loai_dap_an": "DAP_SO",
+     "bai_sgk": 24,
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "hoi": "Bài 1. (2 điểm) Cho A = (1/(x − 1) − 1/(x + 1)) · (3x − 3)/2 với x ≠ ±1.\nb) Tính giá trị của biểu thức A tại x = 2.",
+      "dap": [
+       "1"
+      ],
+      "phim": [],
+      "nhieu": [],
+      "loi_giai": [
+       "x = 2 thoả mãn điều kiện x ≠ ±1",
+       "A = 3/(2 + 1) = 1"
+      ]
+     }
+    },
+    {
+     "ma": "TGK2-2.B1c",
+     "nhan": "Bài 1c",
+     "phan": "Phần tự luận (8 điểm)",
+     "nhom": "Bài 1. (2 điểm) Cho A = (1/(x − 1) − 1/(x + 1)) · (3x − 3)/2 với x ≠ ±1.",
+     "de": "Bài 1. (2 điểm) Cho A = (1/(x − 1) − 1/(x + 1)) · (3x − 3)/2 với x ≠ ±1.\nc) Với giá trị nguyên nào của x thì A nhận giá trị nguyên.",
+     "dang": "CAU_NHO",
+     "dap_an": "x ∈ {−4; −2; 0; 2}",
+     "loai_dap_an": "DAP_SO",
+     "bai_sgk": 24,
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "hoi": "Bài 1. (2 điểm) Cho A = (1/(x − 1) − 1/(x + 1)) · (3x − 3)/2 với x ≠ ±1.\nc) Với giá trị nguyên nào của x thì A nhận giá trị nguyên?\n(Nếu có nhiều giá trị của x thì viết theo thứ tự từ nhỏ đến lớn, cách nhau bằng dấu ;)",
+      "dap": [
+       "−4;−2;0;2",
+       "x=−4;x=−2;x=0;x=2"
+      ],
+      "phim": [
+       "x",
+       ";"
+      ],
+      "nhieu": [
+       "y",
+       "²",
+       "≠"
+      ],
+      "loi_giai": [
+       "A = 3/(x + 1) nhận giá trị nguyên khi x + 1 là ước của 3",
+       "x + 1 ∈ {−3; −1; 1; 3}",
+       "x ∈ {−4; −2; 0; 2}, các giá trị này đều thoả mãn x ≠ ±1"
+      ]
+     }
+    },
+    {
+     "ma": "TGK2-2.B2a",
+     "nhan": "Bài 2a",
+     "phan": "Phần tự luận (8 điểm)",
+     "nhom": "Bài 2. (1 điểm) Một ca nô xuôi dòng từ bến A đến bến B dài 45 km. Khi ngược dòng từ bến B về bến A, ca nô gặp một ca nô khác tại vị trí C cách bến A 27 km. Biết vận tốc dòng nước là 3 km/h. Gọi x (km/h) là tốc độ của ca nô khi nước yên lặng (x > 3).",
+     "de": "Bài 2. (1 điểm) Một ca nô xuôi dòng từ bến A đến bến B dài 45 km. Khi ngược dòng từ bến B về bến A, ca nô gặp một ca nô khác tại vị trí C cách bến A 27 km. Biết vận tốc dòng nước là 3km/h. Gọi x (km/h) là tốc độ của ca nô (x > 3).\na) Viết phân thức biểu thị theo x thời gian ca nô đi từ bến A đến bến B.",
+     "dang": "CAU_NHO",
+     "dap_an": "45/(x + 3) (giờ)",
+     "loai_dap_an": "DAP_SO",
+     "bai_sgk": 21,
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "hoi": "Bài 2. (1 điểm) Một ca nô xuôi dòng từ bến A đến bến B dài 45 km. Khi ngược dòng từ bến B về bến A, ca nô gặp một ca nô khác tại vị trí C cách bến A 27 km. Biết vận tốc dòng nước là 3 km/h. Gọi x (km/h) là tốc độ của ca nô khi nước yên lặng (x > 3).\na) Viết phân thức biểu thị theo x thời gian ca nô đi từ bến A đến bến B.",
+      "dap": [
+       "45/(x+3)"
+      ],
+      "phim": [
+       "x"
+      ],
+      "nhieu": [
+       "y",
+       "²"
+      ],
+      "loi_giai": [
+       "Vận tốc ca nô khi xuôi dòng: x + 3 (km/h)",
+       "Thời gian đi từ bến A đến bến B: 45/(x + 3) (giờ)"
+      ]
+     },
+     "ghi_chu": "Đề in 'Gọi x (km/h) là tốc độ của ca nô'; lời giải in dùng x là vận tốc thực (vận tốc xuôi dòng x + 3, ngược dòng x − 3), nên trên máy viết rõ 'tốc độ của ca nô khi nước yên lặng'."
+    },
+    {
+     "ma": "TGK2-2.B2b",
+     "nhan": "Bài 2b",
+     "phan": "Phần tự luận (8 điểm)",
+     "nhom": "Bài 2. (1 điểm) Một ca nô xuôi dòng từ bến A đến bến B dài 45 km. Khi ngược dòng từ bến B về bến A, ca nô gặp một ca nô khác tại vị trí C cách bến A 27 km. Biết vận tốc dòng nước là 3 km/h. Gọi x (km/h) là tốc độ của ca nô khi nước yên lặng (x > 3).",
+     "de": "Bài 2. (1 điểm) Một ca nô xuôi dòng từ bến A đến bến B dài 45 km. Khi ngược dòng từ bến B về bến A, ca nô gặp một ca nô khác tại vị trí C cách bến A 27 km. Biết vận tốc dòng nước là 3km/h. Gọi x (km/h) là tốc độ của ca nô (x > 3).\nb) Viết phân thức biểu thị theo x thời gian ca nô đi từ bến B đến vị trí C.",
+     "dang": "CAU_NHO",
+     "dap_an": "18/(x − 3) (giờ)",
+     "loai_dap_an": "DAP_SO",
+     "bai_sgk": 21,
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "hoi": "Bài 2. (1 điểm) Một ca nô xuôi dòng từ bến A đến bến B dài 45 km. Khi ngược dòng từ bến B về bến A, ca nô gặp một ca nô khác tại vị trí C cách bến A 27 km. Biết vận tốc dòng nước là 3 km/h. Gọi x (km/h) là tốc độ của ca nô khi nước yên lặng (x > 3).\nb) Viết phân thức biểu thị theo x thời gian ca nô đi từ bến B đến vị trí C.",
+      "dap": [
+       "18/(x−3)"
+      ],
+      "phim": [
+       "x"
+      ],
+      "nhieu": [
+       "y",
+       "²"
+      ],
+      "loi_giai": [
+       "Quãng đường BC = 45 − 27 = 18 (km)",
+       "Vận tốc ca nô khi ngược dòng: x − 3 (km/h)",
+       "Thời gian đi từ bến B đến vị trí C: 18/(x − 3) (giờ)"
+      ]
+     }
+    },
+    {
+     "ma": "TGK2-2.B2c",
+     "nhan": "Bài 2c",
+     "phan": "Phần tự luận (8 điểm)",
+     "nhom": "Bài 2. (1 điểm) Một ca nô xuôi dòng từ bến A đến bến B dài 45 km. Khi ngược dòng từ bến B về bến A, ca nô gặp một ca nô khác tại vị trí C cách bến A 27 km. Biết vận tốc dòng nước là 3 km/h. Gọi x (km/h) là tốc độ của ca nô khi nước yên lặng (x > 3).",
+     "de": "Bài 2. (1 điểm) Một ca nô xuôi dòng từ bến A đến bến B dài 45 km. Khi ngược dòng từ bến B về bến A, ca nô gặp một ca nô khác tại vị trí C cách bến A 27 km. Biết vận tốc dòng nước là 3km/h. Gọi x (km/h) là tốc độ của ca nô (x > 3).\nc) Viết phân thức biểu thị theo x tổng thời gian ca nô đi từ bến A đến bến B và từ bến B đến vị trí C. Tính tổng thời gian ca nô đi từ bến A đến bến B và từ bến B đến vị trí C nếu vận tốc của ca nô là 12km/h.",
+     "dang": "CAU_NHO",
+     "dap_an": "45/(x + 3) + 18/(x − 3) = (63x − 81)/(x² − 9) (giờ); với x = 12 thì tổng thời gian là 5 giờ",
+     "loai_dap_an": "DAP_SO",
+     "bai_sgk": 23,
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "hoi": "Bài 2. (1 điểm) Một ca nô xuôi dòng từ bến A đến bến B dài 45 km. Khi ngược dòng từ bến B về bến A, ca nô gặp một ca nô khác tại vị trí C cách bến A 27 km. Biết vận tốc dòng nước là 3 km/h. Gọi x (km/h) là tốc độ của ca nô khi nước yên lặng (x > 3).\nc) Viết phân thức biểu thị theo x tổng thời gian ca nô đi từ bến A đến bến B và từ bến B đến vị trí C. Tính tổng thời gian đó nếu vận tốc của ca nô là 12 km/h.\n(Gõ phân thức rồi số giờ, cách nhau bằng dấu ;)",
+      "dap": [
+       "45/(x+3)+18/(x−3);5",
+       "(63x−81)/(x²−9);5",
+       "(63x−81)/((x+3)(x−3));5",
+       "9(7x−9)/(x²−9);5",
+       "9(7x−9)/((x+3)(x−3));5"
+      ],
+      "phim": [
+       "x",
+       "²",
+       ";"
+      ],
+      "nhieu": [
+       "y",
+       "³",
+       "⁴"
+      ],
+      "loi_giai": [
+       "Tổng thời gian: 45/(x + 3) + 18/(x − 3)",
+       "= (45(x − 3) + 18(x + 3))/((x + 3)(x − 3))",
+       "= (63x − 81)/(x² − 9) (giờ)",
+       "Với x = 12, tổng thời gian là 45/15 + 18/9 = 3 + 2 = 5 (giờ)"
+      ]
+     }
+    },
+    {
+     "ma": "TGK2-2.B3",
+     "nhan": "Bài 3",
+     "phan": "Phần tự luận (8 điểm)",
+     "nhom": "Bài 3. (1 điểm) Hai cây B và C được trồng dọc trên đường, cách nhau 18 m và cách đều cột đèn D. Ngôi trường A cách cột đèn D 12 m theo hướng vuông góc với đường (xem hình vẽ).",
+     "de": "Bài 3. (1 điểm) Hai cây B và C được trồng dọc trên đường, cách nhau 18m và cách đều cột đèn D. Ngôi trường A cách cột đèn D 12m theo hướng vuông góc với đường (xem hình vẽ).\nTính khoảng cách từ mỗi cây đến ngôi trường.",
+     "dang": "CAU_NHO",
+     "dap_an": "Mỗi cây cách ngôi trường 15 m (AB = AC = 15 m)",
+     "loai_dap_an": "DAP_SO",
+     "bai_sgk": 35,
+     "hinh": [
+      "dethitoan8/TGK2-2.B3.webp"
+     ],
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "hoi": "Bài 3. (1 điểm) Hai cây B và C được trồng dọc trên đường, cách nhau 18 m và cách đều cột đèn D. Ngôi trường A cách cột đèn D 12 m theo hướng vuông góc với đường (xem hình vẽ).\nTính khoảng cách từ mỗi cây đến ngôi trường.\n(Gõ AB rồi AC, tính bằng m, cách nhau bằng dấu ;)",
+      "dap": [
+       "15;15"
+      ],
+      "phim": [
+       ";"
+      ],
+      "nhieu": [
+       "√",
+       "²"
+      ],
+      "loi_giai": [
+       "BD = DC = 18/2 = 9 (m)",
+       "ΔADB = ΔADC (hai cạnh góc vuông: DB = DC, AD chung) nên AB = AC",
+       "Tam giác ADC vuông tại D: AC² = AD² + DC² = 12² + 9² = 225",
+       "AC = 15 (m), AB = AC = 15 (m)"
+      ]
+     },
+     "ghi_chu": "Đề tách thành lời dẫn (nhom) và câu hỏi 'Tính khoảng cách từ mỗi cây đến ngôi trường.' Trên máy gõ AB rồi AC; con phải thấy hai khoảng cách bằng nhau."
+    },
+    {
+     "ma": "TGK2-2.B4a",
+     "nhan": "Bài 4a",
+     "phan": "Phần tự luận (8 điểm)",
+     "nhom": "Bài 4. (3,5 điểm) Cho tam giác ABC vuông tại A (AB < AC). Kẻ đường cao AH (H thuộc BC).",
+     "de": "Bài 4. (3,5 điểm) Cho tam giác ABC vuông tại A (AB < AC). Kẻ đường cao AH (H thuộc BC).\na) Chứng minh ΔABH ᔕ ΔCBA, suy ra AB^2 = BH.BC.",
+     "dang": "CAU_NHO",
+     "dap_an": "ΔABH và ΔCBA có góc AHB = góc CAB = 90°, góc B chung nên ΔABH ᔕ ΔCBA (g.g). Suy ra AB/CB = BH/BA, tức là AB² = BH · BC.",
+     "loai_dap_an": "LOI_GIAI",
+     "bai_sgk": 34,
+     "hinh_goi_y": [
+      "dethitoan8/TGK2-2.B4.goi-y.webp"
+     ],
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 4,
+      "hoi": "Bài 4. (3,5 điểm) Cho tam giác ABC vuông tại A (AB < AC). Kẻ đường cao AH (H thuộc BC).\na) Chứng minh ΔABH ᔕ ΔCBA, suy ra AB² = BH · BC.",
+      "buoc": [
+       "Xét ΔABH và ΔCBA có: góc AHB = góc CAB = 90°, góc B chung",
+       "Nên ΔABH ᔕ ΔCBA (g.g)",
+       "Suy ra AB/CB = BH/BA",
+       "Do đó AB² = BH · BC"
+      ],
+      "nhieu": [
+       "Nên ΔABH ᔕ ΔACB (g.g)",
+       "Suy ra AB/CB = BH/AC"
+      ]
+     }
+    },
+    {
+     "ma": "TGK2-2.B4b",
+     "nhan": "Bài 4b",
+     "phan": "Phần tự luận (8 điểm)",
+     "nhom": "Bài 4. (3,5 điểm) Cho tam giác ABC vuông tại A (AB < AC). Kẻ đường cao AH (H thuộc BC).",
+     "de": "Bài 4. (3,5 điểm) Cho tam giác ABC vuông tại A (AB < AC). Kẻ đường cao AH (H thuộc BC).\nb) Vẽ HE ⊥ AB tại E, HF ⊥ AC tại F. Chứng minh AB.AE = AC.AF.",
+     "dang": "CAU_NHO",
+     "dap_an": "ΔAEH ᔕ ΔAHB (g.g) nên AH² = AE · AB; ΔAFH ᔕ ΔAHC (g.g) nên AH² = AF · AC. Vậy AB · AE = AC · AF.",
+     "loai_dap_an": "LOI_GIAI",
+     "bai_sgk": 34,
+     "hinh_goi_y": [
+      "dethitoan8/TGK2-2.B4.goi-y.webp"
+     ],
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 5,
+      "hoi": "Bài 4. (3,5 điểm) Cho tam giác ABC vuông tại A (AB < AC). Kẻ đường cao AH (H thuộc BC).\nb) Vẽ HE ⊥ AB tại E, HF ⊥ AC tại F. Chứng minh AB · AE = AC · AF.",
+      "buoc": [
+       "Xét ΔAEH và ΔAHB có: góc AEH = góc AHB = 90°, góc BAH chung",
+       "Nên ΔAEH ᔕ ΔAHB (g.g), suy ra AE/AH = AH/AB, do đó AH² = AE · AB",
+       "Xét ΔAFH và ΔAHC có: góc AFH = góc AHC = 90°, góc CAH chung",
+       "Nên ΔAFH ᔕ ΔAHC (g.g), suy ra AF/AH = AH/AC, do đó AH² = AF · AC",
+       "Vậy AB · AE = AC · AF (cùng bằng AH²)"
+      ],
+      "nhieu": [
+       "Nên ΔAEH ᔕ ΔABH (g.g), suy ra AE/AB = EH/BH, do đó AH² = AE · AB",
+       "Vậy AB · AF = AC · AE (cùng bằng AH²)"
+      ],
+      "thu_tu_khac": [
+       [
+        2,
+        3,
+        0,
+        1,
+        4
+       ]
+      ]
+     }
+    },
+    {
+     "ma": "TGK2-2.B4c",
+     "nhan": "Bài 4c",
+     "phan": "Phần tự luận (8 điểm)",
+     "nhom": "Bài 4. (3,5 điểm) Cho tam giác ABC vuông tại A (AB < AC). Kẻ đường cao AH (H thuộc BC).",
+     "de": "Bài 4. (3,5 điểm) Cho tam giác ABC vuông tại A (AB < AC). Kẻ đường cao AH (H thuộc BC).\nc) Chứng minh ΔAEF ᔕ ΔACB.",
+     "dang": "CAU_NHO",
+     "dap_an": "Từ AB · AE = AC · AF suy ra AE/AC = AF/AB. ΔAEF và ΔACB có góc A chung, AE/AC = AF/AB nên ΔAEF ᔕ ΔACB (c.g.c).",
+     "loai_dap_an": "LOI_GIAI",
+     "bai_sgk": 34,
+     "hinh_goi_y": [
+      "dethitoan8/TGK2-2.B4.goi-y.webp"
+     ],
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 3,
+      "hoi": "Bài 4. (3,5 điểm) Cho tam giác ABC vuông tại A (AB < AC). Kẻ đường cao AH (H thuộc BC).\nc) Chứng minh ΔAEF ᔕ ΔACB.",
+      "buoc": [
+       "Từ câu b: AB · AE = AC · AF nên AE/AC = AF/AB",
+       "Xét ΔAEF và ΔACB có: góc EAF = góc CAB (góc chung), AE/AC = AF/AB",
+       "Vậy ΔAEF ᔕ ΔACB (c.g.c)"
+      ],
+      "nhieu": [
+       "Từ câu b: AB · AE = AC · AF nên AE/AB = AF/AC",
+       "Vậy ΔAEF ᔕ ΔABC (c.g.c)"
+      ]
+     }
+    },
+    {
+     "ma": "TGK2-2.B4d",
+     "nhan": "Bài 4d",
+     "phan": "Phần tự luận (8 điểm)",
+     "nhom": "Bài 4. (3,5 điểm) Cho tam giác ABC vuông tại A (AB < AC). Kẻ đường cao AH (H thuộc BC).",
+     "de": "Bài 4. (3,5 điểm) Cho tam giác ABC vuông tại A (AB < AC). Kẻ đường cao AH (H thuộc BC).\nd) Qua A vẽ đường thẳng song song với BC cắt đường thẳng HF tại I. Vẽ IN ⊥ BC tại N. Chứng minh ΔHFN ᔕ ΔHCI.",
+     "dang": "CAU_NHO",
+     "dap_an": "ΔHNI và ΔHFC có góc N = góc F = 90°, góc H chung nên ΔHNI ᔕ ΔHFC (g.g), suy ra HF/HC = HN/HI. ΔHFN và ΔHCI có góc H chung, HF/HC = HN/HI nên ΔHFN ᔕ ΔHCI (c.g.c).",
+     "loai_dap_an": "LOI_GIAI",
+     "bai_sgk": 34,
+     "hinh_goi_y": [
+      "dethitoan8/TGK2-2.B4.goi-y.webp"
+     ],
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 5,
+      "hoi": "Bài 4. (3,5 điểm) Cho tam giác ABC vuông tại A (AB < AC). Kẻ đường cao AH (H thuộc BC).\nd) Qua A vẽ đường thẳng song song với BC cắt đường thẳng HF tại I. Vẽ IN ⊥ BC tại N. Chứng minh ΔHFN ᔕ ΔHCI.",
+      "buoc": [
+       "Xét ΔHNI và ΔHFC có: góc HNI = góc HFC = 90°, góc NHI = góc FHC (góc chung)",
+       "Nên ΔHNI ᔕ ΔHFC (g.g)",
+       "Suy ra HN/HF = HI/HC, do đó HF/HC = HN/HI",
+       "Xét ΔHFN và ΔHCI có: góc FHN = góc CHI (góc chung), HF/HC = HN/HI",
+       "Vậy ΔHFN ᔕ ΔHCI (c.g.c)"
+      ],
+      "nhieu": [
+       "Nên ΔHNI ᔕ ΔHCF (g.g)",
+       "Suy ra HN/HC = HI/HF, do đó HF/HC = HN/HI"
+      ]
+     }
+    },
+    {
+     "ma": "TGK2-2.B5",
+     "nhan": "Bài 5",
+     "phan": "Phần tự luận (8 điểm)",
+     "nhom": "Bài 5. (0,5 điểm) Cho 1/a + 1/b + 1/c = 1/(a + b + c).",
+     "de": "Bài 5. (0,5 điểm) Cho 1/a + 1/b + 1/c = 1/(a + b + c).\nChứng minh rằng: 1/a^2023 + 1/b^2023 + 1/c^2023 = 1/(a^2023 + b^2023 + c^2023).",
+     "dang": "CAU_NHO",
+     "dap_an": "Biến đổi 1/a + 1/b + 1/c = 1/(a + b + c) thành (a + b)(b + c)(c + a) = 0, nên có hai số đối nhau, ví dụ a = −b. Khi đó a²⁰²³ = −b²⁰²³ (2023 lẻ), hai vế đều bằng 1/c²⁰²³.",
+     "loai_dap_an": "LOI_GIAI",
+     "bai_sgk": 23,
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 6,
+      "hoi": "Bài 5. (0,5 điểm) Cho 1/a + 1/b + 1/c = 1/(a + b + c).\nChứng minh rằng: 1/a²⁰²³ + 1/b²⁰²³ + 1/c²⁰²³ = 1/(a²⁰²³ + b²⁰²³ + c²⁰²³).",
+      "buoc": [
+       "1/a + 1/b + 1/c = 1/(a + b + c) ⇔ (ab + bc + ca)/(abc) = 1/(a + b + c)",
+       "⇔ (ab + bc + ca)(a + b + c) − abc = 0",
+       "⇔ (a + b)(b + c)(c + a) = 0",
+       "Suy ra a = −b hoặc b = −c hoặc c = −a",
+       "Nếu a = −b thì a²⁰²³ = −b²⁰²³ (vì 2023 là số lẻ), nên cả hai vế của đẳng thức cần chứng minh đều bằng 1/c²⁰²³",
+       "Hai trường hợp b = −c, c = −a làm tương tự. Vậy đẳng thức được chứng minh"
+      ],
+      "nhieu": [
+       "⇔ (a − b)(b − c)(c − a) = 0",
+       "Nếu a = −b thì a²⁰²³ = b²⁰²³ (vì 2023 là số lẻ), nên cả hai vế của đẳng thức cần chứng minh đều bằng 1/c²⁰²³"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "chuong": "Giữa học kì 2",
+   "bai": "Đề giữa kì 2 số 3",
+   "de_thi": {
+    "ma": "TGK2-3",
+    "nguon_goc": "loigiaihay.com, đăng 19/03/2025"
+   },
+   "cac_cau": [
+    {
+     "ma": "TGK2-3.C1",
+     "nhan": "Câu 1",
+     "phan": "Phần trắc nghiệm (2 điểm)",
+     "nhom": "",
+     "de": "Phân thức đối của phân thức 3/(x + 1) là:\nA. −3/(x + 1). B. (x + 1)/3. C. −3/(x − 1). D. −3/(−x + 1).",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN",
+     "bai_sgk": 23,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Phân thức đối của phân thức 3/(x + 1) là:",
+      "cac": [
+       "−3/(x + 1)",
+       "(x + 1)/3",
+       "−3/(x − 1)",
+       "−3/(−x + 1)"
+      ],
+      "dap": "A"
+     }
+    },
+    {
+     "ma": "TGK2-3.C2",
+     "nhan": "Câu 2",
+     "phan": "Phần trắc nghiệm (2 điểm)",
+     "nhom": "",
+     "de": "Biểu thức A = 2/(x + 3) + 3/(x + 1) xác định khi:\nA. x ≠ −3, x ≠ −1. B. x ≠ −3, x ≠ 1. C. x ≠ 3, x ≠ −1. D. x ≠ 3, x ≠ 1.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN",
+     "bai_sgk": 21,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Biểu thức A = 2/(x + 3) + 3/(x + 1) xác định khi:",
+      "cac": [
+       "x ≠ −3, x ≠ −1",
+       "x ≠ −3, x ≠ 1",
+       "x ≠ 3, x ≠ −1",
+       "x ≠ 3, x ≠ 1"
+      ],
+      "dap": "A"
+     }
+    },
+    {
+     "ma": "TGK2-3.C3",
+     "nhan": "Câu 3",
+     "phan": "Phần trắc nghiệm (2 điểm)",
+     "nhom": "",
+     "de": "Rút gọn phân thức (3xy + 3)/(9y + 3) ta được:\nA. x/3. B. (x + 1)/4. C. (xy + 1)/(3y + 1). D. (xy + 1)/(9y + 1).",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "C",
+     "loai_dap_an": "TN",
+     "bai_sgk": 22,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Rút gọn phân thức (3xy + 3)/(9y + 3) ta được:",
+      "cac": [
+       "x/3",
+       "(x + 1)/4",
+       "(xy + 1)/(3y + 1)",
+       "(xy + 1)/(9y + 1)"
+      ],
+      "dap": "C"
+     }
+    },
+    {
+     "ma": "TGK2-3.C4",
+     "nhan": "Câu 4",
+     "phan": "Phần trắc nghiệm (2 điểm)",
+     "nhom": "",
+     "de": "Giá trị của x để phân thức (5x − 2)/(x^2 + 2x + 1) = 0 là:\nA. x = 0. B. x = 2/5. C. x = 5/2. D. x = −1.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "bai_sgk": 21,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Giá trị của x để phân thức (5x − 2)/(x² + 2x + 1) có giá trị bằng 0 là:",
+      "cac": [
+       "x = 0",
+       "x = 2/5",
+       "x = 5/2",
+       "x = −1"
+      ],
+      "dap": "B"
+     },
+     "ghi_chu": "Phương án D (x = −1) làm mẫu bằng 0 nên phân thức không xác định."
+    },
+    {
+     "ma": "TGK2-3.C5",
+     "nhan": "Câu 5",
+     "phan": "Phần trắc nghiệm (2 điểm)",
+     "nhom": "",
+     "de": "Kết quả phép tính (−20x/(3y^2)) : (−4x^3/(5y)) là\nA. 25/(3x^2y). B. 25y/(3x^2). C. 16x^3/(3y^3). D. 16/(3x^2y).",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN",
+     "bai_sgk": 24,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Kết quả phép tính (−20x/(3y²)) : (−4x³/(5y)) là",
+      "cac": [
+       "25/(3x²y)",
+       "25y/(3x²)",
+       "16x³/(3y³)",
+       "16/(3x²y)"
+      ],
+      "dap": "A"
+     }
+    },
+    {
+     "ma": "TGK2-3.C6",
+     "nhan": "Câu 6",
+     "phan": "Phần trắc nghiệm (2 điểm)",
+     "nhom": "",
+     "de": "Cho hình vẽ sau, biết MN // PQ, số đo cạnh OP là:\nA. x = 3,3. B. x = 3,4. C. x = 3,5. D. x = 3,6.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "bai_sgk": 33,
+     "hinh": [
+      "dethitoan8/TGK2-3.C6.webp"
+     ],
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Cho hình vẽ dưới đây, biết MN // PQ. Độ dài x của đoạn thẳng OP là:",
+      "cac": [
+       "x = 3,3",
+       "x = 3,4",
+       "x = 3,5",
+       "x = 3,6"
+      ],
+      "dap": "B"
+     },
+     "ghi_chu": "Đề in 'số đo cạnh OP'; trên máy viết 'Độ dài x của đoạn thẳng OP'."
+    },
+    {
+     "ma": "TGK2-3.C7",
+     "nhan": "Câu 7",
+     "phan": "Phần trắc nghiệm (2 điểm)",
+     "nhom": "",
+     "de": "Cho tam giác ABC vuông tại A, tính cạnh BC nếu biết AB/3 = AC/4 và AB + AC = 14cm\nA. 5cm. B. 6cm. C. 8cm. D. 10cm.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "D",
+     "loai_dap_an": "TN",
+     "bai_sgk": 35,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Cho tam giác ABC vuông tại A, biết AB/3 = AC/4 và AB + AC = 14 cm. Độ dài cạnh BC là:",
+      "cac": [
+       "5 cm",
+       "6 cm",
+       "8 cm",
+       "10 cm"
+      ],
+      "dap": "D"
+     }
+    },
+    {
+     "ma": "TGK2-3.C8",
+     "nhan": "Câu 8",
+     "phan": "Phần trắc nghiệm (2 điểm)",
+     "nhom": "",
+     "de": "Bóng của một cột điện trên mặt đất dài 6m. Cùng lúc đó, một cột đèn giao thông cao 3m có bóng dài 2m. Tính chiều cao của cột điện.\nA. BC = 4m. B. BC = 6m. C. BC = 9m. D. BC = 12m.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "C",
+     "loai_dap_an": "TN",
+     "bai_sgk": 34,
+     "hinh": [
+      "dethitoan8/TGK2-3.C8.webp"
+     ],
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Bóng của một cột điện trên mặt đất dài 6 m. Cùng lúc đó, một cột đèn giao thông cao 3 m có bóng dài 2 m. Tính chiều cao BC của cột điện (hình vẽ dưới đây).",
+      "cac": [
+       "BC = 4 m",
+       "BC = 6 m",
+       "BC = 9 m",
+       "BC = 12 m"
+      ],
+      "dap": "C"
+     }
+    },
+    {
+     "ma": "TGK2-3.B1a",
+     "nhan": "Bài 1a",
+     "phan": "Phần tự luận (8 điểm)",
+     "nhom": "Bài 1. (2 điểm) Cho biểu thức M = (1/(x − 2) − 1/(x + 2)) : (2/(x + 2)).",
+     "de": "Bài 1. (2 điểm) Cho biểu thức M = (1/(x − 2) − 1/(x + 2)) : 2/(x + 2).\na) Tìm điều kiện xác định của M.",
+     "dang": "CAU_NHO",
+     "dap_an": "x ≠ 2 và x ≠ −2 (hai mẫu x − 2, x + 2 khác 0; phân thức chia 2/(x + 2) luôn khác 0)",
+     "loai_dap_an": "DAP_SO",
+     "bai_sgk": 24,
+     "ghep": {
+      "kieu": "O",
+      "sao": 1,
+      "hoi": "Bài 1. (2 điểm) Cho biểu thức M = (1/(x − 2) − 1/(x + 2)) : (2/(x + 2)).\na) Tìm điều kiện xác định của M.",
+      "dong": [
+       {
+        "chu": "Điều kiện xác định của M: {0}",
+        "o": [
+         {
+          "dung": [
+           "x ≠ 2 và x ≠ −2"
+          ],
+          "sai": [
+           "x ≠ 2",
+           "x ≠ −2",
+           "x ≠ 0, x ≠ 2 và x ≠ −2"
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     "ghi_chu": "Trên máy đặt phân thức chia trong ngoặc, M = (1/(x − 2) − 1/(x + 2)) : (2/(x + 2)), vì viết liền một dòng thì dấu : chỉ chia cho tử 2."
+    },
+    {
+     "ma": "TGK2-3.B1b",
+     "nhan": "Bài 1b",
+     "phan": "Phần tự luận (8 điểm)",
+     "nhom": "Bài 1. (2 điểm) Cho biểu thức M = (1/(x − 2) − 1/(x + 2)) : (2/(x + 2)).",
+     "de": "Bài 1. (2 điểm) Cho biểu thức M = (1/(x − 2) − 1/(x + 2)) : 2/(x + 2).\nb) Rút gọn M.",
+     "dang": "CAU_NHO",
+     "dap_an": "M = 2/(x − 2) (với x ≠ ±2)",
+     "loai_dap_an": "DAP_SO",
+     "bai_sgk": 24,
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "hoi": "Bài 1. (2 điểm) Cho biểu thức M = (1/(x − 2) − 1/(x + 2)) : (2/(x + 2)).\nb) Rút gọn M.",
+      "dap": [
+       "2/(x−2)"
+      ],
+      "phim": [
+       "x"
+      ],
+      "nhieu": [
+       "y",
+       "²",
+       "³"
+      ],
+      "loi_giai": [
+       "M = (x + 2 − (x − 2))/((x − 2)(x + 2)) : (2/(x + 2))",
+       "= 4/((x − 2)(x + 2)) · (x + 2)/2",
+       "= 2/(x − 2)"
+      ]
+     }
+    },
+    {
+     "ma": "TGK2-3.B1c",
+     "nhan": "Bài 1c",
+     "phan": "Phần tự luận (8 điểm)",
+     "nhom": "Bài 1. (2 điểm) Cho biểu thức M = (1/(x − 2) − 1/(x + 2)) : (2/(x + 2)).",
+     "de": "Bài 1. (2 điểm) Cho biểu thức M = (1/(x − 2) − 1/(x + 2)) : 2/(x + 2).\nc) Tìm x để M = 1.",
+     "dang": "CAU_NHO",
+     "dap_an": "x = 4",
+     "loai_dap_an": "DAP_SO",
+     "bai_sgk": 24,
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "hoi": "Bài 1. (2 điểm) Cho biểu thức M = (1/(x − 2) − 1/(x + 2)) : (2/(x + 2)).\nc) Tìm x để M = 1.\n(Nếu có nhiều giá trị của x thì viết theo thứ tự từ nhỏ đến lớn, cách nhau bằng dấu ;)",
+      "dap": [
+       "x=4",
+       "4"
+      ],
+      "phim": [
+       "x"
+      ],
+      "nhieu": [
+       ";",
+       "y",
+       "²"
+      ],
+      "loi_giai": [
+       "M = 1 ⇔ 2/(x − 2) = 1",
+       "⇔ x − 2 = 2",
+       "⇔ x = 4 (thoả mãn điều kiện xác định)"
+      ]
+     }
+    },
+    {
+     "ma": "TGK2-3.B2a",
+     "nhan": "Bài 2a",
+     "phan": "Phần tự luận (8 điểm)",
+     "nhom": "Bài 2. (1,5 điểm) Tùng đạp xe từ nhà tới câu lạc bộ bóng đá, quãng đường dài 5 km. Lượt đi Tùng đạp xe với tốc độ x (km/h). Lượt về thuận chiều gió nên vận tốc nhanh hơn lượt đi 3 km/h.",
+     "de": "Bài 2. (1,5 điểm) Tùng đạp xe từ nhà tới câu lạc bộ bóng đá dài 5km với tốc độ x (km/h). Lượt về thuận chiều gió nên vận tốc nhanh hơn lượt đi 3km/h.\na) Viết biểu thức biểu thị tổng thời gian cả hai lượt đi và về. (kí hiệu là T)",
+     "dang": "CAU_NHO",
+     "dap_an": "T = 5/x + 5/(x + 3) = (10x + 15)/(x(x + 3)) (giờ)",
+     "loai_dap_an": "DAP_SO",
+     "bai_sgk": 23,
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "hoi": "Bài 2. (1,5 điểm) Tùng đạp xe từ nhà tới câu lạc bộ bóng đá, quãng đường dài 5 km. Lượt đi Tùng đạp xe với tốc độ x (km/h). Lượt về thuận chiều gió nên vận tốc nhanh hơn lượt đi 3 km/h.\na) Viết biểu thức biểu thị tổng thời gian T (giờ) của cả hai lượt đi và về.",
+      "dap": [
+       "5/x+5/(x+3)",
+       "(10x+15)/(x(x+3))",
+       "(10x+15)/(x²+3x)",
+       "5(2x+3)/(x(x+3))",
+       "5(2x+3)/(x²+3x)"
+      ],
+      "phim": [
+       "x",
+       "²"
+      ],
+      "nhieu": [
+       "y",
+       "³",
+       "⁴"
+      ],
+      "loi_giai": [
+       "Thời gian lượt đi là 5/x (giờ), thời gian lượt về là 5/(x + 3) (giờ)",
+       "T = 5/x + 5/(x + 3) = (10x + 15)/(x(x + 3))"
+      ]
+     },
+     "ghi_chu": "Đề in 'Tùng đạp xe từ nhà tới câu lạc bộ bóng đá dài 5km với tốc độ x (km/h)'; trên máy tách cho rõ 5 km là quãng đường, x là tốc độ lượt đi."
+    },
+    {
+     "ma": "TGK2-3.B2b",
+     "nhan": "Bài 2b",
+     "phan": "Phần tự luận (8 điểm)",
+     "nhom": "Bài 2. (1,5 điểm) Tùng đạp xe từ nhà tới câu lạc bộ bóng đá, quãng đường dài 5 km. Lượt đi Tùng đạp xe với tốc độ x (km/h). Lượt về thuận chiều gió nên vận tốc nhanh hơn lượt đi 3 km/h.",
+     "de": "Bài 2. (1,5 điểm) Tùng đạp xe từ nhà tới câu lạc bộ bóng đá dài 5km với tốc độ x (km/h). Lượt về thuận chiều gió nên vận tốc nhanh hơn lượt đi 3km/h.\nb) Viết biểu thức biểu thị hiệu thời gian lượt đi đối với lượt về. (kí hiệu là t)",
+     "dang": "CAU_NHO",
+     "dap_an": "t = 5/x − 5/(x + 3) = 15/(x(x + 3)) (giờ)",
+     "loai_dap_an": "DAP_SO",
+     "bai_sgk": 23,
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "hoi": "Bài 2. (1,5 điểm) Tùng đạp xe từ nhà tới câu lạc bộ bóng đá, quãng đường dài 5 km. Lượt đi Tùng đạp xe với tốc độ x (km/h). Lượt về thuận chiều gió nên vận tốc nhanh hơn lượt đi 3 km/h.\nb) Viết biểu thức biểu thị hiệu t (giờ) giữa thời gian lượt đi và thời gian lượt về.",
+      "dap": [
+       "5/x−5/(x+3)",
+       "15/(x(x+3))",
+       "15/(x²+3x)"
+      ],
+      "phim": [
+       "x",
+       "²"
+      ],
+      "nhieu": [
+       "y",
+       "³",
+       "⁴"
+      ],
+      "loi_giai": [
+       "t = 5/x − 5/(x + 3)",
+       "= (5(x + 3) − 5x)/(x(x + 3)) = 15/(x(x + 3))"
+      ]
+     }
+    },
+    {
+     "ma": "TGK2-3.B2c",
+     "nhan": "Bài 2c",
+     "phan": "Phần tự luận (8 điểm)",
+     "nhom": "Bài 2. (1,5 điểm) Tùng đạp xe từ nhà tới câu lạc bộ bóng đá, quãng đường dài 5 km. Lượt đi Tùng đạp xe với tốc độ x (km/h). Lượt về thuận chiều gió nên vận tốc nhanh hơn lượt đi 3 km/h.",
+     "de": "Bài 2. (1,5 điểm) Tùng đạp xe từ nhà tới câu lạc bộ bóng đá dài 5km với tốc độ x (km/h). Lượt về thuận chiều gió nên vận tốc nhanh hơn lượt đi 3km/h.\nc) Tính T và t với x = 12.",
+     "dang": "CAU_NHO",
+     "dap_an": "T = 3/4 giờ, t = 1/12 giờ",
+     "loai_dap_an": "DAP_SO",
+     "bai_sgk": 23,
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "hoi": "Bài 2. (1,5 điểm) Tùng đạp xe từ nhà tới câu lạc bộ bóng đá, quãng đường dài 5 km. Lượt đi Tùng đạp xe với tốc độ x (km/h). Lượt về thuận chiều gió nên vận tốc nhanh hơn lượt đi 3 km/h.\nc) Tính T và t với x = 12.\n(Gõ T rồi t, tính bằng giờ, cách nhau bằng dấu ;)",
+      "dap": [
+       "3/4;1/12",
+       "0,75;1/12"
+      ],
+      "phim": [
+       ";"
+      ],
+      "nhieu": [
+       "√",
+       "²"
+      ],
+      "loi_giai": [
+       "T = 5/12 + 5/(12 + 3) = 5/12 + 1/3 = 3/4 (giờ)",
+       "t = 5/12 − 5/(12 + 3) = 5/12 − 1/3 = 1/12 (giờ)"
+      ]
+     }
+    },
+    {
+     "ma": "TGK2-3.B3",
+     "nhan": "Bài 3",
+     "phan": "Phần tự luận (8 điểm)",
+     "nhom": "Bài 3. (1 điểm) Một cột đèn cao 10 m chiếu sáng một cây xanh như hình dưới. Cây cách cột đèn 2 m và có bóng trải dài dưới mặt đất là 4,8 m.",
+     "de": "Bài 3. (1 điểm) Một cột đèn cao 10m chiếu sáng một cây xanh như hình dưới. Cây cách cột đèn 2m và có bóng trải dài dưới mặt đất là 4,8m.\nTìm chiều cao của cây xanh đó (làm tròn đến mét)",
+     "dang": "CAU_NHO",
+     "dap_an": "Khoảng 7 m (AB = 10 · 4,8 : 6,8 ≈ 7,06 m)",
+     "loai_dap_an": "DAP_SO",
+     "bai_sgk": 33,
+     "hinh": [
+      "dethitoan8/TGK2-3.B3.webp"
+     ],
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "hoi": "Bài 3. (1 điểm) Một cột đèn cao 10 m chiếu sáng một cây xanh như hình dưới. Cây cách cột đèn 2 m và có bóng trải dài dưới mặt đất là 4,8 m.\nTìm chiều cao của cây xanh đó (làm tròn đến mét).",
+      "dap": [
+       "7",
+       "7m"
+      ],
+      "phim": [
+       "m"
+      ],
+      "nhieu": [
+       "cm",
+       "dm"
+      ],
+      "loi_giai": [
+       "AB ⊥ CM và CD ⊥ CM nên AB // CD",
+       "Do đó ΔMAB ᔕ ΔMCD, suy ra AB/CD = MA/MC",
+       "AB/10 = 4,8/(4,8 + 2) = 4,8/6,8",
+       "AB = 10 · 4,8 : 6,8 ≈ 7,06, làm tròn được AB ≈ 7 (m)"
+      ]
+     }
+    },
+    {
+     "ma": "TGK2-3.B4a",
+     "nhan": "Bài 4a",
+     "phan": "Phần tự luận (8 điểm)",
+     "nhom": "Bài 4. (3 điểm) Cho tam giác ABC vuông tại A (AB > AC). Gọi I là trung điểm của AB. Kẻ IN vuông góc với BC tại N (N thuộc BC).",
+     "de": "Bài 4. (3 điểm) Cho tam giác ABC vuông tại A (AB > AC). Gọi I là trung điểm của AB. Kẻ IN vuông góc với BC tại N (N thuộc BC).\na) Chứng minh ΔACB ᔕ ΔNIB. Từ đó suy ra BA.BI = BC.BN.",
+     "dang": "CAU_NHO",
+     "dap_an": "ΔACB và ΔNIB có góc A = góc N = 90°, góc B chung nên ΔACB ᔕ ΔNIB (g.g). Suy ra BA/BN = BC/BI, tức là BA · BI = BC · BN.",
+     "loai_dap_an": "LOI_GIAI",
+     "bai_sgk": 34,
+     "hinh_goi_y": [
+      "dethitoan8/TGK2-3.B4.goi-y.webp"
+     ],
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 4,
+      "hoi": "Bài 4. (3 điểm) Cho tam giác ABC vuông tại A (AB > AC). Gọi I là trung điểm của AB. Kẻ IN vuông góc với BC tại N (N thuộc BC).\na) Chứng minh ΔACB ᔕ ΔNIB. Từ đó suy ra BA · BI = BC · BN.",
+      "buoc": [
+       "Xét ΔACB và ΔNIB có: góc CAB = góc INB = 90°, góc B chung",
+       "Nên ΔACB ᔕ ΔNIB (g.g)",
+       "Suy ra BA/BN = BC/BI",
+       "Do đó BA · BI = BC · BN"
+      ],
+      "nhieu": [
+       "Nên ΔACB ᔕ ΔINB (g.g)",
+       "Suy ra BA/BI = BC/BN"
+      ]
+     }
+    },
+    {
+     "ma": "TGK2-3.B4b",
+     "nhan": "Bài 4b",
+     "phan": "Phần tự luận (8 điểm)",
+     "nhom": "Bài 4. (3 điểm) Cho tam giác ABC vuông tại A (AB > AC). Gọi I là trung điểm của AB. Kẻ IN vuông góc với BC tại N (N thuộc BC).",
+     "de": "Bài 4. (3 điểm) Cho tam giác ABC vuông tại A (AB > AC). Gọi I là trung điểm của AB. Kẻ IN vuông góc với BC tại N (N thuộc BC).\nb) Giả sử AC = 6cm, BC = 10cm. Tính BN.",
+     "dang": "CAU_NHO",
+     "dap_an": "BN = 3,2 cm",
+     "loai_dap_an": "DAP_SO",
+     "bai_sgk": 35,
+     "hinh_goi_y": [
+      "dethitoan8/TGK2-3.B4.goi-y.webp"
+     ],
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "hoi": "Bài 4. (3 điểm) Cho tam giác ABC vuông tại A (AB > AC). Gọi I là trung điểm của AB. Kẻ IN vuông góc với BC tại N (N thuộc BC).\nb) Giả sử AC = 6 cm, BC = 10 cm. Tính BN.",
+      "dap": [
+       "3,2",
+       "3,2cm",
+       "16/5"
+      ],
+      "phim": [
+       "cm"
+      ],
+      "nhieu": [
+       "m",
+       "√"
+      ],
+      "loi_giai": [
+       "AB² = BC² − AC² = 10² − 6² = 64; AB = 8 (cm)",
+       "I là trung điểm của AB nên BI = AB/2 = 4 (cm)",
+       "BN = BA · BI : BC = 8 · 4 : 10 = 3,2 (cm)"
+      ]
+     }
+    },
+    {
+     "ma": "TGK2-3.B4c",
+     "nhan": "Bài 4c",
+     "phan": "Phần tự luận (8 điểm)",
+     "nhom": "Bài 4. (3 điểm) Cho tam giác ABC vuông tại A (AB > AC). Gọi I là trung điểm của AB. Kẻ IN vuông góc với BC tại N (N thuộc BC).",
+     "de": "Bài 4. (3 điểm) Cho tam giác ABC vuông tại A (AB > AC). Gọi I là trung điểm của AB. Kẻ IN vuông góc với BC tại N (N thuộc BC).\nc) Chứng minh góc IAN = góc ICN.",
+     "dang": "CAU_NHO",
+     "dap_an": "Từ BA · BI = BC · BN suy ra BA/BC = BN/BI. ΔABN và ΔCBI có góc B chung, BA/BC = BN/BI nên ΔABN ᔕ ΔCBI (c.g.c), suy ra góc BAN = góc BCI, tức là góc IAN = góc ICN.",
+     "loai_dap_an": "LOI_GIAI",
+     "bai_sgk": 34,
+     "hinh_goi_y": [
+      "dethitoan8/TGK2-3.B4.goi-y.webp"
+     ],
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 4,
+      "hoi": "Bài 4. (3 điểm) Cho tam giác ABC vuông tại A (AB > AC). Gọi I là trung điểm của AB. Kẻ IN vuông góc với BC tại N (N thuộc BC).\nc) Chứng minh góc IAN = góc ICN.",
+      "buoc": [
+       "Từ câu a: BA · BI = BC · BN nên BA/BC = BN/BI",
+       "Xét ΔABN và ΔCBI có: BA/BC = BN/BI, góc ABN = góc CBI (góc chung)",
+       "Nên ΔABN ᔕ ΔCBI (c.g.c)",
+       "Suy ra góc BAN = góc BCI, tức là góc IAN = góc ICN"
+      ],
+      "nhieu": [
+       "Từ câu a: BA · BI = BC · BN nên BA/BC = BI/BN",
+       "Nên ΔABN ᔕ ΔBCI (c.g.c)"
+      ]
+     }
+    },
+    {
+     "ma": "TGK2-3.B4d",
+     "nhan": "Bài 4d",
+     "phan": "Phần tự luận (8 điểm)",
+     "nhom": "Bài 4. (3 điểm) Cho tam giác ABC vuông tại A (AB > AC). Gọi I là trung điểm của AB. Kẻ IN vuông góc với BC tại N (N thuộc BC).",
+     "de": "Bài 4. (3 điểm) Cho tam giác ABC vuông tại A (AB > AC). Gọi I là trung điểm của AB. Kẻ IN vuông góc với BC tại N (N thuộc BC).\nd) Chứng minh AC^2 = NC^2 − NB^2.",
+     "dang": "CAU_NHO",
+     "dap_an": "Theo định lí Pythagore: NC² = IC² − IN², NB² = IB² − IN² nên NC² − NB² = IC² − IB² = IC² − IA² (IA = IB) = AC² (tam giác IAC vuông tại A).",
+     "loai_dap_an": "LOI_GIAI",
+     "bai_sgk": 35,
+     "hinh_goi_y": [
+      "dethitoan8/TGK2-3.B4.goi-y.webp"
+     ],
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 6,
+      "hoi": "Bài 4. (3 điểm) Cho tam giác ABC vuông tại A (AB > AC). Gọi I là trung điểm của AB. Kẻ IN vuông góc với BC tại N (N thuộc BC).\nd) Chứng minh AC² = NC² − NB².",
+      "buoc": [
+       "Tam giác INC vuông tại N nên NC² = IC² − IN² (định lí Pythagore)",
+       "Tam giác INB vuông tại N nên NB² = IB² − IN²",
+       "Suy ra NC² − NB² = IC² − IB²",
+       "Mà IB = IA (I là trung điểm của AB) nên NC² − NB² = IC² − IA²",
+       "Tam giác IAC vuông tại A nên IC² − IA² = AC² (định lí Pythagore)",
+       "Vậy AC² = NC² − NB²"
+      ],
+      "nhieu": [
+       "Tam giác INB vuông tại N nên NB² = IB² + IN²",
+       "Tam giác IAC vuông tại A nên IC² + IA² = AC² (định lí Pythagore)"
+      ],
+      "thu_tu_khac": [
+       [
+        0,
+        1,
+        2,
+        4,
+        3,
+        5
+       ],
+       [
+        0,
+        1,
+        4,
+        2,
+        3,
+        5
+       ],
+       [
+        0,
+        4,
+        1,
+        2,
+        3,
+        5
+       ],
+       [
+        1,
+        0,
+        2,
+        3,
+        4,
+        5
+       ],
+       [
+        1,
+        0,
+        2,
+        4,
+        3,
+        5
+       ],
+       [
+        1,
+        0,
+        4,
+        2,
+        3,
+        5
+       ],
+       [
+        1,
+        4,
+        0,
+        2,
+        3,
+        5
+       ],
+       [
+        4,
+        0,
+        1,
+        2,
+        3,
+        5
+       ],
+       [
+        4,
+        1,
+        0,
+        2,
+        3,
+        5
+       ]
+      ]
+     },
+     "ghi_chu": "Lời giải in kẻ thêm đường cao AH, chứng minh AC² = CH · CB và N là trung điểm của BH. Trên máy dùng cách ngắn hơn, chỉ cần định lí Pythagore trong ba tam giác vuông INC, INB, IAC, không kẻ thêm đường nào; hình gợi ý vì vậy bỏ AH."
+    },
+    {
+     "ma": "TGK2-3.B5",
+     "nhan": "Bài 5",
+     "phan": "Phần tự luận (8 điểm)",
+     "nhom": "Bài 5. (0,5 điểm) Chứng minh rằng nếu a, b, c khác nhau đôi một thì:",
+     "de": "Bài 5. (0,5 điểm) Chứng minh rằng nếu a, b, c khác nhau đôi một thì:\n(b − c)/((a − b)(a − c)) + (c − a)/((b − c)(b − a)) + (a − b)/((c − a)(c − b)) = 2/(a − b) + 2/(b − c) + 2/(c − a).",
+     "dang": "CAU_NHO",
+     "dap_an": "Tách (b − c)/((a − b)(a − c)) = 1/(a − b) − 1/(a − c), tương tự với hai phân thức còn lại, rồi cộng lại: vế trái = 2/(a − b) + 2/(b − c) + 2/(c − a).",
+     "loai_dap_an": "LOI_GIAI",
+     "bai_sgk": 23,
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 6,
+      "hoi": "Bài 5. (0,5 điểm) Chứng minh rằng nếu a, b, c khác nhau đôi một thì:\n(b − c)/((a − b)(a − c)) + (c − a)/((b − c)(b − a)) + (a − b)/((c − a)(c − b)) = 2/(a − b) + 2/(b − c) + 2/(c − a).",
+      "buoc": [
+       "(b − c)/((a − b)(a − c)) = ((a − c) − (a − b))/((a − b)(a − c)) = 1/(a − b) − 1/(a − c)",
+       "(c − a)/((b − c)(b − a)) = ((b − a) − (b − c))/((b − c)(b − a)) = 1/(b − c) − 1/(b − a)",
+       "(a − b)/((c − a)(c − b)) = ((c − b) − (c − a))/((c − a)(c − b)) = 1/(c − a) − 1/(c − b)",
+       "Cộng ba đẳng thức trên, vế trái bằng 1/(a − b) − 1/(a − c) + 1/(b − c) − 1/(b − a) + 1/(c − a) − 1/(c − b)",
+       "= 1/(a − b) + 1/(c − a) + 1/(b − c) + 1/(a − b) + 1/(c − a) + 1/(b − c)",
+       "= 2/(a − b) + 2/(b − c) + 2/(c − a)"
+      ],
+      "nhieu": [
+       "(b − c)/((a − b)(a − c)) = ((a − c) − (a − b))/((a − b)(a − c)) = 1/(a − c) − 1/(a − b)",
+       "= 2/(a − b) + 2/(b − c) − 2/(c − a)"
+      ],
+      "thu_tu_khac": [
+       [
+        0,
+        2,
+        1,
+        3,
+        4,
+        5
+       ],
+       [
+        1,
+        0,
+        2,
+        3,
+        4,
+        5
+       ],
+       [
+        1,
+        2,
+        0,
+        3,
+        4,
+        5
+       ],
+       [
+        2,
+        0,
+        1,
+        3,
+        4,
+        5
+       ],
+       [
+        2,
+        1,
+        0,
+        3,
+        4,
+        5
+       ]
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "chuong": "Giữa học kì 2",
+   "bai": "Đề giữa kì 2 số 4",
+   "de_thi": {
+    "ma": "TGK2-4",
+    "nguon_goc": "loigiaihay.com, đăng 22/01/2024"
+   },
+   "cac_cau": [
+    {
+     "ma": "TGK2-4.C1",
+     "nhan": "Câu 1",
+     "phan": "Phần trắc nghiệm (2 điểm)",
+     "nhom": "",
+     "de": "Phân thức bằng với phân thức x/(x − 1) là:\nA. (x + y)/(x − 1 + y). B. (x + 1)/x. C. 2x/(2x − 2). D. x^2/(x − 1)^2.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "C",
+     "loai_dap_an": "TN",
+     "bai_sgk": 22,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Phân thức bằng với phân thức x/(x − 1) là:",
+      "cac": [
+       "(x + y)/(x − 1 + y)",
+       "(x + 1)/x",
+       "2x/(2x − 2)",
+       "x²/(x − 1)²"
+      ],
+      "dap": "C"
+     }
+    },
+    {
+     "ma": "TGK2-4.C2",
+     "nhan": "Câu 2",
+     "phan": "Phần trắc nghiệm (2 điểm)",
+     "nhom": "",
+     "de": "Phân thức nghịch đảo của phân thức (x − y)/(x + y) là:\nA. x/(x + y). B. y/(x + y). C. (y − x)/(x + y). D. (x + y)/(x − y).",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "D",
+     "loai_dap_an": "TN",
+     "bai_sgk": 24,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Phân thức nghịch đảo của phân thức (x − y)/(x + y) là:",
+      "cac": [
+       "x/(x + y)",
+       "y/(x + y)",
+       "(y − x)/(x + y)",
+       "(x + y)/(x − y)"
+      ],
+      "dap": "D"
+     }
+    },
+    {
+     "ma": "TGK2-4.C3",
+     "nhan": "Câu 3",
+     "phan": "Phần trắc nghiệm (2 điểm)",
+     "nhom": "",
+     "de": "Giá trị của phân thức (x^2 + 4x + 4)/(x^2 + 2x) khi x = −2 là:\nA. 0. B. −1. C. 4. D. Không xác định.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "D",
+     "loai_dap_an": "TN",
+     "bai_sgk": 21,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Giá trị của phân thức (x² + 4x + 4)/(x² + 2x) khi x = −2 là:",
+      "cac": [
+       "0",
+       "−1",
+       "4",
+       "Không xác định"
+      ],
+      "dap": "D"
+     }
+    },
+    {
+     "ma": "TGK2-4.C4",
+     "nhan": "Câu 4",
+     "phan": "Phần trắc nghiệm (2 điểm)",
+     "nhom": "",
+     "de": "Kết quả phép tính (x + 1)/(x − 1) − (x − 4)/(x − 1) là\nA. 5/(x − 1). B. 5(x − 1)/(x − 1)^2. C. −3/(x − 1). D. (2x − 3)/(x − 1).",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN",
+     "bai_sgk": 23,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Kết quả phép tính (x + 1)/(x − 1) − (x − 4)/(x − 1) là",
+      "cac": [
+       "5/(x − 1)",
+       "5/(x − 1)²",
+       "−3/(x − 1)",
+       "(2x − 3)/(x − 1)"
+      ],
+      "dap": "A"
+     },
+     "ghi_chu": "Phương án B in 5(x − 1)/(x − 1)², rút gọn được 5/(x − 1), nên cũng là kết quả đúng của phép tính (đề có hai đáp án đúng). Trên máy thay B bằng 5/(x − 1)² (lỗi nhân hai mẫu) cho chỉ còn A đúng."
+    },
+    {
+     "ma": "TGK2-4.C5",
+     "nhan": "Câu 5",
+     "phan": "Phần trắc nghiệm (2 điểm)",
+     "nhom": "",
+     "de": "Cho hình vẽ dưới đây, biết AB // DE. Giá trị của x là:\nA. 8. B. 10. C. 12. D. 14.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "D",
+     "loai_dap_an": "TN",
+     "bai_sgk": 33,
+     "hinh": [
+      "dethitoan8/TGK2-4.C5.webp"
+     ],
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Cho hình vẽ dưới đây, biết AB // DE. Giá trị của x là:",
+      "cac": [
+       "8",
+       "10",
+       "12",
+       "14"
+      ],
+      "dap": "D"
+     },
+     "ghi_chu": "Phương án C (12) là độ dài AC, quên trừ 2 khi tìm x."
+    },
+    {
+     "ma": "TGK2-4.C6",
+     "nhan": "Câu 6",
+     "phan": "Phần trắc nghiệm (2 điểm)",
+     "nhom": "",
+     "de": "Cho tam giác ABC vuông tại A. Gọi M là trung điểm của AB, N là trung điểm của BC. Biết AB = 3cm, BC = 5cm. Khi đó MN bằng:\nA. 1,5cm. B. 2cm. C. 2,5cm. D. 4cm.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "bai_sgk": 35,
+     "hinh_goi_y": [
+      "dethitoan8/TGK2-4.C6.goi-y.webp"
+     ],
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Cho tam giác ABC vuông tại A. Gọi M là trung điểm của AB, N là trung điểm của BC. Biết AB = 3 cm, BC = 5 cm. Khi đó MN bằng:",
+      "cac": [
+       "1,5 cm",
+       "2 cm",
+       "2,5 cm",
+       "4 cm"
+      ],
+      "dap": "B"
+     },
+     "ghi_chu": "Cần định lí Pythagore (AC = 4 cm) và đường trung bình (MN = AC/2)."
+    },
+    {
+     "ma": "TGK2-4.C7",
+     "nhan": "Câu 7",
+     "phan": "Phần trắc nghiệm (2 điểm)",
+     "nhom": "",
+     "de": "Một sân chơi có hình tam giác như hình dưới. Kích thước ba cạnh của sân lần lượt là 300m, 350m và 550m. Phía ngoài sân chơi có một con đường tạo thành một tam giác đồng dạng với sân chơi. Biết cạnh ngắn nhất của con đường là 450m. Tổng chiều dài của con đường đó là:\nA. 1200m. B. 1500m. C. 1800m. D. 2100m.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "C",
+     "loai_dap_an": "TN",
+     "bai_sgk": 33,
+     "hinh": [
+      "dethitoan8/TGK2-4.C7.webp"
+     ],
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Một sân chơi có hình tam giác như hình dưới đây. Kích thước ba cạnh của sân lần lượt là 300 m, 350 m và 550 m. Phía ngoài sân chơi có một con đường tạo thành một tam giác đồng dạng với sân chơi. Biết cạnh ngắn nhất của con đường là 450 m. Tổng chiều dài của con đường đó là:",
+      "cac": [
+       "1200 m",
+       "1500 m",
+       "1800 m",
+       "2100 m"
+      ],
+      "dap": "C"
+     },
+     "ghi_chu": "Phương án A (1200 m) là chu vi sân chơi."
+    },
+    {
+     "ma": "TGK2-4.C8",
+     "nhan": "Câu 8",
+     "phan": "Phần trắc nghiệm (2 điểm)",
+     "nhom": "",
+     "de": "Cho ΔABC ᔕ ΔMNP theo tỉ số đồng dạng 3. Gọi H, K lần lượt là trung điểm của AC, MP. Tỉ số BH/NK bằng\nA. 1/3. B. 1/9. C. 3. D. 9.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "C",
+     "loai_dap_an": "TN",
+     "bai_sgk": 34,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Cho ΔABC ᔕ ΔMNP theo tỉ số đồng dạng 3. Gọi H, K lần lượt là trung điểm của AC, MP. Tỉ số BH/NK bằng",
+      "cac": [
+       "1/3",
+       "1/9",
+       "3",
+       "9"
+      ],
+      "dap": "C"
+     }
+    },
+    {
+     "ma": "TGK2-4.B1a",
+     "nhan": "Bài 1a",
+     "phan": "Phần tự luận (8 điểm)",
+     "nhom": "Bài 1. (1 điểm) Thực hiện phép tính:",
+     "de": "Bài 1. (1 điểm) Thực hiện phép tính:\na) 1/(x + 1) + 2/(1 − x) + (5x − 1)/(x^2 − 1)",
+     "dang": "CAU_NHO",
+     "dap_an": "4/(x + 1) (với x ≠ ±1)",
+     "loai_dap_an": "DAP_SO",
+     "bai_sgk": 23,
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "hoi": "Bài 1. (1 điểm) Thực hiện phép tính:\na) 1/(x + 1) + 2/(1 − x) + (5x − 1)/(x² − 1)",
+      "dap": [
+       "4/(x+1)"
+      ],
+      "phim": [
+       "x"
+      ],
+      "nhieu": [
+       "y",
+       "²",
+       "³"
+      ],
+      "loi_giai": [
+       "1/(x + 1) + 2/(1 − x) + (5x − 1)/(x² − 1) = 1/(x + 1) − 2/(x − 1) + (5x − 1)/((x − 1)(x + 1))",
+       "= (x − 1 − 2(x + 1) + 5x − 1)/((x − 1)(x + 1))",
+       "= (4x − 4)/((x − 1)(x + 1))",
+       "= 4/(x + 1)"
+      ]
+     }
+    },
+    {
+     "ma": "TGK2-4.B1b",
+     "nhan": "Bài 1b",
+     "phan": "Phần tự luận (8 điểm)",
+     "nhom": "Bài 1. (1 điểm) Thực hiện phép tính:",
+     "de": "Bài 1. (1 điểm) Thực hiện phép tính:\nb) (2x + 6)/(x^3 − 8) : (x + 3)^3/(2x − 4)",
+     "dang": "CAU_NHO",
+     "dap_an": "4/((x² + 2x + 4)(x + 3)²) (với x ≠ 2, x ≠ −3)",
+     "loai_dap_an": "DAP_SO",
+     "bai_sgk": 24,
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "hoi": "Bài 1. (1 điểm) Thực hiện phép tính:\nb) (2x + 6)/(x³ − 8) : ((x + 3)³/(2x − 4))",
+      "dap": [
+       "4/((x²+2x+4)(x+3)²)"
+      ],
+      "phim": [
+       "x",
+       "²"
+      ],
+      "nhieu": [
+       "³",
+       "y",
+       "⁴"
+      ],
+      "loi_giai": [
+       "(2x + 6)/(x³ − 8) : ((x + 3)³/(2x − 4)) = 2(x + 3)/((x − 2)(x² + 2x + 4)) · 2(x − 2)/(x + 3)³",
+       "= 4(x + 3)(x − 2)/((x − 2)(x² + 2x + 4)(x + 3)³)",
+       "= 4/((x² + 2x + 4)(x + 3)²)"
+      ]
+     },
+     "ghi_chu": "Trên máy đặt phân thức chia trong ngoặc: (2x + 6)/(x³ − 8) : ((x + 3)³/(2x − 4)), vì viết liền một dòng thì dấu : chỉ chia cho (x + 3)³."
+    },
+    {
+     "ma": "TGK2-4.B2a",
+     "nhan": "Bài 2a",
+     "phan": "Phần tự luận (8 điểm)",
+     "nhom": "Bài 2. (2,5 điểm) Cho hai biểu thức P = (x² − 2)/(x² + 2x) + 1/(x + 2), Q = (x + 1)/x (với x ≠ 0; x ≠ −2; x ≠ −1).",
+     "de": "Bài 2. (2,5 điểm) Cho hai biểu thức P = (x^2 − 2)/(x^2 + 2x) + 1/(x + 2), Q = (x + 1)/x (với x ≠ 0; x ≠ −2; x ≠ −1).\na) Tính giá trị của Q khi x = −3.",
+     "dang": "CAU_NHO",
+     "dap_an": "Q = 2/3",
+     "loai_dap_an": "DAP_SO",
+     "bai_sgk": 21,
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "hoi": "Bài 2. (2,5 điểm) Cho hai biểu thức P = (x² − 2)/(x² + 2x) + 1/(x + 2), Q = (x + 1)/x (với x ≠ 0; x ≠ −2; x ≠ −1).\na) Tính giá trị của Q khi x = −3.",
+      "dap": [
+       "2/3"
+      ],
+      "phim": [],
+      "nhieu": [],
+      "loi_giai": [
+       "x = −3 thoả mãn điều kiện",
+       "Q = (−3 + 1)/(−3) = (−2)/(−3) = 2/3"
+      ]
+     },
+     "ghi_chu": "Lời giải in tính sai: Q = (−3 + 1)/(−3) = 4/3 (đúng là (−2)/(−3) = 2/3). Đáp án trên máy là 2/3."
+    },
+    {
+     "ma": "TGK2-4.B2b",
+     "nhan": "Bài 2b",
+     "phan": "Phần tự luận (8 điểm)",
+     "nhom": "Bài 2. (2,5 điểm) Cho hai biểu thức P = (x² − 2)/(x² + 2x) + 1/(x + 2), Q = (x + 1)/x (với x ≠ 0; x ≠ −2; x ≠ −1).",
+     "de": "Bài 2. (2,5 điểm) Cho hai biểu thức P = (x^2 − 2)/(x^2 + 2x) + 1/(x + 2), Q = (x + 1)/x (với x ≠ 0; x ≠ −2; x ≠ −1).\nb) Rút gọn P.",
+     "dang": "CAU_NHO",
+     "dap_an": "P = (x − 1)/x",
+     "loai_dap_an": "DAP_SO",
+     "bai_sgk": 23,
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "hoi": "Bài 2. (2,5 điểm) Cho hai biểu thức P = (x² − 2)/(x² + 2x) + 1/(x + 2), Q = (x + 1)/x (với x ≠ 0; x ≠ −2; x ≠ −1).\nb) Rút gọn P.",
+      "dap": [
+       "(x−1)/x"
+      ],
+      "phim": [
+       "x"
+      ],
+      "nhieu": [
+       "y",
+       "²",
+       "³"
+      ],
+      "loi_giai": [
+       "P = (x² − 2)/(x(x + 2)) + x/(x(x + 2))",
+       "= (x² + x − 2)/(x(x + 2))",
+       "= (x − 1)(x + 2)/(x(x + 2))",
+       "= (x − 1)/x"
+      ]
+     }
+    },
+    {
+     "ma": "TGK2-4.B2c",
+     "nhan": "Bài 2c",
+     "phan": "Phần tự luận (8 điểm)",
+     "nhom": "Bài 2. (2,5 điểm) Cho hai biểu thức P = (x² − 2)/(x² + 2x) + 1/(x + 2), Q = (x + 1)/x (với x ≠ 0; x ≠ −2; x ≠ −1).",
+     "de": "Bài 2. (2,5 điểm) Cho hai biểu thức P = (x^2 − 2)/(x^2 + 2x) + 1/(x + 2), Q = (x + 1)/x (với x ≠ 0; x ≠ −2; x ≠ −1).\nc) Tìm x để P : Q = 5/2.",
+     "dang": "CAU_NHO",
+     "dap_an": "x = −7/3",
+     "loai_dap_an": "DAP_SO",
+     "bai_sgk": 24,
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "hoi": "Bài 2. (2,5 điểm) Cho hai biểu thức P = (x² − 2)/(x² + 2x) + 1/(x + 2), Q = (x + 1)/x (với x ≠ 0; x ≠ −2; x ≠ −1).\nc) Tìm x để P : Q = 5/2.\n(Nếu có nhiều giá trị của x thì viết theo thứ tự từ nhỏ đến lớn, cách nhau bằng dấu ;)",
+      "dap": [
+       "x=−7/3",
+       "−7/3"
+      ],
+      "phim": [
+       "x"
+      ],
+      "nhieu": [
+       ";",
+       "y",
+       "²"
+      ],
+      "loi_giai": [
+       "P : Q = (x − 1)/x · x/(x + 1) = (x − 1)/(x + 1)",
+       "P : Q = 5/2 ⇔ (x − 1)/(x + 1) = 5/2",
+       "⇔ 2(x − 1) = 5(x + 1) ⇔ 2x − 2 = 5x + 5",
+       "⇔ −3x = 7 ⇔ x = −7/3 (thoả mãn điều kiện)"
+      ]
+     }
+    },
+    {
+     "ma": "TGK2-4.B2d",
+     "nhan": "Bài 2d",
+     "phan": "Phần tự luận (8 điểm)",
+     "nhom": "Bài 2. (2,5 điểm) Cho hai biểu thức P = (x² − 2)/(x² + 2x) + 1/(x + 2), Q = (x + 1)/x (với x ≠ 0; x ≠ −2; x ≠ −1).",
+     "de": "Bài 2. (2,5 điểm) Cho hai biểu thức P = (x^2 − 2)/(x^2 + 2x) + 1/(x + 2), Q = (x + 1)/x (với x ≠ 0; x ≠ −2; x ≠ −1).\nd) Tìm x nguyên để P có giá trị nguyên.",
+     "dang": "CAU_NHO",
+     "dap_an": "x = 1 (khi đó P = 0)",
+     "loai_dap_an": "DAP_SO",
+     "bai_sgk": 23,
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "hoi": "Bài 2. (2,5 điểm) Cho hai biểu thức P = (x² − 2)/(x² + 2x) + 1/(x + 2), Q = (x + 1)/x (với x ≠ 0; x ≠ −2; x ≠ −1).\nd) Tìm x nguyên để P có giá trị nguyên.\n(Nếu có nhiều giá trị của x thì viết theo thứ tự từ nhỏ đến lớn, cách nhau bằng dấu ;)",
+      "dap": [
+       "x=1",
+       "1"
+      ],
+      "phim": [
+       "x"
+      ],
+      "nhieu": [
+       ";",
+       "y",
+       "²"
+      ],
+      "loi_giai": [
+       "P = (x − 1)/x = 1 − 1/x",
+       "P nguyên khi 1/x nguyên, tức là x là ước của 1; x = 1 hoặc x = −1",
+       "x = −1 không thoả mãn điều kiện (x ≠ −1) nên x = 1"
+      ]
+     }
+    },
+    {
+     "ma": "TGK2-4.B3",
+     "nhan": "Bài 3",
+     "phan": "Phần tự luận (8 điểm)",
+     "nhom": "Bài 3. (1 điểm) Bóng của một tháp trên mặt đất có độ dài BC = 63 m. Cùng thời điểm đó, một cây cột DE cao 2 mét cắm vuông góc với mặt đất có bóng dài 3 mét.",
+     "de": "Bài 3. (1 điểm) Bóng của một tháp trên mặt đất có độ dài BC = 63m. Cùng thời điểm đó, một cây cột DE cao 2 mét cắm vuông góc với mặt đất có bóng dài 3 mét.\nTính chiều cao của tháp?",
+     "dang": "CAU_NHO",
+     "dap_an": "Tháp cao 42 m",
+     "loai_dap_an": "DAP_SO",
+     "bai_sgk": 33,
+     "hinh": [
+      "dethitoan8/TGK2-4.B3.webp"
+     ],
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "hoi": "Bài 3. (1 điểm) Bóng của một tháp trên mặt đất có độ dài BC = 63 m. Cùng thời điểm đó, một cây cột DE cao 2 mét cắm vuông góc với mặt đất có bóng dài 3 mét.\nTính chiều cao AB của tháp (hình vẽ dưới đây).",
+      "dap": [
+       "42",
+       "42m"
+      ],
+      "phim": [
+       "m"
+      ],
+      "nhieu": [
+       "cm",
+       "km"
+      ],
+      "loi_giai": [
+       "AB ⊥ BC và DE ⊥ BC nên AB // DE, do đó ΔABC ᔕ ΔDEC",
+       "Suy ra AB/DE = BC/EC, tức là AB/2 = 63/3",
+       "AB = 2 · 63 : 3 = 42 (m)"
+      ]
+     }
+    },
+    {
+     "ma": "TGK2-4.B4a",
+     "nhan": "Bài 4a",
+     "phan": "Phần tự luận (8 điểm)",
+     "nhom": "Bài 4. (3 điểm) Cho tam giác ABC vuông tại A (AB > AC), đường cao AH. Từ B kẻ tia Bx ⊥ AB, tia Bx cắt đường thẳng AH tại K.",
+     "de": "Bài 4. (3 điểm) Cho tam giác ABC vuông tại A (AB > AC), đường cao AH. Từ B kẻ tia Bx ⊥ AB, tia Bx cắt AH tại K.\na) Tứ giác ABKC là hình gì? Tại sao?",
+     "dang": "CAU_NHO",
+     "dap_an": "ABKC là hình thang vuông: AC và BK cùng vuông góc với AB nên AC // BK, ABKC là hình thang có cạnh bên AB vuông góc với hai đáy.",
+     "loai_dap_an": "LOI_GIAI",
+     "bai_sgk": 11,
+     "hinh_goi_y": [
+      "dethitoan8/TGK2-4.B4.goi-y.webp"
+     ],
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 3,
+      "hoi": "Bài 4. (3 điểm) Cho tam giác ABC vuông tại A (AB > AC), đường cao AH. Từ B kẻ tia Bx ⊥ AB, tia Bx cắt đường thẳng AH tại K.\na) Tứ giác ABKC là hình gì? Tại sao?",
+      "buoc": [
+       "AC ⊥ AB và BK ⊥ AB nên AC // BK",
+       "Tứ giác ABKC có AC // BK nên là hình thang với hai đáy AC, BK",
+       "Cạnh bên AB vuông góc với hai đáy nên ABKC là hình thang vuông"
+      ],
+      "nhieu": [
+       "Tứ giác ABKC có AC // BK nên là hình bình hành",
+       "Cạnh bên KC ⊥ AC nên ABKC là hình thang vuông"
+      ]
+     }
+    },
+    {
+     "ma": "TGK2-4.B4b",
+     "nhan": "Bài 4b",
+     "phan": "Phần tự luận (8 điểm)",
+     "nhom": "Bài 4. (3 điểm) Cho tam giác ABC vuông tại A (AB > AC), đường cao AH. Từ B kẻ tia Bx ⊥ AB, tia Bx cắt đường thẳng AH tại K.",
+     "de": "Bài 4. (3 điểm) Cho tam giác ABC vuông tại A (AB > AC), đường cao AH. Từ B kẻ tia Bx ⊥ AB, tia Bx cắt AH tại K.\nb) Chứng minh ΔABK ᔕ ΔCHA. Từ đó suy ra AB.AC = AK.CH.",
+     "dang": "CAU_NHO",
+     "dap_an": "AC // BK nên góc AKB = góc CAH (so le trong). ΔABK và ΔCHA có góc B = góc H = 90°, góc AKB = góc CAH nên ΔABK ᔕ ΔCHA (g.g), suy ra AB/CH = AK/CA, tức là AB · AC = AK · CH.",
+     "loai_dap_an": "LOI_GIAI",
+     "bai_sgk": 34,
+     "hinh_goi_y": [
+      "dethitoan8/TGK2-4.B4.goi-y.webp"
+     ],
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 5,
+      "hoi": "Bài 4. (3 điểm) Cho tam giác ABC vuông tại A (AB > AC), đường cao AH. Từ B kẻ tia Bx ⊥ AB, tia Bx cắt đường thẳng AH tại K.\nb) Chứng minh ΔABK ᔕ ΔCHA. Từ đó suy ra AB · AC = AK · CH.",
+      "buoc": [
+       "AC // BK nên góc AKB = góc CAH (hai góc so le trong)",
+       "Xét ΔABK và ΔCHA có: góc ABK = góc CHA = 90°, góc AKB = góc CAH",
+       "Nên ΔABK ᔕ ΔCHA (g.g)",
+       "Suy ra AB/CH = AK/CA",
+       "Do đó AB · AC = AK · CH"
+      ],
+      "nhieu": [
+       "AC // BK nên góc AKB = góc CAH (hai góc đồng vị)",
+       "Suy ra AB/CH = AK/CB"
+      ]
+     }
+    },
+    {
+     "ma": "TGK2-4.B4c",
+     "nhan": "Bài 4c",
+     "phan": "Phần tự luận (8 điểm)",
+     "nhom": "Bài 4. (3 điểm) Cho tam giác ABC vuông tại A (AB > AC), đường cao AH. Từ B kẻ tia Bx ⊥ AB, tia Bx cắt đường thẳng AH tại K.",
+     "de": "Bài 4. (3 điểm) Cho tam giác ABC vuông tại A (AB > AC), đường cao AH. Từ B kẻ tia Bx ⊥ AB, tia Bx cắt AH tại K.\nc) Chứng minh AH^2 = HB.HC.",
+     "dang": "CAU_NHO",
+     "dap_an": "Góc ABH = góc CAH (cùng phụ với góc ACB). ΔAHB và ΔCHA có góc H = 90°, góc ABH = góc CAH nên ΔAHB ᔕ ΔCHA (g.g), suy ra AH/CH = HB/HA, tức là AH² = HB · HC.",
+     "loai_dap_an": "LOI_GIAI",
+     "bai_sgk": 34,
+     "hinh_goi_y": [
+      "dethitoan8/TGK2-4.B4.goi-y.webp"
+     ],
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 6,
+      "hoi": "Bài 4. (3 điểm) Cho tam giác ABC vuông tại A (AB > AC), đường cao AH. Từ B kẻ tia Bx ⊥ AB, tia Bx cắt đường thẳng AH tại K.\nc) Chứng minh AH² = HB · HC.",
+      "buoc": [
+       "Góc ABC + góc ACB = 90° (ΔABC vuông tại A) và góc HAC + góc ACH = 90° (ΔAHC vuông tại H)",
+       "Suy ra góc ABH = góc CAH",
+       "Xét ΔAHB và ΔCHA có: góc AHB = góc CHA = 90°, góc ABH = góc CAH",
+       "Nên ΔAHB ᔕ ΔCHA (g.g)",
+       "Suy ra AH/CH = HB/HA",
+       "Do đó AH² = HB · HC"
+      ],
+      "nhieu": [
+       "Nên ΔAHB ᔕ ΔAHC (g.g)",
+       "Suy ra AH/CH = HA/HB"
+      ]
+     }
+    },
+    {
+     "ma": "TGK2-4.B4d",
+     "nhan": "Bài 4d",
+     "phan": "Phần tự luận (8 điểm)",
+     "nhom": "Bài 4. (3 điểm) Cho tam giác ABC vuông tại A (AB > AC), đường cao AH. Từ B kẻ tia Bx ⊥ AB, tia Bx cắt đường thẳng AH tại K.",
+     "de": "Bài 4. (3 điểm) Cho tam giác ABC vuông tại A (AB > AC), đường cao AH. Từ B kẻ tia Bx ⊥ AB, tia Bx cắt AH tại K.\nd) Giả sử BH = 9cm, HC = 16cm. Tính AB, AH.",
+     "dang": "CAU_NHO",
+     "dap_an": "AB = 20 cm, AH = 12 cm",
+     "loai_dap_an": "DAP_SO",
+     "bai_sgk": 35,
+     "hinh_goi_y": [
+      "dethitoan8/TGK2-4.B4.goi-y.webp"
+     ],
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "hoi": "Bài 4. (3 điểm) Cho tam giác ABC vuông tại A (AB > AC), đường cao AH. Từ B kẻ tia Bx ⊥ AB, tia Bx cắt đường thẳng AH tại K.\nd) Giả sử BH = 16 cm, HC = 9 cm. Tính AB, AH.\n(Gõ AB rồi AH, tính bằng cm, cách nhau bằng dấu ;)",
+      "dap": [
+       "20;12"
+      ],
+      "phim": [
+       ";"
+      ],
+      "nhieu": [
+       "√",
+       "²"
+      ],
+      "loi_giai": [
+       "AH² = HB · HC = 16 · 9 = 144; AH = 12 (cm)",
+       "Tam giác AHB vuông tại H: AB² = AH² + HB² = 12² + 16² = 400",
+       "AB = 20 (cm)"
+      ]
+     },
+     "ghi_chu": "Đề in 'Giả sử BH = 9cm, HC = 16cm', trái với giả thiết AB > AC: BH = 9 cm, HC = 16 cm cho AB = 15 cm, AC = 20 cm (lời giải in ra AB = 15 cm, tức AB nhỏ hơn AC). Hình lời giải cũng vẽ AB > AC. Trên máy đổi chỗ hai số: BH = 16 cm, HC = 9 cm, khi đó AH = 12 cm, AB = 20 cm, AC = 15 cm, khớp giả thiết và hình."
+    },
+    {
+     "ma": "TGK2-4.B5",
+     "nhan": "Bài 5",
+     "phan": "Phần tự luận (8 điểm)",
+     "nhom": "Bài 5. (0,5 điểm) Chứng minh rằng:",
+     "de": "Bài 5. (0,5 điểm) Chứng minh rằng:\nNếu x = by + cz; y = ax + cz; z = ax + by và x + y + z ≠ 0 thì 1/(1 + a) + 1/(1 + b) + 1/(1 + c) = 2.",
+     "dang": "CAU_NHO",
+     "dap_an": "Cộng ba đẳng thức được x + y + z = 2(ax + by + cz). Từ x = by + cz có x(1 + a) = ax + by + cz nên 1/(1 + a) = x/(ax + by + cz); tương tự với b, c. Cộng lại được (x + y + z)/(ax + by + cz) = 2.",
+     "loai_dap_an": "LOI_GIAI",
+     "bai_sgk": 23,
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 5,
+      "hoi": "Bài 5. (0,5 điểm) Chứng minh rằng:\nNếu x = by + cz; y = ax + cz; z = ax + by và x + y + z ≠ 0 thì 1/(1 + a) + 1/(1 + b) + 1/(1 + c) = 2.",
+      "buoc": [
+       "Cộng ba đẳng thức: x + y + z = 2(ax + by + cz), nên ax + by + cz = (x + y + z)/2 ≠ 0",
+       "x = by + cz nên x + ax = ax + by + cz, tức là x(1 + a) = ax + by + cz",
+       "Do đó 1 + a ≠ 0 và 1/(1 + a) = x/(ax + by + cz)",
+       "Tương tự 1/(1 + b) = y/(ax + by + cz) và 1/(1 + c) = z/(ax + by + cz)",
+       "Vậy 1/(1 + a) + 1/(1 + b) + 1/(1 + c) = (x + y + z)/(ax + by + cz) = 2"
+      ],
+      "nhieu": [
+       "Cộng ba đẳng thức: x + y + z = ax + by + cz, nên ax + by + cz ≠ 0",
+       "Vậy 1/(1 + a) + 1/(1 + b) + 1/(1 + c) = (x + y + z)/(ax + by + cz) = 1/2"
+      ],
+      "thu_tu_khac": [
+       [
+        1,
+        0,
+        2,
+        3,
+        4
+       ]
       ]
      }
     }
