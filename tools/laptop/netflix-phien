@@ -55,6 +55,8 @@ fi
 # mot thong bao tieng Viet, do netflix_gio.py gui luc con 5 phut (7/10/2026). Dem gio va dang
 # xuat la viec cua phan chay ngam timekprd, khong can timekprc.
 marco &
+# Nut "Thoát" hien khi re chuot vao goc phai tren, xem netflix-thoat.
+netflix-thoat &
 
 # Xoa prefs.js cua ho so truoc moi lan mo. Tu lan mo thu hai, Firefox doc lai prefs.js no tu ghi
 # lan truoc va man chi con mau den du trang da tai (thay 7/10/2026; xoa file nay thi ve lai binh

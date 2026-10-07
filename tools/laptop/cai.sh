@@ -23,6 +23,7 @@ chmod 600 /etc/netflix-gio/cauhinh.json
 install -m 644 "$day/netflix-gio.service" /etc/systemd/system/netflix-gio.service
 # Phien chi co Netflix cho lehoa, va dang nhap khong can mat khau (chon ten la vao).
 install -m 755 "$day/netflix-phien" /usr/local/bin/netflix-phien
+install -m 755 "$day/netflix-thoat" /usr/local/bin/netflix-thoat
 install -m 644 "$day/98netflix-lehoa" /etc/X11/Xsession.d/98netflix-lehoa
 id lehoa >/dev/null 2>&1 || useradd -m -c "Lê Hòa" -s /bin/bash lehoa
 usermod -aG nopasswdlogin lehoa

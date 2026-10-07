@@ -1,0 +1,94 @@
+#!/usr/bin/env python3
+# Nut "Thoát" bang chuot cho phien Netflix cua Le Hoa (anh Huy chon 7/10/2026).
+#
+# Firefox kiosk khong co nut dong, ma con thuong cam chuot chu khong nho Alt+F4. Nut nay nam an,
+# chi hien khi re chuot vao goc phai tren cua man dang xem (tivi), de khong che phim. Bam vao thi
+# dong Firefox dang hoang (SIGTERM, Firefox luu cookie va thoat), netflix-phien chay xong, phien
+# ket thuc va may ve man dang nhap.
+#
+# Cua so kieu POPUP (override-redirect): trinh quan ly cua so khong dung toi, nen no nam tren ca
+# cua so Firefox toan man hinh. Moi lan hien thi thi nang len tren cung.
+
+import os
+import signal
+import subprocess
+
+import gi
+
+gi.require_version("Gtk", "3.0")
+from gi.repository import Gdk, GLib, Gtk  # noqa: E402
+
+# Vung goc phai tren tinh bang diem anh: chuot vao vung nay thi hien nut.
+GOC = 90
+RONG, CAO, LE = 170, 56, 16
+# Chuot roi khoi vung nut bao lau thi an nut (miligiay).
+CHO_AN_MS = 1500
+
+CSS = b"""
+button {
+    background: #c62828;
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 10px;
+    border: none;
+}
+button:hover { background: #e53935; }
+"""
+
+
+def dong_firefox(_nut):
+    # Tien trinh chinh cua Firefox ten firefox-bin; chi dong cua chinh tai khoan nay.
+    subprocess.run(["pkill", "-TERM", "-x", "-U", str(os.getuid()), "firefox-bin"])
+
+
+class NutThoat:
+    def __init__(self):
+        self.cua_so = Gtk.Window(type=Gtk.WindowType.POPUP)
+        self.cua_so.set_default_size(RONG, CAO)
+        nut = Gtk.Button(label="✕  Thoát")
+        nut.connect("clicked", dong_firefox)
+        self.cua_so.add(nut)
+        css = Gtk.CssProvider()
+        css.load_from_data(CSS)
+        Gtk.StyleContext.add_provider_for_screen(
+            Gdk.Screen.get_default(), css, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION)
+        self.dang_hien = False
+        self.lan_trong = 0
+        GLib.timeout_add(200, self.xem_chuot)
+
+    def man(self):
+        """Khung cua man chinh (tivi khi co, man laptop khi khong)."""
+        man = Gdk.Display.get_default()
+        m = man.get_primary_monitor() or man.get_monitor(0)
+        return m.get_geometry()
+
+    def xem_chuot(self):
+        hien_thi = Gdk.Display.get_default()
+        _, x, y = hien_thi.get_default_seat().get_pointer().get_position()[0:3]
+        k = self.man()
+        phai, tren = k.x + k.width, k.y
+        trong_goc = x >= phai - GOC and y <= tren + GOC
+        trong_nut = (phai - RONG - LE - 20 <= x <= phai and tren <= y <= tren + CAO + LE + 20)
+        if trong_goc and not self.dang_hien:
+            self.cua_so.move(phai - RONG - LE, tren + LE)
+            self.cua_so.show_all()
+            self.cua_so.get_window().raise_()
+            self.dang_hien = True
+            self.lan_trong = 0
+        elif self.dang_hien:
+            if trong_nut:
+                self.lan_trong = 0
+                self.cua_so.get_window().raise_()
+            else:
+                self.lan_trong += 200
+                if self.lan_trong >= CHO_AN_MS:
+                    self.cua_so.hide()
+                    self.dang_hien = False
+        return True
+
+
+if __name__ == "__main__":
+    signal.signal(signal.SIGINT, signal.SIG_DFL)
+    NutThoat()
+    Gtk.main()
