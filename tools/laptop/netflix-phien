@@ -1,0 +1,25 @@
+#!/bin/sh
+# Phien dang nhap cua Le Hoa tren laptop (7/10/2026): chi co Firefox toan man hinh vao Netflix.
+#
+# /etc/X11/Xsession.d/98netflix-lehoa goi file nay thay cho MATE khi nguoi dang nhap la lehoa,
+# du o man dang nhap con chon phien nao. Dong Firefox la het phien, quay ve man dang nhap.
+#
+# Luat chan web cua Firefox (/etc/firefox/policies/policies.json) ap cho ca may, va
+# netflix_gio.py go no ra khi Ba Huy bam "Mở web" tren Bang dieu khien. Le Hoa dang nhap luc
+# web dang mo thi chuong trinh do dat lai luat; o day cho toi khi luat co mat roi moi mo
+# Firefox, de con khong vao web tu do trong may chuc giay truoc khi no kip dat.
+
+LUAT=/etc/firefox/policies/policies.json
+i=0
+while ! grep -q WebsiteFilter "$LUAT" 2>/dev/null; do
+    i=$((i + 1))
+    # Hai phut ma van chua co luat (chuong trinh chay ngam chet?) thi thoi, khong mo gi.
+    [ $i -gt 120 ] && exit 0
+    sleep 1
+done
+
+# Trinh quan ly cua so cho ban phim va thong bao chay dung; Timekpr-nExt bao gio con lai.
+marco &
+timekprc &
+
+firefox --kiosk https://www.netflix.com/

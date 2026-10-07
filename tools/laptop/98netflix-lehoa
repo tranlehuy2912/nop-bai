@@ -1,0 +1,5 @@
+# Nguoi dang nhap la lehoa thi chay phien chi co Netflix, bo qua phien chon o man dang nhap
+# (7/10/2026). File nay duoc lightdm-session source, nen exec o day thay luon ca phien.
+if [ "$(id -un)" = "lehoa" ]; then
+    exec /usr/local/bin/netflix-phien
+fi

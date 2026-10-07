@@ -11,6 +11,11 @@
 #     nhieu (khi khong ai dung), de Bang dieu khien hien "Laptop còn N phút". Chi ghi khi co
 #     gi doi, khong ghi moi phut: giu so luot ghi Firestore o muc vai chuc mot ngay.
 #  4. Con 5 phut thi hien thong bao trong phien cua Le Hoa (anh Huy chon bao truoc 5 phut).
+#  5. Giu luat chan web cua Firefox (/etc/firefox/policies/policies.json): Firefox chi vao
+#     Netflix, cho ca may vi Firefox khong co luat rieng tung tai khoan (anh Huy chon khoa ca
+#     may). Ba Huy bam "Mở web" tren Bang dieu khien (truong moWeb) thi go luat ra, bam "Khoá
+#     web" thi dat lai; khong co han (anh Huy chon). Le Hoa dang nhap thi luat luon co mat,
+#     du moWeb dang bat. Firefox chi doc luat luc khoi dong: doi xong phai mo lai Firefox.
 #
 # Chi dung thu vien chuan cua Python 3 (Mint 22 co san 3.12), khong cai them goi pip nao.
 # Dang nhap Firebase an danh qua REST, nhu ba app Android, nhung bang khoa API trong
@@ -53,6 +58,59 @@ BAO_TRUOC_GIAY = 5 * 60
 # Moc het gio tren dien thoai lech qua chung nay moi ghi lai. Timekpr-nExt dem theo phien,
 # moc tinh lai moi vong lech vai giay vi lam tron; ghi moi lan lech la ghi moi 15 giay.
 LECH_GHI_MS = 90_000
+
+LUAT_FIREFOX = "/etc/firefox/policies/policies.json"
+
+# Chan moi trang tru Netflix va cac ten mien chua phim, anh cua no. Kiosk thi khong co thanh
+# dia chi, nhung con bam link trong Netflix (Trung tam tro giup, trang ngoai) thi van ra web,
+# nen phai chan o day. file:// cung chan: khong thi mo duoc thu muc may bang Ctrl+O.
+LUAT = {
+    "policies": {
+        "WebsiteFilter": {
+            "Block": ["<all_urls>"],
+            "Exceptions": [
+                "https://netflix.com/*", "https://*.netflix.com/*", "https://*.netflix.net/*",
+                "https://*.nflxvideo.net/*", "https://*.nflximg.net/*", "https://*.nflximg.com/*",
+                "https://*.nflxext.com/*", "https://*.nflxso.net/*",
+            ],
+        },
+        "Homepage": {"URL": "https://www.netflix.com/", "Locked": True, "StartPage": "homepage"},
+        "EncryptedMediaExtensions": {"Enabled": True, "Locked": True},
+        "DisableDeveloperTools": True,
+        "DisablePrivateBrowsing": True,
+        "BlockAboutConfig": True,
+        "BlockAboutProfiles": True,
+        "BlockAboutAddons": True,
+        "DisableFirefoxAccounts": True,
+        "ExtensionSettings": {"*": {"installation_mode": "blocked"}},
+        "DownloadDirectory": "/tmp",
+        "PromptForDownloadLocation": False,
+    }
+}
+
+
+def dat_luat_firefox(khoa):
+    """Dat (khoa=True) hay go luat chan web. Tra ve True neu vua doi."""
+    co = os.path.exists(LUAT_FIREFOX)
+    if khoa:
+        chu = json.dumps(LUAT, indent=1)
+        try:
+            with open(LUAT_FIREFOX) as f:
+                if f.read() == chu:
+                    return False
+        except OSError:
+            pass
+        os.makedirs(os.path.dirname(LUAT_FIREFOX), exist_ok=True)
+        tam = LUAT_FIREFOX + ".tam"
+        with open(tam, "w") as f:
+            f.write(chu)
+        os.chmod(tam, 0o644)
+        os.replace(tam, LUAT_FIREFOX)
+        return True
+    if co:
+        os.remove(LUAT_FIREFOX)
+        return True
+    return False
 
 
 def ghi_log(*chu):
@@ -146,6 +204,12 @@ class Firebase:
     def goc(self):
         return ("https://firestore.googleapis.com/v1/projects/%s/databases/(default)/documents/laptop/%s"
                 % (self.du_an, self.ma_nha))
+
+    def doc_laptop(self):
+        ma, d = goi("GET", self.goc(), token=self.token())
+        if ma != 200:
+            raise RuntimeError("doc document laptop hong: %s %s" % (ma, d))
+        return d.get("fields", {})
 
     def cac_phieu(self):
         ma, d = goi("GET", self.goc() + "/cap?pageSize=50", token=self.token())
@@ -254,6 +318,9 @@ class May:
         self.da_day = None
         self.cap_cuoi = None
         self.da_bao = False
+        # Ba Huy co bam "Mở web" khong. Mac dinh khoa: chua doc duoc Firestore thi khoa.
+        self.mo_web = False
+        self.web_dang_mo = None
 
     def xu_ly_phieu(self):
         hom_nay = time.strftime("%Y-%m-%d")
@@ -290,9 +357,11 @@ class May:
     def day_trang_thai(self, con_lai, dung):
         bay_gio = int(time.time() * 1000)
         ket_thuc = bay_gio + con_lai * 1000 if dung and con_lai > 0 else 0
-        ban = {"ketThucLuc": ket_thuc, "conLaiMs": con_lai * 1000, "dangDung": dung}
+        ban = {"ketThucLuc": ket_thuc, "conLaiMs": con_lai * 1000, "dangDung": dung,
+               "webDangMo": bool(self.web_dang_mo)}
         cu = self.da_day
         can = (cu is None or cu["dangDung"] != dung or self.cap_cuoi is not None
+               or cu["webDangMo"] != ban["webDangMo"]
                or abs(cu["ketThucLuc"] - ket_thuc) > LECH_GHI_MS
                or (not dung and abs(cu["conLaiMs"] - ban["conLaiMs"]) >= 60_000))
         if not can:
@@ -305,10 +374,26 @@ class May:
         self.cap_cuoi = None
 
     def vong(self):
+        dung = dang_dung(self.nguoi)
+        # Le Hoa dang nhap thi khoa web truoc tien, truoc ca khi hoi Firestore: mat mang thi
+        # cac buoc sau nem loi, ma luat thi phai co mat.
+        if dung and dat_luat_firefox(True):
+            ghi_log("Le Hoa dang nhap, khoa web")
+        loi_mang = None
         if time.time() - self.lan_hoi >= HOI_PHIEU_GIAY:
             self.lan_hoi = time.time()
-            self.xu_ly_phieu()
-        dung = dang_dung(self.nguoi)
+            try:
+                self.mo_web = self.fb.doc_laptop().get("moWeb", {}).get("booleanValue", False)
+                self.xu_ly_phieu()
+            except Exception as e:
+                # Van di tiep de dat luat Firefox theo lan doc truoc; bao loi sau cung.
+                loi_mang = e
+        mo = self.mo_web and not dung
+        if dat_luat_firefox(not mo):
+            ghi_log("mo web" if mo else "khoa web")
+        self.web_dang_mo = mo
+        if loi_mang is not None:
+            raise loi_mang
         con_lai = timekpr_con_lai(self.nguoi, dung)
         if con_lai is None:
             ghi_log("khong doc duoc Timekpr-nExt")
@@ -320,7 +405,8 @@ class May:
         if con_lai > BAO_TRUOC_GIAY + 30:
             self.da_bao = False
         self.day_trang_thai(con_lai, dung)
-        return dung
+        # Web dang mo thi xem day, de Le Hoa dang nhap la khoa ngay.
+        return dung or mo
 
 
 def main():
