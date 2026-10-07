@@ -42,7 +42,7 @@ class DeThiToanKhtnTest {
     fun du_de_hoc_ki_1_hai_mon_theo_thu_tu() {
         assertEquals(
             (1..10).map { "KGK1-$it" } + (1..10).map { "KCK1-$it" } + (1..7).map { "KGK2-$it" } +
-                (1..3).map { "KCK2-$it" },
+                (1..5).map { "KCK2-$it" },
             cua(LichKiemTra.KHTN).map { it.ma }
         )
         assertEquals(
