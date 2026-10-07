@@ -59,8 +59,20 @@ class GiaiDeTest {
     private val deDaTao = mutableListOf<String>()
     private val cauDaGhi = mutableListOf<String>()
 
-    /** Sang thu Bay 3/10/2026, 8 gio: sau gio mo de tuan. */
-    private val sangThuBay = ms(LocalDateTime.of(2026, 10, 3, 8, 0))
+    /**
+     * Sang thu Bay 3/10/2099, 8 gio: sau gio mo de tuan.
+     *
+     * Nam 2099 de ngay ra de cua test nam xa moi du lieu that tren may. Truoc ngay 7/10/2026
+     * o day la thu Bay 3/10/2026, va test hong ngay khi lich that toi tuan do: 12:54 ngay
+     * 6/10/2026 app tren may ao pad5 tu ra de tuan Toan cua tuan 3/10 (khoa
+     * "tuan:2026-10-03:Toán", ten "Bài 1, 2, 3"), ma moi khoa chi co mot de ([KhoBai.themDe]),
+     * nen test khong ra duoc de Toan nao. Cac ham ra de cung chi cat du lieu that o phia truoc
+     * ngay ra de, khong cat phia sau ([KhoBai.cacDeTu], [KhoBai.cacCauDaNop],
+     * [KhoBai.cauTrongDeConHan]): de va so cai that lam sau ngay do van bot cau khoi de cua
+     * test. Nam 2099 thi moi de that da het han, moi lan lam that cu hon mot nam, test chay
+     * nhu tren may vua cai.
+     */
+    private val sangThuBay = ms(LocalDateTime.of(2099, 10, 3, 8, 0))
 
     private fun ms(t: LocalDateTime) = t.atZone(ZoneId.systemDefault()).toInstant().toEpochMilli()
 
@@ -200,7 +212,7 @@ class GiaiDeTest {
         // Chay lai thi khong sinh them de nao.
         assertTrue(taoDe(sangThuBay + 60_000L).none { it.loai == GiaiDe.LOAI_TUAN })
 
-        val hetHan = ms(LocalDateTime.of(2026, 10, 10, GiaiDe.GIO_MO_DE_TUAN, 0))
+        val hetHan = ms(LocalDateTime.of(2099, 10, 10, GiaiDe.GIO_MO_DE_TUAN, 0))
         moi.forEach { de ->
             assertEquals(hetHan, de.hetHan)
             val cac = GiaiDe.cacCau(context, de)
@@ -245,7 +257,8 @@ class GiaiDeTest {
     fun moc_tuan_la_sang_thu_bay() {
         val thuSau = ms(LocalDateTime.of(2026, 10, 2, 20, 0))
         assertEquals(LocalDateTime.of(2026, 9, 26, 6, 0), GiaiDe.mocTuan(thuSau))
-        assertEquals(LocalDateTime.of(2026, 10, 3, 6, 0), GiaiDe.mocTuan(sangThuBay))
+        assertEquals(LocalDateTime.of(2026, 10, 3, 6, 0), GiaiDe.mocTuan(ms(LocalDateTime.of(2026, 10, 3, 8, 0))))
+        assertEquals(LocalDateTime.of(2099, 10, 3, 6, 0), GiaiDe.mocTuan(sangThuBay))
         // Thu Bay truoc sau gio van la tuan truoc.
         assertEquals(LocalDateTime.of(2026, 9, 26, 6, 0), GiaiDe.mocTuan(ms(LocalDateTime.of(2026, 10, 3, 5, 0))))
     }
