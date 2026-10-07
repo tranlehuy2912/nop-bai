@@ -56,4 +56,30 @@ fi
 # xuat la viec cua phan chay ngam timekprd, khong can timekprc.
 marco &
 
-firefox --kiosk https://www.netflix.com/
+# Xoa prefs.js cua ho so truoc moi lan mo. Tu lan mo thu hai, Firefox doc lai prefs.js no tu ghi
+# lan truoc va man chi con mau den du trang da tai (thay 7/10/2026; xoa file nay thi ve lai binh
+# thuong, chua do ra dong nao gay loi). Cai dat can giu deu nam trong luat Firefox
+# (/etc/firefox/policies), dang nhap Netflix nam trong cookies.sqlite, nen xoa khong mat gi.
+for f in "$HOME"/.mozilla/firefox/*/prefs.js; do
+    rm -f "$f"
+done
+
+# Tu lan mo thu hai voi cung ho so, Firefox 146 bo qua dia chi truyen luc khoi dong va mo mot
+# trang trong (man den, tieu de "Mozilla Firefox"; thay 7/10/2026, lan dau ho so moi thi duoc).
+# Gui lai dia chi cho Firefox dang chay thi no tai ngay, nen cho cua so hien roi gui lai neu
+# tieu de chua co chu Netflix.
+URL=https://www.netflix.com/
+firefox --kiosk "$URL" &
+ff=$!
+i=0
+while kill -0 $ff 2>/dev/null && [ $i -lt 30 ]; do
+    i=$((i + 1))
+    sleep 1
+    ten=$(xdotool getactivewindow getwindowname 2>/dev/null)
+    case "$ten" in
+        *Netflix*) break ;;
+        "") ;;
+        *) [ $((i % 5)) -eq 0 ] && firefox "$URL" ;;
+    esac
+done
+wait $ff
