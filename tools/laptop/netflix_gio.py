@@ -82,6 +82,10 @@ LUAT = {
         "BlockAboutProfiles": True,
         "BlockAboutAddons": True,
         "DisableFirefoxAccounts": True,
+        # Tat thanh "Firefox automatically sends some data..." che dau man Netflix.
+        "DisableTelemetry": True,
+        "OverrideFirstRunPage": "",
+        "OverridePostUpdatePage": "",
         "ExtensionSettings": {"*": {"installation_mode": "blocked"}},
         "DownloadDirectory": "/tmp",
         "PromptForDownloadLocation": False,
@@ -264,7 +268,8 @@ def timekpr_con_lai(nguoi, dung):
     for lenh in (("--getuserinfort", "--getuserinfo") if dung else ("--getuserinfo",)):
         r = subprocess.run(["timekpra", lenh, nguoi], capture_output=True, text=True)
         for dong in r.stdout.splitlines():
-            if dong.startswith("TIME_LEFT_DAY:"):
+            # getuserinfort ghi "ACTUAL_TIME_LEFT_DAY", getuserinfo ghi "TIME_LEFT_DAY".
+            if dong.startswith("TIME_LEFT_DAY:") or dong.startswith("ACTUAL_TIME_LEFT_DAY:"):
                 try:
                     return int(dong.split(":", 1)[1].strip())
                 except ValueError:
@@ -296,8 +301,11 @@ def bao(nguoi, tieu_de, noi_dung):
         uid = int(subprocess.run(["id", "-u", nguoi], capture_output=True, text=True).stdout.strip())
         subprocess.run(
             ["runuser", "-u", nguoi, "--", "env",
+             # Thieu XAUTHORITY thi notify-send van thoat ma 0 ma khong hien gi (thu 7/10/2026).
              "DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/%d/bus" % uid, "DISPLAY=:0",
-             "notify-send", "-u", "critical", "-a", "Netflix", tieu_de, noi_dung],
+             "XAUTHORITY=/home/%s/.Xauthority" % nguoi,
+             # MATE tat thong bao sau khoang 10 giay, ke ca loai critical; giu 30 giay.
+             "notify-send", "-u", "critical", "-t", "30000", "-a", "Netflix", tieu_de, noi_dung],
             capture_output=True, timeout=10)
     except (OSError, ValueError, subprocess.TimeoutExpired) as e:
         ghi_log("khong hien duoc thong bao:", e)

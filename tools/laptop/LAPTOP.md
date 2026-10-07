@@ -82,12 +82,14 @@ Commit được làm trong các worktree `.worktrees/netflix-<repo>` ở gốc w
 
 - Laptop đang nối dự án THỬ `homework-gate-thu`, nhà `tp9vjs55v5zpp3zjaybx` (nhà của máy ảo `pad5`). Luật mới đã dán lên dự án thử, document `laptop/tp9vjs55v5zpp3zjaybx` đã tạo.
 - Đã thử trọn vòng với `pad5` và `dt_bahuy`: đổi 4 phút chơi ra 8 phút, laptop cộng sau khoảng 30 giây; Bảng điều khiển cấp thêm 15 phút; đổi tỉ lệ; mở web, khoá web.
-- Web đang khoá cho cả máy. Phiên `huy` trên màn hình đã được đăng xuất, laptop đang ở màn đăng nhập.
-- `lehoa` còn 23 phút từ lúc thử (hết lúc nửa đêm).
+- Web đang khoá cho cả máy. Laptop đang ở màn đăng nhập.
+- Đã thử từ xa phiên của Lê Hòa (13 giờ 07/10/2026): chọn "Lê Hòa" là có nút Đăng nhập, không hỏi mật khẩu; Firefox tự mở Netflix toàn màn hình trên màn laptop; Timekpr-nExt báo "5 minutes left", chương trình báo "Còn N phút xem Netflix" (hiện 30 giây); hết giờ thì đăng xuất về màn đăng nhập; đăng nhập lúc 0 phút thì khoảng 20 giây sau bị đuổi ra.
+- `lehoa` đã dùng hết phút thử, còn 0 phút.
+- Firefox kiosk chỉ hiện trên màn laptop (eDP-1, 1366x768), tivi nối HDMI (HDMI-1, 1920x1080, đặt bên phải) để đen.
 
 ## Việc còn lại
 
-1. Một lần có người ngồi trước laptop: chọn "Lê Hòa" ở màn đăng nhập, xem Firefox có tự mở Netflix toàn màn hình không, thông báo 5 phút và lúc hết giờ có hiện không. Anh Huy đăng nhập tài khoản Netflix một lần trong phiên đó; Claude Code không đăng nhập thay.
+1. Anh Huy đăng nhập tài khoản Netflix một lần trong phiên của Lê Hòa (cần cấp ít phút trước); Claude Code không đăng nhập thay.
 2. Đưa lên bản thật một lượt (anh Huy chọn làm khi xong hết):
    - Gộp nhánh `laptop-netflix` vào `main` và đẩy GitHub cả ba repo, chạy `kiem-duong.sh` trước.
    - Dán `firestore.rules` mới lên dự án thật `nop-bai-4934d` (trang luật ở `/firestore/databases/-default-/security/rules`, tài khoản Google thứ ba trong Chrome, `/u/2/`).
@@ -99,6 +101,9 @@ Commit được làm trong các worktree `.worktrees/netflix-<repo>` ở gốc w
 
 - Không gõ mật khẩu, không đăng nhập Netflix hay Google thay anh Huy.
 - Laptop có lúc có người đang dùng (07/10/2026 đang mở YouTube trên tài khoản `huy`). Đừng gõ phím hay bấm chuột lên màn hình laptop bằng `xdotool`: hôm đó vài phím đã lọt vào cửa sổ của người đang dùng. Muốn thử Firefox thì dùng hồ sơ riêng (`firefox --new-instance --profile /tmp/...`) và chỉ chụp màn hình.
+- Chụp hay bấm trên màn đăng nhập (chưa ai đăng nhập) phải dùng `sudo env DISPLAY=:0 XAUTHORITY=/run/lightdm/root/:0`. Gửi thông báo vào phiên của Lê Hòa phải có `XAUTHORITY=/home/lehoa/.Xauthority`, thiếu thì `notify-send` thoát mã 0 mà không hiện gì.
+- `timekpra --getuserinfort` ghi số đang chạy dưới tên `ACTUAL_TIME_LEFT_DAY`, còn `--getuserinfo` ghi `TIME_LEFT_DAY`.
+- Sửa `/var/lib/AccountsService/users/<tên>` xong phải `systemctl restart accounts-daemon` rồi khởi động lại `lightdm` thì màn đăng nhập mới ẩn tài khoản.
 - `pkill -f "<chuỗi>"` qua SSH khớp luôn chính câu lệnh của phiên SSH và tự giết nó. Viết chuỗi có ngoặc vuông, ví dụ `pkill -f "[f]f-thu"`. Tiến trình chính của Firefox tên là `firefox-bin`, nên `pkill -x firefox` không bắt được gì.
 - Đầu ra của `curl` trên Mac mini đi qua bộ lọc `rtk` và bị cắt. Muốn đọc JSON thô thì dùng `rtk proxy curl`.
 - Laptop xuất hình ra tivi qua HDMI. Một phiên khác ngày 07/10/2026 có hỏi về việc phát tiếng và hiện hộp thoại ra tivi.
