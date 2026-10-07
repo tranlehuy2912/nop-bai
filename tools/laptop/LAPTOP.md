@@ -15,9 +15,10 @@ Laptop cài Linux Mint, Lê Hòa dùng để xem Netflix. Anh Huy muốn:
   phần này không trừ phút chơi.
 - Báo trước 5 phút, hết giờ thì đăng xuất. Không áp giờ ngủ. Phút Netflix chỉ dùng trong ngày,
   nửa đêm là hết, giống phiếu giờ chơi của tablet.
-- Firefox của cả máy, kể cả tài khoản của anh Huy, chỉ vào được Netflix. Bảng điều khiển có nút
-  "Mở web" / "Khoá web", không có hạn. Firefox chỉ đọc luật lúc khởi động, nên đổi xong phải mở
-  lại Firefox. Anh Huy chấp nhận điều này.
+- Firefox của cả máy, kể cả tài khoản của anh Huy, chỉ vào được Netflix. Bảng điều khiển có mục
+  Bật/Tắt "Firefox chỉ được mở Netflix" trong Cài đặt, nhóm "Laptop" (lúc đầu là nút "Mở web" /
+  "Khoá web" ở thẻ Giờ chơi, anh Huy chuyển chiều 07/10/2026), không có hạn. Firefox chỉ đọc luật
+  lúc khởi động, nên đổi xong phải mở lại Firefox. Anh Huy chấp nhận điều này.
 
 Mọi lựa chọn trên do anh Huy chốt ngày 07/10/2026.
 
@@ -73,7 +74,7 @@ Chi tiết ở `Duong.kt` (mục `LAPTOP`, `CAP`) và `bang-dieu-khien/firestore
 Làm ở nhánh `laptop-netflix` của ba repo, đã gộp `main` và đẩy GitHub ngày 07/10/2026:
 
 - `nop-bai`: nút "Netflix" ở hàng dưới màn chính, chỉ hiện khi laptop đã nối (`ui/DoiNetflix`, `dongbo/Laptop`), `GateStore.doiPhut`, tỉ lệ `Prefs.tiLeNetflix` qua lệnh `CAIDAT tiLeNetflix`, `tools/laptop/`. Test: 6 test `doi_*` trong `GateStoreTest`.
-- `bang-dieu-khien`: thẻ Giờ chơi có dòng "Netflix trên laptop" (còn bao nhiêu phút, nút "Cấp thêm" 15, 30, 60 phút) và dòng trạng thái web với nút "Mở web" / "Khoá web". Cài đặt có mục "Đổi sang Netflix" (1 đến 5). Luật Firestore mới.
+- `bang-dieu-khien`: thẻ Giờ chơi có dòng "Netflix trên laptop" (còn bao nhiêu phút, nút "Cấp thêm" 15, 30, 60 phút). Cài đặt có nhóm "Laptop": mục "Đổi sang Netflix" (1 đến 5) và mục Bật/Tắt "Firefox chỉ được mở Netflix" (dòng nhỏ bên dưới ghi laptop đã mở hay khoá web chưa). Mục Bật/Tắt này lúc đầu là dòng trạng thái web kèm nút "Mở web" / "Khoá web" ở thẻ Giờ chơi, chuyển sang Cài đặt chiều 07/10/2026. Luật Firestore mới.
 - `cho-gio-choi`: chỉ chép `Duong.kt`.
 
 Commit được làm trong các worktree `.worktrees/netflix-<repo>` ở gốc workspace trên Mac mini, vì có nhiều phiên khác cùng làm trong cây chính.
