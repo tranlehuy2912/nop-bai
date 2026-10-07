@@ -58,12 +58,28 @@ marco &
 # Nut "Thoát" hien khi re chuot vao goc phai tren, xem netflix-thoat.
 netflix-thoat &
 
-# Xoa prefs.js cua ho so truoc moi lan mo. Tu lan mo thu hai, Firefox doc lai prefs.js no tu ghi
-# lan truoc va man chi con mau den du trang da tai (thay 7/10/2026; xoa file nay thi ve lai binh
-# thuong, chua do ra dong nao gay loi). Cai dat can giu deu nam trong luat Firefox
-# (/etc/firefox/policies), dang nhap Netflix nam trong cookies.sqlite, nen xoa khong mat gi.
+# Sua prefs.js cua ho so truoc moi lan mo. Tu lan mo thu hai, Firefox doc lai prefs.js no tu ghi
+# lan truoc va man chi con mau den du trang da tai (thay 7/10/2026). Chia doi prefs.js tren laptop
+# (7/10/2026) thi man den chi hien khi co ca hai nhom dong: ba dong ghi da cai goi ngon ngu kem
+# Firefox (extensions.installedDistroAddon.langpack-en-CA, -en-GB, -vi, goi nam o
+# /usr/lib/firefox/distribution/extensions), va cac dong ghi Firefox van cung ban voi lan truoc
+# (extensions.lastAppBuildId, extensions.lastAppVersion). Bo mot trong hai nhom la ve binh thuong,
+# nen chi xoa nhom dau. Co le luat chan moi tien ich (ExtensionSettings "*": blocked) da go goi
+# ngon ngu (thu muc extensions cua ho so trong) ma Firefox van tin la da cai; chua kiem chung.
+#
+# Truoc day xoa ca prefs.js. Lam vay thi mat luon dau "da cai Widevine" (media.gmp-widevinecdm.*),
+# lan nao Firefox cung tai lai Widevine, hien "Firefox is installing components needed to play the
+# audio or video..." va phai cho tai xong moi chieu duoc phim. Cai dat can giu nam trong luat
+# Firefox (/etc/firefox/policies), dang nhap Netflix nam trong cookies.sqlite.
+#
+# Giu prefs.js thi co mot lan Firefox hien thanh "Open previous tabs?", bam nut tren thanh do la
+# mo menu cua Firefox. Thanh nay chi hien khi browser.startup.couldRestoreSession.count bang 1
+# (xem SessionWindowUI.sys.mjs cua Firefox 146), tu 2 tro len la thoi, nen dat san so dem la 2.
 for f in "$HOME"/.mozilla/firefox/*/prefs.js; do
-    rm -f "$f"
+    [ -f "$f" ] || continue
+    sed -i -e '/"extensions\.installedDistroAddon\./d' \
+        -e '/"browser\.startup\.couldRestoreSession\.count"/d' "$f"
+    echo 'user_pref("browser.startup.couldRestoreSession.count", 2);' >> "$f"
 done
 
 # Tu lan mo thu hai voi cung ho so, Firefox 146 bo qua dia chi truyen luc khoi dong va mo mot
