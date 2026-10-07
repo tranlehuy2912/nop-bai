@@ -18,6 +18,16 @@ while ! grep -q WebsiteFilter "$LUAT" 2>/dev/null; do
     sleep 1
 done
 
+# Chi xuat hinh ra tivi, do phan giai goc cua tivi (anh Huy chon 7/10/2026: hien giong nhau
+# tren hai man thi tivi chay 1366x768 cua man laptop, hinh be, xem nhuc mat). Co man ngoai nao
+# dang noi thi bat no o che do tot nhat (--auto) va tat man laptop; khong co thi giu man laptop.
+# Tivi tat ma van cam HDMI thi xrandr van bao la noi, luc do man laptop den; anh Huy biet.
+ngoai=$(xrandr --query | awk '$2 == "connected" && $1 !~ /^eDP/ {print $1; exit}')
+trong=$(xrandr --query | awk '$2 == "connected" && $1 ~ /^eDP/ {print $1; exit}')
+if [ -n "$ngoai" ]; then
+    xrandr --output "$ngoai" --auto --primary --pos 0x0 ${trong:+--output "$trong" --off}
+fi
+
 # Het phut thi khong mo Netflix, chi hien mot hop chu roi dang xuat (7/10/2026). Khong co doan
 # nay thi dang nhap luc 0 phut van xem duoc khoang 20 giay truoc khi Timekpr-nExt day ra, va bam
 # dang nhap lien tuc la xem duoc tung doan. So giay lay tu file netflix_gio.py ghi, xem

@@ -103,6 +103,14 @@ LUAT = {
         "OverrideFirstRunPage": "",
         "OverridePostUpdatePage": "",
         "ExtensionSettings": {"*": {"installation_mode": "blocked"}},
+        # Phien bi cat ngang (het gio, dang xuat) luc Firefox dang khoi dong thi Firefox dem la mot
+        # lan khoi dong loi; du ba lan la no hoi chay che do an toan bang mot hop nho, trong kiosk
+        # thi thanh man den hay Firefox thoat ngay (thay ngay 7/10/2026, recent_crashes len 15).
+        "DisableSafeMode": True,
+        "Preferences": {
+            "toolkit.startup.max_resumed_crashes": {"Value": -1, "Status": "locked"},
+            "browser.sessionstore.resume_from_crash": {"Value": False, "Status": "locked"},
+        },
         "DownloadDirectory": "/tmp",
         "PromptForDownloadLocation": False,
     }

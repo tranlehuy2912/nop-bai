@@ -85,7 +85,8 @@ Commit được làm trong các worktree `.worktrees/netflix-<repo>` ở gốc w
 - Web đang khoá cho cả máy. Laptop đang ở màn đăng nhập.
 - Đã thử từ xa phiên của Lê Hòa (13 giờ 07/10/2026): chọn "Lê Hòa" là có nút Đăng nhập, không hỏi mật khẩu; Firefox tự mở Netflix toàn màn hình trên màn laptop; chương trình báo "Còn N phút xem Netflix" (hiện 30 giây). Thông báo tiếng Anh của Timekpr-nExt đã tắt theo ý anh Huy: phiên không chạy `timekprc`, và `HIDE_TRAY_ICON = True`; hết giờ thì đăng xuất về màn đăng nhập; đăng nhập lúc 0 phút thì không mở Netflix, chỉ hiện hộp "Hết phút xem Netflix..." (zenity, 10 giây) rồi đăng xuất. Trước khi có hộp này, đăng nhập lúc 0 phút vẫn xem được khoảng 20 giây rồi mới bị Timekpr-nExt đẩy ra, bấm liên tục là xem được từng đoạn. `netflix-phien` đọc số giây còn lại từ `/run/netflix-gio/conlai` do dịch vụ ghi.
 - `lehoa` đã dùng hết phút thử, còn 0 phút.
-- Firefox kiosk chỉ hiện trên màn laptop (eDP-1, 1366x768), tivi nối HDMI (HDMI-1, 1920x1080, đặt bên phải) để đen.
+- Phiên của Lê Hòa chỉ xuất hình ra tivi nối HDMI (HDMI-1, 1920x1080, chế độ gốc), tắt màn laptop (eDP-1, 1366x768); không có tivi thì hiện trên màn laptop. Anh Huy chọn: hiện giống nhau thì tivi chạy 1366x768, hình bể. Tivi tắt nguồn mà còn cắm HDMI thì vẫn tính là có tivi, màn laptop đen.
+- Firefox đếm phiên bị cắt ngang lúc khởi động là "khởi động lỗi"; ngày 07/10/2026 số đếm lên 15 sau nhiều lần thử, Firefox tự vào chế độ an toàn, mở hộp hỏi nhỏ xíu (màn đen) hay thoát ngay mã 0. Luật Firefox giờ có `DisableSafeMode` và khoá `toolkit.startup.max_resumed_crashes = -1`. Gặp lại thì xem `toolkit.startup.recent_crashes` trong `prefs.js` của hồ sơ `lehoa`; xoá `/home/lehoa/.mozilla` là sạch (mất đăng nhập Netflix).
 
 ## Việc còn lại
 
