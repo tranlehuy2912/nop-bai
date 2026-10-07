@@ -31,6 +31,8 @@ Tài liệu này tả phần dữ liệu thêm vào các file `app/src/main/asse
 
 Chữ trong mọi trường hiển thị được dùng hai thẻ: `<u>...</u>` cho chữ gạch chân (bài phát âm, bài tìm lỗi sai), `<b>...</b>` cho chữ in đậm trong sách. Chỗ trống trong câu viết `___` (ba dấu gạch dưới). Ký hiệu toán viết trên một dòng bằng Unicode như bộ thẻ Học thuộc: `x²`, `x³`, `√`, `a/b`, `H₂O`, `→`, `≈`, `∠`, `△`.
 
+`dap_an` cũng là chữ hiện cho Lê Hòa: từ 02/10/2026 màn Câu đã làm đúng hiện nó dưới nhãn "Đáp án trong sách" ở mọi câu không phải `CHON` (xem `CauHoi.dapAn` trong `kho/MoHinh.kt`). Vì vậy (anh Huy chốt 07/10/2026) viết cho con đọc: không ghi nguồn lời giải (loigiaihay, VietJack, VnDoc, "cả ba nguồn") hay lời nhắn cho người soạn ("xem ghi chú"), những thứ đó để ở file ghi chú; máy nhận thêm đáp án khác thì ghi như `the (Ø cũng đúng)`.
+
 ## Các kiểu ghép
 
 Mọi kiểu đều có `kieu` và `sao`. Trường `hoi` (không bắt buộc) là chữ hiện trên máy thay cho `de`: dùng khi `de` còn chứa các phương án in liền, khi cần bỏ phần lời dẫn không thuộc câu, hay khi cần tả hình bằng chữ. Không có `hoi` thì máy hiện `de`. Đề thi thì câu nào cũng có `hoi` (xem phần đề thi).
