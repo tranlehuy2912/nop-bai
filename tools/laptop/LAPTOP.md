@@ -78,27 +78,16 @@ Nhánh `laptop-netflix` của ba repo, chưa gộp `main`, chưa đẩy GitHub l
 
 Commit được làm trong các worktree `.worktrees/netflix-<repo>` ở gốc workspace trên Mac mini, vì có nhiều phiên khác cùng làm trong cây chính.
 
-## Tình trạng lúc viết (07/10/2026, khoảng 12 giờ trưa)
+## Tình trạng (cập nhật 07/10/2026, 15 giờ)
 
-- Laptop đang nối dự án THỬ `homework-gate-thu`, nhà `tp9vjs55v5zpp3zjaybx` (nhà của máy ảo `pad5`). Luật mới đã dán lên dự án thử, document `laptop/tp9vjs55v5zpp3zjaybx` đã tạo.
-- Đã thử trọn vòng với `pad5` và `dt_bahuy`: đổi 4 phút chơi ra 8 phút, laptop cộng sau khoảng 30 giây; Bảng điều khiển cấp thêm 15 phút; đổi tỉ lệ; mở web, khoá web.
-- Web đang khoá cho cả máy. Laptop đang ở màn đăng nhập.
-- Đã thử từ xa phiên của Lê Hòa (13 giờ 07/10/2026): chọn "Lê Hòa" là có nút Đăng nhập, không hỏi mật khẩu; Firefox tự mở Netflix toàn màn hình trên màn laptop; chương trình báo "Còn N phút xem Netflix" (hiện 30 giây). Thông báo tiếng Anh của Timekpr-nExt đã tắt theo ý anh Huy: phiên không chạy `timekprc`, và `HIDE_TRAY_ICON = True`; hết giờ thì đăng xuất về màn đăng nhập; đăng nhập lúc 0 phút thì không mở Netflix, chỉ hiện hộp "Hết phút xem Netflix..." (zenity, 10 giây) rồi đăng xuất. Trước khi có hộp này, đăng nhập lúc 0 phút vẫn xem được khoảng 20 giây rồi mới bị Timekpr-nExt đẩy ra, bấm liên tục là xem được từng đoạn. `netflix-phien` đọc số giây còn lại từ `/run/netflix-gio/conlai` do dịch vụ ghi.
-- `lehoa` đã dùng hết phút thử, còn 0 phút.
-- Phiên của Lê Hòa chỉ xuất hình ra tivi nối HDMI (HDMI-1, 1920x1080, chế độ gốc), tắt màn laptop (eDP-1, 1366x768); không có tivi thì hiện trên màn laptop. Anh Huy chọn: hiện giống nhau thì tivi chạy 1366x768, hình bể. Tivi tắt nguồn mà còn cắm HDMI thì vẫn tính là có tivi, màn laptop đen.
-- Từ lần mở thứ hai với cùng hồ sơ, Firefox 146 trong phiên này (1) bỏ qua địa chỉ truyền lúc khởi động, mở trang trống, và (2) không vẽ gì, màn đen dù trang đã tải. Xoá `prefs.js` của hồ sơ thì hết (2); chưa dò ra dòng nào gây lỗi. `netflix-phien` giờ xoá `prefs.js` trước mỗi lần mở Firefox (cài đặt cần giữ nằm trong luật Firefox, đăng nhập Netflix nằm trong `cookies.sqlite`), và gửi lại địa chỉ Netflix nếu sau 5 giây tiêu đề cửa sổ chưa có chữ Netflix. Đã thử ba lần đăng nhập liên tiếp đều hiện Netflix.
-- Bấm trên màn đăng nhập bằng `xdotool` phải rê chuột từ chỗ khác tới rồi chờ nửa giây mới bấm, bấm ngay thì hay không ăn.
-- Firefox đếm phiên bị cắt ngang lúc khởi động là "khởi động lỗi"; ngày 07/10/2026 số đếm lên 15 sau nhiều lần thử, Firefox tự vào chế độ an toàn, mở hộp hỏi nhỏ xíu (màn đen) hay thoát ngay mã 0. Luật Firefox giờ có `DisableSafeMode` và khoá `toolkit.startup.max_resumed_crashes = -1`. Gặp lại thì xem `toolkit.startup.recent_crashes` trong `prefs.js` của hồ sơ `lehoa`; xoá `/home/lehoa/.mozilla` là sạch (mất đăng nhập Netflix).
+- Đã đưa lên bản thật: ba repo gộp vào `main` và đẩy GitHub; luật Firestore mới đã đăng lên cả dự án thử lẫn dự án thật `nop-bai-4934d` (14 giờ 52); laptop nối dự án thật, nhà `czfy4pdxn6gz5u8t3hap`, uid ẩn danh của laptop ghi ở trường `uidLaptop` của `laptop/czfy4pdxn6gz5u8t3hap`. Document `laptop/tp9vjs55v5zpp3zjaybx` bên dự án thử vẫn để đó cho máy ảo.
+- Web đang khoá cho cả máy. `lehoa` có 0 phút.
+- Đã thử từ xa phiên của Lê Hòa: chọn "Lê Hòa" là có nút Đăng nhập, không hỏi mật khẩu; Netflix toàn màn hình trên tivi; nút ✕ ở góc phải trên; thông báo "Còn N phút xem Netflix" (30 giây) lúc còn 5 phút; hết giờ đăng xuất; 0 phút thì chỉ hiện hộp "Hết phút xem Netflix..." rồi đăng xuất.
 
 ## Việc còn lại
 
 1. Anh Huy đăng nhập tài khoản Netflix một lần trong phiên của Lê Hòa (cần cấp ít phút trước); Claude Code không đăng nhập thay.
-2. Đưa lên bản thật một lượt (anh Huy chọn làm khi xong hết):
-   - Gộp nhánh `laptop-netflix` vào `main` và đẩy GitHub cả ba repo, chạy `kiem-duong.sh` trước.
-   - Dán `firestore.rules` mới lên dự án thật `nop-bai-4934d` (trang luật ở `/firestore/databases/-default-/security/rules`, tài khoản Google thứ ba trong Chrome, `/u/2/`).
-   - Chạy lại `cai.sh` trên laptop với `google-services.json` của dự án thật và mã nhà thật (nhà của tablet thật, xem `CLAUDE.md` ở gốc workspace). Ghi `uidLaptop` mới vào `laptop/<mã nhà thật>` trên console dự án thật.
-   - Anh Huy tự cài bản mới lên tablet thật và điện thoại thật.
-3. Xoá document `laptop/tp9vjs55v5zpp3zjaybx` của dự án thử nếu không cần thử nữa.
+2. Anh Huy cài bản mới của Nộp bài lên tablet thật và Bảng điều khiển lên điện thoại thật. Chưa cài thì tablet không có nút Netflix và điện thoại không có dòng "Netflix trên laptop".
 
 ## Những chỗ dễ vấp
 
