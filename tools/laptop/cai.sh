@@ -24,6 +24,8 @@ install -m 644 "$day/netflix-gio.service" /etc/systemd/system/netflix-gio.servic
 # Phien chi co Netflix cho lehoa, va dang nhap khong can mat khau (chon ten la vao).
 install -m 755 "$day/netflix-phien" /usr/local/bin/netflix-phien
 install -m 755 "$day/netflix-thoat" /usr/local/bin/netflix-thoat
+# Xem trang Netflix luc moi mo, trang con trong thi tu bam F5 (8/10/2026), xem dau file netflix-canh.
+install -m 755 "$day/netflix-canh" /usr/local/bin/netflix-canh
 # Dai chu Ba Huy nhan len tivi (8/10/2026), netflix_gio.py goi khi co lenh NHAN.
 install -m 755 "$day/netflix-nhan" /usr/local/bin/netflix-nhan
 install -m 644 "$day/98netflix-lehoa" /etc/X11/Xsession.d/98netflix-lehoa

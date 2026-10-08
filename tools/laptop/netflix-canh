@@ -1,0 +1,188 @@
+#!/usr/bin/env python3
+# Canh trang Netflix luc moi mo phien cua Le Hoa (8/10/2026). netflix-phien chay no ngay sau khi
+# mo Firefox: netflix-canh <pid Firefox> <dia chi>.
+#
+# Chieu 8/10/2026 Netflix tren tivi nhieu lan dung o mot trang khong ve xong, tieu de cua so van
+# la "Netflix — Mozilla Firefox". Luc 16 gio 27 chi co nen do va chu NETFLIX: khung trang da tai
+# nhung phan ve danh sach ho so khong chay, con de yen 15 phut, bam F5 la hien du. Luc 17 gio 08,
+# 17 gio 09 thi den han (phien "Tai khoan Huy tren Mac mini" chup duoc). Chua biet goc loi: mang
+# van tot, hai ban Firefox rieng cung luat chan web van tai duoc, Firefox khong sap, khong co loi
+# card hinh. Loi chi thay o lan tai dau sau khi Firefox bat, nen netflix-canh xem man hinh mot
+# luc dau, trang con trong thi tu bam F5, toi da SO_LAN_F5 lan (anh Huy chon 8/10/2026).
+#
+# Truoc 8/10/2026 netflix-phien cu 5 giay chua thay chu Netflix tren tieu de la goi lai
+# "firefox <dia chi>", vi tuong Firefox bo qua dia chi truyen luc khoi dong (thay 7/10/2026).
+# Nhat ky 8/10/2026 cho thay Firefox van tai dia chi do, chi cham (may lanh mat 5 toi 8 giay),
+# con moi lan goi lai la Firefox mo them mot the Netflix (phien 16 gio 19 co ba the cung tai).
+# Lan mo thu 17 gio 04 khong goi lai thi binh thuong; ba lan thu 17 gio 06 toi 17 gio 10 deu co
+# goi lai, lan nao bo doc Marionette cung treo o buoc cho trang tai xong, va man den han luc 17 gio
+# 08, 17 gio 09. Nhung lan 16 gio 27 chi co mot the ma van trong, nen the thua chua phai toan bo
+# nguyen nhan. Vi vay bo buoc goi lai: qua CHO_TIEU_DE giay chua thay chu Netflix
+# thi bam F5 cho chinh the dang mo; F5 xong van chua co thi moi goi lai mot lan (luc do the dau
+# khong con dang tai Netflix, nen khong thanh hai the cung tai).
+#
+# Cach xem trang trong: chup man (tivi), thu ve 480x270, bo dai tren cung (chu NETFLIX do), dem
+# diem anh sang (ca ba kenh mau tren NGUONG_SANG). Do tren anh chup that 8/10/2026: man chon ho so
+# khoang 850 diem (chu trang, mat cuoi tren hinh dai dien), khung trang trong va man den 0 diem.
+# Firefox dang tai thi trang toan bo, cung tinh la trong. Firefox dang phat tieng (phim, doan gioi
+# thieu) thi khong bao gio bam, phong luc canh phim toi.
+#
+# Moi viec lam ghi vao nhat ky he thong, xem bang: journalctl -t netflix-canh
+# Thu cach xem trang trong tren anh co san: netflix-canh --xem anh.png ... (khong co anh thi chup
+# man dang hien); che do nay khong bam phim nao.
+
+import os
+import subprocess
+import sys
+import syslog
+import time
+
+import gi
+
+gi.require_version("Gdk", "3.0")
+gi.require_version("GdkPixbuf", "2.0")
+from gi.repository import Gdk, GdkPixbuf  # noqa: E402
+
+# Cho tieu de cua so co chu Netflix toi da bao nhieu giay roi moi bam F5.
+CHO_TIEU_DE = 30
+# Sau khi co tieu de Netflix (va sau moi lan F5), cho bao nhieu giay roi moi xem man.
+CHO_VE = 15
+SO_LAN_F5 = 2
+NGUONG_SANG = 100
+# Duoi IT_NHAT diem sang la trong; tren TI_LE_TRANG so diem la man trang luc Firefox dang tai.
+IT_NHAT = 20
+TI_LE_TRANG = 0.5
+RONG, CAO = 480, 270
+
+
+def ghi(chu):
+    syslog.syslog(chu)
+
+
+def con_song(pid):
+    try:
+        os.kill(pid, 0)
+        return True
+    except ProcessLookupError:
+        return False
+    except PermissionError:
+        return True
+
+
+def chay(lenh, giay=10):
+    try:
+        return subprocess.run(lenh, capture_output=True, text=True, timeout=giay).stdout.strip()
+    except (OSError, subprocess.SubprocessError):
+        return ""
+
+
+def cua_so_firefox():
+    # Kiosk chi co mot cua so Firefox. Khong dung getactivewindow: luc tu vao phien sau khi bat
+    # may, mot luc lau chua co cua so nao duoc chon (8/10/2026), lenh do tra ve rong.
+    ds = chay(["xdotool", "search", "--onlyvisible", "--name", "Mozilla Firefox"]).split()
+    return ds[0] if ds else None
+
+
+def tieu_de(cua_so):
+    return chay(["xdotool", "getwindowname", cua_so]) if cua_so else ""
+
+
+def bam_f5(cua_so, ly_do):
+    ghi(f"{ly_do}, bam F5")
+    # Phim gia lap qua XTEST sau khi dua cua so len truoc; gui thang vao cua so (--window) thi
+    # Firefox bo qua vi la su kien gia.
+    chay(["xdotool", "windowactivate", "--sync", cua_so, "key", "--clearmodifiers", "F5"])
+
+
+def dang_co_tieng():
+    return "firefox" in chay(["pactl", "list", "sink-inputs"], 5).lower()
+
+
+def dem_sang(anh):
+    anh = anh.scale_simple(RONG, CAO, GdkPixbuf.InterpType.BILINEAR)
+    kenh, hang, px = anh.get_n_channels(), anh.get_rowstride(), anh.get_pixels()
+    tren = CAO // 10
+    sang = 0
+    for y in range(tren, CAO):
+        dau = y * hang
+        for i in range(dau, dau + RONG * kenh, kenh):
+            if px[i] > NGUONG_SANG and px[i + 1] > NGUONG_SANG and px[i + 2] > NGUONG_SANG:
+                sang += 1
+    return sang, (CAO - tren) * RONG
+
+
+def chup_man():
+    goc = Gdk.get_default_root_window()
+    return Gdk.pixbuf_get_from_window(goc, 0, 0, goc.get_width(), goc.get_height())
+
+
+def la_trang_trong(anh):
+    sang, tong = dem_sang(anh)
+    return (sang < IT_NHAT or sang > tong * TI_LE_TRANG), sang
+
+
+def canh(pid, dia_chi):
+    t0 = time.time()
+    cua_so = None
+    co_tieu_de = False
+    da_bam = 0
+    while time.time() - t0 < CHO_TIEU_DE:
+        if not con_song(pid):
+            return
+        cua_so = cua_so_firefox()
+        if "Netflix" in tieu_de(cua_so):
+            co_tieu_de = True
+            break
+        time.sleep(1)
+    if not co_tieu_de:
+        cua_so = cua_so_firefox()
+        if not cua_so:
+            ghi(f"{CHO_TIEU_DE} giay chua thay cua so Firefox, thoi")
+            return
+        bam_f5(cua_so, f"{CHO_TIEU_DE} giay chua thay chu Netflix tren tieu de ({tieu_de(cua_so)!r})")
+        da_bam += 1
+        time.sleep(CHO_VE)
+        if not con_song(pid):
+            return
+        if "Netflix" not in tieu_de(cua_so):
+            ghi(f"F5 xong van chua co chu Netflix ({tieu_de(cua_so)!r}), goi lai dia chi mot lan")
+            chay(["firefox", dia_chi], 20)
+    for lan in range(SO_LAN_F5 + 1):
+        time.sleep(CHO_VE)
+        if not con_song(pid):
+            return
+        anh = chup_man()
+        if anh is None:
+            ghi("khong chup duoc man, thoi")
+            return
+        trong, sang = la_trang_trong(anh)
+        giay = round(time.time() - t0)
+        if not trong:
+            ghi(f"trang da ve sau {giay} giay ({sang} diem sang, da bam F5 {da_bam} lan)")
+            return
+        if dang_co_tieng():
+            ghi(f"man khong co chu nhung Firefox dang phat tieng ({sang} diem sang), de yen")
+            return
+        if lan == SO_LAN_F5:
+            ghi(f"bam F5 {SO_LAN_F5} lan van trong ({sang} diem sang), thoi")
+            return
+        bam_f5(cua_so_firefox() or cua_so, f"sau {giay} giay trang van trong ({sang} diem sang), lan {lan + 1}")
+        da_bam += 1
+
+
+def xem(tep):
+    for t in tep or [None]:
+        anh = GdkPixbuf.Pixbuf.new_from_file(t) if t else chup_man()
+        trong, sang = la_trang_trong(anh)
+        print(t or "man dang hien", "trong" if trong else "da ve", sang, "diem sang")
+
+
+if __name__ == "__main__":
+    if len(sys.argv) > 1 and sys.argv[1] == "--xem":
+        xem(sys.argv[2:])
+        sys.exit(0)
+    syslog.openlog("netflix-canh")
+    try:
+        canh(int(sys.argv[1]), sys.argv[2])
+    except Exception as loi:  # khong de loi o day lam gi phien Netflix
+        ghi(f"loi: {loi!r}")

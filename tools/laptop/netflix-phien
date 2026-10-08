@@ -99,22 +99,13 @@ for f in "$HOME"/.mozilla/firefox/*/prefs.js; do
     echo 'user_pref("browser.startup.couldRestoreSession.count", 2);' >> "$f"
 done
 
-# Tu lan mo thu hai voi cung ho so, Firefox 146 bo qua dia chi truyen luc khoi dong va mo mot
-# trang trong (man den, tieu de "Mozilla Firefox"; thay 7/10/2026, lan dau ho so moi thi duoc).
-# Gui lai dia chi cho Firefox dang chay thi no tai ngay, nen cho cua so hien roi gui lai neu
-# tieu de chua co chu Netflix.
+# Lan tai dau sau khi Firefox bat co luc khong ve xong (nen do hay man den, 8/10/2026), nen
+# netflix-canh xem man mot luc dau va tu bam F5 khi trang con trong; xem dau file do. Truoc
+# 8/10/2026 o day cu 5 giay chua thay chu Netflix tren tieu de la goi lai "firefox URL" (tuong
+# Firefox 146 bo qua dia chi luc khoi dong, thay 7/10/2026). Nhat ky 8/10/2026 cho thay Firefox
+# van tai dia chi do, chi cham, con moi lan goi lai la them mot the Netflix cung tai, nen bo.
 URL=https://www.netflix.com/
 firefox --kiosk "$URL" &
 ff=$!
-i=0
-while kill -0 $ff 2>/dev/null && [ $i -lt 30 ]; do
-    i=$((i + 1))
-    sleep 1
-    ten=$(xdotool getactivewindow getwindowname 2>/dev/null)
-    case "$ten" in
-        *Netflix*) break ;;
-        "") ;;
-        *) [ $((i % 5)) -eq 0 ] && firefox "$URL" ;;
-    esac
-done
+netflix-canh $ff "$URL" &
 wait $ff
