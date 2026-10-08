@@ -36,7 +36,7 @@ import java.util.Locale
  *
  * BO DOC TREO HAY BAO LOI thi luot do coi nhu da xong ([CHO_TOI_DA_MS]), de man khong bao
  * gio ket o mot tu. Hai luot hong lien tiep thi thoi doc toi khi mo lai man: bo doc dang
- * cho mang chang han, moi tu phai cho muoi giay thi con bo cuoc truoc khi xong buoi.
+ * cho mang chang han, moi tu phai cho nam giay thi con bo cuoc truoc khi xong buoi.
  */
 class GiongDoc(context: Context, private val khiDoi: () -> Unit = {}) {
 
@@ -56,6 +56,9 @@ class GiongDoc(context: Context, private val khiDoi: () -> Unit = {}) {
     /** Chu xin doc trong luc bo doc con khoi dong: khoi dong xong thi doc. */
     private var choDoc: String? = null
     private var dem = 0
+
+    /** Luc xin doc luot dang cho, de ghi luot doc mat bao lau ([CHO_TOI_DA_MS]). */
+    private var xinLuc = 0L
 
     private val quaGio = Runnable { maCho?.let { xong(it, ok = false, ly = "bộ đọc không trả lời") } }
 
@@ -92,6 +95,7 @@ class GiongDoc(context: Context, private val khiDoi: () -> Unit = {}) {
         if (!coTheDoc) return khiXong()
         chinh.removeCallbacks(quaGio)
         val ma = "tu-${++dem}"
+        xinLuc = SystemClock.elapsedRealtime()
         maCho = ma
         this.khiXong = khiXong
         tiengMinhDenLuc = SystemClock.elapsedRealtime() + CHO_TOI_DA_MS + DU_TIENG_MS
@@ -175,6 +179,7 @@ class GiongDoc(context: Context, private val khiDoi: () -> Unit = {}) {
         val f = khiXong
         khiXong = null
         if (ok) {
+            Log.i(TAG, "giong doc: luot $ma xong sau ${SystemClock.elapsedRealtime() - xinLuc} ms")
             loiLienTiep = 0
         } else if (docDuoc) {
             Log.w(TAG, "giong doc: luot $ma khong xong ($ly)")
@@ -205,10 +210,12 @@ class GiongDoc(context: Context, private val khiDoi: () -> Unit = {}) {
         private const val TAG = "HomeworkGate"
 
         /**
-         * Mot tu doc chung mot hai giay. Qua muoi giay ma bo doc chua bao xong thi coi nhu khong
-         * doc duoc va mo khoa (Ba Huy dong y ngay 8/10/2026), de man khong ket.
+         * Mot tu doc chung mot hai giay. Qua nam giay ma bo doc chua bao xong thi coi nhu khong
+         * doc duoc va mo khoa, de man khong ket. Ba Huy chot 5 giay ngay 8/10/2026 (ban dau la
+         * 10). Moi luot doc xong ghi so mili giay vao logcat ("giong doc: ... xong sau"), de
+         * xem tren tablet that con du xa nguong nay khong.
          */
-        const val CHO_TOI_DA_MS = 10_000L
+        const val CHO_TOI_DA_MS = 5_000L
 
         /** Bo doc bao xong ma loa co the con keu them mot chut. */
         private const val DU_TIENG_MS = 2_000L
