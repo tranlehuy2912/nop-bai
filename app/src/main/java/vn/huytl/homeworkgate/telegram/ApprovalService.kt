@@ -577,8 +577,9 @@ class ApprovalService : Service() {
      * nay. Nhung ParentMode van dung tren cung: Ba Huy dang cam may thi do tre dang gia
      * hon pin.
      *
-     * Moi muc cham hon deu phai nho hon [LENH_QUA_CU_MS] mot khoang rong, khong thi
-     * lenh nam cho den luc duoc doc lai bi chinh app bao la "cu qua" va bo di.
+     * Truoc 8/10/2026 moi muc cham hon con phai nho hon moc bo lenh cu (nua tieng), khong
+     * thi lenh nam cho den luc duoc doc lai bi chinh app bo di. Tu ngay do lenh tre bao lau
+     * cung chay, nhip cham chi con lam lenh toi muon hon.
      */
     private fun nhipNgheMs(): Long {
         if (ParentMode.isActive(this)) return 0L
@@ -843,26 +844,12 @@ class ApprovalService : Service() {
         val arg = text.substringAfter(' ', "").trim()
         val con = getString(R.string.child_name)
 
-        // Lenh go qua lau roi thi khong lam nua.
-        //
-        // Telegram giu lai tin chua ai doc trong 24 tieng. Tablet mat mang ca buoi
-        // toi, hay bi tat nguon, thi sang hom sau vua len mang la ca xau lenh do do
-        // xuong mot luc - "/cho 60" go toi qua tu dung mo gio choi vao sang som ma
-        // khong ai bam gi. Tra loi de Ba Huy biet no khong chay, chu khong im.
-        //
-        // Chi loc lenh. /tinco thi khong: tin cua co gui toi qua thi sang nay van phai
-        // hien.
+        // Lenh go tu lau van chay, tre bao lau cung vay (anh Huy chot 8/10/2026, giong lenh
+        // tu Bang dieu khien). Truoc do lenh go qua nua tieng bi bo, tru /tinco, vi so tablet
+        // tat ca dem thi sang hom sau "/cho 60" tu mo gio choi; anh chon cho chay va bot lai
+        // bang /bot neu thua. Telegram giu tin chua doc 24 tieng va tra theo thu tu go.
+        // Luc go van can cho /tinco: tin cua co hien dung gio Ba Huy gui.
         val guiLuc = msg.optLong("date", 0L) * 1000L
-        if (text.startsWith("/") && word != "tinco" && guiLuc > 0L &&
-            System.currentTimeMillis() - guiLuc > LENH_QUA_CU_MS
-        ) {
-            val luc = SimpleDateFormat("HH:mm", Locale("vi", "VN")).format(Date(guiLuc))
-            client.sendMessage(
-                chatId,
-                "Lệnh /$word gõ lúc $luc, lâu quá rồi nên máy bỏ qua. Gõ lại nếu vẫn cần."
-            )
-            return
-        }
 
         when (word) {
             // --- duyet bai dang cho ---
@@ -2136,15 +2123,6 @@ class ApprovalService : Service() {
         private const val NOTIFICATION_ID = 1001
 
         /**
-         * Lenh cu hon chung nay thi khong chay nua.
-         *
-         * Nua tieng: du dai de om ca nhip muoi phut ben duoi va nhung luc
-         * tablet mat mang, du ngan de khong co chuyen lenh cua toi hom truoc chay
-         * vao sang hom sau.
-         */
-        private const val LENH_QUA_CU_MS = 30 * 60_000L
-
-        /**
          * Bam "Nhan cho ba Huy" xong thi man chan cho bay nhieu truoc khi che lai. Xem
          * [nhuongAppMoiLuc]. Ba giay: du cho Telegram mo lanh tren tablet.
          */
@@ -2155,11 +2133,9 @@ class ApprovalService : Service() {
         private const val NGUNG_DEN = 5 * 60
 
         /**
-         * Khuya thi cach nay lau moi ghe hoi Telegram mot lan.
-         *
-         * Phai nho hon [LENH_QUA_CU_MS] mot khoang rong: lenh go luc nua dem nam
-         * cho toi muoi phut moi duoc doc, ma doc xong lai bao "lenh cu qua" thi
-         * thanh ra khong bao gio chay.
+         * Khuya thi cach nay lau moi ghe hoi Telegram mot lan: lenh go luc nua dem nam
+         * cho toi muoi phut moi duoc doc. Truoc 8/10/2026 so nay con phai nho hon moc bo
+         * lenh cu (nua tieng); moc do bo roi.
          */
         private const val NHIP_DEM_MS = 10 * 60_000L
 

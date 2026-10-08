@@ -1232,10 +1232,6 @@ object DongBo {
         if (dangChay && c != null) batNgheLaptop(c)
     }
 
-    /** Lenh go tu lau qua thi bo. Dung chung cho ca [ThiHanhLenh]. */
-    fun quaCu(taoLuc: Long): Boolean =
-        taoLuc > 0L && System.currentTimeMillis() - taoLuc > Duong.QUA_CU_MS
-
     // ----------------------------------------------------------- ghep doi
 
     /**

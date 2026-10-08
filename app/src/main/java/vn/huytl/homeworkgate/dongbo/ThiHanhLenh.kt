@@ -54,7 +54,7 @@ object ThiHanhLenh {
         val ai = d.getString(Duong.F_AI) ?: Nguoi.BA_HUY
 
         // Lenh nao cung chay, tre bao lau cung chay (anh Huy chot 8/10/2026). Truoc do lenh
-        // cu hon [Duong.QUA_CU_MS] (30 phut) bi bo, tru tin cua co, vi so tablet mat mang ca
+        // cu hon 30 phut (Duong.QUA_CU_MS, da bo) bi bo, tru tin cua co, vi so tablet mat mang ca
         // buoi toi thi sang hom sau lenh "cho 60 phut" bam toi qua tu mo gio choi luc sang
         // som. Anh Huy chon bo luat do: tablet chay lenh dung thu tu bam (DongBo xep theo
         // truong "tao"), bot gio duoc moi luc ([GateStore.bot]), nen cho 30 roi bot 30 thi
@@ -298,10 +298,11 @@ object ThiHanhLenh {
     /**
      * Cong bu gio cho mot dot viec nha tablet da bo lo.
      *
-     * KHI NAO CO LENH NAY: ba bam xong het trong luc tablet dang tat. Den luc tablet
-     * song lai thi ban da qua [Duong.QUA_CU_MS] nen no bo qua, con app ben ba thi giu
-     * nguyen dot do cho den khi tablet bao da nhan - ma tablet khong bao gio bao. Bang
-     * dieu khien nhin thay canh do va go lenh nay thay ba.
+     * KHI NAO CO LENH NAY: ba bam xong het trong luc tablet dang tat. Truoc 8/10/2026, den luc
+     * tablet song lai thi ban da qua nua tieng nen no bo qua, con app ben ba thi giu nguyen
+     * dot do cho den khi tablet bao da nhan - ma tablet khong bao gio bao. Bang dieu khien
+     * nhin thay canh do va go lenh nay thay ba. Tu 8/10/2026 tablet nhan dot do du tre bao
+     * lau ([ThiHanhViecNha]), nen Bang dieu khien khong con go lenh nay; giu lai cho lenh cu.
      *
      * Vi sao khong dung [Lenh.CHO] cho gon: cau nhat ky. Le Hoa doc nhat ky tren man
      * hinh chinh, va "Xong viec nha (quet nha, rua chen): +20 phut" khac han "Ba Huy

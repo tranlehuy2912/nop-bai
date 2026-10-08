@@ -42,27 +42,11 @@ object ThiHanhViecNha {
             return
         }
 
-        /*
-         * Ban qua cu thi bo, y het [DongBo.quaCu] ben lenh.
-         *
-         * Chi chan luc BAT DAU mot phien moi. Ban cap nhat cua phien dang chay thi
-         * luon nhan, du gio nao: no co the la cai bam "da xong" cuoi cung, ma luc do
-         * con dang ngoi truoc man hinh khoa cho duoc mo ra.
-         */
-        val dangCo = ViecNha.dangTreo(context)
-        if (dangCo?.id != moi.id && moi.nhanLuc > 0L && DongBo.quaCu(moi.nhanLuc)) {
-            Log.i(TAG, "bo phien ${moi.id}: ba giao tu lau qua")
-            // Dot moi qua cu nen khong bat dau, nhung dot dang giu trong may thi da bi
-            // thay tren Firestore roi (vi du: tablet ngu qua dem, sang ba bo dot cu va
-            // giao dot moi). Giu no lai la khoa con voi nhung viec nguoi lon da bo.
-            if (dangCo != null && ViecNha.laBanMoiHon(moi, dangCo)) {
-                ViecNha.xoa(context)
-                DayLog.add(context, "Đợt việc nhà cũ đã được thay bằng đợt khác")
-                ApprovalService.ensureRunning(context, xetLaiNgay = true)
-                DongBo.dayNgay()
-            }
-            return
-        }
+        // Dot giao tu lau ma tablet chua tung thay van bat dau, tre bao lau cung vay (anh Huy
+        // chot 8/10/2026, cung luc bo luat bo lenh qua nua tieng). Truoc do dot cu hon 30 phut
+        // bi bo: ba bam xong het luc tablet tat thi tablet khong cong gio, phai Gui lai hay
+        // nho Bang dieu khien go lenh CONG_VIEC_NHA. Dot moi thay dot dang giu thi [ViecNha.apDung]
+        // da lo.
 
         val gate = GateStore(context)
         val con = context.getString(R.string.child_name)
