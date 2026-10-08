@@ -132,8 +132,9 @@ class NhatKyAiTest {
     }
 
     /**
-     * So day 200 cau (NhatKyAi giu toi 200 dong) voi gioi han that cua Telegram: vua mot
-     * tin, giu dung doan cau moi nhat, va khong bo thua.
+     * So day 200 cau (so giu bay ngay, khong gioi han so cau tu 8/10/2026, nen /hoi tatca con
+     * dai hon the nay) voi gioi han that cua Telegram: vua mot tin, giu dung doan cau moi
+     * nhat, va khong bo thua.
      */
     @Test
     fun so_day_vua_mot_tin_telegram() {
@@ -152,5 +153,26 @@ class NhatKyAiTest {
         )
         // Moi cau o day ngan hon 200 chu, nen con trong hon 200 chu la da bo thua cau.
         assertTrue(tin.length > TelegramClient.MAX_TIN - 200)
+    }
+
+    /**
+     * Giu bay ngay ke ca hom nay, khong gioi han so cau (anh Huy chot 8/10/2026). Cau nhieu
+     * dong ghi truoc 23/9/2026 di cung cau cua no.
+     */
+    @Test
+    fun so_giu_bay_ngay_khong_gioi_han_so_cau() {
+        val bayGio = java.util.Calendar.getInstance().apply { set(2099, 9, 8, 21, 0) }.timeInMillis
+        val homNay = (0 until 500).map { "08/10 20:00  [Gemini]  câu $it" }
+        val cacCau = listOf(
+            "01/10 09:00  [ChatGPT]  tám ngày trước",
+            "02/10 09:00  [ChatGPT]  sáu ngày trước\ndòng tiếp của câu",
+            "07/10 22:00  [Gemini]  hôm qua"
+        ) + homNay
+        assertEquals(
+            listOf("02/10 09:00  [ChatGPT]  sáu ngày trước\ndòng tiếp của câu", "07/10 22:00  [Gemini]  hôm qua") +
+                homNay,
+            NhatKyAi.conTrongHan(cacCau, bayGio)
+        )
+        assertEquals(7, NhatKyAi.NGAY_GIU)
     }
 }

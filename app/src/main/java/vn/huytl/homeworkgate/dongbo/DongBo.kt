@@ -14,6 +14,7 @@ import android.util.Log
 import com.google.firebase.FirebaseApp
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.DocumentReference
+import com.google.firebase.firestore.FieldPath
 import com.google.firebase.firestore.FieldValue
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ListenerRegistration
@@ -42,6 +43,7 @@ import vn.huytl.homeworkgate.guard.TelegramThat
 import vn.huytl.homeworkgate.guard.TinCuaBa
 import java.security.SecureRandom
 import java.text.SimpleDateFormat
+import java.util.Calendar
 import java.util.Date
 import java.util.Locale
 
@@ -160,6 +162,7 @@ object DongBo {
         TinCuaBa.K_SO,
         K_DAU_DS_APP,
         K_DA_XOA_CHAT,
+        K_DON_NHAT_KY,
         TelegramThat.K_DA_THEM_MOI_LUC,
         K_NHA
     )
@@ -587,6 +590,7 @@ object DongBo {
      * ghi lai ca so hoi AI, va nguoc lai.
      */
     private fun dayNhatKy(context: Context) {
+        xoaNhatKyCu(context)
         val dong = DayLog.today(context).lines().filter { it.isNotBlank() }
         if (dong.isNotEmpty() && dong != nhatKyDaDay) {
             nhatKyDaDay = dong
@@ -1534,6 +1538,55 @@ object DongBo {
             }
     }
 
+    /**
+     * Xoa nhatky/{ngay} va hoiai/{ngay} cu hon [DayLog.NGAY_GIU_TREN_MANG] ngay, tinh ca hom
+     * nay (anh Huy chot 8/10/2026: tren mang giu bay ngay nhu trang "Thời gian dùng app", sau
+     * do xoa; truoc do khong ai xoa, nha that con nguyen so tu ngay lap 27/9/2026). Lan dau
+     * chay la xoa luon cac ngay cu do.
+     *
+     * Moi ngay mot lan, goi tu [dayNhatKy]. Xong ca hai so moi ghi [K_DON_NHAT_KY], hong thi
+     * lan day sau thu lai. Doc tu may chu nhu [xoaChatCu]: ban trong bo nho dem co the thieu
+     * ngay cu. Ma document la "yyyy-MM-dd" nen so chuoi la so ngay.
+     */
+    private fun xoaNhatKyCu(context: Context) {
+        val sp = Prefs.get(context).raw()
+        val homNay = homNay()
+        if (sp.getString(K_DON_NHAT_KY, null) == homNay) return
+        val n = nha(context) ?: return
+        val lich = Calendar.getInstance().apply { add(Calendar.DAY_OF_MONTH, -(DayLog.NGAY_GIU_TREN_MANG - 1)) }
+        val cuNhatConGiu = SimpleDateFormat("yyyy-MM-dd", Locale.US).format(lich.time)
+        val cacSo = listOf(Duong.NHAT_KY, Duong.HOI_AI)
+        var conCho = cacSo.size
+        var hong = false
+        fun xong(ok: Boolean) {
+            if (!ok) hong = true
+            conCho--
+            if (conCho == 0 && !hong) sp.edit().putString(K_DON_NHAT_KY, homNay).apply()
+        }
+        cacSo.forEach { so ->
+            n.collection(so).whereLessThan(FieldPath.documentId(), cuNhatConGiu)
+                .get(com.google.firebase.firestore.Source.SERVER)
+                .addOnSuccessListener { snap ->
+                    if (snap.isEmpty) return@addOnSuccessListener xong(true)
+                    val lo = n.firestore.batch()
+                    snap.documents.forEach { lo.delete(it.reference) }
+                    lo.commit()
+                        .addOnSuccessListener {
+                            Log.i(TAG, "da xoa ${snap.size()} ngay cu trong $so/")
+                            xong(true)
+                        }
+                        .addOnFailureListener {
+                            Log.w(TAG, "xoa $so cu hong: ${it.message}")
+                            xong(false)
+                        }
+                }
+                .addOnFailureListener {
+                    Log.w(TAG, "doc $so cu hong: ${it.message}")
+                    xong(false)
+                }
+        }
+    }
+
     private const val CHAT_CU = "chat"
     private const val LO_XOA_CHAT = 400L
 
@@ -1542,4 +1595,7 @@ object DongBo {
 
     /** Da xoa het chat/ cu tren Firestore chua. Xem [xoaChatCu]. */
     private const val K_DA_XOA_CHAT = "dongbo_da_xoa_chat_cu"
+
+    /** Ngay gan nhat da don xong nhat ky cu tren Firestore. Xem [xoaNhatKyCu]. */
+    private const val K_DON_NHAT_KY = "dongbo_don_nhat_ky"
 }

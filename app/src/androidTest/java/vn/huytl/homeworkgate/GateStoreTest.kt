@@ -1051,4 +1051,86 @@ class GateStoreTest {
         assertEquals(0, gate.doiPhut(10, now = now, nowElapsed = 1_000L))
         assertEquals(GateState.LOCKED, gate.state)
     }
+
+    // ------------------------------------------------- bot gio (anh Huy chot 8/10/2026)
+    //
+    // Bot gio co che giong cho them: dang choi, dang tam dung hay con phieu chua bat dau deu
+    // bot duoc; khong giu phut nao thi khong lam gi. Xem [GateStore.bot].
+
+    @Test
+    fun bot_luc_dang_choi_tru_vao_phien_dang_chay() {
+        val now = at(19, 0)
+        gate.approve(now)
+        gate.start(now, nowElapsed = 1_000L)
+
+        // Choi duoc 1 phut thi con 59, bot 20 con 39.
+        assertEquals(39, gate.bot(20, now + minute, nowElapsed = 1_000L + minute))
+        assertEquals(GateState.ACTIVE, gate.state)
+    }
+
+    @Test
+    fun bot_luc_tam_dung_tru_vao_phan_dang_giu_va_van_tam_dung() {
+        val now = at(19, 0)
+        gate.approve(now)
+        gate.start(now, nowElapsed = 1_000L)
+        gate.pause(now = now + 10 * minute, nowElapsed = 1_000L + 10 * minute)
+
+        assertEquals(30, gate.bot(20, now + 11 * minute, nowElapsed = 1_000L + 11 * minute))
+        assertEquals(GateState.PAUSED, gate.state)
+        assertEquals(30, gate.pausedMinutes())
+        // Choi tiep thi chay dung 30 phut con lai.
+        assertEquals(30, gate.resume(now + 12 * minute, nowElapsed = 1_000L + 12 * minute))
+    }
+
+    @Test
+    fun bot_het_phan_tam_dung_thi_khoa() {
+        val now = at(19, 0)
+        gate.approve(now)
+        gate.start(now, nowElapsed = 1_000L)
+        gate.pause(now = now + 10 * minute, nowElapsed = 1_000L + 10 * minute)
+
+        assertEquals(0, gate.bot(60, now + 11 * minute, nowElapsed = 1_000L + 11 * minute))
+        assertEquals(GateState.LOCKED, gate.state)
+        assertEquals(0, gate.pausedMinutes())
+    }
+
+    @Test
+    fun bot_luc_co_phieu_chua_bat_dau_tru_vao_phieu() {
+        val now = at(19, 0)
+        gate.approve(now)
+
+        assertEquals(45, gate.bot(15, now))
+        assertEquals(GateState.GRANTED, gate.state)
+        assertEquals(45, gate.grantedMinutes)
+        // Bam Bat dau thi phien dai dung phan con lai cua phieu.
+        assertEquals(45, gate.start(now + minute, nowElapsed = 1_000L))
+    }
+
+    @Test
+    fun bot_het_phieu_thi_mat_phieu() {
+        val now = at(19, 0)
+        gate.approve(now)
+
+        assertEquals(0, gate.bot(90, now))
+        assertEquals(GateState.LOCKED, gate.state)
+        assertEquals(0, gate.grantedMinutes)
+    }
+
+    @Test
+    fun bot_luc_khong_giu_phut_nao_thi_khong_lam_gi() {
+        assertNull(gate.bot(15, at(19, 0)))
+        assertEquals(GateState.LOCKED, gate.state)
+    }
+
+    @Test
+    fun cho_30_roi_bot_30_thi_van_la_khong_phut() {
+        // Vi du anh Huy dua ngay 8/10/2026: tablet tat, hai lenh toi tre mot luc. DongBo lam
+        // dung thu tu bam, nen cho truoc bot sau thi Le Hoa khong duoc phut nao.
+        val now = at(19, 0)
+        gate.approve(now, wantedMinutes = 30, useQuota = false)
+
+        assertEquals(0, gate.bot(30, now))
+        assertEquals(GateState.LOCKED, gate.state)
+        assertEquals(0, gate.grantedMinutes)
+    }
 }

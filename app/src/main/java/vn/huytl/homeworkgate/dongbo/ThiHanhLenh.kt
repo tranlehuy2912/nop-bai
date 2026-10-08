@@ -25,9 +25,6 @@ import vn.huytl.homeworkgate.guard.ParentMode
 import vn.huytl.homeworkgate.guard.Permissions
 import vn.huytl.homeworkgate.telegram.ApprovalService
 import vn.huytl.homeworkgate.telegram.TelegramClient
-import java.text.SimpleDateFormat
-import java.util.Date
-import java.util.Locale
 import kotlin.concurrent.thread
 
 /**
@@ -56,18 +53,13 @@ object ThiHanhLenh {
         // Thieu truong nay la ban Bang dieu khien cu, ma ban do thi chi Ba Huy cam.
         val ai = d.getString(Duong.F_AI) ?: Nguoi.BA_HUY
 
-        // Lenh go tu lau qua thi bo.
-        //
-        // Giong het ly do ben Telegram: tablet mat mang ca buoi toi, sang hom sau
-        // vua len mang la ca xau lenh do xuong mot luc - "cho 60 phut" bam toi qua
-        // tu dung mo gio choi vao sang som ma khong ai bam gi.
-        //
-        // Tru tin cua co. Tin gui toi qua thi sang nay van dung nguyen, con bo di la
-        // con khong bao gio biet co dan gi - ma Ba Huy thi tuong da chuyen roi.
-        if (kieu != Lenh.TIN_CO && DongBo.quaCu(taoLuc)) {
-            val luc = SimpleDateFormat("HH:mm", Locale("vi", "VN")).format(Date(taoLuc))
-            return "Lệnh bấm lúc $luc, lâu quá rồi nên máy bỏ qua."
-        }
+        // Lenh nao cung chay, tre bao lau cung chay (anh Huy chot 8/10/2026). Truoc do lenh
+        // cu hon [Duong.QUA_CU_MS] (30 phut) bi bo, tru tin cua co, vi so tablet mat mang ca
+        // buoi toi thi sang hom sau lenh "cho 60 phut" bam toi qua tu mo gio choi luc sang
+        // som. Anh Huy chon bo luat do: tablet chay lenh dung thu tu bam (DongBo xep theo
+        // truong "tao"), bot gio duoc moi luc ([GateStore.bot]), nen cho 30 roi bot 30 thi
+        // tre may cung van la 0 phut; con lenh cho gio toi qua chay sang nay thi Ba Huy bot
+        // lai. Luat do con lam mat ca ket qua cham bai dan vao luc tablet tat qua nua tieng.
 
         /*
          * May ba noi khong con go duoc lenh nao (tu 26/9/2026, app ba chi con viec
@@ -95,21 +87,9 @@ object ThiHanhLenh {
 
             Lenh.CONG_VIEC_NHA -> congViecNha(context, gate, phut, chu)
 
-            Lenh.BOT -> {
-                val bot = phut ?: 15
-                val conLai = gate.extend(-bot)
-                when {
-                    conLai == null -> "$con đang không trong giờ chơi."
-                    conLai <= 0 -> {
-                        DayLog.add(context, "Ba Huy bớt giờ, hết luôn phiên")
-                        "Bớt $bot phút là hết giờ luôn. Đã khoá."
-                    }
-                    else -> {
-                        DayLog.add(context, "Ba Huy bớt $bot phút")
-                        "Đã bớt $bot phút, còn $conLai phút."
-                    }
-                }
-            }
+            // Bot luc nao cung duoc nhu cho them (anh Huy chot 8/10/2026), xem [GateStore.bot].
+            // Lenh cu chua ghi so phut la ban Bang dieu khien truoc ngay do: moi lan bam 15 phut.
+            Lenh.BOT -> botGio(context, gate, phut ?: 15)
 
             Lenh.DUNG -> {
                 val giu = gate.pause()
@@ -287,6 +267,32 @@ object ThiHanhLenh {
         // Con dang giu phieu cu ma nop them bai thi duyet la cong don, khong de len.
         return (if (duoc > them) "Đã duyệt thêm $them phút, cộng dồn thành $duoc phút."
         else "Đã duyệt $duoc phút.") + catBot
+    }
+
+    /**
+     * Bot [phut] phut cua so gio dang giu, cho ca lenh BOT lan /bot ben Telegram (hai duong
+     * noi vao cung [GateStore.bot], nen hai cau tra loi va hai dong nhat ky phai giong nhau).
+     *
+     * Le Hoa doc nhat ky tren man hinh chinh, nen dong nhat ky noi ro bot vao dau: gio dang
+     * choi, phan dang tam dung hay phieu chua bat dau. Khong giu phut nao thi khong ghi gi.
+     */
+    internal fun botGio(context: Context, gate: GateStore, phut: Int): String {
+        val bot = phut.coerceAtLeast(1)
+        val con = context.getString(R.string.child_name)
+        val truoc = gate.state
+        val cho = when (truoc) {
+            GateState.ACTIVE -> "giờ chơi"
+            GateState.PAUSED -> "phần đang tạm dừng"
+            else -> "phiếu giờ chơi"
+        }
+        val conLai = gate.bot(bot) ?: return "$con không có giờ nào để bớt."
+        if (conLai <= 0) {
+            DayLog.add(context, "Ba Huy bớt $bot phút, hết $cho")
+            return if (truoc == GateState.ACTIVE) "Bớt $bot phút là hết giờ chơi. Đã khoá."
+            else "Bớt $bot phút là hết $cho."
+        }
+        DayLog.add(context, "Ba Huy bớt $bot phút, $cho còn $conLai phút")
+        return "Đã bớt $bot phút, $cho còn $conLai phút."
     }
 
     /**

@@ -881,6 +881,58 @@ class GateStore(context: Context) {
     }
 
     /**
+     * Bot [phut] phut cua so gio Le Hoa dang giu, lenh BOT va /bot.
+     *
+     * Anh Huy chot 8/10/2026: bot gio co che giong cho them gio. Truoc do chi bot duoc
+     * luc dong ho dang chay; dang tam dung hay con phieu chua bam Bat dau thi lenh bao
+     * "khong trong gio choi", trong khi cho them luc nao cung duoc. Bay gio:
+     *  - dang choi: tru vao phien dang chay ([extend]);
+     *  - dang tam dung: tru vao phan dang giu, van tam dung (khong doi kieu dung);
+     *  - con phieu chua bam Bat dau (GRANTED, hay PENDING ma van giu phieu): tru vao phieu.
+     * Tru het thi cat luon phien hay phieu ([endSession]); bai dang cho duyet van giu.
+     *
+     * Khong dung toi quy gio choi, nhu [approve] cua lenh cho them cung khong dung.
+     *
+     * Tra ve so phut con lai, 0 khi vua tru het, null khi Le Hoa khong giu phut nao (anh
+     * Huy chot: may khong lam gi). Con lai luc tam dung lam tron xuong nhu [pausedMinutes].
+     */
+    fun bot(
+        phut: Int,
+        now: Long = System.currentTimeMillis(),
+        nowElapsed: Long = SystemClock.elapsedRealtime()
+    ): Int? {
+        val bot = phut.coerceAtLeast(1)
+        return when (state) {
+            GateState.ACTIVE -> extend(-bot, now, nowElapsed)
+            GateState.PAUSED -> {
+                val con = pausedRemainingMs - bot * 60_000L
+                if (con <= 0L) {
+                    endSession(EndReason.PARENT_REVOKED, now, nowElapsed)
+                    0
+                } else {
+                    pausedRemainingMs = con
+                    (con / 60_000L).toInt()
+                }
+            }
+            GateState.GRANTED, GateState.PENDING -> {
+                val giu = grantedMinutes
+                when {
+                    giu <= 0 -> null
+                    giu <= bot -> {
+                        endSession(EndReason.PARENT_REVOKED, now, nowElapsed)
+                        0
+                    }
+                    else -> {
+                        sp.edit().putInt(K_GRANTED_MINUTES, giu - bot).commit()
+                        giu - bot
+                    }
+                }
+            }
+            else -> null
+        }
+    }
+
+    /**
      * So phut tron con dang giu trong phieu hom nay, de doi sang Netflix tren laptop
      * (7/10/2026). Phieu chua bam Bat dau, dang tam dung hay dang chay deu doi duoc; phan
      * le giay khong tinh.

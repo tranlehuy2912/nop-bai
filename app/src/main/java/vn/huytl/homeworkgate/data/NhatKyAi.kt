@@ -14,12 +14,17 @@ import java.util.Locale
  * vao AI, de Ba Huy doc lai xem con nho AI giai ho hay chi nho chi cho sai.
  *
  * Van chi giu vai ngay, khong giu mai: dich la doc trong tuan roi thoi, khong phai
- * lap ho so. Con chu de ghi bang [MAX_DONG] chu khong phai luu tru vinh vien.
+ * lap ho so. Tu 8/10/2026 giu [NGAY_GIU] ngay ke ca hom nay, khong gioi han so cau (truoc
+ * do 200 dong, ngay con hoi nhieu thi cau som nhat bi day ra), bang so ngay ban sao tren
+ * Firestore (hoiai/{ngay}) va bang trang "Thời gian dùng app": anh Huy muon xem lai bay
+ * ngay tren Bang dieu khien.
  */
 object NhatKyAi {
 
     private const val K_TEXT = "nhatky_ai_text"
-    private const val MAX_DONG = 200
+
+    /** So ngay giu trong may, tinh ca hom nay. */
+    const val NGAY_GIU = DayLog.NGAY_GIU_TREN_MANG
 
     /**
      * Dau ghi thay cho moi lan con xuong dong trong cau, xem [motDong].
@@ -44,9 +49,25 @@ object NhatKyAi {
         val sp = Prefs.get(context).raw()
         val dong = "${dongHo.format(Date())}  [$tenApp]  ${motDong(cau)}"
         val cu = sp.getString(K_TEXT, "").orEmpty()
-        val moi = (cu.lines().filter { it.isNotBlank() } + dong).takeLast(MAX_DONG)
+        val moi = conTrongHan(tachCau(cu) + dong)
         sp.edit().putString(K_TEXT, moi.joinToString("\n")).commit()
         return dong
+    }
+
+    /**
+     * Bo cac cau cu hon [NGAY_GIU] ngay, xet theo ngay ghi o dau cau ("dd/MM").
+     *
+     * So chi ghi ngay va thang, khong ghi nam; ma so khong bao gio giu qua bay ngay nen
+     * khong co hai cau cung "dd/MM" khac nam. Cau ghi truoc 23/9/2026 co the nam tren nhieu
+     * dong, [tachCau] da gop dong tiep vao cau cua no nen bo cau nao thi bo ca dong tiep.
+     */
+    internal fun conTrongHan(cac: List<String>, now: Long = System.currentTimeMillis()): List<String> {
+        val dinhDang = SimpleDateFormat("dd/MM", Locale.forLanguageTag("vi-VN"))
+        val lich = Calendar.getInstance().apply { timeInMillis = now }
+        val ngay = (0 until NGAY_GIU).map {
+            dinhDang.format(lich.time).also { lich.add(Calendar.DAY_OF_MONTH, -1) }
+        }.toSet()
+        return cac.filter { cau -> cau.take(5) in ngay }
     }
 
     /**
@@ -98,8 +119,8 @@ object NhatKyAi {
      * Dai qua [toiDa] chu thi bo cau cu nhat truoc, bo ca cau chu khong cat giua cau, va
      * dong thu hai cua tin noi bao nhieu cau khong hien. So xep cau cu len truoc, ma
      * TelegramClient.sendMessage cat duoi tin dai qua mot tin, nen truoc 28/9/2026 tin dai
-     * mat dung may cau moi nhat, la cau Ba Huy dang muon doc. /hoi tatca giu toi
-     * [MAX_DONG] dong, so day la chac chan dai qua mot tin.
+     * mat dung may cau moi nhat, la cau Ba Huy dang muon doc. /hoi tatca la ca [NGAY_GIU]
+     * ngay, so day la chac chan dai qua mot tin.
      *
      * Cau moi nhat luon duoc giu, ke ca khi mot minh no da dai qua [toiDa]: [BoGoAi]
      * khong co tran do dai, con dan ca bai doc vao app AI la co. Khi do sendMessage cat

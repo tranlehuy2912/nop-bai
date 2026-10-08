@@ -60,6 +60,7 @@ import vn.huytl.homeworkgate.kho.PhamVi
 import vn.huytl.homeworkgate.guard.DaiNhac
 import vn.huytl.homeworkgate.guard.ManChan
 import vn.huytl.homeworkgate.dongbo.DongBo
+import vn.huytl.homeworkgate.dongbo.ThiHanhLenh
 import vn.huytl.homeworkgate.guard.ChuongTin
 import vn.huytl.homeworkgate.guard.GuardAccessibilityService
 import vn.huytl.homeworkgate.guard.TelegramThat
@@ -903,22 +904,11 @@ class ApprovalService : Service() {
                 capGio(client, chatId, arg.toIntOrNull(), useQuota = false, why = "ba Huy cho thêm")
             }
 
+            // Bot luc nao cung duoc nhu /cho (anh Huy chot 8/10/2026): dang choi, dang tam
+            // dung hay con phieu chua bat dau. Chung mot ham voi lenh BOT tu Bang dieu khien.
             "bot" -> {
-                val phut = arg.toIntOrNull() ?: 15
-                val left = gate.extend(-phut)
-                when {
-                    left == null -> client.sendMessage(chatId, "$con đang không trong giờ chơi.")
-                    left <= 0 -> {
-                        DayLog.add(this, "Ba Huy bớt giờ, hết luôn phiên")
-                        client.sendMessage(chatId, "Bớt $phut phút là hết giờ luôn. Đã khoá.")
-                        refreshUi()
-                    }
-                    else -> {
-                        DayLog.add(this, "Ba Huy bớt $phut phút")
-                        client.sendMessage(chatId, "Đã bớt $phut phút. Còn lại $left phút.")
-                        refreshUi()
-                    }
-                }
+                client.sendMessage(chatId, ThiHanhLenh.botGio(this, gate, arg.toIntOrNull() ?: 15))
+                refreshUi()
             }
 
             // Cap gio tu quy gio choi (29/9/2026): /quy 30, hay /quy de cap het. Duong du
@@ -1029,7 +1019,7 @@ class ApprovalService : Service() {
                 client.sendMessage(
                     chatId,
                     if (log.isBlank()) "Hôm nay chưa có gì xảy ra."
-                    else "Hôm nay:\n$log"
+                    else DayLog.tinNhatKy("Hôm nay:", log, TelegramClient.MAX_TIN)
                 )
             }
 
