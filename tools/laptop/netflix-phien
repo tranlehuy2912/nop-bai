@@ -32,6 +32,23 @@ fi
 # nay thi dang nhap luc 0 phut van xem duoc khoang 20 giay truoc khi Timekpr-nExt day ra, va bam
 # dang nhap lien tuc la xem duoc tung doan. So giay lay tu file netflix_gio.py ghi, xem
 # FILE_CON_LAI ben do. Thieu file hay doc khong ra so thi coi la het phut.
+#
+# Tu 8/10/2026 bat may la tu vao phien nay (80-netflix-lehoa.conf), ma luc do netflix_gio.py chua
+# kip ghi file: no cho dong ho lay gio mang va cho Timekpr-nExt chay, lan thu 7/10/2026 la giay 99
+# sau khi bat may. Khong cho thi con dang co phut van bi bao het phut. /run bi xoa moi lan khoi
+# dong, nen thieu file gan nhu chac la vua bat may: cho toi da 3 phut, hien mot dong chu de tivi
+# khong den trang. Qua 3 phut van thieu (chuong trinh chay ngam chet?) thi coi la het phut nhu cu.
+if [ ! -f /run/netflix-gio/conlai ]; then
+    zenity --info --title "Netflix" --width=460 \
+        --text "Đang mở Netflix, chờ khoảng một phút." >/dev/null 2>&1 &
+    cho=$!
+    i=0
+    while [ ! -f /run/netflix-gio/conlai ] && [ $i -lt 180 ]; do
+        i=$((i + 1))
+        sleep 1
+    done
+    kill $cho 2>/dev/null
+fi
 con=0
 if read giay dung luc < /run/netflix-gio/conlai 2>/dev/null; then
     case "$giay$dung$luc" in

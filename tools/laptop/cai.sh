@@ -25,7 +25,10 @@ install -m 644 "$day/netflix-gio.service" /etc/systemd/system/netflix-gio.servic
 install -m 755 "$day/netflix-phien" /usr/local/bin/netflix-phien
 install -m 755 "$day/netflix-thoat" /usr/local/bin/netflix-thoat
 install -m 644 "$day/98netflix-lehoa" /etc/X11/Xsession.d/98netflix-lehoa
-id lehoa >/dev/null 2>&1 || useradd -m -c "Lê Hòa" -s /bin/bash lehoa
+# Bat may la tu vao phien Netflix (8/10/2026), xem dau file 80-netflix-lehoa.conf.
+install -m 644 "$day/80-netflix-lehoa.conf" /etc/lightdm/lightdm.conf.d/80-netflix-lehoa.conf
+# Ten hien o man dang nhap la "Netflix" (anh Huy doi 8/10/2026; tai khoan huy hien "Admin").
+id lehoa >/dev/null 2>&1 || useradd -m -c "Netflix" -s /bin/bash lehoa
 usermod -aG nopasswdlogin lehoa
 # Timekpr-nExt: 0 phut moi ngay, het gio thi dang xuat, khong tu bao (chi bao tieng Viet tu
 # netflix_gio.py, anh Huy chon 7/10/2026).
