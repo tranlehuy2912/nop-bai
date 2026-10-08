@@ -59,6 +59,13 @@ import java.util.Calendar
  * dung, xam khi goi y da lo dap an. Sai roi lam dung van duoc sao (luat phut khong doi: chi lo
  * dap an moi mat). Lam xong mot tu thi canh chu ket qua hien "+1 ★", lo dap an hay chiu thi
  * "+0 ★". Phut van cong gop luc chot buoi ([chot]), qua tran ngay thi vao quy gio choi.
+ *
+ * MAY DOC TU, CON NGHE XONG MOI TRA LOI DUOC (Ba Huy chot 8/10/2026). Cau nao hien len may
+ * cung doc ca tu bang giong Anh ([GiongDoc]), o ca hai chieu: chieu nhin nghia thanh bai
+ * nghe roi ghep, nhu viet chinh ta, va van 1 phut moi tu. Trong luc doc, khung phim va cac
+ * nut tra loi bi khoa ([khoaChoDoc]), bam nhanh khong bo qua duoc. Nut loa nghe lai bao
+ * nhieu lan cung duoc va khong khoa. May tat tieng thi van "doc" cho het luot roi mo (Ba Huy
+ * chon cach de lam); may khong doc duoc thi khong khoa, man chay nhu truoc ngay do.
  */
 class DoTuVungActivity : AppCompatActivity() {
 
@@ -136,6 +143,18 @@ class DoTuVungActivity : AppCompatActivity() {
     /** Tu da xong va da tra gio trong buoi nay. */
     private val tuDaTra = HashSet<String>()
 
+    /** Giong doc tu, tao o [onCreate], tra o [onDestroy]. */
+    private var giong: GiongDoc? = null
+
+    /**
+     * Cau dang hoi da nghe may doc het tu chua. Chua thi khung phim va nut tra loi dang khoa:
+     * Ba Huy chot 8/10/2026 cau nao cung phai nghe het tu roi moi chon dap an hay sang tu sau.
+     */
+    private var daNgheCauNay = true
+
+    /** Dem luot doc co khoa, de bao xong cua luot cu khong mo khoa nham cau moi. */
+    private var luotDoc = 0
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         b = StActivityDoTuBinding.inflate(layoutInflater)
@@ -151,9 +170,12 @@ class DoTuVungActivity : AppCompatActivity() {
         b.btnThoat.setOnClickListener { veLui() }
         b.btnChinh.setOnClickListener { if (daTraLoi) sangTuSau() else traLoiGo() }
         b.btnChiu.setOnClickListener { chiuThoi() }
+        b.btnLoa.setOnClickListener { ngheLai() }
         onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {
             override fun handleOnBackPressed() = veLui()
         })
+        // Tao truoc khi hien cau dau: bo doc mat vai tram mili giay de khoi dong.
+        giong = GiongDoc(this) { veNutLoa() }
         veChonBo()
     }
 
@@ -170,12 +192,28 @@ class DoTuVungActivity : AppCompatActivity() {
 
     override fun onPause() {
         chot()
+        // Ngung doc nhung GIU khoa neu lan doc dau chua het: [onResume] doc lai.
+        giong?.dung()
         super.onPause()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        // Roi man giua luc may dang doc (tat man hinh, ra man chinh) thi quay lai doc lai tu
+        // dang hoi roi moi mo khoa. Khong thi thoat ra vao lai la bo qua duoc tieng doc.
+        if (!daNgheCauNay && b.boxHoi.visibility == View.VISIBLE) docCauDangHoi()
+    }
+
+    override fun onDestroy() {
+        giong?.tat()
+        giong = null
+        super.onDestroy()
     }
 
     // ------------------------------------------------------------- chon bo tu
 
     private fun veChonBo() {
+        ngungDoc()
         val kho = KhoBai.get(this)
         b.boxBo.visibility = View.VISIBLE
         b.boxHoi.visibility = View.GONE
@@ -410,6 +448,71 @@ class DoTuVungActivity : AppCompatActivity() {
             // Dap an da hien het thi bat go cho dung, khong cho bam chiu de bo qua.
             b.btnChiu.visibility = if (m.loHet) View.GONE else View.VISIBLE
         }
+
+        // Ve xong moi doc: khoa phai de len khung phim vua ve. Tu bi hoi lai cung doc lai.
+        veNutLoa()
+        docCauDangHoi()
+    }
+
+    // ------------------------------------------------------------- giong doc
+
+    /**
+     * Doc tu cua cau dang hoi va khoa phan tra loi toi khi doc het. May khong doc duoc thi
+     * khong khoa (Ba Huy chot 8/10/2026), man chay nhu truoc.
+     */
+    private fun docCauDangHoi() {
+        val m = dangHoi() ?: return
+        val g = giong
+        if (g == null || !g.coTheDoc || daTraLoi) return moKhoaDoc()
+        val luot = ++luotDoc
+        daNgheCauNay = false
+        khoaChoDoc()
+        // Doc het, hay bo doc loi, treo: deu mo. Luot da bi luot sau de len thi thoi.
+        g.doc(GiongDoc.chuDoc(m.tu.tu)) { if (luot == luotDoc) moKhoaDoc() }
+    }
+
+    /**
+     * Nut loa: nghe lai bao nhieu lan cung duoc, khong khoa (Ba Huy chot 8/10/2026). Bam luc
+     * lan doc dau chua het thi doc lai tu dau, va van khoa toi khi doc het lan nay.
+     */
+    private fun ngheLai() {
+        val m = dangHoi() ?: return
+        if (!daNgheCauNay) return docCauDangHoi()
+        giong?.doc(GiongDoc.chuDoc(m.tu.tu))
+    }
+
+    /**
+     * Khoa trong luc doc. Khung phim ghep tu bat tat tung phim (phim mo, phim da dung), nen
+     * khong dung toi phim cua no ma phu mot lop chan bam len tren ([R.id.lop_khoa]) va lam mo
+     * ca khung; hai nut duoi thi tat thang.
+     */
+    private fun khoaChoDoc() {
+        b.lopKhoa.visibility = View.VISIBLE
+        b.khung.alpha = DO_MO_KHI_DOC
+        b.btnChinh.isEnabled = false
+        b.btnChiu.isEnabled = false
+        b.txtDoc.visibility = View.VISIBLE
+    }
+
+    private fun moKhoaDoc() {
+        daNgheCauNay = true
+        b.lopKhoa.visibility = View.GONE
+        b.khung.alpha = 1f
+        b.btnChinh.isEnabled = true
+        b.btnChiu.isEnabled = true
+        b.txtDoc.visibility = View.GONE
+    }
+
+    /** Ngung doc va bo khoa, khi roi phan hoi (ve man chon bo, xong buoi). */
+    private fun ngungDoc() {
+        giong?.dung()
+        luotDoc++
+        moKhoaDoc()
+    }
+
+    /** Nut loa chi hien khi may doc duoc; bo doc hong giua buoi thi an luon. */
+    private fun veNutLoa() {
+        b.btnLoa.visibility = if (giong?.coTheDoc == true) View.VISIBLE else View.GONE
     }
 
     /**
@@ -603,6 +706,7 @@ class DoTuVungActivity : AppCompatActivity() {
     }
 
     private fun xongBuoi() {
+        ngungDoc()
         chot()
         val soXong = muc.values.count { it.xong }
         val soDuocGio = muc.values.count { it.duocGio }
@@ -709,5 +813,8 @@ class DoTuVungActivity : AppCompatActivity() {
     private companion object {
         /** Sao cua mot tu, cung la so phut cua no: xem [LuatTuVung.GIAY_MOI_TU]. */
         const val SAO_MOI_TU = LuatTuVung.GIAY_MOI_TU / 60
+
+        /** Do mo cua khung phim trong luc may doc tu, xem [khoaChoDoc]. */
+        const val DO_MO_KHI_DOC = 0.45f
     }
 }

@@ -85,6 +85,9 @@
     <string name="do_tu_nhan_anh">Từ này nghĩa là gì?</string>
     <string name="do_tu_nhan_viet">Nghĩa này là từ nào?</string>
     <string name="do_tu_het_hom_nay">Hôm nay kiểm tra đủ rồi, mai có buổi mới.</string>
+    <!-- Giong doc tu (8/10/2026), xem ui/GiongDoc.kt. -->
+    <string name="do_tu_nghe_lai">Nghe lại từ</string>
+    <string name="do_tu_dang_doc">Đang đọc từ. Nghe xong mới bấm được.</string>
 
     <!-- Bang gia gio choi, viet cho Le Hoa doc. Ten dat theo cau con hoi that
          ("lam gi thi duoc them gio") chu khong phai ten co che ("Luat cong gio").

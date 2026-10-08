@@ -35,6 +35,7 @@ import vn.huytl.homeworkgate.data.DayLog
 import vn.huytl.homeworkgate.data.NhatKyAi
 import vn.huytl.homeworkgate.data.NhatKySuDung
 import vn.huytl.homeworkgate.data.GioiHanApp
+import vn.huytl.homeworkgate.ui.GiongDoc
 import vn.huytl.homeworkgate.ui.HomeActivity
 import vn.huytl.homeworkgate.data.EndReason
 import vn.huytl.homeworkgate.data.GateState
@@ -955,6 +956,12 @@ class GuardAccessibilityService : AccessibilityService() {
             dangChanNhacMu = false
             return null
         }
+        // Tieng cua chinh app: giong doc cua man Kiem tra tu vung (8/10/2026). Bo doc la app
+        // khac phat thay minh, nhanh nay chi biet "may co tieng", va [currentPackage] khong
+        // bao gio la app minh - khong hoi [GiongDoc] thi con kiem tra tu vung luc het gio
+        // choi la bi bam Dung, bat im, va nhat ky ghi nham "Dừng nhạc chạy nền". Xet lai som
+        // nhu luc dang chan: doc xong ma con tieng thi do la tieng khac.
+        if (GiongDoc.dangPhatTieng()) return NHIP_CHAN_NHAC_MS
         val pkg = currentPackage
         val trongGioHoc = buoiDangChan() != null
         val trongGioNgu = gate.trongGioNgu()

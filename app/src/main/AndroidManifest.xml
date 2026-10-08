@@ -42,6 +42,11 @@
             <action android:name="android.intent.action.VIEW" />
             <data android:scheme="tg" />
         </intent>
+        <!-- Bo doc giong noi cho man Kiem tra tu vung (8/10/2026, ui/GiongDoc.kt). Bo doc la
+             mot app khac; thieu muc nay thi TextToSpeech khong thay no va bao loi ngay. -->
+        <intent>
+            <action android:name="android.intent.action.TTS_SERVICE" />
+        </intent>
     </queries>
 
     <application
