@@ -1,0 +1,81 @@
+#!/usr/bin/env python3
+# Go khoi prefs.js cua ho so Firefox cac cai dat ma che do may thu cua Firefox ghi vao (8/10/2026).
+# Chay bang root tren laptop, luc Firefox cua ho so do khong chay:
+#   sudo python3 go-cai-dat-may-thu            # chi in cac dong se go
+#   sudo python3 go-cai-dat-may-thu --ghi      # go that, luu ban cu o /root/prefs.js.truoc-go-<ngay gio>
+# Them duong dan ho so o cuoi neu khong phai ho so cua lehoa.
+#
+# Firefox mo voi --marionette hay --remote-debugging-port thi luc khoi dong tu dat khoang 100 "cai
+# dat de nghi" cho may thu (RecommendedPreferences.sys.mjs trong omni.ja), dat thanh cai dat cua
+# nguoi dung nen duoc ghi vao prefs.js, va chi go lai khi Firefox tat dang hoang. Chieu 8/10/2026
+# Claude Code mo nhu vay ngay tren ho so that cua lehoa de do loi trang Netflix trong, roi tat
+# Firefox ngang (SIGTERM, va mot lan bam nut nguon), nen 94 dong ket lai trong prefs.js:
+# focusmanager.testmode, marionette.port, services.settings.server tro vao dia chi gia, tat cap
+# nhat tien ich, tat cai goi ngon ngu kem Firefox (extensions.installDistroAddons)... Tu do lan mo
+# nao man tivi cung den. Muon do loi thi chep ho so ra cho khac ma thu (xem LAPTOP.md).
+#
+# Chi go dong nao co gia tri trung dung gia tri may thu, de khong xoa nham cai dat tu nhien cua ho
+# so; dong cung ten ma khac gia tri thi in ra va giu nguyen. Luon go marionette.port,
+# remote.prefs.recommended.applied, toolkit.startup.recent_crashes (dem so lan sap luc khoi dong).
+# Giu browser.startup.couldRestoreSession.count vi netflix-phien tu dat moi lan mo.
+
+import datetime
+import re
+import shutil
+import subprocess
+import sys
+
+NGUON = "chrome/remote/content/shared/RecommendedPreferences.sys.mjs"
+LUON_GO = {"marionette.port", "remote.prefs.recommended.applied", "toolkit.startup.recent_crashes"}
+GIU = {"browser.startup.couldRestoreSession.count"}
+
+
+def chuan(gia_tri):
+    v = gia_tri.strip()
+    if v[:1] in ("'", '"'):
+        return ("chuoi", v[1:-1])
+    if v in ("true", "false"):
+        return ("bool", v)
+    try:
+        return ("so", int(v))
+    except ValueError:
+        return ("khac", v)
+
+
+def main():
+    ghi = "--ghi" in sys.argv
+    con_lai = [a for a in sys.argv[1:] if a != "--ghi"]
+    ho_so = con_lai[0] if con_lai else "/home/lehoa/.mozilla/firefox/bm2rgoow.default-release"
+    if ghi and subprocess.run(["pgrep", "-x", "firefox-bin"], capture_output=True).returncode == 0:
+        sys.exit("Firefox dang chay, tat Firefox (dang xuat phien) truoc da.")
+    # omni.ja la tep zip kieu rieng cua Mozilla: unzip bao loi dinh dang nhung van doc duoc.
+    ma = subprocess.run(["unzip", "-p", "/usr/lib/firefox/omni.ja", NGUON],
+                        capture_output=True, text=True).stdout
+    may_thu = {m.group(1): m.group(2).strip().rstrip(",").strip()
+               for m in re.finditer(r'\[\s*"([A-Za-z0-9_.\-]+)"\s*,\s*([^\]\n]+?)\s*,?\s*\]', ma)}
+    if len(may_thu) < 50:
+        sys.exit(f"Chi doc duoc {len(may_thu)} cai dat may thu tu {NGUON}, dung lai.")
+    tep = f"{ho_so}/prefs.js"
+    giu, go = [], []
+    for dong in open(tep, encoding="utf-8"):
+        m = re.match(r'user_pref\("([^"]+)",\s*(.*)\);\s*$', dong)
+        if m and m.group(1) not in GIU:
+            ten, gt = m.group(1), m.group(2)
+            if ten in LUON_GO or (ten in may_thu and chuan(gt) == chuan(may_thu[ten])):
+                go.append(f"{ten} = {gt}")
+                continue
+            if ten in may_thu:
+                print(f"giu (khac gia tri may thu {may_thu[ten]}): {ten} = {gt}")
+        giu.append(dong)
+    print(f"{len(go)} dong cai dat may thu trong {tep}:")
+    for g in go:
+        print("  -", g)
+    if ghi and go:
+        cu = f"/root/prefs.js.truoc-go-{datetime.datetime.now():%Y%m%d-%H%M%S}"
+        shutil.copy2(tep, cu)
+        with open(tep, "w", encoding="utf-8") as f:
+            f.writelines(giu)
+        print(f"da go, ban cu o {cu}")
+
+
+main()

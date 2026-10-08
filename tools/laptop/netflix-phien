@@ -99,7 +99,7 @@ for f in "$HOME"/.mozilla/firefox/*/prefs.js; do
     echo 'user_pref("browser.startup.couldRestoreSession.count", 2);' >> "$f"
 done
 
-# Lan tai dau sau khi Firefox bat co luc khong ve xong (nen do hay man den, 8/10/2026), nen
+# Lan tai dau sau khi Firefox bat co luc khong ve xong (chi co nen do, 8/10/2026), nen
 # netflix-canh xem man mot luc dau va tu bam F5 khi trang con trong; xem dau file do. Truoc
 # 8/10/2026 o day cu 5 giay chua thay chu Netflix tren tieu de la goi lai "firefox URL" (tuong
 # Firefox 146 bo qua dia chi luc khoi dong, thay 7/10/2026). Nhat ky 8/10/2026 cho thay Firefox

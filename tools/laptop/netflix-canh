@@ -2,24 +2,29 @@
 # Canh trang Netflix luc moi mo phien cua Le Hoa (8/10/2026). netflix-phien chay no ngay sau khi
 # mo Firefox: netflix-canh <pid Firefox> <dia chi>.
 #
-# Chieu 8/10/2026 Netflix tren tivi nhieu lan dung o mot trang khong ve xong, tieu de cua so van
-# la "Netflix — Mozilla Firefox". Luc 16 gio 27 chi co nen do va chu NETFLIX: khung trang da tai
-# nhung phan ve danh sach ho so khong chay, con de yen 15 phut, bam F5 la hien du. Luc 17 gio 08,
-# 17 gio 09 thi den han (phien "Tai khoan Huy tren Mac mini" chup duoc). Chua biet goc loi: mang
-# van tot, hai ban Firefox rieng cung luat chan web van tai duoc, Firefox khong sap, khong co loi
-# card hinh. Loi chi thay o lan tai dau sau khi Firefox bat, nen netflix-canh xem man hinh mot
-# luc dau, trang con trong thi tu bam F5, toi da SO_LAN_F5 lan (anh Huy chon 8/10/2026).
+# Chieu 8/10/2026 Netflix tren tivi hai lan dung o mot trang khong ve xong, tieu de cua so van la
+# "Netflix — Mozilla Firefox": phien 16 gio 19 (ba the Netflix, xem duoi) va phien 16 gio 27 (mot
+# the, chi co nen do va chu NETFLIX: khung trang da tai nhung phan ve danh sach ho so khong chay,
+# de yen 15 phut van vay, bam F5 la hien du). Chua biet goc loi: mang van tot, hai ban Firefox
+# rieng cung luat chan web van tai duoc, Firefox khong sap, khong co loi card hinh. Loi chi thay o
+# lan tai dau sau khi Firefox bat, nen netflix-canh xem man hinh mot luc dau, trang con trong thi
+# tu bam F5, toi da SO_LAN_F5 lan (anh Huy chon 8/10/2026).
+#
+# Man den han luc 18 gio 01 toi 18 gio 07 cung ngay (bon lan mo lien, F5 khong chua duoc) khong
+# phai loi tren: Claude Code da mo Firefox voi --marionette, --remote-debugging-port ngay tren ho
+# so that de do loi, Firefox ghi 94 cai dat cho may thu vao prefs.js roi bi tat ngang nen khong go
+# lai (xem go-cai-dat-may-thu). Man den luc 17 gio 06 toi 17 gio 10 gan nhu chac cung vay (lan dau
+# mo voi --marionette la 17 gio 04). Go xong luc 18 gio 11 thi ba lan mo lien deu hien man chon ho
+# so sau khoang 10 giay, mot the, netflix-canh khong phai bam gi.
 #
 # Truoc 8/10/2026 netflix-phien cu 5 giay chua thay chu Netflix tren tieu de la goi lai
 # "firefox <dia chi>", vi tuong Firefox bo qua dia chi truyen luc khoi dong (thay 7/10/2026).
-# Nhat ky 8/10/2026 cho thay Firefox van tai dia chi do, chi cham (may lanh mat 5 toi 8 giay),
-# con moi lan goi lai la Firefox mo them mot the Netflix (phien 16 gio 19 co ba the cung tai).
-# Lan mo thu 17 gio 04 khong goi lai thi binh thuong; ba lan thu 17 gio 06 toi 17 gio 10 deu co
-# goi lai, lan nao bo doc Marionette cung treo o buoc cho trang tai xong, va man den han luc 17 gio
-# 08, 17 gio 09. Nhung lan 16 gio 27 chi co mot the ma van trong, nen the thua chua phai toan bo
-# nguyen nhan. Vi vay bo buoc goi lai: qua CHO_TIEU_DE giay chua thay chu Netflix
-# thi bam F5 cho chinh the dang mo; F5 xong van chua co thi moi goi lai mot lan (luc do the dau
-# khong con dang tai Netflix, nen khong thanh hai the cung tai).
+# Nhat ky 8/10/2026 cho thay Firefox van tai dia chi do, chi cham (5 toi 10 giay), con moi lan goi
+# lai la Firefox mo them mot the Netflix cung tai (phien 16 gio 19 co ba the). Chua chung minh duoc
+# the thua lam trang hong (lan 16 gio 27 chi co mot the ma van trong), nhung buoc goi lai khong
+# can nua, nen bo: qua CHO_TIEU_DE giay chua thay chu Netflix thi bam F5 cho chinh the dang mo;
+# F5 xong van chua co thi moi goi lai mot lan (luc do the dau khong con dang tai Netflix, nen
+# khong thanh hai the cung tai).
 #
 # Cach xem trang trong: chup man (tivi), thu ve 480x270, bo dai tren cung (chu NETFLIX do), dem
 # diem anh sang (ca ba kenh mau tren NGUONG_SANG). Do tren anh chup that 8/10/2026: man chon ho so
