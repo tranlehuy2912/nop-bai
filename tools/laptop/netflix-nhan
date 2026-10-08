@@ -1,0 +1,137 @@
+#!/usr/bin/python3
+# Dai chu Ba Huy nhan len tivi (8/10/2026), xem nhan_tivi trong netflix_gio.py.
+#
+# Anh Huy chon mau C trong ba mau ve ngay 8/10/2026: mot dai ngang tren dau man hinh, phim van
+# thay ben duoi, khong co nut "Da hieu". netflix_gio.py chay file nay bang root voi DISPLAY=:0 va
+# XAUTHORITY=/run/lightdm/root/:0 (khoa nay dung duoc ca o man dang nhap lan trong phien cua
+# lehoa, huy), doc xong thi gui SIGTERM; khong co giong doc thi tu tat sau --giay giay.
+#
+# Cua so loai POPUP (override-redirect): trinh quan ly cua so khong xep no, nen no nam tren ca
+# Firefox toan man hinh cua phien Netflix. Firefox duoc dua len lai (bam chuot vao phim) van co
+# the de len dai chu, nen moi nua giay lai dua dai chu len tren cung. POPUP khong nhan ban phim,
+# khong lay focus: con dang bam phim xem phim thi phim van nhan phim.
+#
+# Chi dung GTK 3 co san tren Mint (python3-gi). --png <file> ve ra file anh ma khong hien len man
+# hinh, de thu cach trinh bay khi co nguoi dang xem tivi.
+import argparse
+import signal
+import sys
+
+import gi
+
+gi.require_version("Gtk", "3.0")
+gi.require_version("Gdk", "3.0")
+from gi.repository import Gdk, GLib, Gtk  # noqa: E402
+
+# Mau cua mau C (ram tim): nen 900, vong tron 800, chu chinh 50, chu phu 200.
+CSS = b"""
+#dai { background-color: #26215C; }
+#vong { background-color: #3C3489; border-radius: 999px; color: #CECBF6; }
+#ai { color: #AFA9EC; font-family: "Noto Sans"; font-size: 22px; }
+#chu { color: #EEEDFE; font-family: "Noto Sans"; font-size: 40px; font-weight: 600; }
+"""
+
+
+def dung_dai(chu, ai, rong):
+    css = Gtk.CssProvider()
+    css.load_from_data(CSS)
+    Gtk.StyleContext.add_provider_for_screen(
+        Gdk.Screen.get_default(), css, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION)
+
+    hop = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=28)
+    hop.set_name("dai")
+    hop.set_size_request(rong, -1)
+
+    trong = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=28)
+    trong.set_margin_top(26)
+    trong.set_margin_bottom(28)
+    trong.set_margin_start(44)
+    trong.set_margin_end(44)
+
+    vong = Gtk.Box()
+    vong.set_name("vong")
+    vong.set_size_request(76, 76)
+    vong.set_valign(Gtk.Align.CENTER)
+    loa = Gtk.Image.new_from_icon_name("audio-volume-high-symbolic", Gtk.IconSize.DIALOG)
+    loa.set_pixel_size(40)
+    loa.set_hexpand(True)
+    loa.set_vexpand(True)
+    vong.pack_start(loa, True, True, 0)
+
+    cot = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=6)
+    cot.set_valign(Gtk.Align.CENTER)
+    nhan_ai = Gtk.Label(label=ai, xalign=0)
+    nhan_ai.set_name("ai")
+    nhan_chu = Gtk.Label(label=chu, xalign=0)
+    nhan_chu.set_name("chu")
+    nhan_chu.set_line_wrap(True)
+    # Rong cot chu: tru vong tron, khoang cach va le hai ben, de chu dai thi xuong dong thay vi
+    # day dai chu rong qua man hinh.
+    nhan_chu.set_max_width_chars(1)
+    nhan_chu.set_size_request(rong - 44 * 2 - 76 - 28, -1)
+    cot.pack_start(nhan_ai, False, False, 0)
+    cot.pack_start(nhan_chu, False, False, 0)
+
+    trong.pack_start(vong, False, False, 0)
+    trong.pack_start(cot, True, True, 0)
+    hop.pack_start(trong, True, True, 0)
+    return hop
+
+
+def man_chinh():
+    """(x, y, rong) cua man chinh. Tivi cam thi chi-tivi, netflix-phien dat tivi la man chinh."""
+    man = Gdk.Display.get_default()
+    m = man.get_primary_monitor() or man.get_monitor(0)
+    g = m.get_geometry()
+    return g.x, g.y, g.width
+
+
+def ve_ra_file(chu, ai, duong, rong):
+    w = Gtk.OffscreenWindow()
+    w.add(dung_dai(chu, ai, rong))
+    w.show_all()
+    while Gtk.events_pending():
+        Gtk.main_iteration()
+    anh = w.get_pixbuf()
+    anh.savev(duong, "png", [], [])
+    print(anh.get_width(), anh.get_height())
+
+
+def hien(chu, ai, giay):
+    x, y, rong = man_chinh()
+    w = Gtk.Window(type=Gtk.WindowType.POPUP)
+    w.add(dung_dai(chu, ai, rong))
+    w.move(x, y)
+    w.set_keep_above(True)
+    w.show_all()
+
+    def dua_len():
+        cua_so = w.get_window()
+        if cua_so is not None:
+            cua_so.raise_()
+        return True
+
+    GLib.timeout_add(500, dua_len)
+    GLib.unix_signal_add(GLib.PRIORITY_DEFAULT, signal.SIGTERM, Gtk.main_quit)
+    GLib.unix_signal_add(GLib.PRIORITY_DEFAULT, signal.SIGINT, Gtk.main_quit)
+    if giay > 0:
+        GLib.timeout_add_seconds(giay, Gtk.main_quit)
+    Gtk.main()
+
+
+def main():
+    p = argparse.ArgumentParser()
+    p.add_argument("--chu", required=True)
+    p.add_argument("--ai", default="Ba Huy nhắn")
+    p.add_argument("--giay", type=int, default=0, help="tu tat sau so giay nay; 0 la cho SIGTERM")
+    p.add_argument("--png", help="ve ra file anh, khong hien len man hinh")
+    p.add_argument("--rong", type=int, default=1920, help="be rong khi ve ra file")
+    a = p.parse_args()
+    if a.png:
+        ve_ra_file(a.chu, a.ai, a.png, a.rong)
+    else:
+        hien(a.chu, a.ai, a.giay)
+
+
+if __name__ == "__main__":
+    sys.exit(main())
