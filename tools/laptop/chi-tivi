@@ -1,0 +1,30 @@
+#!/bin/sh
+# Co tivi cam thi chi xuat hinh ra tivi, do phan giai goc cua tivi, tat man laptop (anh Huy chon
+# 8/10/2026). Truoc do man dang nhap hien tren ca hai man xep noi nhau (laptop 1366x768 ben trai,
+# tivi 1920x1080 ben phai): o mat khau nam tren man laptop, tivi chi co hinh nen. Hai cho kia da
+# chi hien tren tivi tu truoc: phien Netflix cua lehoa (dau netflix-phien, 7/10/2026, cung mot
+# luat nhu file nay) va tai khoan huy (~huy/.config/monitors.xml luu ngay 1/10/2026, MATE tu ap
+# moi lan dang nhap khi dung tivi Sony do dang cam).
+#
+# LightDM chay file nay bang root moi khi dung xong mot man hinh X (display-setup-script trong
+# 81-chi-tivi.conf), nen no chay truoc man dang nhap va truoc ca phien tu vao cua lehoa. LightDM
+# xoa sach bien moi truong, chi dat DISPLAY, XAUTHORITY va vai bien khac, nen tu dat PATH.
+#
+# File nay tra ve khac 0 thi LightDM tat luon man hinh X do ("Stopping display server due to
+# failed setup script", lightdm 1.30), tuc la khong con man dang nhap. Vi vay cuoi file luon
+# exit 0, ke ca khi xrandr loi.
+#
+# Khong co man ngoai nao thi giu nguyen man laptop. Tivi tat ma van cam HDMI thi xrandr van bao
+# la noi, luc do man laptop den, phai bat tivi moi thay o dang nhap; anh Huy chap nhan
+# (8/10/2026), giong phien Netflix va tai khoan huy.
+PATH=/usr/sbin:/usr/bin:/sbin:/bin
+ngoai=$(xrandr --query | awk '$2 == "connected" && $1 !~ /^eDP/ {print $1; exit}')
+trong=$(xrandr --query | awk '$2 == "connected" && $1 ~ /^eDP/ {print $1; exit}')
+if [ -n "$ngoai" ]; then
+    xrandr --output "$ngoai" --auto --primary --pos 0x0 ${trong:+--output "$trong" --off}
+    # Ghi lai de xem sau bang: journalctl -t chi-tivi
+    logger -t chi-tivi "chi hien $ngoai, tat ${trong:-(khong co man laptop)}, xrandr tra $?"
+else
+    logger -t chi-tivi "khong co man ngoai, giu man laptop"
+fi
+exit 0

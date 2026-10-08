@@ -29,6 +29,9 @@ install -m 755 "$day/netflix-nhan" /usr/local/bin/netflix-nhan
 install -m 644 "$day/98netflix-lehoa" /etc/X11/Xsession.d/98netflix-lehoa
 # Bat may la tu vao phien Netflix (8/10/2026), xem dau file 80-netflix-lehoa.conf.
 install -m 644 "$day/80-netflix-lehoa.conf" /etc/lightdm/lightdm.conf.d/80-netflix-lehoa.conf
+# Co tivi cam thi man dang nhap chi hien tren tivi (8/10/2026), xem dau file chi-tivi.
+install -m 755 "$day/chi-tivi" /usr/local/bin/chi-tivi
+install -m 644 "$day/81-chi-tivi.conf" /etc/lightdm/lightdm.conf.d/81-chi-tivi.conf
 # Ten hien o man dang nhap la "Netflix" (anh Huy doi 8/10/2026; tai khoan huy hien "Admin").
 id lehoa >/dev/null 2>&1 || useradd -m -c "Netflix" -s /bin/bash lehoa
 usermod -aG nopasswdlogin lehoa
