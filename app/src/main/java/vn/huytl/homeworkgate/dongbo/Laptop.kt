@@ -106,7 +106,10 @@ object Laptop {
                 Duong.F_TAO_LUC to System.currentTimeMillis()
             )
         ).addOnFailureListener { Log.w(TAG, "ghi phieu laptop hong: ${it.message}") }
-        DayLog.add(context, "Đổi $lay phút chơi lấy $netflix phút Netflix trên laptop")
+        // Dong nhat ky ngay (sang the Nhat ky cua Bang dieu khien). Truoc 9/10/2026 ghi "phut
+        // Netflix"; anh Huy doi thanh "phut xem phim" cho khop man Xem phim, vi laptop gio xem ca
+        // YouTube. Bang dieu khien chi hien dong nay, khong doc so trong do.
+        DayLog.add(context, "Đổi $lay phút chơi lấy $netflix phút xem phim trên laptop")
         DongBo.dayNgay()
         return KetQua(lay, netflix, null, phieu)
     }

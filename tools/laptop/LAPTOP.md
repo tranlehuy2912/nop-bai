@@ -28,8 +28,10 @@ chọn một tài khoản, chọn trong phiên, mẫu B). Vào phiên là hiện
 "Vừa" cho cả máy, kể cả tài khoản Admin. Cũng ngày 09/10/2026 anh Huy chốt thêm: cho đăng nhập YouTube, và
 ép xem toàn màn hình, không cho xem trong khung nhỏ. Vì vậy YouTube mở bằng giao diện dành cho tivi
 (`youtube.com/tv`): video nào cũng chiếu kín màn hình, đăng nhập bằng mã trên điện thoại. Anh Huy đã đăng
-nhập tài khoản "Huy Tran" lúc 16 giờ 4x ngày 09/10/2026. Tablet vẫn gọi là "phút Netflix" cho tới bản app
-sau.
+nhập tài khoản "Huy Tran" lúc 16 giờ 4x ngày 09/10/2026. Từ bản app tablet ngày 09/10/2026 (commit
+`31cab61`, dòng nhật ký ở commit sau đó) tablet gọi là "phút xem phim": nút "Xem phim", màn "Xem phim trên
+laptop", dòng nhật ký "Đổi N phút chơi lấy M phút xem phim trên laptop". Bảng điều khiển còn chữ "Netflix"
+ở vài chỗ (dòng báo sau khi gửi phiếu Thêm, Bớt; mục "Tỷ lệ đổi Netflix" trong Cài đặt).
 
 ## Máy và cách vào
 
