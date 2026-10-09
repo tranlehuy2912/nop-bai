@@ -533,15 +533,42 @@ def tra_tieng(ten, da_tat):
         chay_nguoi(ten, ["pactl", "set-sink-input-mute", str(i), "0"])
 
 
+def loa_hdmi():
+    """Thiet bi ALSA cua cong HDMI dang cam tivi, vd "hdmi:CARD=HDMI,DEV=0"; None neu khong co.
+
+    Doc /proc/asound/card*/eld#<codec>.<chan>: monitor_present 1 la chan do dang noi man hinh co loa
+    (9/10/2026 la "SONY TV" o card 1 "HDMI", eld#0.0). Chan thu N cua codec la DEV=N.
+    """
+    import glob
+    for eld in sorted(glob.glob("/proc/asound/card*/eld#*")):
+        try:
+            with open(eld) as f:
+                if "monitor_present\t\t1" not in f.read().replace(" ", "\t"):
+                    continue
+            with open(os.path.join(os.path.dirname(eld), "id")) as f:
+                the = f.read().strip()
+        except OSError:
+            continue
+        return "hdmi:CARD=%s,DEV=%s" % (the, eld.rsplit(".", 1)[1])
+    return None
+
+
 def phat_giong(ten):
     """Phat FILE_NHAN mot lan. Co nguoi dang nhap thi phat trong phien do, khong thi phat bang root
-    thang ra ALSA (o man dang nhap khong co PipeWire cua ai). Tra ve True neu phat xong."""
+    thang ra ALSA (o man dang nhap khong co PipeWire cua ai). Tra ve True neu phat xong.
+
+    Trong phien, tieng ra loa mac dinh cua phien. Ngay 9/10/2026 phien lehoa chua tung chon loa nen
+    WirePlumber chon loa laptop (uu tien cao hon HDMI), Netflix lan giong doc deu khong ra tivi;
+    phien chi-tivi da dat lai loa mac dinh cua lehoa la HDMI. O man dang nhap thi alsasink khong ghi
+    thiet bi se ra card 0 (loa laptop), nen chi thang cong HDMI dang cam tivi.
+    """
     lenh = ["gst-play-1.0", "--no-interactive", "-q", FILE_NHAN]
     if ten:
         r = chay_nguoi(ten, lenh, giay=120)
     else:
-        r = subprocess.run(lenh[:1] + ["--audiosink=alsasink"] + lenh[1:],
-                           capture_output=True, text=True, timeout=120)
+        hdmi = loa_hdmi()
+        loa = '--audiosink=alsasink device="%s"' % hdmi if hdmi else "--audiosink=alsasink"
+        r = subprocess.run(lenh[:1] + [loa] + lenh[1:], capture_output=True, text=True, timeout=120)
     return r.returncode == 0
 
 
