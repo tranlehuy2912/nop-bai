@@ -43,6 +43,16 @@ install -m 644 "$day/81-chi-tivi.conf" /etc/lightdm/lightdm.conf.d/81-chi-tivi.c
 # Ten hien o man dang nhap la "Netflix" (anh Huy doi 8/10/2026; tai khoan huy hien "Admin").
 id lehoa >/dev/null 2>&1 || useradd -m -c "Netflix" -s /bin/bash lehoa
 usermod -aG nopasswdlogin lehoa
+# Tieng ra tivi qua HDMI (9/10/2026). Tai khoan chua co lua chon dau ra thi WirePlumber chon loa
+# laptop (analog-output-speaker uu tien 10000, hdmi-output-0 chi 5900): hinh len tivi ma tieng ra
+# loa laptop, ca nha tuong tivi mat tieng. Ghi san lua chon HDMI nhu tai khoan huy tu luu ngay
+# 1/10/2026; da co file (Le Hoa tu chon dau ra khac) thi de nguyen. Ten thiet bi la cua laptop HP
+# nay (card HDMI o pci-0000_00_03.0); may khac thi xem pactl list short sinks. Rut tivi ra roi
+# cam lai thi WirePlumber chon lai the nao: chua thu.
+if [ ! -f /home/lehoa/.local/state/wireplumber/default-nodes ]; then
+    runuser -u lehoa -- mkdir -p /home/lehoa/.local/state/wireplumber
+    runuser -u lehoa -- sh -c 'printf "[default-nodes]\ndefault.configured.audio.sink=%s\ndefault.configured.audio.sink.0=%s\n" "$1" "$1" > /home/lehoa/.local/state/wireplumber/default-nodes' - alsa_output.pci-0000_00_03.0.hdmi-stereo
+fi
 # Timekpr-nExt: 0 phut moi ngay, het gio thi dang xuat, khong tu bao (chi bao tieng Viet tu
 # netflix_gio.py, anh Huy chon 7/10/2026).
 timekpra --settimelimits lehoa "0;0;0;0;0;0;0" >/dev/null
