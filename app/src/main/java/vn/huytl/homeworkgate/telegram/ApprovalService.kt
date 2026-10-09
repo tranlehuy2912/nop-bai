@@ -341,7 +341,7 @@ class ApprovalService : Service() {
      * van dang o trong Telegram.
      *
      * Bat dau nhuong khi app vua ra truoc mat ([GuardAccessibilityService.goiVuaMo]) la
-     * app dung moi luc, hay khi vua bam "Nhan cho ba Huy" chua qua [CHO_APP_KE_MS]: Nop
+     * app dung moi luc, hay khi vua bam "Nhan tin" chua qua [CHO_APP_KE_MS]: Nop
      * bai tam dung truoc roi Telegram moi hien, mo lanh mat mot hai giay, ma man chan hien
      * vao khoang do thi Telegram nam ben duoi va khong ai thay no.
      *
@@ -1236,7 +1236,7 @@ class ApprovalService : Service() {
      * Ba go chu thuong hay gui anh cho bot: nhac ba nhan thang cho Le Hoa tren Telegram.
      *
      * Truoc 27/9/2026 bot chuyen nhung tin do vao khung chat trong app Nop bai. Khung
-     * do da bo; Le Hoa co tai khoan Telegram rieng, va nut "Nhan cho ba Huy" mo thang
+     * do da bo; Le Hoa co tai khoan Telegram rieng, va nut "Nhan tin" mo thang
      * khung chat voi ba. Tin gui cho bot tu gio khong toi tay con.
      */
     private fun baoNhanThang(client: TelegramClient, chatId: Long) {
@@ -2123,7 +2123,7 @@ class ApprovalService : Service() {
         private const val NOTIFICATION_ID = 1001
 
         /**
-         * Bam "Nhan cho ba Huy" xong thi man chan cho bay nhieu truoc khi che lai. Xem
+         * Bam "Nhan tin" xong thi man chan cho bay nhieu truoc khi che lai. Xem
          * [nhuongAppMoiLuc]. Ba giay: du cho Telegram mo lanh tren tablet.
          */
         private const val CHO_APP_KE_MS = 3_000L

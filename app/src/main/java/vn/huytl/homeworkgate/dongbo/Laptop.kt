@@ -2,6 +2,7 @@ package vn.huytl.homeworkgate.dongbo
 
 import android.content.Context
 import android.util.Log
+import com.google.firebase.firestore.DocumentReference
 import com.google.firebase.firestore.DocumentSnapshot
 import vn.huytl.homeworkgate.data.DayLog
 import vn.huytl.homeworkgate.data.GateStore
@@ -12,10 +13,16 @@ import vn.huytl.homeworkgate.data.Prefs
  *
  * Laptop chay Linux Mint, tai khoan cua Le Hoa chi mo duoc Firefox vao Netflix, va
  * Timekpr-nExt dem gio cua tai khoan do: moi ngay 0 phut, chi co phut khi duoc cap. Con
- * bam nut "Netflix" tren man chinh, chon so phut choi; tablet lay so phut do ra khoi phieu
- * hom nay ([GateStore.doiPhut]), nhan voi [Prefs.tiLeNetflix], roi ghi mot phieu vao
- * laptop/{maNha}/cap. Chuong trinh chay ngam tren laptop hoi cho do moi phut, cong gio qua
- * Timekpr-nExt roi xoa phieu. Ba Huy cung cap duoc tu Bang dieu khien, cung cho do.
+ * bam nut "Xem phim" tren man chinh (truoc 9/10/2026 la nut "Netflix" mo mot chuoi hop
+ * thoai), chon so phut choi o man [vn.huytl.homeworkgate.ui.XemPhimActivity]; tablet lay
+ * so phut do ra khoi phieu hom nay ([GateStore.doiPhut]), nhan voi [Prefs.tiLeNetflix], roi
+ * ghi mot phieu vao laptop/{maNha}/cap. Chuong trinh chay ngam tren laptop nghe cho do (tu
+ * 9/10/2026; truoc do hoi moi phut), cong gio qua Timekpr-nExt roi xoa phieu. Ba Huy cung
+ * cap duoc tu Bang dieu khien, cung cho do.
+ *
+ * Tu 9/10/2026 laptop xem duoc ca Netflix lan YouTube, chung mot quy phut, nen chu tren
+ * tablet la "phut xem phim". Ten trong code (tiLeNetflix, Duong.LAPTOP...) giu nguyen vi da
+ * nam trong Firestore va Bang dieu khien.
  *
  * Phut Netflix chi dung trong ngay: Timekpr-nExt tinh gio theo ngay, nua dem la ve 0, va
  * laptop bo phieu tao tu hom truoc. Giong phieu gio choi tablet, nen con khong doi tich
@@ -31,8 +38,13 @@ object Laptop {
     private const val K_KET_THUC = "ket_thuc_luc"
     private const val K_CON_LAI = "con_lai_ms"
 
-    /** Ba nut so phut cua hop doi, anh Huy chon (7/10/2026). Them nut "Đổi hết". */
-    val CAC_NUT = listOf(10, 15, 30)
+    /**
+     * Cac nut so phut o man Xem phim, them hai nut "Đổi hết" va "Khác" (go so). Anh Huy chon
+     * 9/10/2026; truoc do la 10, 15, 30 trong hop thoai. Nut nao cung bam duoc, ke ca khi
+     * lon hon so phut con dang co: luc do man bao con chi co bao nhieu (anh Huy chot "cho mo
+     * nut", thay vi an nhu hop cu).
+     */
+    val CAC_NUT = listOf(15, 30, 45, 60)
 
     /**
      * Laptop da noi vao nha chua, theo ban document laptop/{maNha} vua nghe duoc.
@@ -59,8 +71,17 @@ object Laptop {
             .apply()
     }
 
-    /** Ket qua mot lan doi. [loi] khac null la khong doi gi. */
-    data class KetQua(val phutChoi: Int, val phutNetflix: Int, val loi: String?)
+    /**
+     * Ket qua mot lan doi. [loi] khac null la khong doi gi. [phieu] la phieu vua ghi vao
+     * laptop/{maNha}/cap: laptop cong gio xong thi xoa no, nen man Xem phim nghe no de biet
+     * laptop da nhan chua.
+     */
+    data class KetQua(
+        val phutChoi: Int,
+        val phutNetflix: Int,
+        val loi: String?,
+        val phieu: DocumentReference? = null
+    )
 
     /**
      * Doi [phut] phut choi (het la doi het). Lay phut ra khoi phieu TRUOC roi moi ghi phieu
@@ -76,7 +97,8 @@ object Laptop {
         if (lay <= 0) return KetQua(0, 0, "Không còn phút chơi nào để đổi.")
         val tiLe = Prefs.get(context).tiLeNetflix
         val netflix = lay * tiLe
-        noi.collection(Duong.CAP).document().set(
+        val phieu = noi.collection(Duong.CAP).document()
+        phieu.set(
             mapOf(
                 Duong.F_PHUT to netflix,
                 Duong.F_PHUT_CHOI to lay,
@@ -86,7 +108,7 @@ object Laptop {
         ).addOnFailureListener { Log.w(TAG, "ghi phieu laptop hong: ${it.message}") }
         DayLog.add(context, "Đổi $lay phút chơi lấy $netflix phút Netflix trên laptop")
         DongBo.dayNgay()
-        return KetQua(lay, netflix, null)
+        return KetQua(lay, netflix, null, phieu)
     }
 
     private fun sp(context: Context) =

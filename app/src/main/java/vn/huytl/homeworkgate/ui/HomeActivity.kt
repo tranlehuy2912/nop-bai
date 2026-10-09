@@ -158,7 +158,9 @@ class HomeActivity : AppCompatActivity() {
             startActivity(Intent(this, CachKiemGioActivity::class.java))
         }
         binding.btnKiemGio.setOnClickListener(moBangGia)
-        binding.btnNetflix.setOnClickListener { DoiNetflix.hoi(this) { render() } }
+        binding.btnXemPhim.setOnClickListener {
+            startActivity(Intent(this, XemPhimActivity::class.java))
+        }
         binding.khungHanNgay.setOnClickListener(moBangGia)
 
         askNotificationPermission()
@@ -394,7 +396,7 @@ class HomeActivity : AppCompatActivity() {
         veHanNgay()
         veViecHomNay(baDangDung)
         veTinCuaCo()
-        veNetflix()
+        veXemPhim()
 
         // So tin Telegram cua ba ma con chua doc, dem theo thong bao cua Telegram. Mat
         // quyen doc thong bao thi so trong prefs dung yen o lan dem cuoi, nen khong hien.
@@ -500,17 +502,21 @@ class HomeActivity : AppCompatActivity() {
     }
 
     /**
+     * Nut "Xem phim" (doi phut choi sang phut xem phim tren laptop, truoc 9/10/2026 ghi
+     * "Netflix"): chi hien khi laptop da noi vao nha, xem [Laptop].
+     */
+    private fun veXemPhim() {
+        val co = Laptop.daNoi(this)
+        binding.btnXemPhim.visibility = if (co) View.VISIBLE else View.GONE
+        binding.vachXemPhim.visibility = if (co) View.VISIBLE else View.GONE
+    }
+
+    /**
      * Nut vao kho tin co giao.
      *
      * Chi hien khi co tin that. Ba noi cam tablet len doc duoc o day, khong phai
      * mo Zalo.
      */
-    /** Nut doi phut sang Netflix: chi hien khi laptop da noi vao nha, xem [Laptop]. */
-    private fun veNetflix() {
-        val co = Laptop.daNoi(this)
-        binding.btnNetflix.visibility = if (co) View.VISIBLE else View.GONE
-        binding.vachNetflix.visibility = if (co) View.VISIBLE else View.GONE
-    }
 
     private fun veTinCuaCo() {
         val kho = KhoTinCuaCo(this)

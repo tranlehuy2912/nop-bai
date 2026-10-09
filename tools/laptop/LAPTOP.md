@@ -9,8 +9,8 @@ kiểm lại trên laptop và trên Firestore.
 Laptop cài Linux Mint, Lê Hòa dùng để xem Netflix. Anh Huy muốn:
 
 - Tài khoản của Lê Hòa chỉ mở được Netflix, không làm được gì khác.
-- Phút xem Netflix đổi từ phút chơi của tablet: Lê Hòa bấm nút "Netflix" trên tablet, chọn số phút
-  chơi, tablet trừ phút trong phiếu hôm nay và cấp gấp đôi số đó thành phút Netflix (tỉ lệ đổi được
+- Phút xem Netflix đổi từ phút chơi của tablet: Lê Hòa bấm nút "Xem phim" trên tablet (trước
+  09/10/2026 ghi "Netflix"), chọn số phút chơi ở màn "Xem phim trên laptop", tablet trừ phút trong phiếu hôm nay và cấp gấp đôi số đó thành phút Netflix (tỉ lệ đổi được
   trong Cài đặt của Bảng điều khiển, mặc định 2). Ba Huy cũng cấp thêm được trên Bảng điều khiển, và
   phần này không trừ phút chơi.
 - Báo trước 5 phút, hết giờ thì đăng xuất. Không áp giờ ngủ. Phút Netflix chỉ dùng trong ngày,
@@ -95,7 +95,7 @@ Chi tiết ở `Duong.kt` (mục `LAPTOP`, `CAP`) và `bang-dieu-khien/firestore
 
 Làm ở nhánh `laptop-netflix` của ba repo, đã gộp `main` và đẩy GitHub ngày 07/10/2026:
 
-- `nop-bai`: nút "Netflix" ở hàng dưới màn chính, chỉ hiện khi laptop đã nối (`ui/DoiNetflix`, `dongbo/Laptop`), `GateStore.doiPhut`, tỉ lệ `Prefs.tiLeNetflix` qua lệnh `CAIDAT tiLeNetflix`, `tools/laptop/`. Test: 6 test `doi_*` trong `GateStoreTest`.
+- `nop-bai`: nút "Xem phim" ở hàng dưới màn chính, chỉ hiện khi laptop đã nối (`dongbo/Laptop`). Bấm vào là màn `ui/XemPhimActivity` (09/10/2026, thay chuỗi hộp thoại `ui/DoiNetflix` của ngày 07/10): hai số "Phút chơi con đang có" và "Laptop còn … phút xem phim", sáu nút 15' 30' 45' 60' Đổi hết Khác (Khác mở hộp gõ số), chọn rồi mới bấm nút xanh lá "Đổi N phút chơi"; nút nào cũng bấm được, chọn quá số đang có thì màn báo đỏ "Con chỉ có N phút chơi.". Đổi xong hiện dải "Đang chờ laptop nhận", rồi "Laptop đã nhận" khi phiếu vừa ghi biến mất, `GateStore.doiPhut`, tỉ lệ `Prefs.tiLeNetflix` qua lệnh `CAIDAT tiLeNetflix`, `tools/laptop/`. Test: 6 test `doi_*` trong `GateStoreTest`.
 - `bang-dieu-khien`: thẻ Giờ chơi có dòng "Xem Netflix" (tên lúc đầu "Netflix trên laptop"; còn bao nhiêu phút, nút "Cấp thêm" 15, 30, 45, 60 phút hay gõ số từ 1 tới 600 ở dòng "Khác", 600 là trần của luật Firestore cho phiếu cấp). Cài đặt có nhóm "Laptop": mục "Tỷ lệ đổi Netflix" (ghi kiểu "1:2", chọn từ 1:1 tới 1:5; trước 07/10/2026 tên là "Đổi sang Netflix") và mục Bật/Tắt "Firefox chỉ được mở Netflix" (dòng nhỏ bên dưới ghi laptop đã mở hay khoá web chưa). Mục Bật/Tắt này lúc đầu là dòng trạng thái web kèm nút "Mở web" / "Khoá web" ở thẻ Giờ chơi, chuyển sang Cài đặt chiều 07/10/2026. Luật Firestore mới.
 - `cho-gio-choi`: chỉ chép `Duong.kt`.
 - 08/10/2026, nhánh `laptop-dieu-khien` của ba repo: hàng "Xem Netflix" thành thẻ "Laptop" riêng ở tab Giờ chơi (`ui/TheLaptop`, chữ ở `ui/ChuLaptop`, test `ChuLaptopTest`; anh Huy chọn cách B trong hai mẫu vẽ). Thẻ có số phút Netflix, dòng trạng thái có chấm màu (xanh đang bật, vàng khi tài khoản Admin đang dùng vì không tính phút, xám khi tắt hay không trả lời), dòng "Hôm nay: bật 09:36, Admin vào 09:36, tắt 10:06, ...", các nút Thêm, Bớt (phút Netflix), Thông báo (lúc đầu ghi "Nhắn lên tivi"; hộp gõ câu tới 200 ký tự, đọc 1, 2 hay 3 lần), Chụp màn hình (mở hộp chỉ hiện ảnh lần trước, nút "Chụp" ở dưới mới chụp, dấu X ở trên để đóng; anh Huy đổi 09/10/2026; chỉ giữ một ảnh mới nhất), Đăng xuất, Tắt máy (hỏi lại trước), và dòng lệnh đang chờ hay kết quả lệnh. Mở tab là gửi `HOI`; 150 giây không thấy trả lời thì hiện "Không thấy laptop trả lời từ ..." và các nút lệnh mờ đi, bấm chỉ báo lý do (anh Huy chốt không cho bấm khi laptop tắt). Lệnh chưa được lấy sau 5 phút thì điện thoại xoá và báo "đã bỏ".

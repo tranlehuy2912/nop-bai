@@ -11,8 +11,9 @@ import vn.huytl.homeworkgate.data.Prefs
  * trong [vn.huytl.homeworkgate.telegram.TelegramClient]: bot la duong cua app nay, con
  * day la app ma con cam len nhan tin.
  *
- * Tu 27/9/2026 nut "Nhan cho ba Huy" mo thang khung chat voi Ba Huy o day, thay cho man
- * chat trong app. Telegram co mo duoc luc het gio choi hay khong la viec cua cac danh
+ * Tu 27/9/2026 nut "Nhan tin" o man chinh (truoc 9/10/2026 ghi "Nhan cho ba Huy") mo thang
+ * khung chat voi Ba Huy o day, thay cho man chat trong app. Telegram co mo duoc luc het gio
+ * choi hay khong la viec cua cac danh
  * sach app Ba Huy dat: bo Telegram vao "Dung moi luc" thi mo duoc ca gio ngu va gio di
  * hoc, xem [vn.huytl.homeworkgate.data.Prefs.moiLucPackages].
  */
@@ -52,7 +53,7 @@ object TelegramThat {
     }
 
     /**
-     * Luc bam "Nhan cho ba Huy" lan cuoi, theo elapsedRealtime. Man chan cho Telegram hien
+     * Luc bam "Nhan tin" lan cuoi, theo elapsedRealtime. Man chan cho Telegram hien
      * len mot nhip sau luc nay, xem ApprovalService.nhuongAppMoiLuc.
      */
     @Volatile

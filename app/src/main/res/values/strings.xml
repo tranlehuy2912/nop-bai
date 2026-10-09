@@ -13,7 +13,9 @@
 
     <!-- Man cua Le Hoa -->
     <string name="home_submit">Nộp bài tập</string>
-    <string name="home_chat">Nhắn cho ba Huy</string>
+    <!-- Nut mo Telegram ngay khung chat voi Ba Huy. Truoc 9/10/2026 ghi "Nhắn cho ba Huy";
+         anh Huy rut gon thanh "Nhắn tin" khi hang nut duoi doi nut Netflix thanh Xem phim. -->
+    <string name="home_chat">Nhắn tin</string>
 
     <!-- Man chup -->
     <string name="capture_take">Chụp</string>
@@ -96,10 +98,21 @@
          HocThuoc, nen tach chu ra khoi so chi lam kho doc ma khong duoc gi. -->
     <string name="kiem_gio_title">Cách kiếm giờ chơi</string>
     <string name="kiem_gio_nut">Cách kiếm giờ</string>
-    <string name="netflix_nut">Netflix</string>
     <string name="kiem_gio_nhan_duoc">LÀM GÌ THÌ ĐƯỢC THÊM GIỜ</string>
     <string name="kiem_gio_nhan_khong">CÁI KHÔNG TÍNH GIỜ</string>
     <string name="kiem_gio_viec_nha">Việc nhà bà nội hay Ba Huy giao</string>
+
+    <!-- Man doi phut choi sang phut xem phim tren laptop (9/10/2026, XemPhimActivity).
+         Truoc ngay do nut ghi "Netflix"; laptop gio xem duoc ca Netflix lan YouTube nen anh
+         Huy doi het chu tren tablet thanh "Xem phim", cho khop ten tai khoan tren laptop. -->
+    <string name="xem_phim_nut">Xem phim</string>
+    <string name="xem_phim_title">Xem phim trên laptop</string>
+    <string name="xem_phim_dang_co">Phút chơi con đang có</string>
+    <string name="xem_phim_laptop_con">Laptop còn</string>
+    <string name="xem_phim_don_vi">phút xem phim</string>
+    <string name="xem_phim_doi_bao_nhieu">ĐỔI BAO NHIÊU PHÚT CHƠI</string>
+    <string name="xem_phim_doi_het">Đổi hết</string>
+    <string name="xem_phim_khac">Khác</string>
 
     <string name="pin_title">Nhập mã PIN</string>
     <string name="pin_wrong">Sai mã PIN</string>

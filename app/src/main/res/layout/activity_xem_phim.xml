@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Doi phut choi sang phut xem phim tren laptop (9/10/2026, ui/XemPhimActivity).
+
+  Truoc 9/10/2026 viec nay la mot chuoi hop thoai mo tu nut "Netflix" o man chinh: hop chon
+  so phut, hop hoi lai, roi mot dong thong bao nho duoi day. Anh Huy thay "xau", chon mot man
+  rieng: tren cung hai con so (phut choi con dang co, phut laptop con), giua la hang nut so
+  phut, chon xong moi hien dong xem truoc va nut Doi. Hai buoc chon roi bam Doi thay cho hop
+  hoi lai, vi doi roi khong lay lai duoc.
+-->
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/goc"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/st_nen_man">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:paddingHorizontal="28dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!-- Duong ra nam ben trai, hinh mui ten, y het man "Cach kiem gio". -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_done"
+                style="@style/Widget.Material3.Button.IconButton"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="-12dp"
+                android:layout_marginEnd="4dp"
+                android:contentDescription="Quay lại"
+                app:icon="@drawable/st_ic_quay_lai"
+                app:iconSize="22dp"
+                app:iconTint="@color/ink_soft" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/xem_phim_title"
+                android:textColor="@color/ink"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginTop="16dp"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- Hai con so con can truoc khi chon: minh dang co bao nhieu, laptop
+                     dang con bao nhieu. Anh Huy bo dong ghi chu ti le doi duoi hai so nay
+                     (9/10/2026): dong xem truoc ben duoi da ghi ro doi ra bao nhieu. -->
+                <com.google.android.material.card.MaterialCardView
+                    style="@style/Card"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="20dp">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                style="@style/Text.Body"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/xem_phim_dang_co"
+                                android:textSize="15sp" />
+
+                            <TextView
+                                android:id="@+id/txt_co"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/ok"
+                                android:textSize="40sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                style="@style/Text.Body"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/xem_phim_laptop_con"
+                                android:textSize="15sp" />
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:baselineAligned="true"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/txt_laptop"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="@color/brand"
+                                    android:textSize="40sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="8dp"
+                                    android:text="@string/xem_phim_don_vi"
+                                    android:textColor="@color/brand"
+                                    android:textSize="16sp" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Ket qua lan doi vua roi, thay cho dong thong bao nho cu. Mau xanh la khi
+                     doi duoc, do khi khong doi duoc. -->
+                <TextView
+                    android:id="@+id/txt_ket_qua"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:background="@drawable/bg_ghi_chu"
+                    android:lineSpacingExtra="2dp"
+                    android:padding="16dp"
+                    android:textSize="17sp"
+                    android:visibility="gone" />
+
+                <!-- Thay cho hang nut khi chua doi duoc gi: chua co phut choi, hay laptop
+                     chua noi vao nha. -->
+                <TextView
+                    android:id="@+id/txt_chua_doi_duoc"
+                    style="@style/Text.Body"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:background="@drawable/bg_ghi_chu"
+                    android:backgroundTint="@color/surface"
+                    android:padding="16dp"
+                    android:visibility="gone" />
+
+                <LinearLayout
+                    android:id="@+id/khung_chon"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/Nhan.Nhom"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/xem_phim_doi_bao_nhieu" />
+
+                    <!-- Sau nut, hai hang ba nut. Anh Huy chon kieu nut xanh dac chu trang
+                         nhu hang cho gio cua Bang dieu khien (9/10/2026). -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/nut_15"
+                            style="@style/Nut.DoiPhut"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="12dp"
+                            android:layout_weight="1" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/nut_30"
+                            style="@style/Nut.DoiPhut"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="12dp"
+                            android:layout_weight="1" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/nut_45"
+                            style="@style/Nut.DoiPhut"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:orientation="horizontal">
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/nut_60"
+                            style="@style/Nut.DoiPhut"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="12dp"
+                            android:layout_weight="1" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/nut_het"
+                            style="@style/Nut.DoiPhut"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="12dp"
+                            android:layout_weight="1"
+                            android:text="@string/xem_phim_doi_het" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/nut_khac"
+                            style="@style/Nut.DoiPhut"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/xem_phim_khac" />
+                    </LinearLayout>
+
+                    <!-- Hien sau khi chon mot nut: doi ra bao nhieu, laptop se con bao
+                         nhieu, roi loi nhac va nut Doi. Chon so lon hon so dang co thi chi
+                         con mot dong do, khong co nut Doi. -->
+                    <TextView
+                        android:id="@+id/txt_xem_truoc"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:lineSpacingExtra="2dp"
+                        android:textColor="@color/ink"
+                        android:textSize="18sp"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/txt_luu_y"
+                        style="@style/Text.Body"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:textSize="15sp"
+                        android:visibility="gone" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_doi"
+                        android:layout_width="match_parent"
+                        android:layout_height="64dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="24dp"
+                        android:backgroundTint="@color/ok"
+                        android:textColor="@color/surface"
+                        android:textSize="19sp"
+                        android:textStyle="bold"
+                        android:visibility="gone"
+                        app:cornerRadius="32dp" />
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

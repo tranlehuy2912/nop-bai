@@ -20,7 +20,7 @@ import vn.huytl.homeworkgate.data.Prefs
  * trong Settings. Do la cai gia phai tra de hoi duoc cau "app nao dang phat tieng".
  *
  * Tu 27/9/2026 no nhin them thong bao cua Telegram, va chi cua Telegram, de dem so tin
- * Ba Huy gui ma Le Hoa chua doc: nut "Nhan cho ba Huy" o man chinh ghi "Ba Huy nhan 3
+ * Ba Huy gui ma Le Hoa chua doc: nut "Nhan tin" o man chinh ghi "Ba Huy nhan 3
  * tin moi" nhu thoi man chat cu. Xem [TinCuaBa].
  *
  * Chi doc ten goi, ma khung chat va so tin, khong doc tieu de hay noi dung. Quyen nay

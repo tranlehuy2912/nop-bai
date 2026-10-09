@@ -36,7 +36,7 @@
         <intent>
             <action android:name="android.view.InputMethod" />
         </intent>
-        <!-- Nut "Nhan cho ba Huy" mo Telegram bang link tg://, can thay app nao mo
+        <!-- Nut "Nhan tin" mo Telegram bang link tg://, can thay app nao mo
              duoc link do. Xem TelegramThat.moChatVoiBa. -->
         <intent>
             <action android:name="android.intent.action.VIEW" />
@@ -238,6 +238,15 @@
             android:configChanges="orientation|screenSize|screenLayout|smallestScreenSize"
             android:exported="false"
             android:screenOrientation="portrait" />
+
+        <!-- Doi phut choi sang phut xem phim tren laptop (9/10/2026). adjustResize de hop go
+             so phut cua nut "Khác" khong bi ban phim che. -->
+        <activity
+            android:name=".ui.XemPhimActivity"
+            android:configChanges="orientation|screenSize|screenLayout|smallestScreenSize"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
 
         <!-- So con dung app gi, luc nao. exported=false: day la trang cua Ba Huy,
              nam sau PIN, khong mo bang adb hay shortcut duoc. -->
