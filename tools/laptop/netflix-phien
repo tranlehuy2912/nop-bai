@@ -103,25 +103,40 @@ marco &
 # mo menu cua Firefox. Thanh nay chi hien khi browser.startup.couldRestoreSession.count bang 1
 # (xem SessionWindowUI.sys.mjs cua Firefox 146), tu 2 tro len la thoi, nen dat san so dem la 2.
 #
-# Mo YouTube thi them hai dong bat YouTube gui H.264 (9/10/2026, anh Huy chon sau khi do tren
+# Mo YouTube thi them cac dong bat YouTube gui H.264 (9/10/2026, anh Huy chon sau khi do tren
 # laptop nay, video 1080p 60 khung): chip Haswell giai ma phan cung duoc H.264 ma khong duoc VP9,
 # AV1. De mac dinh thi YouTube gui AV1, Firefox giai bang chip chinh va video cu tu khoi dong lai;
 # ep H.264 thi 0 khung roi tren 2.403, chip chinh khoang 32%. YouTube chon dinh dang theo nhung gi
-# Firefox bao la phat duoc: tat WebM trong MediaSource (VP9) va tat AV1 thi chi con H.264. Mo
-# Netflix thi go hai dong do ra, de Netflix chay y nhu truoc (chua do Netflix voi H.264, vi ho so
-# Netflix nao cung khoa PIN). Firefox ghi cai dat dang dung vao prefs.js luc thoat, nen phai go o
-# day chu khong chi them luc mo YouTube.
+# Firefox bao la phat duoc: tat WebM trong MediaSource, tat VP9 trong MediaSource (giao dien tivi
+# hoi ca VP9 boc trong MP4, Firefox van bao la phat duoc) va tat AV1 thi chi con H.264.
+#
+# Va them dong tu xung la may PS4, de YouTube mo giao dien danh cho tivi (youtube.com/tv; anh Huy
+# chot 9/10/2026: ep xem toan man hinh, khong cho xem trong khung nho): video nao cung chieu kin
+# man hinh, chuot bam duoc nut, video, chu tren ban phim cua no, Esc hay nut mui ten la ve danh
+# sach, dang nhap bang ma tren dien thoai (yt.be/activate) nen khong ai go mat khau tren laptop.
+# Trang youtube.com/tv chi mo cho thiet bi tivi; voi nhan dang cua Firefox tren may tinh, Google
+# chuyen ve trang thuong (co khung nho). Ngay nao Google chan nhan dang nay thi YouTube ve trang
+# thuong, khong hong gi them.
+#
+# Mo Netflix thi go het cac dong do ra, de Netflix chay y nhu truoc (chua do Netflix voi H.264, vi
+# ho so Netflix nao cung khoa PIN). Firefox ghi cai dat dang dung vao prefs.js luc thoat, nen phai
+# go o day chu khong chi them luc mo YouTube.
+UA_TIVI='Mozilla/5.0 (PS4; Leanback Shell) Gecko/20100101 Firefox/65.0 LeanbackShell/01.00.01.75 Sony PS4/ (PS4, , no, CH)'
 sua_prefs() {
     for f in "$HOME"/.mozilla/firefox/*/prefs.js; do
         [ -f "$f" ] || continue
         sed -i -e '/"extensions\.installedDistroAddon\./d' \
             -e '/"browser\.startup\.couldRestoreSession\.count"/d' \
             -e '/"media\.mediasource\.webm\.enabled"/d' \
-            -e '/"media\.av1\.enabled"/d' "$f"
+            -e '/"media\.mediasource\.vp9\.enabled"/d' \
+            -e '/"media\.av1\.enabled"/d' \
+            -e '/"general\.useragent\.override"/d' "$f"
         echo 'user_pref("browser.startup.couldRestoreSession.count", 2);' >> "$f"
         if [ "$1" = youtube ]; then
             echo 'user_pref("media.mediasource.webm.enabled", false);' >> "$f"
+            echo 'user_pref("media.mediasource.vp9.enabled", false);' >> "$f"
             echo 'user_pref("media.av1.enabled", false);' >> "$f"
+            echo "user_pref(\"general.useragent.override\", \"$UA_TIVI\");" >> "$f"
         fi
     done
 }
@@ -132,7 +147,7 @@ sua_prefs() {
 # Firefox 146 bo qua dia chi luc khoi dong, thay 7/10/2026). Nhat ky 8/10/2026 cho thay Firefox
 # van tai dia chi do, chi cham, con moi lan goi lai la them mot the Netflix cung tai, nen bo.
 # Moi lan chon la mot lan bat Firefox, nen van canh moi lan mo Netflix. YouTube thi khong canh:
-# trang YouTube nen trang, netflix-canh se tuong la trang dang tai va bam F5 nham.
+# netflix-canh chi hieu trang Netflix (cho chu Netflix tren tieu de, xem nen trang la trang trong).
 #
 # Nut ✕ (netflix-thoat) chi chay cung Firefox: o man chon thi khong co Firefox de dong.
 # Ma tra ve cua man chon xem dau file netflix-chon.
@@ -142,7 +157,7 @@ while :; do
     ma=$?
     case $ma in
         10) loai=netflix; URL=https://www.netflix.com/ ;;
-        11) loai=youtube; URL=https://www.youtube.com/ ;;
+        11) loai=youtube; URL=https://www.youtube.com/tv ;;
         3) het_phut ;;
         0) exit 0 ;;
         *)
