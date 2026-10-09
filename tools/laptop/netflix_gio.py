@@ -2,9 +2,10 @@
 # Chuong trinh chay ngam tren laptop Linux Mint cua Le Hoa (7/10/2026).
 #
 # Viec cua no:
-#  1. Moi phut hoi Firestore xem co phieu cap gio Netflix moi khong (laptop/{maNha}/cap,
-#     xem Duong.LAPTOP, Duong.CAP ben ba app). Phieu do tablet ghi khi Le Hoa doi phut choi,
-#     hay Bang dieu khien ghi khi Ba Huy cho them.
+#  1. Nghe Firestore xem co phieu cap gio Netflix moi khong (laptop/{maNha}/cap, xem
+#     Duong.LAPTOP, Duong.CAP ben ba app). Phieu do tablet ghi khi Le Hoa doi phut choi, hay
+#     Bang dieu khien ghi khi Ba Huy cho them. Tu 9/10/2026 giu mot ket noi nghe (lop Nghe) thay
+#     cho hoi mot phut mot lan, xem cho HOI_PHIEU_GIAY.
 #  2. Cong gio cho tai khoan Le Hoa bang Timekpr-nExt (timekpra --settimeleft ... +), roi xoa
 #     phieu. Phieu phut am (tu 9/10/2026, nut "Bớt Netflix") thi bot, toi da ve 0. Timekpr-nExt dem gio, bao truoc, va dang xuat khi het gio; o day khong dem gi.
 #  3. Ghi lai vao document laptop/{maNha} luc nao het gio (khi con dang dung) hay con bao
@@ -19,15 +20,19 @@
 #  6. Tu 8/10/2026 lam lenh Ba Huy gui tu Bang dieu khien (laptop/{maNha}/lenh, xem
 #     Duong.LenhLaptop ben ba app): nhan len tivi (dai chu netflix-nhan kem giong doc Google
 #     Dich), chup man hinh (laptop/{maNha}/anh/moinhat), dang xuat, tat may, va HOI (dien thoai
-#     mo tab Gio choi, laptop ghi lai trang thai de dien thoai biet laptop con song). Hoi chung
-#     vong mot phut voi phieu: anh Huy chot giu mot phut, lenh tre toi da khoang mot phut.
-#     Lam xong ghi ket qua vao truong ketQua.
+#     mo tab Gio choi, laptop ghi lai trang thai de dien thoai biet laptop con song). Lenh toi
+#     qua cung ket noi nghe voi phieu, tre vai giay (9/10/2026; truoc do hoi chung vong mot phut
+#     voi phieu, lenh tre toi da khoang mot phut). Lam xong ghi ket qua vao truong ketQua.
 #  7. Ghi ai dang ngoi man hinh (phien, phienTu) va cac lan bat may, tat may, dang nhap, dang
 #     xuat trong ngay (suKien), cho dong "Hôm nay: ..." tren dien thoai.
 #
-# Chi dung thu vien chuan cua Python 3 (Mint 22 co san 3.12), khong cai them goi pip nao. Rieng
-# chup man hinh dung Pillow (python3-pil) va netflix-nhan dung GTK 3 (python3-gi), deu co san
-# trong Mint; thieu thi chi lenh do hong, phan con lai van chay.
+# Phan lon chi dung thu vien chuan cua Python 3 (Mint 22 co san 3.12). Rieng ket noi nghe
+# (9/10/2026) dung thu vien Firestore cua Google (google-cloud-firestore, kem grpcio), cai bang
+# pip vao moi truong rieng /usr/local/lib/netflix-gio/venv (cai.sh), va dich vu chay bang python3
+# cua moi truong do. Moi truong tao voi --system-site-packages de van thay Pillow cua he thong.
+# Chay bang python3 he thong (lenh dangky, mot) hay thieu thu vien thi khong nghe duoc, tu quay
+# ve hoi mot phut mot lan. Chup man hinh dung Pillow (python3-pil) va netflix-nhan dung GTK 3
+# (python3-gi), deu co san trong Mint; thieu thi chi lenh do hong, phan con lai van chay.
 # Dang nhap Firebase an danh qua REST, nhu ba app Android, nhung bang khoa API trong
 # google-services.json. uid cua laptop phai duoc ghi vao truong uidLaptop cua document
 # laptop/{maNha} (Claude Code ghi qua console), luat Firestore moi cho laptop doc ghi.
@@ -50,6 +55,7 @@ import re
 import signal
 import subprocess
 import sys
+import threading
 import time
 import urllib.error
 import urllib.parse
@@ -58,8 +64,14 @@ import urllib.request
 CAU_HINH = "/etc/netflix-gio/cauhinh.json"
 TRANG_THAI = "/var/lib/netflix-gio/trangthai.json"
 
-# Hoi Firestore mot phut mot lan: 1440 luot doc mot ngay, trong goi Spark mien phi
-# (50.000 luot). Con bam doi tren tablet thi cho toi da mot phut la laptop co gio.
+# Tu 9/10/2026 laptop giu mot ket noi nghe Firestore (lop Nghe) cho document laptop/{maNha}, phieu
+# cap/ va lenh/: co phieu hay lenh moi la Firestore day toi trong vai giay, vong chinh thuc day va
+# doc lai bang REST nhu cu. Truoc do hoi mot phut mot lan, moi lan ba luot doc (document, cap/,
+# lenh/; truy van khong ra gi van tinh mot luot), toi 4.320 luot mot ngay neu may bat ca ngay, ma
+# phieu, lenh tre toi mot phut. Nghe thi Firestore chi tinh luot doc cho document moi hay vua doi,
+# va tinh lai nhu mot lan hoi moi khi ket noi dut roi noi lai. Anh Huy chot khong hoi them dinh ky
+# khi ket noi nghe dang song ("tôi nghĩ ko cần" luoi an toan 10 phut, 9/10/2026). Chi khi khong mo
+# duoc ket noi nghe (thieu thu vien, loi quyen) thi moi quay ve hoi HOI_PHIEU_GIAY giay mot lan.
 HOI_PHIEU_GIAY = 60
 
 # Xem Timekpr-nExt bao lau mot lan. Luc con dang xem thi day hon, de thong bao 5 phut
@@ -236,6 +248,9 @@ class Firebase:
         self.tt = tt
         self.id_token = None
         self.het_han = 0
+        # token() duoc goi ca tu vong chinh (REST) lan tu cac luong cua ket noi nghe (lop Nghe):
+        # thu 9/10/2026 ba ket noi mo cung luc la ba lan lam moi the, nen khoa lai.
+        self.khoa_the = threading.Lock()
 
     def dang_ky(self):
         if self.tt.get("refreshToken"):
@@ -252,7 +267,14 @@ class Firebase:
         self.het_han = time.time() + int(d.get("expiresIn", "3600")) - 120
         return self.tt["uid"]
 
-    def token(self):
+    def token(self, con_it_nhat=0):
+        """The con han it nhat [con_it_nhat] giay; it hon thi lam moi ngay."""
+        with self.khoa_the:
+            if self.het_han - time.time() < con_it_nhat:
+                self.het_han = 0
+            return self._token()
+
+    def _token(self):
         if self.id_token and time.time() < self.het_han:
             return self.id_token
         if not self.tt.get("refreshToken"):
@@ -317,6 +339,78 @@ class Firebase:
                     token=self.token())
         if ma != 200:
             raise RuntimeError("ghi trang thai hong: %s %s" % (ma, d))
+
+
+class Nghe:
+    """Ket noi nghe Firestore (9/10/2026), chi dung de bam chuong cho vong chinh.
+
+    Ba ket noi: document laptop/{maNha} (truong moWeb), phieu cap/, lenh/. Co phieu hay lenh moi
+    (hay doi), hay moWeb doi gia tri, thi dat [chuong] (threading.Event) de vong chinh thuc day
+    ngay va lam nhu cu bang REST: doc document, xu ly phieu, lenh roi xoa. Viec xu ly khong nam o
+    day, vi cac ham goi lai chay tren luong cua thu vien, con cong gio, lam lenh phai o vong chinh.
+    Laptop tu xoa phieu, lenh da lam (bao REMOVED) va tu ghi trang thai vao chinh document
+    laptop/{maNha} (bao MODIFIED), nen bo qua REMOVED va chi xet moWeb, khong thi moi lan ghi la
+    mot lan tu danh thuc.
+
+    Dang nhap bang chinh the an danh cua lop Firebase: Firestore nhan the do o ket noi gRPC nhu o
+    REST, luat Firestore van ap (thu tren du an THU 9/10/2026, ba ket noi mo trong 1,4 giay). Thu
+    vien tu noi lai khi mat mang, het han the (UNAUTHENTICATED nam trong cac loi no tu noi lai) hay
+    may chu dong ket noi; loi khac (vd PERMISSION_DENIED khi doi uidLaptop) thi no dong han, va
+    con_song() bao False de vong chinh mo lai.
+    """
+
+    def __init__(self, fb, chuong):
+        self.fb = fb
+        self.chuong = chuong
+        self.ket_noi = []
+        self.mo_web = None
+
+    def mo(self):
+        # Nhap o day chu khong o dau file: chay bang python3 he thong (dangky, mot) thi khong co
+        # thu vien nay, ImportError lam vong chinh quay ve hoi dinh ky.
+        import datetime
+        import google.auth.credentials
+        from google.cloud import firestore
+
+        fb = self.fb
+
+        class TheFirebase(google.auth.credentials.Credentials):
+            def refresh(self, request):
+                # google-auth coi the la het han som hon expiry 3 phut 45 giay (REFRESH_THRESHOLD,
+                # ban 2.61), nen doi the con han it nhat 10 phut, khong thi no nhan lai dung the cu
+                # sap het.
+                self.token = fb.token(con_it_nhat=600)
+                # google-auth so expiry (UTC, khong mui gio) voi gio hien tai de biet luc lam moi.
+                self.expiry = (datetime.datetime.fromtimestamp(fb.het_han, datetime.timezone.utc)
+                               .replace(tzinfo=None))
+
+        db = firestore.Client(project=fb.du_an, credentials=TheFirebase())
+        goc = db.collection("laptop").document(fb.ma_nha)
+        self.ket_noi = [goc.on_snapshot(self._document),
+                        goc.collection("cap").on_snapshot(self._moi),
+                        goc.collection("lenh").on_snapshot(self._moi)]
+
+    def _document(self, cac_ban, thay_doi, luc_doc):
+        for ban in cac_ban:
+            mo_web = bool((ban.to_dict() or {}).get("moWeb", False))
+            if mo_web != self.mo_web:
+                self.mo_web = mo_web
+                self.chuong.set()
+
+    def _moi(self, cac_ban, thay_doi, luc_doc):
+        if any(t.type.name in ("ADDED", "MODIFIED") for t in thay_doi):
+            self.chuong.set()
+
+    def con_song(self):
+        return bool(self.ket_noi) and all(k.is_active for k in self.ket_noi)
+
+    def dong(self):
+        for k in self.ket_noi:
+            try:
+                k.unsubscribe()
+            except Exception:  # dong roi, hay dong do loi: khong can lam gi them
+                pass
+        self.ket_noi = []
 
 
 def gia_tri(v):
@@ -438,6 +532,14 @@ def bao(nguoi, tieu_de, noi_dung):
 
 
 # ----------------------------------------------------------------- lenh tu dien thoai
+
+def sau_bao_lau(tao_ms):
+    """"sau 3,2 giay": tu luc dien thoai, tablet tao phieu hay lenh toi luc laptop lam xong. Ghi vao
+    nhat ky de do ket noi nghe (9/10/2026); lech gio giua hai may thi so nay lech theo."""
+    if not tao_ms:
+        return "khong ro luc tao"
+    return ("sau %.1f giay" % (time.time() - tao_ms / 1000)).replace(".", ",")
+
 
 def gio_phut(luc_ms):
     return time.strftime("%H:%M", time.localtime(luc_ms / 1000))
@@ -674,6 +776,13 @@ class May:
         self.tt.setdefault("daNhan", {})
         self.fb = Firebase(self.cau_hinh, self.tt)
         self.lan_hoi = 0
+        # Ket noi nghe (lop Nghe) va chuong cua no. can_hoi: con phai doc Firestore bang REST
+        # (vua bat, chuong vua keo, hay lan doc truoc hong). Luc dong ho chua lay gio mang thi
+        # chua nhan phieu, nen can_hoi giu nguyen toi khi nhan duoc, khong mat phieu nao.
+        self.chuong = threading.Event()
+        self.nghe = None
+        self.lan_mo_nghe = 0
+        self.can_hoi = True
         self.da_day = None
         self.cap_cuoi = None
         self.da_bao = False
@@ -790,7 +899,7 @@ class May:
                     ok, cau = self.lam_lenh(kieu, f)
                 except Exception as e:  # lenh hong thi bao ve dien thoai, khong lam ket ca vong
                     ok, cau = False, "Laptop làm lệnh bị lỗi: %s" % e
-                ghi_log("lenh %s %s: %s" % (kieu, ma, cau))
+                ghi_log("lenh %s %s (%s): %s" % (kieu, ma, sau_bao_lau(tao), cau))
             self.ket_qua = (self.ket_qua + [{"id": ma, "kieu": kieu, "ok": ok, "chu": cau,
                                              "luc": int(time.time() * 1000)}])[-5:]
             self.can_day = True
@@ -849,7 +958,7 @@ class May:
                 ghi_json(TRANG_THAI, self.tt)
                 self.cap_cuoi = {"phut": phut, "ai": ai, "luc": int(time.time() * 1000)}
                 self.da_bao = False
-                ghi_log("cong %d phut Netflix (%s, phieu %s)" % (phut, ai, ma))
+                ghi_log("cong %d phut Netflix (%s, phieu %s, %s)" % (phut, ai, ma, sau_bao_lau(tao)))
             elif -600 <= phut < 0:
                 # Phieu bot (9/10/2026): cung duong, cung han trong ngay voi phieu cap (anh Huy chot
                 # "cap them thi cung phai bot").
@@ -857,7 +966,8 @@ class May:
                 self.tt["daNhan"][ma] = hom_nay
                 ghi_json(TRANG_THAI, self.tt)
                 self.cap_cuoi = {"phut": phut, "ai": ai, "luc": int(time.time() * 1000)}
-                ghi_log("bot %d phut Netflix, bot that %d giay (%s, phieu %s)" % (-phut, tru, ai, ma))
+                ghi_log("bot %d phut Netflix, bot that %d giay (%s, phieu %s, %s)"
+                        % (-phut, tru, ai, ma, sau_bao_lau(tao)))
             self.fb.xoa(ten)
         # Bo cac ma phieu cu, chi can nho trong ngay.
         cu = [k for k, v in self.tt["daNhan"].items() if v != hom_nay]
@@ -893,6 +1003,35 @@ class May:
         self.can_day = False
         self.cap_cuoi = None
 
+    def giu_nghe(self):
+        """Mo ket noi nghe neu chua mo hay da dung (thu lai toi da moi NHIP_RANH giay mot lan).
+        Tra ve True khi dang nghe; False thi vong chinh hoi dinh ky nhu truoc 9/10/2026."""
+        if self.nghe is not None and self.nghe.con_song():
+            return True
+        if time.time() - self.lan_mo_nghe < NHIP_RANH:
+            return False
+        self.lan_mo_nghe = time.time()
+        if self.nghe is not None:
+            ghi_log("ket noi nghe Firestore da dung, mo lai")
+            self.nghe.dong()
+            self.nghe = None
+        try:
+            nghe = Nghe(self.fb, self.chuong)
+            nghe.mo()
+        except Exception as e:
+            ghi_log("khong mo duoc ket noi nghe Firestore, hoi %d giay mot lan:" % HOI_PHIEU_GIAY, e)
+            return False
+        self.nghe = nghe
+        # Luc chua nghe co the da lo phieu, lenh: doc lai mot lan cho chac.
+        self.can_hoi = True
+        ghi_log("da mo ket noi nghe Firestore")
+        return True
+
+    def dong_nghe(self):
+        if self.nghe is not None:
+            self.nghe.dong()
+            self.nghe = None
+
     def vong(self):
         dung = dang_dung(self.nguoi)
         # Le Hoa dang nhap thi khoa web truoc tien, truoc ca khi hoi Firestore: mat mang thi
@@ -912,17 +1051,23 @@ class May:
                 self.lan_ghi_song = time.time()
                 self.tt["songLuc"] = int(time.time() * 1000)
                 ghi_json(TRANG_THAI, self.tt)
-        if time.time() - self.lan_hoi >= HOI_PHIEU_GIAY:
+        dang_nghe = self.giu_nghe()
+        if self.chuong.is_set():
+            self.chuong.clear()
+            self.can_hoi = True
+        if self.can_hoi or (not dang_nghe and time.time() - self.lan_hoi >= HOI_PHIEU_GIAY):
             self.lan_hoi = time.time()
             try:
                 self.mo_web = self.fb.doc_laptop().get("moWeb", {}).get("booleanValue", False)
                 if self.gio_dung:
                     self.xu_ly_phieu()
                     self.xu_ly_lenh()
+                    self.can_hoi = False
                 else:
                     ghi_log("dong ho chua lay gio mang, chua nhan phieu")
             except Exception as e:
-                # Van di tiep de dat luat Firefox theo lan doc truoc; bao loi sau cung.
+                # Van di tiep de dat luat Firefox theo lan doc truoc; bao loi sau cung. can_hoi
+                # van la True nen vong sau (15 hay 60 giay) doc lai.
                 loi_mang = e
         mo = self.mo_web and not dung
         if dat_luat_firefox(not mo):
@@ -957,6 +1102,8 @@ def main():
         print(may.fb.dang_ky())
         return
     if lenh == "mot":
+        # Mot vong de thu thi khong can nghe: hoi thang mot lan bang REST.
+        may.lan_mo_nghe = time.time()
         may.vong()
         return
 
@@ -964,6 +1111,7 @@ def main():
     def khi_dung(so_tin_hieu, khung):
         if he_thong_dang_tat():
             may.ghi_tat()
+        may.dong_nghe()
         sys.exit(0)
 
     signal.signal(signal.SIGTERM, khi_dung)
@@ -973,7 +1121,8 @@ def main():
             dung = may.vong()
         except Exception as e:  # mat mang, token hong, luat chan: ghi lai roi thu vong sau
             ghi_log("loi:", e)
-        time.sleep(NHIP_DANG_DUNG if dung else NHIP_RANH)
+        # Cho toi nhip ke tiep (xem Timekpr-nExt), nhung ket noi nghe keo chuong thi day ngay.
+        may.chuong.wait(NHIP_DANG_DUNG if dung else NHIP_RANH)
 
 
 if __name__ == "__main__":

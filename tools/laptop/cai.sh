@@ -9,6 +9,12 @@ gs="$1"; nha="$2"
 day=$(dirname "$0")
 install -d -m 755 /usr/local/lib/netflix-gio
 install -m 755 "$day/netflix_gio.py" /usr/local/lib/netflix-gio/netflix_gio.py
+# Ket noi nghe Firestore (9/10/2026) can thu vien Firestore cua Google: cai vao moi truong Python
+# rieng, tao voi --system-site-packages de van thay Pillow cua he thong (lenh chup man hinh). Ban
+# thu vien ghim theo lan cai dau tien, keo theo grpcio 1.84.0, protobuf 7.36.2, google-auth 2.61.0.
+apt-get install -y -q python3-venv >/dev/null
+[ -x /usr/local/lib/netflix-gio/venv/bin/python3 ] || python3 -m venv --system-site-packages /usr/local/lib/netflix-gio/venv
+/usr/local/lib/netflix-gio/venv/bin/pip install -q --disable-pip-version-check google-cloud-firestore==2.34.1
 install -d -m 700 /etc/netflix-gio /var/lib/netflix-gio
 python3 - "$gs" "$nha" <<'PY'
 import json, sys

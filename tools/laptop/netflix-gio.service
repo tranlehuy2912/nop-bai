@@ -8,7 +8,10 @@ After=network-online.target
 Wants=network-online.target
 
 [Service]
-ExecStart=/usr/bin/python3 /usr/local/lib/netflix-gio/netflix_gio.py chay
+# python3 cua moi truong rieng (9/10/2026): co thu vien Firestore cho ket noi nghe, xem dau
+# netflix_gio.py. Thieu moi truong do thi sua tam ve /usr/bin/python3: dich vu van chay, chi
+# quay ve hoi Firestore mot phut mot lan.
+ExecStart=/usr/local/lib/netflix-gio/venv/bin/python3 /usr/local/lib/netflix-gio/netflix_gio.py chay
 Restart=always
 RestartSec=30
 
