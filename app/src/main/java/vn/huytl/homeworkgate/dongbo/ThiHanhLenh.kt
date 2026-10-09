@@ -688,11 +688,13 @@ object ThiHanhLenh {
                 prefs.aiPackages = danhSach(giaTri)
                 "Danh sách app AI ghi câu hỏi: ${prefs.aiPackages.size} app."
             }
-            // Mot phut choi doi duoc may phut Netflix tren laptop (7/10/2026), xem Laptop.
+            // Mot phut choi doi duoc may phut xem phim tren laptop (7/10/2026), xem Laptop. Cau
+            // tra loi hien tren Bang dieu khien; tu 9/10/2026 ghi "phút xem phim" thay "phút
+            // Netflix" (anh Huy chot, laptop xem ca YouTube). Ten khoa tiLeNetflix giu nguyen.
             "tiLeNetflix" -> {
                 val v = so?.takeIf { it in 1..10 } ?: return "Tỉ lệ phải là số từ 1 đến 10."
                 prefs.tiLeNetflix = v
-                "1 phút chơi giờ đổi được $v phút Netflix."
+                "1 phút chơi giờ đổi được $v phút xem phim."
             }
             "gioiHanApp" -> {
                 @Suppress("UNCHECKED_CAST")
