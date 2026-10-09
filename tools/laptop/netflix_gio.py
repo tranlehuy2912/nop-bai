@@ -6,7 +6,7 @@
 #     xem Duong.LAPTOP, Duong.CAP ben ba app). Phieu do tablet ghi khi Le Hoa doi phut choi,
 #     hay Bang dieu khien ghi khi Ba Huy cho them.
 #  2. Cong gio cho tai khoan Le Hoa bang Timekpr-nExt (timekpra --settimeleft ... +), roi xoa
-#     phieu. Timekpr-nExt dem gio, bao truoc, va dang xuat khi het gio; o day khong dem gi.
+#     phieu. Phieu phut am (tu 9/10/2026, nut "Bớt Netflix") thi bot, toi da ve 0. Timekpr-nExt dem gio, bao truoc, va dang xuat khi het gio; o day khong dem gi.
 #  3. Ghi lai vao document laptop/{maNha} luc nao het gio (khi con dang dung) hay con bao
 #     nhieu (khi khong ai dung), de Bang dieu khien hien "Laptop còn N phút". Chi ghi khi co
 #     gi doi, khong ghi moi phut: giu so luot ghi Firestore o muc vai chuc mot ngay.
@@ -370,6 +370,27 @@ def cong_gio(nguoi, giay):
                        capture_output=True, text=True)
     if r.returncode != 0:
         raise RuntimeError("timekpra cong gio hong: %s %s" % (r.stdout, r.stderr))
+
+
+def bot_gio(nguoi, giay):
+    """Bot [giay] giay Netflix (phieu phut am, Ba Huy bam "Bớt Netflix", 9/10/2026). Bot qua so
+    dang con thi ve 0, khong am (anh Huy chot). Tra ve so giay da bot that.
+
+    Con dang xem ma ve 0 thi Timekpr-nExt dang xuat ngay nhu luc het gio; anh Huy chot khong bao
+    them tren tivi, con duoi 5 phut thi van co thong bao "Còn N phút" cua vong.
+    """
+    con = timekpr_con_lai(nguoi, dang_dung(nguoi))
+    if con is None:
+        # Timekpr-nExt chua chay (vua bat may): nem loi de phieu nam cho, vong sau lam lai.
+        raise RuntimeError("chua doc duoc Timekpr-nExt, chua bot")
+    tru = min(giay, max(con, 0))
+    if tru <= 0:
+        return 0
+    r = subprocess.run(["timekpra", "--settimeleft", nguoi, "-", str(tru)],
+                       capture_output=True, text=True)
+    if r.returncode != 0:
+        raise RuntimeError("timekpra bot gio hong: %s %s" % (r.stdout, r.stderr))
+    return tru
 
 
 def dang_dung(nguoi):
@@ -829,6 +850,14 @@ class May:
                 self.cap_cuoi = {"phut": phut, "ai": ai, "luc": int(time.time() * 1000)}
                 self.da_bao = False
                 ghi_log("cong %d phut Netflix (%s, phieu %s)" % (phut, ai, ma))
+            elif -600 <= phut < 0:
+                # Phieu bot (9/10/2026): cung duong, cung han trong ngay voi phieu cap (anh Huy chot
+                # "cap them thi cung phai bot").
+                tru = bot_gio(self.nguoi, -phut * 60)
+                self.tt["daNhan"][ma] = hom_nay
+                ghi_json(TRANG_THAI, self.tt)
+                self.cap_cuoi = {"phut": phut, "ai": ai, "luc": int(time.time() * 1000)}
+                ghi_log("bot %d phut Netflix, bot that %d giay (%s, phieu %s)" % (-phut, tru, ai, ma))
             self.fb.xoa(ten)
         # Bo cac ma phieu cu, chi can nho trong ngay.
         cu = [k for k, v in self.tt["daNhan"].items() if v != hom_nay]
