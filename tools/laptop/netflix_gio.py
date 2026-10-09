@@ -24,7 +24,9 @@
 #     qua cung ket noi nghe voi phieu, tre vai giay (9/10/2026; truoc do hoi chung vong mot phut
 #     voi phieu, lenh tre toi da khoang mot phut). Lam xong ghi ket qua vao truong ketQua.
 #  7. Ghi ai dang ngoi man hinh (phien, phienTu) va cac lan bat may, tat may, dang nhap, dang
-#     xuat trong ngay (suKien), cho dong "Hôm nay: ..." tren dien thoai.
+#     xuat trong ngay (suKien). Tu 9/10/2026 moi ngay mot document laptop/{maNha}/ngay/{ngay},
+#     giu 7 ngay, cho the "Thời gian dùng laptop" o tab Nhat ky (dong "Hôm nay: ..." tren the
+#     Laptop bo cung ngay).
 #
 # Phan lon chi dung thu vien chuan cua Python 3 (Mint 22 co san 3.12). Rieng ket noi nghe
 # (9/10/2026) dung thu vien Firestore cua Google (google-cloud-firestore, kem grpcio), cai bang
@@ -330,6 +332,20 @@ class Firebase:
                     token=self.token())
         if ma != 200:
             raise RuntimeError("ghi anh hong: %s %s" % (ma, d))
+
+    def ghi_ngay(self, ngay, su_kien):
+        """So cac lan bat, tat, vao, ra cua mot ngay: laptop/{maNha}/ngay/{yyyy-MM-dd} (9/10/2026)."""
+        ma, d = goi("PATCH", self.goc() + "/ngay/" + ngay,
+                    {"fields": {"suKien": gia_tri(su_kien), "capNhatLuc": gia_tri(int(time.time() * 1000))}},
+                    token=self.token())
+        if ma != 200:
+            raise RuntimeError("ghi so ngay hong: %s %s" % (ma, d))
+
+    def cac_ngay(self):
+        ma, d = goi("GET", self.goc() + "/ngay?pageSize=50", token=self.token())
+        if ma != 200:
+            raise RuntimeError("doc so ngay hong: %s %s" % (ma, d))
+        return d.get("documents", [])
 
     def ghi_trang_thai(self, truong):
         # updateMask chi ghi dung cac truong nay. Thieu no thi PATCH ghi de ca document,
@@ -801,6 +817,10 @@ class May:
         self.phien_tu = 0
         self.da_ghi_khoi_dong = False
         self.lan_ghi_song = 0
+        # So ngay da day len laptop/{maNha}/ngay lan gan nhat (ngay, danh sach), va ngay da don so
+        # cu, xem day_ngay.
+        self.ngay_da_day = None
+        self.ngay_da_don = None
 
     # --------------------------------------------------- bat, tat, dang nhap trong ngay
 
@@ -852,8 +872,35 @@ class May:
             truong = {"tatLuc": bay_gio, "suKien": self.su_kien_hom_nay(), "capNhatLuc": bay_gio,
                       "ketQua": self.ket_qua}
             self.fb.ghi_trang_thai(truong)
+            self.fb.ghi_ngay(time.strftime("%Y-%m-%d"), self.su_kien_hom_nay())
         except Exception as e:
             ghi_log("khong ghi duoc luc tat:", e)
+
+    def day_ngay(self):
+        """Day so cua hom nay len laptop/{maNha}/ngay/{ngay} khi co gi doi, giu 7 ngay (9/10/2026).
+
+        Cho the "Thời gian dùng laptop" o tab Nhat ky cua Bang dieu khien (anh Huy chon mau B, xem
+        duoc 7 ngay nhu cac the khac cua tab do). Truong suKien cua document laptop chi giu hom nay,
+        sang ngay moi la mat, nen moi ngay mot document rieng. Qua nua dem ma con nguoi ngoi man
+        hinh thi ghi mot dong "vao" luc 0 gio, de ngay moi biet phien dang chay tu dau ngay.
+        """
+        hom_nay = time.strftime("%Y-%m-%d")
+        ten = self.phien[0] if self.phien else None
+        if ten and not self.su_kien_hom_nay():
+            dau_ngay = int(time.mktime(time.strptime(hom_nay, "%Y-%m-%d")) * 1000)
+            if self.phien_tu and self.phien_tu < dau_ngay:
+                self.them_su_kien("vao", dau_ngay, ten)
+        ds = self.su_kien_hom_nay()
+        if ds and self.ngay_da_day != (hom_nay, json.dumps(ds)):
+            self.fb.ghi_ngay(hom_nay, ds)
+            self.ngay_da_day = (hom_nay, json.dumps(ds))
+        if self.ngay_da_don != hom_nay:
+            # Giu hom nay va 6 ngay truoc (bang hang nut 7 ngay cua tab Nhat ky), xoa cu hon.
+            moc = time.strftime("%Y-%m-%d", time.localtime(time.time() - 6 * 86400))
+            for d in self.fb.cac_ngay():
+                if d["name"].rsplit("/", 1)[1] < moc:
+                    self.fb.xoa(d["name"])
+            self.ngay_da_don = hom_nay
 
     def xet_phien(self):
         """Ghi su kien khi nguoi ngoi man hinh doi (dang nhap, dang xuat, doi tai khoan)."""
@@ -1091,6 +1138,10 @@ class May:
         # Gio sai thi moc het gio va capNhatLuc ghi len dien thoai cung sai.
         if self.gio_dung:
             self.day_trang_thai(con_lai, dung)
+            try:
+                self.day_ngay()
+            except Exception as e:  # so ngay hong thi lan sau day lai, khong lam ket vong
+                ghi_log("so ngay hong:", e)
         # Web dang mo thi xem day, de Le Hoa dang nhap la khoa ngay.
         return dung or mo
 
