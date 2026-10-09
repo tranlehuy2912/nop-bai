@@ -27,8 +27,10 @@ print("du an", ch["projectId"], "nha", ch["maNha"])
 PY
 chmod 600 /etc/netflix-gio/cauhinh.json
 install -m 644 "$day/netflix-gio.service" /etc/systemd/system/netflix-gio.service
-# Phien chi co Netflix cho lehoa, va dang nhap khong can mat khau (chon ten la vao).
+# Phien cua lehoa: man chon Netflix hay YouTube (9/10/2026; truoc do chi co Netflix) roi Firefox toan
+# man hinh, dang nhap khong can mat khau (chon ten la vao).
 install -m 755 "$day/netflix-phien" /usr/local/bin/netflix-phien
+install -m 755 "$day/netflix-chon" /usr/local/bin/netflix-chon
 install -m 755 "$day/netflix-thoat" /usr/local/bin/netflix-thoat
 # Xem trang Netflix luc moi mo, trang con trong thi tu bam F5 (8/10/2026), xem dau file netflix-canh.
 install -m 755 "$day/netflix-canh" /usr/local/bin/netflix-canh
@@ -40,9 +42,29 @@ install -m 644 "$day/80-netflix-lehoa.conf" /etc/lightdm/lightdm.conf.d/80-netfl
 # Co tivi cam thi man dang nhap chi hien tren tivi (8/10/2026), xem dau file chi-tivi.
 install -m 755 "$day/chi-tivi" /usr/local/bin/chi-tivi
 install -m 644 "$day/81-chi-tivi.conf" /etc/lightdm/lightdm.conf.d/81-chi-tivi.conf
-# Ten hien o man dang nhap la "Netflix" (anh Huy doi 8/10/2026; tai khoan huy hien "Admin").
-id lehoa >/dev/null 2>&1 || useradd -m -c "Netflix" -s /bin/bash lehoa
+# Ten hien o man dang nhap la "Xem phim" (anh Huy chot 9/10/2026 khi phien co them YouTube; tu
+# 8/10/2026 la "Netflix"; tai khoan huy hien "Admin"). Man dang nhap doc ten moi tu lan hien sau.
+id lehoa >/dev/null 2>&1 || useradd -m -c "Xem phim" -s /bin/bash lehoa
+usermod -c "Xem phim" lehoa
 usermod -aG nopasswdlogin lehoa
+# Che do han che YouTube muc "Vua" cho ca may, ke ca tai khoan Admin (anh Huy chot 9/10/2026). Firefox
+# khong co luat bat che do nay, nen lam theo cach Google huong dan cho mang truong hoc: tro cac ten
+# YouTube ve may chu han che restrictmoderate.youtube.com (muc "Gat" la restrict.youtube.com). Ghi ca
+# IPv4 lan IPv6: laptop co IPv6 that, thieu dong IPv6 thi co the di vong qua DNS ra may chu thuong.
+# Dia chi tra luc cai, khong tra duoc thi dung dia chi da biet ngay 9/10/2026. Firefox phai tat DNS
+# qua HTTPS moi doc file nay (luat DNSOverHTTPS trong netflix_gio.py). Kiem tra: mo
+# https://www.youtube.com/check_content_restrictions, phai ghi "Moderate restricted".
+han_che=restrictmoderate.youtube.com
+ip4=$(getent ahostsv4 $han_che | awk '{print $1; exit}')
+ip6=$(getent ahostsv6 $han_che | awk '$1 !~ /^::ffff:/ {print $1; exit}')
+ten_yt="www.youtube.com m.youtube.com youtubei.googleapis.com youtube.googleapis.com www.youtube-nocookie.com"
+sed -i '/^# netflix-gio: YouTube han che/,/^# netflix-gio: het/d' /etc/hosts
+{
+    echo "# netflix-gio: YouTube han che muc Vua, cai.sh ghi, sua thi sua cai.sh"
+    echo "${ip4:-216.239.38.119} $ten_yt"
+    echo "${ip6:-2001:4860:4802:32::77} $ten_yt"
+    echo "# netflix-gio: het"
+} >> /etc/hosts
 # Tieng ra tivi qua HDMI (9/10/2026). Tai khoan chua co lua chon dau ra thi WirePlumber chon loa
 # laptop (analog-output-speaker uu tien 10000, hdmi-output-0 chi 5900): hinh len tivi ma tieng ra
 # loa laptop, ca nha tuong tivi mat tieng. Ghi san lua chon HDMI nhu tai khoan huy tu luu ngay

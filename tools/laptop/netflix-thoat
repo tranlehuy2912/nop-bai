@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
-# Nut thoat (dau ✕) bang chuot cho phien Netflix cua Le Hoa (anh Huy chon 7/10/2026).
+# Nut thoat (dau ✕) bang chuot cho phien xem phim cua Le Hoa (anh Huy chon 7/10/2026).
 #
 # Firefox kiosk khong co nut dong, ma con thuong cam chuot chu khong nho Alt+F4. Nut nay nam an,
 # chi hien khi re chuot vao goc phai tren cua man dang xem (tivi), de khong che phim. Bam vao thi
-# dong Firefox dang hoang (SIGTERM, Firefox luu cookie va thoat), netflix-phien chay xong, phien
-# ket thuc va may ve man dang nhap.
+# dong Firefox dang hoang (SIGTERM, Firefox luu cookie va thoat). Tu 9/10/2026 netflix-phien hien
+# lai man chon Netflix hay YouTube (netflix-chon), va chi chay nut nay trong luc Firefox mo; truoc
+# do dong Firefox la het phien, may ve man dang nhap.
 #
 # Cua so kieu POPUP (override-redirect): trinh quan ly cua so khong dung toi, nen no nam tren ca
 # cua so Firefox toan man hinh. Moi lan hien thi thi nang len tren cung.

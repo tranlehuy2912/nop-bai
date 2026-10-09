@@ -1,0 +1,172 @@
+#!/usr/bin/env python3
+# Man chon xem gi tren tivi (9/10/2026): Netflix hay YouTube, trong cung tai khoan lehoa, dung chung
+# mot quy phut (anh Huy chon mot tai khoan, chon trong phien, mau B). netflix-phien goi chuong trinh
+# nay moi lan can chon: luc vua dang nhap, va moi lan Le Hoa bam nut ✕ (netflix-thoat dong Firefox).
+#
+# Mau B: thoi gian con lai chu to o tren, hai nut dai xep doc (Netflix, YouTube), nut "Thoát" o duoi.
+# Ngay 9/10/2026 anh Huy doi chu "Còn 45 phút" thanh dong ho dem lui tung giay (viet nhu dong ho cua
+# Bang dieu khien: "44:59", "1:02:11"), va bo dong nho "dùng chung cho Netflix và YouTube" o duoi.
+# Tra ve cho netflix-phien bang ma thoat:
+#   10 Netflix, 11 YouTube, 3 het phut (netflix-phien hien hop "Hết phút" roi dang xuat),
+#   0 Thoat (bam nut, hay de man nay qua CHO_TU_THOAT giay ma khong chon gi).
+#
+# Dung o man nay van bi tru phut: Timekpr-nExt dem ca phien dang nhap. Vi vay de qua 2 phut khong chon
+# gi thi tu thoat (anh Huy chot 9/10/2026), 30 giay cuoi hien mot dong bao truoc.
+#
+# Thu tren may khac: netflix-chon <so giay con lai> (khong doc FILE_CON_LAI, dem lui tu so do).
+
+import math
+import os
+import signal
+import sys
+import time
+
+import gi
+
+gi.require_version("Gdk", "3.0")
+gi.require_version("Gtk", "3.0")
+from gi.repository import Gdk, GLib, Gtk  # noqa: E402
+
+FILE_CON_LAI = "/run/netflix-gio/conlai"
+CHO_TU_THOAT = 120
+BAO_TRUOC = 30
+# Con it hon chung nay giay thi coi la het phut, giong netflix-phien.
+HET_PHUT = 30
+# Dong ho dem lui theo dong ho rieng cua man nay cho deu tung giay. So that (doc tu FILE_CON_LAI) lech
+# qua chung nay giay thi moi lay lai theo so that: netflix_gio.py ghi lai file moi 15 giay theo
+# Timekpr-nExt, so do lech vai giay moi lan, lay lai moi lan thi dong ho nhay lui nhay toi.
+LECH_NEO = 5
+MA_THOAT, MA_HET_PHUT, MA_NETFLIX, MA_YOUTUBE = 0, 3, 10, 11
+
+# Mau giong mau B anh Huy chon (nen toi nhu tivi, Netflix chu do tren nen xam, YouTube chu trang tren
+# nen do). Phien nay khong co trinh ghep hinh, nen khong dung bong, khong bo goc trong suot.
+CSS = b"""
+window { background: #141414; }
+#phut { color: #f1efe8; font-size: 96px; font-weight: bold; font-feature-settings: "tnum"; }
+#bao { color: #EF9F27; font-size: 24px; }
+button { border: none; box-shadow: none; background-image: none; border-radius: 18px; }
+#nf { background: #2c2c2a; color: #E24B4A; font-size: 52px; font-weight: bold; }
+#nf:hover { background: #444441; }
+#yt { background: #A32D2D; color: #ffffff; font-size: 52px; font-weight: bold; }
+#yt:hover { background: #E24B4A; }
+#thoat { background: #141414; color: #f1efe8; font-size: 26px; border: 2px solid #888780; border-radius: 12px; }
+#thoat:hover { background: #2c2c2a; }
+"""
+
+
+def con_lai(phien_tu=None):
+    """So giay con lai theo FILE_CON_LAI ("<giay> <1 neu dang dung> <luc ghi>"), None neu chua doc duoc.
+
+    Luc vua dang nhap, netflix_gio.py co the chua thay phien nay (khong ai dung thi no mot phut moi
+    xem mot lan), nen file con ghi 0 o cot dang dung, trong khi Timekpr-nExt da dem tu luc dang nhap.
+    Khi do tru tu luc dang nhap (phien_tu, netflix-phien ghi vao bien PHIEN_TU)."""
+    try:
+        giay, dung, luc = (int(x) for x in open(FILE_CON_LAI).read().split()[:3])
+    except (OSError, ValueError):
+        return None
+    if dung == 1:
+        return giay - (time.time() - luc)
+    if phien_tu:
+        return giay - (time.time() - max(luc, phien_tu))
+    return giay
+
+
+def dong_ho(giay):
+    """"44:59", hay "1:02:11" khi con tu mot tieng tro len, nhu Dinh.dongHo cua Bang dieu khien."""
+    giay = max(0, math.ceil(giay))
+    h, p, g = giay // 3600, giay % 3600 // 60, giay % 60
+    return "%d:%02d:%02d" % (h, p, g) if h else "%02d:%02d" % (p, g)
+
+
+class ManChon:
+    def __init__(self, giay_thu=None):
+        self.giay_thu = giay_thu
+        self.luc_mo = time.time()
+        self.ma = MA_THOAT
+        try:
+            self.phien_tu = int(os.environ.get("PHIEN_TU", ""))
+        except ValueError:
+            self.phien_tu = None
+        # (so giay con lai, luc lay theo time.monotonic) cua lan lay so that gan nhat, xem LECH_NEO.
+        self.neo = None
+        css = Gtk.CssProvider()
+        css.load_from_data(CSS)
+        Gtk.StyleContext.add_provider_for_screen(
+            Gdk.Screen.get_default(), css, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION)
+
+        man = Gdk.Display.get_default()
+        k = (man.get_primary_monitor() or man.get_monitor(0)).get_geometry()
+        self.cua_so = Gtk.Window(title="Xem gì")
+        self.cua_so.set_decorated(False)
+        self.cua_so.move(k.x, k.y)
+        self.cua_so.set_default_size(k.width, k.height)
+        self.cua_so.connect("delete-event", lambda *a: True)
+
+        hop = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=int(k.height * 0.03))
+        hop.set_halign(Gtk.Align.CENTER)
+        hop.set_valign(Gtk.Align.CENTER)
+        self.chu_phut = Gtk.Label(name="phut")
+        hop.pack_start(self.chu_phut, False, False, 0)
+        hop.pack_start(Gtk.Box(), False, False, int(k.height * 0.03))
+        for chu, ten, ma in (("Netflix", "nf", MA_NETFLIX), ("YouTube", "yt", MA_YOUTUBE)):
+            nut = Gtk.Button(label=chu, name=ten)
+            nut.set_size_request(int(k.width * 0.42), int(k.height * 0.14))
+            nut.connect("clicked", lambda _n, m=ma: self.xong(m))
+            hop.pack_start(nut, False, False, 0)
+        hop.pack_start(Gtk.Box(), False, False, int(k.height * 0.03))
+        thoat = Gtk.Button(label="Thoát", name="thoat")
+        thoat.set_halign(Gtk.Align.CENTER)
+        thoat.set_size_request(int(k.width * 0.12), int(k.height * 0.06))
+        thoat.connect("clicked", lambda _n: self.xong(MA_THOAT))
+        hop.pack_start(thoat, False, False, 0)
+        self.chu_bao = Gtk.Label(name="bao")
+        hop.pack_start(self.chu_bao, False, False, 0)
+
+        self.cua_so.add(hop)
+        self.cap_nhat()
+        self.cua_so.show_all()
+        self.cua_so.fullscreen()
+        self.cua_so.set_keep_above(True)
+        self.cua_so.present()
+        # Xet nam lan mot giay: dong ho nhich dung lan sang giay, khong nhay coc vi dong ho hen gio lech.
+        GLib.timeout_add(200, self.cap_nhat)
+
+    def con_that(self):
+        if self.giay_thu is not None:
+            return self.giay_thu - (time.time() - self.luc_mo)
+        return con_lai(self.phien_tu)
+
+    def cap_nhat(self):
+        con = self.con_that()
+        if con is not None and con <= HET_PHUT:
+            self.xong(MA_HET_PHUT)
+            return False
+        if con is None:
+            self.neo = None
+            self.chu_phut.set_text("")
+        else:
+            bay_gio = time.monotonic()
+            if self.neo is None or abs(con - (self.neo[0] - (bay_gio - self.neo[1]))) > LECH_NEO:
+                self.neo = (con, bay_gio)
+            chu = dong_ho(self.neo[0] - (bay_gio - self.neo[1]))
+            if self.chu_phut.get_text() != chu:
+                self.chu_phut.set_text(chu)
+        cho = CHO_TU_THOAT - (time.time() - self.luc_mo)
+        if cho <= 0:
+            self.xong(MA_THOAT)
+            return False
+        bao = "Không chọn thì %d giây nữa tự thoát" % math.ceil(cho) if cho <= BAO_TRUOC else ""
+        if self.chu_bao.get_text() != bao:
+            self.chu_bao.set_text(bao)
+        return True
+
+    def xong(self, ma):
+        self.ma = ma
+        Gtk.main_quit()
+
+
+if __name__ == "__main__":
+    signal.signal(signal.SIGINT, signal.SIG_DFL)
+    man_chon = ManChon(int(sys.argv[1]) if len(sys.argv) > 1 else None)
+    Gtk.main()
+    sys.exit(man_chon.ma)

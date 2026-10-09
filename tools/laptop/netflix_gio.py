@@ -13,8 +13,8 @@
 #     gi doi, khong ghi moi phut: giu so luot ghi Firestore o muc vai chuc mot ngay.
 #  4. Con 5 phut thi hien thong bao trong phien cua Le Hoa (anh Huy chon bao truoc 5 phut).
 #  5. Giu luat chan web cua Firefox (/etc/firefox/policies/policies.json): Firefox chi vao
-#     Netflix, cho ca may vi Firefox khong co luat rieng tung tai khoan (anh Huy chon khoa ca
-#     may). Ba Huy bam "Mở web" tren Bang dieu khien (truong moWeb) thi go luat ra, bam "Khoá
+#     Netflix va (tu 9/10/2026) YouTube, cho ca may vi Firefox khong co luat rieng tung tai khoan
+#     (anh Huy chon khoa ca may). Ba Huy bam "Mở web" tren Bang dieu khien (truong moWeb) thi go luat ra, bam "Khoá
 #     web" thi dat lai; khong co han (anh Huy chon). Le Hoa dang nhap thi luat luon co mat,
 #     du moWeb dang bat. Firefox chi doc luat luc khoi dong: doi xong phai mo lai Firefox.
 #  6. Tu 8/10/2026 lam lenh Ba Huy gui tu Bang dieu khien (laptop/{maNha}/lenh, xem
@@ -124,8 +124,10 @@ FILE_NHAN = "/run/netflix-gio/nhan.mp3"
 # lehoa, huy (thu 8/10/2026), khoi phai doan .Xauthority cua tung nguoi.
 XAUTH = "/run/lightdm/root/:0"
 
-# Ten hien o man dang nhap (anh Huy doi 8/10/2026), dung trong cau ket qua gui ve dien thoai.
-TEN_HIEN = {"lehoa": "Netflix", "huy": "Admin"}
+# Ten hien o man dang nhap (anh Huy doi 8/10/2026), dung trong cau ket qua gui ve dien thoai. Tu
+# 9/10/2026 phien cua lehoa xem ca Netflix lan YouTube nen o dang nhap doi thanh "Xem phim" (cai.sh
+# dat ten nay); chu "Netflix" tren tablet, dien thoai de nguyen toi lan build app sau (anh Huy chot).
+TEN_HIEN = {"lehoa": "Xem phim", "huy": "Admin"}
 
 
 def ghi_con_lai(giay, dung):
@@ -139,6 +141,15 @@ def ghi_con_lai(giay, dung):
 # Chan moi trang tru Netflix va cac ten mien chua phim, anh cua no. Kiosk thi khong co thanh
 # dia chi, nhung con bam link trong Netflix (Trung tam tro giup, trang ngoai) thi van ra web,
 # nen phai chan o day. file:// cung chan: khong thi mo duoc thu muc may bang Ctrl+O.
+#
+# YouTube (9/10/2026): chi mo trang cua www, m va youtube.com tran. Luat nay chi xet trang va
+# khung trang (iframe), con video, anh, lenh goi ngam (googlevideo.com, ytimg.com...) khong bi
+# chan, nen khong can ke them. Bam link ra ngoai trong mo ta video, nut Dang nhap (sang
+# accounts.google.com), YouTube Music, YouTube Studio deu bi chan. Che do han che muc "Vua" (anh
+# Huy chon) khong nam o day ma o /etc/hosts (cai.sh): Firefox khong co luat bat che do han che,
+# nen lam theo cach Google huong dan cho mang truong hoc, tro ten YouTube ve may chu han che cua
+# Google. Vi vay tat DNS qua HTTPS: bat no thi Firefox hoi ten mien qua may chu ngoai, bo qua
+# /etc/hosts.
 LUAT = {
     "policies": {
         "WebsiteFilter": {
@@ -147,6 +158,7 @@ LUAT = {
                 "https://netflix.com/*", "https://*.netflix.com/*", "https://*.netflix.net/*",
                 "https://*.nflxvideo.net/*", "https://*.nflximg.net/*", "https://*.nflximg.com/*",
                 "https://*.nflxext.com/*", "https://*.nflxso.net/*",
+                "https://youtube.com/*", "https://www.youtube.com/*", "https://m.youtube.com/*",
             ],
         },
         "Homepage": {"URL": "https://www.netflix.com/", "Locked": True, "StartPage": "homepage"},
@@ -170,6 +182,7 @@ LUAT = {
             "toolkit.startup.max_resumed_crashes": {"Value": -1, "Status": "locked"},
             "browser.sessionstore.resume_from_crash": {"Value": False, "Status": "locked"},
         },
+        "DNSOverHTTPS": {"Enabled": False, "Locked": True},
         "DownloadDirectory": "/tmp",
         "PromptForDownloadLocation": False,
     }
@@ -541,7 +554,7 @@ def bao(nguoi, tieu_de, noi_dung):
              "DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/%d/bus" % uid, "DISPLAY=:0",
              "XAUTHORITY=/home/%s/.Xauthority" % nguoi,
              # MATE tat thong bao sau khoang 10 giay, ke ca loai critical; giu 30 giay.
-             "notify-send", "-u", "critical", "-t", "30000", "-a", "Netflix", tieu_de, noi_dung],
+             "notify-send", "-u", "critical", "-t", "30000", "-a", "Xem phim", tieu_de, noi_dung],
             capture_output=True, timeout=10)
     except (OSError, ValueError, subprocess.TimeoutExpired) as e:
         ghi_log("khong hien duoc thong bao:", e)
@@ -1131,7 +1144,7 @@ class May:
         ghi_con_lai(con_lai, dung)
         if dung and 60 < con_lai <= BAO_TRUOC_GIAY and not self.da_bao:
             self.da_bao = True
-            bao(self.nguoi, "Còn %d phút xem Netflix" % ((con_lai + 59) // 60),
+            bao(self.nguoi, "Còn %d phút xem phim" % ((con_lai + 59) // 60),
                 "Hết giờ laptop tự đăng xuất. Muốn xem thêm thì đổi phút chơi trên tablet.")
         if con_lai > BAO_TRUOC_GIAY + 30:
             self.da_bao = False

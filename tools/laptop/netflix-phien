@@ -1,13 +1,23 @@
 #!/bin/sh
-# Phien dang nhap cua Le Hoa tren laptop (7/10/2026): chi co Firefox toan man hinh vao Netflix.
+# Phien dang nhap cua Le Hoa tren laptop (7/10/2026): chi co man chon va Firefox toan man hinh.
+#
+# Tu 9/10/2026 phien nay xem duoc ca Netflix lan YouTube, chung mot quy phut (anh Huy chon mot tai
+# khoan, chon trong phien): vao phien la hien man chon (netflix-chon), chon gi thi mo Firefox toan
+# man hinh vao do, bam nut ✕ (netflix-thoat dong Firefox) thi quay ve man chon. Chi nut "Thoát" o
+# man chon, hay de man chon qua 2 phut khong ai bam, moi dang xuat. Truoc 9/10/2026 phien chi co
+# Netflix, dong Firefox la dang xuat.
 #
 # /etc/X11/Xsession.d/98netflix-lehoa goi file nay thay cho MATE khi nguoi dang nhap la lehoa,
-# du o man dang nhap con chon phien nao. Dong Firefox la het phien, quay ve man dang nhap.
+# du o man dang nhap con chon phien nao. File nay chay xong la het phien, quay ve man dang nhap.
 #
 # Luat chan web cua Firefox (/etc/firefox/policies/policies.json) ap cho ca may, va
 # netflix_gio.py go no ra khi Ba Huy bam "Mở web" tren Bang dieu khien. Le Hoa dang nhap luc
 # web dang mo thi chuong trinh do dat lai luat; o day cho toi khi luat co mat roi moi mo
 # Firefox, de con khong vao web tu do trong may chuc giay truoc khi no kip dat.
+
+# Luc dang nhap, de man chon dem lui dung ngay tu giay dau (xem con_lai trong netflix-chon).
+PHIEN_TU=$(date +%s)
+export PHIEN_TU
 
 LUAT=/etc/firefox/policies/policies.json
 i=0
@@ -28,10 +38,11 @@ if [ -n "$ngoai" ]; then
     xrandr --output "$ngoai" --auto --primary --pos 0x0 ${trong:+--output "$trong" --off}
 fi
 
-# Het phut thi khong mo Netflix, chi hien mot hop chu roi dang xuat (7/10/2026). Khong co doan
-# nay thi dang nhap luc 0 phut van xem duoc khoang 20 giay truoc khi Timekpr-nExt day ra, va bam
+# Het phut thi khong mo gi, chi hien mot hop chu roi dang xuat (7/10/2026). Khong co doan nay
+# thi dang nhap luc 0 phut van xem duoc khoang 20 giay truoc khi Timekpr-nExt day ra, va bam
 # dang nhap lien tuc la xem duoc tung doan. So giay lay tu file netflix_gio.py ghi, xem
-# FILE_CON_LAI ben do. Thieu file hay doc khong ra so thi coi la het phut.
+# FILE_CON_LAI ben do. Thieu file hay doc khong ra so thi coi la het phut. Man chon cung tu xet
+# file do moi giay, het phut thi tra ma 3 va o day hien cung hop chu.
 #
 # Tu 8/10/2026 bat may la tu vao phien nay (80-netflix-lehoa.conf), ma luc do netflix_gio.py chua
 # kip ghi file: no cho dong ho lay gio mang va cho Timekpr-nExt chay, lan thu 7/10/2026 la giay 99
@@ -39,8 +50,8 @@ fi
 # dong, nen thieu file gan nhu chac la vua bat may: cho toi da 3 phut, hien mot dong chu de tivi
 # khong den trang. Qua 3 phut van thieu (chuong trinh chay ngam chet?) thi coi la het phut nhu cu.
 if [ ! -f /run/netflix-gio/conlai ]; then
-    zenity --info --title "Netflix" --width=460 \
-        --text "Đang mở Netflix, chờ khoảng một phút." >/dev/null 2>&1 &
+    zenity --info --title "Xem phim" --width=460 \
+        --text "Đang khởi động, chờ khoảng một phút." >/dev/null 2>&1 &
     cho=$!
     i=0
     while [ ! -f /run/netflix-gio/conlai ] && [ $i -lt 180 ]; do
@@ -59,12 +70,13 @@ if read giay dung luc < /run/netflix-gio/conlai 2>/dev/null; then
             ;;
     esac
 fi
-if [ "$con" -le 30 ]; then
-    zenity --info --title "Netflix" --width=460 --timeout=10 \
-        --text "Hết phút xem Netflix.\n\nĐổi phút chơi trên tablet rồi đăng nhập lại. Nếu vừa đổi thì chờ một phút." \
+het_phut() {
+    zenity --info --title "Xem phim" --width=460 --timeout=10 \
+        --text "Hết phút xem phim.\n\nĐổi phút chơi trên tablet rồi đăng nhập lại. Nếu vừa đổi thì chờ một chút." \
         2>/dev/null
     exit 0
-fi
+}
+[ "$con" -le 30 ] && het_phut
 
 # Trinh quan ly cua so cho ban phim va thong bao chay dung.
 #
@@ -72,8 +84,6 @@ fi
 # mot thong bao tieng Viet, do netflix_gio.py gui luc con 5 phut (7/10/2026). Dem gio va dang
 # xuat la viec cua phan chay ngam timekprd, khong can timekprc.
 marco &
-# Nut "Thoát" hien khi re chuot vao goc phai tren, xem netflix-thoat.
-netflix-thoat &
 
 # Sua prefs.js cua ho so truoc moi lan mo. Tu lan mo thu hai, Firefox doc lai prefs.js no tu ghi
 # lan truoc va man chi con mau den du trang da tai (thay 7/10/2026). Chia doi prefs.js tren laptop
@@ -92,20 +102,65 @@ netflix-thoat &
 # Giu prefs.js thi co mot lan Firefox hien thanh "Open previous tabs?", bam nut tren thanh do la
 # mo menu cua Firefox. Thanh nay chi hien khi browser.startup.couldRestoreSession.count bang 1
 # (xem SessionWindowUI.sys.mjs cua Firefox 146), tu 2 tro len la thoi, nen dat san so dem la 2.
-for f in "$HOME"/.mozilla/firefox/*/prefs.js; do
-    [ -f "$f" ] || continue
-    sed -i -e '/"extensions\.installedDistroAddon\./d' \
-        -e '/"browser\.startup\.couldRestoreSession\.count"/d' "$f"
-    echo 'user_pref("browser.startup.couldRestoreSession.count", 2);' >> "$f"
-done
+#
+# Mo YouTube thi them hai dong bat YouTube gui H.264 (9/10/2026, anh Huy chon sau khi do tren
+# laptop nay, video 1080p 60 khung): chip Haswell giai ma phan cung duoc H.264 ma khong duoc VP9,
+# AV1. De mac dinh thi YouTube gui AV1, Firefox giai bang chip chinh va video cu tu khoi dong lai;
+# ep H.264 thi 0 khung roi tren 2.403, chip chinh khoang 32%. YouTube chon dinh dang theo nhung gi
+# Firefox bao la phat duoc: tat WebM trong MediaSource (VP9) va tat AV1 thi chi con H.264. Mo
+# Netflix thi go hai dong do ra, de Netflix chay y nhu truoc (chua do Netflix voi H.264, vi ho so
+# Netflix nao cung khoa PIN). Firefox ghi cai dat dang dung vao prefs.js luc thoat, nen phai go o
+# day chu khong chi them luc mo YouTube.
+sua_prefs() {
+    for f in "$HOME"/.mozilla/firefox/*/prefs.js; do
+        [ -f "$f" ] || continue
+        sed -i -e '/"extensions\.installedDistroAddon\./d' \
+            -e '/"browser\.startup\.couldRestoreSession\.count"/d' \
+            -e '/"media\.mediasource\.webm\.enabled"/d' \
+            -e '/"media\.av1\.enabled"/d' "$f"
+        echo 'user_pref("browser.startup.couldRestoreSession.count", 2);' >> "$f"
+        if [ "$1" = youtube ]; then
+            echo 'user_pref("media.mediasource.webm.enabled", false);' >> "$f"
+            echo 'user_pref("media.av1.enabled", false);' >> "$f"
+        fi
+    done
+}
 
 # Lan tai dau sau khi Firefox bat co luc khong ve xong (chi co nen do, 8/10/2026), nen
 # netflix-canh xem man mot luc dau va tu bam F5 khi trang con trong; xem dau file do. Truoc
 # 8/10/2026 o day cu 5 giay chua thay chu Netflix tren tieu de la goi lai "firefox URL" (tuong
 # Firefox 146 bo qua dia chi luc khoi dong, thay 7/10/2026). Nhat ky 8/10/2026 cho thay Firefox
 # van tai dia chi do, chi cham, con moi lan goi lai la them mot the Netflix cung tai, nen bo.
-URL=https://www.netflix.com/
-firefox --kiosk "$URL" &
-ff=$!
-netflix-canh $ff "$URL" &
-wait $ff
+# Moi lan chon la mot lan bat Firefox, nen van canh moi lan mo Netflix. YouTube thi khong canh:
+# trang YouTube nen trang, netflix-canh se tuong la trang dang tai va bam F5 nham.
+#
+# Nut ✕ (netflix-thoat) chi chay cung Firefox: o man chon thi khong co Firefox de dong.
+# Ma tra ve cua man chon xem dau file netflix-chon.
+hong=
+while :; do
+    netflix-chon
+    ma=$?
+    case $ma in
+        10) loai=netflix; URL=https://www.netflix.com/ ;;
+        11) loai=youtube; URL=https://www.youtube.com/ ;;
+        3) het_phut ;;
+        0) exit 0 ;;
+        *)
+            # Man chon hong (thieu thu vien, loi Python...): mo Netflix nhu truoc 9/10/2026 va dong
+            # Firefox la dang xuat, de con van xem duoc ma khong ket trong vong man chon hong.
+            logger -t netflix-phien "man chon tra ma $ma, mo Netflix nhu cu"
+            loai=netflix; URL=https://www.netflix.com/; hong=1 ;;
+    esac
+    logger -t netflix-phien "mo $loai"
+    sua_prefs $loai
+    firefox --kiosk "$URL" &
+    ff=$!
+    netflix-thoat &
+    nut=$!
+    if [ $loai = netflix ]; then
+        netflix-canh $ff "$URL" &
+    fi
+    wait $ff
+    kill $nut 2>/dev/null
+    [ -n "$hong" ] && exit 0
+done
