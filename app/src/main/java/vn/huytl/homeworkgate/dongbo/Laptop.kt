@@ -37,6 +37,25 @@ object Laptop {
     private const val K_CO = "co"
     private const val K_KET_THUC = "ket_thuc_luc"
     private const val K_CON_LAI = "con_lai_ms"
+    private const val K_REMOTE_IP = "remote_ip"
+    private const val K_REMOTE_CONG = "remote_cong"
+    private const val K_REMOTE_KHOA = "remote_khoa"
+
+    /**
+     * Cho man Remote noi thang toi dich vu netflix-remote tren laptop qua Wi-Fi nha (11/10/2026),
+     * xem [Duong.F_REMOTE].
+     */
+    data class RemoteLaptop(val ip: String, val cong: Int, val khoa: String)
+
+    /** Dia chi, cong, ma khoa remote theo ban document laptop vua nghe duoc; null khi laptop chua co. */
+    fun remote(context: Context): RemoteLaptop? {
+        val s = sp(context)
+        val ip = s.getString(K_REMOTE_IP, "").orEmpty()
+        val khoa = s.getString(K_REMOTE_KHOA, "").orEmpty()
+        val cong = s.getInt(K_REMOTE_CONG, 0)
+        if (!daNoi(context) || ip.isEmpty() || khoa.isEmpty() || cong <= 0) return null
+        return RemoteLaptop(ip, cong, khoa)
+    }
 
     /**
      * Cac nut so phut o man Xem phim, them hai nut "Đổi hết" va "Khác" (go so). Anh Huy chon
@@ -64,10 +83,14 @@ object Laptop {
     /** Goi tu listener trong [DongBo]. Chi ghi file rieng, khong dung toi prefs chinh. */
     internal fun nhan(context: Context, snap: DocumentSnapshot?) {
         val co = snap != null && snap.exists() && !snap.getString(Duong.F_UID_LAPTOP).isNullOrEmpty()
+        val remote = snap?.get(Duong.F_REMOTE) as? Map<*, *>
         sp(context).edit()
             .putBoolean(K_CO, co)
             .putLong(K_KET_THUC, snap?.getLong(Duong.F_KET_THUC_LUC) ?: 0L)
             .putLong(K_CON_LAI, snap?.getLong(Duong.F_CON_LAI_MS) ?: 0L)
+            .putString(K_REMOTE_IP, remote?.get(Duong.F_REMOTE_IP) as? String)
+            .putInt(K_REMOTE_CONG, (remote?.get(Duong.F_REMOTE_CONG) as? Number)?.toInt() ?: 0)
+            .putString(K_REMOTE_KHOA, remote?.get(Duong.F_REMOTE_KHOA) as? String)
             .apply()
     }
 

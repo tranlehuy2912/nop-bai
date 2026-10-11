@@ -52,6 +52,16 @@
                 android:textColor="@color/ink"
                 android:textSize="24sp"
                 android:textStyle="bold" />
+
+            <!-- Remote tivi (11/10/2026, anh Huy chon dat trong man nay): mo ui/RemoteActivity,
+                 tablet noi thang laptop qua Wi-Fi nha. An khi laptop chua noi vao nha. -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/nut_remote"
+                style="@style/Nut.VienNho"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/remote_nut"
+                app:icon="@drawable/st_ic_cham" />
         </LinearLayout>
 
         <ScrollView

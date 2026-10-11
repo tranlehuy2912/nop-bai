@@ -59,6 +59,58 @@
         <item name="cornerRadius">18dp</item>
     </style>
 
+    <!--
+      Nut tron chi co icon o man Remote (11/10/2026, chep tu Bang dieu khien): lui, tien 10 giay,
+      am luong. Vien nhat, to vua ngon cai vi luc bam mat nhin tivi chu khong nhin tablet.
+    -->
+    <style name="Nut.Tron" parent="Widget.Material3.Button.OutlinedButton">
+        <item name="android:minWidth">0dp</item>
+        <item name="android:minHeight">0dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:padding">0dp</item>
+        <item name="iconGravity">textStart</item>
+        <item name="iconPadding">0dp</item>
+        <item name="iconTint">@color/ink</item>
+        <item name="strokeColor">@color/line</item>
+        <item name="shapeAppearance">@style/HinhTron</item>
+    </style>
+
+    <!-- Nut Dung/Phat cua man Remote: nut bam nhieu nhat, dac mau chu dao. -->
+    <style name="Nut.Tron.Dac" parent="Widget.Material3.Button">
+        <item name="android:minWidth">0dp</item>
+        <item name="android:minHeight">0dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:padding">0dp</item>
+        <item name="iconGravity">textStart</item>
+        <item name="iconPadding">0dp</item>
+        <item name="iconTint">@android:color/white</item>
+        <item name="shapeAppearance">@style/HinhTron</item>
+    </style>
+
+    <style name="HinhTron" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+
+    <!-- Nut vien nho co icon (man Remote: "Bỏ giới thiệu"), rong theo chu. -->
+    <style name="Nut.VienNho" parent="Widget.Material3.Button.OutlinedButton.Icon">
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">@color/ink</item>
+        <item name="android:minHeight">44dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:paddingLeft">16dp</item>
+        <item name="android:paddingRight">18dp</item>
+        <item name="android:paddingStart">16dp</item>
+        <item name="android:paddingEnd">18dp</item>
+        <item name="iconSize">18dp</item>
+        <item name="iconPadding">6dp</item>
+        <item name="iconTint">@color/ink_soft</item>
+        <item name="strokeColor">@color/line</item>
+    </style>
+
     <style name="Card" parent="Widget.Material3.CardView.Elevated">
         <!-- Chi dinh han mau nen: de mac dinh thi Material3 pha them mau chu dao
              vao nen the, nhin ra mot mau hong nhat khong ai dat. -->

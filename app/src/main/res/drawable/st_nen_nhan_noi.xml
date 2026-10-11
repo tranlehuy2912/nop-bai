@@ -1,0 +1,5 @@
+<!-- Nen nhan tinh trang noi cua man Remote (11/10/2026): mau do code dat lai theo tinh trang. -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
+    <solid android:color="@color/wait_soft" />
+    <corners android:radius="10dp" />
+</shape>

@@ -248,6 +248,14 @@
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize" />
 
+        <!-- Remote tivi (11/10/2026), mo tu nut Remote o man Xem phim. Noi thang laptop qua Wi-Fi
+             nha bang socket TCP, khong can them quyen nao ngoai INTERNET. -->
+        <activity
+            android:name=".ui.RemoteActivity"
+            android:configChanges="orientation|screenSize|screenLayout|smallestScreenSize"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+
         <!-- So con dung app gi, luc nao. exported=false: day la trang cua Ba Huy,
              nam sau PIN, khong mo bang adb hay shortcut duoc. -->
         <activity

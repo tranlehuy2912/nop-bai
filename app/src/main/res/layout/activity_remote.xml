@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Man Remote tren tablet (11/10/2026): Le Hoa cam tablet dieu khien laptop dang chieu len tivi.
+     Chep mau B anh Huy chon cho Bang dieu khien (activity_remote.xml ben do): nua tren la ban di
+     chuot, duoi la Bo gioi thieu, hang lui 10 giay, Dung/Phat, tien 10 giay, va hang am luong. Dong
+     tren co nhan tinh trang noi, icon ban phim va icon ve man chon. Tablet rong hon dien thoai nen
+     nut to hon mot chut. RemoteActivity ve va xu ly. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/goc"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/st_nen_man"
+    android:orientation="vertical"
+    android:paddingHorizontal="28dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/nut_ve"
+            style="@style/Widget.Material3.Button.IconButton"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="-12dp"
+            android:layout_marginEnd="4dp"
+            android:contentDescription="Quay lại"
+            app:icon="@drawable/st_ic_quay_lai"
+            app:iconSize="22dp"
+            app:iconTint="@color/ink_soft" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/remote_title"
+            android:textColor="@color/ink"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <!-- Tinh trang noi: xanh la da noi, vang dang noi, do la khong noi duoc (bam de noi lai). -->
+        <TextView
+            android:id="@+id/nhan_noi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="14dp"
+            android:background="@drawable/st_nen_nhan_noi"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="6dp"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/nut_ban_phim"
+            style="@style/Widget.Material3.Button.IconButton"
+            android:layout_width="52dp"
+            android:layout_height="52dp"
+            android:contentDescription="@string/remote_go_title"
+            android:tooltipText="@string/remote_go_title"
+            app:icon="@drawable/st_ic_ban_phim"
+            app:iconSize="26dp"
+            app:iconTint="@color/ink_soft" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/nut_man_chon"
+            style="@style/Widget.Material3.Button.IconButton"
+            android:layout_width="52dp"
+            android:layout_height="52dp"
+            android:layout_marginEnd="-8dp"
+            android:contentDescription="@string/remote_ve_nut"
+            android:tooltipText="@string/remote_ve_nut"
+            app:icon="@drawable/st_ic_man_chon"
+            app:iconSize="26dp"
+            app:iconTint="@color/ink_soft" />
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/khung_di_chuot"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:layout_weight="1"
+        android:background="@drawable/st_nen_ban_di_chuot">
+
+        <vn.huytl.homeworkgate.ui.BanDiChuot
+            android:id="@+id/ban_di_chuot"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="Bàn di chuột" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:clickable="false"
+            android:focusable="false"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:importantForAccessibility="no"
+                android:src="@drawable/st_ic_cham"
+                app:tint="@color/ink_soft" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:lineSpacingExtra="4dp"
+                android:text="@string/remote_goi_y"
+                android:textColor="@color/ink_soft"
+                android:textSize="17sp" />
+        </LinearLayout>
+    </FrameLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/nut_bo_qua"
+        style="@style/Nut.VienNho"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:text="@string/remote_bo_qua"
+        app:icon="@drawable/st_ic_bo_qua" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <FrameLayout
+            android:layout_width="76dp"
+            android:layout_height="76dp">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/nut_lui"
+                style="@style/Nut.Tron"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="Lùi 10 giây"
+                app:icon="@drawable/st_ic_remote_quay"
+                app:iconSize="40dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="2dp"
+                android:importantForAccessibility="no"
+                android:text="10"
+                android:textColor="@color/ink"
+                android:textSize="10sp"
+                android:textStyle="bold" />
+        </FrameLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/nut_phat"
+            style="@style/Nut.Tron.Dac"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginHorizontal="40dp"
+            android:contentDescription="Dừng hay phát"
+            app:icon="@drawable/st_ic_remote_phat"
+            app:iconSize="44dp" />
+
+        <FrameLayout
+            android:layout_width="76dp"
+            android:layout_height="76dp">
+
+            <!-- Cung hinh mui ten nut lui, lat nguoc. -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/nut_tien"
+                style="@style/Nut.Tron"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="Tiến 10 giây"
+                android:scaleX="-1"
+                app:icon="@drawable/st_ic_remote_quay"
+                app:iconSize="40dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="2dp"
+                android:importantForAccessibility="no"
+                android:text="10"
+                android:textColor="@color/ink"
+                android:textSize="10sp"
+                android:textStyle="bold" />
+        </FrameLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="24dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/nut_nho"
+            style="@style/Nut.Tron"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:contentDescription="Giảm âm lượng"
+            app:icon="@drawable/st_ic_bot"
+            app:iconSize="26dp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="24dp"
+            android:gravity="center"
+            android:minWidth="104dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/icon_loa"
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:importantForAccessibility="no"
+                android:src="@drawable/st_ic_loa"
+                app:tint="@color/ink_soft" />
+
+            <TextView
+                android:id="@+id/chu_am"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:fontFeatureSettings="tnum"
+                android:text="--"
+                android:textColor="@color/ink"
+                android:textSize="19sp" />
+        </LinearLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/nut_to"
+            style="@style/Nut.Tron"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:contentDescription="Tăng âm lượng"
+            app:icon="@drawable/st_ic_them"
+            app:iconSize="26dp" />
+    </LinearLayout>
+</LinearLayout>

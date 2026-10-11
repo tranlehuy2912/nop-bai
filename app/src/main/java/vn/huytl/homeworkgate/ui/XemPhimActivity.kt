@@ -8,6 +8,7 @@ import android.text.InputType
 import android.util.Log
 import android.view.View
 import android.widget.EditText
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
@@ -88,6 +89,14 @@ class XemPhimActivity : AppCompatActivity() {
             insets
         }
         binding.btnDone.setOnClickListener { finish() }
+        binding.nutRemote.setOnClickListener {
+            val r = Laptop.remote(this)
+            if (r == null) {
+                Toast.makeText(this, R.string.remote_chua_co, Toast.LENGTH_SHORT).show()
+            } else {
+                RemoteActivity.mo(this, r)
+            }
+        }
 
         val nut = listOf(binding.nut15, binding.nut30, binding.nut45, binding.nut60)
         cacNut = nut.zip(Laptop.CAC_NUT)
@@ -135,6 +144,7 @@ class XemPhimActivity : AppCompatActivity() {
         val laptop = (Laptop.conLaiMs(this) / 60_000L).toInt()
         binding.txtCo.text = co.toString()
         binding.txtLaptop.text = laptop.toString()
+        binding.nutRemote.visibility = if (Laptop.daNoi(this)) View.VISIBLE else View.GONE
 
         val kq = ketQua
         binding.txtKetQua.visibility = if (kq == null) View.GONE else View.VISIBLE

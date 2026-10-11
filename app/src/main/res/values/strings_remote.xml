@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Chu cua man Remote (11/10/2026, ui/RemoteActivity), tach file rieng cho khoi dung cham
+     strings.xml. Chu giong man Remote cua Bang dieu khien. -->
+<resources>
+    <string name="remote_nut">Remote</string>
+    <string name="remote_title">Remote</string>
+    <string name="remote_dang_noi">Đang nối</string>
+    <string name="remote_da_noi">Wi-Fi nhà</string>
+    <string name="remote_chua_noi">Chưa nối được</string>
+    <string name="remote_sai_ma">Sai mã</string>
+    <string name="remote_bao_chua_noi">Chưa nối được laptop. Tablet phải bắt Wi-Fi nhà và laptop phải đang bật.</string>
+    <string name="remote_bao_sai_ma">Laptop không nhận mã. Đóng màn này rồi mở lại.</string>
+    <string name="remote_chua_co">Laptop chưa cài bản có remote.</string>
+    <string name="remote_goi_y">Vuốt: di chuột\nChạm: bấm\nHai ngón: cuộn</string>
+    <string name="remote_bo_qua">Bỏ giới thiệu</string>
+    <string name="remote_go_title">Gõ lên tivi</string>
+    <string name="remote_go_goi_y">Tìm phim, mã PIN...</string>
+    <string name="remote_go_enter">Enter</string>
+    <string name="remote_go_xong">Xong</string>
+    <string name="remote_ve_title">Về màn chọn Netflix, YouTube?</string>
+    <string name="remote_ve_noi_dung">Phim đang chiếu sẽ đóng.</string>
+    <string name="remote_ve_nut">Về màn chọn</string>
+</resources>

@@ -1,0 +1,8 @@
+<!-- Dung/phat (11/10/2026, man Remote; chep tu Bang dieu khien): tam giac phat ke hai vach dung, mot nut lam ca hai viec nhu phim cach cua Netflix. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp" android:height="24dp"
+    android:viewportWidth="24" android:viewportHeight="24"
+    android:tint="@color/ink">
+    <path android:fillColor="@android:color/white"
+        android:pathData="M2,6v12l9,-6zM13,6h3.5v12H13zM18.5,6H22v12h-3.5z" />
+</vector>
