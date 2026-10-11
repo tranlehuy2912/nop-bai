@@ -90,9 +90,10 @@ fi
 # van 24, dat them cai dat nay thi 48.
 runuser -u lehoa -- dbus-run-session -- gsettings set org.mate.peripherals-mouse cursor-size 48 \
     || echo "chua dat duoc co con tro cho lehoa"
-# Timekpr-nExt: 0 phut moi ngay, het gio thi dang xuat, khong tu bao (chi bao tieng Viet tu
-# netflix_gio.py, anh Huy chon 7/10/2026).
-timekpra --settimelimits lehoa "0;0;0;0;0;0;0" >/dev/null
+# Timekpr-nExt: 45 phut moi ngay, qua 0 gio tu dat lai (anh Huy chot 11/10/2026, ngay nao cung
+# vay, khong chan gio; truoc do 0 phut, chi co phut khi duoc cap). Het gio thi dang xuat, khong tu
+# bao (chi bao tieng Viet tu netflix_gio.py, anh Huy chon 7/10/2026).
+timekpra --settimelimits lehoa "2700;2700;2700;2700;2700;2700;2700" >/dev/null
 timekpra --setlockouttype lehoa terminate >/dev/null
 timekpra --sethidetrayicon lehoa true >/dev/null
 systemctl daemon-reload
