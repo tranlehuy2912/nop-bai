@@ -2,7 +2,7 @@
  "nguon": "dethianh8",
  "mon": "Tiếng Anh",
  "ten": "Đề thi Tiếng Anh 8",
- "ban": 7,
+ "ban": 8,
  "doan_van": {
   "GK1-1.D5": "With approximately 2.96 billion users as of 2022, Facebook is undoubtedly one of the favoured social networking sites in the globe. As for students, they use Facebook for different purposes, including entertainment or academic learning. First, it is a relaxing channel where students comfortably tend to vent their negative thoughts on their school life via a status, share unforgettable memories, or watch multiple funny clips to relieve stress. Additionally, they can easily connect with those who have the same interests through various Facebook pages where they enjoy reading top comments or discussing hot topics with each other. Second, Facebook, regarded as the biggest knowledge platform, enables learners to get access to an array of free learning materials and even ask for specialized knowledge from other friendly users. Besides, it's very convenient for students to create a Facebook group chat on Facebook Messenger to upload and share lectures, prepare for class presentations as well as do assignments together. In short, Facebook can contribute to students' academic achievements if they take full advantage of it in an appropriate way.",
   "GK1-1.D6": "During the early years, (26) ___ jigsaw puzzles is a popular activity that many parents choose for their children to develop their concentration and creativity. With various colours, shapes and sizes, this hobby significantly draws kids' attention, which they can spend all day handling the small pieces (27) ___ boredom. It's also quite challenging for little kids to use their eyes and hands for finding and (28) ___ many pieces together to make the given image. To motivate kids more effectively, parents should choose suitable and captivating jigsaw images. They can let kids do simple ones first and then (29) ___ the levels of difficulty gradually. But remember that this indoor game can make a child get frustrated and even give it up. That's why parents should be ready to give children support in time and cheer them up (30) ___ they reach the last jigsaw.",
@@ -24031,6 +24031,2483 @@
        "a – b – d – c – e",
        "b – e – a – c – d",
        "c – d – b – e – a"
+      ],
+      "dap": "A"
+     }
+    }
+   ]
+  },
+  {
+   "chuong": "Cuối học kì 2",
+   "bai": "Đề cương học kì 2: Unit 7–8",
+   "de_thi": {
+    "ma": "CK2-DC1",
+    "den_unit": 8,
+    "phut": 45,
+    "nguon_goc": "loigiaihay.com, đăng 27/03/2024"
+   },
+   "cac_cau": [
+    {
+     "ma": "CK2-DC1.1",
+     "phan": "I. Từ vựng",
+     "nhom": "Unit 7. Fill in each blank with a suitable word to complete each sentence. The first letter of the word is given.",
+     "de": "Unit 7. Fill in each blank with a suitable word to complete each sentence. The first letter of the word is given.\nWithin the United Kingdom there are 15 n___ parks: ten in England, three in Wales, and two in Scotland.",
+     "dang": "CAU_NHO",
+     "dap_an": "national",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "CHU",
+      "sao": 2,
+      "hoi": "Unit 7. Fill in each blank with a suitable word to complete each sentence. The first letter of the word is given.\nWithin the United Kingdom there are 15 n___ parks: ten in England, three in Wales, and two in Scotland.",
+      "truoc": "n",
+      "dap": [
+       "national"
+      ],
+      "nhieu": [
+       "u",
+       "r",
+       "e",
+       "s",
+       "c",
+       "m"
+      ]
+     }
+    },
+    {
+     "ma": "CK2-DC1.2",
+     "phan": "I. Từ vựng",
+     "nhom": "Unit 7. Fill in each blank with a suitable word to complete each sentence. The first letter of the word is given.",
+     "de": "Unit 7. Fill in each blank with a suitable word to complete each sentence. The first letter of the word is given.\nThe presence of unwanted or excessive artificial lighting is known as l___ pollution.",
+     "dang": "CAU_NHO",
+     "dap_an": "light",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "CHU",
+      "sao": 2,
+      "hoi": "Unit 7. Fill in each blank with a suitable word to complete each sentence. The first letter of the word is given.\nThe presence of unwanted or excessive artificial lighting is known as l___ pollution.",
+      "truoc": "l",
+      "dap": [
+       "light"
+      ],
+      "nhieu": [
+       "a",
+       "e",
+       "n",
+       "s"
+      ]
+     }
+    },
+    {
+     "ma": "CK2-DC1.3",
+     "phan": "I. Từ vựng",
+     "nhom": "Unit 7. Fill in each blank with a suitable word to complete each sentence. The first letter of the word is given.",
+     "de": "Unit 7. Fill in each blank with a suitable word to complete each sentence. The first letter of the word is given.\nBy doing a simple thing like p___ a tree, we are making the world a better place for humans and all living things on earth.",
+     "dang": "CAU_NHO",
+     "dap_an": "planting",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "CHU",
+      "sao": 2,
+      "hoi": "Unit 7. Fill in each blank with a suitable word to complete each sentence. The first letter of the word is given.\nBy doing a simple thing like p___ a tree, we are making the world a better place for humans and all living things on earth.",
+      "truoc": "p",
+      "dap": [
+       "planting"
+      ],
+      "nhieu": [
+       "e",
+       "r",
+       "o",
+       "u",
+       "s",
+       "d"
+      ]
+     }
+    },
+    {
+     "ma": "CK2-DC1.4",
+     "phan": "I. Từ vựng",
+     "nhom": "Unit 7. Fill in each blank with a suitable word to complete each sentence. The first letter of the word is given.",
+     "de": "Unit 7. Fill in each blank with a suitable word to complete each sentence. The first letter of the word is given.\nPolluted water from factories can be treated in sewage treatment plants to c___ water pollution.",
+     "dang": "CAU_NHO",
+     "dap_an": "control",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "CHU",
+      "sao": 2,
+      "hoi": "Unit 7. Fill in each blank with a suitable word to complete each sentence. The first letter of the word is given.\nPolluted water from factories can be treated in sewage treatment plants to c___ water pollution.",
+      "truoc": "c",
+      "dap": [
+       "control"
+      ],
+      "nhieu": [
+       "e",
+       "s",
+       "m",
+       "d",
+       "p"
+      ]
+     }
+    },
+    {
+     "ma": "CK2-DC1.5",
+     "phan": "I. Từ vựng",
+     "nhom": "Unit 7. Fill in each blank with a suitable word to complete each sentence. The first letter of the word is given.",
+     "de": "Unit 7. Fill in each blank with a suitable word to complete each sentence. The first letter of the word is given.\nRain polluted by acid that has been r___ into the atmosphere is known as acid rain.",
+     "dang": "CAU_NHO",
+     "dap_an": "released",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "CHU",
+      "sao": 2,
+      "hoi": "Unit 7. Fill in each blank with a suitable word to complete each sentence. The first letter of the word is given.\nRain polluted by acid that has been r___ into the atmosphere is known as acid rain.",
+      "truoc": "r",
+      "dap": [
+       "released"
+      ],
+      "nhieu": [
+       "o",
+       "i",
+       "n",
+       "c",
+       "p"
+      ]
+     }
+    },
+    {
+     "ma": "CK2-DC1.6",
+     "phan": "I. Từ vựng",
+     "nhom": "Unit 7. Fill in each blank with a suitable word to complete each sentence. The first letter of the word is given.",
+     "de": "Unit 7. Fill in each blank with a suitable word to complete each sentence. The first letter of the word is given.\nThe t___ changes brought about by AI are drastically changing our lives.",
+     "dang": "CAU_NHO",
+     "dap_an": "technological",
+     "loai_dap_an": "DAP_SO",
+     "ghi_chu": "Lớp chữ của đề in đọc AI thành Al; sửa lại AI.",
+     "ghep": {
+      "kieu": "CHU",
+      "sao": 2,
+      "hoi": "Unit 7. Fill in each blank with a suitable word to complete each sentence. The first letter of the word is given.\nThe t___ changes brought about by AI are drastically changing our lives.",
+      "truoc": "t",
+      "dap": [
+       "technological"
+      ],
+      "nhieu": [
+       "y",
+       "s",
+       "r",
+       "m",
+       "d",
+       "p",
+       "u",
+       "k"
+      ]
+     }
+    },
+    {
+     "ma": "CK2-DC1.7",
+     "phan": "I. Từ vựng",
+     "nhom": "Unit 8. Choose the correct answer A, B, C, or D to complete each sentence.",
+     "de": "Unit 8. Choose the correct answer A, B, C, or D to complete each sentence.\nAll the items at Timan Shop are ___ for two days. Some of them are 50% off.\nA. online B. on sale C. out of stock D. expensive",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Unit 8. Choose the correct answer A, B, C, or D to complete each sentence.\nAll the items at Timan Shop are ___ for two days. Some of them are 50% off.",
+      "cac": [
+       "online",
+       "on sale",
+       "out of stock",
+       "expensive"
+      ],
+      "dap": "B"
+     }
+    },
+    {
+     "ma": "CK2-DC1.8",
+     "phan": "I. Từ vựng",
+     "nhom": "Unit 8. Choose the correct answer A, B, C, or D to complete each sentence.",
+     "de": "Unit 8. Choose the correct answer A, B, C, or D to complete each sentence.\nTwo examples of ___ shops are the florist's and the bakery.\nA. goods B. convenience C. discount D. speciality",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "D",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Unit 8. Choose the correct answer A, B, C, or D to complete each sentence.\nTwo examples of ___ shops are the florist's and the bakery.",
+      "cac": [
+       "goods",
+       "convenience",
+       "discount",
+       "speciality"
+      ],
+      "dap": "D"
+     }
+    },
+    {
+     "ma": "CK2-DC1.9",
+     "phan": "I. Từ vựng",
+     "nhom": "Unit 8. Choose the correct answer A, B, C, or D to complete each sentence.",
+     "trung": "GK2-4.14"
+    },
+    {
+     "ma": "CK2-DC1.10",
+     "phan": "I. Từ vựng",
+     "nhom": "Unit 8. Choose the correct answer A, B, C, or D to complete each sentence.",
+     "de": "Unit 8. Choose the correct answer A, B, C, or D to complete each sentence.\nSome people go to shopping centres just to ___ with friends or browse.\nA. hang out B. discuss C. buy D. play",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Unit 8. Choose the correct answer A, B, C, or D to complete each sentence.\nSome people go to shopping centres just to ___ with friends or browse.",
+      "cac": [
+       "hang out",
+       "discuss",
+       "buy",
+       "play"
+      ],
+      "dap": "A"
+     }
+    },
+    {
+     "ma": "CK2-DC1.11",
+     "phan": "I. Từ vựng",
+     "nhom": "Unit 8. Choose the correct answer A, B, C, or D to complete each sentence.",
+     "de": "Unit 8. Choose the correct answer A, B, C, or D to complete each sentence.\nSome people may get ___ to online shopping. They cannot stop buying things, even things they don't really need.\nA. interested B. excited C. addicted D. amused",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "C",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Unit 8. Choose the correct answer A, B, C, or D to complete each sentence.\nSome people may get ___ to online shopping. They cannot stop buying things, even things they don't really need.",
+      "cac": [
+       "interested",
+       "excited",
+       "addicted",
+       "amused"
+      ],
+      "dap": "C"
+     }
+    },
+    {
+     "ma": "CK2-DC1.12",
+     "phan": "II. Ngữ pháp",
+     "nhom": "Exercise 1. Combine each pair of sentences, using the connector given.",
+     "de": "Exercise 1. Combine each pair of sentences, using the connector given.\nWe were planting trees. Our friends were collecting rubbish. (while)\n=> ___",
+     "dang": "CAU_NHO",
+     "dap_an": "We were planting trees while our friends were collecting rubbish. (Cũng đúng: Our friends were collecting rubbish while we were planting trees. / While we were planting trees, our friends were collecting rubbish.)",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "CAU",
+      "sao": 2,
+      "hoi": "Exercise 1. Combine each pair of sentences, using the connector given.\nWe were planting trees. Our friends were collecting rubbish. (while)\n=> ___",
+      "the": [
+       "We",
+       "were planting",
+       "trees",
+       "while",
+       "our friends",
+       "were collecting",
+       "rubbish."
+      ],
+      "nhieu": [
+       "during",
+       "are collecting"
+      ],
+      "dap": [
+       "We were planting trees while our friends were collecting rubbish."
+      ]
+     }
+    },
+    {
+     "ma": "CK2-DC1.13",
+     "phan": "II. Ngữ pháp",
+     "nhom": "Exercise 1. Combine each pair of sentences, using the connector given.",
+     "de": "Exercise 1. Combine each pair of sentences, using the connector given.\nThe choir practised for half an hour. After that, they went on stage. (before)\n=> ___",
+     "dang": "CAU_NHO",
+     "dap_an": "The choir practised for half an hour before they went on stage. (Cũng đúng: The choir practised for half an hour before going on stage. / Before they went on stage, the choir practised for half an hour.)",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "CAU",
+      "sao": 2,
+      "hoi": "Exercise 1. Combine each pair of sentences, using the connector given.\nThe choir practised for half an hour. After that, they went on stage. (before)\n=> ___",
+      "the": [
+       "The choir",
+       "practised",
+       "for half an hour",
+       "before",
+       "they",
+       "went",
+       "going",
+       "on stage."
+      ],
+      "nhieu": [
+       "after",
+       "go"
+      ],
+      "dap": [
+       "The choir practised for half an hour before they went on stage.",
+       "The choir practised for half an hour before going on stage."
+      ]
+     }
+    },
+    {
+     "ma": "CK2-DC1.14",
+     "phan": "II. Ngữ pháp",
+     "nhom": "Exercise 1. Combine each pair of sentences, using the connector given.",
+     "trung": "GK1-5.31"
+    },
+    {
+     "ma": "CK2-DC1.15",
+     "phan": "II. Ngữ pháp",
+     "nhom": "Exercise 1. Combine each pair of sentences, using the connector given.",
+     "de": "Exercise 1. Combine each pair of sentences, using the connector given.\nThe bell rang. Everyone raced out of the classroom. (when)\n=> ___",
+     "dang": "CAU_NHO",
+     "dap_an": "When the bell rang, everyone raced out of the classroom. (Cũng đúng: Everyone raced out of the classroom when the bell rang.)",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "CAU",
+      "sao": 2,
+      "hoi": "Exercise 1. Combine each pair of sentences, using the connector given.\nThe bell rang. Everyone raced out of the classroom. (when)\n=> ___",
+      "the": [
+       "When",
+       "the bell",
+       "rang,",
+       "everyone",
+       "raced",
+       "out of",
+       "the classroom."
+      ],
+      "nhieu": [
+       "During",
+       "rings,"
+      ],
+      "dap": [
+       "When the bell rang, everyone raced out of the classroom."
+      ]
+     }
+    },
+    {
+     "ma": "CK2-DC1.16",
+     "phan": "II. Ngữ pháp",
+     "nhom": "Exercise 1. Combine each pair of sentences, using the connector given.",
+     "de": "Exercise 1. Combine each pair of sentences, using the connector given.\nDon't go away yet. Finish cleaning up the place first. (until)\n=> ___",
+     "dang": "CAU_NHO",
+     "dap_an": "Don't go away until you finish cleaning up the place. (have finished cũng đúng)",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "CAU",
+      "sao": 2,
+      "hoi": "Exercise 1. Combine each pair of sentences, using the connector given.\nDon't go away yet. Finish cleaning up the place first. (until)\n=> ___",
+      "the": [
+       "Don't",
+       "go away",
+       "until",
+       "you",
+       "finish",
+       "have",
+       "finished",
+       "cleaning up",
+       "the place."
+      ],
+      "nhieu": [
+       "will finish",
+       "yet"
+      ],
+      "dap": [
+       "Don't go away until you finish cleaning up the place.",
+       "Don't go away until you have finished cleaning up the place."
+      ]
+     }
+    },
+    {
+     "ma": "CK2-DC1.17",
+     "phan": "II. Ngữ pháp",
+     "nhom": "Exercise 1. Combine each pair of sentences, using the connector given.",
+     "trung": "GK1-4.31"
+    },
+    {
+     "ma": "CK2-DC1.18",
+     "phan": "II. Ngữ pháp",
+     "nhom": "Exercise 2. Choose the correct answer.",
+     "de": "Exercise 2. Choose the correct answer.\nJames doesn't ___ buy things at the discount shop. He rarely goes there.\nA. seldom B. often C. sometimes",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "ghi_chu": "Bảng đáp án in C (sometimes); doesn't sometimes sai ngữ pháp, He rarely goes there nghĩa là doesn't often buy. Sửa đáp án thành B.",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Exercise 2. Choose the correct answer.\nJames doesn't ___ buy things at the discount shop. He rarely goes there.",
+      "cac": [
+       "seldom",
+       "often",
+       "sometimes"
+      ],
+      "dap": "B"
+     }
+    },
+    {
+     "ma": "CK2-DC1.19",
+     "phan": "II. Ngữ pháp",
+     "nhom": "Exercise 2. Choose the correct answer.",
+     "de": "Exercise 2. Choose the correct answer.\nShe ___ pays attention in class, so she can't understand new concepts.\nA. never B. always C. often",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Exercise 2. Choose the correct answer.\nShe ___ pays attention in class, so she can't understand new concepts.",
+      "cac": [
+       "never",
+       "always",
+       "often"
+      ],
+      "dap": "A"
+     }
+    },
+    {
+     "ma": "CK2-DC1.20",
+     "phan": "II. Ngữ pháp",
+     "nhom": "Exercise 2. Choose the correct answer.",
+     "de": "Exercise 2. Choose the correct answer.\nLisa ___ buys shoes on sale. She thinks it's a waste to get them for full price.\nA. always B. rarely C. never",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Exercise 2. Choose the correct answer.\nLisa ___ buys shoes on sale. She thinks it's a waste to get them for full price.",
+      "cac": [
+       "always",
+       "rarely",
+       "never"
+      ],
+      "dap": "A"
+     }
+    },
+    {
+     "ma": "CK2-DC1.21",
+     "phan": "II. Ngữ pháp",
+     "nhom": "Exercise 2. Choose the correct answer.",
+     "trung": "GK2-6.11"
+    },
+    {
+     "ma": "CK2-DC1.22",
+     "phan": "II. Ngữ pháp",
+     "nhom": "Exercise 2. Choose the correct answer.",
+     "de": "Exercise 2. Choose the correct answer.\nHow ___ do you go to school? - Every day.\nA. always B. usually C. often",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "C",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Exercise 2. Choose the correct answer.\nHow ___ do you go to school? - Every day.",
+      "cac": [
+       "always",
+       "usually",
+       "often"
+      ],
+      "dap": "C"
+     }
+    },
+    {
+     "ma": "CK2-DC1.23",
+     "phan": "II. Ngữ pháp",
+     "nhom": "Exercise 3. Choose the correct answer A, B, C, or D to complete each sentence.",
+     "de": "Exercise 3. Choose the correct answer A, B, C, or D to complete each sentence.\nWe usually ___ most of our grocery shopping at large supermarkets.\nA. do B. are doing C. will do D. is doing",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN",
+     "ghi_chu": "Đề in không có usually; thiếu từ chỉ thói quen thì are doing, will do cũng nói được. Thêm usually.",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Exercise 3. Choose the correct answer A, B, C, or D to complete each sentence.\nWe usually ___ most of our grocery shopping at large supermarkets.",
+      "cac": [
+       "do",
+       "are doing",
+       "will do",
+       "is doing"
+      ],
+      "dap": "A"
+     }
+    },
+    {
+     "ma": "CK2-DC1.24",
+     "phan": "II. Ngữ pháp",
+     "nhom": "Exercise 3. Choose the correct answer A, B, C, or D to complete each sentence.",
+     "de": "Exercise 3. Choose the correct answer A, B, C, or D to complete each sentence.\nThe sale on all video equipment ___ on Monday next week.\nA. started B. start C. are starting D. starts",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "D",
+     "loai_dap_an": "TN",
+     "ghi_chu": "Đề in có phương án is starting; hiện tại tiếp diễn cho việc đã lên lịch cũng đúng nên có hai phương án đúng. Đổi thành start.",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Exercise 3. Choose the correct answer A, B, C, or D to complete each sentence.\nThe sale on all video equipment ___ on Monday next week.",
+      "cac": [
+       "started",
+       "start",
+       "are starting",
+       "starts"
+      ],
+      "dap": "D"
+     }
+    },
+    {
+     "ma": "CK2-DC1.25",
+     "phan": "II. Ngữ pháp",
+     "nhom": "Exercise 3. Choose the correct answer A, B, C, or D to complete each sentence.",
+     "de": "Exercise 3. Choose the correct answer A, B, C, or D to complete each sentence.\nYesterday we quickly ___ all the products and put everything away.\nA. unpack B. are unpacking C. unpacked D. will unpack",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "C",
+     "loai_dap_an": "TN",
+     "ghi_chu": "Đề in không có mốc thời gian; put vừa là hiện tại vừa là quá khứ nên unpack cũng đúng (sách bài tập 8.B6.3 nhận cả hai). Thêm Yesterday.",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Exercise 3. Choose the correct answer A, B, C, or D to complete each sentence.\nYesterday we quickly ___ all the products and put everything away.",
+      "cac": [
+       "unpack",
+       "are unpacking",
+       "unpacked",
+       "will unpack"
+      ],
+      "dap": "C"
+     }
+    },
+    {
+     "ma": "CK2-DC1.26",
+     "phan": "II. Ngữ pháp",
+     "nhom": "Exercise 3. Choose the correct answer A, B, C, or D to complete each sentence.",
+     "de": "Exercise 3. Choose the correct answer A, B, C, or D to complete each sentence.\nThe Walmart store near my home ___ open between 6 a.m. and 11 p.m. throughout the week.\nA. are B. is C. were D. be",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "ghi_chu": "Đề in có phương án will be; will be open cũng nói được nên có hai phương án đúng. Đổi thành be.",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Exercise 3. Choose the correct answer A, B, C, or D to complete each sentence.\nThe Walmart store near my home ___ open between 6 a.m. and 11 p.m. throughout the week.",
+      "cac": [
+       "are",
+       "is",
+       "were",
+       "be"
+      ],
+      "dap": "B"
+     }
+    },
+    {
+     "ma": "CK2-DC1.27",
+     "phan": "II. Ngữ pháp",
+     "nhom": "Exercise 3. Choose the correct answer A, B, C, or D to complete each sentence.",
+     "de": "Exercise 3. Choose the correct answer A, B, C, or D to complete each sentence.\nAt 10 o'clock tomorrow, the new bookshop in the corner ___. Let's go and visit it.\nA. opens B. opened C. open D. has opened",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN",
+     "ghi_chu": "Đề in có phương án is open; the bookshop is open at 10 o'clock tomorrow cũng nói được nên có hai phương án đúng. Đổi thành open.",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Exercise 3. Choose the correct answer A, B, C, or D to complete each sentence.\nAt 10 o'clock tomorrow, the new bookshop in the corner ___. Let's go and visit it.",
+      "cac": [
+       "opens",
+       "opened",
+       "open",
+       "has opened"
+      ],
+      "dap": "A"
+     }
+    }
+   ]
+  },
+  {
+   "chuong": "Cuối học kì 2",
+   "bai": "Đề cương học kì 2: Unit 9–10",
+   "de_thi": {
+    "ma": "CK2-DC2",
+    "den_unit": 10,
+    "phut": 45,
+    "nguon_goc": "loigiaihay.com, đăng 27/03/2024"
+   },
+   "cac_cau": [
+    {
+     "ma": "CK2-DC2.1",
+     "phan": "I. Từ vựng",
+     "nhom": "Unit 9. Choose the correct answer A, B, C, or D to complete each sentence.",
+     "de": "Unit 9. Choose the correct answer A, B, C, or D to complete each sentence.\nA strong earthquake caused a lot of ___ to eastern Japan last week.\nA. damaged B. damages C. damaging D. damage",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "D",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Unit 9. Choose the correct answer A, B, C, or D to complete each sentence.\nA strong earthquake caused a lot of ___ to eastern Japan last week.",
+      "cac": [
+       "damaged",
+       "damages",
+       "damaging",
+       "damage"
+      ],
+      "dap": "D"
+     }
+    },
+    {
+     "ma": "CK2-DC2.2",
+     "phan": "I. Từ vựng",
+     "nhom": "Unit 9. Choose the correct answer A, B, C, or D to complete each sentence.",
+     "de": "Unit 9. Choose the correct answer A, B, C, or D to complete each sentence.\nTwo tornadoes struck Florida on Saturday morning and ___ 30 homes.\nA. destroy B. destroyed C. destruction D. destroying",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Unit 9. Choose the correct answer A, B, C, or D to complete each sentence.\nTwo tornadoes struck Florida on Saturday morning and ___ 30 homes.",
+      "cac": [
+       "destroy",
+       "destroyed",
+       "destruction",
+       "destroying"
+      ],
+      "dap": "B"
+     }
+    },
+    {
+     "ma": "CK2-DC2.3",
+     "phan": "I. Từ vựng",
+     "nhom": "Unit 9. Choose the correct answer A, B, C, or D to complete each sentence.",
+     "trung": "GK2-2.17"
+    },
+    {
+     "ma": "CK2-DC2.4",
+     "phan": "I. Từ vựng",
+     "nhom": "Unit 9. Choose the correct answer A, B, C, or D to complete each sentence.",
+     "trung": "GK1-5.9"
+    },
+    {
+     "ma": "CK2-DC2.5",
+     "phan": "I. Từ vựng",
+     "nhom": "Unit 9. Choose the correct answer A, B, C, or D to complete each sentence.",
+     "de": "Unit 9. Choose the correct answer A, B, C, or D to complete each sentence.\nA ___ can save you in life-threatening situations because its sound can attract people's attention.\nA. whistle B. kit C. warning D. tool",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Unit 9. Choose the correct answer A, B, C, or D to complete each sentence.\nA ___ can save you in life-threatening situations because its sound can attract people's attention.",
+      "cac": [
+       "whistle",
+       "kit",
+       "warning",
+       "tool"
+      ],
+      "dap": "A"
+     }
+    },
+    {
+     "ma": "CK2-DC2.6",
+     "phan": "I. Từ vựng",
+     "nhom": "Unit 10. Choose the correct option A, B, C, or D to complete each sentence.",
+     "de": "Unit 10. Choose the correct option A, B, C, or D to complete each sentence.\nPlease leave a ___ on my phone if you are unable to reach me.\nA. message B. call C. letter D. note",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Unit 10. Choose the correct option A, B, C, or D to complete each sentence.\nPlease leave a ___ on my phone if you are unable to reach me.",
+      "cac": [
+       "message",
+       "call",
+       "letter",
+       "note"
+      ],
+      "dap": "A"
+     }
+    },
+    {
+     "ma": "CK2-DC2.7",
+     "phan": "I. Từ vựng",
+     "nhom": "Unit 10. Choose the correct option A, B, C, or D to complete each sentence.",
+     "de": "Unit 10. Choose the correct option A, B, C, or D to complete each sentence.\nMany people think ___ will replace human translators in the future.\nA. voice messages B. translation machines C. dictionaries D. emojis",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Unit 10. Choose the correct option A, B, C, or D to complete each sentence.\nMany people think ___ will replace human translators in the future.",
+      "cac": [
+       "voice messages",
+       "translation machines",
+       "dictionaries",
+       "emojis"
+      ],
+      "dap": "B"
+     }
+    },
+    {
+     "ma": "CK2-DC2.8",
+     "phan": "I. Từ vựng",
+     "nhom": "Unit 10. Choose the correct option A, B, C, or D to complete each sentence.",
+     "de": "Unit 10. Choose the correct option A, B, C, or D to complete each sentence.\nParents should pay due attention to their children's use of ___.\nA. social networking sites B. real time C. telepathy D. holography",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Unit 10. Choose the correct option A, B, C, or D to complete each sentence.\nParents should pay due attention to their children's use of ___.",
+      "cac": [
+       "social networking sites",
+       "real time",
+       "telepathy",
+       "holography"
+      ],
+      "dap": "A"
+     }
+    },
+    {
+     "ma": "CK2-DC2.9",
+     "phan": "I. Từ vựng",
+     "nhom": "Unit 10. Choose the correct option A, B, C, or D to complete each sentence.",
+     "de": "Unit 10. Choose the correct option A, B, C, or D to complete each sentence.\nWe made a(n) ___ to discuss our project.\nA. group call B. social network C. emoji D. family member",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Unit 10. Choose the correct option A, B, C, or D to complete each sentence.\nWe made a(n) ___ to discuss our project.",
+      "cac": [
+       "group call",
+       "social network",
+       "emoji",
+       "family member"
+      ],
+      "dap": "A"
+     }
+    },
+    {
+     "ma": "CK2-DC2.10",
+     "phan": "I. Từ vựng",
+     "nhom": "Unit 10. Choose the correct option A, B, C, or D to complete each sentence.",
+     "de": "Unit 10. Choose the correct option A, B, C, or D to complete each sentence.\nI think there will be no language ___ in the future. People will speak a common language.\nA. use B. development C. skill D. barrier",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "D",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Unit 10. Choose the correct option A, B, C, or D to complete each sentence.\nI think there will be no language ___ in the future. People will speak a common language.",
+      "cac": [
+       "use",
+       "development",
+       "skill",
+       "barrier"
+      ],
+      "dap": "D"
+     }
+    },
+    {
+     "ma": "CK2-DC2.11",
+     "phan": "I. Từ vựng",
+     "nhom": "Unit 10. Choose the correct option A, B, C, or D to complete each sentence.",
+     "de": "Unit 10. Choose the correct option A, B, C, or D to complete each sentence.\nShe sent me a(n) ___ message to ask about the homework.\nA. warning B. heartfelt C. instant D. strong",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "C",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Unit 10. Choose the correct option A, B, C, or D to complete each sentence.\nShe sent me a(n) ___ message to ask about the homework.",
+      "cac": [
+       "warning",
+       "heartfelt",
+       "instant",
+       "strong"
+      ],
+      "dap": "C"
+     }
+    },
+    {
+     "ma": "CK2-DC2.12",
+     "phan": "I. Từ vựng",
+     "nhom": "Unit 10. Choose the correct option A, B, C, or D to complete each sentence.",
+     "de": "Unit 10. Choose the correct option A, B, C, or D to complete each sentence.\nIf ___ becomes popular in the future, it will save communicators a lot of travelling time and money.\nA. private messaging B. holography C. language barrier D. translation",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Unit 10. Choose the correct option A, B, C, or D to complete each sentence.\nIf ___ becomes popular in the future, it will save communicators a lot of travelling time and money.",
+      "cac": [
+       "private messaging",
+       "holography",
+       "language barrier",
+       "translation"
+      ],
+      "dap": "B"
+     }
+    },
+    {
+     "ma": "CK2-DC2.13",
+     "phan": "I. Từ vựng",
+     "nhom": "Unit 10. Choose the correct option A, B, C, or D to complete each sentence.",
+     "de": "Unit 10. Choose the correct option A, B, C, or D to complete each sentence.\nVideo conferencing is a technology that allows ___ communication.\nA. private B. social C. real-time D. smartphone",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "C",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Unit 10. Choose the correct option A, B, C, or D to complete each sentence.\nVideo conferencing is a technology that allows ___ communication.",
+      "cac": [
+       "private",
+       "social",
+       "real-time",
+       "smartphone"
+      ],
+      "dap": "C"
+     }
+    },
+    {
+     "ma": "CK2-DC2.14",
+     "phan": "II. Ngữ pháp",
+     "nhom": "Exercise 1. Fill in each blank with the correct tense of the verb in brackets. Use the past continuous or the past simple.",
+     "de": "Exercise 1. Fill in each blank with the correct tense of the verb in brackets. Use the past continuous or the past simple.\nWhen the earthquake (happen) ___, they (do) ___ their homework.",
+     "dang": "CAU_NHO",
+     "dap_an": "happened, were doing",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "Exercise 1. Fill in each blank with the correct tense of the verb in brackets. Use the past continuous or the past simple.",
+      "dong": [
+       {
+        "chu": "When the earthquake (happen) {0}, they (do) {1} their homework.",
+        "o": [
+         {
+          "dung": [
+           "happened"
+          ],
+          "sai": [
+           "was happening",
+           "happens",
+           "has happened"
+          ]
+         },
+         {
+          "dung": [
+           "were doing"
+          ],
+          "sai": [
+           "was doing",
+           "are doing",
+           "do"
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "ma": "CK2-DC2.15",
+     "phan": "II. Ngữ pháp",
+     "nhom": "Exercise 1. Fill in each blank with the correct tense of the verb in brackets. Use the past continuous or the past simple.",
+     "de": "Exercise 1. Fill in each blank with the correct tense of the verb in brackets. Use the past continuous or the past simple.\n___ you (talk) ___ to your friend on the phone at 9 p.m. yesterday?",
+     "dang": "CAU_NHO",
+     "dap_an": "Were you talking",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "Exercise 1. Fill in each blank with the correct tense of the verb in brackets. Use the past continuous or the past simple.",
+      "dong": [
+       {
+        "chu": "{0} you (talk) {1} to your friend on the phone at 9 p.m. yesterday?",
+        "o": [
+         {
+          "dung": [
+           "Were"
+          ],
+          "sai": [
+           "Was",
+           "Are",
+           "Do"
+          ]
+         },
+         {
+          "dung": [
+           "talking"
+          ],
+          "sai": [
+           "talk",
+           "talked",
+           "talks"
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "ma": "CK2-DC2.16",
+     "phan": "II. Ngữ pháp",
+     "nhom": "Exercise 1. Fill in each blank with the correct tense of the verb in brackets. Use the past continuous or the past simple.",
+     "de": "Exercise 1. Fill in each blank with the correct tense of the verb in brackets. Use the past continuous or the past simple.\nWhile he (cook) ___ dinner, his mother (come) ___ home.",
+     "dang": "CAU_NHO",
+     "dap_an": "was cooking, came",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "Exercise 1. Fill in each blank with the correct tense of the verb in brackets. Use the past continuous or the past simple.",
+      "dong": [
+       {
+        "chu": "While he (cook) {0} dinner, his mother (come) {1} home.",
+        "o": [
+         {
+          "dung": [
+           "was cooking"
+          ],
+          "sai": [
+           "were cooking",
+           "is cooking",
+           "cooks"
+          ]
+         },
+         {
+          "dung": [
+           "came"
+          ],
+          "sai": [
+           "comes",
+           "come",
+           "has come"
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "ma": "CK2-DC2.17",
+     "phan": "II. Ngữ pháp",
+     "nhom": "Exercise 1. Fill in each blank with the correct tense of the verb in brackets. Use the past continuous or the past simple.",
+     "de": "Exercise 1. Fill in each blank with the correct tense of the verb in brackets. Use the past continuous or the past simple.\nDark clouds (gather) ___ and after a few minutes, the storm (break) ___.",
+     "dang": "CAU_NHO",
+     "dap_an": "were gathering, broke (gathered cũng đúng)",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "Exercise 1. Fill in each blank with the correct tense of the verb in brackets. Use the past continuous or the past simple.",
+      "dong": [
+       {
+        "chu": "Dark clouds (gather) {0} and after a few minutes, the storm (break) {1}.",
+        "o": [
+         {
+          "dung": [
+           "were gathering"
+          ],
+          "sai": [
+           "was gathering",
+           "gather",
+           "are gathering"
+          ]
+         },
+         {
+          "dung": [
+           "broke"
+          ],
+          "sai": [
+           "breaks",
+           "broken",
+           "has broken"
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "ma": "CK2-DC2.18",
+     "phan": "II. Ngữ pháp",
+     "nhom": "Exercise 1. Fill in each blank with the correct tense of the verb in brackets. Use the past continuous or the past simple.",
+     "de": "Exercise 1. Fill in each blank with the correct tense of the verb in brackets. Use the past continuous or the past simple.\nWhat ___ they (do) ___ when you (arrive) ___ at their house?",
+     "dang": "CAU_NHO",
+     "dap_an": "were they doing, arrived",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "hoi": "Exercise 1. Fill in each blank with the correct tense of the verb in brackets. Use the past continuous or the past simple.",
+      "dong": [
+       {
+        "chu": "What {0} they (do) {1} when you (arrive) {2} at their house?",
+        "o": [
+         {
+          "dung": [
+           "were"
+          ],
+          "sai": [
+           "was",
+           "are",
+           "do"
+          ]
+         },
+         {
+          "dung": [
+           "doing"
+          ],
+          "sai": [
+           "do",
+           "did",
+           "done"
+          ]
+         },
+         {
+          "dung": [
+           "arrived"
+          ],
+          "sai": [
+           "arrive",
+           "arrives",
+           "have arrived"
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "ma": "CK2-DC2.19",
+     "phan": "II. Ngữ pháp",
+     "nhom": "Exercise 2. Circle the correct preposition in each sentence.",
+     "de": "Exercise 2. Circle the correct preposition in each sentence.\nWe arrived (at / on / in) New York earlier than we expected.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "C",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Exercise 2. Circle the correct preposition in each sentence.\nWe arrived ___ New York earlier than we expected.",
+      "cac": [
+       "at",
+       "on",
+       "in"
+      ],
+      "dap": "C"
+     }
+    },
+    {
+     "ma": "CK2-DC2.20",
+     "phan": "II. Ngữ pháp",
+     "nhom": "Exercise 2. Circle the correct preposition in each sentence.",
+     "de": "Exercise 2. Circle the correct preposition in each sentence.\nBe careful! There's a piece of glass (on / under / in front of) the grass.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Exercise 2. Circle the correct preposition in each sentence.\nBe careful! There's a piece of glass ___ the grass.",
+      "cac": [
+       "on",
+       "under",
+       "in front of"
+      ],
+      "dap": "A"
+     }
+    },
+    {
+     "ma": "CK2-DC2.21",
+     "phan": "II. Ngữ pháp",
+     "nhom": "Exercise 2. Circle the correct preposition in each sentence.",
+     "de": "Exercise 2. Circle the correct preposition in each sentence.\nJane's classmates held a birthday party for her (on / at / for) a bubble tea shop.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Exercise 2. Circle the correct preposition in each sentence.\nJane's classmates held a birthday party for her ___ a bubble tea shop.",
+      "cac": [
+       "on",
+       "at",
+       "for"
+      ],
+      "dap": "B"
+     }
+    },
+    {
+     "ma": "CK2-DC2.22",
+     "phan": "II. Ngữ pháp",
+     "nhom": "Exercise 2. Circle the correct preposition in each sentence.",
+     "de": "Exercise 2. Circle the correct preposition in each sentence.\nMany people chat (in / by / for) hours on the Internet because it is free.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "C",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Exercise 2. Circle the correct preposition in each sentence.\nMany people chat ___ hours on the Internet because it is free.",
+      "cac": [
+       "in",
+       "by",
+       "for"
+      ],
+      "dap": "C"
+     }
+    },
+    {
+     "ma": "CK2-DC2.23",
+     "phan": "II. Ngữ pháp",
+     "nhom": "Exercise 2. Circle the correct preposition in each sentence.",
+     "de": "Exercise 2. Circle the correct preposition in each sentence.\n(By / On / For) 2030, smartphones will become supersmart and super thin.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Exercise 2. Circle the correct preposition in each sentence.\n___ 2030, smartphones will become supersmart and super thin.",
+      "cac": [
+       "By",
+       "On",
+       "For"
+      ],
+      "dap": "A"
+     }
+    },
+    {
+     "ma": "CK2-DC2.24",
+     "phan": "II. Ngữ pháp",
+     "nhom": "Exercise 2. Circle the correct preposition in each sentence.",
+     "de": "Exercise 2. Circle the correct preposition in each sentence.\nThe man sitting (next to / from / along) me on the plane said that he could do telepathy.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Exercise 2. Circle the correct preposition in each sentence.\nThe man sitting ___ me on the plane said that he could do telepathy.",
+      "cac": [
+       "next to",
+       "from",
+       "along"
+      ],
+      "dap": "A"
+     }
+    },
+    {
+     "ma": "CK2-DC2.25",
+     "phan": "II. Ngữ pháp",
+     "nhom": "Exercise 2. Circle the correct preposition in each sentence.",
+     "de": "Exercise 2. Circle the correct preposition in each sentence.\nI think robot carrier pigeons will become popular (on / in / at) twenty years' time.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Exercise 2. Circle the correct preposition in each sentence.\nI think robot carrier pigeons will become popular ___ twenty years' time.",
+      "cac": [
+       "on",
+       "in",
+       "at"
+      ],
+      "dap": "B"
+     }
+    },
+    {
+     "ma": "CK2-DC2.26",
+     "phan": "II. Ngữ pháp",
+     "nhom": "Exercise 2. Circle the correct preposition in each sentence.",
+     "de": "Exercise 2. Circle the correct preposition in each sentence.\nLan's house is (opposite / by / next to) mine, just across the street.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Exercise 2. Circle the correct preposition in each sentence.\nLan's house is ___ mine, just across the street.",
+      "cac": [
+       "opposite",
+       "by",
+       "next to"
+      ],
+      "dap": "A"
+     }
+    },
+    {
+     "ma": "CK2-DC2.27",
+     "phan": "II. Ngữ pháp",
+     "nhom": "Exercise 3. Choose the correct possessive pronouns to complete sentences.\nmine | its | his | hers | yours",
+     "de": "Exercise 3. Choose the correct possessive pronouns to complete sentences.\nmine | its | his | hers | yours\nI have two smartphones, and this is one of ___.\nA. mine B. its C. his D. hers E. yours",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Exercise 3. Choose the correct possessive pronouns to complete sentences.\nmine | its | his | hers | yours\nI have two smartphones, and this is one of ___.",
+      "cac": [
+       "mine",
+       "its",
+       "his",
+       "hers",
+       "yours"
+      ],
+      "dap": "A"
+     }
+    },
+    {
+     "ma": "CK2-DC2.28",
+     "phan": "II. Ngữ pháp",
+     "nhom": "Exercise 3. Choose the correct possessive pronouns to complete sentences.\nmine | its | his | hers | yours",
+     "de": "Exercise 3. Choose the correct possessive pronouns to complete sentences.\nmine | its | his | hers | yours\nI really admire his collection of smartwatches. And this is a smartwatch of ___.\nA. mine B. its C. his D. hers E. yours",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "C",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Exercise 3. Choose the correct possessive pronouns to complete sentences.\nmine | its | his | hers | yours\nI really admire his collection of smartwatches. And this is a smartwatch of ___.",
+      "cac": [
+       "mine",
+       "its",
+       "his",
+       "hers",
+       "yours"
+      ],
+      "dap": "C"
+     }
+    },
+    {
+     "ma": "CK2-DC2.29",
+     "phan": "II. Ngữ pháp",
+     "nhom": "Exercise 3. Choose the correct possessive pronouns to complete sentences.\nmine | its | his | hers | yours",
+     "de": "Exercise 3. Choose the correct possessive pronouns to complete sentences.\nmine | its | his | hers | yours\nA smartphone of ___ is always by her side, helping her contact others constantly.\nA. mine B. its C. his D. hers E. yours",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "D",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Exercise 3. Choose the correct possessive pronouns to complete sentences.\nmine | its | his | hers | yours\nA smartphone of ___ is always by her side, helping her contact others constantly.",
+      "cac": [
+       "mine",
+       "its",
+       "his",
+       "hers",
+       "yours"
+      ],
+      "dap": "D"
+     }
+    },
+    {
+     "ma": "CK2-DC2.30",
+     "phan": "II. Ngữ pháp",
+     "nhom": "Exercise 3. Choose the correct possessive pronouns to complete sentences.\nmine | its | his | hers | yours",
+     "de": "Exercise 3. Choose the correct possessive pronouns to complete sentences.\nmine | its | his | hers | yours\nCan you show me a new app of ___ for future communication?\nA. mine B. its C. his D. hers E. yours",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "E",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Exercise 3. Choose the correct possessive pronouns to complete sentences.\nmine | its | his | hers | yours\nCan you show me a new app of ___ for future communication?",
+      "cac": [
+       "mine",
+       "its",
+       "his",
+       "hers",
+       "yours"
+      ],
+      "dap": "E"
+     }
+    },
+    {
+     "ma": "CK2-DC2.31",
+     "phan": "II. Ngữ pháp",
+     "nhom": "Exercise 3. Choose the correct possessive pronouns to complete sentences.\nmine | its | his | hers | yours",
+     "de": "Exercise 3. Choose the correct possessive pronouns to complete sentences.\nmine | its | his | hers | yours\nThe new device has a lot of new functions. Let me show you one of ___ functions.\nA. mine B. its C. his D. hers E. yours",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "ghi_chu": "Đề in Let me show you one of its: its không đứng một mình làm đại từ sở hữu như mine, hers (không nói one of its), nên thêm functions sau chỗ trống.",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Exercise 3. Choose the correct possessive pronouns to complete sentences.\nmine | its | his | hers | yours\nThe new device has a lot of new functions. Let me show you one of ___ functions.",
+      "cac": [
+       "mine",
+       "its",
+       "his",
+       "hers",
+       "yours"
+      ],
+      "dap": "B"
+     }
+    }
+   ]
+  },
+  {
+   "chuong": "Cuối học kì 2",
+   "bai": "Đề cương học kì 2: Unit 11–12",
+   "de_thi": {
+    "ma": "CK2-DC3",
+    "den_unit": 12,
+    "phut": 30,
+    "nguon_goc": "loigiaihay.com, đăng 27/03/2024"
+   },
+   "cac_cau": [
+    {
+     "ma": "CK2-DC3.1",
+     "phan": "I. Từ vựng",
+     "nhom": "Unit 11. Use the words in the box to complete the sentences. You may have to change the form of the words. One is not used.\nexperiment | attendance | face recognition | application | platform | video conferencing",
+     "de": "Unit 11. Use the words in the box to complete the sentences. You may have to change the form of the words. One is not used.\nexperiment | attendance | face recognition | application | platform | video conferencing\nHe developed a new medicine after he did many ___.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN",
+     "ghi_chu": "Bảng đáp án in experiment; sau many phải là số nhiều, sửa thành experiments.",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Unit 11. Use the words in the box to complete the sentences. You may have to change the form of the words. One is not used.\nexperiment | attendance | face recognition | application | platform | video conferencing\nHe developed a new medicine after he did many ___.",
+      "cac": [
+       "experiments",
+       "experiment",
+       "applications",
+       "attendance"
+      ],
+      "dap": "A"
+     }
+    },
+    {
+     "ma": "CK2-DC3.2",
+     "phan": "I. Từ vựng",
+     "nhom": "Unit 11. Use the words in the box to complete the sentences. You may have to change the form of the words. One is not used.\nexperiment | attendance | face recognition | application | platform | video conferencing",
+     "de": "Unit 11. Use the words in the box to complete the sentences. You may have to change the form of the words. One is not used.\nexperiment | attendance | face recognition | application | platform | video conferencing\nWhich ___ did your teacher use for your online classes? Google Classroom or Microsoft Teams?",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN",
+     "ghi_chu": "Sửa tên Microsoft Team thành Microsoft Teams.",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Unit 11. Use the words in the box to complete the sentences. You may have to change the form of the words. One is not used.\nexperiment | attendance | face recognition | application | platform | video conferencing\nWhich ___ did your teacher use for your online classes? Google Classroom or Microsoft Teams?",
+      "cac": [
+       "platform",
+       "attendance",
+       "experiment",
+       "face recognition"
+      ],
+      "dap": "A"
+     }
+    },
+    {
+     "ma": "CK2-DC3.3",
+     "phan": "I. Từ vựng",
+     "nhom": "Unit 11. Use the words in the box to complete the sentences. You may have to change the form of the words. One is not used.\nexperiment | attendance | face recognition | application | platform | video conferencing",
+     "de": "Unit 11. Use the words in the box to complete the sentences. You may have to change the form of the words. One is not used.\nexperiment | attendance | face recognition | application | platform | video conferencing\nThis smartphone uses ___ as a password.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Unit 11. Use the words in the box to complete the sentences. You may have to change the form of the words. One is not used.\nexperiment | attendance | face recognition | application | platform | video conferencing\nThis smartphone uses ___ as a password.",
+      "cac": [
+       "face recognition",
+       "video conferencing",
+       "attendance",
+       "platform"
+      ],
+      "dap": "A"
+     }
+    },
+    {
+     "ma": "CK2-DC3.4",
+     "phan": "I. Từ vựng",
+     "nhom": "Unit 11. Use the words in the box to complete the sentences. You may have to change the form of the words. One is not used.\nexperiment | attendance | face recognition | application | platform | video conferencing",
+     "de": "Unit 11. Use the words in the box to complete the sentences. You may have to change the form of the words. One is not used.\nexperiment | attendance | face recognition | application | platform | video conferencing\nOur school checks ___ using a fingerprint scanner.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Unit 11. Use the words in the box to complete the sentences. You may have to change the form of the words. One is not used.\nexperiment | attendance | face recognition | application | platform | video conferencing\nOur school checks ___ using a fingerprint scanner.",
+      "cac": [
+       "attendance",
+       "attendances",
+       "experiments",
+       "platform"
+      ],
+      "dap": "A"
+     }
+    },
+    {
+     "ma": "CK2-DC3.5",
+     "phan": "I. Từ vựng",
+     "nhom": "Unit 11. Use the words in the box to complete the sentences. You may have to change the form of the words. One is not used.\nexperiment | attendance | face recognition | application | platform | video conferencing",
+     "de": "Unit 11. Use the words in the box to complete the sentences. You may have to change the form of the words. One is not used.\nexperiment | attendance | face recognition | application | platform | video conferencing\n___ allows us to have online meetings and still see and hear others clearly.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN",
+     "ghi_chu": "Sửa lỗi gõ coferencing trong bảng đáp án.",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Unit 11. Use the words in the box to complete the sentences. You may have to change the form of the words. One is not used.\nexperiment | attendance | face recognition | application | platform | video conferencing\n___ allows us to have online meetings and still see and hear others clearly.",
+      "cac": [
+       "Video conferencing",
+       "Face recognition",
+       "Attendance",
+       "Platform"
+      ],
+      "dap": "A"
+     }
+    },
+    {
+     "ma": "CK2-DC3.6",
+     "phan": "I. Từ vựng",
+     "nhom": "Unit 12. Choose the correct words to complete the following sentences.",
+     "de": "Unit 12. Choose the correct words to complete the following sentences.\nWe tried to ___ the aliens and managed to stop them from invading our planet.\nA. oppose B. support C. welcome D. struggle",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN",
+     "ghi_chu": "Đề in có phương án strike; strike the aliens (tấn công) cũng hợp nghĩa nên có hai phương án đúng. Đổi thành welcome.",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Unit 12. Choose the correct words to complete the following sentences.\nWe tried to ___ the aliens and managed to stop them from invading our planet.",
+      "cac": [
+       "oppose",
+       "support",
+       "welcome",
+       "struggle"
+      ],
+      "dap": "A"
+     }
+    },
+    {
+     "ma": "CK2-DC3.7",
+     "phan": "I. Từ vựng",
+     "nhom": "Unit 12. Choose the correct words to complete the following sentences.",
+     "de": "Unit 12. Choose the correct words to complete the following sentences.\nAnimals are living ___; therefore, we should not hurt them needlessly.\nA. types B. aliens C. creatures D. breeds",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "C",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Unit 12. Choose the correct words to complete the following sentences.\nAnimals are living ___; therefore, we should not hurt them needlessly.",
+      "cac": [
+       "types",
+       "aliens",
+       "creatures",
+       "breeds"
+      ],
+      "dap": "C"
+     }
+    },
+    {
+     "ma": "CK2-DC3.8",
+     "phan": "I. Từ vựng",
+     "nhom": "Unit 12. Choose the correct words to complete the following sentences.",
+     "de": "Unit 12. Choose the correct words to complete the following sentences.\nThere is a strong ___ that it will rain this afternoon.\nA. possibility B. occasion C. trace D. opportunity",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Unit 12. Choose the correct words to complete the following sentences.\nThere is a strong ___ that it will rain this afternoon.",
+      "cac": [
+       "possibility",
+       "occasion",
+       "trace",
+       "opportunity"
+      ],
+      "dap": "A"
+     }
+    },
+    {
+     "ma": "CK2-DC3.9",
+     "phan": "I. Từ vựng",
+     "nhom": "Unit 12. Choose the correct words to complete the following sentences.",
+     "de": "Unit 12. Choose the correct words to complete the following sentences.\nIt's exciting to discover ___ of earlier civilizations.\nA. chances B. opportunities C. possibilities D. traces",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "D",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Unit 12. Choose the correct words to complete the following sentences.\nIt's exciting to discover ___ of earlier civilizations.",
+      "cac": [
+       "chances",
+       "opportunities",
+       "possibilities",
+       "traces"
+      ],
+      "dap": "D"
+     }
+    },
+    {
+     "ma": "CK2-DC3.10",
+     "phan": "I. Từ vựng",
+     "nhom": "Unit 12. Choose the correct words to complete the following sentences.",
+     "de": "Unit 12. Choose the correct words to complete the following sentences.\nWhat is the most ___ planet for life in our solar system?\nA. encouraging B. promising C. available D. possible",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "ghi_chu": "Đề in có phương án habitable; the most habitable planet cũng đúng nghĩa nên có hai phương án đúng. Đổi thành available.",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Unit 12. Choose the correct words to complete the following sentences.\nWhat is the most ___ planet for life in our solar system?",
+      "cac": [
+       "encouraging",
+       "promising",
+       "available",
+       "possible"
+      ],
+      "dap": "B"
+     }
+    },
+    {
+     "ma": "CK2-DC3.11",
+     "phan": "II. Ngữ pháp",
+     "nhom": "Exercise 1. Circle A, B, C, or D to indicate the sentence that is closest in meaning to the sentence given.",
+     "de": "Exercise 1. Circle A, B, C, or D to indicate the sentence that is closest in meaning to the sentence given.\n\"You will like science after you read this book,\" our teacher said.\nA. Our teacher says we will like science after we read this book. B. Our teacher said we would like science after we read this book. C. Our teacher said we would like science after we read that book. D. Our teacher said you would like science after you read this book.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "C",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Exercise 1. Circle A, B, C, or D to indicate the sentence that is closest in meaning to the sentence given.\n\"You will like science after you read this book,\" our teacher said.",
+      "cac": [
+       "Our teacher says we will like science after we read this book.",
+       "Our teacher said we would like science after we read this book.",
+       "Our teacher said we would like science after we read that book.",
+       "Our teacher said you would like science after you read this book."
+      ],
+      "dap": "C"
+     }
+    },
+    {
+     "ma": "CK2-DC3.12",
+     "phan": "II. Ngữ pháp",
+     "nhom": "Exercise 1. Circle A, B, C, or D to indicate the sentence that is closest in meaning to the sentence given.",
+     "de": "Exercise 1. Circle A, B, C, or D to indicate the sentence that is closest in meaning to the sentence given.\n\"Robot ASIMO will retire this year,\" said the reporter.\nA. The reporter says robot ASIMO will retire this year. B. The reporter said robot ASIMO would retire that year. C. The reporter said robot ASIMO would retire this year. D. The reporter said robot ASIMO could retire that year.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Exercise 1. Circle A, B, C, or D to indicate the sentence that is closest in meaning to the sentence given.\n\"Robot ASIMO will retire this year,\" said the reporter.",
+      "cac": [
+       "The reporter says robot ASIMO will retire this year.",
+       "The reporter said robot ASIMO would retire that year.",
+       "The reporter said robot ASIMO would retire this year.",
+       "The reporter said robot ASIMO could retire that year."
+      ],
+      "dap": "B"
+     }
+    },
+    {
+     "ma": "CK2-DC3.13",
+     "phan": "II. Ngữ pháp",
+     "nhom": "Exercise 1. Circle A, B, C, or D to indicate the sentence that is closest in meaning to the sentence given.",
+     "de": "Exercise 1. Circle A, B, C, or D to indicate the sentence that is closest in meaning to the sentence given.\n\"We are developing an emotional robot,\" said the engineer.\nA. The engineer said he is developing an emotional robot. B. The engineer said he was developing an emotional robot. C. The engineer said they are developing an emotional robot. D. The engineer said they were developing an emotional robot.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "D",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Exercise 1. Circle A, B, C, or D to indicate the sentence that is closest in meaning to the sentence given.\n\"We are developing an emotional robot,\" said the engineer.",
+      "cac": [
+       "The engineer said he is developing an emotional robot.",
+       "The engineer said he was developing an emotional robot.",
+       "The engineer said they are developing an emotional robot.",
+       "The engineer said they were developing an emotional robot."
+      ],
+      "dap": "D"
+     }
+    },
+    {
+     "ma": "CK2-DC3.14",
+     "phan": "II. Ngữ pháp",
+     "nhom": "Exercise 1. Circle A, B, C, or D to indicate the sentence that is closest in meaning to the sentence given.",
+     "de": "Exercise 1. Circle A, B, C, or D to indicate the sentence that is closest in meaning to the sentence given.\n\"You can have a video conference and upload homework on this platform,\" said the teacher.\nA. The teacher said we can have a video conference and upload homework on that platform. B. The teacher said you can have a video conference and upload homework on this platform. C. The teacher said we could have a video conference and upload homework on that platform. D. The teacher said you could have a video conference and upload homework on this platform.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "C",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Exercise 1. Circle A, B, C, or D to indicate the sentence that is closest in meaning to the sentence given.\n\"You can have a video conference and upload homework on this platform,\" said the teacher.",
+      "cac": [
+       "The teacher said we can have a video conference and upload homework on that platform.",
+       "The teacher said you can have a video conference and upload homework on this platform.",
+       "The teacher said we could have a video conference and upload homework on that platform.",
+       "The teacher said you could have a video conference and upload homework on this platform."
+      ],
+      "dap": "C"
+     }
+    },
+    {
+     "ma": "CK2-DC3.15",
+     "phan": "II. Ngữ pháp",
+     "nhom": "Exercise 1. Circle A, B, C, or D to indicate the sentence that is closest in meaning to the sentence given.",
+     "de": "Exercise 1. Circle A, B, C, or D to indicate the sentence that is closest in meaning to the sentence given.\n\"Our school has a large laboratory, and our teachers often conduct experiments there,\" said the headmaster.\nA. The headmaster said their school had a large laboratory, and their teachers often conducted experiments there. B. The headmaster said their school had a large laboratory, and our teachers often conducted experiments there. C. The headmaster said their school had a large laboratory, and their teachers often conduct experiments there. D. The headmaster says their school has a large laboratory, and our teachers often conduct experiments there.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Exercise 1. Circle A, B, C, or D to indicate the sentence that is closest in meaning to the sentence given.\n\"Our school has a large laboratory, and our teachers often conduct experiments there,\" said the headmaster.",
+      "cac": [
+       "The headmaster said their school had a large laboratory, and their teachers often conducted experiments there.",
+       "The headmaster said their school had a large laboratory, and our teachers often conducted experiments there.",
+       "The headmaster said their school had a large laboratory, and their teachers often conduct experiments there.",
+       "The headmaster says their school has a large laboratory, and our teachers often conduct experiments there."
+      ],
+      "dap": "A"
+     }
+    },
+    {
+     "ma": "CK2-DC3.16",
+     "phan": "II. Ngữ pháp",
+     "nhom": "Exercise 2. Change the following questions into reported questions.",
+     "de": "Exercise 2. Change the following questions into reported questions.\n\"How often do you visit your grandparents?\" Hai asked Hoa.\n=> ___",
+     "dang": "CAU_NHO",
+     "dap_an": "Hai asked Hoa how often she visited her grandparents.",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "CAU",
+      "sao": 2,
+      "hoi": "Exercise 2. Change the following questions into reported questions.\n\"How often do you visit your grandparents?\" Hai asked Hoa.\n=> ___",
+      "the": [
+       "Hai asked Hoa",
+       "how often",
+       "she",
+       "visited",
+       "her grandparents."
+      ],
+      "nhieu": [
+       "did",
+       "visits",
+       "your grandparents."
+      ],
+      "dap": [
+       "Hai asked Hoa how often she visited her grandparents."
+      ]
+     }
+    },
+    {
+     "ma": "CK2-DC3.17",
+     "phan": "II. Ngữ pháp",
+     "nhom": "Exercise 2. Change the following questions into reported questions.",
+     "de": "Exercise 2. Change the following questions into reported questions.\nShe asked me, \"What does a UFO look like?\"\n=> ___",
+     "dang": "CAU_NHO",
+     "dap_an": "She asked me what a UFO looked like.",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "CAU",
+      "sao": 2,
+      "hoi": "Exercise 2. Change the following questions into reported questions.\nShe asked me, \"What does a UFO look like?\"\n=> ___",
+      "the": [
+       "She asked me",
+       "what",
+       "a UFO",
+       "looked like."
+      ],
+      "nhieu": [
+       "did",
+       "looks like."
+      ],
+      "dap": [
+       "She asked me what a UFO looked like."
+      ]
+     }
+    },
+    {
+     "ma": "CK2-DC3.18",
+     "phan": "II. Ngữ pháp",
+     "nhom": "Exercise 2. Change the following questions into reported questions.",
+     "de": "Exercise 2. Change the following questions into reported questions.\nThe student asked his teacher, \"Why is the climate on Mars unsuitable for human life?\"\n=> ___",
+     "dang": "CAU_NHO",
+     "dap_an": "The student asked his teacher why the climate on Mars was unsuitable for human life.",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "CAU",
+      "sao": 2,
+      "hoi": "Exercise 2. Change the following questions into reported questions.\nThe student asked his teacher, \"Why is the climate on Mars unsuitable for human life?\"\n=> ___",
+      "the": [
+       "The student asked his teacher",
+       "why",
+       "the climate on Mars",
+       "was",
+       "unsuitable for human life."
+      ],
+      "nhieu": [
+       "is",
+       "unsuitable for human life?"
+      ],
+      "dap": [
+       "The student asked his teacher why the climate on Mars was unsuitable for human life."
+      ]
+     }
+    },
+    {
+     "ma": "CK2-DC3.19",
+     "phan": "II. Ngữ pháp",
+     "nhom": "Exercise 2. Change the following questions into reported questions.",
+     "de": "Exercise 2. Change the following questions into reported questions.\n\"Which is longer, a day on Venus or a day on Earth?\" I wondered.\n=> ___",
+     "dang": "CAU_NHO",
+     "dap_an": "I wondered which was longer, a day on Venus or a day on Earth.",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "CAU",
+      "sao": 2,
+      "hoi": "Exercise 2. Change the following questions into reported questions.\n\"Which is longer, a day on Venus or a day on Earth?\" I wondered.\n=> ___",
+      "the": [
+       "I wondered",
+       "which",
+       "was",
+       "longer,",
+       "a day on Venus",
+       "or",
+       "a day on Earth."
+      ],
+      "nhieu": [
+       "is",
+       "a day on Earth?"
+      ],
+      "dap": [
+       "I wondered which was longer, a day on Venus or a day on Earth."
+      ]
+     }
+    },
+    {
+     "ma": "CK2-DC3.20",
+     "phan": "II. Ngữ pháp",
+     "nhom": "Exercise 2. Change the following questions into reported questions.",
+     "de": "Exercise 2. Change the following questions into reported questions.\n\"Why do people call Mars the Red Planet?\" my son asked me.\n=> ___",
+     "dang": "CAU_NHO",
+     "dap_an": "My son asked me why people called Mars the Red Planet.",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "CAU",
+      "sao": 2,
+      "hoi": "Exercise 2. Change the following questions into reported questions.\n\"Why do people call Mars the Red Planet?\" my son asked me.\n=> ___",
+      "the": [
+       "My son asked me",
+       "why",
+       "people",
+       "called",
+       "Mars",
+       "the Red Planet."
+      ],
+      "nhieu": [
+       "did",
+       "call",
+       "the Red Planet?"
+      ],
+      "dap": [
+       "My son asked me why people called Mars the Red Planet."
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "chuong": "Cuối học kì 2",
+   "bai": "Đề cương học kì 2: Ngữ âm",
+   "de_thi": {
+    "ma": "CK2-DC4",
+    "den_unit": 12,
+    "phut": 20,
+    "nguon_goc": "loigiaihay.com, đăng 27/03/2024"
+   },
+   "cac_cau": [
+    {
+     "ma": "CK2-DC4.1",
+     "phan": "",
+     "nhom": "Exercise 1. Which words have the sound /bl/ and which have the sound /kl/? Choose none if a word has neither.",
+     "de": "Exercise 1. Which words have the sound /bl/ and which have the sound /kl/? Choose none if a word has neither.\nThe black cat sat on the blue mat.",
+     "dang": "CAU_NHO",
+     "dap_an": "/bl/: black, blue",
+     "loai_dap_an": "DAP_SO",
+     "ghi_chu": "Đề in bảo gạch chân từ có /bl/, tô màu từ có /kl/; trên máy con chọn cho từng từ.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "hoi": "Exercise 1. Which words have the sound /bl/ and which have the sound /kl/? Choose none if a word has neither.\nThe black cat sat on the blue mat.",
+      "dong": [
+       {
+        "chu": "black: {0}",
+        "o": [
+         {
+          "dung": [
+           "/bl/"
+          ],
+          "sai": [
+           "/kl/",
+           "none"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "cat: {0}",
+        "o": [
+         {
+          "dung": [
+           "none"
+          ],
+          "sai": [
+           "/bl/",
+           "/kl/"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "blue: {0}",
+        "o": [
+         {
+          "dung": [
+           "/bl/"
+          ],
+          "sai": [
+           "/kl/",
+           "none"
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "ma": "CK2-DC4.2",
+     "phan": "",
+     "nhom": "Exercise 1. Which words have the sound /bl/ and which have the sound /kl/? Choose none if a word has neither.",
+     "de": "Exercise 1. Which words have the sound /bl/ and which have the sound /kl/? Choose none if a word has neither.\nLook! There are black clouds all over!",
+     "dang": "CAU_NHO",
+     "dap_an": "/bl/: black; /kl/: clouds",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "hoi": "Exercise 1. Which words have the sound /bl/ and which have the sound /kl/? Choose none if a word has neither.\nLook! There are black clouds all over!",
+      "dong": [
+       {
+        "chu": "Look: {0}",
+        "o": [
+         {
+          "dung": [
+           "none"
+          ],
+          "sai": [
+           "/bl/",
+           "/kl/"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "black: {0}",
+        "o": [
+         {
+          "dung": [
+           "/bl/"
+          ],
+          "sai": [
+           "/kl/",
+           "none"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "clouds: {0}",
+        "o": [
+         {
+          "dung": [
+           "/kl/"
+          ],
+          "sai": [
+           "/bl/",
+           "none"
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "ma": "CK2-DC4.3",
+     "phan": "",
+     "nhom": "Exercise 1. Which words have the sound /bl/ and which have the sound /kl/? Choose none if a word has neither.",
+     "de": "Exercise 1. Which words have the sound /bl/ and which have the sound /kl/? Choose none if a word has neither.\nThe blender was powerful enough to crush ice and blend frozen fruit.",
+     "dang": "CAU_NHO",
+     "dap_an": "/bl/: blender, blend",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "hoi": "Exercise 1. Which words have the sound /bl/ and which have the sound /kl/? Choose none if a word has neither.\nThe blender was powerful enough to crush ice and blend frozen fruit.",
+      "dong": [
+       {
+        "chu": "blender: {0}",
+        "o": [
+         {
+          "dung": [
+           "/bl/"
+          ],
+          "sai": [
+           "/kl/",
+           "none"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "crush: {0}",
+        "o": [
+         {
+          "dung": [
+           "none"
+          ],
+          "sai": [
+           "/bl/",
+           "/kl/"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "blend: {0}",
+        "o": [
+         {
+          "dung": [
+           "/bl/"
+          ],
+          "sai": [
+           "/kl/",
+           "none"
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "ma": "CK2-DC4.4",
+     "phan": "",
+     "nhom": "Exercise 1. Which words have the sound /bl/ and which have the sound /kl/? Choose none if a word has neither.",
+     "de": "Exercise 1. Which words have the sound /bl/ and which have the sound /kl/? Choose none if a word has neither.\nWe cleaned up the environment after the blast.",
+     "dang": "CAU_NHO",
+     "dap_an": "/bl/: blast; /kl/: cleaned",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "Exercise 1. Which words have the sound /bl/ and which have the sound /kl/? Choose none if a word has neither.\nWe cleaned up the environment after the blast.",
+      "dong": [
+       {
+        "chu": "cleaned: {0}",
+        "o": [
+         {
+          "dung": [
+           "/kl/"
+          ],
+          "sai": [
+           "/bl/",
+           "none"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "blast: {0}",
+        "o": [
+         {
+          "dung": [
+           "/bl/"
+          ],
+          "sai": [
+           "/kl/",
+           "none"
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "ma": "CK2-DC4.5",
+     "phan": "",
+     "nhom": "Exercise 1. Which words have the sound /bl/ and which have the sound /kl/? Choose none if a word has neither.",
+     "de": "Exercise 1. Which words have the sound /bl/ and which have the sound /kl/? Choose none if a word has neither.\nThe clown wore colourful clothes and had a big red nose.",
+     "dang": "CAU_NHO",
+     "dap_an": "/kl/: clown, clothes",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "hoi": "Exercise 1. Which words have the sound /bl/ and which have the sound /kl/? Choose none if a word has neither.\nThe clown wore colourful clothes and had a big red nose.",
+      "dong": [
+       {
+        "chu": "clown: {0}",
+        "o": [
+         {
+          "dung": [
+           "/kl/"
+          ],
+          "sai": [
+           "/bl/",
+           "none"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "colourful: {0}",
+        "o": [
+         {
+          "dung": [
+           "none"
+          ],
+          "sai": [
+           "/bl/",
+           "/kl/"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "clothes: {0}",
+        "o": [
+         {
+          "dung": [
+           "/kl/"
+          ],
+          "sai": [
+           "/bl/",
+           "none"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "big: {0}",
+        "o": [
+         {
+          "dung": [
+           "none"
+          ],
+          "sai": [
+           "/bl/",
+           "/kl/"
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "ma": "CK2-DC4.6",
+     "phan": "",
+     "nhom": "Exercise 2. Put the words in the correct column: /sp/ or /st/.",
+     "de": "Exercise 2. Put the words in the correct column: /sp/ or /st/.\ndisplay | assistant | system | special | cost | customer | sport | honest | speaker | crisp\n/sp/: ___\n/st/: ___",
+     "dang": "CAU_NHO",
+     "dap_an": "/sp/: display, special, sport, speaker, crisp; /st/: assistant, system, cost, customer, honest",
+     "loai_dap_an": "DAP_SO",
+     "ghep": {
+      "kieu": "O",
+      "sao": 10,
+      "hoi": "Exercise 2. Put the words in the correct column: /sp/ or /st/.",
+      "dong": [
+       {
+        "chu": "display: {0}",
+        "o": [
+         {
+          "dung": [
+           "/sp/"
+          ],
+          "sai": [
+           "/st/"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "assistant: {0}",
+        "o": [
+         {
+          "dung": [
+           "/st/"
+          ],
+          "sai": [
+           "/sp/"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "system: {0}",
+        "o": [
+         {
+          "dung": [
+           "/st/"
+          ],
+          "sai": [
+           "/sp/"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "special: {0}",
+        "o": [
+         {
+          "dung": [
+           "/sp/"
+          ],
+          "sai": [
+           "/st/"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "cost: {0}",
+        "o": [
+         {
+          "dung": [
+           "/st/"
+          ],
+          "sai": [
+           "/sp/"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "customer: {0}",
+        "o": [
+         {
+          "dung": [
+           "/st/"
+          ],
+          "sai": [
+           "/sp/"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "sport: {0}",
+        "o": [
+         {
+          "dung": [
+           "/sp/"
+          ],
+          "sai": [
+           "/st/"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "honest: {0}",
+        "o": [
+         {
+          "dung": [
+           "/st/"
+          ],
+          "sai": [
+           "/sp/"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "speaker: {0}",
+        "o": [
+         {
+          "dung": [
+           "/sp/"
+          ],
+          "sai": [
+           "/st/"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "crisp: {0}",
+        "o": [
+         {
+          "dung": [
+           "/sp/"
+          ],
+          "sai": [
+           "/st/"
+          ],
+          "hai": true
+         }
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "ma": "CK2-DC4.7",
+     "phan": "",
+     "nhom": "Exercise 3. Choose the word that has a different stress pattern from that of the others.",
+     "de": "Exercise 3. Choose the word that has a different stress pattern from that of the others.\nA. general B. property C. disaster D. fabulous",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "C",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Exercise 3. Choose the word that has a different stress pattern from that of the others.",
+      "cac": [
+       "general",
+       "property",
+       "disaster",
+       "fabulous"
+      ],
+      "dap": "C"
+     }
+    },
+    {
+     "ma": "CK2-DC4.8",
+     "phan": "",
+     "nhom": "Exercise 3. Choose the word that has a different stress pattern from that of the others.",
+     "de": "Exercise 3. Choose the word that has a different stress pattern from that of the others.\nA. yesterday B. optional C. natural D. prediction",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "D",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Exercise 3. Choose the word that has a different stress pattern from that of the others.",
+      "cac": [
+       "yesterday",
+       "optional",
+       "natural",
+       "prediction"
+      ],
+      "dap": "D"
+     }
+    },
+    {
+     "ma": "CK2-DC4.9",
+     "phan": "",
+     "nhom": "Exercise 3. Choose the word that has a different stress pattern from that of the others.",
+     "de": "Exercise 3. Choose the word that has a different stress pattern from that of the others.\nA. glamorous B. eruption C. volcanic D. tornado",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Exercise 3. Choose the word that has a different stress pattern from that of the others.",
+      "cac": [
+       "glamorous",
+       "eruption",
+       "volcanic",
+       "tornado"
+      ],
+      "dap": "A"
+     }
+    },
+    {
+     "ma": "CK2-DC4.10",
+     "phan": "",
+     "nhom": "Exercise 3. Choose the word that has a different stress pattern from that of the others.",
+     "de": "Exercise 3. Choose the word that has a different stress pattern from that of the others.\nA. fabulous B. volunteer C. evening D. happening",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Exercise 3. Choose the word that has a different stress pattern from that of the others.",
+      "cac": [
+       "fabulous",
+       "volunteer",
+       "evening",
+       "happening"
+      ],
+      "dap": "B"
+     }
+    },
+    {
+     "ma": "CK2-DC4.11",
+     "phan": "",
+     "nhom": "Exercise 3. Choose the word that has a different stress pattern from that of the others.",
+     "de": "Exercise 3. Choose the word that has a different stress pattern from that of the others.\nA. thunderstorm B. prosperous C. important D. resident",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "C",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Exercise 3. Choose the word that has a different stress pattern from that of the others.",
+      "cac": [
+       "thunderstorm",
+       "prosperous",
+       "important",
+       "resident"
+      ],
+      "dap": "C"
+     }
+    },
+    {
+     "ma": "CK2-DC4.12",
+     "phan": "",
+     "nhom": "Exercise 3. Choose the word that has a different stress pattern from that of the others.",
+     "de": "Exercise 3. Choose the word that has a different stress pattern from that of the others.\nA. trainee B. between C. Chinese D. seafood",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "D",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Exercise 3. Choose the word that has a different stress pattern from that of the others.",
+      "cac": [
+       "trainee",
+       "between",
+       "Chinese",
+       "seafood"
+      ],
+      "dap": "D"
+     }
+    },
+    {
+     "ma": "CK2-DC4.13",
+     "phan": "",
+     "nhom": "Exercise 3. Choose the word that has a different stress pattern from that of the others.",
+     "de": "Exercise 3. Choose the word that has a different stress pattern from that of the others.\nA. engineer B. wonderful C. refugee D. referee",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Exercise 3. Choose the word that has a different stress pattern from that of the others.",
+      "cac": [
+       "engineer",
+       "wonderful",
+       "refugee",
+       "referee"
+      ],
+      "dap": "B"
+     }
+    },
+    {
+     "ma": "CK2-DC4.14",
+     "phan": "",
+     "nhom": "Exercise 3. Choose the word that has a different stress pattern from that of the others.",
+     "de": "Exercise 3. Choose the word that has a different stress pattern from that of the others.\nA. Vietnamese B. guarantee C. Bhutanese D. committee",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "D",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Exercise 3. Choose the word that has a different stress pattern from that of the others.",
+      "cac": [
+       "Vietnamese",
+       "guarantee",
+       "Bhutanese",
+       "committee"
+      ],
+      "dap": "D"
+     }
+    },
+    {
+     "ma": "CK2-DC4.15",
+     "phan": "",
+     "nhom": "Exercise 3. Choose the word that has a different stress pattern from that of the others.",
+     "de": "Exercise 3. Choose the word that has a different stress pattern from that of the others.\nA. degree B. obese C. coffee D. Maltese",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "C",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Exercise 3. Choose the word that has a different stress pattern from that of the others.",
+      "cac": [
+       "degree",
+       "obese",
+       "coffee",
+       "Maltese"
+      ],
+      "dap": "C"
+     }
+    },
+    {
+     "ma": "CK2-DC4.16",
+     "phan": "",
+     "nhom": "Exercise 3. Choose the word that has a different stress pattern from that of the others.",
+     "de": "Exercise 3. Choose the word that has a different stress pattern from that of the others.\nA. employee B. Japanese C. Taiwanese D. absentee",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Exercise 3. Choose the word that has a different stress pattern from that of the others.",
+      "cac": [
+       "employee",
+       "Japanese",
+       "Taiwanese",
+       "absentee"
       ],
       "dap": "A"
      }

@@ -185,7 +185,7 @@ class DeThiTest {
      */
     @Test
     fun de_hoc_ki_2_du_so_cau_in_va_pham_vi_unit() {
-        val cac = anh().filter { it.ma.startsWith("GK2-") || it.ma.startsWith("CK2-") }
+        val cac = anh().filter { (it.ma.startsWith("GK2-") || it.ma.startsWith("CK2-")) && !it.ma.startsWith("CK2-DC") }
         // ma de -> (den_unit, phut, so cau nghe o dau de)
         val khung = linkedMapOf(
             "GK2-1" to Triple(9, 45, 10), "GK2-2" to Triple(9, 45, 10), "GK2-3" to Triple(9, 45, 10),
@@ -208,6 +208,42 @@ class DeThiTest {
         assertEquals("Đề giữa kì 2 số 1", cac.first().ten)
         // Cau gan trung khac loi dan dung chung id cau goc, ke ca cau goc o de hoc ki 1.
         assertTrue(cac.first { it.ma == "GK2-2" }.cauIds.contains("dethianh8:GK1-4.9"))
+    }
+
+    /**
+     * De cuong on hoc ki 2 (11/10/2026), tach theo nhom Unit nhu hoc ki 1: Unit 7-8, 9-10, 11-12, rieng
+     * phan ngu am mo cung Unit 12. Noi cuoi file, sau CK2-7. Sau cau in y het de cu dung chung id cau goc.
+     */
+    @Test
+    fun de_cuong_hoc_ki_2_tach_theo_nhom_unit() {
+        val cac = anh().filter { it.ma.startsWith("CK2-DC") }
+        // ma de -> (den_unit, phut, so cau)
+        val khung = linkedMapOf(
+            "CK2-DC1" to Triple(8, 45, 27), "CK2-DC2" to Triple(10, 45, 31),
+            "CK2-DC3" to Triple(12, 30, 20), "CK2-DC4" to Triple(12, 20, 16)
+        )
+        assertEquals(khung.keys.toList(), cac.map { it.ma })
+        val thuTu = anh().map { it.ma }
+        assertEquals("sau CK2-7", thuTu.indexOf("CK2-7") + 1, thuTu.indexOf("CK2-DC1"))
+        cac.forEach { de ->
+            val (denUnit, phut, soCau) = khung.getValue(de.ma)
+            assertEquals("${de.ma}: pham vi", denUnit, de.denUnit)
+            assertEquals("${de.ma}: gio lam", phut, de.phut)
+            assertEquals("${de.ma}: so cau in", (1..soCau).toList(), de.cacMuc.map { it.so })
+            assertTrue("${de.ma}: moi cau lam tren may", de.cacMuc.all { it.boMay.isBlank() })
+            assertEquals("${de.ma}: cau lam tren may", soCau, de.cauIds.size)
+            assertTrue("${de.ma}: moi cau co loi dan", de.cacMuc.all { it.nhom.isNotBlank() })
+            assertEquals(de.ma, "CK2", GiaiDe.kyCua(de))
+        }
+        assertEquals("Đề cương học kì 2: Unit 7–8", cac.first().ten)
+        assertEquals("Đề cương học kì 2: Ngữ âm", cac.last().ten)
+        fun id(ma: String, so: Int) = cac.first { it.ma == ma }.cacMuc.first { it.so == so }.cauId
+        assertEquals("dethianh8:GK2-4.14", id("CK2-DC1", 9))
+        assertEquals("dethianh8:GK1-5.31", id("CK2-DC1", 14))
+        assertEquals("dethianh8:GK1-4.31", id("CK2-DC1", 17))
+        assertEquals("dethianh8:GK2-6.11", id("CK2-DC1", 21))
+        assertEquals("dethianh8:GK2-2.17", id("CK2-DC2", 3))
+        assertEquals("dethianh8:GK1-5.9", id("CK2-DC2", 4))
     }
 
     @Test
