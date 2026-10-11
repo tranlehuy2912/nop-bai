@@ -21,6 +21,7 @@ import vn.huytl.homeworkgate.kho.PhanHoc
 import vn.huytl.homeworkgate.kho.KhoBai
 import vn.huytl.homeworkgate.kho.TraTu
 import vn.huytl.homeworkgate.kho.TuVung
+import java.util.Calendar
 import kotlin.random.Random
 
 /**
@@ -338,14 +339,14 @@ class TuVungTest {
 
     @Test
     fun tu_vua_sai_duoc_boc_nhieu_hon_han_tu_da_thuoc() {
-        // Mot tu vua sai va mot tram tu da thuoc. Trong so 8 so voi 0,25 nghia la tu
-        // vua sai chiem khoang mot phan tu tong, nen boc mot nghin lan phai thay no
-        // vai tram lan - khac han ty le mot tren mot tram neu trong so bang nhau.
+        // Mot tu vua sai va hai muoi tu da thuoc den hen. Trong so 8 so voi 1 nghia la tu
+        // vua sai chiem khoang mot phan ba tong, nen boc mot nghin lan phai thay no vai
+        // tram lan - khac han ty le mot tren hai muoi mot neu trong so bang nhau.
         val cac = listOf("sai" to LuatTuVung.TRONG_SO_VUA_SAI) +
-            (1..100).map { "thuoc$it" to LuatTuVung.TRONG_SO_DA_THUOC }
+            (1..20).map { "thuoc$it" to LuatTuVung.TRONG_SO_DA_THUOC }
         val rnd = Random(7)
         val demSai = (1..1000).count { "sai" in LuatTuVung.bocTheoTrongSo(cac, 1, rnd) }
-        assertTrue("boc duoc $demSai/1000 lan", demSai in 150..400)
+        assertTrue("boc duoc $demSai/1000 lan", demSai in 200..500)
     }
 
     // --- moi nhu trac nghiem ---
@@ -385,9 +386,11 @@ class TuVungTest {
 
     // --- tinh trang tu, doc tu SQLite ---
 
-    private fun tinhTrang(ma: String): LuatTuVung.TinhTrang =
-        kho.tinhTrangTu("thu", LuatTuVung.LAN_DUNG_DE_TINH)
-            .first { it.first.id == "thu:$ma" }.second
+    private fun mucTu(ma: String, bayGio: Long = now) =
+        kho.tinhTrangTu("thu", LuatTuVung.LAN_DUNG_DE_TINH, bayGio)
+            .first { it.tu.id == "thu:$ma" }
+
+    private fun tinhTrang(ma: String): LuatTuVung.TinhTrang = mucTu(ma).tinh
 
     @Test
     fun tu_chua_gap_bao_gio_la_chua_gap() {
@@ -447,14 +450,102 @@ class TuVungTest {
         ghi("m", "p3", dung = false, luc = now - 10)
 
         val cac = kho.tinhTrangTu("thu", LuatTuVung.LAN_DUNG_DE_TINH)
-        val m = cac.first { it.first.id == "thu:m" }
-        assertEquals(LuatTuVung.TinhTrang.VUA_SAI, m.second)
-        assertEquals(2, m.third)
+        val m = cac.first { it.tu.id == "thu:m" }
+        assertEquals(LuatTuVung.TinhTrang.VUA_SAI, m.tinh)
+        assertEquals(2, m.soPhienXong)
         // Chua gap bao gio thi khong phien nao, va do la tu duoc cho nhan mat truoc.
-        val n = cac.first { it.first.id == "thu:n" }
-        assertEquals(0, n.third)
-        assertEquals(Chieu.ANH_VIET, LuatTuVung.chieuCho(n.third))
-        assertEquals(Chieu.VIET_ANH, LuatTuVung.chieuCho(m.third))
+        val n = cac.first { it.tu.id == "thu:n" }
+        assertEquals(0, n.soPhienXong)
+        assertEquals(Chieu.ANH_VIET, LuatTuVung.chieuCho(n.soPhienXong))
+        assertEquals(Chieu.VIET_ANH, LuatTuVung.chieuCho(m.soPhienXong))
+    }
+
+    // --- lich hen tu da thuoc (11/10/2026) ---
+
+    /** 9 gio sang cua ngay cach hom nay [lech] ngay. */
+    private fun ngay(lech: Int, gio: Int = 9): Long = Calendar.getInstance().apply {
+        add(Calendar.DAY_OF_MONTH, lech)
+        set(Calendar.HOUR_OF_DAY, gio)
+        set(Calendar.MINUTE, 0)
+        set(Calendar.SECOND, 0)
+        set(Calendar.MILLISECOND, 0)
+    }.timeInMillis
+
+    /** Mot phien tu [ma] dung ngay lan dau, vao luc [luc]. */
+    private fun xongPhien(ma: String, phien: String, luc: Long) = ghi(ma, phien, dung = true, luc = luc)
+
+    @Test
+    fun tu_chua_thuoc_luc_nao_cung_den_luot() {
+        kho.napBoTu("thu", listOf(tu("moi"), tu("mot"), tu("hai"), tu("sai")))
+        xongPhien("mot", "p1", ngay(0))
+        xongPhien("hai", "p1", ngay(-1))
+        xongPhien("hai", "p2", ngay(0))
+        ghi("sai", "p1", dung = false, luc = ngay(0))
+        listOf("moi", "mot", "hai", "sai").forEach { assertTrue(it, mucTu(it).denLuot) }
+    }
+
+    @Test
+    fun vua_thuoc_thi_ba_ngay_sau_moi_hoi_lai() {
+        kho.napBoTu("thu", listOf(tu("c")))
+        // Ba buoi lien, buoi thu ba vao 21 gio hom nay.
+        xongPhien("c", "p1", ngay(-2))
+        xongPhien("c", "p2", ngay(-1))
+        xongPhien("c", "p3", ngay(0, gio = 21))
+        assertEquals(LuatTuVung.TinhTrang.DA_THUOC, tinhTrang("c"))
+        assertFalse(mucTu("c", ngay(0, gio = 22)).denLuot)
+        assertFalse(mucTu("c", ngay(2, gio = 23)).denLuot)
+        // Tinh theo ngay lich: sang hom thu ba la den, khong phai cho toi 21 gio.
+        assertTrue(mucTu("c", ngay(3, gio = 7)).denLuot)
+    }
+
+    @Test
+    fun hoi_lai_dung_thi_hen_gian_ra_theo_lich_cau_on() {
+        kho.napBoTu("thu", listOf(tu("c")))
+        listOf("p1", "p2", "p3").forEachIndexed { i, p -> xongPhien("c", p, ngay(-50 + i)) }
+        // Thuoc ngay -48, hen ngay -45. Hoi lai dung ngay -45, hen tiep 10 ngay: ngay -35.
+        xongPhien("c", "p4", ngay(-45))
+        assertFalse(mucTu("c", ngay(-36)).denLuot)
+        assertTrue(mucTu("c", ngay(-35)).denLuot)
+        // Dung ngay -35, hen 20 ngay: ngay -15. Dung ngay -15, hen 30 ngay: ngay 15.
+        xongPhien("c", "p5", ngay(-35))
+        assertFalse(mucTu("c", ngay(-16)).denLuot)
+        assertTrue(mucTu("c", ngay(-15)).denLuot)
+        xongPhien("c", "p6", ngay(-15))
+        assertFalse(mucTu("c", ngay(14)).denLuot)
+        assertTrue(mucTu("c", ngay(15)).denLuot)
+        // Qua moc 30 ngay la het lich: van la da thuoc, nhung khong hoi nua.
+        xongPhien("c", "p7", ngay(15))
+        assertEquals(LuatTuVung.TinhTrang.DA_THUOC, mucTu("c", ngay(400)).tinh)
+        assertFalse(mucTu("c", ngay(400)).denLuot)
+    }
+
+    @Test
+    fun hoi_lai_ma_sai_thi_hoc_lai_va_lich_lam_lai_tu_dau() {
+        kho.napBoTu("thu", listOf(tu("c")))
+        listOf("p1", "p2", "p3").forEachIndexed { i, p -> xongPhien("c", p, ngay(-30 + i)) }
+        xongPhien("c", "p4", ngay(-25))
+        // Den hen 10 ngay (ngay -15) thi quen: sai lan dau, roi go lai dung.
+        ghi("c", "p5", dung = false, luc = ngay(-15))
+        ghi("c", "p5", dung = true, lan = 2, luc = ngay(-15) + 1000)
+        assertEquals(LuatTuVung.TinhTrang.VUA_SAI, mucTu("c", ngay(-14)).tinh)
+        assertTrue(mucTu("c", ngay(-14)).denLuot)
+        // Hom sau dung ngay lan dau: thuoc lai, hen ba ngay chu khong phai hai muoi.
+        xongPhien("c", "p6", ngay(-14))
+        assertEquals(LuatTuVung.TinhTrang.DA_THUOC, mucTu("c", ngay(-13)).tinh)
+        assertFalse(mucTu("c", ngay(-12)).denLuot)
+        assertTrue(mucTu("c", ngay(-11)).denLuot)
+    }
+
+    @Test
+    fun lich_su_cu_hoi_truoc_hen_khong_day_tu_len_buoc() {
+        kho.napBoTu("thu", listOf(tu("c")))
+        // Truoc 11/10/2026 tu da thuoc van bi boc gan nhu moi ngay. Bon lan hoi som do khong
+        // duoc tinh la bon lan on dung han, khong thi tu ra khoi lich ngay ma chua on lan nao.
+        (0 until 7).forEach { i -> xongPhien("c", "p$i", ngay(-7 + i)) }
+        assertEquals(LuatTuVung.TinhTrang.DA_THUOC, tinhTrang("c"))
+        // Lan cuoi hom qua: hen ba ngay tinh tu hom qua.
+        assertFalse(mucTu("c", ngay(1)).denLuot)
+        assertTrue(mucTu("c", ngay(2)).denLuot)
     }
 
     @Test

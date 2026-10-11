@@ -1067,8 +1067,8 @@ class KhoBai private constructor(context: Context) :
     }
 
     /**
-     * Tinh trang tung tu trong mot bo, kem so phien da xong, de ben goi boc va chon
-     * chieu hoi.
+     * Tinh trang tung tu trong mot bo, kem so phien da xong va tu do co den luot khong, de ben
+     * goi boc va chon chieu hoi.
      *
      * TINH TRONG KOTLIN chu khong trong SQL, cung mot le voi [cacTheDenLuot]: luat
      * "vua sai" va "da thuoc" nam trong [vn.huytl.homeworkgate.data.LuatTuVung], viet lai
@@ -1077,20 +1077,28 @@ class KhoBai private constructor(context: Context) :
      * Doc het lich su cua ca bo ra mot lan. Mot nam hoc chin tram tu, moi tu chung
      * sau lan gap, moi lan hai ba lan thu, ra khoang mot van dong - doc het mat vai
      * phan muoi giay, va chi doc mot lan moi buoi.
+     *
+     * LICH HEN (tu 11/10/2026) tinh bang cach di lai tung phien theo thoi gian chu khong ghi
+     * xuong bang nao: lich su la mot, tinh lai bao nhieu lan cung ra mot ket qua, va sua luat
+     * hen thi khong phai sua du lieu cu. Phien nao mo dau bang mot lan sai thi lich bo, phien
+     * dung ngay lan dau dua tu len lai thi lich lam lai tu moc dau.
+     *
+     * @param bayGio luc xet den hen, de test dat duoc ngay.
      */
     fun tinhTrangTu(
         bo: String,
-        lanDungDeXong: Int
-    ): List<Triple<TuVung, LuatTuVung.TinhTrang, Int>> {
+        lanDungDeXong: Int,
+        bayGio: Long = System.currentTimeMillis()
+    ): List<TinhTrangTu> {
         val cac = cacTuCua(bo)
         if (cac.isEmpty()) return emptyList()
 
-        // Lich su theo tung tu, moi tu mot danh sach (phien, lan, dung), theo thu tu thoi gian.
-        class Lan(val phien: String, val dung: Boolean)
+        // Lich su theo tung tu, moi tu mot danh sach (phien, dung, luc), theo thu tu thoi gian.
+        class Lan(val phien: String, val dung: Boolean, val luc: Long)
         val lichSu = HashMap<String, MutableList<Lan>>()
         readableDatabase.rawQuery(
             """
-            SELECT t.tu_id, t.phien, t.dung FROM tra_tu t
+            SELECT t.tu_id, t.phien, t.dung, t.luc FROM tra_tu t
             JOIN tu_vung v ON v.id = t.tu_id
             WHERE v.bo = ? ORDER BY t.luc
             """.trimIndent(),
@@ -1098,34 +1106,56 @@ class KhoBai private constructor(context: Context) :
         ).use { c ->
             while (c.moveToNext()) {
                 lichSu.getOrPut(c.getString(0)) { mutableListOf() }
-                    .add(Lan(c.getString(1), c.getInt(2) == 1))
+                    .add(Lan(c.getString(1), c.getInt(2) == 1, c.getLong(3)))
             }
         }
 
         return cac.map { tu ->
             val ls = lichSu[tu.id].orEmpty()
-            if (ls.isEmpty()) return@map Triple(tu, LuatTuVung.TinhTrang.CHUA_GAP, 0)
+            if (ls.isEmpty()) {
+                return@map TinhTrangTu(tu, LuatTuVung.TinhTrang.CHUA_GAP, 0, denLuot = true)
+            }
 
-            // Phien gan nhat: lan thu DAU TIEN cua phien do co dung khong. Lay lan dau
-            // chu khong lay ca phien: cuoi phien thi tu nao cung dung, vi buoi do
-            // khong cho di tiep khi chua dung.
-            val phienCuoi = ls.last().phien
-            val dauPhienCuoi = ls.first { it.phien == phienCuoi }.dung
-
-            val soPhienXong = ls.groupBy { it.phien }
-                .count { (_, cacLan) -> cacLan.count { it.dung } >= lanDungDeXong }
+            var soPhienXong = 0
+            // Lan thu DAU TIEN cua phien gan nhat co dung khong. Lay lan dau chu khong lay ca
+            // phien: cuoi phien thi tu nao cung dung, vi buoi do khong cho di tiep khi chua dung.
+            var dauPhienCuoi = true
+            // -1 la chua thuoc; tu 0 tro di la da thuoc va dang cho moc hen thu [buoc].
+            var buoc = -1
+            // Moc hen cua [buoc]; null khi da qua het moc.
+            var hen: Long? = null
+            ls.groupBy { it.phien }.values.forEach { cacLan ->
+                val dau = cacLan.first().dung
+                val luc = cacLan.last().luc
+                if (cacLan.count { it.dung } >= lanDungDeXong) soPhienXong++
+                dauPhienCuoi = dau
+                if (!dau) {
+                    buoc = -1
+                } else if (buoc < 0) {
+                    if (soPhienXong >= LuatTuVung.SO_BUOI_DE_THUOC) {
+                        buoc = 0
+                        hen = LuatTuVung.henOnLai(luc, 0)
+                    }
+                } else {
+                    val h = hen
+                    // Phien truoc hen chi co trong lich su truoc 11/10/2026, khi tu da thuoc
+                    // con bi boc moi buoi: khong len buoc, chi tinh hen lai tu lan nho ra do.
+                    if (h != null) {
+                        if (luc >= h) buoc++
+                        hen = LuatTuVung.henOnLai(luc, buoc)
+                    }
+                }
+            }
 
             val tinh = when {
                 !dauPhienCuoi -> LuatTuVung.TinhTrang.VUA_SAI
                 soPhienXong <= 0 -> LuatTuVung.TinhTrang.CHUA_GAP
                 soPhienXong == 1 -> LuatTuVung.TinhTrang.DUNG_1
-                soPhienXong == 2 -> LuatTuVung.TinhTrang.DUNG_2
+                soPhienXong < LuatTuVung.SO_BUOI_DE_THUOC -> LuatTuVung.TinhTrang.DUNG_2
                 else -> LuatTuVung.TinhTrang.DA_THUOC
             }
-            // So phien da xong di kem chu khong de ben goi tu doan nguoc tu tinh
-            // trang: [LuatTuVung.TinhTrang.VUA_SAI] che mat con so do, ma chinh no
-            // quyet dinh hoi chieu nao - xem [LuatTuVung.chieuCho].
-            Triple(tu, tinh, soPhienXong)
+            val denLuot = tinh != LuatTuVung.TinhTrang.DA_THUOC || hen?.let { bayGio >= it } == true
+            TinhTrangTu(tu, tinh, soPhienXong, denLuot)
         }
     }
 

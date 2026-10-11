@@ -245,7 +245,7 @@ class CachKiemGioActivity : AppCompatActivity() {
                 !coBoTu -> "Máy chưa có bộ từ nào"
                 daTu >= tranTu -> "Hôm nay kiểm tra đủ $tranTu phút rồi"
                 daTu > 0 -> "Hôm nay đã được $daTu phút, còn ${tranTu - daTu} phút"
-                else -> "Một buổi ${LuatTuVung.SO_TU_HANG_NGAY} từ, chưa dùng phút nào"
+                else -> "Một buổi tối đa ${LuatTuVung.SO_TU_HANG_NGAY} từ, chưa dùng phút nào"
             },
             mauNay = if (!coBoTu || daTu >= tranTu) R.color.ink_soft else R.color.brand
         )

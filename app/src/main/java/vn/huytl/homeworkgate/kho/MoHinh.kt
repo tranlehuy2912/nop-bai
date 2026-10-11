@@ -193,6 +193,22 @@ data class TuVung(
     val thuTu: Int = 0
 )
 
+/**
+ * Mot tu luc nay ra sao, do [KhoBai.tinhTrangTu] tinh tu lich su tra loi.
+ *
+ * @param soPhienXong so buoi tu nay da xong. Tinh trang [vn.huytl.homeworkgate.data.LuatTuVung.TinhTrang.VUA_SAI]
+ *   che mat con so do, ma chinh no quyet dinh hoi chieu nao - xem
+ *   [vn.huytl.homeworkgate.data.LuatTuVung.chieuCho].
+ * @param denLuot buoi bat dau luc nay co duoc hoi tu nay khong. Tu chua thuoc thi luon co, tu
+ *   da thuoc chi khi den hen - xem [vn.huytl.homeworkgate.data.LuatTuVung.henOnLai].
+ */
+data class TinhTrangTu(
+    val tu: TuVung,
+    val tinh: vn.huytl.homeworkgate.data.LuatTuVung.TinhTrang,
+    val soPhienXong: Int,
+    val denLuot: Boolean
+)
+
 /** Con duoc hoi mot tu theo chieu nao. */
 enum class Chieu {
     /** Hien tu tieng Anh, con chon nghia trong bon lua chon. Cho tu con chua gap. */

@@ -115,6 +115,8 @@ class LuyenTapActivity : AppCompatActivity() {
         val kiemTra: Pair<Int, Int>?,
         /** Dong Kiem tra da xong hom nay: het the den luot, hay du phut tu vung. */
         val kiemTraXong: Boolean,
+        /** Tieng Anh: het tu den luot trong cac Unit da hoc, khac voi du phut. */
+        val hetTu: Boolean,
         val luyen: List<Luyen>,
         /** Dong "Làm bài tập trong SGK"; null khi mon chua co SGK trong may. */
         val sgk: Sgk?,
@@ -153,12 +155,18 @@ class LuyenTapActivity : AppCompatActivity() {
         val kho = KhoBai.get(ct)
         val kiemTra: Pair<Int, Int>?
         val kiemTraXong: Boolean
+        var hetTu = false
         if (mon == PhanHoc.TIENG_ANH) {
             val tu = runCatching { kho.tinhTrangTu(PhanHoc.BO_TIENG_ANH, LuatTuVung.LAN_DUNG_DE_TINH) }
                 .getOrDefault(emptyList())
             kiemTra = if (tu.isEmpty()) null
-            else tu.count { it.second == LuatTuVung.TinhTrang.DA_THUOC } to tu.size
-            kiemTraXong = runCatching {
+            else tu.count { it.tinh == LuatTuVung.TinhTrang.DA_THUOC } to tu.size
+            // Tu 11/10/2026 tu da thuoc chi ra khi den hen, nen co ngay khong con tu nao de hoi:
+            // dong o dang xong nhu het the. Chua chon Unit thi chua xong, vao la duoc hoi chon.
+            val daHocAnh = PhanHoc.baiDaHoc(ct, mon)
+            hetTu = tu.isNotEmpty() && !daHocAnh.isNullOrEmpty() &&
+                tu.none { it.denLuot && LuatTuVung.daHoc(it.tu.unit, daHocAnh) }
+            kiemTraXong = hetTu || runCatching {
                 kho.giayTuVungTu(moc0Gio()) >= LuatTuVung.GIAY_TRAN_MOI_NGAY
             }.getOrDefault(false)
         } else {
@@ -189,6 +197,7 @@ class LuyenTapActivity : AppCompatActivity() {
             conOn = LamTrenMay.soCauOn(ct, bayGio, mon),
             kiemTra = kiemTra,
             kiemTraXong = kiemTraXong,
+            hetTu = hetTu,
             // Phan chua soan cau nao thi khong co gi de bam: an dong.
             luyen = luyen.filter { it.tong > 0 },
             sgk = sgk,
@@ -244,7 +253,7 @@ class LuyenTapActivity : AppCompatActivity() {
                 phu = when {
                     k.daHoc == null -> "Chọn bài lớp đã học trước"
                     !k.kiemTraXong -> ""
-                    laAnh -> "Hôm nay đủ rồi"
+                    laAnh -> if (k.hetTu) "Hôm nay hết từ" else "Hôm nay đủ rồi"
                     else -> "Hôm nay hết câu"
                 },
                 so = "$da/$tong",

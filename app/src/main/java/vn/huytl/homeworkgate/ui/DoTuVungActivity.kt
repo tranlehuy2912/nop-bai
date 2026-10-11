@@ -22,6 +22,7 @@ import vn.huytl.homeworkgate.kho.Chieu
 import vn.huytl.homeworkgate.kho.HocToi
 import vn.huytl.homeworkgate.kho.KhoBai
 import vn.huytl.homeworkgate.kho.PhanHoc
+import vn.huytl.homeworkgate.kho.TinhTrangTu
 import vn.huytl.homeworkgate.kho.TraTu
 import vn.huytl.homeworkgate.kho.TuVung
 import vn.huytl.homeworkgate.telegram.ApprovalService
@@ -237,8 +238,9 @@ class DoTuVungActivity : AppCompatActivity() {
     /**
      * Mot the bo tren man chon.
      *
-     * Het tran ngay thi the xam lai nhung VAN o day, y het man kiem tra bai: con
-     * nhin thay minh da thuoc toi dau, va biet mai no quay lai.
+     * Het tu den luot thi the xam lai nhung VAN o day, y het man kiem tra bai: con
+     * nhin thay minh da thuoc toi dau, va biet mai no quay lai. Truoc 11/10/2026 khong bao
+     * gio het, vi tu da thuoc van nam trong luot boc moi buoi - xem [LuatTuVung.henOnLai].
      *
      * Bo chua chon Unit thi bam vao la hoi "lop da hoc nhung Unit nao" truoc, y het man
      * kiem tra bai, xem [HocToi]. Dong cuoi cua the noi cac Unit da danh dau, kem nut doi
@@ -252,13 +254,15 @@ class DoTuVungActivity : AppCompatActivity() {
         // chon. Chua chon hay chua hoc Unit nao thi phan do rong, va "Đã thuộc 0/0 từ"
         // doc nhu may hong, nen luc do tinh tren ca bo.
         val tinh = if (!daHoc.isNullOrEmpty()) daMo(daHoc, caBo) else caBo
-        val thuoc = tinh.count { it.second == LuatTuVung.TinhTrang.DA_THUOC }
+        val thuoc = tinh.count { it.tinh == LuatTuVung.TinhTrang.DA_THUOC }
         val chuaChon = daHoc == null
         val chuaHoc = daHoc?.isEmpty() == true
+        val denLuot = if (daHoc.isNullOrEmpty()) 0 else tinh.count { it.denLuot }
+        val hetTu = !chuaChon && !chuaHoc && denLuot == 0
         // Het tran ngay thi the VAN bam duoc (29/9/2026): phut do tu dung them tu do vao
         // "Quỹ giờ chơi", xem [chot]. Truoc do the xam lai va con khong do them duoc, nen
         // phan cong con muon lam them khong duoc ghi o dau ca.
-        val sang = !chuaHoc
+        val sang = !chuaHoc && !hetTu
 
         val v = StTheBoBinding.inflate(layoutInflater, b.boxBo, false)
         val mauMon = ContextCompat.getColor(this, MatMon.mau(bo.mon))
@@ -274,32 +278,27 @@ class DoTuVungActivity : AppCompatActivity() {
 
         v.phuBo.text = when {
             chuaChon -> "Chọn Unit lớp đã học"
-            !conGio && !chuaHoc -> "Đủ phút hôm nay, kiểm tra thêm vẫn được"
             // Dong cuoi da noi lop chua hoc Unit nao, o day noi he qua cua no.
             chuaHoc -> "Chưa có từ để hỏi"
-            else -> "từ mỗi buổi, trong ${HocToi.moTa(bo.mon, daHoc.orEmpty())}"
+            hetTu -> "Hôm nay xong rồi"
+            !conGio -> "Đủ phút hôm nay, kiểm tra thêm vẫn được"
+            else -> "từ buổi này, trong ${HocToi.moTa(bo.mon, daHoc.orEmpty())}"
         }
-        v.phuBo.setTextColor(
-            when {
-                !conGio -> mau(R.color.ok)
-                sang -> mauMon
-                else -> mau(R.color.ink_soft)
-            }
-        )
+        val mauSo = when {
+            chuaHoc -> mau(R.color.ink_soft)
+            hetTu || !conGio -> mau(R.color.ok)
+            else -> mauMon
+        }
+        v.phuBo.setTextColor(mauSo)
 
         v.soDenLuot.text = when {
             chuaChon -> "?"
             chuaHoc -> "–"
-            // Phan da hoc it hon mot buoi thi hoi het phan do, khong phai hai muoi.
-            else -> minOf(LuatTuVung.SO_TU_HANG_NGAY, tinh.size).toString()
+            hetTu -> "✓"
+            // Den luot it hon mot buoi thi hoi het phan do, khong phai hai muoi.
+            else -> minOf(LuatTuVung.SO_TU_HANG_NGAY, denLuot).toString()
         }
-        v.soDenLuot.setTextColor(
-            when {
-                !conGio -> mau(R.color.ok)
-                sang -> mauMon
-                else -> mau(R.color.ink_soft)
-            }
-        )
+        v.soDenLuot.setTextColor(mauSo)
 
         v.thanhThuoc.max = tinh.size.coerceAtLeast(1)
         v.thanhThuoc.setProgressCompat(thuoc, false)
@@ -340,7 +339,8 @@ class DoTuVungActivity : AppCompatActivity() {
     // ------------------------------------------------------------------- buoi
 
     /**
-     * Chon tu cho mot buoi: ghim tu vua sai truoc, phan con lai boc theo trong so.
+     * Chon tu cho mot buoi: ghim tu vua sai truoc, phan con lai boc theo trong so. Chi trong
+     * cac tu den luot: tu da thuoc ma chua toi hen thi khong vao, xem [LuatTuVung.henOnLai].
      *
      * Ghim cung chu khong de ngau nhien lo: trong so co cao den may cung khong bao
      * dam mot tu vua sai hom qua quay lai hom nay, ma dung luc con vua sai moi la
@@ -351,14 +351,15 @@ class DoTuVungActivity : AppCompatActivity() {
         // Bo chua chon Unit thi hoi truoc, du vao tu duong nao.
         val daHoc = PhanHoc.baiDaHoc(this, bo.mon) ?: return hoiHocToi(bo, roiBatDau = true)
         val tinh = daMo(daHoc, kho.tinhTrangTu(bo.bo, LuatTuVung.LAN_DUNG_DE_TINH))
+            .filter { it.denLuot }
         if (tinh.isEmpty()) return veChonBo()
 
-        val ghim = tinh.filter { it.second == LuatTuVung.TinhTrang.VUA_SAI }
+        val ghim = tinh.filter { it.tinh == LuatTuVung.TinhTrang.VUA_SAI }
             .take(LuatTuVung.SO_GHIM_TU_SAI)
-        val daGhim = ghim.map { it.first.id }.toSet()
+        val daGhim = ghim.map { it.tu.id }.toSet()
         val boc = LuatTuVung.bocTheoTrongSo(
-            tinh.filterNot { it.first.id in daGhim }
-                .map { it to LuatTuVung.trongSo(it.second) },
+            tinh.filterNot { it.tu.id in daGhim }
+                .map { it to LuatTuVung.trongSo(it.tinh) },
             LuatTuVung.SO_TU_HANG_NGAY - ghim.size
         )
         val chon = (ghim + boc).shuffled()
@@ -400,11 +401,8 @@ class DoTuVungActivity : AppCompatActivity() {
      * nham thi tha hoi rong con hon mo ra mot man trong; gio rong chi con nghia la con
      * chon "chua hoc Unit nao", va hoi rong la hoi dung thu con vua noi chua hoc.
      */
-    private fun daMo(
-        daHoc: Set<Int>,
-        cac: List<Triple<TuVung, LuatTuVung.TinhTrang, Int>>
-    ): List<Triple<TuVung, LuatTuVung.TinhTrang, Int>> =
-        cac.filter { LuatTuVung.daHoc(it.first.unit, daHoc) }
+    private fun daMo(daHoc: Set<Int>, cac: List<TinhTrangTu>): List<TinhTrangTu> =
+        cac.filter { LuatTuVung.daHoc(it.tu.unit, daHoc) }
 
     /** Ba ro moi nhu, uu tien giam dan - xem [LuatTuVung.chonMoiNhu]. */
     private fun moiNhuCho(tu: TuVung, tatCa: List<TuVung>): List<String> {

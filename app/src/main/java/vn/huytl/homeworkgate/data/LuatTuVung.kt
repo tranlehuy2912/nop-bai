@@ -3,6 +3,8 @@ package vn.huytl.homeworkgate.data
 import vn.huytl.homeworkgate.kho.BuoiDo
 import vn.huytl.homeworkgate.kho.Chieu
 import vn.huytl.homeworkgate.kho.HocToi
+import vn.huytl.homeworkgate.kho.KhoBai
+import java.util.Calendar
 import kotlin.random.Random
 
 /**
@@ -21,7 +23,7 @@ import kotlin.random.Random
  * nam phut hon han muoi phut ngoi doc.
  *
  * MOT BUOI MOI NGAY, xem [BuoiDo]: boc ngau nhien trong cac Unit con chon la lop da hoc,
- * xem [daHoc]. Truoc 29/9/2026 chu thich nay ta them hai buoi neo vao Unit co giao trong vo
+ * xem [daHoc], va tu 11/10/2026 chi trong cac tu den luot, xem [henOnLai]. Truoc 29/9/2026 chu thich nay ta them hai buoi neo vao Unit co giao trong vo
  * dan do (buoi toi va sang hom sau), nhung man Do tu vung chua bao gio lam hai buoi do; Ba
  * Huy chon bo phan thua thay vi lam tiep.
  *
@@ -183,12 +185,17 @@ object LuatTuVung {
      *
      * VAN CHUA DU, va do la ly do co [SO_GHIM_TU_SAI]. Ngau nhien khong bao gio dua
      * duoc mot tu quay lai vao dung ngay mai, du trong so cao den may.
+     *
+     * Tu da thuoc tung la 0,25, khi no con nam trong luot boc moi buoi. Tu 11/10/2026 tu da
+     * thuoc chi vao luot boc vao ngay den hen ([henOnLai]), nen trong so nho chi con lam no lo
+     * hen: ngay vua them Unit moi, hai muoi tu chua gap trong so 4 se chiem gan het cho. Nay
+     * bang tu dung hai buoi.
      */
     const val TRONG_SO_VUA_SAI = 8.0
     const val TRONG_SO_CHUA_GAP = 4.0
     const val TRONG_SO_DUNG_1 = 2.0
     const val TRONG_SO_DUNG_2 = 1.0
-    const val TRONG_SO_DA_THUOC = 0.25
+    const val TRONG_SO_DA_THUOC = 1.0
 
     /**
      * Bao nhieu o trong buoi hang ngay danh rieng cho tu SAI O BUOI TRUOC.
@@ -208,6 +215,44 @@ object LuatTuVung {
         TinhTrang.DUNG_1 -> TRONG_SO_DUNG_1
         TinhTrang.DUNG_2 -> TRONG_SO_DUNG_2
         TinhTrang.DA_THUOC -> TRONG_SO_DA_THUOC
+    }
+
+    /**
+     * Xong bay nhieu buoi thi tu tinh la da thuoc, neu buoi gan nhat dung ngay lan dau. Phai
+     * khop voi [TinhTrang]: duoi so nay la [TinhTrang.DUNG_1], [TinhTrang.DUNG_2].
+     */
+    const val SO_BUOI_DE_THUOC = 3
+
+    /**
+     * Luc mot tu da thuoc den hen hoi lai, hay null khi da qua het moc va khong hoi nua.
+     *
+     * TU DA THUOC CHI RA KHI DEN HEN (Ba Huy chot 11/10/2026). Truoc ngay do tu da thuoc van
+     * nam trong luot boc moi buoi voi trong so nho. Kho chi gom cac Unit lop da hoc, ba Unit
+     * chung bay muoi tu, ma moi buoi hai muoi tu, nen bon nam buoi la gap het; tu do ve sau
+     * buoi nao cung toan tu cu, Le Hoa than ngay nao cung gap lai tu cu. Trong so nho khong
+     * cuu duoc: khong con tu nao khac de boc thi hai muoi o van lap bang tu da thuoc. Nay
+     * buoi chi gom tu chua thuoc va tu den hen, nen ngay khong co tu moi thi buoi ngan lai va
+     * con duoc it phut hon. Ba Huy chap nhan cai gia do.
+     *
+     * Dung lich [KhoBai.KHOANG_HEN_NGAY] cua cau on va the hoc thuoc, khong de ra lich thu
+     * hai. [buoc] 0 la lan hen dau, tinh tu buoi tu vua thuoc; moi lan hoi lai dung ngay lan
+     * dau thi len mot buoc, tinh tu buoi do. Sai thi tu ve [TinhTrang.VUA_SAI] va lich lam lai
+     * tu dau, xem [vn.huytl.homeworkgate.kho.KhoBai.tinhTrangTu].
+     *
+     * TINH THEO NGAY LICH chu khong theo gio, khac cau on: buoi moi ngay mot lan nhung khong
+     * cung gio, hen dung 72 gio thi buoi som hon hom truoc mot chut se lo tu do mat mot ngay.
+     * Hen la 0 gio cua ngay [lucXong] cong so ngay.
+     */
+    fun henOnLai(lucXong: Long, buoc: Int): Long? {
+        val ngay = KhoBai.KHOANG_HEN_NGAY.getOrNull(buoc) ?: return null
+        return Calendar.getInstance().apply {
+            timeInMillis = lucXong
+            set(Calendar.HOUR_OF_DAY, 0)
+            set(Calendar.MINUTE, 0)
+            set(Calendar.SECOND, 0)
+            set(Calendar.MILLISECOND, 0)
+            add(Calendar.DAY_OF_MONTH, ngay)
+        }.timeInMillis
     }
 
     /**
