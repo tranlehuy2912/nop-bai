@@ -41,8 +41,8 @@ class DeThiToanKhtnTest {
     @Test
     fun du_de_hoc_ki_1_hai_mon_theo_thu_tu() {
         assertEquals(
-            (1..10).map { "KGK1-$it" } + (1..10).map { "KCK1-$it" } + (1..7).map { "KGK2-$it" } +
-                (1..5).map { "KCK2-$it" },
+            (1..10).map { "KGK1-$it" } + (1..10).map { "KCK1-$it" } + (1..2).map { "KCK1-DC$it" } +
+                (1..7).map { "KGK2-$it" } + (1..5).map { "KCK2-$it" },
             cua(LichKiemTra.KHTN).map { it.ma }
         )
         assertEquals(
@@ -85,12 +85,12 @@ class DeThiToanKhtnTest {
 
     /**
      * De cuoi ki 1 KHTN co ca phan Hoa lan phan Li (Bai 13-19); KCK1-10 co them mot cau Sinh (Bai
-     * 37) nen chi doi co du Hoa va Li. De cuoi ki 1 Toan co hai phan, tru ba de cuong on (TCK1-DC*,
-     * 11/10/2026) tach theo mang: Dai so, Hinh hoc, Thong ke.
+     * 37) nen chi doi co du Hoa va Li. De cuoi ki 1 Toan co hai phan. De cuong on (11/10/2026) tach theo
+     * mang nen khong xet: Toan TCK1-DC* (Dai so, Hinh hoc, Thong ke), KHTN KCK1-DC* (Hoa, Li).
      */
     @Test
     fun de_cuoi_ki_1_co_du_cac_phan_cua_hoc_ki_1() {
-        cua(LichKiemTra.KHTN).filter { it.ma.startsWith("KCK1-") }.forEach {
+        cua(LichKiemTra.KHTN).filter { it.ma.startsWith("KCK1-") && !it.ma.startsWith("KCK1-DC") }.forEach {
             assertTrue(it.ma, it.denBai.keys.containsAll(setOf("khtn8hoa", "khtn8li")))
         }
         cua(LichKiemTra.TOAN).filter { it.ma.startsWith("TCK1-") && !it.ma.startsWith("TCK1-DC") }.forEach {
@@ -108,6 +108,17 @@ class DeThiToanKhtnTest {
         assertEquals((2..9).toSet(), de.getValue("TCK1-DC1").cacBai)
         assertEquals((10..17).toSet(), de.getValue("TCK1-DC2").cacBai)
         assertEquals((18..20).toSet(), de.getValue("TCK1-DC3").cacBai)
+        de.values.forEach { assertEquals(it.ma, "CK1", vn.huytl.homeworkgate.data.GiaiDe.kyCua(it)) }
+    }
+
+    /** De cuong on cuoi ki 1 KHTN (11/10/2026): mot de Hoa, mot de Li, nam trong nhom cuoi ky I. */
+    @Test
+    fun de_cuong_khtn_hoc_ki_1_tach_theo_mang() {
+        val de = cua(LichKiemTra.KHTN).filter { it.ma.startsWith("KCK1-DC") }.associateBy { it.ma }
+        assertEquals(setOf("khtn8hoa"), de.getValue("KCK1-DC1").denBai.keys)
+        assertEquals(setOf("khtn8li"), de.getValue("KCK1-DC2").denBai.keys)
+        assertEquals((2..12).toSet(), de.getValue("KCK1-DC1").cacBai)
+        assertEquals(setOf(13, 15, 17, 18, 19), de.getValue("KCK1-DC2").cacBai)
         de.values.forEach { assertEquals(it.ma, "CK1", vn.huytl.homeworkgate.data.GiaiDe.kyCua(it)) }
     }
 
