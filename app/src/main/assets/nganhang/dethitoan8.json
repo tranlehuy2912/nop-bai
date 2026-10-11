@@ -2,7 +2,7 @@
  "nguon": "dethitoan8",
  "mon": "Toán",
  "ten": "Đề thi Toán 8",
- "ban": 11,
+ "ban": 12,
  "cac_bai": [
   {
    "chuong": "Giữa học kì 1",
@@ -25185,6 +25185,2212 @@
       ]
      },
      "ghi_chu": "Phân tích các mẫu thành nhân tử rồi tách mỗi phân thức thành hiệu, tổng rút gọn còn 1/(x + 4) − 1/(x + 7). Hai nghiệm −13 và 2 đều khác −4, −5, −6, −7."
+    }
+   ]
+  },
+  {
+   "chuong": "Cuối học kì 2",
+   "bai": "Đề cương học kì 2: Đại số",
+   "de_thi": {
+    "ma": "TCK2-DC1",
+    "nguon_goc": "loigiaihay.com, đăng 05/05/2025"
+   },
+   "cac_cau": [
+    {
+     "ma": "TCK2-DC1.C1",
+     "nhan": "Câu 1",
+     "phan": "I. Phần trắc nghiệm",
+     "nhom": "",
+     "de": "Trong các phương trình sau, đâu là phương trình bậc nhất một ẩn\nA. 3x − y = 0. B. 2y + 1 = 0. C. 4 + 0.x = 0. D. 3x^2 = 0.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "bai_sgk": 25,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Trong các phương trình sau, đâu là phương trình bậc nhất một ẩn?",
+      "cac": [
+       "3x − y = 0",
+       "2y + 1 = 0",
+       "4 + 0x = 0",
+       "3x² = 0"
+      ],
+      "dap": "B"
+     }
+    },
+    {
+     "ma": "TCK2-DC1.C2",
+     "nhan": "Câu 2",
+     "phan": "I. Phần trắc nghiệm",
+     "nhom": "",
+     "de": "Phương trình bậc nhất một ẩn ax + b = 0 với hệ số b = 3 là phương trình nào\nA. 3x + 1 = 0. B. x − 3 = 0. C. −x + 3 = 0. D. 3x − 3 = 0.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "C",
+     "loai_dap_an": "TN",
+     "bai_sgk": 25,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Phương trình bậc nhất một ẩn ax + b = 0 với hệ số b = 3 là phương trình nào?",
+      "cac": [
+       "3x + 1 = 0",
+       "x − 3 = 0",
+       "−x + 3 = 0",
+       "3x − 3 = 0"
+      ],
+      "dap": "C"
+     }
+    },
+    {
+     "ma": "TCK2-DC1.C3",
+     "nhan": "Câu 3",
+     "phan": "I. Phần trắc nghiệm",
+     "nhom": "",
+     "de": "Phương trình 6x − 3 = 0 có nghiệm là\nA. x = 2. B. x = −1/2. C. x = −2. D. x = 1/2.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "D",
+     "loai_dap_an": "TN",
+     "bai_sgk": 25,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Phương trình 6x − 3 = 0 có nghiệm là",
+      "cac": [
+       "x = 2",
+       "x = −1/2",
+       "x = −2",
+       "x = 1/2"
+      ],
+      "dap": "D"
+     }
+    },
+    {
+     "ma": "TCK2-DC1.C4",
+     "nhan": "Câu 4",
+     "phan": "I. Phần trắc nghiệm",
+     "nhom": "",
+     "de": "Đưa phương trình 2(x + 2) = 1 − 2x về dạng ax + b = 0, ta được:\nA. 4x + 3 = 0. B. −2x + 1 = 0. C. 4x + 5 = 0. D. 2x + 4 = 0.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN",
+     "bai_sgk": 25,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Đưa phương trình 2(x + 2) = 1 − 2x về dạng ax + b = 0, ta được:",
+      "cac": [
+       "4x + 3 = 0",
+       "−2x + 1 = 0",
+       "4x + 5 = 0",
+       "2x + 4 = 0"
+      ],
+      "dap": "A"
+     }
+    },
+    {
+     "ma": "TCK2-DC1.C5",
+     "nhan": "Câu 5",
+     "phan": "I. Phần trắc nghiệm",
+     "nhom": "",
+     "de": "Tập nghiệm S của phương trình 3(x + 1) + 2x = 7 + (x − 2) là:\nA. S = {0}. B. S = {1/2}. C. S = ∅. D. S = ℝ.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "bai_sgk": 25,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Tập nghiệm S của phương trình 3(x + 1) + 2x = 7 + (x − 2) là:",
+      "cac": [
+       "S = {0}",
+       "S = {1/2}",
+       "S = ∅",
+       "S = ℝ"
+      ],
+      "dap": "B"
+     }
+    },
+    {
+     "ma": "TCK2-DC1.C6",
+     "nhan": "Câu 6",
+     "phan": "I. Phần trắc nghiệm",
+     "nhom": "",
+     "de": "Phương trình 2x + m − x + 4 = 0 nhận x = −3 thì m là :\nA. m = 1. B. m = 2. C. m = −1. D. m = −2.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "C",
+     "loai_dap_an": "TN",
+     "bai_sgk": 25,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Phương trình 2x + m − x + 4 = 0 nhận x = −3 là nghiệm thì m là:",
+      "cac": [
+       "m = 1",
+       "m = 2",
+       "m = −1",
+       "m = −2"
+      ],
+      "dap": "C"
+     },
+     "ghi_chu": "Đề in 'nhận x = −3 thì m là'; trên máy viết 'nhận x = −3 là nghiệm'."
+    },
+    {
+     "ma": "TCK2-DC1.C7",
+     "nhan": "Câu 7",
+     "phan": "I. Phần trắc nghiệm",
+     "nhom": "",
+     "de": "Chọn câu sai trong các câu sau:\nA. Gọi số học sinh của một lớp là x (học sinh) thì điều kiện là x ∈ N*. B. Gọi thời gian làm của một xưởng là x (ngày) thì điều kiện là x > 0. C. Gọi số bài tập của một học sinh làm trong một ngày là x thì điều kiện là x < 0. D. Gọi tốc độ của một xe ô tô là x thì điều kiện của x là x > 0.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "C",
+     "loai_dap_an": "TN",
+     "bai_sgk": 26,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Chọn câu <b>sai</b> trong các câu sau:",
+      "cac": [
+       "Gọi số học sinh của một lớp là x (học sinh) thì điều kiện là x ∈ ℕ*",
+       "Gọi thời gian làm của một xưởng là x (ngày) thì điều kiện là x > 0",
+       "Gọi số bài tập của một học sinh làm trong một ngày là x thì điều kiện là x < 0",
+       "Gọi tốc độ của một xe ô tô là x thì điều kiện của x là x > 0"
+      ],
+      "dap": "C"
+     }
+    },
+    {
+     "ma": "TCK2-DC1.C8",
+     "nhan": "Câu 8",
+     "phan": "I. Phần trắc nghiệm",
+     "nhom": "",
+     "de": "Xe máy đi từ A đến B với vận tốc x (km/h). Ô tô đi từ B về A với vận tốc nhanh hơn vận tốc của xe máy là 15 km/h. Vậy vận tốc của ô tô được biểu diễn theo x là:\nA. x − 15 (km/h). B. 15x (km/h). C. 15 − x (km/h). D. x + 15 (km/h).",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "D",
+     "loai_dap_an": "TN",
+     "bai_sgk": 26,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Xe máy đi từ A đến B với vận tốc x (km/h). Ô tô đi từ B về A với vận tốc nhanh hơn vận tốc của xe máy là 15 km/h. Vậy vận tốc của ô tô được biểu diễn theo x là:",
+      "cac": [
+       "x − 15 (km/h)",
+       "15x (km/h)",
+       "15 − x (km/h)",
+       "x + 15 (km/h)"
+      ],
+      "dap": "D"
+     }
+    },
+    {
+     "ma": "TCK2-DC1.C9",
+     "nhan": "Câu 9",
+     "phan": "I. Phần trắc nghiệm",
+     "nhom": "",
+     "de": "Trên một khúc sông, một chiếc thuyền chạy với vận tốc tối đa đang di chuyển xuôi dòng, một người đứng trên bờ đo được vận tốc của chiếc thuyền là 35 km/h. Biết vận tốc dòng nước là 5 km/h. Hỏi nếu thuyền đó chạy ngược dòng với vận tốc tối đa thì người đứng trên bờ đo được vận tốc của thuyền lúc đó là bao nhiêu?\nA. 30km/h. B. 35km/h. C. 40km/h. D. 70km/h.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "D",
+     "loai_dap_an": "TN",
+     "bai_sgk": 26,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Trên một khúc sông, một chiếc thuyền chạy với vận tốc tối đa đang di chuyển xuôi dòng, một người đứng trên bờ đo được vận tốc của chiếc thuyền là 35 km/h. Biết vận tốc dòng nước là 5 km/h. Hỏi nếu thuyền đó chạy ngược dòng với vận tốc tối đa thì người đứng trên bờ đo được vận tốc của thuyền lúc đó là bao nhiêu?",
+      "cac": [
+       "30 km/h",
+       "35 km/h",
+       "40 km/h",
+       "25 km/h"
+      ],
+      "dap": "D"
+     },
+     "ghi_chu": "Bảng đáp án in A (30 km/h) là sai: 30 km/h là vận tốc của thuyền khi nước yên lặng (35 − 5). Ngược dòng thì vận tốc đo trên bờ là 30 − 5 = 25 km/h, mà bốn phương án in không có số này. Trên máy thay phương án D (70 km/h) bằng 25 km/h, đáp án D."
+    },
+    {
+     "ma": "TCK2-DC1.C10",
+     "nhan": "Câu 10",
+     "phan": "I. Phần trắc nghiệm",
+     "nhom": "",
+     "de": "Trong mặt phẳng tọa độ, có mấy trục tọa độ\nA. 1. B. 2. C. 3. D. 4.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "bai_sgk": 27,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Trong mặt phẳng toạ độ, có mấy trục toạ độ?",
+      "cac": [
+       "1",
+       "2",
+       "3",
+       "4"
+      ],
+      "dap": "B"
+     }
+    },
+    {
+     "ma": "TCK2-DC1.C11",
+     "nhan": "Câu 11",
+     "phan": "I. Phần trắc nghiệm",
+     "nhom": "",
+     "de": "Cho hàm số y = f(x) = 2x − 1. Giá trị của f(0) là:\nA. f(0) = 0. B. f(0) = x. C. f(0) = 2. D. f(0) = −1.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "D",
+     "loai_dap_an": "TN",
+     "bai_sgk": 27,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Cho hàm số y = f(x) = 2x − 1. Giá trị của f(0) là:",
+      "cac": [
+       "f(0) = 0",
+       "f(0) = x",
+       "f(0) = 2",
+       "f(0) = −1"
+      ],
+      "dap": "D"
+     }
+    },
+    {
+     "ma": "TCK2-DC1.C12",
+     "nhan": "Câu 12",
+     "phan": "I. Phần trắc nghiệm",
+     "nhom": "",
+     "de": "Điểm nằm trên trục hoành có tung độ bằng bao nhiêu?\nA. -1. B. 1. C. 0. D. 5.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "C",
+     "loai_dap_an": "TN",
+     "bai_sgk": 27,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Điểm nằm trên trục hoành có tung độ bằng bao nhiêu?",
+      "cac": [
+       "−1",
+       "1",
+       "0",
+       "5"
+      ],
+      "dap": "C"
+     }
+    },
+    {
+     "ma": "TCK2-DC1.C13",
+     "nhan": "Câu 13",
+     "phan": "I. Phần trắc nghiệm",
+     "nhom": "",
+     "de": "Hàm số y = f(x) = mx + 2 đi qua điểm A(−3; −4) thì giá trị của m là:\nA. -3. B. 2. C. -4. D. 0.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "bai_sgk": 28,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Đồ thị của hàm số y = f(x) = mx + 2 đi qua điểm A(−3; −4) thì giá trị của m là:",
+      "cac": [
+       "−3",
+       "2",
+       "−4",
+       "0"
+      ],
+      "dap": "B"
+     },
+     "ghi_chu": "Đề in 'Hàm số ... đi qua điểm A'; trên máy viết 'Đồ thị của hàm số ... đi qua điểm A'."
+    },
+    {
+     "ma": "TCK2-DC1.C14",
+     "nhan": "Câu 14",
+     "phan": "I. Phần trắc nghiệm",
+     "nhom": "",
+     "trung": "TCK2-1.C3"
+    },
+    {
+     "ma": "TCK2-DC1.C15",
+     "nhan": "Câu 15",
+     "phan": "I. Phần trắc nghiệm",
+     "nhom": "",
+     "de": "Cho hàm số y = −2x + 3. Đồ thị của hàm số đi qua điểm nào sau đây?\nA. (−5; 4). B. (1/2; 0). C. (3/4; −3). D. (9/2; −6).",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "D",
+     "loai_dap_an": "TN",
+     "bai_sgk": 28,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Cho hàm số y = −2x + 3. Đồ thị của hàm số đi qua điểm nào sau đây?",
+      "cac": [
+       "(−5; 4)",
+       "(1/2; 0)",
+       "(3/4; −3)",
+       "(9/2; −6)"
+      ],
+      "dap": "D"
+     }
+    },
+    {
+     "ma": "TCK2-DC1.C16",
+     "nhan": "Câu 16",
+     "phan": "I. Phần trắc nghiệm",
+     "nhom": "",
+     "de": "Cho hàm số bậc nhất y = (a + 1)x + 5 với a + 1 là hệ số của x. Để đồ thị hàm số đi qua điểm A(5; 2) thì giá trị của a là:\nA. a = −1/5. B. a = −8/5. C. a = 5. D. a = −5/8.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "bai_sgk": 28,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Cho hàm số bậc nhất y = (a + 1)x + 5 với a + 1 là hệ số của x. Để đồ thị hàm số đi qua điểm A(5; 2) thì giá trị của a là:",
+      "cac": [
+       "a = −1/5",
+       "a = −8/5",
+       "a = 5",
+       "a = −5/8"
+      ],
+      "dap": "B"
+     }
+    },
+    {
+     "ma": "TCK2-DC1.C17",
+     "nhan": "Câu 17",
+     "phan": "I. Phần trắc nghiệm",
+     "nhom": "",
+     "de": "Hệ số b của đường thẳng y = 2(3x − 5) − 7 là\nA. -7. B. -5. C. 6. D. -17.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "D",
+     "loai_dap_an": "TN",
+     "bai_sgk": 28,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Hệ số b của đường thẳng y = 2(3x − 5) − 7 là",
+      "cac": [
+       "−7",
+       "−5",
+       "6",
+       "−17"
+      ],
+      "dap": "D"
+     }
+    },
+    {
+     "ma": "TCK2-DC1.C18",
+     "nhan": "Câu 18",
+     "phan": "I. Phần trắc nghiệm",
+     "nhom": "",
+     "de": "Cho ba đường thẳng (1): y = 3x − 2; (2) y = x − 2 và (3): y = 2(x − 2) + x. Trong các khẳng định sau, đâu là khẳng định sai\nA. Đường thẳng (1) song song với (3). B. Đường thẳng (1) cắt (2). C. Đường thẳng (2) cắt (3). D. Ba đường thẳng (1), (2), (3) song song.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "D",
+     "loai_dap_an": "TN",
+     "bai_sgk": 29,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Cho ba đường thẳng (1): y = 3x − 2; (2): y = x − 2 và (3): y = 2(x − 2) + x. Trong các khẳng định sau, đâu là khẳng định <b>sai</b>?",
+      "cac": [
+       "Đường thẳng (1) song song với (3)",
+       "Đường thẳng (1) cắt (2)",
+       "Đường thẳng (2) cắt (3)",
+       "Ba đường thẳng (1), (2), (3) song song"
+      ],
+      "dap": "D"
+     }
+    },
+    {
+     "ma": "TCK2-DC1.C19",
+     "nhan": "Câu 19",
+     "phan": "I. Phần trắc nghiệm",
+     "nhom": "",
+     "de": "Đường thẳng có hệ số góc bằng 2 và đi qua điểm (−1; 2) là:\nA. y = 2x + 2. B. y = 2x − 1. C. y = −x + 2. D. y = 2x + 4.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "D",
+     "loai_dap_an": "TN",
+     "bai_sgk": 29,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Đường thẳng có hệ số góc bằng 2 và đi qua điểm (−1; 2) là:",
+      "cac": [
+       "y = 2x + 2",
+       "y = 2x − 1",
+       "y = −x + 2",
+       "y = 2x + 4"
+      ],
+      "dap": "D"
+     }
+    },
+    {
+     "ma": "TCK2-DC1.C20",
+     "nhan": "Câu 20",
+     "phan": "I. Phần trắc nghiệm",
+     "nhom": "",
+     "de": "Giá trị của m để đường thẳng y = (m − 1)x + 2 song song với đường thẳng y = −3x là?\nA. m = −3. B. m = −2. C. m = 2. D. m = 1.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "bai_sgk": 29,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Giá trị của m để đường thẳng y = (m − 1)x + 2 song song với đường thẳng y = −3x là?",
+      "cac": [
+       "m = −3",
+       "m = −2",
+       "m = 2",
+       "m = 1"
+      ],
+      "dap": "B"
+     }
+    },
+    {
+     "ma": "TCK2-DC1.B1a",
+     "nhan": "Bài 1a",
+     "phan": "II. Phần tự luận",
+     "nhom": "Bài 1. Giải các phương trình sau:",
+     "de": "Bài 1. Giải các phương trình sau:\na) 7x − 4 = 0",
+     "dang": "CAU_NHO",
+     "dap_an": "x = 4/7",
+     "loai_dap_an": "DAP_SO",
+     "bai_sgk": 25,
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "hoi": "Bài 1. Giải các phương trình sau:\na) 7x − 4 = 0\n(Nếu có nhiều giá trị của x thì viết theo thứ tự từ nhỏ đến lớn, cách nhau bằng dấu ;)",
+      "dap": [
+       "x=4/7",
+       "4/7"
+      ],
+      "phim": [
+       "x"
+      ],
+      "nhieu": [
+       "y",
+       "²",
+       "vô nghiệm"
+      ],
+      "loi_giai": [
+       "7x = 4",
+       "x = 4/7"
+      ]
+     }
+    },
+    {
+     "ma": "TCK2-DC1.B1b",
+     "nhan": "Bài 1b",
+     "phan": "II. Phần tự luận",
+     "nhom": "Bài 1. Giải các phương trình sau:",
+     "de": "Bài 1. Giải các phương trình sau:\nb) 9 − 5x = 0",
+     "dang": "CAU_NHO",
+     "dap_an": "x = 9/5",
+     "loai_dap_an": "DAP_SO",
+     "bai_sgk": 25,
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "hoi": "Bài 1. Giải các phương trình sau:\nb) 9 − 5x = 0\n(Nếu có nhiều giá trị của x thì viết theo thứ tự từ nhỏ đến lớn, cách nhau bằng dấu ;)",
+      "dap": [
+       "x=9/5",
+       "9/5",
+       "x=1,8",
+       "1,8"
+      ],
+      "phim": [
+       "x"
+      ],
+      "nhieu": [
+       "y",
+       "²",
+       "vô nghiệm"
+      ],
+      "loi_giai": [
+       "5x = 9",
+       "x = 9/5"
+      ]
+     }
+    },
+    {
+     "ma": "TCK2-DC1.B1c",
+     "nhan": "Bài 1c",
+     "phan": "II. Phần tự luận",
+     "nhom": "Bài 1. Giải các phương trình sau:",
+     "de": "Bài 1. Giải các phương trình sau:\nc) 11x − (3x + 3) = 8(x − 2)",
+     "dang": "CAU_NHO",
+     "dap_an": "Phương trình vô nghiệm",
+     "loai_dap_an": "DAP_SO",
+     "bai_sgk": 25,
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "hoi": "Bài 1. Giải các phương trình sau:\nc) 11x − (3x + 3) = 8(x − 2)\n(Nếu có nhiều giá trị của x thì viết theo thứ tự từ nhỏ đến lớn, cách nhau bằng dấu ;)",
+      "dap": [
+       "vô nghiệm"
+      ],
+      "phim": [
+       "vô nghiệm"
+      ],
+      "nhieu": [
+       "x",
+       "mọi x",
+       "²"
+      ],
+      "loi_giai": [
+       "11x − 3x − 3 = 8x − 16",
+       "8x − 8x = −16 + 3",
+       "0x = −13; không có giá trị nào của x thoả mãn, nên phương trình vô nghiệm"
+      ]
+     }
+    },
+    {
+     "ma": "TCK2-DC1.B1d",
+     "nhan": "Bài 1d",
+     "phan": "II. Phần tự luận",
+     "nhom": "Bài 1. Giải các phương trình sau:",
+     "de": "Bài 1. Giải các phương trình sau:\nd) (2x − 1)/5 + x = 3 + (3 − x)/4",
+     "dang": "CAU_NHO",
+     "dap_an": "x = 79/33",
+     "loai_dap_an": "DAP_SO",
+     "bai_sgk": 25,
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 5,
+      "hoi": "Bài 1. Giải các phương trình sau:\nd) (2x − 1)/5 + x = 3 + (3 − x)/4\n(Nếu có nhiều giá trị của x thì viết theo thứ tự từ nhỏ đến lớn, cách nhau bằng dấu ;)",
+      "dap": [
+       "x=79/33",
+       "79/33"
+      ],
+      "phim": [
+       "x"
+      ],
+      "nhieu": [
+       "y",
+       "²",
+       "vô nghiệm"
+      ],
+      "loi_giai": [
+       "Nhân hai vế với 20: 4(2x − 1) + 20x = 60 + 5(3 − x)",
+       "8x − 4 + 20x = 60 + 15 − 5x",
+       "8x + 20x + 5x = 75 + 4",
+       "33x = 79",
+       "x = 79/33"
+      ]
+     }
+    },
+    {
+     "ma": "TCK2-DC1.B2a",
+     "nhan": "Bài 2a",
+     "phan": "II. Phần tự luận",
+     "nhom": "Bài 2. Tìm m để phương trình (m − 1)x = m² − 1",
+     "de": "Bài 2. Tìm m để phương trình (m − 1)x = m^2 − 1\na) Vô nghiệm.",
+     "dang": "CAU_NHO",
+     "dap_an": "Không có giá trị nào của m để phương trình vô nghiệm (m − 1 = 0 thì m = 1, khi đó m² − 1 = 0).",
+     "loai_dap_an": "LOI_GIAI",
+     "bai_sgk": 25,
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "hoi": "Bài 2. Tìm m để phương trình (m − 1)x = m² − 1\na) Vô nghiệm.",
+      "dong": [
+       {
+        "chu": "Phương trình dạng ax = b vô nghiệm khi a = 0 và b ≠ 0, tức là m − 1 = 0 và {0}",
+        "o": [
+         {
+          "dung": [
+           "m² − 1 ≠ 0"
+          ],
+          "sai": [
+           "m² − 1 = 0",
+           "m² − 1 > 0"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "m − 1 = 0 thì m = 1, khi đó m² − 1 = {0}",
+        "o": [
+         {
+          "dung": [
+           "0"
+          ],
+          "sai": [
+           "1",
+           "2"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Vậy {0}",
+        "o": [
+         {
+          "dung": [
+           "không có giá trị nào của m để phương trình vô nghiệm"
+          ],
+          "sai": [
+           "m = 1",
+           "m = −1",
+           "m ≠ 1"
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "ma": "TCK2-DC1.B2b",
+     "nhan": "Bài 2b",
+     "phan": "II. Phần tự luận",
+     "nhom": "Bài 2. Tìm m để phương trình (m − 1)x = m² − 1",
+     "de": "Bài 2. Tìm m để phương trình (m − 1)x = m^2 − 1\nb) Vô số nghiệm.",
+     "dang": "CAU_NHO",
+     "dap_an": "m = 1",
+     "loai_dap_an": "DAP_SO",
+     "bai_sgk": 25,
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "hoi": "Bài 2. Tìm m để phương trình (m − 1)x = m² − 1\nb) Vô số nghiệm.",
+      "dap": [
+       "m=1",
+       "1"
+      ],
+      "phim": [
+       "m"
+      ],
+      "nhieu": [
+       "≠",
+       "x"
+      ],
+      "loi_giai": [
+       "Phương trình vô số nghiệm khi m − 1 = 0 và m² − 1 = 0",
+       "m − 1 = 0 ⇔ m = 1; khi đó m² − 1 = 0 cũng thoả mãn",
+       "Vậy m = 1"
+      ]
+     }
+    },
+    {
+     "ma": "TCK2-DC1.B2c",
+     "nhan": "Bài 2c",
+     "phan": "II. Phần tự luận",
+     "nhom": "Bài 2. Tìm m để phương trình (m − 1)x = m² − 1",
+     "de": "Bài 2. Tìm m để phương trình (m − 1)x = m^2 − 1\nc) Có nghiệm duy nhất.",
+     "dang": "CAU_NHO",
+     "dap_an": "m ≠ 1 (x = m + 1)",
+     "loai_dap_an": "DAP_SO",
+     "bai_sgk": 25,
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "hoi": "Bài 2. Tìm m để phương trình (m − 1)x = m² − 1\nc) Có nghiệm duy nhất.",
+      "dap": [
+       "m≠1"
+      ],
+      "phim": [
+       "m",
+       "≠"
+      ],
+      "nhieu": [
+       "x",
+       ">",
+       "<"
+      ],
+      "loi_giai": [
+       "Phương trình có nghiệm duy nhất khi hệ số của x khác 0: m − 1 ≠ 0",
+       "⇔ m ≠ 1 (khi đó nghiệm duy nhất là x = (m² − 1)/(m − 1) = m + 1)"
+      ]
+     }
+    },
+    {
+     "ma": "TCK2-DC1.B3",
+     "nhan": "Bài 3",
+     "phan": "II. Phần tự luận",
+     "nhom": "Bài 3. Bác An đầu tư 500 triệu đồng vào hai tài khoản: mua trái phiếu doanh nghiệp với lãi suất 8% một năm và gửi tiết kiệm ngân hàng với lãi suất 6% một năm. Cuối năm bác An nhận được 34 triệu đồng tiền lãi.",
+     "de": "Bài 3. Bác An đầu tư 500 triệu đồng vào hai tài khoản: mua trái phiếu doanh nghiệp với lãi suất 8% một năm và gửi tiết kiệm ngân hàng với lãi suất 6% một năm. Cuối năm bác An nhận được 34 triệu đồng tiền lãi.\nHỏi bác An đã đầu tư vào mỗi tài khoản bao nhiêu tiền?",
+     "dang": "CAU_NHO",
+     "dap_an": "Trái phiếu 200 triệu đồng, tiết kiệm 300 triệu đồng.",
+     "loai_dap_an": "DAP_SO",
+     "bai_sgk": 26,
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 5,
+      "hoi": "Bài 3. Bác An đầu tư 500 triệu đồng vào hai tài khoản: mua trái phiếu doanh nghiệp với lãi suất 8% một năm và gửi tiết kiệm ngân hàng với lãi suất 6% một năm. Cuối năm bác An nhận được 34 triệu đồng tiền lãi.\nHỏi bác An đã đầu tư vào mỗi tài khoản bao nhiêu tiền?\n(Gõ số tiền mua trái phiếu rồi số tiền gửi tiết kiệm, đơn vị triệu đồng, cách nhau bằng dấu ;)",
+      "dap": [
+       "200;300"
+      ],
+      "phim": [
+       ";"
+      ],
+      "nhieu": [
+       "%",
+       "x"
+      ],
+      "loi_giai": [
+       "Gọi số tiền bác An mua trái phiếu là x (triệu đồng), 0 < x < 500; số tiền gửi tiết kiệm là 500 − x (triệu đồng)",
+       "Tiền lãi trái phiếu là 0,08x, tiền lãi tiết kiệm là 0,06(500 − x) = 30 − 0,06x (triệu đồng)",
+       "0,08x + 30 − 0,06x = 34",
+       "0,02x = 4 ⇔ x = 200 (thoả mãn)",
+       "Mua trái phiếu 200 triệu đồng, gửi tiết kiệm 500 − 200 = 300 triệu đồng"
+      ]
+     }
+    },
+    {
+     "ma": "TCK2-DC1.B4",
+     "nhan": "Bài 4",
+     "phan": "II. Phần tự luận",
+     "nhom": "Bài 4. Một xe tải đi từ M đến N với tốc độ 50 km/h. Khi từ N quay về M xe chạy với tốc độ 40 km/h. Thời gian cả đi lẫn về mất 5 giờ 24 phút không kể thời gian nghỉ.",
+     "de": "Bài 4. Một xe tải đi từ M đến N với tốc độ 50 km/h. Khi từ N quay về M xe chạy với tốc độ 40 km/h. Thời gian cả đi lẫn về mất 5 giờ 24 phút không kể thời gian nghỉ.\nTính chiều dài quãng đường MN.",
+     "dang": "CAU_NHO",
+     "dap_an": "Quãng đường MN dài 120 km.",
+     "loai_dap_an": "DAP_SO",
+     "bai_sgk": 26,
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 6,
+      "hoi": "Bài 4. Một xe tải đi từ M đến N với tốc độ 50 km/h. Khi từ N quay về M xe chạy với tốc độ 40 km/h. Thời gian cả đi lẫn về mất 5 giờ 24 phút không kể thời gian nghỉ.\nTính chiều dài quãng đường MN.\n(Tính theo đơn vị km)",
+      "dap": [
+       "120",
+       "120km"
+      ],
+      "phim": [
+       "km"
+      ],
+      "nhieu": [
+       "m",
+       "giờ"
+      ],
+      "loi_giai": [
+       "Đổi 5 giờ 24 phút = 5 + 24/60 = 27/5 (giờ)",
+       "Gọi quãng đường MN là x (km), x > 0",
+       "Thời gian đi là x/50 (giờ), thời gian về là x/40 (giờ)",
+       "x/50 + x/40 = 27/5",
+       "4x/200 + 5x/200 = 1080/200 ⇔ 9x = 1080",
+       "x = 120 (thoả mãn)"
+      ]
+     }
+    },
+    {
+     "ma": "TCK2-DC1.B5a",
+     "nhan": "Bài 5a",
+     "phan": "II. Phần tự luận",
+     "nhom": "Bài 5. Hai công ty viễn thông đưa ra hai gói cước cho điện thoại cố định như sau:\nCông ty A: cước thuê bao hàng tháng 33 000 đồng, giá cước mỗi phút gọi 800 đồng.\nCông ty B: cước thuê bao hàng tháng 39 000 đồng, giá cước mỗi phút gọi 600 đồng.",
+     "de": "Bài 5. Hai công ty viễn thông đưa ra hai gói cước cho điện thoại cố định như sau:\nCông ty A: cước thuê bao hàng tháng 33 000 đồng, giá cước mỗi phút gọi 800 đồng.\nCông ty B: cước thuê bao hàng tháng 39 000 đồng, giá cước mỗi phút gọi 600 đồng.\na) Gọi x là số phút gọi trong tháng. Hãy biểu thị theo x, số tiền phải trả trong thẳng (tính theo nghìn đồng) khi sử dụng mỗi gói cước nói trên.",
+     "dang": "CAU_NHO",
+     "dap_an": "Công ty A: 0,8x + 33 (nghìn đồng); công ty B: 0,6x + 39 (nghìn đồng).",
+     "loai_dap_an": "DAP_SO",
+     "bai_sgk": 26,
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "hoi": "Bài 5. Hai công ty viễn thông đưa ra hai gói cước cho điện thoại cố định như sau:\nCông ty A: cước thuê bao hàng tháng 33 000 đồng, giá cước mỗi phút gọi 800 đồng.\nCông ty B: cước thuê bao hàng tháng 39 000 đồng, giá cước mỗi phút gọi 600 đồng.\na) Gọi x là số phút gọi trong tháng. Hãy biểu thị theo x, số tiền phải trả trong tháng (tính theo nghìn đồng) khi sử dụng mỗi gói cước nói trên.\n(Gõ biểu thức của công ty A rồi của công ty B, cách nhau bằng dấu ;)",
+      "dap": [
+       "0,8x+33;0,6x+39"
+      ],
+      "phim": [
+       "x",
+       ";"
+      ],
+      "nhieu": [
+       "y",
+       "%"
+      ],
+      "loi_giai": [
+       "800 đồng = 0,8 nghìn đồng; 600 đồng = 0,6 nghìn đồng",
+       "Công ty A: 0,8x + 33 (nghìn đồng)",
+       "Công ty B: 0,6x + 39 (nghìn đồng)"
+      ]
+     },
+     "ghi_chu": "Bảng in hai gói cước chép thành hai dòng chữ. Đề in 'trong thẳng', sửa 'trong tháng'. Lời giải in viết theo đồng (800x + 33000) dù đề hỏi theo nghìn đồng; trên máy theo nghìn đồng như đề."
+    },
+    {
+     "ma": "TCK2-DC1.B5b",
+     "nhan": "Bài 5b",
+     "phan": "II. Phần tự luận",
+     "nhom": "Bài 5. Hai công ty viễn thông đưa ra hai gói cước cho điện thoại cố định như sau:\nCông ty A: cước thuê bao hàng tháng 33 000 đồng, giá cước mỗi phút gọi 800 đồng.\nCông ty B: cước thuê bao hàng tháng 39 000 đồng, giá cước mỗi phút gọi 600 đồng.",
+     "de": "Bài 5. Hai công ty viễn thông đưa ra hai gói cước cho điện thoại cố định như sau:\nCông ty A: cước thuê bao hàng tháng 33 000 đồng, giá cước mỗi phút gọi 800 đồng.\nCông ty B: cước thuê bao hàng tháng 39 000 đồng, giá cước mỗi phút gọi 600 đồng.\nb) Hỏi với bao nhiêu phút gọi thì số tiền phải trả trong tháng khi sử dụng dịch vụ của hai công ty viễn thông này là như nhau?",
+     "dang": "CAU_NHO",
+     "dap_an": "30 phút",
+     "loai_dap_an": "DAP_SO",
+     "bai_sgk": 26,
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "hoi": "Bài 5. Hai công ty viễn thông đưa ra hai gói cước cho điện thoại cố định như sau:\nCông ty A: cước thuê bao hàng tháng 33 000 đồng, giá cước mỗi phút gọi 800 đồng.\nCông ty B: cước thuê bao hàng tháng 39 000 đồng, giá cước mỗi phút gọi 600 đồng.\nb) Hỏi với bao nhiêu phút gọi thì số tiền phải trả trong tháng khi sử dụng dịch vụ của hai công ty viễn thông này là như nhau?",
+      "dap": [
+       "30",
+       "30phút"
+      ],
+      "phim": [
+       "phút"
+      ],
+      "nhieu": [
+       "giờ",
+       "x"
+      ],
+      "loi_giai": [
+       "0,8x + 33 = 0,6x + 39",
+       "0,8x − 0,6x = 39 − 33",
+       "0,2x = 6",
+       "x = 30 (phút)"
+      ]
+     }
+    },
+    {
+     "ma": "TCK2-DC1.B6a",
+     "nhan": "Bài 6a",
+     "phan": "II. Phần tự luận",
+     "nhom": "Bài 6. Cho hàm số bậc nhất y = (m + 2)x + 3.",
+     "de": "Bài 6. Cho hàm số bậc nhất y = (m + 2)x + 3.\na) Tìm m để đồ thị hàm số song song với đường thẳng y = −x.",
+     "dang": "CAU_NHO",
+     "dap_an": "m = −3",
+     "loai_dap_an": "DAP_SO",
+     "bai_sgk": 29,
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "hoi": "Bài 6. Cho hàm số bậc nhất y = (m + 2)x + 3.\na) Tìm m để đồ thị hàm số song song với đường thẳng y = −x.",
+      "dap": [
+       "m=−3",
+       "−3"
+      ],
+      "phim": [
+       "m"
+      ],
+      "nhieu": [
+       "x",
+       "≠"
+      ],
+      "loi_giai": [
+       "Đồ thị song song với đường thẳng y = −x khi m + 2 = −1 (và 3 ≠ 0)",
+       "m = −3"
+      ]
+     }
+    },
+    {
+     "ma": "TCK2-DC1.B6b",
+     "nhan": "Bài 6b",
+     "phan": "II. Phần tự luận",
+     "nhom": "Bài 6. Cho hàm số bậc nhất y = (m + 2)x + 3.",
+     "de": "Bài 6. Cho hàm số bậc nhất y = (m + 2)x + 3.\nb) Vẽ đồ thị hàm số với giá trị m tìm được ở câu a.",
+     "dang": "CAU_NHO",
+     "dap_an": "Hình 2: m = −3 thì y = −x + 3, đồ thị là đường thẳng đi qua A(0; 3) và B(3; 0).",
+     "loai_dap_an": "DAP_SO",
+     "bai_sgk": 28,
+     "hinh": [
+      "dethitoan8/TCK2-DC1.B6b.chon1.webp",
+      "dethitoan8/TCK2-DC1.B6b.chon2.webp"
+     ],
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Bài 6. Cho hàm số bậc nhất y = (m + 2)x + 3.\nb) Vẽ đồ thị hàm số với giá trị m tìm được ở câu a. Hình nào dưới đây vẽ đúng đồ thị đó?",
+      "cac": [
+       "Hình 1",
+       "Hình 2",
+       "Hình 3",
+       "Hình 4"
+      ],
+      "dap": "B"
+     },
+     "ghi_chu": "Ý vẽ đồ thị là câu chọn hình (Ba Huy chốt 06/10/2026): bốn hình vẽ sẵn, ba hình sai theo lỗi hay gặp: sai dấu hệ số góc (y = x + 3), sai dấu tung độ gốc (y = −x − 3), đổi chỗ a với b (y = 3x − 1)."
+    },
+    {
+     "ma": "TCK2-DC1.B6c",
+     "nhan": "Bài 6c",
+     "phan": "II. Phần tự luận",
+     "nhom": "Bài 6. Cho hàm số bậc nhất y = (m + 2)x + 3.",
+     "de": "Bài 6. Cho hàm số bậc nhất y = (m + 2)x + 3.\nc) Tìm giao điểm I của đồ thị hàm số tìm được ở câu a và đồ thị hàm số y = x + 1. Tính diện tích của tam giác OID, trong đó D là giao điểm của đồ thị hàm số y = x + 1 với trục Ox.",
+     "dang": "CAU_NHO",
+     "dap_an": "I(1; 2); diện tích tam giác OID bằng 1 (đơn vị diện tích).",
+     "loai_dap_an": "DAP_SO",
+     "bai_sgk": 29,
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 5,
+      "hoi": "Bài 6. Cho hàm số bậc nhất y = (m + 2)x + 3.\nc) Tìm giao điểm I của đồ thị hàm số tìm được ở câu a và đồ thị hàm số y = x + 1. Tính diện tích của tam giác OID, trong đó D là giao điểm của đồ thị hàm số y = x + 1 với trục Ox.\n(Gõ hoành độ của I, tung độ của I, rồi diện tích tam giác OID, cách nhau bằng dấu ;)",
+      "dap": [
+       "1;2;1"
+      ],
+      "phim": [
+       ";"
+      ],
+      "nhieu": [
+       "x",
+       "y"
+      ],
+      "loi_giai": [
+       "Hoành độ giao điểm I: −x + 3 = x + 1 ⇔ 2x = 2 ⇔ x = 1",
+       "Thay x = 1 vào y = x + 1 được y = 2, nên I(1; 2)",
+       "Cho y = 0 thì x + 1 = 0 ⇔ x = −1, nên D(−1; 0) và OD = 1",
+       "Kẻ IH vuông góc với Ox tại H thì IH = 2 (tung độ của I)",
+       "Diện tích tam giác OID là OD · IH/2 = 1 · 2/2 = 1 (đơn vị diện tích)"
+      ]
+     }
+    },
+    {
+     "ma": "TCK2-DC1.B13",
+     "nhan": "Bài 13*",
+     "phan": "II. Phần tự luận",
+     "nhom": "Bài 13*.",
+     "trung": "TCK2-4.B5",
+     "ghi_chu": "Đề in y hệt Bài 5 đề cuối kì 2 số 4."
+    },
+    {
+     "ma": "TCK2-DC1.B14",
+     "nhan": "Bài 14*",
+     "phan": "II. Phần tự luận",
+     "nhom": "Bài 14*. Cho các số thực a, b, c thoả mãn abc = 2024.",
+     "de": "Bài 14*. Cho các số thực a, b, c thỏa mãn abc = 2024. Tính giá trị của biểu thức:\nP = (2bc − 2024)/(3c − 2bc + 2024) − 2b/(3 − 2b + ab) + (4048 − 3ac)/(3ac − 4048 + 2024a)",
+     "dang": "CAU_NHO",
+     "dap_an": "P = −1",
+     "loai_dap_an": "DAP_SO",
+     "bai_sgk": 23,
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 5,
+      "hoi": "Bài 14*. Cho các số thực a, b, c thoả mãn abc = 2024.\nTính giá trị của biểu thức:\nP = (2bc − 2024)/(3c − 2bc + 2024) − 2b/(3 − 2b + ab) + (4048 − 3ac)/(3ac − 4048 + 2024a)",
+      "dap": [
+       "−1",
+       "P=−1"
+      ],
+      "phim": [
+       "P"
+      ],
+      "nhieu": [
+       "a",
+       "b"
+      ],
+      "loi_giai": [
+       "Thay 2024 = abc và 4048 = 2abc vào P",
+       "(2bc − abc)/(3c − 2bc + abc) = bc(2 − a)/[c(3 − 2b + ab)] = (2b − ab)/(3 − 2b + ab)",
+       "(2abc − 3ac)/(3ac − 2abc + a²bc) = ac(2b − 3)/[ac(3 − 2b + ab)] = (2b − 3)/(3 − 2b + ab)",
+       "P = (2b − ab − 2b + 2b − 3)/(3 − 2b + ab) = (−ab + 2b − 3)/(3 − 2b + ab)",
+       "P = −(3 − 2b + ab)/(3 − 2b + ab) = −1"
+      ]
+     }
+    },
+    {
+     "ma": "TCK2-DC1.B15",
+     "nhan": "Bài 15*",
+     "phan": "II. Phần tự luận",
+     "nhom": "Bài 15*. Cho 2024 số a₁, a₂, ..., a₂₀₂₄ với aₙ = (2n + 1)/[n(n + 1)]² (n = 1, 2, ..., 2024).",
+     "trung": "TCK2-3.B5",
+     "ghi_chu": "Cùng bài toán, cùng số liệu với Bài 5 đề cuối kì 2 số 3 (đề đó viết aₙ = (2n + 1)/(n² + n)², tổng S₂₀₂₄), và lời giải in cũng cộng thiếu số hạng cuối, ra (2024² − 1)/2024²; câu gốc đã sửa thành 1 − 1/2025² = 4100624/4100625."
+    }
+   ]
+  },
+  {
+   "chuong": "Cuối học kì 2",
+   "bai": "Đề cương học kì 2: Hình học",
+   "de_thi": {
+    "ma": "TCK2-DC2",
+    "nguon_goc": "loigiaihay.com, đăng 05/05/2025"
+   },
+   "cac_cau": [
+    {
+     "ma": "TCK2-DC2.C21",
+     "nhan": "Câu 21",
+     "phan": "I. Phần trắc nghiệm",
+     "nhom": "",
+     "de": "ΔABC ᔕ ΔA'B'C' theo tỉ số đồng dạng k = 3 thì tỉ số chiều cao h của ΔABC với chiều cao h' của ΔA'B'C' là:\nA. h/h' = 1/3. B. h/h' = 6. C. h/h' = −3. D. h/h' = 3.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "D",
+     "loai_dap_an": "TN",
+     "bai_sgk": 36,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "ΔABC ᔕ ΔA'B'C' theo tỉ số đồng dạng k = 3 thì tỉ số chiều cao h của ΔABC với chiều cao h' của ΔA'B'C' là:",
+      "cac": [
+       "h/h' = 1/3",
+       "h/h' = 6",
+       "h/h' = −3",
+       "h/h' = 3"
+      ],
+      "dap": "D"
+     }
+    },
+    {
+     "ma": "TCK2-DC2.C22",
+     "nhan": "Câu 22",
+     "phan": "I. Phần trắc nghiệm",
+     "nhom": "",
+     "de": "Cho hình vẽ, ΔABC ᔕ ΔDEC theo trường hợp nào?\nA. Góc – góc. B. Cạnh – góc – cạnh. C. Góc – cạnh. D. Cạnh – cạnh – cạnh.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN",
+     "bai_sgk": 36,
+     "hinh": [
+      "dethitoan8/TCK2-DC2.C22.webp"
+     ],
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Cho hình vẽ, ΔABC ᔕ ΔDEC theo trường hợp nào?",
+      "cac": [
+       "Góc – góc",
+       "Cạnh – góc – cạnh",
+       "Góc – cạnh",
+       "Cạnh – cạnh – cạnh"
+      ],
+      "dap": "A"
+     }
+    },
+    {
+     "ma": "TCK2-DC2.C23",
+     "nhan": "Câu 23",
+     "phan": "I. Phần trắc nghiệm",
+     "nhom": "",
+     "de": "Cho ΔABC vuông tại A (AB ≠ AC) và ΔDEF vuông tại D (DE ≠ DF). Điều nào dưới đây không suy ra ΔABC ᔕ ΔDEF\nA. góc B = góc E. B. góc C = góc F. C. góc B + góc C = góc E + góc F. D. góc B − góc C = góc E − góc F.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "C",
+     "loai_dap_an": "TN",
+     "bai_sgk": 36,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Cho ΔABC vuông tại A (AB ≠ AC) và ΔDEF vuông tại D (DE ≠ DF). Điều nào dưới đây <b>không</b> suy ra ΔABC ᔕ ΔDEF?",
+      "cac": [
+       "góc B = góc E",
+       "góc C = góc F",
+       "góc B + góc C = góc E + góc F",
+       "góc B − góc C = góc E − góc F"
+      ],
+      "dap": "C"
+     }
+    },
+    {
+     "ma": "TCK2-DC2.C24",
+     "nhan": "Câu 24",
+     "phan": "I. Phần trắc nghiệm",
+     "nhom": "",
+     "de": "Giá trị của x bằng bao nhiêu để hai tam giác đồng dạng\nA. x = 2. B. x = √3. C. x = 4. D. x = 2√3.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "C",
+     "loai_dap_an": "TN",
+     "bai_sgk": 36,
+     "hinh": [
+      "dethitoan8/TCK2-DC2.C24.webp"
+     ],
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Giá trị của x bằng bao nhiêu để hai tam giác vuông trong hình đồng dạng?",
+      "cac": [
+       "x = 2",
+       "x = √3",
+       "x = 4",
+       "x = 2√3"
+      ],
+      "dap": "C"
+     }
+    },
+    {
+     "ma": "TCK2-DC2.C25",
+     "nhan": "Câu 25",
+     "phan": "I. Phần trắc nghiệm",
+     "nhom": "",
+     "de": "Cho hình vẽ sau. Biết AB = 3, AC = 4, BC = 5. Khi đó AH là\nA. AH = 20/3. B. AH = 12/5. C. AH = 2. D. AH = 6.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "bai_sgk": 36,
+     "hinh": [
+      "dethitoan8/TCK2-DC2.C25.webp"
+     ],
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Cho hình vẽ sau. Biết AB = 3, AC = 4, BC = 5. Khi đó AH là",
+      "cac": [
+       "AH = 20/3",
+       "AH = 12/5",
+       "AH = 2",
+       "AH = 6"
+      ],
+      "dap": "B"
+     }
+    },
+    {
+     "ma": "TCK2-DC2.C26",
+     "nhan": "Câu 26",
+     "phan": "I. Phần trắc nghiệm",
+     "nhom": "",
+     "de": "Cho hình vẽ sau. Biết AC // HK. Tỉ số S_ΔABC/S_ΔHIK bằng:\nA. 2. B. 4. C. 1/2. D. 1/4.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "bai_sgk": 36,
+     "hinh": [
+      "dethitoan8/TCK2-DC2.C26.webp"
+     ],
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Cho hình vẽ sau. Biết AC // HK. Tỉ số S(ΔABC)/S(ΔHIK) bằng:",
+      "cac": [
+       "2",
+       "4",
+       "1/2",
+       "1/4"
+      ],
+      "dap": "B"
+     },
+     "ghi_chu": "ΔHIK ᔕ ΔABC với tỉ số IH/AB = 2/4 = 1/2, tỉ số diện tích bằng bình phương tỉ số đồng dạng (SGK 9.27) nên S(ΔABC)/S(ΔHIK) = 4."
+    },
+    {
+     "ma": "TCK2-DC2.C27",
+     "nhan": "Câu 27",
+     "phan": "I. Phần trắc nghiệm",
+     "nhom": "",
+     "de": "Trong các cặp hình sau, hình nào là hình đồng dạng:\nA. Hình A. B. Hình B. C. Hình C. D. Không có hình nào.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "bai_sgk": 37,
+     "hinh": [
+      "dethitoan8/TCK2-DC2.C27.webp"
+     ],
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Trong các cặp hình sau, cặp nào là hai hình đồng dạng?",
+      "cac": [
+       "Cặp 1",
+       "Cặp 2",
+       "Cặp 3",
+       "Không có cặp nào"
+      ],
+      "dap": "B"
+     },
+     "ghi_chu": "Hình in ghi ba cặp là A, B, C, trùng chữ cái của nút mà máy trộn lại; trên máy vẽ lại ba cặp, ghi Cặp 1, Cặp 2, Cặp 3 (ảnh in nhỏ và mờ)."
+    },
+    {
+     "ma": "TCK2-DC2.C28",
+     "nhan": "Câu 28",
+     "phan": "I. Phần trắc nghiệm",
+     "nhom": "",
+     "de": "Hình A đồng dạng phối cảnh với hình B theo tỉ số đồng dạng là k = 2/3 thì hình B đồng dạng phối cảnh với hình A theo tỉ số đồng dạng là bao nhiêu?\nA. 1/2. B. 2/3. C. 1/3. D. 3/2.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "D",
+     "loai_dap_an": "TN",
+     "bai_sgk": 37,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Hình A đồng dạng phối cảnh với hình B theo tỉ số đồng dạng là k = 2/3 thì hình B đồng dạng phối cảnh với hình A theo tỉ số đồng dạng là bao nhiêu?",
+      "cac": [
+       "1/2",
+       "2/3",
+       "1/3",
+       "3/2"
+      ],
+      "dap": "D"
+     }
+    },
+    {
+     "ma": "TCK2-DC2.C29",
+     "nhan": "Câu 29",
+     "phan": "I. Phần trắc nghiệm",
+     "nhom": "",
+     "trung": "TCK2-7.C10",
+     "ghi_chu": "Đề in y hệt Câu 10 đề cuối kì 2 số 7 (cùng hình, cùng bốn phương án), chỉ khác vài chữ ở lời dẫn."
+    },
+    {
+     "ma": "TCK2-DC2.C30",
+     "nhan": "Câu 30",
+     "phan": "I. Phần trắc nghiệm",
+     "nhom": "",
+     "de": "Cho hình bên, biết M ∈ AH thỏa mãn AM = 2MH và MN // BC. Chọn câu đúng trong các câu sau:\nA. ΔHMN đồng dạng phối cảnh với ΔHAC, tâm phối cảnh H. B. ΔHMN đồng dạng phối cảnh với ΔHAB, tâm phối cảnh H. C. ΔHAB đồng dạng phối cảnh với ΔHAC, tâm phối cảnh H. D. Cả ba câu trên đều đúng.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "bai_sgk": 37,
+     "hinh": [
+      "dethitoan8/TCK2-DC2.C30.webp"
+     ],
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Cho hình bên, biết M ∈ AH thoả mãn AM = 2MH và MN // AB. Chọn câu đúng trong các câu sau:",
+      "cac": [
+       "ΔHMN đồng dạng phối cảnh với ΔHAC, tâm phối cảnh H",
+       "ΔHMN đồng dạng phối cảnh với ΔHAB, tâm phối cảnh H",
+       "ΔHAB đồng dạng phối cảnh với ΔHAC, tâm phối cảnh H",
+       "ΔHMN đồng dạng phối cảnh với ΔHAB, tâm phối cảnh A"
+      ],
+      "dap": "B"
+     },
+     "ghi_chu": "Đề in 'MN // BC', nhưng N nằm trên BC nên không thể; hình vẽ và đáp án B cho thấy MN // AB, sửa lại. Phương án D in 'Cả ba câu trên đều đúng' nhắc tới vị trí phương án khác, máy trộn phương án nên thay bằng một phương án sai: cùng hai tam giác nhưng tâm phối cảnh A."
+    },
+    {
+     "ma": "TCK2-DC2.C37",
+     "nhan": "Câu 37",
+     "phan": "I. Phần trắc nghiệm",
+     "nhom": "",
+     "de": "Cho hình chóp tam giác đều có độ dài cạnh bên bằng 4 cm và độ dài cạnh đáy bằng 3cm như hình bên dưới, hình nào là hình khai triển của hình chóp tam giác đều đã cho?\nA. Hình a. B. Hình b. C. Hình c. D. Không có hình nào.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "bai_sgk": 38,
+     "hinh": [
+      "dethitoan8/TCK2-DC2.C37-1.webp",
+      "dethitoan8/TCK2-DC2.C37-2.webp"
+     ],
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Cho hình chóp tam giác đều có độ dài cạnh bên bằng 4 cm và độ dài cạnh đáy bằng 3 cm như hình dưới đây. Hình nào là hình khai triển của hình chóp tam giác đều đã cho?",
+      "cac": [
+       "Hình 1",
+       "Hình 2",
+       "Hình 3",
+       "Không có hình nào"
+      ],
+      "dap": "B"
+     },
+     "ghi_chu": "Bảng hình in nhỏ, số 3, 4 khó đọc; trên máy vẽ lại đúng tỉ lệ, hai hàng hai hình, ghi Hình 1, 2, 3 thay a), b), c). Hình 1 đáy 4 cạnh bên 3 (đổi chỗ), Hình 2 đúng, Hình 3 có một mặt bên cạnh 3."
+    },
+    {
+     "ma": "TCK2-DC2.C38",
+     "nhan": "Câu 38",
+     "phan": "I. Phần trắc nghiệm",
+     "nhom": "",
+     "de": "Cho hình chóp tam giác đều như hình vẽ. Biết thể tích là 12 lít. Diện tích ΔAMN bằng\nA. 3 dm^2. B. 9 dm^2. C. 6 dm^2. D. 12 dm^2.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "bai_sgk": 38,
+     "hinh": [
+      "dethitoan8/TCK2-DC2.C38.webp"
+     ],
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Cho hình chóp tam giác đều như hình vẽ. Biết thể tích là 12 lít. Diện tích ΔAMN bằng",
+      "cac": [
+       "3 dm²",
+       "9 dm²",
+       "6 dm²",
+       "12 dm²"
+      ],
+      "dap": "B"
+     }
+    },
+    {
+     "ma": "TCK2-DC2.C39",
+     "nhan": "Câu 39",
+     "phan": "I. Phần trắc nghiệm",
+     "nhom": "",
+     "de": "Cho hình vẽ, trung đoạn của hình chóp tứ giác đều S.MNPQ là:\nA. SH. B. SA. C. HA. D. NQ hoặc MP.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "bai_sgk": 39,
+     "hinh": [
+      "dethitoan8/TCK2-DC2.C39.webp"
+     ],
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Cho hình vẽ, trung đoạn của hình chóp tứ giác đều S.MNPQ là:",
+      "cac": [
+       "SH",
+       "SA",
+       "HA",
+       "NQ hoặc MP"
+      ],
+      "dap": "B"
+     }
+    },
+    {
+     "ma": "TCK2-DC2.C40",
+     "nhan": "Câu 40",
+     "phan": "I. Phần trắc nghiệm",
+     "nhom": "",
+     "de": "Hình chóp tứ giác đều S.ABCD có kích thước trung đoạn SH = 6, cạnh đáy AB = 4. Diện tích xung quanh của hình chóp tứ giác đều là\nA. 12. B. 28. C. 38. D. 48.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "D",
+     "loai_dap_an": "TN",
+     "bai_sgk": 39,
+     "hinh": [
+      "dethitoan8/TCK2-DC2.C40.webp"
+     ],
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Hình chóp tứ giác đều S.ABCD có kích thước trung đoạn SH = 6, cạnh đáy AB = 4. Diện tích xung quanh của hình chóp tứ giác đều là",
+      "cac": [
+       "12",
+       "28",
+       "38",
+       "48"
+      ],
+      "dap": "D"
+     }
+    },
+    {
+     "ma": "TCK2-DC2.B7a",
+     "nhan": "Bài 7a",
+     "phan": "II. Phần tự luận",
+     "nhom": "Bài 7. Cho ΔABC vuông tại A có AB < AC. Vẽ AH ⊥ BC tại H.",
+     "de": "Bài 7. Cho ΔABC vuông tại A có AB < AC. Vẽ AH ⊥ BC tại H.\na) Chứng minh ΔHBA ᔕ ΔABC.",
+     "dang": "CAU_NHO",
+     "dap_an": "ΔHBA và ΔABC có góc BHA = góc BAC = 90°, góc B chung nên ΔHBA ᔕ ΔABC (g.g).",
+     "loai_dap_an": "LOI_GIAI",
+     "bai_sgk": 36,
+     "hinh_goi_y": [
+      "dethitoan8/TCK2-DC2.B7.goi-y.webp"
+     ],
+     "hinh_day_du": [
+      "dethitoan8/TCK2-DC2.B7.day-du.webp"
+     ],
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 3,
+      "hoi": "Bài 7. Cho ΔABC vuông tại A có AB < AC. Vẽ AH ⊥ BC tại H.\na) Chứng minh ΔHBA ᔕ ΔABC.",
+      "buoc": [
+       "Xét ΔHBA và ΔABC có: góc BHA = góc BAC = 90°",
+       "Góc B chung",
+       "Nên ΔHBA ᔕ ΔABC (g.g)"
+      ],
+      "nhieu": [
+       "Xét ΔHBA và ΔABC có: góc BHA = góc BCA",
+       "Nên ΔHBA ᔕ ΔACB (g.g)"
+      ],
+      "thu_tu_khac": [
+       [
+        1,
+        0,
+        2
+       ]
+      ]
+     }
+    },
+    {
+     "ma": "TCK2-DC2.B7b",
+     "nhan": "Bài 7b",
+     "phan": "II. Phần tự luận",
+     "nhom": "Bài 7. Cho ΔABC vuông tại A có AB < AC. Vẽ AH ⊥ BC tại H.",
+     "de": "Bài 7. Cho ΔABC vuông tại A có AB < AC. Vẽ AH ⊥ BC tại H.\nb) Tính độ dài các cạnh BC và AH nếu AB = 9 cm, AC = 12 cm.",
+     "dang": "CAU_NHO",
+     "dap_an": "BC = 15 cm, AH = 7,2 cm.",
+     "loai_dap_an": "DAP_SO",
+     "bai_sgk": 36,
+     "hinh_goi_y": [
+      "dethitoan8/TCK2-DC2.B7.goi-y.webp"
+     ],
+     "hinh_day_du": [
+      "dethitoan8/TCK2-DC2.B7.day-du.webp"
+     ],
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "hoi": "Bài 7. Cho ΔABC vuông tại A có AB < AC. Vẽ AH ⊥ BC tại H.\nb) Tính độ dài các cạnh BC và AH nếu AB = 9 cm, AC = 12 cm.\n(Gõ BC rồi AH, đơn vị cm, cách nhau bằng dấu ;)",
+      "dap": [
+       "15;7,2"
+      ],
+      "phim": [
+       ";"
+      ],
+      "nhieu": [
+       "cm",
+       "√"
+      ],
+      "loi_giai": [
+       "BC² = AB² + AC² = 9² + 12² = 225 (định lí Pythagore)",
+       "BC = √225 = 15 (cm)",
+       "ΔHBA ᔕ ΔABC (câu a) nên AH/AC = AB/BC",
+       "AH = AB · AC/BC = 9 · 12/15 = 7,2 (cm)"
+      ]
+     }
+    },
+    {
+     "ma": "TCK2-DC2.B7c",
+     "nhan": "Bài 7c",
+     "phan": "II. Phần tự luận",
+     "nhom": "Bài 7. Cho ΔABC vuông tại A có AB < AC. Vẽ AH ⊥ BC tại H.",
+     "de": "Bài 7. Cho ΔABC vuông tại A có AB < AC. Vẽ AH ⊥ BC tại H.\nc) Trên HC lấy điểm M sao cho HM = HA. Qua M vẽ đường thẳng vuông góc với BC cắt AC tại I. Qua C vẽ đường thẳng vuông góc với BC cắt tia phân giác góc IMC tại K. Chứng minh H, I, K thẳng hàng.",
+     "dang": "CAU_NHO",
+     "dap_an": "Tam giác MCK vuông cân tại C nên CK = CM. MI // AH nên MI/AH = CM/CH, mà AH = HM nên HM/HC = MI/CK. Hai tam giác vuông HMI và HCK có hai cạnh góc vuông tỉ lệ nên đồng dạng, suy ra góc MHI = góc CHK, hai tia HI, HK trùng nhau: H, I, K thẳng hàng.",
+     "loai_dap_an": "LOI_GIAI",
+     "bai_sgk": 36,
+     "hinh_goi_y": [
+      "dethitoan8/TCK2-DC2.B7.goi-y.webp"
+     ],
+     "hinh_day_du": [
+      "dethitoan8/TCK2-DC2.B7.day-du.webp"
+     ],
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 7,
+      "hoi": "Bài 7. Cho ΔABC vuông tại A có AB < AC. Vẽ AH ⊥ BC tại H.\nc) Trên HC lấy điểm M sao cho HM = HA. Qua M vẽ đường thẳng vuông góc với BC cắt AC tại I. Qua C vẽ đường thẳng vuông góc với BC cắt tia phân giác của góc IMC tại K. Chứng minh H, I, K thẳng hàng.",
+      "buoc": [
+       "Góc IMC = 90° và MK là tia phân giác của góc IMC nên góc KMC = 45°",
+       "Tam giác MCK vuông tại C có góc KMC = 45° nên vuông cân tại C, do đó CK = CM",
+       "MI // AH (cùng vuông góc với BC) nên MI/AH = CM/CH (hệ quả của định lí Thalès)",
+       "Mà AH = HM và CM = CK nên MI/HM = CK/CH, tức là HM/HC = MI/CK",
+       "ΔHMI và ΔHCK có góc HMI = góc HCK = 90°, HM/HC = MI/CK nên ΔHMI ᔕ ΔHCK (hai cạnh góc vuông tỉ lệ)",
+       "Suy ra góc MHI = góc CHK; hai tia HI, HK cùng nằm trên nửa mặt phẳng bờ BC chứa điểm A nên trùng nhau",
+       "Vậy H, I, K thẳng hàng"
+      ],
+      "nhieu": [
+       "Tam giác MCK vuông tại C có góc KMC = 45° nên CK = MK",
+       "ΔHMI và ΔHCK có góc HMI = góc HCK = 90°, HM/HC = CK/MI nên ΔHMI ᔕ ΔHCK",
+       "AH // CK nên góc AHI = góc IKC (so le trong)"
+      ],
+      "thu_tu_khac": [
+       [
+        0,
+        2,
+        1,
+        3,
+        4,
+        5,
+        6
+       ],
+       [
+        2,
+        0,
+        1,
+        3,
+        4,
+        5,
+        6
+       ]
+      ]
+     },
+     "ghi_chu": "Lời giải in viết 'AH // CK nên góc AHI = góc IKC (so le trong)', tức là đã coi H, I, K thẳng hàng, điều phải chứng minh. Trên máy viết lại: tam giác MCK vuông cân nên CK = CM, rồi ΔHMI ᔕ ΔHCK (hai cạnh góc vuông tỉ lệ, SGK Bài 36). Dòng nhiễu thứ ba là lập luận vòng quanh của lời giải in. Hình gợi ý, đầy đủ vẽ lại từ hình lời giải với AB = 9, AC = 12 như ý b; hình gợi ý bỏ đường HIK."
+    },
+    {
+     "ma": "TCK2-DC2.B8a",
+     "nhan": "Bài 8a",
+     "phan": "II. Phần tự luận",
+     "nhom": "Bài 8. Cho ΔABC vuông tại A có AB < AC, đường cao AH.",
+     "de": "Bài 8. Cho ΔABC vuông tại A có AB < AC, đường cao AH.\na) Chứng minh ΔHAC ᔕ ΔABC.",
+     "dang": "CAU_NHO",
+     "dap_an": "ΔHAC và ΔABC có góc AHC = góc BAC = 90°, góc C chung nên ΔHAC ᔕ ΔABC (g.g).",
+     "loai_dap_an": "LOI_GIAI",
+     "bai_sgk": 36,
+     "hinh_goi_y": [
+      "dethitoan8/TCK2-DC2.B8.goi-y.webp"
+     ],
+     "hinh_day_du": [
+      "dethitoan8/TCK2-DC2.B8.day-du.webp"
+     ],
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 3,
+      "hoi": "Bài 8. Cho ΔABC vuông tại A có AB < AC, đường cao AH.\na) Chứng minh ΔHAC ᔕ ΔABC.",
+      "buoc": [
+       "Xét ΔHAC và ΔABC có: góc AHC = góc BAC = 90°",
+       "Góc C chung",
+       "Nên ΔHAC ᔕ ΔABC (g.g)"
+      ],
+      "nhieu": [
+       "Xét ΔHAC và ΔABC có: góc AHC = góc ABC",
+       "Nên ΔHAC ᔕ ΔACB (g.g)"
+      ],
+      "thu_tu_khac": [
+       [
+        1,
+        0,
+        2
+       ]
+      ]
+     }
+    },
+    {
+     "ma": "TCK2-DC2.B8b",
+     "nhan": "Bài 8b",
+     "phan": "II. Phần tự luận",
+     "nhom": "Bài 8. Cho ΔABC vuông tại A có AB < AC, đường cao AH.",
+     "de": "Bài 8. Cho ΔABC vuông tại A có AB < AC, đường cao AH.\nb) Chứng minh HA^2 = HB.HC",
+     "dang": "CAU_NHO",
+     "dap_an": "ΔHAC ᔕ ΔHBA (g.g) vì góc AHC = góc BHA = 90°, góc CAH = góc ABH (cùng phụ với góc ACH); suy ra HA/HB = HC/HA, tức là HA² = HB · HC.",
+     "loai_dap_an": "LOI_GIAI",
+     "bai_sgk": 36,
+     "hinh_goi_y": [
+      "dethitoan8/TCK2-DC2.B8.goi-y.webp"
+     ],
+     "hinh_day_du": [
+      "dethitoan8/TCK2-DC2.B8.day-du.webp"
+     ],
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 5,
+      "hoi": "Bài 8. Cho ΔABC vuông tại A có AB < AC, đường cao AH.\nb) Chứng minh HA² = HB · HC.",
+      "buoc": [
+       "Xét ΔHAC và ΔHBA có: góc AHC = góc BHA = 90°",
+       "Góc CAH = góc ABH (cùng phụ với góc ACH)",
+       "Nên ΔHAC ᔕ ΔHBA (g.g)",
+       "Suy ra HA/HB = HC/HA",
+       "Do đó HA² = HB · HC"
+      ],
+      "nhieu": [
+       "Góc CAH = góc BAH (cùng phụ với góc ACH)",
+       "Suy ra HA/HB = HA/HC"
+      ],
+      "thu_tu_khac": [
+       [
+        1,
+        0,
+        2,
+        3,
+        4
+       ]
+      ]
+     }
+    },
+    {
+     "ma": "TCK2-DC2.B8c",
+     "nhan": "Bài 8c",
+     "phan": "II. Phần tự luận",
+     "nhom": "Bài 8. Cho ΔABC vuông tại A có AB < AC, đường cao AH.",
+     "de": "Bài 8. Cho ΔABC vuông tại A có AB < AC, đường cao AH.\nc) Gọi D và E lần lượt là trung điểm của AB, BC. Chứng minh CH.CB = 4.DE^2",
+     "dang": "CAU_NHO",
+     "dap_an": "ΔHAC ᔕ ΔABC nên AC/BC = HC/AC, tức là AC² = HC · BC; DE là đường trung bình của ΔABC nên AC = 2DE, AC² = 4DE². Vậy CH · CB = 4DE².",
+     "loai_dap_an": "LOI_GIAI",
+     "bai_sgk": 36,
+     "hinh_goi_y": [
+      "dethitoan8/TCK2-DC2.B8.goi-y.webp"
+     ],
+     "hinh_day_du": [
+      "dethitoan8/TCK2-DC2.B8.day-du.webp"
+     ],
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 5,
+      "hoi": "Bài 8. Cho ΔABC vuông tại A có AB < AC, đường cao AH.\nc) Gọi D và E lần lượt là trung điểm của AB, BC. Chứng minh CH · CB = 4DE².",
+      "buoc": [
+       "ΔHAC ᔕ ΔABC (câu a) nên AC/BC = HC/AC",
+       "Suy ra AC² = HC · BC",
+       "D, E lần lượt là trung điểm của AB, BC nên DE là đường trung bình của ΔABC",
+       "Do đó AC = 2DE, suy ra AC² = 4DE²",
+       "Vậy CH · CB = 4DE²"
+      ],
+      "nhieu": [
+       "ΔHAC ᔕ ΔABC (câu a) nên AC/BC = AC/HC",
+       "Do đó DE = 2AC, suy ra AC² = 4DE²"
+      ],
+      "thu_tu_khac": [
+       [
+        0,
+        2,
+        1,
+        3,
+        4
+       ],
+       [
+        0,
+        2,
+        3,
+        1,
+        4
+       ],
+       [
+        2,
+        0,
+        1,
+        3,
+        4
+       ],
+       [
+        2,
+        0,
+        3,
+        1,
+        4
+       ],
+       [
+        2,
+        3,
+        0,
+        1,
+        4
+       ]
+      ]
+     }
+    },
+    {
+     "ma": "TCK2-DC2.B8d",
+     "nhan": "Bài 8d",
+     "phan": "II. Phần tự luận",
+     "nhom": "Bài 8. Cho ΔABC vuông tại A có AB < AC, đường cao AH.",
+     "de": "Bài 8. Cho ΔABC vuông tại A có AB < AC, đường cao AH.\nd) Gọi M là giao điểm của đường thẳng vuông góc với BC tại B và đường thẳng DE. Gọi N là giao điểm của AH và CM. Chứng minh N là trung điểm của AH.",
+     "dang": "CAU_NHO",
+     "dap_an": "Gọi I là giao điểm của AC và BM. ME // IC và E là trung điểm của BC nên BM = MI. AH // BI nên NH/BM = CN/CM = AN/MI, mà BM = MI nên NH = AN: N là trung điểm của AH.",
+     "loai_dap_an": "LOI_GIAI",
+     "bai_sgk": 16,
+     "hinh_goi_y": [
+      "dethitoan8/TCK2-DC2.B8.goi-y.webp"
+     ],
+     "hinh_day_du": [
+      "dethitoan8/TCK2-DC2.B8.day-du.webp"
+     ],
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 8,
+      "hoi": "Bài 8. Cho ΔABC vuông tại A có AB < AC, đường cao AH.\nd) Gọi M là giao điểm của đường thẳng vuông góc với BC tại B và đường thẳng DE. Gọi N là giao điểm của AH và CM. Chứng minh N là trung điểm của AH.",
+      "buoc": [
+       "Gọi I là giao điểm của AC và BM",
+       "DE là đường trung bình của ΔABC nên DE // AC, tức là ME // IC",
+       "ΔBIC có E là trung điểm của BC và ME // IC nên M là trung điểm của BI, tức là BM = MI",
+       "AH ⊥ BC và BI ⊥ BC nên AH // BI, tức là NH // BM và AN // MI",
+       "ΔCBM có NH // BM nên NH/BM = CN/CM (hệ quả của định lí Thalès)",
+       "ΔCMI có AN // MI nên AN/MI = CN/CM (hệ quả của định lí Thalès)",
+       "Suy ra NH/BM = AN/MI, mà BM = MI nên NH = AN",
+       "Vậy N là trung điểm của AH"
+      ],
+      "nhieu": [
+       "ΔCBM có NH // BM nên NH/BM = CM/CN (hệ quả của định lí Thalès)",
+       "ΔBIC có E là trung điểm của BC và ME // IC nên BM = 2MI",
+       "AH ⊥ BC và BI ⊥ BC nên AH ⊥ BI"
+      ],
+      "thu_tu_khac": [
+       [
+        0,
+        1,
+        2,
+        3,
+        5,
+        4,
+        6,
+        7
+       ],
+       [
+        0,
+        1,
+        3,
+        2,
+        4,
+        5,
+        6,
+        7
+       ],
+       [
+        0,
+        1,
+        3,
+        2,
+        5,
+        4,
+        6,
+        7
+       ],
+       [
+        0,
+        1,
+        3,
+        4,
+        2,
+        5,
+        6,
+        7
+       ],
+       [
+        0,
+        1,
+        3,
+        4,
+        5,
+        2,
+        6,
+        7
+       ],
+       [
+        0,
+        1,
+        3,
+        5,
+        2,
+        4,
+        6,
+        7
+       ],
+       [
+        0,
+        1,
+        3,
+        5,
+        4,
+        2,
+        6,
+        7
+       ],
+       [
+        0,
+        3,
+        1,
+        2,
+        4,
+        5,
+        6,
+        7
+       ],
+       [
+        0,
+        3,
+        1,
+        2,
+        5,
+        4,
+        6,
+        7
+       ],
+       [
+        0,
+        3,
+        1,
+        4,
+        2,
+        5,
+        6,
+        7
+       ],
+       [
+        0,
+        3,
+        1,
+        4,
+        5,
+        2,
+        6,
+        7
+       ],
+       [
+        0,
+        3,
+        1,
+        5,
+        2,
+        4,
+        6,
+        7
+       ],
+       [
+        0,
+        3,
+        1,
+        5,
+        4,
+        2,
+        6,
+        7
+       ],
+       [
+        0,
+        3,
+        4,
+        1,
+        2,
+        5,
+        6,
+        7
+       ],
+       [
+        0,
+        3,
+        4,
+        1,
+        5,
+        2,
+        6,
+        7
+       ],
+       [
+        0,
+        3,
+        4,
+        5,
+        1,
+        2,
+        6,
+        7
+       ],
+       [
+        0,
+        3,
+        5,
+        1,
+        2,
+        4,
+        6,
+        7
+       ],
+       [
+        0,
+        3,
+        5,
+        1,
+        4,
+        2,
+        6,
+        7
+       ],
+       [
+        0,
+        3,
+        5,
+        4,
+        1,
+        2,
+        6,
+        7
+       ]
+      ]
+     },
+     "ghi_chu": "Ý d chỉ dùng định lí Thalès và đường trung bình (Bài 15, 16) nên bai_sgk 16. Hình gợi ý, đầy đủ vẽ lại từ hình lời giải (AB = 3, AC = 5); hình gợi ý bỏ điểm I và hai đoạn MI, AI mà chỉ lời giải mới có."
+    },
+    {
+     "ma": "TCK2-DC2.B11",
+     "nhan": "Bài 11",
+     "phan": "II. Phần tự luận",
+     "nhom": "Bài 11. Bộ nam châm xếp hình có dạng hình chóp tam giác đều có độ dài cạnh đáy khoảng 6 cm và mặt bên có đường cao khoảng 7 cm.",
+     "de": "Bài 11. Bộ nam châm xếp hình có dạng hình chóp tam giác đều (như hình bên) có độ dài đáy khoảng 6cm và mặt bên có đường cao khoảng 7cm. Tính diện tích xung quanh bộ nam châm xếp hình đó?",
+     "dang": "CAU_NHO",
+     "dap_an": "63 cm²",
+     "loai_dap_an": "DAP_SO",
+     "bai_sgk": 38,
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "hoi": "Bài 11. Bộ nam châm xếp hình có dạng hình chóp tam giác đều có độ dài cạnh đáy khoảng 6 cm và mặt bên có đường cao khoảng 7 cm.\nTính diện tích xung quanh bộ nam châm xếp hình đó.",
+      "dap": [
+       "63",
+       "63cm²"
+      ],
+      "phim": [
+       "cm²"
+      ],
+      "nhieu": [
+       "cm³",
+       "cm"
+      ],
+      "loi_giai": [
+       "Nửa chu vi đáy: p = 3 · 6 : 2 = 9 (cm)",
+       "Diện tích xung quanh: Sxq = p · d = 9 · 7 = 63 (cm²)"
+      ]
+     },
+     "ghi_chu": "Ảnh bộ nam châm in cạnh đề chỉ để minh hoạ, không lấy (như TCK2-1 Bài 3); bỏ chữ 'như hình bên'. Đề in 'độ dài đáy', trên máy viết 'độ dài cạnh đáy'."
+    },
+    {
+     "ma": "TCK2-DC2.B12-1",
+     "nhan": "Bài 12.1",
+     "phan": "II. Phần tự luận",
+     "nhom": "Bài 12. Kim tự tháp Giza nổi tiếng ở Ai Cập có dạng hình chóp tứ giác đều với chiều cao khoảng 147 m và đáy là hình vuông cạnh khoảng 230 m.",
+     "de": "Bài 12. Kim tự tháp Giza nổi tiếng ở Ai Cập có dạng hình chóp tứ giác đều với chiều cao khoảng 147 m và đáy là hình vuông cạnh khoảng 230 m.\n1. Tính thể tích của kim tự tháp Giza.",
+     "dang": "CAU_NHO",
+     "dap_an": "2 592 100 m³",
+     "loai_dap_an": "DAP_SO",
+     "bai_sgk": 39,
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "hoi": "Bài 12. Kim tự tháp Giza nổi tiếng ở Ai Cập có dạng hình chóp tứ giác đều với chiều cao khoảng 147 m và đáy là hình vuông cạnh khoảng 230 m.\n1. Tính thể tích của kim tự tháp Giza.",
+      "dap": [
+       "2592100",
+       "2592100m³"
+      ],
+      "phim": [
+       "m³"
+      ],
+      "nhieu": [
+       "m²",
+       "cm³"
+      ],
+      "loi_giai": [
+       "Diện tích đáy: 230² = 52900 (m²)",
+       "V = (1/3) · 52900 · 147 = 2592100 (m³)"
+      ]
+     },
+     "ghi_chu": "Ảnh kim tự tháp in cạnh đề chỉ để minh hoạ, không lấy."
+    },
+    {
+     "ma": "TCK2-DC2.B12-2",
+     "nhan": "Bài 12.2",
+     "phan": "II. Phần tự luận",
+     "nhom": "Bài 12. Kim tự tháp Giza nổi tiếng ở Ai Cập có dạng hình chóp tứ giác đều với chiều cao khoảng 147 m và đáy là hình vuông cạnh khoảng 230 m.",
+     "de": "Bài 12. Kim tự tháp Giza nổi tiếng ở Ai Cập có dạng hình chóp tứ giác đều với chiều cao khoảng 147 m và đáy là hình vuông cạnh khoảng 230 m.\n2. Đường cao của mặt bên xuất phát từ đỉnh của kim tự tháp đo được dài 186,6 m. Tính diện tích xung quanh của kim tự tháp Giza.",
+     "dang": "CAU_NHO",
+     "dap_an": "85 836 m²",
+     "loai_dap_an": "DAP_SO",
+     "bai_sgk": 39,
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "hoi": "Bài 12. Kim tự tháp Giza nổi tiếng ở Ai Cập có dạng hình chóp tứ giác đều với chiều cao khoảng 147 m và đáy là hình vuông cạnh khoảng 230 m.\n2. Đường cao của mặt bên xuất phát từ đỉnh của kim tự tháp đo được dài 186,6 m. Tính diện tích xung quanh của kim tự tháp Giza.",
+      "dap": [
+       "85836",
+       "85836m²"
+      ],
+      "phim": [
+       "m²"
+      ],
+      "nhieu": [
+       "m³",
+       "m"
+      ],
+      "loi_giai": [
+       "Nửa chu vi đáy: p = 4 · 230 : 2 = 460 (m)",
+       "Sxq = p · d = 460 · 186,6 = 85836 (m²)"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "chuong": "Cuối học kì 2",
+   "bai": "Đề cương học kì 2: Xác suất",
+   "de_thi": {
+    "ma": "TCK2-DC3",
+    "nguon_goc": "loigiaihay.com, đăng 05/05/2025"
+   },
+   "cac_cau": [
+    {
+     "ma": "TCK2-DC3.C31",
+     "nhan": "Câu 31",
+     "phan": "I. Phần trắc nghiệm",
+     "nhom": "",
+     "de": "Một hộp chứa 15 tấm thẻ cùng loại được đánh số từ 11 đến 25. Minh lấy ngẫu nhiên một thẻ từ hộp. Xác suất để thẻ chọn ra ghi số chia hết cho 3 là:\nA. 1/2. B. 1/3. C. 1/4. D. 1/5.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "bai_sgk": 31,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Một hộp chứa 15 tấm thẻ cùng loại được đánh số từ 11 đến 25. Minh lấy ngẫu nhiên một thẻ từ hộp. Xác suất để thẻ chọn ra ghi số chia hết cho 3 là:",
+      "cac": [
+       "1/2",
+       "1/3",
+       "1/4",
+       "1/5"
+      ],
+      "dap": "B"
+     }
+    },
+    {
+     "ma": "TCK2-DC3.C32",
+     "nhan": "Câu 32",
+     "phan": "I. Phần trắc nghiệm",
+     "nhom": "",
+     "de": "Một hộp chứa thẻ màu xanh và thẻ màu đỏ có kích thước và khối lượng như nhau. Hải lấy ra ngẫu nhiên một thẻ từ hộp, xem màu rồi trả lại hộp. Lặp lại thí nghiệm đó 50 lần, Hải thấy có 14 lần lấy được thẻ màu xanh. Xác suất thực nghiệm của biến cố “Lấy được thẻ màu đỏ” là:\nA. 0,14. B. 0,28. C. 0,72. D. 0,86.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "C",
+     "loai_dap_an": "TN",
+     "bai_sgk": 32,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Một hộp chứa thẻ màu xanh và thẻ màu đỏ có kích thước và khối lượng như nhau. Hải lấy ra ngẫu nhiên một thẻ từ hộp, xem màu rồi trả lại hộp. Lặp lại thí nghiệm đó 50 lần, Hải thấy có 14 lần lấy được thẻ màu xanh. Xác suất thực nghiệm của biến cố “Lấy được thẻ màu đỏ” là:",
+      "cac": [
+       "0,14",
+       "0,28",
+       "0,72",
+       "0,86"
+      ],
+      "dap": "C"
+     }
+    },
+    {
+     "ma": "TCK2-DC3.C33",
+     "nhan": "Câu 33",
+     "phan": "I. Phần trắc nghiệm",
+     "nhom": "",
+     "de": "Tỉ lệ học sinh bị cận thị ở một trường trung học cơ sở là 18%. Gặp ngẫu nhiên một học sinh ở trường, xác suất học sinh đó bị cận thị là:\nA. 0,18. B. 0,82. C. 0,92. D. 0,5.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN",
+     "bai_sgk": 32,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Tỉ lệ học sinh bị cận thị ở một trường trung học cơ sở là 18%. Gặp ngẫu nhiên một học sinh ở trường, xác suất học sinh đó bị cận thị là:",
+      "cac": [
+       "0,18",
+       "0,82",
+       "0,92",
+       "0,5"
+      ],
+      "dap": "A"
+     }
+    },
+    {
+     "ma": "TCK2-DC3.C34",
+     "nhan": "Câu 34",
+     "phan": "I. Phần trắc nghiệm",
+     "nhom": "",
+     "de": "An gieo 3 con xúc xắc cân đối và đồng chất. Xác suất của biến cố “Tích số chấm xuất hiện trên ba con xúc xắc bằng 28” là:\nA. 0. B. 1/18. C. 1/36. D. 1/12.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN",
+     "bai_sgk": 31,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "An gieo 3 con xúc xắc cân đối và đồng chất. Xác suất của biến cố “Tích số chấm xuất hiện trên ba con xúc xắc bằng 28” là:",
+      "cac": [
+       "0",
+       "1/18",
+       "1/36",
+       "1/12"
+      ],
+      "dap": "A"
+     }
+    },
+    {
+     "ma": "TCK2-DC3.C35",
+     "nhan": "Câu 35",
+     "phan": "I. Phần trắc nghiệm",
+     "nhom": "",
+     "de": "Lớp 8A có 38 học sinh, trong đó có 18 bạn nữ. Có 8 bạn nữ tham gia câu lạc bộ thể thao và 10 bạn nam không tham gia câu lạc bộ thể thao. Chọn ngẫu nhiên một học sinh trong lớp, xác suất để học sinh đó là một bạn nam tham gia câu lạc bộ thể thao là\nA. 10/20. B. 5/19. C. 18/21. D. 9/23.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "bai_sgk": 31,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Lớp 8A có 38 học sinh, trong đó có 18 bạn nữ. Có 8 bạn nữ tham gia câu lạc bộ thể thao và 10 bạn nam không tham gia câu lạc bộ thể thao. Chọn ngẫu nhiên một học sinh trong lớp, xác suất để học sinh đó là một bạn nam tham gia câu lạc bộ thể thao là",
+      "cac": [
+       "10/20",
+       "5/19",
+       "18/21",
+       "9/23"
+      ],
+      "dap": "B"
+     }
+    },
+    {
+     "ma": "TCK2-DC3.C36",
+     "nhan": "Câu 36",
+     "phan": "I. Phần trắc nghiệm",
+     "nhom": "",
+     "de": "Một túi đựng các quả cầu giống hệt nhau, chỉ khác màu, trong đó có 27 quả màu đỏ, 35 quả màu tím, 7 quả màu vàng, 11 quả màu trắng và 15 quả màu đen. Lấy ngẫu nhiên 1 quả trong túi. Xác suất lấy được quả cầu màu tím là:\nA. 33/95. B. 34/95. C. 7/19. D. 19/35.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "C",
+     "loai_dap_an": "TN",
+     "bai_sgk": 31,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Một túi đựng các quả cầu giống hệt nhau, chỉ khác màu, trong đó có 27 quả màu đỏ, 35 quả màu tím, 7 quả màu vàng, 11 quả màu trắng và 15 quả màu đen. Lấy ngẫu nhiên 1 quả trong túi. Xác suất lấy được quả cầu màu tím là:",
+      "cac": [
+       "33/95",
+       "34/95",
+       "7/19",
+       "19/35"
+      ],
+      "dap": "C"
+     }
+    },
+    {
+     "ma": "TCK2-DC3.B9A",
+     "nhan": "Bài 9 (A)",
+     "phan": "II. Phần tự luận",
+     "nhom": "Bài 9. Một hộp chứa 6 tấm thẻ cùng loại được đánh số lần lượt là 2; 3; 5; 8; 13; 21. Lấy ra ngẫu nhiên 1 thẻ từ hộp. Tính xác suất của các biến cố:\nA: “Số ghi trên thẻ là số lẻ”.\nB: “Số ghi trên thẻ là số nguyên tố”.\nC: “Số ghi trên thẻ là số chính phương”.",
+     "de": "Bài 9. Một hộp chứa 6 tấm thẻ cùng loại được đánh số lần lượt là 2; 3; 5; 8; 13; 21. Lấy ra ngẫu nhiên 1 thẻ từ hộp. Tính xác suất của các biến cố:\nA: “Số ghi trên thẻ là số lẻ”.\nB: “Số ghi trên thẻ là số nguyên tố”.\nC: “Số ghi trên thẻ là số chính phương”.",
+     "dang": "CAU_NHO",
+     "dap_an": "P(A) = 2/3",
+     "loai_dap_an": "DAP_SO",
+     "bai_sgk": 31,
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "hoi": "Bài 9. Một hộp chứa 6 tấm thẻ cùng loại được đánh số lần lượt là 2; 3; 5; 8; 13; 21. Lấy ra ngẫu nhiên 1 thẻ từ hộp. Tính xác suất của các biến cố:\nA: “Số ghi trên thẻ là số lẻ”.\nB: “Số ghi trên thẻ là số nguyên tố”.\nC: “Số ghi trên thẻ là số chính phương”.\nTính xác suất của biến cố A.\n(Viết xác suất dưới dạng phân số tối giản)",
+      "dap": [
+       "2/3"
+      ],
+      "phim": [],
+      "nhieu": [],
+      "loi_giai": [
+       "Có 6 kết quả có thể: 2; 3; 5; 8; 13; 21",
+       "Kết quả thuận lợi cho A là 3; 5; 13; 21",
+       "P(A) = 4/6 = 2/3"
+      ]
+     },
+     "ghi_chu": "Đề in hỏi một lần cả ba biến cố; trên máy tách mỗi biến cố một câu."
+    },
+    {
+     "ma": "TCK2-DC3.B9B",
+     "nhan": "Bài 9 (B)",
+     "phan": "II. Phần tự luận",
+     "nhom": "Bài 9. Một hộp chứa 6 tấm thẻ cùng loại được đánh số lần lượt là 2; 3; 5; 8; 13; 21. Lấy ra ngẫu nhiên 1 thẻ từ hộp. Tính xác suất của các biến cố:\nA: “Số ghi trên thẻ là số lẻ”.\nB: “Số ghi trên thẻ là số nguyên tố”.\nC: “Số ghi trên thẻ là số chính phương”.",
+     "de": "Bài 9. Một hộp chứa 6 tấm thẻ cùng loại được đánh số lần lượt là 2; 3; 5; 8; 13; 21. Lấy ra ngẫu nhiên 1 thẻ từ hộp. Tính xác suất của các biến cố:\nA: “Số ghi trên thẻ là số lẻ”.\nB: “Số ghi trên thẻ là số nguyên tố”.\nC: “Số ghi trên thẻ là số chính phương”.",
+     "dang": "CAU_NHO",
+     "dap_an": "P(B) = 2/3",
+     "loai_dap_an": "DAP_SO",
+     "bai_sgk": 31,
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "hoi": "Bài 9. Một hộp chứa 6 tấm thẻ cùng loại được đánh số lần lượt là 2; 3; 5; 8; 13; 21. Lấy ra ngẫu nhiên 1 thẻ từ hộp. Tính xác suất của các biến cố:\nA: “Số ghi trên thẻ là số lẻ”.\nB: “Số ghi trên thẻ là số nguyên tố”.\nC: “Số ghi trên thẻ là số chính phương”.\nTính xác suất của biến cố B.\n(Viết xác suất dưới dạng phân số tối giản)",
+      "dap": [
+       "2/3"
+      ],
+      "phim": [],
+      "nhieu": [],
+      "loi_giai": [
+       "Có 6 kết quả có thể: 2; 3; 5; 8; 13; 21",
+       "Kết quả thuận lợi cho B là 2; 3; 5; 13",
+       "P(B) = 4/6 = 2/3"
+      ]
+     }
+    },
+    {
+     "ma": "TCK2-DC3.B9C",
+     "nhan": "Bài 9 (C)",
+     "phan": "II. Phần tự luận",
+     "nhom": "Bài 9. Một hộp chứa 6 tấm thẻ cùng loại được đánh số lần lượt là 2; 3; 5; 8; 13; 21. Lấy ra ngẫu nhiên 1 thẻ từ hộp. Tính xác suất của các biến cố:\nA: “Số ghi trên thẻ là số lẻ”.\nB: “Số ghi trên thẻ là số nguyên tố”.\nC: “Số ghi trên thẻ là số chính phương”.",
+     "de": "Bài 9. Một hộp chứa 6 tấm thẻ cùng loại được đánh số lần lượt là 2; 3; 5; 8; 13; 21. Lấy ra ngẫu nhiên 1 thẻ từ hộp. Tính xác suất của các biến cố:\nA: “Số ghi trên thẻ là số lẻ”.\nB: “Số ghi trên thẻ là số nguyên tố”.\nC: “Số ghi trên thẻ là số chính phương”.",
+     "dang": "CAU_NHO",
+     "dap_an": "P(C) = 0",
+     "loai_dap_an": "DAP_SO",
+     "bai_sgk": 31,
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "hoi": "Bài 9. Một hộp chứa 6 tấm thẻ cùng loại được đánh số lần lượt là 2; 3; 5; 8; 13; 21. Lấy ra ngẫu nhiên 1 thẻ từ hộp. Tính xác suất của các biến cố:\nA: “Số ghi trên thẻ là số lẻ”.\nB: “Số ghi trên thẻ là số nguyên tố”.\nC: “Số ghi trên thẻ là số chính phương”.\nTính xác suất của biến cố C.\n(Viết xác suất dưới dạng phân số tối giản)",
+      "dap": [
+       "0"
+      ],
+      "phim": [],
+      "nhieu": [],
+      "loi_giai": [
+       "Có 6 kết quả có thể: 2; 3; 5; 8; 13; 21",
+       "Không có số nào trong các số trên là số chính phương",
+       "P(C) = 0/6 = 0"
+      ]
+     }
+    },
+    {
+     "ma": "TCK2-DC3.B10",
+     "nhan": "Bài 10",
+     "phan": "II. Phần tự luận",
+     "nhom": "Bài 10. Khuê tung hai đồng xu giống nhau 100 lần và ghi lại kết quả ở bảng sau:\nHai đồng sấp: 16 lần; Một đồng sấp, một đồng ngửa: 44 lần; Hai đồng ngửa: 40 lần.",
+     "de": "Bài 10. Khuê tung hai đồng xu giống nhau 100 lần và ghi lại kết quả ở bảng sau:\nHai đồng sấp: 16 lần; Một đồng sấp, một đồng ngửa: 44 lần; Hai đồng ngửa: 40 lần.\nTính xác suất thực nghiệm của biến cố : “Hai đồng xu đều xuất hiện mặt sấp sau 100 lần tung”.",
+     "dang": "CAU_NHO",
+     "dap_an": "16/100 = 4/25",
+     "loai_dap_an": "DAP_SO",
+     "bai_sgk": 32,
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "hoi": "Bài 10. Khuê tung hai đồng xu giống nhau 100 lần và ghi lại kết quả ở bảng sau:\nHai đồng sấp: 16 lần; Một đồng sấp, một đồng ngửa: 44 lần; Hai đồng ngửa: 40 lần.\nTính xác suất thực nghiệm của biến cố: “Hai đồng xu đều xuất hiện mặt sấp sau 100 lần tung”.",
+      "dap": [
+       "4/25",
+       "0,16",
+       "16/100"
+      ],
+      "phim": [],
+      "nhieu": [],
+      "loi_giai": [
+       "Có 16 lần hai đồng xu đều xuất hiện mặt sấp trong 100 lần tung",
+       "Xác suất thực nghiệm: 16/100 = 4/25"
+      ]
+     },
+     "ghi_chu": "Bảng kết quả in dạng bảng, chép thành một dòng chữ."
     }
    ]
   }

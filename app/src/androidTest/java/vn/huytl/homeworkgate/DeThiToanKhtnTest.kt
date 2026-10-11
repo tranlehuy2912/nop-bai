@@ -47,7 +47,7 @@ class DeThiToanKhtnTest {
         )
         assertEquals(
             (1..8).map { "TGK1-$it" } + (1..8).map { "TCK1-$it" } + (1..3).map { "TCK1-DC$it" } +
-                (1..10).map { "TGK2-$it" } + (1..7).map { "TCK2-$it" },
+                (1..10).map { "TGK2-$it" } + (1..7).map { "TCK2-$it" } + (1..3).map { "TCK2-DC$it" },
             cua(LichKiemTra.TOAN).map { it.ma }
         )
         assertTrue(NganHang.boDeThi().map { it.nguon }.containsAll(listOf("dethitoan8", "dethikhtn8")))
@@ -109,6 +109,22 @@ class DeThiToanKhtnTest {
         assertEquals((10..17).toSet(), de.getValue("TCK1-DC2").cacBai)
         assertEquals((18..20).toSet(), de.getValue("TCK1-DC3").cacBai)
         de.values.forEach { assertEquals(it.ma, "CK1", vn.huytl.homeworkgate.data.GiaiDe.kyCua(it)) }
+    }
+
+    /**
+     * De cuong on hoc ki 2 Toan (11/10/2026): Dai so (Bai 23-29, Bai 14* la phan thuc), Hinh hoc (y d
+     * Bai 8 chi dung Thales nen co Bai 16), Xac suat; nam trong nhom cuoi ky II.
+     */
+    @Test
+    fun de_cuong_toan_hoc_ki_2_tach_theo_mang() {
+        val de = cua(LichKiemTra.TOAN).filter { it.ma.startsWith("TCK2-DC") }.associateBy { it.ma }
+        assertEquals(setOf(23, 25, 26, 27, 28, 29), de.getValue("TCK2-DC1").cacBai)
+        assertEquals(setOf(16, 36, 37, 38, 39), de.getValue("TCK2-DC2").cacBai)
+        assertEquals(setOf(31, 32), de.getValue("TCK2-DC3").cacBai)
+        assertEquals(setOf("toan8ds"), de.getValue("TCK2-DC1").denBai.keys)
+        assertEquals(setOf("toan8hh"), de.getValue("TCK2-DC2").denBai.keys)
+        assertEquals(setOf("toan8ds"), de.getValue("TCK2-DC3").denBai.keys)
+        de.values.forEach { assertEquals(it.ma, "CK2", vn.huytl.homeworkgate.data.GiaiDe.kyCua(it)) }
     }
 
     /** De cuong on cuoi ki 1 KHTN (11/10/2026): mot de Hoa, mot de Li, nam trong nhom cuoi ky I. */
