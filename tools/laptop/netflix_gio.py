@@ -27,6 +27,8 @@
 #     xuat trong ngay (suKien). Tu 9/10/2026 moi ngay mot document laptop/{maNha}/ngay/{ngay},
 #     giu 7 ngay, cho the "Thời gian dùng laptop" o tab Nhat ky (dong "Hôm nay: ..." tren the
 #     Laptop bo cung ngay).
+#  8. Tu 11/10/2026 ghi truong remote { ip, cong, khoa }: dia chi trong Wi-Fi nha va ma khoa cua
+#     netflix-remote, de man Remote tren dien thoai noi thang toi laptop (xem thong_tin_remote).
 #
 # Phan lon chi dung thu vien chuan cua Python 3 (Mint 22 co san 3.12). Rieng ket noi nghe
 # (9/10/2026) dung thu vien Firestore cua Google (google-cloud-firestore, kem grpcio), cai bang
@@ -128,6 +130,12 @@ XAUTH = "/run/lightdm/root/:0"
 # 9/10/2026 phien cua lehoa xem ca Netflix lan YouTube nen o dang nhap doi thanh "Xem phim" (cai.sh
 # dat ten nay); chu "Netflix" tren tablet, dien thoai de nguyen toi lan build app sau (anh Huy chot).
 TEN_HIEN = {"lehoa": "Xem phim", "huy": "Admin"}
+
+# Remote tivi (11/10/2026): netflix-remote nghe o cong nay, ma khoa nam o file nay (no tao lan chay
+# dau). Day ghi dia chi cua laptop trong mang nha cung ma khoa vao truong remote cua document
+# laptop/{maNha}; dien thoai doc mot lan roi noi thang toi laptop qua Wi-Fi, xem dau netflix-remote.
+CONG_REMOTE = 8790
+KHOA_REMOTE = "/var/lib/netflix-gio/remote.khoa"
 
 
 def ghi_con_lai(giay, dung):
@@ -774,6 +782,24 @@ def nhan_tivi(chu, so_lan, nhan_ai, ten):
     return True, "Đã đọc %d lần trên tivi lúc %s." % (doc_duoc, luc)
 
 
+def thong_tin_remote():
+    """{ ip, cong, khoa } cho dien thoai noi toi netflix-remote; None khi chua co ma khoa hay mat mang.
+
+    ip la dia chi ma laptop dung ra mang ngoai, tuc dia chi trong Wi-Fi nha (11/10/2026 la
+    192.168.0.107), khong phai dia chi Tailscale.
+    """
+    try:
+        with open(KHOA_REMOTE) as f:
+            khoa = f.read().strip()
+    except OSError:
+        return None
+    r = subprocess.run(["ip", "-4", "route", "get", "1.1.1.1"], capture_output=True, text=True)
+    m = re.search(r"\bsrc (\d+\.\d+\.\d+\.\d+)", r.stdout)
+    if not m or not khoa:
+        return None
+    return {"ip": m.group(1), "cong": CONG_REMOTE, "khoa": khoa}
+
+
 def chup_man_hinh():
     """Anh JPEG man hinh :0, nho hon 700 KB (document Firestore toi da 1 MB, base64 lam to them)."""
     os.environ["XAUTHORITY"] = XAUTH
@@ -813,6 +839,8 @@ class May:
         self.lan_mo_nghe = 0
         self.can_hoi = True
         self.da_day = None
+        # Truong remote da ghi lan truoc, de chi ghi lai khi laptop doi dia chi.
+        self.remote_da_ghi = None
         self.cap_cuoi = None
         self.da_bao = False
         # Ba Huy co bam "Mở web" khong. Mac dinh khoa: chua doc duoc Firestore thi khoa.
@@ -1042,8 +1070,10 @@ class May:
         ban = {"ketThucLuc": ket_thuc, "conLaiMs": con_lai * 1000, "dangDung": dung,
                "webDangMo": bool(self.web_dang_mo)}
         cu = self.da_day
+        remote = thong_tin_remote()
         can = (cu is None or cu["dangDung"] != dung or self.cap_cuoi is not None
                or self.can_day
+               or remote != self.remote_da_ghi
                or cu["webDangMo"] != ban["webDangMo"]
                or abs(cu["ketThucLuc"] - ket_thuc) > LECH_GHI_MS
                or (not dung and abs(cu["conLaiMs"] - ban["conLaiMs"]) >= 60_000))
@@ -1058,8 +1088,11 @@ class May:
             truong["capCuoi"] = self.cap_cuoi
         if self.ket_qua:
             truong["ketQua"] = self.ket_qua
+        if remote:
+            truong["remote"] = remote
         self.fb.ghi_trang_thai(truong)
         self.da_day = ban
+        self.remote_da_ghi = remote
         self.can_day = False
         self.cap_cuoi = None
 

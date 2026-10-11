@@ -1,0 +1,293 @@
+#!/usr/bin/env python3
+# Remote tivi tren dien thoai Ba Huy (11/10/2026, anh Huy chon mau B: ban di chuot lon, hang nut
+# Dung/Phat, lui tien 10 giay, am luong). Dien thoai noi thang toi day qua Wi-Fi nha, khong qua
+# Firestore (anh Huy chot: lenh di Firestore tre 2 toi 4 giay, di chuot khong noi). Firestore chi
+# giu dia chi va ma khoa: netflix_gio.py ghi truong remote { ip, cong, khoa } vao document
+# laptop/{maNha}, dien thoai doc mot lan luc mo man Remote. Dien thoai khong bat Wi-Fi nha thi
+# khong noi duoc, anh Huy chot khong cai Tailscale cho dien thoai.
+#
+# Chay bang root (dich vu netflix-remote), nghe TCP o cong CONG tren moi dia chi cua may. Chuot,
+# phim gia lap qua XTEST (thu vien python3-xlib co san trong Mint) vao man hinh :0, bang khoa X
+# cua LightDM nhu netflix_gio.py chup man hinh: an vao ca man dang nhap lan phien cua lehoa, huy.
+# Phim di vao cua so dang duoc chon, trong phien lehoa la Firefox toan man hinh. Am luong chinh
+# loa mac dinh cua nguoi dang ngoi man hinh bang pactl (o man dang nhap khong co, bao ve dien
+# thoai).
+#
+# Moi dong mot lenh, chu UTF-8:
+#   laptop:     CHAO <so ngau nhien>
+#   dien thoai: MA <HMAC-SHA256 cua so do, khoa la chuoi KHOA (hex)>
+#   laptop:     OK, roi AL <phan tram> <tat tieng 0/1> (AL - - khi khong ai dang nhap)
+# Sai ma thi laptop gui SAI roi dong. Sau do dien thoai gui:
+#   M dx dy   di chuot tuong doi (diem anh tivi)
+#   B         bam chuot trai
+#   C n       cuon n nac, am la len, duong la xuong
+#   K ten     bam mot phim trong PHIM (ten keysym cua X)
+#   T chu     go chu (xdotool type; o YouTube bo dau truoc, xem go_chu)
+#   V + / V - tang, giam am luong BUOC_AM %; V ? hoi lai; laptop tra AL ...
+#   X         dong Firefox trong phien lehoa, ve man chon Netflix hay YouTube
+#   P         con song; laptop tra PONG
+# Lenh hong hay khong lam duoc thi laptop tra LOI <cau tieng Viet cho dien thoai hien>.
+#
+# Nhat ky: journalctl -t netflix-remote. Khong ghi tung lan di chuot.
+
+import hashlib
+import hmac
+import os
+import pwd
+import re
+import secrets
+import socketserver
+import subprocess
+import syslog
+import threading
+import unicodedata
+
+CONG = 8790
+# Ma khoa chung voi dien thoai: 32 byte ngau nhien viet hex, tao lan chay dau, netflix_gio.py doc
+# roi ghi len Firestore.
+KHOA = "/var/lib/netflix-gio/remote.khoa"
+XAUTH = "/run/lightdm/root/:0"
+
+# Mot lan bam +, - doi chung nay phan tram, toi da 100 (pactl cho vuot 100, tieng re).
+BUOC_AM = 5
+# Phim dien thoai duoc bam. Netflix: space dung/phat, Left/Right lui/tien 10 giay, s bo gioi thieu.
+# YouTube giao dien tivi: mui ten di chuyen, Return chon, Escape lui. BackSpace cho o go chu.
+PHIM = {"space", "Left", "Right", "Up", "Down", "Return", "Escape", "BackSpace", "s"}
+CHU_TOI_DA = 100
+# Dien thoai gui P moi 10 giay; im qua chung nay giay la dien thoai da di, dong ket noi.
+CHO_GIAY = 45
+TOI_DA_KET_NOI = 4
+
+
+def ghi(*chu):
+    syslog.syslog(" ".join(str(c) for c in chu))
+
+
+def lay_khoa():
+    """Doc ma khoa, chua co thi tao. File chi root doc duoc."""
+    try:
+        with open(KHOA) as f:
+            k = f.read().strip()
+        if re.fullmatch(r"[0-9a-f]{64}", k):
+            return k
+    except OSError:
+        pass
+    k = secrets.token_hex(32)
+    os.makedirs(os.path.dirname(KHOA), mode=0o700, exist_ok=True)
+    fd = os.open(KHOA, os.O_WRONLY | os.O_CREAT | os.O_TRUNC, 0o600)
+    with os.fdopen(fd, "w") as f:
+        f.write(k + "\n")
+    ghi("tao ma khoa moi")
+    return k
+
+
+class ManHinh:
+    """Mot ket noi X toi :0 dung chung cho moi dien thoai, co khoa.
+
+    Man hinh X dung lai moi lan dang nhap, dang xuat (LAPTOP.md), nen ket noi cu chet giua chung:
+    python-xlib nem loi chu khong thoat chuong trinh, gap loi thi mo lai va lam lai mot lan.
+    """
+
+    def __init__(self):
+        self.d = None
+        self.khoa = threading.Lock()
+
+    def lam(self, viec):
+        from Xlib import display
+        with self.khoa:
+            for lan in (1, 2):
+                try:
+                    if self.d is None:
+                        os.environ["XAUTHORITY"] = XAUTH
+                        self.d = display.Display(":0")
+                    viec(self.d)
+                    self.d.flush()
+                    return True
+                except Exception as e:
+                    if lan == 2:
+                        ghi("khong lam duoc tren man hinh:", repr(e))
+                    try:
+                        self.d.close()
+                    except Exception:
+                        pass
+                    self.d = None
+            return False
+
+
+def di_chuot(dx, dy):
+    from Xlib import X
+    from Xlib.ext import xtest
+    return lambda d: xtest.fake_input(d, X.MotionNotify, detail=True, x=dx, y=dy)
+
+
+def bam_nut(nut, so_lan=1):
+    from Xlib import X
+    from Xlib.ext import xtest
+
+    def viec(d):
+        for _ in range(so_lan):
+            xtest.fake_input(d, X.ButtonPress, nut)
+            xtest.fake_input(d, X.ButtonRelease, nut)
+    return viec
+
+
+def bam_phim(ten):
+    from Xlib import X, XK
+    from Xlib.ext import xtest
+
+    def viec(d):
+        ma = d.keysym_to_keycode(XK.string_to_keysym(ten))
+        if not ma:
+            raise RuntimeError("khong co phim " + ten)
+        xtest.fake_input(d, X.KeyPress, ma)
+        xtest.fake_input(d, X.KeyRelease, ma)
+    return viec
+
+
+def nguoi_man_hinh():
+    """Ten tai khoan dang ngoi man hinh, None o man dang nhap. Cach doc nhu netflix_gio.py."""
+    r = subprocess.run(["loginctl", "list-sessions", "--no-legend"], capture_output=True, text=True)
+    for dong in r.stdout.splitlines():
+        cot = dong.split()
+        if len(cot) >= 6 and cot[3].startswith("seat") and cot[2] != "lightdm" and cot[5] != "closing":
+            return cot[2]
+    return None
+
+
+def pactl(ten, *tham_so):
+    uid = pwd.getpwnam(ten).pw_uid
+    return subprocess.run(["runuser", "-u", ten, "--", "env", "XDG_RUNTIME_DIR=/run/user/%d" % uid,
+                           "pactl"] + list(tham_so), capture_output=True, text=True, timeout=10)
+
+
+def am_luong(doi=0):
+    """Doi am luong loa mac dinh [doi] phan tram (0 la chi doc). Tra ve dong AL cho dien thoai."""
+    ten = nguoi_man_hinh()
+    if not ten:
+        return "AL - -"
+    r = pactl(ten, "get-sink-volume", "@DEFAULT_SINK@")
+    m = re.search(r"(\d+)%", r.stdout)
+    if not m:
+        return "AL - -"
+    pt = int(m.group(1))
+    if doi:
+        pt = max(0, min(100, pt + doi))
+        pactl(ten, "set-sink-volume", "@DEFAULT_SINK@", "%d%%" % pt)
+        if doi > 0:
+            # Bam tang thi bo tat tieng, nhu nut am luong cua tivi.
+            pactl(ten, "set-sink-mute", "@DEFAULT_SINK@", "0")
+    tat = "yes" in pactl(ten, "get-sink-mute", "@DEFAULT_SINK@").stdout
+    return "AL %d %d" % (pt, 1 if tat else 0)
+
+
+def xdotool(*tham_so, giay=10):
+    return subprocess.run(["xdotool"] + list(tham_so), env=dict(os.environ, DISPLAY=":0", XAUTHORITY=XAUTH),
+                          capture_output=True, text=True, timeout=giay)
+
+
+def bo_dau(chu):
+    """"học toán" thanh "hoc toan", moi chu co dau thanh dung mot chu khong dau."""
+    chu = chu.replace("đ", "d").replace("Đ", "D")
+    return "".join(c for c in unicodedata.normalize("NFD", chu) if not unicodedata.combining(c))
+
+
+def go_chu(chu):
+    # O tim kiem cua YouTube giao dien tivi bo chu co dau go tu ban phim that: thu 11/10/2026 go
+    # "học toán lớp 8" thi ra "hc ton lp 8", trong khi cung cach go do vao o chu GTK ra du dau.
+    # YouTube tim khong dau van ra dung, nen o YouTube bo dau truoc khi go. Moi chu thanh dung mot
+    # chu, nen phim xoa lui dien thoai gui van khop.
+    # Hoi cua so dang hien chu khong hoi cua so dang chon: luc moi vao phien co khi chua cua so nao
+    # duoc chon (netflix-canh ghi lai 8/10/2026).
+    if xdotool("search", "--onlyvisible", "--name", "YouTube").stdout.strip():
+        chu = bo_dau(chu)
+    return xdotool("type", "--delay", "30", "--", chu, giay=30).returncode == 0
+
+
+MAN_HINH = ManHinh()
+SO_KET_NOI = threading.BoundedSemaphore(TOI_DA_KET_NOI)
+
+
+class DienThoai(socketserver.StreamRequestHandler):
+    def gui(self, dong):
+        self.wfile.write((dong + "\n").encode())
+        self.wfile.flush()
+
+    def handle(self):
+        if not SO_KET_NOI.acquire(blocking=False):
+            return
+        try:
+            self.request.settimeout(10)
+            so = secrets.token_hex(16)
+            self.gui("CHAO " + so)
+            dong = self.rfile.readline(200).decode("utf-8", "replace").strip()
+            dung = hmac.new(lay_khoa().encode(), so.encode(), hashlib.sha256).hexdigest()
+            if not (dong.startswith("MA ") and hmac.compare_digest(dong[3:].strip(), dung)):
+                ghi("sai ma tu", self.client_address[0])
+                self.gui("SAI")
+                return
+            ghi("dien thoai vao tu", self.client_address[0])
+            self.request.settimeout(CHO_GIAY)
+            self.gui("OK")
+            self.gui(am_luong())
+            while True:
+                dong = self.rfile.readline(1000)
+                if not dong:
+                    break
+                tra = self.lam(dong.decode("utf-8", "replace").rstrip("\r\n"))
+                if tra:
+                    self.gui(tra)
+        except (OSError, ValueError):
+            pass
+        finally:
+            SO_KET_NOI.release()
+            ghi("dien thoai ra", self.client_address[0])
+
+    def lam(self, dong):
+        kieu, _, con = dong.partition(" ")
+        try:
+            if kieu == "M":
+                dx, dy = (int(s) for s in con.split())
+                MAN_HINH.lam(di_chuot(max(-2000, min(2000, dx)), max(-2000, min(2000, dy))))
+            elif kieu == "B":
+                if not MAN_HINH.lam(bam_nut(1)):
+                    return "LOI Laptop không bấm được chuột."
+            elif kieu == "C":
+                n = int(con)
+                MAN_HINH.lam(bam_nut(5 if n > 0 else 4, min(abs(n), 10)))
+            elif kieu == "K":
+                if con not in PHIM:
+                    return "LOI Laptop không nhận phím này."
+                if not MAN_HINH.lam(bam_phim(con)):
+                    return "LOI Laptop không bấm được phím."
+            elif kieu == "T":
+                if con and not go_chu(con[:CHU_TOI_DA]):
+                    return "LOI Laptop không gõ được chữ."
+            elif kieu == "V":
+                return am_luong({"+": BUOC_AM, "-": -BUOC_AM}.get(con.strip(), 0))
+            elif kieu == "X":
+                if nguoi_man_hinh() != "lehoa":
+                    return "LOI Chỉ dùng được khi laptop đang ở tài khoản Xem phim."
+                # Nhu bam nut ✕ cua netflix-thoat: Firefox thoat dang hoang, netflix-phien hien
+                # lai man chon.
+                subprocess.run(["pkill", "-TERM", "-x", "-U", "lehoa", "firefox-bin"])
+            elif kieu == "P":
+                return "PONG"
+            else:
+                return "LOI Laptop không hiểu lệnh này."
+        except (ValueError, KeyError, subprocess.SubprocessError) as e:
+            ghi("lenh hong:", kieu, repr(e))
+            return "LOI Laptop làm lệnh bị lỗi."
+        return None
+
+
+class MayChu(socketserver.ThreadingTCPServer):
+    allow_reuse_address = True
+    daemon_threads = True
+
+
+if __name__ == "__main__":
+    syslog.openlog("netflix-remote")
+    lay_khoa()
+    with MayChu(("0.0.0.0", CONG), DienThoai) as may:
+        ghi("nghe cong", CONG)
+        may.serve_forever()

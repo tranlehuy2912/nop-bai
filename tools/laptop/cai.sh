@@ -27,6 +27,11 @@ print("du an", ch["projectId"], "nha", ch["maNha"])
 PY
 chmod 600 /etc/netflix-gio/cauhinh.json
 install -m 644 "$day/netflix-gio.service" /etc/systemd/system/netflix-gio.service
+# Remote tivi cho dien thoai Ba Huy qua Wi-Fi nha (11/10/2026), xem dau file netflix-remote. Gia lap
+# chuot, phim bang python3-xlib, go chu bang xdotool; ca hai thuong co san trong Mint.
+apt-get install -y -q python3-xlib xdotool >/dev/null
+install -m 755 "$day/netflix-remote" /usr/local/lib/netflix-gio/netflix-remote
+install -m 644 "$day/netflix-remote.service" /etc/systemd/system/netflix-remote.service
 # Phien cua lehoa: man chon Netflix hay YouTube (9/10/2026; truoc do chi co Netflix) roi Firefox toan
 # man hinh, dang nhap khong can mat khau (chon ten la vao).
 install -m 755 "$day/netflix-phien" /usr/local/bin/netflix-phien
@@ -75,6 +80,12 @@ if [ ! -f /home/lehoa/.local/state/wireplumber/default-nodes ]; then
     runuser -u lehoa -- mkdir -p /home/lehoa/.local/state/wireplumber
     runuser -u lehoa -- sh -c 'printf "[default-nodes]\ndefault.configured.audio.sink=%s\ndefault.configured.audio.sink.0=%s\n" "$1" "$1" > /home/lehoa/.local/state/wireplumber/default-nodes' - alsa_output.pci-0000_00_03.0.hdmi-stereo
 fi
+# Con tro chuot co 48 cho lehoa (11/10/2026, remote tivi): ngoi xa tivi thi con tro 24 kho thay.
+# netflix-phien dat XCURSOR_SIZE cho Firefox, nhung marco (va man chon, vi man chon dung con tro cua
+# cua so goc) doc co con tro tu cai dat MATE cua tai khoan: thu 11/10/2026 chi dat bien thi man chon
+# van 24, dat them cai dat nay thi 48.
+runuser -u lehoa -- dbus-run-session -- gsettings set org.mate.peripherals-mouse cursor-size 48 \
+    || echo "chua dat duoc co con tro cho lehoa"
 # Timekpr-nExt: 0 phut moi ngay, het gio thi dang xuat, khong tu bao (chi bao tieng Viet tu
 # netflix_gio.py, anh Huy chon 7/10/2026).
 timekpra --settimelimits lehoa "0;0;0;0;0;0;0" >/dev/null
@@ -84,3 +95,6 @@ systemctl daemon-reload
 echo "uid laptop: $(python3 /usr/local/lib/netflix-gio/netflix_gio.py dangky)"
 # Chay lai dich vu neu dang chay; lan dau thi bat sau khi da ghi uid len console.
 systemctl try-restart netflix-gio
+# Remote khong can uid: bat luon. netflix-gio ghi dia chi cua no len Firestore o vong sau.
+systemctl enable -q netflix-remote
+systemctl restart netflix-remote

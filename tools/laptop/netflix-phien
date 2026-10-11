@@ -19,6 +19,12 @@
 PHIEN_TU=$(date +%s)
 export PHIEN_TU
 
+# Con tro chuot co 48 (11/10/2026): ngoi xa tivi dung remote tren dien thoai thi con tro mac dinh
+# 22 diem anh kho thay. Bo con tro Bibata-Modern-Classic cua Mint co san co 48; man chon, Firefox
+# doc hai bien nay luc mo.
+export XCURSOR_THEME=Bibata-Modern-Classic
+export XCURSOR_SIZE=48
+
 LUAT=/etc/firefox/policies/policies.json
 i=0
 while ! grep -q WebsiteFilter "$LUAT" 2>/dev/null; do

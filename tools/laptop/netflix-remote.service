@@ -1,0 +1,12 @@
+# Remote tivi cho dien thoai Ba Huy qua Wi-Fi nha (11/10/2026), xem dau file netflix-remote.
+[Unit]
+Description=Remote tivi tu dien thoai qua Wi-Fi nha
+
+[Service]
+# python3 cua he thong: can python3-xlib (co san trong Mint), khong can thu vien Firestore.
+ExecStart=/usr/bin/python3 /usr/local/lib/netflix-gio/netflix-remote
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
