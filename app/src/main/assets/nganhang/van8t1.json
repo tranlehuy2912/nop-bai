@@ -2,7 +2,7 @@
  "nguon": "van8t1",
  "mon": "Ngữ văn",
  "ten": "SGK Ngữ văn 8 — tập một",
- "ban": 1,
+ "ban": 3,
  "cac_bai": [
   {
    "chuong": "Bài 1. Câu chuyện của lịch sử",
@@ -20,63 +20,370 @@
      "trang": 10,
      "nhom": "Trước khi đọc",
      "dang": "CAU_NHO",
-     "de": "Câu 2. Ngoài Trần Quốc Toản, em còn biết thêm nhân vật thiếu nhi lỗi lạc nào trong lịch sử? (văn bản Lá cờ thêu sáu chữ vàng của Nguyễn Huy Tưởng)"
+     "de": "Câu 2. Ngoài Trần Quốc Toản, em còn biết thêm nhân vật thiếu nhi lỗi lạc nào trong lịch sử? (văn bản Lá cờ thêu sáu chữ vàng của Nguyễn Huy Tưởng)",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Câu 2. Ngoài Trần Quốc Toản, nhân vật nào dưới đây cũng là một thiếu nhi lỗi lạc trong lịch sử Việt Nam? (Lá cờ thêu sáu chữ vàng, SGK trang 10–14)",
+      "cac": [
+       "Kim Đồng",
+       "Trần Hưng Đạo",
+       "Lý Thường Kiệt",
+       "Lê Lợi"
+      ],
+      "dap": "A"
+     }
     },
     {
      "ma": "B1.C3",
      "trang": 15,
      "nhom": "Trả lời câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Câu 1. Tóm tắt nội dung của văn bản và cho biết câu chuyện dựa trên bối cảnh của sự kiện lịch sử nào. (văn bản Lá cờ thêu sáu chữ vàng của Nguyễn Huy Tưởng)"
+     "de": "Câu 1. Tóm tắt nội dung của văn bản và cho biết câu chuyện dựa trên bối cảnh của sự kiện lịch sử nào. (văn bản Lá cờ thêu sáu chữ vàng của Nguyễn Huy Tưởng)",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 6,
+      "hoi": "Câu 1. Xếp các sự việc sau theo đúng trình tự để có bản tóm tắt văn bản. Dòng đầu nêu bối cảnh lịch sử của câu chuyện. (Lá cờ thêu sáu chữ vàng, SGK trang 10–14)",
+      "buoc": [
+       "Thời Trần, quân Nguyên lăm le xâm lược nước ta lần thứ hai. Vua Trần họp các vương hầu ở bến Bình Than bàn nên đánh hay hoà.",
+       "Trần Quốc Toản chưa đến tuổi nên không được dự họp, đứng trên bờ ấm ức, nóng lòng muốn xin vua cho đánh.",
+       "Chờ mãi không được gặp vua, Quốc Toản xô ngã lính Thánh Dực, tuốt gươm đòi xuống bến.",
+       "Gặp vua, Quốc Toản quỳ tâu xin đánh giặc rồi đặt gươm lên gáy xin chịu tội.",
+       "Vua tha tội vì Quốc Toản còn trẻ mà biết lo cho nước, lại ban cho chàng một quả cam.",
+       "Bị coi là trẻ con, Quốc Toản vừa tức vừa tủi, quyết về chiêu binh đánh giặc; xoè tay ra thì quả cam đã nát."
+      ],
+      "nhieu": [
+       "Vua cho Quốc Toản dự họp và giao cho chàng cầm quân đánh giặc.",
+       "Quốc Toản ném quả cam xuống sông để tỏ lòng tức giận."
+      ]
+     }
     },
     {
      "ma": "B1.C4",
      "trang": 15,
      "nhom": "Trả lời câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Câu 2. Hoài Văn Hầu Trần Quốc Toản có tâm trạng như thế nào khi phải đứng trên bờ nhìn quang cảnh một sự kiện đặc biệt đang diễn ra ở bến Bình Than? (văn bản Lá cờ thêu sáu chữ vàng của Nguyễn Huy Tưởng)"
+     "de": "Câu 2. Hoài Văn Hầu Trần Quốc Toản có tâm trạng như thế nào khi phải đứng trên bờ nhìn quang cảnh một sự kiện đặc biệt đang diễn ra ở bến Bình Than? (văn bản Lá cờ thêu sáu chữ vàng của Nguyễn Huy Tưởng)",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Câu 2. Khi phải đứng trên bờ nhìn hội nghị đang diễn ra ở bến Bình Than, Trần Quốc Toản có tâm trạng thế nào? Chọn ý đúng nhất. (Lá cờ thêu sáu chữ vàng, SGK trang 10–14)",
+      "cac": [
+       "Nóng lòng muốn xin đánh giặc, ấm ức và thấy nhục vì bị đứng ngoài, có lúc định liều xông xuống bến",
+       "Vui vẻ, thảnh thơi ngắm những đoàn thuyền đẹp như gấm như hoa, chờ chú họp xong để cùng về",
+       "Sợ hãi vì quân giặc sắp sang, chỉ mong được về quê thờ mẹ cho yên ổn",
+       "Ganh tị với các em họ được dự họp nên chỉ muốn tranh chức tước, quyền lợi với họ"
+      ],
+      "dap": "A"
+     }
     },
     {
      "ma": "B1.C5",
      "trang": 15,
      "nhom": "Trả lời câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Câu 3. Khi bị quân Thánh Dực ngăn cản xuống bến gặp vua, Trần Quốc Toản có hành động gì khác thường? Vì sao Trần Quốc Toản có hành động như vậy? (văn bản Lá cờ thêu sáu chữ vàng của Nguyễn Huy Tưởng)"
+     "de": "Câu 3. Khi bị quân Thánh Dực ngăn cản xuống bến gặp vua, Trần Quốc Toản có hành động gì khác thường? Vì sao Trần Quốc Toản có hành động như vậy? (văn bản Lá cờ thêu sáu chữ vàng của Nguyễn Huy Tưởng)",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "Câu 3. Khi bị quân Thánh Dực ngăn cản xuống bến gặp vua, Trần Quốc Toản làm gì? Vì sao? (Lá cờ thêu sáu chữ vàng, SGK trang 10–14)",
+      "dong": [
+       {
+        "chu": "Hành động khác thường: {0}",
+        "o": [
+         {
+          "dung": [
+           "xô ngã lính, tuốt gươm quát lớn, đòi xuống bến"
+          ],
+          "sai": [
+           "quỳ xuống năn nỉ lính, hứa chỉ đứng xa nhìn vua",
+           "lặng lẽ bỏ về quê thờ mẹ theo lời chú dặn"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Vì: {0}",
+        "o": [
+         {
+          "dung": [
+           "nóng lòng gặp vua để xin đánh giặc, cứu nước"
+          ],
+          "sai": [
+           "muốn được ngồi thuyền rồng cho oai với các em họ",
+           "giận vì bị lính Thánh Dực cười chế nhạo"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B1.C6",
      "trang": 15,
      "nhom": "Trả lời câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Câu 4. Chứng kiến hành động và nghe lời tâu bày của Trần Quốc Toản, vua Thiệu Bảo có thái độ và cách xử lí như thế nào? Thái độ và cách xử lí đó cho thấy điều gì ở vị vua này? (văn bản Lá cờ thêu sáu chữ vàng của Nguyễn Huy Tưởng)"
+     "de": "Câu 4. Chứng kiến hành động và nghe lời tâu bày của Trần Quốc Toản, vua Thiệu Bảo có thái độ và cách xử lí như thế nào? Thái độ và cách xử lí đó cho thấy điều gì ở vị vua này? (văn bản Lá cờ thêu sáu chữ vàng của Nguyễn Huy Tưởng)",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "Câu 4. Chứng kiến hành động và nghe lời tâu của Trần Quốc Toản, vua Thiệu Bảo xử lí thế nào? Điều đó cho thấy gì ở nhà vua? (Lá cờ thêu sáu chữ vàng, SGK trang 10–14)",
+      "dong": [
+       {
+        "chu": "Thái độ và cách xử lí: {0}",
+        "o": [
+         {
+          "dung": [
+           "mỉm cười, tha tội, khuyên về quê, ban cho một quả cam"
+          ],
+          "sai": [
+           "nổi giận, sai lính trói Quốc Toản lại để luận tội",
+           "khen ngợi, cho Quốc Toản ở lại dự bàn việc nước"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Điều đó cho thấy vua: {0}",
+        "o": [
+         {
+          "dung": [
+           "khoan dung, sáng suốt, quý tấm lòng yêu nước của người trẻ"
+          ],
+          "sai": [
+           "nhu nhược, không dám xử phạt người phạm tội",
+           "nóng giận, thích trừng phạt người bề dưới"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B1.C7",
      "trang": 15,
      "nhom": "Trả lời câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Câu 5. Trong lời người kể chuyện có đôi chỗ xen vào những ý nghĩ thầm kín của nhân vật Trần Quốc Toản. Nêu một vài trường hợp và phân tích tác dụng của sự đan xen đó. (văn bản Lá cờ thêu sáu chữ vàng của Nguyễn Huy Tưởng)"
+     "de": "Câu 5. Trong lời người kể chuyện có đôi chỗ xen vào những ý nghĩ thầm kín của nhân vật Trần Quốc Toản. Nêu một vài trường hợp và phân tích tác dụng của sự đan xen đó. (văn bản Lá cờ thêu sáu chữ vàng của Nguyễn Huy Tưởng)",
+     "ghep": {
+      "kieu": "O",
+      "sao": 5,
+      "hoi": "Câu 5. Trong lời người kể chuyện có xen những ý nghĩ thầm kín của Trần Quốc Toản. Câu nào là ý nghĩ của nhân vật, câu nào là lời người kể? Việc đan xen đó có tác dụng gì? (Lá cờ thêu sáu chữ vàng, SGK trang 10–14)",
+      "dong": [
+       {
+        "chu": "“Cha ta mất sớm, nên ta mới phải đứng rìa nhục nhã thế này!”\nĐây là: {0}",
+        "o": [
+         {
+          "dung": [
+           "ý nghĩ của Quốc Toản"
+          ],
+          "sai": [
+           "lời kể, tả của người kể chuyện"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "“Hai cây đa cổ thụ bóng râm mát che kín cả một khúc sông.”\nĐây là: {0}",
+        "o": [
+         {
+          "dung": [
+           "lời kể, tả của người kể chuyện"
+          ],
+          "sai": [
+           "ý nghĩ của Quốc Toản"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "“Đứng mãi đây cho đến bao giờ? Thôi thì liều một chết vậy.”\nĐây là: {0}",
+        "o": [
+         {
+          "dung": [
+           "ý nghĩ của Quốc Toản"
+          ],
+          "sai": [
+           "lời kể, tả của người kể chuyện"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "“Viên tướng tái mặt, hô quân sĩ vây kín lấy Hoài Văn.”\nĐây là: {0}",
+        "o": [
+         {
+          "dung": [
+           "lời kể, tả của người kể chuyện"
+          ],
+          "sai": [
+           "ý nghĩ của Quốc Toản"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Tác dụng của việc đan xen: {0}",
+        "o": [
+         {
+          "dung": [
+           "cho thấy nỗi lòng sục sôi, yêu nước của Quốc Toản, làm truyện chân thực, sinh động"
+          ],
+          "sai": [
+           "giúp người đọc biết rõ thời gian, địa điểm và những ai dự hội nghị",
+           "cho thấy người kể chuyện chê trách Quốc Toản là nông nổi, liều lĩnh"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B1.C8",
      "trang": 15,
      "nhom": "Trả lời câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Câu 6. Những nét tính cách nào của Trần Quốc Toản được thể hiện qua lời đối thoại với các nhân vật khác trong truyện? (văn bản Lá cờ thêu sáu chữ vàng của Nguyễn Huy Tưởng)"
+     "de": "Câu 6. Những nét tính cách nào của Trần Quốc Toản được thể hiện qua lời đối thoại với các nhân vật khác trong truyện? (văn bản Lá cờ thêu sáu chữ vàng của Nguyễn Huy Tưởng)",
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "hoi": "Câu 6. Những nét tính cách nào của Trần Quốc Toản hiện ra qua lời đối thoại với các nhân vật khác? (Lá cờ thêu sáu chữ vàng, SGK trang 10–14)",
+      "dong": [
+       {
+        "chu": "Với quân Thánh Dực (“Không buông ra, ta chém!”): {0}",
+        "o": [
+         {
+          "dung": [
+           "quyết liệt, nóng nảy, oai phong"
+          ],
+          "sai": [
+           "nhút nhát, rụt rè",
+           "lễ phép, nhún nhường"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Với chú Chiêu Thành Vương (“Cháu biết là mang tội lớn...”): {0}",
+        "o": [
+         {
+          "dung": [
+           "lễ phép, thẳng thắn, biết lo việc nước"
+          ],
+          "sai": [
+           "hỗn láo, cãi lại chú",
+           "sợ tội, đổ lỗi cho người khác"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Với vua (“Xin quan gia cho đánh!...”): {0}",
+        "o": [
+         {
+          "dung": [
+           "dũng cảm, dám làm dám chịu, đặt việc nước trên tính mạng mình"
+          ],
+          "sai": [
+           "ham danh lợi, muốn được vua thưởng",
+           "nịnh bợ, chỉ mong được vua khen"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B1.C9",
      "trang": 15,
      "nhom": "Trả lời câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Câu 7. Trong truyện này, ngôn ngữ người kể chuyện và ngôn ngữ nhân vật đều mang đậm màu sắc lịch sử. Nêu một số ví dụ và cho biết tác dụng. (văn bản Lá cờ thêu sáu chữ vàng của Nguyễn Huy Tưởng)"
+     "de": "Câu 7. Trong truyện này, ngôn ngữ người kể chuyện và ngôn ngữ nhân vật đều mang đậm màu sắc lịch sử. Nêu một số ví dụ và cho biết tác dụng. (văn bản Lá cờ thêu sáu chữ vàng của Nguyễn Huy Tưởng)",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "Câu 7. Ngôn ngữ người kể chuyện và ngôn ngữ nhân vật trong truyện mang đậm màu sắc lịch sử. (Lá cờ thêu sáu chữ vàng, SGK trang 10–14)",
+      "dong": [
+       {
+        "chu": "Ví dụ: {0}",
+        "o": [
+         {
+          "dung": [
+           "quan gia, thuyền ngự, bệ kiến, quân pháp vô thân"
+          ],
+          "sai": [
+           "rực rỡ, im lặng, trong vắt",
+           "lầy, hem, học “tủ”"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Tác dụng: {0}",
+        "o": [
+         {
+          "dung": [
+           "tái hiện không khí thời Trần, làm truyện chân thực, hợp với vị thế nhân vật"
+          ],
+          "sai": [
+           "làm truyện dễ hiểu, gần gũi hơn với học sinh ngày nay",
+           "cho thấy tác giả là người sống cùng thời với Trần Quốc Toản"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B1.C10",
      "trang": 15,
      "nhom": "Trả lời câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Câu 8. Hãy khái quát chủ đề của văn bản và cho biết căn cứ vào đâu em khái quát như vậy. (văn bản Lá cờ thêu sáu chữ vàng của Nguyễn Huy Tưởng)"
+     "de": "Câu 8. Hãy khái quát chủ đề của văn bản và cho biết căn cứ vào đâu em khái quát như vậy. (văn bản Lá cờ thêu sáu chữ vàng của Nguyễn Huy Tưởng)",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "Câu 8. Khái quát chủ đề của văn bản và cho biết căn cứ vào đâu. (Lá cờ thêu sáu chữ vàng, SGK trang 10–14)",
+      "dong": [
+       {
+        "chu": "Chủ đề: {0}",
+        "o": [
+         {
+          "dung": [
+           "lòng yêu nước, căm thù giặc của người anh hùng nhỏ tuổi Trần Quốc Toản"
+          ],
+          "sai": [
+           "tình chú cháu giữa Chiêu Thành Vương và Hoài Văn",
+           "cảnh đẹp của bến Bình Than thời Trần"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Căn cứ: {0}",
+        "o": [
+         {
+          "dung": [
+           "nhân vật chính và các sự việc, lời nói, hành động của Quốc Toản"
+          ],
+          "sai": [
+           "chỉ dựa vào nhan đề của tác phẩm",
+           "câu người kể chuyện nói thẳng ra ở cuối truyện"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B1.C11",
@@ -96,28 +403,228 @@
      "trang": 16,
      "nhom": "Thực hành tiếng Việt",
      "dang": "CAU_NHO",
-     "de": "Câu 1. Chỉ ra biệt ngữ xã hội ở những câu sau và cho biết dựa vào đâu em khẳng định như vậy. Giải nghĩa các biệt ngữ đó. a. Năm lên sáu, cung thiếu nhi thành phố có cuộc tuyển \"gà\" khắp các trường tiểu học, tôi cũng được chọn gửi đến lớp năng khiếu. (Ngô An Kha, Tìm mảnh ghép thiếu) b. Ôn tập cẩn thận đi em. Em cứ học \"tủ\" như vậy, không trúng đề thì nguy đấy. (Thực hành tiếng Việt: biệt ngữ xã hội)"
+     "de": "Câu 1. Chỉ ra biệt ngữ xã hội ở những câu sau và cho biết dựa vào đâu em khẳng định như vậy. Giải nghĩa các biệt ngữ đó. a. Năm lên sáu, cung thiếu nhi thành phố có cuộc tuyển \"gà\" khắp các trường tiểu học, tôi cũng được chọn gửi đến lớp năng khiếu. (Ngô An Kha, Tìm mảnh ghép thiếu) b. Ôn tập cẩn thận đi em. Em cứ học \"tủ\" như vậy, không trúng đề thì nguy đấy. (Thực hành tiếng Việt: biệt ngữ xã hội)",
+     "ghep": {
+      "kieu": "O",
+      "sao": 5,
+      "hoi": "Câu 1. Chỉ ra biệt ngữ xã hội trong hai câu sau, giải nghĩa và cho biết dựa vào đâu em nhận ra.",
+      "dong": [
+       {
+        "chu": "a. “...cung thiếu nhi thành phố có cuộc tuyển “gà” khắp các trường tiểu học...”\nBiệt ngữ: {0}. Nghĩa: {1}",
+        "o": [
+         {
+          "dung": [
+           "“gà”"
+          ],
+          "sai": [
+           "“năng khiếu”",
+           "“cung thiếu nhi”"
+          ]
+         },
+         {
+          "dung": [
+           "học sinh có năng khiếu được chọn để bồi dưỡng, đi thi"
+          ],
+          "sai": [
+           "con gà nuôi để đi thi chọi",
+           "học sinh còn non nớt, chưa biết gì"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "b. “Em cứ học “tủ” như vậy, không trúng đề thì nguy đấy.”\nBiệt ngữ: {0}. Nghĩa: {1}",
+        "o": [
+         {
+          "dung": [
+           "“tủ”"
+          ],
+          "sai": [
+           "“trúng đề”",
+           "“ôn tập”"
+          ]
+         },
+         {
+          "dung": [
+           "chỉ học vài phần đoán sẽ có trong đề thi"
+          ],
+          "sai": [
+           "học trong tủ sách của thư viện",
+           "học kĩ tất cả các bài"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Nhận ra hai biệt ngữ trên nhờ: {0}",
+        "o": [
+         {
+          "dung": [
+           "từ đặt trong ngoặc kép, dùng với nghĩa khác hẳn nghĩa thường"
+          ],
+          "sai": [
+           "từ được viết hoa và in đậm trong câu",
+           "từ chỉ người ở một vùng miền mới dùng"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B1.C13",
      "trang": 16,
      "nhom": "Thực hành tiếng Việt",
      "dang": "CAU_NHO",
-     "de": "Câu 2. Cái việc lơ đễnh rất hữu ý đó, cái chuyện bỏ quên hộp thuốc lào vẫn là một ám hiệu của Cai Xanh dùng tới mỗi lúc đi tìm bạn để \"đánh một tiếng bạc lớn\" nghĩa là cướp một đám to. (Nguyễn Tuân, Một đám bất đắc chí) Vì sao ở câu trên, người kể chuyện phải giải thích cụm từ \"đánh một tiếng bạc lớn\"? Theo em, tác giả dùng cụm từ đó với mục đích gì? (Thực hành tiếng Việt: biệt ngữ xã hội)"
+     "de": "Câu 2. Cái việc lơ đễnh rất hữu ý đó, cái chuyện bỏ quên hộp thuốc lào vẫn là một ám hiệu của Cai Xanh dùng tới mỗi lúc đi tìm bạn để \"đánh một tiếng bạc lớn\" nghĩa là cướp một đám to. (Nguyễn Tuân, Một đám bất đắc chí) Vì sao ở câu trên, người kể chuyện phải giải thích cụm từ \"đánh một tiếng bạc lớn\"? Theo em, tác giả dùng cụm từ đó với mục đích gì? (Thực hành tiếng Việt: biệt ngữ xã hội)",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "Câu 2. Vì sao người kể chuyện phải giải thích cụm từ “đánh một tiếng bạc lớn”? Tác giả dùng cụm từ đó để làm gì?",
+      "dong": [
+       {
+        "chu": "Phải giải thích vì: {0}",
+        "o": [
+         {
+          "dung": [
+           "đây là tiếng lóng riêng của bọn cướp, người ngoài không hiểu"
+          ],
+          "sai": [
+           "đây là từ địa phương của một vùng miền",
+           "đây là từ Hán Việt cổ, ít người biết"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Tác giả dùng cụm từ đó để: {0}",
+        "o": [
+         {
+          "dung": [
+           "tái hiện chân thực cách nói năng của nhóm người làm việc mờ ám"
+          ],
+          "sai": [
+           "làm câu văn vui nhộn, gây cười",
+           "khen ngợi tài đánh bạc của Cai Xanh"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B1.C14",
      "trang": 16,
      "nhom": "Thực hành tiếng Việt",
      "dang": "CAU_NHO",
-     "de": "Câu 3. Trong phóng sự Tôi kéo xe của Tam Lang (viết về những người làm nghề kéo xe chở người thời trước Cách mạng tháng Tám năm 1945), có đoạn hội thoại: – Mày đã \"làm xe\" lần nào chưa? – Bẩm, chúng cháu chưa làm bao giờ cả. Trong Cạm bẫy người của Vũ Trọng Phụng – một tác phẩm vạch trần trò gian xảo, bịp bợm của những kẻ đánh bạc trước năm 1945 – có câu: Tôi rất lấy làm lạ là vì cứ thấy hai con chim mòng thắng trận, ù tràn đi mà nhà đi săn kia đã phí gần hai mươi viên đạn. Nêu tác dụng của việc sử dụng biệt ngữ xã hội (in đậm: làm xe; chim mòng, nhà đi săn, viên đạn) trong các trường hợp trên. Đọc tác phẩm văn học, gặp những biệt ngữ như thế, việc đầu tiên cần làm là gì? (Thực hành tiếng Việt: biệt ngữ xã hội)"
+     "de": "Câu 3. Trong phóng sự Tôi kéo xe của Tam Lang (viết về những người làm nghề kéo xe chở người thời trước Cách mạng tháng Tám năm 1945), có đoạn hội thoại: – Mày đã \"làm xe\" lần nào chưa? – Bẩm, chúng cháu chưa làm bao giờ cả. Trong Cạm bẫy người của Vũ Trọng Phụng – một tác phẩm vạch trần trò gian xảo, bịp bợm của những kẻ đánh bạc trước năm 1945 – có câu: Tôi rất lấy làm lạ là vì cứ thấy hai con chim mòng thắng trận, ù tràn đi mà nhà đi săn kia đã phí gần hai mươi viên đạn. Nêu tác dụng của việc sử dụng biệt ngữ xã hội (in đậm: làm xe; chim mòng, nhà đi săn, viên đạn) trong các trường hợp trên. Đọc tác phẩm văn học, gặp những biệt ngữ như thế, việc đầu tiên cần làm là gì? (Thực hành tiếng Việt: biệt ngữ xã hội)",
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "hoi": "Câu 3. Biệt ngữ xã hội trong Tôi kéo xe (Tam Lang) và Cạm bẫy người (Vũ Trọng Phụng).",
+      "dong": [
+       {
+        "chu": "“làm xe” nghĩa là: {0}",
+        "o": [
+         {
+          "dung": [
+           "làm nghề kéo xe chở người"
+          ],
+          "sai": [
+           "đóng, sửa chữa xe",
+           "đi xe dạo chơi"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Tác dụng của các biệt ngữ: {0}",
+        "o": [
+         {
+          "dung": [
+           "tái hiện chân thực đời sống và cách nói riêng của từng nhóm người"
+          ],
+          "sai": [
+           "làm lời văn trang trọng như văn bản hành chính",
+           "giúp ai đọc cũng hiểu ngay, không cần giải thích"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Gặp biệt ngữ khi đọc tác phẩm, việc đầu tiên cần làm: {0}",
+        "o": [
+         {
+          "dung": [
+           "tìm hiểu nghĩa của biệt ngữ qua chú thích, ngữ cảnh"
+          ],
+          "sai": [
+           "bỏ qua vì biệt ngữ không quan trọng",
+           "dùng ngay biệt ngữ đó khi nói chuyện"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B1.C15",
      "trang": 17,
      "nhom": "Thực hành tiếng Việt",
      "dang": "CAU_NHO",
-     "de": "Câu 4. Chỉ ra biệt ngữ xã hội trong các đoạn hội thoại sau và nhận xét về việc sử dụng biệt ngữ của người nói: a. – Cậu ấy là bạn con đấy à? – Đúng rồi, bố. Nó lầy quá bố nhỉ? b. – Nam, dạo này tớ thấy Hoàng buồn buồn, ít nói. Cậu có biết vì sao không? – Tớ cũng hem biết vì sao cậu ơi. (Thực hành tiếng Việt: biệt ngữ xã hội)"
+     "de": "Câu 4. Chỉ ra biệt ngữ xã hội trong các đoạn hội thoại sau và nhận xét về việc sử dụng biệt ngữ của người nói: a. – Cậu ấy là bạn con đấy à? – Đúng rồi, bố. Nó lầy quá bố nhỉ? b. – Nam, dạo này tớ thấy Hoàng buồn buồn, ít nói. Cậu có biết vì sao không? – Tớ cũng hem biết vì sao cậu ơi. (Thực hành tiếng Việt: biệt ngữ xã hội)",
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "hoi": "Câu 4. Chỉ ra biệt ngữ xã hội trong hai đoạn hội thoại và nhận xét.",
+      "dong": [
+       {
+        "chu": "a. “Đúng rồi, bố. Nó lầy quá bố nhỉ?”\nBiệt ngữ: {0}",
+        "o": [
+         {
+          "dung": [
+           "“lầy”"
+          ],
+          "sai": [
+           "“bố”",
+           "“quá”"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "b. “Tớ cũng hem biết vì sao cậu ơi.”\nBiệt ngữ: {0}",
+        "o": [
+         {
+          "dung": [
+           "“hem”"
+          ],
+          "sai": [
+           "“cậu ơi”",
+           "“biết”"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Ở đoạn a, người con nói “lầy” với bố là: {0}",
+        "o": [
+         {
+          "dung": [
+           "không phù hợp: đây là cách nói riêng của lớp trẻ, nói với bố cần lễ phép"
+          ],
+          "sai": [
+           "phù hợp: bố con thân thiết thì nói sao cũng được",
+           "phù hợp: “lầy” là từ toàn dân, ai cũng hiểu"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     }
    ]
   },
@@ -137,56 +644,504 @@
      "trang": 17,
      "nhom": "Trước khi đọc",
      "dang": "CAU_NHO",
-     "de": "Câu 2. Chia sẻ những hiểu biết của em về người anh hùng Quang Trung – Nguyễn Huệ. (văn bản Quang Trung đại phá quân Thanh của Ngô gia văn phái)"
+     "de": "Câu 2. Chia sẻ những hiểu biết của em về người anh hùng Quang Trung – Nguyễn Huệ. (văn bản Quang Trung đại phá quân Thanh của Ngô gia văn phái)",
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "hoi": "Câu 2. Những điều sau về người anh hùng Quang Trung – Nguyễn Huệ đúng hay sai? (Quang Trung đại phá quân Thanh, SGK trang 17–23)",
+      "dong": [
+       {
+        "chu": "Nguyễn Huệ lên ngôi hoàng đế, lấy niên hiệu Quang Trung, rồi tự cầm quân ra Bắc đánh quân Thanh. {0}",
+        "o": [
+         {
+          "dung": [
+           "Đúng"
+          ],
+          "sai": [
+           "Sai"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Quân Tây Sơn đại phá quân Thanh vào dịp Tết năm Kỉ Dậu (1789). {0}",
+        "o": [
+         {
+          "dung": [
+           "Đúng"
+          ],
+          "sai": [
+           "Sai"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Quang Trung là vị vua đầu tiên của nhà Nguyễn. {0}",
+        "o": [
+         {
+          "dung": [
+           "Sai"
+          ],
+          "sai": [
+           "Đúng"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Quang Trung chỉ huy trận Bạch Đằng đánh tan quân Nguyên. {0}",
+        "o": [
+         {
+          "dung": [
+           "Sai"
+          ],
+          "sai": [
+           "Đúng"
+          ],
+          "hai": true
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B1.C18",
      "trang": 23,
      "nhom": "Trả lời câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Câu 1. Đoạn trích có thể chia thành mấy phần? Nêu nội dung chính của từng phần. (văn bản Quang Trung đại phá quân Thanh của Ngô gia văn phái)"
+     "de": "Câu 1. Đoạn trích có thể chia thành mấy phần? Nêu nội dung chính của từng phần. (văn bản Quang Trung đại phá quân Thanh của Ngô gia văn phái)",
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "hoi": "Câu 1. Đoạn trích chia làm ba phần. Chọn nội dung chính của từng phần. (Quang Trung đại phá quân Thanh, SGK trang 17–23)",
+      "dong": [
+       {
+        "chu": "Phần 1 (từ đầu đến “...năm Mậu Thân (1788)”): {0}",
+        "o": [
+         {
+          "dung": [
+           "Quang Trung lên ngôi hoàng đế, cầm quân ra Bắc"
+          ],
+          "sai": [
+           "Hành quân thần tốc, đại phá quân Thanh",
+           "Quân Thanh đại bại, vua tôi Lê Chiêu Thống tháo chạy"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Phần 2 (tiếp theo đến “...rồi kéo vào thành”): {0}",
+        "o": [
+         {
+          "dung": [
+           "Hành quân thần tốc, đại phá quân Thanh"
+          ],
+          "sai": [
+           "Quang Trung lên ngôi hoàng đế, cầm quân ra Bắc",
+           "Quân Thanh đại bại, vua tôi Lê Chiêu Thống tháo chạy"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Phần 3 (phần còn lại): {0}",
+        "o": [
+         {
+          "dung": [
+           "Quân Thanh đại bại, vua tôi Lê Chiêu Thống tháo chạy"
+          ],
+          "sai": [
+           "Quang Trung lên ngôi hoàng đế, cầm quân ra Bắc",
+           "Hành quân thần tốc, đại phá quân Thanh"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B1.C19",
      "trang": 23,
      "nhom": "Trả lời câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Câu 2. Em hãy liệt kê những nhân vật và sự kiện lịch sử được tác giả đề cập trong văn bản. (văn bản Quang Trung đại phá quân Thanh của Ngô gia văn phái)"
+     "de": "Câu 2. Em hãy liệt kê những nhân vật và sự kiện lịch sử được tác giả đề cập trong văn bản. (văn bản Quang Trung đại phá quân Thanh của Ngô gia văn phái)",
+     "ghep": {
+      "kieu": "O",
+      "sao": 6,
+      "hoi": "Câu 2. Những nhân vật, sự kiện lịch sử nào được nhắc tới trong đoạn trích? (Quang Trung đại phá quân Thanh, SGK trang 17–23)",
+      "dong": [
+       {
+        "chu": "Tôn Sĩ Nghị: {0}",
+        "o": [
+         {
+          "dung": [
+           "có nhắc"
+          ],
+          "sai": [
+           "không nhắc"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Nguyễn Thiếp, người cống sĩ ở La Sơn: {0}",
+        "o": [
+         {
+          "dung": [
+           "có nhắc"
+          ],
+          "sai": [
+           "không nhắc"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Trần Quốc Toản: {0}",
+        "o": [
+         {
+          "dung": [
+           "không nhắc"
+          ],
+          "sai": [
+           "có nhắc"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Vua Quang Trung vây đồn Hà Hồi, phá đồn Ngọc Hồi: {0}",
+        "o": [
+         {
+          "dung": [
+           "có nhắc"
+          ],
+          "sai": [
+           "không nhắc"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Hội nghị Diên Hồng: {0}",
+        "o": [
+         {
+          "dung": [
+           "không nhắc"
+          ],
+          "sai": [
+           "có nhắc"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Vua Lê Chiêu Thống chạy theo Tôn Sĩ Nghị lên cửa ải: {0}",
+        "o": [
+         {
+          "dung": [
+           "có nhắc"
+          ],
+          "sai": [
+           "không nhắc"
+          ],
+          "hai": true
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B1.C20",
      "trang": 23,
      "nhom": "Trả lời câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Câu 3. Tìm những chi tiết tiêu biểu miêu tả thái độ, lời nói và hành động của Bắc Bình Vương khi nghe tin báo quân Thanh xâm lược nước ta. Những chi tiết đó cho thấy đặc điểm tính cách gì của nhân vật? (văn bản Quang Trung đại phá quân Thanh của Ngô gia văn phái)"
+     "de": "Câu 3. Tìm những chi tiết tiêu biểu miêu tả thái độ, lời nói và hành động của Bắc Bình Vương khi nghe tin báo quân Thanh xâm lược nước ta. Những chi tiết đó cho thấy đặc điểm tính cách gì của nhân vật? (văn bản Quang Trung đại phá quân Thanh của Ngô gia văn phái)",
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "hoi": "Câu 3. Thái độ, lời nói, hành động của Bắc Bình Vương khi nghe tin quân Thanh xâm lược, và tính cách của nhân vật. (Quang Trung đại phá quân Thanh, SGK trang 17–23)",
+      "dong": [
+       {
+        "chu": "Khi nghe tin, Bắc Bình Vương: {0}",
+        "o": [
+         {
+          "dung": [
+           "giận lắm, họp tướng sĩ, định thân chinh cầm quân đi ngay"
+          ],
+          "sai": [
+           "lo sợ, sai sứ sang xin hoà với nhà Thanh",
+           "bình thản, chờ quân Thanh tự rút về"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Sau đó ông: {0}",
+        "o": [
+         {
+          "dung": [
+           "lên ngôi hoàng đế, hỏi kế Nguyễn Thiếp, tuyển quân, duyệt binh"
+          ],
+          "sai": [
+           "giao hết việc đánh giặc cho Ngô Văn Sở",
+           "chờ hết Tết mới xuất quân"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Những chi tiết đó cho thấy ông là người: {0}",
+        "o": [
+         {
+          "dung": [
+           "mạnh mẽ, quyết đoán, yêu nước"
+          ],
+          "sai": [
+           "nóng nảy, hấp tấp, thiếu suy nghĩ",
+           "do dự, không dám quyết"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B1.C21",
      "trang": 23,
      "nhom": "Trả lời câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Câu 4. Nêu cảm nhận của em về nhân vật vua Quang Trung được khắc hoạ trong đoạn trích, qua đó nhận xét cảm hứng của các tác giả đối với vị anh hùng dân tộc này. (văn bản Quang Trung đại phá quân Thanh của Ngô gia văn phái)"
+     "de": "Câu 4. Nêu cảm nhận của em về nhân vật vua Quang Trung được khắc hoạ trong đoạn trích, qua đó nhận xét cảm hứng của các tác giả đối với vị anh hùng dân tộc này. (văn bản Quang Trung đại phá quân Thanh của Ngô gia văn phái)",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "Câu 4. Hình ảnh vua Quang Trung trong đoạn trích và cảm hứng của các tác giả với vị anh hùng này. (Quang Trung đại phá quân Thanh, SGK trang 17–23)",
+      "dong": [
+       {
+        "chu": "Vua Quang Trung là người: {0}",
+        "o": [
+         {
+          "dung": [
+           "trí tuệ sáng suốt, tài cầm quân, oai phong lẫm liệt"
+          ],
+          "sai": [
+           "tàn bạo, hay chém giết tướng lĩnh",
+           "hiền lành nhưng không giỏi cầm quân"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Cảm hứng của các tác giả: {0}",
+        "o": [
+         {
+          "dung": [
+           "ngợi ca, tự hào, dù họ vốn trung thành với nhà Lê"
+          ],
+          "sai": [
+           "chê bai vì Quang Trung là kẻ thù của nhà Lê",
+           "thờ ơ, chỉ ghi chép sự việc"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B1.C22",
      "trang": 23,
      "nhom": "Trả lời câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Câu 5. Nhân vật Lê Chiêu Thống được khắc hoạ rõ nét qua những chi tiết tiêu biểu nào? Phân tích một chi tiết đặc sắc, thể hiện rõ bản chất của nhân vật Lê Chiêu Thống, qua đó thấy được thái độ của tác giả đối với nhân vật này. (văn bản Quang Trung đại phá quân Thanh của Ngô gia văn phái)"
+     "de": "Câu 5. Nhân vật Lê Chiêu Thống được khắc hoạ rõ nét qua những chi tiết tiêu biểu nào? Phân tích một chi tiết đặc sắc, thể hiện rõ bản chất của nhân vật Lê Chiêu Thống, qua đó thấy được thái độ của tác giả đối với nhân vật này. (văn bản Quang Trung đại phá quân Thanh của Ngô gia văn phái)",
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "hoi": "Câu 5. Nhân vật Lê Chiêu Thống: chi tiết tiêu biểu, bản chất, và thái độ của tác giả. (Quang Trung đại phá quân Thanh, SGK trang 17–23)",
+      "dong": [
+       {
+        "chu": "Chi tiết tiêu biểu: {0}",
+        "o": [
+         {
+          "dung": [
+           "vội vã bỏ chạy, cướp thuyền dân, nhịn đói, chạy theo Tôn Sĩ Nghị"
+          ],
+          "sai": [
+           "cưỡi voi đốc thúc quân sĩ xông lên phá đồn Ngọc Hồi",
+           "quỳ trước Tôn Sĩ Nghị, tự đặt gươm lên gáy xin chịu tội"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Bản chất của nhân vật: {0}",
+        "o": [
+         {
+          "dung": [
+           "ông vua hèn nhát, cầu cứu giặc, “cõng rắn cắn gà nhà”"
+          ],
+          "sai": [
+           "ông vua anh hùng nhưng gặp vận rủi",
+           "ông vua hiền lành, thương dân"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Thái độ của tác giả: {0}",
+        "o": [
+         {
+          "dung": [
+           "phê phán, nhưng vẫn có chút ngậm ngùi, thương xót"
+          ],
+          "sai": [
+           "ngợi ca, khâm phục vì vua Lê trung thành với nước",
+           "căm ghét, chế giễu tàn nhẫn, không chút cảm thông"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B1.C23",
      "trang": 23,
      "nhom": "Trả lời câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Câu 6. Sự đối lập giữa hai nhân vật Quang Trung và Lê Chiêu Thống, giữa quân Tây Sơn và quân Thanh có tác dụng như thế nào trong việc thể hiện chủ đề của đoạn trích? Hãy khái quát chủ đề đó. (văn bản Quang Trung đại phá quân Thanh của Ngô gia văn phái)"
+     "de": "Câu 6. Sự đối lập giữa hai nhân vật Quang Trung và Lê Chiêu Thống, giữa quân Tây Sơn và quân Thanh có tác dụng như thế nào trong việc thể hiện chủ đề của đoạn trích? Hãy khái quát chủ đề đó. (văn bản Quang Trung đại phá quân Thanh của Ngô gia văn phái)",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "Câu 6. Sự đối lập giữa Quang Trung và Lê Chiêu Thống, giữa quân Tây Sơn và quân Thanh. (Quang Trung đại phá quân Thanh, SGK trang 17–23)",
+      "dong": [
+       {
+        "chu": "Tác dụng của sự đối lập: {0}",
+        "o": [
+         {
+          "dung": [
+           "làm nổi bật Quang Trung và sự thảm bại của kẻ cướp nước, bán nước"
+          ],
+          "sai": [
+           "cho thấy hai bên mạnh ngang nhau, khó đoán ai thắng",
+           "làm câu chuyện bớt căng thẳng, thêm phần vui nhộn"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Chủ đề của đoạn trích: {0}",
+        "o": [
+         {
+          "dung": [
+           "ca ngợi Quang Trung đại phá quân Thanh, phê phán kẻ cướp nước, bán nước"
+          ],
+          "sai": [
+           "kể lại cuộc đời vua Lê Chiêu Thống từ khi lên ngôi đến lúc mất nước",
+           "ca ngợi sức mạnh của quân Thanh và tài cầm quân của Tôn Sĩ Nghị"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B1.C24",
      "trang": 24,
      "nhom": "Trả lời câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Câu 7. Ở đoạn trích này, những yếu tố đặc trưng nào của truyện lịch sử đã được tác giả sử dụng? Nhận xét về nghệ thuật kể chuyện lịch sử của tác giả. (văn bản Quang Trung đại phá quân Thanh của Ngô gia văn phái)"
+     "de": "Câu 7. Ở đoạn trích này, những yếu tố đặc trưng nào của truyện lịch sử đã được tác giả sử dụng? Nhận xét về nghệ thuật kể chuyện lịch sử của tác giả. (văn bản Quang Trung đại phá quân Thanh của Ngô gia văn phái)",
+     "ghep": {
+      "kieu": "O",
+      "sao": 5,
+      "hoi": "Câu 7. Đoạn trích có những yếu tố đặc trưng nào của truyện lịch sử? Nhận xét nghệ thuật kể chuyện. (Quang Trung đại phá quân Thanh, SGK trang 17–23)",
+      "dong": [
+       {
+        "chu": "Nhân vật, sự kiện có thật trong lịch sử (Quang Trung, trận Ngọc Hồi): {0}",
+        "o": [
+         {
+          "dung": [
+           "có dùng"
+          ],
+          "sai": [
+           "không dùng"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Bối cảnh một thời kì lịch sử cụ thể (cuối thế kỉ XVIII): {0}",
+        "o": [
+         {
+          "dung": [
+           "có dùng"
+          ],
+          "sai": [
+           "không dùng"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Ngôn ngữ hợp với thời đại được kể (chúa công, tiên sinh, thân chinh): {0}",
+        "o": [
+         {
+          "dung": [
+           "có dùng"
+          ],
+          "sai": [
+           "không dùng"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Yếu tố thần kì, phép lạ giúp nhân vật thắng giặc: {0}",
+        "o": [
+         {
+          "dung": [
+           "không dùng"
+          ],
+          "sai": [
+           "có dùng"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Nghệ thuật kể chuyện: {0}",
+        "o": [
+         {
+          "dung": [
+           "kể theo trình tự thời gian, tả cụ thể hành động, lời nói, đặt hai phe đối lập"
+          ],
+          "sai": [
+           "kể ngược từ kết thúc về đầu, xen nhiều lời bình của người kể",
+           "kể bằng lời của chính vua Quang Trung, xưng “ta” từ đầu đến cuối"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B1.C25",
@@ -206,21 +1161,252 @@
      "trang": 24,
      "nhom": "Thực hành tiếng Việt",
      "dang": "CAU_NHO",
-     "de": "Câu 1. Chỉ ra từ ngữ địa phương và tác dụng của việc sử dụng những từ ngữ đó trong các trường hợp sau: a. Ai đi vô nơi đây / Xin dừng chân xứ Nghệ. (Huy Cận, Ai vô xứ Nghệ) b. Đến bờ ni anh bảo: / \"Ruộng mình quên cày xáo / Nên lúa chín không đều. / Nhớ lấy để mùa sau / Nhà cố làm cho tốt\". (Trần Hữu Thung, Thăm lúa) c. Chừ đây Huế, Huế ơi! Xiềng gông xưa đã gãy / Hãy bay lên! Sông núi của ta rồi! (Tố Hữu, Huế tháng Tám) d. – Nói như cậu thì... còn chi là Huế! (Hoàng Phủ Ngọc Tường, Chuyện cơm hến) e. Má, tánh lo xa. Chứ gió chướng vào mùa thì lúa cũng vừa chín tới, hi vọng rực lên theo màu lúa. (Nguyễn Ngọc Tư, Trở gió) (Thực hành tiếng Việt: từ ngữ địa phương)"
+     "de": "Câu 1. Chỉ ra từ ngữ địa phương và tác dụng của việc sử dụng những từ ngữ đó trong các trường hợp sau: a. Ai đi vô nơi đây / Xin dừng chân xứ Nghệ. (Huy Cận, Ai vô xứ Nghệ) b. Đến bờ ni anh bảo: / \"Ruộng mình quên cày xáo / Nên lúa chín không đều. / Nhớ lấy để mùa sau / Nhà cố làm cho tốt\". (Trần Hữu Thung, Thăm lúa) c. Chừ đây Huế, Huế ơi! Xiềng gông xưa đã gãy / Hãy bay lên! Sông núi của ta rồi! (Tố Hữu, Huế tháng Tám) d. – Nói như cậu thì... còn chi là Huế! (Hoàng Phủ Ngọc Tường, Chuyện cơm hến) e. Má, tánh lo xa. Chứ gió chướng vào mùa thì lúa cũng vừa chín tới, hi vọng rực lên theo màu lúa. (Nguyễn Ngọc Tư, Trở gió) (Thực hành tiếng Việt: từ ngữ địa phương)",
+     "ghep": {
+      "kieu": "O",
+      "sao": 6,
+      "hoi": "Câu 1. Chỉ ra từ ngữ địa phương trong các trường hợp a – e và cho biết tác dụng.",
+      "dong": [
+       {
+        "chu": "a. “Ai đi vô nơi đây / Xin dừng chân xứ Nghệ.”\nTừ địa phương: {0}",
+        "o": [
+         {
+          "dung": [
+           "“vô”"
+          ],
+          "sai": [
+           "“dừng chân”",
+           "“xứ”"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "b. “Đến bờ ni anh bảo...”\nTừ địa phương: {0}",
+        "o": [
+         {
+          "dung": [
+           "“ni”"
+          ],
+          "sai": [
+           "“bờ”",
+           "“bảo”"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "c. “Chừ đây Huế, Huế ơi! Xiềng gông xưa đã gãy”\nTừ địa phương: {0}",
+        "o": [
+         {
+          "dung": [
+           "“chừ”"
+          ],
+          "sai": [
+           "“xiềng gông”",
+           "“gãy”"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "d. “Nói như cậu thì... còn chi là Huế!”\nTừ địa phương: {0}",
+        "o": [
+         {
+          "dung": [
+           "“chi”"
+          ],
+          "sai": [
+           "“cậu”",
+           "“còn”"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "e. “Má, tánh lo xa. Chứ gió chướng vào mùa thì lúa cũng vừa chín tới...”\nTừ địa phương: {0}",
+        "o": [
+         {
+          "dung": [
+           "“má”, “tánh”"
+          ],
+          "sai": [
+           "“lo xa”",
+           "“lúa”, “mùa”"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Tác dụng chung: {0}",
+        "o": [
+         {
+          "dung": [
+           "tô đậm màu sắc vùng miền, tạo cảm giác gần gũi, chân thực"
+          ],
+          "sai": [
+           "làm câu văn trang trọng, chuẩn mực hơn",
+           "giúp người ở mọi vùng dễ hiểu hơn"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B1.C27",
      "trang": 24,
      "nhom": "Thực hành tiếng Việt",
      "dang": "CAU_NHO",
-     "de": "Câu 2. Nhận xét việc sử dụng từ ngữ địa phương (in đậm: giồng; nhớn, giồng; tía, ăn ong; Tui) trong các trường hợp sau: a. Năm học này, cả lớp đặt chỉ tiêu giồng và chăm sóc 20 cây ở nghĩa trang liệt sĩ của xã. (Trích Biên bản họp lớp) b. Con xem, mới có hai hôm mà hạt đậu nó đã nhớn thế đấy. Nếu con giồng nó ra vườn, chăm bón cẩn thận, nó sẽ ra hoa ra quả... (Vũ Tú Nam, Những truyện hay viết cho thiếu nhi) c. Lần đầu tiên tôi theo tía nuôi tôi và thằng Cò đi \"ăn ong\" đây! (Đoàn Giỏi, Đất rừng phương Nam) d. Tui xin cam đoan những nội dung trình bày trên đây là đúng sự thật. (Trích một bản tường trình) (Thực hành tiếng Việt: từ ngữ địa phương)"
+     "de": "Câu 2. Nhận xét việc sử dụng từ ngữ địa phương (in đậm: giồng; nhớn, giồng; tía, ăn ong; Tui) trong các trường hợp sau: a. Năm học này, cả lớp đặt chỉ tiêu giồng và chăm sóc 20 cây ở nghĩa trang liệt sĩ của xã. (Trích Biên bản họp lớp) b. Con xem, mới có hai hôm mà hạt đậu nó đã nhớn thế đấy. Nếu con giồng nó ra vườn, chăm bón cẩn thận, nó sẽ ra hoa ra quả... (Vũ Tú Nam, Những truyện hay viết cho thiếu nhi) c. Lần đầu tiên tôi theo tía nuôi tôi và thằng Cò đi \"ăn ong\" đây! (Đoàn Giỏi, Đất rừng phương Nam) d. Tui xin cam đoan những nội dung trình bày trên đây là đúng sự thật. (Trích một bản tường trình) (Thực hành tiếng Việt: từ ngữ địa phương)",
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "hoi": "Câu 2. Nhận xét việc dùng từ ngữ địa phương (in đậm trong sách) ở từng trường hợp.",
+      "dong": [
+       {
+        "chu": "a. “...cả lớp đặt chỉ tiêu <b>giồng</b> và chăm sóc 20 cây...” (biên bản họp lớp): {0}",
+        "o": [
+         {
+          "dung": [
+           "không phù hợp: văn bản hành chính phải dùng từ toàn dân"
+          ],
+          "sai": [
+           "phù hợp: tạo màu sắc vùng miền cho lời văn, lời nhân vật",
+           "không phù hợp: từ địa phương là từ sai chính tả"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "b. “...hạt đậu nó đã <b>nhớn</b> thế đấy. Nếu con <b>giồng</b> nó ra vườn...” (truyện thiếu nhi): {0}",
+        "o": [
+         {
+          "dung": [
+           "phù hợp: tạo màu sắc vùng miền cho lời văn, lời nhân vật"
+          ],
+          "sai": [
+           "không phù hợp: văn bản hành chính phải dùng từ toàn dân",
+           "không phù hợp: từ địa phương là từ sai chính tả"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "c. “...tôi theo <b>tía</b> nuôi tôi và thằng Cò đi “<b>ăn ong</b>” đây!” (Đất rừng phương Nam): {0}",
+        "o": [
+         {
+          "dung": [
+           "phù hợp: tạo màu sắc vùng miền cho lời văn, lời nhân vật"
+          ],
+          "sai": [
+           "không phù hợp: văn bản hành chính phải dùng từ toàn dân",
+           "không phù hợp: từ địa phương là từ sai chính tả"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "d. “<b>Tui</b> xin cam đoan những nội dung trình bày trên đây là đúng sự thật.” (bản tường trình): {0}",
+        "o": [
+         {
+          "dung": [
+           "không phù hợp: văn bản hành chính phải dùng từ toàn dân"
+          ],
+          "sai": [
+           "phù hợp: tạo màu sắc vùng miền cho lời văn, lời nhân vật",
+           "không phù hợp: từ địa phương là từ sai chính tả"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B1.C28",
      "trang": 25,
      "nhom": "Thực hành tiếng Việt",
      "dang": "TRAC_NGHIEM",
-     "de": "Câu 3. Trong những trường hợp giao tiếp sau đây, trường hợp nào cần tránh dùng từ ngữ địa phương? a. Phát biểu ý kiến tại một đại hội của trường b. Trò chuyện với những người thân trong gia đình c. Viết biên bản cuộc họp đầu năm của lớp d. Nhắn tin cho một bạn thân e. Thuyết minh về di tích văn hoá ở địa phương cho khách tham quan (Thực hành tiếng Việt: từ ngữ địa phương)"
+     "de": "Câu 3. Trong những trường hợp giao tiếp sau đây, trường hợp nào cần tránh dùng từ ngữ địa phương? a. Phát biểu ý kiến tại một đại hội của trường b. Trò chuyện với những người thân trong gia đình c. Viết biên bản cuộc họp đầu năm của lớp d. Nhắn tin cho một bạn thân e. Thuyết minh về di tích văn hoá ở địa phương cho khách tham quan (Thực hành tiếng Việt: từ ngữ địa phương)",
+     "ghep": {
+      "kieu": "O",
+      "sao": 5,
+      "hoi": "Câu 3. Trường hợp giao tiếp nào cần tránh dùng từ ngữ địa phương?",
+      "dong": [
+       {
+        "chu": "a. Phát biểu ý kiến tại một đại hội của trường: {0}",
+        "o": [
+         {
+          "dung": [
+           "nên tránh"
+          ],
+          "sai": [
+           "dùng được"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "b. Trò chuyện với những người thân trong gia đình: {0}",
+        "o": [
+         {
+          "dung": [
+           "dùng được"
+          ],
+          "sai": [
+           "nên tránh"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "c. Viết biên bản cuộc họp đầu năm của lớp: {0}",
+        "o": [
+         {
+          "dung": [
+           "nên tránh"
+          ],
+          "sai": [
+           "dùng được"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "d. Nhắn tin cho một bạn thân: {0}",
+        "o": [
+         {
+          "dung": [
+           "dùng được"
+          ],
+          "sai": [
+           "nên tránh"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "e. Thuyết minh về di tích văn hoá ở địa phương cho khách tham quan: {0}",
+        "o": [
+         {
+          "dung": [
+           "nên tránh"
+          ],
+          "sai": [
+           "dùng được"
+          ],
+          "hai": true
+         }
+        ]
+       }
+      ]
+     }
     }
    ]
   },
@@ -233,42 +1419,299 @@
      "trang": 28,
      "nhom": "Trả lời câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Câu 1. Đọc trích đoạn bài thơ, em hình dung như thế nào về bối cảnh lịch sử (không gian, thời gian, những sự kiện quan trọng,...) đã gợi nguồn cảm hứng thơ ca cho tác giả? (văn bản Ta đi tới của Tố Hữu)"
+     "de": "Câu 1. Đọc trích đoạn bài thơ, em hình dung như thế nào về bối cảnh lịch sử (không gian, thời gian, những sự kiện quan trọng,...) đã gợi nguồn cảm hứng thơ ca cho tác giả? (văn bản Ta đi tới của Tố Hữu)",
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "hoi": "Câu 1. Bối cảnh lịch sử gợi cảm hứng cho bài thơ. (Ta đi tới, SGK trang 25–27)",
+      "dong": [
+       {
+        "chu": "Thời gian: {0}",
+        "o": [
+         {
+          "dung": [
+           "tháng 8 năm 1954, khi kháng chiến chống Pháp vừa thắng lợi"
+          ],
+          "sai": [
+           "tháng 8 năm 1945, ngày Cách mạng tháng Tám",
+           "năm 1975, khi đất nước thống nhất"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Không gian: {0}",
+        "o": [
+         {
+          "dung": [
+           "khắp mọi miền đất nước, từ Việt Bắc, Tây Bắc đến Nam Bộ"
+          ],
+          "sai": [
+           "chỉ riêng chiến khu Việt Bắc",
+           "một làng quê nhỏ ở đồng bằng"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Sự kiện: {0}",
+        "o": [
+         {
+          "dung": [
+           "chiến thắng Điện Biên Phủ, chín năm kháng chiến chống Pháp kết thúc"
+          ],
+          "sai": [
+           "chiến thắng Bạch Đằng năm 938",
+           "Bác Hồ đọc bản Tuyên ngôn Độc lập"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B1.C30",
      "trang": 28,
      "nhom": "Trả lời câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Câu 2. Nhìn lại chặng đường cuộc kháng chiến chống thực dân Pháp \"ba ngàn ngày không nghỉ\", nhà thơ đã bộc lộ cảm xúc gì? Theo em, đây chỉ là cảm xúc của cá nhân nhà thơ hay còn là cảm xúc chung của cộng đồng? Vì sao? (văn bản Ta đi tới của Tố Hữu)"
+     "de": "Câu 2. Nhìn lại chặng đường cuộc kháng chiến chống thực dân Pháp \"ba ngàn ngày không nghỉ\", nhà thơ đã bộc lộ cảm xúc gì? Theo em, đây chỉ là cảm xúc của cá nhân nhà thơ hay còn là cảm xúc chung của cộng đồng? Vì sao? (văn bản Ta đi tới của Tố Hữu)",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "Câu 2. Nhìn lại chặng đường kháng chiến “ba ngàn ngày không nghỉ”, nhà thơ bộc lộ cảm xúc gì? Đó là cảm xúc riêng hay chung? (Ta đi tới, SGK trang 25–27)",
+      "dong": [
+       {
+        "chu": "Cảm xúc: {0}",
+        "o": [
+         {
+          "dung": [
+           "vui sướng, tự hào trước chiến thắng"
+          ],
+          "sai": [
+           "buồn bã, nhớ tiếc những ngày kháng chiến",
+           "lo âu, sợ giặc quay lại"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Đó là cảm xúc: {0}",
+        "o": [
+         {
+          "dung": [
+           "chung của cả dân tộc (“Mây của ta, trời thắm của ta”)"
+          ],
+          "sai": [
+           "riêng của nhà thơ, vì chỉ ông đi qua những con đường ấy",
+           "riêng của người lính, không phải của người dân"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B1.C31",
      "trang": 28,
      "nhom": "Trả lời câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Câu 3. Xác định hình ảnh trung tâm của đoạn trích. Hình ảnh đó có mối liên hệ với những hình ảnh nào khác trong đoạn trích? (văn bản Ta đi tới của Tố Hữu)"
+     "de": "Câu 3. Xác định hình ảnh trung tâm của đoạn trích. Hình ảnh đó có mối liên hệ với những hình ảnh nào khác trong đoạn trích? (văn bản Ta đi tới của Tố Hữu)",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "Câu 3. Hình ảnh trung tâm của đoạn trích và mối liên hệ với các hình ảnh khác. (Ta đi tới, SGK trang 25–27)",
+      "dong": [
+       {
+        "chu": "Hình ảnh trung tâm: {0}",
+        "o": [
+         {
+          "dung": [
+           "con đường"
+          ],
+          "sai": [
+           "dòng sông",
+           "lá cờ đỏ"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Hình ảnh đó gắn với: {0}",
+        "o": [
+         {
+          "dung": [
+           "bước chân “ta” đi tới, các địa danh kháng chiến, con đường cách mạng"
+          ],
+          "sai": [
+           "chuyến đi du lịch ngắm cảnh của riêng nhà thơ",
+           "con đường đi học hằng ngày của các em nhỏ trong làng"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B1.C32",
      "trang": 28,
      "nhom": "Trả lời câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Câu 4. Những địa danh nào được nhắc đến trong đoạn trích? Theo em, việc xuất hiện một loạt địa danh như vậy mang lại hiệu quả gì trong việc thể hiện tình cảm của tác giả? (văn bản Ta đi tới của Tố Hữu)"
+     "de": "Câu 4. Những địa danh nào được nhắc đến trong đoạn trích? Theo em, việc xuất hiện một loạt địa danh như vậy mang lại hiệu quả gì trong việc thể hiện tình cảm của tác giả? (văn bản Ta đi tới của Tố Hữu)",
+     "ghep": {
+      "kieu": "O",
+      "sao": 6,
+      "hoi": "Câu 4. Những địa danh nào được nhắc đến trong đoạn trích? Loạt địa danh ấy mang lại hiệu quả gì? (Ta đi tới, SGK trang 25–27)",
+      "dong": [
+       {
+        "chu": "Bắc Sơn, Đình Cả, Thái Nguyên: {0}",
+        "o": [
+         {
+          "dung": [
+           "có nhắc"
+          ],
+          "sai": [
+           "không nhắc"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Điện Biên, sông Lô, bến Bình Ca: {0}",
+        "o": [
+         {
+          "dung": [
+           "có nhắc"
+          ],
+          "sai": [
+           "không nhắc"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Bến Bình Than, điện Diên Hồng: {0}",
+        "o": [
+         {
+          "dung": [
+           "không nhắc"
+          ],
+          "sai": [
+           "có nhắc"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Phan Rang, Phan Thiết, Đắc Lắc: {0}",
+        "o": [
+         {
+          "dung": [
+           "có nhắc"
+          ],
+          "sai": [
+           "không nhắc"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Hà Hồi, Ngọc Hồi: {0}",
+        "o": [
+         {
+          "dung": [
+           "không nhắc"
+          ],
+          "sai": [
+           "có nhắc"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Hiệu quả: {0}",
+        "o": [
+         {
+          "dung": [
+           "niềm vui chiến thắng lan khắp đất nước, tự hào về mọi miền Tổ quốc"
+          ],
+          "sai": [
+           "giúp người đọc học thuộc tên các tỉnh trên bản đồ",
+           "cho thấy nhà thơ đã đi du lịch rất nhiều nơi"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B1.C33",
      "trang": 28,
      "nhom": "Trả lời câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Câu 5. Trong đoạn trích, tác giả sử dụng lặp đi lặp lại cấu trúc: \"Ai...\", \"Đường...\". Phân tích tác dụng của biện pháp tu từ ấy. (văn bản Ta đi tới của Tố Hữu)"
+     "de": "Câu 5. Trong đoạn trích, tác giả sử dụng lặp đi lặp lại cấu trúc: \"Ai...\", \"Đường...\". Phân tích tác dụng của biện pháp tu từ ấy. (văn bản Ta đi tới của Tố Hữu)",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "Câu 5. Tác giả lặp đi lặp lại cấu trúc “Ai...”, “Đường...”. (Ta đi tới, SGK trang 25–27)",
+      "dong": [
+       {
+        "chu": "Biện pháp tu từ: {0}",
+        "o": [
+         {
+          "dung": [
+           "điệp ngữ, điệp cấu trúc"
+          ],
+          "sai": [
+           "so sánh",
+           "nhân hoá"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Tác dụng: {0}",
+        "o": [
+         {
+          "dung": [
+           "tạo nhịp thơ dồn dập, nhấn mạnh niềm vui tự do lan khắp mọi miền đất nước"
+          ],
+          "sai": [
+           "nhấn mạnh nỗi buồn chia li của những người phải ra đi",
+           "làm nhịp thơ chậm rãi, trầm buồn như lời ru"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B1.C34",
      "trang": 28,
      "nhom": "Trả lời câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Câu 6. Nhận xét về cách đặt nhan đề bài thơ. (văn bản Ta đi tới của Tố Hữu)"
+     "de": "Câu 6. Nhận xét về cách đặt nhan đề bài thơ. (văn bản Ta đi tới của Tố Hữu)",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Câu 6. Nhận xét nào đúng nhất về nhan đề Ta đi tới? (Ta đi tới, SGK trang 25–27)",
+      "cac": [
+       "Ngắn gọn, giàu ý nghĩa: vừa ngợi ca chiến thắng, vừa gợi con đường cả dân tộc tiếp tục đi tới phía trước",
+       "Chỉ kể lại chuyến đi thăm Việt Bắc của riêng nhà thơ, không gắn với việc chung của dân tộc",
+       "Nói về nỗi nhớ quê nhà da diết của người lính phải đi xa trong những ngày kháng chiến",
+       "Nhắc lại những trận đánh thua của quân ta để người đọc không quên mất mát chiến tranh"
+      ],
+      "dap": "A"
+     }
     }
    ]
   },
@@ -294,7 +1737,112 @@
      "trang": 34,
      "nhom": "Củng cố, mở rộng",
      "dang": "CAU_NHO",
-     "de": "Câu 1. Kẻ bảng vào vở theo mẫu và điền thông tin ngắn gọn về các văn bản truyện đã học: các cột Lá cờ thêu sáu chữ vàng, Quang Trung đại phá quân Thanh; các hàng Bối cảnh, Cốt truyện, Nhân vật, Ngôn ngữ."
+     "de": "Câu 1. Kẻ bảng vào vở theo mẫu và điền thông tin ngắn gọn về các văn bản truyện đã học: các cột Lá cờ thêu sáu chữ vàng, Quang Trung đại phá quân Thanh; các hàng Bối cảnh, Cốt truyện, Nhân vật, Ngôn ngữ.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 7,
+      "hoi": "Câu 1. Chọn nội dung đúng cho từng ô của bảng so sánh hai truyện lịch sử đã học: Lá cờ thêu sáu chữ vàng và Quang Trung đại phá quân Thanh.",
+      "dong": [
+       {
+        "chu": "Lá cờ thêu sáu chữ vàng, bối cảnh: {0}",
+        "o": [
+         {
+          "dung": [
+           "thời Trần, quân Nguyên lăm le xâm lược nước ta lần thứ hai"
+          ],
+          "sai": [
+           "cuối thế kỉ XVIII, quân Thanh kéo vào chiếm Thăng Long",
+           "năm 1954, kháng chiến chống Pháp thắng lợi"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Quang Trung đại phá quân Thanh, bối cảnh: {0}",
+        "o": [
+         {
+          "dung": [
+           "cuối thế kỉ XVIII, quân Thanh kéo vào chiếm Thăng Long"
+          ],
+          "sai": [
+           "thời Trần, quân Nguyên lăm le xâm lược nước ta lần thứ hai",
+           "năm 1954, kháng chiến chống Pháp thắng lợi"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Lá cờ thêu sáu chữ vàng, cốt truyện: {0}",
+        "o": [
+         {
+          "dung": [
+           "Quốc Toản không được dự bàn việc nước, liều xin đánh, được tha, bóp nát quả cam"
+          ],
+          "sai": [
+           "Quang Trung lên ngôi, hành quân thần tốc, đại phá quân Thanh, vua Lê tháo chạy",
+           "nhà thơ đi khắp đất nước sau chiến thắng Điện Biên Phủ"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Quang Trung đại phá quân Thanh, cốt truyện: {0}",
+        "o": [
+         {
+          "dung": [
+           "Quang Trung lên ngôi, hành quân thần tốc, đại phá quân Thanh, vua Lê tháo chạy"
+          ],
+          "sai": [
+           "Quốc Toản không được dự bàn việc nước, liều xin đánh, được tha, bóp nát quả cam",
+           "nhà thơ đi khắp đất nước sau chiến thắng Điện Biên Phủ"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Lá cờ thêu sáu chữ vàng, nhân vật: {0}",
+        "o": [
+         {
+          "dung": [
+           "Trần Quốc Toản, vua Thiệu Bảo, Chiêu Thành Vương"
+          ],
+          "sai": [
+           "Quang Trung, Lê Chiêu Thống, Tôn Sĩ Nghị",
+           "Trần Quốc Toản, Quang Trung, Nguyễn Thiếp"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Quang Trung đại phá quân Thanh, nhân vật: {0}",
+        "o": [
+         {
+          "dung": [
+           "Quang Trung, Lê Chiêu Thống, Tôn Sĩ Nghị"
+          ],
+          "sai": [
+           "Trần Quốc Toản, vua Thiệu Bảo, Chiêu Thành Vương",
+           "Trần Quốc Toản, Quang Trung, Nguyễn Thiếp"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Ngôn ngữ của cả hai truyện: {0}",
+        "o": [
+         {
+          "dung": [
+           "mang màu sắc lịch sử, hợp với thời đại và vị thế nhân vật"
+          ],
+          "sai": [
+           "dùng nhiều tiếng lóng của lớp trẻ ngày nay",
+           "dùng nhiều từ địa phương Nam Bộ"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B1.C37",

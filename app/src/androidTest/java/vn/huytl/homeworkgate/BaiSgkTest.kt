@@ -6,6 +6,7 @@ import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
 import org.junit.After
 import org.junit.Assert.assertEquals
+import org.junit.Assert.assertFalse
 import org.junit.Assert.assertNotNull
 import org.junit.Assert.assertNull
 import org.junit.Assert.assertTrue
@@ -24,6 +25,7 @@ import vn.huytl.homeworkgate.kho.CauHoi
 import vn.huytl.homeworkgate.kho.KhoBai
 import vn.huytl.homeworkgate.kho.NganHang
 import vn.huytl.homeworkgate.kho.PhanHoc
+import vn.huytl.homeworkgate.ui.BaiSgkActivity
 
 /**
  * Bai tap SGK lam tren may ([GiaiDe.LOAI_SGK], Ba Huy chot 2/10/2026): con chon cau o "Làm bài tập
@@ -137,6 +139,18 @@ class BaiSgkTest {
         // Cau nam trong bai dang lam thi ra khoi Luyen tap.
         val trongLuyen = LamTrenMay.cauLamThem(context, "Toán").map { it.cau.id }
         assertTrue(may.none { it.cau.id in trongLuyen })
+    }
+
+    /** Ba Huy chot 11/10/2026: man bai SGK mon Van khong hien cau phai viet, xem [BaiSgkActivity.coHien]. */
+    @Test
+    fun mon_van_chi_hien_cau_lam_tren_may() {
+        val vietDoan = kho.cauTheoId("van8t1:B1.C11")!!
+        val bam = kho.cauTheoId("van8t1:B1.C4")!!
+        assertFalse(vietDoan.lamTrenMay)
+        assertFalse(BaiSgkActivity.coHien("Ngữ văn", vietDoan))
+        assertTrue(BaiSgkActivity.coHien("Ngữ văn", bam))
+        // Mon khac giu luat cu: cau chua co ghep van hien, la cau phai viet.
+        assertTrue(BaiSgkActivity.coHien("Toán", cauPhaiViet()))
     }
 
     @Test

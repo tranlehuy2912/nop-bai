@@ -211,6 +211,17 @@ Chép từ bản quét SGK Tiếng Anh 8 Global Success, đợt đầu Unit 1 t�
 - Một trang có hai bài cùng số ở hai phần khác nhau (Unit 6 trang 64: Bài 3 của A Closer Look 2 và Bài 3 của Communication): mã của bài thuộc phần sau thêm tên phần, `Bài 3.1 (tr.64, Communication)` (anh Huy chốt 06/10/2026).
 - Bài viết đoạn văn ở Skills 2 làm như `E3a`, `E3b` của SBT: phần a xếp đoạn mẫu (`BUOC`), phần b ghép theo câu gợi ý (`O`).
 
+## SGK Ngữ văn (thử Bài 1, từ 11/10/2026)
+
+Anh Huy cho soạn thử Bài 1 "Câu chuyện của lịch sử" của `van8t1` (31 câu ghép) để xem màn trước khi quyết làm cả hai tập. Các luật dưới đây anh Huy chốt ngày 11/10/2026 hoặc rút ra lúc soát ảnh màn:
+
+- Câu đọc hiểu hỏi phân tích (tâm trạng, ý nghĩa, vì sao, tác dụng) đổi thành câu chọn ý đúng nhất: `CHON` khi sách hỏi một ý, `O` khi sách hỏi nhiều vế (mỗi vế một dòng, một ô). Phương án sai là cách hiểu sai hay gặp, kể cả chi tiết của văn bản khác trong cùng bài. Đáp án đúng không được dài hơn hẳn các phương án sai, vì con dễ đoán theo độ dài.
+- Câu không có đáp án chung (chia sẻ cảm nghĩ, em thích nhân vật nào, tự tìm đọc truyện) và câu viết đoạn, viết bài thì không ghép. Màn "Làm bài tập trong SGK" môn Văn không hiện các câu này (`BaiSgkActivity.coHien`); cô giao thì con làm vở, nộp ảnh từ vở dặn dò như cũ. Câu Trước khi đọc hỏi hiểu biết (nhân vật thiếu nhi lỗi lạc, điều đúng sai về Quang Trung) thì vẫn ghép.
+- `hoi` mở đầu bằng số câu in trong sách ("Câu 3."). Câu hỏi về một văn bản kết bằng tên văn bản và trang, ví dụ "(Lá cờ thêu sáu chữ vàng, SGK trang 10–14)": con có SGK giấy nên không chép văn bản vào máy. Câu Thực hành tiếng Việt trích câu ví dụ vào từng dòng nên không ghi trang.
+- Thực hành tiếng Việt: `O`, mỗi câu ví dụ một dòng, một ô chọn từ và một ô nghĩa hay tác dụng. Từ đặt trong ngoặc kép (“gà”, “chừ”): phím hai ký tự trở xuống hiện chữ to hơn các phím khác (`KhungGhep.nut`).
+- Ô hai giá trị dùng nhãn rõ nghĩa ("có nhắc"/"không nhắc", "nên tránh"/"dùng được", "ý nghĩ của Quốc Toản"/"lời kể, tả của người kể chuyện") thay cho "Có"/"Không".
+- Văn chưa có lối vào cho con: trang Luyện tập chỉ có ba khu Toán, KHTN, Tiếng Anh, `LamTrenMay.MON` chưa có Văn, mốc "Lớp đã học tới" chưa có Văn (bài Văn mang tên văn bản, không có số bài). Bài thử mở thẳng `BaiSgkActivity` với `mon` "Ngữ văn" trên máy ảo.
+
 ## Bộ đề thi in sẵn (`dethianh8.json`, từ 30/09/2026)
 
 Một file như file sách, nhưng mỗi `bai` là một đề nguyên vẹn, giữ đúng thứ tự in. Khai trong `NganHang.SACH` với `deThi = true`: không hiện ở màn chọn sách khi nộp bài, không vào làm thêm hay đề tuần (`kho/DeThi.kt`, `GiaiDe.taoDeThi`, `GiaiDe.moDeThi`). Câu của đề vẫn quay lại như mọi câu làm trên máy: ở phần làm lại của Luyện tập khi đề đã hết hạn, và ở Ôn lại khi tới hẹn. Đợt 1 (giữa kì 1 số 1 tới 3) sinh bằng `ghep-nhap/dethianh/tao_de.py`, nằm ngoài git cạnh ba repo. Đợt hai (giữa kì 1 số 4 tới 6, cuối kì 1 số 1 tới 8 trừ số 6, ngày 30/09/2026) soạn từ PDF bằng tác tử; bản chữ đề, file từng đề, ghi chú soát và script gộp nằm trong gói `de-thi-anh-dot2-2026-09-30.zip`, cũng ngoài git, và không có trên máy đang dùng (kiểm ngày 01/10/2026).
