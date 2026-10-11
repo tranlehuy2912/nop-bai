@@ -2,7 +2,7 @@
  "nguon": "dethikhtn8",
  "mon": "Khoa học tự nhiên",
  "ten": "Đề thi Khoa học tự nhiên 8",
- "ban": 10,
+ "ban": 11,
  "cac_bai": [
   {
    "chuong": "Giữa học kì 1",
@@ -20602,6 +20602,549 @@
       ]
      },
      "ghi_chu": "Đề in \"Nêu các biện pháp tránh thai và cơ sở khoa học của các biện pháp đó. Nêu hậu quả của việc phá thai ở tuổi vị thành niên?\". Theo luật tránh viết tay, làm trên máy phần đầu bằng bốn dòng nối cột: mỗi biện pháp in trong lời giải nối với một trong ba nguyên tắc tránh thai của SGK Bài 40 (trang 167: ngăn không cho trứng chín và rụng, tránh không cho tinh trùng gặp trứng, chống sự làm tổ của trứng đã thụ tinh), cách nối như SBT 40.6 và SGK B40.C5 đã có trên máy. Lời giải in ghi \"Triệt sản: Loại bỏ cơ quan sinh sản\", sai: triệt sản là thắt (cắt) ống dẫn tinh hoặc ống dẫn trứng, tinh hoàn và buồng trứng vẫn giữ nguyên, nên dòng này ghi rõ cách làm, nguyên tắc là tinh trùng không gặp được trứng (như SBT 40.6). Phần hậu quả của phá thai ở tuổi vị thành niên (lời giải in: thủng tử cung, xuất huyết, nhiễm trùng vùng sinh sản, vô sinh, ảnh hưởng tâm lí, sức khỏe) không có trong SGK KHTN 8 (Bài 40 chỉ nói nguy cơ khi mang thai ở tuổi vị thành niên) nên không đưa lên máy."
+    }
+   ]
+  },
+  {
+   "chuong": "Cuối học kì 2",
+   "bai": "Đề cương học kì 2: Vật lí",
+   "de_thi": {
+    "ma": "KCK2-DC1",
+    "nguon_goc": "loigiaihay.com, đăng 27/03/2024"
+   },
+   "cac_cau": [
+    {
+     "ma": "KCK2-DC1.C1",
+     "nhan": "Câu 1",
+     "phan": "Phần 1. Trắc nghiệm",
+     "nhom": "",
+     "trung": "KGK2-2.C13"
+    },
+    {
+     "ma": "KCK2-DC1.C2",
+     "nhan": "Câu 2",
+     "phan": "Phần 1. Trắc nghiệm",
+     "nhom": "",
+     "trung": "KGK2-2.C14"
+    },
+    {
+     "ma": "KCK2-DC1.C3",
+     "nhan": "Câu 3",
+     "phan": "Phần 1. Trắc nghiệm",
+     "nhom": "",
+     "trung": "KGK2-2.C15"
+    },
+    {
+     "ma": "KCK2-DC1.C4",
+     "nhan": "Câu 4",
+     "phan": "Phần 1. Trắc nghiệm",
+     "nhom": "",
+     "trung": "KGK2-2.C16"
+    },
+    {
+     "ma": "KCK2-DC1.C5",
+     "nhan": "Câu 5",
+     "phan": "Phần 1. Trắc nghiệm",
+     "nhom": "",
+     "trung": "KGK2-3.C12"
+    },
+    {
+     "ma": "KCK2-DC1.C6",
+     "nhan": "Câu 6",
+     "phan": "Phần 1. Trắc nghiệm",
+     "nhom": "",
+     "trung": "KGK2-3.C19"
+    },
+    {
+     "ma": "KCK2-DC1.C7",
+     "nhan": "Câu 7",
+     "phan": "Phần 1. Trắc nghiệm",
+     "nhom": "",
+     "trung": "KGK2-4.C8"
+    },
+    {
+     "ma": "KCK2-DC1.C8",
+     "nhan": "Câu 8",
+     "phan": "Phần 1. Trắc nghiệm",
+     "nhom": "",
+     "trung": "KGK2-4.C9"
+    },
+    {
+     "ma": "KCK2-DC1.C9",
+     "nhan": "Câu 9",
+     "phan": "Phần 1. Trắc nghiệm",
+     "nhom": "",
+     "trung": "KGK2-4.C10"
+    },
+    {
+     "ma": "KCK2-DC1.C10",
+     "nhan": "Câu 10",
+     "phan": "Phần 1. Trắc nghiệm",
+     "nhom": "",
+     "trung": "KGK2-4.C11"
+    },
+    {
+     "ma": "KCK2-DC1.C11",
+     "nhan": "Câu 11",
+     "phan": "Phần 1. Trắc nghiệm",
+     "nhom": "",
+     "trung": "KGK2-5.C11"
+    },
+    {
+     "ma": "KCK2-DC1.C12",
+     "nhan": "Câu 12",
+     "phan": "Phần 1. Trắc nghiệm",
+     "nhom": "",
+     "trung": "KGK2-5.C12"
+    },
+    {
+     "ma": "KCK2-DC1.C13",
+     "nhan": "Câu 13",
+     "phan": "Phần 1. Trắc nghiệm",
+     "nhom": "",
+     "trung": "KGK2-5.C13"
+    },
+    {
+     "ma": "KCK2-DC1.C14",
+     "nhan": "Câu 14",
+     "phan": "Phần 1. Trắc nghiệm",
+     "nhom": "",
+     "trung": "KGK2-5.C14"
+    },
+    {
+     "ma": "KCK2-DC1.C15",
+     "nhan": "Câu 15",
+     "phan": "Phần 1. Trắc nghiệm",
+     "nhom": "",
+     "de": "Nhiệt dung riêng của một chất có giá trị âm trong trường hợp nào sau đây?\nA. Chất nhận nhiệt và tăng nhiệt độ.\nB. Chất nhận nhiệt và giảm nhiệt độ.\nC. Chất tỏa nhiệt và giảm nhiệt độ.\nD. Chất tỏa nhiệt và giữ nguyên nhiệt độ.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "bai_sgk": 27,
+     "bo_may": "đề sai kiến thức: nhiệt dung riêng của một chất không có giá trị âm",
+     "ghi_chu": "Đề in y hệt Câu 15 đề giữa kì 2 số 5; câu đó không làm trên máy (đề sai kiến thức: nhiệt dung riêng của một chất không có giá trị âm), ở đây cũng bỏ."
+    },
+    {
+     "ma": "KCK2-DC1.C16",
+     "nhan": "Câu 16",
+     "phan": "Phần 1. Trắc nghiệm",
+     "nhom": "",
+     "trung": "KGK2-2.C25"
+    },
+    {
+     "ma": "KCK2-DC1.C17",
+     "nhan": "Câu 17",
+     "phan": "Phần 1. Trắc nghiệm",
+     "nhom": "",
+     "trung": "KGK2-2.C26"
+    },
+    {
+     "ma": "KCK2-DC1.C18",
+     "nhan": "Câu 18",
+     "phan": "Phần 1. Trắc nghiệm",
+     "nhom": "",
+     "trung": "KGK2-2.C27"
+    },
+    {
+     "ma": "KCK2-DC1.C19",
+     "nhan": "Câu 19",
+     "phan": "Phần 1. Trắc nghiệm",
+     "nhom": "",
+     "trung": "KGK2-3.C26"
+    },
+    {
+     "ma": "KCK2-DC1.C20",
+     "nhan": "Câu 20",
+     "phan": "Phần 1. Trắc nghiệm",
+     "nhom": "",
+     "trung": "KGK2-3.C27"
+    },
+    {
+     "ma": "KCK2-DC1.TL1",
+     "nhan": "Câu 1",
+     "phan": "Phần 2. Tự luận",
+     "nhom": "Câu 1:",
+     "trung": "KCK2-1.TL1"
+    },
+    {
+     "ma": "KCK2-DC1.TL2",
+     "nhan": "Câu 2",
+     "phan": "Phần 2. Tự luận",
+     "nhom": "Câu 2:",
+     "trung": "KCK2-2.TL1"
+    },
+    {
+     "ma": "KCK2-DC1.TL3",
+     "nhan": "Câu 3",
+     "phan": "Phần 2. Tự luận",
+     "nhom": "Câu 3:",
+     "trung": "KCK2-3.TL1"
+    },
+    {
+     "ma": "KCK2-DC1.TL4",
+     "nhan": "Câu 4",
+     "phan": "Phần 2. Tự luận",
+     "nhom": "Câu 4:",
+     "trung": "KCK2-4.TL1"
+    },
+    {
+     "ma": "KCK2-DC1.TL5",
+     "nhan": "Câu 5",
+     "phan": "Phần 2. Tự luận",
+     "nhom": "Câu 5:",
+     "trung": "KCK2-5.TL1"
+    }
+   ]
+  },
+  {
+   "chuong": "Cuối học kì 2",
+   "bai": "Đề cương học kì 2: Sinh học",
+   "de_thi": {
+    "ma": "KCK2-DC2",
+    "nguon_goc": "loigiaihay.com, đăng 27/03/2024"
+   },
+   "cac_cau": [
+    {
+     "ma": "KCK2-DC2.C21",
+     "nhan": "Câu 21",
+     "phan": "Phần 1. Trắc nghiệm",
+     "nhom": "",
+     "trung": "KCK2-4.C11"
+    },
+    {
+     "ma": "KCK2-DC2.C22",
+     "nhan": "Câu 22",
+     "phan": "Phần 1. Trắc nghiệm",
+     "nhom": "",
+     "de": "Trong quá trình lọc máu ở thận, các chất đi qua lỗ lọc nhờ\nA. sự vận chuyển chủ động của các kênh ion trên màng lọc.\nB. sự chênh lệch áp suất giữa hai bên màng lọc.\nC. sự co dãn linh hoạt của các lỗ lọc kèm hoạt động của protein xuyên màng.\nD. lực liên kết của dòng chất lỏng cuốn các chất đi qua lỗ lọc.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "bai_sgk": 35,
+     "bo_may": "kiến thức ngoài SGK KHTN 8",
+     "ghi_chu": "Đề in y hệt Câu 12 đề cuối kì 2 số 4; câu đó không làm trên máy (kiến thức ngoài SGK KHTN 8), ở đây cũng bỏ."
+    },
+    {
+     "ma": "KCK2-DC2.C23",
+     "nhan": "Câu 23",
+     "phan": "Phần 1. Trắc nghiệm",
+     "nhom": "",
+     "trung": "KCK2-4.C13"
+    },
+    {
+     "ma": "KCK2-DC2.C24",
+     "nhan": "Câu 24",
+     "phan": "Phần 1. Trắc nghiệm",
+     "nhom": "",
+     "trung": "KCK2-4.C14"
+    },
+    {
+     "ma": "KCK2-DC2.C25",
+     "nhan": "Câu 25",
+     "phan": "Phần 1. Trắc nghiệm",
+     "nhom": "",
+     "trung": "KCK2-4.C15"
+    },
+    {
+     "ma": "KCK2-DC2.C26",
+     "nhan": "Câu 26",
+     "phan": "Phần 1. Trắc nghiệm",
+     "nhom": "",
+     "trung": "KCK2-4.C16"
+    },
+    {
+     "ma": "KCK2-DC2.C27",
+     "nhan": "Câu 27",
+     "phan": "Phần 1. Trắc nghiệm",
+     "nhom": "",
+     "trung": "KCK2-4.C17"
+    },
+    {
+     "ma": "KCK2-DC2.C28",
+     "nhan": "Câu 28",
+     "phan": "Phần 1. Trắc nghiệm",
+     "nhom": "",
+     "trung": "KCK2-4.C18"
+    },
+    {
+     "ma": "KCK2-DC2.C29",
+     "nhan": "Câu 29",
+     "phan": "Phần 1. Trắc nghiệm",
+     "nhom": "",
+     "de": "Phát biểu nào sau đây không đúng với sinh quyển?\nA. Giới hạn ở trên là nơi tiếp giáp với tầng ozone.\nB. Giới hạn dưới của đại dương đến nơi sâu nhất.\nC. Ranh giới trùng hoàn toàn với lớp vỏ Trái Đất.\nD. Ranh giới trùng hợp với toàn bộ lớp vỏ địa lí.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "C",
+     "loai_dap_an": "TN",
+     "bai_sgk": 45,
+     "bo_may": "kiến thức ngoài SGK KHTN 8",
+     "ghi_chu": "Đề in y hệt Câu 19 đề cuối kì 2 số 4; câu đó không làm trên máy (kiến thức ngoài SGK KHTN 8), ở đây cũng bỏ."
+    },
+    {
+     "ma": "KCK2-DC2.C30",
+     "nhan": "Câu 30",
+     "phan": "Phần 1. Trắc nghiệm",
+     "nhom": "",
+     "trung": "KCK2-4.C20"
+    },
+    {
+     "ma": "KCK2-DC2.C31",
+     "nhan": "Câu 31",
+     "phan": "Phần 1. Trắc nghiệm",
+     "nhom": "",
+     "trung": "KCK2-3.C11"
+    },
+    {
+     "ma": "KCK2-DC2.C32",
+     "nhan": "Câu 32",
+     "phan": "Phần 1. Trắc nghiệm",
+     "nhom": "",
+     "trung": "KCK2-3.C12"
+    },
+    {
+     "ma": "KCK2-DC2.C33",
+     "nhan": "Câu 33",
+     "phan": "Phần 1. Trắc nghiệm",
+     "nhom": "",
+     "de": "Ở người, trụ não có chức năng chủ yếu là gì?\nA. Điều khiển các hoạt động có ý thức của con người.\nB. Điều khiển, điều hòa hoạt động của các nội quan, đặc biệt là hoạt động tuần hoàn, hô hấp, tiêu hóa.\nC. Điều hòa, phối hợp các cử động phức tạp và giúp giữ thăng bằng cơ thể.\nD. Là trung ương điều khiển các quá trình trao đổi chất và điều hòa thân nhiệt.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "bai_sgk": 37,
+     "bo_may": "kiến thức ngoài SGK KHTN 8",
+     "ghi_chu": "Đề in y hệt Câu 13 đề cuối kì 2 số 3; câu đó không làm trên máy (kiến thức ngoài SGK KHTN 8), ở đây cũng bỏ."
+    },
+    {
+     "ma": "KCK2-DC2.C34",
+     "nhan": "Câu 34",
+     "phan": "Phần 1. Trắc nghiệm",
+     "nhom": "",
+     "trung": "KCK2-3.C14"
+    },
+    {
+     "ma": "KCK2-DC2.C35",
+     "nhan": "Câu 35",
+     "phan": "Phần 1. Trắc nghiệm",
+     "nhom": "",
+     "trung": "KCK2-3.C15"
+    },
+    {
+     "ma": "KCK2-DC2.C36",
+     "nhan": "Câu 36",
+     "phan": "Phần 1. Trắc nghiệm",
+     "nhom": "",
+     "trung": "KCK2-3.C16"
+    },
+    {
+     "ma": "KCK2-DC2.C37",
+     "nhan": "Câu 37",
+     "phan": "Phần 1. Trắc nghiệm",
+     "nhom": "",
+     "trung": "KCK2-3.C17"
+    },
+    {
+     "ma": "KCK2-DC2.C38",
+     "nhan": "Câu 38",
+     "phan": "Phần 1. Trắc nghiệm",
+     "nhom": "",
+     "trung": "KCK2-3.C18"
+    },
+    {
+     "ma": "KCK2-DC2.C39",
+     "nhan": "Câu 39",
+     "phan": "Phần 1. Trắc nghiệm",
+     "nhom": "",
+     "trung": "KCK2-3.C19"
+    },
+    {
+     "ma": "KCK2-DC2.C40",
+     "nhan": "Câu 40",
+     "phan": "Phần 1. Trắc nghiệm",
+     "nhom": "",
+     "de": "Vỏ tuyến trên thận được phân chia làm mấy lớp?\nA. 2 lớp.\nB. 3 lớp.\nC. 4 lớp.\nD. 5 lớp.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "bai_sgk": 38,
+     "bo_may": "kiến thức ngoài SGK KHTN 8",
+     "ghi_chu": "Đề in y hệt Câu 20 đề cuối kì 2 số 3; câu đó không làm trên máy (kiến thức ngoài SGK KHTN 8), ở đây cũng bỏ."
+    },
+    {
+     "ma": "KCK2-DC2.TL6",
+     "nhan": "Câu 6",
+     "phan": "Phần 2. Tự luận",
+     "nhom": "Câu 6:",
+     "trung": "KCK2-5.TL2"
+    },
+    {
+     "ma": "KCK2-DC2.TL7",
+     "nhan": "Câu 7",
+     "phan": "Phần 2. Tự luận",
+     "nhom": "Câu 7.",
+     "de": "Câu 7.\nĐiều gì sẽ xảy ra với cơ thể chúng ta nếu thiếu một trong các thành phần của máu?",
+     "dang": "CAU_NHO",
+     "dap_an": "Thiếu một trong các thành phần của máu thì cơ thể mắc bệnh về máu, nhiều cơ quan bị ảnh hưởng, có thể tử vong. Thiếu hồng cầu gây thiếu máu (da xanh, chóng mặt, khó thở, tim đập nhanh); thiếu bạch cầu làm sức đề kháng yếu, dễ nhiễm trùng; thiếu tiểu cầu làm máu khó đông, vết thương chảy máu lâu.",
+     "loai_dap_an": "LOI_GIAI",
+     "bai_sgk": 33,
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "dong": [
+       {
+        "chu": "Thiếu một trong các thành phần của máu thì {0}",
+        "o": [
+         {
+          "dung": [
+           "cơ thể mắc bệnh về máu, nhiều cơ quan bị ảnh hưởng, có thể tử vong"
+          ],
+          "sai": [
+           "cơ thể vẫn bình thường vì thành phần khác làm thay",
+           "chỉ màu da thay đổi, cơ quan khác không sao"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Thiếu hồng cầu: {0}",
+        "o": [
+         {
+          "dung": [
+           "thiếu máu: da xanh, chóng mặt, khó thở"
+          ],
+          "sai": [
+           "sức đề kháng yếu, dễ nhiễm trùng",
+           "máu khó đông, vết thương chảy máu lâu"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Thiếu bạch cầu: {0}",
+        "o": [
+         {
+          "dung": [
+           "sức đề kháng yếu, dễ nhiễm trùng"
+          ],
+          "sai": [
+           "thiếu máu: da xanh, chóng mặt, khó thở",
+           "máu khó đông, vết thương chảy máu lâu"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Thiếu tiểu cầu: {0}",
+        "o": [
+         {
+          "dung": [
+           "máu khó đông, vết thương chảy máu lâu"
+          ],
+          "sai": [
+           "thiếu máu: da xanh, chóng mặt, khó thở",
+           "sức đề kháng yếu, dễ nhiễm trùng"
+          ]
+         }
+        ]
+       }
+      ],
+      "hoi": "Câu 7.\nĐiều gì sẽ xảy ra với cơ thể chúng ta nếu thiếu một trong các thành phần của máu?"
+     },
+     "ghi_chu": "Tự luận hỏi mở; làm trên máy bằng bốn dòng ô chọn theo lời giải in và SGK Bài 33 (trang 135): hồng cầu vận chuyển oxygen và carbon dioxide, bạch cầu bảo vệ cơ thể, tiểu cầu tham gia làm đông máu. Lời giải in viết thiếu tiểu cầu thì 'khả năng chống nhiễm trùng sẽ giảm', không khớp SGK (chống nhiễm trùng là việc của bạch cầu), nên dòng tiểu cầu chỉ nói máu khó đông. Huyết tương cũng là thành phần của máu nhưng lời giải in và SGK không nói hậu quả khi thiếu, nên không hỏi."
+    },
+    {
+     "ma": "KCK2-DC2.TL8",
+     "nhan": "Câu 8",
+     "phan": "Phần 2. Tự luận",
+     "nhom": "Câu 8.",
+     "de": "Câu 8.\nTiêm vaccine có vai trò gì trong việc phòng bệnh?",
+     "dang": "CAU_NHO",
+     "dap_an": "Tiêm vaccine giúp cơ thể chủ động tạo ra miễn dịch: mầm bệnh đã chết hoặc suy yếu trong vaccine kích thích tế bào bạch cầu tạo ra kháng thể; kháng thể tiếp tục tồn tại trong máu giúp cơ thể miễn dịch với bệnh đã được tiêm vaccine.",
+     "loai_dap_an": "LOI_GIAI",
+     "bai_sgk": 33,
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "dong": [
+       {
+        "chu": "Vaccine chứa {0}",
+        "o": [
+         {
+          "dung": [
+           "mầm bệnh đã chết hoặc suy yếu"
+          ],
+          "sai": [
+           "kháng thể lấy sẵn từ người đã khỏi bệnh",
+           "thuốc kháng sinh diệt vi khuẩn"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Tiêm vào cơ thể, vaccine kích thích {0} tạo ra kháng thể",
+        "o": [
+         {
+          "dung": [
+           "tế bào bạch cầu"
+          ],
+          "sai": [
+           "tế bào hồng cầu",
+           "tiểu cầu"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Kháng thể tạo ra {0}",
+        "o": [
+         {
+          "dung": [
+           "tiếp tục tồn tại trong máu"
+          ],
+          "sai": [
+           "mất hết ngay sau khi tiêm",
+           "chỉ nằm lại ở chỗ tiêm"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Vì vậy tiêm vaccine giúp cơ thể {0} với bệnh đã được tiêm phòng",
+        "o": [
+         {
+          "dung": [
+           "chủ động tạo ra miễn dịch"
+          ],
+          "sai": [
+           "chữa khỏi ngay bệnh đang mắc",
+           "có miễn dịch bẩm sinh"
+          ]
+         }
+        ]
+       }
+      ],
+      "hoi": "Câu 8.\nTiêm vaccine có vai trò gì trong việc phòng bệnh?"
+     },
+     "ghi_chu": "Tự luận hỏi mở; làm trên máy bằng bốn dòng ô chọn theo lời giải in, khớp SGK Bài 33 (Câu hỏi 2 trang 136 hỏi cùng ý; ở SGK đã có câu làm trên máy B33.C3)."
+    },
+    {
+     "ma": "KCK2-DC2.TL9",
+     "nhan": "Câu 9",
+     "phan": "Phần 2. Tự luận",
+     "nhom": "Câu 9:",
+     "trung": "KCK2-3.TL2"
+    },
+    {
+     "ma": "KCK2-DC2.TL10",
+     "nhan": "Câu 10",
+     "phan": "Phần 2. Tự luận",
+     "nhom": "Câu 10.",
+     "trung": "KCK2-4.TL2"
+    },
+    {
+     "ma": "KCK2-DC2.TL11",
+     "nhan": "Câu 11",
+     "phan": "Phần 2. Tự luận",
+     "nhom": "Câu 11.",
+     "trung": "KCK2-2.TL2"
     }
    ]
   }

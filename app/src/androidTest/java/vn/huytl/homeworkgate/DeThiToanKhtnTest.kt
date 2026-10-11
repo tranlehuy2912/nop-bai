@@ -42,7 +42,7 @@ class DeThiToanKhtnTest {
     fun du_de_hoc_ki_1_hai_mon_theo_thu_tu() {
         assertEquals(
             (1..10).map { "KGK1-$it" } + (1..10).map { "KCK1-$it" } + (1..2).map { "KCK1-DC$it" } +
-                (1..7).map { "KGK2-$it" } + (1..5).map { "KCK2-$it" },
+                (1..7).map { "KGK2-$it" } + (1..5).map { "KCK2-$it" } + (1..2).map { "KCK2-DC$it" },
             cua(LichKiemTra.KHTN).map { it.ma }
         )
         assertEquals(
@@ -136,6 +136,21 @@ class DeThiToanKhtnTest {
         assertEquals((2..12).toSet(), de.getValue("KCK1-DC1").cacBai)
         assertEquals(setOf(13, 15, 17, 18, 19), de.getValue("KCK1-DC2").cacBai)
         de.values.forEach { assertEquals(it.ma, "CK1", vn.huytl.homeworkgate.data.GiaiDe.kyCua(it)) }
+    }
+
+    /**
+     * De cuong on cuoi ki 2 KHTN (11/10/2026): mot de Li, mot de Sinh, nam trong nhom cuoi ky II. Gan
+     * het cau in lai cau cua de giua ki 2 so 5, cuoi ki 2 so 3, so 4 nen la cau trung, pham vi lay tu
+     * bai_sgk cua cau goc.
+     */
+    @Test
+    fun de_cuong_khtn_hoc_ki_2_tach_theo_mang() {
+        val de = cua(LichKiemTra.KHTN).filter { it.ma.startsWith("KCK2-DC") }.associateBy { it.ma }
+        assertEquals(setOf("khtn8li"), de.getValue("KCK2-DC1").denBai.keys)
+        assertEquals(setOf("khtn8sinh"), de.getValue("KCK2-DC2").denBai.keys)
+        assertEquals(setOf(22, 23, 24, 25, 26, 28), de.getValue("KCK2-DC1").cacBai)
+        assertEquals(setOf(33, 35, 37, 39, 40, 41, 42, 43, 44, 46, 47), de.getValue("KCK2-DC2").cacBai)
+        de.values.forEach { assertEquals(it.ma, "CK2", vn.huytl.homeworkgate.data.GiaiDe.kyCua(it)) }
     }
 
     @Test
