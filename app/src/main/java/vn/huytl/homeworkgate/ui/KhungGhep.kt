@@ -932,10 +932,12 @@ class KhungGhep(
             }
             // Cau phat am, trong am cua de thi chi co loi dan, noi dung nam o cac phuong an. Bo
             // dong loi dan thi the cau trong tron, chi con bon nut (Ba Huy thay kho hieu ngay
-            // 30/9/2026), nen cau chi co loi dan thi in lai loi dan ngay trong the.
+            // 30/9/2026), nen cau chi co loi dan thi in lai loi dan ngay trong the. Cau o chon
+            // thi khong trong: cau in nam o cac dong co o cua no, nen khong in lai loi dan (de
+            // cuong Tieng Anh 11/10/2026, bai mao tu, will/won't, cau dieu kien).
             val goc = muc.ghep.hoi.ifBlank { muc.cau.de }
             val chu = if (boDau.isNotBlank() && goc.startsWith(boDau)) {
-                goc.removePrefix(boDau).trimStart('\n').ifBlank { goc }
+                goc.removePrefix(boDau).trimStart('\n').ifBlank { if (muc.ghep is Ghep.O) "" else goc }
             } else {
                 goc
             }

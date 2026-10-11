@@ -274,4 +274,27 @@ class KhungGhepTest {
         val gon = Ghep.doc("""{"kieu":"BIEU_THUC","sao":1,"dap":["5x"],"phim":["x"],"nhieu":[]}""")!!
         assertEquals(listOf("5x"), KhungGhep.cacDongLoiGiai(gon))
     }
+
+    /**
+     * De thi in san: loi dan da in o dau bai nen the cau bo dong loi dan. Cau chi co loi dan (phat
+     * am) thi in lai cho the khoi trong (30/9/2026); cau o chon da co cau in o cac dong cua no nen
+     * khong in lai (de cuong Tieng Anh 11/10/2026).
+     */
+    @Test
+    fun de_thi_chi_in_lai_loi_dan_khi_the_cau_trong() {
+        fun chu(id: String): List<String> {
+            val muc = LamTrenMay.muc(context, kho.cacCauTheoId(listOf(id)).single())!!
+            var ra = emptyList<String>()
+            cungKhung { khung ->
+                KhungGhep.veDe(khung, muc, hienDoan = false, boDau = muc.cau.nhom)
+                ra = (0 until khung.childCount).mapNotNull { (khung.getChildAt(it) as? TextView)?.text?.toString() }
+            }
+            return ra
+        }
+        assertEquals(listOf("Find the word which has a different sound in the part underlined."), chu("dethianh8:CK1-DC4.1"))
+        assertEquals(emptyList<String>(), chu("dethianh8:CK1-DC3.11"))
+        val chon = chu("dethianh8:CK1-DC2.16")
+        assertEquals(chon.toString(), 1, chon.size)
+        assertTrue(chon.single(), chon.single().startsWith("Is there"))
+    }
 }

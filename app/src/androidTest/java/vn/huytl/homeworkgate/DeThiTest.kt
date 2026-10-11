@@ -119,7 +119,7 @@ class DeThiTest {
      */
     @Test
     fun du_muoi_ba_de_moi_de_du_so_cau_in_va_pham_vi_unit() {
-        val cac = anh().filter { it.ma.startsWith("GK1-") || it.ma.startsWith("CK1-") }
+        val cac = anh().filter { (it.ma.startsWith("GK1-") || it.ma.startsWith("CK1-")) && !it.ma.startsWith("CK1-DC") }
         val denUnit = linkedMapOf(
             "GK1-1" to 3, "GK1-2" to 3, "GK1-3" to 3, "GK1-4" to 9, "GK1-5" to 9, "GK1-6" to 9,
             "CK1-1" to 5, "CK1-2" to 6, "CK1-3" to 6, "CK1-4" to 6, "CK1-5" to 6, "CK1-7" to 9, "CK1-8" to 9
@@ -137,6 +137,42 @@ class DeThiTest {
         }
         assertEquals("Đề cuối kì 1 số 1", cac.first { it.ma == "CK1-1" }.ten)
         assertEquals((1..10).toList(), cac.first { it.ma == "CK1-1" }.cacMuc.filter { it.boMay == "nghe" }.map { it.so })
+    }
+
+    /**
+     * De cuong on hoc ki 1 (11/10/2026): Ba Huy chot tach theo nhom Unit de mo dan theo lop hoc,
+     * Unit 1-2, 3-4, 5-6, rieng phan ngu am mo cung Unit 6. Nam trong nhom cuoi ky I, ngay sau
+     * CK1-8. De cuong danh so lai tu dau o moi phan nen cau trong de danh so lien tu 1; khong co
+     * phan nghe nen cau nao cung lam tren may.
+     */
+    @Test
+    fun de_cuong_hoc_ki_1_tach_theo_nhom_unit() {
+        val cac = anh().filter { it.ma.startsWith("CK1-DC") }
+        // ma de -> (den_unit, phut, so cau)
+        val khung = linkedMapOf(
+            "CK1-DC1" to Triple(2, 45, 25), "CK1-DC2" to Triple(4, 45, 25),
+            "CK1-DC3" to Triple(6, 45, 27), "CK1-DC4" to Triple(6, 20, 20)
+        )
+        assertEquals(khung.keys.toList(), cac.map { it.ma })
+        val thuTu = anh().map { it.ma }
+        assertEquals("ngay sau CK1-8", thuTu.indexOf("CK1-8") + 1, thuTu.indexOf("CK1-DC1"))
+        cac.forEach { de ->
+            val (denUnit, phut, soCau) = khung.getValue(de.ma)
+            assertEquals("${de.ma}: pham vi", denUnit, de.denUnit)
+            assertEquals("${de.ma}: gio lam", phut, de.phut)
+            assertEquals("${de.ma}: so cau in", (1..soCau).toList(), de.cacMuc.map { it.so })
+            assertTrue("${de.ma}: moi cau lam tren may", de.cacMuc.all { it.boMay.isBlank() })
+            assertEquals("${de.ma}: cau lam tren may", soCau, de.cauIds.size)
+            assertTrue("${de.ma}: moi cau co loi dan", de.cacMuc.all { it.nhom.isNotBlank() })
+            assertEquals(de.ma, "CK1", GiaiDe.kyCua(de))
+        }
+        assertEquals("Đề cương học kì 1: Unit 1–2", cac.first().ten)
+        assertEquals("Đề cương học kì 1: Ngữ âm", cac.last().ten)
+        // Ba cau Unit 2 in y het de giua ki 1 so 4 toi 6: dung chung id cau goc.
+        val dc1 = cac.first()
+        assertEquals("dethianh8:GK1-6.7", dc1.cacMuc.first { it.so == 7 }.cauId)
+        assertEquals("dethianh8:GK1-5.7", dc1.cacMuc.first { it.so == 8 }.cauId)
+        assertEquals("dethianh8:GK1-4.7", dc1.cacMuc.first { it.so == 10 }.cauId)
     }
 
     /**
@@ -236,8 +272,13 @@ class DeThiTest {
     @Test
     fun tu_mo_khi_lop_hoc_toi_pham_vi_moi_luc_mot_de_de_sau_mo_tu_hom_sau() {
         assertNull("chua chon moc thi khong mo", tuMo(toi))
+        moc(1)
+        assertNull("Unit 1 chua toi pham vi de nao", tuMo(toi))
         moc(2)
-        assertNull("Unit 2 chua toi pham vi de giua ki 1", tuMo(toi))
+        // Tu 11/10/2026 co de cuong Unit 1-2 (CK1-DC1): o Unit 2 chi de do toi pham vi.
+        assertEquals("Unit 2 chua toi pham vi de giua ki 1", "CK1-DC1", tuMo(toi)?.let { GiaiDe.maDeThi(it) })
+        deDaTao.forEach { kho.xoaDe(it) }
+        deDaTao.clear()
 
         moc(3)
         val de1 = tuMo(toi)
@@ -261,12 +302,13 @@ class DeThiTest {
     @Test
     fun de_da_nop_khong_tu_mo_lai() {
         moc(3)
-        listOf("GK1-1", "GK1-2", "GK1-3").forEachIndexed { i, ma ->
+        // De cuong Unit 1-2 (11/10/2026) pham vi hep hon nen mo sau ba de giua ki 1.
+        listOf("GK1-1", "GK1-2", "GK1-3", "CK1-DC1").forEachIndexed { i, ma ->
             val de = tuMo(toi + i * motNgay)
             assertEquals(ma, de?.let { GiaiDe.maDeThi(it) })
             nopGia(de!!, toi + i * motNgay + 40 * 60_000L)
         }
-        assertNull("ba de deu nop roi", tuMo(toi + 5 * motNgay))
+        assertNull("bon de deu nop roi", tuMo(toi + 5 * motNgay))
     }
 
     // ------------------------------------------------------------ mo bang tay
