@@ -205,7 +205,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:layout_marginBottom="24dp"
         android:gravity="center"
         android:orientation="horizontal">
 
@@ -253,5 +252,32 @@
             android:contentDescription="Tăng âm lượng"
             app:icon="@drawable/st_ic_them"
             app:iconSize="26dp" />
+    </LinearLayout>
+
+    <!-- Dang xuat, Tat may laptop (11/10/2026, anh Huy chot: tablet cung lam duoc nhu Bang dieu
+         khien, dat trong man nay, luc nao cung duoc). Di thang qua Wi-Fi nhu cac nut tren, khong qua
+         Firestore nhu Bang dieu khien (anh Huy chot: tablet luon o nha). Bam la hoi lai truoc. -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="24dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/nut_dang_xuat"
+            style="@style/Nut.VienDo"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:text="@string/remote_dang_xuat" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/nut_tat_may"
+            style="@style/Nut.VienDo"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:text="@string/remote_tat_may" />
     </LinearLayout>
 </LinearLayout>

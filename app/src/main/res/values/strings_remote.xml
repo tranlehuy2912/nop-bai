@@ -20,4 +20,12 @@
     <string name="remote_ve_title">Về màn chọn Netflix, YouTube?</string>
     <string name="remote_ve_noi_dung">Phim đang chiếu sẽ đóng.</string>
     <string name="remote_ve_nut">Về màn chọn</string>
+    <string name="remote_dang_xuat">Đăng xuất</string>
+    <string name="remote_tat_may">Tắt máy</string>
+    <string name="remote_chua_ai_dang_nhap">Chưa ai đăng nhập laptop.</string>
+    <string name="remote_dang_xuat_title">Đăng xuất laptop?</string>
+    <string name="remote_dang_xuat_xem_phim">Phim đang chiếu sẽ tắt.</string>
+    <string name="remote_dang_xuat_admin">Tài khoản Admin đang dùng laptop. Việc đang làm dở trên đó sẽ mất.</string>
+    <string name="remote_tat_may_title">Tắt laptop?</string>
+    <string name="remote_tat_may_noi_dung">Laptop sẽ tắt hẳn. Muốn dùng lại phải bấm nút nguồn trên laptop.</string>
 </resources>

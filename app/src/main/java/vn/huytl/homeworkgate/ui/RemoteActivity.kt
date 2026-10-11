@@ -24,7 +24,10 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import vn.huytl.homeworkgate.R
 import vn.huytl.homeworkgate.databinding.ActivityRemoteBinding
 import vn.huytl.homeworkgate.dongbo.KetNoiRemote
+import vn.huytl.homeworkgate.data.DayLog
+import vn.huytl.homeworkgate.dongbo.DongBo
 import vn.huytl.homeworkgate.dongbo.Laptop
+import vn.huytl.homeworkgate.dongbo.Nguoi
 
 /**
  * Man Remote tivi tren tablet (11/10/2026): Le Hoa cam tablet dieu khien laptop dang chieu len
@@ -43,6 +46,7 @@ class RemoteActivity : AppCompatActivity() {
     private lateinit var remote: Laptop.RemoteLaptop
     private var ketNoi: KetNoiRemote? = null
     private var lanAmCuoi = 0L
+    private var vuaTat = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -78,6 +82,10 @@ class RemoteActivity : AppCompatActivity() {
         nut(b.nutTo) { it.amLuong(true) }
         b.nutBanPhim.setOnClickListener { neuDaNoi { hopGoChu() } }
         b.nutManChon.setOnClickListener { neuDaNoi { hoiVeManChon() } }
+        // Di thang qua ket noi remote nhu cac nut khac (anh Huy chot: tablet luon o nha, khong can
+        // Firestore). Chua noi thi chi bao ly do.
+        b.nutDangXuat.setOnClickListener { neuDaNoi { hoiDangXuat() } }
+        b.nutTatMay.setOnClickListener { neuDaNoi { hoiTatMay() } }
         veTrangThai(KetNoiRemote.TrangThai.DANG_NOI)
     }
 
@@ -99,7 +107,7 @@ class RemoteActivity : AppCompatActivity() {
             remote,
             khiDoi = { t -> if (ketNoi === k) veTrangThai(t) },
             khiAm = { pt, tat -> if (ketNoi === k) veAm(pt, tat) },
-            khiLoi = { chu -> if (ketNoi === k) noi(chu) }
+            khiBao = { chu -> if (ketNoi === k) noi(chu) }
         )
         ketNoi = k
         k.noi()
@@ -156,10 +164,11 @@ class RemoteActivity : AppCompatActivity() {
         val mo = if (t == KetNoiRemote.TrangThai.DA_NOI) 1f else 0.4f
         for (v in listOf(
             b.khungDiChuot, b.nutBoQua, b.nutLui, b.nutPhat, b.nutTien, b.nutNho, b.nutTo,
-            b.nutBanPhim, b.nutManChon
+            b.nutBanPhim, b.nutManChon, b.nutDangXuat, b.nutTatMay
         )) v.alpha = mo
         when (t) {
-            KetNoiRemote.TrangThai.KHONG_NOI_DUOC -> noi(getString(R.string.remote_bao_chua_noi))
+            // Vua bam Tat may thi mat ket noi la dung, khong bao "chua noi duoc" nua.
+            KetNoiRemote.TrangThai.KHONG_NOI_DUOC -> if (!vuaTat) noi(getString(R.string.remote_bao_chua_noi))
             KetNoiRemote.TrangThai.SAI_MA -> noi(getString(R.string.remote_bao_sai_ma))
             KetNoiRemote.TrangThai.DA_NOI -> {}
             KetNoiRemote.TrangThai.DANG_NOI -> veAm(null, false)
@@ -213,6 +222,47 @@ class RemoteActivity : AppCompatActivity() {
     }
 
     private fun noi(chu: String) = Toast.makeText(this, chu, Toast.LENGTH_SHORT).show()
+
+    private fun hoiDangXuat() {
+        val ten = Laptop.phien(this)
+        if (ten.isEmpty()) {
+            noi(getString(R.string.remote_chua_ai_dang_nhap))
+            return
+        }
+        MaterialAlertDialogBuilder(this)
+            .setTitle(R.string.remote_dang_xuat_title)
+            .setMessage(
+                if (ten == Nguoi.LE_HOA) R.string.remote_dang_xuat_xem_phim else R.string.remote_dang_xuat_admin
+            )
+            .setPositiveButton(R.string.remote_dang_xuat) { _, _ -> gui(tat = false) }
+            .setNegativeButton(R.string.cancel, null)
+            .show()
+    }
+
+    private fun hoiTatMay() {
+        MaterialAlertDialogBuilder(this)
+            .setTitle(R.string.remote_tat_may_title)
+            .setMessage(R.string.remote_tat_may_noi_dung)
+            .setPositiveButton(R.string.remote_tat_may) { _, _ -> gui(tat = true) }
+            .setNegativeButton(R.string.cancel, null)
+            .show()
+    }
+
+    /**
+     * Gui Dang xuat hay Tat may qua ket noi remote; laptop lam ngay va tra cau bao. Ghi them mot
+     * dong Nhat ky (sang the Nhat ky cua Bang dieu khien) de Ba Huy biet laptop tat tu tablet.
+     */
+    private fun gui(tat: Boolean) {
+        val k = ketNoi?.takeIf { it.daNoi } ?: return noi(getString(R.string.remote_bao_chua_noi))
+        if (tat) {
+            vuaTat = true
+            k.tatMay()
+        } else {
+            k.dangXuat()
+        }
+        DayLog.add(this, if (tat) "Tắt laptop từ tablet" else "Đăng xuất laptop từ tablet")
+        DongBo.dayNgay()
+    }
 
     private fun hoiVeManChon() {
         MaterialAlertDialogBuilder(this)

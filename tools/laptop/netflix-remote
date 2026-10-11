@@ -25,8 +25,15 @@
 #   T chu     go chu (xdotool type; o YouTube bo dau truoc, xem go_chu)
 #   V + / V - tang, giam am luong BUOC_AM %; V ? hoi lai; laptop tra AL ...
 #   X         dong Firefox trong phien lehoa, ve man chon Netflix hay YouTube
+#   DX        dang xuat tai khoan dang ngoi man hinh; laptop tra BAO <cau>
+#   TAT       tat may; laptop tra BAO <cau> roi tat sau mot giay
 #   P         con song; laptop tra PONG
 # Lenh hong hay khong lam duoc thi laptop tra LOI <cau tieng Viet cho dien thoai hien>.
+#
+# DX, TAT them ngay 11/10/2026 cho man Remote tren tablet (anh Huy chot: tablet luon o nha nen di
+# thang qua Wi-Fi, khong qua Firestore nhu nut Dang xuat, Tat may cua Bang dieu khien). Lam y nhu
+# lenh DANGXUAT, TATMAY cua netflix_gio.py: loginctl terminate-session, systemctl poweroff; may tat
+# thi netflix-gio bat SIGTERM luc he thong dang tat va tu ghi gio tat len Firestore.
 #
 # Nhat ky: journalctl -t netflix-remote. Khong ghi tung lan di chuot.
 
@@ -57,6 +64,8 @@ CHU_TOI_DA = 100
 # Dien thoai gui P moi 10 giay; im qua chung nay giay la dien thoai da di, dong ket noi.
 CHO_GIAY = 45
 TOI_DA_KET_NOI = 4
+# Ten hien o man dang nhap, nhu TEN_HIEN cua netflix_gio.py.
+TEN_HIEN = {"lehoa": "Xem phim", "huy": "Admin"}
 
 
 def ghi(*chu):
@@ -144,14 +153,18 @@ def bam_phim(ten):
     return viec
 
 
-def nguoi_man_hinh():
-    """Ten tai khoan dang ngoi man hinh, None o man dang nhap. Cach doc nhu netflix_gio.py."""
+def phien_man_hinh():
+    """(ten, ma phien) cua nguoi dang ngoi man hinh; (None, None) o man dang nhap. Nhu netflix_gio.py."""
     r = subprocess.run(["loginctl", "list-sessions", "--no-legend"], capture_output=True, text=True)
     for dong in r.stdout.splitlines():
         cot = dong.split()
         if len(cot) >= 6 and cot[3].startswith("seat") and cot[2] != "lightdm" and cot[5] != "closing":
-            return cot[2]
-    return None
+            return cot[2], cot[0]
+    return None, None
+
+
+def nguoi_man_hinh():
+    return phien_man_hinh()[0]
 
 
 def pactl(ten, *tham_so):
@@ -270,6 +283,20 @@ class DienThoai(socketserver.StreamRequestHandler):
                 # Nhu bam nut ✕ cua netflix-thoat: Firefox thoat dang hoang, netflix-phien hien
                 # lai man chon.
                 subprocess.run(["pkill", "-TERM", "-x", "-U", "lehoa", "firefox-bin"])
+            elif kieu == "DX":
+                ten, ma = phien_man_hinh()
+                if not ma:
+                    return "LOI Chưa ai đăng nhập laptop."
+                r = subprocess.run(["loginctl", "terminate-session", ma], capture_output=True, text=True)
+                if r.returncode != 0:
+                    return "LOI Không đăng xuất được: " + (r.stderr.strip() or "lỗi lạ")
+                ghi("dang xuat", ten, "theo lenh tu", self.client_address[0])
+                return "BAO Đã đăng xuất tài khoản %s." % TEN_HIEN.get(ten, ten)
+            elif kieu == "TAT":
+                ghi("tat may theo lenh tu", self.client_address[0])
+                # Doi mot giay cho cau tra loi toi tablet truoc khi mang tat.
+                threading.Timer(1.0, subprocess.run, [["systemctl", "poweroff"]]).start()
+                return "BAO Laptop đang tắt."
             elif kieu == "P":
                 return "PONG"
             else:

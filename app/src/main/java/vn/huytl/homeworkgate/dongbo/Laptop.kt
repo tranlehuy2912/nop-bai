@@ -40,12 +40,19 @@ object Laptop {
     private const val K_REMOTE_IP = "remote_ip"
     private const val K_REMOTE_CONG = "remote_cong"
     private const val K_REMOTE_KHOA = "remote_khoa"
+    private const val K_PHIEN = "phien"
 
     /**
      * Cho man Remote noi thang toi dich vu netflix-remote tren laptop qua Wi-Fi nha (11/10/2026),
      * xem [Duong.F_REMOTE].
      */
     data class RemoteLaptop(val ip: String, val cong: Int, val khoa: String)
+
+    /**
+     * Tai khoan dang ngoi man hinh laptop ([Duong.F_PHIEN]): "lehoa", "huy", rong la dang o man
+     * dang nhap (hay laptop tat). Man Remote dung de viet cau hoi lai truoc khi dang xuat.
+     */
+    fun phien(context: Context): String = sp(context).getString(K_PHIEN, "").orEmpty()
 
     /** Dia chi, cong, ma khoa remote theo ban document laptop vua nghe duoc; null khi laptop chua co. */
     fun remote(context: Context): RemoteLaptop? {
@@ -91,6 +98,7 @@ object Laptop {
             .putString(K_REMOTE_IP, remote?.get(Duong.F_REMOTE_IP) as? String)
             .putInt(K_REMOTE_CONG, (remote?.get(Duong.F_REMOTE_CONG) as? Number)?.toInt() ?: 0)
             .putString(K_REMOTE_KHOA, remote?.get(Duong.F_REMOTE_KHOA) as? String)
+            .putString(K_PHIEN, snap?.getString(Duong.F_PHIEN))
             .apply()
     }
 

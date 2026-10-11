@@ -20,7 +20,7 @@ import javax.crypto.spec.SecretKeySpec
  *
  * Mot luong gui: noi, tra ma, roi gui lenh theo thu tu bam. Di chuot thi cong don [diChuot] lai
  * va gui moi [NHIP_CHUOT_MS] mot lan, khong gui tung su kien cham. Mot luong doc: AL (am luong),
- * LOI, PONG. Moi ham goi lai chay tren luong chinh.
+ * LOI, BAO, PONG. Moi ham goi lai chay tren luong chinh.
  *
  * Chep nguyen tu Bang dieu khien (data/KetNoiRemote.kt) ngay 11/10/2026 cho man Remote tren tablet;
  * sua mot ben thi sua ca ben kia.
@@ -34,8 +34,8 @@ class KetNoiRemote(
     private val khiDoi: (TrangThai) -> Unit,
     /** Dong AL: phan tram (null khi khong ai dang nhap) va co dang tat tieng khong. */
     private val khiAm: (Int?, Boolean) -> Unit,
-    /** Cau LOI laptop gui ve. */
-    private val khiLoi: (String) -> Unit
+    /** Cau LOI hay BAO laptop gui ve, de hien cho nguoi bam. */
+    private val khiBao: (String) -> Unit
 ) {
     enum class TrangThai { DANG_NOI, DA_NOI, KHONG_NOI_DUOC, SAI_MA }
 
@@ -77,6 +77,10 @@ class KetNoiRemote(
     fun go(chu: String) { if (chu.isNotEmpty()) gui("T $chu") }
     fun amLuong(tang: Boolean) = gui(if (tang) "V +" else "V -")
     fun veManChon() = gui("X")
+
+    /** Dang xuat, tat laptop (11/10/2026, cho man Remote tren tablet), laptop tra BAO hay LOI. */
+    fun dangXuat() = gui("DX")
+    fun tatMay() = gui("TAT")
 
     private fun gui(dong: String) {
         if (daNoi) hang.offer(dong)
@@ -144,9 +148,9 @@ class KetNoiRemote(
                         val tat = cot.getOrNull(2) == "1"
                         chinh.post { khiAm(pt, tat) }
                     }
-                    dong.startsWith("LOI ") -> {
-                        val chu = dong.removePrefix("LOI ")
-                        chinh.post { khiLoi(chu) }
+                    dong.startsWith("LOI ") || dong.startsWith("BAO ") -> {
+                        val chu = dong.substring(4)
+                        chinh.post { khiBao(chu) }
                     }
                 }
             }
