@@ -142,6 +142,12 @@ object NganHang {
      * co van ban nao de ghi ten. Nhung cau do ket bang "(Bài 10: Sách – người bạn
      * đồng hành)" de AI biet dang cham viec gi.
      *
+     * NGU VAN LAM TREN MAY tu 12/10/2026 (Ba Huy chot): cau co dap an chung co ghep nhu Toan,
+     * KHTN; Van khong nop anh nua ([vn.huytl.homeworkgate.data.LamTrenMay.CHI_TREN_MAY]), cau cam
+     * nghi, viet doan, viet bai khong co ghep va khong nop qua app. So bai cho moc bai da hoc doc
+     * tu ten chuong ([PhanHoc.soBaiCua]). Ten van ban, ten muc o cuoi de van giu: may hien de nhu
+     * sach, va so cai cu (bai chup truoc ngay do) van doc duoc.
+     *
      * Ngu van bo han phan Noi va nghe, Doc mo rong va cac o goi y ben le van ban.
      * Noi va nghe lam mieng tren lop, anh chup khong thay gi; hai thu con lai khong
      * de ra bai viet nao de nop. Phan Thuc hanh doc chi co o huong dan va van ban,
@@ -461,7 +467,7 @@ object NganHang {
         val daHoc = PhanHoc.baiDaHoc(context, mon) ?: return emptyList()
         val kho = KhoBai.get(context)
         return sachLuyenTapCua(mon).flatMap { kho.cacCauCuaNguon(it.nguon) }
-            .filter { c -> PhanHoc.soBai(c.bai)?.let { it in daHoc } == true }
+            .filter { c -> PhanHoc.soBaiCua(c)?.let { it in daHoc } == true }
     }
 
     /**

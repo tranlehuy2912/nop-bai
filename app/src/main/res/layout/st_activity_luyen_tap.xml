@@ -124,6 +124,27 @@
                         android:paddingVertical="4dp" />
                 </com.google.android.material.card.MaterialCardView>
 
+                <TextView
+                    style="@style/Nhan.Nhom"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginBottom="8dp"
+                    android:text="NGỮ VĂN" />
+
+                <com.google.android.material.card.MaterialCardView
+                    style="@style/Card"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:id="@+id/box_van"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingVertical="4dp" />
+                </com.google.android.material.card.MaterialCardView>
+
             </LinearLayout>
         </ScrollView>
     </LinearLayout>

@@ -14,14 +14,14 @@ import vn.huytl.homeworkgate.kho.PhanHoc
  */
 object MocThu {
 
-    val MON = listOf(PhanHoc.TOAN, PhanHoc.KHTN, PhanHoc.TIENG_ANH)
+    val MON = listOf(PhanHoc.TOAN, PhanHoc.KHTN, PhanHoc.TIENG_ANH, PhanHoc.NGU_VAN)
 
-    /** Bai da hoc cua ca ba mon, de [tra] lai sau khi test xong. */
+    /** Bai da hoc cua moi mon, de [tra] lai sau khi test xong. */
     fun luu(context: Context): Map<String, Set<Int>?> = MON.associateWith { HocToi.daHoc(context, it) }
 
     fun tra(context: Context, cu: Map<String, Set<Int>?>) = cu.forEach { (mon, cac) -> dat(context, mon, cac) }
 
-    /** Ca ba mon ve "chua chon". */
+    /** Moi mon ve "chua chon". */
     fun xoaHet(context: Context) = MON.forEach { HocToi.xoa(context, it) }
 
     /** Dat thang tap bai cua [mon]; null la chua chon. */

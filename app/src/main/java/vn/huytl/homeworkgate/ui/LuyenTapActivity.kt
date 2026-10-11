@@ -48,6 +48,10 @@ import java.util.Calendar
  * dang mo (de tuan thu Bay, de on truoc kiem tra), roi bon dong De thi thu theo ky. Nhin mot
  * khu la biet mon do con bao nhieu viec.
  *
+ * KHU NGU VAN (Ba Huy chot 12/10/2026): khu thu tu, cung khuon: Bai da hoc (Bai 1 toi Bai 10),
+ * On tap, Lam bai tap trong SGK, mot dong Luyen tap, Cau da lam dung. Van chua co bo the, bo de
+ * nen khong co dong Kiem tra va De thi thu.
+ *
  * LAM BAI TAP TRONG SGK (cung ngay, Ba Huy chot sau): dong ngay duoi Kiem tra, tren Luyen tap
  * tung phan, mo [BaiSgkActivity]. Bai SGK lam tren may thay cho lam vo roi chup; mon chua co SGK
  * trong may thi khong co dong nay (Tieng Anh truoc khi nap SGK ngay 2/10/2026).
@@ -140,7 +144,7 @@ class LuyenTapActivity : AppCompatActivity() {
                 val deThi = runCatching { GiaiDe.tinhTrangDeThi(ct, bayGio) }.getOrDefault(emptyList())
                 KHU.map { mon -> docKhu(ct, mon, bayGio, dangMo, xong, deThi) }
             }
-            listOf(b.boxToan, b.boxKhtn, b.boxAnh).zip(cac).forEach { (box, khu) -> veKhu(box, khu) }
+            listOf(b.boxToan, b.boxKhtn, b.boxAnh, b.boxVan).zip(cac).forEach { (box, khu) -> veKhu(box, khu) }
         }
     }
 
@@ -179,7 +183,9 @@ class LuyenTapActivity : AppCompatActivity() {
         val sgk = runCatching {
             val quyen = NganHang.sachGiaoKhoaCua(mon)
             if (quyen.isEmpty()) return@runCatching null
-            val tienBo = quyen.map { NganHang.tienBo(ct, it.nguon) }
+            // Van chi dem cau lam tren may, nhu man bai SGK ([BaiSgkActivity.tienBo]).
+            val tienBo = quyen.map { BaiSgkActivity.tienBo(ct, mon, it) }
+            if (tienBo.sumOf { it.second } == 0) return@runCatching null
             Sgk(
                 tenSach = gonTenSach(quyen.map { it.ten }),
                 daLam = tienBo.sumOf { it.first },
@@ -188,7 +194,8 @@ class LuyenTapActivity : AppCompatActivity() {
             )
         }.getOrNull()
         val dem = runCatching { LamTrenMay.demTheoPhan(ct, mon) }.getOrDefault(emptyMap())
-        val luyen = if (mon == PhanHoc.TIENG_ANH) listOf(Luyen(null, dem[""]?.first ?: 0, dem[""]?.second ?: 0))
+        // Tieng Anh, Ngu van khong chia phan: mot dong Luyen tap cho ca mon.
+        val luyen = if (PhanHoc.cuaMon(mon).isEmpty()) listOf(Luyen(null, dem[""]?.first ?: 0, dem[""]?.second ?: 0))
         else PhanHoc.cuaMon(mon).map { p -> Luyen(p, dem[p.ma]?.first ?: 0, dem[p.ma]?.second ?: 0) }
         return Khu(
             mon = mon,
@@ -331,7 +338,8 @@ class LuyenTapActivity : AppCompatActivity() {
             ) { GiaiDeActivity.mo(this, de.id) }
         }
 
-        // De thi thu: bon dong theo ky.
+        // De thi thu: bon dong theo ky. Mon chua co bo de nao (Ngu van) thi khong co dong nao.
+        if (NganHang.boDeThi().none { it.mon == mon }) return
         GiaiDe.CAC_KY.forEach { (ky, tenKy) ->
             val cua = k.deThi.filter { GiaiDe.kyCua(it.de) == ky }
             val tenDong = "Đề thi thử $tenKy môn $ten"
@@ -510,8 +518,8 @@ class LuyenTapActivity : AppCompatActivity() {
     }.timeInMillis
 
     companion object {
-        /** Ba khu theo thu tu tren trang, khop voi ba hop trong layout. */
-        private val KHU = listOf(PhanHoc.TOAN, PhanHoc.KHTN, PhanHoc.TIENG_ANH)
+        /** Cac khu theo thu tu tren trang, khop voi cac hop trong layout. Khu Van tu 12/10/2026. */
+        private val KHU = listOf(PhanHoc.TOAN, PhanHoc.KHTN, PhanHoc.TIENG_ANH, PhanHoc.NGU_VAN)
 
         fun mo(activity: Activity) {
             activity.startActivity(Intent(activity, LuyenTapActivity::class.java))

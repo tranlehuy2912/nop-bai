@@ -28,6 +28,13 @@ object PhanHoc {
     const val KHTN = "Khoa học tự nhiên"
     const val TIENG_ANH = "Tiếng Anh"
 
+    /**
+     * Ngu van lam tren may tu 12/10/2026 (Ba Huy chot). Khong chia phan; bai Van mang ten van
+     * ban ("Lá cờ thêu sáu chữ vàng"), so bai nam o ten chuong ("Bài 1. Câu chuyện của lịch sử"),
+     * xem [soBaiCua].
+     */
+    const val NGU_VAN = "Ngữ văn"
+
     /** Bo tu vung cua mon Tieng Anh, xem [BoTuVung]. */
     const val BO_TIENG_ANH = "anh8"
 
@@ -113,6 +120,14 @@ object PhanHoc {
         SO_UNIT.find(ten)?.groupValues?.get(1)?.toIntOrNull()?.let { return it }
         return SO_TEST.find(ten)?.groupValues?.get(1)?.toIntOrNull()?.let { it * 3 }
     }
+
+    /**
+     * So bai cua mot cau, cho moc bai da hoc. Toan, KHTN, Tieng Anh doc tu ten bai; Ngu van doc
+     * tu ten chuong vi ten bai la ten van ban, nen muc "Ôn tập học kì I" khong co so va khong vao
+     * Luyen tap, nhu "Ôn tập chương" cua Toan.
+     */
+    fun soBaiCua(cau: CauHoi): Int? =
+        soBai(cau.bai) ?: if (cau.mon == NGU_VAN) soBai(cau.chuong) else null
 
     private val SO_BAI = Regex("""^\s*Bài\s+(\d+)\.""")
     private val SO_UNIT = Regex("""^\s*Unit\s+(\d+)\b""")
@@ -201,6 +216,14 @@ object PhanHoc {
             val tatCa = (cacUnit + tenUnit.keys).distinct().sorted()
             if (tatCa.isEmpty()) return emptyList()
             return listOf(Nhom("", tatCa.map { u -> u to (tenUnit[u] ?: "Unit $u") }))
+        }
+        if (mon == NGU_VAN) {
+            // Moi tap mot nhom, moi bai lon ("Bài 6. Chân dung cuộc sống") mot o.
+            return NganHang.sachGiaoKhoaCua(mon).map { s ->
+                val cacBai = NganHang.cacBai(context, s.nguon).map { it.chuong }.distinct()
+                    .mapNotNull { ch -> soBai(ch)?.let { it to ch } }
+                Nhom(s.ten.substringAfterLast(" 8 ").replaceFirstChar { it.uppercase() }, cacBai)
+            }.filter { it.cacBai.isNotEmpty() }
         }
         val sgk = cuaMon(mon).flatMap { it.sgk }.distinct()
         val ra = mutableListOf<Nhom>()

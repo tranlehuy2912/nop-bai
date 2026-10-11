@@ -110,7 +110,8 @@ class CauDaLamActivity : AppCompatActivity() {
         val ra = mutableListOf<Muc>()
         val cacPhan = PhanHoc.cuaMon(mon)
         if (cacPhan.isEmpty()) {
-            ra += Muc("SÁCH BÀI TẬP", cacBai(sach))
+            // Ngu van chi co SGK, khong co sach bai tap.
+            ra += Muc(if (NganHang.sachBaiTapCua(mon).isEmpty()) "SÁCH GIÁO KHOA" else "SÁCH BÀI TẬP", cacBai(sach))
         } else {
             cacPhan.forEach { p -> ra += Muc(p.tenDai.uppercase(), cacBai(sach.filter { PhanHoc.phanCuaCau(it.cau) == p })) }
             // Muc "Bài tập ôn tập cuối năm" khong thuoc chuong nao nen khong vao phan nao.

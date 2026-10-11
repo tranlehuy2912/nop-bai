@@ -584,7 +584,8 @@ class KhoBai private constructor(context: Context) :
             """
             SELECT t.cau_id,
                    MAX(CASE WHEN t.dung = 1 THEN t.luc ELSE 0 END) AS lan_dung_cuoi,
-                   SUM(CASE WHEN t.on_tap = 1 AND t.dung = 1 THEN 1 ELSE 0 END) AS so_on
+                   SUM(CASE WHEN t.on_tap = 1 AND t.dung = 1 THEN 1 ELSE 0 END) AS so_on,
+                   (SELECT c.mon FROM cau_hoi c WHERE c.id = t.cau_id) AS mon
             FROM tra_loi t
             WHERE t.luc >= ? $loc
             GROUP BY t.cau_id
@@ -596,7 +597,7 @@ class KhoBai private constructor(context: Context) :
         ).use { c ->
             buildList {
                 while (c.moveToNext()) {
-                    val hen = mocHen(c.getLong(1), c.getInt(2)) ?: continue
+                    val hen = mocHen(c.getLong(1), c.getInt(2), khoangHen(c.getString(3).orEmpty())) ?: continue
                     if (bayGio >= hen) add(c.getString(0))
                 }
             }
@@ -608,10 +609,11 @@ class KhoBai private constructor(context: Context) :
      *
      * @param lanDungCuoi luc gan nhat con lam dung cau do.
      * @param soLanDaOn da on dung duoc may lan roi.
+     * @param cacKhoang lich hen cua mon, xem [khoangHen]. The hoc thuoc dung lich chung.
      */
-    private fun mocHen(lanDungCuoi: Long, soLanDaOn: Int): Long? {
+    private fun mocHen(lanDungCuoi: Long, soLanDaOn: Int, cacKhoang: List<Int> = KHOANG_HEN_NGAY): Long? {
         if (lanDungCuoi <= 0L) return null
-        val khoang = KHOANG_HEN_NGAY.getOrNull(soLanDaOn) ?: return null
+        val khoang = cacKhoang.getOrNull(soLanDaOn) ?: return null
         return lanDungCuoi + khoang * 24L * 60 * 60_000L
     }
 
@@ -1915,6 +1917,17 @@ class KhoBai private constructor(context: Context) :
          * xem [cacTheDenLuot].
          */
         val KHOANG_HEN_NGAY = listOf(3, 10, 20, 30)
+
+        /**
+         * Lich on cau Ngu van: muoi ngay roi mot thang (Ba Huy chot 12/10/2026, "lich on tap chi
+         * can 10-30 ngay"). Cau doc hieu nho lau hon phep tinh, khong can moc ba ngay va hai muoi
+         * ngay.
+         */
+        val KHOANG_HEN_NGAY_VAN = listOf(10, 30)
+
+        /** Lich hen on cau cua [mon]: Ngu van [KHOANG_HEN_NGAY_VAN], mon khac [KHOANG_HEN_NGAY]. */
+        fun khoangHen(mon: String): List<Int> =
+            if (mon == PhanHoc.NGU_VAN) KHOANG_HEN_NGAY_VAN else KHOANG_HEN_NGAY
 
         /**
          * Vap bay nhieu lan thi man hinh cua con moi noi ra. Xem [nhanHayVap].

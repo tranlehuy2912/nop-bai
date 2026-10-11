@@ -56,7 +56,12 @@ object ChonHocToi {
             addView(TextView(activity).apply {
                 text = "Đánh dấu cả ${if (laAnh) "Unit" else "bài"} đang học. Máy chỉ ra câu trong các " +
                     "${if (laAnh) "Unit" else "bài"} đã đánh dấu." +
-                    if (laAnh) "" else " Bấm tên chương để chọn hay bỏ cả chương."
+                    when {
+                        laAnh -> ""
+                        // Van nhom bai theo tap, khong theo chuong.
+                        mon == PhanHoc.NGU_VAN -> " Bấm tên tập để chọn hay bỏ cả tập."
+                        else -> " Bấm tên chương để chọn hay bỏ cả chương."
+                    }
                 textSize = 15f
                 setTextColor(mauNhat)
                 setPadding(0, 8.dp(), 0, 0)

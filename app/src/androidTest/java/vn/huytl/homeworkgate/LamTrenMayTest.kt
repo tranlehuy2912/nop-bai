@@ -362,6 +362,49 @@ class LamTrenMayTest {
         assertEquals("gap lai la vong sao moi, du sao", v, lai.sao)
     }
 
+    // ------------------------------------------------------------------ Ngu van
+
+    /** Ba Huy chot 12/10/2026: Van lam tren may theo bai da hoc; so bai Van doc tu ten chuong. */
+    @Test
+    fun mon_van_luyen_tap_theo_bai_da_hoc() {
+        assertTrue(PhanHoc.NGU_VAN in LamTrenMay.MON)
+        assertEquals(1, PhanHoc.soBaiCua(kho.cauTheoId("van8t1:B1.C4")!!))
+        assertEquals("on tap hoc ki khong co so bai", null, PhanHoc.soBaiCua(kho.cauTheoId("van8t1:B0.C1")!!))
+        MocThu.dat(context, PhanHoc.NGU_VAN, setOf(1))
+        val cac = LamTrenMay.cauLamThem(context, PhanHoc.NGU_VAN)
+        assertTrue("Bai 1 da co cau lam tren may", cac.isNotEmpty())
+        assertTrue(cac.all { it.cau.nguon == "van8t1" && it.cau.ma.startsWith("B1.") })
+        assertEquals("Van khong chia phan: mot dong Luyen tap", setOf(""), LamTrenMay.demTheoPhan(context, PhanHoc.NGU_VAN).keys)
+        MocThu.dat(context, PhanHoc.NGU_VAN, emptySet())
+        assertTrue(LamTrenMay.cauLamThem(context, PhanHoc.NGU_VAN).isEmpty())
+    }
+
+    /** Ba Huy chot 12/10/2026: cau Van on lai sau 10 ngay roi 30 ngay, khong co moc 3 va 20 ngay. */
+    @Test
+    fun cau_van_on_lai_sau_10_va_30_ngay() {
+        MocThu.dat(context, PhanHoc.NGU_VAN, setOf(1))
+        val m = LamTrenMay.cauLamThem(context, PhanHoc.NGU_VAN).first()
+        val v = m.ghep.sao
+        val t0 = System.currentTimeMillis()
+        LamTrenMay.ghi(context, m, luot(v, sai = 1), "x", LamTrenMay.Loai.LAM_THEM, bayGio = t0, congNgay = false)
+        fun denHen(luc: Long) = LamTrenMay.cauOn(context, bayGio = luc).firstOrNull { it.cau.id == m.cau.id }
+
+        assertEquals("3 ngay chua toi hen", null, denHen(t0 + 3 * ngay + gio))
+        val t1 = t0 + 10 * ngay + gio
+        val on = denHen(t1)
+        assertTrue("10 ngay thi den hen", on != null)
+        LamTrenMay.ghi(context, on!!, luot(v), "x", LamTrenMay.Loai.ON, bayGio = t1, congNgay = false)
+
+        assertEquals("20 ngay sau lan on chua toi hen", null, denHen(t1 + 20 * ngay + gio))
+        val t2 = t1 + 30 * ngay + gio
+        val on2 = denHen(t2)
+        assertTrue("30 ngay sau lan on thi den hen", on2 != null)
+        LamTrenMay.ghi(context, on2!!, luot(v), "x", LamTrenMay.Loai.ON, bayGio = t2, congNgay = false)
+        assertEquals("on du hai lan thi thoi", null, denHen(t2 + 120 * ngay))
+        assertEquals(listOf(10, 30), KhoBai.khoangHen(PhanHoc.NGU_VAN))
+        assertEquals(listOf(3, 10, 20, 30), KhoBai.khoangHen(PhanHoc.TOAN))
+    }
+
     // ------------------------------------------------------------------ phut va quy
 
     @Test

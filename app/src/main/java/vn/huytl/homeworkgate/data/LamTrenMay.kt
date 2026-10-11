@@ -25,8 +25,15 @@ import vn.huytl.homeworkgate.kho.TraLoi
  */
 object LamTrenMay {
 
-    /** Ba mon co cau lam tren may. */
-    val MON = listOf("Toán", "Khoa học tự nhiên", PhanHoc.TIENG_ANH)
+    /** Cac mon co cau lam tren may. Ngu van tu 12/10/2026 (Ba Huy chot), xem [CHI_TREN_MAY]. */
+    val MON = listOf("Toán", "Khoa học tự nhiên", PhanHoc.TIENG_ANH, PhanHoc.NGU_VAN)
+
+    /**
+     * Mon chi lam tren may, khong nop anh nua (Ba Huy chot 12/10/2026): man khai bai mo thang
+     * "Làm bài tập trong SGK", khong co dong chup "Bài khác". Cau Van khong co dap an chung (cam
+     * nghi, viet doan, viet bai) khong soan ghep va khong nop qua app.
+     */
+    val CHI_TREN_MAY = setOf(PhanHoc.NGU_VAN)
 
     /**
      * Moi bai vua sai dua bay nhieu cau chua lam len dau luot Luyen tap (Ba Huy chot 2/10/2026).
@@ -163,8 +170,9 @@ object LamTrenMay {
     }
 
     /**
-     * Cau den hen on lai: vong moi theo lich 3/10/20/30 ngay, hay lam lai trong mot vong on
-     * chua du sao. Chi cau lam duoc tren may; cau Ngu van va cau chua soan ghep thi thoi.
+     * Cau den hen on lai: vong moi theo lich 3/10/20/30 ngay (Ngu van 10/30, xem
+     * [KhoBai.khoangHen]), hay lam lai trong mot vong on chua du sao. Chi cau lam duoc tren may;
+     * cau chua soan ghep thi thoi.
      *
      * HET cau dang cho on, khong gioi han (Ba Huy chot 2/10/2026, nhu Luyen tap [cauLamThem]);
      * truoc do moi luot toi da 10 cau. Cau den hen khong het han: hom nay khong on thi mai van
@@ -228,7 +236,7 @@ object LamTrenMay {
      * So cau da lam dung it nhat mot lan tren tong so cau lam tren may, cho dong Luyen tap cua
      * trang Luyen tap va dong nho o man lam bai ("Đại số: đã làm 12/155 câu", Ba Huy chot
      * 2/10/2026). Dem tren ca phan, ke ca bai lop chua hoc: tong dung yen, khong nhay khi con
-     * danh dau them bai. Khoa la [PhanHoc.Phan.ma]; Tieng Anh khong chia phan nen khoa la "".
+     * danh dau them bai. Khoa la [PhanHoc.Phan.ma]; Tieng Anh, Ngu van khong chia phan nen khoa la "".
      *
      * Chi cau cua cac bai co so, trong SGK va sach bai tap ([NganHang.sachLuyenTapCua], tu
      * 2/10/2026 ca SGK): muc "Ôn tập chương", "Luyện tập chung", "Test Yourself" khong bao gio
@@ -240,9 +248,10 @@ object LamTrenMay {
         val cac = NganHang.sachLuyenTapCua(mon).flatMap { kho.cacCauCuaNguon(it.nguon) }
             .filter { it.lamTrenMay && !it.bai.startsWith("Test Yourself") }
         val ra = HashMap<String, Pair<Int, Int>>()
+        val khongChiaPhan = PhanHoc.cuaMon(mon).isEmpty()
         cac.forEach { c ->
-            val so = PhanHoc.soBai(c.bai) ?: return@forEach
-            val khoa = if (mon == PhanHoc.TIENG_ANH) "" else PhanHoc.cuaBai(mon, so)?.ma ?: return@forEach
+            val so = PhanHoc.soBaiCua(c) ?: return@forEach
+            val khoa = if (khongChiaPhan) "" else PhanHoc.cuaBai(mon, so)?.ma ?: return@forEach
             val (d, t) = ra[khoa] ?: (0 to 0)
             ra[khoa] = (d + if (c.id in dung) 1 else 0) to (t + 1)
         }

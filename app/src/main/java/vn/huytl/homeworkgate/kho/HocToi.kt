@@ -149,6 +149,7 @@ object HocToi {
         PhanHoc.TOAN -> "toan"
         PhanHoc.KHTN -> "khtn"
         PhanHoc.TIENG_ANH -> "anh"
+        PhanHoc.NGU_VAN -> "van"
         else -> null
     }
 

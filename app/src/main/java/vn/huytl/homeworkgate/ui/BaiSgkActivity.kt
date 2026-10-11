@@ -62,10 +62,10 @@ import vn.huytl.homeworkgate.kho.TenBai
  * duoc ca luc dang soan do.
  *
  * MON VAN CHI HIEN CAU LAM TREN MAY (Ba Huy chot 11/10/2026, luc soan thu Bai 1): cau y rieng,
- * viet doan, viet bai khong nam o man nay, ke ca trong so cau cua moi bai va moi quyen. Chung van
- * nam trong sach, co giao thi con lam vo va nop anh tu vo dan do nhu truoc. Toan, KHTN, Tieng
- * Anh khong con cau phai viet nao (moi cau SGK deu co ghep, soat ngay 11/10/2026), nen giu luat
- * tren. Xem [coHien].
+ * viet doan, viet bai khong nam o man nay, ke ca trong so cau cua moi bai va moi quyen. Tu
+ * 12/10/2026 Van cung khong nop anh nua ([LamTrenMay.CHI_TREN_MAY]): cac cau do van nam trong
+ * sach nhung khong nop qua app. Toan, KHTN, Tieng Anh khong con cau phai viet nao (moi cau SGK
+ * deu co ghep, soat ngay 11/10/2026), nen giu luat tren. Xem [coHien].
  *
  * KHOA CAU nhu man khai bai: cau da lam dung, cau dang nam trong bai dang lam, cau dang cho cham,
  * cau dang can sua. Them mot luat cua bai lam tren may: cau vua lam sai het tren may thi 24 gio
@@ -166,7 +166,7 @@ class BaiSgkActivity : AppCompatActivity() {
         lifecycleScope.launch {
             val ct = this@BaiSgkActivity
             val nap = withContext(Dispatchers.IO) {
-                docDangLam(ct, null) to cacSach.map { tienBo(ct, it) }
+                docDangLam(ct, null) to cacSach.map { tienBo(ct, mon, it) }
             }
             if (buoc != Buoc.SACH) return@launch
             veDangLam(nap.first)
@@ -353,7 +353,7 @@ class BaiSgkActivity : AppCompatActivity() {
                     else -> "Chụp bài ($viet câu)"
                 }
                 b.demTich.text = when {
-                    daTich.isEmpty() && mon == NGU_VAN -> ""
+                    daTich.isEmpty() && mon == PhanHoc.NGU_VAN -> ""
                     daTich.isEmpty() -> "Câu có bàn phím làm ngay trên máy, câu phải viết chụp sau khi nộp."
                     may > 0 && viet > 0 -> "Đã chọn ${daTich.size} câu, $viet câu phải viết chụp sau khi nộp."
                     else -> "Đã chọn ${daTich.size} câu."
@@ -435,20 +435,12 @@ class BaiSgkActivity : AppCompatActivity() {
     /** "Bài 2, Bài 3" cho dong phu; bai khong mang so thi giu ca ten. */
     private fun keBai(): String = baiTheoSach().joinToString(", ") { tenNgan(it) }
 
-    /** "Đã làm x/y câu" cua mot quyen, chi dem cau hien o man nay ([coHien]). */
-    private fun tienBo(ct: Context, s: NganHang.Sach): Pair<Int, Int> {
-        if (mon != NGU_VAN) return NganHang.tienBo(ct, s.nguon)
-        val kho = KhoBai.get(ct)
-        val ids = kho.cacCauCuaNguon(s.nguon).filter { coHien(mon, it) }.map { it.id }
-        return kho.daXongTrong(ids, System.currentTimeMillis() - MOT_NAM).size to ids.size
-    }
-
     /**
      * Cac bai cua quyen voi so cau va trang dau tinh tren cac cau hien ([coHien]); bai khong con cau
      * nao thi bo (muc "Viết" cua Van). Mon khac giu nguyen [KhoBai.cacBaiCua].
      */
     private fun cacBaiHien(cac: List<TenBai>, cauHien: List<CauHoi>): List<TenBai> {
-        if (mon != NGU_VAN) return cac
+        if (mon != PhanHoc.NGU_VAN) return cac
         val theoBai = cauHien.groupBy { it.bai to it.chuong }
         return cac.mapNotNull { t ->
             val cau = theoBai[t.bai to t.chuong] ?: return@mapNotNull null
@@ -483,14 +475,24 @@ class BaiSgkActivity : AppCompatActivity() {
     companion object {
         private const val EXTRA_MON = "mon"
         private const val MOT_NAM = 365L * 24 * 60 * 60_000L
-        private const val NGU_VAN = "Ngữ văn"
 
         /**
          * Cau nay co hien o man nay khong. Mon Van chi cau bam duoc tren may (xem KDoc cua lop);
          * mon khac moi cau, cau chua co ghep la cau phai viet.
          */
         fun coHien(mon: String, c: CauHoi): Boolean =
-            mon != NGU_VAN || (c.lamTrenMay && Ghep.doc(c.ghep) != null)
+            mon != PhanHoc.NGU_VAN || (c.lamTrenMay && Ghep.doc(c.ghep) != null)
+
+        /**
+         * "Đã làm x/y câu" cua mot quyen, chi dem cau hien o man nay ([coHien]). Dung chung cho
+         * dong "Làm bài tập trong SGK" o trang Luyen tap.
+         */
+        fun tienBo(ct: Context, mon: String, s: NganHang.Sach): Pair<Int, Int> {
+            if (mon != PhanHoc.NGU_VAN) return NganHang.tienBo(ct, s.nguon)
+            val kho = KhoBai.get(ct)
+            val ids = kho.cacCauCuaNguon(s.nguon).filter { coHien(mon, it) }.map { it.id }
+            return kho.daXongTrong(ids, System.currentTimeMillis() - MOT_NAM).size to ids.size
+        }
 
         fun mo(context: Context, mon: String) {
             context.startActivity(Intent(context, BaiSgkActivity::class.java).putExtra(EXTRA_MON, mon))

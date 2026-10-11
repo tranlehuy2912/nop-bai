@@ -225,16 +225,20 @@ class ChonBaiActivity : AppCompatActivity() {
      * SGK lam tren may, man nay chi con dong dan sang "Làm bài tập trong SGK" va "Bài khác". Mon
      * lam tren may ma chua co SGK trong may (Tieng Anh truoc khi nap SGK ngay 2/10/2026) thi
      * khong con quyen nao de chon (sach bai tap thi co khong giao), bam la chup thang nhu mon
-     * chua co sach.
+     * chua co sach. Ngu van tu 12/10/2026 khong nop anh nua, ca "Bài khác": bam la vao thang
+     * "Làm bài tập trong SGK" ([LamTrenMay.CHI_TREN_MAY]).
      */
     private fun themMon(ten: String) {
         val coSach = NganHang.coSach(ten)
         val sgkTrenMay = ten in LamTrenMay.MON
         val coSgk = NganHang.sachGiaoKhoaCua(ten).isNotEmpty()
+        // Van khong nop anh nua (Ba Huy chot 12/10/2026): bam la vao thang bai SGK lam tren may.
+        val chiTrenMay = ten in LamTrenMay.CHI_TREN_MAY && coSgk
         themDong(
             ten = ten,
             phu = when {
                 !coSach -> null
+                chiTrenMay -> "Bài SGK làm trên máy"
                 sgkTrenMay && coSgk -> "Bài SGK làm trên máy, bài khác chụp ảnh"
                 sgkTrenMay -> "Chụp bài"
                 else -> "Có sách trong máy — chọn được từng câu"
@@ -242,7 +246,11 @@ class ChonBaiActivity : AppCompatActivity() {
             huyHieuMon = ten
         ) {
             mon = ten
-            if (coSach && (!sgkTrenMay || coSgk)) {
+            if (chiTrenMay) {
+                BaiSgkActivity.mo(this, ten)
+                // Nhu dong "Bài trong SGK": lam xong bam quay lai thi ve man chinh.
+                finish()
+            } else if (coSach && (!sgkTrenMay || coSgk)) {
                 buoc = Buoc.SACH
                 veLai()
             } else {
