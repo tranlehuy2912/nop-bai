@@ -32,6 +32,10 @@ install -m 644 "$day/netflix-gio.service" /etc/systemd/system/netflix-gio.servic
 apt-get install -y -q python3-xlib xdotool >/dev/null
 install -m 755 "$day/netflix-remote" /usr/local/lib/netflix-gio/netflix-remote
 install -m 644 "$day/netflix-remote.service" /etc/systemd/system/netflix-remote.service
+# Gap nap van chay (11/10/2026), xem dau file 90-gap-nap-van-chay.conf. logind doc lai khi nhan HUP.
+install -d -m 755 /etc/systemd/logind.conf.d
+install -m 644 "$day/90-gap-nap-van-chay.conf" /etc/systemd/logind.conf.d/90-gap-nap-van-chay.conf
+systemctl kill -s HUP systemd-logind
 # Phien cua lehoa: man chon Netflix hay YouTube (9/10/2026; truoc do chi co Netflix) roi Firefox toan
 # man hinh, dang nhap khong can mat khau (chon ten la vao).
 install -m 755 "$day/netflix-phien" /usr/local/bin/netflix-phien
