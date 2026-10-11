@@ -2,7 +2,7 @@
  "nguon": "dethitoan8",
  "mon": "Toán",
  "ten": "Đề thi Toán 8",
- "ban": 10,
+ "ban": 11,
  "cac_bai": [
   {
    "chuong": "Giữa học kì 1",
@@ -11023,6 +11023,2436 @@
        "Tam giác BCA có DN // CA nên BD/DC = BN/NA (định lí Thalès)",
        "Hay 3/25 = 6/NA, suy ra NA = 25 · 6 : 3 = 50 (m)",
        "Vậy BA = BN + NA = 6 + 50 = 56 (m)"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "chuong": "Cuối học kì 1",
+   "bai": "Đề cương học kì 1: Đại số",
+   "de_thi": {
+    "ma": "TCK1-DC1",
+    "nguon_goc": "loigiaihay.com, đăng 20/12/2023"
+   },
+   "cac_cau": [
+    {
+     "ma": "TCK1-DC1.C1",
+     "nhan": "Câu 1",
+     "phan": "I. Phần trắc nghiệm",
+     "nhom": "",
+     "de": "Tính giá trị biểu thức B = 5x^2 − 3x − 18 tại |x| = 3.\nA. B = 18. B. B = 18 hoặc B = 36. C. B = 36. D. B = −18 hoặc B = 36.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "bai_sgk": 2,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Tính giá trị biểu thức B = 5x² − 3x − 18 tại |x| = 3.",
+      "cac": [
+       "B = 18",
+       "B = 18 hoặc B = 36",
+       "B = 36",
+       "B = −18 hoặc B = 36"
+      ],
+      "dap": "B"
+     }
+    },
+    {
+     "ma": "TCK1-DC1.C2",
+     "nhan": "Câu 2",
+     "phan": "I. Phần trắc nghiệm",
+     "nhom": "",
+     "de": "Cho A = 4x^4 + 2y^2x − 3z^3 + 5 và B = −4z^3 + 8 + 3y^2x − 5x^4. Kết quả của A − B là:\nA. 9x^4 + y^2x + z^3 − 3. B. −x^4 + 5y^2x + z^3 + 13. C. 9x^4 − y^2x + z^3 − 3. D. 9x^4 − y^2x + z^3 + 3.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "C",
+     "loai_dap_an": "TN",
+     "bai_sgk": 3,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Cho A = 4x⁴ + 2y²x − 3z³ + 5 và B = −4z³ + 8 + 3y²x − 5x⁴. Kết quả của A − B là:",
+      "cac": [
+       "9x⁴ + y²x + z³ − 3",
+       "−x⁴ + 5y²x + z³ + 13",
+       "9x⁴ − y²x + z³ − 3",
+       "9x⁴ − y²x + z³ + 3"
+      ],
+      "dap": "C"
+     }
+    },
+    {
+     "ma": "TCK1-DC1.C3",
+     "nhan": "Câu 3",
+     "phan": "I. Phần trắc nghiệm",
+     "nhom": "",
+     "de": "Thương (−12x^4y + 4x^3 − 8x^2y^2) : (−4x^2) bằng\nA. −3x^2y + x − 2y^2. B. 3x^4y + x^3 − 2x^2y^2. C. −12x^2y + 4x − 2y^2. D. 3x^2y − x + 2y^2.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "D",
+     "loai_dap_an": "TN",
+     "bai_sgk": 5,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Thương (−12x⁴y + 4x³ − 8x²y²) : (−4x²) bằng",
+      "cac": [
+       "−3x²y + x − 2y²",
+       "3x⁴y + x³ − 2x²y²",
+       "−12x²y + 4x − 2y²",
+       "3x²y − x + 2y²"
+      ],
+      "dap": "D"
+     }
+    },
+    {
+     "ma": "TCK1-DC1.C4",
+     "nhan": "Câu 4",
+     "phan": "I. Phần trắc nghiệm",
+     "nhom": "",
+     "de": "Kết quả của tích (2x + y)(2x − y) là:\nA. 4x − y. B. 4x + y. C. 4x^2 − y^2. D. 4x^2 + y^2.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "C",
+     "loai_dap_an": "TN",
+     "bai_sgk": 6,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Kết quả của tích (2x + y)(2x − y) là:",
+      "cac": [
+       "4x − y",
+       "4x + y",
+       "4x² − y²",
+       "4x² + y²"
+      ],
+      "dap": "C"
+     }
+    },
+    {
+     "ma": "TCK1-DC1.C5",
+     "nhan": "Câu 5",
+     "phan": "I. Phần trắc nghiệm",
+     "nhom": "",
+     "de": "Kết quả 8x^3 + 12x^2y + 6xy^2 + y^3 là:\nA. (2x^3 + y)^3. B. (2x + y^3)^3. C. (2x + y)^3. D. (2x − y)^3.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "C",
+     "loai_dap_an": "TN",
+     "bai_sgk": 7,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Kết quả 8x³ + 12x²y + 6xy² + y³ là:",
+      "cac": [
+       "(2x³ + y)³",
+       "(2x + y³)³",
+       "(2x + y)³",
+       "(2x − y)³"
+      ],
+      "dap": "C"
+     },
+     "ghi_chu": "Bảng đáp án in ghi A, nhưng phương án A là (2x³ + y)³; đúng là C: (2x + y)³ = 8x³ + 12x²y + 6xy² + y³."
+    },
+    {
+     "ma": "TCK1-DC1.C6",
+     "nhan": "Câu 6",
+     "phan": "I. Phần trắc nghiệm",
+     "nhom": "",
+     "de": "Điền đơn thức vào chỗ trống: (3x + y)(....... − 3xy + y^2) = 27x^3 + y^3\nA. 9x. B. 6x^2. C. 9xy. D. 9x^2.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "D",
+     "loai_dap_an": "TN",
+     "bai_sgk": 8,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Điền đơn thức vào chỗ trống: (3x + y)(___ − 3xy + y²) = 27x³ + y³",
+      "cac": [
+       "9x",
+       "6x²",
+       "9xy",
+       "9x²"
+      ],
+      "dap": "D"
+     }
+    },
+    {
+     "ma": "TCK1-DC1.C7",
+     "nhan": "Câu 7",
+     "phan": "I. Phần trắc nghiệm",
+     "nhom": "",
+     "de": "Đa thức 12x − 9 − 4x^2 được phân tích thành\nA. (2x − 3)(2x + 3). B. −(2x − 3)^2. C. (3 − 2x)^2. D. −(2x + 3)^2.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "bai_sgk": 9,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Đa thức 12x − 9 − 4x² được phân tích thành",
+      "cac": [
+       "(2x − 3)(2x + 3)",
+       "−(2x − 3)²",
+       "(3 − 2x)²",
+       "−(2x + 3)²"
+      ],
+      "dap": "B"
+     }
+    },
+    {
+     "ma": "TCK1-DC1.C8",
+     "nhan": "Câu 8",
+     "phan": "I. Phần trắc nghiệm",
+     "nhom": "",
+     "de": "Cho ab(x − 5) − a^2(5 − x) = a(x − 5)(...). Biểu thức thích hợp điền vào dấu … là\nA. 2a + b. B. 1 + b. C. a^2 + ab. D. a + b.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "D",
+     "loai_dap_an": "TN",
+     "bai_sgk": 9,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Cho ab(x − 5) − a²(5 − x) = a(x − 5)(___). Biểu thức thích hợp điền vào chỗ trống là",
+      "cac": [
+       "2a + b",
+       "1 + b",
+       "a² + ab",
+       "a + b"
+      ],
+      "dap": "D"
+     }
+    },
+    {
+     "ma": "TCK1-DC1.B1a",
+     "nhan": "Bài 1a",
+     "phan": "II. Phần tự luận",
+     "nhom": "Bài 1. Thực hiện các phép tính:",
+     "de": "Bài 1. Thực hiện các phép tính:\na) (x + 3)(x − 3)",
+     "dang": "CAU_NHO",
+     "dap_an": "x^2 − 9",
+     "loai_dap_an": "DAP_SO",
+     "bai_sgk": 6,
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "hoi": "Bài 1. Thực hiện các phép tính:\na) (x + 3)(x − 3)",
+      "dap": [
+       "x²−9"
+      ],
+      "phim": [
+       "x",
+       "²"
+      ],
+      "nhieu": [
+       "³",
+       "y"
+      ],
+      "loi_giai": [
+       "(x + 3)(x − 3) = x² − 3²",
+       "= x² − 9"
+      ]
+     }
+    },
+    {
+     "ma": "TCK1-DC1.B1b",
+     "nhan": "Bài 1b",
+     "phan": "II. Phần tự luận",
+     "nhom": "Bài 1. Thực hiện các phép tính:",
+     "de": "Bài 1. Thực hiện các phép tính:\nb) (1/2)xy^2 · (6xy + (3/2)x^3y − 1)",
+     "dang": "CAU_NHO",
+     "dap_an": "3x^2y^3 + (3/4)x^4y^3 − (1/2)xy^2",
+     "loai_dap_an": "DAP_SO",
+     "bai_sgk": 4,
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "hoi": "Bài 1. Thực hiện các phép tính:\nb) (1/2)xy² · (6xy + (3/2)x³y − 1)",
+      "dap": [
+       "3x²y³+(3/4)x⁴y³−(1/2)xy²",
+       "3x²y³+3/4x⁴y³−1/2xy²",
+       "3x²y³+3x⁴y³/4−xy²/2"
+      ],
+      "phim": [
+       "x",
+       "y",
+       "²",
+       "³",
+       "⁴"
+      ],
+      "nhieu": [
+       "⁵",
+       "⁶",
+       "z"
+      ],
+      "loi_giai": [
+       "(1/2)xy² · 6xy + (1/2)xy² · (3/2)x³y − (1/2)xy² · 1",
+       "= 3x²y³ + (3/4)x⁴y³ − (1/2)xy²"
+      ]
+     }
+    },
+    {
+     "ma": "TCK1-DC1.B1c",
+     "nhan": "Bài 1c",
+     "phan": "II. Phần tự luận",
+     "nhom": "Bài 1. Thực hiện các phép tính:",
+     "de": "Bài 1. Thực hiện các phép tính:\nc) (2x − y)(4x^2 + 2xy + y^2)",
+     "dang": "CAU_NHO",
+     "dap_an": "8x^3 − y^3",
+     "loai_dap_an": "DAP_SO",
+     "bai_sgk": 8,
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "hoi": "Bài 1. Thực hiện các phép tính:\nc) (2x − y)(4x² + 2xy + y²)",
+      "dap": [
+       "8x³−y³"
+      ],
+      "phim": [
+       "x",
+       "y",
+       "³"
+      ],
+      "nhieu": [
+       "²",
+       "⁶",
+       "z"
+      ],
+      "loi_giai": [
+       "(2x − y)(4x² + 2xy + y²) = (2x)³ − y³",
+       "= 8x³ − y³"
+      ]
+     }
+    },
+    {
+     "ma": "TCK1-DC1.B1d",
+     "nhan": "Bài 1d",
+     "phan": "II. Phần tự luận",
+     "nhom": "Bài 1. Thực hiện các phép tính:",
+     "de": "Bài 1. Thực hiện các phép tính:\nd) (6x^5y^2 − 9x^4y^3 + 15x^3y^4) : 3x^3y^2",
+     "dang": "CAU_NHO",
+     "dap_an": "2x^2 − 3xy + 5y^2",
+     "loai_dap_an": "DAP_SO",
+     "bai_sgk": 5,
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "hoi": "Bài 1. Thực hiện các phép tính:\nd) (6x⁵y² − 9x⁴y³ + 15x³y⁴) : 3x³y²",
+      "dap": [
+       "2x²−3xy+5y²"
+      ],
+      "phim": [
+       "x",
+       "y",
+       "²"
+      ],
+      "nhieu": [
+       "³",
+       "⁴",
+       "z"
+      ],
+      "loi_giai": [
+       "= 6x⁵y² : 3x³y² − 9x⁴y³ : 3x³y² + 15x³y⁴ : 3x³y²",
+       "= 2x² − 3xy + 5y²"
+      ]
+     }
+    },
+    {
+     "ma": "TCK1-DC1.B2a",
+     "nhan": "Bài 2a",
+     "phan": "II. Phần tự luận",
+     "nhom": "Bài 2. Rút gọn các biểu thức:",
+     "de": "Bài 2. Rút gọn các biểu thức:\na) (x + y)^2 − (x − y)^2",
+     "dang": "CAU_NHO",
+     "dap_an": "4xy",
+     "loai_dap_an": "DAP_SO",
+     "bai_sgk": 6,
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "hoi": "Bài 2. Rút gọn các biểu thức:\na) (x + y)² − (x − y)²",
+      "dap": [
+       "4xy"
+      ],
+      "phim": [
+       "x",
+       "y"
+      ],
+      "nhieu": [
+       "²",
+       "z"
+      ],
+      "loi_giai": [
+       "(x + y)² − (x − y)² = (x + y − x + y)(x + y + x − y)",
+       "= 2y · 2x",
+       "= 4xy"
+      ]
+     }
+    },
+    {
+     "ma": "TCK1-DC1.B2b",
+     "nhan": "Bài 2b",
+     "phan": "II. Phần tự luận",
+     "nhom": "Bài 2. Rút gọn các biểu thức:",
+     "de": "Bài 2. Rút gọn các biểu thức:\nb) (a + b)^3 + (a − b)^3 − 2a^3",
+     "dang": "CAU_NHO",
+     "dap_an": "6ab^2",
+     "loai_dap_an": "DAP_SO",
+     "bai_sgk": 7,
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "hoi": "Bài 2. Rút gọn các biểu thức:\nb) (a + b)³ + (a − b)³ − 2a³",
+      "dap": [
+       "6ab²"
+      ],
+      "phim": [
+       "a",
+       "b",
+       "²"
+      ],
+      "nhieu": [
+       "³",
+       "x",
+       "c"
+      ],
+      "loi_giai": [
+       "(a + b)³ = a³ + 3a²b + 3ab² + b³",
+       "(a − b)³ = a³ − 3a²b + 3ab² − b³",
+       "(a + b)³ + (a − b)³ − 2a³ = a³ + 3a²b + 3ab² + b³ + a³ − 3a²b + 3ab² − b³ − 2a³",
+       "= 6ab²"
+      ]
+     }
+    },
+    {
+     "ma": "TCK1-DC1.B2c",
+     "nhan": "Bài 2c",
+     "phan": "II. Phần tự luận",
+     "nhom": "Bài 2. Rút gọn các biểu thức:",
+     "de": "Bài 2. Rút gọn các biểu thức:\nc) (x + 3)(x + 7) − (x + 1)(x − 1)",
+     "dang": "CAU_NHO",
+     "dap_an": "10x + 22",
+     "loai_dap_an": "DAP_SO",
+     "bai_sgk": 6,
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "hoi": "Bài 2. Rút gọn các biểu thức:\nc) (x + 3)(x + 7) − (x + 1)(x − 1)",
+      "dap": [
+       "10x+22"
+      ],
+      "phim": [
+       "x"
+      ],
+      "nhieu": [
+       "²",
+       "y"
+      ],
+      "loi_giai": [
+       "(x + 3)(x + 7) = x² + 10x + 21",
+       "(x + 1)(x − 1) = x² − 1",
+       "(x + 3)(x + 7) − (x + 1)(x − 1) = x² + 10x + 21 − x² + 1",
+       "= 10x + 22"
+      ]
+     }
+    },
+    {
+     "ma": "TCK1-DC1.B2d",
+     "nhan": "Bài 2d",
+     "phan": "II. Phần tự luận",
+     "nhom": "Bài 2. Rút gọn các biểu thức:",
+     "de": "Bài 2. Rút gọn các biểu thức:\nd) (x + 1)(x^2 − x + 1) − (x − 1)(x^2 + x + 1)",
+     "dang": "CAU_NHO",
+     "dap_an": "2",
+     "loai_dap_an": "DAP_SO",
+     "bai_sgk": 8,
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "hoi": "Bài 2. Rút gọn các biểu thức:\nd) (x + 1)(x² − x + 1) − (x − 1)(x² + x + 1)",
+      "dap": [
+       "2"
+      ],
+      "phim": [],
+      "nhieu": [],
+      "loi_giai": [
+       "(x + 1)(x² − x + 1) = x³ + 1",
+       "(x − 1)(x² + x + 1) = x³ − 1",
+       "(x³ + 1) − (x³ − 1) = x³ + 1 − x³ + 1",
+       "= 2"
+      ]
+     }
+    },
+    {
+     "ma": "TCK1-DC1.B2e",
+     "nhan": "Bài 2e",
+     "phan": "II. Phần tự luận",
+     "nhom": "Bài 2. Rút gọn các biểu thức:",
+     "de": "Bài 2. Rút gọn các biểu thức:\ne) (2 + 1)(2^2 + 1)(2^4 + 1)(2^8 + 1)(2^16 + 1)",
+     "dang": "CAU_NHO",
+     "dap_an": "2^32 − 1",
+     "loai_dap_an": "DAP_SO",
+     "bai_sgk": 6,
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 6,
+      "hoi": "Bài 2. Rút gọn các biểu thức:\ne) (2 + 1)(2² + 1)(2⁴ + 1)(2⁸ + 1)(2¹⁶ + 1)",
+      "dap": [
+       "2³²−1",
+       "4294967295"
+      ],
+      "phim": [
+       "³²"
+      ],
+      "nhieu": [
+       "¹⁶",
+       "⁶⁴",
+       "²"
+      ],
+      "loi_giai": [
+       "2 − 1 = 1 nên biểu thức bằng (2 − 1)(2 + 1)(2² + 1)(2⁴ + 1)(2⁸ + 1)(2¹⁶ + 1)",
+       "= (2² − 1)(2² + 1)(2⁴ + 1)(2⁸ + 1)(2¹⁶ + 1)",
+       "= (2⁴ − 1)(2⁴ + 1)(2⁸ + 1)(2¹⁶ + 1)",
+       "= (2⁸ − 1)(2⁸ + 1)(2¹⁶ + 1)",
+       "= (2¹⁶ − 1)(2¹⁶ + 1)",
+       "= 2³² − 1"
+      ]
+     }
+    },
+    {
+     "ma": "TCK1-DC1.B3a",
+     "nhan": "Bài 3a",
+     "phan": "II. Phần tự luận",
+     "nhom": "Bài 3. Phân tích các đa thức sau thành nhân tử:",
+     "de": "Bài 3. Phân tích các đa thức sau thành nhân tử:\na) 3x^3 + 6x^2 + 3x",
+     "dang": "CAU_NHO",
+     "dap_an": "3x(x + 1)^2",
+     "loai_dap_an": "DAP_SO",
+     "bai_sgk": 9,
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "hoi": "Bài 3. Phân tích các đa thức sau thành nhân tử:\na) 3x³ + 6x² + 3x",
+      "dap": [
+       "3x(x+1)²"
+      ],
+      "phim": [
+       "x",
+       "²"
+      ],
+      "nhieu": [
+       "³",
+       "y"
+      ],
+      "loi_giai": [
+       "3x³ + 6x² + 3x = 3x(x² + 2x + 1)",
+       "= 3x(x + 1)²"
+      ]
+     }
+    },
+    {
+     "ma": "TCK1-DC1.B3b",
+     "nhan": "Bài 3b",
+     "phan": "II. Phần tự luận",
+     "nhom": "Bài 3. Phân tích các đa thức sau thành nhân tử:",
+     "de": "Bài 3. Phân tích các đa thức sau thành nhân tử:\nb) x^2 − y^2 − 2x + 2y",
+     "dang": "CAU_NHO",
+     "dap_an": "(x − y)(x + y − 2)",
+     "loai_dap_an": "DAP_SO",
+     "bai_sgk": 9,
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "hoi": "Bài 3. Phân tích các đa thức sau thành nhân tử:\nb) x² − y² − 2x + 2y",
+      "dap": [
+       "(x−y)(x+y−2)",
+       "(y−x)(2−x−y)"
+      ],
+      "phim": [
+       "x",
+       "y"
+      ],
+      "nhieu": [
+       "²",
+       "z"
+      ],
+      "loi_giai": [
+       "x² − y² − 2x + 2y = (x − y)(x + y) − 2(x − y)",
+       "= (x − y)(x + y − 2)"
+      ]
+     }
+    },
+    {
+     "ma": "TCK1-DC1.B3c",
+     "nhan": "Bài 3c",
+     "phan": "II. Phần tự luận",
+     "nhom": "Bài 3. Phân tích các đa thức sau thành nhân tử:",
+     "de": "Bài 3. Phân tích các đa thức sau thành nhân tử:\nc) x^2 − 25 + y^2 + 2xy",
+     "dang": "CAU_NHO",
+     "dap_an": "(x + y − 5)(x + y + 5)",
+     "loai_dap_an": "DAP_SO",
+     "bai_sgk": 9,
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "hoi": "Bài 3. Phân tích các đa thức sau thành nhân tử:\nc) x² − 25 + y² + 2xy",
+      "dap": [
+       "(x+y−5)(x+y+5)"
+      ],
+      "phim": [
+       "x",
+       "y"
+      ],
+      "nhieu": [
+       "²",
+       "z"
+      ],
+      "loi_giai": [
+       "x² − 25 + y² + 2xy = (x² + 2xy + y²) − 25",
+       "= (x + y)² − 5²",
+       "= (x + y − 5)(x + y + 5)"
+      ]
+     }
+    },
+    {
+     "ma": "TCK1-DC1.B3d",
+     "nhan": "Bài 3d",
+     "phan": "II. Phần tự luận",
+     "nhom": "Bài 3. Phân tích các đa thức sau thành nhân tử:",
+     "de": "Bài 3. Phân tích các đa thức sau thành nhân tử:\nd) x^2(x − 1) + 16(1 − x)",
+     "dang": "CAU_NHO",
+     "dap_an": "(x − 4)(x + 4)(x − 1)",
+     "loai_dap_an": "DAP_SO",
+     "bai_sgk": 9,
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "hoi": "Bài 3. Phân tích các đa thức sau thành nhân tử:\nd) x²(x − 1) + 16(1 − x)",
+      "dap": [
+       "(x−4)(x+4)(x−1)",
+       "(4−x)(x+4)(1−x)"
+      ],
+      "phim": [
+       "x"
+      ],
+      "nhieu": [
+       "²",
+       "y"
+      ],
+      "loi_giai": [
+       "x²(x − 1) + 16(1 − x) = x²(x − 1) − 16(x − 1)",
+       "= (x² − 16)(x − 1)",
+       "= (x − 4)(x + 4)(x − 1)"
+      ]
+     }
+    },
+    {
+     "ma": "TCK1-DC1.B3e",
+     "nhan": "Bài 3e",
+     "phan": "II. Phần tự luận",
+     "nhom": "Bài 3. Phân tích các đa thức sau thành nhân tử:",
+     "de": "Bài 3. Phân tích các đa thức sau thành nhân tử:\ne) 8a(b − c) + 6b(c − b)",
+     "dang": "CAU_NHO",
+     "dap_an": "(b − c)(8a − 6b) = 2(b − c)(4a − 3b)",
+     "loai_dap_an": "DAP_SO",
+     "bai_sgk": 9,
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "hoi": "Bài 3. Phân tích các đa thức sau thành nhân tử:\ne) 8a(b − c) + 6b(c − b)",
+      "dap": [
+       "2(b−c)(4a−3b)",
+       "(b−c)(8a−6b)",
+       "2(c−b)(3b−4a)",
+       "(c−b)(6b−8a)"
+      ],
+      "phim": [
+       "a",
+       "b",
+       "c"
+      ],
+      "nhieu": [
+       "x",
+       "²",
+       "d"
+      ],
+      "loi_giai": [
+       "8a(b − c) + 6b(c − b) = 8a(b − c) − 6b(b − c)",
+       "= (b − c)(8a − 6b)",
+       "= 2(b − c)(4a − 3b)"
+      ]
+     },
+     "ghi_chu": "Lời giải in dừng ở (b − c)(8a − 6b); máy nhận cả dạng đã đưa 2 ra ngoài."
+    },
+    {
+     "ma": "TCK1-DC1.B3f",
+     "nhan": "Bài 3f",
+     "phan": "II. Phần tự luận",
+     "nhom": "Bài 3. Phân tích các đa thức sau thành nhân tử:",
+     "de": "Bài 3. Phân tích các đa thức sau thành nhân tử:\nf) x^2 + 8x + 15",
+     "dang": "CAU_NHO",
+     "dap_an": "(x + 5)(x + 3)",
+     "loai_dap_an": "DAP_SO",
+     "bai_sgk": 9,
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "hoi": "Bài 3. Phân tích các đa thức sau thành nhân tử:\nf) x² + 8x + 15",
+      "dap": [
+       "(x+3)(x+5)"
+      ],
+      "phim": [
+       "x"
+      ],
+      "nhieu": [
+       "²",
+       "y"
+      ],
+      "loi_giai": [
+       "x² + 8x + 15 = x² + 3x + 5x + 15",
+       "= x(x + 3) + 5(x + 3)",
+       "= (x + 3)(x + 5)"
+      ]
+     }
+    },
+    {
+     "ma": "TCK1-DC1.B3g",
+     "nhan": "Bài 3g",
+     "phan": "II. Phần tự luận",
+     "nhom": "Bài 3. Phân tích các đa thức sau thành nhân tử:",
+     "de": "Bài 3. Phân tích các đa thức sau thành nhân tử:\ng) x^2 − x − 12",
+     "dang": "CAU_NHO",
+     "dap_an": "(x + 3)(x − 4)",
+     "loai_dap_an": "DAP_SO",
+     "bai_sgk": 9,
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "hoi": "Bài 3. Phân tích các đa thức sau thành nhân tử:\ng) x² − x − 12",
+      "dap": [
+       "(x−4)(x+3)"
+      ],
+      "phim": [
+       "x"
+      ],
+      "nhieu": [
+       "²",
+       "y"
+      ],
+      "loi_giai": [
+       "x² − x − 12 = x² − 4x + 3x − 12",
+       "= x(x − 4) + 3(x − 4)",
+       "= (x − 4)(x + 3)"
+      ]
+     }
+    },
+    {
+     "ma": "TCK1-DC1.B3h",
+     "nhan": "Bài 3h",
+     "phan": "II. Phần tự luận",
+     "nhom": "Bài 3. Phân tích các đa thức sau thành nhân tử:",
+     "de": "Bài 3. Phân tích các đa thức sau thành nhân tử:\nh) (x^2 + x)^2 + 3(x^2 + x) + 2",
+     "dang": "CAU_NHO",
+     "dap_an": "(x^2 + x + 1)(x^2 + x + 2)",
+     "loai_dap_an": "DAP_SO",
+     "bai_sgk": 9,
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "hoi": "Bài 3. Phân tích các đa thức sau thành nhân tử:\nh) (x² + x)² + 3(x² + x) + 2",
+      "dap": [
+       "(x²+x+1)(x²+x+2)"
+      ],
+      "phim": [
+       "x",
+       "²"
+      ],
+      "nhieu": [
+       "³",
+       "y"
+      ],
+      "loi_giai": [
+       "(x² + x)² + 3(x² + x) + 2 = (x² + x)² + (x² + x) + 2(x² + x) + 2",
+       "= (x² + x)(x² + x + 1) + 2(x² + x + 1)",
+       "= (x² + x + 1)(x² + x + 2)"
+      ]
+     }
+    },
+    {
+     "ma": "TCK1-DC1.B4a",
+     "nhan": "Bài 4a",
+     "phan": "II. Phần tự luận",
+     "nhom": "Bài 4. Tìm x, biết:",
+     "trung": "TGK1-2.B2-1b"
+    },
+    {
+     "ma": "TCK1-DC1.B4b",
+     "nhan": "Bài 4b",
+     "phan": "II. Phần tự luận",
+     "nhom": "Bài 4. Tìm x, biết:",
+     "de": "Bài 4. Tìm x, biết:\nb) (4x − 1)(x + 3) − (2x − 1)^2 = 0",
+     "dang": "CAU_NHO",
+     "dap_an": "x = 4/15",
+     "loai_dap_an": "DAP_SO",
+     "bai_sgk": 6,
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 3,
+      "hoi": "Bài 4. Tìm x, biết:\nb) (4x − 1)(x + 3) − (2x − 1)² = 0\n(Nếu có nhiều giá trị của x thì viết theo thứ tự từ nhỏ đến lớn, cách nhau bằng dấu ;)",
+      "dap": [
+       "x=4/15",
+       "4/15"
+      ],
+      "phim": [
+       "x"
+      ],
+      "nhieu": [
+       ";",
+       "y",
+       "²"
+      ],
+      "loi_giai": [
+       "4x² + 12x − x − 3 − (4x² − 4x + 1) = 0",
+       "15x − 4 = 0",
+       "x = 4/15"
+      ]
+     }
+    },
+    {
+     "ma": "TCK1-DC1.B4c",
+     "nhan": "Bài 4c",
+     "phan": "II. Phần tự luận",
+     "nhom": "Bài 4. Tìm x, biết:",
+     "de": "Bài 4. Tìm x, biết:\nc) 5x(x − 1) = x − 1",
+     "dang": "CAU_NHO",
+     "dap_an": "x = 1/5; x = 1",
+     "loai_dap_an": "DAP_SO",
+     "bai_sgk": 9,
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "hoi": "Bài 4. Tìm x, biết:\nc) 5x(x − 1) = x − 1\n(Nếu có nhiều giá trị của x thì viết theo thứ tự từ nhỏ đến lớn, cách nhau bằng dấu ;)",
+      "dap": [
+       "x=1/5;x=1",
+       "1/5;1",
+       "x=0,2;x=1",
+       "0,2;1"
+      ],
+      "phim": [
+       "x",
+       ";"
+      ],
+      "nhieu": [
+       "y",
+       "²",
+       "³"
+      ],
+      "loi_giai": [
+       "5x(x − 1) − (x − 1) = 0",
+       "(x − 1)(5x − 1) = 0",
+       "x − 1 = 0 hoặc 5x − 1 = 0",
+       "x = 1 hoặc x = 1/5"
+      ]
+     }
+    },
+    {
+     "ma": "TCK1-DC1.B4d",
+     "nhan": "Bài 4d",
+     "phan": "II. Phần tự luận",
+     "nhom": "Bài 4. Tìm x, biết:",
+     "de": "Bài 4. Tìm x, biết:\nd) 2(x + 5) − x^2 − 5x = 0",
+     "dang": "CAU_NHO",
+     "dap_an": "x = −5; x = 2",
+     "loai_dap_an": "DAP_SO",
+     "bai_sgk": 9,
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "hoi": "Bài 4. Tìm x, biết:\nd) 2(x + 5) − x² − 5x = 0\n(Nếu có nhiều giá trị của x thì viết theo thứ tự từ nhỏ đến lớn, cách nhau bằng dấu ;)",
+      "dap": [
+       "x=−5;x=2",
+       "−5;2"
+      ],
+      "phim": [
+       "x",
+       ";"
+      ],
+      "nhieu": [
+       "y",
+       "²",
+       "³"
+      ],
+      "loi_giai": [
+       "2(x + 5) − x(x + 5) = 0",
+       "(x + 5)(2 − x) = 0",
+       "x + 5 = 0 hoặc 2 − x = 0",
+       "x = −5 hoặc x = 2"
+      ]
+     }
+    },
+    {
+     "ma": "TCK1-DC1.B4e",
+     "nhan": "Bài 4e",
+     "phan": "II. Phần tự luận",
+     "nhom": "Bài 4. Tìm x, biết:",
+     "de": "Bài 4. Tìm x, biết:\ne) (2x − 3)^2 − (x + 5)^2 = 0",
+     "dang": "CAU_NHO",
+     "dap_an": "x = −2/3; x = 8",
+     "loai_dap_an": "DAP_SO",
+     "bai_sgk": 9,
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "hoi": "Bài 4. Tìm x, biết:\ne) (2x − 3)² − (x + 5)² = 0\n(Nếu có nhiều giá trị của x thì viết theo thứ tự từ nhỏ đến lớn, cách nhau bằng dấu ;)",
+      "dap": [
+       "x=−2/3;x=8",
+       "−2/3;8"
+      ],
+      "phim": [
+       "x",
+       ";"
+      ],
+      "nhieu": [
+       "y",
+       "²",
+       "³"
+      ],
+      "loi_giai": [
+       "(2x − 3 − x − 5)(2x − 3 + x + 5) = 0",
+       "(x − 8)(3x + 2) = 0",
+       "x − 8 = 0 hoặc 3x + 2 = 0",
+       "x = 8 hoặc x = −2/3"
+      ]
+     }
+    },
+    {
+     "ma": "TCK1-DC1.B4f",
+     "nhan": "Bài 4f",
+     "phan": "II. Phần tự luận",
+     "nhom": "Bài 4. Tìm x, biết:",
+     "de": "Bài 4. Tìm x, biết:\nf) 3x^3 − 48x = 0",
+     "dang": "CAU_NHO",
+     "dap_an": "x = −4; x = 0; x = 4",
+     "loai_dap_an": "DAP_SO",
+     "bai_sgk": 9,
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "hoi": "Bài 4. Tìm x, biết:\nf) 3x³ − 48x = 0\n(Nếu có nhiều giá trị của x thì viết theo thứ tự từ nhỏ đến lớn, cách nhau bằng dấu ;)",
+      "dap": [
+       "x=−4;x=0;x=4",
+       "−4;0;4"
+      ],
+      "phim": [
+       "x",
+       ";"
+      ],
+      "nhieu": [
+       "y",
+       "²",
+       "³"
+      ],
+      "loi_giai": [
+       "3x(x² − 16) = 0",
+       "3x(x − 4)(x + 4) = 0",
+       "x = 0 hoặc x − 4 = 0 hoặc x + 4 = 0",
+       "x = 0 hoặc x = 4 hoặc x = −4"
+      ]
+     }
+    },
+    {
+     "ma": "TCK1-DC1.B4g",
+     "nhan": "Bài 4g",
+     "phan": "II. Phần tự luận",
+     "nhom": "Bài 4. Tìm x, biết:",
+     "de": "Bài 4. Tìm x, biết:\ng) x^2 − 6x = −9",
+     "dang": "CAU_NHO",
+     "dap_an": "x = 3",
+     "loai_dap_an": "DAP_SO",
+     "bai_sgk": 9,
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "hoi": "Bài 4. Tìm x, biết:\ng) x² − 6x = −9\n(Nếu có nhiều giá trị của x thì viết theo thứ tự từ nhỏ đến lớn, cách nhau bằng dấu ;)",
+      "dap": [
+       "x=3",
+       "3"
+      ],
+      "phim": [
+       "x"
+      ],
+      "nhieu": [
+       ";",
+       "y",
+       "²"
+      ],
+      "loi_giai": [
+       "x² − 6x + 9 = 0",
+       "(x − 3)² = 0",
+       "x − 3 = 0",
+       "x = 3"
+      ]
+     }
+    },
+    {
+     "ma": "TCK1-DC1.B4h",
+     "nhan": "Bài 4h",
+     "phan": "II. Phần tự luận",
+     "nhom": "Bài 4. Tìm x, biết:",
+     "de": "Bài 4. Tìm x, biết:\nh) x^2 − x − 6 = 0",
+     "dang": "CAU_NHO",
+     "dap_an": "x = −2; x = 3",
+     "loai_dap_an": "DAP_SO",
+     "bai_sgk": 9,
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 4,
+      "hoi": "Bài 4. Tìm x, biết:\nh) x² − x − 6 = 0\n(Nếu có nhiều giá trị của x thì viết theo thứ tự từ nhỏ đến lớn, cách nhau bằng dấu ;)",
+      "dap": [
+       "x=−2;x=3",
+       "−2;3"
+      ],
+      "phim": [
+       "x",
+       ";"
+      ],
+      "nhieu": [
+       "y",
+       "²",
+       "³"
+      ],
+      "loi_giai": [
+       "x² + 2x − 3x − 6 = 0",
+       "x(x + 2) − 3(x + 2) = 0",
+       "(x + 2)(x − 3) = 0",
+       "x = −2 hoặc x = 3"
+      ]
+     }
+    },
+    {
+     "ma": "TCK1-DC1.B5a",
+     "nhan": "Bài 5a",
+     "phan": "II. Phần tự luận",
+     "nhom": "Bài 5. Chứng minh giá trị của mỗi biểu thức sau không phụ thuộc vào giá trị của biến.",
+     "de": "Bài 5. Chứng minh giá trị của mỗi biểu thức sau không phụ thuộc vào giá trị của biến.\na) A = 2xy + (1/2)x · (2x − 4y + 4) − x(x + 2)",
+     "dang": "CAU_NHO",
+     "dap_an": "A = 0 với mọi x, y nên A không phụ thuộc vào giá trị của biến.",
+     "loai_dap_an": "LOI_GIAI",
+     "bai_sgk": 4,
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 4,
+      "hoi": "Bài 5. Chứng minh giá trị của mỗi biểu thức sau không phụ thuộc vào giá trị của biến.\na) A = 2xy + (1/2)x · (2x − 4y + 4) − x(x + 2)",
+      "buoc": [
+       "A = 2xy + x² − 2xy + 2x − x² − 2x",
+       "A = (2xy − 2xy) + (x² − x²) + (2x − 2x)",
+       "A = 0",
+       "Vì A = 0 với mọi x, y nên A không phụ thuộc vào giá trị của biến"
+      ],
+      "nhieu": [
+       "A = 2xy + x² − 4xy + 2x − x² − 2x",
+       "A = 2xy + x² − 2xy + 4x − x² − 2x"
+      ]
+     }
+    },
+    {
+     "ma": "TCK1-DC1.B5b",
+     "nhan": "Bài 5b",
+     "phan": "II. Phần tự luận",
+     "nhom": "Bài 5. Chứng minh giá trị của mỗi biểu thức sau không phụ thuộc vào giá trị của biến.",
+     "trung": "TCK1-4.B1b"
+    },
+    {
+     "ma": "TCK1-DC1.B13",
+     "nhan": "Bài 13*",
+     "phan": "II. Phần tự luận",
+     "nhom": "Bài 13*.",
+     "de": "Bài 13*.\nTính giá trị nhỏ nhất của biểu thức B = x^2 + 2y^2 + 3z^2 − 2xy + 2xz − 2x − 2y − 8z + 2000.",
+     "dang": "CAU_NHO",
+     "dap_an": "B = (x − y + z − 1)^2 + (y + z − 2)^2 + (z − 1)^2 + 1994 ≥ 1994. Giá trị nhỏ nhất của B là 1994, khi x = y = z = 1.",
+     "loai_dap_an": "LOI_GIAI",
+     "bai_sgk": 6,
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 5,
+      "hoi": "Bài 13*.\nTính giá trị nhỏ nhất của biểu thức B = x² + 2y² + 3z² − 2xy + 2xz − 2x − 2y − 8z + 2000.",
+      "buoc": [
+       "B = (x² + y² + z² + 1 − 2xy + 2xz − 2x − 2yz + 2y − 2z) + (y² + z² + 4 + 2yz − 4y − 4z) + (z² − 2z + 1) + 1994",
+       "B = (x − y + z − 1)² + (y + z − 2)² + (z − 1)² + 1994",
+       "Vì (x − y + z − 1)² ≥ 0, (y + z − 2)² ≥ 0, (z − 1)² ≥ 0 với mọi x, y, z nên B ≥ 1994",
+       "Dấu “=” xảy ra khi z − 1 = 0, y + z − 2 = 0 và x − y + z − 1 = 0, tức là x = y = z = 1",
+       "Vậy giá trị nhỏ nhất của B là 1994, đạt được khi x = y = z = 1"
+      ],
+      "nhieu": [
+       "B = (x − y + z − 1)² + (y + z − 2)² + (z − 1)² + 1996",
+       "Vậy giá trị nhỏ nhất của B là 2000, đạt được khi x = y = z = 0"
+      ]
+     },
+     "ghi_chu": "Lời giải in kết luận MinB = 1996 là sai: (x − y + z − 1)² + (y + z − 2)² + (z − 1)² khai triển ra x² + 2y² + 3z² − 2xy + 2xz − 2x − 2y − 8z + 6, nên phần còn lại là 2000 − 6 = 1994; thay x = y = z = 1 vào B cũng ra 1994. Dòng đầu lời giải in còn ghi nhầm (x + y + z − 1)²."
+    },
+    {
+     "ma": "TCK1-DC1.B14",
+     "nhan": "Bài 14*",
+     "phan": "II. Phần tự luận",
+     "nhom": "Bài 14*. Cho a + b = 1. Tính giá trị của biểu thức sau:",
+     "de": "Bài 14*. Cho a + b = 1. Tính giá trị của biểu thức sau:\nM = a^3 + b^3 + 3ab(a^2 + b^2) + 6a^2b^2(a + b)",
+     "dang": "CAU_NHO",
+     "dap_an": "M = 1",
+     "loai_dap_an": "DAP_SO",
+     "bai_sgk": 8,
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 7,
+      "hoi": "Bài 14*. Cho a + b = 1. Tính giá trị của biểu thức sau:\nM = a³ + b³ + 3ab(a² + b²) + 6a²b²(a + b)",
+      "dap": [
+       "1",
+       "M=1"
+      ],
+      "phim": [
+       "M"
+      ],
+      "nhieu": [
+       "a"
+      ],
+      "loi_giai": [
+       "a³ + b³ = (a + b)(a² − ab + b²) = a² − ab + b²",
+       "6a²b²(a + b) = 6a²b²",
+       "M = a² − ab + b² + 3ab(a² + b²) + 6a²b²",
+       "= a² + b² − ab + 3ab(a² + b² + 2ab)",
+       "= a² + b² − ab + 3ab(a + b)²",
+       "= a² + b² − ab + 3ab",
+       "= a² + 2ab + b² = (a + b)² = 1"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "chuong": "Cuối học kì 1",
+   "bai": "Đề cương học kì 1: Hình học",
+   "de_thi": {
+    "ma": "TCK1-DC2",
+    "nguon_goc": "loigiaihay.com, đăng 20/12/2023"
+   },
+   "cac_cau": [
+    {
+     "ma": "TCK1-DC2.C9",
+     "nhan": "Câu 9",
+     "phan": "I. Phần trắc nghiệm",
+     "nhom": "",
+     "de": "Hình bình hành là tứ giác có\nA. hai cạnh song song. B. các cạnh đối song song. C. các góc bằng nhau. D. các góc đối bù nhau.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "bai_sgk": 12,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Hình bình hành là tứ giác có",
+      "cac": [
+       "hai cạnh song song",
+       "các cạnh đối song song",
+       "các góc bằng nhau",
+       "các góc đối bù nhau"
+      ],
+      "dap": "B"
+     }
+    },
+    {
+     "ma": "TCK1-DC2.C10",
+     "nhan": "Câu 10",
+     "phan": "I. Phần trắc nghiệm",
+     "nhom": "",
+     "trung": "TCK1-4.C4"
+    },
+    {
+     "ma": "TCK1-DC2.C11",
+     "nhan": "Câu 11",
+     "phan": "I. Phần trắc nghiệm",
+     "nhom": "",
+     "de": "Một tứ giác là hình vuông nếu nó\nA. có ba góc vuông. B. là hình thoi có một góc vuông. C. là hình bình hành có một góc vuông. D. là hình thang có hai góc vuông.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "bai_sgk": 14,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Một tứ giác là hình vuông nếu nó",
+      "cac": [
+       "có ba góc vuông",
+       "là hình thoi có một góc vuông",
+       "là hình bình hành có một góc vuông",
+       "là hình thang có hai góc vuông"
+      ],
+      "dap": "B"
+     }
+    },
+    {
+     "ma": "TCK1-DC2.C12",
+     "nhan": "Câu 12",
+     "phan": "I. Phần trắc nghiệm",
+     "nhom": "",
+     "trung": "TCK1-2.C4"
+    },
+    {
+     "ma": "TCK1-DC2.C13",
+     "nhan": "Câu 13",
+     "phan": "I. Phần trắc nghiệm",
+     "nhom": "",
+     "de": "Khẳng định nào sau đây là <b>sai</b>?\nA. Hình thang cân có một góc vuông là hình chữ nhật. B. Hình bình hành có hai đường chéo bằng nhau là hình chữ nhật. C. Hình bình hành có hai đường chéo vuông góc với nhau là hình chữ nhật. D. Tứ giác có bốn góc bằng nhau là hình chữ nhật.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "C",
+     "loai_dap_an": "TN",
+     "bai_sgk": 13,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Khẳng định nào sau đây là <b>sai</b>?",
+      "cac": [
+       "Hình thang cân có một góc vuông là hình chữ nhật",
+       "Hình bình hành có hai đường chéo bằng nhau là hình chữ nhật",
+       "Hình bình hành có hai đường chéo vuông góc với nhau là hình chữ nhật",
+       "Tứ giác có bốn góc bằng nhau là hình chữ nhật"
+      ],
+      "dap": "C"
+     }
+    },
+    {
+     "ma": "TCK1-DC2.C14",
+     "nhan": "Câu 14",
+     "phan": "I. Phần trắc nghiệm",
+     "nhom": "",
+     "de": "Cho tam giác ABC có AM là đường trung tuyến, ta có:\nA. S_ΔABM = 2S_ΔABC. B. S_ΔABM = S_ΔABC. C. S_ΔAMC = 2S_ΔABC. D. S_ΔABC = 2S_ΔABM.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "D",
+     "loai_dap_an": "TN",
+     "bai_sgk": 10,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Cho tam giác ABC có AM là đường trung tuyến, ta có:",
+      "cac": [
+       "Diện tích tam giác ABM gấp đôi diện tích tam giác ABC",
+       "Diện tích tam giác ABM bằng diện tích tam giác ABC",
+       "Diện tích tam giác AMC gấp đôi diện tích tam giác ABC",
+       "Diện tích tam giác ABC gấp đôi diện tích tam giác ABM"
+      ],
+      "dap": "D"
+     },
+     "ghi_chu": "Phương án in bằng ký hiệu S_ΔABM; trên máy viết bằng chữ cho dễ đọc. Kiến thức diện tích tam giác có từ lớp dưới, không gắn với bài nào của chương III; ghi Bài 10 để câu nằm trong phạm vi đề Hình học."
+    },
+    {
+     "ma": "TCK1-DC2.C15",
+     "nhan": "Câu 15",
+     "phan": "I. Phần trắc nghiệm",
+     "nhom": "",
+     "trung": "TCK1-2.C5"
+    },
+    {
+     "ma": "TCK1-DC2.C16",
+     "nhan": "Câu 16",
+     "phan": "I. Phần trắc nghiệm",
+     "nhom": "",
+     "de": "Cho tam giác ABC, D là trung điểm của BC. Qua D kẻ các đường thẳng song song với AB và AC, cắt AC và AB theo thứ tự ở E và F. Tam giác ABC cần thêm điều kiện gì để AEDF là hình vuông?\nA. cân tại A. B. vuông tại A. C. vuông cân tại A. D. góc A = 60°.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "C",
+     "loai_dap_an": "TN",
+     "bai_sgk": 14,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Cho tam giác ABC, D là trung điểm của BC. Qua D kẻ các đường thẳng song song với AB và AC, cắt AC và AB theo thứ tự ở E và F. Tam giác ABC cần thêm điều kiện gì để AEDF là hình vuông?",
+      "cac": [
+       "cân tại A",
+       "vuông tại A",
+       "vuông cân tại A",
+       "góc A = 60°"
+      ],
+      "dap": "C"
+     }
+    },
+    {
+     "ma": "TCK1-DC2.C17",
+     "nhan": "Câu 17",
+     "phan": "I. Phần trắc nghiệm",
+     "nhom": "",
+     "de": "Hình bình hành cần thêm điều kiện gì để trở thành hình vuông?\nA. Hai đường chéo bằng nhau. B. Hai đường chéo cắt nhau tại trung điểm mỗi đường. C. Hai cạnh kề bằng nhau. D. Có một góc vuông và hai đường chéo vuông góc với nhau.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "D",
+     "loai_dap_an": "TN",
+     "bai_sgk": 14,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Hình bình hành cần thêm điều kiện gì để trở thành hình vuông?",
+      "cac": [
+       "Hai đường chéo bằng nhau",
+       "Hai đường chéo cắt nhau tại trung điểm mỗi đường",
+       "Hai cạnh kề bằng nhau",
+       "Có một góc vuông và hai đường chéo vuông góc với nhau"
+      ],
+      "dap": "D"
+     }
+    },
+    {
+     "ma": "TCK1-DC2.C18",
+     "nhan": "Câu 18",
+     "phan": "I. Phần trắc nghiệm",
+     "nhom": "",
+     "trung": "TCK1-4.C8"
+    },
+    {
+     "ma": "TCK1-DC2.C19",
+     "nhan": "Câu 19",
+     "phan": "I. Phần trắc nghiệm",
+     "nhom": "",
+     "trung": "TCK1-2.C7"
+    },
+    {
+     "ma": "TCK1-DC2.C20",
+     "nhan": "Câu 20",
+     "phan": "I. Phần trắc nghiệm",
+     "nhom": "",
+     "trung": "TCK1-7.C2"
+    },
+    {
+     "ma": "TCK1-DC2.C21",
+     "nhan": "Câu 21",
+     "phan": "I. Phần trắc nghiệm",
+     "nhom": "",
+     "trung": "TCK1-4.C7"
+    },
+    {
+     "ma": "TCK1-DC2.C22",
+     "nhan": "Câu 22",
+     "phan": "I. Phần trắc nghiệm",
+     "nhom": "",
+     "de": "Cho hình thang ABCD (AB // CD); BC = 15cm, E ∈ AD; AE/AD = 1/3. Qua E kẻ đường thẳng song song với CD cắt BC tại F. Tính độ dài BF.\nA. 15 cm. B. 5 cm. C. 10 cm. D. 7 cm.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "bai_sgk": 15,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Cho hình thang ABCD (AB // CD), BC = 15 cm, E ∈ AD sao cho AE/AD = 1/3. Qua E kẻ đường thẳng song song với CD cắt BC tại F. Tính độ dài BF.",
+      "cac": [
+       "15 cm",
+       "5 cm",
+       "10 cm",
+       "7 cm"
+      ],
+      "dap": "B"
+     }
+    },
+    {
+     "ma": "TCK1-DC2.C23",
+     "nhan": "Câu 23",
+     "phan": "I. Phần trắc nghiệm",
+     "nhom": "",
+     "trung": "TCK1-2.C9"
+    },
+    {
+     "ma": "TCK1-DC2.C24",
+     "nhan": "Câu 24",
+     "phan": "I. Phần trắc nghiệm",
+     "nhom": "",
+     "trung": "TCK1-5.C9"
+    },
+    {
+     "ma": "TCK1-DC2.C25",
+     "nhan": "Câu 25",
+     "phan": "I. Phần trắc nghiệm",
+     "nhom": "",
+     "de": "Hãy chọn câu đúng. Tính độ dài x, y của các đoạn thẳng trong hình vẽ, biết rằng các số trên hình cùng đơn vị đo là cm.\nA. x = 12 cm; y = 13 cm. B. x = 14 cm; y = 11 cm. C. x = 14,3 cm; y = 10,7 cm. D. x = 15 cm; y = 20 cm.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "D",
+     "loai_dap_an": "TN",
+     "bai_sgk": 17,
+     "hinh": [
+      "dethitoan8/TCK1-DC2.C25.webp"
+     ],
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Tính độ dài x, y của các đoạn thẳng trong hình vẽ, biết AD là tia phân giác của góc BAC và các số trên hình cùng đơn vị đo là cm.",
+      "cac": [
+       "x = 12 cm; y = 13 cm",
+       "x = 14 cm; y = 11 cm",
+       "x = 14,3 cm; y = 10,7 cm",
+       "x = 15 cm; y = 20 cm"
+      ],
+      "dap": "D"
+     },
+     "ghi_chu": "Hình in AB = 15, AC = 20, BC = 35: AB + AC = BC nên không có tam giác nào như vậy. Vẽ lại hình với AB = 21, AC = 28 (giữ tỉ số 3 : 4 và BC = 35), đáp án vẫn là x = 15 cm, y = 20 cm. Hình in còn dính chữ mờ của trang web."
+    },
+    {
+     "ma": "TCK1-DC2.C26",
+     "nhan": "Câu 26",
+     "phan": "I. Phần trắc nghiệm",
+     "nhom": "",
+     "trung": "TCK1-4.C9"
+    },
+    {
+     "ma": "TCK1-DC2.C27",
+     "nhan": "Câu 27",
+     "phan": "I. Phần trắc nghiệm",
+     "nhom": "",
+     "trung": "TCK1-5.C7"
+    },
+    {
+     "ma": "TCK1-DC2.C28",
+     "nhan": "Câu 28",
+     "phan": "I. Phần trắc nghiệm",
+     "nhom": "",
+     "de": "Cho ΔABC có D, E lần lượt là trung điểm của AB, AC và DE = 4 cm. Biết đường cao AH = 6 cm. Diện tích tam giác ABC là\nA. S = 24cm^2. B. S = 48cm^2. C. S = 12cm^2. D. S = 32cm^2.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN",
+     "bai_sgk": 16,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Cho ΔABC có D, E lần lượt là trung điểm của AB, AC và DE = 4 cm. Biết đường cao AH = 6 cm. Diện tích tam giác ABC là",
+      "cac": [
+       "24 cm²",
+       "48 cm²",
+       "12 cm²",
+       "32 cm²"
+      ],
+      "dap": "A"
+     }
+    },
+    {
+     "ma": "TCK1-DC2.C29",
+     "nhan": "Câu 29",
+     "phan": "I. Phần trắc nghiệm",
+     "nhom": "",
+     "de": "Cho ΔABC, các đường trung tuyến BD và CE cắt nhau ở G. Gọi I, K lần lượt là trung điểm của GB và GC. Tính EI, DK biết AG = 4 cm.\nA. EI = DK = 3 cm. B. EI = 3 cm, DK = 2 cm. C. EI = DK = 2 cm. D. EI = 1 cm, DK = 2 cm.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "C",
+     "loai_dap_an": "TN",
+     "bai_sgk": 16,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Cho ΔABC, các đường trung tuyến BD và CE cắt nhau ở G. Gọi I, K lần lượt là trung điểm của GB và GC. Tính EI, DK biết AG = 4 cm.",
+      "cac": [
+       "EI = DK = 3 cm",
+       "EI = 3 cm, DK = 2 cm",
+       "EI = DK = 2 cm",
+       "EI = 1 cm, DK = 2 cm"
+      ],
+      "dap": "C"
+     }
+    },
+    {
+     "ma": "TCK1-DC2.B9a",
+     "nhan": "Bài 9a",
+     "phan": "II. Phần tự luận",
+     "nhom": "Bài 9. Cho hình thang ABCD (AB // CD), M là trung điểm của CD. Gọi E là giao điểm của AC và BM, F là giao điểm của BD và AM. Đường thẳng EF cắt BC và AD lần lượt tại G và H.",
+     "de": "Bài 9. Cho hình thang ABCD (AB // CD), M là trung điểm của CD. Gọi E là giao điểm của AC và BM, F là giao điểm của BD và AM. Đường thẳng EF cắt BC và AD lần lượt tại G và H.\na) Chứng minh rằng EA/EC = 2AB/CD.",
+     "dang": "CAU_NHO",
+     "dap_an": "AB // CM nên EA/EC = AB/CM; CM = CD/2 nên EA/EC = 2AB/CD.",
+     "loai_dap_an": "LOI_GIAI",
+     "bai_sgk": 15,
+     "hinh_goi_y": [
+      "dethitoan8/TCK1-DC2.B9.goi-y.webp"
+     ],
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 4,
+      "hoi": "Bài 9. Cho hình thang ABCD (AB // CD), M là trung điểm của CD. Gọi E là giao điểm của AC và BM, F là giao điểm của BD và AM. Đường thẳng EF cắt BC và AD lần lượt tại G và H.\na) Chứng minh rằng EA/EC = 2AB/CD.",
+      "buoc": [
+       "AB // CD và M thuộc CD nên AB // CM",
+       "Vì AB // CM nên EA/EC = AB/CM (hệ quả của định lí Thalès)",
+       "M là trung điểm của CD nên CM = CD/2",
+       "Do đó EA/EC = AB : (CD/2) = 2AB/CD"
+      ],
+      "nhieu": [
+       "Vì AB // CM nên EA/EC = CM/AB (hệ quả của định lí Thalès)",
+       "M là trung điểm của CD nên CM = 2CD"
+      ],
+      "thu_tu_khac": [
+       [
+        0,
+        2,
+        1,
+        3
+       ],
+       [
+        2,
+        0,
+        1,
+        3
+       ]
+      ]
+     }
+    },
+    {
+     "ma": "TCK1-DC2.B9b",
+     "nhan": "Bài 9b",
+     "phan": "II. Phần tự luận",
+     "nhom": "Bài 9. Cho hình thang ABCD (AB // CD), M là trung điểm của CD. Gọi E là giao điểm của AC và BM, F là giao điểm của BD và AM. Đường thẳng EF cắt BC và AD lần lượt tại G và H.",
+     "de": "Bài 9. Cho hình thang ABCD (AB // CD), M là trung điểm của CD. Gọi E là giao điểm của AC và BM, F là giao điểm của BD và AM. Đường thẳng EF cắt BC và AD lần lượt tại G và H.\nb) Chứng minh rằng EF // CD.",
+     "dang": "CAU_NHO",
+     "dap_an": "FA/FM = AB/DM = 2AB/CD = EA/EC nên EF // MC (định lí Thalès đảo), tức là EF // CD.",
+     "loai_dap_an": "LOI_GIAI",
+     "bai_sgk": 15,
+     "hinh_goi_y": [
+      "dethitoan8/TCK1-DC2.B9.goi-y.webp"
+     ],
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 5,
+      "hoi": "Bài 9. Cho hình thang ABCD (AB // CD), M là trung điểm của CD. Gọi E là giao điểm của AC và BM, F là giao điểm của BD và AM. Đường thẳng EF cắt BC và AD lần lượt tại G và H.\nb) Chứng minh rằng EF // CD.",
+      "buoc": [
+       "Vì AB // DM nên FA/FM = AB/DM (hệ quả của định lí Thalès)",
+       "M là trung điểm của CD nên DM = CD/2, do đó FA/FM = 2AB/CD",
+       "Theo câu a, EA/EC = 2AB/CD, nên FA/FM = EA/EC",
+       "Tam giác AMC có FA/FM = EA/EC nên EF // MC (định lí Thalès đảo)",
+       "M thuộc CD nên EF // CD"
+      ],
+      "nhieu": [
+       "Vì AB // DM nên FA/FM = DM/AB (hệ quả của định lí Thalès)",
+       "Tam giác AMC có FA/FM = EA/EC nên EF // AC (định lí Thalès đảo)"
+      ]
+     }
+    },
+    {
+     "ma": "TCK1-DC2.B9c",
+     "nhan": "Bài 9c",
+     "phan": "II. Phần tự luận",
+     "nhom": "Bài 9. Cho hình thang ABCD (AB // CD), M là trung điểm của CD. Gọi E là giao điểm của AC và BM, F là giao điểm của BD và AM. Đường thẳng EF cắt BC và AD lần lượt tại G và H.",
+     "de": "Bài 9. Cho hình thang ABCD (AB // CD), M là trung điểm của CD. Gọi E là giao điểm của AC và BM, F là giao điểm của BD và AM. Đường thẳng EF cắt BC và AD lần lượt tại G và H.\nc) Chứng minh rằng GE = EF = FH.",
+     "dang": "CAU_NHO",
+     "dap_an": "HF/DM = AF/AM = EF/CM và DM = CM nên HF = EF; EG/CM = BE/BM = EF/DM nên EG = EF. Vậy GE = EF = FH.",
+     "loai_dap_an": "LOI_GIAI",
+     "bai_sgk": 15,
+     "hinh_goi_y": [
+      "dethitoan8/TCK1-DC2.B9.goi-y.webp"
+     ],
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 7,
+      "hoi": "Bài 9. Cho hình thang ABCD (AB // CD), M là trung điểm của CD. Gọi E là giao điểm của AC và BM, F là giao điểm của BD và AM. Đường thẳng EF cắt BC và AD lần lượt tại G và H.\nc) Chứng minh rằng GE = EF = FH.",
+      "buoc": [
+       "Tam giác ADM có HF // DM nên HF/DM = AF/AM (hệ quả của định lí Thalès)",
+       "Tam giác ACM có EF // CM nên EF/CM = AF/AM (hệ quả của định lí Thalès)",
+       "Mà DM = CM nên HF = EF",
+       "Tam giác BCM có EG // CM nên EG/CM = BE/BM (hệ quả của định lí Thalès)",
+       "Tam giác BDM có EF // DM nên EF/DM = BE/BM (hệ quả của định lí Thalès)",
+       "Mà DM = CM nên EG = EF",
+       "Vậy GE = EF = FH"
+      ],
+      "nhieu": [
+       "Tam giác ADM có HF // DM nên HF/DM = FM/AM (hệ quả của định lí Thalès)",
+       "Mà DM = CM nên HF = 2EF"
+      ],
+      "thu_tu_khac": [
+       [
+        3,
+        4,
+        5,
+        0,
+        1,
+        2,
+        6
+       ],
+       [
+        0,
+        1,
+        2,
+        4,
+        3,
+        5,
+        6
+       ],
+       [
+        4,
+        3,
+        5,
+        0,
+        1,
+        2,
+        6
+       ],
+       [
+        1,
+        0,
+        2,
+        3,
+        4,
+        5,
+        6
+       ],
+       [
+        3,
+        4,
+        5,
+        1,
+        0,
+        2,
+        6
+       ],
+       [
+        1,
+        0,
+        2,
+        4,
+        3,
+        5,
+        6
+       ],
+       [
+        4,
+        3,
+        5,
+        1,
+        0,
+        2,
+        6
+       ]
+      ]
+     }
+    },
+    {
+     "ma": "TCK1-DC2.B10a",
+     "nhan": "Bài 10a",
+     "phan": "II. Phần tự luận",
+     "nhom": "Bài 10. Cho hình bình hành ABCD, M là trung điểm của AB. Gọi G là giao điểm của AC và DM. Lấy điểm E thuộc đoạn thẳng AM. Các đường thẳng GE và CD cắt nhau tại F.",
+     "de": "Bài 10. Cho hình bình hành ABCD, M là trung điểm của AB. Gọi G là giao điểm của AC và DM. Lấy điểm E thuộc đoạn thẳng AM. Các đường thẳng GE và CD cắt nhau tại F.\na) Chứng minh rằng G là trọng tâm của tam giác ABD.",
+     "dang": "CAU_NHO",
+     "dap_an": "O là trung điểm của BD nên AO và DM là hai đường trung tuyến của tam giác ABD; G là giao điểm của chúng nên là trọng tâm.",
+     "loai_dap_an": "LOI_GIAI",
+     "bai_sgk": 12,
+     "hinh_goi_y": [
+      "dethitoan8/TCK1-DC2.B10.goi-y.webp"
+     ],
+     "hinh_day_du": [
+      "dethitoan8/TCK1-DC2.B10.day-du.webp"
+     ],
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 3,
+      "hoi": "Bài 10. Cho hình bình hành ABCD, M là trung điểm của AB. Gọi G là giao điểm của AC và DM. Lấy điểm E thuộc đoạn thẳng AM. Các đường thẳng GE và CD cắt nhau tại F.\na) Chứng minh rằng G là trọng tâm của tam giác ABD.",
+      "buoc": [
+       "Gọi O là giao điểm của AC và BD. ABCD là hình bình hành nên O là trung điểm của BD",
+       "Trong tam giác ABD, AO và DM là hai đường trung tuyến (M là trung điểm của AB)",
+       "G là giao điểm của AO và DM nên G là trọng tâm của tam giác ABD"
+      ],
+      "nhieu": [
+       "Gọi O là giao điểm của AC và BD. ABCD là hình bình hành nên O là trung điểm của AB",
+       "G là giao điểm của AO và DM nên G là trực tâm của tam giác ABD"
+      ]
+     }
+    },
+    {
+     "ma": "TCK1-DC2.B10b",
+     "nhan": "Bài 10b",
+     "phan": "II. Phần tự luận",
+     "nhom": "Bài 10. Cho hình bình hành ABCD, M là trung điểm của AB. Gọi G là giao điểm của AC và DM. Lấy điểm E thuộc đoạn thẳng AM. Các đường thẳng GE và CD cắt nhau tại F.",
+     "de": "Bài 10. Cho hình bình hành ABCD, M là trung điểm của AB. Gọi G là giao điểm của AC và DM. Lấy điểm E thuộc đoạn thẳng AM. Các đường thẳng GE và CD cắt nhau tại F.\nb) Chứng minh rằng GC = 2GA.",
+     "dang": "CAU_NHO",
+     "dap_an": "AG = (2/3)AO = (1/3)AC nên GC = (2/3)AC = 2GA.",
+     "loai_dap_an": "LOI_GIAI",
+     "bai_sgk": 12,
+     "hinh_goi_y": [
+      "dethitoan8/TCK1-DC2.B10.goi-y.webp"
+     ],
+     "hinh_day_du": [
+      "dethitoan8/TCK1-DC2.B10.day-du.webp"
+     ],
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 4,
+      "hoi": "Bài 10. Cho hình bình hành ABCD, M là trung điểm của AB. Gọi G là giao điểm của AC và DM. Lấy điểm E thuộc đoạn thẳng AM. Các đường thẳng GE và CD cắt nhau tại F.\nb) Chứng minh rằng GC = 2GA.",
+      "buoc": [
+       "G là trọng tâm của tam giác ABD nên AG = (2/3)AO",
+       "O là trung điểm của AC nên AO = (1/2)AC, do đó AG = (2/3) · (1/2)AC = (1/3)AC",
+       "GC = AC − AG = AC − (1/3)AC = (2/3)AC",
+       "Vậy GC = 2GA"
+      ],
+      "nhieu": [
+       "G là trọng tâm của tam giác ABD nên AG = (1/3)AO",
+       "GC = AC − AG = AC − (1/3)AC = (1/3)AC"
+      ]
+     }
+    },
+    {
+     "ma": "TCK1-DC2.B10c",
+     "nhan": "Bài 10c",
+     "phan": "II. Phần tự luận",
+     "nhom": "Bài 10. Cho hình bình hành ABCD, M là trung điểm của AB. Gọi G là giao điểm của AC và DM. Lấy điểm E thuộc đoạn thẳng AM. Các đường thẳng GE và CD cắt nhau tại F.",
+     "de": "Bài 10. Cho hình bình hành ABCD, M là trung điểm của AB. Gọi G là giao điểm của AC và DM. Lấy điểm E thuộc đoạn thẳng AM. Các đường thẳng GE và CD cắt nhau tại F.\nc) Kẻ đường thẳng qua G cắt các cạnh AD và BC lần lượt tại I và K. Chứng minh rằng EI // KF.",
+     "dang": "CAU_NHO",
+     "dap_an": "IG/GK = AG/GC = EG/GF nên EI // KF (định lí Thalès đảo).",
+     "loai_dap_an": "LOI_GIAI",
+     "bai_sgk": 15,
+     "hinh_goi_y": [
+      "dethitoan8/TCK1-DC2.B10.goi-y.webp"
+     ],
+     "hinh_day_du": [
+      "dethitoan8/TCK1-DC2.B10.day-du.webp"
+     ],
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 4,
+      "hoi": "Bài 10. Cho hình bình hành ABCD, M là trung điểm của AB. Gọi G là giao điểm của AC và DM. Lấy điểm E thuộc đoạn thẳng AM. Các đường thẳng GE và CD cắt nhau tại F.\nc) Kẻ đường thẳng qua G cắt các cạnh AD và BC lần lượt tại I và K. Chứng minh rằng EI // KF.",
+      "buoc": [
+       "AI // CK (vì AD // BC) nên IG/GK = AG/GC (hệ quả của định lí Thalès)",
+       "AE // CF (vì AB // CD) nên EG/GF = AG/GC (hệ quả của định lí Thalès)",
+       "Suy ra IG/GK = EG/GF",
+       "Do đó EI // KF (định lí Thalès đảo)"
+      ],
+      "nhieu": [
+       "AI // CK (vì AD // BC) nên IG/GK = GC/AG (hệ quả của định lí Thalès)",
+       "Suy ra IG/GK = GF/EG"
+      ],
+      "thu_tu_khac": [
+       [
+        1,
+        0,
+        2,
+        3
+       ]
+      ]
+     }
+    },
+    {
+     "ma": "TCK1-DC2.B10d",
+     "nhan": "Bài 10d",
+     "phan": "II. Phần tự luận",
+     "nhom": "Bài 10. Cho hình bình hành ABCD, M là trung điểm của AB. Gọi G là giao điểm của AC và DM. Lấy điểm E thuộc đoạn thẳng AM. Các đường thẳng GE và CD cắt nhau tại F.",
+     "de": "Bài 10. Cho hình bình hành ABCD, M là trung điểm của AB. Gọi G là giao điểm của AC và DM. Lấy điểm E thuộc đoạn thẳng AM. Các đường thẳng GE và CD cắt nhau tại F.\nd) Gọi N là trung điểm của AD. Chứng minh rằng BF = 2EN.",
+     "dang": "CAU_NHO",
+     "dap_an": "NG/GB = 1/2 = AG/GC = EG/GF nên NE // BF và BF/NE = GB/GN = 2, tức là BF = 2EN.",
+     "loai_dap_an": "LOI_GIAI",
+     "bai_sgk": 15,
+     "hinh_goi_y": [
+      "dethitoan8/TCK1-DC2.B10.goi-y.webp"
+     ],
+     "hinh_day_du": [
+      "dethitoan8/TCK1-DC2.B10.day-du.webp"
+     ],
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 5,
+      "hoi": "Bài 10. Cho hình bình hành ABCD, M là trung điểm của AB. Gọi G là giao điểm của AC và DM. Lấy điểm E thuộc đoạn thẳng AM. Các đường thẳng GE và CD cắt nhau tại F.\nd) Gọi N là trung điểm của AD. Chứng minh rằng BF = 2EN.",
+      "buoc": [
+       "N là trung điểm của AD nên BN là đường trung tuyến của tam giác ABD; G là trọng tâm nên G thuộc BN và GB = 2GN",
+       "AE // CF nên EG/GF = AG/GC = 1/2 (hệ quả của định lí Thalès và câu b)",
+       "Suy ra NG/GB = EG/GF = 1/2, nên NE // BF (định lí Thalès đảo)",
+       "NE // BF nên NE/BF = NG/GB = 1/2 (hệ quả của định lí Thalès)",
+       "Vậy BF = 2EN"
+      ],
+      "nhieu": [
+       "G là trọng tâm nên G thuộc BN và GN = 2GB",
+       "NE // BF nên NE/BF = NG/GB = 2"
+      ],
+      "thu_tu_khac": [
+       [
+        1,
+        0,
+        2,
+        3,
+        4
+       ]
+      ]
+     }
+    },
+    {
+     "ma": "TCK1-DC2.B11a",
+     "nhan": "Bài 11a",
+     "phan": "II. Phần tự luận",
+     "nhom": "Bài 11. Cho hình vuông ABCD có tâm O, gọi E là trung điểm của AB, DE cắt AC tại F, BF cắt CD tại I.",
+     "de": "Bài 11. Cho hình vuông ABCD có tâm O, gọi E là trung điểm của AB, DE cắt AC tại F, BF cắt CD tại I.\na) Chứng minh D là trung điểm của IC.",
+     "dang": "CAU_NHO",
+     "dap_an": "Gọi K là giao điểm của BF và AD. ΔABF = ΔADF (c.g.c) nên góc ABF = góc ADF; ΔABK = ΔADE (g.c.g) nên AK = AE = AD/2; ΔABK = ΔDIK (g.c.g) nên DI = AB = DC. Vậy D là trung điểm của IC.",
+     "loai_dap_an": "LOI_GIAI",
+     "bai_sgk": 14,
+     "hinh_goi_y": [
+      "dethitoan8/TCK1-DC2.B11.goi-y.webp"
+     ],
+     "hinh_day_du": [
+      "dethitoan8/TCK1-DC2.B11.day-du.webp"
+     ],
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 6,
+      "hoi": "Bài 11. Cho hình vuông ABCD có tâm O, gọi E là trung điểm của AB, DE cắt AC tại F, BF cắt CD tại I.\na) Chứng minh D là trung điểm của IC.",
+      "buoc": [
+       "Gọi K là giao điểm của BF và AD",
+       "ΔABF = ΔADF (c.g.c) vì AB = AD, góc BAF = góc DAF (AC là tia phân giác của góc BAD), AF chung; suy ra góc ABF = góc ADF",
+       "ΔABK = ΔADE (g.c.g) vì góc BAK = góc DAE = 90°, AB = AD, góc ABK = góc ADE; suy ra AK = AE",
+       "AE = (1/2)AB = (1/2)AD nên AK = (1/2)AD, tức là K là trung điểm của AD, AK = KD",
+       "ΔABK = ΔDIK (g.c.g) vì góc BAK = góc IDK = 90°, AK = DK, góc AKB = góc DKI (hai góc đối đỉnh); suy ra DI = AB",
+       "Mà AB = DC nên DI = DC, tức là D là trung điểm của IC"
+      ],
+      "nhieu": [
+       "ΔABF = ΔADF (c.c.c) vì AB = AD, góc BAF = góc DAF, AF chung; suy ra góc ABF = góc ADF",
+       "AE = (1/2)AB = (1/2)AD nên AK = 2AD"
+      ]
+     }
+    },
+    {
+     "ma": "TCK1-DC2.B11b",
+     "nhan": "Bài 11b",
+     "phan": "II. Phần tự luận",
+     "nhom": "Bài 11. Cho hình vuông ABCD có tâm O, gọi E là trung điểm của AB, DE cắt AC tại F, BF cắt CD tại I.",
+     "de": "Bài 11. Cho hình vuông ABCD có tâm O, gọi E là trung điểm của AB, DE cắt AC tại F, BF cắt CD tại I.\nb) Chứng minh ABDI là hình bình hành.",
+     "dang": "CAU_NHO",
+     "dap_an": "AB // DI và AB = DI nên ABDI là hình bình hành.",
+     "loai_dap_an": "LOI_GIAI",
+     "bai_sgk": 12,
+     "hinh_goi_y": [
+      "dethitoan8/TCK1-DC2.B11.goi-y.webp"
+     ],
+     "hinh_day_du": [
+      "dethitoan8/TCK1-DC2.B11.day-du.webp"
+     ],
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 3,
+      "hoi": "Bài 11. Cho hình vuông ABCD có tâm O, gọi E là trung điểm của AB, DE cắt AC tại F, BF cắt CD tại I.\nb) Chứng minh ABDI là hình bình hành.",
+      "buoc": [
+       "AB // DI (vì AB // CD và I thuộc đường thẳng CD)",
+       "AB = DI (câu a)",
+       "Tứ giác ABDI có một cặp cạnh đối song song và bằng nhau nên là hình bình hành"
+      ],
+      "nhieu": [
+       "Tứ giác ABDI có một cặp cạnh đối song song nên là hình bình hành"
+      ],
+      "thu_tu_khac": [
+       [
+        1,
+        0,
+        2
+       ]
+      ]
+     }
+    },
+    {
+     "ma": "TCK1-DC2.B11c",
+     "nhan": "Bài 11c",
+     "phan": "II. Phần tự luận",
+     "nhom": "Bài 11. Cho hình vuông ABCD có tâm O, gọi E là trung điểm của AB, DE cắt AC tại F, BF cắt CD tại I.",
+     "de": "Bài 11. Cho hình vuông ABCD có tâm O, gọi E là trung điểm của AB, DE cắt AC tại F, BF cắt CD tại I.\nc) Gọi H là trung điểm của AI, CH cắt BD tại L. Chứng minh L là trung điểm của OD.",
+     "dang": "CAU_NHO",
+     "dap_an": "OD là đường trung bình của tam giác ACI nên OD // AI và OD = AI/2 = AH; OL là đường trung bình của tam giác ACH nên OL = AH/2 = OD/2. Vậy L là trung điểm của OD.",
+     "loai_dap_an": "LOI_GIAI",
+     "bai_sgk": 16,
+     "hinh_goi_y": [
+      "dethitoan8/TCK1-DC2.B11.goi-y.webp"
+     ],
+     "hinh_day_du": [
+      "dethitoan8/TCK1-DC2.B11.day-du.webp"
+     ],
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 4,
+      "hoi": "Bài 11. Cho hình vuông ABCD có tâm O, gọi E là trung điểm của AB, DE cắt AC tại F, BF cắt CD tại I.\nc) Gọi H là trung điểm của AI, CH cắt BD tại L. Chứng minh L là trung điểm của OD.",
+      "buoc": [
+       "Tam giác ACI có O là trung điểm của AC, D là trung điểm của IC (câu a) nên OD là đường trung bình: OD // AI và OD = (1/2)AI",
+       "H là trung điểm của AI nên AH = (1/2)AI, do đó OD = AH",
+       "Tam giác ACH có O là trung điểm của AC và OL // AH nên OL là đường trung bình, OL = (1/2)AH",
+       "Do đó OL = (1/2)OD, tức là L là trung điểm của OD"
+      ],
+      "nhieu": [
+       "Tam giác ACI có O là trung điểm của AC, D là trung điểm của IC nên OD là đường trung bình: OD // AC và OD = (1/2)AI",
+       "Tam giác ACH có O là trung điểm của AC và OL // AH nên OL là đường trung bình, OL = 2AH"
+      ]
+     }
+    },
+    {
+     "ma": "TCK1-DC2.B12",
+     "nhan": "Bài 12",
+     "phan": "II. Phần tự luận",
+     "nhom": "Bài 12. Để làm cây thông noel, người thợ sẽ dùng một cái khung sắt hình tam giác cân như hình vẽ bên, sau đó gắn mô hình cây thông lên. Cho biết thanh BC = 120 cm. Tính độ dài các thanh GF; HE; ID.",
+     "de": "Bài 12. Để làm cây thông noel, người thợ sẽ dùng một cái khung sắt hình tam giác cân như hình vẽ bên, sau đó gắn mô hình cây thông lên. Cho biết thanh BC = 120 cm. Tính độ dài các thanh GF; HE; ID.",
+     "dang": "CAU_NHO",
+     "dap_an": "GF = 30 cm; HE = 60 cm; ID = 90 cm.",
+     "loai_dap_an": "DAP_SO",
+     "bai_sgk": 16,
+     "hinh": [
+      "dethitoan8/TCK1-DC2.B12.webp",
+      "dethitoan8/TCK1-DC2.B12-khung.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "hoi": "Bài 12. Để làm cây thông noel, người thợ sẽ dùng một cái khung sắt hình tam giác cân như hình vẽ bên, sau đó gắn mô hình cây thông lên. Cho biết thanh BC = 120 cm. Tính độ dài các thanh GF; HE; ID.\nTrên hình, AG = GH = HI = IB và AF = FE = ED = DC.",
+      "dong": [
+       {
+        "chu": "GF = {0}",
+        "o": [
+         {
+          "dung": [
+           "30 cm"
+          ],
+          "sai": [
+           "40 cm",
+           "60 cm"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "HE = {0}",
+        "o": [
+         {
+          "dung": [
+           "60 cm"
+          ],
+          "sai": [
+           "40 cm",
+           "80 cm"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "ID = {0}",
+        "o": [
+         {
+          "dung": [
+           "90 cm"
+          ],
+          "sai": [
+           "80 cm",
+           "100 cm"
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     "ghi_chu": "Đề in chỉ nói các thanh qua dấu gạch trên hình cây thông (ảnh nhỏ, khó đọc); trên máy ghi thêm dòng AG = GH = HI = IB và AF = FE = ED = DC, và thêm hình khung tam giác vẽ lại cho rõ."
+    }
+   ]
+  },
+  {
+   "chuong": "Cuối học kì 1",
+   "bai": "Đề cương học kì 1: Thống kê",
+   "de_thi": {
+    "ma": "TCK1-DC3",
+    "nguon_goc": "loigiaihay.com, đăng 20/12/2023"
+   },
+   "cac_cau": [
+    {
+     "ma": "TCK1-DC3.C30",
+     "nhan": "Câu 30",
+     "phan": "I. Phần trắc nghiệm",
+     "nhom": "",
+     "de": "Trong các dữ liệu sau, dữ liệu nào là dữ liệu định tính?\nA. Số huy chương vàng mà các động viên đã đạt được. B. Danh sách các động viên tham dự Olympic 2021: Nguyễn Văn Hoàng, …. C. Số học sinh nữ của các tổ trong lớp 7A. D. Năm sinh của các thành viên trong gia đình em.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "bai_sgk": 18,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Trong các dữ liệu sau, dữ liệu nào là dữ liệu định tính?",
+      "cac": [
+       "Số huy chương vàng mà các vận động viên đã đạt được",
+       "Danh sách các vận động viên tham dự Olympic 2021: Nguyễn Văn Hoàng, …",
+       "Số học sinh nữ của các tổ trong lớp 7A",
+       "Năm sinh của các thành viên trong gia đình em"
+      ],
+      "dap": "B"
+     },
+     "ghi_chu": "Đề in 'động viên' (thiếu chữ 'vận'); trên máy viết 'vận động viên'."
+    },
+    {
+     "ma": "TCK1-DC3.C31",
+     "nhan": "Câu 31",
+     "phan": "I. Phần trắc nghiệm",
+     "nhom": "",
+     "de": "Cho bảng thống kê về tỉ số phần trăm các loại sách trong tủ sách của lớp 8A như sau:\n(Bảng: Loại sách: Lịch sử Việt Nam, Truyện tranh, Thế giới động vật, Các loại sách khác; Tỉ số phần trăm: 25%, 20%, 30%, 25%.)\nCho các phát biểu sau:\n(I) Dữ liệu định lượng là các loại sách Lịch sử Việt Nam, Truyện tranh, thế giới động vật, các loại sách khác;\n(II) Dữ liệu định tính là tỉ số phần trăm: 25%; 20%; 30%; 25%;\n(III) Dữ liệu chưa hợp lí là tỉ số phần trăm.\nSố phát biểu sai là:\nA. 0. B. 1. C. 2. D. 3.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "D",
+     "loai_dap_an": "TN",
+     "bai_sgk": 18,
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Cho bảng thống kê về tỉ số phần trăm các loại sách trong tủ sách của lớp 8A như sau:\nLịch sử Việt Nam: 25%\nTruyện tranh: 20%\nThế giới động vật: 30%\nCác loại sách khác: 25%\nCho các phát biểu sau:\n(I) Dữ liệu định lượng là các loại sách Lịch sử Việt Nam, Truyện tranh, Thế giới động vật, các loại sách khác;\n(II) Dữ liệu định tính là tỉ số phần trăm: 25%; 20%; 30%; 25%;\n(III) Dữ liệu chưa hợp lí là tỉ số phần trăm.\nSố phát biểu sai là:",
+      "cac": [
+       "0",
+       "1",
+       "2",
+       "3"
+      ],
+      "dap": "D"
+     },
+     "ghi_chu": "Bảng in dạng ảnh; trên máy chép thành dòng chữ."
+    },
+    {
+     "ma": "TCK1-DC3.C32a",
+     "nhan": "Câu 32a",
+     "phan": "I. Phần trắc nghiệm",
+     "nhom": "Câu 32: Biểu đồ hình quạt tròn biểu diễn kết quả thống kê (tính theo tỉ số phần trăm) các thị trường cung cấp cà phê cho Tây Ban Nha trong 7 tháng đầu năm 2022. (Nguồn: Eurostat)",
+     "de": "Câu 32: Biểu đồ hình quạt tròn biểu diễn kết quả thống kê (tính theo tỉ số phần trăm) các thị trường cung cấp cà phê cho Tây Ban Nha trong 7 tháng đầu năm 2022. (Nguồn: Eurostat)\na) Thị trường nào cung cấp cà phê cho Tây Ban Nha là nhiều nhất?\nA. Việt Nam. B. Đức. C. Braxin. D. Thị trường khác.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN",
+     "bai_sgk": 20,
+     "hinh": [
+      "dethitoan8/TCK1-4.B3.webp"
+     ],
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Câu 32: Biểu đồ hình quạt tròn biểu diễn kết quả thống kê (tính theo tỉ số phần trăm) các thị trường cung cấp cà phê cho Tây Ban Nha trong 7 tháng đầu năm 2022. (Nguồn: Eurostat)\na) Thị trường nào cung cấp cà phê cho Tây Ban Nha là nhiều nhất?",
+      "cac": [
+       "Việt Nam",
+       "Đức",
+       "Brazil",
+       "Thị trường khác"
+      ],
+      "dap": "A"
+     },
+     "ghi_chu": "Dùng lại hình của đề cuối kì 1 số 4 Bài 3 (cùng biểu đồ, ghi Brazil), nên phương án viết Brazil thay Braxin."
+    },
+    {
+     "ma": "TCK1-DC3.C32b",
+     "nhan": "Câu 32b",
+     "phan": "I. Phần trắc nghiệm",
+     "nhom": "Câu 32: Biểu đồ hình quạt tròn biểu diễn kết quả thống kê (tính theo tỉ số phần trăm) các thị trường cung cấp cà phê cho Tây Ban Nha trong 7 tháng đầu năm 2022. (Nguồn: Eurostat)",
+     "de": "Câu 32: Biểu đồ hình quạt tròn biểu diễn kết quả thống kê (tính theo tỉ số phần trăm) các thị trường cung cấp cà phê cho Tây Ban Nha trong 7 tháng đầu năm 2022. (Nguồn: Eurostat)\nb) Thị trường Việt Nam cung cấp cà phê cho Tây Ban Nha trong 7 tháng đầu năm 2022 gấp khoảng mấy lần thị trường Indonesia?\nA. 5,5 lần. B. 4 lần. C. 3,2 lần. D. Kết quả khác.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN",
+     "bai_sgk": 20,
+     "hinh": [
+      "dethitoan8/TCK1-4.B3.webp"
+     ],
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Câu 32: Biểu đồ hình quạt tròn biểu diễn kết quả thống kê (tính theo tỉ số phần trăm) các thị trường cung cấp cà phê cho Tây Ban Nha trong 7 tháng đầu năm 2022. (Nguồn: Eurostat)\nb) Thị trường Việt Nam cung cấp cà phê cho Tây Ban Nha trong 7 tháng đầu năm 2022 gấp khoảng mấy lần thị trường Indonesia?",
+      "cac": [
+       "5,5 lần",
+       "4 lần",
+       "3,2 lần",
+       "Kết quả khác"
+      ],
+      "dap": "A"
+     }
+    },
+    {
+     "ma": "TCK1-DC3.C33a",
+     "nhan": "Câu 33a",
+     "phan": "I. Phần trắc nghiệm",
+     "nhom": "Câu 33: Biểu đồ cột ở hình vẽ bên biểu diễn tỉ lệ về giá trị đạt được của khoáng sản xuất khẩu nước ngoài của nước ta (tính theo tỉ số phần trăm).",
+     "de": "Câu 33: Biểu đồ cột ở hình vẽ bên biểu diễn tỉ lệ về giá trị đạt được của khoáng sản xuất khẩu nước ngoài của nước ta (tính theo tỉ số phần trăm).\na) Lựa chọn biểu đồ nào để biểu diễn các dữ liệu thống kê có trong biểu đồ cột ở hình bên?\nA. Biểu đồ hình quạt tròn. B. Biểu đồ cột kép. C. Biểu đồ cột. D. A; B; C đều đúng.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN",
+     "bai_sgk": 19,
+     "hinh": [
+      "dethitoan8/TCK1-DC3.C33.webp"
+     ],
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Câu 33: Biểu đồ cột ở hình vẽ bên biểu diễn tỉ lệ về giá trị đạt được của khoáng sản xuất khẩu nước ngoài của nước ta (tính theo tỉ số phần trăm).\na) Ngoài biểu đồ cột, có thể chọn biểu đồ nào để biểu diễn các dữ liệu thống kê có trong biểu đồ cột ở hình bên?",
+      "cac": [
+       "Biểu đồ hình quạt tròn",
+       "Biểu đồ cột kép",
+       "Biểu đồ đoạn thẳng",
+       "Cả ba phương án kia đều đúng"
+      ],
+      "dap": "A"
+     },
+     "ghi_chu": "Đề in hỏi 'lựa chọn biểu đồ nào' với phương án C là biểu đồ cột, chính là biểu đồ đã cho, nên C cũng đúng; đáp án in là A. Trên máy hỏi 'ngoài biểu đồ cột', đổi C thành biểu đồ đoạn thẳng (sai: số liệu không theo thời gian) và D 'A; B; C đều đúng' thành 'Cả ba phương án kia đều đúng' vì máy trộn phương án. Biểu đồ in là ảnh đứng, chữ nhỏ; vẽ lại khổ ngang cùng số liệu."
+    },
+    {
+     "ma": "TCK1-DC3.C33b",
+     "nhan": "Câu 33b",
+     "phan": "I. Phần trắc nghiệm",
+     "nhom": "Câu 33: Biểu đồ cột ở hình vẽ bên biểu diễn tỉ lệ về giá trị đạt được của khoáng sản xuất khẩu nước ngoài của nước ta (tính theo tỉ số phần trăm).",
+     "de": "Câu 33: Biểu đồ cột ở hình vẽ bên biểu diễn tỉ lệ về giá trị đạt được của khoáng sản xuất khẩu nước ngoài của nước ta (tính theo tỉ số phần trăm).\nb) Loại khoáng sản nào có tỉ lệ về giá trị xuất khẩu nước ngoài cao nhất?\nA. Dầu. B. Than đá. C. Sắt. D. Vàng.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN",
+     "bai_sgk": 20,
+     "hinh": [
+      "dethitoan8/TCK1-DC3.C33.webp"
+     ],
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Câu 33: Biểu đồ cột ở hình vẽ bên biểu diễn tỉ lệ về giá trị đạt được của khoáng sản xuất khẩu nước ngoài của nước ta (tính theo tỉ số phần trăm).\nb) Loại khoáng sản nào có tỉ lệ về giá trị xuất khẩu nước ngoài cao nhất?",
+      "cac": [
+       "Dầu",
+       "Than đá",
+       "Sắt",
+       "Vàng"
+      ],
+      "dap": "A"
+     }
+    },
+    {
+     "ma": "TCK1-DC3.C33c",
+     "nhan": "Câu 33c",
+     "phan": "I. Phần trắc nghiệm",
+     "nhom": "Câu 33: Biểu đồ cột ở hình vẽ bên biểu diễn tỉ lệ về giá trị đạt được của khoáng sản xuất khẩu nước ngoài của nước ta (tính theo tỉ số phần trăm).",
+     "de": "Câu 33: Biểu đồ cột ở hình vẽ bên biểu diễn tỉ lệ về giá trị đạt được của khoáng sản xuất khẩu nước ngoài của nước ta (tính theo tỉ số phần trăm).\nc) Dựa vào biểu đồ cho biết dữ liệu nào là dữ liệu định tính?\nA. Các loại khoáng sản: Dầu, Than đá, Sắt, Vàng. B. Tỉ lệ về giá trị đạt được của các loại khoáng sản xuất khẩu nước ngoài. C. A & B đều đúng. D. A & B đều sai.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "A",
+     "loai_dap_an": "TN",
+     "bai_sgk": 18,
+     "hinh": [
+      "dethitoan8/TCK1-DC3.C33.webp"
+     ],
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Câu 33: Biểu đồ cột ở hình vẽ bên biểu diễn tỉ lệ về giá trị đạt được của khoáng sản xuất khẩu nước ngoài của nước ta (tính theo tỉ số phần trăm).\nc) Dựa vào biểu đồ cho biết dữ liệu nào là dữ liệu định tính?",
+      "cac": [
+       "Các loại khoáng sản: Dầu, Than đá, Sắt, Vàng",
+       "Tỉ lệ về giá trị đạt được của các loại khoáng sản xuất khẩu nước ngoài",
+       "Cả tên các loại khoáng sản lẫn tỉ lệ giá trị xuất khẩu",
+       "Không có dữ liệu nào là định tính"
+      ],
+      "dap": "A"
+     },
+     "ghi_chu": "Phương án in 'A & B đều đúng', 'A & B đều sai' nhắc chữ cái; máy trộn phương án nên viết thành 'Cả tên các loại khoáng sản lẫn tỉ lệ giá trị xuất khẩu', 'Không có dữ liệu nào là định tính'."
+    },
+    {
+     "ma": "TCK1-DC3.C34",
+     "nhan": "Câu 34",
+     "phan": "I. Phần trắc nghiệm",
+     "nhom": "",
+     "de": "Biểu đồ đoạn thẳng dưới đây biểu diễn lượng mưa trung bình các tháng trong năm 2019 tại Thành phố Hồ Chí Minh. Những tháng có lượng mưa trên 300 mm là\nA. tháng 6, 7. B. tháng 6, 9. C. tháng 7, 8. D. tháng 9, 10.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "bai_sgk": 20,
+     "hinh": [
+      "dethitoan8/TCK1-DC3.C34.webp"
+     ],
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Biểu đồ đoạn thẳng dưới đây biểu diễn lượng mưa trung bình các tháng trong năm 2019 tại Thành phố Hồ Chí Minh. Những tháng có lượng mưa trên 300 mm là",
+      "cac": [
+       "tháng 6, 7",
+       "tháng 6, 9",
+       "tháng 7, 8",
+       "tháng 9, 10"
+      ],
+      "dap": "B"
+     }
+    },
+    {
+     "ma": "TCK1-DC3.C35",
+     "nhan": "Câu 35",
+     "phan": "I. Phần trắc nghiệm",
+     "nhom": "",
+     "de": "Biểu đồ cột kép dưới đây biểu diễn diện tích gieo trồng sắn của Bình Thuận và Bình Phước trong các năm 2018; 2019; 2020 (đơn vị: Nghìn ha). (Nguồn: Niên giám thống kê 2021, NXB Thống kê, 2021)\nDiện tích nghìn hecta gieo trồng sắn của Bình Thuận trong năm 2019 là\nA. 25,7. B. 26,4. C. 10,3. D. 28.",
+     "dang": "TRAC_NGHIEM",
+     "dap_an": "B",
+     "loai_dap_an": "TN",
+     "bai_sgk": 20,
+     "hinh": [
+      "dethitoan8/TCK1-DC3.C35.webp"
+     ],
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "hoi": "Biểu đồ cột kép dưới đây biểu diễn diện tích gieo trồng sắn của Bình Thuận và Bình Phước trong các năm 2018; 2019; 2020 (đơn vị: nghìn ha). (Nguồn: Niên giám thống kê 2021, NXB Thống kê, 2021)\nDiện tích gieo trồng sắn của Bình Thuận trong năm 2019 là (nghìn ha)",
+      "cac": [
+       "25,7",
+       "26,4",
+       "10,3",
+       "28"
+      ],
+      "dap": "B"
+     }
+    },
+    {
+     "ma": "TCK1-DC3.B6a",
+     "nhan": "Bài 6a",
+     "phan": "II. Phần tự luận",
+     "nhom": "Bài 6. Thống kê trong lần kiểm tra cuối học kì I của lớp 8A vừa qua là:\nĐiểm 4: 6 bài; điểm 5: 7 bài; điểm 6: 6 bài; điểm 7: 7 bài; điểm 8: 4 bài; điểm 9: 7 bài; điểm 10: 5 bài.",
+     "de": "Bài 6. Thống kê trong lần kiểm tra cuối học kì I của lớp 8A vừa qua là:\nĐiểm 4: 6 bài; điểm 5: 7 bài; điểm 6: 6 bài; điểm 7: 7 bài; điểm 8: 4 bài; điểm 9: 7 bài; điểm 10: 5 bài.\na) Tính tổng số bài kiểm tra cuối học kì I của lớp 8A.",
+     "dang": "CAU_NHO",
+     "dap_an": "42 bài",
+     "loai_dap_an": "DAP_SO",
+     "bai_sgk": 19,
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "hoi": "Bài 6. Thống kê trong lần kiểm tra cuối học kì I của lớp 8A vừa qua là:\nĐiểm 4: 6 bài; điểm 5: 7 bài; điểm 6: 6 bài; điểm 7: 7 bài; điểm 8: 4 bài; điểm 9: 7 bài; điểm 10: 5 bài.\na) Tính tổng số bài kiểm tra cuối học kì I của lớp 8A.",
+      "dap": [
+       "42"
+      ],
+      "phim": [],
+      "nhieu": [],
+      "loi_giai": [
+       "Tổng số bài: 6 + 7 + 6 + 7 + 4 + 7 + 5",
+       "= 42 (bài)"
+      ]
+     },
+     "ghi_chu": "Bảng in dạng ảnh; trên máy chép thành dòng chữ."
+    },
+    {
+     "ma": "TCK1-DC3.B6b",
+     "nhan": "Bài 6b",
+     "phan": "II. Phần tự luận",
+     "nhom": "Bài 6. Thống kê trong lần kiểm tra cuối học kì I của lớp 8A vừa qua là:\nĐiểm 4: 6 bài; điểm 5: 7 bài; điểm 6: 6 bài; điểm 7: 7 bài; điểm 8: 4 bài; điểm 9: 7 bài; điểm 10: 5 bài.",
+     "de": "Bài 6. Thống kê trong lần kiểm tra cuối học kì I của lớp 8A vừa qua là:\nĐiểm 4: 6 bài; điểm 5: 7 bài; điểm 6: 6 bài; điểm 7: 7 bài; điểm 8: 4 bài; điểm 9: 7 bài; điểm 10: 5 bài.\nb) Số bài được điểm 10 chiếm bao nhiêu phần trăm so với tổng số bài kiểm tra cuối học kì I của lớp 8A?",
+     "dang": "CAU_NHO",
+     "dap_an": "khoảng 12%",
+     "loai_dap_an": "DAP_SO",
+     "bai_sgk": 20,
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "hoi": "Bài 6. Thống kê trong lần kiểm tra cuối học kì I của lớp 8A vừa qua là:\nĐiểm 4: 6 bài; điểm 5: 7 bài; điểm 6: 6 bài; điểm 7: 7 bài; điểm 8: 4 bài; điểm 9: 7 bài; điểm 10: 5 bài.\nb) Số bài được điểm 10 chiếm bao nhiêu phần trăm so với tổng số bài kiểm tra cuối học kì I của lớp 8A?\n(Làm tròn kết quả đến hàng đơn vị)",
+      "dap": [
+       "12",
+       "12%"
+      ],
+      "phim": [
+       "%"
+      ],
+      "nhieu": [
+       "bài"
+      ],
+      "loi_giai": [
+       "Số bài được điểm 10 chiếm: 5/42 · 100%",
+       "≈ 12%"
+      ]
+     },
+     "ghi_chu": "Lời giải in làm tròn 5/42 · 100% ≈ 12%; trên máy thêm dòng dặn làm tròn đến hàng đơn vị."
+    },
+    {
+     "ma": "TCK1-DC3.B7a",
+     "nhan": "Bài 7a",
+     "phan": "II. Phần tự luận",
+     "nhom": "Bài 7. Cho biểu đồ về lượng mưa và nhiệt độ trong năm 2022 của Hà Nội.",
+     "de": "Bài 7. Cho biểu đồ về lượng mưa và nhiệt độ trong năm 2022 của Hà Nội.\na) Tháng nào có nhiệt độ cao nhất, thấp nhất? Vì sao lại có sự khác biệt này?",
+     "dang": "CAU_NHO",
+     "dap_an": "Cao nhất là tháng 7 (28,9 °C), thấp nhất là tháng 1 (16,4 °C). Hà Nội ở miền Bắc, có mùa nóng và mùa lạnh rõ rệt.",
+     "loai_dap_an": "DAP_SO",
+     "bai_sgk": 20,
+     "hinh": [
+      "dethitoan8/TCK1-DC3.B7.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "hoi": "Bài 7. Cho biểu đồ về lượng mưa và nhiệt độ trong năm 2022 của Hà Nội.\na) Tháng nào có nhiệt độ cao nhất, thấp nhất? Vì sao lại có sự khác biệt này?",
+      "dong": [
+       {
+        "chu": "Nhiệt độ cao nhất: {0}",
+        "o": [
+         {
+          "dung": [
+           "tháng 7"
+          ],
+          "sai": [
+           "tháng 6",
+           "tháng 8"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Nhiệt độ thấp nhất: {0}",
+        "o": [
+         {
+          "dung": [
+           "tháng 1"
+          ],
+          "sai": [
+           "tháng 2",
+           "tháng 12"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Vì sao: {0}",
+        "o": [
+         {
+          "dung": [
+           "Hà Nội ở miền Bắc, có mùa nóng và mùa lạnh rõ rệt"
+          ],
+          "sai": [
+           "Tháng 7 có lượng mưa nhiều nhất trong năm",
+           "Hà Nội nằm gần xích đạo nên nóng quanh năm"
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     "ghi_chu": "Biểu đồ in là ảnh nhỏ, chữ số khó đọc; vẽ lại cùng số liệu."
+    },
+    {
+     "ma": "TCK1-DC3.B7b",
+     "nhan": "Bài 7b",
+     "phan": "II. Phần tự luận",
+     "nhom": "Bài 7. Cho biểu đồ về lượng mưa và nhiệt độ trong năm 2022 của Hà Nội.",
+     "de": "Bài 7. Cho biểu đồ về lượng mưa và nhiệt độ trong năm 2022 của Hà Nội.\nb) Tháng nào có lượng mưa nhiều nhất, ít nhất?",
+     "dang": "CAU_NHO",
+     "dap_an": "Nhiều nhất là tháng 8 (318,0 mm), ít nhất là tháng 1 (18,6 mm).",
+     "loai_dap_an": "DAP_SO",
+     "bai_sgk": 20,
+     "hinh": [
+      "dethitoan8/TCK1-DC3.B7.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "Bài 7. Cho biểu đồ về lượng mưa và nhiệt độ trong năm 2022 của Hà Nội.\nb) Tháng nào có lượng mưa nhiều nhất, ít nhất?",
+      "dong": [
+       {
+        "chu": "Lượng mưa nhiều nhất: {0}",
+        "o": [
+         {
+          "dung": [
+           "tháng 8"
+          ],
+          "sai": [
+           "tháng 7",
+           "tháng 9"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Lượng mưa ít nhất: {0}",
+        "o": [
+         {
+          "dung": [
+           "tháng 1"
+          ],
+          "sai": [
+           "tháng 2",
+           "tháng 12"
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "ma": "TCK1-DC3.B7c",
+     "nhan": "Bài 7c",
+     "phan": "II. Phần tự luận",
+     "nhom": "Bài 7. Cho biểu đồ về lượng mưa và nhiệt độ trong năm 2022 của Hà Nội.",
+     "de": "Bài 7. Cho biểu đồ về lượng mưa và nhiệt độ trong năm 2022 của Hà Nội.\nc) Giả sử em thích tháng 10 nhất trong năm. Tháng 10 có nhiệt độ và lượng mưa như thế nào?",
+     "dang": "CAU_NHO",
+     "dap_an": "Tháng 10: nhiệt độ 24,6 °C, lượng mưa 130,7 mm.",
+     "loai_dap_an": "DAP_SO",
+     "bai_sgk": 20,
+     "hinh": [
+      "dethitoan8/TCK1-DC3.B7.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "hoi": "Bài 7. Cho biểu đồ về lượng mưa và nhiệt độ trong năm 2022 của Hà Nội.\nc) Giả sử em thích tháng 10 nhất trong năm. Tháng 10 có nhiệt độ và lượng mưa như thế nào?",
+      "dong": [
+       {
+        "chu": "Nhiệt độ: {0}",
+        "o": [
+         {
+          "dung": [
+           "24,6 °C"
+          ],
+          "sai": [
+           "27,2 °C",
+           "21,4 °C"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Lượng mưa: {0}",
+        "o": [
+         {
+          "dung": [
+           "130,7 mm"
+          ],
+          "sai": [
+           "265,4 mm",
+           "43,3 mm"
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     "ghi_chu": "Đề in 'Em thích tháng nào nhất trong năm và tháng đó có nhiệt độ và lượng mưa như thế nào?', mỗi con chọn một tháng nên máy không chấm được; trên máy cho sẵn tháng 10."
+    },
+    {
+     "ma": "TCK1-DC3.B8a",
+     "nhan": "Bài 8a",
+     "phan": "II. Phần tự luận",
+     "nhom": "Bài 8. Biểu đồ hình quạt tròn ở hình bên biểu diễn tỉ lệ các yếu tố ảnh hưởng đến sinh trưởng của cây trồng như: Phân bón; Nước tưới; Giống; Kiểm soát dịch hại; Kiểm soát cỏ dại; Yếu tố khác.",
+     "de": "Bài 8. Biểu đồ hình quạt tròn ở hình bên biểu diễn tỉ lệ các yếu tố ảnh hưởng đến sinh trưởng của cây trồng như: Phân bón; Nước tưới; Giống; Kiểm soát dịch hại; Kiểm soát cỏ dại; Yếu tố khác.\na) Cho biết yếu tố nào ảnh hưởng đến sinh trưởng của cây trồng nhiều nhất?",
+     "dang": "CAU_NHO",
+     "dap_an": "Phân bón (34%).",
+     "loai_dap_an": "DAP_SO",
+     "bai_sgk": 20,
+     "hinh": [
+      "dethitoan8/TCK1-DC3.B8.webp"
+     ],
+     "ghep": {
+      "kieu": "O",
+      "sao": 1,
+      "hoi": "Bài 8. Biểu đồ hình quạt tròn ở hình bên biểu diễn tỉ lệ các yếu tố ảnh hưởng đến sinh trưởng của cây trồng như: Phân bón; Nước tưới; Giống; Kiểm soát dịch hại; Kiểm soát cỏ dại; Yếu tố khác.\na) Cho biết yếu tố nào ảnh hưởng đến sinh trưởng của cây trồng nhiều nhất?",
+      "dong": [
+       {
+        "chu": "Yếu tố ảnh hưởng nhiều nhất: {0}",
+        "o": [
+         {
+          "dung": [
+           "Phân bón"
+          ],
+          "sai": [
+           "Nước tưới",
+           "Giống",
+           "Yếu tố khác"
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     "ghi_chu": "Biểu đồ in là ảnh đứng, chú thích nhỏ; vẽ lại khổ ngang cùng số liệu, chú thích đặt bên phải."
+    },
+    {
+     "ma": "TCK1-DC3.B8b",
+     "nhan": "Bài 8b",
+     "phan": "II. Phần tự luận",
+     "nhom": "Bài 8. Biểu đồ hình quạt tròn ở hình bên biểu diễn tỉ lệ các yếu tố ảnh hưởng đến sinh trưởng của cây trồng như: Phân bón; Nước tưới; Giống; Kiểm soát dịch hại; Kiểm soát cỏ dại; Yếu tố khác.",
+     "de": "Bài 8. Biểu đồ hình quạt tròn ở hình bên biểu diễn tỉ lệ các yếu tố ảnh hưởng đến sinh trưởng của cây trồng như: Phân bón; Nước tưới; Giống; Kiểm soát dịch hại; Kiểm soát cỏ dại; Yếu tố khác.\nb) Trong các yếu tố ảnh hưởng đến sinh trưởng của cây thì yếu tố kiểm soát dịch hại gấp mấy lần yếu tố khác?",
+     "dang": "CAU_NHO",
+     "dap_an": "3 lần",
+     "loai_dap_an": "DAP_SO",
+     "bai_sgk": 20,
+     "hinh": [
+      "dethitoan8/TCK1-DC3.B8.webp"
+     ],
+     "ghep": {
+      "kieu": "BIEU_THUC",
+      "sao": 2,
+      "hoi": "Bài 8. Biểu đồ hình quạt tròn ở hình bên biểu diễn tỉ lệ các yếu tố ảnh hưởng đến sinh trưởng của cây trồng như: Phân bón; Nước tưới; Giống; Kiểm soát dịch hại; Kiểm soát cỏ dại; Yếu tố khác.\nb) Trong các yếu tố ảnh hưởng đến sinh trưởng của cây thì yếu tố kiểm soát dịch hại gấp mấy lần yếu tố khác?",
+      "dap": [
+       "3"
+      ],
+      "phim": [],
+      "nhieu": [],
+      "loi_giai": [
+       "Kiểm soát dịch hại chiếm 12%, yếu tố khác chiếm 4%",
+       "12% : 4% = 3 (lần)"
       ]
      }
     }

@@ -356,7 +356,11 @@ class LuyenTapActivity : AppCompatActivity() {
                 box,
                 hinh = R.drawable.st_ic_giai_de,
                 mau = mauMon,
-                ten = dang?.let { "Đề thi thử số ${GiaiDe.soDe(it.de)} $tenKy môn $ten" } ?: tenDong,
+                ten = dang?.let {
+                    // De cuong on (11/10/2026, ma "TCK1-DC1") khong co so de: goi bang ten, "Đề cương học kì 1: Đại số".
+                    val so = GiaiDe.soDe(it.de)
+                    if (so.all(Char::isDigit)) "Đề thi thử số $so $tenKy môn $ten" else it.de.ten
+                } ?: tenDong,
                 phu = phu,
                 so = "$daLam/${cua.size} đề"
             ) { hoiDeThi(tenDong, cua) }

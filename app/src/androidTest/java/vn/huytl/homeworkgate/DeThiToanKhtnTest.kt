@@ -46,8 +46,8 @@ class DeThiToanKhtnTest {
             cua(LichKiemTra.KHTN).map { it.ma }
         )
         assertEquals(
-            (1..8).map { "TGK1-$it" } + (1..8).map { "TCK1-$it" } + (1..10).map { "TGK2-$it" } +
-                (1..7).map { "TCK2-$it" },
+            (1..8).map { "TGK1-$it" } + (1..8).map { "TCK1-$it" } + (1..3).map { "TCK1-DC$it" } +
+                (1..10).map { "TGK2-$it" } + (1..7).map { "TCK2-$it" },
             cua(LichKiemTra.TOAN).map { it.ma }
         )
         assertTrue(NganHang.boDeThi().map { it.nguon }.containsAll(listOf("dethitoan8", "dethikhtn8")))
@@ -85,16 +85,30 @@ class DeThiToanKhtnTest {
 
     /**
      * De cuoi ki 1 KHTN co ca phan Hoa lan phan Li (Bai 13-19); KCK1-10 co them mot cau Sinh (Bai
-     * 37) nen chi doi co du Hoa va Li. De cuoi ki 1 Toan co hai phan.
+     * 37) nen chi doi co du Hoa va Li. De cuoi ki 1 Toan co hai phan, tru ba de cuong on (TCK1-DC*,
+     * 11/10/2026) tach theo mang: Dai so, Hinh hoc, Thong ke.
      */
     @Test
     fun de_cuoi_ki_1_co_du_cac_phan_cua_hoc_ki_1() {
         cua(LichKiemTra.KHTN).filter { it.ma.startsWith("KCK1-") }.forEach {
             assertTrue(it.ma, it.denBai.keys.containsAll(setOf("khtn8hoa", "khtn8li")))
         }
-        cua(LichKiemTra.TOAN).filter { it.ma.startsWith("TCK1-") }.forEach {
+        cua(LichKiemTra.TOAN).filter { it.ma.startsWith("TCK1-") && !it.ma.startsWith("TCK1-DC") }.forEach {
             assertEquals(it.ma, setOf("toan8ds", "toan8hh"), it.denBai.keys)
         }
+    }
+
+    /**
+     * De cuong on hoc ki 1 Toan (11/10/2026): moi de mot mang, mo khi lop hoc xong dung cac bai cua
+     * mang do, va nam trong nhom cuoi ky I o trang Luyen tap.
+     */
+    @Test
+    fun de_cuong_toan_hoc_ki_1_tach_theo_mang() {
+        val de = cua(LichKiemTra.TOAN).filter { it.ma.startsWith("TCK1-DC") }.associateBy { it.ma }
+        assertEquals((2..9).toSet(), de.getValue("TCK1-DC1").cacBai)
+        assertEquals((10..17).toSet(), de.getValue("TCK1-DC2").cacBai)
+        assertEquals((18..20).toSet(), de.getValue("TCK1-DC3").cacBai)
+        de.values.forEach { assertEquals(it.ma, "CK1", vn.huytl.homeworkgate.data.GiaiDe.kyCua(it)) }
     }
 
     @Test
