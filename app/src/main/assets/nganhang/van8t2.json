@@ -2,7 +2,7 @@
  "nguon": "van8t2",
  "mon": "Ngữ văn",
  "ten": "SGK Ngữ văn 8 — tập hai",
- "ban": 3,
+ "ban": 4,
  "cac_bai": [
   {
    "chuong": "Bài 6. Chân dung cuộc sống",
@@ -6817,28 +6817,169 @@
      "trang": 119,
      "nhom": "Trả lời câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Câu 1. Có điều gì đáng lưu ý về mối quan hệ giữa nhan đề, hoàn cảnh ra đời và sức hấp dẫn của cuốn sách trong lời giới thiệu của người viết? (văn bản Lời giới thiệu cuốn sách Nhóc Ni-cô-la: những chuyện chưa kể của An-nơ Gô-xi-nhi)"
+     "de": "Câu 1. Có điều gì đáng lưu ý về mối quan hệ giữa nhan đề, hoàn cảnh ra đời và sức hấp dẫn của cuốn sách trong lời giới thiệu của người viết? (văn bản Lời giới thiệu cuốn sách Nhóc Ni-cô-la: những chuyện chưa kể của An-nơ Gô-xi-nhi)",
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "dong": [
+       {
+        "chu": "Nhan đề “những chuyện chưa kể” cho biết: {0}",
+        "o": [
+         {
+          "dung": [
+           "những mẩu chuyện về Ni-cô-la lâu nay chưa đến với bạn đọc"
+          ],
+          "sai": [
+           "những bí mật mà Ni-cô-la giấu kín, chưa kể với ai bao giờ",
+           "chuyện về một cậu bé hoàn toàn mới, chưa ai từng biết đến"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Hoàn cảnh ra đời: {0}",
+        "o": [
+         {
+          "dung": [
+           "từng đăng báo năm 1959 – 1965, nằm trong lưu trữ, nay mới in thành sách"
+          ],
+          "sai": [
+           "tác giả vừa viết xong năm 2004, nhân dịp nhân vật tròn năm mươi tuổi",
+           "con gái tác giả tự viết thêm những chuyện mới theo lối văn của cha"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Điều đó làm cuốn sách hấp dẫn vì: {0}",
+        "o": [
+         {
+          "dung": [
+           "bạn đọc tò mò, háo hức được đọc chuyện mới về nhân vật quen thuộc"
+          ],
+          "sai": [
+           "cuốn sách dày, nhiều chữ, không có một bức tranh minh hoạ nào",
+           "đây là lần cuối cùng nhân vật Ni-cô-la xuất hiện trước bạn đọc"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B10.C4",
      "trang": 119,
      "nhom": "Trả lời câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Câu 2. Theo lời giới thiệu, đề tài và đặc điểm nội dung, nghệ thuật của cuốn sách có gì đặc biệt? (văn bản Lời giới thiệu cuốn sách Nhóc Ni-cô-la: những chuyện chưa kể của An-nơ Gô-xi-nhi)"
+     "de": "Câu 2. Theo lời giới thiệu, đề tài và đặc điểm nội dung, nghệ thuật của cuốn sách có gì đặc biệt? (văn bản Lời giới thiệu cuốn sách Nhóc Ni-cô-la: những chuyện chưa kể của An-nơ Gô-xi-nhi)",
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "dong": [
+       {
+        "chu": "Đề tài: {0}",
+        "o": [
+         {
+          "dung": [
+           "câu pha trò, tình huống bất ngờ của cậu học trò tiểu học Ni-cô-la"
+          ],
+          "sai": [
+           "những cuộc phiêu lưu của một cậu bé đi khắp thế giới rộng lớn",
+           "tình bạn thân thiết giữa nhà văn Gô-xi-nhi và hoạ sĩ Xăng-pê"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Nội dung: {0}",
+        "o": [
+         {
+          "dung": [
+           "thế giới thực mà kì diệu, trẻ con nhìn người lớn châm biếm mà trìu mến"
+          ],
+          "sai": [
+           "thế giới thần tiên với phù thuỷ, phép thuật và những con rồng lửa",
+           "những bài học khô khan về cách cư xử, dành riêng cho người lớn"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Nghệ thuật: {0}",
+        "o": [
+         {
+          "dung": [
+           "ngôn ngữ trẻ thơ của Gô-xi-nhi kết hợp nét vẽ vui nhộn của Xăng-pê"
+          ],
+          "sai": [
+           "lời văn trang trọng, cổ kính như sách sử, không có tranh minh hoạ",
+           "kể bằng thơ lục bát, dùng nhiều điển tích, điển cố xa xưa"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B10.C5",
      "trang": 119,
      "nhom": "Trả lời câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Câu 3. Người giới thiệu nhấn mạnh điều gì về mối quan hệ đặc biệt giữa các tác giả và sự độc đáo của cuốn sách? (văn bản Lời giới thiệu cuốn sách Nhóc Ni-cô-la: những chuyện chưa kể của An-nơ Gô-xi-nhi)"
+     "de": "Câu 3. Người giới thiệu nhấn mạnh điều gì về mối quan hệ đặc biệt giữa các tác giả và sự độc đáo của cuốn sách? (văn bản Lời giới thiệu cuốn sách Nhóc Ni-cô-la: những chuyện chưa kể của An-nơ Gô-xi-nhi)",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "dong": [
+       {
+        "chu": "Mối quan hệ giữa các tác giả: {0}",
+        "o": [
+         {
+          "dung": [
+           "tình bạn giữa nhà văn Gô-xi-nhi và hoạ sĩ Xăng-pê"
+          ],
+          "sai": [
+           "quan hệ cha con giữa Gô-xi-nhi và Xăng-pê",
+           "quan hệ thầy trò: Xăng-pê dạy Gô-xi-nhi viết văn"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Sự độc đáo của cuốn sách: {0}",
+        "o": [
+         {
+          "dung": [
+           "sinh ra từ tình bạn và kỉ niệm thơ ấu của hai nhà sáng tạo"
+          ],
+          "sai": [
+           "được viết theo đơn đặt hàng của một nhà xuất bản lớn",
+           "kể lại chuyện thật trong gia đình người viết lời giới thiệu"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B10.C6",
      "trang": 119,
      "nhom": "Trả lời câu hỏi",
      "dang": "CAU_NHO",
-     "de": "Câu 4. Cách thu hút và khích lệ người đọc tìm hiểu cuốn sách trong lời giới thiệu có điểm gì đáng chú ý? (văn bản Lời giới thiệu cuốn sách Nhóc Ni-cô-la: những chuyện chưa kể của An-nơ Gô-xi-nhi)"
+     "de": "Câu 4. Cách thu hút và khích lệ người đọc tìm hiểu cuốn sách trong lời giới thiệu có điểm gì đáng chú ý? (văn bản Lời giới thiệu cuốn sách Nhóc Ni-cô-la: những chuyện chưa kể của An-nơ Gô-xi-nhi)",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "cac": [
+       "Dùng câu hỏi gợi tò mò, hình ảnh Ni-cô-la “bước ra sân khấu lần nữa”",
+       "Kể lại toàn bộ nội dung từng mẩu chuyện cho người đọc khỏi tò mò",
+       "Liệt kê giá bán, số trang và những hiệu sách có bán cuốn sách",
+       "Chê các cuốn sách khác để khẳng định cuốn sách này là hay nhất"
+      ],
+      "dap": "A"
+     }
     },
     {
      "ma": "B10.C7",
@@ -6901,7 +7042,111 @@
      "trang": 122,
      "nhom": "Đọc để đồng hành và chia sẻ",
      "dang": "CAU_NHO",
-     "de": "Câu 1. Đọc những lời tâm tình của nhà thơ Y Phương về bài thơ Nói với con và thực hiện yêu cầu nêu ở dưới: a. Lời tâm tình của nhà thơ Y Phương cho biết điều gì về hoàn cảnh ra đời của bài thơ Nói với con? Hoàn cảnh ấy có tác động như thế nào đến sự biểu đạt cảm xúc và hình tượng trong bài thơ? b. Không chỉ nói về tình phụ tử, tình cảm gia đình, câu thơ \"Người đồng mình thô sơ da thịt/ Chẳng mấy ai nhỏ bé đâu con\" còn thể hiện ý nghĩa gì? Vì sao nhà thơ thực sự trăn trở, tâm huyết với điều đó? c. Qua lời giải thích của nhà thơ Y Phương, những hình ảnh trong các dòng thơ: \"Chân phải bước tới cha/ Chân trái bước tới mẹ\" và \"Vách nhà ken câu hát\" là hình ảnh thực hay tưởng tượng? Vì sao? d. Theo em, điều gì làm nhà thơ xúc động, trăn trở nhất khi viết bài thơ Nói với con? (văn bản Nhà thơ Y Phương: \"Nói với con\" cũng chính là nói với lòng mình! của Yên Khương)"
+     "de": "Câu 1. Đọc những lời tâm tình của nhà thơ Y Phương về bài thơ Nói với con và thực hiện yêu cầu nêu ở dưới: a. Lời tâm tình của nhà thơ Y Phương cho biết điều gì về hoàn cảnh ra đời của bài thơ Nói với con? Hoàn cảnh ấy có tác động như thế nào đến sự biểu đạt cảm xúc và hình tượng trong bài thơ? b. Không chỉ nói về tình phụ tử, tình cảm gia đình, câu thơ \"Người đồng mình thô sơ da thịt/ Chẳng mấy ai nhỏ bé đâu con\" còn thể hiện ý nghĩa gì? Vì sao nhà thơ thực sự trăn trở, tâm huyết với điều đó? c. Qua lời giải thích của nhà thơ Y Phương, những hình ảnh trong các dòng thơ: \"Chân phải bước tới cha/ Chân trái bước tới mẹ\" và \"Vách nhà ken câu hát\" là hình ảnh thực hay tưởng tượng? Vì sao? d. Theo em, điều gì làm nhà thơ xúc động, trăn trở nhất khi viết bài thơ Nói với con? (văn bản Nhà thơ Y Phương: \"Nói với con\" cũng chính là nói với lòng mình! của Yên Khương)",
+     "ghep": {
+      "kieu": "O",
+      "sao": 7,
+      "dong": [
+       {
+        "chu": "a. Hoàn cảnh ra đời của bài thơ: {0}",
+        "o": [
+         {
+          "dung": [
+           "năm 1980, đất nước vừa qua chiến tranh, gặp vô vàn khó khăn"
+          ],
+          "sai": [
+           "năm 1979, ngay khi cô con gái đầu lòng vừa chào đời",
+           "năm 2008, khi nhà thơ trả lời phỏng vấn báo Thể thao và văn hoá"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "a. Hoàn cảnh ấy tác động đến bài thơ: {0}",
+        "o": [
+         {
+          "dung": [
+           "lời cha dặn con chân thành, giản dị: bám vào văn hoá để vượt khó"
+          ],
+          "sai": [
+           "bài thơ chủ yếu tả cảnh chiến trận ác liệt, đau thương thời chống Mỹ",
+           "bài thơ trách móc những người đang hối hả kiếm tìm tiền bạc"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "b. Câu thơ còn thể hiện: {0}",
+        "o": [
+         {
+          "dung": [
+           "người đồng mình tuy thô sơ, nghèo khó mà không nhỏ bé về ý chí, văn hoá"
+          ],
+          "sai": [
+           "người đồng mình nhỏ bé, yếu ớt nên phải sống nhún nhường, nhẫn nhịn",
+           "người đồng mình chỉ cần sức vóc, da thịt rắn chắc để lao động"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "b. Nhà thơ trăn trở vì: {0}",
+        "o": [
+         {
+          "dung": [
+           "nhiều con em dân tộc thờ ơ với văn hoá truyền thống, lai căng dễ dãi"
+          ],
+          "sai": [
+           "con gái ông còn nhỏ mà chưa chịu chăm chỉ học hành, lao động",
+           "bài thơ của ông bị nhiều người chê là không có gì đặc biệt"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "c. Hai hình ảnh đó là hình ảnh: {0}",
+        "o": [
+         {
+          "dung": [
+           "thực"
+          ],
+          "sai": [
+           "tưởng tượng"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "c. Vì: {0}",
+        "o": [
+         {
+          "dung": [
+           "con sinh ra có cha có mẹ; trai gái hát cho nhau nghe qua vách nhà"
+          ],
+          "sai": [
+           "em bé mới sinh đã biết đi, vách nhà tự cất tiếng hát được",
+           "nhà thơ mơ thấy con bước đi, nghe tiếng hát trong giấc mơ"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "d. Điều làm nhà thơ xúc động, trăn trở nhất: {0}",
+        "o": [
+         {
+          "dung": [
+           "phải tin vào giá trị văn hoá để sống đàng hoàng, vượt qua đói nghèo"
+          ],
+          "sai": [
+           "lo con gái đầu lòng lớn lên sẽ không có ai chăm sóc, dạy bảo",
+           "mong bài thơ được nhiều người khen hay và được in vào sách giáo khoa"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B10.C16",
@@ -6941,42 +7186,694 @@
      "trang": 128,
      "nhom": "Ôn tập kiến thức",
      "dang": "CAU_NHO",
-     "de": "Câu 1. Trong học kì II, em đã được học những loại, thể loại văn bản nào? Hãy tóm tắt đặc điểm của các loại, thể loại văn bản đó bằng một bảng tổng hợp hoặc sơ đồ phù hợp."
+     "de": "Câu 1. Trong học kì II, em đã được học những loại, thể loại văn bản nào? Hãy tóm tắt đặc điểm của các loại, thể loại văn bản đó bằng một bảng tổng hợp hoặc sơ đồ phù hợp.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 8,
+      "dong": [
+       {
+        "chu": "Bài 6. Chân dung cuộc sống (Mắt sói, Lặng lẽ Sa Pa): {0}",
+        "o": [
+         {
+          "dung": [
+           "truyện"
+          ],
+          "sai": [
+           "thơ tự do",
+           "văn bản thông tin"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Bài 7. Tin yêu và ước vọng (Đồng chí, Lá đỏ): {0}",
+        "o": [
+         {
+          "dung": [
+           "thơ tự do"
+          ],
+          "sai": [
+           "truyện",
+           "văn bản nghị luận văn học"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Bài 8. Nhà văn và trang viết (Nhà thơ của quê hương làng cảnh Việt Nam): {0}",
+        "o": [
+         {
+          "dung": [
+           "văn bản nghị luận văn học"
+          ],
+          "sai": [
+           "văn bản thông tin",
+           "truyện"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Bài 9. Hôm nay và ngày mai (Miền châu thổ sông Cửu Long cần chuyển đổi từ sống chung sang chào đón lũ): {0}",
+        "o": [
+         {
+          "dung": [
+           "văn bản thông tin"
+          ],
+          "sai": [
+           "văn bản nghị luận văn học",
+           "thơ tự do"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Đặc điểm của truyện: {0}",
+        "o": [
+         {
+          "dung": [
+           "kể chuỗi sự việc gắn với nhân vật, có cốt truyện"
+          ],
+          "sai": [
+           "không quy định số tiếng mỗi dòng, số dòng mỗi khổ",
+           "cung cấp thông tin xác thực, khách quan về sự vật, hiện tượng"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Đặc điểm của thơ tự do: {0}",
+        "o": [
+         {
+          "dung": [
+           "không quy định số tiếng mỗi dòng, số dòng mỗi khổ"
+          ],
+          "sai": [
+           "kể chuỗi sự việc gắn với nhân vật, có cốt truyện",
+           "bàn về tác phẩm, tác giả bằng luận điểm, lí lẽ, bằng chứng"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Đặc điểm của văn bản nghị luận văn học: {0}",
+        "o": [
+         {
+          "dung": [
+           "bàn về tác phẩm, tác giả bằng luận điểm, lí lẽ, bằng chứng"
+          ],
+          "sai": [
+           "cung cấp thông tin xác thực, khách quan về sự vật, hiện tượng",
+           "kể chuỗi sự việc gắn với nhân vật, có cốt truyện"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Đặc điểm của văn bản thông tin: {0}",
+        "o": [
+         {
+          "dung": [
+           "cung cấp thông tin xác thực, khách quan về sự vật, hiện tượng"
+          ],
+          "sai": [
+           "bàn về tác phẩm, tác giả bằng luận điểm, lí lẽ, bằng chứng",
+           "không quy định số tiếng mỗi dòng, số dòng mỗi khổ"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B0.C2",
      "trang": 128,
      "nhom": "Ôn tập kiến thức",
      "dang": "CAU_NHO",
-     "de": "Câu 2. Liệt kê các văn bản có cốt truyện đơn tuyến và văn bản có cốt truyện đa tuyến đã học trong Ngữ văn 8, tập hai. Nêu những điểm giống nhau và khác nhau giữa hai kiểu cốt truyện này. Bảng: các cột Cốt truyện đơn tuyến, Cốt truyện đa tuyến; các hàng Văn bản, Giống nhau, Khác nhau."
+     "de": "Câu 2. Liệt kê các văn bản có cốt truyện đơn tuyến và văn bản có cốt truyện đa tuyến đã học trong Ngữ văn 8, tập hai. Nêu những điểm giống nhau và khác nhau giữa hai kiểu cốt truyện này. Bảng: các cột Cốt truyện đơn tuyến, Cốt truyện đa tuyến; các hàng Văn bản, Giống nhau, Khác nhau.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 6,
+      "dong": [
+       {
+        "chu": "Mắt sói (Đa-ni-en Pen-nắc): {0}",
+        "o": [
+         {
+          "dung": [
+           "cốt truyện đa tuyến"
+          ],
+          "sai": [
+           "cốt truyện đơn tuyến"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Lặng lẽ Sa Pa (Nguyễn Thành Long): {0}",
+        "o": [
+         {
+          "dung": [
+           "cốt truyện đơn tuyến"
+          ],
+          "sai": [
+           "cốt truyện đa tuyến"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Những ngôi sao xa xôi (Lê Minh Khuê): {0}",
+        "o": [
+         {
+          "dung": [
+           "cốt truyện đơn tuyến"
+          ],
+          "sai": [
+           "cốt truyện đa tuyến"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Giống nhau: {0}",
+        "o": [
+         {
+          "dung": [
+           "đều là hệ thống sự kiện gắn với nhân vật, thể hiện chủ đề của truyện"
+          ],
+          "sai": [
+           "đều chỉ có một mạch sự kiện, kể theo đúng trình tự thời gian",
+           "đều có truyện lồng trong truyện, do nhiều người cùng kể"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Khác nhau, cốt truyện đơn tuyến: {0}",
+        "o": [
+         {
+          "dung": [
+           "chỉ có một mạch sự kiện, hệ thống sự kiện tương đối đơn giản"
+          ],
+          "sai": [
+           "có ít nhất hai mạch sự kiện cùng tồn tại, đan xen, phức tạp",
+           "không có sự kiện, chỉ có lời bình của tác giả"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Khác nhau, cốt truyện đa tuyến: {0}",
+        "o": [
+         {
+          "dung": [
+           "có ít nhất hai mạch sự kiện cùng tồn tại, đan xen, phức tạp"
+          ],
+          "sai": [
+           "chỉ có một mạch sự kiện, hệ thống sự kiện tương đối đơn giản",
+           "các sự kiện rời rạc, không gắn với nhân vật nào"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B0.C3",
      "trang": 128,
      "nhom": "Ôn tập kiến thức",
      "dang": "CAU_NHO",
-     "de": "Câu 3. Thơ tự do có những đặc điểm gì khác so với các thể thơ mà em đã được học: thơ lục bát, thơ bốn chữ, năm chữ, thơ thất ngôn bát cú và thất ngôn tứ tuyệt Đường luật? Hãy lập một bảng tổng hợp hoặc sơ đồ phù hợp để liệt kê các dấu hiệu đặc trưng giúp em nhận diện các thể thơ này."
+     "de": "Câu 3. Thơ tự do có những đặc điểm gì khác so với các thể thơ mà em đã được học: thơ lục bát, thơ bốn chữ, năm chữ, thơ thất ngôn bát cú và thất ngôn tứ tuyệt Đường luật? Hãy lập một bảng tổng hợp hoặc sơ đồ phù hợp để liệt kê các dấu hiệu đặc trưng giúp em nhận diện các thể thơ này.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 7,
+      "dong": [
+       {
+        "chu": "Thơ lục bát: {0}",
+        "o": [
+         {
+          "dung": [
+           "từng cặp câu 6 tiếng và 8 tiếng nối tiếp nhau"
+          ],
+          "sai": [
+           "mỗi dòng 4 tiếng, số dòng không hạn định",
+           "không quy định số tiếng mỗi dòng, số dòng mỗi khổ"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Thơ bốn chữ: {0}",
+        "o": [
+         {
+          "dung": [
+           "mỗi dòng 4 tiếng, số dòng không hạn định"
+          ],
+          "sai": [
+           "mỗi dòng 5 tiếng, số dòng không hạn định",
+           "từng cặp câu 6 tiếng và 8 tiếng nối tiếp nhau"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Thơ năm chữ: {0}",
+        "o": [
+         {
+          "dung": [
+           "mỗi dòng 5 tiếng, số dòng không hạn định"
+          ],
+          "sai": [
+           "mỗi dòng 4 tiếng, số dòng không hạn định",
+           "không quy định số tiếng mỗi dòng, số dòng mỗi khổ"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Thơ thất ngôn bát cú Đường luật: {0}",
+        "o": [
+         {
+          "dung": [
+           "8 câu, mỗi câu 7 tiếng, theo luật, niêm, vần, đối chặt chẽ"
+          ],
+          "sai": [
+           "4 câu, mỗi câu 7 tiếng, theo luật, niêm, vần chặt chẽ",
+           "từng cặp câu 6 tiếng và 8 tiếng nối tiếp nhau"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Thơ thất ngôn tứ tuyệt Đường luật: {0}",
+        "o": [
+         {
+          "dung": [
+           "4 câu, mỗi câu 7 tiếng, theo luật, niêm, vần chặt chẽ"
+          ],
+          "sai": [
+           "8 câu, mỗi câu 7 tiếng, theo luật, niêm, vần, đối chặt chẽ",
+           "mỗi dòng 5 tiếng, số dòng không hạn định"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Thơ tự do: {0}",
+        "o": [
+         {
+          "dung": [
+           "không quy định số tiếng mỗi dòng, số dòng mỗi khổ"
+          ],
+          "sai": [
+           "8 câu, mỗi câu 7 tiếng, theo luật, niêm, vần, đối chặt chẽ",
+           "từng cặp câu 6 tiếng và 8 tiếng nối tiếp nhau"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Vần, nhịp của thơ tự do: {0}",
+        "o": [
+         {
+          "dung": [
+           "có thể có vần hoặc không; vần, nhịp linh hoạt"
+          ],
+          "sai": [
+           "bắt buộc gieo vần bằng ở cuối các câu chẵn",
+           "luôn ngắt nhịp 2/2 đều đặn, gieo vần lưng"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B0.C4",
      "trang": 128,
      "nhom": "Ôn tập kiến thức",
      "dang": "CAU_NHO",
-     "de": "Câu 4. Kẻ bảng sau vào vở và điền thông tin phù hợp về những kiến thức tiếng Việt được củng cố và kiến thức tiếng Việt mới trong các bài ở học kì II. Nêu ví dụ minh hoạ cho từng nội dung kiến thức đã tóm tắt. Bảng: các cột STT, Bài học, Kiến thức được củng cố, Kiến thức mới."
+     "de": "Câu 4. Kẻ bảng sau vào vở và điền thông tin phù hợp về những kiến thức tiếng Việt được củng cố và kiến thức tiếng Việt mới trong các bài ở học kì II. Nêu ví dụ minh hoạ cho từng nội dung kiến thức đã tóm tắt. Bảng: các cột STT, Bài học, Kiến thức được củng cố, Kiến thức mới.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 9,
+      "dong": [
+       {
+        "chu": "Trợ từ, thán từ (kiến thức mới): {0}",
+        "o": [
+         {
+          "dung": [
+           "Bài 6. Chân dung cuộc sống"
+          ],
+          "sai": [
+           "Bài 8. Nhà văn và trang viết",
+           "Bài 9. Hôm nay và ngày mai"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Thành phần biệt lập (kiến thức mới): {0}",
+        "o": [
+         {
+          "dung": [
+           "Bài 8. Nhà văn và trang viết"
+          ],
+          "sai": [
+           "Bài 6. Chân dung cuộc sống",
+           "Bài 9. Hôm nay và ngày mai"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Câu phân loại theo mục đích nói; câu phủ định và câu khẳng định (kiến thức mới): {0}",
+        "o": [
+         {
+          "dung": [
+           "Bài 9. Hôm nay và ngày mai"
+          ],
+          "sai": [
+           "Bài 6. Chân dung cuộc sống",
+           "Bài 8. Nhà văn và trang viết"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Biện pháp tu từ, nghĩa của từ ngữ, lựa chọn cấu trúc câu (kiến thức được củng cố): {0}",
+        "o": [
+         {
+          "dung": [
+           "Bài 7. Tin yêu và ước vọng"
+          ],
+          "sai": [
+           "Bài 8. Nhà văn và trang viết",
+           "Bài 9. Hôm nay và ngày mai"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Trợ từ là: {0}",
+        "o": [
+         {
+          "dung": [
+           "từ đi kèm một từ ngữ để nhấn mạnh, biểu thị thái độ đánh giá"
+          ],
+          "sai": [
+           "từ bộc lộ trực tiếp cảm xúc hoặc dùng để gọi – đáp",
+           "thành phần nằm ngoài cấu trúc cú pháp, không diễn đạt nghĩa sự việc"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Thán từ là: {0}",
+        "o": [
+         {
+          "dung": [
+           "từ bộc lộ trực tiếp cảm xúc hoặc dùng để gọi – đáp"
+          ],
+          "sai": [
+           "từ đi kèm một từ ngữ để nhấn mạnh, biểu thị thái độ đánh giá",
+           "thành phần nằm ngoài cấu trúc cú pháp, không diễn đạt nghĩa sự việc"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Thành phần biệt lập là: {0}",
+        "o": [
+         {
+          "dung": [
+           "thành phần nằm ngoài cấu trúc cú pháp, không diễn đạt nghĩa sự việc"
+          ],
+          "sai": [
+           "từ đi kèm một từ ngữ để nhấn mạnh, biểu thị thái độ đánh giá",
+           "từ bộc lộ trực tiếp cảm xúc hoặc dùng để gọi – đáp"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Câu phủ định là: {0}",
+        "o": [
+         {
+          "dung": [
+           "câu có từ ngữ phủ định như không, chẳng, chưa"
+          ],
+          "sai": [
+           "câu dùng để ra lệnh, yêu cầu, đề nghị",
+           "câu bộc lộ cảm xúc, thường có ôi, than ôi"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Ví dụ có thán từ: {0}",
+        "o": [
+         {
+          "dung": [
+           "“Ôi đảo Sinh Tồn, hòn đảo thân yêu”"
+          ],
+          "sai": [
+           "“Đảo vẫn sinh tồn trên đại dương đầy gió bão”",
+           "“Chúng tôi ngồi trên đảo Sinh Tồn”"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B0.C5",
      "trang": 128,
      "nhom": "Ôn tập kiến thức",
      "dang": "CAU_NHO",
-     "de": "Câu 5. Nêu các kiểu bài viết, yêu cầu của từng kiểu bài và những đề tài mà em đã thực hành viết ở Ngữ văn 8, tập hai. Hãy lập một sơ đồ phù hợp để tóm tắt những nội dung đó."
+     "de": "Câu 5. Nêu các kiểu bài viết, yêu cầu của từng kiểu bài và những đề tài mà em đã thực hành viết ở Ngữ văn 8, tập hai. Hãy lập một sơ đồ phù hợp để tóm tắt những nội dung đó.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 9,
+      "dong": [
+       {
+        "chu": "Viết bài văn phân tích một tác phẩm (truyện): {0}",
+        "o": [
+         {
+          "dung": [
+           "Bài 6 và Bài 8"
+          ],
+          "sai": [
+           "Bài 7 và Bài 9",
+           "Bài 9 và Bài 10"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Tập làm một bài thơ tự do; viết đoạn văn ghi lại cảm nghĩ về một bài thơ tự do: {0}",
+        "o": [
+         {
+          "dung": [
+           "Bài 7"
+          ],
+          "sai": [
+           "Bài 6",
+           "Bài 9"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Viết văn bản thuyết minh giải thích một hiện tượng tự nhiên; viết văn bản kiến nghị về một vấn đề của đời sống: {0}",
+        "o": [
+         {
+          "dung": [
+           "Bài 9"
+          ],
+          "sai": [
+           "Bài 8",
+           "Bài 10"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Viết bài thuyết minh giới thiệu cuốn sách yêu thích; viết một nhan đề và sáng tạo một tác phẩm mới: {0}",
+        "o": [
+         {
+          "dung": [
+           "Bài 10"
+          ],
+          "sai": [
+           "Bài 7",
+           "Bài 6"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Yêu cầu của bài văn phân tích tác phẩm truyện: {0}",
+        "o": [
+         {
+          "dung": [
+           "nêu chủ đề, phân tích tác dụng của nét đặc sắc nghệ thuật"
+          ],
+          "sai": [
+           "nêu biểu hiện, căn cứ giải thích và tác động của hiện tượng",
+           "nêu vấn đề cần giải quyết, đề xuất giải pháp với cấp có thẩm quyền"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Yêu cầu của bài thơ tự do: {0}",
+        "o": [
+         {
+          "dung": [
+           "cảm xúc chân thực, vần và nhịp linh hoạt, hình ảnh sinh động"
+          ],
+          "sai": [
+           "nêu chủ đề, phân tích tác dụng của nét đặc sắc nghệ thuật",
+           "nêu vấn đề cần giải quyết, đề xuất giải pháp với cấp có thẩm quyền"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Yêu cầu của văn bản giải thích một hiện tượng tự nhiên: {0}",
+        "o": [
+         {
+          "dung": [
+           "nêu biểu hiện, căn cứ giải thích và tác động của hiện tượng"
+          ],
+          "sai": [
+           "nêu vấn đề cần giải quyết, đề xuất giải pháp với cấp có thẩm quyền",
+           "nêu chủ đề, phân tích tác dụng của nét đặc sắc nghệ thuật"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Yêu cầu của văn bản kiến nghị: {0}",
+        "o": [
+         {
+          "dung": [
+           "nêu vấn đề cần giải quyết, đề xuất giải pháp với cấp có thẩm quyền"
+          ],
+          "sai": [
+           "nêu biểu hiện, căn cứ giải thích và tác động của hiện tượng",
+           "cảm xúc chân thực, vần và nhịp linh hoạt, hình ảnh sinh động"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Yêu cầu của bài thuyết minh giới thiệu cuốn sách: {0}",
+        "o": [
+         {
+          "dung": [
+           "nêu nhan đề, tác giả, nội dung chính và điểm hấp dẫn của sách"
+          ],
+          "sai": [
+           "nêu chủ đề, phân tích tác dụng của nét đặc sắc nghệ thuật",
+           "nêu biểu hiện, căn cứ giải thích và tác động của hiện tượng"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B0.C6",
      "trang": 128,
      "nhom": "Ôn tập kiến thức",
      "dang": "CAU_NHO",
-     "de": "Câu 6. Nêu những đề tài nói và nghe mà em đã thực hiện trong học kì II. Đề tài nào em có hứng thú và đã thực hiện thành công nhất? Vì sao?"
+     "de": "Câu 6. Nêu những đề tài nói và nghe mà em đã thực hiện trong học kì II. Đề tài nào em có hứng thú và đã thực hiện thành công nhất? Vì sao?",
+     "ghep": {
+      "kieu": "O",
+      "sao": 5,
+      "dong": [
+       {
+        "chu": "Bài 6. Chân dung cuộc sống: {0}",
+        "o": [
+         {
+          "dung": [
+           "giới thiệu về một cuốn sách (truyện)"
+          ],
+          "sai": [
+           "trình bày ý kiến về văn học trong đời sống hiện nay",
+           "thảo luận về tổ chức hợp lí nề nếp sinh hoạt của bản thân"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Bài 7. Tin yêu và ước vọng: {0}",
+        "o": [
+         {
+          "dung": [
+           "thảo luận một vấn đề đời sống gợi ra từ tác phẩm văn học đã học"
+          ],
+          "sai": [
+           "thảo luận về tổ chức hợp lí nề nếp sinh hoạt của bản thân",
+           "giới thiệu về một cuốn sách (truyện)"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Bài 8. Nhà văn và trang viết: {0}",
+        "o": [
+         {
+          "dung": [
+           "trình bày ý kiến về văn học trong đời sống hiện nay"
+          ],
+          "sai": [
+           "thảo luận một vấn đề đời sống gợi ra từ tác phẩm văn học đã học",
+           "giới thiệu cuốn sách yêu thích hoặc tác phẩm của em"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Bài 9. Hôm nay và ngày mai: {0}",
+        "o": [
+         {
+          "dung": [
+           "thảo luận về tổ chức hợp lí nề nếp sinh hoạt của bản thân"
+          ],
+          "sai": [
+           "thảo luận một vấn đề đời sống gợi ra từ tác phẩm văn học đã học",
+           "trình bày ý kiến về văn học trong đời sống hiện nay"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Bài 10. Sách – người bạn đồng hành: {0}",
+        "o": [
+         {
+          "dung": [
+           "giới thiệu cuốn sách yêu thích hoặc tác phẩm của em"
+          ],
+          "sai": [
+           "trình bày ý kiến về văn học trong đời sống hiện nay",
+           "thảo luận về tổ chức hợp lí nề nếp sinh hoạt của bản thân"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     }
    ]
   },
@@ -6989,70 +7886,334 @@
      "trang": 130,
      "nhom": "Phiếu học tập số 1",
      "dang": "TRAC_NGHIEM",
-     "de": "Câu 1. Câu chuyện được kể trong đoạn trích bao gồm những tuyến truyện nào? A. Tuyến truyện về \"tôi\" và Tường trong cuộc sống gia đình (làm việc nhà, học hành, đọc sách). B. Tuyến truyện về \"tôi\" và Tường kết hợp với tuyến truyện về chàng thư sinh, cóc tía, người bạn xấu. C. Tuyến truyện về \"tôi\" và Tường kết hợp và lồng ghép với tuyến truyện về chàng thư sinh, cóc tía, người bạn xấu, nàng công chúa. D. Tuyến truyện về \"tôi\" và Tường kết hợp và lồng ghép với tuyến truyện về chàng thư sinh, cóc tía, người bạn xấu. (văn bản Tôi thấy hoa vàng trên cỏ xanh của Nguyễn Nhật Ánh, Phiếu học tập số 1)"
+     "de": "Câu 1. Câu chuyện được kể trong đoạn trích bao gồm những tuyến truyện nào? A. Tuyến truyện về \"tôi\" và Tường trong cuộc sống gia đình (làm việc nhà, học hành, đọc sách). B. Tuyến truyện về \"tôi\" và Tường kết hợp với tuyến truyện về chàng thư sinh, cóc tía, người bạn xấu. C. Tuyến truyện về \"tôi\" và Tường kết hợp và lồng ghép với tuyến truyện về chàng thư sinh, cóc tía, người bạn xấu, nàng công chúa. D. Tuyến truyện về \"tôi\" và Tường kết hợp và lồng ghép với tuyến truyện về chàng thư sinh, cóc tía, người bạn xấu. (văn bản Tôi thấy hoa vàng trên cỏ xanh của Nguyễn Nhật Ánh, Phiếu học tập số 1)",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "cac": [
+       "Tuyến truyện về “tôi” và Tường trong cuộc sống gia đình (làm việc nhà, học hành, đọc sách).",
+       "Tuyến truyện về “tôi” và Tường kết hợp với tuyến truyện về chàng thư sinh, cóc tía, người bạn xấu.",
+       "Tuyến truyện về “tôi” và Tường kết hợp và lồng ghép với tuyến truyện về chàng thư sinh, cóc tía, người bạn xấu, nàng công chúa.",
+       "Tuyến truyện về “tôi” và Tường kết hợp và lồng ghép với tuyến truyện về chàng thư sinh, cóc tía, người bạn xấu."
+      ],
+      "dap": "C",
+      "hoi": "Câu 1. Câu chuyện được kể trong đoạn trích bao gồm những tuyến truyện nào? (văn bản Tôi thấy hoa vàng trên cỏ xanh của Nguyễn Nhật Ánh, Phiếu học tập số 1)"
+     }
     },
     {
      "ma": "B0.C8",
      "trang": 130,
      "nhom": "Phiếu học tập số 1",
      "dang": "TRAC_NGHIEM",
-     "de": "Câu 2. Những yếu tố nào giúp em xác định được tuyến truyện trong đoạn trích? A. Nhân vật và thời gian B. Nhân vật và không gian C. Nhân vật và sự việc chính D. Nhân vật và đối thoại (văn bản Tôi thấy hoa vàng trên cỏ xanh của Nguyễn Nhật Ánh, Phiếu học tập số 1)"
+     "de": "Câu 2. Những yếu tố nào giúp em xác định được tuyến truyện trong đoạn trích? A. Nhân vật và thời gian B. Nhân vật và không gian C. Nhân vật và sự việc chính D. Nhân vật và đối thoại (văn bản Tôi thấy hoa vàng trên cỏ xanh của Nguyễn Nhật Ánh, Phiếu học tập số 1)",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "cac": [
+       "Nhân vật và thời gian",
+       "Nhân vật và không gian",
+       "Nhân vật và sự việc chính",
+       "Nhân vật và đối thoại"
+      ],
+      "dap": "C",
+      "hoi": "Câu 2. Những yếu tố nào giúp em xác định được tuyến truyện trong đoạn trích? (văn bản Tôi thấy hoa vàng trên cỏ xanh của Nguyễn Nhật Ánh, Phiếu học tập số 1)"
+     }
     },
     {
      "ma": "B0.C9",
      "trang": 131,
      "nhom": "Phiếu học tập số 1",
      "dang": "TRAC_NGHIEM",
-     "de": "Câu 3. Chuyện Cóc tía mà Tường đọc cho \"tôi\" nghe có tính chất của loại truyện nào? A. Truyện truyền thuyết B. Truyện cười C. Truyện cổ tích D. Truyện ngụ ngôn (văn bản Tôi thấy hoa vàng trên cỏ xanh của Nguyễn Nhật Ánh, Phiếu học tập số 1)"
+     "de": "Câu 3. Chuyện Cóc tía mà Tường đọc cho \"tôi\" nghe có tính chất của loại truyện nào? A. Truyện truyền thuyết B. Truyện cười C. Truyện cổ tích D. Truyện ngụ ngôn (văn bản Tôi thấy hoa vàng trên cỏ xanh của Nguyễn Nhật Ánh, Phiếu học tập số 1)",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "cac": [
+       "Truyện truyền thuyết",
+       "Truyện cười",
+       "Truyện cổ tích",
+       "Truyện ngụ ngôn"
+      ],
+      "dap": "C",
+      "hoi": "Câu 3. Chuyện Cóc tía mà Tường đọc cho “tôi” nghe có tính chất của loại truyện nào? (văn bản Tôi thấy hoa vàng trên cỏ xanh của Nguyễn Nhật Ánh, Phiếu học tập số 1)"
+     }
     },
     {
      "ma": "B0.C10",
      "trang": 131,
      "nhom": "Phiếu học tập số 1",
      "dang": "TRAC_NGHIEM",
-     "de": "Câu 4. Câu \"Để cho anh Hai học bài!\" thuộc kiểu câu nào? A. Câu hỏi B. Câu kể C. Câu cảm D. Câu khiến (văn bản Tôi thấy hoa vàng trên cỏ xanh của Nguyễn Nhật Ánh, Phiếu học tập số 1)"
+     "de": "Câu 4. Câu \"Để cho anh Hai học bài!\" thuộc kiểu câu nào? A. Câu hỏi B. Câu kể C. Câu cảm D. Câu khiến (văn bản Tôi thấy hoa vàng trên cỏ xanh của Nguyễn Nhật Ánh, Phiếu học tập số 1)",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "cac": [
+       "Câu hỏi",
+       "Câu kể",
+       "Câu cảm",
+       "Câu khiến"
+      ],
+      "dap": "D",
+      "hoi": "Câu 4. Câu “Để cho anh Hai học bài!” thuộc kiểu câu nào? (văn bản Tôi thấy hoa vàng trên cỏ xanh của Nguyễn Nhật Ánh, Phiếu học tập số 1)"
+     }
     },
     {
      "ma": "B0.C11",
      "trang": 131,
      "nhom": "Phiếu học tập số 1",
      "dang": "TRAC_NGHIEM",
-     "de": "Câu 5. Xác định loại thành phần biệt lập (in đậm: Tâu bệ hạ) trong câu sau: \"Tâu bệ hạ, trước hết xin bệ hạ hãy cho bắt giam tên này lại\". A. Thành phần cảm thán B. Thành phần tình thái C. Thành phần gọi – đáp D. Thành phần chêm xen (văn bản Tôi thấy hoa vàng trên cỏ xanh của Nguyễn Nhật Ánh, Phiếu học tập số 1)"
+     "de": "Câu 5. Xác định loại thành phần biệt lập (in đậm: Tâu bệ hạ) trong câu sau: \"Tâu bệ hạ, trước hết xin bệ hạ hãy cho bắt giam tên này lại\". A. Thành phần cảm thán B. Thành phần tình thái C. Thành phần gọi – đáp D. Thành phần chêm xen (văn bản Tôi thấy hoa vàng trên cỏ xanh của Nguyễn Nhật Ánh, Phiếu học tập số 1)",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "cac": [
+       "Thành phần cảm thán",
+       "Thành phần tình thái",
+       "Thành phần gọi – đáp",
+       "Thành phần chêm xen"
+      ],
+      "dap": "C",
+      "hoi": "Câu 5. Xác định loại thành phần biệt lập (in đậm) trong câu sau: “<b>Tâu bệ hạ</b>, trước hết xin bệ hạ hãy cho bắt giam tên này lại”. (văn bản Tôi thấy hoa vàng trên cỏ xanh của Nguyễn Nhật Ánh, Phiếu học tập số 1)"
+     }
     },
     {
      "ma": "B0.C12",
      "trang": 131,
      "nhom": "Phiếu học tập số 1",
      "dang": "TRAC_NGHIEM",
-     "de": "Câu 6. Dòng nào sau đây chỉ bao gồm những từ Hán Việt được sử dụng trong văn bản? A. thư sinh, giáo khoa, tài sản, nhường nhịn B. thư sinh, giáo khoa, tài sản, ngự y C. thư sinh, giáo khoa, tài sản, ngân nga D. thư sinh, giáo khoa, tài sản, giáo sư (văn bản Tôi thấy hoa vàng trên cỏ xanh của Nguyễn Nhật Ánh, Phiếu học tập số 1)"
+     "de": "Câu 6. Dòng nào sau đây chỉ bao gồm những từ Hán Việt được sử dụng trong văn bản? A. thư sinh, giáo khoa, tài sản, nhường nhịn B. thư sinh, giáo khoa, tài sản, ngự y C. thư sinh, giáo khoa, tài sản, ngân nga D. thư sinh, giáo khoa, tài sản, giáo sư (văn bản Tôi thấy hoa vàng trên cỏ xanh của Nguyễn Nhật Ánh, Phiếu học tập số 1)",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "cac": [
+       "thư sinh, giáo khoa, tài sản, nhường nhịn",
+       "thư sinh, giáo khoa, tài sản, ngự y",
+       "thư sinh, giáo khoa, tài sản, ngân nga",
+       "thư sinh, giáo khoa, tài sản, giáo sư"
+      ],
+      "dap": "B",
+      "hoi": "Câu 6. Dòng nào sau đây chỉ bao gồm những từ Hán Việt được sử dụng trong văn bản? (văn bản Tôi thấy hoa vàng trên cỏ xanh của Nguyễn Nhật Ánh, Phiếu học tập số 1)"
+     }
     },
     {
      "ma": "B0.C13",
      "trang": 131,
      "nhom": "Phiếu học tập số 1",
      "dang": "CAU_NHO",
-     "de": "Câu 1. Câu chuyện được kể trong đoạn trích có cốt truyện đơn tuyến hay đa tuyến? Vì sao? (văn bản Tôi thấy hoa vàng trên cỏ xanh của Nguyễn Nhật Ánh, Phiếu học tập số 1)"
+     "de": "Câu 1. Câu chuyện được kể trong đoạn trích có cốt truyện đơn tuyến hay đa tuyến? Vì sao? (văn bản Tôi thấy hoa vàng trên cỏ xanh của Nguyễn Nhật Ánh, Phiếu học tập số 1)",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "dong": [
+       {
+        "chu": "Cốt truyện của đoạn trích: {0}",
+        "o": [
+         {
+          "dung": [
+           "đa tuyến"
+          ],
+          "sai": [
+           "đơn tuyến"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Vì: {0}",
+        "o": [
+         {
+          "dung": [
+           "có hai mạch sự kiện lồng vào nhau: chuyện “tôi” với Tường và chuyện Cóc tía"
+          ],
+          "sai": [
+           "chỉ có một mạch sự kiện về hai anh em “tôi” và Tường ở nhà",
+           "truyện có nhiều nhân vật như nhà vua, hoàng hậu, công chúa, cóc tía"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B0.C14",
      "trang": 131,
      "nhom": "Phiếu học tập số 1",
      "dang": "CAU_NHO",
-     "de": "Câu 2. Qua lời kể của nhân vật \"tôi\", em nhận thấy Tường có những đức tính gì đáng quý? Hãy nêu các chi tiết cho thấy rõ những đức tính đó của nhân vật Tường. (văn bản Tôi thấy hoa vàng trên cỏ xanh của Nguyễn Nhật Ánh, Phiếu học tập số 1)"
+     "de": "Câu 2. Qua lời kể của nhân vật \"tôi\", em nhận thấy Tường có những đức tính gì đáng quý? Hãy nêu các chi tiết cho thấy rõ những đức tính đó của nhân vật Tường. (văn bản Tôi thấy hoa vàng trên cỏ xanh của Nguyễn Nhật Ánh, Phiếu học tập số 1)",
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "dong": [
+       {
+        "chu": "“Chạy qua nhà bà mượn cái thúng, cái nia, qua nhà hàng xóm xin rơm về lót ổ cho gà đẻ hay xách nước đổ vô lu mẹ tôi toàn sai thằng Tường.”\nChi tiết cho thấy Tường: {0}",
+        "o": [
+         {
+          "dung": [
+           "chăm chỉ, chịu khó làm việc nhà"
+          ],
+          "sai": [
+           "mê đọc sách, thuộc nhiều chuyện",
+           "học giỏi, được thầy cô khen"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "“Thằng Tường thay tôi gánh hết việc nặng việc nhẹ trong nhà, mặt mày lúc nào cũng vui vẻ, tuyệt không oán thán một câu.”\nChi tiết cho thấy Tường: {0}",
+        "o": [
+         {
+          "dung": [
+           "thương anh, vui vẻ nhường nhịn anh"
+          ],
+          "sai": [
+           "mê đọc sách, thuộc nhiều chuyện",
+           "học giỏi, được thầy cô khen"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "“Thằng Tường đặc biệt thích đoạn này, nó có thể đọc thuộc lòng đoạn văn bằng giọng ngân nga thích thú.”\nChi tiết cho thấy Tường: {0}",
+        "o": [
+         {
+          "dung": [
+           "mê đọc sách, thuộc nhiều chuyện"
+          ],
+          "sai": [
+           "chăm chỉ, chịu khó làm việc nhà",
+           "học giỏi, được thầy cô khen"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B0.C15",
      "trang": 131,
      "nhom": "Phiếu học tập số 1",
      "dang": "CAU_NHO",
-     "de": "Câu 3. Theo em, điều gì ở câu chuyện Cóc tía khiến Tường đặc biệt yêu thích? Việc Tường yêu thích câu chuyện này gợi cho em những suy nghĩ gì về nhân vật? (văn bản Tôi thấy hoa vàng trên cỏ xanh của Nguyễn Nhật Ánh, Phiếu học tập số 1)"
+     "de": "Câu 3. Theo em, điều gì ở câu chuyện Cóc tía khiến Tường đặc biệt yêu thích? Việc Tường yêu thích câu chuyện này gợi cho em những suy nghĩ gì về nhân vật? (văn bản Tôi thấy hoa vàng trên cỏ xanh của Nguyễn Nhật Ánh, Phiếu học tập số 1)",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "dong": [
+       {
+        "chu": "Điều Tường đặc biệt thích: {0}",
+        "o": [
+         {
+          "dung": [
+           "cóc tía làm bạn, đớp muỗi cho chàng thư sinh học khuya"
+          ],
+          "sai": [
+           "chàng thư sinh đỗ Trạng nguyên rồi làm Tể tướng",
+           "chàng thư sinh vạch mặt kẻ cắp trước mặt nhà vua"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Điều đó cho thấy Tường: {0}",
+        "o": [
+         {
+          "dung": [
+           "nhân hậu, muốn lặng lẽ giúp anh như cóc tía giúp chàng"
+          ],
+          "sai": [
+           "mong sau này đỗ đạt, làm quan to như chàng thư sinh",
+           "thích phép lạ, mong có viên ngọc thần để cứu người"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B0.C16",
      "trang": 131,
      "nhom": "Phiếu học tập số 1",
      "dang": "CAU_NHO",
-     "de": "Câu 4. Nêu những chi tiết cho thấy cách hiểu và đánh giá của nhân vật \"tôi\" về câu chuyện Cóc tía. Cách hiểu và đánh giá đó của nhân vật \"tôi\" gợi cho em suy nghĩ gì? (văn bản Tôi thấy hoa vàng trên cỏ xanh của Nguyễn Nhật Ánh, Phiếu học tập số 1)"
+     "de": "Câu 4. Nêu những chi tiết cho thấy cách hiểu và đánh giá của nhân vật \"tôi\" về câu chuyện Cóc tía. Cách hiểu và đánh giá đó của nhân vật \"tôi\" gợi cho em suy nghĩ gì? (văn bản Tôi thấy hoa vàng trên cỏ xanh của Nguyễn Nhật Ánh, Phiếu học tập số 1)",
+     "ghep": {
+      "kieu": "O",
+      "sao": 5,
+      "dong": [
+       {
+        "chu": "“Trong khi tôi thấy chuyện đó dở tệ.”\nĐây là: {0}",
+        "o": [
+         {
+          "dung": [
+           "cách hiểu, đánh giá của “tôi”"
+          ],
+          "sai": [
+           "nội dung chuyện Cóc tía"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "“Chắc chắn chàng thư sinh này đọc sách giáo khoa để đi thi chứ chẳng phải đọc truyện như thằng Tường.”\nĐây là: {0}",
+        "o": [
+         {
+          "dung": [
+           "cách hiểu, đánh giá của “tôi”"
+          ],
+          "sai": [
+           "nội dung chuyện Cóc tía"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "“Ban đêm chàng cặm cụi đọc sách cho đến lúc gà hàng xóm gáy lần thứ hai mới đi ngủ.”\nĐây là: {0}",
+        "o": [
+         {
+          "dung": [
+           "nội dung chuyện Cóc tía"
+          ],
+          "sai": [
+           "cách hiểu, đánh giá của “tôi”"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "“Tôi không hiểu tại sao thằng Tường lại thích câu chuyện dở ẹc đó.”\nĐây là: {0}",
+        "o": [
+         {
+          "dung": [
+           "cách hiểu, đánh giá của “tôi”"
+          ],
+          "sai": [
+           "nội dung chuyện Cóc tía"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Cách hiểu, đánh giá đó cho thấy: {0}",
+        "o": [
+         {
+          "dung": [
+           "“tôi” chỉ thấy chuyện đỗ đạt, chưa thấy tình bạn, lòng tốt trong truyện"
+          ],
+          "sai": [
+           "“tôi” hiểu truyện sâu sắc hơn Tường vì “tôi” học giỏi hơn em nhiều",
+           "“tôi” ghét Tường nên cố tình chê bai câu chuyện mà em mình yêu thích"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B0.C17",
@@ -7079,77 +8240,380 @@
      "trang": 132,
      "nhom": "Phiếu học tập số 2",
      "dang": "TRAC_NGHIEM",
-     "de": "Câu 1. Đoạn trích thuộc thể thơ nào? A. Thơ năm chữ B. Thơ thất ngôn bát cú C. Thơ tự do D. Thơ lục bát (văn bản Đợi mưa trên đảo Sinh Tồn của Trần Đăng Khoa, Phiếu học tập số 2)"
+     "de": "Câu 1. Đoạn trích thuộc thể thơ nào? A. Thơ năm chữ B. Thơ thất ngôn bát cú C. Thơ tự do D. Thơ lục bát (văn bản Đợi mưa trên đảo Sinh Tồn của Trần Đăng Khoa, Phiếu học tập số 2)",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "cac": [
+       "Thơ năm chữ",
+       "Thơ thất ngôn bát cú",
+       "Thơ tự do",
+       "Thơ lục bát"
+      ],
+      "dap": "C",
+      "hoi": "Câu 1. Đoạn trích thuộc thể thơ nào? (văn bản Đợi mưa trên đảo Sinh Tồn của Trần Đăng Khoa, Phiếu học tập số 2)"
+     }
     },
     {
      "ma": "B0.C20",
      "trang": 133,
      "nhom": "Phiếu học tập số 2",
      "dang": "TRAC_NGHIEM",
-     "de": "Câu 2. Những yếu tố nào giúp em nhận diện thể thơ của đoạn trích? A. Vần thơ, nhịp và số tiếng trong dòng thơ B. Số tiếng trong dòng thơ và số dòng trong mỗi khổ thơ C. Số tiếng trong dòng thơ, số dòng trong khổ thơ, vần, nhịp D. Dòng thơ, khổ thơ, vần và nhịp của bài thơ (văn bản Đợi mưa trên đảo Sinh Tồn của Trần Đăng Khoa, Phiếu học tập số 2)"
+     "de": "Câu 2. Những yếu tố nào giúp em nhận diện thể thơ của đoạn trích? A. Vần thơ, nhịp và số tiếng trong dòng thơ B. Số tiếng trong dòng thơ và số dòng trong mỗi khổ thơ C. Số tiếng trong dòng thơ, số dòng trong khổ thơ, vần, nhịp D. Dòng thơ, khổ thơ, vần và nhịp của bài thơ (văn bản Đợi mưa trên đảo Sinh Tồn của Trần Đăng Khoa, Phiếu học tập số 2)",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "cac": [
+       "Vần thơ, nhịp và số tiếng trong dòng thơ",
+       "Số tiếng trong dòng thơ và số dòng trong mỗi khổ thơ",
+       "Số tiếng trong dòng thơ, số dòng trong khổ thơ, vần, nhịp",
+       "Dòng thơ, khổ thơ, vần và nhịp của bài thơ"
+      ],
+      "dap": "B",
+      "hoi": "Câu 2. Những yếu tố nào giúp em nhận diện thể thơ của đoạn trích? (văn bản Đợi mưa trên đảo Sinh Tồn của Trần Đăng Khoa, Phiếu học tập số 2)"
+     }
     },
     {
      "ma": "B0.C21",
      "trang": 133,
      "nhom": "Phiếu học tập số 2",
      "dang": "TRAC_NGHIEM",
-     "de": "Câu 3. Hình ảnh so sánh ở dòng thơ Bóng đen sẫm như gốc cây khô cháy làm nổi bật đặc điểm của đối tượng nào? A. Những hòn đảo giữa biển B. Những người lính trên đảo C. Những hòn đá trên đảo D. Những cái cây trên đảo (văn bản Đợi mưa trên đảo Sinh Tồn của Trần Đăng Khoa, Phiếu học tập số 2)"
+     "de": "Câu 3. Hình ảnh so sánh ở dòng thơ Bóng đen sẫm như gốc cây khô cháy làm nổi bật đặc điểm của đối tượng nào? A. Những hòn đảo giữa biển B. Những người lính trên đảo C. Những hòn đá trên đảo D. Những cái cây trên đảo (văn bản Đợi mưa trên đảo Sinh Tồn của Trần Đăng Khoa, Phiếu học tập số 2)",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "cac": [
+       "Những hòn đảo giữa biển",
+       "Những người lính trên đảo",
+       "Những hòn đá trên đảo",
+       "Những cái cây trên đảo"
+      ],
+      "dap": "B",
+      "hoi": "Câu 3. Hình ảnh so sánh ở dòng thơ Bóng đen sẫm như gốc cây khô cháy làm nổi bật đặc điểm của đối tượng nào? (văn bản Đợi mưa trên đảo Sinh Tồn của Trần Đăng Khoa, Phiếu học tập số 2)"
+     }
     },
     {
      "ma": "B0.C22",
      "trang": 133,
      "nhom": "Phiếu học tập số 2",
      "dang": "TRAC_NGHIEM",
-     "de": "Câu 4. Câu nào sau đây khái quát đúng nội dung chính của đoạn trích? A. Sự khắc nghiệt, dữ dằn của thiên nhiên nơi biển đảo xa xôi. B. Sức mạnh tinh thần của người lính khi đối mặt với thiên nhiên khắc nghiệt. C. Tâm tình của những người lính ngày đêm canh giữ biển đảo quê hương. D. Sự sinh tồn kì diệu của con người giữa điều kiện sống gian nan. (văn bản Đợi mưa trên đảo Sinh Tồn của Trần Đăng Khoa, Phiếu học tập số 2)"
+     "de": "Câu 4. Câu nào sau đây khái quát đúng nội dung chính của đoạn trích? A. Sự khắc nghiệt, dữ dằn của thiên nhiên nơi biển đảo xa xôi. B. Sức mạnh tinh thần của người lính khi đối mặt với thiên nhiên khắc nghiệt. C. Tâm tình của những người lính ngày đêm canh giữ biển đảo quê hương. D. Sự sinh tồn kì diệu của con người giữa điều kiện sống gian nan. (văn bản Đợi mưa trên đảo Sinh Tồn của Trần Đăng Khoa, Phiếu học tập số 2)",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "cac": [
+       "Sự khắc nghiệt, dữ dằn của thiên nhiên nơi biển đảo xa xôi.",
+       "Sức mạnh tinh thần của người lính khi đối mặt với thiên nhiên khắc nghiệt.",
+       "Tâm tình của những người lính ngày đêm canh giữ biển đảo quê hương.",
+       "Sự sinh tồn kì diệu của con người giữa điều kiện sống gian nan."
+      ],
+      "dap": "D",
+      "hoi": "Câu 4. Câu nào sau đây khái quát đúng nội dung chính của đoạn trích? (văn bản Đợi mưa trên đảo Sinh Tồn của Trần Đăng Khoa, Phiếu học tập số 2)"
+     }
     },
     {
      "ma": "B0.C23",
      "trang": 133,
      "nhom": "Phiếu học tập số 2",
      "dang": "TRAC_NGHIEM",
-     "de": "Câu 5. Dòng nào sau đây chỉ bao gồm các từ láy tượng hình đã được sử dụng trong đoạn trích? A. đăm đăm, thăm thẳm, tốt tươi B. đăm đăm, thăm thẳm, héo quắt C. đăm đăm, thăm thẳm, linh đình D. đăm đăm, thăm thẳm, thấp thoáng (văn bản Đợi mưa trên đảo Sinh Tồn của Trần Đăng Khoa, Phiếu học tập số 2)"
+     "de": "Câu 5. Dòng nào sau đây chỉ bao gồm các từ láy tượng hình đã được sử dụng trong đoạn trích? A. đăm đăm, thăm thẳm, tốt tươi B. đăm đăm, thăm thẳm, héo quắt C. đăm đăm, thăm thẳm, linh đình D. đăm đăm, thăm thẳm, thấp thoáng (văn bản Đợi mưa trên đảo Sinh Tồn của Trần Đăng Khoa, Phiếu học tập số 2)",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "cac": [
+       "đăm đăm, thăm thẳm, tốt tươi",
+       "đăm đăm, thăm thẳm, héo quắt",
+       "đăm đăm, thăm thẳm, linh đình",
+       "đăm đăm, thăm thẳm, thấp thoáng"
+      ],
+      "dap": "D",
+      "hoi": "Câu 5. Dòng nào sau đây chỉ bao gồm các từ láy tượng hình đã được sử dụng trong đoạn trích? (văn bản Đợi mưa trên đảo Sinh Tồn của Trần Đăng Khoa, Phiếu học tập số 2)"
+     }
     },
     {
      "ma": "B0.C24",
      "trang": 133,
      "nhom": "Phiếu học tập số 2",
      "dang": "TRAC_NGHIEM",
-     "de": "Câu 6. Xác định biện pháp tu từ được sử dụng trong câu thơ Những màu mây sẽ thôi không héo quắt. A. Nhân hoá B. Nói giảm nói tránh C. Ẩn dụ D. So sánh (văn bản Đợi mưa trên đảo Sinh Tồn của Trần Đăng Khoa, Phiếu học tập số 2)"
+     "de": "Câu 6. Xác định biện pháp tu từ được sử dụng trong câu thơ Những màu mây sẽ thôi không héo quắt. A. Nhân hoá B. Nói giảm nói tránh C. Ẩn dụ D. So sánh (văn bản Đợi mưa trên đảo Sinh Tồn của Trần Đăng Khoa, Phiếu học tập số 2)",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "cac": [
+       "Nhân hoá",
+       "Nói giảm nói tránh",
+       "Ẩn dụ",
+       "So sánh"
+      ],
+      "dap": "C",
+      "hoi": "Câu 6. Xác định biện pháp tu từ được sử dụng trong câu thơ Những màu mây sẽ thôi không héo quắt. (văn bản Đợi mưa trên đảo Sinh Tồn của Trần Đăng Khoa, Phiếu học tập số 2)"
+     }
     },
     {
      "ma": "B0.C25",
      "trang": 133,
      "nhom": "Phiếu học tập số 2",
      "dang": "CAU_NHO",
-     "de": "Câu 1. Theo em, \"chúng tôi\" trong đoạn thơ là ai? (văn bản Đợi mưa trên đảo Sinh Tồn của Trần Đăng Khoa, Phiếu học tập số 2)"
+     "de": "Câu 1. Theo em, \"chúng tôi\" trong đoạn thơ là ai? (văn bản Đợi mưa trên đảo Sinh Tồn của Trần Đăng Khoa, Phiếu học tập số 2)",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "cac": [
+       "Những người lính đang đóng giữ đảo Sinh Tồn",
+       "Những ngư dân ra khơi đánh cá gần đảo",
+       "Nhà thơ và bạn bè đi tham quan đảo",
+       "Những người dân sống ở đất liền"
+      ],
+      "dap": "A"
+     }
     },
     {
      "ma": "B0.C26",
      "trang": 133,
      "nhom": "Phiếu học tập số 2",
      "dang": "CAU_NHO",
-     "de": "Câu 2. \"Chúng tôi\", cơn mưa và đảo Sinh Tồn là những hình ảnh xuyên suốt mạch cảm xúc của đoạn thơ. Mạch cảm xúc đó được thể hiện như thế nào trong các khổ thơ? (văn bản Đợi mưa trên đảo Sinh Tồn của Trần Đăng Khoa, Phiếu học tập số 2)"
+     "de": "Câu 2. \"Chúng tôi\", cơn mưa và đảo Sinh Tồn là những hình ảnh xuyên suốt mạch cảm xúc của đoạn thơ. Mạch cảm xúc đó được thể hiện như thế nào trong các khổ thơ? (văn bản Đợi mưa trên đảo Sinh Tồn của Trần Đăng Khoa, Phiếu học tập số 2)",
+     "ghep": {
+      "kieu": "O",
+      "sao": 3,
+      "dong": [
+       {
+        "chu": "Khổ 1 (“Chúng tôi ngồi trên đảo Sinh Tồn ... Ánh chớp xanh thấp thoáng phía chân trời...”): {0}",
+        "o": [
+         {
+          "dung": [
+           "ngóng trông, mong đợi cơn mưa còn ở xa"
+          ],
+          "sai": [
+           "khát khao, tưởng tượng mưa đem sự sống đến cho đảo",
+           "yêu đảo tha thiết, vẫn vững vàng sinh tồn dù chẳng có mưa"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Khổ 2 (“Ôi ước gì được thấy mưa rơi ... Bữa tiệc linh đình bày toàn nước ngọt”): {0}",
+        "o": [
+         {
+          "dung": [
+           "khát khao, tưởng tượng mưa đem sự sống đến cho đảo"
+          ],
+          "sai": [
+           "yêu đảo tha thiết, vẫn vững vàng sinh tồn dù chẳng có mưa",
+           "ngóng trông, mong đợi cơn mưa còn ở xa"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Khổ 3 (“Ôi đảo Sinh Tồn, hòn đảo thân yêu ... Như đá vững bền, như đá tốt tươi...”): {0}",
+        "o": [
+         {
+          "dung": [
+           "yêu đảo tha thiết, vẫn vững vàng sinh tồn dù chẳng có mưa"
+          ],
+          "sai": [
+           "ngóng trông, mong đợi cơn mưa còn ở xa",
+           "khát khao, tưởng tượng mưa đem sự sống đến cho đảo"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B0.C27",
      "trang": 133,
      "nhom": "Phiếu học tập số 2",
      "dang": "CAU_NHO",
-     "de": "Câu 3. Trong đoạn thơ, \"đợi mưa\" và \"đảo Sinh Tồn\" đều là những hình ảnh thực nhưng gợi liên tưởng đến những ý nghĩa rộng hơn. Theo em, đó có thể là những ý nghĩa gì? (văn bản Đợi mưa trên đảo Sinh Tồn của Trần Đăng Khoa, Phiếu học tập số 2)"
+     "de": "Câu 3. Trong đoạn thơ, \"đợi mưa\" và \"đảo Sinh Tồn\" đều là những hình ảnh thực nhưng gợi liên tưởng đến những ý nghĩa rộng hơn. Theo em, đó có thể là những ý nghĩa gì? (văn bản Đợi mưa trên đảo Sinh Tồn của Trần Đăng Khoa, Phiếu học tập số 2)",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "dong": [
+       {
+        "chu": "“Đợi mưa” gợi: {0}",
+        "o": [
+         {
+          "dung": [
+           "niềm hi vọng, khát khao sự sống, hướng về điều tốt đẹp"
+          ],
+          "sai": [
+           "nỗi chán nản, mệt mỏi, chỉ mong sớm được rời đảo",
+           "thói quen ngắm trời của người lính lúc rảnh rỗi"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "“Đảo Sinh Tồn” gợi: {0}",
+        "o": [
+         {
+          "dung": [
+           "sự sống bền bỉ, kiên cường giữa muôn vàn gian khó"
+          ],
+          "sai": [
+           "một hòn đảo du lịch đẹp, nhiều cây xanh, nước ngọt",
+           "một nơi giàu có, sung túc, không thiếu thứ gì"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B0.C28",
      "trang": 133,
      "nhom": "Phiếu học tập số 2",
      "dang": "CAU_NHO",
-     "de": "Câu 4. Em cảm nhận thế nào về hình ảnh người lính trong những dòng thơ: Chúng tôi như hòn đá ngàn năm, đập trong trái tim người/ Như đá vững bền, như đá tốt tươi... ? (văn bản Đợi mưa trên đảo Sinh Tồn của Trần Đăng Khoa, Phiếu học tập số 2)"
+     "de": "Câu 4. Em cảm nhận thế nào về hình ảnh người lính trong những dòng thơ: Chúng tôi như hòn đá ngàn năm, đập trong trái tim người/ Như đá vững bền, như đá tốt tươi... ? (văn bản Đợi mưa trên đảo Sinh Tồn của Trần Đăng Khoa, Phiếu học tập số 2)",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "dong": [
+       {
+        "chu": "Người lính trong hai dòng thơ hiện lên: {0}",
+        "o": [
+         {
+          "dung": [
+           "kiên cường, bền bỉ, vững vàng như đá, tràn đầy sức sống"
+          ],
+          "sai": [
+           "mệt mỏi, khô héo như gốc cây khô cháy giữa nắng",
+           "lạnh lùng, vô cảm như những hòn đá vô tri"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Hình ảnh “đá” ở đây gợi: {0}",
+        "o": [
+         {
+          "dung": [
+           "ý chí vững bền và sức sống mãnh liệt của người lính"
+          ],
+          "sai": [
+           "sự khô cằn, thiếu nước ngọt trên hòn đảo xa giữa biển",
+           "nỗi cô đơn, buồn tủi của người lính phải sống xa nhà"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B0.C29",
      "trang": 133,
      "nhom": "Phiếu học tập số 2",
      "dang": "CAU_NHO",
-     "de": "Câu 5. Giải thích nghĩa của các yếu tố Hán Việt trong từ sinh tồn. Tìm thêm 3 từ có các yếu tố Hán Việt cùng nghĩa với sinh hoặc tồn. (văn bản Đợi mưa trên đảo Sinh Tồn của Trần Đăng Khoa, Phiếu học tập số 2)"
+     "de": "Câu 5. Giải thích nghĩa của các yếu tố Hán Việt trong từ sinh tồn. Tìm thêm 3 từ có các yếu tố Hán Việt cùng nghĩa với sinh hoặc tồn. (văn bản Đợi mưa trên đảo Sinh Tồn của Trần Đăng Khoa, Phiếu học tập số 2)",
+     "ghep": {
+      "kieu": "O",
+      "sao": 7,
+      "dong": [
+       {
+        "chu": "“sinh” trong “sinh tồn” nghĩa là: {0}",
+        "o": [
+         {
+          "dung": [
+           "sống"
+          ],
+          "sai": [
+           "đẻ ra",
+           "học trò"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "“tồn” trong “sinh tồn” nghĩa là: {0}",
+        "o": [
+         {
+          "dung": [
+           "còn"
+          ],
+          "sai": [
+           "mất",
+           "tìm"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Yếu tố “sinh” trong “sinh vật”: {0}",
+        "o": [
+         {
+          "dung": [
+           "cùng nghĩa"
+          ],
+          "sai": [
+           "khác nghĩa"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Yếu tố “sinh” trong “mưu sinh”: {0}",
+        "o": [
+         {
+          "dung": [
+           "cùng nghĩa"
+          ],
+          "sai": [
+           "khác nghĩa"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Yếu tố “sinh” trong “thư sinh”: {0}",
+        "o": [
+         {
+          "dung": [
+           "khác nghĩa"
+          ],
+          "sai": [
+           "cùng nghĩa"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Yếu tố “tồn” trong “tồn tại”: {0}",
+        "o": [
+         {
+          "dung": [
+           "cùng nghĩa"
+          ],
+          "sai": [
+           "khác nghĩa"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Yếu tố “tồn” trong “bảo tồn”: {0}",
+        "o": [
+         {
+          "dung": [
+           "cùng nghĩa"
+          ],
+          "sai": [
+           "khác nghĩa"
+          ],
+          "hai": true
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B0.C30",

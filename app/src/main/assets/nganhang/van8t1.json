@@ -2,7 +2,7 @@
  "nguon": "van8t1",
  "mon": "Ngữ văn",
  "ten": "SGK Ngữ văn 8 — tập một",
- "ban": 5,
+ "ban": 6,
  "cac_bai": [
   {
    "chuong": "Bài 1. Câu chuyện của lịch sử",
@@ -9541,42 +9541,748 @@
      "trang": 124,
      "nhom": "Ôn tập kiến thức",
      "dang": "CAU_NHO",
-     "de": "Câu 1. Xem lại năm bài học ở học kì I, lập bảng hệ thống hoá thông tin về các văn bản đọc theo mẫu sau: các cột Bài; Văn bản; Tác giả; Loại, thể loại; Đặc điểm nổi bật (chia thành hai cột Nội dung, Hình thức)."
+     "de": "Câu 1. Xem lại năm bài học ở học kì I, lập bảng hệ thống hoá thông tin về các văn bản đọc theo mẫu sau: các cột Bài; Văn bản; Tác giả; Loại, thể loại; Đặc điểm nổi bật (chia thành hai cột Nội dung, Hình thức).",
+     "ghep": {
+      "kieu": "O",
+      "sao": 20,
+      "dong": [
+       {
+        "chu": "Bài 1. Lá cờ thêu sáu chữ vàng\nTác giả: {0}. Loại, thể loại: {1}",
+        "o": [
+         {
+          "dung": [
+           "Nguyễn Huy Tưởng"
+          ],
+          "sai": [
+           "Ngô gia văn phái",
+           "Tố Hữu"
+          ]
+         },
+         {
+          "dung": [
+           "truyện lịch sử"
+          ],
+          "sai": [
+           "truyện cười",
+           "thơ trào phúng"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Bài 1. Quang Trung đại phá quân Thanh\nTác giả: {0}. Loại, thể loại: {1}",
+        "o": [
+         {
+          "dung": [
+           "Ngô gia văn phái"
+          ],
+          "sai": [
+           "Nguyễn Huy Tưởng",
+           "Trần Quốc Tuấn"
+          ]
+         },
+         {
+          "dung": [
+           "truyện lịch sử"
+          ],
+          "sai": [
+           "hài kịch",
+           "văn bản nghị luận"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Bài 2. Thu điếu\nTác giả: {0}. Loại, thể loại: {1}",
+        "o": [
+         {
+          "dung": [
+           "Nguyễn Khuyến"
+          ],
+          "sai": [
+           "Trần Tế Xương",
+           "Trần Nhân Tông"
+          ]
+         },
+         {
+          "dung": [
+           "thơ thất ngôn bát cú Đường luật"
+          ],
+          "sai": [
+           "thơ thất ngôn tứ tuyệt Đường luật",
+           "thơ lục bát"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Bài 2. Thiên Trường vãn vọng\nTác giả: {0}. Loại, thể loại: {1}",
+        "o": [
+         {
+          "dung": [
+           "Trần Nhân Tông"
+          ],
+          "sai": [
+           "Trần Quốc Tuấn",
+           "Nguyễn Khuyến"
+          ]
+         },
+         {
+          "dung": [
+           "thơ thất ngôn tứ tuyệt Đường luật"
+          ],
+          "sai": [
+           "thơ thất ngôn bát cú Đường luật",
+           "thơ lục bát"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Bài 3. Hịch tướng sĩ\nTác giả: {0}. Loại, thể loại: {1}",
+        "o": [
+         {
+          "dung": [
+           "Trần Quốc Tuấn"
+          ],
+          "sai": [
+           "Trần Nhân Tông",
+           "Ngô gia văn phái"
+          ]
+         },
+         {
+          "dung": [
+           "văn bản nghị luận"
+          ],
+          "sai": [
+           "truyện lịch sử",
+           "thơ trào phúng"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Bài 3. Tinh thần yêu nước của nhân dân ta\nTác giả: {0}. Loại, thể loại: {1}",
+        "o": [
+         {
+          "dung": [
+           "Hồ Chí Minh"
+          ],
+          "sai": [
+           "Trần Quốc Tuấn",
+           "Tố Hữu"
+          ]
+         },
+         {
+          "dung": [
+           "văn bản nghị luận"
+          ],
+          "sai": [
+           "truyện lịch sử",
+           "hài kịch"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Bài 4. Lễ xướng danh khoa Đinh Dậu\nTác giả: {0}. Loại, thể loại: {1}",
+        "o": [
+         {
+          "dung": [
+           "Trần Tế Xương"
+          ],
+          "sai": [
+           "Nguyễn Khuyến",
+           "Hồ Chí Minh"
+          ]
+         },
+         {
+          "dung": [
+           "thơ trào phúng"
+          ],
+          "sai": [
+           "truyện cười",
+           "văn bản nghị luận"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Bài 4. Lai Tân\nTác giả: {0}. Loại, thể loại: {1}",
+        "o": [
+         {
+          "dung": [
+           "Hồ Chí Minh"
+          ],
+          "sai": [
+           "Trần Tế Xương",
+           "Trần Nhân Tông"
+          ]
+         },
+         {
+          "dung": [
+           "thơ trào phúng"
+          ],
+          "sai": [
+           "hài kịch",
+           "truyện lịch sử"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Bài 5. Trưởng giả học làm sang\nTác giả: {0}. Loại, thể loại: {1}",
+        "o": [
+         {
+          "dung": [
+           "Mô-li-e"
+          ],
+          "sai": [
+           "Trần Tế Xương",
+           "tác giả dân gian"
+          ]
+         },
+         {
+          "dung": [
+           "hài kịch"
+          ],
+          "sai": [
+           "truyện cười",
+           "thơ trào phúng"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Bài 5. Chùm truyện cười dân gian Việt Nam\nTác giả: {0}. Loại, thể loại: {1}",
+        "o": [
+         {
+          "dung": [
+           "tác giả dân gian"
+          ],
+          "sai": [
+           "Mô-li-e",
+           "Trần Tế Xương"
+          ]
+         },
+         {
+          "dung": [
+           "truyện cười"
+          ],
+          "sai": [
+           "hài kịch",
+           "truyện lịch sử"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B0.C2",
      "trang": 124,
      "nhom": "Ôn tập kiến thức",
      "dang": "CAU_NHO",
-     "de": "Câu 2. Lập bảng so sánh đặc điểm các thể loại theo mẫu sau (làm vào vở): các cột Thể loại, Những điểm giống nhau, Những điểm khác nhau; các hàng Hài kịch, Truyện cười, Thơ trào phúng (cột Những điểm giống nhau là một ô chung cho cả ba hàng)."
+     "de": "Câu 2. Lập bảng so sánh đặc điểm các thể loại theo mẫu sau (làm vào vở): các cột Thể loại, Những điểm giống nhau, Những điểm khác nhau; các hàng Hài kịch, Truyện cười, Thơ trào phúng (cột Những điểm giống nhau là một ô chung cho cả ba hàng).",
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "dong": [
+       {
+        "chu": "Những điểm giống nhau (cả ba thể loại): {0}",
+        "o": [
+         {
+          "dung": [
+           "đều dùng tiếng cười để phê phán cái xấu, cái lố bịch, đáng chê"
+          ],
+          "sai": [
+           "đều kể lại sự kiện, nhân vật có thật trong lịch sử dân tộc",
+           "đều phải theo luật bằng trắc, niêm, đối chặt chẽ như thơ Đường"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Hài kịch, điểm khác: {0}",
+        "o": [
+         {
+          "dung": [
+           "là kịch: có xung đột, hành động kịch, lời đối thoại của nhân vật"
+          ],
+          "sai": [
+           "là truyện kể ngắn, cốt truyện xoay quanh sự việc gây cười",
+           "là thơ: tiếng cười qua ngôn ngữ thơ cô đọng, có vần, nhịp"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Truyện cười, điểm khác: {0}",
+        "o": [
+         {
+          "dung": [
+           "là truyện kể ngắn, cốt truyện xoay quanh sự việc gây cười"
+          ],
+          "sai": [
+           "là kịch: có xung đột, hành động kịch, lời đối thoại của nhân vật",
+           "là thơ: tiếng cười qua ngôn ngữ thơ cô đọng, có vần, nhịp"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Thơ trào phúng, điểm khác: {0}",
+        "o": [
+         {
+          "dung": [
+           "là thơ: tiếng cười qua ngôn ngữ thơ cô đọng, có vần, nhịp"
+          ],
+          "sai": [
+           "là kịch: có xung đột, hành động kịch, lời đối thoại của nhân vật",
+           "là truyện kể ngắn, cốt truyện xoay quanh sự việc gây cười"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B0.C3",
      "trang": 124,
      "nhom": "Ôn tập kiến thức",
      "dang": "CAU_NHO",
-     "de": "Câu 3. Nêu những nét giống nhau và khác nhau về thi luật giữa thơ thất ngôn bát cú và thơ tứ tuyệt Đường luật."
+     "de": "Câu 3. Nêu những nét giống nhau và khác nhau về thi luật giữa thơ thất ngôn bát cú và thơ tứ tuyệt Đường luật.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 6,
+      "dong": [
+       {
+        "chu": "Giống nhau: {0}",
+        "o": [
+         {
+          "dung": [
+           "đều là thơ Đường luật, theo quy định chặt chẽ về luật, niêm, vần, nhịp"
+          ],
+          "sai": [
+           "đều có tám câu, mỗi câu bảy chữ, đối ở hai câu thực và hai câu luận",
+           "đều không gieo vần, số chữ trong mỗi câu do nhà thơ tùy ý chọn"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Thất ngôn bát cú: {0}",
+        "o": [
+         {
+          "dung": [
+           "8 câu, bố cục đề – thực – luận – kết"
+          ],
+          "sai": [
+           "4 câu, bố cục khởi – thừa – chuyển – hợp",
+           "8 câu, bố cục khởi – thừa – chuyển – hợp"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Tứ tuyệt: {0}",
+        "o": [
+         {
+          "dung": [
+           "4 câu, bố cục khởi – thừa – chuyển – hợp"
+          ],
+          "sai": [
+           "8 câu, bố cục đề – thực – luận – kết",
+           "4 câu, bố cục đề – thực – luận – kết"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Phép đối ở thất ngôn bát cú: {0}",
+        "o": [
+         {
+          "dung": [
+           "chủ yếu ở hai câu thực và hai câu luận"
+          ],
+          "sai": [
+           "chủ yếu ở hai câu đề và hai câu kết",
+           "không dùng phép đối ở bất kì cặp câu nào"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Phép đối ở tứ tuyệt: {0}",
+        "o": [
+         {
+          "dung": [
+           "không bắt buộc phải đối"
+          ],
+          "sai": [
+           "bắt buộc đối ở hai câu thực, hai câu luận",
+           "câu nào cũng phải đối nhau"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Vần ở thất ngôn bát cú: {0}",
+        "o": [
+         {
+          "dung": [
+           "một vần bằng, ở cuối các câu 1, 2, 4, 6, 8"
+          ],
+          "sai": [
+           "vần trắc, ở cuối các câu 1, 3, 5, 7",
+           "mỗi cặp câu đổi một vần khác nhau"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B0.C4",
      "trang": 124,
      "nhom": "Ôn tập kiến thức",
      "dang": "CAU_NHO",
-     "de": "Câu 4. Lập bảng vào vở theo mẫu sau để hệ thống hoá các kiến thức tiếng Việt đã được học trong học kì I: các cột STT, Nội dung tiếng Việt, Khái niệm cần nắm vững, Dạng bài tập thực hành."
+     "de": "Câu 4. Lập bảng vào vở theo mẫu sau để hệ thống hoá các kiến thức tiếng Việt đã được học trong học kì I: các cột STT, Nội dung tiếng Việt, Khái niệm cần nắm vững, Dạng bài tập thực hành.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 13,
+      "dong": [
+       {
+        "chu": "Bài 1. Biệt ngữ xã hội: {0}",
+        "o": [
+         {
+          "dung": [
+           "từ ngữ riêng của một nhóm người, dùng trong phạm vi hẹp"
+          ],
+          "sai": [
+           "từ ngữ chỉ dùng ở một hoặc một số địa phương nhất định",
+           "từ gốc Hán, mỗi tiếng là một yếu tố Hán Việt có nghĩa"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Bài 1. Từ ngữ địa phương: {0}",
+        "o": [
+         {
+          "dung": [
+           "từ ngữ chỉ dùng ở một hoặc một số địa phương nhất định"
+          ],
+          "sai": [
+           "từ ngữ riêng của một nhóm người, dùng trong phạm vi hẹp",
+           "từ mượn của tiếng nước ngoài"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Bài 2. Từ tượng hình: {0}",
+        "o": [
+         {
+          "dung": [
+           "từ gợi tả dáng vẻ, trạng thái của sự vật"
+          ],
+          "sai": [
+           "từ mô phỏng âm thanh của tự nhiên, con người",
+           "từ dùng để gọi tên sự vật, hiện tượng"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Bài 2. Từ tượng thanh: {0}",
+        "o": [
+         {
+          "dung": [
+           "từ mô phỏng âm thanh của tự nhiên, con người"
+          ],
+          "sai": [
+           "từ gợi tả dáng vẻ, trạng thái của sự vật",
+           "từ dùng để bộc lộ cảm xúc như ôi, than ôi"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Bài 2. Đảo ngữ: {0}",
+        "o": [
+         {
+          "dung": [
+           "thay đổi vị trí thông thường của từ ngữ trong câu để nhấn mạnh"
+          ],
+          "sai": [
+           "lặp lại một từ ngữ nhiều lần để nhấn mạnh",
+           "đối chiếu sự vật này với sự vật khác có nét giống nhau"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Bài 3. Đoạn văn diễn dịch: {0}",
+        "o": [
+         {
+          "dung": [
+           "câu chủ đề đứng ở đầu đoạn, các câu sau triển khai ý"
+          ],
+          "sai": [
+           "các câu triển khai ý trước, câu chủ đề đứng ở cuối đoạn",
+           "có câu chủ đề ở cả đầu đoạn và cuối đoạn văn"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Bài 3. Đoạn văn quy nạp: {0}",
+        "o": [
+         {
+          "dung": [
+           "các câu triển khai ý trước, câu chủ đề đứng ở cuối đoạn"
+          ],
+          "sai": [
+           "câu chủ đề đứng ở đầu đoạn, các câu sau triển khai ý",
+           "không có câu chủ đề, các câu cùng hướng tới một chủ đề"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Bài 3. Đoạn văn song song: {0}",
+        "o": [
+         {
+          "dung": [
+           "không có câu chủ đề, các câu cùng hướng tới một chủ đề"
+          ],
+          "sai": [
+           "câu chủ đề đứng ở đầu đoạn, các câu sau triển khai ý",
+           "có câu chủ đề ở cả đầu đoạn và cuối đoạn văn"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Bài 3. Đoạn văn phối hợp: {0}",
+        "o": [
+         {
+          "dung": [
+           "có câu chủ đề ở cả đầu đoạn và cuối đoạn văn"
+          ],
+          "sai": [
+           "các câu triển khai ý trước, câu chủ đề đứng ở cuối đoạn",
+           "không có câu chủ đề, các câu cùng hướng tới một chủ đề"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Bài 4. Sắc thái nghĩa của từ ngữ: {0}",
+        "o": [
+         {
+          "dung": [
+           "phần nghĩa bổ sung, thể hiện thái độ, cảm xúc của người dùng"
+          ],
+          "sai": [
+           "nghĩa gốc của từ, thường được ghi đầu tiên trong từ điển",
+           "nghĩa riêng mà từ chỉ có khi dùng ở một vùng miền"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Bài 5. Câu hỏi tu từ: {0}",
+        "o": [
+         {
+          "dung": [
+           "câu hỏi không dùng để hỏi mà để khẳng định, phủ định, bộc lộ cảm xúc"
+          ],
+          "sai": [
+           "câu hỏi về điều mình chưa biết, cần người nghe trả lời ngay",
+           "câu dùng để ra lệnh, yêu cầu, đề nghị người khác làm việc gì"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Bài 5. Nghĩa tường minh: {0}",
+        "o": [
+         {
+          "dung": [
+           "nghĩa được diễn đạt trực tiếp bằng từ ngữ trong câu"
+          ],
+          "sai": [
+           "nghĩa được suy ra từ nghĩa của câu và ngữ cảnh",
+           "nghĩa thể hiện thái độ, cảm xúc của người nói"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Bài 5. Nghĩa hàm ẩn: {0}",
+        "o": [
+         {
+          "dung": [
+           "nghĩa được suy ra từ nghĩa của câu và ngữ cảnh"
+          ],
+          "sai": [
+           "nghĩa được diễn đạt trực tiếp bằng từ ngữ trong câu",
+           "nghĩa riêng của một nhóm người, người ngoài không hiểu"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B0.C5",
      "trang": 124,
      "nhom": "Ôn tập kiến thức",
      "dang": "CAU_NHO",
-     "de": "Câu 5. Nêu các kiểu bài viết, yêu cầu của từng kiểu bài và đề tài đã thực hành trong học kì I theo bảng gợi ý sau: các cột STT, Kiểu bài viết, Yêu cầu của kiểu bài, Đề tài đã thực hành viết."
+     "de": "Câu 5. Nêu các kiểu bài viết, yêu cầu của từng kiểu bài và đề tài đã thực hành trong học kì I theo bảng gợi ý sau: các cột STT, Kiểu bài viết, Yêu cầu của kiểu bài, Đề tài đã thực hành viết.",
+     "ghep": {
+      "kieu": "O",
+      "sao": 8,
+      "dong": [
+       {
+        "chu": "Bài 1. Câu chuyện của lịch sử: {0}",
+        "o": [
+         {
+          "dung": [
+           "bài văn kể lại một chuyến đi (tham quan di tích lịch sử, văn hoá)"
+          ],
+          "sai": [
+           "bài văn nghị luận về con người trong mối quan hệ với cộng đồng, đất nước",
+           "bài văn phân tích một bài thơ trào phúng"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Bài 2. Vẻ đẹp cổ điển: {0}",
+        "o": [
+         {
+          "dung": [
+           "bài văn phân tích một bài thơ thất ngôn bát cú hoặc tứ tuyệt Đường luật"
+          ],
+          "sai": [
+           "bài văn phân tích một bài thơ trào phúng",
+           "bài văn kể lại một chuyến đi (tham quan di tích lịch sử, văn hoá)"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Bài 3. Lời sông núi: {0}",
+        "o": [
+         {
+          "dung": [
+           "bài văn nghị luận về con người trong mối quan hệ với cộng đồng, đất nước"
+          ],
+          "sai": [
+           "bài văn nghị luận về một thói xấu của con người trong xã hội hiện đại",
+           "bài văn phân tích một bài thơ thất ngôn bát cú hoặc tứ tuyệt Đường luật"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Bài 4. Tiếng cười trào phúng trong thơ: {0}",
+        "o": [
+         {
+          "dung": [
+           "bài văn phân tích một bài thơ trào phúng"
+          ],
+          "sai": [
+           "bài văn phân tích một bài thơ thất ngôn bát cú hoặc tứ tuyệt Đường luật",
+           "bài văn nghị luận về một thói xấu của con người trong xã hội hiện đại"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Bài 5. Những câu chuyện hài: {0}",
+        "o": [
+         {
+          "dung": [
+           "bài văn nghị luận về một thói xấu của con người trong xã hội hiện đại"
+          ],
+          "sai": [
+           "bài văn nghị luận về con người trong mối quan hệ với cộng đồng, đất nước",
+           "bài văn kể lại một chuyến đi (tham quan di tích lịch sử, văn hoá)"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Yêu cầu của bài văn kể lại một chuyến đi: {0}",
+        "o": [
+         {
+          "dung": [
+           "kể diễn biến chuyến đi, kết hợp yếu tố miêu tả và biểu cảm"
+          ],
+          "sai": [
+           "nêu chủ đề, phân tích nét đặc sắc về nội dung, nghệ thuật",
+           "phê phán bằng lí lẽ, bằng chứng, đối thoại với ý kiến khác"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Yêu cầu của bài văn phân tích một bài thơ: {0}",
+        "o": [
+         {
+          "dung": [
+           "nêu chủ đề, phân tích nét đặc sắc về nội dung, nghệ thuật"
+          ],
+          "sai": [
+           "kể diễn biến chuyến đi, kết hợp yếu tố miêu tả và biểu cảm",
+           "phê phán bằng lí lẽ, bằng chứng, đối thoại với ý kiến khác"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Yêu cầu của bài văn nghị luận về một thói xấu: {0}",
+        "o": [
+         {
+          "dung": [
+           "phê phán bằng lí lẽ, bằng chứng, đối thoại với ý kiến khác"
+          ],
+          "sai": [
+           "kể diễn biến chuyến đi, kết hợp yếu tố miêu tả và biểu cảm",
+           "nêu chủ đề, phân tích nét đặc sắc về nội dung, nghệ thuật"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B0.C6",
      "trang": 124,
      "nhom": "Ôn tập kiến thức",
      "dang": "CAU_NHO",
-     "de": "Câu 6. Nêu những điểm chung trong việc thực hiện các bước của hoạt động nói và nghe ở năm bài học trong học kì I."
+     "de": "Câu 6. Nêu những điểm chung trong việc thực hiện các bước của hoạt động nói và nghe ở năm bài học trong học kì I.",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 3,
+      "buoc": [
+       "Xác định mục đích nói, người nghe; tìm ý và lập dàn ý",
+       "Trình bày bài nói hoặc tham gia thảo luận theo các ý đã chuẩn bị",
+       "Trao đổi, đánh giá, rút kinh nghiệm sau khi nói"
+      ],
+      "nhieu": [
+       "Viết sẵn cả bài văn rồi đọc thuộc lòng, không cần dàn ý"
+      ]
+     }
     }
    ]
   },
@@ -9589,77 +10295,320 @@
      "trang": 125,
      "nhom": "Phiếu học tập số 1",
      "dang": "TRAC_NGHIEM",
-     "de": "Câu 1. Nhận định nào sau đây đúng với bài thơ Chiều hôm nhớ nhà? A. Đây là bài thơ thất ngôn bát cú Đường luật. B. Đây là bài thơ thất ngôn tứ tuyệt Đường luật. C. Đây là bài thơ ngũ ngôn bát cú Đường luật. D. Đây là bài thơ ngũ ngôn tứ tuyệt Đường luật. (văn bản Chiều hôm nhớ nhà của Bà Huyện Thanh Quan, Phiếu học tập số 1)"
+     "de": "Câu 1. Nhận định nào sau đây đúng với bài thơ Chiều hôm nhớ nhà? A. Đây là bài thơ thất ngôn bát cú Đường luật. B. Đây là bài thơ thất ngôn tứ tuyệt Đường luật. C. Đây là bài thơ ngũ ngôn bát cú Đường luật. D. Đây là bài thơ ngũ ngôn tứ tuyệt Đường luật. (văn bản Chiều hôm nhớ nhà của Bà Huyện Thanh Quan, Phiếu học tập số 1)",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "cac": [
+       "Đây là bài thơ thất ngôn bát cú Đường luật.",
+       "Đây là bài thơ thất ngôn tứ tuyệt Đường luật.",
+       "Đây là bài thơ ngũ ngôn bát cú Đường luật.",
+       "Đây là bài thơ ngũ ngôn tứ tuyệt Đường luật."
+      ],
+      "dap": "A",
+      "hoi": "Câu 1. Nhận định nào sau đây đúng với bài thơ Chiều hôm nhớ nhà? (văn bản Chiều hôm nhớ nhà của Bà Huyện Thanh Quan, Phiếu học tập số 1)"
+     }
     },
     {
      "ma": "B0.C8",
      "trang": 126,
      "nhom": "Phiếu học tập số 1",
      "dang": "TRAC_NGHIEM",
-     "de": "Câu 2. Yếu tố nào sau đây không có tác dụng giúp ta nhận biết thể thơ của Chiều hôm nhớ nhà? A. Cách gieo vần, ngắt nhịp trong bài thơ B. Tính chất đối của một số cặp câu thơ C. Biện pháp tu từ được sử dụng trong bài thơ D. Số tiếng trong mỗi câu thơ và số câu trong bài thơ (văn bản Chiều hôm nhớ nhà của Bà Huyện Thanh Quan, Phiếu học tập số 1)"
+     "de": "Câu 2. Yếu tố nào sau đây không có tác dụng giúp ta nhận biết thể thơ của Chiều hôm nhớ nhà? A. Cách gieo vần, ngắt nhịp trong bài thơ B. Tính chất đối của một số cặp câu thơ C. Biện pháp tu từ được sử dụng trong bài thơ D. Số tiếng trong mỗi câu thơ và số câu trong bài thơ (văn bản Chiều hôm nhớ nhà của Bà Huyện Thanh Quan, Phiếu học tập số 1)",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "cac": [
+       "Cách gieo vần, ngắt nhịp trong bài thơ",
+       "Tính chất đối của một số cặp câu thơ",
+       "Biện pháp tu từ được sử dụng trong bài thơ",
+       "Số tiếng trong mỗi câu thơ và số câu trong bài thơ"
+      ],
+      "dap": "C",
+      "hoi": "Câu 2. Yếu tố nào sau đây <b>không</b> có tác dụng giúp ta nhận biết thể thơ của Chiều hôm nhớ nhà? (văn bản Chiều hôm nhớ nhà của Bà Huyện Thanh Quan, Phiếu học tập số 1)"
+     }
     },
     {
      "ma": "B0.C9",
      "trang": 126,
      "nhom": "Phiếu học tập số 1",
      "dang": "TRAC_NGHIEM",
-     "de": "Câu 3. Nghệ thuật đối được thể hiện ở những cặp câu thơ nào? A. Cặp câu 1 – 2 và 7 – 8 B. Cặp câu 1 – 2 và 3 – 4 C. Cặp câu 3 – 4 và 5 – 6 D. Cặp câu 5 – 6 và 7 – 8 (văn bản Chiều hôm nhớ nhà của Bà Huyện Thanh Quan, Phiếu học tập số 1)"
+     "de": "Câu 3. Nghệ thuật đối được thể hiện ở những cặp câu thơ nào? A. Cặp câu 1 – 2 và 7 – 8 B. Cặp câu 1 – 2 và 3 – 4 C. Cặp câu 3 – 4 và 5 – 6 D. Cặp câu 5 – 6 và 7 – 8 (văn bản Chiều hôm nhớ nhà của Bà Huyện Thanh Quan, Phiếu học tập số 1)",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "cac": [
+       "Cặp câu 1 – 2 và 7 – 8",
+       "Cặp câu 1 – 2 và 3 – 4",
+       "Cặp câu 3 – 4 và 5 – 6",
+       "Cặp câu 5 – 6 và 7 – 8"
+      ],
+      "dap": "C",
+      "hoi": "Câu 3. Nghệ thuật đối được thể hiện ở những cặp câu thơ nào? (văn bản Chiều hôm nhớ nhà của Bà Huyện Thanh Quan, Phiếu học tập số 1)"
+     }
     },
     {
      "ma": "B0.C10",
      "trang": 126,
      "nhom": "Phiếu học tập số 1",
      "dang": "TRAC_NGHIEM",
-     "de": "Câu 4. Những câu nào trong bài thơ có tiếng hiệp vần? A. Các câu 1 – 3 – 5 – 7 – 8 B. Các câu 1 – 2 – 4 – 6 – 8 C. Các câu 1 – 2 – 3 – 4 – 5 D. Các câu 4 – 5 – 6 – 7 – 8 (văn bản Chiều hôm nhớ nhà của Bà Huyện Thanh Quan, Phiếu học tập số 1)"
+     "de": "Câu 4. Những câu nào trong bài thơ có tiếng hiệp vần? A. Các câu 1 – 3 – 5 – 7 – 8 B. Các câu 1 – 2 – 4 – 6 – 8 C. Các câu 1 – 2 – 3 – 4 – 5 D. Các câu 4 – 5 – 6 – 7 – 8 (văn bản Chiều hôm nhớ nhà của Bà Huyện Thanh Quan, Phiếu học tập số 1)",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "cac": [
+       "Các câu 1 – 3 – 5 – 7 – 8",
+       "Các câu 1 – 2 – 4 – 6 – 8",
+       "Các câu 1 – 2 – 3 – 4 – 5",
+       "Các câu 4 – 5 – 6 – 7 – 8"
+      ],
+      "dap": "B",
+      "hoi": "Câu 4. Những câu nào trong bài thơ có tiếng hiệp vần? (văn bản Chiều hôm nhớ nhà của Bà Huyện Thanh Quan, Phiếu học tập số 1)"
+     }
     },
     {
      "ma": "B0.C11",
      "trang": 126,
      "nhom": "Phiếu học tập số 1",
      "dang": "TRAC_NGHIEM",
-     "de": "Câu 5. Biện pháp tu từ nào được tác giả sử dụng ở hai câu thơ sau? Gác mái ngư ông về viễn phố, / Gõ sừng mục tử lại cô thôn. A. Biện pháp tu từ so sánh B. Biện pháp tu từ nhân hoá C. Biện pháp tu từ đảo ngữ D. Biện pháp tu từ nói quá (văn bản Chiều hôm nhớ nhà của Bà Huyện Thanh Quan, Phiếu học tập số 1)"
+     "de": "Câu 5. Biện pháp tu từ nào được tác giả sử dụng ở hai câu thơ sau? Gác mái ngư ông về viễn phố, / Gõ sừng mục tử lại cô thôn. A. Biện pháp tu từ so sánh B. Biện pháp tu từ nhân hoá C. Biện pháp tu từ đảo ngữ D. Biện pháp tu từ nói quá (văn bản Chiều hôm nhớ nhà của Bà Huyện Thanh Quan, Phiếu học tập số 1)",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "cac": [
+       "Biện pháp tu từ so sánh",
+       "Biện pháp tu từ nhân hoá",
+       "Biện pháp tu từ đảo ngữ",
+       "Biện pháp tu từ nói quá"
+      ],
+      "dap": "C",
+      "hoi": "Câu 5. Biện pháp tu từ nào được tác giả sử dụng ở hai câu thơ sau?\nGác mái ngư ông về viễn phố,\nGõ sừng mục tử lại cô thôn.\n(văn bản Chiều hôm nhớ nhà của Bà Huyện Thanh Quan, Phiếu học tập số 1)"
+     }
     },
     {
      "ma": "B0.C12",
      "trang": 126,
      "nhom": "Phiếu học tập số 1",
      "dang": "TRAC_NGHIEM",
-     "de": "Câu 6. Trong bài thơ, cảnh thiên nhiên và bức tranh sinh hoạt của con người có mối liên hệ như thế nào? A. Cảnh thiên nhiên làm nền để tôn lên vẻ đẹp bức tranh sinh hoạt của con người. B. Cảnh thiên nhiên và bức tranh sinh hoạt hoà điệu với nhau, cùng thể hiện nỗi niềm của nhà thơ. C. Cảnh thiên nhiên có sắc thái riêng, không liên quan gì đến bức tranh sinh hoạt của con người. D. Bức tranh sinh hoạt làm nền để tôn lên vẻ đẹp đượm buồn của bức tranh thiên nhiên. (văn bản Chiều hôm nhớ nhà của Bà Huyện Thanh Quan, Phiếu học tập số 1)"
+     "de": "Câu 6. Trong bài thơ, cảnh thiên nhiên và bức tranh sinh hoạt của con người có mối liên hệ như thế nào? A. Cảnh thiên nhiên làm nền để tôn lên vẻ đẹp bức tranh sinh hoạt của con người. B. Cảnh thiên nhiên và bức tranh sinh hoạt hoà điệu với nhau, cùng thể hiện nỗi niềm của nhà thơ. C. Cảnh thiên nhiên có sắc thái riêng, không liên quan gì đến bức tranh sinh hoạt của con người. D. Bức tranh sinh hoạt làm nền để tôn lên vẻ đẹp đượm buồn của bức tranh thiên nhiên. (văn bản Chiều hôm nhớ nhà của Bà Huyện Thanh Quan, Phiếu học tập số 1)",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "cac": [
+       "Cảnh thiên nhiên làm nền để tôn lên vẻ đẹp bức tranh sinh hoạt của con người.",
+       "Cảnh thiên nhiên và bức tranh sinh hoạt hoà điệu với nhau, cùng thể hiện nỗi niềm của nhà thơ.",
+       "Cảnh thiên nhiên có sắc thái riêng, không liên quan gì đến bức tranh sinh hoạt của con người.",
+       "Bức tranh sinh hoạt làm nền để tôn lên vẻ đẹp đượm buồn của bức tranh thiên nhiên."
+      ],
+      "dap": "B",
+      "hoi": "Câu 6. Trong bài thơ, cảnh thiên nhiên và bức tranh sinh hoạt của con người có mối liên hệ như thế nào? (văn bản Chiều hôm nhớ nhà của Bà Huyện Thanh Quan, Phiếu học tập số 1)"
+     }
     },
     {
      "ma": "B0.C13",
      "trang": 126,
      "nhom": "Phiếu học tập số 1",
      "dang": "CAU_NHO",
-     "de": "Câu 1. Dựa vào đâu để có thể khẳng định Chiều hôm nhớ nhà là một bài thơ trữ tình? (văn bản Chiều hôm nhớ nhà của Bà Huyện Thanh Quan, Phiếu học tập số 1)"
+     "de": "Câu 1. Dựa vào đâu để có thể khẳng định Chiều hôm nhớ nhà là một bài thơ trữ tình? (văn bản Chiều hôm nhớ nhà của Bà Huyện Thanh Quan, Phiếu học tập số 1)",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "cac": [
+       "Bài thơ bộc lộ tâm trạng, nỗi nhớ nhà của nhà thơ qua cảnh chiều và lời tâm sự",
+       "Bài thơ kể lại một câu chuyện có nhân vật, sự việc và cốt truyện rõ ràng",
+       "Bài thơ có tám câu, mỗi câu bảy chữ, gieo vần ở cuối các câu 1, 2, 4, 6, 8",
+       "Bài thơ dùng tiếng cười để phê phán những thói hư tật xấu của người đời"
+      ],
+      "dap": "A"
+     }
     },
     {
      "ma": "B0.C14",
      "trang": 126,
      "nhom": "Phiếu học tập số 1",
      "dang": "CAU_NHO",
-     "de": "Câu 2. Những hình ảnh nào trong bài thơ có tác dụng làm nổi bật nhan đề Chiều hôm nhớ nhà? (văn bản Chiều hôm nhớ nhà của Bà Huyện Thanh Quan, Phiếu học tập số 1)"
+     "de": "Câu 2. Những hình ảnh nào trong bài thơ có tác dụng làm nổi bật nhan đề Chiều hôm nhớ nhà? (văn bản Chiều hôm nhớ nhà của Bà Huyện Thanh Quan, Phiếu học tập số 1)",
+     "ghep": {
+      "kieu": "O",
+      "sao": 7,
+      "dong": [
+       {
+        "chu": "“Trời chiều bảng lảng bóng hoàng hôn”: {0}",
+        "o": [
+         {
+          "dung": [
+           "có trong bài"
+          ],
+          "sai": [
+           "không có trong bài"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "“Tiếng ốc xa đưa vẳng trống đồn”: {0}",
+        "o": [
+         {
+          "dung": [
+           "có trong bài"
+          ],
+          "sai": [
+           "không có trong bài"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "“Ao thu lạnh lẽo nước trong veo”: {0}",
+        "o": [
+         {
+          "dung": [
+           "không có trong bài"
+          ],
+          "sai": [
+           "có trong bài"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "“Dặm liễu sương sa khách bước dồn”: {0}",
+        "o": [
+         {
+          "dung": [
+           "có trong bài"
+          ],
+          "sai": [
+           "không có trong bài"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "“Từng đôi cò trắng hạ cánh xuống đồng”: {0}",
+        "o": [
+         {
+          "dung": [
+           "không có trong bài"
+          ],
+          "sai": [
+           "có trong bài"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "“Kẻ chốn Chương Đài người lữ thứ”: {0}",
+        "o": [
+         {
+          "dung": [
+           "có trong bài"
+          ],
+          "sai": [
+           "không có trong bài"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Các hình ảnh trong bài thơ cùng gợi: {0}",
+        "o": [
+         {
+          "dung": [
+           "cảnh chiều tàn và nỗi nhớ nhà của người đi xa"
+          ],
+          "sai": [
+           "cảnh thu yên ả của làng quê đồng bằng Bắc Bộ",
+           "không khí đông vui của một phiên chợ chiều"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B0.C15",
      "trang": 126,
      "nhom": "Phiếu học tập số 1",
      "dang": "CAU_NHO",
-     "de": "Câu 3. Em cảm nhận như thế nào về phong cảnh thiên nhiên và bức tranh sinh hoạt của con người được khắc hoạ trong bài thơ? (văn bản Chiều hôm nhớ nhà của Bà Huyện Thanh Quan, Phiếu học tập số 1)"
+     "de": "Câu 3. Em cảm nhận như thế nào về phong cảnh thiên nhiên và bức tranh sinh hoạt của con người được khắc hoạ trong bài thơ? (văn bản Chiều hôm nhớ nhà của Bà Huyện Thanh Quan, Phiếu học tập số 1)",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "dong": [
+       {
+        "chu": "Phong cảnh thiên nhiên: {0}",
+        "o": [
+         {
+          "dung": [
+           "chiều tà, không gian rộng mà vắng vẻ, đượm buồn"
+          ],
+          "sai": [
+           "sáng sớm mùa xuân, cảnh vật tươi tắn, rộn ràng",
+           "đêm trăng thanh, bầu trời sáng trong, êm đềm"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Bức tranh sinh hoạt của con người: {0}",
+        "o": [
+         {
+          "dung": [
+           "ngư ông, mục tử trở về bến xa, thôn vắng lúc cuối ngày"
+          ],
+          "sai": [
+           "phiên chợ quê đông vui, người mua kẻ bán tấp nập",
+           "người nông dân hối hả gặt lúa trên cánh đồng"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B0.C16",
      "trang": 126,
      "nhom": "Phiếu học tập số 1",
      "dang": "CAU_NHO",
-     "de": "Câu 4. Tâm trạng của tác giả thể hiện như thế nào trong bài thơ? (văn bản Chiều hôm nhớ nhà của Bà Huyện Thanh Quan, Phiếu học tập số 1)"
+     "de": "Câu 4. Tâm trạng của tác giả thể hiện như thế nào trong bài thơ? (văn bản Chiều hôm nhớ nhà của Bà Huyện Thanh Quan, Phiếu học tập số 1)",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "cac": [
+       "Buồn, cô đơn, nhớ nhà da diết, không có ai để sẻ chia nỗi lòng",
+       "Vui sướng, thảnh thơi vì sắp được trở về quê nhà sau chuyến đi xa",
+       "Tự hào, phấn chấn trước cảnh đất nước thanh bình, no ấm",
+       "Mỉa mai, chua chát trước cảnh thi cử nhốn nháo, lộn xộn"
+      ],
+      "dap": "A"
+     }
     },
     {
      "ma": "B0.C17",
      "trang": 126,
      "nhom": "Phiếu học tập số 1",
      "dang": "CAU_NHO",
-     "de": "Câu 5. Đọc các chú thích trong văn bản, em có nhận xét gì về cách dùng từ ngữ của tác giả? (văn bản Chiều hôm nhớ nhà của Bà Huyện Thanh Quan, Phiếu học tập số 1)"
+     "de": "Câu 5. Đọc các chú thích trong văn bản, em có nhận xét gì về cách dùng từ ngữ của tác giả? (văn bản Chiều hôm nhớ nhà của Bà Huyện Thanh Quan, Phiếu học tập số 1)",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "cac": [
+       "Dùng nhiều từ Hán Việt, tạo vẻ trang trọng, cổ kính cho bài thơ",
+       "Dùng nhiều từ ngữ địa phương, tạo vẻ mộc mạc, gần gũi cho bài thơ",
+       "Dùng nhiều từ tượng thanh, mô phỏng tiếng chim, tiếng gió lúc chiều tà",
+       "Dùng nhiều biệt ngữ xã hội, chỉ một nhóm người nhất định mới hiểu"
+      ],
+      "dap": "A"
+     }
     },
     {
      "ma": "B0.C18",
@@ -9679,77 +10628,349 @@
      "trang": 128,
      "nhom": "Phiếu học tập số 2",
      "dang": "TRAC_NGHIEM",
-     "de": "Câu 1. Yếu tố nào không có tác dụng giúp em nhận biết đoạn trích trên đây mang những đặc điểm của thể loại truyện lịch sử? A. Sự kiện được kể lại B. Ngôi kể trong đoạn trích C. Nhân vật trong câu chuyện D. Ngôn ngữ nhân vật (văn bản Một cuộc đấu vật của Hà Ân, Phiếu học tập số 2)"
+     "de": "Câu 1. Yếu tố nào không có tác dụng giúp em nhận biết đoạn trích trên đây mang những đặc điểm của thể loại truyện lịch sử? A. Sự kiện được kể lại B. Ngôi kể trong đoạn trích C. Nhân vật trong câu chuyện D. Ngôn ngữ nhân vật (văn bản Một cuộc đấu vật của Hà Ân, Phiếu học tập số 2)",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "cac": [
+       "Sự kiện được kể lại",
+       "Ngôi kể trong đoạn trích",
+       "Nhân vật trong câu chuyện",
+       "Ngôn ngữ nhân vật"
+      ],
+      "dap": "B",
+      "hoi": "Câu 1. Yếu tố nào <b>không</b> có tác dụng giúp em nhận biết đoạn trích trên đây mang những đặc điểm của thể loại truyện lịch sử? (văn bản Một cuộc đấu vật của Hà Ân, Phiếu học tập số 2)"
+     }
     },
     {
      "ma": "B0.C20",
      "trang": 128,
      "nhom": "Phiếu học tập số 2",
      "dang": "TRAC_NGHIEM",
-     "de": "Câu 2. Đoạn trích kể lại câu chuyện xảy ra vào thời nào ở nước ta? A. Thời nhà Lý B. Thời nhà Trần C. Thời nhà Lê D. Thời nhà Nguyễn (văn bản Một cuộc đấu vật của Hà Ân, Phiếu học tập số 2)"
+     "de": "Câu 2. Đoạn trích kể lại câu chuyện xảy ra vào thời nào ở nước ta? A. Thời nhà Lý B. Thời nhà Trần C. Thời nhà Lê D. Thời nhà Nguyễn (văn bản Một cuộc đấu vật của Hà Ân, Phiếu học tập số 2)",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "cac": [
+       "Thời nhà Lý",
+       "Thời nhà Trần",
+       "Thời nhà Lê",
+       "Thời nhà Nguyễn"
+      ],
+      "dap": "B",
+      "hoi": "Câu 2. Đoạn trích kể lại câu chuyện xảy ra vào thời nào ở nước ta? (văn bản Một cuộc đấu vật của Hà Ân, Phiếu học tập số 2)"
+     }
     },
     {
      "ma": "B0.C21",
      "trang": 128,
      "nhom": "Phiếu học tập số 2",
      "dang": "TRAC_NGHIEM",
-     "de": "Câu 3. Câu nào sau đây không đúng với nhân vật đô Trâu? A. Một kẻ nguy hiểm trong tay Trần Ích Tắc. B. Một đô vật có tinh thần thượng võ. C. Một đô vật quen giật giải nhất trong các hội vật. D. Một kẻ kiêu ngạo đã phải nếm mùi thất bại. (văn bản Một cuộc đấu vật của Hà Ân, Phiếu học tập số 2)"
+     "de": "Câu 3. Câu nào sau đây không đúng với nhân vật đô Trâu? A. Một kẻ nguy hiểm trong tay Trần Ích Tắc. B. Một đô vật có tinh thần thượng võ. C. Một đô vật quen giật giải nhất trong các hội vật. D. Một kẻ kiêu ngạo đã phải nếm mùi thất bại. (văn bản Một cuộc đấu vật của Hà Ân, Phiếu học tập số 2)",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "cac": [
+       "Một kẻ nguy hiểm trong tay Trần Ích Tắc.",
+       "Một đô vật có tinh thần thượng võ.",
+       "Một đô vật quen giật giải nhất trong các hội vật.",
+       "Một kẻ kiêu ngạo đã phải nếm mùi thất bại."
+      ],
+      "dap": "B",
+      "hoi": "Câu 3. Câu nào sau đây <b>không</b> đúng với nhân vật đô Trâu? (văn bản Một cuộc đấu vật của Hà Ân, Phiếu học tập số 2)"
+     }
     },
     {
      "ma": "B0.C22",
      "trang": 129,
      "nhom": "Phiếu học tập số 2",
      "dang": "TRAC_NGHIEM",
-     "de": "Câu 4. Câu \"Bây giờ Yết Kiêu đứng kia, ngay bên cạnh ông.\" cho biết cuộc đấu vật diễn ra vào lúc nào? A. Cuộc đấu vật đang diễn ra. B. Cuộc đấu vật vừa mới kết thúc. C. Cuộc đấu vật từng diễn ra trước đây. D. Cuộc đấu vật chưa diễn ra. (văn bản Một cuộc đấu vật của Hà Ân, Phiếu học tập số 2)"
+     "de": "Câu 4. Câu \"Bây giờ Yết Kiêu đứng kia, ngay bên cạnh ông.\" cho biết cuộc đấu vật diễn ra vào lúc nào? A. Cuộc đấu vật đang diễn ra. B. Cuộc đấu vật vừa mới kết thúc. C. Cuộc đấu vật từng diễn ra trước đây. D. Cuộc đấu vật chưa diễn ra. (văn bản Một cuộc đấu vật của Hà Ân, Phiếu học tập số 2)",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "cac": [
+       "Cuộc đấu vật đang diễn ra.",
+       "Cuộc đấu vật vừa mới kết thúc.",
+       "Cuộc đấu vật từng diễn ra trước đây.",
+       "Cuộc đấu vật chưa diễn ra."
+      ],
+      "dap": "C",
+      "hoi": "Câu 4. Câu “Bây giờ Yết Kiêu đứng kia, ngay bên cạnh ông.” cho biết cuộc đấu vật diễn ra vào lúc nào? (văn bản Một cuộc đấu vật của Hà Ân, Phiếu học tập số 2)"
+     }
     },
     {
      "ma": "B0.C23",
      "trang": 129,
      "nhom": "Phiếu học tập số 2",
      "dang": "TRAC_NGHIEM",
-     "de": "Câu 5. Trong câu \"Đô Trâu đã bị quật ngã tênh hênh trên mặt đất.\", từ tênh hênh được dùng với sắc thái gì? A. Cảm phục B. Ngợi ca C. Giễu cợt D. Thông cảm (văn bản Một cuộc đấu vật của Hà Ân, Phiếu học tập số 2)"
+     "de": "Câu 5. Trong câu \"Đô Trâu đã bị quật ngã tênh hênh trên mặt đất.\", từ tênh hênh được dùng với sắc thái gì? A. Cảm phục B. Ngợi ca C. Giễu cợt D. Thông cảm (văn bản Một cuộc đấu vật của Hà Ân, Phiếu học tập số 2)",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "cac": [
+       "Cảm phục",
+       "Ngợi ca",
+       "Giễu cợt",
+       "Thông cảm"
+      ],
+      "dap": "C",
+      "hoi": "Câu 5. Trong câu “Đô Trâu đã bị quật ngã <b>tênh hênh</b> trên mặt đất.”, từ tênh hênh được dùng với sắc thái gì? (văn bản Một cuộc đấu vật của Hà Ân, Phiếu học tập số 2)"
+     }
     },
     {
      "ma": "B0.C24",
      "trang": 129,
      "nhom": "Phiếu học tập số 2",
      "dang": "TRAC_NGHIEM",
-     "de": "Câu 6. Câu nào sau đây khái quát đúng nội dung của đoạn trích? A. Đoạn trích tái hiện một lễ hội văn hoá truyền thống ở làng xã của nước ta ngày trước. B. Đoạn trích miêu tả một trận đấu vật đầy kịch tính, qua đó cho thấy rõ bản chất của các nhân vật. C. Đoạn trích đề cao tinh thần thượng võ trong truyền thống đánh giặc giữ nước của dân tộc. D. Đoạn trích làm nổi bật khả năng của Trần Quốc Tuấn trong việc thu phục người tài. (văn bản Một cuộc đấu vật của Hà Ân, Phiếu học tập số 2)"
+     "de": "Câu 6. Câu nào sau đây khái quát đúng nội dung của đoạn trích? A. Đoạn trích tái hiện một lễ hội văn hoá truyền thống ở làng xã của nước ta ngày trước. B. Đoạn trích miêu tả một trận đấu vật đầy kịch tính, qua đó cho thấy rõ bản chất của các nhân vật. C. Đoạn trích đề cao tinh thần thượng võ trong truyền thống đánh giặc giữ nước của dân tộc. D. Đoạn trích làm nổi bật khả năng của Trần Quốc Tuấn trong việc thu phục người tài. (văn bản Một cuộc đấu vật của Hà Ân, Phiếu học tập số 2)",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "cac": [
+       "Đoạn trích tái hiện một lễ hội văn hoá truyền thống ở làng xã của nước ta ngày trước.",
+       "Đoạn trích miêu tả một trận đấu vật đầy kịch tính, qua đó cho thấy rõ bản chất của các nhân vật.",
+       "Đoạn trích đề cao tinh thần thượng võ trong truyền thống đánh giặc giữ nước của dân tộc.",
+       "Đoạn trích làm nổi bật khả năng của Trần Quốc Tuấn trong việc thu phục người tài."
+      ],
+      "dap": "B",
+      "hoi": "Câu 6. Câu nào sau đây khái quát đúng nội dung của đoạn trích? (văn bản Một cuộc đấu vật của Hà Ân, Phiếu học tập số 2)"
+     }
     },
     {
      "ma": "B0.C25",
      "trang": 129,
      "nhom": "Phiếu học tập số 2",
      "dang": "CAU_NHO",
-     "de": "Câu 1. Hãy ghi tuần tự các sự việc được kể trong đoạn trích. (văn bản Một cuộc đấu vật của Hà Ân, Phiếu học tập số 2)"
+     "de": "Câu 1. Hãy ghi tuần tự các sự việc được kể trong đoạn trích. (văn bản Một cuộc đấu vật của Hà Ân, Phiếu học tập số 2)",
+     "ghep": {
+      "kieu": "BUOC",
+      "sao": 7,
+      "buoc": [
+       "Một bô lão vào thưa: có người lạ mặt, chưa đến tuổi ghi vào bạ tịch, xin tranh giải nhất với đô Trâu.",
+       "Trần Quốc Tuấn bảo cụ khuyên thằng bé tranh giải sáu, giải bảy, nhưng nó vẫn nằng nặc xin giải nhất.",
+       "Trần Quốc Tuấn cho thằng bé vào tranh rồi ra sới cầm trống; Trần Ích Tắc cũng ra ngồi xem.",
+       "Ba keo đầu, đô Trâu ỷ sức dùng đòn cao mà vẫn không quật được thằng bé.",
+       "Hai keo sau, đô Trâu phải dùng cả đòn thấp, suýt bị một miếng “móc khố” làm bật ngửa.",
+       "Keo thứ sáu, đô Trâu mải đề phòng đòn thấp nên bị thằng bé quật ngửa bằng một đòn cao.",
+       "Trần Quốc Tuấn thu nhận thằng bé vào đội quân gia nô; đó chính là Yết Kiêu."
+      ],
+      "nhieu": [
+       "Trần Ích Tắc ra lệnh cho đô Trâu nhường giải nhất cho thằng bé.",
+       "Thằng bé thua keo đầu, xin đấu lại và thắng ngay ở keo thứ hai."
+      ]
+     }
     },
     {
      "ma": "B0.C26",
      "trang": 129,
      "nhom": "Phiếu học tập số 2",
      "dang": "CAU_NHO",
-     "de": "Câu 2. Câu chuyện trong đoạn trích được kể bằng lời của người kể chuyện ngôi thứ mấy? Qua lời kể, em nhận thấy người kể chuyện không có thiện cảm với những nhân vật nào? (văn bản Một cuộc đấu vật của Hà Ân, Phiếu học tập số 2)"
+     "de": "Câu 2. Câu chuyện trong đoạn trích được kể bằng lời của người kể chuyện ngôi thứ mấy? Qua lời kể, em nhận thấy người kể chuyện không có thiện cảm với những nhân vật nào? (văn bản Một cuộc đấu vật của Hà Ân, Phiếu học tập số 2)",
+     "ghep": {
+      "kieu": "O",
+      "sao": 5,
+      "dong": [
+       {
+        "chu": "Câu chuyện được kể bằng lời người kể chuyện: {0}",
+        "o": [
+         {
+          "dung": [
+           "ngôi thứ ba"
+          ],
+          "sai": [
+           "ngôi thứ nhất"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Người kể chuyện với Trần Ích Tắc: {0}",
+        "o": [
+         {
+          "dung": [
+           "không có thiện cảm"
+          ],
+          "sai": [
+           "có thiện cảm"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Người kể chuyện với đô Trâu: {0}",
+        "o": [
+         {
+          "dung": [
+           "không có thiện cảm"
+          ],
+          "sai": [
+           "có thiện cảm"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Người kể chuyện với Trần Quốc Tuấn: {0}",
+        "o": [
+         {
+          "dung": [
+           "có thiện cảm"
+          ],
+          "sai": [
+           "không có thiện cảm"
+          ],
+          "hai": true
+         }
+        ]
+       },
+       {
+        "chu": "Người kể chuyện với Yết Kiêu: {0}",
+        "o": [
+         {
+          "dung": [
+           "có thiện cảm"
+          ],
+          "sai": [
+           "không có thiện cảm"
+          ],
+          "hai": true
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B0.C27",
      "trang": 129,
      "nhom": "Phiếu học tập số 2",
      "dang": "CAU_NHO",
-     "de": "Câu 3. Những cặp nhân vật nào trong đoạn trích có sự đối lập nhau? Sự đối lập đó có tác dụng làm nổi bật điều gì? (văn bản Một cuộc đấu vật của Hà Ân, Phiếu học tập số 2)"
+     "de": "Câu 3. Những cặp nhân vật nào trong đoạn trích có sự đối lập nhau? Sự đối lập đó có tác dụng làm nổi bật điều gì? (văn bản Một cuộc đấu vật của Hà Ân, Phiếu học tập số 2)",
+     "ghep": {
+      "kieu": "O",
+      "sao": 4,
+      "dong": [
+       {
+        "chu": "Trần Quốc Tuấn đối lập với: {0}",
+        "o": [
+         {
+          "dung": [
+           "Trần Ích Tắc"
+          ],
+          "sai": [
+           "Yết Kiêu",
+           "ông bô lão"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Yết Kiêu đối lập với: {0}",
+        "o": [
+         {
+          "dung": [
+           "đô Trâu"
+          ],
+          "sai": [
+           "Trần Quốc Tuấn",
+           "ông bô lão"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Cặp Trần Quốc Tuấn – Trần Ích Tắc làm nổi bật: {0}",
+        "o": [
+         {
+          "dung": [
+           "Trần Quốc Tuấn bao dung, quý người tài; Trần Ích Tắc hẹp hòi, thâm độc"
+          ],
+          "sai": [
+           "Trần Quốc Tuấn nóng nảy, hiếu thắng; Trần Ích Tắc hiền lành, rộng lượng",
+           "cả hai đều coi thường thằng bé, chỉ mong đô Trâu thắng"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Cặp Yết Kiêu – đô Trâu làm nổi bật: {0}",
+        "o": [
+         {
+          "dung": [
+           "Yết Kiêu gan lì, nhanh nhẹn, cao tay; đô Trâu hợm hĩnh, nôn nóng"
+          ],
+          "sai": [
+           "Yết Kiêu nhút nhát, chỉ thắng nhờ may; đô Trâu thượng võ, nhường nhịn",
+           "Yết Kiêu kiêu căng, hiếu thắng; đô Trâu hiền lành, chậm chạp"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B0.C28",
      "trang": 129,
      "nhom": "Phiếu học tập số 2",
      "dang": "CAU_NHO",
-     "de": "Câu 4. Trong đoạn trích, tác giả nhiều lần dùng cụm từ thằng bé để chỉ Yết Kiêu – một chàng trai trạc mười bảy tuổi. Theo em, cụm từ thằng bé được sử dụng ở đây có sắc thái nghĩa như thế nào? Thử tìm từ ngữ khác thay thế và rút ra nhận xét. (văn bản Một cuộc đấu vật của Hà Ân, Phiếu học tập số 2)"
+     "de": "Câu 4. Trong đoạn trích, tác giả nhiều lần dùng cụm từ thằng bé để chỉ Yết Kiêu – một chàng trai trạc mười bảy tuổi. Theo em, cụm từ thằng bé được sử dụng ở đây có sắc thái nghĩa như thế nào? Thử tìm từ ngữ khác thay thế và rút ra nhận xét. (văn bản Một cuộc đấu vật của Hà Ân, Phiếu học tập số 2)",
+     "ghep": {
+      "kieu": "O",
+      "sao": 2,
+      "dong": [
+       {
+        "chu": "Sắc thái nghĩa của “thằng bé” ở đây: {0}",
+        "o": [
+         {
+          "dung": [
+           "thân mật, trìu mến, gợi vẻ hồn nhiên, gan lì"
+          ],
+          "sai": [
+           "khinh miệt, chê Yết Kiêu là kẻ hỗn láo",
+           "trang trọng, tôn kính như với bậc anh hùng"
+          ]
+         }
+        ]
+       },
+       {
+        "chu": "Thay “thằng bé” bằng “cậu bé” thì: {0}",
+        "o": [
+         {
+          "dung": [
+           "câu văn mất đi vẻ thân mật, hóm hỉnh vốn có"
+          ],
+          "sai": [
+           "câu văn giữ nguyên mọi sắc thái, không khác gì",
+           "câu văn trở nên coi thường Yết Kiêu hơn"
+          ]
+         }
+        ]
+       }
+      ]
+     }
     },
     {
      "ma": "B0.C29",
      "trang": 129,
      "nhom": "Phiếu học tập số 2",
      "dang": "CAU_NHO",
-     "de": "Câu 5. Theo em, chi tiết Trần Quốc Tuấn thu nhận Yết Kiêu vào đội quân gia nô của mình nói lên điều gì? (văn bản Một cuộc đấu vật của Hà Ân, Phiếu học tập số 2)"
+     "de": "Câu 5. Theo em, chi tiết Trần Quốc Tuấn thu nhận Yết Kiêu vào đội quân gia nô của mình nói lên điều gì? (văn bản Một cuộc đấu vật của Hà Ân, Phiếu học tập số 2)",
+     "ghep": {
+      "kieu": "CHON",
+      "sao": 1,
+      "cac": [
+       "Trần Quốc Tuấn có con mắt tinh tường, biết trọng dụng người tài để lo việc lớn",
+       "Trần Quốc Tuấn muốn lấy lòng Trần Ích Tắc nên giữ thằng bé lại bên mình",
+       "Trần Quốc Tuấn thương hại thằng bé nghèo khổ, không có nơi nương tựa",
+       "Trần Quốc Tuấn chỉ muốn có thêm người hầu hạ việc vặt trong phủ"
+      ],
+      "dap": "A"
+     }
     },
     {
      "ma": "B0.C30",
