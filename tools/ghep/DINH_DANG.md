@@ -213,12 +213,13 @@ Chép từ bản quét SGK Tiếng Anh 8 Global Success, đợt đầu Unit 1 t�
 
 ## SGK Ngữ văn (`van8t1`, `van8t2`, từ 11/10/2026)
 
-Anh Huy cho soạn thử Bài 1 "Câu chuyện của lịch sử" của `van8t1` (31 câu ghép) để xem màn. Các luật dưới đây anh Huy chốt ngày 11 và 12/10/2026 hoặc rút ra lúc soát ảnh màn:
+Anh Huy cho soạn thử Bài 1 "Câu chuyện của lịch sử" của `van8t1` (31 câu ghép) để xem màn, rồi ngày 12/10/2026 cho soạn cả hai tập theo các luật dưới đây. Các luật dưới đây anh Huy chốt ngày 11 và 12/10/2026 hoặc rút ra lúc soát ảnh màn:
 
 - Câu đọc hiểu hỏi phân tích (tâm trạng, ý nghĩa, vì sao, tác dụng) đổi thành câu chọn ý đúng nhất: `CHON` khi sách hỏi một ý, `O` khi sách hỏi nhiều vế (mỗi vế một dòng, một ô). Phương án sai là cách hiểu sai hay gặp, kể cả chi tiết của văn bản khác trong cùng bài. Đáp án đúng không được dài hơn hẳn các phương án sai, vì con dễ đoán theo độ dài.
 - Câu không có đáp án chung (chia sẻ cảm nghĩ, em thích nhân vật nào, tự tìm đọc truyện) và câu viết đoạn, viết bài thì không ghép. Màn "Làm bài tập trong SGK" môn Văn không hiện các câu này (`BaiSgkActivity.coHien`), và từ 12/10/2026 Văn không nộp ảnh nữa, kể cả "Bài khác" (`LamTrenMay.CHI_TREN_MAY`): các câu này không nộp qua app. Câu Trước khi đọc hỏi hiểu biết (nhân vật thiếu nhi lỗi lạc, điều đúng sai về Quang Trung) thì vẫn ghép.
 - Máy hiện nguyên đề trong sách (`de`), như các môn khác: không viết lại câu hỏi cho khớp kiểu bấm, các nút bên dưới tự cho biết việc phải làm (anh Huy hỏi ngày 12/10/2026). Chỉ câu in liền các ví dụ a, b, c mà các dòng chọn đã chép lại mới có `hoi`: giữ nguyên lời dẫn của sách, bỏ phần ví dụ. Văn bản dài không chép vào máy, con đọc trong SGK giấy.
 - Thực hành tiếng Việt: `O`, mỗi câu ví dụ một dòng, chép đủ như sách kể cả tên tác giả, tác phẩm, rồi một ô chọn từ và một ô nghĩa hay tác dụng. Từ đặt trong ngoặc kép (“gà”, “chừ”): phím hai ký tự trở xuống hiện chữ to hơn các phím khác (`KhungGhep.nut`).
+- Đáp án đối chiếu loigiaihay và VietJack, đọc văn bản trong SGK trước khi soạn. Hai nguồn vênh nhau hay một nguồn sai thì theo chữ trong SGK; còn không chắc thì không hỏi điểm đó, kể cả làm phương án nhiễu. Câu hỏi bài học, nhận thức cho bản thân mà hai nguồn cùng một ý thì vẫn ghép (đúng/sai, nên/không nên).
 - Ô hai giá trị dùng nhãn rõ nghĩa ("có nhắc"/"không nhắc", "nên tránh"/"dùng được", "ý nghĩ của Quốc Toản"/"lời kể, tả của người kể chuyện") thay cho "Có"/"Không".
 - Từ 12/10/2026 Văn chạy như các môn khác (anh Huy chốt): trang Luyện tập có khu Ngữ văn (Bài đã học, Ôn tập, Làm bài tập trong SGK, một dòng Luyện tập, Câu đã làm đúng); Văn chưa có bộ thẻ, bộ đề nên không có dòng Kiểm tra và Đề thi thử. Bài Văn mang tên văn bản, nên số bài cho mốc "Bài đã học" đọc từ tên chương (`PhanHoc.soBaiCua`); mục "Ôn tập học kì" không có số bài, chỉ làm ở "Làm bài tập trong SGK". Ôn tập Văn hẹn 10 ngày rồi 30 ngày (`KhoBai.KHOANG_HEN_NGAY_VAN`), các môn khác vẫn 3, 10, 20, 30 ngày.
 
