@@ -91,9 +91,12 @@ fi
 runuser -u lehoa -- dbus-run-session -- gsettings set org.mate.peripherals-mouse cursor-size 48 \
     || echo "chua dat duoc co con tro cho lehoa"
 # Timekpr-nExt: 45 phut moi ngay, qua 0 gio tu dat lai (anh Huy chot 11/10/2026, ngay nao cung
-# vay, khong chan gio; truoc do 0 phut, chi co phut khi duoc cap). Het gio thi dang xuat, khong tu
-# bao (chi bao tieng Viet tu netflix_gio.py, anh Huy chon 7/10/2026).
+# vay; truoc do 0 phut, chi co phut khi duoc cap). Het gio thi dang xuat, khong tu bao (chi bao
+# tieng Viet tu netflix_gio.py, anh Huy chon 7/10/2026). Tu 19/10/2026 chi dung duoc tu 6:00 toi
+# 21:30, ca bay ngay (anh Huy chot); 21:30 dang xem thi dang xuat nhu het phut. Doi khung nay thi
+# sua ca hop chu "Quá giờ xem phim" trong netflix-phien.
 timekpra --settimelimits lehoa "2700;2700;2700;2700;2700;2700;2700" >/dev/null
+timekpra --setallowedhours lehoa ALL "6;7;8;9;10;11;12;13;14;15;16;17;18;19;20;21[00-30]" >/dev/null
 timekpra --setlockouttype lehoa terminate >/dev/null
 timekpra --sethidetrayicon lehoa true >/dev/null
 systemctl daemon-reload

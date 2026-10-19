@@ -67,7 +67,7 @@ if [ ! -f /run/netflix-gio/conlai ]; then
     kill $cho 2>/dev/null
 fi
 con=0
-if read giay dung luc < /run/netflix-gio/conlai 2>/dev/null; then
+if read giay dung luc chan < /run/netflix-gio/conlai 2>/dev/null; then
     case "$giay$dung$luc" in
         *[!0-9]*|"") con=0 ;;
         *)
@@ -76,10 +76,18 @@ if read giay dung luc < /run/netflix-gio/conlai 2>/dev/null; then
             ;;
     esac
 fi
+# Tu 19/10/2026 lehoa chi dung duoc tu 6:00 toi 21:30 (khung gio Timekpr-nExt dat trong cai.sh).
+# Cot thu tu cua file la 1 khi khung gio chan chu khong phai het phut: luc do doi phut choi cung
+# khong xem duoc, nen hop chu noi gio duoc xem. Doi khung gio trong cai.sh thi sua ca chu o day.
+# Doc lai file luc goi, vi man chon tra ma 3 co khi la lau sau luc dang nhap.
 het_phut() {
-    zenity --info --title "Xem phim" --width=460 --timeout=10 \
-        --text "Hết phút xem phim.\n\nĐổi phút chơi trên tablet rồi đăng nhập lại. Nếu vừa đổi thì chờ một chút." \
-        2>/dev/null
+    chan=$(awk '{print $4}' /run/netflix-gio/conlai 2>/dev/null)
+    if [ "$chan" = 1 ]; then
+        chu="Quá giờ xem phim.\n\nLaptop chỉ xem được từ 6:00 tới 21:30."
+    else
+        chu="Hết phút xem phim.\n\nĐổi phút chơi trên tablet rồi đăng nhập lại. Nếu vừa đổi thì chờ một chút."
+    fi
+    zenity --info --title "Xem phim" --width=460 --timeout=10 --text "$chu" 2>/dev/null
     exit 0
 }
 [ "$con" -le 30 ] && het_phut
