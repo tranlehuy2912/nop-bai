@@ -29,6 +29,9 @@
 #     Laptop bo cung ngay).
 #  8. Tu 11/10/2026 ghi truong remote { ip, cong, khoa }: dia chi trong Wi-Fi nha va ma khoa cua
 #     netflix-remote, de man Remote tren dien thoai noi thang toi laptop (xem thong_tin_remote).
+#  9. Tu 19/10/2026 dat khung gio Le Hoa duoc dung laptop vao Timekpr-nExt (timekpra
+#     --setallowedhours): Ba Huy doi gio mo, gio khoa o Cai dat cua Bang dieu khien (truong
+#     khungGio), laptop dat lai va ghi khung dang ap vao truong khungDangDat (xem May.dat_khung).
 #
 # Phan lon chi dung thu vien chuan cua Python 3 (Mint 22 co san 3.12). Rieng ket noi nghe
 # (9/10/2026) dung thu vien Firestore cua Google (google-cloud-firestore, kem grpcio), cai bang
@@ -101,6 +104,10 @@ LUAT_FIREFOX = "/etc/firefox/policies/policies.json"
 # giay van dung. Cot cuoi (19/10/2026) de netflix-phien bao "qua gio xem phim" thay cho "het phut".
 FILE_CON_LAI = "/run/netflix-gio/conlai"
 
+# Chu khung gio dang ap, vd "6:00 tới 21:30" (19/10/2026), cho hop "Quá giờ xem phim" cua
+# netflix-phien. Khong co khung (dung ca ngay) thi khong co file.
+FILE_KHUNG = "/run/netflix-gio/khung"
+
 # --- lenh tu Bang dieu khien (8/10/2026), ten phai giong Duong.LenhLaptop ben ba app ---
 LENH_NHAN = "NHAN"
 LENH_CHUP = "CHUP"
@@ -146,6 +153,22 @@ def ghi_con_lai(giay, dung, chan):
         f.write("%d %d %d %d\n" % (giay, 1 if dung else 0, int(time.time()), chan))
     os.chmod(tam, 0o644)
     os.replace(tam, FILE_CON_LAI)
+
+
+def ghi_khung(chu):
+    """Ghi FILE_KHUNG cho netflix-phien; [chu] None thi xoa file."""
+    if chu is None:
+        try:
+            os.remove(FILE_KHUNG)
+        except FileNotFoundError:
+            pass
+        return
+    os.makedirs(os.path.dirname(FILE_KHUNG), mode=0o755, exist_ok=True)
+    tam = FILE_KHUNG + ".tam"
+    with open(tam, "w") as f:
+        f.write(chu + "\n")
+    os.chmod(tam, 0o644)
+    os.replace(tam, FILE_KHUNG)
 
 # Chan moi trang tru Netflix va cac ten mien chua phim, anh cua no. Kiosk thi khong co thanh
 # dia chi, nhung con bam link trong Netflix (Trung tam tro giup, trang ngoai) thi van ra web,
@@ -382,12 +405,12 @@ class Firebase:
 class Nghe:
     """Ket noi nghe Firestore (9/10/2026), chi dung de bam chuong cho vong chinh.
 
-    Ba ket noi: document laptop/{maNha} (truong moWeb), phieu cap/, lenh/. Co phieu hay lenh moi
-    (hay doi), hay moWeb doi gia tri, thi dat [chuong] (threading.Event) de vong chinh thuc day
+    Ba ket noi: document laptop/{maNha} (truong moWeb, khungGio), phieu cap/, lenh/. Co phieu hay lenh
+    moi (hay doi), hay moWeb, khungGio doi gia tri, thi dat [chuong] (threading.Event) de vong chinh thuc day
     ngay va lam nhu cu bang REST: doc document, xu ly phieu, lenh roi xoa. Viec xu ly khong nam o
     day, vi cac ham goi lai chay tren luong cua thu vien, con cong gio, lam lenh phai o vong chinh.
     Laptop tu xoa phieu, lenh da lam (bao REMOVED) va tu ghi trang thai vao chinh document
-    laptop/{maNha} (bao MODIFIED), nen bo qua REMOVED va chi xet moWeb, khong thi moi lan ghi la
+    laptop/{maNha} (bao MODIFIED), nen bo qua REMOVED va chi xet moWeb, khungGio, khong thi moi lan ghi la
     mot lan tu danh thuc.
 
     Dang nhap bang chinh the an danh cua lop Firebase: Firestore nhan the do o ket noi gRPC nhu o
@@ -401,7 +424,8 @@ class Nghe:
         self.fb = fb
         self.chuong = chuong
         self.ket_noi = []
-        self.mo_web = None
+        # (moWeb, khungGio) lan thay truoc.
+        self.da_thay = None
 
     def mo(self):
         # Nhap o day chu khong o dau file: chay bang python3 he thong (dangky, mot) thi khong co
@@ -430,9 +454,10 @@ class Nghe:
 
     def _document(self, cac_ban, thay_doi, luc_doc):
         for ban in cac_ban:
-            mo_web = bool((ban.to_dict() or {}).get("moWeb", False))
-            if mo_web != self.mo_web:
-                self.mo_web = mo_web
+            d = ban.to_dict() or {}
+            thay = (bool(d.get("moWeb", False)), d.get("khungGio"))
+            if thay != self.da_thay:
+                self.da_thay = thay
                 self.chuong.set()
 
     def _moi(self, cac_ban, thay_doi, luc_doc):
@@ -481,76 +506,164 @@ def chu(truong, ten):
 
 # ----------------------------------------------------------------- Timekpr-nExt
 
-def het_khung_luc(gio_cho_phep, luc):
-    """Giay thu may trong ngay thi het khung gio dang o, None neu [luc] nam ngoai khung.
+def giay_trong_ngay(luc):
+    return luc.tm_hour * 3600 + luc.tm_min * 60 + luc.tm_sec
 
-    [gio_cho_phep] la dong ALLOWED_HOURS_<thu> cua Timekpr-nExt, vd "6;7;...;20;21[0-30]": moi gio
-    mot muc, [a-b] la chi tu phut a toi phut b, dau ! la gio duoc dung ma khong tru phut. Cac gio
-    noi lien nhau tinh la mot khung."""
-    khung = []
-    for muc in gio_cho_phep.split(";"):
+
+def thu_timekpr(luc):
+    """So ngay cua Timekpr-nExt: 1 (thu hai) toi 7 (chu nhat)."""
+    return luc.tm_wday + 1
+
+
+def gop_khoang(ds):
+    """Gop cac khoang (giay dau, giay cuoi) chong hay noi lien nhau, xep theo dau, bo khoang rong."""
+    ra = []
+    for dau, cuoi in sorted(k for k in ds if k[1] > k[0]):
+        if ra and dau <= ra[-1][1]:
+            ra[-1] = (ra[-1][0], max(ra[-1][1], cuoi))
+        else:
+            ra.append((dau, cuoi))
+    return ra
+
+
+def khoang_timekpr(gio_cho_phep):
+    """Dong ALLOWED_HOURS_<thu> cua Timekpr-nExt ra cac khoang giay trong ngay, da gop.
+
+    Vd "6;7;...;20;21[0-30]": moi gio mot muc, [a-b] la chi tu phut a toi phut b, dau ! la gio duoc
+    dung ma khong tru phut. Cac gio noi lien nhau thanh mot khoang."""
+    ds = []
+    for muc in (gio_cho_phep or "").split(";"):
         m = re.fullmatch(r"!?(\d+)(?:\[(\d+)-(\d+)\])?", muc.strip())
         if m:
             gio = int(m.group(1))
-            khung.append((gio * 3600 + int(m.group(2) or 0) * 60,
-                          gio * 3600 + int(m.group(3) or 60) * 60))
-    bay_gio = luc.tm_hour * 3600 + luc.tm_min * 60 + luc.tm_sec
-    het = None
-    for dau, cuoi in sorted(khung):
-        if het is None:
-            if dau <= bay_gio < cuoi:
-                het = cuoi
-        elif dau <= het:
-            het = max(het, cuoi)
-        else:
-            break
-    return het
+            ds.append((gio * 3600 + int(m.group(2) or 0) * 60,
+                       gio * 3600 + int(m.group(3) or 60) * 60))
+    return gop_khoang(ds)
 
 
-def timekpr_doc(nguoi, dung):
-    """(so giay con lai trong ngay theo Timekpr-nExt, dong khung gio hom nay hay None), None neu
-    khong doc duoc."""
-    # getuserinfo in khung gio (ALLOWED_HOURS_<thu>), so luu gan nhat (TIME_LEFT_DAY), va luc nguoi
-    # do dang dang nhap thi them so dang chay (ACTUAL_TIME_LEFT_DAY, giong getuserinfort).
+def chuoi_timekpr(khoang):
+    """Nguoc cua khoang_timekpr: chuoi cho timekpra --setallowedhours, viet nhu Timekpr-nExt in ra
+    ("21[0-30]") de so duoc voi dong no in. Dau khoang lam tron lui ve phut, cuoi tien len phut.
+
+    Moi gio chi ghi duoc mot doan phut. Gio co hai doan (khung qua dem mo va khoa trong cung mot
+    gio, vd mo 6:30 khoa 6:10) thi lay tu dau doan truoc toi cuoi doan sau, ca gio do duoc dung."""
+    muc = []
+    for gio in range(24):
+        a = gio * 3600
+        phan = [(max(dau, a), min(cuoi, a + 3600)) for dau, cuoi in khoang if dau < a + 3600 and cuoi > a]
+        if not phan:
+            continue
+        dau = (min(p[0] for p in phan) - a) // 60
+        cuoi = -(-(max(p[1] for p in phan) - a) // 60)
+        muc.append(str(gio) if dau == 0 and cuoi == 60 else "%d[%d-%d]" % (gio, dau, cuoi))
+    return ";".join(muc)
+
+
+def khoang_cua_khung(tu, toi):
+    """Khung Ba Huy chon (phut tinh tu 0 gio) ra cac khoang giay. tu bang toi la dung ca ngay, tu
+    lon hon toi la khoa qua dem: vd mo 6:00 khoa 0:00 la tu 6:00 toi het ngay."""
+    if tu == toi:
+        return [(0, 86400)]
+    if tu < toi:
+        return [(tu * 60, toi * 60)]
+    return gop_khoang([(0, toi * 60), (tu * 60, 86400)])
+
+
+def khung_cua_khoang(khoang):
+    """Nguoc cua khoang_cua_khung: (tu, toi) phut, None neu khong phai mot khung (khong co gio nao
+    duoc dung, hay hai khung tach roi trong ngay)."""
+    if khoang == [(0, 86400)]:
+        return (0, 0)
+    if len(khoang) == 1:
+        return (khoang[0][0] // 60, khoang[0][1] // 60 % 1440)
+    if len(khoang) == 2 and khoang[0][0] == 0 and khoang[1][1] == 86400:
+        return (khoang[1][0] // 60, khoang[0][1] // 60)
+    return None
+
+
+def chu_khung(khung):
+    """"6:00 tới 21:30"."""
+    return "%d:%02d tới %d:%02d" % (divmod(khung[0], 60) + divmod(khung[1], 60))
+
+
+def doc_khung(o):
+    """Truong khungGio cua Firestore (REST) ra (tu, toi) phut, None neu chua co hay sai."""
+    f = (o or {}).get("mapValue", {}).get("fields", {})
+    try:
+        tu, toi = int(f["tu"]["integerValue"]), int(f["toi"]["integerValue"])
+    except (KeyError, TypeError, ValueError):
+        return None
+    return (tu, toi) if 0 <= tu < 1440 and 0 <= toi < 1440 else None
+
+
+def het_khung(khoang, giay):
+    """Giay thu may trong ngay thi het khoang chua [giay], None neu [giay] nam ngoai moi khoang."""
+    for dau, cuoi in khoang:
+        if dau <= giay < cuoi:
+            return cuoi
+    return None
+
+
+def het_khung_luc(gio_cho_phep, luc):
+    """Giay thu may trong ngay thi het khung gio dang o, None neu [luc] nam ngoai khung.
+    [gio_cho_phep] la dong ALLOWED_HOURS_<thu> cua Timekpr-nExt, xem khoang_timekpr."""
+    return het_khung(khoang_timekpr(gio_cho_phep), giay_trong_ngay(luc))
+
+
+def timekpr_thong_tin(nguoi):
+    """Cac dong cua timekpra --getuserinfo thanh dict, rong neu Timekpr-nExt chua chay."""
     r = subprocess.run(["timekpra", "--getuserinfo", nguoi], capture_output=True, text=True)
     gia_tri = {}
     for dong in r.stdout.splitlines():
         ten, _, v = dong.partition(":")
         gia_tri[ten.strip()] = v.strip()
-    # Timekpr-nExt danh so ngay tu 1 (thu hai) toi 7 (chu nhat).
-    gio_cho_phep = gia_tri.get("ALLOWED_HOURS_%d" % (time.localtime().tm_wday + 1))
+    return gia_tri
+
+
+def timekpr_doc(nguoi, dung):
+    """(so giay con lai trong ngay theo Timekpr-nExt, dong khung gio hom nay, dong khung gio ngay
+    mai), dong khung la None khi khong co; None neu khong doc duoc."""
+    # getuserinfo in khung gio (ALLOWED_HOURS_<thu>), so luu gan nhat (TIME_LEFT_DAY), va luc nguoi
+    # do dang dang nhap thi them so dang chay (ACTUAL_TIME_LEFT_DAY, giong getuserinfort).
+    gia_tri = timekpr_thong_tin(nguoi)
+    thu = thu_timekpr(time.localtime())
+    hom_nay = gia_tri.get("ALLOWED_HOURS_%d" % thu)
+    mai = gia_tri.get("ALLOWED_HOURS_%d" % (thu % 7 + 1))
     for ten in (("ACTUAL_TIME_LEFT_DAY", "TIME_LEFT_DAY") if dung else ("TIME_LEFT_DAY",)):
         try:
-            return int(gia_tri[ten]), gio_cho_phep
+            return int(gia_tri[ten]), hom_nay, mai
         except (KeyError, ValueError):
             pass
     return None
 
 
 def timekpr_con_lai(nguoi, dung):
-    """(so giay con lai, 1 neu do khung gio chan chu khong phai het phut), None neu khong doc duoc.
+    """(so giay con lai, 1 neu do khung gio chan chu khong phai het phut, dong khung gio ngay mai),
+    None neu khong doc duoc.
 
-    Tu 19/10/2026 Le Hoa chi dung duoc tu 6:00 toi 21:30 (khung gio cua Timekpr-nExt, anh Huy
-    chot). So cua Timekpr-nExt da tinh khung gio cho phan con lai cua ngay, nen 21:00 con 45 phut thi
-    no ghi 30 phut, 22:00 thi ghi 0. Nhung tu 0:00 toi 6:00 no van ghi 45 phut, vi no cong ca cac gio
-    duoc dung ve sau trong ngay, du luc do chua duoc dung. netflix-phien ma tin so do thi mo Netflix,
-    va Timekpr-nExt khong chan o man dang nhap: vao duoc khoang 20 giay roi moi bi day ra, bam dang
-    nhap lien tuc la xem duoc tung doan. Nen o day lay them so giay tu bay gio toi het khung, va
-    tra ve so nho hon.
+    Tu 19/10/2026 Le Hoa chi dung duoc trong khung gio cua Timekpr-nExt (6:00 toi 21:30, anh Huy
+    chot; Ba Huy doi duoc tren Bang dieu khien). So cua Timekpr-nExt da tinh khung gio cho phan con
+    lai cua ngay, nen 21:00 con 45 phut thi no ghi 30 phut, 22:00 thi ghi 0. Nhung tu 0:00 toi 6:00
+    no van ghi 45 phut, vi no cong ca cac gio duoc dung ve sau trong ngay, du luc do chua duoc dung.
+    netflix-phien ma tin so do thi mo Netflix, va Timekpr-nExt khong chan o man dang nhap: vao duoc
+    khoang 20 giay roi moi bi day ra, bam dang nhap lien tuc la xem duoc tung doan. Nen o day lay
+    them so giay tu bay gio toi het khung, va tra ve so nho hon.
     """
     doc = timekpr_doc(nguoi, dung)
     if doc is None:
         return None
-    con, gio_cho_phep = doc
-    if gio_cho_phep is None:
-        return con, 0
-    luc = time.localtime()
-    het = het_khung_luc(gio_cho_phep, luc)
-    trong_khung = 0 if het is None else het - (luc.tm_hour * 3600 + luc.tm_min * 60 + luc.tm_sec)
-    # Khung keo toi 24:00 thi khong tinh la khung chan: qua 0 gio la ngay moi, Timekpr-nExt khong
-    # dang xuat.
-    chan = (het is None or het < 86400) and trong_khung <= con
-    return min(con, trong_khung), 1 if chan else 0
+    con, hom_nay, mai = doc
+    if hom_nay is None:
+        return con, 0, mai
+    giay = giay_trong_ngay(time.localtime())
+    het = het_khung(khoang_timekpr(hom_nay), giay)
+    trong_khung = 0 if het is None else het - giay
+    # Khung keo toi 24:00 ma ngay mai mo tu 0 gio thi khong tinh la khung chan: qua 0 gio la ngay
+    # moi, Timekpr-nExt khong dang xuat. Ngay mai khong mo tu 0 gio (Ba Huy dat "khoá lúc 0:00")
+    # thi 0 gio la bi dang xuat that.
+    qua_dem = het == 86400 and (mai is None or het_khung(khoang_timekpr(mai), 0) is not None)
+    chan = not qua_dem and trong_khung <= con
+    return min(con, trong_khung), 1 if chan else 0, mai
 
 
 def cong_gio(nguoi, giay):
@@ -904,6 +1017,16 @@ class May:
         # Ba Huy co bam "Mở web" khong. Mac dinh khoa: chua doc duoc Firestore thi khoa.
         self.mo_web = False
         self.web_dang_mo = None
+        # Khung gio Ba Huy chon (tu, toi) phut, doc tu truong khungGio; None khi Ba Huy chua doi lan
+        # nao, luc do giu khung dang dat trong Timekpr-nExt. khung_da_dat: chuoi tung ngay (1..7) da
+        # dat lan truoc, de khoi goi timekpra moi vong. giu_them: (ngay, giay dau, giay cuoi) hom nay
+        # giu them cho Le Hoa khi khung moi cat ngang luc dang xem, xem dat_khung.
+        self.khung = None
+        self.khung_da_dat = None
+        self.giu_them = None
+        # Khung Timekpr-nExt dang ap (tu, toi), cho truong khungDangDat; va chu da ghi ra FILE_KHUNG.
+        self.khung_dang_dat = None
+        self.chu_khung_da_ghi = False
         # Da lay gio mang lan nao trong lan chay nay chua; roi thi thoi hoi.
         self.gio_dung = False
         # Ket qua nam lenh gan nhat (truong ketQua, moi muc { id, kieu, ok, chu, luc }), dien
@@ -1125,14 +1248,17 @@ class May:
     def day_trang_thai(self, con_lai, dung):
         bay_gio = int(time.time() * 1000)
         ket_thuc = bay_gio + con_lai * 1000 if dung and con_lai > 0 else 0
+        khung = self.khung_dang_dat
         ban = {"ketThucLuc": ket_thuc, "conLaiMs": con_lai * 1000, "dangDung": dung,
-               "webDangMo": bool(self.web_dang_mo)}
+               "webDangMo": bool(self.web_dang_mo),
+               "khungDangDat": {"tu": khung[0], "toi": khung[1]} if khung else None}
         cu = self.da_day
         remote = thong_tin_remote()
         can = (cu is None or cu["dangDung"] != dung or self.cap_cuoi is not None
                or self.can_day
                or remote != self.remote_da_ghi
                or cu["webDangMo"] != ban["webDangMo"]
+               or cu["khungDangDat"] != ban["khungDangDat"]
                or abs(cu["ketThucLuc"] - ket_thuc) > LECH_GHI_MS
                or (not dung and abs(cu["conLaiMs"] - ban["conLaiMs"]) >= 60_000))
         if not can:
@@ -1148,6 +1274,8 @@ class May:
             truong["ketQua"] = self.ket_qua
         if remote:
             truong["remote"] = remote
+        if truong["khungDangDat"] is None:
+            del truong["khungDangDat"]
         self.fb.ghi_trang_thai(truong)
         self.da_day = ban
         self.remote_da_ghi = remote
@@ -1183,6 +1311,82 @@ class May:
             self.nghe.dong()
             self.nghe = None
 
+    def dat_khung(self, dung):
+        """Dat khung gio Ba Huy chon tren Bang dieu khien (truong khungGio, 19/10/2026) vao
+        Timekpr-nExt, chung cho ca bay ngay (anh Huy chot).
+
+        Le Hoa dang xem ma khung moi cat ngang (vd 21:10 Ba Huy doi gio khoa thanh 21:00) thi hom nay
+        giu them toi 5 phut tu luc doi, khong qua luc khung cu het: vong bao "Còn 5 phút" nhu luc
+        sap het khung, roi Timekpr-nExt dang xuat (anh Huy chot bao truoc 5 phut, 19/10/2026). Le Hoa
+        dang xuat som hon hay het 5 phut thi bo phan giu them, hom nay theo dung khung moi.
+        """
+        if self.khung is None or not self.gio_dung:
+            return
+        luc = time.localtime()
+        giay = giay_trong_ngay(luc)
+        thu = thu_timekpr(luc)
+        ngay = time.strftime("%Y-%m-%d", luc)
+        goc = khoang_cua_khung(*self.khung)
+        thuan = chuoi_timekpr(goc)
+        muon = {d: thuan for d in range(1, 8)}
+        gh = self.giu_them
+        if gh is not None and (gh[0] != ngay or not dung or giay >= gh[2]):
+            gh = self.giu_them = None
+        if gh is not None:
+            muon[thu] = chuoi_timekpr(gop_khoang(goc + [gh[1:]]))
+        if muon == self.khung_da_dat:
+            return
+        gia_tri = timekpr_thong_tin(self.nguoi)
+        if not gia_tri:
+            raise RuntimeError("chua doc duoc Timekpr-nExt")
+        hien = {d: chuoi_timekpr(khoang_timekpr(gia_tri.get("ALLOWED_HOURS_%d" % d))) for d in range(1, 8)}
+        if dung and gh is None and hien[thu] != muon[thu]:
+            het_cu = het_khung(khoang_timekpr(hien[thu]), giay)
+            if het_cu is not None:
+                # Lam tron xuong phut (Timekpr-nExt chi nhan phut chan): con duoi 5 phut nen vong
+                # nay bao "Còn 5 phút" luon.
+                toi = min((giay + BAO_TRUOC_GIAY) // 60 * 60, het_cu)
+                het_moi = het_khung(goc, giay)
+                if het_moi is None or het_moi < toi:
+                    self.giu_them = (ngay, giay // 60 * 60, toi)
+                    muon[thu] = chuoi_timekpr(gop_khoang(goc + [self.giu_them[1:]]))
+                    ghi_log("khung gio moi cat ngang luc Le Hoa dang xem, giu toi %d:%02d"
+                            % divmod(toi // 60, 60))
+        doi = [d for d in range(1, 8) if hien[d] != muon[d]]
+        if len(doi) > 1:
+            # Moi lan goi timekpra la bon dong nhat ky: dat ca tuan mot lan, roi rieng hom nay neu
+            # dang giu them.
+            cac = [("ALL", thuan)] + [(str(d), muon[d]) for d in range(1, 8) if muon[d] != thuan]
+        else:
+            cac = [(str(d), muon[d]) for d in doi]
+        for ngay_tk, chuoi in cac:
+            r = subprocess.run(["timekpra", "--setallowedhours", self.nguoi, ngay_tk, chuoi],
+                               capture_output=True, text=True)
+            if r.returncode != 0:
+                raise RuntimeError("timekpra --setallowedhours %s %s: %s %s"
+                                   % (ngay_tk, chuoi, r.stdout.strip(), r.stderr.strip()))
+            ghi_log("dat khung gio ngay %s: %s" % (ngay_tk, chuoi))
+        self.khung_da_dat = muon
+
+    def xet_khung_dang_dat(self, gio_mai):
+        """Khung Timekpr-nExt dang ap, doc o dong ngay mai (dong hom nay co the dang giu them 5 phut):
+        ghi chu ra FILE_KHUNG cho netflix-phien, va de day_trang_thai ghi truong khungDangDat."""
+        if gio_mai is None:
+            return
+        khoang = khoang_timekpr(gio_mai)
+        if self.khung is not None and chuoi_timekpr(khoang) == chuoi_timekpr(khoang_cua_khung(*self.khung)):
+            khung = self.khung
+        else:
+            khung = khung_cua_khoang(khoang)
+            if self.khung is not None:
+                # Timekpr-nExt khong theo khung Ba Huy chon (ai doi tay, hay dat hong): vong sau dat lai.
+                self.khung_da_dat = None
+        self.khung_dang_dat = khung
+        chu = chu_khung(khung) if khung and khung[0] != khung[1] else None
+        if chu != self.chu_khung_da_ghi:
+            ghi_khung(chu)
+            self.chu_khung_da_ghi = chu
+
     def vong(self):
         dung = dang_dung(self.nguoi)
         # Le Hoa dang nhap thi khoa web truoc tien, truoc ca khi hoi Firestore: mat mang thi
@@ -1209,7 +1413,9 @@ class May:
         if self.can_hoi or (not dang_nghe and time.time() - self.lan_hoi >= HOI_PHIEU_GIAY):
             self.lan_hoi = time.time()
             try:
-                self.mo_web = self.fb.doc_laptop().get("moWeb", {}).get("booleanValue", False)
+                truong = self.fb.doc_laptop()
+                self.mo_web = truong.get("moWeb", {}).get("booleanValue", False)
+                self.khung = doc_khung(truong.get("khungGio"))
                 if self.gio_dung:
                     self.xu_ly_phieu()
                     self.xu_ly_lenh()
@@ -1224,6 +1430,10 @@ class May:
         if dat_luat_firefox(not mo):
             ghi_log("mo web" if mo else "khoa web")
         self.web_dang_mo = mo
+        try:
+            self.dat_khung(dung)
+        except Exception as e:  # Timekpr-nExt chua chay, timekpra bao loi: vong sau dat lai
+            ghi_log("dat khung gio hong:", e)
         if loi_mang is not None:
             raise loi_mang
         doc = timekpr_con_lai(self.nguoi, dung)
@@ -1232,15 +1442,18 @@ class May:
             # Vua khoi dong may thi Timekpr-nExt thuong chua chay. Chua co FILE_CON_LAI thi
             # netflix-phien coi la het phut, nen thu lai sau NHIP_DANG_DUNG chu khong cho mot phut.
             return True
-        con_lai, chan = doc
+        con_lai, chan, gio_mai = doc
+        self.xet_khung_dang_dat(gio_mai)
         ghi_con_lai(con_lai, dung, chan)
         if dung and 60 < con_lai <= BAO_TRUOC_GIAY and not self.da_bao:
             self.da_bao = True
             if chan:
                 # Doi them phut luc nay cung khong xem duoc, nen khong nhac doi phut choi.
                 # Cong 30 giay de lam tron ve phut gan nhat: 21:25:10 con 290 giay ra 21:30.
-                loi = "%s laptop tự đăng xuất, sáng mai mới xem tiếp được." % gio_phut(
-                    (time.time() + con_lai + 30) * 1000)
+                k = self.khung_dang_dat
+                loi = "%s laptop tự đăng xuất, %s mới xem tiếp được." % (
+                    gio_phut((time.time() + con_lai + 30) * 1000),
+                    "%02d:%02d" % divmod(k[0], 60) if k and k[0] != k[1] else "sáng mai")
             else:
                 loi = "Hết giờ laptop tự đăng xuất. Muốn xem thêm thì đổi phút chơi trên tablet."
             bao(self.nguoi, "Còn %d phút xem phim" % ((con_lai + 59) // 60), loi)

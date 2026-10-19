@@ -76,14 +76,18 @@ if read giay dung luc chan < /run/netflix-gio/conlai 2>/dev/null; then
             ;;
     esac
 fi
-# Tu 19/10/2026 lehoa chi dung duoc tu 6:00 toi 21:30 (khung gio Timekpr-nExt dat trong cai.sh).
-# Cot thu tu cua file la 1 khi khung gio chan chu khong phai het phut: luc do doi phut choi cung
-# khong xem duoc, nen hop chu noi gio duoc xem. Doi khung gio trong cai.sh thi sua ca chu o day.
-# Doc lai file luc goi, vi man chon tra ma 3 co khi la lau sau luc dang nhap.
+# Tu 19/10/2026 lehoa chi dung duoc trong khung gio cua Timekpr-nExt (6:00 toi 21:30, Ba Huy doi
+# duoc tren Bang dieu khien). Cot thu tu cua file la 1 khi khung gio chan chu khong phai het phut:
+# luc do doi phut choi cung khong xem duoc, nen hop chu noi gio duoc xem. Chu gio do netflix_gio.py
+# ghi ra /run/netflix-gio/khung theo khung dang ap. Doc lai file luc goi, vi man chon tra ma 3 co
+# khi la lau sau luc dang nhap.
 het_phut() {
     chan=$(awk '{print $4}' /run/netflix-gio/conlai 2>/dev/null)
-    if [ "$chan" = 1 ]; then
-        chu="Quá giờ xem phim.\n\nLaptop chỉ xem được từ 6:00 tới 21:30."
+    khung=$(head -n 1 /run/netflix-gio/khung 2>/dev/null)
+    if [ "$chan" = 1 ] && [ -n "$khung" ]; then
+        chu="Quá giờ xem phim.\n\nLaptop chỉ xem được từ $khung."
+    elif [ "$chan" = 1 ]; then
+        chu="Quá giờ xem phim."
     else
         chu="Hết phút xem phim.\n\nĐổi phút chơi trên tablet rồi đăng nhập lại. Nếu vừa đổi thì chờ một chút."
     fi
