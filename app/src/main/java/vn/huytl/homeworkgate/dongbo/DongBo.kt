@@ -28,6 +28,7 @@ import vn.huytl.homeworkgate.data.GateStore
 import vn.huytl.homeworkgate.data.GiaiDe
 import vn.huytl.homeworkgate.data.GioiHanApp
 import vn.huytl.homeworkgate.data.LichDangDung
+import vn.huytl.homeworkgate.data.NgayNghi
 import vn.huytl.homeworkgate.data.NhatKyAi
 import vn.huytl.homeworkgate.data.NhatKySuDung
 import vn.huytl.homeworkgate.kho.KhoBai
@@ -420,6 +421,9 @@ object DongBo {
             Duong.F_DANG_SAC to dangSac(context),
             Duong.F_BAN_APP to BuildConfig.VERSION_NAME,
             Duong.F_LICH to LichDangDung.ban.phienBan,
+            // Ngay Ba Huy cho nghi them, chi tu hom nay tro di (30/10/2026), xem Lenh.NGHI_HOC.
+            Duong.F_NGAY_NGHI_THEM to NgayNghi.soNgay(Calendar.getInstance().apply { timeInMillis = bayGio })
+                .let { homNay -> prefs.ngayNghiThem.filter { it >= homNay }.sorted() },
             Duong.F_CAP_NHAT_LUC to bayGio
         ) + truocMat()
         /*

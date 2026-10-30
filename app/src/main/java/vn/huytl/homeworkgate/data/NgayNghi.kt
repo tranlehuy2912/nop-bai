@@ -19,16 +19,38 @@ import java.util.GregorianCalendar
  */
 object NgayNghi {
 
+    /** Ten ky nghi cua ngay Ba Huy cho nghi them, xem [ngayThem]. */
+    const val TEN_NGHI_THEM = "nghỉ học"
+
+    /**
+     * Cac ngay Ba Huy cho nghi hoc ngoai lich, dang yyyyMMdd (30/10/2026, lenh NGHI_HOC).
+     *
+     * Truoc ngay do nghi dot xuat phai nho Claude Code ghi ban lich moi len Firestore, con
+     * lenh /mo ben Telegram chi mo het buoi dang chan, mot ngay nghi phai go hai lan. Ngay o
+     * day khong nam trong ban lich: tablet tro vao Prefs (App.onCreate), Bang dieu khien tro
+     * vao truong ngayNghiThem cua trang thai tablet. Mac dinh rong, nen test va cho chua gan
+     * van tinh nhu truoc.
+     */
+    @Volatile
+    var ngayThem: () -> Set<Int> = { emptySet() }
+
     /** Ngay dang so nguyen yyyyMMdd cho de so sanh. */
     private fun ngay(nam: Int, thang: Int, ngay: Int) = nam * 10_000 + thang * 100 + ngay
 
+    /** Ngay cua [cal] dang yyyyMMdd. */
+    fun soNgay(cal: Calendar): Int = ngay(
+        cal.get(Calendar.YEAR),
+        cal.get(Calendar.MONTH) + 1,
+        cal.get(Calendar.DAY_OF_MONTH)
+    )
+
     /** Tra ve ten ky nghi, hoac null neu hom do van hoc binh thuong. */
-    fun tenKyNghi(cal: Calendar): String? {
-        val n = ngay(
-            cal.get(Calendar.YEAR),
-            cal.get(Calendar.MONTH) + 1,
-            cal.get(Calendar.DAY_OF_MONTH)
-        )
+    fun tenKyNghi(cal: Calendar): String? = tenTheoLich(cal)
+        ?: TEN_NGHI_THEM.takeIf { soNgay(cal) in ngayThem() }
+
+    /** Nhu [tenKyNghi] nhung chi theo ban lich, khong ke ngay Ba Huy cho nghi them. */
+    fun tenTheoLich(cal: Calendar): String? {
+        val n = soNgay(cal)
         val ban = LichDangDung.ban
         if (n > ban.hetNamHoc) return "nghỉ hè"
         if (cal.get(Calendar.DAY_OF_WEEK) == Calendar.SUNDAY) return "chủ nhật"

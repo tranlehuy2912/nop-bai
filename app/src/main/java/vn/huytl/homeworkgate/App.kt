@@ -5,6 +5,8 @@ import android.app.Application
 import android.os.Bundle
 import vn.huytl.homeworkgate.data.ChatCu
 import vn.huytl.homeworkgate.data.LichDangDung
+import vn.huytl.homeworkgate.data.NgayNghi
+import vn.huytl.homeworkgate.data.Prefs
 import vn.huytl.homeworkgate.data.SoCaiBai
 import vn.huytl.homeworkgate.guard.CatMangVpn
 import vn.huytl.homeworkgate.guard.TelegramThat
@@ -29,6 +31,10 @@ class App : Application() {
         super.onCreate()
         // Truoc moi thu doc lich: ban lich da nhan tu Firestore. Xem LichDangDung.
         LichDangDung.napTuMay(this)
+        // Ngay Ba Huy cho nghi them nam trong Prefs, khong nam trong ban lich. Xem NgayNghi.ngayThem.
+        // Mo Prefs luc doc chu khong mo ngay day: kho ma hoa mo cham va co the hong, ma
+        // App.onCreate hong la ca app khong len.
+        NgayNghi.ngayThem = { Prefs.get(this).ngayNghiThem }
         donDepKho()
         // Cat mang theo moi lan cong mo hay dong, du ai doi no. Xem CatMangVpn.theoDoi.
         runCatching { CatMangVpn.theoDoi(this) }

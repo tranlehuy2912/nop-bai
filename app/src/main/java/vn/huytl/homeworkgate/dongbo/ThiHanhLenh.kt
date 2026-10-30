@@ -19,12 +19,16 @@ import vn.huytl.homeworkgate.data.Prefs
 import vn.huytl.homeworkgate.data.SoCaiBai
 import vn.huytl.homeworkgate.data.SuaCham
 import vn.huytl.homeworkgate.data.LuatCongGio
+import vn.huytl.homeworkgate.data.NgayNghi
+import vn.huytl.homeworkgate.data.ThoiKhoaBieu
 import vn.huytl.homeworkgate.guard.CatMangVpn
 import vn.huytl.homeworkgate.guard.ChuongTin
 import vn.huytl.homeworkgate.guard.ParentMode
 import vn.huytl.homeworkgate.guard.Permissions
 import vn.huytl.homeworkgate.telegram.ApprovalService
 import vn.huytl.homeworkgate.telegram.TelegramClient
+import java.util.Calendar
+import java.util.GregorianCalendar
 import kotlin.concurrent.thread
 
 /**
@@ -175,6 +179,8 @@ object ThiHanhLenh {
             Lenh.DOC_VO -> docVo(context)
 
             Lenh.MO_DE_THI -> moDeThi(context, chu)
+
+            Lenh.NGHI_HOC -> nghiHoc(context, chu, d.get("giaTri") != false)
 
             // Ben kia vua mo app va hoi tablet con song khong. Day mot ban trang
             // thai day du roi thoi: khong ghi nhat ky, khong tra loi gi. Ban trang
@@ -336,10 +342,22 @@ object ThiHanhLenh {
     /**
      * Ba Huy cho gio: cong vao phien dang chay, hoac cap mot phieu moi khong tru han
      * muc ngay. Lenh phai kem so phut: so phut mac dinh da bo (27/9/2026).
+     *
+     * Trong gio ngu thi giu so phut toi luc het gio ngu, tablet tu cong (anh Huy chot
+     * 30/10/2026), y nhu bai cham trong gio ngu, xem [CongSang]. Truoc ngay do tablet tra
+     * loi "Không cấp được: đang trong giờ ngủ": toi 29/10/2026 Ba Huy cho 20 phut viec nha
+     * luc da qua gio ngu, va sang hom sau phai day som bam lai.
      */
-    private fun cho(context: Context, gate: GateStore, phut: Int?): String {
+    internal fun cho(context: Context, gate: GateStore, phut: Int?): String {
         val xin = phut ?: return "Lệnh thiếu số phút, máy không cho gì cả."
         val nguoi = "Ba Huy"
+
+        if (xin > 0 && gate.trongGioNgu()) {
+            CongSang.them(context, xin, baCho = true)
+            val gio = CongSang.gioCong(context)
+            DayLog.add(context, "$nguoi cho $xin phút trong giờ ngủ, $gio tablet cộng")
+            return "Đang giờ ngủ nên giữ $xin phút, $gio tablet cộng."
+        }
 
         if (gate.state == GateState.ACTIVE) {
             val conLai = gate.extend(xin)
@@ -500,6 +518,57 @@ object ThiHanhLenh {
     }
 
     /**
+     * Ba Huy cho con nghi hoc mot ngay ngoai lich, hay bo ngay nghi da cho. Xem [Lenh.NGHI_HOC]
+     * va [vn.huytl.homeworkgate.data.NgayNghi.ngayThem].
+     *
+     * Moi lan ghi thi bo luon cac ngay da qua: danh sach chi can tu hom nay tro di, va trang
+     * thai gui sang dien thoai khong phai keo theo ngay cu. Ngay da nghi san theo lich (chu
+     * nhat, le, Tet) thi khong ghi them, noi ro ngay do nghi vi dau.
+     *
+     * @param ngayChu ngay dang yyyyMMdd. @param nghi false la bo ngay nghi do.
+     */
+    internal fun nghiHoc(
+        context: Context,
+        ngayChu: String,
+        nghi: Boolean,
+        now: Long = System.currentTimeMillis()
+    ): String {
+        val cal = docNgay(ngayChu) ?: return "Lệnh thiếu ngày, máy không đổi gì."
+        val ngay = NgayNghi.soNgay(cal)
+        val homNay = NgayNghi.soNgay(
+            Calendar.getInstance().apply { timeInMillis = now }
+        )
+        val ten = "${ThoiKhoaBieu.tenThu(cal.get(Calendar.DAY_OF_WEEK))} " +
+            "%02d/%02d".format(cal.get(Calendar.DAY_OF_MONTH), cal.get(Calendar.MONTH) + 1)
+        val con = context.getString(R.string.child_name)
+        val prefs = Prefs.get(context)
+        val cu = prefs.ngayNghiThem.filter { it >= homNay }.toSet()
+
+        if (!nghi) {
+            prefs.ngayNghiThem = cu - ngay
+            if (ngay !in cu) return "Ngày $ten không có trong danh sách cho nghỉ."
+            DayLog.add(context, "Ba Huy bỏ ngày nghỉ học $ten")
+            return "Đã bỏ ngày nghỉ $ten, ngày đó tablet chặn giờ học như thường."
+        }
+        if (ngay < homNay) return "Ngày $ten đã qua, máy không đổi gì."
+        NgayNghi.tenTheoLich(cal)?.let {
+            return "Ngày $ten đã nghỉ sẵn theo lịch ($it), máy không đổi gì."
+        }
+        prefs.ngayNghiThem = cu + ngay
+        if (ngay in cu) return "Ngày $ten đã cho nghỉ rồi."
+        DayLog.add(context, "Ba Huy cho $con nghỉ học $ten")
+        return "Đã cho $con nghỉ học $ten: không chặn giờ học, không nhắc soạn tập."
+    }
+
+    /** Ngay dang yyyyMMdd thanh Calendar luc 0 gio. null la sai dang hay ngay khong co that. */
+    private fun docNgay(chu: String): Calendar? {
+        val so = chu.trim().takeIf { it.length == 8 }?.toIntOrNull() ?: return null
+        val cal = GregorianCalendar(so / 10_000, so / 100 % 100 - 1, so % 100)
+        // GregorianCalendar tu lan "31/02" sang thang sau: so lai de bo ngay khong co that.
+        return cal.takeIf { NgayNghi.soNgay(it) == so }
+    }
+
+    /**
      * Ba Huy bo cau sai khoi danh sach can sua cua con, khong cong phut. Xem [Lenh.BO_SUA]
      * va [vn.huytl.homeworkgate.data.BoSua].
      *
@@ -598,8 +667,9 @@ object ThiHanhLenh {
     }
 
     /**
-     * Vi sao khong cap duoc. Trong gio ngu thi noi rieng: luc do Cho choi ngay cung khong
-     * cap duoc, ma cau cu van bao bam no.
+     * Vi sao khong cap duoc. Trong gio ngu thi noi rieng: truoc 30/10/2026 luc do Cho choi
+     * ngay cung khong cap duoc, ma cau cu van bao bam no. Tu ngay do nut Cho trong gio ngu
+     * giu phut toi sang, xem [cho].
      */
     private fun khongCapDuoc(context: Context): String {
         val prefs = Prefs.get(context)

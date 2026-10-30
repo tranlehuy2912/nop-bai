@@ -23,6 +23,11 @@ import kotlin.concurrent.thread
  * cham lai (lenh SUACHAM). Con tu nop bai trong gio ngu thi may cham van khong cong gio,
  * nut Duyet cung vay.
  *
+ * Tu 30/10/2026 them nut Cho cua Bang dieu khien (lenh CHO, anh Huy chot): toi 29/10/2026
+ * Ba Huy cho 20 phut viec nha luc da qua gio ngu, tablet tra loi "Không cấp được", sang
+ * hom sau Ba Huy phai day som bam lai. Phan nay ghi [Muc.baCho] va cong khong tinh vao so
+ * phut doi bang hoc cua ngay, y nhu lenh CHO luc thuc.
+ *
  * So cai ghi ngay luc cham, khong doi toi luc cong: sang som con chup lai dung bai do thi
  * may thay cau da tra gio va khong tinh lan hai.
  *
@@ -37,8 +42,11 @@ object CongSang {
     private const val FILE = "cong_sang"
     private const val K_CAC = "cac"
 
-    /** Mot phan gio dang giu. [baiId] rong la phan khong gan voi bai nao, vi du cau cham lai. */
-    data class Muc(val phut: Int, val baiId: String, val luc: Long)
+    /**
+     * Mot phan gio dang giu. [baiId] rong la phan khong gan voi bai nao, vi du cau cham lai.
+     * [baCho] la phut Ba Huy bam Cho trong gio ngu, khong phai phut doi bang bai.
+     */
+    data class Muc(val phut: Int, val baiId: String, val luc: Long, val baCho: Boolean = false)
 
     fun cacMuc(context: Context): List<Muc> {
         val chu = sp(context).getString(K_CAC, null) ?: return emptyList()
@@ -46,15 +54,21 @@ object CongSang {
             val mang = JSONArray(chu)
             (0 until mang.length()).map { i ->
                 val o = mang.getJSONObject(i)
-                Muc(o.getInt("p"), o.optString("b"), o.optLong("l"))
+                Muc(o.getInt("p"), o.optString("b"), o.optLong("l"), o.optBoolean("c"))
             }
         }.getOrDefault(emptyList())
     }
 
     /** Giu [phut] phut toi luc het gio ngu. Dat lai bao thuc de no thuc day dung luc do. */
-    fun them(context: Context, phut: Int, baiId: String = "", now: Long = System.currentTimeMillis()) {
+    fun them(
+        context: Context,
+        phut: Int,
+        baiId: String = "",
+        now: Long = System.currentTimeMillis(),
+        baCho: Boolean = false
+    ) {
         if (phut <= 0) return
-        synchronized(this) { luu(context, cacMuc(context) + Muc(phut, baiId, now)) }
+        synchronized(this) { luu(context, cacMuc(context) + Muc(phut, baiId, now, baCho)) }
         MocGio.datLai(context)
     }
 
@@ -98,6 +112,11 @@ object CongSang {
      * ghi dung so phut bai do duoc. Tran het han thi bo phan giu: gio cua bai lam chi co
      * nghia trong ngay duoc cong.
      *
+     * Phut bai cham va phut Ba Huy cho ([Muc.baCho]) cap thanh hai lan: phut bai ghi vao so
+     * phut doi bang hoc cua ngay (useQuota), phut Ba Huy cho thi khong, y nhu lenh CHO luc
+     * thuc. Lan dau cap duoc ma lan sau hong thi chi giu lai phan chua cap, lan xet sau cong
+     * tiep phan do.
+     *
      * @return cau bao Ba Huy, ben goi gui len Telegram. null la chua den luc hay khong giu gi.
      */
     @Synchronized
@@ -106,39 +125,51 @@ object CongSang {
         if (cac.isEmpty()) return null
         val gate = GateStore(context)
         if (gate.trongGioNgu(now)) return null
-        val xin = cac.sumOf { it.phut }
         // Khong con tran ngay (29/9/2026): phut giu da qua tran rieng cua bai dan do luc
         // cham, sang ra cong du.
-        val them = xin
-        if (them <= 0) {
+        val bai = cac.filterNot { it.baCho }
+        val cho = cac.filter { it.baCho }
+        val phutBai = bai.sumOf { it.phut }
+        val phutCho = cho.sumOf { it.phut }
+        if (phutBai + phutCho <= 0) {
             luu(context, emptyList())
             return null
         }
-        val duoc = if (gate.state == GateState.ACTIVE) {
-            gate.extend(them, now = now, useQuota = true)
-        } else {
-            gate.approve(now = now, wantedMinutes = them, useQuota = true)
-        }
         // Khong cap duoc vi mot ly do khac (vua doi trang thai giua chung): giu lai, lan xet
         // sau thu tiep.
-        if (duoc == null) return null
-        luu(context, emptyList())
-
-        var con = them
-        cac.forEach { m ->
-            val phan = minOf(m.phut, con)
-            con -= phan
-            if (m.baiId.isNotEmpty()) DongBo.datTrangThaiBai(context, m.baiId, "DUYET", phan)
+        if (phutBai > 0) {
+            if (cap(gate, phutBai, useQuota = true, now = now) == null) return null
+            luu(context, cho)
+            bai.forEach { m ->
+                if (m.baiId.isNotEmpty()) DongBo.datTrangThaiBai(context, m.baiId, "DUYET", m.phut)
+            }
         }
+        val daCho = phutCho > 0 && cap(gate, phutCho, useQuota = false, now = now) != null
+        if (daCho) luu(context, emptyList())
+        if (phutBai <= 0 && !daCho) return null
+
         val ba = context.getString(R.string.parent_name_cap)
-        DayLog.add(context, "Hết giờ ngủ, cộng $them phút giữ từ lúc $ba chấm trong giờ ngủ")
-        SoCaiBai.datLoiNhan(
-            context, "Được thêm $them phút của bài $ba chấm trong giờ ngủ.", tinVui = true
+        if (phutBai > 0) {
+            DayLog.add(context, "Hết giờ ngủ, cộng $phutBai phút giữ từ lúc $ba chấm trong giờ ngủ")
+        }
+        if (daCho) DayLog.add(context, "Hết giờ ngủ, cộng $phutCho phút $ba cho trong giờ ngủ")
+        val choCon = listOfNotNull(
+            "$phutBai phút của bài $ba chấm trong giờ ngủ".takeIf { phutBai > 0 },
+            "$phutCho phút $ba cho trong giờ ngủ".takeIf { daCho }
         )
+        SoCaiBai.datLoiNhan(context, "Được thêm ${choCon.joinToString(" và ")}.", tinVui = true)
         ApprovalService.ensureRunning(context)
-        return "⏰ Hết giờ ngủ: đã cộng $them phút giữ từ lúc chấm trong giờ ngủ" +
-            (if (them < xin) " (hôm nay chỉ còn $them phút trong hạn mức)" else "") + "."
+        val choBa = listOfNotNull(
+            "$phutBai phút giữ từ lúc chấm trong giờ ngủ".takeIf { phutBai > 0 },
+            "$phutCho phút anh cho trong giờ ngủ".takeIf { daCho }
+        )
+        return "⏰ Hết giờ ngủ: đã cộng ${choBa.joinToString(" và ")}."
     }
+
+    /** Cong vao phien dang chay, hay cap phieu (cong don vao phieu dang giu). */
+    private fun cap(gate: GateStore, phut: Int, useQuota: Boolean, now: Long): Int? =
+        if (gate.state == GateState.ACTIVE) gate.extend(phut, now = now, useQuota = useQuota)
+        else gate.approve(now = now, wantedMinutes = phut, useQuota = useQuota)
 
     /** Gui cau cua [congNeuDenLuc] len Telegram. Chay o luong nen: ben goi co khi o luong chinh. */
     fun baoBaHuy(context: Context, chu: String) {
@@ -154,7 +185,11 @@ object CongSang {
 
     private fun luu(context: Context, cac: List<Muc>) {
         val mang = JSONArray()
-        cac.forEach { mang.put(JSONObject().put("p", it.phut).put("b", it.baiId).put("l", it.luc)) }
+        cac.forEach {
+            val o = JSONObject().put("p", it.phut).put("b", it.baiId).put("l", it.luc)
+            if (it.baCho) o.put("c", true)
+            mang.put(o)
+        }
         sp(context).edit().putString(K_CAC, mang.toString()).commit()
     }
 

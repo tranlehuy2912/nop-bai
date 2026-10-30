@@ -297,6 +297,15 @@ class Prefs private constructor(private val sp: SharedPreferences) {
         set(v) = sp.edit().putString(KEY_MO_SOM, v).commit().let {}
 
     /**
+     * Ngay Ba Huy cho nghi hoc ngoai lich, dang yyyyMMdd (lenh NGHI_HOC, 30/10/2026). Xem
+     * [NgayNghi.ngayThem]. Ghi o file chinh nen doi la DongBo day trang thai sang dien thoai.
+     */
+    var ngayNghiThem: Set<Int>
+        get() = sp.getString(KEY_NGHI_THEM, "").orEmpty().split(',')
+            .mapNotNull { it.trim().toIntOrNull() }.toSet()
+        set(v) = sp.edit().putString(KEY_NGHI_THEM, v.sorted().joinToString(",")).commit().let {}
+
+    /**
      * Ma cac buoi hoc Le Hoa da bao la soan xong.
      *
      * Giu lai ca cac ma cu cung khong sao, moi ma chi vai chuc byte va mot nam
@@ -415,6 +424,7 @@ class Prefs private constructor(private val sp: SharedPreferences) {
         private const val KEY_AI_KEYS = "ai_keys"
         private const val KEY_BAT_CHAN = "bat_man_chan"
         private const val KEY_MO_SOM = "buoi_duoc_mo_som"
+        private const val KEY_NGHI_THEM = "ngay_nghi_them"
         private const val KEY_DA_SOAN = "buoi_da_soan"
         private const val KEY_VUA_SOAN = "buoi_vua_soan"
 

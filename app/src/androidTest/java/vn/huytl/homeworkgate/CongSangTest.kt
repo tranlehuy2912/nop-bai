@@ -17,6 +17,7 @@ import vn.huytl.homeworkgate.data.GateState
 import vn.huytl.homeworkgate.data.GateStore
 import vn.huytl.homeworkgate.data.Prefs
 import vn.huytl.homeworkgate.data.SoCaiBai
+import vn.huytl.homeworkgate.dongbo.ThiHanhLenh
 import java.util.Calendar
 
 /**
@@ -119,6 +120,61 @@ class CongSangTest {
             assertFalse(bao, bao.contains("hạn mức"))
         }
         assertEquals(18, GateStore(context).grantedMinutes)
+        assertTrue(CongSang.cacMuc(context).isEmpty())
+    }
+
+    /**
+     * Ba Huy bam Cho trong gio ngu (30/10/2026): giu toi sang, sang ra cong ma khong tinh vao so
+     * phut doi bang hoc, y nhu lenh CHO luc thuc.
+     */
+    @Test
+    fun cho_trong_gio_ngu_giu_toi_sang_khong_tinh_vao_phut_doi_bang_hoc() {
+        datDangNgu()
+        val gate = GateStore(context)
+        val tra = ThiHanhLenh.cho(context, gate, 20)
+        assertTrue(tra, tra.startsWith("Đang giờ ngủ nên giữ 20 phút"))
+        assertEquals(GateState.LOCKED, gate.state)
+        assertEquals(listOf(true), CongSang.cacMuc(context).map { it.baCho })
+
+        datHetNgu()
+        val daDuyet = gate.phutDaDuyetHomNay()
+        val bao = CongSang.congNeuDenLuc(context)
+        if (bao != null) assertTrue(bao, bao.contains("20 phút anh cho trong giờ ngủ"))
+        assertEquals(GateState.GRANTED, gate.state)
+        assertEquals(20, gate.grantedMinutes)
+        assertEquals(daDuyet, gate.phutDaDuyetHomNay())
+        assertTrue(CongSang.cacMuc(context).isEmpty())
+        assertTrue(SoCaiBai.loiNhan(context).orEmpty().contains("Được thêm 20 phút Ba Huy cho"))
+    }
+
+    /** Phut bai cham va phut Ba Huy cho cung giu qua dem: sang ra cong ca hai vao mot phieu. */
+    @Test
+    fun bai_cham_va_ba_cho_cung_giu_thi_cong_gop_mot_phieu() {
+        datDangNgu()
+        CongSang.them(context, 10, "thu-cong-sang")
+        CongSang.them(context, 15, baCho = true)
+        datHetNgu()
+        val gate = GateStore(context)
+        val daDuyet = gate.phutDaDuyetHomNay()
+        val bao = CongSang.congNeuDenLuc(context)
+        if (bao != null) {
+            assertTrue(bao, bao.contains("10 phút giữ từ lúc chấm"))
+            assertTrue(bao, bao.contains("15 phút anh cho"))
+        }
+        assertEquals(25, gate.grantedMinutes)
+        // Chi phut bai cham vao so phut doi bang hoc.
+        assertEquals(daDuyet + 10, gate.phutDaDuyetHomNay())
+        assertTrue(CongSang.cacMuc(context).isEmpty())
+    }
+
+    /** Ngoai gio ngu thi nut Cho cap phieu ngay nhu truoc, khong giu gi. */
+    @Test
+    fun cho_ngoai_gio_ngu_thi_cap_ngay() {
+        datHetNgu()
+        val gate = GateStore(context)
+        val tra = ThiHanhLenh.cho(context, gate, 15)
+        assertTrue(tra, tra.startsWith("Đã cho 15 phút"))
+        assertEquals(15, gate.grantedMinutes)
         assertTrue(CongSang.cacMuc(context).isEmpty())
     }
 
