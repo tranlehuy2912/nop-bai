@@ -25,15 +25,21 @@ object LuatCatMang {
      * @param trongGioNgu dang trong khung tu gio di ngu den gio day
      * @param trongGioHoc dang trong buoi hoc bi man chan che
      * @param moToanBo    Ba Huy dang mo toan bo may de dung
+     * @param tuXa        Ba Huy dang bat Tailscale bang lenh de vao may tu xa
      */
     fun catMang(
         gateMo: Boolean,
         trongGioNgu: Boolean,
         trongGioHoc: Boolean,
         moToanBo: Boolean,
+        tuXa: Boolean = false,
     ): Boolean {
         // Ba Huy dang cam may thi khong cat gi ca, y nhu phan chan app va chan nhac.
         if (moToanBo) return false
+        // Tailscale cung la VPN, ma Android chi chay mot VPN mot luc: cat mang la day
+        // Tailscale ra, mat duong vao may tu xa. Anh Huy chot 4/11/2026: dang bat Tailscale
+        // thi thoi cat. App trong danh sach van bi chan mo nhu thuong. Xem guard/TruyCapTuXa.
+        if (tuXa) return false
 
         // Gio di hoc xet truoc ca gio choi: toi gio buong may di hoc thi cat, du con
         // dang giu phieu gio choi.

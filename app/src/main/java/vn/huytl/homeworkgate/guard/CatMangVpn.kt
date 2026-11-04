@@ -164,6 +164,9 @@ class CatMangVpn : VpnService() {
             val dangCo = tun != null
             tat()
             if (!dangCo) return@post
+            // Ba Huy vua bat Tailscale bang lenh: chinh lenh do nhuong VPN cho Tailscale, khong
+            // phai Le Hoa bat VPN khac. Khong danh dau bi da, khong bao dong. Xem TruyCapTuXa.
+            if (TruyCapTuXa.tailscaleDangBat(this)) return@post
             Prefs.get(this).raw().edit().putBoolean(K_BI_DA, true).apply()
             // Ba Huy bam "Quen VPN" trong Cai dat thi mat quyen luon, bang canh bao phai noi
             // "chua cho phep" chu khong phai "vua bi tat".
@@ -346,6 +349,7 @@ class CatMangVpn : VpnService() {
                     Calendar.getInstance(), prefs.batManChan, prefs.buoiDuocMoSom
                 ) != null,
                 moToanBo = ParentMode.isActive(c),
+                tuXa = TruyCapTuXa.tailscaleDangBat(c),
             )
             if (!cat) return emptySet()
             val pm = c.packageManager

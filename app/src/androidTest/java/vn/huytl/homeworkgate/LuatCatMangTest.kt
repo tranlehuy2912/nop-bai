@@ -23,11 +23,13 @@ class LuatCatMangTest {
         trongGioNgu: Boolean = false,
         trongGioHoc: Boolean = false,
         moToanBo: Boolean = false,
+        tuXa: Boolean = false,
     ) = LuatCatMang.catMang(
         gateMo = gateMo,
         trongGioNgu = trongGioNgu,
         trongGioHoc = trongGioHoc,
         moToanBo = moToanBo,
+        tuXa = tuXa,
     )
 
     @Test
@@ -54,6 +56,13 @@ class LuatCatMangTest {
     fun ba_huy_mo_toan_bo_may_thi_khong_cat() {
         assertFalse(cat(gateMo = false, trongGioHoc = true, moToanBo = true))
         assertFalse(cat(gateMo = false, trongGioNgu = true, moToanBo = true))
+    }
+
+    @Test
+    fun ba_huy_bat_tailscale_thi_khong_cat_de_tailscale_giu_VPN() {
+        assertFalse(cat(gateMo = false, tuXa = true))
+        assertFalse(cat(gateMo = false, trongGioHoc = true, tuXa = true))
+        assertFalse(cat(gateMo = false, trongGioNgu = true, tuXa = true))
     }
 
     // ------------------------------------------------ viec phai lam voi VPN

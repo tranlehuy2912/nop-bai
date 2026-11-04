@@ -57,6 +57,7 @@ import vn.huytl.homeworkgate.data.CauCham
 import vn.huytl.homeworkgate.data.DangBai
 import vn.huytl.homeworkgate.kho.KhoBai
 import vn.huytl.homeworkgate.kho.PhamVi
+import vn.huytl.homeworkgate.guard.TruyCapTuXa
 import vn.huytl.homeworkgate.guard.DaiNhac
 import vn.huytl.homeworkgate.guard.ManChan
 import vn.huytl.homeworkgate.dongbo.DongBo
@@ -1124,6 +1125,42 @@ class ApprovalService : Service() {
                 }
             }
 
+            // Vao may tu xa (anh Huy chot 4/11/2026): Tailscale, go loi khong day, go loi USB,
+            // moi lenh kem "bat" hay "tat". Viec cham (Tailscale noi, tim cong go loi) bao
+            // bang tin thu hai. Xem guard/TruyCapTuXa.
+            "tailscale", "goloi", "goloiusb" -> {
+                val bat = when (arg.lowercase()) {
+                    "bat", "bật", "on" -> true
+                    "tat", "tắt", "off" -> false
+                    else -> null
+                }
+                if (bat == null) {
+                    client.sendMessage(chatId, "Gõ /$word bat hoặc /$word tat.")
+                    return
+                }
+                val ung = applicationContext
+                val tinSau: (String) -> Unit = { Notifier.send(ung, it) }
+                val traLoi = when (word) {
+                    "tailscale" -> if (bat) TruyCapTuXa.batTailscale(ung, tinSau)
+                        else TruyCapTuXa.tatTailscale(ung)
+                    "goloi" -> if (bat) TruyCapTuXa.batGoLoiKhongDay(ung, tinSau)
+                        else TruyCapTuXa.tatGoLoiKhongDay(ung)
+                    else -> TruyCapTuXa.goLoiUsb(ung, bat)
+                }
+                val ten = when (word) {
+                    "tailscale" -> "Tailscale"
+                    "goloi" -> "gỡ lỗi không dây"
+                    else -> "gỡ lỗi USB"
+                }
+                DayLog.add(this, "Ba Huy ${if (bat) "bật" else "tắt"} $ten từ xa")
+                client.sendMessage(chatId, traLoi)
+            }
+
+            "tuxa" -> {
+                val ung = applicationContext
+                TruyCapTuXa.tinhTrang(ung) { Notifier.send(ung, it) }
+            }
+
             "xoapin" -> {
                 // Xoa PIN chu khong dat PIN moi qua chat: PIN go trong chat la
                 // no nam lai trong lich su, con cam dien thoai ba la doc duoc.
@@ -1991,6 +2028,12 @@ class ApprovalService : Service() {
         /xoapin  xoá PIN, đặt lại trên tablet
         /ketnoi  tablet nối lại với Bảng điều khiển
         /trogiup  bảng này
+
+        VÀO MÁY TỪ XA
+        /tuxa  xem Tailscale, gỡ lỗi đang bật hay tắt
+        /tailscale bat  bật Tailscale, thôi cắt mạng (tat = tắt)
+        /goiloi bat  bật gỡ lỗi không dây, báo cổng (tat = tắt)
+        /goiloiusb bat  bật gỡ lỗi USB (tat = tắt)
 
         Nhắn cho ${getString(R.string.child_name)} thì nhắn thẳng trên Telegram của ${getString(R.string.child_name)}.
         Số phút, giờ ngủ, danh sách app: sửa trong app.

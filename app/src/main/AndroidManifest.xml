@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <!-- Chi de biet co mang hay khong, de chan nut Nop bai luc mat mang. -->
@@ -14,6 +15,14 @@
          danh sach do thi HyperOS dung tien trinh luc man hinh tat, va dich vu
          Telegram chet giua chung. -->
     <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS" />
+
+    <!-- Bat tat go loi khong day, go loi USB tu Telegram (guard/TruyCapTuXa.kt). Quyen nay
+         khong xin duoc tren may: phai cap mot lan qua adb bang
+         adb shell pm grant vn.huytl.homeworkgate android.permission.WRITE_SECURE_SETTINGS
+         Cai de len (adb install -r) thi van giu, go app thi mat. -->
+    <uses-permission
+        android:name="android.permission.WRITE_SECURE_SETTINGS"
+        tools:ignore="ProtectedPermissions" />
 
     <uses-feature
         android:name="android.hardware.camera"
@@ -47,6 +56,9 @@
         <intent>
             <action android:name="android.intent.action.TTS_SERVICE" />
         </intent>
+        <!-- Lenh /tailscale bao app Tailscale noi hay ngat (guard/TruyCapTuXa.kt). Thieu muc
+             nay thi app khong thay Tailscale, va tin gui cho no khong toi. -->
+        <package android:name="com.tailscale.ipn" />
     </queries>
 
     <application
