@@ -278,6 +278,7 @@ class TelegramClient(private val token: String) {
         put(cmd("bo", "Mở toàn bộ máy, kèm số phút nếu muốn: /bo 45"))
         put(cmd("choxoa", "Tắt quản trị thiết bị để gỡ app"))
         put(cmd("xoapin", "Xoá mã PIN để đặt lại trên tablet"))
+        put(cmd("ketnoi", "Tablet nối lại khi Bảng điều khiển báo tablet không trả lời"))
         put(cmd("trogiup", "Xem lại toàn bộ lệnh"))
     }
 

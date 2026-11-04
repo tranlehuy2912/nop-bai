@@ -1112,6 +1112,18 @@ class ApprovalService : Service() {
                 }
             }
 
+            // Bang dieu khien bao tablet khong tra loi ma Telegram van chay: go het duong
+            // Firestore roi noi lai tu dau (anh Huy chot 4/11/2026). Ket qua di bang tin thu
+            // hai vi phai cho may chu, co khi vai chuc giay. Xem [DongBo.noiLai].
+            "ketnoi" -> {
+                client.sendMessage(chatId, "Đang cho tablet nối lại với Bảng điều khiển…")
+                DayLog.add(this, "Ba Huy cho tablet nối lại Bảng điều khiển")
+                val ung = applicationContext
+                scope?.launch(Dispatchers.Main) {
+                    DongBo.noiLai(ung) { kq -> Notifier.send(ung, kq) }
+                }
+            }
+
             "xoapin" -> {
                 // Xoa PIN chu khong dat PIN moi qua chat: PIN go trong chat la
                 // no nam lai trong lich su, con cam dien thoai ba la doc duoc.
@@ -1977,6 +1989,7 @@ class ApprovalService : Service() {
         /bo  mở toàn bộ máy
         /choxoa  tắt quản trị để gỡ app
         /xoapin  xoá PIN, đặt lại trên tablet
+        /ketnoi  tablet nối lại với Bảng điều khiển
         /trogiup  bảng này
 
         Nhắn cho ${getString(R.string.child_name)} thì nhắn thẳng trên Telegram của ${getString(R.string.child_name)}.

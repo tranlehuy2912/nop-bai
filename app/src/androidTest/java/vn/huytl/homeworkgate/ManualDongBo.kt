@@ -130,6 +130,71 @@ class ManualDongBo {
     }
 
     /**
+     * Thu lenh /ketnoi (4/11/2026): dut duong Firestore nhu tablet that sau khi bat may sang
+     * hom do, go mot PING nhu dien thoai, roi noi lai bang [DongBo.noiLai] va xem PING co duoc
+     * dap khong. In ca cau Ba Huy se nhan tren Telegram.
+     *
+     * Thu luc mat mang thi tat mang may ao truoc khi chay, chay xong bat lai:
+     *   adb shell svc wifi disable; adb shell svc data disable
+     */
+    @Test
+    fun noiLaiThu() {
+        val may = InstrumentationRegistry.getInstrumentation()
+        may.runOnMainSync { DongBo.batDau(context) }
+        Thread.sleep(5_000)
+        val maNha = DongBo.maNhaHienTai(context)
+        if (maNha.isEmpty()) {
+            println("MANUAL_DONGBO: may nay chua lap nha, khong thu duoc")
+            return
+        }
+        val nha = com.google.firebase.firestore.FirebaseFirestore.getInstance()
+            .collection("nha").document(maNha)
+
+        // Doc thang may chu: ban luu trong may co ca nhung lan ghi chua len duoc.
+        fun capNhatLuc(): Long {
+            val cho = CountDownLatch(1)
+            var luc = -1L
+            nha.collection("hop").document("trangthai")
+                .get(com.google.firebase.firestore.Source.SERVER)
+                .addOnCompleteListener {
+                    if (it.isSuccessful) luc = it.result?.getLong("capNhatLuc") ?: 0L
+                    cho.countDown()
+                }
+            cho.await(20, TimeUnit.SECONDS)
+            return luc
+        }
+
+        // Dut duong: khong nghe lenh, khong day trang thai, giong tablet that sang 4/11.
+        may.runOnMainSync { DongBo.dungLai() }
+        val truoc = capNhatLuc()
+        nha.collection("lenh").add(
+            mapOf("kieu" to "PING", "ai" to "bahuy", "tao" to System.currentTimeMillis())
+        )
+        Thread.sleep(6_000)
+        val khiDut = capNhatLuc()
+
+        val cho = CountDownLatch(1)
+        var cau = "(khong bao gi tra loi)"
+        val bamLuc = System.currentTimeMillis()
+        may.runOnMainSync {
+            DongBo.noiLai(context) {
+                cau = it
+                cho.countDown()
+            }
+        }
+        cho.await(90, TimeUnit.SECONDS)
+        val mat = System.currentTimeMillis() - bamLuc
+        Thread.sleep(6_000)
+        val sau = capNhatLuc()
+
+        println("MANUAL_DONGBO: noi lai mat ${mat}ms, bao: ${cau.replace("\n", " | ")}")
+        println(
+            "MANUAL_DONGBO: capNhatLuc truoc=$truoc khi dut=$khiDut sau=$sau " +
+                (if (khiDut > 0 && sau > khiDut) "-> PING DA DUOC DAP" else "-> CHUA DAP")
+        )
+    }
+
+    /**
      * Thu lenh TUCHOI cho bai khong con trong hang cho, qua dung duong Firestore.
      *
      * Dat hai bai thu khong nam trong hang cho: mot bai hom qua van ghi CHO, y nhu bai

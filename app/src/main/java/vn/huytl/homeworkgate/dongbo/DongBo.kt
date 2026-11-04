@@ -259,20 +259,42 @@ object DongBo {
      */
     fun duAn(context: Context): String = app(context)?.options?.projectId.orEmpty()
 
-    fun batDau(context: Context) {
+    /**
+     * So lan [batDau] da chay, de bo ket qua cua mot lan cu ve muon.
+     *
+     * [batDau] cho may chu tra loi hai lan (dang nhap, doc nha). Lan cho do treo hay cham, ma
+     * giua chung [noiLai] da go het va bat lai, thi ket qua lan cu khong duoc gan them mot bo
+     * lang nghe va mot nhip tim nua. [dungLai] cung tang so nay.
+     */
+    private var luot = 0
+
+    /**
+     * Noi Firestore: dang nhap, doc nha, roi bat cac lang nghe.
+     *
+     * Hai service goi ham nay luc vua len (xem [vn.huytl.homeworkgate.guard.GuardAccessibilityService],
+     * [vn.huytl.homeworkgate.telegram.ApprovalService]), va chi luc do: hong mot lan thi
+     * nam im toi lan service len lai, hay toi khi Ba Huy go /ketnoi ([noiLai]).
+     *
+     * [bao] (chi [noiLai] truyen) nhan mot cau ket qua de gui Telegram, chay tren luong chinh.
+     */
+    fun batDau(context: Context, bao: ((String) -> Unit)? = null) {
         if (dangChay) return
         val ung = context.applicationContext
         if (!san(ung)) {
             Log.i(TAG, "chua co google-services.json, khong noi Bang dieu khien")
+            bao?.invoke("Bản app này chưa nối Firebase.")
             return
         }
         ct = ung
         dangChay = true
+        val luotNay = ++luot
         Log.i(TAG, "noi Firebase project=${duAn(ung)} (${if (BuildConfig.DEBUG) "ban go loi" else "ban that"})")
 
-        dangNhap(ung) { duoc, _ ->
+        dangNhap(ung) { duoc, viSao ->
+            if (luotNay != luot) return@dangNhap
             if (!duoc) {
                 dangChay = false
+                bao?.invoke("Tablet chưa đăng nhập được Firebase. $viSao")
                 return@dangNhap
             }
             // Lap nha XONG roi moi bat lang nghe.
@@ -280,9 +302,14 @@ object DongBo {
             // Bat truoc thi moi lang nghe va moi lan ghi deu tra ve
             // PERMISSION_DENIED: luat ben Firestore hoi "co phai nguoi nha khong",
             // ma nha thi chua ton tai. Cho mot nhip nay la het.
-            lapNhaNeuChua(ung) { xong ->
-                if (!xong) {
+            lapNhaNeuChua(ung) { loi, tuMayChu ->
+                if (luotNay != luot) return@lapNhaNeuChua
+                if (loi != null) {
                     dangChay = false
+                    bao?.invoke(
+                        "Tablet chưa đọc được nhà trên Firebase. $loi\n" +
+                            "Mã nhà: ${maNha(ung)}, uid: ${uidHienTai(ung)}"
+                    )
                     return@lapNhaNeuChua
                 }
                 batNgheLenh(ung)
@@ -300,12 +327,73 @@ object DongBo {
                 dayCaiDat(ung)
                 dayDanhSachApp(ung)
                 xoaChatCu(ung)
+                bao?.invoke(
+                    if (tuMayChu) {
+                        "Tablet đã nối lại máy chủ. Mở thẻ Giờ chơi trên điện thoại để xem."
+                    } else {
+                        // get() mac dinh khong vao duoc may chu thi tra ban luu trong may: doc
+                        // duoc nha chua phai la da noi.
+                        "Tablet chưa vào được máy chủ Firebase, mới đọc được bản lưu trong máy. " +
+                            "Máy vẫn nghe lệnh và tự gửi khi vào được. Vài phút nữa điện thoại " +
+                            "vẫn báo tablet không trả lời thì gõ /ketnoi lần nữa."
+                    }
+                )
             }
         }
     }
 
+    /**
+     * Go het roi noi lai Firestore tu dau. Ba Huy go /ketnoi tren Telegram (anh Huy chot
+     * 4/11/2026, chon lenh go tay thay vi de tablet tu thu lai moi phut).
+     *
+     * VI SAO CO LENH NAY. Sang 4/11/2026 tablet tat tu 20:23 toi qua, bat lai luc 10:39. Telegram
+     * chay (tin "App khong chay", soat vo dan do 10:42, kiem tra tu vung 10:43) ma Firestore im:
+     * 8 lenh PING cua dien thoai nam cho tren may chu, khong ghi duoc trang thai lan nhat ky,
+     * du tai khoan an danh cua tablet van con va khong co nha moi. Mo app khong go duoc, vi
+     * [batDau] chi chay luc hai service vua len, ma ca hai van song. Khong co logcat cua may
+     * that nen khong biet chac buoc nao ket; ham nay lam lai tung buoc va bao ve Telegram buoc
+     * nao hong, de lan sau biet.
+     *
+     * Thu tu:
+     * 1. [dungLai]: go lang nghe, bo ket qua lan [batDau] cu neu no con treo (xem [luot]).
+     * 2. Lay lai the dang nhap tu may chu (getIdToken(true)). Hong o day la loi tai khoan hay
+     *    loi duong toi may chu dang nhap. Hong van di tiep, chi ghi them vao cau bao.
+     * 3. Tat roi bat mang cua Firestore (disableNetwork, enableNetwork): bo ket noi cu neu no
+     *    ket, mo ket noi moi.
+     * 4. [batDau] nhu luc service vua len, va bao ket qua qua [bao].
+     *
+     * Goi tren luong chinh, nhu moi cho khac vao doi tuong nay. [bao] chay tren luong chinh.
+     */
+    fun noiLai(context: Context, bao: (String) -> Unit) {
+        val ung = context.applicationContext
+        dungLai()
+        val a = app(ung) ?: return bao("Bản app này chưa nối Firebase.")
+        val db = FirebaseFirestore.getInstance(a)
+        val nguoi = FirebaseAuth.getInstance(a).currentUser
+
+        fun noiMang(loiThe: String) {
+            db.disableNetwork()
+                .continueWithTask { db.enableNetwork() }
+                .addOnCompleteListener {
+                    // Go them mot lan: trong luc cho o tren, mot service vua len co the da goi
+                    // batDau, va lan do khong bao gi. Go no di de lan nay chay va bao duoc.
+                    dungLai()
+                    batDau(ung) { kq -> bao(if (loiThe.isEmpty()) kq else "$kq\n$loiThe") }
+                }
+        }
+
+        if (nguoi == null) return noiMang("")
+        nguoi.getIdToken(true)
+            .addOnSuccessListener { noiMang("") }
+            .addOnFailureListener {
+                Log.w(TAG, "lay lai the dang nhap hong: ${it.message}")
+                noiMang("Lấy lại thẻ đăng nhập hỏng: ${noiLoi(it)}")
+            }
+    }
+
     fun dungLai() {
         val ung = ct
+        luot++
         dangChay = false
         banDaDay = null
         caiDatDaDay = null
@@ -1250,8 +1338,8 @@ object DongBo {
     ) {
         dangNhap(context) { duoc, viSao ->
             if (!duoc) return@dangNhap xong("", "", viSao)
-            lapNhaNeuChua(context) { co ->
-                if (!co) return@lapNhaNeuChua xong("", "", "Chưa lập được nhà trên Firestore.")
+            lapNhaNeuChua(context) { loi, _ ->
+                if (loi != null) return@lapNhaNeuChua xong("", "", "Chưa lập được nhà trên Firestore. $loi")
                 datMaGhep(context, xong)
             }
         }
@@ -1435,14 +1523,18 @@ object DongBo {
      * Luat ben do chi cho tao khi nguoi tao tu ghi dung mot minh vao danh sach, nen
      * cho nay phai set chinh xac nhu the. Goi lai lan hai khong sao: da co nha thi
      * merge khong doi gi ca.
+     *
+     * [xong] nhan loi (null la duoc, con lai la cau noi cho nguoi doc) va co phai doc tu may
+     * chu khong. get() mac dinh khong vao duoc may chu thi tra ban luu trong may, nen doc
+     * duoc nha chua chung minh la da noi; /ketnoi can phan biet hai cai do (xem [noiLai]).
      */
-    private fun lapNhaNeuChua(context: Context, xong: (Boolean) -> Unit) {
-        val uid = app(context)?.let { FirebaseAuth.getInstance(it).currentUser?.uid }.orEmpty()
-        if (uid.isEmpty()) return xong(false)
-        val d = nha(context) ?: return xong(false)
+    private fun lapNhaNeuChua(context: Context, xong: (loi: String?, tuMayChu: Boolean) -> Unit) {
+        val uid = uidHienTai(context)
+        if (uid.isEmpty()) return xong("Máy chưa đăng nhập Firebase.", false)
+        val d = nha(context) ?: return xong("Bản app này chưa nối Firebase.", false)
         d.get()
             .addOnSuccessListener { co ->
-                if (co.exists()) return@addOnSuccessListener xong(true)
+                if (co.exists()) return@addOnSuccessListener xong(null, !co.metadata.isFromCache)
                 // Ghi dung khuon luat doi: nguoi lap tu ghi dung mot minh vao danh
                 // sach. Thua mot uid la Firestore tu choi ca lan ghi.
                 d.set(
@@ -1451,17 +1543,20 @@ object DongBo {
                         Duong.F_TEN_CON to context.getString(R.string.child_name),
                         "tao" to System.currentTimeMillis()
                     )
-                ).addOnSuccessListener { xong(true) }
+                ).addOnSuccessListener { xong(null, true) }
                     .addOnFailureListener {
                         Log.w(TAG, "lap nha hong: ${it.message}")
-                        xong(false)
+                        xong(noiLoi(it), false)
                     }
             }
             .addOnFailureListener {
                 Log.w(TAG, "khong doc duoc nha: ${it.message}")
-                xong(false)
+                xong(noiLoi(it), false)
             }
     }
+
+    private fun uidHienTai(context: Context): String =
+        app(context)?.let { FirebaseAuth.getInstance(it).currentUser?.uid }.orEmpty()
 
     internal fun nha(context: Context): DocumentReference? =
         db(context)?.collection(Duong.NHA)?.document(maNha(context))
