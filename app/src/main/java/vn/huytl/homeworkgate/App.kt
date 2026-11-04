@@ -8,6 +8,7 @@ import vn.huytl.homeworkgate.data.LichDangDung
 import vn.huytl.homeworkgate.data.NgayNghi
 import vn.huytl.homeworkgate.data.Prefs
 import vn.huytl.homeworkgate.data.SoCaiBai
+import vn.huytl.homeworkgate.dongbo.UuTienIPv4
 import vn.huytl.homeworkgate.guard.CatMangVpn
 import vn.huytl.homeworkgate.guard.TelegramThat
 import vn.huytl.homeworkgate.kho.BoThe
@@ -29,6 +30,9 @@ class App : Application() {
 
     override fun onCreate() {
         super.onCreate()
+        // Truoc khi Firestore dung kenh dau tien: Wi-Fi co IPv6 hong thi Firestore treo mai.
+        // Xem UuTienIPv4.
+        runCatching { UuTienIPv4.batDau() }
         // Truoc moi thu doc lich: ban lich da nhan tu Firestore. Xem LichDangDung.
         LichDangDung.napTuMay(this)
         // Ngay Ba Huy cho nghi them nam trong Prefs, khong nam trong ban lich. Xem NgayNghi.ngayThem.

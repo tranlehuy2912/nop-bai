@@ -160,6 +160,8 @@ dependencies {
     implementation(platform(libs.firebase.bom))
     implementation(libs.firebase.firestore)
     implementation(libs.firebase.auth)
+    // Lop cua gRPC de bat Firestore thu IPv4 truoc. Xem dongbo/UuTienIPv4.
+    implementation(libs.grpc.api)
 
     androidTestImplementation(libs.androidx.test.junit)
     androidTestImplementation(libs.androidx.test.runner)
