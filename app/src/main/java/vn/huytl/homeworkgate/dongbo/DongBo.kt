@@ -19,6 +19,7 @@ import com.google.firebase.firestore.FieldValue
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ListenerRegistration
 import com.google.firebase.firestore.Query
+import com.google.firebase.firestore.SetOptions
 import vn.huytl.homeworkgate.BuildConfig
 import vn.huytl.homeworkgate.R
 import vn.huytl.homeworkgate.data.BaiDaCham
@@ -42,6 +43,7 @@ import vn.huytl.homeworkgate.guard.ParentMode
 import vn.huytl.homeworkgate.guard.Permissions
 import vn.huytl.homeworkgate.guard.TelegramThat
 import vn.huytl.homeworkgate.guard.TinCuaBa
+import vn.huytl.homeworkgate.guard.TruyCapTuXa
 import java.security.SecureRandom
 import java.text.SimpleDateFormat
 import java.util.Calendar
@@ -821,6 +823,72 @@ object DongBo {
     }
 
     private val luongNen = java.util.concurrent.Executors.newSingleThreadExecutor()
+
+    // ------------------------------------------------------- vao may tu xa
+
+    /**
+     * Lenh [Lenh.TU_XA] vua toi: xoa cau bao loi cua lan bam truoc ([Duong.F_TIN]), de Bang
+     * dieu khien khong hien cau cu canh tinh trang moi. Goi truoc moi lan ghi khac cua lenh do:
+     * ghi tu mot may thi Firestore giu dung thu tu, nen lan xoa nay khong de len cau bao moi.
+     */
+    fun xoaTinTuXa(context: Context) {
+        hop(context, Duong.D_TU_XA)
+            ?.set(mapOf(Duong.F_TIN to FieldValue.delete()), SetOptions.merge())
+            ?.addOnFailureListener { Log.w(TAG, "xoa tin tu xa hong: ${it.message}") }
+    }
+
+    /** Ghi cau bao loi [chu] cua viec [viec] (mot trong [TuXa]) vao [Duong.F_TIN]. */
+    fun baoTuXa(context: Context, viec: String, chu: String) {
+        hop(context, Duong.D_TU_XA)?.set(
+            mapOf(
+                Duong.F_TIN to mapOf(
+                    Duong.F_CHU to chu,
+                    Duong.F_LUC to System.currentTimeMillis(),
+                    Duong.F_VIEC to viec
+                )
+            ),
+            SetOptions.merge()
+        )?.addOnFailureListener { Log.w(TAG, "bao tu xa hong: ${it.message}") }
+    }
+
+    /**
+     * Doc tinh trang vao may tu xa roi ghi vao [Duong.D_TU_XA] (5/11/2026). Chi goi sau mot
+     * lenh [Lenh.TU_XA], xem [ThiHanhLenh].
+     *
+     * Doc co khi mat toi 10 giay (tim cong go loi qua mDNS), nen lan doc bat dau truoc co the
+     * xong sau lan doc bat dau sau. Vi du bat go loi khong day: lan doc ngay luc nhan lenh
+     * thay cai dat da la 1, tim cong 10 giay khong ra; lan doc 3 giay sau thay Android da tra
+     * ve 0 vi dang hien hop hoi, ghi xong truoc. De lan doc cu ghi sau thi mat ban dung. Nen
+     * moi lan doc mang mot so thu tu, xong ma da co ban moi hon ghi roi thi bo.
+     *
+     * Ghi bang merge, khong dong vao [Duong.F_TIN].
+     */
+    fun dayTuXa(context: Context) {
+        val ung = context.applicationContext
+        val so = ++soLanDocTuXa
+        val batDau = System.currentTimeMillis()
+        TruyCapTuXa.docTinhTrang(ung) { tt ->
+            if (so < soDaGhiTuXa) return@docTinhTrang
+            soDaGhiTuXa = so
+            hop(ung, Duong.D_TU_XA)?.set(
+                mapOf(
+                    Duong.F_CO_TAILSCALE to tt.coTailscale,
+                    Duong.F_TAILSCALE_THEO_LENH to tt.tailscaleTheoLenh,
+                    Duong.F_IP_TAILSCALE to tt.ipTailscale.orEmpty(),
+                    Duong.F_GO_LOI_USB to tt.goLoiUsb,
+                    Duong.F_GO_LOI_KHONG_DAY to tt.goLoiKhongDay,
+                    Duong.F_CONG_GO_LOI to (tt.congGoLoi ?: 0),
+                    Duong.F_CO_QUYEN_GO_LOI to tt.coQuyen,
+                    Duong.F_CAP_NHAT_LUC to batDau
+                ),
+                SetOptions.merge()
+            )?.addOnFailureListener { Log.w(TAG, "day tu xa hong: ${it.message}") }
+        }
+    }
+
+    /** So thu tu lan doc cho [dayTuXa]. Chi dung tren luong chinh. */
+    private var soLanDocTuXa = 0
+    private var soDaGhiTuXa = 0
 
     private fun daySuDungNen(
         context: Context,

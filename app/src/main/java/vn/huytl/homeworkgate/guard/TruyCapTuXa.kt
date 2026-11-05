@@ -14,6 +14,7 @@ import android.os.SystemClock
 import android.provider.Settings
 import android.util.Log
 import vn.huytl.homeworkgate.data.Prefs
+import vn.huytl.homeworkgate.dongbo.TuXa
 import java.net.Inet4Address
 import java.net.InetAddress
 import java.net.NetworkInterface
@@ -21,7 +22,9 @@ import java.util.concurrent.atomic.AtomicBoolean
 
 /**
  * Cho Ba Huy (va Claude Code tren Mac mini) vao tablet tu xa: bat tat Tailscale, go loi
- * khong day, go loi USB bang lenh Telegram /tailscale, /goiloi, /goiloiusb, xem bang /tuxa.
+ * khong day, go loi USB bang lenh Telegram /tailscale, /goloi, /goloiusb, xem bang /tuxa.
+ * Tu 5/11/2026 bam duoc ca o nhom "Truy cập từ xa" the Cai dat cua Bang dieu khien (lenh
+ * Firestore TUXA, xem dongbo/ThiHanhLenh va DongBo.dayTuXa).
  *
  * VI SAO CO. Toi 4/11/2026 Firestore cua tablet treo ca ngay (Wi-Fi nha co IPv6 hong, xem
  * dongbo/UuTienIPv4) ma khong ai o nha, khong co cach nao doc logcat. Nguoi nha cai
@@ -48,6 +51,11 @@ import java.util.concurrent.atomic.AtomicBoolean
  * HOP HOI CUA ANDROID. Bat go loi khong day tren mot mang Wi-Fi chua tung "Luon cho phep"
  * thi Android hien hop "Cho phep go loi khong day tren mang nay?" va de cai dat ve 0 cho toi
  * khi co nguoi bam (thu tren may ao ngay 4/11/2026). App bao lai cho Ba Huy chu khong tu bam.
+ *
+ * HAI DUONG BAO. Cac ham bat tat tra ve [Bao], tham so `telegram` chon loi: ben Telegram cau
+ * bao kem lenh go tiep ("/goloi tat") va loi nhac cat mang lai; ben Bang dieu khien khong co
+ * hai thu do (anh Huy chot 5/11/2026 "khong can ghi note"), va chi cau [Bao.loi] moi hien,
+ * vi tinh trang that da hien o cong tac.
  */
 object TruyCapTuXa {
     private const val TAG = "HomeworkGate"
@@ -87,6 +95,16 @@ object TruyCapTuXa {
 
     private val tay = Handler(Looper.getMainLooper())
 
+    /** Cau bao cua mot lan bat tat. [loi] la viec khong thanh. */
+    class Bao(val chu: String, val loi: Boolean = false)
+
+    /** Ten viec trong nhat ky va cau bao, theo [TuXa]. */
+    fun ten(viec: String): String = when (viec) {
+        TuXa.TAILSCALE -> "Tailscale"
+        TuXa.GO_LOI -> "gỡ lỗi không dây"
+        else -> "gỡ lỗi USB"
+    }
+
     // ------------------------------------------------------------------ Tailscale
 
     /** Ba Huy dang bat Tailscale bang lenh, va may chua khoi dong lai tu luc do. */
@@ -119,8 +137,8 @@ object TruyCapTuXa {
      * Bat Tailscale: dung cat mang, roi bao app Tailscale noi. [xong] nhan tin thu hai, sau
      * khoang 15 giay, noi Tailscale da co dia chi chua.
      */
-    fun batTailscale(c: Context, xong: (String) -> Unit): String {
-        if (!coTailscale(c)) return "Tablet chưa cài Tailscale."
+    fun batTailscale(c: Context, telegram: Boolean, xong: (Bao) -> Unit): Bao {
+        if (!coTailscale(c)) return Bao("Tablet chưa cài Tailscale.", loi = true)
         val ung = c.applicationContext
         val coDanhSach = Prefs.get(ung).catMangPackages.isNotEmpty()
         datCo(ung, true)
@@ -129,23 +147,31 @@ object TruyCapTuXa {
         tay.postDelayed({
             val ip = ipTailscale(ung)
             xong(
-                if (ip != null) "Tailscale đã nối, địa chỉ $ip."
-                else "Chưa thấy Tailscale nối sau ${CHO_TAILSCALE_MS / 1000} giây. Có thể " +
-                    "Tailscale bị đăng xuất hoặc tablet mất mạng. Gõ /tuxa để xem lại."
+                if (ip != null) Bao("Tailscale đã nối, địa chỉ $ip.")
+                else Bao(
+                    "Chưa thấy Tailscale nối sau ${CHO_TAILSCALE_MS / 1000} giây. Có thể " +
+                        "Tailscale bị đăng xuất hoặc tablet mất mạng." +
+                        if (telegram) " Gõ /tuxa để xem lại." else "",
+                    loi = true
+                )
             )
         }, CHO_TAILSCALE_MS)
-        return "Đang bật Tailscale…" +
-            if (coDanhSach) "\nTrong lúc Tailscale bật, tablet không cắt mạng các app trong " +
-                "danh sách cắt mạng (vẫn chặn mở như thường)." else ""
+        return Bao(
+            "Đang bật Tailscale…" +
+                if (telegram && coDanhSach) "\nTrong lúc Tailscale bật, tablet không cắt mạng " +
+                    "các app trong danh sách cắt mạng (vẫn chặn mở như thường)." else ""
+        )
     }
 
     /** Tat Tailscale va cat mang lai theo luat cu. */
-    fun tatTailscale(c: Context): String {
+    fun tatTailscale(c: Context, telegram: Boolean): Bao {
         val ung = c.applicationContext
         datCo(ung, false)
         if (coTailscale(ung)) guiTailscale(ung, NGAT_TAILSCALE)
         CatMangVpn.dongBo(ung)
-        return "Đã tắt Tailscale. Tablet cắt mạng lại theo giờ như cũ."
+        return Bao(
+            "Đã tắt Tailscale." + if (telegram) " Tablet cắt mạng lại theo giờ như cũ." else ""
+        )
     }
 
     private fun guiTailscale(c: Context, viec: String) {
@@ -187,93 +213,146 @@ object TruyCapTuXa {
         runCatching { Settings.Global.getInt(c.contentResolver, ten, 0) }.getOrDefault(0)
 
     /** Ghi mot muc go loi. Tra ve null la xong, khac null la ly do khong ghi duoc. */
-    private fun ghi(c: Context, ten: String, bat: Boolean): String? {
+    private fun ghi(c: Context, ten: String, bat: Boolean): Bao? {
         if (!coQuyen(c)) return chuaCoQuyen()
         return runCatching {
             Settings.Global.putInt(c.contentResolver, ten, if (bat) 1 else 0)
             null
-        }.getOrElse { "Không đổi được cài đặt (${it.javaClass.simpleName})." }
+        }.getOrElse { Bao("Không đổi được cài đặt (${it.javaClass.simpleName}).", loi = true) }
     }
 
-    private fun chuaCoQuyen() =
-        "App chưa có quyền đổi cài đặt gỡ lỗi. Cần cấp một lần qua adb:\n$LENH_CAP_QUYEN"
+    private fun chuaCoQuyen() = Bao(
+        "App chưa có quyền đổi cài đặt gỡ lỗi. Cần cấp một lần qua adb:\n$LENH_CAP_QUYEN",
+        loi = true
+    )
 
     fun goLoiUsbDangBat(c: Context) = doc(c, ADB_USB) == 1
     fun goLoiKhongDayDangBat(c: Context) = doc(c, ADB_WIFI) == 1
 
     /** Bat tat muc "Go loi USB". Tat muc nay thi moi duong adb dong lai, ke ca qua Tailscale. */
-    fun goLoiUsb(c: Context, bat: Boolean): String {
+    fun goLoiUsb(c: Context, bat: Boolean): Bao {
         ghi(c, ADB_USB, bat)?.let { return it }
-        return if (bat) "Đã bật gỡ lỗi USB." else "Đã tắt gỡ lỗi USB."
+        return Bao(if (bat) "Đã bật gỡ lỗi USB." else "Đã tắt gỡ lỗi USB.")
     }
 
     /**
      * Bat go loi khong day. [xong] nhan tin thu hai: dia chi de noi, hay loi hop hoi dang
      * cho nguoi bam tren tablet.
      */
-    fun batGoLoiKhongDay(c: Context, xong: (String) -> Unit): String {
+    fun batGoLoiKhongDay(c: Context, telegram: Boolean, xong: (Bao) -> Unit): Bao {
         ghi(c, ADB_WIFI, true)?.let { return it }
         val ung = c.applicationContext
         tay.postDelayed({
             if (!goLoiKhongDayDangBat(ung)) {
                 xong(
-                    "Android chưa bật gỡ lỗi không dây. Thường là tablet đang hiện hộp " +
-                        "\"Cho phép gỡ lỗi không dây trên mạng này?\": cần người bấm Cho phép " +
-                        "(tick \"Luôn cho phép trên mạng này\" để lần sau khỏi hỏi). Hoặc " +
-                        "tablet đang không nối Wi-Fi."
+                    Bao(
+                        "Android chưa bật gỡ lỗi không dây. Thường là tablet đang hiện hộp " +
+                            "\"Cho phép gỡ lỗi không dây trên mạng này?\": cần người bấm Cho " +
+                            "phép (tick \"Luôn cho phép trên mạng này\" để lần sau khỏi hỏi). " +
+                            "Hoặc tablet đang không nối Wi-Fi.",
+                        loi = true
+                    )
                 )
             } else {
-                timCong(ung) { cong -> xong(moTaKhongDay(ung, cong)) }
+                timCong(ung) { cong -> xong(moTaKhongDay(ung, cong, telegram)) }
             }
         }, CHO_DOC_LAI_MS)
-        return "Đang bật gỡ lỗi không dây…"
+        return Bao("Đang bật gỡ lỗi không dây…")
     }
 
-    fun tatGoLoiKhongDay(c: Context): String {
+    fun tatGoLoiKhongDay(c: Context): Bao {
         ghi(c, ADB_WIFI, false)?.let { return it }
-        return "Đã tắt gỡ lỗi không dây."
+        return Bao("Đã tắt gỡ lỗi không dây.")
     }
 
-    private fun moTaKhongDay(c: Context, cong: Int?): String {
+    private fun moTaKhongDay(c: Context, cong: Int?, telegram: Boolean): Bao {
         if (cong == null) {
             // Thu tren may ao 4/11/2026: tat roi bat lai cach nhau nua giay thi adbd van mo
             // cong nhung mDNS khong rao nua, cho bao lau cung khong thay, toi lan tat bat sau.
-            return "Gỡ lỗi không dây đang bật nhưng chưa tìm được số cổng. Thử /goiloi tat, " +
-                "chờ vài giây rồi /goiloi bat."
+            return Bao(
+                "Gỡ lỗi không dây đang bật nhưng chưa tìm được số cổng. " +
+                    if (telegram) "Thử /goloi tat, chờ vài giây rồi /goloi bat."
+                    else "Tắt, chờ vài giây rồi bật lại.",
+                loi = true
+            )
         }
         val ts = ipTailscale(c)
-        return "Gỡ lỗi không dây đang bật, cổng $cong.\n" +
-            (if (ts != null) "adb connect $ts:$cong" else "Tailscale chưa nối (/tailscale bat).")
+        return Bao(
+            "Gỡ lỗi không dây đang bật, cổng $cong.\n" + when {
+                ts != null -> "adb connect $ts:$cong"
+                telegram -> "Tailscale chưa nối (/tailscale bat)."
+                else -> "Tailscale chưa nối."
+            }
+        )
     }
 
     // ------------------------------------------------------------------ tinh trang
 
-    /** Bang /tuxa. Co tim cong go loi nen tra qua [xong], cham nhat khoang 10 giay. */
-    fun tinhTrang(c: Context, xong: (String) -> Unit) {
+    /** Tinh trang cung luc doc, cho bang /tuxa va cho [vn.huytl.homeworkgate.dongbo.Duong.D_TU_XA]. */
+    data class TinhTrang(
+        val coTailscale: Boolean,
+        val tailscaleTheoLenh: Boolean,
+        /** null la Tailscale chua noi. */
+        val ipTailscale: String?,
+        val goLoiUsb: Boolean,
+        val goLoiKhongDay: Boolean,
+        /** null la go loi khong day dang tat, hay chua tim duoc cong. */
+        val congGoLoi: Int?,
+        val coQuyen: Boolean,
+    )
+
+    /**
+     * Doc tinh trang. Go loi khong day dang bat thi tim them cong qua mDNS, nen tra qua
+     * [xong], tren luong chinh, cham nhat khoang 10 giay ([CHO_TIM_CONG_MS]).
+     */
+    fun docTinhTrang(c: Context, xong: (TinhTrang) -> Unit) {
         val ung = c.applicationContext
-        val ts = ipTailscale(ung)
-        val dong = buildList {
-            add(
-                "• Tailscale: " + when {
-                    ts != null && tailscaleDangBat(ung) -> "đang bật theo lệnh, địa chỉ $ts"
-                    ts != null -> "đang nối, địa chỉ $ts"
-                    tailscaleDangBat(ung) -> "đã bật theo lệnh nhưng chưa nối"
-                    !coTailscale(ung) -> "chưa cài"
-                    else -> "tắt"
-                }
-            )
-            add("• Gỡ lỗi USB: " + if (goLoiUsbDangBat(ung)) "bật" else "tắt")
-            add("• Quyền đổi cài đặt gỡ lỗi: " + if (coQuyen(ung)) "có" else "chưa có")
-        }
-        val dau = "TRUY CẬP TỪ XA\n" + dong.joinToString("\n")
-        if (!goLoiKhongDayDangBat(ung)) {
-            xong("$dau\n• Gỡ lỗi không dây: tắt")
+        val tt = TinhTrang(
+            coTailscale = coTailscale(ung),
+            tailscaleTheoLenh = tailscaleDangBat(ung),
+            ipTailscale = ipTailscale(ung),
+            goLoiUsb = goLoiUsbDangBat(ung),
+            goLoiKhongDay = goLoiKhongDayDangBat(ung),
+            congGoLoi = null,
+            coQuyen = coQuyen(ung),
+        )
+        if (!tt.goLoiKhongDay) {
+            xong(tt)
             return
         }
-        timCong(ung) { cong ->
-            xong("$dau\n• Gỡ lỗi không dây: bật" +
-                (cong?.let { ", cổng $it" } ?: ", chưa tìm được cổng (thử /goiloi tat rồi bat)") +
-                if (cong != null && ts != null) "\nadb connect $ts:$cong" else "")
+        timCong(ung) { cong -> xong(tt.copy(congGoLoi = cong)) }
+    }
+
+    /** Bang /tuxa. Co tim cong go loi nen tra qua [xong], cham nhat khoang 10 giay. */
+    fun tinhTrang(c: Context, xong: (String) -> Unit) {
+        docTinhTrang(c) { tt ->
+            val ts = tt.ipTailscale
+            val dong = buildList {
+                add(
+                    "• Tailscale: " + when {
+                        ts != null && tt.tailscaleTheoLenh -> "đang bật theo lệnh, địa chỉ $ts"
+                        ts != null -> "đang nối, địa chỉ $ts"
+                        tt.tailscaleTheoLenh -> "đã bật theo lệnh nhưng chưa nối"
+                        !tt.coTailscale -> "chưa cài"
+                        else -> "tắt"
+                    }
+                )
+                add("• Gỡ lỗi USB: " + if (tt.goLoiUsb) "bật" else "tắt")
+                add("• Quyền đổi cài đặt gỡ lỗi: " + if (tt.coQuyen) "có" else "chưa có")
+                add(
+                    "• Gỡ lỗi không dây: " + when {
+                        !tt.goLoiKhongDay -> "tắt"
+                        tt.congGoLoi == null ->
+                            "bật, chưa tìm được cổng (thử /goloi tat rồi bat)"
+                        else -> "bật, cổng ${tt.congGoLoi}"
+                    }
+                )
+            }
+            val cong = tt.congGoLoi
+            xong(
+                "TRUY CẬP TỪ XA\n" + dong.joinToString("\n") +
+                    if (cong != null && ts != null) "\nadb connect $ts:$cong" else ""
+            )
         }
     }
 

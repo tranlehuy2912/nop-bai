@@ -2,6 +2,8 @@ package vn.huytl.homeworkgate.dongbo
 
 import android.app.admin.DevicePolicyManager
 import android.content.Context
+import android.os.Handler
+import android.os.Looper
 import com.google.firebase.firestore.DocumentSnapshot
 import vn.huytl.homeworkgate.R
 import vn.huytl.homeworkgate.data.BaiCho
@@ -25,6 +27,7 @@ import vn.huytl.homeworkgate.guard.CatMangVpn
 import vn.huytl.homeworkgate.guard.ChuongTin
 import vn.huytl.homeworkgate.guard.ParentMode
 import vn.huytl.homeworkgate.guard.Permissions
+import vn.huytl.homeworkgate.guard.TruyCapTuXa
 import vn.huytl.homeworkgate.telegram.ApprovalService
 import vn.huytl.homeworkgate.telegram.TelegramClient
 import java.util.Calendar
@@ -181,6 +184,8 @@ object ThiHanhLenh {
             Lenh.MO_DE_THI -> moDeThi(context, chu)
 
             Lenh.NGHI_HOC -> nghiHoc(context, chu, d.get("giaTri") != false)
+
+            Lenh.TU_XA -> tuXa(context, chu, d.get("giaTri") == true)
 
             // Ben kia vua mo app va hoi tablet con song khong. Day mot ban trang
             // thai day du roi thoi: khong ghi nhat ky, khong tra loi gi. Ban trang
@@ -516,6 +521,49 @@ object ThiHanhLenh {
         return if (de.daBatDau) "$con đang làm $ten."
         else "Đã mở $ten (${de.cauIds.size} câu, ${de.phutGoiY} phút). $con vào Luyện tập để làm."
     }
+
+    /**
+     * Bat tat Tailscale, go loi khong day, go loi USB tu nhom "Truy cập từ xa" o the Cai dat cua
+     * Bang dieu khien (anh Huy chot 5/11/2026), hay chi doc lai tinh trang ([TuXa.XEM]). Cung
+     * cac ham voi ba lenh Telegram /tailscale, /goloi, /goloiusb, xem guard/TruyCapTuXa.
+     *
+     * Tra ve chuoi rong, khong ghi traLoi: cau do chi hien o the Gio choi, ma luc nay Ba Huy
+     * dang o the Cai dat. Tinh trang ghi vao hop/tuxa ngay luc nhan lenh, roi lan nua khi viec
+     * cham xong (Tailscale noi, tim cong go loi). Cau bao chi ghi khi viec khong thanh
+     * ([TruyCapTuXa.Bao.loi]): viec thanh thi cong tac ben kia da gat theo tinh trang moi.
+     */
+    private fun tuXa(context: Context, viec: String, bat: Boolean): String {
+        val ung = context.applicationContext
+        DongBo.xoaTinTuXa(ung)
+        val sau: (TruyCapTuXa.Bao) -> Unit = { bao ->
+            if (bao.loi) DongBo.baoTuXa(ung, viec, bao.chu)
+            DongBo.dayTuXa(ung)
+        }
+        val bao = when (viec) {
+            TuXa.XEM -> null
+            TuXa.TAILSCALE ->
+                if (bat) TruyCapTuXa.batTailscale(ung, false, sau)
+                else TruyCapTuXa.tatTailscale(ung, false)
+            TuXa.GO_LOI ->
+                if (bat) TruyCapTuXa.batGoLoiKhongDay(ung, false, sau)
+                else TruyCapTuXa.tatGoLoiKhongDay(ung)
+            TuXa.GO_LOI_USB -> TruyCapTuXa.goLoiUsb(ung, bat)
+            else -> TruyCapTuXa.Bao("Tablet không hiểu việc \"$viec\".", loi = true)
+        }
+        if (viec == TuXa.TAILSCALE || viec == TuXa.GO_LOI || viec == TuXa.GO_LOI_USB) {
+            DayLog.add(ung, "Ba Huy ${if (bat) "bật" else "tắt"} ${TruyCapTuXa.ten(viec)} từ xa")
+        }
+        bao?.takeIf { it.loi }?.let { DongBo.baoTuXa(ung, viec, it.chu) }
+        DongBo.dayTuXa(ung)
+        // Tat Tailscale thi app Tailscale ngat sau mot hai giay: doc ngay luc nay van thay dia
+        // chi 100.x, cong tac ben kia khong gat. Doc lai lan nua sau khi no ngat.
+        if (viec == TuXa.TAILSCALE && !bat) {
+            Handler(Looper.getMainLooper()).postDelayed({ DongBo.dayTuXa(ung) }, CHO_TAILSCALE_NGAT_MS)
+        }
+        return ""
+    }
+
+    private const val CHO_TAILSCALE_NGAT_MS = 3_000L
 
     /**
      * Ba Huy cho con nghi hoc mot ngay ngoai lich, hay bo ngay nghi da cho. Xem [Lenh.NGHI_HOC]

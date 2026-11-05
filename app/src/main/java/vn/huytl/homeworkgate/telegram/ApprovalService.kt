@@ -61,6 +61,7 @@ import vn.huytl.homeworkgate.guard.TruyCapTuXa
 import vn.huytl.homeworkgate.guard.DaiNhac
 import vn.huytl.homeworkgate.guard.ManChan
 import vn.huytl.homeworkgate.dongbo.DongBo
+import vn.huytl.homeworkgate.dongbo.TuXa
 import vn.huytl.homeworkgate.dongbo.ThiHanhLenh
 import vn.huytl.homeworkgate.guard.ChuongTin
 import vn.huytl.homeworkgate.guard.GuardAccessibilityService
@@ -1127,8 +1128,9 @@ class ApprovalService : Service() {
 
             // Vao may tu xa (anh Huy chot 4/11/2026): Tailscale, go loi khong day, go loi USB,
             // moi lenh kem "bat" hay "tat". Viec cham (Tailscale noi, tim cong go loi) bao
-            // bang tin thu hai. Xem guard/TruyCapTuXa.
-            "tailscale", "goloi", "goloiusb" -> {
+            // bang tin thu hai. Xem guard/TruyCapTuXa. Ten lenh la /goloi, /goloiusb (anh Huy
+            // chot 5/11/2026); bang tro giup ban 4/11 ghi nham /goiloi.
+            TuXa.TAILSCALE, TuXa.GO_LOI, TuXa.GO_LOI_USB -> {
                 val bat = when (arg.lowercase()) {
                     "bat", "bật", "on" -> true
                     "tat", "tắt", "off" -> false
@@ -1139,21 +1141,16 @@ class ApprovalService : Service() {
                     return
                 }
                 val ung = applicationContext
-                val tinSau: (String) -> Unit = { Notifier.send(ung, it) }
+                val tinSau: (TruyCapTuXa.Bao) -> Unit = { Notifier.send(ung, it.chu) }
                 val traLoi = when (word) {
-                    "tailscale" -> if (bat) TruyCapTuXa.batTailscale(ung, tinSau)
-                        else TruyCapTuXa.tatTailscale(ung)
-                    "goloi" -> if (bat) TruyCapTuXa.batGoLoiKhongDay(ung, tinSau)
+                    TuXa.TAILSCALE -> if (bat) TruyCapTuXa.batTailscale(ung, true, tinSau)
+                        else TruyCapTuXa.tatTailscale(ung, true)
+                    TuXa.GO_LOI -> if (bat) TruyCapTuXa.batGoLoiKhongDay(ung, true, tinSau)
                         else TruyCapTuXa.tatGoLoiKhongDay(ung)
                     else -> TruyCapTuXa.goLoiUsb(ung, bat)
                 }
-                val ten = when (word) {
-                    "tailscale" -> "Tailscale"
-                    "goloi" -> "gỡ lỗi không dây"
-                    else -> "gỡ lỗi USB"
-                }
-                DayLog.add(this, "Ba Huy ${if (bat) "bật" else "tắt"} $ten từ xa")
-                client.sendMessage(chatId, traLoi)
+                DayLog.add(this, "Ba Huy ${if (bat) "bật" else "tắt"} ${TruyCapTuXa.ten(word)} từ xa")
+                client.sendMessage(chatId, traLoi.chu)
             }
 
             "tuxa" -> {
@@ -2032,8 +2029,8 @@ class ApprovalService : Service() {
         VÀO MÁY TỪ XA
         /tuxa  xem Tailscale, gỡ lỗi đang bật hay tắt
         /tailscale bat  bật Tailscale, thôi cắt mạng (tat = tắt)
-        /goiloi bat  bật gỡ lỗi không dây, báo cổng (tat = tắt)
-        /goiloiusb bat  bật gỡ lỗi USB (tat = tắt)
+        /goloi bat  bật gỡ lỗi không dây, báo cổng (tat = tắt)
+        /goloiusb bat  bật gỡ lỗi USB (tat = tắt)
 
         Nhắn cho ${getString(R.string.child_name)} thì nhắn thẳng trên Telegram của ${getString(R.string.child_name)}.
         Số phút, giờ ngủ, danh sách app: sửa trong app.
