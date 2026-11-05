@@ -76,13 +76,30 @@ class SetupActivity : AppCompatActivity() {
                     .putExtra(AppPickerActivity.EXTRA_DANH_SACH, AppPickerActivity.CAT_MANG)
             )
         }
+        binding.btnTietKiemPin.setOnClickListener {
+            startActivity(Intent(this, TietKiemPinActivity::class.java))
+        }
     }
 
     override fun onResume() {
         super.onResume()
         // Giong trang cau hinh: roi app lau, hay chua qua PIN, thi hoi PIN ngay tren
         // trang nay. Chu da go ma chua bam Luu van con nguyen.
-        hoiLaiPin.roiMoi { veCanhBao() }
+        hoiLaiPin.roiMoi {
+            veCanhBao()
+            veTietKiemPin()
+        }
+    }
+
+    /** Mot dong tom tat tiet kiem pin; ve lai moi lan quay ve tu trang Tiet kiem pin. */
+    private fun veTietKiemPin() {
+        binding.txtTietKiemPin.text = if (!prefs.pinBat) {
+            "Đang tắt."
+        } else {
+            val phut = prefs.pinPhut.let { if (it == 0) "ngay khi" else "$it phút sau khi" }
+            "Bật Tiết kiệm pin $phut tắt màn hình. Tạm dừng ${prefs.tamDungPackages.size} app " +
+                "sau ${prefs.pinPhutDung} phút."
+        }
     }
 
     /**

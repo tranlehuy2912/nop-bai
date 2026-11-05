@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.SharedPreferences
 import androidx.security.crypto.EncryptedSharedPreferences
 import androidx.security.crypto.MasterKey
+import vn.huytl.homeworkgate.dongbo.CaiDatPin
 import java.security.MessageDigest
 import java.security.SecureRandom
 
@@ -178,6 +179,34 @@ class Prefs private constructor(private val sp: SharedPreferences) {
     var catMangPackages: Set<String>
         get() = sp.getStringSet(KEY_CAT_MANG, emptySet()).orEmpty()
         set(v) = sp.edit().putStringSet(KEY_CAT_MANG, v).commit().let {}
+
+    /**
+     * Tu dong tiet kiem pin khi man hinh tat (5/11/2026), xem [vn.huytl.homeworkgate.pin.TietKiemPin].
+     * Bon muc duoi la cau hinh, Ba Huy doi tu Bang dieu khien (lenh CAIDAT) hay tren tablet sau PIN,
+     * nen nam o kho chinh de ban sao hop/caidat tu cap nhat. Trang thai dang tiet kiem (da bat
+     * Tiet kiem pin chua, app nao dang tam dung) thi doi moi lan tat man hinh, nen nam o kho rieng
+     * cua TietKiemPin. Luc moi cai la tat (anh Huy bat tu Bang dieu khien).
+     */
+    var pinBat: Boolean
+        get() = sp.getBoolean(KEY_PIN_BAT, false)
+        set(v) = sp.edit().putBoolean(KEY_PIN_BAT, v).commit().let {}
+
+    /** Man hinh tat bao nhieu phut thi bat Tiet kiem pin cua Android, 0 la ngay. */
+    var pinPhut: Int
+        get() = sp.getInt(KEY_PIN_PHUT, CaiDatPin.PHUT_MAC_DINH)
+            .takeIf { it in CaiDatPin.CAC_MUC_PHUT } ?: CaiDatPin.PHUT_MAC_DINH
+        set(v) = sp.edit().putInt(KEY_PIN_PHUT, v).commit().let {}
+
+    /** Man hinh tat bao nhieu phut thi tam dung cac app trong [tamDungPackages]. */
+    var pinPhutDung: Int
+        get() = sp.getInt(KEY_PIN_PHUT_DUNG, CaiDatPin.PHUT_DUNG_MAC_DINH)
+            .takeIf { it in CaiDatPin.CAC_MUC_PHUT_DUNG } ?: CaiDatPin.PHUT_DUNG_MAC_DINH
+        set(v) = sp.edit().putInt(KEY_PIN_PHUT_DUNG, v).commit().let {}
+
+    /** App tam dung (pm suspend) khi man hinh tat du [pinPhutDung] phut. */
+    var tamDungPackages: Set<String>
+        get() = sp.getStringSet(KEY_TAM_DUNG, emptySet()).orEmpty()
+        set(v) = sp.edit().putStringSet(KEY_TAM_DUNG, v).commit().let {}
 
     /**
      * Cac khoa API cua AI, theo thu tu uu tien.
@@ -408,6 +437,10 @@ class Prefs private constructor(private val sp: SharedPreferences) {
         private const val KEY_AI_PKG = "ai_packages"
         private const val KEY_BLOCKED = "blocked_packages"
         private const val KEY_CAT_MANG = "cat_mang_packages"
+        private const val KEY_PIN_BAT = "pin_bat"
+        private const val KEY_PIN_PHUT = "pin_phut"
+        private const val KEY_PIN_PHUT_DUNG = "pin_phut_dung"
+        private const val KEY_TAM_DUNG = "tam_dung_packages"
         private const val KEY_NHAC = "nhac_packages"
         private const val KEY_LOCK_SETTINGS = "lock_settings"
         private const val KEY_TG_OFFSET = "tg_offset"

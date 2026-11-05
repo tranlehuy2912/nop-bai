@@ -24,6 +24,10 @@
         android:name="android.permission.WRITE_SECURE_SETTINGS"
         tools:ignore="ProtectedPermissions" />
 
+    <!-- Tiet kiem pin (pin/TietKiemPin.kt): bao thuc chinh xac luc man hinh tat du so phut. Bao thuc
+         thuong bi Android cho tre toi mot gio luc may ngu sau. Tu Android 13 quyen nay tu cap. -->
+    <uses-permission android:name="android.permission.USE_EXACT_ALARM" />
+
     <uses-feature
         android:name="android.hardware.camera"
         android:required="true" />
@@ -59,6 +63,8 @@
         <!-- Lenh /tailscale bao app Tailscale noi hay ngat (guard/TruyCapTuXa.kt). Thieu muc
              nay thi app khong thay Tailscale, va tin gui cho no khong toi. -->
         <package android:name="com.tailscale.ipn" />
+        <!-- Jokers Permissions: chay lenh shell de tam dung app khi tiet kiem pin (pin/Jokers.kt). -->
+        <package android:name="vn.huytl.jokers" />
     </queries>
 
     <application
@@ -154,6 +160,13 @@
 
         <activity
             android:name=".ui.AppPickerActivity"
+            android:configChanges="orientation|screenSize|screenLayout|smallestScreenSize"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+
+        <!-- Tiet kiem pin khi tat man hinh (5/11/2026), mo tu trang Cai dat sau PIN. -->
+        <activity
+            android:name=".ui.TietKiemPinActivity"
             android:configChanges="orientation|screenSize|screenLayout|smallestScreenSize"
             android:exported="false"
             android:screenOrientation="portrait" />
@@ -360,5 +373,19 @@
         <receiver
             android:name=".guard.MocGio$Receiver"
             android:exported="false" />
+
+        <!-- Bao thuc luc man hinh tat du so phut de tiet kiem pin. Xem pin/TietKiemPin.kt. -->
+        <receiver
+            android:name=".pin.TietKiemPin$Receiver"
+            android:exported="false" />
+
+        <!-- Nhan ket noi tu Jokers Permissions (thu vien jokers-api, chep tu Shizuku-API). -->
+        <provider
+            android:name="rikka.shizuku.ShizukuProvider"
+            android:authorities="${applicationId}.shizuku"
+            android:enabled="true"
+            android:exported="true"
+            android:multiprocess="false"
+            android:permission="android.permission.INTERACT_ACROSS_USERS_FULL" />
     </application>
 </manifest>

@@ -44,6 +44,7 @@ import vn.huytl.homeworkgate.guard.Permissions
 import vn.huytl.homeworkgate.guard.TelegramThat
 import vn.huytl.homeworkgate.guard.TinCuaBa
 import vn.huytl.homeworkgate.guard.TruyCapTuXa
+import vn.huytl.homeworkgate.pin.Jokers
 import java.security.SecureRandom
 import java.text.SimpleDateFormat
 import java.util.Calendar
@@ -728,8 +729,12 @@ object DongBo {
      *
      * Cac danh sach app sap xep lai truoc khi so: Set doc ra tu prefs khong hua giu
      * thu tu, ma List thi so ca thu tu.
+     *
+     * TietKiemPin goi them luc Jokers Permissions doi tinh trang (5/11/2026): tinh trang
+     * Jokers nam trong ban sao nhung khong nam trong prefs, nen khong co lan prefs doi nao
+     * keo theo.
      */
-    private fun dayCaiDatNeuDoi(context: Context) {
+    internal fun dayCaiDatNeuDoi(context: Context) {
         val ban = banCaiDat(context)
         if (ban == caiDatDaDay) return
         val hop = hop(context, Duong.D_CAI_DAT) ?: return
@@ -761,7 +766,15 @@ object DongBo {
             "appCatMang" to prefs.catMangPackages.sorted(),
             "appAi" to prefs.aiPackages.sorted(),
             "gioiHanApp" to GioiHanApp.tatCa(context),
-            "tiLeNetflix" to prefs.tiLeNetflix
+            "tiLeNetflix" to prefs.tiLeNetflix,
+            // Tiet kiem pin (5/11/2026), xem TietKiemPin. Hai truong cuoi la tinh trang, khong
+            // phai cau hinh: Bang dieu khien doc de bao vi sao tablet chua tiet kiem duoc.
+            CaiDatPin.BAT to prefs.pinBat,
+            CaiDatPin.PHUT to prefs.pinPhut,
+            CaiDatPin.PHUT_DUNG to prefs.pinPhutDung,
+            CaiDatPin.APPS to prefs.tamDungPackages.sorted(),
+            CaiDatPin.JOKERS to Jokers.tinhTrang(context),
+            CaiDatPin.CO_QUYEN to TruyCapTuXa.coQuyen(context)
         )
     }
 

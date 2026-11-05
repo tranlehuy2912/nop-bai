@@ -14,6 +14,7 @@ import vn.huytl.homeworkgate.guard.TelegramThat
 import vn.huytl.homeworkgate.kho.BoThe
 import vn.huytl.homeworkgate.kho.BoTuVung
 import vn.huytl.homeworkgate.kho.NganHang
+import vn.huytl.homeworkgate.pin.TietKiemPin
 
 /**
  * Chi de biet mot viec: man hinh cua chinh app nay co dang truoc mat khong.
@@ -42,6 +43,8 @@ class App : Application() {
         donDepKho()
         // Cat mang theo moi lan cong mo hay dong, du ai doi no. Xem CatMangVpn.theoDoi.
         runCatching { CatMangVpn.theoDoi(this) }
+        // Tiet kiem pin khi man hinh tat (5/11/2026): nghe man hinh bat tat, nghe Jokers.
+        runCatching { TietKiemPin.batDau(this) }
         registerActivityLifecycleCallbacks(object : ActivityLifecycleCallbacks {
             override fun onActivityResumed(activity: Activity) {
                 if (dangHien == 0 && roiNenLuc > 0L) {

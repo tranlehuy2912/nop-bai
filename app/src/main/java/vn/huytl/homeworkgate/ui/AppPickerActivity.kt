@@ -26,6 +26,7 @@ import vn.huytl.homeworkgate.data.GioiHanApp
 import vn.huytl.homeworkgate.data.Prefs
 import vn.huytl.homeworkgate.databinding.ActivityAppPickerBinding
 import vn.huytl.homeworkgate.guard.CatMangVpn
+import vn.huytl.homeworkgate.pin.TietKiemPin
 
 /**
  * Chon app cho mot trong cac danh sach.
@@ -54,7 +55,7 @@ class AppPickerActivity : AppCompatActivity() {
 
     private var tim = ""
     /** Man nay dang lam danh sach nao. Mot bien thay cho bon co, de moi danh sach chi khai mot cho. */
-    private enum class Loai { TRANG, DEN, HAN, NHAC, MOI_LUC, CAT_MANG }
+    private enum class Loai { TRANG, DEN, HAN, NHAC, MOI_LUC, CAT_MANG, TAM_DUNG }
 
     private var loai = Loai.TRANG
 
@@ -66,6 +67,7 @@ class AppPickerActivity : AppCompatActivity() {
         Loai.NHAC -> prefs::nhacPackages
         Loai.MOI_LUC -> prefs::moiLucPackages
         Loai.CAT_MANG -> prefs::catMangPackages
+        Loai.TAM_DUNG -> prefs::tamDungPackages
         Loai.TRANG -> prefs::allowedPackages
         Loai.HAN -> null
     }
@@ -109,6 +111,9 @@ class AppPickerActivity : AppCompatActivity() {
         /** Man chon app mat mang khi bi khoa. Xem [CatMangVpn]. */
         const val CAT_MANG = "catmang"
 
+        /** Man chon app tam dung khi man hinh tat (5/11/2026). Xem [TietKiemPin]. */
+        const val TAM_DUNG = "tamdung"
+
         /** May muc chon san khi dat han, don vi phut. */
         private val MUC_PHUT = listOf(15, 30, 45, 60, 90, 120, 180)
     }
@@ -127,6 +132,7 @@ class AppPickerActivity : AppCompatActivity() {
             NHAC -> Loai.NHAC
             MOI_LUC -> Loai.MOI_LUC
             CAT_MANG -> Loai.CAT_MANG
+            TAM_DUNG -> Loai.TAM_DUNG
             else -> Loai.TRANG
         }
         val con = getString(R.string.child_name)
@@ -136,6 +142,7 @@ class AppPickerActivity : AppCompatActivity() {
             Loai.NHAC -> "App được nghe nền"
             Loai.MOI_LUC -> "Dùng mọi lúc"
             Loai.CAT_MANG -> "Cắt mạng khi bị khoá"
+            Loai.TAM_DUNG -> "Tạm dừng khi tắt màn hình"
             Loai.TRANG -> "Dùng khi hết giờ chơi"
         }
         binding.txtHuongDan.text = when (loai) {
@@ -163,6 +170,10 @@ class AppPickerActivity : AppCompatActivity() {
                     "nổi của YouTube. App ở mục Dùng mọi lúc thì không bị cắt.\n" +
                     "Lần đầu bấm Xong máy hỏi quyền VPN, chọn OK. Lúc đang cắt, thanh " +
                     "trạng thái có biểu tượng chìa khoá."
+            Loai.TAM_DUNG ->
+                "Chọn app tạm dừng khi tắt màn hình đủ số phút ở trang Tiết kiệm pin: app xám đi, " +
+                    "không chạy nền, không báo tin. Mở màn hình là dùng lại được ngay. Màn hình " +
+                    "chính, bàn phím, Tailscale và app Nộp bài không có trong danh sách này."
             Loai.TRANG ->
                 "Chọn app $con vẫn được dùng khi hết giờ chơi, ví dụ từ điển, máy tính, " +
                     "app học. Những app còn lại đều bị khoá khi hết giờ. Từ giờ ngủ tới " +
@@ -173,8 +184,12 @@ class AppPickerActivity : AppCompatActivity() {
         // Man cat mang an app chay UID he thong (Cai dat, Bao mat cua Xiaomi): VPN chia
         // theo UID, cat mot app nhu vay la cat ca dong tien trinh he thong, nen CatMangVpn
         // bo qua chung. Hien ra cho tich thi tich xong khong co tac dung gi.
+        // Man tam dung an cac app khong bao gio tam dung (man hinh chinh, ban phim, Tailscale...):
+        // TietKiemPin bo qua chung, tich vao cung khong co tac dung gi.
+        val khongDung = if (loai == Loai.TAM_DUNG) TietKiemPin.khongDuocDung(this) else emptySet()
         tatCa = loadLaunchableApps().filter {
-            loai != Loai.CAT_MANG || it.info.uid >= Process.FIRST_APPLICATION_UID
+            (loai != Loai.CAT_MANG || it.info.uid >= Process.FIRST_APPLICATION_UID) &&
+                it.packageName !in khongDung
         }
         locLai()
 
@@ -205,6 +220,8 @@ class AppPickerActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
             danhSach()?.set(selected.toSet())
+            // Dang tat man hinh thi khong ai o man nay; ap ngay cho chac, vi du de mo lai app vua bo.
+            if (loai == Loai.TAM_DUNG) TietKiemPin.apDung(this)
             finish()
         }
     }

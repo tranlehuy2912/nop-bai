@@ -41,6 +41,7 @@ import vn.huytl.homeworkgate.data.EndReason
 import vn.huytl.homeworkgate.data.GateState
 import vn.huytl.homeworkgate.data.GateStore
 import vn.huytl.homeworkgate.data.Prefs
+import vn.huytl.homeworkgate.pin.Jokers
 import vn.huytl.homeworkgate.data.SangLai
 import vn.huytl.homeworkgate.data.TinhLoiNhac
 import vn.huytl.homeworkgate.dongbo.DongBo
@@ -1452,6 +1453,10 @@ class GuardAccessibilityService : AccessibilityService() {
         // Ba Huy vua bam mot dong trong bang canh bao de di bat quyen. Khong mo
         // duong thi bam xong la bi chinh guard day ve, khong sua duoc gi.
         if (pkg in GUARDED_SYSTEM_PACKAGES && PhienQuanLy.dangChoMoCaiDat()) return null
+        // Cung kieu do cho Jokers Permissions (5/11/2026): Ba Huy bam "Mở Jokers Permissions"
+        // hay "Cho phép dùng Jokers" o man Tiet kiem pin (sau PIN). Ngoai luc do Jokers la app
+        // la nhu moi app khac, Le Hoa khong mo duoc de tu cho app nao dung quyen shell.
+        if (pkg == Jokers.GOI && PhienQuanLy.dangChoMoCaiDat()) return null
 
         if (pkg in STORE_PACKAGES) {
             return "Không cài app mới được" to "Ba Huy mở máy hộ nếu Lê Hòa cần app học"

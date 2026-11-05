@@ -1,0 +1,11 @@
+jokers-api
+Chep tu Shizuku-API cua RikkaApps (MIT, xem LICENSE), commit a27f6e4 (29.05.2025), lay ban da doi ten trong
+~/Documents/jokers-permissions/api ngay 03.11.2026.
+
+Nhung cho doi so voi ma nguon goc:
+- Ma app Shizuku (moe.shizuku.privileged.api) doi thanh vn.huytl.jokers, ten quyen moe.shizuku.manager.permission.*
+  doi thanh vn.huytl.jokers.permission.* (nhu Jokers Permissions).
+- Gop bon module aidl, shared, api, provider thanh mot thu vien.
+- Shizuku.newProcess doi tu private thanh public de app chay lenh shell.
+
+App Nop bai chep nguyen module nay tu kho lich (~/Documents/Working/lich/jokers-api) ngay 05.11.2026.

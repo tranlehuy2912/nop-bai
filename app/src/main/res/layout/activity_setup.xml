@@ -404,6 +404,44 @@
                     </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>
 
+                <!-- ============================================== Tiet kiem pin -->
+                <!-- 5/11/2026: anh Huy chinh tu Bang dieu khien, va chinh duoc ca o day phong
+                     khi mat dien thoai. Cac muc nam o trang rieng, doi la luu ngay, khong theo
+                     nut Luu cua trang nay. -->
+                <TextView
+                    style="@style/Nhan.Nhom"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="TIẾT KIỆM PIN" />
+
+                <com.google.android.material.card.MaterialCardView
+                    style="@style/Card"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="18dp">
+
+                        <TextView
+                            android:id="@+id/txt_tiet_kiem_pin"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/ink_soft"
+                            android:textSize="14sp" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btn_tiet_kiem_pin"
+                            style="@style/Widget.Material3.Button.OutlinedButton"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="Tiết kiệm pin khi tắt màn hình" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
                 <!-- ==================================================== Ma PIN -->
                 <TextView
                     style="@style/Nhan.Nhom"

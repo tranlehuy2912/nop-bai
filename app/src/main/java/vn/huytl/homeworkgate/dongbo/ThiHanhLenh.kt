@@ -24,6 +24,7 @@ import vn.huytl.homeworkgate.data.LuatCongGio
 import vn.huytl.homeworkgate.data.NgayNghi
 import vn.huytl.homeworkgate.data.ThoiKhoaBieu
 import vn.huytl.homeworkgate.guard.CatMangVpn
+import vn.huytl.homeworkgate.pin.TietKiemPin
 import vn.huytl.homeworkgate.guard.ChuongTin
 import vn.huytl.homeworkgate.guard.ParentMode
 import vn.huytl.homeworkgate.guard.Permissions
@@ -819,6 +820,32 @@ object ThiHanhLenh {
                 val m = giaTri as? Map<String, Number> ?: return "Giá trị không đúng dạng."
                 m.forEach { (goi, p) -> GioiHanApp.datHan(context, goi, p.toInt()) }
                 "Đã đổi giới hạn cho ${m.size} app."
+            }
+            // Tiet kiem pin (5/11/2026), xem TietKiemPin. Doi xong thi ap ngay: dang tat man hinh
+            // du lau ma vua bat thi tiet kiem luon, vua tat thi hoan lai luon.
+            CaiDatPin.BAT -> {
+                val v = giaTri as? Boolean ?: return "Giá trị không phải bật/tắt."
+                prefs.pinBat = v
+                TietKiemPin.apDung(context)
+                if (v) "Đã bật tự động tiết kiệm pin." else "Đã tắt tự động tiết kiệm pin."
+            }
+            CaiDatPin.PHUT -> {
+                val v = so?.takeIf { it in CaiDatPin.CAC_MUC_PHUT } ?: return "Số phút không có trong danh sách."
+                prefs.pinPhut = v
+                TietKiemPin.apDung(context)
+                if (v == 0) "Tắt màn hình là bật Tiết kiệm pin ngay."
+                else "Tắt màn hình $v phút thì bật Tiết kiệm pin."
+            }
+            CaiDatPin.PHUT_DUNG -> {
+                val v = so?.takeIf { it in CaiDatPin.CAC_MUC_PHUT_DUNG } ?: return "Số phút không có trong danh sách."
+                prefs.pinPhutDung = v
+                TietKiemPin.apDung(context)
+                "Tắt màn hình $v phút thì tạm dừng app."
+            }
+            CaiDatPin.APPS -> {
+                prefs.tamDungPackages = danhSach(giaTri)
+                TietKiemPin.apDung(context)
+                "Danh sách app tạm dừng khi tắt màn hình: ${prefs.tamDungPackages.size} app."
             }
             else -> return "Không có mục cài đặt tên $ten."
         }
