@@ -35,7 +35,8 @@ import kotlin.concurrent.thread
  * luc man hinh sang, phong khi bao thuc tre hay may tat qua dem. Phan giu an vao tran
  * phut cua ngay duoc cong, khong phai ngay cham.
  *
- * File prefs rieng: ghi o day khong keo theo mot luot day trang thai len Firestore.
+ * File prefs rieng: ghi o day khong keo theo mot luot day trang thai len Firestore. Tu
+ * 8/11/2026 phan giu len hop/trangthai qua [banGiu], nen [luu] tu nhac DongBo day.
  */
 object CongSang {
 
@@ -92,6 +93,25 @@ object CongSang {
     fun gioCong(context: Context): String {
         val day = Prefs.get(context).gioDayMinuteOfDay
         return "%02d:%02d".format(day / 60, day % 60)
+    }
+
+    /**
+     * Ban tom tat phan dang giu, cho truong [vn.huytl.homeworkgate.dongbo.Duong.F_GIU_SANG]
+     * cua hop/trangthai (8/11/2026, anh Huy chot): the Gio choi ben Bang dieu khien hien
+     * "Giữ 30 phút Ba Huy cho, 07:00 tablet cộng". Truoc ngay do phan giu khong len Firestore,
+     * dien thoai chi thay cau tra loi lenh mot lan roi thoi.
+     *
+     * "luc" chi lay [lucCong] khi dang trong gio ngu: suot dem ham do tra cung mot moc. Ngoai
+     * gio ngu no tra ve chinh [now], so doi moi lan goi, ma DongBo bo luot ghi bang cach so ban
+     * moi voi ban vua day: so doi lien tuc thi lan nao cung ghi. Luc do gui 0, nghia la tablet
+     * se cong o lan xet sau.
+     */
+    fun banGiu(context: Context, now: Long = System.currentTimeMillis()): Map<String, Any> {
+        val cac = cacMuc(context)
+        val cho = cac.filter { it.baCho }.sumOf { it.phut }
+        val bai = cac.filterNot { it.baCho }.sumOf { it.phut }
+        val luc = if (cho + bai > 0 && GateStore(context).trongGioNgu(now)) lucCong(context, now) else 0L
+        return mapOf("cho" to cho, "bai" to bai, "luc" to luc)
     }
 
     /**
@@ -191,6 +211,9 @@ object CongSang {
             mang.put(o)
         }
         sp(context).edit().putString(K_CAC, mang.toString()).commit()
+        // File nay nam ngoai file prefs chinh nen DongBo khong tu nghe thay: phai nhac no day
+        // trang thai, khong thi [banGiu] chi len Firestore khi co khoa khac doi.
+        DongBo.day()
     }
 
     private fun sp(context: Context) = context.getSharedPreferences(FILE, Context.MODE_PRIVATE)

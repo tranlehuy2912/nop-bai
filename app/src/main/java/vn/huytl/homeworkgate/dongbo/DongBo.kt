@@ -23,6 +23,7 @@ import com.google.firebase.firestore.SetOptions
 import vn.huytl.homeworkgate.BuildConfig
 import vn.huytl.homeworkgate.R
 import vn.huytl.homeworkgate.data.BaiDaCham
+import vn.huytl.homeworkgate.data.CongSang
 import vn.huytl.homeworkgate.data.DayLog
 import vn.huytl.homeworkgate.data.GateState
 import vn.huytl.homeworkgate.data.GateStore
@@ -489,6 +490,8 @@ object DongBo {
             Duong.F_DA_CHOI_MS to gate.msDaChoiDaGom(bayGio),
             Duong.F_DOAN_CHOI_TU to gate.doanChoiTu(bayGio),
             Duong.F_QUY_GIO to Prefs.get(context).quyGio,
+            // Phut giu toi luc het gio ngu (8/11/2026), xem CongSang.banGiu.
+            Duong.F_GIU_SANG to CongSang.banGiu(context, bayGio),
             Duong.F_SO_BAI_CHO to gate.soBaiDangCho(),
             // Viec nha ba noi giao, cac viec CHUA xong. Khong co truong nay thi ben
             // dien thoai chi thay "dang tam dung" ma khong hieu vi sao, trong khi

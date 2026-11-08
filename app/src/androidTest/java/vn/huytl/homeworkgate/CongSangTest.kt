@@ -178,6 +178,35 @@ class CongSangTest {
         assertTrue(CongSang.cacMuc(context).isEmpty())
     }
 
+    /**
+     * Ban gui len hop/trangthai cho the Gio choi (8/11/2026): tach phut Ba Huy cho voi phut lam
+     * bai, kem luc cong. Luc cong phai dung yen suot dem, khong thi DongBo ghi Firestore moi
+     * lan day; qua gio ngu ma chua cong thi gui 0.
+     */
+    @Test
+    fun ban_giu_tach_phut_ba_cho_voi_phut_bai_va_luc_cong_dung_yen() {
+        datDangNgu()
+        val trong = CongSang.banGiu(context)
+        // So tung o: mapOf("cho" to 0, ..., "luc" to 0L) bi Kotlin suy ca ba so thanh Long, va
+        // phep so ca map hong du hai ben cung in {cho=0, bai=0, luc=0}.
+        assertEquals(0, trong["cho"])
+        assertEquals(0, trong["bai"])
+        assertEquals(0L, trong["luc"])
+
+        CongSang.them(context, 10, "thu-cong-sang")
+        CongSang.them(context, 5)
+        CongSang.them(context, 30, baCho = true)
+        val bayGio = System.currentTimeMillis()
+        val ban = CongSang.banGiu(context, bayGio)
+        assertEquals(30, ban["cho"])
+        assertEquals(15, ban["bai"])
+        assertEquals(CongSang.lucCong(context, bayGio), ban["luc"])
+        assertEquals(ban, CongSang.banGiu(context, bayGio + 5 * 60_000L))
+
+        datHetNgu()
+        assertEquals(0L, CongSang.banGiu(context)["luc"])
+    }
+
     @Test
     fun khong_giu_gi_thi_khong_lam_gi() {
         datHetNgu()
