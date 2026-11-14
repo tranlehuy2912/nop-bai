@@ -4,6 +4,7 @@ import android.app.Activity
 import android.app.Application
 import android.os.Bundle
 import vn.huytl.homeworkgate.data.ChatCu
+import vn.huytl.homeworkgate.data.KhoaHoc
 import vn.huytl.homeworkgate.data.LichDangDung
 import vn.huytl.homeworkgate.data.NgayNghi
 import vn.huytl.homeworkgate.data.Prefs
@@ -41,6 +42,8 @@ class App : Application() {
         // Mo Prefs luc doc chu khong mo ngay day: kho ma hoa mo cham va co the hong, ma
         // App.onCreate hong la ca app khong len.
         NgayNghi.ngayThem = { Prefs.get(this).ngayNghiThem }
+        // Gio di hoc theo tung thu Ba Huy dat (14/11/2026). Doc luc can, cung ly do tren. Xem KhoaHoc.
+        KhoaHoc.cauHinh = { Prefs.get(this).khoaHoc }
         donDepKho()
         // Cat mang theo moi lan cong mo hay dong, du ai doi no. Xem CatMangVpn.theoDoi.
         runCatching { CatMangVpn.theoDoi(this) }

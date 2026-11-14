@@ -1,10 +1,10 @@
 package vn.huytl.homeworkgate.guard
 
 import android.content.Context
-import vn.huytl.homeworkgate.data.BuoiHoc
 import vn.huytl.homeworkgate.data.GateState
 import vn.huytl.homeworkgate.data.GateStore
 import vn.huytl.homeworkgate.data.GioiHanApp
+import vn.huytl.homeworkgate.data.KhoangHoc
 import vn.huytl.homeworkgate.data.Prefs
 import vn.huytl.homeworkgate.data.TinhLoiNhac
 
@@ -27,8 +27,8 @@ object LuatChanApp {
      * Ly do chan [pkg] (tieu de, chi tiet), hoac null neu duoc dung.
      *
      * [mo] la con gio choi khong. Tro nang truyen `gate.isOpen()`. Jokers truyen them luc dang tu
-     * dung vi tat man hinh, xem [KhoaJokers.moChoJokers]. [buoi] la buoi hoc dang bi chan
-     * ([TinhLoiNhac.buoiDangChan]), truyen vao de hai ben goi tinh mot lan cho ca loat app.
+     * dung vi tat man hinh, xem [KhoaJokers.moChoJokers]. [hoc] la khoang gio di hoc dang bi chan
+     * ([TinhLoiNhac.khoangDangChan]), truyen vao de hai ben goi tinh mot lan cho ca loat app.
      */
     fun lyDo(
         context: Context,
@@ -36,7 +36,7 @@ object LuatChanApp {
         prefs: Prefs,
         gate: GateStore,
         mo: Boolean,
-        buoi: BuoiHoc?,
+        hoc: KhoangHoc?,
         tenApp: (String) -> String,
     ): Pair<String, String>? {
         if (pkg in GuardAccessibilityService.STORE_PACKAGES) {
@@ -72,11 +72,15 @@ object LuatChanApp {
         //
         // Chan ca app trong danh sach duoc dung khi het gio: man chan von da che
         // kin man hinh, mo rieng tu dien ra luc dang phai ra khoi nha thi vo nghia.
-        buoi?.let {
-            return "Tới giờ đi học rồi" to
-                (TinhLoiNhac.moTaBuoi(it).replaceFirstChar { c -> c.uppercase() } +
-                    ", vào học ${TinhLoiNhac.gioPhut(it.phutVaoHoc)}. " +
-                    "Máy mở lại lúc ${TinhLoiNhac.gioPhut(it.phutTanHoc)}.")
+        //
+        // Tu 14/11/2026 gio chan la gio Ba Huy dat cho tung thu ([vn.huytl.homeworkgate.data.KhoaHoc]),
+        // nen "Máy mở lại lúc" la gio mo Ba Huy dat chu khong phai gio tan buoi trong lich.
+        hoc?.let { k ->
+            val buoi = k.buoi?.let {
+                TinhLoiNhac.moTaBuoi(it).replaceFirstChar { c -> c.uppercase() } +
+                    ", vào học ${TinhLoiNhac.gioPhut(it.phutVaoHoc)}. "
+            }.orEmpty()
+            return "Tới giờ đi học rồi" to "${buoi}Máy mở lại lúc ${TinhLoiNhac.gioPhut(k.toi)}."
         }
 
         if (mo) return null

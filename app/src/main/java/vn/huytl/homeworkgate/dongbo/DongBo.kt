@@ -29,6 +29,7 @@ import vn.huytl.homeworkgate.data.GateState
 import vn.huytl.homeworkgate.data.GateStore
 import vn.huytl.homeworkgate.data.GiaiDe
 import vn.huytl.homeworkgate.data.GioiHanApp
+import vn.huytl.homeworkgate.data.KhoaHoc
 import vn.huytl.homeworkgate.data.LichDangDung
 import vn.huytl.homeworkgate.data.NgayNghi
 import vn.huytl.homeworkgate.data.NhatKyAi
@@ -770,6 +771,8 @@ object DongBo {
             "appAi" to prefs.aiPackages.sorted(),
             "gioiHanApp" to GioiHanApp.tatCa(context),
             "tiLeNetflix" to prefs.tiLeNetflix,
+            // Gio di hoc theo tung thu (14/11/2026), xem KhoaHoc.
+            Duong.F_KHOA_HOC to KhoaHoc.thanhMap(prefs.khoaHoc),
             // Tiet kiem pin (5/11/2026), xem TietKiemPin. Hai truong cuoi la tinh trang, khong
             // phai cau hinh: Bang dieu khien doc de bao vi sao tablet chua tiet kiem duoc.
             CaiDatPin.BAT to prefs.pinBat,
@@ -1363,6 +1366,8 @@ object DongBo {
                         lichDaBao = null
                         DayLog.add(context, "Nhận lịch học mới bản ${kq.ban.phienBan}: ${kq.ban.ghiChu}")
                         dayNgay()
+                        // Ky nghi trong lich moi co the doi: chep lai cho laptop (14/11/2026).
+                        runCatching { Laptop.ghiNghiHoc(context) }
                     }
                     is LichDangDung.KetQua.CuHon -> if (lichDaBao != json) {
                         lichDaBao = json

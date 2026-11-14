@@ -2,6 +2,8 @@ package vn.huytl.homeworkgate
 
 import org.junit.rules.ExternalResource
 import vn.huytl.homeworkgate.data.BanLich
+import vn.huytl.homeworkgate.data.KhoaHoc
+import vn.huytl.homeworkgate.data.NgayKhoa
 import vn.huytl.homeworkgate.data.LichDangDung
 
 /**
@@ -54,17 +56,24 @@ object LichMau {
 
     val ban: BanLich by lazy { BanLich.doc(JSON) }
 
-    /** Dung [ban] trong luc chay tung test, xong tra lai ban cu. */
+    /**
+     * Dung [ban] trong luc chay tung test, xong tra lai ban cu. Gio di hoc cung dung yen o gia tri
+     * luc moi cai ([KhoaHoc.MAC_DINH], 14/11/2026), khong theo cai dat dang co tren may ao.
+     */
     class Rule : ExternalResource() {
         private var cu: BanLich? = null
+        private var khoaCu: (() -> Map<Int, NgayKhoa>)? = null
 
         override fun before() {
             cu = LichDangDung.ban
             LichDangDung.dungTam(ban)
+            khoaCu = KhoaHoc.cauHinh
+            KhoaHoc.cauHinh = { KhoaHoc.MAC_DINH }
         }
 
         override fun after() {
             cu?.let(LichDangDung::dungTam)
+            khoaCu?.let { KhoaHoc.cauHinh = it }
         }
     }
 }

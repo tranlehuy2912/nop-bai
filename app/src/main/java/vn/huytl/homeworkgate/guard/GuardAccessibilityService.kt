@@ -1439,8 +1439,8 @@ class GuardAccessibilityService : AccessibilityService() {
         runCatching { performGlobalAction(lenh) }
     }
 
-    /** Buoi hoc dang bi chan ngay luc nay, hoac null. Cung mot cau tra loi voi [ManChan]. */
-    private fun buoiDangChan() = TinhLoiNhac.buoiDangChan(
+    /** Khoang gio di hoc dang bi chan ngay luc nay, hoac null. Cung mot cau tra loi voi [ManChan]. */
+    private fun buoiDangChan() = TinhLoiNhac.khoangDangChan(
         java.util.Calendar.getInstance(),
         prefs.batManChan,
         prefs.buoiDuocMoSom

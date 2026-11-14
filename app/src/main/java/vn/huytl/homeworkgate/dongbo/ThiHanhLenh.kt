@@ -21,6 +21,7 @@ import vn.huytl.homeworkgate.data.Prefs
 import vn.huytl.homeworkgate.data.SoCaiBai
 import vn.huytl.homeworkgate.data.SuaCham
 import vn.huytl.homeworkgate.data.LuatCongGio
+import vn.huytl.homeworkgate.data.KhoaHoc
 import vn.huytl.homeworkgate.data.NgayNghi
 import vn.huytl.homeworkgate.data.ThoiKhoaBieu
 import vn.huytl.homeworkgate.guard.CatMangVpn
@@ -595,15 +596,22 @@ object ThiHanhLenh {
 
         if (!nghi) {
             prefs.ngayNghiThem = cu - ngay
+            // Laptop cung bo khoa gio di hoc theo ngay nghi them (anh Huy chot 14/11/2026).
+            runCatching { Laptop.ghiNghiHoc(context) }
             if (ngay !in cu) return "Ngày $ten không có trong danh sách cho nghỉ."
             DayLog.add(context, "Ba Huy bỏ ngày nghỉ học $ten")
             return "Đã bỏ ngày nghỉ $ten, ngày đó tablet chặn giờ học như thường."
         }
         if (ngay < homNay) return "Ngày $ten đã qua, máy không đổi gì."
         NgayNghi.tenTheoLich(cal)?.let {
-            return "Ngày $ten đã nghỉ sẵn theo lịch ($it), máy không đổi gì."
+            // Chu nhat ma Ba Huy bat khoa gio di hoc (KhoaHoc, 14/11/2026) thi cho nghi duoc: lich
+            // coi chu nhat la ngay nghi, nhung may van khoa theo gio Ba Huy dat.
+            val chuNhatCoKhoa = cal.get(Calendar.DAY_OF_WEEK) == Calendar.SUNDAY &&
+                !KhoaHoc.nghiTheoLich(cal) && prefs.khoaHoc[Calendar.SUNDAY]?.bat == true
+            if (!chuNhatCoKhoa) return "Ngày $ten đã nghỉ sẵn theo lịch ($it), máy không đổi gì."
         }
         prefs.ngayNghiThem = cu + ngay
+        runCatching { Laptop.ghiNghiHoc(context) }
         if (ngay in cu) return "Ngày $ten đã cho nghỉ rồi."
         DayLog.add(context, "Ba Huy cho $con nghỉ học $ten")
         return "Đã cho $con nghỉ học $ten: không chặn giờ học, không nhắc soạn tập."
@@ -823,6 +831,14 @@ object ThiHanhLenh {
             }
             // Tiet kiem pin (5/11/2026), xem TietKiemPin. Doi xong thi ap ngay: dang tat man hinh
             // du lau ma vua bat thi tiet kiem luon, vua tat thi hoan lai luon.
+            // Gio di hoc cua tablet theo tung thu (anh Huy chot 14/11/2026), xem KhoaHoc. Gio
+            // cua laptop la bo rieng, Bang dieu khien ghi thang vao laptop/{maNha}.
+            Duong.F_KHOA_HOC -> {
+                val (moi, loi) = KhoaHoc.tuLenh(giaTri, prefs.khoaHoc)
+                if (moi == null) return loi ?: "Giá trị không đúng dạng."
+                prefs.khoaHoc = moi
+                "Giờ đi học của tablet: ${KhoaHoc.moTa(moi)}."
+            }
             CaiDatPin.BAT -> {
                 val v = giaTri as? Boolean ?: return "Giá trị không phải bật/tắt."
                 prefs.pinBat = v

@@ -190,15 +190,15 @@ class ParentActivity : AppCompatActivity() {
         val now = java.util.Calendar.getInstance()
         val phut = now.get(java.util.Calendar.HOUR_OF_DAY) * 60 +
             now.get(java.util.Calendar.MINUTE)
-        val buoi = TinhLoiNhac.buoiDangTrongGioChan(now, phut) ?: return
-        val ma = TinhLoiNhac.maBuoi(now, buoi)
+        val k = TinhLoiNhac.khoangTrongGioChan(now, phut) ?: return
+        val ma = TinhLoiNhac.maKhoa(now)
 
         if (prefs.buoiDuocMoSom == ma) {
             prefs.buoiDuocMoSom = ""
             toast("Đã chặn lại")
         } else {
             prefs.buoiDuocMoSom = ma
-            toast("Đã mở cho hết ${TinhLoiNhac.moTaBuoi(buoi)}")
+            toast("Đã mở cho hết giờ đi học hôm nay")
         }
         ApprovalService.ensureRunning(this)
         render()
@@ -209,29 +209,30 @@ class ParentActivity : AppCompatActivity() {
         val now = java.util.Calendar.getInstance()
         val phut = now.get(java.util.Calendar.HOUR_OF_DAY) * 60 +
             now.get(java.util.Calendar.MINUTE)
-        val buoi = if (prefs.batManChan) {
-            TinhLoiNhac.buoiDangTrongGioChan(now, phut)
+        val k = if (prefs.batManChan) {
+            TinhLoiNhac.khoangTrongGioChan(now, phut)
         } else {
             null
         }
-        if (buoi == null) {
+        if (k == null) {
             binding.cardManChan.visibility = View.GONE
             return
         }
         binding.cardManChan.visibility = View.VISIBLE
 
-        val daMo = prefs.buoiDuocMoSom == TinhLoiNhac.maBuoi(now, buoi)
+        val daMo = prefs.buoiDuocMoSom == TinhLoiNhac.maKhoa(now)
         binding.txtManChan.text = if (daMo) {
             "Đang mở trong giờ đi học"
         } else {
             "Đang chặn vì tới giờ đi học"
         }
+        // Tu 14/11/2026 moi ngay mot khoang khoa Ba Huy dat (KhoaHoc), mo som la mo cho het hom nay.
         binding.txtManChanDetail.text = buildString {
-            append(TinhLoiNhac.moTaBuoi(buoi).replaceFirstChar { it.uppercase() })
-            append(", tan học ").append(TinhLoiNhac.gioPhut(buoi.phutTanHoc)).append(". ")
-            append(if (daMo) "Buổi học sau lại chặn bình thường." else "Mở chỉ cho buổi này.")
+            append("Khoá từ ").append(TinhLoiNhac.gioPhut(k.tu))
+            append(" tới ").append(TinhLoiNhac.gioPhut(k.toi)).append(". ")
+            append(if (daMo) "Ngày học sau lại chặn bình thường." else "Mở chỉ cho hôm nay.")
         }
-        binding.btnMoChan.text = if (daMo) "Chặn lại" else "Mở cho hết buổi này"
+        binding.btnMoChan.text = if (daMo) "Chặn lại" else "Mở cho hết hôm nay"
     }
 
     override fun onResume() {

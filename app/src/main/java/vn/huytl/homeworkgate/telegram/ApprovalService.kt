@@ -465,7 +465,9 @@ class ApprovalService : Service() {
         // man chan tam nhuong cho.
         // Chi cat gio cho man chan cua BUOI HOC. Man chan viec nha cung dung dong
         // ho lai, nhung viec do da lam ngay luc nhan lenh, va tin bao thi khac han.
-        if (trongGioChan && nhac?.buoi != null) catGioChoiDangCo(nhac)
+        // Tu 14/11/2026 nhan ra man chan buoi hoc bang maBuoi (ma khoang khoa trong ngay) chu khong
+        // bang buoi: Ba Huy khoa mot thu khong co tiet nao thi buoi null ma van la gio di hoc.
+        if (trongGioChan && nhac?.maBuoi != null) catGioChoiDangCo(nhac)
 
         // Van giu nhip mot giay ca khi man chan dang nhuong cho app: buoc ra khoi
         // app la no phai che lai ngay, khong de ho mot phut.
@@ -1178,15 +1180,15 @@ class ApprovalService : Service() {
             "mo" -> {
                 val now = Calendar.getInstance()
                 val phut = now.get(Calendar.HOUR_OF_DAY) * 60 + now.get(Calendar.MINUTE)
-                val buoi = TinhLoiNhac.buoiDangTrongGioChan(now, phut)
-                if (buoi == null) {
+                val k = TinhLoiNhac.khoangTrongGioChan(now, phut)
+                if (k == null) {
                     client.sendMessage(chatId, "Tablet đang không bị chặn, không cần mở.")
                 } else {
-                    prefs.buoiDuocMoSom = TinhLoiNhac.maBuoi(now, buoi)
+                    prefs.buoiDuocMoSom = TinhLoiNhac.maKhoa(now)
                     client.sendMessage(
                         chatId,
-                        "Đã mở tablet cho hết ${TinhLoiNhac.moTaBuoi(buoi)}. " +
-                            "Buổi học sau lại chặn bình thường, anh khỏi phải bật lại."
+                        "Đã mở tablet cho hết giờ đi học hôm nay (tới ${TinhLoiNhac.gioPhut(k.toi)}). " +
+                            "Ngày học sau lại chặn bình thường, anh khỏi phải bật lại."
                     )
                 }
             }

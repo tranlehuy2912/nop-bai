@@ -318,6 +318,14 @@ class Prefs private constructor(private val sp: SharedPreferences) {
         set(v) = sp.edit().putBoolean(KEY_BAT_CHAN, v).commit().let {}
 
     /**
+     * Gio di hoc theo tung thu (14/11/2026), Ba Huy dat tren Bang dieu khien (lenh CAIDAT khoaHoc).
+     * Luu JSON, xem [KhoaHoc]. Chua co thi la [KhoaHoc.MAC_DINH].
+     */
+    var khoaHoc: Map<Int, NgayKhoa>
+        get() = KhoaHoc.docJson(sp.getString(KEY_KHOA_HOC, null))
+        set(v) = sp.edit().putString(KEY_KHOA_HOC, KhoaHoc.thanhJson(v)).commit().let {}
+
+    /**
      * Ma buoi hoc ma Ba Huy da cho mo som. Man chan bo qua dung buoi nay thoi,
      * sang buoi sau lai chan binh thuong, khoi phai nho bat lai.
      */
@@ -458,6 +466,7 @@ class Prefs private constructor(private val sp: SharedPreferences) {
         private const val KEY_BAT_CHAN = "bat_man_chan"
         private const val KEY_MO_SOM = "buoi_duoc_mo_som"
         private const val KEY_NGHI_THEM = "ngay_nghi_them"
+        private const val KEY_KHOA_HOC = "khoa_hoc"
         private const val KEY_DA_SOAN = "buoi_da_soan"
         private const val KEY_VUA_SOAN = "buoi_vua_soan"
 

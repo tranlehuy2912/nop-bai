@@ -4,8 +4,11 @@ import android.content.Context
 import android.util.Log
 import com.google.firebase.firestore.DocumentReference
 import com.google.firebase.firestore.DocumentSnapshot
+import java.util.Calendar
 import vn.huytl.homeworkgate.data.DayLog
 import vn.huytl.homeworkgate.data.GateStore
+import vn.huytl.homeworkgate.data.LichDangDung
+import vn.huytl.homeworkgate.data.NgayNghi
 import vn.huytl.homeworkgate.data.Prefs
 
 /**
@@ -100,6 +103,9 @@ object Laptop {
             .putString(K_REMOTE_KHOA, remote?.get(Duong.F_REMOTE_KHOA) as? String)
             .putString(K_PHIEN, snap?.getString(Duong.F_PHIEN))
             .apply()
+        // Laptop can biet ngay nghi de khong khoa gio di hoc (14/11/2026). So voi ban laptop dang
+        // co, nen laptop moi noi hay ai xoa truong nay thi tablet ghi lai.
+        if (co) runCatching { ghiNghiHoc(context, snap?.get(Duong.F_NGHI_HOC)) }
     }
 
     /**
@@ -144,6 +150,47 @@ object Laptop {
         DongBo.dayNgay()
         return KetQua(lay, netflix, null, phieu)
     }
+
+    /**
+     * Ngay nghi khong khoa gio di hoc, dang ghi vao truong [Duong.F_NGHI_HOC] cua laptop (14/11/2026):
+     * cac ky nghi trong ban lich chua qua, ngay Ba Huy cho nghi them tu hom nay, va ngay het nam hoc.
+     * So la Long cho giong ban Firestore tra ve, de so bang == ma khong phai doi kieu.
+     */
+    internal fun banNghiHoc(homNay: Int = NgayNghi.soNgay(Calendar.getInstance())): Map<String, Any> {
+        val ban = LichDangDung.ban
+        val ky = ban.cacKyNghi.filter { it.den >= homNay }.map { it.tu to it.den } +
+            NgayNghi.ngayThem().filter { it >= homNay }.map { it to it }
+        return mapOf(
+            Duong.F_CAC_KY to ky.sortedWith(compareBy({ it.first }, { it.second }))
+                .map { mapOf(Duong.F_TU to it.first.toLong(), Duong.F_DEN to it.second.toLong()) },
+            Duong.F_HET_NAM_HOC to ban.hetNamHoc.toLong()
+        )
+    }
+
+    /**
+     * Chep ngay nghi sang laptop neu khac ban laptop dang co ([dangCo], lay tu document vua nghe;
+     * null thi so voi ban vua ghi lan truoc). Goi luc nghe document laptop, luc nhan lich moi va
+     * luc Ba Huy cho nghi them hay bo ngay nghi. Laptop chua noi thi thoi.
+     */
+    fun ghiNghiHoc(context: Context, dangCo: Any? = DA_GHI_THEO_SO) {
+        if (!daNoi(context)) return
+        val moi = banNghiHoc()
+        val cu = if (dangCo === DA_GHI_THEO_SO) daGhi else dangCo
+        if (cu == moi) return
+        val noi = DongBo.laptop(context) ?: return
+        daGhi = moi
+        noi.update(Duong.F_NGHI_HOC, moi)
+            .addOnFailureListener {
+                daGhi = null
+                Log.w(TAG, "ghi ngay nghi cho laptop hong: ${it.message}")
+            }
+    }
+
+    /** Ban [banNghiHoc] vua gui laptop trong lan chay nay cua app. */
+    @Volatile
+    private var daGhi: Any? = null
+
+    private val DA_GHI_THEO_SO = Any()
 
     private fun sp(context: Context) =
         context.applicationContext.getSharedPreferences(FILE, Context.MODE_PRIVATE)

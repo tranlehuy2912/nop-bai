@@ -197,13 +197,13 @@ object KhoaJokers {
         val prefs = Prefs.get(c)
         val gate = GateStore(c)
         val mo = moChoJokers(gate)
-        val buoi = TinhLoiNhac.buoiDangChan(Calendar.getInstance(), prefs.batManChan, prefs.buoiDuocMoSom)
+        val hoc = TinhLoiNhac.khoangDangChan(Calendar.getInstance(), prefs.batManChan, prefs.buoiDuocMoSom)
         val chua = khongBaoGioDung(c)
         val pm = c.packageManager
         val ra = LinkedHashMap<String, String>()
         for (goi in cacAppCoBieuTuong(c)) {
             if (goi in chua) continue
-            val ly = LuatChanApp.lyDo(c, goi, prefs, gate, mo, buoi) { tenApp(pm, it) } ?: continue
+            val ly = LuatChanApp.lyDo(c, goi, prefs, gate, mo, hoc) { tenApp(pm, it) } ?: continue
             ra[goi] = "${ly.first}. ${ly.second}"
         }
         return ra

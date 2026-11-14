@@ -56,14 +56,14 @@ class NghiHocLenhTest {
     @Test
     fun cho_nghi_thi_khong_chan_gio_hoc_bo_nghi_thi_chan_lai() {
         val sangThuSau = NgayNghi.calendarCua(2026, 10, 30, 9, 0)
-        assertNotNull(TinhLoiNhac.buoiDangTrongGioChan(sangThuSau, 9 * 60))
+        assertNotNull(TinhLoiNhac.khoangTrongGioChan(sangThuSau, 9 * 60))
 
         val tra = ThiHanhLenh.nghiHoc(context, "20261030", nghi = true, now = bayGio)
         assertTrue(tra, tra.startsWith("Đã cho"))
         assertTrue(tra, tra.contains("thứ sáu 30/10"))
         assertEquals(setOf(20261030), prefs.ngayNghiThem)
         assertEquals(NgayNghi.TEN_NGHI_THEM, NgayNghi.tenKyNghi(sangThuSau))
-        assertNull(TinhLoiNhac.buoiDangTrongGioChan(sangThuSau, 9 * 60))
+        assertNull(TinhLoiNhac.khoangTrongGioChan(sangThuSau, 9 * 60))
 
         assertEquals("Ngày thứ sáu 30/10 đã cho nghỉ rồi.",
             ThiHanhLenh.nghiHoc(context, "20261030", nghi = true, now = bayGio))
@@ -71,7 +71,7 @@ class NghiHocLenhTest {
         val bo = ThiHanhLenh.nghiHoc(context, "20261030", nghi = false, now = bayGio)
         assertTrue(bo, bo.startsWith("Đã bỏ ngày nghỉ"))
         assertTrue(prefs.ngayNghiThem.isEmpty())
-        assertNotNull(TinhLoiNhac.buoiDangTrongGioChan(sangThuSau, 9 * 60))
+        assertNotNull(TinhLoiNhac.khoangTrongGioChan(sangThuSau, 9 * 60))
     }
 
     /** Moi lan ghi thi bo ngay da qua, danh sach chi giu tu hom nay tro di. */

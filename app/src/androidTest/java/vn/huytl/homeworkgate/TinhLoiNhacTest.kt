@@ -9,6 +9,8 @@ import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
 import vn.huytl.homeworkgate.data.Buoi
+import vn.huytl.homeworkgate.data.KhoaHoc
+import vn.huytl.homeworkgate.data.NgayKhoa
 import vn.huytl.homeworkgate.data.LoaiNhac
 import vn.huytl.homeworkgate.data.NgayNghi
 import vn.huytl.homeworkgate.data.TinhLoiNhac
@@ -20,6 +22,11 @@ import java.util.Calendar
  * co nghia gi ca.
  *
  * Cac moc lay theo lich that: nam 2026, thang 9. 14/9/2026 la thu hai.
+ *
+ * Tu 14/11/2026 gio chan va loi nhac sap di hoc theo gio Ba Huy dat cho tung thu (KhoaHoc), o
+ * day la gia tri luc moi cai: thu hai, thu sau 8:45-17:00; thu ba, tu, nam, bay 11:00-17:00; chu
+ * nhat khong khoa. Truoc do theo moc buong may trong lich (chieu 11:30, sang thu hai, thu sau
+ * 8:45 toi 10:45).
  */
 @RunWith(AndroidJUnit4::class)
 class TinhLoiNhacTest {
@@ -61,25 +68,26 @@ class TinhLoiNhacTest {
     }
 
     @Test
-    fun mot_gio_truoc_moc_buong_may_thi_nhac_di_hoc() {
-        // Chieu thu ba buong may luc 11h30, nen 11h00 phai bao con 30 phut.
-        val nhac = TinhLoiNhac.tinh(luc(15, 11, 0), emptySet())
+    fun mot_gio_truoc_gio_khoa_thi_nhac_di_hoc() {
+        // Thu ba khoa luc 11h00, nen 10h30 phai bao con 30 phut, kem gio vao hoc chieu.
+        val nhac = TinhLoiNhac.tinh(luc(15, 10, 30), emptySet())
         assertEquals(LoaiNhac.SAP_DI_HOC, nhac!!.loai)
         assertTrue(nhac.tieuDe.contains("30 phút"))
         assertTrue(!nhac.gap)
+        assertEquals("Vào học lúc 12:45, chiều thứ ba", nhac.chiTiet)
     }
 
     @Test
     fun con_muoi_phut_thi_thanh_gap() {
-        val nhac = TinhLoiNhac.tinh(luc(15, 11, 20), emptySet())
+        val nhac = TinhLoiNhac.tinh(luc(15, 10, 50), emptySet())
         assertEquals(LoaiNhac.SAP_DI_HOC, nhac!!.loai)
         assertTrue(nhac.gap)
     }
 
     @Test
     fun vao_nguong_gap_thi_tieu_de_hien_phut_giay() {
-        // 11h20 con dung 10 phut, phai hien 10:00 chu khong phai "10 phut".
-        val nhac = TinhLoiNhac.tinh(luc(15, 11, 20), emptySet())!!
+        // 10h50 con dung 10 phut, phai hien 10:00 chu khong phai "10 phut".
+        val nhac = TinhLoiNhac.tinh(luc(15, 10, 50), emptySet())!!
         assertTrue(nhac.tieuDe.contains("10:00"))
     }
 
@@ -91,11 +99,11 @@ class TinhLoiNhacTest {
     }
 
     @Test
-    fun qua_moc_buong_may_van_con_nhac_va_van_gap() {
+    fun qua_gio_khoa_thi_thoi_bao_sap_di_hoc() {
+        // Truoc 14/11/2026 qua moc buong may ma chua vao hoc van bao "Tới giờ chuẩn bị đi học".
+        // Gio qua gio khoa la man chan lo; tat man chan thi khong bao sap di hoc nua.
         val nhac = TinhLoiNhac.tinh(luc(15, 12, 30), emptySet())
-        assertEquals(LoaiNhac.SAP_DI_HOC, nhac!!.loai)
-        assertTrue(nhac.gap)
-        assertTrue(nhac.tieuDe.contains("Tới giờ"))
+        assertTrue(nhac == null || nhac.loai != LoaiNhac.SAP_DI_HOC)
     }
 
     @Test
@@ -106,12 +114,14 @@ class TinhLoiNhacTest {
 
     @Test
     fun thu_hai_sang_va_chieu_la_hai_buoi_rieng() {
-        // 7h sang thu hai: buoi ke tiep la sang thu hai, buong may luc 8h45.
+        // 8h sang thu hai: con 45 phut toi gio khoa 8h45, buoi trong khoang la buoi sang.
         val sang = TinhLoiNhac.tinh(luc(14, 8, 0), emptySet())!!
+        assertEquals(LoaiNhac.SAP_DI_HOC, sang.loai)
         assertEquals(Buoi.SANG, sang.buoi!!.buoi)
 
-        // 11h sang thu hai, sang da hoc xong luc 10h45, ke tiep la chieu.
-        val chieu = TinhLoiNhac.tinh(luc(14, 11, 0), emptySet())!!
+        // 11h sang thu hai, sang da hoc xong luc 10h45: dang chan thi man chan ke buoi chieu.
+        val chieu = TinhLoiNhac.tinh(luc(14, 11, 0), emptySet(), batManChan = true)!!
+        assertEquals(LoaiNhac.CHAN, chieu.loai)
         assertEquals(Buoi.CHIEU, chieu.buoi!!.buoi)
     }
 
@@ -246,8 +256,10 @@ class TinhLoiNhacTest {
     }
 
     @Test
-    fun truoc_moc_buong_may_thi_chua_chan() {
-        assertTrue(chan(luc(14, 11, 25))!!.loai != LoaiNhac.CHAN)
+    fun truoc_gio_khoa_thi_chua_chan() {
+        // Thu ba khoa tu 11h00.
+        assertTrue(chan(luc(15, 10, 55))!!.loai != LoaiNhac.CHAN)
+        assertEquals(LoaiNhac.CHAN, chan(luc(15, 11, 0))!!.loai)
     }
 
     @Test
@@ -256,27 +268,30 @@ class TinhLoiNhacTest {
     }
 
     @Test
-    fun sang_thu_hai_cung_chan_rieng_mot_khoang() {
-        // Sang thu hai chan tu 8h45 toi 10h45, khong dinh gi toi buoi chieu.
+    fun sang_thu_hai_khoa_lien_toi_17h() {
+        // Thu hai khoa mot mach 8h45-17h00 (anh Huy chot 14/11/2026), man chan ke buoi sang.
         val nhac = chan(luc(14, 9, 30))!!
         assertEquals(LoaiNhac.CHAN, nhac.loai)
-        assertEquals(10 * 60 + 45, nhac.phutHetChan)
+        assertEquals(17 * 60, nhac.phutHetChan)
+        assertEquals(Buoi.SANG, nhac.buoi!!.buoi)
     }
 
     @Test
-    fun giua_hai_buoi_thu_hai_thi_khong_chan() {
-        // 11h00: sang da tan luc 10h45, chieu chua toi moc 11h30. Con ve nha an trua.
-        assertTrue(chan(luc(14, 11, 0))!!.loai != LoaiNhac.CHAN)
+    fun giua_hai_buoi_thu_hai_van_chan() {
+        // Truoc 14/11/2026 11h00 thu hai mo 45 phut giua hai buoi. Gio khoa lien.
+        val nhac = chan(luc(14, 11, 0))!!
+        assertEquals(LoaiNhac.CHAN, nhac.loai)
+        assertEquals(Buoi.CHIEU, nhac.buoi!!.buoi)
     }
 
     @Test
-    fun sang_thu_sau_chan_tu_8h45_toi_10h45() {
+    fun sang_thu_sau_chan_tu_8h45_toi_17h() {
         // 18/9/2026 la thu sau. Luc 7h15, truoc day la gio vao tiet AVNN, nay chua chan.
         assertTrue(chan(luc(18, 7, 15))?.loai != LoaiNhac.CHAN)
         assertTrue(chan(luc(18, 8, 40))?.loai != LoaiNhac.CHAN)
         val nhac = chan(luc(18, 8, 45))!!
         assertEquals(LoaiNhac.CHAN, nhac.loai)
-        assertEquals(10 * 60 + 45, nhac.phutHetChan)
+        assertEquals(17 * 60, nhac.phutHetChan)
     }
 
     @Test
@@ -309,14 +324,82 @@ class TinhLoiNhacTest {
 
     @Test
     fun vao_nguong_gap_thi_dem_tung_giay() {
-        // 11h20 con 10 phut toi moc 11h30, tuc 600 giay.
-        val nhac = TinhLoiNhac.tinh(luc(14, 11, 20), emptySet())!!
+        // Thu ba 10h50 con 10 phut toi gio khoa 11h00, tuc 600 giay.
+        val nhac = TinhLoiNhac.tinh(luc(15, 10, 50), emptySet())!!
         assertEquals(LoaiNhac.SAP_DI_HOC, nhac.loai)
         assertEquals(600, nhac.giayConLai)
     }
 
     @Test
     fun chua_vao_nguong_gap_thi_khong_dem_giay() {
-        assertEquals(-1, TinhLoiNhac.tinh(luc(14, 11, 0), emptySet())!!.giayConLai)
+        assertEquals(-1, TinhLoiNhac.tinh(luc(15, 10, 30), emptySet())!!.giayConLai)
+    }
+
+    // ---- gio di hoc Ba Huy dat (14/11/2026) ----
+
+    private fun voiKhoa(thu: Int, k: NgayKhoa, viec: () -> Unit) {
+        val cu = KhoaHoc.cauHinh
+        KhoaHoc.cauHinh = { KhoaHoc.MAC_DINH + (thu to k) }
+        try { viec() } finally { KhoaHoc.cauHinh = cu }
+    }
+
+    @Test
+    fun tat_khoa_thu_ba_thi_khong_chan_khong_bao_sap_di_hoc() {
+        voiKhoa(Calendar.TUESDAY, NgayKhoa(false, 11 * 60, 17 * 60)) {
+            assertTrue(chan(luc(15, 12, 30))?.loai != LoaiNhac.CHAN)
+            assertTrue(TinhLoiNhac.tinh(luc(15, 10, 50), emptySet())?.loai != LoaiNhac.SAP_DI_HOC)
+        }
+    }
+
+    @Test
+    fun doi_gio_khoa_thi_chan_theo_gio_moi() {
+        voiKhoa(Calendar.TUESDAY, NgayKhoa(true, 12 * 60, 16 * 60)) {
+            assertTrue(chan(luc(15, 11, 30))?.loai != LoaiNhac.CHAN)
+            val nhac = chan(luc(15, 12, 0))!!
+            assertEquals(LoaiNhac.CHAN, nhac.loai)
+            assertEquals(16 * 60, nhac.phutHetChan)
+            assertTrue(chan(luc(15, 16, 0))?.loai != LoaiNhac.CHAN)
+        }
+    }
+
+    @Test
+    fun bat_khoa_chu_nhat_thi_chu_nhat_cung_chan() {
+        // 20/9/2026 la chu nhat: lich khong co buoi nao, man chan chi noi gio mo lai.
+        voiKhoa(Calendar.SUNDAY, NgayKhoa(true, 9 * 60, 11 * 60)) {
+            val nhac = chan(luc(20, 10, 0))!!
+            assertEquals(LoaiNhac.CHAN, nhac.loai)
+            assertNull(nhac.buoi)
+            assertEquals("Máy khoá tới 11:00", nhac.chiTiet)
+            assertEquals(11 * 60, nhac.phutHetChan)
+        }
+        assertTrue(chan(luc(20, 10, 0))?.loai != LoaiNhac.CHAN)
+    }
+
+    @Test
+    fun mo_som_la_mo_ca_ngay_khoa() {
+        val ma = chan(luc(14, 9, 0))!!.maBuoi!!
+        assertEquals(TinhLoiNhac.maKhoa(luc(14, 9, 0)), ma)
+        assertTrue(chan(luc(14, 15, 0), moSom = ma)?.loai != LoaiNhac.CHAN)
+    }
+
+    @Test
+    fun lenh_khoa_hoc_doc_va_chan_gio_sai() {
+        val (moi, loi) = KhoaHoc.tuLenh(
+            mapOf("3" to mapOf("bat" to true, "tu" to 600L, "toi" to 900L), "1" to mapOf("bat" to true)),
+            KhoaHoc.MAC_DINH
+        )
+        assertNull(loi)
+        assertEquals(NgayKhoa(true, 600, 900), moi!![Calendar.TUESDAY])
+        assertEquals(NgayKhoa(true, 11 * 60, 17 * 60), moi[Calendar.SUNDAY])
+        assertEquals(KhoaHoc.MAC_DINH[Calendar.MONDAY], moi[Calendar.MONDAY])
+
+        val (sai, lyDo) = KhoaHoc.tuLenh(
+            mapOf("2" to mapOf("bat" to true, "tu" to 900L, "toi" to 600L)), KhoaHoc.MAC_DINH
+        )
+        assertNull(sai)
+        assertEquals("Thứ hai: giờ mở lại phải sau giờ khoá.", lyDo)
+
+        assertEquals(KhoaHoc.MAC_DINH, KhoaHoc.docJson(KhoaHoc.thanhJson(KhoaHoc.MAC_DINH)))
+        assertEquals(KhoaHoc.MAC_DINH, KhoaHoc.docJson("hong"))
     }
 }

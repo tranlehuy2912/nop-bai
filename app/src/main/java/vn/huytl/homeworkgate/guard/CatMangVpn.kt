@@ -345,7 +345,7 @@ class CatMangVpn : VpnService() {
             val cat = LuatCatMang.catMang(
                 gateMo = gate.isOpen(),
                 trongGioNgu = gate.trongGioNgu(),
-                trongGioHoc = TinhLoiNhac.buoiDangChan(
+                trongGioHoc = TinhLoiNhac.khoangDangChan(
                     Calendar.getInstance(), prefs.batManChan, prefs.buoiDuocMoSom
                 ) != null,
                 moToanBo = ParentMode.isActive(c),
