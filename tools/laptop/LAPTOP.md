@@ -29,6 +29,17 @@ Laptop cài Linux Mint, Lê Hòa dùng để xem Netflix. Anh Huy muốn:
   ghi "Đang chờ laptop đổi giờ" tới khi laptop báo đã đặt. Lê Hòa đang xem mà khung mới đã cắt ngang
   (vd 21:10 Ba Huy đổi giờ khoá thành 21:00) thì laptop báo "Còn 5 phút xem phim", 5 phút sau mới đăng
   xuất, không quá lúc khung cũ hết (anh Huy chốt báo trước 5 phút).
+- Từ 14/11/2026 laptop khoá thêm giờ đi học giữa ngày (anh Huy chốt: tablet và laptop khoá theo
+  giờ, phút máy nào máy nấy dùng). Mỗi thứ một khoảng, bật tắt từng thứ, Ba Huy đặt ở dòng "Giờ đi
+  học" của nhóm "Laptop" trên Bảng điều khiển (trường `khoaHoc` của `laptop/{maNha}`); tablet có
+  một bộ riêng, anh Huy tự chỉnh cho giống nhau. Chưa đặt thì dùng giá trị lúc mới cài: thứ hai,
+  thứ sáu 8:45 tới 17:00; thứ ba, tư, năm, bảy 11:00 tới 17:00; chủ nhật không khoá. Ngày nghỉ
+  trong lịch, ngày Ba Huy bấm "Cho nghỉ học" và mùa hè thì không khoá: tablet chép các ngày đó sang
+  trường `nghiHoc`. `netflix-gio` đặt vào Timekpr-nExt mỗi thứ là khung giờ trừ đi khoảng đi học
+  của lần tới của thứ đó (thứ hai 7:00 tới 21:30 khoá 8:45 tới 17:00 là
+  `7;8[0-45];17;18;19;20;21[0-30]`), báo "Còn 5 phút" trước giờ khoá, hộp "Quá giờ xem phim" ghi
+  "từ 7:00 tới 11:00 và từ 17:00 tới 21:30". Giờ đi học đã đặt ghi vào trường `khoaHocDangDat`.
+  Khung giờ (`khungGio`) chưa đặt lần nào thì không khoá giờ đi học.
 - Firefox của cả máy, kể cả tài khoản của anh Huy, chỉ vào được Netflix (từ 09/10/2026 thêm YouTube).
   Bảng điều khiển có mục Bật/Tắt "Khoá web" trong Cài đặt, nhóm "Laptop" (tên trước 09/10/2026 là
   "Firefox chỉ được mở Netflix"; lúc đầu là nút "Mở web" / "Khoá web" ở thẻ Giờ chơi, anh Huy chuyển
