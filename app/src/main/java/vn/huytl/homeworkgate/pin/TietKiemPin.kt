@@ -162,6 +162,14 @@ object TietKiemPin {
         hen(app, bat, setOf(phut, phutDung), tatLuc)
     }
 
+    /**
+     * Quen so app dang tam dung, sau khi KhoaJokers da mo lai het luc may sap tat. Luc bat lai,
+     * man hinh tat du lau thi phan nay tam dung lai tu dau.
+     */
+    fun quenDaDung(context: Context) {
+        tep(context.applicationContext).edit().remove(DA_DUNG).commit()
+    }
+
     /** App dang bi tam dung vi tiet kiem pin, cho man Tiet kiem pin tren tablet. */
     fun dangTamDung(context: Context): Set<String> =
         tep(context.applicationContext).getStringSet(DA_DUNG, null).orEmpty().toSet()

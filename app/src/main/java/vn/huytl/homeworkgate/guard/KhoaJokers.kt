@@ -74,6 +74,10 @@ object KhoaJokers {
     @Volatile
     private var lanThua = 0L
 
+    /** May dang tat: thoi xet, de khong tam dung lai app vua mo truoc khi tat ([moHetTruocKhiTat]). */
+    @Volatile
+    private var dangTat = false
+
     /**
      * App Android tu choi tam dung (man hinh chinh, trinh goi dien, quan tri thiet bi... xem
      * SuspendPackageHelper.canSuspendPackageForUser). Nho trong bo nho de khong goi lenh lai moi lan
@@ -83,7 +87,36 @@ object KhoaJokers {
 
     private val xet = Runnable {
         val c = ct ?: return@Runnable
+        if (dangTat) return@Runnable
         Jokers.lam { runCatching { xetThat(c) }.onFailure { Log.w(TAG, "xet loi", it) } }
+    }
+
+    /**
+     * May sap tat hay khoi dong lai: mo lai moi app dang tam dung, ca app cua Tiet kiem pin.
+     *
+     * Ly do (thay tren may ao dt_bahuy, Android 16, ngay 14/11/2026): app bi `pm suspend` van bi
+     * tam dung sau khi khoi dong lai, trong khi Jokers chi tu chay lai khi luc khoi dong co Wi-Fi.
+     * Khong mo truoc khi tat thi Jokers khong len la app xam mai, ke ca luc Le Hoa co gio choi, va
+     * khong ai tren tablet mo duoc. Mo roi thi sau khi khoi dong lai tro nang chan nhu cu, toi khi
+     * Jokers chay lai thi lop nay tam dung lai.
+     *
+     * Chi do duoc khi tat may dang hoang (Android gui ACTION_SHUTDOWN va cho toi 10 giay). Het pin,
+     * treo may thi khong kip: lan do van phai cho Jokers chay lai.
+     */
+    private val tatMay = object : BroadcastReceiver() {
+        override fun onReceive(context: Context, intent: Intent) {
+            dangTat = true
+            tay.removeCallbacks(xet)
+            val xong = goAsync()
+            val c = context.applicationContext
+            Jokers.lam {
+                try {
+                    moHetTruocKhiTat(c)
+                } finally {
+                    xong.finish()
+                }
+            }
+        }
     }
 
     private val ngheDoi = SharedPreferences.OnSharedPreferenceChangeListener { _, _ ->
@@ -121,6 +154,9 @@ object KhoaJokers {
             addAction(Intent.ACTION_USER_PRESENT)
         }
         ContextCompat.registerReceiver(ung, nhanTin, manHinh, ContextCompat.RECEIVER_NOT_EXPORTED)
+        ContextCompat.registerReceiver(
+            ung, tatMay, IntentFilter(Intent.ACTION_SHUTDOWN), ContextCompat.RECEIVER_NOT_EXPORTED
+        )
         Jokers.batDau { dongBo(ung) }
         dongBo(ung)
     }
@@ -189,6 +225,16 @@ object KhoaJokers {
         runCatching {
             context.getSystemService(AlarmManager::class.java)?.nextAlarmClock?.showIntent?.creatorPackage
         }.getOrNull()?.let { add(it) }
+    }
+
+    /** Goi tren luong cua Jokers, xem [tatMay]. */
+    private fun moHetTruocKhiTat(c: Context) {
+        val tat = (docSo(c).keys + TietKiemPin.dangTamDung(c))
+            .filter { coCai(c, it) && dangTamDungThat(c, it) }
+        if (tat.isNotEmpty()) Jokers.chayLayThang("pm", "unsuspend", *tat.toTypedArray())
+        ghiSo(c, emptyMap())
+        TietKiemPin.quenDaDung(c)
+        Log.i(TAG, "tat may: da mo lai ${tat.size} app")
     }
 
     /** Goi tren luong cua Jokers. */
