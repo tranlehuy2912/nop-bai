@@ -94,6 +94,8 @@ object MocGio {
             runCatching { CongSang.congNeuDenLuc(context)?.let { CongSang.baoBaHuy(context, it) } }
             runCatching { DongBo.dayNgay() }
             CatMangVpn.dongBo(context)
+            // Gio ngu toi, nua dem (han rieng tung app tinh lai): lop khoa bang Jokers xet lai.
+            KhoaJokers.dongBo(context)
             // Dat moc ke tiep ngay tai day: bao thuc nay khong lap lai.
             datLai(context)
         }

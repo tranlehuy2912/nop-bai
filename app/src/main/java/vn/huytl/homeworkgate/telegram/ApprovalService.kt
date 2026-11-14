@@ -395,6 +395,9 @@ class ApprovalService : Service() {
         // Luoi do cho VPN cat mang luc man hinh sang, phong khi co gi doi ma khong qua
         // prefs, vi du con vua cai lai YouTube.
         vn.huytl.homeworkgate.guard.CatMangVpn.dongBoThua(this)
+        // Cung tam luoi do cho lop khoa bang Jokers: toi gio di hoc, het han rieng cua mot app (so
+        // phut dung nam ngoai kho chinh) deu khong ghi prefs.
+        vn.huytl.homeworkgate.guard.KhoaJokers.dongBoThua(this)
         // Het gio ngu ma con giu phut cham trong gio ngu thi cong luon: bao thuc cua MocGio
         // co the tre, hay may tat ca dem. Xem CongSang.
         CongSang.congNeuDenLuc(this)?.let { CongSang.baoBaHuy(this, it) }

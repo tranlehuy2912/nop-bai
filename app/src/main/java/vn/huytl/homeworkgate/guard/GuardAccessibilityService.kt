@@ -375,6 +375,7 @@ class GuardAccessibilityService : AccessibilityService() {
         // Dich vu len lai thuong la luc tien trinh vua song lai, va VPN cat mang da mat
         // theo tien trinh cu.
         CatMangVpn.dongBo(this)
+        KhoaJokers.dongBo(this)
     }
 
     /**
@@ -712,8 +713,9 @@ class GuardAccessibilityService : AccessibilityService() {
     private fun onTick() {
         // Het han che do Ba Huy, hay toi gio di hoc giua phien, deu khong ghi gi vao
         // prefs nen CatMangVpn khong tu biet. Nhip nay chi chay khi dang choi hoac
-        // dang mo toan bo may, dung hai luc do.
+        // dang mo toan bo may, dung hai luc do. Lop khoa bang Jokers cung vay.
         CatMangVpn.dongBo(this)
+        KhoaJokers.dongBo(this)
         // Man hinh tat du lau thi dung dong ho lai ngay, de phien khong chet trong
         // luc khong ai dung may.
         val tatMs = nghiVoiManHinhTat()
@@ -1454,84 +1456,21 @@ class GuardAccessibilityService : AccessibilityService() {
         // duong thi bam xong la bi chinh guard day ve, khong sua duoc gi.
         if (pkg in GUARDED_SYSTEM_PACKAGES && PhienQuanLy.dangChoMoCaiDat()) return null
         // Cung kieu do cho Jokers Permissions (5/11/2026): Ba Huy bam "Mở Jokers Permissions"
-        // hay "Cho phép dùng Jokers" o man Tiet kiem pin (sau PIN). Ngoai luc do Jokers la app
-        // la nhu moi app khac, Le Hoa khong mo duoc de tu cho app nao dung quyen shell.
+        // hay "Cho phép dùng Jokers" o man Tiet kiem pin (sau PIN). Ngoai luc do Jokers bi chan
+        // ngay duoi day, de Le Hoa khong mo duoc ma tu cho app nao dung quyen shell.
         if (pkg == Jokers.GOI && PhienQuanLy.dangChoMoCaiDat()) return null
 
-        if (pkg in STORE_PACKAGES) {
-            return "Không cài app mới được" to "Ba Huy mở máy hộ nếu Lê Hòa cần app học"
-        }
-        if (prefs.lockSystemSettings && pkg in GUARDED_SYSTEM_PACKAGES) {
-            return "Cài đặt đang khoá" to "Ba Huy mở bằng mã PIN trong app Nộp bài"
-        }
-        if (pkg in prefs.blockedPackages) {
-            return "App này không được dùng" to
-                "Ba Huy đã cấm app này, kể cả trong giờ chơi"
+        // Che do cua Le Hoa thi Jokers khong mo duoc luc nao, ke ca trong gio choi va du Ba Huy
+        // lo dua no vao danh sach duoc dung (anh Huy chot 14/11/2026: "che do Le Hoa thi khong
+        // cho thao tac, va cung khong cho mo jokers len"). Jokers la lop chan chinh tu ngay do
+        // (xem [KhoaJokers]): mo duoc no la tu cho app nao dung quyen shell, hay dung han no. Che
+        // do Ba Huy thi [evaluate] tra ve tu dau, nen Ba Huy van mo va go Jokers duoc.
+        if (pkg == Jokers.GOI) {
+            return "Jokers chỉ mở ở chế độ Ba Huy" to "Ba Huy mở máy bằng mã PIN trong app Nộp bài"
         }
 
-        // Han rieng cua app xet truoc ca gio choi: Netflix mot ngay mot tieng ruoi la
-        // mot tieng ruoi, du hom do co gio choi hay khong, du app co nam trong danh
-        // sach duoc dung khi het gio hay khong.
-        val han = GioiHanApp.han(this, pkg)
-        if (han > 0 && GioiHanApp.daDungMs(this, pkg) >= han * 60_000L) {
-            return "Hết giờ ${tenApp(pkg)} hôm nay" to
-                "Mỗi ngày chỉ $han phút. Mai xem tiếp nhé."
-        }
-
-        // App dung moi luc xet sau danh sach cam va han rieng, truoc moi luat ve gio: gio
-        // di hoc, gio choi, gio ngu. Ba Huy dat cho Telegram, de Le Hoa nhan cho ba duoc
-        // ca luc bi khoa. Xem [Prefs.moiLucPackages].
-        if (pkg in prefs.moiLucPackages) return null
-
-        // Gio di hoc xet truoc ca gio choi.
-        //
-        // Bao "Het gio roi" luc nay la noi sai viec: gio choi van con nguyen, dang
-        // duoc giu lai cho tan hoc. Cai dang xay ra la den luc phai buong may di
-        // hoc - va do cung la cau ma man chan dang hien ngay sau lop phu nay.
-        //
-        // Chan ca app trong danh sach duoc dung khi het gio: man chan von da che
-        // kin man hinh, mo rieng tu dien ra luc dang phai ra khoi nha thi vo nghia.
-        buoiDangChan()?.let { buoi ->
-            return "Tới giờ đi học rồi" to
-                (TinhLoiNhac.moTaBuoi(buoi).replaceFirstChar { it.uppercase() } +
-                    ", vào học ${TinhLoiNhac.gioPhut(buoi.phutVaoHoc)}. " +
-                    "Máy mở lại lúc ${TinhLoiNhac.gioPhut(buoi.phutTanHoc)}.")
-        }
-
-        if (gate.isOpen()) return null
-
-        // Gio ngu khoa ca danh sach trang.
-        //
-        // Truoc day danh sach trang mo ca dem, vi no duoc nghi cho tu dien va may
-        // tinh. Nhung trong do con co app AI, ma so phut rieng cua app lai tinh lai
-        // luc 0 gio: con thuc den 00:05 la co them nua tieng moi. Ba Huy chon khoa.
-        //
-        // Dat SAU gate.isOpen(): gio choi con thi moi app deu mo. Hien gio thi ba
-        // cung khong cap duoc gio trong gio ngu, nhung neu mai sau cap duoc thi do
-        // la y cua ba, khong phai cho de chan.
-        if (gate.trongGioNgu()) {
-            return "Tới giờ ngủ rồi" to
-                "Máy mở lại lúc ${TinhLoiNhac.gioPhut(prefs.gioDayMinuteOfDay)}. Mai chơi tiếp nhé."
-        }
-
-        if (pkg in prefs.allowedPackages) return null
-
-        // Bao dung viec dang can lam. Truoc day luc nao cung "Nop bai tap de duoc
-        // choi tiep" - het luot roi ma van bao nop bai thi con nop, ba tu choi, va
-        // khong ai hieu tai sao. Dang tam dung hay da duyet thi viec can lam cung
-        // khong phai nop bai.
-        val detail = when {
-            // Dang cho duyet bai moi ma trong tay con phieu chua dung thi choi duoc
-            // ngay, khong phai cho. Bao "dang cho duyet" o day la con ngoi cho oan.
-            gate.state == GateState.PENDING && gate.grantedMinutes > 0 ->
-                "Đang giữ ${gate.grantedMinutes} phút. Mở app Nộp bài, bấm Bắt đầu chơi"
-            gate.state == GateState.PENDING -> "Đã gửi bài rồi, đang chờ ba Huy duyệt"
-            gate.state == GateState.PAUSED -> "Đang tạm dừng. Mở app Nộp bài, bấm Chơi tiếp"
-            gate.state == GateState.GRANTED -> "Ba Huy duyệt rồi. Mở app Nộp bài, bấm Bắt đầu"
-            gate.phutConLaiHomNay() <= 0 -> "Hôm nay đủ giờ chơi rồi, mai nộp bài tiếp nhé"
-            else -> "Nộp bài tập để được chơi tiếp nhé"
-        }
-        return "Hết giờ rồi" to detail
+        // Cac luat theo danh sach va theo gio dung chung voi Jokers (14/11/2026).
+        return LuatChanApp.lyDo(this, pkg, prefs, gate, gate.isOpen(), buoiDangChan(), ::tenApp)
     }
 
     /**

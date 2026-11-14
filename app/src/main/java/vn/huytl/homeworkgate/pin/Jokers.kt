@@ -102,10 +102,18 @@ object Jokers {
      * Chay lenh shell (sh -c), cho xong toi da 10 giay. Tra ve chu lenh in ra, null neu Jokers chua
      * san sang hay lenh loi. Chan luong dang goi: goi tu [lam], dung goi tu luong giao dien.
      */
-    fun chayLay(lenh: String): String? {
+    fun chayLay(lenh: String): String? = chayLayThang("sh", "-c", lenh)
+
+    /**
+     * Nhu [chayLay] nhung chay thang chuong trinh [lenh] voi cac doi so, khong qua sh. Dung khi doi
+     * so la chu nguoi doc (cau bao co dau cach, dau cham, dau nhay cua `pm suspend --dialogMessage`,
+     * xem [vn.huytl.homeworkgate.guard.KhoaJokers]): qua sh thi phai tu boc dau nhay, sot mot dau
+     * la lenh hong.
+     */
+    fun chayLayThang(vararg lenh: String): String? {
         if (!sanSang()) return null
         return try {
-            val p = Shizuku.newProcess(arrayOf("sh", "-c", lenh), null, null)
+            val p = Shizuku.newProcess(arrayOf(*lenh), null, null)
             val ra = p.inputStream.bufferedReader().readText()
             // Khong dung waitFor(10, SECONDS) cua Process: no hoi exitValue(), lenh chua xong thi
             // Jokers nem IllegalArgumentException qua binder, nen lenh da chay van bi coi la loi (app
@@ -116,7 +124,7 @@ object Jokers {
             }
             if (p.exitValue() == 0) ra else null
         } catch (e: Exception) {
-            Log.w(TAG, "Lenh loi: $lenh", e)
+            Log.w(TAG, "Lenh loi: ${lenh.joinToString(" ")}", e)
             null
         }
     }

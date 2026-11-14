@@ -10,6 +10,7 @@ import vn.huytl.homeworkgate.data.Prefs
 import vn.huytl.homeworkgate.data.SoCaiBai
 import vn.huytl.homeworkgate.dongbo.UuTienIPv4
 import vn.huytl.homeworkgate.guard.CatMangVpn
+import vn.huytl.homeworkgate.guard.KhoaJokers
 import vn.huytl.homeworkgate.guard.TelegramThat
 import vn.huytl.homeworkgate.kho.BoThe
 import vn.huytl.homeworkgate.kho.BoTuVung
@@ -45,6 +46,9 @@ class App : Application() {
         runCatching { CatMangVpn.theoDoi(this) }
         // Tiet kiem pin khi man hinh tat (5/11/2026): nghe man hinh bat tat, nghe Jokers.
         runCatching { TietKiemPin.batDau(this) }
+        // Khoa bang Jokers (14/11/2026): tam dung app khong duoc dung, theo moi lan prefs doi. Sau
+        // TietKiemPin, vi hai ben cung nghe Jokers va xem so cua nhau. Xem KhoaJokers.
+        runCatching { KhoaJokers.theoDoi(this) }
         registerActivityLifecycleCallbacks(object : ActivityLifecycleCallbacks {
             override fun onActivityResumed(activity: Activity) {
                 if (dangHien == 0 && roiNenLuc > 0L) {

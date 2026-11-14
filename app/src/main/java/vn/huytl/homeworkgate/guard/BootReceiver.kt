@@ -29,6 +29,9 @@ class BootReceiver : BroadcastReceiver() {
         MocGio.datLai(context)
         // VPN cat mang khong song qua lan khoi dong lai. Dang khoa thi bat lai ngay.
         CatMangVpn.dongBo(context)
+        // Khoi dong lai thi Android bo tam dung moi app. Jokers chay lai thi KhoaJokers tu xet (nghe
+        // Jokers), goi o day phong khi Jokers da len truoc.
+        KhoaJokers.dongBo(context)
 
         // Khoi dong lai la luc dau tien app chay lai sau che do an toan, nen cung la
         // luc duy nhat co the bao ve khoang thoi gian vua roi. Kiem truoc ca viec

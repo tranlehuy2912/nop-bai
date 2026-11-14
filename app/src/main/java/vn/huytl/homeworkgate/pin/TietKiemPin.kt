@@ -17,6 +17,7 @@ import androidx.core.content.ContextCompat
 import vn.huytl.homeworkgate.data.Prefs
 import vn.huytl.homeworkgate.dongbo.DongBo
 import vn.huytl.homeworkgate.guard.GuardAccessibilityService
+import vn.huytl.homeworkgate.guard.KhoaJokers
 import vn.huytl.homeworkgate.guard.TruyCapTuXa
 
 private const val TAG = "TietKiemPin"
@@ -197,8 +198,13 @@ object TietKiemPin {
         val daDung = t.getStringSet(DA_DUNG, null).orEmpty().toMutableSet()
         val can = canTamDung(apps, daDung, khongDuocDung(context)).filter { coCai(context, it) }
         if (can.isEmpty()) return
+        // App lop khoa (KhoaJokers, 14/11/2026) dang tam dung thi chi tat tien trinh: goi lai pm
+        // suspend khong kem cau bao la xoa mat cau "Hết giờ rồi..." cua lop khoa. Van ghi vao so cua
+        // phan nay, de lop khoa nha ra trong luc man hinh con tat thi app van nam yen.
+        val khoa = KhoaJokers.dangGiu(context)
         for (goi in can) {
-            if (Jokers.chay("pm suspend $goi && am kill $goi")) daDung += goi
+            val lenh = if (goi in khoa) "am kill $goi" else "pm suspend $goi && am kill $goi"
+            if (Jokers.chay(lenh)) daDung += goi
         }
         t.edit().putStringSet(DA_DUNG, daDung).apply()
         Log.i(TAG, "tam dung: $daDung")
@@ -213,8 +219,11 @@ object TietKiemPin {
         val t = tep(context)
         val daDung = t.getStringSet(DA_DUNG, null).orEmpty().toMutableSet()
         if (daDung.isEmpty() || !Jokers.sanSang()) return
+        // App lop khoa dang giu (het gio choi, gio ngu...) thi chi bo khoi so cua phan nay, khong mo:
+        // lop khoa tu mo khi het luat chan. Xem KhoaJokers.
+        val khoa = KhoaJokers.dangGiu(context)
         for (goi in daDung.toList()) {
-            if (Jokers.chay("pm unsuspend $goi") || !coCai(context, goi)) daDung -= goi
+            if (goi in khoa || Jokers.chay("pm unsuspend $goi") || !coCai(context, goi)) daDung -= goi
         }
         t.edit().putStringSet(DA_DUNG, daDung).apply()
         Log.i(TAG, "mo lai app, con tam dung: $daDung")
