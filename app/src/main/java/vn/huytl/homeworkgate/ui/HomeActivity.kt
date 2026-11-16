@@ -136,6 +136,7 @@ class HomeActivity : AppCompatActivity() {
         prefs = Prefs.get(this)
         gate = GateStore(this)
         applySystemBarPadding()
+        xepTheTheoBeRong()
 
         binding.btnSubmit.setOnClickListener { onSubmit() }
         binding.btnChat.setOnClickListener { nhanChoBa() }
@@ -466,6 +467,31 @@ class HomeActivity : AppCompatActivity() {
             else -> "Thứ bảy"
         }
         return "$thu, ${c.get(Calendar.DAY_OF_MONTH)} tháng ${c.get(Calendar.MONTH) + 1}"
+    }
+
+    /**
+     * The trang thai ngang (vong gio trai, chu va nut phai) can chieu rong cua tablet dung. Man
+     * hep hon 640dp (tablet chia doi man hinh, may ao co dien thoai) thi cot phai bi bop toi muc
+     * moi dong mot chu (thay 16/11/2026): luc do xep doc, vong gio nho lai nam tren, chu va nut
+     * nam duoi. Activity tao lai khi doi co cua so, nen chi xet o onCreate.
+     */
+    private fun xepTheTheoBeRong() {
+        if (resources.configuration.screenWidthDp >= 640) return
+        val dp = resources.displayMetrics.density
+        binding.cardState.orientation = android.widget.LinearLayout.VERTICAL
+        binding.cardState.gravity = android.view.Gravity.CENTER_HORIZONTAL
+        binding.khungVong.layoutParams = binding.khungVong.layoutParams.apply {
+            width = (170 * dp).toInt(); height = (170 * dp).toInt()
+        }
+        binding.vongPhien.indicatorSize = (166 * dp).toInt()
+        binding.vongPhien.trackThickness = (16 * dp).toInt()
+        (binding.cotPhai.layoutParams as android.widget.LinearLayout.LayoutParams).apply {
+            width = android.widget.LinearLayout.LayoutParams.MATCH_PARENT
+            weight = 0f
+            marginStart = 0
+            topMargin = (14 * dp).toInt()
+        }
+        binding.txtVong.textSize = 38f
     }
 
     /** Nut chinh dang la vao choi, tam dung hay choi tiep: co phut de choi. */
