@@ -222,6 +222,19 @@ class Prefs private constructor(private val sp: SharedPreferences) {
             .putString(KEY_AI_KEYS, v.map { it.trim() }.filter { it.isNotEmpty() }.joinToString("\n"))
             .commit().let {}
 
+    /**
+     * Cho Le Hoa nop bai bang anh chup: nut "Nộp bài tập", "Nộp thêm bài…" o man chinh, nut
+     * "Nộp lại N câu sai" o man Bai da cham, va dong "Có N câu cần sửa".
+     *
+     * Tat tu 16/11/2026, anh Huy dan: Le Hoa lam bai tren may la chinh, "tinh nang thi van giu,
+     * con chu thi bo di", "giu chuc nang la ko xoa code, nhung nut thi an het, de sau nay toi
+     * muon mo lai thi cung ko can phai code lai". Mo lai bang cong tac "Nộp bài bằng ảnh" o
+     * trang Cai dat (sau PIN). Tat thi nut chinh luc khong co phut de choi la "Luyện tập".
+     */
+    var choNopAnh: Boolean
+        get() = sp.getBoolean(KEY_CHO_NOP_ANH, false)
+        set(v) = sp.edit().putBoolean(KEY_CHO_NOP_ANH, v).commit().let {}
+
     /** Chan luon app Settings va trung tam bao mat cua Xiaomi. */
     var lockSystemSettings: Boolean
         get() = sp.getBoolean(KEY_LOCK_SETTINGS, true)
@@ -451,6 +464,7 @@ class Prefs private constructor(private val sp: SharedPreferences) {
         private const val KEY_TAM_DUNG = "tam_dung_packages"
         private const val KEY_NHAC = "nhac_packages"
         private const val KEY_LOCK_SETTINGS = "lock_settings"
+        private const val KEY_CHO_NOP_ANH = "cho_nop_anh"
         private const val KEY_TG_OFFSET = "tg_offset"
         private const val KEY_HEARTBEAT = "heartbeat_wall"
         private const val KEY_HEARTBEAT_MSG = "heartbeat_msg"

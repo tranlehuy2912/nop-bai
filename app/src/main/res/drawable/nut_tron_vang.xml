@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Nut tron vang bong cua mau H (16/11/2026): o ten "Hòa", nut o khoa, mui ten cuoi moi dong
+     viec o man chinh. Mep day cam dam lech xuong 4dp, than vang chuyen sang, vien trang. -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:top="4dp">
+        <shape android:shape="oval"><solid android:color="#E09B00" /></shape>
+    </item>
+    <item android:bottom="4dp">
+        <shape android:shape="oval">
+            <gradient android:angle="270" android:startColor="#FFE27A" android:endColor="#FFC93C" />
+            <stroke android:width="3dp" android:color="#FFFFFF" />
+        </shape>
+    </item>
+</layer-list>

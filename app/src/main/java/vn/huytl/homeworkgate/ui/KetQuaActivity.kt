@@ -243,7 +243,10 @@ class KetQuaActivity : AppCompatActivity() {
         // Bai chup anh hom nay da du tran thi khong nop lai bang anh nua: sua xong cung khong
         // ra phut, cau trong ngan hang chuyen sang lam tren may sau 24 gio. Truoc 30/9/2026
         // moc nay la luc da tinh tron goi.
-        if (canNop.isNotEmpty() && !vn.huytl.homeworkgate.data.SoCaiBai.hetTranAnhHomNay(this)) {
+        // Tat "Nộp bài bằng ảnh" (mac dinh tu 16/11/2026, xem Prefs.choNopAnh) thi cung an nut nay.
+        if (canNop.isNotEmpty() && vn.huytl.homeworkgate.data.Prefs.get(this).choNopAnh &&
+            !vn.huytl.homeworkgate.data.SoCaiBai.hetTranAnhHomNay(this)
+        ) {
             the.addView(nutNopLai(b, canNop))
         }
         return the

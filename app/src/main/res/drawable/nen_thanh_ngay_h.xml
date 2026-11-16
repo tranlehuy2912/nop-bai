@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Nen thanh han muc ngay o man chinh theo mau H (16/11/2026): ruot xanh xam nhat, vien xanh
+     muc 4dp. Khung co padding 4dp de hai khuc mau nam trong vien, khong de len vien.
+     Ba khuc van giu y nghia anh Huy chot 1/10/2026, xem ThanhNgay. -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <solid android:color="#E9EEF8" />
+    <stroke android:width="4dp" android:color="@color/ink" />
+    <corners android:radius="16dp" />
+</shape>

@@ -19,6 +19,9 @@
              dat phong khac (Coiny cho tieu de to va nut bong). -->
         <item name="android:windowBackground">@drawable/st_nen_man</item>
         <item name="android:fontFamily">@font/baloo2</item>
+        <!-- fontFamily cua AppCompat o theme de len android:fontFamily dat thang tren TextView
+             (thay 16/11/2026: chu Coiny o man chinh ra Baloo). Cho nao can phong rieng thi dat
+             ca android:fontFamily lan app:fontFamily. -->
         <item name="fontFamily">@font/baloo2</item>
         <item name="materialButtonOutlinedStyle">@style/Nut.Vien</item>
         <!-- O dang chon (thanh duoi, chip): vang nhat chu xanh muc, nhu nut vang cua mau. -->
@@ -226,4 +229,63 @@
         <item name="cornerRadius">18dp</item>
     </style>
 
+
+    <!--
+      Mot o trong thanh nut ghim o day man chinh (bo cuc C, 16/11/2026): hinh tron bong co
+      mau rieng (dat trong code, xem HomeActivity.toMauHangPhu) va chu nam ngang ben phai.
+    -->
+    <style name="O.ThanhDuoi" parent="">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingTop">6dp</item>
+        <item name="android:paddingBottom">6dp</item>
+        <item name="android:paddingStart">4dp</item>
+        <item name="android:paddingEnd">4dp</item>
+        <item name="android:background">?attr/selectableItemBackground</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+    </style>
+
+    <style name="O.ThanhDuoi.Hinh" parent="">
+        <item name="android:layout_width">48dp</item>
+        <item name="android:layout_height">48dp</item>
+        <item name="android:paddingStart">12dp</item>
+        <item name="android:paddingEnd">12dp</item>
+        <item name="android:paddingTop">10dp</item>
+        <item name="android:paddingBottom">14dp</item>
+        <item name="android:contentDescription">@null</item>
+        <item name="tint">@android:color/white</item>
+    </style>
+
+    <style name="O.ThanhDuoi.Chu" parent="">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">8dp</item>
+        <item name="android:maxLines">2</item>
+        <item name="android:textColor">@color/ink</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:lineSpacingMultiplier">0.9</item>
+    </style>
+
+    <!-- Cham do co so tin moi, nam de len goc tren ben trai hinh tron. -->
+    <style name="O.ThanhDuoi.HuyHieu" parent="">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">top|start</item>
+        <item name="android:layout_marginStart">36dp</item>
+        <item name="android:background">@drawable/nen_huy_hieu</item>
+        <item name="android:fontFamily">@font/coiny</item>
+        <item name="fontFamily">@font/coiny</item>
+        <item name="android:gravity">center</item>
+        <item name="android:minWidth">30dp</item>
+        <item name="android:paddingStart">8dp</item>
+        <item name="android:paddingEnd">8dp</item>
+        <item name="android:paddingTop">3dp</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:visibility">gone</item>
+    </style>
 </resources>

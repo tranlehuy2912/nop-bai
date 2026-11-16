@@ -330,6 +330,23 @@
                             android:textColor="@color/ink_soft"
                             android:textSize="13sp" />
 
+                        <!-- Tat tu 16/11/2026 (anh Huy dan): an het nut nop bai bang anh nhung giu
+                             code, gat lai la dung duoc nhu cu. Xem Prefs.choNopAnh. -->
+                        <com.google.android.material.materialswitch.MaterialSwitch
+                            android:id="@+id/sw_nop_anh"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:text="Nộp bài bằng ảnh" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="Tắt thì màn chính không còn nút Nộp bài tập, nút chính là Luyện tập. Bật lại là Lê Hòa chụp bài gửi Ba Huy chấm như trước."
+                            android:textColor="@color/ink_soft"
+                            android:textSize="13sp" />
+
                         <!-- Chan gio di hoc. De canh cong tac khoa Cai dat vi cung
                              mot loai: ca hai deu la "co chan hay khong", dat mot lan
                              roi thoi. Viec hang ngay - mo cho het buoi hoc nay - thi

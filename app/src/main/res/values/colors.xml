@@ -105,6 +105,26 @@
     <color name="bong_the">#7F9CCB</color>
     <color name="vang">#FFC93C</color>
     <color name="vang_nhat">#FFEDB3</color>
+    <!-- Cap mau than / mep dam cua mau H cho the trang thai, hinh tron bong va nut o man
+         chinh (16/11/2026). Mau tung dong viec cung lay o day. -->
+    <color name="h_cam">#FF8A3D</color>
+    <color name="h_cam_dam">#D2601A</color>
+    <color name="h_vang">#FFB300</color>
+    <color name="h_vang_dam">#C98500</color>
+    <color name="h_xanh">#3D8BFF</color>
+    <color name="h_xanh_dam">#1F5FCC</color>
+    <color name="h_la">#2DC653</color>
+    <color name="h_la_dam">#1E9A3D</color>
+    <color name="h_tim">#7C5CFF</color>
+    <color name="h_tim_dam">#5B3FD6</color>
+    <color name="h_hong">#EC4899</color>
+    <color name="h_troi">#0EA5E9</color>
+    <color name="h_do">#F0445A</color>
+    <color name="h_cham">#6366F1</color>
+    <color name="h_tim_luyen">#7C3AED</color>
+    <color name="h_cam_soan">#F97316</color>
+    <color name="h_la_cham">#22A447</color>
+    <color name="h_vang_kiem">#F59E0B</color>
     <!-- Nen man chup anh (Theme.HomeworkGate.Camera). -->
     <color name="camera_nen">#101216</color>
 </resources>

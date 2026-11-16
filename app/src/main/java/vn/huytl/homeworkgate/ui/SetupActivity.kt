@@ -132,6 +132,7 @@ class SetupActivity : AppCompatActivity() {
         binding.edtHardStop.setText(formatMinuteOfDay(prefs.hardStopMinuteOfDay))
         binding.edtGioDay.setText(formatMinuteOfDay(prefs.gioDayMinuteOfDay))
         binding.swLockSettings.isChecked = prefs.lockSystemSettings
+        binding.swNopAnh.isChecked = prefs.choNopAnh
         binding.swManChan.isChecked = prefs.batManChan
     }
 
@@ -208,6 +209,7 @@ class SetupActivity : AppCompatActivity() {
         prefs.hardStopMinuteOfDay = hardStop
         prefs.gioDayMinuteOfDay = gioDay
         prefs.lockSystemSettings = binding.swLockSettings.isChecked
+        prefs.choNopAnh = binding.swNopAnh.isChecked
         // Tat man chan thi bo luon viec da mo som truoc do, khong de mot ma buoi cu
         // nam lai lam buoi do thoi chan sau khi bat lai.
         prefs.batManChan = binding.swManChan.isChecked
