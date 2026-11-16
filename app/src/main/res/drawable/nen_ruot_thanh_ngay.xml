@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Ruot thanh han muc ngay (mau H): xanh xam nhat, bo 12dp. ThanhNgay.ve bat clipToOutline nen
+     hai khuc mau ben trong bo theo goc nay. -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <solid android:color="#E9EEF8" />
+    <corners android:radius="12dp" />
+</shape>

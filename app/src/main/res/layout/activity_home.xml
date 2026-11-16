@@ -222,24 +222,32 @@
                 android:orientation="vertical"
                 android:visibility="gone">
 
-                <LinearLayout
-                    android:id="@+id/khung_thanh"
+                <!-- Vien ngoai va ruot tach hai lop: ruot bo tron rieng nen hai khuc mau ben trong khong
+                     loi goc vuong ra khoi goc bo cua vien (16/11/2026). -->
+                <FrameLayout
                     android:layout_width="match_parent"
                     android:layout_height="28dp"
                     android:background="@drawable/nen_thanh_ngay_h"
-                    android:orientation="horizontal"
                     android:padding="4dp">
 
-                    <View
-                        android:id="@+id/phan_da_choi"
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent" />
+                    <LinearLayout
+                        android:id="@+id/khung_thanh"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/nen_ruot_thanh_ngay"
+                        android:orientation="horizontal">
 
-                    <View
-                        android:id="@+id/phan_dang_giu"
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent" />
-                </LinearLayout>
+                        <View
+                            android:id="@+id/phan_da_choi"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent" />
+
+                        <View
+                            android:id="@+id/phan_dang_giu"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent" />
+                    </LinearLayout>
+                </FrameLayout>
 
                 <TextView
                     android:id="@+id/chu_han_ngay"
