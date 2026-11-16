@@ -50,13 +50,13 @@
             android:id="@+id/ten"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/coiny"
+            android:fontFamily="@font/baloo2_rat_dam"
             android:shadowColor="#33000000"
             android:shadowDy="2"
             android:shadowRadius="1"
             android:textColor="@android:color/white"
             android:textSize="19sp"
-            app:fontFamily="@font/coiny" />
+            app:fontFamily="@font/baloo2_rat_dam" />
 
         <TextView
             android:id="@+id/phu"

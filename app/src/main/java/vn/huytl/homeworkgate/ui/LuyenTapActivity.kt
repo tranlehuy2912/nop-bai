@@ -120,6 +120,9 @@ class LuyenTapActivity : AppCompatActivity() {
         KHU.forEachIndexed { i, mon ->
             val nut = StNutMonBinding.inflate(layoutInflater, b.hangMon, false).root
             nut.text = GiaiDe.tenMon(mon)
+            // Baloo 2 ExtraBold thay cho Coiny cua nut bong: Coiny ve "Ngữ văn" thanh "Ngữ uăn".
+            nut.typeface = ResourcesCompat.getFont(this, R.font.baloo2_rat_dam)
+            nut.textSize = 21f
             nut.background = HinhBong.nut(this, ContextCompat.getColor(this, MatMon.mau(mon)))
             nut.alpha = if (mon == monDangChon) 1f else 0.45f
             if (i == KHU.lastIndex) (nut.layoutParams as LinearLayout.LayoutParams).marginEnd = 0
@@ -416,7 +419,7 @@ class LuyenTapActivity : AppCompatActivity() {
         if (cac.isEmpty()) return
         val nhan = TextView(this).apply {
             text = tenNhom
-            typeface = ResourcesCompat.getFont(this@LuyenTapActivity, R.font.coiny)
+            typeface = ResourcesCompat.getFont(this@LuyenTapActivity, R.font.baloo2_rat_dam)
             textSize = 22f
             setTextColor(ContextCompat.getColor(this@LuyenTapActivity, R.color.ink))
             setPadding(dp(4), dp(18), 0, 0)

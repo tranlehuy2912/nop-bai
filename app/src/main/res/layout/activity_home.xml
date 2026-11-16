@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
   Man hinh Le Hoa nhin thay, bo cuc C cua mau H "Game bong bay" (anh Huy chon 16/11/2026).
+  Chu tieu de dung Baloo 2 ExtraBold, khong dung Coiny: Coiny ve chu "v" gan nhu "u" ("Vật lí"
+  doc thanh "Uật lí"), anh Huy chon doi ngay 16/11/2026. Coiny chi con cho so to va chu tren nut.
 
   Ba tang, tu tren xuong:
    - GHIM TREN: dong ten va the trang thai. Anh Huy dan "phan card tren, va may nut o duoi
@@ -46,8 +48,8 @@
             android:layout_width="62dp"
             android:layout_height="62dp"
             android:background="@drawable/nut_tron_vang"
-            android:fontFamily="@font/coiny"
-            app:fontFamily="@font/coiny"
+            android:fontFamily="@font/baloo2_rat_dam"
+            app:fontFamily="@font/baloo2_rat_dam"
             android:gravity="center"
             android:paddingBottom="4dp"
             android:text="Hòa"
@@ -64,8 +66,8 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/coiny"
-                app:fontFamily="@font/coiny"
+                android:fontFamily="@font/baloo2_rat_dam"
+                app:fontFamily="@font/baloo2_rat_dam"
                 android:text="@string/child_name"
                 android:textColor="@color/ink"
                 android:textSize="24sp" />
@@ -179,8 +181,8 @@
                 android:id="@+id/txt_badge"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/coiny"
-                app:fontFamily="@font/coiny"
+                android:fontFamily="@font/baloo2_rat_dam"
+                app:fontFamily="@font/baloo2_rat_dam"
                 android:paddingStart="24dp"
                 android:paddingTop="8dp"
                 android:paddingEnd="24dp"
@@ -196,8 +198,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
-                android:fontFamily="@font/coiny"
-                app:fontFamily="@font/coiny"
+                android:fontFamily="@font/baloo2_rat_dam"
+                app:fontFamily="@font/baloo2_rat_dam"
                 android:paddingHorizontal="6dp"
                 android:paddingBottom="8dp"
                 android:textColor="@android:color/white"
@@ -304,8 +306,8 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/coiny"
-                    app:fontFamily="@font/coiny"
+                    android:fontFamily="@font/baloo2_rat_dam"
+                    app:fontFamily="@font/baloo2_rat_dam"
                     android:text="Làm ngay"
                     android:textColor="@color/ink"
                     android:textSize="21sp" />
@@ -345,8 +347,8 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/coiny"
-                    app:fontFamily="@font/coiny"
+                    android:fontFamily="@font/baloo2_rat_dam"
+                    app:fontFamily="@font/baloo2_rat_dam"
                     android:text="Hằng ngày"
                     android:textColor="@color/ink"
                     android:textSize="21sp" />

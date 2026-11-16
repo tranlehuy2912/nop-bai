@@ -53,11 +53,11 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_weight="1"
-                android:fontFamily="@font/coiny"
+                android:fontFamily="@font/baloo2_rat_dam"
                 android:text="Luyện tập"
                 android:textColor="@color/ink"
                 android:textSize="30sp"
-                app:fontFamily="@font/coiny" />
+                app:fontFamily="@font/baloo2_rat_dam" />
         </LinearLayout>
 
         <!-- Hang nut mon. Nut them trong code, moi mon mot mau (MatMon). -->

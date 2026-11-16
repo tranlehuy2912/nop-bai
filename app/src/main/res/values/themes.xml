@@ -48,9 +48,10 @@
     <!-- Chu to vi tablet de cach mat ca sai tay, va vi Le Hoa con nho. -->
     <style name="Text.Title" parent="TextAppearance.Material3.HeadlineLarge">
         <item name="android:textColor">@color/ink</item>
-        <!-- Coiny chi co mot do dam, dat bold thi may ve dam gia, nhoe chu. -->
-        <item name="android:fontFamily">@font/coiny</item>
-        <item name="fontFamily">@font/coiny</item>
+        <!-- Baloo 2 ExtraBold, khong dung Coiny: Coiny ve chu "v" gan nhu "u" (anh Huy chon doi
+             16/11/2026). Phong mot do dam, dat bold thi may ve dam gia, nhoe chu. -->
+        <item name="android:fontFamily">@font/baloo2_rat_dam</item>
+        <item name="fontFamily">@font/baloo2_rat_dam</item>
         <item name="android:textStyle">normal</item>
     </style>
 
