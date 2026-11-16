@@ -100,7 +100,7 @@
     <string name="kiem_gio_nut">Cách kiếm giờ</string>
     <string name="kiem_gio_nhan_duoc">LÀM GÌ THÌ ĐƯỢC THÊM GIỜ</string>
     <string name="kiem_gio_nhan_khong">CÁI KHÔNG TÍNH GIỜ</string>
-    <string name="kiem_gio_viec_nha">Việc nhà bà nội hay Ba Huy giao</string>
+    <string name="kiem_gio_viec_nha">Việc nhà Ba Huy giao</string>
 
     <!-- Man doi phut choi sang phut xem phim tren laptop (9/10/2026, XemPhimActivity).
          Truoc ngay do nut ghi "Netflix"; laptop gio xem duoc ca Netflix lan YouTube nen anh

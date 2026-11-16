@@ -490,7 +490,6 @@ BO_TEST = [
     ("BoGoAiTest", "Bộ gõ chữ vào app AI"),
     ("NhatKyAiTest", "Sổ câu hỏi AI giữ chỗ xuống dòng, tin /hoi"),
     ("ViecNhaTest", "Việc nhà bà nội giao"),
-    ("LuotBaNoiTest", "Một lượt mỗi ngày của bà nội"),
     ("ChatCuTest", "Dọn khung chat cũ khỏi máy"),
     ("CatMangVpnTest", "App nào đang phải cắt mạng"),
     ("QuyGioTest", "Quỹ giờ chơi: vào quỹ, Ba Huy cấp"),

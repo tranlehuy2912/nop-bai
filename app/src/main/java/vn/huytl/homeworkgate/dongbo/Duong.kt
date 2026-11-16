@@ -3,15 +3,16 @@ package vn.huytl.homeworkgate.dongbo
 /**
  * Ten duong dan va ten truong trong Firestore.
  *
- * QUAN TRONG: file nay co BA ban sao phai giong het nhau:
+ * QUAN TRONG: file nay co HAI ban sao phai giong het nhau:
  *  - vn.huytl.homeworkgate.dongbo.Duong  (tablet, nop-bai)
  *  - vn.huytl.bangdieukhien.data.Duong   (dien thoai Ba Huy, bang-dieu-khien)
- *  - vn.huytl.chogiochoi.data.Duong      (may ba noi, cho-gio-choi)
+ * Ban thu ba cua app may ba noi (cho-gio-choi) bo ngay 16/11/2026, khi anh Huy xoa
+ * han app do.
  *
- * Doi mot chuoi o mot ben thoi la ba app noi ba thu tieng: lenh gui di khong ai
+ * Doi mot chuoi o mot ben thoi la hai app noi hai thu tieng: lenh gui di khong ai
  * nhan, trang thai doc ve luon rong, va khong co gi bao loi ca - do la kieu hong
  * kho tim nhat. Khong co trinh bien dich nao bat duoc, nen sua o day xong thi
- * chay nop-bai/tools/kiem-duong.sh de so ca ba ban.
+ * chay nop-bai/tools/kiem-duong.sh de so hai ban.
  */
 object Duong {
 
@@ -295,16 +296,8 @@ object Duong {
     // --- truong trong nha/{nhaId} ---
     const val F_UIDS = "uids"
 
-    /**
-     * Nguoi nha quyen han: may ba noi.
-     *
-     * Tach khoi [F_UIDS] vi hai muc quyen khac han. Ai o trong [F_UIDS] thi go duoc
-     * moi lenh, ke ca KHOA may hay tat quan tri thiet bi. Ai o day thi chi giao viec
-     * nha - luat ben firestore.rules chan tan goc, chu khong trong vao viec app ben
-     * may ba khong hien nhung nut kia ra. Tu 26/9/2026 danh sach nay khong tao duoc
-     * lenh nao, ke ca [Lenh.CHO].
-     */
-    const val F_UIDS_PHU = "uidsPhu"
+    // F_UIDS_PHU ("uidsPhu", danh sach phu cua may ba noi, chi giao duoc viec nha) bo ngay
+    // 16/11/2026 cung app cua ba. Truong do con nam trong vai nha cu, khong ai doc nua.
 
     const val F_TEN_CON = "tenCon"
     const val F_MA_GHEP = "maGhep"
@@ -638,6 +631,11 @@ object Duong {
  */
 object Nguoi {
     const val BA_HUY = "bahuy"
+
+    /**
+     * May ba noi. App cua ba bo ngay 16/11/2026, nhung chuoi nay con nam trong lenh cu,
+     * dot viec nha cu va loi xin ghep cua ban app cu: giu de doc va de tu choi chung.
+     */
     const val BA_NOI = "banoi"
 
     /** Le Hoa tu doi phut choi tren tablet, chi dung trong phieu [Duong.CAP] cua laptop. */
@@ -661,8 +659,8 @@ object Lenh {
     /**
      * Cho choi ngay, khong tru han muc ngay. Dang choi thi cong them.
      *
-     * Truoc 26/9/2026 day la lenh duy nhat may ba noi go duoc. Gio may ba khong go
-     * lenh nao, xem [Duong.F_UIDS_PHU].
+     * Truoc 26/9/2026 day la lenh duy nhat may ba noi go duoc. App may ba bo han ngay
+     * 16/11/2026.
      */
     const val CHO = "CHO"
 

@@ -1469,6 +1469,13 @@ object DongBo {
                 val d = nha(context) ?: return@addSnapshotListener
                 snap?.documents.orEmpty().forEach { xin ->
                     if (xin.getString("trangThai") != null) return@forEach
+                    // App may ba noi bo ngay 16/11/2026 (anh Huy xoa han kho cho-gio-choi),
+                    // cung voi danh sach phu uidsPhu. Ban app cu con sot tren may nao do ma
+                    // xin vao thi tu choi, khong de lot vao danh sach nguoi nha day du.
+                    if (xin.getString(Duong.F_AI) == Nguoi.BA_NOI) {
+                        xin.reference.update("trangThai", "SAI")
+                        return@forEach
+                    }
                     d.get().addOnSuccessListener { nhaDoc ->
                         val ma = nhaDoc.getString(Duong.F_MA_GHEP).orEmpty()
                         val han = nhaDoc.getLong(Duong.F_MA_GHEP_HET_HAN) ?: 0L
@@ -1476,32 +1483,14 @@ object DongBo {
                             xin.getString("ma") == ma &&
                             System.currentTimeMillis() < han
                         if (dung) {
-                            /*
-                             * May ba noi vao danh sach phu, khong vao danh sach
-                             * nguoi nha day du.
-                             *
-                             * Khac nhau o cho luat ben Firestore: nguoi nha day du
-                             * go duoc moi lenh, ke ca khoa may va tat quan tri thiet
-                             * bi; danh sach phu thi chi cho gio va giao viec nha.
-                             * Nhet nham may ba vao uids la ba bam nham mot cai la
-                             * tablet khoa cung, ma khong co gi chan lai.
-                             */
-                            val phu = xin.getString(Duong.F_AI) == Nguoi.BA_NOI
-                            d.update(
-                                if (phu) Duong.F_UIDS_PHU else Duong.F_UIDS,
-                                FieldValue.arrayUnion(xin.id)
-                            )
+                            d.update(Duong.F_UIDS, FieldValue.arrayUnion(xin.id))
                             xin.reference.update("trangThai", "OK")
                             // Ma dung roi thi thu hoi ngay, mot ma mot lan.
                             d.update(Duong.F_MA_GHEP, "", Duong.F_MA_GHEP_HET_HAN, 0L)
-                            DayLog.add(
-                                context,
-                                if (phu) "Đã nối máy bà nội vào"
-                                else "Đã nối điện thoại ba Huy vào bảng điều khiển"
-                            )
+                            DayLog.add(context, "Đã nối điện thoại ba Huy vào bảng điều khiển")
                             // Tu day tro di lenh co duong nhanh de di, nen ben
                             // Telegram thoi nam cho lien tuc. Xem [duongNhanhSong].
-                            if (!phu) Prefs.get(context).daNoiDienThoaiBa = true
+                            Prefs.get(context).daNoiDienThoaiBa = true
                             dayNgay()
                             dayCaiDat(context)
                             dayDanhSachApp(context)

@@ -16,7 +16,6 @@ import vn.huytl.homeworkgate.data.GateState
 import vn.huytl.homeworkgate.data.GateStore
 import vn.huytl.homeworkgate.data.LichDangDung
 import vn.huytl.homeworkgate.data.GioiHanApp
-import vn.huytl.homeworkgate.data.LuotBaNoi
 import vn.huytl.homeworkgate.data.KetQuaCham
 import vn.huytl.homeworkgate.data.KhoTinCuaCo
 import vn.huytl.homeworkgate.data.KhoaAi
@@ -140,7 +139,6 @@ class ManualBang {
                     .put("daDoc", it.daDoc)
             }))
             put("tinCuaCoChuaDoc", kho.soTinChuaDoc())
-            put("baNoiDaChoHomNay", LuotBaNoi.daChoHomNay(context))
         })
 
         ra(JSONObject().apply {
@@ -341,12 +339,6 @@ class ManualBang {
             "manchan" -> { prefs.batManChan = ma != "0"; ketQua = prefs.batManChan }
             "xoasocai" -> { SoCaiBai.xoaHet(context); ketQua = 0 }
             "xoakhoaai" -> { KhoaAi.xoaDanhDau(context); ketQua = KhoaAi.soKhoaConDung(context) }
-            // Tra lai luot cho gio cua ba noi, de thu nhieu lan trong cung mot ngay
-            // ma khong phai doi sang hom sau.
-            "xoaluotba" -> {
-                Prefs.get(context).raw().edit().remove("hopthu_ngay_da_cho").commit()
-                ketQua = LuotBaNoi.daChoHomNay(context)
-            }
             // Gia lam nhu may ba noi vua giao viec. Ban dung khuon giong het cai
             // ba ghi xuong hop/viecnha, de duong doc cung duoc thu chu khong chi
             // phan luu tru.

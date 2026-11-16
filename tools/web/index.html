@@ -328,15 +328,6 @@ td small{display:block;color:var(--mo);font-size:10px}
     </div>
   </div>
 
-  <div class="the">
-    <h2>Lượt của bà nội</h2>
-    <div class="o" id="htho"></div>
-    <div class="hang" style="margin-top:10px">
-      <button data-viec="xoaluotba">Trả lại lượt hôm nay cho bà</button>
-    </div>
-    <p class="mo" style="font-size:12px;margin:10px 0 0">Bà cho giờ được một lượt
-      mỗi ngày. Lệnh của bà giờ đi qua Firestore, không qua hộp thư Telegram nữa.</p>
-  </div>
 
   <div class="the">
     <h2>Telegram</h2>
@@ -810,7 +801,6 @@ function veTin(){
     ? t.tinCuaCo.map(x=>`<li><span>${x.noiDung}</span>
         <span class="mo">${gioNgay(x.luc)}${x.daDoc?'':' · mới'}</span></li>`).join('')
     : '<li class="mo">trống</li>';
-  $('#htho').innerHTML = o('bà đã cho hôm nay', t.baNoiDaChoHomNay ? 'rồi' : 'chưa');
 }
 $('#conut').onclick = async () => {
   const chu = $('#cochu').value.trim(); if(!chu) return;
