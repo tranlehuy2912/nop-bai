@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Phong chu thuong cua ca app tu 16/11/2026 (mau H "Game bong bay" anh Huy chon): Baloo 2, chu
+  tron, day net, co du dau tieng Viet. Hai do dam: 400 dung file Medium (500) vi ban Regular
+  mong qua tren nen troi xanh; 700 la Bold cho android:textStyle="bold".
+  Tieu de to va chu tren nut dung Coiny (@font/coiny), dat rieng trong tung style.
+  Ca hai phong theo giay phep SIL Open Font License, ban giay phep nam o assets/giay-phep-phong.
+-->
+<font-family xmlns:android="http://schemas.android.com/apk/res/android">
+    <font
+        android:font="@font/baloo2_vua"
+        android:fontStyle="normal"
+        android:fontWeight="400" />
+    <font
+        android:font="@font/baloo2_dam"
+        android:fontStyle="normal"
+        android:fontWeight="700" />
+</font-family>

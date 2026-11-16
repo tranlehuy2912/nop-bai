@@ -111,7 +111,7 @@
 
                         <com.google.android.material.button.MaterialButton
                             android:id="@+id/btn_chon_app"
-                            style="@style/Widget.Material3.Button.OutlinedButton"
+                            style="@style/Nut.Vien"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="14dp" />
@@ -155,7 +155,7 @@
 
                         <com.google.android.material.button.MaterialButton
                             android:id="@+id/btn_jokers"
-                            style="@style/Widget.Material3.Button.OutlinedButton"
+                            style="@style/Nut.Vien"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="12dp"

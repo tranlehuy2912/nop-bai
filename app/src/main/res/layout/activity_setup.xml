@@ -47,6 +47,7 @@
                 android:textStyle="bold" />
 
             <com.google.android.material.button.MaterialButton
+                style="@style/Nut.Bong"
                 android:id="@+id/btn_save"
                 android:layout_width="wrap_content"
                 android:layout_height="48dp"
@@ -162,7 +163,7 @@
 
                             <com.google.android.material.button.MaterialButton
                                 android:id="@+id/btn_detect_chat"
-                                style="@style/Widget.Material3.Button.TonalButton"
+                                style="@style/Nut.Bong.Trang"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_marginEnd="8dp"
@@ -171,7 +172,7 @@
 
                             <com.google.android.material.button.MaterialButton
                                 android:id="@+id/btn_test"
-                                style="@style/Widget.Material3.Button.OutlinedButton"
+                                style="@style/Nut.Vien"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
@@ -356,14 +357,14 @@
 
                         <com.google.android.material.button.MaterialButton
                             android:id="@+id/btn_pick_apps"
-                            style="@style/Widget.Material3.Button.OutlinedButton"
+                            style="@style/Nut.Vien"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="Chọn app dùng khi hết giờ chơi" />
 
                         <com.google.android.material.button.MaterialButton
                             android:id="@+id/btn_pick_moi_luc"
-                            style="@style/Widget.Material3.Button.OutlinedButton"
+                            style="@style/Nut.Vien"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="10dp"
@@ -371,7 +372,7 @@
 
                         <com.google.android.material.button.MaterialButton
                             android:id="@+id/btn_gioi_han"
-                            style="@style/Widget.Material3.Button.OutlinedButton"
+                            style="@style/Nut.Vien"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="10dp"
@@ -379,7 +380,7 @@
 
                         <com.google.android.material.button.MaterialButton
                             android:id="@+id/btn_pick_nhac"
-                            style="@style/Widget.Material3.Button.OutlinedButton"
+                            style="@style/Nut.Vien"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="10dp"
@@ -387,7 +388,7 @@
 
                         <com.google.android.material.button.MaterialButton
                             android:id="@+id/btn_pick_blocked"
-                            style="@style/Widget.Material3.Button.OutlinedButton"
+                            style="@style/Nut.Vien"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="10dp"
@@ -396,7 +397,7 @@
                         <!-- Mat mang khi bi khoa, ke ca luc chay nen. Xem CatMangVpn. -->
                         <com.google.android.material.button.MaterialButton
                             android:id="@+id/btn_pick_cat_mang"
-                            style="@style/Widget.Material3.Button.OutlinedButton"
+                            style="@style/Nut.Vien"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="10dp"
@@ -434,7 +435,7 @@
 
                         <com.google.android.material.button.MaterialButton
                             android:id="@+id/btn_tiet_kiem_pin"
-                            style="@style/Widget.Material3.Button.OutlinedButton"
+                            style="@style/Nut.Vien"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="10dp"
@@ -531,7 +532,7 @@
 
                         <com.google.android.material.button.MaterialButton
                             android:id="@+id/btn_khoi_phuc"
-                            style="@style/Widget.Material3.Button.OutlinedButton"
+                            style="@style/Nut.Vien"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="12dp"

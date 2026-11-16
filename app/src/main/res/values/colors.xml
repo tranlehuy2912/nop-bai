@@ -1,30 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Hai mau chinh: xanh la cho luc duoc choi, cam dat cho luc dang khoa.
-         Tranh mau do vi man hinh khoa hien ca buoi toi, do nhin lau thay gat. -->
-    <color name="brand">#2F6FED</color>
-    <color name="brand_dark">#1B4FC0</color>
-    <color name="brand_soft">#E8F0FE</color>
+    <!-- Hai mau chinh: xanh la cho luc duoc choi, cam cho luc dang khoa.
+         Tranh mau do vi man hinh khoa hien ca buoi toi, do nhin lau thay gat.
+         Tu 16/11/2026 ca bang mau theo mau H "Game bong bay" anh Huy chon: xanh duong, xanh
+         la, cam, vang tuoi hon; chu xanh muc #24305E thay cho den xam. Cam khoa dam hon cam
+         cua mau (#FF8A3D) vi con dung lam mau chu tren nen cam nhat. -->
+    <color name="brand">#3D8BFF</color>
+    <color name="brand_dark">#1F5FCC</color>
+    <color name="brand_soft">#E3EEFF</color>
 
-    <color name="ok">#1E8E3E</color>
-    <color name="ok_soft">#E6F4EA</color>
+    <color name="ok">#1FA347</color>
+    <color name="ok_soft">#DDF7E3</color>
 
-    <color name="wait">#E8A22B</color>
-    <color name="wait_soft">#FEF5E5</color>
+    <color name="wait">#FFB300</color>
+    <color name="wait_soft">#FFF3CC</color>
 
-    <color name="locked">#8A6A52</color>
-    <color name="locked_soft">#F5EDE7</color>
+    <color name="locked">#E8681A</color>
+    <color name="locked_soft">#FFE9D9</color>
 
     <!-- Do chi danh cho bang canh bao cua Ba Huy, khong dung o man cua Le Hoa:
          cai bang do phai doi mau khi may dang ho, khong thi nhin mai thanh quen. -->
-    <color name="alert">#C0392B</color>
-    <color name="alert_soft">#FCEBE9</color>
+    <color name="alert">#F0445A</color>
+    <color name="alert_soft">#FFE3E7</color>
 
-    <color name="ink">#1A1C20</color>
-    <color name="ink_soft">#5F6472</color>
+    <color name="ink">#24305E</color>
+    <color name="ink_soft">#5D6A94</color>
     <color name="surface">#FFFFFF</color>
-    <color name="canvas">#F4F6FA</color>
-    <color name="line">#E1E5EC</color>
+    <color name="canvas">#DDF2FF</color>
+    <color name="line">#E2E9F6</color>
     <!-- Sao da mat vi sai o bai lam tren may (HangSao): xam dac, dam hon `line` mot chut de
          con van dem duoc so o, nhung khong lan voi sao rong con co the duoc. -->
     <color name="sao_mat">#C5CAD3</color>
@@ -73,22 +76,35 @@
          la biet day la app minh chu khong phai thong bao cua game.
 
          The nhac tach lam hai tong: xanh muc cho viec thuong, cam gach cho viec
-         gap, de biet cai nao phai lam ngay ma khong can doc chu. -->
-    <color name="st_the_nhac_nen">#15304C</color>
-    <color name="st_the_nhac_nen_gap">#B44A22</color>
+         gap, de biet cai nao phai lam ngay ma khong can doc chu.
+         Tu 16/11/2026 hai lop phu nay dung ban toi cua mau H (troi dem tim xanh), anh Huy
+         chon: van dam de noi tren app khac, nhung cung mot bo voi phan con lai. -->
+    <color name="st_the_nhac_nen">#2A2A6E</color>
+    <color name="st_the_nhac_nen_gap">#E8590C</color>
     <color name="st_the_nhac_chu">#FFFFFF</color>
-    <color name="st_the_nhac_chu_mo">#B9C9D8</color>
-    <color name="st_the_nhac_chu_mo_gap">#F3D6C6</color>
+    <color name="st_the_nhac_chu_mo">#C7C4F0</color>
+    <color name="st_the_nhac_chu_mo_gap">#FFE0CC</color>
 
     <!-- Man chan gio di hoc: che kin man hinh nen khong can hoa voi gi ca, va nen
          dam thi do choi mat hon mot mang trang giua buoi sang. -->
-    <color name="st_nen_chan">#FF0C1219</color>
+    <color name="st_nen_chan">#FF16173F</color>
     <color name="st_chu_chan">#FFFFFF</color>
-    <color name="st_chu_chan_mo">#9FB2C2</color>
-    <color name="st_chu_chan_nhan">#7FA8CC</color>
+    <color name="st_chu_chan_mo">#B3B0E0</color>
+    <color name="st_chu_chan_nhan">#FFC93C</color>
     <color name="st_vien_chan">#40FFFFFF</color>
 
     <!-- Net ke luoi thoi khoa bieu. Dam hon @color/line mot chut: net dut mong hon
          net lien nhieu, dung dung mot mau thi nhin nhu khong co. -->
     <color name="st_ke_luoi">#C8D0DC</color>
+
+    <!-- Mau H "Game bong bay" (anh Huy chon 16/11/2026, chi ban sang). Troi o dau va duoi man
+         (nen st_nen_man / nen_troi, thanh trang thai, thanh dieu huong), bong xanh duoi the
+         trang, vang cua nut nho tron va o dang chon. -->
+    <color name="troi_tren">#9ADBFF</color>
+    <color name="troi_duoi">#FFF6DE</color>
+    <color name="bong_the">#7F9CCB</color>
+    <color name="vang">#FFC93C</color>
+    <color name="vang_nhat">#FFEDB3</color>
+    <!-- Nen man chup anh (Theme.HomeworkGate.Camera). -->
+    <color name="camera_nen">#101216</color>
 </resources>

@@ -8,8 +8,26 @@
         <item name="android:colorBackground">@color/canvas</item>
         <item name="colorSurface">@color/surface</item>
         <item name="colorOnSurface">@color/ink</item>
-        <item name="android:statusBarColor">@color/canvas</item>
-        <item name="android:navigationBarColor">@color/canvas</item>
+        <item name="colorOnSurfaceVariant">@color/ink_soft</item>
+        <!-- De trong thi Material3 to nen hop thoai va tam keo len mau tim nhat (thay ngay
+             16/11/2026 o hop "Nhap ma PIN"), lech han bang mau cua app. -->
+        <item name="colorSurfaceContainer">@color/surface</item>
+        <item name="colorSurfaceContainerHigh">@color/surface</item>
+        <item name="colorSurfaceContainerHighest">@color/surface</item>
+        <!-- Mau H (16/11/2026): nen troi xanh co may cho moi man, chu Baloo 2 cho ca app. Dat
+             fontFamily o theme thi ca TextView tran lan nut deu nhan, tru cho nao style rieng
+             dat phong khac (Coiny cho tieu de to va nut bong). -->
+        <item name="android:windowBackground">@drawable/st_nen_man</item>
+        <item name="android:fontFamily">@font/baloo2</item>
+        <item name="fontFamily">@font/baloo2</item>
+        <item name="materialButtonOutlinedStyle">@style/Nut.Vien</item>
+        <!-- O dang chon (thanh duoi, chip): vang nhat chu xanh muc, nhu nut vang cua mau. -->
+        <item name="colorSecondaryContainer">@color/vang_nhat</item>
+        <item name="colorOnSecondaryContainer">@color/ink</item>
+        <!-- Material3 pha mau chu dao vao nen the, hop thoai co bong: tat de the trang van trang. -->
+        <item name="elevationOverlayEnabled">false</item>
+        <item name="android:statusBarColor">@color/troi_tren</item>
+        <item name="android:navigationBarColor">@color/troi_duoi</item>
         <item name="android:windowLightStatusBar">true</item>
         <item name="android:windowLightNavigationBar">true</item>
     </style>
@@ -17,6 +35,7 @@
     <!-- Man chup anh nen den de nhin ro khung hinh. -->
     <style name="Theme.HomeworkGate.Camera" parent="Theme.HomeworkGate">
         <item name="android:colorBackground">#101216</item>
+        <item name="android:windowBackground">@color/camera_nen</item>
         <item name="android:statusBarColor">#101216</item>
         <item name="android:navigationBarColor">#101216</item>
         <item name="android:windowLightStatusBar">false</item>
@@ -26,7 +45,10 @@
     <!-- Chu to vi tablet de cach mat ca sai tay, va vi Le Hoa con nho. -->
     <style name="Text.Title" parent="TextAppearance.Material3.HeadlineLarge">
         <item name="android:textColor">@color/ink</item>
-        <item name="android:textStyle">bold</item>
+        <!-- Coiny chi co mot do dam, dat bold thi may ve dam gia, nhoe chu. -->
+        <item name="android:fontFamily">@font/coiny</item>
+        <item name="fontFamily">@font/coiny</item>
+        <item name="android:textStyle">normal</item>
     </style>
 
     <style name="Text.Body" parent="TextAppearance.Material3.BodyLarge">
@@ -48,15 +70,9 @@
     <!-- Nut so phut o man Xem phim: xanh dac, chu trang dam, goc bo tron vua phai. Anh Huy
          chon kieu nay (9/10/2026) theo hang nut 15' 30' 45' Khac cua Bang dieu khien. Nut
          dang chon thi XemPhimActivity to dam hon va them vien, xem chonNut. -->
-    <style name="Nut.DoiPhut" parent="Widget.Material3.Button">
-        <item name="backgroundTint">@color/brand</item>
-        <item name="android:textColor">@color/surface</item>
+    <style name="Nut.DoiPhut" parent="Nut.Bong">
         <item name="android:textSize">20sp</item>
-        <item name="android:textStyle">bold</item>
         <item name="android:minHeight">72dp</item>
-        <item name="android:insetTop">0dp</item>
-        <item name="android:insetBottom">0dp</item>
-        <item name="cornerRadius">18dp</item>
     </style>
 
     <!--
@@ -96,6 +112,7 @@
 
     <!-- Nut vien nho co icon (man Remote: "Bỏ giới thiệu"), rong theo chu. -->
     <style name="Nut.VienNho" parent="Widget.Material3.Button.OutlinedButton.Icon">
+        <item name="backgroundTint">@color/surface</item>
         <item name="android:textSize">15sp</item>
         <item name="android:textColor">@color/ink</item>
         <item name="android:minHeight">44dp</item>
@@ -114,6 +131,8 @@
     <!-- Nut vien do o man Remote (11/10/2026): Dang xuat, Tat may laptop. Giong hai nut do tren the
          Laptop cua Bang dieu khien: viec khong lay lai duoc thi nhin ra mau do truoc khi doc chu. -->
     <style name="Nut.VienDo" parent="Widget.Material3.Button.OutlinedButton">
+        <item name="backgroundTint">@color/surface</item>
+        <item name="strokeWidth">2dp</item>
         <item name="android:textSize">16sp</item>
         <item name="android:textColor">@color/alert</item>
         <item name="android:minHeight">52dp</item>
@@ -128,9 +147,83 @@
         <!-- Chi dinh han mau nen: de mac dinh thi Material3 pha them mau chu dao
              vao nen the, nhin ra mot mau hong nhat khong ai dat. -->
         <item name="cardBackgroundColor">@color/surface</item>
-        <item name="cardCornerRadius">24dp</item>
-        <item name="cardElevation">0dp</item>
-        <item name="strokeWidth">1dp</item>
-        <item name="strokeColor">@color/line</item>
+        <!-- Mau H (16/11/2026): the trang bo tron hon, bo vien, noi len troi bang bong xanh. -->
+        <item name="cardCornerRadius">26dp</item>
+        <item name="cardElevation">6dp</item>
+        <item name="strokeWidth">0dp</item>
+        <item name="android:outlineSpotShadowColor">@color/bong_the</item>
+        <item name="android:outlineAmbientShadowColor">@color/bong_the</item>
     </style>
+
+    <!--
+      Nut bong cua mau H "Game bong bay" (anh Huy chon 16/11/2026): hinh nen ve san o
+      drawable/nut_bong_*.xml, chu Coiny trang co bong. Gan bang style="@style/Nut.Bong" tren tung
+      nut dac. KHONG dat lam materialButtonStyle cua theme: Android lay style mac dinh do de lap
+      moi thuoc tinh ma style rieng cua nut khong khai, nen nut chu cua hop thoai (TextButton)
+      cung an phong Coiny, bong chu va ca hinh nen bong (thay ngay 16/11/2026). backgroundTint phai la @null, khong thi MaterialButton to phang ca hinh nen. Doi mau
+      thi dung style con (.XanhLa, .Cam, .Do, .Vang, .Trang) chu dung backgroundTint.
+      Hinh nen da co mep day 5dp, nen chu dat cao hon giua mot chut (padding duoi lon hon tren).
+    -->
+    <style name="Nut.Bong" parent="Widget.Material3.Button">
+        <item name="android:background">@drawable/nut_bong_xanh</item>
+        <item name="backgroundTint">@null</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:minHeight">56dp</item>
+        <item name="android:paddingTop">6dp</item>
+        <item name="android:paddingBottom">11dp</item>
+        <item name="android:paddingLeft">20dp</item>
+        <item name="android:paddingRight">20dp</item>
+        <item name="android:paddingStart">20dp</item>
+        <item name="android:paddingEnd">20dp</item>
+        <item name="android:fontFamily">@font/coiny</item>
+        <item name="fontFamily">@font/coiny</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/chu_nut_bong</item>
+        <item name="android:shadowColor">#40000000</item>
+        <item name="android:shadowDy">2</item>
+        <item name="android:shadowRadius">1</item>
+        <item name="iconTint">@color/chu_nut_bong</item>
+        <item name="android:stateListAnimator">@null</item>
+    </style>
+
+    <style name="Nut.Bong.XanhLa">
+        <item name="android:background">@drawable/nut_bong_xanhla</item>
+    </style>
+
+    <style name="Nut.Bong.Cam">
+        <item name="android:background">@drawable/nut_bong_cam</item>
+    </style>
+
+    <style name="Nut.Bong.Do">
+        <item name="android:background">@drawable/nut_bong_do</item>
+    </style>
+
+    <style name="Nut.Bong.Vang">
+        <item name="android:background">@drawable/nut_bong_vang</item>
+    </style>
+
+    <!-- Nut phu: than trang, chu xanh muc, khong bong chu. Thay cho TonalButton. -->
+    <style name="Nut.Bong.Trang">
+        <item name="android:background">@drawable/nut_bong_trang</item>
+        <item name="android:textColor">@color/ink</item>
+        <item name="iconTint">@color/ink</item>
+        <item name="android:shadowRadius">0</item>
+        <item name="android:shadowDy">0</item>
+    </style>
+
+    <!-- Nut vien (materialButtonOutlinedStyle): nen trang de noi tren troi xanh, vien day 2dp. -->
+    <style name="Nut.Vien" parent="Widget.Material3.Button.OutlinedButton">
+        <item name="backgroundTint">@color/surface</item>
+        <item name="strokeWidth">2dp</item>
+        <item name="strokeColor">#D3DCEE</item>
+        <item name="android:textColor">@color/brand_dark</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:minHeight">48dp</item>
+        <item name="cornerRadius">18dp</item>
+    </style>
+
 </resources>

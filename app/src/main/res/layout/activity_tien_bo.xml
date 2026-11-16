@@ -64,14 +64,14 @@
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_tuan"
-            style="@style/Widget.Material3.Button.OutlinedButton"
+            style="@style/Nut.Vien"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/tien_bo_tuan" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_thang"
-            style="@style/Widget.Material3.Button.OutlinedButton"
+            style="@style/Nut.Vien"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/tien_bo_thang" />
@@ -266,7 +266,7 @@
 
                     <com.google.android.material.button.MaterialButton
                         android:id="@+id/btn_luyen"
-                        style="@style/Widget.Material3.Button.TonalButton"
+                        style="@style/Nut.Bong.Trang"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="14dp" />

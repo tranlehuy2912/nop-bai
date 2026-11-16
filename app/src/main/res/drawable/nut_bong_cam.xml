@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Nut bong mau cam (mau H, 16/11/2026): than chuyen mau tu sang xuong dam, mep day dam hon
+     5dp nhu phim bam noi, vet sang o tren. Ve san mau chu khong dung backgroundTint: tint cua
+     MaterialButton to phang ca hinh, mat ca mep lan vet sang. Tat thi ve xam. -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_enabled="false" android:drawable="@drawable/nut_bong_tat" />
+    <item>
+        <ripple android:color="#40FFFFFF">
+            <item>
+                <layer-list>
+                    <item>
+                        <shape android:shape="rectangle">
+                            <corners android:radius="20dp" />
+                            <solid android:color="#D2601A" />
+                        </shape>
+                    </item>
+                    <item android:bottom="5dp">
+                        <shape android:shape="rectangle">
+                            <corners android:radius="20dp" />
+                            <gradient android:angle="270" android:startColor="#FFB27A" android:endColor="#FF8A3D" />
+                        </shape>
+                    </item>
+                    <item
+                        android:height="9dp"
+                        android:gravity="top|fill_horizontal"
+                        android:left="16dp"
+                        android:right="16dp"
+                        android:top="4dp">
+                        <shape android:shape="rectangle">
+                            <corners android:radius="6dp" />
+                            <solid android:color="#33FFFFFF" />
+                        </shape>
+                    </item>
+                </layer-list>
+            </item>
+            <item android:id="@android:id/mask">
+                <shape android:shape="rectangle">
+                    <corners android:radius="20dp" />
+                    <solid android:color="#FFFFFF" />
+                </shape>
+            </item>
+        </ripple>
+    </item>
+</selector>

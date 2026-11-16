@@ -226,6 +226,7 @@
                  hom nay: to qua, va nam xa cai trang thai no dang noi toi. Gio la mot nut
                  vien tron co vua, rong theo chu nhung khong duoi 300dp de van de bam. -->
             <com.google.android.material.button.MaterialButton
+                style="@style/Nut.Bong"
                 android:id="@+id/btn_submit"
                 android:layout_width="wrap_content"
                 android:layout_height="60dp"

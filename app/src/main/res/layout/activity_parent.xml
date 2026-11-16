@@ -171,7 +171,7 @@
                          khi khong co phien nao de cat. -->
                     <com.google.android.material.button.MaterialButton
                         android:id="@+id/btn_lock"
-                        style="@style/Widget.Material3.Button.TonalButton"
+                        style="@style/Nut.Bong.Trang"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Dừng giờ chơi" />
@@ -265,6 +265,7 @@
                     android:textSize="14sp" />
 
                 <com.google.android.material.button.MaterialButton
+                    style="@style/Nut.Bong"
                     android:id="@+id/btn_mo_chan"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

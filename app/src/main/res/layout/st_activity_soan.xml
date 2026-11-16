@@ -189,6 +189,7 @@
                 android:textSize="14sp" />
 
             <com.google.android.material.button.MaterialButton
+                style="@style/Nut.Bong"
                 android:id="@+id/nut_chup"
                 android:layout_width="match_parent"
                 android:layout_height="64dp"

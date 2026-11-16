@@ -90,6 +90,7 @@
             android:visibility="gone" />
 
         <com.google.android.material.button.MaterialButton
+            style="@style/Nut.Bong"
             android:id="@+id/btn_done"
             android:layout_width="match_parent"
             android:layout_height="56dp"

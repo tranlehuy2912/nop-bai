@@ -145,6 +145,7 @@
                     android:orientation="horizontal">
 
                     <com.google.android.material.button.MaterialButton
+                        style="@style/Nut.Bong"
                         android:id="@+id/nut_kiem"
                         android:layout_width="wrap_content"
                         android:layout_height="56dp"
@@ -153,7 +154,7 @@
 
                     <com.google.android.material.button.MaterialButton
                         android:id="@+id/nut_bo_qua"
-                        style="@style/Widget.Material3.Button.OutlinedButton"
+                        style="@style/Nut.Vien"
                         android:layout_width="wrap_content"
                         android:layout_height="56dp"
                         android:layout_marginStart="10dp"
@@ -162,6 +163,7 @@
                         android:visibility="gone" />
 
                     <com.google.android.material.button.MaterialButton
+                        style="@style/Nut.Bong"
                         android:id="@+id/nut_tiep"
                         android:layout_width="wrap_content"
                         android:layout_height="56dp"

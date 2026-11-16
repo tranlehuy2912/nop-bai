@@ -1,16 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Nen cua cac man Le Hoa nhin moi ngay.
-
-     Mot lop mau rat nhat o dau man roi nhat dan xuong nen thuong. Khong de noi bat
-     cai gi ca - de man hinh khong phai la mot mang xam phang tu tren xuong duoi, va
-     de mat biet dau la dau trang. -->
-<shape xmlns:android="http://schemas.android.com/apk/res/android"
-    android:shape="rectangle">
-    <gradient
-        android:angle="270"
-        android:centerColor="@color/canvas"
-        android:centerY="0.35"
-        android:endColor="@color/canvas"
-        android:startColor="#E9EFFA"
-        android:type="linear" />
-</shape>
+<!--
+  Nen troi cua mau H "Game bong bay" (anh Huy chon 16/11/2026): troi xanh o tren nhat dan xuong
+  vang kem o duoi, hai dam may trang o goc tren. Chi la nen: the trang va nut nam de len tren.
+  Thay cho nen xam xanh nhat truoc do.
+-->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:angle="270"
+                android:centerColor="#D6F1FF"
+                android:centerY="0.4"
+                android:endColor="#FFF6DE"
+                android:startColor="#9ADBFF"
+                android:type="linear" />
+        </shape>
+    </item>
+    <!-- May ben trai -->
+    <item android:gravity="top|start" android:left="0dp" android:top="78dp" android:width="150dp" android:height="40dp">
+        <shape android:shape="oval"><solid android:color="#F2FAFF" /></shape>
+    </item>
+    <item android:gravity="top|start" android:left="34dp" android:top="58dp" android:width="84dp" android:height="52dp">
+        <shape android:shape="oval"><solid android:color="#F2FAFF" /></shape>
+    </item>
+    <!-- May ben phai -->
+    <item android:gravity="top|end" android:right="0dp" android:top="150dp" android:width="180dp" android:height="46dp">
+        <shape android:shape="oval"><solid android:color="#F2FAFF" /></shape>
+    </item>
+    <item android:gravity="top|end" android:right="46dp" android:top="124dp" android:width="100dp" android:height="62dp">
+        <shape android:shape="oval"><solid android:color="#F2FAFF" /></shape>
+    </item>
+</layer-list>

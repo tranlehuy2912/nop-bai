@@ -169,7 +169,7 @@
              han sang phai, nut chup cung khong nam giua. -->
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_skip"
-            style="@style/Widget.Material3.Button.OutlinedButton"
+            style="@style/Nut.Vien"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -189,6 +189,7 @@
             android:contentDescription="@string/capture_take" />
 
         <com.google.android.material.button.MaterialButton
+            style="@style/Nut.Bong"
             android:id="@+id/btn_next"
             android:layout_width="0dp"
             android:layout_height="wrap_content"

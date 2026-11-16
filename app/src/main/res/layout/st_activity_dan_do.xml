@@ -82,7 +82,7 @@
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/nut_ngay_chup"
-                    style="@style/Widget.Material3.Button.OutlinedButton"
+                    style="@style/Nut.Vien"
                     android:layout_width="wrap_content"
                     android:layout_height="56dp"
                     android:layout_marginTop="10dp"
@@ -102,6 +102,7 @@
                     android:visibility="gone" />
 
                 <com.google.android.material.button.MaterialButton
+                    style="@style/Nut.Bong"
                     android:id="@+id/nut_chup"
                     android:layout_width="match_parent"
                     android:layout_height="64dp"
@@ -205,7 +206,7 @@
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/nut_ngay"
-                    style="@style/Widget.Material3.Button.OutlinedButton"
+                    style="@style/Nut.Vien"
                     android:layout_width="wrap_content"
                     android:layout_height="56dp"
                     android:layout_marginTop="8dp"
@@ -257,7 +258,7 @@
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/nut_chup_lai"
-                style="@style/Widget.Material3.Button.OutlinedButton"
+                style="@style/Nut.Vien"
                 android:layout_width="wrap_content"
                 android:layout_height="64dp"
                 android:layout_marginEnd="12dp"
@@ -267,6 +268,7 @@
                 app:cornerRadius="20dp" />
 
             <com.google.android.material.button.MaterialButton
+                style="@style/Nut.Bong"
                 android:id="@+id/nut_luu"
                 android:layout_width="0dp"
                 android:layout_height="64dp"
