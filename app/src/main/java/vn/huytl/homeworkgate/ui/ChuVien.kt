@@ -33,11 +33,49 @@ class ChuVien @JvmOverloads constructor(
 
     /** Do day vien, tinh bang px. 0 la chu thuong. */
     var doDayVien: Float = 8f * resources.displayMetrics.density
+        set(v) {
+            field = v
+            moVungVe()
+        }
 
     /** Bong lech xuong bao nhieu px. */
     var lechBong: Float = 5f * resources.displayMetrics.density
+        set(v) {
+            field = v
+            moVungVe()
+        }
 
     private var dangVe = false
+
+    init {
+        moVungVe()
+    }
+
+    /**
+     * Cho vien va bong ve tran ra ngoai net chu ma khong bi cat.
+     *
+     * TextView cat moi thu no ve sat vung chu (trong padding), chi noi rong vung cat ra theo ban
+     * kinh bong chu. Nen dat mot bong trong suot ban kinh bang vien cong bong: khong ve gi ca,
+     * chi de vung cat rong ra. Them padding toi thieu bang chung do de phan tran van nam trong
+     * View. Thieu cai nay thi chu "Khoá" tren dien thoai mat mot mau vien o mep trai va mep
+     * phai (anh Huy thay ngay 16/11/2026).
+     */
+    private fun moVungVe() {
+        val tran = doDayVien + lechBong
+        if (tran <= 0f) {
+            setShadowLayer(0f, 0f, 0f, Color.TRANSPARENT)
+            return
+        }
+        setShadowLayer(tran, 0f, 0f, Color.TRANSPARENT)
+        val ngang = doDayVien.toInt() + 1
+        val duoi = (doDayVien / 2 + lechBong).toInt() + 1
+        setPadding(
+            maxOf(paddingLeft, ngang),
+            maxOf(paddingTop, (doDayVien / 2).toInt() + 1),
+            maxOf(paddingRight, ngang),
+            maxOf(paddingBottom, duoi)
+        )
+    }
 
     override fun onDraw(canvas: Canvas) {
         if (doDayVien <= 0f) {
