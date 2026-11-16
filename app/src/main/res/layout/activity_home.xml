@@ -209,16 +209,13 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="2dp" />
 
-            <!-- Han muc gio choi hom nay: ba khuc tren mot thanh, xem ThanhNgay. Bam vao mo
-                 man Cach kiem gio. -->
+            <!-- Han muc gio choi hom nay: ba khuc tren mot thanh, xem ThanhNgay. Khong bam duoc nua
+                 tu 16/11/2026 (bo man Cach kiem gio khoi man chinh). -->
             <LinearLayout
                 android:id="@+id/khung_han_ngay"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="14dp"
-                android:background="?attr/selectableItemBackground"
-                android:clickable="true"
-                android:focusable="true"
                 android:orientation="vertical"
                 android:visibility="gone">
 
@@ -485,25 +482,8 @@
             </LinearLayout>
         </FrameLayout>
 
-        <FrameLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1">
-
-            <LinearLayout
-                android:id="@+id/btn_kiem_gio"
-                style="@style/O.ThanhDuoi">
-
-                <ImageView
-                    android:id="@+id/hinh_kiem_gio"
-                    style="@style/O.ThanhDuoi.Hinh"
-                    android:src="@drawable/st_ic_dong_ho" />
-
-                <TextView
-                    style="@style/O.ThanhDuoi.Chu"
-                    android:text="@string/kiem_gio_nut" />
-            </LinearLayout>
-        </FrameLayout>
+        <!-- O "Cách kiếm giờ" bo ngay 16/11/2026 (anh Huy dan "bỏ tab cách kiếm giờ"), cung
+             voi duong bam vao thanh gio trong the. Man CachKiemGioActivity van giu code. -->
 
         <!-- Doi phut choi sang phut xem phim tren laptop: chi hien khi laptop da noi vao nha,
              xem dongbo/Laptop. -->

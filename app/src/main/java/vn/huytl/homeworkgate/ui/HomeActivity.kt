@@ -151,18 +151,12 @@ class HomeActivity : AppCompatActivity() {
         binding.btnTienBo.setOnClickListener {
             startActivity(Intent(this, TienBoActivity::class.java))
         }
-        // Hai duong vao cung mot man. Thanh han muc la duong dung cho nhat - con
-        // dang nhin so phut cua hom nay thi cau hoi "lam gi de duoc them" moc len
-        // ngay cho do - nhung mot thanh mau bam duoc thi khong ai doan ra, nen van
-        // phai co mot o co ten o hang duoi cung.
-        val moBangGia = View.OnClickListener {
-            startActivity(Intent(this, CachKiemGioActivity::class.java))
-        }
-        binding.btnKiemGio.setOnClickListener(moBangGia)
+        // Man Cach kiem gio (CachKiemGioActivity) khong con duong vao tu man chinh tu 16/11/2026:
+        // anh Huy dan "bỏ tab cách kiếm giờ". Truoc do co hai duong, o o hang duoi va bam vao
+        // thanh han muc ngay. Code man do van giu.
         binding.btnXemPhim.setOnClickListener {
             startActivity(Intent(this, XemPhimActivity::class.java))
         }
-        binding.khungHanNgay.setOnClickListener(moBangGia)
 
         askNotificationPermission()
 
@@ -441,13 +435,12 @@ class HomeActivity : AppCompatActivity() {
     private fun toMauHangPhu() {
         // Moi o mot hinh tron bong mau rieng, chu xanh muc (mau H, 16/11/2026). Mau van theo y
         // cu: tim cho nhan tin, hong cho tin cua co, xanh troi cho lich, xanh la cho viec da
-        // lam, vang cho cach kiem gio, do cho xem phim.
+        // lam, do cho xem phim.
         listOf(
             binding.hinhChat to R.color.h_cham,
             binding.hinhTin to R.color.h_hong,
             binding.hinhLich to R.color.h_troi,
             binding.hinhTienBo to R.color.h_la_cham,
-            binding.hinhKiemGio to R.color.h_vang_kiem,
             binding.hinhXemPhim to R.color.h_do
         ).forEach { (hinh, mau) ->
             hinh.background = HinhBong.tron(this, ContextCompat.getColor(this, mau), 48f, vienDp = 3f)
