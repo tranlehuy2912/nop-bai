@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Dau tich xanh o goc o da xong hom nay: tron xanh la vien trang, mep day dam. -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:top="3dp">
+        <shape android:shape="oval"><solid android:color="#1E9A3D" /></shape>
+    </item>
+    <item android:bottom="3dp">
+        <shape android:shape="oval">
+            <solid android:color="#2DC653" />
+            <stroke android:width="3dp" android:color="#FFFFFF" />
+        </shape>
+    </item>
+</layer-list>

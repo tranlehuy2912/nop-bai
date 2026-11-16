@@ -84,4 +84,50 @@ object HinhBong {
             setLayerInset(1, 0, 0, 0, ct.px(5f))
         }
     }
+
+    /**
+     * O mau o trang Luyen tap (16/11/2026): than chuyen tu sang xuong [mau], vien trang 5dp, mep
+     * day dam 7dp. O dat padding duoi lon hon tren 7dp cho phan mep.
+     */
+    fun o(ct: Context, mau: Int): Drawable {
+        val day = GradientDrawable().apply {
+            cornerRadius = ct.px(28f).toFloat()
+            setColor(dam(mau))
+        }
+        val than = GradientDrawable().apply {
+            cornerRadius = ct.px(28f).toFloat()
+            orientation = GradientDrawable.Orientation.TOP_BOTTOM
+            colors = intArrayOf(sang(mau), mau)
+            setStroke(ct.px(5f), Color.WHITE)
+        }
+        return LayerDrawable(arrayOf(day, than)).apply {
+            setLayerInset(1, 0, 0, 0, ct.px(7f))
+        }
+    }
+
+    /**
+     * Nut bong mau [mau] ve trong code, cho nut ma mau doi theo du lieu (nut mon o trang Luyen
+     * tap). Cung kieu voi drawable/nut_bong_*.xml: mep day dam 5dp, than chuyen mau, vet sang.
+     */
+    fun nut(ct: Context, mau: Int): Drawable {
+        val day = GradientDrawable().apply {
+            cornerRadius = ct.px(20f).toFloat()
+            setColor(dam(mau))
+        }
+        val than = GradientDrawable().apply {
+            cornerRadius = ct.px(20f).toFloat()
+            orientation = GradientDrawable.Orientation.TOP_BOTTOM
+            colors = intArrayOf(sang(mau), mau)
+        }
+        val sangTren = GradientDrawable().apply {
+            cornerRadius = ct.px(6f).toFloat()
+            setColor(Color.argb(0x33, 255, 255, 255))
+        }
+        return LayerDrawable(arrayOf(day, than, sangTren)).apply {
+            setLayerInset(1, 0, 0, 0, ct.px(5f))
+            setLayerInset(2, ct.px(16f), ct.px(4f), ct.px(16f), 0)
+            setLayerGravity(2, android.view.Gravity.TOP or android.view.Gravity.FILL_HORIZONTAL)
+            setLayerHeight(2, ct.px(9f))
+        }
+    }
 }
